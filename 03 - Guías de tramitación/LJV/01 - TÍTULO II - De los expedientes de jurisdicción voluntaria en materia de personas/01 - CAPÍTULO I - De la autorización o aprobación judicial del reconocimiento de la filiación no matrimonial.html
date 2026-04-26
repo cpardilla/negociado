@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Tramitación — Autorización/Aprobación Judicial del Reconocimiento de Filiación No Matrimonial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2F6E; --navy-mid:#2E4DAA; --navy-lt:#4169E1;
+  --cyan:#0D9488; --cyan-bg:#F0FDFA;
+  --violet:#5B21B6; --violet-bg:#F5F3FF;
+  --green:#15803D; --green-bg:#F0FDF4;
+  --amber:#B45309; --amber-bg:#FFFBEB;
+  --red:#B91C1C; --red-bg:#FEF2F2;
+  --slate:#475569; --slate-bg:#F4F6FB;
+  --white:#FFFFFF; --bdr:#D1D9EE; --text:#1A1A2E; --muted:#6B7280;
+  --card-r:10px; --trans:all .15s;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;font-family:'Outfit',system-ui,sans-serif;font-size:15px;color:var(--text);background:var(--slate-bg);}
+#app{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
+
+/* HEADER */
+#hdr{flex-shrink:0;height:56px;background:var(--navy);display:flex;justify-content:space-between;align-items:center;padding:0 20px;}
+.h-left{display:flex;align-items:center;gap:10px;}
+.h-seal{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.10);border:1.5px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.h-title{font-size:14px;font-weight:700;color:#fff;line-height:1.2;}
+.h-sub{font-size:10px;color:rgba(255,255,255,.55);font-weight:400;}
+.h-right{display:flex;gap:6px;}
+.btn{padding:5px 11px;border-radius:6px;border:1px solid;font-family:'Outfit',sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:var(--trans);}
+.btn-ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:rgba(255,255,255,.85);}
+.btn-ghost:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35);}
+
+/* PHASE BAR */
+#pbar{flex-shrink:0;height:36px;background:var(--navy-mid);display:flex;align-items:center;padding:0 20px;overflow-x:auto;scrollbar-width:none;gap:0;}
+#pbar::-webkit-scrollbar{display:none;}
+.ph-item{display:flex;align-items:center;}
+.ph-lbl{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;color:rgba(255,255,255,.40);white-space:nowrap;letter-spacing:.3px;}
+.ph-lbl.done{color:rgba(255,255,255,.70);}
+.ph-lbl.active{color:#fff;background:rgba(65,105,225,.45);font-weight:700;}
+.ph-sep{color:rgba(255,255,255,.25);padding:0 4px;font-size:12px;}
+
+/* BREADCRUMB */
+#breadcrumb{flex-shrink:0;height:34px;background:var(--slate-bg);border-bottom:1px solid var(--bdr);display:flex;align-items:center;padding:0 20px;gap:0;overflow-x:auto;scrollbar-width:none;}
+#breadcrumb::-webkit-scrollbar{display:none;}
+.bc-item{font-size:11px;white-space:nowrap;padding:0 6px;color:var(--muted);}
+.bc-past{cursor:pointer;background:none;border:none;font-family:'Outfit',sans-serif;font-size:11px;}
+.bc-past:hover{color:var(--navy-lt);text-decoration:underline;}
+.bc-current{font-weight:600;color:var(--navy);}
+.bc-sep{font-size:10px;color:var(--bdr);padding:0 2px;}
+
+/* LAYOUT */
+#layout{flex:1;overflow:hidden;display:flex;}
+#sidebar{flex-shrink:0;width:260px;background:var(--navy-mid);overflow-y:auto;display:flex;flex-direction:column;}
+#content{flex:1;overflow-y:auto;padding:20px;}
+
+/* SIDEBAR TABS */
+#sb-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,.10);flex-shrink:0;}
+.sb-tab{flex:1;padding:8px 0;font-size:11px;font-weight:600;font-family:'Outfit',sans-serif;background:none;border:none;color:rgba(255,255,255,.40);cursor:pointer;letter-spacing:.4px;text-transform:uppercase;transition:var(--trans);}
+.sb-tab.active{color:#fff;border-bottom:2px solid var(--navy-lt);}
+.sb-tab:hover:not(.active){color:rgba(255,255,255,.70);background:rgba(255,255,255,.05);}
+
+/* SIDEBAR MAP */
+#sb-map{padding:8px 0;}
+.sm-phase{margin-bottom:4px;}
+.sm-phase-hdr{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;cursor:pointer;user-select:none;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.45);transition:var(--trans);}
+.sm-phase-hdr:hover{background:rgba(255,255,255,.06);color:rgba(255,255,255,.70);}
+.sm-phase-toggle{font-size:10px;opacity:.5;}
+.sm-nodes{padding:0 0 4px;}
+.sm-node{display:flex;width:100%;text-align:left;background:none;border:none;font-family:'Outfit',sans-serif;font-size:12px;padding:5px 12px 5px 22px;cursor:pointer;color:rgba(255,255,255,.45);position:relative;transition:var(--trans);line-height:1.35;align-items:center;gap:6px;}
+.sm-node:hover{color:rgba(255,255,255,.80);background:rgba(255,255,255,.05);}
+.sm-node::before{content:'';position:absolute;left:12px;top:50%;transform:translateY(-50%);width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2);}
+.sm-node.sm-visited{color:rgba(255,255,255,.75);}
+.sm-node.sm-visited::before{background:#22c55e;}
+.sm-node.sm-current{color:#fff;font-weight:600;}
+.sm-node.sm-current::before{background:var(--navy-lt);animation:pulse 1.5s infinite;}
+.sm-node.sm-unreachable{color:rgba(255,255,255,.20);cursor:default;}
+.sm-node.sm-unreachable::before{background:rgba(255,255,255,.10);}
+.sm-node.sm-unreachable:hover{color:rgba(255,255,255,.20);background:none;}
+.sm-node.sm-end-success::before{background:#22c55e;}
+.sm-node.sm-end-error::before{background:#ef4444;}
+.sm-node.sm-end-warning::before{background:#f59e0b;}
+.sm-node.sm-end-neutral::before{background:#6b7280;}
+.sm-node-text{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.sm-node-jump{font-size:9px;color:var(--navy-lt);opacity:0;transition:var(--trans);white-space:nowrap;cursor:pointer;background:rgba(65,105,225,.15);padding:1px 5px;border-radius:3px;border:none;font-family:'Outfit',sans-serif;}
+.sm-node:hover .sm-node-jump{opacity:1;}
+.sm-node.sm-unreachable .sm-node-jump{display:none;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+/* SIDEBAR NODE PREVIEW TOOLTIP */
+.sm-preview{position:fixed;z-index:1000;background:var(--white);border:1px solid var(--bdr);border-radius:8px;padding:14px 16px;max-width:320px;box-shadow:0 4px 16px rgba(0,0,0,.15);font-size:13px;color:var(--text);line-height:1.5;}
+.sm-preview-title{font-weight:700;color:var(--navy);margin-bottom:6px;font-size:14px;}
+.sm-preview-actor{font-size:11px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px;}
+.sm-preview-body{max-height:200px;overflow-y:auto;margin-bottom:10px;}
+.sm-preview-body p{margin-bottom:6px;font-size:12.5px;line-height:1.5;}
+.sm-preview-actions{display:flex;gap:8px;}
+.sm-preview-jump{background:var(--navy-lt);border:none;color:#fff;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;padding:5px 12px;border-radius:5px;cursor:pointer;transition:var(--trans);}
+.sm-preview-jump:hover{background:var(--navy);}
+.sm-preview-close{background:var(--slate-bg);border:1px solid var(--bdr);color:var(--slate);font-family:'Outfit',sans-serif;font-size:12px;padding:5px 10px;border-radius:5px;cursor:pointer;transition:var(--trans);}
+.sm-preview-close:hover{background:#E2E8F0;}
+
+/* SIDEBAR JOURNEY */
+#sb-journey{padding:8px 0;flex:1;}
+.pi{padding:6px 12px 6px 20px;position:relative;font-size:12px;color:rgba(255,255,255,.40);line-height:1.35;}
+.pi::before{content:'';position:absolute;left:10px;top:12px;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2);}
+.pi.past{color:rgba(255,255,255,.65);}
+.pi.past::before{background:#22c55e;}
+.pi.current{color:#fff;font-weight:600;}
+.pi.current::before{background:var(--navy-lt);}
+.pi-choice{font-size:11px;color:rgba(255,255,255,.40);margin-top:2px;padding-left:2px;font-style:italic;}
+.sb-foot{padding:10px 12px;border-top:1px solid rgba(255,255,255,.10);margin-top:auto;}
+.sb-foot-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.35);margin-bottom:4px;}
+.sb-foot-ref{font-size:11px;color:rgba(255,255,255,.45);font-family:ui-monospace,SFMono-Regular,monospace;}
+
+/* CARD */
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.card{background:var(--white);border-radius:var(--card-r);border:1px solid var(--bdr);animation:fadeUp .22s ease;max-width:820px;margin:0 auto;}
+.c-hdr{padding:18px 20px 14px;border-bottom:1px solid var(--bdr);display:flex;flex-direction:column;gap:6px;}
+.c-hdr-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.act-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase;flex-shrink:0;}
+.act-laj{background:#EFF6FF;color:#1D4ED8;border:1px solid #BFDBFE;}
+.act-juez{background:#FDF4FF;color:#7E22CE;border:1px solid #E9D5FF;}
+.act-ambos{background:#FFF7ED;color:#C2410C;border:1px solid #FED7AA;}
+.c-title{font-size:19px;font-weight:700;color:var(--navy);line-height:1.25;flex:1;}
+.step-num{font-size:11px;color:var(--muted);font-weight:400;}
+.c-body{padding:18px 20px;}
+.c-body > * + *{margin-top:12px;}
+
+/* Content blocks */
+.blk-i{font-size:14.5px;line-height:1.6;color:var(--text);}
+.blk-d{font-size:14px;font-weight:600;color:var(--navy);background:#EFF6FF;border-left:3px solid var(--navy-lt);padding:8px 12px;border-radius:0 6px 6px 0;}
+.blk-n{font-size:13.5px;line-height:1.55;color:var(--slate);background:var(--slate-bg);padding:9px 12px;border-radius:6px;border:1px solid var(--bdr);}
+.blk-w{font-size:13.5px;line-height:1.55;color:#92400E;background:var(--amber-bg);padding:9px 12px;border-radius:6px;border:1px solid #FDE68A;}
+.blk-l{font-size:12.5px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,monospace;background:var(--slate-bg);padding:7px 12px;border-radius:6px;border:1px solid var(--bdr);}
+.blk-cl-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.blk-cl{background:var(--slate-bg);border:1px solid var(--bdr);border-radius:6px;padding:10px 12px;}
+.blk-cl ul{list-style:none;padding:0;}
+.blk-cl ul li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--text);padding:4px 0;border-bottom:1px solid var(--bdr);}
+.blk-cl ul li:last-child{border-bottom:none;}
+.blk-cl ul li::before{content:'\2610';color:var(--navy-lt);font-size:14px;flex-shrink:0;margin-top:1px;}
+
+/* DECISION AREA */
+.dec-area{border-top:1px solid var(--bdr);padding:18px 20px;}
+.dec-q{font-size:15px;font-weight:700;color:var(--navy);padding:12px 14px;background:var(--slate-bg);border-radius:8px;border-top:3px solid var(--navy);margin-bottom:14px;line-height:1.4;}
+.dec-opts{display:flex;flex-direction:column;gap:9px;}
+.dec-btn{display:flex;align-items:flex-start;gap:12px;padding:13px 14px;border-radius:8px;border:1.5px solid var(--bdr);background:var(--white);cursor:pointer;font-family:'Outfit',sans-serif;font-size:13.5px;text-align:left;color:var(--text);transition:var(--trans);line-height:1.45;width:100%;}
+.dec-btn:hover{border-color:var(--navy-lt);background:var(--cyan-bg);}
+.dec-btn.ok:hover{border-color:var(--green);background:var(--green-bg);}
+.dec-btn.bad:hover{border-color:var(--red);background:var(--red-bg);}
+.dec-btn.warn:hover{border-color:var(--amber);background:var(--amber-bg);}
+.dec-letter{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;}
+.ok .dec-letter{background:var(--green-bg);color:var(--green);border:1.5px solid #86efac;}
+.bad .dec-letter{background:var(--red-bg);color:var(--red);border:1.5px solid #fca5a5;}
+.warn .dec-letter{background:var(--amber-bg);color:var(--amber);border:1.5px solid #fcd34d;}
+.neutral .dec-letter{background:var(--slate-bg);color:var(--slate);border:1.5px solid var(--bdr);}
+
+/* NAV */
+.c-nav{padding:14px 20px;border-top:1px solid var(--bdr);display:flex;gap:10px;}
+.btn-back{background:var(--slate-bg);border:1px solid var(--bdr);color:var(--slate);font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border-radius:7px;cursor:pointer;transition:var(--trans);}
+.btn-back:hover:not(:disabled){background:#E2E8F0;border-color:#94a3b8;}
+.btn-back:disabled{opacity:.35;cursor:not-allowed;}
+.btn-next{background:var(--navy-lt);border:1px solid var(--navy-lt);color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;padding:8px 18px;border-radius:7px;cursor:pointer;transition:var(--trans);}
+.btn-next:hover{background:var(--navy);}
+
+/* END CARD */
+.card.end-success{border-top:4px solid var(--green);}
+.card.end-error{border-top:4px solid var(--red);}
+.card.end-warning{border-top:4px solid var(--amber);}
+.card.end-neutral{border-top:4px solid var(--slate);}
+.end-body{padding:30px 24px 20px;text-align:center;}
+.end-icon{font-size:44px;margin-bottom:12px;}
+.end-title{font-size:22px;font-weight:700;margin-bottom:6px;}
+.end-success .end-title{color:var(--green);}
+.end-error .end-title{color:var(--red);}
+.end-warning .end-title{color:var(--amber);}
+.end-neutral .end-title{color:var(--slate);}
+.end-sub{font-size:13.5px;color:var(--muted);margin-bottom:18px;}
+.end-actions{display:flex;gap:10px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;}
+.end-content{text-align:left;border-top:1px solid var(--bdr);padding-top:16px;margin:0 -4px;}
+.end-content > * + *{margin-top:10px;}
+
+/* SUMMARY BOX */
+.summary-box{margin:16px 0 0;background:var(--slate-bg);border:1px solid var(--bdr);border-radius:8px;padding:14px 16px;}
+.sum-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:10px;}
+.sum-item{display:flex;gap:10px;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--bdr);font-size:13px;}
+.sum-item:last-child{border-bottom:none;}
+.sum-n{font-weight:700;color:var(--navy-lt);width:22px;flex-shrink:0;text-align:right;}
+.sum-step{flex:1;color:var(--text);}
+.sum-choice{font-size:12px;color:var(--muted);margin-top:2px;font-style:italic;}
+
+/* MAPA OVERLAY */
+#mapa-overlay{flex:1;overflow-y:auto;background:var(--slate-bg);padding:20px;display:none;}
+#mapa-overlay h2{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:16px;}
+.mapa-close-btn{background:var(--navy-lt);border:none;color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;padding:8px 16px;border-radius:7px;cursor:pointer;margin-bottom:20px;display:inline-block;transition:var(--trans);}
+.mapa-close-btn:hover{background:var(--navy);}
+.mapa-cols{display:flex;gap:14px;align-items:flex-start;overflow-x:auto;padding-bottom:10px;}
+.mapa-col{flex-shrink:0;width:220px;}
+.mapa-col-hdr{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--navy);background:var(--white);border:1px solid var(--bdr);border-radius:6px 6px 0 0;padding:7px 10px;text-align:center;}
+.mapa-nodes{display:flex;flex-direction:column;gap:6px;margin-top:6px;}
+.mapa-node{background:var(--white);border:1px solid var(--bdr);border-radius:7px;padding:9px 10px;font-size:12px;border-left:3px solid var(--bdr);position:relative;}
+.mapa-node.mn-visited{border-left-color:var(--green);background:var(--green-bg);}
+.mapa-node.mn-current{border-left-color:var(--navy-lt);background:var(--cyan-bg);}
+.mapa-node.mn-end-success{border-left-color:var(--green);}
+.mapa-node.mn-end-error{border-left-color:var(--red);}
+.mapa-node.mn-end-warning{border-left-color:var(--amber);}
+.mapa-node.mn-end-neutral{border-left-color:var(--slate);}
+.mapa-node-title{font-weight:600;color:var(--text);line-height:1.3;margin-bottom:4px;}
+.mapa-node-actor{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;}
+.mapa-node-dec{font-size:10px;color:var(--navy-mid);margin-top:4px;font-style:italic;}
+.mapa-node-edges{margin-top:6px;padding-top:6px;border-top:1px solid var(--bdr);}
+.mapa-edge{font-size:10px;color:var(--slate);padding:2px 0;line-height:1.35;}
+.mapa-edge-arrow{color:var(--navy-lt);font-weight:600;margin-right:3px;}
+.mapa-node-jump{display:inline-block;margin-top:6px;background:var(--navy-lt);color:#fff;font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px;border:none;cursor:pointer;transition:var(--trans);}
+.mapa-node-jump:hover{background:var(--navy);}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+  #sidebar{display:none;}
+  #content{padding:12px;}
+  .dec-opts{flex-direction:column;}
+}
+@media print{
+  body{background:#fff;color:#111;}
+  #hdr,#pbar,#breadcrumb,#sidebar,.c-nav,.dec-opts,.h-right{display:none!important;}
+  #layout,#content{display:block;overflow:visible;height:auto;}
+  .card{break-inside:avoid;border:1px solid #ccc;}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <!-- HEADER -->
+  <header id="hdr">
+    <div class="h-left">
+      <div class="h-seal">&#9878;</div>
+      <div>
+        <div class="h-title">Reconocimiento de Filiaci&#243;n No Matrimonial</div>
+        <div class="h-sub">LJV 15/2015, arts. 23&#8211;26 &#183; Gu&#237;a para el Administrador Procesal</div>
+      </div>
+    </div>
+    <div class="h-right">
+      <button class="btn btn-ghost" data-action="toggle-mapa">&#128506; Ver mapa</button>
+      <button class="btn btn-ghost" data-action="descargar">&#11015; Descargar</button>
+      <button class="btn btn-ghost" data-action="reiniciar">&#8634; Reiniciar</button>
+    </div>
+  </header>
+
+  <!-- PHASE BAR -->
+  <div id="pbar"></div>
+
+  <!-- BREADCRUMB -->
+  <div id="breadcrumb"></div>
+
+  <!-- MAIN LAYOUT -->
+  <div id="layout">
+    <aside id="sidebar">
+      <div id="sb-tabs">
+        <button class="sb-tab active" data-action="sb-tab" data-tab="map">Mapa</button>
+        <button class="sb-tab" data-action="sb-tab" data-tab="journey">Recorrido</button>
+      </div>
+      <div id="sb-map"></div>
+      <div id="sb-journey" style="display:none"></div>
+    </aside>
+    <main id="content"></main>
+  </div>
+
+  <!-- MAPA OVERLAY -->
+  <div id="mapa-overlay">
+    <button class="mapa-close-btn" data-action="close-mapa">&#8592; Volver al recorrido</button>
+    <h2>Estructura completa del procedimiento</h2>
+    <div class="mapa-cols" id="mapa-cols"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+/* =========================================================
+   DATOS DEL PROCEDIMIENTO
+   ========================================================= */
+const PHASES = [
+  'Tipo de expediente',
+  'Presentaci\u00f3n y admisi\u00f3n',
+  'Citaci\u00f3n y comparecencia',
+  'Resoluci\u00f3n judicial',
+  'Cierre y recursos'
+];
+
+const ACTORS = { laj:'LAJ / Secretario Judicial', juez:'Juez', ambos:'Juez y LAJ' };
+
+const STEPS = {
+
+  inicio:{ph:0,t:'Determinaci\u00f3n del tipo de expediente',ac:'laj',
+    c:[['i','Antes de iniciar la tramitaci\u00f3n, identifique con precisi\u00f3n qu\u00e9 tipo de control judicial exige la situaci\u00f3n concreta. El art\u00edculo 23 LJV distingue dos figuras con efectos jur\u00eddicos distintos: la autorizaci\u00f3n previa (condici\u00f3n de validez del reconocimiento) y la aprobaci\u00f3n posterior (condici\u00f3n de eficacia de un reconocimiento ya otorgado).'],
+       ['n','AUTORIZACI\u00d3N: condici\u00f3n de VALIDEZ, previa al reconocimiento. Sin ella el acto no puede otorgarse; si se otorgara ser\u00eda inv\u00e1lido desde el origen. APROBACI\u00d3N: condici\u00f3n de EFICACIA, posterior. El acto existe pero queda en suspenso; si se deniega, deviene ineficaz sin retroactividad sobre la declaraci\u00f3n de voluntad.'],
+       ['l','Art. 23 LJV 15/2015; arts. 121, 123, 124 CC']],
+    q:'\u00bfCu\u00e1l es el supuesto concreto que motiva el expediente?',
+    opts:[
+      {t:'AUTORIZACI\u00d3N (art. 23.2) \u2014 El reconociente es hermano o consangu\u00edneo en l\u00ednea recta del progenitor ya determinado del reconocido. El reconocido es menor o persona con discapacidad con medidas de apoyo.',l:'ok',n:'tipo_aut'},
+      {t:'APROBACI\u00d3N (art. 23.3.a) \u2014 El reconociente es menor de edad (no puede contraer matrimonio por raz\u00f3n de edad). Fundamento: art. 121 CC.',l:'ok',n:'tipo_ap_a'},
+      {t:'APROBACI\u00d3N (art. 23.3.b) \u2014 El reconociente carece del consentimiento expreso del representante legal o la asistencia del curador del reconocido ni del progenitor legalmente conocido (salvo reconocimiento en testamento o dentro del plazo de inscripci\u00f3n del nacimiento).',l:'ok',n:'tipo_ap_b'},
+      {t:'APROBACI\u00d3N (art. 23.3.c) \u2014 Reconocimiento paterno realizado dentro del plazo de inscripci\u00f3n, cuando la inscripci\u00f3n fue suspendida a petici\u00f3n de la madre (art. 44.5 Ley 20/2011 RC).',l:'ok',n:'tipo_ap_c'},
+      {t:'APROBACI\u00d3N (art. 23.4) \u2014 El propio reconociente es una persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jur\u00eddica (independientemente de la condici\u00f3n del reconocido).',l:'ok',n:'tipo_ap_disc'}
+    ]},
+
+  tipo_aut:{ph:0,t:'Autorizaci\u00f3n judicial previa \u2014 art. 23.2 LJV / art. 124 CC',ac:'laj',
+    c:[['i','Supuesto de AUTORIZACI\u00d3N: condici\u00f3n de validez. El reconociente no puede otorgar el reconocimiento hasta obtener la autorizaci\u00f3n judicial. El expediente tiene por objeto que el Juez eval\u00fae si el reconocimiento redunda en inter\u00e9s del menor o de la persona con discapacidad con medidas de apoyo.'],
+       ['w','ATENCI\u00d3N: el Juez solo autorizar\u00e1 cuando la determinaci\u00f3n sea en inter\u00e9s del menor o de la persona con discapacidad (art. 26.2 LJV / art. 124 CC). La carga de acreditar ese inter\u00e9s recae sobre el promotor del expediente.'],
+       ['n','Ratio: este supuesto previene el riesgo de encubrimiento de relaciones incestuosas. El hijo ser\u00eda simult\u00e1neamente hijo y sobrino (u otro pariente en l\u00ednea recta) del progenitor ya conocido.'],
+       ['l','Art. 124 CC; art. 23.2 LJV 15/2015; art. 26.2 LJV 15/2015']],
+    nx:'competencia'},
+
+  tipo_ap_a:{ph:0,t:'Aprobaci\u00f3n judicial \u2014 Reconociente menor de edad (art. 23.3.a / art. 121 CC)',ac:'laj',
+    c:[['i','Supuesto de APROBACI\u00d3N: el reconocimiento ya fue otorgado por el menor de edad (quien no puede contraer matrimonio por raz\u00f3n de edad), pero precisa aprobaci\u00f3n judicial para producir efectos jur\u00eddicos.'],
+       ['n','El reconocimiento es un acto personal\u00edsimo: el menor ha de expresar su propia voluntad, no el representante legal en su lugar. La aprobaci\u00f3n judicial sustituye la intervenci\u00f3n representativa que en otros actos de trascendencia an\u00e1loga ser\u00eda exigida.'],
+       ['l','Art. 121 CC; art. 23.3.a LJV 15/2015']],
+    nx:'competencia'},
+
+  tipo_ap_b:{ph:0,t:'Aprobaci\u00f3n judicial \u2014 Sin consentimiento ni asistencia (art. 23.3.b / art. 123 CC)',ac:'laj',
+    c:[['i','Supuesto de APROBACI\u00d3N: el reconociente no ha obtenido el consentimiento expreso del representante legal ni la asistencia del curador del reconocido, ni del progenitor legalmente conocido.'],
+       ['n','Excepciones que excluyen este supuesto (y en las que NO se necesita aprobaci\u00f3n judicial): (1) el reconocimiento se realiz\u00f3 en testamento \u2014garant\u00edas notariales plenas\u2014, o (2) dentro del plazo para practicar la inscripci\u00f3n del nacimiento \u2014supervisi\u00f3n registral inmediata\u2014.'],
+       ['l','Art. 123 CC; art. 23.3.b LJV 15/2015']],
+    nx:'competencia'},
+
+  tipo_ap_c:{ph:0,t:'Aprobaci\u00f3n judicial \u2014 Suspensi\u00f3n de inscripci\u00f3n a petici\u00f3n de la madre (art. 23.3.c)',ac:'laj',
+    c:[['i','Supuesto de APROBACI\u00d3N: el padre realiz\u00f3 el reconocimiento dentro del plazo para practicar la inscripci\u00f3n del nacimiento, pero la madre solicit\u00f3 la suspensi\u00f3n de esa inscripci\u00f3n conforme al art. 44.5 Ley 20/2011 del Registro Civil.'],
+       ['n','La aprobaci\u00f3n judicial dirime el conflicto entre el padre que quiere reconocer y la madre que se opone, atendiendo siempre al inter\u00e9s superior del menor. El Juez es el \u00e1rbitro de esa discrepancia.'],
+       ['l','Art. 44.5 Ley 20/2011 del Registro Civil; art. 23.3.c LJV 15/2015']],
+    nx:'competencia'},
+
+  tipo_ap_disc:{ph:0,t:'Aprobaci\u00f3n judicial \u2014 Reconociente con discapacidad (art. 23.4)',ac:'laj',
+    c:[['i','Supuesto de APROBACI\u00d3N: el propio reconociente es una persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jur\u00eddica. Este supuesto opera con independencia de la condici\u00f3n del reconocido.'],
+       ['n','El expediente tutela simult\u00e1neamente: (a) el discernimiento del reconociente \u2014cuya capacidad de comprensi\u00f3n puede estar afectada\u2014, y (b) el inter\u00e9s del reconocido. El Juez valorar\u00e1 especialmente el discernimiento del progenitor como primer criterio de la resoluci\u00f3n (art. 26.1 LJV).'],
+       ['l','Art. 121 CC; art. 23.4 LJV 15/2015; art. 26.1 LJV 15/2015']],
+    nx:'competencia'},
+
+  competencia:{ph:1,t:'Determinaci\u00f3n del \u00f3rgano territorialmente competente',ac:'laj',
+    c:[['i','El Juzgado de Primera Instancia competente se determina siguiendo un sistema de fueros en cascada, priorizando la conexi\u00f3n territorial con el reconocido \u2014quien ve afectado su estado civil\u2014.'],
+       ['n','Competencia objetiva: siempre el Juzgado de Primera Instancia. La decisi\u00f3n de fondo es reservada al Juez (no al LAJ) por afectar al estado civil y a derechos de menores o personas con discapacidad (art. 2.3 LJV).'],
+       ['l','Art. 24.1 LJV 15/2015; art. 2 LJV 15/2015']],
+    q:'\u00bfD\u00f3nde tiene su domicilio o residencia el reconocido?',
+    opts:[
+      {t:'El reconocido tiene DOMICILIO en Espa\u00f1a \u2192 competente el Juzgado de Primera Instancia de ese domicilio (fuero principal)',l:'ok',n:'solicitud'},
+      {t:'El reconocido NO tiene domicilio en Espa\u00f1a pero tiene RESIDENCIA en territorio nacional \u2192 competente el Juzgado de Primera Instancia de esa residencia (fuero secundario)',l:'ok',n:'solicitud'},
+      {t:'El reconocido NO tiene domicilio NI residencia en Espa\u00f1a \u2192 verificar fuero subsidiario por domicilio o residencia del reconociente',l:'warn',n:'fuero_subsidiario'}
+    ]},
+
+  fuero_subsidiario:{ph:1,t:'Fuero subsidiario \u2014 Domicilio o residencia del reconociente',ac:'laj',
+    c:[['i','Si el reconocido no tiene domicilio ni residencia en Espa\u00f1a, la competencia se atribuye al Juzgado de Primera Instancia del domicilio o residencia del progenitor autor del reconocimiento. Este fuero garantiza que siempre exista un \u00f3rgano espa\u00f1ol competente cuando el reconociente s\u00ed tiene v\u00ednculos con Espa\u00f1a.'],
+       ['l','Art. 24.1 in fine LJV 15/2015; art. 9 LJV 15/2015']],
+    q:'\u00bfTiene el reconociente (progenitor autor del reconocimiento) domicilio o residencia en Espa\u00f1a?',
+    opts:[
+      {t:'S\u00ed \u2192 competente el Juzgado de Primera Instancia del domicilio o residencia del reconociente',l:'ok',n:'solicitud'},
+      {t:'No \u2192 ning\u00fan \u00f3rgano judicial espa\u00f1ol tiene atribuida competencia para este expediente',l:'bad',n:'fin_sin_competencia'}
+    ]},
+
+  fin_sin_competencia:{ph:1,t:'Sin \u00f3rgano judicial espa\u00f1ol competente',ac:'laj',end:'error',
+    c:[['i','No existe ning\u00fan fuero territorial que atribuya competencia a un Juzgado de Primera Instancia espa\u00f1ol. El expediente no puede tramitarse ante \u00f3rganos judiciales espa\u00f1oles.'],
+       ['n','Orientaci\u00f3n al interesado: considerar si el reconocimiento puede tramitarse ante las autoridades del Estado donde el reconocido o el reconociente tengan su residencia habitual, conforme a las normas de competencia internacional aplicables (art. 9 LJV y reglamentos europeos de DIPr).'],
+       ['l','Art. 24.1 LJV 15/2015; art. 9 LJV 15/2015']]},
+
+  solicitud:{ph:1,t:'Preparaci\u00f3n y presentaci\u00f3n de la solicitud',ac:'laj',
+    c:[['i','La solicitud puede presentarse por el progenitor autor del reconocimiento SIN necesidad de Abogado ni Procurador. Est\u00e1 disponible formulario normalizado en la Oficina judicial o sede electr\u00f3nica (art. 14.3 LJV). El formulario no exige concretar la fundamentaci\u00f3n jur\u00eddica.'],
+       ['cl','Contenido obligatorio de la solicitud',[
+         'Datos e identificaci\u00f3n completa del solicitante (el progenitor reconociente)',
+         'Domicilio a efectos de notificaciones y, si procede, correo electr\u00f3nico',
+         'Indicaci\u00f3n expresa del tipo de expediente: AUTORIZACI\u00d3N (art. 23.2) o APROBACI\u00d3N (art. 23.3 o 23.4)',
+         'Exposici\u00f3n clara de los hechos que motivan el expediente',
+         'Identificaci\u00f3n del reconocido: nombre, domicilio o residencia',
+         'Identificaci\u00f3n del progenitor conocido, si lo hay, con domicilio para citaci\u00f3n',
+         'Identificaci\u00f3n del representante legal o curador del reconocido, con domicilio',
+         'En su caso: identificaci\u00f3n de descendientes del reconocido (si este hubiere fallecido)',
+         'Documentos acreditativos relevantes (partida de nacimiento, documentaci\u00f3n de discapacidad, etc.)',
+         'Si es aprobaci\u00f3n: copia del reconocimiento ya otorgado'
+       ]],
+       ['w','POSTULACI\u00d3N: aunque no sea preceptiva, las partes pueden comparecer con Abogado y Procurador voluntariamente. Si cualquier interesado formula oposici\u00f3n, la postulaci\u00f3n deviene OBLIGATORIA desde ese momento (art. 3.4 LJV). Tambi\u00e9n es obligatoria para interponer recursos.'],
+       ['l','Arts. 14 y 24.2\u201324.3 LJV 15/2015; art. 3 LJV 15/2015']],
+    nx:'control_admision'},
+
+  control_admision:{ph:1,t:'Control de oficio de la competencia y de la solicitud (art. 16 LJV)',ac:'laj',
+    c:[['i','Presentada la solicitud, el LAJ examina de oficio si se cumplen las normas de competencia objetiva y territorial, y si la solicitud contiene todos los requisitos formales necesarios. Este control es inmediato a la presentaci\u00f3n.'],
+       ['l','Art. 16 LJV 15/2015']],
+    q:'\u00bfQu\u00e9 resultado arroja el control de oficio?',
+    opts:[
+      {t:'Todo correcto \u2014 la solicitud es competencialmente y formalmente conforme \u2192 proceder al control de conflicto de intereses',l:'ok',n:'conflicto_intereses'},
+      {t:'Defectos u omisiones en la solicitud \u2014 el LAJ concede plazo de 5 d\u00edas para subsanaci\u00f3n',l:'warn',n:'subsanacion'},
+      {t:'Falta de competencia objetiva \u2014 el \u00f3rgano no tiene atribuida la competencia para este tipo de expediente',l:'bad',n:'incompetencia_objetiva'},
+      {t:'Falta de competencia territorial \u2014 el \u00f3rgano no es el territorialmente competente',l:'warn',n:'incompetencia_territorial'}
+    ]},
+
+  subsanacion:{ph:1,t:'Plazo de subsanaci\u00f3n de defectos u omisiones',ac:'laj',
+    c:[['i','El LAJ concede al solicitante un plazo de cinco d\u00edas para subsanar los defectos u omisiones detectados. El requerimiento de subsanaci\u00f3n se notifica al solicitante de forma expresa.'],
+       ['d','PLAZO: 5 d\u00edas desde la notificaci\u00f3n del requerimiento de subsanaci\u00f3n.'],
+       ['n','El tr\u00e1mite de subsanaci\u00f3n refleja el principio antiformalista de la JV: antes de inadmitir por defectos de forma, el \u00f3rgano otorga al solicitante la oportunidad de corregirlos (art. 16.4 LJV).'],
+       ['l','Art. 16.4 LJV 15/2015']],
+    q:'\u00bfEl solicitante ha subsanado los defectos en el plazo concedido de 5 d\u00edas?',
+    opts:[
+      {t:'S\u00ed \u2014 defectos subsanados en plazo \u2192 retomar el control y continuar la tramitaci\u00f3n',l:'ok',n:'conflicto_intereses'},
+      {t:'No \u2014 plazo transcurrido sin subsanaci\u00f3n \u2192 la solicitud se tiene por no presentada y se archivan las actuaciones',l:'bad',n:'archivo_defectos'}
+    ]},
+
+  archivo_defectos:{ph:1,t:'Archivo por falta de subsanaci\u00f3n',ac:'laj',end:'warning',
+    c:[['i','El LAJ tiene por no presentada la solicitud y archiva las actuaciones al no haberse subsanado los defectos en el plazo concedido de cinco d\u00edas.'],
+       ['n','El archivo no impide que el interesado presente una nueva solicitud una vez subsanados los defectos detectados, ya que no genera cosa juzgada.'],
+       ['l','Art. 16.4 LJV 15/2015']]},
+
+  incompetencia_objetiva:{ph:1,t:'Falta de competencia objetiva',ac:'laj',end:'warning',
+    c:[['i','El LAJ aprecia que el \u00f3rgano carece de competencia objetiva. En los expedientes de competencia del LAJ, acuerda el archivo previo audiencia del Ministerio Fiscal y del solicitante. En los del Juez, da cuenta al Juez para que acuerde lo que proceda.'],
+       ['n','La resoluci\u00f3n que aprecia la falta de competencia DEBE indicar el \u00f3rgano judicial que se estima competente, orientando al solicitante hacia el Juzgado de Primera Instancia correcto (art. 16.2 LJV). En este expediente, la competencia objetiva corresponde siempre al Juzgado de Primera Instancia.'],
+       ['l','Art. 16.2 LJV 15/2015; art. 24.1 LJV 15/2015']]},
+
+  incompetencia_territorial:{ph:1,t:'Falta de competencia territorial \u2014 Remisi\u00f3n al \u00f3rgano competente',ac:'laj',end:'neutral',
+    c:[['i','El LAJ aprecia falta de competencia territorial y acuerda la remisi\u00f3n de las actuaciones al Juzgado de Primera Instancia que considera territorialmente competente, previa audiencia del Ministerio Fiscal y del solicitante.'],
+       ['n','A diferencia de la falta de competencia objetiva, la falta de competencia territorial no determina el archivo sino la REMISI\u00d3N. Las actuaciones ya realizadas se conservan y se transfieren al \u00f3rgano competente.'],
+       ['l','Art. 16.3 LJV 15/2015']]},
+
+  conflicto_intereses:{ph:1,t:'Verificaci\u00f3n de conflicto de intereses del representante legal',ac:'laj',
+    c:[['i','Antes de la admisi\u00f3n formal, el LAJ verifica si el representante legal del reconocido (cuando este es menor o persona con discapacidad) puede tener intereses opuestos a los del propio reconocido en este expediente.'],
+       ['n','Ejemplo t\u00edpico de conflicto: el representante legal del reconocido es el c\u00f3nyuge del reconociente \u2014tiene un inter\u00e9s paralelo que puede comprometer la defensa de los intereses del reconocido\u2014. En tal caso, el reconocido necesita un defensor judicial que act\u00fae en su nombre.'],
+       ['l','Art. 27 LJV 15/2015 (Cap. II T\u00edt. II); arts. 235\u2013236 CC']],
+    q:'\u00bfSe aprecia conflicto de intereses entre el representante legal del reconocido y los intereses del propio reconocido?',
+    opts:[
+      {t:'No existe conflicto de intereses \u2192 proceder a la admisi\u00f3n formal del expediente',l:'ok',n:'admision_formal'},
+      {t:'Existe o se aprecia posible conflicto de intereses \u2192 es necesario tramitar previamente el nombramiento de defensor judicial al reconocido (art. 27 LJV)',l:'warn',n:'defensor_judicial'}
+    ]},
+
+  defensor_judicial:{ph:1,t:'Nombramiento de defensor judicial del reconocido (arts. 27\u201331 LJV)',ac:'laj',
+    c:[['i','Cuando el representante legal del reconocido tiene intereses opuestos al reconocido, se tramita de forma incidental el nombramiento de un defensor judicial conforme al Cap\u00edtulo II del T\u00edtulo II de la LJV. El defensor judicial actuar\u00e1 en representaci\u00f3n del reconocido durante todo el expediente.'],
+       ['d','Actuaci\u00f3n: iniciar el expediente de nombramiento de defensor judicial (arts. 27\u201331 LJV) de forma previa. El expediente principal de reconocimiento queda en suspenso hasta que el defensor judicial acepte el cargo.'],
+       ['n','Competencia para el nombramiento: Secretario judicial del Juzgado de Primera Instancia del domicilio o residencia del menor o persona con discapacidad (art. 28.1 LJV). El nombramiento se notifica al designado para que acepte o rechace el cargo. La aceptaci\u00f3n activa la representaci\u00f3n del reconocido.'],
+       ['l','Arts. 27\u201331 LJV 15/2015; arts. 235\u2013236 CC']],
+    nx:'admision_formal'},
+
+  admision_formal:{ph:1,t:'Admisi\u00f3n formal del expediente',ac:'laj',
+    c:[['i','El LAJ resuelve mediante decreto admitiendo formalmente el expediente y determina a continuaci\u00f3n si es necesaria la celebraci\u00f3n de comparecencia o si basta con el informe escrito del Ministerio Fiscal.'],
+       ['n','La comparecencia es necesaria cuando concurra alguna de estas causas: (a) deben ser o\u00eddos interesados distintos del solicitante, (b) han de practicarse pruebas ante el Juez o el LAJ, o (c) el Juez o el LAJ la consideran necesaria para la mejor resoluci\u00f3n del expediente (art. 17.2 LJV).'],
+       ['l','Art. 17 LJV 15/2015']],
+    q:'\u00bfEs necesaria la celebraci\u00f3n de comparecencia?',
+    opts:[
+      {t:'S\u00cd \u2014 existen interesados distintos del solicitante que deben ser o\u00eddos, pruebas que practicar, o el \u00f3rgano la considera necesaria \u2192 proceder a citaci\u00f3n de todas las partes',l:'ok',n:'citacion'},
+      {t:'NO \u2014 solo debe o\u00edrse al Ministerio Fiscal y no es necesaria prueba \u2192 el MF emitir\u00e1 informe escrito en el plazo de 10 d\u00edas (art. 17.2 in fine LJV)',l:'ok',n:'informe_mf_escrito'}
+    ]},
+
+  informe_mf_escrito:{ph:2,t:'Informe escrito del Ministerio Fiscal',ac:'laj',
+    c:[['i','Cuando solo deba o\u00edrse al Ministerio Fiscal y no sea necesaria la realizaci\u00f3n de prueba, el MF emite su informe por escrito en el plazo de diez d\u00edas, sin necesidad de convocar comparecencia. Este mecanismo agiliza la tramitaci\u00f3n de expedientes sencillos.'],
+       ['d','PLAZO: el Ministerio Fiscal dispone de 10 d\u00edas desde su citaci\u00f3n para emitir y remitir el informe escrito.'],
+       ['n','La participaci\u00f3n del Ministerio Fiscal en este expediente es SIEMPRE preceptiva (art. 4 LJV), por afectar al estado civil de la persona reconocida y, en los supuestos m\u00e1s frecuentes, al inter\u00e9s de un menor o persona con discapacidad.'],
+       ['l','Art. 17.2 in fine LJV 15/2015; art. 4 LJV 15/2015']],
+    nx:'deliberacion'},
+
+  citacion:{ph:2,t:'Citaci\u00f3n de las partes a comparecencia',ac:'laj',
+    c:[['i','El LAJ cita a comparecencia a todas las personas que deben intervenir en el expediente. La citaci\u00f3n se practica conforme a la LEC, con entrega de copia de la resoluci\u00f3n de admisi\u00f3n, de la solicitud y de los documentos que la acompa\u00f1en.'],
+       ['d','PLAZO: la citaci\u00f3n debe realizarse con al menos 15 d\u00edas de antelaci\u00f3n a la celebraci\u00f3n de la comparecencia (art. 17.3 LJV).'],
+       ['cl','Sujetos que deben ser citados seg\u00fan proceda (art. 25 LJV)',[
+         'El SOLICITANTE (progenitor autor del reconocimiento) \u2014 SIEMPRE',
+         'El MINISTERIO FISCAL \u2014 SIEMPRE (participaci\u00f3n preceptiva, art. 4 LJV)',
+         'El PROGENITOR CONOCIDO \u2014 cuando existe filiaci\u00f3n ya determinada respecto a la otra l\u00ednea',
+         'El REPRESENTANTE LEGAL o curador del reconocido (o el defensor judicial si fue nombrado)',
+         'El PROPIO RECONOCIDO \u2014 OBLIGATORIO si es mayor de 12 a\u00f1os; tambi\u00e9n si tiene suficiente madurez con independencia de la edad',
+         'Los DESCENDIENTES del reconocido \u2014 si el reconocido hubiere fallecido y los hubiere',
+         'Otras PERSONAS que se estime oportuno seg\u00fan las circunstancias del caso'
+       ]],
+       ['w','ATENCI\u00d3N \u2014 OPOSICI\u00d3N: si alg\u00fan interesado prev\u00e9 formular oposici\u00f3n, deber\u00e1 hacerlo en los 5 d\u00edas siguientes a la citaci\u00f3n. La oposici\u00f3n NO hace contencioso el expediente ni suspende su tramitaci\u00f3n, pero desde ese momento la actuaci\u00f3n de Abogado y Procurador es OBLIGATORIA para todas las partes (arts. 17.3 y 3.4 LJV).'],
+       ['l','Art. 25 LJV 15/2015; art. 17 LJV 15/2015; art. 4 LJV 15/2015']],
+    q:'\u00bfHa formulado alg\u00fan interesado oposici\u00f3n en el plazo de 5 d\u00edas desde la citaci\u00f3n?',
+    opts:[
+      {t:'No \u2014 ning\u00fan interesado ha formulado oposici\u00f3n en plazo \u2192 proceder a la celebraci\u00f3n de la comparecencia',l:'ok',n:'comparecencia'},
+      {t:'S\u00ed \u2014 alg\u00fan interesado ha formulado oposici\u00f3n dentro del plazo de 5 d\u00edas',l:'warn',n:'oposicion'}
+    ]},
+
+  oposicion:{ph:2,t:'Oposici\u00f3n formulada por interesado (art. 17.3 LJV)',ac:'laj',
+    c:[['i','Uno o varios interesados han formulado oposici\u00f3n en el plazo de cinco d\u00edas siguientes a su citaci\u00f3n. El LAJ da traslado INMEDIATO del escrito de oposici\u00f3n a la parte solicitante.'],
+       ['w','PUNTO CR\u00cdTICO: la oposici\u00f3n NO hace contencioso el expediente ni impide que contin\u00fae su tramitaci\u00f3n hasta que sea resuelto. El expediente sigue adelante con normalidad.'],
+       ['w','POSTULACI\u00d3N OBLIGATORIA: desde el momento en que se formula oposici\u00f3n, la actuaci\u00f3n de Abogado y Procurador es OBLIGATORIA para todas las partes. Verificar que los interesados que prosigan sin postulaci\u00f3n sean requeridos para subsanarla.'],
+       ['n','El escrito de oposici\u00f3n se traslada INMEDIATAMENTE al solicitante. La comparecencia se celebra con normalidad; el oponente har\u00e1 valer su posici\u00f3n en ese acto procesal.'],
+       ['l','Art. 17.3 LJV 15/2015; art. 3.4 LJV 15/2015']],
+    nx:'comparecencia'},
+
+  comparecencia:{ph:2,t:'Celebraci\u00f3n de la comparecencia',ac:'juez',
+    c:[['i','La comparecencia se celebra ante el Juez (el expediente afecta al estado civil y a derechos de menores o personas con discapacidad, reserva del art. 2.3 LJV), dentro del plazo m\u00e1ximo de treinta d\u00edas desde la admisi\u00f3n de la solicitud.'],
+       ['d','PLAZO M\u00c1XIMO: 30 d\u00edas desde la admisi\u00f3n de la solicitud para la celebraci\u00f3n de la comparecencia.'],
+       ['cl','Desarrollo de la comparecencia (art. 18 LJV)',[
+         'El Juez oye al solicitante, a los dem\u00e1s citados y a las personas que la ley dispone',
+         'Si el reconocido es mayor de 12 a\u00f1os o tiene suficiente madurez: audiencia obligatoria, en condiciones id\u00f3neas adaptadas a su edad y circunstancias',
+         'Si el reconocido es menor o persona con discapacidad: posibilidad de audiencia en acto separado, sin interferencias, con asistencia del Ministerio Fiscal',
+         'El LAJ levanta acta del resultado de la exploraci\u00f3n del reconocido (datos objetivos del desarrollo; preservar su intimidad)',
+         'Se practican las pruebas propuestas y admitidas por el Juez',
+         'Concluidas las pruebas: los interesados formulan oralmente sus conclusiones',
+         'Cuestiones procesales (incluyendo de competencia): se resuelven oralmente en el acto',
+         'El desarrollo completo de la comparecencia se registra en soporte audiovisual (art. 18.2.6.\u00aa LJV)',
+         'Adaptaciones y ajustes para personas con discapacidad: obligatorios, de oficio o a petici\u00f3n (art. 7 bis LJV)'
+       ]],
+       ['w','Si el solicitante no asiste a la comparecencia sin causa justificada: el Juez archiva el expediente por desistimiento (art. 18.2.1.\u00aa LJV).'],
+       ['l','Art. 18 LJV 15/2015; art. 25 LJV 15/2015; art. 7 bis LJV 15/2015']],
+    q:'\u00bfQu\u00e9 ocurre con la asistencia del solicitante a la comparecencia?',
+    opts:[
+      {t:'El solicitante comparece \u2192 la comparecencia se celebra con normalidad \u2192 proceder a deliberaci\u00f3n judicial',l:'ok',n:'deliberacion'},
+      {t:'El solicitante NO comparece sin causa justificada \u2192 el Juez archiva el expediente teni\u00e9ndolo por desistido',l:'bad',n:'archivo_desistimiento'}
+    ]},
+
+  archivo_desistimiento:{ph:2,t:'Archivo por incomparecencia del solicitante (desistimiento)',ac:'juez',end:'warning',
+    c:[['i','El Juez acuerda el archivo del expediente al no haber comparecido el solicitante, teni\u00e9ndolo por desistido del expediente (art. 18.2.1.\u00aa LJV).'],
+       ['n','El desistimiento por incomparecencia no genera cosa juzgada ni impide que el solicitante presente una nueva solicitud si decide retomar el procedimiento.'],
+       ['l','Art. 18.2.1.\u00aa LJV 15/2015']]},
+
+  deliberacion:{ph:3,t:'Deliberaci\u00f3n y dictado del auto judicial (art. 26 LJV)',ac:'juez',
+    c:[['i','Concluida la comparecencia o recibido el informe escrito del MF, el Juez dispone de cinco d\u00edas para dictar auto resolviendo el expediente. La resoluci\u00f3n toma la forma de AUTO (el Juez, no el LAJ, por reserva del art. 2.3 LJV).'],
+       ['d','PLAZO: 5 d\u00edas desde la terminaci\u00f3n de la comparecencia (o desde la \u00faltima diligencia practicada si no se celebr\u00f3 comparecencia) para dictar auto (art. 19 LJV).'],
+       ['cl','Criterios de valoraci\u00f3n del Juez (art. 26.1 LJV \u2014 cuatro par\u00e1metros con jerarqu\u00eda impl\u00edcita)',[
+         '(1) Discernimiento del progenitor: aptitud para comprender el alcance y efectos del reconocimiento. No equivale a plena capacidad de obrar.',
+         '(2) Veracidad o autenticidad del acto: voluntad real y libre de vicios (presiones externas, enga\u00f1o, error esencial sobre el v\u00ednculo biol\u00f3gico).',
+         '(3) Verosimilitud de la relaci\u00f3n de procreaci\u00f3n \u2014 SIN necesidad de prueba plena: basta la credibilidad del v\u00ednculo biol\u00f3gico sustentada en elementos indiciarios.',
+         '(4) Inter\u00e9s del reconocido cuando sea menor o persona con discapacidad: CRITERIO PREVALENTE. El Juez puede denegar aunque los tres criterios anteriores concurran, si la filiaci\u00f3n no redunda en inter\u00e9s del reconocido.'
+       ]],
+       ['n','PRINCIPIO INQUISITIVO REFORZADO: cuando el expediente afecte a menores o personas con discapacidad, la decisi\u00f3n puede fundarse en hechos conocidos durante el expediente aunque no los hubieran invocado las partes (art. 19.2 LJV).'],
+       ['n','SUPUESTO ESPECIAL (art. 23.2 / art. 26.2): en el caso de autorizaci\u00f3n por hermano o pariente consangu\u00edneo del otro progenitor, el Juez SOLO autorizar\u00e1 cuando sea en inter\u00e9s del menor o persona con discapacidad. La carga de acreditar ese inter\u00e9s positivo recae sobre el promotor.'],
+       ['l','Art. 26 LJV 15/2015; art. 19 LJV 15/2015; arts. 121, 124 CC']],
+    q:'\u00bfCu\u00e1l es el sentido del auto dictado por el Juez?',
+    opts:[
+      {t:'Auto ESTIMATORIO \u2014 el Juez concede la autorizaci\u00f3n o la aprobaci\u00f3n solicitada',l:'ok',n:'auto_estimatorio'},
+      {t:'Auto DESESTIMATORIO \u2014 el Juez deniega la autorizaci\u00f3n o la aprobaci\u00f3n solicitada',l:'bad',n:'auto_desestimatorio'}
+    ]},
+
+  auto_estimatorio:{ph:3,t:'Auto estimatorio \u2014 Autorizaci\u00f3n o aprobaci\u00f3n concedida',ac:'juez',
+    c:[['i','El Juez dicta auto concediendo la autorizaci\u00f3n (supuestos del art. 23.2) o la aprobaci\u00f3n (supuestos del art. 23.3 y 23.4) solicitada. El auto es ejecutivo aunque no sea firme (el recurso de apelaci\u00f3n no tiene efectos suspensivos).'],
+       ['n','Efectos de la AUTORIZACI\u00d3N concedida: el reconociente queda habilitado para otorgar el reconocimiento ante el Registro Civil o notario. Efectos de la APROBACI\u00d3N concedida: el reconocimiento ya otorgado despliega su plena eficacia jur\u00eddica.'],
+       ['n','Efectos sustantivos de la filiaci\u00f3n determinada: apellidos (arts. 109 y 111 CC) \u00b7 obligaciones de alimentos (art. 143 CC) \u00b7 derechos sucesorios (arts. 807 y ss. CC) \u00b7 relaciones paterno-filiales (arts. 154 y ss. CC).'],
+       ['l','Art. 26.1 LJV 15/2015; arts. 109, 111, 143, 154, 807 CC']],
+    nx:'eficacia_registral'},
+
+  eficacia_registral:{ph:4,t:'Remisi\u00f3n del testimonio al Registro Civil (art. 26.3 LJV)',ac:'laj',
+    c:[['i','El LAJ expide testimonio del auto estimatorio y lo remite al Registro Civil competente para proceder a la inscripci\u00f3n de la filiaci\u00f3n no matrimonial. La remisi\u00f3n es AUTOM\u00c1TICA y no requiere instancia de parte.'],
+       ['d','Verificar: el testimonio debe remitirse al Registro Civil de la circunscripci\u00f3n donde est\u00e9 inscrito el nacimiento del reconocido. La remisi\u00f3n se realiza por medios electr\u00f3nicos (art. 22.2 LJV).'],
+       ['n','La inscripci\u00f3n en el Registro Civil tiene eficacia ERGA OMNES: la filiaci\u00f3n queda oponible frente a todos desde ese momento. El reconocido pasa a figurar en el Registro con los apellidos que correspondan conforme a los arts. 109 y 111 CC.'],
+       ['n','NOTA ESPECIAL (supuesto del art. 23.2 \u2014 autorizaci\u00f3n): si en el futuro el reconocido presenta ante el Juez un documento p\u00fablico con su manifestaci\u00f3n en contrario, realizada una vez alcanzada la plena capacidad, el Juez INVALIDAR\u00c1 la determinaci\u00f3n de la filiaci\u00f3n (art. 26.2 LJV). Ausencia de plazo preclusivo.'],
+       ['l','Art. 26.3 LJV 15/2015; art. 22.2 LJV 15/2015; art. 44 Ley 20/2011 del Registro Civil']],
+    nx:'recurso_auto_est'},
+
+  auto_desestimatorio:{ph:3,t:'Auto desestimatorio \u2014 Autorizaci\u00f3n o aprobaci\u00f3n denegada',ac:'juez',
+    c:[['i','El Juez dicta auto denegando la autorizaci\u00f3n o la aprobaci\u00f3n. El reconocimiento no puede otorgarse (si se deneg\u00f3 la autorizaci\u00f3n) o no produce efectos (si se deneg\u00f3 la aprobaci\u00f3n posterior).'],
+       ['n','La denegaci\u00f3n NO cierra definitivamente la cuesti\u00f3n de la filiaci\u00f3n. El interesado puede acudir a la v\u00eda contenciosa mediante la acci\u00f3n de reclamaci\u00f3n de filiaci\u00f3n no matrimonial (arts. 131 y ss. CC), en la que es posible practicar prueba plena, incluida la prueba biol\u00f3gica de ADN.'],
+       ['l','Art. 26.1 LJV 15/2015; arts. 131\u2013140 CC']],
+    nx:'recurso_auto_des'},
+
+  recurso_auto_est:{ph:4,t:'Control de recurso contra el auto estimatorio',ac:'laj',
+    c:[['i','Cualquier interesado que se considere perjudicado por el auto estimatorio puede interponer recurso de apelaci\u00f3n conforme a la LEC ante la Audiencia Provincial. El recurso NO tiene efectos suspensivos: el auto puede ejecutarse \u2014y el reconocimiento inscribirse\u2014 mientras se sustancia la apelaci\u00f3n.'],
+       ['w','POSTULACI\u00d3N OBLIGATORIA para el recurso: la actuaci\u00f3n de Abogado y Procurador es siempre obligatoria para interponer el recurso de apelaci\u00f3n, aunque no lo fuera en el expediente de instancia (art. 3.4 LJV).'],
+       ['d','Plazo para interponer el recurso de apelaci\u00f3n: conforme a los arts. 455 y ss. LEC (20 d\u00edas desde la notificaci\u00f3n del auto).'],
+       ['l','Art. 20 LJV 15/2015; art. 3.4 LJV 15/2015; arts. 455 y ss. LEC']],
+    q:'\u00bfSe interpone recurso de apelaci\u00f3n contra el auto estimatorio?',
+    opts:[
+      {t:'No se interpone recurso \u2192 el auto adquiere firmeza; el procedimiento concluye con autorizaci\u00f3n/aprobaci\u00f3n firme',l:'ok',n:'fin_exitoso'},
+      {t:'Se interpone recurso de apelaci\u00f3n por un interesado perjudicado \u2192 el asunto pasa a la Audiencia Provincial (sin efectos suspensivos)',l:'warn',n:'apelacion_vs_est'}
+    ]},
+
+  recurso_auto_des:{ph:4,t:'Control de recurso contra el auto desestimatorio',ac:'laj',
+    c:[['i','El solicitante o cualquier otro interesado perjudicado por el auto desestimatorio puede interponer recurso de apelaci\u00f3n conforme a la LEC ante la Audiencia Provincial.'],
+       ['w','POSTULACI\u00d3N OBLIGATORIA para el recurso: la actuaci\u00f3n de Abogado y Procurador es siempre obligatoria para interponer el recurso de apelaci\u00f3n, aunque no lo fuera en el expediente de instancia (art. 3.4 LJV).'],
+       ['d','Plazo para interponer el recurso de apelaci\u00f3n: conforme a los arts. 455 y ss. LEC (20 d\u00edas desde la notificaci\u00f3n del auto).'],
+       ['l','Art. 20 LJV 15/2015; art. 3.4 LJV 15/2015; arts. 455 y ss. LEC']],
+    q:'\u00bfSe interpone recurso de apelaci\u00f3n contra el auto desestimatorio?',
+    opts:[
+      {t:'No se interpone recurso \u2192 el auto adquiere firmeza; el procedimiento concluye con denegaci\u00f3n firme',l:'bad',n:'fin_denegado'},
+      {t:'Se interpone recurso de apelaci\u00f3n \u2192 el asunto pasa a la Audiencia Provincial',l:'warn',n:'apelacion_vs_des'}
+    ]},
+
+  apelacion_vs_est:{ph:4,t:'Recurso de apelaci\u00f3n contra auto estimatorio \u2014 Audiencia Provincial',ac:'juez',
+    c:[['i','El recurso de apelaci\u00f3n contra el auto estimatorio se tramita ante la Audiencia Provincial conforme a las normas de la LEC. Quien recurre sostiene que no deb\u00eda haberse concedido la autorizaci\u00f3n o la aprobaci\u00f3n.'],
+       ['n','Durante la tramitaci\u00f3n del recurso, el auto recurrido puede ejecutarse (ausencia de efecto suspensivo). Si ya se practic\u00f3 la inscripci\u00f3n en el Registro Civil y el recurso prospera, deber\u00e1 procederse a su cancelaci\u00f3n.'],
+       ['l','Art. 20 LJV 15/2015; LEC (arts. 455 y ss. \u2014 recurso de apelaci\u00f3n)']],
+    q:'\u00bfC\u00f3mo resuelve la Audiencia Provincial el recurso de apelaci\u00f3n?',
+    opts:[
+      {t:'Recurso DESESTIMADO \u2014 la Audiencia confirma el auto estimatorio \u2192 el procedimiento concluye con autorizaci\u00f3n/aprobaci\u00f3n firme',l:'ok',n:'fin_exitoso_apelacion'},
+      {t:'Recurso ESTIMADO \u2014 la Audiencia revoca el auto estimatorio \u2192 la autorizaci\u00f3n o aprobaci\u00f3n concedida queda sin efecto',l:'bad',n:'fin_revocado_apelacion'}
+    ]},
+
+  apelacion_vs_des:{ph:4,t:'Recurso de apelaci\u00f3n contra auto desestimatorio \u2014 Audiencia Provincial',ac:'juez',
+    c:[['i','El recurso de apelaci\u00f3n contra el auto desestimatorio se tramita ante la Audiencia Provincial. El apelante sostiene que el Juez de instancia deber\u00eda haber concedido la autorizaci\u00f3n o la aprobaci\u00f3n.'],
+       ['l','Art. 20 LJV 15/2015; LEC (arts. 455 y ss. \u2014 recurso de apelaci\u00f3n)']],
+    q:'\u00bfC\u00f3mo resuelve la Audiencia Provincial el recurso de apelaci\u00f3n?',
+    opts:[
+      {t:'Recurso DESESTIMADO \u2014 la Audiencia confirma la denegaci\u00f3n \u2192 el procedimiento concluye con denegaci\u00f3n definitiva',l:'bad',n:'fin_denegado_apelacion'},
+      {t:'Recurso ESTIMADO \u2014 la Audiencia revoca el auto desestimatorio y concede la autorizaci\u00f3n o aprobaci\u00f3n solicitada',l:'ok',n:'fin_exitoso_apelacion'}
+    ]},
+
+  /* ── FINALES ── */
+  fin_exitoso:{ph:4,t:'Procedimiento concluido \u2014 Autorizaci\u00f3n/Aprobaci\u00f3n concedida y firme',ac:'laj',end:'success',
+    c:[['i','El auto estimatorio ha adquirido firmeza. La filiaci\u00f3n no matrimonial queda judicialmente controlada y la inscripci\u00f3n en el Registro Civil produce efectos erga omnes. El expediente de jurisdicci\u00f3n voluntaria concluye.'],
+       ['n','NOTA ESPECIAL (supuesto de autorizaci\u00f3n, art. 23.2): si en el futuro el reconocido presenta ante el Juez un documento p\u00fablico con su manifestaci\u00f3n en contrario \u2014realizada una vez alcanzada la plena capacidad\u2014, el Juez deber\u00e1 invalidar la determinaci\u00f3n de la filiaci\u00f3n (art. 26.2 LJV). No existe plazo preclusivo para ejercitar este derecho.'],
+       ['l','Arts. 23\u201326 LJV 15/2015; art. 44 Ley 20/2011 RC']]},
+
+  fin_exitoso_apelacion:{ph:4,t:'Procedimiento concluido \u2014 Autorizaci\u00f3n/Aprobaci\u00f3n concedida en segunda instancia',ac:'juez',end:'success',
+    c:[['i','La Audiencia Provincial ha resuelto el recurso de apelaci\u00f3n de forma favorable a la concesi\u00f3n. La autorizaci\u00f3n o aprobaci\u00f3n queda firme y la inscripci\u00f3n en el Registro Civil produce efectos erga omnes.'],
+       ['n','NOTA ESPECIAL (supuesto de autorizaci\u00f3n, art. 23.2): si en el futuro el reconocido presenta ante el Juez un documento p\u00fablico con su manifestaci\u00f3n en contrario \u2014realizada una vez alcanzada la plena capacidad\u2014, el Juez deber\u00e1 invalidar la determinaci\u00f3n de la filiaci\u00f3n (art. 26.2 LJV).'],
+       ['l','Arts. 23\u201326 LJV 15/2015; art. 44 Ley 20/2011 RC']]},
+
+  fin_denegado:{ph:4,t:'Procedimiento concluido \u2014 Autorizaci\u00f3n/Aprobaci\u00f3n denegada (firme)',ac:'laj',end:'neutral',
+    c:[['i','El auto desestimatorio ha adquirido firmeza. La autorizaci\u00f3n o la aprobaci\u00f3n han sido denegadas. El reconocimiento no puede otorgarse (si se deneg\u00f3 la autorizaci\u00f3n) o no produce efectos (si se deneg\u00f3 la aprobaci\u00f3n).'],
+       ['n','V\u00cdA ALTERNATIVA: el interesado conserva el derecho a acudir a la v\u00eda contenciosa para reclamar la filiaci\u00f3n mediante la ACCI\u00d3N DE RECLAMACI\u00d3N DE FILIACI\u00d3N NO MATRIMONIAL (arts. 131 y ss. CC), en la que s\u00ed es posible practicar prueba plena, incluida la prueba biol\u00f3gica de ADN.'],
+       ['l','Art. 26.1 LJV 15/2015; arts. 131\u2013140 CC']]},
+
+  fin_denegado_apelacion:{ph:4,t:'Procedimiento concluido \u2014 Autorizaci\u00f3n/Aprobaci\u00f3n denegada en segunda instancia',ac:'juez',end:'neutral',
+    c:[['i','La Audiencia Provincial ha confirmado la denegaci\u00f3n del Juzgado de Primera Instancia. La denegaci\u00f3n adquiere firmeza en segunda instancia.'],
+       ['n','V\u00cdA ALTERNATIVA: el interesado conserva el derecho a acudir a la v\u00eda contenciosa mediante la acci\u00f3n de reclamaci\u00f3n de filiaci\u00f3n no matrimonial (arts. 131 y ss. CC).'],
+       ['l','Arts. 131\u2013140 CC; art. 26.1 LJV 15/2015']]},
+
+  fin_revocado_apelacion:{ph:4,t:'Procedimiento concluido \u2014 Autorizaci\u00f3n/Aprobaci\u00f3n revocada en apelaci\u00f3n',ac:'juez',end:'warning',
+    c:[['i','La Audiencia Provincial ha revocado el auto estimatorio dictado en primera instancia. La autorizaci\u00f3n o aprobaci\u00f3n que hab\u00eda sido concedida queda sin efecto.'],
+       ['w','ACCI\u00d3N INMEDIATA: verificar si la filiaci\u00f3n ya fue inscrita en el Registro Civil durante la tramitaci\u00f3n del recurso (dado que el recurso no tiene efectos suspensivos). Si es as\u00ed, coordinar con el Registro Civil la cancelaci\u00f3n de la inscripci\u00f3n conforme a las normas del Registro Civil.'],
+       ['l','Art. 20 LJV 15/2015; Ley 20/2011 del Registro Civil']]}
+};
+
+/* Mapa de nodos por fase para el sidebar y el overlay */
+const PHASE_NODES = [
+  ['inicio','tipo_aut','tipo_ap_a','tipo_ap_b','tipo_ap_c','tipo_ap_disc'],
+  ['competencia','fuero_subsidiario','solicitud','control_admision','subsanacion','incompetencia_objetiva','incompetencia_territorial','conflicto_intereses','defensor_judicial','admision_formal','fin_sin_competencia','archivo_defectos'],
+  ['citacion','informe_mf_escrito','oposicion','comparecencia','archivo_desistimiento'],
+  ['deliberacion','auto_estimatorio','auto_desestimatorio'],
+  ['eficacia_registral','recurso_auto_est','recurso_auto_des','apelacion_vs_est','apelacion_vs_des','fin_exitoso','fin_exitoso_apelacion','fin_denegado','fin_denegado_apelacion','fin_revocado_apelacion']
+];
+
+/* =========================================================
+   ESTADO (M\u00f3dulo 16)
+   ========================================================= */
+let cur = 'inicio';
+let hist = []; // cada entrada: {s: claveOrigen, next: claveDestino, c: textoOpci\u00f3nElegida}
+let activeSbTab = 'map';
+let phaseCollapsed = {};
+let mapaOn = false;
+
+/* =========================================================
+   NAVEGACI\u00d3N (M\u00f3dulo 16)
+   ========================================================= */
+function goTo(stepId, choiceLabel) {
+  if (!STEPS[stepId]) return;
+  hist.push({s: cur, next: stepId, c: choiceLabel || ''});
+  cur = stepId;
+  if (choiceLabel) sbTab('journey');
+  render();
+}
+
+function goBack() {
+  if (hist.length === 0) return;
+  cur = hist.pop().s;
+  render();
+}
+
+function goBackTo(index) {
+  if (index < 0) return;
+  var fullPath = ['inicio'];
+  hist.forEach(function(h) { fullPath.push(h.next); });
+  if (index >= fullPath.length) return;
+  cur = fullPath[index];
+  hist = hist.slice(0, index);
+  render();
+}
+
+function restart() {
+  cur = 'inicio';
+  hist = [];
+  sbTab('map');
+  render();
+}
+
+/* =========================================================
+   SIDEBAR TABS (M\u00f3dulo 9.3)
+   ========================================================= */
+function sbTab(tab) {
+  activeSbTab = tab;
+  var map = document.getElementById('sb-map');
+  var jny = document.getElementById('sb-journey');
+  if (map) map.style.display = (tab === 'map') ? 'block' : 'none';
+  if (jny) jny.style.display = (tab === 'journey') ? 'block' : 'none';
+  document.querySelectorAll('.sb-tab').forEach(function(t) {
+    t.classList.toggle('active', t.dataset.tab === tab);
+  });
+}
+
+/* =========================================================
+   MAP OVERLAY (M\u00f3dulo 10)
+   ========================================================= */
+function toggleMapa() {
+  mapaOn = !mapaOn;
+  var lay = document.getElementById('layout');
+  var ovl = document.getElementById('mapa-overlay');
+  if (lay) lay.style.display = mapaOn ? 'none' : 'flex';
+  if (ovl) ovl.style.display = mapaOn ? 'block' : 'none';
+  if (mapaOn) renderMapa();
+}
+
+function renderMapa() {
+  var visited = getVisitedSet();
+  var cols = PHASE_NODES.map(function(nodes, pi) {
+    var nodeHtml = nodes.map(function(id) {
+      var s = STEPS[id];
+      if (!s) return '';
+      var cls = 'mapa-node';
+      if (id === cur) cls += ' mn-current';
+      else if (visited.has(id)) cls += ' mn-visited';
+      else if (s.end) cls += ' mn-end-' + s.end;
+      var actLbl = ACTORS[s.ac] || s.ac;
+      var edgesHtml = '';
+      if (s.opts) {
+        edgesHtml = '<div class="mapa-node-edges">' + s.opts.map(function(o) {
+          return '<div class="mapa-edge"><span class="mapa-edge-arrow">\u2192</span>' + abbrev(o.t, 40) + '</div>';
+        }).join('') + '</div>';
+      } else if (s.nx) {
+        var ns = STEPS[s.nx];
+        edgesHtml = '<div class="mapa-node-edges"><div class="mapa-edge"><span class="mapa-edge-arrow">\u2192</span>' + (ns ? abbrev(ns.t, 40) : s.nx) + '</div></div>';
+      }
+      var jumpBtn = '<button class="mapa-node-jump" data-action="jump-to" data-step="' + id + '">Ir a este paso</button>';
+      return '<div class="' + cls + '"><div class="mapa-node-title">' + s.t + '</div><div class="mapa-node-actor">' + actLbl + '</div>' + edgesHtml + jumpBtn + '</div>';
+    }).join('');
+    return '<div class="mapa-col"><div class="mapa-col-hdr">' + PHASES[pi] + '</div><div class="mapa-nodes">' + nodeHtml + '</div></div>';
+  }).join('');
+  document.getElementById('mapa-cols').innerHTML = cols;
+}
+
+/* =========================================================
+   HASH (M\u00f3dulo 20)
+   ========================================================= */
+function syncHash() {
+  var current = window.location.hash.replace('#', '');
+  if (current !== cur) {
+    history.replaceState(null, '', '#' + cur);
+  }
+}
+
+function loadFromHash() {
+  var h = window.location.hash.replace('#', '');
+  if (h && STEPS[h]) {
+    cur = h;
+    hist = [];
+  }
+}
+
+/* =========================================================
+   UTILIDADES (M\u00f3dulo 19)
+   ========================================================= */
+function escQ(s) { return String(s).replace(/'/g, "&#39;"); }
+
+function abbrev(s, max) {
+  if (!s) return '';
+  return s.length > max ? s.slice(0, max) + '\u2026' : s;
+}
+
+/* =========================================================
+   HELPERS
+   ========================================================= */
+function getVisitedSet() {
+  var visited = new Set();
+  hist.forEach(function(h) { visited.add(h.s); visited.add(h.next); });
+  visited.add(cur);
+  return visited;
+}
+
+/* Calcula el conjunto de nodos alcanzables desde el paso actual,
+   siguiendo las decisiones ya tomadas en el historial */
+function getReachableSet() {
+  var reachable = new Set();
+  // Partimos desde inicio y reproducimos las decisiones del historial
+  var allSteps = ['inicio'];
+  // Añadimos todos los destinos posibles desde los pasos recorridos
+  Object.keys(STEPS).forEach(function(k) { reachable.add(k); });
+  // En un grafo con múltiples caminos, todos los nodos son potencialmente alcanzables
+  // desde algún camino. Para marcar nodos como inalcanzables, necesitamos saber
+  // qué decisiones se tomaron. Simplificamos: marcamos como inalcanzables los nodos
+  // que son mutuamente excluyentes con las decisiones ya tomadas.
+  // Para esta implementación, verificamos si el nodo actual y los caminos
+  // tomados excluyen ciertos nodos.
+
+  // Recopilamos todos los destinos de las opciones NO tomadas en cada bifurcación
+  var excludedDestinations = new Set();
+  hist.forEach(function(h) {
+    var step = STEPS[h.s];
+    if (step && step.opts) {
+      step.opts.forEach(function(o) {
+        if (o.n !== h.next) {
+          // Los destinos de opciones no tomadas no necesariamente son inalcanzables
+          // a menos que el grafo sea un DAG estricto sin caminos alternativos.
+          // Para ser conservadores, solo marcamos como inalcanzables los nodos
+          // de tipo (aut/ap_a/ap_b/ap_c/ap_disc) cuando ya se eligió uno diferente.
+        }
+      });
+    }
+  });
+
+  // Enfoque más preciso: los nodos de tipo (tipo_aut, tipo_ap_a, etc.) son mutuamente
+  // excluyentes entre sí. Si se eligió uno, los demás no son alcanzables por este camino.
+  var tipoNodes = ['tipo_aut','tipo_ap_a','tipo_ap_b','tipo_ap_c','tipo_ap_disc'];
+  var chosenTipo = null;
+  hist.forEach(function(h) {
+    if (tipoNodes.indexOf(h.next) !== -1) {
+      chosenTipo = h.next;
+    }
+  });
+  if (chosenTipo) {
+    tipoNodes.forEach(function(n) {
+      if (n !== chosenTipo) {
+        excludedDestinations.add(n);
+      }
+    });
+  }
+
+  // Restamos los excluidos del total
+  excludedDestinations.forEach(function(n) { reachable.delete(n); });
+
+  return reachable;
+}
+
+/* =========================================================
+   RENDER (M\u00f3dulo 17)
+   ========================================================= */
+function render() {
+  renderPbar();
+  renderBreadcrumb();
+  renderSidebar();
+  renderContent();
+  syncHash();
+  var content = document.getElementById('content');
+  if (content) content.scrollTop = 0;
+}
+
+/* =========================================================
+   RENDER DE COMPONENTES
+   ========================================================= */
+
+/* --- Barra de fases (M\u00f3dulo 6) --- */
+function renderPbar() {
+  var s = STEPS[cur];
+  var curPh = s ? s.ph : 0;
+  var visitedPhs = new Set();
+  hist.forEach(function(h) {
+    var hs = STEPS[h.s];
+    if (hs) visitedPhs.add(hs.ph);
+  });
+  var html = PHASES.map(function(name, i) {
+    var cls = '';
+    if (i === curPh) cls = 'active';
+    else if (visitedPhs.has(i)) cls = 'done';
+    return '<div class="ph-item"><span class="ph-lbl ' + cls + '">' + name + '</span></div>' + (i < PHASES.length - 1 ? '<span class="ph-sep">\u203a</span>' : '');
+  }).join('');
+  document.getElementById('pbar').innerHTML = html;
+}
+
+/* --- Migas de pan (M\u00f3dulo 7) --- */
+function renderBreadcrumb() {
+  var fullPath = hist.length > 0 ? ['inicio'].concat(hist.map(function(h) { return h.next; })) : [cur];
+
+  if (fullPath.length === 1) {
+    var s = STEPS[cur];
+    document.getElementById('breadcrumb').innerHTML =
+      '<span class="bc-item bc-current">' + (s ? abbrev(s.t, 28) : cur) + '</span>';
+    return;
+  }
+  var items = fullPath.map(function(id, i) {
+    var s = STEPS[id];
+    var lbl = s ? abbrev(s.t, 28) : id;
+    if (i === fullPath.length - 1) return '<span class="bc-item bc-current">' + lbl + '</span>';
+    /* goBackTo(i) sets cur = fullPath[i] and hist = hist.slice(0, i),
+       which correctly restores the state when this step was current */
+    return '<button class="bc-item bc-past" data-action="go-back-to" data-index="' + i + '">' + lbl + '</button>';
+  });
+  document.getElementById('breadcrumb').innerHTML = items.join('<span class="bc-sep">\u203a</span>');
+}
+
+/* --- Sidebar (M\u00f3dulos 9.1, 9.2) --- */
+function renderSidebar() {
+  renderSbMap();
+  renderSbJourney();
+}
+
+function renderSbMap() {
+  var visited = getVisitedSet();
+  var reachable = getReachableSet();
+  var html = PHASE_NODES.map(function(nodes, pi) {
+    var collapsed = phaseCollapsed[pi] === true;
+    var nodesHtml = nodes.map(function(id) {
+      var s = STEPS[id];
+      if (!s) return '';
+      var cls = 'sm-node';
+      if (id === cur) cls += ' sm-current';
+      else if (visited.has(id)) cls += ' sm-visited';
+      else if (!reachable.has(id)) cls += ' sm-unreachable';
+      else if (s.end) cls += ' sm-end-' + s.end;
+      var jumpBtn = '';
+      if (id !== cur && reachable.has(id)) {
+        jumpBtn = '<span class="sm-node-jump" data-action="jump-to" data-step="' + id + '">Ir</span>';
+      }
+      return '<button class="' + cls + '" data-action="preview-node" data-step="' + id + '"><span class="sm-node-text">' + abbrev(s.t, 34) + '</span>' + jumpBtn + '</button>';
+    }).join('');
+    return '<div class="sm-phase">' +
+      '<div class="sm-phase-hdr" data-action="toggle-phase" data-phase="' + pi + '">' +
+        '<span>' + PHASES[pi] + '</span>' +
+        '<span class="sm-phase-toggle">' + (collapsed ? '\u25b6' : '\u25bc') + '</span>' +
+      '</div>' +
+      '<div class="sm-nodes" style="display:' + (collapsed ? 'none' : 'block') + '">' + nodesHtml + '</div>' +
+    '</div>';
+  }).join('');
+  document.getElementById('sb-map').innerHTML = html;
+}
+
+function renderSbJourney() {
+  var fullPath = hist.length > 0 ? ['inicio'].concat(hist.map(function(h) { return h.next; })) : [cur];
+  var pathHtml = fullPath.map(function(id, i) {
+    var s = STEPS[id];
+    var isCur = i === fullPath.length - 1;
+    var choice = i < hist.length ? hist[i].c : '';
+    return '<div class="pi ' + (isCur ? 'current' : 'past') + '">' +
+      abbrev(s ? s.t : id, 30) +
+      (choice ? '<div class="pi-choice">\u2192 ' + abbrev(choice, 36) + '</div>' : '') +
+    '</div>';
+  }).join('');
+
+  var refs = [
+    'LJV 15/2015, arts. 23-26',
+    'CC, arts. 120-126',
+    'Ley 20/2011 RC, art. 44',
+    'CC, arts. 131-140'
+  ];
+  var refsHtml = refs.map(function(r) { return '<div class="sb-foot-ref">' + r + '</div>'; }).join('');
+
+  document.getElementById('sb-journey').innerHTML =
+    '<div id="sb-journey-items">' + pathHtml + '</div>' +
+    '<div class="sb-foot"><div class="sb-foot-title">Referencias normativas</div>' + refsHtml + '</div>';
+}
+
+/* --- Contenido principal (M\u00f3dulos 13, 14) --- */
+function renderContent() {
+  var s = STEPS[cur];
+  if (!s) return;
+  var host = document.getElementById('content');
+  if (!host) return;
+  host.innerHTML = s.end ? buildEnd(s) : buildStep(s);
+}
+
+/* --- Construir tarjeta de paso (M\u00f3dulo 13) --- */
+function buildStep(s) {
+  var actClass = 'act-' + s.ac;
+  var actLabel = ACTORS[s.ac] || s.ac;
+  var phName = PHASES[s.ph];
+  var stepNum = hist.length + 1;
+
+  var bodyHtml = (s.c || []).map(function(b) { return buildBlock(b); }).join('');
+
+  var decHtml = '';
+  if (s.opts) {
+    var letters = ['A','B','C','D','E','F','G','H'];
+    var optsHtml = s.opts.map(function(o, i) {
+      var lClass = o.l || 'neutral';
+      return '<button class="dec-btn ' + lClass + '" data-action="go-to" data-step="' + o.n + '" data-label="' + escQ(o.t) + '">' +
+        '<span class="dec-letter">' + letters[i] + '</span>' +
+        '<span>' + o.t + '</span>' +
+      '</button>';
+    }).join('');
+    decHtml = '<div class="dec-area">' +
+      '<div class="dec-q">' + (s.q || 'Seleccione la opci\u00f3n correspondiente:') + '</div>' +
+      '<div class="dec-opts">' + optsHtml + '</div>' +
+    '</div>';
+  }
+
+  var nextHtml = s.nx
+    ? '<button class="btn-next" data-action="go-to" data-step="' + s.nx + '" data-label="">Siguiente \u2192</button>'
+    : '';
+
+  var backDisabled = hist.length === 0 ? 'disabled' : '';
+
+  return '<div class="card">' +
+    '<div class="c-hdr">' +
+      '<div class="c-hdr-top">' +
+        '<span class="act-badge ' + actClass + '">' + actLabel + '</span>' +
+        '<div class="c-title">' + s.t + '</div>' +
+      '</div>' +
+      '<div class="step-num">Paso ' + stepNum + ' de este recorrido \u00b7 Fase ' + (s.ph + 1) + ': ' + phName + '</div>' +
+    '</div>' +
+    '<div class="c-body">' + bodyHtml + '</div>' +
+    decHtml +
+    '<div class="c-nav">' +
+      '<button class="btn-back" data-action="go-back" ' + backDisabled + '>\u2190 Volver</button>' +
+      nextHtml +
+    '</div>' +
+  '</div>';
+}
+
+/* --- Renderizar bloque de contenido (M\u00f3dulo 12) --- */
+function buildBlock(b) {
+  switch (b[0]) {
+    case 'i': return '<p class="blk-i">' + b[1] + '</p>';
+    case 'd': return '<div class="blk-d">\u23f1 ' + b[1] + '</div>';
+    case 'n': return '<div class="blk-n">\u2139\ufe0f ' + b[1] + '</div>';
+    case 'w': return '<div class="blk-w">\u26a0\ufe0f ' + b[1] + '</div>';
+    case 'l': return '<div class="blk-l">\ud83d\udcd6 ' + b[1] + '</div>';
+    case 'cl':
+      var items = (b[2] || []).map(function(it) { return '<li>' + it + '</li>'; }).join('');
+      return '<div class="blk-cl"><div class="blk-cl-title">' + b[1] + '</div><ul>' + items + '</ul></div>';
+    default: return '';
+  }
+}
+
+/* --- Construir tarjeta final (M\u00f3dulo 14) --- */
+function buildEnd(s) {
+  var icons = {success:'\u2705', error:'\u274c', warning:'\u26a0\ufe0f', neutral:'\u2139\ufe0f'};
+  var icon = icons[s.end] || '\u2022';
+  var title = s.end === 'success' ? 'Autorizaci\u00f3n/Aprobaci\u00f3n concedida' :
+              s.end === 'error' ? 'Sin \u00f3rgano competente' :
+              s.end === 'warning' ? 'Expediente archivado' : 'Resoluci\u00f3n firme';
+
+  var bodyHtml = (s.c || []).map(function(b) { return buildBlock(b); }).join('');
+
+  /* Summary */
+  var fullPath = hist.length > 0 ? ['inicio'].concat(hist.map(function(h) { return h.next; })) : [cur];
+  var sumItems = fullPath.map(function(id, i) {
+    var st = STEPS[id];
+    var choice = i < hist.length ? hist[i].c : null;
+    return '<div class="sum-item">' +
+      '<div class="sum-n">' + (i + 1) + '</div>' +
+      '<div class="sum-step">' +
+        '<div>' + (st ? st.t : id) + '</div>' +
+        (choice ? '<div class="sum-choice">\u2192 ' + abbrev(choice, 60) + '</div>' : '') +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  return '<div class="card end-' + s.end + '">' +
+    '<div class="end-body">' +
+      '<div class="end-icon">' + icon + '</div>' +
+      '<div class="end-title">' + title + '</div>' +
+      '<div class="end-sub">' + s.t + '</div>' +
+      '<div class="end-actions">' +
+        '<button class="btn-next" data-action="reiniciar">\u21ba Nuevo procedimiento</button>' +
+        '<button class="btn-back" data-action="go-back">\u2190 Volver</button>' +
+      '</div>' +
+    '</div>' +
+    '<div class="end-content" style="padding:0 20px 20px;">' +
+      bodyHtml +
+      '<div class="summary-box">' +
+        '<div class="sum-title">Resumen del recorrido seguido (' + fullPath.length + ' pasos)</div>' +
+        sumItems +
+      '</div>' +
+    '</div>' +
+  '</div>';
+}
+
+/* =========================================================
+   DESCARGA (M\u00f3dulo 18)
+   ========================================================= */
+function dlGuia() {
+  var html = '<!DOCTYPE html>' + document.documentElement.outerHTML;
+  var blob = new Blob([html], {type: 'text/html;charset=utf-8'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'guia-tramitacion-filiacion-no-matrimonial.html';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+/* =========================================================
+   PREVIEW TOOLTIP (M\u00f3dulo 9.1)
+   ========================================================= */
+var activePreview = null;
+
+function showPreview(stepId, anchorEl) {
+  closePreview();
+  var s = STEPS[stepId];
+  if (!s) return;
+
+  var preview = document.createElement('div');
+  preview.className = 'sm-preview';
+  preview.setAttribute('data-preview', 'true');
+
+  var actLabel = ACTORS[s.ac] || s.ac;
+  var bodyPreview = '';
+  (s.c || []).slice(0, 2).forEach(function(b) {
+    if (b[0] === 'i' || b[0] === 'n') {
+      bodyPreview += '<p>' + abbrev(b[1], 120) + '</p>';
+    }
+  });
+
+  var isReachable = getReachableSet().has(stepId);
+  var jumpBtn = '';
+  if (isReachable && stepId !== cur) {
+    jumpBtn = '<button class="sm-preview-jump" data-action="jump-to" data-step="' + stepId + '">Ir a este paso</button>';
+  }
+
+  preview.innerHTML = '<div class="sm-preview-title">' + s.t + '</div>' +
+    '<div class="sm-preview-actor">' + actLabel + '</div>' +
+    '<div class="sm-preview-body">' + bodyPreview + '</div>' +
+    '<div class="sm-preview-actions">' + jumpBtn +
+      '<button class="sm-preview-close" data-action="close-preview">Cerrar</button>' +
+    '</div>';
+
+  document.body.appendChild(preview);
+  activePreview = preview;
+
+  // Position near the anchor element
+  var rect = anchorEl.getBoundingClientRect();
+  var previewRect = preview.getBoundingClientRect();
+  var top = rect.bottom + 6;
+  var left = rect.right + 6;
+
+  // Adjust if off-screen
+  if (top + previewRect.height > window.innerHeight) {
+    top = rect.top - previewRect.height - 6;
+  }
+  if (left + previewRect.width > window.innerWidth) {
+    left = rect.left - previewRect.width - 6;
+  }
+  if (left < 4) left = 4;
+  if (top < 4) top = 4;
+
+  preview.style.top = top + 'px';
+  preview.style.left = left + 'px';
+}
+
+function closePreview() {
+  if (activePreview) {
+    activePreview.remove();
+    activePreview = null;
+  }
+}
+
+/* =========================================================
+   EVENTOS (M\u00f3dulo 21)
+   ========================================================= */
+function wireEvents() {
+  document.addEventListener('click', function(ev) {
+    var el = ev.target.closest('[data-action]');
+    if (!el) {
+      // Close preview if clicking outside
+      if (activePreview && !ev.target.closest('[data-preview]') && !ev.target.closest('[data-action="preview-node"]')) {
+        closePreview();
+      }
+      return;
+    }
+    var action = el.dataset.action;
+
+    switch (action) {
+      case 'toggle-mapa':
+        toggleMapa();
+        break;
+
+      case 'descargar':
+        dlGuia();
+        break;
+
+      case 'reiniciar':
+        restart();
+        break;
+
+      case 'sb-tab':
+        sbTab(el.dataset.tab);
+        break;
+
+      case 'go-back':
+        goBack();
+        break;
+
+      case 'go-back-to':
+        goBackTo(parseInt(el.dataset.index, 10));
+        break;
+
+      case 'go-to':
+        goTo(el.dataset.step, el.dataset.label || '');
+        break;
+
+      case 'jump-to':
+        if (STEPS[el.dataset.step]) {
+          closePreview();
+          cur = el.dataset.step;
+          hist = [];
+          render();
+        }
+        break;
+
+      case 'close-mapa':
+        toggleMapa();
+        break;
+
+      case 'toggle-phase':
+        var pi = parseInt(el.dataset.phase, 10);
+        phaseCollapsed[pi] = !phaseCollapsed[pi];
+        renderSbMap();
+        break;
+
+      case 'preview-node':
+        var stepId = el.dataset.step;
+        if (stepId === cur) return;
+        showPreview(stepId, el);
+        break;
+
+      case 'close-preview':
+        closePreview();
+        break;
+    }
+  });
+
+  document.addEventListener('keydown', function(ev) {
+    if (ev.key === 'Escape' && mapaOn) toggleMapa();
+    if (ev.key === 'Escape' && activePreview) closePreview();
+  });
+}
+
+/* =========================================================
+   ARRANQUE (M\u00f3dulo 22)
+   ========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+  loadFromHash();
+  wireEvents();
+  render();
+});
+</script>
+</body>
+</html>

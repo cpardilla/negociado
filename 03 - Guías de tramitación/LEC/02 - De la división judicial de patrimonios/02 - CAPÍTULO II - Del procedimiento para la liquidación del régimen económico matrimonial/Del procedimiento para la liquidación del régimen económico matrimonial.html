@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Tramitación — Liquidación del Régimen Económico Matrimonial (LEC Arts. 806‑811)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1A2F6E; --navy-mid: #2E4DAA; --navy-lt: #4169E1;
+            --cyan: #0D9488; --cyan-bg: #F0FDFA;
+            --violet: #5B21B6; --violet-bg: #F5F3FF;
+            --green: #15803D; --green-bg: #F0FDF4;
+            --amber: #B45309; --amber-bg: #FFFBEB;
+            --red: #B91C1C; --red-bg: #FEF2F2;
+            --slate: #475569; --slate-bg: #F4F6FB;
+            --white: #FFFFFF; --bdr: #D1D9EE;
+            --text: #1A1A2E; --muted: #6B7280;
+        }
+        *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html,body { height: 100%; overflow: hidden; }
+        body {
+            font-family: 'Outfit', system-ui, sans-serif;
+            font-size: 14px; color: var(--text); background: var(--slate-bg);
+            line-height: 1.55;
+        }
+
+        /* APP SHELL */
+        #app { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+
+        /* HEADER */
+        #hdr { height: 56px; flex-shrink: 0; background: var(--navy); display: flex; justify-content: space-between; align-items: center; padding: 0 20px; gap: 12px; }
+        .h-left { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
+        .h-seal { width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,.10); border: 1.5px solid rgba(255,255,255,.25); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.75); font-size: 15px; flex-shrink: 0; }
+        .h-title { color: #fff; font-size: 13px; font-weight: 700; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .h-sub { color: rgba(255,255,255,.50); font-size: 10px; white-space: nowrap; }
+        .h-right { display: flex; gap: 6px; flex-shrink: 0; }
+        .btn { padding: 6px 11px; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid; transition: all .15s; white-space: nowrap; }
+        .btn-ghost { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); color: rgba(255,255,255,.85); }
+        .btn-ghost:hover { background: rgba(255,255,255,.18); }
+        .btn-blue { background: var(--navy-lt); color: white; border-color: var(--navy-lt); }
+        .btn-blue:hover { background: var(--navy); }
+
+        /* PHASE BAR */
+        #pbar { height: 36px; flex-shrink: 0; background: var(--navy-mid); display: flex; align-items: center; padding: 0 20px; overflow-x: auto; scrollbar-width: none; gap: 0; }
+        #pbar::-webkit-scrollbar { display: none; }
+        .ph-item { display: flex; align-items: center; }
+        .ph-lbl { font-size: 11px; font-weight: 600; padding: 4px 9px; border-radius: 4px; color: rgba(255,255,255,.38); white-space: nowrap; transition: all .15s; }
+        .ph-lbl.done { color: rgba(255,255,255,.68); }
+        .ph-lbl.active { color: #fff; background: rgba(65,105,225,.35); font-weight: 700; }
+        .ph-sep { color: rgba(255,255,255,.22); padding: 0 3px; font-size: 11px; }
+
+        /* BREADCRUMB */
+        #breadcrumb { height: 34px; flex-shrink: 0; background: var(--slate-bg); border-bottom: 1px solid var(--bdr); display: flex; align-items: center; padding: 0 20px; gap: 0; overflow-x: auto; scrollbar-width: none; }
+        #breadcrumb::-webkit-scrollbar { display: none; }
+        .bc-item { font-size: 12px; white-space: nowrap; padding: 0 5px; color: var(--muted); }
+        .bc-past { cursor: pointer; background: none; border: none; font-family: 'Outfit', sans-serif; font-size: 12px; color: var(--muted); padding: 0 5px; }
+        .bc-past:hover { color: var(--navy-lt); text-decoration: underline; }
+        .bc-current { font-weight: 600; color: var(--navy); }
+        .bc-sep { font-size: 10px; color: var(--bdr); padding: 0 2px; user-select: none; }
+
+        /* LAYOUT */
+        #layout { flex: 1; overflow: hidden; display: flex; }
+        #sidebar { width: 260px; flex-shrink: 0; background: var(--navy-mid); overflow: hidden; display: flex; flex-direction: column; border-right: 1px solid rgba(255,255,255,.08); }
+        #sb-tabs { display: flex; border-bottom: 1px solid rgba(255,255,255,.10); flex-shrink: 0; }
+        .sb-tab { flex: 1; padding: 9px 0; font-size: 11px; font-weight: 600; font-family: 'Outfit', sans-serif; background: none; border: none; color: rgba(255,255,255,.38); cursor: pointer; letter-spacing: .4px; text-transform: uppercase; transition: all .15s; }
+        .sb-tab.active { color: #fff; border-bottom: 2px solid var(--navy-lt); }
+        .sb-tab:hover:not(.active) { color: rgba(255,255,255,.70); background: rgba(255,255,255,.05); }
+        #sb-map,#sb-journey { flex: 1; overflow-y: auto; min-height: 0; }
+
+        /* Sidebar map */
+        .sm-phase { border-bottom: 1px solid rgba(255,255,255,.07); }
+        .sm-phase-hdr { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; cursor: pointer; color: rgba(255,255,255,.52); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; user-select: none; transition: background .12s; }
+        .sm-phase-hdr:hover { background: rgba(255,255,255,.05); color: rgba(255,255,255,.80); }
+        .sm-nodes { padding: 2px 0 5px; }
+        .sm-node { display: flex; align-items: flex-start; gap: 8px; padding: 5px 14px 5px 18px; cursor: pointer; transition: background .12s; }
+        .sm-node:hover { background: rgba(255,255,255,.07); }
+        .sm-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; background: rgba(255,255,255,.18); transition: all .2s; }
+        .sm-node.visited .sm-dot { background: var(--green); }
+        .sm-node.current .sm-dot { background: var(--navy-lt); box-shadow: 0 0 0 3px rgba(65,105,225,.3); }
+        .sm-node.endok .sm-dot { background: var(--green); }
+        .sm-node.endbad .sm-dot { background: var(--red); }
+        .sm-node.endwarn .sm-dot { background: var(--amber); }
+        .sm-nlbl { font-size: 12px; color: rgba(255,255,255,.48); line-height: 1.4; }
+        .sm-node.visited .sm-nlbl { color: rgba(255,255,255,.75); }
+        .sm-node.current .sm-nlbl { color: #fff; font-weight: 600; }
+        .sm-node.endok .sm-nlbl, .sm-node.endbad .sm-nlbl, .sm-node.endwarn .sm-nlbl { color: rgba(255,255,255,.60); }
+
+        /* Sidebar journey */
+        .pi { padding: 9px 14px; border-bottom: 1px solid rgba(255,255,255,.06); }
+        .pi-num { font-size: 10px; color: rgba(255,255,255,.32); margin-bottom: 2px; }
+        .pi.past .pi-title { color: rgba(255,255,255,.65); font-size: 13px; line-height: 1.35; }
+        .pi.current .pi-title { color: #fff; font-size: 13px; font-weight: 600; line-height: 1.35; }
+        .pi-choice { font-size: 11px; color: var(--navy-lt); margin-top: 3px; line-height: 1.3; }
+        .sb-foot { padding: 12px 14px; border-top: 1px solid rgba(255,255,255,.08); margin-top: 4px; }
+        .sb-foot-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .4px; color: rgba(255,255,255,.32); margin-bottom: 5px; }
+        .sb-foot-refs { font-size: 11px; color: rgba(255,255,255,.48); line-height: 1.65; font-family: ui-monospace, SFMono-Regular, monospace; }
+        .sb-empty { padding: 16px 14px; font-size: 12px; color: rgba(255,255,255,.32); line-height: 1.5; }
+
+        /* CONTENT */
+        #content { flex: 1; overflow-y: auto; padding: 24px; background: var(--slate-bg); }
+
+        /* CARD */
+        .card { background: var(--white); border-radius: 10px; border: 1px solid var(--bdr); max-width: 820px; margin: 0 auto; animation: fadeUp .22s ease; overflow: hidden; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .c-hdr { padding: 20px 24px 16px; border-bottom: 1px solid var(--bdr); }
+        .c-hdr-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+        .act-badge { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+        .act-laj { background: var(--cyan-bg); color: var(--cyan); border: 1px solid #99F6E4; }
+        .act-juez { background: var(--violet-bg); color: var(--violet); border: 1px solid #C4B5FD; }
+        .act-ambos { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+        .step-num { font-size: 12px; color: var(--muted); margin-left: auto; }
+        .c-title { font-size: 19px; font-weight: 700; color: var(--navy); line-height: 1.25; }
+
+        .c-body { padding: 20px 24px; }
+        .c-block { margin-bottom: 14px; }
+        .c-block:last-child { margin-bottom: 0; }
+
+        .cb-intro { font-size: 15px; color: var(--text); line-height: 1.68; }
+        .cb-box { display: flex; align-items: flex-start; gap: 10px; border-radius: 8px; padding: 12px 14px; font-size: 14px; line-height: 1.55; }
+        .cb-deadline { background: var(--amber-bg); border: 1px solid #FDE68A; color: var(--amber); }
+        .cb-note { background: var(--cyan-bg); border: 1px solid #99F6E4; color: #0F766E; }
+        .cb-warn { background: var(--red-bg); border: 1px solid #FECACA; color: var(--red); }
+        .cb-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+        .cb-law { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 12px; color: var(--slate); background: var(--slate-bg); border-radius: 6px; padding: 9px 12px; border: 1px solid var(--bdr); line-height: 1.7; }
+        .cb-cl-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 9px; }
+        .cb-cl-list { list-style: none; }
+        .cb-cl-item { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-bottom: 1px solid var(--bdr); font-size: 14px; color: var(--text); line-height: 1.5; }
+        .cb-cl-item:last-child { border-bottom: none; }
+        .cb-cl-check { flex-shrink: 0; width: 17px; height: 17px; border: 1.5px solid var(--bdr); border-radius: 4px; margin-top: 2px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 11px; transition: all .15s; background: var(--white); }
+        .cb-cl-check.chk { background: var(--green); border-color: var(--green); color: #fff; }
+
+        /* Decision area */
+        .dec-area { margin: 0 24px; border-top: 1px solid var(--bdr); padding: 20px 0; }
+        .dec-q { font-size: 15px; font-weight: 600; color: var(--navy); border-top: 3px solid var(--navy); padding-top: 14px; margin-bottom: 16px; line-height: 1.4; }
+        .dec-opts { display: flex; flex-direction: column; gap: 9px; }
+        .dec-btn { display: flex; align-items: center; gap: 12px; padding: 13px 16px; border-radius: 8px; border: 1.5px solid; cursor: pointer; background: var(--white); font-family: 'Outfit', sans-serif; text-align: left; width: 100%; transition: all .15s; }
+        .dec-btn:hover { transform: translateX(2px); }
+        .dec-btn.ok { border-color: #BBF7D0; background: var(--green-bg); }
+        .dec-btn.ok:hover { border-color: var(--green); background: #DCFCE7; }
+        .dec-btn.bad { border-color: #FECACA; background: var(--red-bg); }
+        .dec-btn.bad:hover { border-color: var(--red); background: #FEE2E2; }
+        .dec-btn.warn { border-color: #FDE68A; background: var(--amber-bg); }
+        .dec-btn.warn:hover { border-color: var(--amber); background: #FEF3C7; }
+        .dec-btn.neutral { border-color: var(--bdr); background: var(--slate-bg); }
+        .dec-btn.neutral:hover { border-color: var(--navy-lt); background: var(--white); }
+        .dec-letter { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+        .dec-btn.ok .dec-letter { background: var(--green); color: #fff; }
+        .dec-btn.bad .dec-letter { background: var(--red); color: #fff; }
+        .dec-btn.warn .dec-letter { background: var(--amber); color: #fff; }
+        .dec-btn.neutral .dec-letter { background: var(--slate); color: #fff; }
+        .dec-btn-text { font-size: 14px; color: var(--text); line-height: 1.4; }
+
+        /* Nav bar */
+        .c-nav { padding: 14px 24px; border-top: 1px solid var(--bdr); display: flex; align-items: center; gap: 10px; }
+        .btn-back { background: var(--white); border: 1px solid var(--bdr); color: var(--muted); padding: 9px 16px; border-radius: 8px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all .15s; }
+        .btn-back:hover:not(:disabled) { border-color: var(--navy-lt); color: var(--navy); }
+        .btn-back:disabled { opacity: .38; cursor: not-allowed; }
+        .btn-next { background: var(--navy-lt); border: 1px solid var(--navy-lt); color: #fff; padding: 9px 18px; border-radius: 8px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all .15s; }
+        .btn-next:hover { background: var(--navy); border-color: var(--navy); }
+
+        /* End cards */
+        .card.end-success { border-top: 4px solid var(--green); }
+        .card.end-error   { border-top: 4px solid var(--red); }
+        .card.end-warning { border-top: 4px solid var(--amber); }
+        .card.end-neutral { border-top: 4px solid var(--navy-lt); }
+        .end-hero { padding: 28px 24px 20px; text-align: center; border-bottom: 1px solid var(--bdr); }
+        .end-icon { font-size: 42px; margin-bottom: 10px; }
+        .end-title { font-size: 21px; font-weight: 700; margin-bottom: 6px; }
+        .end-title.success { color: var(--green); }
+        .end-title.error   { color: var(--red); }
+        .end-title.warning { color: var(--amber); }
+        .end-title.neutral { color: var(--navy-lt); }
+        .end-sub { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+        .end-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .end-detail { padding: 20px 24px; }
+        .summary-box { background: var(--slate-bg); border: 1px solid var(--bdr); border-radius: 8px; padding: 16px 18px; margin-top: 18px; }
+        .summary-ttl { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); margin-bottom: 10px; }
+        .s-item { display: flex; gap: 10px; font-size: 14px; padding: 7px 0; border-bottom: 1px solid var(--bdr); line-height: 1.4; }
+        .s-item:last-child { border-bottom: none; }
+        .s-num { font-weight: 700; color: var(--navy); flex-shrink: 0; min-width: 22px; }
+        .s-choice { font-size: 12px; color: var(--navy-lt); margin-top: 2px; }
+
+        /* MAPA OVERLAY (completo) */
+        #mapa-overlay { display: none; flex: 1; overflow-y: auto; background: var(--slate-bg); padding: 20px; }
+        .mapa-container { max-width: 1400px; margin: 0 auto; }
+        .mapa-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .mapa-ttl { font-size: 18px; font-weight: 700; color: var(--navy); }
+        .mapa-cols { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 16px; align-items: flex-start; }
+        .mapa-col { min-width: 210px; flex-shrink: 0; }
+        .mapa-col-hdr { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--navy-mid); padding: 6px 10px; background: var(--white); border: 1px solid var(--bdr); border-radius: 6px 6px 0 0; border-bottom: 2px solid var(--navy-mid); margin-bottom: 3px; }
+        .mn { background: var(--white); border: 1px solid var(--bdr); border-left: 3px solid var(--bdr); border-radius: 0 6px 6px 0; padding: 9px 11px; margin-bottom: 3px; cursor: pointer; transition: all .15s; }
+        .mn:hover { border-left-color: var(--navy-lt); background: var(--slate-bg); }
+        .mn.mn-vis { border-left-color: var(--green); background: var(--green-bg); }
+        .mn.mn-cur { border-left-color: var(--navy-lt); background: var(--cyan-bg); }
+        .mn.mn-eok { border-left-color: var(--green); }
+        .mn.mn-ebad { border-left-color: var(--red); }
+        .mn.mn-ewarn { border-left-color: var(--amber); }
+        .mn-title { font-size: 12px; font-weight: 500; color: var(--text); line-height: 1.35; }
+        .mn.mn-vis .mn-title, .mn.mn-cur .mn-title { color: var(--navy); font-weight: 600; }
+        .mn-ac { font-size: 10px; color: var(--muted); margin-top: 2px; }
+        .mn-arr { font-size: 10px; color: var(--bdr); padding-top: 3px; line-height: 1.4; }
+
+        @media print {
+            #sidebar, #pbar, #breadcrumb, .c-nav, .h-right, #sb-tabs, #sb-journey, #sb-map { display: none !important; }
+            #hdr { height: auto; padding: 10px 16px; }
+            #app, #layout, #content { height: auto !important; overflow: visible !important; }
+            .card { box-shadow: none; break-inside: avoid; border: 1px solid #ccc; }
+            body { background: #fff; }
+            #mapa-overlay { display: block !important; }
+            .mapa-cols { flex-wrap: wrap; gap: 8px; }
+            .mapa-col { min-width: 160px; }
+        }
+        @media (max-width: 700px) {
+            #sidebar { display: none; }
+            #content { padding: 12px; }
+            .c-hdr, .c-body, .end-hero, .end-detail { padding: 16px; }
+            .dec-area { margin: 0 16px; }
+            .c-nav { padding: 12px 16px; }
+            .c-title { font-size: 17px; }
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!-- HEADER -->
+    <header id="hdr">
+        <div class="h-left">
+            <div class="h-seal">⚖</div>
+            <div>
+                <div class="h-title">Liquidación del Régimen Económico Matrimonial</div>
+                <div class="h-sub">LEC Arts. 806‑811 · Guía de tramitación completa</div>
+            </div>
+        </div>
+        <div class="h-right">
+            <button class="btn btn-ghost" onclick="toggleMapa()">🗺 Ver mapa</button>
+            <button class="btn btn-ghost" onclick="dlGuia()">⬇ Descargar</button>
+            <button class="btn btn-ghost" onclick="restart()">↺ Reiniciar</button>
+        </div>
+    </header>
+
+    <!-- PHASE BAR -->
+    <div id="pbar"></div>
+
+    <!-- BREADCRUMB -->
+    <div id="breadcrumb"></div>
+
+    <!-- MAIN LAYOUT -->
+    <div id="layout">
+        <!-- SIDEBAR -->
+        <aside id="sidebar">
+            <div id="sb-tabs">
+                <button class="sb-tab active" onclick="sbTab('map')">Mapa</button>
+                <button class="sb-tab" onclick="sbTab('journey')">Recorrido</button>
+            </div>
+            <div id="sb-map"></div>
+            <div id="sb-journey" style="display:none"></div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main id="content"></main>
+    </div>
+
+    <!-- MAPA OVERLAY (full page) -->
+    <div id="mapa-overlay">
+        <div class="mapa-container">
+            <div class="mapa-header">
+                <div class="mapa-ttl">🗺 Mapa completo del procedimiento — Todas las vías y desenlaces</div>
+                <button class="btn btn-blue" onclick="toggleMapa()">← Volver al recorrido</button>
+            </div>
+            <div class="mapa-cols" id="mapa-grid"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  FASES
+// ═══════════════════════════════════════════════════════════════
+const PHASES = [
+    'Inicio y competencia',         // 0
+    'Formación del inventario',     // 1
+    'Liquidación (gananciales)',    // 2
+    'Operaciones divisorias',       // 3
+    'Régimen de participación',     // 4
+    'Resolución final'              // 5
+];
+
+// ═══════════════════════════════════════════════════════════════
+//  PASOS COMPLETOS
+// ═══════════════════════════════════════════════════════════════
+const STEPS = {
+
+    // ── FASE 0: INICIO Y COMPETENCIA ──────────────────────
+    inicio: { ph:0, t:'Inicio del procedimiento de liquidación', ac:'laj',
+        c: [
+            ['i','Este procedimiento regula la liquidación judicial de cualquier régimen económico matrimonial que determine la existencia de una masa común de bienes y derechos (art. 806 LEC). Opera en defecto de acuerdo entre los cónyuges.'],
+            ['n','Si los cónyuges ya han alcanzado un acuerdo extrajudicial completo, podrán instrumentarlo mediante convenio regulador aprobado judicialmente (CC art. 90) o escritura pública notarial (CC art. 1404), sin necesidad de este procedimiento judicial.'],
+            ['l','Art. 806 LEC · CC arts. 1344‑1410 (gananciales) · CC arts. 1411‑1434 (participación) · Reg. (UE) 2016/1103']
+        ],
+        q:'¿Qué régimen económico matrimonial se va a liquidar?',
+        opts:[
+            {t:'Sociedad de gananciales u otro régimen con masa común (conquistas navarras, consorcio aragonés, comunicación foral vasca…)',l:'ok',n:'acuerdo_extrajudicial'},
+            {t:'Régimen de participación en las ganancias (CC arts. 1411‑1434)',l:'neutral',n:'art811_inicio'}
+        ]
+    },
+
+    acuerdo_extrajudicial: { ph:0, t:'Verificación de acuerdo extrajudicial previo', ac:'ambos',
+        c: [
+            ['i','Antes de iniciar el procedimiento judicial, verificar si los cónyuges han alcanzado o pueden alcanzar un acuerdo sobre la liquidación.'],
+            ['n','El acuerdo puede instrumentarse mediante: (1) Convenio regulador aprobado judicialmente, que puede incluir la liquidación del régimen (CC art. 90; LEC art. 774.1); o (2) escritura pública notarial (CC art. 1404).'],
+            ['w','Si el acuerdo es solo parcial, el procedimiento del capítulo se aplica únicamente a la parte de la masa no acordada.'],
+            ['l','CC art. 90 · LEC art. 774.1 · CC art. 1404']
+        ],
+        q:'¿Han acordado los cónyuges (o sus herederos) la liquidación extrajudicialmente?',
+        opts:[
+            {t:'Sí — existe acuerdo extrajudicial completo (convenio regulador aprobado o escritura notarial)',l:'ok',n:'fin_acuerdo_privado'},
+            {t:'No — no hay acuerdo; se inicia el procedimiento judicial',l:'bad',n:'verificar_proceso'},
+            {t:'Acuerdo parcial — se liquida judicialmente la parte no acordada',l:'warn',n:'verificar_proceso'}
+        ]
+    },
+
+    verificar_proceso: { ph:0, t:'Verificación del proceso principal habilitante (art. 808 LEC)', ac:'laj',
+        c: [
+            ['i','La solicitud de inventario solo puede formularse una vez admitida la demanda del proceso principal de crisis matrimonial o iniciado el proceso de disolución del régimen por causa civil (art. 808 LEC).'],
+            ['d','El momento habilitante es la admisión de la demanda, no la sentencia. Puede solicitarse el inventario desde ese mismo momento para asegurar la integridad del patrimonio común.'],
+            ['n','Causas de disolución por vía civil (CC art. 1392 para gananciales): concurso de acreedores de un cónyuge, privación de patria potestad, separación judicial, tutela, ausencia, incapacitación o abandono de familia.'],
+            ['l','Art. 808 LEC · CC art. 1392']
+        ],
+        q:'¿Existe un proceso principal en curso o ya resuelto?',
+        opts:[
+            {t:'Sí — demanda de nulidad, separación o divorcio admitida',l:'ok',n:'competencia'},
+            {t:'Sí — proceso de disolución del régimen por causa civil (CC art. 1392)',l:'ok',n:'competencia'},
+            {t:'No — aún no existe proceso principal admitido',l:'bad',n:'fin_sin_proceso'}
+        ]
+    },
+
+    competencia: { ph:0, t:'Determinación del órgano competente (art. 807 LEC)', ac:'laj',
+        c: [
+            ['i','Será competente el Juzgado de Primera Instancia o el Juzgado de Violencia sobre la Mujer que esté conociendo, o haya conocido, del proceso principal de nulidad, separación, divorcio o disolución del régimen. Principio de vis attractiva.'],
+            ['w','Competencia funcional e inderogable: no puede alterarse por sumisión expresa ni tácita de las partes (LEC art. 62). Su infracción determina la nulidad de actuaciones.'],
+            ['n','Si el proceso se tramita ante el JVSM, la competencia civil cesa si se dicta sentencia penal absolutoria firme o se archiva el procedimiento penal, debiendo inhibirse a favor del JPI (art. 49 bis.4 LEC).'],
+            ['l','Art. 807 LEC · Art. 87 ter LOPJ · Art. 49 bis LEC · LO 1/2004 · LEC art. 769 (competencia territorial)']
+        ],
+        q:'¿Ante qué órgano se tramita el proceso principal?',
+        opts:[
+            {t:'Juzgado de Primera Instancia (JPI) — proceso matrimonial ordinario',l:'ok',n:'solicitud_inventario'},
+            {t:'Juzgado de Violencia sobre la Mujer (JVSM) — contexto LO 1/2004',l:'warn',n:'solicitud_inventario'}
+        ]
+    },
+
+    // ── FASE 1: FORMACIÓN DEL INVENTARIO ──────────────────
+    solicitud_inventario: { ph:1, t:'Solicitud de formación de inventario (art. 808 LEC)', ac:'laj',
+        c: [
+            ['i','Cualquiera de los cónyuges o sus herederos puede solicitar la formación de inventario. La solicitud debe acompañarse de una propuesta de inventario con todas las partidas y los documentos que las justifiquen.'],
+            ['n','Legitimados: cualquiera de los cónyuges (con independencia de quién demandó) o, si han fallecido, sus herederos actuando conjuntamente (CC art. 1058). Los acreedores no están legitimados.'],
+            ['cl','Documentos que deben acompañar la solicitud',[
+                'Propuesta de inventario con partidas del activo ganancial (bienes del trabajo, frutos, adquisiciones onerosas: CC art. 1347)',
+                'Partidas del pasivo ganancial (gastos familiares, deudas comunes: CC arts. 1362‑1374)',
+                'Créditos de reintegro entre masas (CC arts. 1364, 1390‑1391), si procede',
+                'Bienes adquiridos mixtos (fondos comunes y privativos): regla proporcional CC art. 1354',
+                'Títulos de propiedad de bienes inmuebles (escrituras públicas, notas registrales actualizadas)',
+                'Certificados bancarios de saldos, depósitos y productos financieros',
+                'Documentación de deudas pendientes (préstamos, hipotecas, avales)',
+                'Tasaciones o informes periciales de bienes de difícil valoración objetiva (si se dispone de ellos)'
+            ]],
+            ['l','Arts. 808‑809 LEC · CC arts. 1344‑1410']
+        ],
+        nx:'senalamiento_inventario'
+    },
+
+    senalamiento_inventario: { ph:1, t:'Señalamiento del acto de inventario por el LAJ (art. 809.1 LEC)', ac:'laj',
+        c: [
+            ['i','A la vista de la solicitud, el Letrado de la Administración de Justicia señalará día y hora para la formación del inventario y mandará citar a los cónyuges.'],
+            ['d','Plazo máximo: 10 días desde la presentación de la solicitud para celebrar el acto de formación del inventario.'],
+            ['n','La citación se practicará conforme a los arts. 152‑168 LEC. Si los cónyuges tienen procurador constituido, la citación se entiende con este (LEC art. 153).'],
+            ['l','Art. 809.1 LEC · Arts. 152‑168 LEC']
+        ],
+        nx:'acto_inventario'
+    },
+
+    acto_inventario: { ph:1, t:'Acto de formación del inventario (art. 809 LEC)', ac:'laj',
+        c: [
+            ['i','El LAJ, con los cónyuges presentes y sus representantes procesales, procede a formar el inventario de la comunidad matrimonial conforme a la legislación civil aplicable. El inventario distingue el activo y el pasivo de la comunidad, y los créditos de reintegro entre masas.'],
+            ['n','El LAJ actúa como fedatario judicial y director del acto, no como juzgador. Las resoluciones de fondo sobre controversias corresponden al Tribunal (Juez o Magistrado).']
+        ],
+        q:'¿Cuál es el resultado del acto de formación del inventario?',
+        opts:[
+            {t:'Ambos cónyuges comparecen y alcanzan acuerdo sobre el inventario',l:'ok',n:'inventario_acordado'},
+            {t:'Un cónyuge no comparece sin causa justificada',l:'warn',n:'conformidad_ficta_inv'},
+            {t:'Ambos comparecen pero existe controversia sobre el inventario',l:'bad',n:'controversia_inventario'},
+            {t:'La incomparecencia está justificada (enfermedad acreditada, causa de fuerza mayor)',l:'neutral',n:'nuevo_senalamiento_inv'}
+        ]
+    },
+
+    inventario_acordado: { ph:1, t:'Inventario acordado — Consignación en acta', ac:'laj',
+        c: [
+            ['i','El LAJ consigna el inventario acordado en el acta y declara concluido el acto. El acta tiene valor de documento judicial con plena eficacia probatoria.'],
+            ['n','El inventario acordado recoge el activo (bienes y derechos gananciales) y el pasivo (cargas y obligaciones comunes), así como los créditos de reintegro entre masas si los hubiere.'],
+            ['l','Art. 809.1 LEC']
+        ],
+        nx:'resolucion_administracion'
+    },
+
+    conformidad_ficta_inv: { ph:1, t:'Conformidad ficta por incomparecencia injustificada (art. 809.1 LEC)', ac:'laj',
+        c: [
+            ['i','El cónyuge que no comparece sin causa justificada queda vinculado ("conforme") a la propuesta de inventario del cónyuge que haya comparecido. El LAJ consigna este resultado en el acta.'],
+            ['w','La conformidad ficta es una sanción procesal que desincentiva la obstrucción del procedimiento. Solo opera si la incomparecencia carece de justificación objetiva.'],
+            ['l','Art. 809.1 LEC']
+        ],
+        nx:'resolucion_administracion'
+    },
+
+    nuevo_senalamiento_inv: { ph:1, t:'Nuevo señalamiento por incomparecencia justificada', ac:'laj',
+        c: [
+            ['i','Cuando la incomparecencia está debidamente justificada (enfermedad acreditada, fuerza mayor imprevisible), el LAJ señala nueva fecha para el acto de formación del inventario.'],
+            ['w','La causa justificada debe alegarse y acreditarse mediante escrito o en el propio acto. La indefensión sobrevenida puede dar lugar a la nulidad del acto si no se subsana (LEC art. 185 en relación con el art. 238.3 LOPJ).'],
+            ['l','Art. 809.1 LEC · Art. 185 LEC · Art. 238.3 LOPJ']
+        ],
+        nx:'acto_inventario'
+    },
+
+    controversia_inventario: { ph:1, t:'Controversia sobre el inventario (art. 809.2 LEC)', ac:'laj',
+        c: [
+            ['i','El LAJ hace constar en el acta las pretensiones de cada parte y su fundamentación jurídica, y cita a los interesados a una vista conforme al juicio verbal.'],
+            ['cl','Causas frecuentes de controversia',[
+                'Discrepancia sobre inclusión o exclusión de bienes (calificación ganancial vs. privativo)',
+                'Bienes de naturaleza mixta (fondos comunes y privativos: CC art. 1354)',
+                'Discrepancia sobre el importe o valor de una partida (inmueble, empresa, participaciones)',
+                'Existencia o cuantía de un crédito de reintegro entre masas (CC arts. 1364, 1390‑1391)',
+                'Bienes adquiridos por retracto de carácter ganancial'
+            ]],
+            ['d','El señalamiento de la vista debe efectuarse en los veinte días siguientes al acto de formación del inventario.'],
+            ['l','Art. 809.2 LEC · CC arts. 1347‑1361 · Arts. 437‑447 LEC (juicio verbal)']
+        ],
+        nx:'vista_verbal_inv'
+    },
+
+    vista_verbal_inv: { ph:1, t:'Vista de juicio verbal sobre el inventario', ac:'juez',
+        c: [
+            ['i','Se celebra la vista conforme al juicio verbal (arts. 437‑447 LEC). En el propio acto se practica la prueba propuesta y admitida. El Tribunal dicta sentencia en los veinte días siguientes a la vista.'],
+            ['n','Prueba habitual: pericial sobre valoración de bienes, documental sobre origen privativo o ganancial de determinados bienes, interrogatorio de las partes.'],
+            ['l','Art. 809.2 LEC · Arts. 437‑447 LEC']
+        ],
+        nx:'sentencia_inventario'
+    },
+
+    sentencia_inventario: { ph:1, t:'Sentencia aprobando el inventario (art. 809.2 LEC)', ac:'juez',
+        c: [
+            ['i','La sentencia resuelve sobre todas las cuestiones controvertidas, aprueba el inventario de la comunidad matrimonial y dispone lo procedente sobre la administración y disposición de los bienes comunes durante el proceso.'],
+            ['l','Art. 809.2 LEC · Arts. 455‑467 LEC (recurso de apelación)']
+        ],
+        q:'¿Se interpone recurso de apelación contra la sentencia?',
+        opts:[
+            {t:'No — la sentencia es firme; se procede a la resolución sobre administración',l:'ok',n:'resolucion_administracion'},
+            {t:'Sí — recurso de apelación ante la Audiencia Provincial (plazo 20 días, LEC art. 458)',l:'warn',n:'apelacion_inv'}
+        ]
+    },
+
+    apelacion_inv: { ph:1, t:'Recurso de apelación sobre el inventario', ac:'juez',
+        c: [
+            ['i','La Audiencia Provincial resuelve el recurso de apelación contra la sentencia que aprueba el inventario. La interposición del recurso no impide la continuación del proceso de liquidación, salvo que el Tribunal acuerde expresamente la suspensión.'],
+            ['d','Plazo de interposición: 20 días desde la notificación de la sentencia (LEC art. 458).'],
+            ['l','Arts. 455‑467 LEC · Art. 458 LEC']
+        ],
+        nx:'resolucion_administracion'
+    },
+
+    resolucion_administracion: { ph:1, t:'Auto del Tribunal sobre administración y disposición de bienes (art. 809.1 LEC)', ac:'juez',
+        c: [
+            ['i','En el mismo día del acto de inventario o en el siguiente, el Tribunal dicta auto sobre la administración y disposición de los bienes incluidos en el inventario durante la pendencia del proceso.'],
+            ['d','Plazo: mismo día o día siguiente al acto de formación del inventario o a la sentencia firme.'],
+            ['cl','Posibles medidas del auto',[
+                'Atribuir la administración exclusiva a uno de los cónyuges',
+                'Exigir consentimiento conjunto para actos de disposición de bienes de cierto valor',
+                'Nombrar administrador judicial en casos de conflicto grave o riesgo de deterioro del patrimonio'
+            ]],
+            ['n','Contra el auto: recurso de reposición (LEC art. 451) y, en su caso, de apelación si la resolución fuera definitiva (LEC art. 455). Este auto complementa las medidas del art. 103.4 CC y del art. 773 LEC.'],
+            ['l','Art. 809.1 LEC · CC art. 103.4 · Art. 773 LEC · LEC art. 451 (reposición)']
+        ],
+        q:'¿Se va a solicitar a continuación la liquidación del régimen o solo se pretendía la formación del inventario?',
+        opts:[
+            {t:'Se va a solicitar la liquidación (ahora o en breve)',l:'ok',n:'espera_firmeza'},
+            {t:'Solo se solicitó inventario — fin de actuación por ahora',l:'warn',n:'fin_solo_inventario'}
+        ]
+    },
+
+    // ── FASE 2: LIQUIDACIÓN (GANANCIALES) ─────────────────
+    espera_firmeza: { ph:2, t:'Verificación de requisitos previos para solicitar la liquidación (art. 810.1 LEC)', ac:'laj',
+        c: [
+            ['i','Para poder solicitar la liquidación deben cumplirse dos condiciones: (1) que el inventario haya concluido (por acuerdo o por sentencia firme); y (2) en su caso, que sea firme la resolución que declare disuelto el régimen económico matrimonial.'],
+            ['n','Firmeza (LEC art. 207.2): la resolución no es recurrible, o el plazo para recurrir ha transcurrido sin interposición de recurso. La firmeza impide que la reconciliación conyugal (CC art. 84) reabra el régimen ya disuelto.'],
+            ['l','Art. 810.1 LEC · LEC art. 207.2 · CC art. 84']
+        ],
+        q:'¿Se cumplen ambos requisitos?',
+        opts:[
+            {t:'Sí — inventario concluido y resolución de disolución firme (o no se requiere resolución de disolución separada)',l:'ok',n:'solicitud_liquidacion'},
+            {t:'No — pendiente de firmeza de la resolución de disolución; hay que esperar',l:'warn',n:'espera_firmeza_pte'}
+        ]
+    },
+
+    espera_firmeza_pte: { ph:2, t:'En espera de firmeza de la resolución de disolución', ac:'laj',
+        c: [
+            ['i','El procedimiento de liquidación no puede iniciarse todavía porque la resolución de disolución del régimen económico matrimonial no es firme.'],
+            ['w','Comunicar a las partes la imposibilidad de iniciar la liquidación y la necesidad de esperar a la firmeza. Una vez firme, podrán presentar la solicitud de liquidación.'],
+            ['l','Art. 810.1 LEC · LEC art. 207.2']
+        ],
+        nx:'solicitud_liquidacion'
+    },
+
+    solicitud_liquidacion: { ph:2, t:'Solicitud de liquidación (art. 810.2 LEC)', ac:'laj',
+        c: [
+            ['i','Cualquiera de los cónyuges —o, de haber fallecido, sus herederos— solicita la liquidación del régimen, acompañando una propuesta de liquidación con los elementos que indica el art. 810.2 LEC.'],
+            ['cl','Contenido obligatorio de la propuesta de liquidación',[
+                'Indemnizaciones y reintegros debidos a cada cónyuge (CC arts. 1364, 1390‑1391, 1397‑1399)',
+                'División del remanente: por mitad en la sociedad de gananciales (CC art. 1404)',
+                'Derecho preferente a la vivienda habitual familiar (CC art. 1406.4)',
+                'Derecho preferente al local de ejercicio profesional (CC art. 1406.3)',
+                'Derecho preferente a la explotación económica gestionada efectivamente (CC art. 1406.2)',
+                'Compensación en metálico si el valor del bien excede la cuota del adjudicatario (CC art. 1407)'
+            ]],
+            ['l','Art. 810.2 LEC · CC arts. 1397‑1399 · CC arts. 1404, 1406‑1407']
+        ],
+        nx:'senalamiento_liquidacion'
+    },
+
+    senalamiento_liquidacion: { ph:2, t:'Señalamiento de la comparecencia de liquidación (art. 810.3 LEC)', ac:'laj',
+        c: [
+            ['i','Admitida a trámite la solicitud, el LAJ señala día y hora para la comparecencia. El objeto de la comparecencia es doble: (1) intentar el acuerdo entre los cónyuges o herederos sobre la propuesta de liquidación; y (2) en defecto de acuerdo, designar contador y, en su caso, peritos.'],
+            ['d','Plazo máximo: 10 días desde la admisión de la solicitud para celebrar la comparecencia.'],
+            ['l','Art. 810.3 LEC']
+        ],
+        nx:'acto_liquidacion'
+    },
+
+    acto_liquidacion: { ph:2, t:'Comparecencia de liquidación (art. 810 LEC)', ac:'laj',
+        c: [
+            ['i','Se celebra la comparecencia ante el LAJ. Se intenta el acuerdo sobre la propuesta de liquidación. Si no hay acuerdo, se procede a la designación de contador y, en su caso, peritos para las operaciones divisorias.']
+        ],
+        q:'¿Cuál es el resultado de la comparecencia de liquidación?',
+        opts:[
+            {t:'Acuerdo — cónyuges o herederos alcanzan acuerdo sobre la liquidación',l:'ok',n:'acuerdo_liquidacion'},
+            {t:'Incomparecencia injustificada de uno de los cónyuges o herederos',l:'warn',n:'conformidad_ficta_liq'},
+            {t:'No hay acuerdo — se procede a designar contador y peritos (art. 784 LEC)',l:'bad',n:'designacion_contador'}
+        ]
+    },
+
+    acuerdo_liquidacion: { ph:2, t:'Acuerdo en la comparecencia de liquidación (art. 810.4 LEC)', ac:'laj',
+        c: [
+            ['i','El LAJ consigna el acuerdo en el acta y da por concluido el acto. La ejecución del acuerdo se rige por los dos primeros apartados del artículo 788 LEC.'],
+            ['l','Art. 810.4 LEC · Art. 788.1 y 788.2 LEC']
+        ],
+        nx:'ejecucion_788'
+    },
+
+    conformidad_ficta_liq: { ph:2, t:'Conformidad ficta en la comparecencia de liquidación (art. 810.4 LEC)', ac:'laj',
+        c: [
+            ['i','El cónyuge o heredero que no comparece sin causa justificada queda vinculado a la propuesta del compareciente. El LAJ consigna el resultado en el acta.'],
+            ['w','Si son herederos quienes deben comparecer, la incomparecencia de todos ellos determina su conformidad con la propuesta del otro cónyuge o sus herederos.'],
+            ['l','Art. 810.4 LEC']
+        ],
+        nx:'ejecucion_788'
+    },
+
+    ejecucion_788: { ph:2, t:'Ejecución del acuerdo conforme al art. 788 LEC', ac:'laj',
+        c: [
+            ['i','El acuerdo o la conformidad ficta se ejecutan conforme a los dos primeros apartados del art. 788 LEC. Este mecanismo tiene fuerza ejecutiva directa (LEC art. 517.2.9.ª).'],
+            ['l','Art. 788.1 y 788.2 LEC · Art. 517.2.9.ª LEC']
+        ],
+        q:'¿Se formula oposición a la ejecución del acuerdo?',
+        opts:[
+            {t:'Sin oposición — el LAJ aprueba la liquidación mediante decreto (art. 788.1 LEC)',l:'ok',n:'decreto_acuerdo'},
+            {t:'Hay oposición — el Tribunal resuelve mediante auto (art. 788.2 LEC)',l:'warn',n:'auto_788'}
+        ]
+    },
+
+    decreto_acuerdo: { ph:2, t:'Decreto del LAJ aprobando la liquidación (art. 788.1 LEC)', ac:'laj',
+        c: [
+            ['i','El LAJ dicta decreto aprobando la liquidación acordada. Este decreto tiene fuerza ejecutiva directa (LEC art. 517.2.9.ª), lo que permite acudir directamente al proceso de ejecución sin necesidad de nueva sentencia de condena.'],
+            ['n','Procede a continuación la entrega a cada adjudicatario de los bienes adjudicados. En caso de resistencia, son aplicables las normas de ejecución forzosa (LEC arts. 699 y ss. para inmuebles; arts. 701 y ss. para muebles).'],
+            ['l','Art. 788.1 LEC · Art. 517.2.9.ª LEC · LEC arts. 699 y ss.']
+        ],
+        nx:'fin_decreto_acuerdo'
+    },
+
+    auto_788: { ph:2, t:'Auto del Tribunal resolviendo la oposición (art. 788.2 LEC)', ac:'juez',
+        c: [
+            ['i','El Tribunal resuelve la oposición mediante auto. El auto aprobatorio también tiene fuerza ejecutiva directa (LEC art. 517.2.9.ª).'],
+            ['l','Art. 788.2 LEC · Art. 517.2.9.ª LEC']
+        ],
+        nx:'fin_auto_788'
+    },
+
+    // ── FASE 3: OPERACIONES DIVISORIAS ────────────────────
+    designacion_contador: { ph:3, t:'Designación de contador y peritos (art. 784 LEC)', ac:'laj',
+        c: [
+            ['i','Al no alcanzarse acuerdo, el art. 810.5 LEC remite al art. 784 LEC para el nombramiento de contador y, en su caso, peritos para la práctica de las operaciones divisorias.'],
+            ['cl','Procedimiento de designación',[
+                'Por acuerdo de los interesados: pueden designar al contador de mutuo acuerdo (abogado, economista, graduado social, notario)',
+                'En defecto de acuerdo: el LAJ designa de entre los listados de peritos judiciales (LEC art. 341)',
+                'El contador debe aceptar el cargo y prestar juramento o promesa de desempeñarlo fielmente',
+                'Si hay bienes de difícil valoración, se nombran peritos especializados (inmuebles, empresas, participaciones)',
+                'El LAJ fija al contador un plazo para presentar el cuaderno particional (habitualmente dos meses, prorrogable)'
+            ]],
+            ['l','Art. 784 LEC · Art. 810.5 LEC · Art. 341 LEC (listados de peritos judiciales)']
+        ],
+        nx:'elaboracion_cuaderno'
+    },
+
+    elaboracion_cuaderno: { ph:3, t:'Elaboración del cuaderno particional por el contador', ac:'laj',
+        c: [
+            ['i','El contador elabora el cuaderno particional dentro del plazo fijado por el LAJ. Los peritos, en su caso, valoran los bienes y remiten su informe para su incorporación.'],
+            ['cl','Contenido del cuaderno particional',[
+                'Inventario: activo ganancial (bienes y derechos) y pasivo (cargas y obligaciones)',
+                'Liquidación: reintegros e indemnizaciones entre masas patrimoniales (CC arts. 1364, 1390‑1391)',
+                'Pago del pasivo de la comunidad',
+                'Formación de lotes: adjudicación respetando las preferencias de CC arts. 1406‑1407 (vivienda, local profesional, explotación)',
+                'Valoración de bienes según informes periciales'
+            ]],
+            ['l','Art. 785 LEC · CC arts. 1396‑1410']
+        ],
+        nx:'presentacion_cuaderno'
+    },
+
+    presentacion_cuaderno: { ph:3, t:'Presentación del cuaderno y traslado a los interesados (art. 785 LEC)', ac:'laj',
+        c: [
+            ['i','El contador presenta el cuaderno particional ante el LAJ. El LAJ da traslado a los interesados por un plazo de diez días para que formulen oposición o lo aprueben expresamente.'],
+            ['d','Plazo: 10 días desde el traslado para formular oposición al cuaderno particional.'],
+            ['l','Art. 785 LEC']
+        ],
+        q:'¿Formulan los interesados oposición al cuaderno?',
+        opts:[
+            {t:'No hay oposición — el LAJ aprueba las operaciones mediante decreto (título ejecutivo directo)',l:'ok',n:'decreto_cuaderno'},
+            {t:'Hay oposición al cuaderno particional',l:'bad',n:'oposicion_cuaderno'}
+        ]
+    },
+
+    decreto_cuaderno: { ph:3, t:'Decreto del LAJ aprobando el cuaderno (art. 785 LEC)', ac:'laj',
+        c: [
+            ['i','Sin oposición (o con aprobación expresa), el LAJ aprueba las operaciones divisorias mediante decreto. Este decreto es título ejecutivo directo (LEC art. 517.2.9.ª).'],
+            ['l','Art. 785 LEC · Art. 517.2.9.ª LEC']
+        ],
+        nx:'entrega_bienes'
+    },
+
+    oposicion_cuaderno: { ph:3, t:'Oposición al cuaderno particional (art. 786 LEC)', ac:'juez',
+        c: [
+            ['i','El Tribunal convoca a los interesados a una comparecencia para intentar un acuerdo sobre las discrepancias planteadas.'],
+            ['l','Art. 786 LEC']
+        ],
+        q:'¿Cuál es el resultado de la comparecencia ante el Tribunal?',
+        opts:[
+            {t:'Se alcanza acuerdo en la comparecencia',l:'ok',n:'acuerdo_786'},
+            {t:'No hay acuerdo — el Tribunal resuelve la oposición por auto (art. 787 LEC)',l:'warn',n:'auto_aprobacion'},
+            {t:'No hay acuerdo — el Tribunal señala vista de juicio verbal para resolver',l:'bad',n:'vista_verbal_cuaderno'}
+        ]
+    },
+
+    acuerdo_786: { ph:3, t:'Acuerdo en la comparecencia del art. 786 LEC', ac:'laj',
+        c: [
+            ['i','Al alcanzarse acuerdo en la comparecencia, el LAJ aprueba el acuerdo mediante decreto. Procede la ejecución y entrega de los bienes adjudicados.'],
+            ['l','Art. 786 LEC · Art. 788 LEC']
+        ],
+        nx:'entrega_bienes'
+    },
+
+    vista_verbal_cuaderno: { ph:3, t:'Vista de juicio verbal para resolver la oposición (art. 786 LEC)', ac:'juez',
+        c: [
+            ['i','El Tribunal señala y celebra vista conforme al juicio verbal para resolver las discrepancias sobre el cuaderno particional.'],
+            ['l','Art. 786 LEC · Arts. 437‑447 LEC (juicio verbal)']
+        ],
+        nx:'auto_aprobacion'
+    },
+
+    auto_aprobacion: { ph:3, t:'Auto de aprobación de las operaciones divisorias (art. 787 LEC)', ac:'juez',
+        c: [
+            ['i','El Tribunal aprueba las operaciones divisorias mediante auto. El auto puede aprobar el cuaderno tal como fue presentado por el contador o modificarlo en los puntos que hayan sido objeto de oposición fundada.'],
+            ['l','Art. 787 LEC · Arts. 455‑467 LEC (recurso de apelación)']
+        ],
+        q:'¿Se recurre el auto de aprobación?',
+        opts:[
+            {t:'No — el auto es firme; procede la entrega de bienes adjudicados',l:'ok',n:'entrega_bienes'},
+            {t:'Sí — recurso de apelación ante la Audiencia Provincial (plazo 20 días)',l:'warn',n:'apelacion_787'}
+        ]
+    },
+
+    apelacion_787: { ph:3, t:'Recurso de apelación contra el auto del art. 787 LEC', ac:'juez',
+        c: [
+            ['i','La Audiencia Provincial resuelve el recurso de apelación contra el auto de aprobación de las operaciones divisorias.'],
+            ['d','Plazo de interposición: 20 días desde la notificación del auto (LEC art. 458).'],
+            ['l','Art. 787 LEC · Arts. 455‑467 LEC · Art. 458 LEC']
+        ],
+        nx:'entrega_bienes'
+    },
+
+    entrega_bienes: { ph:3, t:'Entrega de bienes adjudicados (art. 788.1 LEC)', ac:'laj',
+        c: [
+            ['i','Una vez aprobadas las operaciones (por decreto, auto u acuerdo), el LAJ procede a la entrega a cada adjudicatario de los bienes que le hayan sido adjudicados.'],
+            ['l','Art. 788.1 LEC · Art. 517.2.9.ª LEC']
+        ],
+        q:'¿Se producen incidencias en la entrega de bienes adjudicados?',
+        opts:[
+            {t:'No — entrega efectiva sin incidencias',l:'ok',n:'fin_operaciones'},
+            {t:'Sí — resistencia a la entrega; se insta la ejecución forzosa (art. 788.2 LEC)',l:'bad',n:'ejecucion_forzosa'}
+        ]
+    },
+
+    ejecucion_forzosa: { ph:3, t:'Ejecución forzosa de la adjudicación (art. 788.2 LEC)', ac:'juez',
+        c: [
+            ['i','Si el adjudicatario se niega a recibir o el actual poseedor se niega a entregar, se aplican las normas de ejecución forzosa. La resolución aprobatoria tiene fuerza ejecutiva directa: no se necesita nueva sentencia de condena.'],
+            ['cl','Normas aplicables según el tipo de bien',[
+                'Bienes inmuebles: LEC arts. 699 y ss.',
+                'Bienes muebles: LEC arts. 701 y ss.'
+            ]],
+            ['l','Art. 788.2 LEC · Arts. 699 y ss. LEC · Arts. 701 y ss. LEC · Art. 517.2.9.ª LEC']
+        ],
+        nx:'fin_operaciones'
+    },
+
+    // ── FASE 4: RÉGIMEN DE PARTICIPACIÓN ──────────────────
+    art811_inicio: { ph:4, t:'Liquidación del régimen de participación — Caracterización (art. 811 LEC)', ac:'laj',
+        c: [
+            ['i','El régimen de participación (CC arts. 1411‑1434) funciona como separación de bienes durante el matrimonio. A la disolución, cada cónyuge tiene derecho a participar en las ganancias obtenidas por el otro. No existe masa común: el objeto de la liquidación es el cálculo del crédito de participación.'],
+            ['w','ATENCIÓN: A diferencia del art. 810, la firmeza de la resolución de disolución es aquí un requisito ABSOLUTO e incondicional (art. 811.1 LEC). No puede solicitarse la liquidación hasta que no sea firme.'],
+            ['n','El crédito de participación prescribe a los tres años desde la disolución del régimen (CC art. 1424). Verificar que no haya prescrito antes de iniciar el procedimiento.'],
+            ['l','Art. 811 LEC · CC arts. 1411‑1434 · CC art. 1424 (prescripción 3 años)']
+        ],
+        nx:'art811_firmeza'
+    },
+
+    art811_firmeza: { ph:4, t:'Verificación de firmeza obligatoria (art. 811.1 LEC)', ac:'laj',
+        c: [
+            ['i','El art. 811.1 impone de forma absoluta que la resolución de disolución sea firme antes de solicitar la liquidación. Sin firmeza no existe certeza sobre la fecha de cierre de los patrimonios inicial y final, y no puede calcularse el crédito.'],
+            ['n','Firmeza (LEC art. 207.2): resolución no recurrible, o plazo de recurso transcurrido sin interposición.'],
+            ['l','Art. 811.1 LEC · LEC art. 207.2']
+        ],
+        q:'¿Es firme la resolución que declara disuelto el régimen de participación?',
+        opts:[
+            {t:'Sí — la resolución de disolución es firme',l:'ok',n:'art811_solicitud'},
+            {t:'No — pendiente de firmeza; la liquidación no puede solicitarse todavía',l:'bad',n:'fin_811_no_firme'}
+        ]
+    },
+
+    art811_solicitud: { ph:4, t:'Solicitud de liquidación del régimen de participación (art. 811.2 LEC)', ac:'laj',
+        c: [
+            ['i','La solicitud debe acompañarse de una propuesta de liquidación que incluya la estimación de los patrimonios iniciales y finales de cada cónyuge y la cantidad resultante a pagar.'],
+            ['cl','Contenido de la propuesta de liquidación',[
+                'Patrimonio inicial de cada cónyuge: bienes al inicio del régimen + bienes adquiridos a título gratuito − deudas iniciales (CC arts. 1417‑1419). Si es negativo, computa como cero.',
+                'Patrimonio final de cada cónyuge: bienes a la disolución − obligaciones pendientes + adición ficticia de donaciones fraudulentas sin consentimiento del otro cónyuge (CC arts. 1420‑1422)',
+                'Crédito de participación (CC arts. 1423‑1424): si ambos tienen ganancias, el de menor ganancia participa en la mitad de la diferencia; si solo uno tiene, el otro participa en la mitad',
+                'Forma de pago propuesta: dinero en primer lugar (CC art. 1431); bienes si se autoriza judicialmente (CC art. 1432)'
+            ]],
+            ['l','Art. 811.2 LEC · CC arts. 1417‑1424 · CC arts. 1431‑1432']
+        ],
+        nx:'art811_senalamiento'
+    },
+
+    art811_senalamiento: { ph:4, t:'Señalamiento de la comparecencia (art. 811.3 LEC)', ac:'laj',
+        c: [
+            ['i','El LAJ señala, dentro del plazo máximo de diez días desde la admisión de la solicitud, el día y hora en que los cónyuges deberán comparecer al objeto de alcanzar un acuerdo.'],
+            ['d','Plazo máximo: 10 días desde la admisión de la solicitud para celebrar la comparecencia.'],
+            ['n','A diferencia del art. 810, el único objeto de esta comparecencia es el acuerdo: no está prevista la designación de contador ni de peritos en el propio acto.'],
+            ['l','Art. 811.3 LEC']
+        ],
+        nx:'art811_comparecencia'
+    },
+
+    art811_comparecencia: { ph:4, t:'Comparecencia de liquidación del régimen de participación (art. 811 LEC)', ac:'laj',
+        c: [
+            ['i','Se celebra la comparecencia ante el LAJ. El único objeto es intentar el acuerdo entre los cónyuges sobre la liquidación del crédito de participación.']
+        ],
+        q:'¿Cuál es el resultado de la comparecencia?',
+        opts:[
+            {t:'Acuerdo entre los cónyuges sobre la liquidación',l:'ok',n:'art811_acuerdo'},
+            {t:'Un cónyuge no comparece sin causa justificada',l:'warn',n:'art811_ficta'},
+            {t:'No hay acuerdo — se procede al juicio verbal (no hay contador: diferencia esencial con el art. 810)',l:'bad',n:'art811_verbal'}
+        ]
+    },
+
+    art811_acuerdo: { ph:4, t:'Acuerdo en la comparecencia (art. 811.4 LEC)', ac:'laj',
+        c: [
+            ['i','El LAJ consigna el acuerdo en el acta y da por concluido el acto. El art. 811.4 no remite expresamente al art. 788, pero la doctrina mayoritaria entiende aplicable dicha remisión analógicamente para la ejecución del acuerdo.'],
+            ['l','Art. 811.4 LEC · Art. 788 LEC (aplicación analógica)']
+        ],
+        nx:'fin_participacion_acuerdo'
+    },
+
+    art811_ficta: { ph:4, t:'Conformidad ficta en el régimen de participación (art. 811.4 LEC)', ac:'laj',
+        c: [
+            ['i','El cónyuge que no comparece sin causa justificada queda vinculado a la propuesta del compareciente. El LAJ consigna el resultado en el acta.'],
+            ['l','Art. 811.4 LEC']
+        ],
+        nx:'fin_participacion_acuerdo'
+    },
+
+    art811_verbal: { ph:4, t:'Vista de juicio verbal (art. 811.5 LEC)', ac:'juez',
+        c: [
+            ['i','El LAJ cita a los cónyuges a una vista conforme al juicio verbal (LEC arts. 437‑447). Diferencia esencial respecto al art. 810: no se prevé el nombramiento de contador ni peritos. La tramitación es íntegramente contenciosa ante el Tribunal desde el primer desacuerdo.'],
+            ['l','Art. 811.5 LEC · Arts. 437‑447 LEC (juicio verbal)']
+        ],
+        nx:'art811_sentencia'
+    },
+
+    art811_sentencia: { ph:4, t:'Sentencia de liquidación del régimen de participación (art. 811.5 LEC)', ac:'juez',
+        c: [
+            ['i','La sentencia determina los patrimonios iniciales y finales de cada cónyuge, la cantidad que deba satisfacer el de mayor incremento y la forma de pago.'],
+            ['cl','Determinaciones de la sentencia',[
+                'Patrimonios iniciales y finales de cada cónyuge (con todos sus componentes e inclusión de adiciones por donaciones fraudulentas del art. 1422 CC)',
+                'Cantidad que debe satisfacer el cónyuge con mayor incremento patrimonial neto',
+                'Forma de pago: dinero en primer lugar (CC art. 1431); si no es posible, bienes con autorización judicial (CC art. 1432)'
+            ]],
+            ['l','Art. 811.5 LEC · CC arts. 1423‑1424 · CC arts. 1431‑1432']
+        ],
+        q:'¿Se recurre la sentencia?',
+        opts:[
+            {t:'No — la sentencia es firme; procede el pago del crédito de participación',l:'ok',n:'fin_participacion_sentencia'},
+            {t:'Sí — recurso de apelación ante la Audiencia Provincial (plazo 20 días)',l:'warn',n:'art811_apelacion'}
+        ]
+    },
+
+    art811_apelacion: { ph:4, t:'Recurso de apelación en el régimen de participación', ac:'juez',
+        c: [
+            ['i','La Audiencia Provincial resuelve el recurso de apelación contra la sentencia de liquidación del régimen de participación.'],
+            ['d','Plazo de interposición: 20 días desde la notificación (LEC art. 458).'],
+            ['l','Arts. 455‑467 LEC · Art. 458 LEC']
+        ],
+        nx:'fin_participacion_sentencia'
+    },
+
+    // ── FASE 5: RESOLUCIONES FINALES ──────────────────────
+    fin_acuerdo_privado: { ph:5, t:'Fin: Liquidación extrajudicial por acuerdo entre los cónyuges', ac:'ambos', end:'success',
+        c: [
+            ['i','La liquidación del régimen económico matrimonial se ha instrumentado extrajudicialmente mediante acuerdo entre los cónyuges, sin necesidad de procedimiento judicial.'],
+            ['n','El convenio regulador, una vez aprobado judicialmente, tiene valor de sentencia y es título ejecutivo directo. La escritura pública notarial produce plenos efectos entre las partes y frente a terceros desde su otorgamiento.'],
+            ['l','CC art. 90 · LEC art. 774.1 · CC art. 1404']
+        ]
+    },
+
+    fin_sin_proceso: { ph:5, t:'Fin: Procedimiento no iniciable — sin proceso principal', ac:'laj', end:'warning',
+        c: [
+            ['i','No puede iniciarse el procedimiento de liquidación porque todavía no existe proceso principal admitido (demanda de nulidad, separación o divorcio) ni proceso de disolución del régimen por causa civil.'],
+            ['w','Deberá esperarse a que se admita la demanda principal y presentar entonces la solicitud de inventario (art. 808 LEC).'],
+            ['l','Art. 808 LEC']
+        ]
+    },
+
+    fin_solo_inventario: { ph:5, t:'Fin: Inventario concluido — en espera de solicitud de liquidación', ac:'laj', end:'warning',
+        c: [
+            ['i','La fase de inventario ha concluido, pero no se ha solicitado aún la liquidación. El procedimiento queda archivado provisionalmente.'],
+            ['n','Para iniciar la fase de liquidación se requiere: (1) inventario concluido; (2) en su caso, resolución firme que declare disuelto el REM. La parte podrá solicitar la liquidación cuando proceda.'],
+            ['l','Art. 810.1 LEC']
+        ]
+    },
+
+    fin_decreto_acuerdo: { ph:5, t:'Fin: Liquidación aprobada por decreto del LAJ (art. 788.1 LEC)', ac:'laj', end:'success',
+        c: [
+            ['i','El procedimiento de liquidación del régimen económico matrimonial ha concluido satisfactoriamente mediante decreto del LAJ aprobando la liquidación acordada.'],
+            ['n','El decreto es título ejecutivo directo (LEC art. 517.2.9.ª). Los bienes inmuebles adjudicados deben inscribirse en el Registro de la Propiedad (LH arts. 2, 10, 32‑34). La adjudicación tributa por AJD (no por ITP onerosa, pues no hay transmisión sino especificación de derechos).'],
+            ['cl','Actuaciones finales recomendadas',[
+                'Edicto de finalización del procedimiento',
+                'Comunicación al Registro de la Propiedad',
+                'Entrega de copias autorizadas a las partes',
+                'Archivo del expediente',
+                'Control de plazos de apelación (si procede)'
+            ]],
+            ['l','Art. 788.1 LEC · Art. 517.2.9.ª LEC · LH arts. 32‑34 · RDLeg. 1/1993 art. 45.I.B.3']
+        ]
+    },
+
+    fin_auto_788: { ph:5, t:'Fin: Liquidación aprobada por auto del Tribunal (art. 788.2 LEC)', ac:'juez', end:'success',
+        c: [
+            ['i','El procedimiento ha concluido mediante auto del Tribunal que resuelve la oposición a la ejecución del acuerdo de liquidación. El auto tiene fuerza ejecutiva directa.'],
+            ['n','Los bienes inmuebles adjudicados deben inscribirse en el Registro de la Propiedad. Tributación por AJD, no por ITP onerosa.'],
+            ['cl','Actuaciones finales recomendadas',[
+                'Edicto de finalización del procedimiento',
+                'Inscripción registral de las adjudicaciones',
+                'Entrega de copias autorizadas a las partes',
+                'Archivo del expediente'
+            ]],
+            ['l','Art. 788.2 LEC · Art. 517.2.9.ª LEC · LH arts. 32‑34']
+        ]
+    },
+
+    fin_operaciones: { ph:5, t:'Fin: Liquidación completada mediante operaciones divisorias', ac:'laj', end:'success',
+        c: [
+            ['i','El procedimiento de liquidación del régimen económico matrimonial ha concluido satisfactoriamente mediante la aprobación y ejecución de las operaciones divisorias practicadas por el contador.'],
+            ['n','Los bienes inmuebles adjudicados deben inscribirse en el Registro de la Propiedad (LH arts. 2, 10, 32‑34). La adjudicación tributa por AJD; si hay excesos de adjudicación no compensados, pueden tributar por ITP onerosa.'],
+            ['cl','Actuaciones finales recomendadas',[
+                'Edicto de finalización del procedimiento',
+                'Comunicación al Registro de la Propiedad',
+                'Entrega de copias autorizadas a las partes',
+                'Archivo del expediente',
+                'Control de plazos de apelación (si procede)'
+            ]],
+            ['l','Arts. 784‑788 LEC · LH arts. 32‑34 · RDLeg. 1/1993 art. 45.I.B.3']
+        ]
+    },
+
+    fin_811_no_firme: { ph:5, t:'Fin: Liquidación de participación no iniciable — resolución no firme', ac:'laj', end:'error',
+        c: [
+            ['i','No puede solicitarse la liquidación del régimen de participación porque la resolución de disolución no es firme todavía (art. 811.1 LEC). Este requisito es absoluto e imperativo, a diferencia del art. 810.'],
+            ['w','Deberá esperarse a la firmeza e iniciar el procedimiento en ese momento. Tener en cuenta que el crédito de participación prescribe a los tres años desde la disolución del régimen (CC art. 1424).'],
+            ['l','Art. 811.1 LEC · CC art. 1424']
+        ]
+    },
+
+    fin_participacion_acuerdo: { ph:5, t:'Fin: Liquidación del régimen de participación por acuerdo', ac:'laj', end:'success',
+        c: [
+            ['i','El procedimiento de liquidación del régimen de participación ha concluido satisfactoriamente mediante acuerdo entre los cónyuges consignado en acta por el LAJ.'],
+            ['n','El crédito de participación acordado se satisfará en los términos pactados. El pago deberá realizarse en dinero, salvo que se haya acordado o autorizado judicialmente el pago en bienes (CC art. 1432).'],
+            ['l','Art. 811.4 LEC · CC arts. 1431‑1432']
+        ]
+    },
+
+    fin_participacion_sentencia: { ph:5, t:'Fin: Liquidación del régimen de participación por sentencia firme', ac:'juez', end:'success',
+        c: [
+            ['i','El procedimiento de liquidación del régimen de participación ha concluido mediante sentencia judicial firme que determina los patrimonios iniciales y finales, el crédito de participación y la forma de pago.'],
+            ['n','La sentencia firme es título ejecutivo directo. El pago del crédito se realiza en dinero, o en bienes si el juez lo ha autorizado (CC art. 1432).'],
+            ['l','Art. 811.5 LEC · Arts. 455‑467 LEC · CC arts. 1431‑1432']
+        ]
+    }
+
+};
+
+// ═══════════════════════════════════════════════════════════════
+//  ESTADO DE LA APLICACIÓN
+// ═══════════════════════════════════════════════════════════════
+let cur = 'inicio';
+let hist = [];
+let mapaOn = false;
+let activeSbTab = 'map';
+let phCol = {};
+
+// ═══════════════════════════════════════════════════════════════
+//  FUNCIONES DE NAVEGACIÓN
+// ═══════════════════════════════════════════════════════════════
+function goTo(stepId, choiceLabel) {
+    if (!STEPS[stepId]) return;
+    hist.push({ s: cur, next: stepId, c: choiceLabel || '' });
+    cur = stepId;
+    if (choiceLabel) sbTab('journey');
+    render();
+}
+
+function goBack() {
+    if (hist.length === 0) return;
+    const h = hist.pop();
+    cur = h.s;
+    render();
+}
+
+function goBackTo(index) {
+    if (index < 0 || index >= hist.length) return;
+    cur = hist[index].s;
+    hist = hist.slice(0, index);
+    render();
+}
+
+// Construir la ruta más corta desde 'inicio' hasta 'target' usando BFS
+function buildPathTo(target) {
+    if (target === 'inicio') return [];
+    const queue = [['inicio']];
+    const visited = new Set(['inicio']);
+    while (queue.length > 0) {
+        const path = queue.shift();
+        const current = path[path.length - 1];
+        const step = STEPS[current];
+        if (!step) continue;
+        const neighbors = [];
+        if (step.nx) neighbors.push(step.nx);
+        if (step.opts) step.opts.forEach(o => neighbors.push(o.n));
+        for (const nb of neighbors) {
+            if (nb === target) return [...path, nb];
+            if (!visited.has(nb)) {
+                visited.add(nb);
+                queue.push([...path, nb]);
+            }
+        }
+    }
+    return null; // no hay ruta
+}
+
+/**
+ * Salto directo a un paso (desde sidebar o mapa).
+ * Reconstruye el historial como la ruta más corta desde 'inicio'.
+ */
+function jumpTo(id) {
+    if (!STEPS[id]) return;
+    if (id === 'inicio') {
+        hist = [];
+        cur = 'inicio';
+    } else {
+        const path = buildPathTo(id);
+        if (path && path.length > 1) {
+            // Convertir la ruta en entradas de historial (sin choice asociada porque no fue una decisión del usuario)
+            hist = [];
+            for (let i = 1; i < path.length; i++) {
+                hist.push({ s: path[i - 1], next: path[i], c: '' });
+            }
+            cur = id;
+        } else {
+            // Si no se encuentra ruta, simplemente vamos al paso sin historial (poco probable)
+            hist = [];
+            cur = id;
+        }
+    }
+    if (mapaOn) {
+        mapaOn = false;
+        document.getElementById('layout').style.display = 'flex';
+        document.getElementById('mapa-overlay').style.display = 'none';
+    }
+    render();
+}
+
+function restart() {
+    cur = 'inicio'; hist = []; mapaOn = false;
+    document.getElementById('layout').style.display = 'flex';
+    document.getElementById('mapa-overlay').style.display = 'none';
+    sbTab('map');
+    render();
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  SIDEBAR TABS
+// ═══════════════════════════════════════════════════════════════
+function sbTab(tab) {
+    activeSbTab = tab;
+    document.getElementById('sb-map').style.display = tab === 'map' ? 'block' : 'none';
+    document.getElementById('sb-journey').style.display = tab === 'journey' ? 'block' : 'none';
+    document.querySelectorAll('.sb-tab').forEach((t, i) => {
+        t.classList.toggle('active', (i === 0 && tab === 'map') || (i === 1 && tab === 'journey'));
+    });
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  MAPA OVERLAY
+// ═══════════════════════════════════════════════════════════════
+function toggleMapa() {
+    mapaOn = !mapaOn;
+    document.getElementById('layout').style.display = mapaOn ? 'none' : 'flex';
+    document.getElementById('mapa-overlay').style.display = mapaOn ? 'block' : 'none';
+    if (mapaOn) renderMapa();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && mapaOn) toggleMapa(); });
+
+// ═══════════════════════════════════════════════════════════════
+//  RENDER PRINCIPAL
+// ═══════════════════════════════════════════════════════════════
+function render() {
+    renderPbar();
+    renderBreadcrumb();
+    renderSbMap();
+    renderSbJourney();
+    renderContent();
+    try { document.getElementById('content').scrollTop = 0; } catch (e) {}
+}
+
+function truncate(s, n) { return s.length > n ? s.slice(0, n) + '…' : s; }
+function actLabel(ac) {
+    if (ac === 'laj') return 'LAJ';
+    if (ac === 'juez') return 'Juez / Tribunal';
+    return 'LAJ + Tribunal';
+}
+function escQ(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, "&#39;").replace(/"/g, '&quot;');
+}
+
+// ── PBAR ──
+function renderPbar() {
+    const s = STEPS[cur];
+    const cp = s ? s.ph : 0;
+    let html = '';
+    PHASES.forEach((n, i) => {
+        const cls = i === cp ? 'active' : i < cp ? 'done' : '';
+        html += `<div class="ph-item"><span class="ph-lbl ${cls}">${n}</span></div>`;
+        if (i < PHASES.length - 1) html += '<span class="ph-sep">›</span>';
+    });
+    document.getElementById('pbar').innerHTML = html;
+}
+
+// ── BREADCRUMB ──
+function renderBreadcrumb() {
+    let html = '';
+    hist.forEach((h, i) => {
+        const s = STEPS[h.s];
+        html += `<button class="bc-past bc-item" onclick="goBackTo(${i})">${s ? truncate(s.t, 28) : h.s}</button><span class="bc-sep">›</span>`;
+    });
+    const cs = STEPS[cur];
+    html += `<span class="bc-item bc-current">${cs ? truncate(cs.t, 28) : cur}</span>`;
+    document.getElementById('breadcrumb').innerHTML = html;
+}
+
+// ── SIDEBAR MAP ──
+function togglePhase(pi) { phCol[pi] = !phCol[pi]; renderSbMap(); }
+function renderSbMap() {
+    const vis = new Set([...hist.map(h => h.s), ...hist.map(h => h.next)]);
+    let html = '';
+    PHASES.forEach((ph, pi) => {
+        const nodes = Object.entries(STEPS).filter(([, s]) => s.ph === pi);
+        if (nodes.length === 0) return;
+        const collapsed = phCol[pi];
+        let ndHtml = '';
+        if (!collapsed) {
+            nodes.forEach(([id, s]) => {
+                const isCur = id === cur;
+                const isVis = vis.has(id) && !isCur;
+                let cls = 'sm-node';
+                if (isCur) cls += ' current';
+                else if (isVis) cls += ' visited';
+                if (s.end === 'success') cls += ' endok';
+                else if (s.end === 'error') cls += ' endbad';
+                else if (s.end === 'warning') cls += ' endwarn';
+                ndHtml += `<div class="${cls}" tabindex="0" role="button" aria-label="${s.t}" onclick="jumpTo('${id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();jumpTo('${id}')}"><span class="sm-dot"></span><span class="sm-nlbl">${truncate(s.t, 34)}</span></div>`;
+            });
+        }
+        html += `<div class="sm-phase"><div class="sm-phase-hdr" onclick="togglePhase(${pi})"><span>${ph}</span><span>${collapsed ? '›' : '▾'}</span></div>${collapsed ? '' : `<div class="sm-nodes">${ndHtml}</div>`}</div>`;
+    });
+    document.getElementById('sb-map').innerHTML = html;
+}
+
+// ── SIDEBAR JOURNEY ──
+function renderSbJourney() {
+    if (hist.length === 0 && cur === 'inicio') {
+        document.getElementById('sb-journey').innerHTML = '<div class="sb-empty">El recorrido aparecerá aquí cuando tomes decisiones.</div>';
+        return;
+    }
+    let html = '';
+    hist.forEach((h, i) => {
+        const s = STEPS[h.s];
+        html += `<div class="pi past"><div class="pi-num">Paso ${i + 1}</div><div class="pi-title">${s ? s.t : h.s}</div>${h.c ? `<div class="pi-choice">↳ ${h.c}</div>` : ''}</div>`;
+    });
+    const cs = STEPS[cur];
+    html += `<div class="pi current"><div class="pi-num">Paso actual · ${cs ? PHASES[cs.ph] : ''}</div><div class="pi-title">${cs ? cs.t : cur}</div></div>`;
+    if (cs) {
+        const lb = (cs.c || []).find(b => b[0] === 'l');
+        if (lb) html += `<div class="sb-foot"><div class="sb-foot-lbl">Fundamento legal</div><div class="sb-foot-refs">${lb[1]}</div></div>`;
+    }
+    document.getElementById('sb-journey').innerHTML = html;
+}
+
+// ── RENDER CONTENT ──
+function renderContent() {
+    const s = STEPS[cur];
+    if (!s) {
+        document.getElementById('content').innerHTML = '<div class="card"><div class="c-hdr"><div class="c-title">Paso no encontrado</div></div></div>';
+        return;
+    }
+    document.getElementById('content').innerHTML = s.end ? buildEnd(s) : buildStep(s);
+    document.querySelectorAll('.cb-cl-check').forEach(el => {
+        el.addEventListener('click', () => {
+            el.classList.toggle('chk');
+            const checked = el.classList.contains('chk');
+            el.textContent = checked ? '✓' : '';
+            el.setAttribute('aria-checked', String(checked));
+        });
+        el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); } });
+    });
+}
+
+function buildStep(s) {
+    const n = hist.length + 1;
+    return `<div class="card">
+        <div class="c-hdr">
+            <div class="c-hdr-top">
+                <span class="act-badge act-${s.ac}">${actLabel(s.ac)}</span>
+                <span class="step-num">Paso ${n} · ${PHASES[s.ph]}</span>
+            </div>
+            <div class="c-title">${s.t}</div>
+        </div>
+        <div class="c-body">${renderBlocks(s.c)}</div>
+        ${s.q ? renderDecision(s.q, s.opts) : ''}
+        <div class="c-nav">
+            <button class="btn-back" onclick="goBack()" ${hist.length === 0 ? 'disabled' : ''}>← Volver</button>
+            ${s.nx ? `<button class="btn-next" onclick="goTo('${s.nx}','')">Siguiente →</button>` : ''}
+        </div>
+    </div>`;
+}
+
+function buildEnd(s) {
+    const icons = { success: '✅', error: '❌', warning: '⚠️', neutral: '🔵' };
+    const allSteps = [...hist.map(h => ({ id: h.s, c: h.c })), { id: cur, c: null }];
+    const sumHtml = allSteps.map((item, i) => {
+        const st = STEPS[item.id];
+        return `<div class="s-item"><span class="s-num">${i + 1}</span><div><div>${st ? st.t : item.id}</div>${item.c ? `<div class="s-choice">↳ ${item.c}</div>` : ''}</div></div>`;
+    }).join('');
+    return `<div class="card end-${s.end}">
+        <div class="end-hero">
+            <div class="end-icon">${icons[s.end] || '🔵'}</div>
+            <div class="end-title ${s.end}">${s.t}</div>
+            <div class="end-sub">El procedimiento ha concluido en esta vía</div>
+            <div class="end-btns">
+                <button class="btn-next" onclick="restart()">↩ Nuevo procedimiento</button>
+                <button class="btn-back" onclick="goBack()">← Volver</button>
+            </div>
+        </div>
+        <div class="end-detail">
+            ${renderBlocks(s.c)}
+            <div class="summary-box"><div class="summary-ttl">Recorrido completo del procedimiento</div>${sumHtml}</div>
+        </div>
+    </div>`;
+}
+
+function renderDecision(q, opts) {
+    return `<div class="dec-area"><div class="dec-q">${q}</div><div class="dec-opts">${opts.map((o, i) => {
+        const ltr = String.fromCharCode(65 + i);
+        return `<button class="dec-btn ${o.l}" onclick="goTo('${o.n}','${escQ(o.t)}')"><span class="dec-letter">${ltr}</span><span class="dec-btn-text">${o.t}</span></button>`;
+    }).join('')}</div></div>`;
+}
+
+function renderBlocks(blocks) {
+    if (!blocks) return '';
+    return blocks.map(b => {
+        switch (b[0]) {
+            case 'i': return `<div class="c-block"><p class="cb-intro">${b[1]}</p></div>`;
+            case 'd': return `<div class="c-block"><div class="cb-box cb-deadline"><span class="cb-icon">⏱</span><span>${b[1]}</span></div></div>`;
+            case 'n': return `<div class="c-block"><div class="cb-box cb-note"><span class="cb-icon">ℹ</span><span>${b[1]}</span></div></div>`;
+            case 'w': return `<div class="c-block"><div class="cb-box cb-warn"><span class="cb-icon">⚠</span><span>${b[1]}</span></div></div>`;
+            case 'l': return `<div class="c-block"><div class="cb-law">${b[1]}</div></div>`;
+            case 'cl': return `<div class="c-block"><div class="cb-cl-title">${b[1]}</div><ul class="cb-cl-list">${(b[2] || []).map(item => `<li class="cb-cl-item"><span class="cb-cl-check" tabindex="0" role="checkbox" aria-checked="false"></span><span>${item}</span></li>`).join('')}</ul></div>`;
+            default: return '';
+        }
+    }).join('');
+}
+
+// ── MAPA COMPLETO (OVERLAY) ──
+function renderMapa() {
+    const vis = new Set([...hist.map(h => h.s), cur]);
+    let html = '';
+    PHASES.forEach((ph, pi) => {
+        const nodes = Object.entries(STEPS).filter(([, s]) => s.ph === pi);
+        if (!nodes.length) return;
+        html += `<div class="mapa-col"><div class="mapa-col-hdr">${ph}</div>`;
+        nodes.forEach(([id, s]) => {
+            const isCur = id === cur;
+            const isVis = vis.has(id);
+            let cls = 'mn';
+            if (isCur) cls += ' mn-cur';
+            else if (isVis && !s.end) cls += ' mn-vis';
+            if (s.end === 'success') cls += ' mn-eok';
+            else if (s.end === 'error') cls += ' mn-ebad';
+            else if (s.end === 'warning') cls += ' mn-ewarn';
+            const targets = s.nx ? [s.nx] : (s.opts || []).map(o => o.n);
+            const arrHint = targets.length ? `<div class="mn-arr">→ ${targets.map(t => truncate(STEPS[t]?.t || t, 22)).join(' / ')}</div>` : '';
+            html += `<div class="${cls}" onclick="jumpTo('${id}')"><div class="mn-title">${truncate(s.t, 40)}</div><div class="mn-ac">${actLabel(s.ac)}</div>${arrHint}</div>`;
+        });
+        html += `</div>`;
+    });
+    document.getElementById('mapa-grid').innerHTML = html;
+}
+
+// ── DESCARGA ──
+function dlGuia() {
+    const html = '<!DOCTYPE html>' + document.documentElement.outerHTML;
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'guia-liquidacion-rem-definitiva.html';
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+
+// ── INIT ──
+render();
+</script>
+</body>
+</html>

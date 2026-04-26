@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa Mental — Expedientes de jurisdicción voluntaria relativos al Derecho sucesorio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  color-scheme: light;
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --surface-3:   #eae8e3;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --border-lg:   rgba(15,23,42,.22);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+  --accent-soft: rgba(200,169,110,.15);
+  --accent-ring: rgba(200,169,110,.35);
+  --c1: #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+  --c2: #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+  --c3: #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+  --c4: #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+  --c5: #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+  --c6: #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.06);
+  --shadow-md: 0 4px 6px -1px rgba(15,23,42,.07), 0 2px 4px -1px rgba(15,23,42,.04);
+  --shadow-lg: 0 10px 20px -5px rgba(15,23,42,.10), 0 4px 8px -3px rgba(15,23,42,.05);
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-ui:      'Outfit', system-ui, -apple-system, sans-serif;
+  --transition:   180ms cubic-bezier(.4,0,.2,1);
+  --transition-fast: 120ms cubic-bezier(.4,0,.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+html { -webkit-text-size-adjust: 100%; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { min-height: 100vh; font-family: var(--font-ui); font-size: 14px; line-height: 1.55; color: var(--text-1); background: var(--bg); }
+img, svg, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: transparent; border: 0; padding: 0; margin: 0; cursor: pointer; -webkit-appearance: none; appearance: none; line-height: 1.2; text-align: inherit; }
+button:disabled { cursor: not-allowed; opacity: .5; }
+input, select, textarea { font: inherit; color: inherit; -webkit-appearance: none; appearance: none; }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--radius-sm); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 10px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--border-lg); }
+::selection { background: var(--accent-soft); color: var(--text-1); }
+
+.site-header { background: var(--header-bg); color: var(--header-text); padding: 2rem 1.5rem 1.75rem; }
+.header-inner { max-width: 1400px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: .8rem; align-items: center; }
+.header-breadcrumb { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.header-title { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700; letter-spacing: -0.02em; margin: .5rem 0; }
+.header-subtitle { color: rgba(248,245,237,.8); max-width: 660px; margin-bottom: .5rem; }
+.header-meta { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; align-items: center; }
+.header-tag { background: var(--accent-soft); border: 1px solid rgba(200,169,110,.3); color: var(--accent); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 600; }
+.header-actions { margin-left: .5rem; }
+.btn-ghost { border: 1px solid rgba(248,245,237,.15); color: rgba(248,245,237,.7); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 500; transition: var(--transition); }
+.btn-ghost:hover { background: rgba(248,245,237,.08); color: #fff; }
+
+.stats-bar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 0; }
+.stats-inner { display: flex; gap: 1rem; align-items: center; max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; }
+.stat-item { flex: 1; min-width: 120px; text-align: center; border-right: 1px solid var(--border); }
+.stat-item:last-child { border-right: none; }
+@media (max-width: 640px) {
+  .stats-inner { flex-wrap: wrap; justify-content: center; }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding: .5rem 0; }
+  .stat-item:last-child { border-bottom: none; }
+}
+.stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: var(--text-1); }
+.stat-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; }
+
+.controls-bar { position: sticky; top: 0; z-index: 100; background: var(--surface); backdrop-filter: saturate(180%) blur(8px); box-shadow: 0 1px 0 var(--border), 0 2px 8px rgba(15,23,42,.04); padding: .75rem 0; }
+.controls-bar-inner { display: flex; gap: .75rem; align-items: center; max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; flex-wrap: wrap; }
+.search-wrap { position: relative; flex: 0 0 auto; min-width: 180px; max-width: 320px; display: flex; align-items: center; }
+.search-wrap svg { position: absolute; left: 10px; width: 14px; height: 14px; stroke: var(--text-3); fill: none; }
+.search-input { padding: 8px 12px 8px 36px; border: 1px solid var(--border-md); border-radius: var(--radius-sm); font-size: 14px; width: 100%; background: var(--surface-2); transition: var(--transition); }
+.search-input:hover { border-color: var(--border-lg); }
+.search-input:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
+.search-input::placeholder { color: var(--text-3); }
+
+.filter-pills { display: flex; gap: .4rem; flex-wrap: wrap; align-items: center; }
+.pill { background: transparent; border: 1px solid var(--border-md); color: var(--text-2); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; transition: var(--transition); white-space: nowrap; }
+.pill:hover:not(.active) { background: var(--surface-2); border-color: var(--border-lg); color: var(--text-1); }
+.pill.active[data-cat="all"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.pill.active[data-cat="c1"]  { background: var(--c1); border-color: var(--c1); color: #fff; }
+.pill.active[data-cat="c2"]  { background: var(--c2); border-color: var(--c2); color: #fff; }
+.pill.active[data-cat="c3"]  { background: var(--c3); border-color: var(--c3); color: #fff; }
+.pill.active[data-cat="c4"]  { background: var(--c4); border-color: var(--c4); color: #fff; }
+.pill.active[data-cat="c6"]  { background: var(--c6); border-color: var(--c6); color: #fff; }
+
+@media (max-width: 768px) { .ctrl-actions { display: none !important; } }
+.ctrl-actions { display: flex; align-items: center; gap: .5rem; margin-left: auto; }
+.btn-ctrl { background: var(--surface-2); border: 1px solid var(--border-md); color: var(--text-2); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 500; transition: var(--transition); white-space: nowrap; }
+.btn-ctrl:hover { background: var(--surface-3); color: var(--text-1); }
+.btn-ctrl:active { transform: translateY(1px); }
+.zoom-cluster { display: flex; border: 1px solid var(--border-md); border-radius: var(--radius-sm); overflow: hidden; align-items: center; }
+.btn-zoom { width: 28px; height: 28px; background: var(--surface); font-size: 16px; display: flex; align-items: center; justify-content: center; transition: var(--transition-fast); border-right: 1px solid var(--border-md); }
+.btn-zoom:last-child { border-right: none; }
+.btn-zoom:hover { background: var(--surface-2); }
+.zoom-label { min-width: 42px; text-align: center; font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums; color: var(--text-2); padding: 0 4px; user-select: none; }
+
+.page-main { max-width: 1400px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; }
+.map-section { margin-bottom: .5rem; }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+@media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+.map-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--c6); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); position: relative; display: flex; flex-direction: column; overflow: hidden; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); }
+.map-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--border-md); }
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+.map-card.hidden { display: none; }
+
+.card-top { padding: 1rem 1.1rem .85rem; }
+.card-meta { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: .55rem; }
+.card-title { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; color: var(--text-1); line-height: 1.3; letter-spacing: -0.01em; margin-bottom: .3rem; }
+.card-subtitle { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+
+.art-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--c6bd); background: var(--c6bg); color: var(--c6); letter-spacing: .01em; white-space: nowrap; }
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+.map-card[data-cat="c6"] .art-badge { background: var(--c6bg); color: var(--c6); border-color: var(--c6bd); }
+
+.status-tag { font-size: 10.5px; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: .02em; }
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+.card-counters { display: flex; gap: .5rem; flex-wrap: wrap; padding: 0 1.1rem .9rem; font-size: 11px; color: var(--text-3); }
+.counter-badge { background: var(--surface-2); padding: 3px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: .3rem; }
+.counter-badge strong { color: var(--text-1); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.card-toggle-btn { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .65rem 1.1rem; background: var(--surface-2); border-top: 1px solid var(--border); color: var(--text-2); font-size: 12px; font-weight: 600; letter-spacing: .01em; transition: background var(--transition-fast), color var(--transition-fast); }
+.card-toggle-btn:hover { background: var(--surface-3); color: var(--text-1); }
+.card-toggle-btn:active { background: var(--border); }
+.card-toggle-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.toggle-label { flex: 1; text-align: left; }
+.toggle-icon { display: inline-flex; width: 18px; height: 18px; align-items: center; justify-content: center; border-radius: 50%; background: var(--surface); border: 1px solid var(--border-md); color: var(--text-2); font-size: 10px; transition: transform var(--transition), background var(--transition-fast), color var(--transition-fast); flex-shrink: 0; }
+.card-toggle-btn:hover .toggle-icon { background: var(--surface-2); color: var(--text-1); }
+.map-card.expanded .toggle-icon { transform: rotate(180deg); background: var(--ink); color: var(--surface); border-color: var(--ink); }
+
+.card-body { display: none; padding: 1rem 1.1rem 1.1rem; background: #fafaf9; border-top: 1px solid var(--border); }
+.map-card.expanded .card-body { display: block; }
+
+.inner-section + .inner-section { margin-top: 1rem; }
+.inner-heading { display: flex; align-items: center; gap: .4rem; margin-bottom: .45rem; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text-1); }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--c6); flex-shrink: 0; }
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+.map-card[data-cat="c6"] .dot { background: var(--c6); }
+.inner-body { padding-left: .75rem; }
+.inner-list li { position: relative; padding-left: .75rem; margin-bottom: .3rem; font-size: 12.5px; color: var(--text-2); line-height: 1.5; }
+.inner-list li::before { content: ''; position: absolute; left: 0; top: .55em; width: 4px; height: 4px; border-radius: 50%; background: var(--text-3); }
+.inner-list li strong { color: var(--text-1); font-weight: 600; }
+
+.card-refs { display: flex; flex-wrap: wrap; gap: .4rem; padding: .8rem 1.1rem; background: #fafaf9; border-top: 1px solid var(--border); }
+.ref-tag { font-size: 11px; font-weight: 500; color: var(--text-2); background: var(--surface-2); padding: 3px 8px; border-radius: var(--radius-sm); border: 1px solid var(--border); transition: background var(--transition-fast); }
+.ref-tag:hover { background: var(--surface-3); }
+
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin: 1.5rem 0 .5rem; cursor: pointer; user-select: none; }
+.section-heading-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text-1); letter-spacing: -0.01em; flex: 1; transition: color var(--transition); }
+.section-heading:hover .section-heading-text { color: var(--accent); }
+.section-heading-count { font-size: 11px; font-weight: 600; color: var(--text-3); background: var(--surface-2); padding: 3px 10px; border-radius: 20px; letter-spacing: .02em; white-space: nowrap; }
+.section-toggle-btn { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-md); border-radius: 50%; color: var(--text-2); font-size: 11px; transition: var(--transition-fast); flex-shrink: 0; }
+.section-heading:hover .section-toggle-btn { background: var(--surface-2); color: var(--text-1); }
+.section-divider { border: 0; height: 1px; background: var(--border); margin-bottom: 1rem; }
+.section-body.collapsed { display: none; }
+
+.table-wrap { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); box-shadow: var(--shadow-sm); }
+.timeline-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.timeline-table th { background: var(--surface-2); text-align: left; padding: .85rem 1rem; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text-2); border-bottom: 1px solid var(--border); }
+.timeline-table td { padding: .7rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-1); vertical-align: top; }
+.timeline-table tbody tr:last-child td { border-bottom: 0; }
+.timeline-table tbody tr { transition: background var(--transition-fast); }
+.timeline-table tbody tr:hover { background: var(--surface-2); }
+.plazo-badge { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+.participants-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+@media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+.participant-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+.participant-col-head { padding: .7rem 1rem; color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.participant-col ul { padding: .5rem .25rem; }
+.participant-col li { font-size: 12.5px; color: var(--text-2); padding: .4rem .75rem; border-bottom: 1px solid var(--border); }
+.participant-col li:last-child { border-bottom: 0; }
+.participant-note { font-size: 11px; color: var(--text-3); font-style: italic; }
+
+.norm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+@media (max-width: 900px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+.norm-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: .5rem; transition: transform var(--transition), box-shadow var(--transition); }
+.norm-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.norm-law { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); font-weight: 600; }
+.norm-title { font-size: 13.5px; font-weight: 500; color: var(--text-1); line-height: 1.4; }
+.norm-arts { font-size: 12px; color: var(--text-2); line-height: 1.55; }
+.norm-tag { align-self: flex-start; margin-top: auto; font-size: 10.5px; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: .02em; }
+
+.no-results { text-align: center; padding: 3rem 1rem; color: var(--text-3); font-size: 14px; display: none; }
+
+.legend-footer { background: var(--header-bg); color: var(--header-text); margin-top: 3rem; padding: 2rem 1.5rem; }
+.legend-inner { max-width: 1400px; margin: 0 auto; }
+.legend-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 1rem; }
+.legend-grid { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; font-size: 13px; color: rgba(248,245,237,.85); }
+.legend-item { display: inline-flex; align-items: center; gap: .5rem; }
+.legend-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.legend-divider { width: 1px; height: 20px; background: rgba(248,245,237,.12); }
+.legend-copy { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(248,245,237,.08); font-size: 11px; color: rgba(248,245,237,.35); }
+
+@media print {
+  .controls-bar, .header-actions { display: none !important; }
+  .card-body, .section-body { display: block !important; }
+  .map-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; transform: none !important; }
+  body { background: #fff; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .map-card:hover, .norm-card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título IV · Capítulos I–III</div>
+    <h1 class="header-title">Expedientes de jurisdicción voluntaria relativos al Derecho sucesorio</h1>
+    <p class="header-subtitle">Artículos 91 a 95 · Albaceazgo, contadores-partidores dativos, aceptación y repudiación de la herencia. Desjudicialización a favor del Letrado de la Administración de Justicia.</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria</span>
+      <span class="header-tag">Arts. 91–95</span>
+      <span class="header-tag">Título IV</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-value" id="stat-arts">5</div><div class="stat-label">Artículos base</div></div>
+    <div class="stat-item"><div class="stat-value">30+</div><div class="stat-label">Conexiones normativas</div></div>
+    <div class="stat-item"><div class="stat-value">12+</div><div class="stat-label">Actores identificados</div></div>
+    <div class="stat-item"><div class="stat-value">4</div><div class="stat-label">Plazos procesales</div></div>
+  </div>
+</div>
+
+<div class="controls-bar">
+  <div class="controls-bar-inner">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Albaceazgo</button>
+      <button class="pill" data-cat="c2">Contadores-partidores</button>
+      <button class="pill" data-cat="c3">Aceptación y repudiación</button>
+      <button class="pill" data-cat="c4">Marco normativo</button>
+      <button class="pill" data-cat="c6">Transversal</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<main class="page-main">
+
+  <!-- MARCO NORMATIVO GENERAL -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-marco">
+      <span class="section-heading-text">Marco normativo general del Título IV</span>
+      <span class="section-heading-count">1 elemento</span>
+      <button class="section-toggle-btn">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-marco">
+      <div class="card-grid">
+        <article class="map-card" data-cat="c4" data-text="marco normativo general ley 15/2015 jurisdicción voluntaria título iv normas comunes artículos 13 22 desjudicialización secretario judicial letrado administración justicia ley orgánica 7/2015 código civil albaceazgo partición aceptación repudiación beneficio inventario">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Marco general</span><span class="status-tag tag-info">Normas comunes</span></div>
+            <h2 class="card-title">Marco normativo del Título IV de la Ley 15/2015</h2>
+            <p class="card-subtitle">Regula los expedientes sucesorios tradicionalmente tramitados por la vía de la jurisdicción voluntaria, desjudicializando algunos de ellos en favor del Secretario judicial (hoy Letrado de la Administración de Justicia, tras la reforma operada por la Ley Orgánica 7/2015).</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>3</strong> capítulos</span><span class="counter-badge" style="margin-left:auto"><strong>5</strong> artículos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false"><span class="toggle-label">Ver contenido completo</span><span class="toggle-icon" aria-hidden="true">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Normas comunes supletorias (artículos 13 a 22 LJV)</div><div class="inner-body"><ul class="inner-list"><li><strong>Artículo 14 LJV:</strong> la solicitud inicial y su contenido.</li><li><strong>Artículos 17 y 18 LJV:</strong> la admisión a trámite y la citación de los interesados.</li><li><strong>Artículo 18 LJV:</strong> la celebración de la comparecencia.</li><li><strong>Artículo 19 LJV:</strong> la resolución del expediente.</li><li><strong>Artículo 20 LJV:</strong> el régimen de recursos.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Remisiones al Código Civil por capítulo</div><div class="inner-body"><ul class="inner-list"><li><strong>Capítulo I (Albaceazgo):</strong> artículos 892 a 911 del Código Civil.</li><li><strong>Capítulo II (Contadores-partidores):</strong> artículos 1051 a 1087 del Código Civil, con especial protagonismo del artículo 1057.</li><li><strong>Capítulo III (Aceptación y repudiación):</strong> artículos 988 a 1009 del Código Civil, con especial mención al beneficio de inventario (artículos 1010 a 1034).</li></ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">Arts. 13–22 LJV</span><span class="ref-tag">Art. 892–911 CC</span><span class="ref-tag">Art. 988–1009 CC</span><span class="ref-tag">Art. 1010–1034 CC</span><span class="ref-tag">Art. 1051–1087 CC</span><span class="ref-tag">LO 7/2015</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAPÍTULO I — ALBACEAZGO -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-albaceazgo">
+      <span class="section-heading-text">Capítulo I — Del albaceazgo</span>
+      <span class="section-heading-count">1 artículo</span>
+      <button class="section-toggle-btn">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-albaceazgo">
+      <div class="card-grid">
+        <article class="map-card" data-cat="c1" data-text="artículo 91 albaceazgo ámbito aplicación competencia postulación tramitación renuncia prórroga plazo remoción cargo rendición cuentas autorización disposición bienes herencia secretario judicial juez juzgado primera instancia domicilio causante patrimonio fallecimiento 6000 euros abogado procurador código civil 898 899 903 904 905 906 907 910 911">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 91</span><span class="status-tag tag-info">Procedimiento</span></div>
+            <h2 class="card-title">Ámbito de aplicación, competencia, postulación y tramitación del albaceazgo</h2>
+            <p class="card-subtitle">Regula los expedientes de jurisdicción voluntaria en materia de albaceazgo: renuncia del albacea, prórroga del plazo, remoción, rendición de cuentas y autorización para actos de disposición sobre bienes de la herencia.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>9</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>4</strong> supuestos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false"><span class="toggle-label">Ver contenido completo</span><span class="toggle-icon" aria-hidden="true">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Ámbito de aplicación (apartado 1)</div><div class="inner-body"><ul class="inner-list"><li><strong>1.º Renuncia del albacea a su cargo o prórroga del plazo del albaceazgo:</strong> en los casos en los que con arreglo a la legislación civil resulte necesario, será de aplicación lo previsto en este capítulo para los casos de renuncia del albacea a su cargo o de prórroga del plazo del albaceazgo.</li><li><strong>2.º Remoción de su cargo:</strong> procede la remoción del albacea de su cargo conforme a lo regulado en este capítulo.</li><li><strong>3.º Rendición de cuentas del albacea:</strong> el albacea está sujeto a la rendición de cuentas de su gestión, que se tramitará conforme a este capítulo.</li><li><strong>4.º Autorización para actos de disposición:</strong> para la obtención de autorización para que el albacea pueda efectuar actos de disposición sobre bienes de la herencia.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Postulación (apartado 2)</div><div class="inner-body"><ul class="inner-list"><li><strong>No preceptiva la intervención de Abogado ni Procurador:</strong> para la actuación en estos expedientes no será preceptiva la intervención de Abogado ni Procurador cuando la cuantía del haber hereditario sea inferior a 6.000 euros.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Competencia territorial (apartado 3)</div><div class="inner-body"><ul class="inner-list"><li><strong>Juzgado de Primera Instancia competente:</strong> será competente el Juzgado de Primera Instancia del último domicilio o residencia habitual del causante, o de donde estuviere la mayor parte de su patrimonio, o el del lugar en que hubiera fallecido, siempre que estuvieran en España, a elección del solicitante.</li><li><strong>Fuero subsidiario:</strong> en defecto de todos ellos, será competente el Juzgado de Primera Instancia del lugar del domicilio del solicitante.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Distribución funcional de la decisión (apartado 4)</div><div class="inner-body"><ul class="inner-list"><li><strong>Decisión del Juez:</strong> la decisión de estos expedientes corresponderá al Juez, salvo la resolución de los supuestos previstos en el número 1.º del apartado 1.</li><li><strong>Decisión del Secretario judicial:</strong> la resolución de los supuestos de renuncia del albacea o prórroga del plazo del albaceazgo (número 1.º del apartado 1) corresponderá al Secretario judicial.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Conexiones con el Código Civil en materia de albaceazgo</div><div class="inner-body"><ul class="inner-list"><li><strong>Artículo 898 CC:</strong> el cargo de albacea es voluntario, pero una vez aceptado es obligatorio su desempeño salvo justa causa de renuncia.</li><li><strong>Artículo 899 CC:</strong> enumera las facultades y obligaciones del albacea, base del deber de rendir cuentas.</li><li><strong>Artículo 903 CC:</strong> regla general de ausencia de facultades dispositivas del albacea salvo autorización.</li><li><strong>Artículo 904 CC:</strong> el albacea a quien el testador no haya fijado plazo deberá cumplir su encargo dentro del año contado desde su aceptación o desde que terminen los litigios sobre la validez del testamento.</li><li><strong>Artículo 905 CC:</strong> si el testador quisiere ampliar el plazo legal, deberá señalar expresamente el de la prórroga.</li><li><strong>Artículo 906 CC:</strong> posibilidad de prórroga por los herederos y legatarios de común acuerdo; si no hay conformidad, judicialmente por el tiempo necesario.</li><li><strong>Artículo 907 CC:</strong> obligación de los albaceas de dar cuenta de su encargo a los herederos.</li><li><strong>Artículo 910 CC:</strong> causas de extinción del albaceazgo (muerte, imposibilidad, renuncia, transcurso del plazo y remoción).</li><li><strong>Artículo 911 CC:</strong> consecuencias de la falta de albacea (consignación en los herederos o, en su defecto, del Juez).</li></ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">Art. 898 CC</span><span class="ref-tag">Art. 899 CC</span><span class="ref-tag">Art. 903 CC</span><span class="ref-tag">Art. 904 CC</span><span class="ref-tag">Art. 905 CC</span><span class="ref-tag">Art. 906 CC</span><span class="ref-tag">Art. 907 CC</span><span class="ref-tag">Art. 910 CC</span><span class="ref-tag">Art. 911 CC</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAPÍTULO II — CONTADORES-PARTIDORES DATIVOS -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-contadores">
+      <span class="section-heading-text">Capítulo II — De los contadores-partidores dativos</span>
+      <span class="section-heading-count">1 artículo</span>
+      <button class="section-toggle-btn">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-contadores">
+      <div class="card-grid">
+        <article class="map-card" data-cat="c2" data-text="artículo 92 contador partidor dativo ámbito aplicación competencia postulación tramitación designación renuncia prórroga aprobación partición herencia secretario judicial notario juzgado primera instancia 6000 euros abogado procurador código civil 1057 1056 1058 1059 1060 ley enjuiciamiento civil 782">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 92</span><span class="status-tag tag-info">Procedimiento</span></div>
+            <h2 class="card-title">Ámbito de aplicación, competencia, postulación y tramitación de los contadores-partidores dativos</h2>
+            <p class="card-subtitle">Regula la designación del contador-partidor dativo, su renuncia, la prórroga del plazo y la aprobación de la partición cuando no ha sido confirmada por todos los herederos y legatarios.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>5</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>3</strong> supuestos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false"><span class="toggle-label">Ver contenido completo</span><span class="toggle-icon" aria-hidden="true">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Ámbito de aplicación (apartado 1)</div><div class="inner-body"><ul class="inner-list"><li><strong>Letra a) — Designación:</strong> para la designación del contador partidor dativo en los casos previstos en el artículo 1057 del Código Civil.</li><li><strong>Letra b) — Renuncia y prórroga:</strong> para los casos de renuncia del contador-partidor nombrado o de prórroga del plazo fijado para la realización de su encargo.</li><li><strong>Letra c) — Aprobación de la partición:</strong> para la aprobación de la partición realizada por el contador-partidor cuando resulte necesario por no haber sido confirmada expresamente por todos los herederos y legatarios.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Postulación (apartado 2)</div><div class="inner-body"><ul class="inner-list"><li><strong>No preceptiva la intervención de Abogado ni Procurador:</strong> cuando la cuantía del haber hereditario sea inferior a 6.000 euros.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Competencia y tramitación (apartado 3)</div><div class="inner-body"><ul class="inner-list"><li><strong>Órgano competente:</strong> la tramitación y decisión corresponderá al Secretario judicial del Juzgado de Primera Instancia.</li><li><strong>Competencia territorial:</strong> último domicilio o residencia habitual del causante, mayor parte del patrimonio, o lugar de fallecimiento, a elección del solicitante.</li><li><strong>Fuero subsidiario:</strong> Juzgado de Primera Instancia del domicilio del solicitante.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Conexiones con el Código Civil y con la partición hereditaria</div><div class="inner-body"><ul class="inner-list"><li><strong>Artículo 1057 CC (precepto clave):</strong> permite al testador encomendar la partición a cualquier persona que no sea coheredero. No habiendo nombrado, el Secretario judicial o el Notario, a petición de herederos que representen al menos el 50 % del haber, podrán nombrar un contador-partidor dativo.</li><li><strong>Artículo 1056 CC:</strong> el testador puede hacer por sí mismo la partición.</li><li><strong>Artículo 1058 CC:</strong> si el testador no hubiera hecho la partición ni encomendado a otro, los herederos mayores de edad podrán distribuirla libremente.</li><li><strong>Artículo 1059 CC:</strong> si los herederos no se entienden, juicio de división de herencia (LEC arts. 782 y ss.).</li><li><strong>Artículo 1060 CC:</strong> regla para la partición cuando haya menores o personas con medidas de apoyo.</li></ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">Art. 1057 CC</span><span class="ref-tag">Art. 1056 CC</span><span class="ref-tag">Art. 1058 CC</span><span class="ref-tag">Art. 1059 CC</span><span class="ref-tag">Art. 1060 CC</span><span class="ref-tag">Arts. 782+ LEC</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAPÍTULO III — ACEPTACIÓN Y REpUDIACIÓN -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-aceptacion">
+      <span class="section-heading-text">Capítulo III — De la aceptación y repudiación de la herencia</span>
+      <span class="section-heading-count">3 artículos</span>
+      <button class="section-toggle-btn">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-aceptacion">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c3" data-text="artículo 93 ámbito aplicación aceptación repudiación herencia autorización aprobación judicial patria potestad progenitores hijos menores 16 años tutores curadores representativos defensores judiciales beneficio inventario acreedores personas jurídicas asociaciones corporaciones fundaciones código civil 988 989 990 991 992 996 997 1001 1008 1010 1034">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 93</span><span class="status-tag tag-alert">Autorización judicial</span></div>
+            <h2 class="card-title">Ámbito de aplicación de la aceptación y repudiación de la herencia</h2>
+            <p class="card-subtitle">Determina los supuestos en que la validez de la aceptación o repudiación de la herencia necesita autorización o aprobación judicial.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>10</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>3</strong> supuestos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false"><span class="toggle-label">Ver contenido completo</span><span class="toggle-icon" aria-hidden="true">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Regla general (apartado 1)</div><div class="inner-body"><ul class="inner-list"><li><strong>Aplicación del capítulo:</strong> se aplicarán las disposiciones de este Capítulo en todos los casos en que, conforme a la ley, la validez de la aceptación o repudiación de la herencia necesite autorización o aprobación judicial.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Supuestos que precisan autorización judicial (apartado 2)</div><div class="inner-body"><ul class="inner-list"><li><strong>Letra a) — Repudiación por progenitores:</strong> los progenitores que ejerzan la patria potestad para repudiar la herencia o legados en nombre de sus hijos menores de 16 años, o si aun siendo mayores de esa edad, sin llegar a la mayoría, no prestaren su consentimiento.</li><li><strong>Letra b) — Tutores, curadores y defensores judiciales:</strong> para aceptar sin beneficio de inventario cualquier herencia o legado o para repudiar los mismos.</li><li><strong>Letra c) — Acreedores del heredero repudiante:</strong> para aceptar la herencia en nombre del heredero que hubiere repudiado en perjuicio de aquellos.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Aprobación judicial de la repudiación por personas jurídicas (apartado 3)</div><div class="inner-body"><ul class="inner-list"><li><strong>Personas jurídicas:</strong> será necesaria la aprobación judicial para la eficacia de la repudiación realizada por los legítimos representantes de las asociaciones, corporaciones y fundaciones capaces de adquirir.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Conexiones con el Código Civil</div><div class="inner-body"><ul class="inner-list"><li><strong>Art. 988 CC:</strong> actos enteramente voluntarios y libres.</li><li><strong>Art. 989 CC:</strong> efectos retrotraídos al momento de la muerte del causante.</li><li><strong>Art. 990 CC:</strong> no pueden hacerse en parte, a plazo ni condicionalmente.</li><li><strong>Art. 991 CC:</strong> necesidad de certeza de la muerte y del derecho.</li><li><strong>Art. 992 CC:</strong> capacidad general (libre disposición de bienes).</li><li><strong>Art. 996 CC:</strong> menor o persona con discapacidad: régimen de representación legal.</li><li><strong>Art. 997 CC:</strong> irrevocabilidad una vez realizados.</li><li><strong>Art. 1001 CC:</strong> acción subrogatoria de los acreedores (fundamento directo del art. 93.2.c).</li><li><strong>Art. 1008 CC:</strong> repudiación ante Notario en instrumento público.</li><li><strong>Arts. 1010 a 1034 CC:</strong> beneficio de inventario.</li></ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">Art. 988 CC</span><span class="ref-tag">Art. 989 CC</span><span class="ref-tag">Art. 990 CC</span><span class="ref-tag">Art. 991 CC</span><span class="ref-tag">Art. 992 CC</span><span class="ref-tag">Art. 996 CC</span><span class="ref-tag">Art. 997 CC</span><span class="ref-tag">Art. 1001 CC</span><span class="ref-tag">Art. 1008 CC</span><span class="ref-tag">Arts. 1010–1034 CC</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c3" data-text="artículo 94 competencia legitimación postulación aceptación repudiación herencia juzgado primera instancia domicilio causante menores discapacidad medidas apoyo ministerio fiscal progenitores tutores curadores representativos defensores judiciales acreedores 6000 euros abogado procurador código civil 166 271 287 ley enjuiciamiento civil 749">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 94</span><span class="status-tag tag-warn">Ministerio Fiscal</span></div>
+            <h2 class="card-title">Competencia, legitimación y postulación en aceptación y repudiación</h2>
+            <p class="card-subtitle">Establece la competencia territorial, la legitimación activa, la intervención preceptiva del Ministerio Fiscal y la postulación.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>4</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>5</strong> supuestos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false"><span class="toggle-label">Ver contenido completo</span><span class="toggle-icon" aria-hidden="true">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Competencia territorial (apartado 1)</div><div class="inner-body"><ul class="inner-list"><li><strong>Regla general:</strong> Juzgado de Primera Instancia del último domicilio o residencia del causante; si lo tuvo en país extranjero, último domicilio en España o mayor parte de bienes.</li><li><strong>Fuero especial de protección:</strong> cuando sea llamado un menor o persona con medidas de apoyo, Juzgado del lugar de residencia de estos.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Legitimación activa (apartado 2)</div><div class="inner-body"><ul class="inner-list"><li><strong>Llamados a la herencia.</strong></li><li><strong>Acreedores del heredero repudiante.</strong></li><li><strong>Menores:</strong> quienes ostenten su representación o, en su defecto, el Ministerio Fiscal.</li><li><strong>Personas con discapacidad con apoyo representativo:</strong> quien ejerza el apoyo.</li><li><strong>Defensor judicial:</strong> si no se le hubiera dado la autorización en el nombramiento.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Intervención del Ministerio Fiscal (apartado 3)</div><div class="inner-body"><ul class="inner-list"><li><strong>Preceptiva</strong> en los casos de las letras a) y b) del art. 93.2: repudiación por progenitores en nombre de menores, y actuaciones de tutores, curadores representativos y defensores judiciales.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Postulación (apartado 4)</div><div class="inner-body"><ul class="inner-list"><li>No preceptiva Abogado/Procurador si haber hereditario &lt; 6.000 euros.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Conexiones normativas</div><div class="inner-body"><ul class="inner-list"><li><strong>Art. 166 CC:</strong> límites de la patria potestad; necesidad de autorización judicial para renunciar a derechos de los hijos.</li><li><strong>Art. 271 CC:</strong> autorización judicial para el tutor: aceptar sin beneficio de inventario o repudiar.</li><li><strong>Art. 287 CC:</strong> actos del curador representativo que requieren autorización judicial.</li><li><strong>Art. 749 LEC:</strong> intervención preceptiva del MF en procesos con menores, personas con discapacidad o ausentes.</li></ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">Art. 166 CC</span><span class="ref-tag">Art. 271 CC</span><span class="ref-tag">Art. 287 CC</span><span class="ref-tag">Art. 749 LEC</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c3" data-text="artículo 95 resolución juez autorización aprobación denegación beneficio inventario apelación recursos efectos suspensivos ley 15/2015 artículo 20 ley enjuiciamiento civil 455 código civil 1010 1034">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 95</span><span class="status-tag tag-ok">Resolución</span></div>
+            <h2 class="card-title">Resolución del expediente de aceptación y repudiación</h2>
+            <p class="card-subtitle">Regula la decisión judicial, el efecto de la denegación y el régimen de recursos con apelación de efectos suspensivos.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>4</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>3</strong> efectos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false"><span class="toggle-label">Ver contenido completo</span><span class="toggle-icon" aria-hidden="true">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Decisión del Juez (apartado 1)</div><div class="inner-body"><ul class="inner-list"><li><strong>Concesión o denegación:</strong> el Juez, valorando la justificación ofrecida y su conveniencia a los intereses de los llamados a la herencia, resolverá concediendo o denegando la autorización o aprobación solicitada.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Efecto de la denegación (apartado 2)</div><div class="inner-body"><ul class="inner-list"><li><strong>Aceptación solo a beneficio de inventario:</strong> si no fuera concedida la autorización para aceptar sin beneficio de inventario o repudiar, sólo podrá ser aceptada a beneficio de inventario.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Régimen de recursos (apartado 3)</div><div class="inner-body"><ul class="inner-list"><li><strong>Apelación con efectos suspensivos:</strong> excepción a la regla general del art. 20 LJV, que refuerza la tutela de menores, personas con medidas de apoyo, acreedores y personas jurídicas.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Conexiones normativas</div><div class="inner-body"><ul class="inner-list"><li><strong>Art. 20 LJV:</strong> régimen general de recursos.</li><li><strong>Arts. 455 y ss. LEC:</strong> tramitación supletoria del recurso de apelación.</li><li><strong>Arts. 1010 a 1034 CC:</strong> beneficio de inventario, único cauce tras la denegación del art. 95.2.</li></ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">Art. 20 LJV</span><span class="ref-tag">Arts. 455+ LEC</span><span class="ref-tag">Arts. 1010–1034 CC</span></div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ESQUEMA TRANSVERSAL -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-transversal">
+      <span class="section-heading-text">Esquema transversal de los Capítulos I a III</span>
+      <span class="section-heading-count">1 elemento</span>
+      <button class="section-toggle-btn">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-transversal">
+      <div class="card-grid">
+        <article class="map-card" data-cat="c6" data-text="esquema transversal título iv capítulos i ii iii fuero común competencia territorial juzgado primera instancia postulación 6000 euros distribución competencias juez secretario judicial letrado administración justicia ministerio fiscal régimen recursos apelación efectos suspensivos">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Transversal</span><span class="status-tag tag-gray">Síntesis</span></div>
+            <h2 class="card-title">Elementos comunes y diferencias de los Capítulos I a III del Título IV</h2>
+            <p class="card-subtitle">Síntesis del fuero común, la postulación uniforme, la distribución de competencias internas y el régimen de recursos.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>3</strong> capítulos</span><span class="counter-badge" style="margin-left:auto"><strong>5</strong> artículos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false"><span class="toggle-label">Ver contenido completo</span><span class="toggle-icon" aria-hidden="true">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Fuero común (artículos 91.3, 92.3 y 94.1)</div><div class="inner-body"><ul class="inner-list"><li><strong>Juzgado de Primera Instancia:</strong> último domicilio o residencia habitual del causante.</li><li><strong>Mayor parte del patrimonio</strong> del causante.</li><li><strong>Lugar de fallecimiento</strong> (siempre en España).</li><li><strong>A elección del solicitante</strong> entre las opciones anteriores.</li><li><strong>Fuero subsidiario:</strong> domicilio del solicitante (arts. 91.3 y 92.3).</li><li><strong>Fuero especial de protección:</strong> lugar de residencia del menor o persona con medidas de apoyo (art. 94.1).</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Postulación uniforme (artículos 91.2, 92.2 y 94.4)</div><div class="inner-body"><ul class="inner-list"><li>No preceptiva Abogado/Procurador cuando haber hereditario &lt; 6.000 euros.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Distribución de competencias internas</div><div class="inner-body"><ul class="inner-list"><li><strong>Juez:</strong> decisión del Capítulo I (salvo renuncia/prórroga albacea) y todo el Capítulo III.</li><li><strong>Secretario judicial / LAJ:</strong> renuncia y prórroga del albacea (art. 91.4) y totalidad de contadores-partidores dativos (art. 92.3).</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Intervención preceptiva del Ministerio Fiscal</div><div class="inner-body"><ul class="inner-list"><li>Únicamente en arts. 93.2.a) y b) / 94.3: repudiación por progenitores de menores, y actuaciones de tutores, curadores y defensores judiciales.</li></ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Régimen de recursos</div><div class="inner-body"><ul class="inner-list"><li><strong>Remisión general:</strong> art. 20 LJV.</li><li><strong>Especialidad Cap. III:</strong> art. 95.3 atribuye efecto suspensivo a la apelación.</li></ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">Arts. 91.3, 92.3, 94.1</span><span class="ref-tag">Arts. 91.2, 92.2, 94.4</span><span class="ref-tag">Art. 91.4</span><span class="ref-tag">Art. 94.3</span><span class="ref-tag">Art. 95.3</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIN RESULTADOS -->
+  <div class="no-results" id="no-results">No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.</div>
+
+  <!-- CRONOGRAMA DE PLAZOS PROCESALES -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Cronograma de plazos procesales</span>
+      <span class="section-heading-count">4 trámites</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead><tr><th style="width:45%">Acto o trámite procesal</th><th>Plazo</th><th>Fundamento normativo</th></tr></thead>
+          <tbody>
+            <tr><td class="td-tramite">Cumplimiento del encargo del albacea sin plazo fijado por el testador, contado desde la aceptación o desde que terminen los litigios sobre la validez del testamento</td><td><span class="plazo-badge plazo-months">1 año</span></td><td class="td-norm">Artículo 904 del Código Civil (en conexión con el artículo 91 LJV)</td></tr>
+            <tr><td class="td-tramite">Prórroga del plazo del albaceazgo por los herederos y legatarios de común acuerdo, o judicialmente si no hay conformidad</td><td><span class="plazo-badge plazo-other">El tiempo necesario (judicial)</span></td><td class="td-norm">Artículo 906 del Código Civil (en conexión con el artículo 91.1.1.º LJV)</td></tr>
+            <tr><td class="td-tramite">Plazo del contador-partidor dativo para la realización de su encargo, con posibilidad de prórroga</td><td><span class="plazo-badge plazo-other">El fijado en el nombramiento</span></td><td class="td-norm">Artículo 92.1.b) LJV</td></tr>
+            <tr><td class="td-tramite">Recurso de apelación contra las resoluciones dictadas en los expedientes del Capítulo III</td><td><span class="plazo-badge plazo-other">Con efectos suspensivos</span></td><td class="td-norm">Artículo 95.3 LJV; artículo 20 LJV; artículos 455 y siguientes LEC</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAPA DE PARTICIPANTES Y ACTORES -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">4 categorías · 16 actores</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Albaceazgo</div>
+          <ul>
+            <li>Albacea <span class="participant-note">(sujeto pasivo: renuncia, remoción, rendición de cuentas)</span></li>
+            <li>Herederos <span class="participant-note">(pueden acordar la prórroga; destinatarios de cuentas)</span></li>
+            <li>Legatarios <span class="participant-note">(pueden acordar la prórroga junto con los herederos)</span></li>
+            <li>Juez <span class="participant-note">(decide remoción, cuentas y autorización de disposición)</span></li>
+            <li>Secretario judicial / LAJ <span class="participant-note">(decide renuncia y prórroga del albacea)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Contadores-partidores</div>
+          <ul>
+            <li>Contador-partidor dativo <span class="participant-note">(designado por Secretario judicial o Notario)</span></li>
+            <li>Testador <span class="participant-note">(puede encomendar la partición inter vivos o mortis causa)</span></li>
+            <li>Herederos y legatarios <span class="participant-note">(deben representar al menos el 50 % del haber)</span></li>
+            <li>Secretario judicial / LAJ <span class="participant-note">(tramita y decide; aprueba la partición)</span></li>
+            <li>Notario <span class="participant-note">(puede nombrar y aprobar la partición)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Aceptación y repudiación</div>
+          <ul>
+            <li>Progenitores <span class="participant-note">(ejercicio de la patria potestad)</span></li>
+            <li>Menores de 16 años <span class="participant-note">(sujetos a repudiación por progenitores)</span></li>
+            <li>Tutores <span class="participant-note">(necesitan autorización para aceptar sin beneficio o repudiar)</span></li>
+            <li>Curadores representativos <span class="participant-note">(idéntica lógica que los tutores)</span></li>
+            <li>Defensores judiciales <span class="participant-note">(supletoriamente)</span></li>
+            <li>Acreedores del heredero <span class="participant-note">(pueden aceptar en nombre del repudiante)</span></li>
+            <li>Personas jurídicas <span class="participant-note">(asociaciones, corporaciones, fundaciones)</span></li>
+            <li>Ministerio Fiscal <span class="participant-note">(intervención preceptiva en arts. 93.2.a-b / 94.3)</span></li>
+            <li>Juez <span class="participant-note">(resuelve concediendo o denegando)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Órganos y operadores</div>
+          <ul>
+            <li>Juzgado de Primera Instancia <span class="participant-note">(competencia territorial: domicilio, patrimonio, fallecimiento)</span></li>
+            <li>Letrado de la Administración de Justicia <span class="participant-note">(antes Secretario judicial)</span></li>
+            <li>Ministerio Fiscal <span class="participant-note">(intervención obligatoria en protección de menores y discapacidad)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ECOSISTEMA NORMATIVO -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">9 cuerpos normativos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+        <div class="norm-card"><div class="norm-law">Ley 15/2015, de 2 de julio</div><div class="norm-title">Ley de la Jurisdicción Voluntaria</div><div class="norm-arts"><strong>Artículos 1 y 2</strong> — ámbito de aplicación y concepto. <strong>Artículos 13 a 22</strong> — normas comunes de tramitación, aplicables con carácter supletorio.</div><span class="norm-tag tag-info">Normas comunes</span></div>
+        <div class="norm-card"><div class="norm-law">Código Civil</div><div class="norm-title">Albaceazgo (artículos 892 a 911)</div><div class="norm-arts"><strong>Arts. 898 a 911 CC</strong> — cargo de albacea, facultades, obligaciones, plazo, prórroga, rendición de cuentas, causas de extinción y consecuencias de la falta de albacea.</div><span class="norm-tag tag-ok">Sustantivo</span></div>
+        <div class="norm-card"><div class="norm-law">Código Civil</div><div class="norm-title">Aceptación y repudiación de la herencia (arts. 988 a 1009)</div><div class="norm-arts"><strong>Arts. 988 a 1009 CC</strong> — voluntariedad, retroacción, prohibición de aceptación parcial, capacidad, irrevocabilidad y acción subrogatoria de acreedores (art. 1001).</div><span class="norm-tag tag-ok">Sustantivo</span></div>
+        <div class="norm-card"><div class="norm-law">Código Civil</div><div class="norm-title">Beneficio de inventario (artículos 1010 a 1034)</div><div class="norm-arts"><strong>Arts. 1010 a 1034 CC</strong> — conectado con los artículos 93.2.b y 95.2 LJV (aceptación sin beneficio y consecuencia de la denegación judicial).</div><span class="norm-tag tag-warn">Protección patrimonial</span></div>
+        <div class="norm-card"><div class="norm-law">Código Civil</div><div class="norm-title">Partición hereditaria y contadores-partidores (arts. 1051 a 1087)</div><div class="norm-arts"><strong>Art. 1057 CC</strong> — designación del contador-partidor dativo. <strong>Arts. 1056, 1058, 1059 y 1060 CC</strong> — partición por el testador, por herederos, juicio de división y partición con menores.</div><span class="norm-tag tag-ok">Sustantivo</span></div>
+        <div class="norm-card"><div class="norm-law">Código Civil</div><div class="norm-title">Patria potestad y medidas de apoyo (arts. 154, 166, 271 y 287)</div><div class="norm-arts"><strong>Art. 166 CC</strong> — límites de la patria potestad. <strong>Art. 271 CC</strong> — autorización judicial para el tutor. <strong>Art. 287 CC</strong> — actos del curador representativo.</div><span class="norm-tag tag-alert">Protección de menores</span></div>
+        <div class="norm-card"><div class="norm-law">Ley de Enjuiciamiento Civil</div><div class="norm-title">Apelación, intervención del MF y división judicial de la herencia</div><div class="norm-arts"><strong>Arts. 455 y ss. LEC</strong> — apelación supletoria. <strong>Art. 749 LEC</strong> — intervención del MF. <strong>Arts. 782 y ss. LEC</strong> — división judicial de la herencia.</div><span class="norm-tag tag-info">Procesal</span></div>
+        <div class="norm-card"><div class="norm-law">Ley Orgánica del Poder Judicial</div><div class="norm-title">Competencia objetiva y estatuto del LAJ</div><div class="norm-arts"><strong>Art. 85 LOPJ</strong> — competencia objetiva de los Juzgados de Primera Instancia para expedientes de jurisdicción voluntaria. Disposiciones sobre el estatuto del LAJ.</div><span class="norm-tag tag-gray">Orgánico</span></div>
+        <div class="norm-card"><div class="norm-law">Ley Orgánica 7/2015</div><div class="norm-title">Reforma del Secretario judicial en Letrado de la Administración de Justicia</div><div class="norm-arts">Transformó la figura del Secretario judicial en la del Letrado de la Administración de Justicia, órgano competente para los expedientes desjudicializados en los arts. 91.4 y 92.3 LJV.</div><span class="norm-tag tag-gray">Orgánico</span></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c1)"></div>Albaceazgo (Cap. I, Art. 91)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c2)"></div>Contadores-partidores dativos (Cap. II, Art. 92)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c3)"></div>Aceptación y repudiación (Cap. III, Arts. 93–95)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c4)"></div>Marco normativo general</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c6)"></div>Disposiciones transversales</div>
+    </div>
+    <div class="legend-copy">Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria — Título IV, Capítulos I a III (Arts. 91–95) · Generado como plantilla HTML reutilizable</div>
+  </div>
+</footer>
+
+<script>
+/* Filtrado por categoría */
+var pills = document.querySelectorAll('.pill');
+var cards = document.querySelectorAll('.map-card');
+var noResults = document.getElementById('no-results');
+var activeCat = 'all';
+var searchTerm = '';
+
+function updateVisibility() {
+  var visible = 0;
+  cards.forEach(function(c) {
+    var catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    var text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    var termMatch = !searchTerm || text.includes(searchTerm);
+    var show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+}
+
+pills.forEach(function(p) {
+  p.addEventListener('click', function() {
+    pills.forEach(function(x) { x.classList.remove('active'); });
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+/* Búsqueda en tiempo real */
+document.getElementById('search').addEventListener('input', function(e) {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+/* Expandir/colapsar tarjetas individuales */
+function toggleCard(btn) {
+  var card = btn.closest('.map-card');
+  var isExp = card.classList.toggle('expanded');
+  btn.setAttribute('aria-expanded', String(isExp));
+  var label = btn.querySelector('.toggle-label');
+  if (label) label.textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+/* Expandir todo / Contraer todo */
+document.getElementById('btn-expand-all').addEventListener('click', function() {
+  cards.forEach(function(c) {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      var btn = c.querySelector('.card-toggle-btn');
+      var label = btn && btn.querySelector('.toggle-label');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      if (label) label.textContent = 'Ocultar contenido';
+    }
+  });
+});
+document.getElementById('btn-collapse-all').addEventListener('click', function() {
+  cards.forEach(function(c) {
+    c.classList.remove('expanded');
+    var btn = c.querySelector('.card-toggle-btn');
+    var label = btn && btn.querySelector('.toggle-label');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+    if (label) label.textContent = 'Ver contenido completo';
+  });
+});
+
+/* Colapso de secciones principales */
+document.querySelectorAll('.section-heading').forEach(function(h) {
+  h.addEventListener('click', function() {
+    var target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    var collapsed = target.classList.toggle('collapsed');
+    var btn = h.querySelector('.section-toggle-btn');
+    if (btn) btn.textContent = collapsed ? '\u25BC' : '\u25B2';
+  });
+});
+
+/* Zoom con atajos de teclado */
+var ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+var zoom = 100;
+var zoomTarget = document.querySelector('.page-main');
+var zoomLabel = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', function(e) {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn(); }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut(); }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+
+</body>
+</html>

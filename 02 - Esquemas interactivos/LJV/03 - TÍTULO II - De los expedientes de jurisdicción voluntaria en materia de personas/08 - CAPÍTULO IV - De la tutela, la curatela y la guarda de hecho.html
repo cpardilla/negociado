@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tutela, Curatela y Guarda de Hecho — Ley 15/2015 — Mapa Mental Jurídico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+  --transition:   200ms ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-ui);background:var(--bg);color:var(--text-1);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* HEADER */
+.site-header{background:var(--header-bg);color:var(--header-text);padding:2rem 1.5rem 1.75rem}
+.header-inner{max-width:1200px;margin:0 auto}
+.header-breadcrumb{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.5rem}
+.header-title{font-family:var(--font-display);font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;margin-bottom:.35rem;line-height:1.2}
+.header-subtitle{font-size:14px;color:rgba(248,245,237,.55);margin-bottom:1rem}
+.header-meta{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+.header-tag{display:inline-block;background:rgba(200,169,110,.15);border:1px solid rgba(200,169,110,.3);color:var(--accent);border-radius:20px;padding:.2rem .7rem;font-size:11px;font-weight:500}
+.header-actions{margin-left:auto}
+.btn-ghost{background:transparent;border:1px solid rgba(248,245,237,.15);color:rgba(248,245,237,.7);border-radius:var(--radius-sm);padding:.35rem .9rem;font-size:12px;font-family:var(--font-ui);cursor:pointer;transition:var(--transition)}
+.btn-ghost:hover{border-color:rgba(248,245,237,.35);color:var(--header-text)}
+
+/* STATS */
+.stats-bar{background:var(--surface);border-bottom:1px solid var(--border)}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:1rem 1.25rem;border-right:1px solid var(--border);text-align:center}
+.stat-item:last-child{border-right:none}
+.stat-value{font-family:var(--font-display);font-size:2rem;font-weight:800;line-height:1;color:var(--text-1)}
+.stat-label{font-size:12px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem}
+@media(max-width:640px){.stats-inner{grid-template-columns:repeat(2,1fr)}.stat-item:nth-child(2){border-right:none}}
+
+/* CONTROLS */
+.controls-bar{position:sticky;top:0;z-index:100;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,.04);padding:.65rem 1.5rem}
+.controls-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.search-wrap{display:flex;align-items:center;flex:1;min-width:180px;max-width:320px;border:1px solid var(--border-md);border-radius:var(--radius-sm);padding:0 .5rem;background:var(--surface-2)}
+.search-wrap svg{width:16px;height:16px;fill:var(--text-3);flex-shrink:0}
+.search-input{border:none;outline:none;background:transparent;padding:.4rem .5rem;font-family:var(--font-ui);font-size:13px;width:100%;color:var(--text-1)}
+.search-input::placeholder{color:var(--text-3)}
+.filter-pills{display:flex;gap:.35rem;flex-wrap:wrap}
+.pill{border:1px solid var(--border-md);background:var(--surface);border-radius:20px;padding:.25rem .7rem;font-size:12px;font-weight:500;font-family:var(--font-ui);cursor:pointer;white-space:nowrap;transition:var(--transition);color:var(--text-2)}
+.pill:hover{border-color:var(--text-3)}
+.pill.active[data-cat="all"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.pill.active[data-cat="c1"]{background:var(--c1);border-color:var(--c1);color:#fff}
+.pill.active[data-cat="c2"]{background:var(--c2);border-color:var(--c2);color:#fff}
+.pill.active[data-cat="c3"]{background:var(--c3);border-color:var(--c3);color:#fff}
+.pill.active[data-cat="c4"]{background:var(--c4);border-color:var(--c4);color:#fff}
+.pill.active[data-cat="c5"]{background:var(--c5);border-color:var(--c5);color:#fff}
+.pill.active[data-cat="c6"]{background:var(--c6);border-color:var(--c6);color:#fff}
+.ctrl-actions{display:flex;align-items:center;gap:.4rem;margin-left:auto}
+.btn-ctrl{border:1px solid var(--border-md);background:var(--surface);border-radius:var(--radius-sm);padding:.25rem .65rem;font-size:12px;font-family:var(--font-ui);cursor:pointer;color:var(--text-2);transition:var(--transition)}
+.btn-ctrl:hover{background:var(--surface-2)}
+.zoom-cluster{display:flex;border:1px solid var(--border-md);border-radius:var(--radius-sm);overflow:hidden}
+.btn-zoom{background:var(--surface);border:none;width:28px;height:28px;font-size:14px;cursor:pointer;color:var(--text-2);display:flex;align-items:center;justify-content:center}
+.btn-zoom:first-child{border-right:1px solid var(--border-md)}
+.btn-zoom:last-child{border-left:1px solid var(--border-md)}
+.btn-zoom:disabled{opacity:.35;cursor:default}
+.zoom-label{font-size:12px;font-weight:500;min-width:42px;text-align:center;color:var(--text-2);line-height:28px}
+@media(max-width:768px){.ctrl-actions{display:none}}
+
+/* MAIN */
+.page-main{max-width:1200px;margin:0 auto;padding:1.5rem}
+.map-section{margin-bottom:1.75rem}
+.section-heading{display:flex;align-items:center;gap:.75rem;cursor:pointer;padding:.5rem 0;user-select:none}
+.section-heading-text{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-1)}
+.section-heading-count{font-size:12px;color:var(--text-3);font-weight:500}
+.section-toggle-btn{margin-left:auto;background:none;border:none;font-size:14px;cursor:pointer;color:var(--text-3);padding:.2rem}
+.section-divider{border:none;border-top:1px solid var(--border);margin-bottom:1rem}
+.section-body.collapsed{display:none}
+
+/* CARD GRID */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:960px){.card-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.card-grid{grid-template-columns:1fr}}
+
+/* MAP-CARD */
+.map-card{background:var(--surface);border:1px solid var(--border);border-left-width:4px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);overflow:hidden;transition:box-shadow var(--transition)}
+.map-card:hover{box-shadow:var(--shadow-md)}
+.map-card[data-cat="c1"]{border-left-color:var(--c1)}
+.map-card[data-cat="c2"]{border-left-color:var(--c2)}
+.map-card[data-cat="c3"]{border-left-color:var(--c3)}
+.map-card[data-cat="c4"]{border-left-color:var(--c4)}
+.map-card[data-cat="c5"]{border-left-color:var(--c5)}
+.map-card[data-cat="c6"]{border-left-color:var(--c6)}
+.map-card.hidden{display:none}
+.card-top{padding:1rem 1rem .5rem}
+.card-meta{display:flex;align-items:center;gap:.4rem;margin-bottom:.4rem;flex-wrap:wrap}
+.art-badge{display:inline-block;border:1px solid;border-radius:20px;padding:.15rem .55rem;font-size:11px;font-weight:600}
+.map-card[data-cat="c1"] .art-badge{border-color:var(--c1);background:var(--c1bg);color:var(--c1)}
+.map-card[data-cat="c2"] .art-badge{border-color:var(--c2);background:var(--c2bg);color:var(--c2)}
+.map-card[data-cat="c3"] .art-badge{border-color:var(--c3);background:var(--c3bg);color:var(--c3)}
+.map-card[data-cat="c4"] .art-badge{border-color:var(--c4);background:var(--c4bg);color:var(--c4)}
+.map-card[data-cat="c5"] .art-badge{border-color:var(--c5);background:var(--c5bg);color:var(--c5)}
+.map-card[data-cat="c6"] .art-badge{border-color:var(--c6);background:var(--c6bg);color:var(--c6)}
+.status-tag{font-size:10px;font-weight:600;padding:.15rem .5rem;border-radius:12px;text-transform:uppercase;letter-spacing:.03em}
+.tag-warn{background:#fef3c7;color:#92400e}
+.tag-alert{background:#fee2e2;color:#991b1b}
+.tag-info{background:#dbeafe;color:#1e40af}
+.tag-ok{background:#d1fae5;color:#065f46}
+.tag-gray{background:var(--surface-2);color:var(--text-2);border:1px solid var(--border)}
+.card-title{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--text-1);margin-bottom:.2rem;line-height:1.3}
+.card-subtitle{font-size:12.5px;color:var(--text-2);line-height:1.45}
+.card-counters{display:flex;align-items:center;padding:0 1rem .4rem;font-size:11px;color:var(--text-3)}
+.counter-badge strong{color:var(--text-2);font-weight:600}
+.card-toggle-btn{display:flex;align-items:center;justify-content:space-between;width:100%;background:var(--surface-2);border:none;border-top:1px solid var(--border);padding:.45rem 1rem;font-size:12px;font-family:var(--font-ui);color:var(--text-2);cursor:pointer;transition:var(--transition)}
+.card-toggle-btn:hover{background:var(--border)}
+.toggle-icon{font-size:10px;transition:transform var(--transition)}
+.map-card.expanded .toggle-icon{transform:rotate(180deg)}
+.card-body{display:none;padding:.75rem 1rem 1rem}
+.map-card.expanded .card-body{display:block}
+.inner-section{margin-bottom:.75rem}
+.inner-section:last-child{margin-bottom:0}
+.inner-heading{display:flex;align-items:center;gap:.4rem;font-size:12.5px;font-weight:600;color:var(--text-1);margin-bottom:.35rem}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.map-card[data-cat="c1"] .dot{background:var(--c1)}
+.map-card[data-cat="c2"] .dot{background:var(--c2)}
+.map-card[data-cat="c3"] .dot{background:var(--c3)}
+.map-card[data-cat="c4"] .dot{background:var(--c4)}
+.map-card[data-cat="c5"] .dot{background:var(--c5)}
+.map-card[data-cat="c6"] .dot{background:var(--c6)}
+.inner-body{padding-left:1.1rem}
+.inner-list{list-style:none}
+.inner-list li{position:relative;padding-left:.8rem;margin-bottom:.2rem;font-size:12.5px;color:var(--text-2);line-height:1.5}
+.inner-list li::before{content:'–';position:absolute;left:0;color:var(--text-3)}
+.inner-list li strong{color:var(--text-1);font-weight:500}
+.card-refs{padding:.5rem 1rem;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:.3rem}
+.ref-tag{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.1rem .45rem;font-size:11px;color:var(--text-3)}
+
+/* TIMELINE TABLE */
+.table-wrap{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface)}
+.timeline-table{width:100%;border-collapse:collapse;font-size:13px}
+.timeline-table th{background:var(--surface-2);text-align:left;padding:.65rem .85rem;font-weight:600;color:var(--text-2);font-size:12px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--border)}
+.timeline-table td{padding:.6rem .85rem;border-bottom:1px solid var(--border);vertical-align:middle}
+.timeline-table tr:last-child td{border-bottom:none}
+.timeline-table tr:hover td{background:var(--surface-2)}
+.td-tramite{font-weight:500;color:var(--text-1)}
+.td-norm{font-size:12px;color:var(--text-3)}
+.td-obs{font-size:11.5px;color:var(--text-3);font-style:italic}
+.plazo-badge{display:inline-block;padding:.15rem .55rem;border-radius:12px;font-size:12px;font-weight:500}
+.plazo-days{background:#fef3c7;color:#92400e}
+.plazo-weeks{background:#dbeafe;color:#1e40af}
+.plazo-months{background:#d1fae5;color:#065f46}
+.plazo-years{background:#fee2e2;color:#991b1b}
+.plazo-other{background:var(--surface-2);color:var(--text-2)}
+
+/* COMPARISON TABLE */
+.comparison-wrap{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface)}
+.comparison-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.comparison-table th{background:var(--surface-2);text-align:left;padding:.6rem .75rem;font-weight:600;color:var(--text-2);font-size:11px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--border)}
+.comparison-table td{padding:.55rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-2);line-height:1.45}
+.comparison-table tr:last-child td{border-bottom:none}
+.comparison-table tr:hover td{background:var(--surface-2)}
+.comparison-table td:first-child{font-weight:600;color:var(--text-1);white-space:nowrap}
+
+/* PARTICIPANTS */
+.participants-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:900px){.participants-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.participants-grid{grid-template-columns:1fr}}
+.participant-col{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}
+.participant-col-head{padding:.5rem .75rem;font-size:12px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:.04em}
+.phead-c1{background:var(--c1)}.phead-c2{background:var(--c2)}.phead-c3{background:var(--c3)}.phead-c4{background:var(--c4)}.phead-c5{background:var(--c5)}.phead-c6{background:var(--c6)}
+.participant-col ul{list-style:none;padding:.5rem .75rem}
+.participant-col li{font-size:12.5px;color:var(--text-2);padding:.3rem 0;border-bottom:1px solid var(--border)}
+.participant-col li:last-child{border-bottom:none}
+.participant-note{font-size:11px;color:var(--text-3);font-style:italic}
+
+/* NORMS */
+.norm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:900px){.norm-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.norm-grid{grid-template-columns:1fr}}
+.norm-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);padding:.85rem 1rem}
+.norm-law{font-size:11px;text-transform:uppercase;color:var(--text-3);margin-bottom:.2rem;font-weight:600;letter-spacing:.04em}
+.norm-title{font-size:13px;font-weight:500;color:var(--text-1);margin-bottom:.5rem;line-height:1.3}
+.norm-arts{font-size:12px;color:var(--text-2);line-height:1.55}
+.norm-arts strong{color:var(--text-1);font-weight:500}
+.norm-tag{display:inline-block;margin-top:.5rem;font-size:10px;font-weight:600;padding:.15rem .5rem;border-radius:12px;text-transform:uppercase;letter-spacing:.03em}
+
+/* NO RESULTS */
+.no-results{grid-column:1/-1;text-align:center;padding:3rem 1rem;color:var(--text-3);font-size:14px;display:none}
+
+/* LEGEND */
+.legend-footer{background:var(--header-bg);color:var(--header-text);padding:2rem 1.5rem;margin-top:2rem}
+.legend-inner{max-width:1200px;margin:0 auto}
+.legend-title{font-size:11px;text-transform:uppercase;color:var(--accent);font-weight:600;letter-spacing:.06em;margin-bottom:.75rem}
+.legend-grid{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.legend-item{display:flex;align-items:center;gap:.35rem;font-size:12px;color:rgba(248,245,237,.7)}
+.legend-swatch{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.legend-divider{width:1px;height:20px;background:rgba(248,245,237,.12)}
+.legend-copy{font-size:11px;color:rgba(248,245,237,.3);border-top:1px solid rgba(248,245,237,.08);padding-top:.65rem}
+
+@media print{
+  .controls-bar,.site-header .header-actions{display:none}
+  .card-body{display:block!important}
+  .inner-body{display:block!important}
+  .section-body{display:block!important}
+  .map-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
+  body{background:#fff}
+  .page-main{padding:0}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título II · Capítulo IV</div>
+    <h1 class="header-title">Tutela, Curatela y Guarda de Hecho</h1>
+    <p class="header-subtitle">Expedientes de jurisdicción voluntaria en materia de personas · Artículos 43 a 52 · Conexiones con el Código Civil, la Ley 8/2021, la LEC, la Constitución y la Convención ONU</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015, de 2 de julio</span>
+      <span class="header-tag">Jurisdicción Voluntaria</span>
+      <span class="header-tag">Arts. 43–52</span>
+      <span class="header-tag">Ley 8/2021</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">15</div>
+      <div class="stat-label">Artículos y principios</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">30+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">16+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">6</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c6">Principios</button>
+      <button class="pill" data-cat="c1">Competencia</button>
+      <button class="pill" data-cat="c2">Constitución</button>
+      <button class="pill" data-cat="c3">Ejercicio</button>
+      <button class="pill" data-cat="c4">Crisis/Extinción</button>
+      <button class="pill" data-cat="c5">Guarda de hecho</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<main class="page-main">
+
+  <!-- ═══ PRINCIPIOS INSPIRADORES ═══ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-principios">
+      <span class="section-heading-text">Principios inspiradores del sistema</span>
+      <span class="section-heading-count">5 principios</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-principios">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c6" data-text="voluntad deseos preferencias persona discapacidad convención onu artículo 12 autonomía apoyo ley 8/2021 artículo 45.2 respeto capacidad jurídica">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Principio 1</span><span class="status-tag tag-ok">Fundamental</span></div>
+            <h2 class="card-title">Voluntad, deseos y preferencias</h2>
+            <p class="card-subtitle">La persona con discapacidad tiene derecho a que se respeten su voluntad, deseos y preferencias en todos los procedimientos que le afecten.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Fundamento normativo</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Convención ONU art. 12:</strong> igual reconocimiento como persona ante la ley; los Estados deben proporcionar apoyo para el ejercicio de la capacidad jurídica respetando la voluntad y preferencias.</li>
+              <li><strong>Ley 8/2021:</strong> transforma el sistema español abandonando el modelo sustitutorio de la incapacitación y adoptando un modelo de apoyo respetuoso con la autonomía.</li>
+              <li><strong>Art. 45.2 Ley 15/2015:</strong> el Juez y el Ministerio Fiscal actuarán respetando la voluntad, deseos y preferencias de la persona con discapacidad en lo que conste.</li>
+              <li><strong>Alcance:</strong> la audiencia de la persona con discapacidad no es un mero trámite formal, sino una garantía sustantiva que informa todo el procedimiento.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">Conv. ONU art. 12</span><span class="ref-tag">Ley 8/2021</span><span class="ref-tag">Art. 45.2</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c6" data-text="intervención mínima proporcionalidad medidas apoyo menos restrictivas curatela guarda hecho voluntaria autotutela poderes preventivos artículo 44 restricción ámbito">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Principio 2</span><span class="status-tag tag-info">Procesal</span></div>
+            <h2 class="card-title">Intervención mínima y proporcionalidad</h2>
+            <p class="card-subtitle">Las medidas de apoyo deben ser las menos restrictivas posibles y proporcionadas a la situación de la persona.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Desarrollo</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Jerarquía de apoyos:</strong> la curatela solo procede cuando no exista otra medida de apoyo suficiente, ya sea voluntaria (autotutela, poderes preventivos) o informal (guarda de hecho).</li>
+              <li><strong>Art. 44.2:</strong> la restricción del ámbito del expediente de curatela a la sustitución de curador ya nombrado responde a este principio.</li>
+              <li><strong>Art. 52:</strong> la guarda de hecho se potencia como medida de apoyo suficiente para personas con discapacidad sin necesidad de constituir curatela si el apoyo ya es adecuado.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">Art. 44.2</span><span class="ref-tag">Art. 52</span><span class="ref-tag">CC art. 248</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c6" data-text="interés superior menor convención derechos niño artículo 3 ley orgánica protección jurídica menor 1/1996 artículo 45.2 oficio medidas diligencias informes periciales pruebas">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Principio 3</span><span class="status-tag tag-info">Menores</span></div>
+            <h2 class="card-title">Interés superior del menor</h2>
+            <p class="card-subtitle">En todos los expedientes que afecten a menores, su interés superior debe ser la consideración primordial.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Desarrollo</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Convención Niño art. 3:</strong> el interés superior del menor es la consideración primordial en todas las medidas que le afecten.</li>
+              <li><strong>LO 1/1996 art. 9.2:</strong> el menor tiene derecho a ser oído en los procedimientos que le afecten.</li>
+              <li><strong>Art. 45.2:</strong> el Juez y el Ministerio Fiscal actuarán de oficio en interés del menor, adoptando y proponiendo medidas, diligencias, informes periciales y pruebas que estimen oportunas.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">Conv. Niño art. 3</span><span class="ref-tag">LO 1/1996</span><span class="ref-tag">Art. 45.2</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c6" data-text="prioridad medidas voluntarias legales autotutela poderes preventivos testamento documento notarial progenitores disposición previsión código civil 223 248 fiscalización artículo 45.1 45.4">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Principio 4</span><span class="status-tag tag-ok">Sustantivo</span></div>
+            <h2 class="card-title">Prioridad de medidas voluntarias</h2>
+            <p class="card-subtitle">Las medidas voluntarias de apoyo prevalecen sobre las legales o judiciales.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Desarrollo</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>CC art. 216:</strong> las medidas de apoyo se aplicarán respetando la voluntad de la persona con discapacidad.</li>
+              <li><strong>Art. 45.1:</strong> se acompañarán los documentos notariales de los progenitores o de la propia persona con discapacidad sobre medidas de apoyo.</li>
+              <li><strong>Art. 45.4:</strong> se adoptarán las medidas de fiscalización establecidas por los progenitores o por el propio afectado, salvo que sea otro su interés.</li>
+              <li><strong>CC art. 223:</strong> tutela testamentaria: los progenitores pueden nombrar tutor en testamento.</li>
+              <li><strong>CC art. 248:</strong> poderes preventivos y autotutela, introducidos por la Ley 8/2021.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 216</span><span class="ref-tag">CC art. 223</span><span class="ref-tag">CC art. 248</span><span class="ref-tag">Art. 45.1</span><span class="ref-tag">Art. 45.4</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c6" data-text="capacidad jurídica igualitaria constitución artículo 49 discapacidad reforma 2024 ley 8/2021 incapacitación supresión plena capacidad jurídica igualdad libertad publicidad registral registro civil ley 20/2011">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Principio 5</span><span class="status-tag tag-ok">Constitucional</span></div>
+            <h2 class="card-title">Capacidad jurídica igualitaria y publicidad registral</h2>
+            <p class="card-subtitle">Las personas con discapacidad ejercen sus derechos en condiciones de libertad e igualdad reales y efectivas.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Desarrollo</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>CE art. 49:</strong> las personas con discapacidad ejercen los derechos del Título I en condiciones de libertad e igualdad reales y efectivas. Reforma de 2024: eliminación de la referencia a «disminuidos».</li>
+              <li><strong>Ley 8/2021:</strong> supresión de la incapacitación judicial y configuración de un sistema de apoyos que respeta la plena capacidad jurídica.</li>
+              <li><strong>Publicidad registral:</strong> la inscripción en el Registro Civil (Ley 20/2011, arts. 60 y ss.) garantiza la oponibilidad frente a terceros. Comunicación preceptiva en arts. 46.5, 49.3 y 50.4.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CE art. 49</span><span class="ref-tag">Ley 8/2021</span><span class="ref-tag">Ley 20/2011</span></div>
+        </article>
+
+        <div class="no-results" id="no-results">No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ART. 43 ═══ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-43">
+      <span class="section-heading-text">Sección 1.ª — Disposición común</span>
+      <span class="section-heading-count">1 artículo</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-43">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c1" data-text="competencia postulación juzgado primera instancia domicilio residencia menor discapacidad abogado procurador remoción testimonio expediente circunscripción incidencias prorroga funcional territorial letrado administracion justicia secretario judicial ministerio fiscal">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 43</span><span class="status-tag tag-info">Procedimiento</span></div>
+            <h2 class="card-title">Competencia y postulación</h2>
+            <p class="card-subtitle">Regula el Juzgado competente territorial y funcionalmente, y la intervención preceptiva o no de abogado y procurador según el tipo de expediente.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>5</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>3</strong> supuestos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Competencia territorial</div><div class="inner-body"><ul class="inner-list">
+              <li>Será competente el Juzgado de Primera Instancia del domicilio o, en su defecto, de la residencia del menor o persona con discapacidad.</li>
+              <li><strong>Justificación:</strong> proximidad del órgano judicial a la persona protegida, facilitando diligencias, audiencia personal y seguimiento de medidas.</li>
+              <li><strong>LEC art. 52:</strong> coherente con la regla de competencia territorial en procedimientos de capacidad.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Competencia funcional por conexión</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Prórroga:</strong> el órgano judicial que conoció del expediente será competente para todas las incidencias posteriores si la persona reside en la misma circunscripción.</li>
+              <li><strong>Fundamento:</strong> unidad de conocimiento del expediente; el Juez que constituyó la tutela conoce mejor las circunstancias personales y patrimoniales.</li>
+              <li><strong>Cambio de circunscripción:</strong> se pedirá testimonio completo al Juzgado anterior, que lo remitirá en 10 días. Garantiza información completa para evitar resoluciones contradictorias.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Postulación</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Regla general:</strong> no preceptiva la intervención de abogado y procurador.</li>
+              <li><strong>Excepciones:</strong> remoción del tutor o curador (art. 49) y extinción de poderes preventivos (art. 51 bis), donde es necesaria la intervención de abogado.</li>
+              <li><strong>Justificación:</strong> la remoción y la extinción pueden generar controversia y enfrentamiento entre partes.</li>
+              <li><strong>Intervención voluntaria:</strong> la persona interesada podrá valerse de abogado en los demás expedientes, asumiendo los costes.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 215</span><span class="ref-tag">LEC art. 52</span><span class="ref-tag">LEC art. 748</span><span class="ref-tag">Art. 49</span><span class="ref-tag">Art. 51 bis</span></div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ARTS. 44-45 CONSTITUCIÓN ═══ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-const">
+      <span class="section-heading-text">Sección 2.ª — Constitución de tutela y curatela</span>
+      <span class="section-heading-count">2 artículos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-const">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c2" data-text="ámbito aplicación tutela curatela expediente nombramiento curador sustitución removido fallecido medidas judiciales apoyo discapacidad provisión apoyos LEC 753 bis proceso contencioso constitución originaria">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 44</span><span class="status-tag tag-info">Ámbito</span></div>
+            <h2 class="card-title">Ámbito de aplicación</h2>
+            <p class="card-subtitle">Delimita el ámbito de la sección a tutela y curatela, con una restricción específica para la curatela que se explica por la diferente naturaleza procesal tras la Ley 8/2021.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>3</strong> normas conexas</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Aplicación general</div><div class="inner-body"><ul class="inner-list">
+              <li>Se aplicará lo dispuesto en esta sección para la tramitación de los expedientes relativos a la tutela y la curatela.</li>
+              <li><strong>Naturaleza procesal:</strong> la Ley 15/2015 regula el cómo (procedimiento), no el qué (régimen sustantivo), que corresponde al Código Civil (arts. 215 a 312).</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Aplicación restrictiva a la curatela</div><div class="inner-body"><ul class="inner-list">
+              <li>Solo aplicable a la curatela cuando, tras la tramitación de un proceso sobre adopción de medidas judiciales de apoyo, sea procedente el nombramiento de un nuevo curador, en sustitución de otro removido o fallecido.</li>
+              <li><strong>Razón:</strong> la constitución originaria de la curatela se realiza mediante el procedimiento de provisión de apoyos (LEC art. 753 bis), proceso contencioso con garantías reforzadas.</li>
+              <li>El expediente de jurisdicción voluntaria solo interviene en la sustitución posterior del curador.</li>
+              <li><strong>Tutela:</strong> se constituye para menores sin patria potestad efectiva, sin requerir proceso contencioso previo, por lo que el expediente de jurisdicción voluntaria es el cauce adecuado.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 286</span><span class="ref-tag">LEC art. 753 bis</span><span class="ref-tag">Ley 8/2021</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c2" data-text="tramitación resolución recurso solicitud ministerio fiscal promotor comparecencia audiencia designación tutor curador fianza fiscalización apelación efectos suspensivos código civil medidas vigilancia control inventario poderes preventivos autotutela testamento notarial representantes legítimos delación 222 223 227 234 271 278 274 260">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 45</span><span class="status-tag tag-warn">Tramitación compleja</span></div>
+            <h2 class="card-title">Tramitación, resolución y recurso</h2>
+            <p class="card-subtitle">Regula íntegramente el procedimiento de constitución: solicitud, comparecencia, designación, fiscalización, fianza y recurso de apelación sin efectos suspensivos.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>10</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>6</strong> supuestos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Iniciación del expediente</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Legitimados:</strong> Ministerio Fiscal o cualquiera de las personas legalmente indicadas (CC art. 227: cónyuge, padres, ascendientes, hermanos, hijos mayores, cualquier persona con conocimiento de la situación).</li>
+              <li><strong>Contenido de la solicitud:</strong> hecho que da lugar a la tutela o curatela, documentos acreditativos de legitimación, parientes más próximos y domicilios.</li>
+              <li><strong>Documentación preceptiva:</strong> certificado de nacimiento; en su caso, certificado de últimas voluntades, testamento o documento notarial de los progenitores (CC art. 223: tutela testamentaria), documento notarial de la propia persona con discapacidad (CC art. 248: autotutela y poderes preventivos).</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Comparecencia</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Personas que deben ser oídas:</strong> promotor, persona cuya designación se proponga, la persona cuya tutela o curatela se pretenda (si mayor de 12 años o con suficiente madurez), parientes más próximos, Ministerio Fiscal, y cuantas personas se considere oportuno.</li>
+              <li><strong>Audiencia del menor:</strong> responde al art. 12 Conv. Niño y art. 9.2 LO 1/1996. «Suficiente madurez» se valora caso por caso.</li>
+              <li><strong>Audiencia de la persona con discapacidad:</strong> garantía fundamental del art. 12 Conv. ONU discapacidad.</li>
+              <li><strong>Intervención de oficio:</strong> Juez y Ministerio Fiscal actúan de oficio en interés del menor, respetando voluntad, deseos y preferencias. Principio inquisitivo frente al dispositivo del proceso civil ordinario.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Designación de tutor o curador</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>CC arts. 222-229 (tutela):</strong> orden preferente: designado por progenitores en testamento (art. 223), cónyuge, padres y ascendientes, hermanos y descendientes. El Juez puede alterar el orden si es contrario al interés del tutelado.</li>
+              <li><strong>CC arts. 286-298 (curatela):</strong> criterio rector: persona que mejor pueda ejercer el cargo, atendiendo a relaciones de confianza y afectividad. La persona con discapacidad tiene derecho a ser oída sobre la designación.</li>
+              <li><strong>CC art. 228:</strong> nombramiento de varios tutores o curadores con distribución de funciones.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Medidas de fiscalización</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Medidas de progenitores o afectado:</strong> se adoptarán las establecidas en testamento o documento notarial (rendición periódica, autorización judicial, fiscalizador), salvo que sea otro el interés del afectado.</li>
+              <li><strong>Medidas de vigilancia y control:</strong> el Juez podrá exigir informes sobre situación personal y administración de bienes.</li>
+              <li><strong>CC arts. 271-278:</strong> actos que requieren autorización judicial (enajenación, renuncia de derechos, arrendamiento, préstamos, etc.).</li>
+              <li><strong>Audiencia previa:</strong> si se adoptaren en resolución posterior, se oirá al tutor/curador, al menor con suficiente madurez o mayor de 12 años, a la persona sujeta a curatela y al Ministerio Fiscal.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Fianza excepcional</div><div class="inner-body"><ul class="inner-list">
+              <li>El Juez podrá exigir fianza de modo excepcional, determinando modalidad y cuantía.</li>
+              <li><strong>Justificación:</strong> garantía patrimonial para resarcimiento de daños. Excepcionalidad: patrimonio cuantioso o falta de confianza en solvencia/diligencia.</li>
+              <li><strong>Modalidades:</strong> metálico, aval bancario, póliza de caución u otra garantía suficiente.</li>
+              <li><strong>Modificación:</strong> de oficio o a instancia de parte, previa audiencia de tutor/curador, persona con discapacidad, menor con suficiente madurez y Ministerio Fiscal.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Recurso de apelación</div><div class="inner-body"><ul class="inner-list">
+              <li>Recurrible en apelación sin efectos suspensivos (LEC arts. 455 y ss.).</li>
+              <li><strong>Sin efectos suspensivos:</strong> la resolución se ejecuta provisionalmente, garantizando la inmediatez de la protección.</li>
+              <li><strong>Continuidad:</strong> durante el recurso, el tutor o curador electo queda a cargo del cuidado y administración, bajo las garantías que el Juez considere suficientes.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 222</span><span class="ref-tag">CC art. 223</span><span class="ref-tag">CC art. 227</span><span class="ref-tag">CC art. 228</span><span class="ref-tag">CC art. 234</span><span class="ref-tag">CC art. 248</span><span class="ref-tag">CC art. 271</span><span class="ref-tag">CC art. 274</span><span class="ref-tag">LEC art. 455</span><span class="ref-tag">Conv. ONU art. 12</span></div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ARTS. 46-48 EJERCICIO ═══ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-ejer">
+      <span class="section-heading-text">Sección 2.ª — Ejercicio del cargo</span>
+      <span class="section-heading-count">3 artículos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-ejer">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c3" data-text="fianza aceptación posesión cargo inventario quince días sesenta días registro civil letrado administración justicia resolución firme inscripciones depósitos diligencias certificación administrador bienes acta compromiso documento público oponibilidad terceros">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 46</span><span class="status-tag tag-info">Procedimiento</span></div>
+            <h2 class="card-title">Prestación de fianza, aceptación y posesión del cargo</h2>
+            <p class="card-subtitle">Regula el procedimiento posterior a la firmeza: prestación de fianza, aceptación del cargo, toma de posesión, presentación de inventario y comunicación al Registro Civil.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>4</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>2</strong> plazos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Comparecencia y fianza</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Firmeza:</strong> requisito previo indispensable. Si hay apelación, el nombrado puede ejercer provisionalmente (art. 45.6).</li>
+              <li><strong>Plazo de 15 días:</strong> improrrogable; incumplimiento puede dar lugar a responsabilidad o remoción.</li>
+              <li><strong>Declaración de suficiencia:</strong> el Juez valora cuantía, modalidad y adecuación al valor de los bienes administrados.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Aceptación y posesión del cargo</div><div class="inner-body"><ul class="inner-list">
+              <li>El nombrado acepta en acta ante el Letrado de la Administración de Justicia, comprometiéndose a cumplir los deberes legales.</li>
+              <li>El LAJ da posesión del cargo, confiere facultades y entrega certificación de la resolución judicial de nombramiento.</li>
+              <li><strong>Certificación:</strong> documento que acredita la condición de tutor o curador frente a terceros.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Presentación de inventario</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Plazo de 60 días:</strong> obligación ineludible; incumplimiento puede ser causa de remoción (CC art. 234).</li>
+              <li><strong>Administración provisional:</strong> hasta la aprobación del inventario, la persona nombrada administra bajo garantías del Juez (limitación de actos, prohibición de disposición sin autorización).</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Inscripción registral</div><div class="inner-body"><ul class="inner-list">
+              <li>Remisión de testimonio al Registro Civil: resolución dictada y acta de posesión del cargo.</li>
+              <li><strong>Carácter obligatorio y constitutivo:</strong> la tutela o curatela no es oponible a terceros de buena fe hasta la inscripción.</li>
+              <li><strong>Ley 20/2011 arts. 60 y ss.:</strong> inscripción de resoluciones judiciales sobre capacidad, tutela y curatela.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 234</span><span class="ref-tag">CC art. 258</span><span class="ref-tag">CC art. 279</span><span class="ref-tag">Ley 20/2011</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c3" data-text="formación inventario bienes escrituras documentos controversia inclusión exclusión juicio verbal secretario judicial aprobación oposición sentencia terceros derechos salvaguarda contradicción transformación contencioso">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 47</span><span class="status-tag tag-info">Procedimiento</span></div>
+            <h2 class="card-title">Formación de inventario</h2>
+            <p class="card-subtitle">Regula la presentación del inventario, la citación a interesados, la resolución de controversias sobre bienes y la aprobación final.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>3</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>3</strong> supuestos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Presentación del inventario</div><div class="inner-body"><ul class="inner-list">
+              <li>El administrador presentará inventario con relación de bienes, escrituras, documentos y papeles de importancia.</li>
+              <li><strong>Exhaustividad:</strong> debe incluir bienes muebles e inmuebles, derechos reales y de crédito, cuentas bancarias, valores mobiliarios. La omisión deliberada puede constituir ilícito civil e incluso penal.</li>
+              <li>El Secretario judicial fijará día y hora y citará a interesados, personas afectadas con suficiente madurez, menor mayor de 12 años y Ministerio Fiscal.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Controversia sobre bienes</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Transformación en contencioso:</strong> si hay controversia sobre inclusión o exclusión, el Secretario judicial cita a vista con tramitación de juicio verbal (LEC art. 250). Pauta constante en arts. 49, 50 y 51 bis.</li>
+              <li><strong>Derechos de terceros:</strong> la sentencia deja a salvo los derechos de terceros, que podrán ejercitar acciones en proceso declarativo.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Aprobación del inventario</div><div class="inner-body"><ul class="inner-list">
+              <li>Sin oposición o resuelta esta, el Secretario judicial aprueba el inventario.</li>
+              <li>La persona designada procederá a la administración conforme a la resolución judicial y a las normas del CC sobre administración (arts. 258-278).</li>
+              <li><strong>CC art. 260:</strong> actos de administración ordinaria sin autorización judicial; CC art. 271: actos que requieren autorización.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 258</span><span class="ref-tag">CC art. 260</span><span class="ref-tag">CC art. 271</span><span class="ref-tag">LEC art. 250</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c3" data-text="retribución cargo tutor curador provisión apoyos complejidad funciones valor rentabilidad bienes apelación no suspensivo modificación extinción solicitud ministerio fiscal pericial pruebas gratuidad artículo 274 código civil equitativa criterios">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 48</span><span class="status-tag tag-ok">Retribución</span></div>
+            <h2 class="card-title">Retribución del cargo</h2>
+            <p class="card-subtitle">Establece el procedimiento para fijar, modificar o extinguir la retribución del tutor o curador, conforme al CC art. 274.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>3</strong> normas conexas</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Solicitud y fijación</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Momento:</strong> una vez firme la resolución de constitución de tutela o la sentencia de provisión de apoyos.</li>
+              <li><strong>CC art. 274:</strong> el cargo es gratuito salvo que el Juez fije retribución equitativa a petición del tutor o curador.</li>
+              <li><strong>Criterios:</strong> complejidad (naturaleza y frecuencia de actos), extensión (ámbito temporal y material), valor de los bienes, rentabilidad del patrimonio.</li>
+              <li><strong>Audiencia:</strong> solicitante, persona con discapacidad, menor si tuviera suficiente madurez y en todo caso si mayor de 12 años, Ministerio Fiscal y cuantas personas considere oportuno.</li>
+              <li><strong>Apelación no suspensiva:</strong> el auto se ejecuta sin perjuicio del recurso, para evitar dilaciones indebidas.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Modificación o extinción</div><div class="inner-body"><ul class="inner-list">
+              <li>Mismo procedimiento para modificar o extinguir la retribución cuando varíen las circunstancias (reducción patrimonial, simplificación de funciones, gestión menos compleja).</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 274</span><span class="ref-tag">LEC art. 753 bis</span><span class="ref-tag">Ley 8/2021</span></div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ARTS. 49-51bis CRISIS ═══ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-crisis">
+      <span class="section-heading-text">Sección 2.ª — Crisis y extinción de la tutela y la curatela</span>
+      <span class="section-heading-count">4 artículos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-crisis">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c4" data-text="remoción tutor curador legislación civil oficio ministerio fiscal tutelado sujeto curatela comparecencia oposición contencioso juicio verbal suspensión funciones defensor judicial nombramiento nuevo registro civil causas 234 251 inhabilidad incumplimiento deberes mala administración condena doloso">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 49</span><span class="status-tag tag-alert">Remoción</span></div>
+            <h2 class="card-title">Remoción</h2>
+            <p class="card-subtitle">Regula la remoción del tutor o curador: legitimación, comparecencia, conversión en contencioso, suspensión cautelar y nombramiento de defensor judicial.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>4</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>3</strong> supuestos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Iniciación y comparecencia</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>CC art. 234 (causas):</strong> incumplimiento de deberes, mala administración, condena por delito doloso, insolvencia, pérdida de confianza.</li>
+              <li><strong>CC art. 251:</strong> inhábiles para el cargo quienes hubieren sido removidos de tutela anterior.</li>
+              <li><strong>Legitimación amplia:</strong> de oficio, Ministerio Fiscal, tutelado, sujeto a curatela o cualquier persona interesada.</li>
+              <li><strong>Audiencia:</strong> tutor/curador, personas que puedan sustituirle, persona con discapacidad, menor con suficiente madurez o mayor de 12 años, Ministerio Fiscal.</li>
+              <li><strong>Oposición:</strong> el expediente se hace contencioso con tramitación de juicio verbal. Garantiza contradicción y derecho de defensa.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Medidas cautelares</div><div class="inner-body"><ul class="inner-list">
+              <li>El Juez podrá suspender al tutor/curador en sus funciones.</li>
+              <li>El Secretario judicial nombrará un defensor judicial (CC art. 299): asume temporalmente las funciones.</li>
+              <li><strong>Naturaleza:</strong> medida de protección, no obligatoria; procede cuando la gravedad de los hechos lo justifica.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Resolución</div><div class="inner-body"><ul class="inner-list">
+              <li>Nombramiento de nuevo tutor/curador conforme al CC (arts. 222-229 y 286 ss.).</li>
+              <li>Comunicación al Registro Civil: garantiza publicidad y actualización de la información registral.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 234</span><span class="ref-tag">CC art. 251</span><span class="ref-tag">CC art. 299</span><span class="ref-tag">LEC art. 250</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c4" data-text="excusa tutor curador código civil quince días nombramiento sobrevenido personas jurídicas comparecencia obligación ejercicio defensor gastos rechazada registro civil nuevo nombramiento causas 243 244 245 246 247 242 entidades públicas">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 50</span><span class="status-tag tag-warn">Excusa</span></div>
+            <h2 class="card-title">Excusa</h2>
+            <p class="card-subtitle">Regula la excusa del tutor o curador: plazo para alegarla, causas del CC, obligación de ejercer durante la tramitación y efectos de admisión o rechazo.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>4</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>1</strong> plazo</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Plazo para alegar la excusa</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Plazo de 15 días:</strong> desde el conocimiento del nombramiento.</li>
+              <li><strong>CC arts. 243-246 (causas):</strong> mayor de 65 años, enfermedad, cargo con 3+ hijos, residencia en lugar distinto, cargos públicos, cualquier causa que dificulte gravemente el cargo.</li>
+              <li><strong>Excusa sobrevenida:</strong> alegable en cualquier momento (CC art. 247).</li>
+              <li><strong>Personas jurídicas (CC art. 242):</strong> solo pueden excusarse si hay persona de parecidas condiciones para sustituirles. Razón: asumen la tutela como parte de su función institucional.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Comparecencia</div><div class="inner-body"><ul class="inner-list">
+              <li>Audiencia necesaria: persona que se excuse, quien le vaya a sustituir, afectado con suficiente madurez, menor mayor de 12 años y Ministerio Fiscal.</li>
+              <li><strong>Audiencia del sustituto:</strong> garantiza que está dispuesto y es idóneo para asumir el cargo.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Obligación de ejercicio durante la tramitación</div><div class="inner-body"><ul class="inner-list">
+              <li>El excusante está obligado a ejercer la función; de no hacerlo, se nombra defensor judicial (CC art. 299).</li>
+              <li><strong>Responsabilidad:</strong> si la excusa es rechazada, el sustituido responde de todos los gastos ocasionados. Disuade excusas infundadas o dilatorias.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Efectos de la admisión</div><div class="inner-body"><ul class="inner-list">
+              <li>Nombramiento de nuevo tutor o curador según reglas de delación del CC.</li>
+              <li>Comunicación al Registro Civil para actualización de la información registral.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 242</span><span class="ref-tag">CC art. 243</span><span class="ref-tag">CC art. 247</span><span class="ref-tag">CC art. 299</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c4" data-text="rendición cuentas informes situación personal letrado administración justicia traslado comparecencia diez días pericial contable auditoría auto extinción tres meses prorrogables herederos acciones recíprocas causahabientes 279 280 281 312 313 aprobación desaprobación resarcimiento daños perjuicios cosa juzgada formal">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 51</span><span class="status-tag tag-info">Rendición</span></div>
+            <h2 class="card-title">Rendición de cuentas</h2>
+            <p class="card-subtitle">Regula la presentación de informes y rendiciones de cuentas, el traslado, la comparecencia, la prueba pericial y la rendición final por extinción.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>5</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>2</strong> plazos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Presentación de informes</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>CC art. 279:</strong> obligación fundamental del tutor o curador de rendir cuentas periódicas o finales.</li>
+              <li>Informes sobre situación personal del menor o persona con discapacidad, o rendiciones de cuentas.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Traslado y comparecencia</div><div class="inner-body"><ul class="inner-list">
+              <li>El LAJ traslada informes a persona con discapacidad, menor con suficiente madurez o mayor de 12 años, interesados y Ministerio Fiscal.</li>
+              <li><strong>Plazo de 10 días:</strong> para solicitar comparecencia, con proposición de diligencias y pruebas.</li>
+              <li><strong>Prueba pericial de oficio:</strong> el Juez puede ordenar pericial contable o auditoría a costa del patrimonio del tutelado si hay operaciones complejas, aunque nadie haya solicitado comparecencia.</li>
+              <li><strong>Justificación del coste:</strong> la rendición de cuentas es un deber del cargo, no una carga para la persona protegida; la prueba pericial beneficia a esta última.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Resolución</div><div class="inner-body"><ul class="inner-list">
+              <li>El Juez resuelve por auto. Aprobación: liberación de responsabilidad. Desaprobación: resarcimiento de daños y perjuicios (CC art. 280).</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Rendición final de cuentas por extinción</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Plazo de 3 meses:</strong> desde el cese del cargo, prorrogables por justa causa (complejidad del patrimonio, dificultad documental).</li>
+              <li><strong>CC arts. 312-313 (causas extinción):</strong> mayoría de edad, fallecimiento, adopción, suspensión o extinción de patria potestad.</li>
+              <li><strong>Audiencia adicional:</strong> nuevo tutor o curador, y herederos del tutelado o asistido si ha fallecido.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Acciones recíprocas</div><div class="inner-body"><ul class="inner-list">
+              <li>La aprobación judicial no impide el ejercicio de acciones recíprocas entre tutor/curador y tutelado/asistido o sus causahabientes.</li>
+              <li><strong>Efecto:</strong> la aprobación no tiene efecto de cosa juzgada material; solo verifica corrección formal. Cabe ejercicio de acciones civiles posteriores.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 279</span><span class="ref-tag">CC art. 280</span><span class="ref-tag">CC art. 281</span><span class="ref-tag">CC art. 312</span><span class="ref-tag">Ley 8/2021</span></div>
+        </article>
+
+        <article class="map-card" data-cat="c4" data-text="extinción poderes preventivos apoderado persona discapacidad curador provisión apoyos remoción contencioso juicio verbal letrado administración justicia oposición legitimación artículo 248 código civil autotutela confianza 8/2021">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 51 bis</span><span class="status-tag tag-alert">Extinción</span></div>
+            <h2 class="card-title">Extinción de los poderes preventivos</h2>
+            <p class="card-subtitle">Regula la extinción de los poderes preventivos (CC art. 248) cuando el apoderado incurre en causas de remoción del curador.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>4</strong> normas conexas</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Legitimación</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Legitimados:</strong> cualquier persona legitimada para instar la provisión de apoyos y el curador, si lo hubiere.</li>
+              <li><strong>CC art. 248:</strong> poderes preventivos introducidos por la Ley 8/2021: permiten otorgar poder en previsión de futura necesidad de apoyo.</li>
+              <li><strong>Causa:</strong> que en el apoderado concurra alguna de las causas previstas para la remoción del curador.</li>
+              <li><strong>Legitimación del curador:</strong> coherente con su función de velar porque las demás medidas de apoyo sean adecuadas.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Tramitación</div><div class="inner-body"><ul class="inner-list">
+              <li>Comparecencia: solicitante, apoderado, persona con discapacidad y Ministerio Fiscal.</li>
+              <li><strong>Oposición:</strong> el expediente se hace contencioso con tramitación de juicio verbal. Pauta constante en arts. 47, 49 y 50.</li>
+              <li><strong>Intervención de abogado preceptiva:</strong> conforme al art. 43.3, por la naturaleza contenciosa potencial y la trascendencia de los derechos en juego.</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 234</span><span class="ref-tag">CC art. 248</span><span class="ref-tag">LEC art. 250</span><span class="ref-tag">Ley 8/2021</span></div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ART. 52 GUARDA DE HECHO ═══ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-guarda">
+      <span class="section-heading-text">Sección 3.ª — Guarda de hecho</span>
+      <span class="section-heading-count">1 artículo</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-guarda">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c5" data-text="guarda de hecho requerimiento guardador medidas control vigilancia autorización judicial entrevista pericial menor discapacidad constitución tutela comparecencia ministerio fiscal interés legítimo institución jurídica apoyo fáctica 300 287 código civil ley 8/2021">
+          <div class="card-top">
+            <div class="card-meta"><span class="art-badge">Artículo 52</span><span class="status-tag tag-info">Guarda de hecho</span></div>
+            <h2 class="card-title">Requerimiento y medidas de control</h2>
+            <p class="card-subtitle">Regula el requerimiento al guardador de hecho, las medidas de control y vigilancia, y la autorización judicial para actos del guardador.</p>
+          </div>
+          <div class="card-counters"><span class="counter-badge"><strong>5</strong> normas conexas</span><span class="counter-badge" style="margin-left:auto"><strong>3</strong> supuestos</span></div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Requerimiento al guardador de hecho</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>Legitimados:</strong> Ministerio Fiscal, persona que precise medidas de apoyo, cualquiera con interés legítimo.</li>
+              <li><strong>CC art. 300 tras Ley 8/2021:</strong> la guarda de hecho se reconoce como verdadera institución jurídica de apoyo, superando su anterior carácter de mera situación fáctica.</li>
+              <li>El requerimiento no implica necesariamente constitución de tutela o curatela; verifica que la actuación del guardador es adecuada.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Medidas de control y vigilancia</div><div class="inner-body"><ul class="inner-list">
+              <li>El Juez podrá establecer medidas de control y vigilancia sin perjuicio de promover constitución de tutela para menores si procediera.</li>
+              <li><strong>Menores:</strong> constitución de tutela puede ser necesaria porque necesitan representante legal con plenas facultades.</li>
+              <li><strong>Personas con discapacidad:</strong> la Ley 8/2021 potencia la guarda de hecho como medida de apoyo suficiente sin necesidad de curatela si el apoyo ya es adecuado.</li>
+              <li>Adopción previa comparecencia: persona afectada, guardador y Ministerio Fiscal.</li>
+            </ul></div></div>
+            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Autorización judicial del guardador</div><div class="inner-body"><ul class="inner-list">
+              <li><strong>CC art. 300:</strong> el guardador debe solicitar autorización judicial para actos que, de haber sido curador, requerirían autorización conforme al CC art. 287 (enajenación, renuncia de derechos, aceptación de herencias sin beneficio de inventario).</li>
+              <li><strong>Entrevista personal:</strong> la autoridad judicial entrevistará por sí misma a la persona con discapacidad. Garantía reforzada que va más allá de la mera audiencia.</li>
+              <li><strong>Informe pericial:</strong> podrá solicitarse para acreditar la situación de la persona con discapacidad.</li>
+              <li><strong>Comparecencia ampliada:</strong> se podrá citar a cuantas personas se considere necesario oír (profesionales sanitarios, trabajadores sociales, familiares).</li>
+            </ul></div></div>
+          </div>
+          <div class="card-refs"><span class="ref-tag">CC art. 287</span><span class="ref-tag">CC art. 300</span><span class="ref-tag">Ley 8/2021</span><span class="ref-tag">Conv. ONU art. 12</span><span class="ref-tag">Conv. ONU art. 13</span></div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CUADRO COMPARATIVO ═══ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-compar">
+      <span class="section-heading-text">Cuadro comparativo: Tutela, Curatela y Guarda de hecho</span>
+      <span class="section-heading-count">3 figuras</span>
+      <button class="section-toggle-btn">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-compar">
+      <div class="comparison-wrap">
+        <table class="comparison-table">
+          <thead><tr><th>Aspecto</th><th>Tutela</th><th>Curatela</th><th>Guarda de hecho</th></tr></thead>
+          <tbody>
+            <tr><td>Naturaleza</td><td>Medida de representación para menores sin patria potestad efectiva</td><td>Medida de apoyo para personas con discapacidad que precisan apoyo continuado</td><td>Situación fáctica de cuidado y protección asumida voluntariamente</td></tr>
+            <tr><td>Sujetos</td><td>Menores de edad</td><td>Personas con discapacidad</td><td>Menores y personas con discapacidad</td></tr>
+            <tr><td>Constitución</td><td>Expediente JV (art. 45) o provisión de apoyos (LEC 753 bis)</td><td>Provisión de apoyos (LEC 753 bis); expediente JV solo para sustitución (art. 44)</td><td>No requiere constitución formal; se reconoce de facto</td></tr>
+            <tr><td>Funciones</td><td>Representación legal y administración de bienes</td><td>Asistencia en actos jurídicos que la persona no pueda realizar por sí misma</td><td>Cuidado y protección; administración bajo autorización judicial</td></tr>
+            <tr><td>Autorización judicial</td><td>Sí, para actos de disposición (CC art. 271)</td><td>Sí, según alcance fijado por el Juez</td><td>Sí, para actos que excedan administración ordinaria (CC art. 300)</td></tr>
+            <tr><td>Intervención abogado</td><td>No preceptiva (salvo remoción)</td><td>No preceptiva (salvo remoción)</td><td>No preceptiva</td></tr>
+            <tr><td>Remoción</td><td>Art. 49 y CC art. 234</td><td>Art. 49 y CC art. 234</td><td>No procede; se aplican medidas de control (art. 52)</td></tr>
+            <tr><td>Registro Civil</td><td>Inscripción obligatoria (art. 46.5)</td><td>Inscripción obligatoria (art. 46.5)</td><td>No procede</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CRONOGRAMA DE PLAZOS ═══ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Cronograma de plazos procesales</span>
+      <span class="section-heading-count">6 trámites</span>
+      <button class="section-toggle-btn">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead><tr><th style="width:38%">Acto o trámite procesal</th><th>Plazo</th><th>Fundamento</th><th>Observaciones</th></tr></thead>
+          <tbody>
+            <tr><td class="td-tramite">Remisión de testimonio del expediente al nuevo Juzgado competente</td><td><span class="plazo-badge plazo-days">10 días</span></td><td class="td-norm">Art. 43.2</td><td class="td-obs">Desde la solicitud del nuevo Juzgado</td></tr>
+            <tr><td class="td-tramite">Comparecencia para prestar fianza y aceptar cargo o formular excusa</td><td><span class="plazo-badge plazo-days">15 días</span></td><td class="td-norm">Art. 46.1</td><td class="td-obs">Desde la citación tras la firmeza</td></tr>
+            <tr><td class="td-tramite">Alegación de excusa desde el conocimiento del nombramiento</td><td><span class="plazo-badge plazo-days">15 días</span></td><td class="td-norm">Art. 50.1</td><td class="td-obs">Plazo improrrogable</td></tr>
+            <tr><td class="td-tramite">Solicitud de comparecencia tras traslado de informes o rendición de cuentas</td><td><span class="plazo-badge plazo-days">10 días</span></td><td class="td-norm">Art. 51.2</td><td class="td-obs">Desde el traslado por el LAJ</td></tr>
+            <tr><td class="td-tramite">Presentación del inventario de bienes</td><td><span class="plazo-badge plazo-days">60 días</span></td><td class="td-norm">Art. 46.4</td><td class="td-obs">Desde el requerimiento</td></tr>
+            <tr><td class="td-tramite">Rendición final de cuentas por extinción de la tutela o curatela</td><td><span class="plazo-badge plazo-months">3 meses</span></td><td class="td-norm">Art. 51.4</td><td class="td-obs">Desde el cese; prorrogables por justa causa</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PARTICIPANTES ═══ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">6 categorías · 16+ actores</span>
+      <button class="section-toggle-btn">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+        <div class="participant-col"><div class="participant-col-head phead-c1">Órganos judiciales y auxiliares</div><ul>
+          <li>Juez / Juzgado de Primera Instancia <span class="participant-note">(competente, designa tutor/curador, adopta medidas)</span></li>
+          <li>Letrado de la Administración de Justicia <span class="participant-note">(acta aceptación, traslado informes, citas vistas)</span></li>
+          <li>Secretario judicial <span class="participant-note">(inventario, defensor judicial, aprobación sin oposición)</span></li>
+        </ul></div>
+        <div class="participant-col"><div class="participant-col-head phead-c2">Ministerio Fiscal</div><ul>
+          <li>Ministerio Fiscal <span class="participant-note">(promotor, audiencia preceptiva, actuación de oficio)</span></li>
+        </ul></div>
+        <div class="participant-col"><div class="participant-col-head phead-c3">Figuras tutelares y de apoyo</div><ul>
+          <li>Tutor <span class="participant-note">(representación, administración, fiscalización, rendición)</span></li>
+          <li>Curador <span class="participant-note">(asistencia, mismas obligaciones que tutor)</span></li>
+          <li>Guardador de hecho <span class="participant-note">(cuidado voluntario, autorización judicial)</span></li>
+          <li>Defensor judicial <span class="participant-note">(remoción, excusa; CC art. 299)</span></li>
+          <li>Apoderado <span class="participant-note">(poderes preventivos, CC art. 248)</span></li>
+        </ul></div>
+        <div class="participant-col"><div class="participant-col-head phead-c4">Personas protegidas</div><ul>
+          <li>Menor <span class="participant-note">(mayor 12 años o suficiente madurez)</span></li>
+          <li>Persona con discapacidad <span class="participant-note">(voluntad, deseos, preferencias)</span></li>
+          <li>Persona que precise medidas de apoyo <span class="participant-note">(terminología Ley 8/2021)</span></li>
+        </ul></div>
+        <div class="participant-col"><div class="participant-col-head phead-c5">Otros interesados</div><ul>
+          <li>Parientes más próximos <span class="participant-note">(audiencia, pueden instar remoción)</span></li>
+          <li>Progenitores <span class="participant-note">(medidas fiscalización, tutela testamentaria CC 223)</span></li>
+          <li>Herederos del tutelado/asistido <span class="participant-note">(rendición final cuentas)</span></li>
+          <li>Personas legitimadas para promover tutela/curatela <span class="participant-note">(CC arts. 222, 227)</span></li>
+          <li>Cualquiera con interés legítimo <span class="participant-note">(guarda de hecho)</span></li>
+          <li>Personas que puedan sustituir al tutor/curador <span class="participant-note">(audiencia remoción)</span></li>
+        </ul></div>
+        <div class="participant-col"><div class="participant-col-head phead-c6">Terceros y otros</div><ul>
+          <li>Terceros de buena fe <span class="participant-note">(derechos a salvo en sentencia inventario)</span></li>
+          <li>Administrador del patrimonio protegido <span class="participant-note">(Ley 41/2003)</span></li>
+          <li>Notario <span class="participant-note">(poderes preventivos, autotutela, testamentos)</span></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ECOSISTEMA NORMATIVO ═══ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">9 cuerpos normativos</span>
+      <button class="section-toggle-btn">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card"><div class="norm-law">Código Civil</div><div class="norm-title">Título X — Tutela, curatela y guarda (arts. 215–313)</div><div class="norm-arts">
+          <strong>Arts. 215-218</strong> — Disposiciones generales: delación, prioridad medidas voluntarias, interés superior.<br>
+          <strong>Arts. 222-229</strong> — Delación tutela: orden preferente, tutela testamentaria (223), tutor dativo.<br>
+          <strong>Arts. 234, 251</strong> — Remoción e inhabilidad del tutor.<br>
+          <strong>Arts. 239-242</strong> — Tutor testamentario y dativo; personas jurídicas (242).<br>
+          <strong>Arts. 243-247</strong> — Excusa: causas y plazo.<br>
+          <strong>Art. 248</strong> — Poderes preventivos y autotutela (Ley 8/2021).<br>
+          <strong>Arts. 258-260</strong> — Administración e inventario.<br>
+          <strong>Arts. 269-270</strong> — Actos sin autorización judicial.<br>
+          <strong>Arts. 271-278</strong> — Autorización judicial para actos de disposición.<br>
+          <strong>Art. 274</strong> — Retribución del tutor.<br>
+          <strong>Arts. 279-281</strong> — Rendición de cuentas y responsabilidad.<br>
+          <strong>Arts. 286-298</strong> — Curatela: ámbito y funciones.<br>
+          <strong>Art. 299</strong> — Defensor judicial.<br>
+          <strong>Art. 300</strong> — Guarda de hecho (reformado por Ley 8/2021).<br>
+          <strong>Arts. 312-313</strong> — Extinción de tutela y curatela.
+        </div><span class="norm-tag tag-info">Legislación sustantiva</span></div>
+
+        <div class="norm-card"><div class="norm-law">Ley 8/2021, de 2 de junio</div><div class="norm-title">Reforma civil y procesal para el apoyo a personas con discapacidad</div><div class="norm-arts">
+          <strong>Reforma del CC:</strong> supresión de incapacitación, curatela como medida preferente, poderes preventivos (248), guarda de hecho como institución (300), principio de voluntad y preferencias.<br>
+          <strong>Reforma de la LEC:</strong> procedimiento de provisión de apoyos (753 bis), garantías reforzadas.<br>
+          <strong>Reforma de la Ley 15/2015:</strong> art. 51 bis, adaptación guarda de hecho, ajustes postulación.<br>
+          <strong>Principios:</strong> art. 12 Conv. ONU, modelo de apoyo vs. modelo sustitutorio.
+        </div><span class="norm-tag tag-alert">Reforma clave</span></div>
+
+        <div class="norm-card"><div class="norm-law">Ley de Enjuiciamiento Civil 1/2000</div><div class="norm-title">Tramitación procesal supletoria y procedimientos conexos</div><div class="norm-arts">
+          <strong>Arts. 250 y ss.</strong> — Juicio verbal: tramitación cuando el expediente JV se hace contencioso.<br>
+          <strong>Arts. 455 y ss.</strong> — Recurso de apelación: sin efectos suspensivos en materia de tutela/curatela.<br>
+          <strong>Arts. 748-755</strong> — Procedimientos sobre capacidad y menores.<br>
+          <strong>Art. 753 bis</strong> — Procedimiento de provisión de apoyos (Ley 8/2021): cauce para constitución originaria de curatela.
+        </div><span class="norm-tag tag-info">Procesal</span></div>
+
+        <div class="norm-card"><div class="norm-law">Constitución Española</div><div class="norm-title">Artículo 49 — Personas con discapacidad</div><div class="norm-arts">
+          <strong>Art. 49:</strong> las personas con discapacidad ejercen los derechos del Título I en condiciones de libertad e igualdad reales y efectivas. Los poderes públicos realizarán una política de previsión, tratamiento, rehabilitación e integración. Reforma de 2024: eliminación de la referencia a «disminuidos», refuerzo del lenguaje de derechos.
+        </div><span class="norm-tag tag-ok">Constitucional</span></div>
+
+        <div class="norm-card"><div class="norm-law">Convención ONU, 2006</div><div class="norm-title">Derechos de las Personas con Discapacidad</div><div class="norm-arts">
+          <strong>Art. 1</strong> — Propósito: promover y proteger derechos humanos en igualdad.<br>
+          <strong>Art. 3</strong> — Principios: autonomía individual, no discriminación, participación plena, igualdad de oportunidades, accesibilidad.<br>
+          <strong>Art. 12</strong> — Igual reconocimiento como persona ante la ley: base del modelo de apoyo (Ley 8/2021) y del art. 45.2 Ley 15/2015.<br>
+          <strong>Art. 13</strong> — Acceso a la justicia: ajustes de procedimiento para participación efectiva.
+        </div><span class="norm-tag tag-ok">Internacional</span></div>
+
+        <div class="norm-card"><div class="norm-law">Ley 20/2011, de 21 de julio</div><div class="norm-title">Del Registro Civil</div><div class="norm-arts">
+          <strong>Arts. 60 y ss.</strong> — Inscripción de resoluciones judiciales sobre capacidad, tutela, curatela y medidas de apoyo. Carácter obligatorio, efectos de oponibilidad frente a terceros. Comunicación preceptiva en arts. 46.5, 49.3 y 50.4 de la Ley 15/2015.
+        </div><span class="norm-tag tag-gray">Registral</span></div>
+
+        <div class="norm-card"><div class="norm-law">Ley 41/2003, de 18 de noviembre</div><div class="norm-title">Protección patrimonial de las personas con discapacidad</div><div class="norm-arts">
+          <strong>Patrimonio protegido:</strong> masa de bienes afectada a necesidades vitales de la persona con discapacidad. Administración a cargo del tutor, curador, guardador u otra persona designada. Conexiones con inventario (art. 47), rendición de cuentas (art. 51) y autorización judicial para actos de disposición.
+        </div><span class="norm-tag tag-gray">Patrimonial</span></div>
+
+        <div class="norm-card"><div class="norm-law">Ley del Notariado</div><div class="norm-title">Documentos públicos notariales sobre medidas de apoyo</div><div class="norm-arts">
+          <strong>Testamentos y documentos notariales:</strong> disposiciones de progenitores sobre tutela/curatela (arts. 45.1, 45.4), poderes preventivos (CC art. 248), autotutela. La Ley 8/2021 ha reforzado el papel del notario en la formalización de medidas voluntarias de apoyo sin necesidad de vía judicial.
+        </div><span class="norm-tag tag-gray">Notarial</span></div>
+
+        <div class="norm-card"><div class="norm-law">LO 1/1996, de 15 de enero</div><div class="norm-title">Protección Jurídica del Menor</div><div class="norm-arts">
+          <strong>Art. 9.2:</strong> el menor tiene derecho a ser oído en los procedimientos que le afecten, tanto en el ámbito judicial como administrativo. Fundamento de la audiencia del menor mayor de 12 años o con suficiente madurez en los procedimientos de tutela y curatela (arts. 45.2, 46.3, 49.1, 50.2 y 51.2).
+        </div><span class="norm-tag tag-info">Menores</span></div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c6)"></div>Principios y marco normativo</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c1)"></div>Competencia y procedimiento</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c2)"></div>Constitución de tutela y curatela</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c3)"></div>Ejercicio del cargo</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c4)"></div>Crisis y extinción</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c5)"></div>Guarda de hecho</div>
+    </div>
+    <div class="legend-copy">Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II · Capítulo IV · Arts. 43–52 · Versión expandida con conexiones normativas · Generado como plantilla HTML reutilizable</div>
+  </div>
+</footer>
+
+<script>
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent =
+    isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '\u25B6' : '\u25BC';
+  });
+});
+
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa mental — Título V, Ley 15/2015 de Jurisdicción Voluntaria</title>
+
+<!-- Módulo 4 — Fuentes de Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ===== Módulo 2 — Sistema de tokens CSS (:root) ===== */
+:root {
+  color-scheme: light;
+
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --surface-3:   #eae8e3;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --border-lg:   rgba(15,23,42,.22);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+  --accent-soft: rgba(200,169,110,.15);
+  --accent-ring: rgba(200,169,110,.35);
+
+  /* Categorías */
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;  /* Ámbito de aplicación */
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;  /* Competencia y postulación */
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;  /* Consignación judicial */
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;  /* Tramitación procesal */
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;  /* Oposición y contencioso */
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;  /* General / Normas comunes */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.06);
+  --shadow-md: 0 4px 6px -1px rgba(15,23,42,.07), 0 2px 4px -1px rgba(15,23,42,.04);
+  --shadow-lg: 0 10px 20px -5px rgba(15,23,42,.10), 0 4px 8px -3px rgba(15,23,42,.05);
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-ui:      'Outfit', system-ui, -apple-system, sans-serif;
+  --transition:      180ms cubic-bezier(.4,0,.2,1);
+  --transition-fast: 120ms cubic-bezier(.4,0,.2,1);
+}
+
+/* ===== Módulo 3 — Reset CSS profesional ===== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, h1, h2, h3, h4, h5, h6,
+p, ul, ol, figure, blockquote { margin: 0; }
+
+ul, ol { padding: 0; list-style: none; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-1);
+  background: var(--bg);
+}
+
+img, svg, video { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Botones: reset crítico */
+button {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  line-height: 1.2;
+  text-align: inherit;
+}
+button:disabled { cursor: not-allowed; opacity: .5; }
+
+input, select, textarea {
+  font: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Accesibilidad: focus ring coherente */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Scrollbar discreta */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-md);
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--border-lg); }
+
+::selection { background: var(--accent-soft); color: var(--text-1); }
+
+/* ===== Módulo 6 — Cabecera (site-header) ===== */
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem 1.75rem;
+}
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.header-breadcrumb {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+}
+.header-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: .5rem;
+}
+.header-subtitle {
+  font-size: 14px;
+  color: rgba(248,245,237,.65);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.header-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.header-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(200,169,110,.15);
+  border: 1px solid rgba(200,169,110,.3);
+  color: var(--accent);
+}
+.header-actions { margin-left: auto; }
+.btn-ghost {
+  border: 1px solid rgba(248,245,237,.15);
+  color: rgba(248,245,237,.7);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.btn-ghost:hover {
+  background: rgba(248,245,237,.08);
+  color: #fff;
+}
+
+/* ===== Módulo 7 — Barra de estadísticas (stats-bar) ===== */
+.stats-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.stats-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  padding: 1rem 1.5rem;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.stat-item:last-child { border-right: 0; }
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-1);
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: .15rem;
+}
+@media (max-width: 640px) {
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2) { border-right: 0; }
+}
+
+/* ===== Módulo 8 — Barra de controles sticky (controls-bar) ===== */
+.controls-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  box-shadow: 0 1px 0 var(--border), 0 2px 8px rgba(15,23,42,.04);
+  padding: .65rem 1.5rem;
+}
+.controls-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Búsqueda */
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+}
+.search-wrap svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--text-3);
+  pointer-events: none;
+}
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  background: var(--surface);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.search-input:hover { border-color: var(--border-lg); }
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+  outline: none;
+}
+
+/* Píldoras de filtro */
+.filter-pills {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+}
+.pill {
+  background: transparent;
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.pill:hover {
+  background: var(--surface-2);
+  border-color: var(--border-lg);
+  color: var(--text-1);
+}
+.pill.active[data-cat="all"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.pill.active[data-cat="c1"] {
+  background: var(--c1);
+  border-color: var(--c1);
+  color: #fff;
+}
+.pill.active[data-cat="c2"] {
+  background: var(--c2);
+  border-color: var(--c2);
+  color: #fff;
+}
+.pill.active[data-cat="c3"] {
+  background: var(--c3);
+  border-color: var(--c3);
+  color: #fff;
+}
+.pill.active[data-cat="c4"] {
+  background: var(--c4);
+  border-color: var(--c4);
+  color: #fff;
+}
+.pill.active[data-cat="c5"] {
+  background: var(--c5);
+  border-color: var(--c5);
+  color: #fff;
+}
+
+/* Acciones de control */
+.ctrl-actions {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-left: auto;
+}
+.btn-ctrl {
+  background: var(--surface-2);
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.btn-ctrl:hover {
+  background: var(--surface-3);
+  color: var(--text-1);
+}
+.btn-ctrl:active { transform: translateY(1px); }
+
+.zoom-cluster {
+  display: flex;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.btn-zoom {
+  width: 28px;
+  height: 28px;
+  background: var(--surface);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border-md);
+  transition: background var(--transition-fast);
+}
+.btn-zoom:last-of-type { border-right: 0; }
+.btn-zoom:hover { background: var(--surface-2); }
+.btn-zoom:disabled { opacity: .4; cursor: not-allowed; }
+.zoom-label {
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 42px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .ctrl-actions { display: none; }
+}
+
+/* ===== Módulo 9 — Tarjetas de artículos (map-card) ===== */
+
+/* Cuadrícula contenedora */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1rem;
+}
+@media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+/* Contenedor .map-card */
+.map-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--c6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.map-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-md);
+}
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+.map-card.hidden { display: none; }
+
+/* Cabecera y meta de la tarjeta */
+.card-top { padding: 1rem 1.1rem .85rem; }
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  flex-wrap: wrap;
+  margin-bottom: .55rem;
+}
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-1);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: .3rem;
+}
+.card-subtitle {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* Badges */
+.art-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--c6bd);
+  background: var(--c6bg);
+  color: var(--c6);
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+.map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+
+.status-tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .02em;
+}
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+/* Contadores */
+.card-counters {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  padding: 0 1.1rem .9rem;
+  font-size: 11px;
+  color: var(--text-3);
+}
+.counter-badge {
+  background: var(--surface-2);
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+}
+.counter-badge strong {
+  color: var(--text-1);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Botón toggle */
+.card-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .65rem 1.1rem;
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.card-toggle-btn:hover {
+  background: var(--surface-3);
+  color: var(--text-1);
+}
+.card-toggle-btn:active {
+  background: var(--border);
+}
+.card-toggle-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.toggle-label { flex: 1; text-align: left; }
+.toggle-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  font-size: 10px;
+  transition: transform var(--transition), background var(--transition-fast),
+              color var(--transition-fast), border-color var(--transition-fast);
+}
+.card-toggle-btn:hover .toggle-icon {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+.map-card.expanded .toggle-icon {
+  transform: rotate(180deg);
+  background: var(--ink);
+  color: var(--surface);
+  border-color: var(--ink);
+}
+
+/* Cuerpo expandible */
+.card-body {
+  display: none;
+  padding: 1rem 1.1rem 1.1rem;
+  background: #fafaf9;
+  border-top: 1px solid var(--border);
+}
+.map-card.expanded .card-body { display: block; }
+
+/* Secciones internas */
+.inner-section + .inner-section { margin-top: 1rem; }
+.inner-heading {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: .45rem;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-1);
+}
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--c6);
+  flex-shrink: 0;
+}
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+
+/* Referencias al pie */
+.card-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  padding: .8rem 1.1rem;
+  background: #fafaf9;
+  border-top: 1px solid var(--border);
+}
+.ref-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--surface-2);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  transition: background var(--transition-fast);
+}
+.ref-tag:hover { background: var(--surface-3); }
+
+/* ===== Módulo 10 — Cabecera de sección (section-heading) ===== */
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  max-width: 1400px;
+  margin: 1.5rem auto .5rem;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+.section-heading-text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+.section-heading-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  background: var(--surface-2);
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: .02em;
+}
+.section-toggle-btn {
+  width: 28px; height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border-md);
+  border-radius: 50%;
+  color: var(--text-2);
+  font-size: 11px;
+  transition: var(--transition-fast);
+}
+.section-heading:hover .section-toggle-btn {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+.section-divider {
+  max-width: 1400px;
+  margin: 0 auto 1rem;
+  border: 0;
+  height: 1px;
+  background: var(--border);
+}
+.section-body.collapsed { display: none; }
+
+/* ===== Encabezado de capítulo (chapter-heading) ===== */
+.chapter-heading {
+  max-width: 1400px;
+  margin: 2.25rem auto .35rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+}
+.chapter-num {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  white-space: nowrap;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(200,169,110,.25);
+}
+.chapter-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+.chapter-divider {
+  max-width: 1400px;
+  margin: 0 auto .5rem;
+  padding: 0 1.5rem;
+  border: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+  border-radius: 1px;
+}
+
+/* ===== Módulo 11 — Sección de plazos procesales (tabla) ===== */
+.table-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.timeline-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.timeline-table th {
+  background: var(--surface-2);
+  text-align: left;
+  padding: .85rem 1rem;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+.timeline-table td {
+  padding: .7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-1);
+  vertical-align: top;
+}
+.timeline-table tbody tr:last-child td { border-bottom: 0; }
+.timeline-table tbody tr { transition: background var(--transition-fast); }
+.timeline-table tbody tr:hover { background: var(--surface-2); }
+
+.plazo-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ===== Módulo 12 — Sección de participantes y actores ===== */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+
+.participant-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.participant-col-head {
+  padding: .7rem 1rem;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.phead-c5 { background: var(--c5); }
+.phead-c6 { background: var(--c6); }
+
+.participant-col ul { padding: .5rem .25rem; }
+.participant-col li {
+  font-size: 12.5px;
+  color: var(--text-2);
+  padding: .4rem .75rem;
+  border-bottom: 1px solid var(--border);
+}
+.participant-col li:last-child { border-bottom: 0; }
+.participant-note {
+  font-size: 11px;
+  color: var(--text-3);
+  font-style: italic;
+}
+
+/* ===== Módulo 13 — Sección de ecosistema normativo ===== */
+.norm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (max-width: 900px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+
+.norm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.norm-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.norm-law {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-3);
+  font-weight: 600;
+}
+.norm-title {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-1);
+  line-height: 1.4;
+}
+.norm-arts {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+.norm-tag {
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .02em;
+}
+
+/* ===== Módulo 14 — Elemento «sin resultados» ===== */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-3);
+  font-size: 14px;
+  display: none;
+}
+
+/* ===== Módulo 15 — Pie de página: leyenda de colores ===== */
+.legend-footer {
+  background: var(--header-bg);
+  color: var(--header-text);
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+}
+.legend-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.legend-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.legend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  font-size: 13px;
+  color: rgba(248,245,237,.85);
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+.legend-swatch {
+  width: 12px; height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.legend-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(248,245,237,.12);
+}
+.legend-copy {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(248,245,237,.08);
+  font-size: 11px;
+  color: rgba(248,245,237,.35);
+}
+
+/* ===== Módulo 16 — CSS de impresión ===== */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body   { display: block !important; }
+  .inner-body  { display: block !important; }
+  .section-body{ display: block !important; }
+  .map-card    { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; transform: none !important; }
+  .map-card:hover { transform: none !important; box-shadow: none !important; }
+  body         { background: #fff; }
+}
+
+/* ===== Módulo 17 — CSS de inner-list ===== */
+.inner-list li {
+  position: relative;
+  padding-left: .9rem;
+  margin-bottom: .3rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.inner-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-3);
+}
+.inner-list li strong { color: var(--text-1); font-weight: 600; }
+
+/* ===== Módulo 18 — Accesibilidad: prefers-reduced-motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .map-card:hover { transform: none; }
+  .norm-card:hover { transform: none; }
+}
+
+/* Utilidad para la sección body */
+.section-body {
+  padding-bottom: .5rem;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Módulo 6 — Cabecera ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título V · Capítulos I y II</div>
+    <h1 class="header-title">Expedientes de jurisdicción voluntaria relativos al Derecho de obligaciones</h1>
+    <p class="header-subtitle">Artículos 96 a 99 · Fijación del plazo para el cumplimiento de obligaciones y consignación judicial</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015, de 2 de julio</span>
+      <span class="header-tag">Artículos 96–99</span>
+      <span class="header-tag">Jurisdicción Voluntaria</span>
+      <span class="header-tag">Derecho de obligaciones</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Módulo 7 — Barra de estadísticas ===== -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">4</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">25+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">13+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">3</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Módulo 8 — Barra de controles sticky ===== -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Ámbito de aplicación</button>
+      <button class="pill" data-cat="c2">Competencia y postulación</button>
+      <button class="pill" data-cat="c3">Consignación judicial</button>
+      <button class="pill" data-cat="c4">Tramitación procesal</button>
+      <button class="pill" data-cat="c5">Oposición y contencioso</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Contenido principal ===== -->
+<main class="page-main">
+
+  <!-- ============================================================ -->
+  <!-- CAPÍTULO I — De la fijación del plazo para el cumplimiento  -->
+  <!-- de las obligaciones cuando proceda (Artículos 96 y 97)      -->
+  <!-- ============================================================ -->
+
+  <div class="chapter-heading">
+    <span class="chapter-num">Capítulo I</span>
+    <span class="chapter-name">De la fijación del plazo para el cumplimiento de las obligaciones cuando proceda</span>
+  </div>
+  <hr class="chapter-divider">
+
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-cap1">
+      <span class="section-heading-text">Artículos 96 y 97 — Fijación judicial del plazo</span>
+      <span class="section-heading-count" id="count-arts">4 artículos visibles</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-cap1">
+      <div class="card-grid">
+
+        <!-- ===== ARTÍCULO 96 ===== -->
+        <article class="map-card" data-cat="c1"
+          data-text="artículo 96 ámbito de aplicación fijación del plazo cumplimiento obligaciones artículo 1128 código civil tribunales deudor naturaleza circunstancias remisión normas comunes jurisdicción voluntaria principio rogatorio jurisprudencia artículo 24 constitución capítulo i">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 96</span>
+              <span class="status-tag tag-info">Sustantivo</span>
+            </div>
+            <h2 class="card-title">Ámbito de aplicación de la fijación del plazo</h2>
+            <p class="card-subtitle">Determina los supuestos en que procede la fijación judicial del plazo para el cumplimiento de las obligaciones, con remisión al artículo 1128 del Código Civil y a cualquier otra disposición legal.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>5</strong> subsecciones</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Supuesto de hecho habilitante</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Cuando, conforme al artículo 1128 del Código Civil o cualquier otra disposición legal, proceda que se señale judicialmente el plazo para el cumplimiento de una obligación a instancia de alguno de los sujetos de la misma, se seguirán las normas comunes de la presente Ley.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Remisión sustantiva al artículo 1128 del Código Civil</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Si la obligación no señalare plazo, pero de su naturaleza y circunstancias se dedujere que ha querido concederse al deudor, los Tribunales fijarán la duración de aquél.</li>
+                  <li>También fijarán los Tribunales la duración del plazo cuando éste haya quedado a voluntad del deudor.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Carácter abierto de la remisión legal</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>La remisión no se limita al artículo 1128 del Código Civil, sino que se extiende a «cualquier otra disposición legal», por lo que el ámbito objetivo del expediente no constituye un numerus clausus.</li>
+                  <li>Se conecta con los artículos 1125 a 1130 del Código Civil, que regulan las obligaciones a plazo dentro de la Sección 2.ª del Capítulo III del Título I del Libro IV.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Presupuestos exigidos por la jurisprudencia</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio rogatorio:</strong> la fijación del plazo debe ser solicitada por parte interesada, sin que pueda establecerse de oficio, pues de lo contrario se incurriría en incongruencia extra petita, inadmisible procesal y constitucionalmente (artículo 24 de la Constitución Española).</li>
+                  <li><strong>Existencia previa de un acto, negocio o relación jurídica</strong> de la que nace una obligación exigible, vigente y no extinguida por satisfacción.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Remisión interna a las normas comunes de la Ley 15/2015</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Aplicación de los artículos 13 a 22 de la Ley 15/2015, relativos a la iniciación del expediente, admisión de la solicitud, citación y comparecencia de los interesados, práctica de la prueba, decisión y recursos.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1128</span>
+            <span class="ref-tag">CC arts. 1125–1130</span>
+            <span class="ref-tag">CE art. 24</span>
+            <span class="ref-tag">LJV arts. 13–22</span>
+          </div>
+        </article>
+
+        <!-- ===== ARTÍCULO 97 ===== -->
+        <article class="map-card" data-cat="c2"
+          data-text="artículo 97 competencia postulación fijación del plazo juez primera instancia domicilio deudor consumidor acreedor empresario profesional abogado procurador oposición contencioso juicio verbal secretario judicial artículos 437 enjuiciamiento civil capítulo i">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 97</span>
+              <span class="status-tag tag-warn">Oposición</span>
+            </div>
+            <h2 class="card-title">Competencia y postulación en la fijación del plazo</h2>
+            <p class="card-subtitle">Regula la competencia objetiva y territorial del Juez de Primera Instancia, la no preceptividad de Abogado y Procurador, y la conversión en contencioso por oposición.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> ámbitos</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Competencia objetiva y territorial (apartado 1)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>La tramitación y resolución del presente expediente corresponderá al Juez de Primera Instancia del domicilio del deudor.</li>
+                  <li><strong>Regla especial de protección del consumidor:</strong> si la relación trabada fuera entre un consumidor o usuario y un empresario o profesional y éste fuera el deudor de la prestación, la competencia podrá corresponder también al Juez de Primera Instancia del domicilio del acreedor, a elección de éste.</li>
+                  <li>Proyección del principio de protección del consumidor, en línea con el texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios, aprobado por el Real Decreto Legislativo 1/2007, de 16 de noviembre.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Postulación (apartado 2)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Para la actuación en este expediente no será preceptiva la intervención de Abogado ni Procurador, coherente con el régimen general del artículo 3 de la Ley 15/2015.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Conversión en contencioso por oposición (apartado 3)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Si se suscitare oposición, el expediente se hará contencioso y el Secretario judicial citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal.</li>
+                  <li>Remisión procesal a los artículos 437 y siguientes de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">RDL 1/2007</span>
+            <span class="ref-tag">LJV art. 3</span>
+            <span class="ref-tag">LEC arts. 437+</span>
+          </div>
+        </article>
+
+        <div class="no-results" id="no-results">
+          No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CAPÍTULO II — De la consignación (Artículos 98 y 99)        -->
+  <!-- ============================================================ -->
+
+  <div class="chapter-heading">
+    <span class="chapter-num">Capítulo II</span>
+    <span class="chapter-name">De la consignación</span>
+  </div>
+  <hr class="chapter-divider">
+
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-cap2">
+      <span class="section-heading-text">Artículos 98 y 99 — Consignación judicial</span>
+      <span class="section-heading-count">2 artículos</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-cap2">
+      <div class="card-grid">
+
+        <!-- ===== ARTÍCULO 98 ===== -->
+        <article class="map-card" data-cat="c3"
+          data-text="artículo 98 ámbito aplicación competencia postulación consignación judicial notario artículo 69 ley notariado artículo 1176 código civil acreedor negativa ausencia impedimento desconocimiento extravío título cláusula cierre gravoso deudor juzgado primera instancia legitimación tercero artículo 1178 artículos 1158 1159 1210 capítulo ii">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 98</span>
+              <span class="status-tag tag-ok">Procedencia</span>
+            </div>
+            <h2 class="card-title">Ámbito, competencia y postulación de la consignación</h2>
+            <p class="card-subtitle">Determina los supuestos de procedencia de la consignación judicial, la competencia del Juzgado de Primera Instancia, la no preceptividad de Abogado y Procurador, y la legitimación del deudor y del tercero.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>6+</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>7</strong> supuestos</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Ámbito de aplicación (apartado 1)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Se aplicará lo dispuesto en este Capítulo en los casos en que, procediendo la consignación conforme a la ley, se realice ante el órgano judicial.</li>
+                  <li>Quedan fuera de este Capítulo las consignaciones que se tramiten ante Notario con arreglo al artículo 69 de la Ley del Notariado.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Supuestos sustantivos de procedencia (artículo 1176 del Código Civil)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Negativa injustificada del acreedor a admitir el ofrecimiento de pago o a otorgar el documento justificativo o la cancelación de la garantía.</li>
+                  <li>Ausencia del acreedor en el lugar en donde el pago deba realizarse.</li>
+                  <li>Impedimento del acreedor para recibir el pago en el momento en que deba hacerse.</li>
+                  <li>Concurrencia de varias personas que pretendan tener derecho a cobrar.</li>
+                  <li>Desconocimiento del acreedor.</li>
+                  <li>Extravío del título que lleve incorporada la obligación.</li>
+                  <li><strong>Cláusula de cierre:</strong> en todo caso, procederá la consignación en todos aquellos supuestos en que el cumplimiento de la obligación se haga más gravoso al deudor por causas no imputables al mismo.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Competencia (apartado 2)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Será competente el Juzgado de Primera Instancia correspondiente al lugar donde deba cumplirse la obligación y, si pudiera cumplirse en distintos lugares, cualquiera de ellos a elección del solicitante.</li>
+                  <li>En su defecto, será competente el que corresponda al domicilio del deudor.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Postulación (apartado 3)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Para la actuación en el presente expediente no será preceptiva la intervención de Abogado ni Procurador.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Legitimación</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Podrá promover la consignación el deudor o un tercero, conforme al artículo 1178 del Código Civil y a las reglas del pago por tercero de los artículos 1158, 1159 y 1210.2 del Código Civil.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1176</span>
+            <span class="ref-tag">CC art. 1178</span>
+            <span class="ref-tag">CC arts. 1158, 1159</span>
+            <span class="ref-tag">CC art. 1210.2</span>
+            <span class="ref-tag">LN art. 69</span>
+          </div>
+        </article>
+
+        <!-- ===== ARTÍCULO 99 ===== -->
+        <article class="map-card" data-cat="c4"
+          data-text="artículo 99 tramitación consignación solicitud datos identificación ofrecimiento pago anuncio consignación artículo 1177 puesta disposición admisión inadmisión secretario judicial aceptación expresa retira cosa debida diez días falta retirada rechazo traslado promotor cinco días devolución mantenimiento comparecencia juez resolución gastos artículo 1179 1180 1181 efecto liberatorio cancelación obligación capítulo ii">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 99</span>
+              <span class="status-tag tag-alert">Plazos</span>
+            </div>
+            <h2 class="card-title">Tramitación del expediente de consignación</h2>
+            <p class="card-subtitle">Regula el procedimiento completo: contenido de la solicitud, actos previos, puesta a disposición de la cosa debida, admisión o inadmisión, aceptación expresa, falta de retirada y resolución judicial.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>8</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>8</strong> trámites</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido de la solicitud (apartado 1)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>El que promueva la consignación judicial expresará en su solicitud: los datos y circunstancias de identificación de los interesados en la obligación a que se refiera la consignación; el domicilio o los domicilios en que puedan ser citados; las razones de esta; todo lo relativo al objeto de la consignación, su puesta a disposición del órgano judicial y, en su caso, lo que se solicite en cuanto a su depósito.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Actos previos acreditables con la solicitud</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Deberá acreditar haber efectuado el ofrecimiento de pago, si procediera, en cumplimiento del artículo 1176 del Código Civil.</li>
+                  <li>Deberá acreditar en todo caso el anuncio de la consignación al acreedor y demás interesados en la obligación, tal y como exige sin excepción el artículo 1177 del Código Civil.</li>
+                  <li>El ofrecimiento de pago y el anuncio de la consignación son trámites distintos que, aun realizados con unidad de acto, deben diferenciarse y documentarse separadamente, especialmente cuando se instrumenten mediante requerimiento notarial.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Puesta a disposición de la cosa debida</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Con la solicitud se habrá de efectuar la puesta a disposición de la cosa debida, sin perjuicio de que posteriormente pueda designarse como depositario al propio promotor.</li>
+                  <li>Concordancia con el artículo 1178 del Código Civil, conforme al cual la consignación se hará depositando las cosas debidas a disposición de la Autoridad judicial, con notificación posterior a los interesados.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Admisión o inadmisión de la solicitud (apartado 2)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Si la solicitud no reuniera los requisitos necesarios, el Secretario judicial dictará decreto que así lo declare y mandará devolver al promotor lo consignado.</li>
+                  <li>En caso contrario, admitida la solicitud por el Secretario judicial, éste notificará a los interesados la existencia de la consignación, a los efectos de que en el plazo de diez días retiren la cosa debida o realicen las alegaciones que consideren oportunas.</li>
+                  <li>Igualmente adoptará las medidas oportunas en cuanto al depósito de la cosa debida.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Aceptación expresa de la consignación (apartado 3)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Cuando los interesados comparecidos retirasen la cosa debida aceptando expresamente la consignación, el Secretario judicial dictará decreto teniéndola por aceptada, con los efectos legales procedentes, mandando cancelar la obligación y, en su caso, la garantía, si así lo solicitara el promotor.</li>
+                  <li>Proyección del artículo 1180 del Código Civil: hecha debidamente la consignación, podrá el deudor pedir al Juez que mande cancelar la obligación.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Falta de retirada, ausencia de alegaciones o rechazo (apartado 4)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Si transcurrido el plazo no procedieran a retirar la cosa debida, no realizaran ninguna alegación o rechazaran la consignación, se dará traslado al promotor para que inste, en el plazo de cinco días, la devolución de lo consignado o el mantenimiento de la consignación.</li>
+                  <li><strong>Devolución de lo consignado:</strong> en el caso de que el promotor solicitara la devolución de lo consignado, se dará traslado de la petición al acreedor por cinco días. Si le autorizara a retirarlo, el Secretario judicial dictará decreto acordando el archivo del expediente y el acreedor perderá toda preferencia que tuviere sobre la cosa y los copromotores y fiadores quedarán libres, efecto concordante con el artículo 1181 del Código Civil. Si la cosa fuera retirada por la exclusiva voluntad del promotor, el archivo del expediente dejará subsistente la obligación, en armonía con el artículo 1180, párrafo segundo, del Código Civil, que permite al deudor retirar la cosa o cantidad consignada mientras no exista aceptación o declaración judicial de estar bien hecha, dejando subsistente la obligación.</li>
+                  <li><strong>Mantenimiento de la consignación:</strong> cuando el promotor instara el mantenimiento de la consignación, el Secretario judicial citará al promotor, al acreedor y a aquellos que pudieran estar interesados a una comparecencia a celebrar ante el Juez, en la que serán oídos y se practicarán aquellas pruebas que hubieren sido propuestas y acordadas. La comparecencia se tramita conforme a las normas comunes de los artículos 17 a 19 de la Ley 15/2015 y, supletoriamente, a la Ley de Enjuiciamiento Civil.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Resolución judicial (apartado 5)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>El Juez, teniendo en cuenta la justificación ofrecida, la obligación y la concurrencia en la consignación de los requisitos que correspondan, resolverá declarando o no estar bien hecha la misma.</li>
+                  <li>Si la resolución tuviere por bien hecha la consignación, ésta producirá los efectos legales procedentes, se entregará al acreedor la cosa consignada y se mandará cancelar la obligación si el promotor lo solicitare.</li>
+                  <li>En caso contrario, la obligación subsistirá y se devolverá al promotor lo consignado.</li>
+                  <li>El efecto liberatorio de la consignación no se produce por la mera actividad del deudor al depositar lo adeudado, sino que es necesaria la aceptación del acreedor o la resolución judicial que declare bien hecha la consignación.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Gastos (apartado 6)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Los gastos ocasionados por la consignación serán de cuenta del acreedor si fuera aceptada o se declarase estar bien hecha.</li>
+                  <li>Esos gastos serán de cuenta del promotor si fuera declarada improcedente o retirase la cosa consignada.</li>
+                  <li>Regla concordante con el artículo 1179 del Código Civil, según el cual los gastos de la consignación, cuando fuere procedente, serán de cuenta del acreedor.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1176</span>
+            <span class="ref-tag">CC art. 1177</span>
+            <span class="ref-tag">CC art. 1178</span>
+            <span class="ref-tag">CC art. 1179</span>
+            <span class="ref-tag">CC art. 1180</span>
+            <span class="ref-tag">CC art. 1181</span>
+            <span class="ref-tag">LJV arts. 17–19</span>
+            <span class="ref-tag">LEC</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- CONEXIONES TRANSVERSALES — Oposición y contencioso          -->
+  <!-- ============================================================ -->
+
+  <div class="chapter-heading">
+    <span class="chapter-num">Conexiones transversales</span>
+    <span class="chapter-name">Oposición y conversión en contencioso</span>
+  </div>
+  <hr class="chapter-divider">
+
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-transversal">
+      <span class="section-heading-text">Arts. 97.3 y 99.4–5 — Oposición y contencioso</span>
+      <span class="section-heading-count">1 tarjeta transversal</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-transversal">
+      <div class="card-grid">
+
+        <!-- ===== OPOSICIÓN Y CONTENCIOSO ===== -->
+        <article class="map-card" data-cat="c5"
+          data-text="opposición contencioso expediente jurisdicción voluntaria juicio verbal secretario judicial citación vista artículos 437 enjuiciamiento civil transformación conversión contencioso oposición deudor acreedor comparecencia juez prueba resolución consignación bien hecha efecto liberatorio régimen dual">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Arts. 97.3 y 99.4–5</span>
+              <span class="status-tag tag-warn">Contencioso</span>
+            </div>
+            <h2 class="card-title">Oposición y conversión en contencioso</h2>
+            <p class="card-subtitle">La oposición del interesado transforma el cauce de jurisdicción voluntaria en contencioso, aplicándose el juicio verbal o la comparecencia con práctica de prueba ante el Juez.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> vías de oposición</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> procedimientos</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Oposición en la fijación del plazo (Capítulo I — artículo 97.3)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Si se suscitare oposición, el expediente se hará contencioso y el Secretario judicial citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal.</li>
+                  <li>Remisión procesal a los artículos 437 y siguientes de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Oposición en la consignación (Capítulo II — artículos 99.4 y 99.5)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>En el expediente de consignación, la oposición se canaliza a través del mantenimiento de la consignación: el Secretario judicial citará al promotor, al acreedor y a aquellos que pudieran estar interesados a una comparecencia a celebrar ante el Juez, en la que serán oídos y se practicarán aquellas pruebas que hubieren sido propuestas y acordadas.</li>
+                  <li>El Juez resolverá declarando o no estar bien hecha la consignación, con los efectos legales procedentes en cada caso.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contrapartidas entre ambos Capítulos</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>En ambos Capítulos, la oposición transforma el cauce de jurisdicción voluntaria: el expediente deviene contencioso (artículo 97.3) o, en el caso de la consignación, se resuelve tras la comparecencia ante el Juez con práctica de prueba (artículos 99.4 y 99.5).</li>
+                  <li>La conjunción de los artículos 98 y 99 de la Ley 15/2015 con los artículos 1176 a 1181 del Código Civil configura un régimen dual sustantivo-procesal en el que el efecto liberatorio exige siempre aceptación del acreedor o declaración judicial de que la consignación está bien hecha.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">LJV art. 97.3</span>
+            <span class="ref-tag">LJV arts. 99.4–5</span>
+            <span class="ref-tag">LEC arts. 437+</span>
+            <span class="ref-tag">CC arts. 1176–1181</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Módulo 11 — Sección de plazos procesales ===== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Cronograma de plazos procesales</span>
+      <span class="section-heading-count">3 trámites</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Acto o trámite procesal</th>
+              <th>Plazo</th>
+              <th>Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Retirada de la cosa debida o formulación de alegaciones por los interesados tras la notificación de la consignación (Capítulo II, artículo 99.2)</td>
+              <td><span class="plazo-badge plazo-days">10 días</span></td>
+              <td class="td-norm">Artículo 99.2 de la Ley 15/2015</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Instar la devolución de lo consignado o el mantenimiento de la consignación por el promotor, cuando los interesados no retiren la cosa, no aleguen o rechacen (Capítulo II, artículo 99.4)</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td class="td-norm">Artículo 99.4 de la Ley 15/2015</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Traslado al acreedor de la petición de devolución formulada por el promotor (Capítulo II, artículo 99.4)</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td class="td-norm">Artículo 99.4 de la Ley 15/2015</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Módulo 12 — Sección de participantes y actores ===== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">4 categorías · 13+ actores</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Órganos judiciales</div>
+          <ul>
+            <li>Juez de Primera Instancia <span class="participant-note">(resolución y decisión)</span></li>
+            <li>Secretario judicial / Letrado de la Administración de Justicia <span class="participant-note">(decretos, admisión, notificación)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Partes del expediente</div>
+          <ul>
+            <li>Deudor <span class="participant-note">(promotor de la fijación del plazo o de la consignación)</span></li>
+            <li>Acreedor <span class="participant-note">(destinatario de la consignación o de la fijación)</span></li>
+            <li>Tercero pagador <span class="participant-note">(legitimado para promover la consignación, CC arts. 1158, 1159, 1210.2)</span></li>
+            <li>Copromotores <span class="participant-note">(quedan libres si el acreedor autoriza la retirada, CC art. 1181)</span></li>
+            <li>Fiadores <span class="participant-note">(quedan libres si el acreedor autoriza la retirada, CC art. 1181)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Profesionales</div>
+          <ul>
+            <li>Abogado <span class="participant-note">(no preceptivo, LJV art. 3)</span></li>
+            <li>Procurador <span class="participant-note">(no preceptivo, LJV art. 3)</span></li>
+            <li>Notario <span class="participant-note">(vía alternativa de consignación, LN art. 69)</span></li>
+            <li>Ministerio Fiscal <span class="participant-note">(intervención cuando proceda, LJV art. 4)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Sujetos protegidos</div>
+          <ul>
+            <li>Consumidor o usuario <span class="participant-note">(fuero electivo a favor del domicilio del acreedor, art. 97.1)</span></li>
+            <li>Empresario o profesional <span class="participant-note">(deudor frente al consumidor, sujeto a fuero electivo)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Módulo 13 — Sección de ecosistema normativo ===== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">8 cuerpos normativos</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">Código Civil</div>
+          <div class="norm-title">Obligaciones a plazo y consignación</div>
+          <div class="norm-arts">
+            <strong>Artículos 1125 a 1130</strong> — Régimen general de las obligaciones a plazo, incluida la pérdida del beneficio del plazo por el deudor (artículo 1129).<br>
+            <strong>Artículos 1156 y 1157</strong> — Causas de extinción de las obligaciones e integridad del pago.<br>
+            <strong>Artículo 1158</strong> — Pago por tercero.<br>
+            <strong>Artículo 1162</strong> — Persona a quien debe hacerse el pago.<br>
+            <strong>Artículos 1176 a 1181</strong> — Soporte sustantivo del Capítulo II: supuestos de procedencia, anuncio, depósito, gastos, cancelación y pérdida de preferencias.<br>
+            <strong>Artículo 1210.2</strong> — Subrogación legal del tercero que paga con consentimiento del deudor.
+          </div>
+          <span class="norm-tag tag-info">Derecho sustantivo</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015, de 2 de julio</div>
+          <div class="norm-title">De la Jurisdicción Voluntaria</div>
+          <div class="norm-arts">
+            <strong>Artículos 1 a 8</strong> — Disposiciones generales: objeto, competencia, legitimación y postulación, Ministerio Fiscal, prueba, tramitación simultánea, gastos, ajustes para personas con discapacidad y carácter supletorio de la LEC.<br>
+            <strong>Artículos 13 a 22</strong> — Normas comunes de tramitación: solicitud inicial, admisión, citación de interesados, comparecencia, práctica de la prueba, resolución y recursos.
+          </div>
+          <span class="norm-tag tag-ok">Norma principal</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 1/2000, de 7 de enero</div>
+          <div class="norm-title">De Enjuiciamiento Civil</div>
+          <div class="norm-arts">
+            <strong>Artículos 437 y siguientes</strong> — Reguladores del juicio verbal, aplicables cuando el expediente deviene contencioso por oposición conforme al artículo 97.3.<br>
+            <strong>Artículo 8 de la Ley 15/2015</strong> — Establece el carácter supletorio de la LEC para todo lo no previsto en la Ley de Jurisdicción Voluntaria.
+          </div>
+          <span class="norm-tag tag-warn">Supletoria</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley del Notariado</div>
+          <div class="norm-title">Consignación y reclamación notarial de deudas</div>
+          <div class="norm-arts">
+            <strong>Artículo 69</strong> — Expediente notarial de ofrecimiento de pago y consignación, introducido por la Ley 15/2015 como vía alternativa a la judicial.<br>
+            <strong>Artículo 70</strong> — Reclamación notarial de deudas dinerarias no contradichas, con exclusiones subjetivas cuando el deudor sea consumidor o esté concernida una Administración Pública.
+          </div>
+          <span class="norm-tag tag-gray">Vía alternativa</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Constitución Española</div>
+          <div class="norm-title">Garantías procesales constitucionales</div>
+          <div class="norm-arts">
+            <strong>Artículo 24</strong> — Invocado por la jurisprudencia para excluir la fijación de oficio del plazo en el expediente del artículo 96, pues constituiría incongruencia extra petita inadmisible procesal y constitucionalmente.
+          </div>
+          <span class="norm-tag tag-alert">Constitucional</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">RDL 1/2007, de 16 de noviembre</div>
+          <div class="norm-title">Ley General para la Defensa de los Consumidores y Usuarios</div>
+          <div class="norm-arts">
+            <strong>Texto refundido</strong> — Proyección del principio de protección del consumidor que fundamenta la regla especial de competencia del artículo 97.1, permitiendo al acreedor consumidor elegir el Juez de Primera Instancia de su propio domicilio.
+          </div>
+          <span class="norm-tag tag-info">Protección consumidores</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley Orgánica del Poder Judicial</div>
+          <div class="norm-title">Competencias del Secretario judicial</div>
+          <div class="norm-arts">
+            <strong>Artículo 456</strong> — Atribuye competencias al Secretario judicial en materia de jurisdicción voluntaria cuando así lo prevean las leyes procesales.
+          </div>
+          <span class="norm-tag tag-gray">Orgánico</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 13/2009, de 3 de noviembre</div>
+          <div class="norm-title">Reforma procesal para la implantación de la nueva Oficina judicial</div>
+          <div class="norm-arts">
+            <strong>Ley completa</strong> — De ella deriva la atribución de funciones procesales al Secretario judicial, hoy denominado Letrado o Letrada de la Administración de Justicia, que interviene activamente en los expedientes del Título V.
+          </div>
+          <span class="norm-tag tag-gray">Orgánico-procesal</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ===== Módulo 15 — Pie de página: leyenda de colores ===== -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Ámbito de aplicación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Competencia y postulación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Consignación judicial
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Tramitación procesal
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Oposición y contencioso
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria — Título V (Artículos 96 a 99) · Capítulo I: Fijación del plazo · Capítulo II: Consignación · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FASE E — Comportamiento JavaScript ===== -->
+<script>
+/* ===== Módulo 19 — JS 1: filtrado por categoría ===== */
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+const countArts = document.getElementById('count-arts');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+  if (countArts) countArts.textContent =
+    visible + ' artículo' + (visible !== 1 ? 's' : '') +
+    ' visible' + (visible !== 1 ? 's' : '');
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+/* ===== Módulo 20 — JS 2: búsqueda en tiempo real ===== */
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+/* ===== Módulo 21 — JS 3: expandir/colapsar tarjetas individuales ===== */
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.setAttribute('aria-expanded', String(isExp));
+  const label = btn.querySelector('.toggle-label');
+  if (label) label.textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+/* ===== Módulo 22 — JS 4: expandir todo / contraer todo ===== */
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn');
+      const label = btn && btn.querySelector('.toggle-label');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      if (label) label.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn');
+    const label = btn && btn.querySelector('.toggle-label');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+    if (label) label.textContent = 'Ver contenido completo';
+  });
+});
+
+/* ===== Módulo 23 — JS 5: colapso de secciones principales ===== */
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    const btn = h.querySelector('.section-toggle-btn');
+    if (btn) btn.textContent = collapsed ? '\u25BC' : '\u25B2';
+  });
+});
+
+/* ===== Módulo 24 — JS 6: zoom con atajos de teclado ===== */
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+
+</body>
+</html>

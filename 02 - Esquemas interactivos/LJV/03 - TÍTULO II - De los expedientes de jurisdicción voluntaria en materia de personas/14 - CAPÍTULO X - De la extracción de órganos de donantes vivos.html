@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa Mental — Capítulo X. Extracción de órganos de donantes vivos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   TOKENS CSS
+   ═══════════════════════════════════════════ */
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+  --transition:   200ms ease;
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); }
+
+/* ═══════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════ */
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem 1.75rem;
+}
+.header-inner { max-width: 1200px; margin: 0 auto; }
+.header-breadcrumb {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: rgba(248,245,237,.5);
+  margin-bottom: .6rem;
+}
+.header-title {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: .35rem;
+}
+.header-subtitle {
+  font-size: 13px;
+  color: rgba(248,245,237,.6);
+  margin-bottom: 1rem;
+}
+.header-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.header-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(200,169,110,.15);
+  border: 1px solid rgba(200,169,110,.3);
+  color: var(--accent);
+}
+.header-actions { margin-left: auto; }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(248,245,237,.15);
+  color: rgba(248,245,237,.7);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-ghost:hover { background: rgba(248,245,237,.08); }
+
+/* ═══════════════════════════════════════════
+   STATS BAR
+   ═══════════════════════════════════════════ */
+.stats-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.stats-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  padding: 1rem 1.25rem;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   CONTROLS BAR (STICKY)
+   ═══════════════════════════════════════════ */
+.controls-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  border-bottom: 1px solid var(--border);
+  padding: .65rem 1.5rem;
+}
+.controls-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.search-wrap {
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+  display: flex;
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  padding: 0 .6rem;
+}
+.search-wrap svg { width: 16px; height: 16px; fill: none; stroke: var(--text-3); stroke-width: 2; }
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 6px 8px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-1);
+  outline: none;
+}
+.search-input::placeholder { color: var(--text-3); }
+
+/* Filter pills */
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.pill {
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border-md);
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.pill:hover { background: var(--surface-2); }
+.pill.active[data-cat="all"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.pill.active[data-cat="c1"]  { background: var(--c1); border-color: var(--c1); color: #fff; }
+.pill.active[data-cat="c2"]  { background: var(--c2); border-color: var(--c2); color: #fff; }
+.pill.active[data-cat="c3"]  { background: var(--c3); border-color: var(--c3); color: #fff; }
+.pill.active[data-cat="c4"]  { background: var(--c4); border-color: var(--c4); color: #fff; }
+.pill.active[data-cat="c5"]  { background: var(--c5); border-color: var(--c5); color: #fff; }
+.pill.active[data-cat="c6"]  { background: var(--c6); border-color: var(--c6); color: #fff; }
+
+/* Control actions */
+.ctrl-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.btn-ctrl {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-ctrl:hover { background: var(--surface-2); }
+.zoom-cluster {
+  display: flex;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.btn-zoom {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.btn-zoom:hover { background: var(--surface-2); }
+.btn-zoom:disabled { opacity: .35; cursor: default; }
+.btn-zoom + .btn-zoom { border-left: 1px solid var(--border-md); }
+.zoom-label {
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 42px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-2);
+}
+
+/* ═══════════════════════════════════════════
+   MAIN & SECTIONS
+   ═══════════════════════════════════════════ */
+.page-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+.map-section { margin-bottom: 1.5rem; }
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  cursor: pointer;
+  padding: .75rem 0;
+  user-select: none;
+}
+.section-heading:hover { opacity: .85; }
+.section-heading-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-1);
+}
+.section-heading-count {
+  font-size: 12px;
+  color: var(--text-3);
+  font-weight: 500;
+}
+.section-toggle-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: var(--text-3);
+  cursor: pointer;
+  transition: transform var(--transition);
+}
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+.section-body.collapsed { display: none; }
+
+/* ═══════════════════════════════════════════
+   CARD GRID
+   ═══════════════════════════════════════════ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.map-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--transition);
+}
+.map-card:hover { box-shadow: var(--shadow-md); }
+.map-card.hidden { display: none; }
+
+/* Card category borders */
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+
+/* Card top */
+.card-top { padding: 1rem 1rem .5rem; }
+.card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: .5rem; }
+.art-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+.map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+.map-card[data-cat="c6"] .art-badge { background: var(--c6bg); color: var(--c6); border-color: var(--c6bd); }
+
+.status-tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: .25rem;
+}
+.card-subtitle {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.45;
+}
+
+/* Card counters */
+.card-counters {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem .5rem;
+  gap: 8px;
+}
+.counter-badge {
+  font-size: 11px;
+  color: var(--text-3);
+}
+.counter-badge strong { color: var(--text-2); }
+
+/* Card toggle */
+.card-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--surface-2);
+  border: none;
+  border-top: 1px solid var(--border);
+  padding: 6px 1rem;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-3);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.card-toggle-btn:hover { background: #eceae5; }
+.toggle-icon {
+  display: inline-block;
+  transition: transform var(--transition);
+  font-size: 10px;
+}
+.map-card.expanded .toggle-icon { transform: rotate(180deg); }
+
+/* Card body */
+.card-body { display: none; padding: .75rem 1rem; }
+.map-card.expanded .card-body { display: block; }
+
+/* Inner section */
+.inner-section { margin-bottom: .75rem; }
+.inner-section:last-child { margin-bottom: 0; }
+.inner-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: .35rem;
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+.map-card[data-cat="c6"] .dot { background: var(--c6); }
+
+.inner-body { padding-left: 1rem; }
+.inner-list { list-style: none; }
+.inner-list li {
+  position: relative;
+  padding-left: .8rem;
+  margin-bottom: .2rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+.inner-list li::before {
+  content: '\2013';
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+}
+.inner-list li strong { color: var(--text-1); font-weight: 500; }
+
+/* Card refs */
+.card-refs {
+  padding: .5rem 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.ref-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-3);
+}
+
+/* No results */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-3);
+  font-size: 14px;
+  display: none;
+}
+
+/* ═══════════════════════════════════════════
+   TIMELINE TABLE
+   ═══════════════════════════════════════════ */
+.table-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+.timeline-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.timeline-table thead { background: var(--surface-2); }
+.timeline-table th {
+  padding: .65rem 1rem;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--text-3);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.timeline-table td {
+  padding: .6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.timeline-table tbody tr:last-child td { border-bottom: none; }
+.timeline-table tbody tr:hover { background: var(--surface-2); }
+.td-tramite { color: var(--text-1); font-weight: 500; }
+.td-norm { color: var(--text-2); font-size: 12px; }
+.plazo-badge {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ═══════════════════════════════════════════
+   PARTICIPANTS GRID
+   ═══════════════════════════════════════════ */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.participant-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.participant-col-head {
+  padding: .5rem .75rem;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.phead-c5 { background: var(--c5); }
+.phead-c6 { background: var(--c6); }
+.participant-col ul {
+  list-style: none;
+  padding: .5rem .75rem;
+}
+.participant-col li {
+  font-size: 12.5px;
+  color: var(--text-2);
+  padding: .4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.participant-col li:last-child { border-bottom: none; }
+.participant-note {
+  font-size: 11px;
+  color: var(--text-3);
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════
+   NORM GRID
+   ═══════════════════════════════════════════ */
+.norm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.norm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: .85rem 1rem;
+}
+.norm-law {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  letter-spacing: .03em;
+  margin-bottom: .2rem;
+}
+.norm-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-1);
+  margin-bottom: .4rem;
+}
+.norm-arts {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.5;
+  margin-bottom: .5rem;
+}
+.norm-arts strong { color: var(--text-1); }
+.norm-tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* ═══════════════════════════════════════════
+   LEGEND FOOTER
+   ═══════════════════════════════════════════ */
+.legend-footer {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+}
+.legend-inner { max-width: 1200px; margin: 0 auto; }
+.legend-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: .75rem;
+}
+.legend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1.25rem;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+}
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.legend-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(248,245,237,.12);
+}
+.legend-copy {
+  font-size: 11px;
+  color: rgba(248,245,237,.3);
+  padding-top: .75rem;
+  border-top: 1px solid rgba(248,245,237,.08);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .norm-grid { grid-template-columns: repeat(2, 1fr); }
+  .participants-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .ctrl-actions { display: none; }
+}
+@media (max-width: 640px) {
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .card-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .card-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 500px) {
+  .participants-grid { grid-template-columns: 1fr; }
+  .norm-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════
+   PRINT
+   ═══════════════════════════════════════════ */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body    { display: block !important; }
+  .inner-body   { display: block !important; }
+  .section-body { display: block !important; }
+  .map-card     { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  body          { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 1 — CABECERA
+     ═══════════════════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título II · Capítulo X</div>
+    <h1 class="header-title">Extracci&oacute;n de &oacute;rganos de donantes vivos</h1>
+    <p class="header-subtitle">Art&iacute;culos 78 a 80 &middot; Ley 15/2015, de 2 de julio, de la Jurisdicci&oacute;n Voluntaria &middot; Ley 30/1979 &middot; RD 1723/2012 &middot; Directiva 2010/45/UE</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015</span>
+      <span class="header-tag">Arts. 78-80</span>
+      <span class="header-tag">Jurisdicci&oacute;n Voluntaria</span>
+      <span class="header-tag">Donaci&oacute;n de &oacute;rganos</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 2 — BARRA DE ESTADÍSTICAS
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">3</div>
+      <div class="stat-label">Art&iacute;culos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">18+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">11+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">2</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 3 — BARRA DE CONTROLES (STICKY)
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar art&iacute;culo, plazo, actor&hellip;">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">&Aacute;mbito y competencia</button>
+      <button class="pill" data-cat="c2">Tramitaci&oacute;n</button>
+      <button class="pill" data-cat="c3">Resoluci&oacute;n</button>
+      <button class="pill" data-cat="c4">Conexiones internas</button>
+      <button class="pill" data-cat="c5">Normativa externa</button>
+      <button class="pill" data-cat="c6">Disposiciones generales</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 4 — CONTENIDO PRINCIPAL
+     ═══════════════════════════════════════════════════════════════ -->
+<main class="page-main">
+
+  <!-- ————————————————————————————————————————
+       SECCIÓN: ARTÍCULOS DEL CAPÍTULO X
+       ———————————————————————————————————————— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-articles">
+      <span class="section-heading-text">Art&iacute;culos del Cap&iacute;tulo X</span>
+      <span class="section-heading-count" id="count-arts">6 art&iacute;culos visibles</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-articles">
+      <div class="card-grid">
+
+        <!-- ——— TARJETA: CONSIDERACIONES PRELIMINARES ——— -->
+        <article class="map-card" data-cat="c6" data-text="consideraciones preliminares naturaleza expediente jurisdicción voluntaria constatación judicial requisitos legales extracción trasplante órgano donante vivo consentimiento libre consciente desinteresado función juez garantía derechos integridad física marco normativo ley 15/2015 artículos 78 79 80 ley 30/1979 real decreto 1723/2012 directiva 2010/45/ue">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Previo</span>
+              <span class="status-tag tag-info">Marco general</span>
+            </div>
+            <h2 class="card-title">Consideraciones preliminares</h2>
+            <p class="card-subtitle">Naturaleza, funci&oacute;n judicial y marco normativo conjunto del expediente de extracci&oacute;n de &oacute;rganos de donante vivo.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> &aacute;mbitos</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> normas clave</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Naturaleza del expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Se trata de un expediente de jurisdicci&oacute;n voluntaria cuya finalidad esencial es la constataci&oacute;n judicial de que concurren todos los requisitos legales para la extracci&oacute;n y trasplante de un &oacute;rgano procedente de donante vivo.</li>
+                  <li>Se presta especial atenci&oacute;n al car&aacute;cter libre, consciente y desinteresado del consentimiento prestado por el donante.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Funci&oacute;n del Juez</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>La intervenci&oacute;n judicial no constituye un acto de enjuiciamiento, sino una garant&iacute;a de derechos individuales, fundamentalmente del derecho a la integridad f&iacute;sica.</li>
+                  <li>Est&aacute; orientada a verificar que el consentimiento es v&aacute;lido y que la cesi&oacute;n del &oacute;rgano no implica riesgos desproporcionados ni &aacute;nimo de lucro para el donante.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Marco normativo conjunto</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Normativa procesal:</strong> art&iacute;culos 78 a 80 de la Ley 15/2015, de 2 de julio, de la Jurisdicci&oacute;n Voluntaria.</li>
+                  <li><strong>Normativa sustantiva sectorial:</strong> Ley 30/1979, de 27 de octubre, sobre extracci&oacute;n y trasplante de &oacute;rganos (en particular, su art&iacute;culo 4) y Real Decreto 1723/2012, de 28 de diciembre (en particular, su art&iacute;culo 8).</li>
+                  <li><strong>Normativa europea de referencia:</strong> Directiva 2010/45/UE del Parlamento Europeo y del Consejo, sobre normas de calidad y seguridad de los &oacute;rganos humanos destinados al trasplante.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 arts. 78-80</span>
+            <span class="ref-tag">Ley 30/1979 art. 4</span>
+            <span class="ref-tag">RD 1723/2012 art. 8</span>
+            <span class="ref-tag">Directiva 2010/45/UE</span>
+          </div>
+        </article>
+
+        <!-- ——— TARJETA: ARTÍCULO 78 ——— -->
+        <article class="map-card" data-cat="c1" data-text="artículo 78 ámbito aplicación competencia constatación consentimiento libre consciente desinteresado donante requisitos extracción trasplante órgano donante vivo ley 30/1979 real decreto 1723/2012 juez primera instancia competencia objetiva territorial partido judicial extracción trasplante ley orgánica 1/2025 tribunal instancia sección civil">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art&iacute;culo 78</span>
+              <span class="status-tag tag-ok">Vigente</span>
+            </div>
+            <h2 class="card-title">&Aacute;mbito de aplicaci&oacute;n y competencia</h2>
+            <p class="card-subtitle">Delimita el objeto del expediente, la normativa aplicable y la competencia objetiva y territorial del &oacute;rgano judicial.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> finalidades</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>&Aacute;mbito de aplicaci&oacute;n</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Se aplicar&aacute;n las normas de este Cap&iacute;tulo a los expedientes que tengan por objeto la constataci&oacute;n de la concurrencia del consentimiento libre, consciente y desinteresado del donante y dem&aacute;s requisitos exigidos para la extracci&oacute;n y trasplante de &oacute;rganos de un donante vivo.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Normativa a la que se remite</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Ley 30/1979</strong>, de 27 de octubre, sobre extracci&oacute;n y trasplante de &oacute;rganos.</li>
+                  <li>Las dem&aacute;s normas que la desarrollen, en especial el <strong>Real Decreto 1723/2012</strong>, de 28 de diciembre, por el que se regulan las actividades de obtenci&oacute;n, utilizaci&oacute;n cl&iacute;nica y coordinaci&oacute;n territorial de los &oacute;rganos humanos destinados al trasplante y se establecen requisitos de calidad y seguridad.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Finalidad del expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Comprobar que el donante autoriza el trasplante de manera consciente, libre y desinteresada.</li>
+                  <li>Verificar que la extracci&oacute;n y trasplante se realizan con sujeci&oacute;n a la legislaci&oacute;n vigente en materia de trasplantes.</li>
+                  <li>Garantizar el respeto a la integridad f&iacute;sica del donante y la ausencia de &aacute;nimo de lucro.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Competencia objetiva</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Ser&aacute; competente para conocer de estos expedientes el <strong>Juez de Primera Instancia</strong>.</li>
+                  <li>Tras la reforma operada por la Ley Org&aacute;nica 1/2025, de 2 de enero, la referencia debe entenderse hecha al <strong>juez o jueza de la secci&oacute;n civil del Tribunal de Instancia correspondiente</strong>.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Competencia territorial</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>La del partido donde haya de realizarse la extracci&oacute;n o el trasplante, a elecci&oacute;n del solicitante, configur&aacute;ndose as&iacute; dos fueros alternativos.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Novedad respecto de la regulaci&oacute;n anterior</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>La competencia deja de corresponder al Juez encargado del Registro Civil y pasa al <strong>Juez de Primera Instancia</strong> de la localidad de la extracci&oacute;n o del trasplante.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 30/1979</span>
+            <span class="ref-tag">RD 1723/2012</span>
+            <span class="ref-tag">LO 1/2025</span>
+            <span class="ref-tag">Ley 15/2015 art. 2</span>
+          </div>
+        </article>
+
+        <!-- ——— TARJETA: ARTÍCULO 79 ——— -->
+        <article class="map-card" data-cat="c2" data-text="artículo 79 solicitud tramitación expediente legitimación donante director centro sanitario comunicación contenido solicitud circunstancias personales familiares certificado médico salud mental física postulación abogado procurador exención requisitos donante mayoría de edad plenitud facultades consentimiento expreso gratuidad información previa citación comparecencia médico extracción médico certificador médico responsable trasplante persona autorizante receptor letrado administración justicia comparecencia otorgamiento consentimiento">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art&iacute;culo 79</span>
+              <span class="status-tag tag-ok">Vigente</span>
+            </div>
+            <h2 class="card-title">Solicitud y tramitaci&oacute;n del expediente</h2>
+            <p class="card-subtitle">Regula la legitimaci&oacute;n, el contenido de la solicitud, los requisitos del donante, la citaci&oacute;n y el desarrollo de la comparecencia.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>7</strong> subsecciones</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Legitimaci&oacute;n e inicio del expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>El expediente se iniciar&aacute; mediante <strong>solicitud del donante</strong>.</li>
+                  <li>Tambi&eacute;n podr&aacute; iniciarse mediante <strong>comunicaci&oacute;n del Director del Centro sanitario</strong> en que vaya a efectuarse la extracci&oacute;n o persona en quien delegue.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido de la solicitud o comunicaci&oacute;n</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>En ella se expresar&aacute;n las <strong>circunstancias personales y familiares del donante</strong>.</li>
+                  <li>Se indicar&aacute; el <strong>objeto de la donaci&oacute;n</strong>.</li>
+                  <li>Se identificar&aacute; el <strong>centro sanitario</strong> en que ha de efectuarse la extracci&oacute;n.</li>
+                  <li>Se indicar&aacute; la <strong>identidad del m&eacute;dico responsable del trasplante o extracci&oacute;n</strong> o en el que se delegue.</li>
+                  <li>Se acompa&ntilde;ar&aacute; el <strong>certificado m&eacute;dico sobre la salud mental y f&iacute;sica del donante</strong>, emitido de conformidad con lo dispuesto en la normativa correspondiente.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Postulaci&oacute;n</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Para la actuaci&oacute;n en estos expedientes <strong>no ser&aacute; necesaria la intervenci&oacute;n de Abogado o Procurador</strong>.</li>
+                  <li>Esta exenci&oacute;n se alinea con el r&eacute;gimen general previsto en el art&iacute;culo 3 de la Ley 15/2015 para los expedientes de jurisdicci&oacute;n voluntaria de escasa complejidad.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Requisitos exigidos al donante (por remisi&oacute;n a la Ley 30/1979 y al RD 1723/2012)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Mayor&iacute;a de edad</strong> del donante; no se autoriza la obtenci&oacute;n de &oacute;rganos de menores de edad, ni siquiera con el consentimiento de sus padres o tutores.</li>
+                  <li><strong>Plenitud de facultades mentales</strong> y estado de salud adecuado.</li>
+                  <li><strong>Informaci&oacute;n previa</strong> de las consecuencias de la extracci&oacute;n y del trasplante, ajustada, en su caso, a las necesidades de las personas con discapacidad mediante los sistemas comprensibles o adaptados a su discapacidad.</li>
+                  <li><strong>Consentimiento expreso, libre, consciente y desinteresado</strong>, haci&eacute;ndolo constar por escrito y firmado.</li>
+                  <li>Que se trate de un &oacute;rgano, o parte de &eacute;l, cuya obtenci&oacute;n sea <strong>compatible con la vida</strong> y cuya funci&oacute;n pueda ser compensada por el organismo del donante de forma adecuada y suficientemente segura.</li>
+                  <li><strong>Gratuidad de la donaci&oacute;n:</strong> en ning&uacute;n caso existir&aacute; compensaci&oacute;n econ&oacute;mica alguna para el donante, ni se exigir&aacute; al receptor precio alguno por el &oacute;rgano trasplantado.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Citaci&oacute;n a la comparecencia</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>El <strong>m&eacute;dico que ha de efectuar la extracci&oacute;n</strong>.</li>
+                  <li>El <strong>m&eacute;dico firmante del certificado</strong> a que se refiere el apartado anterior.</li>
+                  <li>El <strong>m&eacute;dico responsable del trasplante</strong> o en quien delegue.</li>
+                  <li>La <strong>persona a quien corresponda dar la autorizaci&oacute;n para la intervenci&oacute;n</strong>, conforme al documento de autorizaci&oacute;n para la extracci&oacute;n de &oacute;rganos concedida al centro sanitario de que se trate o en quien &eacute;ste delegue.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Otros posibles intervinientes en la comparecencia</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>El <strong>receptor del &oacute;rgano</strong>, que, pese a no estar expresamente mencionado en el art&iacute;culo 79, podr&aacute; intervenir por tratarse de persona con inter&eacute;s leg&iacute;timo, de conformidad con los art&iacute;culos 3 y 17 de la Ley 15/2015.</li>
+                  <li>El <strong>Letrado de la Administraci&oacute;n de Justicia</strong>, que ha de estar presente para dar fe de lo actuado.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Desarrollo de la comparecencia y otorgamiento del consentimiento</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>El donante deber&aacute; otorgar su <strong>consentimiento expreso ante el Juez</strong> durante la comparecencia, tras o&iacute;r las explicaciones del m&eacute;dico que ha de efectuar la extracci&oacute;n y las de los dem&aacute;s asistentes al acto.</li>
+                  <li><strong>Orden habitual de intervenciones:</strong> primero, el m&eacute;dico encargado de realizar la intervenci&oacute;n, para las aclaraciones sobre la operaci&oacute;n; despu&eacute;s, los dem&aacute;s intervinientes; y, por &uacute;ltimo, el donante, que prestar&aacute; su consentimiento de forma libre, consciente y desinteresada.</li>
+                  <li>El Juez podr&aacute; asimismo requerir de &eacute;stos las explicaciones que estime oportunas sobre la concurrencia de los requisitos exigidos en la ley para el otorgamiento del consentimiento.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 30/1979 art. 4</span>
+            <span class="ref-tag">RD 1723/2012 art. 8</span>
+            <span class="ref-tag">Ley 15/2015 arts. 3, 17</span>
+          </div>
+        </article>
+
+        <!-- ——— TARJETA: ARTÍCULO 80 ——— -->
+        <article class="map-card" data-cat="c3" data-text="artículo 80 resolución denegación concesión documento cesión órgano firma donante médico extracción asistentes oposición donación revocación consentimiento plazo 24 horas extracción normativa sustantiva ley 30/1979 real decreto 1723/2012 revocar libremente">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art&iacute;culo 80</span>
+              <span class="status-tag tag-ok">Vigente</span>
+            </div>
+            <h2 class="card-title">Resoluci&oacute;n</h2>
+            <p class="card-subtitle">Regula los supuestos de denegaci&oacute;n y concesi&oacute;n, la oposici&oacute;n a la donaci&oacute;n, el contenido del documento de cesi&oacute;n y el plazo de reflexi&oacute;n.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>5</strong> subsecciones</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Supuesto de denegaci&oacute;n</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Si el Juez considerara que el consentimiento prestado expresamente por el donante no lo ha sido de forma libre, consciente y desinteresada, o no se cumplieran los otros requisitos establecidos legalmente, <strong>no extender&aacute; el documento de cesi&oacute;n del &oacute;rgano</strong>.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Supuesto de concesi&oacute;n</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>En caso contrario y si estimara que se han cumplido los requisitos legales, <strong>extender&aacute; por escrito el documento de cesi&oacute;n del &oacute;rgano</strong>, que ser&aacute; firmado por:</li>
+                  <li>El <strong>interesado</strong> (el donante).</li>
+                  <li>El <strong>m&eacute;dico que ha de efectuar la extracci&oacute;n</strong>.</li>
+                  <li>Los <strong>dem&aacute;s asistentes</strong>.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Oposici&oacute;n a la donaci&oacute;n</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Si alguno de los firmantes dudara de que el consentimiento prestado haya sido de forma expresa, libre, consciente y desinteresada, podr&aacute; <strong>oponerse a la donaci&oacute;n</strong>, lo que impedir&aacute; la formalizaci&oacute;n del documento de cesi&oacute;n.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido y entrega del documento de cesi&oacute;n</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>En el documento de cesi&oacute;n se har&aacute; constar la <strong>posibilidad que tiene el donante de revocar el consentimiento en cualquier momento previo a la intervenci&oacute;n</strong>.</li>
+                  <li>Se <strong>facilitar&aacute; copia al donante</strong>.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Plazo entre la firma del documento y la extracci&oacute;n</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>De conformidad con la normativa sustantiva (Ley 30/1979 y Real Decreto 1723/2012), entre la firma del documento de cesi&oacute;n del &oacute;rgano y la extracci&oacute;n efectiva deber&aacute;n <strong>transcurrir al menos 24 horas</strong>.</li>
+                  <li>Durante dicho plazo, y en cualquier momento anterior a la intervenci&oacute;n, el donante podr&aacute; <strong>revocar libremente su consentimiento</strong>, sin sujeci&oacute;n a formalidad alguna.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 30/1979 art. 4</span>
+            <span class="ref-tag">RD 1723/2012 art. 8</span>
+            <span class="ref-tag">Ley 15/2015 art. 19</span>
+          </div>
+        </article>
+
+        <!-- ——— TARJETA: CONEXIONES NORMATIVAS INTERNAS ——— -->
+        <article class="map-card" data-cat="c4" data-text="conexiones normativas internas ley 15/2015 jurisdicción voluntaria artículo 1 ámbito aplicación artículo 2 competencia objetiva letrados administración justicia artículo 3 postulación artículo 17 solicitud artículos 13 22 normas comunes tramitación artículo 18 celebración comparecencia artículo 19 decreto auto artículo 20 recursos capítulo ix artículos 76 77 filiación no matrimonial disposición adicional 1ª ley orgánica 1/2025 tribunal instancia">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Conexiones</span>
+              <span class="status-tag tag-info">Ley 15/2015</span>
+            </div>
+            <h2 class="card-title">Conexiones normativas internas (Ley 15/2015)</h2>
+            <p class="card-subtitle">Art&iacute;culos de la propia Ley de Jurisdicci&oacute;n Voluntaria que guardan relaci&oacute;n directa con el Cap&iacute;tulo X.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>10</strong> preceptos conexos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Art&iacute;culo 1. &Aacute;mbito de aplicaci&oacute;n</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Define los expedientes de jurisdicci&oacute;n voluntaria, marco general en el que se insertan los de este Cap&iacute;tulo X.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Art&iacute;culo 2. Competencia objetiva y de los Letrados de la Administraci&oacute;n de Justicia</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Encaja con la atribuci&oacute;n competencial al Juez de Primera Instancia prevista en el art&iacute;culo 78.2, en la que, a diferencia de otros expedientes, no se sustituye la figura del Juez por la del Letrado de la Administraci&oacute;n de Justicia.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Art&iacute;culo 3. Postulaci&oacute;n</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Sirve de cobertura a la exenci&oacute;n expresa de Abogado y Procurador del art&iacute;culo 79.1.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Art&iacute;culo 17. Solicitud</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Configura los requisitos generales de la solicitud que completan los espec&iacute;ficos del art&iacute;culo 79.1.</li>
+                  <li>Abre la posibilidad de intervenci&oacute;n de terceros con inter&eacute;s leg&iacute;timo, como el receptor.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Art&iacute;culos 13 a 22. Normas comunes de tramitaci&oacute;n</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Se aplican supletoriamente a la solicitud, citaciones, comparecencia y resoluci&oacute;n.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Art&iacute;culo 18. Celebraci&oacute;n de la comparecencia</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Sirve de referencia al desarrollo de la comparecencia prevista en los art&iacute;culos 79.2 y 79.3.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Art&iacute;culo 19. Decreto o auto</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Marco general para la resoluci&oacute;n mediante la que el Juez extiende o no el documento de cesi&oacute;n, en los t&eacute;rminos del art&iacute;culo 80.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Art&iacute;culo 20. Recursos</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>R&eacute;gimen de impugnaci&oacute;n aplicable frente a la resoluci&oacute;n dictada en estos expedientes.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Cap&iacute;tulo IX (art&iacute;culos 76 y 77). Autorizaci&oacute;n judicial del reconocimiento de la filiaci&oacute;n no matrimonial</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Se sit&uacute;a inmediatamente antes del Cap&iacute;tulo X, dentro de los expedientes en materia de personas en los que resulta imprescindible el control judicial del consentimiento.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Disposici&oacute;n Adicional 1.&ordf; de la Ley Org&aacute;nica 1/2025, de 2 de enero</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Adapta la referencia al Juez de Primera Instancia a la nueva organizaci&oacute;n de los Tribunales de Instancia, atribuyendo la competencia al juez o jueza de la secci&oacute;n civil del Tribunal de Instancia.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 arts. 1-3</span>
+            <span class="ref-tag">Ley 15/2015 arts. 13-22</span>
+            <span class="ref-tag">Ley 15/2015 art. 76-77</span>
+            <span class="ref-tag">LO 1/2025 DA 1.&ordf;</span>
+          </div>
+        </article>
+
+        <!-- ——— TARJETA: CONEXIONES NORMATIVAS EXTERNAS ——— -->
+        <article class="map-card" data-cat="c5" data-text="conexiones normativas externas ley 30/1979 extracción trasplante órganos artículo 1 carácter gratuito artículo 4 requisitos sustantivos donante vivo real decreto 1723/2012 artículo 8 requisitos médicos técnicos documentales ley 14/1986 general sanidad ley 41/2002 autonomía paciente consentimiento informado ley orgánica 3/2018 protección datos personales directiva 2010/45/ue parlamento europeo consejo calidad seguridad órganos trasplante convenio oviedo derechos humanos biomedicina código penal tráfico órganos">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Conexiones</span>
+              <span class="status-tag tag-warn">Normativa externa</span>
+            </div>
+            <h2 class="card-title">Conexiones con la normativa sectorial y europea</h2>
+            <p class="card-subtitle">Cuerpos normativos sustantivos, reglamentarios y supranacionales que complementan el r&eacute;gimen del Cap&iacute;tulo X.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>8</strong> cuerpos normativos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Ley 30/1979, de 27 de octubre, sobre extracci&oacute;n y trasplante de &oacute;rganos</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Art&iacute;culo 1:</strong> Car&aacute;cter gratuito y no lucrativo de la donaci&oacute;n y el trasplante.</li>
+                  <li><strong>Art&iacute;culo 4:</strong> Requisitos sustantivos del donante vivo: mayor&iacute;a de edad, plenitud de facultades mentales, informaci&oacute;n previa, consentimiento expreso, libre y consciente, manifestado por escrito ante la autoridad p&uacute;blica correspondiente.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Real Decreto 1723/2012, de 28 de diciembre</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Art&iacute;culo 8:</strong> Requisitos m&eacute;dicos, t&eacute;cnicos y documentales para la obtenci&oacute;n de &oacute;rganos de donante vivo, incluido el certificado de salud f&iacute;sica y mental, la autorizaci&oacute;n del centro sanitario y el plazo m&iacute;nimo de 24 horas entre la firma del documento de cesi&oacute;n y la extracci&oacute;n.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Ley 14/1986, de 25 de abril, General de Sanidad</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Marco general de las actuaciones sanitarias, incluidas las de donaci&oacute;n y trasplante.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Ley 41/2002, de 14 de noviembre, reguladora de la autonom&iacute;a del paciente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Principios rectores del consentimiento informado aplicables a la donaci&oacute;n de &oacute;rganos.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Ley Org&aacute;nica 3/2018, de 5 de diciembre, de Protecci&oacute;n de Datos Personales y garant&iacute;a de los derechos digitales</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>R&eacute;gimen de tratamiento de los datos personales y sanitarios del donante y del receptor.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Directiva 2010/45/UE del Parlamento Europeo y del Consejo</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Sobre normas de calidad y seguridad de los &oacute;rganos humanos destinados al trasplante.</li>
+                  <li>Inspira la exigencia de intervenci&oacute;n judicial como garant&iacute;a del consentimiento en la donaci&oacute;n entre vivos.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Convenio relativo a los derechos humanos y la biomedicina (Convenio de Oviedo), de 4 de abril de 1997</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Exige consentimiento expreso y espec&iacute;ficamente otorgado, por escrito o ante una instancia oficial.</li>
+                  <li>Limita la extracci&oacute;n de &oacute;rganos s&oacute;lidos de donante vivo al inter&eacute;s terap&eacute;utico del receptor cuando no se disponga de &oacute;rgano de persona fallecida ni de alternativa terap&eacute;utica de comparable eficacia.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>C&oacute;digo Penal</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Tipifica el tr&aacute;fico de &oacute;rganos humanos como garant&iacute;a penal de la gratuidad y el altruismo que presiden la donaci&oacute;n en vida.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 30/1979</span>
+            <span class="ref-tag">RD 1723/2012</span>
+            <span class="ref-tag">Ley 14/1986</span>
+            <span class="ref-tag">Ley 41/2002</span>
+            <span class="ref-tag">LO 3/2018</span>
+            <span class="ref-tag">Dir. 2010/45/UE</span>
+            <span class="ref-tag">Conv. Oviedo</span>
+            <span class="ref-tag">C&oacute;digo Penal</span>
+          </div>
+        </article>
+
+        <!-- No results -->
+        <div class="no-results" id="no-results">
+          No se encontraron art&iacute;culos para &laquo;<span id="no-results-term"></span>&raquo;. Prueba otra b&uacute;squeda o categor&iacute;a.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ————————————————————————————————————————
+       SECCIÓN: CRONOGRAMA DE PLAZOS
+       ———————————————————————————————————————— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Cronograma de plazos procesales</span>
+      <span class="section-heading-count">2 tr&aacute;mites</span>
+      <button class="section-toggle-btn">&#9654;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Acto o tr&aacute;mite procesal</th>
+              <th>Plazo</th>
+              <th>Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Plazo m&iacute;nimo entre la firma del documento de cesi&oacute;n del &oacute;rgano y la extracci&oacute;n efectiva</td>
+              <td><span class="plazo-badge plazo-days">24 horas</span></td>
+              <td class="td-norm">Art&iacute;culo 80 Ley 15/2015 &middot; Art&iacute;culo 4 Ley 30/1979 &middot; Art&iacute;culo 8 RD 1723/2012</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Plazo para que el donante revoque libremente su consentimiento</td>
+              <td><span class="plazo-badge plazo-other">En cualquier momento anterior a la intervenci&oacute;n</span></td>
+              <td class="td-norm">Art&iacute;culo 80 Ley 15/2015 &middot; Art&iacute;culo 4 Ley 30/1979 &middot; Art&iacute;culo 8 RD 1723/2012</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ————————————————————————————————————————
+       SECCIÓN: PARTICIPANTES Y ACTORES
+       ———————————————————————————————————————— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">6 categor&iacute;as &middot; 11+ actores</span>
+      <button class="section-toggle-btn">&#9654;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">&Oacute;rgano judicial</div>
+          <ul>
+            <li>Juez de Primera Instancia <span class="participant-note">(competente para conocer del expediente)</span></li>
+            <li>Juez o jueza de la secci&oacute;n civil del Tribunal de Instancia <span class="participant-note">(tras la reforma de la LO 1/2025)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Personal m&eacute;dico</div>
+          <ul>
+            <li>M&eacute;dico que ha de efectuar la extracci&oacute;n</li>
+            <li>M&eacute;dico firmante del certificado de salud f&iacute;sica y mental del donante</li>
+            <li>M&eacute;dico responsable del trasplante <span class="participant-note">(o persona en quien delegue)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Centro sanitario</div>
+          <ul>
+            <li>Director del Centro sanitario <span class="participant-note">(puede iniciar el expediente o persona en quien delegue)</span></li>
+            <li>Persona a quien corresponda dar la autorizaci&oacute;n para la intervenci&oacute;n <span class="participant-note">(conforme al documento de autorizaci&oacute;n del centro)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Partes del procedimiento</div>
+          <ul>
+            <li>Donante vivo <span class="participant-note">(otorga el consentimiento expreso, libre, consciente y desinteresado)</span></li>
+            <li>Receptor del &oacute;rgano <span class="participant-note">(persona con inter&eacute;s leg&iacute;timo, arts. 3 y 17 Ley 15/2015)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c5">Administraci&oacute;n de justicia</div>
+          <ul>
+            <li>Letrado de la Administraci&oacute;n de Justicia <span class="participant-note">(presente para dar fe de lo actuado)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c6">Profesionales jur&iacute;dicos</div>
+          <ul>
+            <li>Abogado <span class="participant-note">(no necesaria su intervenci&oacute;n, art. 79 Ley 15/2015)</span></li>
+            <li>Procurador <span class="participant-note">(no necesaria su intervenci&oacute;n, art. 79 Ley 15/2015)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ————————————————————————————————————————
+       SECCIÓN: ECOSISTEMA NORMATIVO
+       ———————————————————————————————————————— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo &mdash; conexiones relacionadas</span>
+      <span class="section-heading-count">9 cuerpos normativos</span>
+      <button class="section-toggle-btn">&#9654;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015, de 2 de julio</div>
+          <div class="norm-title">De la Jurisdicci&oacute;n Voluntaria</div>
+          <div class="norm-arts">
+            <strong>Art&iacute;culo 1</strong> &mdash; &Aacute;mbito de aplicaci&oacute;n de los expedientes de jurisdicci&oacute;n voluntaria.
+            <strong>Art&iacute;culo 2</strong> &mdash; Competencia objetiva y de los Letrados de la Administraci&oacute;n de Justicia.
+            <strong>Art&iacute;culo 3</strong> &mdash; Postulaci&oacute;n (exenci&oacute;n de Abogado y Procurador).
+            <strong>Art&iacute;culos 13 a 22</strong> &mdash; Normas comunes de tramitaci&oacute;n.
+            <strong>Art&iacute;culo 17</strong> &mdash; Solicitud (requisitos generales e intervenci&oacute;n de terceros).
+            <strong>Art&iacute;culo 18</strong> &mdash; Celebraci&oacute;n de la comparecencia.
+            <strong>Art&iacute;culo 19</strong> &mdash; Decreto o auto.
+            <strong>Art&iacute;culo 20</strong> &mdash; Recursos.
+            <strong>Art&iacute;culos 76 y 77</strong> &mdash; Autorizaci&oacute;n judicial del reconocimiento de la filiaci&oacute;n no matrimonial.
+            <strong>DA 1.&ordf; LO 1/2025</strong> &mdash; Adaptaci&oacute;n competencial al Tribunal de Instancia.
+          </div>
+          <span class="norm-tag tag-info">Procesal</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 30/1979, de 27 de octubre</div>
+          <div class="norm-title">Sobre extracci&oacute;n y trasplante de &oacute;rganos</div>
+          <div class="norm-arts">
+            <strong>Art&iacute;culo 1</strong> &mdash; Car&aacute;cter gratuito y no lucrativo de la donaci&oacute;n y el trasplante.
+            <strong>Art&iacute;culo 4</strong> &mdash; Requisitos sustantivos del donante vivo: mayor&iacute;a de edad, plenitud de facultades mentales, informaci&oacute;n previa, consentimiento expreso, libre y consciente, manifestado por escrito ante la autoridad p&uacute;blica correspondiente.
+          </div>
+          <span class="norm-tag tag-ok">Sustantivo</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Real Decreto 1723/2012, de 28 de diciembre</div>
+          <div class="norm-title">Actividades de obtenci&oacute;n, utilizaci&oacute;n cl&iacute;nica y coordinaci&oacute;n territorial de los &oacute;rganos humanos destinados al trasplante</div>
+          <div class="norm-arts">
+            <strong>Art&iacute;culo 8</strong> &mdash; Requisitos m&eacute;dicos, t&eacute;cnicos y documentales para la obtenci&oacute;n de &oacute;rganos de donante vivo, incluido el certificado de salud f&iacute;sica y mental, la autorizaci&oacute;n del centro sanitario y el plazo m&iacute;nimo de 24 horas entre la firma del documento de cesi&oacute;n y la extracci&oacute;n.
+          </div>
+          <span class="norm-tag tag-gray">Reglamentario</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 14/1986, de 25 de abril</div>
+          <div class="norm-title">General de Sanidad</div>
+          <div class="norm-arts">
+            Marco general de las actuaciones sanitarias, incluidas las de donaci&oacute;n y trasplante.
+          </div>
+          <span class="norm-tag tag-ok">Sustantivo</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 41/2002, de 14 de noviembre</div>
+          <div class="norm-title">Reguladora de la autonom&iacute;a del paciente y de derechos y obligaciones en materia de informaci&oacute;n y documentaci&oacute;n cl&iacute;nica</div>
+          <div class="norm-arts">
+            Principios rectores del consentimiento informado aplicables a la donaci&oacute;n de &oacute;rganos.
+          </div>
+          <span class="norm-tag tag-ok">Sustantivo</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley Org&aacute;nica 3/2018, de 5 de diciembre</div>
+          <div class="norm-title">De Protecci&oacute;n de Datos Personales y garant&iacute;a de los derechos digitales</div>
+          <div class="norm-arts">
+            R&eacute;gimen de tratamiento de los datos personales y sanitarios del donante y del receptor.
+          </div>
+          <span class="norm-tag tag-warn">Transversal</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Directiva 2010/45/UE</div>
+          <div class="norm-title">Normas de calidad y seguridad de los &oacute;rganos humanos destinados al trasplante</div>
+          <div class="norm-arts">
+            Inspira la exigencia de intervenci&oacute;n judicial como garant&iacute;a del consentimiento en la donaci&oacute;n entre vivos.
+          </div>
+          <span class="norm-tag tag-info">Europeo</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Convenio de Oviedo, de 4 de abril de 1997</div>
+          <div class="norm-title">Convenio relativo a los derechos humanos y la biomedicina</div>
+          <div class="norm-arts">
+            Exige consentimiento expreso y espec&iacute;ficamente otorgado, por escrito o ante una instancia oficial. Limita la extracci&oacute;n de &oacute;rganos s&oacute;lidos de donante vivo al inter&eacute;s terap&eacute;utico del receptor cuando no se disponga de &oacute;rgano de persona fallecida ni de alternativa terap&eacute;utica de comparable eficacia.
+          </div>
+          <span class="norm-tag tag-alert">Internacional</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">C&oacute;digo Penal</div>
+          <div class="norm-title">Tipificaci&oacute;n del tr&aacute;fico de &oacute;rganos humanos</div>
+          <div class="norm-arts">
+            Tipifica el tr&aacute;fico de &oacute;rganos humanos como garant&iacute;a penal de la gratuidad y el altruismo que presiden la donaci&oacute;n en vida.
+          </div>
+          <span class="norm-tag tag-alert">Penal</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 9 — LEYENDA DE COLORES
+     ═══════════════════════════════════════════════════════════════ -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categor&iacute;a</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        &Aacute;mbito y competencia
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Tramitaci&oacute;n y procedimiento
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Resoluci&oacute;n y efectos
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Conexiones internas (Ley 15/2015)
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Normativa sectorial y europea
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c6)"></div>
+        Disposiciones generales
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicci&oacute;n Voluntaria &middot; T&iacute;tulo II &middot; Cap&iacute;tulo X (art&iacute;culos 78 a 80) &middot; Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+// 1. Filtrado por categoría
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+const countArts = document.getElementById('count-arts');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+  if (countArts) countArts.textContent =
+    visible + ' art\u00edculo' + (visible !== 1 ? 's' : '') +
+    ' visible' + (visible !== 1 ? 's' : '');
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+// 2. Búsqueda en tiempo real
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+// 3. Expandir/colapsar tarjetas individuales
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent =
+    isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+// 4. Expandir todo / Contraer todo
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+// 5. Colapso de secciones principales
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '\u25B6' : '\u25BC';
+  });
+});
+
+// 6. Zoom
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+// Atajos de teclado (estilo navegador)
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+
+</body>
+</html>

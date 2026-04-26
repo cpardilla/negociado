@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa Mental Expandido — Ley 15/2015 · Capítulos I Bis y I Ter · Jurisdicción Voluntaria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+  --c7:  #0d9488; --c7bg: #f0fdfa; --c7bd: #99f6e4;
+  --c8:  #9333ea; --c8bg: #faf5ff; --c8bd: #e9d5ff;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+  --transition:   200ms ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-ui); background: var(--bg); color: var(--text-1); line-height: 1.55; font-size: 14px; }
+
+.site-header { background: var(--header-bg); color: var(--header-text); padding: 2rem 1.5rem 1.75rem; }
+.header-inner { max-width: 1200px; margin: 0 auto; }
+.header-breadcrumb { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); margin-bottom: .5rem; }
+.header-title { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700; color: var(--header-text); margin-bottom: .5rem; line-height: 1.25; }
+.header-subtitle { font-size: 14px; color: rgba(248,245,237,.65); margin-bottom: 1rem; font-weight: 300; }
+.header-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.header-tag { display: inline-block; background: rgba(200,169,110,.15); border: 1px solid rgba(200,169,110,.3); color: var(--accent); border-radius: 20px; font-size: 12px; font-weight: 500; padding: .25rem .75rem; }
+.header-actions { margin-left: auto; }
+.btn-ghost { background: transparent; border: 1px solid rgba(248,245,237,.15); color: rgba(248,245,237,.7); border-radius: var(--radius-sm); padding: .4rem 1rem; font-size: 13px; cursor: pointer; transition: var(--transition); }
+.btn-ghost:hover { background: rgba(248,245,237,.08); color: var(--header-text); }
+
+.stats-bar { background: var(--surface); border-bottom: 1px solid var(--border); }
+.stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+.stat-item { text-align: center; padding: 1rem .5rem; border-right: 1px solid var(--border); }
+.stat-item:last-child { border-right: none; }
+.stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--text-1); line-height: 1; }
+.stat-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; margin-top: .25rem; }
+
+.controls-bar { position: sticky; top: 0; z-index: 100; background: var(--surface); box-shadow: 0 2px 8px rgba(0,0,0,.04); border-bottom: 1px solid var(--border); }
+.controls-inner { max-width: 1200px; margin: 0 auto; padding: .6rem 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+.search-wrap { position: relative; flex: 1; min-width: 180px; max-width: 320px; display: flex; align-items: center; }
+.search-wrap svg { position: absolute; left: 10px; width: 16px; height: 16px; color: var(--text-3); pointer-events: none; }
+.search-input { width: 100%; padding: .4rem .5rem .4rem 2.2rem; border: 1px solid var(--border-md); border-radius: var(--radius-sm); font-size: 13px; font-family: var(--font-ui); background: var(--surface); color: var(--text-1); outline: none; transition: var(--transition); }
+.search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(200,169,110,.15); }
+.filter-pills { display: flex; flex-wrap: wrap; gap: .3rem; }
+.pill { display: inline-flex; align-items: center; padding: .3rem .7rem; border-radius: 20px; border: 1px solid var(--border-md); background: var(--surface); color: var(--text-2); font-size: 11.5px; font-weight: 500; cursor: pointer; transition: var(--transition); white-space: nowrap; }
+.pill:hover { background: var(--surface-2); }
+.pill.active { color: #fff; }
+.pill.active[data-cat="all"] { background: var(--ink); border-color: var(--ink); }
+.pill.active[data-cat="c1"] { background: var(--c1); border-color: var(--c1); }
+.pill.active[data-cat="c2"] { background: var(--c2); border-color: var(--c2); }
+.pill.active[data-cat="c3"] { background: var(--c3); border-color: var(--c3); }
+.pill.active[data-cat="c4"] { background: var(--c4); border-color: var(--c4); }
+.pill.active[data-cat="c5"] { background: var(--c5); border-color: var(--c5); }
+.pill.active[data-cat="c6"] { background: var(--c6); border-color: var(--c6); }
+.pill.active[data-cat="c7"] { background: var(--c7); border-color: var(--c7); }
+.pill.active[data-cat="c8"] { background: var(--c8); border-color: var(--c8); }
+.ctrl-actions { display: flex; align-items: center; gap: .4rem; margin-left: auto; }
+.btn-ctrl { background: var(--surface); border: 1px solid var(--border-md); color: var(--text-2); font-size: 12px; font-weight: 500; padding: .3rem .6rem; border-radius: var(--radius-sm); cursor: pointer; transition: var(--transition); }
+.btn-ctrl:hover { background: var(--surface-2); }
+.zoom-cluster { display: flex; border: 1px solid var(--border-md); border-radius: var(--radius-sm); overflow: hidden; }
+.btn-zoom { background: var(--surface); border: none; width: 28px; height: 28px; font-size: 14px; font-weight: 500; cursor: pointer; color: var(--text-2); display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+.btn-zoom:hover { background: var(--surface-2); }
+.btn-zoom:first-child { border-right: 1px solid var(--border-md); }
+.btn-zoom:last-child { border-left: 1px solid var(--border-md); }
+.btn-zoom:disabled { opacity: .35; cursor: default; }
+.zoom-label { display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; min-width: 42px; color: var(--text-2); background: var(--surface); }
+
+.page-main { max-width: 1200px; margin: 0 auto; padding: 1rem 1rem 2rem; }
+.map-section { margin-bottom: 1.5rem; }
+.section-heading { display: flex; align-items: center; gap: .5rem; padding: .75rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md) var(--radius-md) 0 0; cursor: pointer; user-select: none; transition: var(--transition); }
+.section-heading:hover { background: var(--surface-2); }
+.section-heading-text { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text-1); flex: 1; }
+.section-heading-count { font-size: 12px; font-weight: 600; color: var(--text-3); background: var(--surface-2); border-radius: 20px; padding: .15rem .6rem; }
+.section-toggle-btn { background: none; border: none; font-size: 14px; cursor: pointer; color: var(--text-3); padding: .2rem; transition: var(--transition); }
+.section-divider { margin: 0; border: none; border-top: 2px solid var(--border); }
+.section-body { padding: 1rem; background: var(--surface); border: 1px solid var(--border); border-top: none; border-radius: 0 0 var(--radius-md) var(--radius-md); }
+.section-body.collapsed { display: none; }
+
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+
+.map-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--c1); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); overflow: hidden; transition: var(--transition); }
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+.map-card[data-cat="c7"] { border-left-color: var(--c7); }
+.map-card[data-cat="c8"] { border-left-color: var(--c8); }
+.map-card.hidden { display: none; }
+
+.card-top { padding: 1rem 1rem .75rem; }
+.card-meta { display: flex; align-items: center; gap: .4rem; margin-bottom: .5rem; flex-wrap: wrap; }
+.art-badge { display: inline-block; font-size: 11px; font-weight: 600; border-radius: 20px; padding: .15rem .6rem; border: 1px solid; }
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+.map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+.map-card[data-cat="c6"] .art-badge { background: var(--c6bg); color: var(--c6); border-color: var(--c6bd); }
+.map-card[data-cat="c7"] .art-badge { background: var(--c7bg); color: var(--c7); border-color: var(--c7bd); }
+.map-card[data-cat="c8"] .art-badge { background: var(--c8bg); color: var(--c8); border-color: var(--c8bd); }
+
+.status-tag { display: inline-block; font-size: 11px; font-weight: 500; border-radius: 20px; padding: .15rem .5rem; }
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+.card-title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-1); margin-bottom: .25rem; line-height: 1.3; }
+.card-subtitle { font-size: 13px; color: var(--text-2); line-height: 1.45; }
+
+.card-counters { display: flex; align-items: center; padding: .4rem 1rem; gap: .5rem; }
+.counter-badge { font-size: 11px; color: var(--text-3); background: var(--surface-2); border: 1px solid var(--border); border-radius: 20px; padding: .15rem .5rem; }
+.counter-badge strong { color: var(--text-1); }
+
+.card-toggle-btn { display: flex; align-items: center; justify-content: space-between; width: 100%; background: var(--surface-2); border: none; border-top: 1px solid var(--border); padding: .45rem 1rem; font-size: 12px; font-weight: 500; color: var(--text-2); cursor: pointer; transition: var(--transition); }
+.card-toggle-btn:hover { background: var(--border); }
+.toggle-icon { display: inline-block; transition: transform var(--transition); font-size: 12px; }
+.map-card.expanded .toggle-icon { transform: rotate(180deg); }
+
+.card-body { display: none; padding: .75rem 1rem 1rem; background: var(--surface); }
+.map-card.expanded .card-body { display: block; }
+
+.inner-section { margin-bottom: .75rem; }
+.inner-section:last-child { margin-bottom: 0; }
+.inner-heading { display: flex; align-items: center; gap: .4rem; font-size: 13px; font-weight: 600; color: var(--text-1); margin-bottom: .35rem; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--c1); flex-shrink: 0; }
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+.map-card[data-cat="c6"] .dot { background: var(--c6); }
+.map-card[data-cat="c7"] .dot { background: var(--c7); }
+.map-card[data-cat="c8"] .dot { background: var(--c8); }
+
+.inner-body { padding-left: 1rem; }
+.inner-list { list-style: none; padding: 0; }
+.inner-list li { position: relative; padding-left: .8rem; margin-bottom: .2rem; font-size: 12.5px; color: var(--text-2); }
+.inner-list li::before { content: '–'; position: absolute; left: 0; color: var(--text-3); }
+.inner-list li strong { color: var(--text-1); font-weight: 500; }
+
+.card-refs { display: flex; flex-wrap: wrap; gap: .3rem; padding: .5rem 1rem; border-top: 1px solid var(--border); background: var(--surface-2); }
+.ref-tag { display: inline-block; font-size: 11px; font-weight: 500; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .1rem .45rem; color: var(--text-3); }
+
+.no-results { grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--text-3); font-size: 14px; display: none; }
+.no-results span { font-weight: 600; color: var(--text-2); }
+
+.table-wrap { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
+.timeline-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.timeline-table thead { background: var(--surface-2); }
+.timeline-table th { padding: .6rem .75rem; text-align: left; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-3); border-bottom: 1px solid var(--border); }
+.timeline-table td { padding: .6rem .75rem; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+.timeline-table tbody tr:last-child td { border-bottom: none; }
+.timeline-table tbody tr:hover { background: var(--surface-2); }
+.td-tramite { color: var(--text-1); font-weight: 500; }
+.td-norm { font-size: 12px; color: var(--text-3); }
+.plazo-badge { display: inline-block; font-size: 12px; font-weight: 600; border-radius: 20px; padding: .15rem .55rem; white-space: nowrap; }
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+.participants-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
+.participant-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+.participant-col-head { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; padding: .45rem .75rem; color: #fff; }
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.phead-c5 { background: var(--c5); }
+.phead-c6 { background: var(--c6); }
+.phead-c7 { background: var(--c7); }
+.phead-c8 { background: var(--c8); }
+.participant-col ul { list-style: none; padding: .35rem 0; margin: 0; }
+.participant-col li { font-size: 12.5px; color: var(--text-2); padding: .3rem .75rem; border-bottom: 1px solid var(--border); }
+.participant-col li:last-child { border-bottom: none; }
+.participant-note { font-size: 11px; color: var(--text-3); font-style: italic; }
+
+.norm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+.norm-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: .75rem; box-shadow: var(--shadow-sm); transition: var(--transition); }
+.norm-card:hover { box-shadow: var(--shadow-md); }
+.norm-law { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-3); font-weight: 600; margin-bottom: .25rem; }
+.norm-title { font-size: 13px; font-weight: 500; color: var(--text-1); margin-bottom: .35rem; }
+.norm-arts { font-size: 12px; color: var(--text-2); line-height: 1.5; margin-bottom: .5rem; }
+.norm-tag { display: inline-block; font-size: 11px; font-weight: 500; border-radius: 20px; padding: .15rem .5rem; }
+
+.legend-footer { background: var(--header-bg); color: var(--header-text); padding: 1.5rem; }
+.legend-inner { max-width: 1200px; margin: 0 auto; }
+.legend-title { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); font-weight: 600; margin-bottom: .75rem; }
+.legend-grid { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-bottom: .75rem; }
+.legend-item { display: flex; align-items: center; gap: .35rem; font-size: 12px; color: rgba(248,245,237,.75); }
+.legend-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.legend-divider { width: 1px; height: 20px; background: rgba(248,245,237,.12); }
+.legend-copy { font-size: 11px; color: rgba(248,245,237,.3); border-top: 1px solid rgba(248,245,237,.08); padding-top: .75rem; }
+
+@media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .ctrl-actions { display: none; } }
+@media (max-width: 640px) { .stats-inner { grid-template-columns: repeat(2, 1fr); } .stat-item { border-right: none; } }
+@media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+@media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } .norm-grid { grid-template-columns: 1fr; } }
+@media print { .controls-bar, .site-header .header-actions { display: none !important; } .card-body { display: block !important; } .inner-body { display: block !important; } .section-body { display: block !important; } .map-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; } body { background: #fff; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título II · Capítulos I Bis y I Ter</div>
+    <h1 class="header-title">Aprobación judicial de la modificación de la mención registral relativa al sexo — Capítulos I Bis y I Ter de la Ley 15/2015</h1>
+    <p class="header-subtitle">Arts. 26 bis a 26 nonies · Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Añadidos por la Disposición Final 13.1 de la Ley 4/2023</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015</span>
+      <span class="header-tag">Arts. 26 bis – 26 nonies</span>
+      <span class="header-tag">Ley 4/2023 (Disposición Final 13.1)</span>
+      <span class="header-tag">Jurisdicción Voluntaria</span>
+      <span class="header-tag">Personas trans y LGTBI</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="count-arts">9</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">10+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">13+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">7</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Contexto</button>
+      <button class="pill" data-cat="c2">Cap. I Bis</button>
+      <button class="pill" data-cat="c3">Cap. I Ter</button>
+      <button class="pill" data-cat="c4">Ley 4/2023</button>
+      <button class="pill" data-cat="c5">Normas comunes</button>
+      <button class="pill" data-cat="c6">Actores</button>
+      <button class="pill" data-cat="c7">Plazos</button>
+      <button class="pill" data-cat="c8">Ecosistema</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<main class="page-main">
+
+  <!-- SECCIÓN 1: Contexto normativo general -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-contexto">
+      <span class="section-heading-text">Contexto normativo general y marco de la rectificación registral</span>
+      <span class="section-heading-count">4 tarjetas</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-contexto">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c1"
+          data-text="contexto normativo general título II expedientes jurisdicción voluntaria materia personas ley 15/2015 estructura capítulos filiación autorización reconocimiento">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Contexto General</span>
+              <span class="status-tag tag-info">Marco normativo</span>
+            </div>
+            <h2 class="card-title">Contexto normativo general del expediente de jurisdicción voluntaria</h2>
+            <p class="card-subtitle">El Título II de la Ley 15/2015 regula los expedientes de jurisdicción voluntaria en materia de personas, estructurado en diversos capítulos que abarcan desde la autorización de reconocimiento de filiación no matrimonial hasta la aprobación judicial de modificación de la mención registral del sexo.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>5</strong> capítulos referenciados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> títulos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Estructura del Título II
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Capítulo I (arts. 23-26):</strong> autorización judicial de reconocimiento de filiación no matrimonial de menores o personas con discapacidad.</li>
+                  <li><strong>Capítulo I Bis (arts. 26 bis-26 quinquies):</strong> aprobación judicial de modificación de la mención registral del sexo de personas mayores de 12 y menores de 14 años.</li>
+                  <li><strong>Capítulo I Ter (arts. 26 sexies-26 nonies):</strong> aprobación judicial de modificación de la mención registral del sexo tras reversión previa.</li>
+                  <li><strong>Capítulo II (arts. 27 y ss.):</strong> habilitación para comparecer en juicio y nombramiento de defensor judicial.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Normas comunes supletorias — Título I (arts. 9-22)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Competencia (arts. 9, 13, 16):</strong> Juzgados de Primera Instancia; la competencia territorial viene fijada por la ley y no puede ser alterada por sumisión; el Letrado de la Administración de Justicia la comprobará de oficio.</li>
+                  <li><strong>Postulación (art. 3):</strong> la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente.</li>
+                  <li><strong>Comparecencia (arts. 17-18):</strong> el Secretario judicial citará a los interesados; la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión, aplicándose las reglas del juicio verbal.</li>
+                  <li><strong>Decisión (art. 19):</strong> el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación.</li>
+                  <li><strong>Recursos (art. 20):</strong> contra las resoluciones del Juez cabrá recurso de reposición y apelación; contra las del Secretario judicial, recurso de revisión.</li>
+                  <li><strong>Caducidad (art. 21):</strong> el expediente caducará cuando sea paralizado por inactividad del interesado durante 3 meses.</li>
+                  <li><strong>Ejecución (art. 22):</strong> las resoluciones firmes producen efectos de cosa juzgada; las que afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 arts. 1-22</span>
+            <span class="ref-tag">Ley 15/2015 arts. 23-27</span>
+            <span class="ref-tag">LEC art. 1.2 (aplicación supletoria)</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c1"
+          data-text="marco normativo rectificación registral sexo ley 4/2023 capítulo III título I arts 43 a 49 disposición final 13 entrada en vigor 2 marzo 2023">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Marco Ley 4/2023</span>
+              <span class="status-tag tag-info">Ley trans</span>
+            </div>
+            <h2 class="card-title">Marco normativo de la rectificación registral del sexo — Ley 4/2023</h2>
+            <p class="card-subtitle">La Ley 4/2023 introduce en su Capítulo III del Título I (arts. 43-49) el régimen completo de rectificación registral de la mención relativa al sexo, incluyendo la reversibilidad. Los arts. 26 bis a 26 nonies de la Ley 15/2015 fueron añadidos por la disposición final 13.1 de la Ley 4/2023.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>7</strong> artículos (43-49)</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>1</strong> disposición final</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Origen normativo de los Capítulos I Bis y I Ter
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Disposición final 13.1 de la Ley 4/2023:</strong> añade los arts. 26 bis a 26 nonies a la Ley 15/2015.</li>
+                  <li><strong>Publicación:</strong> 01/03/2023 en el BOE.</li>
+                  <li><strong>Entrada en vigor:</strong> 02/03/2023.</li>
+                  <li><strong>Denominación completa:</strong> Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Estructura del Capítulo III del Título I (arts. 43-49)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Art. 43:</strong> legitimación por grupos de edad.</li>
+                  <li><strong>Art. 44:</strong> procedimiento registral de rectificación.</li>
+                  <li><strong>Art. 45:</strong> competencia del Registro Civil.</li>
+                  <li><strong>Art. 46:</strong> efectos de la rectificación.</li>
+                  <li><strong>Art. 47:</strong> reversibilidad de la rectificación.</li>
+                  <li><strong>Art. 48:</strong> cambio de nombre en el Registro Civil para menores de edad.</li>
+                  <li><strong>Art. 49:</strong> adecuación de documentos a la mención registral relativa al sexo.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 4/2023 arts. 43-49</span>
+            <span class="ref-tag">DF 13.1 Ley 4/2023</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c1"
+          data-text="sistema legitimación grupos edad mayores 16 años 14 a 16 discapacidad menores 14 a 12 reversión ley 4/2023 artículo 43">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Sistema de Legitimación</span>
+              <span class="status-tag tag-warn">Por grupo de edad</span>
+            </div>
+            <h2 class="card-title">Sistema de legitimación por grupos de edad</h2>
+            <p class="card-subtitle">El artículo 43 de la Ley 4/2023 establece un sistema escalonado de legitimación para la rectificación registral del sexo en función de la edad y la capacidad de la persona solicitante.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>5</strong> grupos de legitimación</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> apartados del art. 43</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Mayores de 16 años (art. 43.1)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Legitimación:</strong> toda persona de nacionalidad española mayor de 16 años podrá solicitar por sí misma ante el Registro Civil la rectificación de la mención registral relativa al sexo.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Mayores de 14 y menores de 16 (art. 43.2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Legitimación:</strong> pueden presentar la solicitud por sí mismas, asistidas por sus representantes legales.</li>
+                  <li><strong>Desacuerdo:</strong> en caso de desacuerdo de los progenitores o representante legal entre sí o con la persona menor, se procede al nombramiento de defensor judicial (arts. 235 y 236 del Código Civil).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Personas con discapacidad (art. 43.3)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Legitimación:</strong> pueden solicitar, con las medidas de apoyo que precisen, la rectificación registral de la mención relativa al sexo.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Mayores de 12 y menores de 14 (art. 43.4)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Vía judicial:</strong> pueden solicitar la autorización judicial para la modificación de la mención registral del sexo en los términos del Capítulo I Bis del Título II de la Ley 15/2015 (arts. 26 bis a 26 quinquies).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Reversión tras rectificación (art. 47)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Plazo:</strong> transcurridos 6 meses desde la inscripción, las personas que hubieran promovido la rectificación podrán recuperar la mención registral del sexo previa.</li>
+                  <li><strong>Segunda rectificación:</strong> tras haberse rectificado la modificación inicial, para una nueva rectificación habrá de seguirse el procedimiento del Capítulo I Ter del Título II de la Ley 15/2015 (arts. 26 sexies a 26 nonies).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 4/2023 art. 43</span>
+            <span class="ref-tag">CC arts. 235-236</span>
+            <span class="ref-tag">Ley 15/2015 arts. 26 bis-26 nonies</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c2"
+          data-text="capítulo I bis conexión aprobación judicial modificación mención registral sexo personas mayores 12 menores 14 años relación capítulo I ter procedimiento">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Cap. I Bis</span>
+              <span class="status-tag tag-ok">Conexión con Cap. I Ter</span>
+            </div>
+            <h2 class="card-title">Capítulo I Bis — Relación con el Capítulo I Ter</h2>
+            <p class="card-subtitle">El Capítulo I Bis regula el procedimiento para menores de 12 a 14 años que solicitan por primera vez la modificación registral del sexo vía judicial. El Capítulo I Ter regula el procedimiento para cualquier persona que, habiendo ya rectificado y revertido, solicita una nueva modificación.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>5</strong> artículos (26 bis-26 quinquies)</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> elementos comunes</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Elementos comunes entre ambos capítulos
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Estructura:</strong> ambos son expedientes de jurisdicción voluntaria del Título II de la Ley 15/2015.</li>
+                  <li><strong>Tramitación preferente:</strong> carácter prioritario en ambos procedimientos.</li>
+                  <li><strong>No necesidad de abogado ni procurador:</strong> postulación no preceptiva en ambos capítulos.</li>
+                  <li><strong>Remisión al Registro Civil:</strong> el testimonio de la resolución se remite al Registro Civil para inscribir la rectificación.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Diferencias fundamentales
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Cap. I Bis:</strong> primera modificación registral del sexo para menores de 12 a 14 años vía judicial.</li>
+                  <li><strong>Cap. I Ter:</strong> segunda modificación registral tras haber rectificado y revertido previamente, aplicable a cualquier edad.</li>
+                  <li><strong>Cap. I Bis:</strong> exige acreditar madurez del menor y estabilidad de su voluntad.</li>
+                  <li><strong>Cap. I Ter:</strong> exige acreditar que ya se ha producido una rectificación previa y su reversión.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 arts. 26 bis-26 quinquies</span>
+            <span class="ref-tag">Ley 15/2015 arts. 26 sexies-26 nonies</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 2: Capítulo I Bis — Artículos completos -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-capibis">
+      <span class="section-heading-text">Capítulo I Bis — Arts. 26 bis a 26 quinquies (modificación registral para mayores de 12 y menores de 14)</span>
+      <span class="section-heading-count">5 artículos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-capibis">
+      <div class="card-grid">
+
+        <!-- Art. 26 bis -->
+        <article class="map-card" data-cat="c2"
+          data-text="artículo 26 bis ámbito de aplicación modificación mención registral sexo mayores 12 menores 14 años disposición final 13 ley 4/2023">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 26 bis</span>
+              <span class="status-tag tag-info">Ámbito de aplicación</span>
+            </div>
+            <h2 class="card-title">Ámbito de aplicación (Cap. I Bis)</h2>
+            <p class="card-subtitle">Se aplican las disposiciones de este Capítulo para recabar aprobación judicial para la modificación de la mención registral del sexo por personas mayores de 12 años y menores de 14.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>1</strong> norma conexa</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>1</strong> grupo de edad</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Objeto
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Finalidad:</strong> recabar aprobación judicial para la modificación de la mención registral del sexo por personas mayores de 12 años y menores de 14.</li>
+                  <li><strong>Origen normativo:</strong> añadido por la disposición final 13.1 de la Ley 4/2023, de 28 de febrero.</li>
+                  <li><strong>Publicación:</strong> 01/03/2023; <strong>entrada en vigor:</strong> 02/03/2023.</li>
+                  <li><strong>Conexión:</strong> este Capítulo I Bis es la vía paralela al procedimiento registral ordinario del art. 43.1-43.3 de la Ley 4/2023, reservado a quienes tienen 16 años o más.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 26 bis</span>
+            <span class="ref-tag">DF 13.1 Ley 4/2023</span>
+            <span class="ref-tag">Ley 4/2023 art. 43.4</span>
+          </div>
+        </article>
+
+        <!-- Art. 26 ter -->
+        <article class="map-card" data-cat="c2"
+          data-text="artículo 26 ter competencia legitimación postulación juzgado primera instancia domicilio residencia defensor judicial código civil discapacidad abogado procurador">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 26 ter</span>
+              <span class="status-tag tag-ok">Competencia y legitimación</span>
+            </div>
+            <h2 class="card-title">Competencia, legitimación y postulación (Cap. I Bis)</h2>
+            <p class="card-subtitle">Determina el Juzgado competente, las personas legitimadas (menores de 12-14 asistidos por representantes), el nombramiento de defensor judicial en caso de desacuerdo, y la no necesidad de abogado ni procurador.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> cuestiones reguladas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Competencia judicial territorial (apartado 1)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Órgano competente:</strong> Juzgado de Primera Instancia.</li>
+                  <li><strong>Criterio:</strong> domicilio de la persona cuya mención registral pretenda rectificarse; subsidiariamente, residencia en territorio nacional.</li>
+                  <li><strong>Conexión con normas generales:</strong> el art. 9 de la Ley 15/2015 establece la competencia objetiva en los Juzgados de Primera Instancia; el art. 16 dispone que la competencia territorial viene fijada por la ley y no puede ser alterada por sumisión.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Legitimación activa (apartado 2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Personas legitimadas:</strong> mayores de 12 y menores de 14, asistidas por sus representantes legales.</li>
+                  <li><strong>Desacuerdo:</strong> en caso de desacuerdo de los progenitores o representante legal, se procede al nombramiento de defensor judicial conforme a los arts. 235 y 236 del Código Civil.</li>
+                  <li><strong>Conexión con el Código Civil:</strong> los arts. 235 y 236 CC regulan el nombramiento de defensor judicial cuando los progenitores tienen un interés contrario al del menor o cuando se produce un conflicto de intereses.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Medidas de apoyo para personas con discapacidad (apartado 3)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Garantía:</strong> si el expediente se insta por una persona menor con discapacidad, deberán disponerse en su favor las medidas de apoyo que pueda precisar.</li>
+                  <li><strong>Conexión con la Ley 4/2023:</strong> el art. 43.3 de la Ley 4/2023 establece la misma garantía para el procedimiento registral ordinario.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Postulación procesal (apartado 4)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>No preceptiva:</strong> no será preceptiva la intervención de abogado ni procurador.</li>
+                  <li><strong>Conexión con el art. 3 de la Ley 15/2015:</strong> la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley, o para la interposición de recursos y revisión, o una vez formulada oposición formal.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 26 ter</span>
+            <span class="ref-tag">CC arts. 235-236</span>
+            <span class="ref-tag">Ley 15/2015 arts. 3, 9, 16</span>
+            <span class="ref-tag">Ley 4/2023 art. 43.3</span>
+          </div>
+        </article>
+
+        <!-- Art. 26 quater -->
+        <article class="map-card" data-cat="c2"
+          data-text="artículo 26 quater tramitación solicitud inicial comparecencia pruebas testigos idoneidad disconformidad estable información menor madurez">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 26 quater</span>
+              <span class="status-tag tag-warn">Tramitación</span>
+            </div>
+            <h2 class="card-title">Tramitación (Cap. I Bis)</h2>
+            <p class="card-subtitle">Regula el inicio del expediente con solicitud de disconformidad estable, el acompañamiento probatorio, la citación a comparecencia, las pruebas de oficio, la información al menor y la idoneidad de testigos.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> sujetos citados</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Solicitud inicial (apartado 1)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Carácter preferente:</strong> el expediente será de tramitación preferente.</li>
+                  <li><strong>Inicio:</strong> mediante solicitud en la que la persona legitimada manifieste su disconformidad con el sexo mencionado en su inscripción de nacimiento y solicite autorización judicial para la rectificación registral de la mención al sexo y, en su caso, al nombre.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Acompañamiento probatorio y comparecencia (apartado 2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Medios probatorios:</strong> la solicitud deberá venir acompañada de cualesquiera medios documentales o testificales acreditativos de que la persona ha mantenido de forma estable la disconformidad.</li>
+                  <li><strong>Citación:</strong> admitida a trámite, el Juez citará a comparecer al solicitante, sus representantes legales, las demás personas que estime oportuno, y al Ministerio Fiscal.</li>
+                  <li><strong>Conexión con el art. 17:</strong> la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Pruebas de oficio e información al menor (apartado 3)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Pruebas:</strong> el Juez podrá solicitar la práctica de las pruebas necesarias para acreditar la madurez del menor y la estabilidad de su voluntad.</li>
+                  <li><strong>Interés superior:</strong> tendrá en consideración en todo momento el interés superior de la persona menor de edad.</li>
+                  <li><strong>Información al menor:</strong> se le facilitará información sobre las consecuencias jurídicas de la rectificación en un lenguaje claro, accesible y adaptado.</li>
+                  <li><strong>Medidas de asistencia:</strong> deberá informarle de las medidas de asistencia e información disponibles en los ámbitos sanitario, social, laboral, educativo y administrativo, incluyendo protección contra la discriminación.</li>
+                  <li><strong>Asociaciones:</strong> se pondrá en conocimiento del menor la existencia de asociaciones y organizaciones de protección de los derechos en este ámbito.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Idoneidad de testigos (apartado 4)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Testigos idóneos:</strong> todas las personas mayores de edad, aun cuando estén ligadas al solicitante por parentesco, consanguinidad o afinidad en cualquier grado, vínculos de adopción, tutela o análogos, o relación de amistad.</li>
+                  <li><strong>Conexión con el art. 18:</strong> la comparecencia se celebra ante el Juez o el Secretario judicial, aplicándose las reglas del juicio verbal.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 26 quater</span>
+            <span class="ref-tag">Ley 15/2015 arts. 17-18</span>
+            <span class="ref-tag">Ley 15/2015 art. 19.2</span>
+          </div>
+        </article>
+
+        <!-- Art. 26 quinquies -->
+        <article class="map-card" data-cat="c2"
+          data-text="artículo 26 quinquies resolución concesión denegación interés superior menor madurez voluntad estable prohibición informe médico psicológico registro civil testimonio">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 26 quinquies</span>
+              <span class="status-tag tag-alert">Resolución</span>
+            </div>
+            <h2 class="card-title">Resolución (Cap. I Bis)</h2>
+            <p class="card-subtitle">El Juez resuelve sobre la concesión o denegación atendiendo al interés superior del menor, su madurez y voluntad estable, con prohibición expresa de exigir informes médicos o psicológicos, y remite testimonio al Registro Civil.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> efectos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Decisión del Juez (apartado 1)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Contenido:</strong> previa audiencia de la persona menor, el Juez resolverá sobre la concesión o denegación de la aprobación judicial.</li>
+                  <li><strong>Criterios:</strong> considerando en todo caso el interés superior del menor de edad, previa comprobación de su voluntad estable de modificar la inscripción registral y de su madurez suficiente para comprender y evaluar de forma razonable e independiente las consecuencias de su decisión.</li>
+                  <li><strong>Prohibición expresa:</strong> la concesión no podrá estar condicionada a la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a la previa modificación de la apariencia o función corporal mediante procedimientos médicos, quirúrgicos o de otra índole.</li>
+                  <li><strong>Conexión con el art. 19:</strong> el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación.</li>
+                  <li><strong>Conexión con el art. 19.2:</strong> el Juez podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Remisión al Registro Civil (apartado 2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Acto de comunicación:</strong> el testimonio de la resolución se remitirá al Registro Civil competente para proceder a la inscripción de la rectificación aprobada judicialmente.</li>
+                  <li><strong>Conexión con el art. 22.2:</strong> las resoluciones que pongan fin al expediente y afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil competente.</li>
+                  <li><strong>Conexión con el art. 46.1 de la Ley 4/2023:</strong> la resolución tendrá efectos constitutivos a partir de su inscripción en el Registro Civil.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 26 quinquies</span>
+            <span class="ref-tag">Ley 15/2015 arts. 19, 22.2</span>
+            <span class="ref-tag">Ley 4/2023 art. 46.1</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 3: Capítulo I Ter — Artículos principales -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-capiter">
+      <span class="section-heading-text">Capítulo I Ter — Arts. 26 sexies a 26 nonies (modificación tras reversión previa)</span>
+      <span class="section-heading-count">4 artículos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-capiter">
+      <div class="card-grid">
+
+        <!-- Art. 26 sexies -->
+        <article class="map-card" data-cat="c3"
+          data-text="artículo 26 sexies ámbito de aplicación modificación mención registral sexo reversión previa rectificación inscripción procedimiento tercer nivel ley 4/2023 artículo 47">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 26 sexies</span>
+              <span class="status-tag tag-info">Ámbito de aplicación</span>
+            </div>
+            <h2 class="card-title">Ámbito de aplicación (Cap. I Ter)</h2>
+            <p class="card-subtitle">Dispone que las normas de este Capítulo se aplican para recabar aprobación judicial de modificación de la mención registral del sexo cuando ya se ha producido una rectificación previa y su posterior reversión.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> requisitos previos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Objeto del expediente — Naturaleza singular
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Finalidad:</strong> recabar aprobación judicial para la modificación de la mención registral relativa al sexo.</li>
+                  <li><strong>Procedimiento de tercer nivel:</strong> no es la rectificación inicial (vía registral, art. 44 Ley 4/2023), ni la reversión (también vía registral, art. 47.1 Ley 4/2023), sino una segunda rectificación tras reversión, que exige intervención judicial.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Requisitos previos indispensables
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Primera condición:</strong> que respecto de la misma persona ya se haya realizado una rectificación de la inscripción registral relativa al sexo.</li>
+                  <li><strong>Segunda condición:</strong> que se haya producido una reversión de dicha modificación.</li>
+                  <li><strong>Fundamento de la reversión:</strong> lo dispuesto en el artículo 47, párrafo segundo, de la Ley 4/2023.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Origen normativo
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Añadido</strong> por la disposición final 13.1 de la Ley 4/2023, de 28 de febrero. Publicado el 01/03/2023, en vigor desde el 02/03/2023.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 26 sexies</span>
+            <span class="ref-tag">Ley 4/2023 art. 47</span>
+            <span class="ref-tag">Ley 4/2023 art. 44</span>
+          </div>
+        </article>
+
+        <!-- Art. 47 Ley 4/2023 — Reversibilidad -->
+        <article class="map-card" data-cat="c4"
+          data-text="artículo 47 ley 4/2023 reversibilidad rectificación mención registral sexo seis meses procedimiento segunda rectificación capítulo I ter">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 47 Ley 4/2023</span>
+              <span class="status-tag tag-warn">Reversibilidad</span>
+            </div>
+            <h2 class="card-title">Reversibilidad de la rectificación — Artículo 47 de la Ley 4/2023</h2>
+            <p class="card-subtitle">Transcurridos seis meses desde la inscripción de la rectificación, las personas podrán recuperar la mención registral del sexo previa; para una nueva rectificación tras reversión, habrá de seguirse el procedimiento del Capítulo I Ter de la Ley 15/2015.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> párrafos</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>1</strong> plazo: 6 meses</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Plazo y procedimiento de reversión (párrafo 1º)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Plazo de espera:</strong> transcurridos 6 meses desde la inscripción en el Registro Civil de la rectificación de la mención registral relativa al sexo.</li>
+                  <li><strong>Legitimación:</strong> las personas que hubieran promovido dicha rectificación podrán recuperar la mención registral del sexo que figuraba previamente.</li>
+                  <li><strong>Procedimiento:</strong> se seguirá el mismo procedimiento establecido en el Capítulo III del Título I de la Ley 4/2023 para la rectificación registral (arts. 44 y ss.).</li>
+                  <li><strong>Consecuencia:</strong> el efecto de la reversión es recuperar la mención registral del sexo que figuraba antes de la rectificación del Registro Civil.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Segunda rectificación tras reversión (párrafo 2º)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Remisión expresa:</strong> en el caso de que, tras haberse rectificado la modificación inicial, se quisiese proceder a una nueva rectificación, habrá de seguirse el procedimiento establecido en el Capítulo I Ter del Título II de la Ley 15/2015 (arts. 26 sexies a 26 nonies).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 4/2023 art. 47</span>
+            <span class="ref-tag">Ley 15/2015 arts. 26 sexies-26 nonies</span>
+          </div>
+        </article>
+
+        <!-- Art. 44 Ley 4/2023 — Procedimiento registral -->
+        <article class="map-card" data-cat="c4"
+          data-text="artículo 44 ley 4/2023 procedimiento rectificación registral comparecencia inicial segunda comparecencia resolución recurso alzada dirección general seguridad jurídica prohibición informe médico">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 44 Ley 4/2023</span>
+              <span class="status-tag tag-ok">Procedimiento registral</span>
+            </div>
+            <h2 class="card-title">Procedimiento para la rectificación registral — Art. 44 de la Ley 4/2023</h2>
+            <p class="card-subtitle">Regula el procedimiento registral de rectificación: solicitud ante cualquier Registro Civil, comparecencia inicial, segunda comparecencia en 3 meses, resolución en 1 mes, y recurso de alzada ante la Dirección General de Seguridad Jurídica.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>11</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> plazos: 3 meses + 1 mes</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Tramitación e inicio (apartados 1-2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Tramitación:</strong> se tramitará y acordará con sujeción a las disposiciones de la Ley 4/2023 y de conformidad con la normativa reguladora del Registro Civil (Ley 20/2011).</li>
+                  <li><strong>Inicio:</strong> la solicitud de iniciación podrá presentarse ante la persona encargada de cualquier Oficina del Registro Civil.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Prohibiciones expresas (apartado 3)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Prohibición:</strong> en ningún caso podrá estar condicionado a la previa exhibición de informe médico o psicológico relativo a la disconformidad con el sexo mencionado, ni a la previa modificación de la apariencia o función corporal mediante procedimientos médicos, quirúrgicos o de otra índole.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Comparecencia inicial (apartado 4)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Citación:</strong> recibida la solicitud, se citará a la persona legitimada para que comparezca.</li>
+                  <li><strong>Manifestación:</strong> la persona encargada del Registro Civil recogerá su manifestación de disconformidad y su solicitud de rectificación.</li>
+                  <li><strong>Nombre propio:</strong> se incluirá la elección de un nuevo nombre propio salvo cuando la persona quiera conservar el que ostente.</li>
+                  <li><strong>Traslado de folio registral:</strong> en esta comparecencia también podrá incluir la petición de traslado total del folio registral cuando a su inscripción de nacimiento le sea aplicable la Ley de 8 de junio de 1957.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Información al solicitante (apartado 5)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Consecuencias jurídicas:</strong> la persona encargada del Registro Civil informará de las consecuencias jurídicas de la rectificación pretendida, incluido el régimen de reversión.</li>
+                  <li><strong>Medidas de asistencia:</strong> información sobre medidas disponibles en los ámbitos sanitario, social, laboral, educativo y administrativo, incluyendo protección contra la discriminación, promoción del respeto y fomento de la igualdad de trato.</li>
+                  <li><strong>Asociaciones:</strong> se pondrá en conocimiento de la persona legitimada la existencia de asociaciones y otras organizaciones de protección de los derechos en este ámbito.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Menores de edad (apartado 6)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Interés superior:</strong> todos los intervinientes tendrán en consideración el interés superior de la persona menor de 18 y mayor de 14 años, a quien se dará audiencia.</li>
+                  <li><strong>Información adaptada:</strong> se le facilitará información en un lenguaje claro, accesible y adaptado a sus necesidades.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Segunda comparecencia y resolución (apartados 7-10)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Suscripción:</strong> tras la información facilitada, la persona legitimada suscribirá, de estar conforme, la comparecencia inicial reiterando su petición.</li>
+                  <li><strong>Segunda comparecencia:</strong> en el plazo máximo de 3 meses desde la comparecencia inicial, la persona encargada del Registro Civil deberá citar para que comparezca de nuevo y ratifique su solicitud, aseverando la persistencia de su decisión.</li>
+                  <li><strong>Resolución:</strong> previa comprobación de la documentación, la persona encargada del Registro Civil dictará resolución dentro del plazo máximo de 1 mes a contar desde la fecha de la segunda comparecencia.</li>
+                  <li><strong>Recurso:</strong> la resolución será recurrible mediante recurso de alzada ante la Dirección General de Seguridad Jurídica y Fe Pública.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Personas con discapacidad (apartado 11)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Garantías:</strong> se garantizarán los medios y recursos de apoyo, materiales y humanos, incluidas las medidas de accesibilidad y diseño universales, para que reciban la información, formen y expresen su voluntad, otorguen su consentimiento y se comuniquen e interactúen con el entorno de modo libre.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 4/2023 art. 44</span>
+            <span class="ref-tag">Ley 20/2011 del Registro Civil</span>
+            <span class="ref-tag">Ley de 8 de junio de 1957</span>
+          </div>
+        </article>
+
+        <!-- Art. 26 septies -->
+        <article class="map-card" data-cat="c3"
+          data-text="artículo 26 septies competencia legitimación postulación juzgado primera instancia domicilio residencia legitimadas rectificación abogado procurador no preceptiva modelos normalizados">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 26 septies</span>
+              <span class="status-tag tag-ok">Competencia y legitimación</span>
+            </div>
+            <h2 class="card-title">Competencia, legitimación y postulación (Cap. I Ter)</h2>
+            <p class="card-subtitle">Determina el Juzgado competente, las personas legitimadas para promover el expediente (remisión al art. 43 Ley 4/2023), y la no necesidad de intervención de abogado ni procurador.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> cuestiones reguladas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Competencia judicial territorial (apartado 1)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Órgano competente:</strong> Juzgado de Primera Instancia.</li>
+                  <li><strong>Criterio:</strong> domicilio de la persona cuya mención registral pretenda rectificarse; subsidiariamente, residencia en territorio nacional.</li>
+                  <li><strong>Conexión con normas generales:</strong> el art. 9 de la Ley 15/2015 fija la competencia objetiva; el art. 13 determina que la competencia territorial viene fijada por la ley y no puede ser alterada por sumisión.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Legitimación activa (apartado 2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Personas legitimadas:</strong> cualquiera de las personas que estén legitimadas para instar la rectificación de la mención registral del sexo.</li>
+                  <li><strong>Remisión:</strong> la legitimación se remite al régimen general del artículo 43 de la Ley 4/2023 (mayores de 16 años por sí mismas; mayores de 14 y menores de 16 asistidas; personas con discapacidad con medidas de apoyo).</li>
+                  <li><strong>Conexión con el art. 5:</strong> el art. 5 de la Ley 15/2015 dispone que podrán instar los expedientes quienes tengan un legítimo interés.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Postulación procesal (apartado 3)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>No preceptiva:</strong> no será preceptiva la intervención de abogado ni procurador.</li>
+                  <li><strong>Conexión con el art. 3.1:</strong> la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley, o para la interposición de recursos y revisión, o una vez formulada oposición formal.</li>
+                  <li><strong>Consecuencia práctica:</strong> el solicitante puede actuar sin representación técnica ni defensa letrada obligatoria, pudiendo utilizar los modelos normalizados que se establezcan (art. 3.3 de la Ley 15/2015).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 26 septies</span>
+            <span class="ref-tag">Ley 15/2015 arts. 3, 5, 9, 13</span>
+            <span class="ref-tag">Ley 4/2023 art. 43</span>
+          </div>
+        </article>
+
+        <!-- Art. 26 octies -->
+        <article class="map-card" data-cat="c3"
+          data-text="artículo 26 octies tramitación solicitud preferente comparecencia solicitante representante legales ministerio fiscal pruebas oficio">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 26 octies</span>
+              <span class="status-tag tag-warn">Tramitación</span>
+            </div>
+            <h2 class="card-title">Tramitación (Cap. I Ter)</h2>
+            <p class="card-subtitle">Regula el inicio del expediente con solicitud de voluntad de revertir, la citación a comparecencia del solicitante, representantes, Ministerio Fiscal y demás personas, y la facultad del Juez para acordar pruebas adicionales.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> sujetos citados</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Solicitud inicial (apartado 1)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Carácter preferente:</strong> el expediente será de tramitación preferente.</li>
+                  <li><strong>Inicio:</strong> comienza con la presentación de una solicitud en la que la persona interesada manifieste su voluntad de revertir la rectificación registral anteriormente producida.</li>
+                  <li><strong>Acompañamiento:</strong> la solicitud deberá ir acompañada de los medios de prueba que se deseen utilizar.</li>
+                  <li><strong>Conexión con el art. 17:</strong> admitida la solicitud, el Secretario judicial citará a los interesados; la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Citación a comparecencia (apartado 2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Solicitante:</strong> siempre citado a comparecer.</li>
+                  <li><strong>Representantes legales:</strong> comparecen en su caso.</li>
+                  <li><strong>Otras personas:</strong> las que el Juez estime oportuno.</li>
+                  <li><strong>Ministerio Fiscal:</strong> siempre citado a comparecer.</li>
+                  <li><strong>Conexión con el art. 4:</strong> el Ministerio Fiscal será parte en los expedientes que afecten al estado civil de las personas.</li>
+                  <li><strong>Conexión con el art. 18:</strong> la comparecencia se celebrará ante el Juez o el Secretario judicial; el comparendo del solicitante sin causa justificada determinará el archivo del expediente.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Pruebas de oficio (apartado 3)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Facultad del Juez:</strong> podrá solicitar la práctica de cualesquiera otras pruebas que considere oportunas.</li>
+                  <li><strong>Conexión con el art. 19.2:</strong> el Juez podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad que requieran medidas de apoyo, o por razones de interés público.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 26 octies</span>
+            <span class="ref-tag">Ley 15/2015 arts. 4, 17-19</span>
+          </div>
+        </article>
+
+        <!-- Art. 26 nonies -->
+        <article class="map-card" data-cat="c3"
+          data-text="artículo 26 nonies resolución concesión denegación interés superior menor testimonio registro civil inscripción efectos constitutivos cosa juzgada">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 26 nonies</span>
+              <span class="status-tag tag-alert">Resolución</span>
+            </div>
+            <h2 class="card-title">Resolución (Cap. I Ter)</h2>
+            <p class="card-subtitle">El Juez resuelve la concesión o denegación de la aprobación judicial, atendiendo al interés superior del menor si el solicitante fuere menor de edad, y remite testimonio al Registro Civil para la inscripción.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> efectos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Decisión del Juez (apartado 1)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Contenido:</strong> el Juez resolverá sobre la concesión o denegación de la aprobación judicial.</li>
+                  <li><strong>Consideración especial:</strong> si el solicitante fuere persona menor de edad, se atenderá en todo caso al interés superior del menor.</li>
+                  <li><strong>Conexión con el art. 19:</strong> el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación.</li>
+                  <li><strong>Conexión con el art. 20:</strong> contra el Auto cabrá recurso de reposición ante el mismo Juez y recurso de apelación ante la Audiencia Provincial; la apelación no tendrá, en general, efectos suspensivos.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Remisión al Registro Civil (apartado 2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Acto de comunicación:</strong> el testimonio de la resolución se remitirá al Registro Civil competente para proceder, en su caso, a la inscripción de la rectificación aprobada judicialmente.</li>
+                  <li><strong>Conexión con el art. 22.2:</strong> las resoluciones que pongan fin al expediente y afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil competente.</li>
+                  <li><strong>Conexión con el art. 46.1 de la Ley 4/2023:</strong> la resolución tendrá efectos constitutivos a partir de su inscripción en el Registro Civil.</li>
+                  <li><strong>Conexión con el art. 46.2 de la Ley 4/2023:</strong> la rectificación registral permitirá a la persona ejercer todos los derechos inherentes a su nueva condición.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 26 nonies</span>
+            <span class="ref-tag">Ley 15/2015 arts. 19-22</span>
+            <span class="ref-tag">Ley 4/2023 arts. 46.1-46.2</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 4: Normas comunes Título I -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-normas-comunes">
+      <span class="section-heading-text">Normas comunes del Título I — Arts. 3, 4, 5, 9, 13, 16-22 de la Ley 15/2015</span>
+      <span class="section-heading-count">10 normas supletorias</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-normas-comunes">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c5"
+          data-text="artículo 3 postulación abogado procurador obligatorio modelos normalizados interposición recursos revisión oposición formal">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 3</span>
+              <span class="status-tag tag-gray">Postulación</span>
+            </div>
+            <h2 class="card-title">Postulación — Art. 3</h2>
+            <p class="card-subtitle">La intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley, o para la interposición de recursos y revisión, o una vez formulada oposición formal.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Regla general y excepciones
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Regla general:</strong> la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley.</li>
+                  <li><strong>Excepción 1:</strong> para la interposición de recursos y revisión.</li>
+                  <li><strong>Excepción 2:</strong> una vez formulada oposición formal.</li>
+                  <li><strong>Modelos normalizados:</strong> cuando no sea preceptiva, podrán utilizarse los modelos normalizados que se establezcan (art. 3.3).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 3</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5"
+          data-text="artículo 4 ministerio fiscal parte expedientes estado civil personas menores discapacidad">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 4</span>
+              <span class="status-tag tag-gray">Ministerio Fiscal</span>
+            </div>
+            <h2 class="card-title">Intervención del Ministerio Fiscal — Art. 4</h2>
+            <p class="card-subtitle">El Ministerio Fiscal será parte en los expedientes que afecten al estado civil de las personas, como es el presente de modificación de la mención registral del sexo.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Intervención obligatoria
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Ámbito:</strong> expedientes que afecten al estado civil de las personas.</li>
+                  <li><strong>Otros supuestos:</strong> expedientes que afecten a menores o personas con discapacidad que requieran medidas de apoyo, o cuando así lo establezca expresamente la ley.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 4</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5"
+          data-text="artículo 5 legitimación legítimo interés instar expedientes jurisdicción voluntaria">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 5</span>
+              <span class="status-tag tag-gray">Legitimación</span>
+            </div>
+            <h2 class="card-title">Legitimación — Art. 5</h2>
+            <p class="card-subtitle">Podrán instar los expedientes de jurisdicción voluntaria quienes tengan un legítimo interés, conforme al régimen general de la ley.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Legítimo interés
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Requisito:</strong> tener un legítimo interés para instar el expediente.</li>
+                  <li><strong>Conexión:</strong> el art. 26 septies.2 remite al régimen general de legitimación para la rectificación registral del sexo (art. 43 Ley 4/2023).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 5</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5"
+          data-text="artículo 9 competencia objetiva juzgados primera instancia artículo 13 competencia territorial sumisión expresa tácita artículo 16 comprobación oficio letrado administración justicia">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Arts. 9, 13, 16</span>
+              <span class="status-tag tag-gray">Competencia</span>
+            </div>
+            <h2 class="card-title">Competencia — Arts. 9, 13, 16</h2>
+            <p class="card-subtitle">La competencia objetiva corresponde a los Juzgados de Primera Instancia; la territorial viene fijada por la ley y no puede ser alterada por sumisión; el Letrado de la Administración de Justicia la comprobará de oficio.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Competencia objetiva (art. 9)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Órgano:</strong> corresponde a los Juzgados de Primera Instancia.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Competencia territorial (art. 13)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Fijación legal:</strong> viene fijada por la ley y no puede ser alterada por sumisión expresa o tácita.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Comprobación de oficio (art. 16)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Control:</strong> el Letrado de la Administración de Justicia comprobará de oficio la competencia.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 arts. 9, 13, 16</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5"
+          data-text="artículo 17 convocatoria comparecencia treinta días admisión artículo 18 celebración comparecencia juez secretario juicio verbal comparendo solicitante archivo expediente">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Arts. 17-18</span>
+              <span class="status-tag tag-gray">Comparecencia</span>
+            </div>
+            <h2 class="card-title">Comparecencia — Arts. 17-18</h2>
+            <p class="card-subtitle">El Secretario judicial convocará la comparecencia dentro de los 30 días siguientes al de la admisión; se celebrará ante el Juez o el Secretario judicial, aplicándose las reglas del juicio verbal.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Convocatoria (art. 17)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Plazo:</strong> la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión.</li>
+                  <li><strong>Citación:</strong> el Secretario judicial citará a los interesados cuando haya de oírse a otras personas, practicarse prueba o lo estime oportuno.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Celebración (art. 18)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Ante quién:</strong> se celebrará ante el Juez o el Secretario judicial, aplicándose las reglas del juicio verbal.</li>
+                  <li><strong>Comparendo del solicitante:</strong> la comparecencia del solicitante sin causa justificada determinará el archivo del expediente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 arts. 17-18</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5"
+          data-text="artículo 19 decisión expediente auto cinco días comparecencia pruebas oficio menores discapacidad interés público secretario judicial decreto">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 19</span>
+              <span class="status-tag tag-gray">Decisión</span>
+            </div>
+            <h2 class="card-title">Decisión del expediente — Art. 19</h2>
+            <p class="card-subtitle">El Juez resolverá mediante Auto dentro de los 5 días siguientes; podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Decisión del Juez (apartados 1-2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Resolución:</strong> el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación.</li>
+                  <li><strong>Pruebas de oficio:</strong> el Juez podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad que requieran medidas de apoyo, o por razones de interés público.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Decisión del Secretario judicial (apartado 3)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Decreto:</strong> el Secretario judicial decidirá mediante Decreto en los casos que la ley determine.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 19</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5"
+          data-text="artículo 20 recursos reposición apelación audiencia provincial revisión secretario judicial efectos suspensivos">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 20</span>
+              <span class="status-tag tag-gray">Recursos</span>
+            </div>
+            <h2 class="card-title">Recursos — Art. 20</h2>
+            <p class="card-subtitle">Contra las resoluciones del Juez cabrá recurso de reposición y apelación; contra las del Secretario judicial, recurso de revisión ante el Juez competente.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Recursos contra resoluciones del Juez
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Reposición:</strong> recurso de reposición ante el mismo Juez.</li>
+                  <li><strong>Apelación:</strong> recurso de apelación ante la Audiencia Provincial; en general, no tendrá efectos suspensivos.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Recurso contra resoluciones del Secretario judicial
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Revisión:</strong> recurso de revisión ante el Juez competente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 20</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5"
+          data-text="artículo 21 caducidad expediente inactividad interesado tres meses artículo 22 cumplimiento ejecución cosa juzgada registro civil testimonio electrónico">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Arts. 21-22</span>
+              <span class="status-tag tag-gray">Caducidad y ejecución</span>
+            </div>
+            <h2 class="card-title">Caducidad y ejecución — Arts. 21-22</h2>
+            <p class="card-subtitle">El expediente caducará por inactividad del interesado durante 3 meses; las resoluciones firmes producen efectos de cosa juzgada y las que afecten al estado civil se remiten electrónicamente al Registro Civil.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Caducidad (art. 21)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Plazo:</strong> el expediente caducará cuando sea paralizado por inactividad del interesado durante 3 meses.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Cumplimiento y ejecución (art. 22)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Cosa juzgada:</strong> las resoluciones firmes producirán efectos de cosa juzgada.</li>
+                  <li><strong>Estado civil:</strong> las resoluciones que pongan fin al expediente y afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil competente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 arts. 21-22</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 5: Efectos y adecuación de documentos -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-efectos">
+      <span class="section-heading-text">Efectos de la rectificación y adecuación de documentos — Arts. 46 y 49 de la Ley 4/2023</span>
+      <span class="section-heading-count">2 artículos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-efectos">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c4"
+          data-text="artículo 46 ley 4/2023 efectos rectificación constitutivos ejercicio derechos violencia de género acción positiva situaciones jurídicas sexo nacimiento">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 46 Ley 4/2023</span>
+              <span class="status-tag tag-ok">Efectos</span>
+            </div>
+            <h2 class="card-title">Efectos de la rectificación — Art. 46 de la Ley 4/2023</h2>
+            <p class="card-subtitle">La resolución tendrá efectos constitutivos desde la inscripción; la rectificación permite ejercer todos los derechos inherentes a la nueva condición, sin alterar el régimen de violencia de género ni los derechos patrimoniales consolidados.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>5</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> leyes conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Efectos constitutivos y ejercicio de derechos (apartados 1-2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Efectos constitutivos (art. 46.1):</strong> la resolución que acuerde la rectificación tendrá efectos constitutivos a partir de su inscripción en el Registro Civil.</li>
+                  <li><strong>Ejercicio de derechos (art. 46.2):</strong> la rectificación registral permitirá a la persona ejercer todos los derechos inherentes a su nueva condición.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Violencia de género (apartado 3)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>No alteración:</strong> la rectificación no alterará el régimen jurídico aplicable a los efectos de la Ley Orgánica 1/2004, de Medidas de Protección Integral contra la Violencia de Género.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Acción positiva (apartado 4)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Masculino a femenino:</strong> podrá ser beneficiaria de medidas de acción positiva adoptadas en favor de las mujeres a partir de la efectividad del cambio registral, pero no respecto de situaciones jurídicas anteriores.</li>
+                  <li><strong>Femenino a masculino:</strong> conservará los derechos patrimoniales consolidados sin lugar a reintegro o devolución.</li>
+                  <li><strong>Conexión:</strong> art. 11 de la Ley Orgánica 3/2007, para la Igualdad Efectiva de Mujeres y Hombres.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Situaciones jurídicas originadas en el sexo al nacimiento (apartado 5)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Conservación:</strong> la persona conservará, en su caso, los derechos inherentes al mismo en los términos establecidos en la legislación sectorial.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 4/2023 art. 46</span>
+            <span class="ref-tag">LO 1/2004</span>
+            <span class="ref-tag">LO 3/2007 art. 11</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c4"
+          data-text="artículo 49 ley 4/2023 adecuación documentos dni pasaporte tasas capacidad económica procedimientos accesibles protección datos personales">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 49 Ley 4/2023</span>
+              <span class="status-tag tag-ok">Adecuación de documentos</span>
+            </div>
+            <h2 class="card-title">Adecuación de documentos — Art. 49 de la Ley 4/2023</h2>
+            <p class="card-subtitle">Tras la rectificación, se expedirá un nuevo DNI y pasaporte conservando el mismo número; la persona podrá solicitar la reexpedición de cualquier documento, título o certificado, con tasas adaptadas al principio de capacidad económica.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>1</strong> ley conexa</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Documentos oficiales de identidad (apartado 1)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Determinación del sexo:</strong> en los documentos oficiales de identidad, la determinación del sexo se corresponderá con la registral.</li>
+                  <li><strong>Nuevo DNI y pasaporte:</strong> tras la rectificación, se expedirá un nuevo DNI y, en su caso, pasaporte, conservando el mismo número.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Reexpedición de documentos (apartado 2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Amplitud:</strong> la persona interesada podrá solicitar la reexpedición de cualquier documento, título, diploma o certificado ajustado a la inscripción registral rectificada.</li>
+                  <li><strong>Identificación:</strong> se garantizará la adecuada identificación, en su caso, mediante el mismo número de DNI o la misma clave registral.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Tasas (apartado 3)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio de capacidad económica:</strong> las tasas que graven los trámites se adecuarán al principio de capacidad económica (art. 8 de la Ley 8/1989, de Tasas y Precios Públicos).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Procedimientos accesibles (apartado 4)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Garantías:</strong> las Administraciones públicas establecerán procedimientos accesibles, ágiles y que garanticen la protección de los datos de carácter personal.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 4/2023 art. 49</span>
+            <span class="ref-tag">Ley 8/1989 art. 8</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 6: Cronograma de plazos -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Cronograma de plazos procesales</span>
+      <span class="section-heading-count">7 plazos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Acto o trámite procesal</th>
+              <th>Plazo</th>
+              <th>Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Convocatoria y celebración de comparecencia ante el Juez o Secretario judicial</td>
+              <td><span class="plazo-badge plazo-months">30 días siguientes a la admisión</span></td>
+              <td class="td-norm">Art. 17 Ley 15/2015</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Resolución judicial — Auto de concesión o denegación de la aprobación judicial</td>
+              <td><span class="plazo-badge plazo-days">5 días siguientes a la comparecencia o última actuación</span></td>
+              <td class="td-norm">Art. 19 Ley 15/2015</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Caducidad del expediente por inactividad del interesado</td>
+              <td><span class="plazo-badge plazo-months">3 meses</span></td>
+              <td class="td-norm">Art. 21 Ley 15/2015</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Plazo de espera para solicitar la reversión de la rectificación registral</td>
+              <td><span class="plazo-badge plazo-months">6 meses desde la inscripción</span></td>
+              <td class="td-norm">Art. 47.1 Ley 4/2023</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Segunda comparecencia registral para ratificar la solicitud de rectificación o reversión</td>
+              <td><span class="plazo-badge plazo-months">3 meses desde la comparecencia inicial</span></td>
+              <td class="td-norm">Art. 44.8 Ley 4/2023</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Resolución registral de rectificación o reversión</td>
+              <td><span class="plazo-badge plazo-months">1 mes desde la segunda comparecencia</span></td>
+              <td class="td-norm">Art. 44.9 Ley 4/2023</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Tramitación preferente del expediente (carácter prioritario sin cuantificación adicional)</td>
+              <td><span class="plazo-badge plazo-other">Preferente (sin plazo tasado)</span></td>
+              <td class="td-norm">Art. 26 octies.1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 7: Participantes y actores -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">8 categorías · 13+ actores</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Órgano judicial</div>
+          <ul>
+            <li>Juzgado de Primera Instancia <span class="participant-note">(competente por territorio)</span></li>
+            <li>Juez <span class="participant-note">(dirige el expediente, cita, acuerda pruebas, resuelve mediante Auto)</span></li>
+            <li>Letrado de la Administración de Justicia <span class="participant-note">(comprueba competencia, convoca comparecencia, decide por Decreto)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Parte interesada</div>
+          <ul>
+            <li>Solicitante <span class="participant-note">(persona cuya mención registral pretende rectificarse)</span></li>
+            <li>Representantes legales <span class="participant-note">(comparecen en su caso)</span></li>
+            <li>Defensor judicial <span class="participant-note">(nombrado en caso de desacuerdo de progenitores, arts. 235-236 CC)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c5">Ministerio Público</div>
+          <ul>
+            <li>Ministerio Fiscal <span class="participant-note">(siempre citado a comparecencia, art. 4 Ley 15/2015)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Registro y Administración</div>
+          <ul>
+            <li>Registro Civil competente <span class="participant-note">(destinatario del testimonio de resolución)</span></li>
+            <li>Dirección General de Seguridad Jurídica y Fe Pública <span class="participant-note">(recurso de alzada contra resolución registral)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c7">Órgano de apelación</div>
+          <ul>
+            <li>Audiencia Provincial <span class="participant-note">(recurso de apelación contra Auto del Juez)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Profesionales no preceptivos</div>
+          <ul>
+            <li>Abogado <span class="participant-note">(no preceptivo, pero necesario para recursos)</span></li>
+            <li>Procurador <span class="participant-note">(no preceptivo, pero necesario para recursos)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c6">Testigos y terceros</div>
+          <ul>
+            <li>Testigos <span class="participant-note">(todas las personas mayores de edad, aun con parentesco o amistad)</span></li>
+            <li>Otras personas citadas <span class="participant-note">(las que el Juez estime oportuno)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c8">Asociaciones y organizaciones</div>
+          <ul>
+            <li>Asociaciones de protección de derechos <span class="participant-note">(el Juez pondrá en conocimiento del menor su existencia)</span></li>
+            <li>Organizaciones de apoyo <span class="participant-note">(disponibles en ámbitos sanitario, social, laboral, educativo y administrativo)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 8: Ecosistema normativo -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">10 cuerpos normativos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015, de 2 de julio</div>
+          <div class="norm-title">De la Jurisdicción Voluntaria — Norma marco</div>
+          <div class="norm-arts">
+            <strong>Título Preliminar (arts. 1-8):</strong> objeto, ámbito, principios generales.<br>
+            <strong>Título I (arts. 9-22):</strong> normas comunes de tramitación.<br>
+            <strong>Título II (arts. 23-50+):</strong> expedientes en materia de personas.<br>
+            <strong>Capítulo I (arts. 23-26):</strong> filiación no matrimonial.<br>
+            <strong>Capítulo I Bis (arts. 26 bis-26 quinquies):</strong> modificación registral para mayores de 12 y menores de 14.<br>
+            <strong>Capítulo I Ter (arts. 26 sexies-26 nonies):</strong> el presente expediente.
+          </div>
+          <span class="norm-tag tag-info">Norma marco</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 4/2023, de 28 de febrero</div>
+          <div class="norm-title">Para la igualdad real y efectiva de las personas trans y garantía de derechos LGTBI</div>
+          <div class="norm-arts">
+            <strong>Capítulo III del Título I (arts. 43-49):</strong> régimen completo de rectificación registral del sexo.<br>
+            <strong>Art. 43:</strong> legitimación por grupos de edad.<br>
+            <strong>Art. 44:</strong> procedimiento registral.<br>
+            <strong>Art. 46:</strong> efectos de la rectificación.<br>
+            <strong>Art. 47:</strong> reversibilidad.<br>
+            <strong>Art. 49:</strong> adecuación de documentos.<br>
+            <strong>DF 13.1:</strong> añade los arts. 26 bis a 26 nonies a la Ley 15/2015.
+          </div>
+          <span class="norm-tag tag-warn">Remisión expresa</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 20/2011, de 21 de julio</div>
+          <div class="norm-title">Del Registro Civil</div>
+          <div class="norm-arts">
+            <strong>Normativa reguladora del procedimiento registral</strong> al que se remiten tanto la Ley 4/2023 como la Ley 15/2015 para la inscripción de la rectificación. Regula las inscripciones de estado civil, las rectificaciones y las anotaciones.
+          </div>
+          <span class="norm-tag tag-ok">Conexión instrumental</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Código Civil</div>
+          <div class="norm-title">Defensor judicial y estado civil</div>
+          <div class="norm-arts">
+            <strong>Arts. 235-236:</strong> nombramiento de defensor judicial en caso de conflicto de intereses entre los progenitores o representante legal y el menor.<br>
+            <strong>Art. 54 y ss.:</strong> regulación del estado civil de las personas, conexión sustantiva con la mención registral del sexo.
+          </div>
+          <span class="norm-tag tag-gray">Conexión sustantiva</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley Orgánica 1/2004, de 28 de diciembre</div>
+          <div class="norm-title">De Medidas de Protección Integral contra la Violencia de Género</div>
+          <div class="norm-arts">
+            <strong>Conexión con el art. 46.3 de la Ley 4/2023:</strong> la rectificación de la mención registral del sexo no altera el régimen jurídico aplicable a los efectos de esta Ley Orgánica.
+          </div>
+          <span class="norm-tag tag-alert">No alteración</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley Orgánica 3/2007, de 22 de marzo</div>
+          <div class="norm-title">Para la Igualdad Efectiva de Mujeres y Hombres</div>
+          <div class="norm-arts">
+            <strong>Conexión con el art. 46.4 de la Ley 4/2023:</strong> medidas de acción positiva adoptadas en favor de las mujeres (art. 11). La persona que rectifique pasando del sexo masculino al femenino podrá ser beneficiaria de estas medidas a partir de la efectividad del cambio registral.
+          </div>
+          <span class="norm-tag tag-info">Acción positiva</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 8/1989, de 13 de abril</div>
+          <div class="norm-title">De Tasas y Precios Públicos</div>
+          <div class="norm-arts">
+            <strong>Conexión con el art. 49.3 de la Ley 4/2023:</strong> las tasas que graven los trámites de adecuación de documentos se adecuarán al principio de capacidad económica (art. 8 de la Ley 8/1989).
+          </div>
+          <span class="norm-tag tag-gray">Principio de capacidad económica</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley de Enjuiciamiento Civil (LEC)</div>
+          <div class="norm-title">Aplicación supletoria</div>
+          <div class="norm-arts">
+            <strong>Art. 1.2 LEC:</strong> aplicación supletoria cuando la Ley 15/2015 no contemple normas específicas. Las reglas del juicio verbal se aplican a la comparecencia (art. 18 Ley 15/2015).
+          </div>
+          <span class="norm-tag tag-warn">Aplicación supletoria</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley de 8 de junio de 1957</div>
+          <div class="norm-title">Sobre el Registro Civil</div>
+          <div class="norm-arts">
+            <strong>Conexión con el art. 44.4 de la Ley 4/2023:</strong> en la comparecencia inicial, la persona podrá incluir la petición de traslado total del folio registral cuando a su inscripción de nacimiento le sea aplicable esta Ley de 1957.
+          </div>
+          <span class="norm-tag tag-gray">Traslado de folio registral</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015 — Título II, Capítulos I y II</div>
+          <div class="norm-title">Filiación no matrimonial y habilitación para comparecer</div>
+          <div class="norm-arts">
+            <strong>Capítulo I (arts. 23-26):</strong> autorización judicial de reconocimiento de filiación no matrimonial.<br>
+            <strong>Capítulo II (arts. 27 y ss.):</strong> habilitación para comparecer en juicio y nombramiento de defensor judicial.<br>
+            Ambos capítulos comparten la estructura de expediente de jurisdicción voluntaria.
+          </div>
+          <span class="norm-tag tag-info">Estructura paralela</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Contexto normativo general y marco
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Capítulo I Bis (arts. 26 bis-26 quinquies)
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Capítulo I Ter (arts. 26 sexies-26 nonies)
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Ley 4/2023 — Rectificación y efectos
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Normas comunes del Título I
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c6)"></div>
+        Participantes y actores
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c7)"></div>
+        Plazos procesales
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c8)"></div>
+        Ecosistema normativo
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II · Capítulos I Bis y I Ter · Arts. 26 bis a 26 nonies · Añadidos por la DF 13.1 de la Ley 4/2023 · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<script>
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+const countArts = document.getElementById('count-arts');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+  if (countArts) countArts.textContent =
+    visible + ' artículo' + (visible !== 1 ? 's' : '') +
+    ' visible' + (visible !== 1 ? 's' : '');
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent =
+    isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '▶' : '▼';
+  });
+});
+
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+
+</body>
+</html>

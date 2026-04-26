@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LJV 15/2015 — Título II, Cap. III bis — Medidas judiciales de apoyo (Arts. 42 bis a–c)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+
+  /* Art. 42 bis a) — azul índigo */
+  --c1: #1a237e; --c1bg: #e8eaf6; --c1bd: #7986cb;
+  /* Art. 42 bis b) — teal */
+  --c2: #006064; --c2bg: #e0f7fa; --c2bd: #4dd0e1;
+  /* Art. 42 bis c) — verde */
+  --c3: #1b5e20; --c3bg: #e8f5e9; --c3bd: #81c784;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+  --transition:   200ms ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text-1); font-family: var(--font-ui); font-size: 14px; line-height: 1.6; }
+
+/* ── HEADER ─────────────────────────────────────────────── */
+.site-header { background: var(--header-bg); color: var(--header-text); padding: 2rem 1.5rem 1.75rem; }
+.header-inner { max-width: 1140px; margin: 0 auto; }
+.header-breadcrumb { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(248,245,237,.45); margin-bottom: .55rem; }
+.header-title { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700; color: var(--header-text); line-height: 1.2; margin-bottom: .5rem; }
+.header-subtitle { font-size: 14px; color: rgba(248,245,237,.6); margin-bottom: 1rem; }
+.header-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.header-tag { background: rgba(200,169,110,.15); border: 1px solid rgba(200,169,110,.3); color: var(--accent); font-size: 11.5px; font-weight: 500; padding: .25rem .75rem; border-radius: 20px; }
+.header-actions { margin-left: auto; }
+.btn-ghost { background: transparent; border: 1px solid rgba(248,245,237,.15); color: rgba(248,245,237,.7); font-family: var(--font-ui); font-size: 12px; padding: .4rem .9rem; border-radius: var(--radius-sm); cursor: pointer; transition: var(--transition); }
+.btn-ghost:hover { background: rgba(248,245,237,.08); color: var(--header-text); }
+
+/* ── STATS BAR ───────────────────────────────────────────── */
+.stats-bar { background: var(--surface); border-bottom: 1px solid var(--border); }
+.stats-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+.stat-item { padding: 1.25rem 1.5rem; text-align: center; border-right: 1px solid var(--border); }
+.stat-item:last-child { border-right: none; }
+.stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--text-1); line-height: 1; margin-bottom: .35rem; }
+.stat-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; }
+@media (max-width: 640px) { .stats-inner { grid-template-columns: repeat(2, 1fr); } .stat-item:nth-child(2) { border-right: none; } .stat-item:nth-child(3) { border-right: 1px solid var(--border); } }
+
+/* ── CONTROLS BAR ────────────────────────────────────────── */
+.controls-bar { position: sticky; top: 0; z-index: 100; background: var(--surface); box-shadow: 0 2px 8px rgba(0,0,0,.04); border-bottom: 1px solid var(--border); }
+.controls-inner { max-width: 1140px; margin: 0 auto; padding: .65rem 1.5rem; display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+.search-wrap { position: relative; flex: 1; min-width: 180px; max-width: 320px; }
+.search-wrap svg { position: absolute; left: .65rem; top: 50%; transform: translateY(-50%); color: var(--text-3); pointer-events: none; width: 15px; height: 15px; }
+.search-input { width: 100%; padding: .45rem .75rem .45rem 2.1rem; border: 1px solid var(--border-md); border-radius: var(--radius-sm); font-family: var(--font-ui); font-size: 13px; background: var(--surface); color: var(--text-1); outline: none; transition: var(--transition); }
+.search-input:focus { border-color: var(--c1); box-shadow: 0 0 0 2px rgba(26,35,126,.1); }
+.search-input::placeholder { color: var(--text-3); }
+.filter-pills { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; }
+.pill { font-family: var(--font-ui); font-size: 12px; font-weight: 500; padding: .3rem .8rem; border-radius: 20px; border: 1px solid var(--border-md); background: var(--surface); color: var(--text-2); cursor: pointer; transition: var(--transition); white-space: nowrap; }
+.pill:hover { background: var(--surface-2); }
+.pill.active[data-cat="all"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.pill.active[data-cat="c1"]  { background: var(--c1); border-color: var(--c1); color: #fff; }
+.pill.active[data-cat="c2"]  { background: var(--c2); border-color: var(--c2); color: #fff; }
+.pill.active[data-cat="c3"]  { background: var(--c3); border-color: var(--c3); color: #fff; }
+.ctrl-actions { display: flex; align-items: center; gap: .4rem; margin-left: auto; }
+.btn-ctrl { font-family: var(--font-ui); font-size: 12px; font-weight: 500; padding: .3rem .75rem; border: 1px solid var(--border-md); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-2); cursor: pointer; transition: var(--transition); white-space: nowrap; }
+.btn-ctrl:hover { background: var(--surface-2); color: var(--text-1); }
+.zoom-cluster { display: flex; border: 1px solid var(--border-md); border-radius: var(--radius-sm); overflow: hidden; align-items: center; }
+.btn-zoom { border: none; background: var(--surface); color: var(--text-2); width: 28px; height: 28px; font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+.btn-zoom:hover:not(:disabled) { background: var(--surface-2); }
+.btn-zoom:disabled { opacity: .35; cursor: default; }
+.btn-zoom:first-child { border-right: 1px solid var(--border-md); }
+.btn-zoom:last-child  { border-left:  1px solid var(--border-md); }
+.zoom-label { font-family: var(--font-ui); font-size: 12px; font-weight: 500; min-width: 42px; text-align: center; color: var(--text-2); padding: 0 .2rem; }
+@media (max-width: 768px) { .ctrl-actions { display: none; } }
+
+/* ── MAIN ────────────────────────────────────────────────── */
+.page-main { max-width: 1140px; margin: 0 auto; padding: 1.75rem 1.5rem 2.5rem; }
+
+/* ── MAP SECTION ─────────────────────────────────────────── */
+.map-section { margin-bottom: 2rem; }
+.section-heading { display: flex; align-items: center; gap: .75rem; cursor: pointer; padding: .5rem 0; user-select: none; }
+.section-heading-text { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text-1); }
+.section-heading-count { font-size: 12px; font-weight: 500; color: var(--text-3); background: var(--surface-2); border: 1px solid var(--border); border-radius: 20px; padding: .15rem .6rem; }
+.section-toggle-btn { margin-left: auto; background: none; border: none; font-size: 13px; color: var(--text-3); cursor: pointer; }
+.section-divider { border: none; border-top: 1px solid var(--border); margin: .5rem 0 1rem; }
+.section-body.collapsed { display: none; }
+
+/* ── CARD GRID ───────────────────────────────────────────── */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+@media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+/* ── MAP CARD ────────────────────────────────────────────── */
+.map-card { background: var(--surface); border-radius: var(--radius-md); border-left: 4px solid; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: box-shadow var(--transition), transform var(--transition); overflow: hidden; }
+.map-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.map-card.hidden { display: none; }
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+
+.card-top { padding: 1rem 1rem .75rem; }
+.card-meta { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: .5rem; }
+.art-badge { font-size: 11px; font-weight: 600; padding: .18rem .6rem; border-radius: 20px; border: 1px solid; }
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+
+.status-tag { font-size: 11px; font-weight: 600; padding: .18rem .6rem; border-radius: 20px; }
+.tag-warn   { background: #fef3c7; color: #92400e; }
+.tag-alert  { background: #fee2e2; color: #991b1b; }
+.tag-info   { background: #dbeafe; color: #1e40af; }
+.tag-ok     { background: #d1fae5; color: #065f46; }
+.tag-gray   { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+.tag-purple { background: #f3e5f5; color: #6a1b9a; }
+
+.card-title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-1); line-height: 1.35; margin-bottom: .35rem; }
+.card-subtitle { font-size: 12.5px; color: var(--text-2); line-height: 1.45; }
+.card-counters { display: flex; align-items: center; gap: .4rem; padding: .5rem 1rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface-2); }
+.counter-badge { font-size: 11.5px; color: var(--text-2); }
+.counter-badge strong { color: var(--text-1); font-weight: 600; }
+.card-toggle-btn { display: flex; align-items: center; justify-content: space-between; padding: .5rem 1rem; background: var(--surface-2); border: none; border-top: 1px solid var(--border); width: 100%; text-align: left; font-family: var(--font-ui); font-size: 12px; color: var(--text-2); cursor: pointer; transition: var(--transition); }
+.card-toggle-btn:hover { background: var(--border); color: var(--text-1); }
+.toggle-icon { transition: transform var(--transition); display: inline-block; font-size: 11px; }
+.map-card.expanded .toggle-icon { transform: rotate(180deg); }
+.card-body { display: none; padding: .75rem 1rem 1rem; }
+.map-card.expanded .card-body { display: block; }
+
+/* inner sections */
+.inner-section { margin-bottom: .9rem; }
+.inner-section:last-child { margin-bottom: 0; }
+.inner-heading { display: flex; align-items: center; gap: .4rem; margin-bottom: .35rem; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.inner-heading-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-2); background: var(--surface-2); padding: 2px 7px; border-radius: 3px; }
+.inner-list { list-style: none; padding-left: 0; }
+.inner-list li { position: relative; padding: 2.5px 0 2.5px .8rem; font-size: 12.5px; color: var(--text-2); line-height: 1.5; border-bottom: 1px solid var(--border); }
+.inner-list li:last-child { border-bottom: none; }
+.inner-list li::before { content: '–'; position: absolute; left: 0; color: var(--text-3); }
+.inner-list li strong { color: var(--text-1); font-weight: 500; }
+.inner-ol { list-style: none; padding-left: 0; counter-reset: item; }
+.inner-ol li { position: relative; padding: 2.5px 0 2.5px 1.4rem; font-size: 12.5px; color: var(--text-2); line-height: 1.5; border-bottom: 1px solid var(--border); counter-increment: item; }
+.inner-ol li:last-child { border-bottom: none; }
+.inner-ol li::before { content: counter(item)"."; position: absolute; left: 0; color: var(--text-3); font-size: 11px; font-weight: 700; }
+.inner-sub { list-style: none; padding-left: .8rem; margin-top: .25rem; }
+.inner-sub li { position: relative; padding: 2px 0 2px .75rem; font-size: 11.5px; color: var(--text-3); border-bottom: none; }
+.inner-sub li::before { content: '·'; position: absolute; left: 0; }
+
+/* note boxes */
+.note-box { margin-top: .45rem; padding: .65rem .85rem; border-radius: var(--radius-sm); font-size: 12.5px; line-height: 1.55; border-left: 3px solid; }
+.note-info    { background: #e3f2fd; border-color: #90caf9; color: #0d47a1; }
+.note-warn    { background: #fff8e1; border-color: #ffe082; color: #f57f17; }
+.note-ok      { background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; }
+.note-danger  { background: #fce4ec; border-color: #ef9a9a; color: #c62828; }
+.note-purple  { background: #f3e5f5; border-color: #ce93d8; color: #6a1b9a; }
+.note-box strong { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; opacity: .7; margin-bottom: .2rem; }
+
+/* ref tags */
+.ref-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 1px 5px; border-radius: 3px; background: rgba(200,169,110,.1); color: #92701a; margin: 1px 2px; vertical-align: middle; white-space: nowrap; border: 1px solid rgba(200,169,110,.25); }
+.dl-tag  { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: var(--radius-sm); background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; margin: 0 2px; vertical-align: middle; white-space: nowrap; }
+.card-refs { padding: .55rem 1rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: .25rem; background: var(--surface-2); }
+
+/* i-tags (actor / principio / procedimiento labels) */
+.i-tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 10px; margin: 1px 2px; vertical-align: middle; white-space: nowrap; }
+.i-tag.actor    { background: #e8f5e9; color: #2e7d32; }
+.i-tag.plazo    { background: #fff3e0; color: #e65100; }
+.i-tag.principio{ background: #e0f7fa; color: #00838f; }
+.i-tag.excep    { background: #fce4ec; color: #ad1457; }
+.i-tag.proc     { background: #e3f2fd; color: #1565c0; }
+
+/* ── NO RESULTS ──────────────────────────────────────────── */
+.no-results { grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--text-3); font-size: 14px; display: none; }
+
+/* ── PLAZOS TABLE ────────────────────────────────────────── */
+.table-wrap { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
+.timeline-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.timeline-table thead tr { background: var(--surface-2); }
+.timeline-table th { padding: .65rem 1rem; text-align: left; font-family: var(--font-display); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text-2); border-bottom: 1px solid var(--border); }
+.timeline-table td { padding: .6rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.timeline-table tr:last-child td { border-bottom: none; }
+.timeline-table tr:hover td { background: var(--surface-2); }
+.td-tramite { font-size: 13px; color: var(--text-1); }
+.td-norm { font-size: 12px; color: var(--text-2); }
+.plazo-badge { display: inline-block; font-size: 12px; font-weight: 600; padding: .2rem .65rem; border-radius: var(--radius-sm); white-space: nowrap; }
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ── PARTICIPANTS ────────────────────────────────────────── */
+.participants-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+@media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+.participant-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+.participant-col-head { padding: .55rem 1rem; font-size: 11.5px; font-weight: 700; color: #fff; letter-spacing: .03em; }
+.phead-c1 { background: var(--c1); } .phead-c2 { background: var(--c2); } .phead-c3 { background: var(--c3); } .phead-dark { background: #37474f; }
+.participant-col ul { list-style: none; padding: .4rem 0; }
+.participant-col li { padding: .35rem 1rem; font-size: 12.5px; color: var(--text-2); border-bottom: 1px solid var(--border); line-height: 1.4; }
+.participant-col li:last-child { border-bottom: none; }
+.participant-note { font-size: 11px; color: var(--text-3); font-style: italic; }
+
+/* ── NORM GRID ───────────────────────────────────────────── */
+.norm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+@media (max-width: 900px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+.norm-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: .35rem; }
+.norm-law { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); }
+.norm-title { font-size: 13px; font-weight: 500; color: var(--text-1); }
+.norm-arts { font-size: 12px; color: var(--text-2); line-height: 1.55; }
+.norm-arts strong { color: var(--text-1); }
+.norm-tag { display: inline-block; font-size: 11px; font-weight: 600; padding: .18rem .6rem; border-radius: 20px; margin-top: .2rem; align-self: flex-start; }
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.legend-footer { background: var(--header-bg); color: var(--header-text); padding: 1.75rem 1.5rem; }
+.legend-inner { max-width: 1140px; margin: 0 auto; }
+.legend-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 1rem; }
+.legend-grid { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem; margin-bottom: 1.25rem; }
+.legend-item { display: flex; align-items: center; gap: .45rem; font-size: 12px; color: rgba(248,245,237,.65); }
+.legend-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.legend-divider { width: 1px; height: 20px; background: rgba(248,245,237,.12); }
+.legend-copy { font-size: 11px; color: rgba(248,245,237,.3); border-top: 1px solid rgba(248,245,237,.08); padding-top: 1rem; margin-top: .5rem; }
+
+/* ── PRINT ───────────────────────────────────────────────── */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body   { display: block !important; }
+  .section-body{ display: block !important; }
+  .map-card    { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  body         { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título II · Capítulo III bis</div>
+    <h1 class="header-title">Expediente de provisión de medidas judiciales de apoyo a personas con discapacidad</h1>
+    <p class="header-subtitle">Artículos 42 bis a), b) y c) · Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Introducido por la Ley 8/2021</p>
+    <div class="header-meta">
+      <span class="header-tag">LJV 15/2015</span>
+      <span class="header-tag">Arts. 42 bis a)–c)</span>
+      <span class="header-tag">Título II, Cap. III bis</span>
+      <span class="header-tag">Ley 8/2021</span>
+      <span class="header-tag">CC Arts. 249–299</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ STATS BAR ════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">3</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">15+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">10+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">4</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CONTROLS BAR ════════════════════════════════ -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd"/>
+      </svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…" autocomplete="off">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Art. 42 bis a) · Ámbito</button>
+      <button class="pill" data-cat="c2">Art. 42 bis b) · Procedimiento</button>
+      <button class="pill" data-cat="c3">Art. 42 bis c) · Auto y revisión</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ MAIN ═════════════════════════════════════════ -->
+<main class="page-main">
+
+  <!-- ── ARTÍCULOS ─────────────────────────────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-articles">
+      <span class="section-heading-text">Capítulo III bis — Artículos 42 bis a), b) y c)</span>
+      <span class="section-heading-count" id="count-arts">3 artículos</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-articles">
+      <div class="card-grid">
+
+        <!-- ─── ART. 42 BIS a) ─── -->
+        <article class="map-card" data-cat="c1"
+          data-text="artículo 42 bis a ámbito aplicación competencia legitimación postulación medida judicial apoyo estable persona discapacidad juzgado primera instancia residencia habitual cambio residencia ministerio fiscal cónyuge descendientes ascendientes hermanos defensor judicial ajustes procesales art 7 bis">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 42 bis a)</span>
+              <span class="status-tag tag-info">Ámbito y competencia</span>
+            </div>
+            <h2 class="card-title">Ámbito de aplicación, competencia, legitimación y postulación</h2>
+            <p class="card-subtitle">Define el objeto del expediente, el órgano competente, quién puede promoverlo y las garantías procesales de la persona con discapacidad.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>6</strong> personas legitimadas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Ámbito de aplicación</span></div>
+              <ul class="inner-list">
+                <li>Procedimiento aplicable cuando sea pertinente la provisión de alguna <strong>medida judicial de apoyo de carácter estable</strong> a una persona con discapacidad.</li>
+                <li>Constituye el procedimiento ordinario para la adopción judicial de medidas de apoyo (principalmente la curatela). El carácter «estable» lo distingue de las medidas provisionales o urgentes.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Competencia territorial</span></div>
+              <ul class="inner-list">
+                <li><strong>Juzgado de Primera Instancia</strong> del lugar donde resida la persona con discapacidad. Criterio: residencia habitual (fuero personal real).</li>
+              </ul>
+              <div class="note-box note-warn"><strong>Regla procesal — cambio de residencia</strong>Si antes de la celebración de la comparecencia se produjera un cambio de la residencia habitual, se remitirán las actuaciones al Juzgado correspondiente en el estado en que se hallen. La regla opera solo «antes de la comparecencia», no después.</div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Legitimación activa (lista taxativa)</span></div>
+              <ul class="inner-list">
+                <li><span class="i-tag actor">Actor</span> <strong>El Ministerio Fiscal.</strong></li>
+                <li><span class="i-tag actor">Actor</span> <strong>La propia persona con discapacidad</strong> (autopromoción).</li>
+                <li><span class="i-tag actor">Actor</span> Su <strong>cónyuge no separado de hecho o legalmente</strong> o quien se encuentre en situación de hecho asimilable.</li>
+                <li><span class="i-tag actor">Actor</span> Sus <strong>descendientes</strong> (hijos/as).</li>
+                <li><span class="i-tag actor">Actor</span> Sus <strong>ascendientes</strong> (padres/madres).</li>
+                <li><span class="i-tag actor">Actor</span> Sus <strong>hermanos</strong>.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Facultad de comunicación al Ministerio Fiscal</span></div>
+              <ul class="inner-list">
+                <li><strong>Cualquier persona</strong> está facultada para poner en conocimiento del MF los hechos determinantes de una situación que requiera medidas de apoyo. No es legitimación activa sino una facultad de comunicación.</li>
+              </ul>
+              <div class="note-box note-danger"><strong>Obligación legal para autoridades y funcionarios</strong>Las autoridades y funcionarios públicos que, por razón de sus cargos, conocieran la existencia de dichos hechos <strong>deberán</strong> ponerlo en conocimiento del Ministerio Fiscal. Se trata de un deber jurídico, no meramente facultativo. Incluye trabajadores sociales, sanitarios, educativos, etc.</div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Postulación y representación procesal</span></div>
+              <ul class="inner-list">
+                <li>La persona con discapacidad <strong>podrá actuar con su propia defensa y representación</strong>. Presunción de capacidad procesal: no se exige medida de apoyo previa para iniciar o participar en el expediente.</li>
+                <li>Si no fuera previsible que proceda a realizar por sí misma tal designación, con la solicitud se pedirá que se le nombre un <strong>defensor judicial</strong>, que actuará por medio de <strong>Abogado y Procurador</strong>. <span class="ref-tag">Art. 27 LJV</span> <span class="ref-tag">Arts. 295–299 CC</span></li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Adaptaciones y ajustes procesales</span></div>
+              <ul class="inner-list">
+                <li>El LAJ realizará las adaptaciones y ajustes necesarios para que la persona con discapacidad comprenda el objeto, la finalidad y los trámites del expediente, conforme al <span class="ref-tag">Art. 7 bis LJV</span>: lenguaje claro, lectura fácil, interpretación en lenguas de signos, profesionales facilitadores, aplicables en todas las fases procesales.</li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Art. 7 bis LJV</span>
+            <span class="ref-tag">Art. 27 LJV</span>
+            <span class="ref-tag">Arts. 249 y 295 CC</span>
+          </div>
+        </article>
+
+        <!-- ─── ART. 42 BIS b) ─── -->
+        <article class="map-card" data-cat="c2"
+          data-text="artículo 42 bis b procedimiento requisitos solicitud dictamen pericial admisión trámite comparecencia 5 días prueba registro civil informe entidades especializadas entrevista judicial alternativas voluntarias subsidiariedad oposición fin expediente medidas provisionales 30 días proceso contencioso art 756 lec">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 42 bis b)</span>
+              <span class="status-tag tag-ok">Procedimiento</span>
+            </div>
+            <h2 class="card-title">Procedimiento</h2>
+            <p class="card-subtitle">Regula los requisitos de la solicitud, la convocatoria de comparecencia, la entrevista judicial, las causas de finalización del expediente y las medidas provisionales.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> causas de finalización</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Requisitos de la solicitud</span></div>
+              <ul class="inner-list">
+                <li>Documentos que acrediten la <strong>necesidad de adopción de medidas de apoyo</strong>.</li>
+                <li><strong>Dictamen pericial</strong> de profesionales especializados de los ámbitos <strong>social y sanitario</strong>, que aconsejen las medidas de apoyo idóneas en cada caso. Requisito esencial: debe contener propuestas concretas de medidas.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Admisión a trámite y convocatoria de comparecencia</span></div>
+              <ul class="inner-list">
+                <li>Admitida la solicitud por el LAJ, este <strong>convocará a la comparecencia</strong> a: <span class="i-tag actor">Ministerio Fiscal</span> <span class="i-tag actor">Persona con discapacidad</span> <span class="i-tag actor">Cónyuge o conviviente asimilable</span> <span class="i-tag actor">Descendientes, ascendientes y hermanos</span></li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Proposición de prueba</span></div>
+              <ul class="inner-list">
+                <li>Los interesados podrán proponer diligencias de prueba en el plazo de <span class="dl-tag">5 días</span> desde la recepción de la citación. Plazo perentorio: transcurrido sin proposición, precluye la facultad.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Recabatorio de información registral</span></div>
+              <ul class="inner-list">
+                <li>Se recabará <strong>certificación del Registro Civil</strong> y, en su caso, de otros Registros públicos pertinentes sobre las medidas de apoyo inscritas. Finalidad: evitar duplicidades y valorar la suficiencia de las medidas ya vigentes.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Informes preparatorios a la comparecencia</span></div>
+              <ul class="inner-list">
+                <li>La autoridad judicial <strong>podrá</strong> recabar informe de la <strong>entidad pública</strong> del respectivo territorio con funciones de promoción de autonomía y asistencia a personas con discapacidad, o de una <strong>entidad del tercer sector de acción social</strong> habilitada como colaboradora de la Administración de Justicia. Facultativo para el juez, pero muy recomendable.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Desarrollo de la comparecencia — entrevista judicial</span></div>
+              <ul class="inner-list">
+                <li>Se celebra una <strong>entrevista obligatoria entre la autoridad judicial y la persona con discapacidad</strong>. Constituye el núcleo del procedimiento.</li>
+                <li>La autoridad judicial informa a la persona sobre las <strong>alternativas existentes</strong> para obtener apoyo: mediante su entorno social/comunitario, o a través de <strong>medidas voluntarias</strong> (autocuratela, poder preventivo, mandatos). Las medidas judiciales son subsidiarias.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Finalización por opción alternativa</span></div>
+              <ul class="inner-list">
+                <li>Si, tras la información ofrecida por la autoridad judicial, la persona con discapacidad <strong>opta por una medida alternativa de apoyo</strong>, se <strong>pondrá fin al expediente</strong>. Fundamento: respeto a la autonomía de la voluntad <span class="ref-tag">Art. 249 CC</span>.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Finalización por oposición</span></div>
+              <div class="note-box note-danger"><strong>Pone fin al expediente la oposición de</strong></div>
+              <ol class="inner-ol" style="margin-top:.45rem">
+                <li>La <strong>persona con discapacidad</strong> a cualquier tipo de apoyo.</li>
+                <li>El <strong>Ministerio Fiscal</strong>.</li>
+                <li><strong>Cualquiera de los interesados</strong> en la adopción de las medidas de apoyo solicitadas.</li>
+              </ol>
+              <div class="note-box note-purple" style="margin-top:.5rem"><strong>Matización crítica — no es oposición</strong>No se considerará oposición a los efectos señalados la relativa únicamente a la <strong>designación como curador de una persona concreta</strong>. Si la persona se opone a quién sea curador (pero no a la curatela en sí), el expediente continúa y el Juez designará otra persona.</div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Medidas provisionales ante oposición</span></div>
+              <ul class="inner-list">
+                <li>Sin perjuicio del cierre del expediente voluntario, la autoridad judicial podrá adoptar <strong>provisionalmente las medidas de apoyo</strong> que considere convenientes sobre la persona o su patrimonio.</li>
+                <li><span class="i-tag plazo">Plazo máximo:</span> <span class="dl-tag">30 días</span>. Durante ese plazo debe presentarse demanda en proceso contencioso <span class="ref-tag">Art. 756 LEC</span> si se pretende continuar con la adopción forzosa de medidas.</li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Art. 249 CC</span>
+            <span class="ref-tag">Art. 268 CC</span>
+            <span class="ref-tag">Art. 748 LEC</span>
+            <span class="ref-tag">Art. 756 LEC</span>
+          </div>
+        </article>
+
+        <!-- ─── ART. 42 BIS c) ─── -->
+        <article class="map-card" data-cat="c3"
+          data-text="artículo 42 bis c auto resolución revisión periódica medidas necesidad proporcionalidad voluntad deseos preferencias subsidiariedad flexibilidad revisión anticipada curador cambio residencia 10 días testimonio dictamen pericial entrevista nuevo auto confirmación modificación extinción">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 42 bis c)</span>
+              <span class="status-tag tag-ok">Auto y revisión</span>
+            </div>
+            <h2 class="card-title">Auto y posterior revisión de las medidas judicialmente acordadas</h2>
+            <p class="card-subtitle">Regula el contenido del auto resolutorio, la obligatoriedad de la revisión periódica, la competencia para revisar y la tramitación del procedimiento de revisión.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> principios rectores del auto</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+          <div class="card-body">
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Contenido del auto resolutorio</span></div>
+              <ul class="inner-list">
+                <li>Las medidas adoptadas en el auto que ponga fin al expediente deben ser <strong>conformes a la legislación civil</strong> sobre esta cuestión. Referencia principal: Título XI CC <span class="ref-tag">Arts. 249–299 CC</span>.</li>
+              </ul>
+              <div class="note-box note-info"><strong>Principios rectores del auto</strong>
+                <span class="i-tag principio">Necesidad y proporcionalidad</span> <span class="ref-tag">Art. 249 CC</span> ·
+                <span class="i-tag principio">Voluntad, deseos y preferencias</span> de la persona <span class="ref-tag">Art. 249 CC</span> ·
+                <span class="i-tag principio">Subsidiariedad</span>: preferencia por medidas menos restrictivas ·
+                <span class="i-tag principio">Flexibilidad</span>: adaptación a circunstancias cambiantes.
+              </div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Revisión periódica obligatoria</span></div>
+              <ul class="inner-list">
+                <li>Las medidas son objeto de <strong>revisión periódica</strong> en el plazo y la forma que disponga el propio auto. El auto resolutorio debe fijar el plazo de revisión (no existe plazo legal predeterminado).</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Legitimación para solicitar revisión anticipada</span></div>
+              <ul class="inner-list">
+                <li>Cualquiera de las personas mencionadas en el art. 42 bis a) apdo. 3 (MF, la propia persona, cónyuge, descendientes, ascendientes, hermanos).</li>
+                <li>Quien <strong>ejerza el apoyo</strong> (el curador u otro apoyante formal).</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Competencia para la revisión</span></div>
+              <ul class="inner-list">
+                <li><strong>Regla general:</strong> el Juzgado que dictó las medidas será también competente para la revisión, siempre que la persona permanezca residiendo en la misma circunscripción.</li>
+              </ul>
+              <div class="note-box note-warn"><strong>Regla especial — cambio de residencia</strong>Si la persona cambia de residencia, el Juzgado de la nueva residencia pedirá un <strong>testimonio completo del expediente</strong> al Juzgado que anteriormente conoció del mismo, que lo remitirá en los <span class="dl-tag">10 días</span> siguientes a la solicitud.</div>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Tramitación del procedimiento de revisión</span></div>
+              <ul class="inner-list">
+                <li>La autoridad judicial deberá: recabar <strong>dictamen pericial</strong> si lo estima necesario; <strong>entrevistarse con la persona con discapacidad</strong> (acto inexcusable); ordenar otras actuaciones necesarias; y podrá recabar informe de las entidades especializadas del art. 42 bis b) apdo. 2.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Traslado y resolución final</span></div>
+              <ul class="inner-list">
+                <li>Del resultado de las actuaciones se da traslado a la persona con discapacidad, quien ejerza el apoyo, el MF y los interesados personados en el expediente previo.</li>
+                <li>Recibidas las alegaciones y practicada la prueba, la autoridad judicial dicta <strong>nuevo auto</strong> con el contenido que proceda. Contenidos posibles:
+                  <ul class="inner-sub">
+                    <li>Confirmación de las medidas anteriores.</li>
+                    <li>Modificación parcial o total de las medidas.</li>
+                    <li>Extinción de las medidas (si ya no son necesarias).</li>
+                    <li>Sustitución por otras medidas más adecuadas.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Arts. 249–299 CC</span>
+            <span class="ref-tag">Arts. 268–294 CC</span>
+          </div>
+        </article>
+
+        <div class="no-results" id="no-results">No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PLAZOS PROCESALES ───────────────────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Cronograma de plazos procesales</span>
+      <span class="section-heading-count">4 trámites</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead><tr><th style="width:48%">Acto o trámite procesal</th><th>Plazo</th><th>Fundamento normativo</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Proposición de diligencias de prueba desde la recepción de la citación a comparecencia</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 42 bis b) LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Duración máxima de medidas provisionales adoptadas ante oposición</td>
+              <td><span class="plazo-badge plazo-days">30 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 42 bis b) LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Remisión del testimonio completo del expediente por el Juzgado de origen al de nueva residencia</td>
+              <td><span class="plazo-badge plazo-days">10 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 42 bis c) LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Revisión periódica de las medidas (plazo fijado por el propio auto, sin mínimo legal)</td>
+              <td><span class="plazo-badge plazo-other">El fijado en el auto</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 42 bis c) LJV</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ACTORES ────────────────────────────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">4 categorías · 10+ actores</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Órganos judiciales</div>
+          <ul>
+            <li>Juzgado de Primera Instancia <span class="participant-note">(órgano competente)</span></li>
+            <li>Juez / Autoridad judicial <span class="participant-note">(entrevista, auto, revisión)</span></li>
+            <li>Letrado de la Administración de Justicia <span class="participant-note">(admisión, citaciones, ajustes)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Parte principal</div>
+          <ul>
+            <li>Persona con discapacidad <span class="participant-note">(sujeto del expediente; puede ser promotora)</span></li>
+            <li>Defensor judicial <span class="participant-note">(si la persona no puede autodefenderse)</span></li>
+            <li>Abogado y Procurador del defensor judicial <span class="participant-note">(art. 42 bis a) in fine)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Legitimados activos</div>
+          <ul>
+            <li>Ministerio Fiscal <span class="participant-note">(legitimado activo; presencia preceptiva)</span></li>
+            <li>Cónyuge / conviviente <span class="participant-note">(no separado de hecho ni de derecho)</span></li>
+            <li>Descendientes <span class="participant-note">(hijos/as)</span></li>
+            <li>Ascendientes <span class="participant-note">(padres/madres)</span></li>
+            <li>Hermanos</li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-dark">Terceros e informantes</div>
+          <ul>
+            <li>Cualquier persona <span class="participant-note">(facultad de comunicación al MF)</span></li>
+            <li>Autoridades y funcionarios públicos <span class="participant-note">(deber legal de comunicación)</span></li>
+            <li>Peritos sociales y sanitarios <span class="participant-note">(dictamen pericial obligatorio)</span></li>
+            <li>Entidades públicas autonómicas <span class="participant-note">(informe facultativo)</span></li>
+            <li>Entidades del tercer sector <span class="participant-note">(informe facultativo)</span></li>
+            <li>Curador designado <span class="participant-note">(quién ejerce el apoyo)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ECOSISTEMA NORMATIVO ───────────────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">6 cuerpos normativos</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 8/2021, de 2 de junio</div>
+          <div class="norm-title">Reforma del sistema de apoyo a personas con discapacidad</div>
+          <div class="norm-arts">
+            <strong>Introduce</strong> los arts. 42 bis a), b) y c) en la LJV.<br>
+            <strong>Deroga</strong> los arts. 299 bis a 324 CC (antiguo régimen de incapacitación).<br>
+            <strong>Reforma</strong> el Título XI del CC (nuevo sistema de medidas de apoyo).<br>
+            <strong>Modifica</strong> la LEC (proceso contencioso de apoyos).<br>
+            Inspirada en la Convención ONU 2006 sobre Derechos de Personas con Discapacidad. Vigente desde 3 de septiembre de 2021.
+          </div>
+          <span class="norm-tag tag-alert">Norma habilitante</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Código Civil — Título XI (Arts. 249–299)</div>
+          <div class="norm-title">Marco sustantivo de las medidas de apoyo</div>
+          <div class="norm-arts">
+            <strong>Art. 249</strong> — finalidad (desarrollo pleno, dignidad), principios de necesidad y proporcionalidad, deber de atender a voluntad, deseos y preferencias.<br>
+            <strong>Art. 250</strong> — tipología: medidas voluntarias, guarda de hecho, curatela, defensor judicial.<br>
+            <strong>Arts. 251–262</strong> — medidas voluntarias (autocuratela, poderes preventivos): preferibles a las judiciales.<br>
+            <strong>Arts. 263–267</strong> — guarda de hecho: medida informal asistencial o representativa.<br>
+            <strong>Arts. 268–294</strong> — curatela: medida formal continua, principalmente asistencial; extensión determinada judicialmente.<br>
+            <strong>Arts. 295–299</strong> — defensor judicial: medida formal para necesidades ocasionales.
+          </div>
+          <span class="norm-tag tag-warn">Derecho sustantivo</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">LEC — Libro IV, Título I</div>
+          <div class="norm-title">Proceso contencioso de apoyos</div>
+          <div class="norm-arts">
+            <strong>Art. 748</strong> — ámbito de aplicación (incluye medidas de apoyo).<br>
+            <strong>Art. 756</strong> — competencia: JPI del lugar de residencia; destino del expediente voluntario cuando hay oposición.<br>
+            <strong>Art. 757</strong> — legitimación activa (misma lista que art. 42 bis a)). Proceso declarativo con plenas garantías.<br>
+            <strong>Conexión clave:</strong> art. 42 bis b) apdo. 5 → derivación al proceso contencioso del art. 756 LEC cuando hay oposición y se pretende continuar.
+          </div>
+          <span class="norm-tag tag-info">Proceso contencioso</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">LJV 15/2015 — preceptos conexos</div>
+          <div class="norm-title">Normas de la misma ley aplicables al Cap. III bis</div>
+          <div class="norm-arts">
+            <strong>Art. 7 bis</strong> — ajustes procesales para personas con discapacidad: comunicación, lenguaje claro, facilitadores; referenciado expresamente en art. 42 bis a).<br>
+            <strong>Art. 27</strong> — defensor judicial: nombramiento cuando la persona no puede autodefenderse.<br>
+            <strong>Cap. IV LJV</strong> — tutela (solo menores), curatela y guarda de hecho: procedimientos específicos inmediatamente posteriores al Cap. III bis.
+          </div>
+          <span class="norm-tag tag-ok">Ley de procedimiento</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Convención ONU 2006 — CDPD</div>
+          <div class="norm-title">Marco internacional inspirador del sistema</div>
+          <div class="norm-arts">
+            <strong>Art. 12</strong> — igual reconocimiento como persona ante la ley: capacidad jurídica universal e igualitaria; derecho a apoyos para ejercer la capacidad; respeto a la voluntad, deseos y preferencias.<br>
+            <strong>Art. 13</strong> — acceso a la justicia: ajustes procesales, facilitadores.<br>
+            Ratificada por España en 2007. Modelo social de la discapacidad como fundamento ideológico del sistema introducido por la Ley 8/2021.
+          </div>
+          <span class="norm-tag tag-gray">Derecho internacional</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 41/2003 — Patrimonio Protegido</div>
+          <div class="norm-title">Medida complementaria de apoyo patrimonial</div>
+          <div class="norm-arts">
+            <strong>Patrimonio especialmente protegido</strong>: masa de bienes y derechos de destino específico para cubrir las necesidades vitales de la persona con discapacidad.<br>
+            Régimen de administración especial y ventajas fiscales para aportantes. Modificada por la Ley 8/2021 para coordinación con el nuevo sistema. Conexión con las medidas de apoyo en el ámbito de la administración patrimonial.
+          </div>
+          <span class="norm-tag tag-gray">Legislación especial</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ══════════ FOOTER — LEYENDA ═════════════════════════════ -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por artículo</div>
+    <div class="legend-grid">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c1)"></div>Art. 42 bis a) · Ámbito, competencia, legitimación y postulación</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c2)"></div>Art. 42 bis b) · Procedimiento</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c3)"></div>Art. 42 bis c) · Auto y revisión de medidas</div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo III bis · Arts. 42 bis a), b) y c) · Introducido por la Ley 8/2021, de 2 de junio · Con conexiones al CC Título XI (Arts. 249–299), LEC Libro IV, CDPD ONU 2006 · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<script>
+const pills     = document.querySelectorAll('.pill');
+const cards     = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+const countArts = document.getElementById('count-arts');
+let activeCat   = 'all';
+let searchTerm  = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch  = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text      = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show      = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+  if (countArts) countArts.textContent =
+    visible + ' artículo' + (visible !== 1 ? 's' : '') + ' visible' + (visible !== 1 ? 's' : '');
+}
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+function toggleCard(btn) {
+  const card  = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '▼' : '▲';
+  });
+});
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn(); }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut(); }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+</body>
+</html>

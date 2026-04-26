@@ -1,0 +1,2232 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Guía interactiva de tramitación del expediente de provisión de medidas judiciales de apoyo a personas con discapacidad (Ley 15/2015, LJV Cap. III bis, Arts. 42 bis a), b), c))">
+<title>Guía de Tramitación — Medidas Judiciales de Apoyo (LJV Cap. III bis)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   CSS CUSTOM PROPERTIES (G02 system)
+   ══════════════════════════════════════ */
+:root {
+  --navy: #1A2F6E;
+  --navy-mid: #2E4DAA;
+  --navy-lt: #4169E1;
+  --navy-bg: #f0f4f8;
+  --slate: #475569;
+  --slate-bg: #F4F6FB;
+  --text: #1A1A2E;
+  --text-muted: #6B7280;
+  --text-inverse: #FFFFFF;
+  --white: #ffffff;
+  --bdr: #D1D9EE;
+  --bdr-focus: #4169E1;
+  --green: #15803D;
+  --green-bg: #F0FDF4;
+  --green-border: #86EFAC;
+  --red: #B91C1C;
+  --red-bg: #FEF2F2;
+  --red-border: #FCA5A5;
+  --amber: #B45309;
+  --amber-bg: #FFFBEB;
+  --amber-border: #FCD34D;
+  --blue: #3B82F6;
+  --blue-bg: #EFF6FF;
+  --violet: #5B21B6;
+  --violet-bg: #F5F3FF;
+  --violet-border: #DDD6FE;
+  --cyan: #0D9488;
+  --cyan-bg: #F0FDFA;
+  --cyan-border: #99F6E4;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md: 0 2px 8px rgba(0,0,0,.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,.12);
+  --font-base: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'Menlo', 'Monaco', monospace;
+  --text-xs: clamp(10px, 0.7rem + 0.2vw, 12px);
+  --text-sm: clamp(12px, 0.8rem + 0.2vw, 14px);
+  --text-base: clamp(13px, 0.85rem + 0.25vw, 15px);
+  --text-lg: clamp(15px, 0.95rem + 0.3vw, 18px);
+  --text-xl: clamp(17px, 1.1rem + 0.3vw, 22px);
+  --transition-fast: 150ms ease;
+  --transition-norm: 250ms ease;
+  --sidebar-w: 280px;
+  --header-h: 56px;
+  --pbar-h: 40px;
+  --breadcrumb-h: 32px;
+  contain: layout;
+}
+
+/* ══════════════════════════════════════
+   RESET & BASE
+   ══════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-base);
+  font-size: var(--text-base);
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--slate-bg);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ══════════════════════════════════════
+   FOCUS & A11Y
+   ══════════════════════════════════════ */
+:focus-visible {
+  outline: 2px solid var(--bdr-focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+button:focus-visible, a:focus-visible { outline-offset: 1px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* ══════════════════════════════════════
+   APP LAYOUT
+   ══════════════════════════════════════ */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  contain: layout style;
+}
+
+/* ══════════════════════════════════════
+   HEADER
+   ══════════════════════════════════════ */
+#hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: var(--header-h);
+  background: var(--navy);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  contain: layout style;
+  gap: 8px;
+}
+.h-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+.h-seal {
+  width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+}
+.h-title { font-size: var(--text-base); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.h-sub { font-size: var(--text-xs); color: rgba(255,255,255,.6); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.h-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   BUTTONS
+   ══════════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 6px 12px; border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--radius-md); background: rgba(255,255,255,.08);
+  color: #fff; font-family: inherit; font-size: var(--text-sm);
+  cursor: pointer; transition: all var(--transition-fast);
+  white-space: nowrap; text-decoration: none;
+}
+.btn:hover { background: rgba(255,255,255,.18); }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn-toggle-sidebar { font-size: 20px; padding: 4px 10px; }
+.btn-ghost { border-color: transparent; background: transparent; }
+
+/* ══════════════════════════════════════
+   PROGRESS BAR
+   ══════════════════════════════════════ */
+#pbar {
+  display: flex;
+  align-items: center;
+  height: var(--pbar-h);
+  background: var(--navy-mid);
+  padding: 0 20px;
+  position: sticky;
+  top: var(--header-h);
+  z-index: 90;
+  contain: layout style;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+#pbar::-webkit-scrollbar { display: none; }
+.pb-phase {
+  font-size: var(--text-xs); font-weight: 500;
+  padding: 4px 10px; border-radius: 4px;
+  color: rgba(255,255,255,.40); white-space: nowrap;
+  cursor: default; transition: all var(--transition-fast);
+  margin-right: 4px;
+}
+.pb-phase.active { color: #fff; font-weight: 700; background: rgba(65,105,225,.35); }
+.pb-phase.completed { color: rgba(255,255,255,.70); }
+.pb-sep { font-size: 10px; color: rgba(255,255,255,.3); margin: 0 2px; flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   BREADCRUMB
+   ══════════════════════════════════════ */
+#breadcrumb {
+  display: flex; align-items: center; gap: 4px;
+  height: var(--breadcrumb-h); padding: 0 16px;
+  background: var(--white); border-bottom: 1px solid var(--bdr);
+  font-size: var(--text-xs); color: var(--text-muted);
+  overflow-x: auto; white-space: nowrap; flex-shrink: 0;
+}
+.bc-item { cursor: pointer; transition: color var(--transition-fast); }
+.bc-item:hover { color: var(--blue); }
+.bc-sep { color: var(--bdr); margin: 0 2px; }
+.bc-current { color: var(--navy); font-weight: 600; }
+
+/* ══════════════════════════════════════
+   LAYOUT (SIDEBAR + MAIN)
+   ══════════════════════════════════════ */
+#layout {
+  display: flex; flex: 1; min-height: 0;
+  position: relative;
+}
+
+/* ══════════════════════════════════════
+   SIDEBAR
+   ══════════════════════════════════════ */
+#sidebar {
+  width: var(--sidebar-w); flex-shrink: 0;
+  background: var(--navy-mid); color: rgba(255,255,255,.85);
+  display: flex; flex-direction: column;
+  overflow: hidden; position: sticky;
+  top: calc(var(--header-h) + var(--pbar-h) + var(--breadcrumb-h));
+  height: calc(100dvh - var(--header-h) - var(--pbar-h) - var(--breadcrumb-h));
+  transition: transform var(--transition-norm), width var(--transition-norm);
+  z-index: 80;
+  contain: layout style;
+}
+#sidebar.collapsed { width: 0; transform: translateX(-100%); }
+
+#sb-tabs {
+  display: flex; border-bottom: 1px solid rgba(255,255,255,.1);
+  flex-shrink: 0;
+}
+.sb-tab {
+  flex: 1; padding: 10px 0; background: transparent;
+  border: none; border-bottom: 2px solid transparent;
+  color: rgba(255,255,255,.5); font-size: var(--text-sm);
+  font-weight: 600; cursor: pointer; transition: all var(--transition-fast);
+  font-family: inherit;
+}
+.sb-tab:hover { color: rgba(255,255,255,.8); }
+.sb-tab.active { color: #fff; border-bottom-color: var(--blue); }
+
+#sb-map, #sb-journey {
+  flex: 1; overflow-y: auto; padding: 8px 0;
+  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.15) transparent;
+}
+#sb-map::-webkit-scrollbar, #sb-journey::-webkit-scrollbar { width: 4px; }
+#sb-map::-webkit-scrollbar-thumb, #sb-journey::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 2px; }
+
+/* Sidebar map items */
+.sb-phase { margin: 0 8px; }
+.sb-phase-title {
+  font-size: var(--text-xs); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .5px; color: rgba(255,255,255,.4);
+  padding: 10px 8px 4px; border-top: 1px solid rgba(255,255,255,.06);
+}
+.sb-phase:first-child .sb-phase-title { border-top: none; }
+.sb-node {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 8px; border-radius: var(--radius-sm);
+  cursor: pointer; transition: background var(--transition-fast);
+  font-size: var(--text-sm); line-height: 1.35;
+}
+.sb-node:hover { background: rgba(255,255,255,.08); }
+.sb-node.current { background: rgba(59,130,246,.25); color: #fff; font-weight: 600; }
+.sb-node.visited { color: rgba(255,255,255,.6); }
+.sb-node.end-node { color: rgba(255,255,255,.45); font-style: italic; }
+.sb-dot {
+  width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(255,255,255,.25);
+}
+.sb-node.current .sb-dot { background: var(--blue); box-shadow: 0 0 6px rgba(59,130,246,.5); }
+.sb-node.visited .sb-dot { background: var(--green); }
+.sb-node.end-node .sb-dot { background: var(--amber); }
+.sb-node-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+
+/* Sidebar journey items */
+.sb-journey-item {
+  display: flex; gap: 10px; padding: 6px 12px;
+  font-size: var(--text-sm); align-items: flex-start;
+}
+.sb-j-num {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(255,255,255,.12); color: #fff;
+  font-size: 10px; font-weight: 700; display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0;
+  margin-top: 1px;
+}
+.sb-j-label { color: rgba(255,255,255,.7); line-height: 1.35; }
+.sb-j-choice { font-size: var(--text-xs); color: rgba(255,255,255,.4); margin-top: 2px; font-style: italic; }
+
+/* Sidebar normative footer */
+.sb-foot {
+  padding: 12px 14px 8px; border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: auto; flex-shrink: 0;
+}
+.sb-foot-title {
+  font-size: 9px; text-transform: uppercase; letter-spacing: .5px;
+  color: rgba(255,255,255,.35); margin-bottom: 6px; font-weight: 600;
+}
+.sb-foot-item {
+  font-size: 10.5px; color: rgba(255,255,255,.45); margin-bottom: 3px;
+  font-family: var(--font-mono);
+}
+
+/* ══════════════════════════════════════
+   MAIN CONTENT
+   ══════════════════════════════════════ */
+#content {
+  flex: 1; padding: 24px; overflow-y: auto;
+  min-width: 0;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ══════════════════════════════════════
+   CARD
+   ══════════════════════════════════════ */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  contain: layout style;
+}
+
+/* Card header */
+.c-hdr {
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid var(--bdr);
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.c-phase-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 2px 10px; border-radius: 99px;
+  font-size: var(--text-xs); font-weight: 700; white-space: nowrap;
+}
+.c-phase-badge.ph-0 { background: var(--violet-bg); color: var(--violet); }
+.c-phase-badge.ph-1 { background: var(--blue-bg); color: var(--blue); }
+.c-phase-badge.ph-2 { background: var(--cyan-bg); color: var(--cyan); }
+.c-phase-badge.ph-3 { background: var(--amber-bg); color: var(--amber); }
+.c-phase-badge.ph-4 { background: var(--green-bg); color: var(--green); }
+
+.c-hdr-text { flex: 1; min-width: 0; }
+.c-step-num { font-size: var(--text-xs); color: var(--text-muted); font-weight: 600; }
+.c-title { font-size: var(--text-xl); font-weight: 800; color: var(--navy); margin-top: 2px; line-height: 1.3; }
+
+/* Actor badge */
+.actor-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 99px;
+  font-size: var(--text-xs); font-weight: 700; white-space: nowrap;
+  flex-shrink: 0; margin-top: 2px;
+}
+.actor-badge.ac-laj { background: var(--violet-bg); color: var(--violet); }
+.actor-badge.ac-juez { background: var(--cyan-bg); color: var(--cyan); }
+.actor-badge.ac-ambos { background: var(--amber-bg); color: var(--amber); }
+
+/* Card body */
+.c-body {
+  padding: 18px 22px;
+  font-size: var(--text-base);
+  line-height: 1.6;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.c-body p { margin: 0; }
+
+/* Content block types */
+.c-body .deadline {
+  background: var(--amber-bg);
+  border-left: 4px solid var(--amber);
+  padding: 10px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-weight: 600;
+  color: #92400e;
+}
+.c-body .deadline::before { content: '\23F1 '; }
+
+.c-body .note {
+  background: var(--blue-bg);
+  border-left: 4px solid var(--blue);
+  padding: 10px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: #1e40af;
+}
+.c-body .note::before { content: '\2139 '; }
+
+.c-body .warning {
+  background: var(--red-bg);
+  border-left: 4px solid var(--red);
+  padding: 10px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: #991b1b;
+  font-weight: 600;
+}
+.c-body .warning::before { content: '\26A0 '; }
+
+.c-body .law {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  background: var(--slate-bg);
+  padding: 10px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  border-left: 3px solid var(--navy-lt);
+  margin: 12px 0;
+  display: block;
+  line-height: 1.5;
+  color: var(--slate);
+  white-space: pre-wrap;
+}
+
+.c-body .checklist {
+  margin: 12px 0;
+  background: var(--slate-bg);
+  border: 1px solid var(--bdr);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+}
+.c-body .checklist > strong {
+  display: block; margin-bottom: 6px;
+  font-size: var(--text-sm); color: var(--navy);
+}
+.c-body .checklist label {
+  display: flex; align-items: flex-start; gap: 8px;
+  padding: 4px 0; font-size: var(--text-sm);
+  cursor: pointer; line-height: 1.4;
+}
+.c-body .checklist input[type="checkbox"] {
+  margin-top: 3px; flex-shrink: 0; accent-color: var(--green);
+  width: 15px; height: 15px; cursor: pointer;
+}
+
+.c-body .content-list { margin: 12px 0; }
+.c-body .content-list > strong { display: block; margin-bottom: 4px; font-size: var(--text-sm); color: var(--navy); }
+.c-body .content-list ul { margin: 4px 0 0 20px; }
+.c-body .content-list li { margin-bottom: 4px; font-size: var(--text-sm); }
+
+/* Card question */
+.c-question {
+  padding: 14px 22px;
+  background: var(--navy-bg);
+  border-top: 1px solid var(--bdr);
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--navy);
+}
+
+/* Card decision area */
+.c-decisions {
+  padding: 14px 22px 18px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.dec-btn {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 16px; border-radius: var(--radius-md);
+  border: 2px solid var(--bdr); background: var(--white);
+  cursor: pointer; transition: all var(--transition-fast);
+  font-family: inherit; font-size: var(--text-sm);
+  text-align: left; line-height: 1.4; width: 100%;
+}
+.dec-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.dec-btn:active { transform: translateY(0); }
+
+.dec-btn.ok { border-color: var(--green); background: var(--green-bg); color: #065f46; }
+.dec-btn.ok .dec-letter { background: var(--green); color: white; }
+.dec-btn.bad { border-color: var(--red); background: var(--red-bg); color: var(--red); }
+.dec-btn.bad .dec-letter { background: var(--red); color: white; }
+.dec-btn.warn { border-color: var(--amber); background: var(--amber-bg); color: var(--amber); }
+.dec-btn.warn .dec-letter { background: var(--amber); color: white; }
+.dec-btn.neutral { border-color: var(--bdr); background: var(--white); color: var(--slate); }
+.dec-btn.neutral .dec-letter { background: var(--slate); color: white; }
+
+.dec-letter {
+  display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--navy-lt); color: white;
+  font-weight: 700; font-size: 12px; flex-shrink: 0;
+}
+.dec-text { flex: 1; min-width: 0; }
+
+/* ══════════════════════════════════════
+   END CARDS
+   ══════════════════════════════════════ */
+.card.end-success, .card.end-error, .card.end-warning, .card.end-neutral {
+  text-align: center;
+}
+.end-body { padding: 30px 24px; }
+.end-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; border-radius: 50%;
+  font-size: 28px; font-weight: 700; margin-bottom: 14px;
+}
+.end-success .end-icon { background: var(--green-bg); color: var(--green); }
+.end-success .end-icon::before { content: '\2713'; }
+.end-error .end-icon { background: var(--red-bg); color: var(--red); }
+.end-error .end-icon::before { content: '\2717'; }
+.end-warning .end-icon { background: var(--amber-bg); color: var(--amber); }
+.end-warning .end-icon::before { content: '\26A0'; }
+.end-neutral .end-icon { background: var(--blue-bg); color: var(--blue); }
+.end-neutral .end-icon::before { content: '\2139'; }
+
+.end-title { font-size: var(--text-lg); font-weight: 700; margin-bottom: 4px; }
+.end-success .end-title { color: var(--green); }
+.end-error .end-title { color: var(--red); }
+.end-warning .end-title { color: var(--amber); }
+.end-neutral .end-title { color: var(--blue); }
+
+.end-name { font-size: var(--text-lg); font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.end-sub { font-size: var(--text-sm); color: var(--text-muted); margin-bottom: 18px; }
+
+.end-content {
+  text-align: left; display: flex; flex-direction: column;
+  gap: 9px; margin-bottom: 18px;
+}
+.end-content .deadline,
+.end-content .note,
+.end-content .warning,
+.end-content .law { margin: 0; }
+.end-content .checklist { margin: 0; }
+.end-content .content-list { margin: 0; }
+
+.end-btns {
+  display: flex; gap: 10px; justify-content: center;
+  padding: 10px 0 18px; flex-wrap: wrap;
+}
+.btn-back {
+  padding: 9px 20px; border-radius: var(--radius-md);
+  border: 1px solid var(--bdr); background: var(--white);
+  color: var(--text); font-family: inherit; font-size: var(--text-base);
+  font-weight: 600; cursor: pointer; transition: all var(--transition-fast);
+}
+.btn-back:hover { background: var(--slate-bg); }
+.btn-back:disabled { opacity: .4; cursor: not-allowed; }
+.btn-restart {
+  padding: 9px 20px; border-radius: var(--radius-md);
+  border: 1px solid var(--navy-lt); background: var(--navy-lt);
+  color: #fff; font-family: inherit; font-size: var(--text-base);
+  font-weight: 600; cursor: pointer; transition: all var(--transition-fast);
+}
+.btn-restart:hover { background: var(--navy); }
+
+/* Summary box */
+.summary-box {
+  text-align: left; background: var(--slate-bg);
+  border: 1px solid var(--bdr); border-radius: var(--radius-md);
+  padding: 12px 14px; margin-top: 14px;
+}
+.sum-title {
+  font-size: var(--text-sm); font-weight: 700;
+  color: var(--navy); margin-bottom: 8px;
+}
+.sum-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 5px 0; border-bottom: 1px solid var(--bdr);
+  font-size: 13px;
+}
+.sum-item:last-child { border-bottom: none; }
+.sum-num {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--navy); color: #fff;
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.sum-item.current { font-weight: 600; }
+.sum-item.current .sum-num { background: var(--green); }
+.sum-choice {
+  font-size: var(--text-xs); color: var(--navy-lt);
+  margin-top: 2px; font-style: italic;
+}
+
+/* ══════════════════════════════════════
+   MAPA OVERLAY
+   ══════════════════════════════════════ */
+#mapa-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(15,23,42,.92);
+  backdrop-filter: blur(6px);
+  display: flex; flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+#mapa-overlay[hidden] { display: none; }
+
+.mapa-cols {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  gap: 16px;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.mapa-col {}
+.mapa-col-title {
+  font-size: var(--text-sm); font-weight: 700;
+  color: rgba(255,255,255,.9);
+  padding: 8px 10px; border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  text-align: center;
+}
+.mapa-col-title.ph-0 { background: var(--violet); }
+.mapa-col-title.ph-1 { background: var(--blue); }
+.mapa-col-title.ph-2 { background: var(--cyan); }
+.mapa-col-title.ph-3 { background: var(--amber); }
+.mapa-col-title.ph-4 { background: var(--green); }
+
+.mapa-nodes {
+  background: rgba(255,255,255,.06);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  padding: 6px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+
+.mapa-node {
+  padding: 6px 8px; border-radius: var(--radius-sm);
+  background: rgba(255,255,255,.06);
+  cursor: pointer; transition: background var(--transition-fast);
+  font-size: var(--text-xs); line-height: 1.3;
+  color: rgba(255,255,255,.7);
+  border: 1px solid rgba(255,255,255,.08);
+}
+.mapa-node:hover { background: rgba(255,255,255,.14); color: #fff; }
+.mapa-node.current { background: rgba(59,130,246,.3); border-color: var(--blue); color: #fff; font-weight: 600; }
+.mapa-node.visited { border-color: rgba(22,163,74,.4); color: rgba(255,255,255,.8); }
+.mapa-node.end-type { border-style: dashed; }
+.mapa-node-title { font-weight: 600; margin-bottom: 2px; }
+.mapa-node-actor { font-size: 9px; opacity: .7; }
+
+/* ══════════════════════════════════════
+   TOOLTIP
+   ══════════════════════════════════════ */
+.tooltip-box {
+  position: fixed; z-index: 300;
+  background: var(--navy); color: #fff;
+  padding: 8px 12px; border-radius: var(--radius-sm);
+  font-size: var(--text-xs); line-height: 1.4;
+  max-width: 280px; box-shadow: var(--shadow-lg);
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════
+   STATUS MESSAGE (TOAST)
+   ══════════════════════════════════════ */
+#status-msg {
+  position: fixed; bottom: 20px; right: 20px;
+  z-index: 250; display: flex; flex-direction: column;
+  gap: 8px; pointer-events: none;
+}
+.status-toast {
+  padding: 10px 18px; border-radius: var(--radius-md);
+  font-size: var(--text-sm); font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  animation: toast-in .3s ease forwards;
+  pointer-events: auto;
+}
+.status-toast.info { background: var(--blue); color: #fff; }
+.status-toast.success { background: var(--green); color: #fff; }
+.status-toast.warn { background: var(--amber); color: #fff; }
+.status-toast.error { background: var(--red); color: #fff; }
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes toast-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* ══════════════════════════════════════
+   MOBILE RESPONSIVE
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  :root { --sidebar-w: 260px; }
+  .h-title { font-size: var(--text-sm); }
+  .h-sub { display: none; }
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    z-index: 150;
+    transform: translateX(-100%);
+    height: 100dvh;
+  }
+  #sidebar.open { transform: translateX(0); }
+  #sidebar.collapsed { transform: translateX(-100%); }
+  .sidebar-backdrop {
+    position: fixed; inset: 0; z-index: 140;
+    background: rgba(0,0,0,.5);
+    display: none;
+  }
+  .sidebar-backdrop.show { display: block; }
+  #content { padding: 16px; }
+  .mapa-cols {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+  .c-hdr { padding: 14px 16px 10px; }
+  .c-body { padding: 14px 16px; }
+  .c-question { padding: 12px 16px; }
+  .c-decisions { padding: 12px 16px 16px; }
+  .pb-phase { font-size: var(--text-xs); padding: 0 4px; }
+}
+
+@media (max-width: 480px) {
+  .h-right .btn span.btn-label { display: none; }
+  .dec-btn { padding: 10px 12px; }
+  .dec-letter { width: 22px; height: 22px; font-size: 11px; }
+}
+
+/* ══════════════════════════════════════
+   PRINT
+   ══════════════════════════════════════ */
+@media print {
+  #hdr, #pbar, #breadcrumb, #sidebar, #mapa-overlay, #status-msg, .tooltip-box,
+  .sidebar-backdrop, .c-decisions, .btn-back, .btn-restart { display: none !important; }
+  #content { padding: 0; max-width: 100%; }
+  .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div id="app" role="application" aria-label="Guía de tramitación de medidas de apoyo judicial">
+  <header id="hdr" role="banner">
+    <div class="h-left">
+      <button class="btn btn-toggle-sidebar" id="btnToggleSidebar" data-action="toggle-sidebar" aria-label="Alternar menú lateral" aria-expanded="false">&#9776;</button>
+      <div class="h-seal" aria-hidden="true">&#9878;</div>
+      <div>
+        <div class="h-title">Guía de Tramitación — Medidas Judiciales de Apoyo</div>
+        <div class="h-sub">Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Cap. III bis · Arts. 42 bis a), b) y c)</div>
+      </div>
+    </div>
+    <div class="h-right">
+      <button class="btn btn-ghost" data-action="toggle-mapa" aria-label="Ver mapa completo del procedimiento">&#128506; <span class="btn-label">Mapa</span></button>
+      <button class="btn btn-ghost" data-action="descargar" aria-label="Descargar guía como archivo HTML">&#11015; <span class="btn-label">Descargar</span></button>
+      <button class="btn btn-ghost" data-action="reiniciar" aria-label="Reiniciar el procedimiento desde el inicio">&#8634; <span class="btn-label">Reiniciar</span></button>
+    </div>
+  </header>
+  <nav id="pbar" role="navigation" aria-label="Progreso por fases del procedimiento"></nav>
+  <nav id="breadcrumb" role="navigation" aria-label="Ruta de navegación"></nav>
+  <div id="layout">
+    <aside id="sidebar" aria-label="Navegación lateral">
+      <div id="sb-tabs">
+        <button class="sb-tab active" data-action="sb-tab" data-tab="map">Mapa</button>
+        <button class="sb-tab" data-action="sb-tab" data-tab="journey">Recorrido</button>
+      </div>
+      <div id="sb-map"></div>
+      <div id="sb-journey" style="display:none"></div>
+    </aside>
+    <main id="content" role="main" aria-live="polite" aria-atomic="false"></main>
+  </div>
+  <div id="mapa-overlay" role="dialog" aria-modal="true" aria-label="Vista completa del mapa del procedimiento" hidden>
+    <div style="text-align:center;margin-bottom:16px">
+      <button class="btn" data-action="close-mapa" style="background:var(--navy);border-color:rgba(255,255,255,.2)">&#8592; Volver al recorrido</button>
+    </div>
+    <div id="mapaContent" class="mapa-cols"></div>
+  </div>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <div id="active-tooltip" class="tooltip-box" style="display:none;"></div>
+  <div id="status-msg" role="status" aria-live="polite"></div>
+</div>
+
+<script>
+/* ══════════════════════════════════════
+   CONFIGURATION
+   ══════════════════════════════════════ */
+const CONFIG = {
+  START_STEP: 'inicio',
+  TOAST_DURATION: 3000,
+  STORAGE_KEY: 'guia_medidas_apoyo_state'
+};
+
+/* ══════════════════════════════════════
+   PHASES
+   ══════════════════════════════════════ */
+const PHASES = [
+  { id: 'inicio', name: '1. Iniciación' },
+  { id: 'instruccion', name: '2. Instrucción' },
+  { id: 'comparecencia', name: '3. Comparecencia' },
+  { id: 'resolucion', name: '4. Resolución' },
+  { id: 'revision', name: '5. Revisión' }
+];
+
+/* ══════════════════════════════════════
+   STEPS DATA
+   ══════════════════════════════════════ */
+const STEPS = {
+  // ══════════════════════════════════════
+  // FASE 0: INICIACIÓN
+  // ══════════════════════════════════════
+  inicio: {
+    ph: 0, t: 'Inicio del procedimiento', ac: 'laj',
+    c: [
+      ['i', 'El expediente de provisión de medidas judiciales de apoyo (Cap. III bis, Ley 15/2015) se tramita cuando sea pertinente la provisión de una medida judicial de apoyo de carácter estable a una persona con discapacidad.'],
+      ['n', 'Las medidas judiciales son el último recurso del sistema: solo proceden en ausencia de medidas voluntarias de apoyo suficientes (poderes preventivos, autocuratela, guarda de hecho, etc.).'],
+      ['n', 'Orden de preferencia (art. 249 CC): 1.º Medidas voluntarias (arts. 255–256 CC) · 2.º Guarda de hecho (arts. 291–298 CC) · 3.º Medidas judiciales (curatela; subsidiariamente, defensor judicial).'],
+      ['w', 'Verificar siempre la existencia de medidas voluntarias previas: si son suficientes, la vía judicial no procede.'],
+      ['cl', 'Verificación previa', [
+        'La persona requiere apoyo de carácter estable para ejercer su capacidad jurídica',
+        'No existen medidas voluntarias suficientes (autocuratela, poder preventivo)',
+        'La persona reside en la circunscripción del juzgado competente'
+      ]],
+      ['l', 'Art. 42 bis a) LJV · Art. 249 CC (Ley 8/2021) · Art. 2.3 LJV · Art. 12 CRPD (2006)']
+    ],
+    q: '¿Procede la provisión de una medida judicial de apoyo estable?',
+    opts: [
+      { t: 'Sí, se requiere medida judicial — Continuar con el expediente', l: 'Sí', n: 'solicitud_parte' },
+      { t: 'No, existen alternativas voluntarias suficientes', l: 'No', n: 'fin_no_procede' }
+    ]
+  },
+
+  solicitud_parte: {
+    ph: 0, t: 'Recepción de solicitud de parte legitimada', ac: 'laj',
+    c: [
+      ['i', 'El expediente se inicia por solicitud escrita de cualquier persona legitimada conforme al art. 42 bis a) apdo. 3 LJV.'],
+      ['cl', 'Personas legitimadas para promover el expediente', [
+        'La propia persona con discapacidad',
+        'Su cónyuge no separado de hecho o legalmente',
+        'Quien se encuentre en situación de hecho asimilable al cónyuge',
+        'Descendientes de la persona con discapacidad',
+        'Ascendientes de la persona con discapacidad',
+        'Hermanos de la persona con discapacidad',
+        'El Ministerio Fiscal (directamente legitimado)'
+      ]],
+      ['n', 'Cualquier persona (ciudadano particular) puede activar al MF comunicando los hechos determinantes. Las autoridades y funcionarios públicos tienen obligación legal de hacerlo por razón de su cargo.'],
+      ['l', 'Art. 42 bis a) apdo. 3 LJV']
+    ],
+    q: '¿Cuál es el origen de la solicitud?',
+    opts: [
+      { t: 'Solicitud de una de las personas legitimadas — Continuar tramitación', l: 'A', v: 'ok', n: 'documentacion' },
+      { t: 'Iniciativa del Ministerio Fiscal (de oficio o tras comunicación externa)', l: 'B', v: 'neutral', n: 'mf_inicio' }
+    ]
+  },
+
+  mf_inicio: {
+    ph: 0, t: 'Inicio a instancia del Ministerio Fiscal', ac: 'laj',
+    c: [
+      ['i', 'El Ministerio Fiscal puede promover el expediente directamente o tras ser activado por comunicación externa. En ambos casos, el MF iniciará el presente expediente.'],
+      ['cl', 'Dos vías de activación del Ministerio Fiscal', [
+        'A) CIUDADANO PARTICULAR (facultativa): cualquier persona puede comunicar al MF los hechos que puedan ser determinantes de la necesidad de apoyo judicial',
+        'B) AUTORIDAD O FUNCIONARIO PÚBLICO (obligatoria): quien por razón de su cargo conozca los hechos DEBE comunicarlos al MF — es una obligación legal, no una facultad'
+      ]],
+      ['n', 'El papel del MF como garante del interés público explica esta doble vía de activación (art. 4 LJV).'],
+      ['l', 'Art. 42 bis a) apdo. 3, párrs. 2.º y 3.º LJV · Art. 4 LJV']
+    ],
+    q: '¿Cuál es el origen de la comunicación al Ministerio Fiscal?',
+    opts: [
+      { t: 'Comunicación voluntaria de un particular: el MF inicia el expediente de oficio', l: 'A', v: 'neutral', n: 'documentacion' },
+      { t: 'Comunicación obligatoria de autoridades o funcionarios públicos: el MF inicia el expediente de oficio', l: 'B', v: 'neutral', n: 'documentacion' }
+    ]
+  },
+
+  // ══════════════════════════════════════
+  // FASE 1: INSTRUCCIÓN
+  // ══════════════════════════════════════
+  documentacion: {
+    ph: 1, t: 'Presentación y revisión de la documentación inicial', ac: 'laj',
+    c: [
+      ['i', 'La solicitud debe ir acompañada de la documentación preceptiva prevista en el art. 42 bis b) apdo. 1 LJV. El Letrado de la AJ verifica que los documentos requeridos estén completos.'],
+      ['cl', 'Documentación preceptiva — OBLIGATORIA', [
+        '✦ Documentos que acrediten la necesidad de adoptar medidas de apoyo',
+        '✦ Dictamen pericial de profesionales especializados del ámbito SOCIAL',
+        '✦ Dictamen pericial de profesionales especializados del ámbito SANITARIO',
+        '✦ El dictamen debe recomendar las medidas de apoyo idóneas en el caso concreto'
+      ]],
+      ['cl', 'Documentación adicional — RECOMENDABLE', [
+        'Proposición de las pruebas a practicar en la comparecencia (puede acompañarse a la solicitud)',
+        'Documentos acreditativos de la relación con la persona con discapacidad (si el promotor es familiar)',
+        'Certificaciones o informes médicos adicionales que acrediten la situación'
+      ]],
+      ['n', 'El dictamen debe ser emitido por trabajadores sociales, psicólogos, médicos forenses, neurólogos, psiquiatras u otros profesionales especializados.'],
+      ['n', 'La proposición de prueba puede realizarse ahora (con la solicitud) Y/O en el plazo de 5 días desde la citación: ambas vías son compatibles.'],
+      ['w', 'Sin dictamen pericial adecuado, la solicitud puede ser inadmitida o requerir subsanación.'],
+      ['l', 'Art. 42 bis b) apdo. 1 LJV']
+    ],
+    nx: 'admision'
+  },
+
+  admision: {
+    ph: 1, t: 'Examen de admisión a trámite', ac: 'laj',
+    c: [
+      ['i', 'El Letrado de la AJ examina la solicitud y la documentación aportada para determinar su admisibilidad a trámite.'],
+      ['cl', 'Requisitos de admisibilidad a verificar', [
+        'Legitimación del promotor (art. 42 bis a) apdo. 3 LJV)',
+        'Competencia territorial del Juzgado (residencia de la persona con discapacidad)',
+        'Aportación del dictamen pericial social Y sanitario',
+        'Aportación de documentación acreditativa de la necesidad de las medidas',
+        'Ausencia de resolución firme previa sobre el mismo objeto sin cambio de circunstancias (art. 19 LJV)',
+        'Inexistencia de proceso contencioso pendiente sobre el mismo objeto (art. 6 LJV)',
+        'Inexistencia de expediente simultáneo sobre idéntico objeto (art. 6.1 LJV)'
+      ]],
+      ['l', 'Art. 42 bis b) apdo. 2 LJV · Arts. 6 y 19 LJV · Art. 5 LJV']
+    ],
+    q: '¿La solicitud cumple los requisitos de admisibilidad?',
+    opts: [
+      { t: 'Sí, cumple todos los requisitos — Admitir a trámite y continuar', l: 'A', v: 'ok', n: 'competencia' },
+      { t: 'Presenta defectos subsanables — Requerir la subsanación antes de admitir', l: 'B', v: 'warn', n: 'subsanacion' },
+      { t: 'Presenta defectos insubsanables o carece de legitimación — Inadmitir', l: 'C', v: 'bad', n: 'fin_inadmision' }
+    ]
+  },
+
+  subsanacion: {
+    ph: 1, t: 'Requerimiento de subsanación de defectos', ac: 'laj',
+    c: [
+      ['i', 'El Letrado de la AJ requiere al solicitante la subsanación de los defectos apreciados, indicando con claridad qué debe corregirse y en qué plazo.'],
+      ['n', 'No existe en la LJV un plazo específico para la subsanación; se aplica la LEC supletoriamente (art. 8 LJV). El plazo habitual es de 10 días, salvo que el Juez disponga otro.'],
+      ['w', 'Si el promotor es el Ministerio Fiscal, la subsanación se entiende de oficio sin necesidad de requerimiento externo.'],
+      ['l', 'Art. 8 LJV (supletoriedad LEC) · Art. 231 LEC']
+    ],
+    q: '¿Se subsanan los defectos en el plazo concedido?',
+    opts: [
+      { t: 'Sí — los defectos quedan subsanados: admitir a trámite y continuar', l: 'A', v: 'ok', n: 'competencia' },
+      { t: 'No — no se subsanan en plazo: procede la inadmisión', l: 'B', v: 'bad', n: 'fin_inadmision' }
+    ]
+  },
+
+  competencia: {
+    ph: 1, t: 'Verificación de la competencia territorial', ac: 'laj',
+    c: [
+      ['i', 'Es competente el Juzgado de Primera Instancia del lugar donde resida la persona con discapacidad. La competencia territorial es imperativa e inderogable: no puede modificarse por sumisión de las partes (art. 2.2 LJV).'],
+      ['n', 'Si el expediente llega remitido por otro Juzgado (inhibición), verificar que la residencia actual de la persona corresponde a este partido judicial antes de proseguir la tramitación.'],
+      ['w', 'ATENCIÓN: si se detecta cambio de residencia habitual ANTES de la celebración de la comparecencia, deben remitirse las actuaciones al Juzgado del nuevo domicilio en el estado en que se hallen.'],
+      ['n', 'Una vez celebrada la comparecencia, la competencia se consolida y no se traslada por cambio de residencia.'],
+      ['l', 'Art. 42 bis a) apdo. 2 LJV · Art. 2.2 LJV']
+    ],
+    q: '¿Ha cambiado la residencia habitual de la persona con discapacidad antes de la comparecencia?',
+    opts: [
+      { t: 'No — este Juzgado es competente; se continúa la tramitación', l: 'A', v: 'ok', n: 'diligencias' },
+      { t: 'Sí — debe remitirse el expediente al Juzgado del nuevo domicilio', l: 'B', v: 'warn', n: 'fin_inhibicion' }
+    ]
+  },
+
+  diligencias: {
+    ph: 1, t: 'Práctica de diligencias previas a la comparecencia', ac: 'laj',
+    c: [
+      ['i', 'Antes de la comparecencia, el Letrado de la AJ y la Autoridad Judicial practican las diligencias de instrucción previstas en el art. 42 bis b) apdos. 3 y 4 LJV.'],
+      ['cl', 'Diligencias OBLIGATORIAS (preceptivas)', [
+        'Recabar certificación del REGISTRO CIVIL sobre medidas de apoyo inscritas',
+        'Recabar certificación de otros Registros públicos que se consideren pertinentes (si procede)'
+      ]],
+      ['cl', 'Diligencias POTESTATIVAS (a criterio de la Autoridad Judicial)', [
+        'Solicitar informe a la entidad pública territorial con funciones de promoción de la autonomía y asistencia a personas con discapacidad (sistema SAAD, Ley 39/2006)',
+        'Solicitar informe a entidad del tercer sector de acción social debidamente habilitada como colaboradora de la Administración de Justicia'
+      ]],
+      ['n', 'Los informes de las entidades especializadas son potestativos: la Autoridad Judicial los solicitará atendiendo a las circunstancias del caso y a la complejidad de la situación.'],
+      ['n', 'Finalidad: conocer si existen medidas de apoyo vigentes (voluntarias o judiciales) para evitar duplicidades y valorar suficiencia.'],
+      ['l', 'Art. 42 bis b) apdos. 3 y 4 LJV · Ley 39/2006 (SAAD)']
+    ],
+    nx: 'citacion'
+  },
+
+  citacion: {
+    ph: 1, t: 'Convocatoria a la comparecencia', ac: 'laj',
+    c: [
+      ['i', 'El Letrado de la AJ convoca a la comparecencia a todas las personas previstas en el art. 42 bis b) apdo. 2 LJV.'],
+      ['cl', 'Personas que deben ser convocadas PRECEPTIVAMENTE', [
+        'Ministerio Fiscal (parte necesaria)',
+        'La persona con discapacidad (parte imprescindible e inexcusable)',
+        'Cónyuge no separado de hecho o legalmente, o persona en situación de hecho asimilable (si existe)',
+        'Descendientes de la persona con discapacidad (si existen)',
+        'Ascendientes de la persona con discapacidad (si existen)',
+        'Hermanos de la persona con discapacidad (si existen)'
+      ]],
+      ['d', 'Plazo para proponer prueba: 5 días desde la recepción de la citación (plazo perentorio).'],
+      ['n', 'En la citación debe hacerse constar que los interesados disponen de un plazo de 5 días desde su recepción para proponer las diligencias de prueba que deseen practicar en la comparecencia.'],
+      ['w', 'La citación debe realizarse con antelación suficiente para garantizar el ejercicio efectivo del derecho de defensa. Se aplica supletoriamente la LEC (art. 8 LJV).'],
+      ['l', 'Art. 42 bis b) apdo. 2 LJV · Art. 8 LJV']
+    ],
+    nx: 'prueba'
+  },
+
+  prueba: {
+    ph: 1, t: 'Proposición de prueba por los interesados', ac: 'laj',
+    c: [
+      ['d', 'Plazo de 5 días desde la recepción de la citación para que los interesados propongan diligencias de prueba para la comparecencia (art. 42 bis b) apdo. 3 LJV).'],
+      ['i', 'El Letrado de la AJ recibe y tramita las solicitudes de prueba de los interesados y las eleva a la Autoridad Judicial para su admisión o denegación.'],
+      ['n', 'Compatibilidad de momentos de proposición: la prueba puede haberse propuesto con la solicitud inicial (art. 42 bis b) apdo. 1) Y/O en este plazo de 5 días. Ambas vías son simultáneamente válidas.'],
+      ['n', 'La Autoridad Judicial puede acordar prueba DE OFICIO cuando exista interés público o afecte a personas con discapacidad (art. 5 LJV). Esta facultad no está limitada a la proposición de parte.'],
+      ['cl', 'Tipos de prueba habituales', [
+        'Nuevos dictámenes periciales complementarios',
+        'Declaración de testigos sobre la situación de la persona',
+        'Informes de servicios sociales o entidades colaboradoras',
+        'Documentación adicional sobre recursos de apoyo disponibles'
+      ]],
+      ['n', 'Transcurrido el plazo sin proposición, precluye la facultad de proponer prueba para la comparecencia.'],
+      ['l', 'Art. 42 bis b) apdo. 3 LJV · Art. 5 LJV']
+    ],
+    nx: 'informes_preparatorios'
+  },
+
+  informes_preparatorios: {
+    ph: 1, t: 'Recabación de informes pre-comparecencia (facultativo)', ac: 'juez',
+    c: [
+      ['i', 'Antes de la comparecencia, la Autoridad Judicial podrá recabar informe de las entidades especializadas para una toma de decisión fundamentada y adaptada a recursos comunitarios.'],
+      ['cl', 'Entidades informantes (art. 42 bis b) apdo. 4 LJV)', [
+        'Entidad pública con funciones de promoción de autonomía y asistencia a personas con discapacidad (servicios sociales autonómicos)',
+        'Entidad del tercer sector de acción social habilitada como colaboradora de la Administración de Justicia'
+      ]],
+      ['n', 'Aunque facultativo, este informe es muy recomendable para una toma de decisión fundamentada y adaptada a recursos comunitarios.'],
+      ['n', 'El informe debe centrarse en alternativas de apoyo no judiciales y recursos de proximidad disponibles.'],
+      ['l', 'Art. 42 bis b) apdo. 4 LJV · Ley 39/2006 (SAAD)']
+    ],
+    nx: 'postulacion'
+  },
+
+  postulacion: {
+    ph: 1, t: 'Verificación de la postulación de la persona con discapacidad', ac: 'laj',
+    c: [
+      ['i', 'La persona con discapacidad puede actuar con su propia defensa y representación (art. 42 bis a) apdo. 4 LJV), sin necesidad de Abogado y Procurador. Esta es una regla especial favorable.'],
+      ['n', 'Regla general del art. 3.2 LJV: Abogado y Procurador son necesarios para recursos de revisión y apelación y desde que se formule oposición en el expediente.'],
+      ['w', 'Si NO es previsible que la persona pueda designar Abogado y Procurador por sí misma, con la solicitud debe pedirse el nombramiento de defensor judicial.'],
+      ['l', 'Art. 42 bis a) apdo. 4 LJV · Art. 3.2 LJV · Arts. 285 ss. CC · Cap. IV LJV (arts. 43 ss.)']
+    ],
+    q: '¿Puede la persona con discapacidad actuar con su propia defensa y representación?',
+    opts: [
+      { t: 'Sí — la persona puede designar o ya ha designado Abogado y/o Procurador, o ejercerá su propia defensa', l: 'A', v: 'ok', n: 'adaptaciones' },
+      { t: 'No es previsible — debe solicitarse el nombramiento de defensor judicial antes de continuar', l: 'B', v: 'warn', n: 'defensor_judicial' }
+    ]
+  },
+
+  defensor_judicial: {
+    ph: 1, t: 'Nombramiento de defensor judicial', ac: 'juez',
+    c: [
+      ['i', 'Cuando no sea previsible que la persona con discapacidad designe Abogado y Procurador por sí misma, se solicita y tramita el nombramiento de defensor judicial, quien actuará a través de Abogado y Procurador.'],
+      ['cl', 'Actuaciones para el nombramiento', [
+        'Solicitar el nombramiento de defensor judicial (junto con la solicitud o durante la instrucción)',
+        'El Juzgado tramita el nombramiento conforme al Cap. IV LJV y los arts. 285 ss. CC',
+        'El defensor judicial designado nombra Abogado y Procurador para representar a la persona',
+        'Notificar el nombramiento y dar traslado al defensor judicial de las actuaciones practicadas hasta el momento'
+      ]],
+      ['n', 'El defensor judicial actúa en defensa de los intereses de la persona con discapacidad. Es una figura de protección procesal, no sustitución de la voluntad.'],
+      ['l', 'Art. 42 bis a) apdo. 4, párr. 2.º LJV · Arts. 285 ss. CC · Cap. IV LJV (art. 43 ss.)']
+    ],
+    nx: 'adaptaciones'
+  },
+
+  adaptaciones: {
+    ph: 1, t: 'Adaptaciones y ajustes — Art. 7 bis LJV', ac: 'laj',
+    c: [
+      ['i', 'El Letrado de la AJ realizará las adaptaciones y ajustes necesarios para garantizar que la persona con discapacidad comprende el objeto, la finalidad y los trámites del expediente (art. 42 bis a) apdo. 5, con remisión expresa al art. 7 bis LJV).'],
+      ['cl', 'Adaptaciones y ajustes a garantizar', [
+        'Comunicaciones en LENGUAJE CLARO, SENCILLO Y ACCESIBLE (incluyendo lectura fácil)',
+        'Interpretación en LENGUA DE SIGNOS reconocida legalmente (cuando sea necesario)',
+        'MEDIOS DE APOYO A LA COMUNICACIÓN ORAL para personas sordas, con discapacidad auditiva y sordociegas',
+        'Participación de un PROFESIONAL EXPERTO FACILITADOR que realice tareas de adaptación y ajuste',
+        'Derecho de la persona a estar ACOMPAÑADA por persona de su elección desde el primer contacto con autoridades y funcionarios'
+      ]],
+      ['n', 'Las adaptaciones se realizan de oficio y también a petición de cualquiera de las partes o del MF, en TODAS las fases y actuaciones procesales, incluyendo los actos de comunicación.'],
+      ['l', 'Art. 42 bis a) apdo. 5 LJV · Art. 7 bis LJV']
+    ],
+    nx: 'comparecencia'
+  },
+
+  // ══════════════════════════════════════
+  // FASE 2: COMPARECENCIA
+  // ══════════════════════════════════════
+  comparecencia: {
+    ph: 2, t: 'Celebración de la comparecencia', ac: 'juez',
+    c: [
+      ['i', 'La Autoridad Judicial preside la comparecencia, en la que se practica preceptivamente una entrevista directa con la persona con discapacidad. Este es el núcleo esencial del procedimiento.'],
+      ['cl', 'Actuaciones en la comparecencia (orden cronológico)', [
+        '1.º Entrevista de la Autoridad Judicial con la persona con discapacidad',
+        '2.º Información a la persona sobre las alternativas existentes para obtener el apoyo que precisa:',
+        '    a) Apoyo mediante su entorno social o comunitario',
+        '    b) Medidas de apoyo de naturaleza voluntaria (arts. 255 ss. CC: poderes preventivos, autocuratela)',
+        '3.º Práctica de las diligencias de prueba admitidas',
+        '4.º Formulación oral de conclusiones por los interesados'
+      ]],
+      ['n', 'Las adaptaciones del art. 7 bis LJV deben garantizarse durante toda la comparecencia.'],
+      ['n', 'Principio de subsidiariedad: las medidas judiciales solo proceden si las voluntarias o informales son insuficientes.'],
+      ['l', 'Art. 42 bis b) apdos. 5 y 6 LJV · Art. 7 bis LJV · Arts. 255–256 CC']
+    ],
+    q: '¿La persona con discapacidad opta por una medida alternativa de apoyo (voluntaria o comunitaria) tras ser informada por la Autoridad Judicial?',
+    opts: [
+      { t: 'Sí — la persona opta por medida voluntaria o apoyo comunitario: el expediente concluye en este punto', l: 'A', v: 'ok', n: 'fin_medida_voluntaria' },
+      { t: 'No — la persona no opta por medida alternativa: el expediente continúa hacia la adopción de medidas judiciales', l: 'B', v: 'neutral', n: 'control_oposicion' }
+    ]
+  },
+
+  control_oposicion: {
+    ph: 2, t: 'Control de la oposición en la comparecencia', ac: 'juez',
+    c: [
+      ['i', 'La Autoridad Judicial verifica si se ha producido oposición real a las medidas de apoyo. La oposición de determinados sujetos pone fin al expediente (art. 42 bis b) apdo. 7 LJV).'],
+      ['cl', 'Sujetos cuya oposición PONE FIN al expediente', [
+        'La propia persona con discapacidad (oposición a cualquier tipo de apoyo)',
+        'El Ministerio Fiscal',
+        'Cualquiera de los interesados en la adopción de las medidas solicitadas'
+      ]],
+      ['w', 'EXCEPCIÓN IMPORTANTE: La oposición referida ÚNICAMENTE a la designación como curador de una persona concreta NO se considera oposición a estos efectos. El expediente continúa aunque se discrepe sobre quién debe ser curador.'],
+      ['n', 'Solo la oposición global y absoluta a cualquier apoyo cierra la vía de jurisdicción voluntaria.'],
+      ['l', 'Art. 42 bis b) apdo. 7 LJV']
+    ],
+    q: '¿Se produce oposición real a las medidas de apoyo? (La discrepancia solo sobre la persona del curador NO es oposición)',
+    opts: [
+      { t: 'No hay oposición — o solo existe discrepancia sobre el nombramiento del curador concreto: continuar hacia el auto', l: 'A', v: 'ok', n: 'auto' },
+      { t: 'Sí hay oposición real — la persona, el MF o algún interesado se opone a las medidas de apoyo', l: 'B', v: 'warn', n: 'oposicion_efectos' }
+    ]
+  },
+
+  oposicion_efectos: {
+    ph: 2, t: 'Efectos de la oposición — Fin del expediente de JV', ac: 'juez',
+    c: [
+      ['i', 'La oposición pone fin al expediente de jurisdicción voluntaria. Sin embargo, la Autoridad Judicial puede adoptar provisionalmente medidas de apoyo pese a esta terminación.'],
+      ['n', 'Si se formula oposición, quienes tengan interés legítimo podrán valorar si instar el proceso contencioso previsto en los arts. 756 ss. LEC ante el mismo Juzgado.'],
+      ['w', 'La oposición activa la competencia del mismo Juzgado para conocer del proceso contencioso (art. 756.2 LEC).'],
+      ['n', 'El art. 6.2 LJV impide continuar el expediente de JV una vez acreditada la presentación de la demanda contenciosa.'],
+      ['l', 'Art. 42 bis b) apdo. 7 LJV · Art. 6.2 LJV · Arts. 756 ss. LEC']
+    ],
+    q: '¿Procede adoptar medidas provisionales de apoyo para la persona o su patrimonio antes de que el expediente se cierre?',
+    opts: [
+      { t: 'Sí — la Autoridad Judicial adopta medidas provisionales (máximo 30 días, salvo que se presente demanda contenciosa antes)', l: 'A', v: 'warn', n: 'medidas_provisionales' },
+      { t: 'No — el expediente finaliza sin medidas provisionales: valorar si instar proceso contencioso', l: 'B', v: 'neutral', n: 'via_contenciosa' }
+    ]
+  },
+
+  medidas_provisionales: {
+    ph: 2, t: 'Adopción y vigencia de medidas provisionales', ac: 'juez',
+    c: [
+      ['i', 'La Autoridad Judicial adopta provisionalmente las medidas de apoyo que considere convenientes respecto de la persona o de su patrimonio.'],
+      ['d', 'Plazo máximo de vigencia: 30 días naturales. Las medidas se extinguen por el simple transcurso del plazo si no se presenta demanda contenciosa. La caducidad es automática: no requiere resolución judicial expresa.'],
+      ['w', 'Las medidas provisionales se extinguen ANTICIPADAMENTE si antes de los 30 días se presenta la demanda de adopción de medidas de apoyo en juicio contencioso (arts. 756 ss. LEC). Quedan absorbidas por el marco del proceso contencioso (art. 762 LEC).'],
+      ['n', 'Las medidas pueden referirse tanto a la persona (apoyos personales para el ejercicio de la capacidad jurídica) como a su patrimonio.'],
+      ['l', 'Art. 42 bis b) apdo. 8 LJV · Art. 762 LEC']
+    ],
+    q: '¿Se presenta demanda contenciosa (arts. 756 ss. LEC) antes de que transcurran los 30 días de vigencia de las medidas provisionales?',
+    opts: [
+      { t: 'Sí — se presenta demanda contenciosa: las medidas provisionales quedan absorbidas por el proceso', l: 'A', v: 'neutral', n: 'fin_derivacion_contenciosa' },
+      { t: 'No — transcurren los 30 días sin demanda: las medidas provisionales se extinguen', l: 'B', v: 'warn', n: 'fin_medidas_extintas' }
+    ]
+  },
+
+  via_contenciosa: {
+    ph: 2, t: 'Decisión sobre la vía contenciosa (art. 756 LEC)', ac: 'laj',
+    c: [
+      ['i', 'Concluido el expediente de JV por oposición sin medidas provisionales, se valora si instar el proceso contencioso previsto en los arts. 756 ss. LEC para la adopción de medidas judiciales de apoyo.'],
+      ['n', 'El proceso contencioso se insta ante el mismo Juzgado que conoció del expediente de JV (art. 756.2 LEC). No es necesario acudir a un órgano diferente.'],
+      ['n', 'Legitimados: personas del art. 757 LEC (mismas que para el expediente de JV). El MF DEBE promoverlo si los demás legitimados no lo hacen y no hay otras vías suficientes de apoyo (art. 757.2 LEC).'],
+      ['l', 'Art. 756 LEC · Art. 757 LEC · Art. 6.2 LJV']
+    ],
+    q: '¿Se decide instar el proceso contencioso para la adopción de medidas judiciales de apoyo?',
+    opts: [
+      { t: 'Sí — se presenta demanda ante el mismo Juzgado (arts. 756 ss. LEC)', l: 'A', v: 'neutral', n: 'fin_derivacion_contenciosa' },
+      { t: 'No — no se insta el proceso contencioso en este momento', l: 'B', v: 'bad', n: 'fin_oposicion' }
+    ]
+  },
+
+  // ══════════════════════════════════════
+  // FASE 3: RESOLUCIÓN
+  // ══════════════════════════════════════
+  auto: {
+    ph: 3, t: 'Dictado del auto que pone fin al expediente', ac: 'juez',
+    c: [
+      ['i', 'Una vez celebrada la comparecencia sin oposición, la Autoridad Judicial dicta el auto que pone fin al expediente. El auto debe ser conforme a lo dispuesto en la legislación civil aplicable (art. 42 bis c) apdo. 1 LJV).'],
+      ['d', 'Plazo para dictar el auto: 5 días desde la terminación de la comparecencia o desde la última diligencia practicada (art. 19 LJV).'],
+      ['cl', 'Contenido OBLIGATORIO del auto', [
+        '✦ Medidas de apoyo concretas adoptadas (curatela y/o defensor judicial)',
+        '✦ Actos o ámbitos concretos para los que se precisa apoyo (especificación detallada)',
+        '✦ Tipo de curatela: ASISTENCIAL (regla general) o REPRESENTATIVA (excepcional: solo para actos que no pueden realizarse ni con apoyo)',
+        '✦ Plazo para la revisión periódica de las medidas (obligatorio — art. 42 bis c) LJV)',
+        '✦ Forma en que se practicará la revisión periódica'
+      ]],
+      ['cl', 'Principios rectores del auto', [
+        'Necesidad y proporcionalidad (Art. 249 CC): medidas estrictamente necesarias',
+        'Voluntad, deseos y preferencias de la persona con discapacidad (Art. 249 CC)',
+        'Subsidiariedad: preferencia por medidas menos restrictivas',
+        'Flexibilidad: adaptación a circunstancias cambiantes'
+      ]],
+      ['n', 'El auto DEBE respetar la voluntad, los deseos y las preferencias de la persona con discapacidad (art. 249 CC). La curatela representativa es excepcional y debe justificarse.'],
+      ['l', 'Art. 42 bis c) apdo. 1 LJV · Arts. 249, 250, 268–270 CC · Art. 19 LJV']
+    ],
+    nx: 'notificacion'
+  },
+
+  notificacion: {
+    ph: 3, t: 'Notificación del auto y comunicación a Registros', ac: 'laj',
+    c: [
+      ['i', 'Dictado el auto, el Letrado de la AJ procede a las notificaciones a las partes y a las comunicaciones registrales correspondientes.'],
+      ['cl', 'Actuaciones de comunicación y notificación', [
+        '1.º Notificar el auto a todas las partes personadas en el expediente',
+        '2.º Comunicar DE OFICIO al Registro Civil para la inscripción o anotación que corresponda (OBLIGATORIO — art. 22.2 LJV)',
+        '3.º A petición EXCLUSIVA de la persona en cuyo favor se constituyó el apoyo: comunicar al Registro de la Propiedad, Mercantil, de Bienes Muebles u otro Registro público pertinente',
+        '4.º Expedir mandamiento o testimonio para inscripción registral — remisión por medios electrónicos (art. 22 LJV)'
+      ]],
+      ['w', 'Las comunicaciones a Registros DISTINTOS del Civil solo se realizan a petición de la persona beneficiaria del apoyo (art. 755 LEC). NO se realizan de oficio. Esta regla protege la privacidad de la persona.'],
+      ['n', 'La ejecución del auto se rige por los arts. 521–522 LEC en virtud de la remisión del art. 22.1 LJV.'],
+      ['l', 'Art. 22 LJV · Art. 755 LEC · Arts. 521–522 LEC']
+    ],
+    q: '¿Alguna de las partes interpone recurso de apelación contra el auto en plazo?',
+    opts: [
+      { t: 'No — el auto queda firme sin recursos', l: 'A', v: 'ok', n: 'expediente_firme' },
+      { t: 'Sí — se interpone recurso de apelación ante la Audiencia Provincial', l: 'B', v: 'warn', n: 'recurso_apelacion' }
+    ]
+  },
+
+  recurso_apelacion: {
+    ph: 3, t: 'Recurso de apelación contra el auto', ac: 'laj',
+    c: [
+      ['i', 'Las resoluciones definitivas (el auto que pone fin al expediente) pueden ser recurridas en apelación por cualquier interesado perjudicado (art. 20.2 LJV). Se requiere Abogado y Procurador (art. 3.2 LJV).'],
+      ['w', 'El recurso de apelación NO tiene efectos suspensivos, salvo que la ley lo prevea expresamente (art. 20.2 LJV in fine). Las medidas adoptadas en el auto SIGUEN VIGENTES durante la tramitación del recurso.'],
+      ['cl', 'Actuaciones procesales', [
+        'Recibir el escrito de interposición del recurso y verificar que se interpone con Abogado y Procurador',
+        'Remitir los autos a la Audiencia Provincial correspondiente',
+        'Las partes formulan sus alegaciones ante la Audiencia (escrito de oposición)',
+        'La Audiencia Provincial resuelve el recurso mediante auto'
+      ]],
+      ['l', 'Art. 20.2 LJV · Art. 3.2 LJV']
+    ],
+    q: '¿Cuál es el resultado del recurso de apelación?',
+    opts: [
+      { t: 'Desestimado — la Audiencia Provincial confirma el auto del Juzgado de Primera Instancia', l: 'A', v: 'ok', n: 'expediente_firme' },
+      { t: 'Estimado — la Audiencia Provincial modifica o revoca el auto', l: 'B', v: 'warn', n: 'fin_recurso_estimado' }
+    ]
+  },
+
+  expediente_firme: {
+    ph: 3, t: 'Auto firme — Medidas de apoyo en vigor', ac: 'laj',
+    c: [
+      ['i', 'El auto ha adquirido firmeza. Las medidas de apoyo están en vigor y el expediente principal ha concluido satisfactoriamente.'],
+      ['n', 'Las medidas deberán revisarse periódicamente en el plazo y forma establecidos en el propio auto (art. 42 bis c) LJV). Anotar la fecha de la próxima revisión.'],
+      ['n', 'La revisión puede ser: (a) PERIÓDICA, al alcanzar el plazo del auto; o (b) ANTICIPADA, a solicitud de las personas legitimadas o de quien ejerza el apoyo, antes del plazo.'],
+      ['l', 'Art. 42 bis c) apdo. 1 LJV · Art. 278 CC']
+    ],
+    q: '¿Qué ocurre a continuación en este procedimiento?',
+    opts: [
+      { t: 'Tramitar la revisión periódica (cuando se alcance el plazo establecido en el auto)', l: 'A', v: 'neutral', n: 'inicio_revision' },
+      { t: 'Tramitar una revisión anticipada (solicitud antes del plazo por persona legitimada o quien ejerce el apoyo)', l: 'B', v: 'neutral', n: 'revision_anticipada' },
+      { t: 'Concluir la tramitación actual — las medidas siguen vigentes; la revisión se tramitará cuando proceda', l: 'C', v: 'ok', n: 'fin_expediente_ok' }
+    ]
+  },
+
+  // ══════════════════════════════════════
+  // FASE 4: REVISIÓN
+  // ══════════════════════════════════════
+  inicio_revision: {
+    ph: 4, t: 'Inicio de la revisión periódica de las medidas', ac: 'laj',
+    c: [
+      ['i', 'Se inicia la revisión periódica de las medidas al alcanzar el plazo establecido en el auto (art. 42 bis c) apdo. 1 LJV).'],
+      ['n', 'El mismo trámite del art. 42 bis c) es aplicable tanto a la revisión periódica como a la revisión anticipada.'],
+      ['l', 'Art. 42 bis c) apdo. 1 LJV · Art. 278 CC · Art. 761 LEC']
+    ],
+    nx: 'competencia_revision'
+  },
+
+  revision_anticipada: {
+    ph: 4, t: 'Solicitud de revisión anticipada de las medidas', ac: 'laj',
+    c: [
+      ['i', 'La revisión puede instarse ANTES de que transcurra el plazo previsto en el auto, a solicitud de las personas legitimadas.'],
+      ['cl', 'Personas legitimadas para solicitar la revisión anticipada', [
+        'El Ministerio Fiscal',
+        'La propia persona con discapacidad',
+        'Su cónyuge no separado de hecho o legalmente, o quien se encuentre en situación asimilable',
+        'Sus descendientes, ascendientes o hermanos',
+        'Quien ejerza las funciones de apoyo (curador, defensor judicial)'
+      ]],
+      ['cl', 'Causas habituales de revisión anticipada', [
+        'Mejoría o empeoramiento de la situación de la persona',
+        'Cambio en los recursos de apoyo disponibles',
+        'Incumplimiento de deberes por parte del apoyante',
+        'Modificación de la voluntad o preferencias de la persona',
+        'Cambio de residencia a otra circunscripción judicial'
+      ]],
+      ['n', 'La solicitud debe motivar el cambio de circunstancias que justifica la revisión anticipada.'],
+      ['l', 'Art. 42 bis c) apdo. 1, párr. 2.º LJV']
+    ],
+    nx: 'competencia_revision'
+  },
+
+  competencia_revision: {
+    ph: 4, t: 'Verificación de la competencia para la revisión', ac: 'laj',
+    c: [
+      ['i', 'El Juzgado que dictó las medidas retiene la competencia para la revisión, SIEMPRE QUE la persona con discapacidad permanezca residiendo en la misma circunscripción.'],
+      ['w', 'Si la persona ha cambiado de residencia, el Juzgado de la NUEVA residencia es el competente para la revisión.'],
+      ['d', 'Plazo para remitir el testimonio completo del expediente: el Juzgado ANTERIOR debe enviarlo en los 10 días siguientes a la solicitud del nuevo Juzgado (art. 42 bis c) apdo. 2 LJV).'],
+      ['l', 'Art. 42 bis c) apdo. 2 LJV']
+    ],
+    q: '¿La persona con discapacidad sigue residiendo en la misma circunscripción que cuando se dictaron las medidas?',
+    opts: [
+      { t: 'Sí — el mismo Juzgado mantiene la competencia para la revisión', l: 'A', v: 'ok', n: 'actuaciones_revision' },
+      { t: 'No — ha cambiado de residencia: el nuevo Juzgado debe solicitar el testimonio completo al anterior (plazo: 10 días)', l: 'B', v: 'warn', n: 'remision_testimonio' }
+    ]
+  },
+
+  remision_testimonio: {
+    ph: 4, t: 'Petición y recepción del testimonio completo del expediente', ac: 'laj',
+    c: [
+      ['i', 'El Juzgado de la nueva residencia solicita el testimonio completo del expediente al Juzgado que anteriormente conoció del mismo.'],
+      ['d', 'El Juzgado ANTERIOR debe remitir el testimonio completo en los 10 días siguientes a la solicitud (art. 42 bis c) apdo. 2 LJV).'],
+      ['cl', 'Actuaciones del nuevo Juzgado', [
+        'Verificar la competencia territorial (residencia actual de la persona)',
+        'Remitir la solicitud formal de testimonio completo al Juzgado anterior',
+        'Acusar recibo cuando llegue el testimonio y verificar su integridad',
+        'Incorporar el testimonio al expediente de revisión y continuar la tramitación'
+      ]],
+      ['n', 'Mientras se recibe el testimonio, el procedimiento de revisión queda en suspenso.'],
+      ['w', 'Si el juzgado originario no remite el testimonio en plazo, podrá requerirse judicialmente su envío.'],
+      ['l', 'Art. 42 bis c) apdo. 2, párr. 2.º LJV']
+    ],
+    nx: 'actuaciones_revision'
+  },
+
+  actuaciones_revision: {
+    ph: 4, t: 'Práctica de actuaciones en la revisión', ac: 'juez',
+    c: [
+      ['i', 'La Autoridad Judicial lleva a cabo las actuaciones necesarias para valorar si las medidas de apoyo vigentes siguen siendo adecuadas y proporcionadas a la situación actual de la persona.'],
+      ['cl', 'Actuaciones PRECEPTIVAS', [
+        '✦ Entrevista de la Autoridad Judicial con la persona con discapacidad (acto inexcusable)',
+        '✦ Traslado del resultado de las actuaciones a: persona con discapacidad, quien ejerza el apoyo, MF, interesados personados en el expediente previo'
+      ]],
+      ['cl', 'Actuaciones POTESTATIVAS (a criterio de la Autoridad Judicial)', [
+        'Recabar dictamen pericial cuando lo considere necesario, atendiendo a las circunstancias del caso',
+        'Recabar informe de la entidad pública territorial (sistema SAAD, Ley 39/2006)',
+        'Recabar informe de entidad del tercer sector de acción social habilitada (art. 42 bis b) apdo. 4)',
+        'Cualquier otra actuación que considere necesaria para valorar la situación'
+      ]],
+      ['n', 'La entrevista con la persona debe realizarse con los ajustes necesarios para garantizar su comprensión y participación efectiva (Art. 7 bis LJV).'],
+      ['l', 'Art. 42 bis c) apdo. 3 LJV · Ley 39/2006']
+    ],
+    nx: 'revision_traslado'
+  },
+
+  revision_traslado: {
+    ph: 4, t: 'Traslado a partes interesadas del resultado de actuaciones', ac: 'laj',
+    c: [
+      ['i', 'Del resultado de las actuaciones de revisión se dará traslado a las siguientes personas:'],
+      ['cl', 'Partes a notificar', [
+        'La persona con discapacidad',
+        'Quien ejerza las funciones de apoyo (curador)',
+        'El Ministerio Fiscal',
+        'Los interesados personados en el expediente previo'
+      ]],
+      ['d', 'Plazo para que los notificados formulen alegaciones y aporten prueba: 10 días desde el traslado.'],
+      ['n', 'Las alegaciones deben centrarse en la adecuación de las medidas actuales a las circunstancias presentes.'],
+      ['l', 'Art. 42 bis c) apdo. 3 LJV']
+    ],
+    nx: 'oposicion_revision'
+  },
+
+  oposicion_revision: {
+    ph: 4, t: 'Control de la oposición en la revisión', ac: 'juez',
+    c: [
+      ['i', 'Transcurrido el plazo de 10 días para alegaciones, la Autoridad Judicial verifica si alguno de los notificados ha formulado oposición.'],
+      ['n', 'Si hay oposición, el expediente de revisión de JV finaliza. La revisión puede instarse entonces por la vía contenciosa del art. 761 LEC.'],
+      ['l', 'Art. 42 bis c) apdos. 3 y 4 LJV · Art. 761 LEC']
+    ],
+    q: '¿Formula oposición alguno de los notificados (persona con discapacidad, quien ejerce el apoyo, MF o interesados del expediente previo)?',
+    opts: [
+      { t: 'No — ninguno formula oposición: se procede a dictar el nuevo auto de revisión', l: 'A', v: 'ok', n: 'nuevo_auto' },
+      { t: 'Sí — se formula oposición: el expediente de revisión finaliza; cabe instar la revisión por la vía contenciosa (art. 761 LEC)', l: 'B', v: 'warn', n: 'fin_revision_contenciosa' }
+    ]
+  },
+
+  nuevo_auto: {
+    ph: 4, t: 'Dictado del nuevo auto de revisión', ac: 'juez',
+    c: [
+      ['i', 'Recibidas las alegaciones y practicada la prueba, la Autoridad Judicial dicta el nuevo auto con el contenido que proceda atendiendo a las circunstancias concurrentes.'],
+      ['cl', 'El nuevo auto puede, entre otras cosas', [
+        'Confirmar las medidas vigentes sin modificación',
+        'Modificar el alcance o contenido de las medidas de apoyo',
+        'Ampliar o reducir los ámbitos en que se presta apoyo',
+        'Cambiar la naturaleza de la curatela (de asistencial a representativa o viceversa)',
+        'Establecer un nuevo plazo de revisión periódica',
+        'Extinguir las medidas si ya no son necesarias o la persona lo solicita'
+      ]],
+      ['n', 'El nuevo auto debe respetar los mismos principios rectores: necesidad, proporcionalidad, voluntad de la persona, subsidiariedad y flexibilidad (art. 249 CC).'],
+      ['d', 'El auto de revisión fijará un nuevo plazo para la próxima revisión periódica.'],
+      ['l', 'Art. 42 bis c) apdo. 4 LJV · Arts. 249, 278 CC']
+    ],
+    nx: 'fin_revision_ok'
+  },
+
+  // ══════════════════════════════════════
+  // DESENLACES FINALES
+  // ══════════════════════════════════════
+  fin_no_procede: {
+    ph: 0, t: 'No procede la apertura de expediente', ac: 'ambos', end: 'neutral',
+    c: [
+      ['i', 'Tras la verificación inicial, se determina que no procede la adopción de medida judicial de apoyo estable.'],
+      ['cl', 'Motivos habituales de no proceder', [
+        'Existencia de medidas voluntarias suficientes (autocuratela, poder preventivo)',
+        'La persona cuenta con apoyos informales adecuados del entorno',
+        'La necesidad de apoyo es ocasional y puede cubrirse con defensor judicial puntual',
+        'No se acredita la necesidad de intervención judicial'
+      ]],
+      ['n', 'Se recomienda documentar los motivos de no proceder para eventual revisión futura.'],
+      ['n', 'La persona podrá solicitar la apertura de expediente judicial en el futuro si las alternativas resultan insuficientes.'],
+      ['l', 'Art. 249 CC (principio de subsidiariedad)']
+    ]
+  },
+
+  fin_medida_voluntaria: {
+    ph: 2, t: 'Fin del expediente — La persona opta por medida alternativa', ac: 'juez', end: 'success',
+    c: [
+      ['i', 'El expediente de jurisdicción voluntaria concluye porque la persona con discapacidad ha optado, tras ser informada por la Autoridad Judicial, por una medida de apoyo de naturaleza voluntaria o comunitaria.'],
+      ['n', 'Este desenlace es el más acorde con el principio de subsidiariedad de las medidas judiciales (art. 249 CC): si la persona puede obtener el apoyo necesario por vía voluntaria, la intervención judicial no es precisa.'],
+      ['cl', 'Alternativas que pueden haberse elegido', [
+        'Autocuratela notarial (Arts. 251–255 CC)',
+        'Poder preventivo o mandato preventivo (Arts. 256–262 CC)',
+        'Guarda de hecho con reconocimiento judicial (Arts. 263–267 CC)',
+        'Apoyos informales del entorno familiar o comunitario'
+      ]],
+      ['n', 'El Letrado de la AJ dejará constancia del resultado en el expediente y procederá al archivo de las actuaciones.'],
+      ['l', 'Art. 42 bis b) apdo. 6 LJV · Art. 249 CC · Arts. 255–256 CC']
+    ]
+  },
+
+  fin_inadmision: {
+    ph: 1, t: 'Inadmisión de la solicitud', ac: 'laj', end: 'error',
+    c: [
+      ['i', 'La solicitud no ha sido admitida a trámite por presentar defectos insubsanables o por carecer el promotor de legitimación.'],
+      ['n', 'Contra la resolución de inadmisión: recurso de reposición si es interlocutoria, o recurso de apelación si pone fin al expediente (art. 20 LJV).'],
+      ['w', 'Si el MF estima que existen hechos que justifican la apertura del expediente, puede promoverlo de oficio con independencia de la inadmisión de la solicitud particular (art. 4 LJV).'],
+      ['l', 'Art. 20 LJV · Art. 4 LJV']
+    ]
+  },
+
+  fin_inhibicion: {
+    ph: 1, t: 'Remisión de actuaciones al Juzgado competente', ac: 'laj', end: 'neutral',
+    c: [
+      ['i', 'Este Juzgado no es territorialmente competente. Las actuaciones deben remitirse al Juzgado de Primera Instancia del lugar de residencia actual de la persona con discapacidad.'],
+      ['cl', 'Actuaciones a realizar', [
+        'Dictar resolución declarando la falta de competencia territorial',
+        'Remitir las actuaciones en el estado en que se hallen al Juzgado competente',
+        'Notificar a las partes la remisión y el Juzgado al que se dirigen'
+      ]],
+      ['n', 'El Juzgado receptor continuará la tramitación desde el punto en que se encontraba el expediente en el momento de la remisión.'],
+      ['l', 'Art. 42 bis a) apdo. 2, párr. 2.º LJV · Art. 2.2 LJV']
+    ]
+  },
+
+  fin_derivacion_contenciosa: {
+    ph: 2, t: 'Derivación al proceso contencioso — Arts. 756 ss. LEC', ac: 'laj', end: 'neutral',
+    c: [
+      ['i', 'El expediente de JV ha concluido. La adopción (o continuación) de las medidas judiciales de apoyo se tramitará por la vía del proceso contencioso de los arts. 756 ss. LEC.'],
+      ['cl', 'Aspectos clave del proceso contencioso de medidas de apoyo', [
+        'Órgano competente: el mismo Juzgado que conoció del expediente de JV (art. 756.2 LEC)',
+        'Tramitación: juicio verbal con especialidades (art. 753 LEC)',
+        'Pruebas preceptivas de oficio: entrevista, audiencia a familiares, dictamen pericial (art. 759 LEC)',
+        'Tramitación PREFERENTE cuando se designa apoyo con funciones representativas (art. 753 LEC)',
+        'La sentencia debe ser conforme a la legislación civil aplicable (art. 760 LEC)',
+        'La revisión de las medidas de la sentencia se tramita por art. 42 bis c) LJV (art. 761 LEC)'
+      ]],
+      ['ul', 'Diferencias clave con jurisdicción voluntaria:', [
+        'Contradicción plena entre partes',
+        'Mayor ámbito de prueba y recursos',
+        'Resolución mediante sentencia, no auto',
+        'Posibilidad de apelación ordinaria'
+      ]],
+      ['l', 'Arts. 756–762 LEC · Art. 753 LEC · Art. 754 LEC (exclusión publicidad)']
+    ]
+  },
+
+  fin_medidas_extintas: {
+    ph: 2, t: 'Extinción de medidas provisionales — Transcurso de 30 días', ac: 'laj', end: 'warning',
+    c: [
+      ['i', 'Han transcurrido los 30 días desde la adopción de las medidas provisionales sin que se haya presentado demanda del proceso contencioso. Las medidas provisionales se extinguen automáticamente.'],
+      ['w', 'La persona con discapacidad queda sin las medidas de apoyo provisionales. Valorar URGENTEMENTE si procede instar el proceso contencioso (arts. 756 ss. LEC).'],
+      ['n', 'El MF, en caso de que no existan otras vías suficientes, debe promover el proceso contencioso si los demás legitimados no lo hacen (art. 757.2 LEC).'],
+      ['ul', 'Para reiniciar el procedimiento:', [
+        'Verificar si persisten los hechos que justifican medidas de apoyo',
+        'Actualizar dictamen pericial si ha transcurrido tiempo significativo',
+        'Promover nuevo expediente ante el juzgado de la residencia actual'
+      ]],
+      ['l', 'Art. 42 bis b) apdo. 8 LJV · Arts. 756–757 LEC']
+    ]
+  },
+
+  fin_oposicion: {
+    ph: 2, t: 'Fin del expediente — Oposición sin continuación procesal', ac: 'laj', end: 'warning',
+    c: [
+      ['i', 'El expediente de JV ha concluido por oposición y no se ha instado el proceso contencioso. La persona con discapacidad queda sin las medidas de apoyo solicitadas.'],
+      ['w', 'Si el MF considera que la persona necesita apoyo y no hay otras vías suficientes, deberá promover de oficio el proceso contencioso (art. 757.2 LEC).'],
+      ['n', 'Cualquier persona legitimada puede instar el proceso contencioso en el futuro si la situación lo requiere.'],
+      ['l', 'Art. 42 bis b) apdo. 7 LJV · Art. 757.2 LEC']
+    ]
+  },
+
+  fin_recurso_estimado: {
+    ph: 3, t: 'Auto modificado o revocado en apelación', ac: 'laj', end: 'neutral',
+    c: [
+      ['i', 'La Audiencia Provincial ha estimado el recurso de apelación y ha modificado o revocado el auto del Juzgado de Primera Instancia.'],
+      ['cl', 'Actuaciones tras la resolución de apelación', [
+        'Notificar la resolución de la Audiencia Provincial a todas las partes',
+        'Si se modifican medidas: actualizar la inscripción en el Registro Civil (y otros registros, a petición de la persona)',
+        'Si se revocan las medidas: proceder al archivo y comunicaciones registrales pertinentes',
+        'Si se establece nuevo plazo de revisión: anotarlo y programar la revisión periódica'
+      ]],
+      ['l', 'Art. 20.2 LJV · Art. 755 LEC']
+    ]
+  },
+
+  fin_expediente_ok: {
+    ph: 3, t: 'Expediente principal concluido — Medidas en vigor', ac: 'laj', end: 'success',
+    c: [
+      ['i', 'El expediente de provisión de medidas judiciales de apoyo ha concluido satisfactoriamente. Las medidas de apoyo están en vigor.'],
+      ['cl', 'Estado al cierre del expediente principal', [
+        'Auto firme con las medidas de apoyo establecidas y conformes a la legislación civil',
+        'Medidas comunicadas al Registro Civil de oficio',
+        'Revisión periódica programada según el plazo del auto',
+        'Persona con discapacidad con las medidas de apoyo que precisa'
+      ]],
+      ['n', 'La revisión se tramitará en el futuro al alcanzar el plazo del auto o cuando algún legitimado lo solicite anticipadamente (art. 42 bis c) LJV).'],
+      ['l', 'Art. 42 bis c) LJV · Art. 278 CC']
+    ]
+  },
+
+  fin_revision_ok: {
+    ph: 4, t: 'Revisión concluida — Nuevo auto en vigor', ac: 'laj', end: 'success',
+    c: [
+      ['i', 'La revisión de las medidas ha concluido satisfactoriamente. El nuevo auto está en vigor.'],
+      ['cl', 'Estado al cierre de la revisión', [
+        'Nuevo auto dictado con el contenido adecuado a las circunstancias actuales',
+        'Nuevo auto notificado a las partes y comunicado al Registro Civil',
+        'Próxima revisión periódica programada según el nuevo plazo establecido'
+      ]],
+      ['cl', 'Efectos de la resolución', [
+        'Las medidas confirmadas, modificadas o nuevas surten efecto desde la notificación',
+        'Se procede a la inscripción registral de las modificaciones',
+        'Se comunican los cambios a todos los interesados',
+        'Se establece nuevo plazo para próxima revisión'
+      ]],
+      ['n', 'El ciclo de revisión periódica continúa. La próxima revisión se tramitará al alcanzar el nuevo plazo o ante solicitud anticipada de parte legitimada.'],
+      ['n', 'Contra el auto de revisión no cabe recurso ordinario, pero sí los recursos extraordinarios por infracción procesal o casación, en su caso.'],
+      ['l', 'Art. 42 bis c) apdos. 3 y 4 LJV · Art. 278 CC']
+    ]
+  },
+
+  fin_revision_contenciosa: {
+    ph: 4, t: 'Fin de la revisión por oposición — Vía contenciosa (art. 761 LEC)', ac: 'laj', end: 'neutral',
+    c: [
+      ['i', 'El expediente de revisión de JV ha concluido por oposición de alguno de los notificados. La revisión de las medidas puede instarse por la vía del proceso contencioso del art. 761 LEC.'],
+      ['cl', 'Personas legitimadas para instar el proceso contencioso de revisión', [
+        'Las personas del art. 757 LEC (persona con discapacidad, cónyuge/asimilable, descendientes, ascendientes, hermanos)',
+        'El Ministerio Fiscal',
+        'Quien ejerza el apoyo de la persona con discapacidad'
+      ]],
+      ['n', 'El proceso contencioso de revisión se tramita ante el mismo Juzgado competente para la revisión.'],
+      ['l', 'Art. 42 bis c) apdo. 3 LJV · Art. 761 LEC · Art. 757 LEC']
+    ]
+  }
+};
+
+/* ══════════════════════════════════════
+   APPLICATION STATE (G02 pattern)
+   ══════════════════════════════════════ */
+const AppState = {
+  current: CONFIG.START_STEP,
+  history: [], // [{s: stepId, c: choiceLabel}]
+  sidebarOpen: false,
+  sidebarTab: 'map',
+  mapaOpen: false,
+  visited: new Set()
+};
+
+/* ══════════════════════════════════════
+   DOM CACHE (G02 pattern)
+   ══════════════════════════════════════ */
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
+
+const DOM = {};
+
+function cacheDom() {
+  DOM.app = $('#app');
+  DOM.hdr = $('#hdr');
+  DOM.pbar = $('#pbar');
+  DOM.breadcrumb = $('#breadcrumb');
+  DOM.sidebar = $('#sidebar');
+  DOM.sidebarBackdrop = $('#sidebarBackdrop');
+  DOM.sbMap = $('#sb-map');
+  DOM.sbJourney = $('#sb-journey');
+  DOM.content = $('#content');
+  DOM.mapaOverlay = $('#mapa-overlay');
+  DOM.mapaContent = $('#mapaContent');
+  DOM.statusMsg = $('#status-msg');
+  DOM.tooltip = $('#active-tooltip');
+  DOM.btnToggleSidebar = $('#btnToggleSidebar');
+}
+
+/* ══════════════════════════════════════
+   UTILITY FUNCTIONS
+   ══════════════════════════════════════ */
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function truncate(str, len) {
+  if (!str) return '';
+  return str.length > len ? str.slice(0, len) + '…' : str;
+}
+
+/* ══════════════════════════════════════
+   STATUS TOAST
+   ══════════════════════════════════════ */
+function showStatus(msg, type) {
+  type = type || 'info';
+  const toast = document.createElement('div');
+  toast.className = 'status-toast ' + type;
+  toast.textContent = msg;
+  DOM.statusMsg.appendChild(toast);
+  setTimeout(() => {
+    toast.style.animation = 'toast-out .3s ease forwards';
+    setTimeout(() => toast.remove(), 300);
+  }, CONFIG.TOAST_DURATION);
+}
+
+/* ══════════════════════════════════════
+   CONTENT BLOCK RENDERERS
+   ══════════════════════════════════════ */
+function renderContentBlock(block) {
+  if (!block || !block[0]) return '';
+  const type = block[0];
+  const content = block[1];
+  const rest = block.slice(2);
+
+  switch (type) {
+    case 'i':
+      return '<p>' + content + '</p>';
+    case 'd':
+      return '<div class="deadline" role="note">' + content + '</div>';
+    case 'n':
+      return '<div class="note" role="note">' + content + '</div>';
+    case 'w':
+      return '<div class="warning" role="alert">' + content + '</div>';
+    case 'l':
+      return '<span class="law">' + content + '</span>';
+    case 'cl':
+      return '<div class="checklist" role="group" aria-label="' + escapeHtml(content) + '">'
+        + '<strong>' + escapeHtml(content) + ':</strong>'
+        + (rest[0] ? rest[0].map(item =>
+            '<label><input type="checkbox" aria-label="' + escapeHtml(item) + '"><span>' + item + '</span></label>'
+          ).join('') : '')
+        + '</div>';
+    case 'ul':
+      return '<div class="content-list"><strong>' + escapeHtml(content) + ':</strong>'
+        + '<ul>' + (rest[0] ? rest[0].map(item => '<li>' + item + '</li>').join('') : '') + '</ul></div>';
+    default:
+      return '<p>' + content + '</p>';
+  }
+}
+
+function renderEndContentBlock(block) {
+  // Same as renderContentBlock but for end cards (inside .end-content)
+  return renderContentBlock(block);
+}
+
+/* ══════════════════════════════════════
+   BUTTON VARIANT LOGIC
+   ══════════════════════════════════════ */
+function getButtonVariant(opt) {
+  if (opt.v) return opt.v;
+  const l = (opt.l || '').toLowerCase();
+  if (l.includes('sí') || l.includes('si') || l === 'a') return 'ok';
+  if (l.includes('no')) return 'bad';
+  return 'neutral';
+}
+
+/* ══════════════════════════════════════
+   ACTOR BADGE
+   ══════════════════════════════════════ */
+function actorBadge(ac) {
+  const map = {
+    laj: { cls: 'ac-laj', label: 'Letrado AJ' },
+    juez: { cls: 'ac-juez', label: 'Autoridad Judicial' },
+    ambos: { cls: 'ac-ambos', label: 'Ambos' }
+  };
+  const info = map[ac] || map.ambos;
+  return '<span class="actor-badge ' + info.cls + '">' + escapeHtml(info.label) + '</span>';
+}
+
+/* ══════════════════════════════════════
+   STEP CARD RENDERING
+   ══════════════════════════════════════ */
+function buildStepCard(s, stepId) {
+  const phase = PHASES[s.ph];
+  const stepNum = AppState.history.length + 1;
+  const isEnd = !!s.end;
+
+  let html = '<article class="card" role="region" aria-label="' + escapeHtml(s.t) + '">';
+
+  // Header
+  html += '<div class="c-hdr">';
+  html += '<span class="c-phase-badge ph-' + s.ph + '">' + escapeHtml(phase.name) + '</span>';
+  html += '<div class="c-hdr-text">';
+  html += '<div class="c-step-num">Paso ' + stepNum + '</div>';
+  html += '<h2 class="c-title">' + escapeHtml(s.t) + '</h2>';
+  html += '</div>';
+  html += actorBadge(s.ac);
+  html += '</div>';
+
+  // Body
+  html += '<div class="c-body">';
+  html += s.c.map(block => renderContentBlock(block)).join('');
+  html += '</div>';
+
+  // Question + Decisions (only if not end and has opts)
+  if (!isEnd && s.opts) {
+    html += '<div class="c-question">' + escapeHtml(s.q) + '</div>';
+    html += '<div class="c-decisions">';
+    s.opts.forEach((opt, idx) => {
+      const variant = getButtonVariant(opt);
+      const letter = String.fromCharCode(65 + idx); // A, B, C...
+      html += '<button class="dec-btn ' + variant + '" data-action="choose" data-next="' + opt.n + '" data-label="' + escapeHtml(opt.l) + '" data-idx="' + idx + '">';
+      html += '<span class="dec-letter">' + letter + '</span>';
+      html += '<span class="dec-text">' + opt.t + '</span>';
+      html += '</button>';
+    });
+    html += '</div>';
+  } else if (!isEnd && s.nx) {
+    // Auto-advance step
+    html += '<div class="c-decisions">';
+    html += '<button class="dec-btn ok" data-action="auto-next" data-next="' + s.nx + '">';
+    html += '<span class="dec-letter">&#8594;</span>';
+    html += '<span class="dec-text">Continuar al siguiente paso</span>';
+    html += '</button>';
+    html += '</div>';
+  }
+
+  // Back button for steps
+  if (AppState.history.length > 0 && !isEnd) {
+    html += '<div style="padding: 0 22px 14px;">';
+    html += '<button class="btn-back" data-action="go-back">&#8592; Volver</button>';
+    html += '</div>';
+  }
+
+  html += '</article>';
+  return html;
+}
+
+/* ══════════════════════════════════════
+   END CARD RENDERING
+   ══════════════════════════════════════ */
+function buildEndCard(s, stepId) {
+  const icons = { success: '\u2713', error: '\u2717', warning: '\u26A0', neutral: '\u2139' };
+  const labels = {
+    success: 'Concluido satisfactoriamente',
+    error: 'Inadmisión / No procede',
+    warning: 'Fin con advertencia',
+    neutral: 'Derivación / Información'
+  };
+
+  const allSteps = [...AppState.history.map((h, i) => {
+    const hs = STEPS[h.s];
+    return '<div class="sum-item">'
+      + '<span class="sum-num">' + (i + 1) + '</span>'
+      + '<div><strong>' + (hs ? escapeHtml(truncate(hs.t, 40)) : escapeHtml(h.s)) + '</strong>'
+      + (h.c ? '<div class="sum-choice">\u21B3 ' + escapeHtml(truncate(h.c, 50)) + '</div>' : '')
+      + '</div></div>';
+  }), '<div class="sum-item current">'
+      + '<span class="sum-num">' + (AppState.history.length + 1) + '</span>'
+      + '<div><strong>' + escapeHtml(s.t) + '</strong></div>'
+      + '</div>'].join('');
+
+  const bodyHtml = s.c.map(block => renderEndContentBlock(block)).join('');
+
+  let html = '<article class="card end-' + s.end + '" role="region" aria-label="Procedimiento concluido">';
+  html += '<div class="end-body">';
+  html += '<span class="end-icon" aria-hidden="true">' + icons[s.end] + '</span>';
+  html += '<h3 class="end-title">' + labels[s.end] + '</h3>';
+  html += '<p class="end-name">' + escapeHtml(s.t) + '</p>';
+  html += '<p class="end-sub">El procedimiento ha concluido en esta vía</p>';
+  html += '<div class="end-content">' + bodyHtml + '</div>';
+  html += '<div class="summary-box">';
+  html += '<div class="sum-title">Resumen del recorrido seguido</div>';
+  html += allSteps;
+  html += '</div>';
+  html += '<div class="end-btns">';
+  html += '<button class="btn-back" data-action="go-back"' + (AppState.history.length === 0 ? ' disabled' : '') + '>&#8592; Volver</button>';
+  html += '<button class="btn-restart" data-action="reiniciar">&#8634; Nuevo procedimiento</button>';
+  html += '</div>';
+  html += '</div></article>';
+  return html;
+}
+
+/* ══════════════════════════════════════
+   PROGRESS BAR
+   ══════════════════════════════════════ */
+function renderProgressBar() {
+  const s = STEPS[AppState.current];
+  if (!s) return;
+  const currentPh = s.ph;
+
+  let html = '';
+  PHASES.forEach((ph, idx) => {
+    let cls = '';
+    if (idx < currentPh) cls = 'completed';
+    else if (idx === currentPh) cls = 'active';
+    const sep = idx > 0 ? '<span class="pb-sep" aria-hidden="true">›</span>' : '';
+    html += sep + '<span class="pb-phase ' + cls + '" aria-current="' + (cls === 'active' ? 'step' : 'false') + '">' + escapeHtml(ph.name) + '</span>';
+  });
+  DOM.pbar.innerHTML = html;
+}
+
+/* ══════════════════════════════════════
+   BREADCRUMB
+   ══════════════════════════════════════ */
+function renderBreadcrumb() {
+  let items = [];
+  items.push({ id: CONFIG.START_STEP, label: 'Inicio' });
+
+  AppState.history.forEach((h, i) => {
+    const hs = STEPS[h.s];
+    items.push({ id: h.s, label: hs ? truncate(hs.t, 30) : h.s });
+  });
+
+  // Current
+  const cs = STEPS[AppState.current];
+  items.push({ id: AppState.current, label: cs ? truncate(cs.t, 30) : AppState.current, current: true });
+
+  let html = '';
+  items.forEach((item, i) => {
+    if (i > 0) html += '<span class="bc-sep">/</span>';
+    const cls = item.current ? 'bc-item bc-current' : 'bc-item';
+    html += '<span class="' + cls + '" data-nav="' + item.id + '" title="' + escapeHtml(item.label) + '">' + escapeHtml(item.label) + '</span>';
+  });
+  DOM.breadcrumb.innerHTML = html;
+}
+
+/* ══════════════════════════════════════
+   SIDEBAR MAP
+   ══════════════════════════════════════ */
+function renderSidebarMap() {
+  // Group steps by phase
+  const phaseGroups = {};
+  PHASES.forEach((ph, idx) => { phaseGroups[idx] = []; });
+  Object.keys(STEPS).forEach(id => {
+    const s = STEPS[id];
+    if (!phaseGroups[s.ph]) phaseGroups[s.ph] = [];
+    phaseGroups[s.ph].push({ id, step: s });
+  });
+
+  let html = '';
+  PHASES.forEach((ph, idx) => {
+    html += '<div class="sb-phase">';
+    html += '<div class="sb-phase-title">' + escapeHtml(ph.name) + '</div>';
+    (phaseGroups[idx] || []).forEach(({ id, step }) => {
+      const isEnd = !!step.end;
+      const isCurrent = id === AppState.current;
+      const isVisited = AppState.visited.has(id);
+      let cls = 'sb-node';
+      if (isCurrent) cls += ' current';
+      else if (isVisited) cls += ' visited';
+      if (isEnd) cls += ' end-node';
+      html += '<div class="' + cls + '" data-nav="' + id + '" title="' + escapeHtml(step.t) + '">';
+      html += '<span class="sb-dot"></span>';
+      html += '<span class="sb-node-label">' + escapeHtml(truncate(step.t, 35)) + '</span>';
+      html += '</div>';
+    });
+    html += '</div>';
+  });
+
+  // Normative footer
+  html += '<div class="sb-foot">';
+  html += '<div class="sb-foot-title">Referencias normativas</div>';
+  html += '<div class="sb-foot-item">Art. 42 bis a), b), c) LJV</div>';
+  html += '<div class="sb-foot-item">Arts. 249–298 CC (L. 8/2021)</div>';
+  html += '<div class="sb-foot-item">Arts. 756–762 LEC</div>';
+  html += '<div class="sb-foot-item">Art. 7 bis LJV</div>';
+  html += '<div class="sb-foot-item">Art. 12 CRPD (2006)</div>';
+  html += '<div class="sb-foot-item">Ley 39/2006 (SAAD)</div>';
+  html += '</div>';
+
+  DOM.sbMap.innerHTML = html;
+}
+
+/* ══════════════════════════════════════
+   SIDEBAR JOURNEY
+   ══════════════════════════════════════ */
+function renderSidebarJourney() {
+  let html = '';
+
+  AppState.history.forEach((h, i) => {
+    const hs = STEPS[h.s];
+    html += '<div class="sb-journey-item">';
+    html += '<span class="sb-j-num">' + (i + 1) + '</span>';
+    html += '<div>';
+    html += '<div class="sb-j-label">' + (hs ? escapeHtml(truncate(hs.t, 40)) : escapeHtml(h.s)) + '</div>';
+    if (h.c) html += '<div class="sb-j-choice">\u21B3 ' + escapeHtml(truncate(h.c, 40)) + '</div>';
+    html += '</div></div>';
+  });
+
+  // Current
+  const cs = STEPS[AppState.current];
+  html += '<div class="sb-journey-item">';
+  html += '<span class="sb-j-num">' + (AppState.history.length + 1) + '</span>';
+  html += '<div>';
+  html += '<div class="sb-j-label" style="color:#fff;font-weight:600">' + (cs ? escapeHtml(truncate(cs.t, 40)) : escapeHtml(AppState.current)) + '</div>';
+  if (cs && cs.end) html += '<div class="sb-j-choice" style="color:rgba(255,255,255,.6)">Fin del procedimiento</div>';
+  html += '</div></div>';
+
+  if (AppState.history.length === 0 && !STEPS[AppState.current].end) {
+    html += '<div style="padding:16px 12px;font-size:var(--text-xs);color:rgba(255,255,255,.35);text-align:center;">El recorrido aparecerá aquí conforme avance</div>';
+  }
+
+  DOM.sbJourney.innerHTML = html;
+}
+
+/* ══════════════════════════════════════
+   MAPA OVERLAY
+   ══════════════════════════════════════ */
+function renderMapa() {
+  const phaseGroups = {};
+  PHASES.forEach((ph, idx) => { phaseGroups[idx] = []; });
+  Object.keys(STEPS).forEach(id => {
+    const s = STEPS[id];
+    if (!phaseGroups[s.ph]) phaseGroups[s.ph] = [];
+    phaseGroups[s.ph].push({ id, step: s });
+  });
+
+  let html = '';
+  PHASES.forEach((ph, idx) => {
+    html += '<div class="mapa-col">';
+    html += '<div class="mapa-col-title ph-' + idx + '">' + escapeHtml(ph.name) + '</div>';
+    html += '<div class="mapa-nodes">';
+    (phaseGroups[idx] || []).forEach(({ id, step }) => {
+      const isEnd = !!step.end;
+      const isCurrent = id === AppState.current;
+      const isVisited = AppState.visited.has(id);
+      let cls = 'mapa-node';
+      if (isCurrent) cls += ' current';
+      else if (isVisited) cls += ' visited';
+      if (isEnd) cls += ' end-type';
+
+      const actorMap = { laj: 'Letrado AJ', juez: 'Autoridad Judicial', ambos: 'Ambos' };
+      html += '<div class="' + cls + '" data-nav="' + id + '">';
+      html += '<div class="mapa-node-title">' + escapeHtml(truncate(step.t, 45)) + '</div>';
+      html += '<div class="mapa-node-actor">' + (actorMap[step.ac] || '') + (isEnd ? ' · Fin' : '') + '</div>';
+      html += '</div>';
+    });
+    html += '</div></div>';
+  });
+
+  DOM.mapaContent.innerHTML = html;
+}
+
+/* ══════════════════════════════════════
+   MAIN RENDER
+   ══════════════════════════════════════ */
+function render() {
+  const s = STEPS[AppState.current];
+  if (!s) return;
+
+  // Update visited
+  AppState.visited.add(AppState.current);
+
+  // Render main content
+  if (s.end) {
+    DOM.content.innerHTML = buildEndCard(s, AppState.current);
+  } else {
+    DOM.content.innerHTML = buildStepCard(s, AppState.current);
+  }
+
+  // Render all supporting UI
+  renderProgressBar();
+  renderBreadcrumb();
+  renderSidebarMap();
+  renderSidebarJourney();
+  renderMapa();
+
+  // Update hash
+  writeHash();
+
+  // Scroll to top of content
+  DOM.content.scrollTop = 0;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Close mobile sidebar if open
+  closeMobileSidebar();
+}
+
+/* ══════════════════════════════════════
+   HASH NAVIGATION
+   ══════════════════════════════════════ */
+function readHash() {
+  const h = window.location.hash.slice(1);
+  if (h && STEPS[h]) {
+    // Reconstruct a minimal path to this step
+    AppState.current = h;
+    AppState.history = [];
+    AppState.visited = new Set([h]);
+  }
+}
+
+function writeHash() {
+  try {
+    history.replaceState(null, '', '#' + AppState.current);
+  } catch (e) { /* ignore */ }
+}
+
+/* ══════════════════════════════════════
+   NAVIGATION ACTIONS
+   ══════════════════════════════════════ */
+function navigateTo(stepId, choiceLabel) {
+  if (!STEPS[stepId]) return;
+  AppState.history.push({ s: AppState.current, c: choiceLabel || null });
+  AppState.current = stepId;
+  render();
+}
+
+function goBack() {
+  if (AppState.history.length === 0) return;
+  const prev = AppState.history.pop();
+  AppState.current = prev.s;
+  render();
+  showStatus('Volviendo al paso anterior', 'info');
+}
+
+function restart() {
+  AppState.current = CONFIG.START_STEP;
+  AppState.history = [];
+  AppState.visited = new Set();
+  render();
+  showStatus('Procedimiento reiniciado', 'info');
+}
+
+function navigateToStep(stepId) {
+  if (!STEPS[stepId]) return;
+  // Navigate directly to a step (from sidebar/mapa), clearing forward history
+  // Find if step is in history - if so, truncate history
+  const histIdx = AppState.history.findIndex(h => h.s === stepId);
+  if (histIdx >= 0) {
+    AppState.history = AppState.history.slice(0, histIdx);
+    AppState.current = stepId;
+  } else {
+    // Direct jump - just navigate there
+    AppState.current = stepId;
+    // Don't modify history for direct jumps
+  }
+  render();
+}
+
+/* ══════════════════════════════════════
+   SIDEBAR TOGGLE
+   ══════════════════════════════════════ */
+function toggleSidebar() {
+  const isMobile = window.innerWidth <= 768;
+  if (isMobile) {
+    AppState.sidebarOpen = !AppState.sidebarOpen;
+    DOM.sidebar.classList.toggle('open', AppState.sidebarOpen);
+    DOM.sidebarBackdrop.classList.toggle('show', AppState.sidebarOpen);
+    DOM.btnToggleSidebar.setAttribute('aria-expanded', AppState.sidebarOpen);
+  } else {
+    DOM.sidebar.classList.toggle('collapsed');
+  }
+}
+
+function closeMobileSidebar() {
+  if (window.innerWidth <= 768) {
+    AppState.sidebarOpen = false;
+    DOM.sidebar.classList.remove('open');
+    DOM.sidebarBackdrop.classList.remove('show');
+    DOM.btnToggleSidebar.setAttribute('aria-expanded', 'false');
+  }
+}
+
+function switchSidebarTab(tab) {
+  AppState.sidebarTab = tab;
+  $$('.sb-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.tab === tab);
+  });
+  DOM.sbMap.style.display = tab === 'map' ? '' : 'none';
+  DOM.sbJourney.style.display = tab === 'journey' ? '' : 'none';
+}
+
+/* ══════════════════════════════════════
+   MAPA OVERLAY
+   ══════════════════════════════════════ */
+function toggleMapa() {
+  AppState.mapaOpen = !AppState.mapaOpen;
+  DOM.mapaOverlay.hidden = !AppState.mapaOpen;
+  if (AppState.mapaOpen) {
+    renderMapa();
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+}
+
+function closeMapa() {
+  AppState.mapaOpen = false;
+  DOM.mapaOverlay.hidden = true;
+  document.body.style.overflow = '';
+}
+
+/* ══════════════════════════════════════
+   DOWNLOAD
+   ══════════════════════════════════════ */
+function downloadGuide() {
+  try {
+    const html = document.documentElement.outerHTML;
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Guia_Medidas_Apoyo_Judicial.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showStatus('Descarga iniciada', 'success');
+  } catch (e) {
+    showStatus('Error al descargar', 'error');
+  }
+}
+
+/* ══════════════════════════════════════
+   EVENT HANDLING
+   ══════════════════════════════════════ */
+function handleAction(action, el) {
+  switch (action) {
+    case 'choose': {
+      const next = el.dataset.next;
+      const label = el.dataset.label;
+      navigateTo(next, label);
+      break;
+    }
+    case 'auto-next': {
+      const next = el.dataset.next;
+      navigateTo(next, 'Continuar');
+      break;
+    }
+    case 'go-back':
+      goBack();
+      break;
+    case 'reiniciar':
+      restart();
+      break;
+    case 'toggle-sidebar':
+      toggleSidebar();
+      break;
+    case 'sb-tab':
+      switchSidebarTab(el.dataset.tab);
+      break;
+    case 'toggle-mapa':
+      toggleMapa();
+      break;
+    case 'close-mapa':
+      closeMapa();
+      break;
+    case 'descargar':
+      downloadGuide();
+      break;
+    default:
+      break;
+  }
+}
+
+function setupEvents() {
+  // Delegated event handling
+  document.addEventListener('click', (e) => {
+    const actionEl = e.target.closest('[data-action]');
+    if (actionEl) {
+      handleAction(actionEl.dataset.action, actionEl);
+      return;
+    }
+
+    // Navigation from sidebar/mapa/breadcrumb
+    const navEl = e.target.closest('[data-nav]');
+    if (navEl) {
+      navigateToStep(navEl.dataset.nav);
+      return;
+    }
+  });
+
+  // Sidebar backdrop click (mobile)
+  DOM.sidebarBackdrop.addEventListener('click', closeMobileSidebar);
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (AppState.mapaOpen) {
+        closeMapa();
+      } else if (AppState.sidebarOpen && window.innerWidth <= 768) {
+        closeMobileSidebar();
+      }
+    }
+
+    // Alt+Left to go back
+    if (e.altKey && e.key === 'ArrowLeft') {
+      e.preventDefault();
+      goBack();
+    }
+
+    // Number keys 1-9 for decision shortcuts
+    if (e.key >= '1' && e.key <= '9' && !e.ctrlKey && !e.altKey && !e.metaKey) {
+      const s = STEPS[AppState.current];
+      if (s && s.opts) {
+        const idx = parseInt(e.key) - 1;
+        if (idx < s.opts.length) {
+          const btn = DOM.content.querySelector('.dec-btn[data-idx="' + idx + '"]');
+          if (btn) btn.click();
+        }
+      }
+    }
+  });
+
+  // Hash change
+  window.addEventListener('hashchange', () => {
+    const h = window.location.hash.slice(1);
+    if (h && STEPS[h] && h !== AppState.current) {
+      AppState.current = h;
+      render();
+    }
+  });
+}
+
+/* ══════════════════════════════════════
+   INITIALIZATION
+   ══════════════════════════════════════ */
+function init() {
+  cacheDom();
+  readHash();
+  render();
+  setupEvents();
+
+  // Initial sidebar state for desktop
+  if (window.innerWidth > 768) {
+    DOM.sidebar.classList.remove('collapsed');
+  }
+
+  showStatus('Guía de tramitación cargada', 'info');
+}
+
+// Boot
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+</script>
+</body>
+</html>

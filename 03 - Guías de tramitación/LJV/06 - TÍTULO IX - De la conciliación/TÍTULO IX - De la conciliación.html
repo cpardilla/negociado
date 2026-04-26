@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guía Definitiva — Conciliación (Ley 15/2015)</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#2E4A8B;--navy-mid:#3A5BA0;--navy-lt:#4B6DB5;--navy-bg:#5C7FC8;
+  --cyan:#0D9488;--cyan-bg:#F0FDFA;
+  --violet:#5B21B6;--violet-bg:#F5F3FF;
+  --green:#15803D;--green-bg:#F0FDF4;
+  --amber:#B45309;--amber-bg:#FFFBEB;
+  --red:#B91C1C;--red-bg:#FEF2F2;
+  --slate:#475569;--slate-bg:#F4F6FB;
+  --white:#FFFFFF;--bdr:#D1D9EE;
+  --text:#1A1A2E;--muted:#6B7280;
+  --ph0:#5C6BC0;--ph1:#7E57C2;--ph2:#4A78D4;--ph3:#2196F3;--ph4:#0097A7;--ph5:#00897B;--ph6:#43A047;--ph7:#F9A825;--ph8:#FB8C00;--ph9:#E53935
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--text);background:var(--slate-bg)}
+#app{display:flex;flex-direction:column;height:100vh;overflow:hidden}
+
+/* HEADER */
+#hdr{flex-shrink:0;height:56px;display:flex;justify-content:space-between;align-items:center;padding:0 20px;background:var(--navy);color:#fff}
+.h-left{display:flex;align-items:center;gap:12px}
+.h-seal{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.10);border:1.5px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:rgba(255,255,255,.8)}
+.h-title{font-size:15px;font-weight:700;line-height:1.2}
+.h-sub{font-size:11px;opacity:.6;font-weight:400}
+.h-right{display:flex;gap:8px}
+.btn-ghost{font-family:inherit;font-size:12px;font-weight:500;padding:6px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:rgba(255,255,255,.85);cursor:pointer;transition:all .15s;white-space:nowrap}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+
+/* PHASE BAR */
+#pbar{flex-shrink:0;height:38px;display:flex;align-items:center;padding:0 20px;background:var(--navy-mid);overflow-x:auto;scrollbar-width:none;gap:0}
+#pbar::-webkit-scrollbar{display:none}
+.ph-item{font-size:11px;font-weight:500;color:rgba(255,255,255,.40);white-space:nowrap;padding:4px 10px;border-radius:4px;transition:all .15s;cursor:pointer;display:flex;align-items:center;gap:6px}
+.ph-item.active{color:#fff;background:rgba(255,255,255,.12);font-weight:700}
+.ph-item.done{color:rgba(255,255,255,.70)}
+.ph-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.ph-sep{font-size:10px;color:rgba(255,255,255,.25);padding:0 4px}
+
+/* BREADCRUMB */
+#breadcrumb{flex-shrink:0;min-height:36px;display:flex;align-items:center;padding:0 20px;gap:0;overflow-x:auto;scrollbar-width:none;background:var(--slate-bg);border-bottom:1px solid var(--bdr)}
+#breadcrumb::-webkit-scrollbar{display:none}
+.bc-item{font-size:12px;white-space:nowrap;padding:0 6px;color:var(--muted);cursor:pointer;border:none;background:none;font-family:inherit}
+.bc-item:hover{color:var(--navy-lt);text-decoration:underline}
+.bc-current{font-weight:600;color:var(--navy);cursor:default}
+.bc-current:hover{text-decoration:none}
+.bc-sep{font-size:10px;color:var(--bdr);padding:0 2px}
+
+/* LAYOUT */
+#layout{flex:1;overflow:hidden;display:flex}
+#sidebar{width:270px;flex-shrink:0;background:var(--navy-mid);overflow-y:auto;display:flex;flex-direction:column}
+#content{flex:1;overflow-y:auto;padding:28px 36px 60px}
+
+/* SIDEBAR TABS */
+#sb-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,.10);flex-shrink:0}
+.sb-tab{flex:1;padding:9px 0;font-size:11px;font-weight:600;font-family:inherit;background:none;border:none;border-bottom:2px solid transparent;color:rgba(255,255,255,.40);cursor:pointer;letter-spacing:.4px;text-transform:uppercase;transition:all .15s}
+.sb-tab.active{color:#fff;border-bottom-color:#fff}
+.sb-tab:hover:not(.active){color:rgba(255,255,255,.70);background:rgba(255,255,255,.05)}
+#sb-map,#sb-journey{padding:10px 12px;overflow-y:auto;flex:1}
+
+/* SIDEBAR MAP */
+.sm-phase{margin-bottom:8px}
+.sm-phase-hdr{font-size:11px;font-weight:600;color:rgba(255,255,255,.55);padding:6px 8px;cursor:pointer;border-radius:4px;display:flex;align-items:center;gap:6px;transition:all .15s;letter-spacing:.3px;text-transform:uppercase}
+.sm-phase-hdr:hover{background:rgba(255,255,255,.06)}
+.sm-phase-hdr .arr{font-size:9px;transition:transform .15s}
+.sm-phase-hdr.collapsed .arr{transform:rotate(-90deg)}
+.sm-nodes{padding-left:8px}
+.sm-nodes.hidden{display:none}
+.sm-node{font-size:12px;padding:5px 8px;border-radius:4px;color:rgba(255,255,255,.60);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:6px;line-height:1.3}
+.sm-node:hover{background:rgba(255,255,255,.08)}
+.sm-node .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.sm-visited .dot{background:var(--green)}
+.sm-visited{color:rgba(255,255,255,.80)}
+.sm-current .dot{background:#60a5fa;box-shadow:0 0 0 3px rgba(96,165,250,.35);animation:pulse 1.5s infinite}
+.sm-current{color:#fff;font-weight:600}
+.sm-unvisited .dot{background:rgba(255,255,255,.20)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.sm-end .dot{width:8px;height:8px;border-radius:2px}
+
+/* SIDEBAR JOURNEY */
+.pi{padding:8px 10px;border-radius:6px;margin-bottom:4px;font-size:12px;color:rgba(255,255,255,.60);line-height:1.3}
+.pi.past{color:rgba(255,255,255,.75)}
+.pi.current{color:#fff;font-weight:600;background:rgba(255,255,255,.08)}
+.pi-num{font-size:10px;font-weight:700;color:rgba(255,255,255,.35);margin-right:6px}
+.pi-choice{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px;font-style:italic}
+.sb-foot{padding:12px 10px;border-top:1px solid rgba(255,255,255,.08);margin-top:auto}
+.sb-foot .law{font-size:10px;font-family:ui-monospace,SFMono-Regular,monospace;color:rgba(255,255,255,.35);line-height:1.6}
+
+/* CARD */
+.card{background:var(--white);border-radius:10px;border:1px solid var(--bdr);max-width:780px;margin:0 auto;animation:fadeUp .22s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.c-hdr{padding:24px 28px 16px;border-bottom:1px solid var(--bdr)}
+.act-badge{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;margin-bottom:10px;letter-spacing:.3px}
+.act-laj{background:var(--cyan-bg);color:var(--cyan);border:1px solid #99f6e4}
+.act-juez{background:var(--violet-bg);color:var(--violet);border:1px solid #ddd6fe}
+.act-ambos{background:var(--amber-bg);color:#92400e;border:1px solid #fde68a}
+.act-solicitante{background:#EFF6FF;color:#1D4ED8;border:1px solid #BFDBFE}
+.act-partes{background:#FDF2F8;color:#BE185D;border:1px solid #FBCFE8}
+.c-title{font-size:20px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:4px}
+.step-num{font-size:11px;color:var(--muted)}
+
+.c-body{padding:20px 28px 24px}
+.c-body>*+*{margin-top:14px}
+.blk{padding:14px 16px;border-radius:8px;font-size:14px;line-height:1.65}
+.blk .cb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;display:block;opacity:.8}
+.blk-i{background:var(--slate-bg);border-left:3px solid var(--navy-lt);color:var(--text)}
+.blk-i .cb-label{color:var(--navy-lt)}
+.blk-d{background:var(--amber-bg);border-left:3px solid var(--amber);color:#78350F}
+.blk-d .cb-label{color:var(--amber)}
+.blk-n{background:var(--cyan-bg);border-left:3px solid var(--cyan);color:#134E4A}
+.blk-n .cb-label{color:var(--cyan)}
+.blk-w{background:var(--red-bg);border-left:3px solid var(--red);color:#7F1D1D}
+.blk-w .cb-label{color:var(--red)}
+.blk-l{background:var(--violet-bg);border-left:3px solid var(--violet);font-family:ui-monospace,SFMono-Regular,monospace;font-size:12px;color:#4C1D95;line-height:1.7}
+.blk-l .cb-label{color:var(--violet);font-family:'Outfit',sans-serif;font-size:10px}
+
+.chk{background:var(--slate-bg);border-left:3px solid var(--navy-bg);border-radius:8px;padding:14px 16px}
+.chk .cb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;color:var(--navy-lt);display:block}
+.chk-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.chk-item{display:flex;align-items:flex-start;gap:8px;padding:5px 0;font-size:13px;line-height:1.5;color:var(--text)}
+.chk-item input[type=checkbox]{margin-top:3px;accent-color:var(--navy-lt);width:16px;height:16px;flex-shrink:0}
+
+/* DECISION */
+.dec-area{padding:0 28px 24px}
+.dec-q{font-size:15px;font-weight:600;color:var(--navy);padding:16px 18px;border-radius:8px;border-top:3px solid var(--navy);background:var(--slate-bg);margin-bottom:16px;line-height:1.5}
+.dec-opts{display:flex;flex-direction:column;gap:8px}
+.dec-btn{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:8px;border:1.5px solid var(--bdr);background:var(--white);cursor:pointer;transition:all .15s;font-family:inherit;text-align:left;width:100%}
+.dec-btn:hover{border-color:var(--navy-lt);background:#F0F4FF;transform:translateX(4px)}
+.dec-btn.ok:hover{border-color:var(--green);background:var(--green-bg)}
+.dec-btn.bad:hover{border-color:var(--red);background:var(--red-bg)}
+.dec-btn.warn:hover{border-color:var(--amber);background:var(--amber-bg)}
+.dec-btn.neutral:hover{border-color:var(--slate);background:var(--slate-bg)}
+.dec-letter{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;color:var(--white);background:var(--navy-lt)}
+.dec-btn.ok .dec-letter{background:var(--green)}
+.dec-btn.bad .dec-letter{background:var(--red)}
+.dec-btn.warn .dec-letter{background:var(--amber)}
+.dec-btn.neutral .dec-letter{background:var(--slate)}
+.dec-txt{font-size:14px;font-weight:500;color:var(--text);line-height:1.4}
+
+/* NAV */
+.c-nav{padding:16px 28px;border-top:1px solid var(--bdr);display:flex;justify-content:space-between;align-items:center}
+.btn-back,.btn-next{font-family:inherit;font-size:13px;font-weight:600;padding:8px 18px;border-radius:6px;cursor:pointer;transition:all .15s;border:none}
+.btn-back{background:var(--slate-bg);color:var(--slate);border:1px solid var(--bdr)}
+.btn-back:hover{background:#E2E8F0}
+.btn-back:disabled{opacity:.35;cursor:not-allowed}
+.btn-next{background:var(--navy-lt);color:var(--white)}
+.btn-next:hover{background:var(--navy)}
+
+/* END CARD */
+.end-card{text-align:center}
+.end-icon{font-size:48px;margin-bottom:12px}
+.end-title{font-size:22px;font-weight:700;margin-bottom:6px}
+.end-sub{font-size:13px;color:var(--muted);margin-bottom:20px}
+.end-success .end-title{color:var(--green)}
+.end-error .end-title{color:var(--red)}
+.end-warning .end-title{color:var(--amber)}
+.end-neutral .end-title{color:var(--navy-lt)}
+.end-btns{display:flex;gap:10px;justify-content:center;margin-bottom:24px}
+.summary-box{text-align:left;background:var(--slate-bg);border-radius:8px;padding:18px 20px;margin-top:20px}
+.summary-box h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.sum-step{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid var(--bdr);font-size:13px;line-height:1.5}
+.sum-step:last-child{border-bottom:none}
+.sum-num{font-weight:700;color:var(--navy-lt);min-width:22px}
+.sum-choice{font-size:11px;color:var(--muted);font-style:italic}
+
+/* MAPA OVERLAY */
+#mapa-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(46,74,139,.92);z-index:100;padding:30px;overflow-y:auto}
+.mapa-inner{background:var(--white);border-radius:16px;padding:28px;max-width:1200px;margin:0 auto}
+.mapa-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.mapa-title{font-size:18px;font-weight:700;color:var(--navy)}
+.mapa-back{font-family:inherit;font-size:13px;font-weight:600;padding:8px 20px;border-radius:6px;border:1px solid var(--bdr);background:var(--white);color:var(--navy);cursor:pointer}
+.mapa-back:hover{background:var(--navy);color:#fff}
+.mapa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.mapa-col{background:var(--slate-bg);border-radius:8px;padding:14px;border:1px solid var(--bdr)}
+.mapa-col-hdr{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding-bottom:8px;border-bottom:1px solid var(--bdr);margin-bottom:10px;display:flex;align-items:center;gap:6px;color:var(--navy)}
+.mapa-node{padding:8px 10px;border-radius:6px;border-left:3px solid var(--bdr);margin-bottom:6px;font-size:12px;line-height:1.4;cursor:pointer;background:var(--white);transition:all .15s}
+.mapa-node:hover{background:#eff6ff;border-left-color:var(--navy-lt)}
+.mapa-node.m-visited{border-left-color:var(--green);background:var(--green-bg)}
+.mapa-node.m-current{border-left-color:var(--navy-bg);background:#EFF6FF;font-weight:600}
+.mapa-node.m-end-success{border-left-color:var(--green)}
+.mapa-node.m-end-error{border-left-color:var(--red)}
+.mapa-node.m-end-warning{border-left-color:var(--amber)}
+.mapa-node.m-end-neutral{border-left-color:var(--slate)}
+.mapa-node-title{font-weight:600;color:var(--text)}
+.mapa-node-actor{font-size:10px;color:var(--muted)}
+
+/* TOOLTIP */
+.sm-tooltip{position:fixed;z-index:999;background:var(--white);border:1px solid var(--bdr);border-radius:8px;padding:14px 16px;max-width:320px;box-shadow:0 8px 24px rgba(0,0,0,.15);pointer-events:none;font-size:13px;line-height:1.5;color:var(--text)}
+.sm-tooltip .tt-title{font-weight:700;color:var(--navy);margin-bottom:4px;font-size:14px}
+.sm-tooltip .tt-actor{font-size:11px;color:var(--muted);margin-bottom:6px}
+
+/* PRINT & RESPONSIVE */
+@media print{
+  #hdr,#pbar,#breadcrumb,#sidebar,.c-nav,.dec-area,.end-btns,.btn-ghost{display:none!important}
+  #layout{display:block!important}#content{overflow:visible!important;padding:0!important}
+  .card{border:1px solid #ccc;break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  body{background:#fff}
+}
+@media(max-width:700px){
+  #sidebar{display:none}
+  #content{padding:16px 14px 40px}
+  .c-hdr{padding:18px 18px 12px}.c-body{padding:16px 18px 18px}.dec-area{padding:0 18px 18px}.c-nav{padding:12px 18px}
+  .c-title{font-size:17px}.h-right .btn-ghost:nth-child(1){display:none}
+}
+</style>
+</head>
+<body>
+<div id="app">
+<div id="hdr">
+  <div class="h-left">
+    <div class="h-seal">⚖</div>
+    <div><div class="h-title">De la Conciliación</div><div class="h-sub">Ley 15/2015, Título IX · Arts. 139–148</div></div>
+  </div>
+  <div class="h-right">
+    <button class="btn-ghost" onclick="toggleMapa()">🗺 Mapa</button>
+    <button class="btn-ghost" onclick="dlGuia()">⬇ Descargar</button>
+    <button class="btn-ghost" onclick="restart()">↺ Reiniciar</button>
+  </div>
+</div>
+<div id="pbar"></div>
+<div id="breadcrumb"></div>
+<div id="layout">
+  <div id="sidebar">
+    <div id="sb-tabs">
+      <button class="sb-tab active" onclick="sbTab('map')">Mapa</button>
+      <button class="sb-tab" onclick="sbTab('journey')">Recorrido</button>
+    </div>
+    <div id="sb-map"></div>
+    <div id="sb-journey" style="display:none"></div>
+  </div>
+  <div id="content"></div>
+</div>
+</div>
+
+<div id="mapa-overlay" onclick="if(event.target===this)toggleMapa()">
+<div class="mapa-inner">
+  <div class="mapa-top">
+    <div class="mapa-title">Mapa completo del procedimiento de conciliación</div>
+    <button class="mapa-back" onclick="toggleMapa()">← Volver al recorrido</button>
+  </div>
+  <div id="mapa-grid" class="mapa-grid"></div>
+</div>
+</div>
+
+<div id="tooltip" class="sm-tooltip" style="display:none"></div>
+
+<script>
+const ACTORS={laj:'Letrado Adm. Justicia',juez:'Juez de Paz / Juez',ambos:'LAJ o Juez',solicitante:'Solicitante',partes:'Ambas partes'};
+const PHASES=['Inicio','Procedencia','Competencia','Solicitud','Admisión','Prescripción','Comparecencia','Celebración','Cierre','Posterior'];
+const PH_COLORS=['var(--ph0)','var(--ph1)','var(--ph2)','var(--ph3)','var(--ph4)','var(--ph5)','var(--ph6)','var(--ph7)','var(--ph8)','var(--ph9)'];
+
+const S={
+inicio:{ph:0,t:'Inicio del expediente de conciliación',ac:'laj',c:[
+['i','La conciliación es un medio alternativo de resolución de conflictos regulado en el Título IX de la Ley 15/2015 (arts. 139 a 148). Constituye un acto prejudicial voluntario, previo al ejercicio de acciones judiciales, que persigue evitar el acceso innecesario a los tribunales cuando las partes pueden alcanzar un acuerdo satisfactorio.'],
+['i','Su fundamento constitucional se halla en el art. 24 CE (tutela judicial efectiva) y en el art. 39 CE (protección de la familia). El art. 2.3 LJV atribuye al LAJ el impulso y la dirección de los expedientes, correspondiendo al Juez la decisión de fondo en los casos previstos.'],
+['n','Este guía interactivo recorre el procedimiento completo, desde la verificación de procedencia y las exclusiones hasta las posibles vías posteriores al acuerdo.'],
+['l','Ley 15/2015, arts. 2, 139-148; CE arts. 24 y 39; LEC art. 517.2.9º; CC art. 1973']
+],q:'¿La pretensión tiene por finalidad lícita alcanzar un acuerdo para evitar un pleito?',opts:[
+{t:'Sí, la finalidad es lícita y procede verificar',l:'ok',n:'verifica_competencia'},
+{t:'No, es un uso indebido (interrupción artificiosa, fraude de ley)',l:'bad',n:'fin_abuso'}
+]},
+
+fin_abuso:{ph:0,t:'Inadmisión de plano por uso indebido',ac:'ambos',end:'error',c:[
+['w','La utilización del expediente para finalidades distintas de alcanzar un acuerdo que suponga un manifiesto abuso de derecho (CC art. 7.2) o entrañe fraude de ley o procesal dará lugar a la inadmisión de plano (art. 139.1 in fine).'],
+['l','Art. 139.1, párrafo segundo, Ley 15/2015; CC art. 7.2, 11.2']
+]},
+
+verifica_competencia:{ph:0,t:'Verificación de competencia objetiva y territorial',ac:'juez',c:[
+['i','Compruebe que el órgano ante el que se acude tiene competencia. La competencia territorial viene fijada por el domicilio del requerido (art. 140.1), sin que quepa modificarla por sumisión (art. 2.2 LJV).'],
+['cl','Verificación de competencia',[
+'JPI o Mercantil: competencia objetiva general (art. 2.1 LJV)',
+'Domicilio del requerido: regla general territorial',
+'Fuero alternativo: persona jurídica con establecimiento en domicilio del solicitante',
+'Última residencia en España: si no tuviere domicilio en territorio nacional',
+'Cuantía < 6.000 € y no mercantil: Juez de Paz (art. 140.3)'
+]],
+['l','Art. 2.1-2 LJV · Art. 140.1 LJV']
+],nx:'verifica_exclusion'},
+
+verifica_exclusion:{ph:0,t:'Verificación de materias excluidas (art. 139.2)',ac:'laj',c:[
+['i','Determine si la materia objeto de la conciliación está excluida por razón del objeto. Estas exclusiones son de orden público procesal, no susceptibles de renuncia ni interpretación extensiva.'],
+['w','La inadmisión de plano es la consecuencia de intentar la conciliación sobre materias excluidas.']],
+q:'¿La materia solicitada está entre las excluidas por el art. 139.2 LJV?',opts:[
+{t:'Sí: Menores o personas con discapacidad con medidas de apoyo (art. 139.2.1º)',l:'bad',n:'fin_excluido_menores'},
+{t:'Sí: Estado, CC.AA. o Administraciones públicas (art. 139.2.2º)',l:'bad',n:'fin_excluido_admin'},
+{t:'Sí: Responsabilidad civil de Jueces y Magistrados (art. 139.2.3º)',l:'bad',n:'fin_excluido_jueces'},
+{t:'Sí: Materias no susceptibles de transacción ni compromiso (art. 139.2.4º)',l:'bad',n:'fin_excluido_transaccion'},
+{t:'No — La materia es susceptible de conciliación',l:'ok',n:'verifica_proceso'}
+]},
+
+fin_excluido_menores:{ph:1,t:'Excluido: Menores y Personas con Discapacidad',ac:'laj',end:'error',c:[
+['i','El art. 139.2.1º excluye los asuntos en que estén interesados menores o personas con capacidad modificada judicialmente, salvo que la ley disponga lo contrario. La exclusión se justifica por la especial protección (CE art. 39, LO 8/2021).'],
+['l','Ley 15/2015, art. 139.2.1º; CE art. 39; LO 8/2021; CC art. 162; LEC art. 749']
+]},
+fin_excluido_admin:{ph:1,t:'Excluido: Administraciones Públicas',ac:'laj',end:'error',c:[
+['i','El art. 139.2.2º excluye los asuntos en que estén interesadas las Administraciones públicas, por el principio de indisponibilidad de los intereses públicos (Ley 40/2015, art. 47 y ss.).'],
+['l','Ley 15/2015, art. 139.2.2º; Ley 40/2015, arts. 47 y 77']
+]},
+fin_excluido_jueces:{ph:1,t:'Excluido: Jueces y Magistrados (Responsabilidad Civil)',ac:'laj',end:'error',c:[
+['i','El art. 139.2.3º excluye la conciliación cuando se trate de la responsabilidad civil de Jueces y Magistrados. Régimen específico incompatible con la conciliación (LOPJ arts. 295 y ss.).'],
+['l','Ley 15/2015, art. 139.2.3º; LOPJ arts. 295 y ss.; CE art. 117']
+]},
+fin_excluido_transaccion:{ph:1,t:'Excluido: Materias No Transigibles',ac:'laj',end:'warning',c:[
+['i','El art. 139.2.4º excluye las cuestiones que no sean susceptibles de transacción. No son transigibles los derechos irrenunciables, los de carácter personalísimo, los derechos fundamentales en su núcleo, ni los derechos laborales mínimos irrenunciables (ET art. 3.5).'],
+['w','La exclusión debe valorarse caso por caso. Lo que no es transigible es el derecho en sí, pero sus consecuencias patrimoniales sí pueden ser susceptibles de acuerdo.'],
+['l','Ley 15/2015, art. 139.2.4º; CC art. 1809; CE arts. 15, 18']
+]},
+
+verifica_proceso:{ph:1,t:'Verificación de proceso jurisdiccional en curso (art. 6.2)',ac:'laj',c:[
+['i','Compruebe si el mismo objeto está siendo sustanciado en un proceso jurisdiccional contencioso.'],
+['w','No se podrá iniciar ni continuar un expediente de JV sobre un objeto que esté siendo sustanciado en un proceso jurisdiccional.']],
+q:'¿Existe un proceso jurisdiccional en curso sobre el mismo objeto?',opts:[
+{t:'Sí — Hay demanda presentada sobre el mismo objeto',l:'bad',n:'fin_proceso'},
+{t:'No — No hay proceso jurisdiccional sobre este objeto',l:'ok',n:'verifica_concurrente'}
+]},
+
+fin_proceso:{ph:1,t:'Archivo por proceso jurisdiccional en curso',ac:'laj',end:'warning',c:[
+['i','Se archiva el expediente, remitiéndose las actuaciones al tribunal que conoce del proceso para que las incorpore a los autos.'],
+['l','Art. 6.2 LJV']
+]},
+
+verifica_concurrente:{ph:1,t:'Verificación de proceso contencioso prejudicial (art. 6.3)',ac:'laj',c:[
+['i','Verifique si existe un proceso jurisdiccional contencioso cuya resolución pudiese afectar al expediente.'],
+['n','Se acuerda la suspensión del expediente tramitando el incidente conforme al art. 43 LEC (cuestión prejudicial civil).']],
+q:'¿Existe un proceso contencioso cuya resolución pueda afectar al expediente?',opts:[
+{t:'Sí — Se acuerda la suspensión',l:'warn',n:'fin_concurrente'},
+{t:'No — No existe proceso que afecte',l:'ok',n:'verifica_fiscal'}
+]},
+
+fin_concurrente:{ph:1,t:'Suspensión por proceso prejudicial',ac:'laj',end:'warning',c:[
+['i','Se acuerda la suspensión tramitando el incidente conforme al art. 43 LEC.'],
+['l','Art. 6.3 LJV · Art. 43 LEC']
+]},
+
+verifica_fiscal:{ph:1,t:'Verificación de intervención del Ministerio Fiscal (art. 4)',ac:'laj',c:[
+['i','Determine si el Ministerio Fiscal debe intervenir en el expediente.'],
+['n','El Fiscal interviene cuando afecta al estado civil, interés de menor o persona con discapacidad, o cuando la ley lo declare expresamente.']],
+q:'¿Procede la intervención del Ministerio Fiscal?',opts:[
+{t:'Sí — Afecta a estado civil, menores o personas con discapacidad',l:'warn',n:'competencia_tipo'},
+{t:'No — No concurren las circunstancias del art. 4',l:'ok',n:'competencia_tipo'}
+]},
+
+competencia_tipo:{ph:2,t:'Competencia: Tipo de Órgano',ac:'ambos',c:[
+['i','Determinar el órgano competente es esencial. Serán competentes los JPI, los Juzgados de lo Mercantil y los Jueces de Paz.']],
+q:'¿Qué órgano es competente en este caso?',opts:[
+{t:'Juzgado de Primera Instancia (competencia general)',l:'ok',n:'competencia_domicilio'},
+{t:'Juzgado de lo Mercantil (competencia desleal, publicidad, PI/PII)',l:'ok',n:'competencia_domicilio'},
+{t:'Juez de Paz (cuantía < 6.000€ o sin JPI en la localidad)',l:'neutral',n:'competencia_domicilio'}
+]},
+
+competencia_domicilio:{ph:2,t:'Competencia Territorial: Domicilio del Requerido',ac:'laj',c:[
+['i','La competencia territorial se determina por el domicilio del requerido (art. 140.1). El domicilio se entiende como el lugar de residencia habitual (CC art. 40) y domicilio social para personas jurídicas.'],
+['w','Si el domicilio es desconocido, deberá acudirse a reglas supletorias.']],
+q:'¿Se conoce el domicilio del requerido?',opts:[
+{t:'Sí, el domicilio es conocido',l:'ok',n:'competencia_pj'},
+{t:'Se conoce el último domicilio en España',l:'warn',n:'competencia_ultima_residencia'},
+{t:'El domicilio es desconocido',l:'bad',n:'competencia_domicilio_desconocido'}
+]},
+
+competencia_ultima_residencia:{ph:2,t:'Competencia: Última Residencia en España',ac:'laj',c:[
+['i','Si no se conoce el domicilio actual pero sí su última residencia en España, será competente el Juzgado correspondiente a dicha última residencia.'],
+['l','Ley 15/2015, art. 140.1; LEC art. 51']
+],nx:'competencia_pj'},
+
+competencia_pj:{ph:2,t:'Verificación — Persona jurídica con presencia local',ac:'solicitante',c:[
+['i','Si el requerido es persona jurídica, existe un fuero alternativo: será también competente el órgano del domicilio del solicitante, siempre que en dicho lugar tenga el requerido delegación, sucursal, establecimiento u oficina abierta al público o representante autorizado.'],
+['l','Art. 140.1, párrafo cuarto, Ley 15/2015; STJUE Somafer 22-2-1979']
+],q:'¿El requerido es persona jurídica con establecimiento en el domicilio del solicitante?',opts:[
+{t:'Sí — se acredita delegación, sucursal u oficina en mi domicilio',l:'ok',n:'solicitud'},
+{t:'No — el requerido es persona física, o no tiene establecimiento',l:'neutral',n:'solicitud'}
+]},
+
+competencia_domicilio_desconocido:{ph:2,t:'Domicilio Desconocido: Procedimiento Concluido',ac:'laj',end:'warning',c:[
+['i','Si el domicilio es totalmente desconocido, el LAJ declarará concluso el procedimiento con reserva del derecho del solicitante para ejercitar su acción ante los tribunales competentes.'],
+['w','Antes de declarar el domicilio desconocido, deben agotarse los medios de localización razonablemente disponibles.'],
+['l','Ley 15/2015, art. 140.1; LEC arts. 155, 164; STS 15-3-2004']
+]},
+
+solicitud:{ph:3,t:'Solicitud de Conciliación (art. 141)',ac:'solicitante',c:[
+['i','El solicitante presenta la solicitud por escrito o mediante impresos normalizados. La presentación constituye el acto de iniciación y produce efectos interruptivos de la prescripción desde su fecha.'],
+['cl','Contenido obligatorio de la solicitud',[
+'Datos identificativos del solicitante y del requerido',
+'Domicilio a efectos de notificaciones y citaciones',
+'Objeto de la conciliación con claridad y precisión',
+'Exposición de hechos y fundamentos jurídicos',
+'Documentos y dictámenes de interés',
+'Tantas copias cuantos sean los interesados'
+]],
+['n','No es preceptiva la intervención de Abogado ni Procurador, aunque es recomendable en asuntos complejos pues el acuerdo tiene fuerza ejecutiva.'],
+['l','Art. 141 Ley 15/2015; LEC art. 135; CC art. 1973']
+],nx:'verifica_defectos'},
+
+verifica_defectos:{ph:4,t:'Examen de la solicitud: verificación de requisitos',ac:'laj',c:[
+['i','El LAJ examina la solicitud para verificar que reúne los requisitos formales del art. 141 LJV.'],
+['n','Si la solicitud no reúne los requisitos, el LAJ requerirá al solicitante para que subsane las deficiencias, con advertencia de desistimiento.']],
+q:'¿La solicitud reúne todos los requisitos formales?',opts:[
+{t:'Sí — La solicitud es completa y formalmente correcta',l:'ok',n:'admision'},
+{t:'No — Faltan datos o documentos; se requiere subsanación',l:'warn',n:'subsanar'}
+]},
+
+subsanar:{ph:4,t:'Requerimiento de subsanación de la solicitud',ac:'laj',c:[
+['i','El LAJ requiere al solicitante para que subsane las deficiencias detectadas, señalando un plazo y advirtiendo de las consecuencias del incumplimiento.'],
+['w','Si el solicitante no subsana en el plazo indicado, se tendrá por desistido de su petición y se archivará el expediente.']],
+q:'¿El solicitante ha subsanado las deficiencias en el plazo?',opts:[
+{t:'Sí — Subsanación cumplida; la solicitud reúne los requisitos',l:'ok',n:'admision'},
+{t:'No — No subsana dentro del plazo',l:'bad',n:'fin_desistimiento_sol'}
+]},
+
+fin_desistimiento_sol:{ph:4,t:'Desistimiento por falta de subsanación',ac:'laj',end:'warning',c:[
+['i','El solicitante no subsana en plazo. Se tiene por desistido y se archiva, sin perjuicio de promover uno nuevo.']
+]},
+
+admision:{ph:4,t:'Admisión de la solicitud y señalamiento',ac:'laj',c:[
+['i','El LAJ, en los cinco días hábiles siguientes a la presentación, dicta resolución de admisión y cita a los interesados, señalando día y hora del acto.'],
+['d','Plazo de admisión: 5 días hábiles · Antelación mínima: 5 días · Demora máxima: 10 días desde admisión'],
+['cl','La resolución debe contener',[
+'Cumplimiento de requisitos formales',
+'Señalamiento del día y hora del acto',
+'Medio de citación (electrónico o diligencia)',
+'Advertencia de consecuencias de la incomparecencia'
+]],
+['l','Art. 142.1-2 LJV · Art. 130 LEC']
+],nx:'citacion'},
+
+citacion:{ph:4,t:'Citación de los interesados',ac:'laj',c:[
+['i','Se practica la citación en el domicilio señalado. Debe contener: identificación del órgano, fecha, hora, lugar, identidad de las partes y advertencia de incomparecencia.'],
+['n','La citación se realiza preferentemente por medios electrónicos o por diligencia de comunicación.'],
+['l','Art. 142.2 LJV; LEC arts. 149-164']
+],nx:'efectos_prescripcion'},
+
+efectos_prescripcion:{ph:5,t:'Efectos sobre la Prescripción (art. 143)',ac:'laj',c:[
+['i','La presentación con ulterior admisión de la solicitud interrumpe la prescripción, tanto adquisitiva como extintiva, desde el momento de su presentación. El efecto es retroactivo a la fecha de presentación.'],
+['n','La interrupción implica que, una vez finalizado el expediente, el plazo de prescripción comienza a computarse íntegramente de nuevo (CC art. 1974).'],
+['w','El riesgo de abuso del procedimiento con fines meramente interruptivos sin intención real de acuerdo podría ser considerado abusivo (CC art. 7.2).'],
+['d','Interrupción: desde la fecha de presentación. Nuevo cómputo: desde la terminación del procedimiento.'],
+['l','Art. 143 LJV; CC arts. 1973 y 1974; STS 23-5-2000; STS 14-3-2006']
+],nx:'comparecencia_solicitante'},
+
+comparecencia_solicitante:{ph:6,t:'Comparecencia del solicitante al acto',ac:'solicitante',c:[
+['i','Las partes deben comparecer por sí mismas o por medio de Procurador con poder suficiente. La comparecencia incluye presencia física o telemática, y el representante necesita poder suficiente para transigir (CC art. 1809).'],
+['l','Art. 144.1 Ley 15/2015 · Artículos 23 y ss. LEC; CC art. 1809']
+],q:'¿Comparece el solicitante (o su Procurador)?',opts:[
+{t:'Sí — El solicitante comparece al acto',l:'ok',n:'comparecencia_requerido'},
+{t:'No — El solicitante no comparece',l:'bad',n:'incomp_sol_justacausa'}
+]},
+
+incomp_sol_justacausa:{ph:6,t:'Incomparecencia del solicitante — ¿justa causa?',ac:'ambos',c:[
+['i','Si el solicitante no comparece, se verifica si ha alegado justa causa (enfermedad, fuerza mayor, etc.). La fuerza mayor debe reunir los requisitos del CC art. 1105.'],
+['d','Plazo para justificar: 3 días desde la fecha del señalamiento fallido.'],
+['l','Art. 144.2 y 144.4 Ley 15/2015; CC art. 1105']
+],q:'¿El solicitante ha alegado justa causa acreditada?',opts:[
+{t:'No — Incomparecencia injustificada',l:'bad',n:'fin_desistimiento'},
+{t:'Sí — Justa causa acreditada',l:'warn',n:'suspension_sol'}
+]},
+
+suspension_sol:{ph:6,t:'Suspensión por justa causa del solicitante',ac:'laj',c:[
+['i','Considerando acreditada la justa causa, el LAJ/Juez de Paz señalará nuevo día y hora para la celebración.'],
+['d','Nuevo señalamiento: dentro de los 5 días siguientes a la decisión de suspender.'],
+['l','Art. 144.4 Ley 15/2015']
+],nx:'comparecencia_solicitante'},
+
+fin_desistimiento:{ph:6,t:'Desistimiento por incomparecencia del solicitante',ac:'ambos',end:'error',c:[
+['i','Si no comparece el solicitante ni alega justa causa, se le tendrá por desistido y se archivará el expediente.'],
+['w','El requerido podrá reclamar indemnización de daños y perjuicios (CC arts. 1101, 1107). La incomparecencia injustificada puede constituir temeridad o mala fe (LEC art. 394).'],
+['d','Plazo de traslado de la reclamación de indemnización: 5 días.'],
+['l','Art. 144.2 Ley 15/2015; CC art. 1101 y ss.']
+]},
+
+comparecencia_requerido:{ph:6,t:'Comparecencia del requerido o requeridos',ac:'partes',c:[
+['i','Se verifica la comparecencia del requerido o requeridos. A diferencia del solicitante, su incumplimiento no genera las mismas consecuencias sancionadoras.'],
+['l','Art. 144.3 Ley 15/2015']
+],q:'¿Comparece(n) el/los requerido(s)?',opts:[
+{t:'Sí — Todos los requeridos comparecen',l:'ok',n:'celebracion'},
+{t:'No comparecen sin justa causa — Conciliación por intentada',l:'bad',n:'incomp_req_justacausa'},
+{t:'No comparecen con justa causa — Se reprograma',l:'warn',n:'suspension_req'},
+{t:'Algunos comparecen y otros no — Se celebra con los presentes',l:'neutral',n:'celebracion_parcial'}
+]},
+
+incomp_req_justacausa:{ph:6,t:'Incomparecencia del requerido — ¿justa causa?',ac:'ambos',c:[
+['i','Si el requerido no comparece sin justa causa, el LAJ declara la conciliación intentada sin efecto.'],
+['l','Art. 144.3 y 144.4 Ley 15/2015']
+],q:'¿El requerido ha alegado justa causa acreditada?',opts:[
+{t:'No — Incomparecencia injustificada',l:'bad',n:'fin_intentada_incomp'},
+{t:'Sí — Justa causa acreditada',l:'warn',n:'suspension_req'}
+]},
+
+suspension_req:{ph:6,t:'Suspensión por justa causa del requerido',ac:'laj',c:[
+['i','Acreditada la justa causa, se señala nuevo día y hora.'],
+['d','Nuevo señalamiento: dentro de los 5 días siguientes.'],
+['l','Art. 144.4 Ley 15/2015']
+],nx:'comparecencia_requerido'},
+
+fin_intentada_incomp:{ph:6,t:'Conciliación intentada por incomparecencia del requerido',ac:'ambos',end:'neutral',c:[
+['i','El requerido no comparece sin justa causa. Se tiene por intentada a todos los efectos legales, habilitando al solicitante para ejercitar acciones judiciales. El efecto interruptivo de la prescripción se mantiene.'],
+['l','Art. 144.3 Ley 15/2015; CC arts. 1973, 1974']
+]},
+
+celebracion_parcial:{ph:7,t:'Celebración parcial con los requeridos presentes',ac:'ambos',c:[
+['i','Siendo varios los requeridos y concurriendo solo alguno, se celebra con los presentes y se tiene por intentada respecto de los restantes.'],
+['l','Art. 144.3 Ley 15/2015']
+],nx:'celebracion'},
+
+celebracion:{ph:7,t:'Celebración del acto de conciliación',ac:'ambos',c:[
+['i','El acto se estructura en fases: expositiva, contestación, probatoria (documental), avenencia y cierre. El LAJ/Juez invitará a las partes a alcanzar acuerdo, sin imponer solución.'],
+['cl','Fases del acto de conciliación',[
+'1.ª Exposición: el solicitante presenta su reclamación y fundamentos.',
+'2.ª Contestación: el requerido responde lo que crea conveniente.',
+'3.ª Aportación documental: los intervinientes pueden exhibir o aportar documentos.',
+'4.ª Mediación: si no hay avenencia, el órgano procura avenirlos con réplica y contrarréplica.',
+'5.ª Cierre: Se levanta acta con o sin avenencia.'
+]],
+['n','El desarrollo se registrará, si fuera posible, en soporte apto para grabación de sonido e imagen. El acuerdo requiere conformidad libre y voluntaria.'],
+['l','Art. 145.1 y 145.4 Ley 15/2015']
+],q:'¿Se alega alguna cuestión que impida la válida prosecución del acto?',opts:[
+{t:'No — El acto se desarrolla con normalidad',l:'ok',n:'verifica_acuerdo'},
+{t:'Sí — Se alega cuestión impeditiva (falta de capacidad, litispendencia, etc.)',l:'warn',n:'fin_impeditiva'}
+]},
+
+fin_impeditiva:{ph:7,t:'Conciliación intentada por cuestión impeditiva',ac:'ambos',end:'neutral',c:[
+['i','Si se alega cuestión impeditiva (falta de capacidad, defecto de citación, litispendencia, cosa juzgada), se da por terminado el acto y se tiene por intentada sin más trámites. El efecto interruptivo de la prescripción se mantiene.'],
+['l','Art. 145.2 Ley 15/2015; LEC arts. 9, 222, 416']
+]},
+
+verifica_acuerdo:{ph:7,t:'Verificación de conformidad entre las partes',ac:'ambos',c:[
+['i','Celebrado el acto sin cuestiones impeditivas, se determina si las partes han alcanzado un acuerdo. La avenencia debe respetar los límites de la autonomía de la voluntad (CC art. 1255) y no puede perjudicar a terceros (CC art. 1256).'],
+['l','Art. 145.3 Ley 15/2015; CC arts. 1255, 1256, 1275-1277']
+],q:'¿Cuál es el resultado del acto de conciliación?',opts:[
+{t:'Avenencia total — acuerdo completo sobre el objeto',l:'ok',n:'avenencia_total'},
+{t:'Avenencia parcial — acuerdo sobre algún punto',l:'warn',n:'avenencia_parcial'},
+{t:'Sin avenencia — no se consigue acuerdo alguno',l:'bad',n:'sin_avenencia'}
+]},
+
+avenencia_total:{ph:7,t:'Avenencia total — formalización del acta',ac:'ambos',c:[
+['i','Las partes acuerdan sobre la totalidad del objeto. Se hace constar detalladamente en un acta, que debe ser firmada por los comparecientes. El acuerdo tiene fuerza de título ejecutivo (LEC art. 517.2.9º) y efectos de cosa juzgada material (CC art. 1216).'],
+['w','El contenido del acta es crucial: constituye la base del título ejecutivo. Debe ser claro, preciso y susceptible de ejecución forzosa.'],
+['l','Art. 145.3 Ley 15/2015; LEC art. 517.2.9º; CC arts. 1156, 1216, 1809-1819']
+],nx:'cierre_avenencia'},
+
+avenencia_parcial:{ph:7,t:'Avenencia parcial — formalización del acta',ac:'ambos',c:[
+['i','Acuerdo sobre parte del objeto. Se identifican los extremos acordados y los aspectos sobre los que no hubo conformidad. El acta parcial tiene fuerza ejecutiva respecto de los extremos acordados.'],
+['n','El solicitante conserva la acción para reclamar judicialmente la parte no conciliada.'],
+['l','Art. 145.3 Ley 15/2015; STS 12-7-2002']
+],nx:'cierre_avenencia'},
+
+sin_avenencia:{ph:7,t:'Conciliación celebrada sin avenencia',ac:'ambos',end:'neutral',c:[
+['i','No se consigue acuerdo. El LAJ dictará decreto o el Juez de Paz auto acordando el archivo definitivo. El solicitante queda habilitado para ejercitar las acciones que le correspondan.'],
+['i','Las manifestaciones realizadas en el acto no vinculan en el posterior proceso judicial, pero las admisiones de hechos pueden ser tenidas en cuenta como elementos de prueba.'],
+['l','Art. 145.3 y 145.4 Ley 15/2015; CC arts. 1973, 1974']
+]},
+
+cierre_avenencia:{ph:8,t:'Cierre con Avenencia: Decreto/Auto de Aprobación',ac:'laj',c:[
+['i','El LAJ dicta decreto o el Juez dicta auto haciendo constar la avenencia. El decreto/auto, junto con el acta, conforman el título ejecutivo dual.'],
+['cl','Contenido del decreto/auto de aprobación',[
+'Fecha y órgano que lo dicta',
+'Identificación de las partes',
+'Términos del acuerdo alcanzado',
+'Declaración de carácter de título ejecutivo',
+'Acuerdo de archivo definitivo'
+]],
+['l','Art. 145.4 Ley 15/2015; LEC art. 517.2.9º']
+],nx:'testimonio_gastos'},
+
+testimonio_gastos:{ph:8,t:'Testimonio del Acta y Gastos (art. 146)',ac:'laj',c:[
+['i','Las partes pueden solicitar testimonio del acta. El testimonio es la copia autorizada necesaria para la ejecución forzosa.'],
+['i','Los gastos del acto de conciliación serán de cuenta del que lo hubiere promovido (el solicitante), con independencia del resultado, salvo pacto en contrario. La tasa judicial está exenta (Ley 10/2012, art. 4).'],
+['d','Plazo para expedir testimonio: 5 días desde la solicitud.'],
+['l','Art. 146 Ley 15/2015; Ley 10/2012, art. 4; LEC art. 241']
+],q:'¿Se solicita el despacho de ejecución o se ejerce acción de nulidad?',opts:[
+{t:'Se insta la ejecución forzosa del acuerdo',l:'ok',n:'ejecucion'},
+{t:'No — El acuerdo se cumple voluntariamente',l:'ok',n:'fin_avenencia_firme'},
+{t:'Se ejerce acción de nulidad contra lo convenido',l:'warn',n:'nulidad'}
+]},
+
+fin_avenencia_firme:{ph:8,t:'Acuerdo Firme y Consentido',ac:'partes',end:'success',c:[
+['i','El acuerdo se cumple voluntariamente y no es impugnado en el plazo de 15 días (art. 148). Adquiere firmeza definitiva y produce efectos de cosa juzgada material (CC art. 1216).'],
+['n','En caso de incumplimiento futuro, el solicitante podrá instar la ejecución en cualquier momento dentro del plazo de 5 años (LEC art. 518).'],
+['l','Art. 146, 147 y 148 Ley 15/2015; CC art. 1216; LEC art. 518']
+]},
+
+ejecucion:{ph:9,t:'Fuerza ejecutiva del acuerdo (art. 147)',ac:'laj',c:[
+['i','El testimonio del acta junto con el decreto/auto lleva aparejada ejecución a los efectos del art. 517.2.9.º LEC. El título ejecutivo se compone de dos documentos conjuntos e inseparables.'],
+['i','A otros efectos, lo convenido tiene el valor y eficacia de un convenio consignado en documento público y solemne.'],
+['cl','Requisitos para la ejecución',[
+'Título ejecutivo: decreto/auto + acta de conciliación',
+'Determinación de la obligación: cantidad líquida o determinable',
+'Plazo: dentro del período de prescripción de la acción ejecutiva (LEC art. 518)'
+]],
+['l','Art. 147.1 Ley 15/2015 · Art. 517.2.9.º LEC']
+],nx:'ejecucion_competencia'},
+
+ejecucion_competencia:{ph:9,t:'Competencia para la Ejecución',ac:'juez',c:[
+['i','Se determina el órgano competente para la ejecución forzosa. La competencia territorial no es disponible por las partes en la ejecución de títulos judiciales.'],
+['cl','Reglas de competencia',['Mismo Juzgado que tramitó: cuando sea asunto de su competencia','Juzgado de Primera Instancia: en los demás casos (art. 545 LEC)']],
+['l','Art. 147.2-3 Ley 15/2015; LEC arts. 50, 545']
+],q:'¿Se formula oposición a la ejecución?',opts:[
+{t:'No — Sin oposición; la ejecución prosigue',l:'ok',n:'fin_ejecucion'},
+{t:'Sí — Se formula oposición mediante acción de nulidad',l:'warn',n:'nulidad'}
+]},
+
+fin_ejecucion:{ph:9,t:'Ejecución cumplida sin oposición',ac:'juez',end:'success',c:[
+['i','La ejecución se ha cumplido sin oposición. El procedimiento concluye con la satisfacción del derecho reconocido. Se seguirán los trámites de la LEC: requerimiento de pago, embargo y realización de bienes.'],
+['l','Art. 147 Ley 15/2015 · Arts. 538-603 LEC']
+]},
+
+nulidad:{ph:9,t:'Acción de Nulidad del Acuerdo (art. 148)',ac:'partes',c:[
+['i','Contra lo convenido sólo podrá ejercitarse la acción de nulidad por las causas que invalidan los contratos (vicios del consentimiento, defectos de objeto o causa, contravención de normas imperativas). La carga de la prueba recae sobre quien invoca la nulidad.'],
+['d','Plazo de caducidad: 15 días desde la celebración del acto. Este plazo es improrrogable y extintivo.'],
+['i','La demanda se sustanciará por los trámites del juicio que corresponda (ordinario o verbal).'],
+['w','Acreditado el ejercicio de la acción de nulidad, queda en suspenso la ejecución ipso iure hasta que se resuelva definitivamente.'],
+['l','Art. 148.1-2 Ley 15/2015; CC arts. 1261, 1265-1270, 1275-1309; LEC arts. 248, 437']
+],q:'¿Se interpone demanda de nulidad dentro del plazo de 15 días?',opts:[
+{t:'Sí — Dentro del plazo; se suspende la ejecución',l:'ok',n:'resuelve_nulidad'},
+{t:'No — Fuera del plazo de caducidad',l:'bad',n:'fin_caducada'}
+]},
+
+fin_caducada:{ph:9,t:'Acción de nulidad caducada — Acuerdo Firme',ac:'juez',end:'warning',c:[
+['i','El transcurso del plazo de caducidad de 15 días determina la firmeza del acuerdo. El título ejecutivo conserva toda su fuerza y la ejecución prosigue.'],
+['w','El plazo de 15 días es de caducidad, no de prescripción: no admite interrupción ni suspensión. La parte debe actuar con la máxima diligencia.'],
+['l','Art. 148.1 Ley 15/2015; CC arts. 1265-1270']
+]},
+
+resuelve_nulidad:{ph:9,t:'Resolución sobre la acción de nulidad',ac:'juez',c:[
+['i','El tribunal resuelve por sentencia firme estimando o desestimando la demanda.']],
+q:'¿Cuál es el resultado de la demanda de nulidad?',opts:[
+{t:'Estimada — El acuerdo se declara nulo',l:'bad',n:'fin_nulidad_estimada'},
+{t:'Desestimada — El acuerdo se confirma',l:'ok',n:'fin_nulidad_desestimada'}
+]},
+
+fin_nulidad_estimada:{ph:9,t:'Nulidad estimada — acuerdo anulado',ac:'juez',end:'error',c:[
+['i','El acuerdo queda sin efecto. Las partes deben restituirse recíprocamente las prestaciones (CC art. 1303), volviendo las cosas al estado anterior a la conciliación.'],
+['n','Las partes quedan habilitadas para acudir a la vía judicial ordinaria sobre el fondo del asunto.'],
+['l','Art. 148 Ley 15/2015; CC arts. 1303, 1973-1975']
+]},
+
+fin_nulidad_desestimada:{ph:9,t:'Nulidad desestimada — acuerdo confirmado',ac:'juez',end:'success',c:[
+['i','El acuerdo mantiene plena validez y eficacia. La ejecución suspendida puede reanudarse desde el punto de suspensión.'],
+['n','El título ejecutivo del artículo 147 conserva toda su fuerza. La parte ejecutante puede solicitar la continuación de la ejecución forzosa.'],
+['l','Art. 148.3 Ley 15/2015; LEC arts. 394, 517.2.9º']
+]} // <-- FIXED: Missing bracket added here
+};
+
+// STATE
+let cur='inicio',hist=[];
+let activeSbTab='map';
+let collapsedPhases={};
+let mapaOn=false;
+
+function sbTab(tab){
+  activeSbTab=tab;
+  document.getElementById('sb-map').style.display=tab==='map'?'block':'none';
+  document.getElementById('sb-journey').style.display=tab==='journey'?'block':'none';
+  document.querySelectorAll('.sb-tab').forEach((t,i)=>{
+    t.classList.toggle('active',(i===0&&tab==='map')||(i===1&&tab==='journey'));
+  });
+}
+
+function goTo(stepId,choiceLabel){
+  hist.push({s:cur,next:stepId,c:choiceLabel||''});
+  cur=stepId;
+  if(choiceLabel)sbTab('journey');
+  render();
+}
+
+function goBack(){
+  if(!hist.length)return;
+  cur=hist.pop().s;
+  render();
+}
+
+function goBackTo(index){
+  if(index<0||index>=hist.length)return;
+  cur=hist[index].s;
+  hist=hist.slice(0,index);
+  render();
+}
+
+// SMART JUMP FUNCTION: Calculates the logical history path using BFS
+function startFrom(id){
+  cur=id;
+  hist=getHistoryForStep(id);
+  render();
+}
+
+function restart(){
+  cur='inicio';hist=[];sbTab('map');
+  if(mapaOn)toggleMapa();
+  render();
+}
+
+function escQ(s){return s.replace(/'/g,"\\'")}
+function trunc(s,n=28){return s.length>n?s.slice(0,n)+'…':s;}
+
+function getHistoryForStep(stepId) {
+  if (stepId === 'inicio') return [];
+  const queue = [{ path: [], cur: 'inicio' }];
+  const visited = new Set(['inicio']);
+
+  while (queue.length > 0) {
+    const { path, cur: current } = queue.shift();
+    const step = S[current];
+    if (!step) continue;
+
+    let nextSteps = [];
+    if (step.nx) nextSteps.push({id: step.nx, label: ''});
+    if (step.opts) nextSteps.push(...step.opts.map(o => ({id: o.n, label: o.t})));
+
+    for (const next of nextSteps) {
+      const newPath = [...path, {s: current, next: next.id, c: next.label}];
+      if (next.id === stepId) {
+        return newPath; // Found the logical path leading up to the step
+      }
+      if (S[next.id] && !visited.has(next.id)) {
+        visited.add(next.id);
+        queue.push({ path: newPath, cur: next.id });
+      }
+    }
+  }
+  return []; // Fallback
+}
+
+function visitedSet(){
+  const v=new Set();v.add('inicio');
+  hist.forEach(h=>{v.add(h.s);v.add(h.next);});v.add(cur);return v;
+}
+
+// RENDER
+function render(){renderPbar();renderBreadcrumb();renderSidebar();renderContent();document.getElementById('content').scrollTop=0;}
+
+function renderPbar(){
+  const ph=S[cur].ph;
+  let h='';
+  PHASES.forEach((p,i)=>{
+    if(i>0)h+='<span class="ph-sep">›</span>';
+    const cls=i===ph?'active':i<ph?'done':'';
+    h+=`<span class="ph-item ${cls}" onclick="startFrom('${getFirstStepOfPhase(i)}')"><span class="ph-dot" style="background:${PH_COLORS[i]}"></span>${p}</span>`;
+  });
+  document.getElementById('pbar').innerHTML=h;
+}
+
+function getFirstStepOfPhase(ph){for(const[k,s]of Object.entries(S)){if(s.ph===ph)return k;}return 'inicio';}
+
+function renderBreadcrumb(){
+  let h='';
+  if(hist.length===0){
+    h=`<span class="bc-item bc-current">${trunc(S[cur].t)}</span>`;
+  } else {
+    hist.forEach((item,i)=>{
+      h+=`<button class="bc-item" onclick="goBackTo(${i})">${trunc(S[item.s].t)}</button>`;
+      h+=`<span class="bc-sep">›</span>`;
+    });
+    h+=`<span class="bc-item bc-current">${trunc(S[cur].t)}</span>`;
+  }
+  document.getElementById('breadcrumb').innerHTML=h;
+}
+
+function renderSidebar(){renderSbMap();renderSbJourney();}
+
+function renderSbMap(){
+  const visited=visitedSet();
+  const byPhase={};
+  Object.keys(S).forEach(k=>{const p=S[k].ph;if(!byPhase[p])byPhase[p]=[];byPhase[p].push(k);});
+  let h='';
+  PHASES.forEach((name,pi)=>{
+    const nodes=byPhase[pi]||[];
+    const collapsed=collapsedPhases[pi];
+    h+=`<div class="sm-phase">`;
+    h+=`<div class="sm-phase-hdr ${collapsed?'collapsed':''}" onclick="togglePhase(${pi})"><span class="arr">▾</span>${name}</div>`;
+    h+=`<div class="sm-nodes ${collapsed?'hidden':''}">`;
+    nodes.forEach(k=>{
+      const st=S[k];
+      let cls='sm-unvisited';
+      if(k===cur)cls='sm-current';
+      else if(visited.has(k))cls='sm-visited';
+      if(st.end)cls+=' sm-end';
+      h+=`<div class="sm-node ${cls}" onmouseenter="showTip(event,'${escQ(k)}')" onmouseleave="hideTip()" onclick="startFrom('${escQ(k)}')">`;
+      h+=`<span class="dot" style="background:${PH_COLORS[pi]}"></span>${trunc(st.t,30)}`;
+      h+=`</div>`;
+    });
+    h+=`</div></div>`;
+  });
+  document.getElementById('sb-map').innerHTML=h;
+}
+
+function renderSbJourney(){
+  let h='';
+  hist.forEach((item,i)=>{
+    const st=S[item.s];
+    h+=`<div class="pi past"><span class="pi-num">${i+1}</span>${trunc(st.t,34)}`;
+    if(item.c)h+=`<div class="pi-choice">→ ${item.c}</div>`;
+    h+=`</div>`;
+  });
+  const st=S[cur];
+  h+=`<div class="pi current"><span class="pi-num">${hist.length+1}</span>${trunc(st.t,34)}</div>`;
+  h+=`<div class="sb-foot"><div class="law">Ley 15/2015, de 2 de julio<br>Jurisdicción Voluntaria<br>Título IX · Arts. 139–148<br>LEC 1/2000 · CC · LOPJ 6/1985</div></div>`;
+  document.getElementById('sb-journey').innerHTML=h;
+}
+
+function renderContent(){
+  const s=S[cur];
+  document.getElementById('content').innerHTML=s.end?buildEnd(s):buildStep(s);
+}
+
+function buildStep(s){
+  let h=`<div class="card">`;
+  h+=`<div class="c-hdr">`;
+  h+=`<span class="act-badge act-${s.ac}">${ACTORS[s.ac]}</span>`;
+  h+=`<div class="c-title">${s.t}</div>`;
+  h+=`<div class="step-num">Paso ${hist.length+1} de este recorrido · Fase ${s.ph+1}: ${PHASES[s.ph]}</div>`;
+  h+=`</div>`;
+  h+=`<div class="c-body">${renderBlocks(s.c)}</div>`;
+  if(s.q){
+    h+=`<div class="dec-area">`;
+    h+=`<div class="dec-q">${s.q}</div>`;
+    h+=`<div class="dec-opts">`;
+    s.opts.forEach((o,i)=>{
+      const letters='ABCDEFGHIJ';
+      h+=`<button class="dec-btn ${o.l}" onclick="goTo('${o.n}','${escQ(o.t)}')">`;
+      h+=`<span class="dec-letter ${o.l}">${letters[i]}</span>`;
+      h+=`<span class="dec-txt">${o.t}</span>`;
+      h+=`</button>`;
+    });
+    h+=`</div></div>`;
+  }
+  h+=`<div class="c-nav">`;
+  h+=`<button class="btn-back" onclick="goBack()" ${hist.length===0?'disabled':''}>← Volver</button>`;
+  if(s.nx)h+=`<button class="btn-next" onclick="goTo('${s.nx}','')">Siguiente →</button>`;
+  h+=`</div></div>`;
+  return h;
+}
+
+function buildEnd(s){
+  const icons={success:'✅',error:'❌',warning:'⚠️',neutral:'ℹ️'};
+  const titles={success:'Procedimiento concluido favorablemente',error:'Procedimiento finalizado sin éxito',warning:'Procedimiento finalizado con observaciones',neutral:'Conciliación intentada sin efecto'};
+  let h=`<div class="card end-${s.end}">`;
+  h+=`<div class="c-hdr"><span class="act-badge act-${s.ac}">${ACTORS[s.ac]}</span>`;
+  h+=`<div class="c-title">${s.t}</div>`;
+  h+=`<div class="step-num">Paso ${hist.length+1} · Fase ${s.ph+1}: ${PHASES[s.ph]}</div></div>`;
+  h+=`<div class="c-body">`;
+  h+=`<div class="end-card">`;
+  h+=`<div class="end-icon">${icons[s.end]}</div>`;
+  h+=`<div class="end-title">${titles[s.end]}</div>`;
+  h+=`<div class="end-sub">El procedimiento ha concluido en esta vía.</div>`;
+  h+=`<div class="end-btns">`;
+  h+=`<button class="btn-back" onclick="goBack()">← Volver</button>`;
+  h+=`<button class="btn-next" onclick="restart()">↺ Nuevo procedimiento</button>`;
+  h+=`</div></div>`;
+  h+=renderBlocks(s.c);
+  h+=`<div class="summary-box"><h4>Resumen del recorrido seguido (${hist.length+1} pasos)</h4>`;
+  hist.forEach((item,i)=>{
+    h+=`<div class="sum-step"><span class="sum-num">${i+1}</span><div>${S[item.s].t}`;
+    if(item.c)h+=`<div class="sum-choice">→ ${item.c}</div>`;
+    h+=`</div></div>`;
+  });
+  h+=`<div class="sum-step"><span class="sum-num">${hist.length+1}</span><div style="font-weight:600">${s.t}</div></div>`;
+  h+=`</div>`;
+  h+=`</div></div>`;
+  return h;
+}
+
+function renderBlocks(blocks){
+  if(!blocks)return'';
+  const LABELS={i:'Información',d:'Plazo',n:'Nota',w:'Advertencia',l:'Referencia legal'};
+  let h='';
+  blocks.forEach(b=>{
+    if(b[0]==='cl'){
+      h+=`<div class="chk"><span class="cb-label">Checklist</span><div class="chk-title">${b[1]}</div>`;
+      b[2].forEach(item=>{
+        h+=`<label class="chk-item"><input type="checkbox"><span>${item}</span></label>`;
+      });
+      h+=`</div>`;
+    } else {
+      const cls={i:'blk-i',d:'blk-d',n:'blk-n',w:'blk-w',l:'blk-l'}[b[0]]||'blk-i';
+      h+=`<div class="blk ${cls}"><span class="cb-label">${LABELS[b[0]]||''}</span>${b[1]}</div>`;
+    }
+  });
+  return h;
+}
+
+// PHASE COLLAPSE & TOOLTIP
+function togglePhase(pi){collapsedPhases[pi]=!collapsedPhases[pi];renderSbMap();}
+function showTip(e,key){
+  const st=S[key];if(!st)return;
+  const tip=document.getElementById('tooltip');
+  tip.innerHTML=`<div class="tt-title">${st.t}</div><div class="tt-actor">${ACTORS[st.ac]}</div>`;
+  if(st.end)tip.innerHTML+=`<div style="font-size:12px;color:var(--muted)">Nodo final: ${st.end}</div>`;
+  tip.style.display='block';
+  const r=e.target.getBoundingClientRect();
+  tip.style.left=Math.min(r.right+10,window.innerWidth-340)+'px';
+  tip.style.top=Math.max(r.top-10,10)+'px';
+}
+function hideTip(){document.getElementById('tooltip').style.display='none';}
+
+// MAPA OVERLAY
+function toggleMapa(){
+  mapaOn=!mapaOn;
+  document.getElementById('mapa-overlay').style.display=mapaOn?'block':'none';
+  if(mapaOn)renderMapa();
+}
+
+function renderMapa(){
+  const visited=visitedSet();
+  const byPhase={};
+  Object.keys(S).forEach(k=>{const p=S[k].ph;if(!byPhase[p])byPhase[p]=[];byPhase[p].push(k);});
+  let h='';
+  PHASES.forEach((ph,pi)=>{
+    h+=`<div class="mapa-col"><div class="mapa-col-hdr"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${PH_COLORS[pi]}"></span>${ph}</div>`;
+    (byPhase[pi]||[]).forEach(k=>{
+      const st=S[k];
+      let cls='';
+      if(k===cur)cls='m-current';
+      else if(visited.has(k))cls='m-visited';
+      if(st.end)cls+=` m-end-${st.end}`;
+      h+=`<div class="mapa-node ${cls}" onclick="startFrom('${escQ(k)}');toggleMapa()">`;
+      h+=`<div class="mapa-node-title">${st.t}</div>`;
+      h+=`<div class="mapa-node-actor">${ACTORS[st.ac]}</div>`;
+      h+=`</div>`;
+    });
+    h+=`</div>`;
+  });
+  document.getElementById('mapa-grid').innerHTML=h;
+}
+
+// DOWNLOAD
+function dlGuia(){
+  const html='<!DOCTYPE html>'+document.documentElement.outerHTML;
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download='guia-tramitacion-conciliacion.html';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+}
+
+// INIT
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa Mental — Capítulo I ter, Título II, Ley 15/2015</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --surface-3:   #eae8e3;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --border-lg:   rgba(15,23,42,.22);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+  --accent-soft: rgba(200,169,110,.15);
+  --accent-ring: rgba(200,169,110,.35);
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.06);
+  --shadow-md: 0 4px 6px -1px rgba(15,23,42,.07), 0 2px 4px -1px rgba(15,23,42,.04);
+  --shadow-lg: 0 10px 20px -5px rgba(15,23,42,.10), 0 4px 8px -3px rgba(15,23,42,.05);
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-ui:      'Outfit', system-ui, -apple-system, sans-serif;
+  --transition:      180ms cubic-bezier(.4,0,.2,1);
+  --transition-fast: 120ms cubic-bezier(.4,0,.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  min-height: 100vh;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-1);
+  background: var(--bg);
+}
+img, svg, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+button {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  line-height: 1.2;
+  text-align: inherit;
+}
+button:disabled { cursor: not-allowed; opacity: .5; }
+input, select, textarea {
+  font: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-md);
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--border-lg); }
+::selection { background: var(--accent-soft); color: var(--text-1); }
+
+/* ===== SITE HEADER ===== */
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem 1.75rem;
+}
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.header-breadcrumb {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: .6rem;
+}
+.header-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+.header-subtitle {
+  font-size: 14px;
+  color: rgba(248,245,237,.7);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+}
+.header-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(200,169,110,.15);
+  border: 1px solid rgba(200,169,110,.3);
+  color: var(--accent);
+  letter-spacing: .01em;
+}
+.header-actions { margin-left: auto; }
+.btn-ghost {
+  border: 1px solid rgba(248,245,237,.15);
+  color: rgba(248,245,237,.7);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  transition: var(--transition);
+}
+.btn-ghost:hover {
+  background: rgba(248,245,237,.08);
+  color: #fff;
+}
+
+/* ===== STATS BAR ===== */
+.stats-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.stats-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 640px) { .stats-inner { grid-template-columns: repeat(2, 1fr); } }
+.stat-item {
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: 0; }
+@media (max-width: 640px) {
+  .stat-item:nth-child(2) { border-right: 0; }
+  .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid var(--border); }
+}
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-1);
+  line-height: 1.1;
+  margin-bottom: .25rem;
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* ===== CONTROLS BAR ===== */
+.controls-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: saturate(180%) blur(8px);
+  box-shadow: 0 1px 0 var(--border), 0 2px 8px rgba(15,23,42,.04);
+  border-bottom: 1px solid var(--border);
+}
+.controls-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: .6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+}
+.search-wrap svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  opacity: .5;
+  pointer-events: none;
+}
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  background: var(--surface);
+  transition: var(--transition-fast);
+}
+.search-input:hover { border-color: var(--border-lg); }
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+}
+.filter-pills {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+}
+.pill {
+  background: transparent;
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.pill:hover {
+  background: var(--surface-2);
+  border-color: var(--border-lg);
+  color: var(--text-1);
+}
+.pill.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.pill[data-cat="c1"].active { background: var(--c1); border-color: var(--c1); }
+.pill[data-cat="c2"].active { background: var(--c2); border-color: var(--c2); }
+.pill[data-cat="c3"].active { background: var(--c3); border-color: var(--c3); }
+.pill[data-cat="c4"].active { background: var(--c4); border-color: var(--c4); }
+.pill[data-cat="c5"].active { background: var(--c5); border-color: var(--c5); }
+.pill[data-cat="c6"].active { background: var(--c6); border-color: var(--c6); }
+.ctrl-actions {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-left: auto;
+}
+@media (max-width: 768px) { .ctrl-actions { display: none; } }
+.btn-ctrl {
+  background: var(--surface-2);
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+.btn-ctrl:hover {
+  background: var(--surface-3);
+  color: var(--text-1);
+}
+.btn-ctrl:active { transform: translateY(1px); }
+.zoom-cluster {
+  display: flex;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.btn-zoom {
+  width: 28px;
+  height: 28px;
+  background: var(--surface);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border-md);
+  transition: var(--transition-fast);
+}
+.btn-zoom:last-child { border-right: 0; }
+.btn-zoom:hover { background: var(--surface-2); }
+.zoom-label {
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 42px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+  border-right: 1px solid var(--border-md);
+  padding: 0 4px;
+}
+
+/* ===== PAGE MAIN ===== */
+.page-main { padding-bottom: 2rem; }
+
+/* ===== SECTION HEADING ===== */
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  max-width: 1400px;
+  margin: 1.5rem auto .5rem;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+.section-heading-text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+.section-heading-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  background: var(--surface-2);
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: .02em;
+}
+.section-toggle-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border-md);
+  border-radius: 50%;
+  color: var(--text-2);
+  font-size: 11px;
+  transition: var(--transition-fast);
+}
+.section-heading:hover .section-toggle-btn {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+.section-divider {
+  max-width: 1400px;
+  margin: 0 auto 1rem;
+  border: 0;
+  height: 1px;
+  background: var(--border);
+}
+.section-body.collapsed { display: none; }
+
+/* ===== CARD GRID ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1rem;
+}
+@media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+/* ===== MAP CARD ===== */
+.map-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--c6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.map-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-md);
+}
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+.map-card.hidden { display: none; }
+
+.card-top { padding: 1rem 1.1rem .85rem; }
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  flex-wrap: wrap;
+  margin-bottom: .55rem;
+}
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-1);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: .3rem;
+}
+.card-subtitle {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+.art-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--c6bd);
+  background: var(--c6bg);
+  color: var(--c6);
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+.map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+
+.status-tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .02em;
+}
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+.card-counters {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  padding: 0 1.1rem .9rem;
+  font-size: 11px;
+  color: var(--text-3);
+}
+.counter-badge {
+  background: var(--surface-2);
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+}
+.counter-badge strong {
+  color: var(--text-1);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.card-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .65rem 1.1rem;
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.card-toggle-btn:hover {
+  background: var(--surface-3);
+  color: var(--text-1);
+}
+.card-toggle-btn:active { background: var(--border); }
+.card-toggle-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.toggle-label { flex: 1; text-align: left; }
+.toggle-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  font-size: 10px;
+  transition: transform var(--transition), background var(--transition-fast),
+              color var(--transition-fast), border-color var(--transition-fast);
+}
+.card-toggle-btn:hover .toggle-icon {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+.map-card.expanded .toggle-icon {
+  transform: rotate(180deg);
+  background: var(--ink);
+  color: var(--surface);
+  border-color: var(--ink);
+}
+
+.card-body {
+  display: none;
+  padding: 1rem 1.1rem 1.1rem;
+  background: #fafaf9;
+  border-top: 1px solid var(--border);
+}
+.map-card.expanded .card-body { display: block; }
+
+.inner-section + .inner-section { margin-top: 1rem; }
+.inner-heading {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: .45rem;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-1);
+}
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--c6);
+  flex-shrink: 0;
+}
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+
+.inner-body { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+.inner-body p { margin-bottom: .5rem; }
+
+.inner-list li {
+  position: relative;
+  padding-left: .9rem;
+  margin-bottom: .3rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.inner-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-3);
+}
+.inner-list li strong { color: var(--text-1); font-weight: 600; }
+
+.card-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  padding: .8rem 1.1rem;
+  background: #fafaf9;
+  border-top: 1px solid var(--border);
+}
+.ref-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--surface-2);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  transition: background var(--transition-fast);
+}
+.ref-tag:hover { background: var(--surface-3); }
+
+/* ===== NO RESULTS ===== */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-3);
+  font-size: 14px;
+  display: none;
+}
+
+/* ===== TIMELINE TABLE ===== */
+.table-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.timeline-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.timeline-table th {
+  background: var(--surface-2);
+  text-align: left;
+  padding: .85rem 1rem;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+.timeline-table td {
+  padding: .7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-1);
+  vertical-align: top;
+}
+.timeline-table tbody tr:last-child td { border-bottom: 0; }
+.timeline-table tbody tr { transition: background var(--transition-fast); }
+.timeline-table tbody tr:hover { background: var(--surface-2); }
+.plazo-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ===== PARTICIPANTS ===== */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+.participant-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.participant-col-head {
+  padding: .7rem 1rem;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.phead-c5 { background: var(--c5); }
+.phead-c6 { background: var(--c6); }
+.participant-col ul { padding: .5rem .25rem; }
+.participant-col li {
+  font-size: 12.5px;
+  color: var(--text-2);
+  padding: .4rem .75rem;
+  border-bottom: 1px solid var(--border);
+}
+.participant-col li:last-child { border-bottom: 0; }
+.participant-note {
+  font-size: 11px;
+  color: var(--text-3);
+  font-style: italic;
+}
+
+/* ===== NORM GRID ===== */
+.norm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (max-width: 900px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+.norm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.norm-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.norm-law {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-3);
+  font-weight: 600;
+}
+.norm-title {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-1);
+  line-height: 1.4;
+}
+.norm-arts {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+.norm-tag {
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .02em;
+}
+
+/* ===== LEGEND FOOTER ===== */
+.legend-footer {
+  background: var(--header-bg);
+  color: var(--header-text);
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+}
+.legend-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.legend-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.legend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  font-size: 13px;
+  color: rgba(248,245,237,.85);
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+.legend-swatch {
+  width: 12px; height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.legend-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(248,245,237,.12);
+}
+.legend-copy {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(248,245,237,.08);
+  font-size: 11px;
+  color: rgba(248,245,237,.35);
+}
+
+/* ===== PRINT ===== */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body   { display: block !important; }
+  .inner-body  { display: block !important; }
+  .section-body{ display: block !important; }
+  .map-card    { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; transform: none !important; }
+  .map-card:hover { transform: none !important; box-shadow: none !important; }
+  body         { background: #fff; }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .map-card:hover { transform: none; }
+  .norm-card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título II · Capítulo I ter</div>
+    <h1 class="header-title">Aprobación judicial de la nueva modificación de la mención registral relativa al sexo con posterioridad a una reversión de la rectificación de la mención registral</h1>
+    <p class="header-subtitle">Artículos 26 sexies a 26 nonies · Jurisdicción Voluntaria · Conexiones con la Ley 4/2023, el Código Civil y la Ley 20/2011 del Registro Civil</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015, de 2 de julio</span>
+      <span class="header-tag">Ley 4/2023, de 28 de febrero</span>
+      <span class="header-tag">Capítulo I ter</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">4</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">15+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">6+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">3</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONTROLS BAR ===== -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Ámbito y contexto</button>
+      <button class="pill" data-cat="c2">Competencia y legitimación</button>
+      <button class="pill" data-cat="c3">Tramitación</button>
+      <button class="pill" data-cat="c4">Resolución</button>
+      <button class="pill" data-cat="c5">Ecosistema normativo</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MAIN ===== -->
+<main class="page-main">
+
+<!-- SECCIÓN: ARTÍCULOS PRINCIPALES -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-articles">
+    <span class="section-heading-text">Artículos del Capítulo I ter</span>
+    <span class="section-heading-count" id="count-arts">4 artículos visibles</span>
+    <button class="section-toggle-btn" aria-label="Alternar sección">&#9650;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-articles">
+    <div class="card-grid">
+
+      <!-- ARTÍCULO 26 SEXIES -->
+      <article class="map-card" data-cat="c1"
+        data-text="26 sexies ámbito aplicación rectificación mención registral sexo reversión artículo 47 ley igualdad personas trans lgtbi">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 26 sexies</span>
+            <span class="status-tag tag-info">Ámbito</span>
+          </div>
+          <h2 class="card-title">Ámbito de aplicación</h2>
+          <p class="card-subtitle">Supuesto específico de nueva modificación tras rectificación y reversión previas.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>1</strong> remisión normativa directa</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>2</strong> condiciones acumulativas</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+          <span class="toggle-label">Ver contenido completo</span>
+          <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Texto legal</div>
+            <div class="inner-body">
+              <p>Se aplicarán las disposiciones de este Capítulo para recabar aprobación judicial para la modificación de la mención registral relativa al sexo cuando respecto de la misma persona ya se haya realizado una rectificación de la inscripción registral relativa al sexo y una reversión de dicha modificación, de conformidad con lo dispuesto en el artículo 47, párrafo segundo, de la Ley para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Delimitación del supuesto de hecho</div>
+            <div class="inner-body">
+              <p>Este precepto configura un ámbito de aplicación excepcional y subsidiario, que únicamente se activa cuando concurren dos circunstancias previas de manera acumulativa respecto de una misma persona:</p>
+              <ul class="inner-list">
+                <li><strong>Primera circunstancia:</strong> que ya se haya realizado una rectificación de la inscripción registral relativa al sexo, esto es, que la persona haya modificado en el Registro Civil su sexo originario siguiendo el procedimiento administrativo o judicial correspondiente.</li>
+                <li><strong>Segunda circunstancia:</strong> que con posterioridad a dicha rectificación se haya producido una reversión de la modificación, recuperándose la mención registral del sexo que figuraba previamente a la rectificación inicial.</li>
+              </ul>
+              <p>Solo cuando ambas circunstancias hayan tenido lugar, y la persona pretenda ahora una nueva modificación de la mención registral del sexo —es decir, una segunda o ulterior rectificación—, resulta de aplicación el presente Capítulo I ter, exigiéndose para ello la aprobación judicial previa.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Conexión con el artículo 47 de la Ley 4/2023</div>
+            <div class="inner-body">
+              <p>El artículo 47 de la Ley 4/2023 regula la reversibilidad de la rectificación de la mención registral relativa al sexo en sus dos párrafos:</p>
+              <ul class="inner-list">
+                <li><strong>Párrafo primero:</strong> establece que transcurridos seis meses desde la inscripción en el Registro Civil de la rectificación de la mención registral relativa al sexo, las personas que hubieran promovido dicha rectificación podrán recuperar la mención registral del sexo que figuraba previamente a dicha rectificación en el Registro Civil, siguiendo el mismo procedimiento establecido en este Capítulo para la rectificación registral. Esto es, la primera reversión se tramita como un nuevo procedimiento de rectificación registral administrativo ante el Registro Civil, con las comparecencias, plazos y requisitos previstos en los artículos 43 y 44 de la Ley 4/2023.</li>
+                <li><strong>Párrafo segundo:</strong> —al que remite expresamente el artículo 26 sexies— dispone que en el caso de que, tras haberse rectificado la modificación inicial, se quisiese proceder a una nueva rectificación, habrá de seguirse el procedimiento establecido en el capítulo I ter del título II de la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria.</li>
+              </ul>
+              <p>En consecuencia, el Capítulo I ter no resulta aplicable a la primera rectificación de la mención registral del sexo —que para personas mayores de dieciséis años se tramita administrativamente ante el Registro Civil, y para personas menores de catorce años y mayores de doce mediante el Capítulo I bis de la Ley 15/2015—, ni tampoco a la primera reversión —que sigue el procedimiento administrativo ordinario de rectificación registral—, sino exclusivamente a la <strong>nueva modificación</strong> solicitada con posterioridad a una rectificación y a una reversión ya inscritas.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Incorporación normativa</div>
+            <div class="inner-body">
+              <p>Este Capítulo I ter fue añadido a la Ley 15/2015 por la disposición final 13.2 de la Ley 4/2023, de 28 de febrero, publicada el 1 de marzo de 2023 y en vigor a partir del 2 de marzo de 2023.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">Ley 4/2023, art. 47</span>
+          <span class="ref-tag">Ley 4/2023, art. 43</span>
+          <span class="ref-tag">Ley 4/2023, art. 44</span>
+          <span class="ref-tag">Ley 15/2015, Cap. I bis</span>
+        </div>
+      </article>
+
+      <!-- ARTÍCULO 26 SEPTIES -->
+      <article class="map-card" data-cat="c2"
+        data-text="26 septies competencia legitimación postulación juzgado primera instancia domicilio residencia abogado procurador representantes legales defensor judicial">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 26 septies</span>
+            <span class="status-tag tag-ok">Legitimación</span>
+          </div>
+          <h2 class="card-title">Competencia, legitimación y postulación</h2>
+          <p class="card-subtitle">Órgano judicial competente, quién puede promover el expediente y régimen de postulación.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>3</strong> apartados</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>4</strong> supuestos de legitimación</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+          <span class="toggle-label">Ver contenido completo</span>
+          <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Competencia territorial</div>
+            <div class="inner-body">
+              <p>Será competente para conocer de este expediente el Juzgado de Primera Instancia del domicilio de la persona cuya mención registral pretenda rectificarse o, si no lo tuviera en territorio nacional, el de su residencia en dicho territorio.</p>
+              <p>Este criterio de competencia territorial coincide con el establecido para el Capítulo I bis en su artículo 26 ter, garantizando la proximidad del órgano judicial al centro de intereses de la persona afectada, y resulta coherente con el principio general de la jurisdicción voluntaria en materia de personas.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Legitimación activa</div>
+            <div class="inner-body">
+              <p>Podrá promover este expediente cualquiera de las personas que estén legitimadas para instar la rectificación de la mención registral del sexo.</p>
+              <p>Para determinar el alcance de esta legitimación, es necesario remitirse al artículo 43 de la Ley 4/2023, que establece quiénes pueden solicitar la rectificación registral de la mención relativa al sexo:</p>
+              <ul class="inner-list">
+                <li><strong>Personas mayores de dieciséis años:</strong> toda persona de nacionalidad española mayor de dieciséis años podrá solicitar por sí misma ante el Registro Civil la rectificación de la mención registral relativa al sexo. Por tanto, una vez cumplidos los requisitos del artículo 26 sexies, podrá promover el expediente de jurisdicción voluntaria del Capítulo I ter.</li>
+                <li><strong>Personas menores de dieciséis y mayores de catorce:</strong> podrán presentar la solicitud por sí mismas, asistidas en el procedimiento por sus representantes legales. En el supuesto de desacuerdo de las personas progenitoras o representantes legales, entre sí o con la persona menor de edad, se procederá al nombramiento de un defensor judicial de conformidad con lo previsto en los artículos 235 y 236 del Código Civil.</li>
+                <li><strong>Personas con discapacidad:</strong> podrán solicitar, con las medidas de apoyo que en su caso precisen, la rectificación registral de la mención relativa al sexo.</li>
+                <li><strong>Personas menores de catorce y mayores de doce:</strong> podrán solicitar la autorización judicial para la modificación de la mención registral del sexo en los términos del capítulo I bis del título II de la Ley 15/2015, de 2 de julio, de Jurisdicción Voluntaria. Si una persona en este tramo de edad ya hubiere obtenido la rectificación y posterior reversión, y pretendiera una nueva modificación, cabe inferir que la legitimación para el Capítulo I ter se extiende también a ellas, siempre que se cumplan las condiciones generales de legitimación del artículo 43 de la Ley 4/2023.</li>
+              </ul>
+              <p>En este sentido, el Capítulo I ter presenta una legitimación más amplia que la del Capítulo I bis, pues este último se circunscribe exclusivamente a personas mayores de doce años y menores de catorce, asistidas por sus representantes legales, con la salvaguarda del defensor judicial en caso de desacuerdo. En cambio, el Capítulo I ter acoge a cualquier persona legitimada conforme al artículo 43 de la Ley 4/2023, sin restricción expresa de edad en su precepto, lo que comprende a mayores de edad, menores de dieciséis asistidos, personas con discapacidad y, por extensión lógica, menores de catorce y mayores de doce que ya hayan transitado por el Capítulo I bis en su primera rectificación.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Postulación</div>
+            <div class="inner-body">
+              <p>En la tramitación del presente expediente no será preceptiva la intervención de abogado ni procurador.</p>
+              <p>Esta excepción a la postulación parts-based responde a la naturaleza de jurisdicción voluntaria del expediente y se alinea con la regulación del Capítulo I bis, cuyo artículo 26 ter.4 establece idéntica no preceptividad, facilitando el acceso a la justicia de las personas interesadas y evitando la generación de costas procesales que pudieran dificultar el ejercicio de este derecho.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Conexión con el nombramiento de defensor judicial</div>
+            <div class="inner-body">
+              <p>Si bien el artículo 26 septies no menciona expresamente al defensor judicial, la remisión implícita a la legitimación del artículo 43 de la Ley 4/2023 activa la aplicación supletoria de los artículos 235 y 236 del Código Civil cuando se produzca desacuerdo entre los progenitores o representantes legales, entre sí o con la persona menor de edad. El artículo 235 del Código Civil impone el nombramiento de un defensor judicial del menor cuando exista conflicto de intereses entre los menores y sus representantes legales, y el artículo 236 dispone que el defensor judicial del menor ejercerá su cargo en interés del menor, de acuerdo con su personalidad y con respeto a sus derechos, siendo aplicables al defensor judicial del menor las normas del defensor judicial de las personas con discapacidad.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">Ley 4/2023, art. 43</span>
+          <span class="ref-tag">CC, arts. 235-236</span>
+          <span class="ref-tag">Ley 15/2015, art. 26 ter</span>
+        </div>
+      </article>
+
+      <!-- ARTÍCULO 26 OCTIES -->
+      <article class="map-card" data-cat="c3"
+        data-text="26 octies tramitación preferente solicitud comparecencia pruebas ministerio fiscal juez representantes legales">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 26 octies</span>
+            <span class="status-tag tag-warn">Tramitación preferente</span>
+          </div>
+          <h2 class="card-title">Tramitación</h2>
+          <p class="card-subtitle">Inicio por solicitud, comparecencia de interesados, práctica de pruebas y tramitación preferente.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>3</strong> apartados</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>5</strong> actores citables</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+          <span class="toggle-label">Ver contenido completo</span>
+          <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Inicio del expediente y solicitud</div>
+            <div class="inner-body">
+              <p>El expediente, que será de tramitación preferente, comenzará con la presentación de una solicitud en la que la persona interesada manifieste su voluntad de revertir la rectificación registral anteriormente producida. Deberá ir acompañada de los medios de prueba que desee utilizar.</p>
+              <p>La tramitación preferente implica que el expediente deberá recibir una atención prioritaria por parte del órgano judicial, acortando los plazos de tramitación y evitando dilaciones indebidas en la resolución de un asunto que afecta a la identidad personal de la solicitante. La solicitud debe contener una manifestación expresa de voluntad de revertir la rectificación registral anteriormente producida, esto es, de proceder a una nueva modificación de la mención registral del sexo tras la rectificación y reversión ya operadas. A diferencia del Capítulo I bis, donde la solicitud debe manifestar la disconformidad con el sexo mencionado en la inscripción de nacimiento y solicitar autorización judicial para la rectificación registral de la mención al sexo y, en su caso, al nombre, en el Capítulo I ter la solicitud se centra en la voluntad de revertir la rectificación anteriormente producida, lo que refleja la naturaleza sucesiva y recursiva de este procedimiento.</p>
+              <p>La solicitud deberá ir acompañada de los medios de prueba que la persona interesada desee utilizar, sin que la ley imponga unos medios probatorios determinados ni establezca una lista taxativa de documentos.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Comparecencia de los interesados y del Ministerio Fiscal</div>
+            <div class="inner-body">
+              <p>Admitida a trámite la solicitud, el Juez citará a comparecencia al solicitante y, en su caso, a sus representantes legales, a las demás personas que estime oportuno, así como al Ministerio Fiscal.</p>
+              <p>La comparecencia personal del solicitante es un elemento esencial de la tramitación, pues permite al Juez valorar directamente la voluntad de la persona. La citación de los representantes legales resulta obligatoria cuando el solicitante sea menor de edad o persona con discapacidad que actúe asistida. El Juez conserva una amplia facultad discrecional para citar a aquellas otras personas que estime oportuno, atendiendo a las circunstancias del caso. La intervención del Ministerio Fiscal, como representante de la legalidad y del interés público, garantiza la tutela de los derechos fundamentales involucrados y el respeto al interés superior del menor cuando el solicitante tenga dicha condición.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Práctica de pruebas adicionales</div>
+            <div class="inner-body">
+              <p>El Juez podrá solicitar la práctica de cualesquiera otras pruebas que considere oportunas.</p>
+              <p>Esta facultad del Juez es amplia y discrecional, permitiendo practicar todo tipo de pruebas que considere necesarias para formar su convicción sobre la autenticidad y estabilidad de la voluntad manifestada por la persona interesada, siempre dentro de los límites del respeto a la dignidad, la intimidad y la identidad personal. No obstante, debe tenerse en cuenta que el ejercicio del derecho a la rectificación registral de la mención relativa al sexo en ningún caso podrá estar condicionado a la previa exhibición de informe médico o psicológico relativo a la disconformidad con el sexo mencionado en la inscripción de nacimiento, ni a la previa modificación de la apariencia o función corporal de la persona a través de procedimientos médicos, quirúrgicos o de otra índole, conforme al artículo 44.3 de la Ley 4/2023, principio general que vincula a todos los procedimientos de rectificación registral del sexo, incluido el judicial del Capítulo I ter.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Contraste con la tramitación del Capítulo I bis</div>
+            <div class="inner-body">
+              <p>El artículo 26 quater del Capítulo I bis establece una tramitación preferente análoga, pero con matices diferenciadores propios de la especial protección que requieren las personas menores de catorce años y mayores de doce:</p>
+              <ul class="inner-list">
+                <li>En el Capítulo I bis, la solicitud debe manifestar la disconformidad con el sexo mencionado en la inscripción de nacimiento y solicitar autorización judicial para que se proceda a la correspondiente rectificación registral de la mención al sexo y, en su caso, al nombre.</li>
+                <li>Debe acompañarse de cualesquiera medios documentales o testificales acreditativos de que la persona ha mantenido de forma estable la disconformidad a la que se refiere el apartado anterior.</li>
+                <li>El Juez debe acreditar la madurez necesaria de la persona menor de edad y la estabilidad de su voluntad, teniendo en consideración en todo momento el interés superior de la persona menor de edad.</li>
+                <li>El Juez deberá facilitarle información sobre las consecuencias jurídicas de la rectificación en lenguaje claro, accesible y adaptado a sus necesidades, e informarle de las medidas de asistencia e información disponibles en los ámbitos sanitario, social, laboral, educativo y administrativo, así como de asociaciones de protección de los derechos en este ámbito.</li>
+                <li>Para su intervención como testigos serán idóneas todas las personas mayores de edad, aun cuando estén ligadas a la persona solicitante por parentesco, consanguinidad o afinidad en cualquier grado, vínculos de adopción, tutela o análogos, o relación de amistad.</li>
+              </ul>
+              <p>En el Capítulo I ter, la tramitación es más sobria y directa: basta con la manifestación de voluntad de revertir la rectificación anterior, los medios de prueba que se deseen aportar, la comparecencia de los interesados y del Ministerio Fiscal, y las pruebas adicionales que el Juez considere oportunas, sin los requisitos específicos de información al menor ni de idoneidad testifical que exige el Capítulo I bis.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">Ley 15/2015, art. 26 quater</span>
+          <span class="ref-tag">Ley 4/2023, art. 44.3</span>
+          <span class="ref-tag">Ley 4/2023, art. 43</span>
+        </div>
+      </article>
+
+      <!-- ARTÍCULO 26 NONIES -->
+      <article class="map-card" data-cat="c4"
+        data-text="26 nonies resolución concesión denegación aprobación judicial interés superior menor testimonio registro civil inscripción rectificación">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 26 nonies</span>
+            <span class="status-tag tag-ok">Resolución</span>
+          </div>
+          <h2 class="card-title">Resolución</h2>
+          <p class="card-subtitle">Concesión o denegación de la aprobación judicial, interés superior del menor y remisión al Registro Civil.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> apartados</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>3</strong> efectos vinculados</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+          <span class="toggle-label">Ver contenido completo</span>
+          <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Concesión o denegación de la aprobación judicial</div>
+            <div class="inner-body">
+              <p>El Juez resolverá sobre la concesión o denegación de la aprobación judicial, considerando en todo caso, si el solicitante fuera persona menor de edad, el interés superior del menor.</p>
+              <p>La resolución judicial constituye el acto final del procedimiento de jurisdicción voluntaria y tiene por objeto pronunciarse expresamente sobre la concesión o la denegación de la aprobación judicial solicitada. El Juez actúa con independencia y sometido únicamente al imperio de la ley, valorando la prueba practicada y la manifestación de voluntad del solicitante. La mención expresa al interés superior del menor como criterio imperativo cuando el solicitante tenga esta condición establece una salvaguarda fundamental, conforme a los tratados internacionales de derechos humanos y al ordenamiento jurídico español, que debe prevalecer en cualquier decisión que afecte a personas menores de edad.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Remisión al Registro Civil y efectos constitutivos</div>
+            <div class="inner-body">
+              <p>El testimonio de dicha resolución se remitirá al Registro Civil competente para proceder, en su caso, a la inscripción de la rectificación aprobada judicialmente.</p>
+              <p>La remisión del testimonio de la resolución al Registro Civil competente es el mecanismo de ejecución de la decisión judicial. El Registro Civil, una vez recibido el testimono, procederá a la inscripción de la rectificación aprobada, si la resolución es favorable. Conforme al artículo 46.1 de la Ley 4/2023, la resolución que acuerde la rectificación de la mención registral del sexo tendrá efectos constitutivos a partir de su inscripción en el Registro Civil, de modo que el cambio de la condición jurídica de la persona no se produce con la mera sentencia o resolución judicial, sino con su inscripción registral.</p>
+              <p>Asimismo, el artículo 91.2 de la Ley 20/2011, de 21 de julio, del Registro Civil, modificado por la disposición final undécima de la Ley 4/2023, establece que las menciones registrales relativas al nombre y sexo de las personas, cuando se cumplan los requisitos de la Ley 4/2023, se rectificarán mediante el procedimiento registral previsto en dicha norma, y que en tales casos la inscripción tendrá eficacia constitutiva.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Principio de no condicionamiento</div>
+            <div class="inner-body">
+              <p>Si bien el artículo 26 nonies no reproduce expresamente la prohibición de condicionar la resolución a informes médicos o psicológicos ni a modificaciones corporales —como sí hace el artículo 26 quinquies del Capítulo I bis—, el artículo 44.3 de la Ley 4/2023 establece de manera general e imperativa que el ejercicio del derecho a la rectificación registral de la mención relativa al sexo en ningún caso podrá estar condicionado a la previa exhibición de informe médico o psicológico relativo a la disconformidad con el sexo mencionado en la inscripción de nacimiento, ni a la previa modificación de la apariencia o función corporal de la persona a través de procedimientos médicos, quirúrgicos o de otra índole. Este principio resulta plenamente aplicable al procedimiento del Capítulo I ter, al tratarse de una rectificación registral de la mención relativa al sexo.</p>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Contraste con la resolución del Capítulo I bis</div>
+            <div class="inner-body">
+              <p>El artículo 26 quinquies del Capítulo I bis exige, para la resolución, previa audiencia de la persona menor, y establece de forma expresa que la concesión no podrá estar condicionada a la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a la previa modificación de la apariencia o función corporal de la persona a través de procedimientos médicos, quirúrgicos o de otra índole. En el Capítulo I ter no se incluye esta prohibición expresa en su texto articulado, si bien, como se ha indicado, opera el principio general del artículo 44.3 de la Ley 4/2023.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">Ley 4/2023, art. 46.1</span>
+          <span class="ref-tag">Ley 20/2011, art. 91.2</span>
+          <span class="ref-tag">Ley 4/2023, art. 44.3</span>
+          <span class="ref-tag">Ley 15/2015, art. 26 quinquies</span>
+        </div>
+      </article>
+
+      <div class="no-results" id="no-results">
+        No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN: CRONOGRAMA DE PLAZOS -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-timeline">
+    <span class="section-heading-text">Cronograma de plazos procesales</span>
+    <span class="section-heading-count">3 trámites</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-timeline">
+    <div class="table-wrap">
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th style="width:45%">Acto o trámite procesal</th>
+            <th>Plazo</th>
+            <th>Fundamento normativo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-tramite">Primera reversión de la rectificación registral del sexo (desde la inscripción de la rectificación inicial)</td>
+            <td><span class="plazo-badge plazo-months">6 meses</span></td>
+            <td class="td-norm">Ley 4/2023, art. 47, párrafo primero</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Comparecencia de ratificación de la solicitud de rectificación registral (desde la comparecencia inicial)</td>
+            <td><span class="plazo-badge plazo-months">3 meses</span></td>
+            <td class="td-norm">Ley 4/2023, art. 44.2</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Resolución del encargado del Registro Civil sobre la solicitud de rectificación (desde la segunda comparecencia)</td>
+            <td><span class="plazo-badge plazo-months">1 mes</span></td>
+            <td class="td-norm">Ley 4/2023, art. 44.2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN: PARTICIPANTES Y ACTORES -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-actors">
+    <span class="section-heading-text">Mapa de participantes y actores</span>
+    <span class="section-heading-count">4 categorías · 8 actores</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-actors">
+    <div class="participants-grid">
+      <div class="participant-col">
+        <div class="participant-col-head phead-c2">Órganos judiciales</div>
+        <ul>
+          <li>Juzgado de Primera Instancia <span class="participant-note">(competente por domicilio o residencia)</span></li>
+          <li>Juez <span class="participant-note">(cita a comparecencia, practica pruebas, resuelve)</span></li>
+        </ul>
+      </div>
+      <div class="participant-col">
+        <div class="participant-col-head phead-c1">Sujetos del procedimiento</div>
+        <ul>
+          <li>Persona interesada / solicitante <span class="participant-note">(manifiesta voluntad de revertir la rectificación)</span></li>
+          <li>Representantes legales <span class="participant-note">(asisten al menor o persona con discapacidad)</span></li>
+          <li>Defensor judicial <span class="participant-note">(nombrado en caso de desacuerdo, arts. 235-236 CC)</span></li>
+        </ul>
+      </div>
+      <div class="participant-col">
+        <div class="participant-col-head phead-c3">Instituciones públicas</div>
+        <ul>
+          <li>Ministerio Fiscal <span class="participant-note">(interviene por legalidad e interés público)</span></li>
+          <li>Registro Civil <span class="participant-note">(recibe testimonio de la resolución e inscribe)</span></li>
+          <li>Dirección General de Seguridad Jurídica y Fe Pública <span class="participant-note">(vía recurso de alzada)</span></li>
+        </ul>
+      </div>
+      <div class="participant-col">
+        <div class="participant-col-head phead-c4">Terceros citables</div>
+        <ul>
+          <li>Demás personas que el Juez estime oportuno <span class="participant-note">(facultad discrecional del Juez)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN: ECOSISTEMA NORMATIVO -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-norms">
+    <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+    <span class="section-heading-count">6 cuerpos normativos</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-norms">
+    <div class="norm-grid">
+
+      <div class="norm-card">
+        <div class="norm-law">Ley 4/2023, de 28 de febrero</div>
+        <div class="norm-title">Igualdad real y efectiva de las personas trans y garantía de los derechos de las personas LGTBI</div>
+        <div class="norm-arts">
+          <strong>Artículo 43</strong> — Legitimación para la rectificación registral del sexo.<br>
+          <strong>Artículo 44</strong> — Procedimiento de rectificación registral ante el Registro Civil.<br>
+          <strong>Artículo 45</strong> — Autoridad competente (Oficina del Registro Civil).<br>
+          <strong>Artículo 46</strong> — Efectos constitutivos desde la inscripción registral.<br>
+          <strong>Artículo 47</strong> — Reversibilidad de la rectificación (párrafos primero y segundo).<br>
+          <strong>Artículo 49</strong> — Adecuación de documentos a la nueva mención registral.<br>
+          <strong>Artículo 50</strong> — Adecuación de documentos a personas extranjeras.<br>
+          <strong>Artículo 51</strong> — Adecuación de documentos al cambio de nombre en menores.<br>
+          <strong>Disposición transitoria segunda</strong> — Reconducción de procedimientos en trámite.
+        </div>
+        <span class="norm-tag tag-info">Norma matriz</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Ley 15/2015, de 2 de julio</div>
+        <div class="norm-title">Jurisdicción Voluntaria — Título II, Capítulo I bis</div>
+        <div class="norm-arts">
+          <strong>Artículo 26 ter</strong> — Competencia, legitimación y postulación para menores de 14 y mayores de 12.<br>
+          <strong>Artículo 26 quater</strong> — Tramitación preferente con requisitos específicos de protección menor.<br>
+          <strong>Artículo 26 quinquies</strong> — Resolución con audiencia previa del menor y prohibición de condicionamiento.<br>
+          <strong>Disposición final 13.1</strong> — Incorporación del Capítulo I bis por la Ley 4/2023.
+        </div>
+        <span class="norm-tag tag-warn">Procedimiento paralelo</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Código Civil</div>
+        <div class="norm-title">Defensa de menores y personas con discapacidad</div>
+        <div class="norm-arts">
+          <strong>Artículo 235</strong> — Nombramiento de defensor judicial del menor cuando exista conflicto de intereses entre los menores y sus representantes legales.<br>
+          <strong>Artículo 236</strong> — El defensor judicial del menor ejercerá su cargo en interés del menor, de acuerdo con su personalidad y con respeto a sus derechos; aplicabilidad de las normas del defensor judicial de las personas con discapacidad.
+        </div>
+        <span class="norm-tag tag-ok">Garantías procesales</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Ley 20/2011, de 21 de julio</div>
+        <div class="norm-title">Registro Civil</div>
+        <div class="norm-arts">
+          <strong>Artículo 4.4</strong> — El sexo y el cambio de sexo constituyen hechos y actos inscribibles al amparo del derecho a la identidad.<br>
+          <strong>Artículo 11.j</strong> — Derecho a promover la rectificación o modificación de los asientos registrales.<br>
+          <strong>Artículo 49.5</strong> — Mención del sexo en blanco por condición intersexual (plazo máximo de un año).<br>
+          <strong>Artículo 51</strong> — Principio de libre elección del nombre propio; irrelevancia de la correspondencia con el sexo.<br>
+          <strong>Artículo 83</strong> — La rectificación del sexo es dato especialmente protegido con publicidad restringida.<br>
+          <strong>Artículo 91.2</strong> — Eficacia constitutiva de la inscripción registral de nombre y sexo.
+        </div>
+        <span class="norm-tag tag-gray">Marco registral</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Ley Orgánica 1/2004, de 28 de diciembre</div>
+        <div class="norm-title">Medidas de Protección Integral contra la Violencia de Género</div>
+        <div class="norm-arts">
+          <strong>Artículo 46.3</strong> de la Ley 4/2023 — La rectificación de la mención registral relativa al sexo y, en su caso, el cambio de nombre, no alterarán el régimen jurídico que, con anterioridad a la inscripción del cambio registral, fuera aplicable a la persona a los efectos de la Ley Orgánica 1/2004.
+        </div>
+        <span class="norm-tag tag-alert">Salvaguarda específica</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Ley Orgánica 3/2007, de 22 de marzo</div>
+        <div class="norm-title">Para la Igualdad Efectiva de Mujeres y Hombres</div>
+        <div class="norm-arts">
+          <strong>Artículo 11</strong> — Medidas de acción positiva en favor de las mujeres.<br>
+          <strong>Artículo 46.4</strong> de la Ley 4/2023 — La persona que rectifique la mención registral del sexo pasando del sexo masculino al femenino podrá ser beneficiaria de medidas de acción positiva adoptadas específicamente en favor de las mujeres en virtud del artículo 11 de la Ley Orgánica 3/2007, para aquellas situaciones generadas a partir de que se haga efectivo el cambio registral, pero no respecto de las situaciones jurídicas anteriores a la rectificación registral.<br>
+          <strong>Artículo 46.5</strong> de la Ley 4/2023 — La persona que rectifique la mención registral pasando del sexo femenino al masculino conservará los derechos patrimoniales consolidados que se hayan derivado de estas medidas de acción positiva, sin que haya lugar a su reintegro o devolución.
+        </div>
+        <span class="norm-tag tag-info">Igualdad y acción positiva</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- ===== LEGEND FOOTER ===== -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Ámbito y contexto normativo
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Competencia, legitimación y postulación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Tramitación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Resolución
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Ecosistema normativo
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Capítulo I ter del Título II · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== JS 1: FILTRADO POR CATEGORÍA ===== */
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+const countArts = document.getElementById('count-arts');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+  if (countArts) countArts.textContent =
+    visible + ' artículo' + (visible !== 1 ? 's' : '') +
+    ' visible' + (visible !== 1 ? 's' : '');
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+/* ===== JS 2: BÚSQUEDA EN TIEMPO REAL ===== */
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+/* ===== JS 3: EXPANDIR/COLAPSAR TARJETAS ===== */
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.setAttribute('aria-expanded', String(isExp));
+  const label = btn.querySelector('.toggle-label');
+  if (label) label.textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+/* ===== JS 4: EXPANDIR TODO / CONTRAER TODO ===== */
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn');
+      const label = btn && btn.querySelector('.toggle-label');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      if (label) label.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn');
+    const label = btn && btn.querySelector('.toggle-label');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+    if (label) label.textContent = 'Ver contenido completo';
+  });
+});
+
+/* ===== JS 5: COLAPSO DE SECCIONES PRINCIPALES ===== */
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    const btn = h.querySelector('.section-toggle-btn');
+    if (btn) btn.textContent = collapsed ? '▼' : '▲';
+  });
+});
+
+/* ===== JS 6: ZOOM ===== */
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+</body>
+</html>

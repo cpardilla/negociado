@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LJV 15/2015 — Título II, Cap. II — Habilitación y defensor judicial (Arts. 27–32)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+
+  /* c1 coral — Art. 27 Ámbito */
+  --c1:  #993c1d; --c1bg: #fdf1ec; --c1bd: #e8845a;
+  /* c2 azul — Art. 28 Competencia */
+  --c2:  #185fa5; --c2bg: #eaf3fc; --c2bd: #6aaee5;
+  /* c3 teal — Art. 29 Efectos */
+  --c3:  #0f6e56; --c3bg: #e3f7f1; --c3bd: #4dbf98;
+  /* c4 violeta — Art. 30 Comparecencia */
+  --c4:  #3c3489; --c4bg: #f0eefd; --c4bd: #9f9ae0;
+  /* c5 ámbar — Art. 31 Cesación */
+  --c5:  #633806; --c5bg: #fdf3e0; --c5bd: #d4a044;
+  /* c6 verde — Art. 32 Rendición */
+  --c6:  #3b6d11; --c6bg: #ecf5e1; --c6bd: #82b740;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+  --transition:   200ms ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem 1.75rem;
+}
+.header-inner { max-width: 1140px; margin: 0 auto; }
+.header-breadcrumb {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(248,245,237,.45);
+  margin-bottom: .55rem;
+}
+.header-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--header-text);
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+.header-subtitle {
+  font-size: 14px;
+  color: rgba(248,245,237,.6);
+  margin-bottom: 1rem;
+}
+.header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+}
+.header-tag {
+  background: rgba(200,169,110,.15);
+  border: 1px solid rgba(200,169,110,.3);
+  color: var(--accent);
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: .25rem .75rem;
+  border-radius: 20px;
+}
+.header-actions { margin-left: auto; }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(248,245,237,.15);
+  color: rgba(248,245,237,.7);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  padding: .4rem .9rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-ghost:hover { background: rgba(248,245,237,.08); color: var(--header-text); }
+
+/* ── STATS BAR ───────────────────────────────────────────── */
+.stats-bar { background: var(--surface); border-bottom: 1px solid var(--border); }
+.stats-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-1);
+  line-height: 1;
+  margin-bottom: .35rem;
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+@media (max-width: 640px) {
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(3) { border-right: 1px solid var(--border); }
+}
+
+/* ── CONTROLS BAR (STICKY) ───────────────────────────────── */
+.controls-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  border-bottom: 1px solid var(--border);
+}
+.controls-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: .65rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+}
+.search-wrap svg {
+  position: absolute;
+  left: .65rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-3);
+  pointer-events: none;
+  width: 15px; height: 15px;
+}
+.search-input {
+  width: 100%;
+  padding: .45rem .75rem .45rem 2.1rem;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  background: var(--surface);
+  color: var(--text-1);
+  outline: none;
+  transition: var(--transition);
+}
+.search-input:focus { border-color: var(--c2); box-shadow: 0 0 0 2px rgba(24,95,165,.1); }
+.search-input::placeholder { color: var(--text-3); }
+
+.filter-pills { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; }
+.pill {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  padding: .3rem .8rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-md);
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.pill:hover { background: var(--surface-2); }
+.pill.active[data-cat="all"] { background: var(--ink);  border-color: var(--ink);  color: #fff; }
+.pill.active[data-cat="c1"]  { background: var(--c1);  border-color: var(--c1);  color: #fff; }
+.pill.active[data-cat="c2"]  { background: var(--c2);  border-color: var(--c2);  color: #fff; }
+.pill.active[data-cat="c3"]  { background: var(--c3);  border-color: var(--c3);  color: #fff; }
+.pill.active[data-cat="c4"]  { background: var(--c4);  border-color: var(--c4);  color: #fff; }
+.pill.active[data-cat="c5"]  { background: var(--c5);  border-color: var(--c5);  color: #fff; }
+.pill.active[data-cat="c6"]  { background: var(--c6);  border-color: var(--c6);  color: #fff; }
+
+.ctrl-actions { display: flex; align-items: center; gap: .4rem; margin-left: auto; }
+.btn-ctrl {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  padding: .3rem .75rem;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-ctrl:hover { background: var(--surface-2); color: var(--text-1); }
+.zoom-cluster {
+  display: flex;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  align-items: center;
+}
+.btn-zoom {
+  border: none;
+  background: var(--surface);
+  color: var(--text-2);
+  width: 28px; height: 28px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.btn-zoom:hover:not(:disabled) { background: var(--surface-2); }
+.btn-zoom:disabled { opacity: .35; cursor: default; }
+.btn-zoom:first-child { border-right: 1px solid var(--border-md); }
+.btn-zoom:last-child  { border-left:  1px solid var(--border-md); }
+.zoom-label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 42px;
+  text-align: center;
+  color: var(--text-2);
+  padding: 0 .2rem;
+}
+@media (max-width: 768px) { .ctrl-actions { display: none; } }
+
+/* ── MAIN ────────────────────────────────────────────────── */
+.page-main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem 2.5rem;
+}
+
+/* ── MAP SECTION ─────────────────────────────────────────── */
+.map-section { margin-bottom: 2rem; }
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  cursor: pointer;
+  padding: .5rem 0;
+  user-select: none;
+}
+.section-heading-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-1);
+}
+.section-heading-count {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: .15rem .6rem;
+}
+.section-toggle-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--text-3);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.section-divider { border: none; border-top: 1px solid var(--border); margin: .5rem 0 1rem; }
+.section-body.collapsed { display: none; }
+
+/* ── CARD GRID ───────────────────────────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+/* ── MAP CARD ────────────────────────────────────────────── */
+.map-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border-left: 4px solid;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition), transform var(--transition);
+  overflow: hidden;
+}
+.map-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.map-card.hidden { display: none; }
+
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+
+.card-top { padding: 1rem 1rem .75rem; }
+.card-meta { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: .5rem; }
+
+.art-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: .18rem .6rem;
+  border-radius: 20px;
+  border: 1px solid;
+}
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+.map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+.map-card[data-cat="c6"] .art-badge { background: var(--c6bg); color: var(--c6); border-color: var(--c6bd); }
+
+.status-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: .18rem .6rem;
+  border-radius: 20px;
+}
+.tag-warn   { background: #fef3c7; color: #92400e; }
+.tag-alert  { background: #fee2e2; color: #991b1b; }
+.tag-info   { background: #dbeafe; color: #1e40af; }
+.tag-ok     { background: #d1fae5; color: #065f46; }
+.tag-gray   { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+.tag-purple { background: #f1ebff; color: #4c1d95; }
+.tag-amber  { background: #fef3c7; color: #92400e; }
+.tag-green  { background: #d1fae5; color: #065f46; }
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-1);
+  line-height: 1.35;
+  margin-bottom: .35rem;
+}
+.card-subtitle {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.45;
+}
+.card-counters {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem 1rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.counter-badge { font-size: 11.5px; color: var(--text-2); }
+.counter-badge strong { color: var(--text-1); font-weight: 600; }
+
+.card-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+  background: var(--surface-2);
+  border: none;
+  border-top: 1px solid var(--border);
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.card-toggle-btn:hover { background: var(--border); color: var(--text-1); }
+.toggle-icon { transition: transform var(--transition); display: inline-block; font-size: 11px; }
+.map-card.expanded .toggle-icon { transform: rotate(180deg); }
+.card-body { display: none; padding: .75rem 1rem 1rem; }
+.map-card.expanded .card-body { display: block; }
+
+/* inner sections */
+.inner-section { margin-bottom: .9rem; }
+.inner-section:last-child { margin-bottom: 0; }
+.inner-heading { display: flex; align-items: center; gap: .4rem; margin-bottom: .35rem; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+.map-card[data-cat="c6"] .dot { background: var(--c6); }
+.inner-heading-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-2);
+  background: var(--surface-2);
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+.inner-list { list-style: none; padding-left: 0; }
+.inner-list li {
+  position: relative;
+  padding: 2.5px 0 2.5px .8rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+  border-bottom: 1px solid var(--border);
+}
+.inner-list li:last-child { border-bottom: none; }
+.inner-list li::before { content: '–'; position: absolute; left: 0; color: var(--text-3); }
+.inner-list li strong { color: var(--text-1); font-weight: 500; }
+.inner-sub { list-style: none; padding-left: .8rem; margin-top: .25rem; }
+.inner-sub li {
+  position: relative;
+  padding: 2px 0 2px .75rem;
+  font-size: 11.5px;
+  color: var(--text-3);
+  border-bottom: none;
+}
+.inner-sub li::before { content: '·'; position: absolute; left: 0; }
+
+/* note boxes */
+.note-box {
+  margin-top: .45rem;
+  padding: .6rem .85rem;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  line-height: 1.55;
+  border-left: 3px solid;
+}
+.note-warn { background: #fffbeb; border-color: #d4a044; color: #633806; }
+.note-info { background: #eff6ff; border-color: #6aaee5; color: #185fa5; }
+.note-box strong {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  opacity: .7;
+  margin-bottom: .2rem;
+}
+
+/* ref tags */
+.ref-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(200,169,110,.1);
+  color: #92701a;
+  margin: 1px 2px;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: 1px solid rgba(200,169,110,.25);
+}
+.card-refs {
+  padding: .55rem 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  background: var(--surface-2);
+}
+
+/* ── NO RESULTS ──────────────────────────────────────────── */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-3);
+  font-size: 14px;
+  display: none;
+}
+
+/* ── PLAZOS TABLE ────────────────────────────────────────── */
+.table-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+.timeline-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.timeline-table thead tr { background: var(--surface-2); }
+.timeline-table th {
+  padding: .65rem 1rem;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+.timeline-table td { padding: .6rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.timeline-table tr:last-child td { border-bottom: none; }
+.timeline-table tr:hover td { background: var(--surface-2); }
+.td-tramite { font-size: 13px; color: var(--text-1); }
+.td-norm { font-size: 12px; color: var(--text-2); }
+.plazo-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: .2rem .65rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ── PARTICIPANTS ────────────────────────────────────────── */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+.participant-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.participant-col-head {
+  padding: .55rem 1rem;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .03em;
+}
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.participant-col ul { list-style: none; padding: .4rem 0; }
+.participant-col li {
+  padding: .35rem 1rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.4;
+}
+.participant-col li:last-child { border-bottom: none; }
+.participant-note { font-size: 11px; color: var(--text-3); font-style: italic; }
+
+/* ── NORM GRID ───────────────────────────────────────────── */
+.norm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 900px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+.norm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.norm-law { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); }
+.norm-title { font-size: 13px; font-weight: 500; color: var(--text-1); }
+.norm-arts { font-size: 12px; color: var(--text-2); line-height: 1.55; }
+.norm-arts strong { color: var(--text-1); }
+.norm-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: .18rem .6rem;
+  border-radius: 20px;
+  margin-top: .2rem;
+  align-self: flex-start;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.legend-footer { background: var(--header-bg); color: var(--header-text); padding: 1.75rem 1.5rem; }
+.legend-inner { max-width: 1140px; margin: 0 auto; }
+.legend-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 1rem; }
+.legend-grid { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem; margin-bottom: 1.25rem; }
+.legend-item { display: flex; align-items: center; gap: .45rem; font-size: 12px; color: rgba(248,245,237,.65); }
+.legend-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.legend-divider { width: 1px; height: 20px; background: rgba(248,245,237,.12); }
+.legend-copy { font-size: 11px; color: rgba(248,245,237,.3); border-top: 1px solid rgba(248,245,237,.08); padding-top: 1rem; margin-top: .5rem; }
+
+/* ── PRINT ───────────────────────────────────────────────── */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body   { display: block !important; }
+  .section-body{ display: block !important; }
+  .map-card    { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  body         { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título II · Capítulo II</div>
+    <h1 class="header-title">Habilitación para comparecer en juicio y nombramiento de defensor judicial</h1>
+    <p class="header-subtitle">Artículos 27–32 · Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Versión expandida con conexiones normativas</p>
+    <div class="header-meta">
+      <span class="header-tag">LJV 15/2015</span>
+      <span class="header-tag">Arts. 27–32</span>
+      <span class="header-tag">Título II, Cap. II</span>
+      <span class="header-tag">Defensor judicial</span>
+      <span class="header-tag">Ley 8/2021</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════
+     STATS BAR
+═══════════════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">6</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">20+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">10+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">6</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     CONTROLS BAR (STICKY)
+═══════════════════════════════════════════════════════ -->
+<div class="controls-bar">
+  <div class="controls-inner">
+
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+      </svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…" autocomplete="off">
+    </div>
+
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Art. 27 · Ámbito</button>
+      <button class="pill" data-cat="c2">Art. 28 · Competencia</button>
+      <button class="pill" data-cat="c3">Art. 29 · Efectos</button>
+      <button class="pill" data-cat="c4">Art. 30 · Comparecencia</button>
+      <button class="pill" data-cat="c5">Art. 31 · Cesación</button>
+      <button class="pill" data-cat="c6">Art. 32 · Rendición</button>
+    </div>
+
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════════════════ -->
+<main class="page-main">
+
+  <!-- ── ARTÍCULOS ────────────────────────────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-articles">
+      <span class="section-heading-text">Capítulo II — Artículos 27 a 32</span>
+      <span class="section-heading-count" id="count-arts">6 artículos</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-articles">
+      <div class="card-grid">
+
+        <!-- ────────────────────────────────── ART. 27 ── -->
+        <article class="map-card" data-cat="c1"
+          data-text="artículo 27 ámbito aplicación nombramiento defensor judicial menores personas discapacidad habilitación ausencia paradero ignorado negativa representantes imposibilidad hecho conflicto intereses patria potestad tutela curatela ley 8 2021 jurisdicción voluntaria art 163 235 295 cc">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 27</span>
+              <span class="status-tag tag-info">Ámbito de aplicación</span>
+            </div>
+            <h2 class="card-title">Ámbito de aplicación</h2>
+            <p class="card-subtitle">Define cuándo procede el nombramiento de defensor judicial o la habilitación para comparecer, distinguiendo los supuestos con y sin habilitación previa.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>6</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> causas de habilitación</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Supuesto general: nombramiento sin habilitación</span></div>
+              <ul class="inner-list">
+                <li>Se aplica cuando proceda conforme a la ley el nombramiento de un defensor judicial de menores o personas con discapacidad. Opera cuando el Código Civil —especialmente los artículos 163, 235 y 295— prevé directamente el nombramiento, sin necesidad de habilitación previa.</li>
+              </ul>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Causas que exigen habilitación previa (art. 27.2)</span></div>
+              <ul class="inner-list">
+                <li>Se insta la habilitación cuando el menor no emancipado o la persona con discapacidad, siendo demandado o sufriendo gran perjuicio de no promover la demanda, concurra alguna de estas causas:</li>
+                <li><strong>a) Ausencia con paradero ignorado.</strong> Sin motivo racional de regreso próximo. Paralelo en el art. 295.1.º CC para personas con discapacidad.</li>
+                <li><strong>b) Negativa de AMBOS representantes.</strong> Si solo uno se niega, el otro puede actuar; no procede la habilitación.</li>
+                <li><strong>c) Imposibilidad de hecho.</strong> Único supuesto que exige inscripción de la resolución de nombramiento en el Registro Civil (art. 30.3 LJV). Paralelo en el art. 295.1.º CC.</li>
+              </ul>
+              <div class="note-box note-info">La referencia a la «persona designada para ejercer el apoyo» se incorporó con la Ley 8/2021, que abolió la tutela para adultos y la sustituyó por un sistema de medidas de apoyo (curatela, guarda de hecho, poderes preventivos).</div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Nombramiento directo sin habilitación (art. 27.3)</span></div>
+              <ul class="inner-list">
+                <li>Para litigar contra progenitores, tutor o curador (conflicto de intereses: arts. 163 y 295.2.º CC).</li>
+                <li>Para instar expedientes de jurisdicción voluntaria.</li>
+                <li>Cuando el MF inste medidas de apoyo (arts. 42 bis a) LJV y 758 LEC).</li>
+              </ul>
+              <div class="note-box note-warn"><strong>Límite esencial</strong>No procede si el otro progenitor o tutor, si lo hubiere, no tuviera un interés opuesto al afectado.</div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Encaje sistemático y transversalidad en la LJV</span></div>
+              <ul class="inner-list">
+                <li>El art. 27 LJV es la norma de cauce; el CC (arts. 163, 235–236, 295–298) es la norma de supuesto. La figura aparece además en otros expedientes de la propia LJV:</li>
+                <li><strong>Art. 26 ter.2:</strong> desacuerdo en rectificación registral del sexo → arts. 235–236 CC.</li>
+                <li><strong>Art. 42 bis a).4:</strong> provisión de medidas judiciales de apoyo.</li>
+                <li><strong>Art. 49.2:</strong> durante la remoción del tutor o curador.</li>
+                <li><strong>Art. 50.3:</strong> durante la excusa del tutor o curador.</li>
+                <li><strong>Art. 54:</strong> emancipación cuando progenitores/tutor no asisten.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Arts. 163, 235–236 CC</span>
+            <span class="ref-tag">Arts. 295–298 CC</span>
+            <span class="ref-tag">Art. 42 bis a) LJV</span>
+            <span class="ref-tag">Arts. 49, 50, 54 LJV</span>
+            <span class="ref-tag">Art. 758 LEC</span>
+            <span class="ref-tag">Ley 8/2021</span>
+          </div>
+        </article>
+
+        <!-- ────────────────────────────────── ART. 28 ── -->
+        <article class="map-card" data-cat="c2"
+          data-text="artículo 28 competencia legitimación postulación secretario judicial juzgado primera instancia domicilio residencia iniciación de oficio ministerio fiscal persona discapacidad abogado procurador no preceptiva art 8 lec">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 28</span>
+              <span class="status-tag tag-info">Competencia y postulación</span>
+            </div>
+            <h2 class="card-title">Competencia, legitimación y postulación</h2>
+            <p class="card-subtitle">Atribuye la competencia al Secretario judicial, fija los fueros territoriales en cascada y regula la iniciación y el régimen de postulación.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>5</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> fueros territoriales</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Competencia territorial (imperativa)</span></div>
+              <ul class="inner-list">
+                <li><strong>1.º</strong> Secretario judicial del JPI del domicilio del menor o persona con discapacidad.</li>
+                <li><strong>2.º</strong> En defecto de domicilio: de la residencia.</li>
+                <li><strong>3.º</strong> Del JPI que esté conociendo del asunto que exija el nombramiento.</li>
+                <li>No puede modificarse por sumisión expresa ni tácita (art. 2.2 LJV). Verificar la inexistencia de expediente simultáneo con idéntico objeto (art. 6 LJV).</li>
+              </ul>
+              <div class="note-box note-info">Tensión doctrinal: el art. 295 CC habla de «autoridad judicial» (= Juez), pero el art. 28 LJV atribuye la competencia al Secretario judicial. La solución dominante es que prevalece la norma especial procesal.</div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Iniciación del expediente</span></div>
+              <ul class="inner-list">
+                <li>De oficio.</li>
+                <li>A petición del Ministerio Fiscal.</li>
+                <li>Por el menor, la persona con discapacidad con medidas de apoyo, o cualquier persona que actúe en su interés.</li>
+              </ul>
+              <div class="note-box note-warn"><strong>Nota terminológica</strong>La expresión «persona con capacidad modificada judicialmente» es pre-Ley 8/2021 y debe entenderse hoy como «persona con discapacidad con medidas judiciales de apoyo para el ejercicio de su capacidad jurídica».</div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Postulación: libre en la tramitación ordinaria</span></div>
+              <ul class="inner-list">
+                <li>No es preceptiva la intervención de Abogado ni Procurador. Excepción: si se formula oposición o se interpone recurso de revisión o apelación, la representación técnica pasa a ser preceptiva (art. 3.2 LJV).</li>
+              </ul>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Mecanismo paralelo en el proceso contencioso: art. 8 LEC</span></div>
+              <ul class="inner-list">
+                <li>El art. 8 LEC prevé que el Letrado de la Administración de Justicia nombre defensor judicial cuando la persona física carece de representante o asistente legal. El MF asume la defensa hasta el nombramiento y el proceso queda en suspenso mientras no conste su intervención (art. 8.2 LEC). Este es el espejo contencioso del expediente de los arts. 27–32 LJV.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Art. 2.2 LJV</span>
+            <span class="ref-tag">Art. 3.2 LJV</span>
+            <span class="ref-tag">Art. 6 LJV</span>
+            <span class="ref-tag">Art. 8 LEC</span>
+            <span class="ref-tag">Ley 8/2021</span>
+          </div>
+        </article>
+
+        <!-- ────────────────────────────────── ART. 29 ── -->
+        <article class="map-card" data-cat="c3"
+          data-text="artículo 29 efectos solicitud suspensión plazos prescripción caducidad dies a quo dies ad quem representación provisional ministerio fiscal demandado art 21 ljv caducidad expediente 6 meses">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 29</span>
+              <span class="status-tag tag-ok">Efectos de la solicitud</span>
+            </div>
+            <h2 class="card-title">Efectos de la solicitud</h2>
+            <p class="card-subtitle">Regula la suspensión automática de plazos de prescripción y caducidad desde la solicitud y la representación provisional del Ministerio Fiscal.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> efectos automáticos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Suspensión de plazos de prescripción y caducidad</span></div>
+              <ul class="inner-list">
+                <li>Desde que se solicita la habilitación y hasta que el defensor judicial acepta el cargo o el expediente se archiva por resolución firme, quedan suspendidos los plazos de prescripción o caducidad de la acción en cuestión.</li>
+                <li><strong>Dies a quo:</strong> la solicitud (no la admisión a trámite).</li>
+                <li><strong>Dies ad quem:</strong> aceptación del cargo, o archivo por resolución firme.</li>
+                <li>La suspensión de la caducidad es especialmente significativa porque esta, a diferencia de la prescripción, generalmente no admite interrupción. Afecta a los plazos del CC (arts. 1961 y ss.) y a los de la legislación especial aplicable.</li>
+              </ul>
+              <div class="note-box note-warn">Si el expediente caduca por inactividad de los interesados durante 6 meses (art. 21 LJV), el archivo por resolución firme pone fin a la suspensión y los plazos se reanudan.</div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Representación provisional por el Ministerio Fiscal</span></div>
+              <ul class="inner-list">
+                <li>Si el menor o persona con discapacidad debe comparecer como demandado, o ha quedado sin representación procesal durante el procedimiento, el MF asume su representación y defensa hasta el nombramiento del defensor judicial.</li>
+              </ul>
+              <div class="note-box note-info">Paralelo en el art. 8.2 LEC (proceso contencioso): el proceso queda en suspenso mientras no conste la intervención del MF. El art. 4 LJV fundamenta estructuralmente esta intervención preceptiva del MF.</div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Art. 4 LJV</span>
+            <span class="ref-tag">Art. 21 LJV</span>
+            <span class="ref-tag">Arts. 1961 y ss. CC</span>
+            <span class="ref-tag">Art. 8.2 LEC</span>
+          </div>
+        </article>
+
+        <!-- ────────────────────────────────── ART. 30 ── -->
+        <article class="map-card" data-cat="c4"
+          data-text="artículo 30 comparecencia resolución sujetos convocados ministerio fiscal menor 12 años madurez criterio nombramiento más idóneo inscripción registro civil supuesto c imposibilidad hecho art 295 cc art 236 cc">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 30</span>
+              <span class="status-tag tag-purple">Comparecencia y resolución</span>
+            </div>
+            <h2 class="card-title">Comparecencia y resolución</h2>
+            <p class="card-subtitle">Regula los sujetos convocados, el criterio de idoneidad para el nombramiento y la inscripción registral en el supuesto de imposibilidad de hecho.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>5</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> criterios de idoneidad</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Sujetos convocados a comparecencia</span></div>
+              <ul class="inner-list">
+                <li>El solicitante.</li>
+                <li>Los interesados que consten en el expediente.</li>
+                <li>Quienes el Secretario judicial estime pertinente.</li>
+                <li>El menor o persona con discapacidad si tuvieren suficiente madurez.</li>
+                <li>En todo caso, el menor si tuviere <strong>más de 12 años</strong> (umbral del art. 9 LO 1/1996).</li>
+                <li>El Ministerio Fiscal (siempre, sin excepción).</li>
+              </ul>
+              <div class="note-box note-info">Garantías de la audiencia del menor (art. 18.4.ª LJV): posibilidad de acto separado sin interferencias, con asistencia preceptiva del MF, levantamiento de acta por el LAJ, condiciones idóneas y adaptadas, y valoración motivada en la resolución final.</div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Criterio de nombramiento: «más idóneo para el cargo»</span></div>
+              <ul class="inner-list">
+                <li>El Secretario judicial nombra al más idóneo y determina sus atribuciones. Los criterios de idoneidad se precisan en el CC:</li>
+                <li><strong>Para personas con discapacidad (art. 295 CC):</strong> quien mejor pueda respetar, comprender e interpretar la voluntad, deseos y preferencias del afectado.</li>
+                <li><strong>Para menores (art. 236 CC):</strong> quien actúe en interés del menor, de acuerdo con su personalidad y con respeto a sus derechos.</li>
+              </ul>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Inscripción en el Registro Civil (supuesto c)</span></div>
+              <ul class="inner-list">
+                <li>El testimonio de la resolución de nombramiento en el caso del art. 27.2.c) (imposibilidad de hecho) se remite al Registro Civil competente para su inscripción. Remisión por medios electrónicos (art. 22 LJV). Solo el supuesto c) genera este deber registral. La inscripción se rige por la Ley 20/2011 del Registro Civil.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Art. 18.4.ª LJV</span>
+            <span class="ref-tag">Art. 22 LJV</span>
+            <span class="ref-tag">Art. 9 LO 1/1996</span>
+            <span class="ref-tag">Arts. 236 y 295 CC</span>
+            <span class="ref-tag">Ley 20/2011 RC</span>
+          </div>
+        </article>
+
+        <!-- ────────────────────────────────── ART. 31 ── -->
+        <article class="map-card" data-cat="c5"
+          data-text="artículo 31 cesación defensor judicial habilitación deber comunicación órgano judicial desaparición causa negativa progenitores representantes fin procedimiento provisional ocasional">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 31</span>
+              <span class="status-tag tag-amber">Cesación</span>
+            </div>
+            <h2 class="card-title">Cesación del defensor judicial y de la habilitación</h2>
+            <p class="card-subtitle">Regula el deber de comunicar la cesación y las causas que ponen fin al cargo de defensor judicial o a la habilitación concedida.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>1</strong> norma conexa</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> causas de cesación</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Deber activo de comunicación al órgano judicial</span></div>
+              <ul class="inner-list">
+                <li>El defensor judicial vigila y comunica al órgano judicial cuándo se producen las causas de cesación, a fin de que el órgano judicial declare formalmente la extinción del cargo.</li>
+              </ul>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Causas de cesación</span></div>
+              <ul class="inner-list">
+                <li>La <strong>desaparición de la causa</strong> que motivó el nombramiento (correspondencia simétrica con las causas a, b y c del art. 27.2).</li>
+                <li>Cuando progenitores, representantes o curador se <strong>presten a comparecer</strong> en juicio por el afectado.</li>
+                <li>Cuando se <strong>termine el procedimiento</strong> que motivó la habilitación.</li>
+              </ul>
+              <div class="note-box note-info">El cargo es esencialmente provisional y ocasional. Se extingue en cuanto desaparezca la causa que lo motivó, a diferencia del tutor o curador, cuyo cargo es estable y continuo.</div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Art. 27 LJV</span>
+          </div>
+        </article>
+
+        <!-- ────────────────────────────────── ART. 32 ── -->
+        <article class="map-card" data-cat="c6"
+          data-text="artículo 32 rendición cuentas excusa remoción defensor judicial arts 47 48 49 50 51 ljv arts 297 298 cc inventario bienes 15 días 3 meses juez auto aprobación">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 32</span>
+              <span class="status-tag tag-green">Rendición de cuentas</span>
+            </div>
+            <h2 class="card-title">Rendición de cuentas, excusa y remoción del defensor judicial</h2>
+            <p class="card-subtitle">Remite al régimen de la tutela y curatela (arts. 47–51 LJV) para el inventario, excusa, remoción y rendición de cuentas del defensor.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> normas de remisión</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> plazos clave</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Régimen por remisión: arts. 47–51 LJV y arts. 297–298 CC</span></div>
+              <ul class="inner-list">
+                <li>Cláusula de remisión al régimen de la tutela y curatela (arts. 47–51 LJV) para la formación de inventario, excusa, remoción y rendición de cuentas. El art. 297 CC hace aplicables al defensor judicial las causas de inhabilidad, excusa y remoción del curador, y el art. 298 CC impone el deber de rendir cuentas.</li>
+              </ul>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Formación de inventario (art. 47 LJV)</span></div>
+              <ul class="inner-list">
+                <li>Presentación del inventario de bienes, escrituras y documentos. Si hay controversia sobre inclusión o exclusión de bienes: vista como juicio verbal, con suspensión del inventario hasta resolución.</li>
+              </ul>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Excusa (art. 50 LJV)</span></div>
+              <ul class="inner-list">
+                <li>Plazo: <strong>15 días</strong> desde el nombramiento (causa sobrevenida: en cualquier momento).</li>
+                <li>Comparecencia con el defensor, sustituto propuesto, afectado (si &gt;12 años o madurez suficiente) y MF.</li>
+                <li>Durante la tramitación: el defensor debe continuar ejerciendo el cargo.</li>
+                <li>Excusa rechazada: el defensor soporta todos los gastos del expediente (art. 50.3 LJV).</li>
+              </ul>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Remoción (art. 49 LJV) — decisión del Juez</span></div>
+              <ul class="inner-list">
+                <li>De oficio, a instancia del MF, del afectado o de cualquier interesado. Si hay oposición: juicio verbal contencioso. El Juez puede suspender provisionalmente al defensor durante la tramitación; el Secretario judicial nombra defensor provisional.</li>
+              </ul>
+              <div class="note-box note-warn"><strong>Importante</strong>La resolución de remoción corresponde al <strong>Juez</strong> (no al Secretario judicial), aunque el expediente haya sido tramitado por el LAJ (art. 49.3 LJV).</div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Rendición de cuentas (art. 51 LJV) — auto del Juez</span></div>
+              <ul class="inner-list">
+                <li>Plazo: <strong>3 meses</strong> desde el cese del cargo (prorrogables por justa causa).</li>
+                <li>Traslado al afectado, interesados y MF; plazo de 10 días para solicitar comparecencia.</li>
+                <li>El Juez puede acordar pericial contable de oficio para operaciones complejas.</li>
+                <li>Resolución por <strong>auto del Juez</strong>.</li>
+                <li>La aprobación no impide las acciones recíprocas por razón de la gestión (art. 51.5 LJV).</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Arts. 47–51 LJV</span>
+            <span class="ref-tag">Arts. 297–298 CC</span>
+          </div>
+        </article>
+
+        <div class="no-results" id="no-results">
+          No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+        </div>
+
+      </div><!-- /card-grid -->
+    </div><!-- /section-body -->
+  </div>
+
+  <!-- ── PLAZOS PROCESALES ──────────────────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Cronograma de plazos procesales</span>
+      <span class="section-heading-count">6 trámites</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Acto o trámite procesal</th>
+              <th>Plazo</th>
+              <th>Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Excusa del defensor judicial desde la notificación del nombramiento</td>
+              <td><span class="plazo-badge plazo-days">15 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 50 LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Citación con antelación mínima para comparecencia (normas supletorias)</td>
+              <td><span class="plazo-badge plazo-weeks">15 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 17 LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Comparecencia desde la admisión de la solicitud (normas supletorias)</td>
+              <td><span class="plazo-badge plazo-months">30 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 18.1 LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Resolución del expediente desde la comparecencia o última diligencia</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 19 LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Caducidad del expediente por inactividad de los interesados</td>
+              <td><span class="plazo-badge plazo-months">6 meses</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 21 LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Rendición de cuentas desde el cese del cargo del defensor judicial</td>
+              <td><span class="plazo-badge plazo-months">3 meses</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 51 LJV</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ACTORES ────────────────────────────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">4 categorías · 10+ actores</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Órganos judiciales</div>
+          <ul>
+            <li>Secretario judicial / LAJ <span class="participant-note">(nombramiento, comparecencia)</span></li>
+            <li>Juez de Primera Instancia <span class="participant-note">(remoción, rendición de cuentas)</span></li>
+            <li>Registro Civil <span class="participant-note">(inscripción supuesto c) art. 27.2)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Personas protegidas</div>
+          <ul>
+            <li>Menor no emancipado <span class="participant-note">(beneficiario del nombramiento)</span></li>
+            <li>Persona con discapacidad con medidas de apoyo <span class="participant-note">(arts. 295–298 CC)</span></li>
+            <li>Menor &gt;12 años <span class="participant-note">(audiencia preceptiva)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Intervinientes necesarios</div>
+          <ul>
+            <li>Ministerio Fiscal <span class="participant-note">(intervención preceptiva; representación provisional)</span></li>
+            <li>Defensor judicial nombrado <span class="participant-note">(cargo provisional y ocasional)</span></li>
+            <li>Defensor provisional <span class="participant-note">(durante tramitación de remoción)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Otros sujetos procesales</div>
+          <ul>
+            <li>Progenitores / representantes legales <span class="participant-note">(legitimados para instar; causa de cesación)</span></li>
+            <li>Tutor / curador <span class="participant-note">(conflicto de intereses o imposibilidad)</span></li>
+            <li>Cualquier interesado <span class="participant-note">(instar remoción, rendir cuentas)</span></li>
+            <li>Perito contable <span class="participant-note">(rendición de cuentas complejas)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ECOSISTEMA NORMATIVO ───────────────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">4 cuerpos normativos</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">LJV 15/2015 — Disposiciones generales y otros capítulos</div>
+          <div class="norm-title">Normas aplicables y expedientes conexos</div>
+          <div class="norm-arts">
+            <strong>Arts. 2–8</strong> — competencia, postulación, MF, prueba, gastos, ajustes discapacidad, LEC supletoria.<br>
+            <strong>Arts. 17–22</strong> — admisión, citación (≥15 días), comparecencia (≤30 días), resolución (5 días), recursos, caducidad (6 meses), inscripción.<br>
+            <strong>Arts. 47–51</strong> — inventario, remoción, excusa (15 días), rendición de cuentas (3 meses); aplicados por remisión del art. 32.<br>
+            <strong>Arts. 26 ter, 42 bis a), 49, 50, 54</strong> — supuestos de la propia LJV que activan el nombramiento.
+          </div>
+          <span class="norm-tag tag-ok">Ley de procedimiento</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Código Civil</div>
+          <div class="norm-title">Supuestos materiales y régimen del defensor</div>
+          <div class="norm-arts">
+            <strong>Art. 163</strong> — conflicto de intereses progenitores-hijo; uno de los principales activadores del art. 27 LJV.<br>
+            <strong>Arts. 235–236</strong> — defensor judicial del menor: casos y criterios de actuación (post-Ley 8/2021).<br>
+            <strong>Arts. 295–298</strong> — defensor judicial de la persona con discapacidad: cinco supuestos, régimen de inhabilidad, excusa, remoción y deber de rendir cuentas.<br>
+            <strong>Arts. 1961 y ss.</strong> — prescripción de acciones; suspensión ex art. 29 LJV.
+          </div>
+          <span class="norm-tag tag-warn">Derecho sustantivo</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley de Enjuiciamiento Civil (LEC)</div>
+          <div class="norm-title">Espejo contencioso del Cap. II LJV</div>
+          <div class="norm-arts">
+            <strong>Art. 7.2</strong> — comparecencia en juicio de menores y personas con medidas de apoyo: presupuesto material que activa el Cap. II cuando falla la representación.<br>
+            <strong>Art. 8</strong> — nombramiento de defensor judicial por el LAJ en proceso contencioso; MF asume la defensa provisionalmente.<br>
+            <strong>Art. 9</strong> — apreciación de oficio de la falta de capacidad: mecanismo de activación.<br>
+            <strong>Art. 758</strong> — defensor judicial en proceso de medidas de apoyo; nuevo plazo de 20 días; conecta con el art. 27.3 LJV.
+          </div>
+          <span class="norm-tag tag-info">Proceso contencioso</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Otras leyes</div>
+          <div class="norm-title">Marco legal complementario</div>
+          <div class="norm-arts">
+            <strong>Ley 8/2021, de 2 de junio</strong> — abolió la incapacitación y la tutela para adultos; introdujo curatela asistencial, guarda de hecho y poderes preventivos; rediseñó el defensor judicial como apoyo ocasional autónomo (art. 295.5.º CC).<br>
+            <strong>LO 1/1996, art. 9</strong> — derecho del menor a ser oído; umbral de 12 años para audiencia obligatoria.<br>
+            <strong>Ley 20/2011 (Registro Civil)</strong> — inscripción del nombramiento en el supuesto c) del art. 27.2.<br>
+            <strong>CDPD (ONU, 2006) arts. 12 y 13</strong> — igual reconocimiento ante la ley; acceso a la justicia; marco inspirador de la Ley 8/2021.
+          </div>
+          <span class="norm-tag tag-alert">Leyes especiales e internacional</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER — LEYENDA
+═══════════════════════════════════════════════════════ -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por artículo</div>
+    <div class="legend-grid">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c1)"></div>Art. 27 · Ámbito de aplicación</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c2)"></div>Art. 28 · Competencia, legitimación y postulación</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c3)"></div>Art. 29 · Efectos de la solicitud</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c4)"></div>Art. 30 · Comparecencia y resolución</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c5)"></div>Art. 31 · Cesación del defensor</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c6)"></div>Art. 32 · Rendición de cuentas, excusa y remoción</div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo II · Arts. 27–32 · Con conexiones al CC, LEC, LO 1/1996, Ley 8/2021, Ley 20/2011 y CDPD · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<script>
+const pills     = document.querySelectorAll('.pill');
+const cards     = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+const countArts = document.getElementById('count-arts');
+let activeCat   = 'all';
+let searchTerm  = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch  = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text      = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show      = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+  if (countArts) countArts.textContent =
+    visible + ' artículo' + (visible !== 1 ? 's' : '') +
+    ' visible' + (visible !== 1 ? 's' : '');
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+function toggleCard(btn) {
+  const card  = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent =
+    isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '▼' : '▲';
+  });
+});
+
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn(); }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut(); }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Tramitación — Extracción de Órganos de Donantes Vivos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   CSS VARIABLES & TOKENS
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+  --navy:      #1A2F6E;
+  --navy-mid:  #2E4DAA;
+  --navy-lt:   #4169E1;
+  --cyan:      #0D9488;    --cyan-bg:   #F0FDFA;
+  --violet:    #5B21B6;    --violet-bg: #F5F3FF;
+  --green:     #15803D;    --green-bg:  #F0FDF4;
+  --amber:     #B45309;    --amber-bg:  #FFFBEB;
+  --red:       #B91C1C;    --red-bg:    #FEF2F2;
+  --slate:     #475569;    --slate-bg:  #F4F6FB;
+  --white:     #FFFFFF;
+  --bdr:       #D1D9EE;
+  --text:      #1A1A2E;
+  --muted:     #6B7280;
+  --radius:    8px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--slate-bg);
+  -webkit-font-smoothing: antialiased;
+}
+button { font-family: inherit; cursor: pointer; }
+
+/* ═══════════════════════════════════════════════════════════════
+   #app — ROOT CONTAINER (100vh flex column)
+   ═══════════════════════════════════════════════════════════════ */
+#app {
+  display: flex; flex-direction: column;
+  height: 100vh; overflow: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ELEMENT 1 — CABECERA (#hdr)
+   ═══════════════════════════════════════════════════════════════ */
+#hdr {
+  flex-shrink: 0;
+  height: 56px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 20px;
+  background: var(--navy);
+  color: #fff;
+}
+.h-left { display: flex; align-items: center; gap: 12px; }
+.h-seal {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.10);
+  border: 1.5px solid rgba(255,255,255,.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+.h-title { font-size: 14px; font-weight: 700; }
+.h-sub { font-size: 10px; opacity: .55; margin-top: 1px; }
+.h-right { display: flex; gap: 8px; }
+.btn-ghost {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.85);
+  font-size: 12px; font-weight: 500;
+  padding: 5px 12px; border-radius: 6px;
+  transition: all .15s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,.18); }
+
+/* ═══════════════════════════════════════════════════════════════
+   ELEMENT 2 — BARRA DE FASES (#pbar)
+   ═══════════════════════════════════════════════════════════════ */
+#pbar {
+  flex-shrink: 0;
+  height: 36px;
+  display: flex; align-items: center;
+  padding: 0 20px;
+  overflow-x: auto; scrollbar-width: none;
+  background: var(--navy-mid);
+  gap: 0;
+}
+#pbar::-webkit-scrollbar { display: none; }
+.ph-item { display: flex; align-items: center; white-space: nowrap; }
+.ph-lbl {
+  font-size: 11px; font-weight: 500;
+  padding: 3px 10px; border-radius: 12px;
+  color: rgba(255,255,255,.40);
+  transition: all .15s;
+}
+.ph-lbl.active {
+  color: #fff; font-weight: 700;
+  background: rgba(65,105,225,.35);
+}
+.ph-lbl.done { color: rgba(255,255,255,.70); }
+.ph-sep {
+  font-size: 12px; color: rgba(255,255,255,.25);
+  margin: 0 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ELEMENT 3 — MIGAS DE PAN (#breadcrumb)
+   ═══════════════════════════════════════════════════════════════ */
+#breadcrumb {
+  flex-shrink: 0;
+  display: flex; align-items: center;
+  padding: 0 20px; gap: 0;
+  height: 34px;
+  background: var(--slate-bg);
+  border-bottom: 1px solid var(--bdr);
+  overflow-x: auto; scrollbar-width: none;
+}
+#breadcrumb::-webkit-scrollbar { display: none; }
+.bc-item { font-size: 11px; white-space: nowrap; padding: 0 6px; color: var(--muted); }
+.bc-past {
+  cursor: pointer; background: none; border: none;
+  font-family: inherit; font-size: 11px;
+  color: var(--muted); padding: 0 6px;
+}
+.bc-past:hover { color: var(--navy-lt); text-decoration: underline; }
+.bc-current { font-weight: 600; color: var(--navy); }
+.bc-sep { font-size: 10px; color: var(--bdr); padding: 0 2px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   ELEMENT 4 — LAYOUT (#layout)
+   ═══════════════════════════════════════════════════════════════ */
+#layout {
+  flex: 1; overflow: hidden;
+  display: flex;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ELEMENT 4a — SIDEBAR (#sidebar)
+   ═══════════════════════════════════════════════════════════════ */
+#sidebar {
+  flex-shrink: 0;
+  width: 260px;
+  background: var(--navy-mid);
+  overflow-y: auto; overflow-x: hidden;
+  color: #fff;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.15) transparent;
+}
+#sidebar::-webkit-scrollbar { width: 5px; }
+#sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 3px; }
+
+#sb-tabs { display: flex; border-bottom: 1px solid rgba(255,255,255,.10); }
+.sb-tab {
+  flex: 1; padding: 8px 0; font-size: 11px; font-weight: 600;
+  background: none; border: none;
+  color: rgba(255,255,255,.40); cursor: pointer;
+  letter-spacing: .4px; text-transform: uppercase;
+  transition: all .15s;
+}
+.sb-tab.active { color: #fff; border-bottom: 2px solid var(--navy-lt); }
+.sb-tab:hover:not(.active) { color: rgba(255,255,255,.70); background: rgba(255,255,255,.05); }
+
+#sb-map, #sb-journey { padding: 8px 0; }
+#sb-journey { display: none; }
+
+/* Sidebar Map */
+.sm-phase {}
+.sm-phase-hdr {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 12px; font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .3px;
+  color: rgba(255,255,255,.50); cursor: pointer;
+  transition: background .15s;
+}
+.sm-phase-hdr:hover { background: rgba(255,255,255,.05); }
+.sm-phase-hdr .arrow {
+  font-size: 8px; transition: transform .15s;
+  display: inline-block; margin-right: 4px;
+}
+.sm-phase-hdr.collapsed .arrow { transform: rotate(-90deg); }
+.sm-phase-body { padding: 0 0 4px 0; }
+.sm-phase-body.collapsed { display: none; }
+.sm-node {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 12px 5px 22px;
+  font-size: 12px; color: rgba(255,255,255,.55);
+  cursor: pointer; transition: all .12s;
+  border-left: 2px solid transparent;
+}
+.sm-node:hover { background: rgba(255,255,255,.06); color: rgba(255,255,255,.80); }
+.sm-node .nd-icon { font-size: 10px; flex-shrink: 0; width: 14px; text-align: center; }
+.sm-node.sm-visited { color: rgba(255,255,255,.80); }
+.sm-node.sm-visited .nd-icon { color: #34D399; }
+.sm-node.sm-current {
+  color: #fff; font-weight: 600;
+  border-left-color: var(--navy-lt);
+  background: rgba(65,105,225,.15);
+}
+.sm-node.sm-current .nd-icon { color: #60A5FA; }
+.sm-node.sm-unreachable { opacity: .35; cursor: default; }
+.sm-node.sm-end-node { font-style: italic; }
+
+/* Sidebar Journey */
+.pi {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  font-size: 12px;
+}
+.pi.past { color: rgba(255,255,255,.55); }
+.pi.current { color: #fff; font-weight: 600; border-left: 2px solid var(--navy-lt); padding-left: 10px; }
+.pi-title { margin-bottom: 2px; }
+.pi-choice { font-size: 11px; color: rgba(255,255,255,.40); padding-left: 14px; }
+.pi-choice::before { content: '↪ '; }
+.sb-foot {
+  padding: 12px; font-size: 10px;
+  color: rgba(255,255,255,.30);
+  border-top: 1px solid rgba(255,255,255,.06);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ELEMENT 4b — CONTENT AREA (#content)
+   ═══════════════════════════════════════════════════════════════ */
+#content {
+  flex: 1; overflow-y: auto;
+  padding: 24px 28px;
+  background: var(--slate-bg);
+  scrollbar-width: thin;
+  scrollbar-color: var(--bdr) transparent;
+}
+#content::-webkit-scrollbar { width: 6px; }
+#content::-webkit-scrollbar-thumb { background: var(--bdr); border-radius: 3px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   CARD — STEP CARD (.card)
+   ═══════════════════════════════════════════════════════════════ */
+.card {
+  background: #fff;
+  border: 1px solid var(--bdr);
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  overflow: hidden;
+  animation: fadeUp .22s ease;
+  max-width: 740px;
+  margin: 0 auto;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.c-hdr {
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid var(--bdr);
+  background: #fff;
+}
+.act-badge {
+  display: inline-block; font-size: 10.5px; font-weight: 600;
+  padding: 2px 10px; border-radius: 12px;
+  text-transform: uppercase; letter-spacing: .3px;
+  margin-bottom: 8px;
+}
+.act-laj   { background: #DBEAFE; color: #1E40AF; }
+.act-juez  { background: #E0E7FF; color: #4338CA; }
+.act-ambos { background: #F3E8FF; color: #7C3AED; }
+
+.c-title {
+  font-size: 18px; font-weight: 700;
+  color: var(--text); margin-bottom: 4px;
+  line-height: 1.3;
+}
+.step-num {
+  font-size: 11px; color: var(--muted);
+  font-weight: 400;
+}
+
+.c-body {
+  padding: 18px 22px;
+}
+.c-body p { margin-bottom: 10px; line-height: 1.65; }
+.c-body p:last-child { margin-bottom: 0; }
+
+/* Content block types */
+.blk-intro  { color: var(--text); }
+.blk-deadline {
+  display: flex; align-items: flex-start; gap: 8px;
+  padding: 10px 14px; border-radius: 6px;
+  background: var(--amber-bg); border: 1px solid #FDE68A;
+  font-size: 13.5px; margin-bottom: 10px;
+}
+.blk-deadline::before { content: '⏱'; flex-shrink: 0; font-size: 14px; }
+.blk-note {
+  display: flex; align-items: flex-start; gap: 8px;
+  padding: 10px 14px; border-radius: 6px;
+  background: #EFF6FF; border: 1px solid #BFDBFE;
+  font-size: 13.5px; margin-bottom: 10px;
+}
+.blk-note::before { content: 'ℹ'; flex-shrink: 0; font-size: 14px; }
+.blk-warn {
+  display: flex; align-items: flex-start; gap: 8px;
+  padding: 10px 14px; border-radius: 6px;
+  background: var(--red-bg); border: 1px solid #FECACA;
+  font-size: 13.5px; margin-bottom: 10px;
+}
+.blk-warn::before { content: '⚠'; flex-shrink: 0; font-size: 14px; }
+.blk-law {
+  font-size: 12px; color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  margin-bottom: 10px;
+  padding: 6px 10px; background: #F8FAFC; border-radius: 4px;
+  border: 1px solid #E2E8F0;
+}
+.blk-law::before { content: '📜 '; }
+.blk-checklist {
+  margin-bottom: 10px;
+}
+.blk-checklist-title {
+  font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text);
+}
+.blk-checklist ul {
+  list-style: none; padding: 0;
+}
+.blk-checklist li {
+  padding: 5px 0 5px 22px; position: relative;
+  font-size: 13.5px; color: var(--text);
+}
+.blk-checklist li::before {
+  content: '☐'; position: absolute; left: 0; top: 5px;
+  font-size: 13px; color: var(--navy-lt);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DECISION AREA (.dec-area)
+   ═══════════════════════════════════════════════════════════════ */
+.dec-area {
+  padding: 0 22px 4px;
+}
+.dec-q {
+  padding: 14px 16px;
+  border-top: 3px solid var(--navy);
+  background: #F8FAFC;
+  border-radius: 0 0 6px 6px;
+  font-size: 14.5px; font-weight: 600;
+  color: var(--text); margin-bottom: 12px;
+}
+.dec-opts {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.dec-btn {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid var(--bdr);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13.5px; font-weight: 500;
+  color: var(--text);
+  transition: all .15s;
+  text-align: left;
+}
+.dec-btn:hover { border-color: var(--navy-lt); background: #F8FAFF; }
+.dec-btn.ok    { border-left: 3px solid var(--green); }
+.dec-btn.bad   { border-left: 3px solid var(--red); }
+.dec-btn.warn  { border-left: 3px solid var(--amber); }
+.dec-btn.neutral { border-left: 3px solid var(--navy-lt); }
+.dec-letter {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+  flex-shrink: 0;
+}
+.ok .dec-letter    { background: var(--green-bg); color: var(--green); }
+.bad .dec-letter   { background: var(--red-bg); color: var(--red); }
+.warn .dec-letter  { background: var(--amber-bg); color: var(--amber); }
+.neutral .dec-letter { background: #EFF6FF; color: var(--navy-lt); }
+
+/* ═══════════════════════════════════════════════════════════════
+   CARD NAVIGATION (.c-nav)
+   ═══════════════════════════════════════════════════════════════ */
+.c-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 22px;
+  border-top: 1px solid var(--bdr);
+  background: #FAFBFE;
+}
+.btn-back {
+  padding: 7px 16px; border-radius: 6px;
+  border: 1px solid var(--bdr); background: #fff;
+  font-size: 12.5px; font-weight: 500; color: var(--muted);
+  transition: all .15s;
+}
+.btn-back:hover:not(:disabled) { background: #F1F5F9; color: var(--text); }
+.btn-back:disabled { opacity: .35; cursor: not-allowed; }
+.btn-next {
+  padding: 7px 18px; border-radius: 6px;
+  border: none; background: var(--navy-lt);
+  font-size: 12.5px; font-weight: 600; color: #fff;
+  transition: all .15s;
+}
+.btn-next:hover { background: var(--navy); }
+
+/* ═══════════════════════════════════════════════════════════════
+   END CARD (.card.end-*)
+   ═══════════════════════════════════════════════════════════════ */
+.card.end-success { border-left: 4px solid var(--green); }
+.card.end-error   { border-left: 4px solid var(--red); }
+.card.end-warning { border-left: 4px solid var(--amber); }
+.card.end-neutral { border-left: 4px solid var(--navy-lt); }
+
+.end-body {
+  text-align: center;
+  padding: 28px 22px 18px;
+}
+.end-icon { font-size: 40px; margin-bottom: 10px; }
+.end-title {
+  font-size: 18px; font-weight: 700; margin-bottom: 4px;
+}
+.end-success .end-title { color: var(--green); }
+.end-error .end-title   { color: var(--red); }
+.end-warning .end-title { color: var(--amber); }
+.end-neutral .end-title { color: var(--navy-lt); }
+.end-sub {
+  font-size: 13px; color: var(--muted); margin-bottom: 16px;
+}
+.end-actions { display: flex; gap: 8px; justify-content: center; margin-bottom: 18px; }
+.end-content { text-align: left; padding: 0 22px 14px; }
+
+.summary-box {
+  margin: 16px 22px 18px;
+  padding: 14px 16px;
+  background: #F8FAFC; border: 1px solid var(--bdr);
+  border-radius: 8px;
+}
+.summary-box h4 {
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .4px; color: var(--muted); margin-bottom: 8px;
+}
+.summary-box ol {
+  padding-left: 18px; font-size: 12.5px; color: var(--text);
+}
+.summary-box li { margin-bottom: 4px; line-height: 1.5; }
+.summary-box .sum-choice { color: var(--navy-lt); font-weight: 500; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MAPA OVERLAY (#mapa-overlay)
+   ═══════════════════════════════════════════════════════════════ */
+#mapa-overlay {
+  display: none;
+  flex: 1; overflow-y: auto;
+  background: var(--slate-bg);
+  padding: 24px;
+}
+.mapa-close {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 16px; border-radius: 6px;
+  border: 1px solid var(--bdr); background: #fff;
+  font-size: 12.5px; font-weight: 500; color: var(--text);
+  margin-bottom: 18px; transition: all .15s;
+}
+.mapa-close:hover { background: #F1F5F9; }
+
+.mapa-columns {
+  display: flex; gap: 20px;
+  overflow-x: auto; padding-bottom: 20px;
+  align-items: flex-start;
+}
+.mapa-phase {
+  min-width: 220px; max-width: 260px; flex-shrink: 0;
+}
+.mapa-phase-hdr {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .4px;
+  color: var(--navy); padding: 8px 12px;
+  background: #fff; border-radius: 6px 6px 0 0;
+  border: 1px solid var(--bdr); border-bottom: none;
+}
+.mapa-phase-body {
+  background: #fff; border: 1px solid var(--bdr);
+  border-radius: 0 0 6px 6px; padding: 8px;
+}
+.mapa-node {
+  padding: 8px 10px; border-radius: 6px;
+  margin-bottom: 6px; font-size: 12px;
+  border: 1px solid #E2E8F0;
+  transition: background .12s;
+}
+.mapa-node:last-child { margin-bottom: 0; }
+.mapa-node.mapa-visited { border-left: 3px solid var(--green); background: var(--green-bg); }
+.mapa-node.mapa-current { border-left: 3px solid var(--navy-lt); background: #EFF6FF; }
+.mapa-node.mapa-end-success { border-left: 3px solid var(--green); }
+.mapa-node.mapa-end-error { border-left: 3px solid var(--red); }
+.mapa-node.mapa-end-warning { border-left: 3px solid var(--amber); }
+.mapa-node.mapa-end-neutral { border-left: 3px solid var(--navy-lt); }
+.mapa-node-title { font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.mapa-node-actor { font-size: 10px; color: var(--muted); }
+.mapa-arrow {
+  font-size: 10px; color: var(--muted); padding: 2px 0 2px 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   STEP PREVIEW TOOLTIP
+   ═══════════════════════════════════════════════════════════════ */
+.step-preview {
+  position: fixed;
+  z-index: 1000;
+  width: 320px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--bdr);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  padding: 14px 16px;
+  font-size: 12.5px;
+  color: var(--text);
+  line-height: 1.5;
+}
+.step-preview .sp-title {
+  font-weight: 700; font-size: 13px; margin-bottom: 6px;
+}
+.step-preview .sp-body { color: var(--muted); }
+.sp-close {
+  position: absolute; top: 6px; right: 8px;
+  background: none; border: none; font-size: 16px;
+  color: var(--muted); cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 700px) {
+  #sidebar { display: none; }
+  #content { padding: 16px 12px; }
+  .card { max-width: 100%; }
+  .dec-opts { gap: 6px; }
+  .mapa-columns { flex-direction: column; }
+  .mapa-phase { max-width: 100%; min-width: auto; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PRINT
+   ═══════════════════════════════════════════════════════════════ */
+@media print {
+  body { background: #fff; color: #111; overflow: visible; height: auto; }
+  #app { height: auto; overflow: visible; }
+  #hdr, #pbar, #breadcrumb, #sidebar, .c-nav, .dec-area, .end-actions, .mapa-close { display: none !important; }
+  #layout { display: block; overflow: visible; }
+  #content { overflow: visible; padding: 10px; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; animation: none; max-width: 100%; }
+  #mapa-overlay { display: block !important; overflow: visible; }
+  .mapa-columns { flex-wrap: wrap; overflow: visible; }
+}
+</style>
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ELEMENT 1 — CABECERA -->
+  <header id="hdr">
+    <div class="h-left">
+      <div class="h-seal">⚖</div>
+      <div>
+        <div class="h-title">Extracción de órganos de donantes vivos</div>
+        <div class="h-sub">Ley 15/2015 · Arts. 78-80 · Jurisdicción Voluntaria</div>
+      </div>
+    </div>
+    <div class="h-right">
+      <button class="btn-ghost" onclick="toggleMapa()">🗺 Ver mapa</button>
+      <button class="btn-ghost" onclick="dlGuia()">⬇ Descargar</button>
+      <button class="btn-ghost" onclick="restart()">↻ Reiniciar</button>
+    </div>
+  </header>
+
+  <!-- ELEMENT 2 — BARRA DE FASES -->
+  <div id="pbar"></div>
+
+  <!-- ELEMENT 3 — MIGAS DE PAN -->
+  <div id="breadcrumb"></div>
+
+  <!-- ELEMENT 4 — LAYOUT -->
+  <div id="layout">
+
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+      <div id="sb-tabs">
+        <button class="sb-tab active" onclick="sbTab('map')">Mapa</button>
+        <button class="sb-tab" onclick="sbTab('journey')">Recorrido</button>
+      </div>
+      <div id="sb-map"></div>
+      <div id="sb-journey"></div>
+    </div>
+
+    <!-- CONTENT -->
+    <div id="content"></div>
+
+  </div>
+
+  <!-- MAPA OVERLAY -->
+  <div id="mapa-overlay"></div>
+
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   DATA — PHASES
+   ═══════════════════════════════════════════════════════════════ */
+const PHASES = [
+  'Inicio y competencia',
+  'Solicitud y requisitos',
+  'Comparecencia',
+  'Resolución',
+  'Post-resolución'
+];
+
+/* ═══════════════════════════════════════════════════════════════
+   DATA — STEPS (directed graph)
+   ═══════════════════════════════════════════════════════════════ */
+const STEPS = {
+
+  // ── PHASE 0: INICIO Y COMPETENCIA ──────────────────────────
+  inicio: {
+    ph: 0,
+    t: 'Recepción de la solicitud o comunicación',
+    ac: 'laj',
+    c: [
+      ['i', 'Se ha recibido una solicitud o comunicación para iniciar un expediente de jurisdicción voluntaria sobre extracción y trasplante de órganos de un donante vivo, conforme a los artículos 78 a 80 de la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria.'],
+      ['n', 'La finalidad del expediente es la constatación judicial de que concurre el consentimiento libre, consciente y desinteresado del donante y demás requisitos legales para la extracción y trasplante.'],
+      ['w', 'Este procedimiento NO constituye un acto de enjuiciamiento. La intervención judicial es una garantía de derechos individuales, fundamentalmente del derecho a la integridad física del donante.'],
+      ['l', 'Ley 15/2015, arts. 78-80 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Directiva 2010/45/UE']
+    ],
+    q: '¿Quién promueve el inicio del expediente?',
+    opts: [
+      { t: 'El donante (solicitud directa)', l: 'A', n: 'inicio_donante', v: 'ok' },
+      { t: 'El Director del centro sanitario (comunicación)', l: 'B', n: 'inicio_director', v: 'neutral' }
+    ]
+  },
+
+  inicio_donante: {
+    ph: 0,
+    t: 'Solicitud presentada por el donante',
+    ac: 'laj',
+    c: [
+      ['i', 'El donante ha presentado directamente la solicitud ante el Juzgado para iniciar el expediente de constatación judicial. Esta es la vía habitual de inicio del procedimiento.'],
+      ['n', 'No es necesaria la intervención de Abogado ni de Procurador para este expediente, conforme al artículo 79.1 de la Ley 15/2015 y al régimen general del artículo 3 de la misma Ley.'],
+      ['l', 'Ley 15/2015, art. 79.1 · Ley 15/2015, art. 3']
+    ],
+    nx: 'competencia_objetiva'
+  },
+
+  inicio_director: {
+    ph: 0,
+    t: 'Comunicación del Director del centro sanitario',
+    ac: 'laj',
+    c: [
+      ['i', 'El Director del centro sanitario en que vaya a efectuarse la extracción, o la persona en quien delegue, ha remitido la comunicación al Juzgado para iniciar el expediente.'],
+      ['n', 'Esta vía de inicio es alternativa a la solicitud directa del donante. El Director del centro actúa en su condición de responsable del centro donde se realizará la intervención quirúrgica.'],
+      ['l', 'Ley 15/2015, art. 79.1']
+    ],
+    nx: 'competencia_objetiva'
+  },
+
+  competencia_objetiva: {
+    ph: 0,
+    t: 'Determinar la competencia objetiva',
+    ac: 'juez',
+    c: [
+      ['i', 'Es competente para conocer de estos expedientes el Juez de Primera Instancia. Tras la reforma operada por la Ley Orgánica 1/2025, de 2 de enero, la referencia debe entenderse hecha al juez o jueza de la sección civil del Tribunal de Instancia correspondiente.'],
+      ['n', 'Novedad relevante: la competencia deja de corresponder al Juez encargado del Registro Civil (régimen anterior) y pasa al Juez de Primera Instancia / sección civil del Tribunal de Instancia.'],
+      ['w', 'En este expediente, a diferencia de otros de jurisdicción voluntaria, NO se sustituye la figura del Juez por la del Letrado de la Administración de Justicia. La intervención judicial directa es imprescindible.'],
+      ['l', 'Ley 15/2015, art. 78.2 · Ley 15/2015, art. 2 · LO 1/2025, DA 1.ª']
+    ],
+    q: '¿Es competente objetivamente el órgano judicial receptor?',
+    opts: [
+      { t: 'Sí, es Juez de Primera Instancia / sección civil del Tribunal de Instancia', l: 'A', n: 'competencia_territorial', v: 'ok' },
+      { t: 'No, corresponde a otro órgano judicial', l: 'B', n: 'fin_incompetencia_objetiva', v: 'bad' }
+    ]
+  },
+
+  competencia_territorial: {
+    ph: 0,
+    t: 'Determinar la competencia territorial',
+    ac: 'juez',
+    c: [
+      ['i', 'La competencia territorial se configura mediante dos fueros alternativos, a elección del solicitante: el partido judicial donde haya de realizarse la extracción o el partido judicial donde haya de realizarse el trasplante.'],
+      ['n', 'Se trata de fueros alternativos: el solicitante puede elegir cuál de los dos le resulta más conveniente. No es necesario que la extracción y el trasplante se realicen en el mismo partido judicial.'],
+      ['l', 'Ley 15/2015, art. 78.2']
+    ],
+    q: '¿El Juzgado es territorialmente competente?',
+    opts: [
+      { t: 'Sí, es el partido de la extracción o del trasplante', l: 'A', n: 'solicitud_contenido', v: 'ok' },
+      { t: 'No, corresponde a otro partido judicial', l: 'B', n: 'fin_incompetencia_territorial', v: 'bad' }
+    ]
+  },
+
+  // ── PHASE 1: SOLICITUD Y REQUISITOS ────────────────────────
+  solicitud_contenido: {
+    ph: 1,
+    t: 'Verificar el contenido de la solicitud o comunicación',
+    ac: 'laj',
+    c: [
+      ['i', 'La solicitud o comunicación debe contener los siguientes elementos esenciales para que el expediente pueda tramitarse correctamente:'],
+      ['cl', 'Contenido obligatorio de la solicitud', [
+        'Circunstancias personales y familiares del donante',
+        'Objeto de la donación (órgano o parte de órgano que se dona)',
+        'Identificación del centro sanitario donde se efectuará la extracción',
+        'Identidad del médico responsable del trasplante o extracción (o persona en quien delegue)',
+        'Certificado médico sobre la salud mental y física del donante, emitido conforme a la normativa correspondiente'
+      ]],
+      ['l', 'Ley 15/2015, art. 79.1 · Ley 15/2015, art. 17']
+    ],
+    q: '¿La solicitud o comunicación contiene todos los elementos requeridos?',
+    opts: [
+      { t: 'Sí, la documentación está completa', l: 'A', n: 'requisitos_donante', v: 'ok' },
+      { t: 'No, faltan documentos o datos esenciales', l: 'B', n: 'requerir_subsanacion', v: 'warn' }
+    ]
+  },
+
+  requerir_subsanacion: {
+    ph: 1,
+    t: 'Requerir la subsanación de la solicitud',
+    ac: 'laj',
+    c: [
+      ['i', 'La solicitud o comunicación no reúne todos los requisitos exigidos. El Letrado de la Administración de Justicia debe requerir al solicitante para que subsane las deficiencias detectadas en el plazo que se le conceda al efecto.'],
+      ['d', 'Plazo de subsanación: el que fije el Letrado de la Administración de Justicia, conforme a los artículos 13 y siguientes de la Ley 15/2015 (normas comunes de tramitación).'],
+      ['w', 'Si el solicitante no subsana las deficiencias en el plazo concedido, el expediente no podrá continuar y se procederá al archivo de las actuaciones.'],
+      ['l', 'Ley 15/2015, arts. 13-22 (normas comunes de tramitación)']
+    ],
+    q: '¿Se ha subsanado la solicitud en plazo?',
+    opts: [
+      { t: 'Sí, la documentación ya está completa', l: 'A', n: 'requisitos_donante', v: 'ok' },
+      { t: 'No, no se ha subsanado o ha transcurrido el plazo', l: 'B', n: 'fin_solicitud_incompleta', v: 'bad' }
+    ]
+  },
+
+  requisitos_donante: {
+    ph: 1,
+    t: 'Verificar los requisitos legales del donante',
+    ac: 'ambos',
+    c: [
+      ['i', 'El donante debe cumplir una serie de requisitos sustantivos, establecidos en la Ley 30/1979 y en el Real Decreto 1723/2012, que el Juez debe verificar durante la tramitación del expediente. El incumplimiento de cualquiera de ellos impide la autorización de la extracción.'],
+      ['cl', 'Requisitos legales del donante vivo', [
+        'Ser mayor de edad (no se autoriza la obtención de órganos de menores, ni siquiera con consentimiento de padres o tutores)',
+        'Plenitud de facultades mentales y estado de salud adecuado',
+        'Haber recibido información previa de las consecuencias de la extracción y del trasplante, adaptada a sus necesidades (incluidas personas con discapacidad)',
+        'Consentimiento expreso, libre, consciente y desinteresado, por escrito y firmado',
+        'Que el órgano o parte de él sea compatible con la vida y su función pueda ser compensada por el organismo del donante',
+        'Gratuidad de la donación: sin compensación económica alguna para el donante, ni precio exigido al receptor'
+      ]],
+      ['n', 'La información previa debe ajustarse, en su caso, a las necesidades de las personas con discapacidad, mediante sistemas comprensibles o adaptados a su discapacidad.'],
+      ['l', 'Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Ley 15/2015, art. 79 · Convenio de Oviedo · Directiva 2010/45/UE']
+    ],
+    q: '¿Concurren todos los requisitos legales del donante?',
+    opts: [
+      { t: 'Sí, todos los requisitos se cumplen', l: 'A', n: 'requisitos_especificos_ok', v: 'ok' },
+      { t: 'El donante es menor de edad', l: 'B', n: 'fin_menor_edad', v: 'bad' },
+      { t: 'No concurre plenitud de facultades mentales', l: 'C', n: 'fin_sin_facultades', v: 'bad' },
+      { t: 'No se ha prestado consentimiento válido o hay ánimo de lucro', l: 'D', n: 'fin_consentimiento_invalido', v: 'bad' },
+      { t: 'La extracción no es compatible con la vida del donante', l: 'E', n: 'fin_incompatible', v: 'bad' }
+    ]
+  },
+
+  requisitos_especificos_ok: {
+    ph: 1,
+    t: 'Requisitos verificados — Certificado médico',
+    ac: 'laj',
+    c: [
+      ['i', 'Todos los requisitos legales del donante han sido verificados documentalmente. El certificado médico sobre la salud mental y física del donante ha sido emitido de conformidad con la normativa correspondiente.'],
+      ['n', 'El certificado médico es un documento esencial que acredita la aptitud del donante tanto desde el punto de vista físico como mental para la extracción del órgano. Debe estar emitido por un profesional sanitario competente.'],
+      ['l', 'RD 1723/2012, art. 8 · Ley 30/1979, art. 4']
+    ],
+    q: '¿Se ha adjuntado el certificado médico de salud física y mental del donante?',
+    opts: [
+      { t: 'Sí, el certificado médico está adjunto y es conforme', l: 'A', n: 'citacion_comparecencia', v: 'ok' },
+      { t: 'No, no se ha aportado el certificado médico', l: 'B', n: 'fin_certificado_no_adjunto', v: 'bad' }
+    ]
+  },
+
+  // ── PHASE 2: COMPARECENCIA ─────────────────────────────────
+  citacion_comparecencia: {
+    ph: 2,
+    t: 'Preparar y cursar la citación a la comparecencia',
+    ac: 'laj',
+    c: [
+      ['i', 'El Letrado de la Administración de Justicia debe citar a todas las personas que deben intervenir en la comparecencia judicial. La citación es un trámite esencial para garantizar que todos los intervinientes puedan ejercer sus funciones y derechos en el acto.'],
+      ['cl', 'Personas que deben ser citadas a la comparecencia', [
+        'El médico que ha de efectuar la extracción',
+        'El médico firmante del certificado de salud física y mental del donante',
+        'El médico responsable del trasplante o persona en quien delegue',
+        'La persona a quien corresponda dar la autorización para la intervención, conforme al documento de autorización para la extracción de órganos concedida al centro sanitario'
+      ]],
+      ['n', 'El receptor del órgano podrá intervenir como persona con interés legítimo, conforme a los artículos 3 y 17 de la Ley 15/2015, aunque no esté expresamente mencionado en el artículo 79.'],
+      ['n', 'El Letrado de la Administración de Justicia debe estar presente para dar fe de lo actuado.'],
+      ['l', 'Ley 15/2015, art. 79.2 · Ley 15/2015, arts. 3 y 17 · Ley 15/2015, art. 18']
+    ],
+    nx: 'desarrollo_comparecencia'
+  },
+
+  desarrollo_comparecencia: {
+    ph: 2,
+    t: 'Desarrollo de la comparecencia',
+    ac: 'juez',
+    c: [
+      ['i', 'La comparecencia se celebra ante el Juez con la asistencia de todas las personas citadas. El desarrollo sigue un orden habitual de intervenciones que debe respetarse para garantizar la correcta información del donante.'],
+      ['cl', 'Orden de intervenciones en la comparecencia', [
+        'Primero: el médico encargado de realizar la intervención quirúrgica explica las características y riesgos de la extracción',
+        'Después: los demás intervinientes aportan las aclaraciones que consideren pertinentes',
+        'El Juez podrá requerir a cualquiera de los asistentes las explicaciones que estime oportunas sobre la concurrencia de los requisitos legales',
+        'Finalmente: el donante presta su consentimiento de forma libre, consciente y desinteresada, ante el Juez'
+      ]],
+      ['n', 'El Juez debe cerciorarse de que el donante ha comprendido plenamente las consecuencias de la extracción y del trasplante antes de prestar su consentimiento. La información debe haberse ajustado, en su caso, a las necesidades de las personas con discapacidad.'],
+      ['l', 'Ley 15/2015, art. 79.3 · Ley 15/2015, art. 18 · Convenio de Oviedo · Ley 41/2002 (autonomía del paciente)']
+    ],
+    nx: 'consentimiento_juez'
+  },
+
+  consentimiento_juez: {
+    ph: 2,
+    t: 'Otorgamiento del consentimiento por el donante ante el Juez',
+    ac: 'juez',
+    c: [
+      ['i', 'El momento central de la comparecencia es el otorgamiento del consentimiento por el donante ante el Juez. El consentimiento debe ser expreso, libre, consciente y desinteresado, y se prestará tras oír las explicaciones del médico y de los demás asistentes.'],
+      ['w', 'El Juez debe valorar si el consentimiento se presta de forma genuinamente libre, sin coacción, presión o indebida influencia, y si el donante actúa de manera completamente desinteresada, sin ánimo de lucro ni compensación económica.'],
+      ['n', 'Conforme al Convenio de Oviedo, el consentimiento debe ser expreso y específicamente otorgado, por escrito o ante una instancia oficial. La extracción de órganos sólidos de donante vivo se limita al interés terapéutico del receptor cuando no se disponga de órgano de persona fallecida ni de alternativa terapéutica de comparable eficacia.'],
+      ['l', 'Ley 15/2015, art. 79.3 · Ley 30/1979, art. 4 · Convenio de Oviedo · Ley 41/2002']
+    ],
+    q: '¿El Juez considera que el consentimiento ha sido prestado de forma libre, consciente y desinteresada?',
+    opts: [
+      { t: 'Sí, el consentimiento es válido', l: 'A', n: 'verificar_oposicion', v: 'ok' },
+      { t: 'No, el consentimiento no reúne los requisitos legales', l: 'B', n: 'fin_denegacion', v: 'bad' }
+    ]
+  },
+
+  verificar_oposicion: {
+    ph: 2,
+    t: 'Verificar si existe oposición a la donación',
+    ac: 'juez',
+    c: [
+      ['i', 'Si alguno de los firmantes dudara de que el consentimiento prestado haya sido de forma expresa, libre, consciente y desinteresada, podrá oponerse a la donación. La oposición impide la formalización del documento de cesión del órgano.'],
+      ['n', 'La oposición puede plantearla cualquiera de las personas que deben firmar el documento de cesión: el donante, el médico que ha de efectuar la extracción o los demás asistentes a la comparecencia.'],
+      ['w', 'La oposición no requiere fundamentación especial: basta con que el firmante exprese dudas razonables sobre la validez del consentimiento para que el documento de cesión no pueda formalizarse.'],
+      ['l', 'Ley 15/2015, art. 80']
+    ],
+    q: '¿Se ha opuesto algún firmante a la donación?',
+    opts: [
+      { t: 'No, nadie se ha opuesto', l: 'A', n: 'resolucion_conceder', v: 'ok' },
+      { t: 'Sí, al menos un firmante se ha opuesto', l: 'B', n: 'fin_oposicion', v: 'warn' }
+    ]
+  },
+
+  // ── PHASE 3: RESOLUCIÓN ────────────────────────────────────
+  resolucion_conceder: {
+    ph: 3,
+    t: 'Extensión del documento de cesión del órgano',
+    ac: 'juez',
+    c: [
+      ['i', 'El Juez estima que se han cumplido todos los requisitos legales y procede a extender por escrito el documento de cesión del órgano. Este documento es el resultado positivo del expediente y constituye la autorización judicial para la extracción y trasplante.'],
+      ['cl', 'Firmantes del documento de cesión', [
+        'El donante (interesado)',
+        'El médico que ha de efectuar la extracción',
+        'Los demás asistentes a la comparecencia'
+      ]],
+      ['i', 'El documento de cesión debe hacer constar expresamente la posibilidad que tiene el donante de revocar el consentimiento en cualquier momento previo a la intervención quirúrgica. Se facilitará copia del documento al donante.'],
+      ['l', 'Ley 15/2015, art. 80 · Ley 15/2015, art. 19']
+    ],
+    nx: 'documento_cesion_firmado'
+  },
+
+  documento_cesion_firmado: {
+    ph: 3,
+    t: 'Documento de cesión firmado y entregado',
+    ac: 'laj',
+    c: [
+      ['i', 'El documento de cesión del órgano ha sido firmado por todos los intervinientes y se ha facilitado copia al donante. El expediente ha concluido favorablemente en su tramitación judicial.'],
+      ['d', 'Entre la firma del documento de cesión del órgano y la extracción efectiva deben transcurrir al menos 24 horas, conforme a la normativa sustantiva (Ley 30/1979 y RD 1723/2012).'],
+      ['w', 'Durante ese plazo mínimo de 24 horas, y en cualquier momento anterior a la intervención, el donante puede revocar libremente su consentimiento, sin sujeción a formalidad alguna. Esta circunstancia debe constar en el documento de cesión.'],
+      ['n', 'El régimen de impugnación de la resolución es el previsto en el artículo 20 de la Ley 15/2015 (recursos).'],
+      ['l', 'Ley 15/2015, art. 80 · Ley 15/2015, art. 20 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8']
+    ],
+    nx: 'plazo_reflexion'
+  },
+
+  // ── PHASE 4: POST-RESOLUCIÓN ───────────────────────────────
+  plazo_reflexion: {
+    ph: 4,
+    t: 'Plazo de reflexión mínimo de 24 horas',
+    ac: 'ambos',
+    c: [
+      ['i', 'Debe transcurrir un plazo mínimo de 24 horas entre la firma del documento de cesión del órgano y la extracción efectiva. Este plazo constituye un período de reflexión obligatorio para el donante.'],
+      ['d', 'Plazo mínimo: 24 horas entre la firma del documento de cesión y la extracción.'],
+      ['i', 'Durante este plazo, el donante puede revocar libremente su consentimiento en cualquier momento anterior a la intervención quirúrgica, sin necesidad de formalidad alguna y sin que la revocación produzca efecto jurídico adverso para el donante.'],
+      ['n', 'El derecho de revocación es una manifestación del carácter libre del consentimiento: si el donante cambia de opinión, la revocación es plenamente eficaz y la extracción no puede realizarse.'],
+      ['l', 'Ley 15/2015, art. 80 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8']
+    ],
+    q: '¿El donante ha revocado su consentimiento durante el plazo de reflexión?',
+    opts: [
+      { t: 'No, el donante mantiene su consentimiento', l: 'A', n: 'fin_exito', v: 'ok' },
+      { t: 'Sí, el donante ha revocado su consentimiento', l: 'B', n: 'fin_revocacion', v: 'warn' }
+    ]
+  },
+
+  // ── ENDPOINTS ───────────────────────────────────────────────
+
+  fin_exito: {
+    ph: 4, t: 'Procedimiento concluido con éxito', ac: 'juez', end: 'success',
+    c: [
+      ['i', 'El expediente de jurisdicción voluntaria ha concluido favorablemente. El documento de cesión del órgano ha sido extendido, firmado por todos los intervinientes, y se ha entregado copia al donante. El plazo mínimo de 24 horas ha transcurrido sin que el donante haya revocado su consentimiento.'],
+      ['i', 'La extracción y el trasplante pueden ahora llevarse a cabo conforme a la legislación vigente, bajo la responsabilidad del equipo médico del centro sanitario autorizado.'],
+      ['n', 'Recuerde: incluso después de este momento, y hasta el inicio efectivo de la intervención quirúrgica, el donante conserva el derecho a revocar su consentimiento en cualquier momento y sin formalidad alguna.'],
+      ['l', 'Ley 15/2015, art. 80 · Ley 30/1979 · RD 1723/2012 · Directiva 2010/45/UE']
+    ]
+  },
+
+  fin_denegacion: {
+    ph: 2, t: 'Denegación — Consentimiento no válido', ac: 'juez', end: 'error',
+    c: [
+      ['i', 'El Juez ha considerado que el consentimiento prestado por el donante no lo ha sido de forma libre, consciente y desinteresada, o no se cumplen los demás requisitos establecidos legalmente. Por tanto, NO se extenderá el documento de cesión del órgano.'],
+      ['w', 'La denegación impide que la extracción y el trasplante puedan llevarse a cabo. El expediente se archiva sin haberse autorizado la donación.'],
+      ['n', 'Contra la resolución de denegación cabe recurso conforme al artículo 20 de la Ley 15/2015. El donante podrá iniciar un nuevo expediente si se modifican las circunstancias que motivaron la denegación.'],
+      ['l', 'Ley 15/2015, art. 80 · Ley 15/2015, art. 20']
+    ]
+  },
+
+  fin_oposicion: {
+    ph: 2, t: 'Oposición de un firmante', ac: 'juez', end: 'warning',
+    c: [
+      ['i', 'Al menos uno de los firmantes ha dudado de que el consentimiento prestado por el donante haya sido de forma expresa, libre, consciente y desinteresado, y se ha opuesto a la donación. Esta oposición impide la formalización del documento de cesión del órgano.'],
+      ['n', 'La oposición no significa necesariamente que la donación sea inválida, pero el legislador ha optado por un régimen de máxima cautela: basta la duda de cualquiera de los firmantes para bloquear la formalización del documento.'],
+      ['n', 'El expediente puede reanudarse si se disipan las dudas que motivaron la oposición y se celebra una nueva comparecencia.'],
+      ['l', 'Ley 15/2015, art. 80']
+    ]
+  },
+
+  fin_incompetencia_objetiva: {
+    ph: 0, t: 'Incompetencia objetiva del órgano judicial', ac: 'laj', end: 'error',
+    c: [
+      ['i', 'El órgano judicial que ha recibido la solicitud o comunicación no es competente objetivamente para conocer de este expediente. La competencia corresponde al Juez de Primera Instancia o, tras la LO 1/2025, al juez o jueza de la sección civil del Tribunal de Instancia.'],
+      ['n', 'Se debe remitir la documentación al órgano judicial competente, indicando al solicitante la razón de la incompetencia y el Juzgado al que debe dirigirse.'],
+      ['l', 'Ley 15/2015, art. 78.2 · LO 1/2025, DA 1.ª']
+    ]
+  },
+
+  fin_incompetencia_territorial: {
+    ph: 0, t: 'Incompetencia territorial del órgano judicial', ac: 'laj', end: 'error',
+    c: [
+      ['i', 'El Juzgado no es territorialmente competente. La competencia territorial corresponde al partido judicial donde haya de realizarse la extracción o el trasplante, a elección del solicitante.'],
+      ['n', 'Se debe indicar al solicitante que debe dirigirse al Juzgado de Primera Instancia del partido judicial correspondiente al lugar de la extracción o del trasplante.'],
+      ['l', 'Ley 15/2015, art. 78.2']
+    ]
+  },
+
+  fin_menor_edad: {
+    ph: 1, t: 'Donante menor de edad — Imposible proceder', ac: 'juez', end: 'error',
+    c: [
+      ['i', 'El donante es menor de edad. La ley prohíbe categóricamente la obtención de órganos de menores de edad para trasplante, ni siquiera con el consentimiento de sus padres o tutores. No existe excepción legal alguna a esta prohibición.'],
+      ['w', 'Esta prohibición es absoluta y no admite excepciones. Ni el consentimiento de los padres, tutores o representantes legales del menor puede suplir este requisito.'],
+      ['l', 'Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Convenio de Oviedo']
+    ]
+  },
+
+  fin_sin_facultades: {
+    ph: 1, t: 'Donante sin plenitud de facultades mentales', ac: 'juez', end: 'error',
+    c: [
+      ['i', 'El donante no cuenta con la plenitud de facultades mentales requerida por la ley para prestar un consentimiento válido. El consentimiento debe ser consciente, lo que implica que el donante debe comprender plenamente el significado y las consecuencias de su decisión.'],
+      ['n', 'Si el donante tiene una discapacidad intelectual que no le impide comprender la naturaleza y consecuencias de la donación, la información debe adaptarse a sus necesidades mediante sistemas comprensibles. La falta de plenitud de facultades debe acreditarse debidamente.'],
+      ['l', 'Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Ley 41/2002 (autonomía del paciente)']
+    ]
+  },
+
+  fin_consentimiento_invalido: {
+    ph: 1, t: 'Consentimiento no válido o donación no gratuita', ac: 'juez', end: 'error',
+    c: [
+      ['i', 'El consentimiento del donante no cumple los requisitos legales de ser expreso, libre, consciente y desinteresado, o existe indicios de que la donación no es gratuita (ánimo de lucro, compensación económica). Ambas circunstancias impiden la autorización judicial de la extracción.'],
+      ['w', 'El Código Penal tipifica el tráfico de órganos humanos como garantía penal de la gratuidad y el altruismo que presiden la donación en vida. Cualquier indicio de tráfico o compensación económica debe comunicarse a las autoridades competentes.'],
+      ['n', 'El consentimiento debe manifestarse por escrito y firmado por el donante. Si el consentimiento no es expreso, libre, consciente y desinteresado, el documento no puede extenderse.'],
+      ['l', 'Ley 30/1979, arts. 1 y 4 · RD 1723/2012, art. 8 · Código Penal · Convenio de Oviedo']
+    ]
+  },
+
+  fin_incompatible: {
+    ph: 1, t: 'Extracción no compatible con la vida del donante', ac: 'juez', end: 'error',
+    c: [
+      ['i', 'El órgano o parte de él cuya extracción se solicita no es compatible con la vida del donante, o su función no puede ser compensada por el organismo del donante de forma adecuada y suficientemente segura. La ley exige que la extracción sea compatible con la vida y funcionalmente compensable.'],
+      ['n', 'Conforme al Convenio de Oviedo, la extracción de órganos sólidos de donante vivo se limita al interés terapéutico del receptor cuando no se disponga de órgano de persona fallecida ni de alternativa terapéutica de comparable eficacia.'],
+      ['l', 'Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Convenio de Oviedo · Directiva 2010/45/UE']
+    ]
+  },
+
+  fin_solicitud_incompleta: {
+    ph: 1, t: 'Solicitud no subsanada — Archivo', ac: 'laj', end: 'warning',
+    c: [
+      ['i', 'El solicitante no ha subsanado las deficiencias de la solicitud en el plazo concedido. El expediente no puede continuar y se procederá al archivo de las actuaciones.'],
+      ['n', 'El solicitante podrá iniciar un nuevo expediente aportando desde el inicio toda la documentación requerida.'],
+      ['l', 'Ley 15/2015, arts. 13-22 (normas comunes de tramitación)']
+    ]
+  },
+
+  fin_certificado_no_adjunto: {
+    ph: 1, t: 'Certificado médico no aportado', ac: 'laj', end: 'error',
+    c: [
+      ['i', 'No se ha aportado el certificado médico sobre la salud física y mental del donante, emitido de conformidad con la normativa correspondiente. Este documento es un requisito imprescindible para la tramitación del expediente.'],
+      ['n', 'El certificado médico debe ser emitido por un profesional sanitario competente y conforme a lo dispuesto en el Real Decreto 1723/2012, en particular su artículo 8. Sin él, no es posible acreditar la aptitud del donante para la extracción.'],
+      ['l', 'RD 1723/2012, art. 8 · Ley 15/2015, art. 79.1']
+    ]
+  },
+
+  fin_revocacion: {
+    ph: 4, t: 'Revocación del consentimiento por el donante', ac: 'juez', end: 'warning',
+    c: [
+      ['i', 'El donante ha revocado su consentimiento durante el plazo de reflexión o en cualquier momento anterior a la intervención quirúrgica. La revocación es libre y no está sujeta a formalidad alguna.'],
+      ['i', 'La revocación es plenamente eficaz e impide que la extracción y el trasplante puedan llevarse a cabo. El documento de cesión del órgano pierde su validez.'],
+      ['n', 'El derecho de revocación es una manifestación del carácter libre del consentimiento. La revocación no produce efecto jurídico adverso para el donante. Si el donante cambia de opinión nuevamente, podrá iniciar un nuevo expediente de constatación judicial.'],
+      ['l', 'Ley 15/2015, art. 80 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8']
+    ]
+  }
+};
+
+/* ═══════════════════════════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════════════════════════ */
+let cur = 'inicio';
+let hist = []; // [{s: originKey, next: destKey, c: choiceLabel}]
+let activeSbTab = 'map';
+let mapaOn = false;
+let phaseCollapsed = {};
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVIGATION FUNCTIONS
+   ═══════════════════════════════════════════════════════════════ */
+function goTo(stepId, choiceLabel) {
+  hist.push({ s: cur, next: stepId, c: choiceLabel || '' });
+  cur = stepId;
+  if (choiceLabel) sbTab('journey');
+  render();
+}
+
+function goBack() {
+  if (hist.length === 0) return;
+  const prev = hist.pop();
+  cur = prev.s;
+  render();
+}
+
+function goBackTo(index) {
+  if (index < 0 || index >= hist.length) return;
+  cur = hist[index].s;
+  hist = hist.slice(0, index);
+  render();
+}
+
+function buildPathTo(targetId) {
+  if (targetId === 'inicio') return [];
+  const queue = [{ node: 'inicio', path: [] }];
+  const visited = new Set();
+  visited.add('inicio');
+  while (queue.length) {
+    const current = queue.shift();
+    const step = STEPS[current.node];
+    if (!step) continue;
+    if (step.nx) {
+      const nextId = step.nx;
+      const newPath = [...current.path, { s: current.node, next: nextId, c: '' }];
+      if (nextId === targetId) return newPath;
+      if (!visited.has(nextId)) {
+        visited.add(nextId);
+        queue.push({ node: nextId, path: newPath });
+      }
+    }
+    if (step.opts) {
+      for (const opt of step.opts) {
+        const nextId = opt.n;
+        const choiceLabel = opt.t;
+        const newPath = [...current.path, { s: current.node, next: nextId, c: choiceLabel }];
+        if (nextId === targetId) return newPath;
+        if (!visited.has(nextId)) {
+          visited.add(nextId);
+          queue.push({ node: nextId, path: newPath });
+        }
+      }
+    }
+  }
+  return null;
+}
+
+function jumpTo(stepId) {
+  if (stepId !== cur) {
+    const path = buildPathTo(stepId);
+    if (path) {
+      hist = path;
+    } else {
+      hist = [];
+    }
+  }
+  cur = stepId;
+  sbTab('map');
+  closePreview();
+  render();
+}
+
+function restart() {
+  cur = 'inicio';
+  hist = [];
+  sbTab('map');
+  mapaOn = false;
+  document.getElementById('layout').style.display = 'flex';
+  document.getElementById('mapa-overlay').style.display = 'none';
+  render();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SIDEBAR TABS
+   ═══════════════════════════════════════════════════════════════ */
+function sbTab(tab) {
+  activeSbTab = tab;
+  document.getElementById('sb-map').style.display = tab === 'map' ? 'block' : 'none';
+  document.getElementById('sb-journey').style.display = tab === 'journey' ? 'block' : 'none';
+  document.querySelectorAll('.sb-tab').forEach((t, i) => {
+    t.classList.toggle('active', (i === 0 && tab === 'map') || (i === 1 && tab === 'journey'));
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MAPA OVERLAY
+   ═══════════════════════════════════════════════════════════════ */
+function toggleMapa() {
+  mapaOn = !mapaOn;
+  document.getElementById('layout').style.display = mapaOn ? 'none' : 'flex';
+  document.getElementById('mapa-overlay').style.display = mapaOn ? 'block' : 'none';
+  if (mapaOn) renderMapa();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DOWNLOAD
+   ═══════════════════════════════════════════════════════════════ */
+function dlGuia() {
+  const html = '<!DOCTYPE html>' + document.documentElement.outerHTML;
+  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'guia-tramitacion-extraccion-organos-donantes-vivos.html';
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ESCAPE HELPER
+   ═══════════════════════════════════════════════════════════════ */
+function escQ(s) { return String(s).replace(/'/g, '&#39;').replace(/"/g, '&quot;'); }
+
+/* ═══════════════════════════════════════════════════════════════
+   UTILITY: get visited set
+   ═══════════════════════════════════════════════════════════════ */
+function getVisitedSet() {
+  const v = new Set();
+  v.add('inicio');
+  hist.forEach(h => v.add(h.next));
+  return v;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   UTILITY: truncate
+   ═══════════════════════════════════════════════════════════════ */
+function trunc(s, n) {
+  return s.length > n ? s.slice(0, n-1) + '…' : s;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   UTILITY: actor label
+   ═══════════════════════════════════════════════════════════════ */
+function actorLabel(ac) {
+  if (ac === 'laj') return 'Letrado AJ';
+  if (ac === 'juez') return 'Juez';
+  return 'Ambos';
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDER — MAIN
+   ═══════════════════════════════════════════════════════════════ */
+function render() {
+  renderPbar();
+  renderBreadcrumb();
+  renderSidebarMap();
+  renderSidebarJourney();
+  renderContent();
+  document.getElementById('content').scrollTop = 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDER — PHASE BAR
+   ═══════════════════════════════════════════════════════════════ */
+function renderPbar() {
+  const s = STEPS[cur];
+  const curPh = s ? s.ph : 0;
+  let html = '';
+  PHASES.forEach((name, i) => {
+    if (i > 0) html += '<span class="ph-sep">›</span>';
+    const cls = i === curPh ? 'active' : (i < curPh ? 'done' : '');
+    html += '<span class="ph-item"><span class="ph-lbl ' + cls + '">' + escQ(name) + '</span></span>';
+  });
+  document.getElementById('pbar').innerHTML = html;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDER — BREADCRUMB
+   ═══════════════════════════════════════════════════════════════ */
+function renderBreadcrumb() {
+  const items = [];
+  hist.forEach((h, i) => {
+    const step = STEPS[h.s];
+    if (step) items.push({ title: trunc(step.t, 28), index: i, isPast: true });
+  });
+  const curStep = STEPS[cur];
+  if (curStep) items.push({ title: trunc(curStep.t, 28), isCurrent: true });
+
+  let html = '';
+  items.forEach((item, i) => {
+    if (i > 0) html += '<span class="bc-sep">›</span>';
+    if (item.isPast) {
+      html += '<button class="bc-past" onclick="goBackTo(' + item.index + ')">' + escQ(item.title) + '</button>';
+    } else {
+      html += '<span class="bc-current">' + escQ(item.title) + '</span>';
+    }
+  });
+  document.getElementById('breadcrumb').innerHTML = html;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDER — SIDEBAR MAP
+   ═══════════════════════════════════════════════════════════════ */
+function renderSidebarMap() {
+  const visited = getVisitedSet();
+  let html = '';
+
+  PHASES.forEach((phaseName, phIdx) => {
+    const collapsed = phaseCollapsed[phIdx] || false;
+    html += '<div class="sm-phase">';
+    html += '<div class="sm-phase-hdr' + (collapsed ? ' collapsed' : '') + '" onclick="togglePhase(' + phIdx + ')">';
+    html += '<span class="arrow">▼</span> ' + escQ(phaseName) + '</div>';
+    html += '<div class="sm-phase-body' + (collapsed ? ' collapsed' : '') + '">';
+
+    Object.entries(STEPS).forEach(([key, step]) => {
+      if (step.ph !== phIdx) return;
+      let cls = '';
+      if (key === cur) cls = 'sm-current';
+      else if (visited.has(key)) cls = 'sm-visited';
+      else cls = 'sm-unreachable';
+
+      const isEnd = !!step.end;
+      const icon = key === cur ? '●' : (visited.has(key) ? '✓' : '○');
+      const endCls = isEnd ? ' sm-end-node' : '';
+
+      html += '<div class="sm-node ' + cls + endCls + '" onclick="showPreview(\'' + escQ(key) + '\', event)">';
+      html += '<span class="nd-icon">' + icon + '</span>';
+      html += '<span>' + escQ(trunc(step.t, 30)) + '</span>';
+      html += '</div>';
+    });
+
+    html += '</div></div>';
+  });
+
+  document.getElementById('sb-map').innerHTML = html;
+}
+
+function togglePhase(phIdx) {
+  phaseCollapsed[phIdx] = !phaseCollapsed[phIdx];
+  renderSidebarMap();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   STEP PREVIEW (from sidebar map)
+   ═══════════════════════════════════════════════════════════════ */
+let previewEl = null;
+function showPreview(stepId, event) {
+  event.stopPropagation();
+  closePreview();
+  const step = STEPS[stepId];
+  if (!step) return;
+
+  const el = document.createElement('div');
+  el.className = 'step-preview';
+  el.innerHTML = '<button class="sp-close" onclick="closePreview()">✕</button>' +
+    '<div class="sp-title">' + escQ(step.t) + '</div>' +
+    '<div class="sp-body">' + escQ(step.c ? step.c.filter(b => b[0]==='i').map(b=>b[1]).join(' ').slice(0,200) : '') + '</div>' +
+    '<div style="margin-top:8px"><button onclick="jumpTo(\'' + escQ(stepId) + '\');closePreview()" style="padding:5px 12px;border-radius:5px;border:1px solid var(--navy-lt);background:#fff;color:var(--navy-lt);font-size:11px;font-weight:600;cursor:pointer">Ir a este paso</button></div>';
+
+  document.body.appendChild(el);
+  previewEl = el;
+
+  // Position near click
+  const rect = event.target.getBoundingClientRect();
+  let top = rect.bottom + 4;
+  let left = rect.left;
+  if (left + 320 > window.innerWidth) left = window.innerWidth - 330;
+  if (top + 300 > window.innerHeight) top = rect.top - 304;
+  el.style.top = top + 'px';
+  el.style.left = left + 'px';
+}
+
+function closePreview() {
+  if (previewEl) { previewEl.remove(); previewEl = null; }
+}
+document.addEventListener('click', function(e) {
+  if (previewEl && !previewEl.contains(e.target)) closePreview();
+});
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDER — SIDEBAR JOURNEY
+   ═══════════════════════════════════════════════════════════════ */
+function renderSidebarJourney() {
+  let html = '';
+  const items = [];
+  hist.forEach((h, i) => {
+    const step = STEPS[h.s];
+    if (step) items.push({ title: step.t, choice: h.c, isPast: true });
+  });
+  const curStep = STEPS[cur];
+  if (curStep) items.push({ title: curStep.t, isCurrent: true });
+
+  items.forEach(item => {
+    const cls = item.isCurrent ? 'current' : 'past';
+    html += '<div class="pi ' + cls + '">';
+    html += '<div class="pi-title">' + escQ(item.title) + '</div>';
+    if (item.choice) html += '<div class="pi-choice">' + escQ(item.choice) + '</div>';
+    html += '</div>';
+  });
+
+  // Legal refs
+  html += '<div class="sb-foot">Ley 15/2015, arts. 78-80 · Ley 30/1979 · RD 1723/2012 · Directiva 2010/45/UE · Convenio de Oviedo</div>';
+
+  document.getElementById('sb-journey').innerHTML = html;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDER — CONTENT (card)
+   ═══════════════════════════════════════════════════════════════ */
+function renderContent() {
+  const s = STEPS[cur];
+  if (!s) return;
+  if (s.end) {
+    document.getElementById('content').innerHTML = buildEnd(cur, s);
+  } else {
+    document.getElementById('content').innerHTML = buildStep(cur, s);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUILD STEP CARD
+   ═══════════════════════════════════════════════════════════════ */
+function buildStep(key, s) {
+  const stepNum = hist.length + 1;
+  let html = '<div class="card">';
+
+  // Header
+  html += '<div class="c-hdr">';
+  html += '<div class="act-badge act-' + s.ac + '">' + escQ(actorLabel(s.ac)) + '</div>';
+  html += '<div class="c-title">' + escQ(s.t) + '</div>';
+  html += '<div class="step-num">Paso ' + stepNum + ' de este recorrido · Fase ' + (s.ph + 1) + ': ' + escQ(PHASES[s.ph]) + '</div>';
+  html += '</div>';
+
+  // Body
+  html += '<div class="c-body">';
+  html += renderBlocks(s.c);
+  html += '</div>';
+
+  // Decision area
+  if (s.q) {
+    html += '<div class="dec-area">';
+    html += '<div class="dec-q">' + escQ(s.q) + '</div>';
+    html += '<div class="dec-opts">';
+    s.opts.forEach((opt, i) => {
+      const letter = opt.l || String.fromCharCode(65 + i);
+      html += '<button class="dec-btn ' + opt.v + '" onclick="goTo(\'' + escQ(opt.n) + '\',\'' + escQ(opt.t) + '\')">';
+      html += '<span class="dec-letter">' + escQ(letter) + '</span>';
+      html += '<span>' + escQ(opt.t) + '</span>';
+      html += '</button>';
+    });
+    html += '</div></div>';
+  }
+
+  // Navigation
+  html += '<div class="c-nav">';
+  html += '<button class="btn-back" onclick="goBack()"' + (hist.length === 0 ? ' disabled' : '') + '>← Volver</button>';
+  if (s.nx) {
+    html += '<button class="btn-next" onclick="goTo(\'' + escQ(s.nx) + '\',\'\')">Siguiente →</button>';
+  } else {
+    html += '<span></span>';
+  }
+  html += '</div>';
+
+  html += '</div>';
+  return html;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUILD END CARD
+   ═══════════════════════════════════════════════════════════════ */
+function buildEnd(key, s) {
+  const icons = { success: '✅', error: '❌', warning: '⚠️', neutral: '🔵' };
+  const titles = { success: 'Procedimiento exitoso', error: 'Procedimiento denegado', warning: 'Procedimiento condicionado', neutral: 'Procedimiento concluido' };
+
+  let html = '<div class="card end-' + s.end + '">';
+
+  // End body
+  html += '<div class="end-body">';
+  html += '<div class="end-icon">' + (icons[s.end] || '🔵') + '</div>';
+  html += '<div class="end-title">' + escQ(s.t) + '</div>';
+  html += '<div class="end-sub">El procedimiento ha concluido en esta vía</div>';
+  html += '<div class="end-actions">';
+  html += '<button class="btn-next" onclick="restart()">↻ Nuevo procedimiento</button>';
+  html += '<button class="btn-back" onclick="goBack()"' + (hist.length === 0 ? ' disabled' : '') + '>← Volver</button>';
+  html += '</div>';
+  html += '</div>';
+
+  // Content
+  if (s.c && s.c.length) {
+    html += '<div class="end-content">';
+    html += renderBlocks(s.c);
+    html += '</div>';
+  }
+
+  // Summary
+  html += '<div class="summary-box">';
+  html += '<h4>Resumen del recorrido seguido</h4>';
+  html += '<ol>';
+  hist.forEach((h, i) => {
+    const step = STEPS[h.s];
+    if (step) {
+      html += '<li>' + escQ(step.t);
+      if (h.c) html += ' <span class="sum-choice">↪ ' + escQ(h.c) + '</span>';
+      html += '</li>';
+    }
+  });
+  // Current step
+  const curStep = STEPS[cur];
+  if (curStep) {
+    html += '<li><strong>' + escQ(curStep.t) + '</strong></li>';
+  }
+  html += '</ol></div>';
+
+  html += '</div>';
+  return html;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDER CONTENT BLOCKS
+   ═══════════════════════════════════════════════════════════════ */
+function renderBlocks(blocks) {
+  if (!blocks) return '';
+  let html = '';
+  blocks.forEach(b => {
+    const type = b[0];
+    const text = b[1];
+    switch(type) {
+      case 'i': html += '<p class="blk-intro">' + escQ(text) + '</p>'; break;
+      case 'd': html += '<div class="blk-deadline">' + escQ(text) + '</div>'; break;
+      case 'n': html += '<div class="blk-note">' + escQ(text) + '</div>'; break;
+      case 'w': html += '<div class="blk-warn">' + escQ(text) + '</div>'; break;
+      case 'l': html += '<div class="blk-law">' + escQ(text) + '</div>'; break;
+      case 'cl':
+        html += '<div class="blk-checklist">';
+        html += '<div class="blk-checklist-title">' + escQ(text) + '</div>';
+        if (b[2] && b[2].length) {
+          html += '<ul>';
+          b[2].forEach(item => { html += '<li>' + escQ(item) + '</li>'; });
+          html += '</ul>';
+        }
+        html += '</div>';
+        break;
+      default: html += '<p>' + escQ(text) + '</p>';
+    }
+  });
+  return html;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDER — MAPA OVERLAY
+   ═══════════════════════════════════════════════════════════════ */
+function renderMapa() {
+  const visited = getVisitedSet();
+  let html = '<button class="mapa-close" onclick="toggleMapa()">← Volver al recorrido</button>';
+  html += '<div class="mapa-columns">';
+
+  PHASES.forEach((phaseName, phIdx) => {
+    html += '<div class="mapa-phase">';
+    html += '<div class="mapa-phase-hdr">' + escQ(phaseName) + '</div>';
+    html += '<div class="mapa-phase-body">';
+
+    Object.entries(STEPS).forEach(([key, step]) => {
+      if (step.ph !== phIdx) return;
+
+      let cls = 'mapa-node';
+      if (key === cur) cls += ' mapa-current';
+      else if (visited.has(key)) cls += ' mapa-visited';
+      if (step.end) cls += ' mapa-end-' + step.end;
+
+      html += '<div class="' + cls + '">';
+      html += '<div class="mapa-node-title">' + escQ(trunc(step.t, 35)) + '</div>';
+      html += '<div class="mapa-node-actor">' + escQ(actorLabel(step.ac)) + '</div>';
+
+      // Show arrows
+      if (step.opts) {
+        step.opts.forEach(opt => {
+          html += '<div class="mapa-arrow">↳ ' + escQ(opt.t) + '</div>';
+        });
+      } else if (step.nx) {
+        const nxStep = STEPS[step.nx];
+        if (nxStep) html += '<div class="mapa-arrow">↳ → ' + escQ(trunc(nxStep.t, 30)) + '</div>';
+      }
+
+      html += '</div>';
+    });
+
+    html += '</div></div>';
+  });
+
+  html += '</div>';
+  document.getElementById('mapa-overlay').innerHTML = html;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INITIAL RENDER
+   ═══════════════════════════════════════════════════════════════ */
+render();
+</script>
+
+</body>
+</html>

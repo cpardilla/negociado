@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ley 15/2015 Jurisdicción Voluntaria — Título Preliminar (Fusión completa)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f7f6f2;
+            --surface: #ffffff;
+            --surface-2: #f2f1ed;
+            --border: rgba(15, 23, 42, .08);
+            --border-md: rgba(15, 23, 42, .14);
+            --text-1: #0f172a;
+            --text-2: #475569;
+            --text-3: #94a3b8;
+            --ink: #0f172a;
+            --header-bg: #0f172a;
+            --header-text: #f8f5ed;
+            --accent: #c8a96e;
+            --c1: #0e7490;
+            --c1bg: #ecfeff;
+            --c1bd: #a5f3fc;
+            --c2: #b45309;
+            --c2bg: #fffbeb;
+            --c2bd: #fde68a;
+            --c3: #047857;
+            --c3bg: #ecfdf5;
+            --c3bd: #a7f3d0;
+            --c4: #6d28d9;
+            --c4bg: #f5f3ff;
+            --c4bd: #ddd6fe;
+            --c5: #be123c;
+            --c5bg: #fff1f2;
+            --c5bd: #fecdd3;
+            --c6: #475569;
+            --c6bg: #f8fafc;
+            --c6bd: #cbd5e1;
+            --c7: #0d9488;
+            --c7bg: #f0fdfa;
+            --c7bd: #99f6e4;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .04);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, .08), 0 1px 4px rgba(0, 0, 0, .04);
+            --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --font-ui: 'Outfit', system-ui, sans-serif;
+            --transition: 200ms ease;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text-1);
+            font-family: var(--font-ui);
+            font-size: 14px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .site-header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 2rem 1.5rem 1.75rem;
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header-breadcrumb {
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: rgba(248, 245, 237, .5);
+            margin-bottom: .5rem;
+        }
+        .header-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: .4rem;
+        }
+        .header-subtitle {
+            font-size: 14px;
+            color: rgba(248, 245, 237, .6);
+            margin-bottom: 1rem;
+        }
+        .header-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: .5rem;
+        }
+        .header-tag {
+            display: inline-block;
+            background: rgba(200, 169, 110, .15);
+            border: 1px solid rgba(200, 169, 110, .3);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 3px 12px;
+        }
+        .header-actions {
+            margin-left: auto;
+        }
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid rgba(248, 245, 237, .15);
+            color: rgba(248, 245, 237, .7);
+            border-radius: var(--radius-sm);
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-ghost:hover {
+            background: rgba(248, 245, 237, .08);
+            color: var(--header-text);
+        }
+
+        .stats-bar {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+        .stats-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 1.25rem 1rem;
+            border-right: 1px solid var(--border);
+        }
+        .stat-item:last-child {
+            border-right: none;
+        }
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-1);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-3);
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            margin-top: .35rem;
+        }
+
+        .controls-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--surface);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+            padding: .75rem 1rem;
+        }
+        .controls-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: .75rem;
+        }
+        .search-wrap {
+            position: relative;
+            flex: 1;
+            min-width: 180px;
+            max-width: 320px;
+        }
+        .search-wrap svg {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            color: var(--text-3);
+            pointer-events: none;
+        }
+        .search-input {
+            width: 100%;
+            border: 1px solid var(--border-md);
+            border-radius: var(--radius-sm);
+            padding: 7px 10px 7px 32px;
+            font-size: 13px;
+            color: var(--text-1);
+            background: var(--surface-2);
+            outline: none;
+            transition: var(--transition);
+        }
+        .search-input:focus {
+            border-color: var(--accent);
+            background: var(--surface);
+        }
+        .filter-pills {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        .pill {
+            border: 1px solid var(--border-md);
+            border-radius: 20px;
+            background: var(--surface);
+            color: var(--text-2);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .pill:hover {
+            background: var(--surface-2);
+        }
+        .pill.active {
+            color: #fff;
+        }
+        .pill.active[data-cat="all"] {
+            background: var(--ink);
+            border-color: var(--ink);
+        }
+        .pill.active[data-cat="c1"] {
+            background: var(--c1);
+            border-color: var(--c1);
+        }
+        .pill.active[data-cat="c2"] {
+            background: var(--c2);
+            border-color: var(--c2);
+        }
+        .pill.active[data-cat="c3"] {
+            background: var(--c3);
+            border-color: var(--c3);
+        }
+        .pill.active[data-cat="c4"] {
+            background: var(--c4);
+            border-color: var(--c4);
+        }
+        .pill.active[data-cat="c5"] {
+            background: var(--c5);
+            border-color: var(--c5);
+        }
+        .pill.active[data-cat="c6"] {
+            background: var(--c6);
+            border-color: var(--c6);
+        }
+        .pill.active[data-cat="c7"] {
+            background: var(--c7);
+            border-color: var(--c7);
+        }
+        .ctrl-actions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-ctrl {
+            border: 1px solid var(--border-md);
+            border-radius: var(--radius-sm);
+            background: var(--surface);
+            color: var(--text-2);
+            font-size: 11px;
+            font-weight: 500;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .btn-ctrl:hover {
+            background: var(--surface-2);
+        }
+        .zoom-cluster {
+            display: flex;
+            border: 1px solid var(--border-md);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+        .btn-zoom {
+            border: none;
+            background: var(--surface);
+            color: var(--text-2);
+            font-size: 14px;
+            font-weight: 500;
+            width: 30px;
+            height: 28px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-zoom:hover {
+            background: var(--surface-2);
+        }
+        .btn-zoom:disabled {
+            opacity: .35;
+            cursor: default;
+        }
+        .btn-zoom+.btn-zoom {
+            border-left: 1px solid var(--border);
+        }
+        .zoom-label {
+            font-size: 12px;
+            font-weight: 500;
+            min-width: 42px;
+            text-align: center;
+            color: var(--text-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--surface);
+        }
+
+        .page-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem 2rem;
+        }
+        .map-section {
+            margin-bottom: 1.5rem;
+        }
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            cursor: pointer;
+            padding: .75rem 0;
+            user-select: none;
+        }
+        .section-heading-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-1);
+        }
+        .section-heading-count {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-3);
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+        .section-toggle-btn {
+            border: none;
+            background: none;
+            font-size: 14px;
+            color: var(--text-3);
+            cursor: pointer;
+            margin-left: auto;
+        }
+        .section-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 0 0 .5rem;
+        }
+        .section-body {
+            transition: var(--transition);
+        }
+        .section-body.collapsed {
+            display: none;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .map-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left-width: 4px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: box-shadow var(--transition);
+        }
+        .map-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+        .map-card[data-cat="c1"] {
+            border-left-color: var(--c1);
+        }
+        .map-card[data-cat="c2"] {
+            border-left-color: var(--c2);
+        }
+        .map-card[data-cat="c3"] {
+            border-left-color: var(--c3);
+        }
+        .map-card[data-cat="c4"] {
+            border-left-color: var(--c4);
+        }
+        .map-card[data-cat="c5"] {
+            border-left-color: var(--c5);
+        }
+        .map-card[data-cat="c6"] {
+            border-left-color: var(--c6);
+        }
+        .map-card[data-cat="c7"] {
+            border-left-color: var(--c7);
+        }
+        .map-card.hidden {
+            display: none;
+        }
+        .card-top {
+            padding: 1rem 1rem .5rem;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            flex-wrap: wrap;
+            margin-bottom: .35rem;
+        }
+        .art-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 2px 10px;
+        }
+        .map-card[data-cat="c1"] .art-badge {
+            background: var(--c1bg);
+            color: var(--c1);
+            border: 1px solid var(--c1bd);
+        }
+        .map-card[data-cat="c2"] .art-badge {
+            background: var(--c2bg);
+            color: var(--c2);
+            border: 1px solid var(--c2bd);
+        }
+        .map-card[data-cat="c3"] .art-badge {
+            background: var(--c3bg);
+            color: var(--c3);
+            border: 1px solid var(--c3bd);
+        }
+        .map-card[data-cat="c4"] .art-badge {
+            background: var(--c4bg);
+            color: var(--c4);
+            border: 1px solid var(--c4bd);
+        }
+        .map-card[data-cat="c5"] .art-badge {
+            background: var(--c5bg);
+            color: var(--c5);
+            border: 1px solid var(--c5bd);
+        }
+        .map-card[data-cat="c6"] .art-badge {
+            background: var(--c6bg);
+            color: var(--c6);
+            border: 1px solid var(--c6bd);
+        }
+        .map-card[data-cat="c7"] .art-badge {
+            background: var(--c7bg);
+            color: var(--c7);
+            border: 1px solid var(--c7bd);
+        }
+        .status-tag {
+            font-size: 10px;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 1px 8px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+        .tag-warn {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .tag-alert {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .tag-info {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        .tag-ok {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .tag-gray {
+            background: var(--surface-2);
+            color: var(--text-2);
+            border: 1px solid var(--border);
+        }
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-1);
+            line-height: 1.3;
+            margin-bottom: .25rem;
+        }
+        .card-subtitle {
+            font-size: 12.5px;
+            color: var(--text-2);
+            line-height: 1.45;
+        }
+        .card-counters {
+            display: flex;
+            gap: .5rem;
+            padding: 0 1rem .5rem;
+        }
+        .counter-badge {
+            font-size: 11px;
+            color: var(--text-3);
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2px 8px;
+        }
+        .counter-badge strong {
+            color: var(--text-2);
+            font-weight: 600;
+        }
+        .card-toggle-btn {
+            width: 100%;
+            background: var(--surface-2);
+            border: none;
+            border-top: 1px solid var(--border);
+            padding: 6px 1rem;
+            font-size: 12px;
+            color: var(--text-2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .35rem;
+            transition: var(--transition);
+        }
+        .card-toggle-btn:hover {
+            background: var(--border);
+        }
+        .toggle-icon {
+            display: inline-block;
+            transition: transform var(--transition);
+            font-size: 11px;
+        }
+        .map-card.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+        .card-body {
+            display: none;
+            padding: .75rem 1rem 1rem;
+        }
+        .map-card.expanded>.card-body {
+            display: block;
+        }
+        .inner-section {
+            margin-bottom: .75rem;
+        }
+        .inner-section:last-child {
+            margin-bottom: 0;
+        }
+        .inner-heading {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-1);
+            margin-bottom: .35rem;
+        }
+        .inner-heading .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .map-card[data-cat="c1"] .dot {
+            background: var(--c1);
+        }
+        .map-card[data-cat="c2"] .dot {
+            background: var(--c2);
+        }
+        .map-card[data-cat="c3"] .dot {
+            background: var(--c3);
+        }
+        .map-card[data-cat="c4"] .dot {
+            background: var(--c4);
+        }
+        .map-card[data-cat="c5"] .dot {
+            background: var(--c5);
+        }
+        .map-card[data-cat="c6"] .dot {
+            background: var(--c6);
+        }
+        .map-card[data-cat="c7"] .dot {
+            background: var(--c7);
+        }
+        .inner-body {
+            padding-left: .25rem;
+        }
+        .inner-list {
+            list-style: none;
+        }
+        .inner-list li {
+            position: relative;
+            padding-left: .8rem;
+            margin-bottom: .2rem;
+            font-size: 12.5px;
+            color: var(--text-2);
+        }
+        .inner-list li::before {
+            content: "\2013";
+            position: absolute;
+            left: 0;
+            color: var(--text-3);
+        }
+        .inner-list li strong {
+            color: var(--text-1);
+            font-weight: 500;
+        }
+        .card-refs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .3rem;
+            padding: .5rem 1rem .75rem;
+            border-top: 1px solid var(--border);
+        }
+        .ref-tag {
+            display: inline-block;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 11px;
+            color: var(--text-2);
+            padding: 2px 8px;
+        }
+
+        .table-wrap {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--surface);
+        }
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .timeline-table thead {
+            background: var(--surface-2);
+        }
+        .timeline-table th {
+            text-align: left;
+            padding: .65rem .75rem;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            color: var(--text-3);
+            border-bottom: 1px solid var(--border);
+        }
+        .timeline-table td {
+            padding: .6rem .75rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-2);
+        }
+        .timeline-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .timeline-table tbody tr:hover {
+            background: var(--surface-2);
+        }
+        .plazo-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 2px 10px;
+        }
+        .plazo-days {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .plazo-weeks {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        .plazo-months {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .plazo-years {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .plazo-other {
+            background: var(--surface-2);
+            color: var(--text-2);
+        }
+        .td-tramite {
+            color: var(--text-1);
+            font-weight: 500;
+        }
+
+        .participants-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: .75rem;
+        }
+        .participant-col {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+        .participant-col-head {
+            padding: .5rem .75rem;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            color: #fff;
+        }
+        .phead-c1 {
+            background: var(--c1);
+        }
+        .phead-c2 {
+            background: var(--c2);
+        }
+        .phead-c3 {
+            background: var(--c3);
+        }
+        .phead-c4 {
+            background: var(--c4);
+        }
+        .phead-c5 {
+            background: var(--c5);
+        }
+        .phead-c6 {
+            background: var(--c6);
+        }
+        .phead-c7 {
+            background: var(--c7);
+        }
+        .participant-col ul {
+            list-style: none;
+        }
+        .participant-col li {
+            padding: .4rem .75rem;
+            font-size: 12.5px;
+            color: var(--text-2);
+            border-bottom: 1px solid var(--border);
+        }
+        .participant-col li:last-child {
+            border-bottom: none;
+        }
+        .participant-note {
+            font-size: 11px;
+            color: var(--text-3);
+            font-style: italic;
+        }
+
+        .norm-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: .75rem;
+        }
+        .norm-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: .85rem;
+        }
+        .norm-law {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            color: var(--text-3);
+            margin-bottom: .2rem;
+        }
+        .norm-title {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-1);
+            margin-bottom: .35rem;
+        }
+        .norm-arts {
+            font-size: 12px;
+            color: var(--text-2);
+            line-height: 1.5;
+            margin-bottom: .4rem;
+        }
+        .norm-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 1px 8px;
+            text-transform: uppercase;
+            letter-spacing: .03em;
+        }
+
+        .legend-footer {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 2rem 1.5rem;
+            margin-top: 2rem;
+        }
+        .legend-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .legend-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .legend-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: .75rem 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            font-size: 12px;
+            color: rgba(248, 245, 237, .7);
+        }
+        .legend-swatch {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .legend-divider {
+            width: 1px;
+            height: 20px;
+            background: rgba(248, 245, 237, .12);
+        }
+        .legend-copy {
+            font-size: 11px;
+            color: rgba(248, 245, 237, .3);
+            border-top: 1px solid rgba(248, 245, 237, .08);
+            padding-top: .75rem;
+        }
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-3);
+            font-size: 14px;
+            display: none;
+        }
+
+        @media print {
+            .controls-bar,
+            .site-header .header-actions {
+                display: none;
+            }
+            .card-body,
+            .inner-body,
+            .section-body {
+                display: block !important;
+            }
+            .map-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+            body {
+                background: #fff;
+            }
+        }
+        @media (max-width: 960px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .participants-grid,
+            .norm-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .ctrl-actions {
+                display: none;
+            }
+        }
+        @media (max-width: 640px) {
+            .stats-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stat-item {
+                border-bottom: 1px solid var(--border);
+            }
+        }
+        @media (max-width: 600px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .participants-grid,
+            .norm-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-breadcrumb">Ley 15/2015 · Título Preliminar · Disposiciones generales (fusión completa)</div>
+            <h1 class="header-title">Expedientes de Jurisdicción Voluntaria</h1>
+            <p class="header-subtitle">Arts. 1-8 y 13-22 · Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria — Versión fusionada completa con ecosistema normativo</p>
+            <div class="header-meta">
+                <span class="header-tag">Ley 15/2015</span><span class="header-tag">Arts. 1-8</span><span class="header-tag">Arts. 13-22</span>
+                <span class="header-tag">60+ ref. normativas</span><span class="header-tag">Reforma Ley 8/2021</span>
+                <div class="header-actions"><button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat-item"><div class="stat-value">14</div><div class="stat-label">Artículos base</div></div>
+            <div class="stat-item"><div class="stat-value">30+</div><div class="stat-label">Conexiones normativas</div></div>
+            <div class="stat-item"><div class="stat-value">25+</div><div class="stat-label">Actores identificados</div></div>
+            <div class="stat-item"><div class="stat-value">10</div><div class="stat-label">Plazos de referencia</div></div>
+        </div>
+    </div>
+
+    <div class="controls-bar">
+        <div class="controls-inner">
+            <div class="search-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
+                <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor, ley…">
+            </div>
+            <div class="filter-pills">
+                <button class="pill active" data-cat="all">Todos</button>
+                <button class="pill" data-cat="c1">Objeto</button>
+                <button class="pill" data-cat="c2">Competencia</button>
+                <button class="pill" data-cat="c3">Legitimación</button>
+                <button class="pill" data-cat="c4">Fiscal/Prueba</button>
+                <button class="pill" data-cat="c5">Tramitación</button>
+                <button class="pill" data-cat="c6">Discapacidad</button>
+                <button class="pill" data-cat="c7">Disp. comunes</button>
+            </div>
+            <div class="ctrl-actions">
+                <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+                <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+                <div class="zoom-cluster">
+                    <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+                    <span class="zoom-label" id="zoom-label">100%</span>
+                    <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+                </div>
+                <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="page-main">
+
+        <!-- SECCIÓN: ARTÍCULOS DEL TÍTULO PRELIMINAR -->
+        <div class="map-section">
+            <div class="section-heading" data-target="sec-articles">
+                <span class="section-heading-text">Artículos del Título Preliminar</span>
+                <span class="section-heading-count">9 artículos · versión fusionada completa</span>
+                <button class="section-toggle-btn">&#9660;</button>
+            </div>
+            <hr class="section-divider">
+            <div class="section-body" id="sec-articles">
+                <div class="card-grid">
+
+                    <!-- ARTÍCULO 1 -->
+                    <article class="map-card" data-cat="c1" data-text="objeto ámbito aplicación expedientes jurisdicción voluntaria órganos jurisdiccionales tutela derechos intereses derecho civil mercantil controversia proceso contencioso naturaleza constitucional CE 24 117 evolución histórica LEC 1881 notariado registro civil estado civil capacidad menores sucesiones sociedades mercantiles títulos II IX notarios registradores competencia concurrente">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Artículo 1</span><span class="status-tag tag-info">Definición</span></div>
+                            <h2 class="card-title">Objeto y ámbito de aplicación</h2>
+                            <p class="card-subtitle">Regulación de expedientes de JV ante órganos jurisdiccionales en materia civil y mercantil, sin controversia contenciosa. Naturaleza constitucional y evolución histórica. Competencia concurrente de Notarios y Registradores.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>2 apartados</strong></span><span class="counter-badge" style="margin-left:auto"><strong>9 subnodos</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Objeto de la Ley</div><div class="inner-body"><ul class="inner-list"><li>Regulación de los expedientes de jurisdicción voluntaria que se tramitan ante los órganos jurisdiccionales.</li></ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Definición y elementos constitutivos</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Intervención de un órgano jurisdiccional:</strong> La tutela requiere necesariamente la actuación de un juez, magistrado o tribunal; no basta la intervención de autoridades administrativas.</li>
+                                <li><strong>Tutela de derechos e intereses:</strong> Finalidad de protección, reconocimiento, constitución o modificación de derechos e intereses jurídicamente relevantes.</li>
+                                <li><strong>Materia civil y mercantil:</strong> Ámbito material circunscrito al Derecho civil y mercantil; excluidos expresamente Derecho penal, contencioso-administrativo y social.</li>
+                                <li><strong>Ausencia de controversia:</strong> Elemento definitorio esencial: no debe existir controversia que deba sustanciarse en un proceso contencioso.</li>
+                                <li><strong>Competencia concurrente:</strong> También se atribuye competencia, de forma concurrente, a Notarios y Registradores en determinadas materias.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Materias objeto de la Ley — Títulos II a IX</div><div class="inner-body"><ul class="inner-list">
+                                <li>Personas · Familia · Registro Civil · Sucesiones · Derechos reales · Obligaciones · Materia mercantil · Conciliación.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Fundamentación constitucional</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Artículo 117.3 CE:</strong> Potestad de juzgar y hacer ejecutar lo juzgado; manifestación de la función jurisdiccional del Estado.</li>
+                                <li><strong>Artículo 24 CE:</strong> Derecho a la tutela judicial efectiva; vertiente de aplicación en jurisdicción voluntaria.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Evolución histórica y antecedentes</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>LEC 1881 (arts. 1810-1823):</strong> Regulación general de actos de jurisdicción voluntaria (insuficiente y anticuada).</li>
+                                <li><strong>Código Civil:</strong> Expedientes en materia de estado civil, capacidad, tutela, curatela.</li>
+                                <li><strong>Ley del Notariado de 1862:</strong> Competencias notariales en JV, mantenidas y reforzadas en la Ley 15/2015.</li>
+                                <li><strong>Ley de Registro Civil:</strong> Expedientes de inscripción de actos del estado civil.</li>
+                                <li><strong>Ley 15/2015:</strong> Unifica, sistematiza y moderniza la regulación dispersa creando un marco normativo común.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Ámbito material: Derecho civil</div><div class="inner-body"><ul class="inner-list">
+                                <li>Estado civil de las personas: nacionalidad, vecindad civil, nombre y apellidos, actas de notoriedad.</li>
+                                <li>Capacidad jurídica: medidas de apoyo para personas con discapacidad (tutela, curatela, defensor judicial, guarda de hecho con facultades de representación).</li>
+                                <li>Relaciones familiares: emancipación, asistencia de menores no emancipados, autorización para contraer matrimonio, oposición al matrimonio.</li>
+                                <li>Sucesiones: declaración de herederos, testamentos, aceptación de herencia a beneficio de inventario.</li>
+                                <li>Ausencia y fallecimiento: declaración de ausencia y de fallecimiento.</li>
+                                <li>Derechos reales: constitución, modificación y extinción sobre bienes inmuebles.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Ámbito material: Derecho mercantil</div><div class="inner-body"><ul class="inner-list">
+                                <li>Sociedades mercantiles: convocatoria de juntas generales, intervención judicial de sociedades, nombramiento de auditores de cuentas.</li>
+                                <li>Títulos-valores: amortización de títulos-valores destruidos o extraviados.</li>
+                                <li>Concurso de acreedores: determinados aspectos de la JV en materia concursal.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Exclusión de la controversia contenciosa</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Elemento diferenciador:</strong> Ausencia de controversia entre partes frente al proceso contencioso.</li>
+                                <li><strong>Transformación por oposición:</strong> Si surge oposición, se transforma en proceso contencioso y se archiva el expediente JV (art. 6.2).</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">CE art. 24</span><span class="ref-tag">CE art. 117.3</span><span class="ref-tag">LEC 1881 arts. 1810-1823</span><span class="ref-tag">Ley 15/2015 art. 6.2</span></div>
+                    </article>
+
+                    <!-- ARTÍCULO 2 -->
+                    <article class="map-card" data-cat="c2" data-text="competencia objetiva territorial juzgados primera instancia mercantil secretario judicial juez impulso dirección resolución interés público estado civil menores discapacidad LOPJ 45 82 86 ter 451 notario registrador sumisión control oficio auto decreto plazo 5 días art 16 19 LJV">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Artículo 2</span><span class="status-tag tag-warn">Competencia</span></div>
+                            <h2 class="card-title">Competencia en materia de jurisdicción voluntaria</h2>
+                            <p class="card-subtitle">Competencia objetiva, territorial y distribución de funciones entre Juez y Secretario judicial. Prohibición de sumisión. Control de oficio. Formas de resolución.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>3 apartados</strong></span><span class="counter-badge" style="margin-left:auto"><strong>12 subnodos</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Competencia objetiva: Juzgados de Primera Instancia</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Órganos naturales:</strong> Juzgados de Primera Instancia son los órganos generales para conocer de los expedientes de JV en materia civil.</li>
+                                <li><strong>Fundamento LOPJ:</strong> Artículo 45 LOPJ atribuye a los Juzgados de Primera Instancia los asuntos civiles que las leyes les encomienden.</li>
+                                <li><strong>Referencia LEC:</strong> Artículo 82 LEC establece la competencia de los Juzgados de Primera Instancia en materia civil.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Competencia objetiva: Juzgados de lo Mercantil</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Competencia especializada:</strong> Conocen de expedientes de JV en materia mercantil (LOPJ art. 86 ter), especialmente del Título VIII (exhibición de libros, juntas generales, auditores, obligacionistas, títulos valor, perito en seguros).</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Competencia territorial: reglas y prohibiciones</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Criterio de determinación:</strong> Se fija por el precepto correspondiente en cada caso (domicilio del interesado, ubicación del bien, lugar de celebración del acto, etc.).</li>
+                                <li><strong>Prohibición de sumisión expresa:</strong> Las partes no pueden pactar que un órgano judicial diferente al competente por la ley conozca del expediente.</li>
+                                <li><strong>Prohibición de sumisión tácita:</strong> No opera la sumisión tácita; la competencia territorial viene impuesta por la ley y es improrrogable.</li>
+                                <li><strong>Fundamento:</strong> Naturaleza no dispositiva de la JV: al no existir litigio entre partes, no cabe la prórroga de competencia.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Impulso, dirección y resolución: Secretario judicial</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Impulso procesal:</strong> Corresponde al Secretario judicial el deber de impulsar el expediente de oficio.</li>
+                                <li><strong>Dirección del procedimiento:</strong> Dirige la tramitación, acordando las diligencias necesarias.</li>
+                                <li><strong>Fundamento LOPJ:</strong> Artículo 451 LOPJ; el término «Secretario judicial» corresponde a la denominación actual de «Letrado de la Administración de Justicia» (LAJ).</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Funciones decisorias: Juez — Supuestos reservados</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Interés público:</strong> Expedientes que afecten al interés público general.</li>
+                                <li><strong>Estado civil de las personas:</strong> Nacionalidad, vecindad civil, nombre y apellidos, filiación, matrimonio.</li>
+                                <li><strong>Tutela de normas sustantivas:</strong> Aplicación e interpretación de normas de Derecho sustantivo.</li>
+                                <li><strong>Actos de disposición:</strong> Actos de disposición, reconocimiento, creación o extinción de derechos subjetivos.</li>
+                                <li><strong>Derechos de menores:</strong> Protección reforzada (CE art. 39).</li>
+                                <li><strong>Personas con discapacidad:</strong> Medidas de apoyo para el ejercicio de su capacidad jurídica (Ley 8/2021).</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Funciones decisorias: Secretario judicial — Regla residual</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Principio de economía procesal:</strong> Se descarga al Juez de expedientes de menor complejidad.</li>
+                                <li><strong>Naturaleza de las resoluciones:</strong> El Secretario judicial resuelve mediante decreto; el Juez lo hace mediante auto.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Formas de resolución y plazo</div><div class="inner-body"><ul class="inner-list">
+                                <li>Auto <span style="color:#065f46;font-weight:600;">Juez</span> · Decreto <span style="color:#065f46;font-weight:600;">Secretario judicial</span> · Plazo: 5 días desde la comparecencia o la última diligencia. <span class="ref-tag">Art. 19 LJV</span></li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Control de oficio de la competencia</div><div class="inner-body"><ul class="inner-list">
+                                <li>El Secretario judicial examina de oficio la competencia objetiva y territorial presentada la solicitud. <span class="ref-tag">Art. 16 LJV</span></li>
+                                <li>Falta de competencia objetiva: archivo previa audiencia del MF y del solicitante; en su caso, dación de cuenta al Juez.</li>
+                                <li>Falta de competencia territorial: remisión al órgano competente.</li>
+                                <li>Defectos u omisiones en la solicitud: plazo de 5 días para subsanación.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Otros órganos con competencia</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Notarios:</strong> Competencia concurrente con los Secretarios judiciales en determinadas materias.</li>
+                                <li><strong>Registradores:</strong> Competencia concurrente en el ámbito registral.</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">LOPJ art. 45</span><span class="ref-tag">LOPJ art. 82</span><span class="ref-tag">LOPJ art. 86 ter</span><span class="ref-tag">LOPJ art. 451</span><span class="ref-tag">LEC art. 13</span><span class="ref-tag">Art. 16 LJV</span><span class="ref-tag">Art. 19 LJV</span></div>
+                    </article>
+
+                    <!-- ARTÍCULO 3 -->
+                    <article class="map-card" data-cat="c3" data-text="legitimación postulación solicitantes interesados letrado procurador abogado recursos revisión apelación oposición ministerio fiscal LEC 23 31 6 formulario normalizado modulaciones expedientes específicos art 14 17 20 LJV">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Artículo 3</span><span class="status-tag tag-ok">Legitimación</span></div>
+                            <h2 class="card-title">Legitimación y postulación</h2>
+                            <p class="card-subtitle">Define quiénes pueden promover expedientes y cuándo es preceptiva la intervención de Abogado y Procurador. Régimen de la oposición. Modulaciones por tipo de expediente.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>2 apartados</strong></span><span class="counter-badge" style="margin-left:auto"><strong>9 subnodos</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Legitimación activa — tres vías</div><div class="inner-body"><ul class="inner-list">
+                                <li>Titulares de derechos o intereses legítimos.</li>
+                                <li>Quienes tengan legitimación conferida legalmente sobre la materia del objeto del expediente.</li>
+                                <li>Iniciación de oficio o a instancia del Ministerio Fiscal.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Postulación procesal: regla general</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Defensa letrada:</strong> El Letrado (Abogado) presta asistencia jurídica técnica.</li>
+                                <li><strong>Representación procesal:</strong> El Procurador ostenta la representación procesal.</li>
+                                <li><strong>Fundamento LEC:</strong> Artículos 23 y 31 LEC.</li>
+                                <li><strong>Facultad voluntaria:</strong> Aun cuando no sea requerido por la ley, las partes pueden actuar con Abogado y Procurador.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Supuestos de postulación preceptiva</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Recursos de revisión y apelación:</strong> Necesaria la actuación de Abogado y Procurador contra la resolución definitiva. <span class="ref-tag">Art. 20 LJV</span></li>
+                                <li><strong>Oposición:</strong> Necesaria la actuación de Abogado y Procurador a partir del momento en que se formulase oposición. <span class="ref-tag">Art. 17 LJV</span></li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Modulaciones en expedientes específicos</div><div class="inner-body"><ul class="inner-list">
+                                <li><span class="status-tag tag-alert">No preceptiva</span> en reconocimiento de filiación (art. 24), dispensa de impedimento matrimonial (art. 81), extracción de órganos (art. 79), deslinde ≤ 6.000 € (art. 105), subasta voluntaria (art. 109), usufructo (art. 101), perito en seguros (art. 137).</li>
+                                <li><span class="status-tag tag-ok">Sí preceptiva</span> en exhibición de libros contables (art. 113), convocatoria de juntas generales (art. 118), obligacionistas (art. 130), títulos valor (art. 133).</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Formulario normalizado cuando no es preceptiva la postulación</div><div class="inner-body"><ul class="inner-list">
+                                <li>Se facilita en la Oficina judicial o sede electrónica; no es necesario concretar la fundamentación jurídica. <span class="ref-tag">Art. 14.3 LJV</span></li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Oposición y sus efectos</div><div class="inner-body"><ul class="inner-list">
+                                <li>Se formula en los 5 días siguientes a la citación. <span class="ref-tag">Art. 17 LJV</span></li>
+                                <li>No hace contencioso el expediente ni suspende su tramitación, salvo que la ley expresamente lo prevea.</li>
+                                <li>Del escrito de oposición se da traslado inmediato al solicitante.</li>
+                                <li>Desde este momento es obligatoria la actuación de Abogado y Procurador.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Régimen de la oposición (transformación)</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Concepto:</strong> Acto procesal por el cual un interesado manifiesta su disentimiento con respecto a lo solicitado.</li>
+                                <li><strong>Transformación del procedimiento:</strong> El expediente de JV se transforma en un proceso contencioso, aplicándose las normas procesales correspondientes.</li>
+                                <li><strong>Continuación:</strong> Se tramitará conforme a las reglas del proceso contencioso que corresponda (LEC).</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">LEC art. 23</span><span class="ref-tag">LEC art. 31</span><span class="ref-tag">LEC art. 6</span><span class="ref-tag">Art. 14 LJV</span><span class="ref-tag">Art. 17 LJV</span><span class="ref-tag">Art. 20 LJV</span></div>
+                    </article>
+
+                    <!-- ARTÍCULO 4 -->
+                    <article class="map-card" data-cat="c4" data-text="ministerio fiscal intervención estado civil condición persona menor discapacidad capacidad jurídica ley expresa CE 124 LOFSEM 3 protección menores Ley 8/2021 Convención ONU discapacidad informe 10 días comparecencia tutela curatela adopción dispensa">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Artículo 4</span><span class="status-tag tag-info">Intervención fiscal</span></div>
+                            <h2 class="card-title">Intervención del Ministerio Fiscal</h2>
+                            <p class="card-subtitle">Supuestos de intervención preceptiva del Fiscal: estado civil, menores, personas con discapacidad. Modalidades de intervención y expedientes destacados.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>1 precepto</strong></span><span class="counter-badge" style="margin-left:auto"><strong>7 subnodos</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Fundamento constitucional y orgánico</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Artículo 124 CE:</strong> Promoción de la acción de la justicia en defensa de la legalidad, de los derechos de los ciudadanos y del interés público.</li>
+                                <li><strong>LOFSEM:</strong> Ley Orgánica 50/1981, art. 3: funciones del Fiscal en procesos civiles.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Supuestos de intervención preceptiva</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Estado civil o condición de la persona:</strong> Nacionalidad, vecindad civil, nombre, apellidos, filiación, matrimonio, emancipación.</li>
+                                <li><strong>Interés de menores:</strong> Protección reforzada (CE art. 39); Convención sobre los Derechos del Niño (ONU, 1989) art. 3.</li>
+                                <li><strong>Personas con discapacidad:</strong> Medidas de apoyo para el ejercicio de su capacidad jurídica; reforma Ley 8/2021; Convención ONU 2006 arts. 12 y 13.</li>
+                                <li><strong>Otros casos de intervención legal:</strong> Cláusula abierta: otras leyes pueden atribuir al Fiscal la intervención.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Modalidades de intervención en el procedimiento</div><div class="inner-body"><ul class="inner-list">
+                                <li>Informe escrito en el plazo de 10 días cuando solo haya que oírle y no sea necesaria la prueba. <span class="ref-tag">Art. 17 LJV</span></li>
+                                <li>Participación activa en la comparecencia: propuesta de audiencia de afectados, prueba de oficio. <span class="ref-tag">Art. 18 LJV</span></li>
+                                <li>En expedientes de menores y personas con discapacidad, debe valorar motivadamente la exploración practicada. <span class="ref-tag">Art. 18.2.4.ª LJV</span></li>
+                                <li>Puede instar la acumulación de expedientes. <span class="ref-tag">Art. 15 LJV</span></li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Expedientes con intervención preceptiva destacada</div><div class="inner-body"><ul class="inner-list">
+                                <li>Tutela y curatela (art. 43) · Medidas de apoyo a personas con discapacidad (art. 42 bis a)) · Adopción (arts. 33 y ss.) · Dispensa del impedimento de muerte dolosa del cónyuge (art. 83).</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Consecuencias procesales de la intervención fiscal</div><div class="inner-body"><ul class="inner-list">
+                                <li>Audiencia preceptiva: el expediente debe tramitarse con audiencia del Fiscal, quien emite dictamen antes de la resolución.</li>
+                                <li>Iniciativa probatoria: el Fiscal puede proponer medios de prueba (art. 5).</li>
+                                <li>Recurribilidad: el Fiscal puede interponer los recursos que procedan.</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">CE art. 124</span><span class="ref-tag">LOFSEM art. 3</span><span class="ref-tag">CE art. 39</span><span class="ref-tag">Convención ONU 2006 arts. 12, 13</span><span class="ref-tag">Art. 17-18 LJV</span></div>
+                    </article>
+
+                    <!-- ARTÍCULO 5 -->
+                    <article class="map-card" data-cat="c4" data-text="prueba admisión medios prueba oficio interés público menores discapacidad clarificar elemento relevante ley LEC 281 283 303 429 interrogatorio testigos peritos reconocimiento comparecencia juicio verbal 15 días grabación audiovisual art 18 19 LJV principio inquisitivo">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Artículo 5</span><span class="status-tag tag-gray">Prueba</span></div>
+                            <h2 class="card-title">Prueba</h2>
+                            <p class="card-subtitle">Régimen probatorio: admisión de medios de prueba por Juez o Secretario judicial; prueba de oficio en supuestos tasados. Práctica en comparecencia.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>1 precepto</strong></span><span class="counter-badge" style="margin-left:auto"><strong>8 subnodos</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Órgano competente y naturaleza</div><div class="inner-body"><ul class="inner-list">
+                                <li>El Juez o el Secretario judicial, según quien conozca del expediente, decide sobre la admisión de prueba.</li>
+                                <li><strong>Principio de investigación:</strong> Al no existir partes enfrentadas, el órgano judicial adopta una actitud más activa.</li>
+                                <li><strong>Flexibilidad probatoria:</strong> Mismos medios que en el proceso contencioso, pero régimen más flexible.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Admisión de medios de prueba</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Medios admisibles:</strong> Interrogatorio de partes, documentos (públicos y privados), testigos, peritos, reconocimiento judicial y cualesquiera otros admitidos por la ley.</li>
+                                <li><strong>Referencia LEC:</strong> Arts. 281-283 LEC: carga de la prueba y valoración de medios probatorios.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Prueba de oficio — cuatro supuestos</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Interés público:</strong> Cuando exista interés público en la correcta averiguación de los hechos.</li>
+                                <li><strong>Menores o personas con discapacidad:</strong> Cuando se afecte a menores o personas con discapacidad con medidas de apoyo.</li>
+                                <li><strong>Clarificación de elementos relevantes:</strong> Cuando el órgano judicial lo estime conveniente.</li>
+                                <li><strong>Previsión legal expresa:</strong> Cuando expresamente lo prevea la ley.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Práctica de la prueba en la comparecencia</div><div class="inner-body"><ul class="inner-list">
+                                <li>Tramitada conforme al juicio verbal de la LEC; los interesados se citan con 15 días de antelación. <span class="ref-tag">Art. 17-18 LJV</span></li>
+                                <li>Los interesados deben acudir a la comparecencia con los medios de prueba de que intenten valerse.</li>
+                                <li>En expedientes de menores/discapacidad: diligencias adicionales en el mismo acto o en los 10 días siguientes; acta del LAJ.</li>
+                                <li>El desarrollo de la comparecencia se registra en soporte audiovisual. <span class="ref-tag">Art. 18.2.6.ª LJV</span></li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Principio inquisitivo reforzado en la decisión</div><div class="inner-body"><ul class="inner-list">
+                                <li>Cuando se afecten intereses de menores o personas con discapacidad, la decisión puede fundarse en hechos no invocados por las partes pero conocidos durante el expediente. <span class="ref-tag">Art. 19.2 LJV</span></li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Supletoriedad de la LEC</div><div class="inner-body"><ul class="inner-list">
+                                <li>Normas de admisión y práctica de prueba en el juicio verbal son de aplicación supletoria. <span class="ref-tag">Art. 8 LJV</span></li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Trámite probatorio</div><div class="inner-body"><ul class="inner-list">
+                                <li>Proposición: las partes proponen los medios de prueba que estimen pertinentes.</li>
+                                <li>Admisión: el Juez o Secretario judicial decide sobre la admisibilidad.</li>
+                                <li>Práctica: conforme a las reglas generales del proceso civil.</li>
+                                <li>Valoración: conforme a las reglas de la sana crítica.</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">LEC arts. 281-283</span><span class="ref-tag">LEC art. 303</span><span class="ref-tag">LEC art. 429</span><span class="ref-tag">Art. 17-19 LJV</span></div>
+                    </article>
+
+                    <!-- ARTÍCULO 6 -->
+                    <article class="map-card" data-cat="c5" data-text="tramitación simultánea posterior expedientes procesos idéntico objeto notario registrador archivo remisión suspensión proceso contencioso incidente LEC 43 69 litispendencia incompatibilidad prejudicialidad cosa decidida art 19 3 4 acumulación art 15 LJV">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Artículo 6</span><span class="status-tag tag-warn">Tramitación</span></div>
+                            <h2 class="card-title">Tramitación simultánea o posterior de expedientes o procesos</h2>
+                            <p class="card-subtitle">Litispendencia entre expedientes, incompatibilidad con procesos jurisdiccionales, suspensión por prejudicialidad, cosa decidida y acumulación.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>3 apartados</strong></span><span class="counter-badge" style="margin-left:auto"><strong>10 subnodos</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Litispendencia entre expedientes de JV</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Regla del prior in tempore:</strong> Proseguirá la tramitación del expediente primero iniciado; se archivan los posteriormente incoados.</li>
+                                <li><strong>Identidad de objeto:</strong> Requiere identidad de objeto (misma materia y finalidad).</li>
+                                <li><strong>Extensión a Notarios y Registradores:</strong> Aplicable también a expedientes tramitados por Notarios y Registradores.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Incompatibilidad con proceso jurisdiccional</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Prohibición:</strong> No se podrá iniciar o continuar un expediente de JV sobre objeto que esté siendo sustanciado en un proceso jurisdiccional.</li>
+                                <li><strong>Preeminencia del proceso contencioso:</strong> Si existe controversia, lo procedente es el proceso contencioso.</li>
+                                <li><strong>Archivo y remisión:</strong> Acreditada la presentación de la demanda, se archiva el expediente y se remiten actuaciones al tribunal.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Suspensión por prejudicialidad</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Concepto:</strong> Se suspende el expediente cuando exista un proceso jurisdiccional contencioso cuya resolución pudiese afectarle.</li>
+                                <li><strong>Trámite del incidente:</strong> Conforme al artículo 43 de la LEC (cuestión prejudicial civil).</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Efecto de cosa decidida y proceso posterior</div><div class="inner-body"><ul class="inner-list">
+                                <li>Firme la resolución: no puede iniciarse otro expediente sobre idéntico objeto, salvo cambio de circunstancias. <span class="ref-tag">Art. 19.3 LJV</span></li>
+                                <li>La resolución de la JV no impide un proceso contencioso posterior con el mismo objeto; la sentencia debe pronunciarse sobre su confirmación, modificación o revocación. <span class="ref-tag">Art. 19.4 LJV</span></li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Acumulación activa de expedientes</div><div class="inner-body"><ul class="inner-list">
+                                <li>El Juez o Secretario judicial puede acordar de oficio la acumulación cuando la resolución de uno pueda afectar a otro o exista riesgo de resoluciones contradictorias. <span class="ref-tag">Art. 15 LJV</span></li>
+                                <li>No procede si la resolución corresponde a sujetos distintos, ni es posible acumular expedientes de JV a procesos contenciosos.</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">LEC art. 43</span><span class="ref-tag">LEC art. 69</span><span class="ref-tag">Art. 15 LJV</span><span class="ref-tag">Art. 19 LJV</span><span class="ref-tag">Ley del Notariado</span></div>
+                    </article>
+
+                    <!-- ARTÍCULO 7 -->
+                    <article class="map-card" data-cat="c5" data-text="gastos solicitante testigos peritos quien proponga costes expediente LEC 241 242 243 244 245 246 costas vencimiento tasación consignación conciliación títulos valor caducidad art 21 LJV">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Artículo 7</span><span class="status-tag tag-gray">Gastos</span></div>
+                            <h2 class="card-title">Gastos</h2>
+                            <p class="card-subtitle">Régimen de gastos: solicitante como responsable principal; gastos de testigos y peritos a cargo de quien los proponga. Reglas especiales por expediente.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>1 precepto</strong></span><span class="counter-badge" style="margin-left:auto"><strong>5 subnodos</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Regla general: solicitante como responsable</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Concepto de gastos:</strong> Tasas judiciales, derechos arancelarios, gastos de notificaciones, citaciones, actos de comunicación y práctica de pruebas.</li>
+                                <li><strong>Naturaleza:</strong> El solicitante asume la carga económica como contraprestación del servicio de tutela judicial.</li>
+                                <li><strong>Comparación:</strong> En el proceso contencioso rige el principio de vencimiento (LEC art. 394); en JV, al no existir vencimiento, los gastos corren a cargo del solicitante.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Gastos de testigos y peritos</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Testigos:</strong> Gastos de citación, comparecencia e indemnización a cargo de quien los proponga.</li>
+                                <li><strong>Peritos:</strong> Honorarios a cargo de quien los proponga; si el perito es designado de oficio, los gastos son a cargo del expediente.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Reglas especiales en expedientes concretos</div><div class="inner-body"><ul class="inner-list">
+                                <li>Consignación (art. 99): a cargo del acreedor si se declara bien hecha; a cargo del promotor si se declara improcedente.</li>
+                                <li>Conciliación (art. 146): a cargo del que la hubiere promovido.</li>
+                                <li>Robo o extravío de títulos valor (art. 135.6): la retribución del administrador corre a cargo del solicitante.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Relación con la caducidad del expediente</div><div class="inner-body"><ul class="inner-list">
+                                <li>Se aplica a las actuaciones practicadas antes de que el Secretario judicial declare la caducidad por inactividad de seis meses. <span class="ref-tag">Art. 21 LJV</span></li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Tasación y liquidación</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Tasación de costas:</strong> El Secretario judicial procede conforme a los arts. 241-246 LEC.</li>
+                                <li><strong>Impugnación:</strong> La tasación puede ser impugnada ante el Juez.</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">LEC arts. 241-246</span><span class="ref-tag">LEC art. 394</span><span class="ref-tag">Art. 21 LJV</span></div>
+                    </article>
+
+                    <!-- ARTÍCULO 7 BIS -->
+                    <article class="map-card" data-cat="c6" data-text="ajustes discapacidad accesibilidad adaptaciones comunicación comprensión interacción lenguaje claro lectura fácil lengua signos facilitador acompañamiento Ley 8/2021 Convención ONU 9 12 13 Carta UE 21 26 CEDH 6 14 Ley 27/2007 LSE LSC Real Decreto Legislativo 1/2013 comparecencia art 18 LJV">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Artículo 7 bis</span><span class="status-tag tag-alert">Accesibilidad</span></div>
+                            <h2 class="card-title">Ajustes para personas con discapacidad</h2>
+                            <p class="card-subtitle">Garantiza la participación en condiciones de igualdad mediante adaptaciones en comunicación, comprensión e interacción. Incorporado por Ley 8/2021.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>2 apartados</strong></span><span class="counter-badge" style="margin-left:auto"><strong>11 subnodos</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Contexto normativo de la reforma</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Origen:</strong> Incorporado por la Ley 8/2021, de 2 de junio.</li>
+                                <li><strong>Modelo médico-rehabilitador (superado):</strong> La discapacidad era objeto de protección mediante incapacitación judicial.</li>
+                                <li><strong>Modelo social de derechos (vigente):</strong> La persona es sujeto de derechos; la incapacitación sustituida por sistema de apoyos.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Marco internacional</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Convención ONU 2006 (art. 9):</strong> Accesibilidad. <strong>(art. 12):</strong> Igual reconocimiento como persona ante la ley. <strong>(art. 13):</strong> Acceso efectivo a la justicia.</li>
+                                <li><strong>Carta de Derechos Fundamentales UE:</strong> Art. 21: prohibición de discriminación; Art. 26: autonomía e integración.</li>
+                                <li><strong>CEDH:</strong> Art. 6: proceso equitativo; Art. 14: prohibición de discriminación.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Obligación de adaptar — alcance (apartado 1)</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Obligación imperativa:</strong> No es facultad discrecional del órgano judicial.</li>
+                                <li><strong>Iniciativa:</strong> A petición de las partes, del Ministerio Fiscal, o de oficio por el Tribunal.</li>
+                                <li><strong>Ámbito:</strong> En todas las fases y actuaciones procesales, incluidos los actos de comunicación.</li>
+                                <li><strong>Tipos:</strong> Comunicación, comprensión e interacción con el entorno.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Derecho a entender y ser entendidas (apartado 2)</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>a) Lenguaje claro y accesible:</strong> Comunicaciones en lenguaje claro, sencillo y accesible, con lectura fácil.</li>
+                                <li><strong>b) Asistencia y apoyos comunicativos:</strong> Interpretación en lenguas de signos (LSE y LSC, Ley 27/2007); medios de apoyo a la comunicación oral.</li>
+                                <li><strong>c) Profesional experto facilitador:</strong> Psicólogo, educador social, logopeda o profesional con formación específica.</li>
+                                <li><strong>d) Acompañamiento:</strong> Derecho a estar acompañado de una persona de elección desde el primer contacto.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Proyección en el procedimiento</div><div class="inner-body"><ul class="inner-list">
+                                <li>En la comparecencia: intervención en términos accesibles y comprensibles; posibilidad de audiencia en acto separado con asistencia del MF. <span class="ref-tag">Art. 18.2.2.ª y 4.ª LJV</span></li>
+                                <li>En expedientes de provisión de medidas judiciales de apoyo (arts. 42 bis a) y ss.): garantías reforzadas.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Marco normativo complementario</div><div class="inner-body"><ul class="inner-list">
+                                <li>Real Decreto Legislativo 1/2013: Texto Refundido de la Ley General de derechos de las personas con discapacidad.</li>
+                                <li>Ley Orgánica 8/2021, de 4 de junio: protección integral a la infancia y la adolescencia.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Relación con el sistema de apoyos de la Ley 8/2021</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Guarda de hecho</strong> con facultades de representación.</li>
+                                <li><strong>Curatela:</strong> Medida de apoyo personal o patrimonial.</li>
+                                <li><strong>Defensor judicial:</strong> Para actos concretos con conflicto de intereses.</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">Ley 8/2021</span><span class="ref-tag">Convención ONU 2006 arts. 9, 12, 13</span><span class="ref-tag">CE art. 49</span><span class="ref-tag">Ley 27/2007</span><span class="ref-tag">Carta UE arts. 21, 26</span><span class="ref-tag">Art. 18 LJV</span></div>
+                    </article>
+
+                    <!-- ARTÍCULO 8 -->
+                    <article class="map-card" data-cat="c6" data-text="carácter supletorio ley enjuiciamiento civil LEC aplicación supletoria no regulado CC 4 analogía normas procedimiento prueba recursos costas cautelares jerarquía normativa artículos LEC expresamente invocados 43 521 522 381 641 661">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Artículo 8</span><span class="status-tag tag-gray">Supletoriedad</span></div>
+                            <h2 class="card-title">Carácter supletorio de la Ley de Enjuiciamiento Civil</h2>
+                            <p class="card-subtitle">La LEC se aplica supletoriamente en todo lo no regulado por la Ley 15/2015. Jerarquía normativa y artículos de la LEC expresamente invocados.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>1 precepto</strong></span><span class="counter-badge" style="margin-left:auto"><strong>6 subnodos</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Concepto de aplicación supletoria</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Carácter subsidiario:</strong> La LEC solo se aplica cuando la Ley 15/2015 no contiene regulación específica.</li>
+                                <li><strong>Compatibilidad:</strong> Las disposiciones de la LEC deben ser compatibles con la naturaleza de la JV.</li>
+                                <li><strong>Fundamento CC:</strong> Artículo 4.1 CC: principio de analogía; Art. 4.3 CC: normas procesales en leyes sustantivas.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Jerarquía normativa aplicable a cada expediente</div><div class="inner-body"><ul class="inner-list">
+                                <li>1.º Normas específicas del expediente (Títulos II–IX de la LJV).</li>
+                                <li>2.º Normas generales del Título I de la LJV (arts. 13–22). <span class="ref-tag">Art. 13 LJV</span></li>
+                                <li>3.º LEC como norma de cierre supletoria.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Artículos de la LEC expresamente invocados en la LJV</div><div class="inner-body"><ul class="inner-list">
+                                <li><span class="ref-tag">Art. 43 LEC</span> Prejudicialidad civil → suspensión del expediente (art. 6.3 LJV).</li>
+                                <li><span class="ref-tag">Arts. 521–522 LEC</span> Ejecución de resoluciones no dinerarias → cumplimiento (art. 22 LJV).</li>
+                                <li><span class="ref-tag">Art. 381 LEC</span> Respuestas escritas de personas jurídicas → comparecencia (art. 80 quater LJV).</li>
+                                <li><span class="ref-tag">Art. 641 LEC</span> Venta por persona especializada → subasta voluntaria (art. 110.3 LJV).</li>
+                                <li><span class="ref-tag">Art. 661 LEC</span> Derechos de arrendatarios → subasta voluntaria (art. 110.2 LJV).</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Ámbito de aplicación supletoria</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Normas generales:</strong> Arts. 1-58 LEC (jurisdicción y competencia); arts. 133-147 (actos de comunicación).</li>
+                                <li><strong>Normas sobre prueba:</strong> Arts. 281-352 LEC.</li>
+                                <li><strong>Normas sobre resolución y recursos:</strong> Arts. 206-223, 451-459 LEC.</li>
+                                <li><strong>Normas sobre costas:</strong> Arts. 241-246 LEC.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Limitaciones de la supletoriedad</div><div class="inner-body"><ul class="inner-list">
+                                <li><strong>Normas incompatibles:</strong> No resultan aplicables normas propias del proceso contencioso (demanda, contestación, reconvención, vista oral, sentencia).</li>
+                                <li><strong>Normas expresamente excluidas:</strong> Prórroga de competencia (art. 2.2 Ley 15/2015).</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">LEC (aplicación supletoria)</span><span class="ref-tag">CC art. 4.1</span><span class="ref-tag">CC art. 4.3</span><span class="ref-tag">Art. 13 LJV</span><span class="ref-tag">Art. 22 LJV</span></div>
+                    </article>
+
+                    <div class="no-results" id="no-results">No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: ECOSISTEMA NORMATIVO TÍTULO I (arts. 13-22) -->
+        <div class="map-section">
+            <div class="section-heading" data-target="sec-ecosistema">
+                <span class="section-heading-text">Ecosistema normativo: Título I (arts. 13–22) — Disposiciones comunes de tramitación</span>
+                <span class="section-heading-count">5 bloques · 10 artículos procesales</span>
+                <button class="section-toggle-btn">&#9654;</button>
+            </div>
+            <hr class="section-divider">
+            <div class="section-body collapsed" id="sec-ecosistema">
+                <div class="card-grid">
+
+                    <article class="map-card" data-cat="c7" data-text="art 13 ámbito aplicación disposiciones comunes expedientes JV complementa artículo 1 8">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Art. 13</span><span class="status-tag tag-ok">General</span></div>
+                            <h2 class="card-title">Ámbito de aplicación de las disposiciones comunes</h2>
+                            <p class="card-subtitle">Aplicable a todos los expedientes de JV en lo que no se opongan a las normas específicas. Complementa el artículo 1 y el artículo 8.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>1 precepto</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Regla de aplicación</div><div class="inner-body"><ul class="inner-list">
+                                <li>Aplicable a todos los expedientes de JV en lo que no se opongan a las normas que específicamente regulen las actuaciones de que se trate.</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">Art. 1 LJV</span><span class="ref-tag">Art. 8 LJV</span></div>
+                    </article>
+
+                    <article class="map-card" data-cat="c7" data-text="art 14 iniciación expediente oficio instancia ministerio fiscal solicitud persona legitimada contenido solicitud correo electrónico formulario normalizado sede electrónica">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Art. 14</span><span class="status-tag tag-ok">Iniciación</span></div>
+                            <h2 class="card-title">Iniciación del expediente</h2>
+                            <p class="card-subtitle">Formas de iniciación, contenido de la solicitud y formulario normalizado cuando no es preceptiva la postulación.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>3 apartados</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Formas de iniciación</div><div class="inner-body"><ul class="inner-list">
+                                <li>De oficio · A instancia del Ministerio Fiscal · Por solicitud de persona legitimada.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Contenido de la solicitud</div><div class="inner-body"><ul class="inner-list">
+                                <li>Datos e identificación del solicitante · Domicilio a efectos de notificaciones.</li>
+                                <li>Correo electrónico: obligatorio para quienes estén obligados a relacionarse electrónicamente con la Administración de Justicia.</li>
+                                <li>Exposición clara y precisa de lo que se pide y de los hechos y fundamentos jurídicos.</li>
+                                <li>Documentos y dictámenes que el solicitante considere de interés.</li>
+                                <li>Identificación de personas interesadas y domicilio o datos para su citación.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Formulario normalizado</div><div class="inner-body"><ul class="inner-list">
+                                <li>Disponible en la Oficina judicial o sede electrónica; no es necesario concretar la fundamentación jurídica.</li>
+                                <li>Presentación por cualquier medio, incluidos los electrónicos.</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">Art. 3 LJV</span><span class="ref-tag">Art. 14.3 LJV</span></div>
+                    </article>
+
+                    <article class="map-card" data-cat="c7" data-text="art 15 acumulación expedientes resolución afecte conexión resoluciones contradictorias oficio instancia interesado ministerio fiscal mismo órgano distintos órganos tribunal superior">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Art. 15</span><span class="status-tag tag-warn">Acumulación</span></div>
+                            <h2 class="card-title">Acumulación de expedientes</h2>
+                            <p class="card-subtitle">Presupuestos, procedimiento y especialidades de la acumulación de expedientes de JV.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>1 precepto</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Presupuestos de la acumulación</div><div class="inner-body"><ul class="inner-list">
+                                <li>La resolución de uno pueda afectar a otro, o exista conexión que pueda dar lugar a resoluciones contradictorias.</li>
+                                <li>Se acuerda de oficio, a instancia del interesado o del Ministerio Fiscal.</li>
+                                <li>No procede si la resolución corresponde a sujetos distintos.</li>
+                                <li>Los expedientes de JV no son acumulables a procesos contenciosos.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Especialidades procedimentales</div><div class="inner-body"><ul class="inner-list">
+                                <li>Mismo órgano: escrito antes de la comparecencia señalada en primer lugar.</li>
+                                <li>Distintos órganos: escrito ante el órgano que se estime competente antes de la comparecencia; discrepancia resuelta por el Tribunal superior común.</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">Art. 6 LJV</span><span class="ref-tag">Art. 4 LJV</span></div>
+                    </article>
+
+                    <article class="map-card" data-cat="c7" data-text="arts 16 17 18 admisión control competencia comparecencia juicio verbal 30 días citación 15 días oposición 5 días incomparecencia archivo desistimiento grabación audiovisual menores discapacidad acto separado">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Arts. 16–18</span><span class="status-tag tag-info">Procedimiento</span></div>
+                            <h2 class="card-title">Admisión, control de competencia y comparecencia</h2>
+                            <p class="card-subtitle">Control de oficio, admisión, citación, oposición y desarrollo de la comparecencia conforme al juicio verbal.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>3 artículos</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 16 — Control de oficio de competencia y defectos</div><div class="inner-body"><ul class="inner-list">
+                                <li>Examen de competencia objetiva y territorial al presentarse la solicitud.</li>
+                                <li>Falta de competencia objetiva: archivo o dación de cuenta al Juez, previa audiencia del MF y del solicitante.</li>
+                                <li>Falta de competencia territorial: remisión al órgano competente.</li>
+                                <li>Defectos u omisiones: plazo de 5 días para subsanar; si no, se tiene por no presentada la solicitud.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 17 — Admisión y citación</div><div class="inner-body"><ul class="inner-list">
+                                <li>El Secretario judicial admite la solicitud o la archiva / da cuenta al Juez.</li>
+                                <li>Se convoca comparecencia cuando: haya otros interesados que oír · haya prueba a practicar · el órgano lo estime necesario.</li>
+                                <li>Si solo hay que oír al MF sin prueba: informe escrito en 10 días.</li>
+                                <li>Citación con 15 días de antelación mínimo.</li>
+                                <li>Oposición: formulada en los 5 días siguientes a la citación; traslado inmediato al solicitante; no suspende el expediente salvo ley en contrario; exige Abogado y Procurador.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 18 — Comparecencia</div><div class="inner-body"><ul class="inner-list">
+                                <li>Celebración dentro de los 30 días siguientes a la admisión.</li>
+                                <li>Tramitada conforme al juicio verbal de la LEC.</li>
+                                <li>Incomparecencia del solicitante: archivo del expediente por desistimiento.</li>
+                                <li>Incomparecencia de otros citados: continúa el expediente sin más citaciones.</li>
+                                <li>Cuestiones procesales: se resuelven oralmente en el acto.</li>
+                                <li>Expedientes de menores/discapacidad: audiencia en acto separado posible, con asistencia del MF; acta del LAJ.</li>
+                                <li>Grabación audiovisual del desarrollo de la comparecencia.</li>
+                                <li>Conclusiones orales de los interesados al final del acto.</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">Art. 2 LJV</span><span class="ref-tag">Art. 3 LJV</span><span class="ref-tag">Art. 5 LJV</span><span class="ref-tag">LEC juicio verbal</span></div>
+                    </article>
+
+                    <article class="map-card" data-cat="c7" data-text="arts 19 20 21 22 decisión auto decreto 5 días cosa decidida recursos apelación revisión reposición caducidad 6 meses ejecución arts 521 522 LEC registro civil propiedad mercantil mandamiento calificación registrador">
+                        <div class="card-top">
+                            <div class="card-meta"><span class="art-badge">Arts. 19–22</span><span class="status-tag tag-gray">Resolución</span></div>
+                            <h2 class="card-title">Decisión, recursos, caducidad y ejecución</h2>
+                            <p class="card-subtitle">Forma de la decisión, cosa decidida, régimen de recursos, caducidad del expediente y cumplimiento/ejecución de la resolución.</p>
+                        </div>
+                        <div class="card-counters"><span class="counter-badge"><strong>4 artículos</strong></span></div>
+                        <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+                        <div class="card-body">
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 19 — Decisión del expediente</div><div class="inner-body"><ul class="inner-list">
+                                <li>Auto (Juez) o decreto (Secretario judicial) en el plazo de 5 días.</li>
+                                <li>Principio inquisitivo reforzado cuando se afecten intereses de menores o personas con discapacidad.</li>
+                                <li>Cosa decidida: firme la resolución, no puede iniciarse otro expediente sobre idéntico objeto salvo cambio de circunstancias; vincula expedientes conexos posteriores, incluyendo los tramitados por Notarios y Registradores.</li>
+                                <li>La resolución de JV no impide el proceso contencioso posterior; la sentencia debe pronunciarse sobre su confirmación, modificación o revocación.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 20 — Recursos</div><div class="inner-body"><ul class="inner-list">
+                                <li>Resoluciones interlocutorias: recurso de reposición (LEC); en comparecencia, se resuelve oralmente en el acto.</li>
+                                <li>Resoluciones definitivas del Juez: recurso de apelación (LEC); sin efecto suspensivo salvo ley en contrario.</li>
+                                <li>Resoluciones definitivas del Secretario judicial: recurso de revisión ante el Juez (LEC).</li>
+                                <li>En todo caso, Abogado y Procurador son preceptivos para interponer los recursos.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 21 — Caducidad del expediente</div><div class="inner-body"><ul class="inner-list">
+                                <li>Plazo: 6 meses de inactividad de los interesados desde la última notificación, pese al impulso de oficio.</li>
+                                <li>La declara el Secretario judicial mediante decreto; solo cabe recurso de revisión.</li>
+                            </ul></div></div>
+                            <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 22 — Cumplimiento y ejecución</div><div class="inner-body"><ul class="inner-list">
+                                <li>Ejecución conforme a los <span class="ref-tag">Arts. 521–522 LEC</span>; puede instarse de inmediato.</li>
+                                <li>Hechos inscribibles en el Registro Civil: se expide testimonio de la resolución.</li>
+                                <li>Hechos inscribibles en el Registro de la Propiedad, Mercantil u otros: mandamiento expedido a instancia de parte; remisión por medios electrónicos.</li>
+                                <li>Calificación del Registrador: limitada a la competencia del órgano, congruencia del mandato, formalidades extrínsecas y obstáculos registrales.</li>
+                            </ul></div></div>
+                        </div>
+                        <div class="card-refs"><span class="ref-tag">Art. 2 LJV</span><span class="ref-tag">Art. 7 LJV</span><span class="ref-tag">LEC arts. 521-522</span><span class="ref-tag">LEC recursos</span></div>
+                    </article>
+
+                    <div class="no-results" id="no-results-eco">No se encontraron artículos para «<span id="no-results-term-eco"></span>». Prueba otra búsqueda o categoría.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CRONOGRAMA DE PLAZOS -->
+        <div class="map-section">
+            <div class="section-heading" data-target="sec-timeline">
+                <span class="section-heading-text">Cronograma de plazos procesales</span>
+                <span class="section-heading-count">10 plazos de referencia (LEC y LJV)</span>
+                <button class="section-toggle-btn">&#9654;</button>
+            </div>
+            <hr class="section-divider">
+            <div class="section-body collapsed" id="sec-timeline">
+                <div class="table-wrap">
+                    <table class="timeline-table">
+                        <thead><tr>
+                            <th style="width:45%">Acto o trámite procesal</th>
+                            <th>Plazo</th>
+                            <th>Fundamento normativo</th>
+                        </tr></thead>
+                        <tbody>
+                            <tr><td class="td-tramite">Resolución del expediente (auto o decreto)</td><td><span class="plazo-badge plazo-days">5 días</span></td><td>Art. 19 LJV</td></tr>
+                            <tr><td class="td-tramite">Subsanación de defectos en la solicitud</td><td><span class="plazo-badge plazo-days">5 días</span></td><td>Art. 16 LJV</td></tr>
+                            <tr><td class="td-tramite">Formulación de oposición</td><td><span class="plazo-badge plazo-days">5 días desde citación</span></td><td>Art. 17 LJV</td></tr>
+                            <tr><td class="td-tramite">Informe escrito del Ministerio Fiscal</td><td><span class="plazo-badge plazo-days">10 días</span></td><td>Art. 17 LJV</td></tr>
+                            <tr><td class="td-tramite">Citación para comparecencia (antelación mínima)</td><td><span class="plazo-badge plazo-days">15 días</span></td><td>Art. 17 LJV</td></tr>
+                            <tr><td class="td-tramite">Celebración de la comparecencia</td><td><span class="plazo-badge plazo-days">Dentro de 30 días desde admisión</span></td><td>Art. 18 LJV</td></tr>
+                            <tr><td class="td-tramite">Recurso de revisión contra decreto del Secretario judicial</td><td><span class="plazo-badge plazo-days">5 días</span></td><td>LEC art. 454 bis</td></tr>
+                            <tr><td class="td-tramite">Recurso de apelación contra auto del Juez</td><td><span class="plazo-badge plazo-days">5 días</span></td><td>LEC art. 457</td></tr>
+                            <tr><td class="td-tramite">Caducidad del expediente por inactividad</td><td><span class="plazo-badge plazo-months">6 meses</span></td><td>Art. 21 LJV</td></tr>
+                            <tr><td class="td-tramite">Suspensión por prejudicialidad civil</td><td><span class="plazo-badge plazo-months">Hasta resolución del proceso contencioso</span></td><td>LEC art. 43</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAPA DE PARTICIPANTES -->
+        <div class="map-section">
+            <div class="section-heading" data-target="sec-actors">
+                <span class="section-heading-text">Mapa de participantes y actores</span>
+                <span class="section-heading-count">7 categorías · 25+ actores</span>
+                <button class="section-toggle-btn">&#9654;</button>
+            </div>
+            <hr class="section-divider">
+            <div class="section-body collapsed" id="sec-actors">
+                <div class="participants-grid">
+                    <div class="participant-col"><div class="participant-col-head phead-c1">Órganos Jurisdiccionales</div><ul>
+                        <li>Juzgados de Primera Instancia <span class="participant-note">(competencia objetiva, art. 2.1; LOPJ 45, 82)</span></li>
+                        <li>Juzgados de lo Mercantil <span class="participant-note">(materia mercantil, art. 2.1; LOPJ 86 ter)</span></li>
+                        <li>Audiencia Provincial <span class="participant-note">(recursos de apelación, LEC 457)</span></li>
+                        <li>Tribunal superior común <span class="participant-note">(discrepancia en acumulación, art. 15)</span></li>
+                    </ul></div>
+                    <div class="participant-col"><div class="participant-col-head phead-c2">Impulso y Resolución</div><ul>
+                        <li>Secretario judicial (LAJ) <span class="participant-note">(impulso, dirección, resolución residual; LOPJ 451)</span></li>
+                        <li>Juez <span class="participant-note">(decisión fondo supuestos reservados, art. 2.3)</span></li>
+                        <li>Ministerio Fiscal <span class="participant-note">(intervención preceptiva; CE 124; LOFSEM 3)</span></li>
+                    </ul></div>
+                    <div class="participant-col"><div class="participant-col-head phead-c3">Partes y Legitimados</div><ul>
+                        <li>Solicitante <span class="participant-note">(titular derechos; asume gastos, arts. 3.1, 7)</span></li>
+                        <li>Interesados <span class="participant-note">(intereses legítimos, art. 3.1)</span></li>
+                        <li>Entidades públicas <span class="participant-note">(legitimación por ministerio de la ley)</span></li>
+                        <li>Ministerio Fiscal <span class="participant-note">(iniciativa de oficio, arts. 3.1, 4)</span></li>
+                    </ul></div>
+                    <div class="participant-col"><div class="participant-col-head phead-c4">Profesionales</div><ul>
+                        <li>Abogado / Letrado <span class="participant-note">(defensa preceptiva/voluntaria; art. 3.2; LEC 23)</span></li>
+                        <li>Procurador <span class="participant-note">(representación preceptiva/voluntaria; art. 3.2; LEC 31)</span></li>
+                        <li>Testigos <span class="participant-note">(medio de prueba; gastos a cargo de quien los propone)</span></li>
+                        <li>Peritos <span class="participant-note">(medio de prueba; honorarios a cargo de quien los propone)</span></li>
+                        <li>Profesional experto facilitador <span class="participant-note">(adaptación discapacidad; art. 7 bis.2.c)</span></li>
+                        <li>Intérprete de lengua de signos <span class="participant-note">(LSE/LSC; Ley 27/2007; art. 7 bis.2.b)</span></li>
+                    </ul></div>
+                    <div class="participant-col"><div class="participant-col-head phead-c5">Competencia Concurrente</div><ul>
+                        <li>Notarios <span class="participant-note">(competencia concurrente; art. 6.1; Ley del Notariado)</span></li>
+                        <li>Registradores <span class="participant-note">(competencia concurrente; art. 6.1; Ley Hipotecaria)</span></li>
+                    </ul></div>
+                    <div class="participant-col"><div class="participant-col-head phead-c6">Personas Protegidas</div><ul>
+                        <li>Menores <span class="participant-note">(protección reforzada CE 39; arts. 2.3, 4, 5)</span></li>
+                        <li>Personas con discapacidad <span class="participant-note">(sistema de apoyos; arts. 2.3, 4, 5, 7 bis; Ley 8/2021)</span></li>
+                        <li>Persona de apoyo <span class="participant-note">(curador, defensor judicial, guarda de hecho; art. 7 bis.2.a)</span></li>
+                        <li>Persona de acompañamiento <span class="participant-note">(de elección; desde primer contacto; art. 7 bis.2.d)</span></li>
+                    </ul></div>
+                    <div class="participant-col"><div class="participant-col-head phead-c7">Órganos de Ejecución</div><ul>
+                        <li>Registro Civil <span class="participant-note">(inscripción de resoluciones; art. 22 LJV)</span></li>
+                        <li>Registro de la Propiedad <span class="participant-note">(mandamiento; calificación registral; art. 22 LJV)</span></li>
+                        <li>Registro Mercantil <span class="participant-note">(mandamiento por medios electrónicos; art. 22 LJV)</span></li>
+                    </ul></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ECOSISTEMA NORMATIVO: 15 CUERPOS -->
+        <div class="map-section">
+            <div class="section-heading" data-target="sec-norms">
+                <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+                <span class="section-heading-count">15 cuerpos normativos</span>
+                <button class="section-toggle-btn">&#9654;</button>
+            </div>
+            <hr class="section-divider">
+            <div class="section-body collapsed" id="sec-norms">
+                <div class="norm-grid">
+                    <div class="norm-card">
+                        <div class="norm-law">Ley 15/2015, de la Jurisdicción Voluntaria</div>
+                        <div class="norm-title">Título Preliminar y Títulos sucesivos</div>
+                        <div class="norm-arts"><strong>Arts. 1-8</strong> — Disposiciones generales de aplicación transversal. <strong>Arts. 13-22</strong> — Disposiciones comunes de tramitación. <strong>Títulos II-IX</strong> — Regulación específica de cada tipo de expediente.</div>
+                        <span class="norm-tag tag-info">Norma principal</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">Ley 1/2000, de Enjuiciamiento Civil (LEC)</div>
+                        <div class="norm-title">Aplicación supletoria (art. 8) y conexiones procesales</div>
+                        <div class="norm-arts"><strong>Art. 43</strong> — Cuestión prejudicial. <strong>Art. 69</strong> — Acumulación de acciones. <strong>Arts. 133-147</strong> — Actos de comunicación. <strong>Arts. 241-246</strong> — Costas. <strong>Arts. 281-352</strong> — Prueba. <strong>Arts. 451-459</strong> — Apelación. <strong>Arts. 521-522</strong> — Ejecución no dineraria.</div>
+                        <span class="norm-tag tag-ok">Supletoriedad (art. 8)</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">Constitución Española de 1978</div>
+                        <div class="norm-title">Fundamentos constitucionales</div>
+                        <div class="norm-arts"><strong>Art. 24</strong> — Tutela judicial efectiva. <strong>Art. 39</strong> — Protección de menores. <strong>Art. 49</strong> — Protección de personas con discapacidad. <strong>Art. 117</strong> — Unidad jurisdiccional. <strong>Art. 124</strong> — Ministerio Fiscal.</div>
+                        <span class="norm-tag tag-alert">Fundamento constitucional</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">LOPJ — Ley Orgánica 6/1985</div>
+                        <div class="norm-title">Organización judicial y competencia</div>
+                        <div class="norm-arts"><strong>Art. 45</strong> — Juzgados de Primera Instancia. <strong>Art. 82</strong> — Competencia civil. <strong>Art. 86 ter</strong> — Juzgados de lo Mercantil. <strong>Art. 451</strong> — Funciones de Secretarios judiciales (LAJ).</div>
+                        <span class="norm-tag tag-warn">Organización judicial</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">LOFSEM — Estatuto Orgánico del Ministerio Fiscal</div>
+                        <div class="norm-title">Funciones del Ministerio Fiscal</div>
+                        <div class="norm-arts"><strong>Art. 3</strong> — Funciones del Fiscal en procesos civiles.</div>
+                        <span class="norm-tag tag-info">Intervención fiscal</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">Ley 8/2021, de 2 de junio</div>
+                        <div class="norm-title">Reforma para apoyo a personas con discapacidad</div>
+                        <div class="norm-arts">Incorporó el <strong>art. 7 bis</strong>. Reformó el Código Civil sustituyendo el régimen de incapacitación por el sistema de apoyos.</div>
+                        <span class="norm-tag tag-warn">Reforma art. 7 bis</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">Código Civil</div>
+                        <div class="norm-title">Estado civil, capacidad jurídica y analogía</div>
+                        <div class="norm-arts"><strong>Art. 4.1</strong> — Principio de analogía. <strong>Arts. 215 y ss.</strong> — Capacidad jurídica y sistema de apoyos.</div>
+                        <span class="norm-tag tag-gray">Derecho sustantivo</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">Convención ONU sobre Discapacidad (2006)</div>
+                        <div class="norm-title">Accesibilidad y acceso a la justicia</div>
+                        <div class="norm-arts"><strong>Art. 9</strong> — Accesibilidad. <strong>Art. 12</strong> — Igual reconocimiento ante la ley. <strong>Art. 13</strong> — Acceso efectivo a la justicia.</div>
+                        <span class="norm-tag tag-info">Derecho internacional</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">Convención sobre los Derechos del Niño (ONU, 1989)</div>
+                        <div class="norm-title">Protección de menores</div>
+                        <div class="norm-arts"><strong>Art. 3</strong> — Interés superior del niño.</div>
+                        <span class="norm-tag tag-info">Derecho internacional</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">Ley 27/2007, de 23 de octubre</div>
+                        <div class="norm-title">Lenguas de signos españolas</div>
+                        <div class="norm-arts">Reconoce la <strong>LSE</strong> y la <strong>LSC</strong>. Regula medios de apoyo a la comunicación oral.</div>
+                        <span class="norm-tag tag-info">Accesibilidad comunicativa</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">Carta de los Derechos Fundamentales de la UE</div>
+                        <div class="norm-title">Prohibición de discriminación</div>
+                        <div class="norm-arts"><strong>Art. 21</strong> — No discriminación. <strong>Art. 26</strong> — Autonomía e integración.</div>
+                        <span class="norm-tag tag-info">Derecho UE</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">CEDH — Convenio Europeo de Derechos Humanos</div>
+                        <div class="norm-title">Proceso equitativo</div>
+                        <div class="norm-arts"><strong>Art. 6</strong> — Proceso equitativo. <strong>Art. 14</strong> — Prohibición de discriminación.</div>
+                        <span class="norm-tag tag-info">Derecho europeo</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">Ley del Notariado (1862)</div>
+                        <div class="norm-title">Competencia notarial en JV</div>
+                        <div class="norm-arts">Competencia concurrente con el Secretario judicial (art. 6.1).</div>
+                        <span class="norm-tag tag-warn">Competencia concurrente</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">Ley Hipotecaria y Reglamento Hipotecario</div>
+                        <div class="norm-title">Competencia registral</div>
+                        <div class="norm-arts">Competencia concurrente en determinadas materias (art. 6.1).</div>
+                        <span class="norm-tag tag-warn">Competencia concurrente</span>
+                    </div>
+                    <div class="norm-card">
+                        <div class="norm-law">Reglamento (UE) 2019/1111 — Bruselas II ter</div>
+                        <div class="norm-title">Competencia en materia matrimonial</div>
+                        <div class="norm-arts">Implicaciones en expedientes de JV sobre responsabilidad parental y desplazamientos de menores.</div>
+                        <span class="norm-tag tag-info">Derecho UE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="legend-footer">
+        <div class="legend-inner">
+            <div class="legend-title">Leyenda de colores por categoría</div>
+            <div class="legend-grid">
+                <div class="legend-item"><div class="legend-swatch" style="background:var(--c1)"></div>Objeto y ámbito de aplicación</div>
+                <div class="legend-divider"></div>
+                <div class="legend-item"><div class="legend-swatch" style="background:var(--c2)"></div>Competencia</div>
+                <div class="legend-divider"></div>
+                <div class="legend-item"><div class="legend-swatch" style="background:var(--c3)"></div>Legitimación y postulación</div>
+                <div class="legend-divider"></div>
+                <div class="legend-item"><div class="legend-swatch" style="background:var(--c4)"></div>Ministerio Fiscal y prueba</div>
+                <div class="legend-divider"></div>
+                <div class="legend-item"><div class="legend-swatch" style="background:var(--c5)"></div>Tramitación y gastos</div>
+                <div class="legend-divider"></div>
+                <div class="legend-item"><div class="legend-swatch" style="background:var(--c6)"></div>Discapacidad y supletoriedad</div>
+                <div class="legend-divider"></div>
+                <div class="legend-item"><div class="legend-swatch" style="background:var(--c7)"></div>Disposiciones comunes (arts. 13-22)</div>
+            </div>
+            <div class="legend-copy">Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título Preliminar · Arts. 1-8 y 13-22 · Versión fusionada completa · Generado como plantilla HTML reutilizable</div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            'use strict';
+            var pills = document.querySelectorAll('.pill');
+            var allCards = document.querySelectorAll('.map-card');
+            var noResults1 = document.getElementById('no-results');
+            var noResults2 = document.getElementById('no-results-eco');
+            var activeCat = 'all';
+            var searchTerm = '';
+
+            function updateVisibility() {
+                var visible1 = 0;
+                var visible2 = 0;
+                var inSecArticles = false;
+                var inSecEco = false;
+
+                allCards.forEach(function(c) {
+                    var catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+                    var text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+                    var termMatch = !searchTerm || text.includes(searchTerm);
+                    var show = catMatch && termMatch;
+                    c.classList.toggle('hidden', !show);
+
+                    var parentSection = c.closest('#sec-articles');
+                    var parentEco = c.closest('#sec-ecosistema');
+
+                    if (show && parentSection) visible1++;
+                    if (show && parentEco) visible2++;
+                    if (parentSection) inSecArticles = true;
+                    if (parentEco) inSecEco = true;
+                });
+
+                if (noResults1) {
+                    var grid1 = document.querySelector('#sec-articles .card-grid');
+                    var hasVisibleCards1 = grid1 ? grid1.querySelectorAll('.map-card:not(.hidden)').length > 0 : true;
+                    noResults1.style.display = (activeCat === 'all' || activeCat === 'c1' || activeCat === 'c2' || activeCat === 'c3' ||
+                        activeCat === 'c4' || activeCat === 'c5' || activeCat === 'c6') && !hasVisibleCards1 && searchTerm ? 'block' : 'none';
+                    document.getElementById('no-results-term').textContent = searchTerm;
+                }
+                if (noResults2) {
+                    var grid2 = document.querySelector('#sec-ecosistema .card-grid');
+                    var hasVisibleCards2 = grid2 ? grid2.querySelectorAll('.map-card:not(.hidden)').length > 0 : true;
+                    noResults2.style.display = (activeCat === 'all' || activeCat === 'c7') && !hasVisibleCards2 && searchTerm ? 'block' :
+                        'none';
+                    if (document.getElementById('no-results-term-eco')) document.getElementById('no-results-term-eco').textContent =
+                        searchTerm;
+                }
+            }
+
+            pills.forEach(function(p) {
+                p.addEventListener("click", function() {
+                    pills.forEach(function(x) { x.classList.remove('active'); });
+                    p.classList.add('active');
+                    activeCat = p.dataset.cat;
+                    updateVisibility();
+                });
+            });
+
+            document.getElementById('search').addEventListener('input', function(e) {
+                searchTerm = e.target.value.toLowerCase().trim();
+                updateVisibility();
+            });
+
+            window.toggleCard = function(btn) {
+                var card = btn.closest('.map-card');
+                var isExp = card.classList.toggle('expanded');
+                var span = btn.querySelector('span:first-child');
+                if (span) { span.textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo'; }
+            };
+
+            document.getElementById('btn-expand-all').addEventListener('click', function() {
+                allCards.forEach(function(c) {
+                    if (!c.classList.contains('hidden')) {
+                        c.classList.add('expanded');
+                        var b = c.querySelector('.card-toggle-btn span:first-child');
+                        if (b) b.textContent = 'Ocultar contenido';
+                    }
+                });
+            });
+
+            document.getElementById('btn-collapse-all').addEventListener('click', function() {
+                allCards.forEach(function(c) {
+                    c.classList.remove('expanded');
+                    var b = c.querySelector('.card-toggle-btn span:first-child');
+                    if (b) b.textContent = 'Ver contenido completo';
+                });
+            });
+
+            document.querySelectorAll('.section-heading').forEach(function(h) {
+                h.addEventListener("click", function() {
+                    var target = document.getElementById(h.dataset.target);
+                    if (!target) return;
+                    var collapsed = target.classList.toggle('collapsed');
+                    var b = h.querySelector('.section-toggle-btn');
+                    if (b) b.textContent = collapsed ? '▶' : '▼';
+                });
+            });
+
+            var ZOOM_STEP = 10,
+                ZOOM_MIN = 50,
+                ZOOM_MAX = 200;
+            var zoom = 100;
+            var zoomTarget = document.querySelector('.page-main');
+            var zoomLabel = document.getElementById('zoom-label');
+
+            function applyZoom() {
+                zoomTarget.style.zoom = zoom / 100;
+                zoomLabel.textContent = zoom + '%';
+                document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+                document.getElementById('btn-zoom-in').disabled = zoom >= ZOOM_MAX;
+            }
+
+            function zoomIn() { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP;
+                    applyZoom(); } }
+
+            function zoomOut() { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP;
+                    applyZoom(); } }
+
+            function zoomReset() { zoom = 100;
+                applyZoom(); }
+
+            document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+            document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+            document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+            document.addEventListener("keydown", function(e) {
+                if (e.target.tagName === 'INPUT') return;
+                if (!e.ctrlKey && !e.metaKey) return;
+                if (e.key === '=' || e.key === '+') { e.preventDefault();
+                    zoomIn(); }
+                if (e.key === '-') { e.preventDefault();
+                    zoomOut(); }
+                if (e.key === '0') { e.preventDefault();
+                    zoomReset(); }
+                if (e.key === '/') { e.preventDefault();
+                    document.getElementById('search').focus(); }
+            });
+
+            applyZoom();
+        })();
+    </script>
+</body>
+</html>

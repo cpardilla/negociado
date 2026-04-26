@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diligencias Preliminares — LEC Art. 256-263</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2;--surface:#ffffff;--surface-2:#f2f1ed;
+  --border:rgba(15,23,42,.08);--border-md:rgba(15,23,42,.14);
+  --text-1:#0f172a;--text-2:#475569;--text-3:#94a3b8;
+  --ink:#0f172a;--header-bg:#0f172a;--header-text:#f8f5ed;--accent:#c8a96e;
+  --c1:#0e7490;--c1bg:#ecfeff;--c1bd:#a5f3fc;
+  --c2:#b45309;--c2bg:#fffbeb;--c2bd:#fde68a;
+  --c3:#047857;--c3bg:#ecfdf5;--c3bd:#a7f3d0;
+  --c4:#6d28d9;--c4bg:#f5f3ff;--c4bd:#ddd6fe;
+  --c5:#be123c;--c5bg:#fff1f2;--c5bd:#fecdd3;
+  --c6:#475569;--c6bg:#f8fafc;--c6bd:#cbd5e1;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:14px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:0 4px 12px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);
+  --font-display:'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-ui:'Outfit',system-ui,sans-serif;
+  --transition:200ms ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-ui);background:var(--bg);color:var(--text-1);line-height:1.6;min-height:100vh;font-size:15px}
+.site-header{background:var(--header-bg);color:var(--header-text);padding:2rem 1.5rem 1.75rem}
+.header-inner{max-width:1200px;margin:0 auto}
+.header-breadcrumb{font-size:12px;color:rgba(248,245,237,.45);margin-bottom:.5rem;letter-spacing:.03em}
+.header-title{font-family:var(--font-display);font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;line-height:1.15;margin-bottom:.5rem;letter-spacing:-.02em}
+.header-subtitle{font-size:14px;color:rgba(248,245,237,.65);margin-bottom:1rem;line-height:1.5}
+.header-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.header-tag{background:rgba(200,169,110,.15);border:1px solid rgba(200,169,110,.3);color:var(--accent);border-radius:20px;padding:3px 11px;font-size:11.5px;font-weight:500;white-space:nowrap}
+.header-actions{margin-left:auto}
+.btn-ghost{background:rgba(248,245,237,.07);border:1px solid rgba(248,245,237,.15);color:rgba(248,245,237,.7);border-radius:var(--radius-sm);padding:6px 13px;font-size:12px;font-weight:500;cursor:pointer;font-family:var(--font-ui);transition:var(--transition)}
+.btn-ghost:hover{background:rgba(248,245,237,.13);color:var(--header-text)}
+.stats-bar{background:var(--surface);border-bottom:1px solid var(--border)}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:1rem 1.5rem;border-right:1px solid var(--border);text-align:center}
+.stat-item:last-child{border-right:none}
+.stat-value{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--text-1);line-height:1.1}
+.stat-label{font-size:12px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;margin-top:3px}
+@media(max-width:640px){.stats-inner{grid-template-columns:repeat(2,1fr)}.stat-item:nth-child(2){border-right:none}.stat-item:nth-child(3){border-right:1px solid var(--border)}}
+.controls-bar{position:sticky;top:0;z-index:100;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,.04);padding:.55rem 1rem}
+.controls-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:nowrap;align-items:center;gap:.5rem}
+.search-wrap{flex:0 0 220px;min-width:160px;position:relative}
+.search-input{width:100%;padding:6px 10px 6px 30px;border:1.5px solid var(--border-md);border-radius:var(--radius-sm);font-size:13px;font-family:var(--font-ui);outline:none;transition:border-color .2s;background:var(--bg);color:var(--text-1)}
+.search-input:focus{border-color:var(--c1);box-shadow:0 0 0 3px rgba(14,116,144,.08)}
+.search-icon{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:var(--text-3);font-size:14px;pointer-events:none}
+.filter-pills{display:flex;gap:4px;flex-shrink:0;overflow-x:auto;scrollbar-width:none}
+.filter-pills::-webkit-scrollbar{display:none}
+.pill{padding:4px 11px;border-radius:20px;font-size:11.5px;font-weight:600;border:1.5px solid var(--border-md);background:var(--surface);cursor:pointer;white-space:nowrap;transition:all .15s;font-family:var(--font-ui);color:var(--text-2)}
+.pill:hover{transform:translateY(-1px)}
+.pill[data-cat="all"].active{background:var(--ink);border-color:var(--ink);color:#fff}
+.pill[data-cat="c1"].active{background:var(--c1);border-color:var(--c1);color:#fff}
+.pill[data-cat="c2"].active{background:var(--c2);border-color:var(--c2);color:#fff}
+.pill[data-cat="c3"].active{background:var(--c3);border-color:var(--c3);color:#fff}
+.pill[data-cat="c4"].active{background:var(--c4);border-color:var(--c4);color:#fff}
+.pill[data-cat="c5"].active{background:var(--c5);border-color:var(--c5);color:#fff}
+.pill[data-cat="c6"].active{background:var(--c6);border-color:var(--c6);color:#fff}
+.ctrl-actions{display:flex;gap:5px;align-items:center;flex-shrink:0;margin-left:auto}
+.btn-ctrl{padding:5px 10px;border:1.5px solid var(--border-md);border-radius:var(--radius-sm);background:var(--surface);font-size:11.5px;font-weight:600;cursor:pointer;font-family:var(--font-ui);color:var(--text-2);transition:all .15s;white-space:nowrap}
+.btn-ctrl:hover{background:var(--bg);border-color:var(--c1);color:var(--c1)}
+.btn-ctrl:disabled{opacity:.4;cursor:not-allowed}
+.zoom-cluster{display:flex;border:1px solid var(--border-md);border-radius:var(--radius-sm);overflow:hidden}
+.btn-zoom{padding:5px 8px;background:var(--surface);border:none;border-right:1px solid var(--border-md);cursor:pointer;font-size:13px;font-family:var(--font-ui);color:var(--text-2);transition:background .15s;height:28px;display:flex;align-items:center}
+.btn-zoom:last-child{border-right:none;border-left:1px solid var(--border-md)}
+.btn-zoom:hover{background:var(--bg)}
+.btn-zoom:disabled{opacity:.4;cursor:not-allowed}
+.zoom-label{font-size:12px;font-weight:500;min-width:42px;text-align:center;color:var(--text-2);line-height:28px;padding:0 4px;background:var(--surface)}
+@media(max-width:768px){.ctrl-actions{display:none!important}}
+.page-main{max-width:1200px;margin:0 auto;padding:1.4rem 1rem 3rem}
+.map-section{margin-bottom:1.6rem}
+.section-heading{display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;padding:8px 0}
+.section-heading:hover .section-heading-text{color:var(--c1)}
+.section-heading-text{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-1);transition:color .15s;flex:1}
+.section-heading-count{font-size:11px;font-weight:600;padding:2px 9px;border-radius:12px;background:var(--c1bg);color:var(--c1);border:1px solid var(--c1bd);white-space:nowrap}
+.section-toggle-btn{background:none;border:none;cursor:pointer;font-size:13px;color:var(--text-3);padding:2px 4px;font-family:var(--font-ui);transition:transform .2s}
+.section-divider{border:none;border-top:1px solid var(--border-md);margin:0 0 .8rem}
+.section-body{display:block}.section-body.collapsed{display:none}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:960px){.card-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.card-grid{grid-template-columns:1fr}}
+.map-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);overflow:hidden;transition:box-shadow var(--transition),transform var(--transition);display:flex;flex-direction:column}
+.map-card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.map-card.hidden{display:none}
+.map-card[data-cat="c1"]{border-left:4px solid var(--c1)}.map-card[data-cat="c2"]{border-left:4px solid var(--c2)}.map-card[data-cat="c3"]{border-left:4px solid var(--c3)}.map-card[data-cat="c4"]{border-left:4px solid var(--c4)}.map-card[data-cat="c5"]{border-left:4px solid var(--c5)}.map-card[data-cat="c6"]{border-left:4px solid var(--c6)}
+.card-top{padding:.85rem 1rem .6rem}
+.card-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:.5rem}
+.art-badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;border:1px solid}
+.map-card[data-cat="c1"] .art-badge{background:var(--c1bg);color:var(--c1);border-color:var(--c1bd)}.map-card[data-cat="c2"] .art-badge{background:var(--c2bg);color:var(--c2);border-color:var(--c2bd)}.map-card[data-cat="c3"] .art-badge{background:var(--c3bg);color:var(--c3);border-color:var(--c3bd)}.map-card[data-cat="c4"] .art-badge{background:var(--c4bg);color:var(--c4);border-color:var(--c4bd)}.map-card[data-cat="c5"] .art-badge{background:var(--c5bg);color:var(--c5);border-color:var(--c5bd)}.map-card[data-cat="c6"] .art-badge{background:var(--c6bg);color:var(--c6);border-color:var(--c6bd)}
+.status-tag{font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:4px}
+.tag-warn{background:#fef3c7;color:#92400e}.tag-alert{background:#fee2e2;color:#991b1b}.tag-info{background:#dbeafe;color:#1e40af}.tag-ok{background:#d1fae5;color:#065f46}.tag-gray{background:var(--surface-2);color:var(--text-2);border:1px solid var(--border)}
+.card-title{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--text-1);margin-bottom:4px;line-height:1.3}
+.card-subtitle{font-size:13px;color:var(--text-2);line-height:1.55}
+.card-counters{padding:0 1rem .4rem;display:flex;gap:5px;flex-wrap:wrap}
+.counter-badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;background:var(--surface-2);color:var(--text-2);border:1px solid var(--border)}
+.card-toggle-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:calc(100% - 2rem);margin:0 1rem .6rem;padding:6px;border:1px solid var(--border-md);border-radius:var(--radius-sm);background:var(--surface-2);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font-ui);color:var(--text-2);transition:all .15s}
+.card-toggle-btn:hover{background:var(--c1bg);color:var(--c1);border-color:var(--c1bd)}
+.toggle-icon{transition:transform .22s;font-size:11px}
+.map-card.expanded .toggle-icon{transform:rotate(180deg)}
+.card-body{display:none;padding:.6rem 1rem .85rem;border-top:1px solid var(--border);margin-top:auto}
+.map-card.expanded .card-body{display:block}
+.inner-section{margin-bottom:.8rem}.inner-section:last-child{margin-bottom:0}
+.inner-heading{display:flex;align-items:center;gap:7px;font-family:var(--font-display);font-size:12.5px;font-weight:700;color:var(--text-1);margin-bottom:6px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.map-card[data-cat="c1"] .dot{background:var(--c1)}.map-card[data-cat="c2"] .dot{background:var(--c2)}.map-card[data-cat="c3"] .dot{background:var(--c3)}.map-card[data-cat="c4"] .dot{background:var(--c4)}.map-card[data-cat="c5"] .dot{background:var(--c5)}.map-card[data-cat="c6"] .dot{background:var(--c6)}
+.inner-list{list-style:none;padding:0}
+.inner-list li{position:relative;padding-left:.85rem;margin-bottom:.25rem;font-size:13px;color:var(--text-2);line-height:1.55}
+.inner-list li::before{content:"\2013";position:absolute;left:0;color:var(--text-3)}
+.inner-list li strong{color:var(--text-1);font-weight:500}
+.note-box{background:var(--c3bg);border-left:3px solid var(--c3);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:8px 10px;margin-top:.5rem}
+.note-box.warn-box{background:var(--c2bg);border-left-color:var(--c2)}.note-box.alert-box{background:var(--c5bg);border-left-color:var(--c5)}.note-box.info-box{background:var(--c1bg);border-left-color:var(--c1)}
+.note-box-label{font-size:10.5px;font-weight:700;text-transform:uppercase;color:var(--c3);margin-bottom:3px;letter-spacing:.04em}
+.warn-box .note-box-label{color:var(--c2)}.alert-box .note-box-label{color:var(--c5)}.info-box .note-box-label{color:var(--c1)}
+.note-box-text{font-size:12.5px;color:var(--text-2);line-height:1.55}
+.card-refs{padding:.5rem 1rem .7rem;display:flex;gap:4px;flex-wrap:wrap;border-top:1px solid var(--border);margin-top:.3rem}
+.ref-tag{font-size:11px;font-weight:500;padding:2px 7px;border-radius:var(--radius-sm);background:var(--surface-2);border:1px solid var(--border-md);color:var(--text-2);font-family:ui-monospace,SFMono-Regular,monospace}
+.no-results{grid-column:1/-1;text-align:center;padding:3rem 1rem;color:var(--text-3);font-size:14px;display:none}
+.table-wrap{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);box-shadow:var(--shadow-sm)}
+.timeline-table{width:100%;border-collapse:collapse;font-size:13.5px}
+.timeline-table th{background:var(--text-1);color:#fff;padding:9px 14px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.timeline-table td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-2)}
+.timeline-table tr:last-child td{border-bottom:none}.timeline-table tr:hover td{background:var(--surface-2)}
+.td-tramite{font-weight:500;color:var(--text-1)}
+.td-norm{font-family:ui-monospace,SFMono-Regular,monospace;font-size:12px;color:var(--text-3)}
+.plazo-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;white-space:nowrap}
+.plazo-days{background:#fef3c7;color:#92400e}.plazo-weeks{background:#dbeafe;color:#1e40af}.plazo-months{background:#d1fae5;color:#065f46}.plazo-years{background:#fee2e2;color:#991b1b}.plazo-other{background:var(--surface-2);color:var(--text-2)}
+.participants-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+@media(max-width:960px){.participants-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.participants-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:400px){.participants-grid{grid-template-columns:1fr)}}
+.participant-col{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm)}
+.participant-col-head{padding:8px 12px;font-size:12px;font-weight:700;color:#fff;letter-spacing:.03em}
+.phead-c1{background:var(--c1)}.phead-c2{background:var(--c2)}.phead-c3{background:var(--c3)}.phead-c4{background:var(--c4)}.phead-c5{background:var(--c5)}.phead-c6{background:var(--c6)}
+.participant-col ul{list-style:none;padding:6px 0}
+.participant-col li{padding:6px 12px;border-bottom:1px solid var(--border);font-size:12.5px;color:var(--text-2);line-height:1.45}
+.participant-col li:last-child{border-bottom:none}
+.participant-note{font-size:11px;color:var(--text-3);font-style:italic}
+.norm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:900px){.norm-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.norm-grid{grid-template-columns:1fr)}}
+.norm-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:.85rem 1rem;box-shadow:var(--shadow-sm)}
+.norm-law{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--text-3);margin-bottom:4px}
+.norm-title{font-size:13px;font-weight:500;color:var(--text-1);margin-bottom:6px;font-family:var(--font-display)}
+.norm-arts{font-size:12px;color:var(--text-2);line-height:1.6;margin-bottom:8px}
+.norm-tag{display:inline-block;font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:4px}
+.legend-footer{background:var(--header-bg);color:var(--header-text)}
+.legend-inner{max-width:1200px;margin:0 auto;padding:1.5rem}
+.legend-title{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);margin-bottom:.85rem;font-weight:700}
+.legend-grid{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;padding-bottom:1rem;border-bottom:1px solid rgba(248,245,237,.08)}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(248,245,237,.75);font-weight:500}
+.legend-swatch{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.legend-divider{width:1px;height:20px;background:rgba(248,245,237,.12)}
+.legend-copy{font-size:11px;color:rgba(248,245,237,.30);margin-top:.85rem;line-height:1.6}
+@media print{.controls-bar{display:none!important}.card-body{display:block!important}.section-body{display:block!important}.map-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}body{background:#fff}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">LEC 1/2000 &middot; Libro II &middot; T&iacute;tulo I &middot; Cap&iacute;tulo II</div>
+    <h1 class="header-title">Diligencias Preliminares del Proceso Civil</h1>
+    <p class="header-subtitle">Art&iacute;culos 256&ndash;263 &middot; Ley de 7 de enero, de Enjuiciamiento Civil &middot; Supuestos, competencia, decisi&oacute;n, citaci&oacute;n, oposici&oacute;n, efectos y leyes especiales</p>
+    <div class="header-meta">
+      <span class="header-tag">LEC 1/2000</span><span class="header-tag">Arts. 256&ndash;263</span><span class="header-tag">40+ Conexiones normativas</span><span class="header-tag">20+ Actores</span>
+      <div class="header-actions"><button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button></div>
+    </div>
+  </div>
+</header>
+<div class="stats-bar"><div class="stats-inner">
+  <div class="stat-item"><div class="stat-value">8</div><div class="stat-label">Art&iacute;culos base</div></div>
+  <div class="stat-item"><div class="stat-value">11</div><div class="stat-label">Tipos de diligencia</div></div>
+  <div class="stat-item"><div class="stat-value">40+</div><div class="stat-label">Conexiones normativas</div></div>
+  <div class="stat-item"><div class="stat-value">10</div><div class="stat-label">Plazos procesales</div></div>
+</div></div>
+
+<div class="controls-bar"><div class="controls-inner">
+  <div class="search-wrap"><span class="search-icon">&#128269;</span><input class="search-input" type="search" id="search" placeholder="Buscar art&iacute;culo, plazo, actor..." autocomplete="off"></div>
+  <div class="filter-pills" id="filter-pills">
+    <button class="pill active" data-cat="all">Todos</button><button class="pill" data-cat="c1">Supuestos</button><button class="pill" data-cat="c2">Competencia</button><button class="pill" data-cat="c3">Decisi&oacute;n</button><button class="pill" data-cat="c4">Citaci&oacute;n</button><button class="pill" data-cat="c5">Oposici&oacute;n</button><button class="pill" data-cat="c6">Efectos</button>
+  </div>
+  <div class="ctrl-actions">
+    <button class="btn-ctrl" id="btn-expand-all">Expandir</button><button class="btn-ctrl" id="btn-collapse-all">Contraer</button>
+    <div class="zoom-cluster"><button class="btn-zoom" id="btn-zoom-out">&minus;</button><span class="zoom-label" id="zoom-label">100%</span><button class="btn-zoom" id="btn-zoom-in">+</button></div>
+    <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+  </div>
+</div></div>
+
+<main class="page-main">
+
+<!-- ============================= ART. 256 ============================= -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-256"><span class="section-heading-text">Art. 256 &mdash; Clases de Diligencias Preliminares y su Solicitud</span><span class="section-heading-count">11 tipos + requisitos + cauci&oacute;n</span><button class="section-toggle-btn">&#9650;</button></div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-256"><div class="card-grid">
+
+<!-- 256.1.1º -->
+<article class="map-card" data-cat="c1" data-text="256.1.1 declaracion capacidad representacion legitimacion juramento promesa exhibicion documentos acreditativos Ley 8/2021">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.1&ordm;</span><span class="status-tag tag-info">Declaraci&oacute;n / Exhibici&oacute;n</span></div><h2 class="card-title">Declaraci&oacute;n sobre capacidad, representaci&oacute;n o legitimaci&oacute;n</h2><p class="card-subtitle">Permite solicitar que el futuro demandado declare, bajo juramento o promesa de decir verdad, sobre hechos relativos a su capacidad, representaci&oacute;n o legitimaci&oacute;n, o que exhiba los documentos en que conste aquella. Doble vertiente: la declaraci&oacute;n personal y la exhibici&oacute;n documental. El objeto est&aacute; circunscrito a la capacidad, representaci&oacute;n o legitimaci&oacute;n; no es extensible al fondo del asunto.</p></div>
+  <div class="card-counters"><span class="counter-badge"><strong>Ley 8/2021</strong> medidas de apoyo</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Declaraci&oacute;n bajo juramento o promesa</div><ul class="inner-list">
+      <li>Determinar si existe medida de apoyo (Ley 8/2021): curatela representativa o asistencial, que puede limitar la capacidad de obrar del requerido.</li>
+      <li>Comprobar la existencia de autorizaci&oacute;n judicial para actos dispositivos del curador, especialmente en enajenaci&oacute;n de bienes o renuncia de derechos.</li>
+      <li>Verificar el estado civil y la capacidad negocial de la contraparte antes de interponer la demanda, para evitar nulidades procesales posteriores.</li>
+      <li>Conocer la existencia de guarda de hecho o poderes preventivos (arts. 249, 250 CC reformado por la Ley 8/2021).</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Exhibici&oacute;n de documentos acreditativos</div><ul class="inner-list">
+      <li>Documentos que acrediten la capacidad, representaci&oacute;n o legitimaci&oacute;n del requerido: poderes notariales, escrituras de constituci&oacute;n, nombramientos, inscripciones registrales.</li>
+      <li>La inscripci&oacute;n en el Registro Civil es fundamental para conocer las medidas de apoyo vigentes tras la Ley 8/2021 (LRC 20/2011).</li>
+    </ul></div>
+    <div class="note-box info-box"><div class="note-box-label">Reforma Ley 8/2021</div><div class="note-box-text">La Ley 8/2021 elimin&oacute; la incapacitaci&oacute;n y la sustituy&oacute; por el sistema de medidas de apoyo. El antiguo art. 199 CC es sustituido por la nueva curatela (arts. 269&ndash;294 CC). Esta diligencia adquiere nueva relevancia para verificar qu&eacute; r&eacute;gimen de apoyo afecta al futuro demandado.</div></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">Ley 8/2021</span><span class="ref-tag">CC arts. 249-250</span><span class="ref-tag">CC arts. 269-294</span><span class="ref-tag">LRC 20/2011</span></div>
+</article>
+
+<!-- 256.1.2º -->
+<article class="map-card" data-cat="c1" data-text="256.1.2 exhibicion cosa mueble posesion tenencia deposito objeto juicio futuro demandado STS 146/2017">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.2&ordm;</span><span class="status-tag tag-info">Exhibici&oacute;n de cosa</span></div><h2 class="card-title">Exhibici&oacute;n de cosa mueble</h2><p class="card-subtitle">Permite solicitar la exhibici&oacute;n de una cosa mueble que el futuro demandado tenga en su poder y a la que se haya de referir el juicio. Presupone la tenencia material de la cosa por el requerido y que el proceso futuro versar&aacute; sobre ella. No se exige que la cosa sea propiedad del exhibidor; basta con que la tenga bajo su control efectivo.</p></div>
+  <div class="card-counters"><span class="counter-badge"><strong>3</strong> sujetos pasivos</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Alcance material</div><ul class="inner-list">
+      <li>Cualquier bien mueble identificable, sea fungible o no fungible, que tenga relevancia probatoria para un futuro proceso: joyas, obras de arte, veh&iacute;culos, maquinaria, mercanc&iacute;as, t&iacute;tulos-valor, documentos con valor patrimonial.</li>
+      <li>No procede para bienes inmuebles, que se rigen por el reconocimiento judicial del art. 353 LEC.</li>
+      <li>El solicitante debe identificar la cosa con la mayor precisi&oacute;n posible para evitar diligencias gen&eacute;ricas o exploratorias.</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Legitimaci&oacute;n pasiva</div><ul class="inner-list">
+      <li><strong>Poseedor:</strong> quien ejerce poder de hecho sobre la cosa con animus domini.</li>
+      <li><strong>Tenedor:</strong> quien tiene la cosa por un t&iacute;tulo derivado (arrendamiento, comodato, dep&oacute;sito).</li>
+      <li><strong>Depositario:</strong> quien custodia la cosa por contrato o por mandato judicial o legal.</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>L&iacute;mites y garant&iacute;as</div><ul class="inner-list">
+      <li>Prohibici&oacute;n de diligencias puramente exploratorias (STS 146/2017, de 8 de marzo).</li>
+      <li>Respeto al derecho a la intimidad y a la protecci&oacute;n de datos personales (art. 18 CE; RGPD).</li>
+      <li>El tribunal puede establecer condiciones para la exhibici&oacute;n (lugar, forma, presencia de peritos).</li>
+      <li>STS 234/2015: la exhibici&oacute;n de cosa mueble no requiere prueba de propiedad, basta acreditar inter&eacute;s leg&iacute;timo.</li>
+      <li>STS 89/2018: el tenedor no propietario tambi&eacute;n est&aacute; obligado a exhibir si se acredita la futura pretensi&oacute;n.</li>
+    </ul></div>
+    <div class="note-box info-box"><div class="note-box-label">Conexiones normativas</div><div class="note-box-text">Art. 348 CC (acci&oacute;n reivindicatoria). Art. 335 LEC (peritaci&oacute;n de muebles). Art. 353 LEC (reconocimiento judicial). Directiva 2004/48/CE, art. 6 sobre medidas de obtenci&oacute;n de pruebas. STJUE C-427/07 (EGMA) sobre exhibici&oacute;n de pruebas en PI.</div></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">Art. 348 CC</span><span class="ref-tag">Art. 335 LEC</span><span class="ref-tag">Art. 353 LEC</span><span class="ref-tag">STS 146/2017</span><span class="ref-tag">STS 234/2015</span></div>
+</article>
+
+<!-- 256.1.3º -->
+<article class="map-card" data-cat="c1" data-text="256.1.3 acto ultima voluntad heredero coheredero legatario causante testamento sucesion">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.3&ordm;</span><span class="status-tag tag-info">Sucesiones</span></div><h2 class="card-title">Exhibici&oacute;n del acto de &uacute;ltima voluntad</h2><p class="card-subtitle">Permite al heredero, coheredero o legatario solicitar la exhibici&oacute;n del acto de &uacute;ltima voluntad del causante de la herencia o legado. El sujeto pasivo es cualquier persona que tenga en su poder el documento, no solo el heredero poseedor.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>Contenido y alcance</div><ul class="inner-list">
+    <li>Exhibici&oacute;n del testamento, codicilo o cualquier documento que contenga la &uacute;ltima voluntad del causante.</li>
+    <li>Legitimaci&oacute;n activa: quien se considere heredero, coheredero o legatario. No se exige acreditar previamente la condici&oacute;n de heredero, basta con manifestarla.</li>
+    <li>Legitimaci&oacute;n pasiva: cualquier persona que lo tenga en su poder, incluidos otros coherederos, notarios o instituciones depositarias.</li>
+    <li>El Registro General de Actos de &Uacute;ltima Voluntad puede complementar esta diligencia para determinar la existencia y fecha del testamento.</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">RGAUV</span><span class="ref-tag">Arts. 762-763 LEC</span></div>
+</article>
+
+<!-- 256.1.4º -->
+<article class="map-card" data-cat="c1" data-text="256.1.4 documentos sociedad comunidad socio comunero cuentas contabilidad derecho informacion LSC">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.4&ordm;</span><span class="status-tag tag-info">Societario</span></div><h2 class="card-title">Exhibici&oacute;n de documentos y cuentas de sociedad o comunidad</h2><p class="card-subtitle">El socio o comunero puede solicitar la exhibici&oacute;n de documentos y cuentas de la sociedad o comunidad. La solicitud puede dirigirse a la entidad misma o al consocio o condue&ntilde;o que los tenga en su poder. Constituye una manifestaci&oacute;n del derecho de informaci&oacute;n del part&iacute;cipe.</p></div>
+  <div class="card-counters"><span class="counter-badge"><strong>3</strong> finalidades principales</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Documentos exhibibles</div><ul class="inner-list">
+      <li>Libros de contabilidad obligatorios: libro diario, libro de inventarios y cuentas anuales (CCom art. 25).</li>
+      <li>Libros societarios: libro de actas (art. 26 CCom), libro registro de socios (LSC art. 104).</li>
+      <li>Contratos y correspondencia relevante para la acci&oacute;n proyectada. Informes de auditor&iacute;a, cuentas anuales no depositadas.</li>
+      <li>No abarca documentaci&oacute;n auxiliar o ficheros internos salvo que sean imprescindibles. El tribunal puede ordenar la revisi&oacute;n por auditor externo si hay datos sensibles.</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Legitimaci&oacute;n activa</div><ul class="inner-list">
+      <li>Socios con participaci&oacute;n directa o indirecta en el capital. No es necesaria una participaci&oacute;n m&iacute;nima (a diferencia del derecho de informaci&oacute;n en junta).</li>
+      <li>Los herederos del socio fallecido que a&uacute;n no hayan inscrito la adquisici&oacute;n. Comuneros de bienes proindivisos.</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Finalidad</div><ul class="inner-list">
+      <li>Fundamentar una acci&oacute;n social de responsabilidad de administradores (art. 236 LSC).</li>
+      <li>Verificar la legalidad de acuerdos sociales impugnables (arts. 204&ndash;211 LSC).</li>
+      <li>Preparar una acci&oacute;n individual de indemnizaci&oacute;n por da&ntilde;os al socio.</li>
+    </ul></div>
+    <div class="note-box info-box"><div class="note-box-label">Conexiones normativas</div><div class="note-box-text">RDL 1/2010 LSC arts. 236, 204&ndash;211, 272. CCom arts. 25&ndash;27. STS 241/2015 (derecho de informaci&oacute;n del socio). Ley 22/2015 de Auditor&iacute;a de Cuentas.</div></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">LSC art. 236</span><span class="ref-tag">LSC art. 204</span><span class="ref-tag">CCom art. 25</span><span class="ref-tag">STS 241/2015</span></div>
+</article>
+
+<!-- 256.1.5º -->
+<article class="map-card" data-cat="c1" data-text="256.1.5 contrato seguro responsabilidad civil perjudicado asegurador poliza cobertura LCS">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.5&ordm;</span><span class="status-tag tag-info">Seguros</span></div><h2 class="card-title">Exhibici&oacute;n del contrato de seguro de responsabilidad civil</h2><p class="card-subtitle">Permite al perjudicado solicitar al posible responsable que exhiba el contrato de seguro de responsabilidad civil o de cualquier otra naturaleza que cubra el siniestro o da&ntilde;o objeto del futuro proceso. Facilita conocer la identidad del asegurador, los l&iacute;mites de cobertura y las condiciones de la p&oacute;liza.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>&Aacute;mbito de aplicaci&oacute;n</div><ul class="inner-list">
+    <li>Seguro de responsabilidad civil (arts. 73&ndash;76 LCS): permite la acci&oacute;n directa contra asegurador (art. 76 LCS).</li>
+    <li>Seguro de accidentes de trabajo: facilita la reclamaci&oacute;n por el trabajador o sus herederos.</li>
+    <li>Seguro de vida: identifica beneficiarios y coberturas en disputas sucesorias.</li>
+    <li>Accidentes de tr&aacute;fico: art. 7 RDL 8/2004 (obligaci&oacute;n de comunicar el seguro).</li>
+    <li>Responsabilidad civil de profesionales (m&eacute;dicos, arquitectos, abogados) y de la Administraci&oacute;n P&uacute;blica cuando act&uacute;a asegurada.</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">LCS arts. 73-76</span><span class="ref-tag">RDL 8/2004</span><span class="ref-tag">Art. 76 LCS</span></div>
+</article>
+
+<!-- 256.1.5º bis -->
+<article class="map-card" data-cat="c1" data-text="256.1.5bis historia clinica centro sanitario profesional custodio Ley 41/2002 paciente autonomia">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.5&ordm; bis</span><span class="status-tag tag-alert">Datos sensibles</span></div><h2 class="card-title">Petici&oacute;n de historia cl&iacute;nica</h2><p class="card-subtitle">Permite solicitar la historia cl&iacute;nica al centro sanitario o profesional que la custodie, en las condiciones y con el contenido que establece la ley. Remisi&oacute;n expresa a la Ley 41/2002, de 14 de noviembre, reguladora de la autonom&iacute;a del paciente. Se trata de datos especialmente protegidos (art. 9 RGPD: datos de salud).</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>R&eacute;gimen espec&iacute;fico</div><ul class="inner-list">
+    <li>Ley 41/2002: regulaci&oacute;n del contenido, acceso y confidencialidad de la historia cl&iacute;nica.</li>
+    <li>Datos especialmente protegidos (art. 9 RGPD): datos de salud, diagn&oacute;sticos, informes cl&iacute;nicos, historiales m&eacute;dicos.</li>
+    <li>El tribunal puede acordar medidas de minimizaci&oacute;n: acceso parcial, anonimizaci&oacute;n, seudonimizaci&oacute;n, designaci&oacute;n de perito con deber de confidencialidad reforzado.</li>
+    <li>El solicitante puede acudir asesorado por perito m&eacute;dico, siempre a su costa (art. 259).</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">Ley 41/2002</span><span class="ref-tag">RGPD art. 9</span><span class="ref-tag">LOPDGDD 3/2018</span></div>
+</article>
+
+<!-- 256.1.6º -->
+<!-- CORRECCIÓN: Se ha añadido el card-body faltante y el contenido correspondiente -->
+<article class="map-card" data-cat="c1" data-text="256.1.6 consumidores intereses colectivos grupo afectados determinables integrantes colaboracion">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.6&ordm;</span><span class="status-tag tag-info">Consumidores</span></div><h2 class="card-title">Concreci&oacute;n de integrantes del grupo de afectados</h2><p class="card-subtitle">Cuando los afectados no est&eacute;n determinados pero sean f&aacute;cilmente determinables, el tribunal adoptar&aacute; las medidas oportunas para su concreci&oacute;n, incluyendo requerir al demandado para que colabore en la identificaci&oacute;n. El solicitante debe suministrar los datos iniciales que permitan la individualizaci&oacute;n.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Procedimiento y alcance</div><ul class="inner-list">
+      <li>El tribunal puede requerir al demandado para que colabore en la identificaci&oacute;n de los miembros del grupo afectado.</li>
+      <li>El solicitante debe suministrar datos iniciales que permitan la individualizaci&oacute;n de los integrantes.</li>
+      <li>Relevante para acciones de cesaci&oacute;n y defensa de intereses colectivos de consumidores y usuarios.</li>
+      <li>Los representantes legales de asociaciones de consumidores est&aacute;n legitimados para solicitarla.</li>
+    </ul></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">Art. 11 LEC</span><span class="ref-tag">LGDCU</span></div>
+</article>
+
+<!-- 256.1.7º -->
+<article class="map-card" data-cat="c1" data-text="256.1.7 propiedad industrial intelectual infractor nombres direcciones cantidades precios caracteristicas tecnicas redes distribucion escala comercial Directiva 2004/48 CE">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.7&ordm;</span><span class="status-tag tag-alert">PI reforzado</span></div><h2 class="card-title">Obtenci&oacute;n de datos sobre el posible infractor de PI</h2><p class="card-subtitle">En materia de propiedad industrial e intelectual, permite obtener datos sobre el posible infractor, el origen y las redes de distribuci&oacute;n: nombres y direcciones de productores, fabricantes, distribuidores, suministradores; cantidades producidas, entregadas, recibidas o encargadas; precios; modelos y caracter&iacute;sticas t&eacute;cnicas. La enumeraci&oacute;n es abierta (&laquo;en particular&raquo;). Se dirige contra actos no realizados por meros consumidores finales de buena fe.</p></div>
+  <div class="card-counters"><span class="counter-badge"><strong>Dir. 2004/48/CE</strong></span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Informaci&oacute;n obtenible</div><ul class="inner-list">
+      <li>Nombres y direcciones de productores, fabricantes, distribuidores, suministradores, mayoristas y minoristas de productos presuntamente infractores.</li>
+      <li>Cantidades producidas, entregadas, recibidas o encargadas, y el precio pagado o por el que se ofrecieron.</li>
+      <li>Identidad de cualquier otra persona implicada en la producci&oacute;n o distribuci&oacute;n de los productos infractores.</li>
+      <li>La enumeraci&oacute;n es abierta: cabe solicitar cualquier otro dato relevante para la tutela del derecho.</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Rasgos comunes (n&uacute;ms. 7&ordm;, 8&ordm;, 10&ordm; y 11&ordm;)</div><ul class="inner-list">
+      <li>Actos no realizados por meros consumidores finales de buena fe: se dirigen contra quienes act&uacute;an en el circuito comercial de la infracci&oacute;n.</li>
+      <li>Orientaci&oacute;n a identificar al infractor y sus redes de distribuci&oacute;n, no al consumidor final.</li>
+      <li>Normas especiales de confidencialidad (art. 259): el tribunal puede ordenar la celebraci&oacute;n a puerta cerrada y atribuir car&aacute;cter reservado a las actuaciones.</li>
+      <li><strong>Definici&oacute;n legal de &laquo;actos desarrollados a escala comercial&raquo;:</strong> aquellos que, a los efectos de los n&uacute;meros 7&ordm; y 8&ordm;, son realizados para obtener beneficios econ&oacute;micos o comerciales directos o indirectos.</li>
+    </ul></div>
+    <div class="note-box info-box"><div class="note-box-label">Directiva 2004/48/CE</div><div class="note-box-text">Arts. 6&ndash;7: derecho a la prueba y medidas para preservarla. Art. 8: derecho de informaci&oacute;n sobre el origen y las redes de distribuci&oacute;n del producto infractor. Transpuesta por Ley 19/2006. STJUE C-427/07 (EGMA): las medidas de obtenci&oacute;n de pruebas en PI deben ser efectivas, proporcionadas y disuasorias.</div></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">Dir. 2004/48/CE</span><span class="ref-tag">STJUE C-427/07</span><span class="ref-tag">LPI art. 139</span><span class="ref-tag">Ley 24/2015</span><span class="ref-tag">Ley 17/2001</span><span class="ref-tag">Ley 19/2006</span></div>
+</article>
+
+<!-- 256.1.8º -->
+<article class="map-card" data-cat="c1" data-text="256.1.8 documentos bancarios financieros comerciales aduaneros infraccion escala comercial principio prueba muestra STJUE Nintendo">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.8&ordm;</span><span class="status-tag tag-alert">PI reforzado</span></div><h2 class="card-title">Exhibici&oacute;n de documentos bancarios, financieros, comerciales o aduaneros</h2><p class="card-subtitle">Permite solicitar la exhibici&oacute;n de documentos bancarios, financieros, comerciales o aduaneros producidos en un determinado tiempo, por actos desarrollados a escala comercial. Requisito espec&iacute;fico: acompa&ntilde;ar un principio de prueba de la infracci&oacute;n (muestra de ejemplares, mercanc&iacute;as o productos). Posibilidad de solicitar testimonio del Secretario si el requerido no se desprende de los documentos.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>Requisitos y particularidades</div><ul class="inner-list">
+    <li>Debe acompa&ntilde;arse un <strong>principio de prueba</strong> de la infracci&oacute;n: muestra de ejemplares, mercanc&iacute;as o productos que fundamente razonablemente la sospecha.</li>
+    <li>La enumeraci&oacute;n de documentos es abierta: bancarios, financieros, comerciales, aduaneros. Cualquier otro documento relevante puede incluirse.</li>
+    <li>Posibilidad de solicitar testimonio del Secretario si el requerido no se desprende voluntariamente de los documentos.</li>
+    <li>STJUE C-524/21 (Nintendo): la exhibici&oacute;n de pruebas bancarias puede acordarse en el marco de una acci&oacute;n por infracci&oacute;n de PI, especialmente contra operadores de plataformas que presten servicios a escala comercial.</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">STJUE C-524/21</span><span class="ref-tag">Dir. 2004/48/CE art. 6</span></div>
+</article>
+
+<!-- 256.1.9º -->
+<article class="map-card" data-cat="c1" data-text="256.1.9 leyes especiales clausula abierta averiguaciones proteccion derechos supletoriedad art 263">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.9&ordm;</span><span class="status-tag tag-gray">Cl&aacute;usula abierta</span></div><h2 class="card-title">Diligencias previstas en leyes especiales</h2><p class="card-subtitle">Cl&aacute;usula abierta que comprende las diligencias y averiguaciones previstas en las correspondientes leyes especiales para la protecci&oacute;n de determinados derechos. Se complementa con la regla de supletoriedad del art. 263: donde la ley especial calle, se aplica el r&eacute;gimen general del Cap&iacute;tulo II.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>Leyes especiales con r&eacute;gimen propio</div><ul class="inner-list">
+    <li><strong>PI:</strong> LPI arts. 139&ndash;145 (acciones de cesaci&oacute;n, indemnizaci&oacute;n, medidas de obtenci&oacute;n de pruebas reforzadas).</li>
+    <li><strong>Marcas:</strong> Ley 17/2001 arts. 43&ndash;51 (acciones civiles por infracci&oacute;n de marca). Reglamento (UE) 2017/1001 (marca de la UE).</li>
+    <li><strong>Patentes:</strong> Ley 24/2015 arts. 55&ndash;62 (acciones por infracci&oacute;n de patente). Reglamento (UE) 1257/2012 (patente unitaria).</li>
+    <li><strong>Competencia desleal:</strong> Ley 3/1991 arts. 18&ndash;21 (acciones de cesaci&oacute;n, remoci&oacute;n e indemnizaci&oacute;n).</li>
+    <li><strong>Secretos empresariales:</strong> Ley 1/2019 arts. 5&ndash;9 (medidas de protecci&oacute;n del secreto y acciones por violaci&oacute;n).</li>
+    <li><strong>Arbitraje:</strong> Ley 60/2003 art. 23 (medidas cautelares ante el tribunal ordinario en apoyo del arbitraje).</li>
+    <li><strong>Dise&ntilde;os industriales:</strong> Ley 20/2003. Reglamento (CE) 6/2002.</li>
+    <li>Principio de especialidad: lex specialis derogat generali. Las particularidades pueden afectar a competencia (Juzgados de lo Mercantil), plazos, cauci&oacute;n, medidas de protecci&oacute;n del secreto y r&eacute;gimen de recursos.</li>
+  </ul></div>
+    <div class="note-box info-box"><div class="note-box-label">Directivas europeas relevantes</div><div class="note-box-text">Dir. 2004/48/CE arts. 6&ndash;9 (medidas de prueba y cautelares). Dir. (UE) 2016/943 arts. 6&ndash;8 (protecci&oacute;n secretos empresariales). Reglamento (UE) 2022/2065 (DSA): obligaciones de informaci&oacute;n de prestadores de servicios intermediarios. Dir. 2019/770 (contratos de contenidos y servicios digitales).</div></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">LPI art. 139</span><span class="ref-tag">Ley 1/2019</span><span class="ref-tag">Ley 24/2015</span><span class="ref-tag">Ley 60/2003</span><span class="ref-tag">Dir. 2004/48/CE</span></div>
+</article>
+
+<!-- 256.1.10º -->
+<article class="map-card" data-cat="c1" data-text="256.1.10 identificacion prestador servicios sociedad informacion indicios razonables infraccion audiencia Espana volumen apreciable obras no autorizadas intermediarios 12 meses Ley 25/2007 DSA">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.10&ordm;</span><span class="status-tag tag-alert">Digital</span></div><h2 class="card-title">Identificaci&oacute;n del prestador de servicios de la sociedad de la informaci&oacute;n</h2><p class="card-subtitle">Permite la identificaci&oacute;n de prestadores de servicios de la sociedad de la informaci&oacute;n cuando existan indicios razonables de infracci&oacute;n de derechos de propiedad industrial o intelectual, siempre que el prestador tenga un nivel apreciable de audiencia en Espa&ntilde;a o exista un volumen apreciable de obras no autorizadas. Se dirige a los prestadores intermediarios (servicios, pagos electr&oacute;nicos, publicidad) con los que el infractor haya mantenido relaciones de servicio en los &uacute;ltimos 12 meses. Excepci&oacute;n: datos tratados conforme a la Ley 25/2007 de conservaci&oacute;n de datos de comunicaciones electr&oacute;nicas.</p></div>
+  <div class="card-counters"><span class="counter-badge"><strong>12 meses</strong> relaciones de servicio</span><span class="counter-badge" style="margin-left:auto"><strong>3</strong> tipos de intermediarios</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Sujetos obligados a facilitar la informaci&oacute;n</div><ul class="inner-list">
+      <li>Prestadores de servicios de la sociedad de la informaci&oacute;n que alojen o faciliten el acceso a contenidos presuntamente infractores.</li>
+      <li>Prestadores de servicios de pagos electr&oacute;nicos que procesen transacciones relacionadas con las infracciones.</li>
+      <li>Prestadores de servicios de publicidad en l&iacute;nea que publiciten los productos o servicios infractores.</li>
+      <li>Operadores de plataformas de comercio electr&oacute;nico (Amazon, eBay, Alibaba) tras la STJUE C-524/21 (Nintendo), que ampli&oacute; el alcance de la obligaci&oacute;n de informaci&oacute;n a las plataformas.</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Requisitos habilitantes</div><ul class="inner-list">
+      <li>Indicios razonables de infracci&oacute;n de derechos de propiedad industrial o intelectual.</li>
+      <li>Nivel apreciable de audiencia en Espa&ntilde;a o volumen apreciable de obras no autorizadas.</li>
+      <li>Relaciones de servicio con el infractor en los &uacute;ltimos 12 meses.</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Excepci&oacute;n</div><ul class="inner-list">
+      <li>Quedan excluidos los datos objeto de tratamiento por proveedores de servicios de Internet en cumplimiento de la Ley 25/2007 de conservaci&oacute;n de datos de comunicaciones electr&oacute;nicas. Esta excepci&oacute;n busca evitar la interferencia con las obligaciones de conservaci&oacute;n de datos para fines de seguridad p&uacute;blica.</li>
+    </ul></div>
+    <div class="note-box info-box"><div class="note-box-label">Conexiones normativas</div><div class="note-box-text">Ley 25/2007 (conservaci&oacute;n de datos de comunicaciones electr&oacute;nicas). Reglamento DSA 2022/2065 (obligaciones de informaci&oacute;n de plataformas). Ley 34/2002 LSSI. Uso exclusivo de la informaci&oacute;n obtenida para la tutela jurisdiccional de los derechos de PI del solicitante (art. 259.4): prohibici&oacute;n de divulgaci&oacute;n o comunicaci&oacute;n a terceros.</div></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">Ley 25/2007</span><span class="ref-tag">DSA 2022/2065</span><span class="ref-tag">Ley 34/2002</span><span class="ref-tag">Art. 259.4 LEC</span></div>
+</article>
+
+<!-- 256.1.11º -->
+<article class="map-card" data-cat="c1" data-text="256.1.11 identificacion usuario servicios sociedad informacion propiedad intelectual consumidores finales volumen obras no autorizadas">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.1.11&ordm;</span><span class="status-tag tag-alert">Digital</span></div><h2 class="card-title">Identificaci&oacute;n del usuario de servicios de la sociedad de la informaci&oacute;n</h2><p class="card-subtitle">Permite la identificaci&oacute;n de usuarios de servicios de la sociedad de la informaci&oacute;n que infrinjan derechos de propiedad intelectual. &Aacute;mbito m&aacute;s restringido que el n&uacute;mero 10&ordm;: solo se aplica a la propiedad intelectual (no a la industrial), y se dirige contra actos que no sean de meros consumidores finales de buena fe. Se exige un volumen apreciable de obras no autorizadas y relaciones de servicio en los &uacute;ltimos 12 meses.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>Diferencias con el n&uacute;mero 10&ordm;</div><ul class="inner-list">
+    <li>Se dirige a identificar al <strong>usuario final</strong> infractor, no al prestador del servicio intermediario.</li>
+    <li>&Aacute;mbito m&aacute;s restringido: solo protecci&oacute;n de la propiedad intelectual (derechos de autor y derechos conexos), no de la propiedad industrial (marcas, patentes, dise&ntilde;os).</li>
+    <li>Los actos del usuario no deben ser propios de un mero consumidor final de buena fe: se excluyen las descargas privadas sin &aacute;nimo de lucro.</li>
+    <li>Relaciones de servicio en los &uacute;ltimos 12 meses (id&eacute;ntico al n&uacute;mero 10&ordm;).</li>
+    <li>Volumen apreciable de obras no autorizadas como requisito habilitante, para evitar solicitudes desproporcionadas contra usuarios menores.</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">Art. 259.4 LEC</span><span class="ref-tag">LPI</span></div>
+</article>
+
+<!-- 256 apartados 2 y 3 -->
+<article class="map-card" data-cat="c1" data-text="256.2 solicitud fundamentos referencia circunstanciada asunto objeto juicio caucion gastos art 64.2 demanda un mes">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 256.2&ndash;3</span><span class="status-tag tag-warn">Requisitos y cauci&oacute;n</span></div><h2 class="card-title">Contenido de la solicitud, gastos y r&eacute;gimen de la cauci&oacute;n</h2><p class="card-subtitle">El solicitante debe expresar los fundamentos de su petici&oacute;n con referencia circunstanciada al asunto objeto del juicio que se quiera preparar. Los gastos de todas las personas que intervengan ser&aacute;n a cargo del solicitante. Al pedir las diligencias, deber&aacute; ofrecer cauci&oacute;n para responder de gastos, da&ntilde;os y perjuicios. La cauci&oacute;n se pierde si no se interpone la demanda en el plazo de un mes desde la terminaci&oacute;n de las diligencias, sin justificaci&oacute;n suficiente. La forma de prestaci&oacute;n se rige por el art. 64.2 LEC.</p></div>
+  <div class="card-counters"><span class="counter-badge"><strong>1 mes</strong> plazo para interponer demanda</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Contenido de la solicitud (apartado 2)</div><ul class="inner-list">
+      <li><strong>Fundamentos expresados:</strong> con referencia circunstanciada al asunto objeto del juicio que se quiera preparar. La solicitud no puede ser gen&eacute;rica o exploratoria (STS 146/2017, STS 563/2019).</li>
+      <li>Debe identificarse la pretensi&oacute;n futura con razonable precisi&oacute;n.</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Gastos y cauci&oacute;n (apartado 3)</div><ul class="inner-list">
+      <li><strong>Gastos a cargo del solicitante:</strong> de todas las personas que intervengan en las diligencias. El solicitante debe anticipar los gastos de peritos, notificaciones y desplazamientos.</li>
+      <li><strong>Oferta de cauci&oacute;n:</strong> para responder de gastos, da&ntilde;os y perjuicios que las diligencias puedan irrogar al afectado.</li>
+      <li><strong>P&eacute;rdida de cauci&oacute;n:</strong> si no se interpone demanda en un mes desde la terminaci&oacute;n, sin justificaci&oacute;n suficiente a juicio del tribunal.</li>
+      <li><strong>Forma de prestaci&oacute;n</strong> (art. 64.2 LEC): dinero efectivo, aval solidario de duraci&oacute;n indefinida pagadero a primer requerimiento, o cualquier otro medio que garantice la inmediata disponibilidad.</li>
+      <li>STS 89/2020: la cuant&iacute;a de la cauci&oacute;n debe ser proporcionada al riesgo previsible de da&ntilde;o.</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Prueba anticipada (conexi&oacute;n arts. 427, 430, 498)</div><ul class="inner-list">
+      <li>Cuando exista <strong>peligro inminente</strong> de desaparici&oacute;n de la prueba o imposibilidad de pr&aacute;ctica ulterior, las diligencias pueden tramitarse como prueba anticipada.</li>
+      <li>Se exigen las garant&iacute;as de contradicci&oacute;n del art. 427 LEC: citaci&oacute;n de las partes, intervenci&oacute;n del LAJ y posibilidad de repreguntar.</li>
+      <li>La prueba anticipada tiene pleno valor probatorio en el proceso principal, no meramente preparatorio.</li>
+      <li>Supuestos de urgencia: enfermedad grave o riesgo de muerte de testigo esencial; deterioro progresivo de cosa o muestra; contenido digital eliminable; ruina inminente.</li>
+    </ul></div>
+    <div class="note-box warn-box"><div class="note-box-label">Plazos clave</div><div class="note-box-text"><strong>Interposici&oacute;n de demanda:</strong> 1 mes desde la terminaci&oacute;n de las diligencias (art. 256.3). Incumplimiento = p&eacute;rdida de cauci&oacute;n + responsabilidad por da&ntilde;os y perjuicios. STS 112/2019: la caducidad opera de pleno derecho sin necesidad de declaraci&oacute;n judicial. STS 345/2020: no cabe subsanaci&oacute;n del plazo por ser de caducidad, no de prescripci&oacute;n.</div></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">Art. 64.2 LEC</span><span class="ref-tag">Art. 427 LEC</span><span class="ref-tag">Art. 430 LEC</span><span class="ref-tag">STS 112/2019</span><span class="ref-tag">Art. 24.2 CE</span></div>
+</article>
+
+    <div class="no-results" id="no-results">No se encontraron art&iacute;culos para &laquo;<span id="no-results-term"></span>&raquo;.</div>
+  </div></div>
+</div>
+
+<!-- ============================= ART. 257 ============================= -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-257"><span class="section-heading-text">Art. 257 &mdash; Competencia Judicial Territorial</span><span class="section-heading-count">3 reglas + control de competencia</span><button class="section-toggle-btn">&#9650;</button></div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-257"><div class="card-grid">
+
+<article class="map-card" data-cat="c2" data-text="257.1 competencia juez primera instancia mercantil domicilio requerido art 86ter LOPJ foro especial">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 257.1</span><span class="status-tag tag-ok">Regla general</span></div><h2 class="card-title">Competencia del Juzgado de Primera Instancia del domicilio del requerido</h2><p class="card-subtitle">Regla general: es competente el Juez de Primera Instancia o de lo Mercantil, seg&uacute;n proceda, del domicilio de la persona que hubiera de declarar, exhibir o intervenir. Se aplica tanto a personas f&iacute;sicas como jur&iacute;dicas. La referencia al juez de lo mercantil conecta con el art. 86 ter LOPJ (propiedad industrial e intelectual, sociedades, seguros).</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Determinaci&oacute;n del domicilio</div><ul class="inner-list">
+      <li>Persona f&iacute;sica: domicilio habitual (art. 40 CC); en su defecto, lugar de &uacute;ltima residencia.</li>
+      <li>Persona jur&iacute;dica: domicilio del art. 8.2 LEC (sede de administraci&oacute;n o principal establecimiento).</li>
+      <li>Empresario individual: establecimiento principal o domicilio habitual (art. 8.3 LEC).</li>
+      <li>Si hay varios requeridos en distintos domicilios, el solicitante puede elegir cualquiera de ellos (conexidad objetiva, art. 53 LEC).</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Regla especial (n&uacute;ms. 6&ordm;, 7&ordm;, 8&ordm; y 9&ordm;)</div><ul class="inner-list">
+      <li>Tribunal ante el que haya de presentarse la demanda determinada. El fuero del domicilio del requerido cede ante el del tribunal competente para el proceso principal.</li>
+      <li>Si las diligencias afectan a bienes inmuebles, puede ser competente el juzgado de la situaci&oacute;n del bien.</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Nuevas diligencias encadenadas</div><ul class="inner-list">
+      <li>Podr&aacute;n instarse del mismo tribunal o del que resultar&iacute;a competente a ra&iacute;z de los hechos averiguados (misma pretensi&oacute;n o pretensiones acumulables). Flexibilidad competencial encadenada que evita la disgregaci&oacute;n de las diligencias.</li>
+    </ul></div>
+    <div class="note-box info-box"><div class="note-box-label">Conexiones normativas</div><div class="note-box-text">Arts. 50, 60 LOPJ (competencia objetiva y territorial). Art. 86ter LOPJ (Juzgados de lo Mercantil para diligencias en materia de PI, competencia y marcas). Arts. 8, 53, 63 LEC (domicilio, conexidad). Reglamento Bruselas I bis (UE) 1215/2012: foros internacionales en materia civil y mercantil.</div></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">Art. 50 LOPJ</span><span class="ref-tag">Art. 86ter LOPJ</span><span class="ref-tag">Arts. 8, 53, 63 LEC</span><span class="ref-tag">RB I bis 1215/2012</span></div>
+</article>
+
+<article class="map-card" data-cat="c2" data-text="257.2 inadmision declinatoria control competencia revision oficio abstencion conflicto negativo art 60">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 257.2</span><span class="status-tag tag-warn">Sin declinatoria</span></div><h2 class="card-title">Control de competencia: inadmisi&oacute;n de declinatoria</h2><p class="card-subtitle">No se admite declinatoria en las diligencias preliminares. El juez revisar&aacute; de oficio su competencia de forma obligatoria. Si no es competente, se abstendr&aacute; e indicar&aacute; al solicitante el juzgado al que debe acudir. El conflicto negativo de competencia lo resuelve el tribunal inmediato superior com&uacute;n (art. 60 LEC).</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>Mecanismos de control de competencia</div><ul class="inner-list">
+    <li><strong>No se admite declinatoria:</strong> la v&iacute;a espec&iacute;fica de la declinatoria queda excluida para evitar dilaciones en un procedimiento de car&aacute;cter preparatorio que debe ser r&aacute;pido.</li>
+    <li><strong>Revisi&oacute;n de oficio:</strong> el juez revisa obligatoriamente su competencia antes de pronunciarse sobre el fondo.</li>
+    <li><strong>Abstenci&oacute;n:</strong> si no es competente, se abstiene e indica al solicitante el juzgado competente al que debe acudir.</li>
+    <li><strong>Conflicto negativo:</strong> lo resuelve el tribunal inmediato superior com&uacute;n (art. 60 LEC), por auto sin ulterior recurso, dentro de los 10 d&iacute;as siguientes.</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">Art. 60 LEC</span><span class="ref-tag">Art. 86ter LOPJ</span><span class="ref-tag">RB I bis 1215/2012</span></div>
+</article>
+
+  </div></div>
+</div>
+
+<!-- ============================= ART. 258 ============================= -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-258"><span class="section-heading-text">Art. 258 &mdash; Decisi&oacute;n sobre las Diligencias y Recursos</span><span class="section-heading-count">3 apartados</span><button class="section-toggle-btn">&#9650;</button></div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-258"><div class="card-grid">
+
+<article class="map-card" data-cat="c3" data-text="258.1 decision auto motivado triple control adecuacion justa causa interes legitimo cinco dias caucion">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 258.1</span><span class="status-tag tag-warn">Decisi&oacute;n</span></div><h2 class="card-title">Auto motivado de admisi&oacute;n o denegaci&oacute;n (5 d&iacute;as)</h2><p class="card-subtitle">El tribunal resolver&aacute; mediante auto motivado, dentro de los cinco d&iacute;as siguientes a la presentaci&oacute;n de la solicitud. Solo acceder&aacute; a la pretensi&oacute;n si la diligencia es adecuada, existe justa causa e inter&eacute;s leg&iacute;timo. Si se acuerda, se fija la cauci&oacute;n en el mismo auto. Si las diligencias no resultan justificadas, se rechazan.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Triple control de admisi&oacute;n</div><ul class="inner-list">
+      <li><strong>Adecuaci&oacute;n:</strong> la diligencia es id&oacute;nea para la finalidad que el solicitante persigue.</li>
+      <li><strong>Justa causa:</strong> fundamentaci&oacute;n suficiente de la solicitud, con referencia circunstanciada al asunto objeto del juicio.</li>
+      <li><strong>Inter&eacute;s leg&iacute;timo:</strong> legitimaci&oacute;n material del solicitante para obtener la informaci&oacute;n o la medida solicitada.</li>
+      <li>Solo si se superan los tres controles, el tribunal accede y fija la cuant&iacute;a de la cauci&oacute;n en el mismo auto.</li>
+    </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Denegaci&oacute;n y motivaci&oacute;n</div><ul class="inner-list">
+      <li>El tribunal rechazar&aacute; la petici&oacute;n si no considera justificadas las diligencias (incumplimiento de cualquiera de los tres requisitos o defectos formales).</li>
+      <li>El auto debe motivar la proporcionalidad de la medida: equilibrio entre el inter&eacute;s del solicitante y los derechos del afectado (STS 315/2018). La falta de motivaci&oacute;n puede ser causa de nulidad.</li>
+    </ul></div>
+    <div class="note-box warn-box"><div class="note-box-label">Plazos</div><div class="note-box-text"><strong>Resoluci&oacute;n de la solicitud:</strong> 5 d&iacute;as desde la presentaci&oacute;n. <strong>Prestaci&oacute;n de la cauci&oacute;n:</strong> 3 d&iacute;as desde el auto de admisi&oacute;n. Si no se presta en plazo &rarr; archivo definitivo por decreto del Letrado de la Administraci&oacute;n de Justicia.</div></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">Art. 209 LEC</span><span class="ref-tag">Art. 24.1 CE</span><span class="ref-tag">STS 315/2018</span><span class="ref-tag">STS 146/2017</span></div>
+</article>
+
+<article class="map-card" data-cat="c3" data-text="258.2 recurso apelacion auto acordando irrecurrible auto denegando apelacion asimetria recursiva">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 258.2</span><span class="status-tag tag-alert">Asimetr&iacute;a recursiva</span></div><h2 class="card-title">R&eacute;gimen de recursos (asimetr&iacute;a recursiva)</h2><p class="card-subtitle">Contra el auto que acuerde las diligencias no cabe recurso alguno (protecci&oacute;n frente a la dilaci&oacute;n). Contra el auto que las deniegue, cabr&aacute; recurso de apelaci&oacute;n (tutela judicial efectiva del solicitante). Justificaci&oacute;n: la admisi&oacute;n no causa perjuicio definitivo al requerido, que puede oponerse (art. 260); la denegaci&oacute;n cierra definitivamente el acceso a la informaci&oacute;n.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>Asimetr&iacute;a recursiva</div><ul class="inner-list">
+    <li><strong>Auto que acuerda:</strong> irrecurrible. El requerido no puede recurrir la admisi&oacute;n, pero puede oponerse (art. 260).</li>
+    <li><strong>Auto que deniega:</strong> recurso de apelaci&oacute;n. El solicitante puede someter la decisi&oacute;n a revisi&oacute;n del tribunal superior.</li>
+    <li><em>Justificaci&oacute;n:</em> la admisi&oacute;n no causa perjuicio definitivo (hay mecanismos de oposici&oacute;n y confidencialidad); la denegaci&oacute;n cierra definitivamente el acceso a la informaci&oacute;n, lo que exige una v&iacute;a de impugnaci&oacute;n.</li>
+  </ul></div>
+    <div class="note-box alert-box"><div class="note-box-label">V&iacute;as extraordinarias</div><div class="note-box-text">Contra la resoluci&oacute;n del recurso de apelaci&oacute;n no cabe recurso ordinario ulterior, pero s&iacute; el incidente de nulidad de actuaciones (art. 241 LEC) por vulneraci&oacute;n del art. 24 CE (tutela judicial efectiva).</div></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">Art. 260 LEC</span><span class="ref-tag">Art. 241 LEC</span><span class="ref-tag">Art. 24 CE</span></div>
+</article>
+
+<article class="map-card" data-cat="c3" data-text="258.3 incumplimiento caucion tres dias archivo definitivo decreto LAJ">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 258.3</span><span class="status-tag tag-alert">3 d&iacute;as</span></div><h2 class="card-title">Incumplimiento de cauci&oacute;n: archivo definitivo</h2><p class="card-subtitle">Si el solicitante no presta la cauci&oacute;n en el plazo de 3 d&iacute;as desde la notificaci&oacute;n del auto de admisi&oacute;n, se proceder&aacute; al archivo definitivo de las actuaciones por decreto del Letrado de la Administraci&oacute;n de Justicia. Es un plazo de caducidad, no susceptible de ampliaci&oacute;n.</p></div>
+  <div class="card-refs"><span class="ref-tag">Art. 133 LEC</span></div>
+</article>
+
+  </div></div>
+</div>
+
+<!-- ============================= ART. 259 ============================= -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-259"><span class="section-heading-text">Art. 259 &mdash; Citaci&oacute;n para la Pr&aacute;ctica de las Diligencias</span><span class="section-heading-count">4 apartados</span><button class="section-toggle-btn">&#9650;</button></div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-259"><div class="card-grid">
+
+<article class="map-card" data-cat="c4" data-text="259.1 citacion requerimiento sede oficina judicial diez dias comparecencia cedula 158 LEC">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 259.1</span><span class="status-tag tag-ok">10 d&iacute;as</span></div><h2 class="card-title">Citaci&oacute;n y requerimiento</h2><p class="card-subtitle">El auto de admisi&oacute;n cita y requiere a los interesados para la pr&aacute;ctica de las diligencias. Doble funci&oacute;n: llamar a comparecer e intimar al cumplimiento. Lugar: sede de la Oficina judicial u otro que se considere oportuno. Plazo: dentro de los 10 d&iacute;as siguientes al auto.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>Contenido de la citaci&oacute;n</div><ul class="inner-list">
+    <li>Identificaci&oacute;n del tribunal y del Letrado de la Administraci&oacute;n de Justicia.</li>
+    <li>Descripci&oacute;n de la diligencia acordada y su fundamento legal. D&iacute;a, hora y lugar de la actuaci&oacute;n.</li>
+    <li>Apercibimiento de las consecuencias de la incomparecencia (arts. 260 y 261).</li>
+    <li>Informaci&oacute;n sobre la posibilidad de designar abogado y procurador.</li>
+  </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Forma de la citaci&oacute;n</div><ul class="inner-list">
+    <li>C&eacute;dula de citaci&oacute;n: diligencia firmada por el LAJ con los datos del art. 158 LEC. Entrega en mano al requerido o persona autorizada (art. 160 LEC).</li>
+    <li>Si no se localiza: edictos (art. 164 LEC) como &uacute;ltima ratio.</li>
+    <li>Medios electr&oacute;nicos: si el requerido est&aacute; obligado a relacionarse electr&oacute;nicamente (art. 14 LEC), la citaci&oacute;n puede practicarse por esta v&iacute;a.</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">Arts. 158-164 LEC</span><span class="ref-tag">Art. 14 LEC</span><span class="ref-tag">Ley 39/2015</span></div>
+</article>
+
+<article class="map-card" data-cat="c4" data-text="259.2 presentacion telematica documentos electronicos copia electronica asesor tecnico perito experto">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 259.2</span><span class="status-tag tag-info">Telem&aacute;tica</span></div><h2 class="card-title">Presentaci&oacute;n telem&aacute;tica y asistencia de experto</h2><p class="card-subtitle">Los documentos y t&iacute;tulos podr&aacute;n exhibirse por medios telem&aacute;ticos o electr&oacute;nicos. El examen se realizar&aacute; en la sede de la oficina judicial (control jurisdiccional). La parte solicitante podr&aacute; obtener copia electr&oacute;nica con los medios que aporte. Adem&aacute;s, el solicitante podr&aacute; acudir asesorado por un experto en la materia, siempre a su costa, lo cual es especialmente relevante en diligencias t&eacute;cnicas (PI, contabilidad, historia cl&iacute;nica).</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>Facultades del solicitante</div><ul class="inner-list">
+    <li>Documentos electr&oacute;nicos: pueden presentarse por medios telem&aacute;ticos. El examen se realiza en la sede judicial.</li>
+    <li>Copia electr&oacute;nica: el solicitante puede obtener copia con los medios que aporte.</li>
+    <li>Asistencia de experto: relevante en diligencias t&eacute;cnicas (PI, contabilidad, inform&aacute;tica forense). Siempre a costa del solicitante.</li>
+    <li>La comparecencia del requerido es facultativa, no obligatoria. Si comparece, puede estar asistido de abogado y representado por procurador.</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">Art. 23 LEC</span><span class="ref-tag">Art. 31 LEC</span><span class="ref-tag">Art. 260 LEC</span></div>
+</article>
+
+<article class="map-card" data-cat="c4" data-text="259.3 confidencialidad puerta cerrada art 138.3 interrogatorio uso exclusivo informacion propiedad industrial intelectual numeros 7 8 10 11">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 259.3</span><span class="status-tag tag-alert">Confidencialidad</span></div><h2 class="card-title">Confidencialidad y reserva</h2><p class="card-subtitle">Tres niveles de protecci&oacute;n: (1) puerta cerrada para el interrogatorio del art. 256.1.7&ordm;, conforme al art. 138.3 LEC; (2) uso exclusivo de la informaci&oacute;n obtenida (n&uacute;ms. 7, 8, 10 y 11) para la tutela jurisdiccional de los derechos de PI del solicitante, con prohibici&oacute;n de divulgaci&oacute;n o comunicaci&oacute;n a terceros; (3) car&aacute;cter reservado del conjunto de las actuaciones, a instancia de cualquier interesado, para proteger datos confidenciales frente a terceros ajenos al procedimiento.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>Tres niveles de protecci&oacute;n</div><ul class="inner-list">
+    <li><strong>Puerta cerrada (art. 256.1.7&ordm;):</strong> el tribunal podr&aacute; ordenar la celebraci&oacute;n a puerta cerrada del interrogatorio. Procedimiento conforme al art. 138.3 LEC: audiencia previa a las partes presentes; auto irrecurrible con posibilidad de protesta.</li>
+    <li><strong>Uso exclusivo (n&uacute;ms. 7, 8, 10 y 11):</strong> la informaci&oacute;n solo puede utilizarse para la tutela jurisdiccional de los derechos de propiedad industrial o intelectual del solicitante. Prohibici&oacute;n de divulgaci&oacute;n o comunicaci&oacute;n a terceros.</li>
+    <li><strong>Car&aacute;cter reservado:</strong> a instancia de cualquier interesado, el tribunal podr&aacute; atribuir car&aacute;cter reservado al conjunto de las actuaciones, protegiendo datos confidenciales frente a terceros ajenos al procedimiento.</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">Art. 138.3 LEC</span><span class="ref-tag">Art. 259.4</span></div>
+</article>
+
+  </div></div>
+</div>
+
+<!-- ============================= ART. 260 ============================= -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-260"><span class="section-heading-text">Art. 260 &mdash; Oposici&oacute;n a las Diligencias Preliminares</span><span class="section-heading-count">4 apartados</span><button class="section-toggle-btn">&#9650;</button></div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-260"><div class="card-grid">
+
+<article class="map-card" data-cat="c5" data-text="260.1 oposicion cinco dias traslado impugnacion vista juicio verbal 437 motivos legitimas">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 260.1</span><span class="status-tag tag-info">5 d&iacute;as</span></div><h2 class="card-title">Tramitaci&oacute;n de la oposici&oacute;n</h2><p class="card-subtitle">El requerido puede formular oposici&oacute;n en el plazo de 5 d&iacute;as desde la citaci&oacute;n. Se da traslado al requirente, quien puede impugnarla en 5 d&iacute;as. Cualquier parte puede solicitar vista, que se sigue por los tr&aacute;mites del juicio verbal (arts. 437 y ss.). Resoluci&oacute;n por auto motivado.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>Motivos de oposici&oacute;n admisibles</div><ul class="inner-list">
+    <li>Falta de los requisitos del art. 256 (no se acredita inter&eacute;s leg&iacute;timo o la pertinencia).</li>
+    <li>Desproporcionalidad de la medida: gravamen excesivo al requerido.</li>
+    <li>Vulneraci&oacute;n de derechos fundamentales: intimidad (art. 18.1 CE), secreto de comunicaciones (art. 18.3 CE), protecci&oacute;n de datos (art. 18.4 CE).</li>
+    <li>Secreto profesional: abogado (art. 542.3 LOPJ), m&eacute;dico (Ley 41/2002), sacerdote (art. 416.2 LEC), periodista (art. 20.1.d CE; STC 159/2009; STEDH Goodwin).</li>
+    <li>Secreto comercial, industrial o empresarial (Ley 1/2019 de Secretos Empresariales).</li>
+    <li>Falta de competencia del tribunal (art. 257).</li>
+  </ul></div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Ley 42/2015 (reforma LEC)</div><ul class="inner-list">
+    <li>La Ley 42/2015 reforz&oacute; los mecanismos de oposici&oacute;n introduciendo mayores garant&iacute;as para el requerido, especialmente en materia de protecci&oacute;n de datos y secretos empresariales. Se increment&oacute; la exigencia de motivaci&oacute;n del auto de admisi&oacute;n y se ampliaron los motivos de oposici&oacute;n leg&iacute;tima.</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">Art. 18 CE</span><span class="ref-tag">Art. 416 LEC</span><span class="ref-tag">Ley 1/2019</span><span class="ref-tag">Ley 42/2015</span><span class="ref-tag">RGPD</span><span class="ref-tag">STC 159/2009</span></div>
+</article>
+
+<article class="map-card" data-cat="c5" data-text="260.2 oposicion injustificada costas irrecurrible disuasoria">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 260.2</span><span class="status-tag tag-alert">Injustificada</span></div><h2 class="card-title">Oposici&oacute;n injustificada</h2><p class="card-subtitle">Si la oposici&oacute;n resulta injustificada, se condenar&aacute; al requerido al pago de las costas del incidente. El auto que as&iacute; lo acuerde es irrecurrible. Funci&oacute;n disuasoria: desincentiva la oposici&oacute;n meramente dilatoria o infundada, protegiendo el derecho del solicitante a preparar su juicio.</p></div>
+  <div class="card-refs"><span class="ref-tag">Art. 260.3</span></div>
+</article>
+
+<article class="map-card" data-cat="c5" data-text="260.3 oposicion justificada auto apelacion revision tribunal superior">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 260.3</span><span class="status-tag tag-ok">Justificada</span></div><h2 class="card-title">Oposici&oacute;n justificada</h2><p class="card-subtitle">Si la oposici&oacute;n se estima justificada, el tribunal la declara mediante auto, contra el cual cabr&aacute; recurso de apelaci&oacute;n. El solicitante puede someter la decisi&oacute;n a revisi&oacute;n del tribunal superior, manteniendo la misma asimetr&iacute;a recursiva que el art. 258: lo desfavorable al solicitante es recurrible; lo desfavorable al requerido no.</p></div>
+  <div class="card-refs"><span class="ref-tag">Art. 260</span><span class="ref-tag">Art. 258.2</span></div>
+</article>
+
+  </div></div>
+</div>
+
+<!-- ============================= ARTS. 261-263 ============================= -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-261"><span class="section-heading-text">Arts. 261&ndash;263 &mdash; Negativa, Efectos, Cauci&oacute;n y Leyes Especiales</span><span class="section-heading-count">5 medidas + cauci&oacute;n + supletoriedad</span><button class="section-toggle-btn">&#9650;</button></div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-261"><div class="card-grid">
+
+<article class="map-card" data-cat="c6" data-text="261 negativa ficta confessio entrada registro documentos contables colectivos CP 556 desobediencia">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 261</span><span class="status-tag tag-alert">Negativa</span></div><h2 class="card-title">Negativa a llevar a cabo las diligencias</h2><p class="card-subtitle">Cuando la persona citada no atiende el requerimiento ni formula oposici&oacute;n, el tribunal acordar&aacute;n las medidas que resulten proporcionadas (ponderaci&oacute;n gravedad/inter&eacute;s), por auto motivado. Las medidas var&iacute;an seg&uacute;n el tipo de diligencia de que se trate, desde la ficta confessio hasta la entrada y registro.</p></div>
+  <div class="card-counters"><span class="counter-badge"><strong>5</strong> medidas seg&uacute;n tipo</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Medidas seg&uacute;n el tipo de diligencia</div><ul class="inner-list">
+      <li><strong>1&ordf; Declaraci&oacute;n (capacidad, representaci&oacute;n, legitimaci&oacute;n):</strong> <em>ficta confessio</em> &mdash; se tendr&aacute;n por respondidas afirmativamente las preguntas pretendidas y los hechos se considerar&aacute;n admitidos a efectos del juicio posterior.</li>
+      <li><strong>2&ordf; Exhibici&oacute;n de t&iacute;tulos y documentos:</strong> si existen indicios suficientes de localizaci&oacute;n, el tribunal ordenar&aacute; la entrada y registro del lugar; si se encontraren, se ocupar&aacute;n y se pondr&aacute;n a disposici&oacute;n del solicitante en la sede del tribunal.</li>
+      <li><strong>3&ordf; Exhibici&oacute;n de una cosa:</strong> procedimiento an&aacute;logo al de documentos; adem&aacute;s, el solicitante podr&aacute; pedir el dep&oacute;sito o la medida de garant&iacute;a m&aacute;s adecuada para la conservaci&oacute;n de la cosa.</li>
+      <li><strong>4&ordf; Documentos contables:</strong> las cuentas y datos que presente el solicitante se podr&aacute;n tener por ciertos a efectos del juicio posterior (inversi&oacute;n de la carga de la prueba).</li>
+      <li><strong>5&ordf; Grupo de afectados (art. 256.1.6&ordm;) y extensi&oacute;n a los n&uacute;meros 5 bis, 7&ordm; y 8&ordm;:</strong> medidas de intervenci&oacute;n, incluida entrada y registro, para encontrar documentos o datos. Alcanza a cualquier persona que pudiera colaborar. Sin perjuicio de responsabilidad penal por desobediencia a la autoridad judicial (arts. 556 y concordantes del C&oacute;digo Penal).</li>
+    </ul></div>
+    <div class="note-box info-box"><div class="note-box-label">Conexiones normativas</div><div class="note-box-text">Art. 556 CP: delito de desobediencia a la autoridad judicial si el requerido incumple la orden judicial. Art. 711 LEC: multas coercitivas. Art. 217.7 LEC: valoraci&oacute;n de la negativa como indicio en el proceso principal.</div></div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">CP art. 556</span><span class="ref-tag">Art. 711 LEC</span><span class="ref-tag">Art. 217.7 LEC</span><span class="ref-tag">Art. 261</span></div>
+</article>
+
+<article class="map-card" data-cat="c6" data-text="262 aplicacion caucion cinco dias remanente devolucion mes archivo apelacion sin efectos suspensivos">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 262</span><span class="status-tag tag-warn">Cauci&oacute;n</span></div><h2 class="card-title">Decisi&oacute;n sobre la aplicaci&oacute;n de la cauci&oacute;n</h2><p class="card-subtitle">Procede tras la pr&aacute;ctica de las diligencias o tras la denegaci&oacute;n por oposici&oacute;n justificada. El tribunal resolver&aacute; por auto en el plazo de 5 d&iacute;as, o&iacute;do el solicitante, a la vista de la petici&oacute;n de indemnizaci&oacute;n y la justificaci&oacute;n de gastos. Contra el auto cabr&aacute; recurso de apelaci&oacute;n sin efectos suspensivos. Si quedare remanente de cauci&oacute;n, no se devuelve hasta que transcurra el plazo de un mes del art. 256.3.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>R&eacute;gimen de la cauci&oacute;n y el remanente</div><ul class="inner-list">
+    <li><strong>Momento:</strong> practicadas las diligencias o denegadas por oposici&oacute;n justificada.</li>
+    <li><strong>Plazo:</strong> 5 d&iacute;as desde que se cumplan los presupuestos. Contenido: aplicaci&oacute;n de cauci&oacute;n seg&uacute;n petici&oacute;n de indemnizaci&oacute;n y justificaci&oacute;n de gastos.</li>
+    <li><strong>Audiencia:</strong> o&iacute;do el solicitante. <strong>Recurso:</strong> apelaci&oacute;n sin efectos suspensivos (la decisi&oacute;n se ejecuta mientras se tramita el recurso).</li>
+    <li><strong>Remanente:</strong> no se devuelve hasta que transcurra el plazo de un mes del art. 256.3. Si el solicitante no interpone demanda en ese plazo, tambi&eacute;n pierde el remanente. Si interpone la demanda, se le devuelve.</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">Art. 256.3</span><span class="ref-tag">Art. 262.2</span><span class="ref-tag">Art. 1902 CC</span></div>
+</article>
+
+<article class="map-card" data-cat="c6" data-text="263 leyes especiales supletoriedad propiedad intelectual competencia marcas patentes secretos DSA">
+  <div class="card-top"><div class="card-meta"><span class="art-badge">Art. 263</span><span class="status-tag tag-info">Supletoriedad</span></div><h2 class="card-title">Diligencias previstas en leyes especiales</h2><p class="card-subtitle">Lo dispuesto en los art&iacute;culos anteriores se entiende sin perjuicio de lo establecido en las leyes especiales sobre propiedad intelectual, competencia, marcas, patentes, secretos empresariales y arbitraje. Los preceptos del Cap&iacute;tulo II se aplican supletoriamente en lo que no se oponga a la legislaci&oacute;n especial (lex specialis derogat generali). Las particularidades pueden afectar a competencia, plazos, cauci&oacute;n, protecci&oacute;n del secreto y r&eacute;gimen de recursos.</p></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body"><div class="inner-section"><div class="inner-heading"><span class="dot"></span>Principio de especialidad y jurisprudencia</div><ul class="inner-list">
+    <li>Las leyes especiales prevalecen sobre el r&eacute;gimen general de la LEC en sus &aacute;mbitos respectivos.</li>
+    <li>Donde la ley especial calle, se aplica supletoriamente el r&eacute;gimen de los arts. 256&ndash;263 LEC.</li>
+    <li>STJUE C-427/07 (EGMA): las medidas de obtenci&oacute;n de pruebas en PI deben ser efectivas, proporcionadas y disuasorias.</li>
+    <li>STJUE C-524/21 (Nintendo): la exhibici&oacute;n de pruebas bancarias puede acordarse en el marco de una acci&oacute;n por infracci&oacute;n de PI.</li>
+    <li>STJUE C-235/09 (Abdida): efecto directo de las directivas de PI en los ordenamientos nacionales.</li>
+  </ul></div></div>
+  <div class="card-refs"><span class="ref-tag">Art. 256.1.9</span><span class="ref-tag">Ley 1/2019</span><span class="ref-tag">Dir. 2004/48/CE</span><span class="ref-tag">STJUE C-427/07</span><span class="ref-tag">STJUE C-524/21</span></div>
+</article>
+
+  </div></div>
+</div>
+
+<!-- ============================= CRONOGRAMA ============================= -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-timeline"><span class="section-heading-text">Cronograma de plazos procesales</span><span class="section-heading-count">10 tr&aacute;mites</span><button class="section-toggle-btn">&#9660;</button></div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-timeline"><div class="table-wrap"><table class="timeline-table">
+    <thead><tr><th>Acto o tr&aacute;mite procesal</th><th>Plazo</th><th>Fundamento normativo</th></tr></thead>
+    <tbody>
+      <tr><td class="td-tramite">Resoluci&oacute;n sobre solicitud de diligencias preliminares</td><td><span class="plazo-badge plazo-days">5 d&iacute;as</span></td><td class="td-norm">Art. 258.1</td></tr>
+      <tr><td class="td-tramite">Prestaci&oacute;n de cauci&oacute;n tras auto concediendo diligencias</td><td><span class="plazo-badge plazo-days">3 d&iacute;as</span></td><td class="td-norm">Art. 258.3</td></tr>
+      <tr><td class="td-tramite">Pr&aacute;ctica de la diligencia acordada desde citaci&oacute;n</td><td><span class="plazo-badge plazo-days">10 d&iacute;as</span></td><td class="td-norm">Art. 259.1</td></tr>
+      <tr><td class="td-tramite">Oposici&oacute;n a las diligencias por el requerido</td><td><span class="plazo-badge plazo-days">5 d&iacute;as</span></td><td class="td-norm">Art. 260.1</td></tr>
+      <tr><td class="td-tramite">Impugnaci&oacute;n de la oposici&oacute;n por el requirente</td><td><span class="plazo-badge plazo-days">5 d&iacute;as</span></td><td class="td-norm">Art. 260.1</td></tr>
+      <tr><td class="td-tramite">Resoluci&oacute;n sobre aplicaci&oacute;n de la cauci&oacute;n</td><td><span class="plazo-badge plazo-days">5 d&iacute;as</span></td><td class="td-norm">Art. 262.1</td></tr>
+      <tr><td class="td-tramite">Per&iacute;odo de retenci&oacute;n de cauci&oacute;n remanente</td><td><span class="plazo-badge plazo-months">1 mes</span></td><td class="td-norm">Arts. 256.3 y 262.2</td></tr>
+      <tr><td class="td-tramite">Interposici&oacute;n de demanda tras terminaci&oacute;n de diligencias (sanci&oacute;n por no hacerlo)</td><td><span class="plazo-badge plazo-months">1 mes</span></td><td class="td-norm">Art. 256.3</td></tr>
+      <tr><td class="td-tramite">Acci&oacute;n de saneamiento por vicios ocultos en compraventa</td><td><span class="plazo-badge plazo-months">6 meses (caducidad)</span></td><td class="td-norm">CC art. 1490</td></tr>
+      <tr><td class="td-tramite">Garant&iacute;a legal en compraventa de consumidores (Ley 7/2022)</td><td><span class="plazo-badge plazo-years">3 a&ntilde;os</span></td><td class="td-norm">RDL 1/2007 art. 120</td></tr>
+    </tbody>
+  </table></div></div>
+</div>
+
+<!-- ============================= ACTORES ============================= -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-actors"><span class="section-heading-text">Mapa de participantes y actores</span><span class="section-heading-count">5 categor&iacute;as &middot; 20+ actores</span><button class="section-toggle-btn">&#9660;</button></div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-actors"><div class="participants-grid">
+    <div class="participant-col"><div class="participant-col-head phead-c1">&Oacute;rgano Judicial</div><ul>
+      <li>Juzgado de 1&ordf; Instancia <span class="participant-note">(competencia general, art. 257)</span></li>
+      <li>Juzgado de lo Mercantil <span class="participant-note">(PI, marcas, competencia: art. 86ter LOPJ)</span></li>
+      <li>Audiencia Provincial <span class="participant-note">(resoluci&oacute;n de recursos de apelaci&oacute;n)</span></li>
+      <li>Letrado de la Adm&oacute;n. de Justicia (LAJ) <span class="participant-note">(pr&aacute;ctica material, actas, decreto de archivo)</span></li>
+    </ul></div>
+    <div class="participant-col"><div class="participant-col-head phead-c2">Fe P&uacute;blica y Peritos</div><ul>
+      <li>Notario <span class="participant-note">(actas de hechos, art. 178 RN)</span></li>
+      <li>Perito judicial <span class="participant-note">(designado de lista oficial, art. 341 LEC)</span></li>
+      <li>Auditor de cuentas <span class="participant-note">(exhibici&oacute;n libros societarios, Ley 22/2015)</span></li>
+      <li>Perito inform&aacute;tico <span class="participant-note">(evidencias digitales, metadatos)</span></li>
+    </ul></div>
+    <div class="participant-col"><div class="participant-col-head phead-c4">Partes y Representantes</div><ul>
+      <li>Solicitante de las diligencias <span class="participant-note">(legitimado activo, anticipa gastos)</span></li>
+      <li>Requerido / Afectado <span class="participant-note">(puede oponerse, art. 260)</span></li>
+      <li>Procurador de los Tribunales <span class="participant-note">(representaci&oacute;n, art. 23 LEC)</span></li>
+      <li>Abogado <span class="participant-note">(asistencia t&eacute;cnica, art. 31 LEC)</span></li>
+      <li>Tenedor / Depositario <span class="participant-note">(obligado a exhibir cosa mueble)</span></li>
+      <li>Socio / Comunero <span class="participant-note">(derecho de informaci&oacute;n, LSC art. 272)</span></li>
+    </ul></div>
+    <div class="participant-col"><div class="participant-col-head phead-c5">Sujetos protegidos</div><ul>
+      <li>Abogado / Procurador <span class="participant-note">(secreto profesional, art. 542.3 LOPJ)</span></li>
+      <li>M&eacute;dico / Profesional sanitario <span class="participant-note">(secreto, Ley 41/2002)</span></li>
+      <li>Sacerdote / Ministro de culto <span class="participant-note">(sigilo sacramental, art. 416.2 LEC)</span></li>
+      <li>Periodista <span class="participant-note">(secreto de fuentes, art. 20.1.d CE)</span></li>
+      <li>Administrador societario <span class="participant-note">(requerido para rendir cuentas, art. 236 LSC)</span></li>
+    </ul></div>
+    <div class="participant-col"><div class="participant-col-head phead-c6">Instituciones</div><ul>
+      <li>Registro de la Propiedad <span class="participant-note">(certificaciones con valor probatorio, LH art. 34)</span></li>
+      <li>Registro Mercantil <span class="participant-note">(documentaci&oacute;n societaria p&uacute;blica)</span></li>
+      <li>AEPD <span class="participant-note">(supervisi&oacute;n tratamiento datos en diligencias, RGPD)</span></li>
+      <li>TJUE <span class="participant-note">(interpreta directivas PI, competencia)</span></li>
+      <li>TEDH <span class="participant-note">(garant&iacute;as fundamentales en obtenci&oacute;n de prueba)</span></li>
+    </ul></div>
+  </div></div>
+</div>
+
+<!-- ============================= NORMATIVO ============================= -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-norms"><span class="section-heading-text">Ecosistema normativo &mdash; conexiones relacionadas</span><span class="section-heading-count">13+ normas</span><button class="section-toggle-btn">&#9660;</button></div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-norms"><div class="norm-grid">
+    <div class="norm-card"><div class="norm-law">LEC &middot; Norma procesal principal</div><div class="norm-title">Arts. 256&ndash;263 LEC 1/2000</div><div class="norm-arts">N&uacute;cleo central de las diligencias preliminares. 8 art&iacute;culos que regulan supuestos, competencia, decisi&oacute;n, citaci&oacute;n, oposici&oacute;n, efectos y leyes especiales.</div><span class="norm-tag tag-info">Norma procesal</span></div>
+    <div class="norm-card"><div class="norm-law">LEC &middot; Conexiones internas</div><div class="norm-title">Arts. 394&ndash;410, 427, 430, 498, 721&ndash;738 LEC</div><div class="norm-arts">R&eacute;gimen de condena en costas. Prueba anticipada con garant&iacute;as de contradicci&oacute;n. Medidas cautelares que pueden coexistir con las diligencias (art. 727.11: medida cautelar innominada).</div><span class="norm-tag tag-info">Conexiones</span></div>
+    <div class="norm-card"><div class="norm-law">Ley estatal &middot; Reforma 2015</div><div class="norm-title">Ley 42/2015, de reforma de la LEC</div><div class="norm-arts">Reforz&oacute; los mecanismos de oposici&oacute;n y las garant&iacute;as del requerido, especialmente en materia de protecci&oacute;n de datos y secretos empresariales. Increment&oacute; la exigencia de motivaci&oacute;n del auto de admisi&oacute;n.</div><span class="norm-tag tag-gray">Reforma</span></div>
+    <div class="norm-card"><div class="norm-law">Ley estatal &middot; Secretos empresariales</div><div class="norm-title">Ley 1/2019 de Secretos Empresariales</div><div class="norm-arts">Transpone la Dir. 2016/943. Regula la protecci&oacute;n del know-how empresarial y las medidas de preservaci&oacute;n del secreto en el proceso civil (arts. 5&ndash;9).</div><span class="norm-tag tag-ok">PI</span></div>
+    <div class="norm-card"><div class="norm-law">Ley estatal &middot; Sociedades de capital</div><div class="norm-title">RDL 1/2010, Texto Refundido LSC</div><div class="norm-arts"><strong>Art. 236</strong> &mdash; responsabilidad de administradores. <strong>Arts. 204&ndash;211</strong> &mdash; impugnaci&oacute;n de acuerdos sociales. Relevante para la diligencia de exhibici&oacute;n de libros contables.</div><span class="norm-tag tag-warn">Societario</span></div>
+    <div class="norm-card"><div class="norm-law">Ley estatal &middot; Consumidores</div><div class="norm-title">RDL 1/2007, Estatuto de Consumidores</div><div class="norm-arts"><strong>Arts. 114&ndash;127</strong> &mdash; garant&iacute;as postventa. Reformado por Ley 7/2022 (ampliaci&oacute;n de garant&iacute;a a 3 a&ntilde;os). Relevante para diligencias de reconocimiento de productos defectuosos.</div><span class="norm-tag tag-warn">Consumidores</span></div>
+    <div class="norm-card"><div class="norm-law">Derecho UE &middot; Propiedad intelectual</div><div class="norm-title">Directiva 2004/48/CE (Derechos de PI)</div><div class="norm-arts"><strong>Arts. 6&ndash;9</strong> &mdash; medidas de obtenci&oacute;n de pruebas, medidas para asegurar la prueba y medidas cautelares en materia de propiedad intelectual e industrial.</div><span class="norm-tag tag-ok">UE &middot; PI</span></div>
+    <div class="norm-card"><div class="norm-law">Derecho UE &middot; Secretos empresariales</div><div class="norm-title">Directiva (UE) 2016/943</div><div class="norm-arts"><strong>Arts. 6&ndash;8</strong> &mdash; medidas de protecci&oacute;n del secreto en el proceso civil. Transpuesta por la Ley 1/2019. Principio de proporcionalidad.</div><span class="norm-tag tag-ok">UE &middot; Secretos</span></div>
+    <div class="norm-card"><div class="norm-law">Derecho UE &middot; Protecci&oacute;n de datos</div><div class="norm-title">RGPD (UE) 2016/679</div><div class="norm-arts"><strong>Arts. 5&ndash;11</strong> &mdash; principios de licitud, minimizaci&oacute;n y categor&iacute;as especiales de datos. Relevante cuando las diligencias acceden a datos personales especialmente protegidos.</div><span class="norm-tag tag-alert">UE &middot; Datos</span></div>
+    <div class="norm-card"><div class="norm-law">Derecho UE &middot; Competencia judicial</div><div class="norm-title">Reglamento Bruselas I bis (UE) 1215/2012</div><div class="norm-arts">Competencia judicial internacional en materia civil y mercantil. Determina el tribunal competente cuando el requerido reside en otro Estado miembro.</div><span class="norm-tag tag-info">UE &middot; Competencia</span></div>
+    <div class="norm-card"><div class="norm-law">Jurisprudencia espa&ntilde;ola</div><div class="norm-title">STS 146/2017, 563/2019, 315/2018</div><div class="norm-arts"><strong>STS 146/2017</strong> &mdash; prohibici&oacute;n de diligencias exploratorias. <strong>STS 563/2019</strong> &mdash; la diligencia no sirve para averiguar si existe un derecho. <strong>STS 315/2018</strong> &mdash; exigencia de motivaci&oacute;n del auto de admisi&oacute;n.</div><span class="norm-tag tag-gray">Jurisprudencia</span></div>
+    <div class="norm-card"><div class="norm-law">Jurisprudencia UE</div><div class="norm-title">STJUE C-427/07 (EGMA) &middot; C-524/21 (Nintendo)</div><div class="norm-arts"><strong>C-427/07</strong> &mdash; medidas de obtenci&oacute;n de pruebas en PI deben ser efectivas y proporcionadas. <strong>C-524/21</strong> &mdash; exhibici&oacute;n de pruebas bancarias en acci&oacute;n por infracci&oacute;n de PI en plataformas.</div><span class="norm-tag tag-gray">Jurisprudencia UE</span></div>
+  </div></div>
+</div>
+
+</main>
+
+<footer class="legend-footer"><div class="legend-inner">
+  <div class="legend-title">Leyenda de colores por categor&iacute;a</div>
+  <div class="legend-grid">
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--c1)"></div>Supuestos (arts. 256.1.1&ndash;11)</div><div class="legend-divider"></div>
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--c2)"></div>Competencia judicial (art. 257)</div><div class="legend-divider"></div>
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--c3)"></div>Decisi&oacute;n / Recursos (art. 258)</div><div class="legend-divider"></div>
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--c4)"></div>Citaci&oacute;n y pr&aacute;ctica (art. 259)</div><div class="legend-divider"></div>
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--c5)"></div>Oposici&oacute;n (art. 260)</div><div class="legend-divider"></div>
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--c6)"></div>Efectos / Cauci&oacute;n / Leyes especiales (arts. 261&ndash;263)</div>
+  </div>
+  <div class="legend-copy">LEC 1/2000, de 7 de enero &middot; Libro II, T&iacute;tulo I, Cap&iacute;tulo II &middot; Arts. 256&ndash;263</div>
+</div></footer>
+
+<script>
+(function(){
+  const pills=document.querySelectorAll('.pill'),cards=document.querySelectorAll('.map-card'),noRes=document.getElementById('no-results'),noTerm=document.getElementById('no-results-term');
+  let activeCat='all',searchTerm='';
+
+  function updateVisibility(){
+    let v=0;
+    cards.forEach(c=>{
+      const cm=activeCat==='all'||c.dataset.cat===activeCat;
+      const hay=(c.dataset.text||'')+' '+c.innerText.toLowerCase();
+      const tm=!searchTerm||hay.includes(searchTerm);
+      c.classList.toggle('hidden',!(cm&&tm));
+      if(cm&&tm)v++;
+    });
+    if(noRes)noRes.style.display=v===0?'block':'none';
+    if(noTerm)noTerm.textContent=searchTerm;
+  }
+
+  pills.forEach(p=>p.addEventListener('click',()=>{pills.forEach(x=>x.classList.remove('active'));p.classList.add('active');activeCat=p.dataset.cat;updateVisibility();}));
+  document.getElementById('search').addEventListener('input',e=>{searchTerm=e.target.value.toLowerCase().trim();updateVisibility();});
+
+  // MEJORA: toggleCard ahora verifica si existe card-body antes de actuar
+  window.toggleCard = function(btn){
+    const card = btn.closest('.map-card');
+    if (!card) return;
+    const body = card.querySelector('.card-body');
+    if (!body) return; // Si no hay cuerpo, no hace nada
+    
+    const isExp = card.classList.toggle('expanded');
+    const span = btn.querySelector('span:first-child');
+    if (span) {
+      span.textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+    }
+  };
+
+  // MEJORA: Los botones globales ahora solo afectan a tarjetas que realmente tienen card-body
+  document.getElementById('btn-expand-all').addEventListener('click',()=>{
+    cards.forEach(c=>{
+      if(!c.classList.contains('hidden')){
+        const body = c.querySelector('.card-body');
+        if (body) {
+          c.classList.add('expanded');
+          const b = c.querySelector('.card-toggle-btn span:first-child');
+          if(b) b.textContent='Ocultar contenido';
+        }
+      }
+    });
+  });
+  document.getElementById('btn-collapse-all').addEventListener('click',()=>{
+    cards.forEach(c=>{
+      const body = c.querySelector('.card-body');
+      if (body) {
+        c.classList.remove('expanded');
+        const b = c.querySelector('.card-toggle-btn span:first-child');
+        if(b) b.textContent='Ver contenido completo';
+      }
+    });
+  });
+
+  document.querySelectorAll('.section-heading').forEach(h=>h.addEventListener('click',()=>{
+    const t=document.getElementById(h.dataset.target);if(!t)return;
+    const col=t.classList.toggle('collapsed');
+    const btn=h.querySelector('.section-toggle-btn');if(btn)btn.textContent=col?'\u25B6':'\u25B2';
+  }));
+
+  const ZOOM_STEP=10,ZOOM_MIN=50,ZOOM_MAX=200;let zoom=100;
+  const zoomTarget=document.querySelector('.page-main'),zoomLabel=document.getElementById('zoom-label');
+  function applyZoom(){zoomTarget.style.zoom=zoom/100;zoomLabel.textContent=zoom+'%';document.getElementById('btn-zoom-out').disabled=zoom<=ZOOM_MIN;document.getElementById('btn-zoom-in').disabled=zoom>=ZOOM_MAX;}
+  function zoomIn(){if(zoom<ZOOM_MAX){zoom+=ZOOM_STEP;applyZoom();}}
+  function zoomOut(){if(zoom>ZOOM_MIN){zoom-=ZOOM_STEP;applyZoom();}}
+  function zoomReset(){zoom=100;applyZoom();}
+  document.getElementById('btn-zoom-in').addEventListener('click',zoomIn);
+  document.getElementById('btn-zoom-out').addEventListener('click',zoomOut);
+  document.getElementById('btn-zoom-reset').addEventListener('click',zoomReset);
+
+  document.addEventListener('keydown',e=>{
+    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+    if(e.ctrlKey||e.metaKey){if(e.key==='='||e.key==='+'){e.preventDefault();zoomIn();}if(e.key==='-'){e.preventDefault();zoomOut();}if(e.key==='0'){e.preventDefault();zoomReset();}return;}
+    switch(e.key){
+      case'/':e.preventDefault();document.getElementById('search').focus();break;
+      case'e':case'E':document.getElementById('btn-expand-all').click();break;
+      case'c':case'C':document.getElementById('btn-collapse-all').click();break;
+      case'+':case'=':zoomIn();break;case'-':case'_':zoomOut();break;case'0':zoomReset();break;
+      case'Escape':document.getElementById('search').value='';searchTerm='';updateVisibility();document.getElementById('search').blur();break;
+    }
+  });
+  applyZoom();
+})();
+</script>
+</body>
+</html>

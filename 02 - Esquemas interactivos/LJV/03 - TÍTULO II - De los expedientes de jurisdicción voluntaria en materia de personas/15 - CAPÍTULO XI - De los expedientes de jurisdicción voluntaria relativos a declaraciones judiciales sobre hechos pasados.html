@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mapa mental — Capítulo XI. Ley 15/2015, Jurisdicción Voluntaria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== TOKENS ===== */
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;  /* ámbito de aplicación */
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;  /* competencia y legitimación */
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;  /* tramitación y resolución */
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;  /* recursos */
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;  /* marco general */
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;  /* conexiones normativas */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+  --transition:   200ms ease;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text-1); font-family: var(--font-ui); font-size: 14px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+
+/* ===== HEADER ===== */
+.site-header { background: var(--header-bg); color: var(--header-text); padding: 2rem 1.5rem 1.75rem; }
+.header-inner { max-width: 1280px; margin: 0 auto; }
+.header-breadcrumb { font-size: 12px; color: rgba(248,245,237,.5); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin-bottom: .5rem; }
+.header-title { font-family: var(--font-display); font-size: clamp(1.5rem,4vw,2.2rem); font-weight: 700; line-height: 1.2; margin-bottom: .4rem; }
+.header-subtitle { font-size: 13.5px; color: rgba(248,245,237,.6); margin-bottom: 1rem; }
+.header-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.header-tag { display: inline-block; background: rgba(200,169,110,.15); border: 1px solid rgba(200,169,110,.3); color: var(--accent); font-size: 11.5px; font-weight: 600; padding: 3px 12px; border-radius: 20px; }
+.header-actions { margin-left: auto; }
+.btn-ghost { background: none; border: 1px solid rgba(248,245,237,.15); color: rgba(248,245,237,.7); font-family: var(--font-ui); font-size: 12px; padding: 5px 14px; border-radius: var(--radius-sm); cursor: pointer; transition: var(--transition); }
+.btn-ghost:hover { background: rgba(248,245,237,.08); color: var(--header-text); }
+
+/* ===== STATS BAR ===== */
+.stats-bar { background: var(--surface); border-bottom: 1px solid var(--border); }
+.stats-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); }
+.stat-item { padding: 1rem 1.25rem; border-right: 1px solid var(--border); }
+.stat-item:last-child { border-right: none; }
+.stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 800; line-height: 1; color: var(--text-1); }
+.stat-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; margin-top: 2px; }
+@media (max-width:640px) { .stats-inner { grid-template-columns: repeat(2,1fr); } }
+
+/* ===== CONTROLS BAR ===== */
+.controls-bar { position: sticky; top: 0; z-index: 100; background: var(--surface); box-shadow: 0 2px 8px rgba(0,0,0,.04); border-bottom: 1px solid var(--border); }
+.controls-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: .75rem; padding: .6rem 1.25rem; flex-wrap: wrap; }
+.search-wrap { display: flex; align-items: center; flex: 1; min-width: 180px; max-width: 320px; background: var(--surface-2); border: 1px solid var(--border-md); border-radius: var(--radius-sm); padding: 0 .6rem; }
+.search-wrap svg { width: 16px; height: 16px; fill: none; stroke: var(--text-3); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.search-input { border: none; background: none; outline: none; font-family: var(--font-ui); font-size: 13px; padding: 7px 6px; width: 100%; color: var(--text-1); }
+.search-input::placeholder { color: var(--text-3); }
+.filter-pills { display: flex; gap: .35rem; flex-wrap: wrap; }
+.pill { font-family: var(--font-ui); font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--border-md); background: var(--surface); color: var(--text-2); cursor: pointer; transition: var(--transition); white-space: nowrap; }
+.pill.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+.pill[data-cat="c1"].active { background: var(--c1); border-color: var(--c1); color: #fff; }
+.pill[data-cat="c2"].active { background: var(--c2); border-color: var(--c2); color: #fff; }
+.pill[data-cat="c3"].active { background: var(--c3); border-color: var(--c3); color: #fff; }
+.pill[data-cat="c4"].active { background: var(--c4); border-color: var(--c4); color: #fff; }
+.pill[data-cat="c5"].active { background: var(--c5); border-color: var(--c5); color: #fff; }
+.pill[data-cat="c6"].active { background: var(--c6); border-color: var(--c6); color: #fff; }
+.ctrl-actions { display: flex; align-items: center; gap: .4rem; margin-left: auto; }
+.btn-ctrl { font-family: var(--font-ui); font-size: 12px; font-weight: 500; padding: 5px 10px; border: 1px solid var(--border-md); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-2); cursor: pointer; transition: var(--transition); white-space: nowrap; }
+.btn-ctrl:hover { background: var(--surface-2); }
+.zoom-cluster { display: flex; border: 1px solid var(--border-md); border-radius: var(--radius-sm); overflow: hidden; }
+.btn-zoom { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: none; background: var(--surface); color: var(--text-2); font-size: 16px; cursor: pointer; }
+.btn-zoom:first-child { border-right: 1px solid var(--border-md); }
+.btn-zoom:last-child { border-left: 1px solid var(--border-md); }
+.btn-zoom:disabled { opacity: .35; cursor: default; }
+.zoom-label { font-size: 12px; font-weight: 500; min-width: 42px; text-align: center; line-height: 28px; color: var(--text-2); }
+@media (max-width:768px) { .ctrl-actions { display: none; } }
+
+/* ===== PAGE MAIN ===== */
+.page-main { max-width: 1280px; margin: 0 auto; padding: 1.5rem 1.25rem 2rem; }
+
+/* ===== MAP SECTION ===== */
+.map-section { margin-bottom: 1.5rem; }
+.section-heading { display: flex; align-items: center; gap: .6rem; cursor: pointer; padding: .6rem 0; user-select: none; }
+.section-heading:hover { opacity: .85; }
+.section-heading-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-1); }
+.section-heading-count { font-size: 12px; font-weight: 500; color: var(--text-3); margin-left: auto; }
+.section-toggle-btn { font-size: 14px; background: none; border: none; color: var(--text-3); cursor: pointer; transition: transform var(--transition); padding: 0 4px; }
+.section-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 .75rem; }
+.section-body.collapsed { display: none; }
+
+/* ===== CARD GRID ===== */
+.card-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+@media (max-width:960px) { .card-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width:600px) { .card-grid { grid-template-columns: 1fr; } }
+
+/* ===== MAP CARD ===== */
+.map-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden; transition: box-shadow var(--transition); }
+.map-card:hover { box-shadow: var(--shadow-md); }
+.map-card[data-cat="c1"] { border-left: 4px solid var(--c1); }
+.map-card[data-cat="c2"] { border-left: 4px solid var(--c2); }
+.map-card[data-cat="c3"] { border-left: 4px solid var(--c3); }
+.map-card[data-cat="c4"] { border-left: 4px solid var(--c4); }
+.map-card[data-cat="c5"] { border-left: 4px solid var(--c5); }
+.map-card[data-cat="c6"] { border-left: 4px solid var(--c6); }
+.map-card.hidden { display: none; }
+.card-top { padding: 1rem 1rem .5rem; }
+.card-meta { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: .4rem; }
+.art-badge { font-size: 11px; font-weight: 600; border-radius: 20px; padding: 2px 10px; }
+.map-card[data-cat="c1"] .art-badge { border: 1px solid var(--c1); background: var(--c1bg); color: var(--c1); }
+.map-card[data-cat="c2"] .art-badge { border: 1px solid var(--c2); background: var(--c2bg); color: var(--c2); }
+.map-card[data-cat="c3"] .art-badge { border: 1px solid var(--c3); background: var(--c3bg); color: var(--c3); }
+.map-card[data-cat="c4"] .art-badge { border: 1px solid var(--c4); background: var(--c4bg); color: var(--c4); }
+.map-card[data-cat="c5"] .art-badge { border: 1px solid var(--c5); background: var(--c5bg); color: var(--c5); }
+.map-card[data-cat="c6"] .art-badge { border: 1px solid var(--c6); background: var(--c6bg); color: var(--c6); }
+.status-tag { font-size: 10.5px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+.card-title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-1); margin-bottom: .2rem; line-height: 1.3; }
+.card-subtitle { font-size: 12.5px; color: var(--text-2); line-height: 1.45; }
+.card-counters { display: flex; align-items: center; gap: .5rem; padding: 0 1rem .35rem; }
+.counter-badge { font-size: 11px; color: var(--text-3); }
+.counter-badge strong { color: var(--text-2); font-weight: 600; }
+.card-toggle-btn { display: flex; align-items: center; justify-content: center; gap: .3rem; width: 100%; background: var(--surface-2); border: none; border-top: 1px solid var(--border); font-family: var(--font-ui); font-size: 12px; font-weight: 500; color: var(--text-2); padding: 6px 0; cursor: pointer; transition: var(--transition); }
+.card-toggle-btn:hover { background: #ebe9e3; }
+.toggle-icon { display: inline-block; transition: transform var(--transition); font-size: 12px; }
+.map-card.expanded .toggle-icon { transform: rotate(180deg); }
+.card-body { display: none; padding: 0 1rem .75rem; }
+.map-card.expanded .card-body { display: block; }
+.inner-section { margin-top: .6rem; }
+.inner-heading { display: flex; align-items: center; gap: .35rem; font-size: 12.5px; font-weight: 600; color: var(--text-1); margin-bottom: .25rem; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+.map-card[data-cat="c6"] .dot { background: var(--c6); }
+.inner-body { margin-top: .15rem; }
+.inner-list { list-style: none; padding: 0; }
+.inner-list li { position: relative; padding-left: .8rem; margin-bottom: .2rem; font-size: 12.5px; color: var(--text-2); }
+.inner-list li::before { content: '\2013'; position: absolute; left: 0; color: var(--text-3); }
+.inner-list li strong { color: var(--text-1); font-weight: 500; }
+.card-refs { padding: .5rem 1rem; display: flex; flex-wrap: wrap; gap: .3rem; }
+.ref-tag { font-size: 11px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1px 7px; color: var(--text-2); }
+
+/* ===== TIMELINE TABLE ===== */
+.table-wrap { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
+.timeline-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.timeline-table th { text-align: left; padding: .65rem .9rem; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--text-3); background: var(--surface-2); border-bottom: 1px solid var(--border); }
+.timeline-table td { padding: .55rem .9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.timeline-table tbody tr:hover { background: var(--surface-2); }
+.timeline-table tbody tr:last-child td { border-bottom: none; }
+.td-tramite { color: var(--text-1); font-weight: 500; }
+.td-norm { font-size: 12px; color: var(--text-3); }
+.plazo-badge { font-size: 11.5px; font-weight: 600; padding: 2px 10px; border-radius: 20px; display: inline-block; }
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ===== PARTICIPANTS ===== */
+.participants-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+@media (max-width:900px) { .participants-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width:500px) { .participants-grid { grid-template-columns: 1fr; } }
+.participant-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+.participant-col-head { padding: .5rem .75rem; font-size: 12px; font-weight: 600; color: #fff; text-transform: uppercase; letter-spacing: .04em; }
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.phead-c5 { background: var(--c5); }
+.phead-c6 { background: var(--c6); }
+.participant-col ul { list-style: none; padding: 0; margin: 0; }
+.participant-col li { font-size: 12.5px; color: var(--text-2); padding: .45rem .75rem; border-bottom: 1px solid var(--border); }
+.participant-col li:last-child { border-bottom: none; }
+.participant-note { font-size: 11px; color: var(--text-3); font-style: italic; }
+
+/* ===== NORM GRID ===== */
+.norm-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+@media (max-width:900px) { .norm-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width:500px) { .norm-grid { grid-template-columns: 1fr; } }
+.norm-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: .75rem; }
+.norm-law { font-size: 11px; text-transform: uppercase; color: var(--text-3); letter-spacing: .04em; margin-bottom: .15rem; }
+.norm-title { font-size: 13px; font-weight: 500; color: var(--text-1); margin-bottom: .35rem; }
+.norm-arts { font-size: 12px; color: var(--text-2); line-height: 1.45; }
+.norm-arts strong { color: var(--text-1); }
+.norm-tag { font-size: 10.5px; font-weight: 600; padding: 2px 8px; border-radius: 20px; display: inline-block; margin-top: .35rem; }
+
+/* ===== NO RESULTS ===== */
+.no-results { grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--text-3); font-size: 14px; display: none; }
+
+/* ===== LEGEND FOOTER ===== */
+.legend-footer { background: var(--header-bg); color: var(--header-text); padding: 1.75rem 1.5rem; }
+.legend-inner { max-width: 1280px; margin: 0 auto; }
+.legend-title { font-size: 11px; text-transform: uppercase; color: var(--accent); letter-spacing: .06em; font-weight: 600; margin-bottom: .75rem; }
+.legend-grid { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; }
+.legend-item { display: flex; align-items: center; gap: .35rem; font-size: 12.5px; }
+.legend-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.legend-divider { width: 1px; height: 20px; background: rgba(248,245,237,.12); }
+.legend-copy { font-size: 11px; color: rgba(248,245,237,.3); margin-top: 1rem; padding-top: .75rem; border-top: 1px solid rgba(248,245,237,.08); }
+
+/* ===== PRINT ===== */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body    { display: block !important; }
+  .inner-body   { display: block !important; }
+  .section-body { display: block !important; }
+  .map-card     { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  body          { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== BLOQUE 1 — CABECERA ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título II · Capítulo XI</div>
+    <h1 class="header-title">Expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados</h1>
+    <p class="header-subtitle">Artículos 80 bis a 80 quinquies · Introducidos por la disposición final tercera de la Ley 20/2022, de Memoria Democrática</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015, de 2 de julio</span>
+      <span class="header-tag">Artículos 80 bis – 80 quinquies</span>
+      <span class="header-tag">Ley 20/2022, de 19 de octubre</span>
+      <span class="header-tag">Ley Orgánica 1/2025</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== BLOQUE 2 — ESTADÍSTICAS ===== -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">4</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">15+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">9+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">3</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BLOQUE 3 — CONTROLES ===== -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c5">Marco general</button>
+      <button class="pill" data-cat="c1">Ámbito de aplicación</button>
+      <button class="pill" data-cat="c2">Competencia y legitimación</button>
+      <button class="pill" data-cat="c3">Tramitación y resolución</button>
+      <button class="pill" data-cat="c4">Recursos</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BLOQUE 4 — CONTENIDO PRINCIPAL ===== -->
+<main class="page-main">
+
+  <!-- ——— SECCIÓN: MARCO GENERAL ——— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-marco">
+      <span class="section-heading-text">Marco general y origen normativo</span>
+      <span class="section-heading-count">1 artículo · 3 subapartados</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-marco">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c5" data-text="marco general origen normativo capítulo xi ley 15/2015 jurisdicción voluntaria ley 20/2022 memoria democrática información para perpetua memoria ley enjuiciamiento civil 1881 tribunal de instancia ley orgánica 1/2025">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Marco general</span>
+              <span class="status-tag tag-info">Origen normativo</span>
+            </div>
+            <h2 class="card-title">Introducción del Capítulo XI en la Ley 15/2015</h2>
+            <p class="card-subtitle">El Capítulo XI del Título II fue introducido en la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria, por la disposición final tercera de la Ley 20/2022, de 19 de octubre, de Memoria Democrática. Los artículos 80 bis a 80 quinquies se insertan bajo la rúbrica «De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados».</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Antecedente histórico-procesal</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>El expediente reintroduce, con carácter renovado, la antigua figura de la <strong>«información para perpetua memoria»</strong>, que estuvo regulada en los artículos 2002 a 2010 de la Ley de Enjuiciamiento Civil de 1881 y que fue derogada al entrar en vigor la Ley 15/2015.</li>
+                  <li>La <strong>Exposición de Motivos de la Ley 20/2022</strong> (apartado IV) justifica la recuperación de esta vía para posibilitar, entre otras finalidades, la identificación y exhumación de las víctimas de la Guerra y la Dictadura y, a través de ella, la digna sepultura de las víctimas.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Adaptación a la nueva organización judicial</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Conforme a la <strong>disposición adicional primera de la Ley Orgánica 1/2025</strong>, de 2 de enero, de medidas en materia de eficiencia del Servicio Público de Justicia, las referencias de la Ley de la Jurisdicción Voluntaria a los Juzgados de Primera Instancia deben entenderse hechas a las secciones correspondientes de los <strong>Tribunales de Instancia</strong>, cuya implementación concluye el 31 de diciembre de 2025.</li>
+                  <li>La determinación de la sección competente atenderá a lo dispuesto en el apartado 5 del <strong>artículo 86 de la Ley Orgánica del Poder Judicial</strong>, letra j), o, en su caso, en el apartado 6 del <strong>artículo 89 de la misma ley</strong>, letra g).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 20/2022, disp. final 3.ª</span>
+            <span class="ref-tag">LEC 1881, arts. 2002-2010</span>
+            <span class="ref-tag">LO 1/2025, disp. adic. 1.ª</span>
+            <span class="ref-tag">LOPJ, arts. 86.5.j) y 89.6.g)</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ——— SECCIÓN: ARTÍCULO 80 BIS ——— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-80bis">
+      <span class="section-heading-text">Ámbito de aplicación — Artículo 80 bis</span>
+      <span class="section-heading-count">1 artículo · 3 subapartados</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-80bis">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c1" data-text="artículo 80 bis ámbito de aplicación declaración judicial hechos pasados no contencioso condiciones cumulativas objeto lícito principio de prueba perjuicio procedimiento judicial en trámite carácter subsidiario residual">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 80 bis</span>
+              <span class="status-tag tag-ok">Ámbito de aplicación</span>
+            </div>
+            <h2 class="card-title">Ámbito de aplicación</h2>
+            <p class="card-subtitle">Se aplicarán las disposiciones de este título a los expedientes que tengan por objeto la obtención de una declaración judicial sobre la realidad y las circunstancias de hechos pasados determinados, siempre que no exista controversia que deba sustanciarse en un proceso contencioso.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>5</strong> condiciones cumulativas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Objeto del expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Se aplicarán las disposiciones de este título a los expedientes que tengan por objeto la obtención de una <strong>declaración judicial sobre la realidad y las circunstancias de hechos pasados determinados</strong>, siempre que no exista controversia que deba sustanciarse en un proceso contencioso.</li>
+                  <li>Podrá interesarse la emisión de declaración judicial sobre hechos de <strong>cualquier naturaleza, concretos, ya acaecidos</strong>, percibidos o no por el promotor del expediente.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Carácter no contencioso del expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>La vía queda reservada a supuestos en los que <strong>no existe controversia intersubjetiva</strong> sobre los hechos.</li>
+                  <li>Si surge una auténtica contienda, el cauce adecuado será el <strong>proceso declarativo contencioso correspondiente</strong>.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Condiciones cumulativas para acudir al expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Primera:</strong> Que su objeto sea posible y lícito.</li>
+                  <li><strong>Segunda:</strong> Que exista un principio de prueba de los hechos sobre los que se interesa la información.</li>
+                  <li><strong>Tercera:</strong> Que de los hechos sobre los que se interesa la información no resulte perjuicio para una persona cierta y determinada.</li>
+                  <li><strong>Cuarta:</strong> Que los hechos sobre los que se interesa la información no sean objeto de un procedimiento judicial en trámite.</li>
+                  <li><strong>Quinta:</strong> Que no exista otro procedimiento judicial legalmente indicado para la demostración de los hechos sobre los que se interesa la información, lo que confiere al expediente un <strong>carácter subsidiario o residual</strong>.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015, art. 6</span>
+            <span class="ref-tag">Ley 15/2015, art. 1</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ——— SECCIÓN: ARTÍCULO 80 TER ——— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-80ter">
+      <span class="section-heading-text">Competencia, legitimación y postulación — Artículo 80 ter</span>
+      <span class="section-heading-count">1 artículo · 4 subapartados</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-80ter">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c2" data-text="artículo 80 ter competencia legitimación postulación juzgado primera instancia tribunal de instancia fuero residual ministerio fiscal impresos normalizados abogado procurador no preceptivo derechos intereses legítimos">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 80 ter</span>
+              <span class="status-tag tag-info">Competencia y legitimación</span>
+            </div>
+            <h2 class="card-title">Competencia, legitimación y postulación</h2>
+            <p class="card-subtitle">Regula la competencia territorial, la legitimación activa, la postulación procesal no preceptiva y la intervención obligatoria del Ministerio Fiscal en el expediente.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> subapartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Competencia territorial</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Será competente para conocer de este expediente el <strong>Juzgado de Primera Instancia del lugar donde acaecieron los hechos</strong> a los que se refiere la declaración judicial interesada y, si fueran varios lugares, el de cualquiera de ellos a elección del solicitante.</li>
+                  <li>En su defecto, será competente el Juzgado de Primera Instancia que corresponda al <strong>domicilio del solicitante</strong>, como fuero residual.</li>
+                  <li>Tras la Ley Orgánica 1/2025, la referencia al Juzgado de Primera Instancia ha de entenderse hecha a la <strong>sección civil del Tribunal de Instancia correspondiente</strong>.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Legitimación activa</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Quienes sean titulares de derechos o intereses legítimos</strong> en relación con los hechos respecto de los cuales se interesa la información.</li>
+                  <li><strong>El Ministerio Fiscal</strong>, quien actuará de oficio o a solicitud de cualquier persona.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Postulación procesal</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>No es preceptiva la defensa de Letrado ni la representación por Procurador</strong> para la promoción e intervención en este expediente.</li>
+                  <li>En la Oficina Judicial existirán, a disposición de los interesados, <strong>impresos normalizados</strong> para formular la solicitud, como instrumento de facilitación del acceso a esta vía.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Intervención obligatoria del Ministerio Fiscal</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>El <strong>Ministerio Fiscal será siempre parte</strong> en este expediente, lo que garantiza el control de legalidad y la protección de los intereses generales y de las personas que pudieran verse afectadas por la declaración.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015, art. 2</span>
+            <span class="ref-tag">Ley 15/2015, art. 3</span>
+            <span class="ref-tag">Ley 15/2015, art. 4</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ——— SECCIÓN: ARTÍCULO 80 QUATER ——— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-80quater">
+      <span class="section-heading-text">Tramitación y resolución — Artículo 80 quater</span>
+      <span class="section-heading-count">1 artículo · 7 subapartados</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-80quater">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c3" data-text="artículo 80 quater tramitación resolución iniciación solicitud contenido control previo admisibilidad letrado administración de justicia comparecencia pruebas testigos peritos personas jurídicas entidades públicas auto sobreseimiento oposición registros públicos inscripción plazo cinco días">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 80 quater</span>
+              <span class="status-tag tag-warn">Procedimiento principal</span>
+            </div>
+            <h2 class="card-title">Tramitación y resolución</h2>
+            <p class="card-subtitle">Regula la iniciación, el contenido de la solicitud, el control de admisibilidad, la comparecencia, la práctica de pruebas, la resolución por auto, la inscripción registral y la oposición a la declaración.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>7</strong> subapartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> plazos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Iniciación del expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>El expediente se iniciará <strong>a solicitud de la persona interesada o del Ministerio Fiscal</strong>.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido de la solicitud</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>La solicitud expresará con claridad: <strong>el contenido de la declaración judicial que se interesa</strong>; un relato de las circunstancias relevantes a los efectos de la solicitud; el principio de prueba; la identificación de las personas que puedan estar interesadas.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Control previo de admisibilidad</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Si el <strong>Letrado de la Administración de Justicia</strong> entendiese que no existe competencia objetiva o territorial para conocer del expediente, o bien advirtiese la falta de alguna de las condiciones recogidas en el apartado 2 del artículo 80 bis, dará cuenta al Juez.</li>
+                  <li>El <strong>Juez, previa audiencia del Ministerio Fiscal y del solicitante</strong>, decidirá por auto sobre la admisibilidad del expediente.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Admisión a trámite y convocatoria a comparecencia</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Cumplidos los requisitos de admisibilidad, el <strong>Letrado de la Administración de Justicia admitirá a trámite la solicitud</strong> y convocará a una comparecencia al promotor, al Ministerio Fiscal y a cuantas personas pudieran estar interesadas en los hechos respecto de los que se interesa la información.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Actuaciones probatorias previas a la comparecencia (plazo común de cinco días tras la recepción de la citación)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Citación de testigos o peritos:</strong> el promotor del expediente y el resto de los interesados podrán interesar la citación de las personas que, por no poderlas presentar, han de ser citadas por el Letrado de la Administración de Justicia a la vista para que declaren en calidad de testigos o peritos.</li>
+                  <li><strong>Respuestas escritas de personas jurídicas o entidades públicas:</strong> en el mismo plazo de cinco días podrán las partes pedir respuestas escritas a cargo de personas jurídicas o entidades públicas, por los trámites establecidos en el artículo 381 de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil.</li>
+                  <li><strong>Régimen de suspensión:</strong> la práctica de este trámite no suspenderá la celebración de la comparecencia, salvo que el Juez lo estime necesario para impedir la indefensión de una o las dos partes.</li>
+                  <li><strong>Llegada tardía de las respuestas:</strong> en todo caso, si se recibieran con posterioridad a la misma, se dará audiencia a los interesados y al Ministerio Fiscal.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Celebración de la comparecencia</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>La comparecencia se sustanciará por los trámites previstos en la <strong>Ley de Enjuiciamiento Civil para la vista del juicio verbal</strong>, practicándose la prueba pertinente y útil que propongan las partes en el acto.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Resolución del expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>En el plazo de <strong>cinco días tras la celebración de la comparecencia</strong>, el Juez dictará auto por el que se acceda o se deniegue la emisión de la declaración judicial interesada.</li>
+                  <li><strong>Si accediere a la solicitud:</strong> el Juez realizará en la parte dispositiva del auto la declaración sobre hechos pasados determinados interesada por el promotor, con expresión de sus circunstancias. Se pronunciará, en su caso, en relación con las consecuencias que se deriven de la declaración.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Hechos inscribibles en registros públicos</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Si de la declaración se derivara la existencia de un hecho inscribible en el <strong>Registro de la Propiedad, Mercantil u otro registro público</strong>, será aplicable lo dispuesto en el <strong>artículo 22.2 de la propia Ley de la Jurisdicción Voluntaria</strong>, relativo al cumplimiento y ejecución de la resolución que pone fin al expediente.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Oposición a la emisión de la declaración</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>En cualquier momento durante la tramitación del expediente, los interesados o afectados por los hechos objeto del mismo podrán formular su <strong>oposición a la emisión de la declaración judicial interesada</strong>.</li>
+                  <li><strong>Si el Juez estimare justificada la oposición:</strong> acordará por auto el sobreseimiento del expediente, con reserva a las partes de su derecho a ejercitar la acción correspondiente.</li>
+                  <li><strong>Si el Juez no estimare justificada la oposición:</strong> mandará por auto la continuación del expediente hasta su resolución.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015, art. 22.2</span>
+            <span class="ref-tag">LEC, art. 381</span>
+            <span class="ref-tag">Ley 15/2015, arts. 13-22</span>
+            <span class="ref-tag">Ley 15/2015, art. 5</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ——— SECCIÓN: ARTÍCULO 80 QUINQUIES ——— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-80quinquies">
+      <span class="section-heading-text">Recursos — Artículo 80 quinquies</span>
+      <span class="section-heading-count">1 artículo · 2 subapartados</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-80quinquies">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c4" data-text="artículo 80 quinquies recursos reposición apelación resoluciones interlocutorias resolución definitiva auto admisibilidad auto declaración oposición letrado administración de justicia ley enjuiciamiento civil">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 80 quinquies</span>
+              <span class="status-tag tag-info">Régimen de recursos</span>
+            </div>
+            <h2 class="card-title">Recursos</h2>
+            <p class="card-subtitle">Las resoluciones interlocutorias son susceptibles de recurso de reposición; la resolución definitiva es susceptible de recurso de apelación, conforme a la Ley de Enjuiciamiento Civil.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> tipos de recurso</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> resoluciones apelables</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Resoluciones interlocutorias</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>Las resoluciones interlocutorias dictadas durante la tramitación del expediente son susceptibles de <strong>recurso de reposición</strong>, en los términos previstos en la Ley de Enjuiciamiento Civil.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Resolución definitiva</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li>La resolución definitiva dictada según lo previsto en los apartados segundo, quinto o sexto del artículo anterior es susceptible de <strong>recurso de apelación</strong>, en los términos previstos en la Ley de Enjuiciamiento Civil. Comprende, por tanto:</li>
+                  <li><strong>El auto sobre admisibilidad</strong> tras el control previo del Letrado de la Administración de Justicia (apartado 2).</li>
+                  <li><strong>El auto que accede o deniega la emisión de la declaración</strong> tras la comparecencia (apartado 5).</li>
+                  <li><strong>El auto que resuelve sobre la oposición</strong> formulada durante la tramitación (apartado 6).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LEC, recurso de reposición</span>
+            <span class="ref-tag">LEC, recurso de apelación</span>
+            <span class="ref-tag">Ley 15/2015, art. 80 quater aps. 2, 5 y 6</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ——— SECCIÓN: CRONOGRAMA DE PLAZOS ——— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Cronograma de plazos procesales</span>
+      <span class="section-heading-count">3 trámites</span>
+      <button class="section-toggle-btn">&#9654;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Acto o trámite procesal</th>
+              <th>Plazo</th>
+              <th>Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Plazo común para solicitar la citación de testigos o peritos y pedir respuestas escritas a personas jurídicas o entidades públicas (actuaciones probatorias previas a la comparecencia)</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td class="td-norm">Artículo 80 quater, apartado 4</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Plazo para que el Juez dicte auto accediendo o denegando la emisión de la declaración judicial tras la celebración de la comparecencia</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td class="td-norm">Artículo 80 quater, apartado 5</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Plazo de implementación de los Tribunales de Instancia (sustitución de las referencias a los Juzgados de Primera Instancia)</td>
+              <td><span class="plazo-badge plazo-other">31 de diciembre de 2025</span></td>
+              <td class="td-norm">Ley Orgánica 1/2025, disposición adicional primera</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ——— SECCIÓN: PARTICIPANTES Y ACTORES ——— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">4 categorías · 9+ actores</span>
+      <button class="section-toggle-btn">&#9654;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Órganos judiciales</div>
+          <ul>
+            <li>Juez <span class="participant-note">(resuelve por auto, admite, deniega, decide oposición)</span></li>
+            <li>Letrado de la Administración de Justicia <span class="participant-note">(control previo de admisibilidad, admisión a trámite, citación)</span></li>
+            <li>Juzgado de Primera Instancia / Sección civil del Tribunal de Instancia <span class="participant-note">(competencia territorial)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Sujetos activos</div>
+          <ul>
+            <li>Promotor / Solicitante <span class="participant-note">(titular de derechos o intereses legítimos)</span></li>
+            <li>Ministerio Fiscal <span class="participant-note">(intervención obligatoria, legitimación activa, actúa de oficio o a solicitud)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Terceros interesados</div>
+          <ul>
+            <li>Interesados / Afectados <span class="participant-note">(pueden formular oposición)</span></li>
+            <li>Testigos <span class="participant-note">(citados por el LAJ a solicitud de las partes)</span></li>
+            <li>Peritos <span class="participant-note">(citados por el LAJ a solicitud de las partes)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Otros sujetos</div>
+          <ul>
+            <li>Personas jurídicas / Entidades públicas <span class="participant-note">(pueden emitir respuestas escritas conforme al art. 381 LEC)</span></li>
+            <li>Oficina Judicial <span class="participant-note">(impresos normalizados a disposición de los interesados)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ——— SECCIÓN: ECOSISTEMA NORMATIVO ——— -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">7 cuerpos normativos</span>
+      <button class="section-toggle-btn">&#9654;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015, de 2 de julio</div>
+          <div class="norm-title">Ley de la Jurisdicción Voluntaria</div>
+          <div class="norm-arts">
+            <strong>Artículo 1</strong> — Objeto y ámbito de aplicación: enmarca el expediente dentro del sistema general de jurisdicción voluntaria.
+            <strong>Artículo 2</strong> — Competencia en materia de jurisdicción voluntaria: reglas generales sobre competencia objetiva.
+            <strong>Artículo 3</strong> — Legitimación y postulación: complementa la regla de postulación no preceptiva del artículo 80 ter.
+            <strong>Artículo 4</strong> — Intervención del Ministerio Fiscal: fundamento general de su presencia como parte.
+            <strong>Artículo 5</strong> — Prueba: régimen común probatorio aplicable al expediente.
+            <strong>Artículo 6</strong> — Tramitación simultánea o posterior: se conecta con la exigencia del artículo 80 bis de que los hechos no sean objeto de un procedimiento judicial en trámite.
+            <strong>Artículo 7 bis</strong> — Ajustes para personas con discapacidad.
+            <strong>Artículo 8</strong> — Carácter supletorio de la LEC: fundamento general de las remisiones expresas.
+            <strong>Artículo 11</strong> — Inscripción en registros públicos: régimen general del acceso registral.
+            <strong>Artículos 13 a 22</strong> — Normas comunes de tramitación: iniciación, acumulación, competencia, admisión, comparecencia, decisión, recursos, caducidad, cumplimiento y ejecución.
+            <strong>Artículo 22.2</strong> — Cumplimiento y ejecución: remisión expresa del artículo 80 quater para hechos inscribibles.
+          </div>
+          <span class="norm-tag tag-ok">Norma principal</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 1/2000, de 7 de enero</div>
+          <div class="norm-title">Ley de Enjuiciamiento Civil</div>
+          <div class="norm-arts">
+            <strong>Artículo 381</strong> — Respuestas escritas a cargo de personas jurídicas o entidades públicas, cauce probatorio expresamente previsto para este expediente.
+            <strong>Trámites de la vista del juicio verbal</strong> — Régimen procesal aplicable a la comparecencia prevista en el artículo 80 quater.
+            <strong>Recurso de reposición</strong> — Régimen aplicable a las resoluciones interlocutorias dictadas en el expediente.
+            <strong>Recurso de apelación</strong> — Régimen aplicable a la resolución definitiva dictada conforme a los apartados segundo, quinto o sexto del artículo 80 quater.
+          </div>
+          <span class="norm-tag tag-info">Supletoria</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 20/2022, de 19 de octubre</div>
+          <div class="norm-title">Ley de Memoria Democrática</div>
+          <div class="norm-arts">
+            <strong>Disposición final tercera</strong> — Introduce el Capítulo XI en la Ley 15/2015.
+            <strong>Exposición de Motivos, apartado IV</strong> — Explicita la finalidad de posibilitar la identificación y exhumación de las víctimas de la Guerra y la Dictadura y darles digna sepultura.
+          </div>
+          <span class="norm-tag tag-warn">Norma introductoria</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley Orgánica 1/2025, de 2 de enero</div>
+          <div class="norm-title">De medidas en materia de eficiencia del Servicio Público de Justicia</div>
+          <div class="norm-arts">
+            <strong>Disposición adicional primera</strong> — Reorganización judicial que afecta a la competencia, sustituyendo las referencias a los Juzgados de Primera Instancia por las secciones civiles correspondientes de los Tribunales de Instancia; además, dispensa de la obligación de acudir a medios adecuados de solución de controversias para iniciar expedientes de jurisdicción voluntaria.
+          </div>
+          <span class="norm-tag tag-alert">Reforma orgánica</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley Orgánica 6/1985, de 1 de julio</div>
+          <div class="norm-title">Ley Orgánica del Poder Judicial</div>
+          <div class="norm-arts">
+            <strong>Artículo 86.5.j)</strong> — Para la identificación de la sección competente dentro del Tribunal de Instancia.
+            <strong>Artículo 89.6.g)</strong> — Para la identificación de la sección competente dentro del Tribunal de Instancia (supuesto alternativo).
+          </div>
+          <span class="norm-tag tag-gray">Competencia</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 50/1981, de 30 de diciembre</div>
+          <div class="norm-title">Estatuto Orgánico del Ministerio Fiscal</div>
+          <div class="norm-arts">
+            <strong>Régimen del Ministerio Fiscal</strong> — Legitimado activo y parte necesaria en este expediente.
+          </div>
+          <span class="norm-tag tag-gray">Ministerio Fiscal</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley de Enjuiciamiento Civil de 1881</div>
+          <div class="norm-title">Antecedente histórico: información para perpetua memoria</div>
+          <div class="norm-arts">
+            <strong>Artículos 2002 a 2010</strong> — Antecedente histórico de la «información para perpetua memoria», derogada por la Ley 15/2015 y recuperada, con nueva configuración, por la Ley 20/2022.
+          </div>
+          <span class="norm-tag tag-gray">Antecedente derogado</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ——— ELEMENTO SIN RESULTADOS ——— -->
+  <div class="no-results" id="no-results">
+    No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+  </div>
+
+</main>
+
+<!-- ===== BLOQUE 9 — LEYENDA ===== -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Marco general y origen normativo
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Ámbito de aplicación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Competencia y legitimación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Tramitación y resolución
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Recursos
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II · Capítulo XI (artículos 80 bis a 80 quinquies) · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+/* 1. Filtrado por categoría */
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+/* 2. Búsqueda en tiempo real */
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+/* 3. Expandir/colapsar tarjetas individuales */
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent =
+    isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+/* 4. Expandir todo / Contraer todo */
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+/* 5. Colapso de secciones principales */
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '\u25B6' : '\u25BC';
+  });
+});
+
+/* 6. Zoom */
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+</body>
+</html>

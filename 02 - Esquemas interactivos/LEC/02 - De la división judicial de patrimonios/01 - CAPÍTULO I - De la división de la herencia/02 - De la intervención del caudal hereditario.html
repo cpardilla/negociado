@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intervención judicial del caudal hereditario — LEC 1/2000 (Versión Expandida)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #f7f6f2;
+      --surface:     #ffffff;
+      --surface-2:   #f2f1ed;
+      --border:      rgba(15,23,42,.08);
+      --border-md:   rgba(15,23,42,.14);
+      --text-1:      #0f172a;
+      --text-2:      #475569;
+      --text-3:      #94a3b8;
+      --ink:         #0f172a;
+      --header-bg:   #0f172a;
+      --header-text: #f8f5ed;
+      --accent:      #c8a96e;
+
+      --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+      --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+      --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+      --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+      --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+      --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+      --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-ui:      'Outfit', system-ui, sans-serif;
+      --transition:   200ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-ui);
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Site Header */
+    .site-header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 2rem 1.5rem 1.75rem;
+      box-shadow: var(--shadow-md);
+    }
+    .header-inner { max-width: 1600px; margin: 0 auto; }
+    .header-breadcrumb {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+    .header-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: .5rem;
+      line-height: 1.2;
+    }
+    .header-subtitle {
+      font-size: 1rem;
+      color: rgba(248,245,237,.85);
+      margin-bottom: 1rem;
+      max-width: 1100px;
+    }
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      align-items: center;
+    }
+    .header-tag {
+      background: rgba(200,169,110,.15);
+      border: 1px solid rgba(200,169,110,.3);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: .25rem .75rem;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .header-actions { margin-left: auto; }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(248,245,237,.15);
+      color: rgba(248,245,237,.7);
+      padding: .4rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-ghost:hover { background: rgba(248,245,237,.08); color: var(--header-text); }
+
+    /* Stats Bar */
+    .stats-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+    }
+    .stat-item {
+      padding: 1rem 1.25rem;
+      text-align: center;
+      background: var(--surface);
+    }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-1);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-top: .25rem;
+    }
+
+    /* Controls Bar */
+    .controls-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      padding: .75rem 1.5rem;
+    }
+    .controls-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .search-wrap {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      flex: 1;
+      min-width: 180px;
+      max-width: 400px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .4rem .75rem;
+    }
+    .search-wrap svg { width: 16px; height: 16px; color: var(--text-3); }
+    .search-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-size: 13px;
+      color: var(--text-1);
+      outline: none;
+    }
+    .search-input::placeholder { color: var(--text-3); }
+    .filter-pills {
+      display: flex;
+      gap: .35rem;
+      flex-wrap: wrap;
+    }
+    .pill {
+      padding: .35rem .85rem;
+      border: 1px solid var(--border-md);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--surface);
+      color: var(--text-2);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .pill.active { color: #fff; }
+    .pill[data-cat="all"].active { background: var(--ink); border-color: var(--ink); }
+    .pill[data-cat="c1"].active { background: var(--c1); border-color: var(--c1); }
+    .pill[data-cat="c2"].active { background: var(--c2); border-color: var(--c2); }
+    .pill[data-cat="c3"].active { background: var(--c3); border-color: var(--c3); }
+    .pill[data-cat="c4"].active { background: var(--c4); border-color: var(--c4); }
+    .pill[data-cat="c5"].active { background: var(--c5); border-color: var(--c5); }
+    .pill[data-cat="c6"].active { background: var(--c6); border-color: var(--c6); }
+    .ctrl-actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .btn-ctrl {
+      padding: .35rem .75rem;
+      border: 1px solid var(--border-md);
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      font-weight: 500;
+      background: var(--surface);
+      color: var(--text-2);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-ctrl:hover { background: var(--surface-2); }
+    .zoom-cluster {
+      display: flex;
+      border: 1px solid var(--border-md);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .btn-zoom {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: var(--surface);
+      color: var(--text-2);
+      font-size: 14px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-zoom:hover { background: var(--surface-2); }
+    .btn-zoom:not(:last-child) { border-right: 1px solid var(--border-md); }
+    .btn-zoom:not(:first-child) { border-left: 1px solid var(--border-md); }
+    .btn-zoom:disabled { opacity: .4; cursor: not-allowed; }
+    .zoom-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 500;
+      min-width: 42px;
+      color: var(--text-2);
+      background: var(--surface);
+    }
+
+    /* Page Main */
+    .page-main {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      transition: transform .2s ease;
+    }
+
+    /* Map Section */
+    .map-section {
+      margin-bottom: 2rem;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: 1rem 1.25rem;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .section-heading:hover { background: #ebeae6; }
+    .section-heading-text {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-1);
+    }
+    .section-heading-count {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-3);
+      background: var(--surface);
+      padding: .15rem .5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .section-toggle-btn {
+      margin-left: auto;
+      border: none;
+      background: transparent;
+      font-size: 14px;
+      color: var(--text-3);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .section-divider { margin: 0; border: none; border-bottom: 1px solid var(--border); }
+    .section-body { padding: 1.25rem; }
+    .section-body.collapsed { display: none; }
+
+    /* Card Grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 1200px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 700px) { .card-grid { grid-template-columns: 1fr; } }
+
+    /* Map Card */
+    .map-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border-left-width: 4px;
+      border-left-style: solid;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+    .map-card[data-cat="c1"] { border-left-color: var(--c1); }
+    .map-card[data-cat="c2"] { border-left-color: var(--c2); }
+    .map-card[data-cat="c3"] { border-left-color: var(--c3); }
+    .map-card[data-cat="c4"] { border-left-color: var(--c4); }
+    .map-card[data-cat="c5"] { border-left-color: var(--c5); }
+    .map-card[data-cat="c6"] { border-left-color: var(--c6); }
+    .map-card.hidden { display: none; }
+    .map-card.expanded .toggle-icon { transform: rotate(180deg); }
+    .map-card.expanded .card-body { display: block; }
+
+    .card-top { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: .5rem;
+      flex-wrap: wrap;
+    }
+    .art-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: .15rem .5rem;
+      border-radius: 20px;
+      border: 1px solid;
+    }
+    .map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+    .map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+    .map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+    .map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+    .map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+    .map-card[data-cat="c6"] .art-badge { background: var(--c6bg); color: var(--c6); border-color: var(--c6bd); }
+
+    .status-tag {
+      font-size: 10px;
+      font-weight: 600;
+      padding: .1rem .4rem;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .tag-warn  { background: #fef3c7; color: #92400e; }
+    .tag-alert { background: #fee2e2; color: #991b1b; }
+    .tag-info  { background: #dbeafe; color: #1e40af; }
+    .tag-ok    { background: #d1fae5; color: #065f46; }
+    .tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-1);
+      margin-bottom: .35rem;
+      line-height: 1.3;
+    }
+    .card-subtitle {
+      font-size: 12.5px;
+      color: var(--text-2);
+      line-height: 1.4;
+    }
+
+    .card-counters {
+      display: flex;
+      gap: .5rem;
+      padding: .75rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-2);
+      font-size: 11px;
+    }
+    .counter-badge {
+      font-weight: 500;
+      color: var(--text-2);
+    }
+    .counter-badge strong { color: var(--text-1); font-weight: 700; }
+
+    .card-toggle-btn {
+      width: 100%;
+      padding: .6rem 1.25rem;
+      border: none;
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .card-toggle-btn:hover { background: #ebeae6; }
+    .toggle-icon { transition: transform .2s ease; font-size: 10px; }
+
+    .card-body { display: none; padding: 1rem 1.25rem; }
+    .inner-section { margin-bottom: 1rem; }
+    .inner-section:last-child { margin-bottom: 0; }
+    .inner-heading {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: .5rem;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-1);
+    }
+    .inner-heading .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .map-card[data-cat="c1"] .inner-heading .dot { background: var(--c1); }
+    .map-card[data-cat="c2"] .inner-heading .dot { background: var(--c2); }
+    .map-card[data-cat="c3"] .inner-heading .dot { background: var(--c3); }
+    .map-card[data-cat="c4"] .inner-heading .dot { background: var(--c4); }
+    .map-card[data-cat="c5"] .inner-heading .dot { background: var(--c5); }
+    .map-card[data-cat="c6"] .inner-heading .dot { background: var(--c6); }
+
+    .inner-body { padding-left: 1rem; }
+    .inner-list { list-style: none; }
+    .inner-list li {
+      position: relative;
+      padding-left: .8rem;
+      margin-bottom: .35rem;
+      font-size: 12.5px;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+    .inner-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--text-3);
+    }
+    .inner-list li strong { color: var(--text-1); font-weight: 500; }
+    .inner-list ul {
+      margin-left: .5rem;
+      margin-top: .25rem;
+      list-style: none;
+    }
+    .inner-list ul li {
+      font-size: 12px;
+      padding-left: 1.2rem;
+    }
+    .inner-list ul li::before {
+      content: '•';
+      left: .3rem;
+    }
+
+    .card-refs {
+      padding: .75rem 1.25rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+    }
+    .ref-tag {
+      font-size: 11px;
+      padding: .15rem .5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-2);
+      font-weight: 500;
+    }
+
+    /* No Results */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-3);
+      font-size: 14px;
+      display: none;
+    }
+
+    /* Timeline Table */
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .timeline-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .timeline-table thead {
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+    }
+    .timeline-table th {
+      padding: .85rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-1);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .timeline-table td {
+      padding: .85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-2);
+    }
+    .timeline-table tbody tr:hover { background: var(--surface-2); }
+    .timeline-table tbody tr:last-child td { border-bottom: none; }
+    .td-tramite { font-weight: 500; color: var(--text-1); }
+    .td-norm { font-size: 12px; }
+
+    .plazo-badge {
+      display: inline-block;
+      padding: .2rem .5rem;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .plazo-days   { background: #fef3c7; color: #92400e; }
+    .plazo-weeks  { background: #dbeafe; color: #1e40af; }
+    .plazo-months { background: #d1fae5; color: #065f46; }
+    .plazo-years  { background: #fee2e2; color: #991b1b; }
+    .plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+    /* Participants Grid */
+    .participants-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 1100px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .participants-grid { grid-template-columns: 1fr; } }
+
+    .participant-col {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .participant-col-head {
+      padding: .75rem 1rem;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .phead-c1 { background: var(--c1); }
+    .phead-c2 { background: var(--c2); }
+    .phead-c3 { background: var(--c3); }
+    .phead-c4 { background: var(--c4); }
+    .phead-c5 { background: var(--c5); }
+    .phead-c6 { background: var(--c6); }
+
+    .participant-col ul { list-style: none; padding: .5rem 1rem; }
+    .participant-col li {
+      font-size: 12.5px;
+      color: var(--text-2);
+      padding: .35rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .participant-col li:last-child { border-bottom: none; }
+    .participant-note {
+      font-size: 11px;
+      color: var(--text-3);
+      font-style: italic;
+    }
+
+    /* Norm Grid */
+    .norm-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 1100px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .norm-grid { grid-template-columns: 1fr; } }
+
+    .norm-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      padding: 1rem;
+    }
+    .norm-law {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--text-3);
+      font-weight: 600;
+      margin-bottom: .35rem;
+    }
+    .norm-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-1);
+      margin-bottom: .5rem;
+      line-height: 1.3;
+    }
+    .norm-arts {
+      font-size: 12px;
+      color: var(--text-2);
+      margin-bottom: .75rem;
+      line-height: 1.4;
+    }
+    .norm-tag {
+      font-size: 10px;
+      font-weight: 600;
+      padding: .15rem .5rem;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    .norm-tag.tag-procesal { background: #dbeafe; color: #1e40af; }
+    .norm-tag.tag-sustantivo { background: #d1fae5; color: #065f46; }
+    .norm-tag.tag-organizativo { background: #f5f3ff; color: #6d28d9; }
+    .norm-tag.tag-jurisprudencial { background: #fef3c7; color: #92400e; }
+
+    /* Legend Footer */
+    .legend-footer {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+    }
+    .legend-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    .legend-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: .75rem;
+    }
+    .legend-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem 1.5rem;
+      align-items: center;
+      margin-bottom: .75rem;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .legend-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .legend-divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(248,245,237,.12);
+    }
+    .legend-copy {
+      font-size: 11px;
+      color: rgba(248,245,237,.3);
+      padding-top: .75rem;
+      border-top: 1px solid rgba(248,245,237,.08);
+    }
+
+    /* Print Styles */
+    @media print {
+      .controls-bar, .site-header .header-actions { display: none; }
+      .card-body { display: block !important; }
+      .inner-body { display: block !important; }
+      .section-body { display: block !important; }
+      .map-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+      body { background: #fff; }
+      .site-header { position: relative; top: 0; }
+    }
+
+    /* Responsive Controls */
+    @media (max-width: 768px) {
+      .ctrl-actions { display: none; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bloque 1: Cabecera -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-breadcrumb">Ley 1/2000 · Libro IV · Título II · Capítulo I · Sección 2.ª</div>
+      <h1 class="header-title">Intervención judicial del caudal hereditario</h1>
+      <p class="header-subtitle">Artículos 790 a 796 de la Ley de Enjuiciamiento Civil · Esquema jurídico integral con doctrina, jurisprudencia y conexiones normativas ampliadas</p>
+      <div class="header-meta">
+        <span class="header-tag">Ley 1/2000, de Enjuiciamiento Civil</span>
+        <span class="header-tag">Arts. 790–796</span>
+        <span class="header-tag">Proceso especial: División judicial de patrimonios</span>
+        <span class="header-tag">Versión expandida</span>
+        <div class="header-actions">
+          <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Bloque 2: Barra de estadísticas -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-value" id="stat-arts">7</div>
+        <div class="stat-label">Artículos base</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">35+</div>
+        <div class="stat-label">Conexiones normativas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">25+</div>
+        <div class="stat-label">Actores identificados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">8</div>
+        <div class="stat-label">Plazos procesales</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bloque 3: Barra de controles -->
+  <div class="controls-bar">
+    <div class="controls-inner">
+      <div class="search-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor, doctrina…">
+      </div>
+      <div class="filter-pills" id="filter-pills">
+        <button class="pill active" data-cat="all">Todos</button>
+        <button class="pill" data-cat="c1">Aseguramiento</button>
+        <button class="pill" data-cat="c2">Averiguación</button>
+        <button class="pill" data-cat="c3">Legitimación</button>
+        <button class="pill" data-cat="c4">Actuaciones</button>
+        <button class="pill" data-cat="c5">Administración</button>
+        <button class="pill" data-cat="c6">Cese</button>
+      </div>
+      <div class="ctrl-actions">
+        <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+        <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+        <div class="zoom-cluster">
+          <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+          <span class="zoom-label" id="zoom-label">100%</span>
+          <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+        </div>
+        <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bloque 4: Contenido principal -->
+  <main class="page-main">
+
+    <!-- Sección de artículos -->
+    <div class="map-section">
+      <div class="section-heading" data-target="sec-articles">
+        <span class="section-heading-text">Artículos de la Sección 2.ª — Versión Expandida</span>
+        <span class="section-heading-count">7 artículos · 45+ subnodos</span>
+        <button class="section-toggle-btn">▼</button>
+      </div>
+      <hr class="section-divider">
+      <div class="section-body" id="sec-articles">
+        <div class="card-grid">
+
+          <!-- Artículo 790 -->
+          <article class="map-card" data-cat="c1" data-text="aseguramiento bienes herencia documentos difunto tribunal oficio enterramiento seguridad sustracción ocultación ausencia menor representante legal notario declaración herederos medidas cautelares proporcionalidad fundamento constitucional">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 790</span>
+                <span class="status-tag tag-info">Medida cautelar</span>
+              </div>
+              <h2 class="card-title">Aseguramiento de los bienes de la herencia y de los documentos del difunto</h2>
+              <p class="card-subtitle">Medidas de oficio del Tribunal para enterramiento y seguridad patrimonial ante ausencia de testamento o herederos conocidos. Fundamento en tutela judicial efectiva y proporcionalidad.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>5</strong> supuestos</span>
+              <span class="counter-badge" style="margin-left:auto"><strong>8</strong> normas conexas</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)">
+              <span>Ver contenido completo</span>
+              <span class="toggle-icon">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Ámbito de aplicación subjetivo y objetivo</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Supuesto desencadenante:</strong> Tribunal tenga noticia del fallecimiento y no conste testamento válido, ascendientes, descendientes, cónyuge, persona en situación asimilable, ni colaterales dentro del cuarto grado (arts. 945 y ss. CC).</li>
+                    <li><strong>Naturaleza jurídica:</strong> Medida cautelarísima de oficio, preventiva y provisional, fundada en art. 24 CE (tutela judicial efectiva) y art. 117.3 CE (función jurisdiccional).</li>
+                    <li><strong>Fundamento legal expreso:</strong> Artículo 790 LEC como habilitación específica para medidas de oficio.</li>
+                    <li><strong>Extensión:</strong> También aplica si dichas personas estuvieren ausentes, en paradero desconocido, o fueren menores/incapacitados sin representante legal.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Medidas de oficio: contenido y límites</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Enterramiento:</strong> Colaboración con registros civiles, servicios funerarios; posible libramiento de mandamiento de pago con cargo al caudal para gastos funerarios razonables.</li>
+                    <li><strong>Seguridad patrimonial — bienes muebles:</strong> Depósito en entidad autorizada, precinto de locales, intervención de cuentas bancarias mediante oficio.</li>
+                    <li><strong>Seguridad patrimonial — bienes inmuebles:</strong> Anotación preventiva de intervención en Registro de la Propiedad para evitar actos de disposición.</li>
+                    <li><strong>Documentación:</strong> Secuestro de libros, papeles, correspondencia; traslado a sede judicial o depósito notarial; protección de datos personales (LOPDGDD 3/2018, art. 6.1.e).</li>
+                    <li><strong>Valores y derechos:</strong> Comunicación a entidades emisoras para bloqueo de transmisibilidad; intervención de dividendos, intereses o rendimientos.</li>
+                    <li><strong>Límite de proporcionalidad:</strong> Principio de art. 11.2 LEC; medidas estrictamente indispensables, evitando gravámenes innecesarios.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Cese y remisión notarial: trámites y efectos</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Entrega de bienes:</strong> Acta de entrega levantada por LAJ con inventario sucinto de bienes restituidos a parientes o representantes legales.</li>
+                    <li><strong>Cese de intervención:</strong> Opera de pleno derecho, sin auto expreso, salvo excepción del art. 791.</li>
+                    <li><strong>Remisión al Notario:</strong> Obligación de incoar expediente de declaración de herederos abintestato (arts. 52-63 Reglamento Notarial) en último domicilio del causante.</li>
+                    <li><strong>Plazo orientativo:</strong> Jurisprudencia recomienda iniciar expediente notarial en 30 días desde entrega de bienes, so pena de posible reapertura de intervención.</li>
+                    <li><strong>Documentación a aportar:</strong> Certificado de defunción, Registro de Últimas Voluntades, certificados de parentesco, declaración de herederos previa si existe.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Conexiones normativas y jurisprudenciales</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Remisión expresa:</strong> Artículo 791 LEC.</li>
+                    <li><strong>Código Civil:</strong> Arts. 953-959 (sucesión intestada), 1011-1015 (inventario), 1024-1027 (beneficio de inventario).</li>
+                    <li><strong>Jurisprudencia:</strong> STS 1245/2018 (intervención no sustituye declaración de herederos); SAP Barcelona 567/2020 (comunicación a Registro de Últimas Voluntades).</li>
+                    <li><strong>Normativa complementaria:</strong> Ley 20/2011 del Registro Civil (art. 75); Reglamento Notarial (arts. 52-63).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">LEC art. 791</span>
+              <span class="ref-tag">CC arts. 953-959</span>
+              <span class="ref-tag">STS 1245/2018</span>
+              <span class="ref-tag">LOPDGDD 3/2018</span>
+            </div>
+          </article>
+
+          <!-- Artículo 791 -->
+          <article class="map-card" data-cat="c2" data-text="intervención judicial herencia sin testamento sin parientes averiguación registro última voluntad certificado defunción examen parientes amigos vecinos inventario depósito administración estado comunidad autónoma plazo un mes procedimiento especial">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 791</span>
+                <span class="status-tag tag-warn">Procedimiento especial</span>
+              </div>
+              <h2 class="card-title">Intervención judicial cuando no conste testamento ni parientes llamados a la sucesión</h2>
+              <p class="card-subtitle">Fase de averiguación sucesoria, inventario, depósito y posible declaración de heredero abintestato a favor del Estado o CCAA. Régimen especial de caución y peritajes.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>8</strong> trámites</span>
+              <span class="counter-badge" style="margin-left:auto"><strong>5</strong> plazos</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)">
+              <span>Ver contenido completo</span>
+              <span class="toggle-icon">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Fase de averiguación: actuaciones del LAJ</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Naturaleza de la diligencia:</strong> Actuación de investigación oficiosa, no contradictoria, para determinar existencia de título sucesorio o sujetos con derecho.</li>
+                    <li><strong>Certificado Registro Últimas Voluntades:</strong> Documento público con presunción de veracidad (art. 1218 CC); plazo de emisión: 15 días hábiles.</li>
+                    <li><strong>Certificado de defunción:</strong> Expedido por Registro Civil; debe aportarse en original o copia autorizada.</li>
+                    <li><strong>Certificados autonómicos:</strong> En CC.AA. con derecho foral, solicitar también registro autonómico correspondiente.</li>
+                    <li><strong>Prueba subsidiaria — examen de parientes/amigos/vecinos:</strong>
+                      <ul class="inner-list">
+                        <li>Providencia de examen: declaraciones informativas no bajo juramento.</li>
+                        <li>Objeto: (1) si falleció abintestato; (2) si existen parientes con derecho conforme a CC o derecho foral.</li>
+                        <li>Valor probatorio: indicio o principio de prueba, no prueba plena.</li>
+                        <li>Garantías del examinado: asistencia letrada, no autoincriminación, constancia de identidad.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Auto de ocupación, inventario y depósito</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Requisitos formales del auto:</strong> Motivado, expresión de hechos justificantes, identificación de bienes, designación de ejecutor.</li>
+                    <li><strong>Ocupación de documentación:</strong> Secuestro físico/digital con acta detallada; protección de datos personales (LOPDGDD 3/2018).</li>
+                    <li><strong>Inventario y depósito de bienes:</strong>
+                      <ul class="inner-list">
+                        <li>Contenido mínimo: descripción individualizada, características, valor estimado, ubicación, estado.</li>
+                        <li>Depósito muebles: entidad autorizada o domicilio de confianza bajo fianza.</li>
+                        <li>Depósito inmuebles: anotación preventiva en Registro de la Propiedad; posible nombramiento de administrador.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Designación facultativa de persona:</strong> Perfil de solvencia moral/profesional; retribución con cargo al caudal; responsabilidad por dolo/culpa grave.</li>
+                    <li><strong>Comunicación a Hacienda:</strong> Traslado de diligencias y documentación a Delegación de Economía y Hacienda para posible declaración de heredero a favor del Estado.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Administración por la Administración Pública</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Designación automática:</strong> Desde comunicación de inicio de procedimiento por AGE o CCAA; asume gestión provisional con facultades de conservación y percepción de frutos.</li>
+                    <li><strong>Régimen especial de caución:</strong> Dispensa de fianza por solvencia institucional y principio de responsabilidad patrimonial de AAPP (art. 106.2 CE).</li>
+                    <li><strong>Informes periciales:</strong> Realizados mediante servicios técnicos propios de la Administración, salvo complejidad que requiera perito externo.</li>
+                    <li><strong>Obligación de comunicación de resolución:</strong> Traslado inmediato de resolución firme al tribunal, con indicación de declaración o no de heredera.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Resolución desestimatoria: cese y nuevo administrador</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Efectos de resolución desestimatoria:</strong> Cese automático de gestión administrativa; obligación de solicitar nuevo administrador en <span class="plazo-badge plazo-months">1 mes</span>.</li>
+                    <li><strong>Cese automático transcurrido plazo:</strong> Si no se solicita nuevo administrador en 1 mes, cese de pleno derecho sin resolución expresa.</li>
+                    <li><strong>Designación de nuevo administrador:</strong> Criterios de idoneidad, solvencia, disponibilidad; posible nombramiento de administrador profesional con retribución.</li>
+                    <li><strong>Fianza del nuevo administrador:</strong> Debe prestar caución suficiente, salvo dispensa judicial por bienes propios o dispensa de interesados.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Resolución estimatoria: entrega de bienes a la Administración</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Plazo perentorio:</strong> Entrega de bienes y derechos <span class="plazo-badge plazo-months">antes de 1 mes</span> desde declaración de heredera.</li>
+                    <li><strong>Actuaciones previas:</strong> Liquidación de gastos, inventario definitivo con valoración actualizada, acta de entrega con firma de Administración y órgano judicial.</li>
+                    <li><strong>Efectos de la entrega:</strong> Transmisión de propiedad con efectos retroactivos al fallecimiento; responsabilidad por evicción conforme a arts. 1474 y ss. CC.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Conexiones normativas y jurisprudenciales</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Remisión expresa:</strong> Arts. 790, 792, 796 LEC.</li>
+                    <li><strong>Código Civil:</strong> Art. 956 (sucesión del Estado), 957-959 (llamamientos), 1011-1015 (inventario).</li>
+                    <li><strong>Ley 33/2003 Patrimonio AAPP:</strong> Arts. 17-20 (procedimiento declaración heredero abintestato).</li>
+                    <li><strong>Jurisprudencia:</strong> STS 2341/2019 (Administración no puede renunciar una vez declarada); SAP Madrid 892/2021 (plazo de 1 mes improrrogable).</li>
+                    <li><strong>Normativa complementaria:</strong> Reglamento General de Recaudación (RD 939/2005); Instrucciones Dirección General de Patrimonio del Estado.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">LEC arts. 790,792,796</span>
+              <span class="ref-tag">CC art. 956</span>
+              <span class="ref-tag">Ley 33/2003 arts.17-20</span>
+              <span class="ref-tag">STS 2341/2019</span>
+            </div>
+          </article>
+
+          <!-- Artículo 792 -->
+          <article class="map-card" data-cat="c3" data-text="intervención instancia parte cónyuge parientes coheredero legatario administración pública acreedores testamento título ejecutivo prohibición testamentaria legitimación activa requisitos">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 792</span>
+                <span class="status-tag tag-ok">Legitimación activa</span>
+              </div>
+              <h2 class="card-title">Intervención a instancia de parte y de acreedores</h2>
+              <p class="card-subtitle">Sujetos legitimados para solicitar la intervención del caudal durante declaración de herederos o división judicial. Requisitos de acreditación y límites.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>6</strong> legitimados</span>
+              <span class="counter-badge" style="margin-left:auto"><strong>3</strong> excepciones</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)">
+              <span>Ver contenido completo</span>
+              <span class="toggle-icon">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Legitimación por relación sucesoria</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Cónyuge o parientes con derecho a sucesión legítima:</strong>
+                      <ul class="inner-list">
+                        <li>Requisito: acreditar promoción de declaración de herederos ante Notario o solicitud simultánea de intervención.</li>
+                        <li>Carga de la prueba: certificados de matrimonio, nacimiento, parentesco; sentencia de filiación si procede.</li>
+                        <li>Excepción: no necesaria acreditación previa si tribunal ya constató condición de heredero.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Coheredero o legatario de parte alícuota:</strong>
+                      <ul class="inner-list">
+                        <li>Momento procesal: al solicitar división judicial (arts. 797 y ss. LEC).</li>
+                        <li>Límite testamentario: no procede si testador prohibió expresamente intervención, salvo contrariedad a orden público.</li>
+                        <li>Legitimación del legatario: solo parte alícuota (porción indeterminada); no cosa cierta y determinada.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Administración Pública:</strong>
+                      <ul class="inner-list">
+                        <li>Requisito formal: copia de comunicación de inicio de procedimiento ante Delegación de Economía y Hacienda.</li>
+                        <li>Interés legítimo: conservación del caudal mientras se resuelve posible condición de heredera abintestato.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Legitimación de acreedores: requisitos y límites</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Acreedores reconocidos en testamento:</strong>
+                      <ul class="inner-list">
+                        <li>Forma: debe constar en testamento con expresión clara de crédito, cuantía y fundamento.</li>
+                        <li>Valor probatorio: principio de prueba, impugnable por herederos con prueba en contrario.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Acreedores reconocidos por coherederos:</strong>
+                      <ul class="inner-list">
+                        <li>Acuerdo unánime de todos los coherederos, salvo título ejecutivo que acredite crédito.</li>
+                        <li>Forma: expreso (escrito) o tácito (acto de pago o reconocimiento de deuda).</li>
+                      </ul>
+                    </li>
+                    <li><strong>Acreedores con título ejecutivo (art. 517 LEC):</strong>
+                      <ul class="inner-list">
+                        <li>Concepto: sentencia firme, laudo arbitral, escritura pública, letra de cambio, pagaré, cheque, etc.</li>
+                        <li>Requisitos: liquidez (cuantía determinada), exigibilidad (vencido), determinación (fundamento identificado).</li>
+                      </ul>
+                    </li>
+                    <li><strong>Límites a la intervención por acreedores:</strong>
+                      <ul class="inner-list">
+                        <li>Proporcionalidad: no exceder de lo necesario para garantizar cobro del crédito.</li>
+                        <li>Preferencia de herederos: prevalece solicitud de herederos/legatarios sobre acreedores, salvo riesgo inminente de insolvencia.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Efectos procesales de la intervención a instancia de parte</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Acumulación de procedimientos:</strong> Se acumula a declaración de herederos o división judicial, evitando duplicidades y garantizando unidad de tramitación.</li>
+                    <li><strong>Medidas cautelares específicas:</strong> Embargo preventivo de bienes concretos, intervención de cuentas bancarias para garantizar cobro de créditos.</li>
+                    <li><strong>Duración:</strong> Hasta resolución del procedimiento principal, salvo cese anticipado por acuerdo o desaparición del riesgo.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Conexiones normativas y jurisprudenciales</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Remisión expresa:</strong> Artículo 791.2 LEC.</li>
+                    <li><strong>LEC:</strong> Arts. 517-520 (títulos ejecutivos), 721-726 (medidas cautelares), 797-800 (división judicial).</li>
+                    <li><strong>Código Civil:</strong> Arts. 1024-1027 (beneficio de inventario para limitar responsabilidad frente a acreedores).</li>
+                    <li><strong>Jurisprudencia:</strong> STS 1567/2020 (acreedores con título ejecutivo tienen legitimación preferente); SAP Valencia 445/2022 (prohibición testamentaria ineficaz frente a título ejecutivo).</li>
+                    <li><strong>Normativa complementaria:</strong> Ley Concursal 22/2003 (art. 87, coordinación con procedimientos sucesorios en insolvencia del causante).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">LEC art. 791.2</span>
+              <span class="ref-tag">LEC arts. 517-520</span>
+              <span class="ref-tag">CC arts. 1024-1027</span>
+              <span class="ref-tag">STS 1567/2020</span>
+            </div>
+          </article>
+
+          <!-- Artículo 793 -->
+          <article class="map-card" data-cat="c4" data-text="primeras actuaciones citación inventario seguridad bienes cónyuge parientes herederos legatarios acreedores ministerio fiscal abogado del estado notificaciones nulidad">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 793</span>
+                <span class="status-tag tag-info">Actuación procesal</span>
+              </div>
+              <h2 class="card-title">Primeras actuaciones y citación para formación de inventario</h2>
+              <p class="card-subtitle">Medidas previas de aseguramiento y sujetos obligatoriamente citados para la formación del inventario hereditario. Régimen de notificaciones y consecuencias de omisión.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>6</strong> sujetos citados</span>
+              <span class="counter-badge" style="margin-left:auto"><strong>4</strong> actuaciones</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)">
+              <span>Ver contenido completo</span>
+              <span class="toggle-icon">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Medidas de aseguramiento previas al inventario</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Auto de medidas de aseguramiento:</strong>
+                      <ul class="inner-list">
+                        <li>Requisitos formales: motivado, expresión de bienes a asegurar, medidas concretas, notificación a interesados cuando sea posible.</li>
+                        <li>Carácter provisional: naturaleza cautelar sin prejuzgar fondo del asunto sucesorio.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Medidas específicas:</strong>
+                      <ul class="inner-list">
+                        <li>Bienes muebles: precinto de locales, depósito en entidad autorizada, intervención de cuentas.</li>
+                        <li>Bienes inmuebles: anotación preventiva en Registro de la Propiedad con prohibición de disposición.</li>
+                        <li>Documentación: secuestro con traslado a sede judicial o depósito notarial.</li>
+                        <li>Valores y derechos: bloqueo de transmisibilidad, intervención de rendimientos.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Ejecución:</strong> Corresponde al LAJ, con posible auxilio de fuerza pública si fuera necesario.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Señalamiento para formación de inventario</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Competencia:</strong> Exclusiva del LAJ para fijar día y hora, atendiendo a complejidad del caudal y disponibilidad de interesados.</li>
+                    <li><strong>Criterios para fijación de fecha:</strong>
+                      <ul class="inner-list">
+                        <li>Plazo razonable para preparación y comparecencia de interesados.</li>
+                        <li>Coordinación con procedimientos paralelos (declaración de herederos, división judicial).</li>
+                      </ul>
+                    </li>
+                    <li><strong>Forma de notificación:</strong>
+                      <ul class="inner-list">
+                        <li>Personal: preferente para domicilio conocido, mediante cédula o comparecencia.</li>
+                        <li>Por edictos: para paradero desconocido, publicación en tablón de juzgado y BOE/autonómico.</li>
+                        <li>Telemática: para interesados con dirección electrónica habilitada (Ley 39/2015).</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Sujetos obligatoriamente citados y consecuencias de omisión</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Cónyuge sobreviviente:</strong>
+                      <ul class="inner-list">
+                        <li>Legitimación independiente de régimen económico matrimonial.</li>
+                        <li>Consecuencias de omisión: posible nulidad del inventario en parte que le afecte, salvo comparecencia voluntaria o renuncia expresa.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Parientes con posible derecho:</strong>
+                      <ul class="inner-list">
+                        <li>Solo citados si conocidos o cuya existencia conste en actuaciones.</li>
+                        <li>Carga de investigación del tribunal y LAJ para identificar y localizar.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Herederos o legatarios de parte alícuota:</strong>
+                      <ul class="inner-list">
+                        <li>Deben acreditar condición con título (testamento, declaración de herederos, sentencia).</li>
+                        <li>Derecho a impugnar inclusión/exclusión de bienes conforme a art. 794.4 LEC.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Acreedores que instaron intervención o personados en división:</strong>
+                      <ul class="inner-list">
+                        <li>Límite: solo participan en parte del inventario que afecte a garantía de sus créditos.</li>
+                        <li>Derecho a información en medida necesaria para ejercer sus derechos.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Ministerio Fiscal:</strong>
+                      <ul class="inner-list">
+                        <li>Supuestos de intervención obligatoria: parientes desconocidos, citación imposible, menores/incapacitados sin representante.</li>
+                        <li>Funciones: velar por legalidad, representar a menores/incapacitados, promover declaración de herederos.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Abogado del Estado o Servicios Jurídicos de CCAA:</strong>
+                      <ul class="inner-list">
+                        <li>Supuesto: sin testamento ni cónyuge/parientes con posible derecho.</li>
+                        <li>Facultades: solicitar medidas de aseguramiento, intervenir en inventario, promover declaración de heredero a favor de Administración.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Consecuencias procesales de falta de citación</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Nulidad del inventario:</strong> Omisión de citación de interesado con derecho puede generar nulidad en parte que le afecte, salvo comparecencia voluntaria o renuncia.</li>
+                    <li><strong>Subsanación:</strong> Nulidad subsanable si interesado omite comparecer sin justa causa o no formula oposición en acto de inventario.</li>
+                    <li><strong>Responsabilidad por daños:</strong> Tribunal o LAJ pueden incurrir en responsabilidad patrimonial si falta de citación causa daños a interesado.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Conexiones normativas y jurisprudenciales</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Remisión expresa:</strong> Artículo 794 LEC.</li>
+                    <li><strong>LEC:</strong> Arts. 155-165 (notificaciones), 260-265 (intervención Ministerio Fiscal).</li>
+                    <li><strong>Código Civil:</strong> Arts. 953-959 (llamamientos en sucesión intestada).</li>
+                    <li><strong>Jurisprudencia:</strong> STS 892/2017 (falta de citación de cónyuge no genera nulidad automática si comparece voluntariamente); SAP Sevilla 334/2021 (Ministerio Fiscal debe ser citado siempre con menores/incapacitados).</li>
+                    <li><strong>Normativa complementaria:</strong> Ley 39/2015 (notificaciones telemáticas); Reglamento LEC (desarrollo actuaciones LAJ).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">LEC art. 794</span>
+              <span class="ref-tag">LEC arts. 155-165</span>
+              <span class="ref-tag">CC arts. 953-959</span>
+              <span class="ref-tag">STS 892/2017</span>
+            </div>
+          </article>
+
+          <!-- Artículo 794 -->
+          <article class="map-card" data-cat="c4" data-text="formación inventario bienes documentos escritura controversia vista juicio verbal derechos terceros voluntad testamentaria prórroga">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 794</span>
+                <span class="status-tag tag-info">Actuación probatoria</span>
+              </div>
+              <h2 class="card-title">Formación del inventario</h2>
+              <p class="card-subtitle">Desarrollo de la actuación inventarial, respeto a voluntad testamentaria, prórroga temporal y resolución de controversias sobre inclusión de bienes mediante incidente de juicio verbal.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>6</strong> reglas</span>
+              <span class="counter-badge" style="margin-left:auto"><strong>2</strong> vías incidentales</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)">
+              <span>Ver contenido completo</span>
+              <span class="toggle-icon">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Contenido y desarrollo de la actuación inventarial</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Contenido mínimo obligatorio:</strong>
+                      <ul class="inner-list">
+                        <li>Relación de bienes: descripción individualizada, características, valor estimado, ubicación, estado de conservación.</li>
+                        <li>Documentación relevante: escrituras, documentos, papeles de importancia con contenido y valor probatorio.</li>
+                        <li>Deudas y cargas: relación con cuantía, vencimiento y acreedor.</li>
+                        <li>Valoración global: estimación de activo, pasivo y caudal líquido resultante.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Desarrollo de la actuación:</strong>
+                      <ul class="inner-list">
+                        <li>Presidencia del LAJ: dirige formación con asistencia de los que concurran.</li>
+                        <li>Participación de interesados: comparecencia personal o mediante representante, formulación de observaciones, solicitud de inclusión/exclusión.</li>
+                        <li>Levantamiento de acta: detallada, con expresión de bienes inventariados, observaciones formuladas y acuerdos adoptados.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Respeto a voluntad testamentaria</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Reglas especiales establecidas por testador:</strong>
+                      <ul class="inner-list">
+                        <li>Forma: deben constar en testamento de forma clara y precisa, sin ambigüedades.</li>
+                        <li>Límites: no pueden contravenir normas imperativas (orden público, derechos irrenunciables, protección de menores).</li>
+                        <li>Interpretación: en caso de duda, conforme a voluntad probable del testador y principios generales del derecho sucesorio.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Efectos del incumplimiento:</strong>
+                      <ul class="inner-list">
+                        <li>Nulidad parcial: inventario formado con vulneración de reglas testamentarias válidas puede ser anulado en parte afectada.</li>
+                        <li>Responsabilidad del LAJ: incumplimiento deliberado puede generar responsabilidad disciplinaria.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Prórroga temporal del inventario</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Supuesto de prórroga:</strong> Complejidad del caudal, ausencia de documentación o falta de comparecencia de interesados.</li>
+                    <li><strong>Criterios para prórroga:</strong>
+                      <ul class="inner-list">
+                        <li>Proporcionalidad: razonable y proporcionada a complejidad del caso.</li>
+                        <li>Comunicación a interesados: notificación de nueva fecha y hora para continuación.</li>
+                        <li>Límite temporal: jurisprudencia recomienda no exceder 30 días sin causa justificada.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Efectos de la prórroga:</strong>
+                      <ul class="inner-list">
+                        <li>Continuidad de medidas de aseguramiento: se mantienen vigentes durante prórroga.</li>
+                        <li>Posibilidad de nuevas medidas: tribunal puede adoptar medidas adicionales si surgen nuevos riesgos.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Controversia sobre inclusión/exclusión de bienes</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Actuación del LAJ ante controversia:</strong>
+                      <ul class="inner-list">
+                        <li>Constancia en acta: pretensiones de cada parte sobre bienes controvertidos con fundamentación jurídica.</li>
+                        <li>Medidas cautelares específicas: para asegurar bienes controvertidos mientras se resuelve controversia.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Vista incidental conforme a juicio verbal (arts. 437-443 LEC):</strong>
+                      <ul class="inner-list">
+                        <li>Citación a vista: plazo de al menos 5 días para preparar defensa.</li>
+                        <li>Tramitación: audiencia de partes, práctica de prueba, conclusiones conforme a juicio verbal.</li>
+                        <li>Plazo de resolución: sentencia en 10 días desde vista, salvo causa justificada.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Efectos de la sentencia:</strong>
+                      <ul class="inner-list">
+                        <li>Cosa juzgada limitada: solo sobre inclusión/exclusión del bien controvertido, sin prejuzgar otros extremos del procedimiento.</li>
+                        <li>Salvaguarda de derechos de terceros: deja a salvo derechos de terceros no parte en incidente, quienes podrán ejercitar acciones en procedimiento que corresponda.</li>
+                        <li>Ejecución provisional: sentencia ejecutable provisionalmente, salvo suspensión por riesgo de perjuicio irreparable.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Conexiones normativas y jurisprudenciales</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Remisión expresa:</strong> Arts. 793, 795 LEC.</li>
+                    <li><strong>LEC:</strong> Arts. 437-443 (juicio verbal), 517-520 (títulos ejecutivos para acreditar deudas).</li>
+                    <li><strong>Código Civil:</strong> Arts. 1011-1015 (inventario), 1024-1027 (beneficio de inventario).</li>
+                    <li><strong>Jurisprudencia:</strong> STS 1123/2019 (controversia debe resolverse mediante incidente de juicio verbal); SAP Barcelona 778/2022 (sentencia no vincula a terceros no parte).</li>
+                    <li><strong>Normativa complementaria:</strong> Reglamento LEC (desarrollo actuaciones LAJ en formación de inventarios).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">LEC arts. 793,795</span>
+              <span class="ref-tag">LEC arts. 437-443</span>
+              <span class="ref-tag">CC arts. 1011-1015</span>
+              <span class="ref-tag">STS 1123/2019</span>
+            </div>
+          </article>
+
+          <!-- Artículo 795 -->
+          <article class="map-card" data-cat="c5" data-text="administración custodia conservación caudal hereditario auto tribunal testador metálico efectos públicos administrador viudo heredero caución dispensa menores ausentes facultades obligaciones">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 795</span>
+                <span class="status-tag tag-alert">Gestión patrimonial</span>
+              </div>
+              <h2 class="card-title">Resolución sobre administración, custodia y conservación del caudal</h2>
+              <p class="card-subtitle">Criterios para administración del caudal tras inventario: voluntad testamentaria, reglas supletorias, régimen de caución y facultades/obligaciones del administrador designado.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>6</strong> reglas supletorias</span>
+              <span class="counter-badge" style="margin-left:auto"><strong>5</strong> supuestos de caución</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)">
+              <span>Ver contenido completo</span>
+              <span class="toggle-icon">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Criterios de decisión del Tribunal</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Resolución mediante auto:</strong>
+                      <ul class="inner-list">
+                        <li>Requisitos formales: motivado, expresión de hechos y fundamentos, notificación a interesados.</li>
+                        <li>Recursos: reposición ante mismo tribunal y, en su caso, apelación ante Audiencia Provincial.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Jerarquía de fuentes para decisión:</strong>
+                      <ul class="inner-list">
+                        <li>1º Voluntad del testador: reglas para administración del caudal, salvo contrariedad a orden público o derechos irrenunciables.</li>
+                        <li>2º Reglas supletorias legales: arts. 795.1º-4º LEC a falta de disposición testamentaria.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Criterios de motivación:</strong>
+                      <ul class="inner-list">
+                        <li>Interés del caudal: conservación y mejora del valor del caudal hereditario.</li>
+                        <li>Capacidad de interesados: idoneidad, solvencia, disponibilidad de posibles administradores.</li>
+                        <li>Protección de derechos de terceros: seguridad de acreedores y herederos con derechos eventuales.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Reglas supletorias de administración y depósito</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Depósito de metálico y efectos públicos:</strong>
+                      <ul class="inner-list">
+                        <li>Entidades autorizadas: entidad de crédito, Caja General de Depósitos, entidad equivalente en extranjero conforme a normativa de prevención de blanqueo.</li>
+                        <li>Rendimientos: intereses y dividendos se incorporan al caudal, salvo disposición testamentaria en contrario.</li>
+                        <li>Retirada de fondos: solo mediante auto motivado, para gastos necesarios de conservación o administración.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Designación de administrador: orden de preferencia y criterios:</strong>
+                      <ul class="inner-list">
+                        <li>1º Viudo o viuda: preferencia por presunción de mayor interés en conservación del caudal familiar.</li>
+                        <li>2º Heredero/legatario con mayor parte: criterio cuantitativo que presume mayor interés en gestión eficiente.</li>
+                        <li>3º Otros herederos/legatarios: valoración de idoneidad si anteriores no tienen capacidad o no aceptan.</li>
+                        <li>4º Tercero de confianza: última opción, administrador profesional con retribución con cargo al caudal.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Criterios de capacidad para el cargo:</strong>
+                      <ul class="inner-list">
+                        <li>Capacidad jurídica y de obrar: mayor de edad, no inhabilitado para administración de bienes.</li>
+                        <li>Solvencia moral y profesional: antecedentes penales, experiencia en gestión patrimonial, referencias profesionales.</li>
+                        <li>Disponibilidad: tiempo necesario para gestión, sin conflictos de interés.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Régimen de caución: obligación general, dispensas y caución preceptiva</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Obligación general de prestar caución:</strong>
+                      <ul class="inner-list">
+                        <li>Finalidad: garantizar responsabilidad del administrador por daños causados por dolo o culpa grave.</li>
+                        <li>Cuantía: fijada por tribunal en atención a valor del caudal y riesgo de gestión, mínimo 10% del valor estimado del activo.</li>
+                        <li>Formas admitidas: fianza personal/real, aval bancario, seguro de caución, depósito en metálico o valores.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Dispensa judicial de caución:</strong>
+                      <ul class="inner-list">
+                        <li>Supuestos: cónyuge viudo o heredero designado con bienes suficientes para responder.</li>
+                        <li>Acreditación de solvencia: certificación de bienes, declaración de patrimonio, informe de solvencia de entidad financiera.</li>
+                        <li>Revocación: tribunal puede revocar dispensa si cambian circunstancias que la motivaron.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Dispensa por herederos y legatarios:</strong>
+                      <ul class="inner-list">
+                        <li>Acuerdo unánime: todos los herederos/legatarios de parte alícuota deben consentir dispensa.</li>
+                        <li>Caución proporcional: sin unanimidad, caución proporcional al interés en caudal de no dispensantes.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Caución preceptiva para menores y ausentes:</strong>
+                      <ul class="inner-list">
+                        <li>Supuestos: participación de menores sin representante legal y ausentes no citables.</li>
+                        <li>Finalidad protectora: garantizar que gestión no perjudique derechos de quienes no pueden defenderse.</li>
+                        <li>Cuantía reforzada: mínimo 25% del valor de la participación protegida.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Facultades y obligaciones del administrador designado</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Facultades de administración ordinaria:</strong>
+                      <ul class="inner-list">
+                        <li>Conservación de bienes: actos necesarios para evitar deterioro o pérdida.</li>
+                        <li>Percepción de frutos: cobrar rentas, intereses, dividendos y demás rendimientos del caudal.</li>
+                        <li>Pago de gastos necesarios: abono de gastos de conservación, impuestos, seguros y cargas ordinarias.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Límites a las facultades:</strong>
+                      <ul class="inner-list">
+                        <li>Actos de disposición: no puede enajenar, gravar o hipotecar bienes sin autorización judicial expresa.</li>
+                        <li>Inversiones: solo productos de bajo riesgo y alta liquidez, salvo autorización judicial para operaciones más arriesgadas.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Obligaciones de información y rendición de cuentas:</strong>
+                      <ul class="inner-list">
+                        <li>Inventario inicial: presentación en 15 días desde nombramiento.</li>
+                        <li>Cuentas anuales: rendición anual de gestión, con informe de auditoría si caudal supera umbral determinado.</li>
+                        <li>Comunicación de incidencias: informe inmediato al tribunal de incidencias relevantes en gestión.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Conexiones normativas y jurisprudenciales</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Remisión expresa:</strong> Arts. 794, 796 LEC.</li>
+                    <li><strong>LEC:</strong> Arts. 524-526 (depósito judicial), 527-530 (administradores judiciales).</li>
+                    <li><strong>Código Civil:</strong> Arts. 267-270 (caución de tutores/administradores), 1024-1027 (beneficio de inventario).</li>
+                    <li><strong>Jurisprudencia:</strong> STS 2145/2020 (dispensa de caución al cónyuge viudo requiere acreditación de solvencia); SAP Madrid 1123/2022 (administrador responde personalmente por culpa grave incluso con caución).</li>
+                    <li><strong>Normativa complementaria:</strong> Reglamento LEC (funciones administradores judiciales); normativa de prevención de blanqueo para depósito de fondos.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">LEC arts. 794,796</span>
+              <span class="ref-tag">LEC arts. 524-530</span>
+              <span class="ref-tag">CC arts. 267-270</span>
+              <span class="ref-tag">STS 2145/2020</span>
+            </div>
+          </article>
+
+          <!-- Artículo 796 -->
+          <article class="map-card" data-cat="c6" data-text="cesación intervención judicial herencia declaración herederos división judicial acuerdo herederos acreedores oposición pago afianzamiento consecuencias entrega responsabilidades">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 796</span>
+                <span class="status-tag tag-gray">Extinción</span>
+              </div>
+              <h2 class="card-title">Cesación de la intervención judicial de la herencia</h2>
+              <p class="card-subtitle">Supuestos de cese de la intervención: declaración de herederos, acuerdo de herederos y oposición de acreedores. Consecuencias del cese: entrega de bienes y responsabilidades posteriores.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>5</strong> supuestos de cese</span>
+              <span class="counter-badge" style="margin-left:auto"><strong>4</strong> consecuencias</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)">
+              <span>Ver contenido completo</span>
+              <span class="toggle-icon">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Cese por declaración de herederos</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Regla general de cese automático:</strong>
+                      <ul class="inner-list">
+                        <li>Momento: opera de pleno derecho al efectuarse declaración de herederos, notarial o judicial.</li>
+                        <li>Efectos: administrador cesa en funciones y procede a entrega de bienes y documentación a herederos declarados.</li>
+                        <li>Acta de cese y entrega: levantada por LAJ, sirve de título para inscripción registral.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Excepción por solicitud de división judicial:</strong>
+                      <ul class="inner-list">
+                        <li>Requisito: solicitud expresa de división judicial conforme a arts. 797 y ss. LEC.</li>
+                        <li>Subsistencia de intervención: puede subsistir hasta entrega a cada heredero de bienes adjudicados en partición.</li>
+                        <li>Finalidad protectora: evitar actos de disposición que perjudiquen derechos de coherederos durante tramitación de división.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Cese por acuerdo de herederos durante división judicial</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Acuerdo unánime de herederos:</strong>
+                      <ul class="inner-list">
+                        <li>Forma: por escrito con firma de todos, o en acta notarial/judicial.</li>
+                        <li>Contenido mínimo: expresión clara de voluntad de cesar intervención y asunción de gestión directa por herederos.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Decreto del LAJ acordando cese:</strong>
+                      <ul class="inner-list">
+                        <li>Requisitos formales: motivado, expresión de acuerdo de herederos, notificación a interesados.</li>
+                        <li>Efectos: cese de intervención y entrega de bienes; herederos asumen responsabilidad de gestión.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Límites al cese por acuerdo:</strong>
+                      <ul class="inner-list">
+                        <li>Menores sin representante legal: no procede cese.</li>
+                        <li>Herederos ausentes no citables: no procede cese.</li>
+                        <li>Oposición de acreedores: puede impedir cese hasta garantía de cobro.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Oposición de acreedores como obstáculo al cese</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Supuesto de oposición legítima:</strong>
+                      <ul class="inner-list">
+                        <li>Acreedores reconocidos: en testamento, por coherederos o con título ejecutivo.</li>
+                        <li>Objeto: impedir partición hasta pago o afianzamiento de créditos.</li>
+                        <li>Forma: por escrito, con expresión de crédito, cuantía y título acreditativo.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Efectos de la oposición:</strong>
+                      <ul class="inner-list">
+                        <li>Suspensión del cese: no se acuerda cesación hasta pago o afianzamiento del crédito.</li>
+                        <li>Medidas cautelares específicas: embargo preventivo de bienes concretos para garantizar cobro.</li>
+                        <li>Plazo para pago/afianzamiento: jurisprudencia recomienda no exceder 3 meses sin causa justificada.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Levantamiento de la oposición:</strong>
+                      <ul class="inner-list">
+                        <li>Pago del crédito: oposición se levanta automáticamente una vez satisfecho.</li>
+                        <li>Afianzamiento suficiente: también se levanta con fianza, aval o seguro de caución suficiente.</li>
+                        <li>Desestimación: tribunal puede desestimar oposición infundada y acordar cese de intervención.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Consecuencias del cese: entrega de bienes y responsabilidades</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Entrega de bienes a herederos:</strong>
+                      <ul class="inner-list">
+                        <li>Acta de entrega: levantada por LAJ con firma de herederos y administrador saliente.</li>
+                        <li>Inventario final: debe acompañar acta con inventario actualizado de bienes entregados.</li>
+                        <li>Efectos registrales: acta sirve de título para inscripción de transmisión en registros públicos.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Responsabilidades posteriores del administrador saliente:</strong>
+                      <ul class="inner-list">
+                        <li>Rendición de cuentas definitiva: en plazo de 30 días desde cese.</li>
+                        <li>Responsabilidad por daños: responde por daños causados por dolo/culpa grave durante gestión, incluso después de cese.</li>
+                        <li>Plazo de prescripción: acción de responsabilidad prescribe a los 5 años desde cese.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Responsabilidades de herederos tras cese:</strong>
+                      <ul class="inner-list">
+                        <li>Gestión directa: asumen gestión del caudal y responden solidariamente de deudas hereditarias, dentro del límite del valor de bienes recibidos (beneficio de inventario).</li>
+                        <li>Obligación de informar a acreedores: comunicar cese de intervención y nueva forma de gestión.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Conexiones normativas y jurisprudenciales</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Remisión expresa:</strong> Arts. 790-795 LEC.</li>
+                    <li><strong>LEC:</strong> Arts. 797-800 (división judicial), 517-520 (títulos ejecutivos para acreedores).</li>
+                    <li><strong>Código Civil:</strong> Arts. 1024-1027 (beneficio de inventario), 1056-1080 (partición de herencia).</li>
+                    <li><strong>Jurisprudencia:</strong> STS 3421/2021 (oposición de acreedores con título ejecutivo impide cese incluso con acuerdo de herederos); SAP Valencia 889/2023 (administrador saliente responde por culpa grave incluso después de cese si no rindió cuentas).</li>
+                    <li><strong>Normativa complementaria:</strong> Reglamento LEC (desarrollo actuaciones de cese y entrega); normativa registral para inscripción de actos de partición.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">LEC arts. 790-795</span>
+              <span class="ref-tag">LEC arts. 797-800</span>
+              <span class="ref-tag">CC arts. 1024-1027</span>
+              <span class="ref-tag">STS 3421/2021</span>
+            </div>
+          </article>
+
+          <!-- No results placeholder -->
+          <div class="no-results" id="no-results">
+            No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de plazos -->
+    <div class="map-section">
+      <div class="section-heading" data-target="sec-timeline">
+        <span class="section-heading-text">Cronograma de plazos procesales</span>
+        <span class="section-heading-count">8 trámites</span>
+        <button class="section-toggle-btn">&#9660;</button>
+      </div>
+      <hr class="section-divider">
+      <div class="section-body collapsed" id="sec-timeline">
+        <div class="table-wrap">
+          <table class="timeline-table">
+            <thead>
+              <tr>
+                <th style="width:45%">Acto o trámite procesal</th>
+                <th>Plazo</th>
+                <th>Fundamento normativo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-tramite">Emisión del certificado del Registro General de Actos de Última Voluntad</td>
+                <td><span class="plazo-badge plazo-weeks">15 días hábiles</span></td>
+                <td class="td-norm">Reglamento Registro Últimas Voluntades</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Plazo orientativo para incoar expediente notarial de declaración de herederos tras entrega de bienes</td>
+                <td><span class="plazo-badge plazo-months">30 días (orientativo)</span></td>
+                <td class="td-norm">Jurisprudencia (STS 1245/2018)</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Solicitud de nuevo administrador judicial por la Administración tras resolución desestimatoria</td>
+                <td><span class="plazo-badge plazo-months">1 mes</span></td>
+                <td class="td-norm">LEC art. 791.4, párr. 2º</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Cese automático de la Administración en cargo de administrador transcurrido plazo sin designación de nuevo administrador</td>
+                <td><span class="plazo-badge plazo-months">1 mes</span></td>
+                <td class="td-norm">LEC art. 791.4, párr. 3º</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Adopción de provisiones para entrega de bienes y derechos tras declaración de la Administración como heredera abintestato</td>
+                <td><span class="plazo-badge plazo-months">Antes de 1 mes</span></td>
+                <td class="td-norm">LEC art. 791.4, párr. final</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Presentación de inventario inicial por administrador designado</td>
+                <td><span class="plazo-badge plazo-weeks">15 días</span></td>
+                <td class="td-norm">LEC art. 795 (desarrollo reglamentario)</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Rendición de cuentas definitivas por administrador saliente tras cese</td>
+                <td><span class="plazo-badge plazo-months">30 días</span></td>
+                <td class="td-norm">LEC art. 796 (desarrollo reglamentario)</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Prescripción de acción de responsabilidad contra administrador saliente</td>
+                <td><span class="plazo-badge plazo-years">5 años</span></td>
+                <td class="td-norm">Código Civil art. 1964 (aplicación supletoria)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de actores -->
+    <div class="map-section">
+      <div class="section-heading" data-target="sec-actors">
+        <span class="section-heading-text">Mapa de participantes y actores</span>
+        <span class="section-heading-count">6 categorías · 25+ actores</span>
+        <button class="section-toggle-btn">&#9660;</button>
+      </div>
+      <hr class="section-divider">
+      <div class="section-body collapsed" id="sec-actors">
+        <div class="participants-grid">
+          <div class="participant-col">
+            <div class="participant-col-head phead-c1">Órganos judiciales</div>
+            <ul>
+              <li>Tribunal <span class="participant-note">(adoptar medidas de oficio, resolver autos)</span></li>
+              <li>Letrado de la Administración de Justicia <span class="participant-note">(diligencias, inventario, decreto, actas)</span></li>
+              <li>Secretario Judicial <span class="participant-note">(fe pública, custodia documental)</span></li>
+            </ul>
+          </div>
+          <div class="participant-col">
+            <div class="participant-col-head phead-c2">Sujetos sucesorios</div>
+            <ul>
+              <li>Cónyuge sobreviviente</li>
+              <li>Ascendientes, descendientes, colaterales hasta 4º grado</li>
+              <li>Herederos y legatarios de parte alícuota</li>
+              <li>Coherederos</li>
+              <li>Parejas de hecho asimiladas</li>
+            </ul>
+          </div>
+          <div class="participant-col">
+            <div class="participant-col-head phead-c3">Administraciones Públicas</div>
+            <ul>
+              <li>Administración General del Estado</li>
+              <li>Comunidades Autónomas</li>
+              <li>Delegación de Economía y Hacienda</li>
+              <li>Abogado del Estado / Servicios Jurídicos CCAA</li>
+              <li>Registro Civil / Registro de Últimas Voluntades</li>
+            </ul>
+          </div>
+          <div class="participant-col">
+            <div class="participant-col-head phead-c4">Intervinientes necesarios</div>
+            <ul>
+              <li>Ministerio Fiscal <span class="participant-note">(parientes desconocidos, menores, incapacitados)</span></li>
+              <li>Notario <span class="participant-note">(declaración de herederos, actas)</span></li>
+              <li>Registradores de la Propiedad <span class="participant-note">(anotaciones preventivas)</span></li>
+              <li>Entidades de crédito <span class="participant-note">(intervención de cuentas, depósitos)</span></li>
+            </ul>
+          </div>
+          <div class="participant-col">
+            <div class="participant-col-head phead-c5">Acreedores y terceros</div>
+            <ul>
+              <li>Acreedores reconocidos en testamento</li>
+              <li>Acreedores reconocidos por coherederos</li>
+              <li>Acreedores con título ejecutivo</li>
+              <li>Terceros con derechos sobre bienes inventariados</li>
+              <li>Adquirentes de buena fe</li>
+            </ul>
+          </div>
+          <div class="participant-col">
+            <div class="participant-col-head phead-c6">Otros intervinientes</div>
+            <ul>
+              <li>Administrador judicial designado</li>
+              <li>Peritos <span class="participant-note">(informes técnicos, valoraciones)</span></li>
+              <li>Parientes, amigos, vecinos <span class="participant-note">(examen subsidiario)</span></li>
+              <li>Menores sin representante legal</li>
+              <li>Ausentes no citables</li>
+              <li>Incapacitados sin curador</li>
+              <li>Servicios funerarios municipales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de conexiones normativas -->
+    <div class="map-section">
+      <div class="section-heading" data-target="sec-norms">
+        <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+        <span class="section-heading-count">8 cuerpos normativos</span>
+        <button class="section-toggle-btn">&#9660;</button>
+      </div>
+      <hr class="section-divider">
+      <div class="section-body collapsed" id="sec-norms">
+        <div class="norm-grid">
+          <div class="norm-card">
+            <div class="norm-law">Ley 1/2000, de Enjuiciamiento Civil</div>
+            <div class="norm-title">Procesos especiales de división de patrimonios</div>
+            <div class="norm-arts">
+              <strong>Arts. 782-800</strong> — Régimen completo de la división judicial de la herencia, incluyendo declaración de herederos, inventario, partición y adjudicación. Arts. 437-443 (juicio verbal para incidentes), 517-520 (títulos ejecutivos), 524-530 (administradores judiciales).
+            </div>
+            <span class="norm-tag tag-procesal">Procesal</span>
+          </div>
+          <div class="norm-card">
+            <div class="norm-law">Código Civil</div>
+            <div class="norm-title">Derecho sucesorio sustantivo</div>
+            <div class="norm-arts">
+              <strong>Arts. 657-1087</strong> — Sucesión testada e intestada (arts. 657-782), derechos de herederos y legatarios, inventario (arts. 1011-1015), beneficio de inventario (arts. 1024-1027), partición (arts. 1056-1080), caución de administradores (arts. 267-270).
+            </div>
+            <span class="norm-tag tag-sustantivo">Sustantivo</span>
+          </div>
+          <div class="norm-card">
+            <div class="norm-law">Ley 33/2003, del Patrimonio de las AAPP</div>
+            <div class="norm-title">Sucesión intestada a favor del Estado</div>
+            <div class="norm-arts">
+              <strong>Arts. 17-20</strong> — Procedimiento para la declaración de heredero abintestato a favor del Estado y gestión del caudal hereditario. Régimen de caución y peritajes para Administraciones Públicas.
+            </div>
+            <span class="norm-tag tag-organizativo">Organizativo</span>
+          </div>
+          <div class="norm-card">
+            <div class="norm-law">Ley Orgánica 6/1985, del Poder Judicial</div>
+            <div class="norm-title">Funciones del Ministerio Fiscal y LAJ</div>
+            <div class="norm-arts">
+              <strong>Arts. 540-550</strong> — Intervención del Ministerio Fiscal en procesos civiles con menores, ausentes o intereses públicos. Funciones del Letrado de la Administración de Justicia en actuaciones no jurisdiccionales.
+            </div>
+            <span class="norm-tag tag-organizativo">Organizativo</span>
+          </div>
+          <div class="norm-card">
+            <div class="norm-law">Reglamento Notarial</div>
+            <div class="norm-title">Expediente de declaración de herederos abintestato</div>
+            <div class="norm-arts">
+              <strong>Arts. 52-63</strong> — Tramitación notarial de la declaración de herederos, requisitos documentales, efectos y coordinación con procedimientos judiciales de intervención.
+            </div>
+            <span class="norm-tag tag-procesal">Procesal</span>
+          </div>
+          <div class="norm-card">
+            <div class="norm-law">Ley 20/2011, del Registro Civil</div>
+            <div class="norm-title">Comunicación de fallecimientos y certificación</div>
+            <div class="norm-arts">
+              <strong>Art. 75</strong> — Obligación de comunicación de fallecimientos a efectos de procedimientos sucesorios. Certificados de defunción como título para incoación de expedientes.
+            </div>
+            <span class="norm-tag tag-organizativo">Organizativo</span>
+          </div>
+          <div class="norm-card">
+            <div class="norm-law">LOPDGDD 3/2018</div>
+            <div class="norm-title">Protección de datos en procedimientos sucesorios</div>
+            <div class="norm-arts">
+              <strong>Art. 6.1.e</strong> — Tratamiento de datos personales en ejercicio de funciones públicas, incluyendo intervención de correspondencia y documentación del causante con garantías de confidencialidad.
+            </div>
+            <span class="norm-tag tag-sustantivo">Sustantivo</span>
+          </div>
+          <div class="norm-card">
+            <div class="norm-law">Jurisprudencia del Tribunal Supremo</div>
+            <div class="norm-title">Interpretación vinculante de normas sucesorias</div>
+            <div class="norm-arts">
+              <strong>STS 1245/2018, 2341/2019, 1567/2020, 1123/2019, 2145/2020, 3421/2021</strong> — Criterios sobre intervención de oficio, declaración de herederos a favor del Estado, legitimación de acreedores, incidente de juicio verbal para controversias, dispensa de caución y responsabilidad de administradores.
+            </div>
+            <span class="norm-tag tag-jurisprudencial">Jurisprudencial</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Bloque 9: Leyenda -->
+  <footer class="legend-footer">
+    <div class="legend-inner">
+      <div class="legend-title">Leyenda de colores por categoría</div>
+      <div class="legend-grid">
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c1)"></div>
+          Aseguramiento y medidas cautelares
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c2)"></div>
+          Averiguación sucesoria y declaración
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c3)"></div>
+          Legitimación activa y solicitud
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c4)"></div>
+          Actuaciones procesales y citaciones
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c5)"></div>
+          Administración y gestión del caudal
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c6)"></div>
+          Extinción y cese de la intervención
+        </div>
+      </div>
+      <div class="legend-copy">
+        Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil · Libro IV, Título II, Capítulo I, Sección 2.ª · Versión expandida con doctrina, jurisprudencia y conexiones normativas · Generado como plantilla HTML reutilizable
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript obligatorio -->
+  <script>
+  // 🔧 Normalización de texto (elimina acentos, pasa a minúsculas y limpia espacios)
+  function normalizeText(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+  }
+
+  const pills = document.querySelectorAll('.pill');
+  const cards = document.querySelectorAll('.map-card');
+  const noResults = document.getElementById('no-results');
+  const countArts = document.getElementById('stat-arts');
+  const searchInput = document.getElementById('search');
+
+  let activeCat = 'all';
+  let searchTerm = '';
+
+  function updateVisibility() {
+    let visibleCount = 0;
+    const normalizedSearch = normalizeText(searchTerm);
+
+    cards.forEach(card => {
+      // Combinamos data-text + contenido interno para búsqueda fiable
+      const baseText = card.dataset.text || '';
+      const cardContent = card.textContent || '';
+      const searchable = normalizeText(baseText + ' ' + cardContent);
+
+      const catMatch = activeCat === 'all' || card.dataset.cat === activeCat;
+      const termMatch = !normalizedSearch || searchable.includes(normalizedSearch);
+      const shouldShow = catMatch && termMatch;
+
+      card.classList.toggle('hidden', !shouldShow);
+      if (shouldShow) visibleCount++;
+    });
+
+    // Mensaje de "sin resultados"
+    if (noResults) {
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      const termSpan = document.getElementById('no-results-term');
+      if (termSpan) termSpan.textContent = searchTerm;
+    }
+
+    // Contador estadístico
+    if (countArts) countArts.textContent = visibleCount;
+  }
+
+  // 📌 Filtros por categoría
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeCat = pill.dataset.cat;
+      updateVisibility();
+    });
+  });
+
+  // 🔍 Búsqueda en tiempo real
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchTerm = e.target.value;
+      updateVisibility();
+    });
+  }
+
+  // 📦 Expandir/Colapsar tarjetas individuales
+  function toggleCard(btn) {
+    const card = btn.closest('.map-card');
+    const isExp = card.classList.toggle('expanded');
+    btn.querySelector('span:first-child').textContent =
+      isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+  }
+
+  // 📦 Expandir / Contraer todo
+  const btnExpandAll = document.getElementById('btn-expand-all');
+  const btnCollapseAll = document.getElementById('btn-collapse-all');
+
+  if (btnExpandAll) {
+    btnExpandAll.addEventListener('click', () => {
+      cards.forEach(c => {
+        if (!c.classList.contains('hidden')) {
+          c.classList.add('expanded');
+          const btn = c.querySelector('.card-toggle-btn span:first-child');
+          if (btn) btn.textContent = 'Ocultar contenido';
+        }
+      });
+    });
+  }
+
+  if (btnCollapseAll) {
+    btnCollapseAll.addEventListener('click', () => {
+      cards.forEach(c => {
+        c.classList.remove('expanded');
+        const btn = c.querySelector('.card-toggle-btn span:first-child');
+        if (btn) btn.textContent = 'Ver contenido completo';
+      });
+    });
+  }
+
+  // 📦 Colapso de secciones principales
+  document.querySelectorAll('.section-heading').forEach(h => {
+    h.addEventListener('click', () => {
+      const target = document.getElementById(h.dataset.target);
+      if (!target) return;
+      const collapsed = target.classList.toggle('collapsed');
+      const btn = h.querySelector('.section-toggle-btn');
+      if (btn) btn.textContent = collapsed ? '▶' : '▼';
+    });
+  });
+
+  // 🔎 Zoom (50%–200%)
+  const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+  let zoom = 100;
+  const zoomTarget = document.querySelector('.page-main');
+  const zoomLabel = document.getElementById('zoom-label');
+
+  function applyZoom() {
+    if (!zoomTarget) return;
+    zoomTarget.style.zoom = zoom / 100;
+    if (zoomLabel) zoomLabel.textContent = zoom + '%';
+    const btnOut = document.getElementById('btn-zoom-out');
+    const btnIn = document.getElementById('btn-zoom-in');
+    if (btnOut) btnOut.disabled = zoom <= ZOOM_MIN;
+    if (btnIn) btnIn.disabled = zoom >= ZOOM_MAX;
+  }
+  function zoomIn() { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+  function zoomOut() { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+  function zoomReset() { zoom = 100; applyZoom(); }
+
+  const btnZoomIn = document.getElementById('btn-zoom-in');
+  const btnZoomOut = document.getElementById('btn-zoom-out');
+  const btnZoomReset = document.getElementById('btn-zoom-reset');
+
+  if (btnZoomIn) btnZoomIn.addEventListener('click', zoomIn);
+  if (btnZoomOut) btnZoomOut.addEventListener('click', zoomOut);
+  if (btnZoomReset) btnZoomReset.addEventListener('click', zoomReset);
+
+  // ⌨️ Atajos de teclado
+  document.addEventListener('keydown', e => {
+    if (!e.ctrlKey && !e.metaKey) return;
+    if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn(); }
+    if (e.key === '-') { e.preventDefault(); zoomOut(); }
+    if (e.key === '0') { e.preventDefault(); zoomReset(); }
+  });
+
+  // 🚀 Inicialización segura al cargar el DOM
+  document.addEventListener('DOMContentLoaded', () => {
+    updateVisibility();
+    applyZoom();
+  });
+</script>
+</body>
+</html>

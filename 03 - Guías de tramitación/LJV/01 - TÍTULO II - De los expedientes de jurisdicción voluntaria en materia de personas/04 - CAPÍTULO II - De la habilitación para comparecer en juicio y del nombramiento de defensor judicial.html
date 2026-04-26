@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Tramitación — Habilitación y Defensor Judicial (Ley 15/2015, arts. 27-32)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:      #1A2F6E;
+            --navy-mid:  #2E4DAA;
+            --navy-lt:   #4169E1;
+            --cyan:      #0D9488;    --cyan-bg:   #F0FDFA;
+            --violet:    #5B21B6;    --violet-bg: #F5F3FF;
+            --green:     #15803D;    --green-bg:  #F0FDF4;
+            --amber:     #B45309;    --amber-bg:  #FFFBEB;
+            --red:       #B91C1C;    --red-bg:    #FEF2F2;
+            --slate:     #475569;    --slate-bg:  #F4F6FB;
+            --white:     #FFFFFF;
+            --bdr:       #D1D9EE;
+            --text:      #1A1A2E;
+            --muted:     #6B7280;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; font-size: 15px; background: var(--slate-bg); color: var(--text); height: 100vh; overflow: hidden; }
+        #app { display: flex; flex-direction: column; height: 100vh; overflow: hidden; position: relative; }
+
+        /* CABECERA */
+        #hdr { flex-shrink: 0; height: 56px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; background: var(--navy); border-bottom: 1px solid rgba(255,255,255,.10); }
+        .h-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+        .h-seal { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.10); border: 1.5px solid rgba(255,255,255,.25); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+        .h-title { font-size: 14px; font-weight: 700; color: white; letter-spacing: .3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .h-sub { font-size: 11px; color: rgba(255,255,255,.55); font-weight: 400; }
+        .h-right { display: flex; gap: 6px; flex-shrink: 0; }
+        .btn { padding: 6px 12px; font-size: 12px; font-weight: 500; font-family: inherit; border-radius: 6px; cursor: pointer; transition: all .15s; border: 1px solid rgba(255,255,255,.18); }
+        .btn-ghost { background: rgba(255,255,255,.08); color: rgba(255,255,255,.85); }
+        .btn-ghost:hover { background: rgba(255,255,255,.18); }
+        .btn-next { background: var(--navy-lt); border-color: var(--navy-lt); color: white; font-weight: 600; font-family: inherit; font-size: 13px; padding: 8px 18px; border-radius: 7px; cursor: pointer; transition: all .15s; border: none; }
+        .btn-next:hover { background: var(--navy); }
+
+        /* BARRA DE FASES */
+        #pbar { flex-shrink: 0; height: 34px; display: flex; align-items: center; padding: 0 20px; background: var(--navy-mid); overflow-x: auto; scrollbar-width: none; gap: 2px; }
+        #pbar::-webkit-scrollbar { display: none; }
+        .ph-item { display: flex; align-items: center; }
+        .ph-lbl { font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 4px; color: rgba(255,255,255,.40); white-space: nowrap; transition: all .15s; }
+        .ph-lbl.active { background: rgba(65,105,225,.45); color: white; font-weight: 700; }
+        .ph-lbl.done { color: rgba(255,255,255,.70); }
+        .ph-sep { font-size: 12px; color: rgba(255,255,255,.25); padding: 0 3px; }
+
+        /* BREADCRUMB */
+        #breadcrumb { flex-shrink: 0; height: 32px; display: flex; align-items: center; padding: 0 20px; background: var(--slate-bg); border-bottom: 1px solid var(--bdr); overflow-x: auto; scrollbar-width: none; }
+        #breadcrumb::-webkit-scrollbar { display: none; }
+        .bc-item { font-size: 11.5px; white-space: nowrap; padding: 0 5px; color: var(--muted); background: none; border: none; font-family: inherit; }
+        .bc-past { cursor: pointer; }
+        .bc-past:hover { color: var(--navy-lt); text-decoration: underline; }
+        .bc-current { font-weight: 600; color: var(--navy); cursor: default; }
+        .bc-sep { font-size: 10px; color: var(--bdr); padding: 0 2px; }
+
+        /* LAYOUT */
+        #layout { flex: 1; overflow: hidden; display: flex; }
+
+        /* SIDEBAR */
+        #sidebar { width: 260px; flex-shrink: 0; background: var(--navy-mid); overflow-y: auto; display: flex; flex-direction: column; border-right: 1px solid rgba(255,255,255,.10); }
+        #sidebar::-webkit-scrollbar { width: 6px; }
+        #sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,.20); border-radius: 3px; }
+        #sb-tabs { display: flex; border-bottom: 1px solid rgba(255,255,255,.10); position: sticky; top: 0; background: var(--navy-mid); z-index: 10; flex-shrink: 0; }
+        .sb-tab { flex: 1; padding: 9px 0; font-size: 11px; font-weight: 600; font-family: inherit; background: none; border: none; color: rgba(255,255,255,.40); cursor: pointer; letter-spacing: .4px; text-transform: uppercase; transition: all .15s; }
+        .sb-tab.active { color: #fff; border-bottom: 2px solid var(--navy-lt); }
+        .sb-tab:hover:not(.active) { color: rgba(255,255,255,.70); background: rgba(255,255,255,.05); }
+        #sb-map, #sb-journey { padding: 8px 0; overflow-y: auto; }
+        .sm-phase { margin-bottom: 2px; }
+        .sm-phase-hdr { display: flex; align-items: center; justify-content: space-between; padding: 6px 12px; cursor: pointer; color: rgba(255,255,255,.55); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; user-select: none; transition: all .15s; }
+        .sm-phase-hdr:hover { color: rgba(255,255,255,.85); background: rgba(255,255,255,.05); }
+        .sm-phase-hdr .ph-toggle { font-size: 10px; transition: transform .15s; }
+        .sm-phase-hdr.collapsed .ph-toggle { transform: rotate(-90deg); }
+        .sm-nodes { overflow: hidden; }
+        .sm-node { display: flex; align-items: flex-start; gap: 7px; padding: 5px 10px 5px 14px; cursor: pointer; transition: all .15s; }
+        .sm-node:hover { background: rgba(255,255,255,.08); }
+        .sm-node-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.2); flex-shrink: 0; margin-top: 4px; transition: all .15s; }
+        .sm-node.sm-visited .sm-node-dot { background: #22c55e; }
+        .sm-node.sm-current .sm-node-dot { background: var(--navy-lt); box-shadow: 0 0 0 3px rgba(65,105,225,.3); }
+        .sm-node.sm-end .sm-node-dot { background: var(--amber); }
+        .sm-node-label { font-size: 12px; color: rgba(255,255,255,.65); line-height: 1.4; }
+        .sm-node.sm-visited .sm-node-label { color: rgba(255,255,255,.80); }
+        .sm-node.sm-current .sm-node-label { color: #fff; font-weight: 600; }
+        .sm-node.sm-end .sm-node-label { color: rgba(255,255,255,.5); font-style: italic; }
+
+        /* SIDEBAR JOURNEY */
+        .pi { padding: 6px 12px 6px 14px; border-left: 2px solid transparent; }
+        .pi.past { border-left-color: rgba(255,255,255,.15); }
+        .pi.current { border-left-color: var(--navy-lt); }
+        .pi-title { font-size: 12px; color: rgba(255,255,255,.75); line-height: 1.4; }
+        .pi.current .pi-title { color: #fff; font-weight: 600; }
+        .pi-choice { font-size: 11px; color: rgba(255,255,255,.45); padding-top: 2px; }
+        .sb-foot { padding: 12px; margin-top: auto; border-top: 1px solid rgba(255,255,255,.10); }
+        .sb-foot-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: rgba(255,255,255,.35); margin-bottom: 6px; }
+        .sb-foot-ref { font-size: 11px; color: rgba(255,255,255,.50); font-family: ui-monospace, monospace; line-height: 1.6; }
+        .sb-empty { padding: 14px; color: rgba(255,255,255,.35); font-size: 12px; line-height: 1.5; }
+
+        /* CONTENIDO PRINCIPAL */
+        #content { flex: 1; overflow-y: auto; padding: 24px; background: var(--slate-bg); }
+        #content::-webkit-scrollbar { width: 8px; }
+        #content::-webkit-scrollbar-thumb { background: var(--bdr); border-radius: 4px; }
+
+        /* CARD */
+        .card { max-width: 760px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); border: 1px solid var(--bdr); animation: fadeUp 0.22s ease; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .c-hdr { padding: 18px 22px 14px; border-bottom: 1px solid var(--bdr); display: flex; flex-direction: column; gap: 4px; }
+        .c-hdr-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .act-badge { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: .3px; }
+        .act-laj { background: var(--cyan-bg); color: var(--cyan); border: 1px solid #99f6e4; }
+        .act-juez { background: var(--violet-bg); color: var(--violet); border: 1px solid #ddd6fe; }
+        .act-ambos { background: var(--amber-bg); color: var(--amber); border: 1px solid #fde68a; }
+        .act-mf { background: var(--red-bg); color: var(--red); border: 1px solid #fecaca; }
+        .step-meta { font-size: 11.5px; color: var(--muted); }
+        .c-title { font-size: 18px; font-weight: 700; color: var(--navy); line-height: 1.3; margin-top: 4px; }
+        .c-body { padding: 18px 22px; }
+
+        /* BLOQUES DE CONTENIDO */
+        .blk { margin-bottom: 12px; line-height: 1.65; font-size: 14.5px; }
+        .blk:last-child { margin-bottom: 0; }
+        .blk-i { color: var(--text); }
+        .blk-d { background: var(--cyan-bg); border: 1px solid #99f6e4; border-radius: 8px; padding: 10px 14px; color: var(--cyan); font-weight: 500; font-size: 14px; }
+        .blk-n { background: var(--amber-bg); border: 1px solid #fde68a; border-radius: 8px; padding: 10px 14px; color: var(--amber); font-size: 14px; }
+        .blk-w { background: var(--red-bg); border: 1px solid #fecaca; border-radius: 8px; padding: 10px 14px; color: var(--red); font-size: 14px; }
+        .blk-l { background: var(--slate-bg); border: 1px solid var(--bdr); border-radius: 8px; padding: 8px 14px; color: var(--slate); font-family: ui-monospace, monospace; font-size: 12.5px; }
+        .blk-cl { background: var(--green-bg); border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 14px; font-size: 14px; }
+        .blk-cl strong { display: block; color: var(--green); font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px; margin-bottom: 8px; }
+        .blk-cl ul { padding-left: 18px; color: var(--text); }
+        .blk-cl ul li { margin-bottom: 5px; line-height: 1.5; }
+
+        /* ZONA DE DECISIÓN */
+        .dec-area { border-top: 1px solid var(--bdr); padding: 18px 22px; }
+        .dec-q { background: var(--slate-bg); border: 1px solid var(--bdr); border-top: 3px solid var(--navy); border-radius: 8px; padding: 12px 16px; margin-bottom: 14px; font-size: 15px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+        .dec-opts { display: flex; flex-direction: column; gap: 8px; }
+        .dec-btn { display: flex; align-items: flex-start; gap: 12px; padding: 11px 14px; border-radius: 9px; border: 1.5px solid; cursor: pointer; background: none; font-family: inherit; text-align: left; transition: all .15s; width: 100%; }
+        .dec-btn:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+        .dec-btn.ok { border-color: #86efac; background: var(--green-bg); }
+        .dec-btn.ok:hover { background: #dcfce7; border-color: #4ade80; }
+        .dec-btn.bad { border-color: #fca5a5; background: var(--red-bg); }
+        .dec-btn.bad:hover { background: #fee2e2; border-color: #f87171; }
+        .dec-btn.warn { border-color: #fde68a; background: var(--amber-bg); }
+        .dec-btn.warn:hover { background: #fef3c7; border-color: #fbbf24; }
+        .dec-btn.neutral { border-color: var(--bdr); background: var(--slate-bg); }
+        .dec-btn.neutral:hover { background: #e8edf5; border-color: var(--navy-lt); }
+        .dec-letter { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+        .ok .dec-letter { background: #86efac; color: var(--green); }
+        .bad .dec-letter { background: #fca5a5; color: var(--red); }
+        .warn .dec-letter { background: #fde68a; color: var(--amber); }
+        .neutral .dec-letter { background: var(--bdr); color: var(--navy); }
+        .dec-text { font-size: 14px; line-height: 1.45; color: var(--text); font-weight: 400; }
+
+        /* NAVEGACIÓN */
+        .c-nav { padding: 14px 22px; border-top: 1px solid var(--bdr); display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+        .btn-back { font-family: inherit; font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 7px; cursor: pointer; border: 1px solid var(--bdr); background: var(--white); color: var(--muted); transition: all .15s; }
+        .btn-back:hover:not(:disabled) { background: var(--slate-bg); color: var(--navy); }
+        .btn-back:disabled { opacity: .35; cursor: not-allowed; }
+
+        /* TARJETA FINAL */
+        .card.end-success { border-top: 5px solid var(--green); }
+        .card.end-error { border-top: 5px solid var(--red); }
+        .card.end-warning { border-top: 5px solid var(--amber); }
+        .card.end-neutral { border-top: 5px solid var(--navy-lt); }
+        .end-body { padding: 28px 22px; text-align: center; }
+        .end-icon { font-size: 44px; margin-bottom: 12px; }
+        .end-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+        .end-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+        .end-success .end-title { color: var(--green); }
+        .end-error .end-title { color: var(--red); }
+        .end-warning .end-title { color: var(--amber); }
+        .end-neutral .end-title { color: var(--navy-lt); }
+        .end-actions { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+        .summary-box { background: var(--slate-bg); border: 1px solid var(--bdr); border-radius: 8px; padding: 14px; text-align: left; margin-top: 16px; }
+        .summary-box h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); margin-bottom: 10px; }
+        .summary-box ol { padding-left: 18px; font-size: 13px; line-height: 1.65; color: var(--text); }
+        .summary-box ol li { margin-bottom: 4px; }
+        .summary-box ol li em { color: var(--navy-lt); font-style: normal; font-weight: 600; }
+        .end-content { padding: 0 22px 18px; text-align: left; }
+
+        /* MAPA OVERLAY */
+        #mapa-overlay { position: absolute; top: 122px; left: 0; right: 0; bottom: 0; z-index: 50; overflow-y: auto; background: var(--slate-bg); padding: 20px; display: none; }
+        .mapa-back-btn { display: flex; align-items: center; gap: 8px; font-family: inherit; font-size: 13px; font-weight: 600; padding: 9px 16px; border-radius: 8px; cursor: pointer; border: 1.5px solid var(--bdr); background: var(--white); color: var(--navy); transition: all .15s; margin-bottom: 18px; }
+        .mapa-back-btn:hover { background: var(--slate-bg); }
+        .mapa-hint { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+        .mapa-cols { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; align-items: flex-start; }
+        .mapa-col { min-width: 220px; flex: 1; }
+        .mapa-col-hdr { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); padding-bottom: 8px; border-bottom: 2px solid var(--bdr); margin-bottom: 10px; }
+        .mapa-node { background: var(--white); border: 1px solid var(--bdr); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; font-size: 13px; cursor: pointer; transition: all .15s; border-left: 3px solid var(--bdr); }
+        .mapa-node:hover { border-color: var(--navy-lt); box-shadow: 0 2px 6px rgba(0,0,0,.07); }
+        .mapa-node.mn-visited { border-left-color: #22c55e; background: var(--green-bg); }
+        .mapa-node.mn-current { border-left-color: var(--navy-lt); background: #EEF2FF; }
+        .mapa-node.mn-end-s { border-left-color: var(--green); }
+        .mapa-node.mn-end-e { border-left-color: var(--red); }
+        .mapa-node.mn-end-w { border-left-color: var(--amber); }
+        .mapa-node.mn-end-n { border-left-color: var(--slate); }
+        .mapa-node-title { color: var(--text); font-weight: 500; line-height: 1.4; }
+        .mapa-node-badge { font-size: 10.5px; margin-top: 4px; color: var(--muted); }
+
+        /* RESPONSIVE */
+        @media (max-width: 700px) {
+            #sidebar { display: none; }
+            #content { padding: 12px; }
+            .dec-opts { gap: 6px; }
+            .h-right .btn:not(:last-child) { display: none; }
+        }
+        /* PRINT */
+        @media print {
+            #hdr, #pbar, #breadcrumb, #sidebar, .c-nav, #mapa-overlay .mapa-back-btn { display: none !important; }
+            body, #app, #content { overflow: visible !important; height: auto !important; }
+            .card { box-shadow: none; page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <header id="hdr">
+        <div class="h-left">
+            <div class="h-seal">&#9878;</div>
+            <div>
+                <div class="h-title">Habilitaci&#243;n y Defensor Judicial</div>
+                <div class="h-sub">Ley 15/2015 &#183; T&#237;tulo II, Cap&#237;tulo II &#183; Arts. 27&#8211;32 LJV</div>
+            </div>
+        </div>
+        <div class="h-right">
+            <button class="btn btn-ghost" data-action="toggle-mapa">&#128506; Ver mapa</button>
+            <button class="btn btn-ghost" data-action="descargar">&#11015; Descargar</button>
+            <button class="btn btn-ghost" data-action="reiniciar">&#8634; Reiniciar</button>
+        </div>
+    </header>
+    <div id="pbar"></div>
+    <div id="breadcrumb"></div>
+    <div id="layout">
+        <div id="sidebar">
+            <div id="sb-tabs">
+                <button class="sb-tab active" data-action="sb-tab" data-tab="map">Mapa</button>
+                <button class="sb-tab" data-action="sb-tab" data-tab="journey">Recorrido</button>
+            </div>
+            <div id="sb-map"></div>
+            <div id="sb-journey" style="display:none"></div>
+        </div>
+        <div id="content"></div>
+    </div>
+    <div id="mapa-overlay" style="display:none"></div>
+</div>
+<script>
+"use strict";
+
+// ── FASES ──
+var PHASES = [
+    'Presupuestos',
+    'Iniciaci\u00F3n',
+    'Tramitaci\u00F3n',
+    'Resoluci\u00F3n',
+    'Ejercicio del cargo',
+    'Extinci\u00F3n y cierre'
+];
+
+// ── ACTORES ──
+var ACT_LABELS = { laj: 'LAJ / Sec. Judicial', juez: 'Juez', ambos: 'LAJ y Juez', mf: 'Ministerio Fiscal' };
+var ACT_CLS    = { laj: 'act-laj', juez: 'act-juez', ambos: 'act-ambos', mf: 'act-mf' };
+
+// ── CONFIGURACIÓN FINALES ──
+var END_CONF = {
+    success: { icon: '\u2705', title: 'Expediente concluido correctamente' },
+    error:   { icon: '\u274C', title: 'Procedimiento no continuado' },
+    warning: { icon: '\u26A0\uFE0F', title: 'Procedimiento concluido con condiciones' },
+    neutral: { icon: '\u2139\uFE0F', title: 'Resoluci\u00F3n firme sin estimaci\u00F3n' }
+};
+
+// ── PASOS ──
+var STEPS = {
+
+inicio: { ph:0, t:'Determinaci\u00F3n del cauce: \u00BFhabilitaci\u00F3n o nombramiento directo?', ac:'laj',
+  c:[['i','Antes de iniciar el expediente, determine qu\u00E9 v\u00EDa procede conforme al art. 27 LJV: nombramiento directo (sin habilitaci\u00F3n previa) o habilitaci\u00F3n previa m\u00E1s ulterior nombramiento. La elecci\u00F3n condiciona todo el expediente.'],
+     ['cl','Criterio de distinci\u00F3n',[
+       'Nombramiento directo (art. 27.1 y 27.3): la propia ley lo prev\u00E9 directamente \u2014conflicto de intereses, expediente JV, medidas de apoyo instadas por el MF\u2014',
+       'Habilitaci\u00F3n previa (art. 27.2): los representantes no pueden actuar por ausencia, negativa o imposibilidad de hecho']],
+     ['l','Art. 27 LJV \u00B7 Arts. 163, 235\u2013236 CC (menores) \u00B7 Arts. 295\u2013298 CC (discapacidad)']],
+  q:'\u00BFQu\u00E9 v\u00EDa procede?',
+  opts:[{t:'Nombramiento directo sin habilitaci\u00F3n (art. 27.1 y 27.3 LJV)', l:'Directo', n:'causa_directa', v:'neutral'},
+        {t:'Habilitaci\u00F3n previa necesaria (art. 27.2 LJV)', l:'Habilitaci\u00F3n', n:'causa_habilitacion', v:'neutral'}]},
+
+causa_directa: { ph:0, t:'Verificaci\u00F3n: nombramiento directo (art. 27.3 LJV)', ac:'laj',
+  c:[['i','El nombramiento directo opera sin habilitaci\u00F3n previa en tres supuestos tasados del art. 27.3 LJV.'],
+     ['cl','Causas que permiten el nombramiento directo',[
+       'Para litigar contra sus progenitores, tutor o curador (conflicto de intereses: art. 163 CC, art. 295.2.\u00BA CC)',
+       'Para instar expedientes de jurisdicci\u00F3n voluntaria',
+       'Cuando el Ministerio Fiscal inste un procedimiento para la adopci\u00F3n de medidas de apoyo (arts. 42 bis a) LJV y 758 LEC)']],
+     ['w','L\u00CDMITE ESENCIAL: no procede si el otro progenitor o tutor, si lo hubiere, no tiene inter\u00E9s opuesto al menor o persona con discapacidad. En ese caso, la representaci\u00F3n se canaliza por el cauce ordinario.'],
+     ['l','Art. 27.3 LJV \u00B7 Art. 163 CC \u00B7 Art. 295.2.\u00BA CC']],
+  q:'\u00BFEl otro progenitor/tutor tiene inter\u00E9s opuesto al afectado?',
+  opts:[{t:'S\u00ED tiene inter\u00E9s opuesto \u2014 procede el nombramiento directo', l:'Procede', n:'competencia', v:'ok'},
+        {t:'No tiene inter\u00E9s opuesto o puede actuar \u2014 no procede', l:'No procede', n:'fin_limite_directo', v:'bad'}]},
+
+causa_habilitacion: { ph:0, t:'Identificaci\u00F3n de la causa de habilitaci\u00F3n (art. 27.2 LJV)', ac:'laj',
+  c:[['i','La habilitaci\u00F3n se insta cuando el menor no emancipado o la persona con discapacidad, siendo demandado o sufriendo gran perjuicio de no promover la demanda, se encuentre en una de estas tres situaciones tasadas.'],
+     ['n','La causa c) \u2014imposibilidad de hecho\u2014 exige adem\u00E1s la inscripci\u00F3n de la resoluci\u00F3n de nombramiento en el Registro Civil (art. 30.3 LJV). Identifique correctamente la causa para tramitar el expediente de forma adecuada.'],
+     ['l','Art. 27.2 LJV \u00B7 Art. 295.1.\u00BA CC']],
+  q:'\u00BFQu\u00E9 causa de habilitaci\u00F3n concurre?',
+  opts:[{t:'a) Progenitores/tutor/apoyo ausentes con paradero ignorado, sin motivo racional de regreso pr\u00F3ximo', l:'Causa a)', n:'verif_ausencia', v:'neutral'},
+        {t:'b) Negativa de AMBOS progenitores/tutor/apoyo a representar o asistir en juicio', l:'Causa b)', n:'verif_negativa', v:'neutral'},
+        {t:'c) Imposibilidad de hecho para la representaci\u00F3n o asistencia en juicio', l:'Causa c)', n:'verif_imposibilidad', v:'neutral'}]},
+
+verif_ausencia: { ph:0, t:'Verificaci\u00F3n: ausencia con paradero ignorado [art. 27.2.a)]', ac:'laj',
+  c:[['i','Deben concurrir acumulativamente: (1) ausencia efectiva con paradero ignorado; (2) inexistencia de motivo racional bastante para creer pr\u00F3ximo su regreso. Ambos elementos son necesarios.'],
+     ['cl','Documentaci\u00F3n acreditativa recomendada',[
+       'Certificado de empadronamiento o informe del \u00FAltimo domicilio conocido',
+       'Gestiones de averiguaci\u00F3n del paradero y su resultado negativo',
+       'Declaraci\u00F3n del solicitante sobre las diligencias realizadas',
+       'Si existe procedimiento principal: acreditar el perjuicio derivado de la inacci\u00F3n']],
+     ['w','Si el paradero es conocido pero el representante no puede actuar, valorar la causa c) (imposibilidad de hecho).'],
+     ['l','Art. 27.2.a) LJV \u00B7 Art. 295.1.\u00BA CC']],
+  q:'\u00BFSe acreditan suficientemente los dos elementos de la causa a)?',
+  opts:[{t:'S\u00ED, ambos elementos acreditados \u2014 causa a) concurre', l:'Acreditada', n:'competencia', v:'ok'},
+        {t:'No se cumplen los requisitos', l:'No procede', n:'fin_no_procede', v:'bad'}]},
+
+verif_negativa: { ph:0, t:'Verificaci\u00F3n: negativa a representar [art. 27.2.b)]', ac:'laj',
+  c:[['i','La causa b) exige la negativa de AMBOS progenitores, tutor o persona designada para ejercer el apoyo. La negativa de uno solo no es suficiente: si el otro puede actuar, no procede la habilitaci\u00F3n.'],
+     ['n','La negativa puede ser expresa o resultar de conducta inequ\u00EDvoca. Conviene documentarla mediante requerimiento fehaciente previo.'],
+     ['w','ATENCI\u00D3N: si solo uno se niega, el otro puede y debe representar al afectado. En ese caso no procede la habilitaci\u00F3n.'],
+     ['l','Art. 27.2.b) LJV']],
+  q:'\u00BFSe niegan AMBOS progenitores/tutor/persona de apoyo?',
+  opts:[{t:'S\u00ED, ambos se niegan \u2014 causa b) acreditada', l:'Ambos niegan', n:'competencia', v:'ok'},
+        {t:'Solo uno se niega \u2014 el otro puede actuar sin necesidad de defensor', l:'Solo uno', n:'fin_progenitor_disponible', v:'warn'}]},
+
+verif_imposibilidad: { ph:0, t:'Verificaci\u00F3n: imposibilidad de hecho [art. 27.2.c)]', ac:'laj',
+  c:[['i','Concurre cuando los progenitores, tutor o persona de apoyo se encuentran en una situaci\u00F3n f\u00E1ctica \u2014no jur\u00EDdica\u2014 que les impide asumir la representaci\u00F3n o asistencia en juicio: enfermedad grave, ingreso hospitalario, privaci\u00F3n de libertad u otra causa an\u00E1loga.'],
+     ['cl','Documentaci\u00F3n acreditativa',[
+       'Informe m\u00E9dico o certificado de ingreso hospitalario',
+       'Resoluci\u00F3n de internamiento o situaci\u00F3n de privaci\u00F3n de libertad',
+       'Cualquier otro medio de prueba que objetive la imposibilidad f\u00EDsica de actuar']],
+     ['n','Este supuesto es el \u00FAnico que exige inscripci\u00F3n de la resoluci\u00F3n de nombramiento en el Registro Civil (art. 30.3 LJV). D\u00E9jese constancia en el expediente desde el inicio.'],
+     ['l','Art. 27.2.c) LJV \u00B7 Art. 30.3 LJV \u00B7 Art. 295.1.\u00BA CC']],
+  q:'\u00BFSe acredita la imposibilidad de hecho?',
+  opts:[{t:'S\u00ED \u2014 causa c) acreditada. La resoluci\u00F3n de nombramiento se inscribir\u00E1 en el RC', l:'Acreditada', n:'competencia_rc', v:'ok'},
+        {t:'No \u2014 la situaci\u00F3n no constituye imposibilidad de hecho', l:'No procede', n:'fin_no_procede', v:'bad'}]},
+
+competencia: { ph:1, t:'Determinaci\u00F3n de la competencia territorial (art. 28.1 LJV)', ac:'laj',
+  c:[['i','El Secretario judicial competente es el del JPI que corresponda seg\u00FAn el criterio de preferencia del art. 28.1 LJV. La competencia territorial es imperativa: no puede modificarse por sumisi\u00F3n expresa ni t\u00E1cita (art. 2.2 LJV).'],
+     ['cl','Criterios de competencia (orden de preferencia)',[
+       '1.\u00BA JPI del domicilio del menor o persona con discapacidad',
+       '2.\u00BA En defecto de domicilio: JPI de la residencia',
+       '3.\u00BA JPI que ya est\u00E9 conociendo del asunto que exige el nombramiento']],
+     ['n','Verificar que no exista ya otro expediente con id\u00E9ntico objeto en tramitaci\u00F3n (art. 6 LJV). Si existe, archivo del posterior.'],
+     ['l','Art. 28.1 LJV \u00B7 Art. 2.2 LJV \u00B7 Art. 6 LJV']],
+  nx:'iniciacion'},
+
+competencia_rc: { ph:1, t:'Competencia territorial \u2014 supuesto c) con inscripci\u00F3n RC', ac:'laj',
+  c:[['i','Mismos criterios de competencia del art. 28.1 LJV. Dado que el supuesto es la causa c) del art. 27.2, anotar en el expediente que la resoluci\u00F3n de nombramiento deber\u00E1 remitirse al Registro Civil competente para su inscripci\u00F3n.'],
+     ['n','Anotar en la portada del expediente: \u00ABSupuesto art. 27.2.c): testimonio de la resoluci\u00F3n de nombramiento se remitir\u00E1 al Registro Civil competente (art. 30.3 LJV y art. 22 LJV)\u00BB.'],
+     ['l','Art. 28.1 LJV \u00B7 Art. 30.3 LJV \u00B7 Art. 22 LJV \u00B7 Ley 20/2011 Registro Civil']],
+  nx:'iniciacion'},
+
+iniciacion: { ph:1, t:'Iniciaci\u00F3n del expediente y postulaci\u00F3n (art. 28.2 y 28.3 LJV)', ac:'laj',
+  c:[['i','El expediente puede iniciarse por tres v\u00EDas. No es preceptiva la intervenci\u00F3n de Abogado ni Procurador en la tramitaci\u00F3n ordinaria.'],
+     ['cl','V\u00EDas de iniciaci\u00F3n',[
+       'De oficio (LAJ o iniciativa del Juez)',
+       'A petici\u00F3n del Ministerio Fiscal',
+       'Por el menor, la persona con discapacidad con medidas de apoyo, o cualquier persona que act\u00FAe en su inter\u00E9s']],
+     ['w','Excepci\u00F3n a la libre postulaci\u00F3n: si se formula oposici\u00F3n o se interpone recurso de revisi\u00F3n o apelaci\u00F3n, la intervenci\u00F3n de Abogado y Procurador pasa a ser preceptiva (art. 3.2 LJV). Notificar a las partes esta circunstancia.'],
+     ['n','La referencia del art. 28.2 a \u00ABcapacidad modificada judicialmente\u00BB debe entenderse, en la terminolog\u00EDa post-Ley 8/2021, como \u00ABpersona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jur\u00EDdica\u00BB.'],
+     ['l','Art. 28.2\u201328.3 LJV \u00B7 Art. 3.2 LJV \u00B7 Ley 8/2021']],
+  nx:'admision'},
+
+admision: { ph:1, t:'Examen y admisi\u00F3n de la solicitud (art. 17 LJV)', ac:'laj',
+  c:[['i','El Secretario judicial examina la solicitud. Verifica competencia, legitimaci\u00F3n, ausencia de defectos y que no exista expediente simult\u00E1neo con id\u00E9ntico objeto (art. 6 LJV).'],
+     ['d','Desde la presentaci\u00F3n de la solicitud quedan suspendidos los plazos de prescripci\u00F3n y caducidad de la acci\u00F3n de cuyo ejercicio se trate (art. 29 LJV).'],
+     ['n','Si el menor o la persona con discapacidad debe comparecer como demandado o queda sin representaci\u00F3n procesal, el MF asume su representaci\u00F3n y defensa de forma provisional (art. 29 LJV \u00B7 art. 8.2 LEC).'],
+     ['l','Art. 17 LJV \u00B7 Art. 29 LJV \u00B7 Art. 8.2 LEC \u00B7 Art. 6 LJV']],
+  q:'\u00BFLa solicitud es admisible?',
+  opts:[{t:'Admitida a tr\u00E1mite \u2014 proceder con la tramitaci\u00F3n', l:'Admitida', n:'convocatoria', v:'ok'},
+        {t:'Defecto subsanable \u2014 conceder plazo de 5 d\u00EDas para subsanaci\u00F3n', l:'Defecto subsanable', n:'subsanacion', v:'warn'},
+        {t:'Defecto insubsanable o causa de inadmisi\u00F3n \u2014 archivar', l:'Inadmisible', n:'fin_inadmision', v:'bad'}]},
+
+subsanacion: { ph:1, t:'Tr\u00E1mite de subsanaci\u00F3n (art. 17.4 LJV)', ac:'laj',
+  c:[['i','El Secretario judicial otorga al solicitante un plazo de 5 d\u00EDas para subsanar los defectos u omisiones. Transcurrido sin subsanaci\u00F3n: se tendr\u00E1 por no presentada la solicitud y se archivar\u00E1 el expediente.'],
+     ['d','Plazo de subsanaci\u00F3n: 5 d\u00EDas h\u00E1biles desde la notificaci\u00F3n del requerimiento'],
+     ['l','Art. 17.4 LJV']],
+  q:'\u00BFSe subsana el defecto en el plazo de 5 d\u00EDas?',
+  opts:[{t:'S\u00ED, subsanado en plazo \u2014 admitir a tr\u00E1mite', l:'Subsanado', n:'convocatoria', v:'ok'},
+        {t:'No subsanado en plazo \u2014 tener por no presentada y archivar', l:'No subsanado', n:'fin_archivo_subsanacion', v:'bad'}]},
+
+convocatoria: { ph:2, t:'Convocatoria a comparecencia (arts. 17.3, 18 y 30.1 LJV)', ac:'laj',
+  c:[['i','Admitida la solicitud, el Secretario judicial convoca a comparecencia. Citaci\u00F3n con al menos 15 d\u00EDas de antelaci\u00F3n (art. 17.3 LJV), acompa\u00F1ando copia de la solicitud y documentos. La comparecencia debe celebrarse dentro de los 30 d\u00EDas siguientes a la admisi\u00F3n.'],
+     ['cl','Sujetos de convocatoria obligatoria',[
+       'El solicitante',
+       'Los interesados que consten en el expediente',
+       'El menor o persona con discapacidad, si tuvieren suficiente madurez',
+       'En todo caso, el menor si tuviere m\u00E1s de 12 a\u00F1os (art. 9 LO 1/1996)',
+       'El Ministerio Fiscal (siempre, sin excepci\u00F3n)',
+       'Quienes el Secretario judicial estime pertinente']],
+     ['n','Ajustes para personas con discapacidad (art. 7 bis LJV): lenguaje claro, medios de apoyo, facilitadores y acompa\u00F1ante de su elecci\u00F3n desde el primer contacto.'],
+     ['d','Citaci\u00F3n: con \u226515 d\u00EDas de antelaci\u00F3n \u00B7 Comparecencia: en los 30 d\u00EDas siguientes a la admisi\u00F3n'],
+     ['l','Art. 30.1 LJV \u00B7 Art. 17.3 LJV \u00B7 Art. 18 LJV \u00B7 Art. 7 bis LJV \u00B7 Art. 9 LO 1/1996']],
+  nx:'oposicion_previa'},
+
+oposicion_previa: { ph:2, t:'Oposici\u00F3n previa a la comparecencia (art. 17.3 LJV)', ac:'laj',
+  c:[['i','Los interesados citados pueden formular oposici\u00F3n dentro de los 5 d\u00EDas siguientes a su citaci\u00F3n. La oposici\u00F3n no hace contencioso el expediente ni impide su tramitaci\u00F3n, salvo disposici\u00F3n legal expresa contraria. Dar traslado al solicitante inmediatamente.'],
+     ['w','La formulaci\u00F3n de oposici\u00F3n activa la obligatoriedad de Abogado y Procurador (art. 3.2 LJV). Notificar a las partes esta circunstancia.'],
+     ['l','Art. 17.3 LJV \u00B7 Art. 3.2 LJV']],
+  q:'\u00BFSe formula oposici\u00F3n en el plazo de 5 d\u00EDas tras la citaci\u00F3n?',
+  opts:[{t:'No hay oposici\u00F3n \u2014 comparecencia ordinaria', l:'Sin oposici\u00F3n', n:'comparecencia', v:'ok'},
+        {t:'Se formula oposici\u00F3n \u2014 advertir preceptividad de Abogado/Procurador y continuar', l:'Con oposici\u00F3n', n:'comparecencia_oposicion', v:'warn'}]},
+
+comparecencia_oposicion: { ph:2, t:'Comparecencia con oposici\u00F3n formulada', ac:'laj',
+  c:[['i','La oposici\u00F3n no suspende ni hace contencioso el expediente. La comparecencia se celebra con normalidad. Las partes deben estar asistidas por Abogado y representadas por Procurador desde este momento.'],
+     ['w','Verificar que las partes est\u00E1n debidamente asistidas antes de dar inicio a la comparecencia.'],
+     ['n','Si el opositor propone prueba que no puede practicarse en la comparecencia, puede acordarse su pr\u00E1ctica en los 10 d\u00EDas siguientes (art. 18.4.\u00AA LJV).'],
+     ['l','Art. 17.3 LJV \u00B7 Art. 3.2 LJV \u00B7 Art. 18.4.\u00AA LJV']],
+  nx:'comparecencia'},
+
+comparecencia: { ph:2, t:'Celebraci\u00F3n de la comparecencia (arts. 18 y 30.1 LJV)', ac:'laj',
+  c:[['i','La comparecencia se celebra ante el Secretario judicial, que la preside. Se sustancia por los tr\u00E1mites del juicio verbal (art. 18.2 LJV) con las especialidades propias del expediente.'],
+     ['cl','Especialidades procedimentales',[
+       'Audiencia del menor/persona con discapacidad: puede ser en acto separado, sin interferencias (art. 18.4.\u00AA LJV), con asistencia del MF y levantamiento de acta',
+       'Valoraci\u00F3n motivada de la exploraci\u00F3n practicada en la resoluci\u00F3n final',
+       'Ajustes para personas con discapacidad: lenguaje claro, facilitadores, apoyos (art. 7 bis LJV)',
+       'Grabaci\u00F3n audiovisual de la comparecencia (art. 18.6.\u00AA LJV)',
+       'El MF puede proponer diligencias de oficio (art. 5 LJV)']],
+     ['d','Resoluci\u00F3n: en los 5 d\u00EDas siguientes a la terminaci\u00F3n de la comparecencia (art. 19.1 LJV)'],
+     ['l','Art. 30.1 LJV \u00B7 Art. 18 LJV \u00B7 Art. 7 bis LJV \u00B7 Art. 5 LJV']],
+  q:'\u00BFAsiste el solicitante a la comparecencia?',
+  opts:[{t:'S\u00ED asiste \u2014 practicar prueba y continuar', l:'Asiste', n:'practica_prueba', v:'ok'},
+        {t:'No asiste sin causa justificada \u2014 tenerle por desistido y archivar', l:'No asiste', n:'fin_desistimiento', v:'bad'}]},
+
+practica_prueba: { ph:2, t:'Pr\u00E1ctica de prueba y conclusiones (art. 18 LJV)', ac:'laj',
+  c:[['i','Se practican las pruebas admitidas, se realizan las diligencias relativas al inter\u00E9s del menor o persona con discapacidad acordadas de oficio o a instancia del MF, y los interesados formulan oralmente sus conclusiones (art. 18.5.\u00AA LJV).'],
+     ['cl','Documentaci\u00F3n del acto',[
+       'Grabaci\u00F3n audiovisual de la comparecencia (art. 18.6.\u00AA LJV)',
+       'Acta de la audiencia del menor, si se practic\u00F3 en acto separado (art. 18.4.\u00AA LJV)',
+       'Testimonio de las pruebas practicadas',
+       'Traslado del acta a las partes para alegaciones en 5 d\u00EDas si la audiencia del menor fue posterior a la comparecencia']],
+     ['l','Art. 18 LJV \u00B7 Art. 5 LJV \u00B7 Art. 19 LJV']],
+  nx:'decision_fondo'},
+
+decision_fondo: { ph:3, t:'Decisi\u00F3n sobre el fondo (arts. 19 y 30 LJV)', ac:'laj',
+  c:[['i','Terminada la comparecencia, el Secretario judicial dispone de 5 d\u00EDas para resolver. La decisi\u00F3n puede fundarse en cualquier hecho conocido durante el expediente, aunque no hubiera sido invocado por las partes (art. 19.2 LJV).'],
+     ['d','Plazo para resolver: 5 d\u00EDas desde la terminaci\u00F3n de la comparecencia o desde la \u00FAltima diligencia practicada (art. 19.1 LJV)'],
+     ['l','Art. 19 LJV \u00B7 Art. 30 LJV']],
+  q:'\u00BFProcede el nombramiento del defensor judicial?',
+  opts:[{t:'S\u00ED procede \u2014 dictar decreto de nombramiento', l:'Procede', n:'resolucion_estimatoria', v:'ok'},
+        {t:'No procede \u2014 dictar resoluci\u00F3n desestimatoria', l:'No procede', n:'resolucion_desestimatoria', v:'bad'}]},
+
+resolucion_estimatoria: { ph:3, t:'Decreto de nombramiento del defensor judicial (art. 30.2 LJV)', ac:'laj',
+  c:[['i','El Secretario judicial dicta decreto de nombramiento designando al defensor judicial y determinando las atribuciones que le confiere. Criterio: idoneidad para el cargo (art. 30.2 LJV \u00B7 art. 295 CC).'],
+     ['cl','Contenido obligatorio del decreto',[
+       'Identificaci\u00F3n del defensor judicial nombrado',
+       'Atribuciones conferidas: estrictamente limitadas al objeto del expediente',
+       'Advertencia de las obligaciones del cargo (arts. 235\u2013236 CC para menores; arts. 295\u2013298 CC para personas con discapacidad)',
+       'Indicaci\u00F3n del plazo para aceptar el cargo',
+       'Si causa c): indicaci\u00F3n de la obligaci\u00F3n de remisi\u00F3n al Registro Civil (art. 30.3 LJV)']],
+     ['l','Art. 30.2 LJV \u00B7 Arts. 235\u2013236 CC \u00B7 Arts. 295\u2013298 CC']],
+  q:'\u00BFEl supuesto es la causa c) del art. 27.2 LJV (imposibilidad de hecho)?',
+  opts:[{t:'S\u00ED \u2014 remitir testimonio al Registro Civil antes de notificar el nombramiento', l:'Causa c)', n:'inscripcion_rc', v:'neutral'},
+        {t:'No, otro supuesto \u2014 proceder directamente a la notificaci\u00F3n del nombramiento', l:'Otro supuesto', n:'notificacion_nombramiento', v:'neutral'}]},
+
+inscripcion_rc: { ph:3, t:'Remisi\u00F3n al Registro Civil para inscripci\u00F3n (art. 30.3 LJV)', ac:'laj',
+  c:[['i','El testimonio de la resoluci\u00F3n de nombramiento en el supuesto del art. 27.2.c) debe remitirse al Registro Civil competente para su inscripci\u00F3n. Esta publicidad registral produce efectos frente a terceros.'],
+     ['cl','Actuaciones',[
+       'Expedir testimonio de la resoluci\u00F3n de nombramiento',
+       'Remitir el testimonio al Registro Civil del domicilio del afectado',
+       'Dejar constancia en el expediente de la remisi\u00F3n y de la fecha',
+       'Aguardar confirmaci\u00F3n de la inscripci\u00F3n antes de expedir el t\u00EDtulo al defensor']],
+     ['l','Art. 30.3 LJV \u00B7 Art. 22 LJV \u00B7 Ley 20/2011 Registro Civil']],
+  nx:'notificacion_nombramiento'},
+
+notificacion_nombramiento: { ph:3, t:'Notificaci\u00F3n del nombramiento y aceptaci\u00F3n del cargo', ac:'laj',
+  c:[['i','La resoluci\u00F3n de nombramiento se notifica al defensor judicial designado. La suspensi\u00F3n de plazos del art. 29 LJV contin\u00FAa vigente hasta la aceptaci\u00F3n formal del cargo. Expedir al defensor testimonio de la resoluci\u00F3n como t\u00EDtulo acreditativo.'],
+     ['cl','Actuaciones',[
+       'Notificar la resoluci\u00F3n al defensor judicial nombrado',
+       'Aguardar la aceptaci\u00F3n formal del cargo',
+       'Si no acepta: tramitar nuevo nombramiento (volver a la resoluci\u00F3n estimatoria)',
+       'Notificar la aceptaci\u00F3n al afectado, al MF y a los dem\u00E1s interesados',
+       'Expedir testimonio de la resoluci\u00F3n de nombramiento al defensor judicial']],
+     ['n','La aceptaci\u00F3n del cargo es el dies ad quem de la suspensi\u00F3n de plazos de prescripci\u00F3n y caducidad (art. 29 LJV). Desde ese momento, el defensor judicial puede actuar en el proceso o expediente que motiv\u00F3 su nombramiento.'],
+     ['l','Art. 29 LJV \u00B7 Art. 30.2 LJV']],
+  nx:'ejercicio_cargo'},
+
+resolucion_desestimatoria: { ph:3, t:'Resoluci\u00F3n desestimatoria (arts. 19 y 20 LJV)', ac:'laj',
+  c:[['i','El Secretario judicial dicta decreto desestimando la solicitud. La resoluci\u00F3n firme produce cosa juzgada: no cabe iniciar otro expediente sobre id\u00E9ntico objeto salvo cambio de circunstancias (art. 19.3 LJV). S\u00ED cabe, sin embargo, el proceso contencioso posterior (art. 19.4 LJV).'],
+     ['n','La interposici\u00F3n de recursos de revisi\u00F3n o apelaci\u00F3n requiere Abogado y Procurador (art. 3.2 LJV).'],
+     ['l','Art. 19 LJV \u00B7 Art. 20 LJV \u00B7 Art. 3.2 LJV']],
+  q:'\u00BFSe interpone recurso contra la resoluci\u00F3n desestimatoria?',
+  opts:[{t:'No \u2014 la resoluci\u00F3n deviene firme', l:'Sin recurso', n:'fin_desestimacion_firme', v:'neutral'},
+        {t:'S\u00ED \u2014 recurso de revisi\u00F3n ante el Juez (resoluci\u00F3n del Secretario judicial, art. 20.2 LJV)', l:'Revisi\u00F3n', n:'recurso_revision', v:'warn'},
+        {t:'S\u00ED \u2014 recurso de apelaci\u00F3n (resoluci\u00F3n del Juez, art. 20.2 LJV)', l:'Apelaci\u00F3n', n:'recurso_apelacion', v:'warn'}]},
+
+recurso_revision: { ph:3, t:'Recurso de revisi\u00F3n ante el Juez (art. 20.2 LJV)', ac:'juez',
+  c:[['i','Cuando la resoluci\u00F3n desestimatoria proviene del Secretario judicial, el recurso es la revisi\u00F3n ante el Juez competente (art. 20.2 LJV). El recurso de apelaci\u00F3n posterior no tiene efectos suspensivos salvo disposici\u00F3n expresa contraria.'],
+     ['n','La interposici\u00F3n del recurso requiere Abogado y Procurador (art. 3.2 LJV).'],
+     ['l','Art. 20.2 LJV \u00B7 Art. 3.2 LJV']],
+  q:'\u00BFEl Juez estima el recurso de revisi\u00F3n?',
+  opts:[{t:'S\u00ED \u2014 devolver al cauce de nombramiento', l:'Estimado', n:'resolucion_estimatoria', v:'ok'},
+        {t:'No \u2014 confirmaci\u00F3n desestimatoria', l:'Desestimado', n:'fin_desestimacion_firme', v:'bad'}]},
+
+recurso_apelacion: { ph:3, t:'Recurso de apelaci\u00F3n ante la Audiencia Provincial (art. 20.2 LJV)', ac:'juez',
+  c:[['i','Cuando la resoluci\u00F3n desestimatoria fue dictada por el Juez, cabe recurso de apelaci\u00F3n ante la Audiencia Provincial. Sin efectos suspensivos (art. 20.2 LJV in fine) salvo disposici\u00F3n expresa contraria. Requiere Abogado y Procurador.'],
+     ['l','Art. 20.2 LJV \u00B7 Art. 3.2 LJV']],
+  q:'\u00BFLa Audiencia Provincial estima el recurso de apelaci\u00F3n?',
+  opts:[{t:'S\u00ED \u2014 devolver al cauce de nombramiento', l:'Estimado', n:'resolucion_estimatoria', v:'ok'},
+        {t:'No \u2014 confirmaci\u00F3n desestimatoria', l:'Desestimado', n:'fin_desestimacion_firme', v:'bad'}]},
+
+ejercicio_cargo: { ph:4, t:'Ejercicio del cargo por el defensor judicial', ac:'laj',
+  c:[['i','El defensor judicial ejerce las atribuciones determinadas en el decreto de nombramiento. Su cargo es tuitivo, ocasional y estrictamente limitado al objeto del expediente. Debe actuar en inter\u00E9s del afectado, respetando su voluntad, deseos y preferencias.'],
+     ['cl','Obligaciones del defensor judicial (arts. 235\u2013236 CC y arts. 295\u2013298 CC)',[
+       'Actuar en el inter\u00E9s del menor o persona con discapacidad',
+       'Respetar la voluntad, deseos y preferencias del afectado (en especial, personas con discapacidad)',
+       'Prohibici\u00F3n de recibir liberalidades del afectado hasta aprobaci\u00F3n definitiva de la gesti\u00F3n',
+       'Prohibici\u00F3n de actuar con conflicto de intereses propio o de terceros',
+       'Deber activo de comunicaci\u00F3n al \u00F3rgano judicial ante cualquier causa de cesaci\u00F3n (art. 31 LJV)']],
+     ['l','Art. 30.2 LJV \u00B7 Art. 31 LJV \u00B7 Arts. 235\u2013236 CC \u00B7 Arts. 295\u2013298 CC']],
+  nx:'vigilancia_cesacion'},
+
+vigilancia_cesacion: { ph:4, t:'Vigilancia de causas de cesaci\u00F3n o incidencias del cargo (art. 31 LJV)', ac:'laj',
+  c:[['i','El defensor judicial vigila activamente la concurrencia de causas de cesaci\u00F3n y las comunica de inmediato al \u00F3rgano judicial (art. 31 LJV). El car\u00E1cter provisional del cargo exige esta vigilancia permanente. Adem\u00E1s pueden presentarse incidencias como la excusa o remoci\u00F3n.'],
+     ['cl','Causas de comunicaci\u00F3n obligatoria (art. 31 LJV)',[
+       'Desaparici\u00F3n de la causa que motiv\u00F3 el nombramiento',
+       'Progenitores/representantes/curador se prestan a comparecer en juicio por el afectado',
+       'Terminaci\u00F3n del procedimiento que motiv\u00F3 la habilitaci\u00F3n']],
+     ['l','Art. 31 LJV \u00B7 Art. 49 LJV (remoci\u00F3n) \u00B7 Art. 50 LJV (excusa) \u00B7 Art. 32 LJV']],
+  q:'\u00BFQu\u00E9 incidencia se produce durante el ejercicio del cargo?',
+  opts:[{t:'Desaparece la causa original del nombramiento \u2014 comunicar y tramitar cesaci\u00F3n', l:'Causa desaparece', n:'cesacion_causa', v:'neutral'},
+        {t:'Representantes disponibles para comparecer por el afectado \u2014 comunicar y cesar', l:'Representante disponible', n:'cesacion_representante', v:'neutral'},
+        {t:'Termina el procedimiento principal \u2014 comunicar y rendir cuentas', l:'Fin procedimiento', n:'cesacion_fin_procedimiento', v:'neutral'},
+        {t:'El defensor solicita excusa del cargo (art. 50 LJV)', l:'Excusa', n:'excusa', v:'warn'},
+        {t:'Se promueve la remoci\u00F3n del defensor (art. 49 LJV)', l:'Remoci\u00F3n', n:'remocion', v:'warn'}]},
+
+cesacion_causa: { ph:5, t:'Cesaci\u00F3n: comunicaci\u00F3n de desaparici\u00F3n de la causa (art. 31.1 LJV)', ac:'laj',
+  c:[['i','El defensor judicial comunica al \u00F3rgano judicial la desaparici\u00F3n de la causa que motiv\u00F3 su nombramiento. El Secretario judicial verifica la efectiva desaparici\u00F3n y dicta decreto declarando extinguido el cargo. Notificar a las partes y al MF.'],
+     ['cl','Actuaciones del Secretario judicial',[
+       'Recibir y verificar la comunicaci\u00F3n del defensor judicial',
+       'Dictar decreto declarando extinguido el cargo',
+       'Notificar a las partes, al afectado y al MF',
+       'Si fue causa c): comunicar la extinci\u00F3n al Registro Civil (por analog\u00EDa con art. 30.3 LJV)']],
+     ['l','Art. 31.1 LJV \u00B7 Art. 22 LJV']],
+  nx:'rendicion_cuentas'},
+
+cesacion_representante: { ph:5, t:'Cesaci\u00F3n: representante disponible para comparecer (art. 31.2 LJV)', ac:'laj',
+  c:[['i','El defensor judicial comunica al \u00F3rgano judicial que alguno de los progenitores, representantes o curador se presta a comparecer en juicio por el afectado. El cargo cesa y la representaci\u00F3n vuelve al cauce ordinario.'],
+     ['cl','Actuaciones del Secretario judicial',[
+       'Recibir la comunicaci\u00F3n del defensor judicial',
+       'Verificar la disponibilidad y capacidad del representante',
+       'Dictar decreto declarando extinguido el cargo',
+       'Notificar a las partes y al MF']],
+     ['l','Art. 31.2 LJV']],
+  nx:'rendicion_cuentas'},
+
+cesacion_fin_procedimiento: { ph:5, t:'Cesaci\u00F3n: terminaci\u00F3n del procedimiento principal (art. 31.2 LJV)', ac:'laj',
+  c:[['i','El defensor judicial comunica la terminaci\u00F3n del procedimiento o expediente que motiv\u00F3 su habilitaci\u00F3n y nombramiento. La extinci\u00F3n del proceso principal extingue ipso facto la justificaci\u00F3n del cargo. Tramitar el decreto de cese y la rendici\u00F3n de cuentas.'],
+     ['l','Art. 31.2 LJV']],
+  nx:'rendicion_cuentas'},
+
+excusa: { ph:5, t:'Expediente de excusa del defensor judicial (art. 50 LJV, v\u00EDa art. 32 LJV)', ac:'laj',
+  c:[['i','Deben alegarse las causas de excusa dentro de los 15 d\u00EDas desde el nombramiento. Si la causa es sobrevenida, puede alegarse en cualquier momento, siempre que haya persona de parecidas condiciones para sustituir.'],
+     ['d','Plazo para alegar excusa: 15 d\u00EDas desde el nombramiento (o en cualquier momento si la causa es sobrevenida)'],
+     ['cl','Tr\u00E1mites del expediente de excusa',[
+       'Comparecencia: se oye al defensor, al sustituto propuesto, al afectado (si tiene suficiente madurez o >12 a\u00F1os) y al MF',
+       'Mientras se tramita: el defensor est\u00E1 obligado a continuar en el cargo',
+       'Si no ejerce: el Secretario judicial nombra un defensor provisional que le sustituye',
+       'Si la excusa es rechazada: el defensor responsable soporta todos los gastos ocasionados (art. 50.3 LJV)']],
+     ['l','Art. 50 LJV \u00B7 Art. 32 LJV \u00B7 Art. 297 CC']],
+  q:'\u00BFSe admite la excusa?',
+  opts:[{t:'S\u00ED \u2014 proceder al nombramiento de nuevo defensor judicial', l:'Admitida', n:'nuevo_defensor', v:'ok'},
+        {t:'No \u2014 el defensor contin\u00FAa en el cargo; los gastos del expediente son a su cargo', l:'Rechazada', n:'excusa_rechazada', v:'bad'}]},
+
+excusa_rechazada: { ph:4, t:'Excusa rechazada: continuaci\u00F3n del cargo (art. 50.3 LJV)', ac:'laj',
+  c:[['i','Rechazada la excusa, el defensor judicial contin\u00FAa en el cargo. Queda responsable de todos los gastos causados por el expediente de excusa (art. 50.3 LJV). El expediente principal retoma su curso.'],
+     ['l','Art. 50.3 LJV \u00B7 Art. 32 LJV']],
+  nx:'vigilancia_cesacion'},
+
+nuevo_defensor: { ph:5, t:'Nombramiento de nuevo defensor judicial (arts. 50.4 y 30.2 LJV)', ac:'laj',
+  c:[['i','Admitida la excusa o acordada la remoci\u00F3n, el Secretario judicial procede al nombramiento de un nuevo defensor judicial conforme al art. 30.2 LJV, con determinaci\u00F3n de las atribuciones que le confiera.'],
+     ['n','El nuevo nombramiento sigue los mismos criterios de idoneidad: art. 236 CC para menores y art. 295 CC para personas con discapacidad.'],
+     ['l','Art. 50.4 LJV \u00B7 Art. 30.2 LJV \u00B7 Arts. 236, 295 CC']],
+  nx:'ejercicio_cargo'},
+
+remocion: { ph:5, t:'Expediente de remoci\u00F3n del defensor judicial (art. 49 LJV, v\u00EDa art. 32 LJV)', ac:'juez',
+  c:[['i','La remoci\u00F3n puede acordarse de oficio, a solicitud del MF, del afectado o de cualquier persona interesada. Se tramita mediante comparecencia. El Juez puede suspender provisionalmente al defensor y el Secretario judicial nombrar\u00E1 un defensor provisional durante la tramitaci\u00F3n.'],
+     ['cl','Tr\u00E1mites del expediente de remoci\u00F3n',[
+       'Comparecencia: se oye al defensor, a los posibles sustitutos, al afectado (si >12 a\u00F1os o suficiente madurez) y al MF',
+       'Si hay oposici\u00F3n: el expediente se hace contencioso \u2014 juicio verbal (art. 49.1 LJV)',
+       'La resoluci\u00F3n de remoci\u00F3n corresponde al JUEZ \u2014no al Secretario judicial\u2014 (art. 49.3 LJV)',
+       'Si se acuerda la remoci\u00F3n: el Juez nombra nuevo defensor conforme a la legislaci\u00F3n civil',
+       'Comunicar la remoci\u00F3n al Registro Civil si procede']],
+     ['w','La resoluci\u00F3n de remoci\u00F3n es del JUEZ, no del Secretario judicial, aunque el expediente haya sido tramitado por el LAJ.'],
+     ['l','Art. 49 LJV \u00B7 Art. 32 LJV \u00B7 Art. 297 CC']],
+  q:'\u00BFEl Juez acuerda la remoci\u00F3n?',
+  opts:[{t:'S\u00ED \u2014 proceder al nombramiento de nuevo defensor judicial', l:'Remoci\u00F3n acordada', n:'nuevo_defensor', v:'ok'},
+        {t:'No \u2014 el defensor contin\u00FAa en el cargo', l:'Remoci\u00F3n denegada', n:'vigilancia_cesacion', v:'bad'}]},
+
+rendicion_cuentas: { ph:5, t:'Rendici\u00F3n de cuentas (art. 51 LJV, v\u00EDa art. 32 LJV)', ac:'laj',
+  c:[['i','Extinguido el cargo, el defensor judicial debe rendir cuentas de su gesti\u00F3n. La rendici\u00F3n final debe presentarse en el plazo de 3 meses desde el cese (prorrogables por justa causa). Los informes se trasladan al afectado, interesados y MF.'],
+     ['d','Plazo para la rendici\u00F3n de cuentas finales: 3 meses desde el cese del cargo (prorrogable por justa causa)'],
+     ['cl','Tr\u00E1mites de la rendici\u00F3n de cuentas',[
+       'Presentaci\u00F3n del informe/cuentas por el defensor al Secretario judicial',
+       'Traslado por el LAJ al afectado (si tiene suficiente madurez), a los interesados y al MF',
+       'Plazo para solicitar comparecencia: 10 d\u00EDas desde el traslado',
+       'El Juez puede acordar pericial contable de oficio si hay operaciones complejas (art. 51.3 LJV)',
+       'Resoluci\u00F3n por auto del Juez (art. 51.3 LJV)']],
+     ['n','La aprobaci\u00F3n de las cuentas no impide las acciones rec\u00EDprocas entre el defensor y el afectado o sus causahabientes por raz\u00F3n de la gesti\u00F3n (art. 51.5 LJV).'],
+     ['l','Art. 51 LJV \u00B7 Art. 32 LJV \u00B7 Art. 298 CC']],
+  q:'\u00BFAlg\u00FAn interesado solicita comparecencia sobre las cuentas en el plazo de 10 d\u00EDas?',
+  opts:[{t:'No \u2014 tramitaci\u00F3n sin comparecencia; el Juez resuelve por auto', l:'Sin comparecencia', n:'aprobacion_cuentas', v:'ok'},
+        {t:'S\u00ED \u2014 celebrar comparecencia; el Juez puede ordenar pericial contable', l:'Con comparecencia', n:'comparecencia_cuentas', v:'neutral'}]},
+
+comparecencia_cuentas: { ph:5, t:'Comparecencia sobre las cuentas (art. 51.2 LJV)', ac:'juez',
+  c:[['i','Se celebra comparecencia con todos los interesados, el afectado (si tiene suficiente madurez o es mayor de 12 a\u00F1os) y el MF. El Juez puede acordar de oficio una pericial contable o de auditor\u00EDa si las operaciones son complejas o requieren justificaci\u00F3n t\u00E9cnica.'],
+     ['l','Art. 51.2 y 51.3 LJV']],
+  nx:'aprobacion_cuentas'},
+
+aprobacion_cuentas: { ph:5, t:'Resoluci\u00F3n sobre las cuentas: auto del Juez (art. 51.3 LJV)', ac:'juez',
+  c:[['i','El Juez resuelve por auto sobre la rendici\u00F3n de cuentas. La aprobaci\u00F3n judicial cierra el expediente de rendici\u00F3n pero no impide las acciones rec\u00EDprocas posteriores entre el defensor y el afectado.'],
+     ['l','Art. 51.3 y 51.5 LJV']],
+  q:'\u00BFEl Juez aprueba las cuentas?',
+  opts:[{t:'S\u00ED, cuentas aprobadas \u2014 expediente concluido correctamente', l:'Aprobadas', n:'fin_exitoso', v:'ok'},
+        {t:'No aprobadas \u2014 acciones rec\u00EDprocas expeditas', l:'No aprobadas', n:'fin_cuentas_no_aprobadas', v:'bad'}]},
+
+// ── ESTADOS FINALES ──
+fin_exitoso: { ph:5, t:'Expediente concluido: cargo extinguido y cuentas aprobadas', ac:'laj', end:'success',
+  c:[['i','El expediente ha concluido satisfactoriamente. El defensor judicial ha cesado por causa legal, las cuentas de gesti\u00F3n han sido aprobadas judicialmente y todos los efectos del art. 29 LJV han quedado extinguidos desde la aceptaci\u00F3n del cargo.'],
+     ['n','Resoluci\u00F3n firme: cosa juzgada sobre el objeto del expediente (art. 19.3 LJV). La aprobaci\u00F3n de cuentas no impide las acciones rec\u00EDprocas por raz\u00F3n de la gesti\u00F3n (art. 51.5 LJV).'],
+     ['l','Art. 19.3 LJV \u00B7 Art. 29 LJV \u00B7 Art. 51.5 LJV']]},
+
+fin_limite_directo: { ph:0, t:'No procede: l\u00EDmite del art\u00EDculo 27 in fine', ac:'laj', end:'warning',
+  c:[['i','No procede el nombramiento porque el otro progenitor o tutor, si lo hubiere, no tiene un inter\u00E9s opuesto al menor o persona con discapacidad. La representaci\u00F3n debe canalizarse por el cauce ordinario.'],
+     ['n','Este l\u00EDmite tiene por objetivo evitar el uso del defensor judicial cuando existe una v\u00EDa representativa ordinaria funcional y sin conflicto de intereses. Si la situaci\u00F3n cambia, el expediente puede replantearse.']]},
+
+fin_no_procede: { ph:0, t:'No procede el nombramiento: causa no acreditada', ac:'laj', end:'error',
+  c:[['i','Los requisitos legales para el nombramiento de defensor judicial o la tramitaci\u00F3n de la habilitaci\u00F3n no se cumplen en el supuesto concreto. El expediente no puede iniciarse o debe archivarse.'],
+     ['n','Si las circunstancias cambian, puede instarse de nuevo el expediente. La decisi\u00F3n de no proceder en esta fase no produce cosa juzgada sobre nuevos supuestos de hecho.']]},
+
+fin_progenitor_disponible: { ph:0, t:'No procede la habilitaci\u00F3n: un progenitor puede actuar', ac:'laj', end:'warning',
+  c:[['i','La causa b) del art. 27.2 LJV exige la negativa de AMBOS progenitores. Si solo uno se niega, el otro puede representar o asistir al menor o persona con discapacidad en juicio. No procede la habilitaci\u00F3n.'],
+     ['n','Derivar la representaci\u00F3n al progenitor disponible y dispuesto a actuar por el afectado. Si hay desacuerdo entre los progenitores sobre la representaci\u00F3n, valorar si procede otro cauce procesal.']]},
+
+fin_inadmision: { ph:1, t:'Inadmisi\u00F3n: defecto insubsanable', ac:'laj', end:'error',
+  c:[['i','La solicitud presenta un defecto insubsanable. El Secretario judicial dicta decreto archivando el expediente o da cuenta al Juez si a \u00E9l corresponde la resoluci\u00F3n (art. 17.1 LJV). Si el archivo se produce antes de que el defensor acepte el cargo, los plazos del art. 29 LJV no llegan a suspenderse.'],
+     ['l','Art. 17.1 LJV \u00B7 Art. 29 LJV']]},
+
+fin_archivo_subsanacion: { ph:1, t:'Archivo: no subsanaci\u00F3n en plazo', ac:'laj', end:'error',
+  c:[['i','El solicitante no subsan\u00F3 el defecto en el plazo de 5 d\u00EDas. Se tiene por no presentada la solicitud y se archiva el expediente (art. 17.4 LJV). La suspensi\u00F3n de plazos del art. 29 LJV \u2014si lleg\u00F3 a iniciarse\u2014 queda sin efecto con el archivo firme.'],
+     ['l','Art. 17.4 LJV \u00B7 Art. 29 LJV']]},
+
+fin_desistimiento: { ph:2, t:'Archivo: solicitante tenido por desistido (art. 18.2, 1.\u00AA LJV)', ac:'laj', end:'warning',
+  c:[['i','El solicitante no asisti\u00F3 a la comparecencia sin causa justificada. Se le tiene por desistido y el expediente se archiva (art. 18.2, 1.\u00AA LJV). La suspensi\u00F3n de plazos del art. 29 LJV cesa con el archivo firme. Si la no asistencia tiene causa justificada, puede acreditarse para evitar este efecto.'],
+     ['l','Art. 18.2, 1.\u00AA LJV \u00B7 Art. 21 LJV \u00B7 Art. 29 LJV']]},
+
+fin_desestimacion_firme: { ph:3, t:'Resoluci\u00F3n desestimatoria firme (art. 19.3 LJV)', ac:'laj', end:'neutral',
+  c:[['i','La resoluci\u00F3n desestimatoria ha devenido firme. Cosa juzgada sobre el objeto del expediente: no cabe nuevo expediente sobre id\u00E9ntico objeto salvo cambio de circunstancias. El art. 19.4 LJV permite, sin embargo, la incoacin de un proceso contencioso posterior con el mismo objeto.'],
+     ['l','Art. 19.3 y 19.4 LJV \u00B7 Art. 20 LJV']]},
+
+fin_cuentas_no_aprobadas: { ph:5, t:'Cuentas no aprobadas: acciones rec\u00EDprocas expeditas (art. 51.5 LJV)', ac:'juez', end:'warning',
+  c:[['i','El Juez no ha aprobado las cuentas. Quedan expeditas las acciones rec\u00EDprocas entre el defensor judicial y el afectado o sus causahabientes por raz\u00F3n de la gesti\u00F3n (art. 51.5 LJV). El cargo queda extinguido en todo caso.'],
+     ['n','La no aprobaci\u00F3n no implica autom\u00E1ticamente responsabilidad civil o penal del defensor: ser\u00E1 preciso ejercitar las acciones correspondientes en la v\u00EDa oportuna.'],
+     ['l','Art. 51.5 LJV \u00B7 Art. 32 LJV \u00B7 Art. 298 CC']]}
+
+}; // fin STEPS
+
+// ── ESTADO ──
+var cur = 'inicio';
+var hist = [];
+var activeSbTab = 'map';
+var collapsedPhases = {};
+var mapaOn = false;
+var cliCounter = 0;
+
+// ── NAVEGACIÓN ──
+function goTo(stepId, choiceLabel) {
+    if (!STEPS[stepId]) return;
+    hist.push({ s: cur, next: stepId, c: choiceLabel || '' });
+    cur = stepId;
+    if (choiceLabel) sbTab('journey');
+    render();
+}
+
+function goBack() {
+    if (hist.length === 0) return;
+    cur = hist.pop().s;
+    render();
+}
+
+function goBackTo(idx) {
+    if (idx < 0 || idx >= hist.length) return;
+    cur = hist[idx].s;
+    hist = hist.slice(0, idx);
+    render();
+}
+
+function jumpTo(stepId) {
+    if (!STEPS[stepId]) return;
+    hist = [];
+    cur = stepId;
+    sbTab('map');
+    if (mapaOn) toggleMapa();
+    render();
+}
+
+function restart() {
+    cur = 'inicio';
+    hist = [];
+    sbTab('map');
+    if (mapaOn) {
+        mapaOn = false;
+        document.getElementById('mapa-overlay').style.display = 'none';
+        document.getElementById('layout').style.display = 'flex';
+    }
+    render();
+}
+
+// ── SIDEBAR TABS ──
+function sbTab(tab) {
+    activeSbTab = tab;
+    var mapEl = document.getElementById('sb-map');
+    var jourEl = document.getElementById('sb-journey');
+    if (mapEl) mapEl.style.display = tab === 'map' ? 'block' : 'none';
+    if (jourEl) jourEl.style.display = tab === 'journey' ? 'block' : 'none';
+    document.querySelectorAll('.sb-tab').forEach(function(t) {
+        t.classList.toggle('active', t.dataset.tab === tab);
+    });
+}
+
+// ── RENDER PRINCIPAL ──
+function render() {
+    renderPbar();
+    renderBreadcrumb();
+    renderSbMap();
+    renderSbJourney();
+    renderContent();
+    document.getElementById('content').scrollTop = 0;
+}
+
+// ── RENDER BARRA DE FASES ──
+function renderPbar() {
+    var pbar = document.getElementById('pbar');
+    var step = STEPS[cur];
+    var curPh = step ? step.ph : 0;
+    var visitedPhs = {};
+    hist.forEach(function(h) { if (STEPS[h.s]) visitedPhs[STEPS[h.s].ph] = true; });
+    var html = '';
+    PHASES.forEach(function(phase, idx) {
+        var cls = '';
+        if (idx === curPh) cls = 'active';
+        else if (visitedPhs[idx] && idx < curPh) cls = 'done';
+        html += '<span class="ph-item"><span class="ph-lbl ' + cls + '">' + escHtml(phase) + '</span></span>';
+        if (idx < PHASES.length - 1) html += '<span class="ph-sep">\u203A</span>';
+    });
+    pbar.innerHTML = html;
+}
+
+// ── RENDER BREADCRUMB ──
+function renderBreadcrumb() {
+    var bc = document.getElementById('breadcrumb');
+    var html = '';
+    hist.forEach(function(h, idx) {
+        var step = STEPS[h.s];
+        if (!step) return;
+        var title = step.t.length > 30 ? step.t.substring(0, 29) + '\u2026' : step.t;
+        html += '<button class="bc-item bc-past" data-action="go-back-to" data-index="' + idx + '">' + escHtml(title) + '</button>';
+        html += '<span class="bc-sep">\u203A</span>';
+    });
+    var curStep = STEPS[cur];
+    if (curStep) {
+        var ct = curStep.t.length > 30 ? curStep.t.substring(0, 29) + '\u2026' : curStep.t;
+        html += '<span class="bc-item bc-current">' + escHtml(ct) + '</span>';
+    }
+    bc.innerHTML = html;
+}
+
+// ── RENDER SIDEBAR MAPA ──
+function renderSbMap() {
+    var sbMap = document.getElementById('sb-map');
+    var visitedSet = {};
+    hist.forEach(function(h) { visitedSet[h.s] = true; });
+
+    // Agrupar por fase
+    var byPhase = PHASES.map(function() { return []; });
+    Object.keys(STEPS).forEach(function(id) {
+        var s = STEPS[id];
+        if (s.ph >= 0 && s.ph < PHASES.length) byPhase[s.ph].push({ id: id, s: s });
+    });
+
+    var html = '';
+    byPhase.forEach(function(nodes, pi) {
+        if (!nodes.length) return;
+        var isCollapsed = collapsedPhases[pi] === true;
+        html += '<div class="sm-phase">' +
+            '<div class="sm-phase-hdr ' + (isCollapsed ? 'collapsed' : '') + '" data-action="toggle-phase" data-phase="' + pi + '">' +
+            '<span>' + escHtml(PHASES[pi]) + '</span><span class="ph-toggle">\u25BE</span></div>' +
+            '<div class="sm-nodes" style="display:' + (isCollapsed ? 'none' : 'block') + '">';
+        nodes.forEach(function(item) {
+            var id = item.id, s = item.s;
+            var cls = '';
+            if (id === cur) cls = 'sm-current';
+            else if (visitedSet[id]) cls = 'sm-visited';
+            else if (s.end) cls = 'sm-end';
+            var short = s.t.length > 34 ? s.t.substring(0, 33) + '\u2026' : s.t;
+            html += '<div class="sm-node ' + cls + '" data-action="jump-to" data-step="' + id + '">' +
+                '<div class="sm-node-dot"></div>' +
+                '<div class="sm-node-label">' + escHtml(short) + '</div></div>';
+        });
+        html += '</div></div>';
+    });
+    sbMap.innerHTML = html;
+}
+
+// ── RENDER SIDEBAR RECORRIDO ──
+function renderSbJourney() {
+    var sbJourney = document.getElementById('sb-journey');
+    if (hist.length === 0) {
+        sbJourney.innerHTML = '<div class="sb-empty">El recorrido se ir\u00E1 mostrando aqu\u00ED conforme avance.</div>';
+        return;
+    }
+    var html = '';
+    hist.forEach(function(h) {
+        var step = STEPS[h.s];
+        if (!step) return;
+        html += '<div class="pi past"><div class="pi-title">' + escHtml(step.t) + '</div>' +
+            (h.c ? '<div class="pi-choice">\u2192 ' + escHtml(h.c) + '</div>' : '') + '</div>';
+    });
+    var curStep = STEPS[cur];
+    if (curStep) {
+        html += '<div class="pi current"><div class="pi-title">' + escHtml(curStep.t) + '</div></div>';
+    }
+    html += '<div class="sb-foot">' +
+        '<div class="sb-foot-title">Referencias clave</div>' +
+        '<div class="sb-foot-ref">Arts. 27\u201332 LJV<br>Arts. 235\u2013236, 295\u2013298 CC<br>Arts. 7\u20139 LEC \u00B7 Art. 7 bis LJV<br>Ley 8/2021 \u00B7 LO 1/1996</div></div>';
+    sbJourney.innerHTML = html;
+}
+
+// ── RENDER CONTENIDO ──
+function renderContent() {
+    var content = document.getElementById('content');
+    var step = STEPS[cur];
+    cliCounter = 0;
+    if (!step) { content.innerHTML = '<p style="padding:20px">Paso no encontrado.</p>'; return; }
+    if (step.end) {
+        content.innerHTML = buildEnd(step);
+    } else {
+        content.innerHTML = buildStep(step);
+    }
+}
+
+// ── RENDER BLOQUES ──
+function renderBlocks(blocks) {
+    var html = '';
+    (blocks || []).forEach(function(block) {
+        var type = block[0];
+        switch (type) {
+            case 'i':
+                html += '<p class="blk blk-i">' + escHtml(block[1]) + '</p>';
+                break;
+            case 'd':
+                html += '<div class="blk blk-d">\u23F1 ' + escHtml(block[1]) + '</div>';
+                break;
+            case 'n':
+                html += '<div class="blk blk-n">\u2139\uFE0F ' + escHtml(block[1]) + '</div>';
+                break;
+            case 'w':
+                html += '<div class="blk blk-w">\u26A0\uFE0F ' + escHtml(block[1]) + '</div>';
+                break;
+            case 'l':
+                html += '<div class="blk blk-l">\uD83D\uDCCB ' + escHtml(block[1]) + '</div>';
+                break;
+            case 'cl':
+                var title = block[1];
+                var items = block[2];
+                html += '<div class="blk blk-cl"><strong>' + escHtml(title) + '</strong><ul>';
+                items.forEach(function(item) { html += '<li>' + escHtml(item) + '</li>'; });
+                html += '</ul></div>';
+                break;
+        }
+    });
+    return html;
+}
+
+// ── BUILD STEP ──
+function buildStep(s) {
+    var actLabel = ACT_LABELS[s.ac] || s.ac;
+    var actCls   = ACT_CLS[s.ac]   || 'act-laj';
+    var phaseName = PHASES[s.ph] || '';
+    var stepNum = hist.length + 1;
+
+    var html = '<div class="card">' +
+        '<div class="c-hdr">' +
+        '<div class="c-hdr-row">' +
+        '<span class="act-badge ' + actCls + '">' + escHtml(actLabel) + '</span>' +
+        '<span class="step-meta">Paso ' + stepNum + ' \u00B7 Fase: ' + escHtml(phaseName) + '</span>' +
+        '</div>' +
+        '<div class="c-title">' + escHtml(s.t) + '</div>' +
+        '</div>' +
+        '<div class="c-body">' + renderBlocks(s.c) + '</div>';
+
+    if (s.q) {
+        var letters = 'ABCDEFGHIJ';
+        var opts = s.opts || [];
+        html += '<div class="dec-area">' +
+            '<div class="dec-q">' + escHtml(s.q) + '</div>' +
+            '<div class="dec-opts">';
+        opts.forEach(function(opt, i) {
+            var v = opt.v || 'neutral';
+            html += '<button class="dec-btn ' + v + '" data-action="go-to" data-step="' + opt.n + '" data-label="' + escAttr(opt.l || opt.t) + '">' +
+                '<div class="dec-letter">' + letters[i] + '</div>' +
+                '<div class="dec-text">' + escHtml(opt.t) + '</div>' +
+                '</button>';
+        });
+        html += '</div></div>';
+    }
+
+    html += '<div class="c-nav">' +
+        '<button class="btn-back" data-action="go-back"' + (hist.length === 0 ? ' disabled' : '') + '>\u2190 Volver</button>';
+    if (!s.q && s.nx) {
+        html += '<button class="btn-next" data-action="go-to" data-step="' + s.nx + '" data-label="">Siguiente \u2192</button>';
+    }
+    html += '</div></div>';
+    return html;
+}
+
+// ── BUILD END ──
+function buildEnd(s) {
+    var conf = END_CONF[s.end] || END_CONF.neutral;
+    var bodyHtml = renderBlocks(s.c);
+
+    var summaryHtml = '';
+    if (hist.length > 0) {
+        var items = hist.map(function(h, idx) {
+            var st = STEPS[h.s];
+            if (!st) return '';
+            return '<li><strong>' + escHtml(st.t) + '</strong>' +
+                (h.c ? ' \u2192 <em>' + escHtml(h.c) + '</em>' : '') + '</li>';
+        });
+        items.push('<li><strong>' + escHtml(s.t) + '</strong> \u2014 <em>Desenlace</em></li>');
+        summaryHtml = '<div class="summary-box"><h4>Resumen del recorrido</h4><ol>' + items.join('') + '</ol></div>';
+    }
+
+    return '<div class="card end-' + s.end + '">' +
+        '<div class="end-body">' +
+        '<div class="end-icon">' + conf.icon + '</div>' +
+        '<div class="end-title">' + escHtml(conf.title) + '</div>' +
+        '<div class="end-sub">' + escHtml(s.t) + '</div>' +
+        '<div class="end-actions">' +
+        '<button class="btn-next" data-action="reiniciar">\u21BA Nuevo procedimiento</button>' +
+        '<button class="btn-back" data-action="go-back">\u2190 Volver</button>' +
+        '</div>' + summaryHtml + '</div>' +
+        (s.c && s.c.length ? '<div class="end-content">' + bodyHtml + '</div>' : '') +
+        '</div>';
+}
+
+// ── MAPA OVERLAY ──
+function toggleMapa() {
+    mapaOn = !mapaOn;
+    document.getElementById('layout').style.display = mapaOn ? 'none' : 'flex';
+    document.getElementById('mapa-overlay').style.display = mapaOn ? 'block' : 'none';
+    if (mapaOn) renderMapa();
+}
+
+function renderMapa() {
+    var el = document.getElementById('mapa-overlay');
+    var visitedSet = {};
+    hist.forEach(function(h) { visitedSet[h.s] = true; });
+
+    var byPhase = PHASES.map(function() { return []; });
+    Object.keys(STEPS).forEach(function(id) {
+        var s = STEPS[id];
+        if (s.ph >= 0 && s.ph < PHASES.length) byPhase[s.ph].push({ id: id, s: s });
+    });
+
+    var html = '<button class="mapa-back-btn" data-action="close-mapa">\u2190 Volver al recorrido</button>' +
+        '<p class="mapa-hint">Vista completa del procedimiento. Haga clic en cualquier paso para ir directamente a \u00E9l.</p>' +
+        '<div class="mapa-cols">';
+
+    byPhase.forEach(function(nodes, pi) {
+        if (!nodes.length) return;
+        html += '<div class="mapa-col"><div class="mapa-col-hdr">' + escHtml(PHASES[pi]) + '</div>';
+        nodes.forEach(function(item) {
+            var id = item.id, s = item.s;
+            var cls = '';
+            if (id === cur) cls = 'mn-current';
+            else if (visitedSet[id]) cls = 'mn-visited';
+            else if (s.end === 'success') cls = 'mn-end-s';
+            else if (s.end === 'error')   cls = 'mn-end-e';
+            else if (s.end === 'warning') cls = 'mn-end-w';
+            else if (s.end === 'neutral') cls = 'mn-end-n';
+            var actLabel = ACT_LABELS[s.ac] || s.ac;
+            html += '<div class="mapa-node ' + cls + '" data-action="jump-to" data-step="' + id + '">' +
+                '<div class="mapa-node-title">' + escHtml(s.t) + '</div>' +
+                '<div class="mapa-node-badge">' + escHtml(actLabel) + (s.end ? ' \u00B7 \uD83C\uDFC1' : '') + '</div>' +
+                '</div>';
+        });
+        html += '</div>';
+    });
+    html += '</div>';
+    el.innerHTML = html;
+}
+
+// ── DESCARGA ──
+function dlGuia() {
+    var html = '<!DOCTYPE html>' + document.documentElement.outerHTML;
+    var blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'guia-tramitacion-defensor-judicial.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+// ── UTILIDADES ──
+function escHtml(s) {
+    if (!s) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function escAttr(s) {
+    if (!s) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── EVENT DELEGATION ──
+function wireEvents() {
+    document.addEventListener('click', function(ev) {
+        var el = ev.target.closest('[data-action]');
+        if (!el) return;
+        var action = el.dataset.action;
+        switch (action) {
+            case 'toggle-mapa':  toggleMapa(); break;
+            case 'close-mapa':   if (mapaOn) toggleMapa(); break;
+            case 'descargar':    dlGuia(); break;
+            case 'reiniciar':    restart(); break;
+            case 'sb-tab':       sbTab(el.dataset.tab); break;
+            case 'go-back':      goBack(); break;
+            case 'go-back-to':   goBackTo(parseInt(el.dataset.index, 10)); break;
+            case 'go-to':        goTo(el.dataset.step, el.dataset.label || ''); break;
+            case 'jump-to':      jumpTo(el.dataset.step); break;
+            case 'toggle-phase':
+                var pi = parseInt(el.dataset.phase, 10);
+                collapsedPhases[pi] = !collapsedPhases[pi];
+                renderSbMap();
+                break;
+        }
+    });
+    document.addEventListener('keydown', function(ev) {
+        if (ev.key === 'Escape' && mapaOn) toggleMapa();
+    });
+}
+
+// ── STARTUP ──
+document.addEventListener('DOMContentLoaded', function() {
+    wireEvents();
+    render();
+});
+</script>
+</body>
+</html>

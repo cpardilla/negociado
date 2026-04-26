@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa mental — Ley 15/2015, arts. 100-103 LJV · Autorización judicial al usufructuario</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --surface-3:   #eae8e3;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --border-lg:   rgba(15,23,42,.22);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+  --accent-soft: rgba(200,169,110,.15);
+  --accent-ring: rgba(200,169,110,.35);
+
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.06);
+  --shadow-md: 0 4px 6px -1px rgba(15,23,42,.07), 0 2px 4px -1px rgba(15,23,42,.04);
+  --shadow-lg: 0 10px 20px -5px rgba(15,23,42,.10), 0 4px 8px -3px rgba(15,23,42,.05);
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-ui:      'Outfit', system-ui, -apple-system, sans-serif;
+  --transition:      180ms cubic-bezier(.4,0,.2,1);
+  --transition-fast: 120ms cubic-bezier(.4,0,.2,1);
+}
+
+/* ------ RESET PROFESIONAL ------ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, h1, h2, h3, h4, h5, h6,
+p, ul, ol, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  min-height: 100vh;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-1);
+  background: var(--bg);
+}
+img, svg, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  line-height: 1.2;
+  text-align: inherit;
+}
+button:disabled { cursor: not-allowed; opacity: .5; }
+
+input, select, textarea {
+  font: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-md);
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--border-lg); }
+::selection { background: var(--accent-soft); color: var(--text-1); }
+
+/* ------ SITE HEADER ------ */
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem 1.75rem;
+}
+.header-inner { max-width: 1400px; margin: 0 auto; }
+.header-breadcrumb {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(248,245,237,.5);
+  letter-spacing: .04em;
+  margin-bottom: .75rem;
+}
+.header-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+.header-subtitle {
+  font-size: 14px;
+  color: rgba(248,245,237,.65);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.header-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.header-tag {
+  background: rgba(200,169,110,.15);
+  border: 1px solid rgba(200,169,110,.3);
+  color: var(--accent);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.header-actions { margin-left: auto; }
+.btn-ghost {
+  border: 1px solid rgba(248,245,237,.15);
+  color: rgba(248,245,237,.7);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.btn-ghost:hover { background: rgba(248,245,237,.08); color: #fff; }
+
+/* ------ STATS BAR ------ */
+.stats-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.stats-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+@media (max-width: 640px) { .stats-inner { grid-template-columns: repeat(2, 1fr); } }
+.stat-item {
+  padding: 1rem 1.5rem;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: 0; }
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-1);
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: .15rem;
+}
+
+/* ------ CONTROLS BAR ------ */
+.controls-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  backdrop-filter: saturate(180%) blur(8px);
+  box-shadow: 0 1px 0 var(--border), 0 2px 8px rgba(15,23,42,.04);
+  padding: .75rem 1.5rem;
+}
+.controls-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+}
+.search-wrap svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--text-3);
+}
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  background: var(--surface);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.search-input:hover { border-color: var(--border-lg); }
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+  outline: none;
+}
+
+.filter-pills {
+  display: flex;
+  gap: .35rem;
+  flex-wrap: wrap;
+}
+.pill {
+  background: transparent;
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.pill:hover {
+  background: var(--surface-2);
+  border-color: var(--border-lg);
+  color: var(--text-1);
+}
+.pill.active[data-cat="all"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.pill.active[data-cat="c1"] { background: var(--c1); border-color: var(--c1); color: #fff; }
+.pill.active[data-cat="c2"] { background: var(--c2); border-color: var(--c2); color: #fff; }
+.pill.active[data-cat="c3"] { background: var(--c3); border-color: var(--c3); color: #fff; }
+.pill.active[data-cat="c4"] { background: var(--c4); border-color: var(--c4); color: #fff; }
+.pill.active[data-cat="c5"] { background: var(--c5); border-color: var(--c5); color: #fff; }
+.pill.active[data-cat="c6"] { background: var(--c6); border-color: var(--c6); color: #fff; }
+
+.ctrl-actions {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-left: auto;
+}
+@media (max-width: 768px) { .ctrl-actions { display: none; } }
+
+.btn-ctrl {
+  background: var(--surface-2);
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+.btn-ctrl:hover { background: var(--surface-3); color: var(--text-1); }
+.btn-ctrl:active { transform: translateY(1px); }
+
+.zoom-cluster {
+  display: flex;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.btn-zoom {
+  width: 28px;
+  height: 28px;
+  background: var(--surface);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border-md);
+}
+.btn-zoom:last-of-type { border-right: 0; }
+.btn-zoom:hover { background: var(--surface-2); }
+.btn-zoom:disabled { opacity: .4; cursor: not-allowed; }
+.zoom-label {
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 42px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------ CARD GRID ------ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1rem;
+}
+@media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+/* ------ MAP CARD ------ */
+.map-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--c6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.map-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-md);
+}
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+.map-card.hidden { display: none; }
+
+.card-top { padding: 1rem 1.1rem .85rem; }
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  flex-wrap: wrap;
+  margin-bottom: .55rem;
+}
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-1);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: .3rem;
+}
+.card-subtitle {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* Badges */
+.art-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--c6bd);
+  background: var(--c6bg);
+  color: var(--c6);
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+.map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+
+.status-tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .02em;
+}
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+/* Counters */
+.card-counters {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  padding: 0 1.1rem .9rem;
+  font-size: 11px;
+  color: var(--text-3);
+}
+.counter-badge {
+  background: var(--surface-2);
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+}
+.counter-badge strong {
+  color: var(--text-1);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Toggle button */
+.card-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .65rem 1.1rem;
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.card-toggle-btn:hover {
+  background: var(--surface-3);
+  color: var(--text-1);
+}
+.card-toggle-btn:active {
+  background: var(--border);
+}
+.card-toggle-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.toggle-label { flex: 1; text-align: left; }
+.toggle-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  font-size: 10px;
+  transition: transform var(--transition), background var(--transition-fast),
+              color var(--transition-fast), border-color var(--transition-fast);
+}
+.card-toggle-btn:hover .toggle-icon {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+.map-card.expanded .toggle-icon {
+  transform: rotate(180deg);
+  background: var(--ink);
+  color: var(--surface);
+  border-color: var(--ink);
+}
+
+/* Card body */
+.card-body {
+  display: none;
+  padding: 1rem 1.1rem 1.1rem;
+  background: #fafaf9;
+  border-top: 1px solid var(--border);
+}
+.map-card.expanded .card-body { display: block; }
+
+/* Inner sections */
+.inner-section + .inner-section { margin-top: 1rem; }
+.inner-heading {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: .45rem;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-1);
+}
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--c6);
+  flex-shrink: 0;
+}
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+
+/* Card refs */
+.card-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  padding: .8rem 1.1rem;
+  background: #fafaf9;
+  border-top: 1px solid var(--border);
+}
+.ref-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--surface-2);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  transition: background var(--transition-fast);
+}
+.ref-tag:hover { background: var(--surface-3); }
+
+/* Inner list */
+.inner-list li {
+  position: relative;
+  padding-left: .9rem;
+  margin-bottom: .3rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.inner-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-3);
+}
+.inner-list li strong { color: var(--text-1); font-weight: 600; }
+
+/* ------ SECTION HEADING ------ */
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  max-width: 1400px;
+  margin: 1.5rem auto .5rem;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+.section-heading-text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+.section-heading-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  background: var(--surface-2);
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: .02em;
+}
+.section-toggle-btn {
+  width: 28px; height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border-md);
+  border-radius: 50%;
+  color: var(--text-2);
+  font-size: 11px;
+  transition: var(--transition-fast);
+}
+.section-heading:hover .section-toggle-btn {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+.section-divider {
+  max-width: 1400px;
+  margin: 0 auto 1rem;
+  border: 0;
+  height: 1px;
+  background: var(--border);
+}
+.section-body.collapsed { display: none; }
+
+/* ------ TIMELINE TABLE ------ */
+.table-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.timeline-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.timeline-table th {
+  background: var(--surface-2);
+  text-align: left;
+  padding: .85rem 1rem;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+.timeline-table td {
+  padding: .7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-1);
+  vertical-align: top;
+}
+.timeline-table tbody tr:last-child td { border-bottom: 0; }
+.timeline-table tbody tr { transition: background var(--transition-fast); }
+.timeline-table tbody tr:hover { background: var(--surface-2); }
+
+.plazo-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ------ PARTICIPANTS GRID ------ */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+
+.participant-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.participant-col-head {
+  padding: .7rem 1rem;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.phead-c5 { background: var(--c5); }
+.phead-c6 { background: var(--c6); }
+
+.participant-col ul { padding: .5rem .25rem; }
+.participant-col li {
+  font-size: 12.5px;
+  color: var(--text-2);
+  padding: .4rem .75rem;
+  border-bottom: 1px solid var(--border);
+}
+.participant-col li:last-child { border-bottom: 0; }
+.participant-note {
+  font-size: 11px;
+  color: var(--text-3);
+  font-style: italic;
+}
+
+/* ------ NORM GRID ------ */
+.norm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (max-width: 900px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+
+.norm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.norm-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.norm-law {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-3);
+  font-weight: 600;
+}
+.norm-title {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-1);
+  line-height: 1.4;
+}
+.norm-arts {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+.norm-tag {
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .02em;
+}
+
+/* ------ NO RESULTS ------ */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-3);
+  font-size: 14px;
+  display: none;
+}
+
+/* ------ LEGEND FOOTER ------ */
+.legend-footer {
+  background: var(--header-bg);
+  color: var(--header-text);
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+}
+.legend-inner { max-width: 1400px; margin: 0 auto; }
+.legend-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.legend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  font-size: 13px;
+  color: rgba(248,245,237,.85);
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+.legend-swatch {
+  width: 12px; height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.legend-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(248,245,237,.12);
+}
+.legend-copy {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(248,245,237,.08);
+  font-size: 11px;
+  color: rgba(248,245,237,.35);
+}
+
+/* ------ PRINT CSS ------ */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body    { display: block !important; }
+  .inner-body   { display: block !important; }
+  .section-body { display: block !important; }
+  .map-card     { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; transform: none !important; }
+  .map-card:hover { transform: none !important; box-shadow: none !important; }
+  body          { background: #fff; }
+}
+
+/* ------ REDUCED MOTION ------ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .map-card:hover { transform: none; }
+  .norm-card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== CABECERA ========== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título VI · Capítulo I</div>
+    <h1 class="header-title">Autorización judicial al usufructuario para reclamar créditos vencidos</h1>
+    <p class="header-subtitle">Artículos 100 a 103 LJV · Artículo 507 CC · Jurisdicción Voluntaria</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015, de 2 de julio</span>
+      <span class="header-tag">Arts. 100-103 LJV</span>
+      <span class="header-tag">Art. 507 CC</span>
+      <span class="header-tag">Jurisdicción Voluntaria</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== STATS BAR ========== -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">5</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">15+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">8+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">3</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONTROLS BAR ========== -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Ámbito y presupuestos</button>
+      <button class="pill" data-cat="c2">Competencia y postulación</button>
+      <button class="pill" data-cat="c3">Solicitud e iniciación</button>
+      <button class="pill" data-cat="c4">Tramitación y resolución</button>
+      <button class="pill" data-cat="c5">Recursos y ejecución</button>
+      <button class="pill" data-cat="c6">Conexiones normativas</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MAIN CONTENT ========== -->
+<main class="page-main">
+
+  <!-- Sección: Artículos principales -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-articulos">
+      <span class="section-heading-text">Artículos principales del Capítulo I</span>
+      <span class="section-heading-count">5 artículos</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-articulos">
+      <div class="card-grid">
+
+        <!-- ===== ARTÍCULO 507 CC ===== -->
+        <article class="map-card" data-cat="c1"
+          data-text="artículo 507 código civil usufructuario créditos vencidos fianza autorización propietario juez capital interés garantías integridad usufructo">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 507 CC</span>
+              <span class="status-tag tag-info">Base sustantiva</span>
+            </div>
+            <h2 class="card-title">Reclamación de créditos vencidos e inversión del capital por el usufructuario</h2>
+            <p class="card-subtitle">Precepto del Código Civil que constituye la base material del expediente de jurisdicción voluntaria regulado en los artículos 100 a 103 LJV.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> supuestos principales</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> reglas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Usufructuario con fianza</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Regla general:</strong> el usufructuario podrá reclamar por sí los créditos vencidos que formen parte del usufructo si tuviese dada o diere la fianza correspondiente.</li>
+                  <li><strong>Libertad de disposición:</strong> el usufructuario con fianza podrá dar al capital que realice el destino que estime conveniente.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Usufructuario sin fianza o con fianza insuficiente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Necesidad de autorización:</strong> si el usufructuario estuviese dispensado de prestar fianza, o no hubiese podido constituirla, o la constituida no fuese suficiente, necesitará autorización del propietario, o del Juez en su defecto, para cobrar dichos créditos.</li>
+                  <li><strong>Destino del capital:</strong> el usufructuario sin fianza deberá poner a interés dicho capital de acuerdo con el propietario; a falta de acuerdo entre ambos, con autorización judicial; y, en todo caso, con las garantías suficientes para mantener la integridad del capital usufructuado.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Arts. 100-103 LJV</span>
+            <span class="ref-tag">Art. 491 CC</span>
+            <span class="ref-tag">Art. 494 CC</span>
+          </div>
+        </article>
+
+        <!-- ===== ARTÍCULO 100 LJV ===== -->
+        <article class="map-card" data-cat="c1"
+          data-text="artículo 100 ley jurisdicción voluntaria ámbito aplicación usufructuario reclamar cobrar créditos vencidos fianza dispensada insuficiente autorización propietario poner interés capital">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 100 LJV</span>
+              <span class="status-tag tag-ok">Ámbito de aplicación</span>
+            </div>
+            <h2 class="card-title">Ámbito de aplicación del expediente</h2>
+            <p class="card-subtitle">Disposiciones aplicables cuando el usufructuario pretenda reclamar y cobrar por sí los créditos vencidos que formen parte del usufructo, cuando no cuente con fianza suficiente ni con la autorización del propietario.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> objetos del expediente</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> presupuestos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Doble objeto del expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Objeto primero:</strong> autorización judicial para reclamar y cobrar por sí los créditos vencidos que formen parte del usufructo.</li>
+                  <li><strong>Objeto segundo:</strong> autorización judicial para poner a interés el capital obtenido con dicha reclamación.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Presupuestos habilitantes para la reclamación de créditos</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Dispensa de fianza:</strong> que el usufructuario esté dispensado de prestar fianza.</li>
+                  <li><strong>Imposibilidad de constituirla:</strong> que no hubiese podido constituir la fianza.</li>
+                  <li><strong>Insuficiencia:</strong> que la fianza constituida no fuese suficiente.</li>
+                  <li><strong>Falta de autorización del propietario:</strong> en todo caso, que no cuente con la autorización del propietario para cobrar.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Presupuesto para poner a interés el capital</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Falta de acuerdo:</strong> que el usufructuario no cuente con el acuerdo del propietario sobre el destino o inversión del capital obtenido.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Presupuesto común a todos los supuestos</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Crédito vencido:</strong> la existencia previa de un crédito vencido que forme parte del usufructo.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Legitimación</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Legitimación activa:</strong> corresponde exclusivamente al usufructuario, conforme a los artículos 100 y 102 LJV y al artículo 507 CC.</li>
+                  <li><strong>Interesados en el expediente:</strong> el nudo propietario que se ha negado a autorizar la reclamación, así como aquellos terceros que pudieran estar interesados en el cobro del crédito.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Art. 507 CC</span>
+            <span class="ref-tag">Art. 102 LJV</span>
+            <span class="ref-tag">Art. 2 LJV</span>
+          </div>
+        </article>
+
+        <!-- ===== ARTÍCULO 101 LJV ===== -->
+        <article class="map-card" data-cat="c2"
+          data-text="artículo 101 ley jurisdicción voluntaria competencia postulación juzgado primera instancia domicilio residencia abogado procurador intervención preceptiva oposición recursos">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 101 LJV</span>
+              <span class="status-tag tag-info">Competencia y postulación</span>
+            </div>
+            <h2 class="card-title">Competencia y postulación</h2>
+            <p class="card-subtitle">Regulación del juzgado competente, las normas de tramitación aplicables y el régimen de intervención de Abogado y Procurador en estos expedientes.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> conexiones</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Competencia (apartado 1)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Juzgado competente:</strong> será competente para conocer de estos expedientes el Juzgado de Primera Instancia del último domicilio o, en su defecto, de la última residencia del solicitante.</li>
+                  <li><strong>Normas de tramitación:</strong> la tramitación se ajustará a las normas comunes de la presente Ley, lo que enlaza directamente con los artículos 13 a 22 LJV (Título I, Capítulo II, Normas de tramitación).</li>
+                  <li><strong>Competencia objetiva:</strong> la competencia objetiva se atribuye con carácter general a los Juzgados de Primera Instancia en los expedientes civiles de jurisdicción voluntaria (artículo 2 LJV y artículo 85 LOPJ).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Postulación (apartado 2)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Regla general:</strong> para la actuación en estos expedientes no será preceptiva la intervención de Abogado ni de Procurador.</li>
+                  <li><strong>Excepciones:</strong> conforme al régimen general (artículo 3 LJV) y al régimen de recursos (artículo 20 LJV, por remisión a la LEC ex artículo 8 LJV), la intervención de Abogado y Procurador podrá devenir preceptiva cuando se formule oposición o cuando se interpongan recursos de revisión o apelación.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Art. 13-22 LJV</span>
+            <span class="ref-tag">Art. 2 LJV</span>
+            <span class="ref-tag">Art. 3 LJV</span>
+            <span class="ref-tag">Art. 20 LJV</span>
+            <span class="ref-tag">Art. 85 LOPJ</span>
+          </div>
+        </article>
+
+        <!-- ===== ARTÍCULO 102 LJV ===== -->
+        <article class="map-card" data-cat="c3"
+          data-text="artículo 102 ley jurisdicción voluntaria solicitud iniciación expediente documentos prueba título constitutivo usufructo crédito vencido falta autorización garantías integridad capital">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 102 LJV</span>
+              <span class="status-tag tag-warn">Solicitud e iniciación</span>
+            </div>
+            <h2 class="card-title">Solicitud del expediente</h2>
+            <p class="card-subtitle">Requisitos de la solicitud de iniciación, documentos y medios de prueba que deben acompañarse, y exigencia adicional para poner a interés el capital.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> grupos de documentos</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>1</strong> requisito adicional</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Iniciación del expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Forma de iniciación:</strong> el expediente se iniciará mediante solicitud del usufructuario.</li>
+                  <li><strong>Contenido formal:</strong> la solicitud se integra con el artículo 14 LJV, conforme al cual se consignarán los datos y circunstancias de identificación del solicitante, con indicación de un domicilio a efectos de notificaciones, exponiendo con claridad y precisión lo que se pida, así como los hechos y fundamentos jurídicos en que se funde la pretensión.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Documentos y medios de prueba que han de acompañarse</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Título constitutivo del usufructo:</strong> su derecho, esto es, el título constitutivo del usufructo (testamento, escritura pública, resolución judicial, etc.).</li>
+                  <li><strong>Existencia del crédito vencido:</strong> la existencia del crédito vencido que se pretenda reclamar o, en su caso, el importe cobrado al realizar el mismo y que pretenda poner a interés.</li>
+                  <li><strong>Falta de autorización del propietario:</strong> la falta de la autorización del propietario.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Requisito adicional para poner a interés el capital</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Garantías suficientes:</strong> en el supuesto de que solicitara la autorización para poner a interés el capital obtenido tras cobrar el crédito vencido, deberá ofrecer garantías suficientes para conservar su integridad.</li>
+                  <li><strong>Conexión con el artículo 507 CC:</strong> esta exigencia entronca directamente con el inciso final del artículo 507 CC, que reclama «las garantías suficientes para mantener la integridad del capital usufructuado».</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Art. 14 LJV</span>
+            <span class="ref-tag">Art. 507 CC</span>
+            <span class="ref-tag">Art. 100 LJV</span>
+          </div>
+        </article>
+
+        <!-- ===== ARTÍCULO 103 LJV ===== -->
+        <article class="map-card" data-cat="c4"
+          data-text="artículo 103 ley jurisdicción voluntaria tramitación resolución secretario judicial letrado administración justicia comparecencia promotor propietario pruebas oposición recursos ejecución garantías información periódica">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 103 LJV</span>
+              <span class="status-tag tag-alert">Tramitación y resolución</span>
+            </div>
+            <h2 class="card-title">Tramitación y resolución del expediente</h2>
+            <p class="card-subtitle">Desarrollo de la comparecencia, orden de audiencia, efecto de la oposición, resolución judicial y contenido específico según el tipo de autorización concedida.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>6</strong> conexiones normativas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Tramitación (apartado 1)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Admisión a trámite:</strong> admitida a trámite por el Secretario judicial la solicitud (hoy Letrado de la Administración de Justicia, tras la reforma operada por la Ley Orgánica 7/2015), convocará a la comparecencia a quienes han de ser oídos.</li>
+                  <li><strong>Citados y orden de audiencia:</strong> se les oirá precisamente por este orden: 1) el promotor (usufructuario); 2) el propietario (nudo propietario); 3) aquellos que pudieran estar interesados en el cobro del crédito.</li>
+                  <li><strong>Práctica de pruebas:</strong> posteriormente, se practicarán aquellas pruebas que hubieren sido propuestas y acordadas.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Efecto de la eventual oposición</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio general:</strong> salvo que la Ley expresamente lo prevea, la formulación de oposición por alguno de los interesados no hará contencioso el expediente ni impedirá que continúe su tramitación hasta que sea resuelto.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Resolución (apartado 2)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Criterio judicial:</strong> el Juez, teniendo en cuenta la justificación ofrecida y valorando la conveniencia del cobro del crédito que forma parte del usufructo o de la inversión del capital obtenido, resolverá concediendo o denegando la autorización solicitada.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido específico: autorización para cobrar crédito</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Obligación de informar:</strong> si la autorización otorgada fuera para cobrar un crédito vencido que forme parte del usufructo, deberá establecerse la obligación del usufructuario de informar periódicamente, dentro de los plazos otorgados, al Tribunal sobre las gestiones realizadas, así como del resultado final.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido específico: autorización para poner a interés el capital</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Garantías en la resolución:</strong> si la autorización lo fuera para poner a interés el capital obtenido por el cobro de ese crédito, la resolución deberá contener las garantías a establecer por el usufructuario para conservar la integridad del capital.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Arts. 13-22 LJV</span>
+            <span class="ref-tag">Art. 20 LJV</span>
+            <span class="ref-tag">Art. 22 LJV</span>
+            <span class="ref-tag">Art. 7 LJV</span>
+            <span class="ref-tag">Art. 507 CC</span>
+            <span class="ref-tag">LO 7/2015</span>
+          </div>
+        </article>
+
+        <!-- ===== RECURSOS Y EJECUCIÓN (c5) ===== -->
+        <article class="map-card" data-cat="c5"
+          data-text="recursos ejecución gastos expediente artículo 20 ley jurisdicción voluntaria artículo 22 cumplimiento artículo 7 gastos solicitante enjuiciamiento civil supletorio">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Régimen de recursos y ejecución</span>
+              <span class="status-tag tag-gray">Derivado del art. 103 LJV</span>
+            </div>
+            <h2 class="card-title">Recursos, ejecución y gastos del expediente</h2>
+            <p class="card-subtitle">Normas aplicables a los recursos contra la resolución, al cumplimiento y ejecución, y al régimen de gastos del expediente de jurisdicción voluntaria.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> preceptos clave</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Régimen de recursos</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Artículo 20 LJV:</strong> contra la resolución que pone fin al expediente cabrá recurso conforme al artículo 20 LJV, que se remite, con carácter general, al régimen de recursos de la Ley de Enjuiciamiento Civil.</li>
+                  <li><strong>Intervención preceptiva:</strong> la intervención de Abogado y Procurador podrá devenir preceptiva cuando se interpongan recursos de revisión o apelación, conforme al artículo 20 LJV por remisión a la LEC ex artículo 8 LJV.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Cumplimiento y ejecución</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Artículo 22 LJV:</strong> el cumplimiento y ejecución de la resolución que pone fin al expediente se rigen por el artículo 22 LJV.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Gastos del expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Artículo 7 LJV:</strong> conforme al artículo 7 LJV, los gastos ocasionados por el expediente serán de cuenta del solicitante, salvo que la Ley disponga otra cosa.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Art. 20 LJV</span>
+            <span class="ref-tag">Art. 22 LJV</span>
+            <span class="ref-tag">Art. 7 LJV</span>
+            <span class="ref-tag">Art. 8 LJV</span>
+            <span class="ref-tag">LEC</span>
+          </div>
+        </article>
+
+        <!-- ===== CONEXIONES NORMATIVAS LJV (c6) ===== -->
+        <article class="map-card" data-cat="c6"
+          data-text="título preliminar disposiciones generales artículos 1 a 8 ley jurisdicción voluntaria ámbito aplicación competencia legitimación postulación ministerio fiscal prueba tramitación simultánea posterior gastos supletorio enjuiciamiento civil">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Normas comunes LJV</span>
+              <span class="status-tag tag-gray">Conexiones internas</span>
+            </div>
+            <h2 class="card-title">Título Preliminar y normas comunes de tramitación de la LJV</h2>
+            <p class="card-subtitle">Disposiciones generales (artículos 1 a 8) y normas de tramitación (artículos 13 a 22) de la Ley 15/2015, aplicables por remisión directa del artículo 101 LJV.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>8</strong> artículos generales</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>10</strong> artículos tramitación</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Título Preliminar — Disposiciones generales (arts. 1 a 8)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Artículo 1:</strong> ámbito de aplicación de la Ley de Jurisdicción Voluntaria.</li>
+                  <li><strong>Artículo 2:</strong> competencia objetiva de los Juzgados de Primera Instancia en los expedientes civiles de jurisdicción voluntaria.</li>
+                  <li><strong>Artículo 3:</strong> legitimación y postulación en los expedientes de jurisdicción voluntaria.</li>
+                  <li><strong>Artículo 4:</strong> intervención del Ministerio Fiscal.</li>
+                  <li><strong>Artículo 5:</strong> prueba en los expedientes de jurisdicción voluntaria.</li>
+                  <li><strong>Artículo 6:</strong> tramitación simultánea o posterior de expedientes o procesos.</li>
+                  <li><strong>Artículo 7:</strong> gastos ocasionados por el expediente, de cuenta del solicitante salvo que la Ley disponga otra cosa.</li>
+                  <li><strong>Artículo 8:</strong> carácter supletorio de la Ley de Enjuiciamiento Civil.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Título I, Capítulo II — Normas de tramitación (arts. 13 a 22)</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Artículo 14:</strong> iniciación del expediente.</li>
+                  <li><strong>Artículo 15:</strong> acumulación de expedientes.</li>
+                  <li><strong>Artículo 16:</strong> apreciación de oficio de la falta de competencia y otros defectos u omisiones.</li>
+                  <li><strong>Artículo 17:</strong> admisión de la solicitud y citación de los interesados.</li>
+                  <li><strong>Artículo 18:</strong> celebración de la comparecencia.</li>
+                  <li><strong>Artículo 19:</strong> decisión del expediente.</li>
+                  <li><strong>Artículo 20:</strong> recursos.</li>
+                  <li><strong>Artículo 21:</strong> caducidad del expediente.</li>
+                  <li><strong>Artículo 22:</strong> cumplimiento y ejecución de la resolución que pone fin al expediente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Arts. 1-8 LJV</span>
+            <span class="ref-tag">Arts. 13-22 LJV</span>
+            <span class="ref-tag">Art. 8 LJV → LEC</span>
+          </div>
+        </article>
+
+        <!-- No results -->
+        <div class="no-results" id="no-results">
+          No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECCIÓN: CRONOGRAMA DE PLAZOS ===== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Cronograma de plazos procesales</span>
+      <span class="section-heading-count">3 trámites</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Acto o trámite procesal</th>
+              <th>Plazo</th>
+              <th>Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Información periódica del usufructuario al Tribunal sobre las gestiones realizadas para el cobro del crédito y el resultado final</td>
+              <td><span class="plazo-badge plazo-other">Dentro de los plazos otorgados por el Juez</span></td>
+              <td class="td-norm">Artículo 103.2 LJV</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Caducidad del expediente de jurisdicción voluntaria por inactividad de las partes</td>
+              <td><span class="plazo-badge plazo-months">Plazo legal (art. 21 LJV)</span></td>
+              <td class="td-norm">Artículo 21 LJV (por remisión del art. 101.1 LJV)</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Interposición de recursos contra la resolución que pone fin al expediente</td>
+              <td><span class="plazo-badge plazo-days">Plazos LEC (art. 20 LJV)</span></td>
+              <td class="td-norm">Artículo 20 LJV → LEC (por remisión del art. 8 LJV)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECCIÓN: PARTICIPANTES Y ACTORES ===== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">4 categorías · 8+ actores</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Órgano jurisdiccional</div>
+          <ul>
+            <li>Juzgado de Primera Instancia <span class="participant-note">(competente por domicilio o residencia del solicitante)</span></li>
+            <li>Juez <span class="participant-note">(resuelve concediendo o denegando la autorización)</span></li>
+            <li>Letrado de la Administración de Justicia <span class="participant-note">(admite a trámite y convoca la comparecencia)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Parte solicitante</div>
+          <ul>
+            <li>Usufructuario <span class="participant-note">(legitimado activo exclusivo; promueve el expediente)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Interesados en el expediente</div>
+          <ul>
+            <li>Nudo propietario <span class="participant-note">(cuya autorización se ha denegado; oído en la comparecencia)</span></li>
+            <li>Terceros interesados en el cobro del crédito <span class="participant-note">(oídos en la comparecencia)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Intervención facultativa</div>
+          <ul>
+            <li>Abogado <span class="participant-note">(no preceptivo salvo oposición o recursos)</span></li>
+            <li>Procurador <span class="participant-note">(no preceptivo salvo oposición o recursos)</span></li>
+            <li>Ministerio Fiscal <span class="participant-note">(intervención conforme al artículo 4 LJV)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECCIÓN: ECOSISTEMA NORMATIVO ===== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">4 cuerpos normativos</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">Código Civil</div>
+          <div class="norm-title">Régimen material del usufructo</div>
+          <div class="norm-arts">
+            <strong>Artículo 467</strong> — Concepto de usufructo: derecho a disfrutar los bienes ajenos con la obligación de conservar su forma y sustancia.<br>
+            <strong>Artículo 491</strong> — Obligaciones previas al goce: inventario y fianza.<br>
+            <strong>Artículo 492</strong> — Dispensa legal de la fianza (vendedor/donante, padres, cónyuge sobreviviente).<br>
+            <strong>Artículo 493</strong> — Dispensa convencional de inventario o fianza.<br>
+            <strong>Artículo 494</strong> — Consecuencias de la falta de fianza: administración, venta de muebles, inversión de capitales.<br>
+            <strong>Artículo 495</strong> — Caución juratoria: entrega de muebles y asignación de habitación.<br>
+            <strong>Artículo 507</strong> — Reclamación de créditos vencidos e inversión del capital (precepto neurálgico).
+          </div>
+          <span class="norm-tag tag-info">Derecho sustantivo</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015, de 2 de julio (LJV)</div>
+          <div class="norm-title">Jurisdicción Voluntaria — Normas de tramitación</div>
+          <div class="norm-arts">
+            <strong>Artículos 1 a 8</strong> — Disposiciones generales: ámbito, competencia, legitimación, postulación, Ministerio Fiscal, prueba, gastos, supletoriedad de la LEC.<br>
+            <strong>Artículos 13 a 22</strong> — Normas comunes de tramitación: iniciación, acumulación, competencia, admisión, comparecencia, decisión, recursos, caducidad, cumplimiento y ejecución.<br>
+            <strong>Artículos 100 a 103</strong> — Capítulo I del Título VI: autorización judicial al usufructuario.
+          </div>
+          <span class="norm-tag tag-ok">Procedimiento principal</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley Orgánica del Poder Judicial (LOPJ)</div>
+          <div class="norm-title">Atribución orgánica de competencia</div>
+          <div class="norm-arts">
+            <strong>Artículo 85</strong> — Atribución a los Juzgados de Primera Instancia del conocimiento de los expedientes de jurisdicción voluntaria de naturaleza civil.<br>
+            <strong>Ley Orgánica 7/2015</strong> — Reforma que transformó la figura del Secretario judicial en Letrado de la Administración de Justicia.
+          </div>
+          <span class="norm-tag tag-gray">Competencia orgánica</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 1/2000, de 7 de enero (LEC)</div>
+          <div class="norm-title">Enjuiciamiento Civil — Derecho supletorio</div>
+          <div class="norm-arts">
+            <strong>Aplicación supletoria</strong> — Por remisión expresa del artículo 8 LJV, la LEC se aplica de forma supletoria tanto en la tramitación general como, específicamente, en el régimen de recursos contra la resolución que pone fin al expediente.<br>
+            <strong>Plazos de recursos</strong> — Los plazos y formas de los recursos contra la resolución se rigen por la LEC cuando el artículo 20 LJV remite a ella.
+          </div>
+          <span class="norm-tag tag-warn">Derecho supletorio</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== LEGEND FOOTER ========== -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Ámbito de aplicación y presupuestos
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Competencia y postulación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Solicitud e iniciación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Tramitación y resolución
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Recursos y ejecución
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c6)"></div>
+        Conexiones normativas
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título VI, Capítulo I · Artículos 100 a 103 LJV · Artículo 507 CC · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+/* JS 1: Filtrado por categoría */
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+const countArts = document.getElementById('count-arts');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+  if (countArts) countArts.textContent =
+    visible + ' artículo' + (visible !== 1 ? 's' : '') +
+    ' visible' + (visible !== 1 ? 's' : '');
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+/* JS 2: Búsqueda en tiempo real */
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+/* JS 3: Expandir/colapsar tarjetas individuales */
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.setAttribute('aria-expanded', String(isExp));
+  const label = btn.querySelector('.toggle-label');
+  if (label) label.textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+/* JS 4: Expandir todo / contraer todo */
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn');
+      const label = btn && btn.querySelector('.toggle-label');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      if (label) label.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn');
+    const label = btn && btn.querySelector('.toggle-label');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+    if (label) label.textContent = 'Ver contenido completo';
+  });
+});
+
+/* JS 5: Colapso de secciones principales */
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    const btn = h.querySelector('.section-toggle-btn');
+    if (btn) btn.textContent = collapsed ? '\u25BC' : '\u25B2';
+  });
+});
+
+/* JS 6: Zoom con atajos de teclado */
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protección del patrimonio de personas con discapacidad - Ley 15/2015</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #f7f6f2;
+      --surface:     #ffffff;
+      --surface-2:   #f2f1ed;
+      --border:      rgba(15,23,42,.08);
+      --border-md:   rgba(15,23,42,.14);
+      --text-1:      #0f172a;
+      --text-2:      #475569;
+      --text-3:      #94a3b8;
+      --ink:         #0f172a;
+      --header-bg:   #0f172a;
+      --header-text: #f8f5ed;
+      --accent:      #c8a96e;
+
+      /* Categorías ampliadas */
+      --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+      --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+      --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+      --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+      --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+      --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+      --c7:  #9333ea; --c7bg: #faf5ff; --c7bd: #e9d5ff;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+      --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-ui:      'Outfit', system-ui, sans-serif;
+      --transition:   200ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-ui);
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Site Header */
+    .site-header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 2rem 1.5rem 1.75rem;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: var(--shadow-md);
+    }
+    .header-inner { max-width: 1400px; margin: 0 auto; }
+    .header-breadcrumb {
+      font-size: 12px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .5rem;
+      font-weight: 600;
+    }
+    .header-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: .75rem;
+    }
+    .header-subtitle {
+      font-size: 1rem;
+      color: rgba(248,245,237,.85);
+      margin-bottom: 1.25rem;
+      max-width: 900px;
+    }
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      align-items: center;
+    }
+    .header-tag {
+      background: rgba(200,169,110,.15);
+      border: 1px solid rgba(200,169,110,.3);
+      color: var(--accent);
+      padding: .35rem .85rem;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .header-actions { margin-left: auto; }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(248,245,237,.15);
+      color: rgba(248,245,237,.7);
+      padding: .45rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-ghost:hover {
+      background: rgba(248,245,237,.08);
+      color: var(--header-text);
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-bar.stats-hidden { display: none; }
+    .stats-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+    }
+    .stat-item {
+      padding: 1rem 1.25rem;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-1);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-top: .25rem;
+    }
+
+    /* Controls Bar */
+    .controls-bar {
+      position: sticky;
+      top: var(--header-h, 0px);
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+      padding: .75rem 1.5rem;
+    }
+    .controls-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .search-wrap {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      flex: 1;
+      min-width: 180px;
+      max-width: 320px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .4rem .75rem;
+    }
+    .search-wrap svg {
+      width: 16px;
+      height: 16px;
+      color: var(--text-3);
+      flex-shrink: 0;
+    }
+    .search-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-size: 13px;
+      color: var(--text-1);
+      outline: none;
+      font-family: var(--font-ui);
+    }
+    .search-input::placeholder { color: var(--text-3); }
+    
+    .filter-pills {
+      display: flex;
+      gap: .35rem;
+      flex-wrap: wrap;
+    }
+    .pill {
+      padding: .35rem .85rem;
+      border: 1px solid var(--border-md);
+      background: var(--surface);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .pill.active, .pill:hover {
+      background: var(--c1);
+      border-color: var(--c1);
+      color: white;
+    }
+    .pill[data-cat="c2"].active { background: var(--c2); border-color: var(--c2); }
+    .pill[data-cat="c3"].active { background: var(--c3); border-color: var(--c3); }
+    .pill[data-cat="c4"].active { background: var(--c4); border-color: var(--c4); }
+    .pill[data-cat="c5"].active { background: var(--c5); border-color: var(--c5); }
+    .pill[data-cat="c6"].active { background: var(--c6); border-color: var(--c6); }
+    .pill[data-cat="c7"].active { background: var(--c7); border-color: var(--c7); }
+    
+    .ctrl-actions {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-left: auto;
+    }
+    .btn-ctrl {
+      padding: .35rem .75rem;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-ctrl:hover { background: var(--surface); border-color: var(--border-md); }
+    
+    .zoom-cluster {
+      display: flex;
+      border: 1px solid var(--border-md);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .btn-zoom {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: none;
+      border-right: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-zoom:last-child { border-right: none; }
+    .btn-zoom:hover { background: var(--surface-2); }
+    .btn-zoom:disabled { opacity: .4; cursor: not-allowed; }
+    .zoom-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 500;
+      min-width: 42px;
+      color: var(--text-1);
+      background: var(--surface);
+    }
+
+    /* Page Main */
+    .page-main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      transition: transform var(--transition);
+      transform-origin: top center;
+    }
+
+    /* Map Section */
+    .map-section {
+      margin-bottom: 2rem;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      background: var(--surface);
+      transition: var(--transition);
+    }
+    .section-heading:hover { background: var(--surface-2); }
+    .section-heading-text {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--text-1);
+    }
+    .section-heading-count {
+      font-size: 12px;
+      color: var(--text-3);
+      background: var(--surface-2);
+      padding: .2rem .5rem;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+    .section-toggle-btn {
+      margin-left: auto;
+      background: none;
+      border: none;
+      font-size: 14px;
+      color: var(--text-3);
+      cursor: pointer;
+      transition: var(--transition);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .section-divider {
+      margin: 0;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+    .section-body { padding: 1.5rem; }
+    .section-body.collapsed { display: none; }
+
+    /* Card Grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+    /* Map Card */
+    .map-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left-width: 4px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .map-card.hidden { display: none; }
+    .map-card[data-cat="c1"] { border-left-color: var(--c1); }
+    .map-card[data-cat="c2"] { border-left-color: var(--c2); }
+    .map-card[data-cat="c3"] { border-left-color: var(--c3); }
+    .map-card[data-cat="c4"] { border-left-color: var(--c4); }
+    .map-card[data-cat="c5"] { border-left-color: var(--c5); }
+    .map-card[data-cat="c6"] { border-left-color: var(--c6); }
+    .map-card[data-cat="c7"] { border-left-color: var(--c7); }
+
+    .card-top {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-meta {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+      margin-bottom: .5rem;
+      flex-wrap: wrap;
+    }
+    .art-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: .2rem .6rem;
+      border-radius: 20px;
+      border: 1px solid;
+    }
+    .map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+    .map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+    .map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+    .map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+    .map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+    .map-card[data-cat="c6"] .art-badge { background: var(--c6bg); color: var(--c6); border-color: var(--c6bd); }
+    .map-card[data-cat="c7"] .art-badge { background: var(--c7bg); color: var(--c7); border-color: var(--c7bd); }
+
+    .status-tag {
+      font-size: 10px;
+      font-weight: 600;
+      padding: .15rem .5rem;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .tag-warn  { background: #fef3c7; color: #92400e; }
+    .tag-alert { background: #fee2e2; color: #991b1b; }
+    .tag-info  { background: #dbeafe; color: #1e40af; }
+    .tag-ok    { background: #d1fae5; color: #065f46; }
+    .tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-1);
+      margin-bottom: .35rem;
+      line-height: 1.3;
+    }
+    .card-subtitle {
+      font-size: 12.5px;
+      color: var(--text-2);
+      line-height: 1.4;
+    }
+
+    .card-counters {
+      display: flex;
+      gap: .5rem;
+      padding: .75rem 1.25rem;
+      background: var(--surface-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      font-size: 11px;
+    }
+    .counter-badge {
+      color: var(--text-3);
+      font-weight: 500;
+    }
+    .counter-badge strong { color: var(--text-1); font-weight: 600; }
+
+    .card-toggle-btn {
+      width: 100%;
+      padding: .6rem 1.25rem;
+      background: var(--surface-2);
+      border: none;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-2);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .35rem;
+      transition: var(--transition);
+    }
+    .card-toggle-btn:hover { background: var(--surface); }
+    .toggle-icon { transition: transform var(--transition); font-size: 10px; }
+    .map-card.expanded .toggle-icon { transform: rotate(180deg); }
+
+    .card-body {
+      display: none;
+      padding: 1rem 1.25rem 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .map-card.expanded .card-body { display: block; }
+
+    .inner-section { margin-bottom: 1rem; }
+    .inner-section:last-child { margin-bottom: 0; }
+    .inner-heading {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: .5rem;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-1);
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .map-card[data-cat="c1"] .dot { background: var(--c1); }
+    .map-card[data-cat="c2"] .dot { background: var(--c2); }
+    .map-card[data-cat="c3"] .dot { background: var(--c3); }
+    .map-card[data-cat="c4"] .dot { background: var(--c4); }
+    .map-card[data-cat="c5"] .dot { background: var(--c5); }
+    .map-card[data-cat="c6"] .dot { background: var(--c6); }
+    .map-card[data-cat="c7"] .dot { background: var(--c7); }
+
+    .inner-body { padding-left: 1rem; }
+    .inner-list { list-style: none; }
+    .inner-list li {
+      position: relative;
+      padding-left: .8rem;
+      margin-bottom: .2rem;
+      font-size: 12.5px;
+      color: var(--text-2);
+    }
+    .inner-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--text-3);
+    }
+    .inner-list li strong { color: var(--text-1); font-weight: 500; }
+
+    .card-refs {
+      padding: .75rem 1.25rem 1rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+    }
+    .ref-tag {
+      font-size: 11px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .2rem .5rem;
+      color: var(--text-3);
+      font-weight: 500;
+    }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-3);
+      font-size: 14px;
+      display: none;
+    }
+
+    /* Timeline Table */
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .timeline-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .timeline-table th {
+      background: var(--surface-2);
+      padding: .85rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-1);
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .timeline-table td {
+      padding: .85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-2);
+    }
+    .timeline-table tr:last-child td { border-bottom: none; }
+    .timeline-table tr:hover { background: var(--surface-2); }
+    .td-tramite { font-weight: 500; color: var(--text-1); }
+    .td-norm { font-size: 12px; }
+
+    .plazo-badge {
+      display: inline-block;
+      padding: .2rem .55rem;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .plazo-days   { background: #fef3c7; color: #92400e; }
+    .plazo-weeks  { background: #dbeafe; color: #1e40af; }
+    .plazo-months { background: #d1fae5; color: #065f46; }
+    .plazo-years  { background: #fee2e2; color: #991b1b; }
+    .plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+    /* Participants Grid */
+    .participants-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+
+    .participant-col {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .participant-col-head {
+      padding: .75rem 1rem;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .phead-c1 { background: var(--c1); }
+    .phead-c2 { background: var(--c2); }
+    .phead-c3 { background: var(--c3); }
+    .phead-c4 { background: var(--c4); }
+    .phead-c5 { background: var(--c5); }
+    .phead-c6 { background: var(--c6); }
+    .phead-c7 { background: var(--c7); }
+
+    .participant-col ul { list-style: none; padding: .5rem 1rem; }
+    .participant-col li {
+      font-size: 12.5px;
+      color: var(--text-2);
+      padding: .35rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .participant-col li:last-child { border-bottom: none; }
+    .participant-note {
+      font-size: 11px;
+      color: var(--text-3);
+      font-style: italic;
+    }
+
+    /* Norm Grid */
+    .norm-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 900px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+
+    .norm-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .norm-law {
+      font-size: 11px;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .35rem;
+      font-weight: 500;
+    }
+    .norm-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-1);
+      margin-bottom: .5rem;
+      line-height: 1.3;
+    }
+    .norm-arts {
+      font-size: 12px;
+      color: var(--text-2);
+      line-height: 1.4;
+      margin-bottom: .75rem;
+    }
+    .norm-arts strong { color: var(--text-1); font-weight: 500; }
+    .norm-tag {
+      font-size: 10px;
+      padding: .2rem .5rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .norm-tag.tag-conexa { background: var(--c1bg); color: var(--c1); }
+    .norm-tag.tag-procedimental { background: var(--c2bg); color: var(--c2); }
+    .norm-tag.tag-registral { background: var(--c6bg); color: var(--c6); }
+    .norm-tag.tag-reforma { background: var(--c7bg); color: var(--c7); }
+    .norm-tag.tag-constitucional { background: var(--c3bg); color: var(--c3); }
+
+    /* Legend Footer */
+    .legend-footer {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    .legend-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .legend-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .legend-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: 12px;
+    }
+    .legend-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .legend-divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(248,245,237,.12);
+    }
+    .legend-copy {
+      font-size: 11px;
+      color: rgba(248,245,237,.3);
+      padding-top: 1rem;
+      border-top: 1px solid rgba(248,245,237,.08);
+    }
+
+    /* Print Styles */
+    @media print {
+      .controls-bar, .site-header .header-actions { display: none !important; }
+      .card-body, .inner-body, .section-body { display: block !important; }
+      .map-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+      body { background: #fff; }
+      .site-header { position: static; }
+    }
+
+    /* Responsive Controls */
+    @media (max-width: 768px) {
+      .ctrl-actions { display: none; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2), .stat-item:nth-child(4) { border-right: none; }
+      .stat-item { border-bottom: 1px solid var(--border); }
+      .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título II · Capítulo VI</div>
+    <h1 class="header-title">Protección del patrimonio de las personas con discapacidad</h1>
+    <p class="header-subtitle">Artículos 56-58 · Expedientes de jurisdicción voluntaria · Conexiones con Ley 41/2003, Código Civil y Ley 8/2021</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015 Jurisdicción Voluntaria</span>
+      <span class="header-tag">Arts. 56-58</span>
+      <span class="header-tag">Protección patrimonial</span>
+      <span class="header-tag">Ley 41/2003</span>
+      <span class="header-tag">Ley 8/2021</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">3</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">15+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">10+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">4</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Procedimiento</button>
+      <button class="pill" data-cat="c2">Patrimonio</button>
+      <button class="pill" data-cat="c3">Actores</button>
+      <button class="pill" data-cat="c4">Recursos</button>
+      <button class="pill" data-cat="c5">Fiscalización</button>
+      <button class="pill" data-cat="c6">Registros</button>
+      <button class="pill" data-cat="c7">Reformas</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<main class="page-main">
+
+  <!-- Sección principal: Artículos -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-articles">
+      <span class="section-heading-text">Artículos 56-58: Régimen aplicable ampliado</span>
+      <span class="section-heading-count">3 artículos · 15+ conexiones</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-articles">
+      <div class="card-grid">
+
+        <!-- Artículo 56 -->
+        <article class="map-card" data-cat="c2" data-text="ámbito aplicación patrimonio protegido constitución aportaciones administrador exenciones autorización fiscalización extinción ley 41 2003">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 56</span>
+              <span class="status-tag tag-info">Ámbito material</span>
+            </div>
+            <h2 class="card-title">Ámbito de aplicación</h2>
+            <p class="card-subtitle">Supuestos de actuación judicial sobre patrimonio protegido de personas con discapacidad</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> supuestos</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>8</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Disposición general y norma de remisión
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Norma de referencia:</strong> Se aplicarán las normas de este Capítulo a los expedientes que tengan por objeto alguna de las actuaciones judiciales previstas en el Capítulo I de la Ley 41/2003, de 18 de noviembre, sobre protección patrimonial de las personas con discapacidad.</li>
+                  <li><strong>Ámbito subjetivo:</strong> Personas con discapacidad beneficiarias de patrimonio protegido, sus representantes legales, tutores, curadores y administradores designados.</li>
+                  <li><strong>Ámbito objetivo:</strong> Actos de constitución, administración, fiscalización, modificación y extinción del patrimonio protegido.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Supuesto a): Constitución o aprobación de aportaciones
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Supuesto de hecho:</strong> La constitución del patrimonio protegido de las personas con discapacidad o aprobación de las aportaciones al mismo cuando sus progenitores, tutor o curador se negaren injustificadamente a prestar el consentimiento o asentimiento a ello.</li>
+                  <li><strong>Fundamento Ley 41/2003 Art. 3:</strong> El patrimonio se constituye mediante escritura pública o resolución judicial, requiriendo consentimiento del beneficiario y representantes legales.</li>
+                  <li><strong>Legitimación para constituir:</strong> La propia persona con discapacidad beneficiaria o quienes presten apoyo en el ejercicio de su capacidad jurídica.</li>
+                  <li><strong>Contenido mínimo del título:</strong> Identificación del beneficiario, inventario inicial de bienes, reglas de administración y fiscalización, procedimientos de designación de órganos.</li>
+                  <li><strong>Criterio judicial:</strong> El Juez valorará si la negativa al consentimiento es injustificada, ponderando el interés superior del beneficiario y su autonomía.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Supuesto b): Nombramiento de administrador
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Supuesto de hecho:</strong> El nombramiento de su administrador cuando no se pudiera realizar conforme al título de constitución.</li>
+                  <li><strong>Régimen general Ley 41/2003 Art. 5:</strong> La administración corresponde a la persona designada en el título; a falta de designación, al beneficiario si tuviera capacidad suficiente; subsidiariamente, a quien ejerza la representación legal o funciones de apoyo.</li>
+                  <li><strong>Facultades del administrador:</strong> Gestión ordinaria, percepción de rentas, actos de conservación; requiere autorización judicial para actos de disposición o gravamen salvo exención.</li>
+                  <li><strong>Causas de imposibilidad:</strong> Fallecimiento, incapacidad, renuncia, conflicto de intereses, incumplimiento grave de funciones del administrador designado.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Supuesto c): Exenciones de autorización judicial
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Supuesto de hecho:</strong> El establecimiento de exenciones a la exigencia de obtener por el administrador de la autorización o aprobación judicial para la realización de actos de disposición, gravamen u otros, que se refieran a los bienes y derechos integrantes del patrimonio protegido.</li>
+                  <li><strong>Régimen Ley 41/2003 Art. 5.2:</strong> Los actos de disposición o gravamen requieren autorización judicial, salvo exenciones expresas en el título constitutivo o resolución judicial.</li>
+                  <li><strong>Criterios para la exención:</strong> Idoneidad del administrador, naturaleza y valor de los bienes, interés superior del beneficiario, existencia de mecanismos alternativos de control.</li>
+                  <li><strong>Tipos de exención:</strong> Parciales (por tipo de acto o importe) o totales; temporales o indefinidas; sujetas a condiciones o rendición de cuentas reforzada.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Supuesto d): Medidas posteriores a la constitución
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Supuesto de hecho:</strong> La sustitución del administrador, el cambio de las reglas de administración, el establecimiento de medidas especiales de fiscalización, la adopción de cautelas, la extinción del patrimonio protegido o cualquier otra medida de análoga naturaleza que sea necesaria tras la constitución del patrimonio protegido.</li>
+                  <li><strong>Sustitución del administrador (Ley 41/2003 Art. 5.3):</strong> Procede por fallecimiento, incapacidad, renuncia justificada, incumplimiento grave o decisión judicial fundada en el interés del beneficiario.</li>
+                  <li><strong>Fiscalización y supervisión (Ley 41/2003 Art. 7):</strong> El Ministerio Fiscal velará por el correcto funcionamiento, pudiendo solicitar medidas de control incluyendo rendición de cuentas periódica.</li>
+                  <li><strong>Extinción del patrimonio (Ley 41/2003 Art. 6):</strong> Por fallecimiento del beneficiario, desaparición de la discapacidad justificante, o decisión judicial; el remanente se destina a fines del título o entidades de utilidad social.</li>
+                  <li><strong>Medidas cautelares:</strong> El Juez podrá adoptar cautelas provisionales para garantizar la protección del patrimonio durante la tramitación del expediente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 41/2003 Arts. 1-8</span>
+            <span class="ref-tag">Ley 15/2015 Art. 56</span>
+            <span class="ref-tag">Ley 8/2021</span>
+          </div>
+        </article>
+
+        <!-- Artículo 57 -->
+        <article class="map-card" data-cat="c1" data-text="competencia legitimación postulación juzgado primera instancia domicilio residencia ministerio fiscal abogado procurador ley 15 2015 art 2 3">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 57</span>
+              <span class="status-tag tag-ok">Competencia</span>
+            </div>
+            <h2 class="card-title">Competencia, legitimación y postulación</h2>
+            <p class="card-subtitle">Reglas sobre órgano competente, sujetos legitimados y necesidad de representación técnica</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>5</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Competencia territorial y objetiva
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Órgano competente:</strong> Juzgado de Primera Instancia.</li>
+                  <li><strong>Criterio de determinación:</strong> Del domicilio o, en su defecto, de la residencia de la persona con discapacidad.</li>
+                  <li><strong>Competencia objetiva Ley 15/2015 Art. 2.1:</strong> Los Juzgados de Primera Instancia tendrán competencia para expedientes de jurisdicción voluntaria en materia de personas, salvo atribución expresa a otros órganos.</li>
+                  <li><strong>Criterio de domicilio LEC Art. 50:</strong> A falta de domicilio legal, se atenderá al lugar de residencia habitual o último domicilio conocido.</li>
+                  <li><strong>Prevención de conflictos:</strong> La determinación del Juzgado competente se realizará al presentar la solicitud, sin perjuicio de la apreciación de oficio de falta de competencia conforme al Artículo 16 de la Ley 15/2015.</li>
+                  <li><strong>Conexión con otros expedientes:</strong> Posibilidad de acumulación cuando existan varios expedientes relacionados con el mismo patrimonio o beneficiario.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Legitimación activa: monopolio del Ministerio Fiscal
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Único legitimado:</strong> Ministerio Fiscal.</li>
+                  <li><strong>Modo de actuación:</strong> De oficio o a solicitud de cualquier persona.</li>
+                  <li><strong>Intervención preceptiva:</strong> Debiendo ser oído en todas las actuaciones judiciales relativas al patrimonio protegido.</li>
+                  <li><strong>Actuación de oficio:</strong> El Ministerio Fiscal podrá iniciar el expediente cuando tenga conocimiento de hechos que justifiquen la constitución o modificación del patrimonio, en ejercicio de sus funciones de protección de personas vulnerables.</li>
+                  <li><strong>Solicitud de terceros:</strong> Cualquier persona podrá poner en conocimiento del Ministerio Fiscal las circunstancias justificantes, sin que ello le confiera legitimación directa para intervenir como parte.</li>
+                  <li><strong>Conexión Ley 41/2003 Art. 7:</strong> La función de supervisión atribuida al Ministerio Fiscal se refuerza mediante su legitimación exclusiva para promover estos expedientes.</li>
+                  <li><strong>Garantías procesales:</strong> Audiencia preceptiva en todas las fases, derecho a aportar pruebas y alegaciones, motivación reforzada de las resoluciones.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Postulación profesional: acceso directo a la justicia
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Exención:</strong> Los interesados no precisarán de Abogado ni Procurador para intervenir en el expediente.</li>
+                  <li><strong>Fundamento Ley 15/2015 Art. 3:</strong> En expedientes de jurisdicción voluntaria, los interesados podrán comparecer por sí mismos o representados por persona de confianza, sin necesidad de profesionales, salvo que el Juez lo estime necesario por complejidad.</li>
+                  <li><strong>Asistencia letrada voluntaria:</strong> Aunque no preceptiva, los interesados podrán contar con asesoramiento letrado en cualquier fase, siendo recomendable en supuestos de especial complejidad técnica o económica.</li>
+                  <li><strong>Gratuidad de la justicia:</strong> En aplicación de la Ley 1/1996 de Asistencia Jurídica Gratuita, las personas con discapacidad y sus representantes podrán acceder a la justicia gratuita cuando acrediten insuficiencia de recursos.</li>
+                  <li><strong>Principio de proporcionalidad:</strong> La exención de postulación responde a la naturaleza no contenciosa de la jurisdicción voluntaria y al interés en facilitar el acceso a la justicia de personas vulnerables.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 Arts. 2-3</span>
+            <span class="ref-tag">LEC Art. 50</span>
+            <span class="ref-tag">Ley 1/1996 AJG</span>
+          </div>
+        </article>
+
+        <!-- Artículo 58 -->
+        <article class="map-card" data-cat="c4" data-text="solicitud tramitación resolución ministerio fiscal juez interés persona discapacidad inventario administración fiscalización recurso apelación efectos suspensivos registro civil inscripción ley 20 2011 ley hipotecaria">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 58</span>
+              <span class="status-tag tag-warn">Procedimiento</span>
+            </div>
+            <h2 class="card-title">Solicitud, tramitación y resolución del expediente</h2>
+            <p class="card-subtitle">Fases del procedimiento, contenido de la resolución y obligaciones de inscripción registral</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>5</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>6</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Inicio del expediente: requisitos formales y contenido
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Forma:</strong> Solicitud por escrito del Ministerio Fiscal.</li>
+                  <li><strong>Contenido mínimo:</strong> Datos de identificación de la persona con discapacidad, representantes o curador, demás interesados, domicilios para citaciones, hechos y alegaciones.</li>
+                  <li><strong>Modelo normalizado Ley 15/2015 Art. 14.3:</strong> La solicitud podrá presentarse mediante modelo aprobado por Orden ministerial, facilitando uniformidad y agilización.</li>
+                  <li><strong>Documentación anexa preceptiva:</strong> Certificado de discapacidad, informe médico o psicosocial, inventario preliminar de bienes, documento público de constitución o título de designación de administrador.</li>
+                  <li><strong>Audiencia a los interesados:</strong> Antes de la resolución, el Juez podrá acordar audiencia de la persona con discapacidad, sus representantes, administrador designado y cualquier otro interesado, garantizando derecho de defensa y contradicción.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Tramitación: normas generales de la Ley 15/2015
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Régimen aplicable:</strong> Normas generales de tramitación previstas en la Ley 15/2015.</li>
+                  <li><strong>Aplicación subsidiaria Ley 15/2015 Art. 13:</strong> Las disposiciones del Título I se aplicarán a todos los expedientes en lo no previsto específicamente en cada Capítulo especial.</li>
+                  <li><strong>Principios rectores:</strong> Celeridad, economía procesal, oralidad en actos de audiencia, prevalencia del interés superior de la persona con discapacidad.</li>
+                  <li><strong>Acumulación de expedientes Ley 15/2015 Art. 15:</strong> Cuando se tramiten simultáneamente varios expedientes relacionados, el Juez podrá acordar su acumulación para evitar resoluciones contradictorias y optimizar recursos.</li>
+                  <li><strong>Apreciación de oficio de defectos Ley 15/2015 Art. 16:</strong> El órgano judicial apreciará de oficio falta de competencia, inadecuación del procedimiento o cualquier defecto que impida válida tramitación, subsanándolos o inadmitiendo la solicitud.</li>
+                  <li><strong>Efectos de la pendencia:</strong> La tramitación del expediente no impide la adopción de medidas cautelares urgentes cuando exista riesgo para el patrimonio o el beneficiario.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Resolución judicial: criterios y contenido mínimo
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Criterio rector:</strong> El Juez dictará la resolución en interés de la persona con discapacidad.</li>
+                  <li><strong>Interés superior Ley 8/2021:</strong> Todas las resoluciones deberán fundamentarse en el interés superior, valorando autonomía, voluntad y preferencias del beneficiario, en consonancia con la Convención Internacional sobre Derechos de Personas con Discapacidad.</li>
+                  <li><strong>Motivación reforzada:</strong> La resolución deberá expresar con claridad hechos probados, fundamentos de derecho aplicables y ponderación de intereses, especialmente cuando se limiten facultades de administración o se adopten medidas restrictivas.</li>
+                  <li><strong>Contenido mínimo si se constituye patrimonio:</strong> Inventario de bienes y derechos iniciales; reglas de administración y fiscalización; procedimientos de designación de órganos.</li>
+                  <li><strong>Inventario inicial detallado:</strong> Naturaleza, descripción, valor estimado y titularidad registral de cada bien, distinguiendo entre registrables y no registrables.</li>
+                  <li><strong>Reglas de administración:</strong> Delimitación de facultades ordinarias y extraordinarias, periodicidad y formato de rendición de cuentas, mecanismos de control y fiscalización.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Régimen de recursos: apelación con efectos suspensivos y excepción
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Recurso ordinario:</strong> Apelación con efectos suspensivos.</li>
+                  <li><strong>Plazo de interposición LEC Art. 457:</strong> Dentro de los veinte días siguientes a la notificación de la resolución, conforme al régimen general de la Ley de Enjuiciamiento Civil aplicable subsidiariamente.</li>
+                  <li><strong>Efecto suspensivo general:</strong> La interposición del recurso suspenderá la ejecución de la resolución recurrida, manteniéndose la situación jurídica existente hasta la decisión del tribunal superior.</li>
+                  <li><strong>Excepción al efecto suspensivo:</strong> Cuando la resolución se limite a nombrar administrador por imposibilidad de designación conforme al título constitutivo, el recurso no tendrá efectos suspensivos, garantizando continuidad en la gestión y evitando perjuicios al beneficiario.</li>
+                  <li><strong>Trámite del recurso:</strong> Se sustanciará ante la Audiencia Provincial correspondiente, con audiencia de las partes y, en su caso, práctica de pruebas complementarias, resolviéndose mediante auto motivado.</li>
+                  <li><strong>Recurso extraordinario:</strong> Posibilidad de casación por infracción de ley o doctrina jurisprudencial en supuestos de especial trascendencia.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Inscripción registral y comunicación: eficacia frente a terceros
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Registro Civil Ley 20/2011 Arts. 58 y 72:</strong> Comunicación de la resolución cuando el administrador no sea el beneficiario, para inscripción de circunstancias del patrimonio y designación/modificación de administradores. Las resoluciones que afecten a capacidad jurídica o establezcan medidas de apoyo deberán inscribirse en el Registro individual, expresando extensión y límites de las medidas.</li>
+                  <li><strong>Eficacia erga omnes:</strong> La inscripción registral confiere publicidad y oponibilidad frente a terceros de la constitución del patrimonio y designación del administrador, garantizando seguridad jurídica.</li>
+                  <li><strong>Comunicación telemática:</strong> La remisión de la resolución al Registro Civil podrá realizarse por medios electrónicos, conforme a protocolos de interoperabilidad entre Administración de Justicia y Ministerio de Justicia.</li>
+                  <li><strong>Bienes registrables Ley Hipotecaria Arts. 2 y 18:</strong> Cuando el patrimonio incluya bienes inmuebles, derechos reales o cargas inscribibles, el testimonio judicial deberá presentarse en el Registro de la Propiedad para inscripción o anotación preventiva, garantizando prioridad registral y protección frente a terceros adquirentes.</li>
+                  <li><strong>Valores mobiliarios y participaciones:</strong> Si el patrimonio incluye acciones, participaciones en instituciones de inversión colectiva o derechos societarios, el testimonio deberá remitirse a las entidades gestoras o registradoras para anotación de titularidad y limitaciones de disposición.</li>
+                  <li><strong>Plazo de inscripción:</strong> Aunque la ley no establece plazo perentorio, se recomienda inscripción inmediata para evitar inseguridad jurídica o perjuicios económicos al patrimonio protegido.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 Arts. 13-16</span>
+            <span class="ref-tag">Ley 20/2011 Registro Civil</span>
+            <span class="ref-tag">Ley Hipotecaria</span>
+            <span class="ref-tag">LEC Arts. 455-459</span>
+          </div>
+        </article>
+
+        <div class="no-results" id="no-results">
+          No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección: Cronograma de plazos -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Cronograma de plazos procesales</span>
+      <span class="section-heading-count">4 trámites</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Acto o trámite procesal</th>
+              <th>Plazo</th>
+              <th>Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Interposición de recurso de apelación contra resolución judicial</td>
+              <td><span class="plazo-badge plazo-weeks">20 días</span></td>
+              <td class="td-norm">Ley 15/2015 Art. 58.4; LEC Art. 457</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Inscripción en Registro Civil de resolución constitutiva</td>
+              <td><span class="plazo-badge plazo-days">Inmediata</span></td>
+              <td class="td-norm">Ley 15/2015 Art. 58.5; Ley 20/2011 Art. 58</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Rendición de cuentas del administrador del patrimonio</td>
+              <td><span class="plazo-badge plazo-months">Anual</span></td>
+              <td class="td-norm">Ley 41/2003 Art. 7; resolución judicial constitutiva</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Revisión periódica de medidas de apoyo judicialmente adoptadas</td>
+              <td><span class="plazo-badge plazo-years">Máx. 3 años</span></td>
+              <td class="td-norm">Ley 8/2021 Art. 269 CC; Ley 15/2015 Art. 58.3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección: Participantes y actores -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">5 categorías · 10+ actores</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Órganos judiciales</div>
+          <ul>
+            <li>Juzgado de Primera Instancia <span class="participant-note">(competente territorial y objetivo)</span></li>
+            <li>Juez <span class="participant-note">(resolución en interés del beneficiario)</span></li>
+            <li>Audiencia Provincial <span class="participant-note">(recurso de apelación)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Ministerio Fiscal</div>
+          <ul>
+            <li>Ministerio Fiscal <span class="participant-note">(único legitimado, actuación de oficio o a solicitud)</span></li>
+            <li>Fiscal de circunscripción <span class="participant-note">(supervisión permanente del patrimonio)</span></li>
+            <li>Fiscal de Personas con Discapacidad <span class="participant-note">(especialización funcional)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Personas con discapacidad y representantes</div>
+          <ul>
+            <li>Persona con discapacidad beneficiaria <span class="participant-note">(titular del patrimonio, autonomía y voluntad)</span></li>
+            <li>Representantes legales <span class="participant-note">(progenitores, tutor, curador)</span></li>
+            <li>Apoyos informales <span class="participant-note">(familiares, personas de confianza)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c5">Administración y fiscalización</div>
+          <ul>
+            <li>Administrador del patrimonio <span class="participant-note">(designado judicial o documentalmente)</span></li>
+            <li>Órgano de fiscalización <span class="participant-note">(independiente o Ministerio Fiscal)</span></li>
+            <li>Comisión de protección patrimonial <span class="participant-note">(asesoramiento técnico, Ley 41/2003)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c6">Registros y entidades gestoras</div>
+          <ul>
+            <li>Registro Civil <span class="participant-note">(inscripción de resoluciones sobre capacidad)</span></li>
+            <li>Registro de la Propiedad <span class="participant-note">(bienes inmuebles y derechos reales)</span></li>
+            <li>Registro Mercantil <span class="participant-note">(participaciones y acciones)</span></li>
+            <li>Gestoras de instituciones de inversión <span class="participant-note">(valores mobiliarios)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección: Ecosistema normativo -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">8 cuerpos normativos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+        <div class="norm-card">
+          <div class="norm-law">Ley 41/2003</div>
+          <div class="norm-title">Protección patrimonial de personas con discapacidad</div>
+          <div class="norm-arts">
+            <strong>Capítulo I (Arts. 1-8)</strong> — Régimen completo del patrimonio protegido: beneficiarios, constitución, aportaciones, administración, extinción, supervisión y constancia registral. Referencia directa y material del Art. 56.1 [[14]].
+          </div>
+          <span class="norm-tag tag-conexa">Conexión material</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015</div>
+          <div class="norm-title">Normas comunes de tramitación</div>
+          <div class="norm-arts">
+            <strong>Arts. 1-16</strong> — Objeto, competencia, legitimación, postulación, iniciación, acumulación y apreciación de oficio. Aplicación subsidiaria al Art. 58.2 conforme al Art. 13 [[50]].
+          </div>
+          <span class="norm-tag tag-procedimental">Procedimental</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Ley 20/2011</div>
+          <div class="norm-title">Registro Civil</div>
+          <div class="norm-arts">
+            <strong>Arts. 58, 72</strong> — Inscripción de resoluciones judiciales sobre capacidad y medidas de apoyo. Base registral para la comunicación del Art. 58.5 [[39]].
+          </div>
+          <span class="norm-tag tag-registral">Registral</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Ley de Enjuiciamiento Civil</div>
+          <div class="norm-title">Régimen de recursos y competencia</div>
+          <div class="norm-arts">
+            <strong>Arts. 50, 455-459</strong> — Criterios de domicilio, apelación con efectos suspensivos y excepciones. Complementa los Arts. 57.1 y 58.4 [[43]].
+          </div>
+          <span class="norm-tag tag-procedimental">Procedimental</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Ley Hipotecaria</div>
+          <div class="norm-title">Inscripción de bienes registrables</div>
+          <div class="norm-arts">
+            <strong>Arts. 2, 18</strong> — Principios de legitimación, prioridad y calificación registral. Fundamenta la entrega de testimonio del Art. 58.5 para bienes inmuebles.
+          </div>
+          <span class="norm-tag tag-registral">Registral</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Código Civil</div>
+          <div class="norm-title">Medidas de apoyo a personas con discapacidad</div>
+          <div class="norm-arts">
+            <strong>Arts. 269-270</strong> — Constitución de curatela, facultades del curador y control judicial. Conexión con la designación de administradores y representantes en el Art. 56 [[71]].
+          </div>
+          <span class="norm-tag tag-conexa">Conexión material</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Ley 8/2021</div>
+          <div class="norm-title">Reforma civil y procesal para el apoyo a personas con discapacidad</div>
+          <div class="norm-arts">
+            <strong>Disposiciones varias</strong> — Sustitución del modelo de sustitución por el de apoyo, interés superior, autonomía y voluntad de la persona. Refuerza el criterio rector del Art. 58.3 [[85]].
+          </div>
+          <span class="norm-tag tag-reforma">Reforma estructural</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Convención Internacional sobre Derechos de las Personas con Discapacidad</div>
+          <div class="norm-title">Marco constitucional y convencional</div>
+          <div class="norm-arts">
+            <strong>Arts. 12, 16</strong> — Igual reconocimiento ante la ley, protección contra abusos. Fundamento interpretativo de todas las disposiciones del Capítulo VI.
+          </div>
+          <span class="norm-tag tag-constitucional">Marco superior</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Competencia y procedimiento
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Patrimonio protegido: constitución y administración
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Actores y legitimación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Plazos y recursos
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Fiscalización y control
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c6)"></div>
+        Disposiciones registrales y formales
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c7)"></div>
+        Reformas y actualizaciones normativas
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo VI · Arts. 56-58 · Conexiones: Ley 41/2003, Código Civil, Ley 8/2021, Ley 20/2011, LEC, Ley Hipotecaria · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 1. Filtrado por categoría
+  const pills = document.querySelectorAll('.pill');
+  const cards = document.querySelectorAll('.map-card');
+  const noResults = document.getElementById('no-results');
+  const countArts = document.getElementById('stat-arts');
+  let activeCat = 'all';
+  let searchTerm = '';
+
+  function updateVisibility() {
+    let visible = 0;
+    cards.forEach(c => {
+      const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+      const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+      const termMatch = !searchTerm || text.includes(searchTerm);
+      const show = catMatch && termMatch;
+      c.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+    document.getElementById('no-results-term').textContent = searchTerm;
+    if (countArts) countArts.textContent = visible;
+  }
+
+  pills.forEach(p => {
+    p.addEventListener('click', () => {
+      pills.forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      activeCat = p.dataset.cat;
+      updateVisibility();
+    });
+  });
+
+  // 2. Búsqueda en tiempo real
+  document.getElementById('search').addEventListener('input', e => {
+    searchTerm = e.target.value.toLowerCase().trim();
+    updateVisibility();
+  });
+
+  // 3. Expandir/colapsar tarjetas individuales
+  function toggleCard(btn) {
+    const card = btn.closest('.map-card');
+    const isExp = card.classList.toggle('expanded');
+    btn.querySelector('span:first-child').textContent =
+      isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+  }
+
+  // 4. Expandir todo / Contraer todo
+  document.getElementById('btn-expand-all').addEventListener('click', () => {
+    cards.forEach(c => {
+      if (!c.classList.contains('hidden')) {
+        c.classList.add('expanded');
+        const btn = c.querySelector('.card-toggle-btn span:first-child');
+        if (btn) btn.textContent = 'Ocultar contenido';
+      }
+    });
+  });
+
+  document.getElementById('btn-collapse-all').addEventListener('click', () => {
+    cards.forEach(c => {
+      c.classList.remove('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ver contenido completo';
+    });
+  });
+
+  // 5. Colapso de secciones principales
+  document.querySelectorAll('.section-heading').forEach(h => {
+    h.addEventListener('click', () => {
+      const target = document.getElementById(h.dataset.target);
+      if (!target) return;
+      const collapsed = target.classList.toggle('collapsed');
+      h.querySelector('.section-toggle-btn').textContent = collapsed ? '▶' : '▼';
+    });
+  });
+
+  // 6. Zoom
+  const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+  let zoom = 100;
+  const zoomTarget = document.querySelector('.page-main');
+  const zoomLabel  = document.getElementById('zoom-label');
+
+  function applyZoom() {
+    zoomTarget.style.zoom = zoom / 100;
+    zoomLabel.textContent = zoom + '%';
+    document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+    document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+  }
+  function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+  function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+  function zoomReset() { zoom = 100; applyZoom(); }
+
+  document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+  document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+  document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+  document.addEventListener('keydown', e => {
+    if (!e.ctrlKey && !e.metaKey) return;
+    if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn(); }
+    if (e.key === '-') { e.preventDefault(); zoomOut(); }
+    if (e.key === '0') { e.preventDefault(); zoomReset(); }
+  });
+
+  // Inicialización
+  applyZoom();
+
+  // 7. Sticky controls-bar: mantenerla justo bajo el header
+  const header   = document.querySelector('.site-header');
+  const statsBar = document.querySelector('.stats-bar');
+
+  function setHeaderHeight() {
+    document.documentElement.style.setProperty(
+      '--header-h', header.offsetHeight + 'px'
+    );
+  }
+  setHeaderHeight();
+  window.addEventListener('resize', setHeaderHeight);
+
+  // 8. Stats-bar: ocultar al bajar, mostrar al subir
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > lastY && y > header.offsetHeight) {
+      statsBar.classList.add('stats-hidden');
+    } else {
+      statsBar.classList.remove('stats-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+</script>
+
+</body>
+</html>

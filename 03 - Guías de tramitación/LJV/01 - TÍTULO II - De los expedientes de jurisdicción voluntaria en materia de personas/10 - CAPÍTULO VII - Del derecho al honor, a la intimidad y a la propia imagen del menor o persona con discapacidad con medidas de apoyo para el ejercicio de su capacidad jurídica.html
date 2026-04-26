@@ -1,0 +1,2500 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.13/html-to-image.min.js" integrity="sha512-iZ2ORl595Wx6miw+GuadDet4WQbdSWS3JLMoNfY8cRGoEFy6oT3G9IbcrBeL6AfkgpA51ETt/faX6yLV+/gFJg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+	(function() {
+		const originalConsole = window.console;
+		window.console = {
+			log: (...args) => {
+				originalConsole.log(...args);
+				window.parent.postMessage({
+					type: 'console',
+					message: args.join(' ')
+				}, '*');
+			},
+			error: (...args) => {
+				originalConsole.error(...args);
+				window.parent.postMessage({
+					type: 'console',
+					message: 'Error: ' + args.join(' ')
+				}, '*');
+			},
+			warn: (...args) => {
+				originalConsole.warn(...args);
+				window.parent.postMessage({
+					type: 'console',
+					message: 'Warning: ' + args.join(' ')
+				}, '*');
+			}
+		};
+		let requestId = 0;
+		let callbacksMap = new Map();
+		let streamControllers = new Map();
+		window.claude = {
+			complete: (prompt) => {
+				return new Promise((resolve, reject) => {
+					const id = requestId++;
+					callbacksMap.set(id, {
+						resolve, reject
+					});
+					window.parent.postMessage({
+						type: 'claudeComplete',
+						id,
+						prompt
+					}, '*');
+				});
+			}
+		};
+		window.storage = {
+			get: (key, shared = false) => {
+				return new Promise((resolve, reject) => {
+					const id = requestId++;
+					callbacksMap.set(id, {
+						resolve, reject
+					});
+					window.parent.postMessage({
+						type: 'storageGet',
+						id,
+						key,
+						shared
+					}, '*');
+				});
+			},
+			set: (key, value, shared = false) => {
+				return new Promise((resolve, reject) => {
+					const id = requestId++;
+					callbacksMap.set(id, {
+						resolve, reject
+					});
+					window.parent.postMessage({
+						type: 'storageSet',
+						id,
+						key,
+						value,
+						shared
+					}, '*');
+				});
+			},
+			delete: (key, shared = false) => {
+				return new Promise((resolve, reject) => {
+					const id = requestId++;
+					callbacksMap.set(id, {
+						resolve, reject
+					});
+					window.parent.postMessage({
+						type: 'storageDelete',
+						id,
+						key,
+						shared
+					}, '*');
+				});
+			},
+			list: (prefix, shared = false) => {
+				return new Promise((resolve, reject) => {
+					const id = requestId++;
+					callbacksMap.set(id, {
+						resolve, reject
+					});
+					window.parent.postMessage({
+						type: 'storageList',
+						id,
+						prefix,
+						shared
+					}, '*');
+				});
+			}
+		};
+		let pendingBlobs = new Map();
+		URL.createObjectURL = (blob) => {
+			// Store the blob and create an ID and URL for it
+			const blobId = `blob-${Date.now()}-${Math.random()}`;
+			pendingBlobs.set(blobId, blob);
+			return `blob-request://${blobId}`;
+		};
+		URL.revokeObjectURL = (url) => {
+			// Remove the blob from our store
+			const blobId = url.replace("blob-request://", "");
+			pendingBlobs.delete(blobId);
+		};
+		const getBlobFromURL = (url) => {
+			const blobId = url.replace("blob-request://", "");
+			return pendingBlobs.get(blobId);
+		};
+		// Override global fetch with streaming support
+		window.fetch = (url, init = {}) => {
+			return new Promise((resolve, reject) => {
+				const id = requestId++;
+				const channelId = `fetch-${id}-${Date.now()}`;
+				callbacksMap.set(id, {
+					resolve: (response) => {
+						// Create a ReadableStream for the response body
+						const stream = new ReadableStream({
+							start(controller) {
+									streamControllers.set(channelId, controller);
+								},
+								cancel() {
+									streamControllers.delete(channelId);
+								}
+						});
+						// Create and return the Response with the stream
+						resolve(new Response(stream, {
+							status: response.status,
+							statusText: response.statusText,
+							headers: response.headers
+						}));
+					},
+					reject,
+					channelId
+				});
+				window.parent.postMessage({
+					type: 'proxyFetch',
+					id,
+					url,
+					init,
+					channelId
+				}, '*');
+			});
+		};
+		window.addEventListener('message', async(event) => {
+			if(event.data.type === 'takeScreenshot') {
+				const rootElement = document.getElementById('artifacts-component-root-html');
+				if(!rootElement) {
+					window.parent.postMessage({
+						type: 'screenshotError',
+						error: new Error('Root element not found'),
+					}, '*');
+				}
+				const screenshot = await htmlToImage.toPng(rootElement, {
+					imagePlaceholder: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePDgwX8ACOQDoNsk0PMAAAAASUVORK5CYII=",
+				});
+				window.parent.postMessage({
+					type: 'screenshotData',
+					data: screenshot,
+				}, '*');
+			} else if(event.data.type === 'claudeComplete') {
+				const callback = callbacksMap.get(event.data.id);
+				if(event.data.error) {
+					callback.reject(new Error(event.data.error));
+				} else {
+					callback.resolve(event.data.completion);
+				}
+				callbacksMap.delete(event.data.id);
+			} else if(event.data.type === 'proxyFetchResponse') {
+				const callback = callbacksMap.get(event.data.id);
+				if(event.data.error) {
+					callback.reject(new Error(event.data.error));
+					callbacksMap.delete(event.data.id);
+				} else {
+					// Initial response with headers, status, etc.
+					callback.resolve({
+						status: event.data.status,
+						statusText: event.data.statusText,
+						headers: event.data.headers
+					});
+					// Don't delete the callback yet if streaming
+					if(!event.data.body) {
+						callbacksMap.delete(event.data.id);
+					}
+				}
+			} else if(event.data.type === 'proxyFetchStream') {
+				// Handle streaming data chunks
+				const controller = streamControllers.get(event.data.channelId);
+				if(controller) {
+					if(event.data.error) {
+						controller.error(new Error(event.data.error));
+						streamControllers.delete(event.data.channelId);
+					} else if(event.data.done) {
+						controller.close();
+						streamControllers.delete(event.data.channelId);
+						// Clean up the callback
+						const callback = Array.from(callbacksMap.entries()).find(
+							([_, value]) => value.channelId === event.data.channelId);
+						if(callback) {
+							callbacksMap.delete(callback[0]);
+						}
+					} else if(event.data.chunk) {
+						controller.enqueue(new Uint8Array(event.data.chunk));
+					}
+				}
+			} else if(event.data.type === 'storageGet') {
+				const callback = callbacksMap.get(event.data.id);
+				if(event.data.error) {
+					callback.reject(new Error(event.data.error));
+				} else {
+					callback.resolve(event.data.result);
+				}
+				callbacksMap.delete(event.data.id);
+			} else if(event.data.type === 'storageSet') {
+				const callback = callbacksMap.get(event.data.id);
+				if(event.data.error) {
+					callback.reject(new Error(event.data.error));
+				} else {
+					callback.resolve(event.data.result);
+				}
+				callbacksMap.delete(event.data.id);
+			} else if(event.data.type === 'storageDelete') {
+				const callback = callbacksMap.get(event.data.id);
+				if(event.data.error) {
+					callback.reject(new Error(event.data.error));
+				} else {
+					callback.resolve(event.data.result);
+				}
+				callbacksMap.delete(event.data.id);
+			} else if(event.data.type === 'storageList') {
+				const callback = callbacksMap.get(event.data.id);
+				if(event.data.error) {
+					callback.reject(new Error(event.data.error));
+				} else {
+					callback.resolve(event.data.result);
+				}
+				callbacksMap.delete(event.data.id);
+			}
+		});
+		window.addEventListener('click', (event) => {
+			const isEl = event.target instanceof HTMLElement;
+			if(!isEl) return;
+			// find ancestor links
+			const linkEl = event.target.closest("a");
+			if(!linkEl || !linkEl.href) return;
+			event.preventDefault();
+			event.stopImmediatePropagation();
+			if(linkEl.href.startsWith("blob-request:")) {
+				const blob = getBlobFromURL(linkEl.href);
+				if(!blob) return;
+				void blob.arrayBuffer().then((data) => {
+					window.parent.postMessage({
+						type: "downloadFile",
+						filename: linkEl.download,
+						data,
+						mimeType: blob.type || "application/octet-stream",
+					});
+				});
+			} else if(linkEl.href.startsWith("data:")) {
+				const [header, base64Data] = linkEl.href.split(",");
+				const mimeMatch = header.match(/data:([^;]+)/);
+				const mimeType = mimeMatch ? mimeMatch[1] : "application/octet-stream";
+				const binaryString = atob(base64Data);
+				const data = Uint8Array.from(binaryString, (c) => c.charCodeAt(0), ).buffer;
+				window.parent.postMessage({
+					type: "downloadFile",
+					filename: linkEl.download,
+					data,
+					mimeType,
+				});
+			} else {
+				let linkUrl;
+				try {
+					linkUrl = new URL(linkEl.href);
+				} catch(error) {
+					return;
+				}
+				if(linkUrl.hostname === window.location.hostname) return;
+				window.parent.postMessage({
+					type: 'openExternal',
+					href: linkEl.href,
+				}, '*');
+			}
+		});
+		const originalOpen = window.open;
+		window.open = function(url) {
+			window.parent.postMessage({
+				type: "openExternal",
+				href: url,
+			}, "*");
+		};
+		window.addEventListener('error', (event) => {
+			window.parent.postMessage({
+				type: 'console',
+				message: 'Uncaught Error: ' + event.message
+			}, '*');
+		});
+	})();
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Guía de Tramitación - LJV Arts. 59-60 - Honor, Intimidad e Imagen</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+	<style>
+	:root {
+		--navy: #1A2F6E;
+		--navy-mid: #2E4DAA;
+		--navy-lt: #4169E1;
+		--cyan: #0D9488;
+		--cyan-bg: #F0FDFA;
+		--violet: #5B21B6;
+		--violet-bg: #F5F3FF;
+		--green: #15803D;
+		--green-bg: #F0FDF4;
+		--amber: #B45309;
+		--amber-bg: #FFFBEB;
+		--red: #B91C1C;
+		--red-bg: #FEF2F2;
+		--slate: #475569;
+		--slate-bg: #F4F6FB;
+		--white: #FFFFFF;
+		--bdr: #D1D9EE;
+		--text: #1A1A2E;
+		--muted: #6B7280;
+	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0
+	}
+
+	body {
+		font-family: 'Outfit', system-ui, sans-serif;
+		font-size: 15px;
+		line-height: 1.6;
+		color: var(--text);
+		background: var(--slate-bg)
+	}
+
+	#app {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh
+	}
+
+	#hdr {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		flex-shrink: 0;
+		height: 56px;
+		background: var(--navy);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 20px
+	}
+
+	#pbar {
+		position: sticky;
+		top: 56px;
+		z-index: 9;
+		flex-shrink: 0;
+		height: 36px;
+		background: var(--navy-mid);
+		display: flex;
+		align-items: center;
+		padding: 0 20px;
+		overflow-x: auto;
+		scrollbar-width: none;
+		gap: 0
+	}
+
+	#pbar::-webkit-scrollbar {
+		display: none
+	}
+
+	#breadcrumb {
+		position: sticky;
+		top: 92px;
+		z-index: 8;
+		flex-shrink: 0;
+		min-height: 34px;
+		background: var(--slate-bg);
+		border-bottom: 1px solid var(--bdr);
+		display: flex;
+		align-items: center;
+		padding: 0 20px;
+		overflow-x: auto;
+		scrollbar-width: none
+	}
+
+	#breadcrumb::-webkit-scrollbar {
+		display: none
+	}
+
+	#layout {
+		display: flex;
+		align-items: flex-start
+	}
+
+	#mapa-overlay {
+		display: none;
+		background: var(--slate-bg);
+		padding: 24px
+	}
+
+	#sidebar {
+		width: 260px;
+		flex-shrink: 0;
+		background: var(--navy-mid);
+		display: flex;
+		flex-direction: column;
+		position: sticky;
+		top: 130px;
+		align-self: flex-start
+	}
+
+	#content {
+		flex: 1;
+		padding: 28px 24px
+	}
+
+	.h-left {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		min-width: 0
+	}
+
+	.h-seal {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, .10);
+		border: 1.5px solid rgba(255, 255, 255, .25);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 16px;
+		flex-shrink: 0
+	}
+
+	.h-title {
+		color: #fff;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1.2;
+		white-space: nowrap
+	}
+
+	.h-sub {
+		color: rgba(255, 255, 255, .55);
+		font-size: 10px;
+		letter-spacing: .3px;
+		white-space: nowrap
+	}
+
+	.h-right {
+		display: flex;
+		gap: 6px;
+		flex-shrink: 0
+	}
+
+	.btn {
+		padding: 6px 12px;
+		border-radius: 6px;
+		font-family: inherit;
+		font-size: 12px;
+		font-weight: 500;
+		cursor: pointer;
+		border: 1.5px solid;
+		transition: all .15s
+	}
+
+	.btn-ghost {
+		background: rgba(255, 255, 255, .08);
+		border-color: rgba(255, 255, 255, .18);
+		color: rgba(255, 255, 255, .85)
+	}
+
+	.btn-ghost:hover {
+		background: rgba(255, 255, 255, .18)
+	}
+
+	.ph-item {
+		display: flex;
+		align-items: center
+	}
+
+	.ph-lbl {
+		font-size: 11px;
+		white-space: nowrap;
+		padding: 4px 8px;
+		border-radius: 4px;
+		color: rgba(255, 255, 255, .38);
+		transition: all .15s
+	}
+
+	.ph-lbl.done {
+		color: rgba(255, 255, 255, .65)
+	}
+
+	.ph-lbl.active {
+		color: #fff;
+		background: rgba(65, 105, 225, .38);
+		font-weight: 700
+	}
+
+	.ph-sep {
+		color: rgba(255, 255, 255, .22);
+		font-size: 10px;
+		padding: 0 3px
+	}
+
+	.bc-item {
+		font-size: 12px;
+		white-space: nowrap;
+		padding: 0 5px;
+		color: var(--muted)
+	}
+
+	.bc-past {
+		cursor: pointer;
+		background: none;
+		border: none;
+		font-family: inherit;
+		font-size: 12px;
+		color: var(--muted)
+	}
+
+	.bc-past:hover {
+		color: var(--navy-lt);
+		text-decoration: underline
+	}
+
+	.bc-current {
+		font-weight: 600;
+		color: var(--navy)
+	}
+
+	.bc-sep {
+		font-size: 10px;
+		color: var(--bdr);
+		padding: 0 2px
+	}
+
+	#sb-tabs {
+		display: flex;
+		border-bottom: 1px solid rgba(255, 255, 255, .10);
+		flex-shrink: 0
+	}
+
+	.sb-tab {
+		flex: 1;
+		padding: 9px 0;
+		font-size: 11px;
+		font-weight: 600;
+		font-family: inherit;
+		background: none;
+		border: none;
+		border-bottom: 2px solid transparent;
+		color: rgba(255, 255, 255, .38);
+		cursor: pointer;
+		letter-spacing: .4px;
+		text-transform: uppercase;
+		transition: all .15s
+	}
+
+	.sb-tab.active {
+		color: #fff;
+		border-bottom-color: var(--navy-lt)
+	}
+
+	.sb-tab:hover:not(.active) {
+		color: rgba(255, 255, 255, .70);
+		background: rgba(255, 255, 255, .05)
+	}
+
+	.sm-phase {
+		border-bottom: 1px solid rgba(255, 255, 255, .07)
+	}
+
+	.sm-phase-hdr {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 9px 14px;
+		cursor: pointer;
+		color: rgba(255, 255, 255, .58);
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: .3px;
+		text-transform: uppercase;
+		transition: background .15s
+	}
+
+	.sm-phase-hdr:hover {
+		background: rgba(255, 255, 255, .05)
+	}
+
+	.ph-arrow {
+		font-size: 9px;
+		transition: transform .15s;
+		display: inline-block
+	}
+
+	.sm-phase-hdr.collapsed .ph-arrow {
+		transform: rotate(-90deg)
+	}
+
+	.sm-nodes {
+		padding: 3px 0
+	}
+
+	.sm-node {
+		display: flex;
+		align-items: flex-start;
+		gap: 7px;
+		padding: 7px 14px 7px 14px;
+		cursor: pointer;
+		color: rgba(255, 255, 255, .52);
+		font-size: 12px;
+		border-left: 2px solid transparent;
+		transition: all .15s;
+		line-height: 1.4
+	}
+
+	.sm-node:hover {
+		background: rgba(255, 255, 255, .06);
+		color: rgba(255, 255, 255, .85)
+	}
+
+	.sm-node.sm-current {
+		color: #fff;
+		background: rgba(65, 105, 225, .20);
+		border-left-color: var(--navy-lt);
+		font-weight: 600
+	}
+
+	.sm-node.sm-visited {
+		color: rgba(255, 255, 255, .75);
+		border-left-color: var(--cyan)
+	}
+
+	.sm-dot {
+		font-size: 10px;
+		flex-shrink: 0;
+		margin-top: 2px
+	}
+
+	.pi {
+		padding: 9px 14px;
+		border-bottom: 1px solid rgba(255, 255, 255, .05)
+	}
+
+	.pi.past {
+		opacity: .72
+	}
+
+	.pi.current {
+		background: rgba(65, 105, 225, .15);
+		border-left: 2px solid var(--navy-lt)
+	}
+
+	.pi-title {
+		color: rgba(255, 255, 255, .80);
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 1.4
+	}
+
+	.pi-choice {
+		color: var(--cyan);
+		font-size: 11px;
+		margin-top: 3px
+	}
+
+	.sb-foot {
+		padding: 14px;
+		border-top: 1px solid rgba(255, 255, 255, .08);
+		margin-top: 4px
+	}
+
+	.sb-foot-title {
+		color: rgba(255, 255, 255, .33);
+		font-size: 10px;
+		font-weight: 600;
+		letter-spacing: .3px;
+		text-transform: uppercase;
+		margin-bottom: 6px
+	}
+
+	.sb-foot-item {
+		color: rgba(255, 255, 255, .48);
+		font-size: 10px;
+		margin: 2px 0;
+		font-family: ui-monospace, monospace
+	}
+
+	.card {
+		background: #fff;
+		border-radius: 12px;
+		border: 1px solid var(--bdr);
+		max-width: 800px;
+		margin: 0 auto;
+		animation: fadeUp .22s ease
+	}
+
+	@keyframes fadeUp {
+		from {
+			opacity: 0;
+			transform: translateY(10px)
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0)
+		}
+	}
+
+	.c-hdr {
+		padding: 20px 26px 16px;
+		border-bottom: 1px solid var(--bdr)
+	}
+
+	.c-hdr-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 10px;
+		gap: 10px
+	}
+
+	.c-title {
+		font-size: 21px;
+		font-weight: 700;
+		color: var(--text);
+		line-height: 1.3
+	}
+
+	.step-num {
+		font-size: 12px;
+		color: var(--muted);
+		margin-top: 5px
+	}
+
+	.c-body {
+		padding: 20px 26px;
+		display: flex;
+		flex-direction: column;
+		gap: 13px
+	}
+
+	.act-badge {
+		display: inline-flex;
+		align-items: center;
+		padding: 4px 11px;
+		border-radius: 20px;
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: .3px;
+		flex-shrink: 0
+	}
+
+	.act-laj {
+		background: var(--cyan-bg);
+		color: var(--cyan);
+		border: 1px solid #99E6DE
+	}
+
+	.act-juez {
+		background: var(--violet-bg);
+		color: var(--violet);
+		border: 1px solid #C4B5FD
+	}
+
+	.act-ambos {
+		background: var(--amber-bg);
+		color: var(--amber);
+		border: 1px solid #FCD34D
+	}
+
+	.blk-i {
+		font-size: 15px;
+		line-height: 1.72;
+		color: var(--text)
+	}
+
+	.blk-d {
+		background: var(--amber-bg);
+		border-left: 3px solid var(--amber);
+		padding: 10px 14px;
+		border-radius: 0 6px 6px 0;
+		font-size: 14px;
+		color: #92400E;
+		font-weight: 500
+	}
+
+	.blk-n {
+		background: var(--cyan-bg);
+		border-left: 3px solid var(--cyan);
+		padding: 10px 14px;
+		border-radius: 0 6px 6px 0;
+		font-size: 14px;
+		color: #0F6B65;
+		line-height: 1.65
+	}
+
+	.blk-w {
+		background: var(--red-bg);
+		border-left: 3px solid var(--red);
+		padding: 10px 14px;
+		border-radius: 0 6px 6px 0;
+		font-size: 14px;
+		color: #991B1B;
+		font-weight: 500;
+		line-height: 1.65
+	}
+
+	.blk-l {
+		background: var(--violet-bg);
+		padding: 8px 13px;
+		border-radius: 6px;
+		font-size: 12px;
+		color: var(--violet);
+		font-family: ui-monospace, SFMono-Regular, monospace;
+		border: 1px solid #DDD6FE;
+		line-height: 1.65
+	}
+
+	.blk-cl {
+		background: var(--slate-bg);
+		border: 1px solid var(--bdr);
+		border-radius: 8px;
+		padding: 14px 16px
+	}
+
+	.blk-cl-title {
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--text);
+		margin-bottom: 10px
+	}
+
+	.blk-cl ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 8px
+	}
+
+	.blk-cl li {
+		display: flex;
+		align-items: flex-start;
+		gap: 9px;
+		font-size: 14px;
+		line-height: 1.55;
+		color: var(--text)
+	}
+
+	.blk-cl li::before {
+		content: '\2610';
+		font-size: 15px;
+		flex-shrink: 0;
+		color: var(--navy-lt)
+	}
+
+	.dec-area {
+		padding: 0 26px 22px
+	}
+
+	.dec-q {
+		background: var(--slate-bg);
+		border: 1px solid var(--bdr);
+		border-top: 3px solid var(--navy);
+		border-radius: 0 0 8px 8px;
+		padding: 14px 16px;
+		margin-bottom: 14px;
+		font-size: 16px;
+		font-weight: 600;
+		color: var(--text);
+		line-height: 1.55
+	}
+
+	.dec-opts {
+		display: flex;
+		flex-direction: column;
+		gap: 8px
+	}
+
+	.dec-btn {
+		display: flex;
+		align-items: flex-start;
+		gap: 11px;
+		padding: 13px 15px;
+		border-radius: 8px;
+		border: 1.5px solid var(--bdr);
+		background: #fff;
+		cursor: pointer;
+		font-family: inherit;
+		text-align: left;
+		transition: all .15s;
+		font-size: 14px;
+		line-height: 1.55;
+		color: var(--text);
+		width: 100%
+	}
+
+	.dec-btn:hover {
+		border-color: var(--navy-lt);
+		background: #F0F4FF
+	}
+
+	.dec-btn.ok:hover {
+		border-color: var(--green);
+		background: var(--green-bg)
+	}
+
+	.dec-btn.bad:hover {
+		border-color: var(--red);
+		background: var(--red-bg)
+	}
+
+	.dec-btn.warn:hover {
+		border-color: var(--amber);
+		background: var(--amber-bg)
+	}
+
+	.dec-btn.neutral:hover {
+		border-color: var(--slate);
+		background: var(--slate-bg)
+	}
+
+	.dec-letter {
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		background: var(--slate-bg);
+		border: 1.5px solid var(--bdr);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 11px;
+		font-weight: 700;
+		flex-shrink: 0;
+		color: var(--slate);
+		margin-top: 1px
+	}
+
+	.dec-btn.ok .dec-letter {
+		background: var(--green-bg);
+		border-color: var(--green);
+		color: var(--green)
+	}
+
+	.dec-btn.bad .dec-letter {
+		background: var(--red-bg);
+		border-color: var(--red);
+		color: var(--red)
+	}
+
+	.dec-btn.warn .dec-letter {
+		background: var(--amber-bg);
+		border-color: var(--amber);
+		color: var(--amber)
+	}
+
+	.c-nav {
+		padding: 16px 26px;
+		border-top: 1px solid var(--bdr);
+		display: flex;
+		gap: 8px;
+		justify-content: space-between;
+		align-items: center
+	}
+
+	.btn-back {
+		background: var(--slate-bg);
+		border: 1.5px solid var(--bdr);
+		color: var(--slate);
+		padding: 9px 18px;
+		border-radius: 8px;
+		font-family: inherit;
+		font-size: 13px;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all .15s
+	}
+
+	.btn-back:hover:not(:disabled) {
+		background: #E3E8F2;
+		border-color: var(--slate)
+	}
+
+	.btn-back:disabled {
+		opacity: .35;
+		cursor: not-allowed
+	}
+
+	.btn-next {
+		background: var(--navy-lt);
+		border: none;
+		color: #fff;
+		padding: 9px 20px;
+		border-radius: 8px;
+		font-family: inherit;
+		font-size: 13px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: background .15s
+	}
+
+	.btn-next:hover {
+		background: var(--navy)
+	}
+
+	.card.end-success {
+		border-top: 4px solid var(--green)
+	}
+
+	.card.end-error {
+		border-top: 4px solid var(--red)
+	}
+
+	.card.end-warning {
+		border-top: 4px solid var(--amber)
+	}
+
+	.card.end-neutral {
+		border-top: 4px solid var(--slate)
+	}
+
+	.end-body {
+		padding: 36px 26px 20px;
+		text-align: center
+	}
+
+	.end-icon {
+		font-size: 52px;
+		margin-bottom: 14px
+	}
+
+	.end-title {
+		font-size: 23px;
+		font-weight: 700;
+		margin-bottom: 8px
+	}
+
+	.end-title.success {
+		color: var(--green)
+	}
+
+	.end-title.error {
+		color: var(--red)
+	}
+
+	.end-title.warning {
+		color: var(--amber)
+	}
+
+	.end-title.neutral {
+		color: var(--slate)
+	}
+
+	.end-sub {
+		color: var(--muted);
+		font-size: 15px;
+		margin-bottom: 22px
+	}
+
+	.end-actions {
+		display: flex;
+		gap: 10px;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: 24px
+	}
+
+	.btn-restart {
+		background: var(--navy-lt);
+		color: #fff;
+		border: none;
+		padding: 10px 22px;
+		border-radius: 8px;
+		font-family: inherit;
+		font-size: 14px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: background .15s
+	}
+
+	.btn-restart:hover {
+		background: var(--navy)
+	}
+
+	.end-content {
+		padding: 0 26px 24px;
+		text-align: left;
+		display: flex;
+		flex-direction: column;
+		gap: 12px
+	}
+
+	.summary-box {
+		background: var(--slate-bg);
+		border: 1px solid var(--bdr);
+		border-radius: 10px;
+		padding: 18px 20px;
+		margin-top: 8px
+	}
+
+	.summary-title {
+		font-size: 11px;
+		font-weight: 700;
+		color: var(--muted);
+		letter-spacing: .5px;
+		text-transform: uppercase;
+		margin-bottom: 14px
+	}
+
+	.summary-item {
+		display: flex;
+		gap: 11px;
+		margin-bottom: 10px;
+		font-size: 14px;
+		align-items: flex-start
+	}
+
+	.summary-item:last-child {
+		margin-bottom: 0
+	}
+
+	.summary-num {
+		width: 22px;
+		height: 22px;
+		border-radius: 50%;
+		background: var(--navy);
+		color: #fff;
+		font-size: 10px;
+		font-weight: 700;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		margin-top: 2px
+	}
+
+	.summary-text {
+		line-height: 1.55;
+		color: var(--text)
+	}
+
+	.summary-choice {
+		color: var(--cyan);
+		font-size: 12px;
+		display: block;
+		margin-top: 3px
+	}
+
+	.mapa-back-btn {
+		background: var(--navy);
+		color: #fff;
+		border: none;
+		padding: 9px 18px;
+		border-radius: 8px;
+		font-family: inherit;
+		font-size: 13px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: background .15s;
+		margin-bottom: 20px
+	}
+
+	.mapa-back-btn:hover {
+		background: var(--navy-mid)
+	}
+
+	.mapa-title {
+		font-size: 19px;
+		font-weight: 700;
+		color: var(--text);
+		margin-bottom: 4px
+	}
+
+	.mapa-sub {
+		font-size: 13px;
+		color: var(--muted);
+		margin-bottom: 18px
+	}
+
+	.mapa-phases {
+		display: flex;
+		gap: 16px;
+		align-items: flex-start;
+		overflow-x: auto;
+		padding-bottom: 16px
+	}
+
+	.mapa-col {
+		width: 185px;
+		flex-shrink: 0
+	}
+
+	.mapa-col-hdr {
+		background: var(--navy);
+		color: #fff;
+		padding: 9px 12px;
+		border-radius: 8px 8px 0 0;
+		font-size: 11px;
+		font-weight: 700;
+		text-align: center;
+		letter-spacing: .3px;
+		text-transform: uppercase
+	}
+
+	.mapa-nodes {
+		border: 1px solid var(--bdr);
+		border-top: none;
+		border-radius: 0 0 8px 8px;
+		overflow: hidden
+	}
+
+	.mapa-node {
+		padding: 10px 11px;
+		border-bottom: 1px solid var(--bdr);
+		font-size: 12px;
+		color: var(--text);
+		background: #fff;
+		cursor: pointer;
+		transition: background .15s;
+		border-left: 3px solid transparent
+	}
+
+	.mapa-node:last-child {
+		border-bottom: none
+	}
+
+	.mapa-node:hover {
+		background: #F0F4FF
+	}
+
+	.mapa-node.mn-current {
+		border-left-color: var(--navy-lt);
+		background: #EEF2FF
+	}
+
+	.mapa-node.mn-visited {
+		border-left-color: var(--cyan)
+	}
+
+	.mapa-node.mn-end-success {
+		border-left-color: var(--green);
+		background: var(--green-bg)
+	}
+
+	.mapa-node.mn-end-error {
+		border-left-color: var(--red);
+		background: var(--red-bg)
+	}
+
+	.mapa-node.mn-end-warning {
+		border-left-color: var(--amber);
+		background: var(--amber-bg)
+	}
+
+	.mapa-node.mn-end-neutral {
+		border-left-color: var(--slate);
+		background: var(--slate-bg)
+	}
+
+	.mn-title {
+		font-weight: 500;
+		margin-bottom: 2px;
+		line-height: 1.4
+	}
+
+	.mn-actor {
+		font-size: 10px;
+		color: var(--muted)
+	}
+
+	#preview-overlay {
+		display: none;
+		position: fixed;
+		inset: 0;
+		background: rgba(26, 47, 110, .50);
+		z-index: 200;
+		justify-content: center;
+		align-items: center
+	}
+
+	#preview-overlay.open {
+		display: flex
+	}
+
+	#preview-box {
+		background: #fff;
+		border-radius: 14px;
+		width: min(580px, 93vw);
+		max-height: 84vh;
+		overflow-y: auto;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, .25)
+	}
+
+	.preview-hdr {
+		padding: 18px 22px 14px;
+		border-bottom: 1px solid var(--bdr);
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 12px
+	}
+
+	.preview-close {
+		background: var(--slate-bg);
+		border: 1px solid var(--bdr);
+		color: var(--slate);
+		padding: 6px 12px;
+		border-radius: 6px;
+		font-family: inherit;
+		font-size: 12px;
+		cursor: pointer;
+		flex-shrink: 0;
+		transition: background .15s
+	}
+
+	.preview-close:hover {
+		background: #E3E8F2
+	}
+
+	.preview-body {
+		padding: 18px 22px 22px;
+		display: flex;
+		flex-direction: column;
+		gap: 11px
+	}
+
+	.preview-nav-hint {
+		font-size: 12px;
+		color: var(--muted);
+		padding: 12px 22px 16px;
+		border-top: 1px solid var(--bdr);
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		flex-wrap: wrap
+	}
+
+	.btn-preview-go {
+		background: var(--navy-lt);
+		color: #fff;
+		border: none;
+		padding: 7px 14px;
+		border-radius: 6px;
+		font-family: inherit;
+		font-size: 12px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: background .15s
+	}
+
+	.btn-preview-go:hover {
+		background: var(--navy)
+	}
+
+	@media(max-width:700px) {
+		#sidebar {
+			display: none
+		}
+		#content {
+			padding: 14px 12px
+		}
+		.h-sub {
+			display: none
+		}
+		.c-title {
+			font-size: 18px
+		}
+		.dec-q {
+			font-size: 14px
+		}
+	}
+
+	@media print {
+		#hdr .h-right,
+		#pbar,
+		#breadcrumb,
+		#sidebar,
+		.c-nav,
+		.dec-area,
+		.mapa-back-btn {
+			display: none
+		}
+		#hdr {
+			position: static
+		}
+		#layout {
+			display: block
+		}
+		#content {
+			padding: 0
+		}
+		.card {
+			max-width: 100%;
+			break-inside: avoid;
+			margin-bottom: 20px;
+			border: 1px solid #ccc;
+			box-shadow: none
+		}
+		body {
+			background: #fff;
+			color: #111
+		}
+	}
+	</style>
+</head>
+
+<body id="artifacts-component-root-html">
+	<div id="app">
+		<header id="hdr">
+			<div class="h-left">
+				<div class="h-seal">⚖</div>
+				<div>
+					<div class="h-title">Guía de Tramitación — LJV Arts. 59-60</div>
+					<div class="h-sub">Honor · Intimidad · Imagen · Menores y Personas con Discapacidad</div>
+				</div>
+			</div>
+			<div class="h-right">
+				<button class="btn btn-ghost" onclick="toggleMapa()">🗺 Ver mapa</button>
+				<button class="btn btn-ghost" onclick="dlGuia()">↓ Descargar</button>
+				<button class="btn btn-ghost" onclick="restart()">↻ Reiniciar</button>
+			</div>
+		</header>
+		<div id="pbar">
+			<div class="ph-item"><span class="ph-lbl active">Iniciación</span></div><span class="ph-sep">›</span>
+			<div class="ph-item"><span class="ph-lbl ">Admisión a trámite</span></div><span class="ph-sep">›</span>
+			<div class="ph-item"><span class="ph-lbl ">Preparación</span></div><span class="ph-sep">›</span>
+			<div class="ph-item"><span class="ph-lbl ">Comparecencia</span></div><span class="ph-sep">›</span>
+			<div class="ph-item"><span class="ph-lbl ">Resolución</span></div><span class="ph-sep">›</span>
+			<div class="ph-item"><span class="ph-lbl ">Recursos</span></div><span class="ph-sep">›</span>
+			<div class="ph-item"><span class="ph-lbl ">Cierre</span></div>
+		</div>
+		<div id="breadcrumb"><span class="bc-item bc-current">Recepción y examen inicia…</span></div>
+		<div id="layout">
+			<nav id="sidebar">
+				<div id="sb-tabs">
+					<button class="sb-tab active" onclick="sbTab('map')">Mapa</button>
+					<button class="sb-tab" onclick="sbTab('journey')">Recorrido</button>
+				</div>
+				<div id="sb-map">
+					<div class="sm-phase">
+						<div class="sm-phase-hdr" onclick="togglePhase(0)"><span>Iniciación</span><span class="ph-arrow">▼</span></div>
+						<div class="sm-nodes">
+							<div class="sm-node sm-current" onclick="showPreview('inicio')"><span class="sm-dot">●</span><span>Recepción y examen inicial de…</span></div>
+							<div class="sm-node" onclick="showPreview('subsanacion')"><span class="sm-dot">○</span><span>Requerimiento de subsanación</span></div>
+							<div class="sm-node" onclick="showPreview('fin_archivo')"><span class="sm-dot">○</span><span>Archivo por falta de subsanac…</span></div>
+						</div>
+					</div>
+					<div class="sm-phase">
+						<div class="sm-phase-hdr" onclick="togglePhase(1)"><span>Admisión a trámite</span><span class="ph-arrow">▼</span></div>
+						<div class="sm-nodes">
+							<div class="sm-node" onclick="showPreview('competencia')"><span class="sm-dot">○</span><span>Verificación de la competenci…</span></div>
+							<div class="sm-node" onclick="showPreview('inhibicion')"><span class="sm-dot">○</span><span>Auto de inhibición y remisión…</span></div>
+							<div class="sm-node" onclick="showPreview('presupuesto')"><span class="sm-dot">○</span><span>Verificación del presupuesto …</span></div>
+							<div class="sm-node" onclick="showPreview('inadmision')"><span class="sm-dot">○</span><span>Auto de inadmisión por falta …</span></div>
+							<div class="sm-node" onclick="showPreview('admision')"><span class="sm-dot">○</span><span>Admisión a trámite y señal de…</span></div>
+						</div>
+					</div>
+					<div class="sm-phase">
+						<div class="sm-phase-hdr" onclick="togglePhase(2)"><span>Preparación</span><span class="ph-arrow">▼</span></div>
+						<div class="sm-nodes">
+							<div class="sm-node" onclick="showPreview('citaciones')"><span class="sm-dot">○</span><span>Práctica de citaciones para l…</span></div>
+							<div class="sm-node" onclick="showPreview('cautelares')"><span class="sm-dot">○</span><span>Resolución sobre medidas caut…</span></div>
+						</div>
+					</div>
+					<div class="sm-phase">
+						<div class="sm-phase-hdr" onclick="togglePhase(3)"><span>Comparecencia</span><span class="ph-arrow">▼</span></div>
+						<div class="sm-nodes">
+							<div class="sm-node" onclick="showPreview('comparecencia')"><span class="sm-dot">○</span><span>Celebración del acto de la co…</span></div>
+							<div class="sm-node" onclick="showPreview('audiencia')"><span class="sm-dot">○</span><span>Audiencia al menor o persona …</span></div>
+							<div class="sm-node" onclick="showPreview('prueba')"><span class="sm-dot">○</span><span>Práctica de prueba y alegacio…</span></div>
+						</div>
+					</div>
+					<div class="sm-phase">
+						<div class="sm-phase-hdr" onclick="togglePhase(4)"><span>Resolución</span><span class="ph-arrow">▼</span></div>
+						<div class="sm-nodes">
+							<div class="sm-node" onclick="showPreview('deliberacion')"><span class="sm-dot">○</span><span>Deliberación y dictado del Au…</span></div>
+							<div class="sm-node" onclick="showPreview('auto_autoriza')"><span class="sm-dot">○</span><span>Auto autorizando el consentim…</span></div>
+							<div class="sm-node" onclick="showPreview('auto_condiciona')"><span class="sm-dot">○</span><span>Auto con autorización condici…</span></div>
+							<div class="sm-node" onclick="showPreview('auto_deniega')"><span class="sm-dot">○</span><span>Auto denegando la autorizacio…</span></div>
+						</div>
+					</div>
+					<div class="sm-phase">
+						<div class="sm-phase-hdr" onclick="togglePhase(5)"><span>Recursos</span><span class="ph-arrow">▼</span></div>
+						<div class="sm-nodes">
+							<div class="sm-node" onclick="showPreview('apelacion_mf')"><span class="sm-dot">○</span><span>Recurso de apelación del Mini…</span></div>
+							<div class="sm-node" onclick="showPreview('apelacion_rep')"><span class="sm-dot">○</span><span>Recurso de apelación del repr…</span></div>
+						</div>
+					</div>
+					<div class="sm-phase">
+						<div class="sm-phase-hdr" onclick="togglePhase(6)"><span>Cierre</span><span class="ph-arrow">▼</span></div>
+						<div class="sm-nodes">
+							<div class="sm-node" onclick="showPreview('notificacion_auto')"><span class="sm-dot">○</span><span>Notificación del Auto firme y…</span></div>
+							<div class="sm-node" onclick="showPreview('revocacion')"><span class="sm-dot">○</span><span>Revocación del consentimiento…</span></div>
+							<div class="sm-node" onclick="showPreview('fin_exitoso')"><span class="sm-dot">○</span><span>Procedimiento concluido: auto…</span></div>
+							<div class="sm-node" onclick="showPreview('fin_denegacion')"><span class="sm-dot">○</span><span>Procedimiento concluido: auto…</span></div>
+							<div class="sm-node" onclick="showPreview('fin_denegacion_ap')"><span class="sm-dot">○</span><span>AP revoca la autorización: de…</span></div>
+						</div>
+					</div>
+					<div class="sb-foot">
+						<div class="sb-foot-title">Marco normativo</div>
+						<div class="sb-foot-item">Arts. 59-60 LJV 15/2015</div>
+						<div class="sb-foot-item">LO 1/1982 (honor, intimidad, imagen)</div>
+						<div class="sb-foot-item">Ley 8/2021 (discapacidad)</div>
+						<div class="sb-foot-item">LOPDGDD LO 3/2018</div>
+						<div class="sb-foot-item">RGPD 2016/679</div>
+					</div>
+				</div>
+				<div id="sb-journey" style="display:none">
+					<div class="pi current">
+						<div class="pi-title">Recepción y examen inicial de la solicitud</div>
+					</div>
+					<div class="sb-foot">
+						<div class="sb-foot-title">Marco normativo</div>
+						<div class="sb-foot-item">Arts. 59-60 LJV</div>
+						<div class="sb-foot-item">LO 1/1982</div>
+						<div class="sb-foot-item">Ley 8/2021</div>
+						<div class="sb-foot-item">LOPDGDD LO 3/2018</div>
+					</div>
+				</div>
+			</nav>
+			<main id="content">
+				<div class="card">
+					<div class="c-hdr">
+						<div class="c-hdr-top"><span class="act-badge act-laj">LAJ</span></div>
+						<div class="c-title">Recepción y examen inicial de la solicitud</div>
+						<div class="step-num">Paso 1 de este recorrido · Fase 1: Iniciación</div>
+					</div>
+					<div class="c-body">
+						<div class="blk-i">El procedimiento de jurisdicción voluntaria del art. 60 LJV se inicia a instancia de parte, nunca de oficio. Corresponde al Letrado de la Administración de Justicia (LAJ) examinar la solicitud y verificar que reúne los requisitos formales y documentales mínimos antes de darle curso.</div>
+						<div class="blk-cl">
+							<div class="blk-cl-title">Documentación preceptiva (art. 60.1 LJV)</div>
+							<ul>
+								<li>Solicitud escrita identificando al solicitante y su condición de representante legal</li>
+								<li>Identificación del menor o persona con discapacidad cuyo interés se protege</li>
+								<li>Descripción detallada de la intromisión proyectada: tipo, soporte o medio, finalidad, duración, ámbito territorial y, si procede, contraprestación económica</li>
+								<li>Documento acreditativo de la oposición formal del Ministerio Fiscal (presupuesto habilitante)</li>
+								<li>Título habilitante de la representación legal: libro de familia, resolución judicial de tutela o curatela, escritura de poderes preventivos u otro título</li>
+							</ul>
+						</div>
+						<div class="blk-n">ℹ La postulación no es preceptiva: el representante legal puede actuar personalmente sin necesidad de Abogado ni Procurador (art. 3 LJV; art. 59.4 LJV a contrario).</div>
+						<div class="blk-l">📛 Arts. 59.3 y 60.1 LJV; art. 3 LO 1/1982; art. 3 LJV (postulación)</div>
+					</div>
+					<div class="dec-area">
+						<div class="dec-q">La solicitud incluye toda la documentación preceptiva y es formalmente correcta?</div>
+						<div class="dec-opts">
+							<button class="dec-btn ok" onclick="goTo('competencia','Documentación completa')"><span class="dec-letter">A</span><span>Sí — documentación completa, solicitud formalmente correcta</span></button>
+							<button class="dec-btn bad" onclick="goTo('subsanacion','Defectos formales')"><span class="dec-letter">B</span><span>No — faltan documentos o existen defectos formales subsanables</span></button>
+						</div>
+					</div>
+					<div class="c-nav">
+						<button class="btn-back" onclick="goBack()" disabled="">← Volver</button>
+					</div>
+				</div>
+			</main>
+		</div>
+		<div id="mapa-overlay" style="display:none"></div>
+	</div>
+	<div id="preview-overlay" onclick="maybeClosePreview(event)">
+		<div id="preview-box">
+			<div id="preview-content"></div>
+		</div>
+	</div>
+	<script>
+	const PHASES = ['Iniciación', 'Admisión a trámite', 'Preparación', 'Comparecencia', 'Resolución', 'Recursos', 'Cierre'];
+	const ACTOR_LABELS = {
+		laj: 'LAJ',
+		juez: 'Juez',
+		ambos: 'LAJ + Juez'
+	};
+	const ACTOR_CLASS = {
+		laj: 'act-laj',
+		juez: 'act-juez',
+		ambos: 'act-ambos'
+	};
+	const END_ICONS = {
+		success: '&#9989;',
+		error: '&#10060;',
+		warning: '&#9888;&#65039;',
+		neutral: '&#8505;&#65039;'
+	};
+	const END_TITLES = {
+		success: 'Autorización firme concedida',
+		error: 'Procedimiento concluido: denegación',
+		warning: 'Consentimiento revocado',
+		neutral: 'Inhibición acordada'
+	};
+	const STEPS = {
+		// ============================
+		// FASE 0 — INICIACIÓN
+		// ============================
+		'inicio': {
+			ph: 0,
+			t: 'Recepción y examen inicial de la solicitud',
+			ac: 'laj',
+			c: [
+				['i', 'El procedimiento de jurisdicción voluntaria del art. 60 LJV se inicia a instancia de parte, nunca de oficio. Corresponde al Letrado de la Administración de Justicia (LAJ) examinar la solicitud y verificar que reúne los requisitos formales y documentales mínimos antes de darle curso.'],
+				['cl', 'Documentación preceptiva (art. 60.1 LJV)', ['Solicitud escrita identificando al solicitante y su condición de representante legal', 'Identificación del menor o persona con discapacidad cuyo interés se protege', 'Descripción detallada de la intromisión proyectada: tipo, soporte o medio, finalidad, duración, ámbito territorial y, si procede, contraprestación económica', 'Documento acreditativo de la oposición formal del Ministerio Fiscal (presupuesto habilitante)', 'Título habilitante de la representación legal: libro de familia, resolución judicial de tutela o curatela, escritura de poderes preventivos u otro título']],
+				['n', 'La postulación no es preceptiva: el representante legal puede actuar personalmente sin necesidad de Abogado ni Procurador (art. 3 LJV; art. 59.4 LJV a contrario).'],
+				['l', 'Arts. 59.3 y 60.1 LJV; art. 3 LO 1/1982; art. 3 LJV (postulación)']
+			],
+			q: 'La solicitud incluye toda la documentación preceptiva y es formalmente correcta?',
+			opts: [{
+				t: 'Sí — documentación completa, solicitud formalmente correcta',
+				l: 'Documentación completa',
+				n: 'competencia'
+			}, {
+				t: 'No — faltan documentos o existen defectos formales subsanables',
+				l: 'Defectos formales',
+				n: 'subsanacion'
+			}]
+		},
+		'subsanacion': {
+			ph: 0,
+			t: 'Requerimiento de subsanación',
+			ac: 'laj',
+			c: [
+				['i', 'El LAJ requiere al solicitante para que corrija los defectos u omisiones detectados, concediéndole un plazo razonable (aplicación supletoria del art. 231 LEC).'],
+				['w', 'El defecto más frecuente y grave es la ausencia del documento acreditativo de la oposición del Ministerio Fiscal. Sin ese documento el expediente carece de presupuesto habilitante y no puede admitirse a trámite.'],
+				['d', 'Plazo de subsanación: el LAJ fija un plazo razonable según la naturaleza del defecto. En la práctica suelen concederse entre 5 y 10 días hábiles.'],
+				['n', 'El LAJ puede requerir subsanación en una sola vez de todos los defectos advertidos para no dilatar innecesariamente el procedimiento.'],
+				['l', 'Art. 231 LEC (supletorio vía art. 8 LJV); art. 18 LJV; art. 60.1 LJV']
+			],
+			q: 'El solicitante subsana los defectos en el plazo concedido?',
+			opts: [{
+				t: 'Sí — subsana todos los defectos correctamente en plazo',
+				l: 'Subsanación correcta',
+				n: 'competencia'
+			}, {
+				t: 'No — no subsana o lo hace de forma insuficiente',
+				l: 'Sin subsanación',
+				n: 'fin_archivo'
+			}]
+		},
+		'fin_archivo': {
+			ph: 0,
+			t: 'Archivo por falta de subsanación',
+			ac: 'laj',
+			end: 'error',
+			c: [
+				['i', 'Ante la falta de subsanación en plazo, el LAJ dicta decreto acordando el archivo del expediente por defectos insubsanados o ausencia del presupuesto habilitante.'],
+				['n', 'El solicitante podrá presentar una nueva solicitud una vez subsanados los defectos, siempre que el presupuesto habilitante (oposición del MF) siga vigente.'],
+				['l', 'Art. 231 LEC; art. 18 LJV']
+			]
+		},
+		// ============================
+		// FASE 1 — ADMISIÓN A TRÁMITE
+		// ============================
+		'competencia': {
+			ph: 1,
+			t: 'Verificación de la competencia territorial',
+			ac: 'laj',
+			c: [
+				['i', 'El LAJ —y en su caso el Juez— examina si el juzgado es territorialmente competente para conocer del expediente conforme al criterio del domicilio del sujeto protegido.'],
+				['n', 'Fuero principal: domicilio del menor o persona con discapacidad (art. 59.2 LJV). Fuero subsidiario: residencia habitual si no consta domicilio.'],
+				['n', 'En partidos judiciales con Juzgados especializados en Familia (art. 98 LOPJ) pueden ser estos los competentes cuando la intromisión esté vinculada a una situación de crisis familiar.'],
+				['l', 'Art. 59.2 LJV; art. 2.1 LJV; arts. 63-65 LEC (supletorio)']
+			],
+			q: 'Este juzgado es territorialmente competente?',
+			opts: [{
+				t: 'Sí — el domicilio o residencia habitual del protegido corresponde a este partido judicial',
+				l: 'Competente',
+				n: 'presupuesto'
+			}, {
+				t: 'No — el domicilio corresponde a otro partido judicial',
+				l: 'Incompetente',
+				n: 'inhibicion'
+			}]
+		},
+		'inhibicion': {
+			ph: 1,
+			t: 'Auto de inhibición y remisión al juzgado competente',
+			ac: 'juez',
+			end: 'neutral',
+			c: [
+				['i', 'El Juez dicta Auto inhibiéndose y ordenando la remisión de las actuaciones al juzgado territorialmente competente según el domicilio o residencia habitual del menor o persona con discapacidad.'],
+				['n', 'Si el solicitante discrepa de la inhibición puede plantear declinatoria o conflicto de competencia ante el órgano superior común (arts. 63-65 LEC supletoriamente).'],
+				['l', 'Arts. 63-65 LEC (supletorio vía art. 8 LJV); art. 59.2 LJV']
+			]
+		},
+		'presupuesto': {
+			ph: 1,
+			t: 'Verificación del presupuesto habilitante',
+			ac: 'juez',
+			c: [
+				['i', 'El Juez examina si concurren los dos requisitos acumulativos del Capítulo VII: (1) que el representante legal haya prestado su consentimiento a la intromisión, y (2) que el Ministerio Fiscal se haya opuesto formalmente a dicho consentimiento.'],
+				['w', 'Sin oposición formal del MF no existe presupuesto habilitante: el consentimiento del representante legal es por sí solo suficiente para legitimar la intromisión (art. 3 LO 1/1982) y el expediente carece de objeto.'],
+				['n', 'La oposición del MF debe ser anterior a la solicitud y estar motivada en la lesión al interés superior del menor o a la voluntad de la persona con discapacidad (art. 3.7 EOMF, LO 50/1981).'],
+				['l', 'Arts. 59.1 y 60.1 LJV; art. 3 LO 1/1982; art. 3.7 EOMF (LO 50/1981)']
+			],
+			q: 'Consta en autos la oposición formal y motivada del Ministerio Fiscal al consentimiento del representante legal?',
+			opts: [{
+				t: 'Sí — el MF ha formalizado su oposición con anterioridad a la solicitud',
+				l: 'Presupuesto concurrente',
+				n: 'admision'
+			}, {
+				t: 'No — no hay oposición del MF o no está debidamente acreditada',
+				l: 'Presupuesto ausente',
+				n: 'inadmision'
+			}]
+		},
+		'inadmision': {
+			ph: 1,
+			t: 'Auto de inadmisión por falta de presupuesto habilitante',
+			ac: 'juez',
+			end: 'error',
+			c: [
+				['i', 'El Juez dicta Auto inadmitiendo el expediente a trámite por no concurrir el presupuesto habilitante del Capítulo VII (ausencia de oposición del Ministerio Fiscal o del consentimiento del representante legal).'],
+				['n', 'El Auto de inadmisión es recurrible en apelación ante la Audiencia Provincial (art. 20 LJV en relación con el art. 455 LEC).'],
+				['n', 'Si el MF no había formalizado oposición, el consentimiento del representante legal basta para legitimar la intromisión (art. 3 LO 1/1982) sin necesidad de expediente judicial.'],
+				['l', 'Art. 60.1 LJV; art. 3 LO 1/1982; art. 20 LJV']
+			]
+		},
+		'admision': {
+			ph: 1,
+			t: 'Admisión a trámite y señal de comparecencia',
+			ac: 'laj',
+			c: [
+				['i', 'Verificado el presupuesto habilitante, el LAJ dicta decreto admitiendo el expediente a trámite y señala el día y hora para la celebración de la comparecencia.'],
+				['n', 'No existe un plazo legal específico para el señalamiento. Se aplican los criterios generales de ordenación del juzgado, teniendo en cuenta la urgencia cuando sea relevante (contratos próximos a formalizarse, publicaciones inminentes).'],
+				['d', 'El señalamiento debe realizarse con suficiente antelación para permitir la correcta citación de todos los interesados preceptivos y la preparación del acto.'],
+				['l', 'Arts. 16, 17 y 60.2 LJV']
+			],
+			nx: 'citaciones'
+		},
+		// ============================
+		// FASE 2 — PREPARACIÓN
+		// ============================
+		'citaciones': {
+			ph: 2,
+			t: 'Práctica de citaciones para la comparecencia',
+			ac: 'laj',
+			c: [
+				['i', 'El LAJ practica las citaciones para la comparecencia. La ley distingue entre citaciones preceptivas (obligatorias en todo caso) y facultativas (a criterio del Juez según las circunstancias del expediente).'],
+				['cl', 'Citaciones preceptivas (art. 60.2 LJV)', ['Ministerio Fiscal: como promotor de la oposición y garante institucional del interés del protegido', 'Representante legal: como parte promotora del expediente']],
+				['cl', 'Citaciones facultativas (acuerda el Juez)', ['Menor o persona con discapacidad — obligatoria si el menor tiene 12 años o más o madurez suficiente (art. 9 LOPJM)', 'El otro progenitor si no es el solicitante (art. 156 CC: la patria potestad se ejerce conjuntamente)', 'Empresa, medio de comunicación o tercero titular del proyecto de difusión', 'Entidades públicas de protección de menores si el expediente tiene relevancia supraindividual', 'Defensor judicial ad hoc si se aprecia conflicto de intereses (art. 163 CC)']],
+				['l', 'Art. 60.2 LJV; art. 9 LOPJM; art. 156 CC; art. 163 CC']
+			],
+			q: 'Se ha solicitado o el Juez acuerda de oficio la adopción de medidas cautelares?',
+			opts: [{
+				t: 'Sí — se solicitan o acuerdan de oficio medidas cautelares urgentes',
+				l: 'Con medidas cautelares',
+				n: 'cautelares'
+			}, {
+				t: 'No — no proceden medidas cautelares en este momento',
+				l: 'Sin cautelares',
+				n: 'comparecencia'
+			}]
+		},
+		'cautelares': {
+			ph: 2,
+			t: 'Resolución sobre medidas cautelares',
+			ac: 'juez',
+			c: [
+				['i', 'El Juez resuelve sobre las medidas cautelares solicitadas o acordadas de oficio para evitar que la intromisión se produzca o continúe antes de que recaiga resolución definitiva.'],
+				['cl', 'Medidas cautelares posibles', ['Suspensión o prohibición de difusión de las imágenes o contenidos proyectados durante la tramitación', 'Retirada cautelar de contenidos ya difundidos al amparo de un consentimiento impugnado', 'Orden de no difusión dirigida a plataformas digitales o medios de comunicación', 'Designación de defensor judicial ad hoc si el interés del menor puede estar en conflicto con el del representante legal', 'Cualquier otra medida de protección del menor al amparo del art. 158 CC']],
+				['n', 'En supuestos de extrema urgencia (publicación inminente en medios de gran difusión, emisión en directo), el Juez puede adoptar medidas inaudita parte antes de la comparecencia.'],
+				['l', 'Art. 158 CC; art. 9 LO 1/1982; arts. 721 y ss. LEC (supletorio); art. 60.2 LJV']
+			],
+			nx: 'comparecencia'
+		},
+		// ============================
+		// FASE 3 — COMPARECENCIA
+		// ============================
+		'comparecencia': {
+			ph: 3,
+			t: 'Celebración del acto de la comparecencia',
+			ac: 'juez',
+			c: [
+				['i', 'La comparecencia es el acto oral central del expediente (art. 18 LJV). En ella se oye a los interesados, se propone y practica la prueba, y se formulan alegaciones finales. El principio de inmediación impone que sea el mismo Juez que resolverá quien dirija el acto.'],
+				['cl', 'Orden de la comparecencia', ['Verificación de la asistencia de las partes citadas preceptivamente', 'Exposición del objeto del expediente por el solicitante', 'Alegaciones del Ministerio Fiscal sobre los motivos de su oposición al consentimiento', 'Alegaciones de los demás interesados comparecidos', 'Proposición de medios de prueba y decisión del Juez sobre su admisión', 'Práctica de la prueba admitida (documental, pericial, interrogatorio)', 'Conclusiones o alegaciones finales de las partes']],
+				['n', 'Si alguna de las partes preceptivas no comparece sin causa justificada, el acto puede celebrarse igualmente con los comparecidos.'],
+				['l', 'Art. 18 LJV; arts. 60.2 y 60.3 LJV']
+			],
+			q: 'Debe practicarse audiencia al menor o a la persona con discapacidad en el acto?',
+			opts: [{
+				t: 'Sí — el menor tiene 12 años o más, o el Juez aprecia suficiente madurez; o la persona con discapacidad debe ser escuchada',
+				l: 'Con audiencia',
+				n: 'audiencia'
+			}, {
+				t: 'No — el menor tiene menos de 12 años sin madurez suficiente apreciada, o el Juez decide que no procede',
+				l: 'Sin audiencia',
+				n: 'prueba'
+			}]
+		},
+		'audiencia': {
+			ph: 3,
+			t: 'Audiencia al menor o persona con discapacidad',
+			ac: 'juez',
+			c: [
+				['i', 'El Juez escucha personalmente al menor o a la persona con discapacidad en condiciones adecuadas para garantizar la libre expresión de su voluntad, deseos y preferencias.'],
+				['cl', 'Garantías de la audiencia', ['Puede practicarse sin presencia de los progenitores si su presencia pudiera coartar la libre expresión del menor', 'Con apoyo de psicólogo o trabajador social del equipo técnico si la situación lo requiere', 'Lenguaje y entorno adaptados a la edad y condición del menor', 'Para personas con discapacidad: respeto de su voluntad, deseos y preferencias (arts. 12 CDPD y 249 CC)']],
+				['w', 'La omisión de la audiencia al menor de 12 años o más cuando era obligatoria puede constituir motivo de nulidad de actuaciones por infracción del art. 9 LOPJM y del art. 24 CE.'],
+				['n', 'Si el Juez aprecia conflicto entre la voluntad del curador representativo y la de la persona con discapacidad, puede nombrar defensor judicial ad hoc (art. 295 CC) antes o durante el acto.'],
+				['l', 'Art. 9 LOPJM; arts. 12 CDN y 12 CDPD; arts. 249 y 268 CC (Ley 8/2021); art. 295 CC']
+			],
+			nx: 'prueba'
+		},
+		'prueba': {
+			ph: 3,
+			t: 'Práctica de prueba y alegaciones finales',
+			ac: 'juez',
+			c: [
+				['i', 'Se practica la prueba admitida y las partes formulan sus alegaciones finales antes de que el Juez delibere y dicte resolución. Cualquier medio de prueba admitido en la LEC es aplicable (art. 18 LJV).'],
+				['cl', 'Medios de prueba más habituales en estos expedientes', ['Documental: proyecto de consentimiento, contratos, capturas digitales, publicaciones, metadatos', 'Pericial psicológica o social: valoración del impacto en el menor o persona con discapacidad', 'Interrogatorio de las partes: representante legal, curador y, en su caso, tercero interesado', 'Informe del trabajador social o equipo técnico del juzgado', 'En entorno digital: evidencias sobre audiencia, alcance del medio y usos secundarios previstos']],
+				['n', 'La prueba documental en expedientes digitales debe incluir datos sobre la audiencia o alcance del medio, el contrato o acuerdo de difusión y las condiciones técnicas de acceso al contenido.'],
+				['l', 'Art. 18 LJV; arts. 281 y ss. LEC (supletorio); art. 60.3 LJV']
+			],
+			nx: 'deliberacion'
+		},
+		// ============================
+		// FASE 4 — RESOLUCIÓN
+		// ============================
+		'deliberacion': {
+			ph: 4,
+			t: 'Deliberación y dictado del Auto',
+			ac: 'juez',
+			c: [
+				['i', 'Concluida la comparecencia y practicada la prueba, el Juez delibera y dicta el Auto resolviendo el expediente. La resolución adopta la forma de Auto debidamente motivado (art. 19.1 LJV).'],
+				['d', 'Plazo: al término de la propia comparecencia (regla general, art. 60.3 LJV). Excepción: dentro de los cinco días siguientes si la complejidad del asunto lo justifica.'],
+				['n', 'El Auto debe expresar con claridad los hechos valorados, los criterios jurídicos aplicados —incluido el juicio de proporcionalidad constitucional triple: idoneidad, necesidad y proporcionalidad estricta— y la razón de la decisión.'],
+				['cl', 'Criterios del interés superior del menor a ponderar (art. 2 LOPJM y LO 8/2015)', ['Protección del derecho a la vida y el pleno desarrollo de la personalidad', 'Satisfacción de las necesidades básicas materiales y afectivas del menor', 'Consideración de los deseos, sentimientos y opiniones del menor', 'Irreversibilidad del contenido una vez difundido en internet y riesgo de huella digital permanente', 'Riesgo de uso secundario del contenido para fines no autorizados (IA generativa, redistribución)', 'Ausencia de discriminación y perspectiva de género (especialmente en el caso de niñas y adolescentes)']],
+				['l', 'Art. 60.3 LJV; art. 2 LOPJM (LO 8/2015); arts. 18.1, 20.4, 24 y 120.3 CE; art. 84 LOPDGDD']
+			],
+			q: 'Cuál es el sentido de la resolución del Juez?',
+			opts: [{
+				t: 'Autorización plena: el Juez autoriza el consentimiento en los términos exactos del proyecto',
+				l: 'Autorización plena',
+				n: 'auto_autoriza'
+			}, {
+				t: 'Autorización condicionada: autoriza pero con limitaciones, condiciones o modificaciones',
+				l: 'Autorización condicionada',
+				n: 'auto_condiciona'
+			}, {
+				t: 'Denegación: el Juez deniega la autorización por incompatibilidad con el interés superior',
+				l: 'Denegación',
+				n: 'auto_deniega'
+			}]
+		},
+		'auto_autoriza': {
+			ph: 4,
+			t: 'Auto autorizando el consentimiento (autorización plena)',
+			ac: 'juez',
+			c: [
+				['i', 'El Juez dicta Auto autorizando el consentimiento del representante legal a la intromisión proyectada en los términos exactos del proyecto presentado.'],
+				['n', 'La autorización judicial convierte en legítima la intromisión proyectada (art. 2.1 LO 1/1982). El representante legal puede ahora otorgar válidamente el consentimiento al tercero.'],
+				['w', 'Los efectos del Auto quedan suspendidos automáticamente si cualquiera de las partes legitimadas interpone recurso de apelación (art. 60.4 LJV: efectos suspensivos del recurso). La intromisión no puede producirse hasta la resolución definitiva.'],
+				['l', 'Art. 60.3 LJV; art. 2.1 LO 1/1982; art. 60.4 LJV (efectos suspensivos)']
+			],
+			q: 'Se interpone recurso de apelación contra este Auto?',
+			opts: [{
+				t: 'Sí — el Ministerio Fiscal recurre en apelación pese a la autorización',
+				l: 'Recurso del MF',
+				n: 'apelacion_mf'
+			}, {
+				t: 'No — el Auto deviene firme sin recurso',
+				l: 'Auto firme',
+				n: 'notificacion_auto'
+			}]
+		},
+		'auto_condiciona': {
+			ph: 4,
+			t: 'Auto con autorización condicionada',
+			ac: 'juez',
+			c: [
+				['i', 'El Juez dicta Auto autorizando el consentimiento pero con condiciones, limitaciones o modificaciones sobre el proyecto original que permiten compatibilizar la intromisión con el interés superior del menor.'],
+				['cl', 'Ejemplos de condiciones que puede imponer el Juez', ['Reducción del plazo máximo de difusión del contenido', 'Limitación del soporte o medio autorizado (prohibición de redes sociales, solo prensa escrita, etc.)', 'Exclusión de datos identificativos directos del menor (rostro, nombre, domicilio)', 'Exigencia de contraprestación económica en favor del menor con depósito judicial', 'Condiciones técnicas de edición (desenfoque, ángulo, texto sobreimpreso)', 'Prohibición de difusión en plataformas accesibles a menores de determinadas edades', 'Obligación de eliminación del contenido transcurrido el plazo autorizado']],
+				['w', 'Los efectos quedan suspendidos si se interpone recurso de apelación (art. 60.4 LJV).'],
+				['l', 'Art. 60.3 LJV; art. 84 LOPDGDD; art. 2 LOPJM']
+			],
+			q: 'Se interpone recurso de apelación contra el Auto condicionado?',
+			opts: [{
+				t: 'Sí — el representante legal recurre (considera las condiciones excesivas o restrictivas)',
+				l: 'Recurso del representante',
+				n: 'apelacion_rep'
+			}, {
+				t: 'Sí — el MF recurre (considera las condiciones insuficientes para proteger al menor)',
+				l: 'Recurso del MF',
+				n: 'apelacion_mf'
+			}, {
+				t: 'No — el Auto condicionado deviene firme',
+				l: 'Auto firme',
+				n: 'notificacion_auto'
+			}]
+		},
+		'auto_deniega': {
+			ph: 4,
+			t: 'Auto denegando la autorización del consentimiento',
+			ac: 'juez',
+			c: [
+				['i', 'El Juez dicta Auto denegando la autorización del consentimiento por ser la intromisión proyectada incompatible con el interés superior del menor o con la voluntad de la persona con discapacidad, con independencia del consentimiento del representante legal.'],
+				['n', 'La denegación no impide que los representantes legales reformulen el proyecto con modificaciones sustanciales que eliminen los obstáculos apreciados y presenten una nueva solicitud.'],
+				['w', 'Los efectos del Auto quedan suspendidos si el representante legal interpone recurso de apelación (art. 60.4 LJV).'],
+				['l', 'Art. 60.3 LJV; art. 2 LOPJM; arts. 18.1 y 20.4 CE']
+			],
+			q: 'Se interpone recurso de apelación contra el Auto denegatorio?',
+			opts: [{
+				t: 'Sí — el representante legal recurre ante la Audiencia Provincial',
+				l: 'Recurso del representante',
+				n: 'apelacion_rep'
+			}, {
+				t: 'No — el Auto denegatorio deviene firme',
+				l: 'Auto firme',
+				n: 'fin_denegacion'
+			}]
+		},
+		// ============================
+		// FASE 5 — RECURSOS
+		// ============================
+		'apelacion_mf': {
+			ph: 5,
+			t: 'Recurso de apelación del Ministerio Fiscal',
+			ac: 'ambos',
+			c: [
+				['i', 'El Ministerio Fiscal interpone recurso de apelación ante la Audiencia Provincial contra el Auto que autorizó (plena o condicionadamente) el consentimiento a la intromisión.'],
+				['d', 'Plazo de interposición: 20 días desde la notificación del Auto (art. 458.1 LEC). Improrrogable.'],
+				['w', 'La interposición del recurso suspende automáticamente los efectos del Auto (art. 60.4 LJV). La intromisión no puede producirse hasta la resolución definitiva de la Audiencia Provincial.'],
+				['n', 'La Audiencia Provincial resuelve el recurso con tramitación preferente sobre asuntos ordinarios, atendiendo a la urgencia de los plazos contractuales y a la importancia del bien jurídico en juego.'],
+				['n', 'La AP puede confirmar la autorización, revocarla totalmente, o modificar las condiciones impuestas en primera instancia.'],
+				['l', 'Art. 60.4 LJV; arts. 455-467 LEC; art. 82.2 LOPJ']
+			],
+			q: 'Cuál es el resultado del recurso resuelto por la Audiencia Provincial?',
+			opts: [{
+				t: 'La AP desestima el recurso del MF y confirma la autorización (plena o condicionada)',
+				l: 'AP confirma autorización',
+				n: 'notificacion_auto'
+			}, {
+				t: 'La AP estima el recurso del MF y revoca la autorización',
+				l: 'AP revoca autorización',
+				n: 'fin_denegacion_ap'
+			}]
+		},
+		'apelacion_rep': {
+			ph: 5,
+			t: 'Recurso de apelación del representante legal',
+			ac: 'ambos',
+			c: [
+				['i', 'El representante legal interpone recurso de apelación ante la Audiencia Provincial contra el Auto que denegó la autorización o la condicionó de forma excesiva.'],
+				['d', 'Plazo de interposición: 20 días desde la notificación del Auto (art. 458.1 LEC). Improrrogable.'],
+				['n', 'Los efectos del Auto quedan suspendidos durante la tramitación del recurso (art. 60.4 LJV).'],
+				['n', 'La AP puede confirmar el Auto denegatorio, revocar la denegación y autorizar el consentimiento, o modificar las condiciones de la autorización condicionada.'],
+				['l', 'Art. 60.4 LJV; arts. 455-467 LEC; art. 82.2 LOPJ']
+			],
+			q: 'Cuál es el resultado del recurso resuelto por la Audiencia Provincial?',
+			opts: [{
+				t: 'La AP estima el recurso y autoriza el consentimiento (plena o condicionadamente)',
+				l: 'AP autoriza',
+				n: 'notificacion_auto'
+			}, {
+				t: 'La AP desestima el recurso y confirma la denegación o las condiciones',
+				l: 'AP confirma denegación',
+				n: 'fin_denegacion'
+			}]
+		},
+		// ============================
+		// FASE 6 — CIERRE
+		// ============================
+		'notificacion_auto': {
+			ph: 6,
+			t: 'Notificación del Auto firme y efectos de la autorización',
+			ac: 'laj',
+			c: [
+				['i', 'El LAJ notifica el Auto firme a todas las partes. Desde la firmeza, el representante legal puede otorgar válidamente el consentimiento a la intromisión autorizada en los términos del Auto.'],
+				['n', 'La autorización tiene efectos ex nunc desde la firmeza. No cubre intromisiones anteriores a la resolución judicial ni usos distintos de los expresamente autorizados.'],
+				['n', 'El consentimiento otorgado al amparo del Auto firme es revocable en cualquier momento (art. 60.5 LJV y art. 2.3 LO 1/1982), aunque la revocación puede generar obligación de indemnizar a terceros que actuaron de buena fe.'],
+				['l', 'Arts. 60.3 y 60.5 LJV; art. 2.3 LO 1/1982; art. 208 LEC (firmeza)']
+			],
+			q: 'Los representantes legales desean revocar el consentimiento judicialmente autorizado?',
+			opts: [{
+				t: 'Sí — instan la revocación del consentimiento ante el Juzgado (art. 60.5 LJV)',
+				l: 'Revocación',
+				n: 'revocacion'
+			}, {
+				t: 'No — el consentimiento se mantiene y el procedimiento concluye exitosamente',
+				l: 'Sin revocación',
+				n: 'fin_exitoso'
+			}]
+		},
+		'revocacion': {
+			ph: 6,
+			t: 'Revocación del consentimiento (art. 60.5 LJV)',
+			ac: 'juez',
+			end: 'warning',
+			c: [
+				['i', 'Los representantes legales comunican al Juzgado su voluntad de revocar el consentimiento judicialmente autorizado. El Juez dicta Auto dejando sin efecto la autorización concedida.'],
+				['n', 'La revocación produce efectos ex nunc: desde la fecha del Auto de revocación. No convierte en ilegítimas las intromisiones ya consumadas al amparo de la autorización previa (art. 2.3 LO 1/1982).'],
+				['w', 'La revocación puede generar obligación de indemnizar a terceros que hubieran actuado de buena fe confiando en el consentimiento válidamente otorgado (art. 1.4 LO 1/1982; arts. 1101 y ss. CC).'],
+				['n', 'En actividades de kidfluencer: la revocación puede poner fin a contratos de patrocinio con posibles reclamaciones por incumplimiento. El art. 26 LOPJM (mod. LOPIVI) protege el interés del menor frente al interés económico.'],
+				['n', 'La revocación del art. 60.5 LJV y el ejercicio del derecho al olvido (art. 94 LOPDGDD; art. 17 RGPD) son mecanismos independientes pero complementarios que pueden ejercerse de forma coordinada.'],
+				['l', 'Art. 60.5 LJV; art. 2.3 LO 1/1982; art. 94 LOPDGDD; art. 17 RGPD; art. 26 LOPJM (LOPIVI)']
+			]
+		},
+		'fin_exitoso': {
+			ph: 6,
+			t: 'Procedimiento concluido: autorización firme',
+			ac: 'laj',
+			end: 'success',
+			c: [
+				['i', 'El expediente concluye con la autorización judicial firme del consentimiento a la intromisión proyectada. El representante legal puede otorgar válidamente el consentimiento al tercero en los términos del Auto.'],
+				['n', 'La autorización permanece revocable en cualquier momento por iniciativa exclusiva del representante legal (art. 60.5 LJV).'],
+				['n', 'Si la intromisión implica tratamiento de datos personales, recuérdese la aplicación concurrente del RGPD y la LOPDGDD: el consentimiento a la intromisión no es equivalente al consentimiento al tratamiento de datos.'],
+				['l', 'Arts. 59-60 LJV; art. 2 LO 1/1982; RGPD 2016/679; LOPDGDD (LO 3/2018)']
+			]
+		},
+		'fin_denegacion': {
+			ph: 6,
+			t: 'Procedimiento concluido: autorización denegada',
+			ac: 'juez',
+			end: 'error',
+			c: [
+				['i', 'El expediente concluye con la denegación firme de la autorización. La intromisión proyectada no puede realizarse válidamente: el consentimiento del representante legal carece de eficacia legítima.'],
+				['n', 'El representante legal puede reformular el proyecto con modificaciones sustanciales que eliminen los obstáculos apreciados por el órgano judicial y presentar una nueva solicitud.'],
+				['n', 'Vías de tutela complementarias: art. 158 CC (medidas de protección del menor), acción contenciosa (art. 9 LO 1/1982), vía administrativa ante la AEPD si hay tratamiento de datos.'],
+				['l', 'Arts. 59-60 LJV; art. 2 LOPJM; art. 158 CC; art. 9 LO 1/1982']
+			]
+		},
+		'fin_denegacion_ap': {
+			ph: 6,
+			t: 'AP revoca la autorización: denegación definitiva',
+			ac: 'juez',
+			end: 'error',
+			c: [
+				['i', 'La Audiencia Provincial ha estimado el recurso del Ministerio Fiscal y ha revocado la autorización concedida en primera instancia. La intromisión proyectada no puede realizarse.'],
+				['n', 'Contra la resolución de la Audiencia Provincial en este ámbito de la jurisdicción voluntaria no cabe recurso ordinario, salvo recurso de casación en los supuestos del art. 477 LEC (interés casacional).'],
+				['n', 'El representante legal puede replantear el proyecto con modificaciones sustanciales eliminando las razones de oposición del MF.'],
+				['l', 'Art. 60.4 LJV; arts. 477 y ss. LEC; art. 2 LOPJM']
+			]
+		}
+	}; // end STEPS
+	// ─────────────────────────────────────
+	// STATE
+	// ─────────────────────────────────────
+	let cur = 'inicio';
+	let hist = []; // [{s: originKey, next: destKey, c: choiceLabel}]
+	let activeSbTab = 'map';
+	let mapaOn = false;
+	let phaseCollapsed = {};
+	// ─────────────────────────────────────
+	// NAVIGATION
+	// ─────────────────────────────────────
+	function goTo(stepId, choiceLabel) {
+		hist.push({
+			s: cur,
+			next: stepId,
+			c: choiceLabel || ''
+		});
+		cur = stepId;
+		if(choiceLabel) sbTab('journey');
+		render();
+	}
+
+	function goBack() {
+		if(hist.length === 0) return;
+		var e = hist.pop();
+		cur = e.s;
+		render();
+	}
+
+	function goBackTo(idx) {
+		cur = hist[idx].s;
+		hist = hist.slice(0, idx);
+		render();
+	}
+
+	function restart() {
+		cur = 'inicio';
+		hist = [];
+		sbTab('map');
+		if(mapaOn) {
+			mapaOn = false;
+			document.getElementById('layout').style.display = 'flex';
+			document.getElementById('mapa-overlay').style.display = 'none';
+		}
+		render();
+	}
+	// Jump to step for direct access from sidebar (without altering journey history)
+	function jumpTo(stepId) {
+		showPreview(stepId);
+	}
+	// Navigate to a step directly, setting it as current without adding to history
+	// This fulfills the requirement that all steps be individually accessible
+	function goDirectTo(stepId) {
+		if(stepId === cur) {
+			closePreview();
+			return;
+		}
+		hist.push({
+			s: cur,
+			next: stepId,
+			c: '(acceso directo)'
+		});
+		cur = stepId;
+		sbTab('journey');
+		closePreview();
+		render();
+	}
+	// ─────────────────────────────────────
+	// MAPA OVERLAY
+	// ─────────────────────────────────────
+	function toggleMapa() {
+		mapaOn = !mapaOn;
+		document.getElementById('layout').style.display = mapaOn ? 'none' : 'flex';
+		document.getElementById('mapa-overlay').style.display = mapaOn ? 'block' : 'none';
+		if(mapaOn) renderMapa();
+	}
+	// ─────────────────────────────────────
+	// SIDEBAR TABS
+	// ─────────────────────────────────────
+	function sbTab(tab) {
+		activeSbTab = tab;
+		document.getElementById('sb-map').style.display = tab === 'map' ? 'block' : 'none';
+		document.getElementById('sb-journey').style.display = tab === 'journey' ? 'block' : 'none';
+		document.querySelectorAll('.sb-tab').forEach(function(t, i) {
+			t.classList.toggle('active', (i === 0 && tab === 'map') || (i === 1 && tab === 'journey'));
+		});
+	}
+	// ─────────────────────────────────────
+	// PREVIEW MODAL
+	// ─────────────────────────────────────
+	function showPreview(stepId) {
+		var s = STEPS[stepId];
+		if(!s) return;
+		var isCurrent = stepId === cur;
+		var html = '<div class="preview-hdr">';
+		html += '<div><span class="act-badge ' + ACTOR_CLASS[s.ac] + '">' + ACTOR_LABELS[s.ac] + '</span>';
+		html += '<div style="font-size:16px;font-weight:700;color:var(--text);margin-top:8px;line-height:1.3">' + esc(s.t) + '</div>';
+		html += '<div style="font-size:11px;color:var(--muted);margin-top:3px">Fase ' + (s.ph + 1) + ': ' + esc(PHASES[s.ph]) + '</div>';
+		html += '</div>';
+		html += '<button class="preview-close" onclick="closePreview()">&#10005; Cerrar</button>';
+		html += '</div>';
+		html += '<div class="preview-body">' + renderBlocks(s.c) + '</div>';
+		html += '<div class="preview-nav-hint">';
+		if(isCurrent) {
+			html += '<span>Este es el paso actual de tu recorrido</span>';
+		} else {
+			html += '<span>Accede directamente a este paso:</span>';
+			html += '<button class="btn-preview-go" onclick="goDirectTo(\'' + escQ(stepId) + '\')">Ir a este paso &#8594;</button>';
+		}
+		html += '</div>';
+		document.getElementById('preview-content').innerHTML = html;
+		document.getElementById('preview-overlay').classList.add('open');
+	}
+
+	function closePreview(e) {
+		document.getElementById('preview-overlay').classList.remove('open');
+	}
+
+	function maybeClosePreview(e) {
+		if(e.target === document.getElementById('preview-overlay')) closePreview();
+	}
+	// ─────────────────────────────────────
+	// RENDER COORDINATOR
+	// ─────────────────────────────────────
+	function render() {
+		renderPbar();
+		renderBreadcrumb();
+		renderSidebarMap();
+		renderSidebarJourney();
+		renderContent();
+		window.scrollTo(0, 0);
+	}
+	// ─────────────────────────────────────
+	// PHASE BAR
+	// ─────────────────────────────────────
+	function renderPbar() {
+		var s = STEPS[cur];
+		var curPh = s ? s.ph : 0;
+		var html = '';
+		PHASES.forEach(function(ph, i) {
+			var cls = i < curPh ? 'done' : (i === curPh ? 'active' : '');
+			html += '<div class="ph-item"><span class="ph-lbl ' + cls + '">' + esc(ph) + '</span></div>';
+			if(i < PHASES.length - 1) html += '<span class="ph-sep">&#8250;</span>';
+		});
+		document.getElementById('pbar').innerHTML = html;
+	}
+	// ─────────────────────────────────────
+	// BREADCRUMB
+	// ─────────────────────────────────────
+	function renderBreadcrumb() {
+		var html = '';
+		hist.forEach(function(entry, i) {
+			var step = STEPS[entry.s];
+			var label = trunc(step ? step.t : entry.s, 26);
+			html += '<button class="bc-item bc-past" onclick="goBackTo(' + i + ')">' + esc(label) + '</button>';
+			html += '<span class="bc-sep">&#8250;</span>';
+		});
+		var curStep = STEPS[cur];
+		html += '<span class="bc-item bc-current">' + esc(trunc(curStep ? curStep.t : cur, 26)) + '</span>';
+		document.getElementById('breadcrumb').innerHTML = html;
+	}
+	// ─────────────────────────────────────
+	// SIDEBAR MAP
+	// ─────────────────────────────────────
+	function renderSidebarMap() {
+		var visited = new Set();
+		visited.add('inicio');
+		hist.forEach(function(h) {
+			visited.add(h.s);
+			visited.add(h.next);
+		});
+		var byPhase = PHASES.map(function() {
+			return [];
+		});
+		Object.keys(STEPS).forEach(function(key) {
+			var s = STEPS[key];
+			if(s.ph !== undefined) byPhase[s.ph].push({
+				key: key,
+				s: s
+			});
+		});
+		var html = '';
+		byPhase.forEach(function(nodes, phIdx) {
+			if(nodes.length === 0) return;
+			var isCollapsed = phaseCollapsed[phIdx];
+			html += '<div class="sm-phase">';
+			html += '<div class="sm-phase-hdr' + (isCollapsed ? ' collapsed' : '') + '" onclick="togglePhase(' + phIdx + ')">';
+			html += '<span>' + esc(PHASES[phIdx]) + '</span>';
+			html += '<span class="ph-arrow">&#9660;</span>';
+			html += '</div>';
+			if(!isCollapsed) {
+				html += '<div class="sm-nodes">';
+				nodes.forEach(function(item) {
+					var key = item.key,
+						s = item.s;
+					var isCur = key === cur;
+					var isVis = visited.has(key) && !isCur;
+					var cls = 'sm-node' + (isCur ? ' sm-current' : (isVis ? ' sm-visited' : ''));
+					var dot = isCur ? '&#9679;' : (isVis ? '&#10003;' : '&#9675;');
+					html += '<div class="' + cls + '" onclick="showPreview(\'' + escQ(key) + '\')">';
+					html += '<span class="sm-dot">' + dot + '</span>';
+					html += '<span>' + esc(trunc(s.t, 30)) + '</span>';
+					html += '</div>';
+				});
+				html += '</div>';
+			}
+			html += '</div>';
+		});
+		html += '<div class="sb-foot"><div class="sb-foot-title">Marco normativo</div>';
+		['Arts. 59-60 LJV 15/2015', 'LO 1/1982 (honor, intimidad, imagen)', 'Ley 8/2021 (discapacidad)', 'LOPDGDD LO 3/2018', 'RGPD 2016/679'].forEach(function(r) {
+			html += '<div class="sb-foot-item">' + esc(r) + '</div>';
+		});
+		html += '</div>';
+		document.getElementById('sb-map').innerHTML = html;
+	}
+
+	function togglePhase(idx) {
+		phaseCollapsed[idx] = !phaseCollapsed[idx];
+		renderSidebarMap();
+	}
+	// ─────────────────────────────────────
+	// SIDEBAR JOURNEY
+	// ─────────────────────────────────────
+	function renderSidebarJourney() {
+		var html = '';
+		hist.forEach(function(entry, i) {
+			var step = STEPS[entry.s];
+			html += '<div class="pi past">';
+			html += '<div class="pi-title">' + esc(step ? step.t : entry.s) + '</div>';
+			if(entry.c) html += '<div class="pi-choice">&#9654; ' + esc(entry.c) + '</div>';
+			html += '</div>';
+		});
+		var curStep = STEPS[cur];
+		html += '<div class="pi current">';
+		html += '<div class="pi-title">' + esc(curStep ? curStep.t : cur) + '</div>';
+		html += '</div>';
+		html += '<div class="sb-foot"><div class="sb-foot-title">Marco normativo</div>';
+		['Arts. 59-60 LJV', 'LO 1/1982', 'Ley 8/2021', 'LOPDGDD LO 3/2018'].forEach(function(r) {
+			html += '<div class="sb-foot-item">' + esc(r) + '</div>';
+		});
+		html += '</div>';
+		document.getElementById('sb-journey').innerHTML = html;
+	}
+	// ─────────────────────────────────────
+	// CONTENT
+	// ─────────────────────────────────────
+	function renderContent() {
+		var s = STEPS[cur];
+		if(!s) {
+			document.getElementById('content').innerHTML = '<p style="color:var(--red);padding:20px">Paso no encontrado: ' + esc(cur) + '</p>';
+			return;
+		}
+		document.getElementById('content').innerHTML = s.end ? buildEnd(s) : buildStep(s);
+	}
+
+	function buildStep(s) {
+		var phName = PHASES[s.ph] || '';
+		var stepIdx = hist.length + 1;
+		var letters = ['A', 'B', 'C', 'D', 'E'];
+		var variants = s.opts && s.opts.length === 2 ? ['ok', 'bad'] : s.opts && s.opts.length === 3 ? ['ok', 'warn', 'neutral'] : ['ok', 'warn', 'warn', 'neutral'];
+		var html = '<div class="card">';
+		// Header
+		html += '<div class="c-hdr">';
+		html += '<div class="c-hdr-top">';
+		html += '<span class="act-badge ' + ACTOR_CLASS[s.ac] + '">' + ACTOR_LABELS[s.ac] + '</span>';
+		html += '</div>';
+		html += '<div class="c-title">' + esc(s.t) + '</div>';
+		html += '<div class="step-num">Paso ' + stepIdx + ' de este recorrido &middot; Fase ' + (s.ph + 1) + ': ' + esc(phName) + '</div>';
+		html += '</div>';
+		// Body
+		html += '<div class="c-body">' + renderBlocks(s.c) + '</div>';
+		// Decision
+		if(s.q) {
+			html += '<div class="dec-area">';
+			html += '<div class="dec-q">' + esc(s.q) + '</div>';
+			html += '<div class="dec-opts">';
+			s.opts.forEach(function(opt, i) {
+				var v = variants[i] || 'neutral';
+				html += '<button class="dec-btn ' + v + '" onclick="goTo(\'' + escQ(opt.n) + '\',\'' + escQ(opt.l) + '\')">';
+				html += '<span class="dec-letter">' + letters[i] + '</span>';
+				html += '<span>' + esc(opt.t) + '</span>';
+				html += '</button>';
+			});
+			html += '</div></div>';
+		}
+		// Nav
+		html += '<div class="c-nav">';
+		html += '<button class="btn-back" onclick="goBack()"' + (hist.length === 0 ? ' disabled' : '') + '>&#8592; Volver</button>';
+		if(s.nx) {
+			html += '<button class="btn-next" onclick="goTo(\'' + escQ(s.nx) + '\',\'\')">Siguiente &#8594;</button>';
+		}
+		html += '</div>';
+		html += '</div>';
+		return html;
+	}
+
+	function buildEnd(s) {
+		var et = s.end || 'neutral';
+		var html = '<div class="card end-' + et + '">';
+		html += '<div class="end-body">';
+		html += '<div class="end-icon">' + END_ICONS[et] + '</div>';
+		html += '<div class="end-title ' + et + '">' + esc(s.t) + '</div>';
+		html += '<div class="end-sub">El procedimiento ha concluido en esta vía</div>';
+		html += '<div class="end-actions">';
+		html += '<button class="btn-restart" onclick="restart()">&#8635; Nuevo procedimiento</button>';
+		html += '<button class="btn-back" onclick="goBack()"' + (hist.length === 0 ? ' disabled' : '') + '>&#8592; Volver</button>';
+		html += '</div>';
+		html += '</div>';
+		if(s.c && s.c.length > 0) {
+			html += '<div class="end-content">' + renderBlocks(s.c) + '</div>';
+		}
+		if(hist.length > 0) {
+			html += '<div class="end-content"><div class="summary-box">';
+			html += '<div class="summary-title">Resumen del recorrido seguido</div>';
+			hist.forEach(function(entry, i) {
+				var step = STEPS[entry.s];
+				html += '<div class="summary-item">';
+				html += '<span class="summary-num">' + (i + 1) + '</span>';
+				html += '<span class="summary-text">' + esc(step ? step.t : entry.s);
+				if(entry.c) html += '<span class="summary-choice">&#9654; ' + esc(entry.c) + '</span>';
+				html += '</span></div>';
+			});
+			// current (end) step
+			html += '<div class="summary-item">';
+			var endColors = {
+				success: 'var(--green)',
+				error: 'var(--red)',
+				warning: 'var(--amber)',
+				neutral: 'var(--slate)'
+			};
+			html += '<span class="summary-num" style="background:' + (endColors[et] || 'var(--navy)') + '">' + (hist.length + 1) + '</span>';
+			html += '<span class="summary-text" style="font-weight:600">' + esc(s.t) + '</span>';
+			html += '</div>';
+			html += '</div></div>';
+		}
+		html += '</div>';
+		return html;
+	}
+
+	function renderBlocks(blocks) {
+		if(!blocks) return '';
+		return blocks.map(function(b) {
+			var type = b[0];
+			if(type === 'i') return '<div class="blk-i">' + esc(b[1]) + '</div>';
+			if(type === 'd') return '<div class="blk-d">&#9201; ' + esc(b[1]) + '</div>';
+			if(type === 'n') return '<div class="blk-n">&#8505; ' + esc(b[1]) + '</div>';
+			if(type === 'w') return '<div class="blk-w">&#9888; ' + esc(b[1]) + '</div>';
+			if(type === 'l') return '<div class="blk-l">&#128219; ' + esc(b[1]) + '</div>';
+			if(type === 'cl') {
+				var items = b[2].map(function(it) {
+					return '<li>' + esc(it) + '</li>';
+				}).join('');
+				return '<div class="blk-cl"><div class="blk-cl-title">' + esc(b[1]) + '</div><ul>' + items + '</ul></div>';
+			}
+			return '';
+		}).join('');
+	}
+	// ─────────────────────────────────────
+	// MAPA OVERLAY RENDER
+	// ─────────────────────────────────────
+	function renderMapa() {
+		var visited = new Set();
+		visited.add('inicio');
+		hist.forEach(function(h) {
+			visited.add(h.s);
+			visited.add(h.next);
+		});
+		var byPhase = PHASES.map(function() {
+			return [];
+		});
+		Object.keys(STEPS).forEach(function(key) {
+			var s = STEPS[key];
+			if(s.ph !== undefined) byPhase[s.ph].push({
+				key: key,
+				s: s
+			});
+		});
+		var html = '<button class="mapa-back-btn" onclick="toggleMapa()">&#8592; Volver al recorrido</button>';
+		html += '<div class="mapa-title">Vista completa del procedimiento &mdash; LJV Arts. 59-60</div>';
+		html += '<div class="mapa-sub">Honor, Intimidad e Imagen del Menor y de la Persona con Discapacidad &middot; Haz clic en cualquier paso para ver su detalle</div>';
+		html += '<div class="mapa-phases">';
+		byPhase.forEach(function(nodes, phIdx) {
+			if(nodes.length === 0) return;
+			html += '<div class="mapa-col">';
+			html += '<div class="mapa-col-hdr">' + esc(PHASES[phIdx]) + '</div>';
+			html += '<div class="mapa-nodes">';
+			nodes.forEach(function(item) {
+				var key = item.key,
+					s = item.s;
+				var cls = 'mapa-node';
+				if(key === cur) cls += ' mn-current';
+				else if(visited.has(key)) cls += ' mn-visited';
+				if(s.end) cls += ' mn-end-' + s.end;
+				html += '<div class="' + cls + '" onclick="showPreview(\'' + escQ(key) + '\')">';
+				html += '<div class="mn-title">' + esc(trunc(s.t, 28)) + '</div>';
+				html += '<div class="mn-actor">' + (ACTOR_LABELS[s.ac] || '') + '</div>';
+				html += '</div>';
+			});
+			html += '</div></div>';
+		});
+		html += '</div>';
+		document.getElementById('mapa-overlay').innerHTML = html;
+	}
+	// ─────────────────────────────────────
+	// UTILITIES
+	// ─────────────────────────────────────
+	function esc(s) {
+		return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+	}
+
+	function escQ(s) {
+		return String(s).replace(/'/g, '&#39;').replace(/\\/g, '\\\\');
+	}
+
+	function trunc(s, n) {
+		return s && s.length > n ? s.slice(0, n - 1) + '…' : (s || '');
+	}
+	// ─────────────────────────────────────
+	// DOWNLOAD
+	// ─────────────────────────────────────
+	function dlGuia() {
+		var html = '<!DOCTYPE html>' + document.documentElement.outerHTML;
+		var blob = new Blob([html], {
+			type: 'text/html;charset=utf-8'
+		});
+		var url = URL.createObjectURL(blob);
+		var a = document.createElement('a');
+		a.href = url;
+		a.download = 'guia-tramitacion-ljv-arts59-60.html';
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		URL.revokeObjectURL(url);
+	}
+	// ─────────────────────────────────────
+	// INIT
+	// ─────────────────────────────────────
+	render();
+	</script>
+</body>
+
+</html>

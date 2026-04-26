@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guía Definitiva · Administración del Caudal Hereditario · Arts. 797–805 LEC</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2F6E;--navy-mid:#2E4DAA;--navy-lt:#4169E1;
+  --cyan:#0D9488;--cyan-bg:#F0FDFA;
+  --green:#15803D;--green-bg:#F0FDF4;
+  --amber:#B45309;--amber-bg:#FFFBEB;
+  --red:#B91C1C;--red-bg:#FEF2F2;
+  --slate:#475569;--slate-bg:#F4F6FB;
+  --white:#FFFFFF;--bdr:#D1D9EE;
+  --text:#1A1A2E;--muted:#6B7280;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',system-ui,sans-serif;font-size:17px;color:var(--text);background:var(--slate-bg);overflow:hidden}
+#app{display:flex;flex-direction:column;height:100vh;overflow:hidden}
+#hdr{flex-shrink:0;height:56px;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+.h-left{display:flex;align-items:center;gap:10px}
+.h-seal{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.10);border:1.5px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.h-title{font-size:15px;font-weight:700;color:#fff;line-height:1.2}
+.h-sub{font-size:13px;color:rgba(255,255,255,.55)}
+.h-right{display:flex;gap:6px}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border-radius:6px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;cursor:pointer;border:1px solid;transition:all .15s;white-space:nowrap}
+.btn-ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:rgba(255,255,255,.85)}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+#pbar{flex-shrink:0;height:36px;background:var(--navy-mid);display:flex;align-items:center;padding:0 20px;gap:0;overflow-x:auto;scrollbar-width:none}
+#pbar::-webkit-scrollbar{display:none}
+.ph-item{display:flex;align-items:center}
+.ph-lbl{font-size:13px;font-weight:600;padding:3px 8px;border-radius:4px;color:rgba(255,255,255,.38);letter-spacing:.2px;white-space:nowrap}
+.ph-lbl.done{color:rgba(255,255,255,.68)}
+.ph-lbl.active{color:#fff;background:rgba(65,105,225,.45);font-weight:700}
+.ph-sep{font-size:12px;color:rgba(255,255,255,.22);padding:0 4px}
+#breadcrumb{flex-shrink:0;height:34px;background:var(--slate-bg);border-bottom:1px solid var(--bdr);display:flex;align-items:center;padding:0 20px;overflow-x:auto;scrollbar-width:none}
+#breadcrumb::-webkit-scrollbar{display:none}
+.bc-item{font-size:13px;white-space:nowrap;padding:0 5px;color:var(--muted)}
+.bc-past{cursor:pointer;background:none;border:none;font-family:'Outfit',sans-serif;font-size:13px;color:var(--muted)}
+.bc-past:hover{color:var(--navy-lt);text-decoration:underline}
+.bc-current{font-weight:600;color:var(--navy)}
+.bc-sep{font-size:12px;color:var(--bdr);padding:0 1px}
+#layout{flex:1;overflow:hidden;display:flex}
+#sidebar{width:258px;flex-shrink:0;background:var(--navy-mid);display:flex;flex-direction:column;overflow:hidden}
+#sb-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,.10);flex-shrink:0}
+.sb-tab{flex:1;padding:9px 0;font-size:13px;font-weight:600;font-family:'Outfit',sans-serif;background:none;border:none;color:rgba(255,255,255,.38);cursor:pointer;letter-spacing:.4px;text-transform:uppercase;transition:all .15s}
+.sb-tab.active{color:#fff;border-bottom:2px solid var(--navy-lt)}
+.sb-tab:hover:not(.active){color:rgba(255,255,255,.70);background:rgba(255,255,255,.05)}
+#sb-map,#sb-journey,#sb-access{padding:10px;overflow-y:auto;flex:1}
+.sm-phase{margin-bottom:6px}
+.sm-phase-hdr{font-size:13px;font-weight:700;color:rgba(255,255,255,.48);text-transform:uppercase;letter-spacing:.5px;padding:5px 7px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;border-radius:4px;transition:background .1s;user-select:none}
+.sm-phase-hdr:hover{background:rgba(255,255,255,.06)}
+.sm-phase-arrow{font-size:11px;color:rgba(255,255,255,.28);transition:transform .15s}
+.sm-phase-arrow.open{transform:rotate(90deg)}
+.sm-nodes{display:flex;flex-direction:column;gap:2px;padding-left:8px;margin-top:3px}
+.sm-node{font-size:13px;padding:5px 8px;border-radius:5px;color:rgba(255,255,255,.52);cursor:pointer;border-left:2px solid transparent;transition:all .1s;line-height:1.3}
+.sm-node:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.85)}
+.sm-node.sm-visited{color:rgba(134,239,172,.88);border-left-color:#22c55e}
+.sm-node.sm-current{color:#fff;background:rgba(65,105,225,.32);border-left-color:var(--navy-lt);font-weight:600}
+.sm-node.sm-end{font-style:italic}
+.pi{display:flex;flex-direction:column;gap:2px;padding:7px 8px;border-radius:6px;margin-bottom:3px}
+.pi.current{background:rgba(65,105,225,.22);border-left:2px solid var(--navy-lt)}
+.pi-step{font-size:13px;color:rgba(255,255,255,.72);font-weight:500;line-height:1.3}
+.pi-choice{font-size:13px;color:rgba(255,255,255,.40);margin-top:2px}
+.ac-phase{margin-bottom:8px}
+.ac-phase-hdr{font-size:10px;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.5px;padding:4px 6px;margin-bottom:3px}
+.ac-btn{width:100%;display:flex;align-items:center;gap:7px;padding:5px 8px;border-radius:5px;border:none;background:none;font-family:inherit;font-size:12px;color:rgba(255,255,255,.65);cursor:pointer;text-align:left;transition:all .12s}
+.ac-btn:hover{background:rgba(255,255,255,.09);color:#fff}
+.ac-btn.ac-current{background:rgba(65,105,225,.22);color:var(--navy-lt);font-weight:600}
+.ac-num{font-size:10px;font-weight:700;color:var(--navy-lt);background:rgba(65,105,225,.25);padding:1px 5px;border-radius:3px;flex-shrink:0}
+.sb-foot{margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);font-size:13px;color:rgba(255,255,255,.32);line-height:1.6}
+#content{flex:1;overflow-y:auto;padding:24px 28px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.card{background:#fff;border:1px solid var(--bdr);border-radius:12px;animation:fadeUp .22s ease;max-width:760px;margin:0 auto}
+.c-hdr{padding:18px 22px 14px;border-bottom:1px solid var(--bdr)}
+.c-hdr-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.act-badge{font-size:13px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+.act-laj{background:#EEF2FF;color:#3730A3}
+.act-juez{background:#FEF3C7;color:#92400E}
+.act-ambos{background:#F0FDF4;color:#166534}
+.act-notario{background:#F3E8FF;color:#6B21A8}
+.c-title{font-size:20px;font-weight:700;color:var(--text);line-height:1.25}
+.step-num{font-size:13px;color:var(--muted);margin-top:4px}
+.c-body{padding:18px 22px;display:flex;flex-direction:column;gap:13px}
+.blk-i{font-size:16px;line-height:1.72;color:var(--text)}
+.blk-d{background:#EEF2FF;border-left:3px solid var(--navy-lt);padding:10px 14px;border-radius:0 6px 6px 0;font-size:15px;color:#1E3A8A;line-height:1.6}
+.blk-n{background:var(--cyan-bg);border-left:3px solid var(--cyan);padding:10px 14px;border-radius:0 6px 6px 0;font-size:15px;color:#134E4A;line-height:1.6}
+.blk-w{background:var(--amber-bg);border-left:3px solid var(--amber);padding:10px 14px;border-radius:0 6px 6px 0;font-size:15px;color:#78350F;line-height:1.6}
+.blk-l{font-size:13px;font-family:ui-monospace,SFMono-Regular,monospace;color:var(--muted);padding:6px 0 0;border-top:1px solid var(--bdr);line-height:1.7}
+.blk-cl-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px}
+.blk-cl ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+.blk-cl li{display:flex;align-items:flex-start;gap:9px;font-size:15px;color:var(--text);line-height:1.5}
+.blk-cl li::before{content:'';width:15px;height:15px;min-width:15px;border:1.5px solid var(--bdr);border-radius:3px;margin-top:1px}
+.dec-area{padding:18px 22px;border-top:1px solid var(--bdr);background:var(--slate-bg);border-radius:0 0 12px 12px}
+.dec-q{font-size:16px;font-weight:600;color:var(--text);padding:13px 16px;background:#fff;border:1.5px solid var(--navy);border-radius:8px;margin-bottom:12px;line-height:1.55}
+.dec-opts{display:flex;flex-direction:column;gap:8px}
+.dec-btn{display:flex;align-items:flex-start;gap:12px;padding:12px 15px;border-radius:8px;border:1.5px solid;cursor:pointer;font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;text-align:left;transition:all .15s;background:#fff;line-height:1.5}
+.dec-letter{width:24px;height:24px;min-width:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-top:1px}
+.dec-btn.ok{border-color:#86EFAC;color:var(--green)}
+.dec-btn.ok .dec-letter{background:#DCFCE7;color:var(--green)}
+.dec-btn.ok:hover{background:var(--green-bg);border-color:#4ADE80}
+.dec-btn.bad{border-color:#FCA5A5;color:var(--red)}
+.dec-btn.bad .dec-letter{background:#FEE2E2;color:var(--red)}
+.dec-btn.bad:hover{background:var(--red-bg);border-color:#F87171}
+.dec-btn.warn{border-color:#FCD34D;color:var(--amber)}
+.dec-btn.warn .dec-letter{background:#FFFBEB;color:var(--amber)}
+.dec-btn.warn:hover{background:var(--amber-bg);border-color:#F59E0B}
+.dec-btn.neutral{border-color:var(--bdr);color:var(--slate)}
+.dec-btn.neutral .dec-letter{background:var(--slate-bg);color:var(--slate)}
+.dec-btn.neutral:hover{background:var(--slate-bg);border-color:#94A3B8}
+.c-nav{padding:14px 22px;border-top:1px solid var(--bdr);display:flex;gap:10px;justify-content:space-between}
+.btn-back{background:#fff;border:1.5px solid var(--bdr);color:var(--muted);padding:9px 20px;border-radius:8px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all .15s}
+.btn-back:hover:not(:disabled){border-color:var(--navy-lt);color:var(--navy-lt)}
+.btn-back:disabled{opacity:.38;cursor:not-allowed}
+.btn-next{background:var(--navy-lt);border:1.5px solid var(--navy-lt);color:#fff;padding:9px 22px;border-radius:8px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .15s}
+.btn-next:hover{background:var(--navy);border-color:var(--navy)}
+.card.end-success .c-hdr{background:var(--green-bg)}
+.card.end-error .c-hdr{background:var(--red-bg)}
+.card.end-warning .c-hdr{background:var(--amber-bg)}
+.card.end-neutral .c-hdr{background:var(--cyan-bg)}
+.end-body{display:flex;flex-direction:column;align-items:center;gap:6px;padding:28px 22px 20px;text-align:center}
+.end-icon{font-size:44px}
+.end-title{font-size:22px;font-weight:700}
+.end-success .end-title{color:var(--green)}
+.end-error .end-title{color:var(--red)}
+.end-warning .end-title{color:var(--amber)}
+.end-neutral .end-title{color:var(--navy-lt)}
+.end-sub{font-size:15px;color:var(--muted);margin-top:2px}
+.end-btns{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;justify-content:center}
+.summary-box{margin:4px 22px 22px;background:var(--slate-bg);border:1px solid var(--bdr);border-radius:8px;padding:14px 16px}
+.summary-box h4{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.sum-item{display:flex;gap:10px;font-size:14px;padding:6px 0;border-bottom:1px solid var(--bdr);line-height:1.5}
+.sum-item:last-child{border-bottom:none}
+.sum-n{font-weight:700;color:var(--navy);min-width:18px;flex-shrink:0}
+.sum-t{color:var(--text);flex:1}
+.sum-c{color:var(--muted);font-style:italic;font-size:13px;margin-top:1px}
+#mapa-overlay{display:none;flex:1;overflow-y:auto;background:var(--slate-bg);padding:20px}
+.mapa-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px}
+.mapa-hdr-left h2{font-size:19px;font-weight:700;color:var(--text)}
+.mapa-hdr-left p{font-size:14px;color:var(--muted);margin-top:2px}
+.mapa-cols{display:flex;gap:14px;align-items:flex-start;overflow-x:auto;padding-bottom:12px}
+.mapa-col{min-width:180px;flex:1}
+.mapa-col-hdr{font-size:13px;font-weight:700;color:var(--navy-mid);text-transform:uppercase;letter-spacing:.5px;padding:8px 10px;background:#E8EDFB;border-radius:6px 6px 0 0;border:1px solid var(--bdr);border-bottom:none;text-align:center}
+.mapa-col-body{display:flex;flex-direction:column;gap:5px;padding:8px;background:#fff;border:1px solid var(--bdr);border-radius:0 0 8px 8px;min-height:50px}
+.mapa-node{padding:8px 10px;border-radius:5px;font-size:13px;line-height:1.45;border:1px solid var(--bdr);background:#fff;border-left:3px solid var(--bdr);cursor:pointer;transition:box-shadow .15s,transform .1s}
+.mapa-node:hover{box-shadow:0 2px 8px rgba(65,105,225,.18);transform:translateY(-1px);border-left-color:var(--navy-lt)}
+.jump-badge{display:inline-block;font-size:11px;font-weight:700;background:#F5F3FF;color:#5B21B6;border:1px solid #5B21B6;border-radius:10px;padding:2px 8px;margin-left:8px;letter-spacing:.3px;vertical-align:middle}
+.mapa-node.mn-visited{background:var(--green-bg);border-left-color:#22c55e}
+.mapa-node.mn-current{background:#EEF2FF;border-left-color:var(--navy-lt);font-weight:600}
+.mapa-node.mn-end-success{border-left-color:var(--green);background:var(--green-bg)}
+.mapa-node.mn-end-error{border-left-color:var(--red);background:var(--red-bg)}
+.mapa-node.mn-end-warning{border-left-color:var(--amber);background:var(--amber-bg)}
+.mapa-node.mn-end-neutral{border-left-color:var(--navy-lt);background:var(--cyan-bg)}
+.mapa-node-actor{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--muted);margin-bottom:2px}
+.mapa-node-title{color:var(--text);font-size:13px}
+.mapa-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--bdr)}
+.ml-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.ml-dot{width:11px;height:11px;border-radius:2px;flex-shrink:0}
+@media(max-width:700px){
+  #sidebar{display:none}
+  #content{padding:12px}
+  .mapa-cols{flex-direction:column}
+  .h-title{font-size:13px}
+}
+@media print{
+  body{overflow:visible}
+  #app{height:auto;overflow:visible}
+  #hdr .h-right,#sidebar,#breadcrumb,#pbar,.c-nav,.dec-area{display:none!important}
+  #layout{display:block;overflow:visible}
+  #content{overflow:visible;padding:0}
+  .card{break-inside:avoid;border:1px solid #ccc;margin-bottom:16px}
+  #mapa-overlay{display:block!important;overflow:visible}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="hdr">
+    <div class="h-left">
+      <div class="h-seal">⚖️</div>
+      <div>
+        <div class="h-title">Administración del caudal hereditario</div>
+        <div class="h-sub">Arts. 797–805 LEC · Guía de tramitación procedimental definitiva</div>
+      </div>
+    </div>
+    <div class="h-right">
+      <button class="btn btn-ghost" onclick="toggleMapa()">🗺 Ver mapa</button>
+      <button class="btn btn-ghost" onclick="dlGuia()">⬇ Descargar</button>
+      <button class="btn btn-ghost" onclick="restart()">↺ Reiniciar</button>
+    </div>
+  </div>
+  <div id="pbar"></div>
+  <div id="breadcrumb"></div>
+  <div id="layout">
+    <div id="sidebar">
+      <div id="sb-tabs">
+        <button class="sb-tab active" onclick="sbTab('map')">Mapa</button>
+        <button class="sb-tab" onclick="sbTab('journey')">Recorrido</button>
+        <button class="sb-tab" onclick="sbTab('access')">Acceso</button>
+      </div>
+      <div id="sb-map"></div>
+      <div id="sb-journey" style="display:none"></div>
+      <div id="sb-access" style="display:none"></div>
+    </div>
+    <div id="content"></div>
+  </div>
+  <div id="mapa-overlay"></div>
+</div>
+<script>
+// ════════════════════════════════════════════════════
+// FASES
+// ════════════════════════════════════════════════════
+const PHASES = [
+  'Constitución del cargo',
+  'Representación',
+  'Gestión y conservación',
+  'Actos dispositivos',
+  'Cuentas y retribución',
+  'Administraciones subalternas',
+  'Cese y liquidación'
+];
+
+// Orden de pasos por fase (para mapa y sidebar)
+const STEP_ORDER = [
+  ['inicio','presupuestos','nombramiento','caucion_pend','caucion_problema','posesion','acreditacion','registro_decision','registro_propiedad','subalternas_decision','subalternas_integracion','fin_sin_presupuestos'],
+  ['representacion_check','rep_yacente','declaracion_check','rep_aceptada'],
+  ['gestion_conservacion','reparacion_check','reparacion_ordinaria','reparacion_ext_notif','reparacion_ext_comp','reparacion_ext_resolucion','reparacion_ext_financiacion','disposicion_deposito','rep_denegada','recurso_rep','deposito_fondos','provision_fondos','prov_concedida','prov_denegada'],
+  ['enajenacion_check','enajenacion_tipo','enajenacion_propuesta','enajenacion_autorizacion','enajenacion_subasta','enajenacion_mercado','consultar_alt','venta_exitosa','venta_fallida'],
+  ['cuentas_periodo','saldo_forma','saldo_consignacion','saldo_resguardo','cese_check','nuevo_periodo','retribucion','ret_frutos','ret_inmuebles','ret_publicos','ret_otros','ret_viajes'],
+  ['subalternas_gestion','subalternas_mantener','sep_subalterno','sep_autorizada','sep_denegada','proveer_vacante'],
+  ['cuenta_final','traslado_cuentas','oposicion_check','traslado_cuentadante','vista_check','juicio_verbal','sentencia_verbal','resolucion_sin_vista','sent_mixta','fin_cuentas_aprobadas','fin_impugnacion_estimada','fin_impugnacion_desestimada']
+];
+
+// ════════════════════════════════════════════════════
+// PASOS DEL PROCEDIMIENTO
+// ════════════════════════════════════════════════════
+const STEPS = {
+
+  // ── FASE 0: CONSTITUCIÓN ──────────────────────────
+  inicio:{ph:0,t:'Inicio de la guía — Administración del Caudal Hereditario',ac:'laj',
+    c:[
+      ['i','Bienvenido a la guía de tramitación interactiva para la administración judicial del caudal hereditario, regulada en los Arts. 797 a 805 de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil.'],
+      ['n','Esta guía cubre todo el ciclo vital de la figura del administrador: desde su nombramiento y toma de posesión hasta la rendición final de cuentas, aprobación o impugnación, retribución y cierre.'],
+      ['cl','Ámbito normativo aplicable',[
+        'LEC Libro IV, Título II, Capítulo I, Sección 3.ª (Arts. 797-805)',
+        'Arts. 988-1012 CC (aceptación de herencia)',
+        'Arts. 1967-1969 CC (posesión en interés de la herencia)',
+        'Ley Hipotecaria y Reglamento Hipotecario (inscripción registral)',
+        'Ley Notarial 21/2007 (subastas notariales)',
+        'Ley 15/2015 de Jurisdicción Voluntaria (ventas JV)',
+        'RD 4/2015 del Mercado de Valores'
+      ]],
+      ['l','Arts. 797-805 LEC · Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil']
+    ],
+    nx:'presupuestos'
+  },
+
+  presupuestos:{ph:0,t:'Verificación de presupuestos del cargo',ac:'laj',
+    c:[
+      ['i','Antes de formalizar la toma de posesión, compruebe que constan acreditados en autos los dos presupuestos legales del art. 795 LEC: el nombramiento del administrador y la prestación de la caución exigida por el tribunal.'],
+      ['cl','Presupuestos que deben constar acreditados en autos',[
+        'Resolución judicial firme de nombramiento del administrador (art. 795.2.ª LEC)',
+        'Prestación efectiva de la caución fijada por el tribunal (art. 795.4.ª LEC)',
+        'Constancia documental de ambos extremos en los autos del procedimiento'
+      ]],
+      ['n','La caución puede adoptar cualquier forma admitida en derecho: depósito dinerario, aval bancario, fianza personal de sujeto solvente o seguro de caución. La LEC no predetermina su modalidad.'],
+      ['w','La posesión del cargo no puede formalizarse si falta cualquiera de los dos presupuestos. Subsane el defecto antes de continuar.'],
+      ['l','Art. 795 LEC (nombramiento y caución) · Art. 797.1 LEC']
+    ],
+    q:'¿Constan acreditados en autos tanto el nombramiento como la prestación de la caución?',
+    opts:[
+      {t:'Sí, ambos presupuestos están acreditados en autos',l:'ok',n:'posesion'},
+      {t:'No, falta el nombramiento o la caución',l:'bad',n:'fin_sin_presupuestos'}
+    ]
+  },
+
+  nombramiento:{ph:0,t:'Nombramiento del administrador y constitución de caución',ac:'juez',
+    c:[
+      ['i','El administrador del caudal hereditario es designado en el seno del procedimiento de división judicial de la herencia (Arts. 782 y ss. LEC), generalmente tras la formación del inventario y avalúo. El nombramiento se realiza mediante resolución judicial que especifica la persona designada y las condiciones de su cargo.'],
+      ['d','El nombramiento se realiza mediante resolución judicial que especifica la persona designada y las condiciones de su cargo.'],
+      ['w','Antes de poder tomar posesión, el administrador debe prestar caución que garantice el correcto desempeño de sus funciones.'],
+      ['l','Arts. 782 y ss. LEC · Art. 795 LEC · Art. 797.1 LEC']
+    ],
+    q:'¿Ha prestado el administrador designado la caución requerida?',
+    opts:[
+      {t:'Sí, la caución está constituida y aprobada',l:'ok',n:'posesion'},
+      {t:'No, aún no se ha prestado caución',l:'bad',n:'caucion_pend'}
+    ]
+  },
+
+  caucion_pend:{ph:0,t:'Constitución de la caución pendiente',ac:'laj',
+    c:[
+      ['i','La caución es requisito previo e indispensable para la toma de posesión del cargo (Art. 797.1 LEC). Garantiza frente a posibles daños o perjuicios derivados de la administración.'],
+      ['cl','Trámites para la constitución de caución:',[
+        'Presentar escrito solicitando forma y cuantía de la caución',
+        'Aportar garantía (aval bancario, depósito en efectivo, seguro de caución)',
+        'Obtener aprobación del LAJ mediante diligencia',
+        'Unificar documentación acreditativa en autos'
+      ]],
+      ['n','La caución puede adoptar cualquier forma admitida en derecho: depósito dinerario, aval bancario, fianza personal de sujeto solvente o seguro de caución.'],
+      ['l','Régimen general de cauciones procesales: Arts. 581 y ss. LEC · Art. 795.4.ª LEC']
+    ],
+    q:'¿Se ha constituido y aprobado la caución?',
+    opts:[
+      {t:'Sí, caución aprobada',l:'ok',n:'posesion'},
+      {t:'Problemas en la constitución',l:'warn',n:'caucion_problema'}
+    ]
+  },
+
+  caucion_problema:{ph:0,t:'Incidentes en la constitución de caución',ac:'ambos',end:'warning',
+    c:[
+      ['w','Si existe controversia sobre la forma, cuantía o suficiencia de la caución, deberá sustanciarse incidente dentro del procedimiento principal.'],
+      ['n','Mientras no se resuelva el incidente de caución, el nombrado no podrá tomar posesión del cargo ni ejercer funciones de administración.'],
+      ['l','Art. 797.1 LEC: «Nombrado el administrador y prestada por éste la caución, el Letrado de la Administración de Justicia le pondrá en posesión de su cargo.» · Arts. 581 y ss. LEC']
+    ]
+  },
+
+  posesion:{ph:0,t:'Toma de posesión del cargo (art. 797.1)',ac:'laj',
+    c:[
+      ['i','El Letrado de la Administración de Justicia pone formalmente al administrador en posesión de su cargo y lo da a conocer a las personas con quienes deba entenderse para el desempeño de sus funciones.'],
+      ['cl','Actuaciones del LAJ en este trámite',[
+        'Dictar diligencia de posesión del cargo',
+        'Identificar y notificar al administrador las personas designadas: arrendatarios, empleados de fincas, gestores, entidades bancarias, notarios, organismos tributarios, registros...',
+        'Incorporar la diligencia de posesión a los autos'
+      ]],
+      ['cl','Actos formales de la toma de posesión (documento 2)',[
+        'El LAJ cita al administrador para formalizar la entrega',
+        'Se da a conocer las personas con quienes debe entenderse',
+        'Se expide testimonio o copia auténtica del nombramiento',
+        'Se hace constar la fecha de toma de posesión en diligencia'
+      ]],
+      ['n','El administrador debe designar expresamente, antes de este trámite, las personas a las que el LAJ dará a conocer su nombramiento. Conviene preparar un listado completo de todos los sujetos con quienes deba relacionarse.'],
+      ['l','Art. 797.1 LEC']
+    ],
+    nx:'acreditacion'
+  },
+
+  acreditacion:{ph:0,t:'Expedición del título acreditativo de la representación (art. 797.2)',ac:'laj',
+    c:[
+      ['i','El LAJ expide al administrador el documento que le habilita para acreditar su representación frente a cualquier tercero ajeno al procedimiento.'],
+      ['cl','Contenido del testimonio o copia auténtica',[
+        'Nombramiento como administrador del caudal hereditario',
+        'Constancia de que se halla en posesión del cargo',
+        'Sello y firma del Letrado de la Administración de Justicia',
+        'Fecha de expedición'
+      ]],
+      ['n','Este documento funciona como título habilitante frente a bancos, registros, organismos administrativos y cualesquiera terceros. Tiene naturaleza declarativa, no constitutiva: la habilitación deriva del nombramiento y de la posesión del cargo, no de este testimonio.'],
+      ['w','El administrador debe conservar el original y obtener copias para cada organismo con el que deba relacionarse. Ante cualquier duda sobre su vigencia, solicite nuevo testimonio actualizado.'],
+      ['l','Art. 797.2 LEC']
+    ],
+    nx:'registro_decision'
+  },
+
+  registro_decision:{ph:0,t:'Valoración de la inscripción en el Registro de la Propiedad',ac:'laj',
+    c:[
+      ['i','El art. 797.3 LEC faculta — sin imponer — hacer constar en el Registro de la Propiedad el estado de administración judicial de las fincas y el nombramiento del administrador. Valore si la composición del caudal hace aconsejable esta inscripción.'],
+      ['n','La inscripción produce efecto de publicidad erga omnes: los terceros que contraten sobre esas fincas no podrán alegar desconocimiento del estado de administración. Es especialmente recomendable cuando el caudal incluye inmuebles de valor relevante o cuando existe riesgo de actos dispositivos irregulares.'],
+      ['l','Art. 797.3 LEC · Ley Hipotecaria · Reglamento Hipotecario']
+    ],
+    q:'¿El caudal incluye bienes inmuebles respecto de los cuales conviene practicar la inscripción registral?',
+    opts:[
+      {t:'Sí, procede solicitar la inscripción registral',l:'ok',n:'registro_propiedad'},
+      {t:'No, o no hay inmuebles en el caudal',l:'neutral',n:'subalternas_decision'}
+    ]
+  },
+
+  registro_propiedad:{ph:0,t:'Inscripción en el Registro de la Propiedad (art. 797.3)',ac:'laj',
+    c:[
+      ['i','El LAJ expide el mandamiento registral para hacer constar el estado de administración judicial y el nombramiento del administrador respecto de las fincas del caudal.'],
+      ['cl','Tramitación del mandamiento',[
+        'El LAJ expide mandamiento con los requisitos de la legislación hipotecaria',
+        'Presentación del mandamiento en el Registro de la Propiedad competente',
+        'Obtención de nota de despacho (o nota de defecto, si procede)',
+        'Subsanación del defecto registral si el Registrador califica negativamente',
+        'Incorporación de la documentación registral a los autos'
+      ]],
+      ['cl','Documentación necesaria (documento 2)',[
+        'Mandamiento expedido por el LAJ',
+        'Certificación del nombramiento y posesión',
+        'Identificación de las fincas a inscribir',
+        'Cumplimiento de requisitos de la legislación hipotecaria'
+      ]],
+      ['d','Plazo: tan pronto como se expida el mandamiento. Efectos frente a terceros desde la inscripción (Arts. 17 y 32 LH).'],
+      ['w','Si el Registrador emite nota de defecto, éste debe subsanarse antes de que la inscripción produzca sus efectos de publicidad. Comuníquelo al tribunal para que resuelva sobre la subsanación.'],
+      ['l','Art. 797.3 LEC · Arts. 9, 17, 32 LH · Art. 209 RH']
+    ],
+    nx:'subalternas_decision'
+  },
+
+  subalternas_decision:{ph:0,t:'Verificación de administraciones subalternas preexistentes (art. 805)',ac:'laj',
+    c:[
+      ['i','Antes de iniciar la fase de representación, compruebe si el causante tenía constituidas administraciones subalternas para el cuidado de bienes concretos, ya que su régimen de integración es distinto al del administrador judicial.'],
+      ['n','Las administraciones subalternas son personas designadas por el causante en vida para gestionar bienes específicos. Su legitimación deriva directamente del encargo otorgado por el finado: no requieren nombramiento judicial.'],
+      ['l','Art. 805 LEC']
+    ],
+    q:'¿El causante tenía constituidas administraciones subalternas para el cuidado de sus bienes?',
+    opts:[
+      {t:'Sí, existen administraciones subalternas del causante',l:'ok',n:'subalternas_integracion'},
+      {t:'No existen administraciones subalternas',l:'neutral',n:'representacion_check'}
+    ]
+  },
+
+  subalternas_integracion:{ph:0,t:'Integración y régimen de las administraciones subalternas (art. 805)',ac:'laj',
+    c:[
+      ['i','Las administraciones subalternas se conservan con la retribución y las facultades que el causante les otorgó, quedando integradas bajo la dirección del administrador judicial.'],
+      ['cl','Régimen de las administraciones subalternas',[
+        'Se conservan con la retribución y facultades otorgadas por el causante (no sujetas al art. 804)',
+        'Rendirán cuentas parciales al administrador judicial, no directamente al tribunal',
+        'Remitirán al administrador judicial todo lo que recauden en su ámbito de gestión',
+        'Se consideran jurídicamente dependientes del administrador judicial',
+        'No pueden ser separados por el administrador judicial sin causa justa',
+        'Toda separación requiere autorización mediante decreto del LAJ',
+        'Las vacantes se proveen por el administrador judicial con autorización del LAJ (decreto), bajo su responsabilidad personal'
+      ]],
+      ['w','El administrador judicial no puede modificar unilateralmente las condiciones — retribución ni facultades — fijadas por el causante. Cualquier alteración requiere autorización judicial.'],
+      ['l','Art. 805 LEC · Art. 804 LEC (inaplicable a subalternas)']
+    ],
+    nx:'representacion_check'
+  },
+
+  fin_sin_presupuestos:{ph:0,t:'Fin: presupuestos incumplidos — no puede iniciarse la administración',ac:'laj',end:'error',
+    c:[
+      ['i','No puede formalizarse la posesión del cargo ni llevarse a cabo ninguna actuación propia de la administración mientras no consten acreditados en autos el nombramiento del administrador y la prestación de la caución exigida.'],
+      ['w','Subsane el defecto: acredite el nombramiento mediante la resolución judicial correspondiente y tramite la prestación de la caución antes de reiniciar el procedimiento.'],
+      ['l','Art. 795 LEC · Art. 797.1 LEC']
+    ]
+  },
+
+  // ── FASE 1: REPRESENTACIÓN ────────────────────────
+  representacion_check:{ph:1,t:'Determinación del alcance de la representación (art. 798)',ac:'laj',
+    c:[
+      ['i','El alcance de la representación del administrador depende del estado de la herencia. La distinción entre herencia yacente y herencia aceptada es decisiva: determina qué acciones puede y debe ejercitar el administrador y con qué extensión.'],
+      ['n','La aceptación puede ser expresa, tácita o a beneficio de inventario (arts. 999 y ss. CC). La declaración de herederos — judicial o notarial — es el acto que fija formalmente quiénes tienen la condición de herederos del causante.'],
+      ['l','Art. 798 LEC · Arts. 999 y ss. CC · Ley de Jurisdicción Voluntaria (arts. 55 y ss.) · Arts. 988-1012 CC']
+    ],
+    q:'¿Ha sido aceptada la herencia o se ha producido ya la declaración formal de herederos?',
+    opts:[
+      {t:'Sí: herencia aceptada o herederos formalmente declarados',l:'ok',n:'rep_aceptada'},
+      {t:'No: la herencia está todavía yacente',l:'warn',n:'rep_yacente'}
+    ]
+  },
+
+  rep_yacente:{ph:1,t:'Representación plena de la herencia yacente (art. 798 fase I)',ac:'laj',
+    c:[
+      ['i','Mientras la herencia no ha sido aceptada ni se han declarado los herederos, el administrador ostenta una representación amplia, activa y plena de la herencia yacente.'],
+      ['cl','Facultades del administrador en fase yacente',[
+        'Representar a la herencia en todos los pleitos promovidos tras el fallecimiento del causante',
+        'Representar a la herencia en los pleitos que estuvieren ya iniciados en el momento del fallecimiento',
+        'Ejercitar todas las acciones que hubieran podido corresponder al difunto: reales, personales, posesorias, declarativas y de condena',
+        'Mantener estas facultades plenas hasta que se produzca la declaración de herederos'
+      ]],
+      ['n','Esta representación plena no cesa con el paso del tiempo: se mantiene íntegra hasta la declaración de herederos. El administrador debe actuar con plena diligencia como si los herederos estuvieran ya determinados.'],
+      ['l','Art. 798 párrafo 1.º LEC · Arts. 1967-1969 CC']
+    ],
+    nx:'declaracion_check'
+  },
+
+  declaracion_check:{ph:1,t:'Verificación de la declaración de herederos',ac:'laj',
+    c:[
+      ['i','Compruebe periódicamente si se ha producido ya la declaración formal de herederos, que determina el tránsito desde la representación plena a la representación restringida del administrador.'],
+      ['n','La declaración de herederos puede obtenerse por vía judicial (expediente de declaración de herederos ab intestato ante el Juzgado de Primera Instancia) o notarial (acta de notoriedad). En ambos casos, su producción formal delimita el cambio de fase de la representación.'],
+      ['l','Art. 798 LEC · LJV arts. 55 y ss. (declaración notarial de herederos)']
+    ],
+    q:'¿Se ha producido ya formalmente la declaración de herederos?',
+    opts:[
+      {t:'Sí, ya consta la declaración formal de herederos',l:'ok',n:'rep_aceptada'},
+      {t:'No, aún no se ha producido la declaración',l:'warn',n:'gestion_conservacion'}
+    ]
+  },
+
+  rep_aceptada:{ph:1,t:'Representación restringida post-aceptación (art. 798 fase II)',ac:'laj',
+    c:[
+      ['i','Una vez aceptada la herencia o declarados los herederos, la representación del administrador se contrae exclusivamente a lo que se refiere a la administración del caudal, su custodia y su conservación.'],
+      ['cl','Ámbito de la representación restringida',[
+        'Gestión ordinaria del caudal hereditario',
+        'Custodia y conservación de los bienes',
+        'Ejercicio de las acciones directamente vinculadas a la administración',
+        'Representación en litigios que afecten específicamente a la gestión del caudal'
+      ]],
+      ['w','La reducción del ámbito representativo NO implica pasividad: el administrador "podrá y deberá" gestionar lo que sea conducente (art. 798 LEC). La inactividad injustificada puede generar responsabilidad civil frente a los herederos.'],
+      ['l','Art. 798 párrafo 2.º LEC · Arts. 988-999 CC']
+    ],
+    nx:'gestion_conservacion'
+  },
+
+  // ── FASE 2: GESTIÓN Y CONSERVACIÓN ───────────────
+  gestion_conservacion:{ph:2,t:'Obligaciones generales de conservación y explotación del caudal (art. 801.1)',ac:'laj',
+    c:[
+      ['i','El administrador está obligado, bajo su responsabilidad personal y directa, al cumplimiento simultáneo e inseparable de dos mandatos legales.'],
+      ['cl','Mandatos del art. 801.1 LEC',[
+        '1.º Conservar sin menoscabo los bienes de la herencia: mantenerlos en el estado recibido, evitando deterioro, pérdida o disminución de valor imputable a su gestión',
+        '2.º Procurar que los bienes den las rentas, productos o utilidades que corresponda: gestión activa y no meramente pasiva del caudal',
+        'Actuar con la diligencia de un buen administrador en todo momento'
+      ]],
+      ['cl','Primeras actuaciones recomendadas de gestión ordinaria',[
+        'Recabar inventario actualizado de bienes',
+        'Identificar arrendatarios, deudores y acreedores',
+        'Verificar seguros y cargas sobre los bienes',
+        'Establecer sistema de contabilidad separada',
+        'Cobro de rentas arrendaticias y frutos',
+        'Pago de contribuciones, IBI, suministros',
+        'Contratación de servicios básicos de mantenimiento'
+      ]],
+      ['w','El incumplimiento de cualquiera de los dos mandatos puede generar responsabilidad civil del administrador frente a los herederos e interesados en la herencia. La custodia pasiva sin atender a la explotación económica constituye incumplimiento del segundo mandato.'],
+      ['l','Art. 801.1 LEC · Arts. 801-803 LEC']
+    ],
+    nx:'reparacion_check'
+  },
+
+  reparacion_check:{ph:2,t:'Detección y clasificación de necesidades de reparación (art. 801.2)',ac:'laj',
+    c:[
+      ['i','El régimen jurídico de las reparaciones y gastos depende de su naturaleza: ordinaria o extraordinaria. Esta distinción determina si el administrador puede actuar autónomamente o necesita autorización judicial previa.'],
+      ['n','Reparaciones ordinarias: naturaleza habitual, menor cuantía, necesidad de ejecución sin demora para evitar daños mayores. Reparaciones extraordinarias: cuantía, naturaleza o impacto relevante sobre la integridad o el valor del caudal.'],
+      ['l','Art. 801.2 LEC']
+    ],
+    q:'¿Se han detectado necesidades de reparación o gasto en los bienes del caudal?',
+    opts:[
+      {t:'No se requieren reparaciones en este momento',l:'ok',n:'deposito_fondos'},
+      {t:'Sí, reparaciones ordinarias (habituales, menor cuantía, urgencia inmediata)',l:'ok',n:'reparacion_ordinaria'},
+      {t:'Sí, reparaciones o gastos extraordinarios (cuantía o impacto relevante)',l:'warn',n:'reparacion_ext_notif'}
+    ]
+  },
+
+  reparacion_ordinaria:{ph:2,t:'Ejecución autónoma de reparaciones ordinarias (art. 801.2)',ac:'laj',
+    c:[
+      ['i','Las reparaciones ordinarias indispensables para la conservación de los bienes pueden ser realizadas por el administrador de forma autónoma, sin autorización judicial previa.'],
+      ['cl','Actuaciones del administrador',[
+        'Identificar la reparación ordinaria indispensable',
+        'Obtener presupuesto o contratar directamente la reparación según su cuantía',
+        'Imputar el coste a los fondos ordinarios que el administrador puede retener conforme al art. 802',
+        'Documentar el gasto con la factura o justificante correspondiente',
+        'Incorporar el gasto a la siguiente rendición de cuentas (art. 799)'
+      ]],
+      ['n','Ejemplos: pintura, pequeñas averías, sustitución de elementos desgastados, limpieza profesional, revisiones de seguridad.'],
+      ['w','Solo son ordinarias las reparaciones "indispensables" para la conservación. Las mejoras o actuaciones que no sean estrictamente necesarias deben tramitarse por la vía de autorización judicial de reparaciones extraordinarias.'],
+      ['l','Art. 801.2 primer párrafo LEC · Art. 802 LEC']
+    ],
+    nx:'deposito_fondos'
+  },
+
+  reparacion_ext_notif:{ph:2,t:'Comunicación al Juzgado de la necesidad de reparación extraordinaria (art. 801.2)',ac:'laj',
+    c:[
+      ['i','El administrador no puede acometer unilateralmente reparaciones o gastos extraordinarios. El primer paso obligatorio es poner en conocimiento del Juzgado la necesidad detectada.'],
+      ['cl','Contenido de la comunicación al Juzgado',[
+        'Descripción detallada de la reparación o gasto necesario',
+        'Justificación de su carácter extraordinario (cuantía, naturaleza, impacto)',
+        'Estimación preliminar del coste',
+        'Consecuencias de no realizarla: riesgo de deterioro, pérdida de valor, daños mayores',
+        'Solicitud de convocatoria de comparecencia con los interesados (art. 793.3 LEC)'
+      ]],
+      ['l','Art. 801.2 segundo párrafo LEC']
+    ],
+    nx:'reparacion_ext_comp'
+  },
+
+  reparacion_ext_comp:{ph:2,t:'Comparecencia con interesados y reconocimiento pericial (arts. 801.2 y 793.3)',ac:'juez',
+    c:[
+      ['i','El Juzgado convoca en comparecencia a los interesados del art. 793.3 LEC para que sean oídos. Simultáneamente se practica el reconocimiento pericial y se forma el presupuesto de la reparación.'],
+      ['cl','Interesados que deben ser citados (art. 793.3 LEC)',[
+        'Cónyuge sobreviviente',
+        'Parientes con derecho a la herencia del causante',
+        'Herederos o legatarios de parte alícuota',
+        'Acreedores a cuya instancia se decretó la intervención judicial',
+        'Ministerio Fiscal (en representación de ausentes e incapaces)',
+        'Abogado del Estado o servicios jurídicos de las CCAA (si procede por existir bienes públicos)'
+      ]],
+      ['cl','Tramitación de la comparecencia',[
+        'El LAJ señala día y hora de la comparecencia',
+        'Citación de todos los interesados del art. 793.3 LEC',
+        'Reconocimiento pericial previo del bien o elemento afectado',
+        'Formación del presupuesto de las obras o gastos proyectados',
+        'Celebración de la comparecencia y recepción de alegaciones de los interesados'
+      ]],
+      ['l','Art. 801.2 LEC · Art. 793.3 LEC']
+    ],
+    nx:'reparacion_ext_resolucion'
+  },
+
+  reparacion_ext_resolucion:{ph:2,t:'Resolución judicial sobre la reparación extraordinaria',ac:'juez',
+    c:[
+      ['i','Oídos los interesados y a la vista del informe pericial y del presupuesto, el tribunal resuelve lo que estime procedente, atendidas las circunstancias del caso concreto.'],
+      ['n','La resolución debe valorar: la necesidad real de la reparación, el coste propuesto en el presupuesto, las alegaciones de los interesados, el impacto sobre el caudal y la urgencia de la actuación.'],
+      ['l','Art. 801.2 LEC']
+    ],
+    q:'¿Cuál es el sentido de la resolución judicial?',
+    opts:[
+      {t:'El Juzgado autoriza la reparación o gasto extraordinario',l:'ok',n:'reparacion_ext_financiacion'},
+      {t:'El Juzgado deniega la reparación',l:'bad',n:'rep_denegada'}
+    ]
+  },
+
+  reparacion_ext_financiacion:{ph:2,t:'Determinación de la financiación de la reparación autorizada (art. 802.2)',ac:'juez',
+    c:[
+      ['i','Autorizada la reparación, el tribunal debe resolver cómo se financia: con los ingresos ordinarios que retiene el administrador o extrayendo fondos del depósito judicial.'],
+      ['l','Art. 802.2 LEC']
+    ],
+    q:'¿Pueden cubrirse los costes de la reparación con los ingresos ordinarios disponibles del administrador?',
+    opts:[
+      {t:'Sí, hay fondos ordinarios suficientes — no es necesario disponer del depósito',l:'ok',n:'deposito_fondos'},
+      {t:'No, es necesario disponer del depósito judicial mediante providencia',l:'warn',n:'disposicion_deposito'}
+    ]
+  },
+
+  disposicion_deposito:{ph:2,t:'Disposición del depósito judicial mediante providencia (art. 802.2)',ac:'juez',
+    c:[
+      ['i','Cuando los ingresos ordinarios son insuficientes, el tribunal dicta providencia ordenando sacar del depósito judicial la suma necesaria para financiar la reparación autorizada.'],
+      ['cl','Tramitación de la disposición',[
+        'El tribunal dicta providencia especificando la suma a disponer y su destino concreto',
+        'El LAJ tramita la disposición ante el establecimiento depositario',
+        'Los fondos se ponen a disposición del administrador para la ejecución de la reparación',
+        'El gasto y la disposición del depósito se incorporan a la siguiente rendición de cuentas'
+      ]],
+      ['n','Esta misma medida — providencia disponiendo fondos del depósito — se aplica igualmente cuando deba acometerse un gasto ordinario y el administrador no disponga de cantidad suficiente procedente de los ingresos de la administración.'],
+      ['l','Art. 802.2 LEC']
+    ],
+    nx:'deposito_fondos'
+  },
+
+  rep_denegada:{ph:2,t:'Denegación de reparación extraordinaria',ac:'ambos',
+    c:[
+      ['w','El tribunal ha denegado o modificado la reparación extraordinaria solicitada. El administrador debe atenerse a lo resuelto.'],
+      ['n','Si considera que la denegación lesiona intereses de la herencia, puede recurrir la resolución por los medios procesales ordinarios.'],
+      ['l','Recurso de reposición (Art. 451 LEC) o revisión ante el tribunal competente.']
+    ],
+    q:'¿Cómo procede?',
+    opts:[
+      {t:'Atenerse a la resolución y continuar con la gestión',l:'neutral',n:'gestion_conservacion'},
+      {t:'Interponer recurso contra la denegación',l:'warn',n:'recurso_rep'}
+    ]
+  },
+
+  recurso_rep:{ph:2,t:'Recurso contra denegación de actuación de gestión',ac:'ambos',end:'warning',
+    c:[
+      ['i','El administrador puede impugnar la resolución que deniegue o limite sus facultades de gestión mediante los recursos procedimentalmente pertinentes.'],
+      ['n','Este incidente no suspende automáticamente la tramitación principal del procedimiento divisorio, salvo que el tribunal así lo disponga.'],
+      ['l','Arts. 451-455 LEC (reposición, revisión, apelación).']
+    ]
+  },
+
+  deposito_fondos:{ph:2,t:'Depósito de cantidades recaudadas a disposición del Juzgado (art. 802.1)',ac:'laj',
+    c:[
+      ['i','El administrador depositará sin dilación, a disposición del Juzgado, todas las cantidades recaudadas en el ejercicio del cargo.'],
+      ['cl','Cantidades que deben depositarse',[
+        'Rentas de alquiler y arrendamientos percibidos',
+        'Rendimientos financieros y rendimientos de valores',
+        'Producto de ventas autorizadas (art. 803)',
+        'Cualquier otro ingreso del caudal no destinado a gastos ordinarios'
+      ]],
+      ['cl','Cantidades que el administrador puede retener sin autorización',[
+        'Gastos de pleitos o notariales derivados de la gestión del caudal',
+        'Pago de contribuciones, tributos e impuestos que graven los bienes',
+        'Demás atenciones ordinarias de la administración'
+      ]],
+      ['w','La retención de cantidades por encima de los conceptos ordinarios sin autorización judicial constituye infracción de la obligación de depósito y puede generar responsabilidad del administrador.'],
+      ['l','Art. 802.1 LEC']
+    ],
+    q:'¿Necesita fondos adicionales para gastos extraordinarios u ordinarios insuficientes?',
+    opts:[
+      {t:'Sí, solicitar provisión de fondos del depósito judicial',l:'ok',n:'provision_fondos'},
+      {t:'No, con los ingresos ordinarios y depósitos realizados basta',l:'neutral',n:'enajenacion_check'}
+    ]
+  },
+
+  provision_fondos:{ph:2,t:'Solicitud de provisión de fondos extraordinarios (art. 802.2)',ac:'juez',
+    c:[
+      ['i','Para atender gastos extraordinarios, el tribunal podrá dejar en poder del administrador la suma necesaria, mandando sacarla del depósito si los ingresos ordinarios no bastaren (Art. 802.2 LEC).'],
+      ['cl','Procedimiento:',[
+        'Escrito motivado solicitando la provisión',
+        'Detalle del gasto extraordinario u ordinario a atender',
+        'Importe solicitado con desglose',
+        'Providencia judicial autorizando la extracción'
+      ]],
+      ['n','También aplica cuando deba hacerse gasto ordinario y no hay cantidad suficiente de la administración.']
+    ],
+    q:'¿Resolución sobre la provisión:',
+    opts:[
+      {t:'Prov concedida',l:'ok',n:'prov_concedida'},
+      {t:'Prov denegada o reducida',l:'bad',n:'prov_denegada'}
+    ]
+  },
+
+  prov_concedida:{ph:2,t:'Provisión de fondos concedida',ac:'laj',
+    c:[
+      ['i','El tribunal ha autorizado la extracción de fondos del depósito para atender el gasto extraordinario u ordinario necesario.'],
+      ['n','Los fondos deben aplicarse exclusivamente al fin autorizado y justificarse íntegramente en la cuenta siguiente.']
+    ],
+    q:'¿Continuar?',
+    opts:[
+      {t:'No, pasar a rendición de cuentas',l:'ok',n:'enajenacion_check'},
+      {t:'Sí, continuar con la gestión',l:'neutral',n:'gestion_conservacion'}
+    ]
+  },
+
+  prov_denegada:{ph:2,t:'Provisión de fondos denegada',ac:'laj',
+    c:[
+      ['w','El tribunal ha denegado o reducido la provisión de fondos solicitada. Debe buscarse alternativa o ajustar la gestión a los recursos disponibles.']
+    ],
+    q:'¿Cómo proceder?',
+    opts:[
+      {t:'Ajustar gestión a recursos disponibles',l:'neutral',n:'gestion_conservacion'},
+      {t:'Solicitar revisión o recurso',l:'warn',n:'recurso_rep'}
+    ]
+  },
+
+  // ── FASE 3: ACTOS DISPOSITIVOS ────────────────────
+  enajenacion_check:{ph:3,t:'Verificación de necesidades de enajenación (art. 803.1)',ac:'laj',
+    c:[
+      ['i','La regla general es la prohibición absoluta de enajenar o gravar los bienes inventariados. Solo en los cuatro supuestos tasados del art. 803.2 LEC puede solicitarse al tribunal autorización para enajenar.'],
+      ['w','El incumplimiento de la prohibición de enajenar sin autorización judicial puede generar responsabilidad civil y, en su caso, penal del administrador.'],
+      ['l','Art. 803.1 y 803.2 LEC · Art. 794 LEC (inventario de bienes)']
+    ],
+    q:'¿Existe algún bien del inventario que se encuadre en alguno de los supuestos excepcionales de enajenación del art. 803.2 LEC?',
+    opts:[
+      {t:'No, ningún bien requiere enajenación en este momento',l:'ok',n:'cuentas_periodo'},
+      {t:'Sí, hay bienes encuadrables en los supuestos excepcionales',l:'warn',n:'enajenacion_tipo'}
+    ]
+  },
+
+  enajenacion_tipo:{ph:3,t:'Identificación del supuesto excepcional de enajenación (art. 803.2)',ac:'laj',
+    c:[
+      ['i','Identifique el supuesto concreto del art. 803.2 LEC en que se encuadra el bien cuya enajenación se pretende. Esta calificación es determinante: la propuesta al tribunal debe motivar el encuadramiento.'],
+      ['cl','Los cuatro supuestos excepcionales del art. 803.2 LEC',[
+        '1.º Bienes que puedan deteriorarse: naturaleza perecedera o circunstancias de riesgo de deterioro',
+        '2.º Bienes de difícil y costosa conservación: mantenimiento más gravoso para el caudal que su venta anticipada',
+        '3.º Frutos cuando se presenten circunstancias de mercado especialmente ventajosas para su enajenación',
+        '4.º Bienes cuya enajenación sea necesaria para el pago de deudas del caudal o para cubrir otras atenciones de la administración (cláusula residual)'
+      ]],
+      ['n','Una propuesta al tribunal insuficientemente motivada respecto del supuesto concreto puede ser denegada. Prepare la justificación detallada antes de formularla.'],
+      ['l','Art. 803.2 LEC']
+    ],
+    nx:'enajenacion_propuesta'
+  },
+
+  enajenacion_propuesta:{ph:3,t:'Propuesta de enajenación al tribunal y audiencia de interesados (art. 803.3)',ac:'juez',
+    c:[
+      ['i','El administrador formula propuesta motivada de enajenación al tribunal. Antes de resolver, el tribunal oye a los interesados del art. 793.3 LEC.'],
+      ['cl','Contenido de la propuesta del administrador',[
+        'Identificación precisa del bien o bienes cuya enajenación se propone',
+        'Supuesto excepcional concreto del art. 803.2 en que se encuadra',
+        'Valoración o tasación actualizada del bien',
+        'Justificación detallada de la necesidad o conveniencia de la enajenación',
+        'Modalidad de venta propuesta: subasta pública (bienes ordinarios) o mercado oficial (valores cotizados)'
+      ]],
+      ['cl','Actuaciones del Juzgado',[
+        'Traslado de la propuesta a los interesados del art. 793.3 LEC',
+        'Audiencia de sus alegaciones',
+        'Resolución mediante providencia autorizando o denegando la enajenación'
+      ]],
+      ['l','Art. 803.3 LEC · Art. 793.3 LEC']
+    ],
+    nx:'enajenacion_autorizacion'
+  },
+
+  enajenacion_autorizacion:{ph:3,t:'Resolución judicial sobre la enajenación',ac:'juez',
+    c:[
+      ['i','El tribunal resuelve mediante providencia. En caso de autorización, la modalidad de venta depende de la naturaleza del bien: subasta pública para los bienes ordinarios; mercado oficial para los valores con cotización.'],
+      ['l','Art. 803.3 LEC']
+    ],
+    q:'¿Cuál es el resultado de la resolución judicial?',
+    opts:[
+      {t:'Autorizada: bienes ordinarios → venta en pública subasta',l:'ok',n:'enajenacion_subasta'},
+      {t:'Autorizada: valores con cotización oficial → venta en mercado regulado',l:'ok',n:'enajenacion_mercado'},
+      {t:'Denegada: el tribunal no autoriza la enajenación',l:'bad',n:'consultar_alt'}
+    ]
+  },
+
+  enajenacion_subasta:{ph:3,t:'Ejecución de la venta en pública subasta (art. 803.3)',ac:'juez',
+    c:[
+      ['i','La venta de los bienes autorizados se realiza en pública subasta, conforme a lo establecido en la legislación notarial o en procedimiento de jurisdicción voluntaria, según corresponda.'],
+      ['cl','Tramitación de la subasta',[
+        'Determinación de la norma procedimental aplicable: legislación notarial (Ley 21/2007) o Ley de Jurisdicción Voluntaria (Ley 15/2015, arts. 271 y ss.)',
+        'Fijación del tipo de salida (valor de tasación o pericial)',
+        'Publicidad de la subasta: edictos, anuncios y demás requisitos legales',
+        'Celebración de la subasta y admisión de pujas',
+        'Adjudicación al mejor postor',
+        'Otorgamiento de escritura o documentación acreditativa de la transmisión',
+        'Depósito del producto líquido a disposición del Juzgado (art. 802.1 LEC)'
+      ]],
+      ['l','Art. 803.3 LEC · Ley 21/2007 Notarial · Ley 15/2015 JV · Art. 802 LEC']
+    ],
+    q:'¿Resultado de la subasta:',
+    opts:[
+      {t:'Venta realizada con éxito',l:'ok',n:'venta_exitosa'},
+      {t:'Sin postores o postura insuficiente',l:'bad',n:'venta_fallida'}
+    ]
+  },
+
+  enajenacion_mercado:{ph:3,t:'Venta de valores cotizados a través del mercado regulado (art. 803.3)',ac:'laj',
+    c:[
+      ['i','Los valores admitidos a cotización oficial se venden exclusivamente a través del mercado regulado correspondiente, con sujeción a sus propias reglas y procedimientos.'],
+      ['cl','Tramitación de la venta en mercado oficial',[
+        'Identificación del mercado regulado aplicable (BME, CNMV, etc.)',
+        'Orden de venta a través de entidad intermediaria financiera habilitada',
+        'Ejecución de la orden al precio de mercado en la fecha de venta',
+        'Obtención de la confirmación de operación y liquidación',
+        'Depósito del producto líquido a disposición del Juzgado (art. 802.1)',
+        'Incorporación de la documentación de la operación a los autos'
+      ]],
+      ['n','La venta en mercado oficial garantiza transparencia y precio objetivo de mercado. No se requiere subasta notarial ni procedimiento de jurisdicción voluntaria para esta categoría de valores.'],
+      ['l','Art. 803.3 LEC · RD 4/2015 LMV · Art. 802 LEC']
+    ],
+    nx:'venta_exitosa'
+  },
+
+  consultar_alt:{ph:3,t:'Alternativas a la enajenación de bienes',ac:'laj',end:'warning',
+    c:[
+      ['i','Alternativas cuando no es posible enajenar bienes pero se necesita liquidez o resolver situaciones complejas:'],
+      ['cl','Posibles alternativas a explorar:',[
+        'Crédito con garantía hipotecaria de bienes hereditarios (requiere autorización judicial)',
+        'Negociación de aplazamientos con acreedores',
+        'Subrogación en contratos de arrendamiento existentes',
+        'Solicitud de adelanto de legítimas (si procede)',
+        'Paralización temporal de determinados gastos no esenciales'
+      ]],
+      ['n','Estas alternativas deben valorarse caso por caso y, en su mayoría, requieren autorización judicial previa.']
+    ]
+  },
+
+  venta_exitosa:{ph:3,t:'Venta de bien realizada exitosamente',ac:'laj',
+    c:[
+      ['i','La enajenación del bien se ha completado. El producto líquido obtenido debe integrarse en la contabilidad de la administración y depositarse a disposición del Juzgado.'],
+      ['n','Retribución del administrador sobre esta venta (Art. 804.1 LEC): 2% sobre frutos/muebles, 1% sobre inmuebles/valores, 0.5% sobre efectos públicos. El producto líquido = precio de venta menos gastos directos de enajenación (tasación, publicidad, comisiones).']
+    ],
+    q:'¿Continúa con la gestión?',
+    opts:[
+      {t:'No, pasar a rendición de cuentas',l:'ok',n:'cuentas_periodo'},
+      {t:'Sí, realizar más actuaciones de gestión',l:'neutral',n:'gestion_conservacion'}
+    ]
+  },
+
+  venta_fallida:{ph:3,t:'Venta fallida — sin posturas válidas',ac:'ambos',
+    c:[
+      ['w','La subasta o procedimiento de venta no ha producido adjudicación. Deben evaluarse alternativas.'],
+      ['n','Posibilidad de nueva convocatoria con tipo reducido, o cambio de modalidad de venta, previa autorización judicial.']
+    ],
+    q:'¿Alternativa:',
+    opts:[
+      {t:'Cambiar modalidad de venta (notarial/JV/mercado)',l:'neutral',n:'enajenacion_autorizacion'},
+      {t:'Mantener bien sin vender y continuar gestión',l:'neutral',n:'gestion_conservacion'},
+      {t:'Nueva subasta con tipo reducido',l:'warn',n:'enajenacion_subasta'}
+    ]
+  },
+
+  // ── FASE 4: CUENTAS Y RETRIBUCIÓN ─────────────────
+  cuentas_periodo:{ph:4,t:'Rendición periódica de cuentas justificadas (art. 799)',ac:'laj',
+    c:[
+      ['i','El administrador rinde cuenta justificada dentro del plazo señalado por el tribunal. Las cuentas deben estar plenamente documentadas con todos los soportes acreditativos del período.'],
+      ['d','Plazo máximo absoluto: 1 año. El plazo concreto lo fija el tribunal en proporción a la importancia y condiciones del caudal (art. 799.1 LEC). Ningún período de rendición puede superar los doce meses.'],
+      ['cl','Contenido de la cuenta justificada',[
+        'Relación detallada de todos los ingresos del período: rentas, productos, rendimientos, cobros',
+        'Relación detallada de todos los gastos del período: reparaciones, contribuciones, honorarios, notariales',
+        'Saldo resultante (diferencia entre ingresos y gastos)',
+        'Documentación justificativa completa: facturas, extractos bancarios, recibos, liquidaciones tributarias',
+        'Conciliación con los depósitos efectuados a disposición del Juzgado durante el período'
+      ]],
+      ['n','Los interesados pueden solicitar en cualquier momento el acceso a las cuentas en la Oficina judicial para inspeccionar la administración o promover medidas sobre su rectificación o aprobación, sin necesidad de esperar al período de rendición (art. 799.3 LEC).'],
+      ['l','Art. 799 LEC']
+    ],
+    nx:'saldo_forma'
+  },
+
+  saldo_forma:{ph:4,t:'Forma de acreditación del saldo de la cuenta (art. 799.2)',ac:'laj',
+    c:[
+      ['i','Al rendir la cuenta, el administrador debe acreditar el saldo resultante por una de las dos vías alternativas que establece el art. 799.2 LEC.'],
+      ['l','Art. 799.2 LEC']
+    ],
+    q:'¿Cómo se acredita el saldo de la cuenta periódica?',
+    opts:[
+      {t:'Consignación directa del saldo ante el Juzgado en este momento',l:'ok',n:'saldo_consignacion'},
+      {t:'Presentación del resguardo original de depósito previo ya efectuado',l:'ok',n:'saldo_resguardo'}
+    ]
+  },
+
+  saldo_consignacion:{ph:4,t:'Consignación directa del saldo y depósito por el LAJ (art. 799.2)',ac:'laj',
+    c:[
+      ['i','El administrador consigna directamente el saldo ante el Juzgado. El LAJ acuerda inmediatamente, mediante diligencia, el ingreso del saldo en el establecimiento designado.'],
+      ['cl','Actuaciones del LAJ',[
+        'Recepción del saldo consignado por el administrador',
+        'Dictado inmediato de diligencia acordando el depósito',
+        'Tramitación del ingreso en el establecimiento destinado al efecto',
+        'Incorporación de la diligencia y del justificante del ingreso a los autos'
+      ]],
+      ['l','Art. 799.2 primer inciso LEC']
+    ],
+    nx:'cese_check'
+  },
+
+  saldo_resguardo:{ph:4,t:'Presentación del resguardo de depósito previo (art. 799.2)',ac:'laj',
+    c:[
+      ['i','El administrador presenta el resguardo original acreditativo del depósito ya efectuado. El LAJ documenta en los autos la fecha y la cantidad del depósito.'],
+      ['cl','Actuaciones del LAJ',[
+        'Recepción del resguardo original de depósito previo',
+        'Verificación de que el resguardo corresponde al saldo de la cuenta rendida',
+        'Poner en los autos diligencia expresiva de la fecha y cantidad del depósito',
+        'Incorporación del resguardo como anexo acreditativo a los autos'
+      ]],
+      ['l','Art. 799.2 segundo inciso LEC']
+    ],
+    nx:'cese_check'
+  },
+
+  cese_check:{ph:4,t:'Verificación de la continuidad del cargo',ac:'laj',
+    c:[
+      ['i','Rendidas y documentadas las cuentas del período, compruebe si el administrador continúa en el ejercicio del cargo o si ha operado o debe operar su cese.'],
+      ['n','El cese puede producirse por: finalización del procedimiento de división hereditaria, acuerdo de los herederos para poner fin a la intervención, remoción judicial por justa causa, fallecimiento o renuncia del administrador, o cumplimiento del objeto del encargo.'],
+      ['l','Art. 799 LEC · Art. 800 LEC · Art. 796 LEC']
+    ],
+    q:'¿Continúa el administrador en el ejercicio del cargo?',
+    opts:[
+      {t:'Sí, continúa — se inicia un nuevo período de administración',l:'ok',n:'nuevo_periodo'},
+      {t:'No, cesa en el cargo — debe procederse a retribución y cuenta final',l:'warn',n:'retribucion'}
+    ]
+  },
+
+  nuevo_periodo:{ph:4,t:'Inicio de nuevo período de administración',ac:'laj',
+    c:[
+      ['i','El administrador inicia un nuevo período de gestión. Todas las obligaciones del cargo continúan plenamente vigentes.'],
+      ['d','El tribunal señalará el plazo para la siguiente rendición de cuentas, que en ningún caso podrá exceder de un año (art. 799.1 LEC).'],
+      ['n','En este nuevo período resultan de plena aplicación las obligaciones de conservación y explotación del caudal (art. 801), el régimen de depósito de fondos (art. 802) y, en su caso, las limitaciones a la enajenación de bienes inventariados (art. 803).'],
+      ['l','Art. 799 LEC · Art. 801 LEC · Art. 802 LEC · Art. 803 LEC']
+    ],
+    nx:'gestion_conservacion'
+  },
+
+  retribucion:{ph:4,t:'Cálculo de la retribución del administrador (art. 804)',ac:'laj',
+    c:[
+      ['i','El administrador tiene derecho a retribución según el tarifario del Art. 804 LEC. El cálculo se realiza sobre el producto líquido de las operaciones.'],
+      ['cl','Tarifa de retribución (Art. 804.1):',[
+        'Frutos y muebles vendidos: 2% del producto líquido',
+        'Inmuebles y valores cobrados: 1% del producto líquido',
+        'Efectos públicos: 0.5% del producto líquido',
+        'Otros ingresos: 4%-10% (fijado por LAJ según productos y trabajo)'
+      ]],
+      ['n','"Producto líquido" = precio de venta menos gastos directos de enajenación (tasación, publicidad, comisiones).'],
+      ['l','Art. 804 LEC']
+    ],
+    q:'¿Tipo de ingreso a computar:',
+    opts:[
+      {t:'Venta de frutos o muebles (2%)',l:'ok',n:'ret_frutos'},
+      {t:'Venta de inmuebles o cobro de valores (1%)',l:'ok',n:'ret_inmuebles'},
+      {t:'Venta de efectos públicos (0.5%)',l:'ok',n:'ret_publicos'},
+      {t:'Otros ingresos (4%-10%)',l:'neutral',n:'ret_otros'},
+      {t:'Gastos de viaje',l:'neutral',n:'ret_viajes'}
+    ]
+  },
+
+  ret_frutos:{ph:4,t:'Retribución por venta de frutos y muebles — 2%',ac:'laj',
+    c:[['i','Sobre el producto líquido de la venta de frutos y otros bienes muebles incluidos en el inventario, percibirá el 2 por 100 (Art. 804.1.1º LEC).']],
+    q:'¿Más conceptos retributivos?',
+    opts:[
+      {t:'Finalizar cálculo y continuar',l:'ok',n:'subalternas_gestion'},
+      {t:'Calcular más conceptos',l:'neutral',n:'retribucion'}
+    ]
+  },
+
+  ret_inmuebles:{ph:4,t:'Retribución por venta de inmuebles y valores — 1%',ac:'laj',
+    c:[['i','Sobre el producto líquido de la venta de bienes raíces y cobranza de valores de cualquier especie, el 1 por 100 (Art. 804.1.2º LEC).']],
+    q:'¿Más conceptos?',opts:[{t:'Calcular más',l:'neutral',n:'retribucion'},{t:'Finalizar',l:'ok',n:'subalternas_gestion'}]
+  },
+
+  ret_publicos:{ph:4,t:'Retribución por efectos públicos — 0.5%',ac:'laj',
+    c:[['i','Sobre el producto líquido de la venta de efectos públicos, el medio por 100 (Art. 804.1.3º LEC).']],
+    q:'¿Más conceptos?',opts:[{t:'Calcular más',l:'neutral',n:'retribucion'},{t:'Finalizar',l:'ok',n:'subalternas_gestion'}]
+  },
+
+  ret_otros:{ph:4,t:'Retribución discrecional — Otros ingresos (4%-10%)',ac:'laj',
+    c:[
+      ['i','Sobre los demás ingresos de la administración (rentas, intereses, indemnizaciones...), el LAJ señalará del 4 al 10 por 100 (Art. 804.1.4º LEC).'],
+      ['n','Criterios: productos del caudal y trabajo de la administración. Resolución motivada del LAJ.']
+    ],
+    q:'¿Más conceptos?',opts:[{t:'Calcular más',l:'neutral',n:'retribucion'},{t:'Finalizar',l:'ok',n:'subalternas_gestion'}]
+  },
+
+  ret_viajes:{ph:4,t:'Gastos de viaje del administrador',ac:'laj',
+    c:[
+      ['i','El LAJ podrá acordar mediante decreto el abono de gastos de viajes necesarios para el desempeño del cargo, cuando lo considere justo (Art. 804.2 LEC).'],
+      ['n','Requiere solicitud justificada y decreto previo. No es automático.']
+    ],
+    q:'¿Más conceptos?',opts:[{t:'Calcular más',l:'neutral',n:'retribucion'},{t:'Finalizar',l:'ok',n:'subalternas_gestion'}]
+  },
+
+  // ── FASE 5: ADMINISTRACIONES SUBALTERNAS ──────────
+  subalternas_gestion:{ph:5,t:'Gestión de administraciones subalternas (art. 805)',ac:'laj',
+    c:[
+      ['i','Se conservarán las administraciones subalternas que para el cuidado de sus bienes tuviera el finado, con la misma retribución y facultades (Art. 805.1 LEC).'],
+      ['cl','Régimen de las administraciones subalternas',[
+        'Se mantienen automáticamente (principio de continuidad)',
+        'Rinden cuentas parciales al administrador judicial, no directamente al tribunal',
+        'Remitirán al administrador judicial todo lo que recauden',
+        'Son dependientes del administrador judicial',
+        'No pueden ser separados por el administrador judicial sin causa justa',
+        'Toda separación requiere autorización mediante decreto del LAJ',
+        'Las vacantes se proveen por el administrador judicial con autorización del LAJ'
+      ]],
+      ['n','El administrador judicial NO puede modificar unilateralmente las condiciones fijadas por el causante. Cualquier alteración requiere autorización judicial.'],
+      ['l','Art. 805 LEC · Art. 804 LEC (inaplicable a subalternas)']
+    ],
+    q:'¿Actuación respecto de administradores subalternos:',
+    opts:[
+      {t:'Mantenerlos sin cambios',l:'ok',n:'subalternas_mantener'},
+      {t:'Proveer vacante producida',l:'neutral',n:'proveer_vacante'},
+      {t:'Solicitar separación de alguno',l:'warn',n:'sep_subalterno'}
+    ]
+  },
+
+  subalternas_mantener:{ph:5,t:'Mantenimiento de administraciones subalternas',ac:'laj',
+    c:[
+      ['i','Las administraciones subalternas continúan bajo las mismas condiciones que les otorgó el causante.'],
+      ['n','El administrador judicial supervisa su gestión a través de las cuentas periódicas que deben remitir.']
+    ],
+    q:'¿Finalizar gestión de subalternas?',
+    opts:[
+      {t:'Sí, pasar a cuenta final',l:'ok',n:'cuenta_final'},
+      {t:'No, otra actuación sobre subalternas',l:'neutral',n:'subalternas_gestion'}
+    ]
+  },
+
+  sep_subalterno:{ph:5,t:'Solicitud de separación de administrador subalterno',ac:'laj',
+    c:[
+      ['i','Los administradores subalternos no pueden ser separados por el administrador judicial sino por causa justa y con autorización mediante decreto del LAJ (Art. 805.2 LEC).'],
+      ['cl','Procedimiento de separación:',[
+        'Escrito motivando la causa justa',
+        'Audiencia al administrador subalterno',
+        'Decreto del LAJ autorizando o denegando',
+        'Si procede: entrega documental y rendición de cuentas final'
+      ]],
+      ['w','Causas justas: incumplimiento, negligencia reiterada, incompetencia, conflicto de intereses, etc.']
+    ],
+    q:'¿Resolución del LAJ:',
+    opts:[
+      {t:'Separación autorizada',l:'ok',n:'sep_autorizada'},
+      {t:'Separación denegada',l:'bad',n:'sep_denegada'}
+    ]
+  },
+
+  sep_autorizada:{ph:5,t:'Separación de subalterno autorizada',ac:'laj',
+    c:[['i','El LAJ ha autorizado la separación del administrador subalterno por causa justa. Debe procederse a la entrega y rendición de cuentas final.']],
+    q:'¿Qué hacer?',opts:[{t:'Proveer vacante',l:'neutral',n:'proveer_vacante'},{t:'Finalizar y pasar a cuenta final',l:'ok',n:'cuenta_final'}]
+  },
+
+  sep_denegada:{ph:5,t:'Separación de subalterno denegada',ac:'laj',
+    c:[['w','El LAJ ha denegado la separación solicitada. El administrador subalterno continúa en sus funciones.']],
+    q:'¿Qué hacer?',opts:[{t:'Aceptar y continuar',l:'neutral',n:'subalternas_gestion'},{t:'Recurrir la denegación',l:'warn',n:'recurso_rep'}]
+  },
+
+  proveer_vacante:{ph:5,t:'Provisión de vacante en administración subalterna',ac:'laj',
+    c:[
+      ['i','Con la misma autorización (decreto del LAJ), el administrador judicial podrá proveer las vacantes que resulten, bajo su responsabilidad (Art. 805.3 LEC).'],
+      ['n','El nuevo administrador subalterno queda sujeto al mismo régimen de dependencia y control.']
+    ],
+    q:'¿Finalizar?',
+    opts:[{t:'Sí, pasar a cuenta final',l:'ok',n:'cuenta_final'},{t:'Más gestiones sobre subalternas',l:'neutral',n:'subalternas_gestion'}]
+  },
+
+  // ── FASE 6: CESE Y LIQUIDACIÓN ────────────────────
+  cuenta_final:{ph:6,t:'Rendición de la cuenta final complementaria (art. 800.1)',ac:'laj',
+    c:[
+      ['i','Al cesar en el cargo, el administrador rinde una cuenta final complementaria de todas las ya presentadas. Esta cuenta cubre el período comprendido entre la última cuenta periódica y la fecha del cese.'],
+      ['cl','Contenido de la cuenta final',[
+        'Período cubierto: desde la última cuenta periódica hasta la fecha efectiva del cese',
+        'Relación de ingresos del período final',
+        'Relación de gastos del período final',
+        'Saldo final resultante del período',
+        'Conciliación completa con todos los depósitos judiciales constituidos',
+        'Documentación justificativa del período final',
+        'Propuesta de liquidación de retribución (Art. 804)'
+      ]],
+      ['w','La cuenta final es complementaria, no sustitutiva: no reemplaza las cuentas periódicas anteriores. Debe ser leída conjuntamente con ellas para obtener una imagen fiel y completa de toda la administración.'],
+      ['l','Art. 800.1 LEC']
+    ],
+    nx:'traslado_cuentas'
+  },
+
+  traslado_cuentas:{ph:6,t:'Traslado de todas las cuentas a las partes (art. 800.2)',ac:'laj',
+    c:[
+      ['i','Todas las cuentas del administrador — las periódicas y la final — se ponen de manifiesto a las partes en la Oficina judicial. El LAJ señala mediante diligencia un término común para su examen.'],
+      ['cl','Actuaciones del LAJ',[
+        'Reunir la totalidad de las cuentas: las periódicas ya presentadas y la cuenta final',
+        'Señalar mediante diligencia el término común para el traslado a las partes',
+        'Fijar la duración del plazo en función de la importancia y complejidad del conjunto de las cuentas',
+        'Notificar a todas las partes el inicio y la duración del plazo',
+        'Poner las cuentas de manifiesto en la Oficina judicial durante todo el plazo'
+      ]],
+      ['n','El término es "común": todas las partes disponen del mismo plazo, que corre simultáneamente para todas ellas desde la notificación. No hay términos individuales ni sucesivos.'],
+      ['l','Art. 800.2 LEC']
+    ],
+    nx:'oposicion_check'
+  },
+
+  oposicion_check:{ph:6,t:'Verificación de oposición a las cuentas (art. 800.3 y 800.4)',ac:'laj',
+    c:[
+      ['i','Transcurrido íntegramente el término común señalado por el LAJ, compruebe si alguna parte ha formulado oposición a las cuentas dentro de ese plazo hábil.'],
+      ['l','Art. 800.3 LEC · Art. 800.4 LEC']
+    ],
+    q:'¿Ha formulado alguna parte oposición a las cuentas dentro del término hábil?',
+    opts:[
+      {t:'No — el término ha transcurrido sin que nadie formulara oposición',l:'ok',n:'fin_cuentas_aprobadas'},
+      {t:'Sí — se ha presentado escrito de impugnación en plazo',l:'warn',n:'traslado_cuentadante'}
+    ]
+  },
+
+  traslado_cuentadante:{ph:6,t:'Traslado del escrito de impugnación al cuentadante (art. 800.4)',ac:'laj',
+    c:[
+      ['i','El LAJ da traslado del escrito de impugnación al cuentadante — el administrador que rinde cuentas — para que lo conteste conforme al art. 438 LEC (contestación a la demanda en juicio verbal).'],
+      ['cl','Tramitación del traslado',[
+        'El LAJ da traslado formal del escrito de impugnación al cuentadante',
+        'Plazo de contestación: el establecido en el art. 438 LEC para el juicio verbal (10 días)',
+        'En el escrito de contestación, el cuentadante puede solicitar la celebración de vista oral',
+        'La parte impugnante también pudo solicitar la vista en su propio escrito de impugnación'
+      ]],
+      ['l','Art. 800.4 LEC · Art. 438 LEC']
+    ],
+    nx:'vista_check'
+  },
+
+  vista_check:{ph:6,t:'Decisión sobre la celebración de vista oral',ac:'juez',
+    c:[
+      ['i','Una vez presentados ambos escritos — impugnación y contestación —, debe verificarse si alguna de las partes ha solicitado la celebración de vista oral.'],
+      ['n','La solicitud de vista puede haberse formulado en el escrito de impugnación o en el de contestación. Si cualquiera de las dos partes la solicita, el procedimiento continúa íntegramente con arreglo al juicio verbal (arts. 437–447 LEC).'],
+      ['l','Art. 800.4 LEC · Arts. 437–447 LEC']
+    ],
+    q:'¿Ha solicitado alguna de las partes la celebración de vista oral?',
+    opts:[
+      {t:'No, ninguna parte solicita vista → resolución sobre la base de los escritos',l:'ok',n:'resolucion_sin_vista'},
+      {t:'Sí, alguna parte solicita vista → se tramita como juicio verbal',l:'warn',n:'juicio_verbal'}
+    ]
+  },
+
+  juicio_verbal:{ph:6,t:'Tramitación como juicio verbal con vista oral (art. 800.4 y arts. 437–447 LEC)',ac:'juez',
+    c:[
+      ['i','La impugnación se tramita con arreglo al juicio verbal. El Juzgado señala fecha de vista, las partes concurren, se practica la prueba y el juez dicta sentencia.'],
+      ['cl','Fases del juicio verbal',[
+        'Señalamiento de la fecha y hora de la vista por el LAJ',
+        'Citación de las partes: impugnante y cuentadante',
+        'Celebración de la vista: alegaciones orales, proposición y práctica de la prueba admitida',
+        'Deliberación interna del juez',
+        'Dictado de la sentencia resolviendo la impugnación'
+      ]],
+      ['l','Art. 800.4 LEC · Arts. 437–447 LEC']
+    ],
+    nx:'sentencia_verbal'
+  },
+
+  sentencia_verbal:{ph:6,t:'Sentencia del juicio verbal sobre la impugnación',ac:'juez',
+    c:[['i','Celebrada la vista, el juez dicta sentencia que resuelve definitivamente sobre la impugnación de las cuentas del administrador.'],
+    ['l','Arts. 437–447 LEC · Art. 800.4 LEC']],
+    q:'¿Cuál es el fallo de la sentencia?',
+    opts:[
+      {t:'Impugnación desestimada: las cuentas quedan aprobadas',l:'ok',n:'fin_impugnacion_desestimada'},
+      {t:'Sentencia mixta: aprobación parcial con rectificaciones',l:'warn',n:'sent_mixta'},
+      {t:'Impugnación estimada: las cuentas no se aprueban tal como fueron presentadas',l:'bad',n:'fin_impugnacion_estimada'}
+    ]
+  },
+
+  resolucion_sin_vista:{ph:6,t:'Resolución sobre la impugnación sin celebración de vista',ac:'juez',
+    c:[
+      ['i','Ninguna parte solicita vista. El Juzgado resuelve la impugnación a la vista de los escritos de impugnación y contestación, sin celebración de vista oral.'],
+      ['l','Art. 800.4 LEC · Art. 438 LEC']
+    ],
+    q:'¿Cuál es el sentido de la resolución?',
+    opts:[
+      {t:'Impugnación desestimada: las cuentas quedan aprobadas',l:'ok',n:'fin_impugnacion_desestimada'},
+      {t:'Resolución mixta (parcial)',l:'warn',n:'sent_mixta'},
+      {t:'Impugnación estimada: las cuentas no se aprueban tal como fueron presentadas',l:'bad',n:'fin_impugnacion_estimada'}
+    ]
+  },
+
+  sent_mixta:{ph:6,t:'Sentencia mixta — Aprobación parcial con rectificaciones',ac:'juez',end:'warning',
+    c:[
+      ['i','El tribunal ha aprobado parcialmente las cuentas con rectificaciones. La responsabilidad del administrador se limita a las partidas modificadas.'],
+      ['n','La caución responderá de las cantidades debidas según la sentencia. El resto se devuelve al administrador.']
+    ]
+  },
+
+  // ── NODOS FINALES ─────────────────────────────────
+  fin_cuentas_aprobadas:{ph:6,t:'Fin: cuentas aprobadas — caución devuelta',ac:'laj',end:'success',
+    c:[
+      ['i','Transcurrido el término sin oposición, el LAJ dicta decreto que contiene tres pronunciamientos simultáneos e inseparables.'],
+      ['cl','Contenido del decreto de aprobación (art. 800.3 LEC)',[
+        '1.º Aprobación de todas las cuentas presentadas, incluida la cuenta final complementaria',
+        '2.º Declaración expresa de exención de responsabilidad del administrador',
+        '3.º Orden de devolución al administrador de la caución que prestó al inicio del cargo'
+      ]],
+      ['n','La exención de responsabilidad y la devolución de la caución son consecuencias automáticas e inseparables de la aprobación. El LAJ no puede aprobar las cuentas sin declarar la exención ni sin ordenar la devolución de la caución.'],
+      ['l','Art. 800.3 LEC · Art. 795.4.ª LEC (caución)']
+    ]
+  },
+
+  fin_impugnacion_estimada:{ph:6,t:'Fin: impugnación estimada — responsabilidad del administrador',ac:'juez',end:'error',
+    c:[
+      ['i','La impugnación ha sido estimada. Las cuentas no quedan aprobadas tal como fueron presentadas. La resolución o sentencia determinará las consecuencias patrimoniales concretas para el administrador.'],
+      ['cl','Consecuencias posibles:',[
+        'Modificación de partidas impugnadas',
+        'Condena al administrador a restituir cantidades al caudal',
+        'Declaración de responsabilidad por daños y perjuicios',
+        'Pérdida total o parcial de la retribución',
+        'Pérdida total o parcial de la caución hasta liquidar la responsabilidad',
+        'Posible condena en costas'
+      ]],
+      ['w','La estimación de la impugnación puede conllevar: obligación de reintegro de cantidades al caudal, declaración de responsabilidad por daños, y retención de la caución hasta que se liquide la responsabilidad declarada. Consulte el contenido íntegro de la sentencia o resolución para determinar las medidas a ejecutar.'],
+      ['n','Contra esta cabe recurso de apelación en los casos procedentes.'],
+      ['l','Art. 800.4 LEC · Arts. 437–447 LEC']
+    ]
+  },
+
+  fin_impugnacion_desestimada:{ph:6,t:'Fin: impugnación desestimada — cuentas aprobadas',ac:'juez',end:'success',
+    c:[
+      ['i','La impugnación ha sido desestimada. Las cuentas quedan aprobadas. Procede la declaración de exención de responsabilidad del administrador y la devolución de la caución prestada.'],
+      ['cl','Efectos:',[
+        'Aprobación definitiva de las cuentas',
+        'Declaración de exención de responsabilidad',
+        'Devolución de la caución (si no hubo condena en costas)',
+        'Posibilidad de imponer costas al impugnante'
+      ]],
+      ['n','La desestimación de la impugnación produce los mismos efectos materiales que la aprobación sin oposición: exención de responsabilidad del administrador y devolución de la caución. Véase art. 800.3 LEC.'],
+      ['l','Art. 800.3 y 800.4 LEC']
+    ]
+  }
+
+}; // fin STEPS
+
+// ════════════════════════════════════════════════════
+// ESTADO
+// ════════════════════════════════════════════════════
+let cur = 'inicio';
+let hist = []; // [{s: origen, next: destino, c: textoOpción}]
+let activeSbTab = 'map';
+let mapaOn = false;
+let phCollapsed = {};
+
+// ════════════════════════════════════════════════════
+// NAVEGACIÓN
+// ════════════════════════════════════════════════════
+function goTo(stepId, choiceLabel) {
+  hist.push({s:cur, next:stepId, c:choiceLabel||''});
+  cur = stepId;
+  if (choiceLabel) sbTab('journey');
+  render();
+}
+function goBack() {
+  if (!hist.length) return;
+  const prev = hist.pop();
+  cur = prev.s;
+  render();
+}
+function goBackTo(idx) {
+  if (idx < 0 || idx >= hist.length) return;
+  cur = hist[idx].s;
+  hist = hist.slice(0, idx);
+  render();
+}
+function restart() {
+  cur = 'inicio'; hist = []; phCollapsed = {};
+  sbTab('map');
+  if (mapaOn) { mapaOn = false; document.getElementById('layout').style.display='flex'; document.getElementById('mapa-overlay').style.display='none'; }
+  render();
+}
+function jumpTo(stepId) {
+  if (stepId === cur) return;
+  hist.push({s:cur, next:stepId, c:'[Salto directo]'});
+  cur = stepId;
+  sbTab('map');
+  if (mapaOn) toggleMapa();
+  render();
+}
+
+// ════════════════════════════════════════════════════
+// RENDER PRINCIPAL
+// ════════════════════════════════════════════════════
+function render() {
+  renderPbar();
+  renderBreadcrumb();
+  renderSidebar();
+  renderContent();
+  document.getElementById('content').scrollTop = 0;
+}
+
+function renderPbar() {
+  const s = STEPS[cur];
+  const curPh = s ? s.ph : 0;
+  const visitedPhs = new Set(hist.map(h => STEPS[h.s] ? STEPS[h.s].ph : 0));
+  let html = '';
+  PHASES.forEach((ph, i) => {
+    let cls = '';
+    if (i === curPh) cls = 'active';
+    else if (visitedPhs.has(i) || i < curPh) cls = 'done';
+    html += `<div class="ph-item"><span class="ph-lbl ${cls}">${ph}</span></div>`;
+    if (i < PHASES.length-1) html += '<span class="ph-sep">›</span>';
+  });
+  document.getElementById('pbar').innerHTML = html;
+}
+
+function renderBreadcrumb() {
+  let html = '';
+  hist.forEach((h, i) => {
+    const s = STEPS[h.s];
+    const t = s ? (s.t.length>30 ? s.t.slice(0,30)+'…' : s.t) : h.s;
+    html += `<button class="bc-item bc-past" onclick="goBackTo(${i})">${t}</button><span class="bc-sep">›</span>`;
+  });
+  const cs = STEPS[cur];
+  const ct = cs ? (cs.t.length>30 ? cs.t.slice(0,30)+'…' : cs.t) : cur;
+  html += `<span class="bc-item bc-current">${ct}</span>`;
+  document.getElementById('breadcrumb').innerHTML = html;
+}
+
+function sbTab(tab) {
+  activeSbTab = tab;
+  document.getElementById('sb-map').style.display = tab==='map' ? 'block' : 'none';
+  document.getElementById('sb-journey').style.display = tab==='journey' ? 'block' : 'none';
+  document.getElementById('sb-access').style.display = tab==='access' ? 'block' : 'none';
+  document.querySelectorAll('.sb-tab').forEach((t,i) => {
+    t.classList.toggle('active', (i===0 && tab==='map') || (i===1 && tab==='journey') || (i===2 && tab==='access'));
+  });
+}
+
+function renderSidebar() {
+  const visitedSet = new Set(hist.map(h=>h.s));
+  // MAP TAB
+  let mapHtml = '';
+  STEP_ORDER.forEach((phSteps, phi) => {
+    const isCollapsed = phCollapsed[phi];
+    const arrow = isCollapsed ? '▶' : '▼';
+    const arrowCls = isCollapsed ? '' : 'open';
+    mapHtml += `<div class="sm-phase">
+      <div class="sm-phase-hdr" onclick="togglePh(${phi})">
+        <span>${PHASES[phi]}</span>
+        <span class="sm-phase-arrow ${arrowCls}">${arrow}</span>
+      </div>`;
+    if (!isCollapsed) {
+      mapHtml += '<div class="sm-nodes">';
+      phSteps.forEach(sid => {
+        const s = STEPS[sid];
+        if (!s) return;
+        let cls = 'sm-node';
+        if (sid === cur) cls += ' sm-current';
+        else if (visitedSet.has(sid)) cls += ' sm-visited';
+        else if (s.end) cls += ' sm-end';
+        const title = s.t.length>34 ? s.t.slice(0,34)+'…' : s.t;
+        mapHtml += `<div class="${cls}" onclick="sbNodeClick('${sid}')">${title}</div>`;
+      });
+      mapHtml += '</div>';
+    }
+    mapHtml += '</div>';
+  });
+  mapHtml += `<div class="sb-foot">Arts. 797–805 LEC<br>Ley 1/2000, de 7 de enero<br>Enjuiciamiento Civil</div>`;
+  mapHtml += `<div style="padding:6px 7px 10px;font-size:11px;color:rgba(255,255,255,.28);font-style:italic">✦ Pulsa cualquier paso para acceder directamente</div>`;
+  document.getElementById('sb-map').innerHTML = mapHtml;
+
+  // JOURNEY TAB
+  let jHtml = '';
+  hist.forEach((h, i) => {
+    const s = STEPS[h.s];
+    if (!s) return;
+    jHtml += `<div class="pi past">
+      <div class="pi-step">${s.t.length>38?s.t.slice(0,38)+'…':s.t}</div>
+      ${h.c ? `<div class="pi-choice">↳ ${h.c.length>38?h.c.slice(0,38)+'…':h.c}</div>` : ''}
+    </div>`;
+  });
+  const cs = STEPS[cur];
+  if (cs) {
+    jHtml += `<div class="pi current">
+      <div class="pi-step">${cs.t.length>38?cs.t.slice(0,38)+'…':cs.t}</div>
+    </div>`;
+  }
+  if (!jHtml) jHtml = `<div style="font-size:14px;color:rgba(255,255,255,.30);padding:8px">El recorrido se registra aquí al tomar la primera decisión.</div>`;
+  jHtml += `<div class="sb-foot">Arts. 797–805 LEC<br>Ley 1/2000, de 7 de enero<br>Enjuiciamiento Civil</div>`;
+  document.getElementById('sb-journey').innerHTML = jHtml;
+
+  // ACCESS TAB (de documento 2)
+  let aHtml = '';
+  let n = 1;
+  PHASES.forEach((phName, pi) => {
+    const steps = Object.entries(STEPS).filter(([k,v]) => v.ph === pi && !v.end);
+    if (!steps.length) return;
+    aHtml += `<div class="ac-phase"><div class="ac-phase-hdr">${phName}</div>`;
+    steps.forEach(([key, step]) => {
+      const isCur = key === cur;
+      aHtml += `<button class="ac-btn${isCur ? ' ac-current' : ''}" onclick="jumpTo('${key}')"><span class="ac-num">${n++}</span><span>${step.t.length>32?step.t.slice(0,32)+'…':step.t}</span></button>`;
+    });
+    aHtml += '</div>';
+  });
+  document.getElementById('sb-access').innerHTML = aHtml;
+}
+
+function togglePh(phi) {
+  phCollapsed[phi] = !phCollapsed[phi];
+  renderSidebar();
+}
+function sbNodeClick(sid) {
+  jumpTo(sid);
+}
+
+// ════════════════════════════════════════════════════
+// RENDER CONTENIDO
+// ════════════════════════════════════════════════════
+function renderContent() {
+  const s = STEPS[cur];
+  if (!s) { document.getElementById('content').innerHTML = '<p>Paso no encontrado.</p>'; return; }
+  const stepNum = hist.length + 1;
+  const phaseName = PHASES[s.ph] || '';
+
+  if (s.end) {
+    document.getElementById('content').innerHTML = buildEnd(s, stepNum, phaseName);
+  } else {
+    document.getElementById('content').innerHTML = buildStep(s, stepNum, phaseName);
+  }
+}
+
+function actLabel(ac) {
+  if (ac==='laj') return '<span class="act-badge act-laj">Letrado de la A.J.</span>';
+  if (ac==='juez') return '<span class="act-badge act-juez">Tribunal / Juez</span>';
+  if (ac==='notario') return '<span class="act-badge act-notario">Notario</span>';
+  return '<span class="act-badge act-ambos">LAJ + Tribunal</span>';
+}
+
+function renderBlocks(blocks) {
+  let html = '';
+  blocks.forEach(b => {
+    switch(b[0]) {
+      case 'i': html += `<p class="blk-i">${b[1]}</p>`; break;
+      case 'd': html += `<div class="blk-d">⏱ ${b[1]}</div>`; break;
+      case 'n': html += `<div class="blk-n">ℹ ${b[1]}</div>`; break;
+      case 'w': html += `<div class="blk-w">⚠ ${b[1]}</div>`; break;
+      case 'l': html += `<div class="blk-l">📋 ${b[1]}</div>`; break;
+      case 'cl':
+        html += `<div class="blk-cl"><div class="blk-cl-title">${b[1]}</div><ul>`;
+        b[2].forEach(item => { html += `<li>${item}</li>`; });
+        html += '</ul></div>'; break;
+    }
+  });
+  return html;
+}
+
+const LETTERS = ['A','B','C','D','E'];
+function escQ(s){ return s.replace(/'/g,"&#39;").replace(/"/g,'&quot;'); }
+
+function buildStep(s, stepNum, phaseName) {
+  const wasJump = hist.length && hist[hist.length-1].c === '[Salto directo]';
+  let html = `<div class="card">
+    <div class="c-hdr">
+      <div class="c-hdr-top">${actLabel(s.ac)}</div>
+      <div class="c-title">${s.t}</div>
+      <div class="step-num">Paso ${stepNum} de este recorrido · ${phaseName}${wasJump ? `<span class="jump-badge">✦ Acceso directo</span>` : ''}</div>
+    </div>
+    <div class="c-body">${renderBlocks(s.c)}</div>`;
+
+  if (s.q) {
+    html += `<div class="dec-area">
+      <div class="dec-q">${s.q}</div>
+      <div class="dec-opts">`;
+    s.opts.forEach((opt, i) => {
+      html += `<button class="dec-btn ${opt.l}" onclick="goTo('${opt.n}','${escQ(opt.t)}')">
+        <span class="dec-letter">${LETTERS[i]}</span>
+        <span>${opt.t}</span>
+      </button>`;
+    });
+    html += '</div></div>';
+  }
+
+  html += `<div class="c-nav">
+    <button class="btn-back" onclick="goBack()" ${!hist.length?'disabled':''}>← Volver</button>
+    ${s.nx ? `<button class="btn-next" onclick="goTo('${s.nx}','')">Siguiente →</button>` : ''}
+  </div></div>`;
+  return html;
+}
+
+function buildEnd(s, stepNum, phaseName) {
+  const icons = {success:'✅',error:'❌',warning:'⚠️',neutral:'ℹ️'};
+  const titles = {success:'Procedimiento concluido satisfactoriamente',error:'Procedimiento concluido con incidencias',warning:'Procedimiento concluido con observaciones',neutral:'Procedimiento concluido'};
+  const icon = icons[s.end]||'ℹ️';
+  const title = titles[s.end]||'Fin';
+
+  let sumHtml = '';
+  const allSteps = [...hist.map(h=>({sid:h.s,choice:h.c})), {sid:cur,choice:''}];
+  allSteps.forEach((item, i) => {
+    const st = STEPS[item.sid];
+    if (!st) return;
+    sumHtml += `<div class="sum-item">
+      <span class="sum-n">${i+1}</span>
+      <div class="sum-t">${st.t}${item.choice?`<div class="sum-c">↳ ${item.choice}</div>`:''}</div>
+    </div>`;
+  });
+
+  return `<div class="card end-${s.end}">
+    <div class="c-hdr">
+      <div class="c-hdr-top">${actLabel(s.ac)}</div>
+      <div class="c-title">${s.t}</div>
+      <div class="step-num">Paso ${stepNum} de este recorrido · ${phaseName}</div>
+    </div>
+    <div class="end-body">
+      <div class="end-icon">${icon}</div>
+      <div class="end-title">${title}</div>
+      <div class="end-sub">El procedimiento ha concluido en esta vía</div>
+      <div class="end-btns">
+        <button class="btn-next" onclick="restart()">↺ Nuevo procedimiento</button>
+        <button class="btn-back" onclick="goBack()">← Volver</button>
+      </div>
+    </div>
+    <div class="c-body">${renderBlocks(s.c)}</div>
+    <div class="summary-box">
+      <h4>Resumen del recorrido seguido</h4>
+      ${sumHtml}
+    </div>
+  </div>`;
+}
+
+// ════════════════════════════════════════════════════
+// MAPA COMPLETO
+// ════════════════════════════════════════════════════
+function toggleMapa() {
+  mapaOn = !mapaOn;
+  document.getElementById('layout').style.display = mapaOn ? 'none' : 'flex';
+  const mo = document.getElementById('mapa-overlay');
+  mo.style.display = mapaOn ? 'block' : 'none';
+  if (mapaOn) renderMapa();
+}
+
+function renderMapa() {
+  const visitedSet = new Set(hist.map(h=>h.s));
+  const actLabels = {laj:'LAJ', juez:'Juez', ambos:'LAJ+J', notario:'Notario'};
+  const actColors = {laj:'color:#3730A3', juez:'color:#92400E', ambos:'color:#166534', notario:'color:#6B21A8'};
+
+  let html = `<div class="mapa-hdr">
+    <div class="mapa-hdr-left">
+      <h2>Mapa completo del procedimiento</h2>
+      <p>Administración del caudal hereditario · Arts. 797–805 LEC</p>
+    </div>
+    <button class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.3)" onclick="toggleMapa()">← Volver al recorrido</button>
+  </div>
+  <div class="mapa-cols">`;
+
+  STEP_ORDER.forEach((phSteps, phi) => {
+    html += `<div class="mapa-col">
+      <div class="mapa-col-hdr">${PHASES[phi]}</div>
+      <div class="mapa-col-body">`;
+    phSteps.forEach(sid => {
+      const s = STEPS[sid];
+      if (!s) return;
+      let cls = 'mapa-node';
+      if (sid === cur) cls += ' mn-current';
+      else if (visitedSet.has(sid)) cls += ' mn-visited';
+      else if (s.end) cls += ` mn-end-${s.end}`;
+      const al = actLabels[s.ac]||'';
+      const ac = actColors[s.ac]||'';
+      const title = s.t.length>38 ? s.t.slice(0,38)+'…' : s.t;
+      html += `<div class="${cls}" onclick="jumpTo('${sid}')" title="Ir directamente a: ${s.t.replace(/'/g,'&#39;')}">
+        <div class="mapa-node-actor" style="${ac}">${al}${s.end?' · FIN':''}</div>
+        <div class="mapa-node-title">${title}</div>
+      </div>`;
+    });
+    html += '</div></div>';
+  });
+
+  html += `</div>
+  <div class="mapa-legend">
+    <div class="ml-item"><div class="ml-dot" style="background:#22c55e"></div> Visitado</div>
+    <div class="ml-item"><div class="ml-dot" style="background:#4169E1"></div> Paso actual</div>
+    <div class="ml-item"><div class="ml-dot" style="background:#15803D"></div> Fin satisfactorio</div>
+    <div class="ml-item"><div class="ml-dot" style="background:#B45309"></div> Fin con incidencias</div>
+    <div class="ml-item"><div class="ml-dot" style="background:#B91C1C"></div> Fin por bloqueo</div>
+    <div class="ml-item"><div class="ml-dot" style="background:#D1D9EE"></div> No visitado</div>
+    <div class="ml-item" style="margin-left:auto;font-size:13px;color:var(--muted)">LAJ = Letrado de la Adm. de Justicia · Juez = Tribunal</div>
+    <div class="ml-item" style="width:100%;margin-top:4px;font-style:italic;color:var(--navy-mid)">✦ Pulsa cualquier nodo para ir directamente a ese paso</div>
+  </div>`;
+
+  document.getElementById('mapa-overlay').innerHTML = html;
+}
+
+// ════════════════════════════════════════════════════
+// DESCARGA
+// ════════════════════════════════════════════════════
+function dlGuia() {
+  const html = '<!DOCTYPE html>' + document.documentElement.outerHTML;
+  const blob = new Blob([html], {type:'text/html;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'guia-definitiva-administracion-caudal-hereditario-LEC-797-805.html';
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+
+// ════════════════════════════════════════════════════
+// INICIO
+// ════════════════════════════════════════════════════
+render();
+</script>
+</body>
+</html>

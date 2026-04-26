@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa Mental — Ley 15/2015, LJV, Cap. VIII, Arts. 61-66</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   TOKENS CSS
+   ═══════════════════════════════════════════════ */
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;  /* Ámbito de aplicación */
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;  /* Competencia y legitimación */
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;  /* Solicitud */
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;  /* Tramitación */
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;  /* Resolución */
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;  /* Destino y garantías */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+  --transition:   200ms ease;
+}
+
+/* ═══════════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-ui);
+  background: var(--bg);
+  color: var(--text-1);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════════
+   BLOQUE 1 — CABECERA
+   ═══════════════════════════════════════════════ */
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem 1.75rem;
+}
+.header-inner { max-width: 1200px; margin: 0 auto; }
+.header-breadcrumb {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: rgba(248,245,237,.5);
+  margin-bottom: .5rem;
+}
+.header-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: .35rem;
+}
+.header-subtitle {
+  font-size: 13px;
+  color: rgba(248,245,237,.6);
+  margin-bottom: 1rem;
+  line-height: 1.45;
+}
+.header-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.header-tag {
+  display: inline-block;
+  background: rgba(200,169,110,.15);
+  border: 1px solid rgba(200,169,110,.3);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  padding: .25rem .65rem;
+  border-radius: 20px;
+}
+.header-actions { margin-left: auto; }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(248,245,237,.15);
+  color: rgba(248,245,237,.7);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  padding: .35rem .85rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.btn-ghost:hover { background: rgba(248,245,237,.08); }
+
+/* ═══════════════════════════════════════════════
+   BLOQUE 2 — STATS BAR
+   ═══════════════════════════════════════════════ */
+.stats-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.stats-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  padding: 1rem 1.25rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-1);
+  line-height: 1.1;
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: .2rem;
+}
+
+/* ═══════════════════════════════════════════════
+   BLOQUE 3 — CONTROLS BAR (STICKY)
+   ═══════════════════════════════════════════════ */
+.controls-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  border-bottom: 1px solid var(--border);
+}
+.controls-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .6rem 1.25rem;
+  flex-wrap: wrap;
+}
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  padding: .3rem .6rem;
+  background: var(--surface);
+}
+.search-wrap svg { width: 16px; height: 16px; color: var(--text-3); flex-shrink: 0; }
+.search-input {
+  border: none;
+  outline: none;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  width: 100%;
+  background: transparent;
+  color: var(--text-1);
+}
+.search-input::placeholder { color: var(--text-3); }
+.filter-pills { display: flex; gap: .35rem; flex-wrap: wrap; }
+.pill {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  padding: .3rem .7rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-md);
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.pill:hover { background: var(--surface-2); }
+.pill.active[data-cat="all"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.pill.active[data-cat="c1"]  { background: var(--c1); border-color: var(--c1); color: #fff; }
+.pill.active[data-cat="c2"]  { background: var(--c2); border-color: var(--c2); color: #fff; }
+.pill.active[data-cat="c3"]  { background: var(--c3); border-color: var(--c3); color: #fff; }
+.pill.active[data-cat="c4"]  { background: var(--c4); border-color: var(--c4); color: #fff; }
+.pill.active[data-cat="c5"]  { background: var(--c5); border-color: var(--c5); color: #fff; }
+.pill.active[data-cat="c6"]  { background: var(--c6); border-color: var(--c6); color: #fff; }
+.ctrl-actions { display: flex; align-items: center; gap: .5rem; margin-left: auto; }
+.btn-ctrl {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  padding: .3rem .7rem;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.btn-ctrl:hover { background: var(--surface-2); }
+.zoom-cluster {
+  display: flex;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.btn-zoom {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.btn-zoom:hover { background: var(--surface-2); }
+.btn-zoom:disabled { opacity: .35; cursor: default; }
+.btn-zoom + .btn-zoom { border-left: 1px solid var(--border-md); }
+.zoom-label {
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 42px;
+  text-align: center;
+  color: var(--text-2);
+  line-height: 28px;
+}
+
+/* ═══════════════════════════════════════════════
+   BLOQUE 4 — PAGE MAIN
+   ═══════════════════════════════════════════════ */
+.page-main { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+
+/* ── SECTIONS ── */
+.map-section { margin-bottom: 1.75rem; }
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+  padding: .5rem 0;
+  user-select: none;
+}
+.section-heading-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-1);
+}
+.section-heading-count {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-3);
+  margin-left: .25rem;
+}
+.section-toggle-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: var(--text-3);
+  cursor: pointer;
+  transition: transform var(--transition);
+}
+.section-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 1rem; }
+.section-body.collapsed { display: none; }
+
+/* ── CARD GRID ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* ── MAP CARD ── */
+.map-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition);
+}
+.map-card:hover { box-shadow: var(--shadow-md); }
+.map-card.hidden { display: none; }
+
+/* Category border colors */
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+
+.card-top { padding: 1rem 1rem .5rem; }
+.card-meta { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: .4rem; }
+
+/* art-badge per category */
+.art-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: .15rem .55rem;
+  border-radius: 20px;
+  border: 1px solid;
+}
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); border-color: var(--c1bd); color: var(--c1); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); border-color: var(--c2bd); color: var(--c2); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); border-color: var(--c3bd); color: var(--c3); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); border-color: var(--c4bd); color: var(--c4); }
+.map-card[data-cat="c5"] .art-badge { background: var(--c5bg); border-color: var(--c5bd); color: var(--c5); }
+.map-card[data-cat="c6"] .art-badge { background: var(--c6bg); border-color: var(--c6bd); color: var(--c6); }
+
+/* status tags */
+.status-tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: .15rem .5rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-1);
+  line-height: 1.3;
+  margin-bottom: .25rem;
+}
+.card-subtitle {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.45;
+}
+
+/* Counters */
+.card-counters {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 0 1rem .35rem;
+}
+.counter-badge {
+  font-size: 11px;
+  color: var(--text-3);
+}
+.counter-badge strong { color: var(--text-2); font-weight: 600; }
+
+/* Toggle button */
+.card-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--border);
+  background: var(--surface-2);
+  padding: .45rem 1rem;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.card-toggle-btn:hover { background: #eae9e4; }
+.toggle-icon {
+  display: inline-block;
+  transition: transform var(--transition);
+  font-size: 10px;
+}
+.map-card.expanded .toggle-icon { transform: rotate(180deg); }
+
+/* Card body (hidden by default) */
+.card-body { display: none; padding: .75rem 1rem 1rem; }
+.map-card.expanded .card-body { display: block; }
+
+/* Inner sections */
+.inner-section { margin-bottom: .75rem; }
+.inner-section:last-child { margin-bottom: 0; }
+.inner-heading {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: .3rem;
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+.map-card[data-cat="c6"] .dot { background: var(--c6); }
+
+.inner-body { padding-left: .35rem; }
+.inner-list { list-style: none; }
+.inner-list li {
+  position: relative;
+  padding-left: .8rem;
+  margin-bottom: .2rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.inner-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+}
+.inner-list li strong { color: var(--text-1); font-weight: 500; }
+
+/* Card refs */
+.card-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  padding: .5rem 1rem .75rem;
+  border-top: 1px solid var(--border);
+}
+.ref-tag {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: var(--text-3);
+  padding: .1rem .45rem;
+}
+
+/* ── NO RESULTS ── */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-3);
+  font-size: 14px;
+  display: none;
+}
+
+/* ═══════════════════════════════════════════════
+   BLOQUE 5 — PLAZOS TABLE
+   ═══════════════════════════════════════════════ */
+.table-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+.timeline-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+.timeline-table th {
+  background: var(--surface-2);
+  font-weight: 600;
+  text-align: left;
+  padding: .6rem .75rem;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--text-3);
+  border-bottom: 1px solid var(--border);
+}
+.timeline-table td {
+  padding: .55rem .75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-2);
+  vertical-align: top;
+}
+.timeline-table tbody tr:last-child td { border-bottom: none; }
+.timeline-table tbody tr:hover { background: var(--surface-2); }
+.td-tramite { color: var(--text-1); font-weight: 500; }
+.td-norm { font-size: 11px; color: var(--text-3); }
+.plazo-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: .2rem .55rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ═══════════════════════════════════════════════
+   BLOQUE 6 — PARTICIPANTS
+   ═══════════════════════════════════════════════ */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.participant-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.participant-col-head {
+  font-size: 12px;
+  font-weight: 600;
+  padding: .5rem .75rem;
+  color: #fff;
+}
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.phead-c5 { background: var(--c5); }
+.phead-c6 { background: var(--c6); }
+.participant-col ul { list-style: none; padding: .5rem .75rem; }
+.participant-col li {
+  font-size: 12.5px;
+  color: var(--text-2);
+  padding: .35rem 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.4;
+}
+.participant-col li:last-child { border-bottom: none; }
+.participant-note { font-size: 11px; color: var(--text-3); font-style: italic; }
+
+/* ═══════════════════════════════════════════════
+   BLOQUE 7 — NORMATIVE ECOSYSTEM
+   ═══════════════════════════════════════════════ */
+.norm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.norm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: .85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+.norm-law {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-3);
+  letter-spacing: .04em;
+}
+.norm-title { font-size: 13px; font-weight: 500; color: var(--text-1); }
+.norm-arts { font-size: 12px; color: var(--text-2); line-height: 1.5; }
+.norm-arts strong { color: var(--text-1); font-weight: 500; }
+.norm-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: .15rem .5rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  margin-top: .2rem;
+  align-self: flex-start;
+}
+
+/* ═══════════════════════════════════════════════
+   BLOQUE 9 — LEGEND FOOTER
+   ═══════════════════════════════════════════════ */
+.legend-footer {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 1.75rem 1.5rem;
+}
+.legend-inner { max-width: 1200px; margin: 0 auto; }
+.legend-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: .75rem;
+}
+.legend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1rem;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: 12px;
+  color: rgba(248,245,237,.7);
+}
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.legend-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(248,245,237,.12);
+}
+.legend-copy {
+  font-size: 11px;
+  color: rgba(248,245,237,.3);
+  border-top: 1px solid rgba(248,245,237,.08);
+  padding-top: .75rem;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .norm-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .participants-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .ctrl-actions { display: none; }
+}
+@media (max-width: 640px) {
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .card-grid { grid-template-columns: 1fr; }
+  .norm-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 500px) {
+  .participants-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════
+   PRINT
+   ═══════════════════════════════════════════════ */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body    { display: block !important; }
+  .inner-body   { display: block !important; }
+  .section-body { display: block !important; }
+  .map-card     { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  body          { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 1 — CABECERA
+     ═══════════════════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">Ley 15/2015 · Título II · Capítulo VIII</div>
+    <h1 class="header-title">Autorización o aprobación judicial para actos sobre bienes y derechos de menores y personas con discapacidad</h1>
+    <p class="header-subtitle">Artículos 61 a 66 · Código Civil arts. 166, 249, 264, 269, 287, 1060 · Ley 41/2003 · Ley 8/2021 · Convención ONU 2006</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015, LJV</span>
+      <span class="header-tag">Arts. 61–66</span>
+      <span class="header-tag">Jurisdicción Voluntaria</span>
+      <span class="header-tag">Menores y discapacidad</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 2 — STATS BAR
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">6</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">18+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">14+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">7</div>
+      <div class="stat-label">Umbrales y condiciones temporales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 3 — CONTROLS BAR (STICKY)
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Ámbito</button>
+      <button class="pill" data-cat="c2">Competencia</button>
+      <button class="pill" data-cat="c3">Solicitud</button>
+      <button class="pill" data-cat="c4">Tramitación</button>
+      <button class="pill" data-cat="c5">Resolución</button>
+      <button class="pill" data-cat="c6">Destino</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 4 — PAGE MAIN
+     ═══════════════════════════════════════════════════════════════ -->
+<main class="page-main">
+
+<!-- ──────────────────────────────────────────────
+     SECCIÓN: ARTÍCULOS PRINCIPALES (expandida)
+     ────────────────────────────────────────────── -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-arts">
+    <span class="section-heading-text">Artículos del Capítulo VIII — Disposiciones sustantivas y procesales</span>
+    <span class="section-heading-count">6 artículos</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-arts">
+    <div class="card-grid">
+
+      <!-- ═══════════════════════════════════════════
+           ARTÍCULO 61 — Ámbito de aplicación
+           ═══════════════════════════════════════════ -->
+      <article class="map-card" data-cat="c1"
+        data-text="artículo 61 ámbito aplicación autorización aprobación judicial disposición gravamen bienes derechos menores discapacidad patrimonio protegido representante legal apoyo administrador excepción tramitación específica">
+
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 61</span>
+            <span class="status-tag tag-info">Fundamental</span>
+          </div>
+          <h2 class="card-title">Ámbito de aplicación</h2>
+          <p class="card-subtitle">Regla general, distinción conceptual entre autorización y aprobación, y supuestos sustantivos típicos con remisiones al Código Civil y la Ley 41/2003.</p>
+        </div>
+
+        <div class="card-counters">
+          <span class="counter-badge"><strong>4</strong> normas conexas</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>4</strong> supuestos</span>
+        </div>
+
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+
+        <div class="card-body">
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Regla general</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Sujetos activos:</strong> el representante legal del menor, la persona que preste apoyo a la persona con discapacidad, o el administrador de un patrimonio protegido.</li>
+                <li><strong>Objeto:</strong> necesitan autorización o aprobación judicial para la validez de actos de disposición, gravamen u otros que se refieran a sus bienes o derechos o al patrimonio protegido.</li>
+                <li><strong>Excepción:</strong> salvo que hubiera establecida una tramitación específica.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Distinción conceptual</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Autorización:</strong> es previa al acto; habilita al solicitante para realizarlo.</li>
+                <li><strong>Aprobación:</strong> es posterior; otorga validez al acto ya ejecutado.</li>
+                <li><strong>Excepción de tramitación específica:</strong> remite, entre otros, a los cauces previstos para la partición hereditaria (artículo 1060 del Código Civil), para la liquidación de la sociedad de gananciales o para actuaciones específicas del albaceazgo y de la guarda de hecho.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuestos sustantivos típicos (remisiones)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Respecto del menor (artículo 166 del Código Civil):</strong> los progenitores titulares de la patria potestad necesitan autorización judicial para renunciar a los derechos de que sean titulares los hijos, enajenar o gravar sus bienes inmuebles, establecimientos mercantiles o industriales, objetos preciosos y valores mobiliarios —salvo el derecho de suscripción preferente de acciones— por causas justificadas de utilidad o necesidad y con audiencia del Ministerio Fiscal; así como para repudiar herencia o legado deferidos al hijo.</li>
+                <li><strong>Exención para el menor mayor de dieciséis años:</strong> no será necesaria autorización judicial si el menor hubiese cumplido dieciséis años y consintiere en documento público, ni para la enajenación de valores mobiliarios siempre que su importe se reinvierta en bienes o valores seguros.</li>
+                <li><strong>Respecto de la persona con discapacidad (artículo 287 del Código Civil):</strong> el curador con funciones de representación necesita autorización judicial para los actos que determine la resolución y, en todo caso, para los enumerados en sus ordinales 1.º a 9.º (actos de trascendencia personal o familiar; enajenar o gravar bienes inmuebles, establecimientos mercantiles o industriales, bienes o derechos de especial significado personal o familiar, bienes muebles de extraordinario valor, objetos preciosos y valores mobiliarios no cotizados; dar inmuebles en arrendamiento por término inicial superior a seis años; disposiciones a título gratuito; renuncias, transacciones o arbitrajes; aceptación sin beneficio de inventario o repudiación de herencias y liberalidades; gastos extraordinarios; interposición de demandas; préstamos, avales o fianzas; seguros de vida y rentas vitalicias de cuantía extraordinaria).</li>
+                <li><strong>Respecto del guardador de hecho (artículo 264 del Código Civil):</strong> cuando excepcionalmente requiera actuación representativa, deberá recabar autorización judicial a través del correspondiente expediente de jurisdicción voluntaria, en los términos del artículo 287.</li>
+                <li><strong>Respecto del administrador del patrimonio protegido (artículo 5 de la Ley 41/2003):</strong> las reglas de administración deberán prever la autorización judicial en los mismos supuestos que el curador representativo, sin perjuicio de que los constituyentes o el administrador puedan instar al Ministerio Fiscal la excepción de la autorización en atención a la composición del patrimonio, las circunstancias personales del beneficiario u otras análogas.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div><!-- /card-body -->
+
+        <div class="card-refs">
+          <span class="ref-tag">CC art. 166</span>
+          <span class="ref-tag">CC art. 264</span>
+          <span class="ref-tag">CC art. 287</span>
+          <span class="ref-tag">LPPPD art. 5</span>
+          <span class="ref-tag">CC art. 1060</span>
+        </div>
+
+      </article>
+
+      <!-- ═══════════════════════════════════════════
+           ARTÍCULO 62 — Competencia, legitimación y postulación
+           ═══════════════════════════════════════════ -->
+      <article class="map-card" data-cat="c2"
+        data-text="artículo 62 competencia legitimación postulación juzgado primera instancia residencia menor discapacidad cambio residencia abogado procurador 6000 euros umbral exención complejidad intereses enfrentados representante legal apoyo administrador transmitente tutor bienes patrimonio protegido">
+
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 62</span>
+            <span class="status-tag tag-warn">Procesal</span>
+          </div>
+          <h2 class="card-title">Competencia, legitimación y postulación</h2>
+          <p class="card-subtitle">Determina el juzgado competente, los sujetos legitimados para promover el expediente y el régimen de intervención de abogado y procurador.</p>
+        </div>
+
+        <div class="card-counters">
+          <span class="counter-badge"><strong>3</strong> normas conexas</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>5</strong> supuestos</span>
+        </div>
+
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+
+        <div class="card-body">
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Competencia (apartado 1)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Juzgado competente:</strong> el Juzgado de Primera Instancia de la residencia del menor o persona con discapacidad.</li>
+                <li><strong>Criterio de competencia:</strong> se concreta por el lugar de residencia de la persona protegida y no por el de ubicación del bien o derecho sobre el que recae el acto.</li>
+                <li><strong>Cambio de residencia habitual:</strong> si antes de la celebración de la comparecencia se produjera un cambio de la residencia habitual de la persona a que se refiera el expediente, se remitirán las actuaciones al Juzgado correspondiente en el estado en que se hallen.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Legitimación (apartado 2)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Legitimación ordinaria:</strong> podrán promover este expediente quienes ostenten la representación legal del menor o ejerzan el apoyo a la persona con discapacidad a los fines de realizar el acto jurídico de que se trate, así como la propia persona con discapacidad de conformidad con las medidas de apoyo establecidas.</li>
+                <li><strong>Administración de bienes conferida por transmitente:</strong> cuando se trate de la administración de bienes o derechos determinados, con facultades concretas sobre los mismos, conferida por su transmitente a título gratuito a favor de quien no ostente la representación legal, deberá solicitar la autorización, si fuere precisa, el administrador designado por el transmitente.</li>
+                <li><strong>Ejercicio separado de tutela o curatela:</strong> cuando se ejerzan separadamente la tutela o curatela de la persona y la de los bienes, deberá solicitar la autorización, si fuere precisa, el tutor de los bienes.</li>
+                <li><strong>Patrimonio protegido:</strong> si el acto fuera respecto a los bienes del patrimonio protegido, el legitimado será su administrador.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Postulación (apartado 3)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Umbral de exención:</strong> no será preceptiva la intervención de abogado ni procurador siempre que el valor del acto para el que se inste el expediente no supere los 6.000 euros.</li>
+                <li><strong>Régimen cuando se supera el umbral:</strong> la solicitud inicial podrá realizarse sin necesidad de ambos profesionales.</li>
+                <li><strong>Facultad judicial:</strong> sin perjuicio de lo anterior, el Juez podrá ordenar la actuación de todos los interesados por medio de abogado cuando la complejidad de la operación así lo requiera o comparezcan sujetos con intereses enfrentados.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div><!-- /card-body -->
+
+        <div class="card-refs">
+          <span class="ref-tag">LJV art. 4</span>
+          <span class="ref-tag">LJV arts. 1–22</span>
+          <span class="ref-tag">LEC</span>
+        </div>
+
+      </article>
+
+      <!-- ═══════════════════════════════════════════
+           ARTÍCULO 63 — Solicitud
+           ═══════════════════════════════════════════ -->
+      <article class="map-card" data-cat="c3"
+        data-text="artículo 63 solicitud contenido motivo necesidad utilidad conveniencia bien derecho finalidad suma documentación transigir bases transacción venta directa subasta dictamen pericial valoración precio mercado condiciones disposición">
+
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 63</span>
+            <span class="status-tag tag-ok">Sustantivo-procesal</span>
+          </div>
+          <h2 class="card-title">Solicitud</h2>
+          <p class="card-subtitle">Contenido general de la solicitud, supuesto especial de transigir y petición de venta directa sin subasta.</p>
+        </div>
+
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> normas conexas</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>3</strong> supuestos</span>
+        </div>
+
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+
+        <div class="card-body">
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Contenido general (apartado 1)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Motivo:</strong> deberá expresarse el motivo del acto o negocio de que se trate.</li>
+                <li><strong>Necesidad, utilidad o conveniencia:</strong> deberá razonarse la necesidad, utilidad o conveniencia del mismo.</li>
+                <li><strong>Identificación del bien o derecho:</strong> deberá identificarse con precisión el bien o derecho a que se refiera.</li>
+                <li><strong>Finalidad de la suma obtenida:</strong> deberá exponerse, en su caso, la finalidad a que deba aplicarse la suma que se obtenga.</li>
+                <li><strong>Documentación acompañante:</strong> con la petición que se deduzca se presentarán los documentos y antecedentes necesarios para poder formular juicio exacto sobre el negocio de que se trate y, en su caso, las operaciones particionales de la herencia o de la división de la cosa común realizada.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto especial: transigir (apartado 2)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Documentación adicional:</strong> en el caso de autorización solicitada para transigir, se acompañará, además, el documento en que se hubieren formulado las bases de la transacción.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto especial: venta directa (apartado 3)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Petición de venta directa:</strong> si la solicitud fuera para la realización de un acto de disposición podrá también incluirse en la solicitud la petición de que la autorización se extienda a la celebración de venta directa, sin necesidad de subasta ni intervención de persona o entidad especializada.</li>
+                <li><strong>Dictamen pericial:</strong> deberá acompañarse dictamen pericial de valoración del precio de mercado del bien o derecho de que se trate.</li>
+                <li><strong>Condiciones del acto:</strong> deberán especificarse las demás condiciones del acto de disposición que se pretenda realizar.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div><!-- /card-body -->
+
+        <div class="card-refs">
+          <span class="ref-tag">LJV art. 64</span>
+          <span class="ref-tag">LJV art. 65</span>
+        </div>
+
+      </article>
+
+      <!-- ═══════════════════════════════════════════
+           ARTÍCULO 64 — Tramitación
+           ═══════════════════════════════════════════ -->
+      <article class="map-card" data-cat="c4"
+        data-text="artículo 64 tramitación admisión citación comparecencia ministerio fiscal letrado administración justicia menor doce años discapacidad madurez audiencia voluntad deseos preferencias dictamen pericial perito comparecencia oficio instancia parte">
+
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 64</span>
+            <span class="status-tag tag-info">Procedimental</span>
+          </div>
+          <h2 class="card-title">Tramitación</h2>
+          <p class="card-subtitle">Admisión a trámite, citación a comparecencia con los intervinientes preceptivos y régimen del dictamen pericial.</p>
+        </div>
+
+        <div class="card-counters">
+          <span class="counter-badge"><strong>3</strong> normas conexas</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>2</strong> fases</span>
+        </div>
+
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+
+        <div class="card-body">
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Admisión y citación a comparecencia (apartado 1)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Órgano instructor:</strong> admitida a trámite la solicitud por el letrado de la Administración de Justicia, este citará a comparecencia.</li>
+                <li><strong>Intervinientes preceptivos:</strong> el Ministerio Fiscal; todas las personas que, según los distintos casos, exijan las leyes; y en todo caso, a la persona con discapacidad y al menor que tenga suficiente madurez y, en todo caso, cuando sea mayor de doce años.</li>
+                <li><strong>Sentido de la audiencia:</strong> la citación del menor mayor de doce años y de la persona con discapacidad es una manifestación del derecho a ser oído y expresa voluntad, deseos y preferencias, conforme al principio rector de respeto a la voluntad de la persona con discapacidad (artículo 249 del Código Civil) y a la Convención de Nueva York de 2006.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Dictamen pericial (apartado 2)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Acuerdo:</strong> se acordará de oficio o a instancia de parte.</li>
+                <li><strong>Momento:</strong> se emitirá antes de celebrarse la comparecencia.</li>
+                <li><strong>Comparecencia del perito:</strong> deberá citarse a ella al perito o peritos que lo hubiesen emitido, si así se acordara, para responder a las cuestiones que le planteen tanto los intervinientes como el Juez.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div><!-- /card-body -->
+
+        <div class="card-refs">
+          <span class="ref-tag">CC art. 249</span>
+          <span class="ref-tag">Convención ONU 2006</span>
+          <span class="ref-tag">LJV art. 63</span>
+        </div>
+
+      </article>
+
+      <!-- ═══════════════════════════════════════════
+           ARTÍCULO 65 — Resolución
+           ═══════════════════════════════════════════ -->
+      <article class="map-card" data-cat="c5"
+        data-text="artículo 65 resolución juez concediendo denegando autorización aprobación transigir testimonio gravamen extinción derechos reales formalidades venta subasta recurso apelación efectos suspensivos eficacia suspenso acto autorizado ejecutarse">
+
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 65</span>
+            <span class="status-tag tag-alert">Decisorio</span>
+          </div>
+          <h2 class="card-title">Resolución</h2>
+          <p class="card-subtitle">Criterio de decisión del Juez, régimen de la autorización para transigir, actos de gravamen o extinción de derechos reales y régimen de recursos.</p>
+        </div>
+
+        <div class="card-counters">
+          <span class="counter-badge"><strong>4</strong> normas conexas</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>4</strong> regímenes</span>
+        </div>
+
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+
+        <div class="card-body">
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Criterio de decisión (apartado 1)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Criterio rector:</strong> el Juez, teniendo en cuenta la justificación ofrecida y valorando su conveniencia a los intereses del menor o persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica, resolverá concediendo o denegando la autorización o aprobación solicitada.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Autorización para transigir (apartado 3)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Testimonio:</strong> en el caso de autorización solicitada para transigir, si fuera concedida por el Juez, determinará la expedición de testimonio que se entregará al solicitante para el uso que corresponda.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Actos de gravamen o extinción de derechos reales (apartado 4)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Formalidades:</strong> si se autorizare la realización de algún acto de gravamen sobre bienes o derechos que pertenezcan al menor o persona con discapacidad o la extinción de derechos reales a ellos pertenecientes, se ordenará seguir las mismas formalidades establecidas para la venta, con exclusión de la subasta.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Régimen de recursos (apartado 5)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Recurso de apelación:</strong> la resolución será recurrible en apelación con efectos suspensivos.</li>
+                <li><strong>Efectos suspensivos:</strong> la eficacia de la resolución queda en suspenso hasta la resolución del recurso y, en consecuencia, el acto autorizado no podrá ejecutarse entre tanto.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div><!-- /card-body -->
+
+        <div class="card-refs">
+          <span class="ref-tag">LEC (recurso apelación)</span>
+          <span class="ref-tag">LJV art. 22</span>
+          <span class="ref-tag">CC art. 1060</span>
+          <span class="ref-tag">LJV art. 63</span>
+        </div>
+
+      </article>
+
+      <!-- ═══════════════════════════════════════════
+           ARTÍCULO 66 — Destino de la cantidad obtenida
+           ═══════════════════════════════════════════ -->
+      <article class="map-card" data-cat="c6"
+        data-text="artículo 66 destino cantidad obtenida enajenación gravamen negocio contrato autorización medidas asegurar finalidad garantía interés superior menor discapacidad consignación depósito reinversión tutelada precio contraprestación desvío">
+
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 66</span>
+            <span class="status-tag tag-ok">Garantía</span>
+          </div>
+          <h2 class="card-title">Destino de la cantidad obtenida</h2>
+          <p class="card-subtitle">Garantía ex post del interés superior del menor o de la persona con discapacidad: medidas de aseguramiento del destino de la contraprestación.</p>
+        </div>
+
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> normas conexas</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>3</strong> medidas</span>
+        </div>
+
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+
+        <div class="card-body">
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Alcance de la garantía</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Actos cubiertos:</strong> el Juez podrá adoptar las medidas necesarias para asegurar que la cantidad obtenida por el acto de enajenación o gravamen, así como por la realización del negocio o contrato autorizado, se aplique a la finalidad en atención a la que se hubiere concedido la autorización.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Función y medidas de aseguramiento</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Función:</strong> este precepto sirve de garantía ex post del interés superior del menor o de la persona con discapacidad.</li>
+                <li><strong>Medidas:</strong> permite adoptar medidas de aseguramiento para evitar el desvío del precio o de la contraprestación a fines ajenos a los que justificaron la autorización.</li>
+                <li><strong>Ejemplos de medidas:</strong> consignación, depósito, reinversión tutelada.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div><!-- /card-body -->
+
+        <div class="card-refs">
+          <span class="ref-tag">LJV art. 65</span>
+          <span class="ref-tag">LJV art. 63</span>
+        </div>
+
+      </article>
+
+      <!-- NO RESULTS -->
+      <div class="no-results" id="no-results">
+        No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+      </div>
+
+    </div><!-- /card-grid -->
+  </div><!-- /sec-arts -->
+</div><!-- /map-section -->
+
+<!-- ──────────────────────────────────────────────
+     SECCIÓN: CRONOGRAMA DE PLAZOS (colapsada)
+     ────────────────────────────────────────────── -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-timeline">
+    <span class="section-heading-text">Cronograma de umbrales y condiciones temporales</span>
+    <span class="section-heading-count">7 condiciones</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-timeline">
+    <div class="table-wrap">
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th style="width:45%">Acto, trámite o condición temporal</th>
+            <th>Referencia temporal</th>
+            <th>Fundamento normativo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-tramite">Audiencia preceptiva del menor mayor de doce años en la comparecencia</td>
+            <td><span class="plazo-badge plazo-years">Mayor de 12 años</span></td>
+            <td class="td-norm">Artículo 64.1 LJV</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Consentimiento del menor en documento público sin necesidad de autorización judicial</td>
+            <td><span class="plazo-badge plazo-years">Mayor de 16 años</span></td>
+            <td class="td-norm">Artículo 166 Código Civil</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Arrendamiento de inmuebles que requiere autorización judicial del curador representativo</td>
+            <td><span class="plazo-badge plazo-months">Término superior a 6 años</span></td>
+            <td class="td-norm">Artículo 287.3 Código Civil</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Límite para arrendamiento de bienes de menores por progenitores o tutores sin autorización judicial</td>
+            <td><span class="plazo-badge plazo-months">6 años</span></td>
+            <td class="td-norm">Artículo 1548 Código Civil</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Umbral de exención de intervención de abogado y procurador</td>
+            <td><span class="plazo-badge plazo-other">6.000 euros</span></td>
+            <td class="td-norm">Artículo 62.3 LJV</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Recurso de apelación contra la resolución del Juez</td>
+            <td><span class="plazo-badge plazo-other">Efectos suspensivos</span></td>
+            <td class="td-norm">Artículo 65.5 LJV</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Emisión del dictamen pericial antes de la celebración de la comparecencia</td>
+            <td><span class="plazo-badge plazo-other">Antes de la comparecencia</span></td>
+            <td class="td-norm">Artículo 64.2 LJV</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────
+     SECCIÓN: PARTICIPANTES Y ACTORES (colapsada)
+     ────────────────────────────────────────────── -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-actors">
+    <span class="section-heading-text">Mapa de participantes y actores</span>
+    <span class="section-heading-count">6 categorías · 14+ actores</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-actors">
+    <div class="participants-grid">
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c1">Representantes y apoyo</div>
+        <ul>
+          <li>Representante legal del menor <span class="participant-note">(progenitores con patria potestad)</span></li>
+          <li>Persona que preste apoyo a la persona con discapacidad <span class="participant-note">(curador representativo)</span></li>
+          <li>Guardador de hecho <span class="participant-note">(cuando requiera actuación representativa)</span></li>
+        </ul>
+      </div>
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c2">Órganos jurisdiccionales</div>
+        <ul>
+          <li>Juez de Primera Instancia <span class="participant-note">(competente, residencia del menor o persona con discapacidad)</span></li>
+          <li>Letrado de la Administración de Justicia <span class="participant-note">(admisión a trámite y citación)</span></li>
+        </ul>
+      </div>
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c3">Personas protegidas</div>
+        <ul>
+          <li>Menor con suficiente madurez <span class="participant-note">(audiencia preceptiva)</span></li>
+          <li>Menor mayor de doce años <span class="participant-note">(audiencia en todo caso)</span></li>
+          <li>Persona con discapacidad <span class="participant-note">(derecho a ser oída, art. 249 CC)</span></li>
+        </ul>
+      </div>
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c4">Ministerio Fiscal</div>
+        <ul>
+          <li>Ministerio Fiscal <span class="participant-note">(citación preceptiva en comparecencia y audiencia previa en art. 166 CC)</span></li>
+          <li>Comisión de Protección Patrimonial de las Personas con Discapacidad <span class="participant-note">(auxilio en supervisión, LPPPD art. 7)</span></li>
+        </ul>
+      </div>
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c5">Administradores patrimoniales</div>
+        <ul>
+          <li>Administrador del patrimonio protegido <span class="participant-note">(LPPPD art. 5)</span></li>
+          <li>Administrador designado por el transmitente <span class="participant-note">(administración conferida a título gratuito)</span></li>
+          <li>Tutor de los bienes <span class="participant-note">(ejercicio separado de tutela/curatela)</span></li>
+        </ul>
+      </div>
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c6">Profesionales y peritos</div>
+        <ul>
+          <li>Abogado <span class="participant-note">(preceptivo sobre 6.000 € o por complejidad)</span></li>
+          <li>Procurador <span class="participant-note">(mismo régimen que abogado)</span></li>
+          <li>Perito o peritos <span class="participant-note">(dictamen de valoración, comparecencia si se acuerda)</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────
+     SECCIÓN: ECOSISTEMA NORMATIVO (colapsada)
+     ────────────────────────────────────────────── -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-norms">
+    <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+    <span class="section-heading-count">6 cuerpos normativos</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-norms">
+    <div class="norm-grid">
+
+      <!-- LJV interna -->
+      <div class="norm-card">
+        <div class="norm-law">Ley 15/2015, de la Jurisdicción Voluntaria</div>
+        <div class="norm-title">Conexiones internas de la propia LJV</div>
+        <div class="norm-arts">
+          <strong>Artículos 1 a 22</strong> — Disposiciones generales: objeto, ámbito, competencia, legitimación, postulación, intervención del Ministerio Fiscal (artículo 4), prueba, tramitación simultánea o posterior, gastos, carácter supletorio de la LEC, competencia internacional, inscripción registral, cumplimiento y ejecución (artículo 22).
+          <br><strong>Artículos 56 a 58</strong> — Capítulo VI del Título II: expediente de protección del patrimonio de las personas con discapacidad.
+          <br><strong>Artículos 85 a 89</strong> — Capítulo II del Título III: intervención judicial en relación con la patria potestad.
+          <br><strong>Título IV</strong> — Expedientes sucesorios: autorizaciones al albacea y aprobación judicial de la aceptación o repudiación de la herencia.
+          <br><strong>Artículo 42 bis</strong> — Provisión de medidas de apoyo a personas con discapacidad.
+          <br><strong>Artículo 7 bis</strong> — Ajustes razonables para personas con discapacidad.
+        </div>
+        <span class="norm-tag tag-info">LJV interna</span>
+      </div>
+
+      <!-- Código Civil -->
+      <div class="norm-card">
+        <div class="norm-law">Código Civil</div>
+        <div class="norm-title">Remisiones sustantivas principales</div>
+        <div class="norm-arts">
+          <strong>Artículo 166</strong> — Límites a la enajenación y gravamen de bienes de los hijos por sus progenitores; requiere causas justificadas de utilidad o necesidad y audiencia del Ministerio Fiscal.
+          <br><strong>Artículo 249</strong> — Principio rector del ejercicio de las medidas de apoyo conforme a la voluntad, deseos y preferencias de la persona con discapacidad.
+          <br><strong>Artículo 264</strong> — Actuación del guardador de hecho y necesidad de autorización judicial para los actos del artículo 287.
+          <br><strong>Artículo 269</strong> — Precisión en la resolución judicial de los actos para los que el curador asumirá representación.
+          <br><strong>Artículo 285</strong> — Obligación del curador representativo de hacer inventario.
+          <br><strong>Artículo 287</strong> — Catálogo taxativo de actos del curador representativo que requieren autorización judicial (ordinales 1.º a 9.º).
+          <br><strong>Artículo 289</strong> — Régimen de la curatela asistencial.
+          <br><strong>Artículo 665</strong> — Otorgamiento de testamento por persona con discapacidad, no sometido a curatela.
+          <br><strong>Artículo 1060</strong> — Partición realizada por el curador representativo: no necesita autorización judicial, pero sí aprobación judicial posterior.
+          <br><strong>Artículo 1548</strong> — Límite de seis años para el arrendamiento de bienes de menores sin autorización judicial.
+        </div>
+        <span class="norm-tag tag-warn">Código Civil</span>
+      </div>
+
+      <!-- Ley 41/2003 -->
+      <div class="norm-card">
+        <div class="norm-law">Ley 41/2003, de 18 de noviembre</div>
+        <div class="norm-title">Protección patrimonial de las personas con discapacidad</div>
+        <div class="norm-arts">
+          <strong>Artículo 3</strong> — Constitución del patrimonio protegido.
+          <br><strong>Artículo 4</strong> — Aportaciones al patrimonio protegido.
+          <br><strong>Artículo 5</strong> — Reglas de administración; sujeción a autorización judicial en los mismos supuestos que el curador representativo; posibilidad de instar al Ministerio Fiscal la excepción de la autorización.
+          <br><strong>Artículo 7</strong> — Supervisión por el Ministerio Fiscal, con auxilio de la Comisión de Protección Patrimonial de las Personas con Discapacidad.
+        </div>
+        <span class="norm-tag tag-ok">LPPPD</span>
+      </div>
+
+      <!-- Ley 1/2000 LEC -->
+      <div class="norm-card">
+        <div class="norm-law">Ley 1/2000, de 7 de enero</div>
+        <div class="norm-title">Ley de Enjuiciamiento Civil</div>
+        <div class="norm-arts">
+          <strong>Aplicación supletoria</strong> — En lo no previsto por la LJV, resulta de aplicación la LEC como norma procesal supletoria.
+          <br><strong>Recurso de apelación</strong> — Régimen del recurso de apelación al que remite el artículo 65.5 de la LJV.
+          <br><strong>Formalidades de enajenación</strong> — Formalidades de la enajenación a que remite el artículo 65.4 de la LJV.
+        </div>
+        <span class="norm-tag tag-gray">LEC</span>
+      </div>
+
+      <!-- Ley 8/2021 -->
+      <div class="norm-card">
+        <div class="norm-law">Ley 8/2021, de 2 de junio</div>
+        <div class="norm-title">Reforma para el apoyo a las personas con discapacidad en el ejercicio de su capacidad jurídica</div>
+        <div class="norm-arts">
+          <strong>Origen de la terminología vigente</strong> — Sustituye la expresión «persona con capacidad modificada judicialmente» por «persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica».
+          <br><strong>Reforma del Código Civil</strong> — Nueva redacción del Título XI del Libro Primero: «De las medidas de apoyo a las personas con discapacidad». Principales figuras: curatela representativa, curatela asistencial, guarda de hecho, autotutela.
+          <br><strong>Reforma de la LJV</strong> — Adaptación de los expedientes de jurisdicción voluntaria al nuevo sistema de apoyos.
+        </div>
+        <span class="norm-tag tag-alert">Ley 8/2021</span>
+      </div>
+
+      <!-- Convención ONU -->
+      <div class="norm-card">
+        <div class="norm-law">Convención de Naciones Unidas, 13 de diciembre de 2006</div>
+        <div class="norm-title">Derechos de las Personas con Discapacidad (Nueva York)</div>
+        <div class="norm-arts">
+          <strong>Marco internacional inspirador</strong> — Del sistema de apoyos y del derecho a ser oído de las personas con discapacidad.
+          <br><strong>Artículo 12</strong> — Igual reconocimiento como persona ante la ley y medidas de apoyo para el ejercicio de la capacidad jurídica.
+          <br><strong>Artículo 13</strong> — Acceso a la justicia de las personas con discapacidad.
+          <br><strong>Integración normativa</strong> — La Ley 8/2021 incorpora los principios de la Convención al ordenamiento interno español.
+        </div>
+        <span class="norm-tag tag-info">Convención ONU</span>
+      </div>
+
+    </div><!-- /norm-grid -->
+  </div>
+</div>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 9 — LEYENDA DE COLORES
+     ═══════════════════════════════════════════════════════════════ -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Ámbito de aplicación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Competencia y legitimación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Solicitud
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Tramitación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Resolución
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c6)"></div>
+        Destino y garantías
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria — Título II, Capítulo VIII, artículos 61 a 66 · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+/* ── 1. Filtrado por categoría ── */
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+const countArts = document.getElementById('count-arts');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+  if (countArts) countArts.textContent =
+    visible + ' artículo' + (visible !== 1 ? 's' : '') +
+    ' visible' + (visible !== 1 ? 's' : '');
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+/* ── 2. Búsqueda en tiempo real ── */
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+/* ── 3. Expandir/colapsar tarjetas individuales ── */
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent =
+    isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+/* ── 4. Expandir todo / Contraer todo ── */
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+/* ── 5. Colapso de secciones principales ── */
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '\u25B6' : '\u25BC';
+  });
+});
+
+/* ── 6. Zoom ── */
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+/* Atajos de teclado */
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+
+</body>
+</html>
