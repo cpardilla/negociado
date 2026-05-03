@@ -1,0 +1,2511 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>
+            De los expedientes de jurisdicción voluntaria relativos a
+            declaraciones judiciales sobre hechos pasados (artículos 80 bis a 80
+            quinquies LJV)
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --transition-norm: 250ms ease;
+            }
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: "Outfit", system-ui, sans-serif;
+                font-size: 16px;
+                line-height: 1.65;
+                color: var(--text);
+                background: var(--slate-bg);
+                -webkit-font-smoothing: antialiased;
+            }
+
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            /* HEADER */
+            #hdr {
+                flex-shrink: 0;
+                height: 60px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+                background: var(--navy);
+                color: #fff;
+            }
+            .h-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+            .h-seal {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                flex-shrink: 0;
+            }
+            .h-title-block {
+                display: flex;
+                flex-direction: column;
+                min-width: 0;
+            }
+            .h-title {
+                font-size: 15px;
+                font-weight: 700;
+                line-height: 1.25;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .h-sub {
+                font-size: 11px;
+                opacity: 0.55;
+                line-height: 1.3;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .h-right {
+                display: flex;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+            .btn {
+                font-family: "Outfit", system-ui, sans-serif;
+                font-size: 13px;
+                font-weight: 500;
+                padding: 6px 14px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.15s;
+                border: 1px solid;
+                white-space: nowrap;
+            }
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.18);
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.18);
+                color: #fff;
+            }
+            /* Botón toggle sidebar (nuevo) */
+            .btn-toggle-sidebar {
+                font-size: 20px;
+                padding: 4px 12px;
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+            .zoom-cluster {
+                display: inline-flex;
+                align-items: center;
+                overflow: hidden;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .btn-zoom {
+                appearance: none;
+                border: none;
+                background: transparent;
+                color: rgba(255, 255, 255, 0.85);
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.14);
+            }
+            .zoom-label {
+                min-width: 46px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            /* PHASE BAR */
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                gap: 2px;
+                padding: 0 16px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                background: var(--navy-mid);
+            }
+            #pbar::-webkit-scrollbar {
+                display: none;
+            }
+            .ph-item {
+                display: flex;
+                align-items: center;
+            }
+            .ph-lbl {
+                display: inline-flex;
+                align-items: center;
+                height: 28px;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 0 10px;
+                border-radius: 8px;
+                color: rgba(255, 255, 255, 0.6);
+                transition: all 0.15s;
+                white-space: nowrap;
+            }
+            .ph-lbl.active {
+                color: #fff;
+                font-weight: 800;
+                background: rgba(255, 255, 255, 0.22);
+            }
+            .ph-lbl.done {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .ph-sep {
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.3);
+                padding: 0 2px;
+                flex-shrink: 0;
+            }
+
+            /* BREADCRUMB */
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 36px;
+                height: auto;
+                display: flex;
+                align-items: center;
+                padding: 4px 20px;
+                gap: 0;
+                overflow-x: auto;
+                scrollbar-width: none;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                flex-wrap: wrap;
+                row-gap: 2px;
+                white-space: normal;
+            }
+            #breadcrumb::-webkit-scrollbar {
+                display: none;
+            }
+            .bc-item {
+                font-size: 12px;
+                white-space: nowrap;
+                padding: 4px 6px;
+                color: var(--muted);
+            }
+            .bc-past {
+                cursor: pointer;
+                background: none;
+                border: none;
+                font-family: inherit;
+                font-size: 12px;
+            }
+            .bc-past:hover {
+                color: var(--navy-lt);
+                text-decoration: underline;
+            }
+            .bc-current {
+                font-weight: 600;
+                color: var(--navy);
+            }
+            .bc-sep {
+                font-size: 11px;
+                color: var(--bdr);
+                padding: 0 2px;
+            }
+
+            /* LAYOUT */
+            #layout {
+                flex: 1;
+                overflow: hidden;
+                display: flex;
+                position: relative;
+            }
+
+            /* SIDEBAR - estilos base con transición para toggle */
+            #sidebar {
+                flex-shrink: 0;
+                width: 272px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                background: var(--navy-mid);
+                color: #fff;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+                transition:
+                    width var(--transition-norm),
+                    transform var(--transition-norm);
+                will-change: width, transform;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 5px;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 3px;
+            }
+            /* Estado colapsado en escritorio */
+            #sidebar.collapsed {
+                width: 0;
+                overflow: hidden;
+                padding: 0;
+            }
+            /* Backdrop para móvil */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                z-index: 140;
+                background: rgba(0, 0, 0, 0.5);
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+
+            #sb-tabs {
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 9px 0;
+                font-size: 11px;
+                font-weight: 600;
+                font-family: inherit;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+                transition: all 0.15s;
+            }
+            .sb-tab.active {
+                color: #fff;
+                border-bottom: 2px solid var(--navy-lt);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            #sb-map {
+                padding: 8px 0;
+            }
+            .sm-phase {
+            }
+            .sm-phase-hdr {
+                display: flex;
+                align-items: center;
+                padding: 7px 12px;
+                cursor: pointer;
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: rgba(255, 255, 255, 0.5);
+                transition: all 0.15s;
+            }
+            .sm-phase-hdr:hover {
+                color: rgba(255, 255, 255, 0.8);
+                background: rgba(255, 255, 255, 0.04);
+            }
+            .sm-phase-hdr .arrow {
+                margin-right: 6px;
+                font-size: 9px;
+                transition: transform 0.15s;
+                display: inline-block;
+            }
+            .sm-phase-hdr.collapsed .arrow {
+                transform: rotate(-90deg);
+            }
+            .sm-phase-nodes {
+                padding: 0 0 4px 0;
+            }
+            .sm-phase-nodes.hidden {
+                display: none;
+            }
+            .sm-node {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 5px 12px 5px 20px;
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.45);
+                cursor: pointer;
+                transition: all 0.12s;
+                border-left: 2px solid transparent;
+            }
+            .sm-node:hover {
+                background: rgba(255, 255, 255, 0.06);
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .sm-node.sm-visited {
+                color: rgba(255, 255, 255, 0.85);
+                border-left-color: var(--green);
+            }
+            .sm-node.sm-visited .sm-icon {
+                color: var(--green);
+            }
+            .sm-node.sm-current {
+                color: #fff;
+                border-left-color: var(--navy-lt);
+                background: rgba(255, 255, 255, 0.08);
+                font-weight: 600;
+            }
+            .sm-node.sm-current .sm-icon {
+                color: var(--navy-lt);
+            }
+            .sm-node.sm-unreachable {
+                opacity: 0.35;
+                cursor: default;
+            }
+            .sm-node.sm-end {
+                color: rgba(255, 255, 255, 0.5);
+            }
+            .sm-node.sm-end.sm-visited {
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .sm-icon {
+                font-size: 11px;
+                width: 16px;
+                text-align: center;
+                flex-shrink: 0;
+            }
+            @keyframes pulse {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.35;
+                }
+            }
+            .sm-current .sm-icon {
+                animation: pulse 1.6s infinite;
+            }
+
+            #sb-journey {
+                padding: 8px 0;
+                display: none;
+            }
+            .pi {
+                padding: 7px 12px;
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.5);
+                border-left: 2px solid transparent;
+            }
+            .pi.past {
+                border-left-color: rgba(255, 255, 255, 0.2);
+            }
+            .pi.current {
+                color: #fff;
+                font-weight: 600;
+                border-left-color: var(--navy-lt);
+            }
+            .pi-choice {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.45);
+                margin-top: 2px;
+                padding-left: 16px;
+            }
+            .sb-foot {
+                padding: 14px 12px;
+                margin-top: 8px;
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.25);
+                line-height: 1.6;
+            }
+
+            /* CONTENT */
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 24px 32px 48px;
+                background: var(--slate-bg);
+            }
+
+            /* STEP JUMP */
+            .step-jump-wrap {
+                max-width: 740px;
+                margin: 0 auto 16px;
+            }
+            .step-jump-label {
+                font-size: 11px;
+                font-weight: 600;
+                color: var(--muted);
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+                margin-bottom: 4px;
+            }
+            .step-jump-select {
+                width: 100%;
+                padding: 8px 12px;
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                font-family: inherit;
+                font-size: 14px;
+                color: var(--text);
+                background: var(--white);
+                cursor: pointer;
+                transition: border-color 0.15s;
+            }
+            .step-jump-select:focus {
+                outline: 2px solid var(--navy-lt);
+                outline-offset: 1px;
+            }
+
+            /* CARD */
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .card {
+                animation: fadeUp 0.22s ease;
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 12px;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+            }
+            .c-hdr {
+                padding: 20px 24px 12px;
+                border-bottom: 1px solid var(--bdr);
+            }
+            .act-badge {
+                display: inline-block;
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding: 3px 12px;
+                border-radius: 12px;
+                margin-bottom: 8px;
+            }
+            .act-laj {
+                background: #ecfeff;
+                color: #0e7490;
+                border: 1px solid #a5f3fc;
+            }
+            .act-juez {
+                background: #f5f3ff;
+                color: #5b21b6;
+                border: 1px solid #ddd6fe;
+            }
+            .act-ambos {
+                background: #dbeafe;
+                color: #1e40af;
+                border: 1px solid #bfdbfe;
+            }
+            .c-title {
+                font-size: 20px;
+                font-weight: 700;
+                color: var(--text);
+                line-height: 1.3;
+                margin-bottom: 4px;
+            }
+            .step-num {
+                font-size: 12px;
+                color: var(--muted);
+                font-weight: 400;
+            }
+
+            .c-body {
+                padding: 18px 24px;
+            }
+            .c-body p {
+                margin-bottom: 12px;
+            }
+            .c-body ul,
+            .c-body ol {
+                margin: 8px 0 12px 22px;
+            }
+            .c-body li {
+                margin-bottom: 5px;
+            }
+
+            .blk-i {
+                font-size: 15px;
+                color: var(--text);
+                line-height: 1.7;
+            }
+            .blk-d {
+                background: #fff7ed;
+                border: 1px solid #fed7aa;
+                border-radius: 8px;
+                padding: 12px 16px;
+                margin: 10px 0;
+                font-size: 14px;
+                color: #92400e;
+                line-height: 1.6;
+            }
+            .blk-d::before {
+                content: "\23F0";
+                margin-right: 8px;
+            }
+            .blk-n {
+                background: #eff6ff;
+                border: 1px solid #bfdbfe;
+                border-radius: 8px;
+                padding: 12px 16px;
+                margin: 10px 0;
+                font-size: 14px;
+                color: #1e40af;
+                line-height: 1.6;
+            }
+            .blk-n::before {
+                content: "\2139";
+                margin-right: 8px;
+                font-weight: 700;
+            }
+            .blk-w {
+                background: #fef2f2;
+                border: 1px solid #fecaca;
+                border-radius: 8px;
+                padding: 12px 16px;
+                margin: 10px 0;
+                font-size: 14px;
+                color: #991b1b;
+                line-height: 1.6;
+            }
+            .blk-w::before {
+                content: "\26A0";
+                margin-right: 8px;
+            }
+            .blk-l {
+                font-size: 13px;
+                color: var(--muted);
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                background: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+                padding: 8px 14px;
+                margin: 8px 0;
+                line-height: 1.5;
+            }
+            .blk-l::before {
+                content: "\00A7";
+                margin-right: 8px;
+            }
+            .blk-cl {
+                margin: 10px 0;
+            }
+            .blk-cl-title {
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--text);
+                margin-bottom: 8px;
+            }
+            .blk-cl-list {
+                list-style: none;
+                padding: 0;
+            }
+            .blk-cl-list li {
+                position: relative;
+                padding: 5px 0 5px 28px;
+                font-size: 14px;
+                color: var(--text);
+                line-height: 1.6;
+            }
+            .blk-cl-list li::before {
+                content: "\2610";
+                position: absolute;
+                left: 0;
+                color: var(--muted);
+                font-size: 15px;
+                top: 5px;
+            }
+
+            /* DECISION */
+            .dec-area {
+                padding: 16px 24px 0;
+            }
+            .dec-q {
+                background: #f0f4fa;
+                border-top: 3px solid var(--navy);
+                border-bottom: 1px solid var(--bdr);
+                border-radius: 0 0 8px 8px;
+                padding: 14px 18px;
+                font-size: 15px;
+                font-weight: 600;
+                color: var(--text);
+                margin-bottom: 14px;
+                line-height: 1.5;
+            }
+            .dec-opts {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding-bottom: 6px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 12px 18px;
+                border: 1.5px solid var(--bdr);
+                border-radius: 8px;
+                background: var(--white);
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 14px;
+                color: var(--text);
+                transition: all 0.15s;
+                text-align: left;
+                width: 100%;
+                line-height: 1.5;
+            }
+            .dec-btn:hover {
+                border-color: var(--navy-lt);
+                background: #f0f4ff;
+            }
+            .dec-letter {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 13px;
+                font-weight: 700;
+                flex-shrink: 0;
+                margin-top: 1px;
+            }
+            .dec-btn.ok .dec-letter {
+                background: var(--green-bg);
+                color: var(--green);
+                border: 1px solid #a7f3d0;
+            }
+            .dec-btn.bad .dec-letter {
+                background: var(--red-bg);
+                color: var(--red);
+                border: 1px solid #fecaca;
+            }
+            .dec-btn.warn .dec-letter {
+                background: var(--amber-bg);
+                color: var(--amber);
+                border: 1px solid #fde68a;
+            }
+            .dec-btn.neutral .dec-letter {
+                background: #eff6ff;
+                color: #1e40af;
+                border: 1px solid #bfdbfe;
+            }
+
+            /* NAV */
+            .c-nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 14px 24px 18px;
+            }
+            .btn-back {
+                font-family: inherit;
+                font-size: 13px;
+                font-weight: 500;
+                padding: 7px 16px;
+                border-radius: 6px;
+                cursor: pointer;
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                color: var(--muted);
+                transition: all 0.15s;
+            }
+            .btn-back:hover:not(:disabled) {
+                border-color: var(--navy-lt);
+                color: var(--navy-lt);
+            }
+            .btn-back:disabled {
+                opacity: 0.35;
+                cursor: default;
+            }
+            .btn-next {
+                font-family: inherit;
+                font-size: 13px;
+                font-weight: 600;
+                padding: 7px 18px;
+                border-radius: 6px;
+                cursor: pointer;
+                background: var(--navy-lt);
+                border: 1px solid var(--navy-lt);
+                color: #fff;
+                transition: all 0.15s;
+            }
+            .btn-next:hover {
+                background: var(--navy);
+                border-color: var(--navy);
+            }
+
+            /* END CARD */
+            .card.end-success {
+                border-top: 4px solid var(--green);
+            }
+            .card.end-error {
+                border-top: 4px solid var(--red);
+            }
+            .card.end-warning {
+                border-top: 4px solid var(--amber);
+            }
+            .card.end-neutral {
+                border-top: 4px solid var(--navy-lt);
+            }
+            .end-body {
+                text-align: center;
+                padding: 32px 24px 20px;
+            }
+            .end-icon {
+                font-size: 42px;
+                margin-bottom: 10px;
+            }
+            .end-success .end-icon {
+                color: var(--green);
+            }
+            .end-error .end-icon {
+                color: var(--red);
+            }
+            .end-warning .end-icon {
+                color: var(--amber);
+            }
+            .end-neutral .end-icon {
+                color: var(--navy-lt);
+            }
+            .end-title {
+                font-size: 20px;
+                font-weight: 700;
+                margin-bottom: 6px;
+            }
+            .end-success .end-title {
+                color: var(--green);
+            }
+            .end-error .end-title {
+                color: var(--red);
+            }
+            .end-warning .end-title {
+                color: var(--amber);
+            }
+            .end-neutral .end-title {
+                color: var(--navy-lt);
+            }
+            .end-sub {
+                font-size: 14px;
+                color: var(--muted);
+                margin-bottom: 18px;
+            }
+            .end-btns {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin-bottom: 22px;
+            }
+            .end-content {
+                text-align: left;
+                padding: 0 24px 12px;
+            }
+            .summary-box {
+                margin: 18px 24px 24px;
+                background: #f8fafc;
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                padding: 16px 18px;
+                text-align: left;
+            }
+            .summary-box h4 {
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: var(--muted);
+                margin-bottom: 10px;
+            }
+            .summary-box ol {
+                padding-left: 22px;
+                font-size: 13px;
+                color: var(--text);
+                line-height: 1.8;
+            }
+            .summary-box li .sum-choice {
+                color: var(--navy-lt);
+                font-weight: 500;
+            }
+
+            /* MAPA OVERLAY */
+            #mapa-overlay {
+                display: none;
+                flex: 1;
+                overflow-y: auto;
+                background: var(--slate-bg);
+                padding: 20px;
+            }
+            .mapa-close {
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 14px;
+            }
+            .mapa-close-btn {
+                font-family: inherit;
+                font-size: 13px;
+                font-weight: 600;
+                padding: 8px 18px;
+                border-radius: 6px;
+                cursor: pointer;
+                background: var(--navy-lt);
+                border: 1px solid var(--navy-lt);
+                color: #fff;
+                transition: all 0.15s;
+            }
+            .mapa-close-btn:hover {
+                background: var(--navy);
+            }
+            .mapa-columns {
+                display: flex;
+                gap: 18px;
+                min-width: max-content;
+                padding-bottom: 40px;
+            }
+            .mapa-col {
+                min-width: 240px;
+                max-width: 300px;
+            }
+            .mapa-col-hdr {
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: var(--navy);
+                padding: 8px 12px;
+                background: #e0e5f0;
+                border-radius: 8px 8px 0 0;
+            }
+            .mapa-nodes {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 0 0 8px 8px;
+                padding: 8px;
+            }
+            .mapa-node {
+                padding: 10px 12px;
+                border-radius: 6px;
+                margin-bottom: 6px;
+                font-size: 13px;
+                border-left: 3px solid var(--bdr);
+                background: #fafbfe;
+            }
+            .mapa-node.mapa-visited {
+                border-left-color: var(--green);
+                background: var(--green-bg);
+            }
+            .mapa-node.mapa-current {
+                border-left-color: var(--navy-lt);
+                background: var(--cyan-bg);
+                font-weight: 600;
+            }
+            .mapa-node.mapa-end-success {
+                border-left-color: var(--green);
+            }
+            .mapa-node.mapa-end-error {
+                border-left-color: var(--red);
+            }
+            .mapa-node.mapa-end-warning {
+                border-left-color: var(--amber);
+            }
+            .mapa-node.mapa-end-neutral {
+                border-left-color: var(--navy-lt);
+            }
+            .mapa-node-actor {
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+                color: var(--muted);
+            }
+            .mapa-node-title {
+                font-size: 13px;
+                color: var(--text);
+                margin-top: 3px;
+                line-height: 1.4;
+            }
+            .mapa-arrow {
+                font-size: 11px;
+                color: var(--muted);
+                padding: 3px 0 3px 16px;
+            }
+            .mapa-arrow-label {
+                font-style: italic;
+            }
+
+            /* ======== MEDIA QUERY RESPONSIVE (Ajustada para sidebar toggle) ======== */
+            @media (max-width: 700px) {
+                /* Sidebar por defecto oculta y con transición, no display:none */
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    width: 272px;
+                    transition: transform var(--transition-norm);
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                /* Se mantiene la clase collapsed pero se anula porque usamos open en móvil */
+                #sidebar.collapsed {
+                    width: 272px;
+                    transform: translateX(-100%);
+                }
+                #content {
+                    padding: 16px 14px 36px;
+                }
+                .h-title {
+                    font-size: 13px;
+                }
+                .h-sub {
+                    display: none;
+                }
+                .btn {
+                    font-size: 12px;
+                    padding: 5px 10px;
+                }
+                .c-title {
+                    font-size: 18px;
+                }
+                .c-body {
+                    padding: 14px 18px;
+                }
+                .c-hdr {
+                    padding: 16px 18px 10px;
+                }
+                .dec-area {
+                    padding: 12px 18px 0;
+                }
+                .c-nav {
+                    padding: 12px 18px 14px;
+                }
+                .step-jump-wrap {
+                    margin: 0 0 12px;
+                }
+            }
+            @media print {
+                #hdr,
+                #pbar,
+                #breadcrumb,
+                #sidebar,
+                .c-nav,
+                .dec-opts,
+                .dec-q,
+                .btn-back,
+                .btn-next,
+                .end-btns,
+                .mapa-close,
+                .step-jump-wrap,
+                .sidebar-backdrop {
+                    display: none !important;
+                }
+                #app {
+                    height: auto;
+                    overflow: visible;
+                }
+                #layout {
+                    overflow: visible;
+                }
+                #content {
+                    overflow: visible;
+                    padding: 0;
+                    background: #fff;
+                }
+                .card {
+                    break-inside: avoid;
+                    box-shadow: none;
+                    border: 1px solid #ccc;
+                    margin-bottom: 14px;
+                    animation: none;
+                }
+                body {
+                    background: #fff;
+                }
+                #mapa-overlay {
+                    display: block !important;
+                    overflow: visible;
+                }
+                .mapa-columns {
+                    flex-wrap: wrap;
+                }
+                .mapa-col {
+                    min-width: 200px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div id="hdr" role="banner" style="height: 70px">
+                <div class="h-left">
+                    <!-- NUEVO BOTÓN TOGGLE SIDEBAR -->
+                    <button
+                        class="btn btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                    >
+                        &#9776;
+                    </button>
+                    <div class="h-seal" aria-hidden="true">⚖</div>
+                    <div class="h-title-block">
+                        <div class="h-sub">
+                            LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN
+                            VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE
+                            JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS ·
+                            CAPÍTULO XI
+                        </div>
+                        <div class="h-title">
+                            De los expedientes de jurisdicción voluntaria
+                            relativos a declaraciones judiciales sobre hechos
+                            pasados
+                        </div>
+                        <div class="h-sub" style="padding-top: 5px">
+                            Artículos 80 bis a 80 quinquies LJV
+                        </div>
+                    </div>
+                </div>
+                <div class="h-right">
+                    <div
+                        class="zoom-cluster"
+                        role="group"
+                        aria-label="Zoom del contenido"
+                    >
+                        <button
+                            class="btn-zoom"
+                            onclick="zoomOut()"
+                            aria-label="Reducir zoom"
+                        >
+                            −
+                        </button>
+                        <span class="zoom-label" id="zoomLabel">100%</span>
+                        <button
+                            class="btn-zoom"
+                            onclick="zoomIn()"
+                            aria-label="Aumentar zoom"
+                        >
+                            +
+                        </button>
+                    </div>
+                    <button class="btn btn-ghost" onclick="toggleMapa()">
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn btn-ghost" onclick="dlGuia()">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn btn-ghost" onclick="restart()">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </div>
+            <nav
+                id="pbar"
+                role="navigation"
+                aria-label="Progreso por fases del procedimiento"
+            ></nav>
+            <nav
+                id="breadcrumb"
+                role="navigation"
+                aria-label="Ruta de navegación"
+            ></nav>
+            <div id="layout">
+                <div id="sidebar">
+                    <div id="sb-tabs">
+                        <button class="sb-tab active" onclick="sbTab('map')">
+                            Mapa
+                        </button>
+                        <button class="sb-tab" onclick="sbTab('journey')">
+                            Recorrido
+                        </button>
+                    </div>
+                    <div id="sb-map"></div>
+                    <div id="sb-journey"></div>
+                </div>
+                <div id="content"></div>
+            </div>
+            <div id="mapa-overlay">
+                <div class="mapa-close">
+                    <button class="mapa-close-btn" onclick="toggleMapa()">
+                        &#8592; Volver al recorrido
+                    </button>
+                </div>
+                <div class="mapa-columns" id="mapa-columns"></div>
+            </div>
+            <!-- NUEVO BACKDROP PARA MÓVIL -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        </div>
+
+        <script>
+            var PHASES = [
+                "Viabilidad",
+                "Competencia y admisión",
+                "Tramitación",
+                "Resolución y recursos",
+            ];
+
+            var STEPS = {
+                inicio: {
+                    ph: 0,
+                    t: "Recepción de la solicitud de declaración judicial sobre hechos pasados",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Se ha recibido una solicitud para obtener una declaración judicial sobre la realidad y las circunstancias de hechos pasados determinados. Este expediente se tramita conforme al Capítulo XI del Título II de la Ley 15/2015, de la Jurisdicción Voluntaria (artículos 80 bis a 80 quinquies), introducido por la disposición final tercera de la Ley 20/2022, de Memoria Democrática.",
+                        ],
+                        [
+                            "n",
+                            'El expediente reintroduce, con carácter renovado, la antigua figura de la "información para perpetua memoria" de la LEC de 1881 (arts. 2002-2010), derogada por la Ley 15/2015 y recuperada por la Ley 20/2022.',
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015, arts. 80 bis - 80 quinquies; Ley 20/2022, disp. final 3.ª; LEC 1881, arts. 2002-2010",
+                        ],
+                        [
+                            "cl",
+                            "Verificaciones iniciales",
+                            [
+                                "La solicitud se refiere a hechos pasados determinados",
+                                "No existe controversia que deba sustanciarse en proceso contencioso",
+                                "Se ha presentado ante el órgano judicial competente",
+                                "Se acompaña principio de prueba de los hechos",
+                            ],
+                        ],
+                    ],
+                    q: "¿Quién promueve el expediente?",
+                    opts: [
+                        {
+                            t: "Persona interesada (titular de derechos o intereses legítimos)",
+                            l: "A",
+                            n: "contenido_solicitud",
+                            v: "ok",
+                        },
+                        {
+                            t: "Ministerio Fiscal (de oficio o a solicitud de cualquier persona)",
+                            l: "B",
+                            n: "contenido_solicitud",
+                            v: "neutral",
+                        },
+                    ],
+                },
+
+                contenido_solicitud: {
+                    ph: 0,
+                    t: "Contenido de la solicitud",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La solicitud debe expresar con claridad los siguientes extremos para que el Letrado de la Administración de Justicia pueda realizar el control de admisibilidad y, en su caso, admitirla a trámite:",
+                        ],
+                        [
+                            "cl",
+                            "Requisitos de la solicitud (art. 80 quáter.1)",
+                            [
+                                "Contenido de la declaración judicial que se interesa",
+                                "Relato de las circunstancias relevantes a los efectos de la solicitud",
+                                "Principio de prueba de los hechos sobre los que se interesa la información",
+                                "Identificación de las personas que puedan estar interesadas",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "No es preceptiva la defensa de Letrado ni la representación por Procurador. En la Oficina Judicial existirán impresos normalizados a disposición de los interesados para formular la solicitud (art. 80 ter.3).",
+                        ],
+                        [
+                            "n",
+                            "El Ministerio Fiscal será siempre parte en este expediente, garantizando el control de legalidad y la protección de los intereses generales (art. 80 ter.4).",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015, arts. 80 ter.3, 80 ter.4, 80 quáter.1",
+                        ],
+                    ],
+                    nx: "check_condiciones",
+                },
+
+                check_condiciones: {
+                    ph: 0,
+                    t: "Verificación de las 5 condiciones cumulativas (art. 80 bis.2)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Para que proceda el expediente de declaración judicial sobre hechos pasados, deben concurrir cumulativamente las cinco condiciones establecidas en el apartado 2 del artículo 80 bis. Si alguna de ellas no se cumple, el expediente no es viable por esta vía.",
+                        ],
+                        [
+                            "cl",
+                            "Condiciones cumulativas (art. 80 bis.2)",
+                            [
+                                "1.ª: Que su objeto sea posible y lícito",
+                                "2.ª: Que exista un principio de prueba de los hechos",
+                                "3.ª: Que de los hechos no resulte perjuicio para una persona cierta y determinada",
+                                "4.ª: Que los hechos no sean objeto de un procedimiento judicial en trámite",
+                                "5.ª: Que no exista otro procedimiento judicial indicado para la demostración de los hechos (carácter subsidiario o residual)",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "Si surge una auténtica contienda sobre los hechos, el cauce adecuado será el proceso declarativo contencioso correspondiente, no este expediente de jurisdicción voluntaria.",
+                        ],
+                        ["l", "Ley 15/2015, art. 80 bis.2; art. 6; art. 1"],
+                    ],
+                    q: "¿Se cumplen todas las condiciones cumulativas del art. 80 bis.2?",
+                    opts: [
+                        {
+                            t: "Sí, las cinco condiciones se cumplen",
+                            l: "A",
+                            n: "competencia",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, al menos una condición no se cumple",
+                            l: "B",
+                            n: "fin_no_viable",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                competencia: {
+                    ph: 1,
+                    t: "Determinación de la competencia territorial",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Es necesario determinar el órgano judicial competente para conocer del expediente. La competencia territorial se fija en función del lugar donde acaecieron los hechos o, en su defecto, del domicilio del solicitante.",
+                        ],
+                        [
+                            "n",
+                            "Tras la Ley Orgánica 1/2025, de 2 de enero, las referencias al Juzgado de Primera Instancia deben entenderse hechas a la sección civil del Tribunal de Instancia correspondiente. La determinación de la sección competente se rige por el art. 86.5.j) o, en su caso, el art. 89.6.g) de la LOPJ.",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015, art. 80 ter.1; LO 1/2025, disp. adic. 1.ª; LOPJ, arts. 86.5.j) y 89.6.g)",
+                        ],
+                    ],
+                    q: "¿Cuál es el fuero de competencia aplicable?",
+                    opts: [
+                        {
+                            t: "JPI / Sección del TI del lugar donde acaecieron los hechos (fuero principal)",
+                            l: "A",
+                            n: "control_laj",
+                            v: "ok",
+                        },
+                        {
+                            t: "Varios lugares: a elección del solicitante",
+                            l: "B",
+                            n: "control_laj",
+                            v: "ok",
+                        },
+                        {
+                            t: "JPI / Sección del TI del domicilio del solicitante (fuero residual)",
+                            l: "C",
+                            n: "control_laj",
+                            v: "neutral",
+                        },
+                    ],
+                },
+
+                control_laj: {
+                    ph: 1,
+                    t: "Control previo de admisibilidad por el LAJ",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El Letrado de la Administración de Justicia realiza un control previo de admisibilidad de la solicitud. Si no detecta ningún defecto, admite directamente a trámite. Si advierte la falta de competencia objetiva o territorial, o la falta de alguna de las condiciones del art. 80 bis.2, dará cuenta al Juez para que este decida.",
+                        ],
+                        [
+                            "n",
+                            "El control del LAJ es un filtro previo y no sustituye la decisión judicial. Solo el Juez puede inadmitir el expediente, previa audiencia del Ministerio Fiscal y del solicitante.",
+                        ],
+                        ["l", "Ley 15/2015, art. 80 quáter.2"],
+                    ],
+                    q: "¿El LAJ detecta algún defecto en la solicitud?",
+                    opts: [
+                        {
+                            t: "No, no detecta defectos: la solicitud cumple los requisitos",
+                            l: "A",
+                            n: "admision_tramite",
+                            v: "ok",
+                        },
+                        {
+                            t: "Sí, detecta falta de competencia o incumplimiento de las condiciones del art. 80 bis.2",
+                            l: "B",
+                            n: "auto_juez_admision",
+                            v: "warn",
+                        },
+                    ],
+                },
+
+                auto_juez_admision: {
+                    ph: 1,
+                    t: "Auto del Juez sobre admisibilidad",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez, previa audiencia del Ministerio Fiscal y del solicitante, decide por auto sobre la admisibilidad del expediente. Esta decisión es susceptible de recurso de apelación conforme a la LEC.",
+                        ],
+                        [
+                            "w",
+                            "El auto que inadmite el expediente es susceptible de recurso de apelación (art. 80 quinquies).",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015, arts. 80 quáter.2, 80 quinquies; LEC, recurso de apelación",
+                        ],
+                    ],
+                    q: "¿El Juez admite o inadmite el expediente?",
+                    opts: [
+                        {
+                            t: "Admite el expediente",
+                            l: "A",
+                            n: "admision_tramite",
+                            v: "ok",
+                        },
+                        {
+                            t: "Inadmite el expediente por auto",
+                            l: "B",
+                            n: "fin_inadmitido",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                admision_tramite: {
+                    ph: 1,
+                    t: "Admisión a trámite y convocatoria a comparecencia",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Cumplidos los requisitos de admisibilidad, el Letrado de la Administración de Justicia admite a trámite la solicitud y convoca a una comparecencia al promotor, al Ministerio Fiscal y a cuantas personas pudieran estar interesadas en los hechos respecto de los que se interesa la información.",
+                        ],
+                        [
+                            "n",
+                            "La convocatoria a comparecencia inicia la fase probatoria del expediente. Todas las personas con interés legítimo deben ser citadas.",
+                        ],
+                        ["l", "Ley 15/2015, art. 80 quáter.3"],
+                    ],
+                    nx: "actuaciones_probatorias",
+                },
+
+                actuaciones_probatorias: {
+                    ph: 2,
+                    t: "Actuaciones probatorias previas a la comparecencia",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "En el plazo común de cinco días desde la recepción de la citación, las partes pueden solicitar actuaciones probatorias previas a la celebración de la comparecencia.",
+                        ],
+                        [
+                            "d",
+                            "Plazo común de 5 días desde la recepción de la citación",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones disponibles en el plazo de 5 días",
+                            [
+                                "Citación de testigos o peritos que no puedan ser presentados por las partes (citados por el LAJ)",
+                                "Solicitud de respuestas escritas a personas jurídicas o entidades públicas (art. 381 LEC)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La práctica de este trámite no suspende la celebración de la comparecencia, salvo que el Juez lo estime necesario para impedir la indefensión. Si las respuestas se reciben con posterioridad, se dará audiencia a los interesados y al Ministerio Fiscal.",
+                        ],
+                        ["l", "Ley 15/2015, art. 80 quáter.4; LEC, art. 381"],
+                    ],
+                    nx: "comparecencia",
+                },
+
+                comparecencia: {
+                    ph: 2,
+                    t: "Celebración de la comparecencia",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "La comparecencia se sustancia por los trámites previstos en la Ley de Enjuiciamiento Civil para la vista del juicio verbal, practicándose la prueba pertinente y útil que propongan las partes en el acto.",
+                        ],
+                        [
+                            "n",
+                            "Durante la comparecencia o en cualquier momento de la tramitación, los interesados o afectados por los hechos objeto del expediente pueden formular oposición a la emisión de la declaración judicial.",
+                        ],
+                        [
+                            "n",
+                            "Las resoluciones interlocutorias dictadas durante la tramitación son susceptibles de recurso de reposición conforme a la LEC.",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015, art. 80 quáter.5-6, art. 80 quinquies; LEC, juicio verbal, recurso de reposición",
+                        ],
+                    ],
+                    nx: "check_oposicion",
+                },
+
+                check_oposicion: {
+                    ph: 2,
+                    t: "Oposición a la declaración judicial",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "En cualquier momento durante la tramitación del expediente, los interesados o afectados por los hechos objeto del mismo pueden formular su oposición a la emisión de la declaración judicial interesada. El Juez resolverá sobre la oposición por auto.",
+                        ],
+                        [
+                            "w",
+                            "Si el Juez estima justificada la oposición, acordará el sobreseimiento del expediente con reserva del derecho a ejercitar la acción correspondiente. Si no la estima justificada, ordenará la continuación del expediente.",
+                        ],
+                        [
+                            "n",
+                            "El auto que resuelve sobre la oposición es susceptible de recurso de apelación (art. 80 quinquies).",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015, art. 80 quáter.6, art. 80 quinquies",
+                        ],
+                    ],
+                    q: "¿Se formula oposición por algún interesado o afectado?",
+                    opts: [
+                        {
+                            t: "No se formula oposición",
+                            l: "A",
+                            n: "resolucion_5dias",
+                            v: "ok",
+                        },
+                        {
+                            t: "Sí, se formula oposición a la declaración judicial",
+                            l: "B",
+                            n: "juez_oposicion",
+                            v: "warn",
+                        },
+                    ],
+                },
+
+                juez_oposicion: {
+                    ph: 2,
+                    t: "Resolución del Juez sobre la oposición",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez resuelve sobre la oposición formulada por auto. Si la estima justificada, acuerda el sobreseimiento del expediente, con reserva a las partes de su derecho a ejercitar la acción correspondiente. Si no la estima justificada, manda la continuación del expediente hasta su resolución.",
+                        ],
+                        [
+                            "w",
+                            "El auto de sobreseimiento cierra esta vía pero no impide que las partes ejerciten la acción correspondiente en otro procedimiento.",
+                        ],
+                        [
+                            "n",
+                            "El auto que resuelve sobre la oposición es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies).",
+                        ],
+                        ["l", "Ley 15/2015, arts. 80 quáter.6, 80 quinquies"],
+                    ],
+                    q: "¿El Juez estima o no estima justificada la oposición?",
+                    opts: [
+                        {
+                            t: "Oposición estimada: se acuerda el sobreseimiento",
+                            l: "A",
+                            n: "fin_sobreseimiento",
+                            v: "bad",
+                        },
+                        {
+                            t: "Oposición no estimada: continúa el expediente",
+                            l: "B",
+                            n: "resolucion_5dias",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                resolucion_5dias: {
+                    ph: 3,
+                    t: "Resolución del expediente por auto (5 días)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "En el plazo de cinco días tras la celebración de la comparecencia, el Juez dictará auto por el que acceda o deniegue la emisión de la declaración judicial interesada.",
+                        ],
+                        [
+                            "d",
+                            "Plazo de 5 días desde la celebración de la comparecencia",
+                        ],
+                        [
+                            "i",
+                            "Si el Juez accede a la solicitud, realizará en la parte dispositiva del auto la declaración sobre hechos pasados determinados interesada por el promotor, con expresión de sus circunstancias. Se pronunciará, en su caso, en relación con las consecuencias que se deriven de la declaración.",
+                        ],
+                        [
+                            "w",
+                            "Tanto el auto que accede como el que deniega la declaración son susceptibles de recurso de apelación (art. 80 quinquies).",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015, art. 80 quáter.5, art. 80 quinquies",
+                        ],
+                    ],
+                    q: "¿El Juez accede o deniega la emisión de la declaración judicial?",
+                    opts: [
+                        {
+                            t: "Accede a la solicitud: emite la declaración judicial",
+                            l: "A",
+                            n: "check_inscribible",
+                            v: "ok",
+                        },
+                        {
+                            t: "Deniega la emisión de la declaración judicial",
+                            l: "B",
+                            n: "fin_denegada",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                check_inscribible: {
+                    ph: 3,
+                    t: "Hechos inscribibles en registros públicos",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Si de la declaración judicial se derivara la existencia de un hecho inscribible en el Registro de la Propiedad, Mercantil u otro registro público, será aplicable lo dispuesto en el artículo 22.2 de la Ley de la Jurisdicción Voluntaria, relativo al cumplimiento y ejecución de la resolución que pone fin al expediente.",
+                        ],
+                        [
+                            "n",
+                            "La inscripción registral no es automática; requiere que el hecho declarado sea materialmente inscribible conforme a la normativa del registro de que se trate.",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015, arts. 80 quáter.5 (in fine), 22.2, 11",
+                        ],
+                    ],
+                    q: "¿La declaración deriva en un hecho inscribible en un registro público?",
+                    opts: [
+                        {
+                            t: "Sí, es inscribible en el Registro de la Propiedad, Mercantil u otro",
+                            l: "A",
+                            n: "inscripcion_registral",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, no deriva en hecho inscribible",
+                            l: "B",
+                            n: "fin_exito",
+                            v: "neutral",
+                        },
+                    ],
+                },
+
+                inscripcion_registral: {
+                    ph: 3,
+                    t: "Inscripción registral (art. 22.2 LJVol)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Se procede a la inscripción del hecho declarado en el registro público correspondiente, conforme a lo dispuesto en el artículo 22.2 de la Ley de la Jurisdicción Voluntaria, relativo al cumplimiento y ejecución de la resolución que pone fin al expediente.",
+                        ],
+                        [
+                            "n",
+                            "La inscripción se realizará conforme a las normas propias del registro de que se trate (Registro de la Propiedad, Mercantil, etc.).",
+                        ],
+                        ["l", "Ley 15/2015, arts. 22.2, 11"],
+                    ],
+                    nx: "fin_exito_inscripcion",
+                },
+
+                fin_no_viable: {
+                    ph: 3,
+                    t: "No procede el expediente",
+                    ac: "juez",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "No se cumplen una o más de las condiciones cumulativas del artículo 80 bis.2, por lo que el expediente de declaración judicial sobre hechos pasados no resulta viable por esta vía.",
+                        ],
+                        [
+                            "w",
+                            "Si la causa de inviabilidad es la existencia de controversia, el cauce adecuado será el proceso declarativo contencioso correspondiente.",
+                        ],
+                        [
+                            "n",
+                            "Si la causa es la existencia de otro procedimiento judicial indicado (condición 5.ª), el carácter subsidiario del expediente impide su tramitación mientras exista esa vía preferente.",
+                        ],
+                        ["l", "Ley 15/2015, art. 80 bis.2, art. 1, art. 6"],
+                    ],
+                },
+
+                fin_inadmitido: {
+                    ph: 3,
+                    t: "Expediente inadmitido por auto del Juez",
+                    ac: "juez",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "El Juez ha inadmitido el expediente por auto, previa audiencia del Ministerio Fiscal y del solicitante, al estimar la falta de competencia objetiva o territorial, o bien la falta de alguna de las condiciones del artículo 80 bis.2.",
+                        ],
+                        [
+                            "n",
+                            "El auto de inadmisión es susceptible de recurso de apelación conforme a la Ley de Enjuiciamiento Civil (art. 80 quinquies).",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015, arts. 80 quáter.2, 80 quinquies; LEC, recurso de apelación",
+                        ],
+                    ],
+                },
+
+                fin_sobreseimiento: {
+                    ph: 3,
+                    t: "Sobreseimiento del expediente por oposición estimada",
+                    ac: "juez",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "El Juez ha estimado justificada la oposición formulada y ha acordado por auto el sobreseimiento del expediente, con reserva a las partes de su derecho a ejercitar la acción correspondiente en el procedimiento que estimen pertinente.",
+                        ],
+                        [
+                            "n",
+                            "El auto de sobreseimiento no impide a las partes ejercitar la acción correspondiente en otra vía procesal. El sobreseimiento cierra esta vía de jurisdicción voluntaria, pero no prejuzga el fondo del asunto.",
+                        ],
+                        [
+                            "n",
+                            "El auto que resuelve sobre la oposición es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies).",
+                        ],
+                        ["l", "Ley 15/2015, arts. 80 quáter.6, 80 quinquies"],
+                    ],
+                },
+
+                fin_denegada: {
+                    ph: 3,
+                    t: "Declaración judicial denegada",
+                    ac: "juez",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "El Juez ha denegado por auto la emisión de la declaración judicial interesada, tras la celebración de la comparecencia. El expediente concluye sin que se emita la declaración.",
+                        ],
+                        [
+                            "n",
+                            "El auto que deniega la declaración es susceptible de recurso de apelación conforme a la Ley de Enjuiciamiento Civil (art. 80 quinquies).",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015, arts. 80 quáter.5, 80 quinquies; LEC, recurso de apelación",
+                        ],
+                    ],
+                },
+
+                fin_exito: {
+                    ph: 3,
+                    t: "Declaración judicial emitida con éxito",
+                    ac: "juez",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El Juez ha accedido a la solicitud y ha emitido en la parte dispositiva del auto la declaración sobre hechos pasados determinados, con expresión de sus circunstancias. Se ha pronunciado, en su caso, sobre las consecuencias que se derivan de la declaración.",
+                        ],
+                        [
+                            "n",
+                            "El auto que accede a la declaración es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies), si bien normalmente quien obtuvo la declaración no tendría interés en recurrir.",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015, art. 80 quáter.5, art. 80 quinquies",
+                        ],
+                    ],
+                },
+
+                fin_exito_inscripcion: {
+                    ph: 3,
+                    t: "Declaración emitida con inscripción registral",
+                    ac: "ambos",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El Juez ha accedido a la solicitud y ha emitido la declaración judicial. Adicionalmente, al derivar la declaración en un hecho inscribible, se ha procedido a la inscripción en el registro público correspondiente conforme al artículo 22.2 de la Ley de la Jurisdicción Voluntaria.",
+                        ],
+                        [
+                            "n",
+                            "La inscripción se ha realizado conforme a las normas del registro de que se trate (Registro de la Propiedad, Mercantil u otro registro público).",
+                        ],
+                        ["l", "Ley 15/2015, arts. 80 quáter.5, 22.2, 11"],
+                    ],
+                },
+            }; // end STEPS
+
+            /* ===== STATE ===== */
+            var cur = "inicio";
+            var hist = [];
+            var activeSbTab = "map";
+            var mapaOn = false;
+            var collapsedPhases = {};
+            var zoomLevel = 100;
+            var SB_FOOT =
+                "Ley 15/2015, arts. 80 bis-80 quinquies<br>" +
+                "Ley 20/2022, disp. final 3.ª<br>" +
+                "LO 1/2025, disp. adic. 1.ª<br>" +
+                "LOPJ, arts. 86.5.j) y 89.6.g)";
+
+            // ----- Variables para toggle sidebar -----
+            var sidebarOpen = false; // solo para móvil
+            var btnToggleSidebar = null;
+            var sidebarBackdrop = null;
+
+            function clampNum(v, min, max) {
+                return Math.min(max, Math.max(min, v));
+            }
+            function setZoom(pct) {
+                zoomLevel = clampNum(Math.round(pct), 80, 140);
+                var content = document.getElementById("content");
+                if (content) content.style.zoom = String(zoomLevel / 100);
+                var lbl = document.getElementById("zoomLabel");
+                if (lbl) lbl.textContent = zoomLevel + "%";
+            }
+            function zoomIn() {
+                setZoom(zoomLevel + 10);
+            }
+            function zoomOut() {
+                setZoom(zoomLevel - 10);
+            }
+
+            /* ===== TOGGLE SIDEBAR (nuevo) ===== */
+            function toggleSidebar() {
+                var isMobile = window.innerWidth <= 700;
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    var sidebar = document.getElementById("sidebar");
+                    if (sidebar) {
+                        if (sidebarOpen) {
+                            sidebar.classList.add("open");
+                        } else {
+                            sidebar.classList.remove("open");
+                        }
+                    }
+                    if (sidebarBackdrop) {
+                        if (sidebarOpen) {
+                            sidebarBackdrop.classList.add("show");
+                        } else {
+                            sidebarBackdrop.classList.remove("show");
+                        }
+                    }
+                    if (btnToggleSidebar) {
+                        btnToggleSidebar.setAttribute(
+                            "aria-expanded",
+                            sidebarOpen,
+                        );
+                    }
+                } else {
+                    var sidebar = document.getElementById("sidebar");
+                    if (sidebar) {
+                        sidebar.classList.toggle("collapsed");
+                    }
+                }
+            }
+
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 700 && sidebarOpen) {
+                    sidebarOpen = false;
+                    var sidebar = document.getElementById("sidebar");
+                    if (sidebar) sidebar.classList.remove("open");
+                    if (sidebarBackdrop)
+                        sidebarBackdrop.classList.remove("show");
+                    if (btnToggleSidebar)
+                        btnToggleSidebar.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            /* ===== NAVIGATION ===== */
+            function goTo(stepId, choiceLabel) {
+                hist.push({ s: cur, next: stepId, c: choiceLabel || "" });
+                cur = stepId;
+                if (choiceLabel) sbTab("journey");
+                render();
+            }
+
+            function goBack() {
+                if (hist.length === 0) return;
+                var last = hist.pop();
+                cur = last.s;
+                render();
+            }
+
+            function goBackTo(index) {
+                if (index < 0 || index >= hist.length) return;
+                cur = hist[index].s;
+                hist = hist.slice(0, index);
+                render();
+            }
+
+            function buildPathTo(targetId) {
+                if (targetId === "inicio") return [];
+                var queue = [{ node: "inicio", path: [] }];
+                var visited = new Set();
+                visited.add("inicio");
+                while (queue.length) {
+                    var current = queue.shift();
+                    var step = STEPS[current.node];
+                    if (!step) continue;
+                    if (step.nx) {
+                        var nextId = step.nx;
+                        var newPath = current.path.concat([
+                            { s: current.node, next: nextId, c: "" },
+                        ]);
+                        if (nextId === targetId) return newPath;
+                        if (!visited.has(nextId)) {
+                            visited.add(nextId);
+                            queue.push({ node: nextId, path: newPath });
+                        }
+                    }
+                    if (step.opts) {
+                        for (var i = 0; i < step.opts.length; i++) {
+                            var opt = step.opts[i];
+                            var nextId = opt.n;
+                            var choiceLabel = opt.t;
+                            var newPath = current.path.concat([
+                                {
+                                    s: current.node,
+                                    next: nextId,
+                                    c: choiceLabel,
+                                },
+                            ]);
+                            if (nextId === targetId) return newPath;
+                            if (!visited.has(nextId)) {
+                                visited.add(nextId);
+                                queue.push({ node: nextId, path: newPath });
+                            }
+                        }
+                    }
+                }
+                return null;
+            }
+
+            function jumpTo(stepId) {
+                if (stepId !== cur) {
+                    var path = buildPathTo(stepId);
+                    if (path) {
+                        hist = path;
+                    } else {
+                        hist = [];
+                    }
+                }
+                cur = stepId;
+                sbTab("map");
+                render();
+            }
+
+            function restart() {
+                cur = "inicio";
+                hist = [];
+                sbTab("map");
+                setZoom(100);
+                render();
+            }
+
+            function escQ(s) {
+                return s.replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+            }
+            function trunc(s, n) {
+                return s.length > n ? s.substring(0, n) + "\u2026" : s;
+            }
+            function escHtml(s) {
+                var d = document.createElement("div");
+                d.textContent = s;
+                return d.innerHTML;
+            }
+
+            /* ===== RENDER ===== */
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+                document.getElementById("content").scrollTop = 0;
+                // Cerrar sidebar móvil al navegar (mejor UX)
+                closeMobileSidebar();
+            }
+
+            function renderPbar() {
+                var s = STEPS[cur];
+                if (!s) return;
+                var curPh = s.ph;
+                var html = "";
+                PHASES.forEach(function (name, i) {
+                    if (i > 0) html += '<span class="ph-sep">&#8250;</span>';
+                    var cls = "ph-lbl";
+                    if (i === curPh) cls += " active";
+                    else if (i < curPh) cls += " done";
+                    html +=
+                        '<div class="ph-item"><span class="' +
+                        cls +
+                        '">' +
+                        (i + 1) +
+                        ". " +
+                        escHtml(name) +
+                        "</span></div>";
+                });
+                document.getElementById("pbar").innerHTML = html;
+            }
+
+            function renderBreadcrumb() {
+                var s = STEPS[cur];
+                if (!s) return;
+                var html = "";
+                hist.forEach(function (h, i) {
+                    var origin = STEPS[h.s];
+                    var label = trunc(origin ? origin.t : h.s, 28);
+                    if (i > 0) html += '<span class="bc-sep">&#8250;</span>';
+                    html +=
+                        '<button class="bc-item bc-past" onclick="goBackTo(' +
+                        i +
+                        ')">' +
+                        escHtml(label) +
+                        "</button>";
+                });
+                var curLabel = trunc(s.t, 28);
+                if (hist.length > 0)
+                    html += '<span class="bc-sep">&#8250;</span>';
+                html +=
+                    '<span class="bc-item bc-current">' +
+                    escHtml(curLabel) +
+                    "</span>";
+                document.getElementById("breadcrumb").innerHTML = html;
+            }
+
+            function renderSidebar() {
+                renderSbMap();
+                renderSbJourney();
+            }
+
+            function getVisitedSet() {
+                var set = new Set();
+                set.add("inicio");
+                hist.forEach(function (h) {
+                    set.add(h.s);
+                    set.add(h.next);
+                });
+                set.add(cur);
+                return set;
+            }
+
+            function getChoicesMade() {
+                var r = [];
+                hist.forEach(function (h) {
+                    if (h.c) r.push({ from: h.s, to: h.next, choice: h.c });
+                });
+                return r;
+            }
+
+            function isUnreachable(key, visitedSet) {
+                var choices = getChoicesMade();
+                var allKeys = Object.keys(STEPS);
+                for (var i = 0; i < allKeys.length; i++) {
+                    var sKey = allKeys[i];
+                    var s = STEPS[sKey];
+                    if (!s || !s.opts) continue;
+                    for (var j = 0; j < s.opts.length; j++) {
+                        if (s.opts[j].n === key) {
+                            for (var k = 0; k < choices.length; k++) {
+                                if (
+                                    choices[k].from === sKey &&
+                                    choices[k].to !== key
+                                )
+                                    return true;
+                            }
+                        }
+                    }
+                }
+                return false;
+            }
+
+            function renderSbMap() {
+                var visitedSet = getVisitedSet();
+                var html = "";
+                PHASES.forEach(function (phaseName, pi) {
+                    var isCol = !!collapsedPhases[pi];
+                    html += '<div class="sm-phase">';
+                    html +=
+                        '<div class="sm-phase-hdr' +
+                        (isCol ? " collapsed" : "") +
+                        '" onclick="togglePhase(' +
+                        pi +
+                        ')">';
+                    html +=
+                        '<span class="arrow">&#9660;</span> ' +
+                        escHtml(phaseName);
+                    html += "</div>";
+                    html +=
+                        '<div class="sm-phase-nodes' +
+                        (isCol ? " hidden" : "") +
+                        '">';
+                    Object.keys(STEPS).forEach(function (key) {
+                        var step = STEPS[key];
+                        if (step.ph !== pi) return;
+                        var isEnd = !!step.end;
+                        var isVisited = visitedSet.has(key);
+                        var isCurrent = key === cur;
+                        var cls = "sm-node";
+                        if (isCurrent) cls += " sm-current";
+                        else if (isVisited) cls += " sm-visited";
+                        else if (isEnd) cls += " sm-end";
+                        else if (isUnreachable(key, visitedSet))
+                            cls += " sm-unreachable";
+                        var icon = "&#9675;";
+                        if (isCurrent) icon = "&#9679;";
+                        else if (isVisited) icon = "&#10003;";
+                        else if (isEnd) icon = "&#9632;";
+                        var onclick = isCurrent
+                            ? ""
+                            : " onclick=\"jumpTo('" + escQ(key) + "')\"";
+                        html += '<div class="' + cls + '"' + onclick + ">";
+                        html += '<span class="sm-icon">' + icon + "</span>";
+                        html +=
+                            "<span>" + escHtml(trunc(step.t, 30)) + "</span>";
+                        html += "</div>";
+                    });
+                    html += "</div></div>";
+                });
+                html += '<div class="sb-foot">' + SB_FOOT + "</div>";
+                document.getElementById("sb-map").innerHTML = html;
+            }
+
+            function togglePhase(pi) {
+                collapsedPhases[pi] = !collapsedPhases[pi];
+                renderSbMap();
+            }
+
+            function renderSbJourney() {
+                var html = "";
+                hist.forEach(function (h, i) {
+                    var origin = STEPS[h.s];
+                    html +=
+                        '<div class="pi past">' +
+                        escHtml(trunc(origin ? origin.t : h.s, 32)) +
+                        "</div>";
+                    if (h.c)
+                        html +=
+                            '<div class="pi-choice">&#8226; ' +
+                            escHtml(h.c) +
+                            "</div>";
+                });
+                var curStep = STEPS[cur];
+                if (curStep)
+                    html +=
+                        '<div class="pi current">' +
+                        escHtml(trunc(curStep.t, 32)) +
+                        "</div>";
+                html += '<div class="sb-foot">' + SB_FOOT + "</div>";
+                document.getElementById("sb-journey").innerHTML = html;
+            }
+
+            function renderContent() {
+                var s = STEPS[cur];
+                if (!s) return;
+                var el = document.getElementById("content");
+                var html = "";
+                // Step jump dropdown
+                html += '<div class="step-jump-wrap">';
+                html +=
+                    '<div class="step-jump-label">Ir directamente a un paso</div>';
+                html +=
+                    '<select class="step-jump-select" onchange="jumpTo(this.value)">';
+                PHASES.forEach(function (phaseName, pi) {
+                    html +=
+                        '<optgroup label="' +
+                        escHtml(pi + 1 + ". " + phaseName) +
+                        '">';
+                    Object.keys(STEPS).forEach(function (key) {
+                        var step = STEPS[key];
+                        if (step.ph !== pi) return;
+                        var sel = key === cur ? " selected" : "";
+                        var prefix = step.end ? "[Fin] " : "";
+                        html +=
+                            '<option value="' +
+                            escQ(key) +
+                            '"' +
+                            sel +
+                            ">" +
+                            escHtml(prefix + step.t) +
+                            "</option>";
+                    });
+                    html += "</optgroup>";
+                });
+                html += "</select></div>";
+
+                if (s.end) html += buildEnd(cur, s);
+                else html += buildStep(cur, s);
+                el.innerHTML = html;
+            }
+
+            function actorLabel(ac) {
+                if (ac === "laj") return "LAJ";
+                if (ac === "juez") return "Juez";
+                return "Ambos";
+            }
+
+            function buildStep(key, s) {
+                var stepCount = hist.length + 1;
+                var phName = PHASES[s.ph] || "";
+                var html = '<div class="card">';
+                html += '<div class="c-hdr">';
+                html +=
+                    '<div class="act-badge act-' +
+                    s.ac +
+                    '">' +
+                    actorLabel(s.ac) +
+                    "</div>";
+                html += '<div class="c-title">' + escHtml(s.t) + "</div>";
+                html +=
+                    '<div class="step-num">Paso ' +
+                    stepCount +
+                    " de este recorrido &middot; Fase " +
+                    (s.ph + 1) +
+                    ": " +
+                    escHtml(phName) +
+                    "</div>";
+                html += "</div>";
+                html += '<div class="c-body">';
+                html += renderBlocks(s.c);
+                html += "</div>";
+                if (s.q) {
+                    html += '<div class="dec-area">';
+                    html += '<div class="dec-q">' + escHtml(s.q) + "</div>";
+                    html += '<div class="dec-opts">';
+                    s.opts.forEach(function (opt, i) {
+                        var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                        var letter = opt.l || letters[i] || i + 1;
+                        var cls = opt.v || "neutral";
+                        html +=
+                            '<button class="dec-btn ' +
+                            cls +
+                            '" onclick="goTo(\'' +
+                            escQ(opt.n) +
+                            "','" +
+                            escQ(opt.t) +
+                            "')\">";
+                        html +=
+                            '<span class="dec-letter">' + letter + "</span>";
+                        html += "<span>" + escHtml(opt.t) + "</span>";
+                        html += "</button>";
+                    });
+                    html += "</div></div>";
+                }
+                html += '<div class="c-nav">';
+                html +=
+                    '<button class="btn-back"' +
+                    (hist.length === 0 ? " disabled" : "") +
+                    ' onclick="goBack()">&#8592; Volver</button>';
+                if (s.nx)
+                    html +=
+                        '<button class="btn-next" onclick="goTo(\'' +
+                        escQ(s.nx) +
+                        "','')\">Siguiente &#8594;</button>";
+                html += "</div>";
+                html += "</div>";
+                return html;
+            }
+
+            function buildEnd(key, s) {
+                var icons = {
+                    success: "&#10003;",
+                    error: "&#10007;",
+                    warning: "&#9888;",
+                    neutral: "&#9679;",
+                };
+                var html = '<div class="card end-' + s.end + '">';
+                html += '<div class="end-body">';
+                html +=
+                    '<div class="end-icon">' + (icons[s.end] || "") + "</div>";
+                html += '<div class="end-title">' + escHtml(s.t) + "</div>";
+                html +=
+                    '<div class="end-sub">El procedimiento ha concluido en esta vía</div>';
+                html += '<div class="end-btns">';
+                html +=
+                    '<button class="btn-next" onclick="restart()">&#8635; Nuevo procedimiento</button>';
+                html +=
+                    '<button class="btn-back"' +
+                    (hist.length === 0 ? " disabled" : "") +
+                    ' onclick="goBack()">&#8592; Volver</button>';
+                html += "</div></div>";
+                html += '<div class="end-content">';
+                html += renderBlocks(s.c);
+                html += "</div>";
+                html += '<div class="summary-box">';
+                html += "<h4>Resumen del recorrido</h4>";
+                html += "<ol>";
+                hist.forEach(function (h) {
+                    var origin = STEPS[h.s];
+                    html += "<li>" + escHtml(origin ? origin.t : h.s);
+                    if (h.c)
+                        html +=
+                            ' <span class="sum-choice">&#8594; ' +
+                            escHtml(trunc(h.c, 50)) +
+                            "</span>";
+                    html += "</li>";
+                });
+                html += "<li><strong>" + escHtml(s.t) + "</strong></li>";
+                html += "</ol></div>";
+                html += "</div>";
+                return html;
+            }
+
+            function renderBlocks(blocks) {
+                if (!blocks) return "";
+                var html = "";
+                blocks.forEach(function (b) {
+                    var type = b[0];
+                    if (type === "i")
+                        html += '<p class="blk-i">' + escHtml(b[1]) + "</p>";
+                    else if (type === "d")
+                        html +=
+                            '<div class="blk-d">' + escHtml(b[1]) + "</div>";
+                    else if (type === "n")
+                        html +=
+                            '<div class="blk-n">' + escHtml(b[1]) + "</div>";
+                    else if (type === "w")
+                        html +=
+                            '<div class="blk-w">' + escHtml(b[1]) + "</div>";
+                    else if (type === "l")
+                        html +=
+                            '<div class="blk-l">' + escHtml(b[1]) + "</div>";
+                    else if (type === "cl") {
+                        html += '<div class="blk-cl">';
+                        html +=
+                            '<div class="blk-cl-title">' +
+                            escHtml(b[1]) +
+                            "</div>";
+                        html += '<ul class="blk-cl-list">';
+                        (b[2] || []).forEach(function (item) {
+                            html += "<li>" + escHtml(item) + "</li>";
+                        });
+                        html += "</ul></div>";
+                    }
+                });
+                return html;
+            }
+
+            /* ===== SIDEBAR TABS ===== */
+            function sbTab(tab) {
+                activeSbTab = tab;
+                document.getElementById("sb-map").style.display =
+                    tab === "map" ? "block" : "none";
+                document.getElementById("sb-journey").style.display =
+                    tab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach(function (t, i) {
+                    t.classList.toggle(
+                        "active",
+                        (i === 0 && tab === "map") ||
+                            (i === 1 && tab === "journey"),
+                    );
+                });
+            }
+
+            /* ===== MAPA OVERLAY ===== */
+            function toggleMapa() {
+                mapaOn = !mapaOn;
+                document.getElementById("layout").style.display = mapaOn
+                    ? "none"
+                    : "flex";
+                document.getElementById("mapa-overlay").style.display = mapaOn
+                    ? "block"
+                    : "none";
+                if (mapaOn) renderMapa();
+            }
+
+            function renderMapa() {
+                var visitedSet = getVisitedSet();
+                var html = "";
+                PHASES.forEach(function (phaseName, pi) {
+                    html += '<div class="mapa-col">';
+                    html +=
+                        '<div class="mapa-col-hdr">' +
+                        escHtml(pi + 1 + ". " + phaseName) +
+                        "</div>";
+                    html += '<div class="mapa-nodes">';
+                    Object.keys(STEPS).forEach(function (key) {
+                        var s = STEPS[key];
+                        if (s.ph !== pi) return;
+                        var isVisited = visitedSet.has(key);
+                        var isCurrent = key === cur;
+                        var isEnd = !!s.end;
+                        var cls = "mapa-node";
+                        if (isCurrent) cls += " mapa-current";
+                        else if (isVisited) cls += " mapa-visited";
+                        if (isEnd) cls += " mapa-end-" + s.end;
+                        html += '<div class="' + cls + '">';
+                        html +=
+                            '<div class="mapa-node-actor">' +
+                            actorLabel(s.ac) +
+                            "</div>";
+                        html +=
+                            '<div class="mapa-node-title">' +
+                            escHtml(trunc(s.t, 45)) +
+                            "</div>";
+                        if (s.opts) {
+                            s.opts.forEach(function (opt) {
+                                html +=
+                                    '<div class="mapa-arrow"><span class="mapa-arrow-label">&#8594; ' +
+                                    escHtml(trunc(opt.t, 40)) +
+                                    "</span></div>";
+                            });
+                        } else if (s.nx) {
+                            var nxStep = STEPS[s.nx];
+                            html +=
+                                '<div class="mapa-arrow"><span class="mapa-arrow-label">&#8594; ' +
+                                escHtml(trunc(nxStep ? nxStep.t : s.nx, 40)) +
+                                "</span></div>";
+                        }
+                        html += "</div>";
+                    });
+                    html += "</div></div>";
+                });
+                document.getElementById("mapa-columns").innerHTML = html;
+            }
+
+            /* ===== DOWNLOAD ===== */
+            function dlGuia() {
+                var html =
+                    "<!DOCTYPE html>" + document.documentElement.outerHTML;
+                var blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                var url = URL.createObjectURL(blob);
+                var a = document.createElement("a");
+                a.href = url;
+                a.download =
+                    "guia-tramitacion-declaraciones-hechos-pasados.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            /* ===== INIT (con event listeners para toggle) ===== */
+            function init() {
+                setZoom(zoomLevel);
+                render();
+                // Obtener referencias de los nuevos elementos
+                btnToggleSidebar = document.getElementById("btnToggleSidebar");
+                sidebarBackdrop = document.getElementById("sidebarBackdrop");
+                // Evento del botón toggle
+                if (btnToggleSidebar) {
+                    btnToggleSidebar.addEventListener("click", toggleSidebar);
+                }
+                // Clic en backdrop cierra menú móvil
+                if (sidebarBackdrop) {
+                    sidebarBackdrop.addEventListener(
+                        "click",
+                        closeMobileSidebar,
+                    );
+                }
+                // Cerrar con tecla Escape
+                document.addEventListener("keydown", function (e) {
+                    if (
+                        e.key === "Escape" &&
+                        window.innerWidth <= 700 &&
+                        sidebarOpen
+                    ) {
+                        closeMobileSidebar();
+                    }
+                });
+                // Ajustar estado inicial según tamaño de pantalla
+                if (window.innerWidth > 700) {
+                    var sidebar = document.getElementById("sidebar");
+                    if (sidebar) sidebar.classList.remove("collapsed");
+                } else {
+                    closeMobileSidebar();
+                }
+            }
+
+            // Ejecutar init cuando el DOM esté listo
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", init);
+            } else {
+                init();
+            }
+        </script>
+    </body>
+</html>

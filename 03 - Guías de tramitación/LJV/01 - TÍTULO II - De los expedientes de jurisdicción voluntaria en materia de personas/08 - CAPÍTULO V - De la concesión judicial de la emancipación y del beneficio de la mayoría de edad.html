@@ -1,0 +1,2837 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>
+            De la concesión judicial de la emancipación y del beneficio de la
+            mayoría de edad (artículos 53 a 55 LJV)
+        </title>
+        <style>
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --transition-norm: 250ms ease;
+            }
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            html,
+            body {
+                height: 100%;
+                overflow: hidden;
+                font-family:
+                    "Outfit", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+                font-size: 14px;
+                color: var(--text);
+                background: var(--white);
+            }
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+                position: relative;
+            }
+
+            /* HEADER */
+            #hdr {
+                flex-shrink: 0;
+                height: 56px;
+                background: var(--navy);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+            }
+            #hdr .hdr-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+            /* Botón toggle sidebar (NUEVO) */
+            .btn-toggle-sidebar {
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                padding: 4px 10px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+                color: #fff;
+                font-family: inherit;
+                font-size: 20px;
+                cursor: pointer;
+                transition: all 150ms ease;
+                white-space: nowrap;
+                line-height: 1;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+            .btn-toggle-sidebar:focus-visible {
+                outline: 2px solid var(--navy-lt);
+                outline-offset: 2px;
+            }
+            #hdr .hdr-left .seal {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.85);
+            }
+            #hdr .hdr-left .hdr-titles {
+                min-width: 0;
+            }
+            #hdr .hdr-left h1 {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--white);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #hdr .hdr-left .hdr-sub {
+                font-size: 11px;
+                color: var(--white);
+                opacity: 0.7;
+            }
+            #hdr .hdr-right {
+                display: flex;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: var(--white);
+                font-size: 13px;
+                padding: 6px 12px;
+                border-radius: 4px;
+                cursor: pointer;
+                white-space: nowrap;
+                font-family: inherit;
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+            .btn-ghost:disabled {
+                opacity: 0.4;
+                cursor: default;
+            }
+            .zoom-cluster {
+                display: inline-flex;
+                align-items: center;
+                overflow: hidden;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 4px;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .btn-zoom {
+                appearance: none;
+                border: none;
+                background: transparent;
+                color: var(--white);
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+            .zoom-label {
+                min-width: 46px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.95);
+            }
+
+            /* PHASE BAR */
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                background: var(--navy-mid);
+                overflow-x: auto;
+                scrollbar-width: none;
+                display: flex;
+                align-items: center;
+                gap: 2px;
+                padding: 0 16px;
+            }
+            #pbar::-webkit-scrollbar {
+                display: none;
+            }
+            .ph-item {
+                display: inline-flex;
+                align-items: center;
+                flex-shrink: 0;
+            }
+            .ph-lbl {
+                display: inline-flex;
+                align-items: center;
+                height: 28px;
+                font-size: 12px;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.6);
+                padding: 0 10px;
+                border-radius: 8px;
+                cursor: default;
+                white-space: nowrap;
+            }
+            .ph-item.active .ph-lbl {
+                font-weight: 800;
+                background: rgba(255, 255, 255, 0.22);
+                color: var(--white);
+            }
+            .ph-item.done .ph-lbl {
+                opacity: 1;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .ph-item.default .ph-lbl {
+                opacity: 1;
+                color: rgba(255, 255, 255, 0.45);
+            }
+            .ph-sep {
+                color: rgba(255, 255, 255, 0.35);
+                font-size: 13px;
+                margin: 0 4px;
+                flex-shrink: 0;
+            }
+
+            /* BREADCRUMB */
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 34px;
+                height: auto;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                display: flex;
+                align-items: center;
+                padding: 4px 16px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                gap: 6px;
+                font-size: 13px;
+                flex-wrap: wrap;
+                row-gap: 2px;
+                white-space: normal;
+            }
+            #breadcrumb::-webkit-scrollbar {
+                display: none;
+            }
+            .bc-item {
+                background: none;
+                border: none;
+                color: var(--navy-lt);
+                cursor: pointer;
+                font-size: 13px;
+                font-family: inherit;
+                padding: 2px 6px;
+                border-radius: 3px;
+                white-space: nowrap;
+                max-width: 200px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: left;
+            }
+            .bc-item:hover {
+                background: rgba(65, 105, 225, 0.1);
+                text-decoration: underline;
+            }
+            .bc-sep {
+                color: var(--muted);
+                font-size: 13px;
+                flex-shrink: 0;
+            }
+            .bc-current {
+                color: var(--text);
+                font-weight: 600;
+                white-space: nowrap;
+                max-width: 300px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 13px;
+            }
+            .bc-back {
+                background: none;
+                border: none;
+                color: var(--navy-lt);
+                cursor: pointer;
+                font-size: 13px;
+                font-family: inherit;
+                padding: 2px 8px;
+                border-radius: 3px;
+                white-space: nowrap;
+                font-weight: 600;
+                margin-right: 6px;
+                flex-shrink: 0;
+            }
+            .bc-back:hover {
+                background: rgba(65, 105, 225, 0.1);
+                text-decoration: underline;
+            }
+            .bc-back:disabled {
+                opacity: 0.35;
+                cursor: default;
+            }
+            .bc-back:disabled:hover {
+                background: none;
+                text-decoration: none;
+            }
+
+            /* LAYOUT */
+            #layout {
+                flex: 1;
+                overflow: hidden;
+                display: flex;
+                position: relative;
+            }
+
+            /* SIDEBAR (MODIFICADO para soportar colapso y overlay móvil) */
+            #sidebar {
+                width: 270px;
+                flex-shrink: 0;
+                background: var(--navy-mid);
+                display: flex;
+                flex-direction: column;
+                overflow-y: auto;
+                overflow-x: hidden;
+                min-height: 0;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+                transition:
+                    transform var(--transition-norm),
+                    width var(--transition-norm);
+                z-index: 80;
+            }
+            #sidebar.collapsed {
+                width: 0;
+                transform: translateX(-100%);
+                overflow: hidden;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 6px;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 3px;
+            }
+            .sb-tabs {
+                display: flex;
+                flex-shrink: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 8px 0;
+                text-align: center;
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.6);
+                cursor: pointer;
+                border: none;
+                background: none;
+                font-family: inherit;
+                font-weight: 600;
+                border-bottom: 2px solid transparent;
+            }
+            .sb-tab.active {
+                color: var(--white);
+                border-bottom-color: var(--navy-lt);
+                background: rgba(65, 105, 225, 0.15);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .sb-body {
+                flex: 1;
+                min-height: 0;
+                padding: 10px 0;
+            }
+            #sb-map,
+            #sb-journey {
+                display: none;
+            }
+            .sb-foot {
+                padding: 12px 14px 10px;
+                border-top: 1px solid rgba(255, 255, 255, 0.12);
+                font-size: 10.5px;
+                line-height: 1.4;
+                color: rgba(255, 255, 255, 0.55);
+                font-family:
+                    ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+            }
+
+            /* Backdrop para móvil (NUEVO) */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 140;
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+
+            /* Sidebar Map nodes */
+            .sb-ph-hdr {
+                padding: 10px 14px 6px;
+                font-size: 12px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.5);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                user-select: none;
+            }
+            .sb-ph-hdr:hover {
+                color: rgba(255, 255, 255, 0.75);
+            }
+            .sb-ph-hdr .ph-arrow {
+                font-size: 10px;
+                transition: transform 0.2s;
+            }
+            .sb-ph-hdr.collapsed .ph-arrow {
+                transform: rotate(-90deg);
+            }
+            .sb-ph-steps {
+                overflow: hidden;
+                transition: max-height 0.25s ease;
+            }
+            .sb-ph-steps.collapsed {
+                max-height: 0 !important;
+            }
+            .sm-node {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 6px 14px;
+                cursor: pointer;
+                border-left: 3px solid transparent;
+                transition: background 0.15s;
+            }
+            .sm-node:hover {
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .sm-node.sm-visited {
+                border-left-color: #22c55e;
+            }
+            .sm-node.sm-current {
+                border-left-color: var(--navy-lt);
+                background: rgba(65, 105, 225, 0.15);
+            }
+            .sm-node.sm-default {
+                border-left-color: rgba(255, 255, 255, 0.1);
+            }
+            .sm-dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                margin-top: 4px;
+            }
+            .sm-visited .sm-dot {
+                background: #22c55e;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 8px;
+                color: #fff;
+            }
+            .sm-current .sm-dot {
+                background: var(--navy-lt);
+                animation: pulse 1.5s infinite;
+            }
+            .sm-default .sm-dot {
+                background: rgba(255, 255, 255, 0.2);
+            }
+            .sm-lbl {
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.85);
+                line-height: 1.3;
+            }
+            .sm-visited .sm-lbl {
+                color: rgba(255, 255, 255, 0.95);
+            }
+            .sm-current .sm-lbl {
+                color: var(--white);
+                font-weight: 600;
+            }
+            @keyframes pulse {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.4;
+                }
+            }
+
+            /* Sidebar Journey */
+            .jy-entry {
+                padding: 8px 14px;
+                border-left: 3px solid rgba(255, 255, 255, 0.1);
+            }
+            .jy-entry.jy-done {
+                border-left-color: #22c55e;
+            }
+            .jy-entry.jy-cur {
+                border-left-color: var(--navy-lt);
+                background: rgba(65, 105, 225, 0.1);
+            }
+            .jy-step {
+                font-size: 13px;
+                color: var(--white);
+                font-weight: 600;
+                margin-bottom: 2px;
+            }
+            .jy-choice {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.6);
+                font-style: italic;
+            }
+
+            /* CONTENT */
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 24px 32px;
+                background: var(--slate-bg);
+            }
+            #content::-webkit-scrollbar {
+                width: 8px;
+            }
+            #content::-webkit-scrollbar-thumb {
+                background: var(--bdr);
+                border-radius: 4px;
+            }
+
+            /* Card */
+            .card {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                padding: 24px 28px;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                animation: fadeUp 0.22s ease;
+            }
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Card badges row */
+            .card-badges {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 14px;
+            }
+
+            /* Actor badge */
+            .actor-badge {
+                display: inline-block;
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--white);
+                padding: 3px 10px;
+                border-radius: 4px;
+            }
+            .actor-badge.laj {
+                background: var(--navy);
+            }
+            .actor-badge.juez {
+                background: var(--cyan);
+            }
+            .actor-badge.ambos {
+                background: var(--violet);
+            }
+
+            /* Phase badge */
+            .phase-badge {
+                display: inline-block;
+                font-size: 12px;
+                color: var(--muted);
+                background: var(--slate-bg);
+                padding: 3px 10px;
+                border-radius: 4px;
+                border: 1px solid var(--bdr);
+            }
+
+            /* Card title */
+            .card-title {
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--text);
+                margin-bottom: 16px;
+                line-height: 1.3;
+            }
+
+            /* Content blocks */
+            .cb {
+                margin-bottom: 14px;
+                line-height: 1.55;
+            }
+            .cb:last-child {
+                margin-bottom: 0;
+            }
+            .cb-i {
+                color: var(--text);
+            }
+            .cb-d {
+                background: var(--amber-bg);
+                border: 1px solid #fde68a;
+                border-left: 4px solid var(--amber);
+                padding: 12px 16px;
+                border-radius: 4px;
+                color: var(--amber);
+            }
+            .cb-d .cb-label {
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--amber);
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+            }
+            .cb-n {
+                background: var(--slate-bg);
+                border-left: 4px solid var(--bdr);
+                padding: 10px 16px;
+                border-radius: 4px;
+                color: var(--slate);
+                font-style: italic;
+                font-size: 14px;
+            }
+            .cb-n .cb-label {
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--slate);
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+                font-style: normal;
+            }
+            .cb-w {
+                background: var(--red-bg);
+                border-left: 4px solid var(--red);
+                padding: 12px 16px;
+                border-radius: 4px;
+                color: var(--red);
+            }
+            .cb-w .cb-label {
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--red);
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+            }
+            .cb-l {
+                background: #f8f9fb;
+                border: 1px solid #e5e7eb;
+                padding: 10px 16px;
+                border-radius: 4px;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 13px;
+                color: var(--muted);
+                line-height: 1.5;
+            }
+            .cb-l .cb-label {
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--muted);
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+                font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            }
+
+            /* Checklist */
+            .cb-cl {
+                margin-bottom: 14px;
+            }
+            .cb-cl .cl-title {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--text);
+                margin-bottom: 8px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+            .cb-cl .cl-title .cl-icon {
+                color: var(--green);
+                font-size: 15px;
+            }
+            .cb-cl ul {
+                list-style: none;
+                padding: 0;
+            }
+            .cb-cl ul li {
+                padding: 6px 0 6px 28px;
+                position: relative;
+                font-size: 14px;
+                color: var(--text);
+                line-height: 1.45;
+                border-bottom: 1px solid #f0f1f3;
+            }
+            .cb-cl ul li:last-child {
+                border-bottom: none;
+            }
+            .cb-cl ul li::before {
+                content: "✓";
+                position: absolute;
+                left: 4px;
+                top: 6px;
+                color: var(--green);
+                font-weight: 700;
+                font-size: 13px;
+            }
+
+            /* Question */
+            .question {
+                margin-top: 20px;
+                padding: 16px 20px;
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 6px;
+            }
+            .question .q-text {
+                font-size: 15px;
+                font-weight: 600;
+                color: var(--text);
+                margin-bottom: 12px;
+            }
+            .question .q-label {
+                font-size: 12px;
+                color: var(--muted);
+                margin-bottom: 10px;
+            }
+
+            /* Decision buttons */
+            .dec-btns {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 12px 16px;
+                border: 2px solid;
+                border-radius: 6px;
+                cursor: pointer;
+                text-align: left;
+                background: var(--white);
+                transition:
+                    background 0.15s,
+                    border-color 0.15s;
+                font-family: inherit;
+                font-size: 14px;
+                line-height: 1.45;
+            }
+            .dec-btn:hover {
+                filter: brightness(0.95);
+            }
+            .dec-btn .dec-letter {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                font-size: 13px;
+                flex-shrink: 0;
+            }
+            .dec-btn.ok {
+                border-color: var(--green);
+                color: var(--green);
+            }
+            .dec-btn.ok .dec-letter {
+                background: var(--green-bg);
+                color: var(--green);
+            }
+            .dec-btn.ok:hover {
+                background: var(--green-bg);
+            }
+            .dec-btn.bad {
+                border-color: var(--red);
+                color: var(--red);
+            }
+            .dec-btn.bad .dec-letter {
+                background: var(--red-bg);
+                color: var(--red);
+            }
+            .dec-btn.bad:hover {
+                background: var(--red-bg);
+            }
+            .dec-btn.warn {
+                border-color: var(--amber);
+                color: var(--amber);
+            }
+            .dec-btn.warn .dec-letter {
+                background: var(--amber-bg);
+                color: var(--amber);
+            }
+            .dec-btn.warn:hover {
+                background: var(--amber-bg);
+            }
+            .dec-btn.neutral {
+                border-color: var(--navy-lt);
+                color: var(--navy-lt);
+            }
+            .dec-btn.neutral .dec-letter {
+                background: var(--violet-bg);
+                color: var(--navy-lt);
+            }
+            .dec-btn.neutral:hover {
+                background: var(--violet-bg);
+            }
+            .dec-btn .dec-text {
+                flex: 1;
+            }
+            .dec-btn .dec-text .dt-main {
+                font-weight: 600;
+                margin-bottom: 2px;
+            }
+            .dec-btn .dec-text .dt-sub {
+                font-size: 12px;
+                font-weight: 400;
+                opacity: 0.7;
+            }
+
+            /* Next button */
+            .next-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background: var(--navy);
+                color: var(--white);
+                border: none;
+                border-radius: 6px;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                font-family: inherit;
+                transition: background 0.15s;
+            }
+            .next-btn:hover {
+                background: var(--navy-mid);
+            }
+
+            /* End card */
+            .end-card {
+                margin-top: 20px;
+                padding: 20px 24px;
+                border-radius: 8px;
+                border: 2px solid;
+            }
+            .end-card.success {
+                background: var(--green-bg);
+                border-color: var(--green);
+            }
+            .end-card.error {
+                background: var(--red-bg);
+                border-color: var(--red);
+            }
+            .end-card.neutral {
+                background: var(--slate-bg);
+                border-color: var(--slate);
+            }
+            .end-card.warning {
+                background: var(--amber-bg);
+                border-color: var(--amber);
+            }
+            .end-card .end-icon {
+                font-size: 28px;
+                margin-bottom: 6px;
+            }
+            .end-card .end-title {
+                font-size: 16px;
+                font-weight: 700;
+                margin-bottom: 4px;
+            }
+            .end-card.success .end-title {
+                color: var(--green);
+            }
+            .end-card.error .end-title {
+                color: var(--red);
+            }
+            .end-card.neutral .end-title {
+                color: var(--slate);
+            }
+            .end-card.warning .end-title {
+                color: var(--amber);
+            }
+            .end-card .end-sub {
+                font-size: 13px;
+                color: var(--muted);
+                margin-bottom: 12px;
+            }
+            .end-card .end-btns {
+                display: flex;
+                gap: 8px;
+                margin-bottom: 16px;
+            }
+            .end-card .end-btns button {
+                padding: 8px 16px;
+                border-radius: 5px;
+                border: 1px solid;
+                cursor: pointer;
+                font-size: 13px;
+                font-weight: 600;
+                font-family: inherit;
+            }
+            .end-card .end-btns .ebtn-restart {
+                background: var(--navy);
+                color: var(--white);
+                border-color: var(--navy);
+            }
+            .end-card .end-btns .ebtn-restart:hover {
+                background: var(--navy-mid);
+            }
+            .end-card .end-btns .ebtn-back {
+                background: var(--white);
+                color: var(--navy);
+                border-color: var(--bdr);
+            }
+            .end-card .end-btns .ebtn-back:hover {
+                background: var(--slate-bg);
+            }
+
+            /* Summary box */
+            .summary-box {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 6px;
+                padding: 16px 20px;
+                margin-top: 12px;
+            }
+            .summary-box .sum-title {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--text);
+                margin-bottom: 10px;
+            }
+            .summary-box ol {
+                padding-left: 20px;
+                margin: 0;
+            }
+            .summary-box ol li {
+                font-size: 13px;
+                color: var(--text);
+                line-height: 1.5;
+                margin-bottom: 6px;
+            }
+            .summary-box ol li .sum-choice {
+                color: var(--navy-lt);
+                font-weight: 600;
+            }
+
+            /* MAPA OVERLAY */
+            #mapa-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--white);
+                z-index: 100;
+                overflow-y: auto;
+                padding: 20px;
+            }
+            #mapa-overlay .mapa-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid var(--bdr);
+            }
+            #mapa-overlay .mapa-header h2 {
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--text);
+            }
+            .mapa-close {
+                background: var(--navy);
+                color: var(--white);
+                border: none;
+                padding: 8px 16px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 13px;
+                font-weight: 600;
+                font-family: inherit;
+            }
+            .mapa-close:hover {
+                background: var(--navy-mid);
+            }
+            .mapa-cols {
+                display: flex;
+                gap: 16px;
+                align-items: flex-start;
+                min-width: max-content;
+            }
+            .mapa-col {
+                width: 240px;
+                flex-shrink: 0;
+            }
+            .mapa-col .mc-ph {
+                font-size: 13px;
+                font-weight: 700;
+                color: var(--white);
+                background: var(--navy);
+                padding: 8px 12px;
+                border-radius: 5px 5px 0 0;
+                text-align: center;
+            }
+            .mapa-col .mc-body {
+                border: 1px solid var(--bdr);
+                border-top: none;
+                border-radius: 0 0 5px 5px;
+                padding: 8px;
+                min-height: 60px;
+            }
+            .mapa-col .mc-node {
+                padding: 7px 10px;
+                border-radius: 4px;
+                margin-bottom: 6px;
+                font-size: 12px;
+                line-height: 1.35;
+                border-left: 3px solid var(--bdr);
+                background: var(--slate-bg);
+            }
+            .mapa-col .mc-node.mc-visited {
+                border-left-color: #22c55e;
+                background: var(--green-bg);
+            }
+            .mapa-col .mc-node.mc-current {
+                border-left-color: var(--navy-lt);
+                background: var(--violet-bg);
+                font-weight: 700;
+            }
+            .mapa-col .mc-node.mc-end-ok {
+                border-left-color: var(--green);
+                background: var(--green-bg);
+            }
+            .mapa-col .mc-node.mc-end-err {
+                border-left-color: var(--red);
+                background: var(--red-bg);
+            }
+            .mapa-col .mc-node.mc-end-neu {
+                border-left-color: var(--slate);
+                background: var(--slate-bg);
+            }
+            .mapa-col .mc-arrow {
+                text-align: center;
+                color: var(--muted);
+                font-size: 16px;
+                margin: 4px 0;
+            }
+
+            /* RESPONSIVE (sobrescrito: reemplaza display:none por overlay móvil) */
+            @media (max-width: 768px) {
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    transition: transform var(--transition-norm);
+                    width: 270px;
+                    display: flex !important;
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                #sidebar.collapsed {
+                    transform: translateX(-100%);
+                    width: 270px;
+                }
+                .sidebar-backdrop {
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 140;
+                    display: none;
+                }
+                .sidebar-backdrop.show {
+                    display: block;
+                }
+                #content {
+                    padding: 16px 20px;
+                }
+                .dec-btns {
+                    flex-direction: column;
+                }
+                #hdr .hdr-left .hdr-sub {
+                    display: none;
+                }
+                .card {
+                    padding: 16px 18px;
+                }
+            }
+
+            /* PRINT */
+            @media print {
+                #hdr,
+                #pbar,
+                #breadcrumb,
+                #sidebar,
+                .sidebar-backdrop {
+                    display: none !important;
+                }
+                #app {
+                    height: auto;
+                    overflow: visible;
+                }
+                #layout {
+                    display: block !important;
+                }
+                #content {
+                    overflow: visible;
+                    padding: 0;
+                    background: var(--white);
+                }
+                .card {
+                    break-inside: avoid;
+                    border: 1px solid #ccc;
+                    animation: none;
+                }
+                .dec-btn {
+                    break-inside: avoid;
+                }
+                #mapa-overlay {
+                    display: none !important;
+                }
+            }
+
+            /* FOCUS VISIBLE */
+            :focus-visible {
+                outline: 2px solid var(--navy-lt);
+                outline-offset: 2px;
+            }
+            button:focus:not(:focus-visible),
+            .sm-node:focus:not(:focus-visible) {
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div
+            id="app"
+            role="application"
+            aria-label="Guía de tramitación de emancipación"
+        >
+            <!-- HEADER -->
+            <div id="hdr" role="banner" style="height: 70px">
+                <div class="hdr-left">
+                    <!-- Botón toggle sidebar AÑADIDO -->
+                    <button
+                        class="btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                    >
+                        ☰
+                    </button>
+                    <div class="seal">⚖</div>
+                    <div class="hdr-titles">
+                        <div class="hdr-sub">
+                            LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN
+                            VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE
+                            JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS ·
+                            CAPÍTULO V
+                        </div>
+                        <h1>
+                            De la concesión judicial de la emancipación y del
+                            beneficio de la mayoría de edad
+                        </h1>
+                        <div class="hdr-sub" style="padding-top: 5px">
+                            Artículos 53 a 55 LJV
+                        </div>
+                    </div>
+                </div>
+                <div class="hdr-right">
+                    <div
+                        class="zoom-cluster"
+                        role="group"
+                        aria-label="Zoom del contenido"
+                    >
+                        <button
+                            class="btn-zoom"
+                            onclick="zoomOut()"
+                            aria-label="Reducir zoom"
+                        >
+                            −
+                        </button>
+                        <span class="zoom-label" id="zoomLabel">100%</span>
+                        <button
+                            class="btn-zoom"
+                            onclick="zoomIn()"
+                            aria-label="Aumentar zoom"
+                        >
+                            +
+                        </button>
+                    </div>
+                    <button class="btn-ghost" onclick="toggleMapa()">
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn-ghost" onclick="dlGuia()">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn-ghost" onclick="restart()">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </div>
+
+            <!-- PHASE BAR -->
+            <nav
+                id="pbar"
+                role="navigation"
+                aria-label="Progreso por fases del procedimiento"
+            ></nav>
+
+            <!-- BREADCRUMB -->
+            <nav
+                id="breadcrumb"
+                role="navigation"
+                aria-label="Ruta de navegación"
+            ></nav>
+
+            <!-- LAYOUT -->
+            <div id="layout" role="main">
+                <!-- SIDEBAR -->
+                <div
+                    id="sidebar"
+                    role="navigation"
+                    aria-label="Navegación del procedimiento"
+                >
+                    <div class="sb-tabs">
+                        <button
+                            class="sb-tab active"
+                            id="tab-map"
+                            onclick="sbTab('map')"
+                        >
+                            Mapa
+                        </button>
+                        <button
+                            class="sb-tab"
+                            id="tab-journey"
+                            onclick="sbTab('journey')"
+                        >
+                            Recorrido
+                        </button>
+                    </div>
+                    <div class="sb-body">
+                        <div id="sb-map"></div>
+                        <div id="sb-journey"></div>
+                    </div>
+                    <div class="sb-foot" id="sbFoot"></div>
+                </div>
+
+                <!-- CONTENT -->
+                <div
+                    id="content"
+                    role="region"
+                    aria-label="Contenido del paso actual"
+                    aria-live="polite"
+                ></div>
+            </div>
+
+            <!-- MAPA OVERLAY -->
+            <div id="mapa-overlay"></div>
+
+            <!-- Backdrop para móvil AÑADIDO -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        </div>
+
+        <script>
+            // ═══════════════════════════════════════════
+            // DATA
+            // ═══════════════════════════════════════════
+            var PHASES = [
+                "Inicio y competencia",
+                "Presentación de solicitud",
+                "Admisión a trámite",
+                "Comparecencia",
+                "Resolución judicial",
+                "Inscripción y efectos",
+            ];
+
+            var STEPS = {
+                inicio: {
+                    ph: 0,
+                    t: "Inicio del expediente",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Esta guía tramita paso a paso el expediente de concesión judicial de la emancipación o del beneficio de la mayoría de edad, conforme a los artículos 53 a 55 de la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria, en relación con los artículos 320 y 321 del Código Civil.",
+                        ],
+                        [
+                            "i",
+                            "El procedimiento se inicia siempre a solicitud del menor mayor de dieciséis años, asistido por uno de sus progenitores o por su tutor, según corresponda. A lo largo del proceso, se presentarán bifurcaciones que determinarán el camino procedimental adecuado.",
+                        ],
+                        [
+                            "n",
+                            "Este expediente tiene naturaleza no contenciosa (art. 1 LJV), salvo que se formule oposición, en cuyo caso serán preceptivos Abogado y Procurador a partir de ese momento (art. 53.3 LJV).",
+                        ],
+                        [
+                            "l",
+                            "Artículo 1 y artículo 53 de la Ley 15/2015; artículos 320 y 321 del Código Civil.",
+                        ],
+                    ],
+                    q: "¿Qué tipo de solicitud se va a tramitar?",
+                    opts: [
+                        {
+                            t: "Emancipación judicial (art. 320 CC)",
+                            l: "Emancipación",
+                            n: "supuesto_emancipacion",
+                        },
+                        {
+                            t: "Beneficio de mayoría de edad (art. 321 CC)",
+                            l: "Beneficio de mayoría de edad",
+                            n: "supuesto_beneficio",
+                        },
+                    ],
+                },
+                supuesto_emancipacion: {
+                    ph: 0,
+                    t: "Supuestos habilitantes de la emancipación",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El artículo 320 del Código Civil establece que el Juez podrá conceder la emancipación de los hijos mayores de dieciséis años, si estos la pidieren y previa audiencia de los padres, cuando concurra alguno de los siguientes supuestos:",
+                        ],
+                        [
+                            "n",
+                            "Los tres supuestos tienen naturaleza alternativa: basta con que concurra uno solo de ellos para que el menor esté legitimado a solicitar la emancipación judicial.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 320 del Código Civil; artículo 53.1 LJV.",
+                        ],
+                    ],
+                    q: "Seleccione el supuesto habilitante que concurre en el caso:",
+                    opts: [
+                        {
+                            t: "a) Quien ejerce la patria potestad ha contraído nupcias o convive maritalmente con persona distinta del otro progenitor",
+                            l: "Supuesto a) Nuevo cónyuge/conviviente",
+                            n: "competencia",
+                        },
+                        {
+                            t: "b) Los progenitores viven separados",
+                            l: "Supuesto b) Progenitores separados",
+                            n: "competencia",
+                        },
+                        {
+                            t: "c) Concurre cualquier causa que entorpezca gravemente el ejercicio de la patria potestad",
+                            l: "Supuesto c) Entorpecimiento grave",
+                            n: "competencia",
+                        },
+                    ],
+                },
+                supuesto_beneficio: {
+                    ph: 0,
+                    t: "Requisitos del beneficio de mayoría de edad",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El artículo 321 del Código Civil permite al Juez, previo informe del Ministerio Fiscal, conceder el beneficio de la mayoría de edad al sujeto a tutela mayor de dieciséis años que lo solicitare.",
+                        ],
+                        [
+                            "i",
+                            "A diferencia de la emancipación, que se solicita por quien está bajo patria potestad, el beneficio de mayoría de edad se solicita por quien está sometido a tutela, es decir, por los menores no emancipados que no estén bajo la patria potestad (art. 222 CC).",
+                        ],
+                        [
+                            "n",
+                            "El Ministerio Fiscal emite informe preceptivo en este supuesto, lo que añade una garantía procesal adicional.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 321 del Código Civil; artículo 222 del Código Civil; artículo 53.2 LJV.",
+                        ],
+                    ],
+                    q: "Confirme la situación del menor:",
+                    opts: [
+                        {
+                            t: "El menor es mayor de 16 años y está sujeto a tutela (no está bajo patria potestad)",
+                            l: "Menor bajo tutela",
+                            n: "competencia",
+                        },
+                        {
+                            t: "El menor está bajo patria potestad → corresponde tramitar como emancipación",
+                            l: "Redirigir a emancipación",
+                            n: "supuesto_emancipacion",
+                        },
+                    ],
+                },
+                competencia: {
+                    ph: 0,
+                    t: "Determinación de la competencia judicial",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El órgano competente para conocer de la solicitud de emancipación o de beneficio de mayoría de edad es el Juez de Primera Instancia del domicilio del menor, conforme al artículo 53 de la Ley 15/2015 y al criterio territorial general de la Ley.",
+                        ],
+                        [
+                            "i",
+                            "El criterio de atribución por el domicilio del menor asegura la proximidad geográfica del órgano jurisdiccional y facilita la práctica de las diligencias necesarias para la valoración del caso.",
+                        ],
+                        [
+                            "n",
+                            "Tanto la solicitud de emancipación como la de beneficio de mayoría de edad se tramitan ante el mismo órgano: el JPI del domicilio del menor.",
+                        ],
+                        [
+                            "d",
+                            "Determinar el Juzgado de Primera Instancia competente según el domicilio del menor.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 53 LJV; artículo 17 LJV (competencia objetiva y territorial).",
+                        ],
+                    ],
+                    nx: "solicitud_quien",
+                },
+                solicitud_quien: {
+                    ph: 1,
+                    t: "Legitimación para presentar la solicitud",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El expediente se inicia mediante solicitud dirigida al Juzgado por el menor mayor de dieciséis años. La solicitud es un acto procesal del menor, legitimado activamente conforme al Código Civil, pero requiere la asistencia de un progenitor o del tutor.",
+                        ],
+                        [
+                            "n",
+                            "El menor actúa como parte solicitante, no como mero objeto del procedimiento, lo que es coherente con el derecho del menor a ser oído (art. 12 CDN y art. 39 CE).",
+                        ],
+                        [
+                            "l",
+                            "Artículo 54 LJV; artículo 320 CC (emancipación); artículo 321 CC (beneficio); artículo 12 CDN; artículo 39 CE.",
+                        ],
+                    ],
+                    q: "¿Quién asiste al menor en la presentación de la solicitud?",
+                    opts: [
+                        {
+                            t: "Uno de los progenitores (no privado ni suspendido de la patria potestad)",
+                            l: "Asistencia de progenitor",
+                            n: "solicitud_documentacion",
+                        },
+                        {
+                            t: "El tutor del menor (en caso de beneficio de mayoría de edad)",
+                            l: "Asistencia del tutor",
+                            n: "solicitud_documentacion",
+                        },
+                    ],
+                },
+                solicitud_documentacion: {
+                    ph: 1,
+                    t: "Documentación que debe acompañarse",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "A la solicitud se acompañarán los documentos que acrediten la concurrencia de la causa exigida por el Código Civil para instar la emancipación o el beneficio de mayoría de edad.",
+                        ],
+                        [
+                            "i",
+                            "También deberá incluirse la proposición de prueba que el solicitante considere pertinente.",
+                        ],
+                        [
+                            "cl",
+                            "Documentación a preparar",
+                            [
+                                "Solicitud dirigida al Juzgado competente, firmada por el menor y por el progenitor asistente o el tutor",
+                                "Documentos acreditativos de la causa habilitante (supuesto a, b o c del art. 320 CC, o situación de tutela del art. 222 CC)",
+                                "Proposición de los medios de prueba que se consideren pertinentes",
+                                "Certificado de nacimiento del menor (acreditación de la edad mayor de 16 años)",
+                                "En su caso, certificado de defunción o sentencia de separación de los progenitores (según el supuesto)",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "La ausencia de documentación acreditativa de la causa puede motivar que el Secretario judicial no admita a trámite la solicitud.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 54.2 LJV; artículo 320 CC; artículo 321 CC.",
+                        ],
+                    ],
+                    nx: "solicitud_postulacion",
+                },
+                solicitud_postulacion: {
+                    ph: 1,
+                    t: "Régimen de postulación procesal",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "En la práctica de estas actuaciones no será preceptiva la intervención de Abogado ni Procurador, de acuerdo con el artículo 53 de la Ley 15/2015.",
+                        ],
+                        [
+                            "w",
+                            "Si durante la tramitación se formulase oposición, a partir de ese momento sí será preceptiva la asistencia de letrado. La intervención de Abogado y Procurador también será necesaria para la interposición de recursos de revisión y apelación contra la resolución final.",
+                        ],
+                        [
+                            "n",
+                            "Esta regla se alinea con el principio de economía procesal y la naturaleza no contenciosa de los expedientes de jurisdicción voluntaria (art. 1 LJV).",
+                        ],
+                        [
+                            "l",
+                            "Artículo 53.3 LJV; artículo 1 LJV; Ley 1/2000 de Enjuiciamiento Civil (aplicación supletoria, art. 4 LJV).",
+                        ],
+                    ],
+                    nx: "admision_revision",
+                },
+                admision_revision: {
+                    ph: 2,
+                    t: "Revisión y admisión a trámite por el Secretario judicial",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Presentada la solicitud con la documentación correspondiente, corresponde al Secretario judicial revisar que se cumplen los requisitos formales y materiales para la admisión a trámite del expediente.",
+                        ],
+                        [
+                            "cl",
+                            "Aspectos a verificar por el Secretario judicial",
+                            [
+                                "Competencia del Juzgado (JPI del domicilio del menor)",
+                                "Legitimación del solicitante (mayor de 16 años con asistencia de progenitor o tutor)",
+                                "Acreditación documental de la causa habilitante",
+                                "Cumplimiento de los requisitos formales de la solicitud",
+                            ],
+                        ],
+                        [
+                            "d",
+                            "El Secretario judicial debe resolver sobre la admisión en el plazo más breve posible tras la presentación.",
+                        ],
+                        ["l", "Artículos 17 y 53 LJV; artículo 54 LJV."],
+                    ],
+                    q: "¿Cómo resuelve el Secretario judicial?",
+                    opts: [
+                        {
+                            t: "Admite a trámite la solicitud",
+                            l: "Admitida a trámite",
+                            n: "comparecencia_convocatoria",
+                        },
+                        {
+                            t: "No admite a trámite (defectos insubsanables o falta de competencia)",
+                            l: "No admitida a trámite",
+                            n: "fin_inadmitida",
+                        },
+                    ],
+                },
+                fin_inadmitida: {
+                    ph: 2,
+                    t: "Solicitud no admitida a trámite",
+                    ac: "laj",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "El Secretario judicial no ha admitido a trámite la solicitud. Las causas más frecuentes son la falta de competencia del Juzgado, la ausencia de legitimación del solicitante o defectos insubsanables en la documentación presentada.",
+                        ],
+                        [
+                            "w",
+                            "Contra la resolución de no admisión a trámite caben los recursos previstos en la Ley 15/2015. Será necesaria la intervención de Abogado y Procurador para la interposición del recurso de apelación.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 19 LJV; Ley 1/2000 de Enjuiciamiento Civil (régimen de recursos).",
+                        ],
+                    ],
+                },
+                comparecencia_convocatoria: {
+                    ph: 3,
+                    t: "Convocatoria a la comparecencia",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Admitida a trámite la solicitud, el Secretario judicial convocará a la comparecencia ante el Juez a los siguientes sujetos:",
+                        ],
+                        [
+                            "cl",
+                            "Personas que deben ser citadas",
+                            [
+                                "El menor solicitante",
+                                "Sus progenitores o, en su caso, su tutor",
+                                "El Ministerio Fiscal",
+                                "Aquellos que pudieran estar interesados",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La comparecencia constituye el acto central del expediente, donde se practican las diligencias y se valora la procedencia de la solicitud.",
+                        ],
+                        ["l", "Artículo 55.1 LJV."],
+                    ],
+                    nx: "comparecencia_plazo",
+                },
+                comparecencia_plazo: {
+                    ph: 3,
+                    t: "Plazo y forma de celebración de la comparecencia",
+                    ac: "laj",
+                    c: [
+                        [
+                            "d",
+                            "La comparecencia deberá celebrarse dentro de los treinta días siguientes a la admisión de la solicitud (art. 18.1 LJV).",
+                        ],
+                        [
+                            "i",
+                            "La comparecencia se sustanciará por los trámites previstos en la Ley de Enjuiciamiento Civil para la vista del juicio verbal, con las especialidades previstas en la Ley 15/2015.",
+                        ],
+                        [
+                            "i",
+                            "Cuando el expediente afecte a los intereses de una persona menor de edad, se practicarán las diligencias relativas a dichos intereses en el mismo acto o, si no fuere posible, en los diez días siguientes.",
+                        ],
+                        [
+                            "n",
+                            "La autoridad judicial podrá acordar que la audiencia del menor se practique en acto separado, sin interferencias de otras personas, debiendo asistir el Ministerio Fiscal. Se garantizará que el menor sea oído en condiciones idóneas, adaptadas a su edad, madurez y circunstancias (art. 18.2.4.ª LJV; art. 12 CDN).",
+                        ],
+                        [
+                            "n",
+                            "La comparecencia será registrada en soporte apto para la grabación y reproducción del sonido y de la imagen.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 18 LJV; artículo 55 LJV; Ley 1/2000 de Enjuiciamiento Civil (vista del juicio verbal); LO 1/1996 de Protección Jurídica del Menor; artículo 12 CDN.",
+                        ],
+                    ],
+                    q: "¿Asiste el solicitante a la comparecencia?",
+                    opts: [
+                        {
+                            t: "Sí, el solicitante asiste a la comparecencia",
+                            l: "Asistencia del solicitante",
+                            n: "comparecencia_audiencia",
+                        },
+                        {
+                            t: "No asiste el solicitante → se tiene por desistido y se archiva el expediente",
+                            l: "Inasistencia del solicitante",
+                            n: "fin_archivo",
+                        },
+                    ],
+                },
+                fin_archivo: {
+                    ph: 3,
+                    t: "Archivo del expediente por inasistencia",
+                    ac: "laj",
+                    end: "neutral",
+                    c: [
+                        [
+                            "i",
+                            "Si el solicitante no asiste a la comparecencia, el Juez o el Secretario judicial acordará el archivo del expediente, teniéndole por desistido del mismo, conforme al artículo 18.2.1.ª de la Ley 15/2015.",
+                        ],
+                        [
+                            "n",
+                            "Si no asistiese alguno de los demás citados, la comparecencia se celebrará igualmente y el expediente continuará sin más citaciones ni notificaciones que las que la ley disponga.",
+                        ],
+                        [
+                            "w",
+                            "El archivo no impide que el menor pueda presentar una nueva solicitud en el futuro, siempre que siga reuniendo los requisitos legales.",
+                        ],
+                        ["l", "Artículo 18.2.1.ª LJV."],
+                    ],
+                },
+                comparecencia_audiencia: {
+                    ph: 3,
+                    t: "Celebración de la audiencia",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "En la comparecencia, el Juez oirá al solicitante, a los progenitores o tutor, al Ministerio Fiscal y a los interesados que concurran. Se practicarán las pruebas propuestas y las diligencias que se acuerden de oficio.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones en la comparecencia",
+                            [
+                                "Audiencia del menor solicitante (en acto separado si el Juez lo acuerda)",
+                                "Audiencia de los progenitores o tutor",
+                                "Intervención del Ministerio Fiscal",
+                                "Práctica de las pruebas propuestas y de las acordadas de oficio",
+                                "Formulación oral de conclusiones por los interesados",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Tanto el Ministerio Fiscal en su informe como la autoridad judicial en la resolución deberán valorar motivadamente la exploración practicada al menor (art. 18.2.4.ª LJV).",
+                        ],
+                        [
+                            "w",
+                            "Si se plantearan cuestiones procesales que puedan impedir la válida prosecución del expediente, el Juez las resolverá oralmente en el propio acto.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 55.1 LJV; artículo 18.2 LJV; LO 1/1996 de Protección Jurídica del Menor.",
+                        ],
+                    ],
+                    q: "¿Se ha formulado oposición durante la comparecencia?",
+                    opts: [
+                        {
+                            t: "Sí, se ha formulado oposición",
+                            l: "Oposición formulada",
+                            n: "oposicion_letrado",
+                        },
+                        {
+                            t: "No se ha formulado oposición",
+                            l: "Sin oposición",
+                            n: "sin_oposicion",
+                        },
+                    ],
+                },
+                oposicion_letrado: {
+                    ph: 3,
+                    t: "Oposición formulada: necesidad de letrado",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "w",
+                            "Al haberse formulado oposición, a partir de este momento será preceptiva la asistencia de Abogado para todas las partes. La oposición transforma parcialmente la naturaleza del expediente, pues obligará a seguir las reglas propias de la contradicción.",
+                        ],
+                        [
+                            "i",
+                            "El expediente continuará su tramitación, pero con las garantías propias de la contradicción. Será necesaria la intervención de Abogado y, en su caso, de Procurador para proseguir.",
+                        ],
+                        [
+                            "n",
+                            "Será necesaria igualmente la intervención de Abogado y Procurador para la interposición de los recursos de revisión y apelación contra la resolución final.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 53.3 LJV; Ley 1/2000 de Enjuiciamiento Civil.",
+                        ],
+                    ],
+                    nx: "resolucion_criterios",
+                },
+                sin_oposicion: {
+                    ph: 3,
+                    t: "Tramitación sin oposición",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Al no haberse formulado oposición, el expediente continúa su tramitación sin necesidad de Abogado ni Procurador, manteniendo su naturaleza no contenciosa.",
+                        ],
+                        [
+                            "n",
+                            "El Ministerio Fiscal seguirá interviniendo en todo caso, garantizando la protección del interés del menor.",
+                        ],
+                        ["l", "Artículo 53.3 LJV; artículo 55.1 LJV."],
+                    ],
+                    nx: "resolucion_criterios",
+                },
+                resolucion_criterios: {
+                    ph: 4,
+                    t: "Criterios de resolución judicial",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez resolverá concediendo o denegando la emancipación o el beneficio de mayoría de edad solicitados, teniendo en cuenta los siguientes criterios:",
+                        ],
+                        [
+                            "cl",
+                            "Criterios valorados por el Juez",
+                            [
+                                "La justificación ofrecida por el solicitante",
+                                "El interés del menor (parámetro rector de la decisión)",
+                                "El informe del Ministerio Fiscal",
+                                "Las diligencias practicadas en la comparecencia",
+                                "La exploración del menor (valorada motivadamente)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "El interés del menor constituye el parámetro rector, en consonancia con el artículo 39 de la Constitución Española y la Convención sobre los Derechos del Niño.",
+                        ],
+                        [
+                            "n",
+                            "La resolución deberá ser motivada, especificando las razones de la concesión o denegación.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 55.2 LJV; artículo 39 CE; artículo 12 CDN; artículo 18.2.4.ª LJV.",
+                        ],
+                    ],
+                    q: "¿Qué resuelve el Juez?",
+                    opts: [
+                        {
+                            t: "Concede la emancipación o el beneficio de mayoría de edad",
+                            l: "Concesión",
+                            n: "resolucion_concede",
+                        },
+                        {
+                            t: "Deniega la emancipación o el beneficio de mayoría de edad",
+                            l: "Denegación",
+                            n: "fin_denegada",
+                        },
+                    ],
+                },
+                fin_denegada: {
+                    ph: 4,
+                    t: "Solicitud denegada por el Juez",
+                    ac: "juez",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "El Juez ha denegado la emancipación o el beneficio de mayoría de edad solicitados. La resolución será motivada y especificará las razones de la denegación.",
+                        ],
+                        [
+                            "w",
+                            "Contra la resolución que deniega la solicitud caben los recursos previstos en la Ley 15/2015. Para la interposición del recurso de apelación será necesaria la intervención de Abogado y Procurador.",
+                        ],
+                        [
+                            "n",
+                            "La denegación no impide que el menor pueda presentar una nueva solicitud en el futuro si cambian las circunstancias o se acredita una causa habilitante distinta.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 55.2 LJV; artículo 19 LJV; Ley 1/2000 de Enjuiciamiento Civil (régimen de recursos).",
+                        ],
+                    ],
+                    q: "¿Se interpone recurso contra la resolución?",
+                    opts: [
+                        {
+                            t: "Sí, se interpone recurso de apelación (con Abogado y Procurador)",
+                            l: "Recurso de apelación",
+                            n: "recurso_apelacion",
+                        },
+                        {
+                            t: "No se interpone recurso",
+                            l: "Sin recurso",
+                            n: null,
+                        },
+                    ],
+                },
+                fin_denegada_sin_recurso: {
+                    ph: 4,
+                    t: "Denegación sin recurso interpuesto",
+                    ac: "juez",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "No se ha interpuesto recurso contra la resolución que deniega la emancipación o el beneficio de mayoría de edad. La resolución adquiere firmeza y el procedimiento concluye.",
+                        ],
+                        [
+                            "n",
+                            "La denegación firme no impide que el menor pueda presentar una nueva solicitud en el futuro si cambian las circunstancias o se acredita una causa habilitante distinta.",
+                        ],
+                        [
+                            "w",
+                            "Si el menor desea reiterar la solicitud, deberá iniciar un nuevo expediente, aportando nueva documentación o justificando que las circunstancias han variado significativamente.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 55.2 LJV; artículo 19 LJV; Ley 1/2000 de Enjuiciamiento Civil.",
+                        ],
+                    ],
+                },
+                recurso_apelacion: {
+                    ph: 4,
+                    t: "Recurso de apelación",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Se interpone recurso de apelación contra la resolución que deniega la emancipación o el beneficio de mayoría de edad.",
+                        ],
+                        [
+                            "w",
+                            "Para la interposición del recurso de apelación es preceptiva la intervención de Abogado y Procurador.",
+                        ],
+                        [
+                            "n",
+                            "El recurso se tramitará conforme a las reglas de la Ley 15/2015 y, en lo no previsto, de la Ley 1/2000 de Enjuiciamiento Civil (aplicación supletoria, art. 4 LJV).",
+                        ],
+                        [
+                            "l",
+                            "Artículo 19 LJV; artículo 4 LJV; Ley 1/2000 de Enjuiciamiento Civil.",
+                        ],
+                    ],
+                    q: "¿Cuál es el resultado del recurso?",
+                    opts: [
+                        {
+                            t: "El recurso se estima → se revoca la denegación y se concede la emancipación o beneficio",
+                            l: "Recurso estimado",
+                            n: "resolucion_concede",
+                        },
+                        {
+                            t: "El recurso se desestima → se confirma la denegación",
+                            l: "Recurso desestimado",
+                            n: "fin_denegada_definitiva",
+                        },
+                    ],
+                },
+                fin_denegada_definitiva: {
+                    ph: 4,
+                    t: "Denegación confirmada definitivamente",
+                    ac: "juez",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "El recurso de apelación ha sido desestimado. La denegación de la emancipación o del beneficio de mayoría de edad queda confirmada de forma definitiva.",
+                        ],
+                        [
+                            "n",
+                            "La confirmación no impide que el menor pueda presentar una nueva solicitud en el futuro si cambian las circunstancias.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 19 LJV; Ley 1/2000 de Enjuiciamiento Civil.",
+                        ],
+                    ],
+                },
+                resolucion_concede: {
+                    ph: 4,
+                    t: "Resolución estimatoria: concesión",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez ha concedido la emancipación o el beneficio de mayoría de edad solicitados. La resolución es firme y habilita el siguiente paso: la inscripción en el Registro Civil.",
+                        ],
+                        [
+                            "n",
+                            "Concedida la emancipación, no podrá ser revocada (art. 318 CC). El beneficiado adquiere la capacidad prevista en el artículo 323 del Código Civil.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 55.2 LJV; artículo 318 CC; artículo 323 CC.",
+                        ],
+                    ],
+                    nx: "inscripcion_remision",
+                },
+                inscripcion_remision: {
+                    ph: 5,
+                    t: "Remisión al Registro Civil",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Se remitirá al Registro Civil el testimonio de la concesión de la emancipación o del beneficio de mayoría de edad para proceder a su inscripción, conforme al artículo 55 de la Ley 15/2015.",
+                        ],
+                        [
+                            "i",
+                            "La autoridad judicial deberá comunicar sin dilación al encargado del Registro Civil la resolución de concesión, en los términos previstos en los artículos 218 y 219 del Código Civil.",
+                        ],
+                        [
+                            "d",
+                            "La remisión al Registro Civil debe efectuarse sin dilación una vez dictada la resolución.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 55 LJV; artículo 318 CC; artículos 218 y 219 CC; Ley 20/2011 del Registro Civil.",
+                        ],
+                    ],
+                    nx: "inscripcion_eficacia",
+                },
+                inscripcion_eficacia: {
+                    ph: 5,
+                    t: "Eficacia registral de la concesión",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La concesión de emancipación habrá de inscribirse en el Registro Civil, no produciendo entre tanto efectos contra terceros (art. 318 CC). La inscripción es, por tanto, requisito esencial para la plena eficacia de la emancipación o del beneficio de mayoría de edad frente a terceros.",
+                        ],
+                        [
+                            "n",
+                            "Hasta que se practique la inscripción, la emancipación o el beneficio producen efectos entre las partes, pero no son oponibles a terceros de buena fe.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 318 CC; artículos 218 y 219 CC; Ley 20/2011 del Registro Civil.",
+                        ],
+                    ],
+                    q: "¿Cuál es el instituto concedido?",
+                    opts: [
+                        {
+                            t: "Emancipación judicial (art. 320 CC)",
+                            l: "Emancipación",
+                            n: "efectos_emancipacion",
+                        },
+                        {
+                            t: "Beneficio de mayoría de edad (art. 321 CC)",
+                            l: "Beneficio de mayoría de edad",
+                            n: "efectos_beneficio",
+                        },
+                    ],
+                },
+                efectos_emancipacion: {
+                    ph: 5,
+                    t: "Efectos de la emancipación judicial",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La emancipación habilita al menor para regir su persona y bienes como si fuera mayor, de acuerdo con el artículo 323 del Código Civil. No obstante, hasta que llegue a la mayor edad (18 años), subsisten ciertas restricciones.",
+                        ],
+                        [
+                            "cl",
+                            "Efectos de la emancipación",
+                            [
+                                "El menor emancipado puede regir su persona y bienes como si fuera mayor",
+                                "El menor emancipado podrá por sí solo comparecer en juicio",
+                                "Hasta la mayoría de edad: no podrá tomar dinero a préstamo sin consentimiento de sus padres o curador",
+                                "Hasta la mayoría de edad: no podrá gravar o enajenar bienes inmuebles sin consentimiento de sus padres o curador",
+                                "Hasta la mayoría de edad: no podrá enajenar establecimientos mercantiles o industriales sin consentimiento",
+                                "Hasta la mayoría de edad: no podrá enajenar objetos de extraordinario valor sin consentimiento",
+                                "La emancipación produce la extinción de la patria potestad sobre el menor (art. 169 CC)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Para que el menor emancipado casado pueda enajenar o gravar bienes comunes: si el otro cónyuge es mayor, basta el consentimiento de ambos; si también es menor, se necesitará además el de los padres o curadores de uno y otro (art. 324 CC).",
+                        ],
+                        [
+                            "w",
+                            "La emancipación, una vez inscrita, es irrevocable (art. 318 CC).",
+                        ],
+                        [
+                            "l",
+                            "Artículo 323 CC; artículo 324 CC; artículo 169 CC; artículo 318 CC; artículo 322 CC.",
+                        ],
+                    ],
+                    nx: "fin_emancipacion",
+                },
+                efectos_beneficio: {
+                    ph: 5,
+                    t: "Efectos del beneficio de la mayoría de edad",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Lo dispuesto en el artículo 323 del Código Civil es aplicable también al menor que hubiere obtenido judicialmente el beneficio de la mayor edad. El beneficiado adquiere la misma capacidad que el emancipado, con las mismas restricciones hasta alcanzar la mayoría de edad.",
+                        ],
+                        [
+                            "cl",
+                            "Efectos del beneficio de mayoría de edad",
+                            [
+                                "El menor podrá regir su persona y bienes como si fuera mayor",
+                                "Podrá comparecer en juicio por sí solo",
+                                "Subsisten las restricciones del art. 323 CC hasta los 18 años (préstamos, disposición de inmuebles, etc.)",
+                                "La tutela se extingue como consecuencia de la concesión del beneficio (art. 271 CC)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "A diferencia de la emancipación judicial por el artículo 320, el beneficio de mayoría de edad se concede a menores bajo tutela, por lo que la extinción afecta a la tutela (art. 271 CC) y no a la patria potestad (art. 169 CC).",
+                        ],
+                        [
+                            "w",
+                            "El beneficio de mayoría de edad, una vez inscrito, es irrevocable.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 323 CC (aplicable); artículo 271 CC; artículo 321 CC; artículo 222 CC; artículo 232 CC (vigilancia MF).",
+                        ],
+                    ],
+                    nx: "fin_beneficio",
+                },
+                fin_emancipacion: {
+                    ph: 5,
+                    t: "Procedimiento finalizado: emancipación concedida e inscrita",
+                    ac: "laj",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El procedimiento ha concluido con éxito. La emancipación judicial ha sido concedida por el Juez e inscrita en el Registro Civil, produciendo plenos efectos frente a terceros.",
+                        ],
+                        [
+                            "cl",
+                            "Resumen del resultado",
+                            [
+                                "El menor ha sido emancipado judicialmente conforme al art. 320 CC",
+                                "La resolución ha sido dictada por el Juez de Primera Instancia del domicilio del menor",
+                                "Se ha practicado la inscripción en el Registro Civil (art. 318 CC)",
+                                "El menor puede regir su persona y bienes, con restricciones hasta los 18 años (art. 323 CC)",
+                                "La patria potestad sobre el menor ha quedado extinguida (art. 169 CC)",
+                                "La emancipación es irrevocable (art. 318 CC)",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Artículos 53-55 LJV; artículos 314, 315, 318, 320, 322, 323 CC; artículo 39 CE; Ley 20/2011 del Registro Civil.",
+                        ],
+                    ],
+                },
+                fin_beneficio: {
+                    ph: 5,
+                    t: "Procedimiento finalizado: beneficio de mayoría de edad concedido e inscrito",
+                    ac: "laj",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El procedimiento ha concluido con éxito. El beneficio de la mayoría de edad ha sido concedido por el Juez e inscrito en el Registro Civil, produciendo plenos efectos frente a terceros.",
+                        ],
+                        [
+                            "cl",
+                            "Resumen del resultado",
+                            [
+                                "El menor ha obtenido el beneficio de la mayoría de edad conforme al art. 321 CC",
+                                "La resolución ha sido dictada por el Juez de Primera Instancia del domicilio del menor",
+                                "Se ha practicado la inscripción en el Registro Civil",
+                                "El menor puede regir su persona y bienes, con restricciones hasta los 18 años (art. 323 CC)",
+                                "La tutela se ha extinguido como consecuencia de la concesión (art. 271 CC)",
+                                "El beneficio de mayoría de edad es irrevocable una vez inscrito",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Artículos 53-55 LJV; artículos 321, 323, 222, 271, 232 CC; artículo 39 CE; Ley 20/2011 del Registro Civil.",
+                        ],
+                    ],
+                },
+            };
+
+            // ═══════════════════════════════════════════
+            // STATE
+            // ═══════════════════════════════════════════
+            var cur = "inicio";
+            var hist = [];
+            var activeSbTab = "map";
+            var mapaOn = false;
+            var collapsedPhases = {};
+            var zoomLevel = 100;
+
+            var SB_FOOT =
+                "<div>Arts. 53-55 LJV</div>" +
+                "<div>Arts. 320-321 y 323 CC</div>" +
+                "<div>Art. 18 LJV · Art. 4 LJV (supletoriedad LEC)</div>" +
+                "<div>Ley 20/2011 del Registro Civil</div>";
+
+            function clampNum(v, min, max) {
+                return Math.min(max, Math.max(min, v));
+            }
+            function setZoom(pct) {
+                zoomLevel = clampNum(Math.round(pct), 80, 140);
+                var content = document.getElementById("content");
+                if (content) content.style.zoom = String(zoomLevel / 100);
+                var lbl = document.getElementById("zoomLabel");
+                if (lbl) lbl.textContent = zoomLevel + "%";
+            }
+            function zoomIn() {
+                setZoom(zoomLevel + 10);
+            }
+            function zoomOut() {
+                setZoom(zoomLevel - 10);
+            }
+            function renderSidebarFoot() {
+                var foot = document.getElementById("sbFoot");
+                if (foot) foot.innerHTML = SB_FOOT;
+            }
+
+            // ═══════════════════════════════════════════
+            // HELPERS
+            // ═══════════════════════════════════════════
+            function escQ(s) {
+                return String(s)
+                    .replace(/&/g, "&amp;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+            }
+            function trunc(s, n) {
+                if (!s) return "";
+                return s.length > n ? s.substring(0, n) + "…" : s;
+            }
+            function actorLabel(ac) {
+                if (ac === "laj") return "LAJ";
+                if (ac === "juez") return "Juez";
+                return "LAJ / Juez";
+            }
+            function visitedSet() {
+                var s = {};
+                for (var i = 0; i < hist.length; i++) {
+                    s[hist[i].s] = true;
+                    if (hist[i].next) s[hist[i].next] = true;
+                }
+                s[cur] = true;
+                return s;
+            }
+            function letters() {
+                return "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            }
+            function optClass(nxt) {
+                if (!nxt) return "neutral";
+                var st = STEPS[nxt];
+                if (st && st.end === "error") return "bad";
+                if (st && st.end === "success") return "ok";
+                if (st && st.end === "neutral") return "neutral";
+                var t = STEPS[nxt] ? STEPS[nxt].t.toLowerCase() : "";
+                if (
+                    t.indexOf("oposici") >= 0 ||
+                    t.indexOf("deneg") >= 0 ||
+                    t.indexOf("no adm") >= 0 ||
+                    t.indexOf("inasi") >= 0 ||
+                    t.indexOf("archiv") >= 0
+                )
+                    return "bad";
+                if (
+                    t.indexOf("conced") >= 0 ||
+                    t.indexOf("estima") >= 0 ||
+                    t.indexOf("admisi") >= 0 ||
+                    t.indexOf("sin oposi") >= 0
+                )
+                    return "ok";
+                return "neutral";
+            }
+
+            // ═══════════════════════════════════════════
+            // SIDEBAR TOGGLE (NUEVO)
+            // ═══════════════════════════════════════════
+            let sidebarOpen = false; // solo móvil
+
+            function toggleSidebar() {
+                const isMobile = window.innerWidth <= 768;
+                const sidebar = document.getElementById("sidebar");
+                const btn = document.getElementById("btnToggleSidebar");
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    if (sidebarOpen) {
+                        sidebar.classList.add("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.add("show");
+                        if (btn) btn.setAttribute("aria-expanded", "true");
+                    } else {
+                        sidebar.classList.remove("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.remove("show");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                } else {
+                    sidebar.classList.toggle("collapsed");
+                    const isCollapsed = sidebar.classList.contains("collapsed");
+                    if (btn)
+                        btn.setAttribute(
+                            "aria-expanded",
+                            isCollapsed ? "false" : "true",
+                        );
+                }
+            }
+
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 768 && sidebarOpen) {
+                    sidebarOpen = false;
+                    const sidebar = document.getElementById("sidebar");
+                    const backdrop = document.getElementById("sidebarBackdrop");
+                    const btn = document.getElementById("btnToggleSidebar");
+                    if (sidebar) sidebar.classList.remove("open");
+                    if (backdrop) backdrop.classList.remove("show");
+                    if (btn) btn.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            function handleResize() {
+                if (window.innerWidth > 768) {
+                    if (sidebarOpen) {
+                        const sidebar = document.getElementById("sidebar");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (sidebar) sidebar.classList.remove("open");
+                        if (backdrop) backdrop.classList.remove("show");
+                        sidebarOpen = false;
+                        const btn = document.getElementById("btnToggleSidebar");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (sidebarEl) sidebarEl.classList.remove("open");
+                } else {
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (
+                        sidebarEl &&
+                        sidebarEl.classList.contains("collapsed")
+                    ) {
+                        sidebarEl.classList.remove("collapsed");
+                    }
+                    if (
+                        !sidebarOpen &&
+                        sidebarEl &&
+                        sidebarEl.classList.contains("open")
+                    ) {
+                        sidebarEl.classList.remove("open");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (backdrop) backdrop.classList.remove("show");
+                    }
+                }
+            }
+
+            // ═══════════════════════════════════════════
+            // NAVIGATION (modificada para cerrar sidebar móvil)
+            // ═══════════════════════════════════════════
+            function goTo(stepId, choiceLabel) {
+                hist.push({ s: cur, next: stepId, c: choiceLabel || "" });
+                cur = stepId;
+                if (choiceLabel) sbTab("journey");
+                render();
+                document.getElementById("content").scrollTop = 0;
+                closeMobileSidebar();
+            }
+            function goBack() {
+                if (hist.length === 0) return;
+                var prev = hist.pop();
+                cur = prev.s;
+                render();
+                document.getElementById("content").scrollTop = 0;
+                closeMobileSidebar();
+            }
+            function goBackTo(index) {
+                if (index <= 0) {
+                    restart();
+                    return;
+                }
+                var step = hist[index - 1];
+                cur = step.next;
+                hist = hist.slice(0, index);
+                render();
+                document.getElementById("content").scrollTop = 0;
+                closeMobileSidebar();
+            }
+            function goToDirect(stepId) {
+                hist.push({ s: cur, next: stepId, c: "" });
+                cur = stepId;
+                render();
+                document.getElementById("content").scrollTop = 0;
+                closeMobileSidebar();
+            }
+            function noop() {
+                /* No navigation */
+            }
+            function restart() {
+                cur = "inicio";
+                hist = [];
+                sbTab("map");
+                setZoom(100);
+                render();
+                closeMobileSidebar();
+            }
+            function sbTab(tab) {
+                activeSbTab = tab;
+                document.getElementById("sb-map").style.display =
+                    tab === "map" ? "block" : "none";
+                document.getElementById("sb-journey").style.display =
+                    tab === "journey" ? "block" : "none";
+                var tm = document.getElementById("tab-map");
+                var tj = document.getElementById("tab-journey");
+                tm.className = "sb-tab" + (tab === "map" ? " active" : "");
+                tj.className = "sb-tab" + (tab === "journey" ? " active" : "");
+            }
+            function toggleMapa() {
+                mapaOn = !mapaOn;
+                document.getElementById("layout").style.display = mapaOn
+                    ? "none"
+                    : "flex";
+                document.getElementById("mapa-overlay").style.display = mapaOn
+                    ? "block"
+                    : "none";
+                if (mapaOn) renderMapa();
+                closeMobileSidebar();
+            }
+            function dlGuia() {
+                var html =
+                    "<!DOCTYPE html>" + document.documentElement.outerHTML;
+                var blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                var url = URL.createObjectURL(blob);
+                var a = document.createElement("a");
+                a.href = url;
+                a.download = "guia-tramitacion-emancipacion.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            // ═══════════════════════════════════════════
+            // RENDER
+            // ═══════════════════════════════════════════
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+            }
+
+            function renderPbar() {
+                var step = STEPS[cur];
+                var curPh = step ? step.ph : 0;
+                var html = "";
+                for (var i = 0; i < PHASES.length; i++) {
+                    if (i > 0) html += '<span class="ph-sep">›</span>';
+                    var cls =
+                        i < curPh ? "done" : i === curPh ? "active" : "default";
+                    html +=
+                        '<div class="ph-item ' +
+                        cls +
+                        '"><span class="ph-lbl">' +
+                        escQ(PHASES[i]) +
+                        "</span></div>";
+                }
+                document.getElementById("pbar").innerHTML = html;
+                var activePh = document.querySelector(".ph-item.active");
+                if (activePh)
+                    activePh.scrollIntoView({
+                        behavior: "smooth",
+                        block: "nearest",
+                        inline: "center",
+                    });
+            }
+
+            function renderBreadcrumb() {
+                var html = "";
+                var backDisabled = hist.length === 0;
+                html +=
+                    '<button class="bc-back" onclick="goBack()"' +
+                    (backDisabled ? " disabled" : "") +
+                    ">↩ Volver</button>";
+                for (var i = 0; i < hist.length; i++) {
+                    if (i > 0) html += '<span class="bc-sep">›</span>';
+                    var st = STEPS[hist[i].s];
+                    var lbl = st ? trunc(st.t, 30) : "?";
+                    html +=
+                        '<button class="bc-item" onclick="goBackTo(' +
+                        i +
+                        ')" title="' +
+                        escQ(st ? st.t : "") +
+                        '">' +
+                        escQ(lbl) +
+                        "</button>";
+                }
+                if (hist.length > 0) html += '<span class="bc-sep">›</span>';
+                var curSt = STEPS[cur];
+                html +=
+                    '<span class="bc-current" title="' +
+                    escQ(curSt ? curSt.t : "") +
+                    '">' +
+                    escQ(curSt ? trunc(curSt.t, 40) : "") +
+                    "</span>";
+                document.getElementById("breadcrumb").innerHTML = html;
+            }
+
+            function renderSidebar() {
+                renderSidebarFoot();
+                renderSidebarMap();
+                renderSidebarJourney();
+            }
+
+            function renderSidebarMap() {
+                var vs = visitedSet();
+                var stepsByPhase = {};
+                for (var k in STEPS) {
+                    var s = STEPS[k];
+                    if (!stepsByPhase[s.ph]) stepsByPhase[s.ph] = [];
+                    stepsByPhase[s.ph].push({ id: k, t: s.t });
+                }
+                var html = "";
+                for (var ph = 0; ph < PHASES.length; ph++) {
+                    var steps = stepsByPhase[ph];
+                    if (!steps) continue;
+                    var isCollapsed = collapsedPhases[ph] === true;
+                    html +=
+                        '<div class="sb-ph-hdr' +
+                        (isCollapsed ? " collapsed" : "") +
+                        '" onclick="togglePhase(' +
+                        ph +
+                        ')">';
+                    html += "<span>" + escQ(PHASES[ph]) + "</span>";
+                    html += '<span class="ph-arrow">▼</span>';
+                    html += "</div>";
+                    var maxH = isCollapsed ? "0" : steps.length * 50 + "px";
+                    html +=
+                        '<div class="sb-ph-steps' +
+                        (isCollapsed ? " collapsed" : "") +
+                        '" style="max-height:' +
+                        maxH +
+                        '">';
+                    for (var j = 0; j < steps.length; j++) {
+                        var node = steps[j];
+                        var isCur = node.id === cur;
+                        var isVis = vs[node.id] && !isCur;
+                        var cls = isCur
+                            ? "sm-current"
+                            : isVis
+                              ? "sm-visited"
+                              : "sm-default";
+                        html +=
+                            '<div class="sm-node ' +
+                            cls +
+                            '" onclick="goToDirect(\'' +
+                            node.id +
+                            '\')" title="' +
+                            escQ(node.t) +
+                            '">';
+                        html +=
+                            '<span class="sm-dot">' +
+                            (isCur ? "" : isVis ? "✓" : "") +
+                            "</span>";
+                        html +=
+                            '<span class="sm-lbl">' +
+                            escQ(trunc(node.t, 38)) +
+                            "</span>";
+                        html += "</div>";
+                    }
+                    html += "</div>";
+                }
+                document.getElementById("sb-map").innerHTML = html;
+            }
+
+            function renderSidebarJourney() {
+                var html = "";
+                for (var i = 0; i < hist.length; i++) {
+                    var h = hist[i];
+                    var st = STEPS[h.s];
+                    var lbl = st ? trunc(st.t, 36) : "?";
+                    html += '<div class="jy-entry jy-done">';
+                    html += '<div class="jy-step">' + escQ(lbl) + "</div>";
+                    if (h.c)
+                        html +=
+                            '<div class="jy-choice">→ ' +
+                            escQ(trunc(h.c, 40)) +
+                            "</div>";
+                    html += "</div>";
+                }
+                var curSt = STEPS[cur];
+                if (curSt) {
+                    html += '<div class="jy-entry jy-cur">';
+                    html +=
+                        '<div class="jy-step">' +
+                        escQ(trunc(curSt.t, 36)) +
+                        "</div>";
+                    if (hist.length === 0)
+                        html += '<div class="jy-choice">Punto de inicio</div>';
+                    html += "</div>";
+                }
+                document.getElementById("sb-journey").innerHTML = html;
+            }
+
+            function togglePhase(ph) {
+                collapsedPhases[ph] = !collapsedPhases[ph];
+                renderSidebarMap();
+            }
+
+            function renderContent() {
+                var step = STEPS[cur];
+                if (!step) {
+                    document.getElementById("content").innerHTML =
+                        '<div class="card"><p>Paso no encontrado.</p></div>';
+                    return;
+                }
+                var html = '<div class="card">';
+                html += '<div class="card-badges">';
+                html +=
+                    '<div class="phase-badge">' +
+                    escQ(PHASES[step.ph]) +
+                    "</div>";
+                html +=
+                    '<div class="actor-badge ' +
+                    step.ac +
+                    '">' +
+                    escQ(actorLabel(step.ac)) +
+                    "</div>";
+                html += "</div>";
+                html += '<h2 class="card-title">' + escQ(step.t) + "</h2>";
+                html += buildBlocks(step.c);
+                if (step.end) {
+                    html += buildEnd(step);
+                }
+                if (step.q && step.opts) {
+                    html += buildQuestion(step);
+                } else if (step.nx) {
+                    html +=
+                        '<button class="next-btn" onclick="goTo(\'' +
+                        step.nx +
+                        "','')\">Siguiente → " +
+                        escQ(
+                            trunc(STEPS[step.nx] ? STEPS[step.nx].t : "", 40),
+                        ) +
+                        "</button>";
+                }
+                html += "</div>";
+                document.getElementById("content").innerHTML = html;
+            }
+
+            function buildBlocks(c) {
+                if (!c) return "";
+                var html = "";
+                for (var i = 0; i < c.length; i++) {
+                    var b = c[i];
+                    var type = b[0];
+                    if (type === "i") {
+                        html +=
+                            '<div class="cb cb-i"><p style="font-size:14px;line-height:1.55;color:var(--text);">' +
+                            escQ(b[1]) +
+                            "</p></div>";
+                    } else if (type === "d") {
+                        html +=
+                            '<div class="cb cb-d"><div class="cb-label">Plazo</div><p style="font-size:14px;line-height:1.55;margin:0;">' +
+                            escQ(b[1]) +
+                            "</p></div>";
+                    } else if (type === "n") {
+                        html +=
+                            '<div class="cb cb-n"><div class="cb-label">Nota</div><p style="font-size:14px;line-height:1.55;margin:0;font-style:italic;">' +
+                            escQ(b[1]) +
+                            "</p></div>";
+                    } else if (type === "w") {
+                        html +=
+                            '<div class="cb cb-w"><div class="cb-label">Atención</div><p style="font-size:14px;line-height:1.55;margin:0;">' +
+                            escQ(b[1]) +
+                            "</p></div>";
+                    } else if (type === "l") {
+                        html +=
+                            '<div class="cb cb-l"><div class="cb-label">Referencia legal</div><p style="font-size:13px;line-height:1.5;margin:0;">' +
+                            escQ(b[1]) +
+                            "</p></div>";
+                    } else if (type === "cl") {
+                        html += buildChecklist(b[1], b[2]);
+                    }
+                }
+                return html;
+            }
+
+            function buildChecklist(title, items) {
+                var html = '<div class="cb cb-cl">';
+                html +=
+                    '<div class="cl-title"><span class="cl-icon">✓</span> ' +
+                    escQ(title) +
+                    "</div>";
+                html += "<ul>";
+                for (var i = 0; i < items.length; i++) {
+                    html += "<li>" + escQ(items[i]) + "</li>";
+                }
+                html += "</ul></div>";
+                return html;
+            }
+
+            function buildQuestion(step) {
+                var html = '<div class="question">';
+                html += '<div class="q-label">Decisión</div>';
+                html += '<div class="q-text">' + escQ(step.q) + "</div>";
+                html += '<div class="dec-btns">';
+                var ltrs = letters();
+                for (var i = 0; i < step.opts.length; i++) {
+                    var o = step.opts[i];
+                    var cls = optClass(o.n);
+                    var letter = ltrs[i];
+                    var onclick = o.n
+                        ? "goTo('" + escQ(o.n) + "','" + escQ(o.l) + "')"
+                        : "noop()";
+                    html +=
+                        '<button class="dec-btn ' +
+                        cls +
+                        '" onclick="' +
+                        onclick +
+                        '">';
+                    html += '<span class="dec-letter">' + letter + "</span>";
+                    html += '<span class="dec-text">';
+                    html += '<div class="dt-main">' + escQ(o.t) + "</div>";
+                    if (o.l)
+                        html += '<div class="dt-sub">' + escQ(o.l) + "</div>";
+                    html += "</span></button>";
+                }
+                html += "</div></div>";
+                return html;
+            }
+
+            function buildEnd(step) {
+                var et = step.end || "neutral";
+                var icons = {
+                    success: "✓",
+                    error: "✕",
+                    neutral: "●",
+                    warning: "⚠",
+                };
+                var titles = {
+                    success: "Procedimiento finalizado con éxito",
+                    error: "Procedimiento finalizado sin éxito",
+                    neutral: "Procedimiento archivado",
+                    warning: "Procedimiento finalizado con advertencia",
+                };
+                var icon = icons[et] || "●";
+                var title = titles[et] || "";
+                var html = '<div class="end-card ' + et + '">';
+                html += '<div class="end-icon">' + icon + "</div>";
+                html += '<div class="end-title">' + escQ(title) + "</div>";
+                html += '<div class="end-sub">' + escQ(step.t) + "</div>";
+                html += '<div class="end-btns">';
+                html +=
+                    '<button class="ebtn-restart" onclick="restart()">↺ Nuevo procedimiento</button>';
+                html +=
+                    '<button class="ebtn-back" onclick="goBack()" style="' +
+                    (hist.length === 0 ? "opacity:0.35;cursor:default;" : "") +
+                    '">← Volver</button>';
+                html += "</div>";
+                html += buildSummary();
+                html += "</div>";
+                return html;
+            }
+
+            function buildSummary() {
+                var html = '<div class="summary-box">';
+                html += '<div class="sum-title">Resumen del recorrido</div>';
+                html += "<ol>";
+                for (var i = 0; i < hist.length; i++) {
+                    var h = hist[i];
+                    var st = STEPS[h.s];
+                    var lbl = st ? st.t : "?";
+                    html += "<li>" + escQ(lbl);
+                    if (h.c)
+                        html +=
+                            ' — <span class="sum-choice">' +
+                            escQ(h.c) +
+                            "</span>";
+                    html += "</li>";
+                }
+                var curSt = STEPS[cur];
+                if (curSt) {
+                    html += "<li><strong>" + escQ(curSt.t) + "</strong></li>";
+                }
+                html += "</ol></div>";
+                return html;
+            }
+
+            // ═══════════════════════════════════════════
+            // MAP OVERLAY
+            // ═══════════════════════════════════════════
+            function renderMapa() {
+                var vs = visitedSet();
+                var stepsByPhase = {};
+                for (var k in STEPS) {
+                    var s = STEPS[k];
+                    if (!stepsByPhase[s.ph]) stepsByPhase[s.ph] = [];
+                    stepsByPhase[s.ph].push({ id: k, t: s.t, end: s.end });
+                }
+                var html = '<div class="mapa-header">';
+                html += "<h2>Mapa completo del procedimiento</h2>";
+                html +=
+                    '<button class="mapa-close" onclick="toggleMapa()">← Volver al recorrido</button>';
+                html += "</div>";
+                html += '<div class="mapa-cols">';
+                for (var ph = 0; ph < PHASES.length; ph++) {
+                    var steps = stepsByPhase[ph];
+                    if (!steps) continue;
+                    html += '<div class="mapa-col">';
+                    html += '<div class="mc-ph">' + escQ(PHASES[ph]) + "</div>";
+                    html += '<div class="mc-body">';
+                    for (var j = 0; j < steps.length; j++) {
+                        var node = steps[j];
+                        var isCur = node.id === cur;
+                        var isVis = vs[node.id] && !isCur;
+                        var cls = "mc-node";
+                        if (isCur) cls += " mc-current";
+                        else if (isVis) cls += " mc-visited";
+                        if (node.end === "success") cls += " mc-end-ok";
+                        if (node.end === "error") cls += " mc-end-err";
+                        if (node.end === "neutral") cls += " mc-end-neu";
+                        if (j > 0) html += '<div class="mc-arrow">↓</div>';
+                        html +=
+                            '<div class="' +
+                            cls +
+                            '" style="cursor:pointer" onclick="goToDirect(\'' +
+                            node.id +
+                            '\');toggleMapa()" title="Ir a: ' +
+                            escQ(node.t) +
+                            '">' +
+                            escQ(trunc(node.t, 50)) +
+                            "</div>";
+                    }
+                    html += "</div></div>";
+                }
+                html += "</div>";
+                document.getElementById("mapa-overlay").innerHTML = html;
+            }
+
+            // ═══════════════════════════════════════════
+            // INIT
+            // ═══════════════════════════════════════════
+            renderSidebarFoot();
+            setZoom(zoomLevel);
+            // Eventos para toggle sidebar
+            document
+                .getElementById("btnToggleSidebar")
+                .addEventListener("click", toggleSidebar);
+            document
+                .getElementById("sidebarBackdrop")
+                .addEventListener("click", closeMobileSidebar);
+            window.addEventListener("resize", handleResize);
+            handleResize();
+            render();
+        </script>
+    </body>
+</html>

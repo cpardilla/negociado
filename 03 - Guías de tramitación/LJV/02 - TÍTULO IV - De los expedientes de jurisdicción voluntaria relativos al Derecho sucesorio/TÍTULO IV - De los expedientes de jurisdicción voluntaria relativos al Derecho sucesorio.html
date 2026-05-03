@@ -1,0 +1,3496 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            De los expedientes de jurisdicción voluntaria relativos al Derecho
+            sucesorio
+        </title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --transition-norm: 250ms ease;
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            html,
+            body {
+                height: 100%;
+            }
+            body {
+                font-family:
+                    "Outfit",
+                    system-ui,
+                    -apple-system,
+                    sans-serif;
+                font-size: 14.5px;
+                line-height: 1.55;
+                color: var(--text);
+                background: var(--slate-bg);
+                -webkit-font-smoothing: antialiased;
+                text-rendering: optimizeLegibility;
+            }
+
+            /* ============ Estructura raíz ============ */
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+                background: var(--slate-bg);
+            }
+
+            /* ============ ELEMENTO 1 — Cabecera ============ */
+            #hdr {
+                flex-shrink: 0;
+                height: 56px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+                background: var(--navy);
+                color: #fff;
+            }
+            .h-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .h-seal {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: #fff;
+                flex-shrink: 0;
+            }
+            .h-title {
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 1.2;
+                letter-spacing: 0.2px;
+            }
+            .h-sub {
+                font-size: 10.5px;
+                opacity: 0.62;
+                margin-top: 2px;
+                font-family: ui-monospace, SFMono-Regular, monospace;
+            }
+            .h-right {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+            .btn {
+                font-family: inherit;
+                font-size: 12px;
+                font-weight: 500;
+                padding: 7px 14px;
+                border-radius: 6px;
+                border: 1px solid transparent;
+                cursor: pointer;
+                transition: all 0.15s;
+                white-space: nowrap;
+            }
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.18);
+                color: rgba(255, 255, 255, 0.88);
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+            .btn-ghost.active {
+                background: rgba(255, 255, 255, 0.22);
+                border-color: rgba(255, 255, 255, 0.35);
+            }
+            .zoom-cluster {
+                display: inline-flex;
+                align-items: center;
+                overflow: hidden;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .btn-zoom {
+                appearance: none;
+                border: none;
+                background: transparent;
+                color: rgba(255, 255, 255, 0.88);
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.14);
+            }
+            .zoom-label {
+                min-width: 46px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            /* ============ NUEVO: BOTÓN TOGGLE SIDEBAR ============ */
+            .btn-toggle-sidebar {
+                font-size: 20px;
+                padding: 4px 12px;
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+
+            /* ============ ELEMENTO 2 — Barra de fases ============ */
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                gap: 2px;
+                background: var(--navy-mid);
+                overflow-x: auto;
+                scrollbar-width: none;
+            }
+            #pbar::-webkit-scrollbar {
+                display: none;
+            }
+            .ph-item {
+                display: inline-flex;
+                align-items: center;
+                flex-shrink: 0;
+            }
+            .ph-lbl {
+                display: inline-flex;
+                align-items: center;
+                height: 28px;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 0 10px;
+                border-radius: 8px;
+                color: rgba(255, 255, 255, 0.6);
+                letter-spacing: 0.15px;
+                white-space: nowrap;
+                transition: all 0.15s;
+            }
+            .ph-lbl.done {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .ph-lbl.active {
+                background: rgba(255, 255, 255, 0.22);
+                color: #fff;
+                font-weight: 800;
+            }
+            .ph-sep {
+                color: rgba(255, 255, 255, 0.3);
+                font-size: 10px;
+                padding: 0 2px;
+                flex-shrink: 0;
+            }
+
+            /* ============ ELEMENTO 3 — Migas de pan ============ */
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 34px;
+                height: auto;
+                display: flex;
+                align-items: center;
+                padding: 4px 20px;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                overflow-x: auto;
+                scrollbar-width: none;
+                flex-wrap: wrap;
+                row-gap: 2px;
+                white-space: normal;
+            }
+            #breadcrumb::-webkit-scrollbar {
+                display: none;
+            }
+            .bc-item {
+                font-size: 12px;
+                white-space: nowrap;
+                padding: 0 6px;
+                color: var(--muted);
+                font-family: inherit;
+            }
+            .bc-past {
+                cursor: pointer;
+                background: none;
+                border: none;
+            }
+            .bc-past:hover {
+                color: var(--navy-lt);
+                text-decoration: underline;
+            }
+            .bc-current {
+                font-weight: 600;
+                color: var(--navy);
+            }
+            .bc-sep {
+                font-size: 11px;
+                color: var(--bdr);
+                padding: 0 2px;
+            }
+
+            /* ============ LAYOUT de trabajo ============ */
+            #layout {
+                flex: 1;
+                display: flex;
+                overflow: hidden;
+            }
+
+            /* ============ ELEMENTO 4 — Sidebar dual ============ */
+            #sidebar {
+                flex-shrink: 0;
+                width: 280px;
+                background: var(--navy-mid);
+                overflow-y: auto;
+                overflow-x: hidden;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+                scrollbar-gutter: stable;
+                color: rgba(255, 255, 255, 0.88);
+                display: flex;
+                flex-direction: column;
+                transition:
+                    width var(--transition-norm),
+                    transform var(--transition-norm);
+                will-change: width, transform;
+            }
+            #sidebar.collapsed {
+                width: 0;
+                overflow: hidden;
+                padding: 0;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 6px;
+            }
+            #sidebar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.18);
+                border-radius: 8px;
+                border: 2px solid transparent;
+                background-clip: padding-box;
+            }
+            #sidebar:hover::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.28);
+            }
+            #sb-tabs {
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                flex-shrink: 0;
+                position: sticky;
+                top: 0;
+                background: var(--navy-mid);
+                z-index: 2;
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 10px 0;
+                font-size: 11px;
+                font-weight: 600;
+                font-family: inherit;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.42);
+                cursor: pointer;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                transition: all 0.15s;
+                border-bottom: 2px solid transparent;
+            }
+            .sb-tab.active {
+                color: #fff;
+                border-bottom-color: var(--navy-lt);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.75);
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            #sb-map,
+            #sb-journey {
+                padding: 12px 14px 20px;
+                flex: 1;
+                min-height: 0;
+            }
+
+            /* Mapa */
+            .sm-phase {
+                margin-bottom: 10px;
+            }
+            .sm-phase-hdr {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                padding: 6px 4px;
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 0.6px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.55);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                user-select: none;
+            }
+            .sm-phase-hdr:hover {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .sm-phase-arrow {
+                font-size: 9px;
+                transition: transform 0.15s;
+            }
+            .sm-phase.collapsed .sm-phase-arrow {
+                transform: rotate(-90deg);
+            }
+            .sm-phase.collapsed .sm-nodes {
+                display: none;
+            }
+            .sm-nodes {
+                padding: 6px 0 4px;
+            }
+            .sm-node {
+                display: flex;
+                align-items: flex-start;
+                gap: 6px;
+                padding: 5px 8px;
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.78);
+                border-radius: 4px;
+                cursor: pointer;
+                margin-bottom: 1px;
+                line-height: 1.35;
+                transition: all 0.12s;
+                text-align: left;
+                width: 100%;
+                background: none;
+                border: none;
+                font-family: inherit;
+            }
+            .sm-node:hover {
+                background: rgba(255, 255, 255, 0.08);
+                color: #fff;
+            }
+            .sm-node .sm-dot {
+                flex-shrink: 0;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: 1px solid rgba(255, 255, 255, 0.35);
+                margin-top: 3px;
+            }
+            .sm-node.sm-visited .sm-dot {
+                background: var(--green);
+                border-color: var(--green);
+            }
+            .sm-node.sm-visited .sm-dot::after {
+                content: "✓";
+                color: #fff;
+                font-size: 8px;
+                position: relative;
+                top: -4px;
+                left: 1.5px;
+                font-weight: 700;
+            }
+            .sm-node.sm-current .sm-dot {
+                background: var(--navy-lt);
+                border-color: #fff;
+                box-shadow: 0 0 0 2px rgba(65, 105, 225, 0.35);
+                animation: pulse 1.5s infinite;
+            }
+            .sm-node.sm-current {
+                color: #fff;
+                font-weight: 600;
+                background: rgba(65, 105, 225, 0.22);
+            }
+            .sm-node.sm-unreachable {
+                opacity: 0.32;
+                cursor: pointer;
+            }
+            .sm-node.sm-final .sm-dot {
+                background: var(--amber);
+                border-color: var(--amber);
+            }
+
+            @keyframes pulse {
+                0%,
+                100% {
+                    box-shadow: 0 0 0 2px rgba(65, 105, 225, 0.35);
+                }
+                50% {
+                    box-shadow: 0 0 0 4px rgba(65, 105, 225, 0.18);
+                }
+            }
+
+            /* Recorrido */
+            .pi {
+                padding: 8px 10px;
+                margin-bottom: 2px;
+                font-size: 12px;
+                line-height: 1.4;
+                border-radius: 5px;
+                color: rgba(255, 255, 255, 0.82);
+                border-left: 2px solid transparent;
+            }
+            .pi.past {
+                background: rgba(255, 255, 255, 0.05);
+                border-left-color: rgba(255, 255, 255, 0.25);
+            }
+            .pi.current {
+                background: rgba(65, 105, 225, 0.22);
+                border-left-color: var(--navy-lt);
+                color: #fff;
+                font-weight: 600;
+            }
+            .pi-num {
+                font-size: 9.5px;
+                opacity: 0.5;
+                font-family: ui-monospace, monospace;
+                margin-right: 6px;
+            }
+            .pi-choice {
+                display: block;
+                margin-top: 4px;
+                padding-left: 10px;
+                font-size: 11px;
+                font-style: italic;
+                color: rgba(200, 255, 220, 0.75);
+                border-left: 2px solid rgba(21, 128, 61, 0.5);
+            }
+
+            .sb-foot {
+                margin-top: 18px;
+                padding: 10px 4px;
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 10.5px;
+                color: rgba(255, 255, 255, 0.42);
+                font-family: ui-monospace, monospace;
+                line-height: 1.5;
+            }
+            .sb-foot strong {
+                color: rgba(255, 255, 255, 0.7);
+                display: block;
+                margin-bottom: 3px;
+                font-family: inherit;
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
+
+            /* ============ Contenido principal ============ */
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 22px 30px 40px;
+            }
+
+            /* Tarjeta de paso */
+            .card {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 10px;
+                padding: 0;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+                animation: fadeUp 0.22s ease;
+            }
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .c-hdr {
+                padding: 18px 22px 14px;
+                border-bottom: 1px solid var(--bdr);
+                background: #fafbfe;
+                border-radius: 10px 10px 0 0;
+            }
+            .c-meta-row {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+            }
+            .act-badge {
+                font-size: 10px;
+                font-weight: 700;
+                padding: 4px 10px;
+                border-radius: 14px;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
+            .act-laj {
+                background: var(--cyan-bg);
+                color: var(--cyan);
+                border: 1px solid rgba(13, 148, 136, 0.3);
+            }
+            .act-juez {
+                background: var(--violet-bg);
+                color: var(--violet);
+                border: 1px solid rgba(91, 33, 182, 0.3);
+            }
+            .act-ambos {
+                background: var(--amber-bg);
+                color: var(--amber);
+                border: 1px solid rgba(180, 83, 9, 0.3);
+            }
+            .step-num {
+                font-size: 10.5px;
+                color: var(--muted);
+                font-family: ui-monospace, monospace;
+                margin-left: auto;
+            }
+            .c-title {
+                font-size: 19px;
+                font-weight: 700;
+                color: var(--navy);
+                line-height: 1.3;
+                letter-spacing: -0.2px;
+            }
+
+            .c-body {
+                padding: 18px 22px 10px;
+            }
+            .c-body > * {
+                margin-bottom: 12px;
+            }
+            .c-body > *:last-child {
+                margin-bottom: 0;
+            }
+
+            .blk-i {
+                font-size: 14.5px;
+                color: var(--text);
+                line-height: 1.6;
+            }
+            .blk-d {
+                background: var(--amber-bg);
+                border-left: 3px solid var(--amber);
+                padding: 10px 14px;
+                border-radius: 0 6px 6px 0;
+                font-size: 13.5px;
+                color: var(--amber);
+                font-weight: 500;
+            }
+            .blk-d::before {
+                content: "⏱ ";
+                font-weight: 700;
+            }
+            .blk-n {
+                background: var(--cyan-bg);
+                border-left: 3px solid var(--cyan);
+                padding: 10px 14px;
+                border-radius: 0 6px 6px 0;
+                font-size: 13.5px;
+                color: var(--slate);
+            }
+            .blk-n::before {
+                content: "ℹ ";
+                color: var(--cyan);
+                font-weight: 700;
+            }
+            .blk-w {
+                background: var(--red-bg);
+                border-left: 3px solid var(--red);
+                padding: 10px 14px;
+                border-radius: 0 6px 6px 0;
+                font-size: 13.5px;
+                color: var(--red);
+                font-weight: 500;
+            }
+            .blk-w::before {
+                content: "⚠ ";
+                font-weight: 700;
+            }
+            .blk-l {
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                font-size: 12px;
+                color: var(--slate);
+                background: var(--slate-bg);
+                padding: 8px 12px;
+                border-radius: 4px;
+                border: 1px dashed var(--bdr);
+                letter-spacing: -0.2px;
+            }
+            .blk-l::before {
+                content: "§ ";
+                color: var(--navy);
+                font-weight: 700;
+            }
+
+            .blk-cl {
+                background: #fbfcfe;
+                border: 1px solid var(--bdr);
+                border-radius: 6px;
+                padding: 12px 14px;
+            }
+            .blk-cl-h {
+                font-size: 12.5px;
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+            }
+            .blk-cl-i {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 5px 0;
+                font-size: 13.5px;
+                color: var(--text);
+                line-height: 1.45;
+            }
+            .blk-cl-box {
+                flex-shrink: 0;
+                margin-top: 2px;
+                width: 14px;
+                height: 14px;
+                border: 1.5px solid var(--navy-mid);
+                border-radius: 3px;
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+            }
+            .blk-cl-box.checked {
+                background: var(--navy-lt);
+                border-color: var(--navy-lt);
+            }
+            .blk-cl-box.checked::after {
+                content: "✓";
+                position: absolute;
+                top: -3px;
+                left: 1px;
+                color: #fff;
+                font-size: 11px;
+                font-weight: 700;
+            }
+
+            /* Zona de decisión */
+            .dec-area {
+                margin: 12px 22px 0;
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                border-top: 3px solid var(--navy);
+                padding: 14px 16px 16px;
+            }
+            .dec-q {
+                font-size: 14.5px;
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 12px;
+                line-height: 1.4;
+            }
+            .dec-opts {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 11px 14px;
+                background: var(--white);
+                border: 1.5px solid var(--bdr);
+                border-radius: 7px;
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 13.5px;
+                color: var(--text);
+                text-align: left;
+                line-height: 1.4;
+                transition: all 0.15s;
+            }
+            .dec-btn:hover {
+                border-color: var(--navy-lt);
+                background: #f5f8ff;
+            }
+            .dec-btn.ok:hover {
+                border-color: var(--green);
+                background: var(--green-bg);
+            }
+            .dec-btn.bad:hover {
+                border-color: var(--red);
+                background: var(--red-bg);
+            }
+            .dec-btn.warn:hover {
+                border-color: var(--amber);
+                background: var(--amber-bg);
+            }
+            .dec-btn.neutral:hover {
+                border-color: var(--cyan);
+                background: var(--cyan-bg);
+            }
+            .dec-letter {
+                flex-shrink: 0;
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                background: var(--slate-bg);
+                border: 1.5px solid var(--bdr);
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--navy);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .dec-btn.ok .dec-letter {
+                background: var(--green-bg);
+                border-color: var(--green);
+                color: var(--green);
+            }
+            .dec-btn.bad .dec-letter {
+                background: var(--red-bg);
+                border-color: var(--red);
+                color: var(--red);
+            }
+            .dec-btn.warn .dec-letter {
+                background: var(--amber-bg);
+                border-color: var(--amber);
+                color: var(--amber);
+            }
+            .dec-btn.neutral .dec-letter {
+                background: var(--cyan-bg);
+                border-color: var(--cyan);
+                color: var(--cyan);
+            }
+
+            /* Navegación inferior */
+            .c-nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 14px 22px 20px;
+                margin-top: 10px;
+                border-top: 1px solid var(--bdr);
+            }
+            .btn-back,
+            .btn-next {
+                font-family: inherit;
+                font-size: 13px;
+                font-weight: 500;
+                padding: 8px 16px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.15s;
+                border: 1.5px solid transparent;
+            }
+            .btn-back {
+                background: var(--white);
+                border-color: var(--bdr);
+                color: var(--slate);
+            }
+            .btn-back:hover:not(:disabled) {
+                border-color: var(--navy-lt);
+                color: var(--navy-lt);
+            }
+            .btn-back:disabled {
+                opacity: 0.4;
+                cursor: not-allowed;
+            }
+            .btn-next {
+                background: var(--navy-lt);
+                color: #fff;
+                border-color: var(--navy-lt);
+                margin-left: auto;
+            }
+            .btn-next:hover {
+                background: var(--navy);
+                border-color: var(--navy);
+            }
+
+            /* Tarjetas finales */
+            .card.end {
+                border-top: 4px solid var(--slate);
+            }
+            .card.end-success {
+                border-top-color: var(--green);
+            }
+            .card.end-error {
+                border-top-color: var(--red);
+            }
+            .card.end-warning {
+                border-top-color: var(--amber);
+            }
+            .card.end-neutral {
+                border-top-color: var(--cyan);
+            }
+
+            .end-body {
+                padding: 28px 26px 20px;
+                text-align: center;
+            }
+            .end-icon {
+                font-size: 52px;
+                margin-bottom: 10px;
+            }
+            .end-title {
+                font-size: 21px;
+                font-weight: 700;
+                margin-bottom: 4px;
+                letter-spacing: -0.2px;
+            }
+            .end-success .end-title {
+                color: var(--green);
+            }
+            .end-error .end-title {
+                color: var(--red);
+            }
+            .end-warning .end-title {
+                color: var(--amber);
+            }
+            .end-neutral .end-title {
+                color: var(--cyan);
+            }
+            .end-sub {
+                font-size: 13px;
+                color: var(--muted);
+                margin-bottom: 18px;
+            }
+            .end-actions {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            .btn-blue {
+                background: var(--navy-lt);
+                color: #fff;
+                border: 1.5px solid var(--navy-lt);
+                padding: 9px 18px;
+                font-size: 13px;
+                font-weight: 500;
+                font-family: inherit;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .btn-blue:hover {
+                background: var(--navy);
+                border-color: var(--navy);
+            }
+            .end-content {
+                text-align: left;
+                padding: 0 26px 20px;
+            }
+
+            .summary-box {
+                margin: 0 22px 22px;
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                padding: 14px 16px;
+            }
+            .summary-h {
+                font-size: 11px;
+                font-weight: 700;
+                color: var(--navy);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 10px;
+            }
+            .summary-item {
+                display: flex;
+                gap: 10px;
+                padding: 6px 0;
+                font-size: 12.5px;
+                border-bottom: 1px dashed var(--bdr);
+            }
+            .summary-item:last-child {
+                border-bottom: none;
+            }
+            .summary-n {
+                flex-shrink: 0;
+                width: 20px;
+                height: 20px;
+                background: var(--navy-lt);
+                color: #fff;
+                border-radius: 50%;
+                font-size: 10px;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .summary-t {
+                font-weight: 500;
+                color: var(--text);
+            }
+            .summary-c {
+                color: var(--cyan);
+                font-size: 11.5px;
+                font-style: italic;
+                margin-top: 2px;
+                display: block;
+            }
+
+            /* ============ ELEMENTO 5 — Mapa overlay ============ */
+            #mapa-overlay {
+                display: none;
+                flex: 1;
+                overflow-y: auto;
+                background: var(--slate-bg);
+                padding: 22px 30px 60px;
+            }
+            .mapa-head {
+                max-width: 1200px;
+                margin: 0 auto 18px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 16px;
+            }
+            .mapa-title {
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--navy);
+            }
+            .mapa-sub {
+                font-size: 12.5px;
+                color: var(--muted);
+                margin-top: 2px;
+            }
+            .mapa-cols {
+                max-width: 1400px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 12px;
+            }
+            @media (max-width: 1200px) {
+                .mapa-cols {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+            @media (max-width: 700px) {
+                .mapa-cols {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .mapa-col {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                padding: 12px;
+                min-height: 200px;
+            }
+            .mapa-col-h {
+                font-size: 10px;
+                font-weight: 700;
+                color: var(--navy);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding-bottom: 8px;
+                margin-bottom: 10px;
+                border-bottom: 2px solid var(--navy-lt);
+            }
+            .mapa-node {
+                background: #fbfcfe;
+                border: 1px solid var(--bdr);
+                border-left: 3px solid var(--slate);
+                border-radius: 5px;
+                padding: 8px 10px;
+                margin-bottom: 8px;
+                font-size: 11.5px;
+                line-height: 1.35;
+                cursor: pointer;
+                transition: all 0.12s;
+            }
+            .mapa-node:hover {
+                background: var(--white);
+                border-left-color: var(--navy-lt);
+            }
+            .mapa-node.mn-visited {
+                background: var(--green-bg);
+                border-left-color: var(--green);
+            }
+            .mapa-node.mn-current {
+                background: var(--cyan-bg);
+                border-left-color: var(--navy-lt);
+                font-weight: 600;
+            }
+            .mapa-node.mn-final-success {
+                border-left-color: var(--green);
+            }
+            .mapa-node.mn-final-error {
+                border-left-color: var(--red);
+            }
+            .mapa-node.mn-final-warning {
+                border-left-color: var(--amber);
+            }
+            .mapa-node.mn-final-neutral {
+                border-left-color: var(--cyan);
+            }
+            .mapa-node-t {
+                font-weight: 600;
+                color: var(--navy);
+                margin-bottom: 3px;
+            }
+            .mapa-node-act {
+                display: inline-block;
+                font-size: 9px;
+                font-weight: 700;
+                padding: 1px 6px;
+                border-radius: 8px;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+                margin-right: 4px;
+            }
+            .mapa-node-act.act-laj {
+                background: var(--cyan-bg);
+                color: var(--cyan);
+            }
+            .mapa-node-act.act-juez {
+                background: var(--violet-bg);
+                color: var(--violet);
+            }
+            .mapa-node-act.act-ambos {
+                background: var(--amber-bg);
+                color: var(--amber);
+            }
+            .mapa-node-arrows {
+                font-size: 10px;
+                color: var(--muted);
+                margin-top: 6px;
+                padding-top: 5px;
+                border-top: 1px dashed var(--bdr);
+                line-height: 1.6;
+            }
+            .mapa-node-arrows span {
+                display: inline-block;
+                padding: 1px 5px;
+                background: var(--slate-bg);
+                border-radius: 3px;
+                margin-right: 3px;
+                margin-bottom: 2px;
+            }
+
+            /* Panel preview del paso (cuando se hace clic en el sidebar-mapa) */
+            #preview-panel {
+                display: none;
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                width: 380px;
+                max-height: 60vh;
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-right: none;
+                border-bottom: none;
+                border-radius: 10px 0 0 0;
+                box-shadow: -4px -4px 24px rgba(0, 0, 0, 0.12);
+                z-index: 10;
+                display: none;
+                flex-direction: column;
+            }
+            #preview-panel.on {
+                display: flex;
+            }
+            .prev-hdr {
+                padding: 12px 16px;
+                background: var(--navy);
+                color: #fff;
+                border-radius: 10px 0 0 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .prev-hdr-t {
+                font-size: 13px;
+                font-weight: 600;
+            }
+            .prev-close {
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 18px;
+                cursor: pointer;
+                padding: 0;
+                line-height: 1;
+            }
+            .prev-close:hover {
+                color: #fff;
+            }
+            .prev-body {
+                padding: 14px 16px;
+                overflow-y: auto;
+                flex: 1;
+                font-size: 13px;
+            }
+            .prev-foot {
+                padding: 10px 16px;
+                border-top: 1px solid var(--bdr);
+                display: flex;
+                gap: 8px;
+                justify-content: flex-end;
+            }
+
+            /* ============ Sidebar backdrop (móvil) ============ */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                z-index: 140;
+                background: rgba(0, 0, 0, 0.5);
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+
+            /* ============ Responsive (modificado para sidebar toggle) ============ */
+            @media (max-width: 780px) {
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    width: 280px;
+                    transition: transform var(--transition-norm);
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                #content {
+                    padding: 14px 12px 30px;
+                }
+                .h-title {
+                    font-size: 12.5px;
+                }
+                .h-sub {
+                    display: none;
+                }
+                .btn {
+                    padding: 6px 10px;
+                    font-size: 11px;
+                }
+                .c-title {
+                    font-size: 17px;
+                }
+                #preview-panel {
+                    width: 100%;
+                    border-radius: 10px 10px 0 0;
+                }
+            }
+
+            /* ============ Impresión ============ */
+            @media print {
+                #hdr,
+                #pbar,
+                #breadcrumb,
+                #sidebar,
+                .c-nav,
+                .dec-area,
+                #preview-panel,
+                .sidebar-backdrop {
+                    display: none !important;
+                }
+                #app {
+                    height: auto;
+                    overflow: visible;
+                }
+                body {
+                    background: #fff;
+                    color: #111;
+                }
+                .card {
+                    box-shadow: none;
+                    border: 1px solid #ccc;
+                    page-break-inside: avoid;
+                    margin-bottom: 20px;
+                }
+                #content {
+                    padding: 10px;
+                    overflow: visible;
+                }
+                #mapa-overlay {
+                    display: block !important;
+                }
+            }
+
+            /* Animación pulso para nodos actuales */
+            @keyframes pulse-card {
+                from {
+                    box-shadow: 0 0 0 0 rgba(65, 105, 225, 0.5);
+                }
+                to {
+                    box-shadow: 0 0 0 6px rgba(65, 105, 225, 0);
+                }
+            }
+
+            /* === FIX: header classes normalization === */
+            #hdr .h-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+            #hdr .h-seal {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.85);
+            }
+            #hdr .h-title {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--white);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #hdr .h-sub {
+                font-size: 11px;
+                color: var(--white);
+                opacity: 0.7;
+            }
+            #hdr .h-right {
+                display: flex;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="app">
+            <!-- ============ CABECERA ============ -->
+            <header id="hdr" style="height: 70px">
+                <div class="h-left">
+                    <!-- NUEVO BOTÓN TOGGLE SIDEBAR -->
+                    <button
+                        class="btn btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                        onclick="toggleSidebar()"
+                    >
+                        &#9776;
+                    </button>
+                    <div class="h-seal">⚖</div>
+                    <div>
+                        <div class="h-sub">
+                            LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN
+                            VOLUNTARIA · TÍTULO IV
+                        </div>
+                        <div class="h-title">
+                            De los expedientes de jurisdicción voluntaria
+                            relativos al Derecho sucesorio
+                        </div>
+                        <div class="h-sub" style="padding-top: 5px">
+                            CAPÍTULO I: DEL ALBACEAZGO (artículo 91 LJV) ·
+                            CAPÍTULO II: DE LOS CONTADORES-PARTIDORES DATIVOS
+                            (artículo 92 LJV) · CAPÍTULO III: DE LA ACEPTACIÓN Y
+                            REPUDIACIÓN DE LA HERENCIA (artículos 93 a 95 LJV)
+                        </div>
+                    </div>
+                </div>
+                <div class="h-right">
+                    <div
+                        class="zoom-cluster"
+                        role="group"
+                        aria-label="Zoom del contenido"
+                    >
+                        <button
+                            class="btn-zoom"
+                            onclick="zoomOut()"
+                            aria-label="Reducir zoom"
+                        >
+                            −
+                        </button>
+                        <span class="zoom-label" id="zoomLabel">100%</span>
+                        <button
+                            class="btn-zoom"
+                            onclick="zoomIn()"
+                            aria-label="Aumentar zoom"
+                        >
+                            +
+                        </button>
+                    </div>
+                    <button
+                        class="btn btn-ghost"
+                        id="btn-mapa"
+                        onclick="toggleMapa()"
+                    >
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn btn-ghost" onclick="dlGuia()">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn btn-ghost" onclick="restart()">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </header>
+
+            <!-- ============ BARRA DE FASES ============ -->
+            <nav
+                id="pbar"
+                role="navigation"
+                aria-label="Progreso por fases del procedimiento"
+            ></nav>
+
+            <!-- ============ MIGAS DE PAN ============ -->
+            <nav
+                id="breadcrumb"
+                role="navigation"
+                aria-label="Ruta de navegación"
+            ></nav>
+
+            <!-- ============ LAYOUT principal ============ -->
+            <div id="layout">
+                <aside id="sidebar">
+                    <div id="sb-tabs">
+                        <button class="sb-tab active" onclick="sbTab('map')">
+                            Mapa
+                        </button>
+                        <button class="sb-tab" onclick="sbTab('journey')">
+                            Recorrido
+                        </button>
+                    </div>
+                    <div id="sb-map"></div>
+                    <div id="sb-journey" style="display: none"></div>
+                </aside>
+                <main id="content"></main>
+            </div>
+
+            <!-- ============ MAPA OVERLAY ============ -->
+            <div id="mapa-overlay">
+                <div class="mapa-head">
+                    <div>
+                        <div class="mapa-title">
+                            Mapa completo del procedimiento
+                        </div>
+                        <div class="mapa-sub">
+                            Todos los nodos del grafo de decisión, ordenados por
+                            fase. Use este modo para orientarse y consultar; no
+                            altera su recorrido activo.
+                        </div>
+                    </div>
+                    <button
+                        class="btn btn-ghost"
+                        style="
+                            background: var(--navy);
+                            color: #fff;
+                            border-color: var(--navy);
+                        "
+                        onclick="toggleMapa()"
+                    >
+                        ← Volver al recorrido
+                    </button>
+                </div>
+                <div id="mapa-cols" class="mapa-cols"></div>
+            </div>
+            <!-- NUEVO BACKDROP PARA MÓVIL -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        </div>
+
+        <!-- ============ Preview panel ============ -->
+        <div id="preview-panel">
+            <div class="prev-hdr">
+                <div class="prev-hdr-t" id="prev-title">Vista previa</div>
+                <button class="prev-close" onclick="closePrev()">×</button>
+            </div>
+            <div class="prev-body" id="prev-body"></div>
+            <div class="prev-foot">
+                <button
+                    class="btn btn-ghost"
+                    style="
+                        color: var(--slate);
+                        border-color: var(--bdr);
+                        background: var(--white);
+                    "
+                    onclick="closePrev()"
+                >
+                    Cerrar
+                </button>
+                <button
+                    class="btn"
+                    style="
+                        background: var(--navy-lt);
+                        color: #fff;
+                        border-color: var(--navy-lt);
+                    "
+                    id="prev-jump"
+                    onclick="jumpFromPrev()"
+                >
+                    Empezar desde aquí →
+                </button>
+            </div>
+        </div>
+
+        <script>
+            /* ============================================================
+   DATOS DEL PROCEDIMIENTO
+   ============================================================ */
+
+            const PHASES = [
+                "Inicio y clasificación",
+                "Competencia y postulación",
+                "Admisión y citación",
+                "Comparecencia",
+                "Resolución",
+                "Recursos y cierre",
+            ];
+
+            const ACT_LBL = { laj: "LAJ", juez: "Juez", ambos: "LAJ / Juez" };
+
+            /* STEPS: shorthand
+   ['i', texto]  → párrafo introductorio
+   ['d', texto]  → plazo
+   ['n', texto]  → nota
+   ['w', texto]  → advertencia
+   ['l', texto]  → referencia normativa
+   ['cl', h, [items]] → checklist
+*/
+
+            const STEPS = {
+                /* ========== FASE 0 — INICIO Y CLASIFICACIÓN ========== */
+
+                inicio: {
+                    ph: 0,
+                    t: "Recepción y clasificación inicial de la solicitud",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El Letrado de la Administración de Justicia (LAJ) recibe la solicitud de expediente de jurisdicción voluntaria en materia sucesoria, la registra y efectúa un primer examen para determinar a qué Capítulo del Título IV de la Ley 15/2015 corresponde.",
+                        ],
+                        [
+                            "l",
+                            'Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria (LJV). Título IV "De los expedientes de jurisdicción voluntaria relativos al Derecho sucesorio", arts. 91 a 95 LJV; normas comunes, arts. 13 a 22 LJV.',
+                        ],
+                        [
+                            "n",
+                            "El Título IV comprende tres capítulos: Capítulo I (Albaceazgo, art. 91), Capítulo II (Contadores-partidores dativos, art. 92) y Capítulo III (Aceptación y repudiación de la herencia, arts. 93 a 95). La clasificación inicial determina el itinerario procedimental completo.",
+                        ],
+                        [
+                            "cl",
+                            "Comprobaciones de registro y reparto",
+                            [
+                                "Verificar que el objeto de la solicitud es propio de jurisdicción voluntaria y no contencioso",
+                                "Identificar inequívocamente el Capítulo del Título IV aplicable al supuesto",
+                                "Comprobar acreditación documental del fallecimiento del causante (certificación del Registro Civil) y título sucesorio (testamento o declaración de herederos)",
+                                "Anotar entrada, asignar número de expediente y efectuar el reparto al órgano judicial competente",
+                            ],
+                        ],
+                    ],
+                    q: "¿A qué Capítulo del Título IV corresponde el expediente?",
+                    opts: [
+                        {
+                            t: "Capítulo I — Albaceazgo (art. 91 LJV)",
+                            l: "neutral",
+                            n: "alb_clasif",
+                        },
+                        {
+                            t: "Capítulo II — Contadores-partidores dativos (art. 92 LJV)",
+                            l: "neutral",
+                            n: "cp_clasif",
+                        },
+                        {
+                            t: "Capítulo III — Aceptación y repudiación de la herencia (arts. 93 a 95 LJV)",
+                            l: "neutral",
+                            n: "acep_clasif",
+                        },
+                    ],
+                },
+
+                alb_clasif: {
+                    ph: 0,
+                    t: "Clasificación del supuesto concreto de albaceazgo",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El artículo 91.1 LJV enumera cuatro supuestos distintos sujetos a este capítulo. La clasificación es decisiva porque el artículo 91.4 LJV distribuye la competencia funcional: la renuncia del albacea y la prórroga del plazo las resuelve el LAJ; los demás supuestos (remoción, rendición de cuentas y autorización de disposición) quedan reservados al Juez.",
+                        ],
+                        [
+                            "l",
+                            "Art. 91.1 y 91.4 LJV; en cuanto al derecho sustantivo, arts. 898, 899, 903, 904, 905, 906, 907, 910 y 911 del Código Civil.",
+                        ],
+                        [
+                            "n",
+                            "Todos los supuestos comparten el mismo fuero (art. 91.3 LJV) y la misma regla de postulación (art. 91.2 LJV). Lo único que varía es el órgano decisor.",
+                        ],
+                    ],
+                    q: "¿Cuál es el supuesto concreto solicitado?",
+                    opts: [
+                        {
+                            t: "Renuncia del albacea a su cargo (art. 91.1.1.º) — resuelve el LAJ",
+                            l: "neutral",
+                            n: "alb_comp_laj",
+                        },
+                        {
+                            t: "Prórroga del plazo del albaceazgo (art. 91.1.1.º) — resuelve el LAJ",
+                            l: "neutral",
+                            n: "alb_comp_laj",
+                        },
+                        {
+                            t: "Remoción del albacea de su cargo (art. 91.1.2.º) — resuelve el Juez",
+                            l: "neutral",
+                            n: "alb_comp_juez",
+                        },
+                        {
+                            t: "Rendición de cuentas del albacea (art. 91.1.3.º) — resuelve el Juez",
+                            l: "neutral",
+                            n: "alb_comp_juez",
+                        },
+                        {
+                            t: "Autorización para actos de disposición sobre bienes de la herencia (art. 91.1.4.º) — resuelve el Juez",
+                            l: "neutral",
+                            n: "alb_comp_juez",
+                        },
+                    ],
+                },
+
+                cp_clasif: {
+                    ph: 0,
+                    t: "Clasificación del supuesto de contador-partidor dativo",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El artículo 92.1 LJV distingue tres supuestos: (a) designación del contador-partidor dativo en los casos del art. 1057 CC; (b) renuncia del contador-partidor nombrado o prórroga del plazo fijado; y (c) aprobación de la partición realizada por el contador-partidor cuando no haya sido confirmada expresamente por todos los herederos y legatarios.",
+                        ],
+                        [
+                            "l",
+                            "Art. 92.1 y 92.3 LJV; art. 1057 CC (norma material clave); arts. 1056, 1058, 1059 y 1060 CC como normas conexas.",
+                        ],
+                        [
+                            "n",
+                            "En todos los supuestos del Capítulo II la competencia para tramitar y decidir corresponde al Letrado de la Administración de Justicia (art. 92.3 LJV); el Juez no interviene salvo por recurso.",
+                        ],
+                        [
+                            "w",
+                            "La vía del art. 92 LJV es alternativa a la notarial: tanto el Notario como el LAJ pueden, a elección del solicitante, tramitar la designación y aprobación.",
+                        ],
+                    ],
+                    q: "¿Cuál es el supuesto concreto solicitado?",
+                    opts: [
+                        {
+                            t: "Designación del contador-partidor dativo (art. 92.1.a, art. 1057 CC)",
+                            l: "neutral",
+                            n: "cp_designa_50",
+                        },
+                        {
+                            t: "Renuncia del contador-partidor o prórroga del plazo (art. 92.1.b)",
+                            l: "neutral",
+                            n: "cp_comp_renun",
+                        },
+                        {
+                            t: "Aprobación de la partición realizada por el contador-partidor (art. 92.1.c)",
+                            l: "neutral",
+                            n: "cp_comp_aprob",
+                        },
+                    ],
+                },
+
+                acep_clasif: {
+                    ph: 0,
+                    t: "Clasificación del supuesto de aceptación o repudiación",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El artículo 93 LJV delimita los supuestos en que la validez de la aceptación o repudiación de la herencia precisa autorización o aprobación judicial. La identificación del supuesto condiciona el fuero (general o especial de protección), la legitimación, la eventual intervención del Ministerio Fiscal y las consecuencias de la denegación.",
+                        ],
+                        [
+                            "l",
+                            "Arts. 93, 94 y 95 LJV. Normas conexas: arts. 166, 271, 287, 996, 1001 y 1008 CC; art. 749 LEC; arts. 1010 a 1034 CC (beneficio de inventario).",
+                        ],
+                        [
+                            "n",
+                            "La intervención preceptiva del Ministerio Fiscal (art. 94.3 LJV) se limita a los supuestos a) y b) del art. 93.2 (progenitores en nombre de menores y tutores/curadores/defensores judiciales).",
+                        ],
+                        [
+                            "w",
+                            "Si se deniega la autorización o aprobación para aceptar sin beneficio de inventario o para repudiar, por imperativo del art. 95.2 LJV sólo podrá aceptarse a beneficio de inventario. Esta consecuencia debe anticiparse al solicitante.",
+                        ],
+                    ],
+                    q: "¿Cuál es el supuesto concreto solicitado?",
+                    opts: [
+                        {
+                            t: "Progenitores que repudian la herencia o legados en nombre de hijos menores (art. 93.2.a) — interviene MF, fuero especial",
+                            l: "neutral",
+                            n: "acep_comp_esp",
+                        },
+                        {
+                            t: "Tutores, curadores representativos o defensores judiciales que aceptan sin beneficio de inventario o repudian (art. 93.2.b) — interviene MF, fuero especial",
+                            l: "neutral",
+                            n: "acep_comp_esp",
+                        },
+                        {
+                            t: "Acreedores del heredero que ha repudiado en su perjuicio, para aceptar en su nombre (art. 93.2.c y art. 1001 CC) — fuero general",
+                            l: "neutral",
+                            n: "acep_comp_gen",
+                        },
+                        {
+                            t: "Aprobación judicial de la repudiación por personas jurídicas (art. 93.3) — fuero general",
+                            l: "neutral",
+                            n: "acep_comp_gen",
+                        },
+                    ],
+                },
+
+                /* ========== FASE 1 — COMPETENCIA Y POSTULACIÓN ========== */
+
+                alb_comp_laj: {
+                    ph: 1,
+                    t: "Competencia territorial y funcional (albaceazgo — resuelve el LAJ)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Expediente de renuncia del albacea a su cargo o de prórroga del plazo del albaceazgo. El artículo 91.4 LJV reserva su resolución al Letrado de la Administración de Justicia. La competencia territorial se determina conforme al art. 91.3 LJV.",
+                        ],
+                        [
+                            "l",
+                            "Art. 91.3 y 91.4 LJV; art. 85 LOPJ (competencia objetiva del Juzgado de Primera Instancia en jurisdicción voluntaria).",
+                        ],
+                        [
+                            "cl",
+                            "Fueros competenciales (a elección del solicitante)",
+                            [
+                                "Juzgado de Primera Instancia del último domicilio o residencia habitual del causante en España",
+                                "JPI donde estuviera la mayor parte del patrimonio del causante, con independencia de su naturaleza",
+                                "JPI del lugar en que hubiera fallecido el causante, siempre que estuviera en España",
+                                "En defecto de todos los anteriores: JPI del domicilio del solicitante (fuero subsidiario)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La competencia objetiva corresponde siempre al Juzgado de Primera Instancia; dentro de este, la decisión está atribuida funcionalmente al LAJ por disposición expresa.",
+                        ],
+                    ],
+                    nx: "alb_postulacion",
+                },
+
+                alb_comp_juez: {
+                    ph: 1,
+                    t: "Competencia territorial y funcional (albaceazgo — resuelve el Juez)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Expediente de remoción del albacea, rendición de cuentas o autorización para actos de disposición sobre bienes de la herencia. Conforme al artículo 91.4 LJV, la decisión corresponde al Juez; la tramitación material sigue a cargo del LAJ en aplicación de las normas comunes (arts. 13 a 22 LJV).",
+                        ],
+                        [
+                            "l",
+                            "Art. 91.3 y 91.4 LJV; art. 903 CC (ausencia de facultades dispositivas del albacea salvo autorización).",
+                        ],
+                        [
+                            "cl",
+                            "Fueros competenciales (a elección del solicitante)",
+                            [
+                                "JPI del último domicilio o residencia habitual del causante en España",
+                                "JPI donde estuviera la mayor parte del patrimonio del causante",
+                                "JPI del lugar en que hubiera fallecido el causante, siempre que estuviera en España",
+                                "En defecto de todos los anteriores: JPI del domicilio del solicitante (fuero subsidiario)",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "Pese a que la decisión final corresponde al Juez, la tramitación procedimental (admisión, citaciones, celebración de la comparecencia, notificaciones) recae sobre el LAJ. El órgano debe organizarse para elevar al Juez la propuesta de resolución cuando proceda.",
+                        ],
+                    ],
+                    nx: "alb_postulacion",
+                },
+
+                alb_postulacion: {
+                    ph: 1,
+                    t: "Verificación de la postulación procesal (art. 91.2 LJV)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El artículo 91.2 LJV establece que en los expedientes del Capítulo I no será preceptiva la intervención de Abogado ni de Procurador cuando la cuantía del haber hereditario sea inferior a 6.000 euros.",
+                        ],
+                        [
+                            "l",
+                            "Art. 91.2 LJV. Norma común conexa: art. 14 LJV (contenido de la solicitud).",
+                        ],
+                        [
+                            "n",
+                            "La cuantía debe resultar de los documentos aportados con la solicitud o de la declaración responsable del solicitante. Si no consta con precisión, debe requerirse su aclaración antes de admitir a trámite.",
+                        ],
+                    ],
+                    q: "¿Cuál es la cuantía del haber hereditario?",
+                    opts: [
+                        {
+                            t: "Inferior a 6.000 € — no es preceptiva la intervención de Abogado ni Procurador",
+                            l: "neutral",
+                            n: "examen_solicitud",
+                        },
+                        {
+                            t: "Igual o superior a 6.000 € — intervención preceptiva de Abogado y Procurador",
+                            l: "neutral",
+                            n: "examen_solicitud",
+                        },
+                    ],
+                },
+
+                cp_designa_50: {
+                    ph: 1,
+                    t: "Verificación del porcentaje mínimo del 50 % del haber (art. 1057 CC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El artículo 1057 CC exige, como presupuesto ineludible para el nombramiento del contador-partidor dativo, que la petición sea formulada por herederos y legatarios que representen, al menos, el 50 % del haber hereditario. La falta de este presupuesto determina la inadmisión del expediente.",
+                        ],
+                        [
+                            "l",
+                            "Art. 1057.2 CC; art. 92.1.a LJV; art. 17 LJV (resolución sobre admisibilidad).",
+                        ],
+                        [
+                            "cl",
+                            "Comprobaciones previas",
+                            [
+                                "Identificar a la totalidad de herederos y legatarios llamados",
+                                "Calcular la cuota que representan los solicitantes respecto del haber hereditario",
+                                "Comprobar que los solicitantes alcanzan, en conjunto, al menos el 50 % del haber",
+                                "Exigir, en su caso, inventario o relación de bienes y cálculo justificado de los porcentajes",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "Si el testador hubiera nombrado contador-partidor y este no estuviera vacante, no procede la designación dativa, sino en su caso los demás supuestos del art. 92.1 (renuncia, prórroga o aprobación).",
+                        ],
+                    ],
+                    q: "¿Los solicitantes representan al menos el 50 % del haber hereditario?",
+                    opts: [
+                        {
+                            t: "Sí, representan al menos el 50 % del haber",
+                            l: "ok",
+                            n: "cp_comp_designa",
+                        },
+                        {
+                            t: "No alcanzan el 50 % del haber hereditario",
+                            l: "bad",
+                            n: "fin_inadmision_50",
+                        },
+                    ],
+                },
+
+                cp_comp_designa: {
+                    ph: 1,
+                    t: "Competencia territorial y funcional (contador-partidor — designación)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La tramitación y decisión del expediente corresponde al Letrado de la Administración de Justicia del Juzgado de Primera Instancia (art. 92.3 LJV). La competencia territorial sigue las reglas generales del Título IV.",
+                        ],
+                        ["l", "Arts. 92.1.a y 92.3 LJV; art. 1057 CC."],
+                        [
+                            "cl",
+                            "Fueros competenciales (a elección del solicitante)",
+                            [
+                                "JPI del último domicilio o residencia habitual del causante en España",
+                                "JPI donde estuviera la mayor parte del patrimonio del causante",
+                                "JPI del lugar del fallecimiento del causante, siempre que fuera en España",
+                                "Fuero subsidiario: JPI del domicilio del solicitante",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "El Notario dispone de competencia alternativa para esta misma designación (art. 1057.2 CC). La elección entre vía notarial y judicial corresponde al solicitante.",
+                        ],
+                    ],
+                    nx: "cp_postulacion",
+                },
+
+                cp_comp_renun: {
+                    ph: 1,
+                    t: "Competencia territorial y funcional (contador-partidor — renuncia o prórroga)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Expediente de renuncia del contador-partidor nombrado o de prórroga del plazo fijado para la realización de su encargo. Tramitación y decisión por el LAJ del Juzgado de Primera Instancia (art. 92.3 LJV).",
+                        ],
+                        ["l", "Arts. 92.1.b y 92.3 LJV."],
+                        [
+                            "cl",
+                            "Fueros competenciales",
+                            [
+                                "JPI del último domicilio o residencia habitual del causante",
+                                "JPI donde estuviera la mayor parte del patrimonio",
+                                "JPI del lugar del fallecimiento, siempre que fuera en España",
+                                "Fuero subsidiario: JPI del domicilio del solicitante",
+                            ],
+                        ],
+                    ],
+                    nx: "cp_postulacion",
+                },
+
+                cp_comp_aprob: {
+                    ph: 1,
+                    t: "Competencia territorial y funcional (contador-partidor — aprobación de la partición)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Aprobación de la partición realizada por el contador-partidor cuando no haya sido confirmada expresamente por todos los herederos y legatarios. Tramitación y decisión por el LAJ (art. 92.3 LJV).",
+                        ],
+                        [
+                            "l",
+                            "Arts. 92.1.c y 92.3 LJV; art. 1057.2, in fine, CC.",
+                        ],
+                        [
+                            "n",
+                            "Si la partición ha sido confirmada expresamente por todos los herederos y legatarios, NO es necesaria la aprobación del LAJ y el expediente no procede.",
+                        ],
+                        [
+                            "cl",
+                            "Fueros competenciales",
+                            [
+                                "JPI del último domicilio o residencia habitual del causante",
+                                "JPI donde estuviera la mayor parte del patrimonio",
+                                "JPI del lugar del fallecimiento, siempre que fuera en España",
+                                "Fuero subsidiario: JPI del domicilio del solicitante",
+                            ],
+                        ],
+                    ],
+                    nx: "cp_postulacion",
+                },
+
+                cp_postulacion: {
+                    ph: 1,
+                    t: "Verificación de la postulación procesal (art. 92.2 LJV)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Regla idéntica a la del albaceazgo: no será preceptiva la intervención de Abogado ni Procurador cuando la cuantía del haber hereditario sea inferior a 6.000 euros.",
+                        ],
+                        ["l", "Art. 92.2 LJV."],
+                    ],
+                    q: "¿Cuál es la cuantía del haber hereditario?",
+                    opts: [
+                        {
+                            t: "Inferior a 6.000 € — no preceptiva la intervención de Abogado ni Procurador",
+                            l: "neutral",
+                            n: "examen_solicitud",
+                        },
+                        {
+                            t: "Igual o superior a 6.000 € — intervención preceptiva de Abogado y Procurador",
+                            l: "neutral",
+                            n: "examen_solicitud",
+                        },
+                    ],
+                },
+
+                acep_comp_esp: {
+                    ph: 1,
+                    t: "Competencia territorial ESPECIAL de protección (menores y personas con medidas de apoyo)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Cuando sea llamado a la herencia un menor o una persona con medidas judiciales de apoyo a personas con discapacidad, el artículo 94.1, párrafo segundo, LJV atribuye la competencia al Juzgado de Primera Instancia del lugar donde estos residan. Este fuero prevalece sobre el fuero general del art. 94.1 párrafo primero.",
+                        ],
+                        [
+                            "l",
+                            "Art. 94.1, párrafo segundo, LJV; art. 749 LEC (fundamento de la intervención preceptiva del MF); arts. 166, 271 y 287 CC.",
+                        ],
+                        [
+                            "w",
+                            "En estos supuestos siempre es competente el Juez (arts. 93.2 y 95.1 LJV), aunque la tramitación sea responsabilidad del LAJ. La intervención del Ministerio Fiscal es preceptiva (art. 94.3 LJV).",
+                        ],
+                        [
+                            "cl",
+                            "Comprobaciones competenciales",
+                            [
+                                "Acreditar la condición de menor o de persona con medidas judiciales de apoyo",
+                                "Determinar el lugar de residencia efectiva del menor o de la persona protegida",
+                                "Si la residencia está en distinto partido judicial que el domicilio del causante, prevalece el fuero de protección",
+                                "Confirmar que no concurre remisión a otro órgano por razones orgánicas",
+                            ],
+                        ],
+                    ],
+                    nx: "acep_postulacion",
+                },
+
+                acep_comp_gen: {
+                    ph: 1,
+                    t: "Competencia territorial GENERAL (aceptación o repudiación — acreedores y personas jurídicas)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El artículo 94.1, párrafo primero, LJV establece el fuero general para los expedientes del Capítulo III cuando no resulte aplicable el fuero especial de protección del párrafo segundo. La competencia para decidir corresponde al Juez (art. 95.1 LJV).",
+                        ],
+                        [
+                            "l",
+                            "Art. 94.1 LJV; art. 95.1 LJV; art. 1001 CC (para la acción del acreedor del heredero repudiante); art. 93.3 LJV (para personas jurídicas).",
+                        ],
+                        [
+                            "cl",
+                            "Fueros competenciales",
+                            [
+                                "JPI del último domicilio del causante",
+                                "En su defecto, JPI de la última residencia del causante",
+                                "Si el causante tuvo su último domicilio en país extranjero: JPI del lugar de su último domicilio en España o donde estuviera la mayor parte de sus bienes, a elección del solicitante",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "En estos dos supuestos (93.2.c acreedores y 93.3 personas jurídicas) NO es preceptiva la intervención del Ministerio Fiscal.",
+                        ],
+                    ],
+                    nx: "acep_postulacion",
+                },
+
+                acep_postulacion: {
+                    ph: 1,
+                    t: "Verificación de la postulación procesal (art. 94.4 LJV)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Regla idéntica a la del albaceazgo y los contadores-partidores: la intervención de Abogado y Procurador no es preceptiva cuando la cuantía del haber hereditario sea inferior a 6.000 euros.",
+                        ],
+                        ["l", "Art. 94.4 LJV."],
+                    ],
+                    q: "¿Cuál es la cuantía del haber hereditario?",
+                    opts: [
+                        {
+                            t: "Inferior a 6.000 € — no preceptiva la intervención de Abogado ni Procurador",
+                            l: "neutral",
+                            n: "examen_solicitud",
+                        },
+                        {
+                            t: "Igual o superior a 6.000 € — intervención preceptiva de Abogado y Procurador",
+                            l: "neutral",
+                            n: "examen_solicitud",
+                        },
+                    ],
+                },
+
+                /* ========== FASE 2 — ADMISIÓN Y CITACIÓN ========== */
+
+                examen_solicitud: {
+                    ph: 2,
+                    t: "Examen de la solicitud inicial (art. 14 LJV)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ examina la solicitud conforme al artículo 14 LJV, comprobando si reúne los requisitos de forma y contenido exigidos y si se acompañan los documentos necesarios. De este examen depende que se admita a trámite directamente o se requiera al solicitante la subsanación.",
+                        ],
+                        ["l", "Arts. 14 y 17 LJV (normas comunes)."],
+                        [
+                            "cl",
+                            "Requisitos del art. 14 LJV (contenido de la solicitud)",
+                            [
+                                "Datos y circunstancias de identificación del solicitante",
+                                "Indicación del expediente que se promueve y del objeto concreto",
+                                "Exposición ordenada de los hechos y fundamentos jurídicos",
+                                "Petición que se formula, con claridad y precisión",
+                                "Documentos que se acompañan (certificado de defunción, certificado del Registro de Actos de Última Voluntad, testamento o declaración de herederos, acreditación del cargo cuando proceda, etc.)",
+                                "Identificación de los demás interesados que deban ser citados conforme al art. 17.3 LJV",
+                            ],
+                        ],
+                    ],
+                    q: "¿La solicitud cumple los requisitos del art. 14 LJV?",
+                    opts: [
+                        {
+                            t: "Sí, la solicitud cumple íntegramente los requisitos — procede la admisión",
+                            l: "ok",
+                            n: "admision_tramite",
+                        },
+                        {
+                            t: "No cumple o presenta defectos subsanables — procede requerimiento",
+                            l: "warn",
+                            n: "subsanacion",
+                        },
+                    ],
+                },
+
+                subsanacion: {
+                    ph: 2,
+                    t: "Requerimiento de subsanación de defectos",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ dicta diligencia requiriendo al solicitante para que subsane los defectos detectados en la solicitud (defectos de postulación, de identificación de interesados, de documentación acreditativa, etc.). El plazo habitual es de 5 días, aplicable por remisión del art. 14 LJV a las normas supletorias de la LEC (art. 231 LEC en cuanto a subsanación de actos procesales).",
+                        ],
+                        [
+                            "d",
+                            "Plazo orientativo: 5 días hábiles desde la notificación del requerimiento.",
+                        ],
+                        [
+                            "l",
+                            "Arts. 14 y 17.1 LJV; art. 231 LEC (subsanación) en cuanto supletorio.",
+                        ],
+                        [
+                            "w",
+                            "La inactividad del solicitante dentro del plazo señalado determina la inadmisión y el archivo del expediente, sin perjuicio de que pueda promoverse de nuevo.",
+                        ],
+                    ],
+                    q: "¿Se ha subsanado en plazo?",
+                    opts: [
+                        {
+                            t: "Sí, se han subsanado los defectos en plazo",
+                            l: "ok",
+                            n: "admision_tramite",
+                        },
+                        {
+                            t: "No se han subsanado en plazo o la subsanación resulta insuficiente",
+                            l: "bad",
+                            n: "fin_archivo_subsanacion",
+                        },
+                    ],
+                },
+
+                admision_tramite: {
+                    ph: 2,
+                    t: "Decreto de admisión a trámite (art. 17 LJV)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ dicta decreto admitiendo el expediente a trámite, acordando las actuaciones que procedan conforme a las normas comunes y específicas del capítulo correspondiente. En particular, identifica a los interesados que han de ser citados y cita al solicitante a la comparecencia que señale (art. 18 LJV).",
+                        ],
+                        [
+                            "l",
+                            "Art. 17 LJV (admisión a trámite y decisión sobre la práctica de las actuaciones).",
+                        ],
+                        [
+                            "cl",
+                            "Contenido mínimo del decreto de admisión",
+                            [
+                                "Declaración formal de admisión a trámite",
+                                "Identificación de los interesados que han de ser citados",
+                                "Acuerdo sobre la práctica de las actuaciones iniciales",
+                                "Señalamiento de día y hora para la comparecencia prevista en el art. 18 LJV",
+                                "En supuestos del art. 93.2.a) y b) LJV: traslado al Ministerio Fiscal para que informe e intervenga",
+                            ],
+                        ],
+                    ],
+                    nx: "citacion_interesados",
+                },
+
+                citacion_interesados: {
+                    ph: 2,
+                    t: "Citación de los interesados (arts. 17.3 y 18 LJV)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ cita a todos aquellos que, según la Ley y el caso, deban intervenir en el expediente y puedan resultar afectados por la resolución. La citación se efectúa con al menos 15 días de antelación a la comparecencia (art. 18.1 LJV).",
+                        ],
+                        [
+                            "d",
+                            "Antelación mínima de la citación a los interesados: 15 días respecto a la comparecencia.",
+                        ],
+                        [
+                            "l",
+                            "Art. 17.3 LJV (identificación de interesados); art. 18.1 LJV (plazo de citación).",
+                        ],
+                        [
+                            "cl",
+                            "Interesados a citar según el tipo de expediente",
+                            [
+                                "Albaceazgo: albacea afectado, herederos y legatarios",
+                                "Contadores-partidores: testador si procede, demás herederos y legatarios no solicitantes",
+                                "Aceptación/repudiación por progenitores: el otro progenitor, si no comparece con el solicitante",
+                                "Aceptación/repudiación por tutor/curador/defensor judicial: demás interesados en la herencia",
+                                "Acreedores del heredero repudiante: heredero repudiante y demás interesados en la herencia",
+                                "Personas jurídicas: órgano de representación y fiscal, en su caso",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La citación deberá expresar objeto del expediente, lugar, fecha y hora de la comparecencia, y la advertencia de las consecuencias de la incomparecencia.",
+                        ],
+                    ],
+                    nx: "mf_check",
+                },
+
+                mf_check: {
+                    ph: 2,
+                    t: "Verificación de la intervención preceptiva del Ministerio Fiscal (art. 94.3 LJV)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El artículo 94.3 LJV limita la intervención preceptiva del Ministerio Fiscal a los supuestos a) y b) del artículo 93.2: progenitores que repudian en nombre de menores y tutores/curadores/defensores judiciales que aceptan sin beneficio de inventario o repudian. En el resto de expedientes del Título IV la intervención del MF no es, con carácter general, preceptiva.",
+                        ],
+                        [
+                            "l",
+                            "Art. 94.3 LJV; art. 749 LEC; art. 166, 271 y 287 CC (fundamentos materiales de la protección).",
+                        ],
+                        [
+                            "n",
+                            "Aun cuando la intervención no sea preceptiva, el MF podrá actuar siempre que lo considere oportuno en defensa de la legalidad o del interés general (art. 3 EOMF).",
+                        ],
+                    ],
+                    q: "¿Es preceptiva la intervención del Ministerio Fiscal en este expediente?",
+                    opts: [
+                        {
+                            t: "Sí — supuesto del art. 93.2.a o 93.2.b LJV (menores, tutores, curadores o defensores judiciales)",
+                            l: "warn",
+                            n: "mf_emplazamiento",
+                        },
+                        {
+                            t: "No — cualquier otro supuesto del Título IV",
+                            l: "neutral",
+                            n: "senalamiento_comparecencia",
+                        },
+                    ],
+                },
+
+                mf_emplazamiento: {
+                    ph: 2,
+                    t: "Emplazamiento del Ministerio Fiscal",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ da traslado al Ministerio Fiscal para que informe y, en su caso, intervenga en la comparecencia. El emplazamiento se verifica con todas las actuaciones practicadas hasta el momento y se le cita a la comparecencia con idéntica antelación que al resto de interesados.",
+                        ],
+                        ["l", "Art. 94.3 LJV; art. 749 LEC."],
+                        [
+                            "cl",
+                            "Actuaciones a practicar con el MF",
+                            [
+                                "Traslado formal del expediente",
+                                "Citación para la comparecencia",
+                                "Solicitud de informe previo en los casos del art. 93.2.a y b, cuando proceda",
+                                "Constancia en autos de la intervención del MF en todas las actuaciones",
+                            ],
+                        ],
+                    ],
+                    nx: "senalamiento_comparecencia",
+                },
+
+                senalamiento_comparecencia: {
+                    ph: 2,
+                    t: "Señalamiento de la comparecencia (art. 18 LJV)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Una vez admitido el expediente y practicadas las citaciones, el LAJ fija día y hora para la celebración de la comparecencia. En la misma resolución puede acordar la práctica de las pruebas o actuaciones que estime necesarias.",
+                        ],
+                        ["l", "Art. 18 LJV."],
+                        [
+                            "n",
+                            "La comparecencia se celebra con la presencia del LAJ o, en los supuestos en que la decisión corresponda al Juez (albaceazgo salvo renuncia/prórroga; toda la aceptación/repudiación), con la presencia del órgano que debe resolver.",
+                        ],
+                    ],
+                    nx: "celebracion_comparecencia",
+                },
+
+                /* ========== FASE 3 — COMPARECENCIA ========== */
+
+                celebracion_comparecencia: {
+                    ph: 3,
+                    t: "Celebración de la comparecencia (art. 18 LJV)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "En el día y hora señalados se celebra la comparecencia con asistencia del solicitante, los interesados citados y, en su caso, el Ministerio Fiscal. Se oyen las alegaciones, se examina la documentación aportada y se practican las pruebas admitidas. El resultado de la comparecencia condiciona la continuación del expediente.",
+                        ],
+                        ["l", "Art. 18 LJV."],
+                        [
+                            "cl",
+                            "Actuaciones a practicar en la comparecencia",
+                            [
+                                "Comprobación de asistencia y debida citación",
+                                "Ratificación del solicitante y audiencia de los demás interesados",
+                                "Alegaciones y, en su caso, oposición formalizada",
+                                "Práctica de pruebas (documental, testifical, pericial)",
+                                "Informe del Ministerio Fiscal cuando sea preceptivo",
+                                "Levantamiento de acta suscrita por el LAJ",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "El artículo 17.3, párrafo segundo, LJV establece que, cuando se formule oposición que haga contencioso el expediente, se sobreseerá el mismo, quedando a salvo el derecho de los interesados a promoverlo en la vía judicial contenciosa que corresponda.",
+                        ],
+                    ],
+                    q: "¿Qué resultado ha tenido la comparecencia?",
+                    opts: [
+                        {
+                            t: "Incomparecencia injustificada del solicitante",
+                            l: "bad",
+                            n: "fin_archivo_incomparecencia",
+                        },
+                        {
+                            t: "Comparecencia sin oposición — procede dictar resolución",
+                            l: "ok",
+                            n: "resolucion_tipo",
+                        },
+                        {
+                            t: "Oposición planteada pero no hace contencioso el expediente — procede dictar resolución",
+                            l: "warn",
+                            n: "resolucion_tipo",
+                        },
+                        {
+                            t: "Oposición que hace contencioso el expediente — sobreseimiento (art. 17.3 LJV)",
+                            l: "bad",
+                            n: "fin_remision_contencioso",
+                        },
+                    ],
+                },
+
+                /* ========== FASE 4 — RESOLUCIÓN ========== */
+
+                resolucion_tipo: {
+                    ph: 4,
+                    t: "Identificación del tipo de resolución a dictar",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "En función del supuesto tramitado (elegido al inicio del expediente), la resolución adopta forma de decreto del LAJ o de auto del Juez, y se rige por un régimen específico. Confirme el tipo que corresponde para encauzar la resolución.",
+                        ],
+                        [
+                            "l",
+                            "Art. 19 LJV (resolución); art. 91.4 LJV (albaceazgo); art. 92.3 LJV (contador-partidor); art. 95 LJV (aceptación/repudiación).",
+                        ],
+                        [
+                            "n",
+                            "El sidebar-mapa marcará como inalcanzables los supuestos incompatibles con su recorrido actual: basta elegir el que usted venía tramitando.",
+                        ],
+                    ],
+                    q: "¿Qué tipo de resolución corresponde dictar?",
+                    opts: [
+                        {
+                            t: "Decreto del LAJ — Albaceazgo: renuncia o prórroga del albacea (art. 91.4 LJV)",
+                            l: "neutral",
+                            n: "resolucion_alb_laj",
+                        },
+                        {
+                            t: "Auto del Juez — Albaceazgo: remoción, rendición de cuentas o autorización de disposición (art. 91.4 LJV)",
+                            l: "neutral",
+                            n: "resolucion_alb_juez",
+                        },
+                        {
+                            t: "Decreto del LAJ — Contador-partidor: designación dativa (art. 92.1.a)",
+                            l: "neutral",
+                            n: "resolucion_cp_designa",
+                        },
+                        {
+                            t: "Decreto del LAJ — Contador-partidor: renuncia o prórroga (art. 92.1.b)",
+                            l: "neutral",
+                            n: "resolucion_cp_renun",
+                        },
+                        {
+                            t: "Decreto del LAJ — Contador-partidor: aprobación de la partición (art. 92.1.c)",
+                            l: "neutral",
+                            n: "resolucion_cp_aprob",
+                        },
+                        {
+                            t: "Auto del Juez — Aceptación o repudiación de la herencia (arts. 93 a 95 LJV)",
+                            l: "neutral",
+                            n: "resolucion_acep",
+                        },
+                    ],
+                },
+
+                resolucion_alb_laj: {
+                    ph: 4,
+                    t: "Decreto del LAJ (albaceazgo: renuncia o prórroga)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            'El LAJ dicta decreto resolviendo sobre la renuncia del albacea o la prórroga del plazo del albaceazgo. Para la renuncia debe concurrir "justa causa" (art. 898 CC, que consagra la obligatoriedad del cargo aceptado salvo causa justificada). Para la prórroga, deberá ponderarse la imposibilidad material de culminar el encargo en el plazo legal (art. 904 CC) o señalado (art. 905 CC).',
+                        ],
+                        [
+                            "l",
+                            "Art. 91.4 LJV; art. 19 LJV (contenido de la resolución); arts. 898, 904, 905, 906 y 910 CC.",
+                        ],
+                        [
+                            "cl",
+                            "Contenido del decreto",
+                            [
+                                "Antecedentes de hecho (resumen de las actuaciones)",
+                                "Fundamentos de derecho (arts. 91 LJV y disposiciones del CC aplicables)",
+                                "Parte dispositiva (estimación o desestimación de la renuncia/prórroga)",
+                                "Efectos (fecha de eficacia, extensión temporal de la prórroga en su caso)",
+                                "Régimen de recursos (art. 20 LJV)",
+                                "Notificación a todos los comparecidos",
+                            ],
+                        ],
+                    ],
+                    q: "¿Sentido de la resolución?",
+                    opts: [
+                        {
+                            t: "Se estima la renuncia o la prórroga — decreto favorable",
+                            l: "ok",
+                            n: "notificacion_recursos",
+                        },
+                        {
+                            t: "Se desestima la solicitud — decreto denegatorio",
+                            l: "warn",
+                            n: "notificacion_recursos",
+                        },
+                    ],
+                },
+
+                resolucion_alb_juez: {
+                    ph: 4,
+                    t: "Auto del Juez (albaceazgo: remoción, rendición de cuentas o autorización de disposición)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez dicta auto resolviendo sobre la remoción del albacea, la rendición de cuentas o la autorización para actos de disposición sobre bienes de la herencia. Debe valorar la concurrencia de causa legal o justa para la remoción (art. 910 CC), la regularidad de las cuentas rendidas (art. 907 CC) o la necesidad y justificación del acto dispositivo proyectado (art. 903 CC).",
+                        ],
+                        [
+                            "l",
+                            "Art. 91.4 LJV; art. 19 LJV; arts. 903, 907, 910 y 911 CC.",
+                        ],
+                        [
+                            "cl",
+                            "Contenido del auto",
+                            [
+                                "Antecedentes y fundamentos",
+                                "Parte dispositiva (estimación o desestimación)",
+                                "En caso de rendición de cuentas: aprobación, reparos o requerimiento de complemento",
+                                "En caso de autorización de disposición: condiciones o salvaguardas patrimoniales",
+                                "Régimen de recursos (art. 20 LJV)",
+                                "Notificación",
+                            ],
+                        ],
+                    ],
+                    q: "¿Sentido del auto?",
+                    opts: [
+                        {
+                            t: "Estimación de la pretensión (removido, cuentas aprobadas o autorización concedida)",
+                            l: "ok",
+                            n: "notificacion_recursos",
+                        },
+                        {
+                            t: "Desestimación de la pretensión",
+                            l: "warn",
+                            n: "notificacion_recursos",
+                        },
+                    ],
+                },
+
+                resolucion_cp_designa: {
+                    ph: 4,
+                    t: "Decreto del LAJ (designación del contador-partidor dativo)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ dicta decreto sobre la designación del contador-partidor dativo en los términos del art. 1057 CC. Si procede, nombra a la persona que habrá de realizar la partición, fija plazo para el encargo y acuerda su aceptación y juramento o promesa del cargo.",
+                        ],
+                        ["l", "Art. 92.1.a y 92.3 LJV; art. 1057 CC."],
+                        [
+                            "cl",
+                            "Contenido del decreto",
+                            [
+                                "Constancia de la representación del ≥ 50 % del haber por los solicitantes",
+                                "Nombramiento del contador-partidor dativo (por insaculación, designación directa razonada o conforme a lista de peritos)",
+                                "Fijación del plazo para ejecutar el encargo",
+                                "Acuerdo sobre aceptación del cargo y toma de posesión",
+                                "Régimen de recursos (art. 20 LJV)",
+                            ],
+                        ],
+                    ],
+                    q: "¿Sentido del decreto?",
+                    opts: [
+                        {
+                            t: "Se designa contador-partidor dativo",
+                            l: "ok",
+                            n: "notificacion_recursos",
+                        },
+                        {
+                            t: "No procede la designación (no concurren los presupuestos del art. 1057 CC)",
+                            l: "bad",
+                            n: "notificacion_recursos",
+                        },
+                    ],
+                },
+
+                resolucion_cp_renun: {
+                    ph: 4,
+                    t: "Decreto del LAJ (renuncia o prórroga del plazo del contador-partidor)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ resuelve sobre la renuncia del contador-partidor nombrado o sobre la prórroga del plazo fijado para su encargo. Debe valorarse la justificación de la renuncia (paralelismo con art. 898 CC) o de la prórroga (paralelismo con art. 906 CC).",
+                        ],
+                        ["l", "Art. 92.1.b y 92.3 LJV."],
+                    ],
+                    q: "¿Sentido del decreto?",
+                    opts: [
+                        {
+                            t: "Estimación (se acepta la renuncia o se concede la prórroga)",
+                            l: "ok",
+                            n: "notificacion_recursos",
+                        },
+                        {
+                            t: "Desestimación",
+                            l: "warn",
+                            n: "notificacion_recursos",
+                        },
+                    ],
+                },
+
+                resolucion_cp_aprob: {
+                    ph: 4,
+                    t: "Decreto del LAJ (aprobación de la partición)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ resuelve sobre la aprobación de la partición realizada por el contador-partidor dativo cuando no ha sido confirmada expresamente por todos los herederos y legatarios (art. 1057.2 CC). La aprobación requiere verificar que la partición se ajusta a Derecho y respeta los derechos hereditarios.",
+                        ],
+                        ["l", "Art. 92.1.c y 92.3 LJV; art. 1057.2 CC."],
+                    ],
+                    q: "¿Sentido del decreto?",
+                    opts: [
+                        {
+                            t: "Se aprueba la partición",
+                            l: "ok",
+                            n: "notificacion_recursos",
+                        },
+                        {
+                            t: "Se deniega la aprobación (la partición no se ajusta a Derecho o lesiona derechos hereditarios)",
+                            l: "warn",
+                            n: "notificacion_recursos",
+                        },
+                    ],
+                },
+
+                resolucion_acep: {
+                    ph: 4,
+                    t: "Auto del Juez (aceptación o repudiación — arts. 95.1 y 95.2 LJV)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez, teniendo en cuenta la justificación ofrecida y valorando su conveniencia a los intereses de los llamados a la herencia, resuelve concediendo o denegando la autorización o aprobación solicitada (art. 95.1 LJV). La denegación produce un efecto legal específico previsto en el art. 95.2 LJV.",
+                        ],
+                        [
+                            "l",
+                            "Art. 95.1 y 95.2 LJV; en materia sustantiva, arts. 1010 a 1034 CC (beneficio de inventario).",
+                        ],
+                        [
+                            "w",
+                            "Art. 95.2 LJV: si se denegare la autorización o aprobación solicitada para aceptar sin beneficio de inventario o para repudiar la herencia, esta sólo podrá ser aceptada a beneficio de inventario. Este efecto debe hacerse constar expresamente en el auto y notificarse al solicitante.",
+                        ],
+                        [
+                            "cl",
+                            "Contenido del auto",
+                            [
+                                "Valoración de la justificación ofrecida y de los intereses de los llamados",
+                                "Informe del Ministerio Fiscal si su intervención ha sido preceptiva",
+                                "Parte dispositiva expresa (concesión o denegación)",
+                                "En caso de denegación para aceptar sin beneficio de inventario o repudiar: advertencia del efecto del art. 95.2 LJV",
+                                "Régimen de recursos (art. 95.3 LJV: apelación con efectos suspensivos)",
+                            ],
+                        ],
+                    ],
+                    q: "¿Sentido del auto?",
+                    opts: [
+                        {
+                            t: "Se concede la autorización o aprobación",
+                            l: "ok",
+                            n: "notificacion_recursos",
+                        },
+                        {
+                            t: "Se deniega — la herencia sólo podrá aceptarse a beneficio de inventario (art. 95.2 LJV)",
+                            l: "warn",
+                            n: "notificacion_recursos",
+                        },
+                    ],
+                },
+
+                /* ========== FASE 5 — RECURSOS Y CIERRE ========== */
+
+                notificacion_recursos: {
+                    ph: 5,
+                    t: "Notificación de la resolución y régimen de recursos (arts. 20 y 95.3 LJV)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Dictada la resolución definitiva, el LAJ la notifica a todos los comparecidos y al Ministerio Fiscal cuando haya intervenido. Contra la resolución cabe recurso de revisión o apelación según el régimen del art. 20 LJV, con la especialidad del art. 95.3 LJV para los expedientes del Capítulo III.",
+                        ],
+                        [
+                            "d",
+                            "Plazo para interponer el recurso: 20 días desde la notificación de la resolución (apelación, art. 458.1 LEC por remisión del art. 20 LJV).",
+                        ],
+                        [
+                            "l",
+                            "Art. 20 LJV (régimen de recursos en jurisdicción voluntaria); art. 95.3 LJV (apelación con efectos suspensivos en Cap. III); arts. 455 y siguientes LEC.",
+                        ],
+                        [
+                            "w",
+                            "Especialidad del Capítulo III: las resoluciones en materia de aceptación/repudiación son recurribles en apelación CON EFECTOS SUSPENSIVOS (art. 95.3 LJV). En los Capítulos I y II rige el régimen general del art. 20 LJV (sin efectos suspensivos salvo que expresamente se acuerde).",
+                        ],
+                        [
+                            "cl",
+                            "Régimen aplicable",
+                            [
+                                "Capítulo I (albaceazgo, todas las decisiones): régimen general del art. 20 LJV",
+                                "Capítulo II (contadores-partidores): régimen general del art. 20 LJV",
+                                "Capítulo III (aceptación/repudiación): régimen especial del art. 95.3 LJV — apelación con efectos suspensivos",
+                            ],
+                        ],
+                    ],
+                    q: "¿Se interpone recurso contra la resolución?",
+                    opts: [
+                        {
+                            t: "No se interpone recurso en plazo — la resolución deviene firme",
+                            l: "ok",
+                            n: "fin_firmeza",
+                        },
+                        {
+                            t: "Sí, se interpone recurso de apelación",
+                            l: "neutral",
+                            n: "tramitacion_apelacion",
+                        },
+                    ],
+                },
+
+                tramitacion_apelacion: {
+                    ph: 5,
+                    t: "Tramitación del recurso de apelación",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ da curso al recurso conforme al art. 20 LJV y a los arts. 455 y siguientes LEC. Se da traslado a las demás partes por el plazo legal, se resuelven las impugnaciones y oposiciones y se elevan las actuaciones a la Audiencia Provincial.",
+                        ],
+                        [
+                            "l",
+                            "Art. 20 LJV; arts. 455 y siguientes LEC; art. 95.3 LJV (efectos suspensivos Cap. III).",
+                        ],
+                        [
+                            "cl",
+                            "Trámites del recurso",
+                            [
+                                "Admisión a trámite del recurso por el LAJ",
+                                "Traslado a las demás partes para oposición o impugnación",
+                                "Elevación de actuaciones a la Audiencia Provincial",
+                                "En Cap. III: la resolución queda sin ejecutar mientras no se resuelva el recurso (efectos suspensivos)",
+                                "Notificación de la sentencia de segunda instancia",
+                            ],
+                        ],
+                    ],
+                    q: "¿Cuál ha sido el resultado del recurso?",
+                    opts: [
+                        {
+                            t: "Sentencia de la Audiencia estimatoria (total o parcial)",
+                            l: "neutral",
+                            n: "fin_apelacion_estimada",
+                        },
+                        {
+                            t: "Sentencia de la Audiencia desestimatoria",
+                            l: "ok",
+                            n: "fin_apelacion_desestimada",
+                        },
+                        {
+                            t: "Desistimiento del recurrente",
+                            l: "ok",
+                            n: "fin_apelacion_desistimiento",
+                        },
+                    ],
+                },
+
+                /* ========== DESENLACES (NODOS FINALES) ========== */
+
+                fin_inadmision_50: {
+                    ph: 1,
+                    t: "INADMISIÓN por falta del mínimo del 50 % del haber",
+                    ac: "laj",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "El expediente de designación del contador-partidor dativo (art. 92.1.a LJV) exige, por remisión al art. 1057 CC, que los solicitantes representen al menos el 50 % del haber hereditario. Al no cumplirse este presupuesto, el LAJ dicta decreto de inadmisión.",
+                        ],
+                        ["l", "Arts. 1057.2 CC, 92.1.a LJV, 17 LJV."],
+                        [
+                            "n",
+                            "La inadmisión por este motivo no impide promover de nuevo el expediente si, con posterioridad, los solicitantes consiguen alcanzar el porcentaje legal.",
+                        ],
+                        [
+                            "w",
+                            "Alternativamente, los herederos mayores de edad que no se entiendan pueden acudir al juicio de división judicial de la herencia (arts. 782 y siguientes LEC).",
+                        ],
+                    ],
+                },
+
+                fin_archivo_subsanacion: {
+                    ph: 2,
+                    t: "ARCHIVO por falta de subsanación en plazo",
+                    ac: "laj",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "Transcurrido el plazo concedido sin que el solicitante haya subsanado los defectos advertidos en la solicitud, el LAJ dicta decreto de archivo del expediente por inadmisión.",
+                        ],
+                        [
+                            "l",
+                            "Arts. 14 y 17 LJV; art. 231 LEC (subsanación) como norma supletoria.",
+                        ],
+                        [
+                            "n",
+                            "El archivo por esta causa no produce cosa juzgada: puede promoverse nuevamente el expediente con la solicitud correctamente formulada y los documentos pertinentes.",
+                        ],
+                    ],
+                },
+
+                fin_archivo_incomparecencia: {
+                    ph: 3,
+                    t: "ARCHIVO por incomparecencia injustificada del solicitante",
+                    ac: "laj",
+                    end: "neutral",
+                    c: [
+                        [
+                            "i",
+                            "La incomparecencia injustificada del solicitante a la comparecencia señalada determina el archivo del expediente, al faltar el impulso procesal imprescindible en los expedientes de jurisdicción voluntaria.",
+                        ],
+                        [
+                            "l",
+                            "Art. 18 LJV en conexión con los principios de impulso a instancia del art. 17 LJV.",
+                        ],
+                        [
+                            "n",
+                            "Cabe nueva solicitud si subsisten los presupuestos materiales. El archivo por esta causa no prejuzga el fondo del asunto.",
+                        ],
+                    ],
+                },
+
+                fin_remision_contencioso: {
+                    ph: 3,
+                    t: "SOBRESEIMIENTO por oposición — remisión a la vía contenciosa",
+                    ac: "laj",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "Planteada oposición que hace contencioso el expediente, el LAJ o el Juez, según corresponda, dicta resolución acordando el sobreseimiento y dejando a salvo el derecho de los interesados a acudir a la vía judicial contenciosa que resulte pertinente.",
+                        ],
+                        ["l", "Art. 17.3, párrafo segundo, LJV."],
+                        [
+                            "cl",
+                            "Vías contenciosas alternativas",
+                            [
+                                "Juicio declarativo ordinario o verbal según cuantía y materia",
+                                "División judicial de la herencia: arts. 782 y siguientes LEC",
+                                "Impugnación de partición o de cuentas del albacea por procedimiento declarativo",
+                                "Acciones derivadas de la protección de menores: procedimientos del Título I del Libro IV LEC",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La resolución de sobreseimiento no produce efecto de cosa juzgada material; los interesados conservan íntegra su posición jurídica en la vía contenciosa.",
+                        ],
+                    ],
+                },
+
+                fin_firmeza: {
+                    ph: 5,
+                    t: "RESOLUCIÓN FIRME — no recurrida",
+                    ac: "laj",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "Transcurrido el plazo para recurrir sin interposición de recurso, la resolución deviene firme. El LAJ procede a declarar la firmeza y a realizar las actuaciones de ejecución, comunicación y archivo que correspondan.",
+                        ],
+                        [
+                            "l",
+                            "Art. 20 LJV; art. 207 LEC (cosa juzgada formal) en cuanto supletorio; art. 19 LJV (efectos de la resolución).",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones de cierre",
+                            [
+                                "Diligencia de constancia de la firmeza",
+                                "Expedición de testimonios para los interesados",
+                                "Comunicaciones a Registros (Civil, Mercantil, de la Propiedad) cuando proceda",
+                                "Liquidación de derechos arancelarios y tasas",
+                                "Remisión del expediente a archivo",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Efectos según el expediente tramitado: los constantes en la parte dispositiva de la resolución firme (aceptación o denegación, nombramientos, autorizaciones, aprobaciones, etc.).",
+                        ],
+                    ],
+                },
+
+                fin_apelacion_estimada: {
+                    ph: 5,
+                    t: "APELACIÓN ESTIMADA — sentencia de la Audiencia Provincial",
+                    ac: "laj",
+                    end: "neutral",
+                    c: [
+                        [
+                            "i",
+                            "La Audiencia Provincial estima el recurso de apelación, total o parcialmente. Las actuaciones se devuelven al Juzgado de origen para la ejecución de lo resuelto en segunda instancia.",
+                        ],
+                        ["l", "Arts. 455 y siguientes LEC; art. 20 LJV."],
+                        [
+                            "cl",
+                            "Actuaciones tras la estimación",
+                            [
+                                "Recepción de la sentencia de segunda instancia",
+                                "Notificación a las partes y al Ministerio Fiscal si intervino",
+                                "Ejecución de lo resuelto en su caso",
+                                "Comunicaciones a Registros y archivo",
+                            ],
+                        ],
+                    ],
+                },
+
+                fin_apelacion_desestimada: {
+                    ph: 5,
+                    t: "APELACIÓN DESESTIMADA — resolución de instancia confirmada",
+                    ac: "laj",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "La Audiencia Provincial desestima el recurso de apelación y confirma la resolución dictada en primera instancia, que deviene firme. Se procede a su ejecución y archivo.",
+                        ],
+                        ["l", "Arts. 455 y siguientes LEC; art. 20 LJV."],
+                        [
+                            "cl",
+                            "Actuaciones de cierre",
+                            [
+                                "Recepción de la sentencia de segunda instancia y diligencia de firmeza",
+                                "Expedición de testimonios para los interesados",
+                                "Comunicaciones a Registros (Civil, Mercantil, de la Propiedad) cuando proceda",
+                                "Ejecución de lo resuelto en la instancia",
+                                "Archivo definitivo del expediente",
+                            ],
+                        ],
+                    ],
+                },
+
+                fin_apelacion_desistimiento: {
+                    ph: 5,
+                    t: "DESISTIMIENTO del recurso — resolución firme",
+                    ac: "laj",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El recurrente desiste del recurso de apelación. El Tribunal lo tiene por desistido y declara la firmeza de la resolución dictada en primera instancia.",
+                        ],
+                        [
+                            "l",
+                            "Art. 450 LEC (desistimiento del recurso); art. 20 LJV.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones de cierre",
+                            [
+                                "Decreto teniendo por desistido al recurrente",
+                                "Declaración de firmeza de la resolución de instancia",
+                                "Ejecución y archivo del expediente",
+                            ],
+                        ],
+                    ],
+                },
+            };
+
+            /* Agrupación de nodos por fase (para sidebar-mapa) */
+            const NODES_BY_PHASE = [[], [], [], [], [], []];
+            Object.entries(STEPS).forEach(([k, s]) =>
+                NODES_BY_PHASE[s.ph].push(k),
+            );
+
+            /* Títulos abreviados para breadcrumb/mapa */
+            function shortT(key) {
+                const s = STEPS[key];
+                if (!s) return key;
+                let t = s.t;
+                if (t.length > 32) t = t.slice(0, 31) + "…";
+                return t;
+            }
+
+            /* ============================================================
+   ESTADO Y NAVEGACIÓN
+   ============================================================ */
+
+            let cur = "inicio";
+            let hist = []; // [{ s: claveOrigen, next: claveDestino, c: textoOpción }]
+            let mapaOn = false;
+            let activeSbTab = "map";
+            let collapsedPhases = new Set();
+            let previewKey = null;
+            let zoomLevel = 100;
+
+            // ----- Variables para toggle sidebar -----
+            let sidebarOpen = false; // solo para móvil
+            let btnToggleSidebar = null;
+            let sidebarBackdrop = null;
+
+            function clampNum(v, min, max) {
+                return Math.min(max, Math.max(min, v));
+            }
+            function setZoom(pct) {
+                zoomLevel = clampNum(Math.round(pct), 80, 140);
+                const content = document.getElementById("content");
+                if (content) content.style.zoom = String(zoomLevel / 100);
+                const lbl = document.getElementById("zoomLabel");
+                if (lbl) lbl.textContent = zoomLevel + "%";
+            }
+            function zoomIn() {
+                setZoom(zoomLevel + 10);
+            }
+            function zoomOut() {
+                setZoom(zoomLevel - 10);
+            }
+
+            /* ===== TOGGLE SIDEBAR (nuevo) ===== */
+            function toggleSidebar() {
+                const isMobile = window.innerWidth <= 780;
+                const sidebar = document.getElementById("sidebar");
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    if (sidebar) {
+                        if (sidebarOpen) {
+                            sidebar.classList.add("open");
+                        } else {
+                            sidebar.classList.remove("open");
+                        }
+                    }
+                    if (sidebarBackdrop) {
+                        if (sidebarOpen) {
+                            sidebarBackdrop.classList.add("show");
+                        } else {
+                            sidebarBackdrop.classList.remove("show");
+                        }
+                    }
+                    if (btnToggleSidebar) {
+                        btnToggleSidebar.setAttribute(
+                            "aria-expanded",
+                            sidebarOpen,
+                        );
+                    }
+                } else {
+                    if (sidebar) {
+                        sidebar.classList.toggle("collapsed");
+                    }
+                }
+            }
+
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 780 && sidebarOpen) {
+                    sidebarOpen = false;
+                    const sidebar = document.getElementById("sidebar");
+                    if (sidebar) sidebar.classList.remove("open");
+                    if (sidebarBackdrop)
+                        sidebarBackdrop.classList.remove("show");
+                    if (btnToggleSidebar)
+                        btnToggleSidebar.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            function goTo(stepId, choiceLabel) {
+                if (!STEPS[stepId]) return;
+                hist.push({ s: cur, next: stepId, c: choiceLabel || "" });
+                cur = stepId;
+                if (choiceLabel) sbTab("journey");
+                render();
+            }
+            function goBack() {
+                if (hist.length === 0) return;
+                const last = hist.pop();
+                cur = last.s;
+                render();
+            }
+            function goBackTo(index) {
+                if (index < 0 || index >= hist.length) return;
+                if (index === 0) {
+                    cur = hist[0].s;
+                } else {
+                    cur = hist[index].s;
+                }
+                hist = hist.slice(0, index);
+                render();
+            }
+            function restart() {
+                cur = "inicio";
+                hist = [];
+                sbTab("map");
+                setZoom(100);
+                render();
+            }
+
+            // Función BFS para construir la ruta más corta desde 'inicio' hasta targetId
+            function buildPathTo(targetId) {
+                if (targetId === "inicio") return [];
+                const queue = [{ node: "inicio", path: [] }];
+                const visited = new Set();
+                visited.add("inicio");
+                while (queue.length) {
+                    const current = queue.shift();
+                    const step = STEPS[current.node];
+                    if (!step) continue;
+                    if (step.nx) {
+                        const nextId = step.nx;
+                        const newPath = [
+                            ...current.path,
+                            { s: current.node, next: nextId, c: "" },
+                        ];
+                        if (nextId === targetId) return newPath;
+                        if (!visited.has(nextId)) {
+                            visited.add(nextId);
+                            queue.push({ node: nextId, path: newPath });
+                        }
+                    }
+                    if (step.opts) {
+                        for (const opt of step.opts) {
+                            const nextId = opt.n;
+                            const choiceLabel = opt.t;
+                            const newPath = [
+                                ...current.path,
+                                {
+                                    s: current.node,
+                                    next: nextId,
+                                    c: choiceLabel,
+                                },
+                            ];
+                            if (nextId === targetId) return newPath;
+                            if (!visited.has(nextId)) {
+                                visited.add(nextId);
+                                queue.push({ node: nextId, path: newPath });
+                            }
+                        }
+                    }
+                }
+                return null;
+            }
+
+            function jumpTo(stepId) {
+                if (!STEPS[stepId]) return;
+                if (stepId !== cur) {
+                    const path = buildPathTo(stepId);
+                    if (path) {
+                        hist = path;
+                    } else {
+                        hist = []; // fallback: no se encuentra ruta lógica
+                    }
+                }
+                cur = stepId;
+                closePrev();
+                render();
+            }
+
+            function sbTab(tab) {
+                activeSbTab = tab;
+                document.getElementById("sb-map").style.display =
+                    tab === "map" ? "block" : "none";
+                document.getElementById("sb-journey").style.display =
+                    tab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach((btn) => {
+                    btn.classList.toggle(
+                        "active",
+                        btn.textContent.trim() ===
+                            (tab === "map" ? "Mapa" : "Recorrido"),
+                    );
+                });
+            }
+
+            function toggleMapa() {
+                mapaOn = !mapaOn;
+                document.getElementById("layout").style.display = mapaOn
+                    ? "none"
+                    : "flex";
+                document.getElementById("mapa-overlay").style.display = mapaOn
+                    ? "block"
+                    : "none";
+                document
+                    .getElementById("btn-mapa")
+                    .classList.toggle("active", mapaOn);
+                if (mapaOn) renderMapa();
+            }
+
+            function togglePhaseCollapse(phaseIdx) {
+                if (collapsedPhases.has(phaseIdx))
+                    collapsedPhases.delete(phaseIdx);
+                else collapsedPhases.add(phaseIdx);
+                renderSbMap();
+            }
+
+            function escQ(s) {
+                return (s || "").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+            }
+
+            /* ============================================================
+   RENDER
+   ============================================================ */
+
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+                const c = document.getElementById("content");
+                if (c) c.scrollTop = 0;
+                // Cerrar sidebar móvil al navegar
+                closeMobileSidebar();
+            }
+
+            function renderPbar() {
+                const curPh = STEPS[cur] ? STEPS[cur].ph : 0;
+                const visitedPh = new Set(
+                    hist.map((h) => (STEPS[h.s] ? STEPS[h.s].ph : -1)),
+                );
+                let h = "";
+                PHASES.forEach((p, i) => {
+                    let cls = "";
+                    if (i === curPh) cls = "active";
+                    else if (i < curPh || visitedPh.has(i)) cls = "done";
+                    h += `<div class="ph-item"><span class="ph-lbl ${cls}">${i + 1}. ${p}</span></div>`;
+                    if (i < PHASES.length - 1)
+                        h += `<span class="ph-sep">›</span>`;
+                });
+                document.getElementById("pbar").innerHTML = h;
+            }
+
+            function renderBreadcrumb() {
+                const bc = document.getElementById("breadcrumb");
+                if (hist.length === 0) {
+                    bc.innerHTML = `<span class="bc-item bc-current">${shortT(cur)}</span>`;
+                    return;
+                }
+                let html = "";
+                hist.forEach((h, i) => {
+                    html += `<button class="bc-item bc-past" onclick="goBackTo(${i})" title="Volver a este paso">${shortT(h.s)}</button>`;
+                    html += `<span class="bc-sep">›</span>`;
+                });
+                html += `<span class="bc-item bc-current">${shortT(cur)}</span>`;
+                bc.innerHTML = html;
+            }
+
+            function renderSidebar() {
+                renderSbMap();
+                renderSbJourney();
+            }
+
+            function renderSbMap() {
+                const visited = new Set(hist.map((h) => h.s));
+                const container = document.getElementById("sb-map");
+                let html = "";
+                PHASES.forEach((phName, i) => {
+                    const nodes = NODES_BY_PHASE[i] || [];
+                    if (nodes.length === 0) return;
+                    const isCol = collapsedPhases.has(i);
+                    html += `<div class="sm-phase ${isCol ? "collapsed" : ""}">`;
+                    html += `<div class="sm-phase-hdr" onclick="togglePhaseCollapse(${i})">
+               <span>${i + 1}. ${phName}</span>
+               <span class="sm-phase-arrow">▼</span>
+             </div>`;
+                    html += `<div class="sm-nodes">`;
+                    nodes.forEach((k) => {
+                        const s = STEPS[k];
+                        let cls = "";
+                        if (k === cur) cls = "sm-current";
+                        else if (visited.has(k)) cls = "sm-visited";
+                        if (s.end) cls += " sm-final";
+                        html += `<button class="sm-node ${cls}" onclick="openPrev('${escQ(k)}')" title="${escQ(s.t)}">
+                 <span class="sm-dot"></span>
+                 <span>${shortT(k)}</span>
+               </button>`;
+                    });
+                    html += `</div></div>`;
+                });
+                container.innerHTML = html;
+            }
+
+            function renderSbJourney() {
+                const container = document.getElementById("sb-journey");
+                let html = "";
+                hist.forEach((h, i) => {
+                    const s = STEPS[h.s];
+                    if (!s) return;
+                    html += `<div class="pi past">`;
+                    html += `<span class="pi-num">${String(i + 1).padStart(2, "0")}</span>`;
+                    html += `${shortT(h.s)}`;
+                    if (h.c)
+                        html += `<span class="pi-choice">→ ${escQ(h.c)}</span>`;
+                    html += `</div>`;
+                });
+                // Paso actual
+                const s = STEPS[cur];
+                if (s) {
+                    html += `<div class="pi current">`;
+                    html += `<span class="pi-num">${String(hist.length + 1).padStart(2, "0")}</span>`;
+                    html += `${shortT(cur)} <span style="color:rgba(255,255,255,.5);font-size:10px">(actual)</span>`;
+                    html += `</div>`;
+                }
+                html += `<div class="sb-foot">
+             <strong>Referencias</strong>
+             Ley 15/2015, de 2 de julio<br>
+             Arts. 13–22 LJV (comunes)<br>
+             Arts. 91–95 LJV (Tít. IV)<br>
+             CC: arts. 898–911, 988–1034, 1051–1087<br>
+             LEC: arts. 455+, 749, 782+
+           </div>`;
+                container.innerHTML = html;
+            }
+
+            function renderContent() {
+                const s = STEPS[cur];
+                const c = document.getElementById("content");
+                if (!s) {
+                    c.innerHTML = "<p>Paso no encontrado.</p>";
+                    return;
+                }
+                c.innerHTML = s.end ? buildEnd(s) : buildStep(s);
+            }
+
+            function renderBlocks(blocks) {
+                if (!blocks || !blocks.length) return "";
+                return blocks
+                    .map((b) => {
+                        const [type, ...rest] = b;
+                        if (type === "i")
+                            return `<div class="blk-i">${rest[0]}</div>`;
+                        if (type === "d")
+                            return `<div class="blk-d">${rest[0]}</div>`;
+                        if (type === "n")
+                            return `<div class="blk-n">${rest[0]}</div>`;
+                        if (type === "w")
+                            return `<div class="blk-w">${rest[0]}</div>`;
+                        if (type === "l")
+                            return `<div class="blk-l">${rest[0]}</div>`;
+                        if (type === "cl") {
+                            const [, h, items] = b;
+                            const lis = items
+                                .map(
+                                    (it, i) => `<div class="blk-cl-i">
+        <span class="blk-cl-box" onclick="this.classList.toggle('checked')"></span>
+        <span>${it}</span>
+      </div>`,
+                                )
+                                .join("");
+                            return `<div class="blk-cl"><div class="blk-cl-h">${h}</div>${lis}</div>`;
+                        }
+                        return "";
+                    })
+                    .join("");
+            }
+
+            function buildStep(s) {
+                const stepNum = hist.length + 1;
+                const actLbl = ACT_LBL[s.ac] || s.ac;
+                let html = `<article class="card">`;
+
+                // Cabecera
+                html += `<div class="c-hdr">
+             <div class="c-meta-row">
+               <span class="act-badge act-${s.ac}">${actLbl}</span>
+               <span class="step-num">Paso ${stepNum} · Fase ${s.ph + 1}: ${PHASES[s.ph]}</span>
+             </div>
+             <h1 class="c-title">${s.t}</h1>
+           </div>`;
+
+                // Cuerpo
+                html += `<div class="c-body">${renderBlocks(s.c)}</div>`;
+
+                // Zona de decisión
+                if (s.q && s.opts) {
+                    html += `<div class="dec-area">
+               <div class="dec-q">${s.q}</div>
+               <div class="dec-opts">`;
+                    s.opts.forEach((o, i) => {
+                        const letter = String.fromCharCode(65 + i); // A, B, C…
+                        const cls = o.l || "";
+                        html += `<button class="dec-btn ${cls}" onclick="goTo('${escQ(o.n)}', '${escQ(o.t)}')">
+                 <span class="dec-letter">${letter}</span>
+                 <span>${o.t}</span>
+               </button>`;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Navegación inferior
+                html += `<div class="c-nav">
+             <button class="btn-back" onclick="goBack()" ${hist.length === 0 ? "disabled" : ""}>← Volver</button>`;
+                if (s.nx && !s.q) {
+                    html += `<button class="btn-next" onclick="goTo('${escQ(s.nx)}', '')">Siguiente →</button>`;
+                }
+                html += `</div></article>`;
+
+                return html;
+            }
+
+            function buildEnd(s) {
+                const actLbl = ACT_LBL[s.ac] || s.ac;
+                const icons = {
+                    success: "✓",
+                    error: "✕",
+                    warning: "⚠",
+                    neutral: "ℹ",
+                };
+                const labels = {
+                    success: "Desenlace favorable",
+                    error: "Desenlace desfavorable",
+                    warning: "Desenlace con consecuencia específica",
+                    neutral: "Desenlace neutro",
+                };
+                let html = `<article class="card end end-${s.end}">`;
+                html += `<div class="end-body">
+             <div class="end-icon">${icons[s.end] || ""}</div>
+             <div class="end-title">${s.t}</div>
+             <div class="end-sub">${labels[s.end]} — el procedimiento ha concluido en esta vía</div>
+             <div class="end-actions">
+               <button class="btn-blue" onclick="restart()">↻ Nuevo procedimiento</button>
+               <button class="btn btn-ghost" style="background:var(--slate-bg);color:var(--slate);border-color:var(--bdr)" onclick="goBack()" ${hist.length === 0 ? "disabled" : ""}>← Volver</button>
+             </div>
+           </div>`;
+                html += `<div class="end-content"><div class="c-meta-row" style="margin-bottom:10px;">
+             <span class="act-badge act-${s.ac}">${actLbl}</span>
+             <span class="step-num">Fase ${s.ph + 1}: ${PHASES[s.ph]}</span>
+           </div>`;
+                html += renderBlocks(s.c);
+                html += `</div>`;
+
+                // Resumen del recorrido
+                html += `<div class="summary-box">
+             <div class="summary-h">Resumen del recorrido seguido</div>`;
+                hist.forEach((h, i) => {
+                    const stp = STEPS[h.s];
+                    if (!stp) return;
+                    html += `<div class="summary-item">
+               <span class="summary-n">${i + 1}</span>
+               <div>
+                 <span class="summary-t">${stp.t}</span>`;
+                    if (h.c) html += `<span class="summary-c">→ ${h.c}</span>`;
+                    html += `</div></div>`;
+                });
+                // Paso final
+                html += `<div class="summary-item">
+             <span class="summary-n" style="background:var(--${s.end === "success" ? "green" : s.end === "error" ? "red" : s.end === "warning" ? "amber" : "cyan"})">${hist.length + 1}</span>
+             <div><span class="summary-t">${s.t}</span>
+             <span class="summary-c" style="color:var(--${s.end === "success" ? "green" : s.end === "error" ? "red" : s.end === "warning" ? "amber" : "cyan"})">(desenlace)</span></div>
+           </div>`;
+                html += `</div></article>`;
+                return html;
+            }
+
+            /* Preview panel: abrir al hacer clic en nodo del sidebar-mapa */
+            function openPrev(key) {
+                previewKey = key;
+                const s = STEPS[key];
+                if (!s) return;
+                document.getElementById("prev-title").textContent = s.t;
+                let body = `<div class="c-meta-row" style="margin-bottom:10px;">
+    <span class="act-badge act-${s.ac}">${ACT_LBL[s.ac]}</span>
+    <span class="step-num">Fase ${s.ph + 1}: ${PHASES[s.ph]}</span>
+  </div>`;
+                body += renderBlocks(s.c);
+                if (s.q)
+                    body += `<p style="margin-top:12px;font-weight:600;color:var(--navy);">Pregunta de decisión:</p><p style="color:var(--slate)">${s.q}</p>`;
+                document.getElementById("prev-body").innerHTML = body;
+                const jump = document.getElementById("prev-jump");
+                if (key === cur) {
+                    jump.style.display = "none";
+                } else {
+                    jump.style.display = "";
+                    jump.textContent =
+                        hist.length > 0
+                            ? "Saltar aquí (reinicia historial) →"
+                            : "Empezar desde aquí →";
+                }
+                document.getElementById("preview-panel").classList.add("on");
+            }
+            function closePrev() {
+                document.getElementById("preview-panel").classList.remove("on");
+                previewKey = null;
+            }
+            function jumpFromPrev() {
+                if (previewKey) jumpTo(previewKey);
+            }
+
+            /* Mapa overlay */
+            function renderMapa() {
+                const visited = new Set(hist.map((h) => h.s));
+                const colsEl = document.getElementById("mapa-cols");
+                let html = "";
+                PHASES.forEach((phName, i) => {
+                    const nodes = NODES_BY_PHASE[i] || [];
+                    html += `<div class="mapa-col">`;
+                    html += `<div class="mapa-col-h">${i + 1}. ${phName}</div>`;
+                    nodes.forEach((k) => {
+                        const s = STEPS[k];
+                        let cls = "";
+                        if (k === cur) cls = "mn-current";
+                        else if (visited.has(k)) cls = "mn-visited";
+                        else if (s.end) cls = "mn-final-" + s.end;
+                        html += `<div class="mapa-node ${cls}" onclick="openPrev('${escQ(k)}')">`;
+                        html += `<div class="mapa-node-t">${s.t.length > 48 ? s.t.slice(0, 47) + "…" : s.t}</div>`;
+                        html += `<span class="mapa-node-act act-${s.ac}">${ACT_LBL[s.ac]}</span>`;
+                        // Flechas (opciones o siguiente)
+                        let arrows = "";
+                        if (s.opts) {
+                            s.opts.forEach((o) => {
+                                const short =
+                                    o.t.length > 26
+                                        ? o.t.slice(0, 25) + "…"
+                                        : o.t;
+                                arrows += `<span>→ ${short}</span>`;
+                            });
+                        } else if (s.nx) {
+                            arrows += `<span>→ siguiente</span>`;
+                        } else if (s.end) {
+                            arrows += `<span style="color:var(--${s.end === "success" ? "green" : s.end === "error" ? "red" : s.end === "warning" ? "amber" : "cyan"});font-weight:600">■ Desenlace</span>`;
+                        }
+                        if (arrows)
+                            html += `<div class="mapa-node-arrows">${arrows}</div>`;
+                        html += `</div>`;
+                    });
+                    html += `</div>`;
+                });
+                colsEl.innerHTML = html;
+            }
+
+            /* Descarga de la guía completa */
+            function dlGuia() {
+                const html =
+                    "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+                const blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "guia-tramitacion-sucesorio.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            /* ============================================================
+   INICIALIZACIÓN
+   ============================================================ */
+
+            document.addEventListener("DOMContentLoaded", () => {
+                // Obtener referencias de los nuevos elementos
+                btnToggleSidebar = document.getElementById("btnToggleSidebar");
+                sidebarBackdrop = document.getElementById("sidebarBackdrop");
+                // Eventos del botón (ya tiene onclick, pero añadimos también el resize)
+                window.addEventListener("resize", () => {
+                    if (window.innerWidth > 780 && sidebarOpen) {
+                        // Si cambia a escritorio estando el menú móvil abierto, lo cerramos y reseteamos estado
+                        const sidebar = document.getElementById("sidebar");
+                        if (sidebar) sidebar.classList.remove("open");
+                        if (sidebarBackdrop)
+                            sidebarBackdrop.classList.remove("show");
+                        sidebarOpen = false;
+                        if (btnToggleSidebar)
+                            btnToggleSidebar.setAttribute(
+                                "aria-expanded",
+                                "false",
+                            );
+                    }
+                });
+                // Cerrar con tecla Escape
+                document.addEventListener("keydown", (e) => {
+                    if (
+                        e.key === "Escape" &&
+                        window.innerWidth <= 780 &&
+                        sidebarOpen
+                    ) {
+                        closeMobileSidebar();
+                    }
+                });
+                setZoom(zoomLevel);
+                render();
+            });
+            // Si ya cargado (desde archivo descargado), asegurar render
+            if (document.readyState !== "loading") {
+                // Inicializar referencias
+                btnToggleSidebar = document.getElementById("btnToggleSidebar");
+                sidebarBackdrop = document.getElementById("sidebarBackdrop");
+                setZoom(zoomLevel);
+                render();
+            }
+        </script>
+    </body>
+</html>

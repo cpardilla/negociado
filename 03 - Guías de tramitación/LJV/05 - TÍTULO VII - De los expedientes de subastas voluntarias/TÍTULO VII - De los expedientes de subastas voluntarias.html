@@ -1,0 +1,3112 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            De los expedientes de subastas voluntarias (artículos 108 a 111 LJV)
+        </title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            /* =========================================================
+   MÓDULO 1 — VARIABLES CSS
+   ========================================================= */
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --transition-norm: 250ms ease;
+            }
+
+            /* =========================================================
+   BASE
+   ========================================================= */
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            html,
+            body {
+                height: 100%;
+            }
+            body {
+                font-family: "Outfit", system-ui, sans-serif;
+                font-size: 15px;
+                line-height: 1.5;
+                color: var(--text);
+                background: var(--white);
+                -webkit-font-smoothing: antialiased;
+            }
+            button {
+                font-family: inherit;
+            }
+
+            /* =========================================================
+   MÓDULO 4 — LAYOUT PRINCIPAL
+   ========================================================= */
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            /* =========================================================
+   MÓDULO 5 — CABECERA
+   ========================================================= */
+            #hdr {
+                flex-shrink: 0;
+                height: 56px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+                background: var(--navy);
+                color: #fff;
+            }
+            .h-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .h-seal {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+            }
+            .h-title {
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: 0.2px;
+            }
+            .h-sub {
+                font-size: 10px;
+                opacity: 0.55;
+                margin-top: 1px;
+            }
+
+            .h-right {
+                display: flex;
+                gap: 8px;
+            }
+            .zoom-cluster {
+                display: inline-flex;
+                align-items: center;
+                overflow: hidden;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .btn-zoom {
+                appearance: none;
+                border: 0;
+                background: transparent;
+                color: rgba(255, 255, 255, 0.85);
+                width: 30px;
+                height: 30px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.14);
+            }
+            .zoom-label {
+                min-width: 46px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .btn {
+                font-size: 12px;
+                padding: 7px 12px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+
+            /* ============ NUEVO: BOTÓN TOGGLE SIDEBAR ============ */
+            .btn-toggle-sidebar {
+                font-size: 20px;
+                padding: 4px 12px;
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+
+            /* =========================================================
+   MÓDULO 6 — BARRA DE FASES
+   ========================================================= */
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                gap: 2px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                background: var(--navy-mid);
+            }
+            #pbar::-webkit-scrollbar {
+                display: none;
+            }
+            .ph-item {
+                display: inline-flex;
+                align-items: center;
+                flex-shrink: 0;
+            }
+            .ph-lbl {
+                display: inline-flex;
+                align-items: center;
+                height: 28px;
+                padding: 0 10px;
+                border-radius: 8px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                white-space: nowrap;
+                color: rgba(255, 255, 255, 0.6);
+                transition: all 0.15s;
+            }
+            .ph-lbl.done {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .ph-lbl.active {
+                color: #fff;
+                background: rgba(255, 255, 255, 0.22);
+                font-weight: 800;
+            }
+            .ph-sep {
+                color: rgba(255, 255, 255, 0.25);
+                font-size: 10px;
+                padding: 0 2px;
+                flex-shrink: 0;
+            }
+
+            /* =========================================================
+   MÓDULO 7 — MIGAS DE PAN
+   ========================================================= */
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 34px;
+                height: auto;
+                display: flex;
+                align-items: center;
+                padding: 4px 20px;
+                gap: 0;
+                overflow-x: auto;
+                scrollbar-width: none;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                flex-wrap: wrap;
+                row-gap: 2px;
+                white-space: normal;
+            }
+            #breadcrumb::-webkit-scrollbar {
+                display: none;
+            }
+            .bc-item {
+                font-size: 11px;
+                white-space: nowrap;
+                padding: 0 6px;
+                color: var(--muted);
+            }
+            .bc-past {
+                cursor: pointer;
+                background: none;
+                border: none;
+                font-family: inherit;
+            }
+            .bc-past:hover {
+                color: var(--navy-lt);
+                text-decoration: underline;
+            }
+            .bc-current {
+                font-weight: 600;
+                color: var(--navy);
+            }
+            .bc-sep {
+                font-size: 10px;
+                color: var(--bdr);
+                padding: 0 2px;
+            }
+
+            /* =========================================================
+   MÓDULO 8 — CONTENEDOR DEL ÁREA DE TRABAJO
+   ========================================================= */
+            #layout {
+                flex: 1;
+                overflow: hidden;
+                display: flex;
+            }
+
+            /* =========================================================
+   MÓDULO 9 — SIDEBAR (modificado para toggle)
+   ========================================================= */
+            #sidebar {
+                flex-shrink: 0;
+                width: 260px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+                scrollbar-gutter: stable;
+                background: var(--navy-mid);
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                transition:
+                    width var(--transition-norm),
+                    transform var(--transition-norm);
+                will-change: width, transform;
+            }
+            #sidebar.collapsed {
+                width: 0;
+                overflow: hidden;
+                padding: 0;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 6px;
+            }
+            #sidebar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.18);
+                border-radius: 8px;
+                border: 2px solid transparent;
+                background-clip: padding-box;
+            }
+            #sidebar:hover::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.28);
+            }
+            #sb-tabs {
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                position: sticky;
+                top: 0;
+                background: var(--navy-mid);
+                z-index: 2;
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 8px 0;
+                font-size: 11px;
+                font-weight: 600;
+                font-family: inherit;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+                transition: all 0.15s;
+            }
+            .sb-tab.active {
+                color: #fff;
+                border-bottom: 2px solid var(--navy-lt);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            /* --- Pestaña MAPA --- */
+            #sb-map {
+                padding: 8px 0;
+                flex: 1;
+                min-height: 0;
+            }
+            .sm-phase {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
+            .sm-phase:last-child {
+                border-bottom: none;
+            }
+            .sm-phase-hdr {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 16px;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.85);
+                font-size: 11px;
+                font-weight: 600;
+                font-family: inherit;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                cursor: pointer;
+                text-align: left;
+            }
+            .sm-phase-hdr:hover {
+                background: rgba(255, 255, 255, 0.05);
+            }
+            .sm-chev {
+                font-size: 10px;
+                opacity: 0.6;
+                transition: transform 0.15s;
+            }
+            .sm-phase.collapsed .sm-chev {
+                transform: rotate(-90deg);
+            }
+            .sm-phase.collapsed .sm-nodes {
+                display: none;
+            }
+            .sm-nodes {
+                padding: 2px 0 8px;
+            }
+            .sm-node {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
+                padding: 6px 16px 6px 28px;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 12px;
+                font-family: inherit;
+                text-align: left;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .sm-node:hover {
+                background: rgba(255, 255, 255, 0.08);
+                color: #fff;
+            }
+            .sm-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.25);
+                flex-shrink: 0;
+            }
+            .sm-visited {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .sm-visited .sm-dot {
+                background: var(--green);
+                box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.25);
+            }
+            .sm-visited::after {
+                content: "✓";
+                color: var(--green);
+                margin-left: auto;
+                font-size: 11px;
+                font-weight: 700;
+            }
+            .sm-current {
+                color: #fff;
+                font-weight: 600;
+            }
+            .sm-current .sm-dot {
+                background: var(--navy-lt);
+                animation: pulse 1.4s ease-in-out infinite;
+            }
+            @keyframes pulse {
+                0%,
+                100% {
+                    box-shadow: 0 0 0 0 rgba(65, 105, 225, 0.6);
+                }
+                50% {
+                    box-shadow: 0 0 0 6px rgba(65, 105, 225, 0);
+                }
+            }
+            .sm-unreachable {
+                opacity: 0.35;
+            }
+            .sm-unreachable .sm-dot {
+                background: rgba(255, 255, 255, 0.15);
+            }
+
+            /* Preview tooltip dentro del mapa */
+            .sm-preview {
+                margin: 2px 16px 8px 28px;
+                padding: 10px 12px;
+                background: rgba(0, 0, 0, 0.25);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 6px;
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.85);
+                line-height: 1.5;
+            }
+            .sm-preview-title {
+                font-size: 11px;
+                font-weight: 700;
+                margin-bottom: 4px;
+                color: #fff;
+            }
+            .sm-preview-meta {
+                font-size: 10px;
+                opacity: 0.65;
+                margin-bottom: 6px;
+            }
+            .sm-preview .sm-jump {
+                margin-top: 8px;
+                padding: 5px 10px;
+                background: var(--navy-lt);
+                border: none;
+                border-radius: 4px;
+                color: #fff;
+                font-size: 10px;
+                font-weight: 600;
+                font-family: inherit;
+                letter-spacing: 0.3px;
+                cursor: pointer;
+                text-transform: uppercase;
+            }
+            .sm-preview .sm-jump:hover {
+                background: #5a7eeb;
+            }
+
+            /* --- Pestaña RECORRIDO --- */
+            #sb-journey {
+                padding: 12px 0 0;
+                display: none;
+                flex: 1;
+                min-height: 0;
+            }
+            .pi {
+                padding: 10px 16px;
+                border-left: 3px solid transparent;
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.7);
+            }
+            .pi.past {
+                border-left-color: rgba(21, 128, 61, 0.6);
+            }
+            .pi.current {
+                border-left-color: var(--navy-lt);
+                background: rgba(65, 105, 225, 0.12);
+                color: #fff;
+                font-weight: 600;
+            }
+            .pi-t {
+                line-height: 1.4;
+            }
+            .pi-choice {
+                display: block;
+                margin-top: 3px;
+                font-size: 11px;
+                font-style: italic;
+                color: rgba(255, 255, 255, 0.55);
+                font-weight: 400;
+            }
+            .sb-foot {
+                margin-top: 18px;
+                padding: 14px 16px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 10px;
+                line-height: 1.55;
+                color: rgba(255, 255, 255, 0.6);
+            }
+            .sb-foot b {
+                color: #fff;
+                display: block;
+                margin-bottom: 4px;
+                font-size: 11px;
+                letter-spacing: 0.3px;
+            }
+            .sb-foot .law {
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            /* =========================================================
+   SIDEBAR BACKDROP (móvil)
+   ========================================================= */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                z-index: 140;
+                background: rgba(0, 0, 0, 0.5);
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+
+            /* =========================================================
+   CONTENIDO CENTRAL
+   ========================================================= */
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 28px 32px;
+                background: var(--white);
+            }
+
+            /* =========================================================
+   MÓDULO 13 — TARJETA DE PASO
+   ========================================================= */
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .card {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 12px;
+                box-shadow: 0 1px 3px rgba(26, 47, 110, 0.04);
+                animation: fadeUp 0.22s ease;
+            }
+            .c-hdr {
+                padding: 20px 24px 14px;
+                border-bottom: 1px solid var(--bdr);
+            }
+            .act-badge {
+                display: inline-block;
+                padding: 3px 10px;
+                border-radius: 12px;
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.6px;
+                margin-bottom: 10px;
+            }
+            .act-laj {
+                background: var(--violet-bg);
+                color: var(--violet);
+                border: 1px solid var(--violet);
+            }
+            .act-juez {
+                background: var(--amber-bg);
+                color: var(--amber);
+                border: 1px solid var(--amber);
+            }
+            .act-ambos {
+                background: var(--slate-bg);
+                color: var(--slate);
+                border: 1px solid var(--slate);
+            }
+            .c-title {
+                font-size: 20px;
+                font-weight: 700;
+                color: var(--navy);
+                line-height: 1.3;
+            }
+            .step-num {
+                font-size: 11px;
+                color: var(--muted);
+                margin-top: 6px;
+                letter-spacing: 0.2px;
+            }
+            .c-body {
+                padding: 18px 24px;
+                font-size: 15px;
+                color: var(--text);
+            }
+            .c-body p {
+                margin-bottom: 10px;
+            }
+            .c-body .blk {
+                margin-bottom: 14px;
+            }
+            .c-body .blk:last-child {
+                margin-bottom: 0;
+            }
+
+            .blk-i p {
+                line-height: 1.6;
+            }
+            .blk-d {
+                padding: 10px 14px;
+                background: var(--amber-bg);
+                border-left: 3px solid var(--amber);
+                border-radius: 0 6px 6px 0;
+                font-size: 14px;
+            }
+            .blk-d b {
+                color: var(--amber);
+                display: block;
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 3px;
+            }
+            .blk-n {
+                padding: 10px 14px;
+                background: var(--cyan-bg);
+                border-left: 3px solid var(--cyan);
+                border-radius: 0 6px 6px 0;
+                font-size: 14px;
+            }
+            .blk-n b {
+                color: var(--cyan);
+                display: block;
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 3px;
+            }
+            .blk-w {
+                padding: 10px 14px;
+                background: var(--red-bg);
+                border-left: 3px solid var(--red);
+                border-radius: 0 6px 6px 0;
+                font-size: 14px;
+            }
+            .blk-w b {
+                color: var(--red);
+                display: block;
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 3px;
+            }
+            .blk-l {
+                padding: 8px 12px;
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 6px;
+                font-size: 12px;
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                color: var(--slate);
+            }
+            .blk-l b {
+                color: var(--navy);
+                font-family: "Outfit", sans-serif;
+            }
+            .blk-cl {
+                padding: 12px 14px;
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+            }
+            .blk-cl .cl-t {
+                font-weight: 600;
+                font-size: 13px;
+                color: var(--navy);
+                margin-bottom: 8px;
+            }
+            .blk-cl ul {
+                list-style: none;
+            }
+            .blk-cl li {
+                font-size: 14px;
+                padding: 4px 0 4px 26px;
+                position: relative;
+                line-height: 1.45;
+            }
+            .blk-cl li::before {
+                content: "";
+                position: absolute;
+                left: 2px;
+                top: 7px;
+                width: 14px;
+                height: 14px;
+                border: 1.5px solid var(--slate);
+                border-radius: 3px;
+                background: var(--white);
+            }
+
+            /* Decisión */
+            .dec-area {
+                margin: 16px 24px 8px;
+                padding: 16px;
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-top: 3px solid var(--navy);
+                border-radius: 8px;
+            }
+            .dec-q {
+                font-size: 15px;
+                font-weight: 600;
+                color: var(--navy);
+                margin-bottom: 12px;
+            }
+            .dec-opts {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+                background: var(--white);
+                border: 1.5px solid var(--bdr);
+                border-radius: 8px;
+                font-size: 14px;
+                text-align: left;
+                color: var(--text);
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .dec-btn:hover {
+                border-color: var(--navy-lt);
+                background: var(--slate-bg);
+            }
+            .dec-letter {
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                font-size: 12px;
+                flex-shrink: 0;
+                background: var(--slate-bg);
+                color: var(--slate);
+                border: 1.5px solid var(--slate);
+            }
+            .dec-btn.ok .dec-letter {
+                background: var(--green-bg);
+                color: var(--green);
+                border-color: var(--green);
+            }
+            .dec-btn.bad .dec-letter {
+                background: var(--red-bg);
+                color: var(--red);
+                border-color: var(--red);
+            }
+            .dec-btn.warn .dec-letter {
+                background: var(--amber-bg);
+                color: var(--amber);
+                border-color: var(--amber);
+            }
+            .dec-btn.neutral .dec-letter {
+                background: var(--cyan-bg);
+                color: var(--cyan);
+                border-color: var(--cyan);
+            }
+            .dec-btn.ok:hover {
+                border-color: var(--green);
+                background: var(--green-bg);
+            }
+            .dec-btn.bad:hover {
+                border-color: var(--red);
+                background: var(--red-bg);
+            }
+            .dec-btn.warn:hover {
+                border-color: var(--amber);
+                background: var(--amber-bg);
+            }
+            .dec-btn.neutral:hover {
+                border-color: var(--cyan);
+                background: var(--cyan-bg);
+            }
+
+            /* Navegación */
+            .c-nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 14px 24px;
+                border-top: 1px solid var(--bdr);
+                background: var(--slate-bg);
+                border-radius: 0 0 12px 12px;
+            }
+            .btn-back {
+                background: var(--white);
+                border: 1.5px solid var(--bdr);
+                color: var(--slate);
+                padding: 8px 14px;
+                border-radius: 6px;
+                font-size: 13px;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .btn-back:hover:not(:disabled) {
+                border-color: var(--navy-lt);
+                color: var(--navy-lt);
+            }
+            .btn-back:disabled {
+                opacity: 0.35;
+                cursor: not-allowed;
+            }
+            .btn-next,
+            .btn-blue {
+                background: var(--navy-lt);
+                border: 1.5px solid var(--navy-lt);
+                color: #fff;
+                padding: 8px 16px;
+                border-radius: 6px;
+                font-size: 13px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .btn-next:hover,
+            .btn-blue:hover {
+                background: var(--navy);
+                border-color: var(--navy);
+            }
+
+            /* =========================================================
+   MÓDULO 14 — TARJETA FINAL
+   ========================================================= */
+            .card.end-success {
+                border-top: 4px solid var(--green);
+            }
+            .card.end-error {
+                border-top: 4px solid var(--red);
+            }
+            .card.end-warning {
+                border-top: 4px solid var(--amber);
+            }
+            .card.end-neutral {
+                border-top: 4px solid var(--cyan);
+            }
+            .end-body {
+                padding: 28px 24px 16px;
+                text-align: center;
+            }
+            .end-ico {
+                font-size: 48px;
+                line-height: 1;
+                margin-bottom: 10px;
+            }
+            .end-title {
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 6px;
+            }
+            .end-success .end-title {
+                color: var(--green);
+            }
+            .end-error .end-title {
+                color: var(--red);
+            }
+            .end-warning .end-title {
+                color: var(--amber);
+            }
+            .end-neutral .end-title {
+                color: var(--cyan);
+            }
+            .end-sub {
+                font-size: 13px;
+                color: var(--muted);
+            }
+            .end-actions {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                padding: 0 24px 18px;
+            }
+            .summary-box {
+                margin: 0 24px 18px;
+                padding: 16px 18px;
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+            }
+            .summary-box h4 {
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: var(--navy);
+                margin-bottom: 10px;
+            }
+            .summary-box ol {
+                padding-left: 22px;
+                font-size: 13px;
+                line-height: 1.6;
+            }
+            .summary-box li {
+                margin-bottom: 4px;
+            }
+            .summary-box .sum-choice {
+                color: var(--navy-lt);
+                font-style: italic;
+            }
+
+            /* =========================================================
+   MÓDULO 10 — VISTA DE MAPA COMPLETO (OVERLAY)
+   ========================================================= */
+            #mapa-overlay {
+                flex: 1;
+                overflow-y: auto;
+                background: var(--slate-bg);
+                padding: 20px;
+                display: none;
+            }
+            .mapa-head {
+                max-width: 1400px;
+                margin: 0 auto 18px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .mapa-title {
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--navy);
+            }
+            .mapa-sub {
+                font-size: 12px;
+                color: var(--muted);
+                margin-top: 2px;
+            }
+            .mapa-grid {
+                max-width: 1400px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 14px;
+            }
+            .mapa-col {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 10px;
+                padding: 14px;
+                min-height: 200px;
+            }
+            .mapa-col-hdr {
+                font-size: 11px;
+                font-weight: 700;
+                color: var(--navy);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                border-bottom: 2px solid var(--navy-lt);
+            }
+            .mapa-node {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-left: 3px solid var(--slate);
+                border-radius: 6px;
+                padding: 8px 10px;
+                margin-bottom: 10px;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .mapa-node:hover {
+                box-shadow: 0 2px 8px rgba(26, 47, 110, 0.1);
+            }
+            .mapa-node.visited {
+                border-left-color: var(--green);
+                background: var(--green-bg);
+            }
+            .mapa-node.current {
+                border-left-color: var(--navy-lt);
+                background: var(--cyan-bg);
+                font-weight: 600;
+            }
+            .mapa-node.end-success {
+                border-left-color: var(--green);
+            }
+            .mapa-node.end-error {
+                border-left-color: var(--red);
+            }
+            .mapa-node.end-warning {
+                border-left-color: var(--amber);
+            }
+            .mapa-node.end-neutral {
+                border-left-color: var(--cyan);
+            }
+            .mapa-node-title {
+                font-size: 12px;
+                color: var(--text);
+                line-height: 1.35;
+            }
+            .mapa-node-badge {
+                display: inline-block;
+                font-size: 9px;
+                font-weight: 700;
+                padding: 1px 6px;
+                border-radius: 8px;
+                margin-top: 5px;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+            }
+            .mapa-arrow {
+                font-size: 10px;
+                color: var(--muted);
+                margin: 2px 0 8px 14px;
+                border-left: 1px solid var(--bdr);
+                padding-left: 8px;
+            }
+
+            /* =========================================================
+   MÓDULO 23 — IMPRESIÓN
+   ========================================================= */
+            @media print {
+                body {
+                    background: #fff;
+                    color: #111;
+                }
+                #hdr,
+                #pbar,
+                #breadcrumb,
+                #sidebar,
+                .c-nav,
+                .dec-opts {
+                    display: none;
+                }
+                #layout,
+                #content {
+                    display: block;
+                    overflow: visible;
+                    height: auto;
+                }
+                .card {
+                    break-inside: avoid;
+                    box-shadow: none;
+                    border: 1px solid #999;
+                }
+                #mapa-overlay {
+                    padding: 0;
+                }
+            }
+
+            /* =========================================================
+   MÓDULO 24 — RESPONSIVE (modificado para sidebar toggle)
+   ========================================================= */
+            @media (max-width: 700px) {
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    width: 260px;
+                    transition: transform var(--transition-norm);
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                #content {
+                    padding: 12px;
+                }
+                .dec-opts {
+                    flex-direction: column;
+                }
+                .h-title {
+                    font-size: 12px;
+                }
+                .h-sub {
+                    display: none;
+                }
+                .btn {
+                    padding: 6px 8px;
+                    font-size: 11px;
+                }
+                .mapa-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+            @media (max-width: 480px) {
+                .c-title {
+                    font-size: 17px;
+                }
+                .c-hdr,
+                .c-body,
+                .c-nav {
+                    padding-left: 16px;
+                    padding-right: 16px;
+                }
+            }
+
+            /* === FIX: header classes normalization === */
+            #hdr .h-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+            #hdr .h-seal {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.85);
+            }
+            #hdr .h-title {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--white);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #hdr .h-sub {
+                font-size: 11px;
+                color: var(--white);
+                opacity: 0.7;
+            }
+            #hdr .h-right {
+                display: flex;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <!-- MÓDULO 5 — CABECERA -->
+            <header id="hdr" style="height: 70px">
+                <div class="h-left">
+                    <!-- NUEVO BOTÓN TOGGLE SIDEBAR -->
+                    <button
+                        class="btn btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                    >
+                        &#9776;
+                    </button>
+                    <div class="h-seal">⚖</div>
+                    <div>
+                        <div class="h-sub">
+                            LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN
+                            VOLUNTARIA · TÍTULO VII
+                        </div>
+                        <div class="h-title">
+                            De los expedientes de subastas voluntarias
+                        </div>
+                        <div class="h-sub" style="padding-top: 5px">
+                            Artículos 108 a 111 LJV
+                        </div>
+                    </div>
+                </div>
+                <div class="h-right">
+                    <div
+                        class="zoom-cluster"
+                        role="group"
+                        aria-label="Zoom del contenido"
+                    >
+                        <button
+                            class="btn-zoom"
+                            data-action="zoom-out"
+                            aria-label="Reducir zoom"
+                        >
+                            −
+                        </button>
+                        <span class="zoom-label" id="zoomLabel">100%</span>
+                        <button
+                            class="btn-zoom"
+                            data-action="zoom-in"
+                            aria-label="Aumentar zoom"
+                        >
+                            +
+                        </button>
+                    </div>
+                    <button class="btn btn-ghost" data-action="toggle-mapa">
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn btn-ghost" data-action="descargar">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn btn-ghost" data-action="reiniciar">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </header>
+
+            <!-- MÓDULO 6 — BARRA DE FASES -->
+            <nav
+                id="pbar"
+                role="navigation"
+                aria-label="Progreso por fases del procedimiento"
+            ></nav>
+
+            <!-- MÓDULO 7 — MIGAS DE PAN -->
+            <nav
+                id="breadcrumb"
+                role="navigation"
+                aria-label="Ruta de navegación"
+            ></nav>
+
+            <!-- MÓDULO 8 — ÁREA DE TRABAJO -->
+            <div id="layout">
+                <!-- MÓDULO 9 — SIDEBAR -->
+                <aside id="sidebar">
+                    <div id="sb-tabs">
+                        <button
+                            class="sb-tab active"
+                            data-action="sb-tab"
+                            data-tab="map"
+                        >
+                            Mapa
+                        </button>
+                        <button
+                            class="sb-tab"
+                            data-action="sb-tab"
+                            data-tab="journey"
+                        >
+                            Recorrido
+                        </button>
+                    </div>
+                    <div id="sb-map"></div>
+                    <div id="sb-journey"></div>
+                </aside>
+
+                <!-- CONTENIDO -->
+                <main id="content"></main>
+            </div>
+
+            <!-- MÓDULO 10 — OVERLAY DE MAPA COMPLETO -->
+            <div id="mapa-overlay"></div>
+
+            <!-- NUEVO BACKDROP PARA MÓVIL -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        </div>
+
+        <!-- =========================================================
+     MÓDULO 22 — BUNDLE ÚNICO
+     ========================================================= -->
+        <script>
+            "use strict";
+
+            /* =========================================================
+   DATOS DEL PROCEDIMIENTO
+   ========================================================= */
+            const PHASES = [
+                "Admisión y competencia",
+                "Solicitud y documentación",
+                "Tramitación previa",
+                "Publicidad y celebración",
+                "Resolución y adjudicación",
+            ];
+
+            /*  Shorthand de bloques:
+    ['i', texto]               → párrafo introductorio
+    ['d', texto]               → plazo / deadline
+    ['n', texto]               → nota
+    ['w', texto]               → advertencia
+    ['l', texto]               → referencia normativa
+    ['cl', titulo, [items]]    → checklist
+*/
+            const STEPS = {
+                /* ===================== FASE 0: ADMISIÓN Y COMPETENCIA ===================== */
+
+                inicio: {
+                    ph: 0,
+                    t: "Identificación del supuesto. Ámbito de aplicación del Título VII",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Antes de iniciar el expediente, compruebe si el supuesto encaja en el ámbito del Título VII: enajenación en subasta, fuera de un procedimiento de apremio, de bienes o derechos determinados, a instancia del propio interesado.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 108 de la Ley 15/2015.</b> Ámbito de aplicación.",
+                        ],
+                        [
+                            "cl",
+                            "Requisitos acumulativos del artículo 108",
+                            [
+                                "Se trata de una enajenación en subasta.",
+                                "La subasta se celebra fuera de un procedimiento de apremio.",
+                                "El objeto son bienes o derechos determinados.",
+                                "La iniciativa parte del propio interesado (titular o con poder de disposición).",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Si falta cualquiera de los requisitos, este Título no resulta aplicable: la subasta deberá encauzarse por la vía ejecutiva ordinaria (arts. 643 y siguientes de la Ley de Enjuiciamiento Civil) o por la vía concursal correspondiente.",
+                        ],
+                    ],
+                    q: "¿El supuesto reúne los cuatro requisitos del artículo 108?",
+                    opts: [
+                        {
+                            t: "Sí, concurren todos los requisitos",
+                            l: "A",
+                            n: "competencia",
+                        },
+                        {
+                            t: "No, falta alguno de los requisitos",
+                            l: "B",
+                            n: "fin_no_ambito",
+                        },
+                    ],
+                },
+
+                fin_no_ambito: {
+                    ph: 0,
+                    t: "El supuesto queda fuera del Título VII",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "w",
+                            "El expediente de subasta voluntaria del Título VII no es aplicable a este supuesto. Reconduzca la tramitación por el cauce adecuado.",
+                        ],
+                        ["i", "Posibles vías alternativas, según el caso:"],
+                        [
+                            "cl",
+                            "Vías alternativas",
+                            [
+                                "Subasta judicial ejecutiva (procedimiento de apremio): artículos 643 y siguientes de la Ley de Enjuiciamiento Civil.",
+                                "Subasta notarial o administrativa, si procediere por la naturaleza del bien o del título.",
+                                "Venta directa autorizada judicialmente en otros expedientes de jurisdicción voluntaria.",
+                                "Vía concursal si el titular se halla en situación de concurso (Texto Refundido de la Ley Concursal).",
+                            ],
+                        ],
+                    ],
+                    end: "error",
+                },
+
+                competencia: {
+                    ph: 0,
+                    t: "Competencia territorial. Fuero aplicable",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La competencia objetiva corresponde siempre al Juzgado de Primera Instancia. El fuero territorial depende de la naturaleza del bien.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 109.1 de la Ley 15/2015.</b> Competencia.",
+                        ],
+                    ],
+                    q: "¿Qué tipo de bien o derecho se pretende subastar?",
+                    opts: [
+                        {
+                            t: "Bien inmueble",
+                            l: "A",
+                            n: "competencia_inmueble",
+                        },
+                        {
+                            t: "Bien mueble o derecho no inmobiliario",
+                            l: "B",
+                            n: "competencia_mueble",
+                        },
+                    ],
+                },
+
+                competencia_inmueble: {
+                    ph: 0,
+                    t: "Fuero del lugar de radicación del inmueble",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Tratándose de bienes inmuebles, será competente el Juzgado de Primera Instancia del lugar donde éstos radiquen (forum rei sitae).",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 109.1, párrafo segundo, de la Ley 15/2015.</b>",
+                        ],
+                        [
+                            "n",
+                            "Este fuero es imperativo y no admite elección por el solicitante, aun cuando el titular tenga su domicilio en otra demarcación.",
+                        ],
+                    ],
+                    nx: "postulacion",
+                },
+
+                competencia_mueble: {
+                    ph: 0,
+                    t: "Fuero del domicilio del titular",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Será competente el Juzgado de Primera Instancia que corresponda al domicilio del titular. Si fueran varios titulares, el correspondiente a cualquiera de ellos, a elección del solicitante.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 109.1, párrafo primero, de la Ley 15/2015.</b>",
+                        ],
+                    ],
+                    nx: "postulacion",
+                },
+
+                postulacion: {
+                    ph: 0,
+                    t: "Postulación. Intervención de Abogado y Procurador",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Para la actuación en este expediente no será preceptiva la intervención de Abogado y Procurador.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 109.2 de la Ley 15/2015.</b> Postulación.",
+                        ],
+                        [
+                            "n",
+                            "El interesado podrá, no obstante, valerse voluntariamente de dichos profesionales, asumiendo sus honorarios. Esta regla enlaza con el régimen general de postulación de la jurisdicción voluntaria previsto en el artículo 3 de la propia Ley 15/2015.",
+                        ],
+                    ],
+                    nx: "solicitud",
+                },
+
+                /* ===================== FASE 1: SOLICITUD Y DOCUMENTACIÓN ===================== */
+
+                solicitud: {
+                    ph: 1,
+                    t: "Preparación de la solicitud de iniciación del expediente",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Será necesaria solicitud de iniciación del expediente, con la identificación y estado del bien o derecho.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 110.1 de la Ley 15/2015.</b> Solicitud.",
+                        ],
+                        [
+                            "cl",
+                            "Contenido mínimo de la solicitud",
+                            [
+                                "Identificación completa del solicitante.",
+                                "Identificación y estado del bien o derecho que se pretende subastar.",
+                                "Documentos acreditativos de la capacidad legal para contratar del solicitante (letra a).",
+                                "Documentos que acrediten su poder de disposición sobre el objeto o derecho de la subasta (letra b).",
+                                "Pliego de condiciones particulares con la valoración de los bienes o derechos (letra c).",
+                            ],
+                        ],
+                    ],
+                    q: "¿El bien o derecho está sujeto a publicidad registral?",
+                    opts: [
+                        {
+                            t: "Sí, es un bien o derecho registrable",
+                            l: "A",
+                            n: "doc_registrable",
+                        },
+                        {
+                            t: "No, no está sujeto a publicidad registral",
+                            l: "B",
+                            n: "doc_no_registrable",
+                        },
+                    ],
+                },
+
+                doc_registrable: {
+                    ph: 1,
+                    t: "Documentación adicional para bienes o derechos registrables",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Cuando se trate de bienes o derechos registrables, se acompañará certificación registral de dominio y cargas.",
+                        ],
+                        ["l", "<b>Artículo 110.1.b) de la Ley 15/2015.</b>"],
+                        [
+                            "cl",
+                            "Documentos a adjuntar por el solicitante",
+                            [
+                                "Documentos acreditativos de la capacidad legal para contratar.",
+                                "Documentos acreditativos del poder de disposición.",
+                                "Certificación registral de dominio y cargas, actualizada.",
+                                "Pliego de condiciones particulares con la valoración.",
+                            ],
+                        ],
+                    ],
+                    nx: "arrendatarios",
+                },
+
+                doc_no_registrable: {
+                    ph: 1,
+                    t: "Documentación para bienes o derechos no registrables",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Cuando el bien o derecho no esté sujeto a publicidad registral, bastará con la documentación general del artículo 110.1, sin necesidad de certificación registral.",
+                        ],
+                        [
+                            "cl",
+                            "Documentos a adjuntar",
+                            [
+                                "Documentos acreditativos de la capacidad legal para contratar.",
+                                "Documentos acreditativos del poder de disposición sobre el objeto o derecho.",
+                                "Pliego de condiciones particulares con la valoración.",
+                            ],
+                        ],
+                    ],
+                    nx: "arrendatarios",
+                },
+
+                arrendatarios: {
+                    ph: 1,
+                    t: "Existencia de arrendatarios u ocupantes del inmueble",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Solo relevante cuando la subasta recae sobre un inmueble. En caso de existir arrendatarios u ocupantes del inmueble de cuya enajenación se trate, el solicitante deberá identificarlos en su solicitud inicial.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 110.2 de la Ley 15/2015</b>, que se remite al <b>artículo 661 de la Ley de Enjuiciamiento Civil.</b>",
+                        ],
+                        [
+                            "w",
+                            "La omisión de esta identificación puede generar indefensión a los ocupantes y nulidad de actuaciones, así como responsabilidad del solicitante frente al adjudicatario por cargas o situaciones posesorias ocultas.",
+                        ],
+                    ],
+                    q: "¿Existen arrendatarios u ocupantes del inmueble?",
+                    opts: [
+                        {
+                            t: "Sí, hay arrendatarios u ocupantes",
+                            l: "A",
+                            n: "notif_661",
+                        },
+                        {
+                            t: "No (o no se trata de un inmueble)",
+                            l: "B",
+                            n: "modo_venta",
+                        },
+                    ],
+                },
+
+                notif_661: {
+                    ph: 1,
+                    t: "Comunicaciones a arrendatarios y ocupantes (artículo 661 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El solicitante identificará a los arrendatarios y ocupantes en la solicitud inicial, y se procederá en la forma prescrita en el artículo 661 de la Ley de Enjuiciamiento Civil.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 661 de la Ley de Enjuiciamiento Civil.</b> Comunicaciones a arrendatarios y ocupantes de hecho. Trámites para determinar si tienen o no derecho a permanecer en el inmueble tras la enajenación.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones a practicar",
+                            [
+                                "Notificación individual a cada arrendatario u ocupante identificado.",
+                                "Traslado de la información relevante sobre la subasta prevista.",
+                                "En su caso, tramitación del incidente sobre el derecho a permanecer en el inmueble conforme al artículo 661 de la LEC.",
+                            ],
+                        ],
+                    ],
+                    nx: "modo_venta",
+                },
+
+                modo_venta: {
+                    ph: 1,
+                    t: "Modo de realización: subasta electrónica o entidad especializada",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "En la solicitud podrá pedirse al Secretario judicial que acuerde la venta del bien o derecho por persona o entidad especializada. De estimarse procedente, se acordará con sujeción a lo establecido en el artículo 641 de la Ley de Enjuiciamiento Civil en cuanto sea compatible con este Título.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 110.3 de la Ley 15/2015</b>, en relación con el <b>artículo 641 de la Ley de Enjuiciamiento Civil.</b>",
+                        ],
+                    ],
+                    q: "¿Qué modo de realización se solicita?",
+                    opts: [
+                        {
+                            t: "Subasta electrónica ordinaria (Portal AEBOE)",
+                            l: "A",
+                            n: "pliego",
+                        },
+                        {
+                            t: "Venta por persona o entidad especializada (art. 641 LEC)",
+                            l: "B",
+                            n: "especializada",
+                        },
+                    ],
+                },
+
+                especializada: {
+                    ph: 1,
+                    t: "Venta por persona o entidad especializada",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "De estimarse procedente la petición del solicitante, el Secretario judicial acordará la venta por persona o entidad especializada con sujeción al artículo 641 de la Ley de Enjuiciamiento Civil en cuanto sea compatible con las disposiciones del Título VII.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 641 de la Ley de Enjuiciamiento Civil.</b> Realización por persona o entidad especializada: requisitos, caución, precio mínimo y régimen temporal.",
+                        ],
+                        [
+                            "n",
+                            "Aun cuando se opte por esta vía, el pliego de condiciones particulares del artículo 110.1.c) sigue siendo necesario, pues fija las reglas económicas y materiales de la enajenación.",
+                        ],
+                    ],
+                    nx: "pliego",
+                },
+
+                pliego: {
+                    ph: 1,
+                    t: "Pliego de condiciones particulares",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "El pliego de condiciones particulares recoge las reglas con arreglo a las cuales ha de celebrarse la subasta y la valoración de los bienes o derechos a subastar.",
+                        ],
+                        ["l", "<b>Artículo 110.1.c) de la Ley 15/2015.</b>"],
+                        [
+                            "cl",
+                            "Contenido típico del pliego",
+                            [
+                                "Valoración o tipo de salida del bien o derecho.",
+                                "Tipo mínimo por debajo del cual el solicitante no aceptará el remate.",
+                                "Reserva, en su caso, del derecho del solicitante a aprobar o rechazar el remate.",
+                                "Reglas sobre consignación o depósito previo de los licitadores.",
+                                "Condiciones de pago del precio: plazo, forma y consecuencias del impago.",
+                                "Gastos e impuestos a cargo del adjudicatario.",
+                                "Cargas, servidumbres, gravámenes o situaciones posesorias subsistentes.",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "El pliego opera como lex specialis de la subasta: rige en todo aquello no previsto por la Ley de Enjuiciamiento Civil, y se expresará íntegramente en los edictos (artículo 111.5).",
+                        ],
+                    ],
+                    nx: "consulta_rpc",
+                },
+
+                /* ===================== FASE 2: TRAMITACIÓN PREVIA ===================== */
+
+                consulta_rpc: {
+                    ph: 2,
+                    t: "Consulta previa al Registro Público Concursal",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El Secretario judicial, antes de resolver sobre la solicitud, consultará el Registro Público Concursal a los efectos previstos en la legislación especial.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.1 de la Ley 15/2015</b>, en relación con el <b>Texto Refundido de la Ley Concursal (Real Decreto Legislativo 1/2020, de 5 de mayo).</b>",
+                        ],
+                        [
+                            "n",
+                            "Finalidad: comprobar que el titular no se halla en situación de concurso o preconcurso que pudiera afectar a su facultad de disposición sobre el bien o a la competencia del juez del concurso respecto de la enajenación.",
+                        ],
+                    ],
+                    q: "¿La consulta revela alguna inscripción concursal relevante asociada al titular?",
+                    opts: [
+                        {
+                            t: "No, no hay inscripciones que afecten",
+                            l: "A",
+                            n: "resolucion_celebracion",
+                        },
+                        {
+                            t: "Sí, el titular consta en concurso o situación similar",
+                            l: "B",
+                            n: "fin_concurso",
+                        },
+                    ],
+                },
+
+                fin_concurso: {
+                    ph: 2,
+                    t: "Suspensión por afectación concursal",
+                    ac: "laj",
+                    c: [
+                        [
+                            "w",
+                            "Detectada una inscripción concursal relevante, el expediente no puede continuar por este cauce: debe estarse a lo dispuesto por la legislación concursal sobre la enajenación de bienes del concursado.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones a practicar",
+                            [
+                                "Comunicar al solicitante la existencia de la inscripción concursal.",
+                                "Remitir, en su caso, las actuaciones al juez del concurso competente.",
+                                "Abstenerse de acordar la celebración de la subasta en tanto subsista la limitación.",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Texto Refundido de la Ley Concursal (RDLeg 1/2020): régimen de la facultad de disposición del concursado y de la realización de bienes en sede concursal.",
+                        ],
+                    ],
+                    end: "warning",
+                },
+
+                resolucion_celebracion: {
+                    ph: 2,
+                    t: "Resolución del LAJ sobre la celebración de la subasta",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "A la vista de la documentación, el Secretario judicial resolverá lo que proceda sobre la celebración de la subasta.",
+                        ],
+                        ["l", "<b>Artículo 111.2 de la Ley 15/2015.</b>"],
+                        [
+                            "cl",
+                            "Contenido del decreto de admisión",
+                            [
+                                "Declaración de procedencia de la subasta.",
+                                "Fijación del régimen de publicidad conforme al pliego.",
+                                "Comunicación al Registro Público Concursal de la existencia del expediente, con expresa especificación del número de identificación fiscal del titular (persona física o jurídica) cuyo bien vaya a ser objeto de la subasta.",
+                                "Orden de práctica de los actos preparatorios (certificación registral, edictos, etc.).",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "El Registro Público Concursal notificará al Juzgado la práctica de cualquier asiento asociado al NIF notificado. El Secretario judicial comunicará asimismo la finalización del expediente cuando ésta se produzca.",
+                        ],
+                    ],
+                    q: "¿La documentación y presupuestos son suficientes para acordar la celebración?",
+                    opts: [
+                        {
+                            t: "Sí, se acuerda la celebración de la subasta",
+                            l: "A",
+                            n: "certificacion_registral",
+                        },
+                        {
+                            t: "No, se inadmite la solicitud",
+                            l: "B",
+                            n: "fin_inadmision",
+                        },
+                    ],
+                },
+
+                fin_inadmision: {
+                    ph: 2,
+                    t: "Inadmisión de la solicitud",
+                    ac: "laj",
+                    c: [
+                        [
+                            "n",
+                            "El decreto de inadmisión pone fin al expediente sin adjudicación. El interesado podrá subsanar los defectos detectados y promover, en su caso, un nuevo expediente.",
+                        ],
+                        [
+                            "i",
+                            "La finalización del expediente deberá comunicarse al Registro Público Concursal, tal como prevé el artículo 111.2, párrafo cuarto.",
+                        ],
+                        ["l", "<b>Artículo 111.2 de la Ley 15/2015.</b>"],
+                    ],
+                    end: "neutral",
+                },
+
+                certificacion_registral: {
+                    ph: 2,
+                    t: "Solicitud de certificación registral de dominio y cargas",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Acordada la celebración, si se tratare de la subasta de un bien inmueble o derecho real inscrito en el Registro de la Propiedad o de bienes muebles sujetos a un régimen de publicidad registral similar, el Secretario judicial solicitará por procedimientos electrónicos certificación registral de dominio y cargas.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.3, párrafo primero, de la Ley 15/2015.</b>",
+                        ],
+                    ],
+                    q: "¿El bien está sujeto a publicidad registral?",
+                    opts: [
+                        {
+                            t: "Sí (Registro de la Propiedad, Bienes Muebles, etc.)",
+                            l: "A",
+                            n: "nota_marginal",
+                        },
+                        { t: "No", l: "B", n: "celebracion_subasta" },
+                    ],
+                },
+
+                nota_marginal: {
+                    ph: 2,
+                    t: "Certificación, nota marginal y deber de notificación continuada",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El Registrador de la propiedad expedirá la certificación con información continuada por medios electrónicos y hará constar por nota al margen del bien o derecho esta circunstancia.",
+                        ],
+                        ["l", "<b>Artículo 111.3 de la Ley 15/2015.</b>"],
+                        [
+                            "d",
+                            "<b>Caducidad de la nota marginal: seis meses.</b> Caducará a los seis meses de su fecha salvo que con anterioridad el Secretario judicial notifique al Registrador el cierre del expediente o su suspensión, en cuyo caso el plazo se computará desde que el Secretario judicial notifique su reanudación.",
+                        ],
+                        [
+                            "cl",
+                            "Deberes del Registrador",
+                            [
+                                "Expedir la certificación de dominio y cargas con información continuada por procedimientos electrónicos.",
+                                "Hacer constar por nota marginal la situación de venta en subasta del bien o derecho.",
+                                "Notificar, inmediatamente y de forma telemática, al Secretario judicial y al Portal de Subastas de la Agencia Estatal Boletín Oficial del Estado la presentación de otro u otros títulos que afecten o modifiquen la información inicial.",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "El Portal de Subastas recogerá la información proporcionada por el Registro de modo inmediato para su traslado a los que consulten su contenido.",
+                        ],
+                    ],
+                    nx: "celebracion_subasta",
+                },
+
+                /* ===================== FASE 3: PUBLICIDAD Y CELEBRACIÓN ===================== */
+
+                celebracion_subasta: {
+                    ph: 3,
+                    t: "Celebración electrónica en el Portal de Subastas de la AEBOE",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La subasta se llevará a cabo, en todo caso, de forma electrónica en el Portal de Subastas de la Agencia Estatal Boletín Oficial del Estado, bajo la responsabilidad del Secretario judicial.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.4 de la Ley 15/2015.</b> Forma de celebración. Aplicación de las disposiciones de la Ley de Enjuiciamiento Civil en cuanto sean compatibles.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.5 de la Ley 15/2015.</b> La publicidad y celebración se ajustarán a lo establecido en la Ley de Enjuiciamiento Civil en todo aquello no previsto en el pliego de condiciones particulares. <b>En los edictos se expresará el pliego de condiciones.</b>",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones durante la fase de publicidad y celebración",
+                            [
+                                "Publicación de la subasta en el Portal de Subastas AEBOE.",
+                                "Edictos con expresión íntegra del pliego de condiciones.",
+                                "Aplicación supletoria de la LEC: requisitos de los licitadores, depósito, duración de la subasta electrónica (artículo 648 LEC), etc.",
+                                "Información continuada al Portal por parte del Registrador de títulos sobrevenidos que afecten a la información inicial.",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La electronificación obligatoria, impuesta desde la reforma operada por la Ley 19/2015, de 13 de julio, busca maximizar la concurrencia, la transparencia y la obtención del mejor precio.",
+                        ],
+                    ],
+                    nx: "resultado_subasta",
+                },
+
+                resultado_subasta: {
+                    ph: 3,
+                    t: "Análisis del resultado de la subasta",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Terminada la subasta, el Secretario judicial, mediante decreto, aprobará el remate en favor del único o mejor postor, siempre y cuando cubra el tipo mínimo que hubiera fijado el solicitante o no se hubiere reservado expresamente el derecho a aprobarla.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.6 y 111.7 de la Ley 15/2015.</b>",
+                        ],
+                    ],
+                    q: "¿Cuál es el resultado de la subasta?",
+                    opts: [
+                        {
+                            t: "Hay postor que cubre el tipo mínimo y no hay reserva de aprobación",
+                            l: "A",
+                            n: "aprobacion_directa",
+                        },
+                        {
+                            t: "Hay postor, pero el solicitante se reservó el derecho a aprobar el remate",
+                            l: "B",
+                            n: "vista_solicitante",
+                        },
+                        {
+                            t: "Hay oferta modificando alguna de las condiciones",
+                            l: "C",
+                            n: "vista_modificacion",
+                        },
+                        {
+                            t: "No ha habido ningún postor",
+                            l: "D",
+                            n: "fin_sin_postores",
+                        },
+                    ],
+                },
+
+                fin_sin_postores: {
+                    ph: 3,
+                    t: "Sobreseimiento por falta de postores",
+                    ac: "laj",
+                    c: [
+                        [
+                            "n",
+                            "Cuando en la subasta no hubiere ningún postor, se sobreseerá el expediente.",
+                        ],
+                        ["l", "<b>Artículo 111.7 de la Ley 15/2015.</b>"],
+                        [
+                            "cl",
+                            "Actuaciones de cierre",
+                            [
+                                "Decreto de sobreseimiento del expediente.",
+                                "Comunicación al Registro Público Concursal de la finalización del expediente (art. 111.2, párrafo cuarto).",
+                                "Comunicación al Registrador para la cancelación de la nota marginal, si se hubiera practicado (art. 111.3).",
+                                "El interesado podrá promover un nuevo expediente en el futuro con otro pliego de condiciones o con nueva valoración.",
+                            ],
+                        ],
+                    ],
+                    end: "neutral",
+                },
+
+                /* ===================== FASE 4: RESOLUCIÓN Y ADJUDICACIÓN ===================== */
+
+                aprobacion_directa: {
+                    ph: 4,
+                    t: "Aprobación directa del remate",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Cuando el postor cubre el tipo mínimo fijado por el solicitante y éste no se hubiere reservado expresamente el derecho a aprobar la subasta, el Secretario judicial, mediante decreto, aprobará el remate en favor del único o mejor postor.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.6, párrafo primero, de la Ley 15/2015.</b>",
+                        ],
+                    ],
+                    nx: "decreto_adjudicacion",
+                },
+
+                vista_solicitante: {
+                    ph: 4,
+                    t: "Vista al solicitante por reserva del derecho a aprobar el remate",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Si el solicitante se hubiera reservado expresamente el derecho a aprobar el remate, se le dará vista del expediente para que en el término de tres días pida lo que le interese.",
+                        ],
+                        [
+                            "d",
+                            "<b>Plazo: tres días.</b> Término para que el solicitante se pronuncie tras dársele vista del expediente (artículo 111.6).",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.6, párrafo segundo, de la Ley 15/2015.</b>",
+                        ],
+                    ],
+                    q: "¿Qué resuelve el solicitante en el plazo de tres días?",
+                    opts: [
+                        {
+                            t: "Aprueba el remate",
+                            l: "A",
+                            n: "decreto_adjudicacion",
+                        },
+                        {
+                            t: "No aprueba el remate",
+                            l: "B",
+                            n: "fin_no_aprobacion",
+                        },
+                    ],
+                },
+
+                fin_no_aprobacion: {
+                    ph: 4,
+                    t: "Sobreseimiento por no aprobación del solicitante",
+                    ac: "laj",
+                    c: [
+                        [
+                            "n",
+                            "Cuando el solicitante, tras la vista, no aprueba el remate ofrecido, se sobreseerá el expediente.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.7 de la Ley 15/2015.</b> «Cuando en la subasta no hubiere ningún postor o el solicitante no hubiera aceptado la proposición, se sobreseerá el expediente.»",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones de cierre",
+                            [
+                                "Decreto de sobreseimiento del expediente.",
+                                "Comunicación al Registro Público Concursal de la finalización del expediente.",
+                                "Comunicación al Registrador para la cancelación de la nota marginal, si se hubiera practicado.",
+                            ],
+                        ],
+                    ],
+                    end: "neutral",
+                },
+
+                vista_modificacion: {
+                    ph: 4,
+                    t: "Vista al solicitante por oferta con condiciones modificadas",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Igual comunicación se le dará al solicitante en el caso de que por algún licitador se hiciere la oferta de aceptar el remate modificando algunas de las condiciones. Si el solicitante aprueba el remate o acepta la proposición, se resolverá teniendo por aprobado el remate en favor del licitador de la misma.",
+                        ],
+                        [
+                            "d",
+                            "<b>Plazo: tres días.</b> Término para que el solicitante se pronuncie sobre la proposición modificada.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.6, párrafos segundo y tercero, de la Ley 15/2015.</b>",
+                        ],
+                    ],
+                    q: "¿Qué resuelve el solicitante sobre la proposición modificada?",
+                    opts: [
+                        {
+                            t: "Acepta la proposición",
+                            l: "A",
+                            n: "decreto_adjudicacion",
+                        },
+                        {
+                            t: "No acepta la proposición",
+                            l: "B",
+                            n: "fin_rechazo_modificacion",
+                        },
+                    ],
+                },
+
+                fin_rechazo_modificacion: {
+                    ph: 4,
+                    t: "Sobreseimiento por rechazo de la proposición modificada",
+                    ac: "laj",
+                    c: [
+                        [
+                            "n",
+                            "Si el solicitante no acepta la proposición de remate con condiciones modificadas, se sobreseerá el expediente por aplicación del artículo 111.7.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.7 de la Ley 15/2015.</b> Sobreseimiento por no aceptación de la proposición.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones de cierre",
+                            [
+                                "Decreto de sobreseimiento.",
+                                "Comunicación al Registro Público Concursal de la finalización.",
+                                "Cancelación, en su caso, de la nota marginal registral.",
+                            ],
+                        ],
+                    ],
+                    end: "neutral",
+                },
+
+                decreto_adjudicacion: {
+                    ph: 4,
+                    t: "Decreto de adjudicación",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El decreto de adjudicación es la resolución que cierra positivamente la subasta y sirve de título inscribible al adjudicatario.",
+                        ],
+                        ["l", "<b>Artículo 111.8 de la Ley 15/2015.</b>"],
+                        [
+                            "cl",
+                            "Contenido obligatorio del decreto de adjudicación",
+                            [
+                                "Descripción del bien o derecho.",
+                                "Identificación de los intervinientes (solicitante, adjudicatario y, en su caso, sus representantes).",
+                                "Expresión de las condiciones de la adjudicación (precio, forma de pago, cargas asumidas, etc.).",
+                                "Los demás requisitos necesarios, en su caso, para la inscripción registral (descripción catastral, referencia registral, manifestaciones fiscales, etc.).",
+                            ],
+                        ],
+                    ],
+                    nx: "testimonio",
+                },
+
+                testimonio: {
+                    ph: 4,
+                    t: "Testimonio del decreto. Título para la inscripción registral",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Un testimonio del decreto de adjudicación, que se entregará al adjudicatario, será título suficiente para la práctica de las inscripciones registrales que, en su caso, correspondan.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.8, párrafo segundo, de la Ley 15/2015.</b>",
+                        ],
+                        [
+                            "n",
+                            "El testimonio tiene eficacia equivalente a una escritura pública de compraventa a efectos registrales en relación con las inscripciones derivadas de la adjudicación.",
+                        ],
+                    ],
+                    nx: "comunicacion_final_rpc",
+                },
+
+                comunicacion_final_rpc: {
+                    ph: 4,
+                    t: "Comunicaciones finales: Registro Público Concursal y Registro",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El Secretario judicial pondrá en conocimiento del Registro Público Concursal la finalización del expediente cuando la misma se produzca.",
+                        ],
+                        [
+                            "l",
+                            "<b>Artículo 111.2, párrafo cuarto, de la Ley 15/2015.</b>",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones finales",
+                            [
+                                "Comunicación al Registro Público Concursal de la finalización del expediente.",
+                                "Notificación al Registrador del cierre del expediente a los efectos de la nota marginal (art. 111.3).",
+                                "Entrega del testimonio del decreto de adjudicación al adjudicatario.",
+                                "Archivo del expediente.",
+                            ],
+                        ],
+                    ],
+                    nx: "fin_exitoso",
+                },
+
+                fin_exitoso: {
+                    ph: 4,
+                    t: "Expediente concluido con adjudicación",
+                    ac: "laj",
+                    c: [
+                        [
+                            "n",
+                            "El expediente de subasta voluntaria ha concluido con adjudicación firme. El adjudicatario dispone del testimonio del decreto como título suficiente para la inscripción registral que corresponda.",
+                        ],
+                        [
+                            "cl",
+                            "Resultados alcanzados",
+                            [
+                                "Aprobación del remate mediante decreto del Secretario judicial.",
+                                "Decreto de adjudicación con todos los requisitos del artículo 111.8.",
+                                "Testimonio entregado al adjudicatario como título inscribible.",
+                                "Comunicación al Registro Público Concursal de la finalización del expediente.",
+                                "Notificación al Registrador para el cierre del expediente y de la nota marginal.",
+                            ],
+                        ],
+                    ],
+                    end: "success",
+                },
+            };
+
+            /* =========================================================
+   ESTADO (Módulo 16)
+   ========================================================= */
+            let cur = "inicio";
+            let hist = []; // cada entrada: {s: claveOrigen, next: claveDestino, c: textoOpciónElegida}
+            let activeSbTab = "map";
+            let mapaOn = false;
+            let mapCollapsed = {}; // estado colapsado de cada fase en la pestaña Mapa
+            let mapPreview = null; // clave del paso cuya previsualización está abierta en el Mapa
+            let zoomLevel = 100;
+            const SB_FOOT =
+                '<div class="sb-foot">' +
+                "<b>Referencias normativas</b>" +
+                '<span class="law">Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria.</span><br>' +
+                '<span class="law">Título VII — Arts. 108 a 111.</span><br>' +
+                '<span class="law">LEC — Arts. 641, 648, 661.</span><br>' +
+                '<span class="law">RDLeg 1/2020 (TRLC). Registro Público Concursal.</span><br>' +
+                '<span class="law">Ley 19/2015 — Subasta electrónica AEBOE.</span>' +
+                "</div>";
+
+            // ----- Variables para toggle sidebar -----
+            let sidebarOpen = false;
+            let btnToggleSidebar = null;
+            let sidebarBackdrop = null;
+
+            function clampNum(v, min, max) {
+                return Math.min(max, Math.max(min, v));
+            }
+            function setZoom(pct) {
+                zoomLevel = clampNum(Math.round(pct), 80, 140);
+                const content = document.getElementById("content");
+                if (content) content.style.zoom = String(zoomLevel / 100);
+                const lbl = document.getElementById("zoomLabel");
+                if (lbl) lbl.textContent = zoomLevel + "%";
+            }
+            function zoomIn() {
+                setZoom(zoomLevel + 10);
+            }
+            function zoomOut() {
+                setZoom(zoomLevel - 10);
+            }
+
+            /* =========================================================
+   TOGGLE SIDEBAR (nuevo)
+   ========================================================= */
+            function toggleSidebar() {
+                const isMobile = window.innerWidth <= 700;
+                const sidebar = document.getElementById("sidebar");
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    if (sidebar) {
+                        if (sidebarOpen) {
+                            sidebar.classList.add("open");
+                        } else {
+                            sidebar.classList.remove("open");
+                        }
+                    }
+                    if (sidebarBackdrop) {
+                        if (sidebarOpen) {
+                            sidebarBackdrop.classList.add("show");
+                        } else {
+                            sidebarBackdrop.classList.remove("show");
+                        }
+                    }
+                    if (btnToggleSidebar) {
+                        btnToggleSidebar.setAttribute(
+                            "aria-expanded",
+                            sidebarOpen,
+                        );
+                    }
+                } else {
+                    if (sidebar) {
+                        sidebar.classList.toggle("collapsed");
+                    }
+                }
+            }
+
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 700 && sidebarOpen) {
+                    sidebarOpen = false;
+                    const sidebar = document.getElementById("sidebar");
+                    if (sidebar) sidebar.classList.remove("open");
+                    if (sidebarBackdrop)
+                        sidebarBackdrop.classList.remove("show");
+                    if (btnToggleSidebar)
+                        btnToggleSidebar.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            /* =========================================================
+   NAVEGACIÓN (Módulo 16)
+   ========================================================= */
+            function goTo(stepId, choiceLabel) {
+                if (!STEPS[stepId]) return;
+                hist.push({ s: cur, next: stepId, c: choiceLabel || "" });
+                cur = stepId;
+                if (choiceLabel) sbTab("journey");
+                render();
+            }
+            function goBack() {
+                if (hist.length === 0) return;
+                cur = hist.pop().s;
+                render();
+            }
+            function goBackTo(index) {
+                if (index < 0 || index >= hist.length) return;
+                cur = hist[index].s;
+                hist = hist.slice(0, index);
+                render();
+            }
+            function restart() {
+                cur = "inicio";
+                hist = [];
+                mapPreview = null;
+                sbTab("map");
+                setZoom(100);
+                render();
+            }
+            function sbTab(tab) {
+                activeSbTab = tab;
+                const map = document.getElementById("sb-map");
+                const jny = document.getElementById("sb-journey");
+                if (map) map.style.display = tab === "map" ? "block" : "none";
+                if (jny)
+                    jny.style.display = tab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach((t) => {
+                    t.classList.toggle("active", t.dataset.tab === tab);
+                });
+            }
+            function toggleMapa() {
+                mapaOn = !mapaOn;
+                const lay = document.getElementById("layout");
+                const ovl = document.getElementById("mapa-overlay");
+                if (lay) lay.style.display = mapaOn ? "none" : "flex";
+                if (ovl) ovl.style.display = mapaOn ? "block" : "none";
+                if (mapaOn) renderMapa();
+            }
+
+            // Reconstruye la ruta más corta desde 'inicio' hasta targetId
+            function buildPathTo(targetId) {
+                if (targetId === "inicio") return [];
+                const queue = [{ node: "inicio", path: [] }];
+                const visited = new Set();
+                visited.add("inicio");
+                while (queue.length) {
+                    const current = queue.shift();
+                    const step = STEPS[current.node];
+                    if (!step) continue;
+                    if (step.nx) {
+                        const nextId = step.nx;
+                        const newPath = [
+                            ...current.path,
+                            { s: current.node, next: nextId, c: "" },
+                        ];
+                        if (nextId === targetId) return newPath;
+                        if (!visited.has(nextId)) {
+                            visited.add(nextId);
+                            queue.push({ node: nextId, path: newPath });
+                        }
+                    }
+                    if (step.opts) {
+                        for (const opt of step.opts) {
+                            const nextId = opt.n;
+                            const choiceLabel = opt.t;
+                            const newPath = [
+                                ...current.path,
+                                {
+                                    s: current.node,
+                                    next: nextId,
+                                    c: choiceLabel,
+                                },
+                            ];
+                            if (nextId === targetId) return newPath;
+                            if (!visited.has(nextId)) {
+                                visited.add(nextId);
+                                queue.push({ node: nextId, path: newPath });
+                            }
+                        }
+                    }
+                }
+                return null;
+            }
+
+            function jumpTo(stepId) {
+                if (!STEPS[stepId]) return;
+                if (stepId !== cur) {
+                    const path = buildPathTo(stepId);
+                    if (path) {
+                        hist = path;
+                    } else {
+                        hist = [];
+                    }
+                }
+                cur = stepId;
+                mapPreview = null;
+                mapaOn = false;
+                const lay = document.getElementById("layout");
+                const ovl = document.getElementById("mapa-overlay");
+                if (lay) lay.style.display = "flex";
+                if (ovl) ovl.style.display = "none";
+                render();
+            }
+
+            /* =========================================================
+   HASH (Módulo 20)
+   ========================================================= */
+            function syncHash() {
+                const current = window.location.hash.replace("#", "");
+                if (current !== cur) history.replaceState(null, "", "#" + cur);
+            }
+            function loadFromHash() {
+                const h = window.location.hash.replace("#", "");
+                if (h && STEPS[h]) {
+                    cur = h;
+                    hist = [];
+                }
+            }
+
+            /* =========================================================
+   UTILIDADES
+   ========================================================= */
+            function escQ(s) {
+                return String(s).replace(/'/g, "&#39;");
+            }
+            function escH(s) {
+                return String(s)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;");
+            }
+            function trunc(s, n) {
+                const str = String(s);
+                if (str.length <= n) return str;
+                return str.slice(0, n - 1) + "…";
+            }
+            function actLabel(ac) {
+                if (ac === "laj") return "Letrado de la Admón. de Justicia";
+                if (ac === "juez") return "Juez de Primera Instancia";
+                if (ac === "ambos") return "LAJ / Interesado";
+                return "Actor";
+            }
+            function endMeta(end) {
+                if (end === "success")
+                    return { ico: "✅", lbl: "Expediente concluido con éxito" };
+                if (end === "error")
+                    return {
+                        ico: "❌",
+                        lbl: "Expediente no viable por este cauce",
+                    };
+                if (end === "warning")
+                    return { ico: "⚠️", lbl: "Expediente suspendido" };
+                if (end === "neutral")
+                    return { ico: "ℹ️", lbl: "Expediente sobreseído" };
+                return { ico: "•", lbl: "Fin" };
+            }
+            // Claves visitadas hasta ahora (incluye el actual)
+            function visitedSet() {
+                const set = new Set();
+                hist.forEach((h) => {
+                    set.add(h.s);
+                });
+                set.add(cur);
+                return set;
+            }
+
+            /* =========================================================
+   RENDER — BARRA DE FASES (Módulo 6)
+   ========================================================= */
+            function renderPbar() {
+                const host = document.getElementById("pbar");
+                if (!host) return;
+                const curPh =
+                    STEPS[cur] && typeof STEPS[cur].ph === "number"
+                        ? STEPS[cur].ph
+                        : 0;
+                let html = "";
+                PHASES.forEach((name, i) => {
+                    let cls = "";
+                    if (i < curPh) cls = "done";
+                    else if (i === curPh) cls = "active";
+                    html +=
+                        '<div class="ph-item"><span class="ph-lbl ' +
+                        cls +
+                        '">' +
+                        escH(name) +
+                        "</span></div>";
+                    if (i < PHASES.length - 1)
+                        html += '<span class="ph-sep">›</span>';
+                });
+                host.innerHTML = html;
+            }
+
+            /* =========================================================
+   RENDER — MIGAS DE PAN (Módulo 7)
+   ========================================================= */
+            function renderBreadcrumb() {
+                const host = document.getElementById("breadcrumb");
+                if (!host) return;
+                let html = "";
+                if (hist.length === 0) {
+                    const t = (STEPS[cur] && STEPS[cur].t) || cur;
+                    html =
+                        '<span class="bc-item bc-current">' +
+                        escH(trunc(t, 28)) +
+                        "</span>";
+                } else {
+                    hist.forEach((h, i) => {
+                        const step = STEPS[h.s];
+                        const label = step && step.t ? step.t : h.s;
+                        html +=
+                            '<button class="bc-item bc-past" data-action="go-back-to" data-index="' +
+                            i +
+                            '">' +
+                            escH(trunc(label, 28)) +
+                            "</button>";
+                        html += '<span class="bc-sep">›</span>';
+                    });
+                    const t = (STEPS[cur] && STEPS[cur].t) || cur;
+                    html +=
+                        '<span class="bc-item bc-current">' +
+                        escH(trunc(t, 28)) +
+                        "</span>";
+                }
+                host.innerHTML = html;
+            }
+
+            /* =========================================================
+   RENDER — SIDEBAR (Módulos 9.1 y 9.2)
+   ========================================================= */
+            function renderSidebar() {
+                renderSbMap();
+                renderSbJourney();
+                // sync visibilidad
+                const map = document.getElementById("sb-map");
+                const jny = document.getElementById("sb-journey");
+                if (map)
+                    map.style.display =
+                        activeSbTab === "map" ? "block" : "none";
+                if (jny)
+                    jny.style.display =
+                        activeSbTab === "journey" ? "block" : "none";
+            }
+
+            function renderSbMap() {
+                const host = document.getElementById("sb-map");
+                if (!host) return;
+                const visited = visitedSet();
+                // Agrupar claves por fase, conservando orden de declaración
+                const byPh = {};
+                PHASES.forEach((_, i) => {
+                    byPh[i] = [];
+                });
+                Object.keys(STEPS).forEach((k) => {
+                    const ph = STEPS[k].ph;
+                    if (byPh[ph]) byPh[ph].push(k);
+                });
+
+                let html = "";
+                PHASES.forEach((name, i) => {
+                    const collapsed = !!mapCollapsed[i];
+                    html +=
+                        '<div class="sm-phase' +
+                        (collapsed ? " collapsed" : "") +
+                        '">';
+                    html +=
+                        '<button class="sm-phase-hdr" data-action="sm-toggle-phase" data-ph="' +
+                        i +
+                        '">';
+                    html += "<span>" + escH(name) + "</span>";
+                    html += '<span class="sm-chev">▾</span>';
+                    html += "</button>";
+                    html += '<div class="sm-nodes">';
+                    byPh[i].forEach((k) => {
+                        const s = STEPS[k];
+                        let cls = "";
+                        if (k === cur) cls = "sm-current";
+                        else if (visited.has(k)) cls = "sm-visited";
+                        // Nodos inalcanzables: por simplicidad, ninguno se marca como tal;
+                        // se mantiene la clase para futuras evoluciones del grafo.
+                        html +=
+                            '<button class="sm-node ' +
+                            cls +
+                            '" data-action="sm-preview" data-step="' +
+                            escH(k) +
+                            '">';
+                        html += '<span class="sm-dot"></span>';
+                        html += "<span>" + escH(trunc(s.t, 32)) + "</span>";
+                        html += "</button>";
+                        if (mapPreview === k) {
+                            html += buildSmPreview(k);
+                        }
+                    });
+                    html += "</div></div>";
+                });
+                html += SB_FOOT;
+                host.innerHTML = html;
+            }
+
+            function buildSmPreview(k) {
+                const s = STEPS[k];
+                if (!s) return "";
+                const meta = s.end ? endMeta(s.end).lbl : actLabel(s.ac);
+                let body = "";
+                if (s.c && s.c.length) {
+                    const first = s.c.find((b) => b[0] === "i");
+                    if (first) body = trunc(first[1], 160);
+                }
+                if (!body && s.q) body = trunc(s.q, 160);
+                if (!body && s.end) body = "Nodo final del procedimiento.";
+                let html = '<div class="sm-preview">';
+                html += '<div class="sm-preview-title">' + escH(s.t) + "</div>";
+                html += '<div class="sm-preview-meta">' + escH(meta) + "</div>";
+                html += "<div>" + escH(body) + "</div>";
+                html +=
+                    '<button class="sm-jump" data-action="jump-to" data-step="' +
+                    escH(k) +
+                    '">Ir a este paso</button>';
+                html += "</div>";
+                return html;
+            }
+
+            function renderSbJourney() {
+                const host = document.getElementById("sb-journey");
+                if (!host) return;
+                let html = "";
+                hist.forEach((h) => {
+                    const step = STEPS[h.s];
+                    const label = step && step.t ? step.t : h.s;
+                    html += '<div class="pi past">';
+                    html += '<div class="pi-t">' + escH(label) + "</div>";
+                    if (h.c)
+                        html +=
+                            '<span class="pi-choice">→ ' +
+                            escH(h.c) +
+                            "</span>";
+                    html += "</div>";
+                });
+                const now = STEPS[cur];
+                if (now) {
+                    html +=
+                        '<div class="pi current"><div class="pi-t">' +
+                        escH(now.t) +
+                        "</div></div>";
+                }
+                html += SB_FOOT;
+                host.innerHTML = html;
+            }
+
+            /* =========================================================
+   RENDER — CONTENIDO CENTRAL (Módulos 13 y 14)
+   ========================================================= */
+            function renderContent() {
+                const s = STEPS[cur];
+                const host = document.getElementById("content");
+                if (!host || !s) return;
+                host.innerHTML = s.end ? buildEnd(s) : buildStep(s);
+            }
+
+            function buildBlocks(arr) {
+                if (!arr || !arr.length) return "";
+                let html = "";
+                arr.forEach((b) => {
+                    const type = b[0];
+                    if (type === "i") {
+                        html +=
+                            '<div class="blk blk-i"><p>' + b[1] + "</p></div>";
+                    } else if (type === "d") {
+                        html +=
+                            '<div class="blk blk-d"><b>Plazo</b>' +
+                            b[1] +
+                            "</div>";
+                    } else if (type === "n") {
+                        html +=
+                            '<div class="blk blk-n"><b>Nota</b>' +
+                            b[1] +
+                            "</div>";
+                    } else if (type === "w") {
+                        html +=
+                            '<div class="blk blk-w"><b>Advertencia</b>' +
+                            b[1] +
+                            "</div>";
+                    } else if (type === "l") {
+                        html += '<div class="blk blk-l">' + b[1] + "</div>";
+                    } else if (type === "cl") {
+                        html +=
+                            '<div class="blk blk-cl"><div class="cl-t">' +
+                            escH(b[1]) +
+                            "</div><ul>";
+                        (b[2] || []).forEach((it) => {
+                            html += "<li>" + escH(it) + "</li>";
+                        });
+                        html += "</ul></div>";
+                    }
+                });
+                return html;
+            }
+
+            function buildStep(s) {
+                const phName = PHASES[s.ph] || "";
+                const n = hist.length + 1;
+                let html = '<div class="card">';
+                // Cabecera
+                html += '<div class="c-hdr">';
+                html +=
+                    '<span class="act-badge act-' +
+                    s.ac +
+                    '">' +
+                    escH(actLabel(s.ac)) +
+                    "</span>";
+                html += '<div class="c-title">' + escH(s.t) + "</div>";
+                html +=
+                    '<div class="step-num">Paso ' +
+                    n +
+                    " de este recorrido · Fase " +
+                    (s.ph + 1) +
+                    ": " +
+                    escH(phName) +
+                    "</div>";
+                html += "</div>";
+                // Cuerpo
+                html += '<div class="c-body">' + buildBlocks(s.c) + "</div>";
+                // Decisión
+                if (s.q && s.opts) {
+                    html += '<div class="dec-area">';
+                    html += '<div class="dec-q">' + escH(s.q) + "</div>";
+                    html += '<div class="dec-opts">';
+                    s.opts.forEach((op) => {
+                        const variant =
+                            op.l === "A"
+                                ? "ok"
+                                : op.l === "B"
+                                  ? "bad"
+                                  : op.l === "C"
+                                    ? "warn"
+                                    : "neutral";
+                        html +=
+                            '<button class="dec-btn ' +
+                            variant +
+                            '" data-action="go-to" data-step="' +
+                            escH(op.n) +
+                            '" data-label="' +
+                            escH(op.t) +
+                            '">';
+                        html +=
+                            '<span class="dec-letter">' +
+                            escH(op.l) +
+                            "</span>";
+                        html += "<span>" + escH(op.t) + "</span>";
+                        html += "</button>";
+                    });
+                    html += "</div></div>";
+                }
+                // Navegación
+                html += '<div class="c-nav">';
+                const disBack = hist.length === 0 ? "disabled" : "";
+                html +=
+                    '<button class="btn-back" data-action="go-back" ' +
+                    disBack +
+                    ">← Volver</button>";
+                if (s.nx) {
+                    html +=
+                        '<button class="btn-next" data-action="go-to" data-step="' +
+                        escH(s.nx) +
+                        '" data-label="">Siguiente →</button>';
+                } else {
+                    html += "<span></span>";
+                }
+                html += "</div>";
+                html += "</div>";
+                return html;
+            }
+
+            function buildEnd(s) {
+                const meta = endMeta(s.end);
+                let html = '<div class="card end-' + s.end + '">';
+                html += '<div class="end-body">';
+                html += '<div class="end-ico">' + meta.ico + "</div>";
+                html += '<div class="end-title">' + escH(s.t) + "</div>";
+                html +=
+                    '<div class="end-sub">El procedimiento ha concluido en esta vía.</div>';
+                html += "</div>";
+                html += '<div class="end-actions">';
+                html +=
+                    '<button class="btn-blue" data-action="reiniciar">↺ Nuevo procedimiento</button>';
+                const disBack = hist.length === 0 ? "disabled" : "";
+                html +=
+                    '<button class="btn-back" data-action="go-back" ' +
+                    disBack +
+                    ">← Volver</button>";
+                html += "</div>";
+                // Resumen del recorrido
+                html +=
+                    '<div class="summary-box"><h4>Resumen del recorrido</h4><ol>';
+                hist.forEach((h) => {
+                    const step = STEPS[h.s];
+                    const label = step && step.t ? step.t : h.s;
+                    html += "<li>" + escH(label);
+                    if (h.c)
+                        html +=
+                            ' <span class="sum-choice">→ ' +
+                            escH(h.c) +
+                            "</span>";
+                    html += "</li>";
+                });
+                html += "<li><b>" + escH(s.t) + "</b></li>";
+                html += "</ol></div>";
+                // Contenido específico del desenlace
+                html += '<div class="c-body">' + buildBlocks(s.c) + "</div>";
+                html += "</div>";
+                return html;
+            }
+
+            /* =========================================================
+   RENDER — VISTA DE MAPA COMPLETO (Módulo 10)
+   ========================================================= */
+            function renderMapa() {
+                const host = document.getElementById("mapa-overlay");
+                if (!host) return;
+                const visited = visitedSet();
+
+                // Pre-calcular nodos por fase
+                const byPh = {};
+                PHASES.forEach((_, i) => {
+                    byPh[i] = [];
+                });
+                Object.keys(STEPS).forEach((k) => {
+                    const ph = STEPS[k].ph;
+                    if (byPh[ph]) byPh[ph].push(k);
+                });
+
+                let html = "";
+                html += '<div class="mapa-head">';
+                html +=
+                    '<div><div class="mapa-title">Mapa completo del procedimiento</div>';
+                html +=
+                    '<div class="mapa-sub">Subastas voluntarias · Ley 15/2015, Título VII (arts. 108–111) · 5 fases · ' +
+                    Object.keys(STEPS).length +
+                    " nodos</div></div>";
+                html +=
+                    '<button class="btn btn-blue" data-action="close-mapa">← Volver al recorrido</button>';
+                html += "</div>";
+
+                html += '<div class="mapa-grid">';
+                PHASES.forEach((name, i) => {
+                    html +=
+                        '<div class="mapa-col"><div class="mapa-col-hdr">Fase ' +
+                        (i + 1) +
+                        ": " +
+                        escH(name) +
+                        "</div>";
+                    byPh[i].forEach((k) => {
+                        const s = STEPS[k];
+                        let cls = "";
+                        if (k === cur) cls = "current";
+                        else if (visited.has(k)) cls = "visited";
+                        if (s.end) cls += " end-" + s.end;
+                        html +=
+                            '<div class="mapa-node ' +
+                            cls +
+                            '" data-action="jump-to" data-step="' +
+                            escH(k) +
+                            '">';
+                        html +=
+                            '<div class="mapa-node-title">' +
+                            escH(trunc(s.t, 70)) +
+                            "</div>";
+                        let badgeBg = "var(--violet-bg)",
+                            badgeFg = "var(--violet)",
+                            badgeLbl = "LAJ";
+                        if (s.ac === "juez") {
+                            badgeBg = "var(--amber-bg)";
+                            badgeFg = "var(--amber)";
+                            badgeLbl = "Juez";
+                        }
+                        if (s.ac === "ambos") {
+                            badgeBg = "var(--slate-bg)";
+                            badgeFg = "var(--slate)";
+                            badgeLbl = "LAJ / Interesado";
+                        }
+                        if (s.end) {
+                            const em = endMeta(s.end);
+                            badgeLbl = em.lbl;
+                            if (s.end === "success") {
+                                badgeBg = "var(--green-bg)";
+                                badgeFg = "var(--green)";
+                            }
+                            if (s.end === "error") {
+                                badgeBg = "var(--red-bg)";
+                                badgeFg = "var(--red)";
+                            }
+                            if (s.end === "warning") {
+                                badgeBg = "var(--amber-bg)";
+                                badgeFg = "var(--amber)";
+                            }
+                            if (s.end === "neutral") {
+                                badgeBg = "var(--cyan-bg)";
+                                badgeFg = "var(--cyan)";
+                            }
+                        }
+                        html +=
+                            '<span class="mapa-node-badge" style="background:' +
+                            badgeBg +
+                            ";color:" +
+                            badgeFg +
+                            ';">' +
+                            escH(badgeLbl) +
+                            "</span>";
+                        html += "</div>";
+                        // Flechas salientes
+                        if (s.nx && STEPS[s.nx]) {
+                            html +=
+                                '<div class="mapa-arrow">→ Siguiente: ' +
+                                escH(trunc(STEPS[s.nx].t, 40)) +
+                                "</div>";
+                        }
+                        if (s.opts && s.opts.length) {
+                            s.opts.forEach((op) => {
+                                const dest = STEPS[op.n]
+                                    ? trunc(STEPS[op.n].t, 34)
+                                    : op.n;
+                                html +=
+                                    '<div class="mapa-arrow">→ ' +
+                                    escH(op.l) +
+                                    ": " +
+                                    escH(trunc(op.t, 22)) +
+                                    " &rarr; " +
+                                    escH(dest) +
+                                    "</div>";
+                            });
+                        }
+                    });
+                    html += "</div>";
+                });
+                html += "</div>";
+
+                host.innerHTML = html;
+            }
+
+            /* =========================================================
+   RENDER PRINCIPAL (Módulo 17)
+   ========================================================= */
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+                syncHash();
+                // Cerrar sidebar móvil al navegar
+                closeMobileSidebar();
+                const content = document.getElementById("content");
+                if (content) content.scrollTop = 0;
+            }
+
+            /* =========================================================
+   DESCARGA (Módulo 18)
+   ========================================================= */
+            function dlGuia() {
+                const html =
+                    "<!DOCTYPE html>" + document.documentElement.outerHTML;
+                const blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "guia-tramitacion.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            /* =========================================================
+   EVENTOS (Módulo 21)
+   ========================================================= */
+            function wireEvents() {
+                document.addEventListener("click", (ev) => {
+                    const el = ev.target.closest("[data-action]");
+                    if (!el) return;
+                    const action = el.dataset.action;
+                    switch (action) {
+                        case "toggle-mapa":
+                            toggleMapa();
+                            break;
+                        case "descargar":
+                            dlGuia();
+                            break;
+                        case "reiniciar":
+                            restart();
+                            break;
+                        case "zoom-in":
+                            zoomIn();
+                            break;
+                        case "zoom-out":
+                            zoomOut();
+                            break;
+                        case "sb-tab":
+                            sbTab(el.dataset.tab);
+                            break;
+                        case "go-back":
+                            goBack();
+                            break;
+                        case "go-back-to":
+                            goBackTo(parseInt(el.dataset.index, 10));
+                            break;
+                        case "go-to":
+                            goTo(el.dataset.step, el.dataset.label || "");
+                            break;
+                        case "jump-to":
+                            jumpTo(el.dataset.step);
+                            break;
+                        case "close-mapa":
+                            toggleMapa();
+                            break;
+                        case "sm-toggle-phase": {
+                            const ph = parseInt(el.dataset.ph, 10);
+                            mapCollapsed[ph] = !mapCollapsed[ph];
+                            renderSbMap();
+                            break;
+                        }
+                        case "sm-preview": {
+                            const k = el.dataset.step;
+                            mapPreview = mapPreview === k ? null : k;
+                            renderSbMap();
+                            break;
+                        }
+                    }
+                });
+                document.addEventListener("keydown", (ev) => {
+                    if (ev.key === "Escape" && mapaOn) toggleMapa();
+                    if (
+                        ev.key === "Escape" &&
+                        window.innerWidth <= 700 &&
+                        sidebarOpen
+                    ) {
+                        closeMobileSidebar();
+                    }
+                });
+                window.addEventListener("hashchange", () => {
+                    const h = window.location.hash.replace("#", "");
+                    if (h && STEPS[h] && h !== cur) {
+                        cur = h;
+                        hist = [];
+                        render();
+                    }
+                });
+            }
+
+            /* =========================================================
+   ARRANQUE
+   ========================================================= */
+            document.addEventListener("DOMContentLoaded", () => {
+                // Inicializar referencias del toggle sidebar
+                btnToggleSidebar = document.getElementById("btnToggleSidebar");
+                sidebarBackdrop = document.getElementById("sidebarBackdrop");
+                if (btnToggleSidebar) {
+                    btnToggleSidebar.addEventListener("click", toggleSidebar);
+                }
+                if (sidebarBackdrop) {
+                    sidebarBackdrop.addEventListener(
+                        "click",
+                        closeMobileSidebar,
+                    );
+                }
+                // Ajustar al redimensionar la ventana
+                window.addEventListener("resize", function () {
+                    if (window.innerWidth > 700 && sidebarOpen) {
+                        closeMobileSidebar();
+                    }
+                });
+                loadFromHash();
+                wireEvents();
+                setZoom(zoomLevel);
+                render();
+            });
+        </script>
+    </body>
+</html>

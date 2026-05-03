@@ -1,0 +1,1913 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria – Índice
+            Interactivo
+        </title>
+        <style>
+            :root {
+                --navy: #1a2f6e;
+                --blue-dark: #163566;
+                --blue-mid: #1e4d9a;
+                --blue: #2563b0;
+                --blue-light: #4a87d8;
+                --blue-pale: #dbeafe;
+                --blue-xpale: #eff6ff;
+                --white: #ffffff;
+                --bg: #f2f6fb;
+                --line-color: #bdd5f0;
+                --border: #d4e4f7;
+                --text-main: #0b1d3a;
+                --text-mid: #2c4a73;
+                --text-muted: #6789b0;
+                --shadow-sm: 0 2px 8px rgba(11, 29, 58, 0.08);
+                --shadow-md: 0 6px 24px rgba(11, 29, 58, 0.1);
+                --shadow-lg: 0 16px 40px rgba(11, 29, 58, 0.14);
+                --radius: 10px;
+                --transition: 0.18s ease;
+            }
+            *,
+            *::before,
+            *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+                background: var(--bg);
+                color: var(--text-main);
+                line-height: 1.65;
+                padding: 28px 20px;
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 1050px;
+                margin: 0 auto;
+                background: var(--white);
+                border-radius: 16px;
+                box-shadow: var(--shadow-lg);
+                overflow: hidden;
+                border: 1px solid var(--border);
+            }
+            .header-band {
+                background: var(--navy);
+                padding: 36px 40px 32px;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            .header-band::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+            .header-icon {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 52px;
+                height: 52px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.2);
+                border-radius: 14px;
+                margin-bottom: 16px;
+            }
+            .header-icon svg {
+                width: 28px;
+                height: 28px;
+            }
+            h1 {
+                font-size: 1.65rem;
+                font-weight: 700;
+                color: var(--white);
+                margin-bottom: 8px;
+                letter-spacing: 0.1px;
+                line-height: 1.3;
+                position: relative;
+            }
+            .subtitulo {
+                color: rgba(255, 255, 255, 0.65);
+                font-size: 0.88rem;
+                font-weight: 400;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                position: relative;
+            }
+            .container-body {
+                padding: 32px 36px;
+            }
+            .search-wrapper {
+                position: relative;
+                margin-bottom: 28px;
+            }
+            .search-icon-wrap {
+                position: absolute;
+                left: 18px;
+                top: 50%;
+                transform: translateY(-50%);
+                pointer-events: none;
+                color: var(--blue-light);
+                display: flex;
+            }
+            #searchInput {
+                width: 100%;
+                padding: 14px 20px 14px 48px;
+                font-size: 0.95rem;
+                font-family: inherit;
+                border: 1.5px solid var(--border);
+                border-radius: 40px;
+                background: var(--white);
+                transition: all var(--transition);
+                outline: none;
+                box-shadow: var(--shadow-sm);
+                color: var(--text-main);
+            }
+            #searchInput:focus {
+                border-color: var(--blue);
+                box-shadow: 0 0 0 3.5px rgba(37, 99, 176, 0.13);
+            }
+            #searchInput::placeholder {
+                color: var(--text-muted);
+                font-style: italic;
+                font-size: 0.9rem;
+            }
+            .autocomplete-list {
+                position: absolute;
+                top: calc(100% + 8px);
+                left: 0;
+                right: 0;
+                background: var(--white);
+                border: 1.5px solid var(--border);
+                border-radius: 14px;
+                max-height: 280px;
+                overflow-y: auto;
+                z-index: 1000;
+                box-shadow: var(--shadow-md);
+                display: none;
+                list-style: none;
+            }
+            .autocomplete-list li {
+                padding: 11px 18px;
+                cursor: pointer;
+                border-bottom: 1px solid var(--blue-xpale);
+                font-size: 0.88rem;
+                color: var(--text-mid);
+                transition: background var(--transition);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .autocomplete-list li:last-child {
+                border-bottom: none;
+            }
+            .autocomplete-list li:hover,
+            .autocomplete-list li.active {
+                background: var(--blue-xpale);
+                color: var(--blue-dark);
+                font-weight: 500;
+            }
+            .arbol {
+                list-style: none;
+                padding-left: 0;
+                font-size: 0.93rem;
+            }
+            .arbol ul {
+                list-style: none;
+                padding-left: 26px;
+                border-left: 1.5px solid var(--line-color);
+                margin-left: 10px;
+            }
+            .arbol li {
+                position: relative;
+                margin: 2px 0;
+                cursor: default;
+                border-radius: 7px;
+                transition: background var(--transition);
+            }
+            .arbol li:hover {
+                background: var(--blue-xpale);
+            }
+            .arbol li.articulo {
+                cursor: pointer;
+                padding: 3px 10px 3px 6px;
+                margin: 1px 0;
+                border-radius: 6px;
+                transition: all var(--transition);
+            }
+            .arbol li.articulo:hover {
+                background: var(--blue-pale);
+                transform: translateX(2px);
+                box-shadow: 0 1px 4px rgba(37, 99, 176, 0.1);
+            }
+            .arbol li.articulo:active {
+                background: #bfdbfe;
+                transform: scale(0.998);
+            }
+            .nodo-header {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 5px 8px;
+                border-radius: 7px;
+                cursor: pointer;
+                user-select: none;
+                transition: background var(--transition);
+            }
+            .nodo-header:hover {
+                background: rgba(37, 99, 176, 0.06);
+            }
+            .toggle-icon {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: var(--blue-pale);
+                color: var(--blue-mid);
+                flex-shrink: 0;
+                transition: all var(--transition);
+            }
+            .toggle-icon svg {
+                width: 10px;
+                height: 10px;
+                transition: transform var(--transition);
+                display: block;
+            }
+            .toggle-icon.expandido {
+                background: var(--blue);
+                color: var(--white);
+            }
+            .toggle-icon.expandido svg {
+                transform: rotate(90deg);
+            }
+            .nodo-texto {
+                font-weight: 500;
+                letter-spacing: 0.05px;
+            }
+
+            .nivel-titulo_preliminar > .nodo-header .nodo-texto,
+            .nivel-disposiciones_adicionales > .nodo-header .nodo-texto,
+            .nivel-disposiciones_transitorias > .nodo-header .nodo-texto,
+            .nivel-disposicion_derogatoria > .nodo-header .nodo-texto,
+            .nivel-disposiciones_finales > .nodo-header .nodo-texto {
+                color: var(--navy);
+                font-size: 1.08rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+            }
+            .nivel-titulo > .nodo-header .nodo-texto {
+                color: var(--blue-dark);
+                font-size: 0.98rem;
+                font-weight: 600;
+            }
+            .nivel-capitulo > .nodo-header .nodo-texto {
+                color: var(--blue-mid);
+                font-size: 0.93rem;
+                font-weight: 600;
+            }
+            .nivel-seccion > .nodo-header .nodo-texto {
+                color: var(--blue);
+                font-size: 0.9rem;
+                font-weight: 500;
+                font-style: italic;
+            }
+            .nivel-articulo {
+                color: var(--text-mid);
+                font-size: 0.875rem;
+                font-weight: 400;
+                padding-left: 22px;
+                display: flex;
+                align-items: center;
+                gap: 7px;
+            }
+            .nivel-disposicion {
+                color: var(--text-mid);
+                font-size: 0.875rem;
+                font-weight: 400;
+                padding-left: 22px;
+                display: flex;
+                align-items: center;
+                gap: 7px;
+            }
+            .articulo-icono {
+                flex-shrink: 0;
+                color: var(--blue-light);
+                opacity: 0.75;
+                display: inline-flex;
+            }
+            .articulo-icono svg {
+                width: 13px;
+                height: 14px;
+            }
+            .resaltado-arbol {
+                background: var(--blue-pale) !important;
+                border-radius: 6px;
+                outline: 2px solid var(--blue);
+                outline-offset: 2px;
+                animation: pulso-resalte 1.5s ease-in-out 2;
+            }
+            @keyframes pulso-resalte {
+                0%,
+                100% {
+                    outline-color: var(--blue);
+                }
+                50% {
+                    outline-color: var(--blue-light);
+                }
+            }
+            .toast {
+                position: fixed;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%) translateY(120px);
+                background: var(--navy);
+                color: var(--white);
+                padding: 12px 24px 12px 18px;
+                border-radius: 40px;
+                font-size: 0.875rem;
+                font-weight: 500;
+                z-index: 9999;
+                box-shadow: 0 8px 28px rgba(11, 29, 58, 0.28);
+                transition: transform 0.35s
+                    cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                pointer-events: none;
+                white-space: nowrap;
+                max-width: 90vw;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+            }
+            .toast.visible {
+                transform: translateX(-50%) translateY(0);
+            }
+            .toast-icon {
+                flex-shrink: 0;
+                display: inline-flex;
+            }
+            .toast-icon svg {
+                width: 16px;
+                height: 16px;
+            }
+            .footer-note {
+                text-align: center;
+                margin-top: 28px;
+                color: var(--text-muted);
+                font-size: 0.82rem;
+                font-style: italic;
+                padding-bottom: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 7px;
+            }
+            .footer-note svg {
+                width: 15px;
+                height: 15px;
+                color: var(--blue-light);
+                flex-shrink: 0;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            ::-webkit-scrollbar {
+                width: 5px;
+            }
+            ::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: var(--line-color);
+                border-radius: 20px;
+            }
+            @media (max-width: 768px) {
+                .container-body {
+                    padding: 20px 18px;
+                }
+                .header-band {
+                    padding: 28px 20px 24px;
+                }
+                h1 {
+                    font-size: 1.25rem;
+                }
+                .arbol ul {
+                    padding-left: 16px;
+                    margin-left: 4px;
+                }
+                #searchInput {
+                    font-size: 0.9rem;
+                    padding: 12px 16px 12px 44px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header-band">
+                <div class="header-icon">
+                    <!-- Scales of justice icon -->
+                    <svg
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect
+                            x="15"
+                            y="3"
+                            width="2"
+                            height="26"
+                            rx="1"
+                            fill="white"
+                            fill-opacity="0.9"
+                        ></rect>
+                        <rect
+                            x="7"
+                            y="3"
+                            width="18"
+                            height="2"
+                            rx="1"
+                            fill="white"
+                            fill-opacity="0.9"
+                        ></rect>
+                        <rect
+                            x="11"
+                            y="27"
+                            width="10"
+                            height="2"
+                            rx="1"
+                            fill="white"
+                            fill-opacity="0.9"
+                        ></rect>
+                        <line
+                            x1="8"
+                            y1="5"
+                            x2="3"
+                            y2="16"
+                            stroke="white"
+                            stroke-opacity="0.9"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                        ></line>
+                        <line
+                            x1="8"
+                            y1="5"
+                            x2="13"
+                            y2="16"
+                            stroke="white"
+                            stroke-opacity="0.9"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                        ></line>
+                        <path
+                            d="M3 16 Q8 20 13 16"
+                            stroke="white"
+                            stroke-opacity="0.9"
+                            stroke-width="1.6"
+                            fill="none"
+                            stroke-linecap="round"
+                        ></path>
+                        <line
+                            x1="24"
+                            y1="5"
+                            x2="19"
+                            y2="16"
+                            stroke="white"
+                            stroke-opacity="0.9"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                        ></line>
+                        <line
+                            x1="24"
+                            y1="5"
+                            x2="29"
+                            y2="16"
+                            stroke="white"
+                            stroke-opacity="0.9"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                        ></line>
+                        <path
+                            d="M19 16 Q24 20 29 16"
+                            stroke="white"
+                            stroke-opacity="0.9"
+                            stroke-width="1.6"
+                            fill="none"
+                            stroke-linecap="round"
+                        ></path>
+                    </svg>
+                </div>
+                <h1>
+                    Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria
+                </h1>
+                <p class="subtitulo">Índice interactivo</p>
+            </div>
+            <div class="container-body">
+                <div class="search-wrapper">
+                    <div class="search-icon-wrap">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke="currentColor"
+                            width="20"
+                            height="20"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                            />
+                        </svg>
+                    </div>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar artículos, capítulos, títulos..."
+                        autocomplete="off"
+                    />
+                    <ul class="autocomplete-list" id="autocompleteList"></ul>
+                </div>
+                <div id="arbolContainer"></div>
+                <div class="footer-note">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                        />
+                    </svg>
+                    Escribe para filtrar el árbol. Haz clic en un artículo o
+                    disposición para copiar su ruta jerárquica al portapapeles.
+                </div>
+            </div>
+        </div>
+        <div class="toast" id="toastCopiado">
+            <span class="toast-icon"
+                ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"
+                    /></svg
+            ></span>
+            <span id="toastMessage">📋 Copiado al portapapeles</span>
+        </div>
+        <script>
+            (function () {
+                // ============== ÍNDICE COMPLETO DE LA LEY 15/2015 (LJV) ==============
+                const indice = [
+                    {
+                        tipo: "titulo_preliminar",
+                        texto: "TÍTULO PRELIMINAR. Disposiciones generales",
+                        hijos: [
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 1. Objeto y ámbito de aplicación.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 2. Competencia en materia de jurisdicción voluntaria.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 3. Legitimación y postulación.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 4. Intervención del Ministerio Fiscal.",
+                            },
+                            { tipo: "articulo", texto: "Artículo 5. Prueba." },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 6. Tramitación simultánea o posterior de expedientes o procesos.",
+                            },
+                            { tipo: "articulo", texto: "Artículo 7. Gastos." },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 7 bis. Ajustes para personas con discapacidad.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 8. Carácter supletorio de la Ley de Enjuiciamiento Civil.",
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "titulo",
+                        texto: "TÍTULO I. De las normas comunes en materia de tramitación de los expedientes de jurisdicción voluntaria",
+                        hijos: [
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO I. Normas de Derecho internacional privado",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 9. Competencia internacional.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 10. Ley aplicable a los expedientes de jurisdicción voluntaria en los casos internacionales.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 11. Inscripción en registros públicos.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 12. Efectos en España de los expedientes y actos de jurisdicción voluntaria acordados por autoridades extranjeras.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO II. Normas de tramitación",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 13. Aplicación de las disposiciones de este Capítulo.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 14. Iniciación del expediente.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 15. Acumulación de expedientes.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 16. Apreciación de oficio de la falta de competencia y otros defectos u omisiones.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 17. Admisión de la solicitud y citación de los interesados.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 18. Celebración de la comparecencia.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 19. Decisión del expediente.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 20. Recursos.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 21. Caducidad del expediente.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 22. Cumplimiento y ejecución de la resolución que pone fin al expediente.",
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "titulo",
+                        texto: "TÍTULO II. De los expedientes de jurisdicción voluntaria en materia de personas",
+                        hijos: [
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO I. De la autorización o aprobación judicial del reconocimiento de la filiación no matrimonial",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 23. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 24. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 25. Tramitación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 26. Resolución.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO II. De la habilitación para comparecer en juicio y del nombramiento de defensor judicial",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 27. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 28. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 29. Efectos de la solicitud.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 30. Comparecencia y resolución.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 31. Cesación del defensor judicial y de la habilitación para comparecer en juicio.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 32. Rendición de cuentas, excusa y remoción del defensor judicial.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO III. De la adopción",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 33. Competencia.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 34. Carácter preferente y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 35. Propuesta de la Entidad Pública y solicitud del adoptante.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 36. Consentimiento.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 37. Asentimiento y audiencia.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 38. Citaciones.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 39. Tramitación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 40. Procedimiento para la exclusión de funciones tutelares del adoptante y extinción de la adopción.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 41. Adopción internacional.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 42. Conversión de adopción simple o no plena en plena.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO III bis. Del expediente de provisión de medidas judiciales de apoyo a personas con discapacidad",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 42 bis a). Ámbito de aplicación, competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 42 bis b). Procedimiento.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 42 bis c). Auto y posterior revisión de las medidas judicialmente acordadas.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO IV. De la tutela, la curatela y la guarda de hecho",
+                                hijos: [
+                                    {
+                                        tipo: "seccion",
+                                        texto: "Sección 1.ª Disposición común",
+                                        hijos: [
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 43. Competencia y postulación.",
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        tipo: "seccion",
+                                        texto: "Sección 2.ª De la tutela y la curatela",
+                                        hijos: [
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 44. Ámbito de aplicación.",
+                                            },
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 45. Tramitación, resolución y recurso.",
+                                            },
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 46. Prestación de fianza, aceptación y posesión del cargo.",
+                                            },
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 47. Formación de inventario.",
+                                            },
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 48. Retribución del cargo.",
+                                            },
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 49. Remoción.",
+                                            },
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 50. Excusa.",
+                                            },
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 51. Rendición de cuentas.",
+                                            },
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 51 bis. Extinción de los poderes preventivos.",
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        tipo: "seccion",
+                                        texto: "Sección 3.ª De la guarda de hecho",
+                                        hijos: [
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 52. Requerimiento y medidas de control.",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO V. De la concesión judicial de la emancipación y del beneficio de la mayoría de edad",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 53. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 54. Solicitud.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 55. Tramitación y resolución.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO VI. De la protección del patrimonio de las personas con discapacidad",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 56. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 57. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 58. Solicitud, tramitación y resolución del expediente.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO VII. Del derecho al honor, a la intimidad y a la propia imagen del menor o persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 59. Ámbito de aplicación, competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 60. Tramitación y resolución.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO VIII. De la autorización o aprobación judicial para la realización de actos de disposición, gravamen u otros que se refieran a los bienes y derechos de menores y personas con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 61. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 62. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 63. Solicitud.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 64. Tramitación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 65. Resolución.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 66. Destino de la cantidad obtenida.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO IX. De la declaración de ausencia y fallecimiento",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 67. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 68. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 69. Defensor judicial en caso de desaparición.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 70. Declaración de ausencia.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 71. Resolución y nombramiento de representante del ausente.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 72. Medidas provisionales.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 73. Práctica de inventario de bienes.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 74. Declaración de fallecimiento.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 75. Hechos posteriores a la declaración de ausencia o fallecimiento.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 76. Constancia del fallecimiento del desaparecido.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 77. Comunicación al Registro Civil.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO X. De la extracción de órganos de donantes vivos",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 78. Ámbito de aplicación y competencia.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 79. Solicitud y tramitación del expediente.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 80. Resolución.",
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "titulo",
+                        texto: "TÍTULO III. De los expedientes de jurisdicción voluntaria en materia de familia",
+                        hijos: [
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO I. De la dispensa del impedimento matrimonial",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 81. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 82. Solicitud.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 83. Tramitación y resolución.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 84. Testimonio.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO II. De la intervención judicial en relación con la patria potestad",
+                                hijos: [
+                                    {
+                                        tipo: "seccion",
+                                        texto: "Sección 1.ª Disposición común",
+                                        hijos: [
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 85. Tramitación.",
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        tipo: "seccion",
+                                        texto: "Sección 2.ª De la intervención judicial en los casos de desacuerdo en el ejercicio de la patria potestad",
+                                        hijos: [
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 86. Ámbito de aplicación, competencia y legitimación.",
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        tipo: "seccion",
+                                        texto: "Sección 3.ª De las medidas de protección relativas al ejercicio inadecuado de la potestad de guarda o de administración de los bienes del menor o persona con discapacidad",
+                                        hijos: [
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 87. Ámbito de aplicación, competencia y legitimación.",
+                                            },
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 88. Resolución.",
+                                            },
+                                            {
+                                                tipo: "articulo",
+                                                texto: "Artículo 89. Actuación en casos de tutela y curatela.",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO III. De la intervención judicial en los casos de desacuerdo conyugal y en la administración de bienes gananciales",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 90. Ámbito de aplicación, competencia, postulación y tramitación.",
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "titulo",
+                        texto: "TÍTULO IV. De los expedientes de jurisdicción voluntaria relativos al Derecho sucesorio",
+                        hijos: [
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO I. Del albaceazgo",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 91. Ámbito de aplicación, competencia, postulación y tramitación.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO II. De los contadores-partidores dativos",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 92. Ámbito de aplicación, competencia, postulación y tramitación.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO III. De la aceptación y repudiación de la herencia",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 93. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 94. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 95. Resolución.",
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "titulo",
+                        texto: "TÍTULO V. De los expedientes de jurisdicción voluntaria relativos al Derecho de obligaciones",
+                        hijos: [
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO I. De la fijación del plazo para el cumplimiento de las obligaciones cuando proceda",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 96. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 97. Competencia y postulación.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO II. De la consignación",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 98. Ámbito de aplicación, competencia y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 99. Tramitación.",
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "titulo",
+                        texto: "TÍTULO VI. De los expedientes de jurisdicción voluntaria relativos a los derechos reales",
+                        hijos: [
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO I. De la autorización judicial al usufructuario para reclamar créditos vencidos que formen parte del usufructo",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 100. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 101. Competencia y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 102. Solicitud.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 103. Tramitación y resolución.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO II. Del expediente de deslinde de fincas no inscritas",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 104. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 105. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 106. Solicitud y tramitación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 107. Resolución.",
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "titulo",
+                        texto: "TÍTULO VII. De los expedientes de subastas voluntarias",
+                        hijos: [
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 108. Ámbito de aplicación.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 109. Competencia y postulación.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 110. Solicitud.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 111. Tramitación.",
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "titulo",
+                        texto: "TÍTULO VIII. De los expedientes de jurisdicción voluntaria en materia mercantil",
+                        hijos: [
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO I. De la exhibición de libros de las personas obligadas a llevar contabilidad",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 112. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 113. Competencia y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 114. Tramitación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 115. Forma de realizar la exhibición.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 116. Multas coercitivas.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO II. De la convocatoria de juntas generales",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 117. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 118. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 119. Tramitación.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO III. Del nombramiento y revocación de liquidador, auditor o interventor de una entidad",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 120. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 121. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 122. Tramitación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 123. Resolución y aceptación del cargo.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO IV. De la reducción de capital social y de la amortización o enajenación de las participaciones o acciones",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 124. Ámbito de aplicación, competencia y postulación.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO V. De la disolución judicial de sociedades",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 125. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 126. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 127. Tramitación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 128. Resolución.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO VI. De la convocatoria de la asamblea general de obligacionistas",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 129. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 130. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 131. Tramitación.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO VII. Del robo, hurto, extravío o destrucción de título valor o representación de partes de socio",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 132. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 133. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 134. Denuncia del hecho en el caso de valores admitidos a negociación en mercados secundarios oficiales.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 135. Tramitación.",
+                                    },
+                                ],
+                            },
+                            {
+                                tipo: "capitulo",
+                                texto: "CAPÍTULO VIII. Del nombramiento de perito en los contratos de seguro",
+                                hijos: [
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 136. Ámbito de aplicación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 137. Competencia, legitimación y postulación.",
+                                    },
+                                    {
+                                        tipo: "articulo",
+                                        texto: "Artículo 138. Tramitación.",
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "titulo",
+                        texto: "TÍTULO IX. De la conciliación",
+                        hijos: [
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 139. Procedencia de la conciliación.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 140. Competencia.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 141. Solicitud.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 142. Admisión, señalamiento y citación.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 143. Efectos de la admisión.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 144. Comparecencia al acto de conciliación.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 145. Celebración del acto de conciliación.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 146. Testimonio y gastos.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 147. Ejecución.",
+                            },
+                            {
+                                tipo: "articulo",
+                                texto: "Artículo 148. Acción de nulidad.",
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "disposiciones_adicionales",
+                        texto: "DISPOSICIONES ADICIONALES",
+                        hijos: [
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición adicional primera. Referencias contenidas en la legislación.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición adicional segunda. Régimen jurídico aplicable al acogimiento de menores.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición adicional tercera. Inscripción en los registros públicos de documentos públicos extranjeros.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición adicional cuarta. Aranceles notariales y registrales.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición adicional quinta. Modificaciones y desarrollos reglamentarios.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición adicional sexta. No incremento del gasto.",
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "disposiciones_transitorias",
+                        texto: "DISPOSICIONES TRANSITORIAS",
+                        hijos: [
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición transitoria primera. Expedientes en tramitación.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición transitoria segunda. Herencias abintestato a favor de la Administración pública.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición transitoria tercera. Expedientes de subastas voluntarias.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición transitoria cuarta. Expedientes de adopción y matrimoniales.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición transitoria quinta. Matrimonios celebrados por las confesiones religiosas evangélicas, judías e islámicas y por las que hayan obtenido el reconocimiento de notorio arraigo en España.",
+                            },
+                        ],
+                    },
+                    {
+                        tipo: "disposicion_derogatoria",
+                        texto: "DISPOSICIÓN DEROGATORIA ÚNICA. Derogación de normas.",
+                    },
+                    {
+                        tipo: "disposiciones_finales",
+                        texto: "DISPOSICIONES FINALES",
+                        hijos: [
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final primera. Modificación de determinados artículos del Código Civil.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final segunda. Modificación del Código de Comercio.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final tercera. Modificación de determinados artículos de la Ley 1/2000, de Enjuiciamiento Civil.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final cuarta. Modificación de la Ley 20/2011, de 21 de julio, de Registro Civil.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final quinta. Modificación de Ley 24/1992, de 10 de noviembre, por la que se aprueba el acuerdo de cooperación del Estado con la Federación de Entidades Religiosas Evangélicas de España.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final sexta. Modificación de la Ley 25/1992, de 10 de noviembre, por la que se aprueba el Acuerdo de Cooperación del Estado con la Federación de Comunidades Israelitas de España.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final séptima. Modificación de la Ley 26/1992, de 10 de noviembre, por la que se aprueba el Acuerdo de Cooperación del Estado con la Comisión Islámica de España.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final octava. Modificación de la Ley 33/2003, de 3 de noviembre, de Patrimonio de las Administraciones Públicas.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final novena. Modificación de la Ley 50/1980, de 8 de octubre, de Contrato de Seguro.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final décima. Modificación de la Ley 41/2003, de 18 de noviembre, de protección patrimonial de las personas con discapacidad y modificación del Código Civil, de la Ley de Enjuiciamiento Civil y de la Normativa Tributaria con esta finalidad.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final undécima. Modificación de la Ley de 28 de mayo de 1862, del Notariado.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final duodécima. Modificación de la Ley Hipotecaria.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final decimotercera. Modificación de la Ley de 16 de diciembre de 1954, de Hipoteca Mobiliaria y prenda sin desplazamiento de la posesión.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final decimocuarta. Modificación del Texto Refundido de la Ley de Sociedades de Capital, aprobado por el Real Decreto Legislativo 1/2010, de 2 de julio.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final decimoquinta. Modificación de la Ley 211/1964, de 24 de diciembre, sobre regulación de la emisión de obligaciones por Sociedades que no hayan adoptado la forma de Anónimas, Asociaciones u otras personas jurídicas y la constitución del Sindicato de Obligacionistas.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final decimosexta. Modificación de la disposición transitoria única de la Ley 33/2006, de 30 de octubre, sobre igualdad del hombre y la mujer en el orden de sucesión de los títulos nobiliarios.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final decimoséptima. Modificación del texto refundido de la Ley General para la Defensa de Consumidores y Usuarios y otras leyes complementarias, aprobado por medio del Real Decreto Legislativo 1/2007, de 16 de noviembre.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final decimoctava. Modificación de la Ley 10/2012, de 20 de noviembre, por la que se regulan determinadas tasas en el ámbito de la Administración de Justicia y del Instituto Nacional de Toxicología y Ciencias Forenses.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final decimonovena. Gratuidad de determinados expedientes notariales y registrales.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final vigésima. Título competencial.",
+                            },
+                            {
+                                tipo: "disposicion",
+                                texto: "Disposición final vigésima primera. Entrada en vigor.",
+                            },
+                        ],
+                    },
+                ];
+
+                const todosLosItems = [];
+                let contadorId = 0;
+
+                function construirNodo(item, rutaAcumulada = "") {
+                    const id = `nodo-${contadorId++}`;
+                    const ruta = rutaAcumulada
+                        ? `${rutaAcumulada} > ${item.texto}`
+                        : item.texto;
+                    todosLosItems.push({
+                        id,
+                        texto: item.texto,
+                        ruta,
+                        tipo: item.tipo,
+                    });
+
+                    const li = document.createElement("li");
+                    li.dataset.id = id;
+                    li.dataset.texto = item.texto;
+                    li.dataset.ruta = ruta;
+                    li.dataset.tipo = item.tipo;
+                    li.className = `nivel-${item.tipo}`;
+
+                    if (
+                        item.tipo === "articulo" ||
+                        item.tipo === "disposicion" ||
+                        item.tipo === "disposicion_derogatoria"
+                    ) {
+                        li.classList.add("articulo");
+                        const span = document.createElement("span");
+                        span.className = "nodo-header";
+                        span.innerHTML = `<span class="articulo-icono"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg></span>${item.texto}`;
+                        li.appendChild(span);
+                        li.addEventListener("click", function (e) {
+                            e.stopPropagation();
+                            copiarJerarquia(this);
+                        });
+                    } else {
+                        const header = document.createElement("div");
+                        header.className = "nodo-header";
+                        header.innerHTML = `<span class="toggle-icon"><svg viewBox="0 0 10 10"><polygon points="3,0 8,5 3,10" fill="currentColor"/></svg></span><span class="nodo-texto">${item.texto}</span>`;
+                        header.addEventListener("click", function (e) {
+                            e.stopPropagation();
+                            toggleNodo(this);
+                        });
+                        li.appendChild(header);
+                        if (item.hijos && item.hijos.length > 0) {
+                            const ul = document.createElement("ul");
+                            item.hijos.forEach((hijo) =>
+                                ul.appendChild(construirNodo(hijo, ruta)),
+                            );
+                            li.appendChild(ul);
+                        }
+                    }
+                    return li;
+                }
+
+                function toggleNodo(header) {
+                    const li = header.parentElement;
+                    const ul = li.querySelector(":scope > ul");
+                    const icon = header.querySelector(".toggle-icon");
+                    if (!ul) return;
+                    const isHidden = ul.style.display === "none";
+                    ul.style.display = isHidden ? "" : "none";
+                    icon.classList.toggle("expandido", isHidden);
+                }
+
+                function construirArbol() {
+                    contadorId = 0;
+                    todosLosItems.length = 0;
+                    const container = document.getElementById("arbolContainer");
+                    const ul = document.createElement("ul");
+                    ul.className = "arbol";
+                    indice.forEach((item) =>
+                        ul.appendChild(construirNodo(item)),
+                    );
+                    container.innerHTML = "";
+                    container.appendChild(ul);
+                    document
+                        .querySelectorAll("#arbolContainer ul")
+                        .forEach((ul) => {
+                            if (ul.parentElement.closest("ul")) {
+                                ul.style.display = "none";
+                                const icon = ul.parentElement.querySelector(
+                                    ":scope > .nodo-header .toggle-icon",
+                                );
+                                if (icon) icon.classList.remove("expandido");
+                            }
+                        });
+                }
+
+                function aplicarFiltro(query) {
+                    const q = query.trim().toLowerCase();
+                    if (!q) {
+                        document
+                            .querySelectorAll("#arbolContainer li")
+                            .forEach((li) => (li.style.display = ""));
+                        const uls =
+                            document.querySelectorAll("#arbolContainer ul");
+                        uls.forEach((ul) => {
+                            ul.style.display = "";
+                        });
+                        document
+                            .querySelectorAll(".toggle-icon")
+                            .forEach((ic) => ic.classList.remove("expandido"));
+                        return;
+                    }
+                    const coincidencias = todosLosItems.filter((it) =>
+                        it.texto.toLowerCase().includes(q),
+                    );
+                    document
+                        .querySelectorAll("#arbolContainer li")
+                        .forEach((li) => (li.style.display = "none"));
+                    document
+                        .querySelectorAll("#arbolContainer ul")
+                        .forEach((ul) => {
+                            ul.style.display = "";
+                        }); // reset, we'll hide later
+                    coincidencias.forEach((item) => {
+                        const el = document.querySelector(
+                            `#arbolContainer li[data-id="${item.id}"]`,
+                        );
+                        if (!el) return;
+                        let current = el;
+                        while (current && current.id !== "arbolContainer") {
+                            if (current.tagName === "LI") {
+                                current.style.display = "";
+                                // show the parent UL of this LI
+                                const parentUl = current.parentElement;
+                                if (parentUl && parentUl.tagName === "UL") {
+                                    parentUl.style.display = "";
+                                    // expand toggle icon in parent li
+                                    const parentLi = parentUl.parentElement;
+                                    if (parentLi && parentLi.tagName === "LI") {
+                                        const icon = parentLi.querySelector(
+                                            ":scope > .nodo-header .toggle-icon",
+                                        );
+                                        if (icon)
+                                            icon.classList.add("expandido");
+                                    }
+                                }
+                            }
+                            current =
+                                current.parentElement?.closest("li") || null;
+                        }
+                    });
+                    // Hide ul that are not ancestor of any visible li
+                    document
+                        .querySelectorAll("#arbolContainer ul")
+                        .forEach((ul) => {
+                            const anyVisibleChild = Array.from(
+                                ul.children,
+                            ).some((li) => li.style.display !== "none");
+                            if (!anyVisibleChild) ul.style.display = "none";
+                        });
+                }
+
+                function copiarJerarquia(el) {
+                    const texto = el.dataset.texto;
+                    const ruta = el.dataset.ruta;
+                    const copia = ruta ? `${ruta}\n${texto}` : texto;
+                    if (navigator.clipboard?.writeText) {
+                        navigator.clipboard
+                            .writeText(copia)
+                            .then(() =>
+                                mostrarToast("📋 Copiado al portapapeles"),
+                            )
+                            .catch(() => fallback(copia));
+                    } else fallback(copia);
+                }
+                function fallback(texto) {
+                    const ta = document.createElement("textarea");
+                    ta.value = texto;
+                    ta.style.cssText =
+                        "position:fixed;left:-9999px;top:-9999px";
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(ta);
+                    mostrarToast("📋 Copiado al portapapeles");
+                }
+                function mostrarToast(msg) {
+                    const toast = document.getElementById("toastCopiado");
+                    document.getElementById("toastMessage").textContent = msg;
+                    toast.classList.add("visible");
+                    clearTimeout(toast._timeout);
+                    toast._timeout = setTimeout(
+                        () => toast.classList.remove("visible"),
+                        2200,
+                    );
+                }
+
+                const input = document.getElementById("searchInput");
+                const autocomp = document.getElementById("autocompleteList");
+                let seleccionado = -1;
+
+                input.addEventListener("input", function () {
+                    const q = this.value.trim().toLowerCase();
+                    autocomp.innerHTML = "";
+                    seleccionado = -1;
+                    if (!q) {
+                        autocomp.style.display = "none";
+                        aplicarFiltro("");
+                        return;
+                    }
+                    const coincidencias = todosLosItems
+                        .filter((it) => it.texto.toLowerCase().includes(q))
+                        .slice(0, 20);
+                    if (!coincidencias.length) {
+                        autocomp.style.display = "none";
+                        aplicarFiltro(q);
+                        return;
+                    }
+                    coincidencias.forEach((it, i) => {
+                        const li = document.createElement("li");
+                        li.textContent = it.texto;
+                        li.dataset.id = it.id;
+                        li.addEventListener("click", () => {
+                            seleccionarItem(it);
+                            autocomp.style.display = "none";
+                            input.value = it.texto;
+                            aplicarFiltro(it.texto);
+                        });
+                        li.addEventListener("mouseenter", () => {
+                            seleccionado = i;
+                            actualizarActivo();
+                        });
+                        autocomp.appendChild(li);
+                    });
+                    autocomp.style.display = "block";
+                    aplicarFiltro(q);
+                });
+                input.addEventListener("keydown", function (e) {
+                    const items = autocomp.querySelectorAll("li");
+                    if (e.key === "ArrowDown") {
+                        e.preventDefault();
+                        seleccionado = Math.min(
+                            seleccionado + 1,
+                            items.length - 1,
+                        );
+                        actualizarActivo();
+                    } else if (e.key === "ArrowUp") {
+                        e.preventDefault();
+                        seleccionado = Math.max(seleccionado - 1, 0);
+                        actualizarActivo();
+                    } else if (e.key === "Enter") {
+                        e.preventDefault();
+                        if (seleccionado >= 0 && items[seleccionado]) {
+                            const id = items[seleccionado].dataset.id;
+                            const it = todosLosItems.find((i) => i.id === id);
+                            if (it) {
+                                seleccionarItem(it);
+                                autocomp.style.display = "none";
+                                input.value = it.texto;
+                                aplicarFiltro(it.texto);
+                            }
+                        }
+                    } else if (e.key === "Escape") {
+                        autocomp.style.display = "none";
+                        input.blur();
+                    }
+                });
+                function actualizarActivo() {
+                    const items = autocomp.querySelectorAll("li");
+                    items.forEach((li, i) =>
+                        li.classList.toggle("active", i === seleccionado),
+                    );
+                }
+                function seleccionarItem(item) {
+                    const el = document.querySelector(
+                        `#arbolContainer li[data-id="${item.id}"]`,
+                    );
+                    if (el) {
+                        el.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center",
+                        });
+                        el.classList.add("resaltado-arbol");
+                        setTimeout(
+                            () => el.classList.remove("resaltado-arbol"),
+                            3000,
+                        );
+                    }
+                }
+                document.addEventListener("click", (e) => {
+                    if (!e.target.closest(".search-wrapper"))
+                        autocomp.style.display = "none";
+                });
+
+                construirArbol();
+            })();
+        </script>
+    </body>
+</html>

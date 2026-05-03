@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Mental — De la adopción (Ley 15/2015)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg:          #f7f6f2;
+      --surface:     #ffffff;
+      --surface-2:   #f2f1ed;
+      --surface-3:   #eae8e3;
+      --border:      rgba(15,23,42,.08);
+      --border-md:   rgba(15,23,42,.14);
+      --border-lg:   rgba(15,23,42,.22);
+      --text-1:      #0f172a;
+      --text-2:      #475569;
+      --text-3:      #94a3b8;
+      --ink:         #0f172a;
+      --header-bg:   #0f172a;
+      --header-text: #f8f5ed;
+      --accent:      #c8a96e;
+      --accent-soft: rgba(200,169,110,.15);
+      --accent-ring: rgba(200,169,110,.35);
+      --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+      --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+      --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+      --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+      --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+      --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.06);
+      --shadow-md: 0 4px 6px -1px rgba(15,23,42,.07), 0 2px 4px -1px rgba(15,23,42,.04);
+      --shadow-lg: 0 10px 20px -5px rgba(15,23,42,.10), 0 4px 8px -3px rgba(15,23,42,.05);
+      --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-ui:      'Outfit', system-ui, -apple-system, sans-serif;
+      --transition:      180ms cubic-bezier(.4,0,.2,1);
+      --transition-fast: 120ms cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      min-height: 100vh;
+      font-family: var(--font-ui);
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-1);
+      background: var(--bg);
+    }
+    img, svg, video { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button {
+      font: inherit; color: inherit; background: transparent; border: 0; padding: 0; margin: 0;
+      cursor: pointer; -webkit-appearance: none; -moz-appearance: none; appearance: none;
+      line-height: 1.2; text-align: inherit;
+    }
+    button:disabled { cursor: not-allowed; opacity: .5; }
+    input, select, textarea { font: inherit; color: inherit; -webkit-appearance: none; appearance: none; }
+    :focus { outline: none; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--radius-sm); }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 10px; border: 2px solid var(--bg); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--border-lg); }
+    ::selection { background: var(--accent-soft); color: var(--text-1); }
+
+    .site-header { background: var(--header-bg); color: var(--header-text); padding: 2rem 1.5rem 1.75rem; }
+    .header-inner { max-width: 1400px; margin: 0 auto; }
+    .header-breadcrumb { font-size: 12px; color: var(--accent); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .5rem; }
+    .header-title { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: .4rem; }
+    .header-subtitle { font-size: 14px; color: rgba(248,245,237,.65); margin-bottom: 1rem; line-height: 1.5; }
+    .header-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
+    .header-tag { background: rgba(200,169,110,.15); border: 1px solid rgba(200,169,110,.3); color: var(--accent); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 600; }
+    .header-actions { margin-left: auto; }
+    .btn-ghost { border: 1px solid rgba(248,245,237,.15); color: rgba(248,245,237,.7); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 500; transition: var(--transition); }
+    .btn-ghost:hover { background: rgba(248,245,237,.08); color: #fff; }
+
+    .stats-bar { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .stats-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat-item { padding: 1.25rem 1.5rem; border-right: 1px solid var(--border); }
+    .stat-item:last-child { border-right: 0; }
+    .stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: var(--text-1); }
+    .stat-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; margin-top: .15rem; }
+    @media (max-width: 640px) { .stats-inner { grid-template-columns: repeat(2, 1fr); } .stat-item:nth-child(2) { border-right: 0; } }
+
+    .controls-bar {
+      position: sticky; top: 0; z-index: 100; background: var(--surface);
+      backdrop-filter: saturate(180%) blur(8px); -webkit-backdrop-filter: saturate(180%) blur(8px);
+      box-shadow: 0 1px 0 var(--border), 0 2px 8px rgba(15,23,42,.04);
+      padding: .75rem 1.5rem;
+    }
+    .controls-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .search-wrap { position: relative; flex: 1; min-width: 180px; max-width: 320px; }
+    .search-wrap svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--text-3); pointer-events: none; }
+    .search-input { width: 100%; padding: 8px 12px 8px 36px; border: 1px solid var(--border-md); border-radius: var(--radius-sm); font-size: 14px; background: var(--surface); transition: var(--transition); }
+    .search-input:hover { border-color: var(--border-lg); }
+    .search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
+    .filter-pills { display: flex; gap: .4rem; flex-wrap: wrap; }
+    .pill { background: transparent; border: 1px solid var(--border-md); color: var(--text-2); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; transition: var(--transition); }
+    .pill:hover { background: var(--surface-2); border-color: var(--border-lg); color: var(--text-1); }
+    .pill.active[data-cat="all"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+    .pill.active[data-cat="c1"] { background: var(--c1); border-color: var(--c1); color: #fff; }
+    .pill.active[data-cat="c2"] { background: var(--c2); border-color: var(--c2); color: #fff; }
+    .pill.active[data-cat="c3"] { background: var(--c3); border-color: var(--c3); color: #fff; }
+    .pill.active[data-cat="c4"] { background: var(--c4); border-color: var(--c4); color: #fff; }
+    .pill.active[data-cat="c5"] { background: var(--c5); border-color: var(--c5); color: #fff; }
+    .pill.active[data-cat="c6"] { background: var(--c6); border-color: var(--c6); color: #fff; }
+    .ctrl-actions { display: flex; align-items: center; gap: .5rem; margin-left: auto; }
+    .btn-ctrl { background: var(--surface-2); border: 1px solid var(--border-md); color: var(--text-2); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 500; transition: var(--transition); }
+    .btn-ctrl:hover { background: var(--surface-3); color: var(--text-1); }
+    .btn-ctrl:active { transform: translateY(1px); }
+    .zoom-cluster { display: flex; border: 1px solid var(--border-md); border-radius: var(--radius-sm); overflow: hidden; }
+    .btn-zoom { width: 28px; height: 28px; background: var(--surface); font-size: 16px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border-md); }
+    .btn-zoom:last-of-type { border-right: 0; }
+    .btn-zoom:hover { background: var(--surface-2); }
+    .btn-zoom:disabled { opacity: .4; }
+    .zoom-label { min-width: 42px; text-align: center; font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums; color: var(--text-2); line-height: 28px; border-right: 1px solid var(--border-md); }
+    @media (max-width: 768px) { .ctrl-actions { display: none; } }
+
+    .page-main { padding-top: 1rem; padding-bottom: 2rem; }
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1400px; margin: 0 auto; padding: 0 1.5rem 1rem; }
+    @media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+    .map-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--c6); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); position: relative; display: flex; flex-direction: column; overflow: hidden; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); }
+    .map-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--border-md); }
+    .map-card[data-cat="c1"] { border-left-color: var(--c1); }
+    .map-card[data-cat="c2"] { border-left-color: var(--c2); }
+    .map-card[data-cat="c3"] { border-left-color: var(--c3); }
+    .map-card[data-cat="c4"] { border-left-color: var(--c4); }
+    .map-card[data-cat="c5"] { border-left-color: var(--c5); }
+    .map-card[data-cat="c6"] { border-left-color: var(--c6); }
+    .map-card.hidden { display: none; }
+
+    .card-top { padding: 1rem 1.1rem .85rem; }
+    .card-meta { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: .55rem; }
+    .card-title { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; color: var(--text-1); line-height: 1.3; letter-spacing: -0.01em; margin-bottom: .3rem; }
+    .card-subtitle { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+
+    .art-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--c6bd); background: var(--c6bg); color: var(--c6); letter-spacing: .01em; white-space: nowrap; }
+    .map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+    .map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+    .map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+    .map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+    .map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+    .map-card[data-cat="c6"] .art-badge { background: var(--c6bg); color: var(--c6); border-color: var(--c6bd); }
+
+    .status-tag { font-size: 10.5px; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: .02em; }
+    .tag-warn { background: #fef3c7; color: #92400e; }
+    .tag-alert { background: #fee2e2; color: #991b1b; }
+    .tag-info { background: #dbeafe; color: #1e40af; }
+    .tag-ok { background: #d1fae5; color: #065f46; }
+    .tag-gray { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+    .card-counters { display: flex; gap: .5rem; flex-wrap: wrap; padding: 0 1.1rem .9rem; font-size: 11px; color: var(--text-3); }
+    .counter-badge { background: var(--surface-2); padding: 3px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: .3rem; }
+    .counter-badge strong { color: var(--text-1); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+    .card-toggle-btn { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .65rem 1.1rem; background: var(--surface-2); border-top: 1px solid var(--border); color: var(--text-2); font-size: 12px; font-weight: 600; letter-spacing: .01em; transition: background var(--transition-fast), color var(--transition-fast); }
+    .card-toggle-btn:hover { background: var(--surface-3); color: var(--text-1); }
+    .card-toggle-btn:active { background: var(--border); }
+    .card-toggle-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+    .toggle-label { flex: 1; text-align: left; }
+    .toggle-icon { display: inline-flex; width: 18px; height: 18px; align-items: center; justify-content: center; border-radius: 50%; background: var(--surface); border: 1px solid var(--border-md); color: var(--text-2); font-size: 10px; transition: transform var(--transition), background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast); }
+    .card-toggle-btn:hover .toggle-icon { background: var(--surface-2); color: var(--text-1); }
+    .map-card.expanded .toggle-icon { transform: rotate(180deg); background: var(--ink); color: var(--surface); border-color: var(--ink); }
+
+    .card-body { display: none; padding: 1rem 1.1rem 1.1rem; background: #fafaf9; border-top: 1px solid var(--border); }
+    .map-card.expanded .card-body { display: block; }
+
+    .inner-section + .inner-section { margin-top: 1rem; }
+    .inner-heading { display: flex; align-items: center; gap: .4rem; margin-bottom: .45rem; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text-1); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--c6); flex-shrink: 0; }
+    .map-card[data-cat="c1"] .dot { background: var(--c1); }
+    .map-card[data-cat="c2"] .dot { background: var(--c2); }
+    .map-card[data-cat="c3"] .dot { background: var(--c3); }
+    .map-card[data-cat="c4"] .dot { background: var(--c4); }
+    .map-card[data-cat="c5"] .dot { background: var(--c5); }
+    .map-card[data-cat="c6"] .dot { background: var(--c6); }
+
+    .inner-list li { position: relative; padding-left: .9rem; margin-bottom: .3rem; font-size: 12.5px; color: var(--text-2); line-height: 1.5; }
+    .inner-list li::before { content: ''; position: absolute; left: 0; top: .55em; width: 4px; height: 4px; border-radius: 50%; background: var(--text-3); }
+    .inner-list li strong { color: var(--text-1); font-weight: 600; }
+
+    .card-refs { display: flex; flex-wrap: wrap; gap: .4rem; padding: .8rem 1.1rem; background: #fafaf9; border-top: 1px solid var(--border); }
+    .ref-tag { font-size: 11px; font-weight: 500; color: var(--text-2); background: var(--surface-2); padding: 3px 8px; border-radius: var(--radius-sm); border: 1px solid var(--border); transition: background var(--transition-fast); }
+    .ref-tag:hover { background: var(--surface-3); }
+
+    .section-heading { display: flex; align-items: center; justify-content: space-between; gap: .75rem; max-width: 1400px; margin: 1.5rem auto .5rem; padding: 0 1.5rem; cursor: pointer; user-select: none; }
+    .section-heading-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text-1); letter-spacing: -0.01em; flex: 1; }
+    .section-heading-count { font-size: 11px; font-weight: 600; color: var(--text-3); background: var(--surface-2); padding: 3px 10px; border-radius: 20px; letter-spacing: .02em; }
+    .section-toggle-btn { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-md); border-radius: 50%; color: var(--text-2); font-size: 11px; transition: var(--transition-fast); }
+    .section-heading:hover .section-toggle-btn { background: var(--surface-2); color: var(--text-1); }
+    .section-divider { max-width: 1400px; margin: 0 auto 1rem; border: 0; height: 1px; background: var(--border); }
+    .section-body.collapsed { display: none; }
+
+    .table-wrap { max-width: 1400px; margin: 0 auto; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); box-shadow: var(--shadow-sm); }
+    .timeline-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    .timeline-table th { background: var(--surface-2); text-align: left; padding: .85rem 1rem; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text-2); border-bottom: 1px solid var(--border); }
+    .timeline-table td { padding: .7rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-1); vertical-align: top; }
+    .timeline-table tbody tr:last-child td { border-bottom: 0; }
+    .timeline-table tbody tr { transition: background var(--transition-fast); }
+    .timeline-table tbody tr:hover { background: var(--surface-2); }
+    .td-tramite { font-weight: 500; }
+    .td-norm { font-size: 12px; color: var(--text-3); }
+    .plazo-badge { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+    .plazo-days { background: #fef3c7; color: #92400e; }
+    .plazo-weeks { background: #dbeafe; color: #1e40af; }
+    .plazo-months { background: #d1fae5; color: #065f46; }
+    .plazo-years { background: #fee2e2; color: #991b1b; }
+    .plazo-other { background: var(--surface-2); color: var(--text-2); }
+
+    .participants-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; }
+    @media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+    .participant-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+    .participant-col-head { padding: .7rem 1rem; color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+    .phead-c1 { background: var(--c1); } .phead-c2 { background: var(--c2); } .phead-c3 { background: var(--c3); } .phead-c4 { background: var(--c4); } .phead-c5 { background: var(--c5); } .phead-c6 { background: var(--c6); }
+    .participant-col ul { padding: .5rem .25rem; }
+    .participant-col li { font-size: 12.5px; color: var(--text-2); padding: .4rem .75rem; border-bottom: 1px solid var(--border); }
+    .participant-col li:last-child { border-bottom: 0; }
+    .participant-note { font-size: 11px; color: var(--text-3); font-style: italic; }
+
+    .norm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; }
+    @media (max-width: 900px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+    .norm-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: .5rem; transition: transform var(--transition), box-shadow var(--transition); }
+    .norm-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .norm-law { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); font-weight: 600; }
+    .norm-title { font-size: 13.5px; font-weight: 500; color: var(--text-1); line-height: 1.4; }
+    .norm-arts { font-size: 12px; color: var(--text-2); line-height: 1.55; }
+    .norm-tag { align-self: flex-start; margin-top: auto; font-size: 10.5px; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: .02em; }
+
+    .no-results { grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--text-3); font-size: 14px; display: none; }
+
+    .legend-footer { background: var(--header-bg); color: var(--header-text); margin-top: 3rem; padding: 2rem 1.5rem; }
+    .legend-inner { max-width: 1400px; margin: 0 auto; }
+    .legend-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 1rem; }
+    .legend-grid { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; font-size: 13px; color: rgba(248,245,237,.85); }
+    .legend-item { display: inline-flex; align-items: center; gap: .5rem; }
+    .legend-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+    .legend-divider { width: 1px; height: 20px; background: rgba(248,245,237,.12); }
+    .legend-copy { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(248,245,237,.08); font-size: 11px; color: rgba(248,245,237,.35); }
+
+    @media print {
+      .controls-bar, .site-header .header-actions { display: none; }
+      .card-body { display: block !important; }
+      .inner-body { display: block !important; }
+      .section-body { display: block !important; }
+      .map-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; transform: none !important; }
+      .map-card:hover { transform: none !important; box-shadow: none !important; }
+      body { background: #fff; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      .map-card:hover { transform: none; }
+      .norm-card:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-breadcrumb">LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO III</div>
+      <h1 class="header-title">De la adopción</h1>
+      <p class="header-subtitle">Artículos 33 a 42 LJV · Referencias al Código Civil, LEC y normativa internacional</p>
+      <div class="header-meta">
+        <span class="header-tag">Ley 15/2015</span>
+        <span class="header-tag">Art. 33-42</span>
+        <span class="header-tag">Jurisdicción Voluntaria</span>
+        <div class="header-actions">
+          <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-value" id="stat-arts">10</div>
+        <div class="stat-label">Artículos base</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">12+</div>
+        <div class="stat-label">Conexiones normativas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">13+</div>
+        <div class="stat-label">Actores identificados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">10</div>
+        <div class="stat-label">Plazos procesales</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls-bar">
+    <div class="controls-inner">
+      <div class="search-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
+        <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+      </div>
+      <div class="filter-pills" id="filter-pills">
+        <button class="pill active" data-cat="all">Todos</button>
+        <button class="pill" data-cat="c1">Competencia</button>
+        <button class="pill" data-cat="c2">Propuesta</button>
+        <button class="pill" data-cat="c3">Consentimiento</button>
+        <button class="pill" data-cat="c4">Citaciones</button>
+        <button class="pill" data-cat="c5">Extinción</button>
+        <button class="pill" data-cat="c6">Internacional</button>
+      </div>
+      <div class="ctrl-actions">
+        <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+        <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+        <div class="zoom-cluster">
+          <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+          <span class="zoom-label" id="zoom-label">100%</span>
+          <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+        </div>
+        <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="page-main">
+    
+    <div class="map-section">
+      <div class="section-heading" data-target="sec-cards">
+        <span class="section-heading-text">Artículos del Capítulo III</span>
+        <span class="section-heading-count">10 elementos</span>
+        <button class="section-toggle-btn">&#9660;</button>
+      </div>
+      <hr class="section-divider">
+      <div class="section-body" id="sec-cards">
+        <div class="card-grid">
+
+          <article class="map-card" data-cat="c2" data-text="fundamento sustantivo marco jurídico adopción código civil idoneidad prohibiciones">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Fundamento</span>
+                <span class="status-tag tag-info">Código Civil</span>
+              </div>
+              <h2 class="card-title">Fundamento sustantivo: marco jurídico de la adopción en el Código Civil</h2>
+              <p class="card-subtitle">Constitución por resolución judicial, interés del adoptando, idoneidad del adoptante y prohibiciones legales.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>3</strong> aspectos clave</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+              <span class="toggle-label">Ver contenido completo</span>
+              <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Constitución de la adopción</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Resolución judicial:</strong> La adopción se constituye por resolución judicial, que tendrá en cuenta siempre el interés del adoptando y la idoneidad del adoptante o adoptantes para el ejercicio de la patria potestad.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Idoneidad del adoptante</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Concepto:</strong> Capacidad, aptitud y motivación adecuadas para ejercer la responsabilidad parental, atendiendo a las necesidades de los menores a adoptar.</li>
+                    <li><strong>Valoración psicosocial:</strong> Requerirá una valoración sobre la situación personal, familiar, relacional y social de los adoptantes, así como su capacidad para establecer vínculos estables y seguros, habilidades educativas y aptitud para atender al menor.</li>
+                    <li><strong>Formalización:</strong> La declaración de idoneidad se formalizará mediante la correspondiente resolución.</li>
+                    <li><strong>Preparación:</strong> Las personas que se ofrezcan para la adopción deberán asistir a las sesiones informativas y de preparación organizadas por la Entidad Pública o por Entidad colaboradora autorizada.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Prohibiciones para ser declarado idóneo</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Quienes se encuentren privados de la patria potestad o tengan suspendido su ejercicio.</li>
+                    <li>Quienes tengan confiada la guarda de su hijo a la Entidad Pública.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">Código Civil</span>
+            </div>
+          </article>
+
+          <article class="map-card" data-cat="c1" data-text="competencia juzgado primera instancia sede entidad pública domicilio adoptante">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 33</span>
+                <span class="status-tag tag-gray">Competencia</span>
+              </div>
+              <h2 class="card-title">Competencia</h2>
+              <p class="card-subtitle">Juzgado de Primera Instancia de la sede de la Entidad Pública o del domicilio del adoptante.</p>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+              <span class="toggle-label">Ver contenido completo</span>
+              <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Regla de competencia</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Competencia principal:</strong> En los expedientes sobre adopción, será competente el Juzgado de Primera Instancia correspondiente a la sede de la Entidad Pública que tenga encomendada la protección del adoptando.</li>
+                    <li><strong>Subsidiaria:</strong> En su defecto, será competente el del domicilio del adoptante.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">Ley 15/2015 Art. 33</span>
+            </div>
+          </article>
+
+          <article class="map-card" data-cat="c1" data-text="carácter preferente postulación fiscal intervención abogado procurador">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 34</span>
+                <span class="status-tag tag-ok">Preferente</span>
+              </div>
+              <h2 class="card-title">Carácter preferente y postulación</h2>
+              <p class="card-subtitle">Tramitación preferente, intervención del Ministerio Fiscal y no preceptividad de Abogado ni Procurador.</p>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+              <span class="toggle-label">Ver contenido completo</span>
+              <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Carácter y fiscalización</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>La tramitación del expediente de adopción tendrá carácter preferente y se practicará con intervención del Ministerio Fiscal.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Representación legal</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>No será preceptiva la asistencia de Abogado ni Procurador.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">Ley 15/2015 Art. 34</span>
+            </div>
+          </article>
+
+          <article class="map-card" data-cat="c2" data-text="propuesta entidad pública solicitud adoptante inicio expediente idoneidad excepciones post mortem">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 35</span>
+                <span class="status-tag tag-warn">Propuesta</span>
+              </div>
+              <h2 class="card-title">Propuesta de la Entidad Pública y solicitud del adoptante</h2>
+              <p class="card-subtitle">Inicio del expediente, regla general, excepciones, adopción post mortem, contenido de la propuesta y documentación.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>4</strong> excepciones</span>
+              <span class="counter-badge" style="margin-left:auto"><strong>3</strong> supuestos post mortem</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+              <span class="toggle-label">Ver contenido completo</span>
+              <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Inicio del expediente</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>El expediente comenzará con el escrito de propuesta de adopción formulada por la Entidad Pública o por la solicitud del adoptante cuando estuviera legitimado para ello.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Regla general del artículo 176 del Código Civil</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Para iniciar el expediente de adopción será necesaria la propuesta previa de la Entidad Pública a favor del adoptante o adoptantes que dicha Entidad Pública haya declarado idóneos para el ejercicio de la patria potestad.</li>
+                    <li>La declaración de idoneidad deberá ser previa a la propuesta.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Excepciones a la necesidad de propuesta previa</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>1.ª:</strong> Ser huérfano y pariente del adoptante en tercer grado por consanguinidad o afinidad.</li>
+                    <li><strong>2.ª:</strong> Ser hijo del cónyuge o de la persona unida al adoptante por análoga relación de afectividad a la conyugal.</li>
+                    <li><strong>3.ª:</strong> Llevar más de un año en guarda con fines de adopción o haber estado bajo tutela del adoptante por el mismo tiempo.</li>
+                    <li><strong>4.ª:</strong> Ser mayor de edad o menor emancipado.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Adopción post mortem</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Supuestos:</strong> Cuando concurra alguna de las circunstancias 1.ª, 2.ª o 3.ª previstas en el apartado 2 del artículo 176 del Código Civil, podrá constituirse la adopción, aunque el adoptante hubiere fallecido, si éste hubiese prestado ya ante el Juez su consentimiento o el mismo hubiera sido otorgado mediante documento público o en testamento.</li>
+                    <li><strong>Efectos:</strong> Los efectos de la resolución judicial en este caso se retrotraerán a la fecha de prestación de tal consentimiento.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Contenido de la propuesta de la Entidad Pública</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>a)</strong> Las condiciones personales, familiares y sociales y los medios de vida del adoptante o adoptantes asignados y sus relaciones con el adoptando, con detalle de las razones que justifiquen la elección de aquél o aquéllos.</li>
+                    <li><strong>b)</strong> En su caso y cuando hayan de prestar su asentimiento o ser oídos, el último domicilio conocido del cónyuge del adoptante o de la persona a la que esté unida por análoga relación de afectividad a la conyugal, o el de los progenitores, tutor, familia acogedora o guardadores del adoptando.</li>
+                    <li><strong>c)</strong> Si unos y otros han formulado su asentimiento ante la Entidad Pública o en documento público.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Supuestos sin propuesta previa de la Entidad Pública</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>En los supuestos en que no se requiera propuesta previa de la Entidad Pública, de conformidad con lo dispuesto en el artículo 176 del Código Civil, el ofrecimiento para la adopción del adoptante se presentará por escrito, en que expresará las indicaciones contenidas en los apartados anteriores en cuanto fueren aplicables, y las alegaciones y pruebas conducentes a demostrar que en el adoptando concurre alguna de las circunstancias exigidas por dicha legislación.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Documentación acompañante</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Con la propuesta u ofrecimiento para la adopción se presentarán los documentos a que se refieren los apartados anteriores, la declaración previa de idoneidad del adoptante para el ejercicio de la patria potestad emitida por la Entidad Pública, si procediere, y cuantos informes o documentos se juzguen oportunos.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">CC Art. 176</span>
+            </div>
+          </article>
+
+          <article class="map-card" data-cat="c3" data-text="consentimiento secretario judicial adoptante adoptando mayor doce años">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 36</span>
+                <span class="status-tag tag-ok">Consentimiento</span>
+              </div>
+              <h2 class="card-title">Consentimiento</h2>
+              <p class="card-subtitle">Citación por el Secretario judicial para manifestar consentimiento ante el Juez.</p>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+              <span class="toggle-label">Ver contenido completo</span>
+              <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Consentimiento en el expediente</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>En el expediente, el Secretario judicial citará, para manifestar su consentimiento en presencia del Juez, al adoptante o adoptantes y al adoptando si fuere mayor de 12 años.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Regulación sustantiva del artículo 177.1 del Código Civil</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Habrán de consentir la adopción, en presencia del Juez, el adoptante o adoptantes y el adoptando mayor de doce años.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Forma del consentimiento</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Los consentimientos y asentimientos deberán otorgarse libremente, en la forma legal requerida y por escrito, previa información de sus consecuencias.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">CC Art. 177.1</span>
+            </div>
+          </article>
+
+          <article class="map-card" data-cat="c3" data-text="asentimiento audiencia progenitores cónyuge pareja excepciones reclamación procedimiento contencioso">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 37</span>
+                <span class="status-tag tag-alert">Asentimiento</span>
+              </div>
+              <h2 class="card-title">Asentimiento y audiencia</h2>
+              <p class="card-subtitle">Citación para prestar asentimiento, reclamación de progenitores, procedimiento de oposición y citación para ser oídos.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>2</strong> sujetos asentimiento</span>
+              <span class="counter-badge" style="margin-left:auto"><strong>3</strong> sujetos audiencia</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+              <span class="toggle-label">Ver contenido completo</span>
+              <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Citación para prestar asentimiento</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>También deberán ser citados, para prestar el asentimiento a la adopción ante el Juez, las personas indicadas en el apartado 2 del artículo 177 del Código Civil.</li>
+                    <li>No serán citados aquellos que, siendo necesario su asentimiento, lo hubieran prestado con anterioridad a la iniciación del expediente ante la correspondiente Entidad Pública o en documento público, salvo que hubieran transcurrido más de seis meses desde que lo hicieron.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Sujetos que deben asentir según el artículo 177.2 del Código Civil</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>1.º</strong> El cónyuge o persona unida al adoptante por análoga relación de afectividad a la conyugal, salvo que medie separación o divorcio legal o ruptura de la pareja que conste fehacientemente, excepto en los supuestos en los que la adopción se vaya a formalizar de forma conjunta.</li>
+                    <li><strong>2.º</strong> Los progenitores del adoptando que no se hallare emancipado, a menos que estuvieran privados de la patria potestad por sentencia firme o incursos en causa legal para tal privación. Esta situación solo podrá apreciarse en el procedimiento judicial contradictorio que se tramitará conforme a la Ley de Enjuiciamiento Civil.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Excepciones a la necesidad de asentimiento de progenitores</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>No será necesario el asentimiento cuando los que deban prestarlo se encuentren imposibilitados para ello, imposibilidad que se apreciará motivadamente en la resolución judicial que constituya la adopción.</li>
+                    <li>Tampoco será necesario el asentimiento de los progenitores que tuvieren suspendida la patria potestad cuando hubieran transcurrido dos años desde la notificación de la declaración de situación de desamparo, en los términos previstos en el artículo 172.2 del Código Civil, sin oposición a la misma o cuando, interpuesta en plazo, hubiera sido desestimada.</li>
+                    <li>El asentimiento de la madre no podrá prestarse hasta que hayan transcurrido seis semanas desde el parto.</li>
+                    <li>En las adopciones que exijan propuesta previa no se admitirá que el asentimiento de los progenitores se refiera a adoptantes determinados.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Reclamación de la necesidad de asentimiento por progenitores</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Si los progenitores pretendieran que se les reconozca la necesidad de prestar su asentimiento a la adopción, deberán ponerlo de manifiesto en el expediente.</li>
+                    <li>El Secretario judicial acordará la suspensión del expediente y otorgará el plazo de 15 días para la presentación de la demanda, de la que conocerá el mismo Tribunal.</li>
+                    <li>Presentada la demanda dentro de plazo, el Secretario judicial dictará decreto declarando contencioso el expediente de adopción y acordará la tramitación de la demanda presentada en el mismo procedimiento, como pieza separada, con arreglo a lo previsto en el artículo 753 de la Ley de Enjuiciamiento Civil.</li>
+                    <li>Una vez firme la resolución que se dicte en la pieza separada sobre la necesidad del asentimiento de los progenitores del adoptando, el Secretario judicial acordará la citación ante el Juez de las personas indicadas en el artículo 177 del Código Civil que deban prestar el consentimiento o el asentimiento a la adopción así como ser oídos, y que todavía no lo hayan hecho, debiendo resolver a continuación sobre la adopción.</li>
+                    <li>Si no se presentara la demanda en el plazo fijado, el Secretario judicial dictará decreto dando por finalizado el trámite y alzando la suspensión del expediente de adopción.</li>
+                    <li>El decreto será recurrible directamente en revisión ante el Tribunal.</li>
+                    <li>Firme dicha resolución, no se admitirá ninguna reclamación posterior de los mismos sujetos sobre la necesidad de asentimiento para la adopción de que se trate.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Citación para ser oídos</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Asimismo deberán ser citados para ser oídos por el Juez en el expediente, las personas señaladas en el apartado 3 del artículo 177 del Código Civil.</li>
+                    <li><strong>1.º</strong> Los progenitores que no hayan sido privados de la patria potestad, cuando su asentimiento no fuera necesario para la adopción.</li>
+                    <li><strong>2.º</strong> El tutor y, en su caso, la familia acogedora, y el guardador o guardadores.</li>
+                    <li><strong>3.º</strong> El adoptando menor de doce años de acuerdo con su edad y madurez.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">CC Art. 177</span>
+              <span class="ref-tag">CC Art. 172.2</span>
+              <span class="ref-tag">LEC Art. 753</span>
+              <span class="ref-tag">LEC Art. 781</span>
+            </div>
+          </article>
+
+          <article class="map-card" data-cat="c4" data-text="citaciones domicilio apercibimientos incomparecencia validez adopción">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 38</span>
+                <span class="status-tag tag-gray">Citaciones</span>
+              </div>
+              <h2 class="card-title">Citaciones</h2>
+              <p class="card-subtitle">Averiguación de domicilio, apercibimientos por incomparecencia y validez de la adopción sin citación.</p>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+              <span class="toggle-label">Ver contenido completo</span>
+              <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Averiguación de domicilio y citación</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Si en la propuesta de adopción o en el ofrecimiento para la adopción no constare el domicilio de los que deban ser citados, el Secretario judicial practicará inmediatamente las diligencias oportunas para la averiguación del domicilio conforme a lo prevenido en el artículo 156 de la Ley de Enjuiciamiento Civil y los citará ante el Juez dentro de los quince días siguientes, debiendo garantizar la debida reserva.</li>
+                    <li>En la citación a los progenitores se hará constar, en su caso, la circunstancia por la cual basta su audiencia.</li>
+                    <li>Las citaciones se efectuarán de conformidad con las normas establecidas en la Ley de Jurisdicción Voluntaria para tales supuestos.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Apercibimientos por incomparecencia</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>En las citaciones que deban prestar su asentimiento o ser oídas se incluirá el apercibimiento de que si fueran citados personalmente y no comparecieran se seguirá el trámite sin más citaciones.</li>
+                    <li>Si no respondieran a la primera citación y no se hubiera realizado la citación en su persona, se les volverá a citar para dentro de los quince días siguientes, con el apercibimiento de que aunque no comparezcan el expediente seguirá su trámite.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Imposibilidad de citación y validez de la adopción</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Cuando no haya podido conocerse el domicilio o paradero de alguna persona que deba ser citada, o si citada debidamente, con los apercibimientos oportunos, no compareciese, se prescindirá del trámite y la adopción acordada será válida, sin perjuicio, en su caso, del derecho que a los progenitores concede el apartado 2 del artículo 180 del Código Civil.</li>
+                    <li><strong>Derecho de los progenitores a solicitar la extinción (artículo 180.2 del Código Civil):</strong> El Juez acordará la extinción de la adopción a petición de cualquiera de los progenitores que, sin culpa suya, no hubieren intervenido en el expediente en los términos expresados en el artículo 177. Será también necesario que la demanda se interponga dentro de los dos años siguientes a la adopción y que la extinción solicitada no perjudique gravemente al menor.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">LEC Art. 156</span>
+              <span class="ref-tag">CC Art. 180.2</span>
+            </div>
+          </article>
+
+          <article class="map-card" data-cat="c1" data-text="tramitación diligencias interés adoptando reserva oposición contencioso apelación inscripción registro civil">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 39</span>
+                <span class="status-tag tag-gray">Tramitación</span>
+              </div>
+              <h2 class="card-title">Tramitación</h2>
+              <p class="card-subtitle">Diligencias de oficio, reserva de actuaciones, efectos sobre la familia de origen, oposición y recurso de apelación.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>5</strong> aspectos clave</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+              <span class="toggle-label">Ver contenido completo</span>
+              <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Diligencias para el interés del adoptando</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>El Juez podrá ordenar la práctica de cuantas diligencias estime oportunas para asegurarse de que la adopción sea en interés del adoptando.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Reserva de las actuaciones</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Todas las actuaciones se llevarán a cabo con la conveniente reserva, evitando en particular que la familia de origen tenga conocimiento de cuál sea la adoptiva, excepto en los supuestos recogidos en los apartados 2 y 4 del artículo 178 del Código Civil y sin perjuicio de lo establecido en el artículo 180 del Código Civil.</li>
+                    <li><strong>Efectos generales (artículo 178.1 CC):</strong> La adopción produce la extinción de los vínculos jurídicos entre el adoptado y su familia de origen.</li>
+                    <li><strong>Excepciones de subsistencia (artículo 178.2 CC):</strong> Subsistirán los vínculos jurídicos con la familia del progenitor que corresponda: a) Cuando el adoptado sea hijo del cónyuge o de la persona unida al adoptante por análoga relación de afectividad a la conyugal, aunque el consorte o la pareja hubiera fallecido; b) Cuando sólo uno de los progenitores haya sido legalmente determinado, siempre que tal efecto hubiera sido solicitado por el adoptante, el adoptado mayor de doce años y el progenitor cuyo vínculo haya de persistir.</li>
+                    <li><strong>Adopción abierta (artículo 178.4 CC):</strong> Podrá acordarse el mantenimiento de alguna forma de relación o contacto a través de visitas o comunicaciones. El Juez, al constituir la adopción, podrá acordar el mantenimiento de dicha relación, determinando su periodicidad, duración y condiciones, a propuesta de la Entidad Pública o del Ministerio Fiscal y con el consentimiento de la familia adoptiva y del adoptando si tuviera suficiente madurez y siempre si fuere mayor de doce años. La Entidad Pública remitirá al Juez informes periódicos sobre el desarrollo de las visitas y comunicaciones, así como propuestas de mantenimiento o modificación de las mismas durante los dos primeros años, y, transcurridos estos a petición del Juez.</li>
+                    <li><strong>Declaración de idoneidad y adopción abierta:</strong> En la declaración de idoneidad deberá hacerse constar si las personas que se ofrecen a la adopción aceptarían adoptar a un menor que fuese a mantener la relación con la familia de origen.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Oposición y transformación en contencioso</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Si se suscitare oposición, el expediente se hará contencioso y el Secretario judicial citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Recurso de apelación</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Contra el auto que resuelva el expediente cabe recurso de apelación, que tendrá carácter preferente, sin que produzca efectos suspensivos.</li>
+                    <li><strong>Efectos del recurso de apelación:</strong> El auto que ponga fin al procedimiento será susceptible de recurso de apelación, que tendrá efectos suspensivos.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Inscripción en el Registro Civil</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>El testimonio de la resolución firme en que se acuerde la adopción se remitirá al Registro Civil correspondiente, para que se practique su inscripción.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">CC Art. 178</span>
+              <span class="ref-tag">CC Art. 180</span>
+            </div>
+          </article>
+
+          <article class="map-card" data-cat="c5" data-text="exclusión funciones tutelares extinción adopción procedimiento medidas protección consentimiento mayor edad orígenes biológicos">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 40</span>
+                <span class="status-tag tag-alert">Extinción</span>
+              </div>
+              <h2 class="card-title">Procedimiento para la exclusión de funciones tutelares del adoptante y extinción de la adopción</h2>
+              <p class="card-subtitle">Trámite procesal, exclusión de funciones tutelares, extinción, medidas de protección y consentimiento del mayor de edad.</p>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+              <span class="toggle-label">Ver contenido completo</span>
+              <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Trámite procesal y remisión al Registro Civil</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Las actuaciones judiciales a que se refieren los artículos 179 y 180 del Código Civil, se sustanciarán por los trámites del juicio que corresponda con arreglo a lo establecido en la Ley de Enjuiciamiento Civil y sus resoluciones serán remitidas al Registro Civil para su inscripción.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Exclusión de funciones tutelares del adoptante (artículo 179 del Código Civil)</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Iniciativa y causa:</strong> El Juez, a petición del Ministerio Fiscal, del adoptado o de su representante legal, acordará que el adoptante que hubiere incurrido en causa de privación de la patria potestad, quede excluido de las funciones tuitivas y de los derechos que por Ley le correspondan respecto del adoptado o sus descendientes, o en sus herencias.</li>
+                    <li><strong>Plazo para solicitar la exclusión:</strong> Una vez alcanzada la plena capacidad, la exclusión sólo podrá ser pedida por el adoptado, dentro de los dos años siguientes.</li>
+                    <li><strong>Cese de las restricciones:</strong> Dejarán de producir efecto estas restricciones por determinación del propio hijo una vez alcanzada la plena capacidad.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Extinción de la adopción (artículo 180 del Código Civil)</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Irrevocabilidad:</strong> La adopción es irrevocable.</li>
+                    <li><strong>Extinción a petición de progenitores:</strong> El Juez acordará la extinción de la adopción a petición de cualquiera de los progenitores que, sin culpa suya, no hubieren intervenido en el expediente en los términos expresados en el artículo 177. Será también necesario que la demanda se interponga dentro de los dos años siguientes a la adopción y que la extinción solicitada no perjudique gravemente al menor.</li>
+                    <li><strong>Consentimiento del adoptado mayor de edad:</strong> Si el adoptado fuere mayor de edad, la extinción de la adopción requerirá su consentimiento expreso.</li>
+                    <li><strong>Efectos de la extinción:</strong> La extinción de la adopción no es causa de pérdida de la nacionalidad ni de la vecindad civil adquiridas, ni alcanza a los efectos patrimoniales anteriormente producidos.</li>
+                    <li><strong>Determinación de la filiación sobrevenida:</strong> La determinación de la filiación que por naturaleza corresponda al adoptado no afecta a la adopción.</li>
+                    <li><strong>Derecho a conocer los orígenes biológicos:</strong> Las Entidades Públicas asegurarán la conservación de la información relativa a los orígenes del menor durante al menos cincuenta años con posterioridad al momento en que la adopción se haya hecho definitiva. Las personas adoptadas, alcanzada la mayoría de edad o durante su minoría de edad a través de sus representantes legales, tendrán derecho a conocer los datos sobre sus orígenes biológicos.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Medidas de protección cautelares</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Durante la sustanciación del procedimiento, el Juez adoptará, incluso de oficio, y previa audiencia del Ministerio Fiscal, las medidas de protección oportunas sobre la persona y bienes del adoptado menor o persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Consentimiento del adoptado mayor de edad</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Si el adoptado fuera mayor de edad, la extinción de la adopción requerirá su consentimiento expreso.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">CC Art. 179</span>
+              <span class="ref-tag">CC Art. 180</span>
+              <span class="ref-tag">LEC</span>
+            </div>
+          </article>
+
+          <article class="map-card" data-cat="c6" data-text="adopción internacional código civil ley 542007 convenio la haya 1993 ecai">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 41</span>
+                <span class="status-tag tag-info">Internacional</span>
+              </div>
+              <h2 class="card-title">Adopción internacional</h2>
+              <p class="card-subtitle">Ley aplicable, Ley 54/2007, de Adopción Internacional, y Convenio de La Haya de 29 de mayo de 1993.</p>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+              <span class="toggle-label">Ver contenido completo</span>
+              <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Régimen de la adopción internacional</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>En los casos de adopción internacional se estará a lo previsto en el artículo 9.5 del Código Civil y en la Ley 54/2007, de 28 de diciembre, de Adopción Internacional, así como a lo establecido al respecto en los Tratados y Convenios internacionales en que España sea parte y, en especial, en el Convenio de La Haya de 29 de mayo de 1993, relativo a la protección del niño y a la cooperación en materia de adopción internacional.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Ley 54/2007, de 28 de diciembre, de Adopción Internacional</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>La Ley 54/2007 conjuga los principios y valores de la Constitución con las disposiciones de los instrumentos internacionales en materia de adopción que son parte del ordenamiento jurídico español.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Convenio de La Haya de 29 de mayo de 1993</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li><strong>Objeto del Convenio (artículo 1):</strong> a) Establecer garantías para que las adopciones internacionales tengan lugar en consideración al interés superior del niño y al respeto a los derechos fundamentales que le reconoce el Derecho internacional; b) Instaurar un sistema de cooperación entre los Estados contratantes que asegure el respeto a dichas garantías y, en consecuencia, prevenga la sustracción, la venta o el tráfico de niños; c) Asegurar el reconocimiento en los Estados contratantes de las adopciones realizadas de acuerdo con el Convenio.</li>
+                    <li><strong>Ámbito de aplicación (artículo 2):</strong> El Convenio se aplica cuando un niño con residencia habitual en un Estado contratante («el Estado de origen») ha sido, es o va a ser desplazado a otro Estado contratante («el Estado de recepción»), bien después de su adopción en el Estado de origen por cónyuges o por una persona con residencia habitual en el Estado de recepción, bien con la finalidad de realizar tal adopción en el Estado de recepción o en el Estado de origen. El Convenio sólo se refiere a las adopciones que establecen un vínculo de filiación.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">CC Art. 9.5</span>
+              <span class="ref-tag">Ley 54/2007</span>
+              <span class="ref-tag">C. La Haya 1993</span>
+            </div>
+          </article>
+
+          <article class="map-card" data-cat="c6" data-text="conversión adopción simple no plena plena tribunales españoles residencia nacionalidad">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="art-badge">Artículo 42</span>
+                <span class="status-tag tag-info">Conversión</span>
+              </div>
+              <h2 class="card-title">Conversión de adopción simple o no plena en plena</h2>
+              <p class="card-subtitle">Supuestos para instar la conversión ante los Tribunales españoles, solicitud, trámites y consentimiento específico.</p>
+            </div>
+            <div class="card-counters">
+              <span class="counter-badge"><strong>3</strong> supuestos habilitantes</span>
+            </div>
+            <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+              <span class="toggle-label">Ver contenido completo</span>
+              <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="card-body">
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Supuestos para instar la conversión</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>El adoptante de adopción simple o no plena constituida por autoridad extranjera competente podrá instar ante los Tribunales españoles su conversión en una adopción regulada por el derecho español cuando concurra uno de los siguientes supuestos:</li>
+                    <li><strong>a)</strong> Que el adoptando tenga su residencia habitual en España en el momento de constitución de la adopción.</li>
+                    <li><strong>b)</strong> Que el adoptando haya sido o vaya a ser trasladado a España con la finalidad de establecer su residencia habitual en España.</li>
+                    <li><strong>c)</strong> Que el adoptante tenga la nacionalidad española o tenga su residencia habitual en España.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Solicitud y documentación</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>El adoptante deberá presentar la solicitud ofreciéndose para la adopción plena, sin que precise propuesta previa de la Entidad Pública, en la que expresará las indicaciones contenidas en el artículo 35 en cuanto fueren aplicables.</li>
+                    <li>A la solicitud deberá acompañar el documento de constitución de la adopción por la autoridad extranjera y las pruebas conducentes a demostrar que en el adoptado concurren las circunstancias exigidas.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Trámites aplicables y examen judicial</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>Presentada la solicitud se seguirán los trámites establecidos en los artículos anteriores, en cuanto sean aplicables, debiendo examinar el Juez la concurrencia de los extremos enumerados en la Ley de Adopción Internacional.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Consentimiento, audiencia y asentimiento específicos</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>En todo caso habrán de manifestar su consentimiento ante el Juez, el adoptante o adoptantes y el adoptado si fuere mayor de doce años.</li>
+                    <li>Si fuera menor de esa edad se le oirá de acuerdo con su edad y madurez.</li>
+                    <li>Deberá asentir el cónyuge del adoptante o la persona a la que esté unida por análoga relación de afectividad a la conyugal.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="inner-section">
+                <div class="inner-heading"><span class="dot"></span>Inscripción registral</div>
+                <div class="inner-body">
+                  <ul class="inner-list">
+                    <li>El testimonio del auto que declare la conversión de la adopción simple o no plena en plena se remitirá al Registro Civil correspondiente, para su inscripción.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-refs">
+              <span class="ref-tag">Ley 15/2015 Art. 35</span>
+              <span class="ref-tag">Ley 54/2007</span>
+            </div>
+          </article>
+
+          <div class="no-results" id="no-results">
+            No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-section">
+      <div class="section-heading" data-target="sec-timeline">
+        <span class="section-heading-text">Indice de plazos procesales</span>
+        <span class="section-heading-count">10 trámites</span>
+        <button class="section-toggle-btn">&#9660;</button>
+      </div>
+      <hr class="section-divider">
+      <div class="section-body collapsed" id="sec-timeline">
+        <div class="table-wrap">
+          <table class="timeline-table">
+            <thead>
+              <tr>
+                <th style="width:45%">Acto o trámite procesal</th>
+                <th>Plazo</th>
+                <th>Fundamento normativo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-tramite">Validez del asentimiento prestado antes del expediente (caducidad)</td>
+                <td><span class="plazo-badge plazo-months">6 meses</span></td>
+                <td class="td-norm">Artículo 37.1 Ley 15/2015</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Asentimiento de progenitores con patria potestad suspendida por desamparo</td>
+                <td><span class="plazo-badge plazo-years">2 años</span></td>
+                <td class="td-norm">Artículo 177.2 Código Civil</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Plazo mínimo para prestar asentimiento de la madre tras el parto</td>
+                <td><span class="plazo-badge plazo-weeks">6 semanas</span></td>
+                <td class="td-norm">Artículo 177.2 Código Civil</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Presentación de demanda por reclamación de necesidad de asentimiento de progenitores</td>
+                <td><span class="plazo-badge plazo-days">15 días</span></td>
+                <td class="td-norm">Artículo 37.2 Ley 15/2015 / Art. 781 LEC</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Citación ante el Juez tras averiguación de domicilio por el Secretario judicial</td>
+                <td><span class="plazo-badge plazo-days">15 días</span></td>
+                <td class="td-norm">Artículo 38.1 Ley 15/2015</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Segunda citación por incomparecencia (si no fue en persona)</td>
+                <td><span class="plazo-badge plazo-days">15 días</span></td>
+                <td class="td-norm">Artículo 38.2 Ley 15/2015</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Extinción de la adopción a petición de progenitores no intervinientes sin culpa</td>
+                <td><span class="plazo-badge plazo-years">2 años</span></td>
+                <td class="td-norm">Artículo 180.2 Código Civil</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Solicitud de exclusión de funciones tutelares por el adoptado tras la plena capacidad</td>
+                <td><span class="plazo-badge plazo-years">2 años</span></td>
+                <td class="td-norm">Artículo 179 Código Civil</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Informes periódicos sobre visitas/comunicaciones en adopción abierta</td>
+                <td><span class="plazo-badge plazo-years">2 primeros años</span></td>
+                <td class="td-norm">Artículo 178.4 Código Civil</td>
+              </tr>
+              <tr>
+                <td class="td-tramite">Conservación de información de orígenes biológicos por las Entidades Públicas</td>
+                <td><span class="plazo-badge plazo-years">50 años</span></td>
+                <td class="td-norm">Artículo 180 Código Civil</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-section">
+      <div class="section-heading" data-target="sec-actors">
+        <span class="section-heading-text">Mapa de participantes y actores</span>
+        <span class="section-heading-count">4 categorías · 13+ actores</span>
+        <button class="section-toggle-btn">&#9660;</button>
+      </div>
+      <hr class="section-divider">
+      <div class="section-body collapsed" id="sec-actors">
+        <div class="participants-grid">
+          <div class="participant-col">
+            <div class="participant-col-head phead-c1">Órganos Judiciales y Fiscal</div>
+            <ul>
+              <li>Juez <span class="participant-note">(práctica diligencias, consentimiento, resoluciones)</span></li>
+              <li>Secretario Judicial <span class="participant-note">(citaciones, decretos, suspensiones)</span></li>
+              <li>Juzgado de Primera Instancia <span class="participant-note">(competente)</span></li>
+              <li>Ministerio Fiscal <span class="participant-note">(intervención, propuestas, audiencias)</span></li>
+              <li>Tribunal <span class="participant-note">(revisión de decretos, recurso de apelación)</span></li>
+            </ul>
+          </div>
+          <div class="participant-col">
+            <div class="participant-col-head phead-c2">Sujetos de la Adopción</div>
+            <ul>
+              <li>Adoptante o Adoptantes <span class="participant-note">(consentimiento, solicitud, propuesta)</span></li>
+              <li>Adoptando <span class="participant-note">(consentimiento si &gt;12 años, audiencia si &lt;12 años)</span></li>
+              <li>Entidad Pública <span class="participant-note">(propuesta, idoneidad, informe, conservación datos)</span></li>
+              <li>Entidad Colaboradora Autorizada / ECAI <span class="participant-note">(sesiones preparación, mediación)</span></li>
+            </ul>
+          </div>
+          <div class="participant-col">
+            <div class="participant-col-head phead-c3">Familiares y Vínculos</div>
+            <ul>
+              <li>Progenitores <span class="participant-note">(asentimiento, audiencia, oposición, extinción)</span></li>
+              <li>Cónyuge o Pareja del Adoptante <span class="participant-note">(asentimiento)</span></li>
+              <li>Tutor <span class="participant-note">(asentimiento, audiencia)</span></li>
+              <li>Familia Acogedora <span class="participant-note">(asentimiento, audiencia)</span></li>
+              <li>Guardadores <span class="participant-note">(asentimiento, audiencia)</span></li>
+            </ul>
+          </div>
+          <div class="participant-col">
+            <div class="participant-col-head phead-c6">Otros Agentes</div>
+            <ul>
+              <li>Registro Civil <span class="participant-note">(inscripción de adopción, extinción, conversión)</span></li>
+              <li>Autoridad Extranjera Competente <span class="participant-note">(constitución de adopción simple)</span></li>
+              <li>Servicios Especializados <span class="participant-note">(asesoramiento orígenes biológicos)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-section">
+      <div class="section-heading" data-target="sec-norms">
+        <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+        <span class="section-heading-count">4 cuerpos normativos</span>
+        <button class="section-toggle-btn">&#9660;</button>
+      </div>
+      <hr class="section-divider">
+      <div class="section-body collapsed" id="sec-norms">
+        <div class="norm-grid">
+          <div class="norm-card">
+            <div class="norm-law">Código Civil</div>
+            <div class="norm-title">Regulación sustantiva de la adopción, filiación y patria potestad</div>
+            <div class="norm-arts">
+              <strong>Artículo 172.2</strong> — Situación de desamparo y suspensión de patria potestad.<br>
+              <strong>Artículo 176</strong> — Propuesta previa de la Entidad Pública y excepciones.<br>
+              <strong>Artículo 177</strong> — Consentimiento, asentimiento y audiencias necesarias.<br>
+              <strong>Artículo 178</strong> — Efectos de la adopción, extinción de vínculos y adopción abierta.<br>
+              <strong>Artículo 179</strong> — Exclusión de funciones tutelares del adoptante.<br>
+              <strong>Artículo 180</strong> — Irrevocabilidad, extinción de la adopción y orígenes biológicos.<br>
+              <strong>Artículo 9.5</strong> — Ley aplicable a la adopción internacional.
+            </div>
+            <span class="norm-tag tag-info">Sustantivo</span>
+          </div>
+          <div class="norm-card">
+            <div class="norm-law">Ley de Enjuiciamiento Civil</div>
+            <div class="norm-title">Procedimientos aplicables a la jurisdicción voluntaria y oposición</div>
+            <div class="norm-arts">
+              <strong>Artículo 156</strong> — Averiguación del domicilio de los que deban ser citados.<br>
+              <strong>Artículo 753</strong> — Tramitación en pieza separada de la necesidad de asentimiento de progenitores.<br>
+              <strong>Artículo 781</strong> — Comparecencia y demanda de progenitores para reconocimiento de asentimiento.
+            </div>
+            <span class="norm-tag tag-warn">Procesal</span>
+          </div>
+          <div class="norm-card">
+            <div class="norm-law">Ley 54/2007</div>
+            <div class="norm-title">Ley de Adopción Internacional</div>
+            <div class="norm-arts">
+              <strong>Ley 54/2007, de 28 de diciembre</strong> — Conjuga los principios constitucionales con las disposiciones de los instrumentos internacionales en materia de adopción que son parte del ordenamiento jurídico español. Regula la intervención de las ECAI y las competencias de las Comunidades Autónomas.
+            </div>
+            <span class="norm-tag tag-ok">Especial</span>
+          </div>
+          <div class="norm-card">
+            <div class="norm-law">Convenio de La Haya</div>
+            <div class="norm-title">Convenio de 29 de mayo de 1993, relativo a la protección del niño y a la cooperación en materia de adopción internacional</div>
+            <div class="norm-arts">
+              <strong>Artículo 1</strong> — Garantías de interés superior del niño, cooperación entre Estados y prevención de tráfico de niños.<br>
+              <strong>Artículo 2</strong> — Ámbito de aplicación en desplazamientos entre Estados contratantes para adopción que establezca vínculo de filiación.
+            </div>
+            <span class="norm-tag tag-gray">Internacional</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="legend-footer">
+    <div class="legend-inner">
+      <div class="legend-title">Leyenda de colores por categoría</div>
+      <div class="legend-grid">
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c1)"></div>
+          Competencia y tramitación
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c2)"></div>
+          Iniciación y propuesta
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c3)"></div>
+          Consentimiento y asentimiento
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c4)"></div>
+          Citaciones
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c5)"></div>
+          Extinción y exclusión
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--c6)"></div>
+          Internacional y general
+        </div>
+      </div>
+      <div class="legend-copy">
+        Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · TÍTULO II · CAPÍTULO III · Generado como plantilla HTML reutilizable
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const pills = document.querySelectorAll('.pill');
+    const cards = document.querySelectorAll('.map-card');
+    const noResults = document.getElementById('no-results');
+    let activeCat = 'all';
+    let searchTerm = '';
+
+    function updateVisibility() {
+      let visible = 0;
+      cards.forEach(c => {
+        const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+        const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+        const termMatch = !searchTerm || text.includes(searchTerm);
+        const show = catMatch && termMatch;
+        c.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+      document.getElementById('no-results-term').textContent = searchTerm;
+    }
+
+    pills.forEach(p => {
+      p.addEventListener('click', () => {
+        pills.forEach(x => x.classList.remove('active'));
+        p.classList.add('active');
+        activeCat = p.dataset.cat;
+        updateVisibility();
+      });
+    });
+
+    document.getElementById('search').addEventListener('input', e => {
+      searchTerm = e.target.value.toLowerCase().trim();
+      updateVisibility();
+    });
+
+    function toggleCard(btn) {
+      const card = btn.closest('.map-card');
+      const isExp = card.classList.toggle('expanded');
+      btn.setAttribute('aria-expanded', String(isExp));
+      const label = btn.querySelector('.toggle-label');
+      if (label) label.textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+    }
+
+    document.getElementById('btn-expand-all').addEventListener('click', () => {
+      cards.forEach(c => {
+        if (!c.classList.contains('hidden')) {
+          c.classList.add('expanded');
+          const btn = c.querySelector('.card-toggle-btn');
+          const label = btn && btn.querySelector('.toggle-label');
+          if (btn) btn.setAttribute('aria-expanded', 'true');
+          if (label) label.textContent = 'Ocultar contenido';
+        }
+      });
+    });
+
+    document.getElementById('btn-collapse-all').addEventListener('click', () => {
+      cards.forEach(c => {
+        c.classList.remove('expanded');
+        const btn = c.querySelector('.card-toggle-btn');
+        const label = btn && btn.querySelector('.toggle-label');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+        if (label) label.textContent = 'Ver contenido completo';
+      });
+    });
+
+    document.querySelectorAll('.section-heading').forEach(h => {
+      h.addEventListener('click', () => {
+        const target = document.getElementById(h.dataset.target);
+        if (!target) return;
+        const collapsed = target.classList.toggle('collapsed');
+        const btn = h.querySelector('.section-toggle-btn');
+        if (btn) btn.textContent = collapsed ? '▼' : '▲';
+      });
+    });
+
+    const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+    let zoom = 100;
+    const zoomTarget = document.querySelector('.page-main');
+    const zoomLabel  = document.getElementById('zoom-label');
+
+    function applyZoom() {
+      zoomTarget.style.zoom = zoom / 100;
+      zoomLabel.textContent = zoom + '%';
+      document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+      document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+    }
+    function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+    function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+    function zoomReset() { zoom = 100; applyZoom(); }
+
+    document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+    document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+    document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+    document.addEventListener('keydown', e => {
+      if (!e.ctrlKey && !e.metaKey) return;
+      if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+      if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+      if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+    });
+  </script>
+</body>
+</html>

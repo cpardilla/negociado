@@ -1,0 +1,2800 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa Mental — Conciliación en la Jurisdicción Voluntaria (Fusión definitiva)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+  --transition:   200ms ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-ui);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===================== SITE HEADER ===================== */
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem 1.75rem;
+}
+.header-inner { max-width: 1400px; margin: 0 auto; }
+.header-breadcrumb { 
+       font-size: 12px; 
+       font-weight: 500; 
+       letter-spacing: .06em; 
+       text-transform: uppercase; 
+       color: var(--accent); 
+       margin-bottom: .5rem; 
+     } 
+.header-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+.header-subtitle{font-size:14px;color:rgba(248,245,237,.65);margin-bottom:1rem;line-height:1.5} 
+.header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+}
+.header-tag {
+  display: inline-block;
+  background: rgba(200,169,110,.15);
+  border: 1px solid rgba(200,169,110,.3);
+  color: var(--accent);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.header-actions { margin-left: auto; }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(248,245,237,.15);
+  color: rgba(248,245,237,.7);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-ui);
+}
+.btn-ghost:hover {
+  background: rgba(248,245,237,.08);
+  color: var(--header-text);
+}
+
+/* ===================== STATS BAR ===================== */
+.stats-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.stats-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-1);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: .25rem;
+}
+
+/* ===================== CONTROLS BAR ===================== */
+.controls-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  padding: .75rem 1rem;
+}
+.controls-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: center;
+}
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+}
+.search-wrap svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--text-3);
+  pointer-events: none;
+}
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 32px;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-family: var(--font-ui);
+  background: var(--surface-2);
+  color: var(--text-1);
+  outline: none;
+  transition: border-color var(--transition);
+}
+.search-input:focus { border-color: var(--accent); }
+.filter-pills {
+  display: flex;
+  gap: .35rem;
+  flex-wrap: wrap;
+}
+.pill {
+  border: 1px solid var(--border-md);
+  background: var(--surface);
+  color: var(--text-2);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-ui);
+  white-space: nowrap;
+}
+.pill:hover { background: var(--surface-2); }
+.pill.active { color: #fff; }
+.pill.active[data-cat="all"] { background: var(--ink); border-color: var(--ink); }
+.pill.active[data-cat="c1"] { background: var(--c1); border-color: var(--c1); }
+.pill.active[data-cat="c2"] { background: var(--c2); border-color: var(--c2); }
+.pill.active[data-cat="c3"] { background: var(--c3); border-color: var(--c3); }
+.pill.active[data-cat="c4"] { background: var(--c4); border-color: var(--c4); }
+.pill.active[data-cat="c5"] { background: var(--c5); border-color: var(--c5); }
+.pill.active[data-cat="c6"] { background: var(--c6); border-color: var(--c6); }
+.pill.active[data-cat="c7"] { background: #6b7280; border-color: #6b7280; }
+.pill.active[data-cat="c8"] { background: #9333ea; border-color: #9333ea; }
+.pill.active[data-cat="c9"] { background: #e11d48; border-color: #e11d48; }
+.ctrl-actions {
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+  margin-left: auto;
+}
+.btn-ctrl {
+  border: 1px solid var(--border-md);
+  background: var(--surface);
+  color: var(--text-2);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-ui);
+  white-space: nowrap;
+}
+.btn-ctrl:hover { background: var(--surface-2); }
+.zoom-cluster {
+  display: flex;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.btn-zoom {
+  width: 32px;
+  height: 28px;
+  border: none;
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.btn-zoom:first-child { border-right: 1px solid var(--border-md); }
+.btn-zoom:last-child { border-left: 1px solid var(--border-md); }
+.btn-zoom:hover { background: var(--surface-2); }
+.btn-zoom:disabled { opacity: .35; cursor: default; }
+.zoom-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 42px;
+  background: var(--surface);
+  color: var(--text-2);
+  user-select: none;
+}
+
+/* ===================== PAGE MAIN ===================== */
+.page-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+  transition: zoom var(--transition);
+}
+
+/* ===================== MAP SECTION ===================== */
+.map-section { margin-bottom: 1.5rem; }
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 0;
+  cursor: pointer;
+  user-select: none;
+}
+.section-heading:hover .section-heading-text { color: var(--accent); }
+.section-heading-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-1);
+  transition: color var(--transition);
+}
+.section-heading-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+.section-toggle-btn {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--text-3);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 0 .75rem;
+}
+.section-body.collapsed { display: none; }
+
+/* ===================== CARD GRID ===================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* ===================== MAP CARD ===================== */
+.map-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--transition);
+}
+.map-card:hover { box-shadow: var(--shadow-md); }
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+.map-card[data-cat="c7"] { border-left-color: #6b7280; }
+.map-card[data-cat="c8"] { border-left-color: #9333ea; }
+.map-card[data-cat="c9"] { border-left-color: #e11d48; }
+.map-card.hidden { display: none; }
+.card-top { padding: 1rem 1rem .75rem; }
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .5rem;
+  flex-wrap: wrap;
+}
+.art-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border: 1px solid var(--c1bd); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border: 1px solid var(--c2bd); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border: 1px solid var(--c3bd); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border: 1px solid var(--c4bd); }
+.map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border: 1px solid var(--c5bd); }
+.map-card[data-cat="c6"] .art-badge { background: var(--c6bg); color: var(--c6); border: 1px solid var(--c6bd); }
+.map-card[data-cat="c7"] .art-badge { background: #f3f4f6; color: #6b7280; border: 1px solid #d1d5db; }
+.map-card[data-cat="c8"] .art-badge { background: #faf5ff; color: #9333ea; border: 1px solid #e9d5ff; }
+.map-card[data-cat="c9"] .art-badge { background: #fff1f2; color: #e11d48; border: 1px solid #fecdd3; }
+.status-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 2px 8px;
+}
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: .25rem;
+  line-height: 1.3;
+}
+.card-subtitle {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.card-counters {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem .5rem;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+.counter-badge {
+  font-size: 11px;
+  color: var(--text-3);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px 8px;
+}
+.counter-badge strong { color: var(--text-2); font-weight: 600; }
+.card-toggle-btn {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--border);
+  background: var(--surface-2);
+  padding: 6px 1rem;
+  font-size: 12px;
+  color: var(--text-2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  transition: background var(--transition);
+  font-family: var(--font-ui);
+}
+.card-toggle-btn:hover { background: var(--border); }
+.toggle-icon {
+  display: inline-block;
+  transition: transform var(--transition);
+  font-size: 12px;
+}
+.map-card.expanded .toggle-icon { transform: rotate(180deg); }
+.card-body { display: none; }
+.map-card.expanded .card-body { display: block; }
+
+/* Inner sections */
+.inner-section { padding: .75rem 1rem; }
+.inner-section + .inner-section { border-top: 1px solid var(--border); }
+.inner-heading {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .5rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+.map-card[data-cat="c6"] .dot { background: var(--c6); }
+.map-card[data-cat="c7"] .dot { background: #6b7280; }
+.map-card[data-cat="c8"] .dot { background: #9333ea; }
+.map-card[data-cat="c9"] .dot { background: #e11d48; }
+.inner-body { margin-left: 1rem; }
+.inner-list { list-style: none; }
+.inner-list li {
+  position: relative;
+  padding-left: .8rem;
+  margin-bottom: .2rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+.inner-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+}
+.inner-list li strong { color: var(--text-1); font-weight: 500; }
+.card-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  padding: .5rem 1rem .75rem;
+}
+.ref-tag {
+  display: inline-block;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+/* ===================== NO RESULTS ===================== */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-3);
+  font-size: 14px;
+  display: none;
+}
+
+/* ===================== TIMELINE TABLE ===================== */
+.table-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+.timeline-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.timeline-table thead { background: var(--surface-2); }
+.timeline-table th {
+  padding: .75rem 1rem;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  border-bottom: 1px solid var(--border);
+}
+.timeline-table td {
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-2);
+  vertical-align: top;
+}
+.timeline-table tbody tr:last-child td { border-bottom: none; }
+.timeline-table tbody tr:hover { background: var(--surface-2); }
+.td-tramite { font-weight: 500; color: var(--text-1); }
+.td-norm { font-size: 12px; color: var(--text-3); }
+.plazo-badge {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ===================== PARTICIPANTS ===================== */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.participant-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.participant-col-head {
+  padding: .6rem .75rem;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.phead-c5 { background: var(--c5); }
+.phead-c6 { background: var(--c6); }
+.phead-c7 { background: #6b7280; }
+.phead-c8 { background: #9333ea; }
+.phead-c9 { background: #e11d48; }
+.participant-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.participant-col li {
+  padding: .5rem .75rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+.participant-col li:last-child { border-bottom: none; }
+.participant-note {
+  font-size: 11px;
+  color: var(--text-3);
+  font-style: italic;
+}
+
+/* ===================== NORM GRID ===================== */
+.norm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.norm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.norm-law {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-3);
+}
+.norm-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-1);
+}
+.norm-arts {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+.norm-arts strong { color: var(--text-1); font-weight: 600; }
+.norm-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 2px 10px;
+  margin-top: .25rem;
+}
+
+/* ===================== LEGEND FOOTER ===================== */
+.legend-footer {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem;
+}
+.legend-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.legend-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.legend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 12px;
+  color: rgba(248,245,237,.7);
+}
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.legend-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(248,245,237,.12);
+}
+.legend-copy {
+  font-size: 11px;
+  color: rgba(248,245,237,.3);
+  border-top: 1px solid rgba(248,245,237,.08);
+  padding-top: 1rem;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 960px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .norm-grid { grid-template-columns: repeat(2, 1fr); }
+  .participants-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .ctrl-actions { display: none; }
+}
+@media (max-width: 640px) {
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .stat-item { border-right: none; }
+}
+@media (max-width: 600px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .norm-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 500px) {
+  .participants-grid { grid-template-columns: 1fr; }
+}
+
+/* ===================== PRINT ===================== */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body   { display: block !important; }
+  .inner-body  { display: block !important; }
+  .section-body{ display: block !important; }
+  .map-card    { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  body         { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO IX</div>
+    <h1 class="header-title">De la conciliación</h1>
+    <p class="header-subtitle">Artículos 139 a 148 LJV · LEC, CC, LOPJ, Ley de Mediación, Ley de Arbitraje, LJS y CE</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015</span>
+      <span class="header-tag">Arts. 139–148</span>
+      <span class="header-tag">Título IX</span>
+      <span class="header-tag">Jurisdicción Voluntaria</span>
+      <span class="header-tag">Conexiones LEC · CC · LOPJ</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== STATS BAR ==================== -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">27</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">40+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">18+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">10</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CONTROLS BAR ==================== -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Competencia y solicitud</button>
+      <button class="pill" data-cat="c2">Procedimiento y plazos</button>
+      <button class="pill" data-cat="c3">Comparecencia y acto</button>
+      <button class="pill" data-cat="c4">Ejecución y nulidad</button>
+      <button class="pill" data-cat="c5">Exclusiones y efectos</button>
+      <button class="pill" data-cat="c6">LJV relacionados</button>
+      <button class="pill" data-cat="c7">LEC relacionados</button>
+      <button class="pill" data-cat="c8">CC transacción</button>
+      <button class="pill" data-cat="c9">CC nulidad</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">−</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">+</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">↻</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE MAIN ==================== -->
+<main class="page-main">
+
+  <!-- ==================== SECTION: Artículos principales 139-148 ==================== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-articles">
+      <span class="section-heading-text">Artículos del Título IX — De la conciliación</span>
+      <span class="section-heading-count">10 artículos</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-articles">
+      <div class="card-grid">
+
+        <!-- ARTÍCULO 139 -->
+        <article class="map-card" data-cat="c5" data-text="artículo 139 procedencia conciliación finalidad acuerdo evitar pleito abuso derecho fraude ley materias excluidas menores discapacidad administraciones públicas responsabilidad civil jueces magistrados transacción compromiso orden público interpretación extensiva potestades administrativas renunciables ley orgánica poder judicial alimentos futuros estado civil personas cuestiones matrimoniales materias criminales constitución tutela judicial efectiva">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 139</span>
+              <span class="status-tag tag-alert">Exclusiones</span>
+            </div>
+            <h2 class="card-title">Procedencia de la conciliación</h2>
+            <p class="card-subtitle">Finalidad preventiva: evitar la litigación mediante acuerdo con intervención judicial. Materias excluidas de orden público procesal con fundamento constitucional y civil.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> exclusiones</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>13</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>5</strong> fundamentos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Finalidad y naturaleza jurídica</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Objeto principal:</strong> Se podrá intentar la conciliación con arreglo a las previsiones de este Título para alcanzar un acuerdo con el fin de evitar un pleito.</li>
+                  <li><strong>Naturaleza:</strong> La conciliación tiene naturaleza de expediente de jurisdicción voluntaria, no contencioso, cuya finalidad preventiva es evitar la litigación futura mediante un acuerdo de voluntades alcanzado con la intervención de un órgano judicial. Constituye una manifestación del derecho fundamental a la tutela judicial efectiva (art. 24 CE).</li>
+                  <li><strong>Abuso de derecho o fraude:</strong> La utilización de este expediente para finalidades distintas de la prevista y que suponga un manifiesto abuso de derecho (art. 7.2 CC) o entrañe fraude de ley o procesal (art. 6.4 CC) tendrá como consecuencia la inadmisión de plano de la petición.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Materias excluidas</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Menores y personas con discapacidad:</strong> Los juicios en que estén interesados los menores y las personas con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica. Fundamento en el art. 39 CE, la Convención sobre los Derechos de las Personas con Discapacidad, LO 1/1996 y LO 8/2021. Resulta preceptiva la intervención del Ministerio Fiscal (arts. 15 y 17 LJV).</li>
+                  <li><strong>Administraciones públicas:</strong> El Estado, las Comunidades Autónomas y las demás Administraciones públicas, Corporaciones o Instituciones de igual naturaleza. Los representantes carecen de facultades de disposición sobre intereses públicos, salvo habilitación legal específica (Ley 33/2003 de Patrimonio y Ley 40/2015 de Régimen Jurídico del Sector Público).</li>
+                  <li><strong>Responsabilidad civil judicial:</strong> El proceso de reclamación de responsabilidad civil contra Jueces y Magistrados, que se tramita como procedimiento especial ante la Sala de lo Civil del Tribunal Supremo (arts. 295 y ss. LOPJ).</li>
+                  <li><strong>Materias no transigibles:</strong> En general, los que se promueven sobre materias no susceptibles de transacción ni compromiso. Remite al CC (arts. 1809 y ss.) y a la Ley 60/2003 de Arbitraje.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Naturaleza de las exclusiones</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Orden público procesal:</strong> Las exclusiones del apartado 2 tienen carácter de orden público procesal y no son susceptibles de renuncia ni de interpretación extensiva.</li>
+                  <li><strong>Protección reforzada:</strong> La exclusión de menores y personas con discapacidad obedece a la necesidad de protección reforzada de estos colectivos, cuyo interés se ventila en procesos con garantías jurisdiccionales plenas.</li>
+                  <li><strong>Potestades administrativas:</strong> La exclusión de las Administraciones públicas se fundamenta en que la conciliación versa sobre derechos disponibles, y las potestades administrativas no son renunciables ni transigibles salvo en los casos expresamente previstos.</li>
+                  <li><strong>Especialidad procesal:</strong> La exclusión de la responsabilidad civil judicial se justifica por la especialidad del procedimiento establecido en la LOPJ, que requiere garantías jurisdiccionales ordinarias.</li>
+                  <li><strong>Remisión al CC art. 1815:</strong> La cláusula general remite al art. 1815 CC, que prohíbe transigir sobre el estado civil de las personas, las cuestiones matrimoniales, las materias criminales ni los alimentos futuros debidos por título legal.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 139</span>
+            <span class="ref-tag">CC art. 1815</span>
+            <span class="ref-tag">LOPJ</span>
+            <span class="ref-tag">CE art. 24</span>
+            <span class="ref-tag">CE art. 39</span>
+            <span class="ref-tag">CC art. 6.4</span>
+            <span class="ref-tag">CC art. 7.2</span>
+          </div>
+        </article>
+
+        <!-- ARTÍCULO 140 -->
+        <article class="map-card" data-cat="c1" data-text="artículo 140 competencia juez paz secretario judicial juzgado primera instancia mercantil domicilio requerido cuantía 6000 euros persona jurídica recusación sistema determinación actor sequitur forum rei LEC artículo 50 LOPJ 99 483 averiguación domicilio padrón municipal registro mercantil bruselas">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 140</span>
+              <span class="status-tag tag-info">Competencia</span>
+            </div>
+            <h2 class="card-title">Competencia</h2>
+            <p class="card-subtitle">Órganos competentes, reglas territoriales y objetivas, foro especial para personas jurídicas y régimen de averiguación de domicilio.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>5</strong> reglas competencia</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> órganos</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>7</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Reglas generales de competencia territorial y objetiva</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Competencia territorial:</strong> Juez de Paz o Secretario judicial del Juzgado de Primera Instancia o del Juzgado de lo Mercantil, cuando se trate de materias de su competencia, del domicilio del requerido. Coherente con el art. 50 LEC y el principio de tutela judicial efectiva.</li>
+                  <li><strong>Subsidiaria:</strong> Si no lo tuviera en territorio nacional, el de su última residencia en España. Si ni siquiera existiera, resultan aplicables las normas de DIP, particularmente el Reglamento (UE) 1215/2012 (Bruselas I bis) cuando el requerido esté domiciliado en un Estado miembro de la UE.</li>
+                  <li><strong>Cuantía inferior a 6.000 euros:</strong> Si la cuantía de la petición fuera inferior a 6.000 euros y no se tratara de cuestiones atribuidas a los Juzgados de lo Mercantil, la competencia corresponderá a los Jueces de Paz. El umbral coincide con el art. 45 LEC.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Competencia por domicilio de persona jurídica</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Regla especial:</strong> Si el requerido fuere persona jurídica, será asimismo competente el del lugar del domicilio del solicitante, siempre que en dicho lugar tenga el requerido delegación, sucursal, establecimiento u oficina abierta al público o representante autorizado para actuar en nombre de la entidad, debiendo acreditar dicha circunstancia. Paralelismo con el art. 51.2 LEC.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Terminación por falta de localización</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Averiguaciones infructuosas:</strong> Si tras la realización de las correspondientes averiguaciones sobre el domicilio o residencia éstas fueran infructuosas o el requerido fuera localizado en otro partido judicial, el Secretario judicial dictará decreto o el Juez de Paz auto dando por terminado el expediente, reservando al solicitante el derecho a promover de nuevo el expediente ante el Juzgado competente. La reserva garantiza que la falta de competencia territorial no produzca efectos preclusivos perjudiciales (art. 410 LEC).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Cuestiones de competencia y recusación</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Efecto:</strong> Si se suscitaren cuestiones de competencia del Juzgado o de recusación del Secretario judicial o Juez de Paz, se tendrá por intentada la comparecencia sin más trámites. Se privilegia la celeridad y la eficacia del expediente de jurisdicción voluntaria.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Sistema de determinación de la competencia</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio general:</strong> La competencia se determina por el domicilio del requerido como regla general, siguiendo el principio <em>actor sequitur forum rei</em> consagrado en el art. 50 LEC.</li>
+                  <li><strong>Competencia residual del Juez de Paz:</strong> La competencia del Juez de Paz se configura como residual y supletoria, conforme a lo establecido en los arts. 99 y ss. de la LOPJ.</li>
+                  <li><strong>Juzgados de lo Mercantil:</strong> Conocerán de la conciliación cuando la materia sea de su competencia objetiva, esto es, aquellas cuestiones previstas en el art. 483 de la LOPJ modificada por la Ley 7/2015.</li>
+                  <li><strong>Analogía con LEC art. 52.2:</strong> La remisión al domicilio del solicitante en el caso de personas jurídicas constituye una excepción al criterio general del domicilio del demandado, análoga a la prevista en el art. 52.2 de la LEC.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Régimen de averiguación del domicilio</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Deber de averiguación:</strong> El Secretario judicial o el Juez de Paz deberá realizar las averiguaciones pertinentes sobre el domicilio o residencia del requerido antes de dar por terminado el expediente.</li>
+                  <li><strong>Medios de averiguación:</strong> Las averiguaciones podrán realizarse de oficio o a instancia de parte, e incluir consultas al Padrón Municipal, al Registro Mercantil o a cualquier otro registro público.</li>
+                  <li><strong>Efectos de la terminación:</strong> La terminación por falta de localización no prejuzga la existencia del derecho del solicitante, quien conserva íntegramente su derecho a promover de nuevo el expediente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 140</span>
+            <span class="ref-tag">LEC art. 50</span>
+            <span class="ref-tag">LEC art. 51.2</span>
+            <span class="ref-tag">LEC art. 45</span>
+            <span class="ref-tag">LEC art. 410</span>
+            <span class="ref-tag">LOPJ art. 99</span>
+            <span class="ref-tag">LOPJ art. 483</span>
+          </div>
+        </article>
+
+        <!-- ARTÍCULO 141 -->
+        <article class="map-card" data-cat="c1" data-text="artículo 141 solicitud requisitos escritos identificación solicitante requerido domicilio objeto conciliación impresos normalizados documentos abogado procurador no preceptivo contenido esencial documentos acompañarse poder acreditaciones representación informalidad jurisdicción voluntaria acceso justicia">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 141</span>
+              <span class="status-tag tag-ok">Forma</span>
+            </div>
+            <h2 class="card-title">Solicitud</h2>
+            <p class="card-subtitle">Requisitos formales, contenido esencial, documentación adjunta y excepción al principio de postulación procesal (Abogado y Procurador no preceptivos).</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>0</strong> intervención profesional</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Requisitos formales de la petición</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Contenido de la solicitud:</strong> El que intente la conciliación presentará ante el órgano competente solicitud por escrito en la que se consignarán los datos y circunstancias de identificación del solicitante y del requerido o requeridos, el domicilio o los domicilios en que pueden ser citados, el objeto de la conciliación que se pretenda y la fecha, determinando con claridad y precisión cuál es el objeto de la avenencia.</li>
+                  <li><strong>Impresos normalizados:</strong> El solicitante podrá formular su solicitud cumplimentando unos impresos normalizados que se hallarán a su disposición en el órgano correspondiente. Responde al principio de facilidad de acceso a la justicia (art. 1 LJV).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Documentación adjunta</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Documentos opcionales:</strong> Podrán acompañarse a la solicitud aquellos documentos que el solicitante considere oportunos: contratos, facturas, reconocimientos de deuda, correspondencia, poderes o acreditaciones de representación.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Intervención profesional</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>No preceptiva:</strong> En los expedientes de conciliación no será preceptiva la intervención de Abogado ni Procurador. Excepción al principio general de postulación procesal (arts. 31 y ss. LEC). Las partes podrán designar voluntariamente Abogado y Procurador si lo consideran conveniente.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido esencial de la solicitud</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Identificación de las partes:</strong> Nombre y apellidos o denominación social, DNI o NIF, y domicilio completo.</li>
+                  <li><strong>Determinación del objeto:</strong> Debe determinarse con la suficiente concreción para que el requerido pueda conocer con exactitud qué se le reclama.</li>
+                  <li><strong>Carácter orientativo de la fecha:</strong> La fecha a determinar tiene carácter orientativo; el órgano judicial señalará el día y la hora conforme a los plazos legales establecidos en el art. 142.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Alcance de la no obligatoriedad de Abogado y Procurador</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Extensión:</strong> La ausencia de exigencia se extiende a todo el expediente, desde la solicitud hasta la firma del acta final.</li>
+                  <li><strong>Asistencia voluntaria:</strong> El solicitante puede acudir asistido de letrado si así lo considera conveniente, aunque ello no es requisito de validez.</li>
+                  <li><strong>Principio de informalidad:</strong> Esta regla se conecta con el principio de informalidad que inspira la jurisdicción voluntaria, buscando facilitar el acceso a la justicia sin cargas procesales innecesarias.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 141</span>
+            <span class="ref-tag">LJV art. 1</span>
+            <span class="ref-tag">LEC arts. 31+</span>
+            <span class="ref-tag">LEC arts. 397+</span>
+          </div>
+        </article>
+
+        <!-- ARTÍCULO 142 -->
+        <article class="map-card" data-cat="c2" data-text="artículo 142 admisión señalamiento citación cinco días hábiles resolución secretario judicial juez paz plazos citación celebración demora máxima diez días contenido resolución subsanación requerimiento cédulas citación LEC 130 cómputo días hábiles carácter improrrogable celeridad contradicción">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 142</span>
+              <span class="status-tag tag-warn">Plazos</span>
+            </div>
+            <h2 class="card-title">Admisión, señalamiento y citación</h2>
+            <p class="card-subtitle">Plazo de 5 días hábiles para resolver y citar. Ventana temporal de celebración entre 5 y 10 días. Régimen de citación y carácter improrrogable.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> plazos</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> resoluciones</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>5</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Plazo y forma de resolución</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Plazo de resolución:</strong> El Secretario judicial o Juez de Paz, en los cinco días hábiles siguientes a aquel en que se presente la solicitud, dictará resolución sobre su admisión y citará a los interesados. El cómputo se realiza conforme a los arts. 133 y ss. LEC, excluyéndose sábados, domingos y días declarados inhábiles. La resolución de admisión constituye un acto de impulso procesal conforme a la distribución de funciones del LOPJ.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Plazos entre citación y celebración</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Antelación mínima:</strong> Entre la citación y el acto de conciliación deberán mediar al menos cinco días. Garantiza el derecho de defensa del requerido y el principio de contradicción adaptado a la jurisdicción voluntaria.</li>
+                  <li><strong>Demora máxima:</strong> En ningún caso podrá demorarse la celebración del acto de conciliación más de diez días desde la admisión de la solicitud. Responde al principio de celeridad y evita incertidumbre sobre la interrupción de la prescripción (art. 143). La ventana temporal se sitúa entre los 5 y los 10 días siguientes a la admisión, salvo suspensión por justa causa (art. 144.4).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido de la resolución de admisión</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Control de requisitos:</strong> La resolución de admisión debe pronunciarse sobre el cumplimiento de los requisitos formales de la solicitud previstos en el art. 141.</li>
+                  <li><strong>Requerimiento de subsanación:</strong> Si la solicitud no reuniese los requisitos exigidos, el Secretario judicial o Juez de Paz requerirá al solicitante para que subsane las deficiencias en el plazo que se determine, con advertencia de que, de no hacerlo, se tendrá por desistido de su petición.</li>
+                  <li><strong>Señalamiento:</strong> Una vez admitida la solicitud, la resolución deberá señalar el día y la hora del acto de conciliación, respetando los plazos mínimos y máximos legalmente establecidos.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Régimen de citación</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Medios de citación:</strong> La citación se realizará por los medios previstos en la LEC para las cédulas de citación y emplazamiento: preferentemente por medios electrónicos cuando las partes estén habilitadas, o por diligencia de comunicación entregada en el domicilio.</li>
+                  <li><strong>Contenido mínimo:</strong> Debe contener la identificación del órgano judicial, la fecha y hora señalada, el lugar de celebración, la identificación de las partes citadas, y la advertencia de las consecuencias de la incomparecencia injustificada.</li>
+                  <li><strong>Cómputo del plazo:</strong> El plazo de cinco días entre la citación y el acto se computa conforme a las reglas del art. 130 de la LEC: los días hábiles excluyen sábados, domingos y festivos.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Carácter improrrogable del plazo máximo</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Improrrogabilidad:</strong> El plazo máximo de diez días desde la admisión hasta la celebración del acto tiene carácter improrrogable, salvo que la suspensión por justa causa prevista en el art. 144.4 lo justifique.</li>
+                  <li><strong>Principio de celeridad:</strong> Este plazo responde al principio de celeridad que inspira la jurisdicción voluntaria, evitando que el expediente se prolongue innecesariamente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 142</span>
+            <span class="ref-tag">LEC arts. 133+</span>
+            <span class="ref-tag">LEC art. 130</span>
+            <span class="ref-tag">LEC art. 152</span>
+            <span class="ref-tag">LJV art. 144.4</span>
+          </div>
+        </article>
+
+        <!-- ARTÍCULO 143 -->
+        <article class="map-card" data-cat="c5" data-text="artículo 143 efectos admisión interrupción prescripción adquisitiva extintiva cómputo nuevo plazo decreto auto terminación expediente efecto interruptivo presentación reclamación extrajudicial CC 1973 litispendencia doctrina Tribunal Supremo reanudación íntegramente incentivo procesal">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 143</span>
+              <span class="status-tag tag-info">Efectos</span>
+            </div>
+            <h2 class="card-title">Efectos de la admisión</h2>
+            <p class="card-subtitle">Interrupción de la prescripción (adquisitiva y extintiva) desde la presentación. Reinicio del cómputo al terminar el expediente. Fundamento en el CC y advertencia sobre uso fraudulento.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> efectos</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>7</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>1</strong> doctrina TS</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Interrupción de la prescripción</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Efecto interruptivo:</strong> La presentación con ulterior admisión de la solicitud de conciliación interrumpirá la prescripción, tanto adquisitiva como extintiva, en los términos y con los efectos establecidos en la ley, desde el momento de su presentación. El efecto se retrotrae al momento del ingreso de la solicitud en el órgano competente.</li>
+                  <li><strong>Reanudación del cómputo:</strong> El plazo para la prescripción volverá a computarse desde que recaiga decreto del Secretario judicial o auto del Juez de Paz poniendo término al expediente. Conexión directa con el art. 1974 CC.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Alcance del efecto interruptivo</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Momento de la interrupción:</strong> El efecto interruptivo se produce desde el momento de la presentación de la solicitud, no desde su admisión, lo cual garantiza al solicitante que su derecho no decae durante el tiempo de tramitación.</li>
+                  <li><strong>Doble alcance:</strong> La interrupción alcanza tanto a la prescripción adquisitiva (usucapión) como a la extintiva (caducidad de acciones), en línea con los arts. 1930 y ss. y 1973 del CC.</li>
+                  <li><strong>Equivalencia con CC art. 1973:</strong> Conforme al art. 1973 CC, la prescripción de las acciones se interrumpe por su ejercicio ante los Tribunales, por reclamación extrajudicial del acreedor y por cualquier acto de reconocimiento del derecho por parte del deudor. La solicitud de conciliación, una vez admitida, equipara sus efectos a estos supuestos interruptivos.</li>
+                  <li><strong>Doctrina del Tribunal Supremo:</strong> Tras la interrupción, el plazo de prescripción comienza a computarse de nuevo íntegramente, no meramente reanudándose el tiempo pendiente.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Efectos procesales derivados de la interrupción</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Incentivo procesal:</strong> El efecto interruptivo constituye un incentivo para la utilización del expediente, puesto que permite detener el curso de la prescripción sin necesidad de interponer demanda judicial, con economía procesal y de costes.</li>
+                  <li><strong>Advertencia:</strong> La utilización del expediente con la única finalidad de interrumpir la prescripción, sin voluntad real de acuerdo, podría constituir abuso de derecho o fraude procesal conforme al art. 139.1.</li>
+                  <li><strong>Sin litispendencia:</strong> La admisión de la solicitud de conciliación no produce efecto de litispendencia, por cuanto no se ha iniciado un proceso contencioso.</li>
+                  <li><strong>Independencia del resultado:</strong> La interrupción de la prescripción se produce con independencia del resultado de la conciliación: tanto si se alcanza avenencia como si no, el efecto interruptivo se consolida.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 143</span>
+            <span class="ref-tag">CC art. 1930</span>
+            <span class="ref-tag">CC art. 1935</span>
+            <span class="ref-tag">CC art. 1969</span>
+            <span class="ref-tag">CC art. 1973</span>
+            <span class="ref-tag">CC art. 1974</span>
+            <span class="ref-tag">CC art. 1975</span>
+          </div>
+        </article>
+
+        <!-- ARTÍCULO 144 -->
+        <article class="map-card" data-cat="c3" data-text="artículo 144 comparecencia acto conciliación procurador LEC 23-30 representación procesar poder apud acta incomparecencia solicitante desistimiento requerido indemnización daños perjuicios justa causa enfermedad fuerza mayor caso fortuito nuevo señalamiento varios requeridos CC 1101">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 144</span>
+              <span class="status-tag tag-warn">Comparecencia</span>
+            </div>
+            <h2 class="card-title">Comparecencia al acto de conciliación</h2>
+            <p class="card-subtitle">Formas de comparecencia, consecuencias de la incomparecencia, concepto de justa causa, régimen de indemnización y nuevo señalamiento.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> supuestos</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>1</strong> indemnización</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>5</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Formas de comparecencia</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Comparecencia personal o por Procurador:</strong> Las partes deberán comparecer por sí mismas o por medio de Procurador, siendo de aplicación las normas sobre representación recogidas en el Título I del Libro I de la LEC (arts. 23 a 30). La comparecencia personal resulta especialmente adecuada dado que la búsqueda de acuerdo requiere la presencia de quienes tienen poder de disposición.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Incomparecencia del solicitante</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Desistimiento:</strong> Si no compareciere el solicitante ni alegare justa causa para no concurrir, se le tendrá por desistido y se archivará el expediente. El desistimiento implica que no se produce la interrupción de la prescripción.</li>
+                  <li><strong>Indemnización:</strong> El requerido podrá reclamar al solicitante la indemnización de los daños y perjuicios que su comparecencia le haya originado, si el solicitante no acreditare que su incomparecencia se debió a justa causa. Fundamento en los arts. 1101 y ss. CC sobre responsabilidad civil extracontractual.</li>
+                  <li><strong>Traslado:</strong> De la reclamación se dará traslado por cinco días al solicitante, y resolverá el Secretario judicial o el Juez de Paz, sin ulterior recurso, fijando, en su caso, la indemnización que corresponda.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Incomparecencia del requerido</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Conciliación por intentada:</strong> Si el requerido de conciliación no compareciere ni alegare justa causa, se pondrá fin al acto, teniéndose la conciliación por intentada a todos los efectos legales. A diferencia del solicitante, esto no determina el archivo, sino que habilita al solicitante para interponer demanda judicial.</li>
+                  <li><strong>Varios requeridos:</strong> Si, siendo varios los requeridos, concurriese sólo alguno de ellos, se celebrará con él el acto y se tendrá por intentada la conciliación en cuanto a los restantes. Permite la celebración parcial en aras de la economía procesal.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Justa causa y nuevo señalamiento</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Nuevo señalamiento:</strong> Si el Secretario judicial o el Juez de Paz considerase acreditada la justa causa alegada, se señalará nuevo día y hora para la celebración del acto en el plazo de los cinco días siguientes a la decisión de suspender el acto. El nuevo señalamiento debe respetar los plazos del art. 142.</li>
+                  <li><strong>Causas típicas:</strong> Enfermedad grave e incapacitante, fuerza mayor, caso fortuito, impedimento sobrevenido e inevitable, y cualquier circunstancia que haga materialmente imposible la comparecencia.</li>
+                  <li><strong>Decisión motivada:</strong> La decisión sobre la acreditación de la justa causa es discrecional pero motivada, y contra ella no cabe recurso ordinario alguno.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Régimen de representación procesal</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Normas aplicables:</strong> La comparecencia por medio de Procurador se rige por las normas del Título I del Libro I de la LEC (arts. 23 a 30), lo que implica que el poder para procurar debe ser bastante y válido, otorgado <em>apud acta</em> o mediante documento público.</li>
+                  <li><strong>Alternatividad:</strong> La posibilidad de comparecencia por Procurador coexiste con la comparecencia personal, sin que ninguna de las dos formas sea preceptiva respecto de la otra.</li>
+                  <li><strong>Asistencia letrada:</strong> Aunque la intervención de Abogado no es preceptiva (art. 141.3), la representación por Procurador sí está prevista como alternativa válida.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Efectos de la incomparecencia del solicitante</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Desistimiento tácito:</strong> El desistimiento tácito por incomparecencia produce el archivo del expediente, sin perjuicio de que el solicitante pueda promover uno nuevo con posterioridad.</li>
+                  <li><strong>Alcance de la indemnización:</strong> Incluye los gastos de desplazamiento, la asistencia de letrado si hubiera acudido asistido, y cualquier otro perjuicio directo e inmediato derivado de la comparecencia frustrada.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Efectos de la incomparecencia del requerido</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Conciliación por intentada:</strong> La incomparecencia injustificada del requerido produce el efecto de tener la conciliación por intentada, lo cual habilita al solicitante para ejercitar las acciones judiciales correspondientes si la conciliación fuese requisito previo a la vía contenciosa.</li>
+                  <li><strong>Pluralidad de requeridos:</strong> Cuando sean varios los requeridos y solo concurra alguno de ellos, el acto se celebra con los presentes y se tiene por intentada la conciliación respecto de los ausentes.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 144</span>
+            <span class="ref-tag">LEC arts. 23-30</span>
+            <span class="ref-tag">CC arts. 1101+</span>
+            <span class="ref-tag">LJV art. 142</span>
+            <span class="ref-tag">LJV art. 143</span>
+          </div>
+        </article>
+
+        <!-- ARTÍCULO 145 -->
+        <article class="map-card" data-cat="c3" data-text="artículo 145 celebración acto conciliación reclamación solicitante requerido avenencia acta grabación decreto auto archivo definitiva fases acto expositiva contestación probatoria mediación cierre carácter voluntario acuerdo contenido acta firma comparecientes registro audiovisual autonomía voluntad">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 145</span>
+              <span class="status-tag tag-ok">Celebración</span>
+            </div>
+            <h2 class="card-title">Celebración del acto de conciliación</h2>
+            <p class="card-subtitle">Fases del acto, función activa del órgano, cuestiones impeditivas, avenencia total o parcial, acta firmada, grabación y resolución final.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>5</strong> fases</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>6</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Desarrollo del acto</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Exposición del solicitante:</strong> En el acto de conciliación expondrá su reclamación el solicitante, manifestando los fundamentos en que la apoye. No exige el mismo rigor formal que un proceso contencioso, pero sí una exposición suficiente.</li>
+                  <li><strong>Contestación del requerido:</strong> Contestará el requerido lo que crea conveniente y podrán los intervinientes exhibir o aportar cualquier documento en que funden sus alegaciones.</li>
+                  <li><strong>Intervención del órgano:</strong> Si no hubiera avenencia entre los interesados, el Secretario judicial o el Juez de Paz procurará avenirlos, permitiéndoles replicar y contrarreplicar, si quisieren y ello pudiere facilitar el acuerdo. A diferencia de la mediación (Ley 5/2012), el órgano facilita el diálogo sin imponer solución, respetando la autonomía de la voluntad.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Cuestiones que impiden la prosecución</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Terminación sin avenencia:</strong> Si se alegare alguna cuestión que pueda impedir la válida prosecución del acto de conciliación (falta de capacidad, falta de legitimación, indebida acumulación de objetos) se dará por terminado el acto y se tendrá por intentada la conciliación sin más trámites. Se privilegia la seguridad jurídica y se evita que un acto viciado produzca efectos nulos.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Acta de avenencia o falta de acuerdo</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Con avenencia:</strong> Si hubiere conformidad entre los interesados en todo o en parte del objeto de la conciliación, se hará constar detalladamente en un acta todo cuanto acuerden y que el acto terminó con avenencia así como los términos de la misma, debiendo ser firmada por los comparecientes. La avenencia parcial permite acordar algunos extremos y plantear judicialmente los restantes.</li>
+                  <li><strong>Sin avenencia:</strong> Si no pudiere conseguirse acuerdo alguno, se hará constar que el acto terminó sin avenencia. Habilita al solicitante para interponer demanda y acreditar que ha agotado la vía de la autocomposición.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Grabación y resolución final</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Grabación:</strong> El desarrollo de la comparecencia se registrará, si fuera posible, en soporte apto para la grabación y reproducción del sonido y de la imagen, de conformidad con lo dispuesto en la LEC (arts. 147.4 y 753). El carácter facultativo depende de la disponibilidad de medios técnicos, especialmente relevante en los Juzgados de Paz.</li>
+                  <li><strong>Resolución:</strong> Finalizado el acto, el Secretario judicial dictará decreto o el Juez de Paz dictará auto haciendo constar la avenencia o, en su caso, que se intentó sin efecto o que se celebró sin avenencia, acordándose el archivo definitivo de las actuaciones. La distinción decreto/auto refleja la distribución de funciones del LOPJ.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Fases del acto de conciliación</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Fase expositiva:</strong> El solicitante expone su reclamación y manifiesta los fundamentos de hecho y de derecho en que la apoya.</li>
+                  <li><strong>Fase de contestación:</strong> El requerido contesta lo que crea conveniente, pudiendo oponer excepciones y alegaciones.</li>
+                  <li><strong>Fase probatoria:</strong> Ambos intervinientes pueden exhibir o aportar cualquier documento en que funden sus alegaciones. No se contempla la práctica de otras pruebas distintas de la documental.</li>
+                  <li><strong>Fase de avenencia:</strong> Si no hubiera avenencia, el órgano actúa como mediador, procurando acercar las posiciones de las partes.</li>
+                  <li><strong>Fase de cierre:</strong> Se levanta acta del resultado del acto y se acuerda el archivo definitivo de las actuaciones.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Carácter voluntario del acuerdo</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Libertad de voluntad:</strong> La avenencia requiere la conformidad libre y voluntaria de ambas partes, sin que el Secretario judicial o el Juez de Paz pueda imponer solución alguna.</li>
+                  <li><strong>Papel facilitador:</strong> El papel del órgano judicial es exclusivamente facilitador: procurar el acuerdo entre las partes, pero sin poder decisório sobre el fondo del asunto.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido del acta de avenencia</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Precisión del contenido:</strong> El acta debe recoger detalladamente todos los extremos acordados por las partes, con la suficiente precisión para que el acuerdo sea ejecutable.</li>
+                  <li><strong>Firma de los comparecientes:</strong> El acta debe ser firmada por todos los comparecientes, lo que otorga eficacia formal al acuerdo.</li>
+                  <li><strong>Eficacia de la firma:</strong> La firma de las partes equivale a la aceptación voluntaria de los términos del acuerdo y constituye el requisito formal que dota al acta de eficacia ejecutiva.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Registro audiovisual</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Grabación condicional:</strong> La grabación del acto se realizará si fuera posible, en los términos previstos en la LEC para las vistas y comparecencias orales.</li>
+                  <li><strong>Función garantista:</strong> El registro audiovisual sirve como garantía de transparencia y como medio de prueba del desarrollo del acto, aunque su ausencia no invalida el acta resultante.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Resolución final</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Formalización jurídica:</strong> El decreto del Secretario judicial o el auto del Juez de Paz constituye la formalización jurídica del resultado del acto y tiene tres posibles contenidos: avenencia, intentada sin efecto, o celebrada sin avenencia.</li>
+                  <li><strong>Archivo:</strong> En cualquier caso, se acuerda el archivo definitivo de las actuaciones, lo cual no impide el ejercicio de acciones judiciales posteriores.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 145</span>
+            <span class="ref-tag">LEC art. 147.4</span>
+            <span class="ref-tag">LEC art. 753</span>
+            <span class="ref-tag">LEC art. 410</span>
+            <span class="ref-tag">LJV art. 147</span>
+            <span class="ref-tag">Ley 5/2012</span>
+          </div>
+        </article>
+
+        <!-- ARTÍCULO 146 -->
+        <article class="map-card" data-cat="c2" data-text="artículo 146 testimonio gastos acta cuenta solicitante promoción expediente naturaleza utilidad copia autorizada ejecución forzosa costas tasas judiciales honorarios procurador título ejecutivo disuasión temeridad">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 146</span>
+              <span class="status-tag tag-gray">Gastos</span>
+            </div>
+            <h2 class="card-title">Testimonio y gastos</h2>
+            <p class="card-subtitle">Potestad de solicitar testimonio del acta (base del título ejecutivo). Los gastos del acto son de cuenta del promotor, con conexión a la reclamación por incomparecencia.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> previsiones</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>6</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Testimonio del acta</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Testimonio:</strong> Las partes podrán solicitar testimonio del acta que ponga fin al acto de conciliación. Constituye la copia autorizada del documento original y proporciona un ejemplar con fuerza probatoria y ejecutiva (art. 147).</li>
+                  <li><strong>Copia autorizada:</strong> El testimonio del acta constituye la reproducción autenticada del documento original que se extiende para que las partes puedan acreditar el contenido del acuerdo ante terceros o para su uso en la vía ejecutiva.</li>
+                  <li><strong>Necesidad para ejecución:</strong> El testimonio es necesario para la ejecución forzosa del acuerdo, conforme al art. 147.1, que exige el testimonio del acta junto con el del decreto o auto.</li>
+                  <li><strong>Potestatividad:</strong> La solicitud del testimonio es potestativa, pero su utilidad práctica es esencial si pretenden hacer valer el acuerdo en vía ejecutiva.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Gastos del expediente</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Gastos:</strong> Los gastos que ocasionare el acto de conciliación serán de cuenta del que lo hubiere promovido. Manifestación del principio de que quien ejerce un derecho asume las costas derivadas de su ejercicio, y disuade la utilización temeraria o abusiva del expediente.</li>
+                  <li><strong>Concepto de gastos:</strong> Incluyen las tasas judiciales aplicables, los costes de testimonio, los derechos del Procurador si se hubiera designado, y cualquier otro gasto derivado directamente del expediente.</li>
+                  <li><strong>Asunción íntegra:</strong> El solicitante asume íntegramente los gastos, con independencia de que el acuerdo final beneficie a ambas partes.</li>
+                  <li><strong>Sin régimen de costas:</strong> No se contempla un régimen de costas propiamente dicho, por cuanto la conciliación no es un proceso contencioso.</li>
+                  <li><strong>Conexión con art. 144.2:</strong> El requerido puede reclamar daños y perjuicios cuando el solicitante no concurra sin justa causa.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 146</span>
+            <span class="ref-tag">LEC arts. 241+</span>
+            <span class="ref-tag">LEC art. 517.2.9.º</span>
+            <span class="ref-tag">LJV art. 141.3</span>
+            <span class="ref-tag">LJV art. 144.2</span>
+            <span class="ref-tag">LJV art. 147</span>
+          </div>
+        </article>
+
+        <!-- ARTÍCULO 147 -->
+        <article class="map-card" data-cat="c4" data-text="artículo 147 ejecución testimonio acta decreto auto avenencia documento público solemne competencia juzgado primera instancia LEC 517.2.9 título ejecutivo valor probatorio pleno eficacia obligacional cosa juzgada material escritura pública notarial LEC 538-603 oposición 556 embargo fuerza coactiva">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 147</span>
+              <span class="status-tag tag-info">Ejecución</span>
+            </div>
+            <h2 class="card-title">Ejecución</h2>
+            <p class="card-subtitle">El acta de conciliación lleva aparejada ejecución (LEC art. 517.2.9.º). Valor de documento público y solemne. Competencia y procedimiento de ejecución conforme a la LEC.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>11</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> efectos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Eficacia ejecutiva del acuerdo</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Ejecutividad:</strong> A los efectos previstos en el art. 517.2.9.º de la LEC, el testimonio del acta junto con el del decreto del Secretario judicial o del auto del Juez de Paz haciendo constar la avenencia de las partes, llevará aparejada ejecución. La fuerza ejecutiva constituye la consecuencia procesal más relevante, equiparando la avenencia a una sentencia firme o un laudo arbitral.</li>
+                  <li><strong>Valor y eficacia:</strong> A otros efectos, lo convenido tendrá el valor y eficacia de un convenio consignado en documento público y solemne. Presunción de veracidad e integridad (art. 1216 CC) y plenos efectos frente a terceros.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Competencia para la ejecución</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Competencia directa:</strong> Será competente para la ejecución el mismo Juzgado que tramitó la conciliación cuando se trate de asuntos de la competencia del propio Juzgado. Facilita la ejecución al permitir que el órgano que conoció del expediente también conozca de la ejecución.</li>
+                  <li><strong>Competencia subsidiaria:</strong> En los demás casos será competente para la ejecución el Juzgado de Primera Instancia a quien hubiere correspondido conocer de la demanda. Remite a las normas generales de competencia funcional (art. 545 LEC).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Régimen procesal de la ejecución</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Normativa aplicable:</strong> La ejecución se llevará a cabo conforme a lo establecido en la LEC para la ejecución de sentencias y convenios judicialmente aprobados. Implica la aplicación de los arts. 538 y ss. (ejecución dineraria), 700 y ss. (ejecución no dineraria) y 774 y ss. (ejecución de hacer y no hacer).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Fundamento del título ejecutivo</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Categoría legal:</strong> La remisión al art. 517.2.9.º de la LEC se inserta en la categoría de «las demás resoluciones procesales y documentos que, por disposición de esta u otra ley, lleven aparejada ejecución».</li>
+                  <li><strong>Composición del título:</strong> El título ejecutivo lo conforman dos documentos indisolublemente unidos: el testimonio del acta de avenencia y el testimonio del decreto del Secretario judicial o auto del Juez de Paz.</li>
+                  <li><strong>Requisito <em>sine qua non</em>:</strong> La conjunción de ambos documentos es requisito indispensable para despachar ejecución: el acta acredita el contenido del acuerdo y el decreto o auto otorga la formalidad judicial necesaria.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Valor y eficacia del acuerdo</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Valor probatorio pleno:</strong> Lo convenido tiene el valor y eficacia de un convenio consignado en documento público y solemne, lo que le atribuye valor probatorio pleno respecto de los hechos y declaraciones que contiene.</li>
+                  <li><strong>Eficacia obligacional:</strong> Eficacia obligacional equivalente a la de un contrato solemne, vinculante para las partes (art. 1091 CC).</li>
+                  <li><strong>Cosa juzgada material:</strong> Efectos de cosa juzgada material en los términos en que se haya pactado, sin que pueda volverse a discutir lo acordado salvo por la acción de nulidad.</li>
+                  <li><strong>Seguridad jurídica:</strong> Esta equiparación al documento público solemne sitúa el acuerdo de conciliación en un nivel de seguridad jurídica próximo al de la escritura pública notarial.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Reglas de competencia ejecutiva</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Competencia directa:</strong> El mismo Juzgado que tramitó la conciliación será competente para la ejecución cuando se trate de asuntos de su competencia (por ejemplo, si fue un Juzgado de lo Mercantil quien tramitó la conciliación sobre materia mercantil).</li>
+                  <li><strong>Competencia subsidiaria:</strong> En los demás casos, será competente el Juzgado de Primera Instancia a quien hubiere correspondido conocer de la demanda, aplicando las reglas generales de competencia territorial del art. 50 de la LEC.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Procedimiento de ejecución</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Título III del Libro III de la LEC:</strong> La ejecución se tramita conforme a lo establecido en el Título III del Libro III de la LEC (arts. 538 a 603), aplicable a la ejecución de sentencias y convenios judicialmente aprobados.</li>
+                  <li><strong>Fases de la ejecución:</strong> Incluye despacho de ejecución, requerimiento de pago al ejecutado, embargo de bienes en caso de impago, y realización de los bienes embargados.</li>
+                  <li><strong>Oposición:</strong> La ejecución puede ser objeto de oposición por las causas previstas en el art. 556 de la LEC, entre las que se incluye la acción de nulidad regulada en el art. 148.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 147</span>
+            <span class="ref-tag">LEC art. 517.2.9.º</span>
+            <span class="ref-tag">LEC arts. 538-603</span>
+            <span class="ref-tag">LEC art. 545</span>
+            <span class="ref-tag">LEC arts. 700+</span>
+            <span class="ref-tag">LEC arts. 774+</span>
+            <span class="ref-tag">CC art. 1091</span>
+            <span class="ref-tag">CC arts. 1101+</span>
+            <span class="ref-tag">CC art. 1216</span>
+            <span class="ref-tag">Ley 5/2012 art. 25</span>
+            <span class="ref-tag">Ley 60/2003 art. 41</span>
+          </div>
+        </article>
+
+        <!-- ARTÍCULO 148 -->
+        <article class="map-card" data-cat="c4" data-text="artículo 148 acción nulidad causas invalidan contratos plazo quince días caducidad tribunal competente juicio verbal ordinario suspensión ejecución ipso iure sentencia firme vicios consentimiento error violencia intimidación dolo CC 1261 1265-1270 1290 rescisión nulidad absoluta anulabilidad CC 1275 1276 1278 1301 1302 1303 1309">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 148</span>
+              <span class="status-tag tag-alert">Nulidad</span>
+            </div>
+            <h2 class="card-title">Acción de nulidad</h2>
+            <p class="card-subtitle">Impugnación del acuerdo por las causas que invalidan los contratos. Plazo de caducidad de 15 días. Suspensión <em>ipso iure</em> de la ejecución. Tramitación por juicio verbal u ordinario.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>1</strong> plazo 15 días</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>9</strong> normas conexas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Impugnación del acuerdo</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Acción de nulidad:</strong> Contra lo convenido en el acto de conciliación sólo podrá ejercitarse la acción de nulidad por las causas que invalidan los contratos.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Plazo y tramitación</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Plazo de caducidad:</strong> La demanda ejercitando dicha acción deberá interponerse en un plazo de quince días desde que se celebró la conciliación ante el tribunal competente y se sustanciará por los trámites del juicio que corresponda a su materia o cuantía.</li>
+                  <li><strong>Juicio verbal:</strong> Si la cuantía no excede de 15.000 euros o si se trata de materias específicas previstas en el art. 250 de la LEC.</li>
+                  <li><strong>Juicio ordinario:</strong> Si la cuantía excede de 15.000 euros o si no corresponde el juicio verbal por razón de la materia.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Suspensión de la ejecución</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Efecto suspensivo:</strong> Acreditado el ejercicio de la acción de nulidad, quedará en suspenso la ejecución de lo convenido en el acto de conciliación hasta que se resuelva definitivamente sobre la acción ejercitada.</li>
+                  <li><strong>Sin medida cautelar:</strong> La suspensión opera <em>ipso iure</em> desde la acreditación del ejercicio de la acción, sin necesidad de medida cautelar expresa.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Causas de nulidad</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Nulidad absoluta:</strong> Ilicitud del objeto (art. 1275 CC), causa ilícita o propósito de defraudar (art. 1276 CC), y falta de requisitos esenciales (art. 1278 CC). Son causas de nulidad de pleno derecho, imprescriptibles y que pueden ser declaradas de oficio.</li>
+                  <li><strong>Anulabilidad:</strong> Error, violencia e intimidación en el consentimiento (art. 1301 CC), y dolo (art. 1302 CC). También la lesión en los casos previstos por la ley. Son causas de anulabilidad que solo pueden alegarse por la parte perjudicada y son convalidables (art. 1309 CC).</li>
+                  <li><strong>Alcance de la remisión:</strong> La remisión genérica del art. 148.1 a «las causas que invalidan los contratos» abarca tanto la nulidad de pleno derecho como la anulabilidad, así como la acción de rescisión prevista en los arts. 1290 y ss. del CC.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Plazo de quince días</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Naturaleza de caducidad:</strong> El plazo de quince días para interponer la demanda de nulidad es un plazo de caducidad, no de prescripción, lo que implica que es improrrogable y que su transcurso extingue la acción de forma definitiva.</li>
+                  <li><strong>Inicio del cómputo:</strong> El cómputo del plazo comienza desde el día siguiente a la celebración de la conciliación, conforme a las reglas generales del art. 5 de la LEC.</li>
+                  <li><strong>Razón de ser:</strong> El carácter tan breve del plazo responde al principio de seguridad jurídica: el acuerdo debe gozar de estabilidad y firmeza lo antes posible.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Tramitación de la acción</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Juicio verbal:</strong> Si la cuantía no excede de 15.000 euros o si se trata de materias específicas previstas en el art. 250 de la LEC.</li>
+                  <li><strong>Juicio ordinario:</strong> Si la cuantía excede de 15.000 euros o si no corresponde el juicio verbal por razón de la materia.</li>
+                  <li><strong>Competencia:</strong> La competencia para conocer de la acción de nulidad corresponde al tribunal que sería competente para conocer de la demanda sobre el mismo objeto, aplicando las reglas generales de la LEC.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Efecto suspensivo</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Operación <em>ipso iure</em>:</strong> Acreditado el ejercicio de la acción de nulidad (presentada la demanda y acreditada su admisión a trámite), queda en suspenso la ejecución de lo convenido.</li>
+                  <li><strong>Duración:</strong> La suspensión se mantiene hasta que se resuelva definitivamente sobre la acción ejercitada, es decir, hasta que recaiga sentencia firme.</li>
+                  <li><strong>Estimación de la acción:</strong> Si la acción de nulidad se estima, el acuerdo se declara nulo y pierde todos sus efectos, incluidos los ejecutivos. Las restituciones recíprocas se rigen por el art. 1303 CC.</li>
+                  <li><strong>Desestimación de la acción:</strong> Si la acción se desestima, el acuerdo recupera plena eficacia y la ejecución puede reanudarse desde el punto en que fue suspendida.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 148</span>
+            <span class="ref-tag">CC art. 1275</span>
+            <span class="ref-tag">CC art. 1276</span>
+            <span class="ref-tag">CC art. 1278</span>
+            <span class="ref-tag">CC art. 1301</span>
+            <span class="ref-tag">CC art. 1302</span>
+            <span class="ref-tag">CC art. 1303</span>
+            <span class="ref-tag">CC art. 1309</span>
+            <span class="ref-tag">LEC art. 250</span>
+          </div>
+        </article>
+
+        <!-- No results placeholder -->
+        <div class="no-results" id="no-results">
+          No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SECTION: Artículos relacionados LEC ==================== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-lec">
+      <span class="section-heading-text">Artículos relacionados de la Ley de Enjuiciamiento Civil</span>
+      <span class="section-heading-count">9 artículos</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-lec">
+      <div class="card-grid">
+
+        <!-- LEC Art. 517 -->
+        <article class="map-card" data-cat="c7" data-text="artículo 517 LEC títulos ejecutivos acción ejecutiva aparejada ejecución sentencia condena firme laudos arbitrales transacciones judiciales escrituras públicas acta conciliación 517.2.9">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">LEC Art. 517</span>
+              <span class="status-tag tag-ok">Título ejecutivo</span>
+            </div>
+            <h2 class="card-title">Títulos ejecutivos</h2>
+            <p class="card-subtitle">La acción ejecutiva se funda en título con aparejada ejecución. El acta de conciliación se integra en la categoría del art. 517.2.9.º.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido del artículo</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio general:</strong> La acción ejecutiva deberá fundarse en un título que tenga aparejada ejecución.</li>
+                  <li><strong>Títulos con aparejada ejecución:</strong> Solo tendrán aparejada ejecución, entre otros: la sentencia de condena firme; los laudos arbitrales; las resoluciones que aprueben transacciones judiciales; las escrituras públicas; y las demás resoluciones procesales y documentos que, por disposición de la LEC u otra ley, lleven aparejada ejecución (art. 517.2.9.º).</li>
+                  <li><strong>Integración del acta:</strong> El acta de conciliación se integra en esta última categoría por remisión expresa del art. 147.1 de la Ley 15/2015.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LEC art. 517</span>
+            <span class="ref-tag">Ley 15/2015 art. 147.1</span>
+          </div>
+        </article>
+
+        <!-- LEC Art. 518 -->
+        <article class="map-card" data-cat="c7" data-text="artículo 518 LEC caducidad acción ejecutiva cinco años título judicial título extrajudicial acta conciliación documento público solemne">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">LEC Art. 518</span>
+              <span class="status-tag tag-warn">Caducidad</span>
+            </div>
+            <h2 class="card-title">Caducidad de la acción ejecutiva</h2>
+            <p class="card-subtitle">La acción ejecutiva caduca a los 5 años. El acta de conciliación se rige por el plazo desde que la obligación sea exigible.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Plazos de caducidad</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Título judicial:</strong> La acción ejecutiva fundada en título judicial caducará a los cinco años de la firmeza de la resolución.</li>
+                  <li><strong>Título extrajudicial:</strong> La acción ejecutiva fundada en título extrajudicial caducará a los cinco años desde que la obligación sea exigible.</li>
+                  <li><strong>Aplicación al acta:</strong> El acta de conciliación, al tener valor de documento público y solemne, se rige por el plazo de caducidad de cinco años desde que la obligación sea exigible.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LEC art. 518</span>
+          </div>
+        </article>
+
+        <!-- LEC Art. 520 -->
+        <article class="map-card" data-cat="c7" data-text="artículo 520 LEC requerimiento pago ejecución cinco días apercibimiento embargo acta conciliación">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">LEC Art. 520</span>
+              <span class="status-tag tag-warn">Pago</span>
+            </div>
+            <h2 class="card-title">Requerimiento de pago</h2>
+            <p class="card-subtitle">Despachada la ejecución, se requiere al ejecutado para que pague en 5 días bajo apercibimiento de embargo.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Requerimiento de pago</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Plazo:</strong> Despachada la ejecución, se requerirá al ejecutado para que pague en el plazo de cinco días, bajo apercibimiento de embargo.</li>
+                  <li><strong>Aplicación:</strong> Este requerimiento es aplicable a la ejecución del acta de conciliación, por remisión del art. 147.3.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LEC art. 520</span>
+            <span class="ref-tag">Ley 15/2015 art. 147.3</span>
+          </div>
+        </article>
+
+        <!-- LEC Arts. 538-542 -->
+        <article class="map-card" data-cat="c7" data-text="artículos 538 542 LEC despacho ejecución Letrado Administración de Justicia examen título ejecutivo requisitos formales acta conciliación decreto auto">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">LEC Arts. 538-542</span>
+              <span class="status-tag tag-info">Despacho</span>
+            </div>
+            <h2 class="card-title">Despacho de la ejecución</h2>
+            <p class="card-subtitle">El despacho de ejecución se decreta por el LAJ previo examen del título ejecutivo y los requisitos formales. Para el acta de conciliación, deben presentarse el testimonio del acta y el decreto o auto conjuntamente.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Despacho de la ejecución</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Examen del título:</strong> El despacho de la ejecución se decreta por el Letrado de la Administración de Justicia previo examen del título ejecutivo y de los requisitos formales.</li>
+                  <li><strong>Acta de conciliación:</strong> En el caso del acta de conciliación, el título ejecutivo lo componen el testimonio del acta y el decreto o auto judicial, debiendo presentarse ambos conjuntamente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LEC arts. 538-542</span>
+          </div>
+        </article>
+
+        <!-- LEC Art. 556 -->
+        <article class="map-card" data-cat="c7" data-text="artículo 556 LEC oposición ejecución diez días causas legales acción nulidad artículo 148 conciliación">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">LEC Art. 556</span>
+              <span class="status-tag tag-alert">Oposición</span>
+            </div>
+            <h2 class="card-title">Oposición a la ejecución</h2>
+            <p class="card-subtitle">El ejecutado puede oponerse a la ejecución en 10 días por las causas legalmente previstas, incluyendo la acción de nulidad del acuerdo de conciliación.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Oposición a la ejecución</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Plazo:</strong> El ejecutado podrá oponerse a la ejecución en el plazo de diez días por las causas legalmente previstas, entre las que se incluye la acción de nulidad del acuerdo.</li>
+                  <li><strong>Aplicación a la conciliación:</strong> La oposición a la ejecución del acta de conciliación puede fundarse en la acción de nulidad del art. 148, así como en las demás causas de oposición previstas en la LEC.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LEC art. 556</span>
+            <span class="ref-tag">Ley 15/2015 art. 148</span>
+          </div>
+        </article>
+
+        <!-- LEC Art. 545 y ss. -->
+        <article class="map-card" data-cat="c7" data-text="artículo 545 siguientes LEC ejecución dineraria requerimiento pago impago embargo realización bienes acuerdos conciliación contenido pecuniario">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">LEC Arts. 545 y ss.</span>
+              <span class="status-tag tag-info">Ejecución dineraria</span>
+            </div>
+            <h2 class="card-title">Ejecución dineraria</h2>
+            <p class="card-subtitle">La ejecución dineraria se inicia con requerimiento de pago y, en caso de impago, continúa con embargo y realización de bienes. Vía ordinaria para acuerdos de conciliación pecuniarios.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Ejecución dineraria</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Procedimiento:</strong> La ejecución dineraria se inicia con el requerimiento de pago y, en caso de impago, continúa con el embargo y la realización de bienes del ejecutado.</li>
+                  <li><strong>Aplicación:</strong> Es la vía procesal ordinaria para la ejecución de los acuerdos de conciliación de contenido pecuniario.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LEC arts. 545 y ss.</span>
+          </div>
+        </article>
+
+        <!-- LEC Art. 50 -->
+        <article class="map-card" data-cat="c7" data-text="artículo 50 LEC competencia territorial domicilio demandado actor sequitur forum rei fundamento conciliación">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">LEC Art. 50</span>
+              <span class="status-tag tag-gray">Competencia</span>
+            </div>
+            <h2 class="card-title">Regla general de competencia territorial</h2>
+            <p class="card-subtitle">La regla general de competencia territorial por el domicilio del demandado fundamenta la competencia en conciliación (art. 140.1).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Competencia territorial</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio:</strong> La regla general de competencia territorial del domicilio del demandado, consagrada en el art. 50 de la LEC, constituye el fundamento del principio <em>actor sequitur forum rei</em> aplicable a la competencia en materia de conciliación.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LEC art. 50</span>
+            <span class="ref-tag">Ley 15/2015 art. 140.1</span>
+          </div>
+        </article>
+
+        <!-- LEC Art. 130 -->
+        <article class="map-card" data-cat="c7" data-text="artículo 130 LEC cómputo plazos procesales días hábiles excluyen sábados domingos festivos conciliación">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">LEC Art. 130</span>
+              <span class="status-tag tag-gray">Cómputo</span>
+            </div>
+            <h2 class="card-title">Cómputo de plazos procesales</h2>
+            <p class="card-subtitle">El cómputo de plazos procesales excluye sábados, domingos y festivos. Aplicable al cálculo de los plazos de la conciliación.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Cómputo de plazos</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Días hábiles:</strong> El art. 130 de la LEC establece que los días hábiles excluyen sábados, domingos y festivos.</li>
+                  <li><strong>Aplicación:</strong> Esta regla es aplicable al cálculo de los plazos de la conciliación (art. 142).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LEC art. 130</span>
+          </div>
+        </article>
+
+        <!-- LEC Art. 250 -->
+        <article class="map-card" data-cat="c7" data-text="artículo 250 LEC competencia juicio verbal razón materia cuantía 15000 euros tramitación acción nulidad artículo 148">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">LEC Art. 250</span>
+              <span class="status-tag tag-info">Juicio verbal</span>
+            </div>
+            <h2 class="card-title">Competencia del juicio verbal</h2>
+            <p class="card-subtitle">Competencia del juicio verbal por razón de la materia y cuantía (hasta 15.000 €), relevante para la tramitación de la acción de nulidad.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Competencia del juicio verbal</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Cuantía:</strong> El juicio verbal es competente por razón de la materia y cuantía (hasta 15.000 euros), conforme al art. 250 de la LEC.</li>
+                  <li><strong>Aplicación a la nulidad:</strong> Esta norma es relevante para la tramitación de la acción de nulidad del art. 148.2, que se sustanciará por juicio verbal si la cuantía no excede de 15.000 euros.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LEC art. 250</span>
+            <span class="ref-tag">Ley 15/2015 art. 148.2</span>
+          </div>
+        </article>
+
+        <div class="no-results" id="no-results-lec">
+          No se encontraron resultados.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SECTION: Artículos relacionados CC ==================== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-cc">
+      <span class="section-heading-text">Artículos relacionados del Código Civil</span>
+      <span class="section-heading-count">17 artículos</span>
+      <button class="section-toggle-btn">▶</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-cc">
+      <div class="card-grid">
+
+        <!-- CC Art. 1809 -->
+        <article class="map-card" data-cat="c8" data-text="artículo 1809 CC definición contrato transacción partes dando prometiendo reteniendo evitan pleito ponen término naturaleza jurídica conciliación">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Art. 1809</span>
+              <span class="status-tag tag-ok">Definición</span>
+            </div>
+            <h2 class="card-title">Definición del contrato de transacción</h2>
+            <p class="card-subtitle">La transacción es el contrato por el cual las partes evitan un pleito o ponen término al ya comenzado. Naturaleza análoga a la conciliación.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Definición legal</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Texto:</strong> La transacción es un contrato por el cual las partes, dando, prometiendo o reteniendo cada una alguna cosa, evitan la provocación de un pleito o ponen término al que había comenzado.</li>
+                  <li><strong>Relación con la conciliación:</strong> La conciliación tiene naturaleza jurídica análoga a la transacción, pues ambas buscan evitar el pleito mediante un acuerdo de voluntades.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1809</span>
+            <span class="ref-tag">Ley 15/2015 art. 139</span>
+          </div>
+        </article>
+
+        <!-- CC Art. 1810 -->
+        <article class="map-card" data-cat="c8" data-text="artículo 1810 CC capacidad transigir obligarse exclusión menores personas discapacidad art 139.2.1">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Art. 1810</span>
+              <span class="status-tag tag-info">Capacidad</span>
+            </div>
+            <h2 class="card-title">Capacidad para transigir</h2>
+            <p class="card-subtitle">Se necesita capacidad para obligarse. Conexión con la exclusión de menores y personas con discapacidad.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Capacidad exigida</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Texto:</strong> Para transigir se necesita tener capacidad para obligarse.</li>
+                  <li><strong>Conexión:</strong> La capacidad exigida para el acto de conciliación es la misma que para celebrar cualquier contrato válido, lo cual conecta con la exclusión del art. 139.2.1.º de la Ley 15/2015 respecto de menores y personas con discapacidad.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1810</span>
+            <span class="ref-tag">Ley 15/2015 art. 139.2.1.º</span>
+          </div>
+        </article>
+
+        <!-- CC Art. 1811 -->
+        <article class="map-card" data-cat="c8" data-text="artículo 1811 CC objeto transacción libre disposición materias excluidas conciliación no transigibles">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Art. 1811</span>
+              <span class="status-tag tag-gray">Objeto</span>
+            </div>
+            <h2 class="card-title">Objeto de la transacción</h2>
+            <p class="card-subtitle">La transacción puede recaer sobre cualquier materia susceptible de libre disposición. Coincide con las materias no excluidas de la conciliación.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Objeto de la transacción</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Texto:</strong> La transacción puede recaer sobre cualquier materia que sea susceptible de libre disposición por las partes.</li>
+                  <li><strong>Conexión:</strong> Las materias excluidas de la conciliación (art. 139.2) coinciden con las materias no transigibles del Derecho civil.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1811</span>
+            <span class="ref-tag">Ley 15/2015 art. 139.2</span>
+          </div>
+        </article>
+
+        <!-- CC Art. 1812 -->
+        <article class="map-card" data-cat="c8" data-text="artículo 1812 CC deber comunicación documentos recíprocamente transacción exhibir documentos acto conciliación 145.1">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Art. 1812</span>
+              <span class="status-tag tag-gray">Deber</span>
+            </div>
+            <h2 class="card-title">Deber de comunicación de documentos</h2>
+            <p class="card-subtitle">Las partes deben comunicarse recíprocamente los documentos mencionados en la transacción. Análogo a la facultad de exhibir documentos en el acto de conciliación.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Deber de comunicación</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Texto:</strong> Las partes en la transacción deben comunicarse recíprocamente los documentos que se hayan mencionado en la misma.</li>
+                  <li><strong>Analogía:</strong> Este deber de comunicación es análogo a la facultad de exhibir documentos prevista en el art. 145.1 de la Ley 15/2015.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1812</span>
+            <span class="ref-tag">Ley 15/2015 art. 145.1</span>
+          </div>
+        </article>
+
+        <!-- CC Art. 1815 -->
+        <article class="map-card" data-cat="c8" data-text="artículo 1815 CC materias transigibles estado civil personas cuestiones matrimoniales materias criminales alimentos futuros título legal exclusión genérica 139.2.4">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Art. 1815</span>
+              <span class="status-tag tag-alert">No transigibles</span>
+            </div>
+            <h2 class="card-title">Materias no transigibles</h2>
+            <p class="card-subtitle">No se puede transigir sobre estado civil, matrimonio, materias criminales ni alimentos futuros. Fundamento de la exclusión genérica del art. 139.2.4.º.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Materias prohibidas</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Texto:</strong> No se puede transigir sobre el estado civil de las personas, las cuestiones matrimoniales, las materias criminales ni los alimentos futuros debidos por título legal.</li>
+                  <li><strong>Fundamento:</strong> Esta norma fundamenta la exclusión genérica del art. 139.2.4.º de la Ley 15/2015, que excluye de la conciliación las materias no susceptibles de transacción ni compromiso.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1815</span>
+            <span class="ref-tag">Ley 15/2015 art. 139.2.4.º</span>
+          </div>
+        </article>
+
+        <!-- CC Art. 1816 -->
+        <article class="map-card" data-cat="c8" data-text="artículo 1816 CC efectos limitados transacción objeto preciso cosas distintas comprende acuerdo conciliación alcance acta">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Art. 1816</span>
+              <span class="status-tag tag-info">Efectos</span>
+            </div>
+            <h2 class="card-title">Efectos limitados de la transacción</h2>
+            <p class="card-subtitle">La transacción no obliga sino respecto de lo que haya sido su objeto preciso. El acuerdo de conciliación produce efectos únicamente respecto de los extremos pactados.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Efectos limitados</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Texto:</strong> La transacción no obliga sino respecto de lo que haya sido su objeto preciso, sin que pueda extenderse a cosas distintas de las comprendidas en ella.</li>
+                  <li><strong>Aplicación:</strong> El acuerdo de conciliación produce efectos únicamente respecto de los extremos concretos pactados en el acta, sin que pueda extenderse a cuestiones no expresamente acordadas.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1816</span>
+          </div>
+        </article>
+
+        <!-- CC Art. 1817 -->
+        <article class="map-card" data-cat="c8" data-text="artículo 1817 CC efecto cosa juzgada transacción partes volver litigar mismo objeto acuerdo conciliación">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Art. 1817</span>
+              <span class="status-tag tag-ok">Cosa juzgada</span>
+            </div>
+            <h2 class="card-title">Efecto de cosa juzgada de la transacción</h2>
+            <p class="card-subtitle">La transacción tiene efecto de cosa juzgada entre las partes. Similar efecto alcanza el acuerdo de conciliación.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Cosa juzgada</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Texto:</strong> La transacción tiene efecto de cosa juzgada entre las partes, no pudiendo volverse a litigar sobre el mismo objeto.</li>
+                  <li><strong>Aplicación:</strong> El acuerdo de conciliación alcanza similar efecto de cosa juzgada material, impidiendo que las partes vuelvan a discutir lo ya acordado.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1817</span>
+          </div>
+        </article>
+
+        <!-- CC Art. 1818 -->
+        <article class="map-card" data-cat="c8" data-text="artículo 1818 CC nulidad transacción vicios consentimiento error violencia intimidación dolo base sustantiva acción nulidad 148.1">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Art. 1818</span>
+              <span class="status-tag tag-alert">Nulidad</span>
+            </div>
+            <h2 class="card-title">Nulidad de la transacción por vicios del consentimiento</h2>
+            <p class="card-subtitle">La transacción puede ser impugnada por las causas que invalidan los contratos. Base sustantiva de la acción de nulidad del art. 148.1.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Nulidad por vicios del consentimiento</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Texto:</strong> La transacción puede ser impugnada por las causas que invalidan los contratos: error, violencia, intimidación o dolo.</li>
+                  <li><strong>Base sustantiva:</strong> Esta norma es la base sustantiva de la acción de nulidad prevista en el art. 148.1 de la Ley 15/2015.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1818</span>
+            <span class="ref-tag">Ley 15/2015 art. 148.1</span>
+          </div>
+        </article>
+
+        <!-- CC Art. 1261 -->
+        <article class="map-card" data-cat="c9" data-text="artículo 1261 CC requisitos contrato consentimiento contratantes objeto cierto materia causa obligación establezca acuerdo conciliación naturaleza contractual">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Art. 1261</span>
+              <span class="status-tag tag-info">Requisitos</span>
+            </div>
+            <h2 class="card-title">Requisitos del contrato</h2>
+            <p class="card-subtitle">Consentimiento, objeto cierto y causa: los tres requisitos exigibles al acuerdo de conciliación como acto de naturaleza contractual.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Requisitos contractuales</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Texto:</strong> No hay contrato sino cuando concurren los requisitos siguientes: consentimiento de los contratantes, objeto cierto que sea materia del contrato, y causa de la obligación que se establezca.</li>
+                  <li><strong>Aplicación:</strong> Estos tres requisitos son exigibles al acuerdo de conciliación como acto de naturaleza contractual.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1261</span>
+            <span class="ref-tag">Ley 15/2015 art. 148</span>
+          </div>
+        </article>
+
+        <!-- CC Arts. 1265-1270 -->
+        <article class="map-card" data-cat="c9" data-text="artículos 1265 1266 1267 1268 1269 1270 CC vicios consentimiento error violencia intimidación dolo nulidad acuerdo conciliación acción 148.1">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Arts. 1265-1270</span>
+              <span class="status-tag tag-alert">Vicios</span>
+            </div>
+            <h2 class="card-title">Vicios del consentimiento</h2>
+            <p class="card-subtitle">El consentimiento prestado por error, violencia, intimidación o dolo es nulo. Causas principales de nulidad del acuerdo de conciliación.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Vicios del consentimiento</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Error:</strong> El consentimiento prestado por error vicia la validez del contrato (art. 1265 CC).</li>
+                  <li><strong>Violencia e intimidación:</strong> La violencia física o moral y la intimidación producen nulidad (arts. 1266-1267 CC).</li>
+                  <li><strong>Dolo:</strong> El dolo determina la nulidad cuando sea grave (art. 1269 CC).</li>
+                  <li><strong>Aplicación a la conciliación:</strong> Estos vicios del consentimiento constituyen las causas principales de nulidad del acuerdo de conciliación, ejercitables a través de la acción del art. 148.1.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC arts. 1265-1270</span>
+            <span class="ref-tag">Ley 15/2015 art. 148.1</span>
+          </div>
+        </article>
+
+        <!-- CC Art. 1973 -->
+        <article class="map-card" data-cat="c9" data-text="artículo 1973 CC prescripción acciones interrumpe ejercicio Tribunales reclamación extrajudicial acreedor reconocimiento derecho deudor solicitud conciliación admitida equivalente 143">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Art. 1973</span>
+              <span class="status-tag tag-warn">Interrupción</span>
+            </div>
+            <h2 class="card-title">Interrupción de la prescripción</h2>
+            <p class="card-subtitle">La prescripción se interrumpe por ejercicio de acción, reclamación extrajudicial o reconocimiento del deudor. Fundamento sustantivo del efecto interruptivo del art. 143.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Causas de interrupción</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Texto:</strong> La prescripción de las acciones se interrumpe por su ejercicio ante los Tribunales, por reclamación extrajudicial del acreedor y por cualquier acto de reconocimiento del derecho por el deudor.</li>
+                  <li><strong>Fundamento sustantivo:</strong> La solicitud de conciliación admitida equivale a una reclamación extrajudicial a estos efectos, constituyendo el fundamento sustantivo del efecto interruptivo del art. 143.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1973</span>
+            <span class="ref-tag">Ley 15/2015 art. 143</span>
+          </div>
+        </article>
+
+        <!-- CC Art. 1964.2 -->
+        <article class="map-card" data-cat="c9" data-text="artículo 1964.2 CC plazo prescripción acciones personales 5 años reforma Ley 42/2015 efecto interruptivo artículo 143">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC Art. 1964.2</span>
+              <span class="status-tag tag-gray">Prescripción</span>
+            </div>
+            <h2 class="card-title">Plazo de prescripción de las acciones personales</h2>
+            <p class="card-subtitle">Plazo de 5 años para la prescripción de acciones personales (tras la reforma de la Ley 42/2015). Relevante para el efecto interruptivo del art. 143.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">▾</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Plazo de prescripción</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Texto:</strong> El plazo de prescripción de las acciones personales es de 5 años, conforme a la redacción del art. 1964.2 tras la reforma de la Ley 42/2015.</li>
+                  <li><strong>Relevancia:</strong> Este plazo es relevante para el efecto interruptivo del art. 143, pues tras la interrupción el cómputo se reinicia por el plazo legal vigente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 1964.2</span>
+            <span class="ref-tag">Ley 42/2015</span>
+            <span class="ref-tag">Ley 15/2015 art. 143</span>
+          </div>
+        </article>
+
+        <div class="no-results" id="no-results-cc">
+          No se encontraron resultados.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SECTION: Indice de plazos ==================== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Indice de plazos procesales</span>
+      <span class="section-heading-count">10 trámites</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:40%">Acto o trámite procesal</th>
+              <th style="width:20%">Plazo</th>
+              <th style="width:20%">Tipo</th>
+              <th style="width:20%">Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Resolución de admisión de la solicitud</td>
+              <td><span class="plazo-badge plazo-days">5 días hábiles</span></td>
+              <td><span class="plazo-badge plazo-other">Resolución</span></td>
+              <td class="td-norm">Artículo 142.1 / LEC arts. 133+</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Antelación mínima entre citación y acto</td>
+              <td><span class="plazo-badge plazo-weeks">Al menos 5 días</span></td>
+              <td><span class="plazo-badge plazo-other">Citación</span></td>
+              <td class="td-norm">Artículo 142.2</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Demora máxima para celebración del acto</td>
+              <td><span class="plazo-badge plazo-months">No más de 10 días</span></td>
+              <td><span class="plazo-badge plazo-other">Máximo improrrogable</span></td>
+              <td class="td-norm">Artículo 142.2</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Traslado al solicitante por reclamación de daños y perjuicios</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td><span class="plazo-badge plazo-other">Alegaciones</span></td>
+              <td class="td-norm">Artículo 144.2 / CC arts. 1101+</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Nuevo señalamiento por justa causa</td>
+              <td><span class="plazo-badge plazo-days">5 días siguientes</span></td>
+              <td><span class="plazo-badge plazo-other">Reprogramación</span></td>
+              <td class="td-norm">Artículo 144.4 / LJV art. 142</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Interposición de la acción de nulidad</td>
+              <td><span class="plazo-badge plazo-months">15 días</span></td>
+              <td><span class="plazo-badge plazo-years">Caducidad</span></td>
+              <td class="td-norm">Artículo 148.2</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Requerimiento de pago en ejecución</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td><span class="plazo-badge plazo-other">Pago voluntario</span></td>
+              <td class="td-norm">LEC art. 520 (vía art. 147.3)</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Oposición a la ejecución</td>
+              <td><span class="plazo-badge plazo-months">10 días</span></td>
+              <td><span class="plazo-badge plazo-other">Oposición</span></td>
+              <td class="td-norm">LEC art. 556 (vía art. 147.3)</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Caducidad de la acción ejecutiva</td>
+              <td><span class="plazo-badge plazo-years">5 años</span></td>
+              <td><span class="plazo-badge plazo-years">Caducidad</span></td>
+              <td class="td-norm">LEC art. 518 (vía art. 147.3)</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Prescripción de acciones personales</td>
+              <td><span class="plazo-badge plazo-years">5 años</span></td>
+              <td><span class="plazo-badge plazo-other">Prescripción</span></td>
+              <td class="td-norm">CC art. 1964.2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SECTION: Participantes y actores ==================== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">5 categorías · 18+ actores</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-actors">
+      <div class="participants-grid">
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Órganos competentes</div>
+          <ul>
+            <li>Juez de Paz <span class="participant-note">(competencia territorial y cuantía inferior a 6.000 €)</span></li>
+            <li>Secretario judicial (LAJ) <span class="participant-note">(admite, cita, celebra, dicta decreto, resuelve)</span></li>
+            <li>Juzgado de Primera Instancia <span class="participant-note">(competencia por materia y ejecución subsidiaria)</span></li>
+            <li>Juzgado de lo Mercantil <span class="participant-note">(materias mercantiles; art. 483 LOPJ)</span></li>
+            <li>Sala de lo Civil del TS <span class="participant-note">(responsabilidad civil de Jueces y Magistrados)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Partes en el acto</div>
+          <ul>
+            <li>Solicitante de la conciliación <span class="participant-note">(promotor del expediente y responsable de gastos)</span></li>
+            <li>Requerido de conciliación <span class="participant-note">(puede ser varios; pluralidad regulada en art. 144.3)</span></li>
+            <li>Procurador <span class="participant-note">(representación voluntaria; arts. 23+ LEC)</span></li>
+            <li>Abogado <span class="participant-note">(no preceptivo, designación voluntaria; art. 141.3)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c5">Sujetos excluidos</div>
+          <ul>
+            <li>Menores de edad <span class="participant-note">(protección reforzada; art. 139.2.1.º / art. 39 CE)</span></li>
+            <li>Personas con discapacidad con medidas de apoyo <span class="participant-note">(art. 139.2.1.º)</span></li>
+            <li>Estado, CC.AA. y Administraciones públicas <span class="participant-note">(indisponibilidad de intereses públicos; art. 139.2.2.º)</span></li>
+            <li>Corporaciones e Instituciones de igual naturaleza <span class="participant-note">(art. 139.2.2.º)</span></li>
+            <li>Jueces y Magistrados <span class="participant-note">(responsabilidad civil; art. 139.2.3.º)</span></li>
+            <li>Ministerio Fiscal <span class="participant-note">(intervención preceptiva en expedientes de menores y discapacidad; arts. 15, 17 LJV)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c6">Otros sujetos</div>
+          <ul>
+            <li>Persona jurídica (requerido) <span class="participant-note">(foro adicional del domicilio del solicitante; art. 140.1)</span></li>
+            <li>Representante autorizado de la entidad <span class="participant-note">(acreditar delegación/sucursal/establecimiento)</span></li>
+            <li>Tribunal competente <span class="participant-note">(acción de nulidad; art. 148)</span></li>
+            <li>Notario / Registrador <span class="participant-note">(competencias en conciliación extrajudicial; Disp. Adic. 3.ª LJV)</span></li>
+            <li>SMAC / SERCLA <span class="participant-note">(conciliación laboral, sistema propio; Ley 36/2011 LJS)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SECTION: Ecosistema normativo ==================== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">9 cuerpos normativos</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 1/2000, de 7 de enero</div>
+          <div class="norm-title">Ley de Enjuiciamiento Civil (LEC)</div>
+          <div class="norm-arts">
+            <strong>Art. 16</strong> — Poder de representación y <em>apud acta</em> (art. 144.1).<br>
+            <strong>Arts. 23+</strong> — Representación por Procurador y defensa por Abogado.<br>
+            <strong>Arts. 31+</strong> — Intervención de Abogado y Procurador (excepción en art. 141.3).<br>
+            <strong>Art. 45</strong> — Competencia de Juzgados de Paz por cuantía (6.000 €).<br>
+            <strong>Art. 50</strong> — Competencia territorial por domicilio del demandado.<br>
+            <strong>Art. 51.2</strong> — Fuero especial para personas jurídicas.<br>
+            <strong>Arts. 133+</strong> — Cómputo de plazos procesales.<br>
+            <strong>Art. 152</strong> — Señalamiento de actuaciones judiciales.<br>
+            <strong>Art. 241+</strong> — Gastos y costas procesales.<br>
+            <strong>Art. 397+</strong> — Requisitos formales de escritos procesales.<br>
+            <strong>Art. 410</strong> — Falta de competencia territorial y aprobación judicial de convenios.<br>
+            <strong>Art. 440</strong> — Conciliación e intento de convenio en la vista del juicio verbal.<br>
+            <strong>Art. 517.2.9.º</strong> — Título ejecutivo: testimonio del acta de avenencia.<br>
+            <strong>Arts. 538+</strong> — Ejecución dineraria.<br>
+            <strong>Art. 545</strong> — Competencia para la ejecución.<br>
+            <strong>Arts. 700+</strong> — Ejecución no dineraria.<br>
+            <strong>Art. 753</strong> — Documentación de vistas y grabación.<br>
+            <strong>Arts. 774+</strong> — Ejecución de sentencias de hacer y no hacer.<br>
+            <strong>Libro III</strong> — Ejecución forzosa y medidas cautelares.
+          </div>
+          <span class="norm-tag tag-info">Procesal civil</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Real Decreto de 24 de julio de 1889</div>
+          <div class="norm-title">Código Civil</div>
+          <div class="norm-arts">
+            <strong>Arts. 6.4 y 7.2</strong> — Fraude de ley y abuso de derecho (art. 139.1).<br>
+            <strong>Art. 1091</strong> — Fuerza obligatoria de los contratos.<br>
+            <strong>Arts. 1101+</strong> — Responsabilidad civil extracontractual y daños y perjuicios.<br>
+            <strong>Art. 1216</strong> — Fuerza probatoria de documentos públicos.<br>
+            <strong>Arts. 1275, 1276, 1278</strong> — Nulidad absoluta de contratos (art. 148).<br>
+            <strong>Arts. 1301, 1302</strong> — Anulabilidad: error, violencia, intimidación, dolo.<br>
+            <strong>Art. 1303</strong> — Restituciones recíprocas en caso de nulidad.<br>
+            <strong>Art. 1309</strong> — Confirmación de contratos anulables.<br>
+            <strong>Arts. 1809+</strong> — Contrato de transacción (art. 1810: materias no transigibles).<br>
+            <strong>Art. 1930</strong> — Naturaleza de la prescripción.<br>
+            <strong>Art. 1935</strong> — Renuncia de la prescripción ganada.<br>
+            <strong>Art. 1969</strong> — Inicio del cómputo de la prescripción.<br>
+            <strong>Art. 1973</strong> — Interrupción: ejercicio ante Tribunales, reclamación extrajudicial, acto de conciliación.<br>
+            <strong>Art. 1974</strong> — Nuevo cómputo desde la interrupción.<br>
+            <strong>Art. 1975</strong> — Interrupción por reclamación extrajudicial.
+          </div>
+          <span class="norm-tag tag-ok">Derecho sustantivo</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 5/2012, de 6 de julio</div>
+          <div class="norm-title">Ley de mediación en asuntos civiles y mercantiles</div>
+          <div class="norm-arts">
+            <strong>Art. 1</strong> — Ámbito de aplicación: mediación como mecanismo alternativo complementario de la conciliación.<br>
+            <strong>Art. 2</strong> — Materias susceptibles de mediación, coincidentes con las de conciliación.<br>
+            <strong>Art. 6</strong> — Acuerdo de mediación con efecto de título ejecutivo si se eleva a escritura pública (paralelo art. 147).<br>
+            <strong>Art. 25</strong> — Ejecución del acuerdo de mediación, régimen similar.<br>
+            <strong>Art. 28</strong> — Confidencialidad de la mediación (no rige en conciliación judicial, que es pública).
+          </div>
+          <span class="norm-tag tag-warn">ADR</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 60/2003, de 23 de diciembre</div>
+          <div class="norm-title">Ley de Arbitraje</div>
+          <div class="norm-arts">
+            <strong>Art. 2</strong> — Materias susceptibles de arbitraje, coincidentes con las de conciliación y transacción (art. 139.2.4.º).<br>
+            <strong>Art. 41</strong> — Laudo arbitral como título ejecutivo equivalente a sentencia, paralelismo con la fuerza ejecutiva de la avenencia (art. 147).
+          </div>
+          <span class="norm-tag tag-warn">ADR</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley Orgánica 1/2015, de 1 de julio</div>
+          <div class="norm-title">Modificaciones en la conciliación</div>
+          <div class="norm-arts">
+            <strong>Modificación LEC art. 440</strong> — Reforma de la conciliación previa en el juicio verbal, eliminando la referencia a la conciliación previa como requisito procesal en determinados supuestos.<br>
+            <strong>Adaptación del sistema de títulos ejecutivos</strong> — Nueva redacción del art. 517 LEC para recoger la avenencia en conciliación como título ejecutivo.
+          </div>
+          <span class="norm-tag tag-alert">Reforma procesal</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 36/2011, de 10 de octubre</div>
+          <div class="norm-title">Reguladora de la Jurisdicción Social</div>
+          <div class="norm-arts">
+            <strong>Arts. 63 a 68</strong> — Conciliación previa obligatoria ante el SMAC (Servicio de Mediación, Arbitraje y Conciliación) o los órganos equivalentes autonómicos (SERCLA y similares).<br>
+            <strong>Carácter obligatorio</strong> — Contrasta con el carácter voluntario de la conciliación civil, reflejando la diferente naturaleza de las controversias laborales y la protección de los derechos de los trabajadores.
+          </div>
+          <span class="norm-tag tag-info">Jurisdicción social</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Constitución Española de 1978</div>
+          <div class="norm-title">Normas constitucionales conexas</div>
+          <div class="norm-arts">
+            <strong>Art. 24</strong> — Derecho a la tutela judicial efectiva, que incluye el acceso a medios alternativos de resolución de conflictos como la conciliación.<br>
+            <strong>Art. 39</strong> — Protección de la familia y la infancia, fundamento de la exclusión del art. 139.2.1.º.<br>
+            <strong>Art. 117</strong> — Independencia judicial, en relación con la exclusión del art. 139.2.3.º sobre responsabilidad civil de Jueces y Magistrados.
+          </div>
+          <span class="norm-tag tag-gray">Constitucional</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015, de 2 de julio</div>
+          <div class="norm-title">Jurisdicción Voluntaria — Otros preceptos</div>
+          <div class="norm-arts">
+            <strong>Art. 1</strong> — Objetivos de agilización de la jurisdicción voluntaria.<br>
+            <strong>Art. 2</strong> — Normas comunes sobre competencia territorial.<br>
+            <strong>Arts. 15 y 17</strong> — Intervención del Ministerio Fiscal en expedientes de menores y discapacidad (excluidos por art. 139.2.1.º).<br>
+            <strong>Título II</strong> — Derecho de la persona: expedientes conexos con menores y personas con discapacidad.<br>
+            <strong>Disp. Adic. 3.ª</strong> — Competencias del LAJ, notarios y registradores en conciliación extrajudicial.<br>
+            <strong>Disp. Final 7.ª</strong> — Modificación de la LEC, adaptación del sistema de títulos ejecutivos.
+          </div>
+          <span class="norm-tag tag-gray">Misma ley</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley de Enjuiciamiento Civil de 1881</div>
+          <div class="norm-title">Regulación histórica (derogada parcialmente)</div>
+          <div class="norm-arts">
+            <strong>Arts. 460 a 474</strong> — Regulación histórica del acto de conciliación, derogada por la Ley 15/2015 y sustituida por el Título IX. La nueva regulación actualiza y moderniza el régimen jurídico adaptándolo a la distribución de funciones entre Jueces y Secretarios judiciales operada por la LO 1/2009, complementaria de la Ley de Reforma de la Legislación Procesal para la implantación de la nueva Oficina Judicial.
+          </div>
+          <span class="norm-tag tag-gray">Histórica</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ==================== LEGEND FOOTER ==================== -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Competencia y solicitud
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Procedimiento y plazos
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Comparecencia y acto
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Ejecución y nulidad
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Exclusiones y efectos
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#6b7280"></div>
+        LJV relacionados
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#6b7280"></div>
+        LEC relacionados
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#9333ea"></div>
+        CC — Transacción
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#e11d48"></div>
+        CC — Nulidad y prescripción
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título IX · Artículos 139–148 · Versión fusionada y enriquecida con ecosistema normativo completo (LEC, CC, LOPJ, Ley de Mediación, Ley de Arbitraje, LJS, CE) · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+// 1. Filtrado por categoría
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+  const statArts = document.getElementById('stat-arts');
+  if (statArts) statArts.textContent = visible;
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+// 2. Búsqueda en tiempo real
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+// 3. Expandir/colapsar tarjetas individuales
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent =
+    isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+// 4. Expandir todo / Contraer todo
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+// 5. Colapso de secciones principales
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '▶' : '▼';
+  });
+});
+
+// 6. Zoom
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+
+</body>
+</html>

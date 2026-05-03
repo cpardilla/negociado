@@ -1,0 +1,2849 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            De la autorización judicial al usufructuario para reclamar créditos
+            vencidos que formen parte del usufructo (artículos 100 a 103 LJV)
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --transition-norm: 250ms ease;
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            html,
+            body {
+                height: 100%;
+            }
+            body {
+                font-family:
+                    "Outfit",
+                    system-ui,
+                    -apple-system,
+                    sans-serif;
+                font-size: 15px;
+                color: var(--text);
+                background: var(--white);
+                line-height: 1.55;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            /* ===== APP CONTAINER ===== */
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            /* ===== HEADER ===== */
+            #hdr {
+                flex-shrink: 0;
+                height: 56px;
+                background: var(--navy);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+                color: white;
+            }
+            .h-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .h-seal {
+                width: 32px;
+                height: 32px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+            }
+            .h-title {
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 1.2;
+            }
+            .h-sub {
+                font-size: 10px;
+                opacity: 0.55;
+                margin-top: 2px;
+                letter-spacing: 0.3px;
+            }
+            .h-right {
+                display: flex;
+                gap: 8px;
+            }
+            .zoom-cluster {
+                display: inline-flex;
+                align-items: center;
+                overflow: hidden;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .btn-zoom {
+                appearance: none;
+                border: 0;
+                background: transparent;
+                color: rgba(255, 255, 255, 0.85);
+                width: 30px;
+                height: 30px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.14);
+            }
+            .zoom-label {
+                min-width: 46px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .btn {
+                font-family: inherit;
+                font-size: 14px;
+                padding: 6px 12px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.15s;
+                font-weight: 500;
+            }
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+
+            /* ============ NUEVO: BOTÓN TOGGLE SIDEBAR ============ */
+            .btn-toggle-sidebar {
+                font-size: 20px;
+                padding: 4px 12px;
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+
+            /* ===== PHASE BAR ===== */
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                background: var(--navy-mid);
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                gap: 2px;
+                overflow-x: auto;
+                scrollbar-width: none;
+            }
+            #pbar::-webkit-scrollbar {
+                display: none;
+            }
+            .ph-item {
+                display: flex;
+                align-items: center;
+            }
+            .ph-lbl {
+                display: inline-flex;
+                align-items: center;
+                height: 28px;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 0 10px;
+                border-radius: 8px;
+                white-space: nowrap;
+                color: rgba(255, 255, 255, 0.6);
+                transition: all 0.15s;
+            }
+            .ph-lbl.active {
+                background: rgba(255, 255, 255, 0.22);
+                color: #fff;
+                font-weight: 800;
+            }
+            .ph-lbl.done {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .ph-sep {
+                color: rgba(255, 255, 255, 0.3);
+                margin: 0 2px;
+                font-size: 10px;
+                flex-shrink: 0;
+            }
+
+            /* ===== BREADCRUMB ===== */
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 34px;
+                height: auto;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                display: flex;
+                align-items: center;
+                padding: 4px 20px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                flex-wrap: wrap;
+                row-gap: 2px;
+                white-space: normal;
+            }
+            #breadcrumb::-webkit-scrollbar {
+                display: none;
+            }
+            .bc-item {
+                font-size: 11px;
+                white-space: nowrap;
+                padding: 0 6px;
+                color: var(--muted);
+            }
+            .bc-past {
+                cursor: pointer;
+                background: none;
+                border: none;
+                font-family: inherit;
+                font-size: 11px;
+            }
+            .bc-past:hover {
+                color: var(--navy-lt);
+                text-decoration: underline;
+            }
+            .bc-current {
+                font-weight: 600;
+                color: var(--navy);
+            }
+            .bc-sep {
+                font-size: 10px;
+                color: #b5bedb;
+                padding: 0 2px;
+            }
+
+            /* ===== LAYOUT ===== */
+            #layout {
+                flex: 1;
+                overflow: hidden;
+                display: flex;
+            }
+
+            /* ===== SIDEBAR (modificado para toggle) ===== */
+            #sidebar {
+                flex-shrink: 0;
+                width: 260px;
+                background: var(--navy-mid);
+                overflow-y: auto;
+                overflow-x: hidden;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+                scrollbar-gutter: stable;
+                color: rgba(255, 255, 255, 0.85);
+                display: flex;
+                flex-direction: column;
+                transition:
+                    width var(--transition-norm),
+                    transform var(--transition-norm);
+                will-change: width, transform;
+            }
+            #sidebar.collapsed {
+                width: 0;
+                overflow: hidden;
+                padding: 0;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 6px;
+            }
+            #sidebar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.18);
+                border-radius: 8px;
+                border: 2px solid transparent;
+                background-clip: padding-box;
+            }
+            #sidebar:hover::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.28);
+            }
+            #sb-tabs {
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                position: sticky;
+                top: 0;
+                background: var(--navy-mid);
+                z-index: 2;
+                flex-shrink: 0;
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 10px 0;
+                font-size: 11px;
+                font-weight: 600;
+                font-family: inherit;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+                transition: all 0.15s;
+            }
+            .sb-tab.active {
+                color: #fff;
+                border-bottom: 2px solid var(--navy-lt);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            /* ===== SIDEBAR MAP ===== */
+            #sb-map {
+                padding: 12px;
+                flex: 1;
+                min-height: 0;
+            }
+            .sm-phase {
+                margin-bottom: 10px;
+            }
+            .sm-phase-hdr {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: rgba(255, 255, 255, 0.65);
+                padding: 6px 8px;
+                cursor: pointer;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+            .sm-phase-hdr:hover {
+                background: rgba(255, 255, 255, 0.06);
+            }
+            .sm-phase-hdr .sm-arrow {
+                width: 12px;
+                display: inline-block;
+                font-size: 10px;
+            }
+            .sm-phase-nodes {
+                margin: 4px 0 6px 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+            .sm-node {
+                font-size: 12px;
+                padding: 6px 8px;
+                color: rgba(255, 255, 255, 0.65);
+                border-left: 2px solid rgba(255, 255, 255, 0.12);
+                cursor: pointer;
+                transition: all 0.15s;
+                display: flex;
+                align-items: flex-start;
+                gap: 6px;
+                line-height: 1.35;
+                border-radius: 0 4px 4px 0;
+                background: none;
+                font-family: inherit;
+                text-align: left;
+                width: 100%;
+                border-top: none;
+                border-right: none;
+                border-bottom: none;
+            }
+            .sm-node:hover {
+                color: #fff;
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .sm-node .sm-icon {
+                flex-shrink: 0;
+                font-weight: 700;
+                width: 10px;
+            }
+            .sm-visited {
+                color: #86efac;
+                border-left-color: var(--green);
+            }
+            .sm-current {
+                color: #fff;
+                background: rgba(65, 105, 225, 0.3);
+                border-left-color: var(--navy-lt);
+                font-weight: 600;
+            }
+            .sm-unreachable {
+                color: rgba(255, 255, 255, 0.25);
+                border-left-color: rgba(255, 255, 255, 0.06);
+            }
+            .sm-end {
+                opacity: 0.85;
+                font-style: italic;
+            }
+
+            /* ===== SIDEBAR JOURNEY ===== */
+            #sb-journey {
+                padding: 12px;
+                flex: 1;
+                min-height: 0;
+            }
+            .pi {
+                font-size: 12px;
+                padding: 7px 10px;
+                border-left: 2px solid rgba(255, 255, 255, 0.15);
+                margin-bottom: 4px;
+                color: rgba(255, 255, 255, 0.75);
+                border-radius: 0 4px 4px 0;
+                line-height: 1.35;
+            }
+            .pi.past {
+                border-left-color: var(--green);
+                color: #bbf7d0;
+            }
+            .pi.current {
+                border-left-color: var(--navy-lt);
+                color: #fff;
+                font-weight: 600;
+                background: rgba(65, 105, 225, 0.18);
+            }
+            .pi-choice {
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.6);
+                margin-top: 3px;
+                font-style: italic;
+            }
+            .sb-foot {
+                margin-top: 18px;
+                padding: 12px 0 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.12);
+            }
+            .sb-foot-title {
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.5);
+                margin-bottom: 8px;
+                letter-spacing: 0.5px;
+            }
+            .sb-foot-ref {
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.72);
+                margin-bottom: 4px;
+                font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+                line-height: 1.45;
+            }
+            .sb-empty {
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.45);
+                padding: 14px 8px;
+                font-style: italic;
+                text-align: center;
+            }
+
+            /* ===== CONTENT ===== */
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 24px 30px;
+                background: var(--slate-bg);
+            }
+
+            /* ===== CARD ===== */
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .card {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 12px;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                animation: fadeUp 0.22s ease;
+            }
+            .c-hdr {
+                padding: 20px 24px 16px;
+                border-bottom: 1px solid var(--bdr);
+            }
+            .act-badge {
+                display: inline-block;
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                padding: 3px 9px;
+                border-radius: 4px;
+                letter-spacing: 0.5px;
+                margin-bottom: 10px;
+            }
+            .act-laj {
+                background: var(--cyan-bg);
+                color: var(--cyan);
+            }
+            .act-juez {
+                background: var(--violet-bg);
+                color: var(--violet);
+            }
+            .act-ambos {
+                background: var(--slate-bg);
+                color: var(--slate);
+            }
+            .c-title {
+                font-size: 20px;
+                font-weight: 600;
+                color: var(--text);
+                line-height: 1.3;
+            }
+            .step-num {
+                font-size: 11px;
+                color: var(--muted);
+                margin-top: 8px;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+                font-weight: 500;
+            }
+
+            .c-body {
+                padding: 20px 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .b-i {
+                font-size: 15px;
+                color: var(--text);
+                line-height: 1.6;
+            }
+            .b-n {
+                font-size: 14px;
+                padding: 11px 14px;
+                background: var(--slate-bg);
+                border-left: 3px solid var(--slate);
+                border-radius: 0 6px 6px 0;
+                color: var(--text);
+                line-height: 1.5;
+            }
+            .b-d {
+                font-size: 14px;
+                padding: 11px 14px;
+                background: var(--amber-bg);
+                border-left: 3px solid var(--amber);
+                border-radius: 0 6px 6px 0;
+                color: var(--amber);
+                font-weight: 500;
+            }
+            .b-w {
+                font-size: 14px;
+                padding: 11px 14px;
+                background: var(--red-bg);
+                border-left: 3px solid var(--red);
+                border-radius: 0 6px 6px 0;
+                color: var(--red);
+                line-height: 1.5;
+            }
+            .b-l {
+                font-size: 12px;
+                padding: 9px 12px;
+                background: var(--violet-bg);
+                border-left: 3px solid var(--violet);
+                border-radius: 0 6px 6px 0;
+                color: var(--violet);
+                font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+                line-height: 1.5;
+            }
+            .b-cl {
+                padding: 14px 16px;
+                background: var(--cyan-bg);
+                border: 1px solid #b4e5dd;
+                border-radius: 8px;
+            }
+            .b-cl-t {
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--cyan);
+                letter-spacing: 0.5px;
+                margin-bottom: 10px;
+            }
+            .b-cl-li {
+                font-size: 14px;
+                padding: 4px 0;
+                color: var(--text);
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                line-height: 1.5;
+            }
+            .b-cl-li .b-cl-mark {
+                color: var(--cyan);
+                font-weight: 700;
+                flex-shrink: 0;
+                margin-top: 1px;
+            }
+
+            /* ===== DECISIONS ===== */
+            .dec-area {
+                padding: 0 24px 20px;
+            }
+            .dec-q {
+                font-size: 16px;
+                font-weight: 600;
+                padding: 14px 16px;
+                background: var(--slate-bg);
+                border-top: 3px solid var(--navy);
+                border-radius: 0 0 6px 6px;
+                margin-bottom: 12px;
+                color: var(--text);
+            }
+            .dec-opts {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+                font-family: inherit;
+                font-size: 15px;
+                background: var(--white);
+                border: 1.5px solid var(--bdr);
+                border-radius: 8px;
+                cursor: pointer;
+                text-align: left;
+                color: var(--text);
+                transition: all 0.15s;
+            }
+            .dec-btn:hover {
+                border-color: var(--navy-lt);
+                background: var(--slate-bg);
+            }
+            .dec-letter {
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                background: var(--navy-lt);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: 700;
+                flex-shrink: 0;
+            }
+            .dec-btn.ok:hover {
+                border-color: var(--green);
+                background: var(--green-bg);
+            }
+            .dec-btn.ok .dec-letter {
+                background: var(--green);
+            }
+            .dec-btn.bad:hover {
+                border-color: var(--red);
+                background: var(--red-bg);
+            }
+            .dec-btn.bad .dec-letter {
+                background: var(--red);
+            }
+            .dec-btn.warn:hover {
+                border-color: var(--amber);
+                background: var(--amber-bg);
+            }
+            .dec-btn.warn .dec-letter {
+                background: var(--amber);
+            }
+            .dec-btn.neutral:hover {
+                border-color: var(--slate);
+                background: var(--slate-bg);
+            }
+            .dec-btn.neutral .dec-letter {
+                background: var(--slate);
+            }
+
+            /* ===== CARD NAV ===== */
+            .c-nav {
+                padding: 14px 24px;
+                border-top: 1px solid var(--bdr);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: var(--slate-bg);
+                border-radius: 0 0 12px 12px;
+            }
+            .btn-back {
+                font-family: inherit;
+                font-size: 14px;
+                padding: 8px 14px;
+                background: transparent;
+                border: 1px solid var(--bdr);
+                border-radius: 6px;
+                color: var(--text);
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .btn-back:hover:not(:disabled) {
+                border-color: var(--navy-lt);
+                color: var(--navy-lt);
+                background: var(--white);
+            }
+            .btn-back:disabled {
+                opacity: 0.4;
+                cursor: not-allowed;
+            }
+            .btn-next,
+            .btn-blue {
+                font-family: inherit;
+                font-size: 14px;
+                padding: 8px 18px;
+                background: var(--navy-lt);
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-weight: 500;
+                transition: all 0.15s;
+            }
+            .btn-next:hover,
+            .btn-blue:hover {
+                background: var(--navy);
+            }
+
+            /* ===== END CARDS ===== */
+            .end-body {
+                padding: 28px 24px 8px;
+                text-align: center;
+            }
+            .end-icon {
+                font-size: 46px;
+                line-height: 1;
+                margin-bottom: 10px;
+            }
+            .end-title {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 6px;
+            }
+            .end-sub {
+                font-size: 13px;
+                color: var(--muted);
+            }
+            .end-success .end-title {
+                color: var(--green);
+            }
+            .end-error .end-title {
+                color: var(--red);
+            }
+            .end-warning .end-title {
+                color: var(--amber);
+            }
+            .end-neutral .end-title {
+                color: var(--navy-lt);
+            }
+            .card.end-success {
+                border-top: 4px solid var(--green);
+            }
+            .card.end-error {
+                border-top: 4px solid var(--red);
+            }
+            .card.end-warning {
+                border-top: 4px solid var(--amber);
+            }
+            .card.end-neutral {
+                border-top: 4px solid var(--navy-lt);
+            }
+            .end-actions {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                padding: 6px 24px 20px;
+            }
+
+            .summary-box {
+                margin: 8px 24px 16px;
+                padding: 14px 16px;
+                background: var(--slate-bg);
+                border-radius: 8px;
+                border: 1px solid var(--bdr);
+            }
+            .summary-box-title {
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--navy);
+                letter-spacing: 0.4px;
+                margin-bottom: 10px;
+            }
+            .summary-item {
+                font-size: 13px;
+                padding: 3px 0;
+                color: var(--text);
+                display: flex;
+                gap: 8px;
+                align-items: flex-start;
+                line-height: 1.4;
+            }
+            .summary-num {
+                font-weight: 700;
+                color: var(--navy-lt);
+                min-width: 20px;
+            }
+            .summary-choice {
+                font-size: 12px;
+                color: var(--muted);
+                margin: 2px 0 6px 28px;
+                font-style: italic;
+            }
+
+            /* ===== MAP OVERLAY ===== */
+            #mapa-overlay {
+                flex: 1;
+                overflow-y: auto;
+                background: var(--slate-bg);
+                padding: 20px;
+            }
+            .mapa-hdr-bar {
+                background: white;
+                padding: 14px 18px;
+                border-radius: 10px;
+                border: 1px solid var(--bdr);
+                margin-bottom: 16px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .mapa-hdr-title {
+                font-size: 17px;
+                font-weight: 600;
+                color: var(--navy);
+            }
+            .mapa-hdr-sub {
+                font-size: 12px;
+                color: var(--muted);
+                margin-top: 2px;
+            }
+            .mapa-legend {
+                display: flex;
+                gap: 14px;
+                font-size: 11px;
+                color: var(--muted);
+                flex-wrap: wrap;
+            }
+            .mapa-legend span {
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+            }
+            .mapa-legend .dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 2px;
+                display: inline-block;
+            }
+            .mapa-cols {
+                display: flex;
+                gap: 14px;
+                min-width: fit-content;
+                padding-bottom: 10px;
+                overflow-x: auto;
+            }
+            .mapa-col {
+                min-width: 230px;
+                flex: 1;
+                max-width: 280px;
+            }
+            .mapa-col-hdr {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: var(--navy);
+                padding: 10px 12px;
+                background: white;
+                border: 1px solid var(--bdr);
+                border-radius: 6px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            .mapa-nodes {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+            .mapa-node {
+                background: white;
+                border: 1px solid var(--bdr);
+                border-left: 3px solid var(--bdr);
+                border-radius: 6px;
+                padding: 10px 12px;
+                font-size: 12px;
+                cursor: pointer;
+                transition: all 0.15s;
+                font-family: inherit;
+                text-align: left;
+                color: var(--text);
+                width: 100%;
+            }
+            .mapa-node:hover {
+                border-color: var(--navy-lt);
+                transform: translateX(2px);
+            }
+            .mapa-node-title {
+                font-weight: 500;
+                color: var(--text);
+                margin-bottom: 4px;
+                line-height: 1.3;
+                font-size: 13px;
+            }
+            .mapa-node-actor {
+                font-size: 10px;
+                color: var(--muted);
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+            }
+            .mapa-node.visited {
+                background: var(--green-bg);
+                border-left-color: var(--green);
+            }
+            .mapa-node.current {
+                background: var(--cyan-bg);
+                border-left-color: var(--navy-lt);
+                font-weight: 600;
+            }
+            .mapa-node.end-success {
+                border-left-color: var(--green);
+            }
+            .mapa-node.end-error {
+                border-left-color: var(--red);
+            }
+            .mapa-node.end-warning {
+                border-left-color: var(--amber);
+            }
+            .mapa-node.end-neutral {
+                border-left-color: var(--navy-lt);
+            }
+            .mapa-edges {
+                margin-top: 6px;
+                padding-top: 4px;
+                border-top: 1px dashed var(--bdr);
+            }
+            .mapa-edge {
+                font-size: 10.5px;
+                color: var(--muted);
+                padding: 2px 0 2px 8px;
+                border-left: 1px solid var(--bdr);
+                margin-left: 2px;
+                line-height: 1.35;
+            }
+            .mapa-edge strong {
+                color: var(--navy);
+                font-weight: 600;
+            }
+
+            /* ===== SIDEBAR BACKDROP (móvil) ===== */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                z-index: 140;
+                background: rgba(0, 0, 0, 0.5);
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+
+            /* ===== RESPONSIVE (modificado para sidebar toggle) ===== */
+            @media (max-width: 700px) {
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    width: 260px;
+                    transition: transform var(--transition-norm);
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                #content {
+                    padding: 12px;
+                }
+                .dec-opts {
+                    flex-direction: column;
+                }
+                .h-sub {
+                    display: none;
+                }
+                .btn {
+                    padding: 6px 10px;
+                    font-size: 13px;
+                }
+                .h-title {
+                    font-size: 13px;
+                }
+                .c-title {
+                    font-size: 18px;
+                }
+            }
+
+            /* ===== PRINT ===== */
+            @media print {
+                body {
+                    background: #fff;
+                    color: #111;
+                }
+                #hdr,
+                #pbar,
+                #breadcrumb,
+                #sidebar,
+                .c-nav,
+                .dec-opts,
+                .end-actions,
+                .h-right,
+                .sidebar-backdrop {
+                    display: none;
+                }
+                #layout,
+                #content {
+                    display: block;
+                    overflow: visible;
+                    height: auto;
+                }
+                .card {
+                    break-inside: avoid;
+                    box-shadow: none;
+                    border: 1px solid #ccc;
+                    margin-bottom: 14px;
+                }
+                #mapa-overlay {
+                    padding: 0;
+                    background: #fff;
+                }
+                .mapa-cols {
+                    flex-wrap: wrap;
+                }
+            }
+
+            /* === FIX: header classes normalization === */
+            #hdr .h-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+            #hdr .h-seal {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.85);
+            }
+            #hdr .h-title {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--white);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #hdr .h-sub {
+                font-size: 11px;
+                color: var(--white);
+                opacity: 0.7;
+            }
+            #hdr .h-right {
+                display: flex;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <header id="hdr" style="height: 70px">
+                <div class="h-left">
+                    <!-- NUEVO BOTÓN TOGGLE SIDEBAR -->
+                    <button
+                        class="btn btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                    >
+                        &#9776;
+                    </button>
+                    <div class="h-seal">⚖</div>
+                    <div>
+                        <div class="h-sub">
+                            LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN
+                            VOLUNTARIA · TÍTULO VI: DE LOS EXPEDIENTES DE
+                            JURISDICCIÓN VOLUNTARIA RELATIVOS A LOS DERECHOS
+                            REALES · CAPÍTULO I
+                        </div>
+                        <div class="h-title">
+                            De la autorización judicial al usufructuario para
+                            reclamar créditos vencidos que formen parte del
+                            usufructo
+                        </div>
+                        <div class="h-sub" style="padding-top: 5px">
+                            Artículos 100 a 103 LJV
+                        </div>
+                    </div>
+                </div>
+                <div class="h-right">
+                    <div
+                        class="zoom-cluster"
+                        role="group"
+                        aria-label="Zoom del contenido"
+                    >
+                        <button
+                            class="btn-zoom"
+                            data-action="zoom-out"
+                            aria-label="Reducir zoom"
+                        >
+                            −
+                        </button>
+                        <span class="zoom-label" id="zoomLabel">100%</span>
+                        <button
+                            class="btn-zoom"
+                            data-action="zoom-in"
+                            aria-label="Aumentar zoom"
+                        >
+                            +
+                        </button>
+                    </div>
+                    <button class="btn btn-ghost" data-action="toggle-mapa">
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn btn-ghost" data-action="descargar">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn btn-ghost" data-action="reiniciar">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </header>
+
+            <nav
+                id="pbar"
+                role="navigation"
+                aria-label="Progreso por fases del procedimiento"
+            ></nav>
+            <nav
+                id="breadcrumb"
+                role="navigation"
+                aria-label="Ruta de navegación"
+            ></nav>
+
+            <div id="layout">
+                <aside id="sidebar">
+                    <div id="sb-tabs">
+                        <button
+                            class="sb-tab active"
+                            data-action="sb-tab"
+                            data-tab="map"
+                        >
+                            Mapa
+                        </button>
+                        <button
+                            class="sb-tab"
+                            data-action="sb-tab"
+                            data-tab="journey"
+                        >
+                            Recorrido
+                        </button>
+                    </div>
+                    <div id="sb-map"></div>
+                    <div id="sb-journey" style="display: none"></div>
+                </aside>
+                <main id="content"></main>
+            </div>
+
+            <div id="mapa-overlay" style="display: none"></div>
+
+            <!-- NUEVO BACKDROP PARA MÓVIL -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        </div>
+
+        <script>
+            "use strict";
+
+            /* =========================================================
+   FASES DEL PROCEDIMIENTO
+   ========================================================= */
+            const PHASES = [
+                "Presupuestos previos",
+                "Competencia y postulación",
+                "Solicitud",
+                "Admisión y comparecencia",
+                "Resolución",
+            ];
+
+            /* =========================================================
+   DATOS DEL PROCEDIMIENTO
+   ========================================================= */
+            const STEPS = {
+                /* ===== FASE 0: PRESUPUESTOS PREVIOS ===== */
+                inicio: {
+                    ph: 0,
+                    t: "Inicio — Naturaleza y objeto del expediente",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Este expediente de jurisdicción voluntaria tiene por objeto obtener la autorización judicial del usufructuario para reclamar y cobrar por sí los créditos vencidos que formen parte del usufructo y, en su caso, para poner a interés el capital obtenido con dicha reclamación.",
+                        ],
+                        [
+                            "n",
+                            "Base sustantiva en el artículo 507 del Código Civil. Cauce procesal en los artículos 100 a 103 de la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria (LJV). La Ley de Enjuiciamiento Civil se aplica supletoriamente por remisión del artículo 8 LJV.",
+                        ],
+                        [
+                            "l",
+                            "Artículos 100 a 103 LJV · Artículo 507 CC · Artículo 8 LJV · Artículo 85 LOPJ",
+                        ],
+                    ],
+                    nx: "verif_usufructo",
+                },
+
+                verif_usufructo: {
+                    ph: 0,
+                    t: "Verificación del título constitutivo del usufructo",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Ha de constatarse la existencia de un título válido constitutivo del usufructo (testamento, escritura pública, resolución judicial u otro título admitido en Derecho) que legitime al solicitante como usufructuario.",
+                        ],
+                        [
+                            "n",
+                            "La legitimación activa corresponde exclusivamente al usufructuario (artículos 100 y 102 LJV; artículo 507 CC). Debe acompañarse con la solicitud la documentación acreditativa del derecho.",
+                        ],
+                        ["l", "Artículo 467 CC · Artículo 102 LJV"],
+                    ],
+                    q: "¿Existe título válido constitutivo del usufructo?",
+                    opts: [
+                        {
+                            t: "Sí, se dispone de título válido",
+                            l: "A",
+                            n: "verif_credito",
+                        },
+                        {
+                            t: "No se acredita el título de usufructo",
+                            l: "B",
+                            n: "fin_sin_usufructo",
+                        },
+                    ],
+                },
+
+                verif_credito: {
+                    ph: 0,
+                    t: "Verificación de la existencia de crédito vencido",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Es presupuesto común a cualquier variante del expediente que exista un crédito vencido que forme parte del usufructo, o bien un capital ya obtenido del cobro de dicho crédito que se pretenda poner a interés.",
+                        ],
+                        [
+                            "n",
+                            "El crédito debe formar parte del usufructo y haber vencido. Sin vencimiento no procede la reclamación directa por el usufructuario.",
+                        ],
+                    ],
+                    q: "¿Existe un crédito vencido que forme parte del usufructo?",
+                    opts: [
+                        {
+                            t: "Sí, existe un crédito vencido",
+                            l: "A",
+                            n: "verif_fianza",
+                        },
+                        {
+                            t: "No existe crédito vencido (no vencido o ajeno al usufructo)",
+                            l: "B",
+                            n: "fin_sin_credito",
+                        },
+                    ],
+                },
+
+                verif_fianza: {
+                    ph: 0,
+                    t: "Situación de la fianza del usufructuario",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Antes de entrar en el goce de los bienes, el usufructuario está obligado a prestar fianza salvo dispensa (artículo 491 CC). El expediente de los artículos 100 a 103 LJV solo procede cuando la fianza falta, es insuficiente o el usufructuario está dispensado.",
+                        ],
+                        [
+                            "n",
+                            "Dispensas legales del artículo 492 CC: vendedor o donante que se hubiere reservado el usufructo; padres usufructuarios de los bienes de los hijos; cónyuge sobreviviente respecto de la cuota legal usufructuaria. Dispensa convencional del artículo 493 CC, cuando de ello no resultare perjuicio a nadie.",
+                        ],
+                        [
+                            "l",
+                            "Artículos 491, 492, 493 y 494 CC · Artículo 100 LJV",
+                        ],
+                    ],
+                    q: "¿Cuál es la situación de la fianza?",
+                    opts: [
+                        {
+                            t: "Usufructuario dispensado de prestar fianza",
+                            l: "A",
+                            n: "verif_autorizacion",
+                        },
+                        {
+                            t: "No se ha podido constituir la fianza",
+                            l: "B",
+                            n: "verif_autorizacion",
+                        },
+                        {
+                            t: "Fianza constituida pero insuficiente",
+                            l: "C",
+                            n: "verif_autorizacion",
+                        },
+                        {
+                            t: "Fianza constituida y suficiente",
+                            l: "D",
+                            n: "fin_fianza_suficiente",
+                        },
+                    ],
+                },
+
+                verif_autorizacion: {
+                    ph: 0,
+                    t: "Falta de autorización o acuerdo del propietario",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "El expediente solo procede cuando el usufructuario no cuenta con la autorización del propietario para cobrar el crédito o, en su caso, no cuenta con su acuerdo para poner a interés el capital obtenido.",
+                        ],
+                        [
+                            "n",
+                            "Debe acreditarse la falta de autorización o la existencia de desacuerdo: requerimiento previo al propietario, negativa expresa, silencio, o manifestación razonada de la falta de acuerdo.",
+                        ],
+                    ],
+                    q: "¿Cuenta el usufructuario con la autorización o acuerdo del propietario?",
+                    opts: [
+                        {
+                            t: "No cuenta con autorización ni acuerdo del propietario",
+                            l: "A",
+                            n: "determina_objeto",
+                        },
+                        {
+                            t: "Sí cuenta con la autorización del propietario",
+                            l: "B",
+                            n: "fin_con_autorizacion",
+                        },
+                    ],
+                },
+
+                determina_objeto: {
+                    ph: 0,
+                    t: "Determinación del objeto de la petición",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Conforme al artículo 100 LJV, el expediente admite dos objetos: autorización para reclamar y cobrar créditos vencidos, y autorización para poner a interés el capital obtenido con dicha reclamación. Ambas pueden solicitarse conjuntamente.",
+                        ],
+                        [
+                            "n",
+                            "La elección del objeto determina el contenido específico de la resolución final (artículo 103.2 LJV).",
+                        ],
+                    ],
+                    q: "¿Qué pretende solicitar el usufructuario?",
+                    opts: [
+                        {
+                            t: "Autorización para cobrar el crédito vencido",
+                            l: "A",
+                            n: "competencia",
+                        },
+                        {
+                            t: "Autorización para poner a interés capital ya cobrado",
+                            l: "B",
+                            n: "verif_garantias",
+                        },
+                        {
+                            t: "Ambas autorizaciones conjuntamente",
+                            l: "C",
+                            n: "verif_garantias",
+                        },
+                    ],
+                },
+
+                verif_garantias: {
+                    ph: 0,
+                    t: "Ofrecimiento de garantías para la puesta a interés del capital",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Cuando la solicitud incluya la autorización para poner a interés el capital obtenido tras cobrar el crédito vencido, el usufructuario deberá ofrecer garantías suficientes para conservar su integridad.",
+                        ],
+                        [
+                            "w",
+                            "Sin ofrecimiento de garantías suficientes, la solicitud de puesta a interés queda incompleta y puede ser objeto de requerimiento de subsanación o, en su caso, de denegación en la resolución final.",
+                        ],
+                        ["l", "Artículo 102 LJV · Artículo 507 in fine CC"],
+                    ],
+                    nx: "competencia",
+                },
+
+                /* ===== FASE 1: COMPETENCIA Y POSTULACIÓN ===== */
+                competencia: {
+                    ph: 1,
+                    t: "Determinación de la competencia territorial",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Será competente para conocer del expediente el Juzgado de Primera Instancia del último domicilio o, en su defecto, de la última residencia del solicitante.",
+                        ],
+                        [
+                            "n",
+                            "La competencia objetiva corresponde con carácter general al Juzgado de Primera Instancia (artículo 2 LJV y artículo 85 LOPJ). La tramitación se ajustará a las normas comunes de la presente Ley (artículos 13 a 22 LJV).",
+                        ],
+                        [
+                            "l",
+                            "Artículo 101.1 LJV · Artículo 2 LJV · Artículo 85 LOPJ · Artículo 13 LJV",
+                        ],
+                    ],
+                    nx: "postulacion",
+                },
+
+                postulacion: {
+                    ph: 1,
+                    t: "Postulación procesal: Abogado y Procurador",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Para la actuación en estos expedientes no será preceptiva la intervención de Abogado ni de Procurador.",
+                        ],
+                        [
+                            "w",
+                            "No obstante, conforme al régimen general y al artículo 20 LJV (recursos, por remisión a la LEC ex artículo 8 LJV), la intervención de Abogado y Procurador podrá devenir preceptiva cuando se formule oposición o cuando se interpongan recursos de revisión o apelación.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 101.2 LJV · Artículo 3 LJV · Artículo 20 LJV",
+                        ],
+                    ],
+                    nx: "preparar_solicitud",
+                },
+
+                /* ===== FASE 2: SOLICITUD ===== */
+                preparar_solicitud: {
+                    ph: 2,
+                    t: "Preparación de la solicitud inicial",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "El expediente se iniciará mediante solicitud del usufructuario. Conforme al artículo 14 LJV, la solicitud consignará los datos y circunstancias de identificación del solicitante, con indicación de un domicilio a efectos de notificaciones, y expondrá con claridad y precisión lo que se pida, así como una exposición de los hechos y fundamentos jurídicos en que se funde la pretensión.",
+                        ],
+                        [
+                            "cl",
+                            "Documentos y medios de prueba a adjuntar (art. 102 LJV)",
+                            [
+                                "Título constitutivo del usufructo (testamento, escritura pública, resolución judicial u otro título).",
+                                "Documentación acreditativa de la existencia del crédito vencido que se pretende reclamar o, en su caso, del importe cobrado que se pretende poner a interés.",
+                                "Documentación acreditativa de la situación de la fianza (dispensa legal o convencional, imposibilidad de constitución o insuficiencia).",
+                                "Documentación acreditativa de la falta de autorización del propietario (requerimiento previo, negativa, o, en su defecto, manifestación razonada).",
+                                "Cuando se solicite poner a interés el capital: ofrecimiento expreso de garantías suficientes para conservar su integridad.",
+                            ],
+                        ],
+                        ["l", "Artículos 102, 14 y 17 LJV · Artículo 507 CC"],
+                    ],
+                    nx: "presentar_solicitud",
+                },
+
+                presentar_solicitud: {
+                    ph: 2,
+                    t: "Presentación de la solicitud en el Juzgado competente",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "La solicitud se presenta ante el Juzgado de Primera Instancia territorialmente competente (último domicilio o, en su defecto, última residencia del solicitante).",
+                        ],
+                        [
+                            "n",
+                            "Los gastos ocasionados en el expediente serán a cargo del solicitante, salvo que la Ley disponga otra cosa (artículo 7 LJV).",
+                        ],
+                        ["l", "Artículo 14 LJV · Artículo 7 LJV"],
+                    ],
+                    nx: "admision",
+                },
+
+                /* ===== FASE 3: ADMISIÓN Y COMPARECENCIA ===== */
+                admision: {
+                    ph: 3,
+                    t: "Admisión a trámite por el Letrado de la Administración de Justicia",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El Letrado de la Administración de Justicia (anteriormente Secretario judicial) examina la solicitud y resuelve sobre su admisión a trámite. Conforme al artículo 16 LJV, apreciará de oficio la falta de competencia y otros defectos u omisiones.",
+                        ],
+                        [
+                            "n",
+                            "Si concurren defectos subsanables se concederá plazo al promotor para corregirlos (artículo 17 LJV); de lo contrario, procederá la inadmisión.",
+                        ],
+                        ["l", "Artículo 103.1 LJV · Artículos 16, 17 y 18 LJV"],
+                    ],
+                    q: "¿El Letrado de la Administración de Justicia admite a trámite la solicitud?",
+                    opts: [
+                        {
+                            t: "Sí, admite a trámite la solicitud",
+                            l: "A",
+                            n: "convocatoria",
+                        },
+                        {
+                            t: "Observa defectos subsanables y concede plazo",
+                            l: "B",
+                            n: "subsanacion",
+                        },
+                        {
+                            t: "Defectos insubsanables o falta de competencia",
+                            l: "C",
+                            n: "fin_inadmision",
+                        },
+                    ],
+                },
+
+                subsanacion: {
+                    ph: 3,
+                    t: "Subsanación de defectos de la solicitud",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Se otorga plazo al promotor para que subsane los defectos observados en la solicitud. Si no se subsanan en el plazo concedido, procederá la inadmisión del expediente.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 17 LJV · Artículo 231 LEC (por remisión del artículo 8 LJV)",
+                        ],
+                    ],
+                    q: "¿Se subsanan los defectos en el plazo otorgado?",
+                    opts: [
+                        {
+                            t: "Sí, se subsanan correctamente y en plazo",
+                            l: "A",
+                            n: "convocatoria",
+                        },
+                        {
+                            t: "No se subsanan o se subsanan defectuosamente",
+                            l: "B",
+                            n: "fin_inadmision",
+                        },
+                    ],
+                },
+
+                convocatoria: {
+                    ph: 3,
+                    t: "Convocatoria a la comparecencia",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Admitida a trámite por el Letrado de la Administración de Justicia la solicitud, convocará a la comparecencia a quienes deben ser oídos.",
+                        ],
+                        [
+                            "cl",
+                            "Citados a la comparecencia (art. 103.1 LJV)",
+                            [
+                                "El promotor (usufructuario solicitante).",
+                                "El propietario (nudo propietario).",
+                                "Aquellos que pudieran estar interesados en el cobro del crédito.",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Artículo 103.1 LJV · Artículo 17 LJV (citación de los interesados)",
+                        ],
+                    ],
+                    nx: "comparecencia",
+                },
+
+                comparecencia: {
+                    ph: 3,
+                    t: "Celebración de la comparecencia",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "La comparecencia se celebra ante el Juez, que preside el acto y oye a los citados.",
+                        ],
+                        [
+                            "n",
+                            "La incomparecencia injustificada del promotor debidamente citado puede determinar el archivo del expediente o su terminación por desistimiento tácito, conforme a las reglas comunes de la LJV.",
+                        ],
+                        ["l", "Artículo 18 LJV · Artículo 103.1 LJV"],
+                    ],
+                    q: "¿Comparecen los citados?",
+                    opts: [
+                        {
+                            t: "Comparece al menos el promotor",
+                            l: "A",
+                            n: "audiencia",
+                        },
+                        {
+                            t: "No comparece el promotor debidamente citado",
+                            l: "B",
+                            n: "fin_archivo",
+                        },
+                    ],
+                },
+
+                audiencia: {
+                    ph: 3,
+                    t: "Audiencia de los comparecientes por su orden",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Conforme al artículo 103.1 LJV, los comparecientes son oídos en el siguiente orden de prelación legal:",
+                        ],
+                        [
+                            "cl",
+                            "Orden legal de audiencia",
+                            [
+                                "1.º — El promotor (usufructuario solicitante).",
+                                "2.º — El propietario (nudo propietario).",
+                                "3.º — Aquellos que pudieran estar interesados en el cobro del crédito.",
+                            ],
+                        ],
+                        ["l", "Artículo 103.1 LJV · Artículo 18 LJV"],
+                    ],
+                    nx: "oposicion",
+                },
+
+                oposicion: {
+                    ph: 3,
+                    t: "Examen de la eventual oposición",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Cualquiera de los citados —típicamente el propietario o los terceros interesados— puede formular oposición a la petición del usufructuario.",
+                        ],
+                        [
+                            "n",
+                            "Salvo que la Ley expresamente lo prevea, la formulación de oposición por alguno de los interesados no hará contencioso el expediente ni impedirá que continúe su tramitación hasta que sea resuelto.",
+                        ],
+                    ],
+                    q: "¿Se ha formulado oposición por alguno de los citados?",
+                    opts: [
+                        {
+                            t: "Sí, se formula oposición (no hace contencioso el expediente)",
+                            l: "A",
+                            n: "practica_pruebas",
+                        },
+                        {
+                            t: "No se formula oposición",
+                            l: "B",
+                            n: "practica_pruebas",
+                        },
+                    ],
+                },
+
+                practica_pruebas: {
+                    ph: 3,
+                    t: "Práctica de pruebas propuestas y acordadas",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Tras la audiencia de los comparecientes, se practicarán aquellas pruebas que hubieren sido propuestas y acordadas por el Juez.",
+                        ],
+                        [
+                            "n",
+                            "La prueba se rige por el artículo 5 LJV y, supletoriamente, por la Ley de Enjuiciamiento Civil (artículo 8 LJV).",
+                        ],
+                        [
+                            "l",
+                            "Artículo 103.1 LJV · Artículo 5 LJV · Artículo 8 LJV",
+                        ],
+                    ],
+                    nx: "resolucion_juez",
+                },
+
+                /* ===== FASE 4: RESOLUCIÓN ===== */
+                resolucion_juez: {
+                    ph: 4,
+                    t: "Resolución del Juez sobre la autorización solicitada",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez, teniendo en cuenta la justificación ofrecida y valorando la conveniencia del cobro del crédito que forma parte del usufructo o de la inversión del capital obtenido, resolverá concediendo o denegando la autorización solicitada.",
+                        ],
+                        [
+                            "n",
+                            "El sentido de la resolución determina el contenido obligatorio específico que debe incluir (artículo 103.2 LJV).",
+                        ],
+                        ["l", "Artículo 103.2 LJV · Artículo 19 LJV"],
+                    ],
+                    q: "¿Qué resuelve el Juez?",
+                    opts: [
+                        {
+                            t: "Concede autorización para cobrar el crédito vencido",
+                            l: "A",
+                            n: "fin_concedida_cobro",
+                        },
+                        {
+                            t: "Concede autorización para poner a interés el capital",
+                            l: "B",
+                            n: "fin_concedida_interes",
+                        },
+                        {
+                            t: "Concede ambas autorizaciones conjuntamente",
+                            l: "C",
+                            n: "fin_concedida_ambos",
+                        },
+                        {
+                            t: "Deniega la autorización solicitada",
+                            l: "D",
+                            n: "fin_denegada",
+                        },
+                    ],
+                },
+
+                /* =========================================================
+     NODOS FINALES
+     ========================================================= */
+
+                fin_sin_usufructo: {
+                    ph: 0,
+                    t: "No procede el expediente: falta título de usufructo",
+                    ac: "ambos",
+                    end: "error",
+                    c: [
+                        [
+                            "w",
+                            "Sin título válido constitutivo del usufructo el solicitante carece de legitimación activa. El expediente de los artículos 100 a 103 LJV solo corresponde al usufructuario que acredite su derecho.",
+                        ],
+                        [
+                            "n",
+                            "Procederá, en su caso, acreditar previamente la existencia del usufructo por la vía correspondiente antes de instar este expediente.",
+                        ],
+                        ["l", "Artículo 467 CC · Artículo 102 LJV"],
+                    ],
+                },
+
+                fin_sin_credito: {
+                    ph: 0,
+                    t: "No procede el expediente: inexistencia de crédito vencido",
+                    ac: "ambos",
+                    end: "error",
+                    c: [
+                        [
+                            "w",
+                            "Sin un crédito vencido que forme parte del usufructo no concurre el presupuesto común del expediente.",
+                        ],
+                        [
+                            "n",
+                            "Podrá reconsiderarse la solicitud cuando el crédito haya vencido efectivamente o cuando se identifique el crédito concreto que forma parte del usufructo.",
+                        ],
+                    ],
+                },
+
+                fin_fianza_suficiente: {
+                    ph: 0,
+                    t: "No es necesaria autorización judicial",
+                    ac: "ambos",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "Conforme al artículo 507 CC, el usufructuario con fianza suficiente podrá reclamar por sí los créditos vencidos sin necesidad de autorización del propietario ni del Juez, y podrá dar al capital que realice el destino que estime conveniente.",
+                        ],
+                        [
+                            "n",
+                            "El expediente de los artículos 100 a 103 LJV no procede en este supuesto: su ámbito se ciñe a los casos de dispensa, imposibilidad o insuficiencia de la fianza unidos a la falta de autorización del propietario.",
+                        ],
+                        ["l", "Artículo 507 CC · Artículo 100 LJV"],
+                    ],
+                },
+
+                fin_con_autorizacion: {
+                    ph: 0,
+                    t: "No procede expediente judicial: existe autorización del propietario",
+                    ac: "ambos",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "Contando el usufructuario con la autorización del propietario para cobrar el crédito (o, en su caso, con su acuerdo para la puesta a interés del capital), no procede instar el expediente judicial: la intervención judicial es subsidiaria respecto de la autorización extrajudicial del propietario.",
+                        ],
+                        [
+                            "n",
+                            "La reclamación podrá realizarse directamente con la autorización obtenida, sin acudir al expediente de jurisdicción voluntaria.",
+                        ],
+                        ["l", "Artículo 100 LJV · Artículo 507 CC"],
+                    ],
+                },
+
+                fin_inadmision: {
+                    ph: 3,
+                    t: "Inadmisión a trámite de la solicitud",
+                    ac: "laj",
+                    end: "error",
+                    c: [
+                        [
+                            "w",
+                            "La solicitud no ha sido admitida a trámite por concurrir defectos insubsanables, falta de competencia u omisiones apreciadas de oficio y no subsanadas en plazo.",
+                        ],
+                        [
+                            "n",
+                            "Contra la resolución de inadmisión podrán interponerse los recursos previstos en la Ley de Enjuiciamiento Civil, por remisión del artículo 20 LJV.",
+                        ],
+                        ["l", "Artículos 16, 17 y 20 LJV · Artículo 8 LJV"],
+                    ],
+                },
+
+                fin_archivo: {
+                    ph: 3,
+                    t: "Archivo del expediente por incomparecencia del promotor",
+                    ac: "laj",
+                    end: "error",
+                    c: [
+                        [
+                            "w",
+                            "La incomparecencia injustificada del promotor debidamente citado puede determinar el archivo del expediente o su terminación por desistimiento tácito, conforme a las reglas comunes de la LJV y, en su caso, a la LEC supletoriamente.",
+                        ],
+                        [
+                            "n",
+                            "Podrá promoverse de nuevo el expediente si subsisten los presupuestos y el usufructuario acredita las causas de la anterior incomparecencia.",
+                        ],
+                        ["l", "Artículos 18 y 21 LJV · Artículo 8 LJV"],
+                    ],
+                },
+
+                fin_concedida_cobro: {
+                    ph: 4,
+                    t: "Autorización concedida para cobrar el crédito vencido",
+                    ac: "juez",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El Juez concede al usufructuario autorización para reclamar y cobrar por sí el crédito vencido que forma parte del usufructo.",
+                        ],
+                        [
+                            "n",
+                            "La resolución establece la obligación del usufructuario de informar periódicamente al Tribunal, dentro de los plazos otorgados, sobre las gestiones realizadas, así como del resultado final.",
+                        ],
+                        [
+                            "w",
+                            "Contra la resolución cabe recurso conforme al artículo 20 LJV, con remisión al régimen de la Ley de Enjuiciamiento Civil. El cumplimiento y ejecución se rigen por el artículo 22 LJV.",
+                        ],
+                        ["l", "Artículo 103.2 LJV · Artículos 20 y 22 LJV"],
+                    ],
+                },
+
+                fin_concedida_interes: {
+                    ph: 4,
+                    t: "Autorización concedida para poner a interés el capital",
+                    ac: "juez",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El Juez concede al usufructuario autorización para poner a interés el capital obtenido por el cobro del crédito vencido.",
+                        ],
+                        [
+                            "n",
+                            "La resolución deberá contener las garantías a establecer por el usufructuario para conservar la integridad del capital.",
+                        ],
+                        [
+                            "w",
+                            "Contra la resolución cabe recurso conforme al artículo 20 LJV, con remisión al régimen de la Ley de Enjuiciamiento Civil. El cumplimiento y ejecución se rigen por el artículo 22 LJV.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 103.2 LJV · Artículo 507 CC · Artículos 20 y 22 LJV",
+                        ],
+                    ],
+                },
+
+                fin_concedida_ambos: {
+                    ph: 4,
+                    t: "Autorización concedida para cobro y puesta a interés",
+                    ac: "juez",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El Juez concede conjuntamente las dos autorizaciones solicitadas: cobro del crédito vencido y puesta a interés del capital obtenido.",
+                        ],
+                        [
+                            "cl",
+                            "Contenido obligatorio de la resolución (art. 103.2 LJV)",
+                            [
+                                "Obligación del usufructuario de informar periódicamente al Tribunal sobre las gestiones realizadas y del resultado final, dentro de los plazos otorgados.",
+                                "Fijación de las garantías que debe establecer el usufructuario para conservar la integridad del capital obtenido.",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "Contra la resolución cabe recurso conforme al artículo 20 LJV, con remisión al régimen de la Ley de Enjuiciamiento Civil. El cumplimiento y ejecución se rigen por el artículo 22 LJV.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 103.2 LJV · Artículo 507 CC · Artículos 20 y 22 LJV",
+                        ],
+                    ],
+                },
+
+                fin_denegada: {
+                    ph: 4,
+                    t: "Denegación de la autorización solicitada",
+                    ac: "juez",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "El Juez, valorando la justificación ofrecida y la conveniencia del cobro del crédito o de la inversión del capital, deniega la autorización solicitada.",
+                        ],
+                        [
+                            "n",
+                            "La denegación no agota la vía: contra la resolución cabe recurso conforme al artículo 20 LJV, con remisión al régimen general de la Ley de Enjuiciamiento Civil.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 103.2 LJV · Artículo 20 LJV · Artículo 8 LJV",
+                        ],
+                    ],
+                },
+            };
+
+            /* =========================================================
+   ESTADO GLOBAL
+   ========================================================= */
+            let cur = "inicio";
+            let hist = [];
+            let activeSbTab = "map";
+            let mapaOn = false;
+            const phaseCollapsed = {};
+            let zoomLevel = 100;
+            const SB_FOOT =
+                '<div class="sb-foot">' +
+                '<div class="sb-foot-title">Referencias normativas</div>' +
+                '<div class="sb-foot-ref">Ley 15/2015 LJV · arts. 100-103</div>' +
+                '<div class="sb-foot-ref">Código Civil · art. 507</div>' +
+                '<div class="sb-foot-ref">Normas comunes · arts. 13-22 LJV</div>' +
+                '<div class="sb-foot-ref">Supletoriedad · art. 8 LJV (LEC)</div>' +
+                '<div class="sb-foot-ref">Competencia · art. 85 LOPJ</div>' +
+                '<div class="sb-foot-ref">Fianza del usufructo · arts. 491-495 CC</div>' +
+                "</div>";
+
+            /* ----- Variables para toggle sidebar ----- */
+            let sidebarOpen = false;
+            let btnToggleSidebar = null;
+            let sidebarBackdrop = null;
+
+            /* =========================================================
+   UTILIDADES
+   ========================================================= */
+            function escQ(s) {
+                return String(s)
+                    .replace(/&/g, "&amp;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;");
+            }
+
+            function escHtml(s) {
+                return String(s)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+            }
+
+            function truncateTitle(t, n) {
+                if (!t) return "";
+                const s = String(t);
+                if (s.length <= n) return s;
+                return s.substring(0, n - 1).trim() + "…";
+            }
+
+            function clampNum(v, min, max) {
+                return Math.min(max, Math.max(min, v));
+            }
+            function setZoom(pct) {
+                zoomLevel = clampNum(Math.round(pct), 80, 140);
+                const content = document.getElementById("content");
+                if (content) content.style.zoom = String(zoomLevel / 100);
+                const lbl = document.getElementById("zoomLabel");
+                if (lbl) lbl.textContent = zoomLevel + "%";
+            }
+            function zoomIn() {
+                setZoom(zoomLevel + 10);
+            }
+            function zoomOut() {
+                setZoom(zoomLevel - 10);
+            }
+
+            function actorLabel(ac) {
+                if (ac === "laj") return "Letrado Admón. Justicia";
+                if (ac === "juez") return "Juez";
+                if (ac === "ambos") return "Actor según trámite";
+                return "";
+            }
+
+            function inferVariant(destStepId) {
+                const dest = STEPS[destStepId];
+                if (!dest) return "neutral";
+                if (dest.end === "success") return "ok";
+                if (dest.end === "error") return "bad";
+                if (dest.end === "warning") return "warn";
+                return "neutral";
+            }
+
+            /* =========================================================
+   TOGGLE SIDEBAR (nuevo)
+   ========================================================= */
+            function toggleSidebar() {
+                const isMobile = window.innerWidth <= 700;
+                const sidebar = document.getElementById("sidebar");
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    if (sidebar) {
+                        if (sidebarOpen) {
+                            sidebar.classList.add("open");
+                        } else {
+                            sidebar.classList.remove("open");
+                        }
+                    }
+                    if (sidebarBackdrop) {
+                        if (sidebarOpen) {
+                            sidebarBackdrop.classList.add("show");
+                        } else {
+                            sidebarBackdrop.classList.remove("show");
+                        }
+                    }
+                    if (btnToggleSidebar) {
+                        btnToggleSidebar.setAttribute(
+                            "aria-expanded",
+                            sidebarOpen,
+                        );
+                    }
+                } else {
+                    if (sidebar) {
+                        sidebar.classList.toggle("collapsed");
+                    }
+                }
+            }
+
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 700 && sidebarOpen) {
+                    sidebarOpen = false;
+                    const sidebar = document.getElementById("sidebar");
+                    if (sidebar) sidebar.classList.remove("open");
+                    if (sidebarBackdrop)
+                        sidebarBackdrop.classList.remove("show");
+                    if (btnToggleSidebar)
+                        btnToggleSidebar.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            /* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+            function goTo(stepId, choiceLabel) {
+                if (!STEPS[stepId]) return;
+                hist.push({ s: cur, next: stepId, c: choiceLabel || "" });
+                cur = stepId;
+                if (choiceLabel) sbTab("journey");
+                render();
+            }
+
+            function goBack() {
+                if (hist.length === 0) return;
+                const entry = hist.pop();
+                cur = entry.s;
+                render();
+            }
+
+            function goBackTo(index) {
+                if (index < 0 || index >= hist.length) return;
+                cur = hist[index].s;
+                hist = hist.slice(0, index);
+                render();
+            }
+
+            function restart() {
+                cur = "inicio";
+                hist = [];
+                sbTab("map");
+                setZoom(100);
+                render();
+            }
+
+            function sbTab(tab) {
+                activeSbTab = tab;
+                const map = document.getElementById("sb-map");
+                const jny = document.getElementById("sb-journey");
+                if (map) map.style.display = tab === "map" ? "block" : "none";
+                if (jny)
+                    jny.style.display = tab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach(function (t) {
+                    t.classList.toggle("active", t.dataset.tab === tab);
+                });
+            }
+
+            function toggleMapa() {
+                mapaOn = !mapaOn;
+                const lay = document.getElementById("layout");
+                const ovl = document.getElementById("mapa-overlay");
+                if (lay) lay.style.display = mapaOn ? "none" : "flex";
+                if (ovl) ovl.style.display = mapaOn ? "block" : "none";
+                if (mapaOn) renderMapa();
+            }
+
+            // Reconstruye la ruta más corta desde 'inicio' hasta targetId
+            function buildPathTo(targetId) {
+                if (targetId === "inicio") return [];
+                const queue = [{ node: "inicio", path: [] }];
+                const visited = new Set();
+                visited.add("inicio");
+                while (queue.length) {
+                    const current = queue.shift();
+                    const step = STEPS[current.node];
+                    if (!step) continue;
+                    if (step.nx) {
+                        const nextId = step.nx;
+                        const newPath = [
+                            ...current.path,
+                            { s: current.node, next: nextId, c: "" },
+                        ];
+                        if (nextId === targetId) return newPath;
+                        if (!visited.has(nextId)) {
+                            visited.add(nextId);
+                            queue.push({ node: nextId, path: newPath });
+                        }
+                    }
+                    if (step.opts) {
+                        for (const opt of step.opts) {
+                            const nextId = opt.n;
+                            const choiceLabel = opt.t;
+                            const newPath = [
+                                ...current.path,
+                                {
+                                    s: current.node,
+                                    next: nextId,
+                                    c: choiceLabel,
+                                },
+                            ];
+                            if (nextId === targetId) return newPath;
+                            if (!visited.has(nextId)) {
+                                visited.add(nextId);
+                                queue.push({ node: nextId, path: newPath });
+                            }
+                        }
+                    }
+                }
+                return null;
+            }
+
+            function jumpTo(stepId) {
+                if (!STEPS[stepId]) return;
+                if (stepId !== cur) {
+                    const path = buildPathTo(stepId);
+                    if (path) {
+                        hist = path;
+                    } else {
+                        hist = [];
+                    }
+                }
+                cur = stepId;
+                if (mapaOn) toggleMapa();
+                render();
+            }
+
+            /* =========================================================
+   HASH
+   ========================================================= */
+            function syncHash() {
+                const current = window.location.hash.replace("#", "");
+                if (current !== cur) {
+                    try {
+                        history.replaceState(null, "", "#" + cur);
+                    } catch (e) {
+                        window.location.hash = cur;
+                    }
+                }
+            }
+
+            function loadFromHash() {
+                const h = window.location.hash.replace("#", "");
+                if (h && STEPS[h]) {
+                    cur = h;
+                    hist = [];
+                }
+            }
+
+            /* =========================================================
+   RENDER
+   ========================================================= */
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+                syncHash();
+                // Cerrar sidebar móvil al navegar
+                closeMobileSidebar();
+                const content = document.getElementById("content");
+                if (content) content.scrollTop = 0;
+            }
+
+            function renderPbar() {
+                const pbar = document.getElementById("pbar");
+                if (!pbar) return;
+                const currentPh = STEPS[cur] ? STEPS[cur].ph : 0;
+                let h = "";
+                PHASES.forEach(function (name, i) {
+                    let cls = "";
+                    if (i === currentPh) cls = "active";
+                    else if (i < currentPh) cls = "done";
+                    h +=
+                        '<div class="ph-item"><span class="ph-lbl ' +
+                        cls +
+                        '">' +
+                        (i + 1) +
+                        ". " +
+                        escHtml(name) +
+                        "</span>";
+                    if (i < PHASES.length - 1)
+                        h += '<span class="ph-sep">›</span>';
+                    h += "</div>";
+                });
+                pbar.innerHTML = h;
+            }
+
+            function renderBreadcrumb() {
+                const bc = document.getElementById("breadcrumb");
+                if (!bc) return;
+                let h = "";
+                hist.forEach(function (entry, i) {
+                    const step = STEPS[entry.s];
+                    if (!step) return;
+                    h +=
+                        '<button class="bc-item bc-past" data-action="go-back-to" data-index="' +
+                        i +
+                        '" title="' +
+                        escQ(step.t) +
+                        '">' +
+                        escHtml(truncateTitle(step.t, 28)) +
+                        "</button>";
+                    h += '<span class="bc-item bc-sep">›</span>';
+                });
+                const curStep = STEPS[cur];
+                if (curStep) {
+                    h +=
+                        '<span class="bc-item bc-current" title="' +
+                        escQ(curStep.t) +
+                        '">' +
+                        escHtml(truncateTitle(curStep.t, 34)) +
+                        "</span>";
+                }
+                bc.innerHTML = h;
+            }
+
+            function renderSidebar() {
+                renderSbMap();
+                renderSbJourney();
+                const map = document.getElementById("sb-map");
+                const jny = document.getElementById("sb-journey");
+                if (map)
+                    map.style.display =
+                        activeSbTab === "map" ? "block" : "none";
+                if (jny)
+                    jny.style.display =
+                        activeSbTab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach(function (t) {
+                    t.classList.toggle("active", t.dataset.tab === activeSbTab);
+                });
+            }
+
+            function renderSbMap() {
+                const host = document.getElementById("sb-map");
+                if (!host) return;
+                const visited = new Set();
+                hist.forEach(function (entry) {
+                    visited.add(entry.s);
+                });
+
+                const byPhase = {};
+                PHASES.forEach(function (_, i) {
+                    byPhase[i] = [];
+                });
+                Object.keys(STEPS).forEach(function (k) {
+                    const s = STEPS[k];
+                    if (byPhase[s.ph]) byPhase[s.ph].push(k);
+                });
+
+                let h = "";
+                PHASES.forEach(function (name, i) {
+                    const keys = byPhase[i] || [];
+                    const isCollapsed = phaseCollapsed[i] === true;
+                    h += '<div class="sm-phase">';
+                    h +=
+                        '<div class="sm-phase-hdr" data-action="toggle-phase" data-phase="' +
+                        i +
+                        '">';
+                    h +=
+                        '<span class="sm-arrow">' +
+                        (isCollapsed ? "▸" : "▾") +
+                        "</span>";
+                    h += "<span>" + (i + 1) + ". " + escHtml(name) + "</span>";
+                    h += "</div>";
+                    if (!isCollapsed) {
+                        h += '<div class="sm-phase-nodes">';
+                        keys.forEach(function (k) {
+                            const step = STEPS[k];
+                            let cls = "";
+                            if (k === cur) cls = "sm-current";
+                            else if (visited.has(k)) cls = "sm-visited";
+                            if (step.end) cls += " sm-end";
+                            const icon =
+                                k === cur ? "●" : visited.has(k) ? "✓" : "·";
+                            h +=
+                                '<button type="button" class="sm-node ' +
+                                cls +
+                                '" data-action="jump-to" data-step="' +
+                                escQ(k) +
+                                '" title="' +
+                                escQ(step.t) +
+                                '">';
+                            h += '<span class="sm-icon">' + icon + "</span>";
+                            h +=
+                                "<span>" +
+                                escHtml(truncateTitle(step.t, 34)) +
+                                "</span>";
+                            h += "</button>";
+                        });
+                        h += "</div>";
+                    }
+                    h += "</div>";
+                });
+                h += SB_FOOT;
+                host.innerHTML = h;
+            }
+
+            function renderSbJourney() {
+                const host = document.getElementById("sb-journey");
+                if (!host) return;
+                let h = "";
+                if (hist.length === 0 && cur === "inicio") {
+                    h +=
+                        '<div class="sb-empty">Todavía no ha iniciado el recorrido. Use las decisiones de cada paso para avanzar.</div>';
+                }
+                hist.forEach(function (entry) {
+                    const step = STEPS[entry.s];
+                    if (!step) return;
+                    h += '<div class="pi past">';
+                    h +=
+                        "<div>" + escHtml(truncateTitle(step.t, 32)) + "</div>";
+                    if (entry.c)
+                        h +=
+                            '<div class="pi-choice">→ ' +
+                            escHtml(entry.c) +
+                            "</div>";
+                    h += "</div>";
+                });
+                const curStep = STEPS[cur];
+                if (curStep) {
+                    h += '<div class="pi current">';
+                    h +=
+                        "<div>" +
+                        escHtml(truncateTitle(curStep.t, 32)) +
+                        "</div>";
+                    h += "</div>";
+                }
+                h += SB_FOOT;
+                host.innerHTML = h;
+            }
+
+            function renderBlocks(blocks) {
+                if (!blocks) return "";
+                let h = "";
+                blocks.forEach(function (b) {
+                    const type = b[0];
+                    if (type === "i") {
+                        h += '<div class="b-i">' + escHtml(b[1]) + "</div>";
+                    } else if (type === "n") {
+                        h += '<div class="b-n">' + escHtml(b[1]) + "</div>";
+                    } else if (type === "d") {
+                        h += '<div class="b-d">⏱ ' + escHtml(b[1]) + "</div>";
+                    } else if (type === "w") {
+                        h += '<div class="b-w">⚠ ' + escHtml(b[1]) + "</div>";
+                    } else if (type === "l") {
+                        h += '<div class="b-l">§ ' + escHtml(b[1]) + "</div>";
+                    } else if (type === "cl") {
+                        h +=
+                            '<div class="b-cl"><div class="b-cl-t">' +
+                            escHtml(b[1]) +
+                            "</div>";
+                        const items = b[2] || [];
+                        items.forEach(function (item) {
+                            h +=
+                                '<div class="b-cl-li"><span class="b-cl-mark">☐</span><span>' +
+                                escHtml(item) +
+                                "</span></div>";
+                        });
+                        h += "</div>";
+                    }
+                });
+                return h;
+            }
+
+            function renderContent() {
+                const s = STEPS[cur];
+                const host = document.getElementById("content");
+                if (!host) return;
+                if (!s) {
+                    host.innerHTML =
+                        '<div class="card"><div class="c-body"><div class="b-w">⚠ Paso no encontrado.</div></div></div>';
+                    return;
+                }
+                host.innerHTML = s.end ? buildEnd(s) : buildStep(s);
+            }
+
+            function buildStep(s) {
+                const stepNum = hist.length + 1;
+                let h = '<div class="card">';
+                h += '<div class="c-hdr">';
+                h +=
+                    '<span class="act-badge act-' +
+                    s.ac +
+                    '">' +
+                    escHtml(actorLabel(s.ac)) +
+                    "</span>";
+                h += '<div class="c-title">' + escHtml(s.t) + "</div>";
+                h +=
+                    '<div class="step-num">Paso ' +
+                    stepNum +
+                    " de este recorrido · Fase " +
+                    (s.ph + 1) +
+                    ": " +
+                    escHtml(PHASES[s.ph]) +
+                    "</div>";
+                h += "</div>";
+                h += '<div class="c-body">' + renderBlocks(s.c) + "</div>";
+
+                if (s.q && s.opts) {
+                    h += '<div class="dec-area">';
+                    h += '<div class="dec-q">' + escHtml(s.q) + "</div>";
+                    h += '<div class="dec-opts">';
+                    s.opts.forEach(function (o) {
+                        const variant = inferVariant(o.n);
+                        h +=
+                            '<button type="button" class="dec-btn ' +
+                            variant +
+                            '" data-action="go-to" data-step="' +
+                            escQ(o.n) +
+                            '" data-label="' +
+                            escQ(o.t) +
+                            '">';
+                        h +=
+                            '<span class="dec-letter">' +
+                            escHtml(o.l || "•") +
+                            "</span>";
+                        h += "<span>" + escHtml(o.t) + "</span>";
+                        h += "</button>";
+                    });
+                    h += "</div></div>";
+                }
+
+                h += '<div class="c-nav">';
+                const backDisabled = hist.length === 0;
+                h +=
+                    '<button type="button" class="btn-back" data-action="go-back"' +
+                    (backDisabled ? " disabled" : "") +
+                    ">← Volver</button>";
+                if (s.nx) {
+                    h +=
+                        '<button type="button" class="btn-next" data-action="go-to" data-step="' +
+                        escQ(s.nx) +
+                        '" data-label="">Siguiente →</button>';
+                } else {
+                    h += "<span></span>";
+                }
+                h += "</div>";
+                h += "</div>";
+                return h;
+            }
+
+            function buildEnd(s) {
+                const icons = {
+                    success: "✅",
+                    error: "❌",
+                    warning: "⚠️",
+                    neutral: "ℹ️",
+                };
+                const titles = {
+                    success: "Resolución favorable",
+                    error: "El expediente no prospera",
+                    warning: "Atención procedimental",
+                    neutral: "Información",
+                };
+                let h = '<div class="card end-' + s.end + '">';
+                h += '<div class="c-hdr">';
+                h +=
+                    '<span class="act-badge act-' +
+                    s.ac +
+                    '">' +
+                    escHtml(actorLabel(s.ac)) +
+                    "</span>";
+                h += '<div class="c-title">' + escHtml(s.t) + "</div>";
+                h +=
+                    '<div class="step-num">Fase ' +
+                    (s.ph + 1) +
+                    ": " +
+                    escHtml(PHASES[s.ph]) +
+                    " · Nodo final</div>";
+                h += "</div>";
+                h += '<div class="end-body">';
+                h += '<div class="end-icon">' + icons[s.end] + "</div>";
+                h +=
+                    '<div class="end-title">' +
+                    escHtml(titles[s.end]) +
+                    "</div>";
+                h +=
+                    '<div class="end-sub">El procedimiento ha concluido en esta vía</div>';
+                h += "</div>";
+                h += '<div class="c-body">' + renderBlocks(s.c) + "</div>";
+                h += buildSummary();
+                h += '<div class="end-actions">';
+                h +=
+                    '<button type="button" class="btn-blue" data-action="reiniciar">↺ Nuevo procedimiento</button>';
+                const backDisabled = hist.length === 0;
+                h +=
+                    '<button type="button" class="btn-back" data-action="go-back"' +
+                    (backDisabled ? " disabled" : "") +
+                    ">← Volver</button>";
+                h += "</div>";
+                h += "</div>";
+                return h;
+            }
+
+            function buildSummary() {
+                if (hist.length === 0) return "";
+                let h = '<div class="summary-box">';
+                h +=
+                    '<div class="summary-box-title">Resumen del recorrido</div>';
+                hist.forEach(function (entry, i) {
+                    const step = STEPS[entry.s];
+                    if (!step) return;
+                    h +=
+                        '<div class="summary-item"><span class="summary-num">' +
+                        (i + 1) +
+                        ".</span><span>" +
+                        escHtml(step.t) +
+                        "</span></div>";
+                    if (entry.c)
+                        h +=
+                            '<div class="summary-choice">→ ' +
+                            escHtml(entry.c) +
+                            "</div>";
+                });
+                const curStep = STEPS[cur];
+                if (curStep) {
+                    h +=
+                        '<div class="summary-item"><span class="summary-num">' +
+                        (hist.length + 1) +
+                        ".</span><span><strong>" +
+                        escHtml(curStep.t) +
+                        "</strong></span></div>";
+                }
+                h += "</div>";
+                return h;
+            }
+
+            function renderMapa() {
+                const host = document.getElementById("mapa-overlay");
+                if (!host) return;
+                const visited = new Set();
+                hist.forEach(function (entry) {
+                    visited.add(entry.s);
+                });
+
+                const byPhase = {};
+                PHASES.forEach(function (_, i) {
+                    byPhase[i] = [];
+                });
+                Object.keys(STEPS).forEach(function (k) {
+                    const s = STEPS[k];
+                    if (byPhase[s.ph]) byPhase[s.ph].push(k);
+                });
+
+                let h = '<div class="mapa-hdr-bar">';
+                h += "<div>";
+                h +=
+                    '<div class="mapa-hdr-title">Vista del procedimiento completo</div>';
+                h +=
+                    '<div class="mapa-hdr-sub">Cualquier nodo es accesible individualmente sin reiniciar el recorrido</div>';
+                h += "</div>";
+                h += '<div class="mapa-legend">';
+                h +=
+                    '<span><span class="dot" style="background:var(--navy-lt)"></span>Actual</span>';
+                h +=
+                    '<span><span class="dot" style="background:var(--green)"></span>Visitado</span>';
+                h +=
+                    '<span><span class="dot" style="background:var(--green)"></span>Éxito</span>';
+                h +=
+                    '<span><span class="dot" style="background:var(--red)"></span>No prospera</span>';
+                h +=
+                    '<span><span class="dot" style="background:var(--amber)"></span>Aviso</span>';
+                h += "</div>";
+                h +=
+                    '<button type="button" class="btn-blue" data-action="close-mapa">← Volver al recorrido</button>';
+                h += "</div>";
+
+                h += '<div class="mapa-cols">';
+                PHASES.forEach(function (name, i) {
+                    h += '<div class="mapa-col">';
+                    h +=
+                        '<div class="mapa-col-hdr">' +
+                        (i + 1) +
+                        ". " +
+                        escHtml(name) +
+                        "</div>";
+                    h += '<div class="mapa-nodes">';
+                    (byPhase[i] || []).forEach(function (k) {
+                        const step = STEPS[k];
+                        let cls = "";
+                        if (step.end) cls += " end-" + step.end;
+                        if (k === cur) cls += " current";
+                        else if (visited.has(k)) cls += " visited";
+                        h +=
+                            '<button type="button" class="mapa-node' +
+                            cls +
+                            '" data-action="jump-to" data-step="' +
+                            escQ(k) +
+                            '">';
+                        h +=
+                            '<div class="mapa-node-title">' +
+                            escHtml(step.t) +
+                            "</div>";
+                        h +=
+                            '<div class="mapa-node-actor">' +
+                            escHtml(actorLabel(step.ac)) +
+                            "</div>";
+                        const hasEdges =
+                            step.nx || (step.opts && step.opts.length);
+                        if (hasEdges) {
+                            h += '<div class="mapa-edges">';
+                            if (step.nx && STEPS[step.nx]) {
+                                h +=
+                                    '<div class="mapa-edge">→ <strong>siguiente:</strong> ' +
+                                    escHtml(
+                                        truncateTitle(STEPS[step.nx].t, 28),
+                                    ) +
+                                    "</div>";
+                            }
+                            if (step.opts) {
+                                step.opts.forEach(function (o) {
+                                    const destTitle = STEPS[o.n]
+                                        ? truncateTitle(STEPS[o.n].t, 22)
+                                        : o.n;
+                                    h +=
+                                        '<div class="mapa-edge">→ <strong>' +
+                                        escHtml(truncateTitle(o.t, 18)) +
+                                        ":</strong> " +
+                                        escHtml(destTitle) +
+                                        "</div>";
+                                });
+                            }
+                            h += "</div>";
+                        }
+                        h += "</button>";
+                    });
+                    h += "</div>";
+                    h += "</div>";
+                });
+                h += "</div>";
+                host.innerHTML = h;
+            }
+
+            /* =========================================================
+   DESCARGA
+   ========================================================= */
+            function dlGuia() {
+                const html =
+                    "<!DOCTYPE html>" + document.documentElement.outerHTML;
+                const blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "guia-tramitacion.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            /* =========================================================
+   EVENTOS (único listener de delegación)
+   ========================================================= */
+            function wireEvents() {
+                document.addEventListener("click", function (ev) {
+                    const el = ev.target.closest("[data-action]");
+                    if (!el) return;
+                    const action = el.dataset.action;
+
+                    switch (action) {
+                        case "toggle-mapa":
+                            toggleMapa();
+                            break;
+                        case "descargar":
+                            dlGuia();
+                            break;
+                        case "reiniciar":
+                            restart();
+                            break;
+                        case "zoom-in":
+                            zoomIn();
+                            break;
+                        case "zoom-out":
+                            zoomOut();
+                            break;
+                        case "sb-tab":
+                            sbTab(el.dataset.tab);
+                            break;
+                        case "go-back":
+                            goBack();
+                            break;
+                        case "go-back-to":
+                            goBackTo(parseInt(el.dataset.index, 10));
+                            break;
+                        case "go-to":
+                            goTo(el.dataset.step, el.dataset.label || "");
+                            break;
+                        case "jump-to":
+                            jumpTo(el.dataset.step);
+                            break;
+                        case "close-mapa":
+                            toggleMapa();
+                            break;
+                        case "toggle-phase":
+                            const ph = el.dataset.phase;
+                            phaseCollapsed[ph] = !phaseCollapsed[ph];
+                            renderSidebar();
+                            break;
+                    }
+                });
+
+                document.addEventListener("keydown", function (ev) {
+                    if (ev.key === "Escape" && mapaOn) toggleMapa();
+                    if (
+                        ev.key === "Escape" &&
+                        window.innerWidth <= 700 &&
+                        sidebarOpen
+                    ) {
+                        closeMobileSidebar();
+                    }
+                });
+
+                window.addEventListener("hashchange", function () {
+                    const h = window.location.hash.replace("#", "");
+                    if (h && STEPS[h] && h !== cur) {
+                        cur = h;
+                        hist = [];
+                        render();
+                    }
+                });
+            }
+
+            /* =========================================================
+   ARRANQUE
+   ========================================================= */
+            document.addEventListener("DOMContentLoaded", function () {
+                // Inicializar referencias del toggle sidebar
+                btnToggleSidebar = document.getElementById("btnToggleSidebar");
+                sidebarBackdrop = document.getElementById("sidebarBackdrop");
+                if (btnToggleSidebar) {
+                    btnToggleSidebar.addEventListener("click", toggleSidebar);
+                }
+                if (sidebarBackdrop) {
+                    sidebarBackdrop.addEventListener(
+                        "click",
+                        closeMobileSidebar,
+                    );
+                }
+                // Ajustar al redimensionar la ventana
+                window.addEventListener("resize", function () {
+                    if (window.innerWidth > 700 && sidebarOpen) {
+                        closeMobileSidebar();
+                    }
+                });
+                loadFromHash();
+                wireEvents();
+                setZoom(zoomLevel);
+                render();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,3011 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>De las diligencias preliminares (artículos 256 a 263 LEC)</title>
+        <style>
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --mono:
+                    ui-monospace, SFMono-Regular, "Cascadia Code", monospace;
+                --transition-norm: 250ms ease;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                height: 100%;
+                overflow: hidden;
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    Helvetica, Arial, sans-serif;
+                font-size: 15px;
+                color: var(--text);
+                background: var(--slate-bg);
+            }
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            #hdr {
+                flex-shrink: 0;
+                height: 56px;
+                background: var(--navy);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+            }
+            #hdr .hdr-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+            #hdr .hdr-left .seal {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.85);
+            }
+            #hdr .hdr-left .hdr-titles {
+                min-width: 0;
+            }
+            #hdr .hdr-left h1 {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--white);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #hdr .hdr-left .hdr-sub {
+                font-size: 11px;
+                color: var(--white);
+                opacity: 0.7;
+            }
+            #hdr .hdr-right {
+                display: flex;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+
+            /* --- Botón toggle sidebar (nuevo) --- */
+            .btn-toggle-sidebar {
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                padding: 4px 10px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+                color: #fff;
+                font-family: inherit;
+                font-size: 20px;
+                cursor: pointer;
+                transition: all 150ms ease;
+                white-space: nowrap;
+                line-height: 1;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+            .btn-toggle-sidebar:focus-visible {
+                outline: 2px solid var(--navy-lt);
+                outline-offset: 2px;
+            }
+
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: var(--white);
+                font-size: 13px;
+                padding: 6px 12px;
+                border-radius: 4px;
+                cursor: pointer;
+                white-space: nowrap;
+                font-family: inherit;
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+            .btn-ghost:disabled {
+                opacity: 0.4;
+                cursor: default;
+            }
+
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                background: var(--navy-mid);
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                gap: 2px;
+            }
+            #pbar::-webkit-scrollbar {
+                display: none;
+            }
+            .ph-item {
+                display: flex;
+                align-items: center;
+            }
+            .ph-lbl {
+                font-size: 12px;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.45);
+                padding: 5px 10px;
+                border-radius: 6px;
+                white-space: nowrap;
+                transition: all 0.15s;
+            }
+            .ph-lbl.active {
+                background: rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+            .ph-lbl.done {
+                color: rgba(255, 255, 255, 0.95);
+            }
+            .ph-sep {
+                color: rgba(255, 255, 255, 0.2);
+                font-size: 16px;
+                margin: 0 2px;
+            }
+
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 34px;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                gap: 0;
+                overflow-x: auto;
+                scrollbar-width: none;
+                flex-wrap: wrap;
+                row-gap: 2px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+            #breadcrumb::-webkit-scrollbar {
+                display: none;
+            }
+            .bc-item {
+                font-size: 13px;
+                font-weight: 500;
+                white-space: nowrap;
+                padding: 0 6px;
+                color: var(--muted);
+                background: none;
+                border: none;
+                font-family: inherit;
+                cursor: pointer;
+            }
+            .bc-sep {
+                color: var(--muted);
+                font-size: 15px;
+                opacity: 0.5;
+                margin: 0 2px;
+            }
+            .bc-past:hover {
+                color: var(--navy-lt);
+                text-decoration: underline;
+            }
+            .bc-current {
+                font-weight: 600;
+                color: var(--navy);
+                cursor: default;
+            }
+
+            #layout {
+                flex: 1;
+                overflow: hidden;
+                display: flex;
+                position: relative;
+            }
+
+            /* --- SIDEBAR (con soporte para colapso en escritorio y overlay en móvil) --- */
+            #sidebar {
+                width: 260px;
+                flex-shrink: 0;
+                background: var(--navy-mid);
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                min-height: 0;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+                transition:
+                    transform var(--transition-norm),
+                    width var(--transition-norm);
+                z-index: 80;
+            }
+            #sidebar.collapsed {
+                width: 0;
+                transform: translateX(-100%);
+                overflow: hidden;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 4px;
+            }
+            #sidebar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.25);
+                border-radius: 3px;
+            }
+            #sidebar::-webkit-scrollbar-thumb:hover {
+                background: rgba(255, 255, 255, 0.35);
+            }
+            #sb-tabs {
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                flex-shrink: 0;
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 10px 0;
+                font-size: 12px;
+                font-weight: 700;
+                font-family: "Outfit", sans-serif;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                transition: all 0.15s;
+                border-bottom: 2px solid transparent;
+            }
+            .sb-tab.active {
+                color: #fff;
+                border-bottom: 2px solid var(--navy-lt);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.05);
+            }
+            #sb-map,
+            #sb-journey {
+                padding: 10px;
+                flex: 1;
+                min-height: 0;
+            }
+            .sm-phase {
+                margin-bottom: 6px;
+            }
+            .sm-phase-hdr {
+                font-size: 11px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.4);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding: 5px 6px;
+                cursor: pointer;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                transition: background 0.15s;
+            }
+            .sm-phase-hdr:hover {
+                background: rgba(255, 255, 255, 0.06);
+            }
+            .sm-phase-hdr .ph-toggle {
+                font-size: 10px;
+                opacity: 0.5;
+            }
+            .sm-nodes {
+                overflow: hidden;
+            }
+            .sm-node {
+                font-size: 12px;
+                padding: 6px 8px 6px 14px;
+                border-radius: 5px;
+                color: rgba(255, 255, 255, 0.55);
+                cursor: pointer;
+                margin-bottom: 2px;
+                transition:
+                    background 0.12s,
+                    color 0.12s;
+                position: relative;
+                line-height: 1.45;
+                display: flex;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            .sm-node:hover {
+                background: rgba(255, 255, 255, 0.12);
+                color: rgba(255, 255, 255, 0.95);
+            }
+            .sm-node.sm-visited {
+                color: rgba(134, 239, 172, 0.9);
+            }
+            .sm-node.sm-visited::before {
+                content: "✓";
+                position: absolute;
+                left: 2px;
+                top: 6px;
+                font-size: 10px;
+                color: var(--green);
+            }
+            .sm-node.sm-current {
+                color: #fff;
+                background: rgba(65, 105, 225, 0.35);
+                font-weight: 600;
+            }
+            .sm-node.sm-current::before {
+                content: "●";
+                position: absolute;
+                left: 2px;
+                top: 6px;
+                font-size: 9px;
+                color: var(--navy-lt);
+            }
+            .sm-node.sm-end {
+                opacity: 0.7;
+            }
+            .sb-foot {
+                margin-top: 12px;
+                padding: 10px;
+                background: rgba(0, 0, 0, 0.15);
+                border-radius: 6px;
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.45);
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                line-height: 1.7;
+            }
+            .pi {
+                padding: 7px 8px;
+                border-radius: 5px;
+                margin-bottom: 4px;
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.45);
+                border-left: 2px solid transparent;
+                transition: background 0.12s;
+            }
+            .pi.current {
+                color: #fff;
+                border-left-color: var(--navy-lt);
+                background: rgba(65, 105, 225, 0.2);
+                font-weight: 600;
+            }
+            .pi.past {
+                border-left-color: rgba(255, 255, 255, 0.15);
+                color: rgba(255, 255, 255, 0.55);
+            }
+            .pi-choice {
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.35);
+                margin-top: 3px;
+                font-style: italic;
+            }
+
+            /* Backdrop para móvil (nuevo) */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 140;
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+
+            /* ZOOM CLUSTER */
+            .zoom-cluster {
+                display: flex;
+                align-items: center;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 4px;
+                overflow: hidden;
+                margin-right: 10px;
+            }
+            .btn-zoom {
+                background: none;
+                border: none;
+                color: var(--white);
+                font-size: 16px;
+                padding: 4px 10px;
+                cursor: pointer;
+                transition: background 0.15s;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .zoom-label {
+                font-size: 12px;
+                color: var(--white);
+                padding: 0 8px;
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                min-width: 45px;
+                text-align: center;
+            }
+
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 28px 32px;
+            }
+            .card {
+                background: #fff;
+                border: 1px solid var(--bdr);
+                border-radius: 12px;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                animation: fadeUp 0.22s ease;
+            }
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .c-hdr {
+                padding: 22px 28px 16px;
+                border-bottom: 1px solid var(--bdr);
+            }
+            .act-badge {
+                display: inline-block;
+                font-size: 10px;
+                font-weight: 700;
+                padding: 3px 10px;
+                border-radius: 20px;
+                letter-spacing: 0.3px;
+                text-transform: uppercase;
+                margin-bottom: 8px;
+                border: 1px solid;
+            }
+            .act-laj {
+                background: var(--cyan-bg);
+                color: var(--cyan);
+                border-color: #99f6e4;
+            }
+            .act-juez {
+                background: var(--violet-bg);
+                color: var(--violet);
+                border-color: #c4b5fd;
+            }
+            .act-ambos {
+                background: var(--amber-bg);
+                color: var(--amber);
+                border-color: #fcd34d;
+            }
+            .c-title {
+                font-size: 19px;
+                font-weight: 700;
+                color: var(--navy);
+                line-height: 1.3;
+            }
+            .step-num {
+                font-size: 11px;
+                color: var(--muted);
+                margin-top: 6px;
+            }
+
+            .c-body {
+                padding: 20px 28px;
+            }
+            .c-body > * + * {
+                margin-top: 14px;
+            }
+            .cb-intro {
+                font-size: 14px;
+                line-height: 1.65;
+                color: var(--text);
+            }
+            .cb-deadline {
+                font-size: 13px;
+                background: var(--amber-bg);
+                border: 1px solid #fde68a;
+                border-radius: 8px;
+                padding: 10px 14px;
+                color: var(--amber);
+                font-weight: 500;
+                line-height: 1.5;
+            }
+            .cb-note {
+                font-size: 13px;
+                background: var(--cyan-bg);
+                border: 1px solid #99f6e4;
+                border-radius: 8px;
+                padding: 10px 14px;
+                color: #0f766e;
+                line-height: 1.5;
+            }
+            .cb-warn {
+                font-size: 13px;
+                background: var(--red-bg);
+                border: 1px solid #fecaca;
+                border-radius: 8px;
+                padding: 10px 14px;
+                color: var(--red);
+                font-weight: 500;
+                line-height: 1.5;
+            }
+            .cb-law {
+                font-size: 12px;
+                font-family: var(--mono);
+                color: var(--slate);
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 6px;
+                padding: 8px 12px;
+                line-height: 1.5;
+            }
+            .cb-cl {
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .cb-cl-title {
+                font-size: 12px;
+                font-weight: 700;
+                background: var(--slate-bg);
+                padding: 8px 14px;
+                color: var(--slate);
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+            }
+            .cb-cl-list {
+                padding: 8px 14px;
+                list-style: none;
+            }
+            .cb-cl-list li {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 5px 0;
+                font-size: 13px;
+                line-height: 1.5;
+                border-bottom: 1px solid #f1f5f9;
+            }
+            .cb-cl-list li:last-child {
+                border-bottom: none;
+            }
+            .cb-cl-list li::before {
+                content: "☐";
+                flex-shrink: 0;
+                color: var(--bdr);
+                font-size: 14px;
+                margin-top: 1px;
+            }
+
+            .dec-area {
+                padding: 20px 28px;
+                border-top: 1px solid var(--bdr);
+            }
+            .dec-q {
+                font-size: 15px;
+                font-weight: 600;
+                color: var(--navy);
+                padding: 14px 18px;
+                border-top: 3px solid var(--navy);
+                background: var(--slate-bg);
+                border-radius: 0 0 8px 8px;
+                margin-bottom: 14px;
+                line-height: 1.4;
+            }
+            .dec-opts {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                width: 100%;
+                padding: 13px 16px;
+                border: 1.5px solid var(--bdr);
+                border-radius: 9px;
+                background: #fff;
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--text);
+                text-align: left;
+                transition: all 0.15s;
+                line-height: 1.4;
+            }
+            .dec-btn:hover {
+                border-color: var(--navy-lt);
+                background: #f0f4ff;
+            }
+            .dec-letter {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: 700;
+                flex-shrink: 0;
+                color: #fff;
+            }
+            .dec-btn.ok .dec-letter {
+                background: var(--green);
+            }
+            .dec-btn.ok:hover {
+                border-color: var(--green);
+                background: var(--green-bg);
+            }
+            .dec-btn.bad .dec-letter {
+                background: var(--red);
+            }
+            .dec-btn.bad:hover {
+                border-color: var(--red);
+                background: var(--red-bg);
+            }
+            .dec-btn.warn .dec-letter {
+                background: var(--amber);
+            }
+            .dec-btn.warn:hover {
+                border-color: var(--amber);
+                background: var(--amber-bg);
+            }
+            .dec-btn.neutral .dec-letter {
+                background: var(--navy-lt);
+            }
+            .dec-btn.neutral:hover {
+                border-color: var(--navy-lt);
+                background: #eef2ff;
+            }
+
+            .c-nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px 28px;
+                border-top: 1px solid var(--bdr);
+            }
+            .btn-back {
+                background: none;
+                border: 1px solid var(--bdr);
+                color: var(--muted);
+                font-family: inherit;
+                font-size: 13px;
+                font-weight: 500;
+                padding: 9px 18px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .btn-back:hover:not(:disabled) {
+                border-color: var(--navy-lt);
+                color: var(--navy);
+            }
+            .btn-back:disabled {
+                opacity: 0.35;
+                cursor: not-allowed;
+            }
+            .btn-next {
+                background: var(--navy-lt);
+                border: none;
+                color: #fff;
+                font-family: inherit;
+                font-size: 13px;
+                font-weight: 600;
+                padding: 9px 22px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .btn-next:hover {
+                background: var(--navy);
+            }
+
+            .end-body {
+                text-align: center;
+                padding: 36px 28px;
+            }
+            .end-icon {
+                font-size: 48px;
+                margin-bottom: 12px;
+            }
+            .end-title {
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 6px;
+            }
+            .end-sub {
+                font-size: 13px;
+                color: var(--muted);
+                margin-bottom: 20px;
+            }
+            .end-btns {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin-bottom: 24px;
+            }
+            .card.end-success .end-title {
+                color: var(--green);
+            }
+            .card.end-success {
+                border-top: 4px solid var(--green);
+            }
+            .card.end-error .end-title {
+                color: var(--red);
+            }
+            .card.end-error {
+                border-top: 4px solid var(--red);
+            }
+            .card.end-warning .end-title {
+                color: var(--amber);
+            }
+            .card.end-warning {
+                border-top: 4px solid var(--amber);
+            }
+            .card.end-neutral .end-title {
+                color: var(--navy);
+            }
+            .card.end-neutral {
+                border-top: 4px solid var(--navy);
+            }
+
+            .summary-box {
+                text-align: left;
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 10px;
+                padding: 18px;
+                margin-top: 16px;
+            }
+            .summary-box h4 {
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+                color: var(--slate);
+                margin-bottom: 10px;
+            }
+            .summary-step {
+                display: flex;
+                gap: 10px;
+                padding: 6px 0;
+                border-bottom: 1px solid #e8ecf4;
+                font-size: 13px;
+                align-items: flex-start;
+            }
+            .summary-step:last-child {
+                border-bottom: none;
+            }
+            .summary-num {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: var(--navy-lt);
+                color: #fff;
+                font-size: 10px;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+            .summary-info {
+                flex: 1;
+            }
+            .summary-choice {
+                font-size: 11px;
+                color: var(--navy-lt);
+                margin-top: 2px;
+            }
+
+            #mapa-overlay {
+                display: none;
+                flex: 1;
+                overflow-y: auto;
+                background: var(--slate-bg);
+                padding: 24px;
+            }
+            .mapa-title {
+                text-align: center;
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 4px;
+            }
+            .mapa-sub {
+                text-align: center;
+                font-size: 12px;
+                color: var(--muted);
+                margin-bottom: 20px;
+            }
+            .mapa-close {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            .mapa-cols {
+                display: flex;
+                gap: 16px;
+                overflow-x: auto;
+                padding-bottom: 20px;
+            }
+            .mapa-col {
+                min-width: 200px;
+                flex: 1;
+            }
+            .mapa-col-hdr {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: #fff;
+                padding: 8px 10px;
+                background: var(--navy);
+                border-radius: 8px;
+                margin-bottom: 8px;
+                text-align: center;
+            }
+            .mapa-nd {
+                padding: 8px 10px;
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                background: #fff;
+                margin-bottom: 6px;
+                font-size: 12px;
+                line-height: 1.4;
+                border-left: 3px solid var(--bdr);
+                transition: all 0.12s;
+                cursor: pointer;
+            }
+            .mapa-nd:hover {
+                box-shadow: 0 2px 8px rgba(65, 105, 225, 0.18);
+                transform: translateY(-1px);
+                border-left-color: var(--navy-lt);
+            }
+            .mapa-nd.m-visited {
+                border-left-color: var(--green);
+                background: var(--green-bg);
+            }
+            .mapa-nd.m-current {
+                border-left-color: var(--navy-lt);
+                background: #eef2ff;
+                font-weight: 600;
+            }
+            .mapa-nd.m-end-success {
+                border-left-color: var(--green);
+            }
+            .mapa-nd.m-end-error {
+                border-left-color: var(--red);
+            }
+            .mapa-nd.m-end-warning {
+                border-left-color: var(--amber);
+            }
+            .mapa-nd.m-end-neutral {
+                border-left-color: var(--navy);
+            }
+            .mapa-nd-title {
+                font-weight: 600;
+                color: var(--text);
+                font-size: 12px;
+            }
+            .mapa-nd-actor {
+                font-size: 9px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+                margin-top: 3px;
+                opacity: 0.6;
+            }
+            .mapa-nd-arrows {
+                font-size: 10px;
+                color: var(--muted);
+                margin-top: 4px;
+            }
+
+            ::-webkit-scrollbar {
+                width: 6px;
+            }
+            ::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #c5cde0;
+                border-radius: 3px;
+            }
+
+            /* --- RESPONSIVE: SIDEBAR OVERLAY MÓVIL (se reemplaza display:none por fixed overlay) --- */
+            @media (max-width: 768px) {
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    transition: transform var(--transition-norm);
+                    width: 260px;
+                    display: flex !important;
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                #sidebar.collapsed {
+                    transform: translateX(-100%);
+                    width: 260px; /* mantiene ancho para que la animación sea suave */
+                }
+                .sidebar-backdrop {
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 140;
+                    display: none;
+                }
+                .sidebar-backdrop.show {
+                    display: block;
+                }
+                #content {
+                    padding: 16px 20px;
+                }
+            }
+            @media (max-width: 700px) {
+                /* No ocultamos sidebar; usamos la lógica de overlay */
+                .hdr-sub {
+                    display: none;
+                }
+                .mapa-cols {
+                    flex-direction: column;
+                }
+            }
+
+            @media print {
+                body {
+                    background: #fff;
+                    color: #111;
+                }
+                #hdr,
+                #pbar,
+                #breadcrumb,
+                #sidebar,
+                #mapa-overlay,
+                .c-nav,
+                .dec-area,
+                .end-btns {
+                    display: none !important;
+                }
+                #layout {
+                    display: block !important;
+                }
+                #content {
+                    overflow: visible;
+                    padding: 0;
+                }
+                .card {
+                    box-shadow: none;
+                    break-inside: avoid;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div id="hdr" role="banner" style="height: 70px">
+                <div class="hdr-left">
+                    <!-- Botón toggle sidebar añadido aquí -->
+                    <button
+                        class="btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                    >
+                        ☰
+                    </button>
+                    <div class="seal">⚖</div>
+                    <div class="hdr-titles">
+                        <div class="hdr-sub">
+                            LEY 1/2000, DE 7 DE ENERO, DE ENJUICIAMIENTO CIVIL
+                            &middot; LIBRO II: DE LOS PROCESOS DECLARATIVOS
+                            &middot; TÍTULO I: DE LAS DISPOSICIONES COMUNES A
+                            LOS PROCESOS DECLARATIVOS &middot; CAPÍTULO II
+                        </div>
+                        <h1>De las diligencias preliminares</h1>
+                        <div class="hdr-sub" style="padding-top: 5px">
+                            Artículos 256 a 263 LEC
+                        </div>
+                    </div>
+                </div>
+                <div class="hdr-right">
+                    <div class="zoom-cluster">
+                        <button class="btn-zoom" id="btn-zoom-out">−</button>
+                        <span class="zoom-label" id="zoom-label">100%</span>
+                        <button class="btn-zoom" id="btn-zoom-in">+</button>
+                    </div>
+                    <button class="btn-ghost" onclick="toggleMapa()">
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn-ghost" onclick="dlGuia()">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn-ghost" onclick="restart()">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </div>
+            <div id="pbar">
+                <div class="ph-item">
+                    <span class="ph-lbl done"></span>
+                </div>
+                <span class="ph-sep">›</span>
+                <div class="ph-item">
+                    <span class="ph-lbl active"></span>
+                </div>
+                <span class="ph-sep">›</span>
+                <div class="ph-item">
+                    <span class="ph-lbl"></span>
+                </div>
+                <span class="ph-sep">›</span>
+                <div class="ph-item">
+                    <span class="ph-lbl"></span>
+                </div>
+                <span class="ph-sep">›</span>
+                <div class="ph-item">
+                    <span class="ph-lbl"></span>
+                </div>
+                <span class="ph-sep">›</span>
+                <div class="ph-item">
+                    <span class="ph-lbl"></span>
+                </div>
+                <span class="ph-sep">›</span>
+                <div class="ph-item">
+                    <span class="ph-lbl"></span>
+                </div>
+            </div>
+            <div id="breadcrumb">
+                <button class="bc-item bc-past" onclick="goBackTo(0)"></button>
+                <span class="bc-sep">›</span>
+                <span class="bc-item bc-current"></span>
+            </div>
+            <div id="layout">
+                <div id="sidebar">
+                    <div id="sb-tabs">
+                        <button class="sb-tab active" onclick="sbTab('map')">
+                            Mapa
+                        </button>
+                        <button class="sb-tab" onclick="sbTab('journey')">
+                            Recorrido
+                        </button>
+                    </div>
+                    <div id="sb-map" style="display: block"></div>
+                    <div id="sb-journey" style="display: none"></div>
+                </div>
+                <div id="content"></div>
+            </div>
+            <div id="mapa-overlay"></div>
+            <!-- Backdrop para móvil -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        </div>
+
+        <script>
+            const PHASES = [
+                "Solicitud y Preparación",
+                "Competencia",
+                "Admisión y Caución",
+                "Citación y Práctica",
+                "Oposición",
+                "Negativa y Ejecución",
+                "Caución y Cierre",
+            ];
+            const AC_LABELS = {
+                laj: "Letrado de la Admón. de Justicia",
+                juez: "Juez / Tribunal",
+                ambos: "Juez + LAJ",
+            };
+
+            const STEPS = {
+                inicio: {
+                    ph: 0,
+                    t: "Análisis inicial y recepción de la solicitud",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Se recibe en el registro del juzgado la solicitud de diligencias preliminares. El LAJ debe verificar el cumplimiento de los requisitos formales mínimos y el solicitante debe haber realizado un análisis exhaustivo de la viabilidad.",
+                        ],
+                        [
+                            "n",
+                            "Las diligencias preliminares constituyen un numerus clausus interpretado flexiblemente. Su finalidad es preparar el juicio, no obtener prueba anticipada. No proceden diligencias meramente indagatorias.",
+                        ],
+                        [
+                            "l",
+                            'Art. 256.1 LEC: "Toda persona que se considere con derecho a ejercitar una acción contra otra... podrá instar del Juez la práctica de las diligencias que se indican a continuación..."',
+                        ],
+                        [
+                            "w",
+                            "Atención: Si no se cumple alguno de los tres presupuestos esenciales (adecuación, justa causa e interés legítimo), la solicitud será inadmitida.",
+                        ],
+                        [
+                            "cl",
+                            "Verificación preliminar",
+                            [
+                                "Identificar la acción principal que se pretende ejercitar",
+                                "Determinar si se necesita información previa para fundamentar la demanda",
+                                "Evaluar si alguna de las 11 categorías del art. 256.1 LEC es aplicable",
+                                "Verificar la existencia de legitimación activa y pasiva",
+                                "Comprobar referencia circunstanciada al asunto",
+                                "Verificar ofrecimiento de caución",
+                                "En su caso, principio de prueba de la infracción (núm. 8º)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Los gastos que se ocasionen a las personas que hubieren de intervenir serán siempre a cargo del solicitante (art. 256.4 LEC).",
+                        ],
+                    ],
+                    q: "¿Qué tipo de diligencia preliminar necesita?",
+                    opts: [
+                        {
+                            t: "Declaración jurada sobre capacidad/representación (art. 256.1.1º)",
+                            l: "A",
+                            n: "det_256_1_1",
+                            v: "ok",
+                        },
+                        {
+                            t: "Exhibición de cosa mueble (art. 256.1.2º)",
+                            l: "B",
+                            n: "det_256_1_2",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Exhibición de testamento (art. 256.1.3º)",
+                            l: "C",
+                            n: "det_256_1_3",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Documentos y cuentas de sociedad (art. 256.1.4º)",
+                            l: "D",
+                            n: "det_256_1_4",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Contrato de seguro de responsabilidad civil (art. 256.1.5º)",
+                            l: "E",
+                            n: "det_256_1_5",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Historia clínica (art. 256.1.5º bis)",
+                            l: "F",
+                            n: "det_256_1_5bis",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Datos sobre grupo de consumidores (art. 256.1.6º)",
+                            l: "G",
+                            n: "det_256_1_6",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Datos de infracción de PI/PIndustrial (art. 256.1.7º)",
+                            l: "H",
+                            n: "det_256_1_7",
+                            v: "warn",
+                        },
+                        {
+                            t: "Documentos bancarios escala comercial (art. 256.1.8º)",
+                            l: "I",
+                            n: "det_256_1_8",
+                            v: "warn",
+                        },
+                        {
+                            t: "Leyes especiales (art. 256.1.9º)",
+                            l: "J",
+                            n: "det_256_1_9",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Identificación de prestador SSI (art. 256.1.10º)",
+                            l: "K",
+                            n: "det_256_1_10",
+                            v: "warn",
+                        },
+                        {
+                            t: "Identificación de usuario SSI (art. 256.1.11º)",
+                            l: "L",
+                            n: "det_256_1_11",
+                            v: "warn",
+                        },
+                    ],
+                },
+
+                det_256_1_1: {
+                    ph: 0,
+                    t: "Declaración jurada sobre capacidad o representación (art. 256.1.1º)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Permite recabar información sobre la capacidad civil de una persona o sobre su representación legal o voluntaria. Es especialmente útil cuando se ignora quién ostenta la condición de heredero, tutor o apoderado.",
+                        ],
+                        [
+                            "l",
+                            'Art. 256.1.1º LEC: "Que declare bajo juramento o promesa sobre cuál es su capacidad o representación legal o voluntaria..."',
+                        ],
+                        [
+                            "d",
+                            "El requerido dispone de 10 días para cumplir voluntariamente desde la citación. Si se opone, tiene 5 días para formular escrito de oposición.",
+                        ],
+                        [
+                            "w",
+                            "La diligencia no puede usarse como medio de investigación general sobre la solvencia o patrimonio del futuro demandado.",
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                det_256_1_2: {
+                    ph: 0,
+                    t: "Exhibición de cosa mueble (art. 256.1.2º)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Permite solicitar que una persona exhiba una cosa mueble que obre en su poder, cuando resulte necesario para fundamentar la futura demanda.",
+                        ],
+                        [
+                            "l",
+                            'Art. 256.1.2º LEC: "Que exhiba la cosa mueble que obre en su poder, a fin de que el solicitante o la persona designada por el tribunal pueda examinarla..."',
+                        ],
+                        [
+                            "d",
+                            "Plazo de 10 días para cumplimiento voluntario. Si no se cumple, el tribunal puede ordenar entrada y registro.",
+                        ],
+                        [
+                            "n",
+                            "Frecuente en reclamaciones por vicios ocultos de productos.",
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                det_256_1_3: {
+                    ph: 0,
+                    t: "Exhibición de testamento (art. 256.1.3º)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Obliga a quien tenga en su poder un testamento cerrado u ológrafo a exhibirlo ante el tribunal. Esencial en procedimientos hereditarios.",
+                        ],
+                        [
+                            "w",
+                            "Si el testamento es abierto, no es necesaria esta diligencia porque ya consta en el protocolo notarial.",
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                det_256_1_4: {
+                    ph: 0,
+                    t: "Documentos y cuentas de sociedad (art. 256.1.4º)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Permite a socios y partícipes recabar la exhibición de documentos y cuentas de una sociedad.",
+                        ],
+                        [
+                            "w",
+                            "El solicitante debe acreditar su condición de socio o partícipe. No puede usarse por terceros ajenos.",
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                det_256_1_5: {
+                    ph: 0,
+                    t: "Contrato de seguro de responsabilidad civil (art. 256.1.5º)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Permite obtener información sobre la existencia, condiciones y límites de un contrato de seguro de responsabilidad civil. Esencial en reclamaciones de daños.",
+                        ],
+                        [
+                            "n",
+                            "El art. 256.1.5º fue modificado por la Ley 20/2015, ampliando su alcance para incluir no solo la exhibición del contrato, sino también la mera información.",
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                det_256_1_5bis: {
+                    ph: 0,
+                    t: "Historia clínica (art. 256.1.5º bis)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Permite recabar la historia clínica cuando sea preciso para fundamentar una reclamación por daños personales.",
+                        ],
+                        [
+                            "w",
+                            "El acceso está sujeto a la normativa de protección de datos y ley de autonomía del paciente. El solicitante debe acreditar su legitimación.",
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                det_256_1_6: {
+                    ph: 0,
+                    t: "Datos sobre grupo de consumidores (art. 256.1.6º)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Permite obtener información necesaria para la identificación de los miembros de un grupo de consumidores afectados.",
+                        ],
+                        [
+                            "w",
+                            "Competencia especial: es competente el tribunal ante el que haya de presentarse la demanda, no el del domicilio del requerido.",
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                det_256_1_7: {
+                    ph: 0,
+                    t: "Datos de infracción de PI/PIndustrial (art. 256.1.7º)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Permite obtener información sobre el origen y las redes de distribución de productos o servicios que infrinjan derechos de PI.",
+                        ],
+                        [
+                            "w",
+                            "La solicitud del núm. 8º deberá acompañarse de un principio de prueba de la realidad de la infracción.",
+                        ],
+                        [
+                            "n",
+                            "La información obtenida (núms. 7, 8, 10 y 11) se utilizará exclusivamente para la tutela jurisdiccional, con prohibición de divulgarla (art. 259.5 LEC).",
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                det_256_1_8: {
+                    ph: 0,
+                    t: "Documentos bancarios escala comercial (art. 256.1.8º)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Permite solicitar de entidades bancarias la exhibición de documentos que obren en su poder a escala comercial.",
+                        ],
+                        [
+                            "w",
+                            'La solicitud debe ser proporcional y concreta. No se admite una solicitud genérica de "todos los documentos bancarios". Debe acompañarse de un principio de prueba.',
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                det_256_1_9: {
+                    ph: 0,
+                    t: "Leyes especiales (art. 256.1.9º)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Remite a las diligencias que estén previstas en leyes especiales para casos concretos.",
+                        ],
+                        [
+                            "w",
+                            "Es necesario identificar con precisión la ley especial que habilita la diligencia. No puede usarse como cláusula general.",
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                det_256_1_10: {
+                    ph: 0,
+                    t: "Identificación de prestador SSI (art. 256.1.10º)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Permite recabar datos de identificación de un prestador de servicios de la sociedad de la información que figuren en registros públicos.",
+                        ],
+                        [
+                            "w",
+                            "Se limita a datos ya registrados públicamente. No autoriza la obtención de datos personales no públicos.",
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                det_256_1_11: {
+                    ph: 0,
+                    t: "Identificación de usuario SSI (art. 256.1.11º)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Permite obtener datos de identificación de un usuario de SSI a través del prestador del servicio. Clave para identificar a autores de infracciones en internet.",
+                        ],
+                        [
+                            "w",
+                            "Debe respetar la normativa de protección de datos. Los datos solo podrán utilizarse para el ejercicio de la acción que motiva la diligencia.",
+                        ],
+                    ],
+                    nx: "solicitud_formal",
+                },
+
+                solicitud_formal: {
+                    ph: 0,
+                    t: "Formalización de la solicitud",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "La solicitud debe formularse por escrito, expresando con claridad la diligencia, los fundamentos jurídicos, y una referencia circunstanciada de los hechos y personas afectadas.",
+                        ],
+                        [
+                            "l",
+                            'Art. 256.2 LEC: "Las diligencias preliminares se solicitarán al Juez mediante escrito, acompañado de los documentos en que se funde..."',
+                        ],
+                        [
+                            "cl",
+                            "Contenido obligatorio",
+                            [
+                                "Identificación del solicitante, Letrado y Procurador",
+                                "Expresión clara de la diligencia solicitada (art. 256.1)",
+                                "Fundamentos jurídicos",
+                                "Referencia circunstanciada de los hechos",
+                                "Identificación de las personas afectadas",
+                                "Ofrecimiento de caución",
+                                "Principio de prueba (núms. 8º, 10º, 11º)",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "Salvo excepción, la solicitud requiere procurador y abogado.",
+                        ],
+                        [
+                            "w",
+                            "La caución se perderá si transcurrido 1 mes desde la terminación de las diligencias no se interpone demanda sin justificación suficiente (art. 256.5).",
+                        ],
+                    ],
+                    nx: "verificar_presupuestos",
+                },
+
+                verificar_presupuestos: {
+                    ph: 0,
+                    t: "Verificación de presupuestos procesales",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Deben concurrir simultáneamente tres presupuestos procesales esenciales que el tribunal examinará de oficio.",
+                        ],
+                        [
+                            "cl",
+                            "Presupuestos procesales (art. 258.1)",
+                            [
+                                "Adecuación: La diligencia debe encajar en el art. 256.1 LEC y ser idónea para la finalidad perseguida",
+                                "Justa causa: Indicios racionales de necesidad para preparar la demanda",
+                                "Interés legítimo: Interés actual y directo del solicitante",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "La falta de cualquiera determina la inadmisión.",
+                        ],
+                    ],
+                    q: "¿Concurren los tres presupuestos?",
+                    opts: [
+                        {
+                            t: "Sí, concurren",
+                            l: "A",
+                            n: "competencia",
+                            v: "ok",
+                        },
+                        {
+                            t: "No concurren plenamente",
+                            l: "B",
+                            n: "fin_no_admision",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                fin_no_admision: {
+                    ph: 0,
+                    t: "No admisión por falta de presupuestos",
+                    ac: "ambos",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "La solicitud no ha sido admitida por falta de alguno de los presupuestos esenciales. El tribunal ha dictado auto de denegación.",
+                        ],
+                        [
+                            "n",
+                            "Antes de intentar una nueva solicitud, analice qué presupuesto falló y si es posible subsanarlo.",
+                        ],
+                    ],
+                },
+
+                competencia: {
+                    ph: 1,
+                    t: "Determinación de la competencia territorial",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Determinar el Juez competente es esencial. El juez revisa de oficio; no se admite declinatoria.",
+                        ],
+                        [
+                            "cl",
+                            "Reglas de competencia",
+                            [
+                                "Regla general (núms. 1º a 5º bis, 10º y 11º): Juez del domicilio del requerido",
+                                "Regla especial (núms. 6º, 7º, 8º y 9º): Tribunal ante el que haya de presentarse la demanda",
+                                "Nuevas diligencias derivadas: Mismo tribunal o el competente por nuevos hechos",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "Si el requerido es persona jurídica, el domicilio es el domicilio social.",
+                        ],
+                    ],
+                    q: "¿Se trata de los supuestos de los núms. 6º, 7º, 8º o 9º?",
+                    opts: [
+                        {
+                            t: "Sí (consumidores, PI/PInd, docs bancarios, leyes especiales)",
+                            l: "A",
+                            n: "comp_especial",
+                            v: "neutral",
+                        },
+                        {
+                            t: "No (núms. 1º a 5º bis, 10º y 11º)",
+                            l: "B",
+                            n: "comp_general",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                comp_general: {
+                    ph: 1,
+                    t: "Competencia general: Juez del domicilio del requerido",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Es competente el Juez de Primera Instancia o de lo Mercantil del domicilio del requerido.",
+                        ],
+                        ["l", "Art. 257.1.1º LEC."],
+                    ],
+                    nx: "conflicto_competencia",
+                },
+
+                comp_especial: {
+                    ph: 1,
+                    t: "Competencia especial: Tribunal de la futura demanda",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Para los núms. 6º, 7º, 8º y 9º, es competente el Tribunal ante el que haya de presentarse la demanda.",
+                        ],
+                        ["l", "Art. 257.1.2º LEC."],
+                    ],
+                    nx: "nuevas_diligencias",
+                },
+
+                nuevas_diligencias: {
+                    ph: 1,
+                    t: "Nuevas diligencias por ampliación (art. 257.2)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Si del resultado de las primeras diligencias se deriva la necesidad de practicar otras nuevas, podrán instarse del mismo tribunal o del competente por los nuevos hechos.",
+                        ],
+                        [
+                            "w",
+                            "No es automático. Debe justificarse la necesidad.",
+                        ],
+                    ],
+                    nx: "conflicto_competencia",
+                },
+
+                conflicto_competencia: {
+                    ph: 1,
+                    t: "Inhibición y conflicto negativo de competencia",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Si el juez se inhibe, indicará al solicitante el Juzgado al que debe acudir. Si el indicado también se inhibe, se produce un conflicto negativo.",
+                        ],
+                        [
+                            "d",
+                            "Conflicto negativo: el tribunal superior decide por auto, sin ulterior recurso, en 10 días.",
+                        ],
+                    ],
+                    q: "¿Existe conflicto de competencia?",
+                    opts: [
+                        {
+                            t: "No, el juzgado es competente",
+                            l: "A",
+                            n: "resolucion_fondo",
+                            v: "ok",
+                        },
+                        {
+                            t: "Sí, se inhibe y hay conflicto negativo",
+                            l: "B",
+                            n: "resolucion_conflicto",
+                            v: "warn",
+                        },
+                    ],
+                },
+
+                resolucion_conflicto: {
+                    ph: 1,
+                    t: "Resolución del conflicto negativo (art. 60 LEC)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El tribunal inmediato superior común decide por auto, sin ulterior recurso.",
+                        ],
+                        ["l", "Art. 60 LEC."],
+                    ],
+                    end: "neutral",
+                },
+
+                resolucion_fondo: {
+                    ph: 2,
+                    t: "Triple control de admisibilidad (art. 258 LEC)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El tribunal evalúa si concurren adecuación, justa causa e interés legítimo.",
+                        ],
+                        [
+                            "d",
+                            "Plazo para resolver: 5 días desde la presentación.",
+                        ],
+                        ["l", "Art. 258.1 LEC."],
+                    ],
+                    q: "¿Concurren adecuación, justa causa e interés legítimo?",
+                    opts: [
+                        {
+                            t: "Sí — El tribunal admite la solicitud",
+                            l: "A",
+                            n: "auto_admision",
+                            v: "ok",
+                        },
+                        {
+                            t: "No — Las diligencias no resultan justificadas",
+                            l: "B",
+                            n: "auto_denegacion",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                auto_admision: {
+                    ph: 2,
+                    t: "Auto acordando diligencias y fijando caución",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El juez dicta auto acordando las diligencias y fijando la cuantía de la caución.",
+                        ],
+                        [
+                            "w",
+                            "Contra el auto que acuerde las diligencias no se dará recurso alguno (art. 258.3).",
+                        ],
+                        [
+                            "n",
+                            "La caución puede prestarse en dinero, aval bancario solidario, o cualquier medio que garantice disponibilidad inmediata (art. 64.2 LEC).",
+                        ],
+                    ],
+                    nx: "caucion_plazo",
+                },
+
+                auto_denegacion: {
+                    ph: 2,
+                    t: "Auto denegando las diligencias",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El juez rechaza la petición. Contra el auto denegatorio cabe recurso de apelación (art. 258.4).",
+                        ],
+                        [
+                            "w",
+                            "Solo cabe apelación contra el auto desestimatorio. El estimatorio es irrecurrible.",
+                        ],
+                    ],
+                    q: "¿Se interpone recurso de apelación?",
+                    opts: [
+                        { t: "Sí", l: "A", n: "recurso_apelacion", v: "warn" },
+                        {
+                            t: "No, se acepta",
+                            l: "B",
+                            n: "fin_denegacion_aceptada",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                fin_denegacion_aceptada: {
+                    ph: 2,
+                    t: "Denegación aceptada sin recurso",
+                    ac: "ambos",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "La decisión es firme. La denegación solo afecta a la vía preparatoria, no impide interponer la demanda principal si se cuenta con información suficiente.",
+                        ],
+                    ],
+                },
+
+                recurso_apelacion: {
+                    ph: 2,
+                    t: "Recurso de apelación (art. 258.4 LEC)",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Contra el auto que deniega cabe apelación ante la Audiencia Provincial.",
+                        ],
+                        ["d", "Plazo de apelación: 5 días (art. 459 LEC)."],
+                    ],
+                    q: "La Audiencia estima el recurso?",
+                    opts: [
+                        {
+                            t: "Sí, estima y acuerda diligencias",
+                            l: "A",
+                            n: "auto_admision",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, confirma la denegación",
+                            l: "B",
+                            n: "fin_denegacion_definitiva",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                fin_denegacion_definitiva: {
+                    ph: 2,
+                    t: "Denegación definitiva tras recurso",
+                    ac: "ambos",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "La decisión es firme. Solo cabría casación si se dan los requisitos del art. 477 LEC. No impide interponer la demanda principal.",
+                        ],
+                    ],
+                },
+
+                caucion_plazo: {
+                    ph: 2,
+                    t: "Control de la prestación de la caución",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Se verifica si el solicitante presta la caución en el plazo de 3 días. Es improrrogable.",
+                        ],
+                        ["l", "Art. 258.5 LEC."],
+                        [
+                            "w",
+                            "Si no se presta, el LAJ archivará definitivamente las actuaciones mediante decreto. No cabe subsanación.",
+                        ],
+                    ],
+                    q: "¿Se presta la caución en 3 días?",
+                    opts: [
+                        {
+                            t: "Sí — Caución prestada",
+                            l: "A",
+                            n: "citacion",
+                            v: "ok",
+                        },
+                        {
+                            t: "No — Archivo definitivo",
+                            l: "B",
+                            n: "archivo_definitivo",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                archivo_definitivo: {
+                    ph: 2,
+                    t: "Archivo definitivo por falta de caución",
+                    ac: "laj",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ dicta decreto de archivo definitivo. No cabe recurso. Si se desea iniciar de nuevo, habrá de formularse una solicitud nueva.",
+                        ],
+                    ],
+                },
+
+                citacion: {
+                    ph: 3,
+                    t: "Citación y requerimiento (art. 259 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Se cita y requiere a los interesados para que lleven a cabo la diligencia en 10 días.",
+                        ],
+                        [
+                            "cl",
+                            "Incluir en la citación",
+                            [
+                                "Lugar de la práctica",
+                                "Plazo de 10 días",
+                                "Posibilidad de exhibición telemática (art. 259.2)",
+                                "Posibilidad de acudir con experto a costa del solicitante (art. 259.3)",
+                                "Advertencia de consecuencias de incomparecencia (art. 261)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "En diligencias del art. 256.1.7º, puede ordenarse puerta cerrada (art. 259.4 y 138.3 LEC).",
+                        ],
+                        [
+                            "n",
+                            "La información de los núms. 7, 8, 10 y 11 es exclusiva para tutela jurisdiccional (art. 259.5 LEC).",
+                        ],
+                    ],
+                    nx: "respuesta_requerido",
+                },
+
+                respuesta_requerido: {
+                    ph: 3,
+                    t: "Actitud del requerido",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Tres escenarios: atiende el requerimiento, formula oposición en 5 días, o no atiende ni se opone.",
+                        ],
+                        [
+                            "d",
+                            "Plazo para oponerse: 5 días desde la citación (art. 260.1).",
+                        ],
+                    ],
+                    q: "¿Cuál es la actitud del requerido?",
+                    opts: [
+                        {
+                            t: "Atiende y practica la diligencia",
+                            l: "A",
+                            n: "practica",
+                            v: "ok",
+                        },
+                        {
+                            t: "Formula oposición en plazo",
+                            l: "B",
+                            n: "oposicion",
+                            v: "warn",
+                        },
+                        {
+                            t: "No atiende ni formula oposición",
+                            l: "C",
+                            n: "negativa_tipo",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                practica: {
+                    ph: 3,
+                    t: "Práctica de la diligencia",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "El requerido lleva a cabo la diligencia. Se documenta con intervención del LAJ.",
+                        ],
+                        [
+                            "cl",
+                            "Aspectos a controlar",
+                            [
+                                "Verificar identidad de intervinientes",
+                                "Documentar la diligencia",
+                                "Si procede puerta cerrada (núm. 7º), adoptarla",
+                                "Atribuir carácter reservado si lo solicita algún interesado (art. 259.6)",
+                            ],
+                        ],
+                    ],
+                    q: "¿Cumple completamente?",
+                    opts: [
+                        {
+                            t: "Sí, cumple completamente",
+                            l: "A",
+                            n: "fin_diligencias_practicadas",
+                            v: "ok",
+                        },
+                        {
+                            t: "Cumple parcialmente",
+                            l: "B",
+                            n: "cumplimiento_parcial",
+                            v: "warn",
+                        },
+                        {
+                            t: "No, se niega a cumplir",
+                            l: "C",
+                            n: "negativa_tipo",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                cumplimiento_parcial: {
+                    ph: 3,
+                    t: "Cumplimiento parcial",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El requerido ha cumplido parcialmente. El tribunal valorará si es suficiente.",
+                        ],
+                    ],
+                    q: "¿Es suficiente el cumplimiento parcial?",
+                    opts: [
+                        {
+                            t: "Sí, es suficiente",
+                            l: "A",
+                            n: "fin_diligencias_practicadas",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, se requiere total",
+                            l: "B",
+                            n: "negativa_tipo",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                fin_diligencias_practicadas: {
+                    ph: 3,
+                    t: "Diligencias practicadas con éxito",
+                    ac: "ambos",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El requirente dispone de la información necesaria para interponer la demanda principal.",
+                        ],
+                        [
+                            "d",
+                            "Plazo de 1 mes para interponer la demanda. Si no, se pierde la caución (art. 256.3 LEC).",
+                        ],
+                        [
+                            "n",
+                            "El tribunal resolverá sobre la aplicación de la caución en 5 días (art. 262 LEC). Apelable sin efectos suspensivos.",
+                        ],
+                    ],
+                },
+
+                oposicion: {
+                    ph: 4,
+                    t: "Oposición del requerido (art. 260 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El requerido formula oposición en 5 días. Se da traslado al solicitante para impugnar en 5 días.",
+                        ],
+                        [
+                            "l",
+                            "Art. 260.1 LEC. Causas: a) No concurren presupuestos; b) No es de las previstas; c) Inadecuada; d) Otra causa bastante.",
+                        ],
+                        [
+                            "n",
+                            "El requirente puede impugnar en 5 días. Si no lo hace, el tribunal puede considerar que acepta la oposición.",
+                        ],
+                    ],
+                    nx: "vista_check",
+                },
+
+                vista_check: {
+                    ph: 4,
+                    t: "¿Se solicita vista?",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La vista no es preceptiva; solo se celebra a instancia de parte, siguiendo trámites de juicio verbal.",
+                        ],
+                    ],
+                    q: "¿Se solicita vista?",
+                    opts: [
+                        { t: "Sí", l: "A", n: "celebrar_vista", v: "neutral" },
+                        {
+                            t: "No, se resuelve sin vista",
+                            l: "B",
+                            n: "resolucion_oposicion",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                celebrar_vista: {
+                    ph: 4,
+                    t: "Celebración de vista (art. 260.3 LEC)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Se celebra vista siguiendo los trámites del juicio verbal. Ambas partes exponen sus argumentos.",
+                        ],
+                        [
+                            "d",
+                            "La resolución se dicta en los 5 días siguientes a la vista.",
+                        ],
+                    ],
+                    nx: "resolucion_oposicion",
+                },
+
+                resolucion_oposicion: {
+                    ph: 4,
+                    t: "Resolución sobre la oposición (art. 260.4-7)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El tribunal resuelve mediante auto motivado si la oposición es justificada o injustificada.",
+                        ],
+                        [
+                            "cl",
+                            "Decisiones posibles",
+                            [
+                                "Injustificada: Condena al requerido al pago de costas (auto irrecurrible, art. 260.5-6)",
+                                "Justificada: Se declara justificada (auto apelable, art. 260.7)",
+                            ],
+                        ],
+                    ],
+                    q: "¿El tribunal considera justificada la oposición?",
+                    opts: [
+                        {
+                            t: "No — Injustificada",
+                            l: "A",
+                            n: "op_injustificada",
+                            v: "ok",
+                        },
+                        {
+                            t: "Sí — Justificada",
+                            l: "B",
+                            n: "op_justificada",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                op_injustificada: {
+                    ph: 4,
+                    t: "Oposición injustificada",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El tribunal condena al requerido al pago de costas. La diligencia debe practicarse.",
+                        ],
+                        [
+                            "w",
+                            "Contra este auto no cabe recurso alguno (art. 260.6).",
+                        ],
+                    ],
+                    q: "¿El requerido cumple tras la desestimación?",
+                    opts: [
+                        {
+                            t: "Sí — Practica la diligencia",
+                            l: "A",
+                            n: "practica",
+                            v: "ok",
+                        },
+                        {
+                            t: "No — Persiste en la negativa",
+                            l: "B",
+                            n: "negativa_tipo",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                op_justificada: {
+                    ph: 4,
+                    t: "Oposición justificada",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Las diligencias no se practicarán. Se procede a resolver sobre la aplicación de la caución.",
+                        ],
+                        [
+                            "w",
+                            "Contra este auto cabe recurso de apelación por parte del solicitante (art. 260.7 LEC).",
+                        ],
+                    ],
+                    q: "¿Se interpone apelación por el solicitante?",
+                    opts: [
+                        { t: "Sí", l: "A", n: "caucion_op", v: "warn" },
+                        {
+                            t: "No, se acepta",
+                            l: "B",
+                            n: "caucion_op",
+                            v: "neutral",
+                        },
+                    ],
+                },
+
+                negativa_tipo: {
+                    ph: 5,
+                    t: "Negativa — Selección de medida (art. 261 LEC)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El tribunal acuerda medidas proporcionadas mediante auto motivado.",
+                        ],
+                        [
+                            "w",
+                            "Las medidas varían según el tipo de diligencia.",
+                        ],
+                    ],
+                    q: "¿Qué tipo de diligencia se solicitó?",
+                    opts: [
+                        {
+                            t: "1º: Capacidad/representación",
+                            l: "A",
+                            n: "medida_1",
+                            v: "neutral",
+                        },
+                        {
+                            t: "2º, 3º, 5º: Exhibición docs/cosa/testamento/seguro",
+                            l: "B",
+                            n: "medida_2",
+                            v: "warn",
+                        },
+                        {
+                            t: "4º: Documentos contables",
+                            l: "C",
+                            n: "medida_4",
+                            v: "neutral",
+                        },
+                        {
+                            t: "5º bis, 6º, 7º, 8º: HC, consumidores, PI",
+                            l: "D",
+                            n: "medida_5",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                medida_1: {
+                    ph: 5,
+                    t: "Ficta confessio — Hechos admitidos (art. 261.1.1º)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Se tendrán por respondidas afirmativamente las preguntas. Los hechos se consideran admitidos a efectos del juicio posterior (presunción iuris tantum).",
+                        ],
+                        [
+                            "w",
+                            'Solo a "efectos del juicio ulterior". No constituyen prueba plena.',
+                        ],
+                    ],
+                    nx: "caucion_final",
+                },
+
+                medida_2: {
+                    ph: 5,
+                    t: "Entrada y registro (art. 261.1.2º y 3º)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Si hay indicios suficientes, se ordena entrada y registro. Los documentos/cosas se ocupan y ponen a disposición del solicitante en sede judicial.",
+                        ],
+                        [
+                            "w",
+                            "Requiere autorización judicial específica y garantías del art. 18.3 CE.",
+                        ],
+                    ],
+                    nx: "caucion_final",
+                },
+
+                medida_4: {
+                    ph: 5,
+                    t: "Cuentas tenidas por ciertas (art. 261.1.4º)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Se tendrán por ciertos los datos que presente el solicitante. Inversión de la carga de la prueba. Presunción relativa.",
+                        ],
+                        ["w", "Especialmente gravosa para el requerido."],
+                    ],
+                    nx: "caucion_final",
+                },
+
+                medida_5: {
+                    ph: 5,
+                    t: "Medidas de intervención (art. 261.1.5º)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Se ordenan medidas de intervención necesarias, incluida entrada y registro.",
+                        ],
+                        [
+                            "w",
+                            "Sin perjuicio de responsabilidad penal por desobediencia (art. 556 CP: prisión 3 meses a 1 año).",
+                        ],
+                    ],
+                    nx: "caucion_final",
+                },
+
+                caucion_final: {
+                    ph: 6,
+                    t: "Aplicación de la caución (art. 262 LEC)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El tribunal resuelve sobre la caución a vista de la petición de indemnización y justificación de gastos.",
+                        ],
+                        [
+                            "d",
+                            "Plazo: 5 días, oído el solicitante (art. 262.1).",
+                        ],
+                        ["w", "Apelable sin efectos suspensivos (art. 262.2)."],
+                        [
+                            "n",
+                            "Si queda remanente, no se devuelve hasta que transcurra el plazo de 1 mes (art. 262.3).",
+                        ],
+                    ],
+                    nx: "control_demanda",
+                },
+
+                caucion_op: {
+                    ph: 6,
+                    t: "Caución tras oposición justificada",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Se aplica la caución para resarcir al requerido de gastos y perjuicios.",
+                        ],
+                        ["w", "Apelable sin efectos suspensivos."],
+                    ],
+                    nx: "fin_op_justificada",
+                },
+
+                fin_op_justificada: {
+                    ph: 6,
+                    t: "Fin — Oposición justificada firme",
+                    ac: "laj",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "Las diligencias no se practicarán. La caución se ha aplicado. El procedimiento concluye.",
+                        ],
+                        [
+                            "n",
+                            "El requirente podrá intentar otras vías o interponer la demanda si cuenta con elementos suficientes.",
+                        ],
+                    ],
+                },
+
+                control_demanda: {
+                    ph: 6,
+                    t: "Plazo de interposición de demanda (art. 256.3)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El solicitante dispone de 1 mes para interponer la demanda. Si no, se pierde la caución.",
+                        ],
+                        [
+                            "d",
+                            "Plazo: 1 mes desde la terminación de las diligencias. Improrrogable.",
+                        ],
+                    ],
+                    q: "¿Se interpone demanda en 1 mes?",
+                    opts: [
+                        {
+                            t: "Sí — Demanda interpuesta",
+                            l: "A",
+                            n: "fin_demanda_presentada",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, sin justificación",
+                            l: "B",
+                            n: "perdida_caucion",
+                            v: "bad",
+                        },
+                        {
+                            t: "No, pero con justificación suficiente",
+                            l: "C",
+                            n: "fin_justificado",
+                            v: "warn",
+                        },
+                    ],
+                },
+
+                fin_demanda_presentada: {
+                    ph: 6,
+                    t: "Fin — Demanda interpuesta",
+                    ac: "laj",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El solicitante ha interpuesto la demanda en plazo. Si queda remanente de caución, se devuelve. Las diligencias han cumplido su finalidad.",
+                        ],
+                        [
+                            "cl",
+                            "Próximos pasos",
+                            [
+                                "Utilizar la información para fundamentar la demanda",
+                                "Aportar la documentación exhibida como prueba",
+                                "Invocar hechos tenidos por admitidos si procede",
+                            ],
+                        ],
+                    ],
+                },
+
+                perdida_caucion: {
+                    ph: 6,
+                    t: "Pérdida de caución por no demandar (art. 256.3)",
+                    ac: "ambos",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "La caución se pierde a favor de las personas que intervinieron, a prorrata del perjuicio. La pérdida es automática y no requiere resolución.",
+                        ],
+                        [
+                            "w",
+                            "No impide interponer la demanda después, pero se ha perdido la garantía económica.",
+                        ],
+                    ],
+                },
+
+                fin_justificado: {
+                    ph: 6,
+                    t: "No interposición justificada",
+                    ac: "juez",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "El solicitante acredita justificación suficiente a juicio del tribunal. La caución no se pierde.",
+                        ],
+                        ["n", "La valoración es discrecional del tribunal."],
+                    ],
+                },
+            };
+
+            let cur = "inicio";
+            let hist = [];
+            let activeSbTab = "map";
+            let mapaOn = false;
+            let phaseCollapsed = {};
+
+            // --- Estado para sidebar toggle ---
+            let sidebarOpen = false; // solo para móvil
+            let isSidebarCollapsed = false; // para escritorio
+
+            // --- PRE-COMPUTED CACHES (Performance Optimization) ---
+            const REACHABLE = computeReachable();
+            const PATH_CACHE = buildPathCache();
+
+            function computeReachable() {
+                const reach = new Set(["inicio"]);
+                const queue = ["inicio"];
+                while (queue.length > 0) {
+                    const id = queue.shift();
+                    const step = STEPS[id];
+                    if (!step) continue;
+                    if (step.nx && !reach.has(step.nx)) {
+                        reach.add(step.nx);
+                        queue.push(step.nx);
+                    }
+                    if (step.opts) {
+                        step.opts.forEach((o) => {
+                            if (!reach.has(o.n)) {
+                                reach.add(o.n);
+                                queue.push(o.n);
+                            }
+                        });
+                    }
+                }
+                return reach;
+            }
+
+            function buildPathCache() {
+                const cache = {};
+                const queue = [["inicio"]];
+                const visited = new Set(["inicio"]);
+                while (queue.length > 0) {
+                    const path = queue.shift();
+                    const currentId = path[path.length - 1];
+                    cache[currentId] = path;
+                    const step = STEPS[currentId];
+                    if (!step) continue;
+                    const neighbors = [];
+                    if (step.nx) neighbors.push(step.nx);
+                    if (step.opts)
+                        step.opts.forEach((o) => neighbors.push(o.n));
+                    for (const neighbor of neighbors) {
+                        if (!visited.has(neighbor) && STEPS[neighbor]) {
+                            visited.add(neighbor);
+                            queue.push([...path, neighbor]);
+                        }
+                    }
+                }
+                return cache;
+            }
+
+            function escAttr(s) {
+                if (!s) return "";
+                return String(s)
+                    .replace(/&/g, "&amp;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+            }
+
+            // --- NAVIGATION CORE ---
+            function goTo(n, lbl) {
+                hist.push({ s: cur, c: lbl || "" });
+                cur = n;
+                if (lbl) sbTab("journey");
+                render();
+            }
+            function goBack() {
+                if (!hist.length) return;
+                cur = hist.pop().s;
+                render();
+            }
+            function goBackTo(i) {
+                if (i < 0 || i >= hist.length) return;
+                cur = hist[i].s;
+                hist = hist.slice(0, i);
+                render();
+            }
+            function restart() {
+                cur = "inicio";
+                hist = [];
+                sbTab("map");
+                render();
+            }
+
+            function jumpTo(targetId) {
+                if (targetId === cur) return;
+                const path = PATH_CACHE[targetId];
+                if (!path) return;
+
+                hist = [];
+                for (let i = 0; i < path.length - 1; i++) {
+                    const stepId = path[i];
+                    const nextStepId = path[i + 1];
+                    const step = STEPS[stepId];
+                    let choice = "";
+                    if (step.opts) {
+                        const opt = step.opts.find((o) => o.n === nextStepId);
+                        if (opt) choice = opt.t;
+                    }
+                    hist.push({ s: stepId, c: choice });
+                }
+                cur = targetId;
+                sbTab("map");
+                if (mapaOn) toggleMapa();
+                render();
+            }
+
+            // --- SIDEBAR TOGGLE FUNCTIONS (nuevas) ---
+            function toggleSidebar() {
+                const isMobile = window.innerWidth <= 768;
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    const sidebarEl = document.getElementById("sidebar");
+                    const backdrop = document.getElementById("sidebarBackdrop");
+                    const btn = document.getElementById("btnToggleSidebar");
+                    if (sidebarOpen) {
+                        sidebarEl.classList.add("open");
+                        backdrop.classList.add("show");
+                        if (btn) btn.setAttribute("aria-expanded", "true");
+                    } else {
+                        sidebarEl.classList.remove("open");
+                        backdrop.classList.remove("show");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                } else {
+                    // escritorio: alternar clase collapsed en sidebar
+                    const sidebarEl = document.getElementById("sidebar");
+                    sidebarEl.classList.toggle("collapsed");
+                    const btn = document.getElementById("btnToggleSidebar");
+                    const isCollapsed =
+                        sidebarEl.classList.contains("collapsed");
+                    if (btn)
+                        btn.setAttribute(
+                            "aria-expanded",
+                            isCollapsed ? "false" : "true",
+                        );
+                }
+            }
+
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 768 && sidebarOpen) {
+                    sidebarOpen = false;
+                    const sidebarEl = document.getElementById("sidebar");
+                    const backdrop = document.getElementById("sidebarBackdrop");
+                    const btn = document.getElementById("btnToggleSidebar");
+                    sidebarEl.classList.remove("open");
+                    backdrop.classList.remove("show");
+                    if (btn) btn.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            function handleResize() {
+                // Si se pasa de móvil a escritorio, aseguramos que el sidebar móvil se cierre
+                if (window.innerWidth > 768) {
+                    if (sidebarOpen) {
+                        const sidebarEl = document.getElementById("sidebar");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        sidebarEl.classList.remove("open");
+                        backdrop.classList.remove("show");
+                        sidebarOpen = false;
+                        const btn = document.getElementById("btnToggleSidebar");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                    // Aseguramos que en escritorio la sidebar no tenga clase open (solo collapsed)
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (sidebarEl) sidebarEl.classList.remove("open");
+                } else {
+                    // Si estamos en móvil y la sidebar tiene collapsed (por posible estado heredado) la quitamos
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (
+                        sidebarEl &&
+                        sidebarEl.classList.contains("collapsed")
+                    ) {
+                        sidebarEl.classList.remove("collapsed");
+                    }
+                    // Si sidebarOpen es false pero por alguna razón tiene clase open, la quitamos
+                    if (
+                        !sidebarOpen &&
+                        sidebarEl &&
+                        sidebarEl.classList.contains("open")
+                    ) {
+                        sidebarEl.classList.remove("open");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        backdrop.classList.remove("show");
+                    }
+                }
+            }
+
+            // --- RENDER ENGINE (modificada para cerrar sidebar móvil)---
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+                document.getElementById("content").scrollTop = 0;
+                closeMobileSidebar();
+            }
+            function renderPbar() {
+                const s = STEPS[cur];
+                let h = "";
+                PHASES.forEach((p, i) => {
+                    if (i > 0) h += '<span class="ph-sep">›</span>';
+                    let cls = "";
+                    if (i === s.ph) cls = "active";
+                    else if (i < s.ph) cls = "done";
+                    h += `<div class="ph-item"><span class="ph-lbl ${cls}">${p}</span></div>`;
+                });
+                document.getElementById("pbar").innerHTML = h;
+            }
+            function renderBreadcrumb() {
+                const el = document.getElementById("breadcrumb");
+                let h = "";
+                hist.forEach((item, i) => {
+                    const st = STEPS[item.s];
+                    const lbl =
+                        st.t.length > 28 ? st.t.slice(0, 26) + "…" : st.t;
+                    h += `<button class="bc-item bc-past" onclick="goBackTo(${i})">${escAttr(lbl)}</button><span class="bc-sep">›</span>`;
+                });
+                const curS = STEPS[cur];
+                const curLbl =
+                    curS.t.length > 28 ? curS.t.slice(0, 26) + "…" : curS.t;
+                h += `<span class="bc-item bc-current">${escAttr(curLbl)}</span>`;
+                el.innerHTML = h;
+                el.scrollLeft = el.scrollWidth;
+            }
+            function renderSidebar() {
+                renderSbMap();
+                renderSbJourney();
+            }
+
+            const SB_FOOT = `<div class="sb-foot">Arts. 256–263 LEC · Ley 1/2000<br>Art. 60 LEC (conflicto)<br>Art. 64 LEC (caución)<br>Art. 138.3 LEC (puerta cerrada)<br>Art. 556 CP (desobediencia)</div>`;
+
+            function renderSbMap() {
+                const visited = new Set(hist.map((h) => h.s));
+                visited.add(cur);
+                let h = "";
+                PHASES.forEach((ph, pi) => {
+                    const col = phaseCollapsed[pi] ? "collapsed" : "";
+                    h += `<div class="sm-phase ${col}"><div class="sm-phase-hdr" onclick="togglePhase(${pi})"><span>${escAttr(ph)}</span><span class="ph-toggle">▼</span></div><div class="sm-nodes" style="display:${phaseCollapsed[pi] ? "none" : "block"}">`;
+                    Object.keys(STEPS)
+                        .filter((k) => STEPS[k].ph === pi)
+                        .forEach((k) => {
+                            const st = STEPS[k];
+                            let cls = "sm-node";
+                            if (k === cur) cls += " sm-current";
+                            else if (visited.has(k)) cls += " sm-visited";
+                            else if (!REACHABLE.has(k))
+                                cls += " sm-unreachable";
+                            if (st.end) cls += " sm-end";
+                            const title = st.t;
+                            h += `<div class="${cls}" data-jump="${escAttr(k)}" role="button" tabindex="0" title="${escAttr(st.t)}">${escAttr(title)}</div>`;
+                        });
+                    h += "</div></div>";
+                });
+                h += SB_FOOT;
+                document.getElementById("sb-map").innerHTML = h;
+            }
+            function renderSbJourney() {
+                let h = "";
+                if (hist.length === 0) {
+                    h =
+                        '<div style="color:rgba(255,255,255,.4);font-size:12px;text-align:center;margin-top:20px">Inicio</div>';
+                } else {
+                    hist.forEach((item, i) => {
+                        const st = STEPS[item.s];
+                        h += `<div class="pi past"><div>${escAttr(st.t)}</div>`;
+                        if (item.c)
+                            h += `<div class="pi-choice">${escAttr(item.c)}</div>`;
+                        h += "</div>";
+                    });
+                }
+                const curS = STEPS[cur];
+                h += `<div class="pi current"><div>${escAttr(curS.t)}</div></div>`;
+                h += SB_FOOT;
+                document.getElementById("sb-journey").innerHTML = h;
+            }
+            function renderContent() {
+                const s = STEPS[cur];
+                if (s.end) return renderEnd(s);
+                let h = '<div class="card">';
+                h += buildHdr(s);
+                h += buildBody(s);
+                if (s.q) h += buildDec(s);
+                h += buildNav(s);
+                h += "</div>";
+                document.getElementById("content").innerHTML = h;
+            }
+            function buildHdr(s) {
+                const stepNum = hist.length + 1;
+                let h = '<div class="c-hdr">';
+                h += `<span class="act-badge act-${s.ac}">${AC_LABELS[s.ac]}</span>`;
+                h += `<div class="c-title">${escAttr(s.t)}</div>`;
+                h += `<div class="step-num">Paso ${stepNum} · Fase ${s.ph + 1}: ${escAttr(PHASES[s.ph])}</div>`;
+                h += "</div>";
+                return h;
+            }
+            function buildBody(s) {
+                let h = '<div class="c-body">';
+                s.c.forEach((b) => {
+                    switch (b[0]) {
+                        case "i":
+                            h += `<div class="cb-intro">${b[1]}</div>`;
+                            break;
+                        case "d":
+                            h += `<div class="cb-deadline">${b[1]}</div>`;
+                            break;
+                        case "n":
+                            h += `<div class="cb-note">${b[1]}</div>`;
+                            break;
+                        case "w":
+                            h += `<div class="cb-warn">${b[1]}</div>`;
+                            break;
+                        case "l":
+                            h += `<div class="cb-law">${b[1]}</div>`;
+                            break;
+                        case "cl":
+                            h += `<div class="cb-cl"><div class="cb-cl-title">${escAttr(b[1])}</div><ul class="cb-cl-list">`;
+                            b[2].forEach((li) => (h += `<li>${li}</li>`));
+                            h += `</ul></div>`;
+                            break;
+                    }
+                });
+                h += "</div>";
+                return h;
+            }
+            function buildDec(s) {
+                const letters = "ABCDEFGHIJKLM";
+                let h = '<div class="dec-area">';
+                h += `<div class="dec-q">${escAttr(s.q)}</div><div class="dec-opts">`;
+                s.opts.forEach((o, i) => {
+                    const v = o.v || "neutral";
+                    h += `<button class="dec-btn ${v}" onclick="goTo('${escAttr(o.n)}','${escAttr(o.t)}')"><span class="dec-letter">${letters[i]}</span>${escAttr(o.t)}</button>`;
+                });
+                h += "</div></div>";
+                return h;
+            }
+            function buildNav(s) {
+                let h = '<div class="c-nav">';
+                h += `<button class="btn-back" onclick="goBack()" ${hist.length === 0 ? "disabled" : ""}>← Volver</button>`;
+                if (s.nx && !s.q) {
+                    h += `<button class="btn-next" onclick="goTo('${escAttr(s.nx)}','')">Siguiente →</button>`;
+                } else {
+                    h += "<span></span>";
+                }
+                h += "</div>";
+                return h;
+            }
+            function renderEnd(s) {
+                const icons = {
+                    success: "✅",
+                    error: "❌",
+                    warning: "⚠️",
+                    neutral: "ℹ️",
+                };
+                let h = `<div class="card end-${s.end}"><div class="end-body">`;
+                h += `<div class="end-icon">${icons[s.end]}</div>`;
+                h += `<div class="end-title">${escAttr(s.t)}</div>`;
+                h += `<div class="end-sub">El procedimiento ha concluido en esta vía</div>`;
+                h +=
+                    '<div class="end-btns"><button class="btn-back" onclick="goBack()">← Volver</button><button class="btn-next" onclick="restart()">↺ Nuevo procedimiento</button></div></div>';
+                h += buildBody(s);
+                h += buildSummary();
+                h += "</div>";
+                document.getElementById("content").innerHTML = h;
+            }
+            function buildSummary() {
+                let h =
+                    '<div class="summary-box"><h4>Resumen del recorrido</h4>';
+                hist.forEach((item, i) => {
+                    const st = STEPS[item.s];
+                    h += `<div class="summary-step"><span class="summary-num">${i + 1}</span><div class="summary-info"><strong>${escAttr(st.t)}</strong>`;
+                    if (item.c)
+                        h += `<div class="summary-choice">↳ ${escAttr(item.c)}</div>`;
+                    h += "</div></div>";
+                });
+                const curS = STEPS[cur];
+                h += `<div class="summary-step"><span class="summary-num">${hist.length + 1}</span><div class="summary-info"><strong>${escAttr(curS.t)}</strong><div class="summary-choice" style="color:var(--green)">← Desenlace</div></div></div>`;
+                h += "</div>";
+                return h;
+            }
+            function sbTab(tab) {
+                activeSbTab = tab;
+                document.getElementById("sb-map").style.display =
+                    tab === "map" ? "block" : "none";
+                document.getElementById("sb-journey").style.display =
+                    tab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach((t, i) => {
+                    t.classList.toggle(
+                        "active",
+                        (i === 0 && tab === "map") ||
+                            (i === 1 && tab === "journey"),
+                    );
+                });
+            }
+            function togglePhase(i) {
+                phaseCollapsed[i] = !phaseCollapsed[i];
+                renderSbMap();
+            }
+            function toggleMapa() {
+                mapaOn = !mapaOn;
+                document.getElementById("layout").style.display = mapaOn
+                    ? "none"
+                    : "flex";
+                document.getElementById("mapa-overlay").style.display = mapaOn
+                    ? "block"
+                    : "none";
+                if (mapaOn) renderMapa();
+            }
+            function renderMapa() {
+                const visited = new Set(hist.map((h) => h.s));
+                visited.add(cur);
+                let h =
+                    '<div class="mapa-title">Mapa completo del procedimiento</div><div class="mapa-sub">Vista estructural de pasos y ramificaciones</div><div class="mapa-close"><button class="btn-next" onclick="toggleMapa()">← Volver al recorrido</button></div><div class="mapa-cols">';
+                PHASES.forEach((ph, pi) => {
+                    h += `<div class="mapa-col"><div class="mapa-col-hdr">${escAttr(ph)}</div>`;
+                    Object.keys(STEPS)
+                        .filter((k) => STEPS[k].ph === pi)
+                        .forEach((k) => {
+                            const st = STEPS[k];
+                            let cls = "";
+                            if (k === cur) cls = "m-current";
+                            else if (visited.has(k)) cls = "m-visited";
+                            if (st.end) cls += " m-end-" + st.end;
+                            h += `<div class="mapa-nd ${cls}" data-jump="${escAttr(k)}" role="button" tabindex="0"><div class="mapa-nd-title">${escAttr(st.t)}</div><div class="mapa-nd-actor">${escAttr(AC_LABELS[st.ac])}</div>`;
+                            if (st.end) {
+                                const endL = {
+                                    success: "✅ Fin exitoso",
+                                    error: "❌ Fin sin éxito",
+                                    warning: "⚠️ Fin con reservas",
+                                    neutral: "ℹ️ Derivación",
+                                };
+                                h += `<div class="mapa-nd-arrows">${escAttr(endL[st.end])}</div>`;
+                            }
+                            h += `</div>`;
+                        });
+                    h += "</div>";
+                });
+                h +=
+                    '</div><div style="margin-top:14px;padding:10px 14px;background:#fff;border:1px solid var(--bdr);border-radius:8px;font-size:11px;color:var(--muted);font-style:italic">✦ Pulsa cualquier nodo para ir directamente. El historial se reconstruirá lógicamente.</div>';
+                document.getElementById("mapa-overlay").innerHTML = h;
+            }
+            function dlGuia() {
+                const html =
+                    "<!DOCTYPE html>" + document.documentElement.outerHTML;
+                const blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "guia-diligencias-preliminares.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            function handleInteraction(e) {
+                const target = e.target.closest("[data-jump]");
+                if (target && target.dataset.jump) {
+                    jumpTo(target.dataset.jump);
+                }
+            }
+            document
+                .getElementById("sb-map")
+                .addEventListener("click", handleInteraction);
+            document
+                .getElementById("sb-map")
+                .addEventListener("keydown", (e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        handleInteraction(e);
+                    }
+                });
+            document
+                .getElementById("mapa-overlay")
+                .addEventListener("click", handleInteraction);
+            document
+                .getElementById("mapa-overlay")
+                .addEventListener("keydown", (e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        handleInteraction(e);
+                    }
+                });
+
+            document.addEventListener("keydown", function (e) {
+                if (
+                    e.target.tagName === "INPUT" ||
+                    e.target.tagName === "TEXTAREA" ||
+                    e.target.tagName === "BUTTON"
+                )
+                    return;
+                switch (e.key) {
+                    case "ArrowLeft":
+                        goBack();
+                        break;
+                    case "m":
+                    case "M":
+                        toggleMapa();
+                        break;
+                    case "r":
+                    case "R":
+                        restart();
+                        break;
+                    case "Escape":
+                        if (mapaOn) toggleMapa();
+                        break;
+                }
+            });
+
+            // --- ZOOM LOGIC ---
+            let zoomLevel = 100;
+            function updateZoom() {
+                const label = document.getElementById("zoom-label");
+                const content = document.getElementById("content");
+                if (label) label.innerText = `${zoomLevel}%`;
+                if (content) content.style.zoom = zoomLevel / 100;
+            }
+            document.getElementById("btn-zoom-in").onclick = () => {
+                if (zoomLevel < 150) {
+                    zoomLevel += 10;
+                    updateZoom();
+                }
+            };
+            document.getElementById("btn-zoom-out").onclick = () => {
+                if (zoomLevel > 70) {
+                    zoomLevel -= 10;
+                    updateZoom();
+                }
+            };
+
+            // --- Inicialización y eventos adicionales ---
+            document
+                .getElementById("btnToggleSidebar")
+                .addEventListener("click", toggleSidebar);
+            document
+                .getElementById("sidebarBackdrop")
+                .addEventListener("click", closeMobileSidebar);
+            window.addEventListener("resize", handleResize);
+            handleResize(); // para estado inicial correcto
+            render();
+        </script>
+    </body>
+</html>

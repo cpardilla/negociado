@@ -1,0 +1,2863 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            De la intervención del caudal hereditario (artículos 790 a 796 LEC)
+        </title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --success-c: #15803d;
+                --success-bg: #f0fdf4;
+                --success-bdr: #86efac;
+                --error-c: #b91c1c;
+                --error-bg: #fef2f2;
+                --error-bdr: #fca5a5;
+                --warning-c: #b45309;
+                --warning-bg: #fffbeb;
+                --warning-bdr: #fcd34d;
+                --neutral-c: #1a2f6e;
+                --neutral-bg: #eff6ff;
+                --neutral-bdr: #93c5fd;
+                --transition-norm: 250ms ease;
+            }
+            html,
+            body {
+                height: 100%;
+                overflow: hidden;
+                font-family: "Outfit", system-ui, sans-serif;
+                font-size: 15px;
+                color: var(--text);
+                background: var(--slate-bg);
+            }
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            /* HEADER */
+            #hdr {
+                flex-shrink: 0;
+                height: 56px;
+                background: var(--navy);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+            }
+            #hdr .hdr-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+            /* Botón toggle sidebar (NUEVO) */
+            .btn-toggle-sidebar {
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                padding: 4px 10px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+                color: #fff;
+                font-family: inherit;
+                font-size: 20px;
+                cursor: pointer;
+                transition: all 150ms ease;
+                white-space: nowrap;
+                line-height: 1;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+            .btn-toggle-sidebar:focus-visible {
+                outline: 2px solid var(--navy-lt);
+                outline-offset: 2px;
+            }
+            #hdr .hdr-left .seal {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.85);
+            }
+            #hdr .hdr-left .hdr-titles {
+                min-width: 0;
+            }
+            #hdr .hdr-left h1 {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--white);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #hdr .hdr-left .hdr-sub {
+                font-size: 11px;
+                color: var(--white);
+                opacity: 0.7;
+            }
+            #hdr .hdr-right {
+                display: flex;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: var(--white);
+                font-size: 13px;
+                padding: 6px 12px;
+                border-radius: 4px;
+                cursor: pointer;
+                white-space: nowrap;
+                font-family: inherit;
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+            .btn-ghost:disabled {
+                opacity: 0.4;
+                cursor: default;
+            }
+
+            /* PHASE BAR */
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                background: var(--navy-mid);
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                gap: 2px;
+            }
+            #pbar::-webkit-scrollbar {
+                display: none;
+            }
+            .ph-item {
+                display: flex;
+                align-items: center;
+            }
+            .ph-lbl {
+                font-size: 12px;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.45);
+                padding: 5px 10px;
+                border-radius: 6px;
+                white-space: nowrap;
+                transition: all 0.15s;
+            }
+            .ph-lbl.active {
+                background: rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+            .ph-lbl.done {
+                color: rgba(255, 255, 255, 0.95);
+            }
+            .ph-sep {
+                color: rgba(255, 255, 255, 0.2);
+                font-size: 16px;
+                margin: 0 2px;
+                user-select: none;
+            }
+
+            /* BREADCRUMB */
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 34px;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                gap: 0;
+                overflow-x: auto;
+                scrollbar-width: none;
+                flex-wrap: wrap;
+                row-gap: 2px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+            #breadcrumb::-webkit-scrollbar {
+                display: none;
+            }
+            .bc-item {
+                font-size: 13px;
+                font-weight: 500;
+                white-space: nowrap;
+                padding: 0 6px;
+                color: var(--muted);
+                background: none;
+                border: none;
+                font-family: inherit;
+                cursor: pointer;
+            }
+            .bc-past {
+                cursor: pointer;
+                background: none;
+                border: none;
+                font-family: inherit;
+                font-size: 13px;
+                font-weight: 500;
+                color: var(--muted);
+                padding: 0 6px;
+            }
+            .bc-past:hover {
+                color: var(--navy-lt);
+                text-decoration: underline;
+            }
+            .bc-current {
+                font-weight: 600;
+                color: var(--navy);
+                cursor: default;
+            }
+            .bc-sep {
+                color: var(--muted);
+                font-size: 15px;
+                opacity: 0.5;
+                margin: 0 2px;
+                user-select: none;
+            }
+
+            /* LAYOUT */
+            #layout {
+                flex: 1;
+                overflow: hidden;
+                display: flex;
+                position: relative;
+            }
+            #mapa-overlay {
+                display: none;
+                flex: 1;
+                overflow-y: auto;
+                background: var(--slate-bg);
+                padding: 20px;
+            }
+
+            /* SIDEBAR (con soporte para colapso y overlay móvil) */
+            #sidebar {
+                width: 260px;
+                flex-shrink: 0;
+                background: var(--navy-mid);
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                min-height: 0;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+                transition:
+                    transform var(--transition-norm),
+                    width var(--transition-norm);
+                z-index: 80;
+            }
+            #sidebar.collapsed {
+                width: 0;
+                transform: translateX(-100%);
+                overflow: hidden;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 4px;
+            }
+            #sidebar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.25);
+                border-radius: 3px;
+            }
+            #sidebar::-webkit-scrollbar-thumb:hover {
+                background: rgba(255, 255, 255, 0.35);
+            }
+            #sb-tabs {
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                flex-shrink: 0;
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 10px 0;
+                font-size: 12px;
+                font-weight: 700;
+                font-family: "Outfit", sans-serif;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                transition: all 0.15s;
+                border-bottom: 2px solid transparent;
+            }
+            .sb-tab.active {
+                color: #fff;
+                border-bottom: 2px solid var(--navy-lt);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.05);
+            }
+            #sb-map,
+            #sb-journey {
+                padding: 10px;
+                flex: 1;
+                min-height: 0;
+            }
+            .sm-phase {
+                margin-bottom: 6px;
+            }
+            .sm-phase-hdr {
+                font-size: 11px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.4);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding: 5px 6px;
+                cursor: pointer;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                transition: background 0.15s;
+            }
+            .sm-phase-hdr:hover {
+                background: rgba(255, 255, 255, 0.06);
+            }
+            .sm-phase-hdr .ph-toggle {
+                font-size: 10px;
+                opacity: 0.5;
+            }
+            .sm-nodes {
+                overflow: hidden;
+            }
+            .sm-node {
+                font-size: 12px;
+                padding: 6px 8px 6px 14px;
+                border-radius: 5px;
+                color: rgba(255, 255, 255, 0.55);
+                cursor: pointer;
+                margin-bottom: 2px;
+                transition:
+                    background 0.12s,
+                    color 0.12s;
+                position: relative;
+                line-height: 1.45;
+                display: flex;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            .sm-node:hover {
+                background: rgba(255, 255, 255, 0.12);
+                color: rgba(255, 255, 255, 0.95);
+            }
+            .sm-node.sm-visited {
+                color: rgba(134, 239, 172, 0.9);
+            }
+            .sm-node.sm-visited::before {
+                content: "✓";
+                position: absolute;
+                left: 2px;
+                top: 6px;
+                font-size: 10px;
+                color: var(--green);
+            }
+            .sm-node.sm-current {
+                color: #fff;
+                background: rgba(65, 105, 225, 0.35);
+                font-weight: 600;
+            }
+            .sm-node.sm-current::before {
+                content: "●";
+                position: absolute;
+                left: 2px;
+                top: 6px;
+                font-size: 9px;
+                color: var(--navy-lt);
+            }
+            .sm-node.sm-end {
+                opacity: 0.7;
+            }
+            .sb-foot {
+                margin-top: 12px;
+                padding: 10px;
+                background: rgba(0, 0, 0, 0.15);
+                border-radius: 6px;
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.45);
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                line-height: 1.7;
+            }
+            .pi {
+                padding: 7px 8px;
+                border-radius: 5px;
+                margin-bottom: 4px;
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.45);
+                border-left: 2px solid transparent;
+                transition: background 0.12s;
+            }
+            .pi.current {
+                color: #fff;
+                border-left-color: var(--navy-lt);
+                background: rgba(65, 105, 225, 0.2);
+                font-weight: 600;
+            }
+            .pi.past {
+                border-left-color: rgba(255, 255, 255, 0.15);
+                color: rgba(255, 255, 255, 0.55);
+            }
+            .pi-choice {
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.35);
+                margin-top: 3px;
+                font-style: italic;
+            }
+
+            /* Backdrop para móvil (NUEVO) */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 140;
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+
+            .zoom-cluster {
+                display: flex;
+                align-items: center;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 4px;
+                overflow: hidden;
+                margin-right: 10px;
+            }
+            .btn-zoom {
+                background: none;
+                border: none;
+                color: var(--white);
+                font-size: 16px;
+                padding: 4px 10px;
+                cursor: pointer;
+                transition: background 0.15s;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .zoom-label {
+                font-size: 12px;
+                color: var(--white);
+                padding: 0 8px;
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                min-width: 45px;
+                text-align: center;
+            }
+
+            /* CONTENT */
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 28px 32px;
+                background: var(--slate-bg);
+            }
+            #content::-webkit-scrollbar {
+                width: 6px;
+            }
+            #content::-webkit-scrollbar-thumb {
+                background: var(--bdr);
+                border-radius: 3px;
+            }
+
+            /* CARD */
+            .card {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 12px;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                animation: fadeUp 0.22s ease;
+            }
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .c-hdr {
+                padding: 18px 20px 14px;
+                border-bottom: 1px solid var(--bdr);
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                align-items: center;
+            }
+            .act-badge {
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                padding: 4px 10px;
+                border-radius: 4px;
+                font-family: ui-monospace, SFMono-Regular, monospace;
+            }
+            .act-laj {
+                background: var(--cyan-bg);
+                color: var(--cyan);
+                border: 1px solid rgba(13, 148, 136, 0.25);
+            }
+            .act-juez {
+                background: var(--violet-bg);
+                color: var(--violet);
+                border: 1px solid rgba(91, 33, 182, 0.25);
+            }
+            .act-ambos {
+                background: var(--amber-bg);
+                color: var(--amber);
+                border: 1px solid rgba(180, 83, 9, 0.25);
+            }
+            .c-title {
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--text);
+                flex: 1;
+                min-width: 200px;
+            }
+            .step-num {
+                font-size: 12px;
+                color: var(--muted);
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                white-space: nowrap;
+                align-self: flex-end;
+            }
+            .c-body {
+                padding: 18px 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+            }
+            .b-intro {
+                font-size: 15px;
+                line-height: 1.75;
+                color: var(--text);
+            }
+            .b-deadline {
+                background: var(--amber-bg);
+                border: 1px solid var(--warning-bdr);
+                border-left: 3px solid var(--amber);
+                border-radius: 6px;
+                padding: 12px 16px;
+                font-size: 14px;
+                color: var(--amber);
+                display: flex;
+                gap: 8px;
+                align-items: flex-start;
+            }
+            .b-note {
+                background: var(--cyan-bg);
+                border: 1px solid rgba(13, 148, 136, 0.2);
+                border-left: 3px solid var(--cyan);
+                border-radius: 6px;
+                padding: 12px 16px;
+                font-size: 14px;
+                color: var(--cyan);
+                display: flex;
+                gap: 8px;
+                align-items: flex-start;
+            }
+            .b-warn {
+                background: var(--red-bg);
+                border: 1px solid var(--error-bdr);
+                border-left: 3px solid var(--red);
+                border-radius: 6px;
+                padding: 12px 16px;
+                font-size: 14px;
+                color: var(--red);
+                display: flex;
+                gap: 8px;
+                align-items: flex-start;
+            }
+            .b-law {
+                background: var(--violet-bg);
+                border: 1px solid rgba(91, 33, 182, 0.2);
+                border-radius: 6px;
+                padding: 10px 14px;
+                font-size: 13px;
+                color: var(--violet);
+                font-family: ui-monospace, SFMono-Regular, monospace;
+            }
+            .b-check {
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .b-check-title {
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: var(--muted);
+                padding: 9px 14px;
+                border-bottom: 1px solid var(--bdr);
+                background: var(--white);
+            }
+            .b-check-list {
+                padding: 12px 14px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .b-check-item {
+                display: flex;
+                gap: 10px;
+                align-items: flex-start;
+                font-size: 14px;
+                line-height: 1.6;
+                color: var(--text);
+                cursor: pointer;
+            }
+            .b-check-item input[type="checkbox"] {
+                margin-top: 3px;
+                width: 16px;
+                height: 16px;
+                accent-color: var(--navy-lt);
+                flex-shrink: 0;
+                cursor: pointer;
+            }
+            .b-check-item.done-item {
+                color: var(--muted);
+                text-decoration: line-through;
+            }
+
+            /* DECISION AREA */
+            .dec-area {
+                padding: 0 20px 18px;
+            }
+            .dec-q {
+                background: var(--slate-bg);
+                border: 1.5px solid var(--bdr);
+                border-top: 3px solid var(--navy);
+                border-radius: 8px;
+                padding: 12px 16px;
+                margin-bottom: 12px;
+            }
+            .dec-q-label {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: var(--muted);
+                margin-bottom: 6px;
+            }
+            .dec-q-text {
+                font-size: 15px;
+                font-weight: 600;
+                color: var(--text);
+                line-height: 1.55;
+            }
+            .dec-opts {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+                border-radius: 8px;
+                border: 1.5px solid var(--bdr);
+                background: var(--white);
+                cursor: pointer;
+                transition: all 0.15s;
+                text-align: left;
+                font-family: "Outfit", sans-serif;
+                width: 100%;
+            }
+            .dec-btn:hover {
+                border-color: var(--navy-lt);
+                background: var(--slate-bg);
+            }
+            .dec-btn.ok:hover {
+                border-color: var(--green);
+                background: var(--green-bg);
+            }
+            .dec-btn.bad:hover {
+                border-color: var(--red);
+                background: var(--red-bg);
+            }
+            .dec-btn.warn:hover {
+                border-color: var(--amber);
+                background: var(--amber-bg);
+            }
+            .dec-btn.neutral:hover {
+                border-color: var(--navy-lt);
+                background: var(--neutral-bg);
+            }
+            .dec-letter {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: 700;
+                flex-shrink: 0;
+                font-family: ui-monospace, SFMono-Regular, monospace;
+            }
+            .ok .dec-letter {
+                background: var(--green-bg);
+                color: var(--green);
+                border: 1px solid rgba(21, 128, 61, 0.25);
+            }
+            .bad .dec-letter {
+                background: var(--red-bg);
+                color: var(--red);
+                border: 1px solid rgba(185, 28, 28, 0.25);
+            }
+            .warn .dec-letter {
+                background: var(--amber-bg);
+                color: var(--amber);
+                border: 1px solid rgba(180, 83, 9, 0.25);
+            }
+            .neutral .dec-letter {
+                background: var(--neutral-bg);
+                color: var(--navy);
+                border: 1px solid rgba(26, 47, 110, 0.2);
+            }
+            .dec-btn-text {
+                font-size: 14px;
+                color: var(--text);
+                line-height: 1.45;
+                font-weight: 500;
+            }
+
+            /* NAV BAR */
+            .c-nav {
+                padding: 14px 20px;
+                border-top: 1px solid var(--bdr);
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                background: var(--slate-bg);
+                border-radius: 0 0 12px 12px;
+            }
+            .btn-back {
+                background: var(--white);
+                border: 1.5px solid var(--bdr);
+                color: var(--slate);
+                font-size: 14px;
+                font-weight: 600;
+                padding: 9px 18px;
+                border-radius: 7px;
+                cursor: pointer;
+                font-family: "Outfit", sans-serif;
+                transition: all 0.15s;
+            }
+            .btn-back:hover:not(:disabled) {
+                border-color: var(--navy-lt);
+                color: var(--navy-lt);
+            }
+            .btn-back:disabled {
+                opacity: 0.35;
+                cursor: not-allowed;
+            }
+            .btn-next {
+                background: var(--navy-lt);
+                border: 1.5px solid var(--navy-lt);
+                color: #fff;
+                font-size: 14px;
+                font-weight: 600;
+                padding: 9px 20px;
+                border-radius: 7px;
+                cursor: pointer;
+                font-family: "Outfit", sans-serif;
+                transition: all 0.15s;
+                margin-left: auto;
+            }
+            .btn-next:hover {
+                background: var(--navy);
+                border-color: var(--navy);
+            }
+
+            /* END CARD */
+            .end-success .c-hdr {
+                background: var(--success-bg);
+                border-bottom-color: var(--success-bdr);
+            }
+            .end-error .c-hdr {
+                background: var(--error-bg);
+                border-bottom-color: var(--error-bdr);
+            }
+            .end-warning .c-hdr {
+                background: var(--warning-bg);
+                border-bottom-color: var(--warning-bdr);
+            }
+            .end-neutral .c-hdr {
+                background: var(--neutral-bg);
+                border-bottom-color: var(--neutral-bdr);
+            }
+            .end-icon {
+                font-size: 32px;
+                margin-right: 10px;
+            }
+            .end-title {
+                font-size: 19px;
+                font-weight: 700;
+            }
+            .end-success .end-title {
+                color: var(--success-c);
+            }
+            .end-error .end-title {
+                color: var(--error-c);
+            }
+            .end-warning .end-title {
+                color: var(--warning-c);
+            }
+            .end-neutral .end-title {
+                color: var(--neutral-c);
+            }
+            .end-sub {
+                font-size: 13px;
+                color: var(--muted);
+                margin-top: 2px;
+                font-weight: 400;
+            }
+            .summary-box {
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                overflow: hidden;
+                margin-top: 4px;
+            }
+            .summary-title {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: var(--muted);
+                padding: 9px 14px;
+                border-bottom: 1px solid var(--bdr);
+                background: var(--white);
+            }
+            .summary-list {
+                padding: 12px 14px;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+            .summary-item {
+                font-size: 14px;
+                color: var(--text);
+                display: flex;
+                gap: 8px;
+                line-height: 1.55;
+                padding: 4px 0;
+                border-bottom: 1px solid var(--bdr);
+            }
+            .summary-item:last-child {
+                border-bottom: none;
+            }
+            .summary-n {
+                font-size: 11px;
+                font-weight: 700;
+                color: var(--muted);
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                min-width: 22px;
+                padding-top: 2px;
+            }
+            .summary-choice {
+                font-size: 12px;
+                color: var(--navy-lt);
+                font-style: italic;
+                margin-top: 2px;
+            }
+            .end-actions {
+                display: flex;
+                gap: 8px;
+                padding: 14px 20px;
+                border-top: 1px solid var(--bdr);
+                background: var(--slate-bg);
+                border-radius: 0 0 12px 12px;
+            }
+            .btn-restart {
+                background: var(--navy);
+                border: 1.5px solid var(--navy);
+                color: #fff;
+                font-size: 14px;
+                font-weight: 600;
+                padding: 9px 18px;
+                border-radius: 7px;
+                cursor: pointer;
+                font-family: "Outfit", sans-serif;
+                transition: all 0.15s;
+            }
+            .btn-restart:hover {
+                background: var(--navy-lt);
+            }
+            .btn-end-back {
+                background: var(--white);
+                border: 1.5px solid var(--bdr);
+                color: var(--slate);
+                font-size: 14px;
+                font-weight: 600;
+                padding: 9px 16px;
+                border-radius: 7px;
+                cursor: pointer;
+                font-family: "Outfit", sans-serif;
+                transition: all 0.15s;
+            }
+            .btn-end-back:hover {
+                border-color: var(--navy-lt);
+                color: var(--navy-lt);
+            }
+
+            /* MAPA OVERLAY */
+            .mapa-hdr {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .mapa-hdr h2 {
+                font-size: 17px;
+                font-weight: 700;
+                color: var(--navy);
+            }
+            .mapa-phases {
+                display: flex;
+                gap: 14px;
+                align-items: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            .mapa-col {
+                min-width: 180px;
+                max-width: 210px;
+                flex-shrink: 0;
+            }
+            .mapa-col-hdr {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: var(--navy-mid);
+                padding: 7px 10px;
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 6px;
+                margin-bottom: 8px;
+                text-align: center;
+            }
+            .mapa-node {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-left: 3px solid var(--bdr);
+                border-radius: 6px;
+                padding: 9px 11px;
+                margin-bottom: 6px;
+                font-size: 12px;
+                line-height: 1.45;
+                cursor: pointer;
+                transition:
+                    box-shadow 0.15s,
+                    transform 0.1s;
+            }
+            .mapa-node:hover {
+                box-shadow: 0 2px 8px rgba(65, 105, 225, 0.18);
+                transform: translateY(-1px);
+                border-left-color: var(--navy-lt);
+            }
+            .jump-badge {
+                display: inline-block;
+                font-size: 10px;
+                font-weight: 700;
+                background: var(--violet-bg);
+                color: var(--violet);
+                border: 1px solid var(--violet);
+                border-radius: 10px;
+                padding: 2px 8px;
+                margin-left: 8px;
+                letter-spacing: 0.3px;
+                vertical-align: middle;
+            }
+            .mapa-node.visited {
+                border-left-color: var(--green);
+                background: var(--green-bg);
+            }
+            .mapa-node.current-node {
+                border-left-color: var(--navy-lt);
+                background: var(--neutral-bg);
+            }
+            .mapa-node.end-s {
+                border-left-color: var(--green);
+            }
+            .mapa-node.end-e {
+                border-left-color: var(--red);
+            }
+            .mapa-node.end-w {
+                border-left-color: var(--amber);
+            }
+            .mapa-node.end-n {
+                border-left-color: var(--navy-lt);
+            }
+            .mapa-node-title {
+                font-weight: 600;
+                color: var(--text);
+                margin-bottom: 2px;
+            }
+            .mapa-node-actor {
+                font-size: 10px;
+                color: var(--muted);
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+            }
+            .mapa-node-badge {
+                font-size: 10px;
+                font-weight: 700;
+                padding: 2px 6px;
+                border-radius: 3px;
+                margin-top: 4px;
+                display: inline-block;
+            }
+            .mapa-node-badge.end-s {
+                background: var(--green-bg);
+                color: var(--green);
+            }
+            .mapa-node-badge.end-w {
+                background: var(--amber-bg);
+                color: var(--amber);
+            }
+            .mapa-node-badge.end-n {
+                background: var(--neutral-bg);
+                color: var(--navy);
+            }
+            .mapa-btn-back {
+                background: var(--navy);
+                border: 1.5px solid var(--navy);
+                color: #fff;
+                font-size: 14px;
+                font-weight: 600;
+                padding: 9px 16px;
+                border-radius: 7px;
+                cursor: pointer;
+                font-family: "Outfit", sans-serif;
+                transition: all 0.15s;
+            }
+            .mapa-btn-back:hover {
+                background: var(--navy-lt);
+            }
+
+            /* TOOLTIP PREVIEW */
+            .node-preview {
+                position: fixed;
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+                padding: 14px;
+                max-width: 260px;
+                font-size: 13px;
+                z-index: 100;
+                pointer-events: none;
+                line-height: 1.55;
+                color: var(--text);
+            }
+            .node-preview-title {
+                font-weight: 700;
+                margin-bottom: 4px;
+                font-size: 14px;
+            }
+            .node-preview-actor {
+                font-size: 11px;
+                color: var(--muted);
+                font-family: ui-monospace, SFMono-Regular, monospace;
+            }
+
+            /* Responsive: overlay móvil con backdrop (reemplaza el antiguo display:none) */
+            @media (max-width: 768px) {
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    transition: transform var(--transition-norm);
+                    width: 260px;
+                    display: flex !important;
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                #sidebar.collapsed {
+                    transform: translateX(-100%);
+                    width: 260px;
+                }
+                .sidebar-backdrop {
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 140;
+                    display: none;
+                }
+                .sidebar-backdrop.show {
+                    display: block;
+                }
+                #content {
+                    padding: 16px 20px;
+                }
+                .hdr-sub {
+                    display: none;
+                }
+            }
+            @media (max-width: 700px) {
+                /* Solo ajustes menores, el sidebar ya no se oculta con display:none */
+                .hdr-sub {
+                    display: none;
+                }
+                .btn-ghost span {
+                    display: none;
+                }
+            }
+            @media print {
+                #hdr .hdr-right,
+                #sidebar,
+                #breadcrumb,
+                #pbar,
+                .c-nav,
+                .end-actions {
+                    display: none !important;
+                }
+                #app {
+                    height: auto;
+                }
+                #layout {
+                    display: block;
+                    overflow: visible;
+                }
+                #content {
+                    overflow: visible;
+                    padding: 0;
+                }
+                .card {
+                    box-shadow: none;
+                    break-inside: avoid;
+                    margin-bottom: 16px;
+                }
+                body {
+                    font-size: 12px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div id="hdr" role="banner" style="height: 70px">
+                <div class="hdr-left">
+                    <!-- Botón toggle sidebar AÑADIDO -->
+                    <button
+                        class="btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                    >
+                        ☰
+                    </button>
+                    <div class="seal">⚖</div>
+                    <div class="hdr-titles">
+                        <div class="hdr-sub">
+                            LEY 1/2000, DE 7 DE ENERO, DE ENJUICIAMIENTO CIVIL ·
+                            LIBRO IV — PROCESOS ESPECIALES · TÍTULO II: DE LA
+                            DIVISIÓN JUDICIAL DE PATRIMONIOS · CAPÍTULO I: DE LA
+                            DIVISIÓN DE LA HERENCIA · SECCIÓN 2.ª
+                        </div>
+                        <h1>De la intervención del caudal hereditario</h1>
+                        <div class="hdr-sub" style="padding-top: 5px">
+                            Artículos 790 a 796 LEC
+                        </div>
+                    </div>
+                </div>
+                <div class="hdr-right">
+                    <div class="zoom-cluster">
+                        <button class="btn-zoom" id="btn-zoom-out">−</button>
+                        <span class="zoom-label" id="zoom-label">100%</span>
+                        <button class="btn-zoom" id="btn-zoom-in">+</button>
+                    </div>
+                    <button class="btn-ghost" onclick="toggleMapa()">
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn-ghost" onclick="dlGuia()">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn-ghost" onclick="restart()">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </div>
+            <div id="pbar"></div>
+            <div id="breadcrumb"></div>
+            <div id="layout">
+                <div id="sidebar">
+                    <div id="sb-tabs">
+                        <button class="sb-tab active" onclick="sbTab('map')">
+                            Mapa
+                        </button>
+                        <button class="sb-tab" onclick="sbTab('journey')">
+                            Recorrido
+                        </button>
+                    </div>
+                    <div id="sb-map"></div>
+                    <div id="sb-journey" style="display: none"></div>
+                </div>
+                <div id="content"></div>
+            </div>
+            <div id="mapa-overlay"></div>
+            <!-- Backdrop para móvil AÑADIDO -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        </div>
+
+        <script>
+            // ─────────────────────────────────────────────
+            // DATA
+            // ─────────────────────────────────────────────
+            const PHASES = [
+                "Noticia del fallecimiento",
+                "Medidas urgentes · art. 790",
+                "Averiguación · art. 791.1",
+                "Auto de intervención · arts. 791.2 / 792",
+                "Citación e inventario · arts. 793–794",
+                "Administración del caudal · art. 795",
+                "Cesación · art. 796",
+            ];
+            const SB_FOOT = `<div class="sb-foot">Arts. 790–796 LEC<br>Ley 1/2000, 7 ene.<br>Guía: Adm. Procesal y Admvo.</div>`;
+
+            const STEPS = {
+                inicio: {
+                    ph: 0,
+                    t: "Noticia del fallecimiento",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El Tribunal recibe noticia del fallecimiento del causante. Esta noticia puede llegar por diversas vías: comunicación del Registro Civil al amparo de la Ley 20/2011; denuncia de vecinos, autoridades o fuerzas de seguridad; o actuaciones judiciales previas en las que el óbito emerge incidentalmente.",
+                        ],
+                        [
+                            "n",
+                            "Antes de adoptar medida alguna, debe verificarse si constan testamento o parientes del causante con derecho hereditario.",
+                        ],
+                        [
+                            "l",
+                            "Art. 790 LEC · Ley 20/2011, del Registro Civil · Regl. (UE) 650/2012 (competencia internacional)",
+                        ],
+                    ],
+                    q: "¿Consta testamento o existen parientes conocidos del difunto (ascendientes, descendientes, cónyuge, persona en situación asimilable, o colaterales hasta el 4.º grado)?",
+                    opts: [
+                        {
+                            t: "No consta testamento ni parientes conocidos — procede actuación de oficio (art. 790)",
+                            l: "bad",
+                            n: "medidas_790",
+                        },
+                        {
+                            t: "Constan parientes o existe testamento, pero se solicita la intervención judicial del caudal (art. 792)",
+                            l: "neutral",
+                            n: "intervencion_a_instancia",
+                        },
+                    ],
+                },
+
+                medidas_790: {
+                    ph: 1,
+                    t: "Medidas urgentes de seguridad — actuación de oficio (art. 790.1)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Sin esperar solicitud de parte, el Tribunal adopta de oficio las medidas de seguridad necesarias para proteger el patrimonio del difunto frente a su sustracción u ocultación. La resolución es un AUTO.",
+                        ],
+                        [
+                            "cl",
+                            "Medidas que puede adoptar el Tribunal",
+                            [
+                                "Acordar el enterramiento del difunto si fuera necesario y no se hubiera efectuado",
+                                "Asegurar los bienes susceptibles de sustracción u ocultación (principalmente bienes muebles)",
+                                "Ocupar y custodiar libros, papeles, correspondencia y efectos del difunto",
+                                "Adoptar cualesquiera otras medidas de conservación que las circunstancias exijan",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Son supuestos asimilados a la ausencia de herederos: (a) los parientes están ausentes; (b) algún pariente es menor de edad sin representante legal (reforma Ley 8/2021).",
+                        ],
+                        [
+                            "w",
+                            "Bienes inmuebles: la publicidad registral los protege de forma suficiente. Las medidas materiales recaen principalmente sobre bienes muebles, documentos y efectos de fácil desplazamiento.",
+                        ],
+                        [
+                            "l",
+                            "Art. 790.1 LEC · Ley 8/2021, de apoyo a personas con discapacidad · Arts. 215 ss. CC (tutela y curatela)",
+                        ],
+                    ],
+                    q: "¿Comparecen parientes (hasta 4.º grado), cónyuge o persona en situación asimilable, o se nombra representante legal al menor?",
+                    opts: [
+                        {
+                            t: "Sí: comparecen parientes o se nombra representante al menor",
+                            l: "ok",
+                            n: "entrega_790",
+                        },
+                        {
+                            t: "No comparece nadie ni se nombra representante — procede averiguación (art. 791)",
+                            l: "bad",
+                            n: "averiguacion_791",
+                        },
+                    ],
+                },
+
+                entrega_790: {
+                    ph: 1,
+                    t: "Entrega de bienes y remisión al Notario (art. 790.2)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Al comparecer los parientes o nombrarse representante legal del menor, el LAJ procede a la entrega de los bienes y efectos del difunto que estuvieran bajo custodia judicial y comunica a los comparecientes su obligación de acudir al Notario.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del LAJ",
+                            [
+                                "Levantar acta de comparecencia con identificación de los comparecientes",
+                                "Relacionar y entregar los bienes y efectos custodiados mediante acta de entrega",
+                                "Informar de la obligación de promover la declaración de herederos ante Notario",
+                                "Documentar la entrega y archivar el expediente",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "ATENCIÓN: la entrega de bienes NO equivale a declaración de herederos. Los comparecientes deben acudir necesariamente al Notario para iniciar el expediente notarial de declaración de herederos abintestato (arts. 55 y 56 de la Ley del Notariado, en la redacción de la Ley 15/2015 de Jurisdicción Voluntaria).",
+                        ],
+                        [
+                            "l",
+                            "Art. 790.2 LEC · Arts. 55 y 56 de la Ley del Notariado · Ley 15/2015, de Jurisdicción Voluntaria",
+                        ],
+                    ],
+                    end: "success",
+                },
+
+                averiguacion_791: {
+                    ph: 2,
+                    t: "Averiguación testamentaria y de parientes (art. 791.1)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ actúa mediante DILIGENCIA para recabar la información precisa sobre si el difunto otorgó testamento y si tiene parientes con derecho hereditario. Esta fase es de instrucción pura: no implica ninguna resolución judicial hasta que se tenga la información necesaria.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del LAJ (obligatorias)",
+                            [
+                                "Solicitar certificado al Registro General de Actos de Última Voluntad (RAUV) — Ministerio de Justicia, Decreto de 2 de junio de 1944",
+                                "Recabar certificado de defunción del Registro Civil — Ley 20/2011, de 21 de julio",
+                            ],
+                        ],
+                        [
+                            "cl",
+                            "Actuación supletoria del Tribunal (solo si no hay otros medios)",
+                            [
+                                "El Tribunal ordena por PROVIDENCIA el examen de parientes, amigos o vecinos del difunto",
+                                "Objeto del examen: si el difunto murió sin testamento y si tiene parientes con derecho a la herencia",
+                                "Naturaleza: informativo, no es declaración testifical en sentido procesal estricto",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "El certificado del RAUV acredita de forma fehaciente si el causante otorgó algún acto de última voluntad inscrito en España y, en su caso, cuál fue el más reciente.",
+                        ],
+                        [
+                            "l",
+                            "Art. 791.1 LEC · Decreto de 2 de junio de 1944 (RAUV) · Ley 20/2011, del Registro Civil",
+                        ],
+                    ],
+                    q: "¿Cuál es el resultado de la averiguación?",
+                    opts: [
+                        {
+                            t: "Confirmado: el causante murió sin testamento y sin parientes conocidos con derecho hereditario",
+                            l: "bad",
+                            n: "auto_791_2",
+                        },
+                        {
+                            t: "Aparecen parientes o testamento — se reconvierte en intervención a instancia de parte (art. 792)",
+                            l: "ok",
+                            n: "intervencion_a_instancia",
+                        },
+                    ],
+                },
+
+                auto_791_2: {
+                    ph: 3,
+                    t: "Auto de intervención del caudal — vacío sucesorio (art. 791.2)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Confirmado el vacío sucesorio, el Tribunal dicta AUTO ordenando la intervención formal del caudal. Es la resolución constitutiva de todo el sistema de intervención de oficio.",
+                        ],
+                        [
+                            "cl",
+                            "El AUTO debe ordenar expresamente",
+                            [
+                                "Ocupar los libros, papeles y correspondencia del difunto",
+                                "Inventariar y depositar los bienes con disposición sobre su administración",
+                                "Nombrar, si procede, persona (con cargo al caudal) para efectuar y garantizar el inventario y su depósito",
+                                "Comunicar de OFICIO a la Delegación de Economía y Hacienda el resultado de las diligencias",
+                            ],
+                        ],
+                        [
+                            "d",
+                            "La comunicación a la Delegación de Economía y Hacienda debe realizarse EN LA MISMA RESOLUCIÓN que acuerda la intervención, con traslado de toda la documentación obtenida en la averiguación.",
+                        ],
+                        [
+                            "n",
+                            "Fundamento: art. 956 CC (el Estado hereda a falta de otros). Las CCAA con derecho civil propio (Cataluña, Aragón, Navarra, País Vasco, Galicia, Baleares) pueden tener atribuida a la Comunidad la condición de heredera abintestato con carácter preferente o concurrente.",
+                        ],
+                        [
+                            "l",
+                            "Art. 791.2 LEC · Art. 956 CC · Ley 33/2003, del Patrimonio de las Administraciones Públicas · Ley 39/2015, del Procedimiento Administrativo Común",
+                        ],
+                    ],
+                    q: "¿Comunica alguna Administración Pública que ha iniciado el procedimiento de declaración como heredera abintestato?",
+                    opts: [
+                        {
+                            t: "Sí: la Administración General del Estado o una CCAA comunica el inicio del expediente",
+                            l: "ok",
+                            n: "admon_791_3",
+                        },
+                        {
+                            t: "No: ninguna Administración comunica inicio de expediente",
+                            l: "neutral",
+                            n: "medidas_793_1",
+                        },
+                    ],
+                },
+
+                admon_791_3: {
+                    ph: 3,
+                    t: "Designación de la Administración como administradora del caudal (art. 791.3)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "La Administración comunicante (Estado o CCAA) queda designada como administradora del caudal hereditario con un régimen especial diferente al del administrador privado del art. 795.",
+                        ],
+                        [
+                            "cl",
+                            "Régimen especial de la Administración administradora",
+                            [
+                                "NO se le exige caución: la solvencia patrimonial pública actúa como garantía institucional",
+                                "Los informes periciales se realizan mediante los servicios técnicos propios de la Administración",
+                                "OBLIGACIÓN: comunicar al Tribunal la resolución administrativa que ponga fin al procedimiento, sea cual sea su sentido",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "PLAZOS CRÍTICOS: si la resolución deniega la declaración como heredera, la Administración debe solicitar nuevo administrador judicial en el plazo de UN MES. Transcurrido ese mes, CESA AUTOMÁTICAMENTE, con independencia de si ha presentado o no la solicitud.",
+                        ],
+                        [
+                            "l",
+                            "Art. 791.3 LEC · Ley 33/2003 del Patrimonio de las Administraciones Públicas · Ley 39/2015 del Procedimiento Administrativo Común",
+                        ],
+                    ],
+                    q: "¿Cuál es el resultado del procedimiento administrativo de declaración de heredero?",
+                    opts: [
+                        {
+                            t: "La resolución DECLARA a la Administración heredera abintestato",
+                            l: "ok",
+                            n: "admon_heredera",
+                        },
+                        {
+                            t: "La resolución DENIEGA la declaración a favor de la Administración",
+                            l: "bad",
+                            n: "admon_no_heredera",
+                        },
+                    ],
+                },
+
+                admon_heredera: {
+                    ph: 3,
+                    t: "Administración declarada heredera — provisiones para entrega (art. 791.3)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "La resolución administrativa firme declara a la Administración heredera abintestato. El Tribunal debe actuar con urgencia para proceder a la entrega del caudal.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del Tribunal",
+                            [
+                                "Verificar que la resolución administrativa es firme",
+                                "Adoptar ANTES DE UN MES las provisiones conducentes a la entrega del caudal a la Administración",
+                                "Acordar la entrega formal de los bienes y derechos inventariados",
+                                "Levantar acta de entrega y comunicar al Registro de la Propiedad el fin de la administración judicial",
+                                "Archivar el expediente",
+                            ],
+                        ],
+                        [
+                            "d",
+                            "Plazo PERENTORIO: el Tribunal debe adoptar las provisiones de entrega en el plazo máximo de UN MES desde la comunicación de la resolución administrativa declarando a la Administración heredera.",
+                        ],
+                        [
+                            "l",
+                            "Art. 791.3 LEC · Art. 956 CC · Ley 33/2003 del Patrimonio de las Administraciones Públicas",
+                        ],
+                    ],
+                    end: "success",
+                },
+
+                admon_no_heredera: {
+                    ph: 3,
+                    t: "Administración no declarada heredera — solicitud de nuevo administrador (art. 791.3)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La resolución administrativa deniega la declaración de heredero a favor de la Administración. Esta no puede continuar como administradora del caudal.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones urgentes",
+                            [
+                                "La Administración debe solicitar al Tribunal la designación de nuevo administrador judicial",
+                                "Plazo para presentar la solicitud: UN MES desde la comunicación de la resolución denegatoria",
+                                "El LAJ tramita la solicitud y eleva al Tribunal para nombramiento del nuevo administrador conforme al art. 795",
+                                "Transcurrido el mes sin solicitud: la Administración CESA AUTOMÁTICAMENTE como administradora",
+                            ],
+                        ],
+                        [
+                            "d",
+                            "Plazo: UN MES desde la notificación de la resolución denegatoria para solicitar nuevo administrador.",
+                        ],
+                        [
+                            "w",
+                            "El cese automático opera por el mero transcurso del plazo, con independencia de cualquier otra circunstancia. Verificar fecha de notificación de la resolución denegatoria.",
+                        ],
+                        ["l", "Art. 791.3 LEC"],
+                    ],
+                    nx: "medidas_793_1",
+                },
+
+                intervencion_a_instancia: {
+                    ph: 3,
+                    t: "Intervención a instancia de parte — verificación de legitimación (art. 792)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La intervención se solicita por un interesado legítimo. El LAJ debe verificar que quien solicita la intervención tiene efectivamente legitimación conforme al art. 792.",
+                        ],
+                        [
+                            "cl",
+                            "Personas legitimadas para solicitar la intervención (art. 792.1)",
+                            [
+                                "Cónyuge o pariente con derecho a sucesión legítima: debe acreditar haber promovido la declaración de herederos abintestato ante Notario, o formular la solicitud al tiempo de promoverla (arts. 55-56 LN, Ley 15/2015 JV)",
+                                "Coheredero o legatario de parte alícuota: al solicitar simultáneamente la división judicial (art. 782 LEC), salvo prohibición testamentaria expresa",
+                                "Administración Pública que haya iniciado el procedimiento de declaración como heredera abintestato (art. 791.3 LEC)",
+                            ],
+                        ],
+                        [
+                            "cl",
+                            "Acreedores legitimados para solicitar la intervención (art. 792.2)",
+                            [
+                                "Acreedores reconocidos en el testamento",
+                                "Acreedores reconocidos por los coherederos extrajudicialmente",
+                                "Acreedores con título ejecutivo (art. 517 LEC: sentencia firme, laudo arbitral, escritura pública, póliza intervenida por corredor de comercio colegiado, etc.)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "El legatario de parte alícuota recibe una fracción del caudal global (p. ej., un tercio), no un bien concreto ni una cantidad determinada. Como participa en la universalidad, tiene el mismo interés que el heredero en la integridad del inventario.",
+                        ],
+                        [
+                            "l",
+                            "Art. 792 LEC · Art. 517 LEC · Arts. 55 y 56 Ley del Notariado · Ley 15/2015, de Jurisdicción Voluntaria · Art. 782 LEC",
+                        ],
+                    ],
+                    nx: "medidas_793_1",
+                },
+
+                medidas_793_1: {
+                    ph: 4,
+                    t: "Verificación y adopción de medidas de seguridad previas al inventario (art. 793.1)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Con carácter previo a la formación del inventario, el Tribunal debe verificar si ya se adoptaron medidas de seguridad. Solo si no se adoptaron anteriormente dictará AUTO al efecto.",
+                        ],
+                        [
+                            "cl",
+                            "Verificación del LAJ",
+                            [
+                                "Comprobar si se adoptaron medidas al amparo del art. 790 (actuación de oficio)",
+                                "Comprobar si el auto del art. 791.2 ya ordenó medidas de ocupación y custodia",
+                                "Si no se adoptaron anteriormente: elevar al Tribunal para que dicte AUTO de medidas",
+                            ],
+                        ],
+                        [
+                            "cl",
+                            "Contenido de las medidas (si no se adoptaron antes)",
+                            [
+                                "Seguridad de los bienes susceptibles de sustracción u ocultación",
+                                "Ocupación y custodia de libros, papeles, correspondencia y efectos del difunto",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Principio de economía procesal: si las medidas ya están adoptadas, no deben reiterarse. El auto solo es necesario si hay omisión previa.",
+                        ],
+                        ["l", "Art. 793.1 LEC · Art. 790 LEC"],
+                    ],
+                    nx: "senalamiento_793_2",
+                },
+
+                senalamiento_793_2: {
+                    ph: 4,
+                    t: "Señalamiento para inventario y citación de interesados (arts. 793.2 y 793.3)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ señala día y hora para la formación del inventario mediante DILIGENCIA y ordena la citación de todos los interesados conforme a la lista tasada del art. 793.3. La omisión de cualquier citación obligatoria puede generar indefensión e impugnación.",
+                        ],
+                        [
+                            "cl",
+                            "Personas que DEBEN ser citadas (art. 793.3) — lista TAXATIVA",
+                            [
+                                "1.º Cónyuge sobreviviente: citación imperativa, independientemente de si es heredero (puede tener derechos sobre gananciales no liquidados o usufructo vidual del art. 834 CC)",
+                                "2.º Parientes conocidos con posible derecho hereditario: solo cuando no conste testamento ni declaración de herederos",
+                                "3.º Herederos o legatarios de parte alícuota: cuando exista testamento o declaración de herederos",
+                                "4.º Acreedores que instaron la intervención y los personados en el procedimiento de división",
+                                "5.º Ministerio Fiscal: cuando pudiera haber parientes desconocidos; cuando algún interesado no pueda ser citado por ignorarse su residencia; o cuando haya menores sin representante legal",
+                                "6.º Abogado del Estado o Servicios Jurídicos de la CCAA: cuando no conste testamento ni cónyuge ni parientes con derecho a la sucesión legítima",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "La lista del art. 793.3 es TAXATIVA y EXHAUSTIVA. La falta de citación de cualquiera de los obligados puede determinar la nulidad del inventario.",
+                        ],
+                        [
+                            "l",
+                            "Art. 793 LEC · Art. 124 CE · Ley 50/1981, Estatuto Orgánico del Ministerio Fiscal · Art. 834 CC (usufructo vidual)",
+                        ],
+                    ],
+                    nx: "inventario_794",
+                },
+
+                inventario_794: {
+                    ph: 4,
+                    t: "Formación del inventario (art. 794)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "En el día y hora señalados, el LAJ procede a la formación del inventario con quienes concurran. No es precisa la presencia de todos los citados.",
+                        ],
+                        [
+                            "cl",
+                            "Contenido del inventario",
+                            [
+                                "Relación de bienes inmuebles, muebles, derechos reales, créditos, depósitos bancarios, participaciones sociales y valores mobiliarios",
+                                "Escrituras, títulos de propiedad, contratos, pólizas de seguro, libros de contabilidad y otros documentos de importancia",
+                                "Si el testador estableció reglas especiales para el inventario: aplicarlas con carácter preferente (art. 794.2)",
+                                "Si no termina en el día señalado: continuar en los días siguientes sin necesidad de nuevo señalamiento (art. 794.3)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Paralelismo doctrinal: el inventario judicial guarda correspondencia material con el del beneficio de inventario del art. 1065 CC, aunque con efectos jurídicos distintos (aquí no limita la responsabilidad del heredero).",
+                        ],
+                        [
+                            "l",
+                            "Art. 794 LEC · Art. 1065 CC (beneficio de inventario)",
+                        ],
+                    ],
+                    q: "¿Surge controversia entre los interesados sobre la inclusión o exclusión de algún bien en el inventario?",
+                    opts: [
+                        {
+                            t: "Sí: algún interesado impugna la inclusión o exclusión de un bien",
+                            l: "warn",
+                            n: "controversia_794_4",
+                        },
+                        {
+                            t: "No: el inventario se forma sin controversia",
+                            l: "ok",
+                            n: "auto_795",
+                        },
+                    ],
+                },
+
+                controversia_794_4: {
+                    ph: 4,
+                    t: "Incidente sobre el inventario — tramitación como juicio verbal (art. 794.4)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La controversia sobre el contenido del inventario se tramita como un incidente separado, siguiendo las normas del juicio verbal (arts. 437–447 LEC). Es el procedimiento declarativo más ágil de la LEC: concentración de actos, oralidad e inmediación.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del LAJ",
+                            [
+                                "Hacer constar en ACTA las pretensiones de cada parte sobre el bien controvertido",
+                                "Recoger la fundamentación jurídica de cada posición",
+                                "Citar a los interesados a la vista del juicio verbal",
+                                "Elevar las actuaciones al Tribunal para que dicte sentencia",
+                            ],
+                        ],
+                        [
+                            "cl",
+                            "Efectos de la sentencia",
+                            [
+                                "Resuelve la controversia con fuerza de cosa juzgada entre las partes",
+                                "Determina si el bien queda incluido o excluido del inventario",
+                                "DEJA EXPRESAMENTE A SALVO los derechos de terceros ajenos al proceso: el titular de derechos reales no comparecido conserva íntegramente sus acciones",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "La sentencia tiene eficacia INTER PARTES únicamente. No puede perjudicar a terceros titulares de derechos reales sobre bienes inventariados que no hayan tenido ocasión de comparecer.",
+                        ],
+                        [
+                            "l",
+                            "Art. 794.4 LEC · Arts. 437–447 LEC (juicio verbal)",
+                        ],
+                    ],
+                    nx: "auto_795",
+                },
+
+                auto_795: {
+                    ph: 5,
+                    t: "Auto sobre administración, custodia y conservación del caudal (art. 795)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Formado el inventario, el Tribunal dicta AUTO resolviendo quién y en qué condiciones se encargará de la administración provisional del caudal. Criterio preferente: lo dispuesto en el testamento. En defecto de disposición testamentaria, se aplican las cuatro reglas legales.",
+                        ],
+                        [
+                            "cl",
+                            "Regla 1.ª — Depósito del metálico y efectos públicos",
+                            [
+                                "El dinero en metálico y los efectos públicos (valores) se depositan con arreglo a derecho",
+                                "Remisión a las normas sobre depósito judicial de la LEC y legislación específica de valores",
+                            ],
+                        ],
+                        [
+                            "cl",
+                            "Regla 2.ª — Orden de preferencia para el nombramiento de administrador",
+                            [
+                                "1.ª preferencia: cónyuge viudo/a",
+                                "2.ª preferencia: heredero o legatario de parte alícuota con mayor cuota en la herencia",
+                                "3.ª preferencia (si no hay anteriores o carecen de capacidad suficiente): cualquier otro heredero/legatario de parte alícuota o un tercero ajeno a la sucesión",
+                                "El Tribunal puede apartarse del orden de preferencia si aprecia falta de capacidad en el preferido legal",
+                            ],
+                        ],
+                        [
+                            "n",
+                            'La "capacidad suficiente" es una cláusula de apreciación discrecional: el Tribunal puede apartar al preferido legal cuando su nombramiento resultaría contraproducente para la integridad del caudal.',
+                        ],
+                        [
+                            "l",
+                            "Art. 795 LEC · Art. 797 LEC (posesión del cargo) · Art. 798 LEC (representación de la herencia)",
+                        ],
+                    ],
+                    q: "¿Existen en el expediente menores sin representante legal o herederos ausentes de paradero desconocido?",
+                    opts: [
+                        {
+                            t: "Sí: hay menores sin representante legal o ausentes sin localizar",
+                            l: "warn",
+                            n: "caucion_imperativa",
+                        },
+                        {
+                            t: "No: todos los interesados están representados o localizados",
+                            l: "ok",
+                            n: "caucion_general",
+                        },
+                    ],
+                },
+
+                caucion_imperativa: {
+                    ph: 5,
+                    t: "Caución obligatoria e imperativa — menores y ausentes (art. 795, regla 3.ª)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "La presencia de menores sin representante legal o de ausentes de paradero desconocido exige la constitución de caución IMPERATIVA. Esta caución no admite dispensa de ningún tipo.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del Tribunal",
+                            [
+                                "Fijar la cuantía de la caución en proporción al valor del caudal administrado",
+                                "Aceptar la caución en cualquiera de las formas legales: depósito en metálico, aval bancario solidario, fianza personal de solvencia acreditada",
+                                "La caución debe cubrir obligatoriamente la participación de los menores y ausentes en el caudal",
+                                "Verificar que la caución queda constituida antes de dar posesión del cargo al administrador (art. 797)",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "IMPERATIVIDAD ABSOLUTA: esta caución no puede ser dispensada ni por el Tribunal ni por los demás herederos respecto de la participación de los menores sin representante y de los ausentes de paradero desconocido, con independencia del acuerdo del resto de interesados (regla 4.ª, in fine).",
+                        ],
+                        [
+                            "n",
+                            "Marco legal de los menores: Ley 8/2021, de 2 de junio, de reforma de la legislación civil y procesal para el apoyo a las personas con discapacidad. Marco legal de los ausentes: arts. 181–198 CC.",
+                        ],
+                        [
+                            "l",
+                            "Art. 795, regla 3.ª LEC · Ley 8/2021 · Arts. 181–198 CC (ausencia legal)",
+                        ],
+                    ],
+                    nx: "posesion_797",
+                },
+
+                caucion_general: {
+                    ph: 5,
+                    t: "Régimen general de la caución — dispensa y proporcionalidad (arts. 795, reglas 3.ª y 4.ª)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El administrador debe prestar caución bastante como regla general. Sin embargo, en ausencia de menores o ausentes, el régimen admite diversas modalidades de dispensa.",
+                        ],
+                        [
+                            "cl",
+                            "Formas de dispensa de la caución",
+                            [
+                                "Dispensa JUDICIAL: el Tribunal puede dispensar al cónyuge viudo o al heredero designado si tienen bienes propios suficientes para responder de los bienes administrados",
+                                "Dispensa CONVENCIONAL: los herederos y legatarios de parte alícuota pueden por acuerdo unánime dispensar al administrador de la obligación",
+                                "Dispensa PARCIAL (sin conformidad unánime): la caución se dimensiona proporcionalmente al interés en el caudal de quienes NO otorgan la dispensa",
+                                "Los que voluntariamente dispensan no reciben cobertura de la caución respecto de su cuota",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La dispensa convencional reduce la caución pero no la elimina respecto de quienes no la otorgan. El acuerdo de dispensa no requiere forma especial pero debe quedar documentado en las actuaciones.",
+                        ],
+                        ["l", "Arts. 795, reglas 3.ª y 4.ª LEC"],
+                    ],
+                    nx: "posesion_797",
+                },
+
+                posesion_797: {
+                    ph: 5,
+                    t: "Posesión del cargo de administrador y comunicación registral (art. 797)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Constituida la caución y dictado el auto de nombramiento, el LAJ pone formalmente al administrador en posesión de su cargo y expide los testimonios acreditativos necesarios para que pueda actuar.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del LAJ",
+                            [
+                                "Verificar que la caución ha quedado constituida en la forma y cuantía fijadas por el Tribunal",
+                                "Extender diligencia de posesión del cargo del administrador",
+                                "Expedir testimonio acreditativo del nombramiento (el administrador lo necesita para comparecer en nombre de la herencia)",
+                                "Comunicar el nombramiento al Registro de la Propiedad para inscripción de la administración judicial sobre los bienes inmuebles inventariados",
+                                "Notificar a todos los interesados la identidad del administrador",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Representación en juicio: mientras la herencia no haya sido aceptada, el administrador la representa en todos los procesos y ejercita las acciones que le correspondan (art. 798 LEC), al amparo de la capacidad procesal de la herencia yacente reconocida por los arts. 6.1.4.º y 7.5 LEC.",
+                        ],
+                        [
+                            "l",
+                            "Art. 797 LEC · Art. 798 LEC · Arts. 6.1.4.º y 7.5 LEC · Ley Hipotecaria (inscripción de administraciones judiciales)",
+                        ],
+                    ],
+                    nx: "cesacion_796",
+                },
+
+                cesacion_796: {
+                    ph: 6,
+                    t: "Fase de cesación — verificación de la causa aplicable (art. 796)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La intervención del caudal es provisional y debe cesar en cuanto la protección quede asegurada por otras vías. El LAJ verifica cuál de las tres causas legales de cesación concurre en el expediente.",
+                        ],
+                        [
+                            "cl",
+                            "Las tres causas de cesación (art. 796)",
+                            [
+                                "1.ª Declaración notarial de herederos (art. 796.1)",
+                                "2.ª Acuerdo unánime de los herederos durante la tramitación de la división (art. 796.2)",
+                                "3.ª Pago o afianzamiento de los acreedores que bloqueaban la cesación (art. 796.3)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La intervención es por naturaleza una medida cautelar y provisional. Debe mantenerse lo estrictamente necesario y cesar en cuanto cumpla su función protectora.",
+                        ],
+                        [
+                            "l",
+                            "Art. 796 LEC · Art. 788 LEC (entrega de bienes adjudicados)",
+                        ],
+                    ],
+                    q: "¿Cuál es la causa de cesación que concurre en el expediente?",
+                    opts: [
+                        {
+                            t: "Declaración notarial de herederos (art. 796.1)",
+                            l: "ok",
+                            n: "cesacion_declaracion",
+                        },
+                        {
+                            t: "Acuerdo unánime de los herederos durante el procedimiento de división (art. 796.2)",
+                            l: "neutral",
+                            n: "cesacion_acuerdo_check",
+                        },
+                        {
+                            t: "Pago o afianzamiento a los acreedores que bloqueaban la cesación (art. 796.3)",
+                            l: "ok",
+                            n: "cesacion_acreedores",
+                        },
+                    ],
+                },
+
+                cesacion_declaracion: {
+                    ph: 6,
+                    t: "Cesación por declaración notarial de herederos (art. 796.1)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Se ha producido la declaración notarial de herederos (arts. 55-56 de la Ley del Notariado). El caudal tiene ya titular efectivo identificado. La intervención debe cesar salvo que algún heredero solicite la división judicial.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del LAJ",
+                            [
+                                "Recibir y verificar la declaración notarial de herederos",
+                                "Notificar a todos los interesados el inicio de la fase de cese",
+                                "Verificar si algún heredero ha presentado solicitud de división judicial (art. 782 LEC)",
+                                "Comunicar al administrador el inicio del procedimiento de cese",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Art. 796.1 LEC · Arts. 55 y 56 de la Ley del Notariado · Ley 15/2015, de Jurisdicción Voluntaria · Art. 782 LEC",
+                        ],
+                    ],
+                    q: "¿Algún heredero ha solicitado la división judicial de la herencia (art. 782 LEC)?",
+                    opts: [
+                        {
+                            t: "No: ningún heredero pide la división judicial",
+                            l: "ok",
+                            n: "fin_declaracion_herederos",
+                        },
+                        {
+                            t: "Sí: algún heredero pide la división judicial — la intervención puede subsistir",
+                            l: "neutral",
+                            n: "fin_subsistencia_division",
+                        },
+                    ],
+                },
+
+                fin_declaracion_herederos: {
+                    ph: 6,
+                    t: "Cese definitivo de la intervención — declaración de herederos (art. 796.1)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La intervención cesa definitivamente. El LAJ acuerda el cese mediante DECRETO y procede a la entrega formal del caudal a los herederos declarados.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones de cierre",
+                            [
+                                "DECRETO del LAJ acordando el cese de la intervención",
+                                "Notificación a todos los interesados (herederos, administrador, Ministerio Fiscal si fue citado)",
+                                "Entrega del caudal a los herederos declarados con levantamiento de acta",
+                                "Levantamiento de la anotación registral de la administración judicial sobre bienes inmuebles",
+                                "Archivo del expediente",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Art. 796.1 LEC · Art. 456 LOPJ (decretos del LAJ) · Art. 788 LEC",
+                        ],
+                    ],
+                    end: "success",
+                },
+
+                fin_subsistencia_division: {
+                    ph: 6,
+                    t: "Subsistencia de la intervención durante la división judicial (art. 796.1)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "La intervención puede subsistir durante toda la tramitación del procedimiento de división judicial, hasta que se efectúe la entrega individual de los bienes adjudicados a cada heredero conforme al art. 788 LEC.",
+                        ],
+                        [
+                            "cl",
+                            "Fundamento y alcance de la subsistencia",
+                            [
+                                "El Tribunal puede acordar la subsistencia a solicitud de cualquier interesado",
+                                "La intervención se mantiene sobre los bienes pro indiviso pendientes de adjudicación",
+                                "Su objeto es garantizar el reparto ordenado evitando la disposición anticipada de bienes comunes",
+                                "Cesa definitivamente con la entrega individualizada de bienes adjudicados del art. 788 LEC",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La División Judicial de la Herencia se rige por los arts. 782–789 LEC (Sección 1.ª). La subsistencia de la intervención hasta la entrega individual conecta directamente con el art. 788 (entrega de bienes adjudicados).",
+                        ],
+                        [
+                            "l",
+                            "Art. 796.1 LEC · Art. 788 LEC · Arts. 782–789 LEC (división judicial de la herencia)",
+                        ],
+                    ],
+                    end: "neutral",
+                },
+
+                cesacion_acuerdo_check: {
+                    ph: 6,
+                    t: "Verificación de requisitos — cese por acuerdo unánime (art. 796.2)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Los herederos han solicitado de común acuerdo que cese la intervención durante la sustanciación del procedimiento de división. Antes de acordar el cese, el LAJ debe verificar que no concurren ninguna de las circunstancias legales que lo bloquean.",
+                        ],
+                        [
+                            "cl",
+                            "Verificaciones OBLIGATORIAS del LAJ",
+                            [
+                                "Comprobar que el acuerdo es efectivamente UNÁNIME: ningún heredero disiente, todos han manifestado su voluntad",
+                                "Verificar si hay menores sin representante legal en el expediente",
+                                "Verificar si hay herederos ausentes de paradero desconocido sin localizar",
+                                "Verificar si hay acreedores reconocidos que se hayan opuesto formalmente a la partición",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "El LAJ no puede acordar el cese sin realizar estas verificaciones. La omisión de alguna de ellas puede generar responsabilidad disciplinaria y nulidad de actuaciones.",
+                        ],
+                        ["l", "Art. 796.2 LEC"],
+                    ],
+                    q: "¿Concurre alguna circunstancia que impide el cese por acuerdo?",
+                    opts: [
+                        {
+                            t: "Sí: hay menores sin representante legal o ausentes sin localizar",
+                            l: "bad",
+                            n: "bloqueo_menores_ausentes",
+                        },
+                        {
+                            t: "Sí: hay acreedores reconocidos opuestos sin pago ni afianzamiento",
+                            l: "bad",
+                            n: "bloqueo_acreedores_796_3",
+                        },
+                        {
+                            t: "No concurre ninguna circunstancia bloqueante — procede acordar el cese",
+                            l: "ok",
+                            n: "fin_acuerdo_unanime",
+                        },
+                    ],
+                },
+
+                bloqueo_menores_ausentes: {
+                    ph: 6,
+                    t: "Bloqueo del cese — menores sin representante o ausentes sin localizar (art. 796.2)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El cese por acuerdo unánime no puede acordarse mientras haya menores sin representante legal o herederos ausentes de paradero desconocido. La tutela de sus intereses patrimoniales no puede quedar al arbitrio de los demás interesados.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del LAJ",
+                            [
+                                "Denegar el cese mediante DECRETO motivado del LAJ",
+                                "Notificar a todos los herederos la razón del bloqueo y las vías para superarlo",
+                                "En caso de MENOR sin representante: instar ante el órgano competente el nombramiento de tutor o curador conforme a la Ley 8/2021 y los arts. 215 ss. CC",
+                                "En caso de AUSENTE: tramitar, si procede, la declaración de ausencia legal (arts. 181–198 CC) o continuar las gestiones para localizar el paradero",
+                                "Una vez nombrado el representante del menor o localizado el ausente: revisar si procede el cese",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "La tutela del patrimonio del menor o del ausente no puede quedar al arbitrio de los demás interesados aunque sean unanimidad entre los presentes. Este límite es INDISPONIBLE.",
+                        ],
+                        [
+                            "l",
+                            "Art. 796.2 LEC · Ley 8/2021, de apoyo a personas con discapacidad · Arts. 181–198 CC (ausencia legal) · Arts. 215 ss. CC (tutela y curatela)",
+                        ],
+                    ],
+                    end: "warning",
+                },
+
+                bloqueo_acreedores_796_3: {
+                    ph: 6,
+                    t: "Bloqueo del cese por oposición de acreedores (art. 796.3)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Existen acreedores reconocidos que se han opuesto a la partición hasta el pago o afianzamiento de sus créditos (art. 1082 CC). El cese queda bloqueado hasta que desaparezca ese obstáculo.",
+                        ],
+                        [
+                            "cl",
+                            "Acreedores con legitimidad para bloquear el cese",
+                            [
+                                "Reconocidos en el testamento",
+                                "Reconocidos extrajudicialmente por los coherederos",
+                                "Con título ejecutivo (art. 517 LEC)",
+                            ],
+                        ],
+                        [
+                            "cl",
+                            "Vías para levantar el bloqueo",
+                            [
+                                "PAGO EFECTIVO de los créditos a todos los acreedores que se hubieran opuesto",
+                                "AFIANZAMIENTO: constitución de garantía personal o real que asegure el cobro del crédito con independencia de la suerte del caudal",
+                                "Verificar que el pago o afianzamiento cubre la totalidad de los créditos de los acreedores opositores",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "Mientras no se produzca el pago o el afianzamiento de TODOS los acreedores opositores, el cese no puede acordarse con independencia del acuerdo de los herederos. Fundamento: art. 1082 CC.",
+                        ],
+                        [
+                            "l",
+                            "Art. 796.3 LEC · Art. 1082 CC · Art. 517 LEC (títulos ejecutivos)",
+                        ],
+                    ],
+                    nx: "cesacion_acreedores",
+                },
+
+                cesacion_acreedores: {
+                    ph: 6,
+                    t: "Cese tras pago o afianzamiento a los acreedores (art. 796.3)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Los acreedores han recibido el pago íntegro de sus créditos o se ha constituido garantía suficiente a su favor. Desaparece el obstáculo y puede acordarse el cese.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del LAJ",
+                            [
+                                "Verificar documentalmente el pago efectivo o la constitución del afianzamiento",
+                                "Comprobar que el afianzamiento cubre la totalidad de los créditos de todos los acreedores opositores",
+                                "DECRETO del LAJ acordando el cese de la intervención",
+                                "Notificación a todos los interesados",
+                                "Entrega de bienes y derechos conforme a lo acordado y levantamiento de acta",
+                                "Levantamiento de la anotación registral de la administración judicial",
+                                "Archivo del expediente",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Art. 796.3 LEC · Art. 1082 CC · Art. 788 LEC (entrega de bienes adjudicados)",
+                        ],
+                    ],
+                    end: "success",
+                },
+
+                fin_acuerdo_unanime: {
+                    ph: 6,
+                    t: "Cese por acuerdo unánime de los herederos (art. 796.2)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Verificado que no concurren circunstancias bloqueantes, el LAJ acuerda el cese de la intervención mediante DECRETO.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones de cierre",
+                            [
+                                "DECRETO del LAJ acordando el cese de la intervención (resolución motivada conforme al art. 456 LOPJ)",
+                                "Notificación a todos los herederos, administrador judicial y demás interesados",
+                                "Entrega formal del caudal conforme a lo acordado por los herederos",
+                                "Levantamiento de la anotación registral de la administración judicial sobre bienes inmuebles",
+                                "Liquidación y rendición de cuentas del administrador",
+                                "Archivo del expediente",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Art. 796.2 LEC · Art. 456 LOPJ (decretos del LAJ) · Art. 788 LEC",
+                        ],
+                    ],
+                    end: "success",
+                },
+            };
+
+            // ─────────────────────────────────────────────
+            // STATE
+            // ─────────────────────────────────────────────
+            let cur = "inicio";
+            let hist = [];
+            let activeSbTab = "map";
+            let phaseCollapsed = {};
+            let mapaOn = false;
+            let visitedNodes = new Set();
+
+            // ─────────────────────────────────────────────
+            // SIDEBAR TOGGLE (NUEVO)
+            // ─────────────────────────────────────────────
+            let sidebarOpen = false; // solo móvil
+
+            function toggleSidebar() {
+                const isMobile = window.innerWidth <= 768;
+                const sidebar = document.getElementById("sidebar");
+                const btn = document.getElementById("btnToggleSidebar");
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    if (sidebarOpen) {
+                        sidebar.classList.add("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.add("show");
+                        if (btn) btn.setAttribute("aria-expanded", "true");
+                    } else {
+                        sidebar.classList.remove("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.remove("show");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                } else {
+                    sidebar.classList.toggle("collapsed");
+                    const isCollapsed = sidebar.classList.contains("collapsed");
+                    if (btn)
+                        btn.setAttribute(
+                            "aria-expanded",
+                            isCollapsed ? "false" : "true",
+                        );
+                }
+            }
+
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 768 && sidebarOpen) {
+                    sidebarOpen = false;
+                    const sidebar = document.getElementById("sidebar");
+                    const backdrop = document.getElementById("sidebarBackdrop");
+                    const btn = document.getElementById("btnToggleSidebar");
+                    if (sidebar) sidebar.classList.remove("open");
+                    if (backdrop) backdrop.classList.remove("show");
+                    if (btn) btn.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            function handleResize() {
+                if (window.innerWidth > 768) {
+                    // Si pasamos a escritorio, aseguramos que el sidebar móvil se cierre
+                    if (sidebarOpen) {
+                        const sidebar = document.getElementById("sidebar");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (sidebar) sidebar.classList.remove("open");
+                        if (backdrop) backdrop.classList.remove("show");
+                        sidebarOpen = false;
+                        const btn = document.getElementById("btnToggleSidebar");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (sidebarEl) sidebarEl.classList.remove("open");
+                } else {
+                    // En móvil, si la sidebar tiene collapsed (por posible estado heredado) la quitamos
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (
+                        sidebarEl &&
+                        sidebarEl.classList.contains("collapsed")
+                    ) {
+                        sidebarEl.classList.remove("collapsed");
+                    }
+                    if (
+                        !sidebarOpen &&
+                        sidebarEl &&
+                        sidebarEl.classList.contains("open")
+                    ) {
+                        sidebarEl.classList.remove("open");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (backdrop) backdrop.classList.remove("show");
+                    }
+                }
+            }
+
+            // ─────────────────────────────────────────────
+            // NAVIGATION (modificadas para cerrar sidebar móvil)
+            // ─────────────────────────────────────────────
+            function goTo(stepId, choiceLabel) {
+                hist.push({ s: cur, next: stepId, c: choiceLabel || "" });
+                visitedNodes.add(cur);
+                cur = stepId;
+                if (choiceLabel) sbTab("journey");
+                render();
+                closeMobileSidebar();
+            }
+            function goBack() {
+                if (hist.length === 0) return;
+                const last = hist.pop();
+                cur = last.s;
+                visitedNodes.delete(cur);
+                render();
+                closeMobileSidebar();
+            }
+            function goBackTo(index) {
+                hist = hist.slice(0, index);
+                visitedNodes.clear();
+                hist.forEach((h) => visitedNodes.add(h.s));
+                cur = index === 0 ? "inicio" : hist[index - 1].next;
+                render();
+                closeMobileSidebar();
+            }
+            function jumpTo(stepId) {
+                if (stepId === cur) return;
+                hist.push({ s: cur, next: stepId, c: "[Salto directo]" });
+                visitedNodes.add(cur);
+                cur = stepId;
+                sbTab("map");
+                if (mapaOn) toggleMapa();
+                render();
+                closeMobileSidebar();
+            }
+            function restart() {
+                cur = "inicio";
+                hist = [];
+                visitedNodes.clear();
+                sbTab("map");
+                render();
+                closeMobileSidebar();
+            }
+            function sbTab(tab) {
+                activeSbTab = tab;
+                document.getElementById("sb-map").style.display =
+                    tab === "map" ? "block" : "none";
+                document.getElementById("sb-journey").style.display =
+                    tab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach((t, i) => {
+                    t.classList.toggle(
+                        "active",
+                        (i === 0 && tab === "map") ||
+                            (i === 1 && tab === "journey"),
+                    );
+                });
+            }
+
+            // ─────────────────────────────────────────────
+            // RENDER ORCHESTRATOR
+            // ─────────────────────────────────────────────
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+                document.getElementById("content").scrollTop = 0;
+                closeMobileSidebar();
+            }
+
+            // ─────────────────────────────────────────────
+            // PHASE BAR
+            // ─────────────────────────────────────────────
+            function renderPbar() {
+                const s = STEPS[cur];
+                const curPh = s ? s.ph : 0;
+                const maxDone = Math.max(
+                    ...hist.map((h) => (STEPS[h.s] ? STEPS[h.s].ph : 0)),
+                    0,
+                );
+                let html = "";
+                PHASES.forEach((ph, i) => {
+                    let cls = "";
+                    if (i === curPh) cls = "active";
+                    else if (i <= maxDone) cls = "done";
+                    html += `<div class="ph-item"><span class="ph-lbl ${cls}">${ph}</span></div>`;
+                    if (i < PHASES.length - 1)
+                        html += `<span class="ph-sep">›</span>`;
+                });
+                document.getElementById("pbar").innerHTML = html;
+            }
+
+            // ─────────────────────────────────────────────
+            // BREADCRUMB
+            // ─────────────────────────────────────────────
+            function renderBreadcrumb() {
+                if (hist.length === 0) {
+                    document.getElementById("breadcrumb").innerHTML =
+                        `<span class="bc-item bc-current">${truncate(STEPS[cur].t, 40)}</span>`;
+                    return;
+                }
+                let html = "";
+                hist.forEach((h, i) => {
+                    const st = STEPS[h.s];
+                    if (!st) return;
+                    html += `<button class="bc-item bc-past" onclick="goBackTo(${i})">${truncate(st.t, 28)}</button>`;
+                    html += `<span class="bc-sep">›</span>`;
+                });
+                html += `<span class="bc-item bc-current">${truncate(STEPS[cur] ? STEPS[cur].t : "—", 32)}</span>`;
+                document.getElementById("breadcrumb").innerHTML = html;
+            }
+
+            function truncate(s, n) {
+                return s.length > n ? s.slice(0, n - 1) + "…" : s;
+            }
+
+            // ─────────────────────────────────────────────
+            // SIDEBAR
+            // ─────────────────────────────────────────────
+            function renderSidebar() {
+                renderSbMap();
+                renderSbJourney();
+            }
+
+            function renderSbMap() {
+                const groups = {};
+                Object.keys(STEPS).forEach((id) => {
+                    const s = STEPS[id];
+                    if (!groups[s.ph]) groups[s.ph] = [];
+                    groups[s.ph].push({ id, s });
+                });
+
+                let html = "";
+                PHASES.forEach((ph, i) => {
+                    const nodes = groups[i] || [];
+                    const collapsed = phaseCollapsed[i] === true;
+                    html += `<div class="sm-phase">
+      <div class="sm-phase-hdr" onclick="togglePhase(${i})">
+        <span>${ph}</span>
+        <span class="ph-toggle">${collapsed ? "▶" : "▼"}</span>
+      </div>
+      <div class="sm-nodes" id="sm-nodes-${i}" style="display:${collapsed ? "none" : "block"}">`;
+                    nodes.forEach(({ id, s }) => {
+                        let cls = "";
+                        if (id === cur) cls = "sm-current";
+                        else if (visitedNodes.has(id)) cls = "sm-visited";
+                        else if (s.end) cls = "sm-end";
+                        const title = truncate(s.t, 34);
+                        html += `<div class="sm-node ${cls}" onclick="smNodeClick('${id}',event)" title="${s.t}">${title}</div>`;
+                    });
+                    html += `</div></div>`;
+                });
+
+                html += SB_FOOT;
+                html += `<div style="padding:6px 10px 10px;font-size:10px;color:rgba(255,255,255,.28);font-style:italic">✦ Pulsa cualquier paso para acceder directamente</div>`;
+                document.getElementById("sb-map").innerHTML = html;
+            }
+
+            function smNodeClick(id, evt) {
+                jumpTo(id);
+            }
+
+            function togglePhase(i) {
+                phaseCollapsed[i] = !phaseCollapsed[i];
+                const el = document.getElementById(`sm-nodes-${i}`);
+                if (el) el.style.display = phaseCollapsed[i] ? "none" : "block";
+                renderSbMap();
+            }
+
+            function renderSbJourney() {
+                let html = "";
+                hist.forEach((h, i) => {
+                    const s = STEPS[h.s];
+                    if (!s) return;
+                    html += `<div class="pi past">
+      <div>${truncate(s.t, 38)}</div>
+      ${h.c ? `<div class="pi-choice">→ ${truncate(h.c, 40)}</div>` : ""}
+    </div>`;
+                });
+                const cs = STEPS[cur];
+                if (cs) {
+                    html += `<div class="pi current">${truncate(cs.t, 38)}</div>`;
+                }
+                html += SB_FOOT;
+                document.getElementById("sb-journey").innerHTML = html;
+            }
+
+            // ─────────────────────────────────────────────
+            // CONTENT
+            // ─────────────────────────────────────────────
+            function renderContent() {
+                const s = STEPS[cur];
+                if (!s) {
+                    document.getElementById("content").innerHTML =
+                        "<p>Paso no encontrado.</p>";
+                    return;
+                }
+                if (s.end) {
+                    document.getElementById("content").innerHTML = buildEnd(s);
+                } else {
+                    document.getElementById("content").innerHTML = buildStep(s);
+                }
+            }
+
+            function buildStep(s) {
+                const actorLabel =
+                    {
+                        laj: "Letrado de la Administración de Justicia",
+                        juez: "Tribunal (Juez/Magistrado)",
+                        ambos: "LAJ y Tribunal",
+                    }[s.ac] || s.ac;
+                const actorCls = `act-${s.ac}`;
+                const stepN = hist.length + 1;
+                const phN = PHASES[s.ph] || "";
+                const wasJump =
+                    hist.length &&
+                    hist[hist.length - 1].c === "[Salto directo]";
+
+                let bodyHtml = renderBlocks(s.c);
+                let decHtml = "";
+                if (s.q) {
+                    const letters = ["A", "B", "C", "D", "E"];
+                    const typeMaps = {
+                        ok: "ok",
+                        bad: "bad",
+                        warn: "warn",
+                        neutral: "neutral",
+                    };
+                    decHtml = `<div class="dec-area">
+      <div class="dec-q">
+        <div class="dec-q-label">Punto de decisión</div>
+        <div class="dec-q-text">${s.q}</div>
+      </div>
+      <div class="dec-opts">
+        ${s.opts
+            .map(
+                (o, i) => `
+          <button class="dec-btn ${typeMaps[o.l] || "neutral"}" onclick="goTo('${o.n}','${escQ(o.t)}')">
+            <span class="dec-letter">${letters[i] || i + 1}</span>
+            <span class="dec-btn-text">${o.t}</span>
+          </button>`,
+            )
+            .join("")}
+      </div>
+    </div>`;
+                }
+                let navHtml = `<div class="c-nav">
+    <button class="btn-back" onclick="goBack()" ${hist.length === 0 ? "disabled" : ""}>← Volver</button>
+    ${s.nx ? `<button class="btn-next" onclick="goTo('${s.nx}','')">Siguiente →</button>` : ""}
+  </div>`;
+
+                return `<div class="card">
+    <div class="c-hdr">
+      <span class="act-badge ${actorCls}">${actorLabel}</span>
+      <div class="c-title">${s.t}</div>
+      <span class="step-num">Paso ${stepN} · ${phN}${wasJump ? `<span class="jump-badge">✦ Acceso directo</span>` : ""}</span>
+    </div>
+    <div class="c-body">${bodyHtml}</div>
+    ${decHtml}
+    ${navHtml}
+  </div>`;
+            }
+
+            function buildEnd(s) {
+                const icons = {
+                    success: "✅",
+                    error: "❌",
+                    warning: "⚠️",
+                    neutral: "📋",
+                };
+                const titles = {
+                    success: "Procedimiento concluido con éxito",
+                    error: "Procedimiento concluido con incidencia",
+                    warning: "Procedimiento bloqueado — acción requerida",
+                    neutral:
+                        "Procedimiento en suspensión o continuación externa",
+                };
+                const subs = {
+                    success:
+                        "La intervención del caudal hereditario ha culminado satisfactoriamente.",
+                    error: "Se ha producido un supuesto que requiere revisión.",
+                    warning:
+                        "El cese de la intervención no puede acordarse en este momento.",
+                    neutral:
+                        "La intervención subsiste o continúa por una vía diferente.",
+                };
+
+                let summHtml = "";
+                const all = [...hist, { s: cur, next: null, c: "" }];
+                const stepIds = [...hist.map((h) => h.s), cur];
+                summHtml = `<div class="summary-box">
+    <div class="summary-title">Resumen del recorrido seguido</div>
+    <div class="summary-list">
+      ${hist
+          .map((h, i) => {
+              const st = STEPS[h.s];
+              return `<div class="summary-item">
+          <span class="summary-n">${i + 1}</span>
+          <div>
+            <div>${st ? st.t : h.s}</div>
+            ${h.c ? `<div class="summary-choice">→ ${h.c}</div>` : ""}
+          </div>
+        </div>`;
+          })
+          .join("")}
+      <div class="summary-item">
+        <span class="summary-n">${hist.length + 1}</span>
+        <div><div>${STEPS[cur] ? STEPS[cur].t : cur}</div></div>
+      </div>
+    </div>
+  </div>`;
+
+                const bodyHtml = renderBlocks(s.c);
+
+                return `<div class="card end-${s.end}">
+    <div class="c-hdr">
+      <span class="end-icon">${icons[s.end]}</span>
+      <div>
+        <div class="end-title">${titles[s.end]}</div>
+        <div class="end-sub">${subs[s.end]}</div>
+      </div>
+    </div>
+    <div class="c-body">
+      ${bodyHtml}
+      ${summHtml}
+    </div>
+    <div class="end-actions">
+      <button class="btn-restart" onclick="restart()">↺ Nuevo procedimiento</button>
+      <button class="btn-end-back" onclick="goBack()">← Volver al paso anterior</button>
+    </div>
+  </div>`;
+            }
+
+            function renderBlocks(blocks) {
+                if (!blocks) return "";
+                return blocks
+                    .map((b) => {
+                        if (b[0] === "i")
+                            return `<div class="b-intro">${b[1]}</div>`;
+                        if (b[0] === "d")
+                            return `<div class="b-deadline"><span>⏱</span><div>${b[1]}</div></div>`;
+                        if (b[0] === "n")
+                            return `<div class="b-note"><span>ℹ</span><div>${b[1]}</div></div>`;
+                        if (b[0] === "w")
+                            return `<div class="b-warn"><span>⚠</span><div>${b[1]}</div></div>`;
+                        if (b[0] === "l")
+                            return `<div class="b-law">${b[1]}</div>`;
+                        if (b[0] === "cl") {
+                            const items = b[2]
+                                .map((item, idx) => {
+                                    const uid =
+                                        "chk_" +
+                                        Math.random().toString(36).slice(2) +
+                                        idx;
+                                    return `<label class="b-check-item" id="lbl_${uid}">
+          <input type="checkbox" id="${uid}" onchange="toggleCheck('lbl_${uid}',this.checked)"/>
+          ${item}
+        </label>`;
+                                })
+                                .join("");
+                            return `<div class="b-check">
+        <div class="b-check-title">${b[1]}</div>
+        <div class="b-check-list">${items}</div>
+      </div>`;
+                        }
+                        return "";
+                    })
+                    .join("");
+            }
+
+            function toggleCheck(lblId, checked) {
+                const lbl = document.getElementById(lblId);
+                if (lbl) lbl.classList.toggle("done-item", checked);
+            }
+
+            function escQ(s) {
+                return (s || "").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+            }
+
+            // ─────────────────────────────────────────────
+            // MAPA OVERLAY (con cierre de sidebar)
+            // ─────────────────────────────────────────────
+            function toggleMapa() {
+                mapaOn = !mapaOn;
+                document.getElementById("layout").style.display = mapaOn
+                    ? "none"
+                    : "flex";
+                document.getElementById("mapa-overlay").style.display = mapaOn
+                    ? "block"
+                    : "none";
+                if (mapaOn) renderMapa();
+                closeMobileSidebar();
+            }
+
+            function renderMapa() {
+                const groups = {};
+                PHASES.forEach((_, i) => (groups[i] = []));
+                Object.keys(STEPS).forEach((id) => {
+                    const s = STEPS[id];
+                    groups[s.ph].push({ id, s });
+                });
+
+                let html = `<div class="mapa-hdr">
+    <h2>🗺 Mapa completo del procedimiento — Arts. 790–796 LEC</h2>
+    <button class="mapa-btn-back" onclick="toggleMapa()">← Volver al recorrido</button>
+  </div>
+  <div class="mapa-phases">`;
+
+                PHASES.forEach((ph, i) => {
+                    html += `<div class="mapa-col">
+      <div class="mapa-col-hdr">${ph}</div>`;
+                    (groups[i] || []).forEach(({ id, s }) => {
+                        let cls = "";
+                        if (id === cur) cls = "current-node";
+                        else if (visitedNodes.has(id)) cls = "visited";
+                        else if (s.end) cls = `end-${s.end.charAt(0)}`;
+                        const actLabel =
+                            { laj: "LAJ", juez: "Juez", ambos: "LAJ+Juez" }[
+                                s.ac
+                            ] || s.ac;
+                        let badge = "";
+                        if (s.end) {
+                            const endLabels = {
+                                success: "✅ Cese",
+                                warning: "⚠ Bloqueado",
+                                neutral: "📋 Continúa",
+                            };
+                            badge = `<span class="mapa-node-badge end-${s.end.charAt(0)}">${endLabels[s.end] || s.end}</span>`;
+                        }
+                        html += `<div class="mapa-node ${cls}" onclick="jumpTo('${id}')" title="Ir directamente a: ${escQ(s.t)}">
+        <div class="mapa-node-title">${truncate(s.t, 36)}</div>
+        <div class="mapa-node-actor">${actLabel}</div>
+        ${badge}
+      </div>`;
+                    });
+                    html += `</div>`;
+                });
+
+                html += `</div>
+  <div style="margin-top:16px;padding:12px;background:var(--white);border:1px solid var(--bdr);border-radius:8px;font-size:11px;color:var(--muted)">
+    <strong style="color:var(--navy)">Leyenda:</strong>
+    &nbsp;🟩 Nodo visitado en el recorrido actual &nbsp;|&nbsp;
+    🔵 Nodo activo &nbsp;|&nbsp;
+    ✅ Desenlace de cese &nbsp;|&nbsp;
+    ⚠ Desenlace bloqueado &nbsp;|&nbsp;
+    📋 Desenlace con continuación &nbsp;|&nbsp;
+    <em style="color:var(--navy-mid)">✦ Pulsa cualquier nodo para ir directamente a ese paso</em>
+  </div>`;
+                document.getElementById("mapa-overlay").innerHTML = html;
+            }
+
+            // ─────────────────────────────────────────────
+            // DOWNLOAD
+            // ─────────────────────────────────────────────
+            function dlGuia() {
+                const html =
+                    "<!DOCTYPE html>" + document.documentElement.outerHTML;
+                const blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "guia-tramitacion-intervencion-caudal.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            let zoomLevel = 100;
+            function updateZoom() {
+                const label = document.getElementById("zoom-label");
+                const content = document.getElementById("content");
+                if (label) label.innerText = `${zoomLevel}%`;
+                if (content) content.style.zoom = zoomLevel / 100;
+            }
+            document.getElementById("btn-zoom-in").onclick = () => {
+                if (zoomLevel < 150) {
+                    zoomLevel += 10;
+                    updateZoom();
+                }
+            };
+            document.getElementById("btn-zoom-out").onclick = () => {
+                if (zoomLevel > 70) {
+                    zoomLevel -= 10;
+                    updateZoom();
+                }
+            };
+            updateZoom();
+
+            // ─────────────────────────────────────────────
+            // EVENT LISTENERS PARA TOGGLE SIDEBAR
+            // ─────────────────────────────────────────────
+            document
+                .getElementById("btnToggleSidebar")
+                .addEventListener("click", toggleSidebar);
+            document
+                .getElementById("sidebarBackdrop")
+                .addEventListener("click", closeMobileSidebar);
+            window.addEventListener("resize", handleResize);
+            handleResize();
+
+            // ─────────────────────────────────────────────
+            // INIT
+            // ─────────────────────────────────────────────
+            render();
+        </script>
+    </body>
+</html>

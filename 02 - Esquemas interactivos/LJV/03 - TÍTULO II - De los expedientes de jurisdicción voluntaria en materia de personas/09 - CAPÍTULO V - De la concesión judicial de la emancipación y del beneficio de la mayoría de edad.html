@@ -1,0 +1,2243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ley 15/2015 — Emancipación y beneficio de mayor de edad (arts. 53-55) — Mapa Mental Completo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+
+  /* c1 = Competencia/Postulación; c2 = Solicitud; c3 = Tramitación/Resolución;
+     c4 = Efectos jurídicos; c5 = Marco general JV; c6 = Normativa conexa */
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+  --transition:   200ms ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-ui);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ====== HEADER ====== */
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem 1.75rem;
+}
+.header-inner { max-width: 1400px; margin: 0 auto; } 
+ .header-breadcrumb { 
+       font-size: 12px; 
+       font-weight: 500; 
+       letter-spacing: .06em; 
+       text-transform: uppercase; 
+       color: var(--accent); 
+       margin-bottom: .5rem; 
+     } 
+ 
+ .header-subtitle{font-size:14px;color:rgba(248,245,237,.65);margin-bottom:1rem;line-height:1.5} 
+ .header-title { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700; margin-bottom: .35rem; }
+.header-meta { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.header-tag {
+  background: rgba(200,169,110,.15);
+  border: 1px solid rgba(200,169,110,.3);
+  color: var(--accent);
+  border-radius: 20px;
+  padding: .2rem .75rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+.header-actions { margin-left: auto; }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(248,245,237,.15);
+  color: rgba(248,245,237,.7);
+  padding: .35rem .85rem;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.btn-ghost:hover { background: rgba(248,245,237,.1); color: var(--header-text); }
+
+/* ====== STATS BAR ====== */
+.stats-bar { background: var(--surface); border-bottom: 1px solid var(--border); }
+.stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+.stat-item { padding: 1rem; text-align: center; border-right: 1px solid var(--border); }
+.stat-item:last-child { border-right: none; }
+.stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--text-1); line-height: 1; }
+.stat-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; margin-top: .25rem; }
+
+/* ====== CONTROLS BAR ====== */
+.controls-bar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  padding: .6rem 1rem;
+}
+.controls-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+
+.search-wrap { display: flex; align-items: center; gap: .4rem; flex: 1; min-width: 180px; max-width: 320px; position: relative; }
+.search-wrap svg { width: 16px; height: 16px; stroke: var(--text-3); flex-shrink: 0; }
+.search-input {
+  width: 100%; padding: .35rem .5rem .35rem 1.7rem;
+  border: 1px solid var(--border-md); border-radius: var(--radius-sm);
+  font-size: 13px; font-family: var(--font-ui); color: var(--text-1);
+  background: var(--surface-2);
+  transition: border-color var(--transition);
+}
+.search-input:focus { outline: none; border-color: var(--accent); }
+
+.filter-pills { display: flex; gap: .3rem; flex-wrap: wrap; }
+.pill {
+  padding: .25rem .65rem;
+  border: 1px solid var(--border-md);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.pill.active { color: #fff; }
+.pill[data-cat="all"].active { background: var(--ink); border-color: var(--ink); }
+.pill[data-cat="c1"].active { background: var(--c1); border-color: var(--c1); }
+.pill[data-cat="c2"].active { background: var(--c2); border-color: var(--c2); }
+.pill[data-cat="c3"].active { background: var(--c3); border-color: var(--c3); }
+.pill[data-cat="c4"].active { background: var(--c4); border-color: var(--c4); }
+.pill[data-cat="c5"].active { background: var(--c5); border-color: var(--c5); }
+.pill[data-cat="c6"].active { background: var(--c6); border-color: var(--c6); }
+
+.ctrl-actions { display: flex; gap: .3rem; align-items: center; margin-left: auto; }
+.btn-ctrl {
+  padding: .25rem .6rem;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.btn-ctrl:hover { background: var(--surface-2); }
+
+.zoom-cluster { display: flex; border: 1px solid var(--border-md); border-radius: var(--radius-sm); overflow: hidden; }
+.btn-zoom {
+  width: 28px; height: 28px;
+  background: var(--surface);
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--text-2);
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition);
+}
+.btn-zoom:first-child { border-right: 1px solid var(--border-md); }
+.btn-zoom:last-child { border-left: 1px solid var(--border-md); }
+.btn-zoom:hover { background: var(--surface-2); }
+.btn-zoom:disabled { opacity: .4; cursor: default; }
+.zoom-label { font-size: 12px; font-weight: 500; min-width: 42px; text-align: center; display: flex; align-items: center; justify-content: center; color: var(--text-2); }
+
+/* ====== MAIN ====== */
+.page-main { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+
+/* ====== SECTION HEADINGS ====== */
+.section-heading {
+  display: flex; align-items: center; gap: .6rem;
+  cursor: pointer; padding: .75rem 0;
+  user-select: none;
+}
+.section-heading-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-1); }
+.section-heading-count { font-size: 11px; font-weight: 600; color: var(--text-3); background: var(--surface-2); padding: .15rem .5rem; border-radius: 12px; }
+.section-toggle-btn {
+  margin-left: auto; background: none; border: none; font-size: 14px; cursor: pointer; color: var(--text-3); transition: color var(--transition);
+}
+.section-toggle-btn:hover { color: var(--text-1); }
+.section-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 1rem; }
+.section-body.collapsed { display: none; }
+
+/* ====== CARD GRID ====== */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+
+/* ====== MAP CARD ====== */
+.map-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--c1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--transition);
+}
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+.map-card.hidden { display: none; }
+.map-card:hover { box-shadow: var(--shadow-md); }
+
+.card-top { padding: 1rem 1rem .75rem; }
+.card-meta { display: flex; gap: .4rem; align-items: center; margin-bottom: .5rem; flex-wrap: wrap; }
+.art-badge {
+  font-size: 11px; font-weight: 600; padding: .12rem .6rem; border-radius: 20px;
+  border: 1px solid var(--c1bd); background: var(--c1bg); color: var(--c1);
+}
+.map-card[data-cat="c2"] .art-badge { border-color: var(--c2bd); background: var(--c2bg); color: var(--c2); }
+.map-card[data-cat="c3"] .art-badge { border-color: var(--c3bd); background: var(--c3bg); color: var(--c3); }
+.map-card[data-cat="c4"] .art-badge { border-color: var(--c4bd); background: var(--c4bg); color: var(--c4); }
+.map-card[data-cat="c5"] .art-badge { border-color: var(--c5bd); background: var(--c5bg); color: var(--c5); }
+.map-card[data-cat="c6"] .art-badge { border-color: var(--c6bd); background: var(--c6bg); color: var(--c6); }
+
+.status-tag { font-size: 10px; font-weight: 600; padding: .1rem .5rem; border-radius: 12px; }
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+.card-title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-1); margin-bottom: .25rem; }
+.card-subtitle { font-size: .85rem; color: var(--text-2); line-height: 1.45; }
+
+.card-counters { display: flex; gap: .4rem; padding: 0 1rem .5rem; flex-wrap: wrap; }
+.counter-badge { font-size: 10px; font-weight: 600; color: var(--text-3); background: var(--surface-2); padding: .12rem .45rem; border-radius: 10px; }
+
+.card-toggle-btn {
+  width: 100%; padding: .45rem 1rem;
+  background: var(--surface-2);
+  border: none; border-top: 1px solid var(--border);
+  font-size: 12px; font-weight: 500; color: var(--text-2);
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  transition: background var(--transition);
+}
+.card-toggle-btn:hover { background: var(--border); }
+.toggle-icon { transition: transform var(--transition); font-size: 10px; }
+.map-card.expanded .toggle-icon { transform: rotate(180deg); }
+
+.card-body { display: none; padding: 1rem; border-top: 1px solid var(--border); }
+.map-card.expanded .card-body { display: block; }
+
+.inner-section { margin-bottom: .85rem; }
+.inner-section:last-child { margin-bottom: 0; }
+.inner-heading { font-size: 12.5px; font-weight: 600; color: var(--text-1); margin-bottom: .35rem; display: flex; align-items: center; gap: .4rem; }
+.inner-heading .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c1); flex-shrink: 0; }
+.map-card[data-cat="c2"] .inner-heading .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .inner-heading .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .inner-heading .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .inner-heading .dot { background: var(--c5); }
+.map-card[data-cat="c6"] .inner-heading .dot { background: var(--c6); }
+.inner-body { padding-left: .15rem; }
+.inner-list { list-style: none; }
+.inner-list li {
+  position: relative; padding-left: .8rem; margin-bottom: .25rem;
+  font-size: 12.5px; color: var(--text-2); line-height: 1.5;
+}
+.inner-list li::before { content: '\2013'; position: absolute; left: 0; color: var(--text-3); }
+.inner-list li strong { color: var(--text-1); font-weight: 500; }
+
+.card-refs { display: flex; flex-wrap: wrap; gap: .3rem; padding: .6rem 1rem; border-top: 1px solid var(--border); background: var(--surface-2); }
+.ref-tag { font-size: 11px; font-weight: 500; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .1rem .45rem; color: var(--text-3); }
+
+/* ====== NO RESULTS ====== */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center; padding: 3rem 1rem;
+  color: var(--text-3); font-size: 14px;
+  display: none;
+}
+
+/* ====== TIMELINE TABLE ====== */
+.table-wrap { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
+.timeline-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.timeline-table thead { background: var(--surface-2); }
+.timeline-table th { padding: .65rem .75rem; text-align: left; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); border-bottom: 1px solid var(--border); }
+.timeline-table td { padding: .6rem .75rem; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+.timeline-table tbody tr:last-child td { border-bottom: none; }
+.timeline-table tbody tr:hover { background: var(--surface-2); }
+.td-tramite { font-weight: 500; color: var(--text-1); }
+.td-norm { font-size: 12px; color: var(--text-3); }
+
+.plazo-badge { font-size: 11px; font-weight: 600; padding: .12rem .5rem; border-radius: 12px; white-space: nowrap; }
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ====== ACTORS ====== */
+.participants-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.participant-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+.participant-col-head { padding: .5rem .75rem; font-size: 12px; font-weight: 600; color: #fff; }
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.phead-c5 { background: var(--c5); }
+.phead-c6 { background: var(--c6); }
+.participant-col ul { list-style: none; }
+.participant-col li { padding: .4rem .75rem; font-size: 12.5px; color: var(--text-2); border-bottom: 1px solid var(--border); line-height: 1.5; }
+.participant-col li:last-child { border-bottom: none; }
+.participant-note { font-size: 11px; color: var(--text-3); font-style: italic; }
+
+/* ====== NORM GRID ====== */
+.norm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.norm-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: .85rem; }
+.norm-law { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); font-weight: 600; margin-bottom: .15rem; }
+.norm-title { font-size: 13px; font-weight: 500; color: var(--text-1); margin-bottom: .4rem; }
+.norm-arts { font-size: 12px; color: var(--text-2); line-height: 1.5; margin-bottom: .5rem; }
+.norm-arts strong { color: var(--text-1); }
+
+/* ====== FOOTER ====== */
+.legend-footer { background: var(--header-bg); color: var(--header-text); padding: 1.5rem; margin-top: 2rem; }
+.legend-inner { max-width: 1200px; margin: 0 auto; }
+.legend-title { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-weight: 600; margin-bottom: .75rem; }
+.legend-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.legend-item { display: flex; align-items: center; gap: .4rem; font-size: 12px; color: rgba(248,245,237,.75); }
+.legend-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.legend-divider { width: 1px; height: 20px; background: rgba(248,245,237,.12); }
+.legend-copy { font-size: 11px; color: rgba(248,245,237,.3); border-top: 1px solid rgba(248,245,237,.08); margin-top: 1rem; padding-top: .75rem; }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 960px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .participants-grid { grid-template-columns: repeat(2, 1fr); }
+  .norm-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .stat-item { border-bottom: 1px solid var(--border); }
+  .stat-item:nth-child(2) { border-right: none; }
+}
+@media (max-width: 600px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .participants-grid { grid-template-columns: 1fr; }
+  .norm-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .ctrl-actions { display: none; }
+}
+
+/* ====== PRINT ====== */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body   { display: block !important; }
+  .inner-body  { display: block !important; }
+  .section-body { display: block !important; }
+  .map-card    { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  body         { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HEADER ====== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN
+    MATERIA DE PERSONAS · CAPÍTULO V</div>
+    <h1 class="header-title">De la concesión judicial de la emancipación y del beneficio de la mayoría de edad</h1>
+    <p class="header-subtitle">Arts. 53 a 55 LJV · Conexiones con CC, LOPJ, LEC, Ley 20/2011 y normativa constitucional e internacional</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015, de 2 de julio</span>
+      <span class="header-tag">Arts. 53-55</span>
+      <span class="header-tag">Materia: Personas</span>
+      <span class="header-tag">Reforma Ley 8/2021</span>
+      <span class="header-tag">+30 conexiones normativas</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ====== STATS BAR ====== -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">15</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">30+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">10+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">6</div>
+      <div class="stat-label">Cuerpos normativos</div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== CONTROLS BAR ====== -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Competencia</button>
+      <button class="pill" data-cat="c2">Solicitud</button>
+      <button class="pill" data-cat="c3">Tramitación</button>
+      <button class="pill" data-cat="c4">Efectos</button>
+      <button class="pill" data-cat="c5">Marco general</button>
+      <button class="pill" data-cat="c6">Normativa conexa</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ====== MAIN ====== -->
+<main class="page-main">
+
+  <!-- ========== SECCIÓN 1: ARTÍCULO 53 — COMPETENCIA, LEGITIMACIÓN Y POSTULACIÓN ========== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-arts53">
+      <span class="section-heading-text">Artículo 53 — Competencia, legitimación y postulación</span>
+      <span class="section-heading-count">3 apartados · 3 supuestos · 4+ conexiones</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-arts53">
+      <div class="card-grid">
+
+        <!-- ART 53.1 — Emancipación judicial -->
+        <article class="map-card" data-cat="c1" data-text="artículo 53 apartado 1 competencia juez primera instancia domicilio menor emancipación mayor 16 años patria potestad artículo 320 código civil nupcias convivencia marital progenitores separados entorpeciera gravemente ejercicio ley 8 2021 artículo 319">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 53.1</span>
+              <span class="status-tag tag-info">Emancipación judicial</span>
+            </div>
+            <h2 class="card-title">Emancipación judicial — Competencia y supuestos habilitantes</h2>
+            <p class="card-subtitle">El Juez de Primera Instancia del domicilio del menor conocerá la solicitud del mayor de 16 años sujeto a patria potestad, en los supuestos del art. 320 CC (ahora art. 319 CC tras Ley 8/2021).</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> supuestos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Competencia judicial
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Órgano competente:</strong> Juez de Primera Instancia del domicilio del menor.</li>
+                  <li><strong>Fundamento orgánico:</strong> Artículo 82 de la Ley Orgánica 6/1985, del Poder Judicial, que atribuye a los Juzgados de Primera Instancia el conocimiento de los asuntos de jurisdicción voluntaria que les atribuya la ley.</li>
+                  <li><strong>Competencia territorial:</strong> Fijada por el domicilio del menor, sin que quepa modificación por sumisión expresa o tácita (art. 2.2 Ley 15/2015).</li>
+                  <li><strong>Requisito del solicitante:</strong> Mayor de 16 años, sujeto a patria potestad, no emancipado previamente.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Supuesto a) — Nupcias o convivencia marital del progenitor
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Causa:</strong> Cuando quien ejerciere la patria potestad contrajere nupcias o conviviere maritalmente con persona distinta del otro progenitor.</li>
+                  <li><strong>Ratio legis:</strong> El nuevo vínculo o convivencia del progenitor titular de la patria potestad con un tercero puede alterar la dinámica familiar y el ejercicio de la patria potestad, justificando la anticipación de la capacidad del menor.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Supuesto b) — Separación de los progenitores
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Causa:</strong> Cuando los progenitores vivieren separados.</li>
+                  <li><strong>Conexión con art. 156 CC:</strong> Si los padres viven separados, la patria potestad se ejercerá por aquel con quien el hijo conviva; la separación constituye en sí misma un supuesto habilitante.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Supuesto c) — Causa que entorpezca gravemente la patria potestad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Causa:</strong> Cuando concurra cualquier causa que entorpeciera gravemente el ejercicio de la patria potestad.</li>
+                  <li><strong>Cláusula general:</strong> Concepto jurídico indeterminado que permite al Juez valorar cualquier circunstancia fáctica que dificulte gravemente el ejercicio de la patria potestad (enfermedad, incapacidad, ausencia, conflicto grave, etc.).</li>
+                  <li><strong>Conexión con art. 156 CC:</strong> Los desacuerdos reiterados o cualquier otra causa que entorpezca gravemente el ejercicio de la patria potestad pueden justificar la emancipación judicial.</li>
+                  <li><strong>Conexión con art. 158 CC:</strong> El Juez puede dictar medidas para evitar perturbaciones dañosas al menor en caso de cambio de titular de la potestad de guarda.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Fundamento constitucional
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Artículo 39.2 CE:</strong> Los poderes públicos aseguran, asimismo, la protección integral de los hijos, iguales éstos ante la ley con independencia de su filiación.</li>
+                  <li><strong>Convenio de Nueva York sobre los Derechos del Niño (1989), art. 3:</strong> El interés superior del menor como consideración primordial.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 320 (red. original)</span>
+            <span class="ref-tag">CC art. 319 (red. vigente)</span>
+            <span class="ref-tag">CC art. 154</span>
+            <span class="ref-tag">CC art. 156</span>
+            <span class="ref-tag">CC art. 158</span>
+            <span class="ref-tag">LOPJ art. 82</span>
+            <span class="ref-tag">Ley 15/2015 art. 2</span>
+            <span class="ref-tag">CE art. 39.2</span>
+          </div>
+        </article>
+
+        <!-- ART 53.2 — Beneficio de mayor de edad -->
+        <article class="map-card" data-cat="c1" data-text="artículo 53 apartado 2 competencia juez primera instancia domicilio menor beneficio mayor de edad mayor 16 años tutela artículo 321 código civil">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 53.2</span>
+              <span class="status-tag tag-warn">Beneficio de mayor de edad</span>
+            </div>
+            <h2 class="card-title">Beneficio de mayor de edad — Competencia y fundamento</h2>
+            <p class="card-subtitle">El Juez de Primera Instancia del domicilio del menor conocerá la solicitud del mayor de 16 años sujeto a tutela, conforme al art. 321 CC.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> requisitos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Competencia judicial
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Órgano competente:</strong> Juez de Primera Instancia del domicilio del menor (mismo criterio territorial que la emancipación).</li>
+                  <li><strong>Solicitante:</strong> Mayor de 16 años sujeto a tutela.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Naturaleza jurídica del beneficio de mayor de edad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Concepto:</strong> Habilitación judicial que anticipa los efectos de la mayoría de edad antes de cumplir los 18 años, para el menor sujeto a tutela.</li>
+                  <li><strong>Diferencia con la emancipación:</strong> La emancipación se refiere al menor sujeto a patria potestad; el beneficio de mayor de edad se aplica al menor sujeto a tutela. El beneficio otorga capacidad plena, sin las limitaciones del emancipado.</li>
+                  <li><strong>Fundamento en el Código Civil:</strong> Artículo 321 CC — La mayor edad empieza a los dieciocho años cumplidos; el beneficio de mayor de edad anticipa esta capacidad.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Conexión con la regulación de la tutela
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Artículo 222 CC:</strong> La tutela de menores en situación de desamparo corresponde a la entidad pública; también procede el nombramiento de tutor conforme a las reglas ordinarias.</li>
+                  <li><strong>Artículo 232 CC:</strong> La tutela se ejercerá bajo la vigilancia del Ministerio Fiscal, que actuará de oficio o a instancia de cualquier interesado.</li>
+                  <li><strong>Artículo 224 CC:</strong> Serán aplicables a la tutela, con carácter supletorio, las normas de la curatela.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 321</span>
+            <span class="ref-tag">CC art. 222</span>
+            <span class="ref-tag">CC art. 232</span>
+            <span class="ref-tag">CC art. 224</span>
+            <span class="ref-tag">LOPJ art. 82</span>
+          </div>
+        </article>
+
+        <!-- ART 53.3 — Intervención de profesionales del Derecho -->
+        <article class="map-card" data-cat="c1" data-text="artículo 53 apartado 3 intervención abogado procurador no preceptiva oposición preceptiva asistencia letrado ley de enjuiciamiento civil aplicación supletoria artículo 31 32">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 53.3</span>
+              <span class="status-tag tag-alert">Postulación</span>
+            </div>
+            <h2 class="card-title">Intervención de Abogado y Procurador — Regla y excepción</h2>
+            <p class="card-subtitle">No es preceptiva la intervención de Abogado ni Procurador, salvo que se formule oposición, en cuyo caso sí será preceptiva la asistencia de letrado.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> reglas</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Regla general — No preceptividad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio:</strong> En la práctica de estas actuaciones de jurisdicción voluntaria, no será preceptiva la intervención de Abogado ni Procurador.</li>
+                  <li><strong>Razón:</strong> La naturaleza no contenciosa del expediente de jurisdicción voluntaria permite al menor acudir sin representación técnica.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Excepción — Oposición
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Supuesto:</strong> Si se formula oposición por cualquier legitimado.</li>
+                  <li><strong>Efecto:</strong> A partir de la oposición, sí será preceptiva la asistencia de letrado.</li>
+                  <li><strong>Naturaleza:</strong> Al formularse oposición, el expediente adquiere naturaleza contenciosa, aplicándose las reglas generales de la Ley de Enjuiciamiento Civil.</li>
+                  <li><strong>Fundamento supletorio:</strong> Artículo 8 de la Ley 15/2015 remite a la LEC; arts. 31-32 LEC regulan la intervención de abogado y procurador en los procesos civiles.</li>
+                  <li><strong>Artículo 32.5 LEC:</strong> Cuando la intervención de abogado y procurador no sea preceptiva, el Ministerio Fiscal podrá designar, en su caso, abogado y procurador del turno de oficio.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LEC arts. 31-32</span>
+            <span class="ref-tag">Ley 15/2015 art. 8</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECCIÓN 2: ARTÍCULO 54 — SOLICITUD ========== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-arts54">
+      <span class="section-heading-text">Artículo 54 — Solicitud</span>
+      <span class="section-heading-count">2 apartados · 3 mecanismos · 4+ conexiones</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-arts54">
+      <div class="card-grid">
+
+        <!-- ART 54.1 — Inicio del expediente y mecanismos supletorios -->
+        <article class="map-card" data-cat="c2" data-text="artículo 54 apartado 1 inicio expediente solicitud juzgado menor mayor 16 años progenitores tutor defensor judicial ministerio fiscal representación provisional patria potestad privada suspendida">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 54.1</span>
+              <span class="status-tag tag-warn">Inicio del expediente</span>
+            </div>
+            <h2 class="card-title">Inicio del expediente y mecanismos supletorios de asistencia</h2>
+            <p class="card-subtitle">El menor mayor de 16 años inicia el expediente con asistencia de progenitor o tutor; a falta de éstos, se nombra defensor judicial y el Ministerio Fiscal asume la representación provisional.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> mecanismos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Inicio del expediente
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Vía de inicio:</strong> Solicitud dirigida al Juzgado.</li>
+                  <li><strong>Legitimación activa:</strong> Corresponde exclusivamente al menor mayor de 16 años.</li>
+                  <li><strong>Asistencia requerida:</strong> Alguno de sus progenitores, no privados o suspendidos de la patria potestad, o el tutor.</li>
+                  <li><strong>Naturaleza de la asistencia:</strong> El menor actúa asistido (no representado) por el progenitore o tutor.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Mecanismo supletorio primero — Defensor judicial
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Causa de activación:</strong> A falta de la asistencia de progenitores o tutor.</li>
+                  <li><strong>Situaciones:</strong> Privación o suspensión de la patria potestad de ambos progenitores, fallecimiento de ambos, ignoradero de su paradero, o inexistencia de tutor nombrado.</li>
+                  <li><strong>Medida:</strong> Se nombrará defensor judicial al menor para instar el expediente.</li>
+                  <li><strong>Conexión con art. 163 CC:</strong> Siempre que en algún asunto los progenitores tengan un interés opuesto al de sus hijos no emancipados, se nombrará defensor judicial.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Mecanismo supletorio segundo — Representación fiscal provisional
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Actuación del Ministerio Fiscal:</strong> Asumirá la representación y defensa del menor hasta que se produzca el nombramiento de defensor judicial.</li>
+                  <li><strong>Naturaleza:</strong> El Ministerio Fiscal actúa como representante legal transitorio del menor.</li>
+                  <li><strong>Fundamento constitucional:</strong> Garantiza la tutela judicial efectiva (artículo 24 de la Constitución Española).</li>
+                  <li><strong>Fundamento legal:</strong> Artículo 4 de la Ley 15/2015 — intervención preceptiva del Ministerio Fiscal en expedientes que afecten al estado civil o derechos de menores.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 163</span>
+            <span class="ref-tag">Ley 15/2015 art. 4</span>
+            <span class="ref-tag">Ley 15/2015 art. 10</span>
+            <span class="ref-tag">CE art. 24</span>
+          </div>
+        </article>
+
+        <!-- ART 54.2 — Documentación y prueba -->
+        <article class="map-card" data-cat="c2" data-text="artículo 54 apartado 2 documentación prueba solicitud acompañar acrediten concurrencia causa código civil emancipación beneficio mayor de edad proposición prueba pertinente">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 54.2</span>
+              <span class="status-tag tag-info">Documentación y prueba</span>
+            </div>
+            <h2 class="card-title">Documentación y prueba acompañante</h2>
+            <p class="card-subtitle">A la solicitud se acompañarán documentos acreditativos de la causa exigida por el Código Civil y la proposición de prueba pertinente.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> tipos documentales</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Documentación exigible según supuesto
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Emancipación por nupcias o convivencia marital:</strong> Certificado de matrimonio o documento acreditativo de la convivencia marital del progenitor con persona distinta del otro.</li>
+                  <li><strong>Emancipación por separación de los progenitores:</strong> Documentación acreditativa de la situación de separación (sentencia de separación o divorcio, convenio regulador, o cualquier documento que acredite la convivencia separada).</li>
+                  <li><strong>Emancipación por causa que entorpezca gravemente la patria potestad:</strong> Documentación que acredite la existencia de la causa (informes sociales, psicológicos, médicos, denuncias, resoluciones judiciales previas, etc.).</li>
+                  <li><strong>Beneficio de mayor de edad:</strong> Documentación acreditativa de la situación de tutela y de la concurrencia de los requisitos del artículo 321 del Código Civil.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Proposición de prueba
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Derecho del solicitante:</strong> Puede proponer las pruebas que considere pertinentes.</li>
+                  <li><strong>Finalidad:</strong> Acreditar la concurrencia de la causa legal y la capacidad de gobierno del menor.</li>
+                  <li><strong>Marco normativo:</strong> Artículo 5 de la Ley 15/2015 regula las normas probatorias en los expedientes de jurisdicción voluntaria.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC arts. 320-321</span>
+            <span class="ref-tag">Ley 15/2015 art. 5</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECCIÓN 3: ARTÍCULO 55 — TRAMITACIÓN Y RESOLUCIÓN ========== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-arts55">
+      <span class="section-heading-text">Artículo 55 — Tramitación y resolución</span>
+      <span class="section-heading-count">3 apartados · 3 fases · 6+ conexiones</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-arts55">
+      <div class="card-grid">
+
+        <!-- ART 55.1 — Comparecencia -->
+        <article class="map-card" data-cat="c3" data-text="artículo 55 apartado 1 comparecencia secretario judicial admite trámite convoca menor progenitores tutor ministerio fiscal interesados oídos orden pruebas propuestas acordadas">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 55.1</span>
+              <span class="status-tag tag-ok">Comparecencia</span>
+            </div>
+            <h2 class="card-title">Fase de comparecencia ante el Juez</h2>
+            <p class="card-subtitle">Admitida a trámite la solicitud, el Secretario judicial convoca a la comparecencia ante el Juez a todos los intervinientes, quienes serán oídos por orden establecido.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> intervinientes</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Admisión a trámite
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Órgano:</strong> El Secretario judicial admitirá a trámite la solicitud.</li>
+                  <li><strong>Fundamento:</strong> Artículo 16 de la Ley 15/2015 — el Secretario judicial examina de oficio la competencia objetiva y territorial.</li>
+                  <li><strong>Impulso del expediente:</strong> Corresponde al Secretario judicial (art. 2.3 Ley 15/2015).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Convocatoria a comparecencia
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Convocados:</strong> El menor, sus progenitores o, en su caso, su tutor, el Ministerio Fiscal y aquellos que pudieran estar interesados.</li>
+                  <li><strong>Citación:</strong> Se realizará conforme a las reglas de citación y emplazamiento de la Ley de Enjuiciamiento Civil (arts. 165 y ss.), por aplicación supletoria del art. 8 Ley 15/2015.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Orden de audiencia
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Primero:</strong> El menor solicitante.</li>
+                  <li><strong>Segundo:</strong> Los progenitores o, en su caso, el tutor.</li>
+                  <li><strong>Tercero:</strong> El Ministerio Fiscal.</li>
+                  <li><strong>Cuarto:</strong> Aquellos que pudieran estar interesados.</li>
+                  <li><strong>Razón del orden:</strong> Se garantiza que el menor, como sujeto principal del expediente, sea oído en primer lugar, asegurando el principio del interés superior del menor (art. 3 del Convenio de Nueva York sobre los Derechos del Niño de 1989).</li>
+                  <li><strong>Marco normativo:</strong> Artículo 18 de la Ley 15/2015 regula la celebración de la comparecencia.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Práctica de pruebas
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Momento:</strong> Posteriormente a las audiencias, se practicarán las pruebas propuestas y acordadas.</li>
+                  <li><strong>Filtro judicial:</strong> El Juez resolverá sobre la pertinencia y utilidad de las pruebas propuestas, acordando únicamente las conducentes.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 2</span>
+            <span class="ref-tag">Ley 15/2015 art. 16</span>
+            <span class="ref-tag">Ley 15/2015 art. 17</span>
+            <span class="ref-tag">Ley 15/2015 art. 18</span>
+            <span class="ref-tag">LEC arts. 165 y ss.</span>
+          </div>
+        </article>
+
+        <!-- ART 55.2 — Resolución judicial -->
+        <article class="map-card" data-cat="c3" data-text="artículo 55 apartado 2 juez justificación ofrecida valorando interés menor resolver concediendo denegando emancipación beneficio mayor de edad capacidad gobierno persona bienes">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 55.2</span>
+              <span class="status-tag tag-info">Resolución</span>
+            </div>
+            <h2 class="card-title">Resolución judicial — Criterio decisorio y contenido</h2>
+            <p class="card-subtitle">El Juez resuelve concediendo o denegando la emancipación o el beneficio de mayor de edad, valorando la justificación ofrecida y el interés del menor.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> criterios</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Criterio decisorio — Doble valoración
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Justificación ofrecida:</strong> La concurrencia efectiva de la causa legal exigida por el Código Civil (arts. 320 ó 321).</li>
+                  <li><strong>Interés del menor:</strong> El interés superior del menor como principio rector, que incluye la valoración de la capacidad de gobierno de su persona y bienes.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Contenido y forma de la resolución
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Motivación:</strong> La resolución debe ser motivada y expresar la concurrencia o no de los requisitos legales.</li>
+                  <li><strong>Fallos posibles:</strong> Conceder o denegar la emancipación o el beneficio de mayor de edad.</li>
+                  <li><strong>Forma:</strong> Decreto del Secretario judicial o auto del Juez, según corresponda conforme a las reglas generales de la Ley 15/2015.</li>
+                  <li><strong>Marco normativo:</strong> Artículo 19 de la Ley 15/2015 establece la forma y contenido de la resolución.</li>
+                  <li><strong>Recursos:</strong> Contra la resolución cabrán los recursos previstos en el artículo 20 de la Ley 15/2015.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 19</span>
+            <span class="ref-tag">Ley 15/2015 art. 20</span>
+          </div>
+        </article>
+
+        <!-- ART 55.3 — Inscripción registral -->
+        <article class="map-card" data-cat="c3" data-text="artículo 55 apartado 3 remisión registro civil testimonio concesión emancipación beneficio mayor de edad inscripción eficacia constitutiva terceros buena fe ley 20 2011 artículo 70 18 71">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 55.3</span>
+              <span class="status-tag tag-gray">Inscripción registral</span>
+            </div>
+            <h2 class="card-title">Remisión al Registro Civil para inscripción</h2>
+            <p class="card-subtitle">Se remitirá al Registro Civil el testimonio de la concesión para proceder a su inscripción, con eficacia constitutiva y efectos frente a terceros.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> efectos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Remisión del testimonio
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Órgano remitente:</strong> El Secretario judicial del Juzgado que haya conocido del expediente.</li>
+                  <li><strong>Destinatario:</strong> El Registro Civil correspondiente al domicilio del menor.</li>
+                  <li><strong>Fundamento:</strong> Artículo 22 de la Ley 15/2015 — si el expediente diera lugar a un hecho inscribible en el Registro Civil, se expedirá testimonio de la resolución.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Inscripción en el Registro Civil
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Finalidad:</strong> Proceder a la inscripción de la emancipación o del beneficio de mayor de edad en el registro individual de la persona.</li>
+                  <li><strong>Marco normativo:</strong> Artículo 70 de la Ley 20/2011, del Registro Civil — la emancipación por concesión judicial y el beneficio de mayor de edad se inscriben en virtud de resolución judicial.</li>
+                  <li><strong>Inscripción de la extinción de la patria potestad:</strong> Artículo 71 de la Ley 20/2011 — se inscribirá la extinción de la patria potestad, que se produce como consecuencia de la emancipación (art. 169.2.º CC).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Efectos de la inscripción
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Eficacia constitutiva:</strong> La inscripción tiene eficacia constitutiva en materia de emancipación y beneficio de mayor de edad, conforme al artículo 18 de la Ley 20/2011.</li>
+                  <li><strong>Efectos frente a terceros:</strong> Conforme al artículo 70 de la Ley 20/2011, la concesión de emancipación y el beneficio de mayor de edad no producirán efectos frente a terceros de buena fe mientras no se inscriban en el Registro Civil.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 22</span>
+            <span class="ref-tag">Ley 20/2011 art. 4</span>
+            <span class="ref-tag">Ley 20/2011 art. 18</span>
+            <span class="ref-tag">Ley 20/2011 art. 70</span>
+            <span class="ref-tag">Ley 20/2011 art. 71</span>
+            <span class="ref-tag">CC art. 169.2.º</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECCIÓN 4: EFECTOS DE LA EMANCIPACIÓN Y DEL BENEFICIO DE MAYOR DE EDAD ========== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-efectos">
+      <span class="section-heading-text">Efectos jurídicos de la emancipación y del beneficio de mayor de edad</span>
+      <span class="section-heading-count">2 bloques · 10+ artículos conexos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-efectos">
+      <div class="card-grid">
+
+        <!-- Efectos de la emancipación -->
+        <article class="map-card" data-cat="c4" data-text="efectos emancipación capacidad personal patrimonial limitaciones irrevocabilidad extinción patria potestad rendición cuentas artículo 315 316 317 318 319 320 código civil artículo 169 168 162">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Efectos</span>
+              <span class="status-tag tag-info">Emancipación</span>
+            </div>
+            <h2 class="card-title">Efectos jurídicos de la emancipación concedida judicialmente</h2>
+            <p class="card-subtitle">La emancipación habilita al menor para regir su persona y bienes como si fuera mayor, con limitaciones de disposición patrimonial grave, y extingue la patria potestad.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>8</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>5</strong> bloques</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Capacidad personal y patrimonial
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio general:</strong> La emancipación habilita al menor para regir su persona y bienes como si fuera mayor de edad (artículo 315 del Código Civil).</li>
+                  <li><strong>Capacidad de obrar:</strong> El emancipado adquiere capacidad de obrar plena para los actos de la vida civil ordinaria.</li>
+                  <li><strong>Formas de emancipación:</strong> Por concesión de los que ejerzan la patria potestad; por el matrimonio; por concesión judicial; por convivencia independiente del menor con consentimiento de los padres (art. 316 CC).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Limitaciones a la capacidad del emancipado
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>No podrá tomar dinero a préstamo</strong> sin consentimiento de sus padres o, a falta de ambos, sin el de su curador.</li>
+                  <li><strong>No podrá gravar o enajenar bienes inmuebles</strong> sin dicho consentimiento.</li>
+                  <li><strong>No podrá gravar o enajenar establecimientos mercantiles o industriales</strong> sin dicho consentimiento.</li>
+                  <li><strong>No podrá gravar o enajenar objetos de extraordinario valor</strong> sin dicho consentimiento.</li>
+                  <li><strong>Excepción:</strong> El emancipado que hubiere contraído matrimonio no necesitará el consentimiento de sus padres para realizar estos actos de disposición (art. 315.2 CC).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Irrevocabilidad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio:</strong> La emancipación no podrá revocarse una vez concedida (artículo 318 del Código Civil).</li>
+                  <li><strong>Alcance:</strong> La concesión judicial de emancipación es firme e irreversible, con independencia de que las circunstancias que la motivaron puedan cambiar posteriormente.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Extinción de la patria potestad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Causa de extinción:</strong> La emancipación es causa de extinción de la patria potestad (artículo 169.2.º del Código Civil).</li>
+                  <li><strong>Consecuencia:</strong> Cesan los deberes y facultades de los progenitores sobre la persona y bienes del emancipado, salvo las limitaciones específicas del art. 315 CC.</li>
+                  <li><strong>Inscripción registral:</strong> La extinción de la patria potestad debe inscribirse en el Registro Civil (art. 71 de la Ley 20/2011).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Rendición de cuentas
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Derecho del emancipado:</strong> Al término de la patria potestad por emancipación, el menor podrá exigir a los padres la rendición de cuentas de la administración que ejercieron sobre sus bienes (artículo 168 del Código Civil).</li>
+                  <li><strong>Fin de la representación legal:</strong> La emancipación pone fin a la representación legal que los padres ostentaban sobre los hijos menores no emancipados (art. 162 CC).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 315</span>
+            <span class="ref-tag">CC art. 316</span>
+            <span class="ref-tag">CC art. 317</span>
+            <span class="ref-tag">CC art. 318</span>
+            <span class="ref-tag">CC art. 319</span>
+            <span class="ref-tag">CC art. 320</span>
+            <span class="ref-tag">CC art. 169.2.º</span>
+            <span class="ref-tag">CC art. 168</span>
+            <span class="ref-tag">CC art. 162</span>
+            <span class="ref-tag">Ley 20/2011 art. 71</span>
+          </div>
+        </article>
+
+        <!-- Efectos del beneficio de mayor de edad -->
+        <article class="map-card" data-cat="c4" data-text="efectos beneficio mayor de edad capacidad plena anticipada extinción tutela artículo 321 código civil mayor edad 18 años">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Efectos</span>
+              <span class="status-tag tag-warn">Beneficio de mayor de edad</span>
+            </div>
+            <h2 class="card-title">Efectos jurídicos del beneficio de mayor de edad</h2>
+            <p class="card-subtitle">El beneficio de mayor de edad habilita al menor sujeto a tutela para actuar con la capacidad propia del mayor de edad, sin las limitaciones del emancipado.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> efectos</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Capacidad plena anticipada
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio:</strong> El beneficio de mayor de edad habilita al menor sujeto a tutela para actuar con la capacidad propia del mayor de edad (artículo 321 del Código Civil).</li>
+                  <li><strong>Mayoría de edad:</strong> La mayor edad empieza a los dieciocho años cumplidos (art. 321 CC); el beneficio anticipa esta capacidad.</li>
+                  <li><strong>Diferencia clave con la emancipación:</strong> El menor beneficiado adquiere capacidad de obrar plena, sin las limitaciones de disposición patrimonial que afectan al emancipado (art. 315 CC).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Extinción de la tutela
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Efecto:</strong> La concesión del beneficio de mayor de edad pone fin a la situación de tutela del menor.</li>
+                  <li><strong>Consecuencia:</strong> El beneficiado deja de estar sujeto a tutela y adquiere la plena capacidad de obrar del mayor de edad.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 321</span>
+            <span class="ref-tag">CC art. 322</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECCIÓN 5: MARCO GENERAL DE JURISDICCIÓN VOLUNTARIA ========== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-marco">
+      <span class="section-heading-text">Marco general de la Jurisdicción Voluntaria aplicable</span>
+      <span class="section-heading-count">8 artículos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-marco">
+      <div class="card-grid">
+
+        <article class="map-card" data-cat="c5" data-text="ley 15 2015 objeto ámbito aplicación normas comunes expediente juez secretario judicial notario registrador">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 1</span>
+              <span class="status-tag tag-gray">Disposiciones generales</span>
+            </div>
+            <h2 class="card-title">Objeto y ámbito de aplicación de la Ley 15/2015</h2>
+            <p class="card-subtitle">Regula las normas comunes para la tramitación de los expedientes de jurisdicción voluntaria ante Jueces, Secretarios judiciales, Notarios y Registradores.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Contenido
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Objeto:</strong> Establecer las normas comunes para la tramitación de los expedientes de jurisdicción voluntaria.</li>
+                  <li><strong>Ámbito subjetivo:</strong> Se aplica a expedientes tramitados ante Jueces y Secretarios judiciales, así como ante Notarios y Registradores de la Propiedad y Mercantiles.</li>
+                  <li><strong>Conexión con arts. 53-55:</strong> Los expedientes de concesión judicial de emancipación y de beneficio de mayor de edad se tramitan conforme a estas normas comunes.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 1</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5" data-text="ley 15 2015 artículo 2 competencia objetiva territorial juzgados primera instancia secretario judicial impulso dirección">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 2</span>
+              <span class="status-tag tag-gray">Competencia</span>
+            </div>
+            <h2 class="card-title">Competencia en materia de jurisdicción voluntaria</h2>
+            <p class="card-subtitle">Los Juzgados de Primera Instancia tienen competencia objetiva; la territorial viene fijada por el precepto correspondiente; el impulso corresponde al Secretario judicial.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Contenido
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Competencia objetiva:</strong> Los Juzgados de Primera Instancia (o de lo Mercantil, según el caso) tendrán competencia objetiva para conocer y resolver los expedientes de jurisdicción voluntaria.</li>
+                  <li><strong>Competencia territorial:</strong> Vendrá fijada por el precepto correspondiente en cada caso, sin que quepa modificarla por sumisión expresa o tácita.</li>
+                  <li><strong>Impulso y dirección:</strong> Corresponderá a los Secretarios judiciales; la decisión de fondo corresponde al Juez o al Secretario judicial, según el caso.</li>
+                  <li><strong>Conexión con art. 55:</strong> El Juez de Primera Instancia del domicilio del menor es competente para emancipación y beneficio de mayor de edad.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 2</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5" data-text="ley 15 2015 artículo 4 ministerio fiscal intervención preceptiva estado civil menores derechos">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 4</span>
+              <span class="status-tag tag-info">Ministerio Fiscal</span>
+            </div>
+            <h2 class="card-title">Intervención del Ministerio Fiscal</h2>
+            <p class="card-subtitle">El Ministerio Fiscal intervendrá preceptivamente en expedientes que afecten al estado civil de las personas o a los derechos de menores.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Contenido
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Intervención preceptiva:</strong> El Ministerio Fiscal intervendrá en los expedientes que afecten al estado civil de las personas o a los derechos de menores.</li>
+                  <li><strong>Conexión con arts. 53-55:</strong> La emancipación y el beneficio de mayor de edad afectan al estado civil de las personas, por lo que la audiencia del Ministerio Fiscal es preceptiva en todo caso (art. 55.1).</li>
+                  <li><strong>Representación provisional:</strong> El Ministerio Fiscal asume la representación del menor hasta el nombramiento de defensor judicial (art. 54.1).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 4</span>
+            <span class="ref-tag">CC art. 232</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5" data-text="ley 15 2015 artículo 5 prueba normas probatorias expedientes">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 5</span>
+              <span class="status-tag tag-info">Prueba</span>
+            </div>
+            <h2 class="card-title">Normas probatorias en jurisdicción voluntaria</h2>
+            <p class="card-subtitle">Regula las normas probatorias aplicables a los expedientes de jurisdicción voluntaria.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Contenido
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Aplicación:</strong> Regula las normas probatorias en los expedientes de jurisdicción voluntaria.</li>
+                  <li><strong>Conexión con art. 54.2:</strong> El solicitante puede proponer las pruebas que considere pertinentes para acreditar la concurrencia de la causa legal y la capacidad de gobierno del menor.</li>
+                  <li><strong>Conexión con art. 55.1:</strong> Se practicarán las pruebas que hubieren sido propuestas y acordadas.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 5</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5" data-text="ley 15 2015 artículo 8 carácter supletorio ley de enjuiciamiento civil aplicación">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 8</span>
+              <span class="status-tag tag-gray">Supletoriedad</span>
+            </div>
+            <h2 class="card-title">Carácter supletorio de la Ley de Enjuiciamiento Civil</h2>
+            <p class="card-subtitle">Las disposiciones de la LEC serán de aplicación supletoria a los expedientes de jurisdicción voluntaria en todo lo no regulado por la Ley 15/2015.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Contenido
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Remisión:</strong> Las disposiciones de la Ley de Enjuiciamiento Civil serán de aplicación supletoria en todo lo no regulado por la Ley 15/2015.</li>
+                  <li><strong>Alcance:</strong> Incluye las reglas sobre oposición y necesidad de abogado y procurador cuando se formule oposición (arts. 31-32 LEC).</li>
+                  <li><strong>Aplicación:</strong> También incluye las reglas sobre citación y emplazamiento (arts. 165 y ss. LEC) para la convocatoria a comparecencia.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 8</span>
+            <span class="ref-tag">LEC arts. 31-32</span>
+            <span class="ref-tag">LEC arts. 165 y ss.</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5" data-text="ley 15 2015 artículo 17 admisión solicitud citación interesados comparecencia">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 17</span>
+              <span class="status-tag tag-ok">Procedimiento</span>
+            </div>
+            <h2 class="card-title">Admisión de la solicitud y citación de los interesados</h2>
+            <p class="card-subtitle">Regula la admisión de la solicitud y la citación para comparecencia ante el Juez o Secretario judicial.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Contenido
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Admisión:</strong> El Secretario judicial examinará de oficio si se cumplen las normas en materia de competencia objetiva y territorial.</li>
+                  <li><strong>Citación:</strong> Se citará a los interesados para la comparecencia ante el Juez o Secretario judicial.</li>
+                  <li><strong>Conexión con art. 55.1:</strong> El Secretario judicial admite a trámite la solicitud y convoca a la comparecencia.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 17</span>
+            <span class="ref-tag">Ley 15/2015 art. 16</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5" data-text="ley 15 2015 artículo 18 celebración comparecencia juez secretario judicial">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 18</span>
+              <span class="status-tag tag-ok">Comparecencia</span>
+            </div>
+            <h2 class="card-title">Celebración de la comparecencia</h2>
+            <p class="card-subtitle">Regula la celebración de la comparecencia ante el Juez o Secretario judicial en los expedientes de jurisdicción voluntaria.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Contenido
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Regulación:</strong> Establece el procedimiento de celebración de la comparecencia, el orden de intervención y la práctica de pruebas.</li>
+                  <li><strong>Conexión con art. 55.1:</strong> El orden de audiencia establecido (menor, progenitores/tutor, Ministerio Fiscal, interesados) se enmarca en este precepto.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 18</span>
+          </div>
+        </article>
+
+        <article class="map-card" data-cat="c5" data-text="ley 15 2015 artículo 19 20 resolución recursos decisiones expediente">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Arts. 19-20</span>
+              <span class="status-tag tag-gray">Resolución y recursos</span>
+            </div>
+            <h2 class="card-title">Decisión del expediente y recursos</h2>
+            <p class="card-subtitle">Establece la forma y contenido de la resolución que pone fin al expediente y los recursos contra las resoluciones dictadas.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Contenido
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Artículo 19:</strong> Establece la forma y contenido de la resolución que pone fin al expediente (decreto del Secretario judicial o auto del Juez).</li>
+                  <li><strong>Artículo 20:</strong> Regula los recursos contra las resoluciones dictadas en jurisdicción voluntaria.</li>
+                  <li><strong>Conexión con art. 55.2:</strong> La resolución del Juez concediendo o denegando la emancipación o beneficio de mayor de edad se dicta conforme a estas reglas generales.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 19</span>
+            <span class="ref-tag">Ley 15/2015 art. 20</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECCIÓN 6: NORMATIVA CONEXA COMPLETA ========== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norm-conexa">
+      <span class="section-heading-text">Normativa conexa completa — Ecosistema jurídico</span>
+      <span class="section-heading-count">30+ artículos referenciados</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norm-conexa">
+      <div class="card-grid">
+
+        <!-- CC — Patria potestad -->
+        <article class="map-card" data-cat="c6" data-text="código civil patria potestad artículo 154 hijos no emancipados deberes facultades velar alimentar educar representar administrar bienes madurez oídos artículo 156 ejercicio conjuntamente desacuerdos separación artículo 162 representación legal excepción conflicto intereses">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC</span>
+              <span class="status-tag tag-info">Patria potestad</span>
+            </div>
+            <h2 class="card-title">Código Civil — Régimen de la patria potestad</h2>
+            <p class="card-subtitle">Artículos 154, 156 y 162 CC: deberes y facultades de los progenitores, ejercicio de la patria potestad, representación legal de los hijos menores y excepciones.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 154 — Contenido de la patria potestad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Ámbito personal:</strong> Los hijos no emancipados están bajo la patria potestad de los progenitores.</li>
+                  <li><strong>Deberes y facultades:</strong> Velar por ellos, tenerlos en su compañía, alimentarlos, educarlos y procurarles una formación integral.</li>
+                  <li><strong>Ámbito patrimonial:</strong> Representarlos y administrar sus bienes.</li>
+                  <li><strong>Derecho de audiencia del menor:</strong> Si los hijos tuvieren suficiente madurez deberán ser oídos siempre antes de adoptar decisiones que les afecten.</li>
+                  <li><strong>Conexión con emancipación:</strong> La emancipación judicial pone fin a esta situación de sometimiento a la patria potestad.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 156 — Ejercicio de la patria potestad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Ejercicio conjunto:</strong> La patria potestad se ejercerá conjuntamente por ambos progenitores o por uno solo con el consentimiento expreso o tácito del otro.</li>
+                  <li><strong>Desacuerdos:</strong> En caso de desacuerdo, cualquiera de los dos podrá acudir al Juez, quien atribuirá la facultad de decidir al padre o a la madre.</li>
+                  <li><strong>Separación:</strong> Si los padres viven separados, la patria potestad se ejercerá por aquel con quien el hijo conviva.</li>
+                  <li><strong>Causa grave:</strong> Si los desacuerdos fueran reiterados o concurriera cualquier otra causa que entorpezca gravemente el ejercicio de la patria potestad, podrá atribuirla total o parcialmente a uno de los padres o distribuir entre ellos sus funciones.</li>
+                  <li><strong>Conexión con art. 53:</strong> Los supuestos de separación y causa que entorpezca gravemente coinciden con los supuestos habilitantes de la emancipación judicial.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 162 — Representación legal y excepciones
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio:</strong> Los padres que ostenten la patria potestad tienen la representación legal de sus hijos menores no emancipados.</li>
+                  <li><strong>Excepción 1.ª:</strong> Los actos relativos a los derechos de la personalidad que el hijo, de acuerdo con su madurez, pueda ejercitar por sí mismo.</li>
+                  <li><strong>Excepción 2.ª:</strong> Aquellos en que exista conflicto de intereses entre los padres y el hijo.</li>
+                  <li><strong>Excepción 3.ª:</strong> Los relativos a bienes que estén excluidos de la administración de los padres.</li>
+                  <li><strong>Conexión:</strong> La emancipación pone fin a esta representación legal.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 154</span>
+            <span class="ref-tag">CC art. 156</span>
+            <span class="ref-tag">CC art. 162</span>
+            <span class="ref-tag">CC art. 163</span>
+          </div>
+        </article>
+
+        <!-- CC — Tutela -->
+        <article class="map-card" data-cat="c6" data-text="código civil tutela artículo 222 sujetos desamparo entidad pública nombramiento tutor artículo 224 curatela supletorio artículo 226 prohibiciones tutor liberalidades conflicto intereses artículo 232 vigilancia ministerio fiscal">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC</span>
+              <span class="status-tag tag-warn">Tutela</span>
+            </div>
+            <h2 class="card-title">Código Civil — Régimen de la tutela</h2>
+            <p class="card-subtitle">Artículos 222, 224, 226 y 232 CC: sujetos a tutela, aplicación supletoria de la curatela, prohibiciones del tutor y vigilancia del Ministerio Fiscal.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 222 — Sujetos a tutela
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Tutela de la entidad pública:</strong> La tutela de los menores en situación de desamparo corresponde por ministerio de la ley a la entidad pública de protección de menores.</li>
+                  <li><strong>Tutela ordinaria:</strong> Se procederá al nombramiento de tutor conforme a las reglas ordinarias cuando existan personas físicas que puedan asumir la tutela en interés del menor.</li>
+                  <li><strong>Conexión con art. 54:</strong> El beneficio de mayor de edad se aplica al menor sujeto a tutela, cuya regulación se encuentra en estos preceptos.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 224 — Aplicación supletoria de la curatela
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Regla:</strong> Serán aplicables a la tutela, con carácter supletorio, las normas de la curatela.</li>
+                  <li><strong>Conexión con emancipación:</strong> El emancipado necesita curador para los actos de disposición patrimonial grave a falta de padres (art. 315 CC).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 226 — Prohibiciones del tutor
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Prohibición de liberalidades:</strong> No puede recibir liberalidades del tutelado o de sus causahabientes mientras no se haya aprobado definitivamente su gestión.</li>
+                  <li><strong>Prohibición por conflicto de intereses:</strong> No puede representar al tutelado cuando en el mismo acto intervenga en nombre propio o de un tercero y existiera conflicto de intereses.</li>
+                  <li><strong>Prohibición de adquisición onerosa:</strong> No puede adquirir por título oneroso bienes del tutelado ni transmitirle bienes por igual título.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 232 — Vigilancia del Ministerio Fiscal
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Vigilancia:</strong> La tutela se ejercerá bajo la vigilancia del Ministerio Fiscal, que actuará de oficio o a instancia de cualquier interesado.</li>
+                  <li><strong>Conexión con art. 53.3:</strong> El Ministerio Fiscal comparece y es oído en la comparecencia del expediente de beneficio de mayor de edad.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 222</span>
+            <span class="ref-tag">CC art. 224</span>
+            <span class="ref-tag">CC art. 226</span>
+            <span class="ref-tag">CC art. 232</span>
+          </div>
+        </article>
+
+        <!-- CC — Emancipación (arts. 315-320) -->
+        <article class="map-card" data-cat="c6" data-text="código civil emancipación artículo 315 capacidad emancipado artículo 316 formas artículo 317 concesión documento público artículo 318 irrevocabilidad artículo 319 judicial artículo 320 convivencia independiente registro civil">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC</span>
+              <span class="status-tag tag-info">Emancipación</span>
+            </div>
+            <h2 class="card-title">Código Civil — Régimen completo de la emancipación (arts. 315-320)</h2>
+            <p class="card-subtitle">Regulación completa de la emancipación tras la reforma de la Ley 8/2021: capacidad, formas, procedimiento, irrevocabilidad, emancipación judicial y por convivencia independiente.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 315 — Capacidad del emancipado
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Capacidad general:</strong> La emancipación habilita al menor para regir su persona y bienes como si fuera mayor.</li>
+                  <li><strong>Limitaciones:</strong> No podrá tomar dinero a préstamo, gravar o enajenar bienes inmuebles y establecimientos mercantiles o industriales u objetos de extraordinario valor sin consentimiento de sus padres o del curador.</li>
+                  <li><strong>Excepción matrimonial:</strong> El emancipado casado no necesitará el consentimiento de sus padres para estos actos.</li>
+                  <li><strong>Acciones del art. 81 CC:</strong> El emancipado casado menor de edad no podrá sin el consentimiento o la asistencia de sus padres o curador ejercitar las acciones a que se refiere el art. 81 CC.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 316 — Formas de emancipación
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>1.ª</strong> Por concesión de los que ejerzan la patria potestad.</li>
+                  <li><strong>2.ª</strong> Por el matrimonio.</li>
+                  <li><strong>3.ª</strong> Por concesión judicial (art. 53 Ley 15/2015).</li>
+                  <li><strong>4.ª</strong> Por convivencia independiente del menor con consentimiento de los padres.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículos 317-320 — Procedimiento e irrevocabilidad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Art. 317:</strong> La emancipación por concesión de los que ejerzan la patria potestad se otorgará mediante documento público que se inscribirá en el Registro Civil.</li>
+                  <li><strong>Art. 318:</strong> La emancipación no podrá revocarse.</li>
+                  <li><strong>Art. 319:</strong> Emancipación judicial — procede cuando los que ejerzan la patria potestad contrajeren nupcias o convivieran con persona distinta del otro progenitor, o por cualquier causa que entorpezca gravemente el ejercicio de la patria potestad. Podrá solicitarse por el propio menor si fuere mayor de dieciséis años.</li>
+                  <li><strong>Art. 320:</strong> La emancipación por convivencia independiente se acreditará mediante la inscripción en el Registro Civil.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 315</span>
+            <span class="ref-tag">CC art. 316</span>
+            <span class="ref-tag">CC art. 317</span>
+            <span class="ref-tag">CC art. 318</span>
+            <span class="ref-tag">CC art. 319</span>
+            <span class="ref-tag">CC art. 320</span>
+          </div>
+        </article>
+
+        <!-- CC — Capacidad y mayoría de edad -->
+        <article class="map-card" data-cat="c6" data-text="código civil artículo 321 mayor edad dieciocho años artículo 322 capacidad mayor de edad actos vida civil excepciones">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CC</span>
+              <span class="status-tag tag-warn">Capacidad</span>
+            </div>
+            <h2 class="card-title">Código Civil — Mayoría de edad y capacidad (arts. 321-322)</h2>
+            <p class="card-subtitle">La mayor edad empieza a los dieciocho años cumplidos; el mayor de edad es capaz para todos los actos de la vida civil, salvo excepciones.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 321 — Mayoría de edad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Edad:</strong> La mayor edad empieza a los dieciocho años cumplidos.</li>
+                  <li><strong>Beneficio de mayor de edad:</strong> Anticipa esta capacidad para el menor sujeto a tutela mayor de 16 años.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 322 — Capacidad del mayor de edad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Capacidad plena:</strong> El mayor de edad es capaz para todos los actos de la vida civil, salvo las excepciones establecidas en casos especiales por el Código Civil.</li>
+                  <li><strong>Conexión con beneficio de mayor de edad:</strong> El beneficiado adquiere esta capacidad plena de forma anticipada.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 321</span>
+            <span class="ref-tag">CC art. 322</span>
+          </div>
+        </article>
+
+        <!-- LOPJ y LEC -->
+        <article class="map-card" data-cat="c6" data-text="ley orgánica poder judicial artículo 82 competencia juzgados primera instancia procesos civiles jurisdicción voluntaria ley de enjuiciamiento civil artículo 31 32 abogado procurador intervención">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">LOPJ / LEC</span>
+              <span class="status-tag tag-gray">Organización y proceso</span>
+            </div>
+            <h2 class="card-title">LOPJ y LEC — Competencia e intervención de profesionales</h2>
+            <p class="card-subtitle">Artículo 82 LOPJ (competencia de los Juzgados de Primera Instancia) y arts. 31-32 LEC (intervención de abogado y procurador).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 82 LOPJ — Competencia de los Juzgados de Primera Instancia
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Competencia general:</strong> Los Juzgados de Primera Instancia conocerán, en primera instancia, de todos los procesos civiles que la ley no atribuya a otra clase de Jueces o Tribunales.</li>
+                  <li><strong>Jurisdicción voluntaria:</strong> Asimismo, conocerán de los asuntos de jurisdicción voluntaria que les atribuya la ley.</li>
+                  <li><strong>Conexión con art. 55.1:</strong> Fundamenta la competencia del Juez de Primera Instancia para conocer de los expedientes de emancipación y beneficio de mayor de edad.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Arts. 31-32 LEC — Intervención de abogado y procurador
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Artículo 31:</strong> Establece la obligación general de intervenir con abogado y procurador en los procesos civiles.</li>
+                  <li><strong>Artículo 32.5:</strong> Cuando la intervención de abogado y procurador no sea preceptiva, el Ministerio Fiscal podrá designar, en su caso, abogado y procurador del turno de oficio.</li>
+                  <li><strong>Conexión con art. 53.3:</strong> En los expedientes de emancipación y beneficio de mayor de edad, la intervención de abogado y procurador NO es preceptiva, salvo oposición. Cuando se formula oposición, la intervención pasa a ser preceptiva conforme a las reglas generales de la LEC.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LOPJ art. 82</span>
+            <span class="ref-tag">LEC art. 31</span>
+            <span class="ref-tag">LEC art. 32</span>
+          </div>
+        </article>
+
+        <!-- Ley 20/2011 — Registro Civil -->
+        <article class="map-card" data-cat="c6" data-text="ley 20 2011 registro civil artículo 4 hechos inscribibles artículo 18 eficacia constitutiva artículo 70 emancipación beneficio mayor de edad inscripción artículo 71 patria potestad extinción">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Ley 20/2011</span>
+              <span class="status-tag tag-ok">Registro Civil</span>
+            </div>
+            <h2 class="card-title">Ley 20/2011 del Registro Civil — Inscripción de la emancipación</h2>
+            <p class="card-subtitle">Artículos 4, 18, 70 y 71: hechos inscribibles, eficacia constitutiva de la inscripción, inscripción de emancipación y extinción de la patria potestad.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 4 — Hechos inscribibles
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Acceso al Registro Civil:</strong> Tienen acceso al Registro Civil los hechos y actos que se refieren a la identidad, estado civil y demás circunstancias personales determinadas en esta Ley.</li>
+                  <li><strong>Conexión:</strong> La emancipación y el beneficio de mayor de edad afectan al estado civil y, por tanto, son inscribibles.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 18 — Eficacia constitutiva
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Principio:</strong> La inscripción en el Registro Civil sólo tendrá eficacia constitutiva en los casos previstos por la Ley.</li>
+                  <li><strong>Conexión:</strong> La emancipación y el beneficio de mayor de edad tienen eficacia constitutiva desde la inscripción.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 70 — Emancipación y beneficio de mayor de edad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Inscripción:</strong> En el registro individual se inscribirán la emancipación y el beneficio de la mayor de edad.</li>
+                  <li><strong>Emancipación por concesión:</strong> Se inscribe en virtud de escritura pública o por comparecencia ante el Encargado.</li>
+                  <li><strong>Emancipación judicial y beneficio de mayor de edad:</strong> Se inscriben en virtud de resolución judicial.</li>
+                  <li><strong>Emancipación por vida independiente:</strong> Podrá inscribirse mediante la acreditación documental de la situación de independencia y el consentimiento de quienes ejercen la patria potestad.</li>
+                  <li><strong>Efectos frente a terceros:</strong> La concesión de emancipación y la emancipación por vida independiente, así como el beneficio de mayor de edad, no producirán efectos frente a terceros mientras no se inscriban en el Registro Civil.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Artículo 71 — Inscripción de la patria potestad
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Inscripción de relaciones paterno-filiales:</strong> Los hechos que afecten a las relaciones paterno-filiales se inscribirán en el registro individual de la persona sujeta a patria potestad.</li>
+                  <li><strong>Extinción:</strong> También se inscribirá la extinción, privación, suspensión, prórroga y rehabilitación de la patria potestad.</li>
+                  <li><strong>Conexión con art. 169.2.º CC:</strong> La emancipación extingue la patria potestad, por lo que dicha extinción debe inscribirse.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 20/2011 art. 4</span>
+            <span class="ref-tag">Ley 20/2011 art. 18</span>
+            <span class="ref-tag">Ley 20/2011 art. 70</span>
+            <span class="ref-tag">Ley 20/2011 art. 71</span>
+          </div>
+        </article>
+
+        <!-- Constitución y normativa internacional -->
+        <article class="map-card" data-cat="c6" data-text="constitución española artículo 24 tutela judicial efectiva artículo 39 protección hijos familia convenio nueva york derechos niño 1989 artículo 3 interés superior menor">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">CE / Convenio</span>
+              <span class="status-tag tag-info">Normativa suprema</span>
+            </div>
+            <h2 class="card-title">Constitución Española y Convenio de Nueva York — Marco constitucional e internacional</h2>
+            <p class="card-subtitle">Artículo 24 CE (tutela judicial efectiva), artículo 39.2 CE (protección integral de los hijos) y artículo 3 del Convenio de Nueva York sobre los Derechos del Niño (interés superior del menor).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Constitución Española — Artículo 24
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Tutela judicial efectiva:</strong> Todas las personas tienen derecho a obtener la tutela efectiva de los jueces y tribunales en el ejercicio de sus derechos e intereses legítimos.</li>
+                  <li><strong>Conexión con art. 54.1:</strong> El Ministerio Fiscal asume la representación del menor garantizando la tutela judicial efectiva mientras se formaliza el nombramiento de defensor judicial.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Constitución Española — Artículo 39.2
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Protección integral:</strong> Los poderes públicos aseguran, asimismo, la protección integral de los hijos, iguales éstos ante la ley con independencia de su filiación.</li>
+                  <li><strong>Conexión con emancipación:</strong> La emancipación judicial es un instrumento de protección del menor que permite anticipar su capacidad cuando la situación familiar lo exige.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Convenio de Nueva York sobre los Derechos del Niño (1989) — Artículo 3
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Interés superior del menor:</strong> En todas las medidas concernientes a los niños que tomen las instituciones públicas o privadas de bienestar social, los tribunales, las autoridades administrativas o los órganos legislativos, una consideración primordial a que se atenderá será el interés superior del niño.</li>
+                  <li><strong>Conexión con art. 55.2:</strong> El Juez valora el interés del menor como criterio decisorio para conceder o denegar la emancipación o el beneficio de mayor de edad.</li>
+                  <li><strong>Conexión con el orden de audiencia:</strong> El menor es oído en primer lugar en la comparecencia, asegurando su derecho a ser escuchado.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CE art. 24</span>
+            <span class="ref-tag">CE art. 39.2</span>
+            <span class="ref-tag">CDN art. 3</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECCIÓN INDICE DE PLAZOS ========== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Indice de plazos procesales</span>
+      <span class="section-heading-count">6 trámites generales</span>
+      <button class="section-toggle-btn">&#9662;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Acto o trámite procesal</th>
+              <th>Plazo</th>
+              <th>Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Admisión de la solicitud por el Secretario judicial</td>
+              <td><span class="plazo-badge plazo-other">Sin plazo específico</span></td>
+              <td class="td-norm">Ley 15/2015 art. 16; art. 17</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Citación para comparecencia ante el Juez</td>
+              <td><span class="plazo-badge plazo-other">Según reglas LEC</span></td>
+              <td class="td-norm">LEC arts. 165 y ss. (aplic. supletoria art. 8 Ley 15/2015)</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Celebración de la comparecencia y audiencia de los intervinientes</td>
+              <td><span class="plazo-badge plazo-other">Sin plazo específico</span></td>
+              <td class="td-norm">Ley 15/2015 art. 18; art. 55.1</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Práctica de las pruebas acordadas</td>
+              <td><span class="plazo-badge plazo-other">Sin plazo específico</span></td>
+              <td class="td-norm">Ley 15/2015 art. 5; art. 18</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Resolución del Juez (concesión o denegación)</td>
+              <td><span class="plazo-badge plazo-other">Sin más dilación que la precisa</span></td>
+              <td class="td-norm">Ley 15/2015 art. 19; art. 55.2</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Remisión del testimonio al Registro Civil para inscripción</td>
+              <td><span class="plazo-badge plazo-other">Inmediato tras resolución firme</span></td>
+              <td class="td-norm">Ley 15/2015 art. 22; art. 55.3; Ley 20/2011 art. 70</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECCIÓN PARTICIPANTES Y ACTORES ========== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">6 categorías · 10+ actores</span>
+      <button class="section-toggle-btn">&#9662;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Órganos judiciales</div>
+          <ul>
+            <li>Juez de Primera Instancia <span class="participant-note">(competencia territorial por domicilio del menor; conoce y resuelve el expediente)</span></li>
+            <li>Secretario judicial <span class="participant-note">(admite a trámite, convoca comparecencia, impulsa y dirige el expediente, expide testimonio para el Registro Civil)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Sujetos legitimados</div>
+          <ul>
+            <li>Menor mayor de 16 años <span class="participant-note">(solicitante directo, legitimación activa exclusiva)</span></li>
+            <li>Progenitores <span class="participant-note">(asistencia al menor; no privados o suspendidos de la patria potestad)</span></li>
+            <li>Tutor <span class="participant-note">(asistencia al menor sujeto a tutela, en beneficio de mayor de edad)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Representación y defensa</div>
+          <ul>
+            <li>Defensor judicial <span class="participant-note">(nombrado a falta de progenitores o tutor; representa al menor en el expediente)</span></li>
+            <li>Ministerio Fiscal <span class="participant-note">(representación provisional hasta nombramiento de defensor; comparece y es oído; vigila la tutela; interviene preceptivamente)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Otros intervinientes</div>
+          <ul>
+            <li>Abogado <span class="participant-note">(no preceptivo salvo oposición formulada; preceptivo a partir de la oposición)</span></li>
+            <li>Procurador <span class="participant-note">(no preceptivo salvo oposición formulada)</span></li>
+            <li>Interesados <span class="participant-note">(convocados a comparecencia; oídos en cuarto lugar)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c5">Instituciones registrales</div>
+          <ul>
+            <li>Registro Civil <span class="participant-note">(recepción del testimonio para inscripción; eficacia constitutiva; efectos frente a terceros de buena fe)</span></li>
+            <li>Entidad pública de protección de menores <span class="participant-note">(tutela de menores en situación de desampparo, art. 222 CC)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c6">Normativas conexas</div>
+          <ul>
+            <li>Código Civil <span class="participant-note">(arts. 154, 156, 158, 162, 163, 168, 169, 222, 224, 226, 232, 315-322)</span></li>
+            <li>LOPJ <span class="participant-note">(art. 82 — competencia Juzgados Primera Instancia)</span></li>
+            <li>LEC <span class="participant-note">(arts. 31-32 — abogado/procurador; arts. 165 y ss. — citación)</span></li>
+            <li>Ley 20/2011 <span class="participant-note">(arts. 4, 18, 70, 71 — Registro Civil)</span></li>
+            <li>Constitución Española <span class="participant-note">(arts. 24, 39.2)</span></li>
+            <li>Convenio de Nueva York <span class="participant-note">(art. 3 — interés superior del menor)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECCIÓN ECOSISTEMA NORMATIVO ========== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">6 cuerpos normativos · 30+ artículos</span>
+      <button class="section-toggle-btn">&#9662;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">Código Civil</div>
+          <div class="norm-title">De la emancipación</div>
+          <div class="norm-arts">
+            <strong>Artículo 315</strong> — Capacidad del emancipado: habilita para regir su persona y bienes como si fuera mayor, con limitaciones de disposición patrimonial grave. El emancipado casado no necesita consentimiento.<br>
+            <strong>Artículo 316</strong> — Formas: por concesión de los que ejerzan la patria potestad; por matrimonio; por concesión judicial; por convivencia independiente.<br>
+            <strong>Artículo 317</strong> — Emancipación por concesión: se otorga mediante documento público que se inscribe en el Registro Civil.<br>
+            <strong>Artículo 318</strong> — Irrevocabilidad: la emancipación no podrá revocarse.<br>
+            <strong>Artículo 319</strong> — Emancipación judicial: procede cuando los titulares de la patria potestad contrajeren nupcias o convivieran con persona distinta del otro progenitor, o por causa que entorpezca gravemente el ejercicio.<br>
+            <strong>Artículo 320</strong> — Emancipación por convivencia independiente: se acredita mediante inscripción en el Registro Civil.
+          </div>
+          <span class="norm-tag tag-info">Emancipación</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Código Civil</div>
+          <div class="norm-title">De la patria potestad</div>
+          <div class="norm-arts">
+            <strong>Artículo 154</strong> — Contenido: los hijos no emancipados están bajo la patria potestad. Deberes: velar, alimentar, educar, representar, administrar. Los hijos con suficiente madurez deben ser oídos.<br>
+            <strong>Artículo 156</strong> — Ejercicio: conjuntamente por ambos progenitores. Separación y desacuerdos reiterados pueden justificar la emancipación judicial.<br>
+            <strong>Artículo 158</strong> — Medidas judiciales: el Juez puede dictar medidas para asegurar alimentos y evitar perturbaciones.<br>
+            <strong>Artículo 162</strong> — Representación legal de los hijos menores no emancipados, con excepciones.<br>
+            <strong>Artículo 163</strong> — Defensor judicial por conflicto de intereses.<br>
+            <strong>Artículo 168</strong> — Rendición de cuentas al término de la patria potestad.<br>
+            <strong>Artículo 169.2.º</strong> — La emancipación extingue la patria potestad.
+          </div>
+          <span class="norm-tag tag-warn">Patria potestad</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Código Civil</div>
+          <div class="norm-title">De la tutela y del defensor judicial</div>
+          <div class="norm-arts">
+            <strong>Artículo 222</strong> — Sujetos a tutela: la entidad pública asume la tutela de menores en desampparo; también procede el nombramiento de tutor conforme a reglas ordinarias.<br>
+            <strong>Artículo 224</strong> — Aplicación supletoria de las normas de la curatela.<br>
+            <strong>Artículo 226</strong> — Prohibiciones del tutor: liberalidades, conflicto de intereses, adquisición onerosa.<br>
+            <strong>Artículo 232</strong> — La tutela se ejerce bajo la vigilancia del Ministerio Fiscal.<br>
+            <strong>Artículo 321</strong> — La mayor edad empieza a los dieciocho años cumplidos. El beneficio de mayor de edad anticipa esta capacidad.
+          </div>
+          <span class="norm-tag tag-ok">Tutela</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015, de 2 de julio</div>
+          <div class="norm-title">Normas generales de jurisdicción voluntaria</div>
+          <div class="norm-arts">
+            <strong>Artículo 1</strong> — Objeto y ámbito: normas comunes para expedientes ante Jueces, Secretarios judiciales, Notarios y Registradores.<br>
+            <strong>Artículo 2</strong> — Competencia objetiva y territorial de los Juzgados de Primera Instancia.<br>
+            <strong>Artículo 4</strong> — Intervención preceptiva del Ministerio Fiscal en expedientes que afecten al estado civil o derechos de menores.<br>
+            <strong>Artículo 5</strong> — Normas probatorias.<br>
+            <strong>Artículo 8</strong> — Carácter supletorio de la Ley de Enjuiciamiento Civil.<br>
+            <strong>Arts. 16-22</strong> — Procedimiento: competencia de oficio, admisión, citación, comparecencia, resolución, recursos, inscripción registral.
+          </div>
+          <span class="norm-tag tag-gray">Jurisdicción voluntaria</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 20/2011, de 21 de julio</div>
+          <div class="norm-title">Del Registro Civil</div>
+          <div class="norm-arts">
+            <strong>Artículo 4</strong> — Hechos inscribiles: identidad, estado civil y demás circunstancias personales.<br>
+            <strong>Artículo 18</strong> — Eficacia constitutiva de la inscripción en los casos previstos por la Ley.<br>
+            <strong>Artículo 70</strong> — Inscripción de la emancipación y el beneficio de mayor de edad en virtud de resolución judicial. No producen efectos frente a terceros de buena fe sin inscripción.<br>
+            <strong>Artículo 71</strong> — Inscripción de la extinción, privación, suspensión, prórroga y rehabilitación de la patria potestad.
+          </div>
+          <span class="norm-tag tag-alert">Registro Civil</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Constitución Española y normativa internacional</div>
+          <div class="norm-title">Marco constitucional e internacional</div>
+          <div class="norm-arts">
+            <strong>CE art. 24</strong> — Derecho a la tutela judicial efectiva; fundamento de la representación provisional del Ministerio Fiscal.<br>
+            <strong>CE art. 39.2</strong> — Protección integral de los hijos; fundamento constitucional de la emancipación como instrumento de protección del menor.<br>
+            <strong>Convenio de Nueva York sobre los Derechos del Niño (1989), art. 3</strong> — El interés superior del menor como consideración primordial; criterio decisorio del Juez en la resolución del expediente.
+          </div>
+          <span class="norm-tag tag-info">Marco constitucional</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Competencia, legitimación y postulación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Solicitud e inicio del expediente
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Tramitación y resolución
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Efectos jurídicos de la emancipación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Marco general de jurisdicción voluntaria
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c6)"></div>
+        Normativa conexa (CC, LOPJ, LEC, Ley 20/2011, CE, CDN)
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo V, arts. 53-55 · +30 conexiones normativas · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<!-- ====== JAVASCRIPT ====== -->
+<script>
+// 1. FILTRADO POR CATEGORÍA
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+const statArts = document.getElementById('stat-arts');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+  if (statArts) statArts.textContent = visible + ' artículo' + (visible !== 1 ? 's' : '') + ' visible' + (visible !== 1 ? 's' : '');
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+// 2. BÚSQUEDA EN TIEMPO REAL
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+// 3. EXPANDIR/COLAPSAR TARJETAS INDIVIDUALES
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+// 4. EXPANDIR TODO / CONTRAER TODO
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+// 5. COLAPSO DE SECCIONES PRINCIPALES
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '▶' : '▼';
+  });
+});
+
+// 6. ZOOM
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+
+</body>
+</html>

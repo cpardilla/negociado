@@ -1,0 +1,3479 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            De la autorización o aprobación judicial para la realización de
+            actos de disposición, gravamen u otros que se refieran a los bienes
+            y derechos de menores y personas con discapacidad con medidas de
+            apoyo para el ejercicio de su capacidad jurídica (artículos 61 a 66
+            LJV)
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* ═══════════════════════════════════════════════
+   CSS VARIABLES
+   ═══════════════════════════════════════════════ */
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --font: "Outfit", system-ui, sans-serif;
+                --mono:
+                    ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                --radius: 8px;
+                --transition-norm: 250ms ease;
+            }
+
+            /* ═══════════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════════ */
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                font-size: 15.5px;
+            }
+            body {
+                font-family: var(--font);
+                background: var(--slate-bg);
+                color: var(--text);
+                line-height: 1.6;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            /* ═══════════════════════════════════════════════
+   LAYOUT — 100VH FLEX
+   ═══════════════════════════════════════════════ */
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+                position: relative;
+            }
+
+            /* ═══════════════════════════════════════════════
+   ELEMENT 1 — HEADER (#hdr)
+   ═══════════════════════════════════════════════ */
+            #hdr {
+                flex-shrink: 0;
+                height: 58px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+                background: var(--navy);
+            }
+            .h-left {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                min-width: 0;
+            }
+            /* Botón toggle sidebar (NUEVO) */
+            .btn-toggle-sidebar {
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                padding: 4px 10px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+                color: #fff;
+                font-family: inherit;
+                font-size: 20px;
+                cursor: pointer;
+                transition: all 150ms ease;
+                white-space: nowrap;
+                line-height: 1;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+            .btn-toggle-sidebar:focus-visible {
+                outline: 2px solid var(--navy-lt);
+                outline-offset: 2px;
+            }
+            .h-seal {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .h-info {
+                display: flex;
+                flex-direction: column;
+                min-width: 0;
+            }
+            .h-title {
+                font-size: 13.5px;
+                font-weight: 700;
+                color: #fff;
+                line-height: 1.25;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .h-sub {
+                font-size: 10.5px;
+                color: rgba(255, 255, 255, 0.55);
+                line-height: 1.3;
+                white-space: nowrap;
+            }
+            .h-right {
+                display: flex;
+                gap: 5px;
+                flex-shrink: 0;
+            }
+            .zoom-cluster {
+                display: inline-flex;
+                align-items: center;
+                overflow: hidden;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .btn-zoom {
+                appearance: none;
+                border: none;
+                background: transparent;
+                color: rgba(255, 255, 255, 0.85);
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.14);
+            }
+            .zoom-label {
+                min-width: 46px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .btn {
+                font-family: var(--font);
+                font-size: 12px;
+                font-weight: 500;
+                padding: 5px 11px;
+                border-radius: 6px;
+                cursor: pointer;
+                border: 1px solid transparent;
+                transition: all 0.15s;
+                white-space: nowrap;
+            }
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.18);
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+
+            /* ═══════════════════════════════════════════════
+   ELEMENT 2 — PHASE BAR (#pbar)
+   ═══════════════════════════════════════════════ */
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                gap: 2px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                background: var(--navy-mid);
+            }
+            #pbar::-webkit-scrollbar {
+                display: none;
+            }
+            .ph-item {
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+            }
+            .ph-lbl {
+                display: inline-flex;
+                align-items: center;
+                height: 28px;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 0 10px;
+                border-radius: 8px;
+                color: rgba(255, 255, 255, 0.6);
+                transition: all 0.15s;
+            }
+            .ph-lbl.active {
+                background: rgba(255, 255, 255, 0.22);
+                color: #fff;
+                font-weight: 800;
+            }
+            .ph-lbl.done {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .ph-sep {
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.3);
+                padding: 0 2px;
+                flex-shrink: 0;
+            }
+
+            /* ═══════════════════════════════════════════════
+   ELEMENT 3 — BREADCRUMB (#breadcrumb)
+   ═══════════════════════════════════════════════ */
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 36px;
+                display: flex;
+                align-items: center;
+                padding: 4px 20px;
+                gap: 0;
+                overflow-x: auto;
+                scrollbar-width: none;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                flex-wrap: wrap;
+                row-gap: 2px;
+                white-space: normal;
+            }
+            #breadcrumb::-webkit-scrollbar {
+                display: none;
+            }
+            .bc-item {
+                font-size: 11.5px;
+                white-space: nowrap;
+                padding: 0 6px;
+                color: var(--muted);
+            }
+            .bc-past {
+                cursor: pointer;
+                background: none;
+                border: none;
+                font-family: inherit;
+                font-size: 11.5px;
+            }
+            .bc-past:hover {
+                color: var(--navy-lt);
+                text-decoration: underline;
+            }
+            .bc-current {
+                font-weight: 600;
+                color: var(--navy);
+            }
+            .bc-sep {
+                font-size: 10px;
+                color: var(--bdr);
+                padding: 0 3px;
+            }
+
+            /* ═══════════════════════════════════════════════
+   ELEMENT 4 — LAYOUT (sidebar + content)
+   ═══════════════════════════════════════════════ */
+            #layout {
+                flex: 1;
+                overflow: hidden;
+                display: flex;
+                position: relative;
+            }
+
+            /* SIDEBAR (MODIFICADO para soportar colapso en escritorio y overlay móvil) */
+            #sidebar {
+                flex-shrink: 0;
+                width: 270px;
+                background: var(--navy-mid);
+                overflow-y: auto;
+                overflow-x: hidden;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+                transition:
+                    transform var(--transition-norm),
+                    width var(--transition-norm);
+                z-index: 80;
+            }
+            #sidebar.collapsed {
+                width: 0;
+                transform: translateX(-100%);
+                overflow: hidden;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 5px;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 3px;
+            }
+
+            /* Backdrop para móvil (NUEVO) */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 140;
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+
+            #sb-tabs {
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 9px 0;
+                font-size: 11.5px;
+                font-weight: 600;
+                font-family: inherit;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+                transition: all 0.15s;
+            }
+            .sb-tab.active {
+                color: #fff;
+                border-bottom: 2px solid var(--navy-lt);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            /* Sidebar Map */
+            #sb-map {
+                padding: 8px 0;
+            }
+            .sm-phase {
+            }
+            .sm-phase-hdr {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                padding: 8px 14px;
+                cursor: pointer;
+                user-select: none;
+                font-size: 11.5px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.8);
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+                transition: background 0.12s;
+            }
+            .sm-phase-hdr:hover {
+                background: rgba(255, 255, 255, 0.06);
+            }
+            .sm-phase-hdr .arrow {
+                font-size: 9px;
+                transition: transform 0.15s;
+                color: rgba(255, 255, 255, 0.35);
+            }
+            .sm-phase-hdr.collapsed .arrow {
+                transform: rotate(-90deg);
+            }
+            .sm-phase-body {
+            }
+            .sm-node {
+                display: flex;
+                align-items: center;
+                gap: 7px;
+                padding: 5px 14px 5px 26px;
+                font-size: 12.5px;
+                color: rgba(255, 255, 255, 0.55);
+                cursor: pointer;
+                transition: background 0.12s;
+                border-left: 3px solid transparent;
+            }
+            .sm-node:hover {
+                background: rgba(255, 255, 255, 0.06);
+            }
+            .sm-node .nd-icon {
+                font-size: 11px;
+                flex-shrink: 0;
+                width: 18px;
+                text-align: center;
+            }
+            .sm-node.sm-visited {
+                color: #86efac;
+                border-left-color: var(--green);
+            }
+            .sm-node.sm-visited .nd-icon::before {
+                content: "\2713";
+            }
+            .sm-node.sm-current {
+                color: #93c5fd;
+                border-left-color: var(--navy-lt);
+                background: rgba(65, 105, 225, 0.12);
+            }
+            .sm-node.sm-current .nd-icon::before {
+                content: "";
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #93c5fd;
+                animation: pulse 1.4s ease infinite;
+            }
+            .sm-node.sm-unreachable {
+                color: rgba(255, 255, 255, 0.22);
+                cursor: default;
+            }
+            .sm-node.sm-unreachable .nd-icon::before {
+                content: "\00B7";
+            }
+            .sm-node.sm-end {
+                font-style: italic;
+            }
+            @keyframes pulse {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.3;
+                }
+            }
+
+            /* Sidebar Journey */
+            #sb-journey {
+                padding: 8px 0;
+                display: none;
+            }
+            .pi {
+                padding: 6px 14px;
+                font-size: 12.5px;
+                color: rgba(255, 255, 255, 0.55);
+                border-left: 3px solid transparent;
+            }
+            .pi.past {
+                color: rgba(255, 255, 255, 0.65);
+                border-left-color: var(--green);
+            }
+            .pi.current {
+                color: #93c5fd;
+                border-left-color: var(--navy-lt);
+                font-weight: 600;
+            }
+            .pi-choice {
+                font-size: 11.5px;
+                color: rgba(255, 255, 255, 0.4);
+                margin-top: 2px;
+                padding-left: 16px;
+            }
+            .pi-choice::before {
+                content: "\2192 ";
+            }
+            .sb-foot {
+                padding: 14px;
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+                margin-top: 12px;
+            }
+            .sb-foot .law {
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.3);
+                font-family: var(--mono);
+                line-height: 1.6;
+            }
+
+            /* ═══════════════════════════════════════════════
+   ELEMENT 5 — CONTENT AREA (#content)
+   ═══════════════════════════════════════════════ */
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 28px 36px;
+                scrollbar-width: thin;
+                scrollbar-color: var(--bdr) transparent;
+            }
+            #content::-webkit-scrollbar {
+                width: 6px;
+            }
+            #content::-webkit-scrollbar-thumb {
+                background: var(--bdr);
+                border-radius: 3px;
+            }
+
+            /* ═══════════════════════════════════════════════
+   CARD STYLES
+   ═══════════════════════════════════════════════ */
+            .card {
+                background: #fff;
+                border: 1px solid var(--bdr);
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                animation: fadeUp 0.22s ease;
+                overflow: hidden;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Card Header */
+            .c-hdr {
+                padding: 18px 22px 12px;
+                border-bottom: 1px solid var(--bdr);
+                background: var(--slate-bg);
+            }
+            .act-badge {
+                display: inline-block;
+                font-size: 11px;
+                font-weight: 700;
+                padding: 2px 10px;
+                border-radius: 10px;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+                margin-bottom: 6px;
+            }
+            .act-laj {
+                background: #dbeafe;
+                color: #1e40af;
+            }
+            .act-juez {
+                background: #fef3c7;
+                color: #92400e;
+            }
+            .act-ambos {
+                background: #e0e7ff;
+                color: #3730a3;
+            }
+            .c-title {
+                font-size: 19px;
+                font-weight: 700;
+                color: var(--text);
+                line-height: 1.3;
+                margin-bottom: 3px;
+            }
+            .step-num {
+                font-size: 12px;
+                color: var(--muted);
+            }
+
+            /* Card Body */
+            .c-body {
+                padding: 18px 22px;
+            }
+            .c-body p {
+                margin-bottom: 10px;
+                line-height: 1.65;
+                font-size: 14.5px;
+            }
+            .c-body .intro {
+                color: var(--text);
+            }
+            .c-body .deadline {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 12px 16px;
+                background: var(--amber-bg);
+                border-left: 3px solid var(--amber);
+                border-radius: 0 var(--radius) var(--radius) 0;
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
+            .c-body .note {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 12px 16px;
+                background: var(--cyan-bg);
+                border-left: 3px solid var(--cyan);
+                border-radius: 0 var(--radius) var(--radius) 0;
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
+            .c-body .warn {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 12px 16px;
+                background: var(--red-bg);
+                border-left: 3px solid var(--red);
+                border-radius: 0 var(--radius) var(--radius) 0;
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
+            .c-body .law-ref {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 10px 16px;
+                background: var(--slate-bg);
+                border-left: 3px solid var(--navy-mid);
+                border-radius: 0 var(--radius) var(--radius) 0;
+                margin-bottom: 10px;
+                font-family: var(--mono);
+                font-size: 13px;
+                color: var(--slate);
+            }
+            .c-body .checklist {
+                list-style: none;
+                padding: 14px 18px 14px 40px;
+                margin-bottom: 10px;
+                background: var(--green-bg);
+                border: 1px solid #bbf7d0;
+                border-radius: var(--radius);
+            }
+            .c-body .checklist li {
+                position: relative;
+                padding: 3px 0;
+                font-size: 14px;
+                color: var(--text);
+                line-height: 1.55;
+            }
+            .c-body .checklist li::before {
+                content: "\2610";
+                position: absolute;
+                left: -22px;
+                color: var(--green);
+                font-size: 15px;
+            }
+            .cl-title {
+                font-size: 13.5px;
+                font-weight: 700;
+                color: var(--green);
+                margin-bottom: 6px;
+            }
+
+            /* Decision Area */
+            .dec-area {
+                padding: 0 22px 6px;
+            }
+            .dec-q {
+                padding: 14px 18px;
+                margin-bottom: 12px;
+                background: var(--slate-bg);
+                border-top: 3px solid var(--navy);
+                border-radius: 0 0 var(--radius) var(--radius);
+                font-size: 15px;
+                font-weight: 600;
+                color: var(--navy);
+            }
+            .dec-opts {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                width: 100%;
+                text-align: left;
+                padding: 13px 16px;
+                border: 1.5px solid var(--bdr);
+                border-radius: var(--radius);
+                background: #fff;
+                font-family: var(--font);
+                font-size: 14px;
+                color: var(--text);
+                cursor: pointer;
+                transition: all 0.15s;
+                line-height: 1.4;
+            }
+            .dec-btn:hover {
+                border-color: var(--navy-lt);
+                background: var(--slate-bg);
+            }
+            .dec-btn.ok {
+                border-color: #86efac;
+            }
+            .dec-btn.ok:hover {
+                background: var(--green-bg);
+                border-color: var(--green);
+            }
+            .dec-btn.bad {
+                border-color: #fca5a5;
+            }
+            .dec-btn.bad:hover {
+                background: var(--red-bg);
+                border-color: var(--red);
+            }
+            .dec-btn.warn {
+                border-color: #fde68a;
+            }
+            .dec-btn.warn:hover {
+                background: var(--amber-bg);
+                border-color: var(--amber);
+            }
+            .dec-btn.neutral {
+                border-color: #93c5fd;
+            }
+            .dec-btn.neutral:hover {
+                background: #dbeafe;
+                border-color: var(--navy-lt);
+            }
+            .dec-letter {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 13px;
+                font-weight: 700;
+                flex-shrink: 0;
+                background: var(--slate-bg);
+                color: var(--navy);
+            }
+            .dec-btn.ok .dec-letter {
+                background: var(--green-bg);
+                color: var(--green);
+            }
+            .dec-btn.bad .dec-letter {
+                background: var(--red-bg);
+                color: var(--red);
+            }
+            .dec-btn.warn .dec-letter {
+                background: var(--amber-bg);
+                color: var(--amber);
+            }
+            .dec-btn.neutral .dec-letter {
+                background: #dbeafe;
+                color: var(--navy-lt);
+            }
+
+            /* Card Nav */
+            .c-nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 14px 22px;
+                border-top: 1px solid var(--bdr);
+                background: var(--slate-bg);
+            }
+            .btn-back {
+                font-family: var(--font);
+                font-size: 13.5px;
+                font-weight: 500;
+                padding: 8px 18px;
+                border-radius: var(--radius);
+                border: 1px solid var(--bdr);
+                background: #fff;
+                color: var(--slate);
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .btn-back:hover {
+                border-color: var(--navy-mid);
+                color: var(--navy);
+            }
+            .btn-back:disabled {
+                opacity: 0.35;
+                cursor: default;
+            }
+            .btn-next {
+                font-family: var(--font);
+                font-size: 13.5px;
+                font-weight: 600;
+                padding: 8px 20px;
+                border-radius: var(--radius);
+                border: none;
+                background: var(--navy-lt);
+                color: #fff;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .btn-next:hover {
+                background: var(--navy);
+            }
+
+            /* ═══════════════════════════════════════════════
+   END CARD STYLES
+   ═══════════════════════════════════════════════ */
+            .card.end-success {
+                border-left: 5px solid var(--green);
+            }
+            .card.end-error {
+                border-left: 5px solid var(--red);
+            }
+            .card.end-warning {
+                border-left: 5px solid var(--amber);
+            }
+            .card.end-neutral {
+                border-left: 5px solid var(--navy-lt);
+            }
+
+            .end-body {
+                padding: 28px 22px;
+                text-align: center;
+            }
+            .end-icon {
+                font-size: 44px;
+                margin-bottom: 10px;
+            }
+            .end-success .end-icon {
+                color: var(--green);
+            }
+            .end-error .end-icon {
+                color: var(--red);
+            }
+            .end-warning .end-icon {
+                color: var(--amber);
+            }
+            .end-neutral .end-icon {
+                color: var(--navy-lt);
+            }
+            .end-title {
+                font-size: 19px;
+                font-weight: 700;
+                margin-bottom: 5px;
+            }
+            .end-success .end-title {
+                color: var(--green);
+            }
+            .end-error .end-title {
+                color: var(--red);
+            }
+            .end-warning .end-title {
+                color: var(--amber);
+            }
+            .end-neutral .end-title {
+                color: var(--navy-lt);
+            }
+            .end-sub {
+                font-size: 14px;
+                color: var(--muted);
+                margin-bottom: 16px;
+            }
+            .end-btns {
+                display: flex;
+                gap: 8px;
+                justify-content: center;
+                margin-bottom: 16px;
+                flex-wrap: wrap;
+            }
+
+            .end-content {
+                text-align: left;
+                padding: 0 22px 18px;
+            }
+
+            .summary-box {
+                text-align: left;
+                margin: 18px 22px 22px;
+                padding: 16px 20px;
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: var(--radius);
+            }
+            .summary-box h4 {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 8px;
+            }
+            .summary-box ol {
+                padding-left: 22px;
+            }
+            .summary-box li {
+                font-size: 13px;
+                color: var(--slate);
+                margin-bottom: 5px;
+                line-height: 1.55;
+            }
+            .summary-box li strong {
+                color: var(--text);
+            }
+
+            /* ═══════════════════════════════════════════════
+   MAPA OVERLAY
+   ═══════════════════════════════════════════════ */
+            #mapa-overlay {
+                display: none;
+                flex: 1;
+                overflow-y: auto;
+                background: var(--slate-bg);
+                padding: 24px;
+            }
+            .mapa-cols {
+                display: flex;
+                gap: 20px;
+                overflow-x: auto;
+                padding-bottom: 16px;
+            }
+            .mapa-col {
+                min-width: 220px;
+                max-width: 300px;
+                flex-shrink: 0;
+            }
+            .mapa-phase-title {
+                font-size: 13.5px;
+                font-weight: 700;
+                color: #fff;
+                padding: 8px 14px;
+                background: var(--navy-mid);
+                border-radius: var(--radius) var(--radius) 0 0;
+            }
+            .mapa-nodes {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+            .mapa-node {
+                padding: 10px 14px;
+                background: #fff;
+                border: 1px solid var(--bdr);
+                border-left: 4px solid var(--muted);
+                margin-bottom: -1px;
+                font-size: 12.5px;
+                color: var(--text);
+            }
+            .mapa-node:first-of-type {
+                border-radius: var(--radius) var(--radius) 0 0;
+            }
+            .mapa-node:last-of-type {
+                border-radius: 0 0 var(--radius) var(--radius);
+                margin-bottom: 0;
+            }
+            .mapa-node .mn-title {
+                font-weight: 600;
+                margin-bottom: 2px;
+                line-height: 1.35;
+            }
+            .mapa-node .mn-actor {
+                font-size: 10.5px;
+                color: var(--muted);
+            }
+            .mapa-node.mn-visited {
+                border-left-color: var(--green);
+                background: var(--green-bg);
+            }
+            .mapa-node.mn-current {
+                border-left-color: var(--navy-lt);
+                background: #dbeafe;
+            }
+            .mapa-node.mn-end-success {
+                border-left-color: var(--green);
+            }
+            .mapa-node.mn-end-error {
+                border-left-color: var(--red);
+            }
+            .mapa-node.mn-end-warning {
+                border-left-color: var(--amber);
+            }
+            .mapa-node.mn-end-neutral {
+                border-left-color: var(--navy-lt);
+            }
+            .mapa-arrow {
+                font-size: 11px;
+                color: var(--muted);
+                padding: 3px 0 3px 28px;
+            }
+            .mapa-arrow::before {
+                content: "\2193 ";
+            }
+            .mapa-close-bar {
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0;
+                margin-bottom: 16px;
+                background: var(--slate-bg);
+            }
+            .mapa-close-bar h2 {
+                font-size: 17px;
+                font-weight: 700;
+                color: var(--navy);
+            }
+            .mapa-close-bar button {
+                font-family: var(--font);
+                font-size: 13px;
+                font-weight: 600;
+                padding: 8px 20px;
+                border-radius: var(--radius);
+                border: none;
+                background: var(--navy-lt);
+                color: #fff;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .mapa-close-bar button:hover {
+                background: var(--navy);
+            }
+
+            /* ═══════════════════════════════════════════════
+   DIRECT ACCESS OVERLAY
+   ═══════════════════════════════════════════════ */
+            #direct-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.55);
+                z-index: 300;
+                overflow-y: auto;
+                padding: 40px 20px;
+            }
+            .direct-panel {
+                max-width: 780px;
+                margin: 0 auto;
+                background: #fff;
+                border-radius: 12px;
+                padding: 28px;
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            }
+            .direct-panel h3 {
+                font-size: 19px;
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 6px;
+            }
+            .direct-panel .dp-sub {
+                font-size: 14px;
+                color: var(--muted);
+                margin-bottom: 18px;
+                line-height: 1.5;
+            }
+            .direct-search {
+                width: 100%;
+                padding: 11px 16px;
+                border: 1.5px solid var(--bdr);
+                border-radius: var(--radius);
+                font-family: var(--font);
+                font-size: 14.5px;
+                margin-bottom: 18px;
+                outline: none;
+            }
+            .direct-search:focus {
+                border-color: var(--navy-lt);
+                box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.15);
+            }
+            .direct-list {
+                max-height: 60vh;
+                overflow-y: auto;
+            }
+            .direct-step {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 11px 16px;
+                border: 1px solid var(--bdr);
+                border-radius: var(--radius);
+                margin-bottom: 6px;
+                cursor: pointer;
+                transition: all 0.12s;
+            }
+            .direct-step:hover {
+                border-color: var(--navy-lt);
+                background: var(--slate-bg);
+            }
+            .direct-step .ds-phase {
+                font-size: 10.5px;
+                font-weight: 600;
+                color: #fff;
+                padding: 2px 9px;
+                border-radius: 8px;
+                background: var(--navy-mid);
+                white-space: nowrap;
+            }
+            .direct-step .ds-title {
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--text);
+            }
+            .direct-step .ds-actor {
+                font-size: 11.5px;
+                color: var(--muted);
+            }
+            .direct-step.ds-end {
+                border-left: 4px solid var(--muted);
+            }
+
+            /* ═══════════════════════════════════════════════
+   RESPONSIVE (sobrescrito: se reemplaza display:none por overlay móvil)
+   ═══════════════════════════════════════════════ */
+            @media (max-width: 768px) {
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    transition: transform var(--transition-norm);
+                    width: 270px;
+                    display: flex !important;
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                #sidebar.collapsed {
+                    transform: translateX(-100%);
+                    width: 270px;
+                }
+                .sidebar-backdrop {
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 140;
+                    display: none;
+                }
+                .sidebar-backdrop.show {
+                    display: block;
+                }
+                #content {
+                    padding: 16px 14px;
+                }
+                .c-title {
+                    font-size: 17px;
+                }
+                .dec-btn {
+                    font-size: 13px;
+                    padding: 10px 12px;
+                }
+                .h-title {
+                    font-size: 12px;
+                }
+            }
+
+            /* ═══════════════════════════════════════════════
+   PRINT
+   ═══════════════════════════════════════════════ */
+            @media print {
+                #hdr,
+                #pbar,
+                #breadcrumb,
+                #sidebar,
+                .c-nav,
+                .dec-area,
+                .btn,
+                .end-btns,
+                .mapa-close-bar button,
+                .sidebar-backdrop {
+                    display: none !important;
+                }
+                #app {
+                    height: auto;
+                    overflow: visible;
+                }
+                #layout {
+                    overflow: visible;
+                }
+                #content {
+                    overflow: visible;
+                    padding: 0;
+                }
+                .card {
+                    break-inside: avoid;
+                    box-shadow: none;
+                    border: 1px solid #ccc;
+                    animation: none;
+                }
+                body {
+                    background: #fff;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <!-- ═══ HEADER ═══ -->
+            <div id="hdr" style="height: 90px">
+                <div class="h-left">
+                    <!-- Botón toggle sidebar AÑADIDO -->
+                    <button
+                        class="btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                    >
+                        ☰
+                    </button>
+                    <div class="h-seal">&#9878;</div>
+                    <div class="h-info">
+                        <div class="h-sub">
+                            LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN
+                            VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE
+                            JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS ·
+                            CAPÍTULO VIII
+                        </div>
+                        <div class="h-title">
+                            De la autorización o aprobación judicial para la
+                            realización de actos de disposición, gravamen u
+                            otros que se refieran a los bienes <br />y derechos
+                            de menores y personas con discapacidad con medidas
+                            de apoyo para el ejercicio de su capacidad jurídica
+                        </div>
+                        <div class="h-sub" style="padding-top: 5px">
+                            Artículos 61 a 66 LJV
+                        </div>
+                    </div>
+                </div>
+                <div class="h-right">
+                    <div
+                        class="zoom-cluster"
+                        role="group"
+                        aria-label="Zoom del contenido"
+                    >
+                        <button
+                            class="btn-zoom"
+                            onclick="zoomOut()"
+                            aria-label="Reducir zoom"
+                        >
+                            −
+                        </button>
+                        <span class="zoom-label" id="zoomLabel">100%</span>
+                        <button
+                            class="btn-zoom"
+                            onclick="zoomIn()"
+                            aria-label="Aumentar zoom"
+                        >
+                            +
+                        </button>
+                    </div>
+                    <button class="btn btn-ghost" onclick="openDirect()">
+                        &#9776; Acceso directo
+                    </button>
+                    <button class="btn btn-ghost" onclick="toggleMapa()">
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn btn-ghost" onclick="dlGuia()">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn btn-ghost" onclick="restart()">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </div>
+
+            <!-- ═══ PHASE BAR ═══ -->
+            <nav
+                id="pbar"
+                role="navigation"
+                aria-label="Progreso por fases del procedimiento"
+            ></nav>
+
+            <!-- ═══ BREADCRUMB ═══ -->
+            <nav
+                id="breadcrumb"
+                role="navigation"
+                aria-label="Ruta de navegación"
+            ></nav>
+
+            <!-- ═══ LAYOUT ═══ -->
+            <div id="layout">
+                <div id="sidebar">
+                    <div id="sb-tabs">
+                        <button class="sb-tab active" onclick="sbTab('map')">
+                            Mapa
+                        </button>
+                        <button class="sb-tab" onclick="sbTab('journey')">
+                            Recorrido
+                        </button>
+                    </div>
+                    <div id="sb-map"></div>
+                    <div id="sb-journey"></div>
+                </div>
+                <div id="content"></div>
+            </div>
+
+            <!-- ═══ MAPA OVERLAY ═══ -->
+            <div id="mapa-overlay"></div>
+
+            <!-- ═══ DIRECT ACCESS OVERLAY ═══ -->
+            <div
+                id="direct-overlay"
+                onclick="if (event.target === this) closeDirect();"
+            >
+                <div class="direct-panel">
+                    <h3>Acceso directo a cualquier paso</h3>
+                    <p class="dp-sub">
+                        Selecciona un paso para ir directamente a &#233;l. Se
+                        iniciar&#225; un recorrido desde ese punto, conservando
+                        la posibilidad de avanzar o retroceder dentro del
+                        procedimiento.
+                    </p>
+                    <input
+                        class="direct-search"
+                        type="text"
+                        placeholder="Buscar paso..."
+                        oninput="filterDirect(this.value)"
+                    />
+                    <div class="direct-list" id="direct-list"></div>
+                </div>
+            </div>
+
+            <!-- Backdrop para móvil AÑADIDO -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        </div>
+
+        <script>
+            /* ═══════════════════════════════════════════════
+   PHASES
+   ═══════════════════════════════════════════════ */
+            const PHASES = [
+                "\u00C1mbito y procedencia",
+                "Competencia y legitimaci\u00F3n",
+                "Postulaci\u00F3n",
+                "Solicitud",
+                "Tramitaci\u00F3n",
+                "Resoluci\u00F3n",
+                "Destino y garant\u00EDas",
+            ];
+
+            const SB_FOOT =
+                '<div class="sb-foot"><div class="law">Ley 15/2015, LJV, Arts. 61-66<br>CC arts. 166, 249, 264, 269, 287, 1060<br>Ley 41/2003 (LPPPD)<br>Convención ONU 2006</div></div>';
+
+            /* ═══════════════════════════════════════════════
+   STEPS
+   ═══════════════════════════════════════════════ */
+            const STEPS = {
+                /* ════════ FASE 0: ÁMBITO Y PROCEDENCIA ════════ */
+
+                inicio: {
+                    ph: 0,
+                    t: "Inicio del procedimiento",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Este asistente le gu\u00EDa paso a paso por el procedimiento de autorizaci\u00F3n o aprobaci\u00F3n judicial para actos de disposici\u00F3n, gravamen u otros que se refieran a bienes o derechos de menores, personas con discapacidad o patrimonios protegidos, regulado en los art\u00EDculos 61 a 66 de la Ley 15/2015, de la Jurisdicci\u00F3n Voluntaria.",
+                        ],
+                        [
+                            "n",
+                            "El procedimiento se estructura como un grafo dirigido con m\u00FAltiples ramas seg\u00FAn el sujeto protegido, el tipo de acto, las condiciones de exenci\u00F3n y las decisiones judiciales. Avance seleccionando la opci\u00F3n que corresponda a su caso.",
+                        ],
+                        [
+                            "l",
+                            "Art. 61 LJV \u2014 \u00C1mbito de aplicaci\u00F3n",
+                        ],
+                    ],
+                    q: "\u00BFSobre qu\u00E9 sujeto o patrimonio recae el acto que se pretende realizar?",
+                    opts: [
+                        {
+                            t: "Menor de edad",
+                            l: "A",
+                            n: "menor_tipo",
+                            v: "ok",
+                        },
+                        {
+                            t: "Persona con discapacidad con medidas de apoyo",
+                            l: "B",
+                            n: "discapacidad_tipo",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Patrimonio protegido (Ley 41/2003)",
+                            l: "C",
+                            n: "patrimonio_tipo",
+                            v: "neutral",
+                        },
+                    ],
+                },
+
+                menor_tipo: {
+                    ph: 0,
+                    t: "Tipo de intervenci\u00F3n respecto del menor",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El art\u00EDculo 61 LJV establece una distinci\u00F3n conceptual fundamental entre dos figuras procesales que determinan el momento de la intervenci\u00F3n judicial y sus efectos.",
+                        ],
+                        [
+                            "n",
+                            "<b>Autorizaci\u00F3n:</b> Es previa al acto. Habilita al solicitante para realizarlo. Sin ella, el acto no puede llevarse a cabo v\u00E1lidamente.",
+                        ],
+                        [
+                            "n",
+                            "<b>Aprobaci\u00F3n:</b> Es posterior al acto ya ejecutado. Otorga validez al acto realizado sin intervenci\u00F3n judicial previa.",
+                        ],
+                        ["l", "Art. 61 LJV \u2014 Distinci\u00F3n conceptual"],
+                    ],
+                    q: "\u00BFSe trata de autorizaci\u00F3n previa o de aprobaci\u00F3n posterior al acto?",
+                    opts: [
+                        {
+                            t: "Autorizaci\u00F3n judicial (previa al acto)",
+                            l: "A",
+                            n: "menor_tramit_esp",
+                            v: "ok",
+                        },
+                        {
+                            t: "Aprobaci\u00F3n judicial (posterior al acto)",
+                            l: "B",
+                            n: "menor_tramit_esp",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                menor_tramit_esp: {
+                    ph: 0,
+                    t: "Comprobaci\u00F3n de tramitaci\u00F3n espec\u00EDfica",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Antes de proseguir por la v\u00EDa del art\u00EDculo 61 LJV, debe verificarse si existe una tramitaci\u00F3n espec\u00EDfica establecida para el acto de que se trate. Si la hubiere, el expediente se sustanciar\u00E1 por esa v\u00EDa espec\u00EDfica y no por la del Cap\u00EDtulo VIII.",
+                        ],
+                        [
+                            "n",
+                            "La excepci\u00F3n remite, entre otros, a los cauces previstos para la partici\u00F3n hereditaria (art. 1060 CC), la liquidaci\u00F3n de la sociedad de gananciales, actuaciones espec\u00EDficas del albaceazgo y de la guarda de hecho.",
+                        ],
+                        [
+                            "l",
+                            "Art. 61 LJV \u2014 Excepci\u00F3n de tramitaci\u00F3n espec\u00EDfica; Art. 1060 CC",
+                        ],
+                    ],
+                    q: "\u00BFExiste una tramitaci\u00F3n espec\u00EDfica establecida para este acto?",
+                    opts: [
+                        {
+                            t: "S\u00ED, existe tramitaci\u00F3n espec\u00EDfica (ej. partici\u00F3n hereditaria, liquidaci\u00F3n gananciales, albaceazgo)",
+                            l: "A",
+                            n: "fin_tramit_especifica",
+                            v: "warn",
+                        },
+                        {
+                            t: "No, no existe tramitaci\u00F3n espec\u00EDfica",
+                            l: "B",
+                            n: "menor_exencion16",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                menor_exencion16: {
+                    ph: 0,
+                    t: "Posible exenci\u00F3n por edad y consentimiento del menor",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El art\u00EDculo 166 del C\u00F3digo Civil establece una exenci\u00F3n relevante: no ser\u00E1 necesaria autorizaci\u00F3n judicial si el menor hubiese cumplido diecis\u00E9is a\u00F1os y consintiere en documento p\u00FAblico. Esta exenci\u00F3n supone un reconocimiento de la madurez del menor para determinados actos.",
+                        ],
+                        [
+                            "n",
+                            "El consentimiento debe prestarse en documento p\u00FAblico, lo que garantiza la seriedad y formalidad de la decisi\u00F3n del menor. No basta con un consentimiento verbal o privado.",
+                        ],
+                        [
+                            "l",
+                            "Art. 166 CC \u2014 Exenci\u00F3n para menor mayor de diecis\u00E9is a\u00F1os",
+                        ],
+                    ],
+                    q: "\u00BFEl menor ha cumplido diecis\u00E9is a\u00F1os y consiente en documento p\u00FAblico?",
+                    opts: [
+                        {
+                            t: "S\u00ED, menor mayor de 16 a\u00F1os que consiente en documento p\u00FAblico",
+                            l: "A",
+                            n: "menor_exencion_valores",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, el menor es menor de 16 a\u00F1os o no consiente en documento p\u00FAblico",
+                            l: "B",
+                            n: "menor_cc166",
+                            v: "neutral",
+                        },
+                    ],
+                },
+
+                menor_exencion_valores: {
+                    ph: 0,
+                    t: "Exenci\u00F3n por enajenaci\u00F3n de valores mobiliarios",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Adem\u00E1s de la exenci\u00F3n general por edad y consentimiento, el art\u00EDculo 166 CC establece una exenci\u00F3n espec\u00EDfica para la enajenaci\u00F3n de valores mobiliarios, siempre que su importe se reinvierta en bienes o valores seguros.",
+                        ],
+                        [
+                            "n",
+                            "Esta exenci\u00F3n se justifica por la naturaleza fungible de los valores mobiliarios y la garant\u00EDa que supone la reinversi\u00F3n en bienes o valores seguros, que preserva el patrimonio del menor.",
+                        ],
+                        [
+                            "w",
+                            "La reinversi\u00F3n debe efectuarse en bienes o valores seguros. Si la reinversi\u00F3n no se produce o se desv\u00EDa a fines distintos, la exenci\u00F3n podr\u00EDa ser objeto de revisi\u00F3n.",
+                        ],
+                        [
+                            "l",
+                            "Art. 166 CC \u2014 Enajenaci\u00F3n de valores mobiliarios",
+                        ],
+                    ],
+                    q: "\u00BFSe trata de enajenaci\u00F3n de valores mobiliarios cuyo importe se reinvierta en bienes o valores seguros?",
+                    opts: [
+                        {
+                            t: "S\u00ED, enajenaci\u00F3n de valores mobiliarios con reinversi\u00F3n en bienes o valores seguros",
+                            l: "A",
+                            n: "fin_exencion_menor",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, se trata de otro tipo de acto",
+                            l: "B",
+                            n: "menor_cc166",
+                            v: "neutral",
+                        },
+                    ],
+                },
+
+                menor_cc166: {
+                    ph: 0,
+                    t: "Actos del menor que requieren autorizaci\u00F3n judicial (art. 166 CC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Los progenitores titulares de la patria potestad necesitan autorizaci\u00F3n judicial para los siguientes actos relativos a los bienes de los hijos menores:",
+                        ],
+                        [
+                            "cl",
+                            "Actos que requieren autorizaci\u00F3n judicial (art. 166 CC)",
+                            [
+                                "Renunciar a derechos de que sean titulares los hijos",
+                                "Enajenar o gravar bienes inmuebles, establecimientos mercantiles o industriales, objetos preciosos y valores mobiliarios (salvo derecho de suscripci\u00F3n preferente de acciones)",
+                                "Repudiar herencia o legado deferidos al hijo",
+                                "Todo acto de disposici\u00F3n, gravamen u otro que se refiera a sus bienes o derechos, por causas justificadas de utilidad o necesidad",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La autorizaci\u00F3n debe concederse por causas justificadas de utilidad o necesidad y con audiencia del Ministerio Fiscal.",
+                        ],
+                        ["l", "Art. 166 CC; Art. 61 LJV"],
+                    ],
+                    nx: "competencia_menor",
+                },
+
+                discapacidad_tipo: {
+                    ph: 0,
+                    t: "Tipo de intervenci\u00F3n respecto de la persona con discapacidad",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Al igual que en el caso de los menores, la LJV distingue entre autorizaci\u00F3n previa y aprobaci\u00F3n posterior respecto de los actos sobre bienes y derechos de la persona con discapacidad con medidas de apoyo.",
+                        ],
+                        [
+                            "n",
+                            "<b>Autorizaci\u00F3n:</b> Previa al acto. Habilita al solicitante. <b>Aprobaci\u00F3n:</b> Posterior. Otorga validez al acto ejecutado.",
+                        ],
+                        ["l", "Art. 61 LJV"],
+                    ],
+                    q: "\u00BFSe trata de autorizaci\u00F3n previa o de aprobaci\u00F3n posterior al acto?",
+                    opts: [
+                        {
+                            t: "Autorizaci\u00F3n judicial (previa al acto)",
+                            l: "A",
+                            n: "disc_tramit_esp",
+                            v: "ok",
+                        },
+                        {
+                            t: "Aprobaci\u00F3n judicial (posterior al acto)",
+                            l: "B",
+                            n: "disc_tramit_esp",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                disc_tramit_esp: {
+                    ph: 0,
+                    t: "Comprobaci\u00F3n de tramitaci\u00F3n espec\u00EDfica (discapacidad)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Igual que para los menores, debe verificarse si existe una tramitaci\u00F3n espec\u00EDfica para el acto de que se trate. Si la hubiere, el expediente se sustanciar\u00E1 por esa v\u00EDa.",
+                        ],
+                        [
+                            "l",
+                            "Art. 61 LJV \u2014 Excepci\u00F3n de tramitaci\u00F3n espec\u00EDfica",
+                        ],
+                    ],
+                    q: "\u00BFExiste una tramitaci\u00F3n espec\u00EDfica establecida para este acto?",
+                    opts: [
+                        {
+                            t: "S\u00ED, existe tramitaci\u00F3n espec\u00EDfica",
+                            l: "A",
+                            n: "fin_tramit_especifica",
+                            v: "warn",
+                        },
+                        {
+                            t: "No, no existe tramitaci\u00F3n espec\u00EDfica",
+                            l: "B",
+                            n: "disc_quien_apoyo",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                disc_quien_apoyo: {
+                    ph: 0,
+                    t: "Identificaci\u00F3n de qui\u00E9n ejerce el apoyo",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El r\u00E9gimen de autorizaci\u00F3n judicial depende de qui\u00E9n ejerza las funciones de apoyo a la persona con discapacidad. La LJV y el C\u00F3digo Civil distinguen tres supuestos principales.",
+                        ],
+                        [
+                            "n",
+                            "<b>Curador representativo (art. 287 CC):</b> Necesita autorizaci\u00F3n judicial para los actos enumerados en sus ordinales 1.\u00BA a 9.\u00BA y para los que determine la resoluci\u00F3n judicial.",
+                        ],
+                        [
+                            "n",
+                            "<b>Guardador de hecho (art. 264 CC):</b> Cuando excepcionalmente requiera actuaci\u00F3n representativa, deber\u00E1 recabar autorizaci\u00F3n judicial en los t\u00E9rminos del art\u00EDculo 287.",
+                        ],
+                        [
+                            "n",
+                            "<b>Propia persona con discapacidad:</b> Podr\u00E1 promover el expediente de conformidad con las medidas de apoyo establecidas.",
+                        ],
+                        ["l", "Arts. 264, 269, 287 CC; Art. 62.2 LJV"],
+                    ],
+                    q: "\u00BFQui\u00E9n ejerce las funciones de apoyo a la persona con discapacidad?",
+                    opts: [
+                        {
+                            t: "Curador con funciones de representaci\u00F3n",
+                            l: "A",
+                            n: "disc_curador",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Guardador de hecho con actuaci\u00F3n representativa excepcional",
+                            l: "B",
+                            n: "disc_guardador",
+                            v: "warn",
+                        },
+                        {
+                            t: "La propia persona con discapacidad con medidas de apoyo",
+                            l: "C",
+                            n: "disc_propia",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                disc_curador: {
+                    ph: 0,
+                    t: "Actos del curador representativo que requieren autorizaci\u00F3n (art. 287 CC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El curador con funciones de representaci\u00F3n necesita autorizaci\u00F3n judicial para los actos que determine la resoluci\u00F3n judicial y, en todo caso, para los enumerados en los ordinales 1.\u00BA a 9.\u00BA del art\u00EDculo 287 del C\u00F3digo Civil.",
+                        ],
+                        [
+                            "cl",
+                            "Actos que requieren autorizaci\u00F3n del curador representativo (art. 287 CC)",
+                            [
+                                "Actos de trascendencia personal o familiar",
+                                "Enajenar o gravar bienes inmuebles, establecimientos mercantiles o industriales",
+                                "Enajenar o gravar bienes o derechos de especial significado personal o familiar",
+                                "Enajenar o gravar bienes muebles de extraordinario valor, objetos preciosos y valores mobiliarios no cotizados",
+                                "Dar inmuebles en arrendamiento por t\u00E9rmino inicial superior a seis a\u00F1os",
+                                "Disposiciones a t\u00EDtulo gratuito",
+                                "Renuncias, transacciones o arbitrajes",
+                                "Aceptaci\u00F3n sin beneficio de inventario o repudiaci\u00F3n de herencias y liberalidades",
+                                "Gastos extraordinarios, interposici\u00F3n de demandas, pr\u00E9stamos, avales o fianzas, seguros de vida y rentas vitalicias de cuant\u00EDa extraordinaria",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La resoluci\u00F3n judicial que establezca la curatela determinar\u00E1 los actos para los que el curador necesitar\u00E1 autorizaci\u00F3n, adem\u00E1s de los enumerados en el art\u00EDculo 287.",
+                        ],
+                        ["l", "Art. 287 CC; Art. 269 CC; Art. 61 LJV"],
+                    ],
+                    nx: "competencia_disc",
+                },
+
+                disc_guardador: {
+                    ph: 0,
+                    t: "Guardador de hecho con actuaci\u00F3n representativa",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El art\u00EDculo 264 del C\u00F3digo Civil prev\u00E9 que, cuando excepcionalmente el guardador de hecho requiera actuaci\u00F3n representativa, deber\u00E1 recabar autorizaci\u00F3n judicial a trav\u00E9s del correspondiente expediente de jurisdicci\u00F3n voluntaria.",
+                        ],
+                        [
+                            "n",
+                            "La actuaci\u00F3n del guardador de hecho es, por principio, asistencial y no representativa. Solo de forma excepcional podr\u00E1 actuar en representaci\u00F3n, y en ese caso la autorizaci\u00F3n judicial se rige por los mismos t\u00E9rminos que la del curador representativo (art. 287 CC).",
+                        ],
+                        [
+                            "w",
+                            "El guardador de hecho no ostenta la representaci\u00F3n legal ordinaria. La necesidad de actuaci\u00F3n representativa debe estar justificada de forma excepcional.",
+                        ],
+                        ["l", "Art. 264 CC; Art. 287 CC; Art. 61 LJV"],
+                    ],
+                    nx: "competencia_disc",
+                },
+
+                disc_propia: {
+                    ph: 0,
+                    t: "Persona con discapacidad que promueve el expediente",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La propia persona con discapacidad puede promover el expediente de autorizaci\u00F3n o aprobaci\u00F3n judicial de conformidad con las medidas de apoyo establecidas, conforme al principio rector de respeto a su voluntad, deseos y preferencias (art. 249 CC).",
+                        ],
+                        [
+                            "n",
+                            "Este reconocimiento es una manifestaci\u00F3n del derecho a la capacidad jur\u00EDdica en igualdad de condiciones (art. 12 Convenci\u00F3n ONU 2006) y del acceso a la justicia (art. 13 Convenci\u00F3n).",
+                        ],
+                        [
+                            "l",
+                            "Art. 62.2 LJV; Art. 249 CC; Convenci\u00F3n ONU 2006, arts. 12 y 13",
+                        ],
+                    ],
+                    nx: "competencia_disc",
+                },
+
+                patrimonio_tipo: {
+                    ph: 0,
+                    t: "Tipo de intervenci\u00F3n respecto del patrimonio protegido",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Las reglas de administraci\u00F3n del patrimonio protegido (Ley 41/2003) deber\u00E1n prever la autorizaci\u00F3n judicial en los mismos supuestos que el curador representativo.",
+                        ],
+                        [
+                            "n",
+                            "Los actos de disposici\u00F3n, gravamen u otros que se refieran a los bienes del patrimonio protegido necesitan autorizaci\u00F3n o aprobaci\u00F3n judicial, conforme al art\u00EDculo 5 de la Ley 41/2003.",
+                        ],
+                        ["l", "Art. 5 LPPPD; Art. 61 LJV"],
+                    ],
+                    q: "\u00BFSe trata de autorizaci\u00F3n previa o de aprobaci\u00F3n posterior al acto?",
+                    opts: [
+                        {
+                            t: "Autorizaci\u00F3n judicial (previa al acto)",
+                            l: "A",
+                            n: "pat_tramit_esp",
+                            v: "ok",
+                        },
+                        {
+                            t: "Aprobaci\u00F3n judicial (posterior al acto)",
+                            l: "B",
+                            n: "pat_tramit_esp",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                pat_tramit_esp: {
+                    ph: 0,
+                    t: "Comprobaci\u00F3n de tramitaci\u00F3n espec\u00EDfica (patrimonio)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Debe verificarse si existe una tramitaci\u00F3n espec\u00EDfica. Si la hubiere, el expediente se sustanciar\u00E1 por esa v\u00EDa.",
+                        ],
+                        ["l", "Art. 61 LJV \u2014 Excepci\u00F3n"],
+                    ],
+                    q: "\u00BFExiste una tramitaci\u00F3n espec\u00EDfica establecida para este acto?",
+                    opts: [
+                        {
+                            t: "S\u00ED, existe tramitaci\u00F3n espec\u00EDfica",
+                            l: "A",
+                            n: "fin_tramit_especifica",
+                            v: "warn",
+                        },
+                        {
+                            t: "No, no existe tramitaci\u00F3n espec\u00EDfica",
+                            l: "B",
+                            n: "pat_exencion",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                pat_exencion: {
+                    ph: 0,
+                    t: "Posible exenci\u00F3n de autorizaci\u00F3n para el patrimonio protegido",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El art\u00EDculo 5 de la Ley 41/2003 permite que los constituyentes o el administrador del patrimonio protegido insten al Ministerio Fiscal la excepci\u00F3n de la autorizaci\u00F3n judicial en atenci\u00F3n a la composici\u00F3n del patrimonio, las circunstancias personales del beneficiario u otras an\u00E1logas.",
+                        ],
+                        [
+                            "n",
+                            "Esta exenci\u00F3n no es autom\u00E1tica: requiere la instancia ante el Ministerio Fiscal y que \u00E9ste la considere procedente en atenci\u00F3n a las circunstancias.",
+                        ],
+                        [
+                            "l",
+                            "Art. 5 LPPPD; Art. 7 LPPPD (supervisi\u00F3n del MF)",
+                        ],
+                    ],
+                    q: "\u00BFSe ha instado al Ministerio Fiscal la exenci\u00F3n de la autorizaci\u00F3n y ha sido estimada?",
+                    opts: [
+                        {
+                            t: "S\u00ED, el Ministerio Fiscal ha estimado la exenci\u00F3n",
+                            l: "A",
+                            n: "fin_exencion_patrimonio",
+                            v: "ok",
+                        },
+                        {
+                            t: "No se ha instado, fue denegada o la exenci\u00F3n no procede",
+                            l: "B",
+                            n: "competencia_pat",
+                            v: "neutral",
+                        },
+                    ],
+                },
+
+                /* ════════ FASE 1: COMPETENCIA Y LEGITIMACIÓN ════════ */
+
+                competencia_menor: {
+                    ph: 1,
+                    t: "Competencia territorial: residencia del menor",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juzgado competente es el Juzgado de Primera Instancia de la residencia del menor. El criterio de competencia se concreta por el lugar de residencia de la persona protegida y no por el de ubicaci\u00F3n del bien o derecho sobre el que recae el acto.",
+                        ],
+                        [
+                            "n",
+                            "Si antes de la celebraci\u00F3n de la comparecencia se produjera un cambio de la residencia habitual del menor, se remitir\u00E1n las actuaciones al Juzgado correspondiente en el estado en que se hallen.",
+                        ],
+                        [
+                            "d",
+                            "Cambio de residencia antes de la comparecencia: remisi\u00F3n de actuaciones al nuevo Juzgado competente.",
+                        ],
+                        ["l", "Art. 62.1 LJV"],
+                    ],
+                    nx: "legitimacion_menor",
+                },
+
+                competencia_disc: {
+                    ph: 1,
+                    t: "Competencia territorial: residencia de la persona con discapacidad",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juzgado competente es el Juzgado de Primera Instancia de la residencia de la persona con discapacidad. El criterio de competencia es el lugar de residencia de la persona protegida, no el de ubicaci\u00F3n del bien.",
+                        ],
+                        [
+                            "n",
+                            "Si antes de la celebraci\u00F3n de la comparecencia se produjera un cambio de la residencia habitual, se remitir\u00E1n las actuaciones al Juzgado correspondiente en el estado en que se hallen.",
+                        ],
+                        [
+                            "d",
+                            "Cambio de residencia antes de la comparecencia: remisi\u00F3n de actuaciones.",
+                        ],
+                        ["l", "Art. 62.1 LJV"],
+                    ],
+                    nx: "legitimacion_disc",
+                },
+
+                competencia_pat: {
+                    ph: 1,
+                    t: "Competencia territorial: residencia del beneficiario del patrimonio",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juzgado competente es el Juzgado de Primera Instancia de la residencia del beneficiario del patrimonio protegido. El criterio de competencia es el lugar de residencia de la persona protegida.",
+                        ],
+                        [
+                            "n",
+                            "Si antes de la celebraci\u00F3n de la comparecencia se produjera un cambio de la residencia habitual, se remitir\u00E1n las actuaciones al Juzgado correspondiente.",
+                        ],
+                        ["l", "Art. 62.1 LJV"],
+                    ],
+                    nx: "legitimacion_pat",
+                },
+
+                legitimacion_menor: {
+                    ph: 1,
+                    t: "Legitimaci\u00F3n para promover el expediente (menor)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El art\u00EDculo 62.2 LJV determina qui\u00E9nes est\u00E1n legitimados para promover el expediente cuando se trata de actos sobre bienes del menor. La legitimaci\u00F3n depende de la relaci\u00F3n jur\u00EDdica con el menor y con los bienes.",
+                        ],
+                        ["l", "Art. 62.2 LJV"],
+                    ],
+                    q: "\u00BFQui\u00E9n solicita la autorizaci\u00F3n o aprobaci\u00F3n?",
+                    opts: [
+                        {
+                            t: "Progenitores titulares de la patria potestad (representante legal)",
+                            l: "A",
+                            n: "postulacion",
+                            v: "ok",
+                        },
+                        {
+                            t: "Tutor del menor",
+                            l: "B",
+                            n: "postulacion",
+                            v: "ok",
+                        },
+                        {
+                            t: "Administrador designado por el transmitente (administraci\u00F3n conferida a t\u00EDtulo gratuito)",
+                            l: "C",
+                            n: "postulacion",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Tutor de los bienes (ejercicio separado de tutela)",
+                            l: "D",
+                            n: "postulacion",
+                            v: "neutral",
+                        },
+                    ],
+                },
+
+                legitimacion_disc: {
+                    ph: 1,
+                    t: "Legitimaci\u00F3n para promover el expediente (discapacidad)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El art\u00EDculo 62.2 LJV establece la legitimaci\u00F3n para promover el expediente cuando se trata de actos sobre bienes de la persona con discapacidad.",
+                        ],
+                        [
+                            "n",
+                            "<b>Legitimaci\u00F3n ordinaria:</b> Quienes ostenten la representaci\u00F3n legal o ejerzan el apoyo, as\u00ED como la propia persona con discapacidad conforme a las medidas de apoyo.",
+                        ],
+                        [
+                            "n",
+                            "<b>Administraci\u00F3n conferida por transmitente:</b> Si la administraci\u00F3n de bienes o derechos determinados fue conferida por el transmitente a t\u00EDtulo gratuito a favor de quien no ostente la representaci\u00F3n legal, el administrador designado por el transmitente deber\u00E1 solicitar la autorizaci\u00F3n.",
+                        ],
+                        [
+                            "n",
+                            "<b>Ejercicio separado:</b> Cuando se ejerzan separadamente la tutela o curatela de la persona y la de los bienes, el tutor de los bienes ser\u00E1 el legitimado.",
+                        ],
+                        ["l", "Art. 62.2 LJV"],
+                    ],
+                    q: "\u00BFQui\u00E9n solicita la autorizaci\u00F3n o aprobaci\u00F3n?",
+                    opts: [
+                        {
+                            t: "Curador con funciones de representaci\u00F3n",
+                            l: "A",
+                            n: "postulacion",
+                            v: "ok",
+                        },
+                        {
+                            t: "Guardador de hecho",
+                            l: "B",
+                            n: "postulacion",
+                            v: "warn",
+                        },
+                        {
+                            t: "La propia persona con discapacidad con medidas de apoyo",
+                            l: "C",
+                            n: "postulacion",
+                            v: "ok",
+                        },
+                        {
+                            t: "Administrador designado por el transmitente",
+                            l: "D",
+                            n: "postulacion",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Tutor de los bienes (ejercicio separado)",
+                            l: "E",
+                            n: "postulacion",
+                            v: "neutral",
+                        },
+                    ],
+                },
+
+                legitimacion_pat: {
+                    ph: 1,
+                    t: "Legitimaci\u00F3n: administrador del patrimonio protegido",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Si el acto fuera respecto a los bienes del patrimonio protegido, el legitimado para promover el expediente ser\u00E1 su administrador, conforme al art\u00EDculo 62.2 LJV y al art\u00EDculo 5 de la Ley 41/2003.",
+                        ],
+                        ["l", "Art. 62.2 LJV; Art. 5 LPPPD"],
+                    ],
+                    nx: "postulacion",
+                },
+
+                /* ════════ FASE 2: POSTULACIÓN ════════ */
+
+                postulacion: {
+                    ph: 2,
+                    t: "R\u00E9gimen de postulaci\u00F3n: abogado y procurador",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "El art\u00EDculo 62.3 LJV regula la intervenci\u00F3n de abogado y procurador en el expediente. El r\u00E9gimen depende del valor del acto y de las circunstancias del caso.",
+                        ],
+                        [
+                            "n",
+                            "<b>Umbral de exenci\u00F3n (6.000 euros):</b> No ser\u00E1 preceptiva la intervenci\u00F3n de abogado ni procurador siempre que el valor del acto no supere los 6.000 euros.",
+                        ],
+                        [
+                            "n",
+                            "<b>Supera el umbral:</b> La solicitud inicial podr\u00E1 realizarse sin necesidad de ambos profesionales.",
+                        ],
+                        [
+                            "w",
+                            "<b>Facultad judicial:</b> El Juez podr\u00E1 ordenar la actuaci\u00F3n de todos los interesados por medio de abogado cuando la complejidad de la operaci\u00F3n as\u00ED lo requiera o comparezcan sujetos con intereses enfrentados.",
+                        ],
+                        ["l", "Art. 62.3 LJV; LJV art. 4; LEC"],
+                    ],
+                    q: "\u00BFCu\u00E1l es el valor del acto para el que se insta el expediente?",
+                    opts: [
+                        {
+                            t: "No supera los 6.000 euros (intervenci\u00F3n no preceptiva)",
+                            l: "A",
+                            n: "solicitud_general",
+                            v: "ok",
+                        },
+                        {
+                            t: "Supera los 6.000 euros (solicitud sin ambos profesionales, pero posible orden judicial)",
+                            l: "B",
+                            n: "postulacion_supera",
+                            v: "neutral",
+                        },
+                    ],
+                },
+
+                postulacion_supera: {
+                    ph: 2,
+                    t: "Valor superior a 6.000 euros",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Cuando el valor del acto supera los 6.000 euros, la solicitud inicial podr\u00E1 realizarse sin necesidad de abogado y procurador. Sin embargo, el Juez podr\u00E1 ordenar la intervenci\u00F3n de abogado si la complejidad de la operaci\u00F3n lo requiere o si comparecen sujetos con intereses enfrentados.",
+                        ],
+                        [
+                            "w",
+                            "El Juez puede ordenar la intervenci\u00F3n de abogado de oficio si concurren circunstancias de complejidad o conflicto de intereses. Prep\u00E1rese para esta posibilidad.",
+                        ],
+                        ["l", "Art. 62.3 LJV"],
+                    ],
+                    q: "\u00BFConcurren circunstancias de complejidad o intereses enfrentados?",
+                    opts: [
+                        {
+                            t: "S\u00ED, hay complejidad o intereses enfrentados (el Juez podr\u00EDa ordenar abogado)",
+                            l: "A",
+                            n: "postulacion_abogado",
+                            v: "warn",
+                        },
+                        {
+                            t: "No, no hay complejidad ni intereses enfrentados",
+                            l: "B",
+                            n: "solicitud_general",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                postulacion_abogado: {
+                    ph: 2,
+                    t: "Intervenci\u00F3n previsible de abogado",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Cuando concurran circunstancias de complejidad o intereses enfrentados, el Juez podr\u00E1 ordenar la actuaci\u00F3n de todos los interesados por medio de abogado. Deber\u00E1 preverse la designaci\u00F3n de abogado y, en su caso, de procurador.",
+                        ],
+                        [
+                            "n",
+                            "Si el solicitante no dispone de abogado, podr\u00E1 solicitar la designaci\u00F3n de abogado del turno de oficio.",
+                        ],
+                        ["l", "Art. 62.3 LJV; LEC"],
+                    ],
+                    nx: "solicitud_general",
+                },
+
+                /* ════════ FASE 3: SOLICITUD ════════ */
+
+                solicitud_general: {
+                    ph: 3,
+                    t: "Contenido de la solicitud",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El art\u00EDculo 63.1 LJV establece el contenido obligatorio de la solicitud de autorizaci\u00F3n o aprobaci\u00F3n judicial. Todos los extremos deben acreditarse documentalmente.",
+                        ],
+                        [
+                            "cl",
+                            "Contenido obligatorio de la solicitud (art. 63.1 LJV)",
+                            [
+                                "Motivo del acto o negocio de que se trate",
+                                "Raz\u00F3n de la necesidad, utilidad o conveniencia del acto",
+                                "Identificaci\u00F3n con precisi\u00F3n del bien o derecho a que se refiera",
+                                "Finalidad a que deba aplicarse la suma obtenida (en su caso)",
+                                "Documentos y antecedentes necesarios para formular juicio exacto sobre el negocio",
+                                "En su caso, las operaciones particionales de la herencia o divisi\u00F3n de la cosa com\u00FAn realizada",
+                            ],
+                        ],
+                        ["l", "Art. 63.1 LJV"],
+                    ],
+                    q: "\u00BFLa solicitud incluye adem\u00E1s alguno de estos supuestos especiales?",
+                    opts: [
+                        {
+                            t: "S\u00ED, se solicita autorizaci\u00F3n para transigir",
+                            l: "A",
+                            n: "solicitud_transigir",
+                            v: "warn",
+                        },
+                        {
+                            t: "S\u00ED, se solicita venta directa sin subasta",
+                            l: "B",
+                            n: "solicitud_venta_directa",
+                            v: "neutral",
+                        },
+                        {
+                            t: "S\u00ED, ambos: transigir y venta directa",
+                            l: "C",
+                            n: "solicitud_ambos",
+                            v: "warn",
+                        },
+                        {
+                            t: "No, es una solicitud general sin supuestos especiales",
+                            l: "D",
+                            n: "tramitacion_admision",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                solicitud_transigir: {
+                    ph: 3,
+                    t: "Supuesto especial: autorizaci\u00F3n para transigir",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Cuando la autorizaci\u00F3n se solicite para transigir, deber\u00E1 acompa\u00F1arse, adem\u00E1s de la documentaci\u00F3n general, el documento en que se hubieren formulado las bases de la transacci\u00F3n.",
+                        ],
+                        [
+                            "n",
+                            "Las bases de la transacci\u00F3n deben estar formuladas por escrito y documentadas, para que el Juez pueda valorar la conveniencia de la transacci\u00F3n para los intereses del menor o persona con discapacidad.",
+                        ],
+                        ["l", "Art. 63.2 LJV"],
+                    ],
+                    nx: "tramitacion_admision",
+                },
+
+                solicitud_venta_directa: {
+                    ph: 3,
+                    t: "Supuesto especial: venta directa sin subasta",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Si la solicitud fuera para la realizaci\u00F3n de un acto de disposici\u00F3n, podr\u00E1 incluirse la petici\u00F3n de que la autorizaci\u00F3n se extienda a la celebraci\u00F3n de venta directa, sin necesidad de subasta ni intervenci\u00F3n de persona o entidad especializada.",
+                        ],
+                        [
+                            "cl",
+                            "Requisitos adicionales para la venta directa (art. 63.3 LJV)",
+                            [
+                                "Dictamen pericial de valoraci\u00F3n del precio de mercado del bien o derecho",
+                                "Especificaci\u00F3n de las dem\u00E1s condiciones del acto de disposici\u00F3n que se pretenda realizar",
+                                "Petici\u00F3n expresa de venta directa sin subasta",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "Sin dictamen pericial de valoraci\u00F3n de mercado, la petici\u00F3n de venta directa no prosperar\u00E1.",
+                        ],
+                        ["l", "Art. 63.3 LJV"],
+                    ],
+                    nx: "tramitacion_admision",
+                },
+
+                solicitud_ambos: {
+                    ph: 3,
+                    t: "Supuestos especiales: transigir y venta directa",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Cuando la solicitud incluya ambos supuestos especiales \u2014autorizaci\u00F3n para transigir y petici\u00F3n de venta directa\u2014, deber\u00E1n cumplirse los requisitos de ambos.",
+                        ],
+                        [
+                            "cl",
+                            "Documentaci\u00F3n adicional necesaria",
+                            [
+                                "Documento con las bases de la transacci\u00F3n (art. 63.2 LJV)",
+                                "Dictamen pericial de valoraci\u00F3n del precio de mercado (art. 63.3 LJV)",
+                                "Especificaci\u00F3n de las condiciones del acto de disposici\u00F3n (art. 63.3 LJV)",
+                                "Petici\u00F3n expresa de venta directa sin subasta (art. 63.3 LJV)",
+                            ],
+                        ],
+                        ["l", "Arts. 63.2 y 63.3 LJV"],
+                    ],
+                    nx: "tramitacion_admision",
+                },
+
+                /* ════════ FASE 4: TRAMITACIÓN ════════ */
+
+                tramitacion_admision: {
+                    ph: 4,
+                    t: "Admisi\u00F3n a tr\u00E1mite y citaci\u00F3n a comparecencia",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Admitida a tr\u00E1mite la solicitud por el Letrado de la Administraci\u00F3n de Justicia, \u00E9ste citar\u00E1 a comparecencia. La citaci\u00F3n debe incluir a los intervinientes preceptivos.",
+                        ],
+                        [
+                            "cl",
+                            "Intervinientes preceptivos en la comparecencia (art. 64.1 LJV)",
+                            [
+                                "Ministerio Fiscal",
+                                "Todas las personas que, seg\u00FAn los distintos casos, exijan las leyes",
+                                "La persona con discapacidad (en todo caso)",
+                                "El menor que tenga suficiente madurez (en todo caso, cuando sea mayor de doce a\u00F1os)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "La citaci\u00F3n del menor mayor de doce a\u00F1os y de la persona con discapacidad es una manifestaci\u00F3n del derecho a ser o\u00EDdo y expresa voluntad, deseos y preferencias, conforme al principio rector de respeto a la voluntad de la persona con discapacidad (art. 249 CC) y a la Convenci\u00F3n de Nueva York de 2006.",
+                        ],
+                        [
+                            "l",
+                            "Art. 64.1 LJV; Art. 249 CC; Convenci\u00F3n ONU 2006",
+                        ],
+                    ],
+                    nx: "tramitacion_dictamen",
+                },
+
+                tramitacion_dictamen: {
+                    ph: 4,
+                    t: "Dictamen pericial",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El art\u00EDculo 64.2 LJV regula el dictamen pericial en el expediente. Se acordar\u00E1 de oficio o a instancia de parte, y deber\u00E1 emitirse antes de celebrarse la comparecencia.",
+                        ],
+                        [
+                            "cl",
+                            "Requisitos del dictamen pericial",
+                            [
+                                "Se acuerda de oficio por el Juez o a instancia de parte",
+                                "Debe emitirse antes de la celebraci\u00F3n de la comparecencia",
+                                "Si se acord\u00F3, el perito o peritos que lo emitieron deber\u00E1n ser citados a la comparecencia para responder a las cuestiones que planteen los intervinientes y el Juez",
+                            ],
+                        ],
+                        [
+                            "d",
+                            "El dictamen pericial debe emitirse antes de la celebraci\u00F3n de la comparecencia.",
+                        ],
+                        [
+                            "n",
+                            "La comparecencia del perito no es siempre necesaria: solo si as\u00ED se acuerda. Cuando se acuerde, el perito deber\u00E1 responder a las cuestiones que le planteen tanto los intervinientes como el Juez.",
+                        ],
+                        ["l", "Art. 64.2 LJV"],
+                    ],
+                    nx: "resolucion",
+                },
+
+                /* ════════ FASE 5: RESOLUCIÓN ════════ */
+
+                resolucion: {
+                    ph: 5,
+                    t: "Resoluci\u00F3n judicial",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez, teniendo en cuenta la justificaci\u00F3n ofrecida y valorando su conveniencia a los intereses del menor o persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jur\u00EDdica, resolver\u00E1 concediendo o denegando la autorizaci\u00F3n o aprobaci\u00F3n solicitada.",
+                        ],
+                        [
+                            "n",
+                            "El criterio rector es siempre el inter\u00E9s superior del menor o de la persona con discapacidad. El Juez valora la justificaci\u00F3n ofrecida y la conveniencia del acto para los intereses de la persona protegida.",
+                        ],
+                        ["l", "Art. 65.1 LJV"],
+                    ],
+                    q: "\u00BFCu\u00E1l ha sido el resultado de la resoluci\u00F3n judicial?",
+                    opts: [
+                        {
+                            t: "El Juez concede la autorizaci\u00F3n o aprobaci\u00F3n",
+                            l: "A",
+                            n: "res_concedida",
+                            v: "ok",
+                        },
+                        {
+                            t: "El Juez deniega la autorizaci\u00F3n o aprobaci\u00F3n",
+                            l: "B",
+                            n: "res_denegada",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                res_concedida: {
+                    ph: 5,
+                    t: "Autorizaci\u00F3n o aprobaci\u00F3n concedida",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez ha concedido la autorizaci\u00F3n o aprobaci\u00F3n solicitada. A continuaci\u00F3n debe determinarse el r\u00E9gimen aplicable seg\u00FAn el tipo de acto autorizado.",
+                        ],
+                        ["l", "Art. 65 LJV"],
+                    ],
+                    q: "\u00BFQu\u00E9 tipo de acto ha sido autorizado?",
+                    opts: [
+                        {
+                            t: "Autorizaci\u00F3n para transigir",
+                            l: "A",
+                            n: "res_transigir",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Acto de gravamen o extinci\u00F3n de derechos reales",
+                            l: "B",
+                            n: "res_gravamen",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Acto de disposici\u00F3n (enajenaci\u00F3n) con venta",
+                            l: "C",
+                            n: "res_venta",
+                            v: "neutral",
+                        },
+                        {
+                            t: "Otro acto autorizado (disposici\u00F3n general)",
+                            l: "D",
+                            n: "res_recurso",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                res_transigir: {
+                    ph: 5,
+                    t: "Autorizaci\u00F3n para transigir: testimonio",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "En el caso de autorizaci\u00F3n solicitada para transigir, si fuera concedida por el Juez, determinar\u00E1 la expedici\u00F3n de testimonio que se entregar\u00E1 al solicitante para el uso que corresponda.",
+                        ],
+                        [
+                            "n",
+                            "El testimonio es el documento que acredita la autorizaci\u00F3n judicial y que el solicitante deber\u00E1 utilizar en el procedimiento de transacci\u00F3n.",
+                        ],
+                        ["l", "Art. 65.3 LJV"],
+                    ],
+                    nx: "res_recurso",
+                },
+
+                res_gravamen: {
+                    ph: 5,
+                    t: "Acto de gravamen o extinci\u00F3n de derechos reales",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Si se autorizare la realizaci\u00F3n de alg\u00FAn acto de gravamen sobre bienes o derechos que pertenezcan al menor o persona con discapacidad o la extinci\u00F3n de derechos reales a ellos pertenecientes, se ordenar\u00E1 seguir las mismas formalidades establecidas para la venta, con exclusi\u00F3n de la subasta.",
+                        ],
+                        [
+                            "n",
+                            "La exclusi\u00F3n de la subasta en los actos de gravamen o extinci\u00F3n de derechos reales busca simplificar el procedimiento, aplicando las formalidades de la venta pero sin el tr\u00E1mite de la subasta p\u00FAblica.",
+                        ],
+                        ["l", "Art. 65.4 LJV; Art. 1060 CC"],
+                    ],
+                    nx: "res_recurso",
+                },
+
+                res_venta: {
+                    ph: 5,
+                    t: "Acto de disposici\u00F3n con venta",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Cuando el acto autorizado sea de disposici\u00F3n con venta, deber\u00E1 determinarse el r\u00E9gimen de la venta, que podr\u00E1 ser mediante subasta o venta directa.",
+                        ],
+                        [
+                            "n",
+                            "Si la solicitud incluy\u00F3 petici\u00F3n de venta directa sin subasta (art. 63.3 LJV) y el Juez la estim\u00F3, la venta se realizar\u00E1 de forma directa, sin necesidad de subasta ni intervenci\u00F3n de persona o entidad especializada.",
+                        ],
+                        [
+                            "n",
+                            "Si no se solicit\u00F3 venta directa, o el Juez no la estim\u00F3, se seguir\u00E1 el r\u00E9gimen ordinario de enajenaci\u00F3n judicial, que incluye la subasta.",
+                        ],
+                        ["l", "Art. 63.3 LJV; Art. 65.4 LJV"],
+                    ],
+                    nx: "res_recurso",
+                },
+
+                res_denegada: {
+                    ph: 5,
+                    t: "Autorizaci\u00F3n o aprobaci\u00F3n denegada",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez ha denegado la autorizaci\u00F3n o aprobaci\u00F3n solicitada. Esto significa que el acto no puede realizarse (si era autorizaci\u00F3n previa) o que carece de validez confirmada judicialmente (si era aprobaci\u00F3n posterior).",
+                        ],
+                        [
+                            "w",
+                            "La denegaci\u00F3n impide la realizaci\u00F3n v\u00E1lida del acto. El solicitante puede interponer recurso de apelaci\u00F3n.",
+                        ],
+                        ["l", "Art. 65.1 LJV"],
+                    ],
+                    nx: "res_recurso",
+                },
+
+                res_recurso: {
+                    ph: 5,
+                    t: "R\u00E9gimen de recursos: apelaci\u00F3n con efectos suspensivos",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "La resoluci\u00F3n judicial es recurrible en apelaci\u00F3n con efectos suspensivos. Esto significa que la eficacia de la resoluci\u00F3n queda en suspenso hasta la resoluci\u00F3n del recurso y, en consecuencia, el acto autorizado no podr\u00E1 ejecutarse entre tanto.",
+                        ],
+                        [
+                            "n",
+                            "<b>Efectos suspensivos:</b> Tanto si la resoluci\u00F3n fue estimatoria como desestimatoria, la interposici\u00F3n del recurso de apelaci\u00F3n suspende la eficacia de la resoluci\u00F3n. Si la autorizaci\u00F3n fue concedida, no podr\u00E1 ejecutarse el acto hasta que se resuelva el recurso. Si fue denegada, la denegaci\u00F3n tampoco es firme.",
+                        ],
+                        [
+                            "w",
+                            "Si la autorizaci\u00F3n fue concedida y se interpone recurso, el acto autorizado NO podr\u00E1 ejecutarse hasta la resoluci\u00F3n del recurso de apelaci\u00F3n.",
+                        ],
+                        [
+                            "l",
+                            "Art. 65.5 LJV; LEC (recurso de apelaci\u00F3n); LJV art. 22",
+                        ],
+                    ],
+                    q: "\u00BFSe interpone recurso de apelaci\u00F3n?",
+                    opts: [
+                        {
+                            t: "S\u00ED, se interpone recurso de apelaci\u00F3n",
+                            l: "A",
+                            n: "res_recurso_si",
+                            v: "warn",
+                        },
+                        {
+                            t: "No, la resoluci\u00F3n es firme",
+                            l: "B",
+                            n: "res_recurso_no",
+                            v: "ok",
+                        },
+                    ],
+                },
+
+                res_recurso_si: {
+                    ph: 5,
+                    t: "Recurso de apelaci\u00F3n interpuesto",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Interpuesto el recurso de apelaci\u00F3n, la eficacia de la resoluci\u00F3n queda en suspenso hasta su resoluci\u00F3n. El acto autorizado \u2014si lo fue\u2014 no podr\u00E1 ejecutarse entre tanto.",
+                        ],
+                        [
+                            "d",
+                            "Los efectos suspensivos se mantienen hasta la resoluci\u00F3n del recurso de apelaci\u00F3n.",
+                        ],
+                        [
+                            "n",
+                            "Si la apelaci\u00F3n confirma la concesi\u00F3n, el acto podr\u00E1 ejecutarse. Si la revoca, el acto no podr\u00E1 realizarse. Si la apelaci\u00F3n confirma la denegaci\u00F3n, la v\u00EDa judicial ordinaria se agota.",
+                        ],
+                        ["l", "Art. 65.5 LJV; LEC"],
+                    ],
+                    q: "\u00BFCu\u00E1l es el resultado del recurso de apelaci\u00F3n?",
+                    opts: [
+                        {
+                            t: "La apelaci\u00F3n confirma la concesi\u00F3n de la autorizaci\u00F3n o aprobaci\u00F3n",
+                            l: "A",
+                            n: "fin_concesion_firme",
+                            v: "ok",
+                        },
+                        {
+                            t: "La apelaci\u00F3n confirma la denegaci\u00F3n",
+                            l: "B",
+                            n: "fin_denegacion_firme",
+                            v: "bad",
+                        },
+                        {
+                            t: "La apelaci\u00F3n revoca la denegaci\u00F3n y concede la autorizaci\u00F3n",
+                            l: "C",
+                            n: "fin_concesion_firme",
+                            v: "ok",
+                        },
+                        {
+                            t: "La apelaci\u00F3n revoca la concesi\u00F3n y deniega la autorizaci\u00F3n",
+                            l: "D",
+                            n: "fin_denegacion_firme",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                res_recurso_no: {
+                    ph: 5,
+                    t: "Resoluci\u00F3n firme (sin recurso)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "La resoluci\u00F3n es firme al no haberse interpuesto recurso de apelaci\u00F3n.",
+                        ],
+                        ["l", "Art. 65.5 LJV"],
+                    ],
+                    q: "\u00BFCu\u00E1l fue el sentido de la resoluci\u00F3n firme?",
+                    opts: [
+                        {
+                            t: "La autorizaci\u00F3n o aprobaci\u00F3n fue concedida y es firme",
+                            l: "A",
+                            n: "fin_concesion_firme",
+                            v: "ok",
+                        },
+                        {
+                            t: "La autorizaci\u00F3n o aprobaci\u00F3n fue denegada y es firme",
+                            l: "B",
+                            n: "fin_denegacion_firme",
+                            v: "bad",
+                        },
+                    ],
+                },
+
+                /* ════════ FASE 6: DESTINO Y GARANTÍAS ════════ */
+
+                fin_concesion_firme: {
+                    ph: 6,
+                    t: "Autorizaci\u00F3n o aprobaci\u00F3n firme: destino de la cantidad obtenida",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Cuando la autorizaci\u00F3n o aprobaci\u00F3n es firme y el acto se ejecuta, el Juez podr\u00E1 adoptar las medidas necesarias para asegurar que la cantidad obtenida por el acto de enajenaci\u00F3n o gravamen, as\u00ED como por la realizaci\u00F3n del negocio o contrato autorizado, se aplique a la finalidad en atenci\u00F3n a la que se hubiere concedido la autorizaci\u00F3n.",
+                        ],
+                        [
+                            "n",
+                            "Este precepto (art. 66 LJV) sirve de garant\u00EDa ex post del inter\u00E9s superior del menor o de la persona con discapacidad. Permite adoptar medidas de aseguramiento para evitar el desv\u00EDo del precio o de la contraprestaci\u00F3n a fines ajenos a los que justificaron la autorizaci\u00F3n.",
+                        ],
+                        [
+                            "cl",
+                            "Posibles medidas de aseguramiento (art. 66 LJV)",
+                            [
+                                "Consignaci\u00F3n de la cantidad obtenida",
+                                "Dep\u00F3sito en entidad financiera",
+                                "Reinversi\u00F3n tutelada en bienes o valores seguros",
+                                "Cualquier otra medida que asegure la aplicaci\u00F3n de la cantidad a la finalidad autorizada",
+                            ],
+                        ],
+                        [
+                            "w",
+                            "Si el solicitante desv\u00EDa la cantidad obtenida a fines distintos de los que justificaron la autorizaci\u00F3n, podr\u00EDa incurrir en responsabilidad y las medidas de aseguramiento podr\u00EDan activarse.",
+                        ],
+                        ["l", "Art. 66 LJV; Art. 65 LJV; Art. 63 LJV"],
+                    ],
+                    end: "success",
+                },
+
+                fin_denegacion_firme: {
+                    ph: 6,
+                    t: "Denegaci\u00F3n firme: el acto no puede realizarse",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "La denegaci\u00F3n firme de la autorizaci\u00F3n o aprobaci\u00F3n implica que el acto no puede realizarse v\u00E1lidamente. Si el acto ya se hab\u00EDa ejecutado (en caso de solicitud de aprobaci\u00F3n posterior), carece de validez confirmada judicialmente.",
+                        ],
+                        [
+                            "w",
+                            "La realizaci\u00F3n de un acto sin la autorizaci\u00F3n judicial requerida puede generar responsabilidad civil e, incluso, penal para el representante legal o la persona que presta apoyo.",
+                        ],
+                        [
+                            "n",
+                            "Si las circunstancias cambian, podr\u00E1 plantearse una nueva solicitud de autorizaci\u00F3n judicial con nueva justificaci\u00F3n.",
+                        ],
+                        ["l", "Art. 65.1 LJV; Art. 166 CC; Art. 287 CC"],
+                    ],
+                    end: "error",
+                },
+
+                /* ════════ NODOS FINALES ════════ */
+
+                fin_tramit_especifica: {
+                    ph: 0,
+                    t: "Procedimiento por tramitaci\u00F3n espec\u00EDfica",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Existe una tramitaci\u00F3n espec\u00EDfica establecida para el acto de que se trate. El expediente deber\u00E1 sustanciarse por la v\u00EDa espec\u00EDfica correspondiente y no por la del Cap\u00EDtulo VIII de la LJV.",
+                        ],
+                        [
+                            "n",
+                            "Las v\u00EDas espec\u00EDficas m\u00E1s frecuentes son: la partici\u00F3n hereditaria (art. 1060 CC), la liquidaci\u00F3n de la sociedad de gananciales, las actuaciones espec\u00EDficas del albaceazgo y de la guarda de hecho.",
+                        ],
+                        ["l", "Art. 61 LJV; Art. 1060 CC"],
+                    ],
+                    end: "warning",
+                },
+
+                fin_exencion_menor: {
+                    ph: 0,
+                    t: "Exenci\u00F3n: no se precisa autorizaci\u00F3n judicial",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Conforme al art\u00EDculo 166 del C\u00F3digo Civil, no es necesaria la autorizaci\u00F3n judicial en los siguientes supuestos:",
+                        ],
+                        [
+                            "cl",
+                            "Supuestos de exenci\u00F3n (art. 166 CC)",
+                            [
+                                "El menor ha cumplido diecis\u00E9is a\u00F1os y consiente en documento p\u00FAblico",
+                                "Enajenaci\u00F3n de valores mobiliarios siempre que su importe se reinvierta en bienes o valores seguros",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Esta exenci\u00F3n reconoce la madurez del menor para determinados actos y la naturaleza fungible de los valores mobiliarios con reinversi\u00F3n garantizada.",
+                        ],
+                        ["l", "Art. 166 CC"],
+                    ],
+                    end: "success",
+                },
+
+                fin_exencion_patrimonio: {
+                    ph: 0,
+                    t: "Exenci\u00F3n de autorizaci\u00F3n por estimaci\u00F3n del Ministerio Fiscal",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Los constituyentes o el administrador del patrimonio protegido han instado al Ministerio Fiscal la excepci\u00F3n de la autorizaci\u00F3n judicial, y ha sido estimada en atenci\u00F3n a la composici\u00F3n del patrimonio, las circunstancias personales del beneficiario u otras an\u00E1logas.",
+                        ],
+                        [
+                            "n",
+                            "La exenci\u00F3n no es definitiva: si cambian las circunstancias que la motivaron, podr\u00EDa dejarse sin efecto y exigirse la autorizaci\u00F3n judicial.",
+                        ],
+                        ["l", "Art. 5 LPPPD; Art. 7 LPPPD"],
+                    ],
+                    end: "success",
+                },
+            };
+
+            /* ═══════════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════════ */
+            let cur = "inicio";
+            let hist = [];
+            let activeSbTab = "map";
+            let mapaOn = false;
+            let collapsedPhases = {};
+
+            /* ═══════════════════════════════════════════════
+   SIDEBAR TOGGLE (NUEVO)
+   ═══════════════════════════════════════════════ */
+            let sidebarOpen = false; // solo móvil
+            function toggleSidebar() {
+                const isMobile = window.innerWidth <= 768;
+                const sidebar = document.getElementById("sidebar");
+                const btn = document.getElementById("btnToggleSidebar");
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    if (sidebarOpen) {
+                        sidebar.classList.add("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.add("show");
+                        if (btn) btn.setAttribute("aria-expanded", "true");
+                    } else {
+                        sidebar.classList.remove("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.remove("show");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                } else {
+                    sidebar.classList.toggle("collapsed");
+                    const isCollapsed = sidebar.classList.contains("collapsed");
+                    if (btn)
+                        btn.setAttribute(
+                            "aria-expanded",
+                            isCollapsed ? "false" : "true",
+                        );
+                }
+            }
+
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 768 && sidebarOpen) {
+                    sidebarOpen = false;
+                    const sidebar = document.getElementById("sidebar");
+                    const backdrop = document.getElementById("sidebarBackdrop");
+                    const btn = document.getElementById("btnToggleSidebar");
+                    if (sidebar) sidebar.classList.remove("open");
+                    if (backdrop) backdrop.classList.remove("show");
+                    if (btn) btn.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            function handleResize() {
+                if (window.innerWidth > 768) {
+                    if (sidebarOpen) {
+                        const sidebar = document.getElementById("sidebar");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (sidebar) sidebar.classList.remove("open");
+                        if (backdrop) backdrop.classList.remove("show");
+                        sidebarOpen = false;
+                        const btn = document.getElementById("btnToggleSidebar");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (sidebarEl) sidebarEl.classList.remove("open");
+                } else {
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (
+                        sidebarEl &&
+                        sidebarEl.classList.contains("collapsed")
+                    ) {
+                        sidebarEl.classList.remove("collapsed");
+                    }
+                    if (
+                        !sidebarOpen &&
+                        sidebarEl &&
+                        sidebarEl.classList.contains("open")
+                    ) {
+                        sidebarEl.classList.remove("open");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (backdrop) backdrop.classList.remove("show");
+                    }
+                }
+            }
+
+            /* ═══════════════════════════════════════════════
+   NAVIGATION (modificada para cerrar sidebar móvil)
+   ═══════════════════════════════════════════════ */
+            function goTo(stepId, choiceLabel) {
+                hist.push({ s: cur, next: stepId, c: choiceLabel || "" });
+                cur = stepId;
+                if (choiceLabel) sbTab("journey");
+                render();
+                closeMobileSidebar();
+            }
+
+            function goBack() {
+                if (hist.length === 0) return;
+                const prev = hist.pop();
+                cur = prev.s;
+                render();
+                closeMobileSidebar();
+            }
+
+            function goBackTo(index) {
+                if (index < 0 || index > hist.length) return;
+                if (index === hist.length) return;
+                if (index === 0) {
+                    const firstOrigin = hist[0].s;
+                    cur = firstOrigin;
+                    hist = [];
+                } else {
+                    cur = hist[index - 1].s;
+                    hist = hist.slice(0, index);
+                }
+                render();
+                closeMobileSidebar();
+            }
+
+            function restart() {
+                cur = "inicio";
+                hist = [];
+                sbTab("map");
+                setZoom(100);
+                render();
+                closeMobileSidebar();
+            }
+
+            function buildPathTo(targetId) {
+                if (targetId === "inicio") return [];
+                const queue = [{ node: "inicio", path: [] }];
+                const visited = new Set();
+                visited.add("inicio");
+
+                while (queue.length) {
+                    const current = queue.shift();
+                    const step = STEPS[current.node];
+                    if (!step) continue;
+
+                    if (step.nx) {
+                        const nextId = step.nx;
+                        const newPath = [
+                            ...current.path,
+                            { s: current.node, next: nextId, c: "" },
+                        ];
+                        if (nextId === targetId) return newPath;
+                        if (!visited.has(nextId)) {
+                            visited.add(nextId);
+                            queue.push({ node: nextId, path: newPath });
+                        }
+                    }
+
+                    if (step.opts) {
+                        for (const opt of step.opts) {
+                            const nextId = opt.n;
+                            const choiceLabel = opt.t;
+                            const newPath = [
+                                ...current.path,
+                                {
+                                    s: current.node,
+                                    next: nextId,
+                                    c: choiceLabel,
+                                },
+                            ];
+                            if (nextId === targetId) return newPath;
+                            if (!visited.has(nextId)) {
+                                visited.add(nextId);
+                                queue.push({ node: nextId, path: newPath });
+                            }
+                        }
+                    }
+                }
+                return null;
+            }
+
+            function jumpTo(stepId) {
+                if (stepId !== cur) {
+                    const path = buildPathTo(stepId);
+                    if (path) {
+                        hist = path;
+                    } else {
+                        hist.push({ s: cur, next: stepId, c: "Salto directo" });
+                    }
+                }
+                cur = stepId;
+                sbTab("map");
+                closeDirect();
+                render();
+                closeMobileSidebar();
+            }
+
+            /* ═══════════════════════════════════════════════
+   RENDER — MAIN
+   ═══════════════════════════════════════════════ */
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+                document.getElementById("content").scrollTop = 0;
+                closeMobileSidebar();
+            }
+
+            /* ═══════════════════════════════════════════════
+   RENDER — PHASE BAR
+   ═══════════════════════════════════════════════ */
+            function renderPbar() {
+                const s = STEPS[cur];
+                if (!s) return;
+                const curPh = s.ph;
+                let html = "";
+                PHASES.forEach((ph, i) => {
+                    if (i > 0) html += '<span class="ph-sep">\u203A</span>';
+                    let cls = "";
+                    if (i === curPh) cls = "active";
+                    else if (i < curPh) cls = "done";
+                    html +=
+                        '<span class="ph-item"><span class="ph-lbl ' +
+                        cls +
+                        '">' +
+                        (i + 1) +
+                        ". " +
+                        ph +
+                        "</span></span>";
+                });
+                document.getElementById("pbar").innerHTML = html;
+            }
+
+            /* ═══════════════════════════════════════════════
+   RENDER — BREADCRUMB
+   ═══════════════════════════════════════════════ */
+            function trunc(s, n) {
+                return s.length > n ? s.substring(0, n) + "\u2026" : s;
+            }
+
+            function renderBreadcrumb() {
+                const s = STEPS[cur];
+                if (!s) return;
+                let items = [];
+                hist.forEach((h, i) => {
+                    const step = STEPS[h.s];
+                    if (step)
+                        items.push({ title: trunc(step.t, 28), index: i });
+                });
+                items.push({ title: trunc(s.t, 28), index: -1 });
+
+                let html = "";
+                items.forEach((it, i) => {
+                    if (i > 0) html += '<span class="bc-sep">\u203A</span>';
+                    if (it.index === -1) {
+                        html +=
+                            '<span class="bc-item bc-current">' +
+                            escHtml(it.title) +
+                            "</span>";
+                    } else {
+                        html +=
+                            '<button class="bc-item bc-past" onclick="goBackTo(' +
+                            it.index +
+                            ')">' +
+                            escHtml(it.title) +
+                            "</button>";
+                    }
+                });
+                document.getElementById("breadcrumb").innerHTML = html;
+            }
+
+            /* ═══════════════════════════════════════════════
+   HELPERS
+   ═══════════════════════════════════════════════ */
+            function getVisitedKeys() {
+                let keys = [];
+                hist.forEach((h) => keys.push(h.s));
+                keys.push(cur);
+                return keys;
+            }
+
+            function getReachableKeys() {
+                let reachable = new Set();
+                let queue = [cur];
+                while (queue.length) {
+                    let k = queue.shift();
+                    if (reachable.has(k)) continue;
+                    reachable.add(k);
+                    const s = STEPS[k];
+                    if (!s) continue;
+                    if (s.nx) queue.push(s.nx);
+                    if (s.opts) s.opts.forEach((o) => queue.push(o.n));
+                }
+                return reachable;
+            }
+
+            function actorLabel(ac) {
+                return { laj: "LAJ", juez: "Juez", ambos: "Ambos" }[ac] || ac;
+            }
+
+            /* ═══════════════════════════════════════════════
+   RENDER — SIDEBAR
+   ═══════════════════════════════════════════════ */
+            function renderSidebar() {
+                renderSbMap();
+                renderSbJourney();
+            }
+
+            function renderSbMap() {
+                const sbMapEl = document.getElementById("sb-map");
+                if (!sbMapEl) return;
+                const visited = new Set(getVisitedKeys());
+                const reachable = getReachableKeys();
+                let html = "";
+                PHASES.forEach((ph, pi) => {
+                    const isCollapsed = collapsedPhases[pi];
+                    html += '<div class="sm-phase">';
+                    html +=
+                        '<div class="sm-phase-hdr' +
+                        (isCollapsed ? " collapsed" : "") +
+                        '" onclick="togglePhase(' +
+                        pi +
+                        ')">';
+                    html +=
+                        '<span class="arrow">\u25BC</span> ' +
+                        (pi + 1) +
+                        ". " +
+                        ph +
+                        "</div>";
+                    html +=
+                        '<div class="sm-phase-body"' +
+                        (isCollapsed ? ' style="display:none"' : "") +
+                        ">";
+                    Object.entries(STEPS).forEach(([k, s]) => {
+                        if (s.ph !== pi) return;
+                        let cls = "";
+                        if (k === cur) cls = "sm-current";
+                        else if (visited.has(k)) cls = "sm-visited";
+                        else if (!reachable.has(k)) cls = "sm-unreachable";
+                        if (s.end) cls += " sm-end";
+                        html +=
+                            '<div class="sm-node ' +
+                            cls +
+                            '" onclick="jumpTo(\'' +
+                            escQ(k) +
+                            '\')" title="' +
+                            escHtml(s.t) +
+                            '">';
+                        html +=
+                            '<span class="nd-icon"></span>' +
+                            escHtml(trunc(s.t, 30));
+                        if (s.end) html += " \u00B7";
+                        html += "</div>";
+                    });
+                    html += "</div></div>";
+                });
+                sbMapEl.innerHTML = html + SB_FOOT;
+            }
+
+            function renderSbJourney() {
+                const sbJourneyEl = document.getElementById("sb-journey");
+                if (!sbJourneyEl) return;
+                let html = "";
+                hist.forEach((h, i) => {
+                    const step = STEPS[h.s];
+                    if (!step) return;
+                    html +=
+                        '<div class="pi past"><span>' +
+                        escHtml(trunc(step.t, 30)) +
+                        "</span>";
+                    if (h.c)
+                        html +=
+                            '<div class="pi-choice">' + escHtml(h.c) + "</div>";
+                    html += "</div>";
+                });
+                const curStep = STEPS[cur];
+                if (curStep) {
+                    html +=
+                        '<div class="pi current">' +
+                        escHtml(trunc(curStep.t, 30)) +
+                        "</div>";
+                }
+                html += SB_FOOT;
+                sbJourneyEl.innerHTML = html;
+            }
+
+            function togglePhase(pi) {
+                collapsedPhases[pi] = !collapsedPhases[pi];
+                renderSbMap();
+            }
+
+            /* ═══════════════════════════════════════════════
+   RENDER — CONTENT CARD
+   ═══════════════════════════════════════════════ */
+            function renderContent() {
+                const s = STEPS[cur];
+                if (!s) {
+                    document.getElementById("content").innerHTML =
+                        "<p>Paso no encontrado.</p>";
+                    return;
+                }
+                document.getElementById("content").innerHTML = s.end
+                    ? buildEnd(cur, s)
+                    : buildStep(cur, s);
+            }
+
+            function buildStep(id, s) {
+                const phName = PHASES[s.ph] || "";
+                const stepNum = hist.length + 1;
+                let h = '<div class="card">';
+                h += '<div class="c-hdr">';
+                h +=
+                    '<span class="act-badge act-' +
+                    s.ac +
+                    '">' +
+                    actorLabel(s.ac) +
+                    "</span>";
+                h += '<div class="c-title">' + escHtml(s.t) + "</div>";
+                h +=
+                    '<div class="step-num">Paso ' +
+                    stepNum +
+                    " de este recorrido \u00B7 Fase " +
+                    (s.ph + 1) +
+                    ": " +
+                    phName +
+                    "</div>";
+                h += "</div>";
+                h += '<div class="c-body">';
+                if (s.c)
+                    s.c.forEach((b) => {
+                        h += renderBlock(b);
+                    });
+                h += "</div>";
+                if (s.q) {
+                    h += '<div class="dec-area">';
+                    h += '<div class="dec-q">' + s.q + "</div>";
+                    h += '<div class="dec-opts">';
+                    if (s.opts)
+                        s.opts.forEach((o) => {
+                            const v = o.v || "neutral";
+                            h +=
+                                '<button class="dec-btn ' +
+                                v +
+                                '" onclick="goTo(\'' +
+                                escQ(o.n) +
+                                "','" +
+                                escQ(o.t) +
+                                "')\">";
+                            h += '<span class="dec-letter">' + o.l + "</span>";
+                            h += "<span>" + escHtml(o.t) + "</span>";
+                            h += "</button>";
+                        });
+                    h += "</div></div>";
+                }
+                h += '<div class="c-nav">';
+                h +=
+                    '<button class="btn-back" onclick="goBack()"' +
+                    (hist.length === 0 ? " disabled" : "") +
+                    ">\u2190 Volver</button>";
+                if (s.nx)
+                    h +=
+                        '<button class="btn-next" onclick="goTo(\'' +
+                        escQ(s.nx) +
+                        "','')\">Siguiente \u2192</button>";
+                h += "</div>";
+                h += "</div>";
+                return h;
+            }
+
+            function buildEnd(id, s) {
+                const icons = {
+                    success: "\u2705",
+                    error: "\u274C",
+                    warning: "\u26A0\uFE0F",
+                    neutral: "\u2139\uFE0F",
+                };
+                const titles = {
+                    success: "Procedimiento concluido",
+                    error: "Procedimiento denegado",
+                    warning: "V\u00EDa espec\u00EDfica",
+                    neutral: "Fin del recorrido",
+                };
+                let h = '<div class="card end-' + s.end + '">';
+                h += '<div class="end-body">';
+                h += '<div class="end-icon">' + (icons[s.end] || "") + "</div>";
+                h +=
+                    '<div class="end-title">' +
+                    (titles[s.end] || "Fin") +
+                    "</div>";
+                h +=
+                    '<div class="end-sub">El procedimiento ha concluido en esta v\u00EDa</div>';
+                h += '<div class="end-btns">';
+                h +=
+                    '<button class="btn-next" onclick="restart()">\u8635 Nuevo procedimiento</button>';
+                h +=
+                    '<button class="btn-back" onclick="goBack()">\u2190 Volver</button>';
+                h += "</div></div>";
+                if (s.c) {
+                    h += '<div class="end-content">';
+                    s.c.forEach((b) => {
+                        h += renderBlock(b);
+                    });
+                    h += "</div>";
+                }
+                h +=
+                    '<div class="summary-box"><h4>Resumen del recorrido</h4><ol>';
+                hist.forEach((hi, i) => {
+                    const step = STEPS[hi.s];
+                    if (step) {
+                        h += "<li>" + escHtml(step.t);
+                        if (hi.c)
+                            h +=
+                                " \u2014 <strong>" +
+                                escHtml(hi.c) +
+                                "</strong>";
+                        h += "</li>";
+                    }
+                });
+                h +=
+                    "<li><strong>" +
+                    escHtml(s.t) +
+                    "</strong> (desenlace)</li>";
+                h += "</ol></div>";
+                h += "</div>";
+                return h;
+            }
+
+            function renderBlock(b) {
+                switch (b[0]) {
+                    case "i":
+                        return '<p class="intro">' + b[1] + "</p>";
+                    case "d":
+                        return (
+                            '<div class="deadline"><span>\u23F0</span><span>' +
+                            b[1] +
+                            "</span></div>"
+                        );
+                    case "n":
+                        return (
+                            '<div class="note"><span>\u2139</span><span>' +
+                            b[1] +
+                            "</span></div>"
+                        );
+                    case "w":
+                        return (
+                            '<div class="warn"><span>\u26A0</span><span>' +
+                            b[1] +
+                            "</span></div>"
+                        );
+                    case "l":
+                        return (
+                            '<div class="law-ref"><span>\u00A7</span><span>' +
+                            b[1] +
+                            "</span></div>"
+                        );
+                    case "cl":
+                        let h =
+                            '<div><div class="cl-title">' +
+                            b[1] +
+                            '</div><ul class="checklist">';
+                        (b[2] || []).forEach((it) => {
+                            h += "<li>" + it + "</li>";
+                        });
+                        h += "</ul></div>";
+                        return h;
+                    default:
+                        return "<p>" + b[1] + "</p>";
+                }
+            }
+
+            /* ═══════════════════════════════════════════════
+   SIDEBAR TABS
+   ═══════════════════════════════════════════════ */
+            function sbTab(tab) {
+                activeSbTab = tab;
+                document.getElementById("sb-map").style.display =
+                    tab === "map" ? "block" : "none";
+                document.getElementById("sb-journey").style.display =
+                    tab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach((t, i) => {
+                    t.classList.toggle(
+                        "active",
+                        (i === 0 && tab === "map") ||
+                            (i === 1 && tab === "journey"),
+                    );
+                });
+            }
+
+            /* ═══════════════════════════════════════════════
+   MAPA OVERLAY
+   ═══════════════════════════════════════════════ */
+            function toggleMapa() {
+                mapaOn = !mapaOn;
+                document.getElementById("layout").style.display = mapaOn
+                    ? "none"
+                    : "flex";
+                document.getElementById("mapa-overlay").style.display = mapaOn
+                    ? "block"
+                    : "none";
+                if (mapaOn) renderMapa();
+                closeMobileSidebar();
+            }
+
+            function renderMapa() {
+                const visited = new Set(getVisitedKeys());
+                let h =
+                    '<div class="mapa-close-bar"><h2>Mapa completo del procedimiento</h2><button onclick="toggleMapa()">\u2190 Volver al recorrido</button></div>';
+                h += '<div class="mapa-cols">';
+                PHASES.forEach((ph, pi) => {
+                    h += '<div class="mapa-col">';
+                    h +=
+                        '<div class="mapa-phase-title">' +
+                        (pi + 1) +
+                        ". " +
+                        ph +
+                        "</div>";
+                    h += '<div class="mapa-nodes">';
+                    Object.entries(STEPS).forEach(([k, s]) => {
+                        if (s.ph !== pi) return;
+                        let cls = "";
+                        if (k === cur) cls = "mn-current";
+                        else if (visited.has(k)) cls = "mn-visited";
+                        if (s.end) cls += " mn-end-" + s.end;
+                        h += '<div class="mapa-node ' + cls + '">';
+                        h += '<div class="mn-title">' + escHtml(s.t) + "</div>";
+                        h +=
+                            '<div class="mn-actor">' +
+                            actorLabel(s.ac) +
+                            (s.end ? " \u00B7 Final" : "") +
+                            "</div>";
+                        h += "</div>";
+                        if (s.nx)
+                            h += '<div class="mapa-arrow">Siguiente paso</div>';
+                        if (s.opts)
+                            s.opts.forEach((o) => {
+                                h +=
+                                    '<div class="mapa-arrow">' +
+                                    escHtml(o.l + ": " + trunc(o.t, 45)) +
+                                    "</div>";
+                            });
+                    });
+                    h += "</div></div>";
+                });
+                h += "</div>";
+                document.getElementById("mapa-overlay").innerHTML = h;
+            }
+
+            /* ═══════════════════════════════════════════════
+   DIRECT ACCESS
+   ═══════════════════════════════════════════════ */
+            function openDirect() {
+                document.getElementById("direct-overlay").style.display =
+                    "block";
+                renderDirectList("");
+                document.querySelector(".direct-search").value = "";
+                document.querySelector(".direct-search").focus();
+            }
+            function closeDirect() {
+                document.getElementById("direct-overlay").style.display =
+                    "none";
+            }
+            function filterDirect(term) {
+                renderDirectList(term.toLowerCase());
+            }
+            function renderDirectList(term) {
+                let h = "";
+                Object.entries(STEPS).forEach(([k, s]) => {
+                    const match =
+                        !term ||
+                        s.t.toLowerCase().includes(term) ||
+                        (PHASES[s.ph] || "").toLowerCase().includes(term);
+                    if (!match) return;
+                    const endCls = s.end ? " ds-end" : "";
+                    h +=
+                        '<div class="direct-step' +
+                        endCls +
+                        '" onclick="jumpTo(\'' +
+                        escQ(k) +
+                        "')\">";
+                    h += '<span class="ds-phase">F' + (s.ph + 1) + "</span>";
+                    h +=
+                        '<div><div class="ds-title">' + escHtml(s.t) + "</div>";
+                    h +=
+                        '<div class="ds-actor">' +
+                        actorLabel(s.ac) +
+                        (s.end ? " \u00B7 Final" : "") +
+                        "</div></div>";
+                    h += "</div>";
+                });
+                document.getElementById("direct-list").innerHTML =
+                    h ||
+                    '<p style="color:var(--muted);padding:14px;">No se encontraron pasos.</p>';
+            }
+
+            /* ═══════════════════════════════════════════════
+   DOWNLOAD
+   ═══════════════════════════════════════════════ */
+            function dlGuia() {
+                const html =
+                    "<!DOCTYPE html>" + document.documentElement.outerHTML;
+                const blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "guia-tramitacion.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            /* ═══════════════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════════════ */
+            function escQ(s) {
+                return String(s).replace(/'/g, "&#39;").replace(/\\/g, "\\\\");
+            }
+            function escHtml(s) {
+                return String(s)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;");
+            }
+
+            let zoomLevel = 100;
+            function clampNum(v, min, max) {
+                return Math.min(max, Math.max(min, v));
+            }
+            function setZoom(pct) {
+                zoomLevel = clampNum(Math.round(pct), 80, 140);
+                const content = document.getElementById("content");
+                if (content) content.style.zoom = String(zoomLevel / 100);
+                const lbl = document.getElementById("zoomLabel");
+                if (lbl) lbl.textContent = zoomLevel + "%";
+            }
+            function zoomIn() {
+                setZoom(zoomLevel + 10);
+            }
+            function zoomOut() {
+                setZoom(zoomLevel - 10);
+            }
+
+            /* ═══════════════════════════════════════════════
+   INIT
+   ═══════════════════════════════════════════════ */
+            window.addEventListener("load", function () {
+                setZoom(zoomLevel);
+                // Eventos para toggle sidebar
+                document
+                    .getElementById("btnToggleSidebar")
+                    .addEventListener("click", toggleSidebar);
+                document
+                    .getElementById("sidebarBackdrop")
+                    .addEventListener("click", closeMobileSidebar);
+                window.addEventListener("resize", handleResize);
+                handleResize();
+                render();
+            });
+        </script>
+    </body>
+</html>

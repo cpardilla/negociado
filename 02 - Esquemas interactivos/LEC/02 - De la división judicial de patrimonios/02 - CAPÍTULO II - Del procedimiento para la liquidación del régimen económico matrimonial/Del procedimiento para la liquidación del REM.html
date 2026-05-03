@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liquidación del Régimen Económico Matrimonial — LEC Arts. 806–811 · Esquema Definitivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-ui: 'Outfit',system-ui,sans-serif;
+  --transition: 200ms ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text-1);font-family:var(--font-ui);font-size:14px;line-height:1.6}
+
+/* HEADER */
+.site-header{background:var(--header-bg);color:var(--header-text);padding:2rem 1.5rem 1.75rem}
+.header-inner { max-width: 1400px; margin: 0 auto; }
+    .header-breadcrumb { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: .75rem; }
+.header-title{font-family:var(--font-display);font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;color:var(--header-text);margin-bottom:.5rem;line-height:1.2}
+.header-subtitle{font-size:13px;color:rgba(248,245,237,.55);margin-bottom:1rem}
+.header-meta{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem}
+.header-tag{background:rgba(200,169,110,.15);border:1px solid rgba(200,169,110,.3);color:var(--accent);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:500}
+.header-actions{margin-left:auto}
+.btn-ghost{background:transparent;border:1px solid rgba(248,245,237,.15);color:rgba(248,245,237,.7);border-radius:var(--radius-sm);padding:6px 14px;font-size:12px;cursor:pointer;transition:var(--transition)}
+.btn-ghost:hover{background:rgba(248,245,237,.08)}
+
+/* STATS */
+.stats-bar{background:var(--surface);border-bottom:1px solid var(--border)}
+.stats-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:1.1rem 1.5rem;text-align:center;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-value{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--text-1);line-height:1}
+.stat-label{font-size:12px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem}
+@media(max-width:640px){.stats-inner{grid-template-columns:repeat(2,1fr)}.stat-item:nth-child(2){border-right:none}.stat-item:nth-child(3){border-top:1px solid var(--border)}}
+
+/* CONTROLS */
+.controls-bar{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.controls-inner{max-width:1400px;margin:0 auto;padding:.5rem 1.5rem;display:flex;align-items:center;gap:.6rem;flex-wrap:nowrap;overflow:hidden}
+.search-wrap{position:relative;flex:0 0 240px}
+.search-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--text-3)}
+.search-input{width:100%;padding:7px 10px 7px 34px;border:1px solid var(--border-md);border-radius:var(--radius-sm);font-family:var(--font-ui);font-size:13px;background:var(--surface);color:var(--text-1);outline:none;transition:var(--transition)}
+.search-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(200,169,110,.12)}
+.filter-pills{display:flex;gap:.35rem;flex-wrap:nowrap;overflow-x:auto;flex:1;scrollbar-width:none}
+.filter-pills::-webkit-scrollbar{display:none}
+.pill{padding:5px 12px;border-radius:20px;border:1px solid var(--border-md);background:var(--surface);color:var(--text-2);font-size:12px;font-weight:500;cursor:pointer;transition:var(--transition);white-space:nowrap}
+.pill:hover{background:var(--surface-2)}
+.pill.active[data-cat="all"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.pill.active[data-cat="c1"]{background:var(--c1);border-color:var(--c1);color:#fff}
+.pill.active[data-cat="c2"]{background:var(--c2);border-color:var(--c2);color:#fff}
+.pill.active[data-cat="c3"]{background:var(--c3);border-color:var(--c3);color:#fff}
+.pill.active[data-cat="c4"]{background:var(--c4);border-color:var(--c4);color:#fff}
+.pill.active[data-cat="c5"]{background:var(--c5);border-color:var(--c5);color:#fff}
+.ctrl-actions{display:flex;align-items:center;gap:.4rem;margin-left:auto}
+.btn-ctrl{padding:5px 10px;border:1px solid var(--border-md);background:var(--surface);border-radius:var(--radius-sm);font-size:12px;color:var(--text-2);cursor:pointer;transition:var(--transition);white-space:nowrap}
+.btn-ctrl:hover{background:var(--surface-2)}
+.zoom-cluster{display:flex;border:1px solid var(--border-md);border-radius:var(--radius-sm);overflow:hidden}
+.btn-zoom{border:none;border-right:1px solid var(--border-md);background:var(--surface);color:var(--text-2);width:28px;height:28px;font-size:14px;cursor:pointer;transition:var(--transition)}
+.btn-zoom:last-child{border-right:none;border-left:1px solid var(--border-md)}
+.btn-zoom:hover{background:var(--surface-2)}
+.btn-zoom:disabled{opacity:.35;cursor:not-allowed}
+.zoom-label{font-size:12px;font-weight:500;min-width:42px;text-align:center;line-height:28px;color:var(--text-2);background:var(--surface);padding:0 4px}
+@media(max-width:768px){.ctrl-actions{display:none}}
+
+/* MAIN */
+.page-main{max-width:1400px;margin:0 auto;padding:1.5rem}
+
+/* SECTIONS */
+.map-section{margin-bottom:2rem}
+.section-heading{display:flex;align-items:center;gap:.75rem;cursor:pointer;padding:.6rem 0;user-select:none}
+.section-heading:hover .section-heading-text{color:var(--c1)}
+.section-heading-text{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--text-1)}
+.section-heading-count{font-size:11px;font-weight:600;color:var(--text-3);background:var(--surface-2);border:1px solid var(--border);border-radius:20px;padding:2px 9px}
+.section-toggle-btn{margin-left:auto;background:none;border:none;font-size:13px;color:var(--text-3);cursor:pointer}
+.section-divider{border:none;border-top:1px solid var(--border);margin-bottom:1rem}
+.section-body.collapsed{display:none}
+
+/* CARD GRID */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.card-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:960px){.card-grid.cols-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.card-grid{grid-template-columns:1fr}.card-grid.cols-3{grid-template-columns:1fr}}
+
+/* CARDS */
+.map-card{background:var(--surface);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);border-left:4px solid transparent;display:flex;flex-direction:column;transition:box-shadow var(--transition);overflow:hidden}
+.map-card:hover{box-shadow:var(--shadow-md)}
+.map-card[data-cat="c1"]{border-left-color:var(--c1)}
+.map-card[data-cat="c2"]{border-left-color:var(--c2)}
+.map-card[data-cat="c3"]{border-left-color:var(--c3)}
+.map-card[data-cat="c4"]{border-left-color:var(--c4)}
+.map-card[data-cat="c5"]{border-left-color:var(--c5)}
+.map-card[data-cat="c6"]{border-left-color:var(--c6)}
+.map-card.hidden{display:none}
+
+.card-top{padding:1rem 1rem .75rem}
+.card-meta{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;flex-wrap:wrap}
+.art-badge{font-size:11px;font-weight:600;border-radius:20px;padding:2px 9px;border:1px solid}
+[data-cat="c1"] .art-badge{color:var(--c1);background:var(--c1bg);border-color:var(--c1bd)}
+[data-cat="c2"] .art-badge{color:var(--c2);background:var(--c2bg);border-color:var(--c2bd)}
+[data-cat="c3"] .art-badge{color:var(--c3);background:var(--c3bg);border-color:var(--c3bd)}
+[data-cat="c4"] .art-badge{color:var(--c4);background:var(--c4bg);border-color:var(--c4bd)}
+[data-cat="c5"] .art-badge{color:var(--c5);background:var(--c5bg);border-color:var(--c5bd)}
+[data-cat="c6"] .art-badge{color:var(--c6);background:var(--c6bg);border-color:var(--c6bd)}
+
+.status-tag{font-size:10px;font-weight:600;border-radius:4px;padding:2px 7px}
+.tag-warn{background:#fef3c7;color:#92400e}
+.tag-alert{background:#fee2e2;color:#991b1b}
+.tag-info{background:#dbeafe;color:#1e40af}
+.tag-ok{background:#d1fae5;color:#065f46}
+.tag-gray{background:var(--surface-2);color:var(--text-2);border:1px solid var(--border)}
+
+.card-title{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--text-1);margin-bottom:.3rem;line-height:1.3}
+.card-subtitle{font-size:12px;color:var(--text-2);line-height:1.5}
+
+.card-counters{display:flex;align-items:center;padding:.45rem 1rem;border-top:1px solid var(--border);background:var(--surface-2);font-size:11px;color:var(--text-3);flex-wrap:wrap;gap:.5rem}
+.counter-badge strong{color:var(--text-1);font-weight:600}
+
+.card-toggle-btn{display:flex;align-items:center;justify-content:space-between;padding:.55rem 1rem;background:var(--surface-2);border:none;border-top:1px solid var(--border);font-family:var(--font-ui);font-size:12px;color:var(--text-2);cursor:pointer;width:100%;text-align:left;transition:background var(--transition)}
+.card-toggle-btn:hover{background:#eae9e4}
+.toggle-icon{transition:transform var(--transition);display:inline-block}
+.map-card.expanded .toggle-icon{transform:rotate(180deg)}
+
+.card-body{display:none;padding:0 1rem 1rem;border-top:1px solid var(--border)}
+.map-card.expanded .card-body{display:block}
+
+.inner-section{margin-top:.85rem}
+.inner-heading{display:flex;align-items:center;gap:.5rem;font-size:12px;font-weight:600;color:var(--text-1);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.45rem}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+[data-cat="c1"] .dot{background:var(--c1)}
+[data-cat="c2"] .dot{background:var(--c2)}
+[data-cat="c3"] .dot{background:var(--c3)}
+[data-cat="c4"] .dot{background:var(--c4)}
+[data-cat="c5"] .dot{background:var(--c5)}
+[data-cat="c6"] .dot{background:var(--c6)}
+
+.inner-body{padding-left:.25rem}
+.inner-list{list-style:none}
+.inner-list li{position:relative;padding-left:.8rem;margin-bottom:.25rem;font-size:12.5px;color:var(--text-2);line-height:1.55}
+.inner-list li::before{content:'–';position:absolute;left:0;color:var(--text-3)}
+.inner-list li strong{color:var(--text-1);font-weight:500}
+.inner-list em{color:var(--text-3);font-style:italic;font-size:11.5px}
+
+.sub-list{list-style:none;margin-top:.25rem;margin-left:.8rem}
+.sub-list li{position:relative;padding-left:.7rem;margin-bottom:.15rem;font-size:12px;color:var(--text-2)}
+.sub-list li::before{content:'·';position:absolute;left:0;color:var(--text-3)}
+
+.card-refs{display:flex;flex-wrap:wrap;gap:.35rem;padding:.6rem 1rem;border-top:1px solid var(--border);background:var(--surface)}
+.ref-tag{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:11px;color:var(--text-2);padding:2px 8px}
+
+/* NO RESULTS */
+.no-results{grid-column:1/-1;text-align:center;padding:3rem 1rem;color:var(--text-3);font-size:14px;display:none}
+
+/* FLOW DIAGRAM (from doc 02) */
+.flow-diagram{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem}
+.flow-step{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem}
+.flow-step:last-child{margin-bottom:0}
+.flow-num{min-width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0}
+.flow-content{flex:1}
+.flow-title{font-weight:600;font-size:13px;color:var(--text-1);margin-bottom:.2rem}
+.flow-desc{font-size:12px;color:var(--text-2)}
+.flow-arrow{text-align:center;color:var(--text-3);font-size:18px;margin:.25rem 0 .5rem 44px}
+
+/* TIMELINE */
+.table-wrap{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface)}
+.timeline-table{width:100%;border-collapse:collapse;font-size:13px}
+.timeline-table thead th{background:var(--surface-2);color:var(--text-2);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:.65rem 1rem;text-align:left;border-bottom:1px solid var(--border)}
+.timeline-table tbody tr{border-bottom:1px solid var(--border);transition:background var(--transition)}
+.timeline-table tbody tr:last-child{border-bottom:none}
+.timeline-table tbody tr:hover{background:var(--surface-2)}
+.timeline-table td{padding:.65rem 1rem;vertical-align:top}
+.td-tramite{font-size:13px;color:var(--text-1);font-weight:500}
+.td-norm{font-size:12px;color:var(--text-3)}
+.plazo-badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.plazo-days{background:#fef3c7;color:#92400e}
+.plazo-weeks{background:#dbeafe;color:#1e40af}
+.plazo-months{background:#d1fae5;color:#065f46}
+.plazo-years{background:#fee2e2;color:#991b1b}
+.plazo-other{background:var(--surface-2);color:var(--text-2)}
+
+/* PARTICIPANTS */
+.participants-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+@media(max-width:1100px){.participants-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.participants-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.participants-grid{grid-template-columns:1fr}}
+.participant-col{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm)}
+.participant-col-head{padding:.5rem .85rem;font-size:12px;font-weight:600;color:#fff}
+.phead-c1{background:var(--c1)}.phead-c2{background:var(--c2)}.phead-c3{background:var(--c3)}
+.phead-c4{background:var(--c4)}.phead-c5{background:var(--c5)}.phead-c6{background:var(--c6)}
+.participant-col ul{list-style:none;padding:.5rem 0}
+.participant-col li{font-size:12.5px;color:var(--text-2);padding:.3rem .85rem;border-bottom:1px solid var(--border)}
+.participant-col li:last-child{border-bottom:none}
+.participant-note{font-size:11px;color:var(--text-3);font-style:italic}
+
+/* NORM GRID */
+.norm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:960px){.norm-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.norm-grid{grid-template-columns:1fr}}
+.norm-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);padding:1rem;display:flex;flex-direction:column;gap:.4rem}
+.norm-law{font-size:11px;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.norm-title{font-size:13px;font-weight:500;color:var(--text-1)}
+.norm-arts{font-size:12px;color:var(--text-2);line-height:1.6;flex:1}
+.norm-tag{display:inline-block;margin-top:.4rem;font-size:10px;font-weight:600;border-radius:4px;padding:2px 8px}
+
+/* LEGEND */
+.legend-footer{background:var(--header-bg);color:var(--header-text);padding:1.5rem;margin-top:3rem}
+.legend-inner{max-width:1400px;margin:0 auto}
+.legend-title{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:600;margin-bottom:.85rem}
+.legend-grid{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem;margin-bottom:1rem}
+.legend-item{display:flex;align-items:center;gap:.45rem;font-size:12px;color:rgba(248,245,237,.65)}
+.legend-swatch{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.legend-divider{width:1px;height:20px;background:rgba(248,245,237,.12)}
+.legend-copy{font-size:11px;color:rgba(248,245,237,.3);border-top:1px solid rgba(248,245,237,.08);padding-top:.75rem}
+
+@media print{
+  .controls-bar,.site-header .header-actions{display:none}
+  .card-body{display:block!important}
+  .inner-body{display:block!important}
+  .section-body{display:block!important}
+  .map-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
+  body{background:#fff}
+  .site-header,.legend-footer{background:#1a1a2e!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">LEY 1/2000, DE 7 DE ENERO, DE ENJUICIAMIENTO CIVIL · LIBRO IV: DE LOS PROCESOS ESPECIALES · TÍTULO II: DE LA DIVISIÓN JUDICIAL DE PATRIMONIOS · CAPÍTULO II</div>
+    <h1 class="header-title">Del procedimiento para la liquidación del régimen económico matrimonial</h1>
+    <p class="header-subtitle">Artículos 806 a 811 LEC y conexos (784–788)</p>
+    <div class="header-meta">
+      <span class="header-tag">LEC 1/2000</span>
+      <span class="header-tag">Arts. 806–811</span>
+      <span class="header-tag">Arts. conexos 784–788</span>
+      <span class="header-tag">Libro IV · Procesos especiales</span>
+      <span class="header-tag">CC arts. 1315–1444</span>
+      <span class="header-tag">Reg. (UE) 2016/1103</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">11</div>
+      <div class="stat-label">Artículos analizados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">18+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">12+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">7</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Ámbito y competencia</button>
+      <button class="pill" data-cat="c2">Inventario</button>
+      <button class="pill" data-cat="c3">Liquidación</button>
+      <button class="pill" data-cat="c4">Participación</button>
+      <button class="pill" data-cat="c5">Arts. conexos</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<main class="page-main">
+
+<!-- ══ SECCIÓN 1: ÁMBITO Y COMPETENCIA ══ -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-ambito">
+    <span class="section-heading-text">Ámbito de aplicación y competencia</span>
+    <span class="section-heading-count">2 artículos · 806–807</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-ambito">
+    <div class="card-grid cols-3">
+
+      <!-- ART. 806 -->
+      <article class="map-card" data-cat="c1" data-text="artículo 806 ámbito aplicación régimen económico matrimonial capitulaciones matrimoniales disposición legal masa común bienes derechos cargas obligaciones acuerdo cónyuges normas civiles sociedad gananciales participación foral separación bienes reglamento europeo convenio regulador notario">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 806</span>
+            <span class="status-tag tag-info">Ámbito general</span>
+          </div>
+          <h2 class="card-title">Ámbito de aplicación</h2>
+          <p class="card-subtitle">Delimita los regímenes económicos matrimoniales sujetos al procedimiento del capítulo y la condición subsidiaria de su aplicación.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>4</strong> regímenes incluidos</span>
+          <span class="counter-badge"><strong>2</strong> regímenes excluidos</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>1</strong> condición</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Función del precepto</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Norma de derecho procesal sustantivo:</strong> delimita el ámbito de aplicación del capítulo por referencia a la estructura del régimen (existencia de masa común) y remite al derecho civil material para su contenido.</li>
+              <li><strong>Regímenes incluidos:</strong> aquellos que, por capitulaciones matrimoniales o por disposición legal, determinen la existencia de una masa común de bienes y derechos sujeta a cargas y obligaciones.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Regímenes económicos incluidos</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Sociedad de gananciales</strong> (CC arts. 1344–1410): régimen legal supletorio en derecho común. Activo: bienes del trabajo, frutos de bienes privativos y comunes, adquisiciones a título oneroso a costa del caudal común (CC art. 1347). Pasivo: sostenimiento familiar, gastos de los bienes comunes, deudas conjuntas (CC arts. 1362–1374).</li>
+              <li><strong>Régimen de participación</strong> (CC arts. 1411–1434): separación durante el matrimonio; comunidad liquidatoria a la disolución. Liquidación con especialidades en el artículo 811.</li>
+              <li><strong>Regímenes forales de comunidad:</strong> conquistas navarras (Ley Foral 1/1973, Leyes 82–112), comunicación foral vasca (DLeg. 1/2023, arts. 127 y ss.), consorcio conyugal aragonés (DLeg. 1/2011, arts. 210–261), derecho civil catalán, gallego, balear y valenciano.</li>
+              <li><strong>Cualquier otro régimen de comunidad pactado</strong> en capitulaciones matrimoniales, siempre que genere masa común.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Regímenes excluidos</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Separación de bienes</strong> (CC arts. 1435–1444): no genera masa común; los bienes en copropiedad se dividen conforme a las normas de la comunidad ordinaria (CC arts. 392–406).</li>
+              <li><strong>Bienes privativos</strong> de cada cónyuge: quedan fuera del objeto de la liquidación, salvo en cuanto generadores de créditos de reintegro frente a la comunidad o viceversa (CC arts. 1364, 1390–1391).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Condición de aplicabilidad: defecto de acuerdo</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>El procedimiento es <strong>subsidiario</strong> del acuerdo privado. Si los cónyuges se han puesto de acuerdo, la liquidación puede instrumentarse vía:
+                <ul class="sub-list">
+                  <li><strong>Convenio regulador</strong> aprobado judicialmente (CC art. 90; LEC art. 774.1): el convenio puede incluir la liquidación del régimen y, aprobado por el juez, tiene valor de sentencia.</li>
+                  <li><strong>Escritura pública notarial</strong> (CC art. 1404 para gananciales): plena eficacia sin intervención judicial.</li>
+                </ul>
+              </li>
+              <li>Si el acuerdo es <strong>parcial</strong>, el procedimiento del capítulo se aplica al resto de la masa no acordada.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Normas civiles aplicables</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Código Civil</strong> (derecho común).</li>
+              <li><strong>Compilaciones y códigos civiles forales</strong> o especiales (art. 149.1.8.ª CE), de aplicación preferente en sus territorios.</li>
+              <li><strong>Reglamento (UE) 2016/1103</strong> del Consejo, de 24 de junio de 2016, aplicable desde el 29 de enero de 2019 para determinar la ley aplicable cuando concurre elemento de extranjería (distintas nacionalidades, residencia habitual en Estado miembro distinto del de celebración del matrimonio).</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">CC arts. 1315–1324</span>
+          <span class="ref-tag">CC arts. 1344–1410</span>
+          <span class="ref-tag">CC arts. 1411–1434</span>
+          <span class="ref-tag">CC art. 90 (conv. regulador)</span>
+          <span class="ref-tag">Reg. (UE) 2016/1103</span>
+        </div>
+      </article>
+
+      <!-- ART. 807 -->
+      <article class="map-card" data-cat="c1" data-text="artículo 807 competencia juzgado primera instancia violencia mujer nulidad separación divorcio disolución vis attractiva funcional territorial internacional reglamento europeo lopj 87 ter 49 bis inhibición reparto">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 807</span>
+            <span class="status-tag tag-info">Competencia</span>
+          </div>
+          <h2 class="card-title">Competencia</h2>
+          <p class="card-subtitle">Determina el juzgado competente para la liquidación mediante el principio de vis attractiva: el tribunal del proceso principal es el competente.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> órganos competentes</span>
+          <span class="counter-badge"><strong>3</strong> supuestos</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>Funcional</strong> e inderogable</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Principio de vis attractiva</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>La liquidación queda <strong>atraída</strong> al juzgado del proceso de crisis matrimonial, evitando la dispersión de procedimientos.</li>
+              <li>Competencia <strong>funcional</strong>: inderogable por sumisión expresa o tácita (LEC art. 62). Su infracción determina la nulidad de actuaciones.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Juzgado de Primera Instancia (JPI)</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Competente cuando el proceso de nulidad, separación o divorcio se sigue ante él (LEC arts. 769–770).</li>
+              <li>Competente también cuando la disolución del régimen se produce por causas civiles sin proceso matrimonial (CC art. 1392 para gananciales): concurso de acreedores, separación judicial, tutela, ausencia, incapacitación, abandono de familia.</li>
+              <li>En partidos judiciales con varios JPI, la liquidación se acumula al <strong>juzgado concreto</strong> que tramitó el proceso principal (LEC art. 68 sobre reparto).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Juzgado de Violencia sobre la Mujer (JVSM)</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Competente cuando el proceso principal se tramita ante él (arts. 87 ter LOPJ y 49 bis LEC, introducidos por la LO 1/2004).</li>
+              <li>La competencia civil del JVSM cesa si se dicta sentencia penal absolutoria firme o se archiva el procedimiento penal: <strong>inhibición</strong> a favor del JPI (art. 49 bis.4 LEC).</li>
+              <li>En este juzgado son especialmente relevantes las medidas de protección civil adoptadas (uso de la vivienda familiar, suspensión de la guarda y custodia).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Competencia objetiva y territorial</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Objetiva:</strong> siempre el JPI (arts. 85.1 LOPJ y 45 LEC). Nunca Juzgados de Paz ni Audiencias Provinciales en primera instancia.</li>
+              <li><strong>Territorial:</strong> la del juzgado del proceso principal. No opera la regla del domicilio del demandado al solicitar la liquidación.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Competencia internacional</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Reglamento (UE) 2016/1103:</strong> el tribunal competente para conocer de la sucesión o del divorcio/separación/nulidad lo es también para el régimen económico matrimonial (arts. 4–5).</li>
+              <li>En defecto de los criterios anteriores: tribunal del Estado miembro de la última residencia habitual común, de la nacionalidad común, o del domicilio de cualquier cónyuge (art. 6).</li>
+              <li>Los cónyuges pueden pactar la competencia del tribunal que haya de conocer de la disolución del matrimonio (art. 7 del Reglamento).</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">LEC art. 769</span>
+          <span class="ref-tag">LEC art. 49 bis</span>
+          <span class="ref-tag">LOPJ art. 87 ter</span>
+          <span class="ref-tag">LO 1/2004</span>
+          <span class="ref-tag">Reg. (UE) 2016/1103 arts. 4–7</span>
+        </div>
+      </article>
+
+      <div class="no-results" id="no-results">No se encontraron artículos para «<span id="no-results-term"></span>».</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECCIÓN 2: INVENTARIO ══ -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-inventario">
+    <span class="section-heading-text">Formación del inventario</span>
+    <span class="section-heading-count">2 artículos · 808–809</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-inventario">
+    <div class="card-grid cols-3">
+
+      <!-- ART. 808 -->
+      <article class="map-card" data-cat="c2" data-text="artículo 808 solicitud inventario demanda admisión cónyuges herederos propuesta partidas activo pasivo gananciales privativo reintegros documentos escrituras certificados tasaciones legitimación momento procesal">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 808</span>
+            <span class="status-tag tag-warn">Solicitud</span>
+          </div>
+          <h2 class="card-title">Solicitud de inventario</h2>
+          <p class="card-subtitle">Regula quién puede solicitar la formación de inventario, cuándo puede hacerlo y con qué documentación debe acompañarse la solicitud.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> legitimados</span>
+          <span class="counter-badge"><strong>2</strong> momentos habilitantes</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>3</strong> masas patrimoniales</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Naturaleza jurídica</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Acto de parte de <strong>impulso procedimental</strong>: no es una demanda en sentido estricto ni genera contestación formal de la parte contraria.</li>
+              <li>Carácter <strong>voluntario</strong>: los cónyuges pueden acordar extrajudicialmente el inventario (CC art. 1396 para gananciales). Solo si no hay acuerdo procede este trámite judicial.</li>
+              <li>No requiere procurador ni abogado obligatoriamente en esta fase inicial <em>(salvo que ya intervengan en el proceso principal)</em>.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Momento procesal habilitante</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Admisión de la demanda de nulidad, separación o divorcio:</strong> el legislador adelanta el momento a la mera admisión (no a la sentencia), facilitando la actuación temprana sobre el patrimonio común. La valoración de los bienes en la sociedad de gananciales se fijará, no obstante, en el momento de la disolución (CC art. 1396).</li>
+              <li><strong>Inicio del proceso de disolución por causa civil</strong> (CC art. 1392 para gananciales): concurso de acreedores, privación de patria potestad, separación judicial, tutela, ausencia, incapacitación o abandono de familia.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Legitimación</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Cualquiera de los cónyuges:</strong> con independencia de quién haya demandado en el proceso principal.</li>
+              <li><strong>Herederos de los cónyuges:</strong> únicamente si el cónyuge legitimado ha fallecido antes de formular la solicitud. Si son varios, deben actuar conjuntamente o designar representante común (CC art. 1058).</li>
+              <li><strong>Excluidos:</strong> los acreedores de los cónyuges (carecen de legitimación directa; deben esperar al proceso o acudir a la acción subrogatoria, CC art. 1111).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Contenido de la propuesta — Activo ganancial (CC arts. 1347–1361)</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Bienes obtenidos por el trabajo o industria de cualquier cónyuge durante el matrimonio.</li>
+              <li>Frutos, rentas e intereses producidos por bienes privativos y gananciales.</li>
+              <li>Bienes adquiridos a título oneroso a costa del caudal común (aunque la adquisición sea solo para uno de los cónyuges).</li>
+              <li>Empresas y establecimientos fundados durante la vigencia del régimen a expensas de los bienes comunes.</li>
+              <li>Bienes de naturaleza dudosa: presunción de ganancialidad (CC art. 1361).</li>
+              <li>Bienes adquiridos en parte con fondos comunes y en parte privativos: regla de proporcionalidad (CC art. 1354).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Contenido de la propuesta — Pasivo ganancial (CC arts. 1362–1374)</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Gastos de sostenimiento de la familia, alimentación y educación de los hijos comunes y los que convivan en el hogar.</li>
+              <li>Adquisición, tenencia y disfrute de los bienes comunes.</li>
+              <li>Administración ordinaria de los bienes privativos de cada cónyuge.</li>
+              <li>Deudas contraídas conjuntamente o por uno de ellos con consentimiento del otro.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Créditos de reintegro y compensación entre masas</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Reintegros al haber ganancial</strong> por gastos de la comunidad sufragados con bienes privativos de un cónyuge (CC art. 1364).</li>
+              <li><strong>Reintegros al haber privativo</strong> por bienes privativos empleados en beneficio de la comunidad (CC art. 1365.1).</li>
+              <li><strong>Indemnización al patrimonio privativo</strong> cuando bienes gananciales se apliquen a negocios privativos (CC art. 1390).</li>
+              <li><strong>Indemnización al patrimonio ganancial</strong> cuando bienes privativos generen ganancias integradas en la comunidad (CC art. 1391).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Documentación justificativa</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Títulos de propiedad de bienes inmuebles (escrituras públicas, notas registrales actualizadas).</li>
+              <li>Certificados bancarios de saldos, depósitos, fondos de inversión y planes de pensiones.</li>
+              <li>Escrituras de participaciones en sociedades o certificados del Registro Mercantil.</li>
+              <li>Tasaciones o informes periciales de valor de bienes de difícil valoración objetiva (inmuebles, empresas, obras de arte).</li>
+              <li>Documentación acreditativa de deudas pendientes (pólizas de crédito, préstamos hipotecarios, avales).</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">CC arts. 1347–1361</span>
+          <span class="ref-tag">CC arts. 1362–1374</span>
+          <span class="ref-tag">CC art. 1354</span>
+          <span class="ref-tag">CC arts. 1364, 1390–1391</span>
+          <span class="ref-tag">LEC art. 809</span>
+        </div>
+      </article>
+
+      <!-- ART. 809 -->
+      <article class="map-card" data-cat="c2" data-text="artículo 809 formación inventario letrado administración justicia diez días citación conformidad ficta acuerdo acta tribunal auto administración disposición bienes controversia juicio verbal sentencia incomparecencia recurso apelación medidas cautelares provisionales 103 cc">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 809</span>
+            <span class="status-tag tag-warn">Procedimiento</span>
+          </div>
+          <h2 class="card-title">Formación del inventario</h2>
+          <p class="card-subtitle">Regula el señalamiento, el desarrollo del acto de formación del inventario, los supuestos de incomparecencia y acuerdo, y la vía contenciosa para la resolución de controversias.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>4</strong> supuestos</span>
+          <span class="counter-badge"><strong>10 días</strong> plazo máx.</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>Mismo día/siguiente</strong> resolución</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>El LAJ: posición y funciones</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Actúa como <strong>fedatario judicial</strong> y director del acto, no como juzgador. Le incumbe señalar, citar, levantar acta y dar fe del resultado.</li>
+              <li>La función resolutoria sobre controversias de fondo (calificación de bienes, valoración de partidas) corresponde en todo caso al <strong>Tribunal</strong> (Juez o Magistrado).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Señalamiento y citación</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Plazo máximo de diez días</strong> desde la presentación de la solicitud hasta la celebración del acto.</li>
+              <li>Citación conforme a los artículos 152–168 LEC. Si los cónyuges tienen procurador constituido, la citación se entiende con este (LEC art. 153).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto 1 — Incomparecencia injustificada</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Conformidad ficta</strong> del incompareciente con la propuesta del cónyuge que haya comparecido. Mecanismo de sanción procesal que desincentiva la obstrucción.</li>
+              <li>«Sin mediar causa justificada»: la causa ha de alegarse y acreditarse en el momento o mediante escrito previo. La indefensión sobrevenida puede dar lugar a nulidad del acto (LEC art. 185 en relación con el art. 238.3 LOPJ).</li>
+              <li>La incomparecencia <strong>justificada</strong> (enfermedad acreditada, causa de fuerza mayor) no genera conformidad ficta; el LAJ señalará nueva fecha.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto 2 — Acuerdo entre los cónyuges</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Se consigna el inventario acordado en el acta, con valor de documento judicial.</li>
+              <li>El acto se da por concluido.</li>
+              <li>En el mismo día o en el siguiente, el <strong>Tribunal</strong> resolverá por auto sobre la administración y disposición de los bienes inventariados (LEC art. 773; CC art. 103.4).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Resolución del Tribunal sobre administración y disposición</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>El auto puede atribuir la <strong>administración exclusiva</strong> a uno de los cónyuges.</li>
+              <li>Puede establecer la necesidad de <strong>consentimiento conjunto</strong> para actos de disposición.</li>
+              <li>Puede nombrar <strong>administrador judicial</strong> en casos de conflicto grave o riesgo de deterioro del patrimonio.</li>
+              <li>Contra el auto: recurso de reposición (LEC art. 451) y, en su caso, apelación (LEC art. 455).</li>
+              <li>Complementa las medidas provisionales del artículo 103 CC y del artículo 773 LEC.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto 3 — Controversia sobre el inventario (art. 809.2)</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Causas: discrepancia sobre inclusión/exclusión de bienes, calificación jurídica (ganancial o privativo), importe o valor de una partida, existencia o cuantía de crédito de reintegro.</li>
+              <li>El LAJ hace constar en el acta las pretensiones y su fundamentación jurídica.</li>
+              <li>Señala <strong>vista</strong> conforme al <strong>juicio verbal</strong> (LEC arts. 437–447): señalamiento en los veinte días siguientes, práctica de prueba en el propio acto, sentencia en veinte días.</li>
+              <li>La <strong>sentencia</strong> aprueba el inventario, resuelve todas las cuestiones controvertidas y dispone sobre la administración y disposición de los bienes comunes.</li>
+              <li>Contra la sentencia: <strong>recurso de apelación</strong> (LEC arts. 455–467).</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">LEC arts. 152–168 (citaciones)</span>
+          <span class="ref-tag">LEC art. 773 (medidas)</span>
+          <span class="ref-tag">LEC arts. 437–447 (juicio verbal)</span>
+          <span class="ref-tag">LEC art. 455 (apelación)</span>
+          <span class="ref-tag">CC art. 103.4</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECCIÓN 3: LIQUIDACIÓN GENERAL ══ -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-liquidacion">
+    <span class="section-heading-text">Liquidación del régimen económico matrimonial</span>
+    <span class="section-heading-count">1 artículo · 810</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-liquidacion">
+    <div class="card-grid cols-3">
+
+      <!-- ART. 810 -->
+      <article class="map-card" data-cat="c3" data-text="artículo 810 liquidación régimen económico matrimonial inventario firme resolución cónyuges herederos propuesta indemnizaciones reintegros remanente lotes preferencias vivienda habitual local profesional diez días contador peritos acuerdo acta 788 784 785 ejecutiva fiscal registro propiedad ajd itp adjudicación">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 810</span>
+            <span class="status-tag tag-ok">Liquidación general</span>
+          </div>
+          <h2 class="card-title">Liquidación del régimen económico matrimonial</h2>
+          <p class="card-subtitle">Establece el procedimiento completo de liquidación: requisitos de acceso, contenido de la propuesta, comparecencia ante el LAJ y vías de resolución según el resultado (acuerdo o falta de acuerdo).</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> requisitos previos</span>
+          <span class="counter-badge"><strong>3</strong> supuestos</span>
+          <span class="counter-badge"><strong>10 días</strong> plazo</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>Art. 788</strong> ejecución</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Naturaleza y finalidad</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Efecto constitutivo:</strong> transforma las cuotas abstractas sobre el patrimonio común en titularidades singulares y exclusivas sobre bienes o derechos concretos. A diferencia del inventario (descriptivo), la liquidación es extintiva y atributiva.</li>
+              <li><strong>No es una transmisión:</strong> implica especificación de derechos preexistentes, con importantes consecuencias fiscales (AJD, no ITP onerosa).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Requisitos previos y legitimación</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Conclusión del inventario</strong> con firmeza (por acuerdo o por sentencia firme del art. 809.2).</li>
+              <li><strong>Firmeza de la resolución de disolución</strong> (en su caso): la sentencia de separación, divorcio o nulidad, o el auto de disolución por causa civil, debe ser firme (LEC art. 207.2). La firmeza impide que la reconciliación conyugal (CC art. 84) reabra el régimen ya disuelto.</li>
+              <li><strong>Legitimados:</strong> cualquier cónyuge o, fallecido, sus herederos.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Contenido de la propuesta — Indemnizaciones y reintegros</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Reintegros al haber ganancial por gastos de la comunidad sufragados con bienes privativos (CC art. 1364).</li>
+              <li>Reintegros al haber privativo por bienes privativos empleados en la comunidad (CC art. 1365.1).</li>
+              <li>Indemnización al patrimonio privativo cuando bienes gananciales se aplicaron a negocios privativos (CC art. 1390).</li>
+              <li>Indemnización al patrimonio ganancial cuando bienes privativos generaron ganancias comunes (CC art. 1391).</li>
+              <li>Abono de cantidades adeudadas por cualquier cónyuge a la sociedad (CC art. 1397.3).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Contenido de la propuesta — División del remanente y formación de lotes</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>División por mitad</strong> del remanente en la sociedad de gananciales (CC art. 1404).</li>
+              <li><strong>Preferencias en la formación de lotes</strong> (CC arts. 1406–1407):
+                <ul class="sub-list">
+                  <li>Bienes de uso personal no suntuario (CC art. 1406.1).</li>
+                  <li>Explotación económica gestionada efectivamente (CC art. 1406.2).</li>
+                  <li>Local en que se ejerce la profesión u oficio (CC art. 1406.3).</li>
+                  <li><strong>Vivienda habitual de la familia</strong> (CC art. 1406.4): derecho de especial relevancia práctica.</li>
+                </ul>
+              </li>
+              <li>Si el valor del bien excede la cuota del adjudicatario, este <strong>compensará en metálico</strong> (CC art. 1407). Si no puede pagar, el Tribunal puede acordar aplazamiento o adjudicación compartida.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Señalamiento por el LAJ — Plazo de diez días</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Admitida la solicitud, el LAJ señala, en el <strong>plazo máximo de diez días</strong>, la comparecencia para: (a) intentar el acuerdo; y (b) en defecto de acuerdo, designar contador y, en su caso, peritos.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto 1 — Incomparecencia injustificada</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Conformidad ficta del incompareciente (cónyuge o heredero) con la propuesta del compareciente. Mismo mecanismo que en el artículo 809.1.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto 2 — Acuerdo</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Se consigna en el acta y se da por concluido el acto.</li>
+              <li>Ejecución del acuerdo conforme a los <strong>dos primeros apartados del artículo 788 LEC</strong>:
+                <ul class="sub-list">
+                  <li>Art. 788.1: el LAJ aprueba la liquidación mediante <strong>decreto</strong>.</li>
+                  <li>Art. 788.2: si algún interesado se opone, el Tribunal resuelve mediante <strong>auto</strong>.</li>
+                </ul>
+              </li>
+              <li>El decreto o auto aprobatorio tiene <strong>fuerza ejecutiva directa</strong> (LEC art. 517.2.9.ª).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto 3 — Falta de acuerdo: operaciones divisorias</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Nombramiento de <strong>contador</strong> y, en su caso, <strong>peritos</strong> conforme al artículo 784 LEC.</li>
+              <li>Las operaciones divisorias siguen la tramitación de los artículos 785–788 LEC (cuaderno particional, oposición, aprobación judicial, ejecución).</li>
+              <li><strong>Plazo del contador:</strong> máximo <strong>dos meses</strong> desde el inicio de las operaciones divisorias para presentar el cuaderno particional (Art. 786.2 LEC).</li>
+              <li>Art. 788.3: si persiste desacuerdo parcial sobre adjudicaciones, el LAJ puede proceder a <strong>sacar a suerte</strong> los lotes discutidos.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Efectos registrales y fiscales</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Registro de la Propiedad:</strong> los bienes adjudicados deben inscribirse a nombre del adjudicatario (arts. 2 y 10 LH); efectos frente a terceros (LH arts. 32, 34, 38).</li>
+              <li><strong>Tributación:</strong> la liquidación de gananciales está sujeta a <strong>AJD</strong> (no a ITP onerosa, pues no hay transmisión). Si hay excesos de adjudicación no compensados, pueden tributar por ITP onerosa.</li>
+              <li><strong>IRPF:</strong> el valor de adjudicación de la vivienda habitual, si se transmite posteriormente, opera como valor de adquisición a efectos de la ganancia patrimonial (Ley 35/2006, art. 35).</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">CC arts. 1364, 1390–1391</span>
+          <span class="ref-tag">CC arts. 1397–1399</span>
+          <span class="ref-tag">CC arts. 1404, 1406–1407</span>
+          <span class="ref-tag">LEC art. 784</span>
+          <span class="ref-tag">LEC arts. 785–787</span>
+          <span class="ref-tag">LEC art. 788 (apts. 1–3)</span>
+          <span class="ref-tag">LEC art. 517.2.9.ª</span>
+          <span class="ref-tag">RDLeg. 1/1993 art. 45.I.B.3</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECCIÓN 4: RÉGIMEN DE PARTICIPACIÓN ══ -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-participacion">
+    <span class="section-heading-text">Liquidación del régimen de participación</span>
+    <span class="section-heading-count">1 artículo · 811</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-participacion">
+    <div class="card-grid cols-3">
+
+      <!-- ART. 811 -->
+      <article class="map-card" data-cat="c4" data-text="artículo 811 liquidación régimen participación patrimonio inicial final cónyuge incremento patrimonial firme resolución letrado administración justicia diez días acuerdo incomparecencia juicio verbal sentencia forma pago dinero bienes prescripción tres años crédito participación donaciones fraudulentas garantía hipotecaria">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 811</span>
+            <span class="status-tag tag-info">Régimen especial</span>
+          </div>
+          <h2 class="card-title">Liquidación del régimen de participación</h2>
+          <p class="card-subtitle">Regula la liquidación del régimen de participación en las ganancias: firmeza obligatoria, cálculo del crédito de participación, propuesta sobre patrimonios y vías de resolución.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>Firmeza obligatoria</strong></span>
+          <span class="counter-badge"><strong>3</strong> supuestos</span>
+          <span class="counter-badge"><strong>3 años</strong> prescripción</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>Juicio verbal</strong> si no hay acuerdo</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Caracterización del régimen</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Durante el matrimonio:</strong> separación de bienes plena; cada cónyuge administra, disfruta y dispone de sus bienes con plena independencia.</li>
+              <li><strong>A la disolución:</strong> cada cónyuge tiene derecho a participar en las ganancias obtenidas por el otro (CC arts. 1411–1434).</li>
+              <li>No existe masa común: el objeto de la liquidación es el cálculo bilateral de patrimonios para determinar el <strong>crédito de participación</strong>.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Requisito previo — Firmeza obligatoria e incondicional</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>El artículo 811.1 exige, de forma <strong>absoluta e inequívoca</strong>, que la resolución de disolución sea firme antes de solicitar la liquidación (a diferencia del art. 810.1, que dice «en su caso»).</li>
+              <li>Razón: sin la firmeza no existe certeza sobre la <strong>fecha de cierre</strong> de los patrimonios inicial y final, y no puede calcularse el crédito.</li>
+              <li>Firmeza (LEC art. 207.2): resolución no recurrible o con plazo de recurso transcurrido sin interposición.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Cálculo del crédito de participación</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Patrimonio inicial</strong> (CC arts. 1417–1419): bienes al inicio del régimen + bienes adquiridos a título gratuito durante el matrimonio − deudas iniciales. Si resulta negativo, se computa como <strong>cero</strong>.</li>
+              <li><strong>Patrimonio final</strong> (CC arts. 1420–1421): bienes al momento de la disolución − obligaciones pendientes + adición ficticia de donaciones fraudulentas realizadas sin consentimiento del otro cónyuge (CC art. 1422).</li>
+              <li><strong>Crédito de participación</strong> (CC arts. 1423–1424):
+                <ul class="sub-list">
+                  <li>Si ambos cónyuges han obtenido ganancias: el que las obtuvo en menor cuantía participa en la <strong>mitad de la diferencia</strong>.</li>
+                  <li>Si solo uno obtuvo ganancias: el otro tiene derecho a la <strong>mitad de ellas</strong>.</li>
+                </ul>
+              </li>
+              <li><strong>Prescripción:</strong> el crédito prescribe a los <strong>tres años</strong> desde la disolución del régimen (CC art. 1424), salvo interrupción. Plazo que opera como límite absoluto para ejercitar la acción de liquidación.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Contenido de la propuesta de liquidación</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Estimación del <strong>patrimonio inicial</strong> de cada cónyuge (referencia: fecha de inicio del régimen).</li>
+              <li>Estimación del <strong>patrimonio final</strong> de cada cónyuge (referencia: fecha de disolución).</li>
+              <li><strong>Cantidad resultante a pagar</strong>: crédito calculado conforme a los artículos 1423–1424 CC, con la forma de pago propuesta.</li>
+              <li>A diferencia de la propuesta del artículo 808, no existe masa común que inventariar; la propuesta opera sobre <strong>patrimonios separados</strong>.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Señalamiento — Plazo de diez días</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>El LAJ señala, en el plazo máximo de <strong>diez días</strong> desde la admisión de la solicitud, el día y hora de comparecencia para alcanzar un acuerdo.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto 1 — Incomparecencia injustificada</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Conformidad ficta del incompareciente con la propuesta del cónyuge compareciente.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto 2 — Acuerdo</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Se consigna en el acta y se da por concluido el acto.</li>
+              <li>El artículo 811.4 no remite expresamente al artículo 788, pero la doctrina mayoritaria entiende aplicable analógicamente dicha remisión para la ejecución del acuerdo.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto 3 — Falta de acuerdo: juicio verbal</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>El LAJ cita a los cónyuges a una <strong>vista</strong> conforme al juicio verbal (LEC arts. 437–447).</li>
+              <li><strong>Diferencia esencial</strong> respecto al art. 810.5: aquí no se prevé el nombramiento de contador ni peritos; la tramitación es íntegramente contenciosa desde el primer desacuerdo.</li>
+              <li>La <strong>sentencia</strong> determinará:
+                <ul class="sub-list">
+                  <li>Los patrimonios iniciales y finales de cada cónyuge (con todos sus componentes, incluidas adiciones del art. 1422 CC).</li>
+                  <li>La cantidad que deba satisfacer el cónyuge con mayor incremento patrimonial.</li>
+                  <li>La forma de pago: dinero en primer lugar; si no es posible, bienes por autorización judicial (CC art. 1432).</li>
+                </ul>
+              </li>
+              <li>Contra la sentencia: <strong>recurso de apelación</strong> (LEC arts. 455–467).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Garantía y formas de pago del crédito</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>El crédito de participación goza de <strong>garantía real hipotecaria</strong> sobre los bienes del deudor (CC art. 1414).</li>
+              <li>Formas de pago reguladas en los arts. 1415–1418 CC: dinero, bienes concretos con autorización judicial, aplazamientos, etc.</li>
+              <li>En todo caso, prevalece el pago en <strong>dinero</strong>; el pago en especie requiere autorización judicial expresa (CC art. 1432).</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">CC arts. 1411–1434</span>
+          <span class="ref-tag">CC arts. 1417–1424</span>
+          <span class="ref-tag">CC art. 1422 (donaciones fraudulentas)</span>
+          <span class="ref-tag">CC art. 1432 (pago en bienes)</span>
+          <span class="ref-tag">CC art. 1414 (garantía hipotecaria)</span>
+          <span class="ref-tag">CC art. 1424 (prescripción 3 años)</span>
+          <span class="ref-tag">LEC arts. 437–447 (juicio verbal)</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECCIÓN 5: ARTÍCULOS CONEXOS LEC 784–788 ══ -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-conexos">
+    <span class="section-heading-text">Artículos conexos LEC — Operaciones divisorias (arts. 784–788)</span>
+    <span class="section-heading-count">5 artículos · remitidos por art. 810</span>
+    <button class="section-toggle-btn">&#9658;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-conexos">
+    <div class="card-grid">
+
+      <!-- ART. 784 -->
+      <article class="map-card" data-cat="c5" data-text="artículo 784 nombramiento contador peritos operaciones divisorias acuerdo partes listado lec 341 cuaderno particional plazo">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 784</span>
+            <span class="status-tag tag-gray">Conexo art. 810.5</span>
+          </div>
+          <h2 class="card-title">Nombramiento de contador y peritos</h2>
+          <p class="card-subtitle">Regula la designación del contador y los peritos para las operaciones divisorias cuando no hay acuerdo en la liquidación.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> vías de designación</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Designación del contador</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li><strong>Por acuerdo de los interesados:</strong> pueden designar de común acuerdo a la persona de su confianza o profesional especializado (abogado, notario, economista).</li>
+              <li><strong>Por el LAJ en defecto de acuerdo:</strong> designación de entre los listados de peritos judiciales (LEC art. 341) o, si no existen listados suficientes, de entre personas con conocimientos adecuados (contables, graduados sociales, economistas).</li>
+              <li>El contador debe <strong>aceptar el cargo</strong> y jurar o prometer desempeñarlo fielmente.</li>
+              <li>El LAJ fijará al contador un <strong>plazo</strong> para presentar el cuaderno particional (habitualmente dos meses, prorrogables).</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Designación de peritos</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Se acuerda cuando los partícipes no han podido tasar de común acuerdo los bienes que deban incluirse en el cuaderno.</li>
+              <li>Los peritos actúan paralelamente al contador: valoran los bienes y remiten su informe al contador para su incorporación al cuaderno.</li>
+              <li>Pueden designarse varios peritos especializados según la naturaleza de los bienes (inmuebles, empresas, participaciones sociales, obras de arte).</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">LEC art. 341 (listados peritos)</span>
+          <span class="ref-tag">LEC art. 810.5 (remisión)</span>
+        </div>
+      </article>
+
+      <!-- ART. 785 -->
+      <article class="map-card" data-cat="c5" data-text="artículo 785 cuaderno particional oposición traslado interesados diez días aprobación decreto contador plazo liquidación operaciones">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 785</span>
+            <span class="status-tag tag-gray">Conexo art. 810.5</span>
+          </div>
+          <h2 class="card-title">Presentación del cuaderno particional y oposición</h2>
+          <p class="card-subtitle">Regula la presentación del cuaderno particional por el contador, el traslado a los interesados y los efectos de la ausencia de oposición.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>10 días</strong> traslado</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>Decreto</strong> si no hay oposición</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Elaboración y presentación del cuaderno</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>El contador elabora el <strong>cuaderno particional</strong>: documento técnico-jurídico que incluye el inventario de la comunidad (activo y pasivo), las operaciones de liquidación (reintegros, indemnizaciones, pago del pasivo) y la formación de lotes para adjudicación.</li>
+              <li>El cuaderno se presenta ante el LAJ dentro del plazo fijado al contador.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Traslado a los interesados</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>El LAJ da traslado del cuaderno a los interesados por un plazo de <strong>diez días</strong> para que formulen oposición o lo aprueben expresamente.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Aprobación sin oposición</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Si no hay oposición o si los interesados aprueban expresamente el cuaderno, el LAJ lo aprueba mediante <strong>decreto</strong>.</li>
+              <li>El decreto es título ejecutivo directo (LEC art. 517.2.9.ª): se puede acudir directamente al proceso de ejecución.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Oposición al cuaderno</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Si hay oposición, continúa la tramitación conforme al artículo 786.</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">LEC art. 784 (contador)</span>
+          <span class="ref-tag">LEC art. 786 (si hay oposición)</span>
+          <span class="ref-tag">LEC art. 517.2.9.ª (ejecución)</span>
+        </div>
+      </article>
+
+      <!-- ART. 786 -->
+      <article class="map-card" data-cat="c5" data-text="artículo 786 oposición cuaderno particional comparecencia tribunal acuerdo auto juicio verbal resolución">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 786</span>
+            <span class="status-tag tag-gray">Conexo art. 810.5</span>
+          </div>
+          <h2 class="card-title">Resolución de la oposición al cuaderno particional</h2>
+          <p class="card-subtitle">Regula la fase contenciosa de la oposición al cuaderno: comparecencia ante el Tribunal y vías de resolución.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> vías de resolución</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Comparecencia ante el Tribunal</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>El Tribunal convoca a los interesados a una comparecencia para intentar un acuerdo.</li>
+              <li><strong>Si hay acuerdo:</strong> el LAJ lo aprueba mediante decreto.</li>
+              <li><strong>Si no hay acuerdo:</strong> el Tribunal puede:
+                <ul class="sub-list">
+                  <li>Resolver la oposición mediante <strong>auto</strong>, aprobando o modificando el cuaderno según lo acreditado.</li>
+                  <li>Acordar la celebración de una <strong>vista</strong> conforme al juicio verbal si la complejidad de las cuestiones lo exige.</li>
+                </ul>
+              </li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">LEC art. 785 (oposición)</span>
+          <span class="ref-tag">LEC art. 787 (aprobación)</span>
+          <span class="ref-tag">LEC arts. 437–447 (juicio verbal)</span>
+        </div>
+      </article>
+
+      <!-- ART. 787 -->
+      <article class="map-card" data-cat="c5" data-text="artículo 787 aprobación judicial operaciones divisorias auto recurso apelación">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 787</span>
+            <span class="status-tag tag-gray">Conexo art. 810.5</span>
+          </div>
+          <h2 class="card-title">Aprobación judicial de las operaciones divisorias</h2>
+          <p class="card-subtitle">Regula la resolución judicial de aprobación del cuaderno particional y los recursos contra ella.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>Auto</strong> aprobatorio</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>Apelación</strong> recurso</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Auto de aprobación</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>El Tribunal aprueba las operaciones divisorias mediante <strong>auto</strong>.</li>
+              <li>El auto puede aprobar el cuaderno tal como fue presentado por el contador, o modificarlo en los puntos que hayan sido objeto de oposición fundada.</li>
+              <li>Contra el auto de aprobación cabe <strong>recurso de apelación</strong> (LEC art. 455).</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">LEC art. 786 (oposición)</span>
+          <span class="ref-tag">LEC art. 788 (ejecución)</span>
+          <span class="ref-tag">LEC art. 455 (apelación)</span>
+        </div>
+      </article>
+
+      <!-- ART. 788 -->
+      <article class="map-card" data-cat="c5" data-text="artículo 788 ejecución operaciones divisorias decreto auto entrega bienes adjudicados ejecución forzosa título ejecutivo 517 remisión artículo 810">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 788</span>
+            <span class="status-tag tag-ok">Remisión expresa art. 810.4</span>
+          </div>
+          <h2 class="card-title">Ejecución de las operaciones divisorias</h2>
+          <p class="card-subtitle">Regula la ejecución de las operaciones divisorias aprobadas y la fuerza ejecutiva de la resolución. Los dos primeros apartados son remitidos expresamente por el artículo 810.4.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>Fuerza ejecutiva directa</strong></span>
+          <span class="counter-badge" style="margin-left:auto"><strong>LEC art. 517.2.9.ª</strong></span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Artículo 788.1 — Entrega de bienes adjudicados</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Una vez aprobadas las operaciones (por acuerdo o por resolución judicial), el LAJ procede a la <strong>entrega a cada adjudicatario</strong> de los bienes que le hayan sido adjudicados.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Artículo 788.2 — Ejecución forzosa</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Si el adjudicatario se niega a recibir, o el actual poseedor se niega a entregar, se aplican las normas de <strong>ejecución forzosa</strong>:
+                <ul class="sub-list">
+                  <li>Bienes inmuebles: LEC arts. 699 y ss.</li>
+                  <li>Bienes muebles: LEC arts. 701 y ss.</li>
+                </ul>
+              </li>
+              <li>La resolución aprobatoria (decreto del LAJ o auto judicial) tiene <strong>fuerza ejecutiva directa</strong> (LEC art. 517.2.9.ª): no se necesita nueva sentencia de condena para acudir al proceso de ejecución.</li>
+            </ul></div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Artículo 788.3 — Adjudicación por suerte</div>
+            <div class="inner-body"><ul class="inner-list">
+              <li>Si persiste desacuerdo parcial sobre la adjudicación de lotes concretos tras la aprobación del cuaderno, el LAJ puede proceder a <strong>sacar a suerte</strong> dichos lotes entre los partícipes.</li>
+              <li>Los lotes no discutidos se adjudican conforme al cuaderno aprobado.</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">LEC art. 517.2.9.ª</span>
+          <span class="ref-tag">LEC arts. 699 y ss. (inmuebles)</span>
+          <span class="ref-tag">LEC arts. 701 y ss. (muebles)</span>
+          <span class="ref-tag">LEC art. 810.4 (remisión)</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECCIÓN 6: DIAGRAMA DE FLUJO ══ -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-flujo">
+    <span class="section-heading-text">Diagrama de flujo del procedimiento</span>
+    <span class="section-heading-count">Fases secuenciales</span>
+    <button class="section-toggle-btn">&#9658;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-flujo">
+    <div class="flow-diagram">
+      <div class="flow-step">
+        <div class="flow-num" style="background:var(--c1)">1</div>
+        <div class="flow-content">
+          <div class="flow-title">Proceso previo de crisis matrimonial</div>
+          <div class="flow-desc">Nulidad, separación o divorcio (o disolución del REM por causa civil). Admisión de demanda = momento inicial para solicitar inventario.</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num" style="background:var(--c2)">2</div>
+        <div class="flow-content">
+          <div class="flow-title">Solicitud de inventario (Art. 808)</div>
+          <div class="flow-desc">Cualquier cónyuge o heredero presenta propuesta de inventario con documentación. Plazo señalamiento: máx. 10 días.</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num" style="background:var(--c2)">3</div>
+        <div class="flow-content">
+          <div class="flow-title">Acto de formación de inventario (Art. 809)</div>
+          <div class="flow-desc">Comparecencia ante el LAJ. Posibles salidas: ACUERDO (→ fin) | INCOMPARENCIA (→ conformidad) | CONTROVERSIA (→ Juicio Verbal)</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num" style="background:var(--c3)">4</div>
+        <div class="flow-content">
+          <div class="flow-title">Resolución firme de disolución del REM</div>
+          <div class="flow-desc">Requisito previo para iniciar la fase de liquidación (absoluto en régimen de participación, Art. 811).</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num" style="background:var(--c3)">5</div>
+        <div class="flow-content">
+          <div class="flow-title">Solicitud de liquidación (Art. 810 u 811)</div>
+          <div class="flow-desc">Presentación de propuesta de liquidación. Señalamiento: máx. 10 días. Comparecencia para acuerdo o designación de contador/peritos.</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num" style="background:var(--c4)">6</div>
+        <div class="flow-content">
+          <div class="flow-title">Ejecución o designación de contador-peritos</div>
+          <div class="flow-desc">ACUERDO → Ejecución (Art. 788 LEC). DESACUERDO → Contador + Peritos (Art. 784 LEC) → Operaciones divisorias (Art. 786 LEC) → Cuaderno particional → Aprobación/Impugnación (Art. 787 LEC) → Adjudicación (Art. 788-789 LEC).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECCIÓN 7: PLAZOS ══ -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-timeline">
+    <span class="section-heading-text">Indice de plazos procesales</span>
+    <span class="section-heading-count">7 trámites</span>
+    <button class="section-toggle-btn">&#9658;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-timeline">
+    <div class="table-wrap">
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th style="width:46%">Acto o trámite procesal</th>
+            <th>Plazo</th>
+            <th>Fundamento normativo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-tramite">Señalamiento del acto de formación del inventario por el LAJ, desde la presentación de la solicitud</td>
+            <td><span class="plazo-badge plazo-days">Máx. 10 días</span></td>
+            <td class="td-norm">Art. 809.1 LEC</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Resolución del Tribunal sobre administración y disposición de los bienes inventariados (auto)</td>
+            <td><span class="plazo-badge plazo-other">Mismo día o siguiente</span></td>
+            <td class="td-norm">Art. 809.1 LEC (párr. final)</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Señalamiento de comparecencia para la liquidación del REM (general), desde la admisión de la solicitud</td>
+            <td><span class="plazo-badge plazo-days">Máx. 10 días</span></td>
+            <td class="td-norm">Art. 810.3 LEC</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Señalamiento de comparecencia para la liquidación del régimen de participación, desde la admisión de la solicitud</td>
+            <td><span class="plazo-badge plazo-days">Máx. 10 días</span></td>
+            <td class="td-norm">Art. 811.3 LEC</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Traslado del cuaderno particional a los interesados para formular oposición</td>
+            <td><span class="plazo-badge plazo-days">10 días</span></td>
+            <td class="td-norm">Art. 785 LEC</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Práctica de operaciones divisorias por el contador</td>
+            <td><span class="plazo-badge plazo-months">2 meses máx.</span></td>
+            <td class="td-norm">Art. 786.2 LEC (vía remisión Art. 810.5)</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Prescripción del crédito de participación desde la disolución del régimen</td>
+            <td><span class="plazo-badge plazo-years">3 años</span></td>
+            <td class="td-norm">CC art. 1424</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECCIÓN 8: PARTICIPANTES ══ -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-actors">
+    <span class="section-heading-text">Mapa de participantes y actores</span>
+    <span class="section-heading-count">6 categorías · 12+ actores</span>
+    <button class="section-toggle-btn">&#9658;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-actors">
+    <div class="participants-grid">
+      <div class="participant-col">
+        <div class="participant-col-head phead-c1">Órganos jurisdiccionales</div>
+        <ul>
+          <li>Juzgado de Primera Instancia <span class="participant-note">(competencia principal)</span></li>
+          <li>Juzgado de Violencia sobre la Mujer <span class="participant-note">(competencia LO 1/2004)</span></li>
+          <li>Tribunal / Juez o Magistrado <span class="participant-note">(resoluciones de fondo, autos, sentencias)</span></li>
+          <li>Audiencia Provincial <span class="participant-note">(recurso de apelación)</span></li>
+        </ul>
+      </div>
+      <div class="participant-col">
+        <div class="participant-col-head phead-c2">Secretaría judicial</div>
+        <ul>
+          <li>Letrado de la Administración de Justicia (LAJ) <span class="participant-note">(figura central: señala, preside, cita, nombra contador, levanta actas)</span></li>
+        </ul>
+      </div>
+      <div class="participant-col">
+        <div class="participant-col-head phead-c3">Partes procesales</div>
+        <ul>
+          <li>Cónyuge solicitante <span class="participant-note">(impulso del procedimiento)</span></li>
+          <li>Cónyuge requerido <span class="participant-note">(parte activa o pasiva)</span></li>
+          <li>Herederos de los cónyuges <span class="participant-note">(legitimados si hubo fallecimiento)</span></li>
+        </ul>
+      </div>
+      <div class="participant-col">
+        <div class="participant-col-head phead-c4">Auxiliares y peritos</div>
+        <ul>
+          <li>Contador-Partidor <span class="participant-note">(cuaderno particional, arts. 784–785)</span></li>
+          <li>Peritos tasadores <span class="participant-note">(valoración de bienes, inmuebles, empresas, arte)</span></li>
+          <li>Administrador judicial <span class="participant-note">(art. 809, si se nombra por conflicto)</span></li>
+        </ul>
+      </div>
+      <div class="participant-col">
+        <div class="participant-col-head phead-c5">Representación procesal</div>
+        <ul>
+          <li>Abogado/a <span class="participant-note">(defensa técnica; no preceptivo en todos los trámites)</span></li>
+          <li>Procurador/a <span class="participant-note">(representación procesal; citaciones art. 153 LEC)</span></li>
+          <li>Notario/a <span class="participant-note">(documentación de la liquidación acordada extrajudicialmente)</span></li>
+        </ul>
+      </div>
+      <div class="participant-col">
+        <div class="participant-col-head phead-c6">Marco normativo</div>
+        <ul>
+          <li>Código Civil <span class="participant-note">(derecho sustantivo REM)</span></li>
+          <li>Derechos Forales / Autonómicos <span class="participant-note">(normas territoriales especiales)</span></li>
+          <li>LEC Libro IV <span class="participant-note">(procedimiento división patrimonios)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECCIÓN 9: ECOSISTEMA NORMATIVO ══ -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-norms">
+    <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+    <span class="section-heading-count">12 cuerpos normativos</span>
+    <button class="section-toggle-btn">&#9658;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-norms">
+    <div class="norm-grid">
+
+      <div class="norm-card">
+        <div class="norm-law">LEC — Ley 1/2000</div>
+        <div class="norm-title">Capítulo I: División de la Herencia (Arts. 782–783)</div>
+        <div class="norm-arts">
+          <strong>Art. 782</strong> — Solicitud de división judicial de la herencia. Proceso paralelo análogo al de liquidación del REM.<br>
+          <strong>Art. 783</strong> — Sustanciación: inventario, avalúo, liquidación, división y adjudicación.
+        </div>
+        <span class="norm-tag tag-info">Proceso paralelo</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">LEC — Ley 1/2000</div>
+        <div class="norm-title">Operaciones divisorias (arts. 784–788)</div>
+        <div class="norm-arts">
+          <strong>Art. 784</strong> — Nombramiento de contador y peritos (junta, sorteo art. 341).<br>
+          <strong>Art. 785</strong> — Presentación del cuaderno particional; traslado de diez días; decreto si no hay oposición.<br>
+          <strong>Art. 786</strong> — Resolución de la oposición: comparecencia y auto o juicio verbal.<br>
+          <strong>Art. 787</strong> — Auto de aprobación; recurso de apelación.<br>
+          <strong>Art. 788 (apts. 1–3)</strong> — Ejecución de las operaciones aprobadas; fuerza ejecutiva directa; suerte.
+        </div>
+        <span class="norm-tag tag-info">Remisión expresa art. 810</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">LEC — Ley 1/2000</div>
+        <div class="norm-title">Juicio verbal (arts. 437–447)</div>
+        <div class="norm-arts">
+          <strong>Arts. 437–447</strong> — Regulación del juicio verbal al que remiten el artículo 809.2 (controversia sobre el inventario) y el artículo 811.5 (falta de acuerdo en el régimen de participación). Señalamiento en los veinte días siguientes; práctica de prueba en el propio acto; sentencia en veinte días.
+        </div>
+        <span class="norm-tag tag-info">Remisión expresa arts. 809 y 811</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">LEC — Ley 1/2000</div>
+        <div class="norm-title">Competencia en procesos matrimoniales (arts. 769–770)</div>
+        <div class="norm-arts">
+          <strong>Art. 769</strong> — Competencia territorial en procesos de nulidad, separación y divorcio: juzgado del domicilio conyugal; si los cónyuges residen en distintos partidos, el del último domicilio conyugal o el del domicilio del demandante.<br>
+          <strong>Art. 770</strong> — Procedimiento contencioso; especialidades procesales.<br>
+          <strong>Art. 774</strong> — Efectos de la sentencia: convenio regulador como título ejecutivo.
+        </div>
+        <span class="norm-tag tag-gray">Conexión competencial art. 807</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">LEC — Ley 1/2000</div>
+        <div class="norm-title">Medidas durante el proceso y ejecución</div>
+        <div class="norm-arts">
+          <strong>Art. 773</strong> — Medidas sobre el patrimonio común durante el proceso matrimonial (administración, disposición, custodia).<br>
+          <strong>Art. 517.2.9.ª</strong> — Los decretos del LAJ y los autos aprobatorios de las operaciones divisorias como títulos ejecutivos directos.
+        </div>
+        <span class="norm-tag tag-gray">Medidas cautelares y ejecución</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">LEC — Libro I</div>
+        <div class="norm-title">Designación de peritos por sorteo (Art. 341)</div>
+        <div class="norm-arts">
+          <strong>Art. 341</strong> — Designación por sorteo entre abogados ejercientes con conocimientos especiales y despacho en el lugar del juicio. Aplicable vía Art. 784.3 LEC para el nombramiento del contador cuando no hay acuerdo.
+        </div>
+        <span class="norm-tag tag-gray">Remisión indirecta</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Código Civil — Título III, Libro IV</div>
+        <div class="norm-title">Disposiciones Generales REM (Arts. 1315–1321)</div>
+        <div class="norm-arts">
+          <strong>Art. 1315</strong> — Autonomía de la voluntad en capitulaciones.<br>
+          <strong>Art. 1316</strong> — Supletoriedad de la sociedad de gananciales.<br>
+          <strong>Art. 1317</strong> — Modificación del REM y derechos de terceros.<br>
+          <strong>Art. 1318</strong> — Cargas del matrimonio y medidas cautelares.<br>
+          <strong>Art. 1319</strong> — Gastos ordinarios de la familia.
+        </div>
+        <span class="norm-tag tag-ok">Derecho sustantivo base</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Código Civil — Cap. IV, Sec. V</div>
+        <div class="norm-title">Disolución y liquidación de gananciales (Arts. 1392–1409)</div>
+        <div class="norm-arts">
+          <strong>Art. 1392</strong> — Causas de disolución de la sociedad de gananciales.<br>
+          <strong>Art. 1397</strong> — Activo de la sociedad: bienes gananciales, valor actualizado, créditos de la sociedad.<br>
+          <strong>Art. 1398</strong> — Pasivo de la sociedad: deudas y cargas.<br>
+          <strong>Arts. 1399–1409</strong> — Operaciones de liquidación: pago de deudas, formación de lotes, adjudicación, división.
+        </div>
+        <span class="norm-tag tag-ok">Sustantivo gananciales</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Código Civil — Cap. IV, Sec. VI</div>
+        <div class="norm-title">Régimen de Participación (Arts. 1411–1418)</div>
+        <div class="norm-arts">
+          <strong>Art. 1411</strong> — Concepto y funcionamiento del régimen de participación.<br>
+          <strong>Art. 1412</strong> — No aplicable; la prescripción se rige por el art. 1424 CC (3 años).<br>
+          <strong>Art. 1414</strong> — Garantía hipotecaria del crédito de participación.<br>
+          <strong>Arts. 1415–1418</strong> — Formas de pago del crédito de participación.
+        </div>
+        <span class="norm-tag tag-info">Sustantivo participación</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Código Civil</div>
+        <div class="norm-title">Convenio regulador y medidas provisionales</div>
+        <div class="norm-arts">
+          <strong>Art. 84</strong> — Efectos de la reconciliación: no produce la reanudación del régimen ya disuelto.<br>
+          <strong>Art. 90</strong> — Contenido del convenio regulador; puede incluir la liquidación del régimen económico matrimonial.<br>
+          <strong>Art. 103</strong> — Medidas provisionales por demanda de nulidad/separación/divorcio; medida 4.ª sobre el régimen de administración y disposición de bienes.<br>
+          <strong>Art. 1404</strong> — Liquidación de gananciales de mutuo acuerdo ante notario.
+        </div>
+        <span class="norm-tag tag-warn">Relación con acuerdo extrajudicial</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">LO 1/2004 + LOPJ</div>
+        <div class="norm-title">Juzgados de Violencia sobre la Mujer</div>
+        <div class="norm-arts">
+          <strong>Art. 87 ter LOPJ</strong> — Competencia civil de los JVSM: nulidad, separación y divorcio, liquidación del régimen económico matrimonial, filiación, etc.<br>
+          <strong>Art. 49 bis LEC</strong> — Reglas de inhibición entre JPI y JVSM; cese de competencia civil si archivo/absolutoria penal.<br>
+          <strong>Art. 49 bis.4 LEC</strong> — Inhibición a favor del JPI cuando cesa la competencia del JVSM.
+        </div>
+        <span class="norm-tag tag-alert">Competencia JVSM art. 807</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Reg. (UE) 2016/1103 + Derecho foral</div>
+        <div class="norm-title">Dimensión internacional y foral</div>
+        <div class="norm-arts">
+          <strong>Reg. (UE) 2016/1103</strong> (aplic. desde 29/01/2019) — Competencia judicial internacional (arts. 4–7), ley aplicable (arts. 20–35) y reconocimiento de resoluciones en materia de regímenes económicos matrimoniales con elemento extranjero.<br>
+          <strong>Cataluña</strong> — Separación de bienes como régimen legal (CCCat art. 232-1); escasa aplicación del cap. II.<br>
+          <strong>Navarra, País Vasco, Aragón</strong> — Regímenes de comunidad propios que generan masa común sujeta al procedimiento del art. 806.<br>
+          <strong>Galicia, Baleares, Comunidad Valenciana</strong> — Derecho civil propio con incidencia en el REM.
+        </div>
+        <span class="norm-tag tag-gray">Remisión genérica arts. 806–807</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c1)"></div>Ámbito de aplicación y competencia (arts. 806–807)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c2)"></div>Inventario: solicitud y formación (arts. 808–809)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c3)"></div>Liquidación del régimen económico matrimonial (art. 810)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c4)"></div>Liquidación del régimen de participación (art. 811)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c5)"></div>Artículos conexos LEC — Operaciones divisorias (arts. 784–788)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c6)"></div>General / Referencias normativas</div>
+    </div>
+    <div class="legend-copy">LEC, Ley 1/2000, de 7 de enero — Libro IV, Título II, Capítulo II — Arts. 806–811 y conexos 784–788 · Esquema definitivo fusionado · Incluye ecosistema normativo ampliado (LEC Arts. 782-789 + CC Arts. 1315-1418 + LO 1/2004 + DF Forales)</div>
+  </div>
+</footer>
+
+<script>
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  if (noResults) { noResults.style.display = visible === 0 ? 'block' : 'none'; }
+  const termEl = document.getElementById('no-results-term');
+  if (termEl) termEl.textContent = searchTerm;
+  const statEl = document.getElementById('stat-arts');
+  if (statEl) statEl.textContent = visible;
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const b = c.querySelector('.card-toggle-btn span:first-child');
+      if (b) b.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const b = c.querySelector('.card-toggle-btn span:first-child');
+    if (b) b.textContent = 'Ver contenido completo';
+  });
+});
+
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '▶' : '▼';
+  });
+});
+
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn(); }
+  if (e.key === '-') { e.preventDefault(); zoomOut(); }
+  if (e.key === '0') { e.preventDefault(); zoomReset(); }
+});
+</script>
+</body>
+</html>

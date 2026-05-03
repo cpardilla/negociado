@@ -1,0 +1,2241 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes"
+        />
+        <title>De la adopción (artículos 33 a 42 LJV)</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* ===== VARIABLES ===== */
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --transition-norm: 250ms ease;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family:
+                    "Outfit",
+                    system-ui,
+                    -apple-system,
+                    sans-serif;
+                background: var(--slate-bg);
+                color: var(--text);
+                line-height: 1.5;
+                font-size: 15px;
+                font-weight: 400;
+            }
+            button {
+                font-family: inherit;
+                cursor: pointer;
+                border: none;
+                background: none;
+            }
+            ul,
+            ol {
+                padding-left: 1.5rem;
+            }
+            li {
+                margin-bottom: 0.3rem;
+            }
+            .law,
+            .ref,
+            code {
+                font-family:
+                    ui-monospace, SFMono-Regular, "Cascadia Code", monospace;
+            }
+
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+                background: var(--white);
+                position: relative;
+            }
+
+            /* --- Cabecera --- */
+            #hdr {
+                flex-shrink: 0;
+                height: 56px;
+                background: var(--navy);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 20px;
+                color: white;
+            }
+            .h-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+            /* Botón toggle sidebar (NUEVO) */
+            .btn-toggle-sidebar {
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                padding: 4px 10px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+                color: #fff;
+                font-family: inherit;
+                font-size: 20px;
+                cursor: pointer;
+                transition: all 150ms ease;
+                white-space: nowrap;
+                line-height: 1;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+            .btn-toggle-sidebar:focus-visible {
+                outline: 2px solid var(--navy-lt);
+                outline-offset: 2px;
+            }
+            .h-seal {
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+            }
+            .h-seal svg {
+                width: 18px;
+                height: 18px;
+                display: block;
+            }
+            .h-title {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 1.2;
+            }
+            .h-sub {
+                font-size: 11px;
+                opacity: 0.55;
+                letter-spacing: 0.3px;
+            }
+            .h-right {
+                display: flex;
+                gap: 8px;
+            }
+            .btn {
+                font-family: inherit;
+                cursor: pointer;
+                border: none;
+                font-size: 13px;
+                font-weight: 500;
+                padding: 6px 12px;
+                border-radius: 8px;
+                transition: all 0.15s;
+            }
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.18);
+                border-color: rgba(255, 255, 255, 0.35);
+            }
+            .zoom-cluster {
+                display: flex;
+                align-items: center;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 6px;
+                overflow: hidden;
+            }
+            .btn-zoom {
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.9);
+                font-size: 16px;
+                padding: 4px 10px;
+                cursor: pointer;
+                transition: background 0.15s;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .zoom-label {
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.9);
+                padding: 0 8px;
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                min-width: 46px;
+                text-align: center;
+            }
+
+            /* --- Barra de Fases --- */
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                background: var(--navy-mid);
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                gap: 2px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                color: white;
+                font-size: 13px;
+            }
+            .ph-item {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                white-space: nowrap;
+            }
+            .ph-lbl {
+                padding: 5px 10px;
+                border-radius: 6px;
+                background: transparent;
+                color: rgba(255, 255, 255, 0.45);
+                font-weight: 600;
+                transition: all 0.15s;
+            }
+            .ph-lbl.active {
+                background: rgba(255, 255, 255, 0.2);
+                color: white;
+            }
+            .ph-lbl.done {
+                color: rgba(255, 255, 255, 0.95);
+            }
+            .ph-sep {
+                color: rgba(255, 255, 255, 0.2);
+                font-size: 16px;
+                margin: 0 2px;
+                user-select: none;
+            }
+
+            /* --- Migas de Pan --- */
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 34px;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                display: flex;
+                align-items: center;
+                padding: 4px 20px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                gap: 2px;
+                flex-wrap: wrap;
+                row-gap: 2px;
+            }
+            .bc-item {
+                font-size: 13px;
+                font-weight: 500;
+                white-space: nowrap;
+                padding: 0 6px;
+                color: var(--muted);
+                background: none;
+                border: none;
+                font-family: inherit;
+                cursor: pointer;
+            }
+            .bc-past {
+                cursor: pointer;
+                background: none;
+                border: none;
+                font-family: inherit;
+                font-weight: 400;
+            }
+            .bc-past:hover {
+                color: var(--navy-lt);
+                text-decoration: underline;
+            }
+            .bc-current {
+                font-weight: 600;
+                color: var(--navy);
+                cursor: default;
+            }
+            .bc-sep {
+                color: var(--muted);
+                font-size: 15px;
+                opacity: 0.5;
+                margin: 0 2px;
+                user-select: none;
+            }
+
+            /* --- Layout Principal --- */
+            #layout {
+                flex: 1;
+                overflow: hidden;
+                display: flex;
+                position: relative;
+            }
+
+            /* --- Sidebar (MODIFICADO para soportar colapso y overlay móvil) --- */
+            #sidebar {
+                width: 280px;
+                flex-shrink: 0;
+                background: var(--navy-mid);
+                color: white;
+                display: flex;
+                flex-direction: column;
+                overflow-y: auto;
+                min-height: 0;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+                transition:
+                    transform var(--transition-norm),
+                    width var(--transition-norm);
+                z-index: 80;
+            }
+            #sidebar.collapsed {
+                width: 0;
+                transform: translateX(-100%);
+                overflow: hidden;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 4px;
+            }
+            #sidebar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.25);
+                border-radius: 3px;
+            }
+            #sidebar::-webkit-scrollbar-thumb:hover {
+                background: rgba(255, 255, 255, 0.35);
+            }
+            #sb-tabs {
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 0 8px;
+                flex-shrink: 0;
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 10px 0;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.4);
+                background: none;
+                border: none;
+                border-bottom: 2px solid transparent;
+                transition: all 0.15s;
+            }
+            .sb-tab.active {
+                color: white;
+                border-bottom-color: var(--navy-lt);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            #sb-map,
+            #sb-journey {
+                padding: 10px;
+                flex: 1;
+                min-height: 0;
+            }
+            .sm-phase {
+                margin-bottom: 16px;
+            }
+            .sm-phase-hdr {
+                font-weight: 600;
+                font-size: 13px;
+                padding: 6px 8px;
+                background: rgba(255, 255, 255, 0.08);
+                border-radius: 8px;
+                cursor: pointer;
+                user-select: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .sm-phase-hdr:hover {
+                background: rgba(255, 255, 255, 0.14);
+            }
+            .sm-node {
+                padding: 8px 8px 8px 24px;
+                font-size: 13px;
+                border-left: 2px solid transparent;
+                margin: 2px 0;
+                color: rgba(255, 255, 255, 0.8);
+                cursor: pointer;
+                border-radius: 0 8px 8px 0;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .sm-node:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .sm-node.sm-visited {
+                border-left-color: var(--green);
+                background: rgba(21, 128, 61, 0.12);
+            }
+            .sm-node.sm-current {
+                border-left-color: var(--navy-lt);
+                background: rgba(65, 105, 225, 0.2);
+                font-weight: 600;
+            }
+            .sm-node.sm-unreachable {
+                opacity: 0.45;
+                cursor: default;
+            }
+            .sm-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                flex-shrink: 0;
+            }
+            .sm-visited .sm-dot {
+                background: var(--green);
+            }
+            .sm-current .sm-dot {
+                background: var(--navy-lt);
+                animation: pulse 1.5s infinite;
+            }
+            @keyframes pulse {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.4;
+                }
+            }
+
+            .pi {
+                padding: 8px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 12px;
+            }
+            .pi.past {
+                opacity: 0.6;
+            }
+            .pi.current {
+                font-weight: 700;
+                color: #fff;
+            }
+            .pi-choice {
+                font-size: 10px;
+                color: var(--navy-lt);
+                margin-top: 4px;
+            }
+            .sb-foot {
+                margin-top: 16px;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+                padding: 12px 8px;
+                font-size: 11px;
+            }
+            .ref-item {
+                color: rgba(255, 255, 255, 0.7);
+                margin: 4px 0;
+            }
+
+            /* Backdrop para móvil (NUEVO) */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 140;
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+
+            /* --- Contenido Central --- */
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 24px 28px;
+                background: var(--slate-bg);
+            }
+            .card {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 16px;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.02);
+                animation: fadeUp 0.22s ease;
+                overflow: hidden;
+            }
+            @keyframes fadeUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .c-hdr {
+                padding: 22px 24px 12px;
+                border-bottom: 1px solid var(--bdr);
+            }
+            .act-badge {
+                display: inline-block;
+                padding: 4px 14px;
+                border-radius: 40px;
+                font-size: 13px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            .act-laj {
+                background: var(--cyan-bg);
+                color: var(--cyan);
+            }
+            .act-juez {
+                background: var(--violet-bg);
+                color: var(--violet);
+            }
+            .act-ambos {
+                background: var(--amber-bg);
+                color: var(--amber);
+            }
+            .c-title {
+                font-size: 22px;
+                font-weight: 700;
+                color: var(--navy);
+            }
+            .step-num {
+                font-size: 13px;
+                color: var(--muted);
+                margin-top: 4px;
+            }
+
+            .c-body {
+                padding: 24px;
+            }
+            .blk {
+                margin-bottom: 20px;
+            }
+            .blk-i {
+                background: var(--slate-bg);
+                padding: 16px 20px;
+                border-radius: 14px;
+            }
+            .blk-d {
+                background: #fff4e5;
+                padding: 12px 18px;
+                border-radius: 12px;
+                border-left: 5px solid var(--amber);
+            }
+            .blk-n {
+                background: #e9f2ff;
+                padding: 12px 18px;
+                border-radius: 12px;
+            }
+            .blk-w {
+                background: var(--red-bg);
+                border-left: 5px solid var(--red);
+                padding: 12px 18px;
+                border-radius: 12px;
+            }
+            .blk-l {
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                background: #f8fafc;
+                padding: 10px 14px;
+                border-radius: 10px;
+                border: 1px solid var(--bdr);
+                font-size: 13px;
+            }
+            .checklist {
+                list-style: none;
+                padding-left: 0;
+            }
+            .checklist li {
+                display: flex;
+                gap: 12px;
+                align-items: flex-start;
+                margin-bottom: 10px;
+            }
+            .checklist li::before {
+                content: "☐";
+                font-size: 18px;
+                color: var(--navy-lt);
+                flex-shrink: 0;
+            }
+
+            .dec-area {
+                margin-top: 0;
+                border-top: 1px solid var(--bdr);
+                padding: 20px 24px;
+                background: var(--slate-bg);
+            }
+            .dec-q {
+                font-weight: 700;
+                margin-bottom: 18px;
+                font-size: 17px;
+                border-left: 4px solid var(--navy);
+                padding-left: 16px;
+                color: var(--navy);
+            }
+            .dec-opts {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 14px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 22px;
+                border-radius: 8px;
+                background: white;
+                border: 1.5px solid var(--bdr);
+                font-weight: 600;
+                font-size: 14px;
+                transition: all 0.15s;
+                cursor: pointer;
+                font-family: inherit;
+                color: var(--text);
+            }
+            .dec-btn .dec-letter {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--navy-lt);
+                color: white;
+                font-weight: 700;
+                flex-shrink: 0;
+            }
+            .dec-btn.ok .dec-letter {
+                background: var(--green);
+            }
+            .dec-btn.bad .dec-letter {
+                background: var(--red);
+            }
+            .dec-btn.warn .dec-letter {
+                background: var(--amber);
+            }
+            .dec-btn:hover {
+                background: var(--navy);
+                color: white;
+                border-color: var(--navy);
+            }
+            .dec-btn:hover .dec-letter {
+                background: white;
+                color: var(--navy);
+            }
+
+            .c-nav {
+                display: flex;
+                justify-content: space-between;
+                padding: 18px 24px;
+                border-top: 1px solid var(--bdr);
+            }
+            .btn-prev,
+            .btn-next,
+            .btn-nav {
+                padding: 10px 24px;
+                border-radius: 8px;
+                font-weight: 600;
+                border: 1.5px solid var(--bdr);
+                background: white;
+                font-family: inherit;
+                cursor: pointer;
+                font-size: 14px;
+                transition: all 0.15s;
+            }
+            .btn-next {
+                background: var(--navy-lt);
+                color: white;
+                border: none;
+            }
+            .btn-next:hover {
+                background: var(--navy);
+            }
+            .btn-prev:hover,
+            .btn-nav:hover {
+                border-color: var(--navy-lt);
+                color: var(--navy);
+            }
+            .btn-prev:disabled,
+            .btn-nav:disabled {
+                opacity: 0.4;
+                cursor: not-allowed;
+            }
+
+            /* --- Tarjeta Final --- */
+            .card.end-success {
+                border-top: 6px solid var(--green);
+            }
+            .card.end-error {
+                border-top: 6px solid var(--red);
+            }
+            .card.end-warning {
+                border-top: 6px solid var(--amber);
+            }
+            .card.end-neutral {
+                border-top: 6px solid var(--navy-lt);
+            }
+            .end-body {
+                text-align: center;
+                padding: 36px 24px 20px;
+            }
+            .end-icon {
+                font-size: 52px;
+                margin-bottom: 16px;
+            }
+            .end-title {
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+            .end-success .end-title {
+                color: var(--green);
+            }
+            .end-error .end-title {
+                color: var(--red);
+            }
+            .end-warning .end-title {
+                color: var(--amber);
+            }
+            .end-neutral .end-title {
+                color: var(--navy-lt);
+            }
+            .end-sub {
+                font-size: 14px;
+                color: var(--muted);
+                margin-bottom: 20px;
+            }
+            .summary-box {
+                background: var(--slate-bg);
+                border-radius: 16px;
+                padding: 20px;
+                text-align: left;
+                margin: 0 24px 20px;
+            }
+            .summary-box strong {
+                display: block;
+                margin-bottom: 8px;
+                color: var(--navy);
+                font-size: 14px;
+            }
+            .summary-item {
+                padding: 4px 0;
+                border-bottom: 1px solid var(--bdr);
+                display: flex;
+                gap: 8px;
+                font-size: 13px;
+            }
+            .summary-item:last-child {
+                border-bottom: none;
+            }
+            .summary-step {
+                font-weight: 600;
+                color: var(--navy-lt);
+            }
+
+            /* --- Mapa Overlay (FUERA de #layout, posición absoluta) --- */
+            #mapa-overlay {
+                position: absolute;
+                top: 140px; /* header 56px + pbar 36px + breadcrumb 34px */
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 50;
+                overflow-y: auto;
+                background: var(--slate-bg);
+                padding: 24px;
+                display: none;
+            }
+            .mapa-cols {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .mapa-col {
+                flex: 1 1 200px;
+                background: white;
+                border-radius: 16px;
+                padding: 16px 12px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
+                border: 1px solid var(--bdr);
+            }
+            .mapa-col-hdr {
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--navy);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid var(--bdr);
+            }
+            .mapa-node {
+                background: var(--white);
+                padding: 10px;
+                border-radius: 8px;
+                margin-bottom: 10px;
+                border-left: 4px solid var(--bdr);
+                font-size: 12px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            }
+            .mapa-node.mapa-visited {
+                border-left-color: var(--green);
+                background: var(--green-bg);
+            }
+            .mapa-node.mapa-current {
+                border-left-color: var(--navy-lt);
+                background: var(--cyan-bg);
+            }
+            .mapa-node.mapa-end-s {
+                border-left-color: var(--green);
+            }
+            .mapa-node.mapa-end-e {
+                border-left-color: var(--red);
+            }
+            .mapa-node.mapa-end-w {
+                border-left-color: var(--amber);
+            }
+            .mapa-arr {
+                font-size: 10px;
+                color: var(--muted);
+                padding: 4px 0 4px 12px;
+                border-left: 1px solid var(--bdr);
+            }
+            .btn-outline {
+                background: white;
+                border: 1.5px solid var(--navy);
+                border-radius: 8px;
+                padding: 8px 18px;
+                font-family: inherit;
+                font-size: 13px;
+                font-weight: 600;
+                cursor: pointer;
+                color: var(--navy);
+            }
+            .btn-outline:hover {
+                background: var(--navy);
+                color: white;
+            }
+
+            /* --- Responsive (sobrescrito: reemplaza el antiguo display:none por overlay móvil) --- */
+            @media (max-width: 768px) {
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    transition: transform var(--transition-norm);
+                    width: 280px;
+                    display: flex !important;
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                #sidebar.collapsed {
+                    transform: translateX(-100%);
+                    width: 280px;
+                }
+                .sidebar-backdrop {
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 140;
+                    display: none;
+                }
+                .sidebar-backdrop.show {
+                    display: block;
+                }
+                #content {
+                    padding: 16px 12px;
+                }
+                .h-title {
+                    font-size: 14px;
+                }
+                .dec-opts {
+                    flex-direction: column;
+                }
+            }
+            @media print {
+                #hdr,
+                #pbar,
+                #breadcrumb,
+                #sidebar,
+                .c-nav,
+                .dec-opts,
+                .btn,
+                .sidebar-backdrop {
+                    display: none;
+                }
+                #layout,
+                #content {
+                    display: block;
+                    overflow: visible;
+                    height: auto;
+                }
+                .card {
+                    break-inside: avoid;
+                    box-shadow: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <header id="hdr" style="height: 70px">
+                <div class="h-left">
+                    <!-- Botón toggle sidebar AÑADIDO -->
+                    <button
+                        class="btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                    >
+                        ☰
+                    </button>
+                    <div class="h-seal">⚖</div>
+                    <div>
+                        <div class="h-sub">
+                            LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN
+                            VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE
+                            JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS ·
+                            CAPÍTULO III
+                        </div>
+                        <div class="h-title">De la adopción</div>
+                        <div class="h-sub" style="padding-top: 5px">
+                            Artículos 33 a 42 LJV
+                        </div>
+                    </div>
+                </div>
+                <div class="h-right">
+                    <div class="zoom-cluster">
+                        <button class="btn-zoom" data-action="zoom-out">
+                            −
+                        </button>
+                        <span class="zoom-label" id="zoom-label">100%</span>
+                        <button class="btn-zoom" data-action="zoom-in">
+                            +
+                        </button>
+                    </div>
+                    <button class="btn btn-ghost" data-action="toggle-mapa">
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn btn-ghost" data-action="descargar">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn btn-ghost" data-action="reiniciar">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </header>
+            <div id="pbar"></div>
+            <div id="breadcrumb"></div>
+            <div id="layout">
+                <div id="sidebar">
+                    <div id="sb-tabs">
+                        <button
+                            class="sb-tab active"
+                            data-action="sb-tab"
+                            data-tab="map"
+                        >
+                            Mapa
+                        </button>
+                        <button
+                            class="sb-tab"
+                            data-action="sb-tab"
+                            data-tab="journey"
+                        >
+                            Recorrido
+                        </button>
+                    </div>
+                    <div id="sb-map"></div>
+                    <div id="sb-journey" style="display: none"></div>
+                </div>
+                <div id="content"></div>
+            </div>
+            <div id="mapa-overlay" style="display: none">
+                <div
+                    style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 20px;
+                    "
+                >
+                    <h2 style="color: var(--navy); font-size: 20px">
+                        🗺️ Mapa completo del procedimiento
+                    </h2>
+                    <button class="btn-outline" data-action="close-mapa">
+                        ← Volver al recorrido
+                    </button>
+                </div>
+                <div id="mapa-content"></div>
+            </div>
+            <!-- Backdrop para móvil AÑADIDO -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        </div>
+
+        <script>
+            "use strict";
+
+            /* =========================================================
+   FASES DEL PROCEDIMIENTO
+   ========================================================= */
+            const PHASES = [
+                "Inicio y competencia",
+                "Propuesta / Solicitud",
+                "Citaciones y consentimientos",
+                "Oposición / Audiencia",
+                "Resolución e inscripción",
+                "Procedimientos posteriores",
+            ];
+            const SB_FOOT = `<div class="sb-foot">
+  <strong style="color:rgba(255,255,255,0.8);">Referencias normativas</strong>
+  <div class="ref-item">Ley 15/2015 (arts. 33‑42)</div>
+  <div class="ref-item">Código Civil: arts. 176‑180</div>
+  <div class="ref-item">LEC arts. 156, 753, 781</div>
+  <div class="ref-item">Ley 54/2007 Adopción Internacional</div>
+</div>`;
+
+            /* =========================================================
+   PASOS DEL PROCEDIMIENTO (STEPS)
+   ========================================================= */
+            const STEPS = {
+                inicio: {
+                    ph: 0,
+                    ac: "laj",
+                    t: "Inicio del expediente de adopción",
+                    q: "¿Existe propuesta previa de la Entidad Pública a favor del adoptante?",
+                    opts: [
+                        {
+                            t: "Sí, hay propuesta previa de la Entidad Pública",
+                            l: "Sí",
+                            n: "propuesta_ep",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, concurre una excepción del artículo 176 del Código Civil",
+                            l: "No",
+                            n: "ofrecimiento_adoptante",
+                            v: "warn",
+                        },
+                    ],
+                    c: [
+                        [
+                            "i",
+                            "El expediente de adopción comienza determinando el modo de inicio según el artículo 35 de la Ley 15/2015 y el artículo 176 del Código Civil. El Juzgado competente es el de Primera Instancia de la sede de la Entidad Pública que tenga encomendada la protección del adoptando; en su defecto, el del domicilio del adoptante (art. 33 LJV).",
+                        ],
+                        [
+                            "n",
+                            "La tramitación del expediente de adopción tendrá carácter preferente y se practicará con intervención del Ministerio Fiscal. No será preceptiva la asistencia de Abogado ni Procurador (art. 34 LJV).",
+                        ],
+                        [
+                            "cl",
+                            "Excepciones que no requieren propuesta previa de la Entidad Pública (Art. 176.2 CC):",
+                            [
+                                "Ser huérfano y pariente del adoptante en tercer grado por consanguinidad o afinidad",
+                                "Ser hijo del cónyuge o persona unida por análoga relación de afectividad a la conyugal",
+                                "Llevar más de un año en guarda con fines de adopción o bajo tutela del adoptante",
+                                "Ser mayor de edad o menor emancipado",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Art. 33, 34 y 35.1 Ley 15/2015 · Art. 176 Código Civil",
+                        ],
+                    ],
+                },
+                propuesta_ep: {
+                    ph: 1,
+                    ac: "laj",
+                    t: "Propuesta de la Entidad Pública",
+                    nx: "competencia",
+                    c: [
+                        [
+                            "i",
+                            "El expediente comenzará con el escrito de propuesta de adopción formulada por la Entidad Pública (art. 35.1 LJV).",
+                        ],
+                        [
+                            "cl",
+                            "La propuesta debe expresar especialmente (art. 35.2 LJV):",
+                            [
+                                "a) Condiciones personales, familiares, sociales y medios de vida del adoptante y sus relaciones con el adoptando, con detalle de las razones que justifiquen la elección.",
+                                "b) Último domicilio conocido del cónyuge del adoptante o persona unida por análoga relación de afectividad, o el de los progenitores, tutor, familia acogedora o guardadores del adoptando.",
+                                "c) Si unos y otros han formulado su asentimiento ante la Entidad Pública o en documento público.",
+                            ],
+                        ],
+                        [
+                            "d",
+                            "Con la propuesta se presentarán la declaración previa de idoneidad del adoptante para el ejercicio de la patria potestad emitida por la Entidad Pública, si procediere, y cuantos informes o documentos se juzguen oportunos (art. 35.4 LJV).",
+                        ],
+                        ["l", "Art. 35.1, 35.2 y 35.4 Ley 15/2015"],
+                    ],
+                },
+                ofrecimiento_adoptante: {
+                    ph: 1,
+                    ac: "laj",
+                    t: "Ofrecimiento del adoptante (excepción art. 176 CC)",
+                    nx: "competencia",
+                    c: [
+                        [
+                            "i",
+                            "El ofrecimiento para la adopción del adoptante se presentará por escrito, expresando las indicaciones del art. 35.2 LJV en cuanto fueren aplicables, y las alegaciones y pruebas conducentes a demostrar que en el adoptando concurre alguna de las circunstancias excepcionales del art. 176 CC (art. 35.3 LJV).",
+                        ],
+                        [
+                            "w",
+                            "No se requiere propuesta previa de la Entidad Pública, pero sí la declaración previa de idoneidad del adoptante si procediere, y cuantos informes o documentos se juzguen oportunos (art. 35.4 LJV).",
+                        ],
+                        [
+                            "l",
+                            "Art. 35.3 y 35.4 Ley 15/2015 · Art. 176.2 Código Civil",
+                        ],
+                    ],
+                },
+                competencia: {
+                    ph: 0,
+                    ac: "laj",
+                    t: "Determinación de competencia",
+                    nx: "intervencion_fiscal",
+                    c: [
+                        [
+                            "i",
+                            "Determinar el Juzgado de Primera Instancia competente para conocer del expediente de adopción.",
+                        ],
+                        [
+                            "cl",
+                            "Reglas de competencia (art. 33 LJV):",
+                            [
+                                "Competente principal: Juzgado de Primera Instancia de la sede de la Entidad Pública que tenga encomendada la protección del adoptando.",
+                                "En su defecto: Juzgado de Primera Instancia del domicilio del adoptante.",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Art. 33 Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria",
+                        ],
+                    ],
+                },
+                intervencion_fiscal: {
+                    ph: 0,
+                    ac: "ambos",
+                    t: "Intervención del Ministerio Fiscal",
+                    nx: "consentimiento",
+                    c: [
+                        [
+                            "i",
+                            "La tramitación del expediente de adopción tiene carácter preferente y se practicará con intervención del Ministerio Fiscal en todo caso.",
+                        ],
+                        [
+                            "n",
+                            "No será preceptiva la asistencia de Abogado ni Procurador.",
+                        ],
+                        ["l", "Art. 34 Ley 15/2015"],
+                    ],
+                },
+                consentimiento: {
+                    ph: 2,
+                    ac: "laj",
+                    t: "Citación para prestación de consentimiento (art. 36 LJV)",
+                    nx: "asentimiento",
+                    c: [
+                        [
+                            "i",
+                            "El Letrado de la Administración de Justicia citará, para manifestar su consentimiento en presencia del Juez, al adoptante o adoptantes y al adoptando si fuere mayor de 12 años.",
+                        ],
+                        [
+                            "cl",
+                            "Sujetos que deben consentir la adopción (art. 177.1 CC):",
+                            [
+                                "El adoptante o adoptantes.",
+                                "El adoptando mayor de doce años.",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Los consentimientos y asentimientos deberán otorgarse libremente, en la forma legal requerida y por escrito, previa información de sus consecuencias jurídicas.",
+                        ],
+                        ["l", "Art. 36 Ley 15/2015 · Art. 177.1 Código Civil"],
+                    ],
+                },
+                asentimiento: {
+                    ph: 2,
+                    ac: "laj",
+                    t: "Necesidad de asentimiento (art. 37.1 LJV)",
+                    q: "¿Deben otros sujetos prestar asentimiento a la adopción (cónyuge del adoptante, progenitores no emancipados)?",
+                    opts: [
+                        {
+                            t: "Sí, deben prestar asentimiento y no lo han prestado aún",
+                            l: "Sí",
+                            n: "asentimiento_sujetos",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, ya lo han prestado o no es necesario",
+                            l: "No",
+                            n: "audiencia",
+                            v: "neutral",
+                        },
+                    ],
+                    c: [
+                        [
+                            "i",
+                            "Determinar la necesidad de asentimiento de otras personas según el artículo 177.2 del Código Civil. Deberán ser citados para prestar asentimiento ante el Juez: 1.º El cónyuge o persona unida al adoptante por análoga relación de afectividad, salvo separación o divorcio legal o ruptura fehaciente. 2.º Los progenitores del adoptando que no se hallare emancipado, a menos que estuvieran privados de la patria potestad por sentencia firme o incursos en causa legal para tal privación.",
+                        ],
+                        [
+                            "n",
+                            "No serán citados aquellos que, siendo necesario su asentimiento, lo hubieran prestado con anterioridad a la iniciación del expediente ante la correspondiente Entidad Pública o en documento público, salvo que hubieran transcurrido más de seis meses desde que lo hicieron.",
+                        ],
+                        [
+                            "w",
+                            "El asentimiento de la madre no podrá prestarse hasta que hayan transcurrido seis semanas desde el parto (art. 177.2 CC).",
+                        ],
+                        [
+                            "l",
+                            "Art. 37.1 Ley 15/2015 · Art. 177.2 Código Civil",
+                        ],
+                    ],
+                },
+                asentimiento_sujetos: {
+                    ph: 2,
+                    ac: "laj",
+                    t: "Asentimiento de sujetos: reclamación de progenitores",
+                    q: "¿Los progenitores pretenden que se les reconozca la necesidad de prestar su asentimiento en el expediente?",
+                    opts: [
+                        {
+                            t: "Sí, los progenitores reclaman la necesidad de su asentimiento",
+                            l: "Sí",
+                            n: "reclamacion_asentimiento",
+                            v: "warn",
+                        },
+                        {
+                            t: "No, no hay reclamación de los progenitores",
+                            l: "No",
+                            n: "audiencia",
+                            v: "ok",
+                        },
+                    ],
+                    c: [
+                        [
+                            "i",
+                            "Deberán ser citados para prestar asentimiento el cónyuge del adoptante y los progenitores del adoptando no emancipado (salvo privación de patria potestad por sentencia firme).",
+                        ],
+                        [
+                            "d",
+                            "Asentimiento de la madre: no podrá prestarse hasta que hayan transcurrido 6 semanas desde el parto (art. 177.2 CC).",
+                        ],
+                        [
+                            "w",
+                            "En adopciones con propuesta previa de la Entidad Pública, el asentimiento de los progenitores no puede referirse a adoptantes determinados.",
+                        ],
+                        [
+                            "l",
+                            "Art. 37.1 Ley 15/2015 · Art. 177.2 Código Civil",
+                        ],
+                    ],
+                },
+                reclamacion_asentimiento: {
+                    ph: 2,
+                    ac: "laj",
+                    t: "Reclamación de asentimiento por progenitores (art. 37.2 LJV)",
+                    q: "¿Presentan los progenitores demanda dentro del plazo de 15 días?",
+                    opts: [
+                        {
+                            t: "Sí, presentan demanda en plazo",
+                            l: "Sí",
+                            n: "contencioso_asentimiento",
+                            v: "bad",
+                        },
+                        {
+                            t: "No, no presentan demanda en plazo",
+                            l: "No",
+                            n: "alzamiento_suspension",
+                            v: "ok",
+                        },
+                    ],
+                    c: [
+                        [
+                            "i",
+                            "Si los progenitores manifiestan en el expediente la necesidad de su asentimiento, el Letrado de la Administración de Justicia acordará la suspensión del expediente.",
+                        ],
+                        [
+                            "d",
+                            "Plazo de 15 días para la presentación de la demanda, de la que conocerá el mismo Tribunal (art. 37.2 LJV).",
+                        ],
+                        ["l", "Art. 37.2 Ley 15/2015 · Art. 781 LEC"],
+                    ],
+                },
+                alzamiento_suspension: {
+                    ph: 2,
+                    ac: "laj",
+                    t: "Alzamiento de la suspensión (sin demanda)",
+                    nx: "audiencia",
+                    c: [
+                        [
+                            "i",
+                            "Al no presentarse demanda en el plazo fijado, el Letrado de la Administración de Justicia dictará decreto dando por finalizado el trámite y alzando la suspensión del expediente de adopción.",
+                        ],
+                        [
+                            "n",
+                            "El decreto será recurrible directamente en revisión ante el Tribunal.",
+                        ],
+                        [
+                            "w",
+                            "Firme la resolución, no se admitirá ninguna reclamación posterior de los mismos sujetos sobre necesidad de asentimiento para la adopción de que se trate.",
+                        ],
+                        ["l", "Art. 37.2 párrafo 4º Ley 15/2015"],
+                    ],
+                },
+                contencioso_asentimiento: {
+                    ph: 2,
+                    ac: "laj",
+                    t: "Expediente contencioso por asentimiento (art. 781 LEC)",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "Presentada la demanda dentro de plazo, el Letrado de la Administración de Justicia dictará decreto declarando contencioso el expediente de adopción y acordará seguir su tramitación conforme a lo dispuesto en el artículo 781 de la Ley de Enjuiciamiento Civil.",
+                        ],
+                        [
+                            "n",
+                            "La tramitación se realizará como pieza separada, con arreglo a lo previsto en el artículo 753 LEC. Una vez firme la resolución que se dicte en la pieza separada sobre la necesidad del asentimiento, se continuará con la adopción.",
+                        ],
+                        ["l", "Art. 37.2 párrafo 3º LJV · Art. 781 y 753 LEC"],
+                    ],
+                },
+                audiencia: {
+                    ph: 2,
+                    ac: "laj",
+                    t: "Audiencia de sujetos (art. 37.3 LJV)",
+                    nx: "citaciones",
+                    c: [
+                        [
+                            "i",
+                            "Deberán ser citados para ser oídos por el Juez en el expediente las personas señaladas en el apartado 3 del artículo 177 del Código Civil.",
+                        ],
+                        [
+                            "cl",
+                            "Sujetos que deben ser oídos (art. 177.3 CC):",
+                            [
+                                "1.º Los progenitores que no hayan sido privados de la patria potestad, cuando su asentimiento no fuera necesario para la adopción.",
+                                "2.º El tutor y, en su caso, la familia acogedora, y el guardador o guardadores.",
+                                "3.º El adoptando menor de doce años de acuerdo con su edad y madurez.",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Art. 37.3 Ley 15/2015 · Art. 177.3 Código Civil",
+                        ],
+                    ],
+                },
+                citaciones: {
+                    ph: 3,
+                    ac: "laj",
+                    t: "Práctica de citaciones (art. 38 LJV)",
+                    q: "¿Consta el domicilio de los que deban ser citados?",
+                    opts: [
+                        {
+                            t: "Sí, el domicilio es conocido",
+                            l: "Sí",
+                            n: "citacion_conocida",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, el domicilio es desconocido",
+                            l: "No",
+                            n: "citacion_desconocida",
+                            v: "warn",
+                        },
+                    ],
+                    c: [
+                        [
+                            "i",
+                            "Proceder a realizar las citaciones para asentimiento y audiencia. En las citaciones que deban prestar su asentimiento o ser oídas se incluirá el apercibimiento de que si fueran citados personalmente y no comparecieran se seguirá el trámite sin más citaciones.",
+                        ],
+                        [
+                            "n",
+                            "Todas las actuaciones se llevarán a cabo con la conveniente reserva, evitando en particular que la familia de origen tenga conocimiento de cuál sea la adoptiva.",
+                        ],
+                        ["l", "Art. 38 Ley 15/2015"],
+                    ],
+                },
+                citacion_conocida: {
+                    ph: 3,
+                    ac: "laj",
+                    t: "Citación en domicilio conocido",
+                    q: "¿Comparecen los citados personalmente o responden a la citación?",
+                    opts: [
+                        {
+                            t: "Sí, comparecen",
+                            l: "Sí",
+                            n: "tramitacion",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, citados personalmente no comparecen",
+                            l: "No",
+                            n: "prescindir_tramite",
+                            v: "bad",
+                        },
+                    ],
+                    c: [
+                        [
+                            "i",
+                            "Las citaciones incluirán el apercibimiento de que si fueran citados personalmente y no comparecieran se seguirá el trámite sin más citaciones.",
+                        ],
+                        [
+                            "n",
+                            "Si no respondieran a la primera citación y no se realizó en su persona, se les volverá a citar dentro de los quince días siguientes, con el apercibimiento de que aunque no comparezcan el expediente seguirá su trámite.",
+                        ],
+                        ["l", "Art. 38.2 Ley 15/2015"],
+                    ],
+                },
+                citacion_desconocida: {
+                    ph: 3,
+                    ac: "laj",
+                    t: "Citación en domicilio desconocido",
+                    q: "¿Aparece el domicilio tras las diligencias de averiguación o comparece el citado?",
+                    opts: [
+                        {
+                            t: "Sí, se encuentra el domicilio o comparece",
+                            l: "Sí",
+                            n: "citacion_conocida",
+                            v: "ok",
+                        },
+                        {
+                            t: "No, no aparece el domicilio ni comparece",
+                            l: "No",
+                            n: "prescindir_tramite",
+                            v: "bad",
+                        },
+                    ],
+                    c: [
+                        [
+                            "i",
+                            "El Letrado de la Administración de Justicia practicará inmediatamente las diligencias oportunas para la averiguación del domicilio conforme al artículo 156 de la LEC y los citará ante el Juez dentro de los quince días siguientes, debiendo garantizar la debida reserva.",
+                        ],
+                        [
+                            "d",
+                            "Plazo de 15 días siguientes para citar ante el Juez una vez averiguado el domicilio (art. 38.1 LJV).",
+                        ],
+                        ["l", "Art. 38.1 Ley 15/2015 · Art. 156 LEC"],
+                    ],
+                },
+                prescindir_tramite: {
+                    ph: 3,
+                    ac: "juez",
+                    t: "Prescindir del trámite por incomparecencia",
+                    nx: "tramitacion",
+                    c: [
+                        [
+                            "i",
+                            "Cuando no haya podido conocerse el domicilio o paradero de alguna persona que deba ser citada, o si citada debidamente con los apercibimientos oportunos no compareciese, se prescindirá del trámite y la adopción acordada será válida.",
+                        ],
+                        [
+                            "w",
+                            "Sin perjuicio del derecho que a los progenitores concede el apartado 2 del artículo 180 del Código Civil: podrán solicitar la extinción de la adopción en los 2 años siguientes si no intervinieron sin culpa suya.",
+                        ],
+                        [
+                            "l",
+                            "Art. 38.3 Ley 15/2015 · Art. 180.2 Código Civil",
+                        ],
+                    ],
+                },
+                tramitacion: {
+                    ph: 3,
+                    ac: "juez",
+                    t: "Tramitación del expediente (art. 39 LJV)",
+                    q: "¿Se suscita oposición durante la tramitación?",
+                    opts: [
+                        {
+                            t: "Sí, hay oposición",
+                            l: "Sí",
+                            n: "oposicion_contencioso",
+                            v: "bad",
+                        },
+                        {
+                            t: "No, no hay oposición",
+                            l: "No",
+                            n: "resolucion_adopcion",
+                            v: "ok",
+                        },
+                    ],
+                    c: [
+                        [
+                            "i",
+                            "El Juez podrá ordenar la práctica de cuantas diligencias estime oportunas para asegurarse de que la adopción sea en interés del adoptando.",
+                        ],
+                        [
+                            "n",
+                            "Todas las actuaciones se llevarán a cabo con la conveniente reserva, evitando en particular que la familia de origen tenga conocimiento de cuál sea la adoptiva, excepto en los supuestos recogidos en los apartados 2 y 4 del artículo 178 del Código Civil y sin perjuicio de lo establecido en el artículo 180 del Código Civil.",
+                        ],
+                        ["l", "Art. 39.1 y 39.2 Ley 15/2015"],
+                    ],
+                },
+                oposicion_contencioso: {
+                    ph: 3,
+                    ac: "laj",
+                    t: "Oposición: transformación en contencioso (art. 39.3 LJV)",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "Si se suscitare oposición, el expediente se hará contencioso y el Letrado de la Administración de Justicia citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal.",
+                        ],
+                        ["l", "Art. 39.3 Ley 15/2015"],
+                    ],
+                },
+                resolucion_adopcion: {
+                    ph: 4,
+                    ac: "juez",
+                    t: "Auto de adopción (art. 39.4 LJV)",
+                    q: "¿Se interpone recurso de apelación contra el auto que resuelve la adopción?",
+                    opts: [
+                        {
+                            t: "Sí, se interpone recurso de apelación",
+                            l: "Sí",
+                            n: "apelacion_adopcion",
+                            v: "warn",
+                        },
+                        {
+                            t: "No, el auto es firme",
+                            l: "No",
+                            n: "inscripcion_adopcion",
+                            v: "ok",
+                        },
+                    ],
+                    c: [
+                        [
+                            "i",
+                            "El Juez dicta auto resolviendo el expediente de adopción. Contra el auto que resuelva el expediente cabe recurso de apelación, que tendrá carácter preferente, sin que produzca efectos suspensivos.",
+                        ],
+                        ["l", "Art. 39.4 Ley 15/2015"],
+                    ],
+                },
+                apelacion_adopcion: {
+                    ph: 4,
+                    ac: "laj",
+                    t: "Recurso de apelación (carácter preferente)",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "Se interpone recurso de apelación contra el auto. El recurso tendrá carácter preferente y no producirá efectos suspensivos.",
+                        ],
+                        [
+                            "n",
+                            "Una vez resuelto el recurso y firme la resolución, se procederá a la inscripción en el Registro Civil.",
+                        ],
+                        ["l", "Art. 39.4 Ley 15/2015"],
+                    ],
+                },
+                inscripcion_adopcion: {
+                    ph: 4,
+                    ac: "laj",
+                    t: "Inscripción en el Registro Civil",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El testimonio de la resolución firme en que se acuerde la adopción se remitirá al Registro Civil correspondiente para que se practique su inscripción.",
+                        ],
+                        [
+                            "n",
+                            "La adopción produce la extinción de los vínculos jurídicos entre el adoptado y su familia de origen, con las excepciones previstas en el artículo 178 del Código Civil. La adopción es irrevocable (art. 180.1 CC).",
+                        ],
+                        [
+                            "l",
+                            "Art. 39.5 Ley 15/2015 · Arts. 178 y 180 Código Civil",
+                        ],
+                    ],
+                },
+                exclusion_extincion: {
+                    ph: 5,
+                    ac: "juez",
+                    t: "Exclusión de funciones tutelares / extinción de la adopción (arts. 179-180 CC)",
+                    q: "¿Cuál es el objeto del procedimiento posterior?",
+                    opts: [
+                        {
+                            t: "Exclusión de funciones tutelares (art. 179 CC)",
+                            l: "A",
+                            n: "fin_extincion",
+                            v: "warn",
+                        },
+                        {
+                            t: "Extinción de la adopción (art. 180 CC)",
+                            l: "B",
+                            n: "fin_extincion",
+                            v: "warn",
+                        },
+                    ],
+                    c: [
+                        [
+                            "i",
+                            "Las actuaciones judiciales a que se refieren los artículos 179 y 180 del Código Civil se sustanciarán por los trámites del juicio que corresponda con arreglo a lo establecido en la Ley de Enjuiciamiento Civil y sus resoluciones serán remitidas al Registro Civil para su inscripción.",
+                        ],
+                        [
+                            "n",
+                            "Durante la sustanciación del procedimiento, el Juez adoptará, incluso de oficio, y previa audiencia del Ministerio Fiscal, las medidas de protección oportunas sobre la persona y bienes del adoptado menor o persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica.",
+                        ],
+                        [
+                            "d",
+                            "Si el adoptado fuera mayor de edad, la extinción de la adopción requerirá su consentimiento expreso.",
+                        ],
+                        ["l", "Art. 40 LJV · Arts. 179 y 180 Código Civil"],
+                    ],
+                },
+                fin_extincion: {
+                    ph: 5,
+                    ac: "ambos",
+                    t: "Extinción o exclusión resuelta",
+                    end: "neutral",
+                    c: [
+                        [
+                            "i",
+                            "La resolución se remite al Registro Civil para su inscripción.",
+                        ],
+                        [
+                            "n",
+                            "La extinción de la adopción no afecta a la nacionalidad o vecindad civil adquirida, ni a los efectos patrimoniales ya producidos.",
+                        ],
+                        ["l", "Art. 180 CC · Art. 40 LJV"],
+                    ],
+                },
+                adopcion_internacional: {
+                    ph: 1,
+                    ac: "ambos",
+                    t: "Adopción internacional (art. 41 LJV)",
+                    end: "neutral",
+                    c: [
+                        [
+                            "i",
+                            "En los casos de adopción internacional se estará a lo previsto en el artículo 9.5 del Código Civil y en la Ley 54/2007, de 28 de diciembre, de Adopción Internacional, así como a lo establecido en los Tratados y Convenios internacionales en que España sea parte.",
+                        ],
+                        [
+                            "n",
+                            "El Convenio de La Haya de 29 de mayo de 1993 relativo a la protección del niño y a la cooperación en materia de adopción internacional es de aplicación preferente en los países signatarios.",
+                        ],
+                        [
+                            "l",
+                            "Art. 41 LJV · Art. 9.5 CC · Ley 54/2007 · Convenio de La Haya de 29 de mayo de 1993",
+                        ],
+                    ],
+                },
+                conversion_simple: {
+                    ph: 5,
+                    ac: "juez",
+                    t: "Conversión de adopción simple en plena (art. 42 LJV)",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El adoptante de adopción simple o no plena constituida por autoridad extranjera competente podrá instar ante los Tribunales españoles su conversión en una adopción regulada por el derecho español cuando concurra uno de los siguientes supuestos: a) Que el adoptando tenga su residencia habitual en España en el momento de constitución de la adopción; b) Que el adoptando haya sido o vaya a ser trasladado a España con la finalidad de establecer su residencia habitual en España; c) Que el adoptante tenga la nacionalidad española o tenga su residencia habitual en España.",
+                        ],
+                        [
+                            "n",
+                            "Presentada la solicitud se seguirán los trámites establecidos en los artículos anteriores, en cuanto sean aplicables, debiendo examinar el Juez la concurrencia de los extremos enumerados en la Ley de Adopción Internacional.",
+                        ],
+                        [
+                            "d",
+                            "En todo caso habrán de manifestar su consentimiento ante el Juez el adoptante o adoptantes y el adoptado si fuere mayor de doce años. Deberá asentir el cónyuge del adoptante o la persona a la que esté unida por análoga relación de afectividad a la conyugal. El testimonio del auto se remitirá al Registro Civil.",
+                        ],
+                        [
+                            "l",
+                            "Art. 42 LJV · Ley 54/2007 de Adopción Internacional",
+                        ],
+                    ],
+                },
+            };
+
+            /* =========================================================
+   ESTADO
+   ========================================================= */
+            let cur = "inicio";
+            let hist = [];
+            let activeSbTab = "map";
+            let mapaOn = false;
+            let sbMapState = {}; // Estado expandido/colapsado de fases en sidebar
+            let zoomLevel = 100;
+            function updateZoom() {
+                const label = document.getElementById("zoom-label");
+                const content = document.getElementById("content");
+                if (label) label.innerText = zoomLevel + "%";
+                if (content) content.style.zoom = zoomLevel / 100;
+            }
+
+            /* =========================================================
+   SIDEBAR TOGGLE (NUEVO)
+   ========================================================= */
+            let sidebarOpen = false; // solo móvil
+
+            function toggleSidebar() {
+                const isMobile = window.innerWidth <= 768;
+                const sidebar = document.getElementById("sidebar");
+                const btn = document.getElementById("btnToggleSidebar");
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    if (sidebarOpen) {
+                        sidebar.classList.add("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.add("show");
+                        if (btn) btn.setAttribute("aria-expanded", "true");
+                    } else {
+                        sidebar.classList.remove("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.remove("show");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                } else {
+                    sidebar.classList.toggle("collapsed");
+                    const isCollapsed = sidebar.classList.contains("collapsed");
+                    if (btn)
+                        btn.setAttribute(
+                            "aria-expanded",
+                            isCollapsed ? "false" : "true",
+                        );
+                }
+            }
+
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 768 && sidebarOpen) {
+                    sidebarOpen = false;
+                    const sidebar = document.getElementById("sidebar");
+                    const backdrop = document.getElementById("sidebarBackdrop");
+                    const btn = document.getElementById("btnToggleSidebar");
+                    if (sidebar) sidebar.classList.remove("open");
+                    if (backdrop) backdrop.classList.remove("show");
+                    if (btn) btn.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            function handleResize() {
+                if (window.innerWidth > 768) {
+                    if (sidebarOpen) {
+                        const sidebar = document.getElementById("sidebar");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (sidebar) sidebar.classList.remove("open");
+                        if (backdrop) backdrop.classList.remove("show");
+                        sidebarOpen = false;
+                        const btn = document.getElementById("btnToggleSidebar");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (sidebarEl) sidebarEl.classList.remove("open");
+                } else {
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (
+                        sidebarEl &&
+                        sidebarEl.classList.contains("collapsed")
+                    ) {
+                        sidebarEl.classList.remove("collapsed");
+                    }
+                    if (
+                        !sidebarOpen &&
+                        sidebarEl &&
+                        sidebarEl.classList.contains("open")
+                    ) {
+                        sidebarEl.classList.remove("open");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (backdrop) backdrop.classList.remove("show");
+                    }
+                }
+            }
+
+            /* =========================================================
+   NAVEGACIÓN (modificada para cerrar sidebar móvil)
+   ========================================================= */
+            function goTo(stepId, choiceLabel) {
+                if (!STEPS[stepId]) return;
+                hist.push({ s: cur, next: stepId, c: choiceLabel || "" });
+                cur = stepId;
+                if (choiceLabel) sbTab("journey");
+                render();
+                closeMobileSidebar();
+            }
+            function goBack() {
+                if (hist.length === 0) return;
+                cur = hist.pop().s;
+                render();
+                closeMobileSidebar();
+            }
+            function goBackTo(index) {
+                if (index < 0 || index >= hist.length) return;
+                cur = hist[index].next;
+                hist = hist.slice(0, index);
+                render();
+                closeMobileSidebar();
+            }
+            function jumpTo(stepId) {
+                if (!STEPS[stepId]) return;
+                cur = stepId;
+                hist = [];
+                render();
+                closeMobileSidebar();
+            }
+            function restart() {
+                cur = "inicio";
+                hist = [];
+                sbTab("map");
+                render();
+                closeMobileSidebar();
+            }
+            function sbTab(tab) {
+                activeSbTab = tab;
+                const map = document.getElementById("sb-map");
+                const jny = document.getElementById("sb-journey");
+                if (map) map.style.display = tab === "map" ? "block" : "none";
+                if (jny)
+                    jny.style.display = tab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach((t) => {
+                    t.classList.toggle("active", t.dataset.tab === tab);
+                });
+                renderSidebar();
+            }
+            function toggleMapa() {
+                mapaOn = !mapaOn;
+                const lay = document.getElementById("layout");
+                const ovl = document.getElementById("mapa-overlay");
+                if (lay) lay.style.display = mapaOn ? "none" : "flex";
+                if (ovl) ovl.style.display = mapaOn ? "block" : "none";
+                if (mapaOn) renderMapa();
+                closeMobileSidebar();
+            }
+
+            /* =========================================================
+   HASH
+   ========================================================= */
+            function syncHash() {
+                const current = window.location.hash.replace("#", "");
+                if (current !== cur) history.replaceState(null, "", "#" + cur);
+            }
+            function loadFromHash() {
+                const h = window.location.hash.replace("#", "");
+                if (h && STEPS[h]) {
+                    cur = h;
+                    hist = [];
+                }
+            }
+
+            /* =========================================================
+   RENDER PRINCIPAL (cierra sidebar)
+   ========================================================= */
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+                syncHash();
+                const content = document.getElementById("content");
+                if (content) content.scrollTop = 0;
+                closeMobileSidebar();
+            }
+
+            /* =========================================================
+   RENDER DE COMPONENTES
+   ========================================================= */
+            function renderPbar() {
+                const host = document.getElementById("pbar");
+                if (!host) return;
+                const s = STEPS[cur];
+                if (!s) return;
+                let html = "";
+                PHASES.forEach((name, idx) => {
+                    if (idx > 0) html += '<span class="ph-sep">›</span>';
+                    const cls =
+                        idx === s.ph ? "active" : idx < s.ph ? "done" : "";
+                    html += `<div class="ph-item"><span class="ph-lbl ${cls}">${escHtml(name)}</span></div>`;
+                });
+                host.innerHTML = html;
+            }
+
+            function renderBreadcrumb() {
+                const host = document.getElementById("breadcrumb");
+                if (!host) return;
+                let html = "";
+                const items = [];
+                hist.forEach((h, idx) => {
+                    const stepData = STEPS[h.next];
+                    if (stepData) items.push({ t: stepData.t, idx: idx });
+                });
+                const curData = STEPS[cur];
+                if (curData) items.push({ t: curData.t, idx: -1 });
+                items.forEach((item, i) => {
+                    if (i > 0) html += '<span class="bc-sep">›</span>';
+                    const txt =
+                        item.t.length > 30
+                            ? item.t.substring(0, 30) + "…"
+                            : item.t;
+                    if (item.idx === -1) {
+                        html += `<span class="bc-item bc-current">${escHtml(txt)}</span>`;
+                    } else {
+                        html += `<button class="bc-item bc-past" data-action="go-back-to" data-index="${item.idx}">${escHtml(txt)}</button>`;
+                    }
+                });
+                host.innerHTML = html;
+            }
+
+            function renderSidebar() {
+                if (activeSbTab === "map") renderSbMap();
+                else renderSbJourney();
+            }
+
+            function renderSbMap() {
+                const host = document.getElementById("sb-map");
+                if (!host) return;
+                const visitedSteps = hist.map((h) => h.next);
+                visitedSteps.push(cur);
+                let html = "";
+                PHASES.forEach((phaseName, pIdx) => {
+                    const isExpanded = sbMapState[pIdx] !== false;
+                    html += `<div class="sm-phase">`;
+                    html += `<div class="sm-phase-hdr" data-action="toggle-sb-phase" data-phase="${pIdx}">${escHtml(phaseName)} <span>${isExpanded ? "▲" : "▼"}</span></div>`;
+                    if (isExpanded) {
+                        html += `<div class="sm-phase-items">`;
+                        Object.entries(STEPS).forEach(([id, s]) => {
+                            if (s.ph === pIdx) {
+                                let cls = "";
+                                if (id === cur) cls = "sm-current";
+                                else if (visitedSteps.includes(id))
+                                    cls = "sm-visited";
+                                else cls = "sm-unreachable";
+                                html += `<div class="sm-node ${cls}" data-action="jump-to" data-step="${escAttr(id)}" title="${escAttr(s.t)}"><span class="sm-dot"></span>${escHtml(s.t)}</div>`;
+                            }
+                        });
+                        html += `</div>`;
+                    }
+                    html += `</div>`;
+                });
+                host.innerHTML = html + SB_FOOT;
+            }
+
+            function renderSbJourney() {
+                const host = document.getElementById("sb-journey");
+                if (!host) return;
+                let html = "";
+                hist.forEach((h, idx) => {
+                    const stepData = STEPS[h.next];
+                    if (stepData) {
+                        html += `<div class="pi past">${idx + 1}. ${escHtml(stepData.t)}</div>`;
+                        if (h.c)
+                            html += `<div class="pi-choice">→ ${escHtml(h.c)}</div>`;
+                    }
+                });
+                const curData = STEPS[cur];
+                if (curData) {
+                    html += `<div class="pi current">${hist.length + 1}. ${escHtml(curData.t)}</div>`;
+                }
+                html += SB_FOOT;
+                host.innerHTML = html;
+            }
+
+            function renderContent() {
+                const s = STEPS[cur];
+                if (!s) return;
+                const host = document.getElementById("content");
+                if (!host) return;
+                host.innerHTML = s.end ? buildEnd(s) : buildStep(s);
+            }
+
+            function renderMapa() {
+                const host = document.getElementById("mapa-content");
+                if (!host) return;
+                const visitedSteps = hist.map((h) => h.next);
+                visitedSteps.push(cur);
+                let html = '<div class="mapa-cols">';
+                PHASES.forEach((phaseName, pIdx) => {
+                    html += `<div class="mapa-col"><div class="mapa-col-hdr">${escHtml(phaseName)}</div>`;
+                    Object.entries(STEPS).forEach(([id, s]) => {
+                        if (s.ph === pIdx) {
+                            let cls = "";
+                            if (id === cur) cls = "mapa-current";
+                            else if (visitedSteps.includes(id))
+                                cls = "mapa-visited";
+                            if (s.end === "success") cls += " mapa-end-s";
+                            if (s.end === "error") cls += " mapa-end-e";
+                            if (s.end === "warning") cls += " mapa-end-w";
+                            html += `<div class="mapa-node ${cls.trim()}">${escHtml(s.t)}</div>`;
+                            if (s.opts) {
+                                s.opts.forEach((opt) => {
+                                    html += `<div class="mapa-arr">→ ${escHtml(opt.l)}: ${escHtml(opt.t)}</div>`;
+                                });
+                            } else if (s.nx) {
+                                html += `<div class="mapa-arr">→ Siguiente</div>`;
+                            }
+                        }
+                    });
+                    html += `</div>`;
+                });
+                html += "</div>";
+                host.innerHTML = html;
+            }
+
+            /* =========================================================
+   CONSTRUCCIÓN DE TARJETAS
+   ========================================================= */
+            function buildStep(s) {
+                const actorName = {
+                    laj: "Letrado A. Justicia",
+                    juez: "Juez",
+                    ambos: "Juez / LAJ",
+                };
+                let html = `<div class="card">`;
+                html += `<div class="c-hdr">`;
+                html += `<span class="act-badge act-${escAttr(s.ac)}">${escHtml(actorName[s.ac] || s.ac)}</span>`;
+                html += `<div class="c-title">${escHtml(s.t)}</div>`;
+                html += `<div class="step-num">Paso ${hist.length + 1} · Fase ${s.ph + 1}: ${escHtml(PHASES[s.ph])}</div>`;
+                html += `</div>`;
+                html += `<div class="c-body">${renderBlocks(s.c)}</div>`;
+                if (s.q) {
+                    html += `<div class="dec-area">`;
+                    html += `<div class="dec-q">${escHtml(s.q)}</div>`;
+                    html += `<div class="dec-opts">`;
+                    s.opts.forEach((opt) => {
+                        html += `<button class="dec-btn ${escAttr(opt.v || "")}" data-action="go-to" data-step="${escAttr(opt.n)}" data-label="${escAttr(opt.t)}">
+        <span class="dec-letter">${escHtml(opt.l)}</span>
+        <span>${escHtml(opt.t)}</span>
+      </button>`;
+                    });
+                    html += `</div></div>`;
+                }
+                html += `<div class="c-nav">`;
+                html += `<button class="btn-prev" data-action="go-back" ${hist.length === 0 ? "disabled" : ""}>← Volver</button>`;
+                if (s.nx) {
+                    html += `<button class="btn-next" data-action="go-to" data-step="${escAttr(s.nx)}" data-label="">Siguiente →</button>`;
+                }
+                html += `</div>`;
+                html += `</div>`;
+                return html;
+            }
+
+            function buildEnd(s) {
+                const icons = {
+                    success: "✅",
+                    error: "❌",
+                    warning: "⚠️",
+                    neutral: "ℹ️",
+                };
+                const titles = {
+                    success: "Procedimiento completado",
+                    error: "Procedimiento contencioso",
+                    warning: "Incidencia procesal",
+                    neutral: "Fin del trámite",
+                };
+                const icon = icons[s.end] || "ℹ️";
+                const title = titles[s.end] || "Fin";
+                let html = `<div class="card end-${escAttr(s.end)}">`;
+                html += `<div class="end-body">`;
+                html += `<div class="end-icon">${icon}</div>`;
+                html += `<h2 class="end-title">${escHtml(title)}</h2>`;
+                html += `<p class="end-sub">${escHtml(s.t)}</p>`;
+                html += `</div>`;
+                html += `<div class="c-body" style="padding-top:0">${renderBlocks(s.c)}</div>`;
+                html += `<div class="summary-box">`;
+                html += `<strong>📋 Resumen del recorrido</strong>`;
+                const allSteps = [
+                    ...hist.map((h) => ({ id: h.next, c: h.c })),
+                    { id: cur, c: "" },
+                ];
+                allSteps.forEach((item, idx) => {
+                    const stepData = STEPS[item.id];
+                    if (stepData) {
+                        html += `<div class="summary-item"><span class="summary-step">${idx + 1}.</span> ${escHtml(stepData.t)}${item.c ? " <em>(→ " + escHtml(item.c) + ")</em>" : ""}</div>`;
+                    }
+                });
+                html += `</div>`;
+                html += `<div class="c-nav" style="justify-content:center; gap:12px;">`;
+                html += `<button class="btn-prev" data-action="go-back" ${hist.length === 0 ? "disabled" : ""}>← Volver</button>`;
+                html += `<button class="btn-next" data-action="reiniciar">↺ Nuevo procedimiento</button>`;
+                html += `</div>`;
+                html += `</div>`;
+                return html;
+            }
+
+            function renderBlocks(blocks) {
+                if (!blocks) return "";
+                return blocks
+                    .map((b) => {
+                        const type = b[0];
+                        if (type === "i")
+                            return `<div class="blk blk-i">${b[1]}</div>`;
+                        if (type === "d")
+                            return `<div class="blk blk-d"><strong>⏱ Plazo:</strong> ${b[1]}</div>`;
+                        if (type === "n")
+                            return `<div class="blk blk-n">📌 ${b[1]}</div>`;
+                        if (type === "w")
+                            return `<div class="blk blk-w">⚠️ ${b[1]}</div>`;
+                        if (type === "l")
+                            return `<div class="blk blk-l">📜 ${b[1]}</div>`;
+                        if (type === "cl") {
+                            const items = (b[2] || [])
+                                .map((li) => `<li>${li}</li>`)
+                                .join("");
+                            return `<div class="blk"><strong>${b[1]}</strong><ul class="checklist">${items}</ul></div>`;
+                        }
+                        return "";
+                    })
+                    .join("");
+            }
+
+            /* =========================================================
+   UTILIDADES
+   ========================================================= */
+            function escHtml(s) {
+                return String(s)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;");
+            }
+            function escAttr(s) {
+                return String(s).replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+            }
+
+            /* =========================================================
+   DESCARGA
+   ========================================================= */
+            function dlGuia() {
+                const html =
+                    "<!DOCTYPE html>" + document.documentElement.outerHTML;
+                const blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "guia-tramitacion-adopcion.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            /* =========================================================
+   EVENTOS (event delegation)
+   ========================================================= */
+            function wireEvents() {
+                document.addEventListener("click", (ev) => {
+                    const el = ev.target.closest("[data-action]");
+                    if (!el) return;
+                    const action = el.dataset.action;
+                    switch (action) {
+                        case "toggle-mapa":
+                            toggleMapa();
+                            break;
+                        case "descargar":
+                            dlGuia();
+                            break;
+                        case "reiniciar":
+                            restart();
+                            break;
+                        case "sb-tab":
+                            sbTab(el.dataset.tab);
+                            break;
+                        case "go-back":
+                            goBack();
+                            break;
+                        case "go-back-to":
+                            goBackTo(parseInt(el.dataset.index, 10));
+                            break;
+                        case "go-to":
+                            goTo(el.dataset.step, el.dataset.label || "");
+                            break;
+                        case "jump-to":
+                            jumpTo(el.dataset.step);
+                            break;
+                        case "close-mapa":
+                            toggleMapa();
+                            break;
+                        case "zoom-in":
+                            if (zoomLevel < 150) {
+                                zoomLevel += 10;
+                                updateZoom();
+                            }
+                            break;
+                        case "zoom-out":
+                            if (zoomLevel > 70) {
+                                zoomLevel -= 10;
+                                updateZoom();
+                            }
+                            break;
+                        case "toggle-sb-phase": {
+                            const pIdx = parseInt(el.dataset.phase, 10);
+                            sbMapState[pIdx] =
+                                sbMapState[pIdx] === false ? true : false;
+                            renderSidebar();
+                            break;
+                        }
+                    }
+                });
+                document.addEventListener("keydown", (ev) => {
+                    if (ev.key === "Escape" && mapaOn) toggleMapa();
+                });
+            }
+
+            /* =========================================================
+   ARRANQUE
+   ========================================================= */
+            document.addEventListener("DOMContentLoaded", () => {
+                loadFromHash();
+                wireEvents();
+                updateZoom();
+                // Eventos para toggle sidebar
+                document
+                    .getElementById("btnToggleSidebar")
+                    .addEventListener("click", toggleSidebar);
+                document
+                    .getElementById("sidebarBackdrop")
+                    .addEventListener("click", closeMobileSidebar);
+                window.addEventListener("resize", handleResize);
+                handleResize();
+                render();
+            });
+        </script>
+    </body>
+</html>

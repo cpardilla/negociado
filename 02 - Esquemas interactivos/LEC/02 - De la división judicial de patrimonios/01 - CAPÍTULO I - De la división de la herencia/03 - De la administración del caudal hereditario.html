@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración del Caudal Hereditario — Mapa Jurídico Interactivo Completo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #f7f6f2;
+      --surface:     #ffffff;
+      --surface-2:   #f2f1ed;
+      --border:      rgba(15,23,42,.08);
+      --border-md:   rgba(15,23,42,.14);
+      --text-1:      #0f172a;
+      --text-2:      #475569;
+      --text-3:      #94a3b8;
+      --ink:         #0f172a;
+      --header-bg:   #0f172a;
+      --header-text: #f8f5ed;
+      --accent:      #c8a96e;
+
+      /* Categorías expandidas */
+      --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;  /* Nombramiento y toma de posesión */
+      --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;  /* Representación procesal y material */
+      --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;  /* Rendición de cuentas */
+      --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;  /* Gestión, conservación y disposición */
+      --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;  /* Retribución y gastos */
+      --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;  /* Estructura administrativa subalterna */
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+      --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-ui:      'Outfit', system-ui, sans-serif;
+      --transition:   200ms ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-ui);
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .site-header { background: var(--header-bg); color: var(--header-text); padding: 2rem 1.5rem 1.75rem; }
+    .header-inner { max-width: 1400px; margin: 0 auto; }
+    .header-breadcrumb { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: .75rem; }
+    .header-title { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.2; margin-bottom: .5rem; }
+    .header-subtitle { font-size: 13px; color: rgba(248,245,237,.55); margin-bottom: 1rem; }
+    .header-meta { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+    .header-tag { display: inline-block; background: rgba(200,169,110,.15); border: 1px solid rgba(200,169,110,.3); color: var(--accent); padding: .25rem .75rem; border-radius: 20px; font-size: 12px; font-weight: 500; }
+    .header-actions { margin-left: auto; }
+    .btn-ghost { background: none; border: 1px solid rgba(248,245,237,.15); color: rgba(248,245,237,.7); padding: .4rem 1rem; border-radius: var(--radius-sm); cursor: pointer; font-size: 13px; transition: all var(--transition); }
+    .btn-ghost:hover { border-color: rgba(248,245,237,.4); color: var(--header-text); }
+
+    .stats-bar { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .stats-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
+    .stat-item { padding: 1.25rem 1rem; text-align: center; border-right: 1px solid var(--border); }
+    .stat-item:last-child { border-right: none; }
+    .stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--text-1); }
+    .stat-label { font-size: 11px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; margin-top: .25rem; }
+
+    .controls-bar { position: sticky; top: 0; z-index: 100; background: var(--surface); box-shadow: 0 2px 8px rgba(0,0,0,.04); padding: .75rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .search-wrap { position: relative; flex: 1; min-width: 200px; max-width: 360px; }
+    .search-wrap svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--text-3); }
+    .search-input { width: 100%; padding: .5rem .75rem .5rem 2.5rem; border: 1px solid var(--border-md); border-radius: var(--radius-sm); font-size: 13px; font-family: var(--font-ui); color: var(--text-1); background: var(--surface); transition: border-color var(--transition); }
+    .search-input:focus { outline: none; border-color: var(--accent); }
+    .filter-pills { display: flex; gap: .4rem; flex-wrap: wrap; }
+    .pill { padding: .35rem .85rem; border: 1px solid var(--border-md); border-radius: 20px; background: var(--surface); color: var(--text-2); font-size: 12px; font-weight: 500; cursor: pointer; transition: all var(--transition); }
+    .pill.active[data-cat="all"] { background: var(--ink); color: white; border-color: var(--ink); }
+    .pill.active[data-cat="c1"] { background: var(--c1); color: white; border-color: var(--c1); }
+    .pill.active[data-cat="c2"] { background: var(--c2); color: white; border-color: var(--c2); }
+    .pill.active[data-cat="c3"] { background: var(--c3); color: white; border-color: var(--c3); }
+    .pill.active[data-cat="c4"] { background: var(--c4); color: white; border-color: var(--c4); }
+    .pill.active[data-cat="c5"] { background: var(--c5); color: white; border-color: var(--c5); }
+    .pill.active[data-cat="c6"] { background: var(--c6); color: white; border-color: var(--c6); }
+    .ctrl-actions { display: flex; align-items: center; gap: .5rem; margin-left: auto; }
+    .btn-ctrl { padding: .35rem .7rem; border: 1px solid var(--border-md); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-2); font-size: 12px; cursor: pointer; transition: all var(--transition); }
+    .btn-ctrl:hover { border-color: var(--accent); color: var(--text-1); }
+    .zoom-cluster { display: flex; border: 1px solid var(--border-md); border-radius: var(--radius-sm); overflow: hidden; }
+    .btn-zoom { width: 36px; height: 28px; border: none; background: var(--surface); font-size: 16px; cursor: pointer; transition: background var(--transition); }
+    .btn-zoom:not(:last-child) { border-right: 1px solid var(--border-md); }
+    .btn-zoom:hover { background: var(--surface-2); }
+    .btn-zoom:disabled { opacity: .4; cursor: not-allowed; }
+    .zoom-label { font-size: 12px; font-weight: 500; min-width: 42px; text-align: center; line-height: 28px; color: var(--text-2); }
+
+    .page-main { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+
+    .map-section { margin-bottom: 2rem; }
+    .section-heading { display: flex; align-items: center; gap: .75rem; padding: .75rem 0; cursor: pointer; user-select: none; transition: color var(--transition); }
+    .section-heading:hover .section-heading-text { color: var(--text-1); }
+    .section-heading-text { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--text-1); flex: 1; }
+    .section-heading-count { font-size: 12px; color: var(--text-3); background: var(--surface-2); padding: .2rem .6rem; border-radius: 12px; }
+    .section-toggle-btn { background: none; border: none; font-size: 14px; color: var(--text-3); cursor: pointer; transition: transform var(--transition); }
+    .section-divider { border: none; border-top: 2px solid var(--border); margin-bottom: 1rem; }
+    .section-body.collapsed { display: none; }
+
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+
+    .map-card { background: var(--surface); border: 1px solid var(--border); border-left-width: 4px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); overflow: hidden; transition: box-shadow var(--transition), transform var(--transition); }
+    .map-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .map-card.hidden { display: none; }
+    .map-card[data-cat="c1"] { border-left-color: var(--c1); }
+    .map-card[data-cat="c2"] { border-left-color: var(--c2); }
+    .map-card[data-cat="c3"] { border-left-color: var(--c3); }
+    .map-card[data-cat="c4"] { border-left-color: var(--c4); }
+    .map-card[data-cat="c5"] { border-left-color: var(--c5); }
+    .map-card[data-cat="c6"] { border-left-color: var(--c6); }
+
+    .card-top { padding: 1.25rem 1.25rem .75rem; }
+    .card-meta { display: flex; align-items: center; gap: .5rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .art-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: .2rem .6rem; border-radius: 20px; border: 1px solid; }
+    .map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+    .map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+    .map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+    .map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+    .map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+    .map-card[data-cat="c6"] .art-badge { background: var(--c6bg); color: var(--c6); border-color: var(--c6bd); }
+
+    .status-tag { font-size: 10px; font-weight: 600; padding: .15rem .5rem; border-radius: 4px; text-transform: uppercase; letter-spacing: .03em; }
+    .tag-warn  { background: #fef3c7; color: #92400e; }
+    .tag-alert { background: #fee2e2; color: #991b1b; }
+    .tag-info  { background: #dbeafe; color: #1e40af; }
+    .tag-ok    { background: #d1fae5; color: #065f46; }
+    .tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+    .card-title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-1); margin-bottom: .4rem; line-height: 1.3; }
+    .card-subtitle { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+
+    .card-counters { display: flex; gap: .5rem; padding: 0 1.25rem .75rem; flex-wrap: wrap; }
+    .counter-badge { font-size: 11px; color: var(--text-3); background: var(--surface-2); padding: .2rem .5rem; border-radius: 4px; }
+    .counter-badge strong { color: var(--text-2); }
+
+    .card-toggle-btn { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: .6rem 1.25rem; background: var(--surface-2); border: none; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-2); cursor: pointer; transition: background var(--transition); }
+    .card-toggle-btn:hover { background: var(--border); }
+    .toggle-icon { transition: transform var(--transition); font-size: 10px; }
+    .map-card.expanded .toggle-icon { transform: rotate(180deg); }
+
+    .card-body { display: none; padding: 0 1.25rem 1.25rem; }
+    .map-card.expanded .card-body { display: block; }
+
+    .inner-section { margin-bottom: 1rem; }
+    .inner-section:last-child { margin-bottom: 0; }
+    .inner-heading { display: flex; align-items: center; gap: .5rem; font-size: 12.5px; font-weight: 600; color: var(--text-1); margin-bottom: .5rem; text-transform: uppercase; letter-spacing: .02em; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .map-card[data-cat="c1"] .dot { background: var(--c1); }
+    .map-card[data-cat="c2"] .dot { background: var(--c2); }
+    .map-card[data-cat="c3"] .dot { background: var(--c3); }
+    .map-card[data-cat="c4"] .dot { background: var(--c4); }
+    .map-card[data-cat="c5"] .dot { background: var(--c5); }
+    .map-card[data-cat="c6"] .dot { background: var(--c6); }
+
+    .inner-list { list-style: none; padding-left: 0; }
+    .inner-list li { position: relative; padding-left: .8rem; margin-bottom: .3rem; font-size: 12.5px; color: var(--text-2); line-height: 1.55; }
+    .inner-list li::before { content: '–'; position: absolute; left: 0; color: var(--text-3); }
+    .inner-list li strong { color: var(--text-1); font-weight: 500; }
+    .inner-list .sub-list { margin-top: .25rem; padding-left: 1rem; }
+    .inner-list .sub-list li { font-size: 12px; color: var(--text-2); }
+    .inner-list .sub-list li::before { content: '◦'; }
+
+    .note-box { background: var(--surface-2); border-left: 3px solid var(--accent); padding: .6rem .8rem; margin: .5rem 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 12px; color: var(--text-2); line-height: 1.5; }
+    .note-box strong { color: var(--text-1); }
+
+    .card-refs { display: flex; flex-wrap: wrap; gap: .4rem; padding: .75rem 1.25rem; background: var(--surface-2); border-top: 1px solid var(--border); }
+    .ref-tag { font-size: 11px; color: var(--text-2); background: var(--surface); border: 1px solid var(--border); padding: .2rem .5rem; border-radius: var(--radius-sm); }
+
+    .no-results { grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--text-3); font-size: 14px; display: none; }
+
+    .table-wrap { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
+    .timeline-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .timeline-table th { background: var(--surface-2); padding: .75rem 1rem; text-align: left; font-weight: 600; color: var(--text-1); border-bottom: 1px solid var(--border); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    .timeline-table td { padding: .75rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-2); }
+    .timeline-table tr:last-child td { border-bottom: none; }
+    .timeline-table tr:hover td { background: var(--surface-2); }
+    .td-tramite { width: 45%; color: var(--text-1); }
+    .td-norm { font-size: 12px; }
+    .plazo-badge { display: inline-block; padding: .2rem .6rem; border-radius: 4px; font-size: 12px; font-weight: 500; }
+    .plazo-days   { background: #fef3c7; color: #92400e; }
+    .plazo-weeks  { background: #dbeafe; color: #1e40af; }
+    .plazo-months { background: #d1fae5; color: #065f46; }
+    .plazo-years  { background: #fee2e2; color: #991b1b; }
+    .plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+    .participants-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .participant-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+    .participant-col-head { padding: .75rem 1rem; font-size: 12px; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: .04em; }
+    .phead-c1 { background: var(--c1); } .phead-c2 { background: var(--c2); }
+    .phead-c3 { background: var(--c3); } .phead-c4 { background: var(--c4); }
+    .phead-c5 { background: var(--c5); } .phead-c6 { background: var(--c6); }
+    .participant-col ul { list-style: none; padding: .5rem 0; }
+    .participant-col li { padding: .5rem 1rem; font-size: 12.5px; color: var(--text-2); border-bottom: 1px solid var(--border); }
+    .participant-col li:last-child { border-bottom: none; }
+    .participant-note { font-size: 11px; color: var(--text-3); font-style: italic; }
+
+    .norm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .norm-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 1.25rem; transition: box-shadow var(--transition); }
+    .norm-card:hover { box-shadow: var(--shadow-md); }
+    .norm-law { font-size: 11px; text-transform: uppercase; color: var(--text-3); letter-spacing: .05em; margin-bottom: .35rem; }
+    .norm-title { font-size: 13px; font-weight: 500; color: var(--text-1); margin-bottom: .6rem; }
+    .norm-arts { font-size: 12px; color: var(--text-2); line-height: 1.6; margin-bottom: .75rem; }
+    .norm-tag { display: inline-block; font-size: 10px; font-weight: 600; padding: .2rem .5rem; border-radius: 4px; text-transform: uppercase; letter-spacing: .03em; }
+
+    .legend-footer { background: var(--header-bg); color: var(--header-text); padding: 2rem 1.5rem; margin-top: 3rem; }
+    .legend-inner { max-width: 1400px; margin: 0 auto; }
+    .legend-title { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 1rem; }
+    .legend-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .legend-item { display: flex; align-items: center; gap: .5rem; font-size: 13px; }
+    .legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+    .legend-divider { width: 1px; height: 20px; background: rgba(248,245,237,.12); }
+    .legend-copy { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid rgba(248,245,237,.08); font-size: 11px; color: rgba(248,245,237,.3); line-height: 1.5; }
+
+    @media (max-width: 1100px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 960px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) {
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .card-grid { grid-template-columns: 1fr; }
+      .norm-grid { grid-template-columns: 1fr; }
+      .participants-grid { grid-template-columns: 1fr; }
+      .controls-bar { display: none; }
+    }
+    @media (max-width: 768px) { .ctrl-actions { display: none; } }
+
+    @media print {
+      .controls-bar, .site-header .header-actions { display: none; }
+      .card-body { display: block !important; }
+      .inner-body { display: block !important; }
+      .section-body { display: block !important; }
+      .map-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+      body { background: #fff; }
+      .page-main { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">LEY 1/2000, DE 7 DE ENERO, DE ENJUICIAMIENTO CIVIL · LIBRO IV — PROCESOS ESPECIALES · TÍTULO II: DE LA DIVISIÓN JUDICIAL DE PATRIMONIOS · CAPÍTULO I: DE LA DIVISIÓN DE LA HERENCIA · SECCIÓN 3.ª</div>
+    <h1 class="header-title">De la administración del caudal hereditario</h1>
+    <p class="header-subtitle">Artículos 797 a 805 LEC. Incluye análisis de conexiones normativas internas (Arts. 782-796, 793, 438), remisiones al Código Civil, legislación hipotecaria, notarial y de jurisdicción voluntaria.</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley de Enjuiciamiento Civil</span>
+      <span class="header-tag">Arts. 797–805</span>
+      <span class="header-tag">Procesos Especiales</span>
+      <span class="header-tag">División Judicial</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-value" id="stat-arts">9</div><div class="stat-label">Artículos base</div></div>
+    <div class="stat-item"><div class="stat-value">12+</div><div class="stat-label">Conexiones normativas</div></div>
+    <div class="stat-item"><div class="stat-value">10+</div><div class="stat-label">Actores identificados</div></div>
+    <div class="stat-item"><div class="stat-value">4</div><div class="stat-label">Plazos procesales</div></div>
+    <div class="stat-item"><div class="stat-value">6</div><div class="stat-label">Categorías temáticas</div></div>
+  </div>
+</div>
+
+<div class="controls-bar">
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor, concepto…">
+  </div>
+  <div class="filter-pills" id="filter-pills">
+    <button class="pill active" data-cat="all">Todos</button>
+    <button class="pill" data-cat="c1">Nombramiento</button>
+    <button class="pill" data-cat="c2">Representación</button>
+    <button class="pill" data-cat="c3">Cuentas</button>
+    <button class="pill" data-cat="c4">Gestión</button>
+    <button class="pill" data-cat="c5">Retribución</button>
+    <button class="pill" data-cat="c6">Subalternas</button>
+  </div>
+  <div class="ctrl-actions">
+    <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+    <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+    <div class="zoom-cluster">
+      <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+      <span class="zoom-label" id="zoom-label">100%</span>
+      <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+    </div>
+    <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+  </div>
+</div>
+
+<main class="page-main">
+
+<!-- ==================== SECCIÓN ARTÍCULOS PRINCIPALES ==================== -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-articulos">
+    <span class="section-heading-text">Artículos de la Sección 3.ª — Administración del caudal hereditario</span>
+    <span class="section-heading-count">9 artículos completos</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body" id="sec-articulos">
+    <div class="card-grid">
+
+      <!-- ========== ARTÍCULO 797 ========== -->
+      <article class="map-card" data-cat="c1" data-text="posesión cargo administrador herencia caución letrado administración justicia testimonio copia auténtica registro propiedad mandamiento hipotecaria acreditación representación personas designadas fincas estado administración">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 797</span>
+            <span class="status-tag tag-info">Procedimental</span>
+          </div>
+          <h2 class="card-title">Posesión del cargo de administrador de la herencia</h2>
+          <p class="card-subtitle">Regula el acto formal de toma de posesión, los medios de acreditación de la condición de administrador y las posibilidades de inscripción registral del nombramiento.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>3</strong> apartados</span>
+          <span class="counter-badge"><strong>3</strong> referencias externas</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>1</strong> requisito previo</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Requisito previo: caución</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Prestación de caución:</strong> El administrador debe haber prestado caución antes de ser puesto en posesión.</li>
+                <li><strong>Naturaleza:</strong> La caución constituye garantía frente a posibles daños o perjuicios derivados de la administración (conexión con régimen general de cauciones procesales).</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Acto de toma de posesión</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Sujeto competente:</strong> El Letrado de la Administración de Justicia (LAJ) es quien realiza la puesta en posesión.</li>
+                <li><strong>Información facilitada:</strong> El LAJ dará a conocer al administrador las personas que él mismo designe de aquéllas con quienes deba entenderse para el desempeño del cargo.</li>
+                <li><strong>Alcance:</strong> Este acto materializa jurídicamente el acceso del administrador a las funciones propias de su cargo.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Acreditación de la representación</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Medio de acreditación:</strong> Testimonio o copia auténtica expedida por el LAJ.</li>
+                <li><strong>Contenido documental:</strong> Debe constar el nombramiento y que se halla en posesión del cargo.</li>
+                <li><strong>Finalidad:</strong> Permite al administrador acreditar su representación ante terceros, instituciones y registros.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Inscripción registral</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Registro competente:</strong> Registro de la Propiedad.</li>
+                <li><strong>Hecho inscribible:</strong> El estado de administración de las fincas de la herencia y el nombramiento de administrador.</li>
+                <li><strong>Título inscribible:</strong> Mandamiento expedido por el LAJ.</li>
+                <li><strong>Requisitos formales:</strong> Los previstos en la legislación hipotecaria (Ley Hipotecaria y Reglamento Hipotecario).</li>
+              </ul>
+              <div class="note-box">
+                <strong>Nota de conexión normativa:</strong> La inscripción produce efectos frente a terceros de conformidad con los principios hipotecarios de publicidad fe pública (Arts. 17 y 32 LH). El mandamiento judicial debe cumplir los requisitos del art. 209 RH para su acceso al Registro.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">Legislación Hipotecaria</span>
+          <span class="ref-tag">Registro de la Propiedad</span>
+          <span class="ref-tag">Caución previa</span>
+        </div>
+      </article>
+
+      <!-- ========== ARTÍCULO 798 ========== -->
+      <article class="map-card" data-cat="c2" data-text="representación herencia administrador pleitos acciones difunto declaración herederos aceptación custodia conservación gestión conducente plena limitada proceso principiado fallecimiento causante">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 798</span>
+            <span class="status-tag tag-ok">Sustantivo-procesal</span>
+          </div>
+          <h2 class="card-title">Representación de la herencia por el administrador</h2>
+          <p class="card-subtitle">Determina el alcance de la legitimación procesal del administrador según el estado de aceptación de la herencia por los herederos, distinguiendo entre representación plena y representación limitada.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> supuestos fácticos</span>
+          <span class="counter-badge"><strong>2</strong> niveles de representación</span>
+          <span class="counter-badge" style="margin:left:auto"><strong>1</strong> límite temporal</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto 1: Herencia no aceptada (yacente)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Representación plena e integral:</strong> El administrador representa a la herencia en todos los pleitos que se promuevan o estuvieren principiados al fallecer el causante.</li>
+                <li><strong>Ejercicio de acciones:</strong> Ejercitará todas las acciones que pudieran corresponder al difunto, tanto activas como pasivas.</li>
+                <li><strong>Límite temporal objetivo:</strong> Esta representación plena se mantiene hasta que se haga la declaración de herederos.</li>
+              </ul>
+              <div class="note-box">
+                <strong>Fundamento:</strong> Durante la yacencia hereditaria (CC arts. 998-1012), no existiendo heredero aceptante, el administrador asume la defensa del acervo hereditario como representante necesario de la masa.
+              </div>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Supuesto 2: Herencia aceptada</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Representación limitada:</strong> El administrador sólo tendrá representación en lo que se refiere directamente a la administración del caudal.</li>
+                <li><strong>Ámbito material restringido:</strong> Custodia y conservación del caudal hereditario.</li>
+                <li><strong>Facultades concretas:</strong> Podrá y deberá gestionar lo que sea conducente, ejercitando las acciones que procedan dentro de ese ámbito.</li>
+                <li><strong>Exclusión:</strong> Quedan fuera de su representación los actos de disposición no autorizados y las cuestiones que correspondan ya a los herederos como titulares dominicales.</li>
+              </ul>
+              <div class="note-box">
+                <strong>Conexión con el CC:</strong> Una vez aceptada la herencia (CC arts. 988-999), los herederos adquieren la titularidad del patrimonio hereditario, reduciendo consecuentemente el ámbito de actuación del administrador a funciones meramente conservatorias y de administración ordinaria.
+              </div>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Notas sobre legitimación</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Naturaleza jurídica:</strong> La representación del administrador es una forma de legitimación extraordinaria ad processum (no ad causam).</li>
+                <li><strong>Efecto principal:</strong> Permite al administrador comparecer en juicio en nombre de la herencia como entidad patrimonial temporalmente sin titular.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">CC Arts. 988-1012</span>
+          <span class="ref-tag">Declaración de herederos</span>
+          <span class="ref-tag">Herencia yacente</span>
+        </div>
+      </article>
+
+      <!-- ========== ARTÍCULO 799 ========== -->
+      <article class="map-card" data-cat="c3" data-text="rendición periódica cuentas plazos tribunal proporcionados importancia caudal año máximo consignación saldo depósito diligencia inspección oficina judicial rectificación aprobación cualquier tiempo parte peticione">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 799</span>
+            <span class="status-tag tag-warn">Plazo procesal</span>
+          </div>
+          <h2 class="card-title">Rendición periódica de cuentas</h2>
+          <p class="card-subtitle">Establece la obligación del administrador de rendir cuentas justificadas con periodicidad determinada judicialmente, el régimen de depósito de saldos y el derecho de las partes a la inspección de la contabilidad.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>3</strong> apartados</span>
+          <span class="counter-badge"><strong>1</strong> plazo máximo</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>2</strong> modalidades depósito</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Régimen de plazos de rendición</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Determinación judicial:</strong> El tribunal señalará los plazos concretos de rendición.</li>
+                <li><strong>Criterio de proporcionalidad:</strong> Los plazos serán proporcionados a la importancia y condiciones del caudal (complejidad, volumen de activos, número de operaciones).</li>
+                <li><strong>Límite máximo legal:</strong> En ningún caso podrán exceder de <strong>un año</strong>.</li>
+              </ul>
+              <div class="note-box">
+                <strong>Plazo identificado:</strong> Máximo 1 año entre rendiciones periódicas. Este límite opera como techo inderogable, independientemente de la complejidad del caudal.
+              </div>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Depósito del saldo resultante</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Obligación de consignación o acreditación:</strong> Al rendir cada cuenta, el administrador debe demostrar el destino del saldo.</li>
+                <li><strong>Opción A — Consignación directa:</strong> Consigna el saldo resultante → El LAJ acuerda inmediatamente mediante diligencia el depósito oficial.</li>
+                <li><strong>Opción B — Acreditación mediante resguardo:</strong> Presenta resguardo original acreditativo del depósito previo → El LAJ extiende diligencia expresiva de fecha y cantidad depositada.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Derecho de acceso e inspección de cuentas</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Titular del derecho:</strong> Cualquier parte del procedimiento de división judicial.</li>
+                <li><strong>Momento de ejercicio:</strong> En cualquier tiempo (no hay plazo precluyente para solicitar la vista).</li>
+                <li><strong>Lugar de exhibición:</strong> Oficina judicial.</li>
+                <li><strong>Finalidades legítimas:</strong>
+                  <ul class="sub-list">
+                    <li>Instruirse del contenido de las cuentas</li>
+                    <li>Inspeccionar la administración realizada</li>
+                    <li>Promover medidas de rectificación</li>
+                    <li>Solicitar la aprobación de las cuentas</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">Oficina Judicial</span>
+          <span class="ref-tag">Depósito judicial</span>
+          <span class="ref-tag">Plazo: máx. 1 año</span>
+        </div>
+      </article>
+
+      <!-- ========== ARTÍCULO 800 ========== -->
+      <article class="map-card" data-cat="c3" data-text="rendición final cuentas cese impugnación oposición término común decreto aprobación exención responsabilidad caución traslado contestación artículo 438 vista juicio verbal complementaria manifiesto partes oficia silencio aprobatorio">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 800</span>
+            <span class="status-tag tag-alert">Crítico</span>
+          </div>
+          <h2 class="card-title">Rendición final de cuentas. Impugnación de las cuentas</h2>
+          <p class="card-subtitle">Regula el procedimiento de liquidación definitiva de la gestión administrativa al cesar el administrador, incluyendo mecanismos de aprobación tácita, impugnación con tramitación de juicio verbal y devolución de caución.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>4</strong> apartados</span>
+          <span class="counter-badge"><strong>2</strong> vías de resolución</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>4</strong> referencias normativas</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Cuenta final complementaria</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Momento de exigibilidad:</strong> Cuando el administrador cese en el desempeño de su cargo (por cualquier causa: acuerdo, sustitución, conclusión del procedimiento).</li>
+                <li><strong>Naturaleza:</strong> Rendirá una cuenta final complementaria de las ya presentadas (abarca el período desde la última cuenta parcial hasta el cese).</li>
+                <li><strong>Contenido:</strong> Debe comprender la totalidad de operaciones realizadas durante toda la gestión, consolidando las cuentas parciales previas.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Puesta de manifiesto a las partes</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Cuentas sometidas a examen:</strong> Todas las cuentas del administrador, incluida la final.</li>
+                <li><strong>Lugar:</strong> Oficina judicial.</li>
+                <li><strong>Término común:</strong> El LAJ lo señalará mediante diligencia, atendiendo a la importancia y complejidad de las cuentas.</li>
+                <li><strong>Finalidad:</strong> Permitir que las partes examinen las cuentas y formulen, si procede, oposición o impugnación.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Aprobación por silencio (vía no impugnatoria)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Presupuesto:</strong> Pasado el término señalado sin hacerse oposición a las cuentas.</li>
+                <li><strong>Resolución:</strong> Decreto del LAJ aprobándolas.</li>
+                <li><strong>Efecto de exención:</strong> Se declara exento de responsabilidad al administrador respecto de la gestión cubierta por las cuentas aprobadas.</li>
+                <li><strong>Devolución de caución:</strong> En el mismo decreto se manda devolver al administrador la caución que hubiere prestado.</li>
+              </ul>
+              <div class="note-box">
+                <strong>Naturaleza del silencio:</strong> Se trata de un silencio aprobatorio o positivo, no declarativo. La ausencia de impugnación en plazo produce la aprobación automática de las cuentas por ministerio de la ley.
+              </div>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Vía de impugnación</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Plazo:</strong> Dentro del término común señalado por el LAJ (tiempo hábil).</li>
+                <li><strong>Traslado:</strong> Se dará traslado del escrito de impugnación al cuentadante (administrador) para que conteste conforme al art. 438 LEC.</li>
+                <li><strong>Solicitud de vista:</strong> Las partes, en sus respectivos escritos de impugnación y contestación, podrán solicitar la celebración de vista.</li>
+                <li><strong>Tramitación subsiguiente:</strong> Continuará con arreglo a lo dispuesto para el juicio verbal (LEC Libro II, Título III).</li>
+              </ul>
+              <div class="note-box">
+                <strong>Conexión con el art. 438 LEC:</strong> Este artículo regula la contestación a la demanda en el juicio verbal. Su aplicación aquí es analógica: el administrador-cuentadante contestará a los motivos de impugnación alegando cuanto considere pertinente en su defensa.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">LEC Art. 438</span>
+          <span class="ref-tag">Juicio Verbal</span>
+          <span class="ref-tag">Caución</span>
+          <span class="ref-tag">Silencio aprobatorio</span>
+        </div>
+      </article>
+
+      <!-- ========== ARTÍCULO 801 ========== -->
+      <article class="map-card" data-cat="c4" data-text="conservación bienes herencia responsabilidad menoscabo rentas productos utilidades reparaciones ordinarias indispensables extraordinarias gastos comparecencia interesados artículo 793 reconocimiento pericial presupuesto circunstancias caso">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 801</span>
+            <span class="status-tag tag-ok">Sustantivo</span>
+          </div>
+          <h2 class="card-title">Conservación de los bienes de la herencia</h2>
+          <p class="card-subtitle">Impone al administrador el deber de conservación íntegra del patrimonio hereditario bajo su responsabilidad, con un régimen diferenciado para reparaciones ordinarias y extraordinarias que requiere intervención judicial.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> apartados</span>
+          <span class="counter-badge"><strong>2</strong> tipos de reparaciones</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>3</strong> garantías procesales</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Deber general de conservación</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Bajo su responsabilidad personal:</strong> El administrador está obligado a conservar sin menoscabo los bienes de la herencia.</li>
+                <li><strong>Deber de rentabilidad:</strong> Debe procurar que los bienes produzcan las rentas, productos o utilidades que corresponda según su naturaleza.</li>
+                <li><strong>Alcance subjetivo:</strong> La responsabilidad es personal y directa del administrador, sin perjuicio de las acciones de regreso que puedan corresponder.</li>
+              </ul>
+              <div class="note-box">
+                <strong>Fundamento civil:</strong> Este deber conecta con la figura del administrador de hecho de la herencia yacente (CC art. 998) y con las reglas de la posesión civil en interés de la herencia (CC arts. 1967-1969).
+              </div>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Régimen de reparaciones ordinarias</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Facultad autónoma:</strong> El administrador podrá realizar por sí mismo las reparaciones ordinarias que sean indispensables para la conservación de los bienes.</li>
+                <li><strong>Criterio de ordinariedad:</strong> Son aquellas necesarias para el mantenimiento habitual de los bienes, sin alterar su estructura ni valor sustancial.</li>
+                <li><strong>No requieren autorización previa:</strong> Pueden realizarse directamente, debiendo luego justificarse en la rendición de cuentas.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Régimen de reparaciones y gastos extraordinarios</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Obligación de comunicación:</strong> Lo pondrá en conocimiento del Juzgado (no puede decidir unilateralmente).</li>
+                <li><strong>Comparecencia de interesados:</strong> El Juzgado oirá en comparecencia a los interesados que menciona el apartado 3 del artículo 793.</li>
+                <li><strong>Convocatoria:</strong> Día y hora señalados por el Letrado de la Administración de Justicia.</li>
+                <li><strong>Prueba técnica:</strong> Previo reconocimiento pericial de los bienes y formación de presupuesto detallado.</li>
+                <li><strong>Resolución motivada:</strong> El tribunal resolverá lo que estime procedente, atendidas las circunstancias del caso concreto.</li>
+              </ul>
+              <div class="note-box">
+                <strong>Conexión con el art. 793.3 LEC:</strong> Este apartado identifica a los «interesados» que deben ser oídos: los que tengan reconocido un derecho de any kind sobre la herencia, incluyendo acreedores, legatarios, cotitulares y cualquiera con interés legítimo.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">LEC Art. 793.3</span>
+          <span class="ref-tag">CC Arts. 998, 1967-1969</span>
+          <span class="ref-tag">Reconocimiento pericial</span>
+        </div>
+      </article>
+
+      <!-- ========== ARTÍCULO 802 ========== -->
+      <article class="map-card" data-cat="c4" data-text="destino cantidades recaudadas depositar disposición juzgado dilación retener gastos pleitos notariales contribuciones atenciones ordinarias extraordinarios providencia suma depósito ingresos insuficiencia fondos">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 802</span>
+            <span class="status-tag tag-info">Procedimental-financiero</span>
+          </div>
+          <h2 class="card-title">Destino de las cantidades recaudadas por el administrador</h2>
+          <p class="card-subtitle">Establece el principio general de depósito judicial inmediato de las recaudaciones, con excepciones tasadas para gastos ordinarios y un régimen de provisión de fondos para gastos extraordinarios mediante providencia.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> apartados</span>
+          <span class="counter-badge"><strong>3</strong> conceptos retenibles</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>2</strong> supuestos de provisión</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Principio general: depósito inmediato</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Obligación principal:</strong> Depositar sin dilación a disposición del Juzgado todas las cantidades recaudadas en el desempeño del cargo.</li>
+                <li><strong>Conceptos comprendidos:</strong> Cualquier ingreso proveniente de la administración: rentas, cobros, intereses, venta de frutos, etc.</li>
+                <li><strong>Finalidad protectora:</strong> Evitar la confusión de patrimonios y garantizar la disponibilidad de fondos para el proceso divisorio.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Retenciones permitidas (gastos ordinarios)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Principio de necesidad:</strong> Solo pueden retenerse las cantidades estrictamente necesarias.</li>
+                <li><strong>Gastos de pleitos o notariales:</strong> Derivados de la defensa o gestión del patrimonio hereditario.</li>
+                <li><strong>Pago de contribuciones e impuestos:</strong> Cargas fiscales que gravan los bienes hereditarios.</li>
+                <li><strong>Demás atenciones ordinarias:</strong> Gastos de mantenimiento, suministros, seguros, etc., inherentes a la conservación de los bienes.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Régimen de provisión de fondos (gastos extraordinarios)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Instrumento:</strong> Providencia judicial.</li>
+                <li><strong>Supuesto 1 — Gastos extraordinarios:</strong> El tribunal podrá dejar en poder del administrador la suma necesaria para atenderlos (conexión con art. 801.2).</li>
+                <li><strong>Mecanismo de extracción:</strong> Si los ingresos ordinarios no bastaren, se ordenará sacar la suma del depósito judicial.</li>
+                <li><strong>Supuesto 2 — Insuficiencia para gasto ordinario:</strong> También se aplicará cuando deba hacerse algún gasto ordinario y el administrador no disponga de cantidad suficiente de la administración.</li>
+              </ul>
+              <div class="note-box">
+                <strong>Control judicial:</strong> Toda provisión de fondos requiere providencia motivada, garantizando que las extracciones del depósito queden documentadas y sean revisables en la rendición de cuentas.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">LEC Art. 801</span>
+          <span class="ref-tag">Providencia judicial</span>
+          <span class="ref-tag">Depósito judicial</span>
+        </div>
+      </article>
+
+      <!-- ========== ARTÍCULO 803 ========== -->
+      <article class="map-card" data-cat="c4" data-text="prohibición enajenar gravar bienes inventariados excepciones deteriorarse difícil costosa conservación frutos ventajosas pago deudas atenciones administración propuesta administrador interesados artículo 793 providencia pública subasta notarial jurisdicción voluntaria cotización oficial mercado valores">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 803</span>
+            <span class="status-tag tag-alert">Restricción dispositiva</span>
+          </div>
+          <h2 class="card-title">Prohibición de enajenar los bienes inventariados. Excepciones</h2>
+          <p class="card-subtitle">Consagra el principio de intangibilidad del inventario hereditario con prohibición absoluta de enajenar o gravar, salvo cuatro excepciones tasadas sujetas a procedimiento de autorización judicial con audiencia de interesados.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>3</strong> apartados</span>
+          <span class="counter-badge"><strong>4</strong> excepciones tasadas</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>3</strong> formas de venta</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Regla general prohibitiva</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Prohibición absoluta:</strong> El administrador no podrá enajenar ni gravar los bienes inventariados.</li>
+                <li><strong>Ámbito objetivo:</strong> Se refiere exclusivamente a los bienes ya incluidos en el inventario hereditario.</li>
+                <li><strong>Actos comprendidos:</strong> Enajenación (venta, permuta, donación) y gravamen (hipoteca, prenda, servidumbre, arrendamiento superior a cierto plazo según jurisprudencia).</li>
+              </ul>
+              <div class="note-box">
+                <strong>Finalidad:</strong> Preservar la integridad del acervo hereditario hasta la adjudicación, evitando que el administrador disponga de bienes cuyo destino corresponde decidir a los herederos o al tribunal en el proceso divisorio.
+              </div>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Las cuatro excepciones tasadas</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Excepción 1.ª — Bienes perecederos:</strong> Los que puedan deteriorarse por el paso del tiempo o su naturaleza (productos agrícolas, ganado, alimentos perecederos).</li>
+                <li><strong>Excepción 2.ª — Bienes de conservación onerosa:</strong> Los que sean de difícil y costosa conservación (inmuebles en ruina inminente, vehículos de mantenimiento elevado, maquinaria obsoleta).</li>
+                <li><strong>Excepción 3.ª — Oportunidad ventajosa:</strong> Los frutos para cuya enajenación se presenten circunstancias que se estimen ventajosas (cotizaciones favorables, ofertas excepcionales).</li>
+                <li><strong>Excepción 4.ª — Necesidad de liquidez:</strong> Los demás bienes cuya enajenación sea necesaria para el pago de deudas de la herencia o para cubrir otras atenciones de la administración.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Procedimiento de autorización y venta</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Iniciación:</strong> A propuesta del administrador (no opera de oficio).</li>
+                <li><strong>Audiencia:</strong> Oyendo a los interesados a que se refiere el apartado 3 del artículo 793.</li>
+                <li><strong>Resolución:</strong> Providencia del tribunal decretando la venta (motivada).</li>
+                <li><strong>Forma de realización — Opción A:</strong> Pública subasta conforme a la legislación notarial.</li>
+                <li><strong>Forma de realización — Opción B:</strong> Procedimiento de jurisdicción voluntaria.</li>
+                <li><strong>Forma especial — Valores cotizados:</strong> Los admitidos a cotización oficial se venderán a través del mercado oficial correspondiente.</li>
+              </ul>
+              <div class="note-box">
+                <strong>Conexión con la Ley de Jurisdicción Voluntaria (Ley 15/2015):</strong> La venta en jurisdicción voluntaria sigue el procedimiento de los arts. 271 y ss. LJyV, con intervención notarial o del secretario judicial según casos. La subasta notarial se rige por la Ley 21/2007, de Notaría.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">LEC Art. 793.3</span>
+          <span class="ref-tag">Ley Notarial 21/2007</span>
+          <span class="ref-tag">Ley JV 15/2015</span>
+        </div>
+      </article>
+
+      <!-- ========== ARTÍCULO 804 ========== -->
+      <article class="map-card" data-cat="c5" data-text="retribución administrador producto líquido venta frutos muebles raíces valores efectos públicos porcentaje dos uno medio cuatro diez por ciento gastos viajes decreto justo necesidad desempeño criterio discrecional">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 804</span>
+            <span class="status-tag tag-ok">Económico</span>
+          </div>
+          <h2 class="card-title">Retribución del administrador</h2>
+          <p class="card-subtitle">Fija un sistema tarifario mixto con porcentajes fijos sobre ventas de distintos tipos de bienes, un margen discrecional para otros ingresos y la posibilidad de compensar gastos de viaje.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>2</strong> apartados</span>
+          <span class="counter-badge"><strong>5</strong> conceptos retributivos</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>1</strong> margen discrecional</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Porcentajes fijos sobre producto líquido de ventas</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Venta de frutos y bienes muebles:</strong> Sobre el producto líquido, percibirá el <strong>2%</strong>. Incluye cosechas, ganadería, mobiliario, vehículos, dinero en efectivo obtenido.</li>
+                <li><strong>Venta de bienes inmuebles (raíces) y cobranza de valores:</strong> Sobre el producto líquido, el <strong>1%</strong>. Comprende fincas, solares, edificios, y cualquier valor mobiliario cobrado.</li>
+                <li><strong>Venta de efectos públicos:</strong> Sobre el producto líquido, el <strong>medio por 100 (0,5%)</strong>. Se refiere a títulos de deuda pública, bonos del Estado, obligaciones similares.</li>
+              </ul>
+              <div class="note-box">
+                <strong>Concepto de «producto líquido»:</strong> Es el importe neto resultante de deducir del precio de venta los gastos directos de la enajenación (tasación, publicidad, comisiones). No se computan los gastos generales de administración.
+              </div>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Retribución discrecional (otros ingresos)</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Ámbito:</strong> Demás ingresos de la administración por conceptos diversos de los anteriores (rentas percibidas, intereses, indemnizaciones, etc.).</li>
+                <li><strong>Margen:</strong> Del <strong>4% al 10%</strong>, fijado por el LAJ.</li>
+                <li><strong>Criterios de determinación:</strong>
+                  <ul class="sub-list">
+                    <li>Productos del caudal (volumen y naturaleza)</li>
+                    <li>Trabajo de la administración (complejidad, duración, dedicación)</li>
+                  </ul>
+                </li>
+                <li><strong>Forma de fijación:</strong> Mediante resolución motivada del LAJ, revisable en la rendición de cuentas.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Gastos de viaje</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Presupuesto:</strong> Gastos de viajes que tenga necesidad de hacer para el desempeño de su cargo.</li>
+                <li><strong>Requisito:</strong> Que el LAJ lo considere justo (apreciación razonable de necesidad y proporcionalidad).</li>
+                <li><strong>Forma de autorización:</strong> Mediante decreto del LAJ.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">Honorarios administrativos</span>
+          <span class="ref-tag">Decreto del LAJ</span>
+          <span class="ref-tag">Producto líquido</span>
+        </div>
+      </article>
+
+      <!-- ========== ARTÍCULO 805 ========== -->
+      <article class="map-card" data-cat="c6" data-text="administraciones subalternas finado retribución facultades cuentas remitir recaudación dependientes separación causa justa autorización decreto vacantes responsabilidad proveer cobertura">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="art-badge">Artículo 805</span>
+            <span class="status-tag tag-gray">Estructural</span>
+          </div>
+          <h2 class="card-title">Administraciones subalternas</h2>
+          <p class="card-subtitle">Regula el tratamiento de las estructuras administrativas preexistentes establecidas por el causante, su relación jerárquica con el administrador judicial y los mecanismos de control sobre los administradores subordinados.</p>
+        </div>
+        <div class="card-counters">
+          <span class="counter-badge"><strong>3</strong> apartados</span>
+          <span class="counter-badge"><strong>3</strong> mecanismos de control</span>
+          <span class="counter-badge" style="margin-left:auto"><strong>2</strong> actos controlables</span>
+        </div>
+        <button class="card-toggle-btn" onclick="toggleCard(this)">
+          <span>Ver contenido completo</span>
+          <span class="toggle-icon">&#9662;</span>
+        </button>
+        <div class="card-body">
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Principio de continuidad administrativa</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Conservación automática:</strong> Se mantienen las administraciones subalternas que para el cuidado de sus bienes tuviera el finado.</li>
+                <li><strong>Mantenimiento de condiciones:</strong> Con la misma retribución y facultades que aquél les hubiere otorgado.</li>
+                <li><strong>Razonamiento:</strong> Evita disrupciones innecesarias en la gestión de patrimonios que funcionaban correctamente bajo el causante.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Régimen de dependencia jerárquica</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Obligación de rendir cuentas:</strong> Cada administrador subalterno debe rendir cuentas de su gestión específica.</li>
+                <li><strong>Obligación de remitir recaudaciones:</strong> Lo recaudado debe remitirse al administrador judicial (centralización de fondos).</li>
+                <li><strong>Calificación jurídica:</strong> Se consideran dependientes del administrador judicial, quedando integrados en la estructura de administración del caudal.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-section">
+            <div class="inner-heading"><span class="dot"></span>Actos de control del administrador judicial</div>
+            <div class="inner-body">
+              <ul class="inner-list">
+                <li><strong>Separación de administradores subalternos:</strong>
+                  <ul class="sub-list">
+                    <li>No puede realizarla el administrador judicial unilateralmente</li>
+                    <li>Se exige causa justa (incumplimiento, negligencia, incompetencia)</li>
+                    <li>Requiere autorización mediante decreto del LAJ</li>
+                  </ul>
+                </li>
+                <li><strong>Cobertura de vacantes:</strong>
+                  <ul class="sub-list">
+                    <li>El administrador judicial puede proveer las vacantes que resulten</li>
+                    <li>Bajo su responsabilidad personal</li>
+                    <li>Con la misma autorización (decreto del LAJ)</li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="note-box">
+                <strong>Garantía de control:</strong> El sistema de doble filtro (propuesta del administrador judicial + decreto del LAJ) evita arbitrariedades en la gestión del personal subalterno y protege a quienes venían ejerciendo funciones bajo el causante.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-refs">
+          <span class="ref-tag">Administrador judicial</span>
+          <span class="ref-tag">Decreto del LAJ</span>
+          <span class="ref-tag">Estructura jerárquica</span>
+        </div>
+      </article>
+
+      <!-- NO RESULTS -->
+      <div class="no-results" id="no-results">
+        No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+      </div>
+
+    </div><!-- /card-grid -->
+  </div><!-- /section-body -->
+</div><!-- /map-section -->
+
+<!-- ==================== SECCIÓN CRONOGRAMA DE PLAZOS ==================== -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-timeline">
+    <span class="section-heading-text">Indice de plazos procesales</span>
+    <span class="section-heading-count">4 trámites identificados</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-timeline">
+    <div class="table-wrap">
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th style="width:45%">Acto o trámite procesal</th>
+            <th>Plazo</th>
+            <th>Fundamento normativo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-tramite">Rendición de cuentas periódicas por el administrador</td>
+            <td><span class="plazo-badge plazo-years">Máximo 1 año</span></td>
+            <td class="td-norm">Artículo 799.1 LEC</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Impugnación de las cuentas del administrador (tras puesta de manifiesto de cuenta final)</td>
+            <td><span class="plazo-badge plazo-other">Término común señalado por LAJ</span></td>
+            <td class="td-norm">Artículo 800.2 LEC</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Contestación del cuentadante a la impugnación de cuentas</td>
+            <td><span class="plazo-badge plaza-days">Según art. 438 LEC (10 días desde traslado)</span></td>
+            <td class="td-norm">Artículo 800.4 + Art. 438 LEC</td>
+          </tr>
+          <tr>
+            <td class="td-tramite">Acceso a la inspección de cuentas por las partes</td>
+            <td><span class="plazo-badge plazo-other">En cualquier tiempo (sin plazo precluyente)</span></td>
+            <td class="td-norm">Artículo 799.3 LEC</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECCIÓN PARTICIPANTES Y ACTORES ==================== -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-actors">
+    <span class="section-heading-text">Mapa de participantes y actores</span>
+    <span class="section-heading-count">6 categorías · 14+ actores</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-actors">
+    <div class="participants-grid">
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c1">Órganos judiciales</div>
+        <ul>
+          <li>Juez/Juzgado <span class="participant-note">(resuelve reparaciones extraordinarias, ventas, provisiones de fondos)</span></li>
+          <li>Tribunal <span class="participant-note">(señala plazos de cuentas, dicta providencias)</span></li>
+          <li>Letrado de la Administración de Justicia (LAJ) <span class="participant-note">(pone en posesión, expide testimonios, aprueba cuentas, dicta decretos, señala términos, convoca comparecencias)</span></li>
+        </ul>
+      </div>
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c2">Administradores</div>
+        <ul>
+          <li>Administrador judicial de la herencia <span class="participant-note">(figura central regulada en esta sección; designado en el procedimiento divisorio)</span></li>
+          <li>Administradores subalternos <span class="participant-note">(preexistentes del causante; dependientes del judicial)</span></li>
+          <li>Administradores interinos/sustitutos <span class="participant-note">(posibles en caso de cese, muerte o incapacidad del titular)</span></li>
+        </ul>
+      </div>
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c3">Partes hereditarias</div>
+        <ul>
+          <li>Herederos <span class="participant-note">(una vez aceptada la herencia; limitan la representación del administrador)</span></li>
+          <li>Hederos aparentes o putativos <span class="participant-note">(mientras no se declare heredero definitivo)</span></li>
+          <li>Causante/difunto <span class="participant-note">(sus derechos y acciones se ejercitan por el administrador hasta declaración de herederos)</span></li>
+          <li>Legatarios <span class="participant-note">(interesados en la conservación del caudal)</span></li>
+          <li>Interesados del art. 793.3 <span class="participant-note">(oidos en comparecencias sobre ventas y reparaciones)</span></li>
+        </ul>
+      </div>
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c4">Acreedores y tercero</div>
+        <ul>
+          <li>Acreedores de la herencia <span class="participant-note">(pueden ser interesados; su pago puede justificar ventas excepcionales)</span></li>
+          <li>Acreedores del causante <span class="participant-note">(distintos de los de la herencia; legitimación según CC)</span></li>
+          <li>Registro de la Propiedad <span class="participant-note">(inscripción del estado de administración y nombramiento)</span></li>
+          <li>Establecimiento de depósito <span class="participant-note">(custodia de saldos de cuentas)</span></li>
+        </ul>
+      </div>
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c5">Profesionales interviniente</div>
+        <ul>
+          <li>Peritos <span class="participant-note">(reconocimiento previo a reparaciones extraordinarias y formaciones de presupuesto)</span></li>
+          <li>Notario <span class="participant-note">(subasta notarial de bienes autorizada judicialmente)</span></li>
+          <li>Letrado/Procurador de las partes <span class="participant-note">(impugnación y defensa en procedimiento de cuentas)</span></li>
+        </ul>
+      </div>
+
+      <div class="participant-col">
+        <div class="participant-col-head phead-c6">Mercados e instituciones financieras</div>
+        <ul>
+          <li>Mercado oficial de valores <span class="participant-note">(venta de valores cotizados)</span></li>
+          <li>Entidades de crédito depositarias <span class="participant-note">(custodia de fondos consignados)</span></li>
+          <li>Compañías aseguradoras <span class="participant-note">(seguros de bienes hereditarios, eventualmente)</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECCIÓN ECOSISTEMA NORMATIVO ==================== -->
+<div class="map-section">
+  <div class="section-heading" data-target="sec-norms">
+    <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+    <span class="section-heading-count">12 cuerpos normativos</span>
+    <button class="section-toggle-btn">&#9660;</button>
+  </div>
+  <hr class="section-divider">
+  <div class="section-body collapsed" id="sec-norms">
+    <div class="norm-grid">
+
+      <!-- CONEXIONES INTERNAS LEC -->
+      <div class="norm-card">
+        <div class="norm-law">Ley 1/2000 de Enjuiciamiento Civil</div>
+        <div class="norm-title">Artículo 793 — Intervenedores y personados en la división judicial</div>
+        <div class="norm-arts">
+          <strong>Apartado 3:</strong> Identifica a los «interesados» que deben ser oídos en comparecencias. Remitido expresamente en los arts. 801.2 (reparaciones extraordinarias) y 803.3 (autorización de ventas). Determina quiénes tienen legitimación para intervenir en el procedimiento divisorio.
+        </div>
+        <span class="norm-tag tag-info">Remisión interna</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Ley 1/2000 de Enjuiciamiento Civil</div>
+        <div class="norm-title">Artículo 438 — Contestación a la demanda en juicio verbal</div>
+        <div class="norm-arts">
+          <strong>Aplicación analógica:</strong> Remitido en el art. 800.4 para regular la contestación del cuentadante (administrador) al escrito de impugnación de cuentas presentado por cualquier parte. Establece el plazo de 10 días y el contenido de la contestación.
+        </div>
+        <span class="norm-tag tag-warn">Procesal civil</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Ley 1/2000 de Enjuiciamiento Civil</div>
+        <div class="norm-title">Arts. 782-796 — Procedimiento de división judicial de herencia</div>
+        <div class="norm-arts">
+          <strong>Contexto procedimental:</strong> Los arts. 797-805 se insertan en el marco del procedimiento de división judicial de la herencia iniciado en el art. 782. El nombramiento del administrador se produce en fases anteriores (inventario, avalúo). La administración es una fase intermedia hasta la partición.
+        </div>
+        <span class="norm-tag tag-info">Marco procedimental</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Ley 1/2000 de Enjuiciamiento Civil</div>
+        <div class="norm-title">Juicio Verbal — Tramitación de impugnación de cuentas</div>
+        <div class="norm-arts">
+          <strong>Arts. 437 y ss.:</strong> El art. 800.4 remite a la tramitación del juicio verbal para la impugnación de cuentas. Esto incluye: admisión de prueba, celebración de vista (si se solicita), proposición y práctica de prueba, y sentencia.
+        </div>
+        <span class="norm-tag tag-warn">Procesal civil</span>
+      </div>
+
+      <!-- CÓDIGO CIVIL -->
+      <div class="norm-card">
+        <div class="norm-law">Código Civil (Real Decreto de 24 julio 1889)</div>
+        <div class="norm-title">Arts. 988-1012 — Aceptación y repudiación de la herencia</div>
+        <div class="norm-arts">
+          <strong>Conexión con art. 798:</strong> La aceptación de la herencia (arts. 988-999) marca el punto de inflexión que reduce la representación del administrador de plena a limitada. La herencia yacente (periodo entre apertura y aceptación) se rige por los arts. 998-1012.
+        </div>
+        <span class="norm-tag tag-ok">Derecho civil sustantivo</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Código Civil (Real Decreto de 24 julio 1889)</div>
+        <div class="norm-title">Arts. 1967-1969 — Posesión en interés de la herencia</div>
+        <div class="norm-arts">
+          <strong>Conexión con art. 801:</strong> El deber de conservación del administrador conecta con la posesión civilísima en interés de la herencia (art. 1967), que atribuye al poseedor los frutos percibidos y le obliga a la conservación de la cosa.
+        </div>
+        <span class="norm-tag tag-ok">Derecho civil sustantivo</span>
+      </div>
+
+      <div class="norm-card">
+        <div class="norm-law">Código Civil (Real Decreto de 24 julio 1889)</div>
+        <div class="norm-title">Art. 998 — Posesión de la herencia yacente</div>
+        <div class="norm-arts">
+          <strong>Administrador de hecho:</strong> Quien esté en posesión de una herencia yacente tiene las obligaciones de un administrador de bienes ajenos. El administrador judicial del art. 797 asume funciones análogas pero con habilitación judicial expresa.
+        </div>
+        <span class="norm-tag tag-ok">Derecho civil sustantivo</span>
+      </div>
+
+      <!-- LEGISLACIÓN HIPOTECARIA -->
+      <div class="norm-card">
+        <div class="norm-law">Ley Hipotecaria (Decreto 8 febrero 1946, texto refundido RD 1093/1997)</div>
+        <div class="norm-title">Inscripción del estado de administración hereditaria</div>
+        <div class="norm-arts">
+          <strong>Art. 9 LH + Art. 209 RH:</strong> El art. 797.3 exige que el mandamiento de inscripción cumpla los requisitos de la legislación hipotecaria. Esto incluye: competencia del juez, certificación del secretario, descripción de fincas, y datos del administrador nominado.
+        </div>
+        <span class="norm-tag tag-alert">Registral</span>
+      </div>
+
+      <!-- LEGISLACIÓN NOTARIAL -->
+      <div class="norm-card">
+        <div class="norm-law">Ley 21/2007, de 8 de noviembre, de Notaría</div>
+        <div class="norm-title">Subasta notarial de bienes hereditarios</div>
+        <div class="norm-arts">
+          <strong>Conexión con art. 803.3:</strong> La venta de bienes del caudal autorizada judicialmente puede verificarse en pública subasta notarial. El notario actúa como funcionario público garantizando la transparencia del procedimiento de realización.
+        </div>
+        <span class="norm-tag tag-ok">Venta forzosa</span>
+      </div>
+
+      <!-- JURISDICCIÓN VOLUNTARIA -->
+      <div class="norm-card">
+        <div class="norm-law">Ley 15/2015, de 2 de julio, de Jurisdicción Voluntaria</div>
+        <div class="norm-title">Procedimiento de realización de bienes hereditarios</div>
+        <div class="norm-arts">
+          <strong>Arts. 271 y ss.:</strong> Alternativa a la subasta notarial para la venta de bienes del caudal (art. 803.3). El LAJ dirige el procedimiento con intervención de los interesados, publicidad de la subasta y adjudicación al mejor postor.
+        </div>
+        <span class="norm-tag tag-info">Procedimiento alternativo</span>
+      </div>
+
+      <!-- MERCADOS FINANCIEROS -->
+      <div class="norm-card">
+        <div class="norm-law">Legislación del Mercado de Valores (LMV, RD 4/2015)</div>
+        <div class="norm-title">Venta de valores cotizados del caudal hereditario</div>
+        <div class="norm-arts">
+          <strong>Conexión con art. 803.3:</strong> Los valores admitidos a cotización oficial se venderán a través del mercado correspondiente. Aplicación de normas sobre órdenes de venta, liquidación y registro de transacciones.
+        </div>
+        <span class="norm-tag tag-info">Financiero</span>
+      </div>
+
+      <!-- CAUCIONES PROCESALES -->
+      <div class="norm-card">
+        <div class="norm-law">Ley 1/2000 de Enjuiciamiento Civil</div>
+        <div class="norm-title">Régimen general de cauciones procesales</div>
+        <div class="norm-arts">
+          <strong>Conexión con arts. 797 y 800:</strong> La caución que debe prestar el administrador (requisito previo a la posesión, art. 797) y que se devuelve tras la aprobación de cuentas (art. 800.3) se rige por las reglas generales de cauciones del art. 581 y concordantes LEC.
+        </div>
+        <span class="norm-tag tag-gray">Garantías procesales</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría temática</div>
+    <div class="legend-grid">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c1)"></div>Nombramiento y posesión</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c2)"></div>Representación y facultades</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c3)"></div>Rendición de cuentas</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c4)"></div>Gestión, conservación y disposición</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c5)"></div>Retribución y gastos</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c6)"></div>Estructura administrativa subalterna</div>
+    </div>
+    <div class="legend-copy">
+      Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil · Libro IV, Título II, Capítulo I, Sección 3.ª (Arts. 797-805) · Mapa mental jurídico interactivo completo con ecosistema normativo expandido · Incluye conexiones con Código Civil (Arts. 988-1012, 1967-1969, 998), Legislación Hipotecaria, Ley Notarial 21/2007, Ley de Jurisdicción Voluntaria 15/2015, LMV y LEC interna (Arts. 782-796, 793, 438, 581) · Generado como plantilla HTML reutilizable 100% offline
+    </div>
+  </div>
+</footer>
+
+<script>
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '▶' : '▼';
+  });
+});
+
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+
+</body>
+</html>

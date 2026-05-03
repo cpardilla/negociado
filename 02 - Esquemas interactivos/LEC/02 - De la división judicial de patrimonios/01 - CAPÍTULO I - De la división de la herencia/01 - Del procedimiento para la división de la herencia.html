@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esquema Definitivo Fusionado | División Judicial de la Herencia (LEC arts. 782-789)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+  --transition:   200ms ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); font-family: var(--font-ui); color: var(--text-1); line-height: 1.5; }
+
+.site-header { background: var(--header-bg); color: var(--header-text); padding: 2rem 1.5rem 1.75rem; }
+.header-inner { max-width: 1400px; margin: 0 auto; }
+.header-breadcrumb {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+
+.header-title { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700; color: var(--header-text); margin-bottom: .45rem; line-height: 1.2; }
+.header-subtitle { font-size: 13px; color: rgba(248,245,237,.55); margin-bottom: 1rem; }
+.header-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.header-tag { background: rgba(200,169,110,.15); border: 1px solid rgba(200,169,110,.3); color: var(--accent); border-radius: 20px; padding: .2rem .7rem; font-size: 11px; font-weight: 500; }
+.header-actions { margin-left: auto; }
+.btn-ghost { background: transparent; border: 1px solid rgba(248,245,237,.15); color: rgba(248,245,237,.7); border-radius: var(--radius-sm); padding: .35rem .9rem; font-size: 12px; cursor: pointer; font-family: var(--font-ui); transition: var(--transition); }
+.btn-ghost:hover { background: rgba(248,245,237,.08); }
+
+.stats-bar { background: var(--surface); border-bottom: 1px solid var(--border); }
+.stats-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); }
+.stat-item { padding: 1.1rem 1.5rem; border-right: 1px solid var(--border); text-align:center; }
+.stat-item:last-child { border-right: none; }
+.stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--text-1); }
+.stat-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; margin-top: .15rem; }
+@media (max-width: 640px) { .stats-inner { grid-template-columns: repeat(2,1fr); } .stat-item:nth-child(2) { border-right: none; } }
+
+.controls-bar { position: sticky; top: 0; z-index: 100; background: var(--surface); box-shadow: 0 2px 8px rgba(0,0,0,.04); border-bottom: 1px solid var(--border); padding: .65rem 1.5rem; }
+.controls-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+.search-wrap { position: relative; flex: 1; min-width: 180px; max-width: 320px; }
+.search-wrap svg { position: absolute; left: .6rem; top: 50%; transform: translateY(-50%); color: var(--text-3); width: 14px; height: 14px; pointer-events: none; }
+.search-input { width: 100%; padding: .4rem .75rem .4rem 2rem; border: 1px solid var(--border-md); border-radius: var(--radius-sm); font-family: var(--font-ui); font-size: 13px; background: var(--bg); color: var(--text-1); outline: none; }
+.search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(200,169,110,.12); }
+.filter-pills { display: flex; gap: .35rem; flex-wrap: wrap; }
+.pill { border: 1px solid var(--border-md); border-radius: 20px; padding: .25rem .75rem; font-size: 11px; font-weight: 600; background: var(--surface); color: var(--text-2); cursor: pointer; font-family: var(--font-ui); transition: var(--transition); white-space: nowrap; }
+.pill:hover { background: var(--surface-2); }
+.pill.active[data-cat="all"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.pill.active[data-cat="c1"] { background: var(--c1); border-color: var(--c1); color: #fff; }
+.pill.active[data-cat="c2"] { background: var(--c2); border-color: var(--c2); color: #fff; }
+.pill.active[data-cat="c3"] { background: var(--c3); border-color: var(--c3); color: #fff; }
+.pill.active[data-cat="c4"] { background: var(--c4); border-color: var(--c4); color: #fff; }
+.pill.active[data-cat="c5"] { background: var(--c5); border-color: var(--c5); color: #fff; }
+.pill.active[data-cat="c6"] { background: var(--c6); border-color: var(--c6); color: #fff; }
+.ctrl-actions { display: flex; align-items: center; gap: .5rem; margin-left: auto; }
+.btn-ctrl { border: 1px solid var(--border-md); border-radius: var(--radius-sm); padding: .3rem .7rem; font-size: 11px; font-weight: 500; background: var(--surface); color: var(--text-2); cursor: pointer; font-family: var(--font-ui); transition: var(--transition); white-space: nowrap; }
+.btn-ctrl:hover { background: var(--surface-2); }
+.zoom-cluster { display: flex; border: 1px solid var(--border-md); border-radius: var(--radius-sm); overflow: hidden; }
+.btn-zoom { border: none; border-right: 1px solid var(--border-md); height: 28px; width: 28px; font-size: 14px; background: var(--surface); color: var(--text-2); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
+.btn-zoom:last-child { border-right: none; border-left: 1px solid var(--border-md); }
+.btn-zoom:hover:not(:disabled) { background: var(--surface-2); }
+.btn-zoom:disabled { opacity: .35; cursor: default; }
+.zoom-label { font-size: 12px; font-weight: 500; min-width: 42px; text-align: center; line-height: 28px; color: var(--text-2); padding: 0 .25rem; }
+@media (max-width: 768px) { .ctrl-actions { display: none; } }
+
+.page-main { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+.map-section { margin-bottom: 2rem; }
+.section-heading { display: flex; align-items: center; gap: .75rem; cursor: pointer; padding: .65rem 0; user-select: none; }
+.section-heading-text { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-1); flex: 1; }
+.section-heading-count { font-size: 11px; font-weight: 600; color: var(--text-3); background: var(--surface-2); border: 1px solid var(--border); border-radius: 20px; padding: .2rem .65rem; white-space: nowrap; }
+.section-toggle-btn { background: none; border: none; cursor: pointer; font-size: 13px; color: var(--text-3); padding: .2rem; }
+.section-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 1rem; }
+.section-body.collapsed { display: none; }
+
+.card-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+@media (max-width: 1200px) { .card-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+.map-card { background: var(--surface); border-radius: var(--radius-md); border: 1px solid var(--border); border-left-width: 4px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: box-shadow var(--transition); overflow: hidden; }
+.map-card:hover { box-shadow: var(--shadow-md); }
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+.map-card.hidden { display: none; }
+
+.card-top { padding: 1rem 1rem .75rem; }
+.card-meta { display: flex; align-items: center; gap: .4rem; margin-bottom: .5rem; flex-wrap: wrap; }
+.art-badge { font-size: 11px; font-weight: 600; border-radius: 20px; padding: .15rem .6rem; border: 1px solid; }
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); border-color: var(--c1bd); color: var(--c1); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); border-color: var(--c2bd); color: var(--c2); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); border-color: var(--c3bd); color: var(--c3); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); border-color: var(--c4bd); color: var(--c4); }
+.map-card[data-cat="c5"] .art-badge { background: var(--c5bg); border-color: var(--c5bd); color: var(--c5); }
+.map-card[data-cat="c6"] .art-badge { background: var(--c6bg); border-color: var(--c6bd); color: var(--c6); }
+.status-tag { font-size: 10px; font-weight: 600; border-radius: 20px; padding: .15rem .55rem; }
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+.card-title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-1); line-height: 1.35; margin-bottom: .3rem; }
+.card-subtitle { font-size: 12px; color: var(--text-2); line-height: 1.5; }
+
+.card-counters { display: flex; align-items: center; padding: .4rem 1rem; border-top: 1px solid var(--border); background: var(--bg); }
+.counter-badge { font-size: 11px; color: var(--text-3); }
+.counter-badge strong { color: var(--text-1); font-weight: 600; }
+
+.card-toggle-btn { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: .5rem 1rem; background: var(--surface-2); border: none; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-2); cursor: pointer; font-family: var(--font-ui); font-weight: 500; transition: background var(--transition); }
+.card-toggle-btn:hover { background: #e8e7e2; }
+.toggle-icon { font-size: 10px; transition: transform var(--transition); display: inline-block; }
+.map-card.expanded .toggle-icon { transform: rotate(180deg); }
+.card-body { display: none; padding: .75rem 1rem 1rem; border-top: 1px solid var(--border); }
+.map-card.expanded .card-body { display: block; }
+
+.inner-section { margin-bottom: 1rem; }
+.inner-section:last-child { margin-bottom: 0; }
+.inner-heading { display: flex; align-items: center; gap: .45rem; font-size: 12px; font-weight: 700; color: var(--text-1); margin-bottom: .5rem; padding-bottom: .3rem; border-bottom: 1px dashed var(--border); text-transform: uppercase; letter-spacing: .03em; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+.map-card[data-cat="c6"] .dot { background: var(--c6); }
+
+.inner-list { list-style: none; padding-left: 0; }
+.inner-list li { position: relative; padding-left: .8rem; margin-bottom: .3rem; font-size: 12.5px; color: var(--text-2); line-height: 1.55; }
+.inner-list li::before { content: '–'; position: absolute; left: 0; color: var(--text-3); }
+.inner-list li strong { color: var(--text-1); font-weight: 500; }
+.inner-list .inner-list { margin-top: .3rem; padding-left: .8rem; }
+.inner-list .inner-list li::before { content: '·'; }
+
+.card-refs { display: flex; flex-wrap: wrap; gap: .35rem; padding: .6rem 1rem; border-top: 1px solid var(--border); background: var(--bg); }
+.ref-tag { font-size: 11px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .15rem .55rem; color: var(--text-2); }
+
+.no-results { grid-column: 1/-1; text-align: center; padding: 3rem 1rem; color: var(--text-3); font-size: 14px; display: none; }
+
+/* Timeline */
+.timeline-container { padding: 1.5rem 1rem; overflow-x: auto; }
+.timeline { display: flex; flex-wrap: nowrap; gap: 0; align-items: flex-start; position: relative; min-width: 900px; }
+.timeline-step { flex: 1; min-width: 180px; position: relative; padding: 0 12px; }
+.timeline-step .step-num { display: block; width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#1a365d,#2c5282); color: #fff; text-align: center; line-height: 36px; font-size: .8rem; font-weight: 700; margin: 0 auto 10px; position: relative; z-index: 2; }
+.timeline-step::after { content: ''; position: absolute; top: 18px; left: 50%; width: 100%; height: 3px; background: #e2e8f0; z-index: 1; }
+.timeline-step:last-child::after { display: none; }
+.timeline-step h4 { font-size: .82rem; font-weight: 700; color: #2d3748; text-align: center; margin-bottom: 6px; line-height: 1.3; }
+.timeline-step ul { text-align: left; list-style: none; padding: 0; margin-top: 4px; }
+.timeline-step ul li { font-size: .78rem; color: #4a5568; line-height: 1.5; padding-left: 14px; position: relative; text-align: left; margin-bottom: 4px; }
+.timeline-step ul li::before { content: '•'; position: absolute; left: 0; font-weight: 700; color: var(--text-3); }
+@media(max-width:1100px){ .timeline-step{min-width:160px} }
+@media(max-width:720px){ .timeline{flex-wrap:wrap;} .timeline-step{min-width:100%; margin-bottom:1rem;} .timeline-step::after{display:none} }
+
+/* Tables & grids */
+.table-wrap { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
+.timeline-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.timeline-table th { background: var(--surface-2); padding: .65rem 1rem; text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text-2); border-bottom: 1px solid var(--border); }
+.timeline-table td { padding: .65rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: middle; }
+.timeline-table tr:last-child td { border-bottom: none; }
+.timeline-table tr:hover td { background: var(--surface-2); }
+.td-tramite { font-weight: 500; color: var(--text-1); }
+.td-norm { font-size: 12px; color: var(--text-3); white-space: nowrap; }
+.plazo-badge { display: inline-block; font-size: 11px; font-weight: 600; border-radius: 20px; padding: .2rem .65rem; white-space: nowrap; }
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+.participants-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+@media (max-width: 960px) { .participants-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+.participant-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+.participant-col-head { padding: .55rem .85rem; font-size: 12px; font-weight: 600; color: #fff; }
+.phead-c1 { background: var(--c1); } .phead-c2 { background: var(--c2); } .phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); } .phead-c5 { background: var(--c5); } .phead-c6 { background: var(--c6); }
+.participant-col ul { list-style: none; padding: .5rem .85rem; }
+.participant-col li { font-size: 12.5px; color: var(--text-2); padding: .35rem 0; border-bottom: 1px solid var(--border); }
+.participant-col li:last-child { border-bottom: none; }
+.participant-note { font-size: 11px; color: var(--text-3); font-style: italic; display: block; margin-top: .1rem; }
+
+.norm-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+@media (max-width: 1200px) { .norm-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+.norm-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: .85rem; display: flex; flex-direction: column; gap: .35rem; }
+.norm-law { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); font-weight: 600; }
+.norm-title { font-size: 13px; font-weight: 600; color: var(--text-1); }
+.norm-arts { font-size: 12px; color: var(--text-2); line-height: 1.65; flex: 1; }
+.norm-tag { display: inline-block; font-size: 10px; font-weight: 600; border-radius: 20px; padding: .15rem .55rem; align-self: flex-start; margin-top: .3rem; }
+
+.legend-footer { background: var(--header-bg); color: var(--header-text); padding: 1.5rem; margin-top: 2rem; }
+.legend-inner { max-width: 1400px; margin: 0 auto; }
+.legend-title { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin-bottom: .85rem; font-weight: 600; }
+.legend-grid { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; margin-bottom: 1rem; }
+.legend-item { display: flex; align-items: center; gap: .5rem; font-size: 12px; color: rgba(248,245,237,.7); }
+.legend-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.legend-divider { width: 1px; height: 20px; background: rgba(248,245,237,.12); }
+.legend-copy { font-size: 11px; color: rgba(248,245,237,.3); border-top: 1px solid rgba(248,245,237,.08); padding-top: .75rem; margin-top: .25rem; }
+
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body { display: block !important; }
+  .section-body { display: block !important; }
+  .map-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">LEY 1/2000, DE 7 DE ENERO, DE ENJUICIAMIENTO CIVIL · LIBRO IV — PROCESOS ESPECIALES · TÍTULO II: DE LA DIVISIÓN JUDICIAL DE PATRIMONIOS · CAPÍTULO I: DE LA DIVISIÓN DE LA HERENCIA · SECCIÓN 1.ª</div>
+    <h1 class="header-title">Del procedimiento para la división de la herencia</h1>
+    <p class="header-subtitle">Artículos 782 a 789 LEC · Procedimiento completo, fundamentos, actores, plazos, conexiones normativas, fiscalidad, derechos forales y dimensión internacional</p>
+    <div class="header-meta">
+      <span class="header-tag">LEC 1/2000</span>
+      <span class="header-tag">Arts. 782–789</span>
+      <span class="header-tag">45+ Conexiones</span>
+      <span class="header-tag">25+ Actores</span>
+      <span class="header-tag">Edición fusionada</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">8</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">45+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">25+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">12</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor, norma…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Procedimiento LEC</button>
+      <button class="pill" data-cat="c2">Fundamentos</button>
+      <button class="pill" data-cat="c3">Figuras clave</button>
+      <button class="pill" data-cat="c4">Plazos y fiscalidad</button>
+      <button class="pill" data-cat="c5">Excepciones y vías</button>
+      <button class="pill" data-cat="c6">Conexiones</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<main class="page-main">
+
+  <!-- SECCIÓN CARDS PRINCIPAL -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-arts">
+      <span class="section-heading-text">Esquema temático completo — Fundamentos, artículos y materias conexas</span>
+      <span class="section-heading-count">26 bloques temáticos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-arts">
+      <div class="card-grid">
+
+<article class="map-card" data-cat="c2" data-text="contexto normativo ubicación sistemática LEC libro IV título II capítulo I sección 1">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Fundamentos</span><span class="status-tag tag-info">Sistema</span></div>
+    <h2 class="card-title">Contexto Normativo y Ubicación Sistemática</h2>
+    <p class="card-subtitle">Inserción del procedimiento en la LEC, relación con la Sección 2.ª (intervención del caudal) y con la administración del caudal (arts. 797-805).</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>4</strong> niveles sistemáticos</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Ubicación en la LEC</div>
+      <ul class="inner-list">
+        <li><strong>Libro IV.</strong> De los procesos especiales · <strong>Título II.</strong> De la división judicial de patrimonios · <strong>Capítulo I.</strong> De la división de la herencia · <strong>Sección 1.ª</strong> Del procedimiento (arts. 782-789).</li>
+        <li><strong>Sección 2.ª</strong> (arts. 790-796): intervención del caudal hereditario como medida cautelar complementaria.</li>
+        <li><strong>Arts. 797-805:</strong> administración del caudal durante la intervención (representación, cuentas, conservación, retribución).</li>
+        <li><strong>Sección 3.ª</strong> (arts. 806-819): división judicial del condominio por extinción de comunidad (analogía con la herencia).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Naturaleza mixta del procedimiento</div>
+      <ul class="inner-list">
+        <li>Participa simultáneamente de caracteres jurisdiccionales y no jurisdiccionales.</li>
+        <li>Fase inicial de carácter voluntario (designación de contador, acuerdos); fase contenciosa si surge oposición.</li>
+        <li>Ausencia de cosa juzgada material (art. 787.5 LEC) y preeminencia del acuerdo entre partes.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">LEC arts. 782-805</span><span class="ref-tag">LEC arts. 806-819</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c2" data-text="fundamentos constitucionales artículo 24 CE tutela judicial efectiva dilaciones indebidas menores ausentes familia">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Fundamentos</span><span class="status-tag tag-ok">Constitución</span></div>
+    <h2 class="card-title">Fundamentos Constitucionales</h2>
+    <p class="card-subtitle">Art. 24 CE (tutela judicial efectiva y proceso sin dilaciones), art. 39 CE (protección de la familia) y garantías para menores y ausentes.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>4</strong> preceptos CE</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 24.1 CE — Tutela judicial efectiva</div>
+      <ul class="inner-list">
+        <li>Derecho de cualquier coheredero o legatario de parte alícuota a reclamar la división judicial (art. 782.1 LEC).</li>
+        <li>Comprende acceso a la jurisdicción, resolución motivada y ejecución en plazo razonable (STC 119/2001).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 24.2 CE — Proceso sin dilaciones indebidas</div>
+      <ul class="inner-list">
+        <li>Plazos breves (10 días Junta, 2 meses operaciones, 10 días oposición, 10 días comparecencia).</li>
+        <li>En la práctica, los plazos frecuentemente se exceden en herencias complejas (doctrina TEDH).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 24.1 CE — Tutela de menores y ausentes</div>
+      <ul class="inner-list">
+        <li>Intervención del Ministerio Fiscal (art. 783.4 LEC) como garantía de defensa de quienes no pueden defenderse.</li>
+        <li>Doble fundamento: defensa de derechos de incapaces (art. 54 CE) y mandato del art. 749.2 LEC.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 39 CE — Protección de la familia</div>
+      <ul class="inner-list">
+        <li>Art. 789 LEC (terminación por acuerdo) y vías alternativas responden a la obligación de proteger social, económica y jurídicamente a la familia.</li>
+        <li>El legislador evita que el conflicto sucesorio fracture aún más las relaciones familiares tras el fallecimiento.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">CE arts. 24, 39, 54</span><span class="ref-tag">STC 119/2001</span><span class="ref-tag">LEC art. 749.2</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c2" data-text="base sustantiva código civil derecho material partición arts 1051-1087 puente normativo art 1059">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Fundamentos</span><span class="status-tag tag-info">CC</span></div>
+    <h2 class="card-title">Base Sustantiva: Código Civil</h2>
+    <p class="card-subtitle">El Código Civil regula el fondo material (el qué), mientras la LEC regula el procedimiento (el cómo). Art. 1059 CC como puente normativo.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>Arts. 1051-1087</strong> CC</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Distinción ley procesal / sustantiva</div>
+      <ul class="inner-list">
+        <li>Arts. 782-789 LEC = procedimiento (cómo se llega a la división).</li>
+        <li>CC arts. 1051-1087 = fondo material (quién es heredero, cuánto le corresponde, cómo se calcula la legítima).</li>
+        <li>El contador aplica el CC (o derecho foral) al realizar las operaciones divisorias (art. 786.1 LEC).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Puente normativo: art. 1059 CC</div>
+      <ul class="inner-list">
+        <li>Remite expresamente a la LEC cuando los coherederos no se ponen de acuerdo.</li>
+        <li>La remisión es imperativa: impone la vía judicial como mecanismo subsidiario de resolución del conflicto.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">CC arts. 1051-1087</span><span class="ref-tag">CC art. 1059</span><span class="ref-tag">LEC art. 786.1</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c2" data-text="competencia judicial fuero domicilio causante art 15 LEC art 52 LEC reglamento UE 650/2012 juzgado primera instancia">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Fundamentos</span><span class="status-tag tag-warn">Competencia</span></div>
+    <h2 class="card-title">Competencia Judicial</h2>
+    <p class="card-subtitle">Fuero general, fuero especial, competencia objetiva, conflicto de competencia y dimensión internacional (Reg. UE 650/2012).</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>5</strong> reglas de competencia</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Fuero general: domicilio del causante</div>
+      <ul class="inner-list">
+        <li><strong>Art. 15.1 LEC:</strong> Juzgado del domicilio del causante al fallecimiento (regla general).</li>
+        <li><strong>Art. 16.1 LEC:</strong> si no tuviere domicilio en España, el del lugar donde se encuentre cualquier bien.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Fuero especial: lugar de los bienes</div>
+      <ul class="inner-list">
+        <li><strong>Art. 52 LEC:</strong> si el causante no tuviere domicilio en España, competencia del lugar de la mayor parte de los bienes.</li>
+        <li><strong>Reg. UE 650/2012, art. 4:</strong> competencia de los tribunales del Estado de residencia habitual del causante.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Competencia objetiva y examen de oficio</div>
+      <ul class="inner-list">
+        <li><strong>Juzgado de Primera Instancia</strong> (art. 85 LEC), dado que la cuantía suele superar los 2.000 €.</li>
+        <li><strong>Art. 45.2 LEC:</strong> examen de oficio de la competencia territorial en todo momento; inhibición si es necesaria.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">LEC arts. 15, 16, 45, 52, 85</span><span class="ref-tag">Reg. UE 650/2012 art. 4</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c2" data-text="postulación procesal abogado procurador art 23 art 31 LEC gratuidad justicia junta art 783">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Fundamentos</span><span class="status-tag tag-info">Partes</span></div>
+    <h2 class="card-title">Postulación Procesal</h2>
+    <p class="card-subtitle">Necesidad de abogado y procurador, gratuidad de justicia, particularidades de la Junta (art. 783) y representación del Abogado del Estado.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>3</strong> regímenes</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Abogado y procurador (arts. 23 y 31 LEC)</div>
+      <ul class="inner-list">
+        <li>Preceptiva la intervención de ambos profesionales (art. 31.1 LEC).</li>
+        <li>Excepción del art. 31.2 LEC (juicios verbales ≤ 2.000 €), raramente aplicable dada la cuantía hereditaria.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Gratuidad de justicia (Ley 1/1996 LJG)</div>
+      <ul class="inner-list">
+        <li>Designación de abogado y procurador de oficio, exención de tasas y copias.</li>
+        <li>Especial relevancia para coherederos de menor capacidad económica.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Particularidades en la Junta (art. 783)</div>
+      <ul class="inner-list">
+        <li>Los personados son citados por procurador; los no personados, personalmente sin necesidad de procurador.</li>
+        <li>La Junta es un acto de negociación, no de controversia jurisdiccional plena.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">LEC arts. 23, 31</span><span class="ref-tag">Ley 1/1996 LJG</span><span class="ref-tag">LEC art. 783</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c2" data-text="aceptación repudiación herencia art 988 art 992 CC beneficio inventario art 1023-1032 herencia yacente">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Fundamentos</span><span class="status-tag tag-warn">Presupuesto</span></div>
+    <h2 class="card-title">Aceptación y Repudiación de la Herencia</h2>
+    <p class="card-subtitle">Presupuesto de la división judicial, aceptación pura y simple vs. a beneficio de inventario, repudiación y efectos sobre el procedimiento.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>3</strong> figuras</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Aceptación como presupuesto</div>
+      <ul class="inner-list">
+        <li>La herencia debe estar aceptada para poder dividirse (art. 657 CC).</li>
+        <li>La solicitud de división judicial constituye aceptación tácita (doctrina mayoritaria).</li>
+        <li>Acto personalísimo e irrevocable (art. 988 CC): expresa (escritura pública) o tácita (actos de disposición).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Aceptación pura y simple vs. a beneficio de inventario</div>
+      <ul class="inner-list">
+        <li><strong>Pura y simple (art. 1023 CC):</strong> responsabilidad ilimitada por deudas hereditarias. Presunta si no se declara en contrario.</li>
+        <li><strong>A beneficio de inventario (arts. 1023-1032 CC):</strong> responsabilidad limitada al valor de los bienes hereditarios.</li>
+        <li>Plazos improrrogables: 30 días hábiles para solicitarlo + 90 días hábiles para formar inventario (art. 1028 CC).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Repudiación (art. 992 CC)</div>
+      <ul class="inner-list">
+        <li>Debe ser expresa, total y ante Notario o Juzgado. No admite repudiación tácita ni parcial.</li>
+        <li>Efecto: el repudiante se trata como si nunca hubiera sido heredero; su cuota acrece a los demás (acreción).</li>
+        <li>Si se produce durante el procedimiento, cesará en él y las operaciones deberán reformarse.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">CC arts. 657, 988, 992, 1023-1032</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c2" data-text="herencia yacente art 1009 CC art 1011 CC administración de facto intervención judicial diferencias">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Fundamentos</span><span class="status-tag tag-gray">Régimen previo</span></div>
+    <h2 class="card-title">Herencia Yacente y su Administración</h2>
+    <p class="card-subtitle">Naturaleza jurídica, administración de facto por los herederos (art. 1011 CC) y diferencias con la intervención judicial (arts. 790-796).</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>3</strong> regímenes</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Naturaleza de la herencia yacente (art. 1009 CC)</div>
+      <ul class="inner-list">
+        <li>Situación entre el fallecimiento y la aceptación: universalidad jurídica sin titular determinado.</li>
+        <li>No es persona jurídica ni comunidad propiamente dicha, sino patrimonio en espera de titular.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Administración de facto (art. 1011 CC)</div>
+      <ul class="inner-list">
+        <li>Corresponde a quien tenga la posesión de los bienes (habitualmente cónyuge viudo o hijo conviviente).</li>
+        <li>Obligaciones de conservación y gestión prudente; sin facultades de disposición.</li>
+        <li>Derecho a reembolso de gastos necesarios y útiles.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Diferencias con la intervención judicial (arts. 790-796)</div>
+      <ul class="inner-list">
+        <li><strong>Administrador de facto:</strong> sin nombramiento ni caución; sin facultades de disposición; rinde cuentas a demanda.</li>
+        <li><strong>Administrador judicial:</strong> nombrado por el Juzgado; presta caución; puede enajenar con autorización; rinde cuentas periódicas (arts. 799-800 LEC).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">CC arts. 1009, 1011</span><span class="ref-tag">LEC arts. 790-796, 797-805</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c2" data-text="liquidación gananciales régimen económico matrimonial sociedad gananciales art 806 CC STS 261/2013 STS 489/2016">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Fundamentos</span><span class="status-tag tag-warn">Presupuesto</span></div>
+    <h2 class="card-title">Liquidación del Régimen Económico Matrimonial</h2>
+    <p class="card-subtitle">Necesidad de liquidación previa en gananciales, tramitación en sede de división judicial y doctrina del Tribunal Supremo.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>3</strong> regímenes</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Necesidad de liquidación previa</div>
+      <ul class="inner-list">
+        <li>Cuando el causante estaba casado en gananciales, la partición requiere la previa liquidación de la sociedad (art. 806 CC).</li>
+        <li>Delimita el caudal privativo partible (bienes propios + mitad gananciales del causante).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Procedimiento en sede de división judicial</div>
+      <ul class="inner-list">
+        <li>El contador incluye la liquidación de gananciales en sus operaciones divisorias.</li>
+        <li>Controversias sobre inclusión/exclusión de bienes → juicio verbal (art. 794.2 LEC).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Doctrina del Tribunal Supremo</div>
+      <ul class="inner-list">
+        <li><strong>STS 261/2013:</strong> la liquidación es presupuesto necesario; no puede eludirse ni siquiera de común acuerdo si perjudica a terceros.</li>
+        <li><strong>STS 489/2016:</strong> liquidación y adjudicación son operaciones jurídicas distintas pero sucesivas.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">CC arts. 806, 1392-1410</span><span class="ref-tag">LEC art. 794.2</span><span class="ref-tag">STS 261/2013, STS 489/2016</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c1" data-text="artículo 782 solicitud división judicial herencia coheredero legatario alícuota acreedor oposición partición certificado defunción título ejecutivo fraude comunidad hereditaria comisario contador-partidor notario letrado competencia vecindad civil legitimación rescisoria embargo anotación preventiva">
+  <div class="card-top">
+    <div class="card-meta">
+      <span class="art-badge">Artículo 782</span>
+      <span class="status-tag tag-info">Solicitud</span>
+    </div>
+    <h2 class="card-title">Solicitud de división judicial de la herencia</h2>
+    <p class="card-subtitle">Naturaleza subsidiaria, presupuestos de admisión, legitimación activa, documentación y régimen completo de los tres tipos de acreedor.</p>
+  </div>
+  <div class="card-counters">
+    <span class="counter-badge"><strong>3</strong> tipos de acreedor</span>
+    <span class="counter-badge" style="margin-left:auto"><strong>5</strong> apartados</span>
+  </div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Naturaleza jurídica y carácter subsidiario</div>
+      <ul class="inner-list">
+        <li><strong>Proceso especial</strong> (Libro IV LEC): voluntario en su fase inicial; contencioso cuando surge oposición.</li>
+        <li><strong>Subsidiariedad:</strong> solo procede a falta de contador-partidor testamentario (CC art. 1057.1), de acuerdo entre coherederos (CC art. 1058) o de procedimiento ante LAJ/Notario (CC art. 1057.2; LJV arts. 66–68).</li>
+        <li><strong>Exclusividad de vía:</strong> iniciada la vía judicial, no puede simultanearse con la notarial.</li>
+        <li><strong>Partición testamentaria por el testador (CC art. 1056.1):</strong> si el testador hace la partición en el propio testamento, no procede la judicial, salvo lesión de legítimas.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Competencia objetiva y territorial</div>
+      <ul class="inner-list">
+        <li><strong>Objetiva:</strong> Juzgado de Primera Instancia (LEC art. 85).</li>
+        <li><strong>Territorial (LEC art. 52.1.4.º):</strong> lugar del último domicilio o residencia habitual del causante; subsidiariamente, lugar de la mayor parte de los inmuebles; en último término, lugar del fallecimiento.</li>
+        <li><strong>Supuestos internacionales (Reg. UE 650/2012, art. 4):</strong> competencia de los tribunales del Estado de residencia habitual del causante al tiempo del fallecimiento; la professio iuris (art. 22) permite designar la ley de la nacionalidad.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Legitimación activa (apartado 1)</div>
+      <ul class="inner-list">
+        <li><strong>Coheredero:</strong> llamado a la sucesión a título universal (CC art. 660), por testamento o por ley.</li>
+        <li><strong>Legatario de parte alícuota:</strong> recibe una cuota proporcional del haber neto; distinto del legatario de cosa cierta (CC art. 858), que no tiene esta legitimación porque su derecho se satisface con la entrega directa del bien.</li>
+        <li><strong>Exclusiones:</strong> acreedores ordinarios, legatarios de cosa cierta, acreedores de los coherederos (solo tienen derecho de intervención, no de solicitud).</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Documentación obligatoria (apartado 2)</div>
+      <ul class="inner-list">
+        <li><strong>Certificado de defunción:</strong> acredita el fallecimiento y la apertura de la sucesión (CC art. 657).</li>
+        <li><strong>Título sucesorio:</strong> copia autorizada del testamento notarial; testamento ológrafo con auto de protocolización (LN art. 61); declaración de herederos ab intestato (acta notarial de notoriedad, LJV art. 55; o resolución del LAJ, LJV art. 56).</li>
+        <li><strong>Certificado del RAUV</strong> (Registro de Actos de Última Voluntad, D. 2-VI-1944): verifica existencia/inexistencia de testamento.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Acreedores ordinarios de la herencia (apartado 3)</div>
+      <ul class="inner-list">
+        <li><strong>Prohibición:</strong> no pueden instar la división; fundamento: la partición es un derecho personalísimo de los herederos.</li>
+        <li><strong>Acciones disponibles:</strong> demanda en juicio declarativo ordinario contra la herencia yacente, la comunidad hereditaria o los coherederos individualmente; tercería de dominio (LEC arts. 595–604); anotación preventiva de embargo (LH art. 42.9.º).</li>
+        <li><strong>Límite:</strong> no pueden suspender ni entorpecer las actuaciones de división.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Acreedores privilegiados: derecho de oposición (apartado 4)</div>
+      <ul class="inner-list">
+        <li><strong>Sujetos:</strong> reconocidos en testamento o por los coherederos; y los que tienen título ejecutivo (LEC art. 517).</li>
+        <li><strong>Facultad:</strong> oponerse a la entrega de bienes hasta recibir pago o garantía suficiente (fianza personal, caución real, aval bancario).</li>
+        <li><strong>Momento:</strong> en cualquier momento, antes de la entrega de bienes (art. 788.1); efecto suspensivo sobre la entrega pero no sobre las operaciones divisorias.</li>
+        <li><strong>Fundamento:</strong> responsabilidad hereditaria del heredero (CC arts. 1003 y 1023); los acreedores de la herencia cobran antes de que los herederos perciban sus hijuelas.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Acreedores de los coherederos (apartado 5)</div>
+      <ul class="inner-list">
+        <li><strong>Legitimados:</strong> acreedores personales de uno o más coherederos (no de la herencia).</li>
+        <li><strong>Facultad:</strong> intervención a su costa con función de vigilancia antifraudulenta.</li>
+        <li><strong>Acción rescisoria posterior (CC arts. 1083 y 1291.3.º):</strong> si la partición se hizo en fraude de sus derechos; prescripción: cuatro años desde conocimiento del fraude (CC art. 1299).</li>
+        <li><strong>Medida cautelar:</strong> pueden solicitar anotación preventiva de la demanda en el Registro de la Propiedad (LH art. 42.1.º).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs">
+    <span class="ref-tag">CC arts. 657, 660, 858, 1003, 1056–1058</span>
+    <span class="ref-tag">LEC arts. 52, 85, 517, 595–604</span>
+    <span class="ref-tag">LJV arts. 55, 56, 66–68</span>
+    <span class="ref-tag">LH art. 42.1.º y 9.º</span>
+    <span class="ref-tag">Reg. UE 650/2012 arts. 4, 21, 22</span>
+    <span class="ref-tag">CC arts. 1083, 1291.3.º, 1299</span>
+  </div>
+</article>
+
+
+<article class="map-card" data-cat="c1" data-text="artículo 783 junta convocatoria herederos legatarios cónyuge sobreviviente ministerio fiscal menores ausentes edictos procurador personados diez días inventario caudal intervención gananciales discapacidad ausente declarado">
+  <div class="card-top">
+    <div class="card-meta">
+      <span class="art-badge">Artículo 783</span>
+      <span class="status-tag tag-warn">Junta</span>
+    </div>
+    <h2 class="card-title">Convocatoria de Junta para designar contador y peritos</h2>
+    <p class="card-subtitle">Intervención y formación del inventario del caudal, convocatoria de todos los interesados, formas de citación y función del Ministerio Fiscal como representante de menores y ausentes.</p>
+  </div>
+  <div class="card-counters">
+    <span class="counter-badge"><strong>3</strong> formas de citación</span>
+    <span class="counter-badge" style="margin-left:auto"><strong>10 días</strong> plazo de la Junta</span>
+  </div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Intervención del caudal e inventario (apartado 1)</div>
+      <ul class="inner-list">
+        <li><strong>Presupuesto:</strong> solicitud expresa y que el tribunal lo estime procedente.</li>
+        <li><strong>Régimen:</strong> arts. 790–796 LEC (diligencias de intervención del caudal hereditario).</li>
+        <li><strong>Administrador del caudal (art. 795 LEC):</strong> nombrado por el tribunal; gestión ordinaria sin necesidad de autorización; actos de disposición requieren autorización judicial; retribución con cargo al caudal.</li>
+        <li><strong>Inventario:</strong> documentación de todos los bienes, derechos y obligaciones del causante; base para el avalúo y liquidación del contador; puede servir de base para la aceptación a beneficio de inventario (CC arts. 1010–1034) si cumple sus requisitos.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Convocatoria de Junta (apartado 2)</div>
+      <ul class="inner-list">
+        <li><strong>Órgano:</strong> Letrado de la Administración de Justicia, una vez practicadas las diligencias previas o, si no son necesarias, a la vista de la solicitud.</li>
+        <li><strong>Convocados necesarios:</strong> herederos, legatarios de parte alícuota y cónyuge sobreviviente.</li>
+        <li><strong>Cónyuge sobreviviente:</strong> puede concurrir como heredero instituido y/o en defensa de sus derechos sobre la sociedad de gananciales disuelta (CC arts. 1392–1410); la liquidación de la sociedad de gananciales es presupuesto práctico frecuente de la partición, pues delimita el caudal privativo partible.</li>
+        <li><strong>Plazo:</strong> señalando día dentro de los diez días siguientes a la solicitud o a la conclusión de las actuaciones previas.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Formas de citación (apartado 3)</div>
+      <ul class="inner-list">
+        <li><strong>Personados en autos:</strong> por medio del procurador (LEC art. 23).</li>
+        <li><strong>No personados con residencia conocida:</strong> citación personal mediante cédula (LEC art. 152) u otro medio fehaciente.</li>
+        <li><strong>Residencia desconocida:</strong> edictos (LEC art. 164): BOE, tablón del juzgado y, si el tribunal lo estima conveniente, medios de comunicación adicionales.</li>
+        <li><strong>Interesados extranjeros no localizados:</strong> comunicación por vía diplomática o consular (LEC art. 177).</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Convocatoria al Ministerio Fiscal (apartado 4)</div>
+      <ul class="inner-list">
+        <li><strong>Función:</strong> representar a herederos/legatarios menores sin representación legítima o con conflicto de intereses con su representante; y a ausentes de paradero desconocido.</li>
+        <li><strong>Ausente declarado judicialmente (CC arts. 181–186):</strong> si el paradero lleva tiempo ignorado, puede ser conveniente promover la declaración de ausencia y nombrar representante del ausente, que actuará en el procedimiento.</li>
+        <li><strong>Personas con discapacidad (Ley 8/2021, de 2 de junio):</strong> sus medidas de apoyo voluntarias o judiciales determinan quién actúa en su nombre; el MF puede actuar supletoriamente si no hay apoyos suficientes.</li>
+        <li><strong>Cese respecto de menores:</strong> cuando estén habilitados de representante legal.</li>
+        <li><strong>Cese respecto de ausentes:</strong> cuando se presenten o puedan ser citados personalmente; la representación no se restaura automáticamente si vuelven a ausentarse.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Acreedores del artículo 782.5 en la Junta (apartado 5)</div>
+      <ul class="inner-list">
+        <li><strong>Personados:</strong> convocados expresamente por el LAJ.</li>
+        <li><strong>No personados:</strong> no se les cita, pero pueden participar si acuden aportando sus títulos justificativos.</li>
+        <li><strong>Límite:</strong> su participación no les convierte en parte procesal plena; función de vigilancia antifraudulenta únicamente.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs">
+    <span class="ref-tag">LEC arts. 23, 152, 164, 177, 790–796</span>
+    <span class="ref-tag">CC arts. 181–186, 1010–1034, 1392–1410</span>
+    <span class="ref-tag">Ley 8/2021 (discapacidad)</span>
+  </div>
+</article>
+
+
+<article class="map-card" data-cat="c1" data-text="artículo 784 designación contador peritos sorteo junta acuerdo abogados avalúo bienes recusación provisión fondos tasación clases especiales conocimientos despacho honorarios responsabilidad penal cohecho">
+  <div class="card-top">
+    <div class="card-meta">
+      <span class="art-badge">Artículo 784</span>
+      <span class="status-tag tag-warn">Designación</span>
+    </div>
+    <h2 class="card-title">Designación del contador y de los peritos</h2>
+    <p class="card-subtitle">Celebración de la Junta, nombramiento del contador y los peritos por acuerdo o por sorteo, y régimen de recusación, honorarios y responsabilidad del contador designado judicialmente.</p>
+  </div>
+  <div class="card-counters">
+    <span class="counter-badge"><strong>2</strong> mecanismos de nombramiento</span>
+    <span class="counter-badge" style="margin-left:auto"><strong>1 perito</strong> por clase de bienes</span>
+  </div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Celebración de la Junta (apartado 1)</div>
+      <ul class="inner-list">
+        <li><strong>Quórum:</strong> válida con cualquier número de concurrentes; no requiere mínimo.</li>
+        <li><strong>Presidencia:</strong> Letrado de la Administración de Justicia, que levantará acta (LEC art. 146).</li>
+        <li><strong>Efecto vinculante:</strong> los acuerdos obligan a todos los interesados, incluidos los no asistentes, si la citación se practicó en forma legal.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Nombramiento por acuerdo (apartado 2)</div>
+      <ul class="inner-list">
+        <li><strong>Contador (por acuerdo):</strong> no requiere titulación específica; habitualmente abogado, economista, gestor o experto en valoración de patrimonios; función técnico-jurídica: aplica la ley sustantiva, respeta legítimas e instrucciones del testador y redacta el cuaderno particional.</li>
+        <li><strong>Peritos (por acuerdo):</strong> valorarán los bienes del caudal conforme a criterios técnicos objetivos.
+          <ul class="inner-list">
+            <li>Inmuebles: arquitecto técnico o perito tasador (API).</li>
+            <li>Valores y participaciones: economista o auditor.</li>
+            <li>Obras de arte: tasador acreditado por Ministerio de Cultura.</li>
+            <li>Fondo de comercio: economista o experto en valoración de empresas.</li>
+            <li>Bienes cotizados: cotización oficial en mercado regulado; no es obligatorio perito.</li>
+          </ul>
+        </li>
+        <li><strong>Límite:</strong> máximo un perito por cada clase de bienes que hayan de ser justipreciados.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Nombramiento por sorteo: contador (apartado 3)</div>
+      <ul class="inner-list">
+        <li><strong>Mecanismo:</strong> sorteo conforme al artículo 341 LEC (lista del Colegio de Abogados del partido judicial).</li>
+        <li><strong>Requisitos:</strong> abogado en ejercicio; especiales conocimientos en la materia (derecho sucesorio, contabilidad patrimonial); despacho profesional en el lugar del juicio.</li>
+        <li><strong>Honorarios (LEC arts. 341–346):</strong> derecho a provisión de fondos previa (LEC art. 342); liquidación final a prorrata entre interesados, salvo pacto.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Nombramiento por sorteo: peritos (apartado 3)</div>
+      <ul class="inner-list">
+        <li><strong>Procedimiento:</strong> igual que el contador (LEC art. 341.1); sorteo entre las listas anuales remitidas por los Colegios Profesionales.</li>
+        <li><strong>Iniciativa:</strong> el contador determina qué tipos de peritación son necesarios dentro del límite de uno por clase.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Régimen del contador designado por sorteo (apartado 4)</div>
+      <ul class="inner-list">
+        <li><strong>Causas de recusación (LEC arts. 124–128):</strong> parentesco con las partes; interés directo o indirecto en el asunto; amistad íntima o enemistad; haber emitido dictamen contrario; dependencia o subordinación respecto de una parte.</li>
+        <li><strong>Abstención:</strong> el contador puede abstenerse si aprecia causa de recusación (LEC art. 124).</li>
+        <li><strong>Responsabilidad civil:</strong> por negligencia o dolo, régimen análogo al del perito (LEC art. 335.2; CC art. 1902).</li>
+        <li><strong>Responsabilidad penal:</strong> informe manifiestamente falso → falso testimonio del perito (CP art. 459); avalúo corrompido por dádiva → cohecho pasivo (CP arts. 419–427), conectado con el supuesto de suspensión del artículo 787.6 LEC.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs">
+    <span class="ref-tag">LEC arts. 124–128, 146, 341–346</span>
+    <span class="ref-tag">CC art. 1902</span>
+    <span class="ref-tag">CP arts. 419–427 (cohecho), 459 (falso testimonio)</span>
+  </div>
+</article>
+
+
+<article class="map-card" data-cat="c1" data-text="artículo 785 documentación contador autos entrega aceptación plazo operaciones divisorias daños perjuicios inventario avalúo liquidación división caudal diligencia instancia prescripción responsabilidad delegación">
+  <div class="card-top">
+    <div class="card-meta">
+      <span class="art-badge">Artículo 785</span>
+      <span class="status-tag tag-ok">Encargo</span>
+    </div>
+    <h2 class="card-title">Entrega de la documentación al contador. Obligación de cumplir el encargo aceptado y plazo para hacerlo</h2>
+    <p class="card-subtitle">La aceptación del cargo genera una obligación personalísima de hacer. Regula los documentos entregados, la exigibilidad del encargo y la responsabilidad civil por incumplimiento del plazo fijado.</p>
+  </div>
+  <div class="card-counters">
+    <span class="counter-badge"><strong>4</strong> tareas del contador</span>
+    <span class="counter-badge" style="margin-left:auto"><strong>5 años</strong> prescripción responsabilidad</span>
+  </div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Entrega de documentación (apartado 1)</div>
+      <ul class="inner-list">
+        <li><strong>Presupuesto:</strong> aceptación formal del cargo; constitutiva de las obligaciones del artículo 785.2; si no acepta, se procede a nuevo nombramiento.</li>
+        <li><strong>Órgano:</strong> Letrado de la Administración de Justicia.</li>
+        <li><strong>Documentos entregados al contador:</strong>
+          <ul class="inner-list">
+            <li>Autos del procedimiento (soporte papel o expediente electrónico, Ley 18/2011).</li>
+            <li>Inventario, si ya se hubiera formado (art. 783.1).</li>
+            <li>Certificaciones registrales (Registro de la Propiedad, Registro Mercantil, Registro de Bienes Muebles).</li>
+            <li>Extractos bancarios y de entidades financieras del causante.</li>
+            <li>Escrituras de propiedad, contratos, pólizas de seguros, títulos de valores y participaciones sociales.</li>
+            <li>Declaraciones tributarias del causante (IRPF, ISD, IP) relevantes para determinar el caudal.</li>
+            <li>Cualquier otro documento necesario para el inventario, avalúo, liquidación y división.</li>
+          </ul>
+        </li>
+        <li><strong>Acceso de los peritos a los bienes:</strong> reconocimiento y valoración in situ (LEC art. 345), con posibilidad de asistencia de las partes.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Obligación de cumplir el encargo (apartado 2)</div>
+      <ul class="inner-list">
+        <li><strong>Carácter personalísimo:</strong> no puede delegarse sin autorización judicial.</li>
+        <li><strong>Fundamento:</strong> la aceptación crea un vínculo análogo al del mandato (CC art. 1718); todos los interesados están legitimados para exigir su cumplimiento.</li>
+        <li><strong>Mecanismos de exigencia:</strong> fijación de plazo por el LAJ (apartado 3); si persiste el incumplimiento, remoción del contador y nombramiento de otro.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Fijación de plazo y responsabilidad (apartado 3)</div>
+      <ul class="inner-list">
+        <li><strong>Legitimación:</strong> cualquier interesado.</li>
+        <li><strong>Forma:</strong> diligencia de ordenación del LAJ.</li>
+        <li><strong>Responsabilidad civil por incumplimiento:</strong> de naturaleza contractual/cuasi-contractual (CC arts. 1101–1103); los daños incluyen demora en obtener el haber, costas adicionales y pérdidas de oportunidad.</li>
+        <li><strong>Prescripción:</strong> cinco años (CC art. 1964, en redacción dada por la Ley 42/2015).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs">
+    <span class="ref-tag">LEC arts. 345, 18/2011 (TIC)</span>
+    <span class="ref-tag">CC arts. 1101–1103, 1718, 1964</span>
+    <span class="ref-tag">LEC art. 786 (operaciones divisorias)</span>
+  </div>
+</article>
+
+
+<article class="map-card" data-cat="c1" data-text="artículo 786 operaciones divisorias ley sucesión testador reglas avalúo liquidación división bienes legítimas forzosos indivisión fincas dos meses plazo relación adjudicación partícipes caudal inventario colación gananciales reg 650 vecindad fiscal isd irpf itp catastro">
+  <div class="card-top">
+    <div class="card-meta">
+      <span class="art-badge">Artículo 786</span>
+      <span class="status-tag tag-ok">Operaciones</span>
+    </div>
+    <h2 class="card-title">Práctica de las operaciones divisorias</h2>
+    <p class="card-subtitle">Ley aplicable (DIPr y derecho interregional), autonomía del testador con límite de legítimas, reglas de colación, inventario, avalúo, liquidación, adjudicación y repercusiones fiscales de la partición.</p>
+  </div>
+  <div class="card-counters">
+    <span class="counter-badge"><strong>2 meses</strong> plazo máximo</span>
+    <span class="counter-badge" style="margin-left:auto"><strong>3</strong> partes del escrito</span>
+  </div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Ley aplicable a las operaciones divisorias</div>
+      <ul class="inner-list">
+        <li><strong>Derecho interregional:</strong> ley de la vecindad civil del causante al tiempo del fallecimiento (CC art. 9.8); p. ej.: vecindad catalana → Codi Civil de Catalunya (arts. 411-1 y ss.); vecindad navarra → Compilación Foral 1/1973.</li>
+        <li><strong>Derecho internacional privado (Reg. UE 650/2012):</strong> regla general: ley de la residencia habitual del causante al fallecimiento (art. 21); professio iuris: puede elegirse la ley de la nacionalidad (art. 22); aplicable a fallecimientos desde el 17 de agosto de 2015.</li>
+        <li><strong>Autonomía del testador:</strong> puede establecer reglas distintas para inventario, avalúo, liquidación y división (CC arts. 1056 y 1057), siempre que no perjudiquen las legítimas.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Legítimas y cuota vidual — límites infranqueables</div>
+      <ul class="inner-list">
+        <li><strong>Descendientes (CC art. 808):</strong> dos tercios del haber hereditario (legítima estricta: 1/3; mejora: 1/3; libre disposición: 1/3).</li>
+        <li><strong>Ascendientes (CC art. 809):</strong> mitad (o un tercio si concurre cónyuge viudo).</li>
+        <li><strong>Cónyuge viudo (CC arts. 834–840):</strong> usufructo sobre cuota variable según los coherederos concurrentes.</li>
+        <li><strong>Principio antiindivisión:</strong> evitar comunidades hereditarias prolongadas (CC arts. 392–406).</li>
+        <li><strong>Principio antiparcelación:</strong> evitar excesiva división de fincas; adjudicación de bien indivisible (CC art. 1062): a un heredero con compensación en metálico; sin acuerdo, subasta con admisión de licitadores extraños.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Colación (CC arts. 1035–1050)</div>
+      <ul class="inner-list">
+        <li><strong>Obligación:</strong> las donaciones del causante a herederos forzosos se imputan al haber de cada uno para calcular legítimas e hijuelas.</li>
+        <li><strong>Dispensa:</strong> el testador puede dispensar de colacionar (CC art. 1036), pero sin perjuicio de las legítimas de los demás.</li>
+        <li><strong>Cómputo:</strong> la colación afecta a la masa de cálculo de legítimas (caudal ficticio), no necesariamente al caudal real partible.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Inventario, avalúo, liquidación y adjudicación (apartado 2)</div>
+      <ul class="inner-list">
+        <li><strong>Inventario (activo):</strong> inmuebles, muebles de valor, valores mobiliarios, depósitos bancarios, créditos, participaciones societarias, propiedad intelectual, bienes en el extranjero.</li>
+        <li><strong>Inventario (pasivo):</strong> deudas del causante, gastos de última enfermedad y entierro (CC art. 902), ISD devengado (Ley 29/1987).</li>
+        <li><strong>Caudal neto partible:</strong> activo menos pasivo.</li>
+        <li><strong>Hijuela de deudas:</strong> parte del caudal reservada para el pago de las obligaciones hereditarias pendientes; no se adjudica a ningún heredero hasta su satisfacción.</li>
+        <li><strong>Avalúo:</strong> valor real de mercado al momento de la partición (doctrina mayoritaria); inmuebles → perito tasador o valor de referencia catastral (Ley 11/2021); participaciones no cotizadas → auditor; obras de arte → tasador del Ministerio de Cultura; valores cotizados → cotización media en mercado regulado.</li>
+        <li><strong>Adjudicación:</strong> igualdad cualitativa (CC art. 1061): evitar que una misma hijuela contenga bienes de diferente naturaleza o calidad.</li>
+        <li><strong>Plazo:</strong> dos meses desde el inicio; ampliable a instancia de parte (art. 785.3).</li>
+        <li><strong>Escrito de operaciones:</strong> relación del caudal partible · avalúo · liquidación, división y adjudicación a cada partícipe.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Repercusiones fiscales</div>
+      <ul class="inner-list">
+        <li><strong>ISD (Ley 29/1987):</strong> se devenga con el fallecimiento; plazo de autoliquidación: seis meses desde el fallecimiento, prorrogable otros seis (art. 67); gestionado por las CCAA con competencia normativa.</li>
+        <li><strong>Cierre registral (LH art. 254):</strong> no se practican asientos en el Registro de la Propiedad sin justificar el pago o exención del ISD.</li>
+        <li><strong>IRPF (LIRPF art. 33.2):</strong> excesos de adjudicación onerosos compensados en metálico tributan como ganancia o pérdida patrimonial.</li>
+        <li><strong>ITP y AJD (TRLITPAJD art. 7.2.b):</strong> la adjudicación hereditaria estricta está exenta del ITP; los excesos de adjudicación onerosos sí quedan sujetos.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs">
+    <span class="ref-tag">CC arts. 808–822 (legítimas), 1035–1050 (colación), 1051–1082 (partición)</span>
+    <span class="ref-tag">Reg. UE 650/2012</span>
+    <span class="ref-tag">Ley 29/1987 (ISD)</span>
+    <span class="ref-tag">LIRPF art. 33.2</span>
+    <span class="ref-tag">TRLITPAJD art. 7.2.b</span>
+    <span class="ref-tag">LH art. 254</span>
+    <span class="ref-tag">Ley 11/2021 (catastro)</span>
+  </div>
+</article>
+
+
+<article class="map-card" data-cat="c1" data-text="artículo 787 aprobación operaciones divisorias oposición traslado diez días comparecencia tribunal juicio verbal sentencia cosa juzgada conformidad cohecho avalúo suspensión penal decreto protocolización reformas apelación recurso motivos impugnación prejudicialidad">
+  <div class="card-top">
+    <div class="card-meta">
+      <span class="art-badge">Artículo 787</span>
+      <span class="status-tag tag-alert">Aprobación / Oposición</span>
+    </div>
+    <h2 class="card-title">Aprobación de las operaciones divisorias. Oposición a ellas</h2>
+    <p class="card-subtitle">Traslado y plazo de oposición con sus posibles motivos; aprobación por decreto; comparecencia conciliatoria; tramitación como juicio verbal con sentencia sin efecto de cosa juzgada; suspensión por prejudicialidad penal por cohecho.</p>
+  </div>
+  <div class="card-counters">
+    <span class="counter-badge"><strong>10 días</strong> para oponerse</span>
+    <span class="counter-badge" style="margin-left:auto"><strong>6</strong> apartados</span>
+  </div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Traslado y plazo de oposición (apartado 1)</div>
+      <ul class="inner-list">
+        <li><strong>Traslado:</strong> acto del LAJ que pone en conocimiento de todos los interesados las operaciones presentadas por el contador.</li>
+        <li><strong>Plazo:</strong> diez días hábiles (LEC art. 133).</li>
+        <li><strong>Derechos durante el plazo:</strong> examen de los autos (Oficina Judicial o expediente electrónico, Ley 18/2011); obtención de copias a su costa.</li>
+        <li><strong>Forma de la oposición:</strong> escrito firmado por procurador y letrado (LEC arts. 23 y 31); identificación precisa de los puntos impugnados y razones en que se funda.</li>
+        <li><strong>Posibles motivos:</strong> errores en el inventario (omisión/inclusión indebida de bienes o deudas); discrepancias en el avalúo; pasivo incorrecto; vulneración de legítimas o cuota vidual; incumplimiento de las reglas del testador; defectos formales; omisión de donaciones colacionables.</li>
+        <li><strong>Oposición extemporánea o defectuosa:</strong> el LAJ la tiene por no formulada y dicta decreto de aprobación.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Aprobación sin oposición (apartado 2)</div>
+      <ul class="inner-list">
+        <li><strong>Supuestos:</strong> transcurso del plazo sin oposición; o manifestación expresa de conformidad de todos.</li>
+        <li><strong>Resolución:</strong> decreto del LAJ (LEC art. 206.2.º) que aprueba las operaciones y ordena su protocolización.</li>
+        <li><strong>Protocolización notarial (LN art. 17; RN art. 144):</strong> las operaciones se incorporan al protocolo como documento público (CC art. 1216); título formal para la inscripción en el Registro de la Propiedad (LH arts. 14 y 16) y en el Registro Mercantil si hay participaciones societarias (RRM art. 175).</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Comparecencia ante el Tribunal (apartado 3)</div>
+      <ul class="inner-list">
+        <li><strong>Convocados:</strong> contador y partes.</li>
+        <li><strong>Plazo:</strong> dentro de los diez días siguientes a la formalización de la oposición.</li>
+        <li><strong>Carácter conciliatorio:</strong> se busca que los interesados alcancen un acuerdo sobre los puntos controvertidos.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Conformidad en la comparecencia (apartado 4)</div>
+      <ul class="inner-list">
+        <li><strong>Efecto:</strong> el contador introduce las reformas convenidas; el LAJ dicta decreto de aprobación (apartado 2).</li>
+        <li>El acuerdo tiene valor de transacción procesal (LEC art. 19.2) y es ejecutable como tal.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Falta de conformidad: juicio verbal (apartado 5)</div>
+      <ul class="inner-list">
+        <li><strong>Trámite:</strong> el Tribunal oye a las partes y admite las pruebas no impertinentes ni inútiles; sustanciación conforme al juicio verbal (LEC arts. 437–447).</li>
+        <li><strong>Sentencia:</strong> se ejecuta conforme al artículo 788 LEC.</li>
+        <li><strong>Sin efecto de cosa juzgada material</strong> (excepción a LEC art. 222): los interesados conservan la acción en el juicio ordinario para hacer valer sus derechos sobre los bienes adjudicados; responde a la naturaleza sumaria del cauce y a la preferencia por la efectividad de la partición.</li>
+        <li><strong>Recursos:</strong> apelable ante la Audiencia Provincial (LEC art. 455); la apelación no suspende automáticamente la ejecución salvo medida cautelar.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Suspensión por causa penal — cohecho en el avalúo (apartado 6)</div>
+      <ul class="inner-list">
+        <li><strong>Supuesto:</strong> actuaciones suspendidas conforme al artículo 40 LEC (prejudicialidad penal) por causa que investigue cohecho (CP arts. 419–427) en el avalúo de los bienes hereditarios.</li>
+        <li><strong>Alzamiento de la suspensión:</strong> sin esperar resolución firme penal, en cuanto los interesados presenten un nuevo avalúo de común acuerdo, prescindiendo del impugnado.</li>
+        <li><strong>Resolución:</strong> sentencia con arreglo al nuevo avalúo.</li>
+        <li><strong>Finalidad:</strong> evitar la parálisis indefinida de la herencia cuando los interesados han llegado a un acuerdo sobre valoración alternativa.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs">
+    <span class="ref-tag">LEC arts. 19.2, 23, 31, 40, 133, 206, 222, 437–447, 455</span>
+    <span class="ref-tag">LN art. 17; RN art. 144</span>
+    <span class="ref-tag">LH arts. 14, 16</span>
+    <span class="ref-tag">CP arts. 419–427 (cohecho)</span>
+  </div>
+</article>
+
+
+<article class="map-card" data-cat="c1" data-text="artículo 788 entrega bienes adjudicados heredero protocolización títulos propiedad actuario testimonio partícipes acreedores pago garantía inscripción registro propiedad cierre registral isd fiscal iberclear lsc participaciones">
+  <div class="card-top">
+    <div class="card-meta">
+      <span class="art-badge">Artículo 788</span>
+      <span class="status-tag tag-ok">Entrega</span>
+    </div>
+    <h2 class="card-title">Entrega de los bienes adjudicados a cada heredero</h2>
+    <p class="card-subtitle">Entrega de bienes y títulos tras la aprobación definitiva, inscripción registral, testimonio de haber y adjudicación, y excepción erga omnes por oposición de acreedores privilegiados hasta pago o garantía.</p>
+  </div>
+  <div class="card-counters">
+    <span class="counter-badge"><strong>Efecto erga omnes</strong> de la excepción</span>
+    <span class="counter-badge" style="margin-left:auto"><strong>3</strong> apartados</span>
+  </div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Entrega de bienes y títulos (apartado 1)</div>
+      <ul class="inner-list">
+        <li><strong>Presupuesto:</strong> aprobación definitiva de las particiones (decreto del LAJ, art. 787.2; o sentencia firme, art. 787.5).</li>
+        <li><strong>Órgano:</strong> Letrado de la Administración de Justicia.</li>
+        <li><strong>Formalidad previa:</strong> el actuario pone en los títulos de propiedad notas expresivas de la adjudicación (valor de documento público; base para inscripción registral).</li>
+        <li><strong>Entrega según la naturaleza del bien:</strong>
+          <ul class="inner-list">
+            <li>Inmuebles: escritura de protocolización; inscripción en el Registro de la Propiedad (LH arts. 14, 16 y 80).</li>
+            <li>Muebles de valor: entrega material o instrumental (llaves, títulos representativos).</li>
+            <li>Participaciones en SL: anotación en el libro de socios (LSC art. 104).</li>
+            <li>Acciones en SA: endoso o transferencia del título (LSC arts. 120–123).</li>
+            <li>Valores cotizados: transferencia en IBERCLEAR (sistema de registro y liquidación).</li>
+          </ul>
+        </li>
+        <li><strong>Inscripción en el Registro de la Propiedad:</strong> potestativa (LH art. 319) pero imprescindible para oponibilidad frente a terceros (LH art. 32); requiere previa liquidación del ISD (LH art. 254: cierre registral).</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Testimonio de haber y adjudicación (apartado 2)</div>
+      <ul class="inner-list">
+        <li><strong>Presupuesto:</strong> protocolización de las particiones.</li>
+        <li><strong>Legitimados:</strong> los partícipes que lo soliciten.</li>
+        <li><strong>Contenido:</strong> testimonio del haber y la adjudicación respectivos del solicitante.</li>
+        <li><strong>Utilidad:</strong> acredita el derecho ante entidades financieras, administraciones y registros; sirve de título para la liquidación del ISD; puede sustituir provisionalmente al título registral.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Excepción a la entrega: acreedores del artículo 782.4 (apartado 3)</div>
+      <ul class="inner-list">
+        <li><strong>Efecto:</strong> no se entrega ningún bien a ningún heredero ni legatario.</li>
+        <li><strong>Alcance erga omnes:</strong> afecta a todos los adjudicatarios, no solo al deudor del acreedor opuesto.</li>
+        <li><strong>Condición de levantamiento:</strong> pago íntegro o garantía suficiente a satisfacción de los acreedores (fianza personal, hipoteca, prenda, aval bancario o cualquier otra que el tribunal estime bastante).</li>
+        <li><strong>Fundamento:</strong> responsabilidad hereditaria del heredero (CC art. 1003: acepta pura y simplemente → responde de las deudas hereditarias con todos sus bienes presentes y futuros).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs">
+    <span class="ref-tag">LH arts. 14, 16, 32, 80, 254, 319</span>
+    <span class="ref-tag">LSC arts. 104, 120–123</span>
+    <span class="ref-tag">LEC art. 782.4 (oposición acreedores)</span>
+    <span class="ref-tag">CC art. 1003</span>
+    <span class="ref-tag">Ley 29/1987 ISD</span>
+  </div>
+</article>
+
+
+<article class="map-card" data-cat="c1" data-text="artículo 789 terminación acuerdo coherederos sobreseimiento bienes disposición interesados separación seguimiento autonomía voluntad transacción mediación extrajudicial notarial protocolo familiar costas">
+  <div class="card-top">
+    <div class="card-meta">
+      <span class="art-badge">Artículo 789</span>
+      <span class="status-tag tag-gray">Terminación</span>
+    </div>
+    <h2 class="card-title">Terminación del procedimiento por acuerdo de los coherederos</h2>
+    <p class="card-subtitle">Expresión del principio dispositivo. En cualquier estado del juicio los interesados pueden separarse y acordar libremente; la solicitud unánime obliga al LAJ a sobreseer y poner los bienes a su disposición.</p>
+  </div>
+  <div class="card-counters">
+    <span class="counter-badge"><strong>Cualquier estado</strong> del juicio</span>
+    <span class="counter-badge" style="margin-left:auto"><strong>Unanimidad</strong> requerida</span>
+  </div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Naturaleza y fundamento</div>
+      <ul class="inner-list">
+        <li><strong>Principio dispositivo (LEC art. 19):</strong> las partes pueden disponer del objeto del proceso en cualquier momento.</li>
+        <li><strong>Autonomía de la voluntad (CC arts. 1255 y 1058):</strong> los herederos pueden formalizar su acuerdo extrajudicialmente sin necesidad de continuar el procedimiento.</li>
+        <li><strong>Solución extrajudicial sobrevenida:</strong> los herederos llegan a un acuerdo privado durante el procedimiento, que queda sin objeto.</li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Facultad de separación (párrafo 1)</div>
+      <ul class="inner-list">
+        <li><strong>Momento:</strong> en cualquier estado del juicio (antes de la Junta; durante las operaciones; tras la presentación de estas; durante la tramitación de la oposición; en fase del juicio verbal).</li>
+        <li><strong>Formas del acuerdo alcanzado:</strong>
+          <ul class="inner-list">
+            <li>Partición convencional (CC art. 1058): escritura notarial de partición extrajudicial.</li>
+            <li>Transacción (CC arts. 1809–1819): elevable a escritura pública.</li>
+            <li>Acuerdo de mediación (Ley 5/2012): eleva el acuerdo a escritura pública y surte efectos de título ejecutivo (art. 25 Ley 5/2012).</li>
+            <li>Protocolo familiar: instrumento para regular la transmisión y gobierno de la empresa familiar integrada en el caudal.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="inner-section">
+      <div class="inner-heading"><span class="dot"></span>Sobreseimiento a petición conjunta (párrafo 2)</div>
+      <ul class="inner-list">
+        <li><strong>Requisito:</strong> solicitud de todos los interesados de común acuerdo; si hay menores o ausentes representados por el MF, se requiere la conformidad o ausencia de oposición del MF.</li>
+        <li><strong>Obligación del LAJ:</strong> deberá sobreseer el juicio y poner los bienes a disposición de los herederos (actuación reglada, no discrecional).</li>
+        <li><strong>Efectos del sobreseimiento:</strong> decreto de sobreseimiento; bienes a disposición de los herederos para practicar la partición extrajudicial; costas devengadas hasta ese momento a cargo de los interesados (LEC arts. 394–398); no impide iniciar un nuevo procedimiento judicial si el acuerdo fracasa.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs">
+    <span class="ref-tag">LEC arts. 19, 237, 394–398</span>
+    <span class="ref-tag">CC arts. 1058, 1255, 1809–1819</span>
+    <span class="ref-tag">Ley 5/2012 de mediación (art. 25)</span>
+    <span class="ref-tag">LJV arts. 66–68</span>
+  </div>
+</article>
+
+
+<article class="map-card" data-cat="c3" data-text="responsabilidad contador partidor negligencia inventario avalúo omisión legados legítima prescripción cinco años art 1964 CC art 1902 CC">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Figuras</span><span class="status-tag tag-alert">Responsabilidad</span></div>
+    <h2 class="card-title">Responsabilidad del Contador-Partidor</h2>
+    <p class="card-subtitle">Naturaleza contractual/extracontractual, supuestos de responsabilidad, plazos de prescripción y diferencias según la forma de designación.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>5</strong> supuestos</span><span class="counter-badge" style="margin-left:auto"><strong>5 años</strong> prescripción</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Naturaleza de la responsabilidad</div>
+      <ul class="inner-list">
+        <li><strong>Contador testamentario:</strong> predominantemente contractual (encargo testamentario, art. 1057 CC).</li>
+        <li><strong>Contador designado por sorteo (art. 784 LEC):</strong> mixta: contractual (aceptación del cargo) y extracontractual (asimilado al perito judicial).</li>
+        <li><strong>Contador dativo (art. 1057 CC, LJV):</strong> intermedia; responsabilidad profesional.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Supuestos de responsabilidad</div>
+      <ul class="inner-list">
+        <li><strong>Negligencia en el inventario:</strong> omisión de bienes (STS 1.ª 735/2017).</li>
+        <li><strong>Error en el avalúo:</strong> valoración incorrecta que distorsiona las operaciones (STS 1.ª 562/2020: criterio del valor de mercado).</li>
+        <li><strong>Omisión de legados:</strong> incumplimiento de la obligación fundamental de satisfacer legados antes de la adjudicación.</li>
+        <li><strong>Vulneración de legítimas:</strong> error en el cálculo de porciones legitimarias (arts. 814-815 CC).</li>
+        <li><strong>Incumplimiento de instrucciones testamentarias:</strong> siempre que no perjudiquen legítimas.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Plazo de prescripción</div>
+      <ul class="inner-list">
+        <li><strong>Contractual:</strong> 5 años (art. 1964 CC) desde que se conoció el daño y la identidad del responsable.</li>
+        <li><strong>Extracontractual:</strong> 5 años (art. 1968.2 CC) desde que se produjo el daño.</li>
+        <li>Debe compatibilizarse con plazos específicos de impugnación de la partición (rescisión por lesión: 4 años, art. 1076 CC).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">CC arts. 1902, 1964, 1968.2</span><span class="ref-tag">STS 562/2020, STS 735/2017</span><span class="ref-tag">LEC arts. 335.2, 784</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c5" data-text="vías alternativas partición testamentaria art 1056 CC contador dativo notario art 1057 CC partición notarial mediación arbitraje ley 60/2003">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Excepciones</span><span class="status-tag tag-ok">Alternativas</span></div>
+    <h2 class="card-title">Vías Alternativas a la División Judicial</h2>
+    <p class="card-subtitle">Partición testamentaria, contador-partidor dativo, partición notarial, mediación (Ley 36/2006) y arbitraje (Ley 60/2003).</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>5</strong> vías</span><span class="counter-badge" style="margin-left:auto"><strong>Art. 1056-1058</strong> CC</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Partición testamentaria (art. 1056 CC)</div>
+      <ul class="inner-list">
+        <li>El testador puede realizar la partición por acto entre vivos o en testamento.</li>
+        <li>Pasa por ella si no perjudica la legítima de los herederos forzosos.</li>
+        <li>Puede preservar indivisa una explotación y pagar la legítima en metálico (Ley 7/2003).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Contador-partidor dativo (art. 1057 CC)</div>
+      <ul class="inner-list">
+        <li>Designado por Notario o Secretario judicial a petición del 50% del haber hereditario.</li>
+        <li>Regulado en la LJV (arts. 88-92): vía desjudicializada que agiliza el proceso.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Partición notarial (arts. 66 bis y 66 ter LN)</div>
+      <ul class="inner-list">
+        <li>Cuando todos los herederos están de acuerdo, pueden otorgar escritura pública de partición ante Notario.</li>
+        <li>Produce título inscribible directamente en el Registro de la Propiedad.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Mediación (Ley 36/2006)</div>
+      <ul class="inner-list">
+        <li>Aplicable a conflictos sucesorios. El tribunal puede suspender el procedimiento por ≤ 60 días (art. 19).</li>
+        <li>El acuerdo de mediación elevado a escritura pública tiene eficacia de título ejecutivo (art. 25).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Arbitraje (Ley 60/2003)</div>
+      <ul class="inner-list">
+        <li>La distribución patrimonial es arbitrable (materia de libre disposición).</li>
+        <li>No es arbitrable la determinación de quién es heredero (cuestión de estado).</li>
+        <li>El laudo tiene la misma eficacia que la sentencia judicial firme (art. 37).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">CC arts. 1056-1058</span><span class="ref-tag">LJV arts. 88-92</span><span class="ref-tag">LN arts. 66 bis, 66 ter</span><span class="ref-tag">Ley 36/2006</span><span class="ref-tag">Ley 60/2003</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c4" data-text="tratamiento fiscal ISD impuesto sucesiones donaciones ley 29/1987 plusvalía municipal IIVTNU IRPF ITP AJD cierre registral art 254 LH bonificaciones autonómicas">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Plazos / Fiscal</span><span class="status-tag tag-warn">Tributario</span></div>
+    <h2 class="card-title">Tratamiento Fiscal de la Herencia y la Partición</h2>
+    <p class="card-subtitle">ISD, plusvalía municipal (IIVTNU), IRPF, ITP-AJD y cierre registral. Heterogeneidad autonómica y repercusión en las operaciones divisorias.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>6 meses</strong> ISD</span><span class="counter-badge" style="margin-left:auto"><strong>4</strong> tributos</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Impuesto de Sucesiones y Donaciones (ISD)</div>
+      <ul class="inner-list">
+        <li><strong>Ley 29/1987:</strong> devengo al momento del fallecimiento (art. 24).</li>
+        <li><strong>Plazo:</strong> 6 meses desde el fallecimiento, prorrogables 6 más (art. 67/68).</li>
+        <li><strong>Gestión:</strong> cedido a las CCAA; gran heterogeneidad en bonificaciones (Andalucía, Madrid, C. Valenciana: ~99% para descendientes; Asturias, Cataluña: tipos más elevados).</li>
+        <li><strong>Cierre registral (LH art. 254):</strong> sin acreditar pago/exención, no se practican asientos registrales.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Plusvalía municipal (IIVTNU)</div>
+      <ul class="inner-list">
+        <li>Grava el incremento de valor de terrenos de naturaleza urbana (RD-Leg. 2/2004, arts. 104-110).</li>
+        <li>Sujeto pasivo: causahabiente (adjudicatario del inmueble).</li>
+        <li>Plazo habitual: 6 meses desde el fallecimiento (varía por Ayuntamiento).</li>
+        <li>STS (Pleno) 2680/2019: declaró inconstitucional el método de cálculo cuando no existe incremento real de valor.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>IRPF e ITP-AJD</div>
+      <ul class="inner-list">
+        <li><strong>IRPF (art. 33.2 LIRPF):</strong> excesos de adjudicación onerosos compensados en metálico tributan como ganancia/pérdida patrimonial.</li>
+        <li><strong>ITP-AJD (art. 7.2.b TRLITPAJD):</strong> adjudicación hereditaria estricta exenta; excesos onerosos sujetos.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">Ley 29/1987 (ISD)</span><span class="ref-tag">LH art. 254</span><span class="ref-tag">LIRPF art. 33.2</span><span class="ref-tag">TRLITPAJD art. 7.2.b</span><span class="ref-tag">RD-Leg. 2/2004 (IIVTNU)</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c6" data-text="jurisprudencia tribunal supremo STS 562 2020 STS 321 2019 STS 148 2018 STS 735 2017 STS 422 2016 valoración legítima colación lesión efecto declarativo">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Conexiones</span><span class="status-tag tag-info">Jurisprudencia</span></div>
+    <h2 class="card-title">Jurisprudencia Clave del Tribunal Supremo</h2>
+    <p class="card-subtitle">Sentencias de referencia sobre valoración de bienes, legítima, colación, lesión y efecto declarativo de la partición.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>5</strong> STS</span><span class="counter-badge" style="margin-left:auto"><strong>1.ª</strong> Civil</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>STS 562/2020 — Valoración de bienes</div>
+      <ul class="inner-list">
+        <li>Criterio preferente: <strong>valor de mercado</strong> (precio entre partes razonables en condiciones de libre competencia).</li>
+        <li>Valoraciones fiscales/catastrales son meramente indiciarias y no vinculan al contador ni al Juzgado.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>STS 321/2019 — Legítima y partición testamentaria</div>
+      <ul class="inner-list">
+        <li>Las reglas testamentarias no pueden perjudicar la legítima (art. 786.1 LEC + art. 806 CC).</li>
+        <li>El contador debe inaplicar las instrucciones testamentarias que vulneren porciones legitimarias.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>STS 148/2018 — Colación de donaciones</div>
+      <ul class="inner-list">
+        <li>Valor a colacionar: el que tenían los bienes al tiempo de la donación, con actualización monetaria hasta la partición (art. 1037 CC).</li>
+        <li>No se colaciona el valor de mercado al fallecimiento, salvo disposición expresa en contrario.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>STS 735/2017 — Lesión en la partición</div>
+      <ul class="inner-list">
+        <li>Interpretación restrictiva de la acción de rescisión por lesión (art. 1074 CC).</li>
+        <li>La lesión debe ser real y efectiva, comparando el valor de lo adjudicado a cada heredero (no con el valor total de la herencia).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>STS 422/2016 — Efecto declarativo (art. 1068 CC)</div>
+      <ul class="inner-list">
+        <li>La partición no transmite la propiedad, sino que <strong>declara</strong> una titularidad que se remonta al fallecimiento.</li>
+        <li>Cargas y gravámenes al tiempo del fallecimiento se transmiten a los adjudicatarios proporcionalmente a sus cuotas.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">STS 562/2020</span><span class="ref-tag">STS 321/2019</span><span class="ref-tag">STS 148/2018</span><span class="ref-tag">STS 735/2017</span><span class="ref-tag">STS 422/2016</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c6" data-text="derechos forales cataluña país vasco aragón galicia navarra baleares comunidad valenciana legítima foral partición foral">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Conexiones</span><span class="status-tag tag-ok">Foral</span></div>
+    <h2 class="card-title">La Partición en los Derechos Forales</h2>
+    <p class="card-subtitle">Peculiaridades de Cataluña, País Vasco, Aragón, Galicia, Navarra, C. Valenciana y Baleares en materia de legítima, mejora y partición.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>7</strong> territorios</span><span class="counter-badge" style="margin-left:auto"><strong>CC art. 9.8</strong></span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Cataluña (Ley 10/2008)</div>
+      <ul class="inner-list">
+        <li>Legítima catalana: solo protege a descendientes y, a falta de éstos, al cónyuge viudo. Ascendientes no son legitimarios.</li>
+        <li>Responsabilidad intra vires (con los bienes de la herencia). Cónyuge: usufructo de la cuarta parte con descendientes.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>País Vasco (Ley 5/2015)</div>
+      <ul class="inner-list">
+        <li>Legítima amplia: comprende bienes familiares (vivienda, ajuar, explotación agrícola) especialmente protegidos.</li>
+        <li>Partición por testamento, escritura pública o contador dativo ante Notario.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Aragón (Decreto Legislativo 1/2011)</div>
+      <ul class="inner-list">
+        <li>Partición directa: el testador puede designar directamente los bienes de cada heredero sin contador.</li>
+        <li>Legítima sobre el relictum (no sobre relictum + donaciones).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Navarra (Fuero Nuevo)</div>
+      <ul class="inner-list">
+        <li>Legítima más restringida de España: solo sobre el relictum (no incluye donaciones).</li>
+        <li>Amplia porción disponible; mejora foral con régimen propio.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Galicia, C. Valenciana y Baleares</div>
+      <ul class="inner-list">
+        <li><strong>Galicia (Ley 2/2006):</strong> legítima amplia (2/3), protección de vivienda y explotación familiar.</li>
+        <li><strong>C. Valenciana (Ley 5/2006):</strong> legítima amplísima (2/3 para descendientes); cónyuge con usufructo sobre tercio de libre disposición.</li>
+        <li><strong>Baleares:</strong> sistema diversificado por islas (Mallorca, Menorca, Ibiza-Formentera) con legítimas y posesiones históricas propias.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">CC art. 9.8</span><span class="ref-tag">Ley 10/2008 (Cat)</span><span class="ref-tag">Ley 5/2015 (PV)</span><span class="ref-tag">DL 1/2011 (Aragón)</span><span class="ref-tag">Ley 2/2006 (Gal)</span><span class="ref-tag">Ley 5/2006 (CV)</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c1" data-text="administración caudal hereditario arts 797 805 LEC posesión cargo representación herencia rendición cuentas conservación bienes retribución administrador">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Artículos LEC</span><span class="status-tag tag-gray">Administración</span></div>
+    <h2 class="card-title">Administración del Caudal Hereditario (Arts. 797-805 LEC)</h2>
+    <p class="card-subtitle">Régimen de administración judicial del caudal: posesión del cargo, representación, cuentas, conservación y retribución.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>9</strong> artículos</span><span class="counter-badge" style="margin-left:auto"><strong>5</strong> funciones</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 797 — Posesición del cargo</div>
+      <ul class="inner-list">
+        <li>El LAJ pone al administrador en posesión, dándole testimonio o copia auténtica del nombramiento.</li>
+        <li>Inscribible en el Registro de la Propiedad el estado de administración (RD-ley 6/2023).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 798 — Representación de la herencia</div>
+      <ul class="inner-list">
+        <li>El administrador representa a la herencia en pleitos pendientes hasta la declaración de herederos.</li>
+        <li>Tras la aceptación, solo representa en lo relativo a administración, custodia y conservación.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Arts. 799-800 — Rendición de cuentas</div>
+      <ul class="inner-list">
+        <li><strong>Periódica:</strong> en plazos proporcionados, máximo 1 año (art. 799). Inspeccionable por cualquier interesado.</li>
+        <li><strong>Final:</strong> al cesar en el cargo; sin oposición → decreto aprobando y liberando caución; con oposición → posible vista (juicio verbal).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 801 — Conservación de bienes</div>
+      <ul class="inner-list">
+        <li>Obligación de conservar sin menoscabo y procurar rentas/productos.</li>
+        <li>Reparaciones ordinarias por el administrador; extraordinarias: conocimiento al Juzgado, comparecencia con interesados, reconocimiento pericial y presupuesto.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 803 — Prohibición de enajenar</div>
+      <ul class="inner-list">
+        <li>Prohibición general de enajenar o gravar bienes inventariados.</li>
+        <li>Excepciones: bienes deteriorables, de costosa conservación, frutos con circunstancias ventajosas, venta necesaria para pago de deudas. Venta por pública subasta.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 804 — Retribución</div>
+      <ul class="inner-list">
+        <li>Comisiones: 2% sobre venta de frutos/bienes muebles; 1% sobre bienes raíces/cobro de valores; 0,5% sobre efectos públicos; 4-10% sobre demás ingresos.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">LEC arts. 797-805</span><span class="ref-tag">RD-ley 6/2023</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c6" data-text="materias conexas colación art 1035 CC mejora art 808 CC legítima art 807 CC derechos forzosos porción disponible">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Conexiones</span><span class="status-tag tag-info">Sustantivo</span></div>
+    <h2 class="card-title">Materias Conexas: Colación, Mejora y Legítima</h2>
+    <p class="card-subtitle">Operaciones previas y límites infranqueables que el contador debe observar al practicar las operaciones divisorias.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>3</strong> instituciones</span><span class="counter-badge" style="margin-left:auto"><strong>Arts. 807-822</strong> CC</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Colación (arts. 1035-1040 CC)</div>
+      <ul class="inner-list">
+        <li>Obligación de los legitimarios (y otros llamados a la sucesión) de traer a la masa hereditaria lo recibido por donación del causante.</li>
+        <li>Imputación al haber de cada uno para calcular legítimas e hijuelas.</li>
+        <li>Dispensa posible por el testador (art. 1036), pero sin perjuicio de las legítimas de los demás.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Mejora (arts. 808-822 CC)</div>
+      <ul class="inner-list">
+        <li>Facultad del testador de disponer a favor de uno o varios herederos forzosos.</li>
+        <li>Imputación preferente a la porción libre y subsidiariamente a la legítima (art. 808).</li>
+        <li>Cónyuge viudo: usufructo de tercio de mejora (art. 812).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Legítima (arts. 807 y ss. CC)</div>
+      <ul class="inner-list">
+        <li>Porción de la herencia de la que el testador no puede disponer libremente.</li>
+        <li>Herederos forzosos: descendientes; a falta de éstos, ascendientes; y el cónyuge sobreviviente.</li>
+        <li>Vulneración → acción de reducción (arts. 814-815 CC).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">CC arts. 1035-1040</span><span class="ref-tag">CC arts. 807-822</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c5" data-text="rescisión impugnación partición art 1073 CC art 1074 CC lesión cuarta parte art 1076 CC cuatro años art 1079 CC omisión bienes art 1081 CC nulidad">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Excepciones</span><span class="status-tag tag-alert">Impugnación</span></div>
+    <h2 class="card-title">Rescisión e Impugnación de la Partición (CC)</h2>
+    <p class="card-subtitle">Causas de rescisión, acción por lesión, plazos, nulidad y complemento de la partición. Coherencia con la ausencia de cosa juzgada del art. 787.5 LEC.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>4 años</strong> plazo lesión</span><span class="counter-badge" style="margin-left:auto"><strong>Arts. 1073-1081</strong> CC</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Rescisión por causas de obligaciones (art. 1073 CC)</div>
+      <ul class="inner-list">
+        <li>Error, dolo, violencia o intimidación. Acción independiente del procedimiento de división.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Rescisión por lesión (art. 1074 CC)</div>
+      <ul class="inner-list">
+        <li>Lesión en más de la cuarta parte, atendido el valor de las cosas cuando fueron adjudicadas.</li>
+        <li>Plazo: 4 años desde la partición (art. 1076 CC).</li>
+        <li>El demandado puede optar entre indemnizar o hacer nueva partición (art. 1077 CC).</li>
+        <li>Pierde la acción quien haya enajenado bienes inmuebles adjudicados (art. 1078 CC).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Otras causas</div>
+      <ul class="inner-list">
+        <li><strong>Omisión de bienes (art. 1079 CC):</strong> no da lugar a rescisión, sino a complemento o adición.</li>
+        <li><strong>Partición con preterido (art. 1080 CC):</strong> no se rescinde salvo mala fe o dolo; obligación de pagar la legítima.</li>
+        <li><strong>Partición con persona no heredera (art. 1081 CC):</strong> nula de pleno derecho.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">CC arts. 1073-1081</span><span class="ref-tag">LEC art. 787.5</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c6" data-text="conexiones normativas internas art 40 LEC prejudicialidad penal art 164 LEC edictos art 341 LEC designación perito art 437 LEC juicio verbal diligencias preliminares">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Conexiones</span><span class="status-tag tag-info">LEC interna</span></div>
+    <h2 class="card-title">Conexiones Normativas Internas de la LEC</h2>
+    <p class="card-subtitle">Artículos de la LEC directamente relacionados con el procedimiento de división: prejudicialidad penal, edictos, designación de peritos y juicio verbal.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>5</strong> artículos</span><span class="counter-badge" style="margin-left:auto"><strong>Libro I y II</strong></span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 40 LEC — Prejudicialidad penal</div>
+      <ul class="inner-list">
+        <li>Suspensión de actuaciones civiles si existe causa criminal sobre los mismos hechos y la decisión penal puede influir decisivamente en la resolución civil.</li>
+        <li>Relevancia en la división: cohecho en el avalúo (art. 787.6 LEC).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 164 LEC — Comunicación edictal</div>
+      <ul class="inner-list">
+        <li>Citación por edictos cuando no se conoce el domicilio del destinatario.</li>
+        <li>Aplicable en el art. 783.3 LEC para interesados de paradero desconocido.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Art. 341 LEC — Designación judicial de perito</div>
+      <ul class="inner-list">
+        <li>Sorteo entre listas anuales de Colegios Profesionales.</li>
+        <li>Aplicable al contador y a los peritos cuando no hay acuerdo en la Junta (art. 784 LEC).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Arts. 437 y ss. LEC — Juicio verbal</div>
+      <ul class="inner-list">
+        <li>Cauce procesal aplicable cuando no hay conformidad en la comparecencia del art. 787.3 LEC.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">LEC arts. 40, 164, 341, 437 ss.</span></div>
+</article>
+
+
+<article class="map-card" data-cat="c6" data-text="dimensión internacional reglamento UE 650 2012 sucesiones mortis causa competencia residencia habitual ley aplicable certificado sucesorio europeo art 24">
+  <div class="card-top">
+    <div class="card-meta"><span class="art-badge">Conexiones</span><span class="status-tag tag-info">Derecho UE</span></div>
+    <h2 class="card-title">Dimensión Internacional de la Sucesión</h2>
+    <p class="card-subtitle">Reglamento (UE) nº 650/2012: competencia judicial, ley aplicable, professio iuris y certificado sucesorio europeo.</p>
+  </div>
+  <div class="card-counters"><span class="counter-badge"><strong>Reg. UE</strong> 650/2012</span><span class="counter-badge" style="margin-left:auto"><strong>3</strong> pilares</span></div>
+  <button class="card-toggle-btn" onclick="toggleCard(this)"><span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span></button>
+  <div class="card-body">
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Competencia judicial (art. 4)</div>
+      <ul class="inner-list">
+        <li>Competen los órganos jurisdiccionales del Estado miembro en que el causante tuviera su <strong>residencia habitual</strong> al tiempo de la muerte.</li>
+        <li>Salvo que el causante hubiera elegido la ley de su nacionalidad (professio iuris, art. 22).</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Ley aplicable (art. 21)</div>
+      <ul class="inner-list">
+        <li>Regla general: ley del Estado de residencia habitual del causante al fallecimiento.</li>
+        <li>Elección de ley: limitada a la nacionalidad del causante (art. 22).</li>
+        <li>Aplicable a fallecimientos desde el 17 de agosto de 2015.</li>
+      </ul>
+    </div>
+    <div class="inner-section"><div class="inner-heading"><span class="dot"></span>Certificado sucesorio europeo (arts. 24-25)</div>
+      <ul class="inner-list">
+        <li>Documento público que acredita la calidad de heredero/legatario y los poderes del administrador.</li>
+        <li>Surte efectos en todos los Estados miembros sin necesidad de reconocimiento ni ejecución especiales.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-refs"><span class="ref-tag">Reg. (UE) 650/2012 arts. 4, 21, 22, 24, 25</span><span class="ref-tag">CC art. 9.8</span></div>
+</article>
+
+        <div class="no-results" id="no-results">No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FASES DEL PROCEDIMIENTO -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-fases">
+      <span class="section-heading-text">📅 Fases del Procedimiento — Visión Secuencial</span>
+      <span class="section-heading-count">10 fases</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-fases">
+      <div class="timeline-container">
+        <div class="timeline">
+          <div class="timeline-step">
+            <div class="step-num">1</div>
+            <h4>Solicitud y competencia</h4>
+            <ul>
+              <li>Solicitud por coheredero/legatario de parte alícuota.</li>
+              <li>Certificado de defunción y título sucesorio.</li>
+              <li>Examen de competencia territorial y objetiva.</li>
+            </ul>
+          </div>
+          <div class="timeline-step">
+            <div class="step-num">2</div>
+            <h4>Intervención del caudal</h4>
+            <ul>
+              <li>Aseguramiento de bienes (arts. 790-791).</li>
+              <li>Formación de inventario (art. 794).</li>
+              <li>Nombramiento de administrador (art. 795).</li>
+            </ul>
+          </div>
+          <div class="timeline-step">
+            <div class="step-num">3</div>
+            <h4>Convocatoria de Junta</h4>
+            <ul>
+              <li>Citación de herederos, legatarios y cónyuge.</li>
+              <li>Intervención del Ministerio Fiscal (menores/ausentes).</li>
+              <li>Plazo: 10 días (art. 783.2).</li>
+            </ul>
+          </div>
+          <div class="timeline-step">
+            <div class="step-num">4</div>
+            <h4>Designación de contador y peritos</h4>
+            <ul>
+              <li>Acuerdo en Junta o designación por sorteo (art. 784).</li>
+              <li>Máximo un perito por clase de bienes.</li>
+              <li>Recusación y provisión de fondos.</li>
+            </ul>
+          </div>
+          <div class="timeline-step">
+            <div class="step-num">5</div>
+            <h4>Liquidación de gananciales</h4>
+            <ul>
+              <li>Presupuesto cuando exista sociedad de gananciales.</li>
+              <li>Determinación del caudal privativo partible.</li>
+              <li>Doctrina TS: operación previa indispensable.</li>
+            </ul>
+          </div>
+          <div class="timeline-step">
+            <div class="step-num">6</div>
+            <h4>Operaciones divisorias</h4>
+            <ul>
+              <li>Inventario, avalúo, liquidación, colación.</li>
+              <li>Cálculo de legítimas y mejora.</li>
+              <li>Plazo máximo: 2 meses (art. 786.3).</li>
+            </ul>
+          </div>
+          <div class="timeline-step">
+            <div class="step-num">7</div>
+            <h4>Aprobación / Oposición</h4>
+            <ul>
+              <li>Traslado a partes (10 días para oponerse).</li>
+              <li>Comparecencia conciliatoria (10 días).</li>
+              <li>Juicio verbal si no hay conformidad.</li>
+            </ul>
+          </div>
+          <div class="timeline-step">
+            <div class="step-num">8</div>
+            <h4>Entrega de bienes</h4>
+            <ul>
+              <li>Entrega material y títulos de propiedad.</li>
+              <li>Notas de adjudicación en títulos.</li>
+              <li>Excepción por acreedores opuestos (art. 788.3).</li>
+            </ul>
+          </div>
+          <div class="timeline-step">
+            <div class="step-num">9</div>
+            <h4>Terminación por acuerdo</h4>
+            <ul>
+              <li>Sobreseimiento en cualquier estado del juicio.</li>
+              <li>Unanimidad requerida (art. 789).</li>
+              <li>Partición notarial, mediación o arbitraje.</li>
+            </ul>
+          </div>
+          <div class="timeline-step">
+            <div class="step-num">10</div>
+            <h4>Impugnaciones posteriores</h4>
+            <ul>
+              <li>Rescisión por lesión (4 años).</li>
+              <li>Complemento por omisión de bienes.</li>
+              <li>Responsabilidad del contador (5 años).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAZOS -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-plazos">
+      <span class="section-heading-text">⏱️ Indice de Plazos Procesales</span>
+      <span class="section-heading-count">12 trámites</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-plazos">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr><th style="width:45%">Acto o trámite procesal</th><th>Plazo</th><th>Fundamento normativo</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Señalamiento de Junta por el LAJ</td>
+              <td><span class="plazo-badge plazo-days">10 días</span></td>
+              <td class="td-norm">Art. 783.2 LEC</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Presentación de operaciones divisorias por el contador</td>
+              <td><span class="plazo-badge plazo-months">2 meses</span></td>
+              <td class="td-norm">Art. 786.3 LEC</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Emplazamiento para formular oposición</td>
+              <td><span class="plazo-badge plazo-days">10 días</span></td>
+              <td class="td-norm">Art. 787.1 LEC</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Celebración de comparecencia ante el Tribunal</td>
+              <td><span class="plazo-badge plazo-days">10 días</span></td>
+              <td class="td-norm">Art. 787.3 LEC</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Solicitud de beneficio de inventario</td>
+              <td><span class="plazo-badge plazo-days">30 días hábiles</span></td>
+              <td class="td-norm">Art. 1028 CC</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Formación de inventario para beneficio de inventario</td>
+              <td><span class="plazo-badge plazo-days">90 días hábiles</span></td>
+              <td class="td-norm">Art. 1028 CC</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Suspensión del procedimiento para mediación</td>
+              <td><span class="plazo-badge plazo-weeks">Máx. 60 días</span></td>
+              <td class="td-norm">Art. 19 Ley 36/2006</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Autoliquidación del ISD</td>
+              <td><span class="plazo-badge plazo-months">6 meses (+6)</span></td>
+              <td class="td-norm">Art. 67 Ley 29/1987 · LH art. 254</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Acción rescisoria por lesión</td>
+              <td><span class="plazo-badge plazo-years">4 años</span></td>
+              <td class="td-norm">CC art. 1076</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Acción de nulidad (error, dolo, violencia)</td>
+              <td><span class="plazo-badge plazo-years">4 años</span></td>
+              <td class="td-norm">CC art. 1301</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Responsabilidad contra contador (contractual)</td>
+              <td><span class="plazo-badge plazo-years">5 años</span></td>
+              <td class="td-norm">CC art. 1964</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Responsabilidad contra contador (extracontractual)</td>
+              <td><span class="plazo-badge plazo-years">5 años</span></td>
+              <td class="td-norm">CC art. 1968.2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTORES -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">👥 Mapa de Participantes y Actores</span>
+      <span class="section-heading-count">6 categorías · 25+ actores</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Partes principales</div>
+          <ul>
+            <li>Coherederos <span class="participant-note">Legitimados activos principales (art. 782.1)</span></li>
+            <li>Legatarios de parte alícuota <span class="participant-note">Posición idéntica a coheredero</span></li>
+            <li>Cónyuge viudo <span class="participant-note">Interés por gananciales y legítima usufructo</span></li>
+            <li>Herederos bajo condición <span class="participant-note">Partición provisional</span></li>
+            <li>Coherederos con medidas de apoyo <span class="participant-note">Ley 8/2021</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Profesionales</div>
+          <ul>
+            <li>Contador-partidor <span class="participant-note">Abogado experto en sucesiones</span></li>
+            <li>Peritos tasadores <span class="participant-note">Máx. 1 por clase de bienes</span></li>
+            <li>Abogado de cada parte <span class="participant-note">Preceptivo si cuantía > 2.000 €</span></li>
+            <li>Procurador <span class="participant-note">Preceptivo si cuantía > 2.000 €</span></li>
+            <li>Notario <span class="participant-note">Protocolización y vía notarial</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Órganos judiciales</div>
+          <ul>
+            <li>Juzgado de Primera Instancia <span class="participant-note">Competencia objetiva</span></li>
+            <li>Letrado de la Administración de Justicia <span class="participant-note">Director del procedimiento</span></li>
+            <li>Ministerio Fiscal <span class="participant-note">Representa a menores y ausentes</span></li>
+            <li>Administrador judicial <span class="participant-note">Arts. 797-805 LEC</span></li>
+            <li>Defensor judicial del ausente <span class="participant-note">Art. 181 CC</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Acreedores y terceros</div>
+          <ul>
+            <li>Acreedores de la herencia <span class="participant-note">Reconocidos en testamento o con título ejecutivo</span></li>
+            <li>Acreedores reconocidos por coherederos <span class="participant-note">Derecho de oposición</span></li>
+            <li>Acreedores de coherederos <span class="participant-note">Intervención cautelar a su costa</span></li>
+            <li>Abogado del Estado <span class="participant-note">Cuando Hacienda es heredera abintestato</span></li>
+            <li>Administración Pública <span class="participant-note">Herencia vacante (art. 911 CC)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c5">Sujetos protegidos</div>
+          <ul>
+            <li>Menores sin representante <span class="participant-note">Representación por MF</span></li>
+            <li>Personas con medidas de apoyo <span class="participant-note">Ley 8/2021</span></li>
+            <li>Ausentes con paradero ignorado <span class="participant-note">Representación por MF</span></li>
+            <li>Herederos con beneficio de inventario <span class="participant-note">Responsabilidad limitada</span></li>
+            <li>Legitimarios <span class="participant-note">Protección de legítima inderogable</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c6">Otros intervinientes</div>
+          <ul>
+            <li>Contador-partidor testamentario <span class="participant-note">Designado por testador (art. 1057 CC)</span></li>
+            <li>Contador-partidor dativo <span class="participant-note">Designado por Notario/LAJ</span></li>
+            <li>Árbitro <span class="participant-note">Ley 60/2003</span></li>
+            <li>Mediador <span class="participant-note">Ley 36/2006 (suspensión ≤ 60 días)</span></li>
+            <li>Albacea <span class="participant-note">Si fue designado excluye la vía judicial</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ECOSISTEMA NORMATIVO -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">🔗 Ecosistema Normativo — Conexiones Relacionadas</span>
+      <span class="section-heading-count">12 cuerpos normativos</span>
+      <button class="section-toggle-btn">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+        <div class="norm-card">
+          <div class="norm-law">Código Civil — Libro III, Título III</div>
+          <div class="norm-title">De las Sucesiones — Partición (arts. 1051-1087)</div>
+          <div class="norm-arts">
+            <strong>Art. 1051</strong> — Derecho a pedir la partición (ius partitionis).<br>
+            <strong>Art. 1052</strong> — Requisito de libre administración.<br>
+            <strong>Art. 1056</strong> — Partición testamentaria.<br>
+            <strong>Art. 1057</strong> — Contador testamentario y dativo.<br>
+            <strong>Art. 1058</strong> — Partición convencional.<br>
+            <strong>Art. 1059</strong> — Remisión a la LEC.
+          </div>
+          <span class="norm-tag tag-info">Base sustantiva</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Código Civil — Libro III, Título III</div>
+          <div class="norm-title">Rescisión e Impugnación (arts. 1073-1081)</div>
+          <div class="norm-arts">
+            <strong>Art. 1073</strong> — Rescisión por causas de obligaciones.<br>
+            <strong>Art. 1074</strong> — Rescisión por lesión > ¼.<br>
+            <strong>Art. 1076</strong> — Prescripción: 4 años.<br>
+            <strong>Art. 1079</strong> — Omisión de bienes: complemento.<br>
+            <strong>Art. 1081</strong> — Partición con no heredero: nula.
+          </div>
+          <span class="norm-tag tag-alert">Impugnación</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Código Civil — Libro III, Título III</div>
+          <div class="norm-title">Legítima (arts. 807-822)</div>
+          <div class="norm-arts">
+            <strong>Art. 807</strong> — Definición de legítima.<br>
+            <strong>Art. 806</strong> — Límite de reglas testamentarias.<br>
+            <strong>Art. 808-809</strong> — Mejora.<br>
+            <strong>Art. 812</strong> — Usufructo del cónyuge viudo.<br>
+            <strong>Arts. 814-815</strong> — Acción de reducción.
+          </div>
+          <span class="norm-tag tag-warn">Límite inderogable</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Código Civil — Libro III, Título III</div>
+          <div class="norm-title">Aceptación y Repudiación (arts. 988-993, 1009, 1011, 1023-1032)</div>
+          <div class="norm-arts">
+            <strong>Art. 988</strong> — Aceptación irrevocable.<br>
+            <strong>Art. 992</strong> — Repudiación: ante Notario o Juzgado.<br>
+            <strong>Art. 1009</strong> — Herencia yacente.<br>
+            <strong>Arts. 1023-1032</strong> — Beneficio de inventario.
+          </div>
+          <span class="norm-tag tag-ok">Presupuesto</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Código Civil — Libro III, Título III</div>
+          <div class="norm-title">Colación de Donaciones (arts. 1035-1040)</div>
+          <div class="norm-arts">
+            <strong>Art. 1035</strong> — Obligación de colacionar.<br>
+            <strong>Art. 1036</strong> — Sujetos obligados.<br>
+            <strong>Art. 1037</strong> — Reglas de cómputo.<br>
+            <strong>Doctrina STS 148/2018:</strong> valor al tiempo de la donación con actualización monetaria.
+          </div>
+          <span class="norm-tag tag-info">Operación divisoria</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">LEC — Libro IV, Título II, Cap. I</div>
+          <div class="norm-title">Intervención del Caudal (arts. 790-796)</div>
+          <div class="norm-arts">
+            <strong>Art. 790</strong> — Aseguramiento de bienes.<br>
+            <strong>Art. 792</strong> — Intervención durante división.<br>
+            <strong>Art. 794</strong> — Formación del inventario.<br>
+            <strong>Art. 795</strong> — Administrador y caución.<br>
+            <strong>Art. 796</strong> — Cesación.
+          </div>
+          <span class="norm-tag tag-warn">Medida cautelar</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">LEC — Libro IV, Título II, Cap. I</div>
+          <div class="norm-title">Administración del Caudal (arts. 797-805)</div>
+          <div class="norm-arts">
+            <strong>Art. 797</strong> — Posesión del cargo.<br>
+            <strong>Art. 798</strong> — Representación.<br>
+            <strong>Art. 799</strong> — Cuentas periódicas.<br>
+            <strong>Art. 800</strong> — Cuentas finales.<br>
+            <strong>Art. 803</strong> — Prohibición de enajenar.<br>
+            <strong>Art. 804</strong> — Retribución.
+          </div>
+          <span class="norm-tag tag-gray">Régimen administrativo</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015 de Jurisdicción Voluntaria</div>
+          <div class="norm-title">Expedientes de División (arts. 88-94)</div>
+          <div class="norm-arts">
+            <strong>Art. 88</strong> — Expediente de división.<br>
+            <strong>Art. 89</strong> — Solicitud al Notario.<br>
+            <strong>Art. 90</strong> — Citación (15 días).<br>
+            <strong>Art. 91</strong> — Designación de contador dativo.<br>
+            <strong>Art. 92</strong> — Aprobación notarial.
+          </div>
+          <span class="norm-tag tag-ok">Vía desjudicializada</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015 de Jurisdicción Voluntaria</div>
+          <div class="norm-title">Actas de Notoriedad (arts. 55-59)</div>
+          <div class="norm-arts">
+            Declaración notarial de herederos abintestato. Requiere testigos. Sin abogado ni procurador. Título suficiente para cualquier vía de división.
+          </div>
+          <span class="norm-tag tag-info">Determinación de herederos</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Reglamento (UE) nº 650/2012</div>
+          <div class="norm-title">Sucesiones «mortis causa»</div>
+          <div class="norm-arts">
+            <strong>Art. 4</strong> — Competencia: residencia habitual.<br>
+            <strong>Art. 21</strong> — Ley aplicable: residencia habitual.<br>
+            <strong>Art. 24</strong> — Certificado sucesorio europeo.<br>
+            <strong>Art. 25</strong> — Eficacia sin reconocimiento.
+          </div>
+          <span class="norm-tag tag-alert">Derecho UE</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">Ley 29/1987 ISD + Normas Autonómicas</div>
+          <div class="norm-title">Impuesto de Sucesiones y Donaciones</div>
+          <div class="norm-arts">
+            <strong>Art. 24 LISD</strong> — Devengo al fallecimiento.<br>
+            <strong>Art. 68 LISD</strong> — Plazo: 6 meses (+ prórroga).<br>
+            <strong>LH art. 254</strong> — Cierre registral.<br>
+            <strong>Heterogeneidad autonómica:</strong> bonificaciones muy dispares.
+          </div>
+          <span class="norm-tag tag-warn">Requisito registral</span>
+        </div>
+        <div class="norm-card">
+          <div class="norm-law">LEC — Conexiones Internas</div>
+          <div class="norm-title">Artículos relacionados del procedimiento civil</div>
+          <div class="norm-arts">
+            <strong>Art. 15-16</strong> — Competencia territorial.<br>
+            <strong>Art. 40</strong> — Prejudicialidad penal.<br>
+            <strong>Art. 45.2</strong> — Examen de oficio.<br>
+            <strong>Art. 52</strong> — Fuero especial.<br>
+            <strong>Art. 164</strong> — Edictos.<br>
+            <strong>Art. 341</strong> — Sorteo peritos.<br>
+            <strong>Arts. 437 ss.</strong> — Juicio verbal.
+          </div>
+          <span class="norm-tag tag-gray">Procesal civil</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c1)"></div>Procedimiento LEC (arts. 782-789, admin. caudal)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c2)"></div>Fundamentos (contexto, competencia, CC, aceptación)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c3)"></div>Figuras clave (contador, peritos, responsabilidad)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c4)"></div>Plazos y fiscalidad (ISD, plusvalía, plazos CC)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c5)"></div>Excepciones y vías alternativas (rescisión, arbitraje)</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c6)"></div>Conexiones (jurisprudencia, forales, internacional)</div>
+    </div>
+    <div class="legend-copy">Esquema definitivo fusionado · LEC arts. 782-789 · Incluye contenido de tres esquemas originales optimizados · 26 bloques temáticos, 10 fases secuenciales, 12 plazos, 25+ actores, 12 cuerpos normativos · Generado como plantilla HTML reutilizable</div>
+  </div>
+</footer>
+
+<script>
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+let activeCat = 'all', searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '▶' : '▼';
+  });
+});
+
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn(); }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut(); }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+</body>
+</html>

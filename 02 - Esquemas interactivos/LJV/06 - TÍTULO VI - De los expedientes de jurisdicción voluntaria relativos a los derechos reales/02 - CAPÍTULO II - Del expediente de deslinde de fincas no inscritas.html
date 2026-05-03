@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa mental — Expediente de deslinde de fincas no inscritas (Ley 15/2015, arts. 104-107)</title>
+
+  <!-- Módulo 4 — Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+  /* ============================== */
+  /* Módulo 2 — Sistema de tokens   */
+  /* ============================== */
+  :root {
+    color-scheme: light;
+
+    --bg:          #f7f6f2;
+    --surface:     #ffffff;
+    --surface-2:   #f2f1ed;
+    --surface-3:   #eae8e3;
+    --border:      rgba(15,23,42,.08);
+    --border-md:   rgba(15,23,42,.14);
+    --border-lg:   rgba(15,23,42,.22);
+    --text-1:      #0f172a;
+    --text-2:      #475569;
+    --text-3:      #94a3b8;
+    --ink:         #0f172a;
+    --header-bg:   #0f172a;
+    --header-text: #f8f5ed;
+    --accent:      #c8a96e;
+    --accent-soft: rgba(200,169,110,.15);
+    --accent-ring: rgba(200,169,110,.35);
+
+    --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;  /* Ámbito de aplicación */
+    --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;  /* Competencia y legitimación */
+    --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;  /* Tramitación */
+    --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;  /* Resolución */
+    --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;  /* Régimen sustantivo CC */
+    --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;  /* Conexiones normativas */
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.06);
+    --shadow-md: 0 4px 6px -1px rgba(15,23,42,.07), 0 2px 4px -1px rgba(15,23,42,.04);
+    --shadow-lg: 0 10px 20px -5px rgba(15,23,42,.10), 0 4px 8px -3px rgba(15,23,42,.05);
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-ui:      'Outfit', system-ui, -apple-system, sans-serif;
+    --transition:      180ms cubic-bezier(.4,0,.2,1);
+    --transition-fast: 120ms cubic-bezier(.4,0,.2,1);
+  }
+
+  /* ============================== */
+  /* Módulo 3 — Reset CSS profesional */
+  /* ============================== */
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html, body, h1, h2, h3, h4, h5, h6,
+  p, ul, ol, figure, blockquote {
+    margin: 0;
+  }
+
+  ul, ol { padding: 0; list-style: none; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-1);
+    background: var(--bg);
+  }
+
+  img, svg, video { display: block; max-width: 100%; }
+
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Botones: reset crítico */
+  button {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    line-height: 1.2;
+    text-align: inherit;
+  }
+  button:disabled { cursor: not-allowed; opacity: .5; }
+
+  /* Inputs neutralizados */
+  input, select, textarea {
+    font: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Accesibilidad: focus ring coherente */
+  :focus { outline: none; }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Scrollbar discreta */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-md);
+    border-radius: 10px;
+    border: 2px solid var(--bg);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--border-lg); }
+
+  ::selection { background: var(--accent-soft); color: var(--text-1); }
+
+  /* ============================== */
+  /* Módulo 6 — Cabecera site-header */
+  /* ============================== */
+
+  .site-header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 2rem 1.5rem 1.75rem;
+  }
+
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .header-breadcrumb { 
+       font-size: 12px; 
+       font-weight: 500; 
+       letter-spacing: .06em; 
+       text-transform: uppercase; 
+       color: var(--accent); 
+       margin-bottom: .5rem; 
+     } 
+
+  .header-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin-bottom: .5rem;
+  }
+
+  .header-subtitle{font-size:14px;color:rgba(248,245,237,.65);margin-bottom:1rem;line-height:1.5} 
+
+  .header-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+
+  .header-tag {
+    background: rgba(200,169,110,.15);
+    border: 1px solid rgba(200,169,110,.3);
+    color: var(--accent);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+
+  .btn-ghost {
+    border: 1px solid rgba(248,245,237,.15);
+    color: rgba(248,245,237,.7);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  .btn-ghost:hover {
+    background: rgba(248,245,237,.08);
+    color: #fff;
+  }
+
+  /* ============================== */
+  /* Módulo 7 — Barra estadísticas  */
+  /* ============================== */
+
+  .stats-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stats-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .stat-item {
+    padding: 1rem 1.25rem;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: 0; }
+
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-1);
+  }
+
+  .stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-top: .15rem;
+  }
+
+  /* ============================== */
+  /* Módulo 8 — Barra controles     */
+  /* ============================== */
+
+  .controls-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    backdrop-filter: saturate(180%) blur(8px);
+    -webkit-backdrop-filter: saturate(180%) blur(8px);
+    box-shadow: 0 1px 0 var(--border), 0 2px 8px rgba(15,23,42,.04);
+    padding: .75rem 1.5rem;
+  }
+
+  .controls-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    flex-wrap: wrap;
+  }
+
+  /* Búsqueda */
+  .search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 180px;
+    max-width: 320px;
+  }
+
+  .search-wrap svg {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: var(--text-3);
+    pointer-events: none;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 8px 12px 8px 36px;
+    border: 1px solid var(--border-md);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    background: var(--surface);
+    transition: var(--transition-fast);
+  }
+  .search-input::placeholder { color: var(--text-3); }
+  .search-input:hover { border-color: var(--border-lg); }
+  .search-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-ring);
+  }
+
+  /* Píldoras de filtro */
+  .filter-pills {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    background: transparent;
+    border: 1px solid var(--border-md);
+    color: var(--text-2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  .pill:hover {
+    background: var(--surface-2);
+    border-color: var(--border-lg);
+    color: var(--text-1);
+  }
+  .pill.active[data-cat="all"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+  }
+  .pill.active[data-cat="c1"] {
+    background: var(--c1);
+    border-color: var(--c1);
+    color: #fff;
+  }
+  .pill.active[data-cat="c2"] {
+    background: var(--c2);
+    border-color: var(--c2);
+    color: #fff;
+  }
+  .pill.active[data-cat="c3"] {
+    background: var(--c3);
+    border-color: var(--c3);
+    color: #fff;
+  }
+  .pill.active[data-cat="c4"] {
+    background: var(--c4);
+    border-color: var(--c4);
+    color: #fff;
+  }
+  .pill.active[data-cat="c5"] {
+    background: var(--c5);
+    border-color: var(--c5);
+    color: #fff;
+  }
+  .pill.active[data-cat="c6"] {
+    background: var(--c6);
+    border-color: var(--c6);
+    color: #fff;
+  }
+
+  /* Acciones de control */
+  .ctrl-actions {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    margin-left: auto;
+  }
+
+  @media (max-width: 768px) {
+    .ctrl-actions { display: none; }
+  }
+
+  .btn-ctrl {
+    background: var(--surface-2);
+    border: 1px solid var(--border-md);
+    color: var(--text-2);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  .btn-ctrl:hover {
+    background: var(--surface-3);
+    color: var(--text-1);
+  }
+  .btn-ctrl:active {
+    transform: translateY(1px);
+  }
+
+  .zoom-cluster {
+    display: flex;
+    border: 1px solid var(--border-md);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .btn-zoom {
+    width: 28px;
+    height: 28px;
+    background: var(--surface);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--border-md);
+    transition: var(--transition-fast);
+  }
+  .btn-zoom:last-of-type { border-right: 0; }
+  .btn-zoom:hover { background: var(--surface-2); }
+  .btn-zoom:disabled { opacity: .4; cursor: not-allowed; }
+
+  .zoom-label {
+    font-size: 12px;
+    font-weight: 500;
+    min-width: 42px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ============================== */
+  /* Módulo 9 — Tarjetas map-card   */
+  /* ============================== */
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem 1rem;
+  }
+  @media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+  .map-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--c6);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  }
+  .map-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-md);
+  }
+  .map-card[data-cat="c1"] { border-left-color: var(--c1); }
+  .map-card[data-cat="c2"] { border-left-color: var(--c2); }
+  .map-card[data-cat="c3"] { border-left-color: var(--c3); }
+  .map-card[data-cat="c4"] { border-left-color: var(--c4); }
+  .map-card[data-cat="c5"] { border-left-color: var(--c5); }
+  .map-card[data-cat="c6"] { border-left-color: var(--c6); }
+  .map-card.hidden { display: none; }
+
+  /* Cabecera de tarjeta */
+  .card-top { padding: 1rem 1.1rem .85rem; }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    flex-wrap: wrap;
+    margin-bottom: .55rem;
+  }
+
+  .card-title {
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--text-1);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin-bottom: .3rem;
+  }
+
+  .card-subtitle {
+    font-size: 13px;
+    color: var(--text-2);
+    line-height: 1.5;
+  }
+
+  /* Badges */
+  .art-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--c6bd);
+    background: var(--c6bg);
+    color: var(--c6);
+    letter-spacing: .01em;
+    white-space: nowrap;
+  }
+  .map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+  .map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+  .map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+  .map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+  .map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+
+  .status-tag {
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: .02em;
+  }
+  .tag-warn  { background: #fef3c7; color: #92400e; }
+  .tag-alert { background: #fee2e2; color: #991b1b; }
+  .tag-info  { background: #dbeafe; color: #1e40af; }
+  .tag-ok    { background: #d1fae5; color: #065f46; }
+  .tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+  /* Contadores */
+  .card-counters {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    padding: 0 1.1rem .9rem;
+    font-size: 11px;
+    color: var(--text-3);
+  }
+  .counter-badge {
+    background: var(--surface-2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+  }
+  .counter-badge strong {
+    color: var(--text-1);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Botón toggle */
+  .card-toggle-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    padding: .65rem 1.1rem;
+    background: var(--surface-2);
+    border-top: 1px solid var(--border);
+    color: var(--text-2);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .01em;
+    transition: background var(--transition-fast), color var(--transition-fast);
+  }
+  .card-toggle-btn:hover {
+    background: var(--surface-3);
+    color: var(--text-1);
+  }
+  .card-toggle-btn:active {
+    background: var(--border);
+  }
+  .card-toggle-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+  .toggle-label { flex: 1; text-align: left; }
+  .toggle-icon {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border-md);
+    color: var(--text-2);
+    font-size: 10px;
+    transition: transform var(--transition), background var(--transition-fast),
+                color var(--transition-fast), border-color var(--transition-fast);
+  }
+  .card-toggle-btn:hover .toggle-icon {
+    background: var(--surface-2);
+    color: var(--text-1);
+  }
+  .map-card.expanded .toggle-icon {
+    transform: rotate(180deg);
+    background: var(--ink);
+    color: var(--surface);
+    border-color: var(--ink);
+  }
+
+  /* Cuerpo expandible */
+  .card-body {
+    display: none;
+    padding: 1rem 1.1rem 1.1rem;
+    background: #fafaf9;
+    border-top: 1px solid var(--border);
+  }
+  .map-card.expanded .card-body { display: block; }
+
+  /* Secciones internas */
+  .inner-section + .inner-section { margin-top: 1rem; }
+  .inner-heading {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    margin-bottom: .45rem;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--text-1);
+  }
+  .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--c6);
+    flex-shrink: 0;
+  }
+  .map-card[data-cat="c1"] .dot { background: var(--c1); }
+  .map-card[data-cat="c2"] .dot { background: var(--c2); }
+  .map-card[data-cat="c3"] .dot { background: var(--c3); }
+  .map-card[data-cat="c4"] .dot { background: var(--c4); }
+  .map-card[data-cat="c5"] .dot { background: var(--c5); }
+
+  /* Referencias al pie de la tarjeta */
+  .card-refs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    padding: .8rem 1.1rem;
+    background: #fafaf9;
+    border-top: 1px solid var(--border);
+  }
+  .ref-tag {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-2);
+    background: var(--surface-2);
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    transition: background var(--transition-fast);
+  }
+  .ref-tag:hover { background: var(--surface-3); }
+
+  /* ============================== */
+  /* Módulo 10 — Section-heading    */
+  /* ============================== */
+
+  .section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    max-width: 1400px;
+    margin: 1.5rem auto .5rem;
+    padding: 0 1.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .section-heading-text {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-1);
+    letter-spacing: -0.01em;
+    flex: 1;
+  }
+  .section-heading-count {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-3);
+    background: var(--surface-2);
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: .02em;
+  }
+  .section-toggle-btn {
+    width: 28px; height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    border: 1px solid var(--border-md);
+    border-radius: 50%;
+    color: var(--text-2);
+    font-size: 11px;
+    transition: var(--transition-fast);
+  }
+  .section-heading:hover .section-toggle-btn {
+    background: var(--surface-2);
+    color: var(--text-1);
+  }
+  .section-divider {
+    max-width: 1400px;
+    margin: 0 auto 1rem;
+    border: 0;
+    height: 1px;
+    background: var(--border);
+  }
+  .section-body.collapsed { display: none; }
+
+  /* ============================== */
+  /* Módulo 11 — Tabla de plazos    */
+  /* ============================== */
+
+  .table-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+  .timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  .timeline-table th {
+    background: var(--surface-2);
+    text-align: left;
+    padding: .85rem 1rem;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--text-2);
+    border-bottom: 1px solid var(--border);
+  }
+  .timeline-table td {
+    padding: .7rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-1);
+    vertical-align: top;
+  }
+  .timeline-table tbody tr:last-child td { border-bottom: 0; }
+  .timeline-table tbody tr { transition: background var(--transition-fast); }
+  .timeline-table tbody tr:hover { background: var(--surface-2); }
+
+  .plazo-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+  .plazo-days   { background: #fef3c7; color: #92400e; }
+  .plazo-weeks  { background: #dbeafe; color: #1e40af; }
+  .plazo-months { background: #d1fae5; color: #065f46; }
+  .plazo-years  { background: #fee2e2; color: #991b1b; }
+  .plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+  /* ============================== */
+  /* Módulo 12 — Participantes      */
+  /* ============================== */
+
+  .participants-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  @media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+
+  .participant-col {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .participant-col-head {
+    padding: .7rem 1rem;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .phead-c1 { background: var(--c1); }
+  .phead-c2 { background: var(--c2); }
+  .phead-c3 { background: var(--c3); }
+  .phead-c4 { background: var(--c4); }
+  .phead-c5 { background: var(--c5); }
+  .phead-c6 { background: var(--c6); }
+
+  .participant-col ul { padding: .5rem .25rem; }
+  .participant-col li {
+    font-size: 12.5px;
+    color: var(--text-2);
+    padding: .4rem .75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .participant-col li:last-child { border-bottom: 0; }
+  .participant-note {
+    font-size: 11px;
+    color: var(--text-3);
+    font-style: italic;
+  }
+
+  /* ============================== */
+  /* Módulo 13 — Ecosistema normativo */
+  /* ============================== */
+
+  .norm-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  @media (max-width: 900px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+
+  .norm-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .norm-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  .norm-law {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--text-3);
+    font-weight: 600;
+  }
+  .norm-title {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-1);
+    line-height: 1.4;
+  }
+  .norm-arts {
+    font-size: 12px;
+    color: var(--text-2);
+    line-height: 1.55;
+  }
+  .norm-tag {
+    align-self: flex-start;
+    margin-top: auto;
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: .02em;
+  }
+
+  /* ============================== */
+  /* Módulo 14 — Sin resultados     */
+  /* ============================== */
+
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-3);
+    font-size: 14px;
+    display: none;
+  }
+
+  /* ============================== */
+  /* Módulo 15 — Leyenda footer     */
+  /* ============================== */
+
+  .legend-footer {
+    background: var(--header-bg);
+    color: var(--header-text);
+    margin-top: 3rem;
+    padding: 2rem 1.5rem;
+  }
+  .legend-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .legend-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .legend-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    font-size: 13px;
+    color: rgba(248,245,237,.85);
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .legend-swatch {
+    width: 12px; height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(248,245,237,.12);
+  }
+  .legend-copy {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(248,245,237,.08);
+    font-size: 11px;
+    color: rgba(248,245,237,.35);
+  }
+
+  /* ============================== */
+  /* Módulo 16 — CSS de impresión   */
+  /* ============================== */
+
+  @media print {
+    .controls-bar, .site-header .header-actions { display: none; }
+    .card-body   { display: block !important; }
+    .inner-body  { display: block !important; }
+    .section-body{ display: block !important; }
+    .map-card    { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; transform: none !important; }
+    .map-card:hover { transform: none !important; box-shadow: none !important; }
+    body         { background: #fff; }
+  }
+
+  /* ============================== */
+  /* Módulo 17 — inner-list         */
+  /* ============================== */
+
+  .inner-list li {
+    position: relative;
+    padding-left: .9rem;
+    margin-bottom: .3rem;
+    font-size: 12.5px;
+    color: var(--text-2);
+    line-height: 1.5;
+  }
+  .inner-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: .55em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--text-3);
+  }
+  .inner-list li strong { color: var(--text-1); font-weight: 600; }
+
+  /* ============================== */
+  /* Módulo 18 — Reduced motion     */
+  /* ============================== */
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .map-card:hover { transform: none; }
+    .norm-card:hover { transform: none; }
+  }
+
+  </style>
+</head>
+<body>
+
+<!-- ============================== -->
+<!-- Módulo 6 — Cabecera            -->
+<!-- ============================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO VI: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA
+    RELATIVOS A LOS DERECHOS REALES · CAPÍTULO II</div>
+    <h1 class="header-title">Del expediente de deslinde de fincas no inscritas</h1>
+    <p class="header-subtitle">Artículos 104 a 107 LJV · Artículos 384 a 387 del Código Civil</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015</span>
+      <span class="header-tag">Arts. 104–107</span>
+      <span class="header-tag">Código Civil 384–387</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== -->
+<!-- Módulo 7 — Estadísticas        -->
+<!-- ============================== -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">8</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">10+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">8+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">2</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- Módulo 8 — Barra de controles  -->
+<!-- ============================== -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <!-- Búsqueda -->
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <!-- Filtros -->
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Ámbito</button>
+      <button class="pill" data-cat="c2">Competencia</button>
+      <button class="pill" data-cat="c3">Tramitación</button>
+      <button class="pill" data-cat="c4">Resolución</button>
+      <button class="pill" data-cat="c5">Código Civil</button>
+      <button class="pill" data-cat="c6">Conexiones</button>
+    </div>
+    <!-- Acciones -->
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- CONTENIDO PRINCIPAL            -->
+<!-- ============================== -->
+<main class="page-main">
+
+  <!-- ============================== -->
+  <!-- Sección: Artículos principales -->
+  <!-- ============================== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-articulos">
+      <span class="section-heading-text">Artículos principales — Ley 15/2015, Capítulo II, Título VI</span>
+      <span class="section-heading-count">4 artículos</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-articulos">
+      <div class="card-grid">
+
+        <!-- ============================== -->
+        <!-- ARTÍCULO 104                   -->
+        <!-- ============================== -->
+        <article class="map-card" data-cat="c1" data-text="ámbito aplicación deslinde fincas no inscritas registro propiedad supuestos incluidos excluidos confusión linderos artículo 104">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 104</span>
+              <span class="status-tag tag-info">Ámbito</span>
+            </div>
+            <h2 class="card-title">Ámbito de aplicación</h2>
+            <p class="card-subtitle">Delimitación de los supuestos en que procede el expediente de deslinde de fincas no inscritas y de los que quedan excluidos.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> supuestos excluidos</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>1</strong> presupuesto material</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Supuestos incluidos</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Regla general:</strong> se aplicarán las disposiciones de este Capítulo cuando se pretenda obtener el deslinde de fincas que no estuvieran inscritas en el Registro de la Propiedad.</li>
+                  <li><strong>Delimitación por eliminación:</strong> el artículo 104 enuncia los deslindes que no pueden tramitarse por esta vía, y el resto constituye su ámbito de aplicación.</li>
+                  <li><strong>Finca inscrita colindante con no inscrita:</strong> la doctrina y la jurisprudencia admiten que cuando colinden una finca inscrita y otra no inscrita, pueda también seguirse este cauce, en conexión con el artículo 106.1 que exige aportar certificación registral de las colindantes inscritas.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Supuestos excluidos</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Fincas inscritas en el Registro de la Propiedad:</strong> tratándose de fincas inscritas, se aplicará lo dispuesto en la legislación hipotecaria, concretamente el expediente regulado en el artículo 200 de la Ley Hipotecaria (en la redacción dada por la Ley 13/2015, de 24 de junio, de Reforma de la Ley Hipotecaria y del Texto Refundido de la Ley del Catastro Inmobiliario), que atribuye su tramitación al Notario.</li>
+                  <li><strong>Inmuebles de titularidad pública:</strong> tampoco resultarán de aplicación a los inmuebles cuya titularidad corresponda a las Administraciones Públicas, cuyo deslinde se practicará conforme a su legislación específica, en particular los artículos 50 y siguientes de la Ley 33/2003, de 3 de noviembre, del Patrimonio de las Administraciones Públicas, y la normativa sectorial correspondiente (montes, costas, vías pecuarias, dominio público hidráulico, etc.).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Presupuesto material de la acción</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Confusión de linderos:</strong> la jurisprudencia exige como requisito objetivo la existencia de confusión de linderos entre las fincas, de modo que no se pueda tener conocimiento exacto de la línea perimetral de cada propiedad, con la consiguiente incertidumbre sobre la extensión superficial.</li>
+                  <li><strong>Predios delimitados:</strong> si los predios están perfectamente identificados y delimitados, no cabe acudir a este expediente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LH art. 200</span>
+            <span class="ref-tag">Ley 13/2015</span>
+            <span class="ref-tag">Ley 33/2003 arts. 50+</span>
+            <span class="ref-tag">CC art. 384</span>
+          </div>
+        </article>
+
+        <!-- ============================== -->
+        <!-- ARTÍCULO 105                   -->
+        <!-- ============================== -->
+        <article class="map-card" data-cat="c2" data-text="competencia legitimación postulación secretario judicial letrado administración justicia juzgado primera instancia abogado procurador artículo 105">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 105</span>
+              <span class="status-tag tag-warn">Competencia</span>
+            </div>
+            <h2 class="card-title">Competencia, legitimación y postulación</h2>
+            <p class="card-subtitle">Regulación del órgano competente, los sujetos legitimados para instar el expediente y los requisitos de intervención profesional.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> legitimados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>6.000</strong> € umbral</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Competencia</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Órgano competente:</strong> será competente para el conocimiento de este expediente el Secretario judicial —hoy Letrado o Letrada de la Administración de Justicia— del Juzgado de Primera Instancia correspondiente al lugar donde estuviera situada la finca o la mayor parte de ella.</li>
+                  <li><strong>Competencia objetiva:</strong> se atribuye al Letrado de la Administración de Justicia del Juzgado de Primera Instancia (actual Tribunal de Instancia, sección civil).</li>
+                  <li><strong>Competencia territorial:</strong> fuero único determinado por el lugar de situación de la finca; cuando esta abarque más de un partido judicial, prevalece el Tribunal en cuya jurisdicción se encuentre la mayor parte de ella.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Legitimación</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Titular del dominio:</strong> se iniciará el expediente a instancia del titular del dominio de la finca o, de ser varios, de cualquiera de ellos.</li>
+                  <li><strong>Titular de derechos reales:</strong> también puede instar el expediente el titular de cualquier derecho real de uso y disfrute sobre la misma.</li>
+                  <li><strong>Concordancia con el Código Civil:</strong> esta legitimación concuerda con el artículo 384 del Código Civil, que reconoce el derecho de deslinde a todo propietario y a los titulares de derechos reales, con citación de los dueños de los predios colindantes.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Postulación</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Intervención preceptiva de Abogado:</strong> en la tramitación del presente expediente será preceptiva la intervención de Abogado si el valor de la finca fuera superior a 6.000 euros.</li>
+                  <li><strong>Cuantía y enjuiciamiento:</strong> esta cuantía coincide con la que delimita el juicio verbal y el juicio ordinario en la Ley de Enjuiciamiento Civil, de modo que, si el expediente deviene contencioso, el proceso declarativo posterior se tramitará conforme a esas reglas.</li>
+                  <li><strong>Facultatividad por debajo del umbral:</strong> por debajo de dicha cuantía, la intervención de Abogado y Procurador es facultativa.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 384</span>
+            <span class="ref-tag">LEC cuantía 6.000 €</span>
+          </div>
+        </article>
+
+        <!-- ============================== -->
+        <!-- ARTÍCULO 106                   -->
+        <!-- ============================== -->
+        <article class="map-card" data-cat="c3" data-text="solicitud tramitación escrito iniciación certificación registral catastral representación gráfica georreferenciada alegaciones acto deslinde oposición artículo 106">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 106</span>
+              <span class="status-tag tag-ok">Tramitación</span>
+            </div>
+            <h2 class="card-title">Solicitud y tramitación</h2>
+            <p class="card-subtitle">Requisitos del escrito de iniciación, documentación, representación gráfica alternativa, tramitación por el Secretario judicial e incidencias.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> plazos</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> incidencias</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido del escrito de iniciación</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Circunstancias de la finca:</strong> las circunstancias tanto de la finca que se pretende deslindar como las de las colindantes.</li>
+                  <li><strong>Datos identificativos:</strong> los datos identificativos de los titulares de una y otras, incluidos los catastrales, con su domicilio si fuera conocido por el solicitante.</li>
+                  <li><strong>Deslinde parcial:</strong> cuando el deslinde solicitado no se refiriera a la totalidad del perímetro de la finca, se determinará la parte a que haya de contraerse, posibilidad admitida asimismo por la jurisprudencia y por la Dirección General de Seguridad Jurídica y Fe Pública, y recogida expresamente en el artículo 200 de la Ley Hipotecaria para fincas inscritas.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Documentación que debe aportarse</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Certificación registral:</strong> respecto de las fincas colindantes que aparezcan inscritas en el Registro de la Propiedad.</li>
+                  <li><strong>Certificación catastral:</strong> certificación catastral descriptiva y gráfica de la finca objeto del deslinde y de las colindantes, en todo caso.</li>
+                  <li><strong>Documentos justificantes:</strong> los documentos o justificantes que sirvan de fundamento a la pretensión (títulos de propiedad, mediciones, planos, actas notariales previas, etc.).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Representación gráfica alternativa</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Discordancia con el Catastro:</strong> en caso de que el promotor manifieste que la representación gráfica catastral no coincide con la del deslinde solicitado, deberá aportar representación gráfica georreferenciada del mismo.</li>
+                  <li><strong>Respeto de la delimitación restante:</strong> en todo caso, la representación gráfica alternativa habrá de respetar el resto de la delimitación de las fincas afectadas que resulten de la cartografía catastral en lo no afectado por el deslinde.</li>
+                  <li><strong>Georreferenciación y técnico competente:</strong> dicha representación gráfica deberá estar debidamente georreferenciada y suscrita por técnico competente, de modo que permita su incorporación al Catastro una vez practicado el deslinde, conforme al Texto Refundido de la Ley del Catastro Inmobiliario (Real Decreto Legislativo 1/2004, de 5 de marzo).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Tramitación por el Secretario judicial</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Comunicación del inicio:</strong> admitida la solicitud, el Secretario judicial comunicará el inicio del expediente a todos los interesados.</li>
+                  <li><strong>Plazo de alegaciones:</strong> en el plazo de quince días, los interesados podrán hacer las alegaciones y presentar las pruebas que estimen procedentes.</li>
+                  <li><strong>Citación al acto de deslinde:</strong> transcurrido el plazo, el Secretario judicial dará traslado a dichos interesados de toda la documentación aportada y les citará al acto de deslinde, a celebrar en el plazo de treinta días, para buscar la avenencia entre ellos.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Incidencias durante la tramitación</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Falta de asistencia de algún colindante:</strong> no se suspenderá la práctica del deslinde por la falta de asistencia de alguno de los dueños colindantes, quedando a salvo su derecho para demandar, en el juicio declarativo que corresponda, la posesión o propiedad de las que se creyese despojado en virtud del deslinde. La comparecencia no es obligatoria, lo que resulta coherente con la naturaleza voluntaria del expediente.</li>
+                  <li><strong>Oposición antes de la comparecencia:</strong> si antes de la comparecencia, el dueño de alguna de las fincas colindantes se opusiera al deslinde, se archivará el expediente en relación a la parte de la finca lindante con la del opositor, reservando a las partes su derecho para que lo ejerciten en el juicio declarativo que corresponda, y continuará con el resto. Esta solución enlaza con la regla general del artículo 17.3 de la Ley 15/2015, que prevé el archivo del expediente cuando existe oposición que lo convierta en contencioso.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 17.3</span>
+            <span class="ref-tag">LH art. 200</span>
+            <span class="ref-tag">TRLCI RDLeg 1/2004</span>
+          </div>
+        </article>
+
+        <!-- ============================== -->
+        <!-- ARTÍCULO 107                   -->
+        <!-- ============================== -->
+        <article class="map-card" data-cat="c4" data-text="resolución acta avenencia decreto secretario judicial comunicación catastro efectos cosa juzgada artículo 107">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 107</span>
+              <span class="status-tag tag-alert">Resolución</span>
+            </div>
+            <h2 class="card-title">Resolución</h2>
+            <p class="card-subtitle">Acta del acto de deslinde, decreto del Secretario judicial, comunicación al Catastro y efectos y límites de la resolución.</p>
+          </div>
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> resultados posibles</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>1</strong> comunicación</span>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Acta del acto de deslinde</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Avenencia total o parcial:</strong> de lograrse el acuerdo, entre todos los interesados o parte de ellos, el Secretario judicial hará constar en un acta todo cuanto acuerden y que el acto terminó con avenencia total o parcial respecto de alguno o algunos de los linderos, así como los términos de la misma, debiendo ser firmada por los comparecientes.</li>
+                  <li><strong>Sin avenencia:</strong> si no pudiere conseguirse acuerdo alguno, se hará constar que el acto terminó sin avenencia.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Decreto del Secretario judicial</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Contenido del decreto:</strong> finalizado el acto, el Secretario judicial dictará decreto haciendo constar la avenencia; que fue parcial respecto de alguno o algunos de los linderos; o que se celebró sin avenencia, acordándose el archivo definitivo de las actuaciones.</li>
+                  <li><strong>Documentación incorporada:</strong> al decreto se incorporará el acta y, en todo caso, la certificación catastral descriptiva y gráfica y, en el supuesto de discordancia con esta, la representación gráfica alternativa aportada.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Comunicación al Catastro</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Remisión de testimonio:</strong> el Secretario judicial remitirá testimonio del acta y del decreto al Catastro a los efectos de que puedan realizarse por este, en su caso, las alteraciones catastrales que correspondan, según su normativa reguladora (Texto Refundido de la Ley del Catastro Inmobiliario, Real Decreto Legislativo 1/2004, de 5 de marzo, y su reglamento de desarrollo).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Efectos y límites de la resolución</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>No produce cosa juzgada:</strong> la resolución, por tratarse de jurisdicción voluntaria, no produce cosa juzgada material en el sentido estricto: si no hay avenencia o esta es parcial, subsiste siempre la posibilidad de acudir al juicio declarativo correspondiente para que un juez fije la línea divisoria.</li>
+                  <li><strong>Juicio declarativo contencioso:</strong> en ese juicio declarativo contencioso regirán las reglas sustantivas de los artículos 385 a 387 del Código Civil, que constituyen un sistema de criterios de aplicación necesaria para el órgano jurisdiccional.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC arts. 385–387</span>
+            <span class="ref-tag">TRLCI RDLeg 1/2004</span>
+          </div>
+        </article>
+
+        <!-- Sin resultados -->
+        <div class="no-results" id="no-results">
+          No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- Sección: Código Civil           -->
+  <!-- ============================== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-codigocivil">
+      <span class="section-heading-text">Régimen sustantivo conexo — Código Civil, arts. 384 a 387</span>
+      <span class="section-heading-count">4 artículos</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-codigocivil">
+      <div class="card-grid">
+
+        <!-- Artículo 384 CC -->
+        <article class="map-card" data-cat="c5" data-text="derecho deslindar propietario derechos reales citación colindantes artículo 384 código civil">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 384 CC</span>
+              <span class="status-tag tag-ok">Derecho</span>
+            </div>
+            <h2 class="card-title">Derecho a deslindar</h2>
+            <p class="card-subtitle">Reconocimiento del derecho de todo propietario y de los titulares de derechos reales a deslindar su propiedad.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido del precepto</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Derecho del propietario:</strong> todo propietario tiene derecho a deslindar su propiedad, con citación de los dueños de los predios colindantes.</li>
+                  <li><strong>Derechos reales:</strong> la misma facultad corresponderá a los que tengan derechos reales.</li>
+                  <li><strong>Aplicación analógica:</strong> el Tribunal Supremo (Sala 1.ª, Sentencia de 11 de febrero de 2016) admite que, por aplicación analógica de los artículos 384 y siguientes, pueda determinarse la situación física de una finca enclavada en otra mayor.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 15/2015 art. 105</span>
+            <span class="ref-tag">TS S 11 feb 2016</span>
+          </div>
+        </article>
+
+        <!-- Artículo 385 CC -->
+        <article class="map-card" data-cat="c5" data-text="criterios deslinde títulos posesión artículo 385 código civil">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 385 CC</span>
+              <span class="status-tag tag-info">Criterios</span>
+            </div>
+            <h2 class="card-title">Criterios de deslinde</h2>
+            <p class="card-subtitle">Regla de prelación de títulos y posesión para practicar el deslinde.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido del precepto</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Conformidad con los títulos:</strong> el deslinde se hará en conformidad con los títulos de cada propietario.</li>
+                  <li><strong>Subsidiariedad de la posesión:</strong> a falta de títulos suficientes, por lo que resultare de la posesión en que estuvieren los colindantes.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 386</span>
+            <span class="ref-tag">CC art. 387</span>
+          </div>
+        </article>
+
+        <!-- Artículo 386 CC -->
+        <article class="map-card" data-cat="c5" data-text="deslinde sin títulos posesión acreditada distribución igualitaria artículo 386 código civil">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 386 CC</span>
+              <span class="status-tag tag-warn">Subsidiario</span>
+            </div>
+            <h2 class="card-title">Deslinde sin títulos ni posesión acreditada</h2>
+            <p class="card-subtitle">Criterio subsidiario de distribución por partes iguales cuando no hay títulos ni posesión acreditada.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido del precepto</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Falta de títulos y posesión:</strong> si los títulos no determinasen el límite o área perteneciente a cada propietario, y la cuestión no pudiera resolverse por la posesión o por otro medio de prueba, el deslinde se hará distribuyendo el terreno objeto de la contienda en partes iguales.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 385</span>
+            <span class="ref-tag">CC art. 387</span>
+          </div>
+        </article>
+
+        <!-- Artículo 387 CC -->
+        <article class="map-card" data-cat="c5" data-text="discordancia títulos extensión real distribución proporcional artículo 387 código civil">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 387 CC</span>
+              <span class="status-tag tag-info">Complementario</span>
+            </div>
+            <h2 class="card-title">Discordancia entre títulos y extensión real</h2>
+            <p class="card-subtitle">Regla de distribución proporcional cuando los títulos indican un espacio mayor o menor que el terreno total.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span>Contenido del precepto</div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Distribución proporcional:</strong> si los títulos de los colindantes indicasen un espacio mayor o menor del que comprende la totalidad del terreno, el aumento o la falta se distribuirá proporcionalmente.</li>
+                  <li><strong>Doctrina del Tribunal Supremo:</strong> la doctrina del Tribunal Supremo considera este precepto complementario del artículo 385, aplicable incluso cuando los títulos y los elementos aportados no sean del todo expresivos, pues completa el artículo 385 en los casos de discordancia entre los datos escriturados y la extensión efectiva del terreno.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC art. 385</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- Módulo 11 — Plazos procesales  -->
+  <!-- ============================== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Indice de plazos procesales</span>
+      <span class="section-heading-count">2 trámites</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Acto o trámite procesal</th>
+              <th>Plazo</th>
+              <th>Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Plazo para formular alegaciones y presentar pruebas por los interesados, una vez comunicada la admisión de la solicitud</td>
+              <td><span class="plazo-badge plazo-days">15 días</span></td>
+              <td class="td-norm">Artículo 106.2 de la Ley 15/2015</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Plazo para la celebración del acto de deslinde, citados los interesados con traslado de la documentación</td>
+              <td><span class="plazo-badge plazo-days">30 días</span></td>
+              <td class="td-norm">Artículo 106.2 de la Ley 15/2015</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- Módulo 12 — Participantes      -->
+  <!-- ============================== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">5 categorías · 10 actores</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Órgano jurisdiccional</div>
+          <ul>
+            <li>Secretario judicial <span class="participant-note">(hoy Letrado/a de la Administración de Justicia)</span></li>
+            <li>Juzgado de Primera Instancia <span class="participant-note">(competencia territorial: lugar de situación de la finca)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Promotores del expediente</div>
+          <ul>
+            <li>Titular del dominio de la finca <span class="participant-note">(o cualquiera de ellos si son varios)</span></li>
+            <li>Titular de derechos reales de uso y disfrute</li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Colindantes</div>
+          <ul>
+            <li>Dueños de los predios colindantes <span class="participant-note">(citados, pero comparecencia no obligatoria)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Profesionales</div>
+          <ul>
+            <li>Abogado <span class="participant-note">(preceptivo si finca &gt; 6.000 €)</span></li>
+            <li>Procurador <span class="participant-note">(facultativo por debajo de 6.000 €)</span></li>
+            <li>Técnico competente <span class="participant-note">(representación gráfica georreferenciada)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c6">Administración</div>
+          <ul>
+            <li>Catastro <span class="participant-note">(destinatario del testimonio para alteraciones catastrales)</span></li>
+            <li>Notario <span class="participant-note">(competente para deslinde de fincas inscritas, art. 200 LH)</span></li>
+            <li>Administraciones Públicas <span class="participant-note">(deslinde de bienes de titularidad pública, excluidos)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- Módulo 13 — Ecosistema normativo -->
+  <!-- ============================== -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">6 cuerpos normativos</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015, de 2 de julio</div>
+          <div class="norm-title">Jurisdicción Voluntaria</div>
+          <div class="norm-arts">
+            <strong>Artículo 1.2</strong> — definición de expedientes de jurisdicción voluntaria.
+            <strong>Artículos 13 a 22</strong> — normas comunes de tramitación, de aplicación supletoria.
+            <strong>Artículo 17.3</strong> — archivo del expediente en caso de oposición.
+            <strong>Artículos 100 a 103</strong> — autorización judicial al usufructuario para reclamar créditos vencidos.
+          </div>
+          <span class="norm-tag tag-info">Tramitación</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley Hipotecaria</div>
+          <div class="norm-title">Legislación hipotecaria — concordancia Registro-realidad</div>
+          <div class="norm-arts">
+            <strong>Artículo 198</strong> — procedimientos para la concordancia entre el Registro y la realidad física y jurídica extrarregistral.
+            <strong>Artículo 199</strong> — procedimiento de incorporación de la representación gráfica georreferenciada al folio registral.
+            <strong>Artículo 200</strong> — expediente de deslinde de fincas inscritas, atribuido a la competencia del Notario. Contempla el deslinde parcial.
+          </div>
+          <span class="norm-tag tag-ok">Registro</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 33/2003, de 3 de noviembre</div>
+          <div class="norm-title">Patrimonio de las Administraciones Públicas</div>
+          <div class="norm-arts">
+            <strong>Artículos 50 a 54</strong> — regulan el deslinde administrativo de los bienes de titularidad pública, excluidos del expediente del Capítulo II del Título VI de la Ley 15/2015 por el artículo 104.
+          </div>
+          <span class="norm-tag tag-warn">Sector público</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">RD Legislativo 1/2004, de 5 de marzo</div>
+          <div class="norm-title">Texto Refundido de la Ley del Catastro Inmobiliario</div>
+          <div class="norm-arts">
+            <strong>Marco normativo</strong> — al que remite el artículo 107.3 para la práctica de las alteraciones catastrales derivadas del deslinde y para la incorporación de la representación gráfica georreferenciada.
+          </div>
+          <span class="norm-tag tag-gray">Catastro</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 13/2015, de 24 de junio</div>
+          <div class="norm-title">Reforma de la Ley Hipotecaria y del Catastro Inmobiliario</div>
+          <div class="norm-arts">
+            <strong>Coordinación gráfica Registro-Catastro</strong> — reforma conjunta orientada a la coordinación, telón de fondo de las exigencias de representación gráfica del artículo 106. Redacción vigente del artículo 200 de la Ley Hipotecaria.
+          </div>
+          <span class="norm-tag tag-info">Coordinación</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 1/2000, de 7 de enero</div>
+          <div class="norm-title">Ley de Enjuiciamiento Civil</div>
+          <div class="norm-arts">
+            <strong>Juicio declarativo posterior</strong> — se aplica, en su caso, al juicio declarativo posterior cuando el expediente deviene contencioso por oposición o falta de avenencia; la cuantía de 6.000 euros del artículo 105.3 determina la modalidad de juicio verbal u ordinario.
+          </div>
+          <span class="norm-tag tag-alert">Procesal</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ============================== -->
+<!-- Módulo 15 — Leyenda footer     -->
+<!-- ============================== -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Ámbito de aplicación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Competencia y legitimación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Tramitación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Resolución
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Régimen sustantivo CC
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c6)"></div>
+        Conexiones normativas
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título VI, Capítulo II, artículos 104 a 107 · Código Civil, artículos 384 a 387 · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<!-- ============================== -->
+<!-- FASE E — JavaScript            -->
+<!-- ============================== -->
+<script>
+
+/* Módulo 19 — Filtrado por categoría */
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+/* Módulo 20 — Búsqueda en tiempo real */
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+/* Módulo 21 — Expandir/colapsar tarjetas individuales */
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.setAttribute('aria-expanded', String(isExp));
+  const label = btn.querySelector('.toggle-label');
+  if (label) label.textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+/* Módulo 22 — Expandir todo / contraer todo */
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn');
+      const label = btn && btn.querySelector('.toggle-label');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      if (label) label.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn');
+    const label = btn && btn.querySelector('.toggle-label');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+    if (label) label.textContent = 'Ver contenido completo';
+  });
+});
+
+/* Módulo 23 — Colapso de secciones principales */
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    const btn = h.querySelector('.section-toggle-btn');
+    if (btn) btn.textContent = collapsed ? '\u25BC' : '\u25B2';
+  });
+});
+
+/* Módulo 24 — Zoom con atajos de teclado */
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+
+</script>
+</body>
+</html>

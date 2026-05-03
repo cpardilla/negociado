@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa mental — Título VII. Expedientes de subastas voluntarias. Ley 15/2015</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ================================================
+   MÓDULO 2 — SISTEMA DE TOKENS CSS (:root)
+   ================================================ */
+:root {
+  color-scheme: light;
+
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --surface-3:   #eae8e3;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --border-lg:   rgba(15,23,42,.22);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+  --accent-soft: rgba(200,169,110,.15);
+  --accent-ring: rgba(200,169,110,.35);
+
+  /* Categorías */
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;  /* Ámbito y competencia */
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;  /* Solicitud e iniciación */
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;  /* Tramitación y resolución */
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;  /* Celebración y remate */
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;  /* Efectos y adjudicación */
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;  /* General / conexiones */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.06);
+  --shadow-md: 0 4px 6px -1px rgba(15,23,42,.07), 0 2px 4px -1px rgba(15,23,42,.04);
+  --shadow-lg: 0 10px 20px -5px rgba(15,23,42,.10), 0 4px 8px -3px rgba(15,23,42,.05);
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-ui:      'Outfit', system-ui, -apple-system, sans-serif;
+  --transition:      180ms cubic-bezier(.4,0,.2,1);
+  --transition-fast: 120ms cubic-bezier(.4,0,.2,1);
+}
+
+/* ================================================
+   MÓDULO 3 — RESET CSS PROFESIONAL
+   ================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6,
+p, ul, ol, figure, blockquote {
+  margin: 0;
+}
+
+ul, ol { padding: 0; list-style: none; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-1);
+  background: var(--bg);
+}
+
+img, svg, video { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  line-height: 1.2;
+  text-align: inherit;
+}
+button:disabled { cursor: not-allowed; opacity: .5; }
+
+input, select, textarea {
+  font: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-md);
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--border-lg); }
+
+::selection { background: var(--accent-soft); color: var(--text-1); }
+
+/* ================================================
+   MÓDULO 6 — CABECERA (site-header)
+   ================================================ */
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem 1.75rem;
+}
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.header-breadcrumb { 
+       font-size: 12px; 
+       font-weight: 500; 
+       letter-spacing: .06em; 
+       text-transform: uppercase; 
+       color: var(--accent); 
+       margin-bottom: .5rem; 
+     } 
+.header-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: .5rem;
+}
+.header-subtitle{font-size:14px;color:rgba(248,245,237,.65);margin-bottom:1rem;line-height:1.5} 
+.header-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.header-tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(200,169,110,.15);
+  border: 1px solid rgba(200,169,110,.3);
+  color: var(--accent);
+}
+.header-actions {
+  margin-left: auto;
+}
+.btn-ghost {
+  border: 1px solid rgba(248,245,237,.15);
+  color: rgba(248,245,237,.7);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  transition: var(--transition);
+}
+.btn-ghost:hover {
+  background: rgba(248,245,237,.08);
+  color: #fff;
+}
+
+/* ================================================
+   MÓDULO 7 — BARRA DE ESTADÍSTICAS (stats-bar)
+   ================================================ */
+.stats-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.stats-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  padding: 1rem 1.25rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: 0; }
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-1);
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: .15rem;
+}
+@media (max-width: 640px) {
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ================================================
+   MÓDULO 8 — BARRA DE CONTROLES STICKY (controls-bar)
+   ================================================ */
+.controls-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  backdrop-filter: saturate(180%) blur(8px);
+  box-shadow: 0 1px 0 var(--border), 0 2px 8px rgba(15,23,42,.04);
+  padding: .65rem 1.5rem;
+}
+.controls-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+}
+.search-wrap svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--text-3);
+}
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.search-input:hover { border-color: var(--border-lg); }
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+  outline: none;
+}
+
+.filter-pills {
+  display: flex;
+  gap: .35rem;
+  flex-wrap: wrap;
+}
+.pill {
+  background: transparent;
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.pill:hover {
+  background: var(--surface-2);
+  border-color: var(--border-lg);
+  color: var(--text-1);
+}
+.pill.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.pill[data-cat="c1"].active { background: var(--c1); border-color: var(--c1); color: #fff; }
+.pill[data-cat="c2"].active { background: var(--c2); border-color: var(--c2); color: #fff; }
+.pill[data-cat="c3"].active { background: var(--c3); border-color: var(--c3); color: #fff; }
+.pill[data-cat="c4"].active { background: var(--c4); border-color: var(--c4); color: #fff; }
+.pill[data-cat="c5"].active { background: var(--c5); border-color: var(--c5); color: #fff; }
+.pill[data-cat="c6"].active { background: var(--c6); border-color: var(--c6); color: #fff; }
+
+.ctrl-actions {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-left: auto;
+}
+.btn-ctrl {
+  background: var(--surface-2);
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.btn-ctrl:hover {
+  background: var(--surface-3);
+  color: var(--text-1);
+}
+.btn-ctrl:active {
+  transform: translateY(1px);
+}
+
+.zoom-cluster {
+  display: flex;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.btn-zoom {
+  width: 28px;
+  height: 28px;
+  background: var(--surface);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+}
+.btn-zoom:hover { background: var(--surface-2); }
+.btn-zoom:disabled { opacity: .4; cursor: not-allowed; }
+.btn-zoom + .btn-zoom,
+.zoom-label + .btn-zoom {
+  border-left: 1px solid var(--border);
+}
+.zoom-label {
+  min-width: 42px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .ctrl-actions { display: none; }
+}
+
+/* ================================================
+   MÓDULO 9 — TARJETAS DE ARTÍCULOS (map-card)
+   ================================================ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1rem;
+}
+@media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+.map-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--c6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.map-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-md);
+}
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+.map-card[data-cat="c5"] { border-left-color: var(--c5); }
+.map-card[data-cat="c6"] { border-left-color: var(--c6); }
+
+.map-card.hidden { display: none; }
+
+.card-top { padding: 1rem 1.1rem .85rem; }
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  flex-wrap: wrap;
+  margin-bottom: .55rem;
+}
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-1);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: .3rem;
+}
+.card-subtitle {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* Badges */
+.art-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--c6bd);
+  background: var(--c6bg);
+  color: var(--c6);
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+.map-card[data-cat="c5"] .art-badge { background: var(--c5bg); color: var(--c5); border-color: var(--c5bd); }
+
+.status-tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .02em;
+}
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+/* Contadores */
+.card-counters {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  padding: 0 1.1rem .9rem;
+  font-size: 11px;
+  color: var(--text-3);
+}
+.counter-badge {
+  background: var(--surface-2);
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+}
+.counter-badge strong {
+  color: var(--text-1);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Botón toggle */
+.card-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .65rem 1.1rem;
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.card-toggle-btn:hover {
+  background: var(--surface-3);
+  color: var(--text-1);
+}
+.card-toggle-btn:active {
+  background: var(--border);
+}
+.card-toggle-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.toggle-label { flex: 1; text-align: left; }
+
+.toggle-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border-md);
+  color: var(--text-2);
+  font-size: 10px;
+  transition: transform var(--transition), background var(--transition-fast),
+              color var(--transition-fast), border-color var(--transition-fast);
+}
+.card-toggle-btn:hover .toggle-icon {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+.map-card.expanded .toggle-icon {
+  transform: rotate(180deg);
+  background: var(--ink);
+  color: var(--surface);
+  border-color: var(--ink);
+}
+
+/* Cuerpo expandible */
+.card-body {
+  display: none;
+  padding: 1rem 1.1rem 1.1rem;
+  background: #fafaf9;
+  border-top: 1px solid var(--border);
+}
+.map-card.expanded .card-body { display: block; }
+
+/* Secciones internas */
+.inner-section + .inner-section { margin-top: 1rem; }
+.inner-heading {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: .45rem;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-1);
+}
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--c6);
+  flex-shrink: 0;
+}
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.map-card[data-cat="c5"] .dot { background: var(--c5); }
+
+/* Referencias al pie */
+.card-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  padding: .8rem 1.1rem;
+  background: #fafaf9;
+  border-top: 1px solid var(--border);
+}
+.ref-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--surface-2);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  transition: background var(--transition-fast);
+}
+.ref-tag:hover { background: var(--surface-3); }
+
+/* ================================================
+   MÓDULO 10 — CABECERA DE SECCIÓN (section-heading)
+   ================================================ */
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  max-width: 1400px;
+  margin: 1.5rem auto .5rem;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+.section-heading-text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+.section-heading-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  background: var(--surface-2);
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: .02em;
+}
+.section-toggle-btn {
+  width: 28px; height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border-md);
+  border-radius: 50%;
+  color: var(--text-2);
+  font-size: 11px;
+  transition: var(--transition-fast);
+}
+.section-heading:hover .section-toggle-btn {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+.section-divider {
+  max-width: 1400px;
+  margin: 0 auto 1rem;
+  border: 0;
+  height: 1px;
+  background: var(--border);
+}
+.section-body.collapsed { display: none; }
+
+/* ================================================
+   MÓDULO 11 — SECCIÓN DE PLAZOS (tabla)
+   ================================================ */
+.table-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.timeline-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.timeline-table th {
+  background: var(--surface-2);
+  text-align: left;
+  padding: .85rem 1rem;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+.timeline-table td {
+  padding: .7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-1);
+  vertical-align: top;
+}
+.timeline-table tbody tr:last-child td { border-bottom: 0; }
+.timeline-table tbody tr { transition: background var(--transition-fast); }
+.timeline-table tbody tr:hover { background: var(--surface-2); }
+
+.plazo-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ================================================
+   MÓDULO 12 — SECCIÓN DE PARTICIPANTES Y ACTORES
+   ================================================ */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+
+.participant-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.participant-col-head {
+  padding: .7rem 1rem;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.phead-c5 { background: var(--c5); }
+.phead-c6 { background: var(--c6); }
+
+.participant-col ul { padding: .5rem .25rem; }
+.participant-col li {
+  font-size: 12.5px;
+  color: var(--text-2);
+  padding: .4rem .75rem;
+  border-bottom: 1px solid var(--border);
+}
+.participant-col li:last-child { border-bottom: 0; }
+.participant-note {
+  font-size: 11px;
+  color: var(--text-3);
+  font-style: italic;
+}
+
+/* ================================================
+   MÓDULO 13 — SECCIÓN DE ECOSISTEMA NORMATIVO
+   ================================================ */
+.norm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (max-width: 900px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+
+.norm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.norm-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.norm-law {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-3);
+  font-weight: 600;
+}
+.norm-title {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-1);
+  line-height: 1.4;
+}
+.norm-arts {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+.norm-tag {
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .02em;
+}
+
+/* ================================================
+   MÓDULO 14 — ELEMENTO «SIN RESULTADOS»
+   ================================================ */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-3);
+  font-size: 14px;
+  display: none;
+}
+
+/* ================================================
+   MÓDULO 15 — PIE DE PÁGINA: LEYENDA DE COLORES
+   ================================================ */
+.legend-footer {
+  background: var(--header-bg);
+  color: var(--header-text);
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+}
+.legend-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.legend-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.legend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  font-size: 13px;
+  color: rgba(248,245,237,.85);
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+.legend-swatch {
+  width: 12px; height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.legend-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(248,245,237,.12);
+}
+.legend-copy {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(248,245,237,.08);
+  font-size: 11px;
+  color: rgba(248,245,237,.35);
+}
+
+/* ================================================
+   MÓDULO 16 — CSS DE IMPRESIÓN
+   ================================================ */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body   { display: block !important; }
+  .inner-body  { display: block !important; }
+  .section-body{ display: block !important; }
+  .map-card    { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; transform: none !important; }
+  .map-card:hover { transform: none !important; box-shadow: none !important; }
+  body         { background: #fff; }
+}
+
+/* ================================================
+   MÓDULO 17 — CSS DE inner-list
+   ================================================ */
+.inner-list li {
+  position: relative;
+  padding-left: .9rem;
+  margin-bottom: .3rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.inner-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-3);
+}
+.inner-list li strong { color: var(--text-1); font-weight: 600; }
+
+/* ================================================
+   MÓDULO 18 — ACCESIBILIDAD: prefers-reduced-motion
+   ================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .map-card:hover { transform: none; }
+  .norm-card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================================================
+     MÓDULO 6 — CABECERA
+     ================================================ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO VII</div>
+    <h1 class="header-title">De los expedientes de subastas voluntarias</h1>
+    <p class="header-subtitle">Artículos 108 a 111 LJV</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015, de 2 de julio</span>
+      <span class="header-tag">Artículos 108–111</span>
+      <span class="header-tag">Jurisdicción Voluntaria</span>
+      <span class="header-tag">Subasta electrónica</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================================================
+     MÓDULO 7 — BARRA DE ESTADÍSTICAS
+     ================================================ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">4</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">12+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">9+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">3</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     MÓDULO 8 — BARRA DE CONTROLES STICKY
+     ================================================ -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…">
+    </div>
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Ámbito y competencia</button>
+      <button class="pill" data-cat="c2">Solicitud</button>
+      <button class="pill" data-cat="c3">Tramitación</button>
+      <button class="pill" data-cat="c4">Celebración y remate</button>
+      <button class="pill" data-cat="c5">Efectos y adjudicación</button>
+    </div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     CONTENIDO PRINCIPAL
+     ================================================ -->
+<main class="page-main">
+
+  <!-- Sección: Artículos principales -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-articulos">
+      <span class="section-heading-text">Artículos del Título VII</span>
+      <span class="section-heading-count">4 artículos</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9650;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-articulos">
+      <div class="card-grid">
+
+        <!-- ==========================================
+             ARTÍCULO 108 — Ámbito de aplicación
+             ========================================== -->
+        <article class="map-card" data-cat="c1"
+          data-text="ámbito aplicación enajenación subasta bienes derechos instancia interesado procedimiento apremio artículos 643 lec ejecutiva voluntaria comunidad hereditaria menores discapacidad societario">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 108</span>
+              <span class="status-tag tag-info">Ámbito</span>
+            </div>
+            <h2 class="card-title">Ámbito de aplicación</h2>
+            <p class="card-subtitle">Se aplicarán las disposiciones de este título siempre que deba procederse, fuera de un procedimiento de apremio, a la enajenación en subasta de bienes o derechos determinados, a instancia del propio interesado.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>4</strong> supuestos típicos</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> normas conexas</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Elementos definidores del ámbito
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Presupuesto negativo:</strong> que la subasta se celebre fuera de un procedimiento de apremio, lo que excluye las subastas ejecutivas reguladas en los artículos 643 y siguientes de la Ley de Enjuiciamiento Civil.</li>
+                  <li><strong>Objeto:</strong> enajenación en subasta de bienes o derechos determinados, ya sean muebles, inmuebles, derechos reales o derechos de crédito susceptibles de tráfico jurídico.</li>
+                  <li><strong>Iniciativa:</strong> a instancia del propio interesado, esto es, del titular o de quien ostente poder de disposición sobre el bien o derecho.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Supuestos típicos de aplicación
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Comunidad hereditaria o de bienes:</strong> venta de bienes pertenecientes a una comunidad hereditaria o a una comunidad de bienes que decidan liquidarse por subasta.</li>
+                  <li><strong>Liquidación de patrimonios comunes:</strong> por ejemplo, tras disolución de régimen económico matrimonial, cuando los cotitulares optan por esta vía.</li>
+                  <li><strong>Bienes de menores o personas con discapacidad:</strong> cuando una norma sustantiva o una resolución previa exija o recomiende la subasta como mecanismo de garantía del mejor precio.</li>
+                  <li><strong>Contextos societarios, fundacionales o asociativos:</strong> ventas voluntarias donde los estatutos o acuerdos impongan subasta pública.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">Arts. 643 y ss. LEC</span>
+            <span class="ref-tag">Ley 15/2015, art. 108</span>
+          </div>
+        </article>
+
+        <!-- ==========================================
+             ARTÍCULO 109 — Competencia y postulación
+             ========================================== -->
+        <article class="map-card" data-cat="c1"
+          data-text="competencia territorial postulación juzgado primera instancia domicilio titular bienes inmuebles forum rei sitae abogado procurador no preceptivo artículo 3 ley 15/2015">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 109</span>
+              <span class="status-tag tag-info">Competencia</span>
+            </div>
+            <h2 class="card-title">Competencia y postulación</h2>
+            <p class="card-subtitle">Regula el fuero territorial aplicable y la regla de no preceptividad de Abogado y Procurador en este expediente.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>2</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> normas conexas</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Competencia territorial (apartado 1)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Regla general:</strong> será competente el Juzgado de Primera Instancia que corresponda al domicilio del titular.</li>
+                  <li><strong>Pluralidad de titulares:</strong> si fueran varios titulares, el correspondiente a cualquiera de ellos, a elección del solicitante.</li>
+                  <li><strong>Bienes inmuebles:</strong> será competente el del lugar donde éstos radiquen (fuero especial imperativo, coherente con el principio forum rei sitae).</li>
+                  <li><strong>Competencia objetiva:</strong> recae siempre en los Juzgados de Primera Instancia, no en los Juzgados de lo Mercantil, aun cuando el titular fuera comerciante o sociedad, salvo previsión legal específica.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Postulación (apartado 2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>No preceptividad:</strong> para la actuación en este expediente no será preceptiva la intervención de Abogado y Procurador.</li>
+                  <li><strong>Fundamento:</strong> esta exención responde al principio general de la jurisdicción voluntaria (artículo 3 de la Ley 15/2015), que facilita el acceso directo del ciudadano al órgano judicial salvo cuando la ley expresamente lo exija.</li>
+                  <li><strong>Intervención voluntaria:</strong> el interesado puede, no obstante, valerse voluntariamente de dichos profesionales si lo estima oportuno, asumiendo entonces sus honorarios.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">Art. 3 Ley 15/2015</span>
+            <span class="ref-tag">Ley 15/2015, art. 109</span>
+          </div>
+        </article>
+
+        <!-- ==========================================
+             ARTÍCULO 110 — Solicitud
+             ========================================== -->
+        <article class="map-card" data-cat="c2"
+          data-text="solicitud iniciación expediente capacidad legal poder disposición certificación registral dominio cargas pliego condiciones particulares valoración arrendatarios ocupantes artículo 661 lec venta persona entidad especializada artículo 641 lec">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 110</span>
+              <span class="status-tag tag-warn">Solicitud</span>
+            </div>
+            <h2 class="card-title">Solicitud</h2>
+            <p class="card-subtitle">Contenido, documentación y modalidades especiales de la solicitud de iniciación del expediente de subasta voluntaria.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>3</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>2</strong> normas conexas</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Contenido y documentación de la solicitud (apartado 1)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Solicitud de iniciación:</strong> será necesaria solicitud con la identificación y estado del bien o derecho, acompañada de los documentos siguientes:</li>
+                  <li><strong>Documento a):</strong> los que permitan acreditar la capacidad legal para contratar del solicitante (por ejemplo, DNI, escrituras societarias, poderes, autorizaciones tutelares o judiciales cuando proceda).</li>
+                  <li><strong>Documento b):</strong> los que acrediten su poder de disposición sobre el objeto o derecho de la subasta. Cuando se trate de bienes o derechos registrables, se acompañará certificación registral de dominio y cargas.</li>
+                  <li><strong>Documento c):</strong> el pliego de condiciones particulares con arreglo a las cuales haya de celebrarse la subasta y en donde se recogerá la valoración de los bienes o derechos a subastar.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Contenido típico del pliego de condiciones particulares
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Valoración:</strong> tipo de salida del bien o derecho.</li>
+                  <li><strong>Tipo mínimo:</strong> por debajo del cual el solicitante no aceptará el remate.</li>
+                  <li><strong>Reserva:</strong> en su caso, del derecho a aprobar o rechazar el remate.</li>
+                  <li><strong>Consignación:</strong> reglas sobre consignación o depósito previo de los licitadores.</li>
+                  <li><strong>Pago:</strong> condiciones de pago del precio (plazo, forma, consecuencias del impago).</li>
+                  <li><strong>Gastos e impuestos:</strong> a cargo del adjudicatario.</li>
+                  <li><strong>Cargas:</strong> cualesquiera cargas, servidumbres, gravámenes o situaciones posesorias subsistentes.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Arrendatarios u ocupantes (apartado 2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Identificación obligatoria:</strong> en caso de existir arrendatarios u ocupantes del inmueble, el solicitante deberá identificarlos en su solicitud inicial.</li>
+                  <li><strong>Remisión al artículo 661 LEC:</strong> procediéndose en la forma prescrita en el artículo 661 de la Ley de Enjuiciamiento Civil, que regula las comunicaciones al arrendatario y a los ocupantes de hecho, así como la posibilidad de declarar su derecho a permanecer o no en el inmueble tras la enajenación.</li>
+                  <li><strong>Consecuencia de la omisión:</strong> puede generar indefensión a los ocupantes y eventual nulidad de actuaciones, además de responsabilidad del solicitante frente al adjudicatario por vicios ocultos o cargas ocultas.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Venta por persona o entidad especializada (apartado 3)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Petición:</strong> en la solicitud podrá pedirse al Secretario judicial que acuerde la venta del bien o derecho por persona o entidad especializada.</li>
+                  <li><strong>Resolución:</strong> de estimarse procedente, el Secretario judicial acordará dicha venta con sujeción a lo establecido en el artículo 641 de la Ley de Enjuiciamiento Civil en cuanto sea compatible con las disposiciones de este Título.</li>
+                  <li><strong>Artículo 641 LEC:</strong> prevé, entre otros extremos, el recurso a entidades especializadas públicas o privadas, previa prestación de caución, con un régimen de precio mínimo y plazos de realización específicos.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">Art. 661 LEC</span>
+            <span class="ref-tag">Art. 641 LEC</span>
+            <span class="ref-tag">Ley 15/2015, art. 110</span>
+          </div>
+        </article>
+
+        <!-- ==========================================
+             ARTÍCULO 111 — Tramitación
+             ========================================== -->
+        <article class="map-card" data-cat="c3"
+          data-text="tramitación registro público concursal resolución celebración subasta decreto certificación registral nota marginal caducidad seis meses celebración electrónica portal subastas aprobación remate sobreseimiento adjudicación decreto testimonio título inscribible tres días secretario judicial letrado administración justicia">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 111</span>
+              <span class="status-tag tag-alert">Tramitación</span>
+            </div>
+            <h2 class="card-title">Tramitación</h2>
+            <p class="card-subtitle">Procedimiento completo: consulta concursal, resolución, certificación registral, celebración electrónica, aprobación del remate, sobreseimiento y decreto de adjudicación.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>8</strong> apartados</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>6</strong> normas conexas</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)" aria-expanded="false">
+            <span class="toggle-label">Ver contenido completo</span>
+            <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Consulta previa al Registro Público Concursal (apartado 1)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Consulta obligatoria:</strong> el Secretario judicial, antes de resolver sobre la solicitud, consultará el Registro Público Concursal a los efectos previstos en la legislación especial (hoy, Texto Refundido de la Ley Concursal aprobado por Real Decreto Legislativo 1/2020).</li>
+                  <li><strong>Finalidad:</strong> comprobar que el titular no se halla en situación de concurso o preconcurso que pudiera afectar a la libre disposición del bien y, en su caso, a la competencia del juez del concurso respecto de la enajenación.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Resolución sobre la celebración de la subasta (apartado 2)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Decreto motivado:</strong> a la vista de la documentación, el Secretario judicial resolverá lo que proceda sobre la celebración de la subasta.</li>
+                  <li><strong>Si acordare su procedencia:</strong> pondrá en conocimiento del Registro Público Concursal la existencia del expediente, con expresa especificación del número de identificación fiscal (NIF) del titular persona física o jurídica cuyo bien vaya a ser objeto de la subasta.</li>
+                  <li><strong>Notificación recíproca:</strong> el Registro Público Concursal notificará al Juzgado que esté conociendo del expediente la práctica de cualquier asiento que se lleve a cabo asociado al NIF notificado, a los efectos previstos en la legislación concursal (suspensión, paralización o remisión al juez del concurso).</li>
+                  <li><strong>Cierre informativo:</strong> el Secretario judicial pondrá en conocimiento del Registro Público Concursal la finalización del expediente cuando la misma se produzca.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Certificación registral y nota marginal (apartado 3)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Solicitud de certificación:</strong> acordada su celebración, si se tratare de la subasta de un bien inmueble o derecho real inscrito en el Registro de la Propiedad o de bienes muebles sujetos a un régimen de publicidad registral similar, el Secretario judicial solicitará por procedimientos electrónicos certificación registral de dominio y cargas.</li>
+                  <li><strong>Información continuada:</strong> el Registrador de la propiedad expedirá la certificación con información continuada por igual medio y hará constar por nota al margen esta circunstancia.</li>
+                  <li><strong>Efecto de la nota marginal:</strong> indicar la situación de venta en subasta del bien o derecho frente a terceros, con valor de publicidad registral.</li>
+                  <li><strong>Plazo de caducidad:</strong> caducará a los seis meses de su fecha, salvo que con anterioridad el Secretario judicial notifique al Registrador el cierre del expediente o su suspensión. En el caso de suspensión, el plazo se computará desde que el Secretario judicial notifique su reanudación.</li>
+                  <li><strong>Deber de notificación sobrevenida del Registrador:</strong> notificará, inmediatamente y de forma telemática, al Secretario judicial y al Portal de Subastas el hecho de haberse presentado otro u otros títulos que afecten o modifiquen la información inicial (por ejemplo, nuevas cargas, anotaciones de embargo, transmisiones o demandas).</li>
+                  <li><strong>Actualización inmediata del Portal:</strong> el Portal de Subastas recogerá la información proporcionada por el Registro de modo inmediato, garantizando que los potenciales postores liciten con información actualizada.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Forma de celebración de la subasta (apartado 4)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Electrónica obligatoria:</strong> la subasta se llevará a cabo, en todo caso, de forma electrónica en el Portal de Subastas de la Agencia Estatal Boletín Oficial del Estado.</li>
+                  <li><strong>Responsabilidad:</strong> bajo la responsabilidad del Secretario judicial, que actúa como director del procedimiento y garante de su legalidad.</li>
+                  <li><strong>Aplicación supletoria de la LEC:</strong> serán de aplicación las disposiciones de la Ley de Enjuiciamiento Civil al respecto (singularmente los artículos 644 a 680 LEC para inmuebles y 643 a 654 LEC para muebles, así como el artículo 648 LEC sobre subasta electrónica), en cuanto sean compatibles con lo previsto en este Título.</li>
+                  <li><strong>Finalidad de la electronificación:</strong> impuesta desde la reforma operada por la Ley 19/2015, de 13 de julio, busca maximizar la concurrencia, la transparencia y la obtención del mejor precio posible.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Publicidad y celebración (apartado 5)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Régimen de publicidad:</strong> la publicidad y celebración de la subasta se ajustará a lo establecido en la Ley de Enjuiciamiento Civil en todo aquello que no esté previsto en el pliego de condiciones particulares, operando éste como lex specialis convenida por el interesado y aprobada judicialmente.</li>
+                  <li><strong>Edictos:</strong> en los edictos se expresará el pliego de condiciones, de modo que todo potencial postor pueda conocer íntegramente las reglas del juego antes de pujar.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Aprobación del remate (apartado 6)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Decreto del Secretario judicial:</strong> terminada la subasta, el Secretario judicial, mediante decreto, aprobará el remate en favor del único o mejor postor, siempre y cuando cubra el tipo mínimo que hubiera fijado el solicitante, o el solicitante no se hubiere reservado expresamente el derecho a aprobarla.</li>
+                  <li><strong>Reserva de aprobación:</strong> si el solicitante se hubiera reservado ese derecho, se le dará vista del expediente para que en el término de tres días pida lo que le interese.</li>
+                  <li><strong>Oferta modificada:</strong> igual comunicación se le dará en el caso de que por algún licitador se hiciere la oferta de aceptar el remate modificando algunas de las condiciones (por ejemplo, variando plazo de pago, forma de garantía o asunción de cargas).</li>
+                  <li><strong>Aprobación:</strong> si el solicitante aprueba el remate o acepta la proposición, se resolverá teniendo por aprobado el remate en favor del licitador de la misma.</li>
+                  <li><strong>Decremento aprobatorio:</strong> pone fin a la fase de licitación y abre la fase de ejecución del remate (pago del precio, otorgamiento del título).</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Sobreseimiento del expediente (apartado 7)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Procedencia:</strong> cuando en la subasta no hubiere ningún postor, o el solicitante no hubiera aceptado la proposición, se sobreseerá el expediente.</li>
+                  <li><strong>Efecto:</strong> el sobreseimiento implica el archivo sin adjudicación, sin perjuicio de que el interesado pueda promover un nuevo expediente en el futuro con otro pliego de condiciones o con nueva valoración.</li>
+                  <li><strong>Comunicación:</strong> esta finalización deberá comunicarse al Registro Público Concursal y, en su caso, al Registrador de la Propiedad para la cancelación de la nota marginal.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading">
+                <span class="dot"></span>Decreto de adjudicación (apartado 8)
+              </div>
+              <div class="inner-body">
+                <ul class="inner-list">
+                  <li><strong>Contenido del decreto:</strong> la descripción del bien o derecho, la identificación de los intervinientes (solicitante, adjudicatario y, en su caso, representantes), expresión de las condiciones de la adjudicación (precio, forma de pago, cargas asumidas, etc.) y los demás requisitos necesarios para la inscripción registral (descripción catastral, referencia registral, manifestaciones fiscales, etc.).</li>
+                  <li><strong>Título inscribible:</strong> un testimonio de dicha resolución, que se entregará al adjudicatario, será título suficiente para la práctica de las inscripciones registrales que, en su caso, correspondan, equiparándose funcionalmente a una escritura pública de compraventa.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">Arts. 643–680 LEC</span>
+            <span class="ref-tag">Art. 648 LEC</span>
+            <span class="ref-tag">Art. 670 LEC</span>
+            <span class="ref-tag">RD Leg. 1/2020 (LC)</span>
+            <span class="ref-tag">Ley 19/2015</span>
+            <span class="ref-tag">Ley 15/2015, art. 111</span>
+          </div>
+        </article>
+
+        <!-- Mensaje sin resultados -->
+        <div class="no-results" id="no-results">
+          No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+        </div>
+
+      </div><!-- /card-grid -->
+    </div><!-- /section-body -->
+  </div><!-- /map-section -->
+
+  <!-- ================================================
+       MÓDULO 11 — SECCIÓN DE PLAZOS PROCESALES
+       ================================================ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Indice de plazos procesales</span>
+      <span class="section-heading-count">3 trámites</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Acto o trámite procesal</th>
+              <th>Plazo</th>
+              <th>Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Plazo para que el solicitante se pronuncie cuando se reservó el derecho a aprobar el remate o cuando un licitador proponga modificar condiciones</td>
+              <td><span class="plazo-badge plazo-days">3 días</span></td>
+              <td class="td-norm">Artículo 111.6 de la Ley 15/2015</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Plazo de caducidad de la nota marginal de expedición de la certificación registral (salvo cierre, suspensión o reanudación notificadas por el Secretario judicial)</td>
+              <td><span class="plazo-badge plazo-months">6 meses</span></td>
+              <td class="td-norm">Artículo 111.3 de la Ley 15/2015</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Notificación por el Registrador de títulos sobrevenidos y reflejo en el Portal de Subastas</td>
+              <td><span class="plazo-badge plazo-other">Inmediato (telemático)</span></td>
+              <td class="td-norm">Artículo 111.3 de la Ley 15/2015</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       MÓDULO 12 — SECCIÓN DE PARTICIPANTES Y ACTORES
+       ================================================ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">4 categorías · 9+ actores</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Órgano judicial</div>
+          <ul>
+            <li>Juzgado de Primera Instancia <span class="participant-note">(competencia objetiva y territorial)</span></li>
+            <li>Secretario judicial / Letrado de la Administración de Justicia <span class="participant-note">(director del expediente)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Partes e intervinientes</div>
+          <ul>
+            <li>Solicitante / interesado <span class="participant-note">(titular del bien o derecho)</span></li>
+            <li>Postores y licitadores <span class="participant-note">(pujan en el Portal de Subastas)</span></li>
+            <li>Adjudicatario <span class="participant-note">(destinatario del decreto y del testimonio inscribible)</span></li>
+            <li>Arrendatarios u ocupantes del inmueble <span class="participant-note">(destinatarios art. 661 LEC)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Registros</div>
+          <ul>
+            <li>Registrador de la Propiedad <span class="participant-note">(certificación, nota marginal, notificación sobrevenida)</span></li>
+            <li>Registro Público Concursal <span class="participant-note">(actor informativo clave)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Plataformas y auxiliares</div>
+          <ul>
+            <li>Portal de Subastas de la AEBOE <span class="participant-note">(celebración electrónica)</span></li>
+            <li>Persona o entidad especializada <span class="participant-note">(art. 641 LEC, eventual)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       MÓDULO 13 — SECCIÓN DE ECOSISTEMA NORMATIVO
+       ================================================ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">6 cuerpos normativos</span>
+      <button class="section-toggle-btn" aria-label="Alternar sección">&#9660;</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">Ley de Enjuiciamiento Civil</div>
+          <div class="norm-title">Régimen general de la subasta judicial</div>
+          <div class="norm-arts">
+            <strong>Artículo 641 LEC</strong> — Realización por persona o entidad especializada. Aplicable por remisión del artículo 110.3.<br>
+            <strong>Artículo 648 LEC</strong> — Subasta electrónica. Marco operativo del Portal de Subastas.<br>
+            <strong>Artículo 661 LEC</strong> — Comunicaciones a arrendatarios y ocupantes. Aplicable por remisión del artículo 110.2.<br>
+            <strong>Artículos 643 a 680 LEC</strong> — Régimen general de subasta judicial de muebles e inmuebles, aplicable en cuanto sea compatible.<br>
+            <strong>Artículo 670 LEC</strong> — Aprobación del remate de inmuebles. Modelo interpretativo para el apartado 6 del artículo 111.
+          </div>
+          <span class="norm-tag tag-info">Subasta judicial</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Legislación concursal</div>
+          <div class="norm-title">Texto Refundido de la Ley Concursal (RD Leg. 1/2020)</div>
+          <div class="norm-arts">
+            <strong>TRLC</strong> — Determina los efectos del concurso sobre la facultad de disposición del deudor y condiciona la viabilidad de la subasta voluntaria. El Registro Público Concursal es instrumento de información y coordinación obligatoria impuesto por los artículos 111.1 y 111.2.
+          </div>
+          <span class="norm-tag tag-alert">Concursal</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 15/2015 (interna)</div>
+          <div class="norm-title">Disposiciones generales de la jurisdicción voluntaria</div>
+          <div class="norm-arts">
+            <strong>Artículos 1 a 22</strong> — Reglas sobre competencia, postulación, tramitación, recursos (recurso de revisión frente a los decretos del Secretario judicial ante el juez), caducidad y archivo.<br>
+            <strong>Artículo 3</strong> — Fundamento de la no preceptividad de Abogado y Procurador.<br>
+            <strong>Artículo 17</strong> — Esquema general de tramitación supletorio.<br>
+            <strong>Artículo 20</strong> — Régimen de recursos aplicable.<br>
+            <strong>Título VI</strong> — Expedientes relativos a derechos reales. Antecedente sistemático del Título VII.
+          </div>
+          <span class="norm-tag tag-ok">Jurisdicción voluntaria</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Legislación hipotecaria y registral</div>
+          <div class="norm-title">Ley Hipotecaria y Reglamento Hipotecario</div>
+          <div class="norm-arts">
+            <strong>Ley Hipotecaria</strong> (Decreto de 8 de febrero de 1946) y <strong>Reglamento Hipotecario</strong>: regulan la certificación registral de dominio y cargas, la nota marginal, su caducidad y los asientos de inscripción del adjudicatario.<br>
+            <strong>Ley 14/2013, de 27 de septiembre</strong>: introdujo la comunicación electrónica entre juzgados y registros.<br>
+            <strong>Reglamento del Registro de Bienes Muebles</strong> y normativa de registros sectoriales (Buques, Aeronaves, Propiedad Intelectual e Industrial).
+          </div>
+          <span class="norm-tag tag-warn">Registral</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Normativa del Portal de Subastas</div>
+          <div class="norm-title">Subasta electrónica obligatoria</div>
+          <div class="norm-arts">
+            <strong>Ley 19/2015, de 13 de julio</strong> — De medidas de reforma administrativa en el ámbito de la Administración de Justicia y del Registro Civil. Consolidó la subasta electrónica.<br>
+            <strong>Orden HAP/1335/2012</strong> y disposiciones concordantes sobre el funcionamiento del Portal de Subastas de la AEBOE.
+          </div>
+          <span class="norm-tag tag-info">Portal electrónico</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley Orgánica 7/2015</div>
+          <div class="norm-title">Letrado de la Administración de Justicia</div>
+          <div class="norm-arts">
+            <strong>Ley Orgánica 7/2015</strong> — Denominación actual del Secretario judicial como Letrado de la Administración de Justicia, figura central en la tramitación del expediente de subasta voluntaria.
+          </div>
+          <span class="norm-tag tag-gray">Orgánica</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ================================================
+     MÓDULO 15 — PIE DE PÁGINA: LEYENDA DE COLORES
+     ================================================ -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Ámbito y competencia
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Solicitud e iniciación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Tramitación y resolución
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Celebración y remate
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c5)"></div>
+        Efectos y adjudicación
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título VII · Artículos 108–111 · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<!-- ================================================
+     MÓDULOS 19–24 — JAVASCRIPT
+     ================================================ -->
+<script>
+/* ================================================
+   MÓDULO 19 — JS 1: FILTRADO POR CATEGORÍA
+   ================================================ */
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+/* ================================================
+   MÓDULO 20 — JS 2: BÚSQUEDA EN TIEMPO REAL
+   ================================================ */
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+/* ================================================
+   MÓDULO 21 — JS 3: EXPANDIR/COLAPSAR TARJETAS
+   ================================================ */
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.setAttribute('aria-expanded', String(isExp));
+  const label = btn.querySelector('.toggle-label');
+  if (label) label.textContent = isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+/* ================================================
+   MÓDULO 22 — JS 4: EXPANDIR TODO / CONTRAER TODO
+   ================================================ */
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn');
+      const label = btn && btn.querySelector('.toggle-label');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      if (label) label.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn');
+    const label = btn && btn.querySelector('.toggle-label');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+    if (label) label.textContent = 'Ver contenido completo';
+  });
+});
+
+/* ================================================
+   MÓDULO 23 — JS 5: COLAPSO DE SECCIONES
+   ================================================ */
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    const btn = h.querySelector('.section-toggle-btn');
+    if (btn) btn.textContent = collapsed ? '\u25BC' : '\u25B2';
+  });
+});
+
+/* ================================================
+   MÓDULO 24 — JS 6: ZOOM CON ATAJOS DE TECLADO
+   ================================================ */
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+
+</body>
+</html>

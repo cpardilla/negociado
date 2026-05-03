@@ -1,0 +1,3458 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>
+            Del procedimiento para la división de la herencia (artículos 782 a
+            789 LEC)
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --transition-norm: 250ms ease;
+            }
+            html,
+            body {
+                height: 100%;
+                font-family: "Outfit", system-ui, sans-serif;
+                font-size: 15px;
+                color: var(--text);
+                background: var(--slate-bg);
+            }
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+            }
+            #hdr {
+                flex-shrink: 0;
+                height: 56px;
+                background: var(--navy);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+            }
+            #hdr .hdr-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+            /* Botón toggle sidebar (nuevo) */
+            .btn-toggle-sidebar {
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                padding: 4px 10px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+                color: #fff;
+                font-family: inherit;
+                font-size: 20px;
+                cursor: pointer;
+                transition: all 150ms ease;
+                white-space: nowrap;
+                line-height: 1;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+            .btn-toggle-sidebar:focus-visible {
+                outline: 2px solid var(--navy-lt);
+                outline-offset: 2px;
+            }
+            #hdr .hdr-left .seal {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.85);
+            }
+            #hdr .hdr-left .hdr-titles {
+                min-width: 0;
+            }
+            #hdr .hdr-left h1 {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--white);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #hdr .hdr-left .hdr-sub {
+                font-size: 11px;
+                color: var(--white);
+                opacity: 0.7;
+            }
+            #hdr .hdr-right {
+                display: flex;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: var(--white);
+                font-size: 13px;
+                padding: 6px 12px;
+                border-radius: 4px;
+                cursor: pointer;
+                white-space: nowrap;
+                font-family: inherit;
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+            .btn-ghost:disabled {
+                opacity: 0.4;
+                cursor: default;
+            }
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                background: var(--navy-mid);
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                gap: 2px;
+            }
+            #pbar::-webkit-scrollbar {
+                display: none;
+            }
+            .ph-item {
+                display: flex;
+                align-items: center;
+            }
+            .ph-lbl {
+                font-size: 12px;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.45);
+                padding: 5px 10px;
+                border-radius: 6px;
+                white-space: nowrap;
+                transition: all 0.15s;
+            }
+            .ph-lbl.active {
+                background: rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+            .ph-lbl.done {
+                color: rgba(255, 255, 255, 0.95);
+            }
+            .ph-sep {
+                color: rgba(255, 255, 255, 0.2);
+                font-size: 16px;
+                margin: 0 2px;
+                user-select: none;
+            }
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 34px;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                gap: 0;
+                overflow-x: auto;
+                scrollbar-width: none;
+                flex-wrap: wrap;
+                row-gap: 2px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+            #breadcrumb::-webkit-scrollbar {
+                display: none;
+            }
+            .bc-item {
+                font-size: 13px;
+                font-weight: 500;
+                white-space: nowrap;
+                padding: 0 6px;
+                color: var(--muted);
+                background: none;
+                border: none;
+                font-family: inherit;
+                cursor: pointer;
+            }
+            .bc-past {
+                cursor: pointer;
+                background: none;
+                border: none;
+                font-family: inherit;
+                font-size: 13px;
+                font-weight: 500;
+                color: var(--muted);
+                padding: 0 6px;
+            }
+            .bc-past:hover {
+                color: var(--navy-lt);
+                text-decoration: underline;
+            }
+            .bc-current {
+                font-weight: 600;
+                color: var(--navy);
+                cursor: default;
+            }
+            .bc-sep {
+                color: var(--muted);
+                font-size: 15px;
+                opacity: 0.5;
+                margin: 0 2px;
+                user-select: none;
+            }
+            #layout {
+                flex: 1;
+                overflow: hidden;
+                display: flex;
+                position: relative;
+            }
+            /* Sidebar con soporte para colapso (escritorio) y overlay (móvil) */
+            #sidebar {
+                width: 260px;
+                flex-shrink: 0;
+                background: var(--navy-mid);
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                min-height: 0;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+                transition:
+                    transform var(--transition-norm),
+                    width var(--transition-norm);
+                z-index: 80;
+            }
+            #sidebar.collapsed {
+                width: 0;
+                transform: translateX(-100%);
+                overflow: hidden;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 4px;
+            }
+            #sidebar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.25);
+                border-radius: 3px;
+            }
+            #sidebar::-webkit-scrollbar-thumb:hover {
+                background: rgba(255, 255, 255, 0.35);
+            }
+            #sb-tabs {
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                flex-shrink: 0;
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 8px 0;
+                font-size: 11px;
+                font-weight: 600;
+                font-family: "Outfit", sans-serif;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+                transition: all 0.15s;
+            }
+            .sb-tab.active {
+                color: #fff;
+                border-bottom: 2px solid var(--navy-lt);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.05);
+            }
+            #sb-map,
+            #sb-journey {
+                padding: 10px;
+                flex: 1;
+                min-height: 0;
+            }
+            #sb-journey {
+                display: none;
+            }
+            .sm-phase {
+                margin-bottom: 3px;
+            }
+            .sm-phase-hdr {
+                padding: 6px 8px;
+                cursor: pointer;
+                border-radius: 6px;
+                transition: background 0.15s;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                user-select: none;
+            }
+            .sm-phase-hdr:hover {
+                background: rgba(255, 255, 255, 0.07);
+            }
+            .sm-ph-name {
+                font-size: 10px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.75);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            .sm-ph-arr {
+                color: rgba(255, 255, 255, 0.38);
+                font-size: 11px;
+                flex-shrink: 0;
+            }
+            .sm-phase-body {
+                padding-left: 6px;
+            }
+            .sm-node {
+                font-size: 12px;
+                padding: 5px 8px;
+                border-radius: 5px;
+                margin-bottom: 2px;
+                border-left: 2px solid transparent;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                transition: all 0.15s;
+                line-height: 1.4;
+                color: rgba(255, 255, 255, 0.42);
+                cursor: pointer;
+            }
+            .sm-node:hover {
+                background: rgba(255, 255, 255, 0.12);
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .sm-node.sm-visited {
+                color: rgba(255, 255, 255, 0.85);
+                border-left-color: var(--green);
+            }
+            .sm-node.sm-current {
+                color: #fff;
+                border-left-color: var(--navy-lt);
+                background: rgba(255, 255, 255, 0.09);
+                font-weight: 600;
+            }
+            .sm-node.sm-end {
+                font-style: italic;
+                font-size: 11px;
+            }
+            .pi {
+                padding: 6px 8px;
+                border-radius: 6px;
+                margin-bottom: 4px;
+            }
+            .pi.past {
+                opacity: 0.7;
+            }
+            .pi.current {
+                background: rgba(255, 255, 255, 0.09);
+                border-left: 2px solid var(--navy-lt);
+            }
+            .pi-title {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.85);
+                font-weight: 500;
+                line-height: 1.4;
+            }
+            .pi-choice {
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.5);
+                margin-top: 3px;
+                padding-left: 4px;
+                border-left: 2px solid rgba(255, 255, 255, 0.2);
+                line-height: 1.4;
+            }
+            .sb-empty {
+                padding: 14px 8px;
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.3);
+                text-align: center;
+                line-height: 1.7;
+            }
+            .sb-foot {
+                padding: 10px 8px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                margin-top: 6px;
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.28);
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                line-height: 1.8;
+            }
+            /* Backdrop para móvil (nuevo) */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 140;
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+            .zoom-cluster {
+                display: flex;
+                align-items: center;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 4px;
+                overflow: hidden;
+                margin-right: 10px;
+            }
+            .btn-zoom {
+                background: none;
+                border: none;
+                color: var(--white);
+                font-size: 16px;
+                padding: 4px 10px;
+                cursor: pointer;
+                transition: background 0.15s;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .zoom-label {
+                font-size: 12px;
+                color: var(--white);
+                padding: 0 8px;
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                min-width: 45px;
+                text-align: center;
+            }
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 24px;
+                background: var(--slate-bg);
+            }
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .card {
+                background: var(--white);
+                border-radius: 12px;
+                border: 1px solid var(--bdr);
+                animation: fadeUp 0.22s ease;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .c-hdr {
+                padding: 18px 22px 14px;
+                border-bottom: 1px solid var(--bdr);
+            }
+            .c-hdr-meta {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                margin-bottom: 9px;
+            }
+            .act-badge {
+                font-size: 11px;
+                font-weight: 700;
+                padding: 3px 10px;
+                border-radius: 12px;
+                letter-spacing: 0.3px;
+                text-transform: uppercase;
+                flex-shrink: 0;
+            }
+            .act-laj {
+                background: var(--cyan-bg);
+                color: var(--cyan);
+            }
+            .act-juez {
+                background: var(--violet-bg);
+                color: var(--violet);
+            }
+            .act-ambos {
+                background: var(--slate-bg);
+                color: var(--slate);
+            }
+            .c-title {
+                font-size: 17px;
+                font-weight: 700;
+                color: var(--text);
+                line-height: 1.3;
+            }
+            .step-num {
+                font-size: 11px;
+                color: var(--muted);
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            .c-body {
+                padding: 18px 22px;
+            }
+            .cb-i {
+                font-size: 14px;
+                line-height: 1.7;
+                color: var(--text);
+                margin-bottom: 13px;
+            }
+            .cb-d {
+                background: var(--amber-bg);
+                border-left: 3px solid var(--amber);
+                padding: 9px 14px;
+                border-radius: 0 6px 6px 0;
+                font-size: 13px;
+                color: var(--amber);
+                margin-bottom: 10px;
+                font-weight: 600;
+                line-height: 1.5;
+            }
+            .cb-n {
+                background: var(--cyan-bg);
+                border-left: 3px solid var(--cyan);
+                padding: 9px 14px;
+                border-radius: 0 6px 6px 0;
+                font-size: 13px;
+                color: #0a7065;
+                margin-bottom: 10px;
+                line-height: 1.55;
+            }
+            .cb-w {
+                background: var(--red-bg);
+                border-left: 3px solid var(--red);
+                padding: 9px 14px;
+                border-radius: 0 6px 6px 0;
+                font-size: 13px;
+                color: var(--red);
+                margin-bottom: 10px;
+                font-weight: 500;
+                line-height: 1.55;
+            }
+            .cb-l {
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                padding: 7px 14px;
+                border-radius: 6px;
+                font-size: 12px;
+                color: var(--slate);
+                margin-bottom: 10px;
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                line-height: 1.65;
+            }
+            .cb-cl-title {
+                font-size: 13px;
+                font-weight: 700;
+                color: var(--text);
+                margin-bottom: 8px;
+                margin-top: 2px;
+            }
+            .cb-cl {
+                list-style: none;
+                margin-bottom: 12px;
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .cb-cl li {
+                font-size: 13px;
+                padding: 8px 12px 8px 36px;
+                position: relative;
+                border-bottom: 1px solid var(--bdr);
+                color: var(--text);
+                line-height: 1.5;
+            }
+            .cb-cl li:last-child {
+                border-bottom: none;
+            }
+            .cb-cl li::before {
+                content: "☐";
+                position: absolute;
+                left: 12px;
+                color: var(--muted);
+                font-size: 13px;
+            }
+            .dec-area {
+                padding: 0 22px 18px;
+            }
+            .dec-sep {
+                height: 1px;
+                background: var(--bdr);
+                margin-bottom: 16px;
+            }
+            .dec-q {
+                background: var(--slate-bg);
+                border-top: 3px solid var(--navy);
+                padding: 12px 15px;
+                border-radius: 0 0 8px 8px;
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--text);
+                margin-bottom: 13px;
+                line-height: 1.55;
+            }
+            .dec-opts {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 12px 15px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.15s;
+                border: 1.5px solid;
+                text-align: left;
+                font-family: "Outfit", sans-serif;
+                font-size: 13px;
+                font-weight: 500;
+                width: 100%;
+                line-height: 1.5;
+                background: var(--white);
+            }
+            .dec-letter {
+                width: 26px;
+                height: 26px;
+                min-width: 26px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: 700;
+                flex-shrink: 0;
+                margin-top: 1px;
+            }
+            .dec-btn.ok {
+                border-color: var(--green);
+                color: #0e5c2c;
+            }
+            .dec-btn.ok .dec-letter {
+                background: var(--green);
+                color: #fff;
+            }
+            .dec-btn.ok:hover {
+                background: var(--green-bg);
+            }
+            .dec-btn.bad {
+                border-color: var(--red);
+                color: var(--red);
+            }
+            .dec-btn.bad .dec-letter {
+                background: var(--red);
+                color: #fff;
+            }
+            .dec-btn.bad:hover {
+                background: var(--red-bg);
+            }
+            .dec-btn.warn {
+                border-color: var(--amber);
+                color: var(--amber);
+            }
+            .dec-btn.warn .dec-letter {
+                background: var(--amber);
+                color: #fff;
+            }
+            .dec-btn.warn:hover {
+                background: var(--amber-bg);
+            }
+            .dec-btn.neutral {
+                border-color: var(--cyan);
+                color: #0a7065;
+            }
+            .dec-btn.neutral .dec-letter {
+                background: var(--cyan);
+                color: #fff;
+            }
+            .dec-btn.neutral:hover {
+                background: var(--cyan-bg);
+            }
+            .c-nav {
+                padding: 13px 22px;
+                border-top: 1px solid var(--bdr);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .btn-back {
+                background: none;
+                border: 1px solid var(--bdr);
+                color: var(--muted);
+                font-family: "Outfit", sans-serif;
+                font-size: 13px;
+                font-weight: 500;
+                padding: 7px 16px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .btn-back:hover:not(:disabled) {
+                background: var(--slate-bg);
+                border-color: var(--slate);
+                color: var(--text);
+            }
+            .btn-back:disabled {
+                opacity: 0.32;
+                cursor: not-allowed;
+            }
+            .btn-next {
+                background: var(--navy-lt);
+                border: 1px solid var(--navy-lt);
+                color: #fff;
+                font-family: "Outfit", sans-serif;
+                font-size: 13px;
+                font-weight: 600;
+                padding: 7px 20px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .btn-next:hover {
+                background: var(--navy);
+                border-color: var(--navy);
+            }
+            .card.end-success {
+                border-top: 4px solid var(--green);
+            }
+            .card.end-error {
+                border-top: 4px solid var(--red);
+            }
+            .card.end-warning {
+                border-top: 4px solid var(--amber);
+            }
+            .card.end-neutral {
+                border-top: 4px solid var(--cyan);
+            }
+            .end-hero {
+                padding: 28px 22px 20px;
+                text-align: center;
+                border-bottom: 1px solid var(--bdr);
+            }
+            .end-icon {
+                font-size: 38px;
+                display: block;
+                margin-bottom: 10px;
+            }
+            .end-title {
+                font-size: 20px;
+                font-weight: 700;
+                margin-bottom: 6px;
+            }
+            .end-success .end-title {
+                color: var(--green);
+            }
+            .end-error .end-title {
+                color: var(--red);
+            }
+            .end-warning .end-title {
+                color: var(--amber);
+            }
+            .end-neutral .end-title {
+                color: var(--cyan);
+            }
+            .end-sub {
+                font-size: 14px;
+                color: var(--muted);
+                margin-bottom: 18px;
+            }
+            .end-btns {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            .summary-box {
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                padding: 14px 16px;
+                margin-top: 14px;
+            }
+            .summary-box h4 {
+                font-size: 11px;
+                font-weight: 700;
+                color: var(--muted);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 10px;
+            }
+            .sum-item {
+                font-size: 13px;
+                padding: 7px 0;
+                border-bottom: 1px solid var(--bdr);
+                display: flex;
+                gap: 10px;
+                align-items: flex-start;
+                line-height: 1.4;
+            }
+            .sum-item:last-child {
+                border-bottom: none;
+            }
+            .sum-n {
+                font-weight: 700;
+                color: var(--navy);
+                min-width: 22px;
+                font-size: 12px;
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                flex-shrink: 0;
+                padding-top: 1px;
+            }
+            .sum-t {
+                flex: 1;
+                color: var(--text);
+                font-weight: 500;
+            }
+            .sum-t.final {
+                font-weight: 700;
+            }
+            .sum-c {
+                font-size: 11px;
+                color: var(--muted);
+                margin-top: 3px;
+                padding-left: 4px;
+                border-left: 2px solid var(--bdr);
+                line-height: 1.4;
+            }
+            .acuerdo-callout {
+                margin: 0 22px 16px;
+                padding: 12px 14px;
+                border-radius: 8px;
+                border: 1px solid var(--amber);
+                background: var(--amber-bg);
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .acuerdo-callout:hover {
+                border-color: #d97706;
+                box-shadow: 0 1px 4px rgba(180, 83, 9, 0.12);
+            }
+            .acuerdo-title {
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--amber);
+                margin-bottom: 3px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+            .acuerdo-desc {
+                font-size: 12px;
+                color: #92400e;
+                line-height: 1.4;
+            }
+            #mapa-overlay {
+                flex: 1;
+                background: var(--slate-bg);
+                padding: 20px;
+                overflow-y: auto;
+                display: none;
+            }
+            .mapa-hdr {
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+                margin-bottom: 18px;
+            }
+            .mapa-hdr-text h2 {
+                font-size: 15px;
+                font-weight: 700;
+                color: var(--text);
+                margin-bottom: 3px;
+            }
+            .mapa-hdr-text p {
+                font-size: 12px;
+                color: var(--muted);
+            }
+            .mapa-legend {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                margin-bottom: 18px;
+                padding: 10px 14px;
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+            }
+            .leg-item {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 11px;
+                color: var(--muted);
+            }
+            .leg-sw {
+                width: 14px;
+                height: 14px;
+                border-radius: 3px;
+                flex-shrink: 0;
+            }
+            .mapa-scroll {
+                overflow-x: auto;
+                padding-bottom: 16px;
+            }
+            .mapa-grid {
+                display: flex;
+                gap: 10px;
+                align-items: flex-start;
+                width: max-content;
+            }
+            .mapa-col {
+                width: 220px;
+                flex-shrink: 0;
+            }
+            .mapa-col-hdr {
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: #fff;
+                padding: 6px 10px;
+                background: var(--navy-mid);
+                border-radius: 6px 6px 0 0;
+                text-align: center;
+            }
+            .mapa-node {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-left: 3px solid var(--bdr);
+                padding: 8px 10px;
+                font-size: 11px;
+                color: var(--text);
+                line-height: 1.4;
+                border-top: none;
+                cursor: pointer;
+                transition:
+                    box-shadow 0.15s,
+                    transform 0.1s;
+            }
+            .mapa-node:hover {
+                box-shadow: 0 2px 8px rgba(65, 105, 225, 0.18);
+                transform: translateY(-1px);
+                border-left-color: var(--navy-lt);
+            }
+            .jump-badge {
+                display: inline-block;
+                font-size: 10px;
+                font-weight: 700;
+                background: var(--violet-bg);
+                color: var(--violet);
+                border: 1px solid var(--violet);
+                border-radius: 10px;
+                padding: 2px 8px;
+                margin-left: 8px;
+                letter-spacing: 0.3px;
+                vertical-align: middle;
+            }
+            .mapa-node:first-of-type {
+                border-top: 1px solid var(--bdr);
+                margin-top: 0;
+            }
+            .mapa-node.mn-visited {
+                border-left-color: var(--green);
+                background: var(--green-bg);
+            }
+            .mapa-node.mn-current {
+                border-left-color: var(--navy-lt);
+                background: #eef2ff;
+                font-weight: 600;
+            }
+            .mapa-node.mn-end-success {
+                border-left-color: var(--green);
+            }
+            .mapa-node.mn-end-warning {
+                border-left-color: var(--amber);
+            }
+            .mapa-node.mn-end-error {
+                border-left-color: var(--red);
+            }
+            .mapa-node.mn-end-neutral {
+                border-left-color: var(--cyan);
+            }
+            .mn-title {
+                font-weight: 500;
+                color: var(--text);
+                margin-bottom: 3px;
+                line-height: 1.35;
+            }
+            .mn-actor {
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+            }
+            .mn-actor.laj {
+                color: var(--cyan);
+            }
+            .mn-actor.juez {
+                color: var(--violet);
+            }
+            .mn-actor.ambos {
+                color: var(--slate);
+            }
+            .mn-end-label {
+                font-size: 10px;
+                color: var(--muted);
+                font-style: italic;
+                margin-top: 2px;
+            }
+            .mn-opts {
+                margin-top: 5px;
+                border-top: 1px solid var(--bdr);
+                padding-top: 5px;
+            }
+            .mn-opt {
+                font-size: 10px;
+                color: var(--muted);
+                line-height: 1.35;
+                padding: 1px 0;
+                display: flex;
+                gap: 4px;
+            }
+            .mn-opt-a {
+                color: var(--navy-lt);
+                flex-shrink: 0;
+            }
+            /* Responsive: sustituimos el antiguo display:none por el sistema de overlay */
+            @media (max-width: 768px) {
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    transition: transform var(--transition-norm);
+                    width: 260px;
+                    display: flex !important;
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                #sidebar.collapsed {
+                    transform: translateX(-100%);
+                    width: 260px;
+                }
+                .sidebar-backdrop {
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 140;
+                    display: none;
+                }
+                .sidebar-backdrop.show {
+                    display: block;
+                }
+                #content {
+                    padding: 16px 20px;
+                }
+                .hdr-sub {
+                    display: none;
+                }
+            }
+            @media (max-width: 700px) {
+                /* Solo ajustes menores, el sidebar ya no se oculta con display:none */
+                .hdr-sub {
+                    display: none;
+                }
+                .mapa-cols {
+                    flex-direction: column;
+                }
+            }
+            @media print {
+                #hdr .h-right,
+                #sidebar,
+                #pbar,
+                #breadcrumb {
+                    display: none !important;
+                }
+                #app {
+                    height: auto;
+                    overflow: visible;
+                }
+                #layout {
+                    display: block;
+                    overflow: visible;
+                }
+                #content {
+                    overflow: visible;
+                    padding: 20px;
+                }
+                .card {
+                    break-inside: avoid;
+                    border: 1px solid #ccc;
+                    animation: none;
+                    max-width: 100%;
+                }
+                .btn-back,
+                .btn-next,
+                .dec-area,
+                .acuerdo-callout {
+                    display: none;
+                }
+                #mapa-overlay {
+                    display: block !important;
+                    height: auto;
+                    overflow: visible;
+                }
+                .mapa-grid {
+                    width: 100%;
+                    flex-wrap: wrap;
+                }
+                .mapa-col {
+                    width: auto;
+                    min-width: 180px;
+                    flex: 1;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <header id="hdr" style="height: 70px">
+                <div class="hdr-left">
+                    <!-- Botón toggle sidebar añadido -->
+                    <button
+                        class="btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                    >
+                        ☰
+                    </button>
+                    <div class="seal">⚖</div>
+                    <div class="hdr-titles">
+                        <div class="hdr-sub">
+                            LEY 1/2000, DE 7 DE ENERO, DE ENJUICIAMIENTO CIVIL ·
+                            LIBRO IV: PROCESOS ESPECIALES · TÍTULO II: DE LA
+                            DIVISIÓN JUDICIAL DE PATRIMONIOS · CAPÍTULO I: DE LA
+                            DIVISIÓN DE LA HERENCIA · SECCIÓN 1.ª
+                        </div>
+                        <h1>
+                            Del procedimiento para la división de la herencia
+                        </h1>
+                        <div class="hdr-sub" style="padding-top: 5px">
+                            Artículos 782 a 789 LEC
+                        </div>
+                    </div>
+                </div>
+                <div class="hdr-right">
+                    <div class="zoom-cluster">
+                        <button class="btn-zoom" id="btn-zoom-out">−</button>
+                        <span class="zoom-label" id="zoom-label">100%</span>
+                        <button class="btn-zoom" id="btn-zoom-in">+</button>
+                    </div>
+                    <button class="btn-ghost" onclick="toggleMapa()">
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn-ghost" onclick="dlGuia()">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn-ghost" onclick="restart()">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </header>
+            <div id="pbar"></div>
+            <div id="breadcrumb"></div>
+            <div id="layout">
+                <nav id="sidebar">
+                    <div id="sb-tabs">
+                        <button class="sb-tab active" onclick="sbTab('map')">
+                            Mapa
+                        </button>
+                        <button class="sb-tab" onclick="sbTab('journey')">
+                            Recorrido
+                        </button>
+                    </div>
+                    <div id="sb-map"></div>
+                    <div id="sb-journey" style="display: none"></div>
+                </nav>
+                <main id="content"></main>
+            </div>
+            <div id="mapa-overlay"></div>
+            <!-- Backdrop para móvil -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        </div>
+        <script>
+            const PHASES = [
+                "Presupuestos y Verificación",
+                "Solicitud y Admisión",
+                "Actuaciones Previas",
+                "Junta y Designación",
+                "Operaciones Divisorias",
+                "Aprobación y Oposición",
+                "Entrega y Cierre",
+            ];
+            const SB_FOOT = `<div class="sb-foot">LEC arts. 782–789<br>LO 1/2025 (MASC) art. 5<br>CC arts. 1051–1059<br>Art. 40 LEC · Art. 164 LEC<br>Art. 341 LEC · Arts. 791–796 LEC<br>Reglamento (UE) 650/2012</div>`;
+
+            const S = {
+                fin_acreedor: {
+                    ph: 0,
+                    t: "Solicitud inadmitida: falta de legitimación activa",
+                    ac: "laj",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "Los acreedores no están legitimados para instar la división judicial de la herencia (art. 782.3 LEC). Los legatarios de cosa específica tampoco tienen legitimación para pedir la partición. La solicitud no puede admitirse.",
+                        ],
+                        ["l", "Art. 782.3–5 LEC · Art. 881 CC"],
+                        [
+                            "n",
+                            "Derechos que conservan los acreedores: (a) art. 782.3: ejercitar acciones contra la herencia o los coherederos en el juicio declarativo correspondiente; (b) art. 782.4 (si tienen crédito reconocido o título ejecutivo): oponerse a la partición hasta ser pagados o afianzados; (c) art. 782.5 (acreedores del coheredero): intervenir a su costa en la partición para evitar fraude o perjuicio.",
+                        ],
+                        [
+                            "n",
+                            "Si el solicitante es un legatario de cosa específica, su derecho se satisface directamente con la entrega del bien legado una vez aprobada la partición (art. 881 CC).",
+                        ],
+                        ["l", "Art. 782.3–5 LEC"],
+                        [
+                            "n",
+                            "Derechos que conservan: (a) ejercitar acciones contra la herencia o los coherederos en juicio declarativo; (b) si tienen crédito reconocido o título ejecutivo, oponerse a la partición hasta ser pagados o afianzados (art. 782.4 LEC); (c) acreedores del coheredero: intervenir a su costa para evitar fraude (art. 782.5 LEC).",
+                        ],
+                    ],
+                },
+
+                fin_inhibicion: {
+                    ph: 0,
+                    t: "Falta de competencia territorial — Inhibición del Juzgado",
+                    ac: "laj",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "El Juzgado carece de competencia territorial para conocer de este procedimiento de división judicial. Debe inhibirse a favor del Juzgado competente, dando traslado a las partes para que en el plazo de cinco días aleguen lo que estimen conveniente (art. 48 LEC).",
+                        ],
+                        [
+                            "l",
+                            "Arts. 45-53 LEC: normas de competencia territorial. Art. 48 LEC: examen de oficio de la competencia. Art. 51 LEC: conflictos de competencia negativos y positivos.",
+                        ],
+                        [
+                            "n",
+                            "Procedimiento de inhibición: (1) El LAJ acuerda dar traslado a las partes por cinco días; (2) Con las alegaciones o sin ellas, se plantea la inhibición; (3) Si el otro Juzgado se declara competente, se remiten las actuaciones; (4) Si ambos se declaran incompetentes, se plantea conflicto negativo ante el TSJ (art. 53 LEC).",
+                        ],
+                        [
+                            "w",
+                            "La inhibitoria es la vía procedente en los procesos de división judicial, dado que se inician por solicitud y no por demanda. No obstante, las partes también pueden plantear declinatoria (art. 50 LEC), que no suspende el procedimiento principal.",
+                        ],
+                        ["l", "Arts. 45-53 LEC"],
+                        [
+                            "n",
+                            "Procedimiento: (1) Traslado a las partes por cinco días; (2) Planteamiento de la inhibición; (3) Si el otro Juzgado se declara competente, se remiten las actuaciones; (4) Si ambos se declaran incompetentes, conflicto negativo ante el TSJ (art. 53 LEC).",
+                        ],
+                    ],
+                },
+
+                fin_partidor_previo: {
+                    ph: 0,
+                    t: "Solicitud inadmitida: existe partidor o partición previa",
+                    ac: "laj",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "El procedimiento judicial no procede porque ya existe un comisario o contador-partidor designado, o el testador efectuó la partición directamente, o existe partición notarial en trámite.",
+                        ],
+                        [
+                            "l",
+                            "Art. 782.1 LEC · Arts. 1056–1058 CC · Arts. 66 bis/66 ter LN · Art. 92 LJV",
+                        ],
+                        [
+                            "n",
+                            "Supuestos de exclusión: (a) partición por el testador (art. 1056 CC); (b) contador-partidor testamentario (art. 1057 CC); (c) contador-partidor designado por los coherederos; (d) designado por el LAJ o Notario; (e) acuerdo unánime de todos los herederos mayores con libre administración (art. 1058 CC).",
+                        ],
+                        [
+                            "n",
+                            "Vías alternativas: partición notarial ante Notario, contador dativo notarial, mediación con eficacia ejecutiva, o arbitraje.",
+                        ],
+                    ],
+                },
+
+                fin_sin_masc: {
+                    ph: 0,
+                    t: "Solicitud inadmitida: requisito MASC no acreditado",
+                    ac: "laj",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "La solicitud no puede admitirse a trámite por no haberse acreditado el intento previo de MASC, requisito de procedibilidad insubsanable desde el 3 de abril de 2025 (LO 1/2025, art. 5).",
+                        ],
+                        [
+                            "l",
+                            "LO 1/2025 art. 5 · Art. 403.2 LEC · Art. 264.1.4.º LEC",
+                        ],
+                        [
+                            "w",
+                            "La omisión es insubsanable. Si la solicitud se presentó en el último momento del plazo de prescripción o caducidad, la inadmisión puede comportar la pérdida definitiva de la acción.",
+                        ],
+                        [
+                            "n",
+                            "Pasos a seguir: (a) intentar el MASC; (b) documentar el intento o formalizar declaración responsable del letrado; (c) presentar nueva solicitud acreditando el cumplimiento.",
+                        ],
+                    ],
+                },
+
+                p0_competencia: {
+                    ph: 0,
+                    t: "Verificación de la competencia territorial y objetiva",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El tribunal debe examinar de oficio su competencia en todo momento del procedimiento. Con carácter general, es competente el Juzgado de Primera Instancia del lugar del domicilio del causante al tiempo de su fallecimiento (art. 15.1 LEC).",
+                        ],
+                        [
+                            "l",
+                            "Art. 15 LEC (fuero general) · Art. 52 LEC (falta de domicilio en España) · Art. 45.2 LEC (examen de oficio) · Reglamento (UE) nº 650/2012 (sucesiones con elemento internacional: competencia del Estado miembro de residencia habitual del causante, art. 4).",
+                        ],
+                        [
+                            "n",
+                            "Competencia objetiva: corresponde al Juzgado de Primera Instancia (la cuantía —valor del caudal— casi siempre supera los 2.000 €, umbral de los Juzgados de Paz conforme al art. 85 LEC). Los Juzgados de Violencia sobre la Mujer NO son competentes.",
+                        ],
+                        [
+                            "n",
+                            "El LAJ debe verificar la competencia al inicio y puede inhibirse de oficio en cualquier momento. Las partes también pueden plantear declinatoria (art. 50 LEC) en los primeros cinco días desde la citación.",
+                        ],
+                        [
+                            "d",
+                            "Si el causante carece de domicilio en España, será competente el Juzgado del lugar de la mayor parte de los bienes (art. 52 LEC).",
+                        ],
+                        [
+                            "l",
+                            "Art. 45.2 LEC · Art. 52 LEC · Art. 15 LEC · Reglamento (UE) nº 650/2012",
+                        ],
+                        [
+                            "n",
+                            "Competencia objetiva: Juzgado de Primera Instancia. Los Juzgados de Violencia sobre la Mujer NO son competentes. En sucesiones con elementos internacionales dentro de la UE, son competentes los órganos del Estado miembro de residencia habitual del causante (art. 4 Reglamento 650/2012).",
+                        ],
+                    ],
+                    q: "¿Es este Juzgado territorialmente competente?",
+                    opts: [
+                        {
+                            t: "Sí — El domicilio del causante al fallecer se encuentra dentro de la demarcación (o se aplica otro fuero atribuyente)",
+                            l: "ok",
+                            n: "p0_documentacion",
+                        },
+                        {
+                            t: "No — El domicilio corresponde a otro Juzgado, o existen dudas razonables sobre la competencia territorial",
+                            l: "bad",
+                            n: "fin_inhibicion",
+                        },
+                    ],
+                },
+
+                p0_inicio: {
+                    ph: 0,
+                    t: "Verificación del requisito MASC (LO 1/2025)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Antes de admitir la solicitud, el LAJ verifica que se ha cumplido el requisito de procedibilidad obligatorio introducido por la LO 1/2025, de 2 de enero (en vigor desde el 3 de abril de 2025): el intento previo de un Medio Adecuado de Solución de Controversias.",
+                        ],
+                        [
+                            "l",
+                            "LO 1/2025 art. 5 · Art. 403.2 LEC · Art. 264.1.4.º LEC",
+                        ],
+                        [
+                            "n",
+                            "El MASC puede ser: mediación, conciliación, negociación directa, dictamen de experto independiente, oferta vinculante confidencial o derecho colaborativo. La presentación de la solicitud de MASC interrumpe la prescripción y suspende la caducidad. Si no hay acuerdo, la parte dispone de un año para acudir a la vía judicial.",
+                        ],
+                        [
+                            "w",
+                            "La omisión del intento de MASC es un defecto INSUBSANABLE. La inadmisión no es subsanable y, si la solicitud se presentó en el último momento del plazo, puede comportar la pérdida definitiva de la acción.",
+                        ],
+                    ],
+                    q: "¿Acredita el solicitante el intento previo de MASC?",
+                    opts: [
+                        {
+                            t: "Sí — Se acompaña documento acreditativo del MASC o declaración responsable del letrado, y no hay partidor previo ni partición testamentaria",
+                            l: "ok",
+                            n: "p0_legitimacion",
+                        },
+                        {
+                            t: "No — No se acredita el intento ni se aporta declaración responsable",
+                            l: "bad",
+                            n: "fin_sin_masc",
+                        },
+                        {
+                            t: "Sí, MASC acreditado, pero existe contador-partidor designado o el testador efectuó la partición",
+                            l: "bad",
+                            n: "fin_partidor_previo",
+                        },
+                    ],
+                },
+
+                p0_legitimacion: {
+                    ph: 0,
+                    t: "Verificación de la legitimación activa (art. 782.1 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ comprueba que quien solicita la división está legitimado. La acción de partición hereditaria es imprescriptible mientras dure la indivisión.",
+                        ],
+                        [
+                            "l",
+                            "Art. 782.1 y 782.3 LEC · Art. 1051 CC · Art. 1059 CC",
+                        ],
+                        [
+                            "n",
+                            "Legitimados: (a) cualquier coheredero, testamentario o ab intestato; (b) cualquier legatario de parte alícuota, esto es, el que ostenta una cuota abstracta del caudal, no un legado de cosa cierta.",
+                        ],
+                        [
+                            "n",
+                            "Supuestos especiales: (a) Coheredero bajo condición suspensiva (art. 1054 CC): no puede pedir la partición hasta que se cumpla la condición, pero sí pueden los demás; (b) Coherederos del premuerto (art. 1055 CC): si un coheredero muere antes de la partición dejando dos o más herederos, basta que uno pida, pero todos deben comparecer bajo una sola representación; (c) Personas con medidas de apoyo por discapacidad (Ley 8/2021): actuarán conforme a sus medidas de apoyo; (d) Ausentes: actuarán por medio de su defensor judicial.",
+                        ],
+                        [
+                            "w",
+                            "Los acreedores NO están legitimados para instar la división (art. 782.3 LEC). Sus acciones se ejercitan en el juicio declarativo correspondiente, sin que ello suspenda el procedimiento divisorio. Los legatarios de cosa específica tampoco tienen legitimación para pedir la partición, pues su derecho se satisface directamente con la entrega del bien legado una vez aprobada la partición (art. 881 CC).",
+                        ],
+                    ],
+                    q: "¿Quién insta la división?",
+                    opts: [
+                        {
+                            t: "Coheredero (testamentario o ab intestato) con libre disposición de bienes",
+                            l: "ok",
+                            n: "p0_partidor",
+                        },
+                        {
+                            t: "Legatario de parte alícuota (titular de cuota abstracta del caudal)",
+                            l: "ok",
+                            n: "p0_documentacion",
+                        },
+                        {
+                            t: "Acreedor de la herencia o de algún coheredero, o legatario de cosa específica",
+                            l: "bad",
+                            n: "fin_acreedor",
+                        },
+                    ],
+                },
+
+                p0_partidor: {
+                    ph: 0,
+                    t: "Verificación de inexistencia de partidor previo (art. 782.1 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El procedimiento es subsidiario. No procede cuando exista ya un comisario o contador-partidor designado para efectuar la partición, ni cuando el testador la haya realizado directamente.",
+                        ],
+                        [
+                            "l",
+                            "Art. 782.1 LEC · Art. 1056 CC · Art. 1057 CC · Art. 1058 CC",
+                        ],
+                        [
+                            "n",
+                            "Supuestos de exclusión: (a) partición por el testador (art. 1056 CC); (b) contador-partidor testamentario (art. 1057 CC); (c) contador-partidor designado por los coherederos; (d) designado por el LAJ o el Notario; (e) acuerdo unánime de todos los herederos mayores de edad con libre administración de sus bienes (art. 1058 CC).",
+                        ],
+                        [
+                            "n",
+                            "Alternativas si existe mecanismo previo: (1) Partición notarial (arts. 66 bis/66 ter LN): todos los herederos otorgan escritura pública ante Notario; (2) Contador dativo notarial (art. 92 LJV): los herederos que representen al menos el 50% solicitan el nombramiento de contador dativo; (3) Mediación (Ley 36/2006): el acuerdo alcanzado, elevado a escritura pública, tiene eficacia de título ejecutivo (art. 25); (4) Arbitraje (Ley 60/2003): el laudo tiene la misma eficacia que sentencia firme.",
+                        ],
+                    ],
+                    q: "¿Existe contador-partidor designado o el testador efectuó la partición?",
+                    opts: [
+                        {
+                            t: "No — No existe partidor designado ni partición previa",
+                            l: "ok",
+                            n: "p0_competencia",
+                        },
+                        {
+                            t: "Sí — Existe partidor previo, partición testamentaria, contador dativo notarial o partición notarial en trámite",
+                            l: "bad",
+                            n: "fin_partidor_previo",
+                        },
+                    ],
+                },
+
+                fin_inadmitida: {
+                    ph: 1,
+                    t: "Solicitud inadmitida — Defectos no subsanados",
+                    ac: "laj",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ dicta decreto inadmitiendo la solicitud de división judicial por no haberse subsanado los defectos documentales en el plazo concedido.",
+                        ],
+                        ["l", "Art. 403 LEC · Art. 451 LEC"],
+                        [
+                            "n",
+                            "Contra este decreto cabe recurso de reposición ante el propio Juzgado en el plazo de cinco días (art. 451 LEC), y subsidiariamente recurso de apelación.",
+                        ],
+                        [
+                            "n",
+                            "El solicitante puede presentar una nueva solicitud una vez disponga de la documentación completa, sin perjuicio de los plazos de prescripción que puedan ser aplicables.",
+                        ],
+                    ],
+                },
+
+                p0_admision: {
+                    ph: 1,
+                    t: "Admisión a trámite de la solicitud (art. 782 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ dicta decreto admitiendo a trámite la solicitud de división judicial de la herencia. A partir de este momento se inicia formalmente el procedimiento y se practican las primeras actuaciones.",
+                        ],
+                        [
+                            "d",
+                            "El decreto de admisión debe contener: (1) Identificación del solicitante y del causante; (2) Bienes objeto de la herencia según la documentación aportada; (3) Personas que deben ser citadas (herederos, legatarios, cónyuge viudo, MF si procede); (4) Acuerdo sobre medidas provisionales si se solicitan.",
+                        ],
+                        [
+                            "n",
+                            "El LAJ procede a identificar a todos los interesados que deben ser citados. Para ello, puede solicitar información al Registro Civil, al Registro General de Actos de Última Voluntad, al Registro de la Propiedad, y a las entidades financieras.",
+                        ],
+                        [
+                            "n",
+                            "La solicitud se presenta por escrito ante el Juzgado de Primera Instancia competente. No se inicia por demanda sino por solicitud (art. 782 LEC), lo que refleja la naturaleza mixta jurisdiccional/no jurisdiccional del procedimiento.",
+                        ],
+                        [
+                            "i",
+                            "El LAJ verifica si algún acreedor privilegiado formula petición de que no se lleve a efecto la partición hasta ser pagado o afianzado. Esta petición puede deducirse en cualquier momento antes de la entrega de bienes.",
+                        ],
+                        ["l", "Art. 782.4 LEC · Art. 788.3 LEC"],
+                        [
+                            "n",
+                            "Legitimados: (a) acreedores reconocidos en el testamento o por los coherederos; (b) acreedores con título ejecutivo. Los acreedores del coheredero (art. 782.5 LEC) pueden intervenir a su costa para evitar fraude, pero NO pueden oponerse a que se lleve a efecto la partición.",
+                        ],
+                    ],
+                    q: "¿Formulan oposición a la partición acreedores privilegiados conforme al art. 782.4 LEC?",
+                    opts: [
+                        {
+                            t: "No — No hay oposición de acreedores privilegiados",
+                            l: "ok",
+                            n: "p2_intervencion_check",
+                        },
+                        {
+                            t: "Sí — Acreedores reconocidos en testamento, por los coherederos, o con título ejecutivo piden que no se lleve a efecto hasta ser pagados o garantizados",
+                            l: "warn",
+                            n: "p0_anota_acreedor",
+                        },
+                    ],
+                },
+
+                p0_anota_acreedor: {
+                    ph: 1,
+                    t: "Registro de la oposición de acreedor privilegiado",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Se registra en el expediente la oposición formulada. Esta anotación condiciona la fase de entrega: no se hará entrega de bienes a ningún heredero ni legatario hasta que los acreedores estén completamente pagados o garantizados a su satisfacción (art. 788.3 LEC).",
+                        ],
+                        ["l", "Art. 782.4 LEC · Art. 788.3 LEC"],
+                        [
+                            "w",
+                            "Consignar expresamente: nombre del acreedor, naturaleza del crédito, fundamento de la legitimación (reconocimiento testamentario / por coherederos / título ejecutivo) y fecha de la petición.",
+                        ],
+                        [
+                            "w",
+                            "Consignar: nombre del acreedor, naturaleza del crédito, fundamento de la legitimación (reconocimiento testamentario / por coherederos / título ejecutivo) y fecha de la petición.",
+                        ],
+                    ],
+                    nx: "p2_intervencion_check",
+                },
+
+                p0_documentacion: {
+                    ph: 1,
+                    t: "Verificación de documentación preceptiva (art. 782.2 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ comprueba que la solicitud va acompañada de los documentos obligatorios. La ausencia de alguno determina un requerimiento de subsanación antes de la admisión.",
+                        ],
+                        ["l", "Art. 782.2 LEC · Art. 403 LEC"],
+                        [
+                            "cl",
+                            "Documentación mínima obligatoria",
+                            [
+                                "Certificado de defunción del causante",
+                                "Documento acreditativo de la condición de heredero o legatario (testamento, declaración notarial de herederos, resolución judicial ab intestato u otro título sucesorio)",
+                                "Documento acreditativo del intento de MASC o declaración responsable del letrado sobre la imposibilidad de llevarlo a cabo (art. 264.1.4.º LEC)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Documentación complementaria recomendada: nota simple registral de inmuebles, certificados de titularidad bancaria, certificados de participaciones societarias, relación de deudas conocidas, certificado literal de nacimiento del causante. Su aportación agiliza notablemente la labor del contador-partidor.",
+                        ],
+                        [
+                            "n",
+                            "La presentación de documentación completa no es requisito ineludible de admisión: el LAJ puede admitir a trámite la solicitud aunque sea incompleta, concediendo un plazo razonable para subsanar las deficiencias (principio de proporcionalidad y tutela judicial efectiva, art. 24.1 CE).",
+                        ],
+                    ],
+                    q: "¿Está la documentación esencial completa?",
+                    opts: [
+                        {
+                            t: "Sí — Se aporta certificado de defunción y título sucesorio válido, además de acreditación de MASC",
+                            l: "ok",
+                            n: "p0_admision",
+                        },
+                        {
+                            t: "Parcialmente — Falta algún documento esencial o la acreditación es insuficiente",
+                            l: "warn",
+                            n: "p0_subsanacion",
+                        },
+                    ],
+                },
+
+                p0_subsanacion: {
+                    ph: 1,
+                    t: "Requerimiento de subsanación de defectos documentales",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ concede al solicitante un plazo para subsanar las deficiencias documentales detectadas. El requerimiento debe ser preciso, indicando con claridad qué documentos faltan y dónde obtenerlos.",
+                        ],
+                        [
+                            "d",
+                            "Plazo: el LAJ fijará un plazo prudente (habitualmente 10-20 días hábiles) para la subsanación. El plazo debe ser suficiente para obtener los documentos, especialmente el certificado del Registro General de Actos de Última Voluntad, que puede demorar varias semanas.",
+                        ],
+                        [
+                            "n",
+                            "Si el defecto consiste en la falta de acreditación de la condición de heredero, y existe testamento, podrá admitirse la solicitud con la presentación de copia simple del testamento, requiriendo la copia autorizada para posteriormente.",
+                        ],
+                        [
+                            "w",
+                            "Transcurrido el plazo sin que se subsanen los defectos, el LAJ dictará decreto inadmitiendo la solicitud. Contra este decreto cabe recurso de reposición en el plazo de cinco días (art. 451 LEC), y subsidiariamente recurso de apelación.",
+                        ],
+                        [
+                            "d",
+                            "Plazo: habitualmente 10-20 días hábiles. Debe ser suficiente para obtener los documentos, especialmente el certificado del Registro General de Actos de Última Voluntad.",
+                        ],
+                        [
+                            "w",
+                            "Transcurrido el plazo sin subsanación, el LAJ dictará decreto inadmitiendo la solicitud. Contra este decreto cabrá recurso de reposición.",
+                        ],
+                    ],
+                    q: "¿Subsana el solicitante los defectos documentales en el plazo concedido?",
+                    opts: [
+                        {
+                            t: "Sí — Presenta la documentación requerida completa y válida",
+                            l: "ok",
+                            n: "p0_admision",
+                        },
+                        {
+                            t: "No — Transcurre el plazo sin subsanación o la subsanación sigue siendo insuficiente",
+                            l: "bad",
+                            n: "fin_inadmitida",
+                        },
+                    ],
+                },
+
+                p2_convocatoria: {
+                    ph: 2,
+                    t: "Convocatoria de la Junta (art. 783.2–5 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ procede a convocar la Junta, cuya única finalidad es la designación del contador y, en su caso, los peritos. No es preceptiva la intervención de abogado ni procurador.",
+                        ],
+                        ["l", "Art. 783.2–5 LEC"],
+                        [
+                            "d",
+                            "Plazo: señalamiento de día DENTRO DE LOS DIEZ DÍAS siguientes (art. 783.2 LEC).",
+                        ],
+                        [
+                            "cl",
+                            "Sujetos a convocar",
+                            [
+                                "Los herederos",
+                                "Los legatarios de parte alícuota",
+                                "El cónyuge sobreviviente",
+                                "Los acreedores del coheredero personados en el procedimiento (art. 783.5 LEC)",
+                                "El Ministerio Fiscal, si hay menores sin representante legal o ausentes con paradero desconocido (art. 783.4 LEC)",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Los acreedores del coheredero NO personados no son citados, pero pueden participar si concurren espontáneamente aportando sus títulos. El LAJ debe dejar constancia documental de todas las citaciones practicadas.",
+                        ],
+                        [
+                            "i",
+                            "Practicadas las actuaciones anteriores (o si no fueren necesarias), el LAJ convoca a Junta a los herederos, legatarios de parte alícuota y al cónyuge sobreviviente. Finalidad exclusiva: designación del contador y, en su caso, los peritos. No es preceptiva la intervención de abogado ni procurador.",
+                        ],
+                    ],
+                    q: "¿Existe algún interesado con paradero desconocido (agotados los medios ordinarios de averiguación del domicilio)?",
+                    opts: [
+                        {
+                            t: "No — Todos los interesados tienen domicilio o residencia conocida",
+                            l: "ok",
+                            n: "p2_mf_check",
+                        },
+                        {
+                            t: "Sí — Algún interesado tiene paradero desconocido",
+                            l: "warn",
+                            n: "p2_edictos",
+                        },
+                    ],
+                },
+
+                p2_edictos: {
+                    ph: 2,
+                    t: "Citación edictal (art. 164 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Con paradero desconocido y agotados los medios ordinarios, el LAJ ordena la citación mediante publicación en el Tablón Edictal Judicial Único.",
+                        ],
+                        [
+                            "l",
+                            "Art. 783.3 LEC · Art. 164 LEC (redacción RDL 6/2023, en vigor 20/03/2024) · Art. 156 LEC",
+                        ],
+                        [
+                            "w",
+                            "La citación edictal es subsidiaria y excepcional. El uso prematuro puede vulnerar el derecho a la tutela judicial efectiva (art. 24 CE). Deben omitirse los datos que identifiquen a menores.",
+                        ],
+                    ],
+                    nx: "p2_mf_check",
+                },
+
+                p2_gananciales: {
+                    ph: 2,
+                    t: "Inclusión de la liquidación de gananciales en las operaciones divisorias",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "El contador-partidor deberá incluir en sus operaciones divisorias la previa liquidación de la sociedad de gananciales. Esto implica: (a) determinar qué bienes son propios del causante; (b) determinar qué bienes son gananciales; (c) adjudicar al cónyuge viudo su mitad de los gananciales; (d) calcular la masa hereditaria neta (solo la mitad de gananciales que correspondía al causante más sus bienes propios).",
+                        ],
+                        [
+                            "l",
+                            "Art. 806 CC: la adjudicación al cónyuge viudo de su cuota usufructuaria requiere la previa formación del inventario y liquidación de gananciales. STS 1.ª 489/2016: la liquidación de gananciales y la adjudición de la herencia son operaciones jurídicas distintas, aunque puedan tramitarse en el mismo procedimiento.",
+                        ],
+                        [
+                            "n",
+                            "El inventario hereditario debe distinguir: (a) bienes propios del causante (forman parte de la herencia); (b) mitad de bienes gananciales del causante (forman parte de la herencia); (c) bienes propios del cónyuge viudo (NO forman parte de la herencia); (d) mitad de bienes gananciales del cónyuge viudo (NO forman parte de la herencia).",
+                        ],
+                        ["l", "Art. 806 CC · STS 489/2016"],
+                        [
+                            "n",
+                            "El inventario debe distinguir: (a) bienes propios del causante (herencia); (b) mitad de gananciales del causante (herencia); (c) bienes propios del cónyuge viudo (NO herencia); (d) mitad de gananciales del cónyuge viudo (NO herencia).",
+                        ],
+                    ],
+                    q: "¿Existe controversia entre el cónyuge viudo y los herederos sobre la calificación de algún bien (propio vs. ganancial)?",
+                    opts: [
+                        {
+                            t: "No — No hay controversia sobre la calificación de los bienes, o las partes están de acuerdo",
+                            l: "ok",
+                            n: "p2_convocatoria",
+                        },
+                        {
+                            t: "Sí — Hay disputa sobre si determinados bienes son propios del causante o gananciales del matrimonio",
+                            l: "warn",
+                            n: "p2_jv_gananciales",
+                        },
+                    ],
+                },
+
+                p2_gananciales_check: {
+                    ph: 2,
+                    t: "Análisis previo: liquidación de gananciales y régimen económico matrimonial",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Antes de convocar la Junta, el LAJ debe realizar un análisis previo de las circunstancias del caso que pueden condicionar el procedimiento: existencia de sociedad de gananciales que liquidar, presencia de menores o ausentes que requieran la intervención del Ministerio Fiscal, y personación de acreedores.",
+                        ],
+                        [
+                            "l",
+                            "Art. 806 CC · STS 1.ª 261/2013, de 6 de mayo · STS 1.ª 489/2016, de 19 de julio",
+                        ],
+                        [
+                            "n",
+                            "Si existe sociedad de gananciales: la liquidación de gananciales es presupuesto necesario para la partición hereditaria. El contador-partidor incluirá la liquidación en sus operaciones divisorias. Si hay controversia sobre el carácter propio o ganancial de algún bien, se sustancia como juicio verbal (art. 794.2 LEC).",
+                        ],
+                        [
+                            "n",
+                            "El cónyuge sobreviviente debe ser citado aunque no sea heredero, por su interés legítimo derivado de la posible sociedad de gananciales y de su derecho de legítima de usufructo (art. 807 CC).",
+                        ],
+                        [
+                            "d",
+                            "El inventario hereditario debe distinguir claramente los bienes propios de los gananciales para determinar la masa hereditaria neta.",
+                        ],
+                        [
+                            "n",
+                            "Si hay menores sin representación o ausentes con paradero desconocido: el LAJ debe convocar al Ministerio Fiscal (art. 783.4 LEC). El cónyuge sobreviviente debe ser citado aunque no sea heredero, por su interés en la sociedad de gananciales y legítima de usufructo (art. 807 CC).",
+                        ],
+                        ["l", "Art. 783.4 LEC · Art. 794.2 LEC · STS 261/2013"],
+                    ],
+                    q: "¿Existía sociedad de gananciales entre el causante y su cónyuge?",
+                    opts: [
+                        {
+                            t: "No — El causante estaba casado en separación de bienes, era soltero, divorciado o viudo, o el régimen ya fue liquidado",
+                            l: "ok",
+                            n: "p2_convocatoria",
+                        },
+                        {
+                            t: "Sí — El causante estaba casado en régimen de gananciales y es necesaria la liquidación previa del régimen económico matrimonial",
+                            l: "warn",
+                            n: "p2_gananciales",
+                        },
+                    ],
+                },
+
+                p2_intervencion: {
+                    ph: 2,
+                    t: "Intervención judicial del caudal (arts. 791–796 LEC)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El tribunal acuerda mediante auto las actuaciones de intervención: ocupación y seguridad de bienes, formación de inventario y depósito, y en su caso nombramiento de administrador judicial.",
+                        ],
+                        [
+                            "l",
+                            "Arts. 791–795 LEC · Art. 796 LEC (cesación de la intervención)",
+                        ],
+                        [
+                            "n",
+                            "Administrador (art. 795 LEC): preferencia para el cónyuge viudo; en su defecto, heredero o legatario con mayor participación; en defecto de estos, cualquier heredero, legatario o un tercero. Debe prestar caución bastante.",
+                        ],
+                        [
+                            "n",
+                            "La intervención cesa (art. 796 LEC): con la entrega de bienes adjudicados, o antes si todos los herederos lo piden de común acuerdo —salvo menores sin representante legal, ausentes no localizables o acreedores privilegiados con oposición pendiente—.",
+                        ],
+                        [
+                            "n",
+                            "Trámite: el LAJ acuerda las medidas de seguridad pertinentes (depósito de metálico y efectos públicos, aseguramiento de bienes inmuebles, nombramiento de administrador con caución), señala día y hora para la formación del inventario, y cita a todos los interesados incluyendo al Ministerio Fiscal y al Abogado del Estado (art. 793 LEC, modificado por Ley 8/2021).",
+                        ],
+                        [
+                            "n",
+                            "Si durante la formación del inventario surge controversia sobre la inclusión o exclusión de bienes (art. 794.2 LEC), la cuestión se tramita y resuelve como juicio verbal, sin paralizar el resto de las actuaciones.",
+                        ],
+                    ],
+                    nx: "p2_inventario",
+                },
+
+                p2_intervencion_check: {
+                    ph: 2,
+                    t: "Solicitud de intervención del caudal hereditario (art. 783.1 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ verifica si algún legitimado ha pedido la intervención judicial del caudal y la formación de inventario como actuación previa a la Junta.",
+                        ],
+                        [
+                            "l",
+                            "Art. 783.1 LEC · Arts. 791–796 LEC · Art. 792 LEC",
+                        ],
+                        [
+                            "n",
+                            "Legitimados para pedir la intervención (art. 792 LEC): (a) coheredero o legatario de parte alícuota al tiempo de solicitar la división, salvo prohibición expresa del testador; (b) acreedores reconocidos en testamento o con título ejecutivo.",
+                        ],
+                        [
+                            "n",
+                            "Si el inventario ya está determinado o hay acuerdo entre los interesados, puede prescindirse de esta actuación y pasar directamente a la Junta.",
+                        ],
+                        [
+                            "n",
+                            "Legitimados (art. 792 LEC): (a) coheredero o legatario de parte alícuota, salvo prohibición expresa del testador; (b) acreedores reconocidos en testamento o con título ejecutivo. Si el inventario ya está determinado o hay acuerdo, puede prescindirse y pasar a la Junta.",
+                        ],
+                    ],
+                    q: "¿Se ha solicitado la intervención judicial del caudal y la formación de inventario?",
+                    opts: [
+                        {
+                            t: "No — El inventario está determinado o no es necesario; se pasa directamente a la Junta",
+                            l: "ok",
+                            n: "p2_gananciales_check",
+                        },
+                        {
+                            t: "Sí — Se pide intervención del caudal hereditario y formación de inventario (arts. 791–796 LEC)",
+                            l: "warn",
+                            n: "p2_intervencion",
+                        },
+                    ],
+                },
+
+                p2_inventario: {
+                    ph: 2,
+                    t: "Formación del inventario",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Acordada la intervención, se forma el inventario de los bienes que integran el caudal partible. Constituirá la base de las operaciones divisorias y el primer apartado del cuaderno particional (art. 786.2.1.º LEC).",
+                        ],
+                        ["l", "Art. 783.1 LEC · Art. 786.2.1.º LEC"],
+                        [
+                            "n",
+                            "El inventario debe distinguir: (a) bienes propios del causante (forman parte de la herencia); (b) mitad de bienes gananciales del causante (forman parte de la herencia); (c) bienes propios del cónyuge viudo (NO forman parte de la herencia); (d) mitad de bienes gananciales del cónyuge viudo (NO forman parte de la herencia).",
+                        ],
+                    ],
+                    nx: "p2_gananciales_check",
+                },
+
+                p2_jv_gananciales: {
+                    ph: 2,
+                    t: "Juicio verbal sobre controversia de gananciales (Art. 794.2 LEC)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "La controversia sobre la inclusión o exclusión de bienes del inventario por discordancia sobre su carácter propio o ganancial se tramita y resuelve como juicio verbal conforme al art. 794.2 LEC (modificado por Ley 42/2015).",
+                        ],
+                        [
+                            "n",
+                            "Fases del juicio verbal: (1) Alegaciones iniciales de las partes; (2) Proposición y práctica de prueba (documental, testifical, pericial, interrogatorio); (3) Conclusiones; (4) Sentencia. El Juez determinará el carácter propio o ganancial de los bienes controvertidos.",
+                        ],
+                        [
+                            "d",
+                            "La resolución de esta controversia es presupuesto para las operaciones divisorias: hasta que no se determine con certeza qué bienes integran el caudal hereditario, el contador no puede formar el inventario ni practicar las operaciones. No obstante, el contador puede iniciar su trabajo sobre los bienes no controvertidos.",
+                        ],
+                        [
+                            "w",
+                            "La sentencia que resuelva la controversia de gananciales tiene eficacia de cosa juzgada material, a diferencia de la sentencia que resuelva la oposición a las operaciones divisorias (art. 787.5 LEC), que no produce cosa juzgada.",
+                        ],
+                    ],
+                    nx: "p2_convocatoria",
+                },
+
+                p2_mf: {
+                    ph: 2,
+                    t: "Convocatoria del Ministerio Fiscal",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Se convoca al Ministerio Fiscal para que represente en la Junta y en el procedimiento a los interesados sin representación o con paradero desconocido.",
+                        ],
+                        ["l", "Art. 783.4 LEC"],
+                        [
+                            "n",
+                            "La representación cesa: respecto de los menores, cuando tengan representante legal; respecto de los ausentes, cuando se presenten o puedan ser citados personalmente.",
+                        ],
+                    ],
+                    nx: "p3_junta",
+                },
+
+                p2_mf_check: {
+                    ph: 2,
+                    t: "Intervención del Ministerio Fiscal (art. 783.4 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ verifica si concurren los presupuestos de intervención del Ministerio Fiscal como representante de interesados vulnerables.",
+                        ],
+                        ["l", "Art. 783.4 LEC · Ley 8/2021, de 2 de junio"],
+                        [
+                            "n",
+                            "La representación cesa: respecto de los menores, cuando tengan representante legal; respecto de los ausentes, cuando se presenten o puedan ser citados personalmente.",
+                        ],
+                    ],
+                    q: "¿Existen menores sin representante legal o ausentes con paradero desconocido entre los interesados?",
+                    opts: [
+                        {
+                            t: "No — Todos los interesados son mayores de edad con representación y paradero conocido",
+                            l: "ok",
+                            n: "p3_junta",
+                        },
+                        {
+                            t: "Sí — Hay menores sin representante o ausentes con paradero desconocido",
+                            l: "warn",
+                            n: "p2_mf",
+                        },
+                    ],
+                },
+
+                p3_aceptacion: {
+                    ph: 3,
+                    t: "Aceptación del cargo (art. 785.1–2 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ requiere la aceptación formal del cargo al contador y peritos. La aceptación es presupuesto necesario para la entrega de la documentación.",
+                        ],
+                        ["l", "Art. 785.1–2 LEC"],
+                        [
+                            "n",
+                            "Efecto de la aceptación: da derecho a cada interesado para obligar al contador a cumplir su encargo (art. 785.2 LEC). La relación jurídica vinculante se establece con todos los partícipes del procedimiento, no solo con quien instó la división.",
+                        ],
+                        [
+                            "w",
+                            "El contador que acepta y luego se niega a actuar sin causa justificada incurre en responsabilidad por los daños y perjuicios causados. La responsabilidad se exige en la jurisdicción civil, no dentro del propio procedimiento de división (art. 785.2 LEC).",
+                        ],
+                    ],
+                    q: "¿Acepta el contador-partidor el cargo formalmente?",
+                    opts: [
+                        {
+                            t: "Sí — El contador acepta formalmente el encargo y se compromete a realizar las operaciones divisorias",
+                            l: "ok",
+                            n: "p3_entrega_docs",
+                        },
+                        {
+                            t: "No — El contador designado rechaza el cargo sin causa justificada, o no comparece a la aceptación",
+                            l: "bad",
+                            n: "p3_sustitucion",
+                        },
+                    ],
+                },
+
+                p3_contador_acuerdo: {
+                    ph: 3,
+                    t: "Contador-partidor designado por acuerdo de la Junta",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Los interesados han acordado el nombramiento del contador-partidor. El LAJ hace constar el acuerdo en el acta de la Junta y procede a requerir formalmente al contador para que acepte el cargo.",
+                        ],
+                        [
+                            "n",
+                            "El contador designado por acuerdo suele ser un abogado con experiencia en derecho de sucesiones propuesto por una o varias de las partes. Su designación tiene carácter vinculante para todos los interesados, incluso para los ausentes a la Junta.",
+                        ],
+                        [
+                            "d",
+                            "El contador designado por acuerdo queda sometido al mismo régimen que el designado por sorteo en cuanto a obligaciones (cumplir el encargo), plazos (dos meses para las operaciones, art. 786.4 LEC), y responsabilidad (arts. 124 ss. LEC).",
+                        ],
+                        [
+                            "i",
+                            "El LAJ verifica si los interesados alcanzan acuerdo sobre los peritos necesarios para el avalúo, con el límite de un perito por cada clase de bienes.",
+                        ],
+                        ["l", "Art. 784.2 LEC"],
+                    ],
+                    q: "¿Se alcanza acuerdo sobre la designación de los peritos tasadores?",
+                    opts: [
+                        {
+                            t: "Sí — Acuerdo sobre peritos o el contador estima que no son necesarios",
+                            l: "ok",
+                            n: "p3_aceptacion",
+                        },
+                        {
+                            t: "No — No hay acuerdo; designación de peritos por sorteo (art. 341 LEC)",
+                            l: "warn",
+                            n: "p3_sorteo_per",
+                        },
+                    ],
+                },
+
+                p3_entrega_docs: {
+                    ph: 3,
+                    t: "Entrega de autos y documentación al contador (art. 785.1 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Previa aceptación, el LAJ entrega los autos al contador y pone a su disposición cuantos objetos, documentos y papeles sean necesarios para practicar las operaciones divisorias.",
+                        ],
+                        ["l", "Art. 785.1 LEC"],
+                        [
+                            "cl",
+                            "Documentación y materiales a entregar",
+                            [
+                                "Autos completos del procedimiento",
+                                "Documentación para el inventario (si no se hubiera practicado)",
+                                "Documentos y papeles para el avalúo, la liquidación y la división del caudal",
+                                "Cualesquiera otros objetos o papeles que el contador estime necesarios",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Es conveniente que la entrega se realice mediante diligencia especificando detalladamente la documentación entregada, para evitar controversias posteriores sobre si el contador dispuso de toda la información necesaria para su trabajo.",
+                        ],
+                        [
+                            "n",
+                            "Si el contador solicita documentación adicional que no obra en autos, el LAJ requerirá a los interesados para que la aporten en un plazo prudencial. La negativa a aportar documentación relevante puede generar responsabilidad para el interesado que la retiene.",
+                        ],
+                    ],
+                    q: "¿Solicita alguna parte que el LAJ fije formalmente un plazo al contador por diligencia (art. 785.3 LEC)?",
+                    opts: [
+                        {
+                            t: "No — Opera el plazo máximo imperativo de dos meses del art. 786.2 LEC",
+                            l: "ok",
+                            n: "p4_operaciones",
+                        },
+                        {
+                            t: "Sí — Se solicita fijación de plazo expreso por diligencia del LAJ",
+                            l: "warn",
+                            n: "p3_plazo",
+                        },
+                    ],
+                },
+
+                p3_junta: {
+                    ph: 3,
+                    t: "Celebración de la Junta (art. 784.1 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La Junta se celebra con los concurrentes, presidida por el LAJ. Finalidad exclusiva: designar al contador-partidor y, en su caso, a los peritos. La Junta es válida con los asistentes.",
+                        ],
+                        ["l", "Art. 784.1–2 LEC"],
+                        [
+                            "n",
+                            "Acreedores del coheredero no personados: pueden participar si concurren espontáneamente aportando sus títulos (art. 783.5 LEC).",
+                        ],
+                        [
+                            "n",
+                            "Límite imperativo (art. 784.2 y 784.3 LEC): no puede designarse más de un perito para cada clase de bienes.",
+                        ],
+                        [
+                            "d",
+                            "El LAJ informa a los asistentes sobre el objeto de la Junta, sus derechos, y las consecuencias de la falta de acuerdo (designación por sorteo). Se anima a los interesados a alcanzar un acuerdo sobre el contador y los peritos.",
+                        ],
+                    ],
+                    q: "¿Alcanzan los interesados acuerdo sobre el contador-partidor?",
+                    opts: [
+                        {
+                            t: "Sí — Acuerdo unánime sobre el contador",
+                            l: "ok",
+                            n: "p3_contador_acuerdo",
+                        },
+                        {
+                            t: "No — No hay acuerdo; el LAJ designa contador por sorteo (art. 341 LEC)",
+                            l: "warn",
+                            n: "p3_sorteo_cont",
+                        },
+                    ],
+                },
+
+                p3_plazo: {
+                    ph: 3,
+                    t: "Diligencia de fijación de plazo al contador (art. 785.3 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "A instancia de parte, el LAJ dicta diligencia fijando al contador un plazo concreto para presentar las operaciones divisorias.",
+                        ],
+                        ["l", "Art. 785.3 LEC · Art. 786.2 LEC"],
+                        [
+                            "w",
+                            "Incumplimiento del plazo fijado por diligencia: responsabilidad del contador por daños y perjuicios (art. 785.3 LEC). Este mecanismo es acumulativo con el plazo máximo de dos meses del art. 786.2 LEC.",
+                        ],
+                    ],
+                    nx: "p4_operaciones",
+                },
+
+                p3_sorteo_cont: {
+                    ph: 3,
+                    t: "Designación del contador por sorteo (arts. 784.3 y 341 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "A falta de acuerdo, el LAJ designa contador por sorteo de entre abogados ejercientes con especiales conocimientos y despacho profesional en el lugar del juicio.",
+                        ],
+                        ["l", "Art. 784.3 LEC · Art. 341 LEC"],
+                        [
+                            "n",
+                            "Procedimiento: en enero los colegios profesionales envían listas de colegiados. Primera designación por sorteo ante el LAJ; siguientes por orden correlativo.",
+                        ],
+                        [
+                            "n",
+                            "Al contador por sorteo le son aplicables las normas de recusación y provisión de fondos de los peritos (art. 784.4 LEC).",
+                        ],
+                        [
+                            "d",
+                            "El sorteo se realiza de entre las listas que los Colegios Profesionales remiten anualmente al Juzgado (art. 341.1 LEC). El abogado designado tiene derecho a ser recusado por las mismas causas que los peritos (art. 124 LEC): parentesco, interés directo o indirecto, amistad íntima o enemistad manifiesta con alguna de las partes.",
+                        ],
+                        [
+                            "w",
+                            "Si el contador designado por sorteo no acepta el cargo, se procede a un nuevo sorteo. No se admite la renuncia unilateral sin causa justificada (enfermedad, incompatibilidad sobrevenida).",
+                        ],
+                    ],
+                    q: "¿Acuerdo sobre los peritos?",
+                    opts: [
+                        {
+                            t: "Sí — Acuerdo sobre peritos o el contador estima que no son necesarios",
+                            l: "ok",
+                            n: "p3_aceptacion",
+                        },
+                        {
+                            t: "No — No hay acuerdo; designación de peritos por sorteo",
+                            l: "warn",
+                            n: "p3_sorteo_per",
+                        },
+                    ],
+                },
+
+                p3_sorteo_per: {
+                    ph: 3,
+                    t: "Designación de peritos por sorteo (arts. 784.3 y 341 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ designa por sorteo los peritos que el contador estime necesarios para los avalúos, con el mismo procedimiento que para el contador.",
+                        ],
+                        ["l", "Art. 784.3 LEC · Art. 341 LEC"],
+                        [
+                            "w",
+                            "Límite imperativo: nunca más de un perito para cada clase de bienes (art. 784.3 LEC).",
+                        ],
+                        [
+                            "n",
+                            "Los honorarios de los peritos se consideran gastos de partición deducibles de la herencia conforme al art. 1064 CC, y suelen abonarse a partes iguales por todos los coherederos proporcionalmente a sus cuotas.",
+                        ],
+                    ],
+                    nx: "p3_aceptacion",
+                },
+
+                p3_sustitucion: {
+                    ph: 3,
+                    t: "Sustitución del contador-partidor",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El contador designado no acepta el cargo o renuncia sin causa justificada. El LAJ debe proceder a la designación de un sustituto mediante el mismo procedimiento utilizado para el original: nuevo sorteo si fue designado por sorteo, o acuerdo de las partes si fue acordado.",
+                        ],
+                        [
+                            "w",
+                            "El contador que acepta y luego se niega a actuar sin causa justificada incurre en responsabilidad por los daños y perjuicios causados. La responsabilidad se exige en la jurisdicción civil, no dentro del propio procedimiento de división (art. 785.2 LEC).",
+                        ],
+                        [
+                            "d",
+                            "El plazo de dos meses para la elaboración de las operaciones divisorias (art. 786.4 LEC) se computa desde la aceptación del nuevo contador, no desde la designación del anterior.",
+                        ],
+                    ],
+                    nx: "p3_entrega_docs",
+                },
+
+                p4_incumplimiento: {
+                    ph: 4,
+                    t: "Incumplimiento del plazo por el contador-partidor",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El contador no ha presentado las operaciones divisorias en el plazo establecido (dos meses conforme al art. 786.4 LEC, o el plazo fijado por el LAJ a instancia de parte conforme al art. 785.3 LEC).",
+                        ],
+                        [
+                            "w",
+                            "El contador que no verificare las operaciones en el plazo fijado será responsable de los daños y perjuicios que su incumplimiento cause a los interesados (art. 785.3 LEC). La responsabilidad se exige en la jurisdicción civil, no dentro del procedimiento de división.",
+                        ],
+                        [
+                            "d",
+                            "El LAJ debe requerir al contador para que presente las operaciones en un nuevo plazo prudencial, informándole de las consecuencias de su incumplimiento. Si el contador no atiende el requerimiento, procede la sustitución.",
+                        ],
+                    ],
+                    q: "¿Atiende el contador el requerimiento y presenta las operaciones?",
+                    opts: [
+                        {
+                            t: "Sí — El contador atiende el requerimiento y presenta las operaciones divisorias (aunque haya superado el plazo original)",
+                            l: "ok",
+                            n: "p5_traslado",
+                        },
+                        {
+                            t: "No — El contador no atiende el requerimiento o manifiesta su imposibilidad de cumplir",
+                            l: "bad",
+                            n: "p3_sustitucion",
+                        },
+                    ],
+                },
+
+                p4_operaciones: {
+                    ph: 4,
+                    t: "Práctica de las operaciones divisorias (art. 786 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El contador-partidor practica las operaciones divisorias conforme a la ley aplicable a la sucesión del causante (que puede ser derecho extranjero si hay elemento internacional).",
+                        ],
+                        [
+                            "l",
+                            "Art. 786 LEC · Arts. 1051–1087 CC · Arts. 806–822 CC (legítimas)",
+                        ],
+                        [
+                            "d",
+                            "Plazo máximo imperativo: DOS MESES desde que fueron iniciadas las operaciones (art. 786.2 LEC).",
+                        ],
+                        [
+                            "n",
+                            "Principios de obligado respeto: (a) evitar la indivisión (art. 400 CC); (b) evitar la excesiva división de fincas.",
+                        ],
+                        [
+                            "cl",
+                            "Contenido obligatorio del cuaderno particional (art. 786.2 LEC)",
+                            [
+                                "1.º Relación de bienes que forman el caudal partible (inventario)",
+                                "2.º Avalúo de los bienes",
+                                "3.º Liquidación, división y adjudicación a cada partícipe",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Operaciones a realizar por el contador: (a) Inventario: relación exhaustiva de bienes, derechos y obligaciones; (b) Avalúo: valoración de mercado con auxilio de peritos; (c) Colación: los legitimarios que recibieron donaciones del causante traen a colación el valor percibido (arts. 1035-1040 CC); (d) Liquidación: determinación de la masa hereditaria neta, deduciendo deudas, gastos de última enfermedad, funerarios y de administración; (e) Cálculo de legítimas y mejora: porciones estrictas, mejora y porción libre (arts. 807-822 CC); (f) División y adjudicación: asignación concreta de bienes a cada partícipe, procurando la igualdad (arts. 1061-1066 CC).",
+                        ],
+                    ],
+                    q: "¿Ha establecido el testador reglas especiales para el inventario, avalúo, liquidación o división?",
+                    opts: [
+                        {
+                            t: "No — Se aplica directamente la ley de la sucesión",
+                            l: "ok",
+                            n: "p4_presentacion",
+                        },
+                        {
+                            t: "Sí — El testador fijó reglas especiales para las operaciones divisorias",
+                            l: "warn",
+                            n: "p4_reglas_testador",
+                        },
+                    ],
+                },
+
+                p4_presentacion: {
+                    ph: 4,
+                    t: "Presentación del cuaderno particional",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El contador presenta las operaciones divisorias mediante escrito firmado que contiene el cuaderno particional completo con todos los elementos del art. 786.2 LEC.",
+                        ],
+                        ["l", "Art. 786.2 LEC"],
+                        [
+                            "d",
+                            "Plazo máximo: DOS MESES desde el inicio de las operaciones. O en el plazo fijado por diligencia si se hizo uso del art. 785.3 LEC.",
+                        ],
+                        [
+                            "n",
+                            "Si el contador no presenta las operaciones en el plazo establecido (dos meses conforme al art. 786.4 LEC, o el plazo fijado por el LAJ a instancia de parte conforme al art. 785.3 LEC), el LAJ debe requerirle para que presente las operaciones en un nuevo plazo prudencial, informándole de las consecuencias de su incumplimiento.",
+                        ],
+                    ],
+                    q: "¿Solicitan todos los interesados de común acuerdo el sobreseimiento del procedimiento (art. 789 LEC)?",
+                    opts: [
+                        {
+                            t: "Sí — El contador presenta el escrito de operaciones divisorias completo y firmado dentro del plazo",
+                            l: "ok",
+                            n: "p5_traslado",
+                        },
+                        {
+                            t: "Sí — Todos los interesados solicitan de común acuerdo el sobreseimiento (art. 789 LEC)",
+                            l: "neutral",
+                            n: "fin_acuerdo_coherederos",
+                        },
+                        {
+                            t: "No — El contador no presenta las operaciones en plazo o las presenta incompletas",
+                            l: "bad",
+                            n: "p4_incumplimiento",
+                        },
+                    ],
+                },
+
+                p4_reglas_testador: {
+                    ph: 4,
+                    t: "Aplicación de reglas especiales del testador (art. 786.1 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El contador se atendrá a las reglas fijadas por el testador para las operaciones divisorias.",
+                        ],
+                        ["l", "Art. 786.1 LEC · Arts. 806–822 CC (legítimas)"],
+                        [
+                            "w",
+                            "Límite infranqueable: las reglas del testador no pueden perjudicar las legítimas de los herederos forzosos. En lo que las perjudiquen, prevalece la ley de la sucesión.",
+                        ],
+                    ],
+                    nx: "p4_presentacion",
+                },
+
+                fin_suspension_penal: {
+                    ph: 5,
+                    t: "Procedimiento en suspenso: prejudicialidad penal",
+                    ac: "laj",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "El procedimiento permanece suspendido por pendencia de causa penal que investiga cohecho en el avalúo, sin acuerdo sobre nuevo avalúo.",
+                        ],
+                        ["l", "Art. 787.6 LEC · Art. 40 LEC"],
+                        [
+                            "n",
+                            "La suspensión se alzará cuando: (a) los interesados presenten nuevo avalúo de común acuerdo; (b) la causa penal finalice por resolución firme; (c) la causa penal quede paralizada.",
+                        ],
+                        [
+                            "w",
+                            "Registrar la fecha de inicio. Establecer seguimiento periódico (mínimo trimestral) de la evolución del proceso penal para alzar la suspensión en cuanto proceda.",
+                        ],
+                    ],
+                },
+
+                p5_comparecencia: {
+                    ph: 5,
+                    t: "Convocatoria de comparecencia ante el Tribunal (art. 787.3 LEC)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Formulada oposición en plazo, el LAJ convoca al contador y a las partes a comparecencia ante el Tribunal. A partir de este momento el tribunal asume el protagonismo procesal.",
+                        ],
+                        ["l", "Art. 787.3–5 LEC"],
+                        [
+                            "d",
+                            "Plazo: la comparecencia se celebrará dentro de los DIEZ DÍAS siguientes a la oposición.",
+                        ],
+                        [
+                            "n",
+                            "Desarrollo de la comparecencia: (1) El LAJ da la palabra a la parte opositora para que explique sus pretensiones; (2) El contador puede defender sus operaciones o aceptar las objeciones; (3) Las demás partes pueden pronunciarse; (4) El Tribunal intenta mediar para lograr un acuerdo que satisfaga a todos.",
+                        ],
+                        [
+                            "n",
+                            "Si se alcanza conformidad (total o parcial): el contador reformará las operaciones conforme a lo acordado, y las reformas serán aprobadas por decreto del LAJ (art. 787.4 LEC). Si la conformidad es solo parcial, lo acordado se aprueba y lo restante se tramita como juicio verbal.",
+                        ],
+                        [
+                            "n",
+                            "La comparecencia es un acto de conciliación: su objetivo es lograr que las partes y el contador alcancen un acuerdo sobre las cuestiones impugnadas.",
+                        ],
+                    ],
+                    q: "¿Se alcanza conformidad de todos los interesados en la comparecencia?",
+                    opts: [
+                        {
+                            t: "Sí — Conformidad sobre todas las cuestiones promovidas en la oposición",
+                            l: "ok",
+                            n: "p5_reformas",
+                        },
+                        {
+                            t: "Parcial — Se acuerdan algunas cuestiones pero persiste discrepancia sobre otras",
+                            l: "warn",
+                            n: "p5_jv_parcial",
+                        },
+                        {
+                            t: "No — No hay conformidad; el procedimiento sigue por los trámites del juicio verbal",
+                            l: "bad",
+                            n: "p5_jv_total",
+                        },
+                    ],
+                },
+
+                p5_decreto: {
+                    ph: 5,
+                    t: "Decreto aprobatorio y protocolización (art. 787.2 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ dicta decreto aprobando las operaciones divisorias y manda protocolizarlas ante notario.",
+                        ],
+                        ["l", "Art. 787.2 LEC"],
+                        [
+                            "n",
+                            "La protocolización notarial dota al cuaderno particional de fehaciencia pública y permite su acceso al Registro de la Propiedad y demás registros. La escritura pública constituye título inscribible conforme a la Ley Hipotecaria (art. 205 LH).",
+                        ],
+                        [
+                            "n",
+                            "El decreto de aprobación del LAJ es el acto que cierra la fase contenciosa del procedimiento y abre la fase de ejecución (entrega de bienes). No tiene eficacia de cosa juzgada material: los interesados pueden impugnar posteriormente la partición por las vías del Código Civil (arts. 1073-1081 CC).",
+                        ],
+                        [
+                            "n",
+                            "Efecto declarativo de la partición (art. 1068 CC): la partición legalmente hecha confiere a cada heredero la propiedad exclusiva de los bienes adjudicados, pero no transmite la propiedad — la declara, reconociendo una titularidad que se remonta al momento de la muerte del causante (art. 657 CC).",
+                        ],
+                    ],
+                    nx: "p6_protocolizacion",
+                },
+
+                p5_jv_parcial: {
+                    ph: 5,
+                    t: "Juicio verbal sobre cuestiones parciales no acordadas (art. 787.6 LEC)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Se ha alcanzado conformidad parcial en la comparecencia: algunas cuestiones se han resuelto de común acuerdo, pero persiste discrepancia sobre otras. Lo acordado se aprueba por decreto y las cuestiones restantes se tramitan como juicio verbal (art. 787.6 LEC).",
+                        ],
+                        [
+                            "n",
+                            "El juicio verbal parcial solo versa sobre las cuestiones no acordadas. Las cuestiones acordadas ya están firmes y no se revisan. El Tribunal se limita a resolver las discrepancias pendientes, que habitualmente versan sobre: valoración de un bien concreto, inclusión o exclusión de un bien del inventario, o interpretación de una cláusula testamentaria.",
+                        ],
+                        [
+                            "d",
+                            "Fases del juicio verbal parcial: (1) Alegaciones iniciales; (2) Proposición y práctica de prueba; (3) Conclusiones; (4) Sentencia. La sentencia solo se pronuncia sobre las cuestiones objeto de controversia, no sobre el conjunto de las operaciones divisorias.",
+                        ],
+                        [
+                            "w",
+                            "La sentencia que recaiga no tendrá eficacia de cosa juzgada (art. 787.7 LEC). Los interesados podrán ejercitar acciones autónomas en el juicio ordinario que corresponda (acciones de rescisión art. 1073 CC, impugnación por lesión art. 1074 CC, complemento art. 1079 CC).",
+                        ],
+                    ],
+                    q: "¿Cuál es el sentido de la sentencia sobre las cuestiones controvertidas?",
+                    opts: [
+                        {
+                            t: "Estimatoria — se estiman las pretensiones de la parte opositora y se modifican las operaciones divisorias en los puntos controvertidos",
+                            l: "ok",
+                            n: "p5_sentencia_est",
+                        },
+                        {
+                            t: "Desestimatoria — se desestima la oposición y se confirman las operaciones divisorias del contador en los puntos controvertidos",
+                            l: "ok",
+                            n: "p5_sentencia_des",
+                        },
+                    ],
+                },
+
+                p5_jv_total: {
+                    ph: 5,
+                    t: "Sustanciación por los trámites del juicio verbal (art. 787.5 LEC)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Sin conformidad, el tribunal oye a las partes, admite pruebas pertinentes y sustancia el procedimiento conforme a las normas del juicio verbal.",
+                        ],
+                        [
+                            "l",
+                            "Art. 787.5 LEC · Art. 40 LEC (prejudicialidad penal)",
+                        ],
+                        [
+                            "w",
+                            "La sentencia que recaiga NO tiene eficacia de cosa juzgada. Los interesados pueden hacer valer sus pretensiones sobre los bienes adjudicados en el juicio ordinario que corresponda.",
+                        ],
+                        [
+                            "n",
+                            "El juicio verbal es el procedimiento abreviado de la LEC. En el contexto de la división judicial, se utiliza como mecanismo de resolución rápida de las controversias sobre las operaciones divisorias. La sentencia se limita a resolver las cuestiones concretas planteadas en la oposición.",
+                        ],
+                        [
+                            "i",
+                            "Sin conformidad total, el tribunal oye a las partes, admite pruebas pertinentes y sustancia el procedimiento conforme a las normas del juicio verbal.",
+                        ],
+                    ],
+                    q: "¿Están las actuaciones suspendidas por prejudicialidad penal? (causa que investiga cohecho en el avalúo — arts. 787.6 y 40 LEC)",
+                    opts: [
+                        {
+                            t: "Estimatoria — Se estiman las pretensiones de la parte opositora y se modifican las operaciones",
+                            l: "ok",
+                            n: "p5_sentencia",
+                        },
+                        {
+                            t: "Sí — Actuaciones suspendidas por causa penal que investiga cohecho en el avalúo (art. 40 LEC)",
+                            l: "bad",
+                            n: "p5_suspension",
+                        },
+                    ],
+                },
+
+                p5_reformas: {
+                    ph: 5,
+                    t: "Reformas del contador y aprobación definitiva (art. 787.4 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Alcanzada la conformidad, el contador incorpora las reformas convenidas. Las operaciones reformadas se aprueban por decreto del LAJ y se mandan protocolizar.",
+                        ],
+                        ["l", "Art. 787.4 LEC · Art. 787.2 LEC"],
+                        [
+                            "n",
+                            "Las operaciones reformadas se protocolizan elevándose a escritura pública ante Notario. El decreto de aprobación del LAJ produce los mismos efectos que la aprobación de las operaciones originales: habilita la entrega de bienes y constituye título para la inscripción registral.",
+                        ],
+                        [
+                            "n",
+                            "Al igual que la aprobación sin oposición, esta aprobación no produce cosa juzgada material (art. 787.5 LEC en relación con el art. 787.7 LEC). Los interesados conservan las acciones de impugnación del Código Civil (rescisión, lesión, complemento).",
+                        ],
+                    ],
+                    nx: "p6_protocolizacion",
+                },
+
+                p5_sentencia: {
+                    ph: 5,
+                    t: "Sentencia del Tribunal (sin eficacia de cosa juzgada)",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El tribunal dicta sentencia que resuelve las cuestiones de la oposición. La sentencia se lleva a efecto conforme al art. 788 LEC.",
+                        ],
+                        ["l", "Art. 787.5 LEC · Art. 788 LEC"],
+                        [
+                            "w",
+                            "La sentencia NO tiene eficacia de cosa juzgada. Los interesados pueden acudir al juicio ordinario que corresponda para hacer valer sus derechos sobre los bienes adjudicados.",
+                        ],
+                    ],
+                    nx: "p6_protocolizacion",
+                },
+
+                p5_sentencia_des: {
+                    ph: 5,
+                    t: "Sentencia desestimatoria — Confirmación de las operaciones divisorias",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Tribunal ha desestimado la oposición y confirmado las operaciones divisorias del contador-partidor en los puntos controvertidos. Las operaciones se ejecutarán conforme al art. 788 LEC.",
+                        ],
+                        [
+                            "n",
+                            "La sentencia desestimatoria confirma la corrección de las operaciones divisorias del contador. El LAJ procederá a la protocolización y entrega de bienes conforme a los arts. 787 y 788 LEC.",
+                        ],
+                        [
+                            "w",
+                            "Al igual que la estimatoria, la sentencia desestimatoria no produce cosa juzgada material (art. 787.7 LEC). La parte opositora conserva las acciones de impugnación del Código Civil (rescisión, lesión, complemento), aunque habrá de fundarlas en motivos distintos de los ya planteados y resueltos en el juicio verbal.",
+                        ],
+                        [
+                            "l",
+                            "Art. 787.7 LEC: ausencia de cosa juzgada. Art. 788 LEC: ejecución. Arts. 1073-1081 CC: acciones de impugnación posteriores.",
+                        ],
+                    ],
+                    nx: "p6_protocolizacion",
+                },
+
+                p5_sentencia_est: {
+                    ph: 5,
+                    t: "Sentencia estimatoria — Modificación de las operaciones divisorias",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Tribunal ha estimado la oposición y modificado las operaciones divisorias en los puntos controvertidos. El contador deberá adecuar las operaciones al contenido de la sentencia, y la versión resultante se aprobará y ejecutará conforme al art. 788 LEC.",
+                        ],
+                        [
+                            "n",
+                            "La sentencia estimatoria puede tener distintos alcances: puede ordenar la inclusión de un bien omitido en el inventario, rectificar el avalúo de un bien, modificar la adjudicación de un lote, o corregir el cálculo de las legítimas. En cualquier caso, las modificaciones se limitan a los puntos concretos resueltos en la sentencia.",
+                        ],
+                        [
+                            "w",
+                            "La sentencia NO tiene eficacia de cosa juzgada material (art. 787.7 LEC). Los interesados pueden impugnar posteriormente la partición por las vías del Código Civil: rescisión por error, dolo o violencia (art. 1073 CC), acción de lesión (art. 1074 CC, prescribe a los cuatro años), acción de complemento por omisión de bienes (art. 1079 CC).",
+                        ],
+                        [
+                            "l",
+                            "Art. 787.7 LEC: ausencia de cosa juzgada. Art. 788 LEC: ejecución de la sentencia (entrega de bienes).",
+                        ],
+                    ],
+                    nx: "p6_protocolizacion",
+                },
+
+                p5_suspension: {
+                    ph: 5,
+                    t: "Suspensión por prejudicialidad penal (arts. 787.6 y 40 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Las actuaciones están suspendidas por pendencia de causa penal que investiga cohecho en el avalúo de los bienes. Se aplica la regla especial del art. 787.6 LEC, que modula la regla general del art. 40 LEC.",
+                        ],
+                        ["l", "Art. 787.6 LEC · Art. 40 LEC"],
+                        [
+                            "n",
+                            "Regla especial (art. 787.6 LEC): la suspensión puede alzarse SIN esperar resolución penal firme si los interesados presentan un nuevo avalúo de común acuerdo, prescindiendo del impugnado.",
+                        ],
+                        [
+                            "w",
+                            "Registrar la fecha de inicio de la suspensión. Establecer seguimiento periódico de la evolución del proceso penal para alzar la suspensión en cuanto proceda.",
+                        ],
+                        [
+                            "w",
+                            "Registrar la fecha de inicio. Establecer seguimiento periódico de la evolución del proceso penal para alzar la suspensión en cuanto proceda.",
+                        ],
+                    ],
+                    q: "¿Presentan los interesados un nuevo avalúo de común acuerdo?",
+                    opts: [
+                        {
+                            t: "Sí — Los interesados presentan nuevo avalúo acordado; el LAJ alza la suspensión sin esperar resolución penal firme",
+                            l: "ok",
+                            n: "p5_sentencia",
+                        },
+                        {
+                            t: "No — No hay acuerdo sobre nuevo avalúo; la suspensión se mantiene hasta resolución penal firme o paralización de la causa",
+                            l: "bad",
+                            n: "fin_suspension_penal",
+                        },
+                    ],
+                },
+
+                p5_traslado: {
+                    ph: 5,
+                    t: "Traslado a las partes y plazo de oposición (art. 787.1 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ da traslado de las operaciones divisorias a todas las partes, emplazándolas por diez días para que formulen oposición o manifiesten conformidad.",
+                        ],
+                        ["l", "Art. 787.1 LEC"],
+                        [
+                            "d",
+                            "Plazo de oposición: DIEZ DÍAS desde el traslado.",
+                        ],
+                        [
+                            "n",
+                            "Durante el plazo: las partes pueden examinar los autos y obtener copias a su costa.",
+                        ],
+                        [
+                            "n",
+                            "La oposición debe formularse por escrito, con expresión de los puntos impugnados y las razones en que se funda. Una oposición genérica («no estoy de acuerdo con la partición») no es válida y debe ser desestimada.",
+                        ],
+                        [
+                            "cl",
+                            "Derechos de las partes durante el plazo de oposición",
+                            [
+                                "Examinar en la Oficina judicial los autos y las operaciones divisorias",
+                                "Obtener, a su costa, las copias que soliciten",
+                                "Formular oposición por escrito dentro del plazo de diez días",
+                            ],
+                        ],
+                    ],
+                    q: "¿Cuál es el resultado transcurrido el plazo de diez días?",
+                    opts: [
+                        {
+                            t: "Conformidad expresa — Los interesados manifiestan expresamente su conformidad",
+                            l: "ok",
+                            n: "p5_decreto",
+                        },
+                        {
+                            t: "Oposición en plazo — Algún interesado formula oposición escrita y motivada en plazo hábil",
+                            l: "warn",
+                            n: "p5_comparecencia",
+                        },
+                        {
+                            t: "Acuerdo de terminación — Todos solicitan el sobreseimiento de común acuerdo (art. 789 LEC)",
+                            l: "neutral",
+                            n: "fin_acuerdo_coherederos",
+                        },
+                    ],
+                },
+
+                fin_acuerdo_coherederos: {
+                    ph: 6,
+                    t: "Sobreseimiento por acuerdo unánime (art. 789 LEC)",
+                    ac: "laj",
+                    end: "neutral",
+                    c: [
+                        [
+                            "i",
+                            "Todos los interesados han solicitado de común acuerdo la terminación del procedimiento. El LAJ sobresee el juicio y pone los bienes a disposición de los herederos.",
+                        ],
+                        ["l", "Art. 789 LEC · Art. 796 LEC · Art. 1058 CC"],
+                        [
+                            "n",
+                            "El sobreseimiento es un acto reglado: una vez que todos los interesados lo solicitan de común acuerdo, el LAJ no tiene margen de apreciación y está obligado a decretar el sobreseimiento. La facultad puede ejercerse en cualquier estado del juicio.",
+                        ],
+                        [
+                            "n",
+                            "Modalidades del acuerdo: (1) Partición notarial (arts. 66 bis/66 ter LN): todos los herederos otorgan escritura pública ante Notario; (2) Contador dativo notarial (art. 92 LJV): los herederos que representen al menos el 50% solicitan el nombramiento de contador dativo; (3) Mediación (Ley 36/2006): el acuerdo alcanzado, elevado a escritura pública, tiene eficacia de título ejecutivo (art. 25); (4) Arbitraje (Ley 60/2003): el laudo tiene la misma eficacia que sentencia firme.",
+                        ],
+                        ["l", "Art. 789 LEC · Art. 796 LEC"],
+                    ],
+                },
+
+                fin_bloqueo_acreedores: {
+                    ph: 6,
+                    t: "Entrega bloqueada — Acreedores no satisfechos",
+                    ac: "laj",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "La entrega de los bienes adjudicados permanece bloqueada mientras los acreedores cualificados no estén satisfechos o garantizados. Esta situación puede mantenerse indefinidamente si no hay acuerdo entre los herederos y los acreedores sobre la forma de pago o garantía.",
+                        ],
+                        ["l", "Art. 788.3 LEC · Art. 1082 CC · Art. 789 LEC"],
+                        [
+                            "n",
+                            "Vías de desbloqueo: (1) Pago íntegro del crédito al acreedor; (2) Constitución de garantía suficiente (aval bancario, hipoteca); (3) Acuerdo entre herederos y acreedores sobre el calendario de pago; (4) Si el crédito es objeto de disputa, el acreedor debe demostrar su cuantía en el procedimiento correspondiente; (5) Los acreedores pueden ejercitar sus acciones en juicio declarativo independiente.",
+                        ],
+                        [
+                            "w",
+                            "Los herederos pueden solicitar el sobreseimiento del procedimiento y adoptar un acuerdo extrajudicial para resolver las deudas (art. 789 LEC). También pueden plantear la cuestión en un juicio declarativo ordinario para que se determine la existencia y cuantía del crédito.",
+                        ],
+                        ["l", "Art. 788.3 LEC · Art. 1082 CC"],
+                    ],
+                },
+
+                fin_exitoso: {
+                    ph: 6,
+                    t: "Procedimiento concluido satisfactoriamente",
+                    ac: "laj",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "El procedimiento de división judicial de la herencia ha concluido con la entrega de los bienes adjudicados a cada heredero o legatario y la expedición de los testimonios correspondientes.",
+                        ],
+                        [
+                            "l",
+                            "Arts. 782–788 LEC · Art. 1059 CC · Art. 1068 CC · Art. 1069 CC",
+                        ],
+                        [
+                            "n",
+                            "Trámites posteriores recomendados: inscripción registral de bienes inmuebles, cambio de titularidad bancaria, autoliquidación del ISD (plazo 6 meses, prorrogables 1 año), liquidación de plusvalía municipal (IIVTNU).",
+                        ],
+                        [
+                            "n",
+                            "Si en la fase de aprobación se dictó sentencia en el juicio verbal (art. 787.5 LEC), los interesados conservan el derecho a ejercitar sus pretensiones sobre los bienes adjudicados en el juicio ordinario que corresponda, dado que la sentencia carece de eficacia de cosa juzgada.",
+                        ],
+                        [
+                            "w",
+                            "Acciones conservadas a los interesados: la ausencia de cosa juzgada (art. 787.7 LEC) permite que los interesados puedan impugnar la partición posteriormente mediante: acción de rescisión (art. 1073 CC, cuatro años), acción de lesión (art. 1074 CC, cuatro años), acción de complemento por omisión de bienes (art. 1079 CC).",
+                        ],
+                        ["l", "Arts. 782–788 LEC"],
+                    ],
+                },
+
+                p6_acreedores: {
+                    ph: 6,
+                    t: "Verificación previa a la entrega: acreedores privilegiados (art. 788.3 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Aprobadas definitivamente las particiones, el LAJ verifica si la oposición de acreedores privilegiados formulada al amparo del art. 782.4 LEC ha sido satisfecha, pues condiciona la entrega de los bienes.",
+                        ],
+                        ["l", "Art. 788.3 LEC · Art. 782.4 LEC"],
+                        [
+                            "n",
+                            "Tipos de acreedores con derecho de oposición: (1) Acreedores testamentarios (reconocidos en el testamento); (2) Acreedores reconocidos por los coherederos; (3) Acreedores con título ejecutivo (sentencia, laudo, escritura pública con fuerza ejecutiva). El acreedor común (sin título ejecutivo ni reconocimiento) NO tiene derecho de oposición, pero conserva sus acciones contra la herencia o los coherederos individualmente.",
+                        ],
+                    ],
+                    q: "¿Hay acreedores privilegiados (art. 782.4 LEC) con oposición pendiente, no pagados ni garantizados?",
+                    opts: [
+                        {
+                            t: "No — No hay oposición pendiente de acreedores privilegiados",
+                            l: "ok",
+                            n: "p6_notas",
+                        },
+                        {
+                            t: "Sí — Existe oposición pendiente de acreedores privilegiados no satisfecha; la entrega queda bloqueada hasta que estén pagados o garantizados a su satisfacción",
+                            l: "warn",
+                            n: "p6_pago",
+                        },
+                    ],
+                },
+
+                p6_entrega: {
+                    ph: 6,
+                    t: "Entrega de bienes y expedición de testimonios (art. 788.1–2 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ entrega a cada interesado los bienes adjudicados y los títulos de propiedad con las notas del actuario. A los partícipes que lo pidan les expide testimonio de su haber y adjudicación respectivos.",
+                        ],
+                        ["l", "Art. 788.1–2 LEC"],
+                        [
+                            "n",
+                            "El testimonio del haber adjudicado acredita ante terceros y ante el Registro de la Propiedad la porción atribuida a cada heredero o legatario por virtud de la partición.",
+                        ],
+                        [
+                            "n",
+                            "Efectos posteriores a la entrega: los coherederos quedan obligados recíprocamente a la evicción y saneamiento de los bienes adjudicados (art. 1069 CC). Los acreedores pueden exigir el pago íntegro a cualquiera de los herederos que no haya aceptado a beneficio de inventario (art. 1084 CC).",
+                        ],
+                        [
+                            "d",
+                            "Trámites posteriores recomendados para los adjudicatarios: (1) Presentar la escritura de partición en el Registro de la Propiedad para la inscripción de los bienes inmuebles; (2) Comunicar la adjudicación a las entidades financieras para el cambio de titularidad de cuentas y valores; (3) Presentar la autoliquidación del Impuesto de Sucesiones y Donaciones (ISD) si no se ha hecho aún (plazo de seis meses desde el fallecimiento, prorrogables un año); (4) Liquidar la plusvalía municipal (IIVTNU) de los inmuebles adjudicados.",
+                        ],
+                    ],
+                    nx: "fin_exitoso",
+                },
+
+                p6_notas: {
+                    ph: 6,
+                    t: "Notas de adjudicación en títulos de propiedad (art. 788.1 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El actuario pone en los títulos de propiedad notas expresivas de la adjudicación. Estas notas vinculan el título originario con la nueva titularidad resultante de la partición y facilitan la posterior inscripción registral.",
+                        ],
+                        ["l", "Art. 788.1 LEC"],
+                    ],
+                    nx: "p6_entrega",
+                },
+
+                p6_pago: {
+                    ph: 6,
+                    t: "Pago o afianzamiento previo de acreedores privilegiados (art. 788.3 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "No se hará entrega de bienes a ningún heredero ni legatario hasta que los acreedores que formularon oposición conforme al art. 782.4 LEC estén completamente pagados o garantizados a su satisfacción.",
+                        ],
+                        ["l", "Art. 788.3 LEC"],
+                        [
+                            "n",
+                            "La garantía puede materializarse por pago efectivo o por cualquier forma de afianzamiento que satisfaga al acreedor: aval bancario, hipoteca sobre los bienes adjudicados, retención de cantidades en depósito judicial, o cualquier otra forma que el LAJ considere suficiente. La ley no impone modalidad concreta.",
+                        ],
+                        [
+                            "n",
+                            "Esta medida protege a los acreedores frente al riesgo de insolvencia de los herederos: si los bienes se dispersan entre los coherederos sin pagar las deudas, los acreedores podrían ver frustrado su cobro. La regla es la contrapartida procesal del art. 1082 CC.",
+                        ],
+                    ],
+                    q: "¿Quedan satisfechos o garantizados los créditos de los acreedores oponentes?",
+                    opts: [
+                        {
+                            t: "Sí — Los acreedores han sido pagados íntegramente, o se ha constituido garantía suficiente a su satisfacción",
+                            l: "ok",
+                            n: "p6_notas",
+                        },
+                        {
+                            t: "No — Persiste la discrepancia sobre la cuantía del crédito, la suficiencia de la garantía, u otros aspectos",
+                            l: "bad",
+                            n: "fin_bloqueo_acreedores",
+                        },
+                    ],
+                },
+
+                p6_protocolizacion: {
+                    ph: 6,
+                    t: "Protocolización de las operaciones divisorias (Art. 787.2 LEC)",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El LAJ manda protocolizar las operaciones divisorias aprobadas, es decir, elevarlas a escritura pública ante Notario. La escritura pública adquiere carácter de documento público y constituye título inscribible en los Registros públicos (Registro de la Propiedad, Registro Mercantil, etc.).",
+                        ],
+                        [
+                            "d",
+                            "La protocolización es necesaria para la inscripción de los bienes adjudicados en el Registro de la Propiedad. Conforme a la Ley Hipotecaria (art. 205 LH), la escritura pública de partición es título inscribible. El Registrador calificará la legalidad de la partición y, si se ajusta a las normas sustantivas, practicará la inscripción.",
+                        ],
+                        [
+                            "n",
+                            "Efecto declarativo de la partición (art. 1068 CC): la partición legalmente hecha confiere a cada heredero la propiedad exclusiva de los bienes adjudicados, pero no transmite la propiedad — la declara, reconociendo una titularidad que se remonta al momento de la muerte del causante (art. 657 CC).",
+                        ],
+                        [
+                            "l",
+                            "Art. 787.2 LEC: protocolización. Art. 1068 CC: efecto declarativo. Art. 205 LH: título inscribible. Art. 1065-1066 CC: entrega de títulos de propiedad al adjudicatario.",
+                        ],
+                    ],
+                    nx: "p6_acreedores",
+                },
+            };
+
+            /* ═══════════════════════════════════════════════
+   ESTADO
+═══════════════════════════════════════════════ */
+            let cur = "p0_inicio",
+                hist = [],
+                activeSbTab = "map",
+                mapaVisible = false;
+            let phExp = PHASES.map(() => true);
+            const LETS = ["A", "B", "C", "D", "E"];
+            const escQ = (s) =>
+                s.replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+            const trunc = (s, n) =>
+                s.length > n ? s.slice(0, n - 1) + "…" : s;
+
+            /* ========== SIDEBAR TOGGLE (nuevo) ========== */
+            let sidebarOpen = false; // solo móvil
+            function toggleSidebar() {
+                const isMobile = window.innerWidth <= 768;
+                const sidebar = document.getElementById("sidebar");
+                const btn = document.getElementById("btnToggleSidebar");
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    if (sidebarOpen) {
+                        sidebar.classList.add("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.add("show");
+                        if (btn) btn.setAttribute("aria-expanded", "true");
+                    } else {
+                        sidebar.classList.remove("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.remove("show");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                } else {
+                    sidebar.classList.toggle("collapsed");
+                    const isCollapsed = sidebar.classList.contains("collapsed");
+                    if (btn)
+                        btn.setAttribute(
+                            "aria-expanded",
+                            isCollapsed ? "false" : "true",
+                        );
+                }
+            }
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 768 && sidebarOpen) {
+                    sidebarOpen = false;
+                    const sidebar = document.getElementById("sidebar");
+                    const backdrop = document.getElementById("sidebarBackdrop");
+                    const btn = document.getElementById("btnToggleSidebar");
+                    if (sidebar) sidebar.classList.remove("open");
+                    if (backdrop) backdrop.classList.remove("show");
+                    if (btn) btn.setAttribute("aria-expanded", "false");
+                }
+            }
+            function handleResize() {
+                if (window.innerWidth > 768) {
+                    // Si pasamos a escritorio, aseguramos que el sidebar móvil se cierre y que no tenga clase open
+                    if (sidebarOpen) {
+                        const sidebar = document.getElementById("sidebar");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (sidebar) sidebar.classList.remove("open");
+                        if (backdrop) backdrop.classList.remove("show");
+                        sidebarOpen = false;
+                        const btn = document.getElementById("btnToggleSidebar");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (sidebarEl) sidebarEl.classList.remove("open");
+                } else {
+                    // En móvil, si la sidebar tiene collapsed (por posible estado heredado) la quitamos
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (
+                        sidebarEl &&
+                        sidebarEl.classList.contains("collapsed")
+                    ) {
+                        sidebarEl.classList.remove("collapsed");
+                    }
+                    if (
+                        !sidebarOpen &&
+                        sidebarEl &&
+                        sidebarEl.classList.contains("open")
+                    ) {
+                        sidebarEl.classList.remove("open");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (backdrop) backdrop.classList.remove("show");
+                    }
+                }
+            }
+
+            /* ═══════════════════════════════════════════════
+   NAVEGACIÓN
+═══════════════════════════════════════════════ */
+            function goTo(stepId, choiceLabel) {
+                hist.push({ s: cur, next: stepId, c: choiceLabel });
+                cur = stepId;
+                if (choiceLabel) sbTab("journey");
+                render();
+                closeMobileSidebar(); // cerrar sidebar móvil al navegar
+            }
+            function goBack() {
+                if (!hist.length) return;
+                const p = hist.pop();
+                cur = p.s;
+                render();
+                closeMobileSidebar();
+            }
+            function goBackTo(idx) {
+                cur = hist[idx].s;
+                hist = hist.slice(0, idx);
+                render();
+                closeMobileSidebar();
+            }
+            function jumpTo(stepId) {
+                if (stepId === cur) return;
+                hist.push({ s: cur, next: stepId, c: "[Salto directo]" });
+                cur = stepId;
+                sbTab("map");
+                if (mapaVisible) toggleMapa();
+                render();
+                closeMobileSidebar();
+            }
+            function restart() {
+                cur = "p0_inicio";
+                hist = [];
+                sbTab("map");
+                render();
+                closeMobileSidebar();
+            }
+            function sbTab(tab) {
+                activeSbTab = tab;
+                document.getElementById("sb-map").style.display =
+                    tab === "map" ? "block" : "none";
+                document.getElementById("sb-journey").style.display =
+                    tab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach((t, i) => {
+                    t.classList.toggle(
+                        "active",
+                        (i === 0 && tab === "map") ||
+                            (i === 1 && tab === "journey"),
+                    );
+                });
+            }
+            function togglePhase(i) {
+                phExp[i] = !phExp[i];
+                renderSbMap();
+            }
+
+            /* ═══════════════════════════════════════════════
+   RENDER
+═══════════════════════════════════════════════ */
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+                document.getElementById("content").scrollTop = 0;
+                closeMobileSidebar(); // cierra sidebar móvil tras cada cambio de paso
+            }
+
+            function renderPbar() {
+                const curPh = S[cur].ph;
+                const done = new Set(hist.map((h) => S[h.s].ph));
+                document.getElementById("pbar").innerHTML = PHASES.map(
+                    (name, i) => {
+                        const cls =
+                            i === curPh
+                                ? "active"
+                                : done.has(i) && i < curPh
+                                  ? "done"
+                                  : "";
+                        return `<div class="ph-item"><span class="ph-lbl ${cls}">${name}</span></div>${i < PHASES.length - 1 ? '<span class="ph-sep">›</span>' : ""}`;
+                    },
+                ).join("");
+            }
+
+            function renderBreadcrumb() {
+                let h = hist
+                    .map(
+                        (e, i) =>
+                            `<button class="bc-past bc-item" onclick="goBackTo(${i})" title="${escQ(S[e.s].t)}">${trunc(S[e.s].t, 30)}</button><span class="bc-sep">›</span>`,
+                    )
+                    .join("");
+                h += `<span class="bc-current bc-item" title="${escQ(S[cur].t)}">${trunc(S[cur].t, 32)}</span>`;
+                document.getElementById("breadcrumb").innerHTML = h;
+            }
+
+            function renderSidebar() {
+                renderSbMap();
+                renderSbJourney();
+            }
+
+            function renderSbMap() {
+                const vis = new Set(hist.map((h) => h.s));
+                document.getElementById("sb-map").innerHTML =
+                    PHASES.map((name, pi) => {
+                        const nodes = Object.entries(S).filter(
+                            ([, v]) => v.ph === pi,
+                        );
+                        const exp = phExp[pi];
+                        return `<div class="sm-phase">
+      <div class="sm-phase-hdr" onclick="togglePhase(${pi})">
+        <span class="sm-ph-name">${name}</span>
+        <span class="sm-ph-arr">${exp ? "▾" : "▸"}</span>
+      </div>
+      ${
+          exp
+              ? `<div class="sm-phase-body">${nodes
+                    .map(([id, node]) => {
+                        let cls = "sm-node" + (node.end ? " sm-end" : "");
+                        if (id === cur) cls += " sm-current";
+                        else if (vis.has(id)) cls += " sm-visited";
+                        return `<div class="${cls}" title="${escQ(node.t)}" onclick="jumpTo('${id}')">${trunc(node.t, 42)}</div>`;
+                    })
+                    .join("")}</div>`
+              : ""
+      }
+    </div>`;
+                    }).join("") +
+                    '<div style="padding:8px 8px 2px;font-size:10px;color:rgba(255,255,255,.28);font-style:italic">✦ Pulsa cualquier paso para acceder directamente</div>';
+            }
+
+            function renderSbJourney() {
+                const el = document.getElementById("sb-journey");
+                if (!hist.length) {
+                    el.innerHTML = `<div class="sb-empty">El recorrido aparece aquí en cuanto tome la primera decisión.</div>${SB_FOOT}`;
+                    return;
+                }
+                el.innerHTML =
+                    hist
+                        .map(
+                            (e) =>
+                                `<div class="pi past"><div class="pi-title">${S[e.s].t}</div>${e.c ? `<div class="pi-choice">${e.c}</div>` : ""}</div>`,
+                        )
+                        .join("") +
+                    `<div class="pi current"><div class="pi-title">${S[cur].t}</div></div>${SB_FOOT}`;
+            }
+
+            function buildBlocks(blocks) {
+                return blocks
+                    .map((b) => {
+                        switch (b[0]) {
+                            case "i":
+                                return `<p class="cb-i">${b[1]}</p>`;
+                            case "d":
+                                return `<div class="cb-d">⏱ ${b[1]}</div>`;
+                            case "n":
+                                return `<div class="cb-n">ℹ ${b[1]}</div>`;
+                            case "w":
+                                return `<div class="cb-w">⚠ ${b[1]}</div>`;
+                            case "l":
+                                return `<div class="cb-l">${b[1]}</div>`;
+                            case "cl":
+                                return `<div class="cb-cl-title">${b[1]}</div><ul class="cb-cl">${b[2].map((i) => `<li>${i}</li>`).join("")}</ul>`;
+                            default:
+                                return "";
+                        }
+                    })
+                    .join("");
+            }
+
+            function buildStep(s) {
+                const acL = {
+                    laj: "LAJ",
+                    juez: "Tribunal",
+                    ambos: "LAJ / Tribunal",
+                }[s.ac];
+                const acC = {
+                    laj: "act-laj",
+                    juez: "act-juez",
+                    ambos: "act-ambos",
+                }[s.ac];
+                const wasJump =
+                    hist.length &&
+                    hist[hist.length - 1].c === "[Salto directo]";
+                let h = `<div class="card">
+    <div class="c-hdr">
+      <div class="c-hdr-meta">
+        <span class="act-badge ${acC}">${acL}</span>
+        <span class="step-num">Paso ${hist.length + 1} · ${PHASES[s.ph]}${wasJump ? `<span class="jump-badge">✦ Acceso directo</span>` : ""}</span>
+      </div>
+      <div class="c-title">${s.t}</div>
+    </div>
+    <div class="c-body">${buildBlocks(s.c)}</div>`;
+                if (s.q) {
+                    h += `<div class="dec-area"><div class="dec-sep"></div>
+      <div class="dec-q">${s.q}</div>
+      <div class="dec-opts">${s.opts
+          .map(
+              (opt, i) => `
+        <button class="dec-btn ${opt.l}" onclick="goTo('${opt.n}','${escQ(opt.t)}')">
+          <span class="dec-letter">${LETS[i]}</span><span>${opt.t}</span>
+        </button>`,
+          )
+          .join("")}
+      </div></div>`;
+                }
+                // Acuerdo de coherederos callout (de G2)
+                if (!s.end && cur !== "fin_acuerdo_coherederos") {
+                    h += `<div class="acuerdo-callout" onclick="goTo('fin_acuerdo_coherederos','Acuerdo de coherederos')">
+      <div class="acuerdo-title">🤝 Acuerdo de coherederos (Art. 789 LEC)</div>
+      <div class="acuerdo-desc">En cualquier estado del juicio, los interesados pueden solicitar de común acuerdo el sobreseimiento y adoptar acuerdos extrajudiciales (partición notarial, mediación, arbitraje).</div>
+    </div>`;
+                }
+                h += `<div class="c-nav">
+    <button class="btn-back" onclick="goBack()"${!hist.length ? " disabled" : ""}>← Volver</button>
+    ${s.nx ? `<button class="btn-next" onclick="goTo('${s.nx}','')">Siguiente →</button>` : ""}
+  </div></div>`;
+                return h;
+            }
+
+            function buildEnd(s) {
+                const icons = {
+                    success: "✓",
+                    error: "✗",
+                    warning: "⚠",
+                    neutral: "ℹ",
+                };
+                const subs = {
+                    success:
+                        "Procedimiento concluido satisfactoriamente en esta vía.",
+                    error: "Solicitud no admisible a trámite. Revise los presupuestos legales.",
+                    warning:
+                        "El procedimiento no puede continuar por esta vía en este momento.",
+                    neutral:
+                        "Las partes han puesto fin al procedimiento de común acuerdo.",
+                };
+                return `<div class="card end-${s.end}">
+    <div class="end-hero">
+      <span class="end-icon">${icons[s.end]}</span>
+      <div class="end-title">${s.t}</div>
+      <div class="end-sub">${subs[s.end]}</div>
+      <div class="end-btns">
+        <button class="btn-next" onclick="restart()">↺ Nuevo procedimiento</button>
+        <button class="btn-back" onclick="goBack()">← Volver</button>
+      </div>
+    </div>
+    <div class="c-body">${buildBlocks(s.c)}
+      <div class="summary-box">
+        <h4>Resumen del recorrido seguido</h4>
+        ${hist.map((e, i) => `<div class="sum-item"><span class="sum-n">${i + 1}</span><div><div class="sum-t">${S[e.s].t}</div>${e.c ? `<div class="sum-c">${e.c}</div>` : ""}</div></div>`).join("")}
+        <div class="sum-item"><span class="sum-n">${hist.length + 1}</span><div><div class="sum-t final">${s.t}</div></div></div>
+      </div>
+    </div>
+  </div>`;
+            }
+
+            function renderContent() {
+                const s = S[cur];
+                document.getElementById("content").innerHTML = s.end
+                    ? buildEnd(s)
+                    : buildStep(s);
+            }
+
+            /* ═══════════════════════════════════════════════
+   MAPA OVERLAY
+═══════════════════════════════════════════════ */
+            function toggleMapa() {
+                mapaVisible = !mapaVisible;
+                document.getElementById("layout").style.display = mapaVisible
+                    ? "none"
+                    : "flex";
+                const mo = document.getElementById("mapa-overlay");
+                mo.style.display = mapaVisible ? "block" : "none";
+                if (mapaVisible) renderMapa();
+                closeMobileSidebar(); // cerrar sidebar al abrir mapa en móvil
+            }
+
+            function renderMapa() {
+                const vis = new Set(hist.map((h) => h.s));
+                let h = `<div class="mapa-hdr">
+    <button class="btn-back" onclick="toggleMapa()">← Volver al recorrido</button>
+    <div class="mapa-hdr-text"><h2>Mapa completo del procedimiento</h2>
+    <p>Todos los pasos, bifurcaciones y desenlaces posibles — LEC arts. 782–789</p></div>
+  </div>
+  <div class="mapa-legend">
+    <div class="leg-item"><div class="leg-sw" style="background:var(--green-bg);border:1px solid var(--green)"></div>Visitado</div>
+    <div class="leg-item"><div class="leg-sw" style="background:#EEF2FF;border:1px solid var(--navy-lt)"></div>Actual</div>
+    <div class="leg-item"><div class="leg-sw" style="background:var(--white);border:1px solid var(--bdr)"></div>Pendiente</div>
+    <div class="leg-item"><div class="leg-sw" style="border:2px solid var(--green)"></div>Final · éxito</div>
+    <div class="leg-item"><div class="leg-sw" style="border:2px solid var(--red)"></div>Final · error</div>
+    <div class="leg-item"><div class="leg-sw" style="border:2px solid var(--amber)"></div>Final · advertencia</div>
+    <div class="leg-item"><div class="leg-sw" style="border:2px solid var(--cyan)"></div>Final · acuerdo</div>
+    <div class="leg-item" style="margin-left:6px"><span style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--cyan)">LAJ</span>&nbsp;/&nbsp;<span style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--violet)">Tribunal</span></div>
+    <div class="leg-item" style="margin-left:auto;font-style:italic;color:var(--navy-mid)">✦ Pulsa cualquier nodo para ir directamente a ese paso</div>
+  </div>
+  <div class="mapa-scroll"><div class="mapa-grid">`;
+                PHASES.forEach((pname, pi) => {
+                    const nodes = Object.entries(S).filter(
+                        ([, v]) => v.ph === pi,
+                    );
+                    h += `<div class="mapa-col"><div class="mapa-col-hdr">${pname}</div>`;
+                    nodes.forEach(([id, node], ni) => {
+                        let cls = "mapa-node";
+                        if (id === cur) cls += " mn-current";
+                        else if (vis.has(id)) cls += " mn-visited";
+                        if (node.end) cls += ` mn-end-${node.end}`;
+                        const aC = { laj: "laj", juez: "juez", ambos: "ambos" }[
+                            node.ac
+                        ];
+                        const aT = {
+                            laj: "LAJ",
+                            juez: "Tribunal",
+                            ambos: "LAJ / Tribunal",
+                        }[node.ac];
+                        h += `<div class="${cls}" style="${ni === 0 ? "border-top:1px solid var(--bdr)" : ""}" onclick="jumpTo('${id}')" title="Ir directamente a: ${escQ(node.t)}">`;
+                        h += `<div class="mn-title">${node.t}</div>`;
+                        h += `<div class="mn-actor ${aC}">${aT}</div>`;
+                        if (node.end)
+                            h += `<div class="mn-end-label">Nodo final</div>`;
+                        if (node.opts) {
+                            h += `<div class="mn-opts">${node.opts
+                                .map((o, oi) => {
+                                    const dest = S[o.n];
+                                    return `<div class="mn-opt"><span class="mn-opt-a">→</span><span>${LETS[oi]}: ${dest ? trunc(dest.t, 22) : o.n}</span></div>`;
+                                })
+                                .join("")}</div>`;
+                        } else if (node.nx) {
+                            const dest = S[node.nx];
+                            h += `<div class="mn-opts"><div class="mn-opt"><span class="mn-opt-a">→</span><span>${dest ? trunc(dest.t, 26) : node.nx}</span></div></div>`;
+                        }
+                        h += `</div>`;
+                    });
+                    h += `</div>`;
+                });
+                h += `</div></div>`;
+                document.getElementById("mapa-overlay").innerHTML = h;
+            }
+
+            /* ═══════════════════════════════════════════════
+   DESCARGA
+═══════════════════════════════════════════════ */
+            function dlGuia() {
+                const html =
+                    "<!DOCTYPE html>" + document.documentElement.outerHTML;
+                const blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "division-judicial-herencia-guia-definitiva.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            let zoomLevel = 100;
+            function updateZoom() {
+                const label = document.getElementById("zoom-label");
+                const content = document.getElementById("content");
+                if (label) label.innerText = `${zoomLevel}%`;
+                if (content) content.style.zoom = zoomLevel / 100;
+            }
+            document.getElementById("btn-zoom-in").onclick = () => {
+                if (zoomLevel < 150) {
+                    zoomLevel += 10;
+                    updateZoom();
+                }
+            };
+            document.getElementById("btn-zoom-out").onclick = () => {
+                if (zoomLevel > 70) {
+                    zoomLevel -= 10;
+                    updateZoom();
+                }
+            };
+            updateZoom();
+
+            // Asociar eventos del toggle sidebar y backdrop
+            document
+                .getElementById("btnToggleSidebar")
+                .addEventListener("click", toggleSidebar);
+            document
+                .getElementById("sidebarBackdrop")
+                .addEventListener("click", closeMobileSidebar);
+            window.addEventListener("resize", handleResize);
+            handleResize(); // estado inicial correcto
+
+            render();
+        </script>
+    </body>
+</html>

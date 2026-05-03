@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LJV 15/2015 — Título II, Cap. I — Reconocimiento de la filiación no matrimonial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #f7f6f2;
+  --surface:     #ffffff;
+  --surface-2:   #f2f1ed;
+  --border:      rgba(15,23,42,.08);
+  --border-md:   rgba(15,23,42,.14);
+  --text-1:      #0f172a;
+  --text-2:      #475569;
+  --text-3:      #94a3b8;
+  --ink:         #0f172a;
+  --header-bg:   #0f172a;
+  --header-text: #f8f5ed;
+  --accent:      #c8a96e;
+
+  --c1:  #0e7490; --c1bg: #ecfeff; --c1bd: #a5f3fc;
+  --c2:  #b45309; --c2bg: #fffbeb; --c2bd: #fde68a;
+  --c3:  #047857; --c3bg: #ecfdf5; --c3bd: #a7f3d0;
+  --c4:  #6d28d9; --c4bg: #f5f3ff; --c4bd: #ddd6fe;
+  --c5:  #be123c; --c5bg: #fff1f2; --c5bd: #fecdd3;
+  --c6:  #475569; --c6bg: #f8fafc; --c6bd: #cbd5e1;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+  --transition:   200ms ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 1.5rem 1.75rem;
+}
+.header-inner { max-width: 1400px; margin: 0 auto; }
+.header-breadcrumb {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+.header-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--header-text);
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+.header-subtitle{font-size:14px;color:rgba(248,245,237,.65);margin-bottom:1rem;line-height:1.5}
+.header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+}
+.header-tag {
+  background: rgba(200,169,110,.15);
+  border: 1px solid rgba(200,169,110,.3);
+  color: var(--accent);
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: .25rem .75rem;
+  border-radius: 20px;
+}
+.header-actions { margin-left: auto; }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(248,245,237,.15);
+  color: rgba(248,245,237,.7);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  padding: .4rem .9rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-ghost:hover { background: rgba(248,245,237,.08); color: var(--header-text); }
+
+/* ── STATS BAR ───────────────────────────────────────────── */
+.stats-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.stats-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-1);
+  line-height: 1;
+  margin-bottom: .35rem;
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+@media (max-width: 640px) {
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(3) { border-right: 1px solid var(--border); }
+}
+
+/* ── CONTROLS BAR (STICKY) ───────────────────────────────── */
+.controls-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  border-bottom: 1px solid var(--border);
+}
+.controls-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: .65rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+}
+.search-wrap svg {
+  position: absolute;
+  left: .65rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-3);
+  pointer-events: none;
+  width: 15px; height: 15px;
+}
+.search-input {
+  width: 100%;
+  padding: .45rem .75rem .45rem 2.1rem;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  background: var(--surface);
+  color: var(--text-1);
+  outline: none;
+  transition: var(--transition);
+}
+.search-input:focus { border-color: var(--c1); box-shadow: 0 0 0 2px rgba(14,116,144,.1); }
+.search-input::placeholder { color: var(--text-3); }
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  align-items: center;
+}
+.pill {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  padding: .3rem .8rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-md);
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.pill:hover { background: var(--surface-2); }
+.pill.active[data-cat="all"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.pill.active[data-cat="c1"]  { background: var(--c1); border-color: var(--c1); color: #fff; }
+.pill.active[data-cat="c2"]  { background: var(--c2); border-color: var(--c2); color: #fff; }
+.pill.active[data-cat="c3"]  { background: var(--c3); border-color: var(--c3); color: #fff; }
+.pill.active[data-cat="c4"]  { background: var(--c4); border-color: var(--c4); color: #fff; }
+
+.ctrl-actions {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-left: auto;
+}
+.btn-ctrl {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  padding: .3rem .75rem;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-ctrl:hover { background: var(--surface-2); color: var(--text-1); }
+.zoom-cluster {
+  display: flex;
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  align-items: center;
+}
+.btn-zoom {
+  border: none;
+  background: var(--surface);
+  color: var(--text-2);
+  width: 28px;
+  height: 28px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.btn-zoom:hover:not(:disabled) { background: var(--surface-2); }
+.btn-zoom:disabled { opacity: .35; cursor: default; }
+.btn-zoom:first-child { border-right: 1px solid var(--border-md); }
+.btn-zoom:last-child  { border-left:  1px solid var(--border-md); }
+.zoom-label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 42px;
+  text-align: center;
+  color: var(--text-2);
+  padding: 0 .2rem;
+}
+@media (max-width: 768px) { .ctrl-actions { display: none; } }
+
+/* ── MAIN ────────────────────────────────────────────────── */
+.page-main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem 2.5rem;
+}
+
+/* ── MAP SECTION ─────────────────────────────────────────── */
+.map-section { margin-bottom: 2rem; }
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  cursor: pointer;
+  padding: .5rem 0;
+  user-select: none;
+}
+.section-heading-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-1);
+}
+.section-heading-count {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: .15rem .6rem;
+}
+.section-toggle-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--text-3);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: .5rem 0 1rem;
+}
+.section-body.collapsed { display: none; }
+
+/* ── CARD GRID ───────────────────────────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+/* ── MAP CARD ────────────────────────────────────────────── */
+.map-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border-left: 4px solid;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition), transform var(--transition);
+  overflow: hidden;
+}
+.map-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.map-card.hidden { display: none; }
+
+.map-card[data-cat="c1"] { border-left-color: var(--c1); }
+.map-card[data-cat="c2"] { border-left-color: var(--c2); }
+.map-card[data-cat="c3"] { border-left-color: var(--c3); }
+.map-card[data-cat="c4"] { border-left-color: var(--c4); }
+
+.card-top { padding: 1rem 1rem .75rem; }
+.card-meta { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: .5rem; }
+
+.art-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: .18rem .6rem;
+  border-radius: 20px;
+  border: 1px solid;
+}
+.map-card[data-cat="c1"] .art-badge { background: var(--c1bg); color: var(--c1); border-color: var(--c1bd); }
+.map-card[data-cat="c2"] .art-badge { background: var(--c2bg); color: var(--c2); border-color: var(--c2bd); }
+.map-card[data-cat="c3"] .art-badge { background: var(--c3bg); color: var(--c3); border-color: var(--c3bd); }
+.map-card[data-cat="c4"] .art-badge { background: var(--c4bg); color: var(--c4); border-color: var(--c4bd); }
+
+.status-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: .18rem .6rem;
+  border-radius: 20px;
+}
+.tag-warn  { background: #fef3c7; color: #92400e; }
+.tag-alert { background: #fee2e2; color: #991b1b; }
+.tag-info  { background: #dbeafe; color: #1e40af; }
+.tag-ok    { background: #d1fae5; color: #065f46; }
+.tag-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-1);
+  line-height: 1.35;
+  margin-bottom: .35rem;
+}
+.card-subtitle {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.45;
+}
+
+.card-counters {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem 1rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.counter-badge {
+  font-size: 11.5px;
+  color: var(--text-2);
+}
+.counter-badge strong { color: var(--text-1); font-weight: 600; }
+
+.card-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+  background: var(--surface-2);
+  border: none;
+  border-top: 1px solid var(--border);
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.card-toggle-btn:hover { background: var(--border); color: var(--text-1); }
+.toggle-icon {
+  transition: transform var(--transition);
+  display: inline-block;
+  font-size: 11px;
+}
+.map-card.expanded .toggle-icon { transform: rotate(180deg); }
+.card-body { display: none; padding: .75rem 1rem 1rem; }
+.map-card.expanded .card-body { display: block; }
+
+/* inner sections */
+.inner-section { margin-bottom: .9rem; }
+.inner-section:last-child { margin-bottom: 0; }
+.inner-heading {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: .35rem;
+}
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.map-card[data-cat="c1"] .dot { background: var(--c1); }
+.map-card[data-cat="c2"] .dot { background: var(--c2); }
+.map-card[data-cat="c3"] .dot { background: var(--c3); }
+.map-card[data-cat="c4"] .dot { background: var(--c4); }
+.inner-heading-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-2);
+  background: var(--surface-2);
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+.inner-list { list-style: none; padding-left: 0; }
+.inner-list li {
+  position: relative;
+  padding: 2.5px 0 2.5px .8rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+  border-bottom: 1px solid var(--border);
+}
+.inner-list li:last-child { border-bottom: none; }
+.inner-list li::before { content: '–'; position: absolute; left: 0; color: var(--text-3); }
+.inner-list li strong { color: var(--text-1); font-weight: 500; }
+.inner-sub { list-style: none; padding-left: .8rem; margin-top: .25rem; }
+.inner-sub li {
+  position: relative;
+  padding: 2px 0 2px .75rem;
+  font-size: 11.5px;
+  color: var(--text-3);
+  border-bottom: none;
+}
+.inner-sub li::before { content: '·'; position: absolute; left: 0; color: var(--text-3); }
+
+/* ref tags */
+.ref-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(200,169,110,.1);
+  color: #92701a;
+  margin: 1px 2px;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: 1px solid rgba(200,169,110,.25);
+}
+.card-refs {
+  padding: .55rem 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  background: var(--surface-2);
+}
+
+/* inline badges */
+.b {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  border: 1px solid;
+  font-weight: 600;
+  margin: 1px 2px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.baut { border-color: #6058c8; color: #5548b8; background: rgba(90,72,184,.08); }
+.bap  { border-color: #309060; color: #277a52; background: rgba(48,144,96,.08); }
+.bno  { border-color: #a05030; color: #8a4428; background: rgba(160,80,48,.08); }
+.bsi  { border-color: #208080; color: #1a6e6e; background: rgba(32,128,128,.08); }
+
+/* ── NO RESULTS ──────────────────────────────────────────── */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-3);
+  font-size: 14px;
+  display: none;
+}
+
+/* ── PLAZOS TABLE ────────────────────────────────────────── */
+.table-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+.timeline-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.timeline-table thead tr { background: var(--surface-2); }
+.timeline-table th {
+  padding: .65rem 1rem;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+.timeline-table td {
+  padding: .6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.timeline-table tr:last-child td { border-bottom: none; }
+.timeline-table tr:hover td { background: var(--surface-2); }
+.td-tramite { font-size: 13px; color: var(--text-1); }
+.td-norm { font-size: 12px; color: var(--text-2); }
+.plazo-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: .2rem .65rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+.plazo-days   { background: #fef3c7; color: #92400e; }
+.plazo-weeks  { background: #dbeafe; color: #1e40af; }
+.plazo-months { background: #d1fae5; color: #065f46; }
+.plazo-years  { background: #fee2e2; color: #991b1b; }
+.plazo-other  { background: var(--surface-2); color: var(--text-2); }
+
+/* ── PARTICIPANTS ────────────────────────────────────────── */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 900px) { .participants-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .participants-grid { grid-template-columns: 1fr; } }
+.participant-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.participant-col-head {
+  padding: .55rem 1rem;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .03em;
+}
+.phead-c1 { background: var(--c1); }
+.phead-c2 { background: var(--c2); }
+.phead-c3 { background: var(--c3); }
+.phead-c4 { background: var(--c4); }
+.participant-col ul { list-style: none; padding: .4rem 0; }
+.participant-col li {
+  padding: .35rem 1rem;
+  font-size: 12.5px;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.4;
+}
+.participant-col li:last-child { border-bottom: none; }
+.participant-note { font-size: 11px; color: var(--text-3); font-style: italic; }
+
+/* ── NORM GRID ───────────────────────────────────────────── */
+.norm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 900px) { .norm-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .norm-grid { grid-template-columns: 1fr; } }
+.norm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.norm-law {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-3);
+}
+.norm-title { font-size: 13px; font-weight: 500; color: var(--text-1); }
+.norm-arts { font-size: 12px; color: var(--text-2); line-height: 1.5; }
+.norm-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: .18rem .6rem;
+  border-radius: 20px;
+  margin-top: .2rem;
+  align-self: flex-start;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.legend-footer {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 1.75rem 1.5rem;
+}
+.legend-inner { max-width: 1140px; margin: 0 auto; }
+.legend-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.legend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  font-size: 12px;
+  color: rgba(248,245,237,.65);
+}
+.legend-swatch {
+  width: 12px; height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.legend-divider {
+  width: 1px; height: 20px;
+  background: rgba(248,245,237,.12);
+}
+.legend-copy {
+  font-size: 11px;
+  color: rgba(248,245,237,.3);
+  border-top: 1px solid rgba(248,245,237,.08);
+  padding-top: 1rem;
+  margin-top: .5rem;
+}
+
+/* ── PRINT ───────────────────────────────────────────────── */
+@media print {
+  .controls-bar, .site-header .header-actions { display: none; }
+  .card-body   { display: block !important; }
+  .section-body{ display: block !important; }
+  .map-card    { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  body         { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO I</div>
+    <h1 class="header-title">De la autorización o aprobación judicial del reconocimiento de la filiación no matrimonial</h1>
+    <p class="header-subtitle">Artículos 23 a 26 LJV</p>
+    <div class="header-meta">
+      <span class="header-tag">LJV 15/2015</span>
+      <span class="header-tag">Arts. 23–26</span>
+      <span class="header-tag">Título II, Cap. I</span>
+      <span class="header-tag">Filiación no matrimonial</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════
+     STATS BAR
+═══════════════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-arts">4</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">20+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">10+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">6</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     CONTROLS BAR (STICKY)
+═══════════════════════════════════════════════════════ -->
+<div class="controls-bar">
+  <div class="controls-inner">
+
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+      </svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor…" autocomplete="off">
+    </div>
+
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c1">Art. 23 · Ámbito</button>
+      <button class="pill" data-cat="c2">Art. 24 · Competencia</button>
+      <button class="pill" data-cat="c3">Art. 25 · Tramitación</button>
+      <button class="pill" data-cat="c4">Art. 26 · Resolución</button>
+    </div>
+
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════════════════ -->
+<main class="page-main">
+
+  <!-- ── SECCIÓN: ARTÍCULOS ────────────────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-articles">
+      <span class="section-heading-text">Capítulo I — Artículos 23 a 26</span>
+      <span class="section-heading-count" id="count-arts">4 artículos</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body" id="sec-articles">
+      <div class="card-grid">
+
+        <!-- ─────────────────────────── ART. 23 ── -->
+        <article class="map-card" data-cat="c1"
+          data-text="artículo 23 ámbito aplicación reconocimiento filiación no matrimonial autorización aprobación judicial validez eficacia autorización aprobación distinción hermano consanguíneo progenitor menor discapacidad código civil">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 23</span>
+              <span class="status-tag tag-info">Ámbito de aplicación</span>
+            </div>
+            <h2 class="card-title">Ámbito de aplicación</h2>
+            <p class="card-subtitle">Define cuándo es necesaria la intervención judicial para reconocer la filiación no matrimonial, distinguiendo entre autorización y aprobación.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>7</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> supuestos regulados</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Regla general</span></div>
+              <ul class="inner-list">
+                <li>Aplicación en todos los casos en que el reconocimiento de la filiación no matrimonial necesite, conforme a la ley, autorización o aprobación judicial para su validez.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">La distinción fundamental y sus efectos</span></div>
+              <ul class="inner-list">
+                <li><span class="b baut">Autorización</span> → condición de <strong>validez</strong>, previa al reconocimiento. Sin ella, el reconocimiento no puede otorgarse; si se otorgara, sería inválido desde el origen.</li>
+                <li><span class="b bap">Aprobación</span> → condición de <strong>eficacia</strong>, posterior al reconocimiento ya otorgado. El acto existe como declaración de voluntad pero queda en suspenso; si se deniega, deviene ineficaz sin retroactividad sobre la declaración.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Supuesto de autorización judicial</span></div>
+              <ul class="inner-list">
+                <li>Reconocimiento por <strong>hermano o consanguíneo en línea recta del progenitor</strong> cuya filiación está determinada, cuando el reconocido sea menor o persona con discapacidad con medidas de apoyo.
+                  <ul class="inner-sub">
+                    <li>Riesgo de encubrimiento de relación incestuosa: el hijo sería simultáneamente hijo y sobrino (u otro pariente) del progenitor conocido.</li>
+                    <li>Fundamento: <span class="ref-tag">Art. 124 CC</span> · La autorización solo se concede cuando sea en interés del reconocido (art. 26.2 LJV).</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Supuestos de aprobación judicial — tres casos del apdo. 3</span></div>
+              <ul class="inner-list">
+                <li><strong>a)</strong> Reconocimiento por quien no pueda contraer matrimonio <strong>por razón de edad</strong> (menor de edad no emancipado). El reconociente carece de plena capacidad de obrar; la aprobación judicial sustituye la intervención representativa que en otros actos se requeriría. <span class="ref-tag">Art. 121 CC</span></li>
+                <li><strong>b)</strong> Reconocimiento sin <strong>consentimiento del representante legal ni asistencia del curador</strong> del reconocido ni del progenitor conocido — salvo que hubiera sido reconocido en testamento o dentro del plazo de inscripción del nacimiento. Las excepciones responden a que el testamento se otorga ante notario con plenas garantías, y el reconocimiento en el plazo de inscripción se realiza con inmediatez al nacimiento bajo supervisión registral. <span class="ref-tag">Art. 123 CC</span></li>
+                <li><strong>c)</strong> Reconocimiento paterno realizado <strong>dentro del plazo de inscripción</strong> cuando esta se hubiera <strong>suspendido a petición de la madre</strong>. La aprobación judicial dirime la discrepancia entre el padre que quiere reconocer y la madre que se opone, atendiendo al interés del menor. <span class="ref-tag">Art. 44.5 Ley 20/2011</span></li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Aprobación para reconocimiento por persona con discapacidad</span></div>
+              <ul class="inner-list">
+                <li>También se insta aprobación para la validez del reconocimiento otorgado por una <strong>persona con discapacidad con medidas de apoyo</strong>, con independencia de la condición del reconocido. Tutela tanto el discernimiento del reconociente como el interés del reconocido.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Relación con otros expedientes del Título II</span></div>
+              <ul class="inner-list">
+                <li>Cap. I bis (arts. 26 bis y ss.): aprobación judicial de la modificación registral del sexo para menores de 12 a 14 años; mismo esquema de control judicial como condición de eficacia de una declaración de voluntad.</li>
+                <li>Cap. II (arts. 27 y ss.): nombramiento de defensor judicial, relevante cuando el reconocido carece de representante legal o este tiene intereses opuestos.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Conexión normativa — Código Civil</span></div>
+              <ul class="inner-list">
+                <li><span class="ref-tag">Art. 120 CC</span> Modos de determinación de la filiación no matrimonial: reconocimiento, resolución registral, sentencia firme y posesión de estado.</li>
+                <li><span class="ref-tag">Art. 121 CC</span> Reconocimiento por menor o persona con discapacidad: aprobación judicial con audiencia del MF.</li>
+                <li><span class="ref-tag">Art. 123 CC</span> Consentimiento o aprobación judicial para eficacia del reconocimiento del menor o persona con discapacidad.</li>
+                <li><span class="ref-tag">Art. 124 CC</span> Prohibición sin autorización judicial del reconocimiento por hermano o pariente consanguíneo del otro progenitor.</li>
+                <li><span class="ref-tag">Art. 125 CC</span> Reconocimiento por uno de los progenitores no casados entre sí: no perjudica los derechos del otro.</li>
+                <li><span class="ref-tag">Art. 126 CC</span> Reconocimiento del mayor de edad: no precisa control judicial; delimita el ámbito de aplicación del art. 23 LJV.</li>
+                <li><span class="ref-tag">Art. 44.5 Ley 20/2011</span> Suspensión de la inscripción de nacimiento a petición de la madre: presupuesto fáctico del supuesto c).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">Art. 120 CC</span>
+            <span class="ref-tag">Art. 121 CC</span>
+            <span class="ref-tag">Art. 123 CC</span>
+            <span class="ref-tag">Art. 124 CC</span>
+            <span class="ref-tag">Art. 125 CC</span>
+            <span class="ref-tag">Art. 126 CC</span>
+            <span class="ref-tag">Art. 44.5 Ley 20/2011</span>
+          </div>
+        </article>
+
+        <!-- ─────────────────────────── ART. 24 ── -->
+        <article class="map-card" data-cat="c2"
+          data-text="artículo 24 competencia legitimación postulación territorial fuero domicilio reconocido residencia juzgado primera instancia legitimación activa progenitor autor reconocimiento abogado procurador defensor judicial">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 24</span>
+              <span class="status-tag tag-warn">Competencia y postulación</span>
+            </div>
+            <h2 class="card-title">Competencia, legitimación y postulación</h2>
+            <p class="card-subtitle">Regula qué órgano judicial es competente, quién puede instar el expediente y si es necesaria postulación técnica.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>5</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>3</strong> fueros en cascada</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Competencia territorial — fueros en cascada</span></div>
+              <ul class="inner-list">
+                <li><span class="b bsi">Fuero principal</span> Juzgado de Primera Instancia del <strong>domicilio del reconocido</strong>. El expediente se sitúa en el entorno vital de quien ve afectado su estado civil.</li>
+                <li><span class="b bsi">Fuero secundario</span> Si no tiene domicilio en España: <strong>residencia del reconocido</strong> en territorio nacional.</li>
+                <li><span class="b bsi">Fuero subsidiario</span> Si no tiene residencia en España: <strong>domicilio o residencia del progenitor autor del reconocimiento</strong>. Opera cuando el reconocido carece de todo vínculo territorial con España, garantizando que siempre exista un órgano español competente cuando el reconociente sí tenga vínculos.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Competencia objetiva y atribución de la decisión de fondo</span></div>
+              <ul class="inner-list">
+                <li>Juzgado de Primera Instancia · Decisión de fondo reservada al <strong>Juez</strong>, mediante <strong>auto</strong>, por afectar al estado civil y a derechos de menores o personas con discapacidad. <span class="ref-tag">Art. 2 LJV</span></li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Legitimación activa — exclusividad y flexibilidad</span></div>
+              <ul class="inner-list">
+                <li>Exclusivamente el <strong>progenitor autor del reconocimiento</strong>: carácter personalísimo del acto; ni el reconocido ni terceros pueden suplir esa voluntad.</li>
+                <li>Puede actuar asistido de su representante legal, tutor o curador cuando el propio reconociente sea menor de edad o persona con discapacidad.</li>
+                <li>Si el reconociente es menor: la solicitud la presenta el menor asistido, no el representante en solitario, pues la voluntad de reconocer ha de ser del propio reconociente.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Postulación — ausencia de exigencia preceptiva y consecuencias</span></div>
+              <ul class="inner-list">
+                <li><span class="b bno">No preceptiva</span> la intervención de Abogado ni Procurador: acceso facilitado dado el carácter familiar y personal del expediente.</li>
+                <li>Formulario normalizado disponible en la Oficina judicial o sede electrónica; no exige fundamentación jurídica. <span class="ref-tag">Art. 14.3 LJV</span></li>
+                <li>Postulación <strong>voluntaria</strong>: las partes pueden comparecer con Abogado y Procurador aunque no sea preceptivo. <span class="ref-tag">Art. 3.3 LJV</span></li>
+                <li>Postulación <strong>obligatoria</strong> desde el momento en que se formule oposición y para los recursos de revisión o apelación. <span class="ref-tag">Art. 3.4 LJV</span></li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Defensor judicial del reconocido en supuestos de conflicto de intereses</span></div>
+              <ul class="inner-list">
+                <li>Si el representante legal del reconocido tiene intereses opuestos al reconocido —p. ej., es cónyuge del reconociente—: puede nombrarse un <strong>defensor judicial</strong> conforme al <span class="ref-tag">Art. 27 LJV</span> (Cap. II del Tít. II) para actuar en nombre del reconocido en el expediente.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Conexión normativa</span></div>
+              <ul class="inner-list">
+                <li><span class="ref-tag">Art. 2 LJV</span> Competencia objetiva y atribución al Juez · <span class="ref-tag">Art. 3 LJV</span> Régimen de postulación.</li>
+                <li><span class="ref-tag">Art. 14.3 LJV</span> Formulario normalizado cuando no es preceptiva la postulación.</li>
+                <li><span class="ref-tag">Art. 27 LJV</span> Defensor judicial en supuestos de conflicto de intereses.</li>
+                <li><span class="ref-tag">Art. 9 LJV</span> Supuestos internacionales: competencia territorial complementada por la regla subsidiaria del art. 9.2 (efectos principales o ejecución).</li>
+                <li><span class="ref-tag">Art. 9.4 CC</span> Ley personal del hijo: norma de conflicto para la determinación de la filiación en casos internacionales (<span class="ref-tag">Art. 10 LJV</span>).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">Art. 2 LJV</span>
+            <span class="ref-tag">Art. 3 LJV</span>
+            <span class="ref-tag">Art. 9 LJV</span>
+            <span class="ref-tag">Art. 14.3 LJV</span>
+            <span class="ref-tag">Art. 27 LJV</span>
+            <span class="ref-tag">Art. 9.4 CC</span>
+          </div>
+        </article>
+
+        <!-- ─────────────────────────── ART. 25 ── -->
+        <article class="map-card" data-cat="c3"
+          data-text="artículo 25 tramitación admisión comparecencia secretario judicial ministerio fiscal progenitor conocido representante legal curador reconocido mayor 12 años descendientes defensor judicial plazo 15 días 30 días 10 días 5 días citación oposición">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 25</span>
+              <span class="status-tag tag-ok">Tramitación</span>
+            </div>
+            <h2 class="card-title">Tramitación</h2>
+            <p class="card-subtitle">Regula la admisión de la solicitud, la convocatoria de comparecencia, los sujetos citados y los plazos y garantías procesales aplicables.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>6</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>6</strong> sujetos procesales</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Admisión y convocatoria de comparecencia</span></div>
+              <ul class="inner-list">
+                <li>Admitida la solicitud por el Secretario judicial, este cita a comparecencia a todos los sujetos que deben intervenir según proceda en cada caso.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Sujetos citados — análisis individualizado</span></div>
+              <ul class="inner-list">
+                <li><strong>Solicitante:</strong> el progenitor autor del reconocimiento, único legitimado activo. Su incomparecencia determina el archivo por desistimiento. <span class="ref-tag">Art. 18.2.1.ª LJV</span></li>
+                <li><strong>Progenitor conocido:</strong> cuando existe filiación determinada respecto de la otra línea. Su audiencia garantiza el principio de contradicción en los supuestos b) y c) del art. 23.3.</li>
+                <li><strong>Representante legal o curador del reconocido:</strong> tutela los intereses del reconocido menor o con discapacidad. Si tiene intereses opuestos: nombramiento de defensor judicial. <span class="ref-tag">Art. 27 LJV</span></li>
+                <li><strong>El propio reconocido</strong> si tuviera suficiente madurez · en todo caso si fuera <strong>mayor de 12 años</strong>.
+                  <ul class="inner-sub">
+                    <li>Derecho a ser escuchado: <span class="ref-tag">Art. 9 LO 1/1996</span> · <span class="ref-tag">Art. 12 CDN (1989)</span></li>
+                    <li>La «suficiente madurez» por debajo de los 12 años es apreciada caso a caso con auxilio de especialistas si fuera necesario.</li>
+                    <li>El umbral de 12 años es coherente con arts. 92, 156 y 177.3 CC y con el art. 26 quater LJV.</li>
+                  </ul>
+                </li>
+                <li><strong>Descendientes del reconocido</strong> si hubiere fallecido y los hubiere: los efectos del reconocimiento post mortem les afectan desde el punto de vista sucesorio y del estado de familia.</li>
+                <li><strong>Personas que se estime oportuno:</strong> cláusula abierta para ampliar el círculo de citados según las circunstancias. <span class="ref-tag">Art. 18.2.2.ª LJV</span></li>
+                <li><strong>Ministerio Fiscal:</strong> intervención <strong>preceptiva</strong> por afectar al estado civil y a menores o personas con discapacidad. <span class="ref-tag">Art. 4 LJV</span> Si no es precisa la comparecencia: informe escrito en 10 días. <span class="ref-tag">Art. 17.2 LJV</span></li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Normas comunes aplicables — plazos y garantías</span></div>
+              <ul class="inner-list">
+                <li>Contenido de la solicitud; formulario normalizado disponible. <span class="ref-tag">Art. 14 LJV</span></li>
+                <li>Control de oficio de la competencia; subsanación en <strong>5 días</strong>. <span class="ref-tag">Art. 16 LJV</span></li>
+                <li>Citación con <strong>15 días de antelación</strong> · Oposición en <strong>5 días</strong> desde la citación (no hace contencioso el expediente; desde la oposición: postulación obligatoria). <span class="ref-tag">Arts. 17 y 3 LJV</span></li>
+                <li>Comparecencia dentro de los <strong>30 días</strong> desde la admisión. <span class="ref-tag">Art. 18.1 LJV</span></li>
+                <li>Audiencia del reconocido menor o con discapacidad en condiciones idóneas; auxilio de especialistas; posibilidad de acto separado con MF. <span class="ref-tag">Art. 18.2.4.ª LJV</span></li>
+                <li>Adaptaciones y ajustes para personas con discapacidad. <span class="ref-tag">Art. 7 bis LJV</span></li>
+                <li>Grabación audiovisual de la comparecencia. <span class="ref-tag">Art. 18.2.6.ª LJV</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">Art. 4 LJV</span>
+            <span class="ref-tag">Art. 14 LJV</span>
+            <span class="ref-tag">Art. 16 LJV</span>
+            <span class="ref-tag">Art. 17 LJV</span>
+            <span class="ref-tag">Art. 18 LJV</span>
+            <span class="ref-tag">Art. 27 LJV</span>
+            <span class="ref-tag">Art. 9 LO 1/1996</span>
+            <span class="ref-tag">Art. 12 CDN</span>
+          </div>
+        </article>
+
+        <!-- ─────────────────────────── ART. 26 ── -->
+        <article class="map-card" data-cat="c4"
+          data-text="artículo 26 resolución juez auto 5 días criterios discernimiento veracidad verosimilitud interés reconocido menor discapacidad apelación registro civil inscripción eficacia efectos filiación apellidos alimentos sucesorios paterno-filiales">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Artículo 26</span>
+              <span class="status-tag tag-alert">Resolución</span>
+            </div>
+            <h2 class="card-title">Resolución</h2>
+            <p class="card-subtitle">Regula la forma, los criterios de valoración, los efectos de la resolución judicial y el régimen de recursos e inscripción registral.</p>
+          </div>
+
+          <div class="card-counters">
+            <span class="counter-badge"><strong>9</strong> normas conexas</span>
+            <span class="counter-badge" style="margin-left:auto"><strong>4</strong> criterios de valoración</span>
+          </div>
+
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span>
+            <span class="toggle-icon">&#9662;</span>
+          </button>
+
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Competencia, forma y plazo</span></div>
+              <ul class="inner-list">
+                <li>El <strong>Juez</strong> resuelve mediante <strong>auto</strong>, en el plazo de <strong>5 días</strong> desde la comparecencia o la última diligencia. <span class="ref-tag">Arts. 2 y 19 LJV</span></li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Criterios de valoración — cuatro parámetros con jerarquía implícita</span></div>
+              <ul class="inner-list">
+                <li><strong>Discernimiento del progenitor:</strong> aptitud para comprender el alcance y efectos del reconocimiento. No equivale a plena capacidad de obrar: en los supuestos del art. 23.3 a) y 23.4, el reconociente no la tiene y el Juez aprecia si tiene la madurez o apoyo suficientes.</li>
+                <li><strong>Veracidad o autenticidad del acto:</strong> voluntad real y libre de vicios (presiones externas, engaño, error esencial sobre la existencia del vínculo biológico).</li>
+                <li><strong>Verosimilitud de la relación de procreación, sin prueba plena:</strong> basta la credibilidad del vínculo biológico, sustentada en elementos indiciarios. El estándar es inferior a la prueba plena pero superior a la mera afirmación unilateral: el Juez ha de encontrar razones objetivas, aunque indiciarias, que hagan plausible la relación.</li>
+                <li><strong>Interés del reconocido</strong> cuando sea menor o persona con discapacidad: <strong>criterio prevalente y rector</strong> de los demás. El Juez puede denegar incluso si los tres criterios anteriores resultan satisfechos, si la determinación de la filiación no redunda en interés del reconocido. Fundamento: <span class="ref-tag">Art. 2 LO 1/1996</span> · <span class="ref-tag">Art. 3.1 CDN (1989)</span></li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Regla especial — reconocimiento por pariente del otro progenitor</span></div>
+              <ul class="inner-list">
+                <li>El Juez <strong>solo autorizará</strong> cuando sea <strong>en interés del menor o de la persona con discapacidad</strong>: el interés actúa como filtro necesario y suficiente.</li>
+                <li>La carga de la argumentación recae sobre el promotor: debe acreditar el interés positivo, no limitarse a no rebatirlo.</li>
+                <li><strong>Invalidación posterior por documento público:</strong> si el reconocido, una vez <strong>alcanzada la plena capacidad</strong>, presenta documento público manifestando su oposición, el Juez invalidará la determinación. Sin plazo preclusivo. Expresión del principio de autonomía de la voluntad y del derecho a decidir sobre el propio estado civil.</li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Efectos de la resolución</span></div>
+              <ul class="inner-list">
+                <li><strong>Autorización o aprobación concedida:</strong> se establece el vínculo de filiación con todos sus efectos: apellidos <span class="ref-tag">Arts. 109 y 111 CC</span> · alimentos <span class="ref-tag">Art. 143 CC</span> · derechos sucesorios <span class="ref-tag">Arts. 807 y ss. CC</span> · relaciones paterno-filiales <span class="ref-tag">Arts. 154 y ss. CC</span>.</li>
+                <li><strong>Autorización o aprobación denegada:</strong> no se establece la filiación por esta vía. No cierra definitivamente la cuestión: el interesado puede acudir a la vía contenciosa mediante la acción de reclamación de filiación. <span class="ref-tag">Arts. 131 y ss. CC</span></li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Eficacia registral</span></div>
+              <ul class="inner-list">
+                <li>El testimonio de la resolución se remite al <strong>Registro Civil</strong> competente para su inscripción. La remisión es automática, sin instancia de parte. La inscripción tiene eficacia erga omnes. <span class="ref-tag">Art. 44 Ley 20/2011</span> · <span class="ref-tag">Art. 22.2 LJV</span></li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Recursos</span></div>
+              <ul class="inner-list">
+                <li>Régimen general: <strong>apelación</strong> contra la resolución definitiva del Juez, por cualquier interesado perjudicado. <strong>Sin efectos suspensivos</strong>: la resolución puede ejecutarse —y el reconocimiento inscribirse— mientras se sustancia la apelación. <span class="ref-tag">Art. 20 LJV</span></li>
+                <li>Para el recurso: postulación de Abogado y Procurador obligatoria aunque no lo fuera en instancia. <span class="ref-tag">Art. 3.4 LJV</span></li>
+              </ul>
+            </div>
+
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-label">Conexión normativa</span></div>
+              <ul class="inner-list">
+                <li><span class="ref-tag">Arts. 2 y 19 LJV</span> Competencia del Juez, forma de auto y plazo.</li>
+                <li><span class="ref-tag">Art. 20 LJV</span> Apelación sin efectos suspensivos.</li>
+                <li><span class="ref-tag">Art. 22.2 LJV</span> Testimonio al Registro Civil: automático, sin instancia de parte.</li>
+                <li><span class="ref-tag">Arts. 121 y 124 CC</span> Normas sustantivas directamente desarrolladas por este artículo.</li>
+                <li><span class="ref-tag">Arts. 131–140 CC</span> Reclamación e impugnación de la filiación: vía contenciosa alternativa si se deniega la autorización o aprobación.</li>
+                <li><span class="ref-tag">Arts. 109, 111, 143, 154, 807 CC</span> Efectos sustantivos de la filiación determinada: apellidos, alimentos, derechos sucesorios y relaciones paterno-filiales.</li>
+                <li><span class="ref-tag">Art. 44 Ley 20/2011</span> Inscripción obligatoria de la filiación en el Registro Civil.</li>
+                <li><span class="ref-tag">Art. 2 LO 1/1996</span> Interés superior del menor como criterio rector de la resolución.</li>
+                <li><span class="ref-tag">Art. 3.1 CDN (1989)</span> Interés superior del niño como consideración primordial.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-refs">
+            <span class="ref-tag">Arts. 2 y 19 LJV</span>
+            <span class="ref-tag">Art. 20 LJV</span>
+            <span class="ref-tag">Art. 22.2 LJV</span>
+            <span class="ref-tag">Arts. 121 y 124 CC</span>
+            <span class="ref-tag">Arts. 131–140 CC</span>
+            <span class="ref-tag">Art. 44 Ley 20/2011</span>
+            <span class="ref-tag">Art. 2 LO 1/1996</span>
+            <span class="ref-tag">Art. 3.1 CDN (1989)</span>
+          </div>
+        </article>
+
+        <!-- sin resultados -->
+        <div class="no-results" id="no-results">
+          No se encontraron artículos para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+        </div>
+
+      </div><!-- /card-grid -->
+    </div><!-- /section-body -->
+  </div><!-- /map-section -->
+
+  <!-- ── SECCIÓN: PLAZOS PROCESALES ─────────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-timeline">
+      <span class="section-heading-text">Indice de plazos procesales</span>
+      <span class="section-heading-count">6 trámites</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Acto o trámite procesal</th>
+              <th>Plazo</th>
+              <th>Fundamento normativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Subsanación de la solicitud por defecto de competencia (control de oficio)</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 16 LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Antelación mínima de la citación a comparecencia</td>
+              <td><span class="plazo-badge plazo-weeks">15 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 17 LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Plazo para formular oposición desde la citación</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 17 LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Celebración de la comparecencia desde la admisión de la solicitud</td>
+              <td><span class="plazo-badge plazo-months">30 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 18.1 LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Informe escrito del Ministerio Fiscal (si no es precisa comparecencia)</td>
+              <td><span class="plazo-badge plazo-days">10 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Art. 17.2 LJV</span></td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Resolución del Juez mediante auto desde la comparecencia o última diligencia</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td class="td-norm"><span class="ref-tag">Arts. 2 y 19 LJV</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN: ACTORES ───────────────────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-actors">
+      <span class="section-heading-text">Mapa de participantes y actores</span>
+      <span class="section-heading-count">4 categorías · 10+ actores</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-actors">
+      <div class="participants-grid">
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Órganos judiciales</div>
+          <ul>
+            <li>Juez de Primera Instancia <span class="participant-note">(decisión de fondo, auto)</span></li>
+            <li>Secretario judicial <span class="participant-note">(admisión y citaciones)</span></li>
+            <li>Registro Civil <span class="participant-note">(inscripción registral automática)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Partes activas</div>
+          <ul>
+            <li>Progenitor autor del reconocimiento <span class="participant-note">(único legitimado activo)</span></li>
+            <li>Representante legal / tutor <span class="participant-note">(si el reconociente es menor o con discapacidad)</span></li>
+            <li>Curador <span class="participant-note">(asistencia al reconociente con medidas de apoyo)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Intervinientes necesarios</div>
+          <ul>
+            <li>Ministerio Fiscal <span class="participant-note">(intervención preceptiva)</span></li>
+            <li>Reconocido menor <span class="participant-note">(audiencia si &gt;12 años o madurez suficiente)</span></li>
+            <li>Progenitor conocido <span class="participant-note">(supuestos b) y c) art. 23.3)</span></li>
+            <li>Descendientes del reconocido fallecido <span class="participant-note">(efectos sucesorios)</span></li>
+          </ul>
+        </div>
+
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Protección e intereses</div>
+          <ul>
+            <li>Defensor judicial <span class="participant-note">(conflicto de intereses del representante)</span></li>
+            <li>Especialistas / peritos <span class="participant-note">(evaluación de madurez del reconocido)</span></li>
+            <li>Personas que se estime oportuno <span class="participant-note">(cláusula abierta art. 18.2.2.ª)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN: ECOSISTEMA NORMATIVO ──────────────────── -->
+  <div class="map-section">
+    <div class="section-heading" data-target="sec-norms">
+      <span class="section-heading-text">Ecosistema normativo — conexiones relacionadas</span>
+      <span class="section-heading-count">5 cuerpos normativos</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <hr class="section-divider">
+    <div class="section-body collapsed" id="sec-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">Código Civil</div>
+          <div class="norm-title">Filiación no matrimonial — determinación y efectos</div>
+          <div class="norm-arts">
+            <strong>Arts. 120–126</strong> — modos de determinación, reconocimiento, consentimientos y aprobación judicial.<br>
+            <strong>Arts. 109 y 111</strong> — atribución de apellidos y efectos de la filiación.<br>
+            <strong>Arts. 131–140</strong> — reclamación e impugnación de la filiación (vía contenciosa alternativa).<br>
+            <strong>Arts. 143, 154, 807 y ss.</strong> — alimentos, relaciones paterno-filiales y derechos sucesorios.
+          </div>
+          <span class="norm-tag tag-info">Derecho sustantivo</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">LJV 15/2015</div>
+          <div class="norm-title">Ley de la Jurisdicción Voluntaria — normas generales</div>
+          <div class="norm-arts">
+            <strong>Arts. 2 y 3</strong> — competencia objetiva y postulación.<br>
+            <strong>Arts. 14–22</strong> — tramitación general: solicitud, admisión, comparecencia, resolución y recursos.<br>
+            <strong>Art. 4</strong> — intervención preceptiva del Ministerio Fiscal.<br>
+            <strong>Art. 7 bis</strong> — adaptaciones para personas con discapacidad.
+          </div>
+          <span class="norm-tag tag-ok">Ley de procedimiento</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 20/2011 — Registro Civil</div>
+          <div class="norm-title">Inscripción de la filiación y efectos registrales</div>
+          <div class="norm-arts">
+            <strong>Art. 44</strong> — inscripción obligatoria de la filiación; eficacia erga omnes.<br>
+            <strong>Art. 44.5</strong> — suspensión de inscripción a petición de la madre: presupuesto del supuesto c) del art. 23.3 LJV.
+          </div>
+          <span class="norm-tag tag-warn">Registro Civil</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">LO 1/1996 — Protección del Menor</div>
+          <div class="norm-title">Interés superior del menor y derecho a ser escuchado</div>
+          <div class="norm-arts">
+            <strong>Art. 2</strong> — interés superior del menor como criterio rector y prevalente en la resolución judicial.<br>
+            <strong>Art. 9</strong> — derecho del menor a ser escuchado en función de su madurez.
+          </div>
+          <span class="norm-tag tag-alert">Protección del menor</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">CDN — Convención sobre los Derechos del Niño (1989)</div>
+          <div class="norm-title">Interés superior del niño — estándar internacional</div>
+          <div class="norm-arts">
+            <strong>Art. 3.1</strong> — el interés superior del niño debe ser una consideración primordial en todas las medidas concernientes a los niños.<br>
+            <strong>Art. 12</strong> — derecho del niño a expresar su opinión en asuntos que le afecten.
+          </div>
+          <span class="norm-tag tag-gray">Derecho internacional</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main><!-- /page-main -->
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER — LEYENDA
+═══════════════════════════════════════════════════════ -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c1)"></div>
+        Art. 23 · Ámbito de aplicación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c2)"></div>
+        Art. 24 · Competencia, legitimación y postulación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c3)"></div>
+        Art. 25 · Tramitación
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--c4)"></div>
+        Art. 26 · Resolución
+      </div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo I · Arts. 23–26 · Generado como plantilla HTML reutilizable
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── 1. FILTRADO POR CATEGORÍA ─────────────────────────────
+const pills     = document.querySelectorAll('.pill');
+const cards     = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+const countArts = document.getElementById('count-arts');
+let activeCat   = 'all';
+let searchTerm  = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch  = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text      = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show      = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('no-results-term').textContent = searchTerm;
+  if (countArts) countArts.textContent =
+    visible + ' artículo' + (visible !== 1 ? 's' : '') +
+    ' visible' + (visible !== 1 ? 's' : '');
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+// ── 2. BÚSQUEDA EN TIEMPO REAL ────────────────────────────
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+// ── 3. EXPANDIR/COLAPSAR TARJETA INDIVIDUAL ───────────────
+function toggleCard(btn) {
+  const card  = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent =
+    isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+// ── 4. EXPANDIR TODO / CONTRAER TODO ─────────────────────
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+// ── 5. COLAPSO DE SECCIONES PRINCIPALES ──────────────────
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '▼' : '▲';
+  });
+});
+
+// ── 6. ZOOM ───────────────────────────────────────────────
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn();    }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut();   }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+</script>
+</body>
+</html>

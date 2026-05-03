@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Mental — Arts. 59-60 LJV | Honor, Intimidad e Imagen del Menor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #f7f6f2;
+      --surface:     #ffffff;
+      --surface-2:   #f2f1ed;
+      --border:      rgba(15,23,42,.08);
+      --border-md:   rgba(15,23,42,.14);
+      --text-1:      #0f172a;
+      --text-2:      #475569;
+      --text-3:      #94a3b8;
+      --ink:         #0f172a;
+      --header-bg:   #0f172a;
+      --header-text: #f8f5ed;
+      --accent:      #c8a96e;
+
+      --c1:#0e7490; --c1bg:#ecfeff; --c1bd:#a5f3fc;
+      --c2:#b45309; --c2bg:#fffbeb; --c2bd:#fde68a;
+      --c3:#047857; --c3bg:#ecfdf5; --c3bd:#a7f3d0;
+      --c4:#6d28d9; --c4bg:#f5f3ff; --c4bd:#ddd6fe;
+      --c5:#be123c; --c5bg:#fff1f2; --c5bd:#fecdd3;
+      --c6:#475569; --c6bg:#f8fafc; --c6bd:#cbd5e1;
+      --c7:#7c3aed; --c7bg:#faf5ff; --c7bd:#e9d5ff;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+      --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-ui:      'Outfit', system-ui, sans-serif;
+      --transition:   200ms ease;
+    }
+
+    *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-ui);
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    /* ── HEADER ─────────────────────────────────────────── */
+    .site-header {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1.75rem 1.5rem 1.5rem;
+      box-shadow: var(--shadow-md);
+    }
+    .header-inner { max-width: 1400px; margin: 0 auto; }
+    .header-breadcrumb { 
+       font-size: 12px; 
+       font-weight: 500; 
+       letter-spacing: .06em; 
+       text-transform: uppercase; 
+       color: var(--accent); 
+       margin-bottom: .5rem; 
+     } 
+    .header-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 3.5vw, 1.85rem);
+      font-weight: 700; line-height: 1.25;
+      margin-bottom: .6rem;
+    }
+    .header-subtitle{font-size:14px;color:rgba(248,245,237,.65);margin-bottom:1rem;line-height:1.5}
+    .header-meta {
+      display: flex; flex-wrap: wrap;
+      gap: .4rem; align-items: center;
+    }
+    .header-tag {
+      background: rgba(200,169,110,.12);
+      border: 1px solid rgba(200,169,110,.25);
+      color: var(--accent);
+      padding: .2rem .6rem;
+      border-radius: 20px;
+      font-size: 10px; font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .header-actions { margin-left: auto; }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(248,245,237,.15);
+      color: rgba(248,245,237,.7);
+      padding: .35rem .85rem;
+      border-radius: var(--radius-sm);
+      font-size: 11px; font-weight: 500;
+      cursor: pointer; transition: var(--transition);
+    }
+    .btn-ghost:hover { background: rgba(248,245,237,.1); color: var(--header-text); }
+
+    /* ── STATS BAR ──────────────────────────────────────── */
+    .stats-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: .65rem 1.5rem;
+    }
+    .stats-bar.stats-hidden { display: none; }
+    .stats-inner {
+      max-width: 1400px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: .75rem;
+    }
+    .stat-item { text-align: center; padding: .4rem; }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 1.6rem; font-weight: 800;
+      color: var(--ink); line-height: 1;
+    }
+    .stat-label {
+      font-size: 10px; font-weight: 600;
+      color: var(--text-3); text-transform: uppercase;
+      letter-spacing: .06em; margin-top: .2rem;
+    }
+
+    /* ── CONTROLS BAR ───────────────────────────────────── */
+    .controls-bar {
+      position: sticky; top: var(--header-h, 0px); z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+      padding: .6rem 1.5rem;
+    }
+    .controls-inner {
+      max-width: 1400px; margin: 0 auto;
+      display: flex; align-items: center;
+      gap: .75rem; flex-wrap: wrap;
+    }
+    .search-wrap {
+      display: flex; align-items: center; gap: .4rem;
+      flex: 1; min-width: 180px; max-width: 320px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .35rem .65rem;
+    }
+    .search-wrap svg { width: 15px; height: 15px; color: var(--text-3); flex-shrink: 0; }
+    .search-input {
+      flex: 1; background: transparent; border: none;
+      font-size: 12.5px; color: var(--text-1); outline: none;
+      font-family: var(--font-ui);
+    }
+    .search-input::placeholder { color: var(--text-3); }
+    .filter-pills { display: flex; gap: .3rem; flex-wrap: wrap; }
+    .pill {
+      background: var(--surface-2); border: 1px solid var(--border);
+      color: var(--text-2); padding: .25rem .6rem;
+      border-radius: 20px; font-size: 10.5px; font-weight: 600;
+      cursor: pointer; transition: var(--transition); white-space: nowrap;
+    }
+    .pill:hover { border-color: var(--border-md); }
+    .pill.active { color: white; font-weight: 700; }
+    .pill[data-cat="all"].active   { background: var(--ink); border-color: var(--ink); }
+    .pill[data-cat="c6"].active    { background: var(--c6); border-color: var(--c6); }
+    .pill[data-cat="c1"].active    { background: var(--c1); border-color: var(--c1); }
+    .pill[data-cat="c2"].active    { background: var(--c2); border-color: var(--c2); }
+    .pill[data-cat="c3"].active    { background: var(--c3); border-color: var(--c3); }
+    .pill[data-cat="c4"].active    { background: var(--c4); border-color: var(--c4); }
+    .pill[data-cat="c5"].active    { background: var(--c5); border-color: var(--c5); }
+    .pill[data-cat="c7"].active    { background: var(--c7); border-color: var(--c7); }
+    .ctrl-sep { width: 1px; height: 22px; background: var(--border-md); }
+    .ctrl-actions { display: flex; align-items: center; gap: .4rem; }
+    .btn-ctrl {
+      background: var(--surface-2); border: 1px solid var(--border);
+      color: var(--text-2); padding: .25rem .6rem;
+      border-radius: var(--radius-sm); font-size: 11px; font-weight: 600;
+      cursor: pointer; transition: var(--transition); white-space: nowrap;
+    }
+    .btn-ctrl:hover { background: var(--border); }
+    .zoom-cluster {
+      display: flex;
+      border: 1px solid var(--border-md);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .btn-zoom {
+      background: var(--surface); border: none;
+      border-right: 1px solid var(--border);
+      width: 26px; height: 26px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; color: var(--text-2);
+      cursor: pointer; transition: var(--transition);
+    }
+    .btn-zoom:last-child { border-right: none; }
+    .btn-zoom:hover { background: var(--surface-2); }
+    .btn-zoom:disabled { opacity: .4; cursor: not-allowed; }
+    .zoom-label {
+      font-size: 11px; font-weight: 500;
+      min-width: 38px; text-align: center;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-2);
+    }
+
+    /* ── MAIN ───────────────────────────────────────────── */
+    .page-main {
+      max-width: 1400px; margin: 0 auto;
+      padding: 1.5rem;
+      transform-origin: top center;
+    }
+
+    /* ── SECTION ────────────────────────────────────────── */
+    .map-section {
+      margin-bottom: 1.75rem;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .section-heading {
+      display: flex; align-items: center; gap: .65rem;
+      padding: .85rem 1.15rem; cursor: pointer;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition); user-select: none;
+    }
+    .section-heading:hover { background: rgba(15,23,42,.03); }
+    .section-icon { font-size: 1.1rem; }
+    .section-heading-text {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: .92rem;
+      color: var(--ink); flex: 1;
+    }
+    .section-heading-count {
+      font-size: 10px; font-weight: 600;
+      color: var(--text-3); background: var(--surface);
+      padding: .15rem .45rem; border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .section-toggle-btn {
+      background: none; border: none;
+      font-size: 13px; color: var(--text-3);
+      cursor: pointer; transition: var(--transition);
+    }
+    .section-body { padding: 1.15rem; }
+    .section-body.collapsed { display: none; }
+
+    /* ── GRID ───────────────────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    /* ── CARD ───────────────────────────────────────────── */
+    .map-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left-width: 4px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .map-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .map-card[data-cat="c1"] { border-left-color: var(--c1); }
+    .map-card[data-cat="c2"] { border-left-color: var(--c2); }
+    .map-card[data-cat="c3"] { border-left-color: var(--c3); }
+    .map-card[data-cat="c4"] { border-left-color: var(--c4); }
+    .map-card[data-cat="c5"] { border-left-color: var(--c5); }
+    .map-card[data-cat="c6"] { border-left-color: var(--c6); }
+    .map-card[data-cat="c7"] { border-left-color: var(--c7); }
+    .map-card.hidden { display: none; }
+
+    .card-top {
+      padding: .85rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-meta {
+      display: flex; align-items: center;
+      gap: .4rem; margin-bottom: .4rem; flex-wrap: wrap;
+    }
+    .art-badge {
+      font-size: 10px; font-weight: 700;
+      padding: .12rem .45rem; border-radius: 20px;
+      border: 1px solid;
+    }
+    .map-card[data-cat="c1"] .art-badge { background:var(--c1bg); color:var(--c1); border-color:var(--c1bd); }
+    .map-card[data-cat="c2"] .art-badge { background:var(--c2bg); color:var(--c2); border-color:var(--c2bd); }
+    .map-card[data-cat="c3"] .art-badge { background:var(--c3bg); color:var(--c3); border-color:var(--c3bd); }
+    .map-card[data-cat="c4"] .art-badge { background:var(--c4bg); color:var(--c4); border-color:var(--c4bd); }
+    .map-card[data-cat="c5"] .art-badge { background:var(--c5bg); color:var(--c5); border-color:var(--c5bd); }
+    .map-card[data-cat="c6"] .art-badge { background:var(--c6bg); color:var(--c6); border-color:var(--c6bd); }
+    .map-card[data-cat="c7"] .art-badge { background:var(--c7bg); color:var(--c7); border-color:var(--c7bd); }
+
+    .status-tag {
+      font-size: 9px; font-weight: 600;
+      padding: .1rem .4rem; border-radius: 12px;
+      text-transform: uppercase; letter-spacing: .04em;
+    }
+    .tag-warn  { background:#fef3c7; color:#92400e; }
+    .tag-alert { background:#fee2e2; color:#991b1b; }
+    .tag-info  { background:#dbeafe; color:#1e40af; }
+    .tag-ok    { background:#d1fae5; color:#065f46; }
+    .tag-gray  { background:var(--surface-2); color:var(--text-2); border:1px solid var(--border); }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: .92rem; font-weight: 700;
+      color: var(--ink); margin-bottom: .25rem; line-height: 1.3;
+    }
+    .card-subtitle {
+      font-size: 12px; color: var(--text-2); line-height: 1.45;
+    }
+
+    .card-toggle-btn {
+      width: 100%; background: var(--surface-2);
+      border: none; border-top: 1px solid var(--border);
+      padding: .4rem 1rem; font-size: 11px; font-weight: 600;
+      color: var(--text-2); cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: var(--transition);
+      font-family: var(--font-ui);
+    }
+    .card-toggle-btn:hover { background: var(--border); }
+    .toggle-icon { transition: transform var(--transition); font-size: 9px; }
+    .map-card.expanded .toggle-icon { transform: rotate(180deg); }
+
+    .card-body {
+      display: none; padding: .85rem 1rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .map-card.expanded .card-body { display: block; }
+
+    /* ── INNER SECTIONS ─────────────────────────────────── */
+    .inner-section { margin-bottom: .75rem; }
+    .inner-section:last-child { margin-bottom: 0; }
+    .inner-heading {
+      display: flex; align-items: center;
+      gap: .4rem; margin-bottom: .35rem;
+    }
+    .inner-heading .dot {
+      width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+    }
+    .map-card[data-cat="c1"] .dot { background:var(--c1); }
+    .map-card[data-cat="c2"] .dot { background:var(--c2); }
+    .map-card[data-cat="c3"] .dot { background:var(--c3); }
+    .map-card[data-cat="c4"] .dot { background:var(--c4); }
+    .map-card[data-cat="c5"] .dot { background:var(--c5); }
+    .map-card[data-cat="c6"] .dot { background:var(--c6); }
+    .map-card[data-cat="c7"] .dot { background:var(--c7); }
+    .inner-heading-text {
+      font-size: 12px; font-weight: 600; color: var(--ink);
+    }
+    .inner-body { padding-left: 1.2rem; }
+    .inner-list { list-style: none; }
+    .inner-list li {
+      position: relative; padding-left: .75rem;
+      margin-bottom: .25rem; font-size: 12.5px;
+      color: var(--text-2); line-height: 1.55;
+    }
+    .inner-list li::before {
+      content: '–'; position: absolute; left: 0; color: var(--text-3);
+    }
+    .inner-list li strong { color: var(--text-1); font-weight: 500; }
+
+    /* ── REF TAGS ───────────────────────────────────────── */
+    .card-refs {
+      padding: .5rem 1rem .65rem;
+      border-top: 1px solid var(--border);
+      display: flex; flex-wrap: wrap; gap: .3rem;
+      margin-top: auto;
+    }
+    .ref-tag {
+      font-size: 10px; background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .12rem .4rem; color: var(--text-2); font-weight: 500;
+    }
+
+    /* ── NO RESULTS ─────────────────────────────────────── */
+    .no-results {
+      grid-column: 1 / -1; text-align: center;
+      padding: 2.5rem 1rem; color: var(--text-3);
+      font-size: 13px; display: none;
+    }
+
+    /* ── TIMELINE TABLE ─────────────────────────────────── */
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden; background: var(--surface);
+    }
+    .timeline-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    .timeline-table th {
+      background: var(--surface-2); padding: .65rem .85rem;
+      text-align: left; font-weight: 700; color: var(--ink);
+      border-bottom: 1px solid var(--border);
+      font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+    }
+    .timeline-table td {
+      padding: .65rem .85rem;
+      border-bottom: 1px solid var(--border); color: var(--text-2);
+    }
+    .timeline-table tr:last-child td { border-bottom: none; }
+    .timeline-table tr:hover { background: var(--surface-2); }
+    .td-tramite { font-weight: 500; color: var(--text-1); }
+    .td-norm { font-size: 11.5px; }
+    .plazo-badge {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      padding: .15rem .45rem; border-radius: 12px;
+      text-transform: uppercase; letter-spacing: .04em;
+    }
+    .plazo-days   { background:#fef3c7; color:#92400e; }
+    .plazo-weeks  { background:#dbeafe; color:#1e40af; }
+
+    /* ── TIMELINE VISUAL ────────────────────────────────── */
+    .tl-visual { margin-top: 1.25rem; overflow-x: auto; padding-bottom: .5rem; }
+    .tl-row { display: flex; gap: .45rem; align-items: flex-start; min-width: 650px; }
+    .tl-step {
+      flex: 1; background: var(--surface-2);
+      border: 1px solid var(--border-md);
+      border-radius: 8px; padding: .65rem; font-size: .78rem; line-height: 1.5;
+    }
+    .tl-step strong { display: block; font-size: .84rem; color: var(--text-1); margin-bottom: .15rem; }
+    .tl-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 20px; height: 20px; background: var(--c4);
+      color: #fff; border-radius: 50%;
+      font-size: .68rem; font-weight: 700; margin-bottom: .3rem;
+    }
+    .tl-arrow {
+      display: flex; align-items: center;
+      color: var(--text-3); font-size: 1.1rem;
+      padding-top: 1rem; flex-shrink: 0;
+    }
+    .tl-note {
+      margin-top: .75rem; font-size: .78rem; color: var(--text-2);
+      background: var(--c6bg); border: 1px solid var(--c6bd);
+      border-radius: 6px; padding: .5rem .7rem;
+    }
+
+    /* ── PARTICIPANTS GRID ──────────────────────────────── */
+    .participants-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: .85rem;
+    }
+    .participant-col {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md); overflow: hidden;
+    }
+    .participant-col-head {
+      padding: .55rem .75rem; font-size: 11px;
+      font-weight: 700; color: white;
+      text-transform: uppercase; letter-spacing: .04em;
+    }
+    .phead-c1 { background:var(--c1); } .phead-c2 { background:var(--c2); }
+    .phead-c3 { background:var(--c3); } .phead-c4 { background:var(--c4); }
+    .phead-c5 { background:var(--c5); }
+    .participant-col ul { list-style: none; padding: .45rem .7rem; }
+    .participant-col li {
+      font-size: 12px; color: var(--text-2);
+      padding: .3rem 0; border-bottom: 1px solid var(--border);
+    }
+    .participant-col li:last-child { border-bottom: none; }
+    .participant-note { font-size: 10.5px; color: var(--text-3); font-style: italic; }
+
+    /* ── NORM GRID ──────────────────────────────────────── */
+    .norm-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem;
+    }
+    .norm-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: .85rem; box-shadow: var(--shadow-sm);
+    }
+    .norm-law {
+      font-size: 10px; text-transform: uppercase;
+      color: var(--accent); font-weight: 700;
+      letter-spacing: .06em; margin-bottom: .2rem;
+    }
+    .norm-title {
+      font-size: 12.5px; font-weight: 600;
+      color: var(--ink); margin-bottom: .4rem; line-height: 1.3;
+    }
+    .norm-arts {
+      font-size: 11.5px; color: var(--text-2);
+      margin-bottom: .5rem; line-height: 1.45;
+    }
+    .norm-arts strong { color: var(--ink); font-weight: 600; }
+    .norm-tag {
+      font-size: 9px; font-weight: 700;
+      padding: .12rem .4rem; border-radius: 12px;
+      text-transform: uppercase; letter-spacing: .04em;
+    }
+    .tag-primaria    { background:var(--c1bg); color:var(--c1); border:1px solid var(--c1bd); }
+    .tag-sustantiva  { background:var(--c3bg); color:var(--c3); border:1px solid var(--c3bd); }
+    .tag-conexa      { background:var(--c2bg); color:var(--c2); border:1px solid var(--c2bd); }
+    .tag-internacional { background:var(--c4bg); color:var(--c4); border:1px solid var(--c4bd); }
+
+    /* ── LEGEND FOOTER ──────────────────────────────────── */
+    .legend-footer {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1.25rem 1.5rem; margin-top: 2rem;
+    }
+    .legend-inner { max-width: 1400px; margin: 0 auto; }
+    .legend-title {
+      font-size: 10px; text-transform: uppercase;
+      color: var(--accent); font-weight: 700;
+      letter-spacing: .08em; margin-bottom: .6rem;
+    }
+    .legend-grid {
+      display: flex; flex-wrap: wrap;
+      gap: .6rem 1.25rem; align-items: center;
+    }
+    .legend-item {
+      display: flex; align-items: center;
+      gap: .4rem; font-size: 11.5px; font-weight: 500;
+    }
+    .legend-swatch {
+      width: 11px; height: 11px;
+      border-radius: 3px; flex-shrink: 0;
+    }
+    .legend-divider { width: 1px; height: 18px; background: rgba(248,245,237,.12); }
+    .legend-copy {
+      margin-top: .75rem; padding-top: .6rem;
+      border-top: 1px solid rgba(248,245,237,.08);
+      font-size: 10.5px; color: rgba(248,245,237,.3);
+      line-height: 1.5;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media(max-width:1100px) { .norm-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media(max-width:960px) {
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-inner { grid-template-columns: repeat(3, 1fr); }
+      .participants-grid { grid-template-columns: repeat(3, 1fr); }
+      .norm-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width:768px) {
+      .ctrl-actions { display: none; }
+      .header-actions { display: none; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .participants-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width:640px) {
+      .filter-pills { width: 100%; overflow-x: auto; padding-bottom: .2rem; }
+      .search-wrap { max-width: 100%; }
+    }
+    @media(max-width:600px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .participants-grid { grid-template-columns: 1fr; }
+      .norm-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── PRINT ──────────────────────────────────────────── */
+    @media print {
+      .controls-bar, .stats-bar, .header-actions { display: none; }
+      .card-body, .section-body { display: block !important; }
+      .map-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+      body { background: #fff; }
+      .site-header { position: relative; top: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-breadcrumb">LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN
+    MATERIA DE PERSONAS · CAPÍTULO VII</div>
+    <h1 class="header-title">Del derecho al honor, a la intimidad y a la propia imagen del menor o persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica</h1>
+    <p class="header-subtitle">Arts. 59 a 60 LJV · Autorización judicial ante oposición del Ministerio Fiscal · Protección de derechos fundamentales · Conexión LO 1/1982, LO 1/1996, Ley 8/2021, LEC, LOPDGDD, RGPD, DSA, CDPD, CDN</p>
+    <div class="header-meta">
+      <span class="header-tag">Ley 15/2015, de 2 de julio</span>
+      <span class="header-tag">Arts. 59-60</span>
+      <span class="header-tag">Jurisdicción Voluntaria</span>
+      <span class="header-tag">Derechos fundamentales</span>
+      <span class="header-tag">Ley 8/2021</span>
+      <span class="header-tag">LO 1/1982</span>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ STATS BAR ════════════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-cards">16</div>
+      <div class="stat-label">Fichas temáticas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">2</div>
+      <div class="stat-label">Artículos base</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">15+</div>
+      <div class="stat-label">Conexiones normativas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">10+</div>
+      <div class="stat-label">Actores identificados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">4</div>
+      <div class="stat-label">Plazos procesales</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONTROLS BAR ═════════════════════════════════════════════════ -->
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="search-input" type="search" id="search" placeholder="Buscar artículo, plazo, actor, norma…">
+    </div>
+    <div class="filter-pills">
+      <button class="pill active" data-cat="all">Todos</button>
+      <button class="pill" data-cat="c6">Fundamentos</button>
+      <button class="pill" data-cat="c1">Ámbito</button>
+      <button class="pill" data-cat="c2">Competencia</button>
+      <button class="pill" data-cat="c3">Tramitación</button>
+      <button class="pill" data-cat="c4">Resolución</button>
+      <button class="pill" data-cat="c5">Recursos</button>
+      <button class="pill" data-cat="c7">Perspectivas</button>
+    </div>
+    <div class="ctrl-sep"></div>
+    <div class="ctrl-actions">
+      <button class="btn-ctrl" id="btn-expand-all">Expandir todo</button>
+      <button class="btn-ctrl" id="btn-collapse-all">Contraer todo</button>
+      <div class="ctrl-sep"></div>
+      <div class="zoom-cluster">
+        <button class="btn-zoom" id="btn-zoom-out">&#8722;</button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn-zoom" id="btn-zoom-in">&#43;</button>
+      </div>
+      <button class="btn-ctrl" id="btn-zoom-reset">&#8635;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MAIN ═════════════════════════════════════════════════════════ -->
+<main class="page-main">
+
+  <!-- ══ SECCIÓN 1: FUNDAMENTOS ══════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="body-fundamentos">
+      <span class="section-icon">⚖️</span>
+      <span class="section-heading-text">Fundamentos constitucionales, supranacionales y sustantivos</span>
+      <span class="section-heading-count">2 fichas</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <div class="section-body" id="body-fundamentos">
+      <div class="card-grid">
+
+        <!-- F1 ── MARCO CONSTITUCIONAL Y SUPRANACIONAL -->
+        <article class="map-card" data-cat="c6" data-text="constitución española derechos fundamentales honor intimidad imagen artículo 18 20 cedh cdfue cdn cdpd proporcionalidad ponderación irrenunciable inalienable imprescriptible">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">F1</span>
+              <span class="status-tag tag-gray">Base constitucional</span>
+            </div>
+            <h2 class="card-title">Marco constitucional y supranacional</h2>
+            <p class="card-subtitle">Fundamentos CE (arts. 18, 20.4, 24, 39, 53.1), CEDH, CDFUE, CDN y CDPD. Juicio de proporcionalidad y ponderación caso a caso.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Constitución Española: art. 18 CE vs. art. 20 CE</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 18.1 CE:</strong> reconoce el derecho al honor, a la intimidad personal y familiar y a la propia imagen como derecho fundamental. Su protección adquiere intensidad especial cuando los titulares son menores o personas con discapacidad.</li>
+                <li><strong>Art. 18.4 CE:</strong> la ley limitará el uso de la informática para garantizar el honor e intimidad y el pleno ejercicio de los derechos. Fundamento del RGPD y la LOPDGDD.</li>
+                <li><strong>Art. 20 CE:</strong> libertades de expresión, información y producción artística. El art. 20.4 CE establece que estas libertades tienen su límite en el derecho al honor, la intimidad, la propia imagen y la protección de la juventud y la infancia.</li>
+                <li><strong>Juicio de proporcionalidad (triple test):</strong> (i) idoneidad de la medida para alcanzar el fin legítimo; (ii) necesidad, por no existir alternativa menos gravosa; (iii) proporcionalidad estricta: los beneficios superan el sacrificio del derecho fundamental afectado.</li>
+                <li><strong>Arts. 24 y 39 CE:</strong> tutela judicial efectiva y protección integral de los menores. El art. 24 CE fundamenta el expediente de los arts. 59-60 LJV como instrumento procesal de protección.</li>
+                <li><strong>Art. 53.1 CE:</strong> los derechos del art. 18 CE solo pueden regularse por ley orgánica, lo que explica el rango de la LO 1/1982.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Instrumentos supranacionales</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>CEDH arts. 8 y 10:</strong> el TEDH ha consolidado jurisprudencia de ponderación caso a caso entre vida privada (art. 8) y libertad de expresión (art. 10) — Von Hannover c. Alemania, Axel Springer c. Alemania —, que informa la interpretación de los arts. 59-60 LJV conforme al art. 10.2 CE.</li>
+                <li><strong>Carta de Derechos Fundamentales UE (CDFUE):</strong> art. 7 (vida privada), art. 11 (libertad de expresión), art. 24 (interés superior del niño como consideración primordial en todos los actos relativos a menores).</li>
+                <li><strong>CDN, ONU 1989:</strong> arts. 3 (interés superior del niño), 12 (derecho a ser escuchado en procedimientos judiciales), 13 (libertad de expresión del niño), 16 (derecho a la vida privada) y 17 (acceso a información adecuada). Ratificada por España el 30-XI-1990.</li>
+                <li><strong>CDPD, ONU 2006:</strong> arts. 3 (respeto de la autonomía individual), 12 (igual reconocimiento ante la ley; obligación de los Estados de proporcionar apoyos) y 16 (protección contra la explotación). Fundamento de la reforma introducida por la Ley 8/2021.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CE, arts. 18, 20.4, 24, 39, 53.1</span>
+            <span class="ref-tag">CEDH, arts. 8 y 10</span>
+            <span class="ref-tag">CDFUE, arts. 7, 11, 24</span>
+            <span class="ref-tag">CDN, arts. 3, 12, 13, 16</span>
+            <span class="ref-tag">CDPD, arts. 3, 12, 16</span>
+          </div>
+        </article>
+
+        <!-- F2 ── RÉGIMEN SUSTANTIVO: LO 1/1982 -->
+        <article class="map-card" data-cat="c6" data-text="ley orgánica 1/1982 honor intimidad imagen intromisión ilegítima consentimiento revocación indemnización daño moral artículo 3 7 9 irrenunciable inalienable imprescriptible presunción perjuicio">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">F2</span>
+              <span class="status-tag tag-gray">Norma sustantiva</span>
+            </div>
+            <h2 class="card-title">Régimen sustantivo: LO 1/1982</h2>
+            <p class="card-subtitle">Estructura, consentimiento revocable, catálogo de intromisiones ilegítimas (art. 7), tutela judicial y resarcimiento. Carácter irrenunciable, inalienable e imprescriptible.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Estructura y objeto</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 1 LO 1/1982:</strong> carácter irrenunciable, inalienable e imprescriptible de los derechos protegidos. La tutela civil es independiente de la tutela penal y de las sanciones administrativas. Nulidad de la renuncia a la protección legal (art. 1.3).</li>
+                <li><strong>Art. 2 LO 1/1982:</strong> delimitación de la protección, ajustada a los usos sociales. El consentimiento puede ser expreso o tácito y es revocable en cualquier momento (art. 2.3), aunque la revocación puede generar obligación de indemnizar a terceros de buena fe.</li>
+                <li><strong>Art. 3 LO 1/1982:</strong> el consentimiento de representantes legales de menores o personas con discapacidad legitima la intromisión. Consentimiento por el propio menor si su madurez lo permite; en defecto, por representante legal con comunicación previa al Fiscal; plazo de oposición fiscal: 8 días. Cuando el MF se opone, se activa el expediente del Capítulo VII LJV.</li>
+                <li><strong>Intromisión legítima:</strong> no se aprecia cuando está autorizada por ley o con consentimiento expreso del titular (art. 2.2 LO 1/1982).</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Catálogo de intromisiones ilegítimas (art. 7)</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 7.1 y 7.2:</strong> emplazamiento o uso de dispositivos de escucha, filmación o grabación para acceder a la vida privada o comunicaciones de una persona.</li>
+                <li><strong>Art. 7.4:</strong> revelación de datos privados conocidos por razón de actividad profesional u oficial.</li>
+                <li><strong>Art. 7.5:</strong> captación, reproducción o publicación de la imagen en lugares o momentos de la vida privada.</li>
+                <li><strong>Art. 7.6:</strong> utilización del nombre, la voz o la imagen de una persona para fines publicitarios, comerciales o análogos sin consentimiento.</li>
+                <li><strong>Art. 7.7:</strong> imputación de hechos o manifestación de juicios de valor que lesionen la dignidad.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Tutela judicial y resarcimiento</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 9 LO 1/1982:</strong> acción de cesación de la intromisión, recuperación y entrega de los soportes, publicación de la sentencia y reclamación de daños y perjuicios (incluido el daño moral). La cuantía indemnizatoria se fija atendiendo a las circunstancias del caso y a la gravedad de la lesión.</li>
+                <li><strong>Art. 9.3 LO 1/1982:</strong> presunción de perjuicio en caso de intromisión ilegítima acreditada.</li>
+                <li><strong>Art. 8 LO 1/1982:</strong> intromisiones no reputadas ilegítimas (actuaciones de autoridad en ejercicio de sus funciones, información gráfica sobre sucesos públicos, personajes públicos en lugares abiertos). Ninguna excepción ampara intromisiones en la esfera íntima del menor.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LO 1/1982, arts. 1-3, 7, 8 y 9</span>
+            <span class="ref-tag">LJV, arts. 59-60</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECCIÓN 2: ÁMBITO Y PRESUPUESTO ════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="body-ambito">
+      <span class="section-icon">🔍</span>
+      <span class="section-heading-text">Art. 59 — Ámbito de aplicación y presupuesto habilitante</span>
+      <span class="section-heading-count">2 fichas</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <div class="section-body" id="body-ambito">
+      <div class="card-grid">
+
+        <!-- A1 ── ÁMBITO DE APLICACIÓN -->
+        <article class="map-card" data-cat="c1" data-text="ámbito aplicación sujetos protegidos menor discapacidad medidas apoyo digital lopdgdd rgpd kidfluencer sharenting intromisión legítima madurez consentimiento 14 años 16 años">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 59.1</span>
+              <span class="status-tag tag-info">Ámbito material</span>
+            </div>
+            <h2 class="card-title">A1 · Ámbito de aplicación</h2>
+            <p class="card-subtitle">Sujetos protegidos, supuestos frecuentes y dimensión digital (LOPDGDD y RGPD).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Sujetos protegidos</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Menor de edad:</strong> toda persona que no ha cumplido los 18 años (art. 12 CE; art. 315 CC). La madurez progresiva es relevante: el art. 9 LOPJM impone escuchar al menor de 12 años o más, o al que tenga suficiente madurez. A partir de los 16 años, algunos derechos se ejercen directamente (consentimiento sanitario, art. 9.3 Ley 41/2002).</li>
+                <li><strong>Persona con discapacidad con medidas de apoyo:</strong> denominación introducida por la Ley 8/2021 en sustitución de «incapacitado». Solo las personas con curatela representativa (art. 269.III CC) quedan plenamente representadas a efectos del art. 59.3 LJV. Las medidas asistenciales o no representativas no habilitan al curador para sustituir la voluntad del representado.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Supuestos frecuentes en la práctica</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>Participación del menor en publicaciones, reportajes o entrevistas en medios de comunicación.</li>
+                <li>Uso comercial de la imagen o voz del menor en campañas publicitarias o de patrocinio.</li>
+                <li>Publicación de fotografías o vídeos del menor en plataformas digitales bajo cuenta comercial (kidfluencers / sharenting lucrativo).</li>
+                <li>Difusión de la vida íntima del menor en producciones cinematográficas, televisivas o de streaming.</li>
+                <li>Contratos de imagen a largo plazo que comprometan la identidad digital futura del menor.</li>
+                <li>Captación o difusión de la imagen de persona con discapacidad cuando el apoyo conferido no alcanza para un consentimiento válido autónomo.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Dimensión digital: LOPDGDD y RGPD</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 84 LOPDGDD:</strong> obliga a padres y educadores a evitar la difusión de contenidos que puedan perjudicar al menor en internet.</li>
+                <li><strong>Art. 94 LOPDGDD:</strong> consagra el derecho al olvido en redes sociales y servicios equivalentes.</li>
+                <li><strong>Art. 7 LOPDGDD:</strong> fija en 14 años (en España) la edad de consentimiento para el tratamiento de datos personales en servicios de la sociedad de la información.</li>
+                <li><strong>Art. 8 RGPD:</strong> regla general: 16 años; permite rebaje a 13 por norma nacional. España opta por 14 años.</li>
+                <li><strong>Art. 17 RGPD:</strong> derecho de supresión («derecho al olvido»), ejercitable frente a responsables del tratamiento en la UE.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LJV, art. 59.1</span>
+            <span class="ref-tag">LO 1/1982, art. 3</span>
+            <span class="ref-tag">LOPJM, arts. 4 y 9</span>
+            <span class="ref-tag">Ley 8/2021; CC, art. 269.III</span>
+            <span class="ref-tag">LOPDGDD, arts. 7, 84 y 94</span>
+            <span class="ref-tag">RGPD, arts. 8 y 17</span>
+          </div>
+        </article>
+
+        <!-- A2 ── PRESUPUESTO HABILITANTE -->
+        <article class="map-card" data-cat="c1" data-text="presupuesto habilitante oposición ministerio fiscal consentimiento representante legal EOMF garante institucional interés superior 8 días plazo oposición">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 59.1</span>
+              <span class="status-tag tag-alert">Condición necesaria</span>
+            </div>
+            <h2 class="card-title">A2 · Presupuesto habilitante: oposición del MF</h2>
+            <p class="card-subtitle">Doble requisito acumulativo: consentimiento del representante legal + oposición formal del MF dentro del plazo de 8 días (art. 3.2 LO 1/1982).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Doble requisito acumulativo</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>1.º Consentimiento del representante legal:</strong> el representante legal debe haber otorgado previamente su consentimiento a la intromisión. Sin consentimiento previo no existe objeto para el expediente.</li>
+                <li><strong>2.º Oposición formal del Ministerio Fiscal:</strong> el MF debe haberse opuesto de forma fehaciente dentro del plazo de 8 días desde la comunicación previa (art. 3.2 LO 1/1982). El documento acreditativo de la oposición es condición necesaria para iniciar el expediente (art. 60.1 LJV). Sin oposición del MF, el consentimiento del representante es suficiente para que la intromisión sea legítima (art. 3 LO 1/1982).</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">El Ministerio Fiscal como garante institucional</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 3.7 EOMF (LO 50/1981):</strong> encomienda al MF velar por el respeto de los derechos fundamentales y libertades públicas, con especial atención a los menores e incapaces.</li>
+                <li><strong>Art. 3.6 EOMF:</strong> defensa de la legalidad y el interés público. La oposición del MF no es discrecional libre: debe estar motivada en la lesión al interés superior del menor o a la voluntad de la persona con discapacidad.</li>
+                <li>El MF actúa como garante frente a representantes legales que pudieran priorizar intereses económicos, de notoriedad familiar o de terceros sobre el interés real del protegido.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Supuestos de especial diligencia del MF</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>Contratos de imagen de larga duración que comprometan la identidad digital futura del menor.</li>
+                <li>Explotación de imagen de niñas/adolescentes en contextos que sexualicen o reproduzcan estereotipos de género perjudiciales.</li>
+                <li>Actividades de «kidfluencer» con monetización directa, cuando la exposición sea desproporcionada para la edad del menor.</li>
+                <li>Difusión de imagen de personas con discapacidad que pueda suponer humillación o espectacularización de su condición.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LJV, art. 59.1</span>
+            <span class="ref-tag">LO 1/1982, arts. 2.3, 3 y 3.2</span>
+            <span class="ref-tag">EOMF (LO 50/1981), arts. 3.6 y 3.7</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECCIÓN 3: COMPETENCIA, LEGITIMACIÓN Y POSTULACIÓN ═════════ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="body-competencia">
+      <span class="section-icon">🗂️</span>
+      <span class="section-heading-text">Art. 59 — Competencia, legitimación y postulación</span>
+      <span class="section-heading-count">3 fichas</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <div class="section-body" id="body-competencia">
+      <div class="card-grid">
+
+        <!-- C1 ── COMPETENCIA TERRITORIAL -->
+        <article class="map-card" data-cat="c2" data-text="competencia territorial juzgado primera instancia domicilio residencia menor fuero proximidad familia declinatoria 86 ter LOPJ prórroga">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 59.2</span>
+              <span class="status-tag tag-info">Competencia territorial</span>
+            </div>
+            <h2 class="card-title">C1 · Competencia territorial</h2>
+            <p class="card-subtitle">Juzgado de Primera Instancia del domicilio (o residencia) del sujeto protegido. Principio de proximidad.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Órgano competente y criterios de atribución</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Juzgado de Primera Instancia</strong> (art. 2.1 LJV: regla general para todos los expedientes de jurisdicción voluntaria).</li>
+                <li><strong>Fundamento competencial:</strong> art. 86 ter LOPJ sobre competencia de Juzgados de Primera Instancia en jurisdicción voluntaria sobre personas.</li>
+                <li><strong>Fuero principal:</strong> domicilio del menor o persona con discapacidad con medidas de apoyo (art. 59.2 LJV).</li>
+                <li><strong>Fuero subsidiario:</strong> residencia habitual, en defecto de domicilio.</li>
+                <li><strong>Determinación del domicilio:</strong> arts. 40 y ss. CC para personas físicas; normativa especial para personas con discapacidad en situación de apoyo.</li>
+                <li><strong>Ratio legis:</strong> la atribución en función del domicilio del sujeto protegido —no del representante legal ni del tercero— responde al principio de proximidad y facilita el acceso a la justicia.</li>
+                <li><strong>Prórroga de competencia:</strong> no procede en jurisdicción voluntaria por su carácter no contencioso y vinculación territorial al interés protegido.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Juzgados especializados y conflictos de competencia</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Juzgados especializados en familia</strong> (art. 98 LOPJ): en partidos judiciales con este tipo de órganos, pueden conocer del expediente cuando la intromisión esté vinculada a situaciones de crisis familiar o guarda y custodia del menor.</li>
+                <li><strong>Declinatoria e inhibición:</strong> en caso de conflicto de competencia, se aplicarán supletoriamente los arts. 63-65 LEC (art. 8 LJV). El Juez puede examinar de oficio su competencia territorial (art. 58 LEC por analogía).</li>
+                <li>Coherencia con el fuero del domicilio del menor en los procesos de familia (art. 769 LEC).</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LJV, arts. 2.1 y 59.2</span>
+            <span class="ref-tag">LOPJ, arts. 86 ter y 98</span>
+            <span class="ref-tag">LEC, arts. 63-65 y 769</span>
+            <span class="ref-tag">CC, arts. 40 y ss.</span>
+          </div>
+        </article>
+
+        <!-- C2 ── LEGITIMACIÓN Y REPRESENTACIÓN LEGAL -->
+        <article class="map-card" data-cat="c2" data-text="legitimación representación legal patria potestad tutela curatela defensor judicial guardador hecho poderes preventivos ley 8/2021 discapacidad actos personalísimos">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 59.3</span>
+              <span class="status-tag tag-warn">Legitimación activa</span>
+            </div>
+            <h2 class="card-title">C2 · Legitimación y representación legal</h2>
+            <p class="card-subtitle">Representantes del menor y medidas de apoyo para personas con discapacidad (Ley 8/2021). Actos personalísimos.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Representantes del menor</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Padres en ejercicio de la patria potestad</strong> (arts. 154 y ss. CC): acto que corresponde conjuntamente a ambos progenitores (art. 156.I CC). Si existe desacuerdo, el art. 156.II CC permite que el Juez atribuya la facultad de decidir a uno de ellos.</li>
+                <li><strong>Tutor</strong> (arts. 215 y ss. CC): designado judicialmente cuando el menor carece de padres o estos han sido privados de la patria potestad (arts. 222 y 228 CC).</li>
+                <li><strong>Defensor judicial</strong> (art. 163 CC; arts. 300 y ss. CC): cuando existe conflicto de intereses entre el menor y sus representantes ordinarios. Especialmente relevante si la intromisión proyectada reporta beneficio económico a los propios progenitores.</li>
+                <li><strong>Guardador de hecho</strong> (arts. 237 y ss. CC, redacción Ley 8/2021): en ciertos supuestos reconocidos por la ley.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Medidas de apoyo para personas con discapacidad (Ley 8/2021)</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Curatela representativa</strong> (arts. 269.III y 287 ss. CC): única medida de apoyo con representación plena. Solo se constituye cuando es imprescindible y no bastan medidas asistenciales. Es la única que activa el art. 59.3 LJV.</li>
+                <li><strong>Curatela asistencial</strong> (art. 269.I-II CC): el curador complementa la capacidad pero no la sustituye; la persona con discapacidad debe participar activamente en la prestación del consentimiento.</li>
+                <li><strong>Guarda de hecho</strong> (arts. 263-267 CC): medida de apoyo informal sin resolución judicial, con límites propios.</li>
+                <li><strong>Poderes preventivos</strong> (arts. 256-262 CC): la propia persona puede designar previamente a alguien de confianza para apoyarla o representarla. El apoderado preventivo con facultades representativas puede quedar legitimado en el expediente.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Actos personalísimos y acreditación</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>El art. 162.II CC excluye de la representación paterna los actos «relativos a los derechos de la personalidad u otros que el hijo, de acuerdo con las leyes y sus condiciones de madurez, pueda realizar por sí mismo». El expediente del art. 59 LJV resuelve pragmáticamente esta tensión: admite el consentimiento del representante, pero lo somete a control judicial cuando el MF se opone.</li>
+                <li><strong>Acreditación de la representación:</strong> documentación fehaciente anexa a la solicitud (libro de familia, certificación registral, resolución judicial de nombramiento, escritura de poderes preventivos u otro título habilitante).</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LJV, art. 59.3</span>
+            <span class="ref-tag">CC, arts. 154-156, 162-163, 215, 222, 228</span>
+            <span class="ref-tag">CC, arts. 249, 256-272, 287, 300 (Ley 8/2021)</span>
+            <span class="ref-tag">CDPD, art. 12</span>
+          </div>
+        </article>
+
+        <!-- C3 ── POSTULACIÓN -->
+        <article class="map-card" data-cat="c2" data-text="postulación abogado procurador no preceptivo jurisdicción voluntaria tutela judicial efectiva costas artículo 3 LJV asistencia jurídica gratuita">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 59.4</span>
+              <span class="status-tag tag-ok">No preceptiva</span>
+            </div>
+            <h2 class="card-title">C3 · Postulación</h2>
+            <p class="card-subtitle">No es preceptiva la intervención de Abogado ni Procurador. Intervención voluntaria y asistencia jurídica gratuita.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Regla general: no preceptiva</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>No es preceptiva la intervención de Abogado ni Procurador. El representante legal puede actuar personalmente (art. 3 LJV; art. 59.4 LJV a contrario).</li>
+                <li>Fundamento: carácter tuitivo y simplificado de la jurisdicción voluntaria; garantía del art. 24 CE; protección de derechos de personas vulnerables y facilitación del acceso a la justicia sin barreras económicas o técnicas.</li>
+                <li>El art. 3 LJV solo impone postulación cuando la ley expresamente lo exija o el Juez lo acuerde motivadamente.</li>
+                <li>El art. 16.2 LJV admite que la comparecencia se celebre con o sin asistencia letrada.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Asistencia letrada voluntaria, costas y AJG</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>Nada impide la asistencia voluntaria de letrado. En expedientes con importantes consecuencias económicas (contratos de imagen de larga duración), la complejidad jurídica puede aconsejarla. Se aplicarán entonces normas generales de la LEC.</li>
+                <li><strong>Costas:</strong> el art. 7 LJV establece que no se impondrán las costas a ningún interesado, salvo mala fe o temeridad.</li>
+                <li><strong>Asistencia jurídica gratuita:</strong> posibilidad de solicitar reconocimiento del derecho conforme a Ley 1/1996, de 10 de enero, acreditando insuficiencia de recursos.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LJV, arts. 3, 7 y 16.2</span>
+            <span class="ref-tag">CE, art. 24</span>
+            <span class="ref-tag">Ley 1/1996, arts. 2-6 (AJG)</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECCIÓN 4: TRAMITACIÓN ══════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="body-tramitacion">
+      <span class="section-icon">⚙️</span>
+      <span class="section-heading-text">Art. 60 — Tramitación: solicitud, admisión, comparecencia y cautelares</span>
+      <span class="section-heading-count">4 fichas</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <div class="section-body" id="body-tramitacion">
+      <div class="card-grid">
+
+        <!-- T1 ── LA SOLICITUD -->
+        <article class="map-card" data-cat="c3" data-text="solicitud inicio expediente instancia parte proyecto consentimiento documentación representación preventivo contenido forma ley 39/2015 presentación registro">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 60.1</span>
+              <span class="status-tag tag-ok">Inicio del expediente</span>
+            </div>
+            <h2 class="card-title">T1 · La solicitud</h2>
+            <p class="card-subtitle">Inicio a instancia de parte con solicitud escrita. Carácter preventivo, contenido mínimo y documentación preceptiva.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Inicio y carácter preventivo</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>El expediente se inicia a instancia de parte —nunca de oficio— mediante solicitud escrita del representante legal (arts. 59.3 y 60.1 LJV).</li>
+                <li>La solicitud es preventiva: se dirige a autorizar un consentimiento proyectado antes de que la intromisión se produzca. El control judicial opera a priori para evitar el daño.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Contenido mínimo</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>Identificación del solicitante y su condición de representante legal.</li>
+                <li>Identificación del menor o persona con discapacidad cuyo interés se protege.</li>
+                <li>Exposición de hechos y descripción detallada de la intromisión cuya autorización se pretende, incluyendo su finalidad.</li>
+                <li>Fundamentación jurídica basada en el interés superior.</li>
+                <li>Acreditación de la oposición del Ministerio Fiscal como presupuesto habilitante.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Documentación preceptiva</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Proyecto de consentimiento:</strong> tipo de intromisión, soporte o medio, finalidad, duración, ámbito territorial y, en su caso, contraprestación económica. La precisión del proyecto delimita el objeto del Auto y permite al Juez autorizar con condiciones específicas.</li>
+                <li><strong>Acreditación de la oposición del MF:</strong> documento fehaciente de oposición expresa dentro del plazo de 8 días (art. 3.2 LO 1/1982), anterior a la solicitud.</li>
+                <li><strong>Acreditación de la representación legal:</strong> libro de familia, resolución judicial de nombramiento de tutor o curador, escritura de poderes preventivos u otro título habilitante.</li>
+                <li><strong>Presentación y registro:</strong> admisión de medios conforme a Ley 39/2015, de 1 de octubre, aplicable supletoriamente.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LJV, arts. 59.3 y 60.1</span>
+            <span class="ref-tag">LO 1/1982, arts. 3 y 3.2</span>
+            <span class="ref-tag">Ley 39/2015, art. 14</span>
+          </div>
+        </article>
+
+        <!-- T2 ── ADMISIÓN Y CITACIONES -->
+        <article class="map-card" data-cat="c3" data-text="admisión LAJ letrado administración justicia secretario judicial señalamiento comparecencia citaciones preceptivas facultativas ministerio fiscal representante diligencia">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 60.1-2</span>
+              <span class="status-tag tag-info">Admisión</span>
+            </div>
+            <h2 class="card-title">T2 · Admisión y citaciones</h2>
+            <p class="card-subtitle">El LAJ examina la regularidad formal; citaciones preceptivas (MF y representante) y facultativas (menor, terceros).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">El Letrado de la Administración de Justicia (LAJ)</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>La admisión y el señalamiento corresponden al LAJ (antiguo Secretario judicial; LO 7/2015 y Ley 42/2015). Controla la regularidad formal; si hay defectos subsanables, puede requerirlos antes de admitir a trámite. La inadmisión por motivos de fondo corresponde al Juez.</li>
+                <li><strong>Funciones:</strong> admisión de expedientes, impulso procesal, práctica de actos de comunicación, documentación de actuaciones, salvo actos reservados al Juez por razón de contenido jurisdiccional.</li>
+                <li><strong>Plazo de admisión:</strong> sin plazo expreso; aplicación supletoria del criterio de diligencia debida del art. 17 LEC; resolución en el menor tiempo posible dada la naturaleza de derechos fundamentales en juego.</li>
+                <li><strong>Requisitos de admisión:</strong> verificación de competencia territorial, legitimación del solicitante, completitud de documentación, concurrencia del presupuesto habilitante (oposición fiscal).</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Citaciones preceptivas (obligatorias)</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Ministerio Fiscal:</strong> como promotor de la oposición y garante institucional del interés del protegido.</li>
+                <li><strong>Representante legal:</strong> como parte promotora del expediente.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Citaciones facultativas</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Menor o persona con discapacidad:</strong> el Juez decide atendiendo a la madurez o al grado de autonomía. El art. 9 LOPJM impone escucharle si tiene 12 años o suficiente madurez. Los arts. 12 CDPD y 249 CC (Ley 8/2021) exigen respetar su voluntad y preferencias.</li>
+                <li><strong>Otros interesados:</strong> empresa o medio titular del proyecto de consentimiento, el otro progenitor, AEPD u entidades de protección de menores si el expediente tiene relevancia supraindividual. Pueden ser citados de oficio o a instancia del MF; valoración judicial de pertinencia y proporcionalidad.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LJV, arts. 60.1-2 y 16-18</span>
+            <span class="ref-tag">LOPJM, art. 9</span>
+            <span class="ref-tag">CDPD, art. 12</span>
+            <span class="ref-tag">CC, art. 249 (Ley 8/2021)</span>
+            <span class="ref-tag">LEC, art. 17</span>
+          </div>
+        </article>
+
+        <!-- T3 ── LA COMPARECENCIA -->
+        <article class="map-card" data-cat="c3" data-text="comparecencia acto oral audiencia menor prueba pericial documental inmediación voluntad discapacidad defensor judicial ad hoc oralidad concentración">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 60.2</span>
+              <span class="status-tag tag-ok">Acto oral central</span>
+            </div>
+            <h2 class="card-title">T3 · La comparecencia</h2>
+            <p class="card-subtitle">Acto oral ante el Juez con principios de oralidad, inmediación y concentración. Audiencia al menor y a la persona con discapacidad.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Acto oral central</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>El art. 18 LJV prevé que en la comparecencia se oiga a los interesados, se practique la prueba propuesta y admitida, y se formulen alegaciones finales. El principio de inmediación impone que sea el mismo Juez que resolverá quien dirija el acto.</li>
+                <li><strong>Desarrollo:</strong> acto ante el Juez con principios de oralidad, inmediación y concentración; audiencia a intervinientes; formulación de alegaciones; práctica de prueba documental o testifical pertinente; informe del Fiscal sobre adecuación del proyecto al interés superior; posibilidad de recabar informes periciales o de servicios sociales.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Audiencia al menor</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>El art. 9 LOPJM establece el derecho del menor a ser oído en todo procedimiento judicial que le afecte. Obligatoria si tiene 12 años o más; facultativa —pero recomendable— si tiene menos años pero suficiente madurez.</li>
+                <li>Debe practicarse en condiciones adecuadas: sin presencia de progenitores si puede coartar la expresión libre; con apoyo de psicólogo o trabajador social si lo requiere la situación; de forma no dañina para el menor.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Voluntad de la persona con discapacidad</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>Los arts. 12 CDPD, 249 CC y 268 CC (Ley 8/2021) imponen que el Juez valore la voluntad, los deseos y las preferencias de la persona con discapacidad antes de resolver, con independencia de la opinión de su curador representativo.</li>
+                <li>El Juez puede nombrar un defensor judicial ad hoc si aprecia conflicto entre la voluntad del curador y la de la persona con discapacidad.</li>
+                <li>Garantías de audiencia con entorno adecuado, apoyos necesarios y asistencia de profesionales especializados si procede.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Práctica de prueba</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>Todos los medios de prueba admitidos en la LEC son aplicables (art. 18 LJV): documental (proyecto de consentimiento, contratos, capturas digitales), pericial psicológica o social (impacto en el menor o persona con discapacidad), interrogatorio de las partes.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LJV, arts. 16-18</span>
+            <span class="ref-tag">LOPJM, art. 9</span>
+            <span class="ref-tag">CDPD, art. 12</span>
+            <span class="ref-tag">CC, arts. 249 y 268 (Ley 8/2021)</span>
+          </div>
+        </article>
+
+        <!-- T4 ── MEDIDAS CAUTELARES -->
+        <article class="map-card" data-cat="c3" data-text="medidas cautelares urgencia artículo 158 CC LO 1/1982 fumus boni iuris periculum in mora suspensión difusión retirada contenidos defensor judicial">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 158 CC</span>
+              <span class="status-tag tag-alert">Urgencia</span>
+            </div>
+            <h2 class="card-title">T4 · Medidas cautelares</h2>
+            <p class="card-subtitle">Suspensión o prohibición de difusión, retirada cautelar de contenidos y designación de defensor judicial ad hoc.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Fundamento</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 158 CC:</strong> el Juez puede adoptar de oficio o a instancia del MF cualquier medida necesaria para la protección del menor, incluida la suspensión de una intromisión en su esfera privada mientras se sustancia el expediente.</li>
+                <li><strong>Art. 9 LO 1/1982:</strong> permite adoptar medidas cautelares cuando se acredita la intromisión ilegítima y el peligro de continuación del daño.</li>
+                <li><strong>Arts. 721 y ss. LEC</strong> (supletoriamente): exigen fumus boni iuris y periculum in mora.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Tipos de medidas aplicables</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>Suspensión o prohibición de difusión de las imágenes o contenidos proyectados mientras se resuelve el expediente.</li>
+                <li>Retirada cautelar de contenidos ya difundidos al amparo de un consentimiento impugnado.</li>
+                <li>Orden de no difusión a plataformas digitales o medios de comunicación.</li>
+                <li>Designación de defensor judicial ad hoc si el interés del menor puede estar en conflicto con el del representante legal.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Urgencia</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>En supuestos de extrema urgencia (publicación inminente, emisión en directo), el Juez puede actuar de forma inmediata, adoptando medidas cautelares que impidan el daño antes de que se celebre la comparecencia.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC, art. 158</span>
+            <span class="ref-tag">LO 1/1982, art. 9</span>
+            <span class="ref-tag">LEC, arts. 721 y ss.</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECCIÓN 5: RESOLUCIÓN, RECURSOS Y REVOCACIÓN ════════════════ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="body-resolucion">
+      <span class="section-icon">📋</span>
+      <span class="section-heading-text">Art. 60 — Resolución judicial, recursos y revocación</span>
+      <span class="section-heading-count">3 fichas</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <div class="section-body" id="body-resolucion">
+      <div class="card-grid">
+
+        <!-- R1 ── LA RESOLUCIÓN JUDICIAL -->
+        <article class="map-card" data-cat="c4" data-text="resolución auto motivación interés superior menor triple elemento material interpretativo procedimental digital huella permanencia autorizar denegar condiciones plazo cinco días">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 60.3</span>
+              <span class="status-tag tag-warn">5 días máx.</span>
+            </div>
+            <h2 class="card-title">R1 · La resolución judicial — el Auto</h2>
+            <p class="card-subtitle">Auto motivado al término de la comparecencia o en los 5 días siguientes. Autorización, condicionamiento o denegación.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Forma, motivación y plazo</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Forma:</strong> Auto (art. 19.1 LJV), debidamente motivado. La afectación de derechos fundamentales (art. 18 CE) impone motivación reforzada (arts. 120.3 y 24 CE).</li>
+                <li><strong>Plazo:</strong> regla general: al término de la comparecencia, en el propio acto (art. 60.3 LJV). Excepción: dentro de los cinco días siguientes si la complejidad lo justifica; cómputo conforme al art. 132 LEC (excluidos días inhábiles).</li>
+                <li><strong>Contenido mínimo:</strong> identificación de partes y expediente; antecedentes de hecho; fundamentos de derecho; parte dispositiva con pronunciamiento expreso; en caso de autorización: delimitación precisa de límites, condiciones y duración; advertencia sobre posibilidad de recurso y sus efectos.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Contenido del fallo</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Autorización</strong> en los términos exactos del proyecto presentado.</li>
+                <li><strong>Autorización condicionada:</strong> reducción del plazo de difusión, limitación del soporte o medio, exclusión de datos identificativos, exigencia de contraprestación en favor del menor, condiciones de edición o presentación, prohibición de difusión en plataformas de acceso a menores de determinadas edades.</li>
+                <li><strong>Denegación:</strong> si la intromisión no es compatible con el interés superior del menor o la voluntad de la persona con discapacidad, con independencia del consentimiento del representante legal.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">El interés superior del menor (art. 2 LOPJM + LO 8/2015)</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Elemento material:</strong> conjunto de bienes y derechos que garantizan el pleno desarrollo de la personalidad del menor.</li>
+                <li><strong>Elemento interpretativo/ponderación (art. 2.2 LOPJM):</strong> protección del derecho a la vida y el desarrollo; satisfacción de necesidades básicas materiales y afectivas; consideración de los deseos, sentimientos y opiniones del menor; necesidad de estabilidad y continuidad en las soluciones; preservación de relaciones familiares y sociales; ausencia de discriminación.</li>
+                <li><strong>Elemento procedimental (art. 2.3 LOPJM):</strong> derecho del menor a ser escuchado; análisis de las opciones disponibles y sus consecuencias; participación del equipo técnico multidisciplinar si procede; motivación expresa comprensible para el menor.</li>
+                <li><strong>Elementos de valoración específicos:</strong> edad y madurez del titular, naturaleza y alcance de la intromisión, finalidad legítima perseguida, alternativas menos restrictivas disponibles, consecuencias previsibles de la decisión.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Criterios específicos en el entorno digital</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Irreversibilidad:</strong> el contenido digital una vez difundido es de muy difícil o imposible retirada total.</li>
+                <li><strong>Huella digital permanente:</strong> puede condicionar el futuro del menor en sus relaciones personales, laborales y sociales.</li>
+                <li>Riesgo de uso secundario (capturas, redistribución, manipulación).</li>
+                <li>Art. 84 LOPDGDD (imagen del menor en internet) y art. 8 RGPD (umbral de consentimiento digital).</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Estándar para personas con discapacidad</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>El art. 249 CC (Ley 8/2021) y el art. 12.4 CDPD imponen respetar la voluntad, los deseos y las preferencias de la persona con discapacidad. El Juez realiza un esfuerzo interpretativo para determinar qué querría la persona si pudiera expresarse libremente. Extensión del interés superior a personas con discapacidad por remisión del art. 59.1 LJV, en coherencia con art. 12 CDPD.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LJV, arts. 19.1 y 60.3</span>
+            <span class="ref-tag">CE, arts. 18, 24 y 120.3</span>
+            <span class="ref-tag">LOPJM, art. 2 (LO 8/2015)</span>
+            <span class="ref-tag">CC, art. 249 (Ley 8/2021)</span>
+            <span class="ref-tag">CDPD, art. 12.4</span>
+            <span class="ref-tag">LOPDGDD, art. 84</span>
+            <span class="ref-tag">LEC, art. 132</span>
+          </div>
+        </article>
+
+        <!-- R2 ── RECURSO DE APELACIÓN -->
+        <article class="map-card" data-cat="c5" data-text="recurso apelación Audiencia Provincial efectos suspensivos tramitación preferente legitimación veinte días cinco días LEC 458 art 20.2 LJV">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 60.4</span>
+              <span class="status-tag tag-alert">Efectos suspensivos</span>
+            </div>
+            <h2 class="card-title">R2 · Recurso de apelación</h2>
+            <p class="card-subtitle">Ante la Audiencia Provincial, con efectos suspensivos automáticos y tramitación preferente.</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Régimen y efectos</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Efectos suspensivos automáticos:</strong> la interposición del recurso suspende la eficacia del Auto. La intromisión no puede producirse mientras no se resuelva definitivamente (art. 60.4 LJV). Fundamento: protección cautelar de derechos fundamentales de personas vulnerables, evitando perjuicios irreparables.</li>
+                <li><strong>Tramitación preferente:</strong> se resuelve con preferencia sobre asuntos ordinarios, atendiendo a la urgencia que pueden tener para las partes plazos contractuales de publicación.</li>
+                <li><strong>Órgano competente:</strong> Audiencia Provincial del partido judicial donde se dictó el Auto (arts. 82.2 LOPJ y 60.4 LJV).</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Legitimación, plazo y tramitación</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Representante legal:</strong> si el Auto ha denegado o condicionado la autorización.</li>
+                <li><strong>Ministerio Fiscal:</strong> si el Auto ha concedido la autorización pese a su oposición inicial.</li>
+                <li><strong>Otros interesados</strong> que hubieran sido parte en el expediente.</li>
+                <li><strong>Plazo:</strong> 20 días desde la notificación del Auto (art. 458.1 LEC). El art. 20.2 LJV establece un plazo general de 5 días para jurisdicción voluntaria, pero la remisión a la LEC (art. 60.4 LJV) y la gravedad de los derechos en juego aconsejan aplicar el plazo general de apelación de la LEC. Improrrogable.</li>
+                <li>Se rige por los arts. 455-467 LEC con las adaptaciones propias de la jurisdicción voluntaria.</li>
+                <li>La Audiencia Provincial puede confirmar, revocar o modificar el Auto, incluyendo la imposición de condiciones nuevas. Posibilidad de celebración de vista si se considera necesaria para práctica de prueba o audiencia directa del titular.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LJV, arts. 20 y 60.4</span>
+            <span class="ref-tag">LEC, arts. 455-467 y 458.1</span>
+            <span class="ref-tag">LOPJ, art. 82.2</span>
+          </div>
+        </article>
+
+        <!-- R3 ── REVOCACIÓN DEL CONSENTIMIENTO -->
+        <article class="map-card" data-cat="c5" data-text="revocación consentimiento efectos ex nunc contratos terceros indemnización digital derecho al olvido LOPDGDD RGPD AEPD kidfluencer recursabilidad cesación">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">Art. 60.5</span>
+              <span class="status-tag tag-warn">Revocable</span>
+            </div>
+            <h2 class="card-title">R3 · Revocación del consentimiento</h2>
+            <p class="card-subtitle">Procedimiento simplificado a instancia del representante legal. Efectos ex nunc y dimensión digital (derecho al olvido).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Régimen legal y procedimiento</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 60.5 LJV:</strong> los representantes legales que deseen revocar el consentimiento judicialmente otorgado lo ponen en conocimiento del Juez, quien dicta resolución dejándolo sin efecto.</li>
+                <li><strong>Legitimados:</strong> exclusivamente los representantes legales actuales; no procede solicitud por el propio titular mientras subsista la medida de apoyo, salvo que haya alcanzado madurez o capacidad suficiente para prestar consentimiento por sí mismo (art. 3.1 LO 1/1982).</li>
+                <li><strong>Procedimiento simplificado:</strong> comunicación al Juez mediante solicitud escrita con expresión de motivos. No se prevé comparecencia previa ni se exige causa, salvo que el Juez lo estime necesario.</li>
+                <li><strong>Resolución:</strong> el Juez dicta resolución dejándolo sin efecto, con declaración expresa de revocación e indicación de fecha de efectos.</li>
+                <li><strong>Efectos ex nunc:</strong> produce efectos desde la fecha del Auto de revocación. No convierte en ilegítimas las intromisiones ya consumadas al amparo de la autorización previa.</li>
+                <li><strong>Art. 2.3 LO 1/1982:</strong> el consentimiento es revocable en todo caso, aunque puede generar obligación de indemnizar a terceros de buena fe.</li>
+                <li><strong>Recursabilidad:</strong> contra la resolución de revocación cabe igualmente recurso de apelación con efectos suspensivos, aplicándose por analogía el régimen del art. 60.4.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Efectos sobre contratos con terceros</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>La revocación no extingue automáticamente los contratos vinculados al consentimiento. Las consecuencias civiles se rigen por el régimen general de la contratación (arts. 1101 y ss. CC) y art. 1.4 LO 1/1982.</li>
+                <li>En actividades de kidfluencer, la revocación puede poner fin a contratos de patrocinio o influencia, con posibles reclamaciones por incumplimiento. El art. 26 LOPJM (mod. LOPIVI) protege el interés del menor frente al interés económico del contrato.</li>
+                <li>Deber de cesación inmediata por parte de destinatarios del consentimiento revocado, con adopción de medidas para revertir efectos (retirada de publicaciones, cesión de soportes, etc.). Art. 9.3 LO 1/1982: presunción de perjuicio en caso de intromisión ilegítima subsiguiente.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Dimensión digital: derecho al olvido</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 94 LOPDGDD:</strong> derecho al olvido en redes sociales y servicios equivalentes: permite exigir la supresión de contenidos que afecten al menor. Ejercitable ante el responsable del tratamiento o, en caso de negativa, ante la AEPD o los tribunales.</li>
+                <li><strong>Art. 17 RGPD:</strong> derecho de supresión («derecho al olvido») frente a responsables del tratamiento en la UE. La revocación del consentimiento activa el deber de suprimir sin dilación.</li>
+                <li>La revocación del art. 60.5 LJV y el ejercicio del derecho al olvido son mecanismos independientes pero complementarios y pueden ejercerse de forma coordinada.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LJV, art. 60.5</span>
+            <span class="ref-tag">LO 1/1982, arts. 1.4, 2.3 y 9.3</span>
+            <span class="ref-tag">LOPDGDD, art. 94</span>
+            <span class="ref-tag">RGPD, art. 17</span>
+            <span class="ref-tag">LOPJM, art. 26 (mod. LOPIVI)</span>
+            <span class="ref-tag">CC, arts. 1101 y ss.</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECCIÓN 6: PERSPECTIVAS TRANSVERSALES ═══════════════════════ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="body-perspectivas">
+      <span class="section-icon">🌐</span>
+      <span class="section-heading-text">Perspectivas transversales y vías de tutela complementarias</span>
+      <span class="section-heading-count">5 fichas</span>
+      <button class="section-toggle-btn">▼</button>
+    </div>
+    <div class="section-body" id="body-perspectivas">
+      <div class="card-grid">
+
+        <!-- P1 ── SHARENTING Y KIDFLUENCERS -->
+        <article class="map-card" data-cat="c7" data-text="sharenting kidfluencer explotación comercial imagen menor redes sociales plataformas DSA LOPIVI monetización patrocinio publicidad influencer">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">P1</span>
+              <span class="status-tag tag-alert">Riesgo digital</span>
+            </div>
+            <h2 class="card-title">P1 · Sharenting, kidfluencers y explotación comercial</h2>
+            <p class="card-subtitle">Fenómeno del sharenting, kidfluencers y marco normativo aplicable (LOPIVI, LOPDGDD, DSA).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">El fenómeno del sharenting</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Sharenting:</strong> difusión habitual por los progenitores de contenidos de sus hijos en redes sociales. Cuando es lucrativa (monetización, patrocinios), entra de lleno en el ámbito del art. 59 LJV y puede motivar la oposición del MF.</li>
+                <li><strong>Kidfluencers:</strong> menores cuya imagen se gestiona comercialmente a través de plataformas como YouTube, Instagram o TikTok. Los contratos de patrocinio o publicidad vinculados a su imagen pueden requerir la autorización judicial del Capítulo VII cuando el MF aprecia riesgo para el interés superior del menor.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Marco normativo aplicable</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>LOPIVI (LO 8/2021):</strong> refuerza la protección de la imagen del menor frente al uso no justificado. Modifica la LOPJM para ampliar las obligaciones de los poderes públicos en materia de prevención de la explotación de la imagen del menor. Su art. 26 LOPJM reformado refuerza los límites a la actividad lucrativa del menor.</li>
+                <li><strong>LOPDGDD, art. 84:</strong> obliga a padres y centros educativos a proteger la imagen del menor en internet.</li>
+                <li><strong>Reglamento de Servicios Digitales (DSA, Reglamento UE 2022/2065):</strong> impone a plataformas de gran alcance obligaciones reforzadas de protección de menores, incluyendo evaluaciones de riesgos y medidas de mitigación.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Habilitación del MF</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>La interpretación evolutiva de los arts. 59-60 LJV, a la luz de la LOPIVI y la LOPDGDD, habilita al MF para oponerse al consentimiento del representante legal cuando la difusión comercial de la imagen del menor no sea compatible con su interés superior, su dignidad o el libre desarrollo de su personalidad.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LOPIVI (LO 8/2021)</span>
+            <span class="ref-tag">LOPJM, art. 26 (mod.)</span>
+            <span class="ref-tag">LOPDGDD, art. 84</span>
+            <span class="ref-tag">DSA, Regl. UE 2022/2065</span>
+            <span class="ref-tag">LJV, arts. 59-60</span>
+          </div>
+        </article>
+
+        <!-- P2 ── HUELLA DIGITAL Y DERECHO AL OLVIDO -->
+        <article class="map-card" data-cat="c7" data-text="huella digital permanencia contenido internet derecho al olvido AEPD supresión protección datos identidad futura indexación motores búsqueda">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">P2</span>
+              <span class="status-tag tag-warn">Irreversible</span>
+            </div>
+            <h2 class="card-title">P2 · Huella digital permanente y derecho al olvido</h2>
+            <p class="card-subtitle">Características del daño digital y mecanismos de tutela (LOPDGDD, RGPD, AEPD).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Características del daño digital</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Difusión masiva e instantánea</strong> en múltiples jurisdicciones simultáneamente.</li>
+                <li><strong>Permanencia</strong> del contenido una vez indexado por motores de búsqueda; dificultad técnica para su retirada total.</li>
+                <li><strong>Pérdida de control</strong> sobre los usos secundarios: capturas, redistribución, manipulación, uso en entrenamiento de IA.</li>
+                <li><strong>Impacto sobre la identidad digital futura:</strong> contenidos publicados en la infancia pueden condicionar las relaciones personales, laborales y sociales del menor en el futuro.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Mecanismos de tutela digital</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 94 LOPDGDD:</strong> derecho al olvido en redes sociales. Ejercitable ante el responsable del tratamiento o, en caso de negativa, ante la AEPD (procedimiento de tutela de derechos: ágil y gratuito) o ante los tribunales.</li>
+                <li><strong>Art. 17 RGPD:</strong> derecho de supresión en el ámbito europeo, con obligación del responsable del tratamiento de actuar sin dilación indebida.</li>
+                <li><strong>Límites del derecho al olvido:</strong> no opera frente a usos amparados en base jurídica distinta del consentimiento (interés público, libertad de expresión, hemerotecas). La ponderación entre supresión y libertad de información corresponde en última instancia a los tribunales.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LOPDGDD, art. 94</span>
+            <span class="ref-tag">RGPD, art. 17</span>
+            <span class="ref-tag">AEPD (tutela de derechos)</span>
+          </div>
+        </article>
+
+        <!-- P3 ── PERSPECTIVA DE GÉNERO -->
+        <article class="map-card" data-cat="c7" data-text="perspectiva género niñas adolescentes cyberbullying grooming estereotipos sexualización imágenes íntimas LO 1/2023 LOPIVI violencia digital">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">P3</span>
+              <span class="status-tag tag-alert">Especial vulnerabilidad</span>
+            </div>
+            <h2 class="card-title">P3 · Perspectiva de género</h2>
+            <p class="card-subtitle">Vulnerabilidad de niñas y adolescentes. Difusión no consentida de imágenes íntimas (art. 197.7 CP).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Vulnerabilidad específica de niñas y adolescentes</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>Las niñas y adolescentes son especialmente vulnerables a determinadas intromisiones: explotación de la imagen en contextos de acoso en línea (cyberbullying), grooming, difusión de contenidos que reproduzcan roles o estereotipos de género perjudiciales, o uso de la imagen de adolescentes en publicidad que refuerza estándares corporales dañinos.</li>
+                <li>El MF debe actuar con especial diligencia en estos supuestos.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Difusión no consentida de imágenes íntimas</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 197.7 CP</strong> (redactado por LO 1/2023, de garantía integral de la libertad sexual): tipifica la difusión no consentida de imágenes íntimas como delito específico.</li>
+                <li><strong>LOPIVI (LO 8/2021):</strong> refuerza el papel del MF en la protección frente a la violencia digital contra menores. Introduce obligaciones específicas para plataformas y medios digitales.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">LOPIVI (LO 8/2021)</span>
+            <span class="ref-tag">CP, art. 197.7 (LO 1/2023)</span>
+            <span class="ref-tag">LOPJM, arts. 2 y 9</span>
+          </div>
+        </article>
+
+        <!-- P4 ── PERSONAS CON DISCAPACIDAD -->
+        <article class="map-card" data-cat="c7" data-text="discapacidad intelectual psicosocial vulnerabilidad explotación imagen cuidadores apoyos ley 8/2021 CDPD dignidad defensor judicial">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">P4</span>
+              <span class="status-tag tag-warn">Garantías reforzadas</span>
+            </div>
+            <h2 class="card-title">P4 · Personas con discapacidad especialmente vulnerables</h2>
+            <p class="card-subtitle">Riesgos específicos de explotación y garantías reforzadas (Ley 8/2021, CDPD, LOPIVI).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Riesgos específicos</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>Las personas con discapacidad intelectual o psicosocial pueden ser vulnerables a la explotación de su imagen por quienes tienen encomendado su cuidado o apoyo, precisamente por la dificultad para expresar su disconformidad.</li>
+                <li>La difusión de su imagen en contextos que supongan humillación o espectacularización de su condición puede constituir una vulneración grave de su dignidad (arts. 3 y 16 CDPD).</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Garantías reforzadas (Ley 8/2021)</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li>La Ley 8/2021 refuerza el papel del Juez para escuchar directamente a la persona con discapacidad antes de resolver, y le habilita para nombrar un defensor judicial ad hoc cuando aprecia conflicto de intereses entre la voluntad del curador representativo y la de la persona representada.</li>
+                <li><strong>CDPD, art. 3:</strong> respeto de la autonomía individual. <strong>Art. 16 CDPD:</strong> protección contra la explotación, la violencia y el abuso. <strong>Art. 12 CDPD:</strong> igual reconocimiento ante la ley.</li>
+                <li>La LOPIVI también aborda la protección de las personas con discapacidad frente a la violencia y la explotación.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">Ley 8/2021</span>
+            <span class="ref-tag">CDPD, arts. 3, 12 y 16</span>
+            <span class="ref-tag">CC, arts. 249 y 268 (Ley 8/2021)</span>
+            <span class="ref-tag">LOPIVI (LO 8/2021)</span>
+          </div>
+        </article>
+
+        <!-- P5 ── CONEXIÓN CON OTROS PROCEDIMIENTOS -->
+        <article class="map-card" data-cat="c7" data-text="vías tutela complementarias artículo 158 CC procedimiento contencioso penal AEPD acción cesación protección datos familia medidas cautelares">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="art-badge">P5</span>
+              <span class="status-tag tag-info">Vías complementarias</span>
+            </div>
+            <h2 class="card-title">P5 · Conexión con otros procedimientos y vías de tutela</h2>
+            <p class="card-subtitle">Vías civiles (art. 158 CC, acción contenciosa), vía penal (arts. 197 y ss. CP) y vía administrativa (AEPD).</p>
+          </div>
+          <button class="card-toggle-btn" onclick="toggleCard(this)">
+            <span>Ver contenido completo</span><span class="toggle-icon">&#9662;</span>
+          </button>
+          <div class="card-body">
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Vías civiles</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Art. 158 CC:</strong> el Juez puede adoptar de oficio o a instancia del MF medidas de protección del menor, incluyendo la prohibición de determinadas conductas del representante legal, con independencia del expediente de jurisdicción voluntaria.</li>
+                <li><strong>Acción contenciosa (art. 9 LO 1/1982):</strong> cesación de la intromisión, reclamación de daños y perjuicios —incluyendo daño moral— por juicio ordinario o verbal según cuantía (arts. 249 y 250 LEC).</li>
+                <li><strong>Procesos de familia:</strong> en procedimientos de divorcio o separación, el Juez puede incluir medidas específicas sobre el uso de la imagen de los hijos en redes sociales.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Vía penal</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>Arts. 197 y ss. CP:</strong> descubrimiento y revelación de secretos; difusión no consentida de imágenes íntimas (art. 197.7 CP, mod. LO 1/2023).</li>
+                <li><strong>Arts. 205 y ss. CP:</strong> delitos contra el honor (calumnia e injuria).</li>
+                <li><strong>Art. 173 CP:</strong> tratos degradantes contrarios a la integridad moral.</li>
+              </ul></div>
+            </div>
+            <div class="inner-section">
+              <div class="inner-heading"><span class="dot"></span><span class="inner-heading-text">Vía administrativa (AEPD)</span></div>
+              <div class="inner-body"><ul class="inner-list">
+                <li><strong>AEPD:</strong> reclamación cuando la intromisión implica tratamiento de datos personales sin base jurídica válida o en vulneración del RGPD/LOPDGDD. Procedimiento de tutela de derechos: ágil y gratuito. La AEPD puede imponer sanciones y ordenar la supresión de los datos.</li>
+                <li><strong>Acción de cesación (art. 9.2 LO 1/1982):</strong> obtención cautelar y definitiva de la cesación inmediata de la intromisión, recuperación de los soportes y publicación de la sentencia de condena.</li>
+              </ul></div>
+            </div>
+          </div>
+          <div class="card-refs">
+            <span class="ref-tag">CC, art. 158</span>
+            <span class="ref-tag">LO 1/1982, arts. 9 y 9.2</span>
+            <span class="ref-tag">CP, arts. 173, 197, 205</span>
+            <span class="ref-tag">RGPD + LOPDGDD (AEPD)</span>
+            <span class="ref-tag">LEC, arts. 249 y 250</span>
+          </div>
+        </article>
+
+        <!-- no-results -->
+        <div class="no-results" id="no-results">
+          No se encontraron fichas para «<span id="no-results-term"></span>». Prueba otra búsqueda o categoría.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECCIÓN 11: INDICE DE PLAZOS ══════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="body-timeline">
+      <span class="section-icon">📅</span>
+      <span class="section-heading-text">Indice de plazos procesales y línea temporal del expediente</span>
+      <span class="section-heading-count">4 plazos · 4 fases</span>
+      <button class="section-toggle-btn">▶</button>
+    </div>
+    <div class="section-body collapsed" id="body-timeline">
+      <div class="table-wrap">
+        <table class="timeline-table">
+          <thead><tr>
+            <th style="width:45%">Acto o trámite procesal</th>
+            <th>Plazo</th>
+            <th>Fundamento normativo</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td class="td-tramite">Oposición del MF al consentimiento proyectado (comunicación previa del representante legal)</td>
+              <td><span class="plazo-badge plazo-days">8 días</span></td>
+              <td class="td-norm">Art. 3.2 LO 1/1982</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Dictado de resolución judicial tras comparecencia (complejidad justificada)</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td class="td-norm">Art. 60.3 Ley 15/2015</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Interposición de recurso de apelación contra resolución judicial</td>
+              <td><span class="plazo-badge plazo-weeks">20 días</span></td>
+              <td class="td-norm">Art. 458.1 LEC (supletorio art. 8 LJV)</td>
+            </tr>
+            <tr>
+              <td class="td-tramite">Plazo general de apelación en jurisdicción voluntaria (arts. no especiales)</td>
+              <td><span class="plazo-badge plazo-days">5 días</span></td>
+              <td class="td-norm">Art. 20.2 Ley 15/2015</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tl-visual">
+        <div class="tl-row">
+          <div class="tl-step">
+            <span class="tl-num">1</span>
+            <strong>Solicitud</strong>
+            El representante legal presenta escrito con el proyecto de consentimiento, el documento de oposición del MF y los títulos de representación ante el Juzgado de 1.ª Instancia del domicilio del protegido.
+          </div>
+          <div class="tl-arrow">→</div>
+          <div class="tl-step">
+            <span class="tl-num">2</span>
+            <strong>Admisión a trámite</strong>
+            El LAJ examina la regularidad formal. Si hay defectos subsanables, los requiere. Una vez admitida, señala día y hora para la comparecencia y cita preceptivamente al MF y al representante legal.
+          </div>
+          <div class="tl-arrow">→</div>
+          <div class="tl-step">
+            <span class="tl-num">3</span>
+            <strong>Comparecencia</strong>
+            Acto oral ante el Juez. Comparecen el representante legal y el MF; el Juez puede citar facultativamente al menor (obligatorio si tiene ≥12 años), a la persona con discapacidad y a otros interesados. Se practica la prueba propuesta y se formulan alegaciones.
+          </div>
+          <div class="tl-arrow">→</div>
+          <div class="tl-step">
+            <span class="tl-num">4</span>
+            <strong>Auto</strong>
+            El Juez resuelve en el acto o en los 5 días siguientes. Puede autorizar, autorizar con condiciones o denegar. Cabe recurso de apelación ante la AP (efectos suspensivos, tramitación preferente).
+          </div>
+        </div>
+        <p class="tl-note"><em>Nota:</em> Si el MF <strong>no se opone</strong> en la comparecencia, el representante queda habilitado para prestar el consentimiento sin necesidad de resolución judicial expresa. El expediente solo finaliza con resolución judicial cuando existe oposición formal del MF (art. 59.1 LJV).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SUPLEMENTARIO B: MAPA DE ACTORES ════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="body-actors">
+      <span class="section-icon">👥</span>
+      <span class="section-heading-text">Mapa de participantes y actores del expediente</span>
+      <span class="section-heading-count">5 categorías · 10+ actores</span>
+      <button class="section-toggle-btn">▶</button>
+    </div>
+    <div class="section-body collapsed" id="body-actors">
+      <div class="participants-grid">
+        <div class="participant-col">
+          <div class="participant-col-head phead-c2">Representante legal / Solicitante</div>
+          <ul>
+            <li>Titulares de la patria potestad (progenitores) o tutor</li>
+            <li>Curador representativo (Ley 8/2021) para personas con discapacidad</li>
+            <li>Defensor judicial si hay conflicto de intereses</li>
+            <li>Apoderado preventivo con facultades representativas</li>
+            <li>Legitimado activo para iniciar el expediente e interponer apelación</li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c3">Ministerio Fiscal</div>
+          <ul>
+            <li>Garante del interés superior del menor <span class="participant-note">(art. 3.7 EOMF)</span></li>
+            <li>Citación preceptiva en todo caso <span class="participant-note">(art. 60.1 LJV)</span></li>
+            <li>Su oposición formal activa el procedimiento</li>
+            <li>Puede apelar el Auto que autoriza la intromisión</li>
+            <li>Puede instar medidas cautelares de oficio <span class="participant-note">(art. 158 CC)</span></li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c1">Órganos judiciales</div>
+          <ul>
+            <li>Juez de Primera Instancia <span class="participant-note">(dirige comparecencia, dicta Auto)</span></li>
+            <li>LAJ <span class="participant-note">(admisión, señalamiento, comunicaciones)</span></li>
+            <li>Audiencia Provincial <span class="participant-note">(resolución del recurso de apelación)</span></li>
+            <li>Pondera el interés superior conforme al art. 2 LOPJM</li>
+            <li>Puede imponer condiciones o adoptar medidas cautelares de oficio</li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c4">Menor / Persona con discapacidad</div>
+          <ul>
+            <li>Sujeto protegido; su voluntad debe ponderarse <span class="participant-note">(art. 9 LOPJM, art. 12 CDPD)</span></li>
+            <li>Citación facultativa; obligatoria si tiene 12 años o suficiente madurez</li>
+            <li>Puede nombrarse defensor judicial ad hoc si existe conflicto de intereses</li>
+            <li>Al alcanzar la mayoría de edad o la plena autonomía, recupera la titularidad del consentimiento</li>
+          </ul>
+        </div>
+        <div class="participant-col">
+          <div class="participant-col-head phead-c5">Terceros interesados y apoyos técnicos</div>
+          <ul>
+            <li>Empresas, medios o plataformas que proyectan la intromisión</li>
+            <li>El otro progenitor si no es el solicitante</li>
+            <li>AEPD u entidades de protección de menores</li>
+            <li>Servicios sociales <span class="participant-note">(informes de situación)</span></li>
+            <li>Peritos especializados <span class="participant-note">(madurez, capacidad, necesidades)</span></li>
+            <li>Profesionales de apoyo a la comunicación <span class="participant-note">(personas con discapacidad)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SUPLEMENTARIO C: ECOSISTEMA NORMATIVO ═══════════════════════ -->
+  <div class="map-section">
+    <div class="section-heading" data-target="body-norms">
+      <span class="section-icon">📚</span>
+      <span class="section-heading-text">Ecosistema normativo conectado</span>
+      <span class="section-heading-count">15 cuerpos normativos</span>
+      <button class="section-toggle-btn">▶</button>
+    </div>
+    <div class="section-body collapsed" id="body-norms">
+      <div class="norm-grid">
+
+        <div class="norm-card">
+          <div class="norm-law">CE 1978</div>
+          <div class="norm-title">Constitución Española</div>
+          <div class="norm-arts">Arts. 18.1 (honor, intimidad, imagen), 18.4 (informática), 20.4 (límites libertades comunicativas), 24 (tutela judicial efectiva), 39 (protección de la familia y la infancia) y 53.1 (reserva de ley orgánica). Marco supremo.</div>
+          <span class="norm-tag tag-primaria">Marco constitucional</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">LO 1/1982</div>
+          <div class="norm-title">Protección civil del honor, intimidad e imagen</div>
+          <div class="norm-arts"><strong>Arts. 1-3</strong> (objeto, consentimiento irrenunciable y revocable; menores e incapaces; plazo de oposición fiscal: 8 días), <strong>art. 7</strong> (intromisiones ilegítimas), <strong>art. 8</strong> (excepciones), <strong>art. 9</strong> (tutela judicial, daño moral y presunción de perjuicio — 9.3).</div>
+          <span class="norm-tag tag-primaria">Norma sustantiva de referencia</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">LJV 15/2015</div>
+          <div class="norm-title">Ley de la Jurisdicción Voluntaria</div>
+          <div class="norm-arts"><strong>Arts. 59-60</strong> (régimen especial), arts. 2.1 y 3 (competencia y postulación), art. 7 (costas), arts. 16-18 (comparecencia y prueba), art. 19 (resoluciones: Autos y Decretos), art. 20 (recursos), art. 8 (LEC supletoria).</div>
+          <span class="norm-tag tag-primaria">Norma procesal específica</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">LO 1/1996 · LOPJM</div>
+          <div class="norm-title">Protección Jurídica del Menor</div>
+          <div class="norm-arts"><strong>Art. 2</strong> (interés superior del menor: triple dimensión material, interpretativa y procedimental — mod. LO 8/2015), <strong>art. 4</strong> (derecho al honor, intimidad e imagen), <strong>art. 9</strong> (derecho a ser escuchado: obligatorio desde los 12 años), <strong>art. 26</strong> (actividad lucrativa del menor — mod. LOPIVI).</div>
+          <span class="norm-tag tag-sustantiva">Principio rector</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 8/2021</div>
+          <div class="norm-title">Reforma discapacidad (CC y LEC)</div>
+          <div class="norm-arts">Sustitución del modelo de sustitución por el de apoyos. Arts. 249 y 268 CC: curatela representativa (única que activa art. 59.3 LJV) vs. curatela asistencial. Arts. 256-262 CC: poderes preventivos. Arts. 263-267 CC: guarda de hecho. Alineación con art. 12 CDPD.</div>
+          <span class="norm-tag tag-sustantiva">Reforma de capacidad</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">LO 3/2018 · LOPDGDD</div>
+          <div class="norm-title">Protección de datos y derechos digitales</div>
+          <div class="norm-arts"><strong>Art. 7</strong> (14 años en España para consentimiento digital), <strong>art. 84</strong> (protección de imagen del menor en internet), <strong>art. 94</strong> (derecho al olvido en redes sociales). Complementa la LO 1/1982 en el entorno digital.</div>
+          <span class="norm-tag tag-sustantiva">Protección digital</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">LO 8/2021 · LOPIVI</div>
+          <div class="norm-title">Protección integral infancia y adolescencia</div>
+          <div class="norm-arts">Refuerza la protección frente a la violencia digital y el uso comercial de la imagen del menor. Introduce el debate del sharenting. Modifica la LOPJM y amplía las obligaciones de poderes públicos y plataformas digitales.</div>
+          <span class="norm-tag tag-sustantiva">Violencia y explotación</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">RGPD 2016/679</div>
+          <div class="norm-title">Reglamento General de Protección de Datos</div>
+          <div class="norm-arts"><strong>Art. 6</strong> (licitud del tratamiento), <strong>art. 7</strong> (consentimiento), <strong>art. 8</strong> (16 años como regla; rebajable a 13; España fija 14 años), <strong>art. 17</strong> (derecho de supresión / «derecho al olvido»). Aplicación directa en la UE.</div>
+          <span class="norm-tag tag-internacional">Derecho UE</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">DSA · Regl. UE 2022/2065</div>
+          <div class="norm-title">Reglamento de Servicios Digitales</div>
+          <div class="norm-arts">Obligaciones reforzadas de protección de menores para plataformas de gran alcance, incluyendo evaluaciones de riesgos y medidas de mitigación. Conexión con la protección de la imagen del menor en plataformas digitales.</div>
+          <span class="norm-tag tag-internacional">Derecho UE</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Código Civil</div>
+          <div class="norm-title">Norma sustantiva de referencia</div>
+          <div class="norm-arts"><strong>Arts. 40-49</strong> (domicilio), <strong>arts. 154-162</strong> (patria potestad y actos personalísimos), <strong>art. 163</strong> (defensor judicial), <strong>arts. 215-228</strong> (tutela), <strong>arts. 249, 256-272, 287 y 300</strong> (medidas de apoyo — Ley 8/2021), <strong>art. 158</strong> (protección del menor), <strong>arts. 1101 y ss.</strong> (responsabilidad contractual).</div>
+          <span class="norm-tag tag-sustantiva">Derecho civil</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">LEC 1/2000</div>
+          <div class="norm-title">Ley de Enjuiciamiento Civil</div>
+          <div class="norm-arts">Supletoria (art. 8 LJV). <strong>Arts. 455-467 y 458.1</strong> (recurso de apelación; plazo 20 días), <strong>arts. 721 y ss.</strong> (medidas cautelares), <strong>arts. 249 y 250</strong> (juicio ordinario/verbal), <strong>art. 769</strong> (fuero del menor en familia), <strong>art. 132</strong> (cómputo de plazos).</div>
+          <span class="norm-tag tag-conexa">Norma procesal supletoria</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">EOMF · LO 50/1981</div>
+          <div class="norm-title">Estatuto Orgánico del Ministerio Fiscal</div>
+          <div class="norm-arts"><strong>Art. 3.6</strong> (defensa de la legalidad e interés público) y <strong>art. 3.7</strong> (función tuitiva del MF respecto de menores e incapaces). Fundamento orgánico de la intervención preceptiva del MF en el expediente del art. 60 LJV.</div>
+          <span class="norm-tag tag-conexa">Fundamento institucional</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">LOPJ · LO 6/1985</div>
+          <div class="norm-title">Ley Orgánica del Poder Judicial</div>
+          <div class="norm-arts"><strong>Art. 86 ter</strong> — Competencia de los Juzgados de Primera Instancia en materia de jurisdicción voluntaria sobre personas. <strong>Art. 82.2</strong> — Audiencia Provincial (apelación). <strong>Art. 98</strong> — Juzgados especializados en familia.</div>
+          <span class="norm-tag tag-conexa">Atribución competencial</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">CDPD · ONU 2006</div>
+          <div class="norm-title">Convención sobre los derechos de las personas con discapacidad</div>
+          <div class="norm-arts"><strong>Art. 3</strong> (respeto de la autonomía individual), <strong>art. 12</strong> (igual reconocimiento ante la ley; obligación de apoyos), <strong>art. 16</strong> (protección contra la explotación). Fundamento interpretativo de la Ley 8/2021. Obliga a dar primacía a la voluntad y preferencias de la persona con discapacidad.</div>
+          <span class="norm-tag tag-internacional">Marco internacional</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">CDN · ONU 1989</div>
+          <div class="norm-title">Convención sobre los derechos del niño</div>
+          <div class="norm-arts"><strong>Art. 3</strong> (interés superior del niño como consideración primordial), <strong>art. 12</strong> (derecho del niño a ser escuchado en procedimientos judiciales), <strong>art. 13</strong> (libertad de expresión), <strong>art. 16</strong> (derecho a la vida privada), <strong>art. 17</strong> (acceso a información adecuada). Ratificada por España el 30-XI-1990.</div>
+          <span class="norm-tag tag-internacional">Marco internacional</span>
+        </div>
+
+        <div class="norm-card">
+          <div class="norm-law">Ley 1/1996, de 10 de enero</div>
+          <div class="norm-title">Asistencia Jurídica Gratuita</div>
+          <div class="norm-arts"><strong>Arts. 2-6</strong> — Reconocimiento del derecho a asistencia jurídica gratuita para quienes acrediten insuficiencia de recursos; aplicable al representante legal del menor o persona con discapacidad para promover el expediente de jurisdicción voluntaria.</div>
+          <span class="norm-tag tag-conexa">Acceso a la justicia</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+<footer class="legend-footer">
+  <div class="legend-inner">
+    <div class="legend-title">Leyenda de colores por categoría</div>
+    <div class="legend-grid">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c6)"></div>Fundamentos</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c1)"></div>Ámbito y presupuesto</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c2)"></div>Competencia y legitimación</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c3)"></div>Tramitación</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c4)"></div>Resolución judicial</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c5)"></div>Recursos y revocación</div>
+      <div class="legend-divider"></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--c7)"></div>Perspectivas transversales</div>
+    </div>
+    <div class="legend-copy">
+      Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Cap. VII, arts. 59-60 · Actualizado con Ley 8/2021 · LO 3/2018 · LO 8/2021 · RGPD 2016/679 · DSA 2022/2065 · CDN · CDPD · Expansión con LO 1/1982, LO 1/1996, LEC, CC, EOMF, LOPJ · Guía fusionada definitiva
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ SCRIPT ════════════════════════════════════════════════════════ -->
+<script>
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.map-card');
+const noResults = document.getElementById('no-results');
+const statCards = document.getElementById('stat-cards');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateVisibility() {
+  let visible = 0;
+  cards.forEach(c => {
+    const catMatch = activeCat === 'all' || c.dataset.cat === activeCat;
+    const text = (c.dataset.text || '') + ' ' + c.innerText.toLowerCase();
+    const termMatch = !searchTerm || text.includes(searchTerm);
+    const show = catMatch && termMatch;
+    c.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+  const nrt = document.getElementById('no-results-term');
+  if (nrt) nrt.textContent = searchTerm;
+  if (statCards) statCards.textContent = visible;
+}
+
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    updateVisibility();
+  });
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  updateVisibility();
+});
+
+function toggleCard(btn) {
+  const card = btn.closest('.map-card');
+  const isExp = card.classList.toggle('expanded');
+  btn.querySelector('span:first-child').textContent =
+    isExp ? 'Ocultar contenido' : 'Ver contenido completo';
+}
+
+document.getElementById('btn-expand-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    if (!c.classList.contains('hidden')) {
+      c.classList.add('expanded');
+      const btn = c.querySelector('.card-toggle-btn span:first-child');
+      if (btn) btn.textContent = 'Ocultar contenido';
+    }
+  });
+});
+
+document.getElementById('btn-collapse-all').addEventListener('click', () => {
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.card-toggle-btn span:first-child');
+    if (btn) btn.textContent = 'Ver contenido completo';
+  });
+});
+
+document.querySelectorAll('.section-heading').forEach(h => {
+  h.addEventListener('click', () => {
+    const target = document.getElementById(h.dataset.target);
+    if (!target) return;
+    const collapsed = target.classList.toggle('collapsed');
+    h.querySelector('.section-toggle-btn').textContent = collapsed ? '▶' : '▼';
+  });
+});
+
+const ZOOM_STEP = 10, ZOOM_MIN = 50, ZOOM_MAX = 200;
+let zoom = 100;
+const zoomTarget = document.querySelector('.page-main');
+const zoomLabel  = document.getElementById('zoom-label');
+
+function applyZoom() {
+  zoomTarget.style.zoom = zoom / 100;
+  zoomLabel.textContent = zoom + '%';
+  document.getElementById('btn-zoom-out').disabled = zoom <= ZOOM_MIN;
+  document.getElementById('btn-zoom-in').disabled  = zoom >= ZOOM_MAX;
+}
+function zoomIn()    { if (zoom < ZOOM_MAX) { zoom += ZOOM_STEP; applyZoom(); } }
+function zoomOut()   { if (zoom > ZOOM_MIN) { zoom -= ZOOM_STEP; applyZoom(); } }
+function zoomReset() { zoom = 100; applyZoom(); }
+
+document.getElementById('btn-zoom-in').addEventListener('click', zoomIn);
+document.getElementById('btn-zoom-out').addEventListener('click', zoomOut);
+document.getElementById('btn-zoom-reset').addEventListener('click', zoomReset);
+
+document.addEventListener('keydown', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  if (e.key === '=' || e.key === '+') { e.preventDefault(); zoomIn(); }
+  if (e.key === '-')                  { e.preventDefault(); zoomOut(); }
+  if (e.key === '0')                  { e.preventDefault(); zoomReset(); }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateVisibility();
+  applyZoom();
+
+  // ── Sticky controls-bar: keep it just below the header ──────────
+  const header   = document.querySelector('.site-header');
+  const statsBar = document.querySelector('.stats-bar');
+
+  function setHeaderHeight() {
+    document.documentElement.style.setProperty(
+      '--header-h', header.offsetHeight + 'px'
+    );
+  }
+  setHeaderHeight();
+  window.addEventListener('resize', setHeaderHeight);
+
+  // ── Stats-bar: hide when scrolling down, show when scrolling up ─
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > lastY && y > header.offsetHeight) {
+      statsBar.classList.add('stats-hidden');
+    } else {
+      statsBar.classList.remove('stats-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+});
+</script>
+
+</body>
+</html>
