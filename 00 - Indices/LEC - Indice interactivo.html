@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil – Índice completo con filtro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:        #1A2F6E;
+            --blue-dark:   #163566;
+            --blue-mid:    #1e4d9a;
+            --blue:        #2563b0;
+            --blue-light:  #4a87d8;
+            --blue-pale:   #dbeafe;
+            --blue-xpale:  #eff6ff;
+            --white:       #ffffff;
+            --bg:          #f2f6fb;
+            --line-color:  #bdd5f0;
+            --border:      #d4e4f7;
+            --text-main:   #0b1d3a;
+            --text-mid:    #2c4a73;
+            --text-muted:  #6789b0;
+            --shadow-sm:   0 2px 8px rgba(11,29,58,0.08);
+            --shadow-md:   0 6px 24px rgba(11,29,58,0.10);
+            --shadow-lg:   0 16px 40px rgba(11,29,58,0.14);
+            --radius:      10px;
+            --transition:  0.18s ease;
+        }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.65;
+            padding: 28px 20px;
+            min-height: 100vh;
+
+        }
+
+        /* ── Container ── */
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        /* ── Header band ── */
+        .header-band {
+            background: var(--navy);
+            padding: 36px 40px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-band::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .header-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            background: rgba(255,255,255,0.10);
+            border: 1.5px solid rgba(255,255,255,0.20);
+            border-radius: 14px;
+            margin-bottom: 16px;
+        }
+        .header-icon svg { width: 28px; height: 28px; }
+        h1 {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+            letter-spacing: 0.1px;
+            line-height: 1.3;
+            position: relative;
+        }
+        .subtitulo {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.88rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        /* ── Body padding ── */
+        .container-body { padding: 32px 36px; }
+
+        /* ── Search ── */
+        .search-wrapper { position: relative; margin-bottom: 28px; }
+        .search-icon-wrap {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: var(--blue-light);
+            display: flex;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            border: 1.5px solid var(--border);
+            border-radius: 40px;
+            background: var(--white);
+            transition: all var(--transition);
+            outline: none;
+            box-shadow: var(--shadow-sm);
+            color: var(--text-main);
+        }
+        #searchInput:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3.5px rgba(37,99,176,0.13);
+        }
+        #searchInput::placeholder { color: var(--text-muted); font-style: italic; font-size: 0.9rem; }
+
+        .autocomplete-list {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0; right: 0;
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            max-height: 280px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            display: none;
+            list-style: none;
+        }
+        .autocomplete-list li {
+            padding: 11px 18px;
+            cursor: pointer;
+            border-bottom: 1px solid var(--blue-xpale);
+            font-size: 0.88rem;
+            color: var(--text-mid);
+            transition: background var(--transition);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .autocomplete-list li:last-child { border-bottom: none; }
+        .autocomplete-list li:hover,
+        .autocomplete-list li.active {
+            background: var(--blue-xpale);
+            color: var(--blue-dark);
+            font-weight: 500;
+        }
+
+        /* ── Tree ── */
+        .arbol { list-style: none; padding-left: 0; font-size: 0.93rem; }
+        .arbol ul {
+            list-style: none;
+            padding-left: 26px;
+            border-left: 1.5px solid var(--line-color);
+            margin-left: 10px;
+        }
+        .arbol li {
+            position: relative;
+            margin: 2px 0;
+            cursor: default;
+            border-radius: 7px;
+            transition: background var(--transition);
+        }
+        .arbol li:hover { background: var(--blue-xpale); }
+
+        .arbol li.articulo {
+            cursor: pointer;
+            padding: 3px 10px 3px 6px;
+            margin: 1px 0;
+            border-radius: 6px;
+            transition: all var(--transition);
+        }
+        .arbol li.articulo:hover {
+            background: var(--blue-pale);
+            transform: translateX(2px);
+            box-shadow: 0 1px 4px rgba(37,99,176,0.10);
+        }
+        .arbol li.articulo:active { background: #bfdbfe; transform: scale(0.998); }
+
+        /* ── Node header ── */
+        .nodo-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 8px;
+            border-radius: 7px;
+            cursor: pointer;
+            user-select: none;
+            transition: background var(--transition);
+        }
+        .nodo-header:hover { background: rgba(37,99,176,0.06); }
+
+        /* Toggle icon — small circle with chevron SVG */
+        .toggle-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--blue-pale);
+            color: var(--blue-mid);
+            flex-shrink: 0;
+            transition: all var(--transition);
+        }
+        .toggle-icon svg {
+            width: 10px;
+            height: 10px;
+            transition: transform var(--transition);
+            display: block;
+        }
+        .toggle-icon.expandido {
+            background: var(--blue);
+            color: var(--white);
+        }
+        .toggle-icon.expandido svg { transform: rotate(90deg); }
+
+        /* Node text levels — all blue-family */
+        .nodo-texto { font-weight: 500; letter-spacing: 0.05px; }
+
+        .nivel-libro > .nodo-header .nodo-texto {
+            color: var(--navy);
+            font-size: 1.08rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .nivel-titulo_preliminar > .nodo-header .nodo-texto {
+            color: var(--navy);
+            font-size: 1.08rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .nivel-titulo > .nodo-header .nodo-texto {
+            color: var(--blue-dark);
+            font-size: 0.98rem;
+            font-weight: 600;
+        }
+        .nivel-capitulo > .nodo-header .nodo-texto {
+            color: var(--blue-mid);
+            font-size: 0.93rem;
+            font-weight: 600;
+        }
+        .nivel-seccion > .nodo-header .nodo-texto {
+            color: var(--blue);
+            font-size: 0.90rem;
+            font-weight: 500;
+            font-style: italic;
+        }
+        .nivel-disposiciones_adicionales > .nodo-header .nodo-texto,
+        .nivel-disposiciones_transitorias > .nodo-header .nodo-texto,
+        .nivel-disposicion_derogatoria > .nodo-header .nodo-texto,
+        .nivel-disposiciones_finales > .nodo-header .nodo-texto {
+            color: var(--navy);
+            font-size: 1.08rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .nivel-articulo {
+            color: var(--text-mid);
+            font-size: 0.875rem;
+            font-weight: 400;
+            padding-left: 22px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .nivel-disposicion {
+            color: var(--text-mid);
+            font-size: 0.875rem;
+            font-weight: 400;
+            padding-left: 22px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .articulo-icono {
+            flex-shrink: 0;
+            color: var(--blue-light);
+            opacity: 0.75;
+            display: inline-flex;
+        }
+        .articulo-icono svg { width: 13px; height: 14px; }
+
+        /* ── Highlight ── */
+        .resaltado-arbol {
+            background: var(--blue-pale) !important;
+            border-radius: 6px;
+            outline: 2px solid var(--blue);
+            outline-offset: 2px;
+            animation: pulso-resalte 1.5s ease-in-out 2;
+        }
+        @keyframes pulso-resalte {
+            0%, 100% { outline-color: var(--blue); }
+            50%       { outline-color: var(--blue-light); }
+        }
+
+        /* ── Toast ── */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(120px);
+            background: var(--navy);
+            color: var(--white);
+            padding: 12px 24px 12px 18px;
+            border-radius: 40px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            z-index: 9999;
+            box-shadow: 0 8px 28px rgba(11,29,58,0.28);
+            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+            white-space: nowrap;
+            max-width: 90vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .toast.visible { transform: translateX(-50%) translateY(0); }
+        .toast-icon { flex-shrink: 0; display: inline-flex; }
+        .toast-icon svg { width: 16px; height: 16px; }
+
+        /* ── Footer note ── */
+        .footer-note {
+            text-align: center;
+            margin-top: 28px;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-style: italic;
+            padding-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+        }
+        .footer-note svg { width: 15px; height: 15px; color: var(--blue-light); flex-shrink: 0; }
+
+        /* ── Scrollbar ── */
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--line-color); border-radius: 20px; }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .container-body { padding: 20px 18px; }
+            .header-band { padding: 28px 20px 24px; }
+            h1 { font-size: 1.25rem; }
+            .arbol ul { padding-left: 16px; margin-left: 4px; }
+            #searchInput { font-size: 0.9rem; padding: 12px 16px 12px 44px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header-band">
+        <div class="header-icon">
+            <!-- Scales of justice icon -->
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="15" y="3" width="2" height="26" rx="1" fill="white" fill-opacity="0.9"/>
+                <rect x="7" y="3" width="18" height="2" rx="1" fill="white" fill-opacity="0.9"/>
+                <rect x="11" y="27" width="10" height="2" rx="1" fill="white" fill-opacity="0.9"/>
+                <line x1="8" y1="5" x2="3" y2="16" stroke="white" stroke-opacity="0.9" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="8" y1="5" x2="13" y2="16" stroke="white" stroke-opacity="0.9" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M3 16 Q8 20 13 16" stroke="white" stroke-opacity="0.9" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+                <line x1="24" y1="5" x2="19" y2="16" stroke="white" stroke-opacity="0.9" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="24" y1="5" x2="29" y2="16" stroke="white" stroke-opacity="0.9" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M19 16 Q24 20 29 16" stroke="white" stroke-opacity="0.9" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <h1>Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil</h1>
+        <p class="subtitulo">Índice interactivo</p>
+    </div>
+    <div class="container-body">
+        <div class="search-wrapper">
+            <span class="search-icon-wrap">
+                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                    <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M13 13l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="Buscar artículos, capítulos, títulos..." autocomplete="off">
+            <ul class="autocomplete-list" id="autocompleteList"></ul>
+        </div>
+        <div id="arbolLEC"></div>
+        <p class="footer-note">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M10 9v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                <circle cx="10" cy="6.5" r="0.9" fill="currentColor"/>
+            </svg>
+            <em>Escribe para filtrar el árbol. Haz clic en un artículo para copiar su ruta jerárquica al portapapeles.</em>
+        </p>
+    </div>
+</div>
+<div class="toast" id="toastCopiado">
+    <span class="toast-icon">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="7" y="2" width="9" height="13" rx="1.5" stroke="white" stroke-width="1.6"/>
+            <path d="M7 5H4.5A1.5 1.5 0 003 6.5v10A1.5 1.5 0 004.5 18h9A1.5 1.5 0 0015 16.5V15" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+    </span>
+    Copiado al portapapeles
+</div>
+
+<script>
+(function(){
+    // ===================== ÍNDICE COMPLETO DE LA LEC =====================
+    const indice = [
+        { tipo:"titulo_preliminar", texto:"TÍTULO PRELIMINAR. De las normas procesales y su aplicación", hijos:[
+            { tipo:"articulo", texto:"Artículo 1. Principio de legalidad procesal." },
+            { tipo:"articulo", texto:"Artículo 2. Aplicación en el tiempo de las normas procesales civiles." },
+            { tipo:"articulo", texto:"Artículo 3. Ámbito territorial de las normas procesales civiles." },
+            { tipo:"articulo", texto:"Artículo 4. Carácter supletorio de la Ley de Enjuiciamiento Civil." }
+        ]},
+        { tipo:"libro", texto:"LIBRO I. De las disposiciones generales relativas a los juicios civiles", hijos:[
+            { tipo:"titulo", texto:"TÍTULO I. De la comparecencia y actuación en juicio", hijos:[
+                { tipo:"articulo", texto:"Artículo 5. Clases de tutela jurisdiccional." },
+                { tipo:"capitulo", texto:"CAPÍTULO I. De la capacidad para ser parte, la capacidad procesal y la legitimación", hijos:[
+                    { tipo:"articulo", texto:"Artículo 6. Capacidad para ser parte." },
+                    { tipo:"articulo", texto:"Artículo 7. Comparecencia en juicio y representación." },
+                    { tipo:"articulo", texto:"Artículo 7 bis. Ajustes para personas con discapacidad." },
+                    { tipo:"articulo", texto:"Artículo 8. Integración de la capacidad procesal." },
+                    { tipo:"articulo", texto:"Artículo 9. Apreciación de oficio de la falta de capacidad." },
+                    { tipo:"articulo", texto:"Artículo 10. Condición de parte procesal legítima." },
+                    { tipo:"articulo", texto:"Artículo 11. Legitimación para la defensa de derechos e intereses de consumidores y usuarios." },
+                    { tipo:"articulo", texto:"Artículo 11 bis. Legitimación para la defensa del derecho a la igualdad de trato y no discriminación." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. De la pluralidad de partes", hijos:[
+                    { tipo:"articulo", texto:"Artículo 12. Litisconsorcio." },
+                    { tipo:"articulo", texto:"Artículo 13. Intervención de sujetos originariamente no demandantes ni demandados." },
+                    { tipo:"articulo", texto:"Artículo 14. Intervención provocada." },
+                    { tipo:"articulo", texto:"Artículo 15. Publicidad e intervención en procesos para la protección de derechos e intereses colectivos y difusos de consumidores y usuarios." },
+                    { tipo:"articulo", texto:"Artículo 15 bis. Intervención en procesos de defensa de la competencia y de protección de datos." },
+                    { tipo:"articulo", texto:"Artículo 15 ter. Publicidad e intervención en procesos para la defensa del derecho a la igualdad de trato y no discriminación." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. De la sucesión procesal", hijos:[
+                    { tipo:"articulo", texto:"Artículo 16. Sucesión procesal por muerte." },
+                    { tipo:"articulo", texto:"Artículo 17. Sucesión por transmisión del objeto litigioso." },
+                    { tipo:"articulo", texto:"Artículo 18. Sucesión en los casos de intervención provocada." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. Del poder de disposición de las partes sobre el proceso y sobre sus pretensiones", hijos:[
+                    { tipo:"articulo", texto:"Artículo 19. Derecho de disposición de los litigantes. Transacción y suspensión." },
+                    { tipo:"articulo", texto:"Artículo 20. Renuncia y desistimiento." },
+                    { tipo:"articulo", texto:"Artículo 21. Allanamiento." },
+                    { tipo:"articulo", texto:"Artículo 22. Terminación del proceso por satisfacción extraprocesal o carencia sobrevenida de objeto. Caso especial de enervación del desahucio." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO V. De la representación procesal y la defensa técnica", hijos:[
+                    { tipo:"articulo", texto:"Artículo 23. Intervención de procurador." },
+                    { tipo:"articulo", texto:"Artículo 24. Apoderamiento del procurador." },
+                    { tipo:"articulo", texto:"Artículo 25. Poder general y poder especial." },
+                    { tipo:"articulo", texto:"Artículo 26. Aceptación del poder. Deberes del procurador." },
+                    { tipo:"articulo", texto:"Artículo 27. Derecho supletorio sobre apoderamiento." },
+                    { tipo:"articulo", texto:"Artículo 28. Representación pasiva del procurador." },
+                    { tipo:"articulo", texto:"Artículo 29. Provisión de fondos." },
+                    { tipo:"articulo", texto:"Artículo 30. Cesación del procurador." },
+                    { tipo:"articulo", texto:"Artículo 31. Intervención de abogado." },
+                    { tipo:"articulo", texto:"Artículo 32. Intervención no preceptiva de abogado y procurador." },
+                    { tipo:"articulo", texto:"Artículo 33. Designación de procurador y de abogado." },
+                    { tipo:"articulo", texto:"Artículo 34. Cuenta del procurador." },
+                    { tipo:"articulo", texto:"Artículo 35. Honorarios de los abogados." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO II. De la jurisdicción y de la competencia", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De la jurisdicción de los tribunales civiles y las cuestiones prejudiciales", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª De la extensión y límites de la jurisdicción de los tribunales civiles", hijos:[
+                        { tipo:"articulo", texto:"Artículo 36. Extensión y límites del orden jurisdiccional civil. Falta de competencia internacional." },
+                        { tipo:"articulo", texto:"Artículo 37. Falta de jurisdicción. Abstención de los tribunales civiles." },
+                        { tipo:"articulo", texto:"Artículo 38. Apreciación de oficio de la falta de competencia internacional y de jurisdicción." },
+                        { tipo:"articulo", texto:"Artículo 39. Apreciación de la falta de competencia internacional o de jurisdicción a instancia de parte." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De las cuestiones prejudiciales", hijos:[
+                        { tipo:"articulo", texto:"Artículo 40. Prejudicialidad penal." },
+                        { tipo:"articulo", texto:"Artículo 41. Recursos contra la resolución sobre suspensión de las actuaciones por prejudicialidad penal." },
+                        { tipo:"articulo", texto:"Artículo 42. Cuestiones prejudiciales no penales." },
+                        { tipo:"articulo", texto:"Artículo 43. Prejudicialidad civil." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. De las reglas para determinar la competencia", hijos:[
+                    { tipo:"articulo", texto:"Artículo 44. Predeterminación legal de la competencia." },
+                    { tipo:"seccion", texto:"Sección 1.ª De la competencia objetiva", hijos:[
+                        { tipo:"articulo", texto:"Artículo 45. Competencia de los Juzgados de Primera Instancia." },
+                        { tipo:"articulo", texto:"Artículo 46. Especialización de algunos Juzgados de Primera Instancia." },
+                        { tipo:"articulo", texto:"Artículo 47. Competencia de los Juzgados de Paz." },
+                        { tipo:"articulo", texto:"Artículo 48. Apreciación de oficio de la falta de competencia objetiva." },
+                        { tipo:"articulo", texto:"Artículo 49. Apreciación de la falta de competencia objetiva a instancia de parte." },
+                        { tipo:"articulo", texto:"Artículo 49 bis. Pérdida de la competencia cuando se produzcan actos de violencia sobre la mujer." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De la competencia territorial", hijos:[
+                        { tipo:"articulo", texto:"Artículo 50. Fuero general de las personas físicas." },
+                        { tipo:"articulo", texto:"Artículo 51. Fuero general de las personas jurídicas y de los entes sin personalidad." },
+                        { tipo:"articulo", texto:"Artículo 52. Competencia territorial en casos especiales." },
+                        { tipo:"articulo", texto:"Artículo 53. Competencia territorial en caso de acumulación de acciones y en caso de pluralidad de demandados." },
+                        { tipo:"articulo", texto:"Artículo 54. Carácter dispositivo de las normas sobre competencia territorial." },
+                        { tipo:"articulo", texto:"Artículo 55. Sumisión expresa." },
+                        { tipo:"articulo", texto:"Artículo 56. Sumisión tácita." },
+                        { tipo:"articulo", texto:"Artículo 57. Sumisión expresa y reparto." },
+                        { tipo:"articulo", texto:"Artículo 58. Apreciación de oficio de la competencia territorial." },
+                        { tipo:"articulo", texto:"Artículo 59. Alegación de la falta de competencia territorial." },
+                        { tipo:"articulo", texto:"Artículo 60. Conflicto negativo de competencia territorial." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 3.ª De la competencia funcional", hijos:[
+                        { tipo:"articulo", texto:"Artículo 61. Competencia funcional por conexión." },
+                        { tipo:"articulo", texto:"Artículo 62. Apreciación de oficio de la competencia para conocer de los recursos." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. De la declinatoria", hijos:[
+                    { tipo:"articulo", texto:"Artículo 63. Contenido de la declinatoria, legitimación para proponerla y tribunal competente para conocer de ella." },
+                    { tipo:"articulo", texto:"Artículo 64. Momento procesal de proposición de la declinatoria y efectos inmediatos." },
+                    { tipo:"articulo", texto:"Artículo 65. Tramitación y decisión de la declinatoria." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. De los recursos en materia de jurisdicción y competencia", hijos:[
+                    { tipo:"articulo", texto:"Artículo 66. Recursos en materia de competencia internacional, jurisdicción, sumisión a arbitraje o mediación y competencia objetiva." },
+                    { tipo:"articulo", texto:"Artículo 67. Recursos en materia de competencia territorial." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO V. Del reparto de los asuntos", hijos:[
+                    { tipo:"articulo", texto:"Artículo 68. Obligatoriedad del reparto. Tratamiento procesal." },
+                    { tipo:"articulo", texto:"Artículo 69. Plazo en que debe efectuarse el reparto." },
+                    { tipo:"articulo", texto:"Artículo 70. Medidas urgentes en asuntos no repartidos." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO III. De la acumulación de acciones y de procesos", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De la acumulación de acciones", hijos:[
+                    { tipo:"articulo", texto:"Artículo 71. Efecto principal de la acumulación. Acumulación objetiva de acciones. Acumulación eventual." },
+                    { tipo:"articulo", texto:"Artículo 72. Acumulación subjetiva de acciones." },
+                    { tipo:"articulo", texto:"Artículo 73. Admisibilidad por motivos procesales de la acumulación de acciones." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. De la acumulación de procesos", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª De la acumulación de procesos: disposiciones generales", hijos:[
+                        { tipo:"articulo", texto:"Artículo 74. Finalidad de la acumulación de procesos." },
+                        { tipo:"articulo", texto:"Artículo 75. Legitimación para solicitar la acumulación de procesos. Acumulación acordada de oficio." },
+                        { tipo:"articulo", texto:"Artículo 76. Casos en los que procede la acumulación de procesos." },
+                        { tipo:"articulo", texto:"Artículo 77. Procesos acumulables." },
+                        { tipo:"articulo", texto:"Artículo 78. Improcedencia de la acumulación de procesos. Excepciones." },
+                        { tipo:"articulo", texto:"Artículo 79. Proceso en el que se ha de pedir o acordar de oficio la acumulación." },
+                        { tipo:"articulo", texto:"Artículo 80. Acumulación de procesos en el juicio verbal." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De la acumulación de procesos pendientes ante un mismo tribunal", hijos:[
+                        { tipo:"articulo", texto:"Artículo 81. Solicitud de la acumulación de procesos." },
+                        { tipo:"articulo", texto:"Artículo 82. Desestimación inicial de la solicitud de acumulación de procesos." },
+                        { tipo:"articulo", texto:"Artículo 83. Sustanciación y decisión del incidente de acumulación de procesos. Recursos." },
+                        { tipo:"articulo", texto:"Artículo 84. Efectos del auto que otorga la acumulación." },
+                        { tipo:"articulo", texto:"Artículo 85. Efectos del auto que deniega la acumulación." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 3.ª De la acumulación de procesos pendientes ante distintos tribunales", hijos:[
+                        { tipo:"articulo", texto:"Artículo 86. Normas aplicables." },
+                        { tipo:"articulo", texto:"Artículo 87. Solicitud de acumulación de procesos." },
+                        { tipo:"articulo", texto:"Artículo 88. Efecto no suspensivo de la solicitud o del inicio de actuaciones de oficio para la acumulación de procesos." },
+                        { tipo:"articulo", texto:"Artículo 89. Contenido del auto que declara procedente la acumulación de procesos." },
+                        { tipo:"articulo", texto:"Artículo 90. Recepción del requerimiento de acumulación por el Tribunal requerido y vista a los litigantes." },
+                        { tipo:"articulo", texto:"Artículo 91. Resolución sobre el requerimiento de acumulación." },
+                        { tipo:"articulo", texto:"Artículo 92. Efectos de la aceptación de la acumulación por el Tribunal requerido." },
+                        { tipo:"articulo", texto:"Artículo 93. Efectos de la no aceptación de la acumulación de procesos por el tribunal requerido." },
+                        { tipo:"articulo", texto:"Artículo 94. Sustanciación de la discrepancia ante el tribunal competente." },
+                        { tipo:"articulo", texto:"Artículo 95. Decisión de la discrepancia." },
+                        { tipo:"articulo", texto:"Artículo 96. Acumulación de más de dos procesos. Requerimientos múltiples de acumulación." },
+                        { tipo:"articulo", texto:"Artículo 97. Prohibición de un segundo incidente de acumulación." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 4.ª De la acumulación de procesos singulares a procesos universales", hijos:[
+                        { tipo:"articulo", texto:"Artículo 98. Casos en que corresponde la acumulación de procesos singulares a un proceso universal." }
+                    ]}
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO IV. De la abstención y la recusación", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De la abstención y recusación: disposiciones generales", hijos:[
+                    { tipo:"articulo", texto:"Artículo 99. Ámbito de aplicación de la Ley y principio de legalidad." },
+                    { tipo:"articulo", texto:"Artículo 100. Deber de abstención." },
+                    { tipo:"articulo", texto:"Artículo 101. Legitimación activa para recusar." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. De la abstención de Jueces, Magistrados, Letrados de la Administración de Justicia, Fiscales y del personal al servicio de los tribunales civiles", hijos:[
+                    { tipo:"articulo", texto:"Artículo 102. Abstención de Jueces y Magistrados." },
+                    { tipo:"articulo", texto:"Artículo 103. Abstención de los Letrados de la Administración de Justicia." },
+                    { tipo:"articulo", texto:"Artículo 104. Abstención de los funcionarios pertenecientes a los Cuerpos de Gestión Procesal y Administrativa, Tramitación Procesal y Administrativa y Auxilio Judicial." },
+                    { tipo:"articulo", texto:"Artículo 105. Abstención de los peritos." },
+                    { tipo:"articulo", texto:"Artículo 106. Abstención de los miembros del Ministerio Fiscal." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. De la recusación de Jueces y Magistrados", hijos:[
+                    { tipo:"articulo", texto:"Artículo 107. Tiempo y forma de proponer la recusación." },
+                    { tipo:"articulo", texto:"Artículo 108. Competencia para instruir los incidentes de recusación." },
+                    { tipo:"articulo", texto:"Artículo 109. Sustanciación del incidente de recusación y efectos de éste en el asunto principal." },
+                    { tipo:"articulo", texto:"Artículo 110. Competencia para decidir el incidente de recusación." },
+                    { tipo:"articulo", texto:"Artículo 111. Especialidades del incidente de recusación en juicios verbales. Otros casos especiales." },
+                    { tipo:"articulo", texto:"Artículo 112. Decisión del incidente, costas y multa." },
+                    { tipo:"articulo", texto:"Artículo 113. Notificación del auto y recursos." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. De la recusación de los Letrados de la Administración de Justicia de los Tribunales civiles", hijos:[
+                    { tipo:"articulo", texto:"Artículo 114. Regulación aplicable." },
+                    { tipo:"articulo", texto:"Artículo 115. Recusación. Competencia para instruir y resolver los incidentes de recusación." },
+                    { tipo:"articulo", texto:"Artículo 116. Informe del recusado." },
+                    { tipo:"articulo", texto:"Artículo 117. Aceptación de la recusación por el recusado." },
+                    { tipo:"articulo", texto:"Artículo 118. Oposición del recusado y sustanciación de la recusación." },
+                    { tipo:"articulo", texto:"Artículo 119. Sustitución del Letrado de la Administración de Justicia recusado." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO V. De la recusación de los funcionarios pertenecientes a los Cuerpos de Gestión Procesal y Administrativa, de Tramitación Procesal y Administrativa, y de Auxilio Judicial", hijos:[
+                    { tipo:"articulo", texto:"Artículo 120. Legislación aplicable." },
+                    { tipo:"articulo", texto:"Artículo 121. Recusación. Competencia para instruir y resolver el incidente de recusación." },
+                    { tipo:"articulo", texto:"Artículo 122. Inadmisión del escrito de recusación." },
+                    { tipo:"articulo", texto:"Artículo 123. Sustanciación del incidente; aceptación o negativa de la recusación por el recusado." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO VI. De la recusación de los peritos", hijos:[
+                    { tipo:"articulo", texto:"Artículo 124. Ámbito de la recusación de los peritos." },
+                    { tipo:"articulo", texto:"Artículo 125. Forma de proponer la recusación de los peritos." },
+                    { tipo:"articulo", texto:"Artículo 126. Admisión del escrito de recusación." },
+                    { tipo:"articulo", texto:"Artículo 127. Sustanciación y decisión del incidente de recusación." },
+                    { tipo:"articulo", texto:"Artículo 128. Costas." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO V. De las actuaciones judiciales", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. Del lugar de las actuaciones judiciales", hijos:[
+                    { tipo:"articulo", texto:"Artículo 129. Lugar de las actuaciones judiciales." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. Del tiempo de las actuaciones judiciales", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª De los días y horas hábiles", hijos:[
+                        { tipo:"articulo", texto:"Artículo 130. Días y horas hábiles." },
+                        { tipo:"articulo", texto:"Artículo 131. Habilitación de días y horas inhábiles." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De los plazos y los términos", hijos:[
+                        { tipo:"articulo", texto:"Artículo 132. Plazos y términos." },
+                        { tipo:"articulo", texto:"Artículo 133. Cómputo de los plazos." },
+                        { tipo:"articulo", texto:"Artículo 134. Improrrogabilidad de los plazos." },
+                        { tipo:"articulo", texto:"Artículo 135. Presentación de escritos, a efectos del requisito de tiempo de los actos procesales." },
+                        { tipo:"articulo", texto:"Artículo 136. Preclusión." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. De la inmediación, la publicidad y la lengua oficial", hijos:[
+                    { tipo:"articulo", texto:"Artículo 137. Presencia judicial en declaraciones, pruebas y vistas." },
+                    { tipo:"articulo", texto:"Artículo 138. Publicidad de las actuaciones orales." },
+                    { tipo:"articulo", texto:"Artículo 139. Secreto de las deliberaciones de los tribunales colegiados." },
+                    { tipo:"articulo", texto:"Artículo 140. Información sobre las actuaciones." },
+                    { tipo:"articulo", texto:"Artículo 141. Acceso a libros, archivos y registros judiciales." },
+                    { tipo:"articulo", texto:"Artículo 141 bis." },
+                    { tipo:"articulo", texto:"Artículo 142. Lengua oficial." },
+                    { tipo:"articulo", texto:"Artículo 143. Intervención de intérpretes." },
+                    { tipo:"articulo", texto:"Artículo 144. Documentos redactados en idioma no oficial." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. De la fe pública judicial y de la documentación de las actuaciones", hijos:[
+                    { tipo:"articulo", texto:"Artículo 145. Fe pública judicial." },
+                    { tipo:"articulo", texto:"Artículo 146. Documentación de las actuaciones." },
+                    { tipo:"articulo", texto:"Artículo 147. Documentación de las actuaciones mediante sistemas de grabación y reproducción de la imagen y el sonido." },
+                    { tipo:"articulo", texto:"Artículo 148. Formación, custodia y conservación de los autos." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO V. De los actos de comunicación judicial", hijos:[
+                    { tipo:"articulo", texto:"Artículo 149. Clases de actos de comunicación." },
+                    { tipo:"articulo", texto:"Artículo 150. Notificación de resoluciones y diligencias de ordenación." },
+                    { tipo:"articulo", texto:"Artículo 151. Tiempo de la comunicación." },
+                    { tipo:"articulo", texto:"Artículo 152. Forma de los actos de comunicación. Respuesta." },
+                    { tipo:"articulo", texto:"Artículo 153. Comunicación por medio de procurador." },
+                    { tipo:"articulo", texto:"Artículo 154. Lugar de comunicación de los actos a los procuradores." },
+                    { tipo:"articulo", texto:"Artículo 155. Actos de comunicación con las partes aún no personadas o no representadas por procurador. Domicilio." },
+                    { tipo:"articulo", texto:"Artículo 156. Averiguaciones del tribunal sobre el domicilio." },
+                    { tipo:"articulo", texto:"Artículo 157. Registro Central de Rebeldes Civiles." },
+                    { tipo:"articulo", texto:"Artículo 158. Comunicación mediante entrega." },
+                    { tipo:"articulo", texto:"Artículo 159. Comunicaciones con testigos, peritos y otras personas que no sean parte en el juicio." },
+                    { tipo:"articulo", texto:"Artículo 160. Remisión de las comunicaciones por correo, telegrama u otros medios semejantes." },
+                    { tipo:"articulo", texto:"Artículo 161. Comunicación por medio de copia de la resolución o de cédula." },
+                    { tipo:"articulo", texto:"Artículo 162. Actos de comunicación por medios electrónicos, informáticos y similares." },
+                    { tipo:"articulo", texto:"Artículo 163. Servicio Común Procesal de Actos de Comunicación." },
+                    { tipo:"articulo", texto:"Artículo 164. Comunicación edictal." },
+                    { tipo:"articulo", texto:"Artículo 165. Actos de comunicación mediante auxilio judicial." },
+                    { tipo:"articulo", texto:"Artículo 166. Nulidad y subsanación de los actos de comunicación." },
+                    { tipo:"articulo", texto:"Artículo 167. Remisión de oficios y mandamientos." },
+                    { tipo:"articulo", texto:"Artículo 168. Responsabilidad de los funcionarios y profesionales intervinientes en la comunicación procesal." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO VI. Del auxilio judicial", hijos:[
+                    { tipo:"articulo", texto:"Artículo 169. Casos en que procede el auxilio judicial." },
+                    { tipo:"articulo", texto:"Artículo 170. Órgano al que corresponde prestar el auxilio judicial." },
+                    { tipo:"articulo", texto:"Artículo 171. Exhorto." },
+                    { tipo:"articulo", texto:"Artículo 172. Remisión del exhorto." },
+                    { tipo:"articulo", texto:"Artículo 173. Cumplimiento del exhorto." },
+                    { tipo:"articulo", texto:"Artículo 174. Intervención de las partes." },
+                    { tipo:"articulo", texto:"Artículo 175. Devolución del exhorto." },
+                    { tipo:"articulo", texto:"Artículo 176. Falta de diligencia de las partes en el auxilio judicial." },
+                    { tipo:"articulo", texto:"Artículo 177. Cooperación judicial internacional." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO VII. De la sustanciación, vista y decisión de los asuntos", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª Del despacho ordinario", hijos:[
+                        { tipo:"articulo", texto:"Artículo 178. Dación de cuenta." },
+                        { tipo:"articulo", texto:"Artículo 179. Impulso procesal y suspensión del proceso por acuerdo de las partes." },
+                        { tipo:"articulo", texto:"Artículo 180. Magistrado ponente." },
+                        { tipo:"articulo", texto:"Artículo 181. Funciones del Magistrado ponente." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De las vistas y las comparecencias", hijos:[
+                        { tipo:"articulo", texto:"Artículo 182. Señalamiento de las vistas." },
+                        { tipo:"articulo", texto:"Artículo 183. Solicitud de nuevo señalamiento de vista." },
+                        { tipo:"articulo", texto:"Artículo 184. Tiempo para la celebración de vistas." },
+                        { tipo:"articulo", texto:"Artículo 185. Celebración de las vistas." },
+                        { tipo:"articulo", texto:"Artículo 186. Dirección de los debates." },
+                        { tipo:"articulo", texto:"Artículo 187. Documentación de las vistas." },
+                        { tipo:"articulo", texto:"Artículo 188. Suspensión de las vistas." },
+                        { tipo:"articulo", texto:"Artículo 189. Nuevo señalamiento de las vistas suspendidas." },
+                        { tipo:"articulo", texto:"Artículo 189 bis. De las comparecencias." },
+                        { tipo:"articulo", texto:"Artículo 190. Cambios en el personal juzgador después del señalamiento de vistas y posible recusación." },
+                        { tipo:"articulo", texto:"Artículo 191. Recusación posterior a la vista." },
+                        { tipo:"articulo", texto:"Artículo 192. Efectos de la decisión de la recusación formulada después de la vista." },
+                        { tipo:"articulo", texto:"Artículo 192 bis. Cambio del Letrado de la Administración de Justicia después del señalamiento. Posible recusación." },
+                        { tipo:"articulo", texto:"Artículo 193. Interrupción de las vistas." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 3.ª De las votaciones y fallos de los asuntos", hijos:[
+                        { tipo:"articulo", texto:"Artículo 194. Jueces y Magistrados a los que corresponde fallar los asuntos." },
+                        { tipo:"articulo", texto:"Artículo 194 bis. Letrados de la Administración de Justicia a los que corresponda resolver." },
+                        { tipo:"articulo", texto:"Artículo 195. Información de los Magistrados sobre el contenido de los autos en tribunales colegiados." },
+                        { tipo:"articulo", texto:"Artículo 196. Deliberación y votación de las resoluciones en tribunales colegiados." },
+                        { tipo:"articulo", texto:"Artículo 197. Forma de la discusión y votación de las resoluciones en los tribunales colegiados." },
+                        { tipo:"articulo", texto:"Artículo 198. Votación de las resoluciones." },
+                        { tipo:"articulo", texto:"Artículo 199. Voto de Magistrados impedidos después de la vista." },
+                        { tipo:"articulo", texto:"Artículo 200. Impedimento del Juez o del Letrado de la Administración de Justicia que hubiere asistido a la vista o comparecencia." },
+                        { tipo:"articulo", texto:"Artículo 201. Mayoría de votos." },
+                        { tipo:"articulo", texto:"Artículo 202. Discordias." },
+                        { tipo:"articulo", texto:"Artículo 203. Redacción de las resoluciones en los tribunales colegiados." },
+                        { tipo:"articulo", texto:"Artículo 204. Firma de las resoluciones." },
+                        { tipo:"articulo", texto:"Artículo 205. Votos particulares." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO VIII. De las resoluciones procesales", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª De las clases, forma y contenido de las resoluciones y del modo de dictarlas, publicarlas y archivarlas", hijos:[
+                        { tipo:"articulo", texto:"Artículo 206. Clases de resoluciones." },
+                        { tipo:"articulo", texto:"Artículo 207. Resoluciones definitivas. Resoluciones firmes. Cosa juzgada formal." },
+                        { tipo:"articulo", texto:"Artículo 208. Forma de las resoluciones." },
+                        { tipo:"articulo", texto:"Artículo 209. Reglas especiales sobre forma y contenido de las sentencias." },
+                        { tipo:"articulo", texto:"Artículo 210. Resoluciones orales." },
+                        { tipo:"articulo", texto:"Artículo 211. Plazo para dictar las resoluciones judiciales." },
+                        { tipo:"articulo", texto:"Artículo 212. Publicación y archivo de las sentencias." },
+                        { tipo:"articulo", texto:"Artículo 213. Libro de sentencias." },
+                        { tipo:"articulo", texto:"Artículo 213 bis. Libro de decretos." },
+                        { tipo:"articulo", texto:"Artículo 214. Invariabilidad de las resoluciones. Aclaración y corrección." },
+                        { tipo:"articulo", texto:"Artículo 215. Subsanación y complemento de sentencias y autos defectuosos o incompletos." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De los requisitos internos de la sentencia y de sus efectos", hijos:[
+                        { tipo:"articulo", texto:"Artículo 216. Principio de justicia rogada." },
+                        { tipo:"articulo", texto:"Artículo 217. Carga de la prueba." },
+                        { tipo:"articulo", texto:"Artículo 218. Exhaustividad y congruencia de las sentencias. Motivación." },
+                        { tipo:"articulo", texto:"Artículo 219. Sentencias con reserva de liquidación." },
+                        { tipo:"articulo", texto:"Artículo 220. Condenas a futuro." },
+                        { tipo:"articulo", texto:"Artículo 221. Sentencias dictadas en procesos promovidos por asociaciones de consumidores o usuarios." },
+                        { tipo:"articulo", texto:"Artículo 222. Cosa juzgada material." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 3.ª De las diligencias de ordenación", hijos:[
+                        { tipo:"articulo", texto:"Artículo 223. Diligencias de ordenación." },
+                        { tipo:"articulo", texto:"Artículo 224. Revisión de las diligencias de ordenación." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IX. De la nulidad de las actuaciones", hijos:[
+                    { tipo:"articulo", texto:"Artículo 225. Nulidad de pleno derecho." },
+                    { tipo:"articulo", texto:"Artículo 226. Modo de proceder en caso de intimidación o violencia." },
+                    { tipo:"articulo", texto:"Artículo 227. Declaración de nulidad y pretensiones de anulación de actuaciones procesales." },
+                    { tipo:"articulo", texto:"Artículo 228. Incidente excepcional de nulidad de actuaciones." },
+                    { tipo:"articulo", texto:"Artículo 229. Actuaciones judiciales realizadas fuera del tiempo establecido." },
+                    { tipo:"articulo", texto:"Artículo 230. Conservación de los actos." },
+                    { tipo:"articulo", texto:"Artículo 231. Subsanación." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO X. De la reconstrucción de los autos", hijos:[
+                    { tipo:"articulo", texto:"Artículo 232. Competencia e intervención del Ministerio Fiscal." },
+                    { tipo:"articulo", texto:"Artículo 233. Inicio del expediente de reconstrucción de actuaciones." },
+                    { tipo:"articulo", texto:"Artículo 234. Citación a comparecencia de las partes. Efectos de su inasistencia." },
+                    { tipo:"articulo", texto:"Artículo 235. Inicio de la comparecencia. Inexistencia de controversia. Prueba y decisión." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO VI. De la cesación de las actuaciones judiciales y de la caducidad de la instancia", hijos:[
+                { tipo:"articulo", texto:"Artículo 236. Impulso del procedimiento por las partes y caducidad." },
+                { tipo:"articulo", texto:"Artículo 237. Caducidad de la instancia." },
+                { tipo:"articulo", texto:"Artículo 238. Exclusión de la caducidad por fuerza mayor o contra la voluntad de las partes." },
+                { tipo:"articulo", texto:"Artículo 239. Exclusión de la caducidad de la instancia en la ejecución." },
+                { tipo:"articulo", texto:"Artículo 240. Efectos de la caducidad de la instancia." }
+            ]},
+            { tipo:"titulo", texto:"TÍTULO VII. De la tasación de costas", hijos:[
+                { tipo:"articulo", texto:"Artículo 241. Pago de las costas y gastos del proceso." },
+                { tipo:"articulo", texto:"Artículo 242. Solicitud de tasación de costas." },
+                { tipo:"articulo", texto:"Artículo 243. Práctica de la tasación de costas." },
+                { tipo:"articulo", texto:"Artículo 244. Traslado a las partes. Aprobación." },
+                { tipo:"articulo", texto:"Artículo 245. Impugnación de la tasación de costas." },
+                { tipo:"articulo", texto:"Artículo 246. Tramitación y decisión de la impugnación." }
+            ]},
+            { tipo:"titulo", texto:"TÍTULO VIII. De la buena fe procesal", hijos:[
+                { tipo:"articulo", texto:"Artículo 247. Respeto a las reglas de la buena fe procesal. Multas por su incumplimiento." }
+            ]}
+        ]},
+        { tipo:"libro", texto:"LIBRO II. De los procesos declarativos", hijos:[
+            { tipo:"titulo", texto:"TÍTULO I. De las disposiciones comunes a los procesos declarativos", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De las reglas para determinar el proceso correspondiente", hijos:[
+                    { tipo:"articulo", texto:"Artículo 248. Clases de procesos declarativos." },
+                    { tipo:"articulo", texto:"Artículo 249. Ámbito del juicio ordinario." },
+                    { tipo:"articulo", texto:"Artículo 250. Ámbito del juicio verbal." },
+                    { tipo:"articulo", texto:"Artículo 251. Reglas de determinación de la cuantía." },
+                    { tipo:"articulo", texto:"Artículo 252. Reglas especiales en casos de procesos con pluralidad de objetos o de partes." },
+                    { tipo:"articulo", texto:"Artículo 253. Expresión de la cuantía en la demanda." },
+                    { tipo:"articulo", texto:"Artículo 254. Control de oficio de la clase de juicio por razón de la cuantía." },
+                    { tipo:"articulo", texto:"Artículo 255. Impugnación de la cuantía y de la clase de juicio por razón de la cuantía." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. De las diligencias preliminares", hijos:[
+                    { tipo:"articulo", texto:"Artículo 256. Clases de diligencias preliminares y su solicitud." },
+                    { tipo:"articulo", texto:"Artículo 257. Competencia." },
+                    { tipo:"articulo", texto:"Artículo 258. Decisión sobre las diligencias preliminares y recurso." },
+                    { tipo:"articulo", texto:"Artículo 259. Citación para la práctica de diligencias preliminares." },
+                    { tipo:"articulo", texto:"Artículo 260. Oposición a la práctica de diligencias preliminares. Efectos de la decisión." },
+                    { tipo:"articulo", texto:"Artículo 261. Negativa a llevar a cabo las diligencias." },
+                    { tipo:"articulo", texto:"Artículo 262. Decisión sobre aplicación de la caución." },
+                    { tipo:"articulo", texto:"Artículo 263. Diligencias preliminares previstas en leyes especiales." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. De la presentación de documentos, dictámenes, informes y otros medios e instrumentos", hijos:[
+                    { tipo:"articulo", texto:"Artículo 264. Documentos procesales." },
+                    { tipo:"articulo", texto:"Artículo 265. Documentos y otros escritos y objetos relativos al fondo del asunto." },
+                    { tipo:"articulo", texto:"Artículo 266. Documentos exigidos en casos especiales." },
+                    { tipo:"articulo", texto:"Artículo 267. Forma de presentación de los documentos públicos." },
+                    { tipo:"articulo", texto:"Artículo 268. Forma de presentación de los documentos privados." },
+                    { tipo:"articulo", texto:"Artículo 269. Consecuencias de la falta de presentación inicial. Casos especiales." },
+                    { tipo:"articulo", texto:"Artículo 270. Presentación de documentos en momento no inicial del proceso." },
+                    { tipo:"articulo", texto:"Artículo 271. Preclusión definitiva de la presentación y excepciones a la regla." },
+                    { tipo:"articulo", texto:"Artículo 272. Inadmisión de documento presentado injustificadamente en momento no inicial del proceso." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. De las copias de los escritos y documentos y su traslado", hijos:[
+                    { tipo:"articulo", texto:"Artículo 273. Forma de presentación de los escritos y documentos." },
+                    { tipo:"articulo", texto:"Artículo 274. Traslado por la oficina judicial de las copias a las otras partes interesadas, cuando no intervengan procuradores." },
+                    { tipo:"articulo", texto:"Artículo 275. Efectos de la no presentación de copias." },
+                    { tipo:"articulo", texto:"Artículo 276. Traslado de copias de escritos y documentos cuando intervenga procurador." },
+                    { tipo:"articulo", texto:"Artículo 277. Efectos de la omisión del traslado mediante procurador." },
+                    { tipo:"articulo", texto:"Artículo 278. Efectos del traslado respecto del curso y cómputo de plazos." },
+                    { tipo:"articulo", texto:"Artículo 279. Función de las copias." },
+                    { tipo:"articulo", texto:"Artículo 280. Denuncia de inexactitud de una copia y efectos." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO V. De la prueba: disposiciones generales", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª Del objeto, necesidad e iniciativa de la prueba", hijos:[
+                        { tipo:"articulo", texto:"Artículo 281. Objeto y necesidad de la prueba." },
+                        { tipo:"articulo", texto:"Artículo 282. Iniciativa de la actividad probatoria." },
+                        { tipo:"articulo", texto:"Artículo 283. Impertinencia o inutilidad de la actividad probatoria." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 1.ª bis. Del acceso a las fuentes de prueba en procedimientos de reclamación de daños por infracción del derecho de la competencia", hijos:[
+                        { tipo:"articulo", texto:"Artículo 283 bis a). Exhibición de las pruebas en procesos para el ejercicio de acciones por daños derivados de infracciones del Derecho de la competencia." },
+                        { tipo:"articulo", texto:"Artículo 283 bis b). Reglas sobre confidencialidad." },
+                        { tipo:"articulo", texto:"Artículo 283 bis c). Gastos y caución." },
+                        { tipo:"articulo", texto:"Artículo 283 bis d). Competencia." },
+                        { tipo:"articulo", texto:"Artículo 283 bis e). Momento para la solicitud de medidas de acceso a fuentes de prueba." },
+                        { tipo:"articulo", texto:"Artículo 283 bis f). Procedimiento." },
+                        { tipo:"articulo", texto:"Artículo 283 bis g). Ejecución de la medida de acceso a fuentes de prueba." },
+                        { tipo:"articulo", texto:"Artículo 283 bis h). Consecuencias de la obstrucción a la práctica de las medidas de acceso a fuentes de prueba." },
+                        { tipo:"articulo", texto:"Artículo 283 bis i). Exhibición de las pruebas contenidas en un expediente de una autoridad de la competencia." },
+                        { tipo:"articulo", texto:"Artículo 283 bis j). Límites impuestos al uso de pruebas obtenidas exclusivamente a través del acceso al expediente de una autoridad de la competencia." },
+                        { tipo:"articulo", texto:"Artículo 283 bis k). Consecuencias del incumplimiento de las obligaciones de confidencialidad y uso de las fuentes de prueba." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De la proposición y admisión", hijos:[
+                        { tipo:"articulo", texto:"Artículo 284. Forma de proposición de la prueba." },
+                        { tipo:"articulo", texto:"Artículo 285. Resolución sobre la admisibilidad de las pruebas propuestas." },
+                        { tipo:"articulo", texto:"Artículo 286. Hechos nuevos o de nueva noticia. Prueba." },
+                        { tipo:"articulo", texto:"Artículo 287. Ilicitud de la prueba." },
+                        { tipo:"articulo", texto:"Artículo 288. Sanciones por no ejecución de la prueba en el tiempo previsto." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 3.ª De otras disposiciones generales sobre la práctica de la prueba", hijos:[
+                        { tipo:"articulo", texto:"Artículo 289. Forma de practicarse las pruebas." },
+                        { tipo:"articulo", texto:"Artículo 290. Señalamiento para actos de prueba que se practiquen separadamente." },
+                        { tipo:"articulo", texto:"Artículo 291. Citación y posible intervención de las partes en la práctica de las pruebas fuera del juicio." },
+                        { tipo:"articulo", texto:"Artículo 292. Obligatoriedad de comparecer a la audiencia. Multas." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 4.ª De la anticipación y el aseguramiento de la prueba", hijos:[
+                        { tipo:"articulo", texto:"Artículo 293. Casos y causas de anticipación de la prueba. Competencia." },
+                        { tipo:"articulo", texto:"Artículo 294. Proposición de prueba anticipada, admisión, tiempo y recursos." },
+                        { tipo:"articulo", texto:"Artículo 295. Práctica contradictoria de la prueba anticipada." },
+                        { tipo:"articulo", texto:"Artículo 296. Custodia de los materiales de las actuaciones de prueba anticipada." },
+                        { tipo:"articulo", texto:"Artículo 297. Medidas de aseguramiento de la prueba." },
+                        { tipo:"articulo", texto:"Artículo 298. Requisitos. Procedimiento para la adopción de las medidas de aseguramiento de la prueba. Contracautelas." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO VI. De los medios de prueba y las presunciones", hijos:[
+                    { tipo:"articulo", texto:"Artículo 299. Medios de prueba." },
+                    { tipo:"articulo", texto:"Artículo 300. Orden de práctica de los medios de prueba." },
+                    { tipo:"seccion", texto:"Sección 1.ª Del interrogatorio de las partes", hijos:[
+                        { tipo:"articulo", texto:"Artículo 301. Concepto y sujetos del interrogatorio de las partes." },
+                        { tipo:"articulo", texto:"Artículo 302. Contenido del interrogatorio y admisión de las preguntas." },
+                        { tipo:"articulo", texto:"Artículo 303. Impugnación de las preguntas que se formulen." },
+                        { tipo:"articulo", texto:"Artículo 304. Incomparecencia y admisión tácita de los hechos." },
+                        { tipo:"articulo", texto:"Artículo 305. Modo de responder al interrogatorio." },
+                        { tipo:"articulo", texto:"Artículo 306. Facultades del tribunal e intervención de abogados. Interrogatorio cruzado." },
+                        { tipo:"articulo", texto:"Artículo 307. Negativa a declarar, respuestas evasivas o inconcluyentes y admisión de hechos personales." },
+                        { tipo:"articulo", texto:"Artículo 308. Declaración sobre hechos no personales del interrogado." },
+                        { tipo:"articulo", texto:"Artículo 309. Interrogatorio de persona jurídica o de entidad sin personalidad jurídica." },
+                        { tipo:"articulo", texto:"Artículo 310. Incomunicación de declarantes." },
+                        { tipo:"articulo", texto:"Artículo 311. Interrogatorio domiciliario." },
+                        { tipo:"articulo", texto:"Artículo 312. Constancia en acta del interrogatorio domiciliario." },
+                        { tipo:"articulo", texto:"Artículo 313. Interrogatorio domiciliario por vía de auxilio judicial." },
+                        { tipo:"articulo", texto:"Artículo 314. Prohibición de reiterar el interrogatorio de las partes." },
+                        { tipo:"articulo", texto:"Artículo 315. Interrogatorio en casos especiales." },
+                        { tipo:"articulo", texto:"Artículo 316. Valoración del interrogatorio de las partes." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De los documentos públicos", hijos:[
+                        { tipo:"articulo", texto:"Artículo 317. Clases de documentos públicos." },
+                        { tipo:"articulo", texto:"Artículo 318. Modo de producción de la prueba por documentos públicos." },
+                        { tipo:"articulo", texto:"Artículo 319. Fuerza probatoria de los documentos públicos." },
+                        { tipo:"articulo", texto:"Artículo 320. Impugnación del valor probatorio del documento público. Cotejo o comprobación." },
+                        { tipo:"articulo", texto:"Artículo 321. Testimonio o certificación incompletos." },
+                        { tipo:"articulo", texto:"Artículo 322. Documentos públicos no susceptibles de cotejo o comprobación." },
+                        { tipo:"articulo", texto:"Artículo 323. Documentos públicos extranjeros." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 3.ª De los documentos privados", hijos:[
+                        { tipo:"articulo", texto:"Artículo 324. Clases de documentos privados." },
+                        { tipo:"articulo", texto:"Artículo 325. Modo de producción de la prueba." },
+                        { tipo:"articulo", texto:"Artículo 326. Fuerza probatoria de los documentos privados." },
+                        { tipo:"articulo", texto:"Artículo 327. Libros de los comerciantes." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 4.ª De las disposiciones comunes a las dos secciones anteriores", hijos:[
+                        { tipo:"articulo", texto:"Artículo 328. Deber de exhibición documental entre partes." },
+                        { tipo:"articulo", texto:"Artículo 329. Efectos de la negativa a la exhibición." },
+                        { tipo:"articulo", texto:"Artículo 330. Exhibición de documentos por terceros." },
+                        { tipo:"articulo", texto:"Artículo 331. Testimonio de documentos exhibidos." },
+                        { tipo:"articulo", texto:"Artículo 332. Deber de exhibición de entidades oficiales." },
+                        { tipo:"articulo", texto:"Artículo 333. Extracción de copias de documentos que no sean textos escritos." },
+                        { tipo:"articulo", texto:"Artículo 334. Valor probatorio de las copias reprográficas y cotejo." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 5.ª Del dictamen de peritos", hijos:[
+                        { tipo:"articulo", texto:"Artículo 335. Objeto y finalidad del dictamen de peritos. Juramento o promesa de actuar con objetividad." },
+                        { tipo:"articulo", texto:"Artículo 336. Aportación con la demanda y la contestación de dictámenes elaborados por peritos designados por las partes." },
+                        { tipo:"articulo", texto:"Artículo 337. Anuncio de dictámenes cuando no se puedan aportar con la demanda o con la contestación. Aportación posterior." },
+                        { tipo:"articulo", texto:"Artículo 338. Aportación de dictámenes en función de actuaciones procesales posteriores a la demanda. Solicitud de intervención de los peritos en el juicio o vista." },
+                        { tipo:"articulo", texto:"Artículo 339. Solicitud de designación de peritos por el tribunal y resolución judicial sobre dicha solicitud. Designación de peritos por el tribunal, sin instancia de parte." },
+                        { tipo:"articulo", texto:"Artículo 340. Condiciones de los peritos." },
+                        { tipo:"articulo", texto:"Artículo 341. Procedimiento para la designación judicial de perito." },
+                        { tipo:"articulo", texto:"Artículo 342. Llamamiento al perito designado, aceptación y nombramiento. Provisión de fondos." },
+                        { tipo:"articulo", texto:"Artículo 343. Tachas de los peritos. Tiempo y forma de las tachas." },
+                        { tipo:"articulo", texto:"Artículo 344. Contradicción y valoración de la tacha. Sanción en caso de tacha temeraria o desleal." },
+                        { tipo:"articulo", texto:"Artículo 345. Operaciones periciales y posible intervención de las partes en ellas." },
+                        { tipo:"articulo", texto:"Artículo 346. Emisión y ratificación del dictamen por el perito que el tribunal designe." },
+                        { tipo:"articulo", texto:"Artículo 347. Posible actuación de los peritos en el juicio o en la vista." },
+                        { tipo:"articulo", texto:"Artículo 348. Valoración del dictamen pericial." },
+                        { tipo:"articulo", texto:"Artículo 349. Cotejo de letras." },
+                        { tipo:"articulo", texto:"Artículo 350. Documentos indubitados o cuerpo de escritura para el cotejo." },
+                        { tipo:"articulo", texto:"Artículo 351. Producción y valoración del dictamen sobre el cotejo de letras." },
+                        { tipo:"articulo", texto:"Artículo 352. Otros dictámenes periciales instrumentales de pruebas distintas." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 6.ª Del reconocimiento judicial", hijos:[
+                        { tipo:"articulo", texto:"Artículo 353. Objeto y finalidad del reconocimiento judicial e iniciativa para acordarlo." },
+                        { tipo:"articulo", texto:"Artículo 354. Realización del reconocimiento judicial e intervención de las partes y de personas entendidas." },
+                        { tipo:"articulo", texto:"Artículo 355. Reconocimiento de personas." },
+                        { tipo:"articulo", texto:"Artículo 356. Concurrencia del reconocimiento judicial y el pericial." },
+                        { tipo:"articulo", texto:"Artículo 357. Concurrencia del reconocimiento judicial y la prueba por testigos." },
+                        { tipo:"articulo", texto:"Artículo 358. Acta del reconocimiento judicial." },
+                        { tipo:"articulo", texto:"Artículo 359. Empleo de medios técnicos de constancia del reconocimiento judicial." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 7.ª Del interrogatorio de testigos", hijos:[
+                        { tipo:"articulo", texto:"Artículo 360. Contenido de la prueba." },
+                        { tipo:"articulo", texto:"Artículo 361. Idoneidad para ser testigos." },
+                        { tipo:"articulo", texto:"Artículo 362. Designación de los testigos." },
+                        { tipo:"articulo", texto:"Artículo 363. Limitación del número de testigos." },
+                        { tipo:"articulo", texto:"Artículo 364. Declaración domiciliaria del testigo." },
+                        { tipo:"articulo", texto:"Artículo 365. Juramento o promesa de los testigos." },
+                        { tipo:"articulo", texto:"Artículo 366. Modo de declarar los testigos." },
+                        { tipo:"articulo", texto:"Artículo 367. Preguntas generales al testigo." },
+                        { tipo:"articulo", texto:"Artículo 368. Contenido y admisibilidad de las preguntas que se formulen." },
+                        { tipo:"articulo", texto:"Artículo 369. Impugnación de la admisión de las preguntas y protesta contra su inadmisión." },
+                        { tipo:"articulo", texto:"Artículo 370. Examen del testigo sobre las preguntas admitidas. Testigo-perito." },
+                        { tipo:"articulo", texto:"Artículo 371. Testigos con deber de guardar secreto." },
+                        { tipo:"articulo", texto:"Artículo 372. Intervención de las partes en el interrogatorio y ampliación de éste." },
+                        { tipo:"articulo", texto:"Artículo 373. Careo entre testigos y entre éstos y las partes." },
+                        { tipo:"articulo", texto:"Artículo 374. Modo de consignar las declaraciones testificales." },
+                        { tipo:"articulo", texto:"Artículo 375. Indemnizaciones a los testigos." },
+                        { tipo:"articulo", texto:"Artículo 376. Valoración de las declaraciones de testigos." },
+                        { tipo:"articulo", texto:"Artículo 377. Tachas de los testigos." },
+                        { tipo:"articulo", texto:"Artículo 378. Tiempo de las tachas." },
+                        { tipo:"articulo", texto:"Artículo 379. Prueba y oposición sobre las tachas." },
+                        { tipo:"articulo", texto:"Artículo 380. Interrogatorio acerca de los hechos que consten en informes escritos." },
+                        { tipo:"articulo", texto:"Artículo 381. Respuestas escritas a cargo de personas jurídicas y entidades públicas." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 8.ª De la reproducción de la palabra, el sonido y la imagen y de los instrumentos que permiten archivar y conocer datos relevantes para el proceso", hijos:[
+                        { tipo:"articulo", texto:"Artículo 382. Instrumentos de filmación, grabación y semejantes. Valor probatorio." },
+                        { tipo:"articulo", texto:"Artículo 383. Acta de la reproducción y custodia de los correspondientes materiales." },
+                        { tipo:"articulo", texto:"Artículo 384. De los instrumentos que permitan archivar, conocer o reproducir datos relevantes para el proceso." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 9.ª De las presunciones", hijos:[
+                        { tipo:"articulo", texto:"Artículo 385. Presunciones legales." },
+                        { tipo:"articulo", texto:"Artículo 386. Presunciones judiciales." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO VII. De las cuestiones incidentales", hijos:[
+                    { tipo:"articulo", texto:"Artículo 387. Concepto de cuestiones incidentales." },
+                    { tipo:"articulo", texto:"Artículo 388. Norma general sobre procedimiento." },
+                    { tipo:"articulo", texto:"Artículo 389. Cuestiones incidentales de especial pronunciamiento." },
+                    { tipo:"articulo", texto:"Artículo 390. Cuestiones incidentales de previo pronunciamiento. Suspensión del curso de la demanda." },
+                    { tipo:"articulo", texto:"Artículo 391. Cuestiones de previo pronunciamiento. Casos." },
+                    { tipo:"articulo", texto:"Artículo 392. Planteamiento de las cuestiones incidentales. Inadmisión de las que no sean tales." },
+                    { tipo:"articulo", texto:"Artículo 393. Admisión, sustanciación y decisión de las cuestiones incidentales." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO VIII. De la condena en costas", hijos:[
+                    { tipo:"articulo", texto:"Artículo 394. Condena en las costas de la primera instancia." },
+                    { tipo:"articulo", texto:"Artículo 395. Condena en costas en caso de allanamiento." },
+                    { tipo:"articulo", texto:"Artículo 396. Condena en costas cuando el proceso termine por desistimiento." },
+                    { tipo:"articulo", texto:"Artículo 397. Apelación en materia de costas." },
+                    { tipo:"articulo", texto:"Artículo 398. Costas en apelación, recurso extraordinario por infracción procesal y casación." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO II. Del juicio ordinario", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De las alegaciones iniciales", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª De la demanda y su objeto", hijos:[
+                        { tipo:"articulo", texto:"Artículo 399. La demanda y su contenido." },
+                        { tipo:"articulo", texto:"Artículo 400. Preclusión de la alegación de hechos y fundamentos jurídicos." },
+                        { tipo:"articulo", texto:"Artículo 401. Momento preclusivo de la acumulación de acciones. Ampliación objetiva y subjetiva de la demanda." },
+                        { tipo:"articulo", texto:"Artículo 402. Oposición a la acumulación de acciones." },
+                        { tipo:"articulo", texto:"Artículo 403. Admisión y casos excepcionales de inadmisión de la demanda." },
+                        { tipo:"articulo", texto:"Artículo 404. Admisión de la demanda, emplazamiento al demandado y plazo para la contestación." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De la contestación a la demanda y la reconvención", hijos:[
+                        { tipo:"articulo", texto:"Artículo 405. Contestación y forma de la contestación a la demanda." },
+                        { tipo:"articulo", texto:"Artículo 406. Contenido y forma de la reconvención. Inadmisibilidad de la reconvención no conexa con la demanda y de la reconvención implícita." },
+                        { tipo:"articulo", texto:"Artículo 407. Destinatarios de la demanda reconvencional. Contestación a la reconvención." },
+                        { tipo:"articulo", texto:"Artículo 408. Tratamiento procesal de la alegación de compensación y de la nulidad del negocio jurídico en que se funde la demanda. Cosa juzgada." },
+                        { tipo:"articulo", texto:"Artículo 409. Sustanciación y decisión de las pretensiones de la contestación y la reconvención." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 3.ª De los efectos de la pendencia del proceso", hijos:[
+                        { tipo:"articulo", texto:"Artículo 410. Comienzo de la litispendencia." },
+                        { tipo:"articulo", texto:"Artículo 411. Perpetuación de la jurisdicción." },
+                        { tipo:"articulo", texto:"Artículo 412. Prohibición del cambio de demanda y modificaciones admisibles." },
+                        { tipo:"articulo", texto:"Artículo 413. Influencia del cambio de circunstancias en la sentencia sobre el fondo. Satisfacción extraprocesal. Pérdida de interés legítimo." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. De la audiencia previa al juicio", hijos:[
+                    { tipo:"articulo", texto:"Artículo 414. Finalidad, momento procesal y sujetos intervinientes en la audiencia." },
+                    { tipo:"articulo", texto:"Artículo 415. Intento de conciliación o transacción. Sobreseimiento por desistimiento bilateral. Homologación y eficacia del acuerdo." },
+                    { tipo:"articulo", texto:"Artículo 416. Examen y resolución de cuestiones procesales, con exclusión de las relativas a jurisdicción y competencia." },
+                    { tipo:"articulo", texto:"Artículo 417. Orden de examen de las cuestiones procesales y resolución sobre ellas." },
+                    { tipo:"articulo", texto:"Artículo 418. Defectos de capacidad o representación. Efectos de su no subsanación o corrección. Declaración de rebeldía." },
+                    { tipo:"articulo", texto:"Artículo 419. Admisión de la acumulación de acciones." },
+                    { tipo:"articulo", texto:"Artículo 420. Posible integración voluntaria de la litis. Resolución en casos controvertidos de litisconsorcio necesario." },
+                    { tipo:"articulo", texto:"Artículo 421. Resolución en casos de litispendencia o cosa juzgada." },
+                    { tipo:"articulo", texto:"Artículo 422. Resolución en casos de inadecuación de procedimiento por razón de la cuantía." },
+                    { tipo:"articulo", texto:"Artículo 423. Resolución en casos de inadecuación de procedimiento por razón de la materia." },
+                    { tipo:"articulo", texto:"Artículo 424. Actividad y resolución en caso de demanda defectuosa." },
+                    { tipo:"articulo", texto:"Artículo 425. Decisión judicial en casos de circunstancias procesales análogas a las expresamente previstas." },
+                    { tipo:"articulo", texto:"Artículo 426. Alegaciones complementarias y aclaratorias. Pretensiones complementarias. Hechos acaecidos o conocidos con posterioridad a la demanda y la contestación. Presentación de documentos sobre dichos extremos." },
+                    { tipo:"articulo", texto:"Artículo 427. Posición de las partes ante los documentos y dictámenes presentados." },
+                    { tipo:"articulo", texto:"Artículo 428. Fijación de los hechos controvertidos y posible sentencia inmediata." },
+                    { tipo:"articulo", texto:"Artículo 429. Proposición y admisión de la prueba. Señalamiento del juicio." },
+                    { tipo:"articulo", texto:"Artículo 430. Solicitud de nuevo señalamiento del juicio." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. Del juicio", hijos:[
+                    { tipo:"articulo", texto:"Artículo 431. Finalidad del juicio." },
+                    { tipo:"articulo", texto:"Artículo 432. Comparecencia e incomparecencia de las partes." },
+                    { tipo:"articulo", texto:"Artículo 433. Desarrollo del acto del juicio." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. De la sentencia", hijos:[
+                    { tipo:"articulo", texto:"Artículo 434. Sentencia." },
+                    { tipo:"articulo", texto:"Artículo 435. Diligencias finales. Procedencia." },
+                    { tipo:"articulo", texto:"Artículo 436. Plazo para la práctica de las diligencias finales. Sentencia posterior." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO III. Del juicio verbal", hijos:[
+                { tipo:"articulo", texto:"Artículo 437. Forma de la demanda. Acumulación objetiva y subjetiva de acciones." },
+                { tipo:"articulo", texto:"Artículo 438. Admisión de la demanda y contestación. Reconvención." },
+                { tipo:"articulo", texto:"Artículo 439. Inadmisión de la demanda en casos especiales." },
+                { tipo:"articulo", texto:"Artículo 440. Citación para la vista." },
+                { tipo:"articulo", texto:"Artículo 441. Casos especiales en la tramitación inicial del juicio verbal." },
+                { tipo:"articulo", texto:"Artículo 442. Inasistencia de las partes a la vista." },
+                { tipo:"articulo", texto:"Artículo 443. Desarrollo de la vista." },
+                { tipo:"articulo", texto:"Artículo 444. Reglas especiales sobre contenido de la vista." },
+                { tipo:"articulo", texto:"Artículo 445. Prueba y presunciones en los juicios verbales." },
+                { tipo:"articulo", texto:"Artículo 446. Resoluciones sobre la prueba y recursos." },
+                { tipo:"articulo", texto:"Artículo 447. Sentencia. Ausencia de cosa juzgada en casos especiales." },
+                { tipo:"articulo", texto:"Artículo 447 bis. Especialidades para la tramitación de los recursos contra las resoluciones que agoten la vía administrativa dictadas en materia de propiedad industrial por la Oficina Española de Patentes y Marcas." }
+            ]},
+            { tipo:"titulo", texto:"TÍTULO IV. De los recursos", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De los recursos: disposiciones generales", hijos:[
+                    { tipo:"articulo", texto:"Artículo 448. Del derecho a recurrir." },
+                    { tipo:"articulo", texto:"Artículo 449. Derecho a recurrir en casos especiales." },
+                    { tipo:"articulo", texto:"Artículo 450. Del desistimiento de los recursos." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. De los recursos de reposición y revisión", hijos:[
+                    { tipo:"articulo", texto:"Artículo 451. Resoluciones recurribles en reposición. Inexistencia de efectos suspensivos." },
+                    { tipo:"articulo", texto:"Artículo 452. Plazo, forma e inadmisión del recurso de reposición." },
+                    { tipo:"articulo", texto:"Artículo 453. De la audiencia a las partes recurridas y de la resolución." },
+                    { tipo:"articulo", texto:"Artículo 454. Irrecurribilidad del auto que resuelve la reposición contra resoluciones judiciales." },
+                    { tipo:"articulo", texto:"Artículo 454 bis. Recurso de revisión." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. Del recurso de apelación y de la segunda instancia", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª Del recurso de apelación y de la segunda instancia: disposiciones generales", hijos:[
+                        { tipo:"articulo", texto:"Artículo 455. Resoluciones recurribles en apelación. Competencia y tramitación preferente." },
+                        { tipo:"articulo", texto:"Artículo 456. Ámbito y efectos del recurso de apelación." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De la sustanciación de la apelación", hijos:[
+                        { tipo:"articulo", texto:"Artículo 457. Preparación de la apelación." },
+                        { tipo:"articulo", texto:"Artículo 458. Interposición del recurso." },
+                        { tipo:"articulo", texto:"Artículo 459. Apelación por infracción de normas o garantías procesales." },
+                        { tipo:"articulo", texto:"Artículo 460. Documentos que pueden acompañarse al escrito de interposición. Solicitud de pruebas." },
+                        { tipo:"articulo", texto:"Artículo 461. Traslado del escrito de interposición a la parte apelada. Oposición al recurso e impugnación de la sentencia." },
+                        { tipo:"articulo", texto:"Artículo 462. Competencia del tribunal de la primera instancia durante la apelación." },
+                        { tipo:"articulo", texto:"Artículo 463. Remisión de los autos." },
+                        { tipo:"articulo", texto:"Artículo 464. Admisión de pruebas y señalamiento de vista." },
+                        { tipo:"articulo", texto:"Artículo 465. Resolución de la apelación." },
+                        { tipo:"articulo", texto:"Artículo 466. Recursos contra la sentencia de segunda instancia." },
+                        { tipo:"articulo", texto:"Artículo 467. Recurso de casación contra sentencias dictadas por las Audiencias Provinciales tras estimarse recurso extraordinario por infracción procesal." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. Del recurso extraordinario por infracción procesal", hijos:[
+                    { tipo:"articulo", texto:"Artículo 468. Órgano competente y resoluciones recurribles." },
+                    { tipo:"articulo", texto:"Artículo 469. Motivos. Denuncia previa en la instancia." },
+                    { tipo:"articulo", texto:"Artículo 470. Interposición del recurso." },
+                    { tipo:"articulo", texto:"Artículo 471. Contenido del escrito de interposición del recurso." },
+                    { tipo:"articulo", texto:"Artículo 472. Remisión de los autos." },
+                    { tipo:"articulo", texto:"Artículo 473. Admisión." },
+                    { tipo:"articulo", texto:"Artículo 474. Oposición de las partes recurridas." },
+                    { tipo:"articulo", texto:"Artículo 475. Vista y prueba." },
+                    { tipo:"articulo", texto:"Artículo 476. Sentencia. Efectos." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO V. Del recurso de casación", hijos:[
+                    { tipo:"articulo", texto:"Artículo 477. Motivo del recurso de casación y resoluciones recurribles en casación." },
+                    { tipo:"articulo", texto:"Artículo 478. Competencia. Simultaneidad de recursos." },
+                    { tipo:"articulo", texto:"Artículo 479. Interposición del recurso." },
+                    { tipo:"articulo", texto:"Artículo 480. Resolución sobre la preparación del recurso." },
+                    { tipo:"articulo", texto:"Artículo 481. Contenido del escrito de interposición del recurso." },
+                    { tipo:"articulo", texto:"Artículo 482. Remisión de los autos. Negativa a expedir certificaciones." },
+                    { tipo:"articulo", texto:"Artículo 483. Decisión sobre la admisión del recurso." },
+                    { tipo:"articulo", texto:"Artículo 484. Decisión sobre la competencia en trámite de admisión." },
+                    { tipo:"articulo", texto:"Artículo 485. Admisión y traslado a las otras partes." },
+                    { tipo:"articulo", texto:"Artículo 486. Votación y fallo. Eventual vista." },
+                    { tipo:"articulo", texto:"Artículo 487. Sentencia. Efectos." },
+                    { tipo:"articulo", texto:"Artículo 488. Sustanciación y decisión de los recursos de casación y extraordinario por infracción procesal, cuando litigantes de un mismo pleito opten por distinto recurso extraordinario." },
+                    { tipo:"articulo", texto:"Artículo 489. Sustanciación y decisión de los recursos de casación foral y extraordinario por infracción procesal, cuando litigantes de un mismo pleito opten por distinto recurso extraordinario." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO VI. Del recurso en interés de la ley", hijos:[
+                    { tipo:"articulo", texto:"Artículo 490. Resoluciones recurribles en interés de la ley." },
+                    { tipo:"articulo", texto:"Artículo 491. Legitimación para recurrir en interés de la ley." },
+                    { tipo:"articulo", texto:"Artículo 492. Interposición y sustanciación." },
+                    { tipo:"articulo", texto:"Artículo 493. Sentencia." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO VII. Del recurso de queja", hijos:[
+                    { tipo:"articulo", texto:"Artículo 494. Resoluciones recurribles en queja." },
+                    { tipo:"articulo", texto:"Artículo 495. Sustanciación y decisión." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO V. De la rebeldía y de la rescisión de sentencias firmes y nueva audiencia al demandado rebelde", hijos:[
+                { tipo:"articulo", texto:"Artículo 496. Declaración de rebeldía y efectos." },
+                { tipo:"articulo", texto:"Artículo 497. Régimen de notificaciones." },
+                { tipo:"articulo", texto:"Artículo 498. Comunicación de la existencia del proceso al demandado rebelde citado o emplazado por edictos." },
+                { tipo:"articulo", texto:"Artículo 499. Comparecencia posterior del demandado." },
+                { tipo:"articulo", texto:"Artículo 500. Ejercicio por el demandado rebelde de los recursos ordinarios." },
+                { tipo:"articulo", texto:"Artículo 501. Rescisión de sentencia firme a instancias del rebelde. Casos en que procede." },
+                { tipo:"articulo", texto:"Artículo 502. Plazos de caducidad de la acción de rescisión." },
+                { tipo:"articulo", texto:"Artículo 503. Exclusión de la rescisión de sentencias sin efectos de cosa juzgada." },
+                { tipo:"articulo", texto:"Artículo 504. Eventual suspensión de la ejecución. Procedimiento de la rescisión." },
+                { tipo:"articulo", texto:"Artículo 505. Sentencia de rescisión." },
+                { tipo:"articulo", texto:"Artículo 506. Costas." },
+                { tipo:"articulo", texto:"Artículo 507. Sustanciación del procedimiento tras la sentencia estimatoria." },
+                { tipo:"articulo", texto:"Artículo 508. Inactividad del demandado y nueva sentencia." }
+            ]},
+            { tipo:"titulo", texto:"TÍTULO VI. De la revisión de sentencias firmes", hijos:[
+                { tipo:"articulo", texto:"Artículo 509. Órgano competente y resoluciones recurribles." },
+                { tipo:"articulo", texto:"Artículo 510. Motivos." },
+                { tipo:"articulo", texto:"Artículo 511. Legitimación activa." },
+                { tipo:"articulo", texto:"Artículo 512. Plazo de interposición." },
+                { tipo:"articulo", texto:"Artículo 513. Depósito." },
+                { tipo:"articulo", texto:"Artículo 514. Sustanciación." },
+                { tipo:"articulo", texto:"Artículo 515. Eventual suspensión de la ejecución." },
+                { tipo:"articulo", texto:"Artículo 516. Decisión." }
+            ]}
+        ]},
+        { tipo:"libro", texto:"LIBRO III. De la ejecución forzosa y de las medidas cautelares", hijos:[
+            { tipo:"titulo", texto:"TÍTULO I. De los títulos ejecutivos", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De las sentencias y demás títulos ejecutivos", hijos:[
+                    { tipo:"articulo", texto:"Artículo 517. Acción ejecutiva. Títulos ejecutivos." },
+                    { tipo:"articulo", texto:"Artículo 518. Caducidad de la acción ejecutiva fundada en sentencia judicial, o resolución arbitral o acuerdo de mediación." },
+                    { tipo:"articulo", texto:"Artículo 519. Acción ejecutiva de consumidores y usuarios fundada en sentencia de condena sin determinación individual de los beneficiados." },
+                    { tipo:"articulo", texto:"Artículo 520. Acción ejecutiva basada en títulos no judiciales ni arbitrales." },
+                    { tipo:"articulo", texto:"Artículo 521. Sentencias meramente declarativas y sentencias constitutivas." },
+                    { tipo:"articulo", texto:"Artículo 522. Acatamiento y cumplimiento de las sentencias constitutivas. Solicitud de actuaciones judiciales necesarias." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. De los títulos ejecutivos extranjeros", hijos:[
+                    { tipo:"articulo", texto:"Artículo 523. Fuerza ejecutiva en España. Ley aplicable al procedimiento." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO II. De la ejecución provisional de resoluciones judiciales", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De la ejecución provisional: disposiciones generales", hijos:[
+                    { tipo:"articulo", texto:"Artículo 524. Ejecución provisional: demanda y contenido." },
+                    { tipo:"articulo", texto:"Artículo 525. Sentencias no provisionalmente ejecutables." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. De la ejecución provisional de sentencias de condena dictadas en primera instancia", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª De la ejecución provisional y de la oposición a ella", hijos:[
+                        { tipo:"articulo", texto:"Artículo 526. Ejecución provisional de las sentencias de condena en primera instancia. Legitimación." },
+                        { tipo:"articulo", texto:"Artículo 527. Solicitud de ejecución provisional, despacho de ésta y recursos." },
+                        { tipo:"articulo", texto:"Artículo 528. Oposición a la ejecución provisional y a actuaciones ejecutivas concretas." },
+                        { tipo:"articulo", texto:"Artículo 529. Sustanciación de la oposición a la ejecución provisional o a actuaciones ejecutivas concretas." },
+                        { tipo:"articulo", texto:"Artículo 530. Decisión sobre la oposición a la ejecución provisional y a medidas ejecutivas concretas. Irrecurribilidad." },
+                        { tipo:"articulo", texto:"Artículo 531. Suspensión de la ejecución provisional en caso de condenas dinerarias." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De la revocación o confirmación de la sentencia provisionalmente ejecutada", hijos:[
+                        { tipo:"articulo", texto:"Artículo 532. Confirmación de la resolución provisionalmente ejecutada." },
+                        { tipo:"articulo", texto:"Artículo 533. Revocación de condenas al pago de cantidad de dinero." },
+                        { tipo:"articulo", texto:"Artículo 534. Revocación en casos de condenas no dinerarias." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. De la ejecución provisional de sentencias de condena dictadas en segunda instancia", hijos:[
+                    { tipo:"articulo", texto:"Artículo 535. Ejecución provisional de sentencias dictadas en segunda instancia." },
+                    { tipo:"articulo", texto:"Artículo 536. Confirmación en segunda instancia de la resolución ejecutada provisionalmente." },
+                    { tipo:"articulo", texto:"Artículo 537. Revocación de la resolución ejecutada provisionalmente en segunda instancia." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO III. De la ejecución: disposiciones generales", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De las partes de la ejecución", hijos:[
+                    { tipo:"articulo", texto:"Artículo 538. Partes y sujetos de la ejecución forzosa." },
+                    { tipo:"articulo", texto:"Artículo 539. Representación y defensa. Costas y gastos de la ejecución." },
+                    { tipo:"articulo", texto:"Artículo 540. Ejecutante y ejecutado en casos de sucesión." },
+                    { tipo:"articulo", texto:"Artículo 541. Ejecución en bienes gananciales." },
+                    { tipo:"articulo", texto:"Artículo 542. Ejecución frente al deudor solidario." },
+                    { tipo:"articulo", texto:"Artículo 543. Asociaciones o entidades temporales." },
+                    { tipo:"articulo", texto:"Artículo 544. Entidades sin personalidad jurídica." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. Del tribunal competente", hijos:[
+                    { tipo:"articulo", texto:"Artículo 545. Tribunal competente. Forma de las resoluciones en la ejecución forzosa." },
+                    { tipo:"articulo", texto:"Artículo 546. Examen de oficio de la competencia territorial." },
+                    { tipo:"articulo", texto:"Artículo 547. Declinatoria en la ejecución forzosa." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. Del despacho de la ejecución", hijos:[
+                    { tipo:"articulo", texto:"Artículo 548. Plazo de espera de la ejecución de resoluciones procesales o arbitrales o de acuerdos de mediación." },
+                    { tipo:"articulo", texto:"Artículo 549. Demanda ejecutiva. Contenido." },
+                    { tipo:"articulo", texto:"Artículo 550. Documentos que han de acompañar a la demanda ejecutiva." },
+                    { tipo:"articulo", texto:"Artículo 551. Orden general de ejecución y despacho de la ejecución." },
+                    { tipo:"articulo", texto:"Artículo 552. Denegación del despacho de la ejecución. Recursos." },
+                    { tipo:"articulo", texto:"Artículo 553. Notificación." },
+                    { tipo:"articulo", texto:"Artículo 554. Medidas inmediatas tras el auto de despacho de la ejecución." },
+                    { tipo:"articulo", texto:"Artículo 555. Acumulación de ejecuciones." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. De la oposición a la ejecución y de la impugnación de actos de ejecución contrarios a la ley o al título ejecutivo", hijos:[
+                    { tipo:"articulo", texto:"Artículo 556. Oposición a la ejecución de resoluciones procesales o arbitrales o de los acuerdos de mediación." },
+                    { tipo:"articulo", texto:"Artículo 557. Oposición a la ejecución fundada en títulos no judiciales ni arbitrales." },
+                    { tipo:"articulo", texto:"Artículo 558. Oposición por pluspetición. Especialidades." },
+                    { tipo:"articulo", texto:"Artículo 559. Sustanciación y resolución de la oposición por defectos procesales." },
+                    { tipo:"articulo", texto:"Artículo 560. Sustanciación de la oposición por motivos de fondo." },
+                    { tipo:"articulo", texto:"Artículo 561. Auto resolutorio de la oposición por motivos de fondo." },
+                    { tipo:"articulo", texto:"Artículo 562. Impugnación de infracciones legales en el curso de la ejecución." },
+                    { tipo:"articulo", texto:"Artículo 563. Actos de ejecución contradictorios con el título ejecutivo judicial." },
+                    { tipo:"articulo", texto:"Artículo 564. Defensa jurídica del ejecutado fundada en hechos y actos no comprendidos en las causas de oposición a la ejecución." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO V. De la suspensión y término de la ejecución", hijos:[
+                    { tipo:"articulo", texto:"Artículo 565. Alcance y norma general sobre suspensión de la ejecución." },
+                    { tipo:"articulo", texto:"Artículo 566. Suspensión, sobreseimiento y reanudación de la ejecución en casos de rescisión y de revisión de sentencia firme." },
+                    { tipo:"articulo", texto:"Artículo 567. Interposición de recursos ordinarios y suspensión." },
+                    { tipo:"articulo", texto:"Artículo 568. Suspensión en caso de situaciones concursales o preconcursales." },
+                    { tipo:"articulo", texto:"Artículo 569. Suspensión por prejudicialidad penal." },
+                    { tipo:"articulo", texto:"Artículo 570. Final de la ejecución." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO IV. De la ejecución dineraria", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De la ejecución dineraria: disposiciones generales", hijos:[
+                    { tipo:"articulo", texto:"Artículo 571. Ámbito del presente Título." },
+                    { tipo:"articulo", texto:"Artículo 572. Cantidad líquida. Ejecución por saldo de operaciones." },
+                    { tipo:"articulo", texto:"Artículo 573. Documentos que han de acompañarse a la demanda ejecutiva por saldo de cuenta." },
+                    { tipo:"articulo", texto:"Artículo 574. Ejecución en casos de intereses variables." },
+                    { tipo:"articulo", texto:"Artículo 575. Determinación de la cantidad y despacho de la ejecución." },
+                    { tipo:"articulo", texto:"Artículo 576. Intereses de la mora procesal." },
+                    { tipo:"articulo", texto:"Artículo 577. Deuda en moneda extranjera." },
+                    { tipo:"articulo", texto:"Artículo 578. Vencimiento de nuevos plazos o de la totalidad de la deuda." },
+                    { tipo:"articulo", texto:"Artículo 579. Ejecución dineraria en casos de bienes especialmente hipotecados o pignorados." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. Del requerimiento de pago", hijos:[
+                    { tipo:"articulo", texto:"Artículo 580. Casos en que no procede el requerimiento de pago." },
+                    { tipo:"articulo", texto:"Artículo 581. Casos en que procede el requerimiento de pago." },
+                    { tipo:"articulo", texto:"Artículo 582. Lugar del requerimiento de pago." },
+                    { tipo:"articulo", texto:"Artículo 583. Pago por el ejecutado. Costas." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. Del embargo de bienes", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª De la traba de los bienes", hijos:[
+                        { tipo:"articulo", texto:"Artículo 584. Alcance objetivo y suficiencia del embargo." },
+                        { tipo:"articulo", texto:"Artículo 585. Evitación del embargo mediante consignación." },
+                        { tipo:"articulo", texto:"Artículo 586. Destino de la cantidad consignada." },
+                        { tipo:"articulo", texto:"Artículo 587. Momento del embargo." },
+                        { tipo:"articulo", texto:"Artículo 588. Nulidad del embargo indeterminado. Embargo de cuentas abiertas en entidades de crédito." },
+                        { tipo:"articulo", texto:"Artículo 589. Manifestación de bienes del ejecutado." },
+                        { tipo:"articulo", texto:"Artículo 590. Investigación judicial del patrimonio del ejecutado." },
+                        { tipo:"articulo", texto:"Artículo 591. Deber de colaboración." },
+                        { tipo:"articulo", texto:"Artículo 592. Orden en los embargos. Embargo de empresas." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª Del embargo de bienes de terceros y de la tercería de dominio", hijos:[
+                        { tipo:"articulo", texto:"Artículo 593. Pertenencia al ejecutado. Prohibición de alzamiento de oficio del embargo." },
+                        { tipo:"articulo", texto:"Artículo 594. Posterior transmisión de bienes embargados no pertenecientes al ejecutado." },
+                        { tipo:"articulo", texto:"Artículo 595. Tercería de dominio. Legitimación." },
+                        { tipo:"articulo", texto:"Artículo 596. Momento de interposición y posible rechazo de plano de la tercería de dominio." },
+                        { tipo:"articulo", texto:"Artículo 597. Prohibición de segundas y ulteriores tercerías." },
+                        { tipo:"articulo", texto:"Artículo 598. Efectos de la admisión de la tercería." },
+                        { tipo:"articulo", texto:"Artículo 599. Competencia y sustanciación." },
+                        { tipo:"articulo", texto:"Artículo 600. Legitimación pasiva. Litisconsorcio voluntario. Intervención del ejecutado no demandado." },
+                        { tipo:"articulo", texto:"Artículo 601. Objeto de la tercería de dominio." },
+                        { tipo:"articulo", texto:"Artículo 602. Efectos de la no contestación." },
+                        { tipo:"articulo", texto:"Artículo 603. Resolución sobre la tercería." },
+                        { tipo:"articulo", texto:"Artículo 604. Resolución estimatoria y alzamiento del embargo." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 3.ª De los bienes inembargables", hijos:[
+                        { tipo:"articulo", texto:"Artículo 605. Bienes absolutamente inembargables." },
+                        { tipo:"articulo", texto:"Artículo 606. Bienes inembargables del ejecutado." },
+                        { tipo:"articulo", texto:"Artículo 607. Embargo de sueldos y pensiones." },
+                        { tipo:"articulo", texto:"Artículo 608. Ejecución por condena a prestación alimenticia." },
+                        { tipo:"articulo", texto:"Artículo 609. Efectos de la traba sobre bienes inembargables." },
+                        { tipo:"articulo", texto:"Artículo 610. Reembargo. Efectos." },
+                        { tipo:"articulo", texto:"Artículo 611. Embargo de sobrante." },
+                        { tipo:"articulo", texto:"Artículo 612. Mejora, reducción y modificación del embargo." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 4.ª De la prioridad del embargante y de la tercería de mejor derecho", hijos:[
+                        { tipo:"articulo", texto:"Artículo 613. Efectos del embargo. Anotaciones preventivas y terceros poseedores." },
+                        { tipo:"articulo", texto:"Artículo 614. Tercería de mejor derecho. Finalidad. Prohibición de segunda tercería." },
+                        { tipo:"articulo", texto:"Artículo 615. Tiempo de la tercería de mejor derecho." },
+                        { tipo:"articulo", texto:"Artículo 616. Efectos de la tercería de mejor derecho." },
+                        { tipo:"articulo", texto:"Artículo 617. Procedimiento, legitimación pasiva y litisconsorcio." },
+                        { tipo:"articulo", texto:"Artículo 618. Efectos de la no contestación." },
+                        { tipo:"articulo", texto:"Artículo 619. Allanamiento y desistimiento del ejecutante. Participación del tercerista de preferencia en los costes de la ejecución." },
+                        { tipo:"articulo", texto:"Artículo 620. Efectos de la sentencia. Costas de la tercería y participación del tercerista en los costes de la ejecución." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 5.ª De la garantía de la traba de bienes muebles y derechos", hijos:[
+                        { tipo:"articulo", texto:"Artículo 621. Garantías del embargo de dinero, cuentas corrientes y sueldos." },
+                        { tipo:"articulo", texto:"Artículo 622. Garantía del embargo de intereses, rentas y frutos." },
+                        { tipo:"articulo", texto:"Artículo 623. Garantía del embargo de valores e instrumentos financieros." },
+                        { tipo:"articulo", texto:"Artículo 624. Diligencia de embargo de bienes muebles. Garantía del embargo." },
+                        { tipo:"articulo", texto:"Artículo 625. Consideración de efectos o caudales públicos." },
+                        { tipo:"articulo", texto:"Artículo 626. Depósito judicial. Nombramiento de depositario." },
+                        { tipo:"articulo", texto:"Artículo 627. Responsabilidades del depositario. Depositarios interinos." },
+                        { tipo:"articulo", texto:"Artículo 628. Gastos del depósito." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 6.ª De la garantía del embargo de inmuebles y de otros bienes susceptibles de inscripción", hijos:[
+                        { tipo:"articulo", texto:"Artículo 629. Anotación preventiva de embargo." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 7.ª De la administración judicial", hijos:[
+                        { tipo:"articulo", texto:"Artículo 630. Casos en que procede." },
+                        { tipo:"articulo", texto:"Artículo 631. Constitución de la administración. Nombramiento de administrador y de interventores." },
+                        { tipo:"articulo", texto:"Artículo 632. Contenido del cargo de administrador." },
+                        { tipo:"articulo", texto:"Artículo 633. Forma de actuación del administrador." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. Del procedimiento de apremio", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª Disposiciones generales para la realización de los bienes embargados", hijos:[
+                        { tipo:"articulo", texto:"Artículo 634. Entrega directa al ejecutante." },
+                        { tipo:"articulo", texto:"Artículo 635. Acciones y otras formas de participación sociales." },
+                        { tipo:"articulo", texto:"Artículo 636. Realización de bienes o derechos no comprendidos en los artículos anteriores." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª Valoración de los bienes embargados", hijos:[
+                        { tipo:"articulo", texto:"Artículo 637. Avalúo de los bienes." },
+                        { tipo:"articulo", texto:"Artículo 638. Nombramiento de perito tasador, recusación e intervención de ejecutante y ejecutado en la tasación." },
+                        { tipo:"articulo", texto:"Artículo 639. Actuación del perito designado e intervención de las partes y de los acreedores posteriores en la tasación." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 3.ª Del convenio de realización", hijos:[
+                        { tipo:"articulo", texto:"Artículo 640. Convenio de realización aprobado por el Letrado de la Administración de Justicia." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 4.ª De la realización por persona o entidad especializada", hijos:[
+                        { tipo:"articulo", texto:"Artículo 641. Realización por persona o entidad especializada." },
+                        { tipo:"articulo", texto:"Artículo 642. Subsistencia y cancelación de cargas." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 5.ª De la subasta de bienes muebles", hijos:[
+                        { tipo:"articulo", texto:"Artículo 643. Preparación de la subasta. Bienes embargados sin valor relevante." },
+                        { tipo:"articulo", texto:"Artículo 644. Convocatoria de la subasta." },
+                        { tipo:"articulo", texto:"Artículo 645. Anuncio y publicidad de la subasta." },
+                        { tipo:"articulo", texto:"Artículo 646. Contenido del anuncio y de la publicidad de la subasta." },
+                        { tipo:"articulo", texto:"Artículo 647. Requisitos para pujar. Ejecutante licitador." },
+                        { tipo:"articulo", texto:"Artículo 648. Subasta electrónica." },
+                        { tipo:"articulo", texto:"Artículo 649. Desarrollo y terminación de la subasta." },
+                        { tipo:"articulo", texto:"Artículo 650. Aprobación del remate. Pago. Adjudicación de bienes." },
+                        { tipo:"articulo", texto:"Artículo 651. Adjudicación de bienes al ejecutante." },
+                        { tipo:"articulo", texto:"Artículo 652. Destino de los depósitos constituidos para pujar." },
+                        { tipo:"articulo", texto:"Artículo 653. Quiebra de la subasta." },
+                        { tipo:"articulo", texto:"Artículo 654. Pago al ejecutante, destino del remanente, imputación de pagos y certificación de deuda pendiente en caso de insuficiencia de la ejecución." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 6.ª De la subasta de bienes inmuebles", hijos:[
+                        { tipo:"articulo", texto:"Artículo 655. Ámbito de aplicación de esta sección y aplicación supletoria de las disposiciones de la sección anterior." },
+                        { tipo:"articulo", texto:"Artículo 656. Certificación de dominio y cargas." },
+                        { tipo:"articulo", texto:"Artículo 657. Información de cargas extinguidas o aminoradas." },
+                        { tipo:"articulo", texto:"Artículo 658. Bien inscrito a nombre de persona distinta del ejecutado." },
+                        { tipo:"articulo", texto:"Artículo 659. Titulares de derechos posteriormente inscritos." },
+                        { tipo:"articulo", texto:"Artículo 660. Forma de practicarse las comunicaciones." },
+                        { tipo:"articulo", texto:"Artículo 661. Comunicación de la ejecución a arrendatarios y a ocupantes de hecho. Publicidad de la situación posesoria." },
+                        { tipo:"articulo", texto:"Artículo 662. Tercer poseedor." },
+                        { tipo:"articulo", texto:"Artículo 663. Presentación de la titulación de los inmuebles embargados." },
+                        { tipo:"articulo", texto:"Artículo 664. No presentación o inexistencia de títulos." },
+                        { tipo:"articulo", texto:"Artículo 665. Subasta sin suplencia de la falta de títulos." },
+                        { tipo:"articulo", texto:"Artículo 666. Valoración de inmuebles para su subasta." },
+                        { tipo:"articulo", texto:"Artículo 667. Convocatoria de la subasta." },
+                        { tipo:"articulo", texto:"Artículo 668. Contenido del anuncio y publicidad de la subasta." },
+                        { tipo:"articulo", texto:"Artículo 669. Condiciones especiales de la subasta." },
+                        { tipo:"articulo", texto:"Artículo 670. Aprobación del remate. Pago. Adjudicación de los bienes al acreedor." },
+                        { tipo:"articulo", texto:"Artículo 671. Subasta sin ningún postor." },
+                        { tipo:"articulo", texto:"Artículo 672. Destino de las sumas obtenidas en la subasta de inmuebles." },
+                        { tipo:"articulo", texto:"Artículo 673. Inscripción de la adquisición: título." },
+                        { tipo:"articulo", texto:"Artículo 674. Cancelación de cargas." },
+                        { tipo:"articulo", texto:"Artículo 675. Posesión judicial y ocupantes del inmueble." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 7.ª De la administración para pago", hijos:[
+                        { tipo:"articulo", texto:"Artículo 676. Constitución de la administración." },
+                        { tipo:"articulo", texto:"Artículo 677. Forma de la administración." },
+                        { tipo:"articulo", texto:"Artículo 678. Rendición de cuentas." },
+                        { tipo:"articulo", texto:"Artículo 679. Controversias sobre la administración." },
+                        { tipo:"articulo", texto:"Artículo 680. Finalización de la administración." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO V. De las particularidades de la ejecución sobre bienes hipotecados o pignorados", hijos:[
+                    { tipo:"articulo", texto:"Artículo 681. Procedimiento para exigir el pago de deudas garantizadas por prenda o hipoteca." },
+                    { tipo:"articulo", texto:"Artículo 682. Ámbito del presente capítulo." },
+                    { tipo:"articulo", texto:"Artículo 683. Cambio del domicilio señalado para requerimientos y notificaciones." },
+                    { tipo:"articulo", texto:"Artículo 684. Competencia." },
+                    { tipo:"articulo", texto:"Artículo 685. Demanda ejecutiva y documentos que han de acompañarse a la misma." },
+                    { tipo:"articulo", texto:"Artículo 686. Requerimiento de pago." },
+                    { tipo:"articulo", texto:"Artículo 687. Depósito de los vehículos de motor hipotecados y de los bienes pignorados." },
+                    { tipo:"articulo", texto:"Artículo 688. Certificación de dominio y cargas. Sobreseimiento de la ejecución en caso de inexistencia o cancelación de la hipoteca." },
+                    { tipo:"articulo", texto:"Artículo 689. Comunicación del procedimiento al titular inscrito y a los acreedores posteriores." },
+                    { tipo:"articulo", texto:"Artículo 690. Administración de la finca o bien hipotecado." },
+                    { tipo:"articulo", texto:"Artículo 691. Convocatoria de la subasta de bienes hipotecados. Anuncio y publicidad de la convocatoria." },
+                    { tipo:"articulo", texto:"Artículo 692. Pago del crédito hipotecario y aplicación del sobrante." },
+                    { tipo:"articulo", texto:"Artículo 693. Reclamación limitada a parte del capital o de los intereses cuyo pago deba hacerse en plazos diferentes. Vencimiento anticipado de deudas a plazos." },
+                    { tipo:"articulo", texto:"Artículo 694. Realización de los bienes pignorados." },
+                    { tipo:"articulo", texto:"Artículo 695. Oposición a la ejecución." },
+                    { tipo:"articulo", texto:"Artículo 696. Tercerías de dominio." },
+                    { tipo:"articulo", texto:"Artículo 697. Suspensión de la ejecución por prejudicialidad penal." },
+                    { tipo:"articulo", texto:"Artículo 698. Reclamaciones no comprendidas en los artículos anteriores." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO V. De la ejecución no dineraria", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De las disposiciones generales", hijos:[
+                    { tipo:"articulo", texto:"Artículo 699. Despacho de la ejecución." },
+                    { tipo:"articulo", texto:"Artículo 700. Embargo de garantía y caución sustitutoria." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. De la ejecución por deberes de entregar cosas", hijos:[
+                    { tipo:"articulo", texto:"Artículo 701. Entrega de cosa mueble determinada." },
+                    { tipo:"articulo", texto:"Artículo 702. Entrega de cosas genéricas o indeterminadas." },
+                    { tipo:"articulo", texto:"Artículo 703. Entrega de bienes inmuebles." },
+                    { tipo:"articulo", texto:"Artículo 704. Ocupantes de inmuebles que deban entregarse." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. De la ejecución por obligaciones de hacer y no hacer", hijos:[
+                    { tipo:"articulo", texto:"Artículo 705. Requerimiento y fijación de plazo." },
+                    { tipo:"articulo", texto:"Artículo 706. Condena de hacer no personalísimo." },
+                    { tipo:"articulo", texto:"Artículo 707. Publicación de la sentencia en medios de comunicación." },
+                    { tipo:"articulo", texto:"Artículo 708. Condena a la emisión de una declaración de voluntad." },
+                    { tipo:"articulo", texto:"Artículo 709. Condena de hacer personalísimo." },
+                    { tipo:"articulo", texto:"Artículo 710. Condenas de no hacer." },
+                    { tipo:"articulo", texto:"Artículo 711. Cuantía de las multas coercitivas." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. De la liquidación de daños y perjuicios, frutos y rentas y la rendición de cuentas", hijos:[
+                    { tipo:"articulo", texto:"Artículo 712. Ámbito de aplicación del procedimiento." },
+                    { tipo:"articulo", texto:"Artículo 713. Petición de liquidación y presentación de relación de daños y perjuicios." },
+                    { tipo:"articulo", texto:"Artículo 714. Conformidad del deudor con la relación de daños y perjuicios." },
+                    { tipo:"articulo", texto:"Artículo 715. Oposición del deudor." },
+                    { tipo:"articulo", texto:"Artículo 716. Auto fijando la cantidad determinada." },
+                    { tipo:"articulo", texto:"Artículo 717. Petición de determinación del equivalente dinerario de una prestación no dineraria." },
+                    { tipo:"articulo", texto:"Artículo 718. Liquidación de frutos y rentas. Solicitud y requerimiento al deudor." },
+                    { tipo:"articulo", texto:"Artículo 719. Liquidación presentada por el acreedor y traslado al deudor." },
+                    { tipo:"articulo", texto:"Artículo 720. Rendición de cuentas de una administración." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO VI. De las medidas cautelares", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De las medidas cautelares: disposiciones generales", hijos:[
+                    { tipo:"articulo", texto:"Artículo 721. Necesaria instancia de parte." },
+                    { tipo:"articulo", texto:"Artículo 722. Medidas cautelares en procedimiento arbitral y litigios extranjeros." },
+                    { tipo:"articulo", texto:"Artículo 723. Competencia." },
+                    { tipo:"articulo", texto:"Artículo 724. Competencia en casos especiales." },
+                    { tipo:"articulo", texto:"Artículo 725. Examen de oficio de la competencia. Medidas cautelares en prevención." },
+                    { tipo:"articulo", texto:"Artículo 726. Características de las medidas cautelares." },
+                    { tipo:"articulo", texto:"Artículo 727. Medidas cautelares específicas." },
+                    { tipo:"articulo", texto:"Artículo 728. Peligro por la mora procesal. Apariencia de buen derecho. Caución." },
+                    { tipo:"articulo", texto:"Artículo 729. Tercerías en casos de embargo preventivo." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. Del procedimiento para la adopción de medidas cautelares", hijos:[
+                    { tipo:"articulo", texto:"Artículo 730. Momentos para solicitar las medidas cautelares." },
+                    { tipo:"articulo", texto:"Artículo 731. Accesoriedad de las medidas cautelares. Ejecución provisional y medidas cautelares." },
+                    { tipo:"articulo", texto:"Artículo 732. Solicitud de las medidas cautelares." },
+                    { tipo:"articulo", texto:"Artículo 733. Audiencia al demandado. Excepciones." },
+                    { tipo:"articulo", texto:"Artículo 734. Vista para la audiencia de las partes." },
+                    { tipo:"articulo", texto:"Artículo 735. Auto acordando medidas cautelares." },
+                    { tipo:"articulo", texto:"Artículo 736. Auto denegatorio de las medidas cautelares. Reiteración de la solicitud si cambian las circunstancias." },
+                    { tipo:"articulo", texto:"Artículo 737. Prestación de caución." },
+                    { tipo:"articulo", texto:"Artículo 738. Ejecución de la medida cautelar." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. De la oposición a las medidas cautelares adoptadas sin audiencia del demandado", hijos:[
+                    { tipo:"articulo", texto:"Artículo 739. Oposición a la medida cautelar." },
+                    { tipo:"articulo", texto:"Artículo 740. Causas de oposición. Ofrecimiento de caución sustitutoria." },
+                    { tipo:"articulo", texto:"Artículo 741. Traslado de la oposición al solicitante, comparecencia en vista y decisión." },
+                    { tipo:"articulo", texto:"Artículo 742. Exacción de daños y perjuicios." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. De la modificación y alzamiento de las medidas cautelares", hijos:[
+                    { tipo:"articulo", texto:"Artículo 743. Posible modificación de las medidas cautelares." },
+                    { tipo:"articulo", texto:"Artículo 744. Alzamiento de la medida tras sentencia no firme." },
+                    { tipo:"articulo", texto:"Artículo 745. Alzamiento de las medidas tras sentencia absolutoria firme." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO V. De la caución sustitutoria de las medidas cautelares", hijos:[
+                    { tipo:"articulo", texto:"Artículo 746. Caución sustitutoria." },
+                    { tipo:"articulo", texto:"Artículo 747. Solicitud de caución sustitutoria." }
+                ]}
+            ]}
+        ]},
+        { tipo:"libro", texto:"LIBRO IV. De los procesos especiales", hijos:[
+            { tipo:"titulo", texto:"TÍTULO I. De los procesos sobre provisión de medidas judiciales de apoyo a las personas con discapacidad, filiación, matrimonio y menores", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De las disposiciones generales", hijos:[
+                    { tipo:"articulo", texto:"Artículo 748. Ámbito de aplicación del presente título." },
+                    { tipo:"articulo", texto:"Artículo 749. Intervención del Ministerio Fiscal." },
+                    { tipo:"articulo", texto:"Artículo 750. Representación y defensa de las partes." },
+                    { tipo:"articulo", texto:"Artículo 751. Indisponibilidad del objeto del proceso." },
+                    { tipo:"articulo", texto:"Artículo 752. Prueba." },
+                    { tipo:"articulo", texto:"Artículo 753. Tramitación." },
+                    { tipo:"articulo", texto:"Artículo 754. Exclusión de la publicidad." },
+                    { tipo:"articulo", texto:"Artículo 755. Acceso de las sentencias a Registros públicos." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. De los procesos sobre la adopción de medidas judiciales de apoyo a personas con discapacidad", hijos:[
+                    { tipo:"articulo", texto:"Artículo 756. Ámbito de aplicación y competencia." },
+                    { tipo:"articulo", texto:"Artículo 757. Legitimación e intervención procesal." },
+                    { tipo:"articulo", texto:"Artículo 758. Certificación registral y personación del demandado." },
+                    { tipo:"articulo", texto:"Artículo 759. Pruebas preceptivas en primera y segunda instancia." },
+                    { tipo:"articulo", texto:"Artículo 760. Sentencia." },
+                    { tipo:"articulo", texto:"Artículo 761. Revisión de las medidas de apoyo judicialmente adoptadas." },
+                    { tipo:"articulo", texto:"Artículo 762. Medidas cautelares." },
+                    { tipo:"articulo", texto:"Artículo 763. Internamiento no voluntario por razón de trastorno psíquico." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO III. De los procesos sobre filiación, paternidad y maternidad", hijos:[
+                    { tipo:"articulo", texto:"Artículo 764. Determinación legal de la filiación por sentencia firme." },
+                    { tipo:"articulo", texto:"Artículo 765. Ejercicio de las acciones que correspondan al hijo menor o hijo con discapacidad que precise apoyo. Sucesión procesal." },
+                    { tipo:"articulo", texto:"Artículo 766. Legitimación pasiva." },
+                    { tipo:"articulo", texto:"Artículo 767. Especialidades en materia de procedimiento y prueba." },
+                    { tipo:"articulo", texto:"Artículo 768. Medidas cautelares." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV. De los procesos matrimoniales y de menores", hijos:[
+                    { tipo:"articulo", texto:"Artículo 769. Competencia." },
+                    { tipo:"articulo", texto:"Artículo 770. Procedimiento." },
+                    { tipo:"articulo", texto:"Artículo 771. Medidas provisionales previas a la demanda de nulidad, separación o divorcio. Solicitud, comparecencia y resolución." },
+                    { tipo:"articulo", texto:"Artículo 772. Confirmación o modificación de las medidas provisionales previas a la demanda, al admitirse ésta." },
+                    { tipo:"articulo", texto:"Artículo 773. Medidas provisionales derivadas de la admisión de la demanda de nulidad, separación o divorcio." },
+                    { tipo:"articulo", texto:"Artículo 774. Medidas definitivas." },
+                    { tipo:"articulo", texto:"Artículo 775. Modificación de las medidas definitivas." },
+                    { tipo:"articulo", texto:"Artículo 776. Ejecución forzosa de los pronunciamientos sobre medidas." },
+                    { tipo:"articulo", texto:"Artículo 777. Separación o divorcio solicitados de mutuo acuerdo o por uno de los cónyuges con el consentimiento del otro." },
+                    { tipo:"articulo", texto:"Artículo 778. Eficacia civil de resoluciones de los tribunales eclesiásticos o de decisiones pontificias sobre matrimonio rato y no consumado." },
+                    { tipo:"articulo", texto:"Artículo 778 bis. Ingreso de menores con problemas de conducta en centros de protección específicos." },
+                    { tipo:"articulo", texto:"Artículo 778 ter. Entrada en domicilios y restantes lugares para la ejecución forzosa de las medidas de protección de menores." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO IV BIS. Medidas relativas a la restitución o retorno de menores en los supuestos de sustracción internacional", hijos:[
+                    { tipo:"articulo", texto:"Artículo 778 quáter. Ámbito de aplicación. Normas generales." },
+                    { tipo:"articulo", texto:"Artículo 778 quinquies. Procedimiento." },
+                    { tipo:"articulo", texto:"Artículo 778 sexies. Declaración de ilicitud de un traslado o retención internacional." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO V. De la oposición a las resoluciones administrativas en materia de protección de menores...", hijos:[
+                    { tipo:"articulo", texto:"Artículo 779. Carácter preferente del procedimiento. Competencia." },
+                    { tipo:"articulo", texto:"Artículo 780. Oposición a las resoluciones administrativas en materia de protección de menores." },
+                    { tipo:"articulo", texto:"Artículo 781. Procedimiento para determinar la necesidad de asentimiento en la adopción." },
+                    { tipo:"articulo", texto:"Artículo 781 bis. Oposición a las resoluciones y actos de la Dirección General de los Registros y del Notariado en materia de Registro Civil." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO II. De la división judicial de patrimonios", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. De la división de la herencia", hijos:[
+                    { tipo:"seccion", texto:"Sección 1.ª Del procedimiento para la división de la herencia", hijos:[
+                        { tipo:"articulo", texto:"Artículo 782. Solicitud de división judicial de la herencia." },
+                        { tipo:"articulo", texto:"Artículo 783. Convocatoria de Junta para designar contador y peritos." },
+                        { tipo:"articulo", texto:"Artículo 784. Designación del contador y de los peritos." },
+                        { tipo:"articulo", texto:"Artículo 785. Entrega de la documentación al contador. Obligación de cumplir el encargo aceptado y plazo para hacerlo." },
+                        { tipo:"articulo", texto:"Artículo 786. Práctica de las operaciones divisorias." },
+                        { tipo:"articulo", texto:"Artículo 787. Aprobación de las operaciones divisorias. Oposición a ellas." },
+                        { tipo:"articulo", texto:"Artículo 788. Entrega de los bienes adjudicados a cada heredero." },
+                        { tipo:"articulo", texto:"Artículo 789. Terminación del procedimiento por acuerdo de los coherederos." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 2.ª De la intervención del caudal hereditario", hijos:[
+                        { tipo:"articulo", texto:"Artículo 790. Aseguramiento de los bienes de la herencia y de los documentos del difunto." },
+                        { tipo:"articulo", texto:"Artículo 791. Intervención judicial de la herencia cuando no conste la existencia de testamento ni de parientes llamados a la sucesión legítima." },
+                        { tipo:"articulo", texto:"Artículo 792. Intervención judicial de la herencia durante la tramitación de la declaración de herederos o de la división judicial de la herencia. Intervención a instancia de los acreedores de la herencia." },
+                        { tipo:"articulo", texto:"Artículo 793. Primeras actuaciones y citación de los interesados para la formación de inventario." },
+                        { tipo:"articulo", texto:"Artículo 794. Formación del inventario." },
+                        { tipo:"articulo", texto:"Artículo 795. Resolución sobre la administración, custodia y conservación del caudal hereditario." },
+                        { tipo:"articulo", texto:"Artículo 796. Cesación de la intervención judicial de la herencia." }
+                    ]},
+                    { tipo:"seccion", texto:"Sección 3.ª De la administración del caudal hereditario", hijos:[
+                        { tipo:"articulo", texto:"Artículo 797. Posesión del cargo de administrador de la herencia." },
+                        { tipo:"articulo", texto:"Artículo 798. Representación de la herencia por el administrador." },
+                        { tipo:"articulo", texto:"Artículo 799. Rendición periódica de cuentas." },
+                        { tipo:"articulo", texto:"Artículo 800. Rendición final de cuentas. Impugnación de las cuentas." },
+                        { tipo:"articulo", texto:"Artículo 801. Conservación de los bienes de la herencia." },
+                        { tipo:"articulo", texto:"Artículo 802. Destino de las cantidades recaudadas por el administrador en el desempeño del cargo." },
+                        { tipo:"articulo", texto:"Artículo 803. Prohibición de enajenar los bienes inventariados. Excepciones a dicha prohibición." },
+                        { tipo:"articulo", texto:"Artículo 804. Retribución del administrador." },
+                        { tipo:"articulo", texto:"Artículo 805. Administraciones subalternas." }
+                    ]}
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. Del procedimiento para la liquidación del régimen económico matrimonial", hijos:[
+                    { tipo:"articulo", texto:"Artículo 806. Ámbito de aplicación." },
+                    { tipo:"articulo", texto:"Artículo 807. Competencia." },
+                    { tipo:"articulo", texto:"Artículo 808. Solicitud de inventario." },
+                    { tipo:"articulo", texto:"Artículo 809. Formación del inventario." },
+                    { tipo:"articulo", texto:"Artículo 810. Liquidación del régimen económico matrimonial." },
+                    { tipo:"articulo", texto:"Artículo 811. Liquidación del régimen de participación." }
+                ]}
+            ]},
+            { tipo:"titulo", texto:"TÍTULO III. De los procesos monitorio y cambiario", hijos:[
+                { tipo:"capitulo", texto:"CAPÍTULO I. Del proceso monitorio", hijos:[
+                    { tipo:"articulo", texto:"Artículo 812. Casos en que procede el proceso monitorio." },
+                    { tipo:"articulo", texto:"Artículo 813. Competencia." },
+                    { tipo:"articulo", texto:"Artículo 814. Petición inicial del procedimiento monitorio." },
+                    { tipo:"articulo", texto:"Artículo 815. Admisión de la petición y requerimiento de pago." },
+                    { tipo:"articulo", texto:"Artículo 816. Incomparecencia del deudor requerido y despacho de la ejecución. Intereses." },
+                    { tipo:"articulo", texto:"Artículo 817. Pago del deudor." },
+                    { tipo:"articulo", texto:"Artículo 818. Oposición del deudor." }
+                ]},
+                { tipo:"capitulo", texto:"CAPÍTULO II. Del juicio cambiario", hijos:[
+                    { tipo:"articulo", texto:"Artículo 819. Casos en que procede." },
+                    { tipo:"articulo", texto:"Artículo 820. Competencia." },
+                    { tipo:"articulo", texto:"Artículo 821. Iniciación. Demanda. Requerimiento de pago y embargo preventivo." },
+                    { tipo:"articulo", texto:"Artículo 822. Pago." },
+                    { tipo:"articulo", texto:"Artículo 823. Alzamiento del embargo." },
+                    { tipo:"articulo", texto:"Artículo 824. Oposición cambiaria." },
+                    { tipo:"articulo", texto:"Artículo 825. Efectos de la falta de oposición." },
+                    { tipo:"articulo", texto:"Artículo 826. Sustanciación de la oposición cambiaria." },
+                    { tipo:"articulo", texto:"Artículo 827. Sentencia sobre la oposición. Eficacia." }
+                ]}
+            ]}
+        ]},
+        { tipo:"disposiciones_adicionales", texto:"DISPOSICIONES ADICIONALES", hijos:[
+            { tipo:"disposicion", texto:"Disposición adicional primera. Carácter ordinario y Título competencial." },
+            { tipo:"disposicion", texto:"Disposición adicional segunda. Actualización de cuantías." },
+            { tipo:"disposicion", texto:"Disposición adicional tercera. Medios materiales y recursos humanos para la constancia de vistas, audiencias y comparecencias." },
+            { tipo:"disposicion", texto:"Disposición adicional cuarta. Tasas por la obtención de copias de documentos e instrumentos." },
+            { tipo:"disposicion", texto:"Disposición adicional quinta. Medidas de agilización de determinados procesos civiles." },
+            { tipo:"disposicion", texto:"Disposición adicional sexta. Adjudicación de bienes inmuebles." }
+        ]},
+        { tipo:"disposiciones_transitorias", texto:"DISPOSICIONES TRANSITORIAS", hijos:[
+            { tipo:"disposicion", texto:"Disposición transitoria primera. Régimen de recursos contra resoluciones interlocutorias o no definitivas." },
+            { tipo:"disposicion", texto:"Disposición transitoria segunda. Procesos en primera instancia." },
+            { tipo:"disposicion", texto:"Disposición transitoria tercera. Procesos en segunda instancia." },
+            { tipo:"disposicion", texto:"Disposición transitoria cuarta. Asuntos en casación." },
+            { tipo:"disposicion", texto:"Disposición transitoria quinta. Juicios ejecutivos." },
+            { tipo:"disposicion", texto:"Disposición transitoria sexta. Ejecución forzosa." },
+            { tipo:"disposicion", texto:"Disposición transitoria séptima. Medidas cautelares." }
+        ]},
+        { tipo:"disposicion_derogatoria", texto:"DISPOSICIÓN DEROGATORIA ÚNICA" },
+        { tipo:"disposiciones_finales", texto:"DISPOSICIONES FINALES", hijos:[
+            { tipo:"disposicion", texto:"Disposición final primera. Reforma de la Ley de Propiedad Horizontal." },
+            { tipo:"disposicion", texto:"Disposición final segunda. Reforma de la Ley de Propiedad Intelectual." },
+            { tipo:"disposicion", texto:"Disposición final tercera. Reforma de la Ley de Sociedades Anónimas." },
+            { tipo:"disposicion", texto:"Disposición final cuarta. Reforma de la Ley de Competencia Desleal." },
+            { tipo:"disposicion", texto:"Disposición final quinta. Reforma de la Ley de Patentes." },
+            { tipo:"disposicion", texto:"Disposición final sexta. Reforma de la Ley sobre Condiciones Generales de la Contratación." },
+            { tipo:"disposicion", texto:"Disposición final séptima. Reforma de la Ley de Venta a Plazos de Bienes Muebles." },
+            { tipo:"disposicion", texto:"Disposición final octava. Reforma de la Ley de Arbitraje." },
+            { tipo:"disposicion", texto:"Disposición final novena. Reforma de la Ley Hipotecaria." },
+            { tipo:"disposicion", texto:"Disposición final décima. Reforma de la Ley Cambiaria y del Cheque." },
+            { tipo:"disposicion", texto:"Disposición final undécima. Reforma de la Ley de Procedimiento Laboral." },
+            { tipo:"disposicion", texto:"Disposición final duodécima. Reforma de la Ley de Enjuiciamiento Criminal." },
+            { tipo:"disposicion", texto:"Disposición final decimotercera. Reforma de la Ley sobre Responsabilidad Civil y Seguro en la Circulación de Vehículos a Motor." },
+            { tipo:"disposicion", texto:"Disposición final decimocuarta. Reforma de la Ley Reguladora de la Jurisdicción Contencioso-administrativa." },
+            { tipo:"disposicion", texto:"Disposición final decimoquinta. Reforma de la Ley de Asistencia Jurídica Gratuita." },
+            { tipo:"disposicion", texto:"Disposición final decimosexta. Régimen transitorio en materia de recursos extraordinarios." },
+            { tipo:"disposicion", texto:"Disposición final decimoséptima. Régimen transitorio en materia de abstención y recusación, nulidad de actuaciones y aclaración y corrección de resoluciones." },
+            { tipo:"disposicion", texto:"Disposición final decimoctava. Proyecto de Ley sobre Jurisdicción voluntaria." },
+            { tipo:"disposicion", texto:"Disposición final decimonovena. Proyecto de Ley Concursal." },
+            { tipo:"disposicion", texto:"Disposición final vigésima. Proyecto de Ley sobre cooperación jurídica internacional en materia civil." },
+            { tipo:"disposicion", texto:"Disposición final vigésima primera. Medidas para facilitar la aplicación en España del Reglamento (CE) n.º 805/2004..." },
+            { tipo:"disposicion", texto:"Disposición final vigésima segunda. Medidas para facilitar la aplicación en España del Reglamento (CE) n.º 2201/2003..." },
+            { tipo:"disposicion", texto:"Disposición final vigésima tercera. Medidas para facilitar la aplicación en España del Reglamento (CE) n.º 1896/2006..." },
+            { tipo:"disposicion", texto:"Disposición final vigésima cuarta. Medidas para facilitar la aplicación en España del Reglamento (CE) n.º 861/2007..." },
+            { tipo:"disposicion", texto:"Disposición final vigésima quinta. Medidas para facilitar la aplicación en España del Reglamento (UE) n.º 1215/2012..." },
+            { tipo:"disposicion", texto:"Disposición final vigésimo sexta. Medidas para facilitar la aplicación en España del Reglamento (UE) n.º 650/2012..." },
+            { tipo:"disposicion", texto:"Disposición final vigésimo séptima. Medidas para facilitar la aplicación en España del Reglamento (UE) n.º 655/2014..." },
+            { tipo:"disposicion", texto:"Disposición final vigésimo octava. Formularios de procesos o instrumentos procesales regulados en normas de la Unión Europea." },
+            { tipo:"disposicion", texto:"Disposición final vigésimo novena. Entrada en vigor." }
+        ]}
+    ];
+
+    // ===================== RENDERIZADO DEL ÁRBOL =====================
+    const arbolContainer = document.getElementById('arbolLEC');
+    const todosLosItems = [];
+    let contadorId = 0;
+
+    function crearNodo(item, rutaAcumulada = '') {
+        const id = `nodo-${contadorId++}`;
+        const rutaPropia = rutaAcumulada ? `${rutaAcumulada} > ${item.texto}` : item.texto;
+        const nodoData = { id, texto: item.texto, ruta: rutaPropia, tipo: item.tipo };
+        todosLosItems.push(nodoData);
+
+        const li = document.createElement('li');
+        li.setAttribute('data-id', id);
+        li.setAttribute('data-ruta', rutaPropia);
+        li.setAttribute('data-texto', item.texto);
+        li.classList.add(`nivel-${item.tipo}`);
+
+        if (item.tipo === 'articulo' || item.tipo === 'disposicion') {
+            li.classList.add('articulo');
+            li.innerHTML = `<span class="articulo-icono"><svg viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 1.5h7.5l3 3V14.5a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-13A.5.5 0 012 1.5z" stroke="currentColor" stroke-width="1.3"/><path d="M9.5 1.5v3h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M4 7.5h6M4 10h6M4 12.5h3.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span> ${item.texto}`;
+            li.addEventListener('click', function(e) {
+                e.stopPropagation();
+                copiarJerarquia(this);
+            });
+        } else {
+            const header = document.createElement('div');
+            header.className = 'nodo-header';
+            header.innerHTML = `<span class="toggle-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2.5L8 6L4 9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nodo-texto">${item.texto}</span>`;
+            header.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleNodo(this);
+            });
+            li.appendChild(header);
+
+            if (item.hijos && item.hijos.length > 0) {
+                const ul = document.createElement('ul');
+                item.hijos.forEach(hijo => ul.appendChild(crearNodo(hijo, rutaPropia)));
+                li.appendChild(ul);
+            }
+        }
+        return li;
+    }
+
+    function construirArbol() {
+        contadorId = 0;
+        todosLosItems.length = 0;
+        const ul = document.createElement('ul');
+        ul.className = 'arbol';
+        indice.forEach(item => ul.appendChild(crearNodo(item)));
+        arbolContainer.appendChild(ul);
+        // Colapsar todo excepto primer nivel (modo normal inicial)
+        document.querySelectorAll('#arbolLEC ul').forEach(ul => {
+            if (ul.parentElement.closest('ul')) {
+                ul.style.display = 'none';
+                const icon = ul.parentElement.querySelector(':scope > .nodo-header .toggle-icon');
+                if (icon) icon.classList.remove('expandido');
+            }
+        });
+        document.querySelectorAll('#arbolLEC > ul > li > ul').forEach(ul => { ul.style.display = ''; });
+        document.querySelectorAll('#arbolLEC > ul > li > .nodo-header .toggle-icon').forEach(icon => icon.classList.add('expandido'));
+    }
+
+    // ===================== MODO FILTRO =====================
+    let modoFiltro = false;
+
+    window.toggleNodo = function(headerElement) {
+        if (modoFiltro) return; // Bloquear toggles durante filtro
+        const icon = headerElement.querySelector('.toggle-icon');
+        const liParent = headerElement.parentElement;
+        const ulChild = liParent.querySelector(':scope > ul');
+        if (!ulChild) return;
+        const isHidden = ulChild.style.display === 'none';
+        ulChild.style.display = isHidden ? '' : 'none';
+        icon.classList.toggle('expandido', isHidden);
+    };
+
+    function aplicarFiltro(query) {
+        const q = query.trim().toLowerCase();
+        if (q === '') {
+            // Restaurar árbol completo (modo normal colapsado)
+            modoFiltro = false;
+            restaurarArbol();
+            return;
+        }
+        modoFiltro = true;
+        // Encontrar nodos que coinciden
+        const coincidencias = todosLosItems.filter(item => item.texto.toLowerCase().includes(q));
+        const visibleIds = new Set();
+        coincidencias.forEach(item => {
+            const el = document.querySelector(`#arbolLEC [data-id="${item.id}"]`);
+            if (!el) return;
+            let current = el;
+            while (current && current.id !== 'arbolLEC') {
+                if (current.tagName === 'LI') {
+                    visibleIds.add(current.getAttribute('data-id'));
+                }
+                current = current.parentElement?.closest('li') || null;
+            }
+        });
+        // Aplicar visibilidad a todos los <li>
+        document.querySelectorAll('#arbolLEC li').forEach(li => {
+            const id = li.getAttribute('data-id');
+            if (visibleIds.has(id)) {
+                li.style.display = '';
+                // Asegurar que el ul interior sea visible para que se vean hijos coincidentes
+                const childUl = li.querySelector(':scope > ul');
+                if (childUl) childUl.style.display = '';
+                // Mostrar icono expandido
+                const icon = li.querySelector(':scope > .nodo-header .toggle-icon');
+                if (icon) icon.classList.add('expandido');
+            } else {
+                li.style.display = 'none';
+                // Ocultar ul interior (no necesario porque li está oculto)
+            }
+        });
+    }
+
+    function restaurarArbol() {
+        // Mostrar todos los li y ul, luego colapsar según estado inicial
+        document.querySelectorAll('#arbolLEC li').forEach(li => li.style.display = '');
+        document.querySelectorAll('#arbolLEC ul').forEach(ul => {
+            if (ul.parentElement.closest('ul')) {
+                ul.style.display = 'none';
+                const icon = ul.parentElement.querySelector(':scope > .nodo-header .toggle-icon');
+                if (icon) icon.classList.remove('expandido');
+            }
+        });
+        document.querySelectorAll('#arbolLEC > ul > li > ul').forEach(ul => { ul.style.display = ''; });
+        document.querySelectorAll('#arbolLEC > ul > li > .nodo-header .toggle-icon').forEach(icon => icon.classList.add('expandido'));
+    }
+
+    // ===================== COPIA AL PORTAPAPELES =====================
+    function copiarJerarquia(elemento) {
+        const ruta = elemento.getAttribute('data-ruta');
+        const texto = elemento.getAttribute('data-texto') || elemento.textContent.trim();
+        const textoCopiado = ruta ? `${ruta}\n${texto}` : texto;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(textoCopiado).then(() => mostrarToast('Copiado: ' + textoCopiado.substring(0, 80) + (textoCopiado.length > 80 ? '...' : ''))).catch(() => copiarFallback(textoCopiado));
+        } else {
+            copiarFallback(textoCopiado);
+        }
+    }
+
+    function copiarFallback(texto) {
+        const textarea = document.createElement('textarea');
+        textarea.value = texto;
+        textarea.style.cssText = 'position:fixed;left:-9999px;top:-9999px;';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try { document.execCommand('copy'); mostrarToast('Copiado al portapapeles'); } catch (e) { mostrarToast('No se pudo copiar'); }
+        document.body.removeChild(textarea);
+    }
+
+    function mostrarToast(mensaje) {
+        const toast = document.getElementById('toastCopiado');
+        // Update only the text node (second child), preserve the icon span
+        const textNode = Array.from(toast.childNodes).find(n => n.nodeType === 3 && n.textContent.trim());
+        if (textNode) textNode.textContent = '\n    ' + mensaje + '\n';
+        else toast.appendChild(document.createTextNode(mensaje));
+        toast.classList.add('visible');
+        clearTimeout(toast._timeout);
+        toast._timeout = setTimeout(() => toast.classList.remove('visible'), 2200);
+    }
+
+    // ===================== BÚSQUEDA Y AUTOCOMPLETADO =====================
+    const searchInput = document.getElementById('searchInput');
+    const autocompleteList = document.getElementById('autocompleteList');
+    let selectedIndex = -1;
+
+    searchInput.addEventListener('input', function() {
+        const query = this.value.trim();
+        const queryLower = query.toLowerCase();
+        autocompleteList.innerHTML = '';
+        selectedIndex = -1;
+        if (queryLower.length < 1) {
+            autocompleteList.style.display = 'none';
+            aplicarFiltro(''); // limpia filtro
+            return;
+        }
+        const coincidencias = todosLosItems.filter(item => item.texto.toLowerCase().includes(queryLower)).slice(0, 20);
+        if (coincidencias.length === 0) {
+            autocompleteList.style.display = 'none';
+            aplicarFiltro(query); // filtrar igualmente (sin resultados)
+            return;
+        }
+        coincidencias.forEach((item, idx) => {
+            const li = document.createElement('li');
+            li.textContent = item.texto;
+            li.setAttribute('data-id', item.id);
+            li.addEventListener('click', () => {
+                seleccionarItem(item);
+                autocompleteList.style.display = 'none';
+                searchInput.value = item.texto;
+                aplicarFiltro(item.texto); // mantiene filtro
+            });
+            li.addEventListener('mouseenter', () => { selectedIndex = idx; actualizarActivo(); });
+            autocompleteList.appendChild(li);
+        });
+        autocompleteList.style.display = 'block';
+        aplicarFiltro(query); // Filtrar el árbol en tiempo real
+    });
+
+    searchInput.addEventListener('keydown', function(e) {
+        const listItems = autocompleteList.querySelectorAll('li');
+        if (e.key === 'ArrowDown') { e.preventDefault(); selectedIndex = Math.min(selectedIndex + 1, listItems.length - 1); actualizarActivo(); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); selectedIndex = Math.max(selectedIndex - 1, 0); actualizarActivo(); }
+        else if (e.key === 'Enter') {
+            e.preventDefault();
+            if (selectedIndex >= 0 && listItems.length > selectedIndex) {
+                const id = listItems[selectedIndex].getAttribute('data-id');
+                const item = todosLosItems.find(it => it.id === id);
+                if (item) { seleccionarItem(item); autocompleteList.style.display = 'none'; searchInput.value = item.texto; aplicarFiltro(item.texto); }
+            } else if (listItems.length > 0) {
+                const id = listItems[0].getAttribute('data-id');
+                const item = todosLosItems.find(it => it.id === id);
+                if (item) { seleccionarItem(item); autocompleteList.style.display = 'none'; searchInput.value = item.texto; aplicarFiltro(item.texto); }
+            }
+        } else if (e.key === 'Escape') { autocompleteList.style.display = 'none'; searchInput.blur(); }
+    });
+
+    function actualizarActivo() {
+        const listItems = autocompleteList.querySelectorAll('li');
+        listItems.forEach((li, idx) => li.classList.toggle('active', idx === selectedIndex));
+    }
+
+    function seleccionarItem(item) {
+        limpiarResaltados();
+        const elementoDOM = document.querySelector(`[data-id="${item.id}"]`);
+        if (!elementoDOM) return;
+        expandirAncestros(elementoDOM);
+        elementoDOM.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        elementoDOM.classList.add('resaltado-arbol');
+        setTimeout(() => elementoDOM.classList.remove('resaltado-arbol'), 3000);
+    }
+
+    function expandirAncestros(elemento) {
+        let current = elemento.parentElement;
+        while (current && current.id !== 'arbolLEC') {
+            if (current.tagName === 'UL') {
+                current.style.display = '';
+                const icon = current.parentElement.querySelector(':scope > .nodo-header .toggle-icon');
+                if (icon) icon.classList.add('expandido');
+            }
+            current = current.parentElement;
+        }
+    }
+
+    function limpiarResaltados() { document.querySelectorAll('.resaltado-arbol').forEach(el => el.classList.remove('resaltado-arbol')); }
+
+    document.addEventListener('click', function(e) { if (!e.target.closest('.search-wrapper')) autocompleteList.style.display = 'none'; });
+
+    // ===================== INICIALIZAR =====================
+    construirArbol();
+})();
+</script>
+</body>
+</html>

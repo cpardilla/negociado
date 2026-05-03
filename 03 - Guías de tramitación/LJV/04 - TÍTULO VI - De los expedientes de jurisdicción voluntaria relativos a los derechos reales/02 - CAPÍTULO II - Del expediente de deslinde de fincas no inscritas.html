@@ -1,1716 +1,3000 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guía de tramitación · Expediente de deslinde de fincas no inscritas</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* =========================================================
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Del expediente de deslinde de fincas no inscritas (artículos 104 a
+            107 LJV)
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* =========================================================
    MÓDULO 1 — Paleta
    ========================================================= */
-:root {
-  --navy:      #1A2F6E;
-  --navy-mid:  #2E4DAA;
-  --navy-lt:   #4169E1;
-  --cyan:      #0D9488;    --cyan-bg:   #F0FDFA;
-  --violet:    #5B21B6;    --violet-bg: #F5F3FF;
-  --green:     #15803D;    --green-bg:  #F0FDF4;
-  --amber:     #B45309;    --amber-bg:  #FFFBEB;
-  --red:       #B91C1C;    --red-bg:    #FEF2F2;
-  --slate:     #475569;    --slate-bg:  #F4F6FB;
-  --white:     #FFFFFF;
-  --bdr:       #D1D9EE;
-  --text:      #1A1A2E;
-  --muted:     #6B7280;
-}
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --transition-norm: 250ms ease;
+            }
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 3 — Tipografía base
    ========================================================= */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
-body {
-  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
-  font-size: 15px;
-  color: var(--text);
-  background: var(--slate-bg);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-button { font-family: inherit; }
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            html,
+            body {
+                height: 100%;
+            }
+            body {
+                font-family:
+                    "Outfit",
+                    system-ui,
+                    -apple-system,
+                    sans-serif;
+                font-size: 15px;
+                color: var(--text);
+                background: var(--slate-bg);
+                line-height: 1.5;
+                -webkit-font-smoothing: antialiased;
+            }
+            button {
+                font-family: inherit;
+            }
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 4 — Layout principal #app
    ========================================================= */
-#app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-}
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+            }
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 5 — Cabecera #hdr
    ========================================================= */
-#hdr {
-  flex-shrink: 0;
-  height: 56px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  background: var(--navy);
-  color: var(--white);
-}
-.h-left { display: flex; align-items: center; gap: 12px; }
-.h-seal {
-  width: 32px; height: 32px;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(255,255,255,.10);
-  border: 1.5px solid rgba(255,255,255,.25);
-  border-radius: 50%;
-  font-size: 16px;
-}
-.h-title { font-size: 14px; font-weight: 700; letter-spacing: .2px; }
-.h-sub   { font-size: 10px; opacity: .55; font-family: ui-monospace, SFMono-Regular, monospace; margin-top: 2px; }
-.h-right { display: flex; gap: 8px; }
-.btn {
-  font-size: 13px;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all .15s;
-  font-weight: 500;
-}
-.btn-ghost {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.18);
-  color: rgba(255,255,255,.85);
-}
-.btn-ghost:hover { background: rgba(255,255,255,.18); }
+            #hdr {
+                flex-shrink: 0;
+                height: 56px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+                background: var(--navy);
+                color: var(--white);
+            }
+            .h-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .h-seal {
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                border-radius: 50%;
+                font-size: 16px;
+            }
+            .h-title {
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: 0.2px;
+            }
+            .h-sub {
+                font-size: 10px;
+                opacity: 0.55;
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                margin-top: 2px;
+            }
+            .h-right {
+                display: flex;
+                gap: 8px;
+            }
+            .zoom-cluster {
+                display: inline-flex;
+                align-items: center;
+                overflow: hidden;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .btn-zoom {
+                appearance: none;
+                border: 0;
+                background: transparent;
+                color: rgba(255, 255, 255, 0.85);
+                width: 30px;
+                height: 30px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.14);
+            }
+            .zoom-label {
+                min-width: 46px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .btn {
+                font-size: 13px;
+                padding: 6px 12px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.15s;
+                font-weight: 500;
+            }
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
 
-/* =========================================================
+            /* ============ NUEVO: BOTÓN TOGGLE SIDEBAR ============ */
+            .btn-toggle-sidebar {
+                font-size: 20px;
+                padding: 4px 12px;
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+
+            /* =========================================================
    MÓDULO 6 — Barra de fases #pbar
    ========================================================= */
-#pbar {
-  flex-shrink: 0;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  overflow-x: auto;
-  background: var(--navy-mid);
-  scrollbar-width: none;
-}
-#pbar::-webkit-scrollbar { display: none; }
-.ph-item { display: flex; align-items: center; white-space: nowrap; }
-.ph-lbl {
-  font-size: 11px;
-  padding: 4px 10px;
-  border-radius: 6px;
-  letter-spacing: .3px;
-  text-transform: uppercase;
-}
-.ph-lbl.active { background: rgba(65,105,225,.35); color: #fff; font-weight: 700; }
-.ph-lbl.done   { color: rgba(255,255,255,.70); }
-.ph-lbl:not(.active):not(.done) { color: rgba(255,255,255,.40); }
-.ph-sep { color: rgba(255,255,255,.30); padding: 0 6px; font-size: 12px; }
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                gap: 2px;
+                overflow-x: auto;
+                background: var(--navy-mid);
+                scrollbar-width: none;
+            }
+            #pbar::-webkit-scrollbar {
+                display: none;
+            }
+            .ph-item {
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+            }
+            .ph-lbl {
+                display: inline-flex;
+                align-items: center;
+                height: 28px;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 0 10px;
+                border-radius: 8px;
+                letter-spacing: 0.3px;
+                text-transform: uppercase;
+            }
+            .ph-lbl.active {
+                background: rgba(255, 255, 255, 0.22);
+                color: #fff;
+                font-weight: 800;
+            }
+            .ph-lbl.done {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .ph-lbl:not(.active):not(.done) {
+                color: rgba(255, 255, 255, 0.6);
+            }
+            .ph-sep {
+                color: rgba(255, 255, 255, 0.3);
+                padding: 0 2px;
+                font-size: 10px;
+                flex-shrink: 0;
+            }
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 7 — Migas de pan #breadcrumb
    ========================================================= */
-#breadcrumb {
-  flex-shrink: 0;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  overflow-x: auto;
-  background: var(--slate-bg);
-  border-bottom: 1px solid var(--bdr);
-  scrollbar-width: none;
-}
-#breadcrumb::-webkit-scrollbar { display: none; }
-.bc-item { font-size: 11px; white-space: nowrap; padding: 0 6px; color: var(--muted); }
-.bc-past { cursor: pointer; background: none; border: none; font-family: inherit; }
-.bc-past:hover { color: var(--navy-lt); text-decoration: underline; }
-.bc-current { font-weight: 600; color: var(--navy); }
-.bc-sep { font-size: 10px; color: var(--bdr); padding: 0 2px; }
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 34px;
+                height: auto;
+                display: flex;
+                align-items: center;
+                padding: 4px 20px;
+                overflow-x: auto;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                scrollbar-width: none;
+                flex-wrap: wrap;
+                row-gap: 2px;
+                white-space: normal;
+            }
+            #breadcrumb::-webkit-scrollbar {
+                display: none;
+            }
+            .bc-item {
+                font-size: 11px;
+                white-space: nowrap;
+                padding: 0 6px;
+                color: var(--muted);
+            }
+            .bc-past {
+                cursor: pointer;
+                background: none;
+                border: none;
+                font-family: inherit;
+            }
+            .bc-past:hover {
+                color: var(--navy-lt);
+                text-decoration: underline;
+            }
+            .bc-current {
+                font-weight: 600;
+                color: var(--navy);
+            }
+            .bc-sep {
+                font-size: 10px;
+                color: var(--bdr);
+                padding: 0 2px;
+            }
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 8 — #layout
    ========================================================= */
-#layout {
-  flex: 1;
-  overflow: hidden;
-  display: flex;
-}
+            #layout {
+                flex: 1;
+                overflow: hidden;
+                display: flex;
+            }
 
-/* =========================================================
-   MÓDULO 9 — Sidebar dual
+            /* =========================================================
+   MÓDULO 9 — Sidebar dual (modificado para toggle)
    ========================================================= */
-#sidebar {
-  flex-shrink: 0;
-  width: 260px;
-  background: var(--navy-mid);
-  overflow-y: auto;
-  color: #fff;
-}
-#sb-tabs { display: flex; border-bottom: 1px solid rgba(255,255,255,.10); position: sticky; top: 0; background: var(--navy-mid); z-index: 2; }
-.sb-tab {
-  flex: 1;
-  padding: 10px 0;
-  font-size: 11px;
-  font-weight: 600;
-  background: none;
-  border: none;
-  color: rgba(255,255,255,.40);
-  cursor: pointer;
-  letter-spacing: .4px;
-  text-transform: uppercase;
-  transition: all .15s;
-}
-.sb-tab.active { color: #fff; border-bottom: 2px solid var(--navy-lt); }
-.sb-tab:hover:not(.active) { color: rgba(255,255,255,.70); background: rgba(255,255,255,.05); }
+            #sidebar {
+                flex-shrink: 0;
+                width: 260px;
+                background: var(--navy-mid);
+                overflow-y: auto;
+                overflow-x: hidden;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+                scrollbar-gutter: stable;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                transition:
+                    width var(--transition-norm),
+                    transform var(--transition-norm);
+                will-change: width, transform;
+            }
+            #sidebar.collapsed {
+                width: 0;
+                overflow: hidden;
+                padding: 0;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 6px;
+            }
+            #sidebar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.18);
+                border-radius: 8px;
+                border: 2px solid transparent;
+                background-clip: padding-box;
+            }
+            #sidebar:hover::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.28);
+            }
+            #sb-tabs {
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                position: sticky;
+                top: 0;
+                background: var(--navy-mid);
+                z-index: 2;
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 10px 0;
+                font-size: 11px;
+                font-weight: 600;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+                transition: all 0.15s;
+            }
+            .sb-tab.active {
+                color: #fff;
+                border-bottom: 2px solid var(--navy-lt);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.05);
+            }
 
-/* Pestaña Mapa */
-.sm-phase { border-bottom: 1px solid rgba(255,255,255,.08); }
-.sm-phase-hdr {
-  width: 100%;
-  padding: 10px 14px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  color: rgba(255,255,255,.85);
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.sm-phase-hdr:hover { background: rgba(255,255,255,.05); }
-.sm-phase-arrow { font-size: 9px; opacity: .7; transition: transform .15s; }
-.sm-phase.collapsed .sm-phase-arrow { transform: rotate(-90deg); }
-.sm-phase.collapsed .sm-nodes { display: none; }
-.sm-nodes { padding: 2px 0 8px 0; }
-.sm-node {
-  width: 100%;
-  padding: 6px 14px 6px 24px;
-  font-size: 12px;
-  background: none;
-  border: none;
-  color: rgba(255,255,255,.65);
-  cursor: pointer;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: all .15s;
-  position: relative;
-}
-.sm-node:hover { background: rgba(255,255,255,.06); color: #fff; }
-.sm-node.sm-visited { color: #86efac; }
-.sm-node.sm-visited::before { content: '✓'; font-size: 11px; color: #86efac; }
-.sm-node.sm-current { color: #fff; font-weight: 600; background: rgba(65,105,225,.30); }
-.sm-node.sm-current::before { content: '●'; font-size: 10px; color: var(--navy-lt); animation: pulse 1.5s infinite; }
-.sm-node.sm-unreachable { opacity: .35; }
+            /* Pestaña Mapa */
+            #sb-map {
+                flex: 1;
+                min-height: 0;
+            }
+            .sm-phase {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+            .sm-phase-hdr {
+                width: 100%;
+                padding: 10px 14px;
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: rgba(255, 255, 255, 0.85);
+                background: none;
+                border: none;
+                cursor: pointer;
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .sm-phase-hdr:hover {
+                background: rgba(255, 255, 255, 0.05);
+            }
+            .sm-phase-arrow {
+                font-size: 9px;
+                opacity: 0.7;
+                transition: transform 0.15s;
+            }
+            .sm-phase.collapsed .sm-phase-arrow {
+                transform: rotate(-90deg);
+            }
+            .sm-phase.collapsed .sm-nodes {
+                display: none;
+            }
+            .sm-nodes {
+                padding: 2px 0 8px 0;
+            }
+            .sm-node {
+                width: 100%;
+                padding: 6px 14px 6px 24px;
+                font-size: 12px;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.65);
+                cursor: pointer;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                transition: all 0.15s;
+                position: relative;
+            }
+            .sm-node:hover {
+                background: rgba(255, 255, 255, 0.06);
+                color: #fff;
+            }
+            .sm-node.sm-visited {
+                color: #86efac;
+            }
+            .sm-node.sm-visited::before {
+                content: "✓";
+                font-size: 11px;
+                color: #86efac;
+            }
+            .sm-node.sm-current {
+                color: #fff;
+                font-weight: 600;
+                background: rgba(65, 105, 225, 0.3);
+            }
+            .sm-node.sm-current::before {
+                content: "●";
+                font-size: 10px;
+                color: var(--navy-lt);
+                animation: pulse 1.5s infinite;
+            }
+            .sm-node.sm-unreachable {
+                opacity: 0.35;
+            }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .4; }
-}
+            @keyframes pulse {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.4;
+                }
+            }
 
-/* Pestaña Recorrido */
-#sb-journey { padding: 8px 0; }
-.pi {
-  padding: 8px 14px;
-  font-size: 12px;
-  border-left: 3px solid transparent;
-  color: rgba(255,255,255,.70);
-}
-.pi.past { border-left-color: rgba(134,239,172,.6); }
-.pi.current { border-left-color: var(--navy-lt); background: rgba(65,105,225,.15); color: #fff; font-weight: 600; }
-.pi-choice { font-size: 11px; opacity: .75; margin-top: 2px; font-style: italic; }
-.sb-foot {
-  margin-top: 12px;
-  padding: 12px 14px;
-  border-top: 1px solid rgba(255,255,255,.10);
-  font-size: 10px;
-  color: rgba(255,255,255,.55);
-  font-family: ui-monospace, SFMono-Regular, monospace;
-  line-height: 1.7;
-}
-.sb-foot strong { color: #fff; font-family: 'Outfit', sans-serif; font-size: 11px; display: block; margin-bottom: 6px; letter-spacing: .4px; text-transform: uppercase; }
+            /* Pestaña Recorrido */
+            #sb-journey {
+                padding: 8px 0;
+                flex: 1;
+                min-height: 0;
+            }
+            .pi {
+                padding: 8px 14px;
+                font-size: 12px;
+                border-left: 3px solid transparent;
+                color: rgba(255, 255, 255, 0.7);
+            }
+            .pi.past {
+                border-left-color: rgba(134, 239, 172, 0.6);
+            }
+            .pi.current {
+                border-left-color: var(--navy-lt);
+                background: rgba(65, 105, 225, 0.15);
+                color: #fff;
+                font-weight: 600;
+            }
+            .pi-choice {
+                font-size: 11px;
+                opacity: 0.75;
+                margin-top: 2px;
+                font-style: italic;
+            }
+            .sb-foot {
+                margin-top: 12px;
+                padding: 12px 14px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.55);
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                line-height: 1.7;
+            }
+            .sb-foot strong {
+                color: #fff;
+                font-family: "Outfit", sans-serif;
+                font-size: 11px;
+                display: block;
+                margin-bottom: 6px;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+            }
 
-/* =========================================================
+            /* =========================================================
    Área #content
    ========================================================= */
-#content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 28px 32px;
-}
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 28px 32px;
+            }
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 13 — Tarjeta de paso
    ========================================================= */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.card {
-  max-width: 820px;
-  margin: 0 auto;
-  background: var(--white);
-  border: 1px solid var(--bdr);
-  border-radius: 12px;
-  padding: 28px 32px;
-  animation: fadeUp .22s ease;
-  box-shadow: 0 2px 8px rgba(26,47,110,.06);
-}
-.c-hdr { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
-.act-badge {
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 10px;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-}
-.act-laj   { background: var(--cyan-bg);   color: var(--cyan);   border: 1px solid var(--cyan); }
-.act-juez  { background: var(--violet-bg); color: var(--violet); border: 1px solid var(--violet); }
-.act-ambos { background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber); }
-.c-title { font-size: 22px; font-weight: 700; color: var(--navy); line-height: 1.3; flex: 1; min-width: 200px; }
-.step-num { font-size: 11px; color: var(--muted); margin-bottom: 18px; font-family: ui-monospace, SFMono-Regular, monospace; letter-spacing: .3px; }
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .card {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 12px;
+                padding: 28px 32px;
+                animation: fadeUp 0.22s ease;
+                box-shadow: 0 2px 8px rgba(26, 47, 110, 0.06);
+            }
+            .c-hdr {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 6px;
+                flex-wrap: wrap;
+            }
+            .act-badge {
+                font-size: 10px;
+                font-weight: 700;
+                padding: 3px 8px;
+                border-radius: 10px;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
+            .act-laj {
+                background: var(--cyan-bg);
+                color: var(--cyan);
+                border: 1px solid var(--cyan);
+            }
+            .act-juez {
+                background: var(--violet-bg);
+                color: var(--violet);
+                border: 1px solid var(--violet);
+            }
+            .act-ambos {
+                background: var(--amber-bg);
+                color: var(--amber);
+                border: 1px solid var(--amber);
+            }
+            .c-title {
+                font-size: 22px;
+                font-weight: 700;
+                color: var(--navy);
+                line-height: 1.3;
+                flex: 1;
+                min-width: 200px;
+            }
+            .step-num {
+                font-size: 11px;
+                color: var(--muted);
+                margin-bottom: 18px;
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                letter-spacing: 0.3px;
+            }
 
-.c-body { font-size: 15px; color: var(--text); }
-.blk { margin-bottom: 14px; }
-.blk-i { line-height: 1.65; }
-.blk-d {
-  padding: 10px 14px;
-  background: var(--amber-bg);
-  border-left: 3px solid var(--amber);
-  border-radius: 6px;
-  font-size: 14px;
-  color: var(--amber);
-  font-weight: 600;
-}
-.blk-d::before { content: '⏱ '; }
-.blk-n {
-  padding: 10px 14px;
-  background: var(--slate-bg);
-  border-left: 3px solid var(--slate);
-  border-radius: 6px;
-  font-size: 14px;
-  line-height: 1.6;
-}
-.blk-w {
-  padding: 10px 14px;
-  background: var(--red-bg);
-  border-left: 3px solid var(--red);
-  border-radius: 6px;
-  font-size: 14px;
-  color: var(--red);
-  line-height: 1.6;
-}
-.blk-w::before { content: '⚠ '; font-weight: 700; }
-.blk-l {
-  padding: 8px 12px;
-  background: var(--navy);
-  color: #fff;
-  border-radius: 6px;
-  font-size: 12px;
-  font-family: ui-monospace, SFMono-Regular, monospace;
-  display: inline-block;
-}
-.blk-l::before { content: '§ '; opacity: .6; }
-.blk-cl {
-  padding: 14px 16px;
-  background: var(--cyan-bg);
-  border: 1px solid var(--cyan);
-  border-radius: 8px;
-}
-.blk-cl-title { font-size: 13px; font-weight: 700; color: var(--cyan); margin-bottom: 8px; letter-spacing: .3px; text-transform: uppercase; }
-.blk-cl ul { list-style: none; padding: 0; }
-.blk-cl li {
-  padding: 5px 0 5px 24px;
-  font-size: 14px;
-  position: relative;
-  line-height: 1.5;
-}
-.blk-cl li::before {
-  content: '☐';
-  position: absolute;
-  left: 0;
-  color: var(--cyan);
-  font-size: 14px;
-  font-weight: 700;
-}
+            .c-body {
+                font-size: 15px;
+                color: var(--text);
+            }
+            .blk {
+                margin-bottom: 14px;
+            }
+            .blk-i {
+                line-height: 1.65;
+            }
+            .blk-d {
+                padding: 10px 14px;
+                background: var(--amber-bg);
+                border-left: 3px solid var(--amber);
+                border-radius: 6px;
+                font-size: 14px;
+                color: var(--amber);
+                font-weight: 600;
+            }
+            .blk-d::before {
+                content: "⏱ ";
+            }
+            .blk-n {
+                padding: 10px 14px;
+                background: var(--slate-bg);
+                border-left: 3px solid var(--slate);
+                border-radius: 6px;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            .blk-w {
+                padding: 10px 14px;
+                background: var(--red-bg);
+                border-left: 3px solid var(--red);
+                border-radius: 6px;
+                font-size: 14px;
+                color: var(--red);
+                line-height: 1.6;
+            }
+            .blk-w::before {
+                content: "⚠ ";
+                font-weight: 700;
+            }
+            .blk-l {
+                padding: 8px 12px;
+                background: var(--navy);
+                color: #fff;
+                border-radius: 6px;
+                font-size: 12px;
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                display: inline-block;
+            }
+            .blk-l::before {
+                content: "§ ";
+                opacity: 0.6;
+            }
+            .blk-cl {
+                padding: 14px 16px;
+                background: var(--cyan-bg);
+                border: 1px solid var(--cyan);
+                border-radius: 8px;
+            }
+            .blk-cl-title {
+                font-size: 13px;
+                font-weight: 700;
+                color: var(--cyan);
+                margin-bottom: 8px;
+                letter-spacing: 0.3px;
+                text-transform: uppercase;
+            }
+            .blk-cl ul {
+                list-style: none;
+                padding: 0;
+            }
+            .blk-cl li {
+                padding: 5px 0 5px 24px;
+                font-size: 14px;
+                position: relative;
+                line-height: 1.5;
+            }
+            .blk-cl li::before {
+                content: "☐";
+                position: absolute;
+                left: 0;
+                color: var(--cyan);
+                font-size: 14px;
+                font-weight: 700;
+            }
 
-/* Zona de decisión */
-.dec-area {
-  margin-top: 22px;
-  padding-top: 22px;
-  border-top: 1px solid var(--bdr);
-}
-.dec-q {
-  padding: 16px 18px;
-  background: var(--slate-bg);
-  border-top: 3px solid var(--navy);
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 16px;
-  line-height: 1.45;
-}
-.dec-opts { display: flex; flex-direction: column; gap: 10px; }
-.dec-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  background: var(--white);
-  border: 1.5px solid var(--bdr);
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  text-align: left;
-  transition: all .15s;
-  color: var(--text);
-}
-.dec-btn:hover { border-color: var(--navy-lt); background: var(--slate-bg); }
-.dec-letter {
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700;
-  font-size: 12px;
-  flex-shrink: 0;
-}
-.dec-btn.ok .dec-letter      { background: var(--green-bg);  color: var(--green);  border: 1.5px solid var(--green); }
-.dec-btn.bad .dec-letter     { background: var(--red-bg);    color: var(--red);    border: 1.5px solid var(--red); }
-.dec-btn.warn .dec-letter    { background: var(--amber-bg);  color: var(--amber);  border: 1.5px solid var(--amber); }
-.dec-btn.neutral .dec-letter { background: var(--slate-bg);  color: var(--slate);  border: 1.5px solid var(--slate); }
-.dec-btn.ok:hover       { border-color: var(--green); background: var(--green-bg); }
-.dec-btn.bad:hover      { border-color: var(--red); background: var(--red-bg); }
-.dec-btn.warn:hover     { border-color: var(--amber); background: var(--amber-bg); }
-.dec-btn.neutral:hover  { border-color: var(--slate); background: var(--slate-bg); }
+            /* Zona de decisión */
+            .dec-area {
+                margin-top: 22px;
+                padding-top: 22px;
+                border-top: 1px solid var(--bdr);
+            }
+            .dec-q {
+                padding: 16px 18px;
+                background: var(--slate-bg);
+                border-top: 3px solid var(--navy);
+                border-radius: 6px;
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--navy);
+                margin-bottom: 16px;
+                line-height: 1.45;
+            }
+            .dec-opts {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+                background: var(--white);
+                border: 1.5px solid var(--bdr);
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 14px;
+                text-align: left;
+                transition: all 0.15s;
+                color: var(--text);
+            }
+            .dec-btn:hover {
+                border-color: var(--navy-lt);
+                background: var(--slate-bg);
+            }
+            .dec-letter {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                font-size: 12px;
+                flex-shrink: 0;
+            }
+            .dec-btn.ok .dec-letter {
+                background: var(--green-bg);
+                color: var(--green);
+                border: 1.5px solid var(--green);
+            }
+            .dec-btn.bad .dec-letter {
+                background: var(--red-bg);
+                color: var(--red);
+                border: 1.5px solid var(--red);
+            }
+            .dec-btn.warn .dec-letter {
+                background: var(--amber-bg);
+                color: var(--amber);
+                border: 1.5px solid var(--amber);
+            }
+            .dec-btn.neutral .dec-letter {
+                background: var(--slate-bg);
+                color: var(--slate);
+                border: 1.5px solid var(--slate);
+            }
+            .dec-btn.ok:hover {
+                border-color: var(--green);
+                background: var(--green-bg);
+            }
+            .dec-btn.bad:hover {
+                border-color: var(--red);
+                background: var(--red-bg);
+            }
+            .dec-btn.warn:hover {
+                border-color: var(--amber);
+                background: var(--amber-bg);
+            }
+            .dec-btn.neutral:hover {
+                border-color: var(--slate);
+                background: var(--slate-bg);
+            }
 
-/* Barra de navegación inferior */
-.c-nav {
-  margin-top: 24px;
-  padding-top: 18px;
-  border-top: 1px solid var(--bdr);
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-.btn-back {
-  background: var(--white);
-  border: 1.5px solid var(--bdr);
-  color: var(--slate);
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-}
-.btn-back:hover:not(:disabled) { border-color: var(--slate); background: var(--slate-bg); }
-.btn-back:disabled { opacity: .4; cursor: not-allowed; }
-.btn-next, .btn-blue {
-  background: var(--navy-lt);
-  border: none;
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.btn-next:hover, .btn-blue:hover { background: var(--navy); }
+            /* Barra de navegación inferior */
+            .c-nav {
+                margin-top: 24px;
+                padding-top: 18px;
+                border-top: 1px solid var(--bdr);
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+            }
+            .btn-back {
+                background: var(--white);
+                border: 1.5px solid var(--bdr);
+                color: var(--slate);
+                padding: 8px 16px;
+                border-radius: 6px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            .btn-back:hover:not(:disabled) {
+                border-color: var(--slate);
+                background: var(--slate-bg);
+            }
+            .btn-back:disabled {
+                opacity: 0.4;
+                cursor: not-allowed;
+            }
+            .btn-next,
+            .btn-blue {
+                background: var(--navy-lt);
+                border: none;
+                color: #fff;
+                padding: 8px 18px;
+                border-radius: 6px;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            .btn-next:hover,
+            .btn-blue:hover {
+                background: var(--navy);
+            }
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 14 — Tarjeta final
    ========================================================= */
-.card.end-success { border-top: 4px solid var(--green); }
-.card.end-error   { border-top: 4px solid var(--red); }
-.card.end-warning { border-top: 4px solid var(--amber); }
-.card.end-neutral { border-top: 4px solid var(--slate); }
-.end-body { text-align: center; padding: 20px 0 28px 0; border-bottom: 1px solid var(--bdr); margin-bottom: 20px; }
-.end-icon { font-size: 56px; line-height: 1; margin-bottom: 12px; }
-.end-title { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
-.end-sub { font-size: 14px; color: var(--muted); }
-.end-success .end-title { color: var(--green); }
-.end-error   .end-title { color: var(--red); }
-.end-warning .end-title { color: var(--amber); }
-.end-neutral .end-title { color: var(--navy); }
-.end-actions { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
-.summary-box {
-  margin-top: 22px;
-  padding: 16px 18px;
-  background: var(--slate-bg);
-  border: 1px solid var(--bdr);
-  border-radius: 8px;
-}
-.summary-title { font-size: 12px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 10px; }
-.summary-list { list-style: none; counter-reset: sum; padding: 0; }
-.summary-list li {
-  counter-increment: sum;
-  padding: 6px 0 6px 28px;
-  font-size: 13px;
-  line-height: 1.5;
-  position: relative;
-  border-bottom: 1px dashed var(--bdr);
-}
-.summary-list li:last-child { border-bottom: none; }
-.summary-list li::before {
-  content: counter(sum);
-  position: absolute;
-  left: 0;
-  top: 6px;
-  width: 20px; height: 20px;
-  background: var(--navy);
-  color: #fff;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 10px;
-  font-weight: 700;
-}
-.summary-choice { display: block; font-size: 11px; color: var(--muted); font-style: italic; margin-top: 2px; }
+            .card.end-success {
+                border-top: 4px solid var(--green);
+            }
+            .card.end-error {
+                border-top: 4px solid var(--red);
+            }
+            .card.end-warning {
+                border-top: 4px solid var(--amber);
+            }
+            .card.end-neutral {
+                border-top: 4px solid var(--slate);
+            }
+            .end-body {
+                text-align: center;
+                padding: 20px 0 28px 0;
+                border-bottom: 1px solid var(--bdr);
+                margin-bottom: 20px;
+            }
+            .end-icon {
+                font-size: 56px;
+                line-height: 1;
+                margin-bottom: 12px;
+            }
+            .end-title {
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 6px;
+            }
+            .end-sub {
+                font-size: 14px;
+                color: var(--muted);
+            }
+            .end-success .end-title {
+                color: var(--green);
+            }
+            .end-error .end-title {
+                color: var(--red);
+            }
+            .end-warning .end-title {
+                color: var(--amber);
+            }
+            .end-neutral .end-title {
+                color: var(--navy);
+            }
+            .end-actions {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 20px;
+            }
+            .summary-box {
+                margin-top: 22px;
+                padding: 16px 18px;
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+            }
+            .summary-title {
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--navy);
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+                margin-bottom: 10px;
+            }
+            .summary-list {
+                list-style: none;
+                counter-reset: sum;
+                padding: 0;
+            }
+            .summary-list li {
+                counter-increment: sum;
+                padding: 6px 0 6px 28px;
+                font-size: 13px;
+                line-height: 1.5;
+                position: relative;
+                border-bottom: 1px dashed var(--bdr);
+            }
+            .summary-list li:last-child {
+                border-bottom: none;
+            }
+            .summary-list li::before {
+                content: counter(sum);
+                position: absolute;
+                left: 0;
+                top: 6px;
+                width: 20px;
+                height: 20px;
+                background: var(--navy);
+                color: #fff;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 10px;
+                font-weight: 700;
+            }
+            .summary-choice {
+                display: block;
+                font-size: 11px;
+                color: var(--muted);
+                font-style: italic;
+                margin-top: 2px;
+            }
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 10 — Overlay de mapa completo
    ========================================================= */
-#mapa-overlay {
-  display: none;
-  flex: 1;
-  overflow-y: auto;
-  background: var(--slate-bg);
-  padding: 24px;
-}
-.mapa-hdr {
-  max-width: 1400px;
-  margin: 0 auto 20px auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.mapa-title { font-size: 20px; font-weight: 700; color: var(--navy); }
-.mapa-grid {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(180px, 1fr));
-  gap: 18px;
-}
-.mapa-col {
-  background: var(--white);
-  border: 1px solid var(--bdr);
-  border-radius: 8px;
-  padding: 12px;
-}
-.mapa-col-hdr {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .4px;
-  color: var(--navy);
-  padding: 6px 8px 10px 8px;
-  border-bottom: 2px solid var(--navy-lt);
-  margin-bottom: 10px;
-}
-.mapa-node {
-  background: var(--slate-bg);
-  border: 1px solid var(--bdr);
-  border-left: 4px solid var(--slate);
-  border-radius: 6px;
-  padding: 8px 10px;
-  margin-bottom: 8px;
-  cursor: pointer;
-  transition: all .15s;
-}
-.mapa-node:hover { border-color: var(--navy-lt); }
-.mapa-node.visited { border-left-color: var(--green); background: var(--green-bg); }
-.mapa-node.current { border-left-color: var(--navy-lt); background: var(--cyan-bg); }
-.mapa-node.end-success { border-left-color: var(--green); background: var(--green-bg); }
-.mapa-node.end-error   { border-left-color: var(--red);   background: var(--red-bg); }
-.mapa-node.end-warning { border-left-color: var(--amber); background: var(--amber-bg); }
-.mapa-node.end-neutral { border-left-color: var(--slate); background: var(--white); }
-.mapa-node-title { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.3; margin-bottom: 4px; }
-.mapa-node-badge {
-  display: inline-block;
-  font-size: 9px;
-  font-weight: 700;
-  padding: 1px 5px;
-  border-radius: 3px;
-  letter-spacing: .3px;
-  text-transform: uppercase;
-}
-.mapa-node-badge.b-laj   { background: var(--cyan-bg);   color: var(--cyan); }
-.mapa-node-badge.b-juez  { background: var(--violet-bg); color: var(--violet); }
-.mapa-node-badge.b-ambos { background: var(--amber-bg);  color: var(--amber); }
-.mapa-node-badge.b-end   { background: var(--slate-bg);  color: var(--slate); }
-.mapa-arrow {
-  font-size: 10px;
-  color: var(--muted);
-  padding: 2px 8px;
-  border-left: 1px solid var(--bdr);
-  margin: 0 0 6px 10px;
-  font-style: italic;
-}
+            #mapa-overlay {
+                display: none;
+                flex: 1;
+                overflow-y: auto;
+                background: var(--slate-bg);
+                padding: 24px;
+            }
+            .mapa-hdr {
+                max-width: 1400px;
+                margin: 0 auto 20px auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .mapa-title {
+                font-size: 20px;
+                font-weight: 700;
+                color: var(--navy);
+            }
+            .mapa-grid {
+                max-width: 1400px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(6, minmax(180px, 1fr));
+                gap: 18px;
+            }
+            .mapa-col {
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                padding: 12px;
+            }
+            .mapa-col-hdr {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+                color: var(--navy);
+                padding: 6px 8px 10px 8px;
+                border-bottom: 2px solid var(--navy-lt);
+                margin-bottom: 10px;
+            }
+            .mapa-node {
+                background: var(--slate-bg);
+                border: 1px solid var(--bdr);
+                border-left: 4px solid var(--slate);
+                border-radius: 6px;
+                padding: 8px 10px;
+                margin-bottom: 8px;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .mapa-node:hover {
+                border-color: var(--navy-lt);
+            }
+            .mapa-node.visited {
+                border-left-color: var(--green);
+                background: var(--green-bg);
+            }
+            .mapa-node.current {
+                border-left-color: var(--navy-lt);
+                background: var(--cyan-bg);
+            }
+            .mapa-node.end-success {
+                border-left-color: var(--green);
+                background: var(--green-bg);
+            }
+            .mapa-node.end-error {
+                border-left-color: var(--red);
+                background: var(--red-bg);
+            }
+            .mapa-node.end-warning {
+                border-left-color: var(--amber);
+                background: var(--amber-bg);
+            }
+            .mapa-node.end-neutral {
+                border-left-color: var(--slate);
+                background: var(--white);
+            }
+            .mapa-node-title {
+                font-size: 12px;
+                font-weight: 600;
+                color: var(--text);
+                line-height: 1.3;
+                margin-bottom: 4px;
+            }
+            .mapa-node-badge {
+                display: inline-block;
+                font-size: 9px;
+                font-weight: 700;
+                padding: 1px 5px;
+                border-radius: 3px;
+                letter-spacing: 0.3px;
+                text-transform: uppercase;
+            }
+            .mapa-node-badge.b-laj {
+                background: var(--cyan-bg);
+                color: var(--cyan);
+            }
+            .mapa-node-badge.b-juez {
+                background: var(--violet-bg);
+                color: var(--violet);
+            }
+            .mapa-node-badge.b-ambos {
+                background: var(--amber-bg);
+                color: var(--amber);
+            }
+            .mapa-node-badge.b-end {
+                background: var(--slate-bg);
+                color: var(--slate);
+            }
+            .mapa-arrow {
+                font-size: 10px;
+                color: var(--muted);
+                padding: 2px 8px;
+                border-left: 1px solid var(--bdr);
+                margin: 0 0 6px 10px;
+                font-style: italic;
+            }
 
-/* Tooltip de previsualización */
-.tooltip {
-  position: fixed;
-  z-index: 100;
-  max-width: 360px;
-  background: var(--white);
-  border: 1px solid var(--bdr);
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(26,47,110,.15);
-  padding: 14px 16px;
-  font-size: 13px;
-  display: none;
-}
-.tooltip-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-.tooltip-body { font-size: 12px; line-height: 1.5; color: var(--text); margin-bottom: 10px; max-height: 200px; overflow-y: auto; }
-.tooltip-actions { display: flex; gap: 6px; }
-.tooltip-btn {
-  flex: 1;
-  font-size: 11px;
-  padding: 5px 8px;
-  border-radius: 4px;
-  border: 1px solid var(--bdr);
-  background: var(--white);
-  cursor: pointer;
-}
-.tooltip-btn.primary { background: var(--navy-lt); color: #fff; border-color: var(--navy-lt); }
-.tooltip-btn.primary:hover { background: var(--navy); }
-.tooltip-btn:not(.primary):hover { background: var(--slate-bg); }
+            /* =========================================================
+   SIDEBAR BACKDROP (móvil)
+   ========================================================= */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                z-index: 140;
+                background: rgba(0, 0, 0, 0.5);
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
 
-/* =========================================================
+            /* =========================================================
+   MÓDULO 24 — Responsive (modificado para sidebar toggle)
+   ========================================================= */
+            @media (max-width: 700px) {
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    width: 260px;
+                    transition: transform var(--transition-norm);
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                #content {
+                    padding: 12px;
+                }
+                .card {
+                    padding: 18px;
+                }
+                .c-title {
+                    font-size: 18px;
+                }
+                .dec-opts {
+                    flex-direction: column;
+                }
+                .mapa-grid {
+                    grid-template-columns: 1fr;
+                }
+                .h-title {
+                    font-size: 12px;
+                }
+                .h-sub {
+                    display: none;
+                }
+                .btn {
+                    font-size: 11px;
+                    padding: 5px 8px;
+                }
+            }
+
+            /* Tooltip de previsualización */
+            .tooltip {
+                position: fixed;
+                z-index: 100;
+                max-width: 360px;
+                background: var(--white);
+                border: 1px solid var(--bdr);
+                border-radius: 8px;
+                box-shadow: 0 8px 24px rgba(26, 47, 110, 0.15);
+                padding: 14px 16px;
+                font-size: 13px;
+                display: none;
+            }
+            .tooltip-title {
+                font-size: 13px;
+                font-weight: 700;
+                color: var(--navy);
+                margin-bottom: 6px;
+            }
+            .tooltip-body {
+                font-size: 12px;
+                line-height: 1.5;
+                color: var(--text);
+                margin-bottom: 10px;
+                max-height: 200px;
+                overflow-y: auto;
+            }
+            .tooltip-actions {
+                display: flex;
+                gap: 6px;
+            }
+            .tooltip-btn {
+                flex: 1;
+                font-size: 11px;
+                padding: 5px 8px;
+                border-radius: 4px;
+                border: 1px solid var(--bdr);
+                background: var(--white);
+                cursor: pointer;
+            }
+            .tooltip-btn.primary {
+                background: var(--navy-lt);
+                color: #fff;
+                border-color: var(--navy-lt);
+            }
+            .tooltip-btn.primary:hover {
+                background: var(--navy);
+            }
+            .tooltip-btn:not(.primary):hover {
+                background: var(--slate-bg);
+            }
+
+            /* =========================================================
    MÓDULO 23 — Impresión
    ========================================================= */
-@media print {
-  body { background: #fff; color: #111; }
-  #hdr, #pbar, #breadcrumb, #sidebar, .c-nav, .dec-opts, #sb-tabs { display: none !important; }
-  #layout, #content { display: block; overflow: visible; height: auto; }
-  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
-  #mapa-overlay { padding: 0; background: #fff; }
-}
+            @media print {
+                body {
+                    background: #fff;
+                    color: #111;
+                }
+                #hdr,
+                #pbar,
+                #breadcrumb,
+                #sidebar,
+                .c-nav,
+                .dec-opts,
+                #sb-tabs,
+                .sidebar-backdrop {
+                    display: none !important;
+                }
+                #layout,
+                #content {
+                    display: block;
+                    overflow: visible;
+                    height: auto;
+                }
+                .card {
+                    break-inside: avoid;
+                    box-shadow: none;
+                    border: 1px solid #ccc;
+                }
+                #mapa-overlay {
+                    padding: 0;
+                    background: #fff;
+                }
+            }
 
-/* =========================================================
-   MÓDULO 24 — Responsive
-   ========================================================= */
-@media (max-width: 700px) {
-  #sidebar { display: none; }
-  #content { padding: 12px; }
-  .card { padding: 18px; }
-  .c-title { font-size: 18px; }
-  .dec-opts { flex-direction: column; }
-  .mapa-grid { grid-template-columns: 1fr; }
-  .h-title { font-size: 12px; }
-  .h-sub { display: none; }
-  .btn { font-size: 11px; padding: 5px 8px; }
-}
-</style>
-</head>
-<body>
+            /* === FIX: header classes normalization === */
+            #hdr .h-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+            #hdr .h-seal {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.85);
+            }
+            #hdr .h-title {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--white);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #hdr .h-sub {
+                font-size: 11px;
+                color: var(--white);
+                opacity: 0.7;
+            }
+            #hdr .h-right {
+                display: flex;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <!-- MÓDULO 5 — Cabecera -->
+            <header id="hdr" style="height: 72px">
+                <div class="h-left">
+                    <!-- NUEVO BOTÓN TOGGLE SIDEBAR -->
+                    <button
+                        class="btn btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                    >
+                        &#9776;
+                    </button>
+                    <div class="h-seal">⚖</div>
+                    <div>
+                        <div class="h-sub">
+                            LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN
+                            VOLUNTARIA · TÍTULO VI: DE LOS EXPEDIENTES DE
+                            JURISDICCIÓN VOLUNTARIA RELATIVOS A LOS DERECHOS
+                            REALES · CAPÍTULO II
+                        </div>
+                        <div class="h-title">
+                            Del expediente de deslinde de fincas no inscritas
+                        </div>
+                        <div class="h-sub" style="padding-top: 5px">
+                            Artículos 104 a 107 LJV
+                        </div>
+                    </div>
+                </div>
+                <div class="h-right">
+                    <div
+                        class="zoom-cluster"
+                        role="group"
+                        aria-label="Zoom del contenido"
+                    >
+                        <button
+                            class="btn-zoom"
+                            data-action="zoom-out"
+                            aria-label="Reducir zoom"
+                        >
+                            −
+                        </button>
+                        <span class="zoom-label" id="zoomLabel">100%</span>
+                        <button
+                            class="btn-zoom"
+                            data-action="zoom-in"
+                            aria-label="Aumentar zoom"
+                        >
+                            +
+                        </button>
+                    </div>
+                    <button class="btn btn-ghost" data-action="toggle-mapa">
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn btn-ghost" data-action="descargar">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn btn-ghost" data-action="reiniciar">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </header>
 
-<div id="app">
+            <!-- MÓDULO 6 — Barra de fases -->
+            <nav id="pbar"></nav>
 
-  <!-- MÓDULO 5 — Cabecera -->
-  <header id="hdr">
-    <div class="h-left">
-      <div class="h-seal">⚖</div>
-      <div>
-        <div class="h-title">Expediente de deslinde de fincas no inscritas</div>
-        <div class="h-sub">Ley 15/2015 · Título VI · Capítulo II · arts. 104–107</div>
-      </div>
-    </div>
-    <div class="h-right">
-      <button class="btn btn-ghost" data-action="toggle-mapa">🗺️ Ver mapa</button>
-      <button class="btn btn-ghost" data-action="descargar">⬇ Descargar</button>
-      <button class="btn btn-ghost" data-action="reiniciar">↺ Reiniciar</button>
-    </div>
-  </header>
+            <!-- MÓDULO 7 — Migas de pan -->
+            <nav id="breadcrumb"></nav>
 
-  <!-- MÓDULO 6 — Barra de fases -->
-  <nav id="pbar"></nav>
+            <!-- MÓDULO 8 — Layout -->
+            <main id="layout">
+                <!-- MÓDULO 9 — Sidebar dual -->
+                <aside id="sidebar">
+                    <div id="sb-tabs">
+                        <button
+                            class="sb-tab active"
+                            data-action="sb-tab"
+                            data-tab="map"
+                        >
+                            Mapa
+                        </button>
+                        <button
+                            class="sb-tab"
+                            data-action="sb-tab"
+                            data-tab="journey"
+                        >
+                            Recorrido
+                        </button>
+                    </div>
+                    <div id="sb-map"></div>
+                    <div id="sb-journey" style="display: none"></div>
+                </aside>
 
-  <!-- MÓDULO 7 — Migas de pan -->
-  <nav id="breadcrumb"></nav>
+                <!-- Contenido -->
+                <section id="content"></section>
+            </main>
 
-  <!-- MÓDULO 8 — Layout -->
-  <main id="layout">
-    <!-- MÓDULO 9 — Sidebar dual -->
-    <aside id="sidebar">
-      <div id="sb-tabs">
-        <button class="sb-tab active" data-action="sb-tab" data-tab="map">Mapa</button>
-        <button class="sb-tab" data-action="sb-tab" data-tab="journey">Recorrido</button>
-      </div>
-      <div id="sb-map"></div>
-      <div id="sb-journey" style="display:none"></div>
-    </aside>
+            <!-- MÓDULO 10 — Overlay de mapa completo -->
+            <div id="mapa-overlay"></div>
 
-    <!-- Contenido -->
-    <section id="content"></section>
-  </main>
+            <!-- NUEVO BACKDROP PARA MÓVIL -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        </div>
 
-  <!-- MÓDULO 10 — Overlay de mapa completo -->
-  <div id="mapa-overlay"></div>
+        <!-- Tooltip flotante para previsualización desde el mapa -->
+        <div id="tooltip" class="tooltip"></div>
 
-</div>
-
-<!-- Tooltip flotante para previsualización desde el mapa -->
-<div id="tooltip" class="tooltip"></div>
-
-<!-- =========================================================
+        <!-- =========================================================
      MÓDULO 22 — Bundle único de JavaScript
      ========================================================= -->
-<script>
-"use strict";
+        <script>
+            "use strict";
 
-/* =========================================================
+            /* =========================================================
    FASES DEL PROCEDIMIENTO
    ========================================================= */
-const PHASES = [
-  "Admisibilidad",
-  "Competencia",
-  "Solicitud",
-  "Tramitación",
-  "Acto de deslinde",
-  "Resolución"
-];
+            const PHASES = [
+                "Admisibilidad",
+                "Competencia",
+                "Solicitud",
+                "Tramitación",
+                "Acto de deslinde",
+                "Resolución",
+            ];
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 11–12 — DATOS DEL PROCEDIMIENTO (STEPS)
    Bloques shorthand:
      i=intro  d=plazo  n=nota  w=aviso  l=ley  cl=checklist [titulo, items]
    ========================================================= */
-const STEPS = {
+            const STEPS = {
+                /* ---------- FASE 0: ADMISIBILIDAD ---------- */
+                inicio: {
+                    ph: 0,
+                    t: "Verificación del ámbito de aplicación (I): inscripción registral",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El expediente de deslinde de fincas no inscritas se regula en los artículos 104 a 107 de la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria, dentro del Capítulo II del Título VI relativo a los expedientes de jurisdicción voluntaria sobre derechos reales.",
+                        ],
+                        [
+                            "n",
+                            "Se aplicarán las disposiciones de este Capítulo cuando se pretenda obtener el deslinde de fincas que no estuvieran inscritas en el Registro de la Propiedad.",
+                        ],
+                        [
+                            "w",
+                            "Tratándose de fincas inscritas, se aplicará lo dispuesto en la legislación hipotecaria (artículo 200 de la Ley Hipotecaria, expediente notarial).",
+                        ],
+                        ["l", "Artículo 104 LJV — Ámbito de aplicación"],
+                    ],
+                    q: "¿La finca cuyo deslinde se pretende está inscrita en el Registro de la Propiedad?",
+                    opts: [
+                        {
+                            t: "Sí, la finca está inscrita",
+                            l: "A",
+                            v: "bad",
+                            n: "fin_inscrita",
+                        },
+                        {
+                            t: "No, la finca no está inscrita",
+                            l: "B",
+                            v: "ok",
+                            n: "verificar_admin",
+                        },
+                    ],
+                },
 
-  /* ---------- FASE 0: ADMISIBILIDAD ---------- */
-  "inicio": {
-    ph: 0,
-    t: "Verificación del ámbito de aplicación (I): inscripción registral",
-    ac: "laj",
-    c: [
-      ["i", "El expediente de deslinde de fincas no inscritas se regula en los artículos 104 a 107 de la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria, dentro del Capítulo II del Título VI relativo a los expedientes de jurisdicción voluntaria sobre derechos reales."],
-      ["n", "Se aplicarán las disposiciones de este Capítulo cuando se pretenda obtener el deslinde de fincas que no estuvieran inscritas en el Registro de la Propiedad."],
-      ["w", "Tratándose de fincas inscritas, se aplicará lo dispuesto en la legislación hipotecaria (artículo 200 de la Ley Hipotecaria, expediente notarial)."],
-      ["l", "Artículo 104 LJV — Ámbito de aplicación"]
-    ],
-    q: "¿La finca cuyo deslinde se pretende está inscrita en el Registro de la Propiedad?",
-    opts: [
-      { t: "Sí, la finca está inscrita", l: "A", v: "bad",     n: "fin_inscrita" },
-      { t: "No, la finca no está inscrita", l: "B", v: "ok",  n: "verificar_admin" }
-    ]
-  },
+                verificar_admin: {
+                    ph: 0,
+                    t: "Verificación del ámbito de aplicación (II): titularidad pública",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Descartada la inscripción registral, debe comprobarse si el inmueble pertenece a una Administración Pública, supuesto igualmente excluido de este expediente.",
+                        ],
+                        [
+                            "w",
+                            "No resultarán de aplicación a los inmuebles cuya titularidad corresponda a las Administraciones Públicas, cuyo deslinde se practicará conforme a su legislación específica.",
+                        ],
+                        ["l", "Artículo 104 LJV — Ámbito de aplicación"],
+                    ],
+                    q: "¿El inmueble es de titularidad de una Administración Pública?",
+                    opts: [
+                        {
+                            t: "Sí, es un bien de una Administración Pública",
+                            l: "A",
+                            v: "bad",
+                            n: "fin_admin",
+                        },
+                        {
+                            t: "No, es un bien de titularidad privada",
+                            l: "B",
+                            v: "ok",
+                            n: "confusion_lindes",
+                        },
+                    ],
+                },
 
-  "verificar_admin": {
-    ph: 0,
-    t: "Verificación del ámbito de aplicación (II): titularidad pública",
-    ac: "laj",
-    c: [
-      ["i", "Descartada la inscripción registral, debe comprobarse si el inmueble pertenece a una Administración Pública, supuesto igualmente excluido de este expediente."],
-      ["w", "No resultarán de aplicación a los inmuebles cuya titularidad corresponda a las Administraciones Públicas, cuyo deslinde se practicará conforme a su legislación específica."],
-      ["l", "Artículo 104 LJV — Ámbito de aplicación"]
-    ],
-    q: "¿El inmueble es de titularidad de una Administración Pública?",
-    opts: [
-      { t: "Sí, es un bien de una Administración Pública", l: "A", v: "bad", n: "fin_admin" },
-      { t: "No, es un bien de titularidad privada",         l: "B", v: "ok",  n: "confusion_lindes" }
-    ]
-  },
+                confusion_lindes: {
+                    ph: 0,
+                    t: "Presupuesto material: confusión de linderos",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Superado el filtro del ámbito de aplicación, debe verificarse el presupuesto material de la acción de deslinde: la existencia de confusión de linderos.",
+                        ],
+                        [
+                            "n",
+                            "La jurisprudencia del Tribunal Supremo exige, como requisito objetivo de la acción de deslinde, la existencia de confusión de linderos entre las fincas, de suerte que no se pueda tener conocimiento exacto de la línea perimetral de cada propiedad, con la consiguiente incertidumbre respecto de la aparente extensión superficial de cada una de ellas.",
+                        ],
+                        [
+                            "w",
+                            "Si los predios están perfectamente identificados y delimitados, no cabe el ejercicio de esta acción.",
+                        ],
+                        [
+                            "l",
+                            "Artículos 384 a 387 del Código Civil — Régimen sustantivo del deslinde",
+                        ],
+                    ],
+                    q: "¿Existe confusión de linderos entre la finca y las fincas colindantes?",
+                    opts: [
+                        {
+                            t: "Sí, existe confusión de linderos",
+                            l: "A",
+                            v: "ok",
+                            n: "competencia",
+                        },
+                        {
+                            t: "No, los linderos están claros",
+                            l: "B",
+                            v: "warn",
+                            n: "fin_sin_confusion",
+                        },
+                    ],
+                },
 
-  "confusion_lindes": {
-    ph: 0,
-    t: "Presupuesto material: confusión de linderos",
-    ac: "laj",
-    c: [
-      ["i", "Superado el filtro del ámbito de aplicación, debe verificarse el presupuesto material de la acción de deslinde: la existencia de confusión de linderos."],
-      ["n", "La jurisprudencia del Tribunal Supremo exige, como requisito objetivo de la acción de deslinde, la existencia de confusión de linderos entre las fincas, de suerte que no se pueda tener conocimiento exacto de la línea perimetral de cada propiedad, con la consiguiente incertidumbre respecto de la aparente extensión superficial de cada una de ellas."],
-      ["w", "Si los predios están perfectamente identificados y delimitados, no cabe el ejercicio de esta acción."],
-      ["l", "Artículos 384 a 387 del Código Civil — Régimen sustantivo del deslinde"]
-    ],
-    q: "¿Existe confusión de linderos entre la finca y las fincas colindantes?",
-    opts: [
-      { t: "Sí, existe confusión de linderos", l: "A", v: "ok",   n: "competencia" },
-      { t: "No, los linderos están claros",    l: "B", v: "warn", n: "fin_sin_confusion" }
-    ]
-  },
+                /* ---------- FASE 1: COMPETENCIA ---------- */
+                competencia: {
+                    ph: 1,
+                    t: "Determinación del órgano competente",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Admitido que el procedimiento es el adecuado, corresponde determinar el órgano competente para el conocimiento del expediente.",
+                        ],
+                        [
+                            "n",
+                            "Será competente para el conocimiento de este expediente el Secretario judicial del Juzgado de Primera Instancia correspondiente al lugar donde estuviera situada la finca o la mayor parte de ella.",
+                        ],
+                        [
+                            "cl",
+                            "Comprobaciones de competencia",
+                            [
+                                "Identificar el lugar donde está situada la finca",
+                                "Si la finca abarca varios partidos judiciales, determinar en cuál se encuentra la mayor parte de ella",
+                                "Atribuir el conocimiento al Secretario judicial del Juzgado de Primera Instancia correspondiente",
+                            ],
+                        ],
+                        ["l", "Artículo 105.1 LJV — Competencia"],
+                    ],
+                    nx: "legitimacion",
+                },
 
-  /* ---------- FASE 1: COMPETENCIA ---------- */
-  "competencia": {
-    ph: 1,
-    t: "Determinación del órgano competente",
-    ac: "laj",
-    c: [
-      ["i", "Admitido que el procedimiento es el adecuado, corresponde determinar el órgano competente para el conocimiento del expediente."],
-      ["n", "Será competente para el conocimiento de este expediente el Secretario judicial del Juzgado de Primera Instancia correspondiente al lugar donde estuviera situada la finca o la mayor parte de ella."],
-      ["cl", "Comprobaciones de competencia", [
-        "Identificar el lugar donde está situada la finca",
-        "Si la finca abarca varios partidos judiciales, determinar en cuál se encuentra la mayor parte de ella",
-        "Atribuir el conocimiento al Secretario judicial del Juzgado de Primera Instancia correspondiente"
-      ]],
-      ["l", "Artículo 105.1 LJV — Competencia"]
-    ],
-    nx: "legitimacion"
-  },
+                legitimacion: {
+                    ph: 1,
+                    t: "Verificación de la legitimación activa",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Tras determinar la competencia, debe verificarse la legitimación del solicitante para instar el expediente.",
+                        ],
+                        [
+                            "n",
+                            "Se iniciará el expediente a instancia del titular del dominio de la finca o, de ser varios, de cualquiera de ellos, o del titular de cualquier derecho real de uso y disfrute sobre la misma.",
+                        ],
+                        [
+                            "cl",
+                            "Verificación de legitimación",
+                            [
+                                "El solicitante es titular del dominio de la finca, o",
+                                "Siendo varios titulares, basta con que inste cualquiera de ellos, o",
+                                "El solicitante es titular de un derecho real de uso y disfrute sobre la finca",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Artículo 105.2 LJV; artículo 384 del Código Civil",
+                        ],
+                    ],
+                    nx: "postulacion",
+                },
 
-  "legitimacion": {
-    ph: 1,
-    t: "Verificación de la legitimación activa",
-    ac: "laj",
-    c: [
-      ["i", "Tras determinar la competencia, debe verificarse la legitimación del solicitante para instar el expediente."],
-      ["n", "Se iniciará el expediente a instancia del titular del dominio de la finca o, de ser varios, de cualquiera de ellos, o del titular de cualquier derecho real de uso y disfrute sobre la misma."],
-      ["cl", "Verificación de legitimación", [
-        "El solicitante es titular del dominio de la finca, o",
-        "Siendo varios titulares, basta con que inste cualquiera de ellos, o",
-        "El solicitante es titular de un derecho real de uso y disfrute sobre la finca"
-      ]],
-      ["l", "Artículo 105.2 LJV; artículo 384 del Código Civil"]
-    ],
-    nx: "postulacion"
-  },
+                postulacion: {
+                    ph: 1,
+                    t: "Determinación de la postulación procesal",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "La preceptividad de Abogado depende del valor de la finca objeto del deslinde.",
+                        ],
+                        [
+                            "n",
+                            "En la tramitación del presente expediente será preceptiva la intervención de Abogado si el valor de la finca fuera superior a 6.000 euros.",
+                        ],
+                        ["l", "Artículo 105.3 LJV — Postulación"],
+                    ],
+                    q: "¿El valor de la finca es superior a 6.000 euros?",
+                    opts: [
+                        {
+                            t: "Sí, el valor excede de 6.000 €",
+                            l: "A",
+                            v: "warn",
+                            n: "con_abogado",
+                        },
+                        {
+                            t: "No, el valor es igual o inferior a 6.000 €",
+                            l: "B",
+                            v: "neutral",
+                            n: "sin_abogado",
+                        },
+                    ],
+                },
 
-  "postulacion": {
-    ph: 1,
-    t: "Determinación de la postulación procesal",
-    ac: "laj",
-    c: [
-      ["i", "La preceptividad de Abogado depende del valor de la finca objeto del deslinde."],
-      ["n", "En la tramitación del presente expediente será preceptiva la intervención de Abogado si el valor de la finca fuera superior a 6.000 euros."],
-      ["l", "Artículo 105.3 LJV — Postulación"]
-    ],
-    q: "¿El valor de la finca es superior a 6.000 euros?",
-    opts: [
-      { t: "Sí, el valor excede de 6.000 €", l: "A", v: "warn",    n: "con_abogado" },
-      { t: "No, el valor es igual o inferior a 6.000 €", l: "B", v: "neutral", n: "sin_abogado" }
-    ]
-  },
+                con_abogado: {
+                    ph: 1,
+                    t: "Intervención preceptiva de Abogado",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Al superar el valor de la finca los 6.000 euros, será preceptiva la intervención de Abogado en la tramitación del expediente.",
+                        ],
+                        [
+                            "w",
+                            "La intervención de Abogado es preceptiva cuando el valor de la finca supera los 6.000 euros.",
+                        ],
+                        [
+                            "n",
+                            "Esta cuantía coincide con la que delimita el juicio verbal y el juicio ordinario en la Ley de Enjuiciamiento Civil, de modo que, si el expediente deviene contencioso, el proceso declarativo posterior se tramitará conforme a esas reglas.",
+                        ],
+                        ["l", "Artículo 105.3 LJV"],
+                    ],
+                    nx: "solicitud",
+                },
 
-  "con_abogado": {
-    ph: 1,
-    t: "Intervención preceptiva de Abogado",
-    ac: "laj",
-    c: [
-      ["i", "Al superar el valor de la finca los 6.000 euros, será preceptiva la intervención de Abogado en la tramitación del expediente."],
-      ["w", "La intervención de Abogado es preceptiva cuando el valor de la finca supera los 6.000 euros."],
-      ["n", "Esta cuantía coincide con la que delimita el juicio verbal y el juicio ordinario en la Ley de Enjuiciamiento Civil, de modo que, si el expediente deviene contencioso, el proceso declarativo posterior se tramitará conforme a esas reglas."],
-      ["l", "Artículo 105.3 LJV"]
-    ],
-    nx: "solicitud"
-  },
+                sin_abogado: {
+                    ph: 1,
+                    t: "Intervención facultativa de Abogado",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Al no superar el valor de la finca los 6.000 euros, la intervención de Abogado no es preceptiva.",
+                        ],
+                        [
+                            "n",
+                            "La postulación procesal tendrá, en consecuencia, carácter facultativo.",
+                        ],
+                        ["l", "Artículo 105.3 LJV"],
+                    ],
+                    nx: "solicitud",
+                },
 
-  "sin_abogado": {
-    ph: 1,
-    t: "Intervención facultativa de Abogado",
-    ac: "laj",
-    c: [
-      ["i", "Al no superar el valor de la finca los 6.000 euros, la intervención de Abogado no es preceptiva."],
-      ["n", "La postulación procesal tendrá, en consecuencia, carácter facultativo."],
-      ["l", "Artículo 105.3 LJV"]
-    ],
-    nx: "solicitud"
-  },
+                /* ---------- FASE 2: SOLICITUD ---------- */
+                solicitud: {
+                    ph: 2,
+                    t: "Redacción del escrito de iniciación",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Se procede a la redacción del escrito mediante el cual se iniciará el expediente.",
+                        ],
+                        [
+                            "cl",
+                            "Contenido obligatorio del escrito",
+                            [
+                                "Circunstancias de la finca que se pretende deslindar",
+                                "Circunstancias de las fincas colindantes",
+                                "Datos identificativos de los titulares de la finca a deslindar, incluidos los catastrales, con su domicilio si fuera conocido por el solicitante",
+                                "Datos identificativos de los titulares de las fincas colindantes, incluidos los catastrales, con su domicilio si fuera conocido por el solicitante",
+                                "Cuando el deslinde no se refiera a la totalidad del perímetro de la finca, determinación de la parte a que haya de contraerse",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Se admite el deslinde parcial, posibilidad avalada por la jurisprudencia y por la Dirección General de Seguridad Jurídica y Fe Pública, y recogida expresamente en el artículo 200 de la Ley Hipotecaria para fincas inscritas.",
+                        ],
+                        ["l", "Artículo 106.1 LJV — Solicitud"],
+                    ],
+                    nx: "documentacion",
+                },
 
-  /* ---------- FASE 2: SOLICITUD ---------- */
-  "solicitud": {
-    ph: 2,
-    t: "Redacción del escrito de iniciación",
-    ac: "ambos",
-    c: [
-      ["i", "Se procede a la redacción del escrito mediante el cual se iniciará el expediente."],
-      ["cl", "Contenido obligatorio del escrito", [
-        "Circunstancias de la finca que se pretende deslindar",
-        "Circunstancias de las fincas colindantes",
-        "Datos identificativos de los titulares de la finca a deslindar, incluidos los catastrales, con su domicilio si fuera conocido por el solicitante",
-        "Datos identificativos de los titulares de las fincas colindantes, incluidos los catastrales, con su domicilio si fuera conocido por el solicitante",
-        "Cuando el deslinde no se refiera a la totalidad del perímetro de la finca, determinación de la parte a que haya de contraerse"
-      ]],
-      ["n", "Se admite el deslinde parcial, posibilidad avalada por la jurisprudencia y por la Dirección General de Seguridad Jurídica y Fe Pública, y recogida expresamente en el artículo 200 de la Ley Hipotecaria para fincas inscritas."],
-      ["l", "Artículo 106.1 LJV — Solicitud"]
-    ],
-    nx: "documentacion"
-  },
+                documentacion: {
+                    ph: 2,
+                    t: "Aportación de documentación preceptiva",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Al escrito deberá acompañarse, en todo caso, la documentación exigida por la norma.",
+                        ],
+                        [
+                            "cl",
+                            "Documentación preceptiva",
+                            [
+                                "Certificación registral respecto de las fincas colindantes que aparezcan inscritas en el Registro de la Propiedad",
+                                "Certificación catastral descriptiva y gráfica de la finca objeto del deslinde",
+                                "Certificación catastral descriptiva y gráfica de las fincas colindantes",
+                                "Documentos o justificantes que sirvan de fundamento a la pretensión (títulos de propiedad, mediciones, planos, actas notariales previas, etc.)",
+                            ],
+                        ],
+                        ["l", "Artículo 106.1 LJV, párrafos segundo y tercero"],
+                    ],
+                    nx: "rep_grafica",
+                },
 
-  "documentacion": {
-    ph: 2,
-    t: "Aportación de documentación preceptiva",
-    ac: "ambos",
-    c: [
-      ["i", "Al escrito deberá acompañarse, en todo caso, la documentación exigida por la norma."],
-      ["cl", "Documentación preceptiva", [
-        "Certificación registral respecto de las fincas colindantes que aparezcan inscritas en el Registro de la Propiedad",
-        "Certificación catastral descriptiva y gráfica de la finca objeto del deslinde",
-        "Certificación catastral descriptiva y gráfica de las fincas colindantes",
-        "Documentos o justificantes que sirvan de fundamento a la pretensión (títulos de propiedad, mediciones, planos, actas notariales previas, etc.)"
-      ]],
-      ["l", "Artículo 106.1 LJV, párrafos segundo y tercero"]
-    ],
-    nx: "rep_grafica"
-  },
+                rep_grafica: {
+                    ph: 2,
+                    t: "Representación gráfica: cotejo con la catastral",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Debe comprobarse si la representación gráfica catastral coincide con el deslinde que se solicita, para determinar si basta con aquella o es necesaria una representación gráfica alternativa.",
+                        ],
+                        ["l", "Artículo 106.1 LJV, párrafos cuarto a sexto"],
+                    ],
+                    q: "¿Coincide la representación gráfica catastral con el deslinde solicitado?",
+                    opts: [
+                        {
+                            t: "Sí, coincide con la representación catastral",
+                            l: "A",
+                            v: "ok",
+                            n: "presentacion",
+                        },
+                        {
+                            t: "No, no coincide con la catastral",
+                            l: "B",
+                            v: "warn",
+                            n: "rep_alternativa",
+                        },
+                    ],
+                },
 
-  "rep_grafica": {
-    ph: 2,
-    t: "Representación gráfica: cotejo con la catastral",
-    ac: "ambos",
-    c: [
-      ["i", "Debe comprobarse si la representación gráfica catastral coincide con el deslinde que se solicita, para determinar si basta con aquella o es necesaria una representación gráfica alternativa."],
-      ["l", "Artículo 106.1 LJV, párrafos cuarto a sexto"]
-    ],
-    q: "¿Coincide la representación gráfica catastral con el deslinde solicitado?",
-    opts: [
-      { t: "Sí, coincide con la representación catastral", l: "A", v: "ok",   n: "presentacion" },
-      { t: "No, no coincide con la catastral",             l: "B", v: "warn", n: "rep_alternativa" }
-    ]
-  },
+                rep_alternativa: {
+                    ph: 2,
+                    t: "Aportación de representación gráfica alternativa",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "El promotor manifiesta que la representación gráfica catastral no coincide con la del deslinde solicitado.",
+                        ],
+                        [
+                            "w",
+                            "Deberá aportar representación gráfica georreferenciada del mismo.",
+                        ],
+                        [
+                            "cl",
+                            "Requisitos de la representación gráfica alternativa",
+                            [
+                                "Debe respetar el resto de la delimitación de las fincas afectadas que resulten de la cartografía catastral en lo no afectado por el deslinde",
+                                "Debe estar debidamente georreferenciada",
+                                "Debe estar suscrita por técnico competente",
+                                "Debe permitir su incorporación al Catastro una vez practicado el deslinde",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Artículo 106.1 LJV, párrafos quinto y sexto; Texto Refundido de la Ley del Catastro Inmobiliario (RDLeg 1/2004)",
+                        ],
+                    ],
+                    nx: "presentacion",
+                },
 
-  "rep_alternativa": {
-    ph: 2,
-    t: "Aportación de representación gráfica alternativa",
-    ac: "ambos",
-    c: [
-      ["i", "El promotor manifiesta que la representación gráfica catastral no coincide con la del deslinde solicitado."],
-      ["w", "Deberá aportar representación gráfica georreferenciada del mismo."],
-      ["cl", "Requisitos de la representación gráfica alternativa", [
-        "Debe respetar el resto de la delimitación de las fincas afectadas que resulten de la cartografía catastral en lo no afectado por el deslinde",
-        "Debe estar debidamente georreferenciada",
-        "Debe estar suscrita por técnico competente",
-        "Debe permitir su incorporación al Catastro una vez practicado el deslinde"
-      ]],
-      ["l", "Artículo 106.1 LJV, párrafos quinto y sexto; Texto Refundido de la Ley del Catastro Inmobiliario (RDLeg 1/2004)"]
-    ],
-    nx: "presentacion"
-  },
+                presentacion: {
+                    ph: 2,
+                    t: "Presentación de la solicitud en el Juzgado",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Completada la preparación documental, se presenta la solicitud, junto con toda la documentación, ante el Juzgado de Primera Instancia competente.",
+                        ],
+                        [
+                            "n",
+                            "El escrito se dirige al Secretario judicial (Letrado de la Administración de Justicia) del Juzgado de Primera Instancia del lugar donde esté situada la finca o la mayor parte de ella.",
+                        ],
+                        ["l", "Artículos 105.1 y 106.1 LJV"],
+                    ],
+                    nx: "admision",
+                },
 
-  "presentacion": {
-    ph: 2,
-    t: "Presentación de la solicitud en el Juzgado",
-    ac: "ambos",
-    c: [
-      ["i", "Completada la preparación documental, se presenta la solicitud, junto con toda la documentación, ante el Juzgado de Primera Instancia competente."],
-      ["n", "El escrito se dirige al Secretario judicial (Letrado de la Administración de Justicia) del Juzgado de Primera Instancia del lugar donde esté situada la finca o la mayor parte de ella."],
-      ["l", "Artículos 105.1 y 106.1 LJV"]
-    ],
-    nx: "admision"
-  },
+                /* ---------- FASE 3: TRAMITACIÓN ---------- */
+                admision: {
+                    ph: 3,
+                    t: "Admisión y comunicación del inicio a los interesados",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Recibida la solicitud, el Secretario judicial resuelve sobre su admisión y, en caso de admitirla, comunica el inicio del expediente a todos los interesados.",
+                        ],
+                        [
+                            "n",
+                            "El Secretario judicial, admitida la solicitud, comunicará el inicio del expediente a todos los interesados.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del LAJ tras la admisión",
+                            [
+                                "Dictar la correspondiente resolución de admisión",
+                                "Identificar a todos los interesados (solicitante, titulares de fincas colindantes, titulares de derechos reales afectados)",
+                                "Comunicar el inicio del expediente a cada uno de ellos",
+                            ],
+                        ],
+                        ["l", "Artículo 106.2 LJV, párrafo primero"],
+                    ],
+                    nx: "alegaciones",
+                },
 
-  /* ---------- FASE 3: TRAMITACIÓN ---------- */
-  "admision": {
-    ph: 3,
-    t: "Admisión y comunicación del inicio a los interesados",
-    ac: "laj",
-    c: [
-      ["i", "Recibida la solicitud, el Secretario judicial resuelve sobre su admisión y, en caso de admitirla, comunica el inicio del expediente a todos los interesados."],
-      ["n", "El Secretario judicial, admitida la solicitud, comunicará el inicio del expediente a todos los interesados."],
-      ["cl", "Actuaciones del LAJ tras la admisión", [
-        "Dictar la correspondiente resolución de admisión",
-        "Identificar a todos los interesados (solicitante, titulares de fincas colindantes, titulares de derechos reales afectados)",
-        "Comunicar el inicio del expediente a cada uno de ellos"
-      ]],
-      ["l", "Artículo 106.2 LJV, párrafo primero"]
-    ],
-    nx: "alegaciones"
-  },
+                alegaciones: {
+                    ph: 3,
+                    t: "Fase de alegaciones y pruebas",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Comunicado el inicio del expediente, se abre el plazo para que los interesados presenten alegaciones y pruebas.",
+                        ],
+                        [
+                            "d",
+                            "Plazo: quince días desde la comunicación del inicio del expediente.",
+                        ],
+                        [
+                            "n",
+                            "Los interesados, en el plazo de quince días, podrán hacer las alegaciones y presentar las pruebas que estimen procedentes.",
+                        ],
+                        ["l", "Artículo 106.2 LJV, párrafo primero"],
+                    ],
+                    q: "Durante este plazo (o antes de la comparecencia), ¿se opone al deslinde el dueño de alguna finca colindante?",
+                    opts: [
+                        {
+                            t: "Sí, hay oposición de un colindante",
+                            l: "A",
+                            v: "warn",
+                            n: "archivo_parcial",
+                        },
+                        {
+                            t: "No, no hay oposición previa",
+                            l: "B",
+                            v: "ok",
+                            n: "traslado",
+                        },
+                    ],
+                },
 
-  "alegaciones": {
-    ph: 3,
-    t: "Fase de alegaciones y pruebas",
-    ac: "laj",
-    c: [
-      ["i", "Comunicado el inicio del expediente, se abre el plazo para que los interesados presenten alegaciones y pruebas."],
-      ["d", "Plazo: quince días desde la comunicación del inicio del expediente."],
-      ["n", "Los interesados, en el plazo de quince días, podrán hacer las alegaciones y presentar las pruebas que estimen procedentes."],
-      ["l", "Artículo 106.2 LJV, párrafo primero"]
-    ],
-    q: "Durante este plazo (o antes de la comparecencia), ¿se opone al deslinde el dueño de alguna finca colindante?",
-    opts: [
-      { t: "Sí, hay oposición de un colindante", l: "A", v: "warn", n: "archivo_parcial" },
-      { t: "No, no hay oposición previa",        l: "B", v: "ok",   n: "traslado" }
-    ]
-  },
+                archivo_parcial: {
+                    ph: 3,
+                    t: "Archivo parcial por oposición previa a la comparecencia",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Antes de la comparecencia, el dueño de alguna de las fincas colindantes se ha opuesto al deslinde.",
+                        ],
+                        [
+                            "w",
+                            "Si antes de la comparecencia, el dueño de alguna de las fincas colindantes se opusiera al deslinde, archivará el expediente en relación a la parte de la finca lindante con la del opositor, reservando a las partes su derecho para que lo ejerciten en el juicio declarativo que corresponda.",
+                        ],
+                        [
+                            "n",
+                            "El expediente continuará respecto del resto de linderos no afectados por la oposición.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del LAJ ante la oposición previa",
+                            [
+                                "Archivar el expediente en la parte relativa al lindero con el opositor",
+                                "Hacer constar la reserva a las partes para acudir al juicio declarativo que corresponda",
+                                "Continuar con el resto de linderos no afectados por la oposición",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Artículo 106.2 LJV, párrafo cuarto; artículo 17.3 LJV (archivo por oposición, régimen general)",
+                        ],
+                    ],
+                    nx: "traslado",
+                },
 
-  "archivo_parcial": {
-    ph: 3,
-    t: "Archivo parcial por oposición previa a la comparecencia",
-    ac: "laj",
-    c: [
-      ["i", "Antes de la comparecencia, el dueño de alguna de las fincas colindantes se ha opuesto al deslinde."],
-      ["w", "Si antes de la comparecencia, el dueño de alguna de las fincas colindantes se opusiera al deslinde, archivará el expediente en relación a la parte de la finca lindante con la del opositor, reservando a las partes su derecho para que lo ejerciten en el juicio declarativo que corresponda."],
-      ["n", "El expediente continuará respecto del resto de linderos no afectados por la oposición."],
-      ["cl", "Actuaciones del LAJ ante la oposición previa", [
-        "Archivar el expediente en la parte relativa al lindero con el opositor",
-        "Hacer constar la reserva a las partes para acudir al juicio declarativo que corresponda",
-        "Continuar con el resto de linderos no afectados por la oposición"
-      ]],
-      ["l", "Artículo 106.2 LJV, párrafo cuarto; artículo 17.3 LJV (archivo por oposición, régimen general)"]
-    ],
-    nx: "traslado"
-  },
+                traslado: {
+                    ph: 3,
+                    t: "Traslado de documentación y citación al acto de deslinde",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Transcurrido el plazo de alegaciones (o, en su caso, tras el archivo parcial del lindero afectado por la oposición), el LAJ traslada la documentación a los interesados y los cita al acto de deslinde.",
+                        ],
+                        [
+                            "d",
+                            "Plazo: treinta días para la celebración del acto de deslinde.",
+                        ],
+                        [
+                            "n",
+                            "Transcurrido el plazo, el Secretario judicial dará traslado a dichos interesados de toda la documentación aportada y les citará al acto de deslinde a celebrar en el plazo de treinta días para buscar la avenencia entre ellos.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones del LAJ",
+                            [
+                                "Dar traslado a los interesados de toda la documentación aportada",
+                                "Citarles al acto de deslinde",
+                                "Señalar el acto dentro del plazo de treinta días",
+                            ],
+                        ],
+                        ["l", "Artículo 106.2 LJV, párrafo segundo"],
+                    ],
+                    nx: "acto_deslinde",
+                },
 
-  "traslado": {
-    ph: 3,
-    t: "Traslado de documentación y citación al acto de deslinde",
-    ac: "laj",
-    c: [
-      ["i", "Transcurrido el plazo de alegaciones (o, en su caso, tras el archivo parcial del lindero afectado por la oposición), el LAJ traslada la documentación a los interesados y los cita al acto de deslinde."],
-      ["d", "Plazo: treinta días para la celebración del acto de deslinde."],
-      ["n", "Transcurrido el plazo, el Secretario judicial dará traslado a dichos interesados de toda la documentación aportada y les citará al acto de deslinde a celebrar en el plazo de treinta días para buscar la avenencia entre ellos."],
-      ["cl", "Actuaciones del LAJ", [
-        "Dar traslado a los interesados de toda la documentación aportada",
-        "Citarles al acto de deslinde",
-        "Señalar el acto dentro del plazo de treinta días"
-      ]],
-      ["l", "Artículo 106.2 LJV, párrafo segundo"]
-    ],
-    nx: "acto_deslinde"
-  },
+                /* ---------- FASE 4: ACTO DE DESLINDE ---------- */
+                acto_deslinde: {
+                    ph: 4,
+                    t: "Celebración del acto de deslinde",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Llegada la fecha señalada, se celebra el acto de deslinde con los interesados que hayan comparecido, con el objetivo de alcanzar la avenencia.",
+                        ],
+                        [
+                            "w",
+                            "No se suspenderá la práctica del deslinde por la falta de asistencia de alguno de los dueños colindantes, quedando a salvo su derecho para demandar, en el juicio declarativo que corresponda, la posesión o propiedad de las que se creyese despojado en virtud del deslinde.",
+                        ],
+                        [
+                            "n",
+                            "La comparecencia no es obligatoria, lo que resulta coherente con la naturaleza voluntaria del expediente (artículo 1.2 LJV).",
+                        ],
+                        ["l", "Artículo 106.2 LJV, párrafo tercero"],
+                    ],
+                    q: "¿Qué resultado se obtiene en el acto de deslinde?",
+                    opts: [
+                        {
+                            t: "Avenencia total entre todos los interesados",
+                            l: "A",
+                            v: "ok",
+                            n: "fin_avenencia_total",
+                        },
+                        {
+                            t: "Avenencia parcial (solo respecto de algunos linderos)",
+                            l: "B",
+                            v: "warn",
+                            n: "fin_avenencia_parcial",
+                        },
+                        {
+                            t: "No se logra acuerdo alguno",
+                            l: "C",
+                            v: "neutral",
+                            n: "fin_sin_avenencia",
+                        },
+                    ],
+                },
 
-  /* ---------- FASE 4: ACTO DE DESLINDE ---------- */
-  "acto_deslinde": {
-    ph: 4,
-    t: "Celebración del acto de deslinde",
-    ac: "laj",
-    c: [
-      ["i", "Llegada la fecha señalada, se celebra el acto de deslinde con los interesados que hayan comparecido, con el objetivo de alcanzar la avenencia."],
-      ["w", "No se suspenderá la práctica del deslinde por la falta de asistencia de alguno de los dueños colindantes, quedando a salvo su derecho para demandar, en el juicio declarativo que corresponda, la posesión o propiedad de las que se creyese despojado en virtud del deslinde."],
-      ["n", "La comparecencia no es obligatoria, lo que resulta coherente con la naturaleza voluntaria del expediente (artículo 1.2 LJV)."],
-      ["l", "Artículo 106.2 LJV, párrafo tercero"]
-    ],
-    q: "¿Qué resultado se obtiene en el acto de deslinde?",
-    opts: [
-      { t: "Avenencia total entre todos los interesados",             l: "A", v: "ok",      n: "fin_avenencia_total" },
-      { t: "Avenencia parcial (solo respecto de algunos linderos)",   l: "B", v: "warn",    n: "fin_avenencia_parcial" },
-      { t: "No se logra acuerdo alguno",                              l: "C", v: "neutral", n: "fin_sin_avenencia" }
-    ]
-  },
+                /* ---------- FASE 5: RESOLUCIÓN (FINALES) ---------- */
+                fin_avenencia_total: {
+                    ph: 5,
+                    t: "Avenencia total entre los interesados",
+                    ac: "laj",
+                    end: "success",
+                    c: [
+                        [
+                            "i",
+                            "Se ha logrado el acuerdo entre todos los interesados respecto a la totalidad de los linderos objeto del deslinde.",
+                        ],
+                        [
+                            "n",
+                            "El Secretario judicial hará constar en un acta todo cuanto acuerden y que el acto terminó con avenencia total, así como los términos de la misma, debiendo ser firmada por los comparecientes.",
+                        ],
+                        [
+                            "n",
+                            "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar la avenencia, acordándose el archivo definitivo de las actuaciones.",
+                        ],
+                        [
+                            "n",
+                            "Al decreto se incorporará el acta y, en todo caso, la certificación catastral descriptiva y gráfica y, en el supuesto de discordancia con esta, la representación gráfica alternativa aportada.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones finales del LAJ",
+                            [
+                                "Levantar acta firmada por los comparecientes haciendo constar la avenencia total y sus términos",
+                                "Dictar decreto haciendo constar la avenencia",
+                                "Acordar el archivo definitivo de las actuaciones",
+                                "Incorporar al decreto el acta y la certificación catastral (o representación gráfica alternativa en caso de discordancia)",
+                                "Remitir testimonio del acta y del decreto al Catastro para las alteraciones catastrales que correspondan",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Artículo 107 LJV — Resolución; Texto Refundido de la Ley del Catastro Inmobiliario (RDLeg 1/2004)",
+                        ],
+                    ],
+                },
 
-  /* ---------- FASE 5: RESOLUCIÓN (FINALES) ---------- */
-  "fin_avenencia_total": {
-    ph: 5,
-    t: "Avenencia total entre los interesados",
-    ac: "laj",
-    end: "success",
-    c: [
-      ["i", "Se ha logrado el acuerdo entre todos los interesados respecto a la totalidad de los linderos objeto del deslinde."],
-      ["n", "El Secretario judicial hará constar en un acta todo cuanto acuerden y que el acto terminó con avenencia total, así como los términos de la misma, debiendo ser firmada por los comparecientes."],
-      ["n", "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar la avenencia, acordándose el archivo definitivo de las actuaciones."],
-      ["n", "Al decreto se incorporará el acta y, en todo caso, la certificación catastral descriptiva y gráfica y, en el supuesto de discordancia con esta, la representación gráfica alternativa aportada."],
-      ["cl", "Actuaciones finales del LAJ", [
-        "Levantar acta firmada por los comparecientes haciendo constar la avenencia total y sus términos",
-        "Dictar decreto haciendo constar la avenencia",
-        "Acordar el archivo definitivo de las actuaciones",
-        "Incorporar al decreto el acta y la certificación catastral (o representación gráfica alternativa en caso de discordancia)",
-        "Remitir testimonio del acta y del decreto al Catastro para las alteraciones catastrales que correspondan"
-      ]],
-      ["l", "Artículo 107 LJV — Resolución; Texto Refundido de la Ley del Catastro Inmobiliario (RDLeg 1/2004)"]
-    ]
-  },
+                fin_avenencia_parcial: {
+                    ph: 5,
+                    t: "Avenencia parcial respecto de alguno o algunos de los linderos",
+                    ac: "laj",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "Se ha logrado avenencia parcial: el acuerdo afecta solo a alguno o algunos de los linderos objeto del deslinde.",
+                        ],
+                        [
+                            "n",
+                            "El Secretario judicial hará constar en acta todo cuanto acuerden y que el acto terminó con avenencia parcial respecto de alguno o algunos de los linderos, así como los términos de la misma, debiendo ser firmada por los comparecientes.",
+                        ],
+                        [
+                            "n",
+                            "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar que la avenencia fue parcial respecto de alguno o algunos de los linderos, acordándose el archivo definitivo de las actuaciones.",
+                        ],
+                        [
+                            "n",
+                            "Al decreto se incorporará el acta y, en todo caso, la certificación catastral descriptiva y gráfica y, en el supuesto de discordancia con esta, la representación gráfica alternativa aportada.",
+                        ],
+                        [
+                            "w",
+                            "Sobre los linderos respecto de los que no se alcanzó acuerdo queda a salvo el derecho de los interesados para ejercitarlo en el juicio declarativo que corresponda, donde regirán los criterios sustantivos de los artículos 385 a 387 del Código Civil.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones finales del LAJ",
+                            [
+                                "Levantar acta firmada por los comparecientes haciendo constar la avenencia parcial",
+                                "Dictar decreto haciendo constar la avenencia parcial respecto de los linderos concretos",
+                                "Incorporar al decreto el acta y la certificación catastral (o representación gráfica alternativa)",
+                                "Remitir testimonio del acta y del decreto al Catastro a los efectos de las alteraciones catastrales que correspondan",
+                                "Reservar a las partes su derecho a acudir al juicio declarativo respecto de los linderos sin acuerdo",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Artículo 107 LJV; artículos 385 a 387 del Código Civil",
+                        ],
+                    ],
+                },
 
-  "fin_avenencia_parcial": {
-    ph: 5,
-    t: "Avenencia parcial respecto de alguno o algunos de los linderos",
-    ac: "laj",
-    end: "warning",
-    c: [
-      ["i", "Se ha logrado avenencia parcial: el acuerdo afecta solo a alguno o algunos de los linderos objeto del deslinde."],
-      ["n", "El Secretario judicial hará constar en acta todo cuanto acuerden y que el acto terminó con avenencia parcial respecto de alguno o algunos de los linderos, así como los términos de la misma, debiendo ser firmada por los comparecientes."],
-      ["n", "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar que la avenencia fue parcial respecto de alguno o algunos de los linderos, acordándose el archivo definitivo de las actuaciones."],
-      ["n", "Al decreto se incorporará el acta y, en todo caso, la certificación catastral descriptiva y gráfica y, en el supuesto de discordancia con esta, la representación gráfica alternativa aportada."],
-      ["w", "Sobre los linderos respecto de los que no se alcanzó acuerdo queda a salvo el derecho de los interesados para ejercitarlo en el juicio declarativo que corresponda, donde regirán los criterios sustantivos de los artículos 385 a 387 del Código Civil."],
-      ["cl", "Actuaciones finales del LAJ", [
-        "Levantar acta firmada por los comparecientes haciendo constar la avenencia parcial",
-        "Dictar decreto haciendo constar la avenencia parcial respecto de los linderos concretos",
-        "Incorporar al decreto el acta y la certificación catastral (o representación gráfica alternativa)",
-        "Remitir testimonio del acta y del decreto al Catastro a los efectos de las alteraciones catastrales que correspondan",
-        "Reservar a las partes su derecho a acudir al juicio declarativo respecto de los linderos sin acuerdo"
-      ]],
-      ["l", "Artículo 107 LJV; artículos 385 a 387 del Código Civil"]
-    ]
-  },
+                fin_sin_avenencia: {
+                    ph: 5,
+                    t: "Acto celebrado sin avenencia",
+                    ac: "laj",
+                    end: "neutral",
+                    c: [
+                        [
+                            "i",
+                            "No ha podido conseguirse acuerdo alguno entre los interesados.",
+                        ],
+                        [
+                            "n",
+                            "Si no pudiere conseguirse acuerdo alguno, se hará constar que el acto terminó sin avenencia.",
+                        ],
+                        [
+                            "n",
+                            "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar que se celebró sin avenencia, acordándose el archivo definitivo de las actuaciones.",
+                        ],
+                        [
+                            "w",
+                            "Queda a salvo el derecho de los interesados para ejercitarlo en el juicio declarativo que corresponda, donde se aplicarán los criterios sustantivos del Código Civil.",
+                        ],
+                        [
+                            "cl",
+                            "Actuaciones finales del LAJ",
+                            [
+                                "Hacer constar en acta que el acto terminó sin avenencia",
+                                "Dictar decreto haciendo constar que se celebró sin avenencia",
+                                "Acordar el archivo definitivo de las actuaciones",
+                                "Reservar a las partes su derecho a acudir al juicio declarativo correspondiente",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "En el juicio declarativo posterior regirán los artículos 385 a 387 del Código Civil: el deslinde se hará en conformidad con los títulos de cada propietario y, a falta de títulos suficientes, por lo que resultare de la posesión; en defecto de ambos, distribuyendo el terreno en partes iguales; y, si los títulos indicasen un espacio mayor o menor que el total, distribuyendo la diferencia proporcionalmente.",
+                        ],
+                        [
+                            "l",
+                            "Artículo 107 LJV; artículos 385 a 387 del Código Civil",
+                        ],
+                    ],
+                },
 
-  "fin_sin_avenencia": {
-    ph: 5,
-    t: "Acto celebrado sin avenencia",
-    ac: "laj",
-    end: "neutral",
-    c: [
-      ["i", "No ha podido conseguirse acuerdo alguno entre los interesados."],
-      ["n", "Si no pudiere conseguirse acuerdo alguno, se hará constar que el acto terminó sin avenencia."],
-      ["n", "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar que se celebró sin avenencia, acordándose el archivo definitivo de las actuaciones."],
-      ["w", "Queda a salvo el derecho de los interesados para ejercitarlo en el juicio declarativo que corresponda, donde se aplicarán los criterios sustantivos del Código Civil."],
-      ["cl", "Actuaciones finales del LAJ", [
-        "Hacer constar en acta que el acto terminó sin avenencia",
-        "Dictar decreto haciendo constar que se celebró sin avenencia",
-        "Acordar el archivo definitivo de las actuaciones",
-        "Reservar a las partes su derecho a acudir al juicio declarativo correspondiente"
-      ]],
-      ["n", "En el juicio declarativo posterior regirán los artículos 385 a 387 del Código Civil: el deslinde se hará en conformidad con los títulos de cada propietario y, a falta de títulos suficientes, por lo que resultare de la posesión; en defecto de ambos, distribuyendo el terreno en partes iguales; y, si los títulos indicasen un espacio mayor o menor que el total, distribuyendo la diferencia proporcionalmente."],
-      ["l", "Artículo 107 LJV; artículos 385 a 387 del Código Civil"]
-    ]
-  },
+                fin_inscrita: {
+                    ph: 0,
+                    t: "Expediente improcedente: finca inscrita",
+                    ac: "laj",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "El expediente regulado en los artículos 104 a 107 de la Ley 15/2015 no es aplicable a fincas inscritas.",
+                        ],
+                        [
+                            "w",
+                            "Tratándose de fincas inscritas, se aplicará lo dispuesto en la legislación hipotecaria.",
+                        ],
+                        [
+                            "n",
+                            "Debe remitirse al interesado al expediente notarial de deslinde previsto en el artículo 200 de la Ley Hipotecaria (en la redacción dada por la Ley 13/2015, de 24 de junio).",
+                        ],
+                        [
+                            "cl",
+                            "Vía alternativa",
+                            [
+                                "Expediente notarial de deslinde del artículo 200 LH",
+                                "Competencia: Notario del distrito donde radique la finca o en uno de los distritos colindantes",
+                                "En caso de oposición, cauce judicial contencioso (juicio verbal u ordinario según cuantía, LEC)",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Artículo 104 LJV; artículo 200 de la Ley Hipotecaria; Ley 13/2015, de 24 de junio",
+                        ],
+                    ],
+                },
 
-  "fin_inscrita": {
-    ph: 0,
-    t: "Expediente improcedente: finca inscrita",
-    ac: "laj",
-    end: "error",
-    c: [
-      ["i", "El expediente regulado en los artículos 104 a 107 de la Ley 15/2015 no es aplicable a fincas inscritas."],
-      ["w", "Tratándose de fincas inscritas, se aplicará lo dispuesto en la legislación hipotecaria."],
-      ["n", "Debe remitirse al interesado al expediente notarial de deslinde previsto en el artículo 200 de la Ley Hipotecaria (en la redacción dada por la Ley 13/2015, de 24 de junio)."],
-      ["cl", "Vía alternativa", [
-        "Expediente notarial de deslinde del artículo 200 LH",
-        "Competencia: Notario del distrito donde radique la finca o en uno de los distritos colindantes",
-        "En caso de oposición, cauce judicial contencioso (juicio verbal u ordinario según cuantía, LEC)"
-      ]],
-      ["l", "Artículo 104 LJV; artículo 200 de la Ley Hipotecaria; Ley 13/2015, de 24 de junio"]
-    ]
-  },
+                fin_admin: {
+                    ph: 0,
+                    t: "Expediente improcedente: inmueble de Administración Pública",
+                    ac: "laj",
+                    end: "error",
+                    c: [
+                        [
+                            "i",
+                            "El expediente regulado en los artículos 104 a 107 LJV no resulta aplicable a los inmuebles de titularidad pública.",
+                        ],
+                        [
+                            "w",
+                            "No resultarán de aplicación a los inmuebles cuya titularidad corresponda a las Administraciones Públicas, cuyo deslinde se practicará conforme a su legislación específica.",
+                        ],
+                        [
+                            "n",
+                            "Procederá aplicar los artículos 50 y siguientes de la Ley 33/2003, de 3 de noviembre, del Patrimonio de las Administraciones Públicas, y, en su caso, la legislación sectorial correspondiente (Ley 43/2003 de Montes, Ley 22/1988 de Costas, Ley 3/1995 de Vías Pecuarias, TR Ley de Aguas, etc.).",
+                        ],
+                        [
+                            "l",
+                            "Artículo 104 LJV; artículos 50 a 54 de la Ley 33/2003, de 3 de noviembre, del Patrimonio de las Administraciones Públicas",
+                        ],
+                    ],
+                },
 
-  "fin_admin": {
-    ph: 0,
-    t: "Expediente improcedente: inmueble de Administración Pública",
-    ac: "laj",
-    end: "error",
-    c: [
-      ["i", "El expediente regulado en los artículos 104 a 107 LJV no resulta aplicable a los inmuebles de titularidad pública."],
-      ["w", "No resultarán de aplicación a los inmuebles cuya titularidad corresponda a las Administraciones Públicas, cuyo deslinde se practicará conforme a su legislación específica."],
-      ["n", "Procederá aplicar los artículos 50 y siguientes de la Ley 33/2003, de 3 de noviembre, del Patrimonio de las Administraciones Públicas, y, en su caso, la legislación sectorial correspondiente (Ley 43/2003 de Montes, Ley 22/1988 de Costas, Ley 3/1995 de Vías Pecuarias, TR Ley de Aguas, etc.)."],
-      ["l", "Artículo 104 LJV; artículos 50 a 54 de la Ley 33/2003, de 3 de noviembre, del Patrimonio de las Administraciones Públicas"]
-    ]
-  },
+                fin_sin_confusion: {
+                    ph: 0,
+                    t: "No concurre el presupuesto material: inexistencia de confusión de linderos",
+                    ac: "laj",
+                    end: "warning",
+                    c: [
+                        [
+                            "i",
+                            "No se cumple el presupuesto material de la acción de deslinde.",
+                        ],
+                        [
+                            "w",
+                            "La jurisprudencia exige la existencia de confusión de linderos como requisito objetivo. Si los predios están perfectamente identificados y delimitados, no cabe el ejercicio de esta acción.",
+                        ],
+                        [
+                            "n",
+                            "En caso de controversia sobre la propiedad o la posesión que no se reduzca a la delimitación física de la finca, el cauce procesal adecuado es la acción reivindicatoria, la declarativa de dominio u otra acción contenciosa, no el expediente de jurisdicción voluntaria del Capítulo II del Título VI de la LJV.",
+                        ],
+                        [
+                            "l",
+                            "Artículos 384 a 387 del Código Civil; jurisprudencia del Tribunal Supremo (entre otras, STS 1.ª de 14 de octubre de 1991)",
+                        ],
+                    ],
+                },
+            };
 
-  "fin_sin_confusion": {
-    ph: 0,
-    t: "No concurre el presupuesto material: inexistencia de confusión de linderos",
-    ac: "laj",
-    end: "warning",
-    c: [
-      ["i", "No se cumple el presupuesto material de la acción de deslinde."],
-      ["w", "La jurisprudencia exige la existencia de confusión de linderos como requisito objetivo. Si los predios están perfectamente identificados y delimitados, no cabe el ejercicio de esta acción."],
-      ["n", "En caso de controversia sobre la propiedad o la posesión que no se reduzca a la delimitación física de la finca, el cauce procesal adecuado es la acción reivindicatoria, la declarativa de dominio u otra acción contenciosa, no el expediente de jurisdicción voluntaria del Capítulo II del Título VI de la LJV."],
-      ["l", "Artículos 384 a 387 del Código Civil; jurisprudencia del Tribunal Supremo (entre otras, STS 1.ª de 14 de octubre de 1991)"]
-    ]
-  }
-};
-
-/* =========================================================
+            /* =========================================================
    MÓDULO 16 — ESTADO GLOBAL
    ========================================================= */
-let cur = 'inicio';
-let hist = [];
-let activeSbTab = 'map';
-let mapaOn = false;
-let collapsedPhases = {}; // Estado colapso/expansión del mapa sidebar
+            let cur = "inicio";
+            let hist = [];
+            let activeSbTab = "map";
+            let mapaOn = false;
+            let collapsedPhases = {}; // Estado colapso/expansión del mapa sidebar
+            let zoomLevel = 100;
+            const SB_FOOT =
+                '<div class="sb-foot">' +
+                "<strong>Referencias normativas</strong>" +
+                "Ley 15/2015, arts. 104–107<br>" +
+                "Código Civil, arts. 384–387<br>" +
+                "Ley Hipotecaria, art. 200<br>" +
+                "Ley 33/2003, arts. 50 y ss.<br>" +
+                "RDLeg 1/2004 (Catastro)<br>" +
+                "LJV, arts. 13–22 (normas comunes)" +
+                "</div>";
 
-/* =========================================================
+            // ----- Variables para toggle sidebar -----
+            let sidebarOpen = false;
+            let btnToggleSidebar = null;
+            let sidebarBackdrop = null;
+
+            function clampNum(v, min, max) {
+                return Math.min(max, Math.max(min, v));
+            }
+            function setZoom(pct) {
+                zoomLevel = clampNum(Math.round(pct), 80, 140);
+                const content = document.getElementById("content");
+                if (content) content.style.zoom = String(zoomLevel / 100);
+                const lbl = document.getElementById("zoomLabel");
+                if (lbl) lbl.textContent = zoomLevel + "%";
+            }
+            function zoomIn() {
+                setZoom(zoomLevel + 10);
+            }
+            function zoomOut() {
+                setZoom(zoomLevel - 10);
+            }
+
+            /* =========================================================
+   TOGGLE SIDEBAR (nuevo)
+   ========================================================= */
+            function toggleSidebar() {
+                const isMobile = window.innerWidth <= 700;
+                const sidebar = document.getElementById("sidebar");
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    if (sidebar) {
+                        if (sidebarOpen) {
+                            sidebar.classList.add("open");
+                        } else {
+                            sidebar.classList.remove("open");
+                        }
+                    }
+                    if (sidebarBackdrop) {
+                        if (sidebarOpen) {
+                            sidebarBackdrop.classList.add("show");
+                        } else {
+                            sidebarBackdrop.classList.remove("show");
+                        }
+                    }
+                    if (btnToggleSidebar) {
+                        btnToggleSidebar.setAttribute(
+                            "aria-expanded",
+                            sidebarOpen,
+                        );
+                    }
+                } else {
+                    if (sidebar) {
+                        sidebar.classList.toggle("collapsed");
+                    }
+                }
+            }
+
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 700 && sidebarOpen) {
+                    sidebarOpen = false;
+                    const sidebar = document.getElementById("sidebar");
+                    if (sidebar) sidebar.classList.remove("open");
+                    if (sidebarBackdrop)
+                        sidebarBackdrop.classList.remove("show");
+                    if (btnToggleSidebar)
+                        btnToggleSidebar.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            /* =========================================================
    MÓDULO 16 — NAVEGACIÓN
    ========================================================= */
-function goTo(stepId, choiceLabel) {
-  if (!STEPS[stepId]) return;
-  hist.push({ s: cur, next: stepId, c: choiceLabel || '' });
-  cur = stepId;
-  if (choiceLabel) sbTab('journey');
-  render();
-}
+            function goTo(stepId, choiceLabel) {
+                if (!STEPS[stepId]) return;
+                hist.push({ s: cur, next: stepId, c: choiceLabel || "" });
+                cur = stepId;
+                if (choiceLabel) sbTab("journey");
+                render();
+            }
 
-function goBack() {
-  if (hist.length === 0) return;
-  cur = hist.pop().s;
-  render();
-}
+            function goBack() {
+                if (hist.length === 0) return;
+                cur = hist.pop().s;
+                render();
+            }
 
-function goBackTo(index) {
-  if (index < 0 || index >= hist.length) return;
-  cur = hist[index].next;
-  hist = hist.slice(0, index);
-  render();
-}
+            function goBackTo(index) {
+                if (index < 0 || index >= hist.length) return;
+                cur = hist[index].next;
+                hist = hist.slice(0, index);
+                render();
+            }
 
-function restart() {
-  cur = 'inicio';
-  hist = [];
-  sbTab('map');
-  render();
-}
+            function restart() {
+                cur = "inicio";
+                hist = [];
+                sbTab("map");
+                setZoom(100);
+                render();
+            }
 
-function sbTab(tab) {
-  activeSbTab = tab;
-  const map = document.getElementById('sb-map');
-  const jny = document.getElementById('sb-journey');
-  if (map) map.style.display = (tab === 'map')     ? 'block' : 'none';
-  if (jny) jny.style.display = (tab === 'journey') ? 'block' : 'none';
-  document.querySelectorAll('.sb-tab').forEach(function(t) {
-    t.classList.toggle('active', t.dataset.tab === tab);
-  });
-}
+            function sbTab(tab) {
+                activeSbTab = tab;
+                const map = document.getElementById("sb-map");
+                const jny = document.getElementById("sb-journey");
+                if (map) map.style.display = tab === "map" ? "block" : "none";
+                if (jny)
+                    jny.style.display = tab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach(function (t) {
+                    t.classList.toggle("active", t.dataset.tab === tab);
+                });
+            }
 
-function toggleMapa() {
-  mapaOn = !mapaOn;
-  const lay = document.getElementById('layout');
-  const ovl = document.getElementById('mapa-overlay');
-  if (lay) lay.style.display = mapaOn ? 'none'  : 'flex';
-  if (ovl) ovl.style.display = mapaOn ? 'block' : 'none';
-  if (mapaOn) renderMapa();
-  hideTooltip();
-}
+            function toggleMapa() {
+                mapaOn = !mapaOn;
+                const lay = document.getElementById("layout");
+                const ovl = document.getElementById("mapa-overlay");
+                if (lay) lay.style.display = mapaOn ? "none" : "flex";
+                if (ovl) ovl.style.display = mapaOn ? "block" : "none";
+                if (mapaOn) renderMapa();
+                hideTooltip();
+            }
 
-// Reconstruye la ruta más corta desde 'inicio' hasta targetId
-function buildPathTo(targetId) {
-  if (targetId === 'inicio') return [];
-  const queue = [{ node: 'inicio', path: [] }];
-  const visited = new Set();
-  visited.add('inicio');
-  while (queue.length) {
-    const current = queue.shift();
-    const step = STEPS[current.node];
-    if (!step) continue;
-    if (step.nx) {
-      const nextId = step.nx;
-      const newPath = [...current.path, { s: current.node, next: nextId, c: '' }];
-      if (nextId === targetId) return newPath;
-      if (!visited.has(nextId)) {
-        visited.add(nextId);
-        queue.push({ node: nextId, path: newPath });
-      }
-    }
-    if (step.opts) {
-      for (const opt of step.opts) {
-        const nextId = opt.n;
-        const choiceLabel = opt.t;
-        const newPath = [...current.path, { s: current.node, next: nextId, c: choiceLabel }];
-        if (nextId === targetId) return newPath;
-        if (!visited.has(nextId)) {
-          visited.add(nextId);
-          queue.push({ node: nextId, path: newPath });
-        }
-      }
-    }
-  }
-  return null;
-}
+            // Reconstruye la ruta más corta desde 'inicio' hasta targetId
+            function buildPathTo(targetId) {
+                if (targetId === "inicio") return [];
+                const queue = [{ node: "inicio", path: [] }];
+                const visited = new Set();
+                visited.add("inicio");
+                while (queue.length) {
+                    const current = queue.shift();
+                    const step = STEPS[current.node];
+                    if (!step) continue;
+                    if (step.nx) {
+                        const nextId = step.nx;
+                        const newPath = [
+                            ...current.path,
+                            { s: current.node, next: nextId, c: "" },
+                        ];
+                        if (nextId === targetId) return newPath;
+                        if (!visited.has(nextId)) {
+                            visited.add(nextId);
+                            queue.push({ node: nextId, path: newPath });
+                        }
+                    }
+                    if (step.opts) {
+                        for (const opt of step.opts) {
+                            const nextId = opt.n;
+                            const choiceLabel = opt.t;
+                            const newPath = [
+                                ...current.path,
+                                {
+                                    s: current.node,
+                                    next: nextId,
+                                    c: choiceLabel,
+                                },
+                            ];
+                            if (nextId === targetId) return newPath;
+                            if (!visited.has(nextId)) {
+                                visited.add(nextId);
+                                queue.push({ node: nextId, path: newPath });
+                            }
+                        }
+                    }
+                }
+                return null;
+            }
 
-function jumpTo(stepId) {
-  if (!STEPS[stepId]) return;
-  if (stepId !== cur) {
-    const path = buildPathTo(stepId);
-    if (path) {
-      hist = path;
-    } else {
-      hist = [];
-    }
-  }
-  cur = stepId;
-  hideTooltip();
-  if (mapaOn) toggleMapa();
-  render();
-}
+            function jumpTo(stepId) {
+                if (!STEPS[stepId]) return;
+                if (stepId !== cur) {
+                    const path = buildPathTo(stepId);
+                    if (path) {
+                        hist = path;
+                    } else {
+                        hist = [];
+                    }
+                }
+                cur = stepId;
+                hideTooltip();
+                if (mapaOn) toggleMapa();
+                render();
+            }
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 20 — HASH
    ========================================================= */
-function syncHash() {
-  const current = window.location.hash.replace('#', '');
-  if (current !== cur) {
-    history.replaceState(null, '', '#' + cur);
-  }
-}
+            function syncHash() {
+                const current = window.location.hash.replace("#", "");
+                if (current !== cur) {
+                    history.replaceState(null, "", "#" + cur);
+                }
+            }
 
-function loadFromHash() {
-  const h = window.location.hash.replace('#', '');
-  if (h && STEPS[h]) {
-    cur = h;
-    hist = [];
-  }
-}
+            function loadFromHash() {
+                const h = window.location.hash.replace("#", "");
+                if (h && STEPS[h]) {
+                    cur = h;
+                    hist = [];
+                }
+            }
 
-/* =========================================================
+            /* =========================================================
    UTILIDADES
    ========================================================= */
-function escQ(s) { return String(s).replace(/'/g, '&#39;'); }
+            function escQ(s) {
+                return String(s).replace(/'/g, "&#39;");
+            }
 
-function escHTML(s) {
-  return String(s)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
+            function escHTML(s) {
+                return String(s)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;");
+            }
 
-function truncate(s, n) {
-  if (!s) return '';
-  if (s.length <= n) return s;
-  return s.slice(0, n - 1) + '…';
-}
+            function truncate(s, n) {
+                if (!s) return "";
+                if (s.length <= n) return s;
+                return s.slice(0, n - 1) + "…";
+            }
 
-function actorLabel(ac) {
-  if (ac === 'laj')   return 'LAJ';
-  if (ac === 'juez')  return 'Juez';
-  if (ac === 'ambos') return 'LAJ e interesados';
-  return 'LAJ';
-}
+            function actorLabel(ac) {
+                if (ac === "laj") return "LAJ";
+                if (ac === "juez") return "Juez";
+                if (ac === "ambos") return "LAJ e interesados";
+                return "LAJ";
+            }
 
-function visitedSet() {
-  const set = {};
-  hist.forEach(function(h) { set[h.s] = true; });
-  return set;
-}
+            function visitedSet() {
+                const set = {};
+                hist.forEach(function (h) {
+                    set[h.s] = true;
+                });
+                return set;
+            }
 
-/* =========================================================
+            /* =========================================================
    RENDER — Barra de fases (Módulo 6)
    ========================================================= */
-function renderPbar() {
-  const host = document.getElementById('pbar');
-  if (!host) return;
-  const curPhase = STEPS[cur] ? STEPS[cur].ph : 0;
-  let html = '';
-  PHASES.forEach(function(name, i) {
-    let cls = '';
-    if (i === curPhase) cls = 'active';
-    else if (i < curPhase) cls = 'done';
-    html += '<div class="ph-item"><span class="ph-lbl ' + cls + '">' + escHTML(name) + '</span>';
-    if (i < PHASES.length - 1) html += '<span class="ph-sep">›</span>';
-    html += '</div>';
-  });
-  host.innerHTML = html;
-}
+            function renderPbar() {
+                const host = document.getElementById("pbar");
+                if (!host) return;
+                const curPhase = STEPS[cur] ? STEPS[cur].ph : 0;
+                let html = "";
+                PHASES.forEach(function (name, i) {
+                    let cls = "";
+                    if (i === curPhase) cls = "active";
+                    else if (i < curPhase) cls = "done";
+                    html +=
+                        '<div class="ph-item"><span class="ph-lbl ' +
+                        cls +
+                        '">' +
+                        escHTML(name) +
+                        "</span>";
+                    if (i < PHASES.length - 1)
+                        html += '<span class="ph-sep">›</span>';
+                    html += "</div>";
+                });
+                host.innerHTML = html;
+            }
 
-/* =========================================================
+            /* =========================================================
    RENDER — Migas de pan (Módulo 7)
    ========================================================= */
-function renderBreadcrumb() {
-  const host = document.getElementById('breadcrumb');
-  if (!host) return;
-  let html = '';
-  if (hist.length === 0) {
-    html = '<span class="bc-item bc-current">' + escHTML(truncate(STEPS[cur].t, 60)) + '</span>';
-  } else {
-    hist.forEach(function(h, idx) {
-      const step = STEPS[h.s];
-      if (!step) return;
-      html += '<button class="bc-item bc-past" data-action="go-back-to" data-index="' + idx + '" title="' + escHTML(step.t) + '">' + escHTML(truncate(step.t, 28)) + '</button>';
-      html += '<span class="bc-sep">›</span>';
-    });
-    html += '<span class="bc-item bc-current" title="' + escHTML(STEPS[cur].t) + '">' + escHTML(truncate(STEPS[cur].t, 28)) + '</span>';
-  }
-  host.innerHTML = html;
-}
+            function renderBreadcrumb() {
+                const host = document.getElementById("breadcrumb");
+                if (!host) return;
+                let html = "";
+                if (hist.length === 0) {
+                    html =
+                        '<span class="bc-item bc-current">' +
+                        escHTML(truncate(STEPS[cur].t, 60)) +
+                        "</span>";
+                } else {
+                    hist.forEach(function (h, idx) {
+                        const step = STEPS[h.s];
+                        if (!step) return;
+                        html +=
+                            '<button class="bc-item bc-past" data-action="go-back-to" data-index="' +
+                            idx +
+                            '" title="' +
+                            escHTML(step.t) +
+                            '">' +
+                            escHTML(truncate(step.t, 28)) +
+                            "</button>";
+                        html += '<span class="bc-sep">›</span>';
+                    });
+                    html +=
+                        '<span class="bc-item bc-current" title="' +
+                        escHTML(STEPS[cur].t) +
+                        '">' +
+                        escHTML(truncate(STEPS[cur].t, 28)) +
+                        "</span>";
+                }
+                host.innerHTML = html;
+            }
 
-/* =========================================================
+            /* =========================================================
    RENDER — Sidebar (Módulos 9.1, 9.2)
    ========================================================= */
-function renderSidebar() {
-  renderSbMap();
-  renderSbJourney();
-}
+            function renderSidebar() {
+                renderSbMap();
+                renderSbJourney();
+            }
 
-function renderSbMap() {
-  const host = document.getElementById('sb-map');
-  if (!host) return;
-  const visited = visitedSet();
+            function renderSbMap() {
+                const host = document.getElementById("sb-map");
+                if (!host) return;
+                const visited = visitedSet();
 
-  // Agrupar pasos por fase
-  const byPhase = {};
-  PHASES.forEach(function(_, i) { byPhase[i] = []; });
-  Object.keys(STEPS).forEach(function(k) {
-    const s = STEPS[k];
-    if (byPhase[s.ph]) byPhase[s.ph].push({ id: k, step: s });
-  });
+                // Agrupar pasos por fase
+                const byPhase = {};
+                PHASES.forEach(function (_, i) {
+                    byPhase[i] = [];
+                });
+                Object.keys(STEPS).forEach(function (k) {
+                    const s = STEPS[k];
+                    if (byPhase[s.ph]) byPhase[s.ph].push({ id: k, step: s });
+                });
 
-  let html = '';
-  PHASES.forEach(function(name, i) {
-    const nodes = byPhase[i];
-    if (!nodes || nodes.length === 0) return;
-    const collapsed = collapsedPhases[i] ? 'collapsed' : '';
-    html += '<div class="sm-phase ' + collapsed + '">';
-    html += '<button class="sm-phase-hdr" data-action="toggle-phase" data-phase="' + i + '">';
-    html += '<span>' + escHTML(name) + '</span>';
-    html += '<span class="sm-phase-arrow">▼</span>';
-    html += '</button>';
-    html += '<div class="sm-nodes">';
-    nodes.forEach(function(n) {
-      let cls = '';
-      if (n.id === cur) cls = 'sm-current';
-      else if (visited[n.id]) cls = 'sm-visited';
-      html += '<button class="sm-node ' + cls + '" data-action="preview-step" data-step="' + escHTML(n.id) + '" title="' + escHTML(n.step.t) + '">';
-      html += '<span>' + escHTML(truncate(n.step.t, 32)) + '</span>';
-      html += '</button>';
-    });
-    html += '</div></div>';
-  });
+                let html = "";
+                PHASES.forEach(function (name, i) {
+                    const nodes = byPhase[i];
+                    if (!nodes || nodes.length === 0) return;
+                    const collapsed = collapsedPhases[i] ? "collapsed" : "";
+                    html += '<div class="sm-phase ' + collapsed + '">';
+                    html +=
+                        '<button class="sm-phase-hdr" data-action="toggle-phase" data-phase="' +
+                        i +
+                        '">';
+                    html += "<span>" + escHTML(name) + "</span>";
+                    html += '<span class="sm-phase-arrow">▼</span>';
+                    html += "</button>";
+                    html += '<div class="sm-nodes">';
+                    nodes.forEach(function (n) {
+                        let cls = "";
+                        if (n.id === cur) cls = "sm-current";
+                        else if (visited[n.id]) cls = "sm-visited";
+                        html +=
+                            '<button class="sm-node ' +
+                            cls +
+                            '" data-action="preview-step" data-step="' +
+                            escHTML(n.id) +
+                            '" title="' +
+                            escHTML(n.step.t) +
+                            '">';
+                        html +=
+                            "<span>" +
+                            escHTML(truncate(n.step.t, 32)) +
+                            "</span>";
+                        html += "</button>";
+                    });
+                    html += "</div></div>";
+                });
 
-  host.innerHTML = html;
-}
+                host.innerHTML = html;
+                host.insertAdjacentHTML("beforeend", SB_FOOT);
+            }
 
-function renderSbJourney() {
-  const host = document.getElementById('sb-journey');
-  if (!host) return;
-  let html = '';
-  // Historial
-  hist.forEach(function(h) {
-    const step = STEPS[h.s];
-    if (!step) return;
-    html += '<div class="pi past">';
-    html += '<div>' + escHTML(truncate(step.t, 36)) + '</div>';
-    if (h.c) html += '<div class="pi-choice">→ ' + escHTML(h.c) + '</div>';
-    html += '</div>';
-  });
-  // Actual
-  const curStep = STEPS[cur];
-  if (curStep) {
-    html += '<div class="pi current">';
-    html += '<div>' + escHTML(truncate(curStep.t, 36)) + '</div>';
-    html += '</div>';
-  }
-  // Pie con referencias
-  html += '<div class="sb-foot">';
-  html += '<strong>Referencias normativas</strong>';
-  html += 'Ley 15/2015, arts. 104–107<br>';
-  html += 'Código Civil, arts. 384–387<br>';
-  html += 'Ley Hipotecaria, art. 200<br>';
-  html += 'Ley 33/2003, arts. 50 y ss.<br>';
-  html += 'RDLeg 1/2004 (Catastro)<br>';
-  html += 'LJV, arts. 13–22 (normas comunes)';
-  html += '</div>';
-  host.innerHTML = html;
-}
+            function renderSbJourney() {
+                const host = document.getElementById("sb-journey");
+                if (!host) return;
+                let html = "";
+                // Historial
+                hist.forEach(function (h) {
+                    const step = STEPS[h.s];
+                    if (!step) return;
+                    html += '<div class="pi past">';
+                    html += "<div>" + escHTML(truncate(step.t, 36)) + "</div>";
+                    if (h.c)
+                        html +=
+                            '<div class="pi-choice">→ ' +
+                            escHTML(h.c) +
+                            "</div>";
+                    html += "</div>";
+                });
+                // Actual
+                const curStep = STEPS[cur];
+                if (curStep) {
+                    html += '<div class="pi current">';
+                    html +=
+                        "<div>" + escHTML(truncate(curStep.t, 36)) + "</div>";
+                    html += "</div>";
+                }
+                html += SB_FOOT;
+                host.innerHTML = html;
+            }
 
-/* =========================================================
+            /* =========================================================
    RENDER — Contenido (Módulo 13/14)
    ========================================================= */
-function renderContent() {
-  const s = STEPS[cur];
-  if (!s) return;
-  const host = document.getElementById('content');
-  if (!host) return;
-  host.innerHTML = s.end ? buildEnd(s) : buildStep(s);
-}
+            function renderContent() {
+                const s = STEPS[cur];
+                if (!s) return;
+                const host = document.getElementById("content");
+                if (!host) return;
+                host.innerHTML = s.end ? buildEnd(s) : buildStep(s);
+            }
 
-function buildBlock(b) {
-  if (!Array.isArray(b)) return '';
-  const type = b[0];
-  if (type === 'i')  return '<div class="blk blk-i">' + escHTML(b[1]) + '</div>';
-  if (type === 'd')  return '<div class="blk blk-d">' + escHTML(b[1]) + '</div>';
-  if (type === 'n')  return '<div class="blk blk-n">' + escHTML(b[1]) + '</div>';
-  if (type === 'w')  return '<div class="blk blk-w">' + escHTML(b[1]) + '</div>';
-  if (type === 'l')  return '<div class="blk"><span class="blk-l">' + escHTML(b[1]) + '</span></div>';
-  if (type === 'cl') {
-    let html = '<div class="blk blk-cl"><div class="blk-cl-title">' + escHTML(b[1]) + '</div><ul>';
-    (b[2] || []).forEach(function(item) {
-      html += '<li>' + escHTML(item) + '</li>';
-    });
-    html += '</ul></div>';
-    return html;
-  }
-  return '';
-}
+            function buildBlock(b) {
+                if (!Array.isArray(b)) return "";
+                const type = b[0];
+                if (type === "i")
+                    return '<div class="blk blk-i">' + escHTML(b[1]) + "</div>";
+                if (type === "d")
+                    return '<div class="blk blk-d">' + escHTML(b[1]) + "</div>";
+                if (type === "n")
+                    return '<div class="blk blk-n">' + escHTML(b[1]) + "</div>";
+                if (type === "w")
+                    return '<div class="blk blk-w">' + escHTML(b[1]) + "</div>";
+                if (type === "l")
+                    return (
+                        '<div class="blk"><span class="blk-l">' +
+                        escHTML(b[1]) +
+                        "</span></div>"
+                    );
+                if (type === "cl") {
+                    let html =
+                        '<div class="blk blk-cl"><div class="blk-cl-title">' +
+                        escHTML(b[1]) +
+                        "</div><ul>";
+                    (b[2] || []).forEach(function (item) {
+                        html += "<li>" + escHTML(item) + "</li>";
+                    });
+                    html += "</ul></div>";
+                    return html;
+                }
+                return "";
+            }
 
-function buildStep(s) {
-  const stepNum = hist.length + 1;
-  const phaseName = PHASES[s.ph] || '';
-  let html = '<div class="card">';
-  // Cabecera
-  html += '<div class="c-hdr">';
-  html += '<span class="act-badge act-' + s.ac + '">' + escHTML(actorLabel(s.ac)) + '</span>';
-  html += '<span class="c-title">' + escHTML(s.t) + '</span>';
-  html += '</div>';
-  html += '<div class="step-num">Paso ' + stepNum + ' de este recorrido · Fase ' + (s.ph + 1) + ': ' + escHTML(phaseName) + '</div>';
-  // Cuerpo
-  html += '<div class="c-body">';
-  (s.c || []).forEach(function(b) { html += buildBlock(b); });
-  html += '</div>';
-  // Decisión
-  if (s.q && s.opts) {
-    html += '<div class="dec-area">';
-    html += '<div class="dec-q">' + escHTML(s.q) + '</div>';
-    html += '<div class="dec-opts">';
-    s.opts.forEach(function(o) {
-      const v = o.v || 'neutral';
-      html += '<button class="dec-btn ' + v + '" data-action="go-to" data-step="' + escHTML(o.n) + '" data-label="' + escHTML(o.t) + '">';
-      html += '<span class="dec-letter">' + escHTML(o.l) + '</span>';
-      html += '<span>' + escHTML(o.t) + '</span>';
-      html += '</button>';
-    });
-    html += '</div></div>';
-  }
-  // Navegación
-  html += '<div class="c-nav">';
-  const disabled = hist.length === 0 ? 'disabled' : '';
-  html += '<button class="btn-back" data-action="go-back" ' + disabled + '>← Volver</button>';
-  if (s.nx) {
-    html += '<button class="btn-next" data-action="go-to" data-step="' + escHTML(s.nx) + '" data-label="">Siguiente →</button>';
-  } else {
-    html += '<span></span>';
-  }
-  html += '</div>';
-  html += '</div>';
-  return html;
-}
+            function buildStep(s) {
+                const stepNum = hist.length + 1;
+                const phaseName = PHASES[s.ph] || "";
+                let html = '<div class="card">';
+                // Cabecera
+                html += '<div class="c-hdr">';
+                html +=
+                    '<span class="act-badge act-' +
+                    s.ac +
+                    '">' +
+                    escHTML(actorLabel(s.ac)) +
+                    "</span>";
+                html += '<span class="c-title">' + escHTML(s.t) + "</span>";
+                html += "</div>";
+                html +=
+                    '<div class="step-num">Paso ' +
+                    stepNum +
+                    " de este recorrido · Fase " +
+                    (s.ph + 1) +
+                    ": " +
+                    escHTML(phaseName) +
+                    "</div>";
+                // Cuerpo
+                html += '<div class="c-body">';
+                (s.c || []).forEach(function (b) {
+                    html += buildBlock(b);
+                });
+                html += "</div>";
+                // Decisión
+                if (s.q && s.opts) {
+                    html += '<div class="dec-area">';
+                    html += '<div class="dec-q">' + escHTML(s.q) + "</div>";
+                    html += '<div class="dec-opts">';
+                    s.opts.forEach(function (o) {
+                        const v = o.v || "neutral";
+                        html +=
+                            '<button class="dec-btn ' +
+                            v +
+                            '" data-action="go-to" data-step="' +
+                            escHTML(o.n) +
+                            '" data-label="' +
+                            escHTML(o.t) +
+                            '">';
+                        html +=
+                            '<span class="dec-letter">' +
+                            escHTML(o.l) +
+                            "</span>";
+                        html += "<span>" + escHTML(o.t) + "</span>";
+                        html += "</button>";
+                    });
+                    html += "</div></div>";
+                }
+                // Navegación
+                html += '<div class="c-nav">';
+                const disabled = hist.length === 0 ? "disabled" : "";
+                html +=
+                    '<button class="btn-back" data-action="go-back" ' +
+                    disabled +
+                    ">← Volver</button>";
+                if (s.nx) {
+                    html +=
+                        '<button class="btn-next" data-action="go-to" data-step="' +
+                        escHTML(s.nx) +
+                        '" data-label="">Siguiente →</button>';
+                } else {
+                    html += "<span></span>";
+                }
+                html += "</div>";
+                html += "</div>";
+                return html;
+            }
 
-function buildEnd(s) {
-  const icon = s.end === 'success' ? '✅' : s.end === 'error' ? '❌' : s.end === 'warning' ? '⚠️' : 'ℹ️';
-  const label = s.end === 'success' ? 'Procedimiento finalizado con éxito'
-              : s.end === 'error'   ? 'Procedimiento no aplicable en esta vía'
-              : s.end === 'warning' ? 'Procedimiento finalizado con reservas'
-              : 'Procedimiento finalizado sin avenencia';
-  let html = '<div class="card end-' + s.end + '">';
-  html += '<div class="end-body">';
-  html += '<div class="end-icon">' + icon + '</div>';
-  html += '<div class="end-title">' + escHTML(s.t) + '</div>';
-  html += '<div class="end-sub">' + escHTML(label) + '</div>';
-  html += '</div>';
-  html += '<div class="c-body">';
-  (s.c || []).forEach(function(b) { html += buildBlock(b); });
-  html += '</div>';
-  // Resumen del recorrido
-  html += '<div class="summary-box">';
-  html += '<div class="summary-title">Resumen del recorrido</div>';
-  html += '<ol class="summary-list">';
-  hist.forEach(function(h) {
-    const step = STEPS[h.s];
-    if (!step) return;
-    html += '<li>' + escHTML(step.t);
-    if (h.c) html += '<span class="summary-choice">Decisión: ' + escHTML(h.c) + '</span>';
-    html += '</li>';
-  });
-  html += '<li>' + escHTML(s.t) + '<span class="summary-choice">Desenlace</span></li>';
-  html += '</ol>';
-  html += '</div>';
-  // Botones
-  html += '<div class="end-actions">';
-  html += '<button class="btn-next" data-action="reiniciar">↺ Nuevo procedimiento</button>';
-  const disabled = hist.length === 0 ? 'disabled' : '';
-  html += '<button class="btn-back" data-action="go-back" ' + disabled + '>← Volver</button>';
-  html += '</div>';
-  html += '</div>';
-  return html;
-}
+            function buildEnd(s) {
+                const icon =
+                    s.end === "success"
+                        ? "✅"
+                        : s.end === "error"
+                          ? "❌"
+                          : s.end === "warning"
+                            ? "⚠️"
+                            : "ℹ️";
+                const label =
+                    s.end === "success"
+                        ? "Procedimiento finalizado con éxito"
+                        : s.end === "error"
+                          ? "Procedimiento no aplicable en esta vía"
+                          : s.end === "warning"
+                            ? "Procedimiento finalizado con reservas"
+                            : "Procedimiento finalizado sin avenencia";
+                let html = '<div class="card end-' + s.end + '">';
+                html += '<div class="end-body">';
+                html += '<div class="end-icon">' + icon + "</div>";
+                html += '<div class="end-title">' + escHTML(s.t) + "</div>";
+                html += '<div class="end-sub">' + escHTML(label) + "</div>";
+                html += "</div>";
+                html += '<div class="c-body">';
+                (s.c || []).forEach(function (b) {
+                    html += buildBlock(b);
+                });
+                html += "</div>";
+                // Resumen del recorrido
+                html += '<div class="summary-box">';
+                html +=
+                    '<div class="summary-title">Resumen del recorrido</div>';
+                html += '<ol class="summary-list">';
+                hist.forEach(function (h) {
+                    const step = STEPS[h.s];
+                    if (!step) return;
+                    html += "<li>" + escHTML(step.t);
+                    if (h.c)
+                        html +=
+                            '<span class="summary-choice">Decisión: ' +
+                            escHTML(h.c) +
+                            "</span>";
+                    html += "</li>";
+                });
+                html +=
+                    "<li>" +
+                    escHTML(s.t) +
+                    '<span class="summary-choice">Desenlace</span></li>';
+                html += "</ol>";
+                html += "</div>";
+                // Botones
+                html += '<div class="end-actions">';
+                html +=
+                    '<button class="btn-next" data-action="reiniciar">↺ Nuevo procedimiento</button>';
+                const disabled = hist.length === 0 ? "disabled" : "";
+                html +=
+                    '<button class="btn-back" data-action="go-back" ' +
+                    disabled +
+                    ">← Volver</button>";
+                html += "</div>";
+                html += "</div>";
+                return html;
+            }
 
-/* =========================================================
+            /* =========================================================
    RENDER — Mapa completo (Módulo 10)
    ========================================================= */
-function renderMapa() {
-  const host = document.getElementById('mapa-overlay');
-  if (!host) return;
-  const visited = visitedSet();
+            function renderMapa() {
+                const host = document.getElementById("mapa-overlay");
+                if (!host) return;
+                const visited = visitedSet();
 
-  // Agrupar pasos por fase
-  const byPhase = {};
-  PHASES.forEach(function(_, i) { byPhase[i] = []; });
-  Object.keys(STEPS).forEach(function(k) {
-    const s = STEPS[k];
-    if (byPhase[s.ph]) byPhase[s.ph].push({ id: k, step: s });
-  });
+                // Agrupar pasos por fase
+                const byPhase = {};
+                PHASES.forEach(function (_, i) {
+                    byPhase[i] = [];
+                });
+                Object.keys(STEPS).forEach(function (k) {
+                    const s = STEPS[k];
+                    if (byPhase[s.ph]) byPhase[s.ph].push({ id: k, step: s });
+                });
 
-  let html = '';
-  html += '<div class="mapa-hdr">';
-  html += '<div class="mapa-title">🗺️ Mapa completo del procedimiento</div>';
-  html += '<button class="btn btn-blue" data-action="close-mapa">← Volver al recorrido</button>';
-  html += '</div>';
-  html += '<div class="mapa-grid">';
-  PHASES.forEach(function(name, i) {
-    const nodes = byPhase[i] || [];
-    html += '<div class="mapa-col">';
-    html += '<div class="mapa-col-hdr">' + (i + 1) + '. ' + escHTML(name) + '</div>';
-    nodes.forEach(function(n) {
-      let cls = '';
-      if (n.id === cur) cls = 'current';
-      else if (visited[n.id]) cls = 'visited';
-      else if (n.step.end) cls = 'end-' + n.step.end;
+                let html = "";
+                html += '<div class="mapa-hdr">';
+                html +=
+                    '<div class="mapa-title">🗺️ Mapa completo del procedimiento</div>';
+                html +=
+                    '<button class="btn btn-blue" data-action="close-mapa">← Volver al recorrido</button>';
+                html += "</div>";
+                html += '<div class="mapa-grid">';
+                PHASES.forEach(function (name, i) {
+                    const nodes = byPhase[i] || [];
+                    html += '<div class="mapa-col">';
+                    html +=
+                        '<div class="mapa-col-hdr">' +
+                        (i + 1) +
+                        ". " +
+                        escHTML(name) +
+                        "</div>";
+                    nodes.forEach(function (n) {
+                        let cls = "";
+                        if (n.id === cur) cls = "current";
+                        else if (visited[n.id]) cls = "visited";
+                        else if (n.step.end) cls = "end-" + n.step.end;
 
-      const badge = n.step.end ? 'b-end' : ('b-' + n.step.ac);
-      const badgeText = n.step.end ? 'Final' : actorLabel(n.step.ac);
+                        const badge = n.step.end ? "b-end" : "b-" + n.step.ac;
+                        const badgeText = n.step.end
+                            ? "Final"
+                            : actorLabel(n.step.ac);
 
-      html += '<div class="mapa-node ' + cls + '" data-action="preview-step" data-step="' + escHTML(n.id) + '">';
-      html += '<div class="mapa-node-title">' + escHTML(n.step.t) + '</div>';
-      html += '<span class="mapa-node-badge ' + badge + '">' + escHTML(badgeText) + '</span>';
-      html += '</div>';
+                        html +=
+                            '<div class="mapa-node ' +
+                            cls +
+                            '" data-action="preview-step" data-step="' +
+                            escHTML(n.id) +
+                            '">';
+                        html +=
+                            '<div class="mapa-node-title">' +
+                            escHTML(n.step.t) +
+                            "</div>";
+                        html +=
+                            '<span class="mapa-node-badge ' +
+                            badge +
+                            '">' +
+                            escHTML(badgeText) +
+                            "</span>";
+                        html += "</div>";
 
-      // Flechas
-      if (n.step.nx) {
-        html += '<div class="mapa-arrow">→ ' + escHTML(truncate(STEPS[n.step.nx] ? STEPS[n.step.nx].t : n.step.nx, 26)) + '</div>';
-      }
-      if (n.step.opts) {
-        n.step.opts.forEach(function(o) {
-          const dest = STEPS[o.n] ? STEPS[o.n].t : o.n;
-          html += '<div class="mapa-arrow">' + escHTML(truncate(o.t, 20)) + ' → ' + escHTML(truncate(dest, 22)) + '</div>';
-        });
-      }
-    });
-    html += '</div>';
-  });
-  html += '</div>';
-  host.innerHTML = html;
-}
+                        // Flechas
+                        if (n.step.nx) {
+                            html +=
+                                '<div class="mapa-arrow">→ ' +
+                                escHTML(
+                                    truncate(
+                                        STEPS[n.step.nx]
+                                            ? STEPS[n.step.nx].t
+                                            : n.step.nx,
+                                        26,
+                                    ),
+                                ) +
+                                "</div>";
+                        }
+                        if (n.step.opts) {
+                            n.step.opts.forEach(function (o) {
+                                const dest = STEPS[o.n] ? STEPS[o.n].t : o.n;
+                                html +=
+                                    '<div class="mapa-arrow">' +
+                                    escHTML(truncate(o.t, 20)) +
+                                    " → " +
+                                    escHTML(truncate(dest, 22)) +
+                                    "</div>";
+                            });
+                        }
+                    });
+                    html += "</div>";
+                });
+                html += "</div>";
+                host.innerHTML = html;
+            }
 
-/* =========================================================
+            /* =========================================================
    TOOLTIP — Previsualización desde el mapa (Módulo 9.1 / 20)
    ========================================================= */
-function showTooltip(stepId, x, y) {
-  const s = STEPS[stepId];
-  if (!s) return;
-  const tt = document.getElementById('tooltip');
-  if (!tt) return;
-  let html = '<div class="tooltip-title">' + escHTML(s.t) + '</div>';
-  html += '<div class="tooltip-body">';
-  const intro = (s.c || []).find(function(b) { return b[0] === 'i'; });
-  if (intro) html += '<p>' + escHTML(truncate(intro[1], 220)) + '</p>';
-  const law = (s.c || []).find(function(b) { return b[0] === 'l'; });
-  if (law) html += '<p style="margin-top:6px;font-family:ui-monospace,monospace;font-size:11px;color:var(--navy-mid);">§ ' + escHTML(law[1]) + '</p>';
-  html += '</div>';
-  html += '<div class="tooltip-actions">';
-  html += '<button class="tooltip-btn primary" data-action="jump-to" data-step="' + escHTML(stepId) + '">Ir a este paso</button>';
-  html += '<button class="tooltip-btn" data-action="hide-tooltip">Cerrar</button>';
-  html += '</div>';
-  tt.innerHTML = html;
-  tt.style.display = 'block';
-  // Posicionamiento
-  const pad = 10;
-  const tw = 360;
-  const th = 220;
-  let px = x + 12;
-  let py = y + 12;
-  if (px + tw > window.innerWidth - pad) px = x - tw - 12;
-  if (py + th > window.innerHeight - pad) py = window.innerHeight - th - pad;
-  if (px < pad) px = pad;
-  if (py < pad) py = pad;
-  tt.style.left = px + 'px';
-  tt.style.top = py + 'px';
-}
+            function showTooltip(stepId, x, y) {
+                const s = STEPS[stepId];
+                if (!s) return;
+                const tt = document.getElementById("tooltip");
+                if (!tt) return;
+                let html =
+                    '<div class="tooltip-title">' + escHTML(s.t) + "</div>";
+                html += '<div class="tooltip-body">';
+                const intro = (s.c || []).find(function (b) {
+                    return b[0] === "i";
+                });
+                if (intro)
+                    html += "<p>" + escHTML(truncate(intro[1], 220)) + "</p>";
+                const law = (s.c || []).find(function (b) {
+                    return b[0] === "l";
+                });
+                if (law)
+                    html +=
+                        '<p style="margin-top:6px;font-family:ui-monospace,monospace;font-size:11px;color:var(--navy-mid);">§ ' +
+                        escHTML(law[1]) +
+                        "</p>";
+                html += "</div>";
+                html += '<div class="tooltip-actions">';
+                html +=
+                    '<button class="tooltip-btn primary" data-action="jump-to" data-step="' +
+                    escHTML(stepId) +
+                    '">Ir a este paso</button>';
+                html +=
+                    '<button class="tooltip-btn" data-action="hide-tooltip">Cerrar</button>';
+                html += "</div>";
+                tt.innerHTML = html;
+                tt.style.display = "block";
+                // Posicionamiento
+                const pad = 10;
+                const tw = 360;
+                const th = 220;
+                let px = x + 12;
+                let py = y + 12;
+                if (px + tw > window.innerWidth - pad) px = x - tw - 12;
+                if (py + th > window.innerHeight - pad)
+                    py = window.innerHeight - th - pad;
+                if (px < pad) px = pad;
+                if (py < pad) py = pad;
+                tt.style.left = px + "px";
+                tt.style.top = py + "px";
+            }
 
-function hideTooltip() {
-  const tt = document.getElementById('tooltip');
-  if (tt) tt.style.display = 'none';
-}
+            function hideTooltip() {
+                const tt = document.getElementById("tooltip");
+                if (tt) tt.style.display = "none";
+            }
 
-/* =========================================================
+            /* =========================================================
    RENDER — Principal (Módulo 17)
    ========================================================= */
-function render() {
-  renderPbar();
-  renderBreadcrumb();
-  renderSidebar();
-  renderContent();
-  syncHash();
-  const content = document.getElementById('content');
-  if (content) content.scrollTop = 0;
-}
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+                syncHash();
+                // Cerrar sidebar móvil al navegar
+                closeMobileSidebar();
+                const content = document.getElementById("content");
+                if (content) content.scrollTop = 0;
+            }
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 18 — DESCARGA
    ========================================================= */
-function dlGuia() {
-  const html = '<!DOCTYPE html>' + document.documentElement.outerHTML;
-  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'guia-tramitacion-deslinde.html';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-}
+            function dlGuia() {
+                const html =
+                    "<!DOCTYPE html>" + document.documentElement.outerHTML;
+                const blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "guia-tramitacion-deslinde.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
 
-/* =========================================================
+            /* =========================================================
    MÓDULO 21 — CABLEADO DE EVENTOS
    ========================================================= */
-function wireEvents() {
-  document.addEventListener('click', function(ev) {
-    const el = ev.target.closest('[data-action]');
-    if (!el) {
-      // Clic fuera del tooltip, lo oculta si está visible
-      const tt = document.getElementById('tooltip');
-      if (tt && tt.style.display === 'block' && !ev.target.closest('#tooltip')) {
-        hideTooltip();
-      }
-      return;
-    }
-    const action = el.dataset.action;
-    switch (action) {
-      case 'toggle-mapa':
-        toggleMapa();
-        break;
-      case 'descargar':
-        dlGuia();
-        break;
-      case 'reiniciar':
-        restart();
-        break;
-      case 'sb-tab':
-        sbTab(el.dataset.tab);
-        break;
-      case 'go-back':
-        goBack();
-        break;
-      case 'go-back-to':
-        goBackTo(parseInt(el.dataset.index, 10));
-        break;
-      case 'go-to':
-        goTo(el.dataset.step, el.dataset.label || '');
-        break;
-      case 'jump-to':
-        jumpTo(el.dataset.step);
-        break;
-      case 'close-mapa':
-        toggleMapa();
-        break;
-      case 'toggle-phase':
-        const ph = el.dataset.phase;
-        collapsedPhases[ph] = !collapsedPhases[ph];
-        renderSbMap();
-        break;
-      case 'preview-step':
-        showTooltip(el.dataset.step, ev.clientX, ev.clientY);
-        break;
-      case 'hide-tooltip':
-        hideTooltip();
-        break;
-    }
-  });
+            function wireEvents() {
+                document.addEventListener("click", function (ev) {
+                    const el = ev.target.closest("[data-action]");
+                    if (!el) {
+                        // Clic fuera del tooltip, lo oculta si está visible
+                        const tt = document.getElementById("tooltip");
+                        if (
+                            tt &&
+                            tt.style.display === "block" &&
+                            !ev.target.closest("#tooltip")
+                        ) {
+                            hideTooltip();
+                        }
+                        return;
+                    }
+                    const action = el.dataset.action;
+                    switch (action) {
+                        case "toggle-mapa":
+                            toggleMapa();
+                            break;
+                        case "descargar":
+                            dlGuia();
+                            break;
+                        case "reiniciar":
+                            restart();
+                            break;
+                        case "zoom-in":
+                            zoomIn();
+                            break;
+                        case "zoom-out":
+                            zoomOut();
+                            break;
+                        case "sb-tab":
+                            sbTab(el.dataset.tab);
+                            break;
+                        case "go-back":
+                            goBack();
+                            break;
+                        case "go-back-to":
+                            goBackTo(parseInt(el.dataset.index, 10));
+                            break;
+                        case "go-to":
+                            goTo(el.dataset.step, el.dataset.label || "");
+                            break;
+                        case "jump-to":
+                            jumpTo(el.dataset.step);
+                            break;
+                        case "close-mapa":
+                            toggleMapa();
+                            break;
+                        case "toggle-phase":
+                            const ph = el.dataset.phase;
+                            collapsedPhases[ph] = !collapsedPhases[ph];
+                            renderSbMap();
+                            break;
+                        case "preview-step":
+                            showTooltip(
+                                el.dataset.step,
+                                ev.clientX,
+                                ev.clientY,
+                            );
+                            break;
+                        case "hide-tooltip":
+                            hideTooltip();
+                            break;
+                    }
+                });
 
-  // Cerrar tooltip con scroll
-  document.addEventListener('scroll', hideTooltip, true);
+                // Cerrar tooltip con scroll
+                document.addEventListener("scroll", hideTooltip, true);
 
-  // Atajos de teclado
-  document.addEventListener('keydown', function(ev) {
-    if (ev.key === 'Escape') {
-      if (mapaOn) toggleMapa();
-      else hideTooltip();
-    }
-  });
+                // Atajos de teclado
+                document.addEventListener("keydown", function (ev) {
+                    if (ev.key === "Escape") {
+                        if (mapaOn) toggleMapa();
+                        else hideTooltip();
+                        if (window.innerWidth <= 700 && sidebarOpen) {
+                            closeMobileSidebar();
+                        }
+                    }
+                });
 
-  // Reaccionar a cambios del hash (navegación del usuario con back/forward)
-  window.addEventListener('hashchange', function() {
-    const h = window.location.hash.replace('#', '');
-    if (h && STEPS[h] && h !== cur) {
-      cur = h;
-      hist = [];
-      render();
-    }
-  });
-}
+                // Reaccionar a cambios del hash (navegación del usuario con back/forward)
+                window.addEventListener("hashchange", function () {
+                    const h = window.location.hash.replace("#", "");
+                    if (h && STEPS[h] && h !== cur) {
+                        cur = h;
+                        hist = [];
+                        render();
+                    }
+                });
+            }
 
-/* =========================================================
+            /* =========================================================
    ARRANQUE
    ========================================================= */
-document.addEventListener('DOMContentLoaded', function() {
-  loadFromHash();
-  wireEvents();
-  render();
-});
-</script>
-</body>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Inicializar referencias del toggle sidebar
+                btnToggleSidebar = document.getElementById("btnToggleSidebar");
+                sidebarBackdrop = document.getElementById("sidebarBackdrop");
+                if (btnToggleSidebar) {
+                    btnToggleSidebar.addEventListener("click", toggleSidebar);
+                }
+                if (sidebarBackdrop) {
+                    sidebarBackdrop.addEventListener(
+                        "click",
+                        closeMobileSidebar,
+                    );
+                }
+                // Ajustar al redimensionar la ventana
+                window.addEventListener("resize", function () {
+                    if (window.innerWidth > 700 && sidebarOpen) {
+                        closeMobileSidebar();
+                    }
+                });
+                loadFromHash();
+                wireEvents();
+                setZoom(zoomLevel);
+                render();
+            });
+        </script>
+    </body>
 </html>

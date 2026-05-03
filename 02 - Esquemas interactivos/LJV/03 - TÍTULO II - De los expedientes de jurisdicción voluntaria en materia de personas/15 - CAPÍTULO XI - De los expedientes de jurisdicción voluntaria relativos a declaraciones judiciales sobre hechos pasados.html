@@ -46,10 +46,17 @@ body { background: var(--bg); color: var(--text-1); font-family: var(--font-ui);
 
 /* ===== HEADER ===== */
 .site-header { background: var(--header-bg); color: var(--header-text); padding: 2rem 1.5rem 1.75rem; }
-.header-inner { max-width: 1280px; margin: 0 auto; }
-.header-breadcrumb { font-size: 12px; color: rgba(248,245,237,.5); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin-bottom: .5rem; }
+.header-inner { max-width: 1400px; margin: 0 auto; }
+.header-breadcrumb { 
+       font-size: 12px; 
+       font-weight: 500; 
+       letter-spacing: .06em; 
+       text-transform: uppercase; 
+       color: var(--accent); 
+       margin-bottom: .5rem; 
+     } 
 .header-title { font-family: var(--font-display); font-size: clamp(1.5rem,4vw,2.2rem); font-weight: 700; line-height: 1.2; margin-bottom: .4rem; }
-.header-subtitle { font-size: 13.5px; color: rgba(248,245,237,.6); margin-bottom: 1rem; }
+.header-subtitle{font-size:14px;color:rgba(248,245,237,.65);margin-bottom:1rem;line-height:1.5}
 .header-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
 .header-tag { display: inline-block; background: rgba(200,169,110,.15); border: 1px solid rgba(200,169,110,.3); color: var(--accent); font-size: 11.5px; font-weight: 600; padding: 3px 12px; border-radius: 20px; }
 .header-actions { margin-left: auto; }
@@ -236,9 +243,10 @@ body { background: var(--bg); color: var(--text-1); font-family: var(--font-ui);
 <!-- ===== BLOQUE 1 — CABECERA ===== -->
 <header class="site-header">
   <div class="header-inner">
-    <div class="header-breadcrumb">Ley 15/2015 · Título II · Capítulo XI</div>
-    <h1 class="header-title">Expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados</h1>
-    <p class="header-subtitle">Artículos 80 bis a 80 quinquies · Introducidos por la disposición final tercera de la Ley 20/2022, de Memoria Democrática</p>
+    <div class="header-breadcrumb">LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN
+    MATERIA DE PERSONAS · CAPÍTULO XI</div>
+    <h1 class="header-title">De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados</h1>
+    <p class="header-subtitle">Artículos 80 bis a 80 quinquies LJV &middot; Introducidos por la disposición final tercera de la Ley 20/2022, de 19 de octubre, de Memoria Democrática</p>
     <div class="header-meta">
       <span class="header-tag">Ley 15/2015, de 2 de julio</span>
       <span class="header-tag">Artículos 80 bis – 80 quinquies</span>
@@ -688,10 +696,10 @@ body { background: var(--bg); color: var(--text-1); font-family: var(--font-ui);
     </div>
   </div>
 
-  <!-- ——— SECCIÓN: CRONOGRAMA DE PLAZOS ——— -->
+  <!-- ——— SECCIÓN: INDICE DE PLAZOS ——— -->
   <div class="map-section">
     <div class="section-heading" data-target="sec-timeline">
-      <span class="section-heading-text">Cronograma de plazos procesales</span>
+      <span class="section-heading-text">Indice de plazos procesales</span>
       <span class="section-heading-count">3 trámites</span>
       <button class="section-toggle-btn">&#9654;</button>
     </div>

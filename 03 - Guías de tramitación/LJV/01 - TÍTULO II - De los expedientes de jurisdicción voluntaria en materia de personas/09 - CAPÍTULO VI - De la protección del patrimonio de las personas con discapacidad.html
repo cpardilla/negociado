@@ -1,1312 +1,2240 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guía de Tramitación: Protección Patrimonial - Ley 15/2015</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* =========================================================
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            De la protección del patrimonio de las personas con discapacidad
+            (artículos 56 a 58 LJV)
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* =========================================================
        MÓDULO 1 — VARIABLES CSS
        ========================================================= */
-    :root {
-      --navy:      #1A2F6E;
-      --navy-mid:  #2E4DAA;
-      --navy-lt:   #4169E1;
-      --cyan:      #0D9488;    --cyan-bg:   #F0FDFA;
-      --violet:    #5B21B6;    --violet-bg: #F5F3FF;
-      --green:     #15803D;    --green-bg:  #F0FDF4;
-      --amber:     #B45309;    --amber-bg:  #FFFBEB;
-      --red:       #B91C1C;    --red-bg:    #FEF2F2;
-      --slate:     #475569;    --slate-bg:  #F4F6FB;
-      --white:     #FFFFFF;
-      --bdr:       #D1D9EE;
-      --text:      #1A1A2E;
-      --muted:     #6B7280;
-    }
+            :root {
+                --navy: #1a2f6e;
+                --navy-mid: #2e4daa;
+                --navy-lt: #4169e1;
+                --cyan: #0d9488;
+                --cyan-bg: #f0fdfa;
+                --violet: #5b21b6;
+                --violet-bg: #f5f3ff;
+                --green: #15803d;
+                --green-bg: #f0fdf4;
+                --amber: #b45309;
+                --amber-bg: #fffbeb;
+                --red: #b91c1c;
+                --red-bg: #fef2f2;
+                --slate: #475569;
+                --slate-bg: #f4f6fb;
+                --white: #ffffff;
+                --bdr: #d1d9ee;
+                --text: #1a1a2e;
+                --muted: #6b7280;
+                --transition-norm: 250ms ease;
+            }
 
-    /* =========================================================
+            /* =========================================================
        MÓDULO 2 — REGLAS ABSOLUTAS DE ESTILO
        ========================================================= */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    body {
-      font-family: 'Outfit', system-ui, sans-serif;
-      font-size: 15px;
-      line-height: 1.5;
-      color: var(--text);
-      background: var(--white);
-      -webkit-font-smoothing: antialiased;
-    }
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
 
-    /* =========================================================
+            body {
+                font-family: "Outfit", system-ui, sans-serif;
+                font-size: 15px;
+                line-height: 1.5;
+                color: var(--text);
+                background: var(--white);
+                -webkit-font-smoothing: antialiased;
+            }
+
+            /* =========================================================
        MÓDULO 4 — LAYOUT PRINCIPAL #app
        ========================================================= */
-    #app {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      overflow: hidden;
-    }
+            #app {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                overflow: hidden;
+                position: relative;
+            }
 
-    /* =========================================================
+            /* =========================================================
        MÓDULO 5 — CABECERA #hdr
        ========================================================= */
-    #hdr {
-      flex-shrink: 0;
-      height: 56px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-      background: var(--navy);
-      border-bottom: 1px solid rgba(255,255,255,.10);
-    }
-    .h-left { display: flex; align-items: center; gap: 12px; }
-    .h-seal {
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.10);
-      border: 1.5px solid rgba(255,255,255,.25);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
-    }
-    .h-title { font-weight: 700; font-size: 14px; color: #fff; }
-    .h-sub { font-size: 10px; color: rgba(255,255,255,.55); margin-top: 2px; }
-    .h-right { display: flex; gap: 8px; }
-    
-    .btn {
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all .15s;
-      font-family: inherit;
-    }
-    .btn-ghost {
-      background: rgba(255,255,255,.08);
-      border-color: rgba(255,255,255,.18);
-      color: rgba(255,255,255,.85);
-    }
-    .btn-ghost:hover {
-      background: rgba(255,255,255,.18);
-    }
+            #hdr {
+                flex-shrink: 0;
+                height: 56px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+                background: var(--navy);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .h-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            /* Botón toggle sidebar (NUEVO) */
+            .btn-toggle-sidebar {
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                padding: 4px 10px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+                color: #fff;
+                font-family: inherit;
+                font-size: 20px;
+                cursor: pointer;
+                transition: all 150ms ease;
+                white-space: nowrap;
+                line-height: 1;
+            }
+            .btn-toggle-sidebar:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+            .btn-toggle-sidebar:focus-visible {
+                outline: 2px solid var(--navy-lt);
+                outline-offset: 2px;
+            }
+            .h-seal {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1.5px solid rgba(255, 255, 255, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .h-title {
+                font-weight: 700;
+                font-size: 14px;
+                color: #fff;
+            }
+            .h-sub {
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.55);
+                margin-top: 2px;
+            }
+            .h-right {
+                display: flex;
+                gap: 8px;
+            }
 
-    /* =========================================================
+            .btn {
+                padding: 6px 12px;
+                border-radius: 8px;
+                font-size: 12px;
+                font-weight: 500;
+                cursor: pointer;
+                border: 1px solid transparent;
+                transition: all 0.15s;
+                font-family: inherit;
+            }
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.18);
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .btn-ghost:hover {
+                background: rgba(255, 255, 255, 0.18);
+            }
+            .zoom-cluster {
+                display: inline-flex;
+                align-items: center;
+                overflow: hidden;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .btn-zoom {
+                appearance: none;
+                border: none;
+                background: transparent;
+                color: rgba(255, 255, 255, 0.85);
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            .btn-zoom:hover {
+                background: rgba(255, 255, 255, 0.14);
+            }
+            .zoom-label {
+                min-width: 46px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            /* =========================================================
        MÓDULO 6 — BARRA DE FASES #pbar
        ========================================================= */
-    #pbar {
-      flex-shrink: 0;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      background: var(--navy-mid);
-      border-bottom: 1px solid rgba(255,255,255,.10);
-    }
-    #pbar::-webkit-scrollbar { display: none; }
-    .ph-item { display: flex; align-items: center; gap: 4px; }
-    .ph-lbl {
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 11px;
-      font-weight: 500;
-      color: rgba(255,255,255,.40);
-      transition: all .15s;
-    }
-    .ph-lbl.active {
-      color: #fff;
-      background: rgba(65,105,225,.45);
-      font-weight: 700;
-    }
-    .ph-lbl.done { color: rgba(255,255,255,.70); }
-    .ph-sep { font-size: 10px; color: rgba(255,255,255,.30); padding: 0 4px; }
+            #pbar {
+                flex-shrink: 0;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                gap: 2px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                background: var(--navy-mid);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            #pbar::-webkit-scrollbar {
+                display: none;
+            }
+            .ph-item {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+            .ph-lbl {
+                display: inline-flex;
+                align-items: center;
+                height: 28px;
+                padding: 0 10px;
+                border-radius: 8px;
+                font-size: 12px;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.6);
+                transition: all 0.15s;
+            }
+            .ph-lbl.active {
+                color: #fff;
+                background: rgba(255, 255, 255, 0.22);
+                font-weight: 800;
+            }
+            .ph-lbl.done {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .ph-sep {
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.3);
+                padding: 0 2px;
+                flex-shrink: 0;
+            }
 
-    /* =========================================================
+            /* =========================================================
        MÓDULO 7 — MIGAS DE PAN #breadcrumb
        ========================================================= */
-    #breadcrumb {
-      flex-shrink: 0;
-      height: 34px;
-      background: var(--slate-bg);
-      border-bottom: 1px solid var(--bdr);
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
-      gap: 0;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    #breadcrumb::-webkit-scrollbar { display: none; }
-    .bc-item {
-      font-size: 11px;
-      white-space: nowrap;
-      padding: 0 6px;
-      color: var(--muted);
-    }
-    .bc-past {
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-family: inherit;
-    }
-    .bc-past:hover { color: var(--navy-lt); text-decoration: underline; }
-    .bc-current { font-weight: 600; color: var(--navy); }
-    .bc-sep { font-size: 10px; color: var(--bdr); padding: 0 2px; }
+            #breadcrumb {
+                flex-shrink: 0;
+                min-height: 34px;
+                height: auto;
+                background: var(--slate-bg);
+                border-bottom: 1px solid var(--bdr);
+                display: flex;
+                align-items: center;
+                padding: 4px 20px;
+                gap: 0;
+                overflow-x: auto;
+                scrollbar-width: none;
+                flex-wrap: wrap;
+                row-gap: 2px;
+                white-space: normal;
+            }
+            #breadcrumb::-webkit-scrollbar {
+                display: none;
+            }
+            .bc-item {
+                font-size: 11px;
+                white-space: nowrap;
+                padding: 0 6px;
+                color: var(--muted);
+                display: inline-flex;
+                align-items: center;
+            }
+            .bc-past {
+                cursor: pointer;
+                background: none;
+                border: none;
+                font-family: inherit;
+            }
+            .bc-past:hover {
+                color: var(--navy-lt);
+                text-decoration: underline;
+            }
+            .bc-current {
+                font-weight: 600;
+                color: var(--navy);
+            }
+            .bc-sep {
+                font-size: 10px;
+                color: var(--bdr);
+                padding: 0 2px;
+            }
 
-    /* =========================================================
+            /* =========================================================
        MÓDULO 8-9 — LAYOUT Y SIDEBAR
        ========================================================= */
-    #layout {
-      flex: 1;
-      overflow: hidden;
-      display: flex;
-    }
-    #sidebar {
-      flex-shrink: 0;
-      width: 260px;
-      background: var(--navy-mid);
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-    }
-    #content {
-      flex: 1;
-      overflow-y: auto;
-      padding: 20px;
-      background: var(--white);
-    }
+            #layout {
+                flex: 1;
+                overflow: hidden;
+                display: flex;
+                position: relative;
+            }
+            /* SIDEBAR (MODIFICADO para soportar colapso en escritorio y overlay móvil) */
+            #sidebar {
+                flex-shrink: 0;
+                width: 260px;
+                background: var(--navy-mid);
+                overflow-y: auto;
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: column;
+                min-height: 0;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+                transition:
+                    transform var(--transition-norm),
+                    width var(--transition-norm);
+                z-index: 80;
+            }
+            #sidebar.collapsed {
+                width: 0;
+                transform: translateX(-100%);
+                overflow: hidden;
+            }
+            #sidebar::-webkit-scrollbar {
+                width: 4px;
+            }
+            #sidebar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 2px;
+            }
+            #content {
+                flex: 1;
+                overflow-y: auto;
+                padding: 20px;
+                background: var(--white);
+            }
 
-    /* Pestañas del sidebar */
-    #sb-tabs {
-      display: flex;
-      border-bottom: 1px solid rgba(255,255,255,.10);
-      flex-shrink: 0;
-    }
-    .sb-tab {
-      flex: 1;
-      padding: 8px 0;
-      font-size: 11px;
-      font-weight: 600;
-      font-family: inherit;
-      background: none;
-      border: none;
-      color: rgba(255,255,255,.40);
-      cursor: pointer;
-      letter-spacing: .4px;
-      text-transform: uppercase;
-      transition: all .15s;
-    }
-    .sb-tab.active {
-      color: #fff;
-      border-bottom: 2px solid var(--navy-lt);
-    }
-    .sb-tab:hover:not(.active) {
-      color: rgba(255,255,255,.70);
-      background: rgba(255,255,255,.05);
-    }
+            /* Backdrop para móvil (NUEVO) */
+            .sidebar-backdrop {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 140;
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
 
-    /* Pestaña Mapa */
-    #sb-map { padding: 12px; }
-    .sm-phase { margin-bottom: 16px; }
-    .sm-phase-hdr {
-      padding: 6px 8px;
-      font-size: 11px;
-      font-weight: 600;
-      color: rgba(255,255,255,.70);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      border-radius: 4px;
-    }
-    .sm-phase-hdr:hover { background: rgba(255,255,255,.08); }
-    .sm-phase-hdr::before { content: '▼'; font-size: 8px; transition: transform .15s; }
-    .sm-phase.collapsed .sm-phase-hdr::before { transform: rotate(-90deg); }
-    .sm-phase.collapsed .sm-nodes { display: none; }
-    .sm-nodes { margin-left: 16px; margin-top: 4px; }
-    
-    .sm-node {
-      padding: 6px 8px;
-      font-size: 11px;
-      color: rgba(255,255,255,.60);
-      cursor: pointer;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: all .15s;
-    }
-    .sm-node:hover { background: rgba(255,255,255,.10); color: #fff; }
-    .sm-node.sm-visited { color: var(--green); }
-    .sm-node.sm-visited::before { content: '✓'; font-weight: 700; margin-right: 4px; }
-    .sm-node.sm-current {
-      color: var(--navy-lt);
-      background: rgba(255,255,255,.15);
-      font-weight: 600;
-    }
-    .sm-node.sm-current::before { content: '●'; font-size: 8px; margin-right: 4px; }
-    .sm-node.sm-unreachable { opacity: .4; cursor: default; }
-    .sm-node.sm-unreachable:hover { background: none; }
+            /* Pestañas del sidebar */
+            #sb-tabs {
+                display: flex;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                flex-shrink: 0;
+            }
+            .sb-tab {
+                flex: 1;
+                padding: 8px 0;
+                font-size: 11px;
+                font-weight: 600;
+                font-family: inherit;
+                background: none;
+                border: none;
+                color: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+                transition: all 0.15s;
+            }
+            .sb-tab.active {
+                color: #fff;
+                border-bottom: 2px solid var(--navy-lt);
+            }
+            .sb-tab:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.05);
+            }
 
-    /* Botón de acceso directo en sidebar Mapa */
-    .sm-node-action {
-      margin-left: auto;
-      padding: 2px 6px;
-      background: rgba(65,105,225,.25);
-      border: 1px solid rgba(65,105,225,.40);
-      border-radius: 4px;
-      font-size: 10px;
-      color: rgba(255,255,255,.85);
-      cursor: pointer;
-      transition: all .15s;
-      display: inline-flex;
-      align-items: center;
-      gap: 2px;
-      flex-shrink: 0;
-    }
-    .sm-node-action:hover {
-      background: rgba(65,105,225,.45);
-      border-color: var(--navy-lt);
-    }
-    .sm-node-action:active { transform: scale(.98); }
-    .sm-node.sm-unreachable .sm-node-action {
-      opacity: .5;
-      cursor: not-allowed;
-    }
-    .sm-node.sm-unreachable .sm-node-action:hover {
-      background: rgba(65,105,225,.25);
-    }
+            #sb-map {
+                padding: 10px 0;
+            }
+            .sm-phase {
+                margin-bottom: 16px;
+            }
+            .sm-phase-hdr {
+                padding: 6px 8px;
+                font-size: 11px;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.7);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                border-radius: 4px;
+            }
+            .sm-phase-hdr:hover {
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .sm-phase-hdr::before {
+                content: "▼";
+                font-size: 8px;
+                transition: transform 0.15s;
+            }
+            .sm-phase.collapsed .sm-phase-hdr::before {
+                transform: rotate(-90deg);
+            }
+            .sm-phase.collapsed .sm-nodes {
+                display: none;
+            }
+            .sm-nodes {
+                margin-left: 16px;
+                margin-top: 4px;
+            }
 
-    /* Pestaña Recorrido */
-    #sb-journey { padding: 12px; display: none; }
-    .pi {
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,.10);
-      font-size: 12px;
-      color: rgba(255,255,255,.80);
-    }
-    .pi:last-child { border-bottom: none; }
-    .pi.past { opacity: .70; }
-    .pi.current { font-weight: 600; color: #fff; }
-    .pi-choice {
-      display: block;
-      font-size: 10px;
-      color: rgba(255,255,255,.55);
-      margin-left: 12px;
-      margin-top: 2px;
-    }
-    .pi-choice::before { content: '→ '; }
-    .sb-foot {
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(255,255,255,.15);
-      font-size: 10px;
-      color: rgba(255,255,255,.50);
-      line-height: 1.4;
-    }
-    .sb-foot .law { font-family: ui-monospace, SFMono-Regular, monospace; color: rgba(255,255,255,.70); }
+            .sm-node {
+                padding: 6px 8px;
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.6);
+                cursor: pointer;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                transition: all 0.15s;
+            }
+            .sm-node:hover {
+                background: rgba(255, 255, 255, 0.1);
+                color: #fff;
+            }
+            .sm-node.sm-visited {
+                color: var(--green);
+            }
+            .sm-node.sm-visited::before {
+                content: "✓";
+                font-weight: 700;
+                margin-right: 4px;
+            }
+            .sm-node.sm-current {
+                color: var(--navy-lt);
+                background: rgba(255, 255, 255, 0.15);
+                font-weight: 600;
+            }
+            .sm-node.sm-current::before {
+                content: "●";
+                font-size: 8px;
+                margin-right: 4px;
+            }
+            .sm-node.sm-unreachable {
+                opacity: 0.4;
+                cursor: default;
+            }
+            .sm-node.sm-unreachable:hover {
+                background: none;
+            }
 
-    /* =========================================================
+            /* Botón de acceso directo en sidebar Mapa */
+            .sm-node-action {
+                margin-left: auto;
+                padding: 2px 6px;
+                background: rgba(65, 105, 225, 0.25);
+                border: 1px solid rgba(65, 105, 225, 0.4);
+                border-radius: 4px;
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.85);
+                cursor: pointer;
+                transition: all 0.15s;
+                display: inline-flex;
+                align-items: center;
+                gap: 2px;
+                flex-shrink: 0;
+            }
+            .sm-node-action:hover {
+                background: rgba(65, 105, 225, 0.45);
+                border-color: var(--navy-lt);
+            }
+            .sm-node-action:active {
+                transform: scale(0.98);
+            }
+            .sm-node.sm-unreachable .sm-node-action {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+            .sm-node.sm-unreachable .sm-node-action:hover {
+                background: rgba(65, 105, 225, 0.25);
+            }
+
+            #sb-journey {
+                padding: 10px 0;
+                display: none;
+            }
+            .pi {
+                padding: 8px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.8);
+            }
+            .pi:last-child {
+                border-bottom: none;
+            }
+            .pi.past {
+                opacity: 0.7;
+            }
+            .pi.current {
+                font-weight: 600;
+                color: #fff;
+            }
+            .pi-choice {
+                display: block;
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.55);
+                margin-left: 12px;
+                margin-top: 2px;
+            }
+            .pi-choice::before {
+                content: "→ ";
+            }
+            .sb-foot {
+                margin-top: 16px;
+                padding-top: 12px;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.5);
+                line-height: 1.4;
+            }
+            .sb-foot .law {
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            /* =========================================================
        MÓDULO 10 — OVERLAY MAPA COMPLETO
        ========================================================= */
-    #mapa-overlay {
-      flex: 1;
-      overflow-y: auto;
-      background: var(--slate-bg);
-      padding: 20px;
-      display: none;
-    }
-    .mapa-close {
-      margin-bottom: 16px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      background: var(--navy);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 12px;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    .mapa-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-    .mapa-col {
-      background: var(--white);
-      border-radius: 10px;
-      border: 1px solid var(--bdr);
-      overflow: hidden;
-    }
-    .mapa-col-hdr {
-      padding: 10px 14px;
-      background: var(--navy-mid);
-      color: #fff;
-      font-weight: 600;
-      font-size: 12px;
-    }
-    .mapa-nodes { padding: 8px; display: flex; flex-direction: column; gap: 8px; }
-    .mapa-node {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid var(--bdr);
-      border-left: 4px solid var(--slate);
-      background: var(--white);
-      font-size: 12px;
-      cursor: pointer;
-      transition: all .15s;
-    }
-    .mapa-node:hover { border-color: var(--navy-lt); }
-    .mapa-node.visited {
-      border-left-color: var(--green);
-      background: var(--green-bg);
-    }
-    .mapa-node.current {
-      border-left-color: var(--cyan);
-      background: var(--cyan-bg);
-      font-weight: 600;
-    }
-    .mapa-node.end-success { border-left-color: var(--green); }
-    .mapa-node.end-error { border-left-color: var(--red); }
-    .mapa-node.end-warning { border-left-color: var(--amber); }
-    .mapa-node.end-neutral { border-left-color: var(--navy-lt); }
-    .mapa-node-title { font-weight: 600; margin-bottom: 4px; }
-    .mapa-node-actor {
-      font-size: 10px;
-      padding: 2px 6px;
-      border-radius: 4px;
-      background: var(--slate-bg);
-      color: var(--slate);
-      display: inline-block;
-      margin-bottom: 6px;
-    }
-    .mapa-arrow {
-      font-size: 10px;
-      color: var(--muted);
-      margin-top: 4px;
-      padding-left: 8px;
-      border-left: 1px solid var(--bdr);
-    }
+            #mapa-overlay {
+                flex: 1;
+                overflow-y: auto;
+                background: var(--slate-bg);
+                padding: 20px;
+                display: none;
+            }
+            .mapa-close {
+                margin-bottom: 16px;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 6px 12px;
+                background: var(--navy);
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                font-size: 12px;
+                cursor: pointer;
+                font-family: inherit;
+            }
+            .mapa-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 16px;
+            }
+            .mapa-col {
+                background: var(--white);
+                border-radius: 10px;
+                border: 1px solid var(--bdr);
+                overflow: hidden;
+            }
+            .mapa-col-hdr {
+                padding: 10px 14px;
+                background: var(--navy-mid);
+                color: #fff;
+                font-weight: 600;
+                font-size: 12px;
+            }
+            .mapa-nodes {
+                padding: 8px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .mapa-node {
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid var(--bdr);
+                border-left: 4px solid var(--slate);
+                background: var(--white);
+                font-size: 12px;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .mapa-node:hover {
+                border-color: var(--navy-lt);
+            }
+            .mapa-node.visited {
+                border-left-color: var(--green);
+                background: var(--green-bg);
+            }
+            .mapa-node.current {
+                border-left-color: var(--cyan);
+                background: var(--cyan-bg);
+                font-weight: 600;
+            }
+            .mapa-node.end-success {
+                border-left-color: var(--green);
+            }
+            .mapa-node.end-error {
+                border-left-color: var(--red);
+            }
+            .mapa-node.end-warning {
+                border-left-color: var(--amber);
+            }
+            .mapa-node.end-neutral {
+                border-left-color: var(--navy-lt);
+            }
+            .mapa-node-title {
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
+            .mapa-node-actor {
+                font-size: 10px;
+                padding: 2px 6px;
+                border-radius: 4px;
+                background: var(--slate-bg);
+                color: var(--slate);
+                display: inline-block;
+                margin-bottom: 6px;
+            }
+            .mapa-arrow {
+                font-size: 10px;
+                color: var(--muted);
+                margin-top: 4px;
+                padding-left: 8px;
+                border-left: 1px solid var(--bdr);
+            }
 
-    /* =========================================================
+            /* =========================================================
        MÓDULO 13-14 — TARJETAS DE CONTENIDO
        ========================================================= */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .card {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--white);
-      border-radius: 12px;
-      border: 1px solid var(--bdr);
-      box-shadow: 0 2px 8px rgba(26,47,110,.08);
-      animation: fadeUp .22s ease;
-    }
-    .c-hdr {
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--bdr);
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    .act-badge {
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .3px;
-      flex-shrink: 0;
-    }
-    .act-laj { background: var(--cyan-bg); color: var(--cyan); }
-    .act-juez { background: var(--violet-bg); color: var(--violet); }
-    .act-ambos { background: var(--amber-bg); color: var(--amber); }
-    .c-title {
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 1.3;
-      flex: 1;
-    }
-    .step-num {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-    .c-body { padding: 20px; }
-    .c-body > * + * { margin-top: 14px; }
-    
-    /* Bloques de contenido shorthand */
-    .blk-i { color: var(--text); }
-    .blk-d {
-      padding: 10px 14px;
-      background: var(--cyan-bg);
-      border-left: 3px solid var(--cyan);
-      border-radius: 0 6px 6px 0;
-      font-size: 14px;
-    }
-    .blk-n {
-      padding: 10px 14px;
-      background: var(--slate-bg);
-      border-left: 3px solid var(--slate);
-      border-radius: 0 6px 6px 0;
-      font-size: 14px;
-    }
-    .blk-w {
-      padding: 10px 14px;
-      background: var(--amber-bg);
-      border-left: 3px solid var(--amber);
-      border-radius: 0 6px 6px 0;
-      font-size: 14px;
-      color: var(--amber);
-      font-weight: 500;
-    }
-    .blk-l {
-      font-family: ui-monospace, SFMono-Regular, monospace;
-      font-size: 13px;
-      color: var(--navy);
-      padding: 8px 12px;
-      background: var(--slate-bg);
-      border-radius: 6px;
-      display: inline-block;
-    }
-    .blk-cl { }
-    .blk-cl-title { font-weight: 600; margin-bottom: 8px; }
-    .blk-cl-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-    .blk-cl-item input { margin-top: 3px; }
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .card {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                background: var(--white);
+                border-radius: 12px;
+                border: 1px solid var(--bdr);
+                box-shadow: 0 2px 8px rgba(26, 47, 110, 0.08);
+                animation: fadeUp 0.22s ease;
+            }
+            .c-hdr {
+                padding: 16px 20px;
+                border-bottom: 1px solid var(--bdr);
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .act-badge {
+                padding: 4px 10px;
+                border-radius: 20px;
+                font-size: 10px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+                flex-shrink: 0;
+            }
+            .act-laj {
+                background: var(--cyan-bg);
+                color: var(--cyan);
+            }
+            .act-juez {
+                background: var(--violet-bg);
+                color: var(--violet);
+            }
+            .act-ambos {
+                background: var(--amber-bg);
+                color: var(--amber);
+            }
+            .c-title {
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 1.3;
+                flex: 1;
+            }
+            .step-num {
+                font-size: 11px;
+                color: var(--muted);
+                margin-top: 4px;
+            }
+            .c-body {
+                padding: 20px;
+            }
+            .c-body > * + * {
+                margin-top: 14px;
+            }
 
-    /* Zona de decisión */
-    .dec-area {
-      padding: 0 20px 20px;
-    }
-    .dec-q {
-      padding: 12px 16px;
-      background: var(--slate-bg);
-      border-top: 3px solid var(--navy);
-      border-radius: 0 0 8px 8px;
-      font-weight: 500;
-      margin-bottom: 14px;
-    }
-    .dec-opts {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .dec-btn {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border: 1.5px solid var(--bdr);
-      border-radius: 10px;
-      background: var(--white);
-      cursor: pointer;
-      transition: all .15s;
-      text-align: left;
-      font-family: inherit;
-      font-size: 14px;
-    }
-    .dec-btn:hover {
-      border-color: var(--navy-lt);
-      background: var(--slate-bg);
-    }
-    .dec-btn.ok { border-left: 4px solid var(--green); }
-    .dec-btn.bad { border-left: 4px solid var(--red); }
-    .dec-btn.warn { border-left: 4px solid var(--amber); }
-    .dec-btn.neutral { border-left: 4px solid var(--navy-lt); }
-    .dec-letter {
-      width: 24px; height: 24px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700;
-      font-size: 12px;
-      flex-shrink: 0;
-    }
-    .dec-btn.ok .dec-letter { background: var(--green); color: #fff; }
-    .dec-btn.bad .dec-letter { background: var(--red); color: #fff; }
-    .dec-btn.warn .dec-letter { background: var(--amber); color: #fff; }
-    .dec-btn.neutral .dec-letter { background: var(--navy-lt); color: #fff; }
+            /* Bloques de contenido shorthand */
+            .blk-i {
+                color: var(--text);
+            }
+            .blk-d {
+                padding: 10px 14px;
+                background: var(--cyan-bg);
+                border-left: 3px solid var(--cyan);
+                border-radius: 0 6px 6px 0;
+                font-size: 14px;
+            }
+            .blk-n {
+                padding: 10px 14px;
+                background: var(--slate-bg);
+                border-left: 3px solid var(--slate);
+                border-radius: 0 6px 6px 0;
+                font-size: 14px;
+            }
+            .blk-w {
+                padding: 10px 14px;
+                background: var(--amber-bg);
+                border-left: 3px solid var(--amber);
+                border-radius: 0 6px 6px 0;
+                font-size: 14px;
+                color: var(--amber);
+                font-weight: 500;
+            }
+            .blk-l {
+                font-family: ui-monospace, SFMono-Regular, monospace;
+                font-size: 13px;
+                color: var(--navy);
+                padding: 8px 12px;
+                background: var(--slate-bg);
+                border-radius: 6px;
+                display: inline-block;
+            }
+            .blk-cl {
+            }
+            .blk-cl-title {
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+            .blk-cl-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+            .blk-cl-item input {
+                margin-top: 3px;
+            }
 
-    /* Barra de navegación inferior */
-    .c-nav {
-      padding: 14px 20px 20px;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      border-top: 1px solid var(--bdr);
-    }
-    .btn-nav {
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      border: 1.5px solid var(--bdr);
-      background: var(--white);
-      transition: all .15s;
-      font-family: inherit;
-    }
-    .btn-nav:hover:not(:disabled) {
-      border-color: var(--navy-lt);
-      background: var(--slate-bg);
-    }
-    .btn-nav:disabled {
-      opacity: .5;
-      cursor: not-allowed;
-    }
-    .btn-next {
-      background: var(--navy-lt);
-      border-color: var(--navy-lt);
-      color: #fff;
-    }
-    .btn-next:hover:not(:disabled) {
-      background: var(--navy);
-      border-color: var(--navy);
-    }
+            /* Zona de decisión */
+            .dec-area {
+                padding: 0 20px 20px;
+            }
+            .dec-q {
+                padding: 12px 16px;
+                background: var(--slate-bg);
+                border-top: 3px solid var(--navy);
+                border-radius: 0 0 8px 8px;
+                font-weight: 500;
+                margin-bottom: 14px;
+            }
+            .dec-opts {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .dec-btn {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 12px 16px;
+                border: 1.5px solid var(--bdr);
+                border-radius: 10px;
+                background: var(--white);
+                cursor: pointer;
+                transition: all 0.15s;
+                text-align: left;
+                font-family: inherit;
+                font-size: 14px;
+            }
+            .dec-btn:hover {
+                border-color: var(--navy-lt);
+                background: var(--slate-bg);
+            }
+            .dec-btn.ok {
+                border-left: 4px solid var(--green);
+            }
+            .dec-btn.bad {
+                border-left: 4px solid var(--red);
+            }
+            .dec-btn.warn {
+                border-left: 4px solid var(--amber);
+            }
+            .dec-btn.neutral {
+                border-left: 4px solid var(--navy-lt);
+            }
+            .dec-letter {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                font-size: 12px;
+                flex-shrink: 0;
+            }
+            .dec-btn.ok .dec-letter {
+                background: var(--green);
+                color: #fff;
+            }
+            .dec-btn.bad .dec-letter {
+                background: var(--red);
+                color: #fff;
+            }
+            .dec-btn.warn .dec-letter {
+                background: var(--amber);
+                color: #fff;
+            }
+            .dec-btn.neutral .dec-letter {
+                background: var(--navy-lt);
+                color: #fff;
+            }
 
-    /* Tarjeta final */
-    .card.end-success { border-top: 4px solid var(--green); }
-    .card.end-error { border-top: 4px solid var(--red); }
-    .card.end-warning { border-top: 4px solid var(--amber); }
-    .card.end-neutral { border-top: 4px solid var(--navy-lt); }
-    .end-body {
-      text-align: center;
-      padding: 24px 20px;
-    }
-    .end-icon { font-size: 48px; margin-bottom: 12px; }
-    .end-success .end-icon { color: var(--green); }
-    .end-error .end-icon { color: var(--red); }
-    .end-warning .end-icon { color: var(--amber); }
-    .end-neutral .end-icon { color: var(--navy-lt); }
-    .end-title {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .end-success .end-title { color: var(--green); }
-    .end-error .end-title { color: var(--red); }
-    .end-warning .end-title { color: var(--amber); }
-    .end-neutral .end-title { color: var(--navy-lt); }
-    .end-sub { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
-    .summary-box {
-      margin-top: 20px;
-      padding: 14px;
-      background: var(--slate-bg);
-      border-radius: 8px;
-      text-align: left;
-      font-size: 13px;
-    }
-    .summary-box ol { padding-left: 18px; margin-top: 8px; }
-    .summary-box li { margin-bottom: 4px; }
-    .summary-choice { color: var(--navy-lt); font-weight: 500; }
+            /* Barra de navegación inferior */
+            .c-nav {
+                padding: 14px 20px 20px;
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+                border-top: 1px solid var(--bdr);
+            }
+            .btn-nav {
+                padding: 10px 18px;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 500;
+                cursor: pointer;
+                border: 1.5px solid var(--bdr);
+                background: var(--white);
+                transition: all 0.15s;
+                font-family: inherit;
+            }
+            .btn-nav:hover:not(:disabled) {
+                border-color: var(--navy-lt);
+                background: var(--slate-bg);
+            }
+            .btn-nav:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+            .btn-next {
+                background: var(--navy-lt);
+                border-color: var(--navy-lt);
+                color: #fff;
+            }
+            .btn-next:hover:not(:disabled) {
+                background: var(--navy);
+                border-color: var(--navy);
+            }
 
-    /* =========================================================
+            /* Tarjeta final */
+            .card.end-success {
+                border-top: 4px solid var(--green);
+            }
+            .card.end-error {
+                border-top: 4px solid var(--red);
+            }
+            .card.end-warning {
+                border-top: 4px solid var(--amber);
+            }
+            .card.end-neutral {
+                border-top: 4px solid var(--navy-lt);
+            }
+            .end-body {
+                text-align: center;
+                padding: 24px 20px;
+            }
+            .end-icon {
+                font-size: 48px;
+                margin-bottom: 12px;
+            }
+            .end-success .end-icon {
+                color: var(--green);
+            }
+            .end-error .end-icon {
+                color: var(--red);
+            }
+            .end-warning .end-icon {
+                color: var(--amber);
+            }
+            .end-neutral .end-icon {
+                color: var(--navy-lt);
+            }
+            .end-title {
+                font-size: 20px;
+                font-weight: 700;
+                margin-bottom: 6px;
+            }
+            .end-success .end-title {
+                color: var(--green);
+            }
+            .end-error .end-title {
+                color: var(--red);
+            }
+            .end-warning .end-title {
+                color: var(--amber);
+            }
+            .end-neutral .end-title {
+                color: var(--navy-lt);
+            }
+            .end-sub {
+                color: var(--muted);
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+            .summary-box {
+                margin-top: 20px;
+                padding: 14px;
+                background: var(--slate-bg);
+                border-radius: 8px;
+                text-align: left;
+                font-size: 13px;
+            }
+            .summary-box ol {
+                padding-left: 18px;
+                margin-top: 8px;
+            }
+            .summary-box li {
+                margin-bottom: 4px;
+            }
+            .summary-choice {
+                color: var(--navy-lt);
+                font-weight: 500;
+            }
+
+            /* =========================================================
        MÓDULO 23 — CSS DE IMPRESIÓN
        ========================================================= */
-    @media print {
-      body { background: #fff; color: #111; }
-      #hdr, #pbar, #breadcrumb, #sidebar, .c-nav, .dec-opts { display: none !important; }
-      #layout, #content { display: block !important; overflow: visible !important; height: auto !important; }
-      .card { break-inside: avoid; border: 1px solid #ccc; }
-      #mapa-overlay { display: block !important; }
-      .mapa-close { display: none; }
-    }
+            @media print {
+                body {
+                    background: #fff;
+                    color: #111;
+                }
+                #hdr,
+                #pbar,
+                #breadcrumb,
+                #sidebar,
+                .c-nav,
+                .dec-opts,
+                .sidebar-backdrop {
+                    display: none !important;
+                }
+                #layout,
+                #content {
+                    display: block !important;
+                    overflow: visible !important;
+                    height: auto !important;
+                }
+                .card {
+                    break-inside: avoid;
+                    border: 1px solid #ccc;
+                }
+                #mapa-overlay {
+                    display: block !important;
+                }
+                .mapa-close {
+                    display: none;
+                }
+            }
 
-    /* =========================================================
-       MÓDULO 24 — CSS RESPONSIVE
+            /* =========================================================
+       MÓDULO 24 — CSS RESPONSIVE (MODIFICADO: se reemplaza display:none por overlay móvil)
        ========================================================= */
-    @media (max-width: 700px) {
-      #sidebar { display: none; }
-      #content { padding: 12px; }
-      .dec-opts { flex-direction: column; }
-      .c-hdr { flex-wrap: wrap; }
-      .h-title { font-size: 13px; }
-      .h-sub { display: none; }
-    }
-  </style>
-</head>
-<body>
-  <div id="app">
-    
-    <!-- MÓDULO 5: CABECERA -->
-    <header id="hdr">
-      <div class="h-left">
-        <div class="h-seal">⚖</div>
-        <div>
-          <div class="h-title">Protección patrimonial personas con discapacidad</div>
-          <div class="h-sub">Ley 15/2015 · Arts. 56-58 · Jurisdicción Voluntaria</div>
+            @media (max-width: 768px) {
+                #sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 150;
+                    transform: translateX(-100%);
+                    transition: transform var(--transition-norm);
+                    width: 260px;
+                    display: flex !important;
+                }
+                #sidebar.open {
+                    transform: translateX(0);
+                }
+                #sidebar.collapsed {
+                    transform: translateX(-100%);
+                    width: 260px;
+                }
+                .sidebar-backdrop {
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 140;
+                    display: none;
+                }
+                .sidebar-backdrop.show {
+                    display: block;
+                }
+                #content {
+                    padding: 16px;
+                }
+                .dec-opts {
+                    flex-direction: column;
+                }
+                .c-hdr {
+                    flex-wrap: wrap;
+                }
+                .h-title {
+                    font-size: 13px;
+                }
+                .h-sub {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <!-- MÓDULO 5: CABECERA -->
+            <header id="hdr" style="height: 73px">
+                <div class="h-left">
+                    <!-- Botón toggle sidebar AÑADIDO -->
+                    <button
+                        class="btn-toggle-sidebar"
+                        id="btnToggleSidebar"
+                        aria-label="Alternar menú lateral"
+                        aria-expanded="false"
+                    >
+                        ☰
+                    </button>
+                    <div class="h-seal">⚖</div>
+                    <div>
+                        <div class="h-sub">
+                            LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN
+                            VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE
+                            JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS ·
+                            CAPÍTULO VI
+                        </div>
+                        <div class="h-title">
+                            De la protección del patrimonio de las personas con
+                            discapacidad
+                        </div>
+                        <div class="h-sub" style="padding-top: 5px">
+                            Artículos 56 a 58 LJV
+                        </div>
+                    </div>
+                </div>
+                <div class="h-right">
+                    <div
+                        class="zoom-cluster"
+                        role="group"
+                        aria-label="Zoom del contenido"
+                    >
+                        <button
+                            class="btn-zoom"
+                            data-action="zoom-out"
+                            aria-label="Reducir zoom"
+                        >
+                            −
+                        </button>
+                        <span class="zoom-label" id="zoomLabel">100%</span>
+                        <button
+                            class="btn-zoom"
+                            data-action="zoom-in"
+                            aria-label="Aumentar zoom"
+                        >
+                            +
+                        </button>
+                    </div>
+                    <button class="btn btn-ghost" data-action="toggle-mapa">
+                        ⊞ Mapa
+                    </button>
+                    <button class="btn btn-ghost" data-action="descargar">
+                        ↓ Descargar
+                    </button>
+                    <button class="btn btn-ghost" data-action="reiniciar">
+                        ↺ Reiniciar
+                    </button>
+                </div>
+            </header>
+
+            <!-- MÓDULO 6: BARRA DE FASES -->
+            <nav id="pbar"></nav>
+
+            <!-- MÓDULO 7: MIGAS DE PAN -->
+            <nav id="breadcrumb"></nav>
+
+            <!-- MÓDULO 8: ÁREA DE TRABAJO -->
+            <div id="layout">
+                <!-- MÓDULO 9: SIDEBAR DUAL -->
+                <aside id="sidebar">
+                    <div id="sb-tabs">
+                        <button
+                            class="sb-tab active"
+                            data-action="sb-tab"
+                            data-tab="map"
+                        >
+                            Mapa
+                        </button>
+                        <button
+                            class="sb-tab"
+                            data-action="sb-tab"
+                            data-tab="journey"
+                        >
+                            Recorrido
+                        </button>
+                    </div>
+
+                    <!-- Pestaña Mapa (Módulo 9.1) -->
+                    <div id="sb-map"></div>
+
+                    <!-- Pestaña Recorrido (Módulo 9.2) -->
+                    <div id="sb-journey"></div>
+                </aside>
+
+                <!-- Contenido principal -->
+                <main id="content"></main>
+            </div>
+
+            <!-- MÓDULO 10: OVERLAY MAPA COMPLETO -->
+            <div id="mapa-overlay">
+                <button class="mapa-close" data-action="close-mapa">
+                    ← Volver al recorrido
+                </button>
+                <div class="mapa-grid" id="mapa-grid"></div>
+            </div>
+
+            <!-- Backdrop para móvil AÑADIDO -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
         </div>
-      </div>
-      <div class="h-right">
-        <button class="btn btn-ghost" data-action="toggle-mapa">🗺️ Ver mapa</button>
-        <button class="btn btn-ghost" data-action="descargar">⬇ Descargar</button>
-        <button class="btn btn-ghost" data-action="reiniciar">↺ Reiniciar</button>
-      </div>
-    </header>
 
-    <!-- MÓDULO 6: BARRA DE FASES -->
-    <nav id="pbar"></nav>
+        <!-- MÓDULO 22: BUNDLE JAVASCRIPT ÚNICO -->
+        <script>
+            "use strict";
 
-    <!-- MÓDULO 7: MIGAS DE PAN -->
-    <nav id="breadcrumb"></nav>
-
-    <!-- MÓDULO 8: ÁREA DE TRABAJO -->
-    <div id="layout">
-      
-      <!-- MÓDULO 9: SIDEBAR DUAL -->
-      <aside id="sidebar">
-        <div id="sb-tabs">
-          <button class="sb-tab active" data-action="sb-tab" data-tab="map">Mapa</button>
-          <button class="sb-tab" data-action="sb-tab" data-tab="journey">Recorrido</button>
-        </div>
-        
-        <!-- Pestaña Mapa (Módulo 9.1) -->
-        <div id="sb-map"></div>
-        
-        <!-- Pestaña Recorrido (Módulo 9.2) -->
-        <div id="sb-journey"></div>
-      </aside>
-
-      <!-- Contenido principal -->
-      <main id="content"></main>
-    </div>
-
-    <!-- MÓDULO 10: OVERLAY MAPA COMPLETO -->
-    <div id="mapa-overlay">
-      <button class="mapa-close" data-action="close-mapa">← Volver al recorrido</button>
-      <div class="mapa-grid" id="mapa-grid"></div>
-    </div>
-
-  </div>
-
-  <!-- MÓDULO 22: BUNDLE JAVASCRIPT ÚNICO -->
-  <script>
-  "use strict";
-
-  /* =========================================================
+            /* =========================================================
      DATOS DEL PROCEDIMIENTO
      ========================================================= */
-  const PHASES = [
-    "Identificación y ámbito",
-    "Competencia y legitimación", 
-    "Solicitud y documentación",
-    "Tramitación",
-    "Resolución judicial",
-    "Recursos y eficacia registral"
-  ];
+            const PHASES = [
+                "Identificación y ámbito",
+                "Competencia y legitimación",
+                "Solicitud y documentación",
+                "Tramitación",
+                "Resolución judicial",
+                "Recursos y eficacia registral",
+            ];
 
-  const STEPS = {
-    // === FASE 1: Identificación y ámbito ===
-    'inicio': {
-      ph: 0,
-      t: "Inicio: Verificación del ámbito material",
-      ac: 'laj',
-      c: [
-        ['i', "Este expediente de jurisdicción voluntaria se tramita cuando concurren los supuestos del Artículo 56 de la Ley 15/2015 sobre protección patrimonial de personas con discapacidad."],
-        ['n', "El procedimiento es no contencioso. El Ministerio Fiscal actúa como único legitimado para promoverlo, de oficio o a solicitud de cualquier persona."],
-        ['l', "Ley 15/2015 Art. 56.1; Ley 41/2003 Capítulo I"]
-      ],
-      q: "¿El expediente tiene por objeto alguna de las actuaciones previstas en el Capítulo I de la Ley 41/2003?",
-      opts: [
-        { t: "Sí: Constitución, administración, fiscalización, modificación o extinción de patrimonio protegido", l: 'A', n: 'supuestos_art56' },
-        { t: "No: El asunto no encaja en este procedimiento", l: 'B', n: 'fin_no_ambito' }
-      ]
-    },
-    'fin_no_ambito': {
-      ph: 0,
-      t: "Fin: Fuera de ámbito",
-      ac: 'laj',
-      c: [
-        ['w', "El expediente no procede por no encuadrarse en los supuestos del Artículo 56 de la Ley 15/2015."],
-        ['n', "Deberá valorarse la tramitación por la vía procesal ordinaria o el procedimiento de jurisdicción voluntaria que corresponda según la materia."],
-        ['l', "Ley 15/2015 Art. 56; Ley 41/2003 Arts. 1-8"]
-      ],
-      end: 'error'
-    },
-    'supuestos_art56': {
-      ph: 0,
-      t: "Supuestos del Artículo 56: Selección del tipo de actuación",
-      ac: 'laj',
-      c: [
-        ['i', "Identifique cuál de los cuatro supuestos del Artículo 56 motiva el expediente:"],
-        ['cl', "Supuestos contemplados", [
-          "a) Constitución o aprobación de aportaciones con negativa injustificada de representantes",
-          "b) Nombramiento de administrador cuando no pueda realizarse conforme al título",
-          "c) Establecimiento de exenciones a la autorización judicial para actos de disposición",
-          "d) Medidas posteriores: sustitución, cambio de reglas, fiscalización, extinción"
-        ]],
-        ['l', "Ley 15/2015 Art. 56.2-5; Ley 41/2003 Arts. 3, 5-7"]
-      ],
-      q: "Seleccione el supuesto aplicable:",
-      opts: [
-        { t: "a) Constitución/aportaciones con negativa de consentimiento", l: 'A', n: 'supuesto_a' },
-        { t: "b) Nombramiento de administrador por imposibilidad", l: 'B', n: 'supuesto_b' },
-        { t: "c) Exenciones de autorización judicial", l: 'C', n: 'supuesto_c' },
-        { t: "d) Medidas posteriores a la constitución", l: 'D', n: 'supuesto_d' }
-      ]
-    },
+            const STEPS = {
+                // === FASE 1: Identificación y ámbito ===
+                inicio: {
+                    ph: 0,
+                    t: "Inicio: Verificación del ámbito material",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Este expediente de jurisdicción voluntaria se tramita cuando concurren los supuestos del Artículo 56 de la Ley 15/2015 sobre protección patrimonial de personas con discapacidad.",
+                        ],
+                        [
+                            "n",
+                            "El procedimiento es no contencioso. El Ministerio Fiscal actúa como único legitimado para promoverlo, de oficio o a solicitud de cualquier persona.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 56.1; Ley 41/2003 Capítulo I"],
+                    ],
+                    q: "¿El expediente tiene por objeto alguna de las actuaciones previstas en el Capítulo I de la Ley 41/2003?",
+                    opts: [
+                        {
+                            t: "Sí: Constitución, administración, fiscalización, modificación o extinción de patrimonio protegido",
+                            l: "A",
+                            n: "supuestos_art56",
+                        },
+                        {
+                            t: "No: El asunto no encaja en este procedimiento",
+                            l: "B",
+                            n: "fin_no_ambito",
+                        },
+                    ],
+                },
+                fin_no_ambito: {
+                    ph: 0,
+                    t: "Fin: Fuera de ámbito",
+                    ac: "laj",
+                    c: [
+                        [
+                            "w",
+                            "El expediente no procede por no encuadrarse en los supuestos del Artículo 56 de la Ley 15/2015.",
+                        ],
+                        [
+                            "n",
+                            "Deberá valorarse la tramitación por la vía procesal ordinaria o el procedimiento de jurisdicción voluntaria que corresponda según la materia.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 56; Ley 41/2003 Arts. 1-8"],
+                    ],
+                    end: "error",
+                },
+                supuestos_art56: {
+                    ph: 0,
+                    t: "Supuestos del Artículo 56: Selección del tipo de actuación",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Identifique cuál de los cuatro supuestos del Artículo 56 motiva el expediente:",
+                        ],
+                        [
+                            "cl",
+                            "Supuestos contemplados",
+                            [
+                                "a) Constitución o aprobación de aportaciones con negativa injustificada de representantes",
+                                "b) Nombramiento de administrador cuando no pueda realizarse conforme al título",
+                                "c) Establecimiento de exenciones a la autorización judicial para actos de disposición",
+                                "d) Medidas posteriores: sustitución, cambio de reglas, fiscalización, extinción",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015 Art. 56.2-5; Ley 41/2003 Arts. 3, 5-7",
+                        ],
+                    ],
+                    q: "Seleccione el supuesto aplicable:",
+                    opts: [
+                        {
+                            t: "a) Constitución/aportaciones con negativa de consentimiento",
+                            l: "A",
+                            n: "supuesto_a",
+                        },
+                        {
+                            t: "b) Nombramiento de administrador por imposibilidad",
+                            l: "B",
+                            n: "supuesto_b",
+                        },
+                        {
+                            t: "c) Exenciones de autorización judicial",
+                            l: "C",
+                            n: "supuesto_c",
+                        },
+                        {
+                            t: "d) Medidas posteriores a la constitución",
+                            l: "D",
+                            n: "supuesto_d",
+                        },
+                    ],
+                },
 
-    // === FASE 2: Competencia y legitimación ===
-    'supuesto_a': { ph: 1, t: "Supuesto a): Constitución con negativa", ac: 'laj', c: [['i', "Se solicita la constitución del patrimonio protegido o aprobación de aportaciones cuando los progenitores, tutor o curador se niegan injustificadamente a prestar consentimiento."], ['n', "Criterio judicial: El Juez valorará si la negativa es injustificada, ponderando el interés superior del beneficiario y su autonomía."], ['l', "Ley 41/2003 Art. 3"]], nx: 'competencia' },
-    'supuesto_b': { ph: 1, t: "Supuesto b): Nombramiento de administrador", ac: 'laj', c: [['i', "Procede cuando no se pueda realizar el nombramiento conforme al título de constitución por fallecimiento, incapacidad, renuncia, conflicto de intereses o incumplimiento grave."], ['n', "Facultades del administrador: gestión ordinaria, percepción de rentas, actos de conservación. Requiere autorización judicial para actos de disposición salvo exención."], ['l', "Ley 41/2003 Art. 5"]], nx: 'competencia' },
-    'supuesto_c': { ph: 1, t: "Supuesto c): Exenciones de autorización judicial", ac: 'laj', c: [['i', "Se solicita el establecimiento de exenciones a la exigencia de autorización judicial para actos de disposición, gravamen u otros sobre bienes del patrimonio protegido."], ['n', "Criterios: idoneidad del administrador, naturaleza y valor de bienes, interés superior del beneficiario, existencia de mecanismos alternativos de control."], ['l', "Ley 41/2003 Art. 5.2"]], nx: 'competencia' },
-    'supuesto_d': { ph: 1, t: "Supuesto d): Medidas posteriores", ac: 'laj', c: [['i', "Se solicitan medidas como sustitución del administrador, cambio de reglas de administración, fiscalización especial, cautelas o extinción del patrimonio protegido."], ['n', "El Ministerio Fiscal velará por el correcto funcionamiento, pudiendo solicitar rendición de cuentas periódica."], ['l', "Ley 41/2003 Arts. 5.3, 6, 7"]], nx: 'competencia' },
+                // === FASE 2: Competencia y legitimación ===
+                supuesto_a: {
+                    ph: 1,
+                    t: "Supuesto a): Constitución con negativa",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Se solicita la constitución del patrimonio protegido o aprobación de aportaciones cuando los progenitores, tutor o curador se niegan injustificadamente a prestar consentimiento.",
+                        ],
+                        [
+                            "n",
+                            "Criterio judicial: El Juez valorará si la negativa es injustificada, ponderando el interés superior del beneficiario y su autonomía.",
+                        ],
+                        ["l", "Ley 41/2003 Art. 3"],
+                    ],
+                    nx: "competencia",
+                },
+                supuesto_b: {
+                    ph: 1,
+                    t: "Supuesto b): Nombramiento de administrador",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Procede cuando no se pueda realizar el nombramiento conforme al título de constitución por fallecimiento, incapacidad, renuncia, conflicto de intereses o incumplimiento grave.",
+                        ],
+                        [
+                            "n",
+                            "Facultades del administrador: gestión ordinaria, percepción de rentas, actos de conservación. Requiere autorización judicial para actos de disposición salvo exención.",
+                        ],
+                        ["l", "Ley 41/2003 Art. 5"],
+                    ],
+                    nx: "competencia",
+                },
+                supuesto_c: {
+                    ph: 1,
+                    t: "Supuesto c): Exenciones de autorización judicial",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Se solicita el establecimiento de exenciones a la exigencia de autorización judicial para actos de disposición, gravamen u otros sobre bienes del patrimonio protegido.",
+                        ],
+                        [
+                            "n",
+                            "Criterios: idoneidad del administrador, naturaleza y valor de bienes, interés superior del beneficiario, existencia de mecanismos alternativos de control.",
+                        ],
+                        ["l", "Ley 41/2003 Art. 5.2"],
+                    ],
+                    nx: "competencia",
+                },
+                supuesto_d: {
+                    ph: 1,
+                    t: "Supuesto d): Medidas posteriores",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Se solicitan medidas como sustitución del administrador, cambio de reglas de administración, fiscalización especial, cautelas o extinción del patrimonio protegido.",
+                        ],
+                        [
+                            "n",
+                            "El Ministerio Fiscal velará por el correcto funcionamiento, pudiendo solicitar rendición de cuentas periódica.",
+                        ],
+                        ["l", "Ley 41/2003 Arts. 5.3, 6, 7"],
+                    ],
+                    nx: "competencia",
+                },
 
-    'competencia': {
-      ph: 1,
-      t: "Competencia territorial y objetiva",
-      ac: 'ambos',
-      c: [
-        ['i', "Verificación del órgano competente para conocer del expediente."],
-        ['d', "Competencia: Juzgado de Primera Instancia del domicilio o, en su defecto, de la residencia de la persona con discapacidad."],
-        ['n', "Criterio de domicilio: LEC Art. 50. A falta de domicilio legal, se atiende al lugar de residencia habitual o último domicilio conocido."],
-        ['l', "Ley 15/2015 Arts. 2.1, 57.1; LEC Art. 50"]
-      ],
-      q: "¿Está determinada correctamente la competencia territorial?",
-      opts: [
-        { t: "Sí: Domicilio/residencia del beneficiario identificado", l: 'A', n: 'legitimacion' },
-        { t: "No: Incompetencia territorial apreciada de oficio", l: 'B', n: 'fin_incompetencia' }
-      ]
-    },
-    'fin_incompetencia': {
-      ph: 1,
-      t: "Fin: Incompetencia territorial",
-      ac: 'juez',
-      c: [
-        ['w', "El expediente no puede tramitarse por falta de competencia territorial."],
-        ['n', "El órgano judicial apreciará de oficio la falta de competencia conforme al Artículo 16 de la Ley 15/2015, inadmitiendo la solicitud o remitiendo al Juzgado competente."],
-        ['l', "Ley 15/2015 Art. 16; LEC Art. 50"]
-      ],
-      end: 'error'
-    },
-    'legitimacion': {
-      ph: 1,
-      t: "Legitimación: Monopolio del Ministerio Fiscal",
-      ac: 'laj',
-      c: [
-        ['i', "El Ministerio Fiscal es el único legitimado para promover este expediente, actuando de oficio o a solicitud de cualquier persona."],
-        ['n', "Intervención preceptiva: Debe ser oído en todas las actuaciones judiciales relativas al patrimonio protegido. Cualquier persona puede poner en conocimiento del Fiscal las circunstancias justificantes."],
-        ['l', "Ley 15/2015 Art. 57.2; Ley 41/2003 Art. 7"]
-      ],
-      q: "¿La solicitud ha sido formulada por el Ministerio Fiscal?",
-      opts: [
-        { t: "Sí: Solicitud fiscal válida", l: 'A', n: 'postulacion' },
-        { t: "No: Solicitud de particular sin intervención fiscal", l: 'B', n: 'fin_legitimacion' }
-      ]
-    },
-    'fin_legitimacion': {
-      ph: 1,
-      t: "Fin: Falta de legitimación",
-      ac: 'juez',
-      c: [
-        ['w', "El expediente no puede tramitarse por falta de legitimación activa."],
-        ['n', "Solo el Ministerio Fiscal puede promover estos expedientes. La solicitud de un particular debe ser puesta en conocimiento del Fiscal para que valore su actuación de oficio."],
-        ['l', "Ley 15/2015 Art. 57.2"]
-      ],
-      end: 'error'
-    },
-    'postulacion': {
-      ph: 1,
-      t: "Postulación profesional: Acceso directo",
-      ac: 'laj',
-      c: [
-        ['i', "Los interesados no precisan de Abogado ni Procurador para intervenir en este expediente de jurisdicción voluntaria."],
-        ['n', "Fundamento: Ley 15/2015 Art. 3. No obstante, podrán contar con asesoramiento letrado voluntario. Aplicación de la Ley de Asistencia Jurídica Gratuita cuando se acredite insuficiencia de recursos."],
-        ['l', "Ley 15/2015 Art. 3; Ley 1/1996 AJG"]
-      ],
-      nx: 'solicitud'
-    },
+                competencia: {
+                    ph: 1,
+                    t: "Competencia territorial y objetiva",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Verificación del órgano competente para conocer del expediente.",
+                        ],
+                        [
+                            "d",
+                            "Competencia: Juzgado de Primera Instancia del domicilio o, en su defecto, de la residencia de la persona con discapacidad.",
+                        ],
+                        [
+                            "n",
+                            "Criterio de domicilio: LEC Art. 50. A falta de domicilio legal, se atiende al lugar de residencia habitual o último domicilio conocido.",
+                        ],
+                        ["l", "Ley 15/2015 Arts. 2.1, 57.1; LEC Art. 50"],
+                    ],
+                    q: "¿Está determinada correctamente la competencia territorial?",
+                    opts: [
+                        {
+                            t: "Sí: Domicilio/residencia del beneficiario identificado",
+                            l: "A",
+                            n: "legitimacion",
+                        },
+                        {
+                            t: "No: Incompetencia territorial apreciada de oficio",
+                            l: "B",
+                            n: "fin_incompetencia",
+                        },
+                    ],
+                },
+                fin_incompetencia: {
+                    ph: 1,
+                    t: "Fin: Incompetencia territorial",
+                    ac: "juez",
+                    c: [
+                        [
+                            "w",
+                            "El expediente no puede tramitarse por falta de competencia territorial.",
+                        ],
+                        [
+                            "n",
+                            "El órgano judicial apreciará de oficio la falta de competencia conforme al Artículo 16 de la Ley 15/2015, inadmitiendo la solicitud o remitiendo al Juzgado competente.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 16; LEC Art. 50"],
+                    ],
+                    end: "error",
+                },
+                legitimacion: {
+                    ph: 1,
+                    t: "Legitimación: Monopolio del Ministerio Fiscal",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El Ministerio Fiscal es el único legitimado para promover este expediente, actuando de oficio o a solicitud de cualquier persona.",
+                        ],
+                        [
+                            "n",
+                            "Intervención preceptiva: Debe ser oído en todas las actuaciones judiciales relativas al patrimonio protegido. Cualquier persona puede poner en conocimiento del Fiscal las circunstancias justificantes.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 57.2; Ley 41/2003 Art. 7"],
+                    ],
+                    q: "¿La solicitud ha sido formulada por el Ministerio Fiscal?",
+                    opts: [
+                        {
+                            t: "Sí: Solicitud fiscal válida",
+                            l: "A",
+                            n: "postulacion",
+                        },
+                        {
+                            t: "No: Solicitud de particular sin intervención fiscal",
+                            l: "B",
+                            n: "fin_legitimacion",
+                        },
+                    ],
+                },
+                fin_legitimacion: {
+                    ph: 1,
+                    t: "Fin: Falta de legitimación",
+                    ac: "juez",
+                    c: [
+                        [
+                            "w",
+                            "El expediente no puede tramitarse por falta de legitimación activa.",
+                        ],
+                        [
+                            "n",
+                            "Solo el Ministerio Fiscal puede promover estos expedientes. La solicitud de un particular debe ser puesta en conocimiento del Fiscal para que valore su actuación de oficio.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 57.2"],
+                    ],
+                    end: "error",
+                },
+                postulacion: {
+                    ph: 1,
+                    t: "Postulación profesional: Acceso directo",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Los interesados no precisan de Abogado ni Procurador para intervenir en este expediente de jurisdicción voluntaria.",
+                        ],
+                        [
+                            "n",
+                            "Fundamento: Ley 15/2015 Art. 3. No obstante, podrán contar con asesoramiento letrado voluntario. Aplicación de la Ley de Asistencia Jurídica Gratuita cuando se acredite insuficiencia de recursos.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 3; Ley 1/1996 AJG"],
+                    ],
+                    nx: "solicitud",
+                },
 
-    // === FASE 3: Solicitud y documentación ===
-    'solicitud': {
-      ph: 2,
-      t: "Solicitud: Requisitos formales y contenido",
-      ac: 'laj',
-      c: [
-        ['i', "El expediente se inicia mediante solicitud por escrito del Ministerio Fiscal."],
-        ['cl', "Contenido mínimo de la solicitud", [
-          "Datos de identificación de la persona con discapacidad",
-          "Representantes legales, tutores o curadores",
-          "Domicilios para citaciones y notificaciones",
-          "Hechos y alegaciones que fundamentan la petición"
-        ]],
-        ['d', "Documentación anexa preceptiva: Certificado de discapacidad, informe médico o psicosocial, inventario preliminar de bienes, documento público de constitución o título de designación de administrador."],
-        ['l', "Ley 15/2015 Art. 58.1; Art. 14.3 (modelo normalizado)"]
-      ],
-      q: "¿La solicitud cumple los requisitos formales y documentales?",
-      opts: [
-        { t: "Sí: Solicitud completa y subsanada", l: 'A', n: 'audiencia' },
-        { t: "No: Defectos insubsanables o no subsanados en plazo", l: 'B', n: 'fin_solicitud' }
-      ]
-    },
-    'fin_solicitud': {
-      ph: 2,
-      t: "Fin: Inadmisión de la solicitud",
-      ac: 'juez',
-      c: [
-        ['w', "La solicitud se inadmite por defectos formales insubsanables o no subsanados en plazo."],
-        ['n', "El órgano judicial apreciará de oficio la inadecuación del procedimiento o cualquier defecto que impida válida tramitación, conforme al Artículo 16 de la Ley 15/2015."],
-        ['l', "Ley 15/2015 Art. 16; Art. 58.1"]
-      ],
-      end: 'error'
-    },
-    'audiencia': {
-      ph: 2,
-      t: "Audiencia a los interesados",
-      ac: 'juez',
-      c: [
-        ['i', "Antes de la resolución, el Juez podrá acordar audiencia de la persona con discapacidad, sus representantes, administrador designado y cualquier otro interesado."],
-        ['n', "Garantías procesales: Derecho de defensa y contradicción, posibilidad de aportar pruebas y alegaciones, motivación reforzada de las resoluciones."],
-        ['l', "Ley 15/2015 Art. 58.1 in fine"]
-      ],
-      nx: 'tramitacion'
-    },
+                // === FASE 3: Solicitud y documentación ===
+                solicitud: {
+                    ph: 2,
+                    t: "Solicitud: Requisitos formales y contenido",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El expediente se inicia mediante solicitud por escrito del Ministerio Fiscal.",
+                        ],
+                        [
+                            "cl",
+                            "Contenido mínimo de la solicitud",
+                            [
+                                "Datos de identificación de la persona con discapacidad",
+                                "Representantes legales, tutores o curadores",
+                                "Domicilios para citaciones y notificaciones",
+                                "Hechos y alegaciones que fundamentan la petición",
+                            ],
+                        ],
+                        [
+                            "d",
+                            "Documentación anexa preceptiva: Certificado de discapacidad, informe médico o psicosocial, inventario preliminar de bienes, documento público de constitución o título de designación de administrador.",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015 Art. 58.1; Art. 14.3 (modelo normalizado)",
+                        ],
+                    ],
+                    q: "¿La solicitud cumple los requisitos formales y documentales?",
+                    opts: [
+                        {
+                            t: "Sí: Solicitud completa y subsanada",
+                            l: "A",
+                            n: "audiencia",
+                        },
+                        {
+                            t: "No: Defectos insubsanables o no subsanados en plazo",
+                            l: "B",
+                            n: "fin_solicitud",
+                        },
+                    ],
+                },
+                fin_solicitud: {
+                    ph: 2,
+                    t: "Fin: Inadmisión de la solicitud",
+                    ac: "juez",
+                    c: [
+                        [
+                            "w",
+                            "La solicitud se inadmite por defectos formales insubsanables o no subsanados en plazo.",
+                        ],
+                        [
+                            "n",
+                            "El órgano judicial apreciará de oficio la inadecuación del procedimiento o cualquier defecto que impida válida tramitación, conforme al Artículo 16 de la Ley 15/2015.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 16; Art. 58.1"],
+                    ],
+                    end: "error",
+                },
+                audiencia: {
+                    ph: 2,
+                    t: "Audiencia a los interesados",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Antes de la resolución, el Juez podrá acordar audiencia de la persona con discapacidad, sus representantes, administrador designado y cualquier otro interesado.",
+                        ],
+                        [
+                            "n",
+                            "Garantías procesales: Derecho de defensa y contradicción, posibilidad de aportar pruebas y alegaciones, motivación reforzada de las resoluciones.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 58.1 in fine"],
+                    ],
+                    nx: "tramitacion",
+                },
 
-    // === FASE 4: Tramitación ===
-    'tramitacion': {
-      ph: 3,
-      t: "Tramitación: Normas generales aplicables",
-      ac: 'ambos',
-      c: [
-        ['i', "El expediente se tramita conforme a las normas generales de la Ley 15/2015, con aplicación subsidiaria de las disposiciones del Título I."],
-        ['cl', "Principios rectores de la tramitación", [
-          "Celeridad y economía procesal",
-          "Oralidad en actos de audiencia",
-          "Prevalencia del interés superior de la persona con discapacidad",
-          "Posibilidad de acumulación de expedientes relacionados"
-        ]],
-        ['n', "Efectos de la pendencia: La tramitación no impide la adopción de medidas cautelares urgentes cuando exista riesgo para el patrimonio o el beneficiario."],
-        ['l', "Ley 15/2015 Arts. 13, 15, 58.2"]
-      ],
-      q: "¿Procede la adopción de medidas cautelares urgentes?",
-      opts: [
-        { t: "Sí: Riesgo para patrimonio/beneficiario", l: 'A', n: 'cautelares' },
-        { t: "No: Continuar tramitación ordinaria", l: 'B', n: 'resolucion' }
-      ]
-    },
-    'cautelares': {
-      ph: 3,
-      t: "Medidas cautelares provisionales",
-      ac: 'juez',
-      c: [
-        ['i', "El Juez podrá adoptar cautelas provisionales para garantizar la protección del patrimonio durante la tramitación del expediente."],
-        ['n', "Las medidas cautelares se adoptarán ponderando la apariencia de buen derecho y el peligro en la demora, siempre en interés superior del beneficiario."],
-        ['l', "Ley 15/2015 Art. 56.5 in fine"]
-      ],
-      nx: 'resolucion'
-    },
+                // === FASE 4: Tramitación ===
+                tramitacion: {
+                    ph: 3,
+                    t: "Tramitación: Normas generales aplicables",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "El expediente se tramita conforme a las normas generales de la Ley 15/2015, con aplicación subsidiaria de las disposiciones del Título I.",
+                        ],
+                        [
+                            "cl",
+                            "Principios rectores de la tramitación",
+                            [
+                                "Celeridad y economía procesal",
+                                "Oralidad en actos de audiencia",
+                                "Prevalencia del interés superior de la persona con discapacidad",
+                                "Posibilidad de acumulación de expedientes relacionados",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Efectos de la pendencia: La tramitación no impide la adopción de medidas cautelares urgentes cuando exista riesgo para el patrimonio o el beneficiario.",
+                        ],
+                        ["l", "Ley 15/2015 Arts. 13, 15, 58.2"],
+                    ],
+                    q: "¿Procede la adopción de medidas cautelares urgentes?",
+                    opts: [
+                        {
+                            t: "Sí: Riesgo para patrimonio/beneficiario",
+                            l: "A",
+                            n: "cautelares",
+                        },
+                        {
+                            t: "No: Continuar tramitación ordinaria",
+                            l: "B",
+                            n: "resolucion",
+                        },
+                    ],
+                },
+                cautelares: {
+                    ph: 3,
+                    t: "Medidas cautelares provisionales",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez podrá adoptar cautelas provisionales para garantizar la protección del patrimonio durante la tramitación del expediente.",
+                        ],
+                        [
+                            "n",
+                            "Las medidas cautelares se adoptarán ponderando la apariencia de buen derecho y el peligro en la demora, siempre en interés superior del beneficiario.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 56.5 in fine"],
+                    ],
+                    nx: "resolucion",
+                },
 
-    // === FASE 5: Resolución judicial ===
-    'resolucion': {
-      ph: 4,
-      t: "Resolución judicial: Criterios y contenido",
-      ac: 'juez',
-      c: [
-        ['i', "El Juez dictará la resolución en interés de la persona con discapacidad, fundamentándose en su interés superior, autonomía, voluntad y preferencias."],
-        ['n', "Motivación reforzada: La resolución deberá expresar con claridad hechos probados, fundamentos de derecho aplicables y ponderación de intereses, especialmente cuando se limiten facultades de administración."],
-        ['cl', "Contenido mínimo si se constituye patrimonio", [
-          "Inventario de bienes y derechos iniciales (naturaleza, descripción, valor, titularidad)",
-          "Reglas de administración: facultades ordinarias/extraordinarias, rendición de cuentas",
-          "Mecanismos de fiscalización y control",
-          "Procedimientos de designación de órganos"
-        ]],
-        ['l', "Ley 15/2015 Art. 58.3; Ley 8/2021; Convención Internacional sobre Derechos de las Personas con Discapacidad"]
-      ],
-      q: "¿Se estima la solicitud del Ministerio Fiscal?",
-      opts: [
-        { t: "Sí: Se acuerda la medida solicitada", l: 'A', n: 'resolucion_estimada' },
-        { t: "No: Se desestima la solicitud", l: 'B', n: 'resolucion_desestimada' }
-      ]
-    },
-    'resolucion_estimada': {
-      ph: 4,
-      t: "Resolución estimatoria: Constitución o medida acordada",
-      ac: 'juez',
-      c: [
-        ['i', "Se acuerda la constitución del patrimonio protegido, el nombramiento de administrador, las exenciones solicitadas o las medidas posteriores procedentes."],
-        ['d', "La resolución será notificada a los interesados y al Ministerio Fiscal."],
-        ['n', "Eficacia: La resolución produce efectos desde su firmeza, sin perjuicio de la posibilidad de adopción de medidas provisionales ejecutivas."],
-        ['l', "Ley 15/2015 Art. 58.3"]
-      ],
-      nx: 'recursos'
-    },
-    'resolucion_desestimada': {
-      ph: 4,
-      t: "Resolución desestimatoria",
-      ac: 'juez',
-      c: [
-        ['i', "Se desestima la solicitud por no concurrir los presupuestos legales, no acreditarse el interés superior del beneficiario o existir causas que desaconsejen la medida."],
-        ['n', "La resolución deberá motivar expresamente las razones de la desestimación, con especial atención a la ponderación del interés superior y la autonomía de la persona con discapacidad."],
-        ['l', "Ley 15/2015 Art. 58.3"]
-      ],
-      nx: 'recursos'
-    },
+                // === FASE 5: Resolución judicial ===
+                resolucion: {
+                    ph: 4,
+                    t: "Resolución judicial: Criterios y contenido",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "El Juez dictará la resolución en interés de la persona con discapacidad, fundamentándose en su interés superior, autonomía, voluntad y preferencias.",
+                        ],
+                        [
+                            "n",
+                            "Motivación reforzada: La resolución deberá expresar con claridad hechos probados, fundamentos de derecho aplicables y ponderación de intereses, especialmente cuando se limiten facultades de administración.",
+                        ],
+                        [
+                            "cl",
+                            "Contenido mínimo si se constituye patrimonio",
+                            [
+                                "Inventario de bienes y derechos iniciales (naturaleza, descripción, valor, titularidad)",
+                                "Reglas de administración: facultades ordinarias/extraordinarias, rendición de cuentas",
+                                "Mecanismos de fiscalización y control",
+                                "Procedimientos de designación de órganos",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015 Art. 58.3; Ley 8/2021; Convención Internacional sobre Derechos de las Personas con Discapacidad",
+                        ],
+                    ],
+                    q: "¿Se estima la solicitud del Ministerio Fiscal?",
+                    opts: [
+                        {
+                            t: "Sí: Se acuerda la medida solicitada",
+                            l: "A",
+                            n: "resolucion_estimada",
+                        },
+                        {
+                            t: "No: Se desestima la solicitud",
+                            l: "B",
+                            n: "resolucion_desestimada",
+                        },
+                    ],
+                },
+                resolucion_estimada: {
+                    ph: 4,
+                    t: "Resolución estimatoria: Constitución o medida acordada",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Se acuerda la constitución del patrimonio protegido, el nombramiento de administrador, las exenciones solicitadas o las medidas posteriores procedentes.",
+                        ],
+                        [
+                            "d",
+                            "La resolución será notificada a los interesados y al Ministerio Fiscal.",
+                        ],
+                        [
+                            "n",
+                            "Eficacia: La resolución produce efectos desde su firmeza, sin perjuicio de la posibilidad de adopción de medidas provisionales ejecutivas.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 58.3"],
+                    ],
+                    nx: "recursos",
+                },
+                resolucion_desestimada: {
+                    ph: 4,
+                    t: "Resolución desestimatoria",
+                    ac: "juez",
+                    c: [
+                        [
+                            "i",
+                            "Se desestima la solicitud por no concurrir los presupuestos legales, no acreditarse el interés superior del beneficiario o existir causas que desaconsejen la medida.",
+                        ],
+                        [
+                            "n",
+                            "La resolución deberá motivar expresamente las razones de la desestimación, con especial atención a la ponderación del interés superior y la autonomía de la persona con discapacidad.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 58.3"],
+                    ],
+                    nx: "recursos",
+                },
 
-    // === FASE 6: Recursos y eficacia registral ===
-    'recursos': {
-      ph: 5,
-      t: "Régimen de recursos: Apelación",
-      ac: 'ambos',
-      c: [
-        ['i', "Contra la resolución judicial cabe recurso de apelación ante la Audiencia Provincial correspondiente."],
-        ['d', "Plazo de interposición: 20 días siguientes a la notificación de la resolución (LEC Art. 457)."],
-        ['n', "Efecto suspensivo general: La interposición del recurso suspenderá la ejecución de la resolución recurrida. Excepción: cuando la resolución se limite a nombrar administrador por imposibilidad conforme al título, el recurso NO tendrá efectos suspensivos."],
-        ['l', "Ley 15/2015 Art. 58.4; LEC Arts. 455-459"]
-      ],
-      q: "¿Se interpone recurso de apelación en plazo?",
-      opts: [
-        { t: "Sí: Recurso interpuesto", l: 'A', n: 'recurso_pendiente' },
-        { t: "No: Resolución firme", l: 'B', n: 'inscripcion' }
-      ]
-    },
-    'recurso_pendiente': {
-      ph: 5,
-      t: "Trámite del recurso de apelación",
-      ac: 'ambos',
-      c: [
-        ['i', "El recurso se sustanciará ante la Audiencia Provincial, con audiencia de las partes y, en su caso, práctica de pruebas complementarias."],
-        ['n', "Resolución: La Audiencia resolverá mediante auto motivado. Contra el auto de la Audiencia podrá interponerse recurso extraordinario por infracción procesal o casación en supuestos de especial trascendencia."],
-        ['l', "Ley 15/2015 Art. 58.4; LEC Arts. 455-459"]
-      ],
-      q: "¿La Audiencia estima el recurso?",
-      opts: [
-        { t: "Sí: Se revoca o modifica la resolución", l: 'A', n: 'resolucion_estimada' },
-        { t: "No: Se confirma la resolución", l: 'B', n: 'inscripcion' }
-      ]
-    },
-    'inscripcion': {
-      ph: 5,
-      t: "Inscripción registral y comunicación",
-      ac: 'laj',
-      c: [
-        ['i', "Comunicación de la resolución firme para su inscripción en los Registros correspondientes."],
-        ['cl', "Registros afectados", [
-          "Registro Civil (Ley 20/2011 Arts. 58, 72): cuando el administrador no sea el beneficiario, para inscripción de circunstancias del patrimonio y designación/modificación de administradores",
-          "Registro de la Propiedad (Ley Hipotecaria Arts. 2, 18): cuando el patrimonio incluya bienes inmuebles o derechos reales inscribibles",
-          "Registro Mercantil o entidades gestoras: para valores mobiliarios, acciones o participaciones societarias"
-        ]],
-        ['n', "Eficacia erga omnes: La inscripción registral confiere publicidad y oponibilidad frente a terceros de la constitución del patrimonio y designación del administrador."],
-        ['l', "Ley 15/2015 Art. 58.5; Ley 20/2011; Ley Hipotecaria"]
-      ],
-      q: "¿El patrimonio incluye bienes registrables?",
-      opts: [
-        { t: "Sí: Bienes inmuebles, derechos reales o valores", l: 'A', n: 'inscripcion_registrables' },
-        { t: "No: Solo bienes no registrables o efectivo", l: 'B', n: 'fin_exitoso' }
-      ]
-    },
-    'inscripcion_registrables': {
-      ph: 5,
-      t: "Inscripción de bienes registrables",
-      ac: 'laj',
-      c: [
-        ['i', "El testimonio judicial de la resolución deberá presentarse en el Registro correspondiente para inscripción o anotación preventiva."],
-        ['n', "Plazo: Aunque la ley no establece plazo perentorio, se recomienda inscripción inmediata para evitar inseguridad jurídica o perjuicios económicos al patrimonio protegido."],
-        ['d', "Comunicación telemática: La remisión al Registro Civil podrá realizarse por medios electrónicos, conforme a protocolos de interoperabilidad."],
-        ['l', "Ley 15/2015 Art. 58.5; Ley Hipotecaria Arts. 2, 18"]
-      ],
-      nx: 'fin_exitoso'
-    },
+                // === FASE 6: Recursos y eficacia registral ===
+                recursos: {
+                    ph: 5,
+                    t: "Régimen de recursos: Apelación",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "Contra la resolución judicial cabe recurso de apelación ante la Audiencia Provincial correspondiente.",
+                        ],
+                        [
+                            "d",
+                            "Plazo de interposición: 20 días siguientes a la notificación de la resolución (LEC Art. 457).",
+                        ],
+                        [
+                            "n",
+                            "Efecto suspensivo general: La interposición del recurso suspenderá la ejecución de la resolución recurrida. Excepción: cuando la resolución se limite a nombrar administrador por imposibilidad conforme al título, el recurso NO tendrá efectos suspensivos.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 58.4; LEC Arts. 455-459"],
+                    ],
+                    q: "¿Se interpone recurso de apelación en plazo?",
+                    opts: [
+                        {
+                            t: "Sí: Recurso interpuesto",
+                            l: "A",
+                            n: "recurso_pendiente",
+                        },
+                        { t: "No: Resolución firme", l: "B", n: "inscripcion" },
+                    ],
+                },
+                recurso_pendiente: {
+                    ph: 5,
+                    t: "Trámite del recurso de apelación",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "El recurso se sustanciará ante la Audiencia Provincial, con audiencia de las partes y, en su caso, práctica de pruebas complementarias.",
+                        ],
+                        [
+                            "n",
+                            "Resolución: La Audiencia resolverá mediante auto motivado. Contra el auto de la Audiencia podrá interponerse recurso extraordinario por infracción procesal o casación en supuestos de especial trascendencia.",
+                        ],
+                        ["l", "Ley 15/2015 Art. 58.4; LEC Arts. 455-459"],
+                    ],
+                    q: "¿La Audiencia estima el recurso?",
+                    opts: [
+                        {
+                            t: "Sí: Se revoca o modifica la resolución",
+                            l: "A",
+                            n: "resolucion_estimada",
+                        },
+                        {
+                            t: "No: Se confirma la resolución",
+                            l: "B",
+                            n: "inscripcion",
+                        },
+                    ],
+                },
+                inscripcion: {
+                    ph: 5,
+                    t: "Inscripción registral y comunicación",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "Comunicación de la resolución firme para su inscripción en los Registros correspondientes.",
+                        ],
+                        [
+                            "cl",
+                            "Registros afectados",
+                            [
+                                "Registro Civil (Ley 20/2011 Arts. 58, 72): cuando el administrador no sea el beneficiario, para inscripción de circunstancias del patrimonio y designación/modificación de administradores",
+                                "Registro de la Propiedad (Ley Hipotecaria Arts. 2, 18): cuando el patrimonio incluya bienes inmuebles o derechos reales inscribibles",
+                                "Registro Mercantil o entidades gestoras: para valores mobiliarios, acciones o participaciones societarias",
+                            ],
+                        ],
+                        [
+                            "n",
+                            "Eficacia erga omnes: La inscripción registral confiere publicidad y oponibilidad frente a terceros de la constitución del patrimonio y designación del administrador.",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015 Art. 58.5; Ley 20/2011; Ley Hipotecaria",
+                        ],
+                    ],
+                    q: "¿El patrimonio incluye bienes registrables?",
+                    opts: [
+                        {
+                            t: "Sí: Bienes inmuebles, derechos reales o valores",
+                            l: "A",
+                            n: "inscripcion_registrables",
+                        },
+                        {
+                            t: "No: Solo bienes no registrables o efectivo",
+                            l: "B",
+                            n: "fin_exitoso",
+                        },
+                    ],
+                },
+                inscripcion_registrables: {
+                    ph: 5,
+                    t: "Inscripción de bienes registrables",
+                    ac: "laj",
+                    c: [
+                        [
+                            "i",
+                            "El testimonio judicial de la resolución deberá presentarse en el Registro correspondiente para inscripción o anotación preventiva.",
+                        ],
+                        [
+                            "n",
+                            "Plazo: Aunque la ley no establece plazo perentorio, se recomienda inscripción inmediata para evitar inseguridad jurídica o perjuicios económicos al patrimonio protegido.",
+                        ],
+                        [
+                            "d",
+                            "Comunicación telemática: La remisión al Registro Civil podrá realizarse por medios electrónicos, conforme a protocolos de interoperabilidad.",
+                        ],
+                        [
+                            "l",
+                            "Ley 15/2015 Art. 58.5; Ley Hipotecaria Arts. 2, 18",
+                        ],
+                    ],
+                    nx: "fin_exitoso",
+                },
 
-    // === NODOS FINALES ===
-    'fin_exitoso': {
-      ph: 5,
-      t: "Fin: Patrimonio protegido constituido y registrado",
-      ac: 'ambos',
-      c: [
-        ['i', "El procedimiento ha concluido con la constitución efectiva del patrimonio protegido y la inscripción registral de las medidas acordadas."],
-        ['cl', "Obligaciones posteriores", [
-          "Rendición de cuentas del administrador: periodicidad anual (Ley 41/2003 Art. 7)",
-          "Fiscalización por el Ministerio Fiscal: supervisión permanente del correcto funcionamiento",
-          "Revisión periódica de medidas de apoyo: máximo cada 3 años (Ley 8/2021 Art. 269 CC)"
-        ]],
-        ['l', "Ley 41/2003 Arts. 5-7; Ley 8/2021; Ley 15/2015 Art. 58"]
-      ],
-      end: 'success'
-    }
-  };
+                // === NODOS FINALES ===
+                fin_exitoso: {
+                    ph: 5,
+                    t: "Fin: Patrimonio protegido constituido y registrado",
+                    ac: "ambos",
+                    c: [
+                        [
+                            "i",
+                            "El procedimiento ha concluido con la constitución efectiva del patrimonio protegido y la inscripción registral de las medidas acordadas.",
+                        ],
+                        [
+                            "cl",
+                            "Obligaciones posteriores",
+                            [
+                                "Rendición de cuentas del administrador: periodicidad anual (Ley 41/2003 Art. 7)",
+                                "Fiscalización por el Ministerio Fiscal: supervisión permanente del correcto funcionamiento",
+                                "Revisión periódica de medidas de apoyo: máximo cada 3 años (Ley 8/2021 Art. 269 CC)",
+                            ],
+                        ],
+                        [
+                            "l",
+                            "Ley 41/2003 Arts. 5-7; Ley 8/2021; Ley 15/2015 Art. 58",
+                        ],
+                    ],
+                    end: "success",
+                },
+            };
 
-  /* =========================================================
+            /* =========================================================
      ESTADO (Módulo 16)
      ========================================================= */
-  let cur = 'inicio';
-  let hist = [];
-  let activeSbTab = 'map';
-  let mapaOn = false;
-  let collapsedPhases = {};
+            let cur = "inicio";
+            let hist = [];
+            let activeSbTab = "map";
+            let mapaOn = false;
+            let collapsedPhases = {};
+            let zoomLevel = 100;
 
-  /* =========================================================
-     NAVEGACIÓN (Módulo 16)
+            const SB_FOOT = `
+    <div class="sb-foot">
+      <strong>Referencias:</strong><br>
+      <span class="law">Ley 15/2015 Arts. 56-58</span><br>
+      <span class="law">Ley 41/2003 Capítulo I</span><br>
+      <span class="law">Ley 8/2021 · CC Arts. 269-270</span>
+    </div>
+  `;
+
+            function clampNum(v, min, max) {
+                return Math.min(max, Math.max(min, v));
+            }
+            function setZoom(pct) {
+                zoomLevel = clampNum(Math.round(pct), 80, 140);
+                const content = document.getElementById("content");
+                if (content) content.style.zoom = String(zoomLevel / 100);
+                const lbl = document.getElementById("zoomLabel");
+                if (lbl) lbl.textContent = zoomLevel + "%";
+            }
+            function zoomIn() {
+                setZoom(zoomLevel + 10);
+            }
+            function zoomOut() {
+                setZoom(zoomLevel - 10);
+            }
+
+            /* =========================================================
+     SIDEBAR TOGGLE (NUEVO)
      ========================================================= */
-  function goTo(stepId, choiceLabel) {
-    if (!STEPS[stepId]) return;
-    hist.push({ s: cur, next: stepId, c: choiceLabel || '' });
-    cur = stepId;
-    if (choiceLabel) sbTab('journey');
-    render();
-  }
-  function goBack() {
-    if (hist.length === 0) return;
-    cur = hist.pop().s;
-    render();
-  }
-  function goBackTo(index) {
-    if (index < 0 || index >= hist.length) return;
-    cur = hist[index].next;
-    hist = hist.slice(0, index);
-    render();
-  }
-  function restart() {
-    cur = 'inicio';
-    hist = [];
-    sbTab('map');
-    render();
-  }
-  function sbTab(tab) {
-    activeSbTab = tab;
-    const map = document.getElementById('sb-map');
-    const jny = document.getElementById('sb-journey');
-    if (map) map.style.display = (tab === 'map') ? 'block' : 'none';
-    if (jny) jny.style.display = (tab === 'journey') ? 'block' : 'none';
-    document.querySelectorAll('.sb-tab').forEach(t => {
-      t.classList.toggle('active', t.dataset.tab === tab);
-    });
-  }
-  function toggleMapa() {
-    mapaOn = !mapaOn;
-    const lay = document.getElementById('layout');
-    const ovl = document.getElementById('mapa-overlay');
-    if (lay) lay.style.display = mapaOn ? 'none' : 'flex';
-    if (ovl) ovl.style.display = mapaOn ? 'block' : 'none';
-    if (mapaOn) renderMapa();
-  }
+            let sidebarOpen = false; // solo móvil
 
-  /* =========================================================
+            function toggleSidebar() {
+                const isMobile = window.innerWidth <= 768;
+                const sidebar = document.getElementById("sidebar");
+                const btn = document.getElementById("btnToggleSidebar");
+                if (isMobile) {
+                    sidebarOpen = !sidebarOpen;
+                    if (sidebarOpen) {
+                        sidebar.classList.add("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.add("show");
+                        if (btn) btn.setAttribute("aria-expanded", "true");
+                    } else {
+                        sidebar.classList.remove("open");
+                        document
+                            .getElementById("sidebarBackdrop")
+                            .classList.remove("show");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                } else {
+                    sidebar.classList.toggle("collapsed");
+                    const isCollapsed = sidebar.classList.contains("collapsed");
+                    if (btn)
+                        btn.setAttribute(
+                            "aria-expanded",
+                            isCollapsed ? "false" : "true",
+                        );
+                }
+            }
+
+            function closeMobileSidebar() {
+                if (window.innerWidth <= 768 && sidebarOpen) {
+                    sidebarOpen = false;
+                    const sidebar = document.getElementById("sidebar");
+                    const backdrop = document.getElementById("sidebarBackdrop");
+                    const btn = document.getElementById("btnToggleSidebar");
+                    if (sidebar) sidebar.classList.remove("open");
+                    if (backdrop) backdrop.classList.remove("show");
+                    if (btn) btn.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            function handleResize() {
+                if (window.innerWidth > 768) {
+                    if (sidebarOpen) {
+                        const sidebar = document.getElementById("sidebar");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (sidebar) sidebar.classList.remove("open");
+                        if (backdrop) backdrop.classList.remove("show");
+                        sidebarOpen = false;
+                        const btn = document.getElementById("btnToggleSidebar");
+                        if (btn) btn.setAttribute("aria-expanded", "false");
+                    }
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (sidebarEl) sidebarEl.classList.remove("open");
+                } else {
+                    const sidebarEl = document.getElementById("sidebar");
+                    if (
+                        sidebarEl &&
+                        sidebarEl.classList.contains("collapsed")
+                    ) {
+                        sidebarEl.classList.remove("collapsed");
+                    }
+                    if (
+                        !sidebarOpen &&
+                        sidebarEl &&
+                        sidebarEl.classList.contains("open")
+                    ) {
+                        sidebarEl.classList.remove("open");
+                        const backdrop =
+                            document.getElementById("sidebarBackdrop");
+                        if (backdrop) backdrop.classList.remove("show");
+                    }
+                }
+            }
+
+            /* =========================================================
+     NAVEGACIÓN (Módulo 16, modificada para cerrar sidebar móvil)
+     ========================================================= */
+            function goTo(stepId, choiceLabel) {
+                if (!STEPS[stepId]) return;
+                hist.push({ s: cur, next: stepId, c: choiceLabel || "" });
+                cur = stepId;
+                if (choiceLabel) sbTab("journey");
+                render();
+                closeMobileSidebar();
+            }
+            function goBack() {
+                if (hist.length === 0) return;
+                cur = hist.pop().s;
+                render();
+                closeMobileSidebar();
+            }
+            function goBackTo(index) {
+                if (index < 0 || index >= hist.length) return;
+                cur = hist[index].next;
+                hist = hist.slice(0, index);
+                render();
+                closeMobileSidebar();
+            }
+            function restart() {
+                cur = "inicio";
+                hist = [];
+                sbTab("map");
+                setZoom(100);
+                render();
+                closeMobileSidebar();
+            }
+            function sbTab(tab) {
+                activeSbTab = tab;
+                const map = document.getElementById("sb-map");
+                const jny = document.getElementById("sb-journey");
+                if (map) map.style.display = tab === "map" ? "block" : "none";
+                if (jny)
+                    jny.style.display = tab === "journey" ? "block" : "none";
+                document.querySelectorAll(".sb-tab").forEach((t) => {
+                    t.classList.toggle("active", t.dataset.tab === tab);
+                });
+            }
+            function toggleMapa() {
+                mapaOn = !mapaOn;
+                const lay = document.getElementById("layout");
+                const ovl = document.getElementById("mapa-overlay");
+                if (lay) lay.style.display = mapaOn ? "none" : "flex";
+                if (ovl) ovl.style.display = mapaOn ? "block" : "none";
+                if (mapaOn) renderMapa();
+                closeMobileSidebar();
+            }
+
+            /* =========================================================
      HASH (Módulo 20)
      ========================================================= */
-  function syncHash() {
-    const current = window.location.hash.replace('#', '');
-    if (current !== cur) history.replaceState(null, '', '#' + cur);
-  }
-  function loadFromHash() {
-    const h = window.location.hash.replace('#', '');
-    if (h && STEPS[h]) { cur = h; hist = []; }
-  }
+            function syncHash() {
+                const current = window.location.hash.replace("#", "");
+                if (current !== cur) history.replaceState(null, "", "#" + cur);
+            }
+            function loadFromHash() {
+                const h = window.location.hash.replace("#", "");
+                if (h && STEPS[h]) {
+                    cur = h;
+                    hist = [];
+                }
+            }
 
-  /* =========================================================
+            /* =========================================================
      UTILIDADES (Módulo 19)
      ========================================================= */
-  function escQ(s) { return String(s).replace(/'/g, "&#39;"); }
-  function truncate(s, n) { return s.length > n ? s.slice(0, n-1) + '…' : s; }
-  function getActorLabel(ac) {
-    return ac === 'laj' ? 'Letrado de la Administración' : ac === 'juez' ? 'Juez' : 'Ambos';
-  }
-  function getActorClass(ac) {
-    return ac === 'laj' ? 'act-laj' : ac === 'juez' ? 'act-juez' : 'act-ambos';
-  }
+            function escQ(s) {
+                return String(s).replace(/'/g, "&#39;");
+            }
+            function truncate(s, n) {
+                return s.length > n ? s.slice(0, n - 1) + "…" : s;
+            }
+            function getActorLabel(ac) {
+                return ac === "laj"
+                    ? "Letrado de la Administración"
+                    : ac === "juez"
+                      ? "Juez"
+                      : "Ambos";
+            }
+            function getActorClass(ac) {
+                return ac === "laj"
+                    ? "act-laj"
+                    : ac === "juez"
+                      ? "act-juez"
+                      : "act-ambos";
+            }
 
-  /* =========================================================
-     RENDER (Módulo 17)
+            /* =========================================================
+     RENDER (Módulo 17, cierra sidebar)
      ========================================================= */
-  function render() {
-    renderPbar();
-    renderBreadcrumb();
-    renderSidebar();
-    renderContent();
-    syncHash();
-    const content = document.getElementById('content');
-    if (content) content.scrollTop = 0;
-  }
+            function render() {
+                renderPbar();
+                renderBreadcrumb();
+                renderSidebar();
+                renderContent();
+                syncHash();
+                const content = document.getElementById("content");
+                if (content) content.scrollTop = 0;
+                closeMobileSidebar();
+            }
 
-  /* =========================================================
+            /* =========================================================
      RENDER COMPONENTES
      ========================================================= */
-  function renderPbar() {
-    const host = document.getElementById('pbar');
-    if (!host) return;
-    const s = STEPS[cur];
-    if (!s) return;
-    const currentPhase = s.ph;
-    host.innerHTML = PHASES.map((name, idx) => {
-      const cls = idx < currentPhase ? 'done' : idx === currentPhase ? 'active' : '';
-      return `<div class="ph-item"><span class="ph-lbl ${cls}">${name}</span>${idx < PHASES.length-1 ? '<span class="ph-sep">›</span>' : ''}</div>`;
-    }).join('');
-  }
+            function renderPbar() {
+                const host = document.getElementById("pbar");
+                if (!host) return;
+                const s = STEPS[cur];
+                if (!s) return;
+                const currentPhase = s.ph;
+                host.innerHTML = PHASES.map((name, idx) => {
+                    const cls =
+                        idx < currentPhase
+                            ? "done"
+                            : idx === currentPhase
+                              ? "active"
+                              : "";
+                    return `<div class="ph-item"><span class="ph-lbl ${cls}">${name}</span>${idx < PHASES.length - 1 ? '<span class="ph-sep">›</span>' : ""}</div>`;
+                }).join("");
+            }
 
-  function renderBreadcrumb() {
-    const host = document.getElementById('breadcrumb');
-    if (!host) return;
-    const items = hist.map((h, i) => {
-      const step = STEPS[h.s];
-      const label = truncate(step ? step.t : h.s, 28);
-      return `<button class="bc-item bc-past" data-action="go-back-to" data-index="${i}" title="${escQ(step?.t || '')}">${label}</button><span class="bc-sep">›</span>`;
-    }).join('');
-    const current = STEPS[cur];
-    const currentLabel = truncate(current?.t || cur, 28);
-    host.innerHTML = items + `<span class="bc-item bc-current" title="${escQ(current?.t || '')}">${currentLabel}</span>`;
-  }
+            function renderBreadcrumb() {
+                const host = document.getElementById("breadcrumb");
+                if (!host) return;
+                const items = hist
+                    .map((h, i) => {
+                        const step = STEPS[h.s];
+                        const label = truncate(step ? step.t : h.s, 28);
+                        return `<button class="bc-item bc-past" data-action="go-back-to" data-index="${i}" title="${escQ(step?.t || "")}">${label}</button><span class="bc-sep">›</span>`;
+                    })
+                    .join("");
+                const current = STEPS[cur];
+                const currentLabel = truncate(current?.t || cur, 28);
+                host.innerHTML =
+                    items +
+                    `<span class="bc-item bc-current" title="${escQ(current?.t || "")}">${currentLabel}</span>`;
+            }
 
-  function renderSidebar() {
-    if (activeSbTab === 'map') renderSidebarMap();
-    else renderSidebarJourney();
-  }
+            function renderSidebar() {
+                if (activeSbTab === "map") renderSidebarMap();
+                else renderSidebarJourney();
+            }
 
-  function renderSidebarMap() {
-    const host = document.getElementById('sb-map');
-    if (!host) return;
-    
-    const byPhase = {};
-    Object.entries(STEPS).forEach(([id, step]) => {
-      if (!byPhase[step.ph]) byPhase[step.ph] = [];
-      byPhase[step.ph].push({ id, ...step });
-    });
+            function renderSidebarMap() {
+                const host = document.getElementById("sb-map");
+                if (!host) return;
 
-    host.innerHTML = PHASES.map((phaseName, phaseIdx) => {
-      const nodes = byPhase[phaseIdx] || [];
-      const isCollapsed = collapsedPhases[phaseIdx] === true;
-      return `
-        <div class="sm-phase ${isCollapsed ? 'collapsed' : ''}" data-phase="${phaseIdx}">
+                const byPhase = {};
+                Object.entries(STEPS).forEach(([id, step]) => {
+                    if (!byPhase[step.ph]) byPhase[step.ph] = [];
+                    byPhase[step.ph].push({ id, ...step });
+                });
+
+                host.innerHTML =
+                    PHASES.map((phaseName, phaseIdx) => {
+                        const nodes = byPhase[phaseIdx] || [];
+                        const isCollapsed = collapsedPhases[phaseIdx] === true;
+                        return `
+        <div class="sm-phase ${isCollapsed ? "collapsed" : ""}" data-phase="${phaseIdx}">
           <div class="sm-phase-hdr" data-action="toggle-phase">${phaseName}</div>
           <div class="sm-nodes">
-            ${nodes.map(node => {
-              const isVisited = hist.some(h => h.s === node.id || h.next === node.id);
-              const isCurrent = node.id === cur;
-              const isUnreachable = !isVisited && !isCurrent && hist.length > 0;
-              const cls = isCurrent ? 'sm-current' : isVisited ? 'sm-visited' : isUnreachable ? 'sm-unreachable' : '';
-              const titleTrunc = truncate(node.t, 24);
-              return `
+            ${nodes
+                .map((node) => {
+                    const isVisited = hist.some(
+                        (h) => h.s === node.id || h.next === node.id,
+                    );
+                    const isCurrent = node.id === cur;
+                    const isUnreachable =
+                        !isVisited && !isCurrent && hist.length > 0;
+                    const cls = isCurrent
+                        ? "sm-current"
+                        : isVisited
+                          ? "sm-visited"
+                          : isUnreachable
+                            ? "sm-unreachable"
+                            : "";
+                    const titleTrunc = truncate(node.t, 24);
+                    return `
                 <div class="sm-node ${cls}" data-action="preview-step" data-step="${node.id}" title="${escQ(node.t)}">
                   <span style="flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${titleTrunc}</span>
-                  ${!isUnreachable ? `<button class="sm-node-action" data-action="jump-to" data-step="${node.id}" title="Ir a este paso" aria-label="Ir a: ${escQ(node.t)}">→</button>` : ''}
+                  ${!isUnreachable ? `<button class="sm-node-action" data-action="jump-to" data-step="${node.id}" title="Ir a este paso" aria-label="Ir a: ${escQ(node.t)}">→</button>` : ""}
                 </div>
               `;
-            }).join('')}
+                })
+                .join("")}
           </div>
         </div>
       `;
-    }).join('');
+                    }).join("") + SB_FOOT;
 
-    host.querySelectorAll('.sm-phase-hdr').forEach(hdr => {
-      hdr.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const phase = hdr.closest('.sm-phase');
-        const idx = phase.dataset.phase;
-        collapsedPhases[idx] = !collapsedPhases[idx];
-        phase.classList.toggle('collapsed');
-      });
-    });
+                host.querySelectorAll(".sm-phase-hdr").forEach((hdr) => {
+                    hdr.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        const phase = hdr.closest(".sm-phase");
+                        const idx = phase.dataset.phase;
+                        collapsedPhases[idx] = !collapsedPhases[idx];
+                        phase.classList.toggle("collapsed");
+                    });
+                });
 
-    host.querySelectorAll('[data-action="preview-step"]').forEach(node => {
-      node.addEventListener('click', (e) => {
-        if (e.target.closest('[data-action="jump-to"]')) return;
-        e.stopPropagation();
-        const stepId = node.dataset.step;
-        showStepPreview(stepId);
-      });
-    });
-  }
+                host.querySelectorAll('[data-action="preview-step"]').forEach(
+                    (node) => {
+                        node.addEventListener("click", (e) => {
+                            if (e.target.closest('[data-action="jump-to"]'))
+                                return;
+                            e.stopPropagation();
+                            const stepId = node.dataset.step;
+                            showStepPreview(stepId);
+                        });
+                    },
+                );
+            }
 
-  function showStepPreview(stepId) {
-    const step = STEPS[stepId];
-    if (!step) return;
-    
-    const preview = document.createElement('div');
-    preview.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border:1px solid var(--bdr);border-radius:12px;max-width:500px;max-height:80vh;overflow:auto;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.15);padding:20px;font-size:13px;';
-    preview.innerHTML = `
+            function showStepPreview(stepId) {
+                const step = STEPS[stepId];
+                if (!step) return;
+
+                const preview = document.createElement("div");
+                preview.style.cssText =
+                    "position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border:1px solid var(--bdr);border-radius:12px;max-width:500px;max-height:80vh;overflow:auto;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.15);padding:20px;font-size:13px;";
+                preview.innerHTML = `
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
         <strong style="font-size:15px;">${step.t}</strong>
         <button id="close-preview" style="background:none;border:none;font-size:18px;cursor:pointer;color:var(--muted);">&times;</button>
       </div>
       <div style="margin-bottom:10px;"><span class="act-badge ${getActorClass(step.ac)}">${getActorLabel(step.ac)}</span></div>
       <div>${renderContentBlocks(step.c)}</div>
-      ${step.q ? `<div style="margin-top:14px;padding:10px;background:var(--slate-bg);border-radius:6px;font-weight:500;">${step.q}</div>` : ''}
+      ${step.q ? `<div style="margin-top:14px;padding:10px;background:var(--slate-bg);border-radius:6px;font-weight:500;">${step.q}</div>` : ""}
     `;
-    document.body.appendChild(preview);
-    
-    document.getElementById('close-preview').onclick = () => preview.remove();
-    preview.onclick = (e) => { if (e.target === preview) preview.remove(); };
-  }
+                document.body.appendChild(preview);
 
-  function renderSidebarJourney() {
-    const host = document.getElementById('sb-journey');
-    if (!host) return;
-    
-    const items = hist.map((h, i) => {
-      const step = STEPS[h.s];
-      return `
+                document.getElementById("close-preview").onclick = () =>
+                    preview.remove();
+                preview.onclick = (e) => {
+                    if (e.target === preview) preview.remove();
+                };
+            }
+
+            function renderSidebarJourney() {
+                const host = document.getElementById("sb-journey");
+                if (!host) return;
+
+                const items = hist
+                    .map((h, i) => {
+                        const step = STEPS[h.s];
+                        return `
         <div class="pi past">
           ${truncate(step?.t || h.s, 40)}
-          ${h.c ? `<span class="pi-choice">${h.c}</span>` : ''}
+          ${h.c ? `<span class="pi-choice">${h.c}</span>` : ""}
         </div>
       `;
-    }).join('');
-    
-    const current = STEPS[cur];
-    host.innerHTML = `
+                    })
+                    .join("");
+
+                const current = STEPS[cur];
+                host.innerHTML = `
       ${items}
       <div class="pi current">${truncate(current?.t || cur, 40)}</div>
-      <div class="sb-foot">
-        <strong>Referencias:</strong><br>
-        <span class="law">Ley 15/2015 Arts. 56-58</span><br>
-        <span class="law">Ley 41/2003 Capítulo I</span><br>
-        <span class="law">Ley 8/2021 · CC Arts. 269-270</span>
-      </div>
+      ${SB_FOOT}
     `;
-  }
+            }
 
-  function renderContent() {
-    const s = STEPS[cur];
-    if (!s) return;
-    const host = document.getElementById('content');
-    if (!host) return;
-    host.innerHTML = s.end ? buildEnd(s) : buildStep(s);
-  }
+            function renderContent() {
+                const s = STEPS[cur];
+                if (!s) return;
+                const host = document.getElementById("content");
+                if (!host) return;
+                host.innerHTML = s.end ? buildEnd(s) : buildStep(s);
+            }
 
-  function renderContentBlocks(blocks) {
-    if (!Array.isArray(blocks)) return '';
-    return blocks.map(b => {
-      const [type, ...args] = b;
-      switch(type) {
-        case 'i': return `<p class="blk-i">${args[0]}</p>`;
-        case 'd': return `<div class="blk-d"><strong>Plazo:</strong> ${args[0]}</div>`;
-        case 'n': return `<div class="blk-n"><strong>Nota:</strong> ${args[0]}</div>`;
-        case 'w': return `<div class="blk-w"><strong>Atención:</strong> ${args[0]}</div>`;
-        case 'l': return `<div class="blk-l">${args[0]}</div>`;
-        case 'cl':
-          const [title, items] = args;
-          return `
+            function renderContentBlocks(blocks) {
+                if (!Array.isArray(blocks)) return "";
+                return blocks
+                    .map((b) => {
+                        const [type, ...args] = b;
+                        switch (type) {
+                            case "i":
+                                return `<p class="blk-i">${args[0]}</p>`;
+                            case "d":
+                                return `<div class="blk-d"><strong>Plazo:</strong> ${args[0]}</div>`;
+                            case "n":
+                                return `<div class="blk-n"><strong>Nota:</strong> ${args[0]}</div>`;
+                            case "w":
+                                return `<div class="blk-w"><strong>Atención:</strong> ${args[0]}</div>`;
+                            case "l":
+                                return `<div class="blk-l">${args[0]}</div>`;
+                            case "cl":
+                                const [title, items] = args;
+                                return `
             <div class="blk-cl">
               <div class="blk-cl-title">${title}</div>
-              ${items.map(it => `<label class="blk-cl-item"><input type="checkbox"> ${it}</label>`).join('')}
+              ${items.map((it) => `<label class="blk-cl-item"><input type="checkbox"> ${it}</label>`).join("")}
             </div>
           `;
-        default: return '';
-      }
-    }).join('');
-  }
+                            default:
+                                return "";
+                        }
+                    })
+                    .join("");
+            }
 
-  function buildStep(s) {
-    const hasDecision = !!s.q;
-    const hasNext = !!s.nx;
-    const canGoBack = hist.length > 0;
-    
-    return `
+            function buildStep(s) {
+                const hasDecision = !!s.q;
+                const hasNext = !!s.nx;
+                const canGoBack = hist.length > 0;
+
+                return `
       <div class="card">
         <div class="c-hdr">
           <span class="act-badge ${getActorClass(s.ac)}">${getActorLabel(s.ac)}</span>
@@ -1318,51 +2246,75 @@
         <div class="c-body">
           ${renderContentBlocks(s.c)}
         </div>
-        ${hasDecision ? `
+        ${
+            hasDecision
+                ? `
           <div class="dec-area">
             <div class="dec-q">${s.q}</div>
             <div class="dec-opts">
-              ${s.opts.map((opt, idx) => `
-                <button class="dec-btn ${opt.l === 'A' ? 'ok' : opt.l === 'B' ? 'bad' : opt.l === 'C' ? 'warn' : 'neutral'}" 
-                        data-action="go-to" 
-                        data-step="${opt.n}" 
+              ${s.opts
+                  .map(
+                      (opt, idx) => `
+                <button class="dec-btn ${opt.l === "A" ? "ok" : opt.l === "B" ? "bad" : opt.l === "C" ? "warn" : "neutral"}"
+                        data-action="go-to"
+                        data-step="${opt.n}"
                         data-label="${escQ(opt.t)}">
                   <span class="dec-letter">${opt.l}</span>
                   <span>${opt.t}</span>
                 </button>
-              `).join('')}
+              `,
+                  )
+                  .join("")}
             </div>
           </div>
-        ` : ''}
+        `
+                : ""
+        }
         <div class="c-nav">
-          <button class="btn-nav" data-action="go-back" ${!canGoBack ? 'disabled' : ''}>← Volver</button>
-          ${hasNext ? `<button class="btn-nav btn-next" data-action="go-to" data-step="${s.nx}" data-label="">Siguiente →</button>` : ''}
+          <button class="btn-nav" data-action="go-back" ${!canGoBack ? "disabled" : ""}>← Volver</button>
+          ${hasNext ? `<button class="btn-nav btn-next" data-action="go-to" data-step="${s.nx}" data-label="">Siguiente →</button>` : ""}
         </div>
       </div>
     `;
-  }
+            }
 
-  function buildEnd(s) {
-    const icon = s.end === 'success' ? '✅' : s.end === 'error' ? '❌' : s.end === 'warning' ? '⚠️' : 'ℹ️';
-    const title = s.end === 'success' ? 'Procedimiento concluido satisfactoriamente' : 
-                  s.end === 'error' ? 'Procedimiento no procedente' :
-                  s.end === 'warning' ? 'Procedimiento concluido con observaciones' :
-                  'Procedimiento concluido';
-    
-    const summary = hist.length > 0 ? `
+            function buildEnd(s) {
+                const icon =
+                    s.end === "success"
+                        ? "✅"
+                        : s.end === "error"
+                          ? "❌"
+                          : s.end === "warning"
+                            ? "⚠️"
+                            : "ℹ️";
+                const title =
+                    s.end === "success"
+                        ? "Procedimiento concluido satisfactoriamente"
+                        : s.end === "error"
+                          ? "Procedimiento no procedente"
+                          : s.end === "warning"
+                            ? "Procedimiento concluido con observaciones"
+                            : "Procedimiento concluido";
+
+                const summary =
+                    hist.length > 0
+                        ? `
       <div class="summary-box">
         <strong>Resumen del recorrido:</strong>
         <ol>
-          ${hist.map((h, i) => {
-            const step = STEPS[h.s];
-            return `<li>${i+1}. ${truncate(step?.t || h.s, 50)}${h.c ? ` <span class="summary-choice">→ ${h.c}</span>` : ''}</li>`;
-          }).join('')}
+          ${hist
+              .map((h, i) => {
+                  const step = STEPS[h.s];
+                  return `<li>${i + 1}. ${truncate(step?.t || h.s, 50)}${h.c ? ` <span class="summary-choice">→ ${h.c}</span>` : ""}</li>`;
+              })
+              .join("")}
           <li><strong>${hist.length + 1}. ${truncate(s.t, 50)}</strong></li>
         </ol>
       </div>
-    ` : '';
+    `
+                        : "";
 
-    return `
+                return `
       <div class="card end-${s.end}">
         <div class="c-hdr">
           <span class="act-badge ${getActorClass(s.ac)}">${getActorLabel(s.ac)}</span>
@@ -1386,103 +2338,159 @@
         </div>
       </div>
     `;
-  }
+            }
 
-  /* =========================================================
+            /* =========================================================
      MÓDULO 10: RENDER MAPA COMPLETO
      ========================================================= */
-  function renderMapa() {
-    const host = document.getElementById('mapa-grid');
-    if (!host) return;
+            function renderMapa() {
+                const host = document.getElementById("mapa-grid");
+                if (!host) return;
 
-    const byPhase = {};
-    Object.entries(STEPS).forEach(([id, step]) => {
-      if (!byPhase[step.ph]) byPhase[step.ph] = [];
-      byPhase[step.ph].push({ id, ...step });
-    });
+                const byPhase = {};
+                Object.entries(STEPS).forEach(([id, step]) => {
+                    if (!byPhase[step.ph]) byPhase[step.ph] = [];
+                    byPhase[step.ph].push({ id, ...step });
+                });
 
-    host.innerHTML = PHASES.map((phaseName, phaseIdx) => {
-      const nodes = byPhase[phaseIdx] || [];
-      return `
+                host.innerHTML = PHASES.map((phaseName, phaseIdx) => {
+                    const nodes = byPhase[phaseIdx] || [];
+                    return `
         <div class="mapa-col">
           <div class="mapa-col-hdr">Fase ${phaseIdx + 1}: ${phaseName}</div>
           <div class="mapa-nodes">
-            ${nodes.map(node => {
-              const isVisited = hist.some(h => h.s === node.id || h.next === node.id);
-              const isCurrent = node.id === cur;
-              const stateClass = isCurrent ? 'current' : isVisited ? 'visited' : (node.end ? `end-${node.end}` : '');
-              const arrow = node.opts ? node.opts.map(o => `<div class="mapa-arrow">→ ${o.l}: ${truncate(o.t, 25)}</div>`).join('') : 
-                           node.nx ? `<div class="mapa-arrow">→ Siguiente</div>` : '';
-              return `
+            ${nodes
+                .map((node) => {
+                    const isVisited = hist.some(
+                        (h) => h.s === node.id || h.next === node.id,
+                    );
+                    const isCurrent = node.id === cur;
+                    const stateClass = isCurrent
+                        ? "current"
+                        : isVisited
+                          ? "visited"
+                          : node.end
+                            ? `end-${node.end}`
+                            : "";
+                    const arrow = node.opts
+                        ? node.opts
+                              .map(
+                                  (o) =>
+                                      `<div class="mapa-arrow">→ ${o.l}: ${truncate(o.t, 25)}</div>`,
+                              )
+                              .join("")
+                        : node.nx
+                          ? `<div class="mapa-arrow">→ Siguiente</div>`
+                          : "";
+                    return `
                 <div class="mapa-node ${stateClass}" data-action="jump-to" data-step="${node.id}" title="${escQ(node.t)}">
                   <div class="mapa-node-title">${truncate(node.t, 35)}</div>
                   <span class="mapa-node-actor">${getActorLabel(node.ac)}</span>
                   ${arrow}
                 </div>
               `;
-            }).join('')}
+                })
+                .join("")}
           </div>
         </div>
       `;
-    }).join('');
-  }
+                }).join("");
+            }
 
-  /* =========================================================
+            /* =========================================================
      DESCARGA (Módulo 18)
      ========================================================= */
-  function dlGuia() {
-    const html = '<!DOCTYPE html>' + document.documentElement.outerHTML;
-    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'guia-patrimonio-discapacidad-ley15-2015.html';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }
+            function dlGuia() {
+                const html =
+                    "<!DOCTYPE html>" + document.documentElement.outerHTML;
+                const blob = new Blob([html], {
+                    type: "text/html;charset=utf-8",
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "guia-patrimonio-discapacidad-ley15-2015.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
 
-  /* =========================================================
+            /* =========================================================
      EVENTOS (Módulo 21) - Delegación única
      ========================================================= */
-  function wireEvents() {
-    document.addEventListener('click', (ev) => {
-      const el = ev.target.closest('[data-action]');
-      if (!el) return;
-      const action = el.dataset.action;
+            function wireEvents() {
+                document.addEventListener("click", (ev) => {
+                    const el = ev.target.closest("[data-action]");
+                    if (!el) return;
+                    const action = el.dataset.action;
 
-      switch (action) {
-        case 'toggle-mapa': toggleMapa(); break;
-        case 'descargar': dlGuia(); break;
-        case 'reiniciar': restart(); break;
-        case 'sb-tab': sbTab(el.dataset.tab); break;
-        case 'go-back': goBack(); break;
-        case 'go-back-to': goBackTo(parseInt(el.dataset.index, 10)); break;
-        case 'go-to': goTo(el.dataset.step, el.dataset.label || ''); break;
-        case 'jump-to':
-          if (STEPS[el.dataset.step]) { cur = el.dataset.step; hist = []; render(); }
-          break;
-        case 'close-mapa': toggleMapa(); break;
-        case 'toggle-phase':
-          // Manejado directamente en renderSidebarMap para evitar duplicación
-          break;
-      }
-    });
+                    switch (action) {
+                        case "toggle-mapa":
+                            toggleMapa();
+                            break;
+                        case "descargar":
+                            dlGuia();
+                            break;
+                        case "reiniciar":
+                            restart();
+                            break;
+                        case "zoom-in":
+                            zoomIn();
+                            break;
+                        case "zoom-out":
+                            zoomOut();
+                            break;
+                        case "sb-tab":
+                            sbTab(el.dataset.tab);
+                            break;
+                        case "go-back":
+                            goBack();
+                            break;
+                        case "go-back-to":
+                            goBackTo(parseInt(el.dataset.index, 10));
+                            break;
+                        case "go-to":
+                            goTo(el.dataset.step, el.dataset.label || "");
+                            break;
+                        case "jump-to":
+                            if (STEPS[el.dataset.step]) {
+                                cur = el.dataset.step;
+                                hist = [];
+                                render();
+                            }
+                            break;
+                        case "close-mapa":
+                            toggleMapa();
+                            break;
+                        case "toggle-phase":
+                            break;
+                    }
+                });
 
-    document.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape' && mapaOn) toggleMapa();
-    });
-  }
+                document.addEventListener("keydown", (ev) => {
+                    if (ev.key === "Escape" && mapaOn) toggleMapa();
+                });
+            }
 
-  /* =========================================================
+            /* =========================================================
      ARRANQUE
      ========================================================= */
-  document.addEventListener('DOMContentLoaded', () => {
-    loadFromHash();
-    wireEvents();
-    render();
-  });
-  </script>
-</body>
+            document.addEventListener("DOMContentLoaded", () => {
+                loadFromHash();
+                wireEvents();
+                setZoom(zoomLevel);
+                // Eventos para toggle sidebar
+                document
+                    .getElementById("btnToggleSidebar")
+                    .addEventListener("click", toggleSidebar);
+                document
+                    .getElementById("sidebarBackdrop")
+                    .addEventListener("click", closeMobileSidebar);
+                window.addEventListener("resize", handleResize);
+                handleResize();
+                render();
+            });
+        </script>
+    </body>
 </html>
