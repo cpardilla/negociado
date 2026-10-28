@@ -1,0 +1,858 @@
+/* Components shared by every view (ley, esquema, guía, referencia).
+ * Colour variants are chosen with a modifier class that sets --tone / --tone-bg / --tone-bd. */
+
+/* ── Tone modifiers ─────────────────────────────────────────────────────── */
+.c1 { --tone: var(--c1); --tone-bg: var(--c1-bg); --tone-bd: var(--c1-bd); }
+.c2 { --tone: var(--c2); --tone-bg: var(--c2-bg); --tone-bd: var(--c2-bd); }
+.c3 { --tone: var(--c3); --tone-bg: var(--c3-bg); --tone-bd: var(--c3-bd); }
+.c4 { --tone: var(--c4); --tone-bg: var(--c4-bg); --tone-bd: var(--c4-bd); }
+.c5 { --tone: var(--c5); --tone-bg: var(--c5-bg); --tone-bd: var(--c5-bd); }
+.c6 { --tone: var(--c6); --tone-bg: var(--c6-bg); --tone-bd: var(--c6-bd); }
+.t-info { --tone: var(--info); --tone-bg: var(--info-bg); --tone-bd: var(--info-bd); }
+.t-plazo { --tone: var(--plazo); --tone-bg: var(--plazo-bg); --tone-bd: var(--plazo-bd); }
+.t-nota { --tone: var(--nota); --tone-bg: var(--nota-bg); --tone-bd: var(--nota-bd); }
+.t-aviso { --tone: var(--aviso); --tone-bg: var(--aviso-bg); --tone-bd: var(--aviso-bd); }
+.t-ok { --tone: var(--ok); --tone-bg: var(--ok-bg); --tone-bd: var(--ok-bd); }
+.t-ley { --tone: var(--ley); --tone-bg: var(--ley-bg); --tone-bd: var(--ley-bd); }
+
+/* ── Buttons ────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 7px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-md);
+  background: var(--surface);
+  color: var(--text-1);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background var(--t-fast), border-color var(--t-fast);
+}
+.btn:hover {
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+}
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+.btn svg {
+  width: 16px;
+  height: 16px;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Segmented control (e.g. Índice · Mapa) */
+.segmented {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+.segmented button {
+  border: 0;
+  background: none;
+  padding: 5px 14px;
+  border-radius: 7px;
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+}
+.segmented button[aria-pressed="true"] {
+  background: var(--surface);
+  color: var(--text-1);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Tags, chips, badges ────────────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: 2px 9px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--tone, var(--text-2));
+  background: var(--tone-bg, var(--surface-2));
+  border: 1px solid var(--tone-bd, var(--border));
+}
+.tag-on-ink {
+  color: var(--on-ink);
+  background: rgba(248, 245, 237, 0.08);
+  border-color: rgba(248, 245, 237, 0.18);
+}
+/* Filter chips: a tag that toggles */
+.chip {
+  cursor: pointer;
+  padding: 5px 12px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-md);
+  background: var(--surface);
+  color: var(--text-2);
+}
+.chip::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--tone, var(--text-3));
+  vertical-align: 1px;
+}
+.chip[aria-pressed="true"] {
+  background: var(--tone-bg, var(--primary-soft));
+  border-color: var(--tone, var(--primary));
+  color: var(--tone, var(--primary));
+  font-weight: 600;
+}
+/* Article reference: looks like a tag, opens the literal text */
+.ref {
+  display: inline;
+  padding: 0 5px;
+  border-radius: 4px;
+  border: 1px solid var(--ley-bd);
+  background: var(--ley-bg);
+  color: var(--ley);
+  font-size: 0.92em;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ref:hover {
+  border-color: var(--ley);
+}
+/* Actor badge (guías): one colour per role */
+.actor {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--act, var(--act-laj));
+  background: color-mix(in srgb, var(--act, var(--act-laj)) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--act, var(--act-laj)) 35%, transparent);
+}
+.actor::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.actor.laj { --act: var(--act-laj); }
+.actor.juez { --act: var(--act-juez); }
+.actor.fiscal { --act: var(--act-fiscal); }
+.actor.partes { --act: var(--act-partes); }
+.actor.registro { --act: var(--act-registro); }
+
+/* ── Search ─────────────────────────────────────────────────────────────── */
+.search {
+  position: relative;
+}
+.search svg {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  color: var(--text-3);
+  pointer-events: none;
+}
+.search input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-md);
+  background: var(--surface);
+  font-size: var(--fs-sm);
+}
+.search input::placeholder {
+  color: var(--text-3);
+}
+.search kbd {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+  border: 1px solid var(--border-md);
+  border-radius: 4px;
+  padding: 0 5px;
+}
+.search-on-ink svg {
+  color: var(--on-ink-2);
+}
+.search-on-ink input {
+  background: rgba(248, 245, 237, 0.08);
+  border-color: rgba(248, 245, 237, 0.18);
+  color: var(--on-ink);
+}
+.search-on-ink input::placeholder {
+  color: var(--on-ink-2);
+}
+.search-on-ink kbd {
+  color: var(--on-ink-2);
+  border-color: rgba(248, 245, 237, 0.25);
+}
+
+/* ── Toolbar (sticky filters above a view) ──────────────────────────────── */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) 0;
+  margin-bottom: var(--sp-4);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.toolbar .search {
+  flex: 1 1 260px;
+  max-width: 380px;
+}
+.toolbar .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.toolbar .spacer {
+  flex: 1;
+}
+
+/* ── Section heading inside a view ──────────────────────────────────────── */
+.section {
+  margin-top: var(--sp-8);
+}
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  padding-bottom: var(--sp-2);
+  margin-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--border-md);
+}
+.section-head h2 {
+  font-size: var(--fs-lg);
+}
+.section-head .count {
+  font-size: var(--fs-sm);
+  color: var(--text-3);
+}
+
+/* ── Esquema card ───────────────────────────────────────────────────────── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--sp-4);
+  align-items: start;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  border-top: 3px solid var(--tone, var(--border-md));
+}
+.card[aria-expanded="true"] {
+  grid-column: 1 / -1;
+  box-shadow: var(--shadow-md);
+}
+.card-head {
+  padding: var(--sp-4) var(--sp-5) var(--sp-3);
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+.card-art {
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--tone, var(--text-2));
+}
+.card h3 {
+  font-size: var(--fs-lg);
+}
+.card-summary {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+}
+.card-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--sp-2) var(--sp-5);
+  border: 0;
+  border-top: 1px solid var(--border);
+  background: var(--surface-2);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-2);
+}
+.card-toggle:hover {
+  color: var(--text-1);
+}
+.card-toggle svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--t-fast);
+}
+.card[aria-expanded="true"] .card-toggle svg {
+  transform: rotate(180deg);
+}
+.card-body {
+  display: none;
+  padding: var(--sp-4) var(--sp-5) var(--sp-5);
+  border-top: 1px solid var(--border);
+}
+.card[aria-expanded="true"] .card-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--sp-5) var(--sp-8);
+}
+.card-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  padding: var(--sp-3) var(--sp-5);
+  border-top: 1px solid var(--border);
+}
+
+/* A titled group of points (inside cards and guía steps) */
+.points h4 {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  margin-bottom: var(--sp-2);
+}
+.points h4::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tone, var(--gold));
+}
+.points li {
+  position: relative;
+  padding-left: var(--sp-4);
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+}
+.points li + li {
+  margin-top: var(--sp-2);
+}
+.points li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+}
+.points li strong {
+  color: var(--text-1);
+}
+
+/* ── Content blocks (guía steps, notes in esquemas) ─────────────────────── */
+.block {
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--tone-bd, var(--border));
+  border-left: 4px solid var(--tone, var(--border-strong));
+  background: var(--tone-bg, var(--surface-2));
+  font-size: var(--fs-sm);
+  color: var(--text-1);
+}
+.block + .block {
+  margin-top: var(--sp-3);
+}
+.block-label {
+  display: block;
+  margin-bottom: 2px;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tone, var(--text-2));
+}
+
+/* Checklist */
+.checklist {
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-strong);
+  background: var(--surface);
+}
+.checklist label {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  padding: 5px 0;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+.checklist input {
+  margin-top: 4px;
+  accent-color: var(--primary);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.checklist input:checked + span {
+  color: var(--text-3);
+  text-decoration: line-through;
+}
+
+/* ── Guía: phases, step, decisions ──────────────────────────────────────── */
+.phases {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--sp-5);
+  overflow-x: auto;
+  scrollbar-width: none; /* swipeable on narrow screens, no bar */
+}
+.phase {
+  flex: 1 0 auto;
+  min-width: 84px;
+  padding: 6px 10px 8px;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+  border-top: 4px solid var(--surface-3);
+}
+.phase.done {
+  color: var(--text-2);
+  border-top-color: color-mix(in srgb, var(--tone) 45%, transparent);
+}
+.phase.current {
+  color: var(--tone);
+  font-weight: 700;
+  border-top-color: var(--tone);
+}
+.guide {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: var(--sp-6);
+  align-items: start;
+}
+.step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.step-head {
+  padding: var(--sp-5) var(--sp-6) var(--sp-4);
+  border-bottom: 1px solid var(--border);
+}
+.step-head .where {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+.step-head h2 {
+  margin-top: var(--sp-3);
+}
+.step-body {
+  padding: var(--sp-5) var(--sp-6);
+}
+.decision {
+  padding: var(--sp-5) var(--sp-6);
+  border-top: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.decision-q {
+  font-family: var(--font-display);
+  font-weight: 650;
+  margin-bottom: var(--sp-3);
+}
+.options {
+  display: grid;
+  gap: var(--sp-2);
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  width: 100%;
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-md);
+  background: var(--surface);
+  text-align: left;
+  font-size: var(--fs-sm);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.option:hover {
+  border-color: var(--tone, var(--primary));
+  box-shadow: var(--shadow-sm);
+}
+.option .key {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  color: var(--tone, var(--primary));
+  background: var(--tone-bg, var(--primary-soft));
+  border: 1px solid var(--tone-bd, transparent);
+}
+.step-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-6);
+  border-top: 1px solid var(--border);
+}
+
+/* Side panel: the route taken so far */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  position: sticky;
+  top: var(--sp-4);
+}
+.panel h3 {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  margin-bottom: var(--sp-3);
+}
+.route li {
+  position: relative;
+  padding: 0 0 var(--sp-3) var(--sp-5);
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+  border-left: 2px solid var(--border-md);
+  margin-left: 5px;
+}
+.route li::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--tone, var(--text-3));
+}
+.route li:last-child {
+  border-left-color: transparent;
+}
+.route li.current {
+  color: var(--text-1);
+  font-weight: 600;
+}
+.route li.current::before {
+  background: var(--tone, var(--primary));
+}
+.route .choice {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+
+/* ── Ley: index tree and article text ───────────────────────────────────── */
+.law {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+  gap: var(--sp-6);
+  align-items: start;
+}
+.tree {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-2);
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  font-size: var(--fs-sm);
+}
+/* Block, not flex: highlighted words (<mark>) must flow inside the line. */
+.tree button {
+  display: block;
+  width: 100%;
+  padding: 5px var(--sp-2);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  text-align: left;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+.tree button:hover {
+  background: var(--surface-2);
+}
+.tree .lvl-1 {
+  font-weight: 700;
+  color: var(--text-1);
+}
+.tree .lvl-2 {
+  font-weight: 600;
+  padding-left: var(--sp-5);
+}
+.tree .lvl-art {
+  padding-left: var(--sp-8);
+}
+.tree .lvl-art[aria-current="true"] {
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 600;
+}
+.tree mark {
+  background: var(--gold-soft);
+  color: inherit;
+  border-radius: 2px;
+}
+.article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6) var(--sp-8);
+}
+.article-path {
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+  margin-bottom: var(--sp-2);
+}
+.article h2 {
+  font-size: var(--fs-xl);
+}
+.article .rubric {
+  font-weight: 500;
+  color: var(--text-2);
+}
+.law-text {
+  margin-top: var(--sp-4);
+  max-width: var(--reading-max);
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: 1.7;
+}
+.law-text p + p {
+  margin-top: var(--sp-3);
+}
+.law-text .sub {
+  padding-left: var(--sp-5);
+}
+.article-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+
+/* ── Reference popover (literal text of a cited article) ────────────────── */
+.popover {
+  position: absolute;
+  z-index: 30;
+  width: min(480px, calc(100vw - 32px));
+  background: var(--surface);
+  border: 1px solid var(--border-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.popover-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--ley-bg);
+  border-bottom: 1px solid var(--ley-bd);
+}
+.popover-head strong {
+  color: var(--ley);
+  font-family: var(--font-display);
+}
+.popover-head span {
+  display: block;
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+}
+.popover-body {
+  max-height: 260px;
+  overflow-y: auto;
+  padding: var(--sp-3) var(--sp-4);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+}
+.popover-body .hl {
+  background: var(--gold-soft);
+  box-shadow: inset 3px 0 0 var(--gold);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+.popover-foot {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--sp-2) var(--sp-4);
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+
+/* ── Tables (plazos) ────────────────────────────────────────────────────── */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+.table th {
+  text-align: left;
+  padding: var(--sp-2) var(--sp-4);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border-md);
+}
+.table td {
+  padding: var(--sp-2) var(--sp-4);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.table tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ── Home tiles ─────────────────────────────────────────────────────────── */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-4);
+}
+.tile {
+  display: block;
+  padding: var(--sp-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--t-fast), border-color var(--t-fast);
+}
+.tile:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-md);
+}
+.tile h3 {
+  margin: var(--sp-3) 0 var(--sp-1);
+}
+.tile p {
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+}
+
+/* ── Notice (e.g. "material de apoyo") ──────────────────────────────────── */
+.notice {
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+}
+
+@media (max-width: 1100px) {
+  .guide,
+  .law {
+    grid-template-columns: 1fr;
+  }
+  .panel {
+    position: static;
+  }
+}
+@media (max-width: 560px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  /* Filters: one swipeable row instead of half a screen of chips. */
+  .toolbar .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin: 0 calc(-1 * var(--sp-4));
+    padding: 0 var(--sp-4);
+  }
+  .toolbar .chips .chip {
+    flex-shrink: 0;
+  }
+  /* The reference opens as a sheet from the bottom of the screen. */
+  .popover {
+    position: fixed;
+    inset: auto 0 0 0 !important;
+    width: auto;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .popover-body {
+    max-height: 45vh;
+  }
+  .article {
+    padding: var(--sp-5);
+  }
+  .step-head,
+  .step-body,
+  .decision,
+  .step-nav {
+    padding-left: var(--sp-4);
+    padding-right: var(--sp-4);
+  }
+}

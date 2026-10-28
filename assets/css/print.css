@@ -1,0 +1,58 @@
+/* Printing: content only, on white, every card and section open, links to articles kept as text. */
+@media print {
+  :root {
+    color-scheme: light;
+  }
+  body {
+    background: #fff;
+    font-size: 10.5pt;
+  }
+  .app {
+    display: block;
+    height: auto;
+  }
+  .app-main {
+    display: block;
+  }
+  .app-header,
+  .sidebar,
+  .toolbar,
+  .card-toggle,
+  .step-nav,
+  .segmented,
+  .no-print {
+    display: none !important;
+  }
+  .content {
+    overflow: visible;
+  }
+  .content-inner {
+    max-width: none;
+    padding: 0;
+  }
+  .card,
+  .step,
+  .article,
+  .panel,
+  .table-wrap {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+  .card .card-body {
+    display: grid;
+  }
+  .cards {
+    display: block;
+  }
+  .cards > * + * {
+    margin-top: 10pt;
+  }
+  .guide,
+  .law {
+    display: block;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

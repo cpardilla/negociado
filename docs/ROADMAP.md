@@ -149,8 +149,11 @@ Auditoría (segunda vuelta) y tests: corregidos en las propias herramientas seis
 - Antes de fusionar: tests en `file://` y http, enlaces internos comprobados, y la web publicada revisada tras el despliegue.
 - Las URL antiguas (`/02%20-%20Esquemas.../...html`) dejarán de existir: `404.html` redirige cada una a su equivalente nuevo; las que no tengan equivalente muestran un aviso para actualizar favoritos (decisión 8).
 
-### Fase 1 · Arquitectura común ☐
-1. ☐ Sistema de estilos (`tokens.css` + componentes), tema claro/oscuro, impresión. Propuesta visual con capturas antes de aplicarla.
+### Fase 1 · Arquitectura común ▶
+Visto bueno para empezar: 2026-10-28.
+
+1. ▶ Sistema de estilos y **propuesta visual** — hecha, pendiente de visto bueno del propietario. `assets/css/`: `fonts.css` (Plus Jakarta Sans y Outfit incrustadas, generadas por `tools/build-fonts.js`; 117 KB; funcionan en `file://` y https, sin peticiones a terceros), `tokens.css` (cada color una vez con `light-dark()`, tema según el sistema o el interruptor), `base.css`, `layout.css`, `components.css`, `print.css`. Maqueta: `docs/diseno/muestra.html` (#inicio · #ley · #esquema · #guia; `?tema=oscuro`). Continuidad con la app actual: fondo papel, cabecera tinta con filete dorado, los seis colores de categoría, las mismas tipografías, el logotipo de la balanza. Auditoría: tres defectos corregidos tras ver las capturas (resaltado de búsqueda que partía las líneas del índice, desbordamiento horizontal en móvil por la ventana de referencia —ahora hoja inferior—, buscador inaccesible en móvil); `tests/contrast.test.js` (contraste WCAG AA de todos los pares texto/fondo, claro y oscuro: obligó a oscurecer `--text-3` y `--ok`); sin desbordamiento horizontal a 390 y 1440 px. `npm test`: 21/21.
+   - Para la migración: la paleta tiene 6 tonos de categoría (+ neutro). El esquema de conciliación usa 9 categorías y la guía 10 fases: habrá que agruparlas (las fases pueden repetir tono, como en la maqueta).
 2. ☐ Carcasa nueva (`index.html`): menú lateral desde `catalogo.js`, router `#hash`, buscador global, sin `<iframe>`.
 3. ☐ Motores: `ley.js`, `esquema.js`, `guia.js`, `referencia.js`.
 4. ☐ Tests de cada motor (`tests/*.js`) en Chromium 144 y Edge.

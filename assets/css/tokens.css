@@ -1,0 +1,113 @@
+/* Design tokens: every colour, size and time the app uses is defined here, once.
+ *
+ * Each colour gives its light and dark value together with light-dark(); the
+ * theme in use is chosen by `color-scheme` alone: the system preference by
+ * default, or the theme switch (html[data-theme="light" | "dark"]).
+ * Values continue the current app's look: warm paper background, ink header
+ * with a gold accent, six category colours. */
+
+:root {
+  color-scheme: light dark;
+
+  /* Typography */
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-ui: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --fs-xs: 0.75rem;   /* 12 */
+  --fs-sm: 0.8125rem; /* 13 */
+  --fs-md: 0.9375rem; /* 15 — body */
+  --fs-lg: 1.0625rem; /* 17 */
+  --fs-xl: 1.25rem;   /* 20 */
+  --fs-2xl: 1.625rem; /* 26 */
+  --lh-tight: 1.25;
+  --lh-body: 1.6;
+
+  /* Space (4 px grid) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+
+  /* Shape and motion */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --t-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --t-norm: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --header-h: 56px;
+  --sidebar-w: 320px;
+  --content-max: 1200px;
+  --reading-max: 72ch;
+
+  /* Surfaces and text */
+  --bg: light-dark(#f7f6f2, #0d1220);
+  --surface: light-dark(#ffffff, #151c2c);
+  --surface-2: light-dark(#f2f1ed, #1b2336);
+  --surface-3: light-dark(#e9e7e1, #243049);
+  --text-1: light-dark(#0f172a, #e8eaf0);
+  --text-2: light-dark(#475569, #b4bccb);
+  --text-3: light-dark(#596577, #8d97aa); /* ≥ 4.5:1 on --bg (the current #94a3b8 is not) */
+  --border: light-dark(rgba(15, 23, 42, 0.09), rgba(226, 232, 240, 0.09));
+  --border-md: light-dark(rgba(15, 23, 42, 0.16), rgba(226, 232, 240, 0.16));
+  --border-strong: light-dark(rgba(15, 23, 42, 0.28), rgba(226, 232, 240, 0.3));
+
+  /* Header band (dark in both themes) */
+  --ink: light-dark(#0f172a, #080c16);
+  --ink-2: light-dark(#1e293b, #111827);
+  --on-ink: #f8f5ed;
+  --on-ink-2: rgba(248, 245, 237, 0.74);
+  --gold: #c8a96e;
+  --gold-soft: rgba(200, 169, 110, 0.16);
+  --gold-text: light-dark(#7c612c, #d6bc88); /* gold as text on the page background (≥ 4.5:1) */
+
+  /* Interactive */
+  --primary: light-dark(#1a2f6e, #8fa8f0);
+  --primary-hover: light-dark(#2e4daa, #b3c4f5);
+  --primary-soft: light-dark(#e8edfb, rgba(143, 168, 240, 0.14));
+  --on-primary: light-dark(#ffffff, #0d1220);
+  --link: light-dark(#2e4daa, #9fb4f2);
+  --focus: #c8a96e;
+
+  /* Categories (esquemas) and phases (guías): text · background · border */
+  --c1: light-dark(#0e7490, #5fd0e4); --c1-bg: light-dark(#ecfeff, rgba(14, 116, 144, 0.18)); --c1-bd: light-dark(#a5f3fc, rgba(95, 208, 228, 0.35));
+  --c2: light-dark(#b45309, #f2b25c); --c2-bg: light-dark(#fffbeb, rgba(180, 83, 9, 0.18)); --c2-bd: light-dark(#fde68a, rgba(242, 178, 92, 0.35));
+  --c3: light-dark(#047857, #5fd3a6); --c3-bg: light-dark(#ecfdf5, rgba(4, 120, 87, 0.2)); --c3-bd: light-dark(#a7f3d0, rgba(95, 211, 166, 0.35));
+  --c4: light-dark(#6d28d9, #b9a2f7); --c4-bg: light-dark(#f5f3ff, rgba(109, 40, 217, 0.2)); --c4-bd: light-dark(#ddd6fe, rgba(185, 162, 247, 0.35));
+  --c5: light-dark(#be123c, #f6899f); --c5-bg: light-dark(#fff1f2, rgba(190, 18, 60, 0.18)); --c5-bd: light-dark(#fecdd3, rgba(246, 137, 159, 0.35));
+  --c6: light-dark(#475569, #b4bccb); --c6-bg: light-dark(#f8fafc, rgba(148, 163, 184, 0.12)); --c6-bd: light-dark(#cbd5e1, rgba(180, 188, 203, 0.3));
+
+  /* Meaning (content blocks, results) */
+  --info: var(--c1); --info-bg: var(--c1-bg); --info-bd: var(--c1-bd);
+  --plazo: var(--c2); --plazo-bg: var(--c2-bg); --plazo-bd: var(--c2-bd);
+  --nota: var(--c6); --nota-bg: var(--c6-bg); --nota-bd: var(--c6-bd);
+  --aviso: light-dark(#b91c1c, #f78f8f); --aviso-bg: light-dark(#fef2f2, rgba(185, 28, 28, 0.16)); --aviso-bd: light-dark(#fecaca, rgba(247, 143, 143, 0.3));
+  --ok: light-dark(#13723a, #6ee7a0); --ok-bg: light-dark(#f0fdf4, rgba(21, 128, 61, 0.16)); --ok-bd: light-dark(#bbf7d0, rgba(110, 231, 160, 0.3));
+  --ley: var(--primary); --ley-bg: light-dark(#eef2fc, rgba(46, 77, 170, 0.18)); --ley-bd: light-dark(#c7d2fe, rgba(159, 180, 242, 0.3));
+
+  /* Actors (guías): one colour per role, the same in every guía */
+  --act-laj: var(--primary);
+  --act-juez: var(--c4);
+  --act-fiscal: var(--c1);
+  --act-partes: var(--c6);
+  --act-registro: var(--c3);
+
+  /* light-dark() takes colours only: shadows share one colour that follows the theme. */
+  --shadow-color: light-dark(rgba(15, 23, 42, 0.08), rgba(0, 0, 0, 0.42));
+  --shadow-sm: 0 1px 3px var(--shadow-color);
+  --shadow-md: 0 4px 10px -2px var(--shadow-color);
+  --shadow-lg: 0 14px 28px -6px var(--shadow-color);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
