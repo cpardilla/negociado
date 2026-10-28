@@ -1,0 +1,1663 @@
+{
+ "id": "G17",
+ "tipo": "guia",
+ "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/12 - CAPÍTULO IX - De la declaración de ausencia y fallecimiento.html",
+ "titulo": "De la declaración de ausencia y fallecimiento (artículos 67 a 77 LJV)",
+ "cabecera": null,
+ "texto": "☰ ⚖ LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO IX De la declaración de ausencia y fallecimiento Artículo 67 a 77 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar 1. Inicio y Competencia › 2. Defensor Judicial › 3. Declaración de Ausencia › 4. Medidas e Inventario › 5. Declaración de Fallecimiento › 6. Hechos Posteriores › 7. Comunicación Registral Inicio del procedimiento Mapa Recorrido Inicio y Competencia ▼ 3 Inicio del procedimiento Determinar competencia territorial Determinar competencia (fallecimiento) Defensor Judicial ▼ 7 Nombramiento de defensor judicial Nombramiento ordinario de defensor Nombramiento urgente de defensor Aceptación del cargo por el defensor Designación de defensor por el LAJ Defensor judicial nombrado Defensor urgente ratificado Declaración de Ausencia ▼ 10 Verificar legitimación activa Competencia por siniestro en España Competencia por siniestro fuera de España Contenido de la solicitud inicial Admisión a trámite y comparecencia Prueba posterior a la comparecencia Decreto de declaración de ausencia Régimen del representante del ausente Plazos legales no cumplidos No procede la declaración de ausencia Medidas e Inventario ▼ 4 Subsistencia de medidas provisionales Adopción de medidas provisionales Práctica de inventario de bienes Ausencia legal declarada Declaración de Fallecimiento ▼ 11 Fallecimiento por siniestro de nave/aeronave Fallecimiento sin siniestro (arts. 193, 194.1,4,5) Fallecimiento con ausencia legal previa Tramitación de la declaración de fallecimiento Decreto de declaración de fallecimiento Adjudicación judicial de la herencia Adjudicación notarial de la herencia Comunicación al Registro Civil Fallecimiento no acreditado por siniestro No procede la declaración de fallecimiento Plazos de fallecimiento no cumplidos Hechos Posteriores ▼ 12 Hechos posteriores a la declaración Presentación del presunto ausente/fallecido Noticias de existencia sin presentación Suspensión de la actuación del representante Noticia de muerte del desaparecido Constancia del fallecimiento (Art. 76) Declaración revocada por presentación Declaración revocada por noticias de existencia Declaración revocada tras suspensión Declaración ratificada Fallecimiento efectivo comprobado Expediente archivado Comunicación Registral ▼ 3 Comunicación al Registro Civil Procedimiento completado con inscripción Fallecimiento declarado y sucesión abierta Ley 15/2015, Arts. 67-77 LJV CC arts. 181-198 Inicio del procedimiento Ley 15/2015, Arts. 67-77 LJV CC arts. 181-198 LAJ (Secretario judicial) Inicio del procedimiento Paso 1 de este recorrido · Fase 1: Inicio y Competencia Como Tramitador o Gestor Procesal y Administrativo, debe determinar qué tipo de expediente de jurisdicción voluntaria requiere tramitar conforme al Capítulo IX de la Ley 15/2015 (Arts. 67-77 LJV), en relación con el Título VIII del Libro I del Código Civil (Arts. 181-198 CC). ℹ Estos procedimientos se caracterizan por la ausencia de controversia litigiosa. El órgano decisor es el Letrado de la Administración de Justicia (Secretario judicial), conforme al principio de desjudicialización y simplificación procesal (Art. 67 LJV). Art. 67 LJV — Ámbito de aplicación; CC arts. 181-198 — Desaparición, ausencia y fallecimiento; LO 1/2025 — Competencia Tribunal de Instancia ¿Qué tipo de procedimiento necesita tramitar? A Nombramiento de defensor judicial por desaparición La persona ha desaparecido sin noticias y se necesita representación para actos urgentes (Art. 69 LJV, Art. 181 CC) B Declaración de ausencia legal Se cumplen los plazos legales para declarar la ausencia conforme a los arts. 182-184 CC (Art. 70 LJV) C Declaración de fallecimiento Procede declarar el fallecimiento conforme a los arts. 193-196 CC (Art. 74 LJV) D Hechos posteriores Se ha presentado el ausente, hay noticias de su existencia, o se ha comprobado su fallecimiento (Arts. 75-76 LJV) ‹ Volver",
+ "inicio": "inicio",
+ "actores": {
+  "etiquetas": {
+   "ambos": "LAJ / Juez",
+   "juez": "Juez",
+   "laj": "LAJ (Secretario judicial)"
+  },
+  "sinEtiqueta": []
+ },
+ "pasos": {
+  "inicio": {
+   "ph": 0,
+   "t": "Inicio del procedimiento",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Como Tramitador o Gestor Procesal y Administrativo, debe determinar qué tipo de expediente de jurisdicción voluntaria requiere tramitar conforme al Capítulo IX de la Ley 15/2015 (Arts. 67-77 LJV), en relación con el Título VIII del Libro I del Código Civil (Arts. 181-198 CC)."
+    ],
+    [
+     "n",
+     "Estos procedimientos se caracterizan por la ausencia de controversia litigiosa. El órgano decisor es el Letrado de la Administración de Justicia (Secretario judicial), conforme al principio de desjudicialización y simplificación procesal (Art. 67 LJV)."
+    ],
+    [
+     "l",
+     "Art. 67 LJV — Ámbito de aplicación; CC arts. 181-198 — Desaparición, ausencia y fallecimiento; LO 1/2025 — Competencia Tribunal de Instancia"
+    ]
+   ],
+   "q": "¿Qué tipo de procedimiento necesita tramitar?",
+   "opts": [
+    {
+     "t": "Nombramiento de defensor judicial por desaparición",
+     "l": "La persona ha desaparecido sin noticias y se necesita representación para actos urgentes (Art. 69 LJV, Art. 181 CC)",
+     "n": "defensor_judicial",
+     "v": "ok"
+    },
+    {
+     "t": "Declaración de ausencia legal",
+     "l": "Se cumplen los plazos legales para declarar la ausencia conforme a los arts. 182-184 CC (Art. 70 LJV)",
+     "n": "competencia_ausencia",
+     "v": "ok"
+    },
+    {
+     "t": "Declaración de fallecimiento",
+     "l": "Procede declarar el fallecimiento conforme a los arts. 193-196 CC (Art. 74 LJV)",
+     "n": "competencia_fallecimiento",
+     "v": "ok"
+    },
+    {
+     "t": "Hechos posteriores",
+     "l": "Se ha presentado el ausente, hay noticias de su existencia, o se ha comprobado su fallecimiento (Arts. 75-76 LJV)",
+     "n": "hechos_posteriores",
+     "v": "warn"
+    }
+   ]
+  },
+  "competencia_ausencia": {
+   "ph": 0,
+   "t": "Determinar competencia territorial",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Antes de admitir la solicitud de declaración de ausencia, debe verificar la competencia territorial del Tribunal de Instancia (Sección Civil). La competencia se determina como regla de conexión exclusiva (Art. 68 LJV)."
+    ],
+    [
+     "n",
+     "Postulación dispensada: No es preceptiva la intervención de Abogado ni Procurador (Art. 68.4 LJV). Sin embargo, se requiere Letrado en caso de controversia sobrevenida o para recursos contra resoluciones del Secretario judicial."
+    ],
+    [
+     "l",
+     "Art. 68 LJV — Competencia y postulación; LO 1/2025 DA1 — Tribunal de Instancia"
+    ]
+   ],
+   "q": "¿Cuál es el criterio de competencia territorial aplicable?",
+   "opts": [
+    {
+     "t": "Último domicilio o residencia en España",
+     "l": "Regla general: Tribunal de Instancia del último domicilio o, en su defecto, última residencia conocida",
+     "n": "legitimacion_ausencia",
+     "v": "ok"
+    },
+    {
+     "t": "Siniestro ocurrido en España",
+     "l": "Excepción (arts. 194.2-3 CC): Juzgado del lugar del siniestro para todos los afectados",
+     "n": "legitimacion_ausencia_siniestro",
+     "v": "warn"
+    },
+    {
+     "t": "Siniestro fuera de España",
+     "l": "Excepción: Juzgado del lugar de inicio del viaje, o domicilio/residencia de la mayoría de afectados",
+     "n": "legitimacion_ausencia_siniestro_ext",
+     "v": "warn"
+    }
+   ]
+  },
+  "competencia_fallecimiento": {
+   "ph": 0,
+   "t": "Determinar competencia (fallecimiento)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Para la declaración de fallecimiento se aplican las mismas reglas de competencia territorial del Art. 68 LJV, con las especialidades previstas en los arts. 194.2-3 CC para siniestros de nave o aeronave."
+    ],
+    [
+     "n",
+     "En los supuestos de arts. 194.2-3 CC (siniestro), la legitimación es exclusiva del Ministerio Fiscal y la competencia corresponde al Juzgado del lugar del siniestro."
+    ],
+    [
+     "l",
+     "Art. 68 LJV; Art. 74 LJV; CC arts. 193-196"
+    ]
+   ],
+   "q": "¿Qué supuesto de fallecimiento se plantea?",
+   "opts": [
+    {
+     "t": "Siniestro de nave o aeronave (arts. 194.2-3 CC)",
+     "l": "Legitimación exclusiva del Ministerio Fiscal. Competencia: lugar del siniestro",
+     "n": "fallecimiento_siniestro",
+     "v": "warn"
+    },
+    {
+     "t": "Desaparición sin siniestro (arts. 193 y 194.1,4,5 CC)",
+     "l": "Legitimación: interesados o MF. Plazos: 10 años, 5 años si mayor de 75, 1 año por riesgo",
+     "n": "fallecimiento_no_siniestro",
+     "v": "ok"
+    },
+    {
+     "t": "Ya existe declaración de ausencia previa",
+     "l": "La declaración de fallecimiento cesará la ausencia legal decretada",
+     "n": "fallecimiento_con_ausencia",
+     "v": "neutral"
+    }
+   ]
+  },
+  "defensor_judicial": {
+   "ph": 1,
+   "t": "Nombramiento de defensor judicial",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Cuando una persona haya desaparecido sin noticias y necesite representación para actos urgentes sin perjuicio grave, se procede al nombramiento de un defensor judicial conforme al Art. 181 CC y Art. 69 LJV."
+    ],
+    [
+     "n",
+     "Requisitos sustantivos (Art. 181 CC): Ausencia de representación voluntaria vigente; necesidad de amparo en actos urgentes; inexistencia de cónyuge o pariente que asuma la representación nata."
+    ],
+    [
+     "l",
+     "Art. 69 LJV — Defensor judicial; Art. 181 CC — Régimen sustantivo; Art. 300 CC — Tutela supletoria"
+    ]
+   ],
+   "q": "¿Existe urgencia que impida esperar a la comparecencia ordinaria?",
+   "opts": [
+    {
+     "t": "Sí, hay riesgo de perjuicio irreparable",
+     "l": "Nombramiento urgente: el LAJ designa defensor inmediatamente y adopta medidas de protección patrimonial",
+     "n": "defensor_urgente",
+     "v": "warn"
+    },
+    {
+     "t": "No, puede seguirse el procedimiento ordinario",
+     "l": "Comparecencia en plazo máximo de 5 días con citación a interesados, MF y testigos",
+     "n": "defensor_ordinario",
+     "v": "ok"
+    }
+   ]
+  },
+  "defensor_ordinario": {
+   "ph": 1,
+   "t": "Nombramiento ordinario de defensor",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Procedimiento: Solicitud → Comparecencia en plazo máximo de 5 días → Citación a interesados, Ministerio Fiscal y testigos → Audiencia y práctica de pruebas → Resolución de nombramiento."
+    ],
+    [
+     "d",
+     "Plazo máximo de comparecencia: 5 días (Art. 69.1 LJV)"
+    ],
+    [
+     "n",
+     "Orden de prelación para la designación: 1.º Cónyuge presente mayor de edad no separado; 2.º Pariente más próximo hasta 4.º grado mayor de edad; 3.º Persona solvente y de buenos antecedentes designada por el LAJ, oído el MF."
+    ],
+    [
+     "cl",
+     "Checklist del procedimiento ordinario",
+     [
+      "Solicitud recibida con datos del desaparecido",
+      "Citación a interesados, MF y testigos",
+      "Señalamiento de comparecencia dentro de 5 días",
+      "Audiencia de alegaciones y práctica de pruebas",
+      "Verificación de orden de prelación",
+      "Resolución de nombramiento por decreto"
+     ]
+    ],
+    [
+     "l",
+     "Art. 69.1 LJV; Art. 181 CC; Art. 300 CC (tutela supletoria)"
+    ]
+   ],
+   "q": "¿Se ha completado la comparecencia y se ha nombrado defensor?",
+   "opts": [
+    {
+     "t": "Sí, defensor nombrado conforme a orden de prelación",
+     "l": "Se emite decreto de nombramiento. El defensor debe aceptar el cargo.",
+     "n": "defensor_aceptacion",
+     "v": "ok"
+    },
+    {
+     "t": "No compareció nadie o no hay persona idónea",
+     "l": "El LAJ designa persona solvente de buenos antecedentes, oído el MF",
+     "n": "defensor_designado_laj",
+     "v": "warn"
+    }
+   ]
+  },
+  "defensor_urgente": {
+   "ph": 1,
+   "t": "Nombramiento urgente de defensor",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Cuando exista riesgo de perjuicio irreparable si se espera a la comparecencia, el LAJ puede designar defensor de forma inmediata y adoptar medidas urgentes de protección patrimonial (Art. 69.2 LJV)."
+    ],
+    [
+     "w",
+     "Facultades excepcionales: Designación inmediata conforme a orden legal o propuesto por solicitante; adopción de medidas urgentes (embargo preventivo, depósito de bienes, intervención de cuentas)."
+    ],
+    [
+     "n",
+     "Tramitación posterior: Continuación de trámites ordinarios con citación a interesados. La comparecencia retroactiva ratifica o impugna las medidas adoptadas."
+    ],
+    [
+     "cl",
+     "Checklist del procedimiento urgente",
+     [
+      "Acreditación del riesgo de perjuicio irreparable",
+      "Designación inmediata de defensor",
+      "Adopción de medidas urgentes de protección",
+      "Citación posterior a interesados y MF",
+      "Comparecencia retroactiva de ratificación",
+      "Decreto de ratificación o revocación"
+     ]
+    ],
+    [
+     "l",
+     "Art. 69.2 LJV; Art. 181 CC; LEC arts. 721-742 (medidas cautelares por analogía)"
+    ]
+   ],
+   "q": "Resultado de la comparecencia retroactiva de ratificación:",
+   "opts": [
+    {
+     "t": "Ratificado el nombramiento y las medidas",
+     "l": "El defensor continúa en el cargo con las medidas confirmadas",
+     "n": "fin_defensor_ratificado",
+     "v": "ok"
+    },
+    {
+     "t": "Revocado el nombramiento o las medidas",
+     "l": "Se procede a nuevo nombramiento conforme al procedimiento ordinario",
+     "n": "defensor_ordinario",
+     "v": "bad"
+    }
+   ]
+  },
+  "defensor_aceptacion": {
+   "ph": 1,
+   "t": "Aceptación del cargo por el defensor",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El defensor nombrado debe aceptar el cargo formalmente. A partir de la aceptación, adquiere las obligaciones de pesquisa de la persona, protección y administración de bienes, y cumplimiento de obligaciones del desaparecido."
+    ],
+    [
+     "n",
+     "El régimen supletorio de tutela (Cap. IV y VIII CC) es aplicable al representante dativo: nombramiento y aceptación, excusas y remoción, prestación de fianza, retribución, rendición de cuentas."
+    ],
+    [
+     "w",
+     "Responsabilidad del defensor: Deber de rendición de cuentas; responsabilidad civil por daños causados por dolo o negligencia grave."
+    ],
+    [
+     "l",
+     "Art. 69 LJV; CC arts. 181, 300; CC Cap. IV y VIII (tutela supletoria)"
+    ]
+   ],
+   "q": "¿Acepta el defensor el cargo?",
+   "opts": [
+    {
+     "t": "Sí, acepta y se compromete",
+     "l": "El defensor asume sus funciones. Proceda a registrar el nombramiento.",
+     "n": "fin_defensor_nombrado",
+     "v": "ok"
+    },
+    {
+     "t": "No, se excusa o rechaza el cargo",
+     "l": "Se procede a nombrar al siguiente en orden de prelación",
+     "n": "defensor_ordinario",
+     "v": "warn"
+    }
+   ]
+  },
+  "defensor_designado_laj": {
+   "ph": 1,
+   "t": "Designación de defensor por el LAJ",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Cuando no comparece nadie idóneo, el LAJ designa como defensor a una persona solvente y de buenos antecedentes, previa audiencia del Ministerio Fiscal."
+    ],
+    [
+     "n",
+     "Criterios de selección: Idoneidad, ausencia de conflicto de intereses, disponibilidad para el ejercicio del cargo."
+    ],
+    [
+     "l",
+     "Art. 69.1 LJV; Art. 181 CC"
+    ]
+   ],
+   "nx": "defensor_aceptacion"
+  },
+  "legitimacion_ausencia": {
+   "ph": 2,
+   "t": "Verificar legitimación activa",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Competencia confirmada: Tribunal de Instancia del último domicilio o residencia. Ahora debe verificar quién está legitimado para solicitar la declaración de ausencia (Art. 68 LJV, Art. 182 CC)."
+    ],
+    [
+     "n",
+     "Sujetos legitimados: Ministerio Fiscal (genérica), cónyuge no separado, pareja de hecho, parientes hasta 4.º grado, terceros con derecho ejercitable, cualquier persona con interés legítimo fundado."
+    ],
+    [
+     "l",
+     "Art. 68 LJV; Art. 182 CC; Art. 3 LJV"
+    ]
+   ],
+   "q": "¿Quién solicita la declaración de ausencia?",
+   "opts": [
+    {
+     "t": "Ministerio Fiscal",
+     "l": "Legitimación genérica como garante del interés público",
+     "n": "solicitud_ausencia",
+     "v": "ok"
+    },
+    {
+     "t": "Cónyuge no separado o pareja de hecho",
+     "l": "Vínculo vigente, interés patrimonial y personal",
+     "n": "solicitud_ausencia",
+     "v": "ok"
+    },
+    {
+     "t": "Parientes hasta 4.º grado",
+     "l": "Orden de prelación sucesoria, interés en estado civil",
+     "n": "solicitud_ausencia",
+     "v": "ok"
+    },
+    {
+     "t": "Terceros con derecho ejercitable",
+     "l": "Acreedores, codeudores, titulares de derechos reales",
+     "n": "solicitud_ausencia",
+     "v": "neutral"
+    },
+    {
+     "t": "Otra persona con interés legítimo",
+     "l": "Art. 3 LJV, interpretación amplia",
+     "n": "solicitud_ausencia",
+     "v": "neutral"
+    }
+   ]
+  },
+  "legitimacion_ausencia_siniestro": {
+   "ph": 2,
+   "t": "Competencia por siniestro en España",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Competencia: Tribunal de Instancia del lugar del siniestro para todos los afectados (Arts. 194.2-3 CC). En estos supuestos, la legitimación es exclusiva del Ministerio Fiscal."
+    ],
+    [
+     "l",
+     "Art. 68 LJV; CC arts. 194.2-3"
+    ]
+   ],
+   "nx": "solicitud_ausencia"
+  },
+  "legitimacion_ausencia_siniestro_ext": {
+   "ph": 2,
+   "t": "Competencia por siniestro fuera de España",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Competencia: Juzgado del lugar de inicio del viaje para españoles/residentes; o domicilio/residencia en España de la mayoría de afectados; criterio residual: domicilio de cualquiera de los afectados."
+    ],
+    [
+     "l",
+     "Art. 68 LJV; CC arts. 194.2-3"
+    ]
+   ],
+   "nx": "solicitud_ausencia"
+  },
+  "solicitud_ausencia": {
+   "ph": 2,
+   "t": "Contenido de la solicitud inicial",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "La solicitud debe contener: nombre, domicilio y localización de parientes hasta 4.º grado de consanguinidad y 2.º de afinidad; relación de bienes conocidos; hechos constitutivos de desaparición (Art. 68 LJV)."
+    ],
+    [
+     "n",
+     "Finalidad de estos datos: garantizar derecho de defensa, facilitar citación y publicidad edictal, permitir medidas de averiguación."
+    ],
+    [
+     "cl",
+     "Checklist de la solicitud inicial",
+     [
+      "Datos identificativos del solicitante",
+      "Nombre y domicilio del desaparecido",
+      "Localización de parientes hasta 4.º grado consanguinidad y 2.º afinidad",
+      "Relación de bienes conocidos del desaparecido",
+      "Hechos constitutivos de la desaparición",
+      "Pruebas documentales o testificales"
+     ]
+    ],
+    [
+     "l",
+     "Art. 68 LJV; Art. 182 CC"
+    ]
+   ],
+   "q": "¿Se cumplen los plazos legales para declarar la ausencia?",
+   "opts": [
+    {
+     "t": "Sí: 1 año sin apoderado con administración general",
+     "l": "Art. 183 CC: transcurrido 1 año sin noticias y sin apoderado",
+     "n": "admision_ausencia",
+     "v": "ok"
+    },
+    {
+     "t": "Sí: 3 años con apoderado",
+     "l": "Art. 183 CC: transcurridos 3 años desde las últimas noticias",
+     "n": "admision_ausencia",
+     "v": "ok"
+    },
+    {
+     "t": "Sí: caducidad de mandato + 1 año sin noticias",
+     "l": "La caducidad del mandato determina la ausencia si se ignora el paradero",
+     "n": "admision_ausencia",
+     "v": "ok"
+    },
+    {
+     "t": "No se cumplen los plazos",
+     "l": "No procede la declaración de ausencia en este momento",
+     "n": "fin_plazos_no_cumplidos",
+     "v": "bad"
+    }
+   ]
+  },
+  "admision_ausencia": {
+   "ph": 2,
+   "t": "Admisión a trámite y comparecencia",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Competencia del LAJ para verificar requisitos formales y concurrencia de indicios suficientes de desaparición. Se emite decreto de admisión con señalamiento de comparecencia y orden de publicidad."
+    ],
+    [
+     "d",
+     "Comparecencia: plazo máximo de 1 mes desde la admisión (Art. 70.2 LJV)"
+    ],
+    [
+     "i",
+     "Citación a solicitante, MF, parientes indicados e interesados personados. Objeto: práctica de pruebas, audiencia de alegaciones, proposición de nuevas pruebas."
+    ],
+    [
+     "n",
+     "Publicidad edictal: dos publicaciones con intervalo mínimo de 8 días. Medios: Tablón Judicial Edictal Único (Art. 164 LEC, modificado por RD-ley 6/2023) y tablón del Ayuntamiento del último domicilio."
+    ],
+    [
+     "d",
+     "Intervalo mínimo entre publicaciones edictales: 8 días (Art. 70.2 LJV)"
+    ],
+    [
+     "l",
+     "Art. 70 LJV; Art. 164 LEC; LOPD 3/2018"
+    ]
+   ],
+   "q": "¿Resultado de la comparecencia y las pruebas?",
+   "opts": [
+    {
+     "t": "Procede la declaración de ausencia",
+     "l": "Practicadas las pruebas y finalizada la comparecencia, concurren los requisitos legales",
+     "n": "resolucion_ausencia",
+     "v": "ok"
+    },
+    {
+     "t": "Se necesita práctica de prueba posterior",
+     "l": "El LAJ puede acordar práctica posterior de pruebas propuestas (testigos, peritos, documentación)",
+     "n": "prueba_posterior_ausencia",
+     "v": "warn"
+    },
+    {
+     "t": "No procede la declaración",
+     "l": "No se acreditan suficientemente los requisitos legales",
+     "n": "fin_ausencia_no_procede",
+     "v": "bad"
+    }
+   ]
+  },
+  "prueba_posterior_ausencia": {
+   "ph": 2,
+   "t": "Prueba posterior a la comparecencia",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Facultad del LAJ para acordar la práctica posterior de pruebas propuestas: declaraciones de testigos, informes periciales, documentación pública/privada, pruebas tecnológicas con respeto a la protección de datos."
+    ],
+    [
+     "n",
+     "Plazo razonable dentro del máximo de duración del expediente. Intervención preceptiva del MF en medidas que afecten al patrimonio o derechos personales del ausente."
+    ],
+    [
+     "l",
+     "Art. 70.3 LJV; LOPD 3/2018"
+    ]
+   ],
+   "q": "¿Resultado de la prueba posterior?",
+   "opts": [
+    {
+     "t": "Procede la declaración de ausencia",
+     "l": "Las pruebas posteriores confirman los requisitos",
+     "n": "resolucion_ausencia",
+     "v": "ok"
+    },
+    {
+     "t": "No procede la declaración",
+     "l": "Las pruebas no acreditan suficientemente los requisitos",
+     "n": "fin_ausencia_no_procede",
+     "v": "bad"
+    }
+   ]
+  },
+  "resolucion_ausencia": {
+   "ph": 2,
+   "t": "Decreto de declaración de ausencia",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Practicadas las pruebas estimadas necesarias y finalizada la comparecencia, el LAJ emite decreto de declaración legal de ausencia con fundamentación jurídica."
+    ],
+    [
+     "n",
+     "Contenido del decreto: declaración legal de ausencia; nombramiento del representante conforme al Art. 184 CC; determinación de funciones (pesquisa, protección, administración, obligaciones); disposiciones complementarias (fianza, retribución, límites, rendición de cuentas)."
+    ],
+    [
+     "w",
+     "Efectos inmediatos: Inscripción en Registro Civil (Art. 198 CC); extinción de mandatos otorgados por el ausente; legitimación del representante para actuar en nombre del ausente."
+    ],
+    [
+     "l",
+     "Art. 71 LJV; Art. 184 CC; Art. 198 CC"
+    ]
+   ],
+   "nx": "representante_ausente"
+  },
+  "representante_ausente": {
+   "ph": 2,
+   "t": "Régimen del representante del ausente",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El representante del ausente es nombrado conforme al Art. 184 CC. Se le asignan tres funciones esenciales: pesquisa de la persona, protección y administración de bienes, y cumplimiento de obligaciones."
+    ],
+    [
+     "n",
+     "Régimen supletorio de tutela (Cap. IV y VIII CC): Nombramiento y aceptación; excusas y remoción; prestación de fianza; retribución en función de cuantía patrimonial, complejidad y dedicación."
+    ],
+    [
+     "w",
+     "Autorizaciones judiciales necesarias para actos de disposición, gravamen o enajenación de bienes del ausente. Requisito: utilidad evidente o necesidad acreditada."
+    ],
+    [
+     "n",
+     "Rendición de cuentas: anual o al finalizar la gestión, con intervención del MF y aprobación por el LAJ."
+    ],
+    [
+     "l",
+     "Art. 71 LJV; Art. 184 CC; CC Cap. IV y VIII"
+    ]
+   ],
+   "q": "¿Existían medidas provisionales adoptadas con anterioridad?",
+   "opts": [
+    {
+     "t": "Sí, existían medidas previas",
+     "l": "Las medidas subsisten hasta la declaración de ausencia. Pueden modificarse.",
+     "n": "medidas_subsistencia",
+     "v": "warn"
+    },
+    {
+     "t": "No, pero se necesitan nuevas medidas",
+     "l": "El LAJ puede adoptar medidas provisionales no existentes",
+     "n": "medidas_nuevas",
+     "v": "neutral"
+    },
+    {
+     "t": "No se necesitan medidas provisionales",
+     "l": "Proceda directamente al inventario de bienes",
+     "n": "inventario_bienes",
+     "v": "ok"
+    }
+   ]
+  },
+  "medidas_subsistencia": {
+   "ph": 3,
+   "t": "Subsistencia de medidas provisionales",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Las medidas reguladas en el Código Civil para casos de desaparición, adoptadas antes de iniciarse el expediente de declaración de ausencia legal, permanecen hasta que tenga lugar la declaración de ausencia legal (Art. 72.1 LJV)."
+    ],
+    [
+     "n",
+     "Principio de continuidad en la protección del desaparecido y de sus bienes."
+    ],
+    [
+     "n",
+     "Modificación de medidas: a instancia de interesado o MF; competencia del LAJ; criterios: cambio de circunstancias, utilidad, protección de terceros; procedimiento: comparecencia simplificada con audiencia."
+    ],
+    [
+     "l",
+     "Art. 72.1 LJV; CC arts. 181-182; LEC arts. 721-742"
+    ]
+   ],
+   "q": "¿Se modifican las medidas previas?",
+   "opts": [
+    {
+     "t": "Sí, se modifican por cambio de circunstancias",
+     "l": "Comparecencia simplificada con audiencia de los afectados",
+     "n": "inventario_bienes",
+     "v": "warn"
+    },
+    {
+     "t": "No, subsisten tal cual",
+     "l": "Las medidas se mantienen hasta resolución del expediente",
+     "n": "inventario_bienes",
+     "v": "ok"
+    }
+   ]
+  },
+  "medidas_nuevas": {
+   "ph": 3,
+   "t": "Adopción de medidas provisionales",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El LAJ puede acordar medidas provisionales en tanto no se ultime el expediente de ausencia (Art. 72.2 LJV)."
+    ],
+    [
+     "n",
+     "Tipología: Protección patrimonial (intervención de cuentas, depósito de valores, embargo preventivo); protección personal (designación de cuidador, autorización para actos médicos); medidas de averiguación (requerimientos a registros, publicación de búsqueda, colaboración con fuerzas de seguridad)."
+    ],
+    [
+     "w",
+     "Requisitos: acreditación de riesgo de perjuicio irreparable; proporcionalidad y temporalidad; audiencia previa del MF y, si es posible, de los interesados conocidos."
+    ],
+    [
+     "n",
+     "Duración: hasta resolución del expediente o modificación por cambio de circunstancias. Posibilidad de recurso de revisión ante el Juez."
+    ],
+    [
+     "l",
+     "Art. 72.2 LJV; LEC arts. 721-742"
+    ]
+   ],
+   "nx": "inventario_bienes"
+  },
+  "inventario_bienes": {
+   "ph": 3,
+   "t": "Práctica de inventario de bienes",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Obligación del representante de realizar inventario detallado de bienes muebles y descripción de inmuebles del ausente, conforme al Art. 185.1 CC y Art. 73 LJV."
+    ],
+    [
+     "n",
+     "Contenido del inventario: Bienes muebles (descripción, valor estimado, ubicación, estado); inmuebles (descripción registral, catastral y física; cargas y gravámenes; estado de ocupación); derechos y obligaciones (créditos, deudas, contratos, participaciones); documentación relevante (títulos, pólizas, escrituras)."
+    ],
+    [
+     "n",
+     "Sujetos con intervención preceptiva: Ministerio Fiscal (garantía del interés público) e interesados personados. Posibilidad de perito tasador si la complejidad lo requiere."
+    ],
+    [
+     "n",
+     "Efectos: base para administración provisional; referencia para rendición de cuentas; documento inscribible en Registro Civil (Art. 198 CC)."
+    ],
+    [
+     "cl",
+     "Checklist del inventario",
+     [
+      "Bienes muebles: descripción, valor, ubicación y estado",
+      "Inmuebles: descripción registral, catastral, física; cargas",
+      "Derechos y obligaciones: créditos, deudas, contratos",
+      "Documentación relevante: títulos, pólizas, escrituras",
+      "Intervención del MF e interesados personados",
+      "Levantamiento de acta detallada con firma de intervinientes"
+     ]
+    ],
+    [
+     "l",
+     "Art. 73 LJV; Art. 185.1 CC; Ley Hipotecaria; LEC arts. 637-640"
+    ]
+   ],
+   "q": "¿Desea continuar con la comunicación al Registro Civil?",
+   "opts": [
+    {
+     "t": "Sí, proceda a la inscripción registral",
+     "l": "Remisión de testimonios al Registro Civil conforme al Art. 77 LJV",
+     "n": "comunicacion_registro",
+     "v": "ok"
+    },
+    {
+     "t": "El procedimiento ha concluido aquí",
+     "l": "La ausencia legal ha sido declarada con todas las garantías",
+     "n": "fin_ausencia_declarada",
+     "v": "ok"
+    }
+   ]
+  },
+  "fallecimiento_siniestro": {
+   "ph": 4,
+   "t": "Fallecimiento por siniestro de nave/aeronave",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Supuestos arts. 194.2-3 CC: siniestro comprobado de nave o aeronave. Legitimación exclusiva del Ministerio Fiscal como garante del interés público en determinación del estado civil en catástrofes colectivas."
+    ],
+    [
+     "d",
+     "Práctica de pruebas: plazo máximo de 5 días (Art. 74.1 LJV)"
+    ],
+    [
+     "n",
+     "Medios probatorios: informes de autoridades marítimas/aeronáuticas, certificados de siniestro, listas de pasajeros, informes forenses, testimonios de supervivientes. Colaboración diplomática y consular."
+    ],
+    [
+     "n",
+     "Resolución: mismo día de práctica de pruebas. Competencia del LAJ del lugar del siniestro. Contenido: declaración de fallecimiento; fecha de muerte: la del siniestro, salvo prueba en contrario."
+    ],
+    [
+     "l",
+     "Art. 74.1 LJV; CC arts. 194.2-3; LEC art. 164"
+    ]
+   ],
+   "q": "¿Resultado del procedimiento?",
+   "opts": [
+    {
+     "t": "Se declara el fallecimiento",
+     "l": "Decreto de declaración de fallecimiento con fecha del siniestro",
+     "n": "resolucion_fallecimiento",
+     "v": "ok"
+    },
+    {
+     "t": "No se acredita suficientemente",
+     "l": "Pruebas insuficientes para declarar el fallecimiento",
+     "n": "fin_fallecimiento_no_acredita",
+     "v": "bad"
+    }
+   ]
+  },
+  "fallecimiento_no_siniestro": {
+   "ph": 4,
+   "t": "Fallecimiento sin siniestro (arts. 193, 194.1,4,5)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Legitimación: interesados o Ministerio Fiscal conforme a reglas generales del Art. 68 LJV. Tramitación conforme al Cap. IX LJV, con aplicación de normas sobre declaración de ausencia en cuanto sean compatibles."
+    ],
+    [
+     "n",
+     "Requisitos sustantivos: Art. 193 CC (10 años, 5 años si mayor de 75, 1 año por riesgo inminente); Art. 194.1 CC (operaciones militares); Art. 194.4-5 CC (presunción de siniestro por no llegada a destino)."
+    ],
+    [
+     "cl",
+     "Verificar plazos de fallecimiento",
+     [
+      "10 años desde las últimas noticias (Art. 193.1 CC)",
+      "5 años si la persona fuera mayor de 75 años (Art. 193.2 CC)",
+      "1 año por riesgo inminente de muerte (Art. 193 CC)",
+      "Desaparición en operaciones militares (Art. 194.1 CC)",
+      "Presunción de siniestro (Art. 194.4-5 CC)"
+     ]
+    ],
+    [
+     "l",
+     "Art. 74.2 LJV; CC arts. 193, 194.1,4,5"
+    ]
+   ],
+   "q": "¿Se cumplen los plazos y requisitos legales?",
+   "opts": [
+    {
+     "t": "Sí, se cumplen los requisitos",
+     "l": "Procede la tramitación de la declaración de fallecimiento",
+     "n": "tramitacion_fallecimiento",
+     "v": "ok"
+    },
+    {
+     "t": "No se cumplen los plazos",
+     "l": "No procede la declaración de fallecimiento en este momento",
+     "n": "fin_plazos_fallecimiento_no",
+     "v": "bad"
+    }
+   ]
+  },
+  "fallecimiento_con_ausencia": {
+   "ph": 4,
+   "t": "Fallecimiento con ausencia legal previa",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Si ya existe declaración de ausencia legal, la declaración de fallecimiento cesará la ausencia legal decretada previamente (cuando resulte acreditado)."
+    ],
+    [
+     "n",
+     "Contenido del decreto: cese de ausencia legal; fallecimiento con fecha conforme a criterios legales; efectos: apertura de sucesión, inscripción registral, liquidación de representación."
+    ],
+    [
+     "l",
+     "Art. 74.2 LJV; CC arts. 193-196"
+    ]
+   ],
+   "q": "¿Qué plazo de fallecimiento se cumple?",
+   "opts": [
+    {
+     "t": "Plazo general: 10 años sin noticias",
+     "l": "Art. 193.1 CC",
+     "n": "tramitacion_fallecimiento",
+     "v": "ok"
+    },
+    {
+     "t": "Mayor de 75 años: 5 años sin noticias",
+     "l": "Art. 193.2 CC",
+     "n": "tramitacion_fallecimiento",
+     "v": "ok"
+    },
+    {
+     "t": "Riesgo inminente: 1 año",
+     "l": "Art. 193 CC, riesgo inminente de muerte",
+     "n": "tramitacion_fallecimiento",
+     "v": "ok"
+    },
+    {
+     "t": "Operaciones militares (Art. 194.1 CC)",
+     "l": "Desaparición durante campaña o explosión",
+     "n": "tramitacion_fallecimiento",
+     "v": "ok"
+    },
+    {
+     "t": "No llegada a destino (Art. 194.4-5 CC)",
+     "l": "Presunción de siniestro con evidencias racionales",
+     "n": "tramitacion_fallecimiento",
+     "v": "ok"
+    }
+   ]
+  },
+  "tramitacion_fallecimiento": {
+   "ph": 4,
+   "t": "Tramitación de la declaración de fallecimiento",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Se aplica el procedimiento del Cap. IX LJV, con las normas sobre declaración de ausencia en cuanto sean compatibles (Art. 74.2 LJV). Admisión, comparecencia, publicidad edictal y práctica de pruebas conforme a los arts. 70-71 LJV."
+    ],
+    [
+     "n",
+     "Contenido del decreto de fallecimiento: fallecimiento con fecha conforme a criterios legales; cese de ausencia legal si la hubiera; efectos: apertura de sucesión, inscripción registral, liquidación de representación."
+    ],
+    [
+     "l",
+     "Art. 74.2 LJV; Arts. 70-71 LJV; CC arts. 193-196"
+    ]
+   ],
+   "q": "¿Resultado de la tramitación?",
+   "opts": [
+    {
+     "t": "Procede la declaración de fallecimiento",
+     "l": "Se emite decreto declarando el fallecimiento",
+     "n": "resolucion_fallecimiento",
+     "v": "ok"
+    },
+    {
+     "t": "No procede la declaración",
+     "l": "No se acreditan suficientemente los requisitos legales",
+     "n": "fin_fallecimiento_no_procede",
+     "v": "bad"
+    }
+   ]
+  },
+  "resolucion_fallecimiento": {
+   "ph": 4,
+   "t": "Decreto de declaración de fallecimiento",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El decreto de declaración de fallecimiento debe estar firme (agotada la vía de recursos) para producir efectos sucesorios."
+    ],
+    [
+     "n",
+     "Efectos inmediatos: apertura de la sucesión; inscripción registral; cesación de la representación del ausente si la hubiera."
+    ],
+    [
+     "w",
+     "Prohibición de disponer a título gratuito durante 5 años desde la declaración (Art. 196.2 CC). Excepción: legados en favor de instituciones de beneficencia o sufragios."
+    ],
+    [
+     "l",
+     "Art. 74 LJV; CC arts. 193-196; LEC arts. 777-782; Ley Notariado"
+    ]
+   ],
+   "q": "¿Cómo se adjudican los bienes de la sucesión?",
+   "opts": [
+    {
+     "t": "Vía judicial (LEC arts. 777-782)",
+     "l": "Partición y adjudicación judicial de la herencia",
+     "n": "sucesion_judicial",
+     "v": "ok"
+    },
+    {
+     "t": "Vía extrajudicial (escritura pública ante Notario)",
+     "l": "Partición notarial con intervención de todos los herederos",
+     "n": "sucesion_notarial",
+     "v": "ok"
+    }
+   ]
+  },
+  "sucesion_judicial": {
+   "ph": 4,
+   "t": "Adjudicación judicial de la herencia",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "Procedimiento de adjudicación de herencia conforme a los arts. 777-782 LEC."
+    ],
+    [
+     "n",
+     "Obligación de inventario notarial: formación de inventario detallado de bienes muebles y descripción de inmuebles con intervención notarial."
+    ],
+    [
+     "l",
+     "LEC arts. 777-782; Art. 74.3 LJV; Ley Notariado"
+    ]
+   ],
+   "nx": "comunicacion_registro_fallecimiento"
+  },
+  "sucesion_notarial": {
+   "ph": 4,
+   "t": "Adjudicación notarial de la herencia",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Escritura pública de partición ante Notario con intervención de todos los herederos y aceptación de la declaración de fallecimiento."
+    ],
+    [
+     "n",
+     "Obligación de inventario notarial: formación de inventario detallado de bienes muebles y descripción de inmuebles."
+    ],
+    [
+     "l",
+     "Art. 74.3 LJV; Ley Notariado; CC art. 196"
+    ]
+   ],
+   "nx": "comunicacion_registro_fallecimiento"
+  },
+  "comunicacion_registro_fallecimiento": {
+   "ph": 4,
+   "t": "Comunicación al Registro Civil",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Remisión de testimonios al Registro Civil conforme al Art. 77 LJV y Art. 198 CC para inscripción de la declaración de fallecimiento en el registro individual."
+    ],
+    [
+     "n",
+     "Contenido: decreto de declaración de fallecimiento; escrituras de partición y adjudicación. Forma: medios telemáticos, plazo inmediato a firmeza."
+    ],
+    [
+     "l",
+     "Art. 77 LJV; Art. 198 CC; LRC art. 78"
+    ]
+   ],
+   "nx": "fin_fallecimiento_declarado"
+  },
+  "hechos_posteriores": {
+   "ph": 5,
+   "t": "Hechos posteriores a la declaración",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Procedimiento ante la presentación, noticias de existencia o fallecimiento del declarado ausente o fallecido, conforme al Art. 75 LJV."
+    ],
+    [
+     "n",
+     "Cuatro supuestos regulados: 1) Presentación del presunto ausente/fallecido; 2) Noticias de existencia sin presentación; 3) Suspensión de la actuación del representante; 4) Noticia de muerte del desaparecido."
+    ],
+    [
+     "l",
+     "Art. 75 LJV; Art. 76 LJV; CC art. 197"
+    ]
+   ],
+   "q": "¿Qué hecho posterior se ha producido?",
+   "opts": [
+    {
+     "t": "Se presenta el presunto ausente o fallecido",
+     "l": "La persona se presenta y solicita identificación",
+     "n": "presentacion_ausente",
+     "v": "ok"
+    },
+    {
+     "t": "Hay noticias de existencia sin presentación",
+     "l": "Se tiene noticia de que la persona puede estar viva",
+     "n": "noticias_existencia",
+     "v": "warn"
+    },
+    {
+     "t": "Persona con identificación solicita suspensión",
+     "l": "Alguien dice ser el desaparecido y aporta documentación",
+     "n": "suspension_representante",
+     "v": "warn"
+    },
+    {
+     "t": "Noticia de muerte del desaparecido",
+     "l": "Se ha tenido noticia del fallecimiento efectivo",
+     "n": "noticia_muerte",
+     "v": "bad"
+    },
+    {
+     "t": "Fallecimiento comprobado durante el expediente",
+     "l": "Se comprueba el fallecimiento en cualquier momento de la tramitación (Art. 76 LJV)",
+     "n": "fallecimiento_comprobado",
+     "v": "neutral"
+    }
+   ]
+  },
+  "presentacion_ausente": {
+   "ph": 5,
+   "t": "Presentación del presunto ausente/fallecido",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "La persona que dice ser el ausente o fallecido se presenta. El LAJ acuerda de oficio o a instancia la identificación por medios adecuados."
+    ],
+    [
+     "n",
+     "Medios de identificación: pruebas documentales (DNI, pasaporte, partidas); pruebas biológicas (ADN); declaraciones de testigos; informes periciales."
+    ],
+    [
+     "n",
+     "Comparecencia de verificación: citación a persona presentada, MF y todos los que hubieren intervenido en el expediente."
+    ],
+    [
+     "d",
+     "Resolución: decreto dentro de los 3 días siguientes a la comparecencia (Art. 75.1 LJV)"
+    ],
+    [
+     "l",
+     "Art. 75.1 LJV; CC art. 197; LOPD 3/2018"
+    ]
+   ],
+   "q": "¿Resultado de la verificación de identidad?",
+   "opts": [
+    {
+     "t": "Se confirma la identidad: se revoca la declaración",
+     "l": "Restitución de bienes al reaparecido conforme al Art. 197 CC",
+     "n": "fin_revocacion_presentacion",
+     "v": "ok"
+    },
+    {
+     "t": "No se confirma la identidad: se ratifica la declaración",
+     "l": "La declaración de ausencia o fallecimiento se mantiene",
+     "n": "fin_ratificacion",
+     "v": "bad"
+    }
+   ]
+  },
+  "noticias_existencia": {
+   "ph": 5,
+   "t": "Noticias de existencia sin presentación",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Se recibe noticia de que el declarado ausente o fallecido podría estar vivo, pero no se ha presentado personalmente."
+    ],
+    [
+     "n",
+     "Notificación personal al presunto afectado: contenido de la resolución de declaración; requerimiento para aportar pruebas de identidad; forma conforme a reglas de LEC; posibilidad de notificación electrónica."
+    ],
+    [
+     "d",
+     "Plazo para aporte de pruebas: 20 días desde la notificación (Art. 75.2 LJV)"
+    ],
+    [
+     "n",
+     "Comparecencia posterior: convocatoria transcurrido el plazo. Resolución en 3 días."
+    ],
+    [
+     "l",
+     "Art. 75.2 LJV; LEC normas de notificación; LOPD 3/2018"
+    ]
+   ],
+   "q": "¿Resultado de la comparecencia?",
+   "opts": [
+    {
+     "t": "Se confirma la identidad: se revoca la declaración",
+     "l": "Se deja sin efecto la declaración de ausencia o fallecimiento",
+     "n": "fin_revocacion_noticias",
+     "v": "ok"
+    },
+    {
+     "t": "No se confirma: se ratifica la declaración",
+     "l": "La declaración se mantiene",
+     "n": "fin_ratificacion",
+     "v": "bad"
+    },
+    {
+     "t": "No comparece ni aporta pruebas",
+     "l": "Se ratifica la declaración por falta de oposición",
+     "n": "fin_ratificacion",
+     "v": "bad"
+    }
+   ]
+  },
+  "suspension_representante": {
+   "ph": 5,
+   "t": "Suspensión de la actuación del representante",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Persona que dice ser el desaparecido solicita suspensión y aporta identificación documental bastante. El LAJ acuerda la suspensión cautelar hasta la celebración de la comparecencia de verificación."
+    ],
+    [
+     "n",
+     "Finalidad: evitar actos de disposición que pudieran perjudicar derechos del reaparecido. Límites: no afecta a actos de conservación urgente."
+    ],
+    [
+     "d",
+     "Resolución en 3 días siguientes a la comparecencia de verificación"
+    ],
+    [
+     "l",
+     "Art. 75.3 LJV"
+    ]
+   ],
+   "q": "¿Resultado de la verificación?",
+   "opts": [
+    {
+     "t": "Se confirma la identidad: suspensión definitiva y revocación",
+     "l": "Se revoca la declaración, se restituyen bienes",
+     "n": "fin_revocacion_suspension",
+     "v": "ok"
+    },
+    {
+     "t": "No se confirma: se levanta la suspensión",
+     "l": "El representante continúa sus funciones",
+     "n": "fin_ratificacion",
+     "v": "bad"
+    }
+   ]
+  },
+  "noticia_muerte": {
+   "ph": 5,
+   "t": "Noticia de muerte del desaparecido",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Se recibe noticia del fallecimiento efectivo del desaparecido. Se convoca comparecencia de comprobación con citación a interesados y MF."
+    ],
+    [
+     "n",
+     "Práctica de pruebas: certificado de defunción, informe forense, testimonios, documentación registral. Resolución en 3 días."
+    ],
+    [
+     "n",
+     "Efectos: archivado del expediente; apertura de nueva sucesión por fallecimiento efectivo; liquidación de gestión del representante."
+    ],
+    [
+     "l",
+     "Art. 75.4 LJV; CC arts. 657 y ss.; LRC art. 78"
+    ]
+   ],
+   "nx": "fallecimiento_comprobado"
+  },
+  "fallecimiento_comprobado": {
+   "ph": 5,
+   "t": "Constancia del fallecimiento (Art. 76)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Comprobación del fallecimiento en cualquier momento durante la tramitación de expedientes regulados en este Capítulo."
+    ],
+    [
+     "n",
+     "Medios de comprobación: certificado de defunción; informe forense; sentencia firme en otro procedimiento; documentación registral de inscripción de defunción."
+    ],
+    [
+     "n",
+     "Consecuencias procesales: archivado del expediente; sin efecto de las medidas adoptadas. Consecuencias sustantivas: apertura de sucesión por fallecimiento efectivo (CC art. 657 y ss.); liquidación de gestión del representante; inscripción registral."
+    ],
+    [
+     "l",
+     "Art. 76 LJV; CC art. 196; LRC art. 78; CC arts. 657 y ss."
+    ]
+   ],
+   "q": "¿Procede la apertura de sucesión?",
+   "opts": [
+    {
+     "t": "Sí, se abre la sucesión por fallecimiento efectivo",
+     "l": "Trámites conforme a normativa sucesoria",
+     "n": "fin_fallecimiento_comprobado",
+     "v": "ok"
+    },
+    {
+     "t": "El expediente se archiva sin más trámites",
+     "l": "No hay bienes ni herederos conocidos",
+     "n": "fin_archivo_expediente",
+     "v": "neutral"
+    }
+   ]
+  },
+  "comunicacion_registro": {
+   "ph": 6,
+   "t": "Comunicación al Registro Civil",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Obligación de remitir testimonios al Registro Civil competente para inscripción de las declaraciones conforme al Art. 198 CC y Ley 20/2011 del Registro Civil (Art. 77 LJV)."
+    ],
+    [
+     "n",
+     "Contenido de testimonios: resoluciones o decretos de declaración de desaparición, ausencia legal y fallecimiento; nombramiento, modificación y extinción de representaciones; inventarios de bienes; decretos de autorizaciones; escrituras de transmisiones y gravámenes; escrituras de partición y adjudicación."
+    ],
+    [
+     "n",
+     "Forma de remisión: medios telemáticos conforme a LEC; plazo: inmediato a firmeza; garantías: autenticidad, integridad y confidencialidad."
+    ],
+    [
+     "n",
+     "Efectos: oponibilidad frente a terceros (erga omnes); seguridad jurídica; coordinación con otros registros (Propiedad, Mercantil, Bienes Muebles)."
+    ],
+    [
+     "cl",
+     "Checklist de comunicación registral",
+     [
+      "Testimonio de decreto de declaración",
+      "Nombramiento y datos del representante",
+      "Inventario de bienes (si procede)",
+      "Autorizaciones de disposición",
+      "Escrituras de transmisiones",
+      "Escrituras de partición y adjudicación",
+      "Remisión telemática al Registro Civil"
+     ]
+    ],
+    [
+     "l",
+     "Art. 77 LJV; Art. 198 CC; LRC arts. 4, 78; Ley 39/2015"
+    ]
+   ],
+   "nx": "fin_ausencia_declarada_registro"
+  },
+  "fin_defensor_nombrado": {
+   "ph": 1,
+   "t": "Defensor judicial nombrado",
+   "ac": "laj",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "El defensor judicial ha sido nombrado conforme al procedimiento ordinario y ha aceptado el cargo. Sus funciones incluyen: pesquisa de la persona, protección y administración de bienes, y cumplimiento de obligaciones del desaparecido."
+    ],
+    [
+     "n",
+     "El nombramiento debe comunicarse al Registro Civil conforme al Art. 77 LJV."
+    ],
+    [
+     "n",
+     "El defensor está sujeto al régimen de fianza, retribución, rendición de cuentas y autorizaciones judiciales conforme a los Cap. IV y VIII CC."
+    ],
+    [
+     "l",
+     "Art. 69 LJV; Art. 181 CC; CC Cap. IV y VIII; Art. 77 LJV"
+    ]
+   ]
+  },
+  "fin_defensor_ratificado": {
+   "ph": 1,
+   "t": "Defensor urgente ratificado",
+   "ac": "laj",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "El defensor judicial nombrado de forma urgente ha sido ratificado en la comparecencia retroactiva. Las medidas adoptadas se mantienen."
+    ],
+    [
+     "n",
+     "Comunicar al Registro Civil conforme al Art. 77 LJV. El defensor debe rendir cuentas de las medidas adoptadas durante el período urgente."
+    ],
+    [
+     "l",
+     "Art. 69.2 LJV; Art. 181 CC; Art. 77 LJV"
+    ]
+   ]
+  },
+  "fin_plazos_no_cumplidos": {
+   "ph": 2,
+   "t": "Plazos legales no cumplidos",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "No procede la declaración de ausencia legal porque no se cumplen los plazos establecidos en los arts. 183-184 CC."
+    ],
+    [
+     "n",
+     "Alternativas: Solicitar nombramiento de defensor judicial (Art. 69 LJV) para la protección provisional del desaparecido y sus bienes mientras transcurren los plazos legales."
+    ],
+    [
+     "n",
+     "Plazos: 1 año sin noticias y sin apoderado; 3 años con apoderado; caducidad de mandato + 1 año sin noticias."
+    ],
+    [
+     "l",
+     "CC arts. 183-184; Art. 69 LJV"
+    ]
+   ]
+  },
+  "fin_ausencia_no_procede": {
+   "ph": 2,
+   "t": "No procede la declaración de ausencia",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "Las pruebas practicadas no acreditan suficientemente los requisitos legales para declarar la ausencia conforme a los arts. 182-184 CC."
+    ],
+    [
+     "n",
+     "Posibilidad de reiterar la solicitud si se obtienen nuevas pruebas. El solicitante puede recurrir la decisión ante el Juez."
+    ],
+    [
+     "l",
+     "Art. 70 LJV; CC arts. 182-184"
+    ]
+   ]
+  },
+  "fin_ausencia_declarada": {
+   "ph": 3,
+   "t": "Ausencia legal declarada",
+   "ac": "laj",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "La ausencia legal ha sido declarada mediante decreto del LAJ. Se ha nombrado representante conforme al Art. 184 CC, se han adoptado las medidas provisionales pertinentes y se ha practicado el inventario de bienes."
+    ],
+    [
+     "n",
+     "Efectos: inscripción en Registro Civil; extinción de mandatos; legitimación del representante. El procedimiento puede reabrirse si se producen hechos posteriores (Art. 75 LJV)."
+    ],
+    [
+     "l",
+     "Arts. 70-73 LJV; CC arts. 182-185, 198; Art. 77 LJV"
+    ]
+   ]
+  },
+  "fin_ausencia_declarada_registro": {
+   "ph": 6,
+   "t": "Procedimiento completado con inscripción",
+   "ac": "laj",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "La ausencia legal ha sido declarada, el representante nombrado, las medidas adoptadas, el inventario practicado y los testimonios remitidos al Registro Civil para inscripción. El procedimiento ha concluido con todas las garantías."
+    ],
+    [
+     "n",
+     "La inscripción produce efectos erga omnes y coordina con otros registros (Propiedad, Mercantil, Bienes Muebles)."
+    ],
+    [
+     "l",
+     "Arts. 67-73, 77 LJV; CC arts. 181-185, 198; LRC art. 78"
+    ]
+   ]
+  },
+  "fin_fallecimiento_no_acredita": {
+   "ph": 4,
+   "t": "Fallecimiento no acreditado por siniestro",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "Las pruebas practicadas en el plazo de 5 días no acreditan suficientemente el fallecimiento en el siniestro de nave o aeronave."
+    ],
+    [
+     "n",
+     "El MF puede reiterar la solicitud si obtiene nuevas pruebas. La colaboración diplomática y consular puede aportar documentación adicional."
+    ],
+    [
+     "l",
+     "Art. 74.1 LJV; CC arts. 194.2-3"
+    ]
+   ]
+  },
+  "fin_fallecimiento_no_procede": {
+   "ph": 4,
+   "t": "No procede la declaración de fallecimiento",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "Las pruebas practicadas no acreditan suficientemente los requisitos legales para declarar el fallecimiento."
+    ],
+    [
+     "n",
+     "Posibilidad de reiterar la solicitud si se obtienen nuevas pruebas o transcurren más plazos."
+    ],
+    [
+     "l",
+     "Art. 74 LJV; CC arts. 193-196"
+    ]
+   ]
+  },
+  "fin_plazos_fallecimiento_no": {
+   "ph": 4,
+   "t": "Plazos de fallecimiento no cumplidos",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "No se cumplen los plazos legales para declarar el fallecimiento conforme a los arts. 193-194 CC."
+    ],
+    [
+     "n",
+     "Plazos legales: 10 años desde las últimas noticias; 5 años si mayor de 75; 1 año por riesgo inminente; operaciones militares; presunción de siniestro."
+    ],
+    [
+     "n",
+     "Alternativa: solicitar declaración de ausencia legal si se cumplen sus plazos."
+    ],
+    [
+     "l",
+     "CC arts. 193-194; Art. 70 LJV"
+    ]
+   ]
+  },
+  "fin_fallecimiento_declarado": {
+   "ph": 6,
+   "t": "Fallecimiento declarado y sucesión abierta",
+   "ac": "laj",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "El fallecimiento ha sido declarado firme, la sucesión se ha abierto y adjudicado, y los testimonios han sido remitidos al Registro Civil. El procedimiento ha concluido."
+    ],
+    [
+     "n",
+     "Prohibición de disponer a título gratuito durante 5 años (Art. 196.2 CC). Si el declarado fallecido reaparece, tiene derecho a la restitución de bienes conforme al Art. 197 CC."
+    ],
+    [
+     "l",
+     "Arts. 74, 77 LJV; CC arts. 193-197; LEC arts. 777-782; LRC art. 78"
+    ]
+   ]
+  },
+  "fin_revocacion_presentacion": {
+   "ph": 5,
+   "t": "Declaración revocada por presentación",
+   "ac": "laj",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "Se ha verificado la identidad del presentado y se deja sin efecto la declaración de ausencia o fallecimiento. Restitución de bienes al reaparecido conforme al Art. 197 CC."
+    ],
+    [
+     "n",
+     "Responsabilidad por actos de gestión: validez de los realizados de buena fe por el representante. El reaparecido puede reclamar daños por dolo o negligencia grave."
+    ],
+    [
+     "n",
+     "Comunicar la revocación al Registro Civil para cancelación de asientos."
+    ],
+    [
+     "l",
+     "Art. 75.1 LJV; CC art. 197; Art. 77 LJV"
+    ]
+   ]
+  },
+  "fin_revocacion_noticias": {
+   "ph": 5,
+   "t": "Declaración revocada por noticias de existencia",
+   "ac": "laj",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "Las pruebas aportadas confirman la existencia del declarado ausente o fallecido. Se deja sin efecto la declaración."
+    ],
+    [
+     "n",
+     "Restitución de bienes conforme al Art. 197 CC. Validez de actos de buena fe del representante. Comunicación al Registro Civil para cancelación."
+    ],
+    [
+     "l",
+     "Art. 75.2 LJV; CC art. 197; Art. 77 LJV"
+    ]
+   ]
+  },
+  "fin_revocacion_suspension": {
+   "ph": 5,
+   "t": "Declaración revocada tras suspensión",
+   "ac": "laj",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "Se confirma la identidad de la persona que solicitó la suspensión. La suspensión del representante se torna definitiva y se revoca la declaración."
+    ],
+    [
+     "n",
+     "Restitución de bienes, cancelación de asientos registrales, liquidación de la gestión del representante."
+    ],
+    [
+     "l",
+     "Art. 75.3 LJV; CC art. 197; Art. 77 LJV"
+    ]
+   ]
+  },
+  "fin_ratificacion": {
+   "ph": 5,
+   "t": "Declaración ratificada",
+   "ac": "laj",
+   "end": "neutral",
+   "c": [
+    [
+     "i",
+     "No se ha confirmado la identidad del presunto reaparecido o no ha aportado pruebas suficientes. La declaración de ausencia o fallecimiento se mantiene íntegramente."
+    ],
+    [
+     "n",
+     "El representante continúa en el ejercicio de sus funciones. Las medidas adoptadas se mantienen."
+    ],
+    [
+     "l",
+     "Art. 75 LJV"
+    ]
+   ]
+  },
+  "fin_fallecimiento_comprobado": {
+   "ph": 5,
+   "t": "Fallecimiento efectivo comprobado",
+   "ac": "laj",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "Se ha comprobado el fallecimiento efectivo del desaparecido. El expediente de ausencia o fallecimiento declarado se archiva. Se abre la sucesión por fallecimiento efectivo."
+    ],
+    [
+     "n",
+     "Consecuencias: archivo del expediente; cesación de representación y medidas; apertura de sucesión conforme al CC art. 657 y ss.; liquidación de gestión del representante; inscripción registral del fallecimiento."
+    ],
+    [
+     "n",
+     "Validez de actos de disposición realizados de buena fe por el representante antes de la comprobación."
+    ],
+    [
+     "l",
+     "Art. 76 LJV; CC arts. 196, 657 y ss.; LRC art. 78"
+    ]
+   ]
+  },
+  "fin_archivo_expediente": {
+   "ph": 5,
+   "t": "Expediente archivado",
+   "ac": "laj",
+   "end": "neutral",
+   "c": [
+    [
+     "i",
+     "El expediente se archiva al comprobarse el fallecimiento sin que existan bienes ni herederos conocidos."
+    ],
+    [
+     "n",
+     "Si posteriormente aparecieren herederos o bienes, podrán iniciar los trámites sucesorios correspondientes."
+    ],
+    [
+     "l",
+     "Art. 76 LJV; CC arts. 657 y ss."
+    ]
+   ]
+  }
+ },
+ "otrosDatos": {
+  "PHASES": [
+   "Inicio y Competencia",
+   "Defensor Judicial",
+   "Declaración de Ausencia",
+   "Medidas e Inventario",
+   "Declaración de Fallecimiento",
+   "Hechos Posteriores",
+   "Comunicación Registral"
+  ],
+  "SB_FOOT": "<div class=\"sb-foot\">Ley 15/2015, Arts. 67-77 LJV<br>CC arts. 181-198</div>"
+ }
+}

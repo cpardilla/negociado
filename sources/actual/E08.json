@@ -1,0 +1,914 @@
+{
+ "id": "E08",
+ "tipo": "esquema",
+ "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/01 - CAPÍTULO I - De la autorización o aprobación judicial del reconocimiento de la filiación no matrimonial.html",
+ "titulo": "LJV 15/2015 — Título II, Cap. I — Reconocimiento de la filiación no matrimonial",
+ "cabecera": {
+  "migas": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO I",
+  "titulo": "De la autorización o aprobación judicial del reconocimiento de la filiación no matrimonial",
+  "subtitulo": "Artículos 23 a 26 LJV",
+  "etiquetas": [
+   "LJV 15/2015",
+   "Arts. 23–26",
+   "Título II, Cap. I",
+   "Filiación no matrimonial"
+  ]
+ },
+ "estadisticas": [
+  {
+   "valor": "4",
+   "etiqueta": "Artículos base"
+  },
+  {
+   "valor": "20+",
+   "etiqueta": "Conexiones normativas"
+  },
+  {
+   "valor": "10+",
+   "etiqueta": "Actores identificados"
+  },
+  {
+   "valor": "6",
+   "etiqueta": "Plazos procesales"
+  }
+ ],
+ "filtros": [
+  {
+   "categoria": "all",
+   "texto": "Todos"
+  },
+  {
+   "categoria": "c1",
+   "texto": "Art. 23 · Ámbito"
+  },
+  {
+   "categoria": "c2",
+   "texto": "Art. 24 · Competencia"
+  },
+  {
+   "categoria": "c3",
+   "texto": "Art. 25 · Tramitación"
+  },
+  {
+   "categoria": "c4",
+   "texto": "Art. 26 · Resolución"
+  }
+ ],
+ "leyenda": [
+  {
+   "texto": "Art. 23 · Ámbito de aplicación",
+   "color": "background:var(--c1)"
+  },
+  {
+   "texto": "Art. 24 · Competencia, legitimación y postulación",
+   "color": "background:var(--c2)"
+  },
+  {
+   "texto": "Art. 25 · Tramitación",
+   "color": "background:var(--c3)"
+  },
+  {
+   "texto": "Art. 26 · Resolución",
+   "color": "background:var(--c4)"
+  }
+ ],
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo I · Arts. 23–26 · Generado como plantilla HTML reutilizable",
+ "secciones": [
+  {
+   "id": "sec-articles",
+   "titulo": "Capítulo I — Artículos 23 a 26",
+   "recuento": "4 artículos",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c1",
+      "articulo": "Artículo 23",
+      "etiquetas": [
+       {
+        "texto": "Ámbito de aplicación",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Ámbito de aplicación",
+      "resumen": "Define cuándo es necesaria la intervención judicial para reconocer la filiación no matrimonial, distinguiendo entre autorización y aprobación.",
+      "contadores": [
+       "7 normas conexas",
+       "4 supuestos regulados"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Regla general",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Aplicación en todos los casos en que el reconocimiento de la filiación no matrimonial necesite, conforme a la ley, autorización o aprobación judicial para su validez."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "La distinción fundamental y sus efectos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Autorización → condición de <strong>validez</strong>, previa al reconocimiento. Sin ella, el reconocimiento no puede otorgarse; si se otorgara, sería inválido desde el origen."
+            },
+            {
+             "t": "Aprobación → condición de <strong>eficacia</strong>, posterior al reconocimiento ya otorgado. El acto existe como declaración de voluntad pero queda en suspenso; si se deniega, deviene ineficaz sin retroactividad sobre la declaración."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Supuesto de autorización judicial",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Reconocimiento por <strong>hermano o consanguíneo en línea recta del progenitor</strong> cuya filiación está determinada, cuando el reconocido sea menor o persona con discapacidad con medidas de apoyo.",
+             "sub": [
+              {
+               "t": "Riesgo de encubrimiento de relación incestuosa: el hijo sería simultáneamente hijo y sobrino (u otro pariente) del progenitor conocido."
+              },
+              {
+               "t": "Fundamento: Art. 124 CC · La autorización solo se concede cuando sea en interés del reconocido (art. 26.2 LJV)."
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Supuestos de aprobación judicial — tres casos del apdo. 3",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>a)</strong> Reconocimiento por quien no pueda contraer matrimonio <strong>por razón de edad</strong> (menor de edad no emancipado). El reconociente carece de plena capacidad de obrar; la aprobación judicial sustituye la intervención representativa que en otros actos se requeriría. Art. 121 CC"
+            },
+            {
+             "t": "<strong>b)</strong> Reconocimiento sin <strong>consentimiento del representante legal ni asistencia del curador</strong> del reconocido ni del progenitor conocido — salvo que hubiera sido reconocido en testamento o dentro del plazo de inscripción del nacimiento. Las excepciones responden a que el testamento se otorga ante notario con plenas garantías, y el reconocimiento en el plazo de inscripción se realiza con inmediatez al nacimiento bajo supervisión registral. Art. 123 CC"
+            },
+            {
+             "t": "<strong>c)</strong> Reconocimiento paterno realizado <strong>dentro del plazo de inscripción</strong> cuando esta se hubiera <strong>suspendido a petición de la madre</strong>. La aprobación judicial dirime la discrepancia entre el padre que quiere reconocer y la madre que se opone, atendiendo al interés del menor. Art. 44.5 Ley 20/2011"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Aprobación para reconocimiento por persona con discapacidad",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "También se insta aprobación para la validez del reconocimiento otorgado por una <strong>persona con discapacidad con medidas de apoyo</strong>, con independencia de la condición del reconocido. Tutela tanto el discernimiento del reconociente como el interés del reconocido."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Relación con otros expedientes del Título II",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Cap. I bis (arts. 26 bis y ss.): aprobación judicial de la modificación registral del sexo para menores de 12 a 14 años; mismo esquema de control judicial como condición de eficacia de una declaración de voluntad."
+            },
+            {
+             "t": "Cap. II (arts. 27 y ss.): nombramiento de defensor judicial, relevante cuando el reconocido carece de representante legal o este tiene intereses opuestos."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Conexión normativa — Código Civil",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Art. 120 CC Modos de determinación de la filiación no matrimonial: reconocimiento, resolución registral, sentencia firme y posesión de estado."
+            },
+            {
+             "t": "Art. 121 CC Reconocimiento por menor o persona con discapacidad: aprobación judicial con audiencia del MF."
+            },
+            {
+             "t": "Art. 123 CC Consentimiento o aprobación judicial para eficacia del reconocimiento del menor o persona con discapacidad."
+            },
+            {
+             "t": "Art. 124 CC Prohibición sin autorización judicial del reconocimiento por hermano o pariente consanguíneo del otro progenitor."
+            },
+            {
+             "t": "Art. 125 CC Reconocimiento por uno de los progenitores no casados entre sí: no perjudica los derechos del otro."
+            },
+            {
+             "t": "Art. 126 CC Reconocimiento del mayor de edad: no precisa control judicial; delimita el ámbito de aplicación del art. 23 LJV."
+            },
+            {
+             "t": "Art. 44.5 Ley 20/2011 Suspensión de la inscripción de nacimiento a petición de la madre: presupuesto fáctico del supuesto c)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Art. 120 CC",
+       "Art. 121 CC",
+       "Art. 123 CC",
+       "Art. 124 CC",
+       "Art. 125 CC",
+       "Art. 126 CC",
+       "Art. 44.5 Ley 20/2011"
+      ],
+      "claves": "artículo 23 ámbito aplicación reconocimiento filiación no matrimonial autorización aprobación judicial validez eficacia autorización aprobación distinción hermano consanguíneo progenitor menor discapacidad código civil"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c2",
+      "articulo": "Artículo 24",
+      "etiquetas": [
+       {
+        "texto": "Competencia y postulación",
+        "clase": "tag-warn"
+       }
+      ],
+      "titulo": "Competencia, legitimación y postulación",
+      "resumen": "Regula qué órgano judicial es competente, quién puede instar el expediente y si es necesaria postulación técnica.",
+      "contadores": [
+       "5 normas conexas",
+       "3 fueros en cascada"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Competencia territorial — fueros en cascada",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Fuero principal Juzgado de Primera Instancia del <strong>domicilio del reconocido</strong>. El expediente se sitúa en el entorno vital de quien ve afectado su estado civil."
+            },
+            {
+             "t": "Fuero secundario Si no tiene domicilio en España: <strong>residencia del reconocido</strong> en territorio nacional."
+            },
+            {
+             "t": "Fuero subsidiario Si no tiene residencia en España: <strong>domicilio o residencia del progenitor autor del reconocimiento</strong>. Opera cuando el reconocido carece de todo vínculo territorial con España, garantizando que siempre exista un órgano español competente cuando el reconociente sí tenga vínculos."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Competencia objetiva y atribución de la decisión de fondo",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Juzgado de Primera Instancia · Decisión de fondo reservada al <strong>Juez</strong>, mediante <strong>auto</strong>, por afectar al estado civil y a derechos de menores o personas con discapacidad. Art. 2 LJV"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Legitimación activa — exclusividad y flexibilidad",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Exclusivamente el <strong>progenitor autor del reconocimiento</strong>: carácter personalísimo del acto; ni el reconocido ni terceros pueden suplir esa voluntad."
+            },
+            {
+             "t": "Puede actuar asistido de su representante legal, tutor o curador cuando el propio reconociente sea menor de edad o persona con discapacidad."
+            },
+            {
+             "t": "Si el reconociente es menor: la solicitud la presenta el menor asistido, no el representante en solitario, pues la voluntad de reconocer ha de ser del propio reconociente."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Postulación — ausencia de exigencia preceptiva y consecuencias",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "No preceptiva la intervención de Abogado ni Procurador: acceso facilitado dado el carácter familiar y personal del expediente."
+            },
+            {
+             "t": "Formulario normalizado disponible en la Oficina judicial o sede electrónica; no exige fundamentación jurídica. Art. 14.3 LJV"
+            },
+            {
+             "t": "Postulación <strong>voluntaria</strong>: las partes pueden comparecer con Abogado y Procurador aunque no sea preceptivo. Art. 3.3 LJV"
+            },
+            {
+             "t": "Postulación <strong>obligatoria</strong> desde el momento en que se formule oposición y para los recursos de revisión o apelación. Art. 3.4 LJV"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Defensor judicial del reconocido en supuestos de conflicto de intereses",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Si el representante legal del reconocido tiene intereses opuestos al reconocido —p. ej., es cónyuge del reconociente—: puede nombrarse un <strong>defensor judicial</strong> conforme al Art. 27 LJV (Cap. II del Tít. II) para actuar en nombre del reconocido en el expediente."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Conexión normativa",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Art. 2 LJV Competencia objetiva y atribución al Juez · Art. 3 LJV Régimen de postulación."
+            },
+            {
+             "t": "Art. 14.3 LJV Formulario normalizado cuando no es preceptiva la postulación."
+            },
+            {
+             "t": "Art. 27 LJV Defensor judicial en supuestos de conflicto de intereses."
+            },
+            {
+             "t": "Art. 9 LJV Supuestos internacionales: competencia territorial complementada por la regla subsidiaria del art. 9.2 (efectos principales o ejecución)."
+            },
+            {
+             "t": "Art. 9.4 CC Ley personal del hijo: norma de conflicto para la determinación de la filiación en casos internacionales (Art. 10 LJV)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Art. 2 LJV",
+       "Art. 3 LJV",
+       "Art. 9 LJV",
+       "Art. 14.3 LJV",
+       "Art. 27 LJV",
+       "Art. 9.4 CC"
+      ],
+      "claves": "artículo 24 competencia legitimación postulación territorial fuero domicilio reconocido residencia juzgado primera instancia legitimación activa progenitor autor reconocimiento abogado procurador defensor judicial"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c3",
+      "articulo": "Artículo 25",
+      "etiquetas": [
+       {
+        "texto": "Tramitación",
+        "clase": "tag-ok"
+       }
+      ],
+      "titulo": "Tramitación",
+      "resumen": "Regula la admisión de la solicitud, la convocatoria de comparecencia, los sujetos citados y los plazos y garantías procesales aplicables.",
+      "contadores": [
+       "6 normas conexas",
+       "6 sujetos procesales"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Admisión y convocatoria de comparecencia",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Admitida la solicitud por el Secretario judicial, este cita a comparecencia a todos los sujetos que deben intervenir según proceda en cada caso."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Sujetos citados — análisis individualizado",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Solicitante:</strong> el progenitor autor del reconocimiento, único legitimado activo. Su incomparecencia determina el archivo por desistimiento. Art. 18.2.1.ª LJV"
+            },
+            {
+             "t": "<strong>Progenitor conocido:</strong> cuando existe filiación determinada respecto de la otra línea. Su audiencia garantiza el principio de contradicción en los supuestos b) y c) del art. 23.3."
+            },
+            {
+             "t": "<strong>Representante legal o curador del reconocido:</strong> tutela los intereses del reconocido menor o con discapacidad. Si tiene intereses opuestos: nombramiento de defensor judicial. Art. 27 LJV"
+            },
+            {
+             "t": "<strong>El propio reconocido</strong> si tuviera suficiente madurez · en todo caso si fuera <strong>mayor de 12 años</strong>.",
+             "sub": [
+              {
+               "t": "Derecho a ser escuchado: Art. 9 LO 1/1996 · Art. 12 CDN (1989)"
+              },
+              {
+               "t": "La «suficiente madurez» por debajo de los 12 años es apreciada caso a caso con auxilio de especialistas si fuera necesario."
+              },
+              {
+               "t": "El umbral de 12 años es coherente con arts. 92, 156 y 177.3 CC y con el art. 26 quater LJV."
+              }
+             ]
+            },
+            {
+             "t": "<strong>Descendientes del reconocido</strong> si hubiere fallecido y los hubiere: los efectos del reconocimiento post mortem les afectan desde el punto de vista sucesorio y del estado de familia."
+            },
+            {
+             "t": "<strong>Personas que se estime oportuno:</strong> cláusula abierta para ampliar el círculo de citados según las circunstancias. Art. 18.2.2.ª LJV"
+            },
+            {
+             "t": "<strong>Ministerio Fiscal:</strong> intervención <strong>preceptiva</strong> por afectar al estado civil y a menores o personas con discapacidad. Art. 4 LJV Si no es precisa la comparecencia: informe escrito en 10 días. Art. 17.2 LJV"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Normas comunes aplicables — plazos y garantías",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Contenido de la solicitud; formulario normalizado disponible. Art. 14 LJV"
+            },
+            {
+             "t": "Control de oficio de la competencia; subsanación en <strong>5 días</strong>. Art. 16 LJV"
+            },
+            {
+             "t": "Citación con <strong>15 días de antelación</strong> · Oposición en <strong>5 días</strong> desde la citación (no hace contencioso el expediente; desde la oposición: postulación obligatoria). Arts. 17 y 3 LJV"
+            },
+            {
+             "t": "Comparecencia dentro de los <strong>30 días</strong> desde la admisión. Art. 18.1 LJV"
+            },
+            {
+             "t": "Audiencia del reconocido menor o con discapacidad en condiciones idóneas; auxilio de especialistas; posibilidad de acto separado con MF. Art. 18.2.4.ª LJV"
+            },
+            {
+             "t": "Adaptaciones y ajustes para personas con discapacidad. Art. 7 bis LJV"
+            },
+            {
+             "t": "Grabación audiovisual de la comparecencia. Art. 18.2.6.ª LJV"
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Art. 4 LJV",
+       "Art. 14 LJV",
+       "Art. 16 LJV",
+       "Art. 17 LJV",
+       "Art. 18 LJV",
+       "Art. 27 LJV",
+       "Art. 9 LO 1/1996",
+       "Art. 12 CDN"
+      ],
+      "claves": "artículo 25 tramitación admisión comparecencia secretario judicial ministerio fiscal progenitor conocido representante legal curador reconocido mayor 12 años descendientes defensor judicial plazo 15 días 30 días 10 días 5 días citación oposición"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c4",
+      "articulo": "Artículo 26",
+      "etiquetas": [
+       {
+        "texto": "Resolución",
+        "clase": "tag-alert"
+       }
+      ],
+      "titulo": "Resolución",
+      "resumen": "Regula la forma, los criterios de valoración, los efectos de la resolución judicial y el régimen de recursos e inscripción registral.",
+      "contadores": [
+       "9 normas conexas",
+       "4 criterios de valoración"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Competencia, forma y plazo",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El <strong>Juez</strong> resuelve mediante <strong>auto</strong>, en el plazo de <strong>5 días</strong> desde la comparecencia o la última diligencia. Arts. 2 y 19 LJV"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Criterios de valoración — cuatro parámetros con jerarquía implícita",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Discernimiento del progenitor:</strong> aptitud para comprender el alcance y efectos del reconocimiento. No equivale a plena capacidad de obrar: en los supuestos del art. 23.3 a) y 23.4, el reconociente no la tiene y el Juez aprecia si tiene la madurez o apoyo suficientes."
+            },
+            {
+             "t": "<strong>Veracidad o autenticidad del acto:</strong> voluntad real y libre de vicios (presiones externas, engaño, error esencial sobre la existencia del vínculo biológico)."
+            },
+            {
+             "t": "<strong>Verosimilitud de la relación de procreación, sin prueba plena:</strong> basta la credibilidad del vínculo biológico, sustentada en elementos indiciarios. El estándar es inferior a la prueba plena pero superior a la mera afirmación unilateral: el Juez ha de encontrar razones objetivas, aunque indiciarias, que hagan plausible la relación."
+            },
+            {
+             "t": "<strong>Interés del reconocido</strong> cuando sea menor o persona con discapacidad: <strong>criterio prevalente y rector</strong> de los demás. El Juez puede denegar incluso si los tres criterios anteriores resultan satisfechos, si la determinación de la filiación no redunda en interés del reconocido. Fundamento: Art. 2 LO 1/1996 · Art. 3.1 CDN (1989)"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Regla especial — reconocimiento por pariente del otro progenitor",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El Juez <strong>solo autorizará</strong> cuando sea <strong>en interés del menor o de la persona con discapacidad</strong>: el interés actúa como filtro necesario y suficiente."
+            },
+            {
+             "t": "La carga de la argumentación recae sobre el promotor: debe acreditar el interés positivo, no limitarse a no rebatirlo."
+            },
+            {
+             "t": "<strong>Invalidación posterior por documento público:</strong> si el reconocido, una vez <strong>alcanzada la plena capacidad</strong>, presenta documento público manifestando su oposición, el Juez invalidará la determinación. Sin plazo preclusivo. Expresión del principio de autonomía de la voluntad y del derecho a decidir sobre el propio estado civil."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Efectos de la resolución",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Autorización o aprobación concedida:</strong> se establece el vínculo de filiación con todos sus efectos: apellidos Arts. 109 y 111 CC · alimentos Art. 143 CC · derechos sucesorios Arts. 807 y ss. CC · relaciones paterno-filiales Arts. 154 y ss. CC."
+            },
+            {
+             "t": "<strong>Autorización o aprobación denegada:</strong> no se establece la filiación por esta vía. No cierra definitivamente la cuestión: el interesado puede acudir a la vía contenciosa mediante la acción de reclamación de filiación. Arts. 131 y ss. CC"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Eficacia registral",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El testimonio de la resolución se remite al <strong>Registro Civil</strong> competente para su inscripción. La remisión es automática, sin instancia de parte. La inscripción tiene eficacia erga omnes. Art. 44 Ley 20/2011 · Art. 22.2 LJV"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Recursos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Régimen general: <strong>apelación</strong> contra la resolución definitiva del Juez, por cualquier interesado perjudicado. <strong>Sin efectos suspensivos</strong>: la resolución puede ejecutarse —y el reconocimiento inscribirse— mientras se sustancia la apelación. Art. 20 LJV"
+            },
+            {
+             "t": "Para el recurso: postulación de Abogado y Procurador obligatoria aunque no lo fuera en instancia. Art. 3.4 LJV"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Conexión normativa",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Arts. 2 y 19 LJV Competencia del Juez, forma de auto y plazo."
+            },
+            {
+             "t": "Art. 20 LJV Apelación sin efectos suspensivos."
+            },
+            {
+             "t": "Art. 22.2 LJV Testimonio al Registro Civil: automático, sin instancia de parte."
+            },
+            {
+             "t": "Arts. 121 y 124 CC Normas sustantivas directamente desarrolladas por este artículo."
+            },
+            {
+             "t": "Arts. 131–140 CC Reclamación e impugnación de la filiación: vía contenciosa alternativa si se deniega la autorización o aprobación."
+            },
+            {
+             "t": "Arts. 109, 111, 143, 154, 807 CC Efectos sustantivos de la filiación determinada: apellidos, alimentos, derechos sucesorios y relaciones paterno-filiales."
+            },
+            {
+             "t": "Art. 44 Ley 20/2011 Inscripción obligatoria de la filiación en el Registro Civil."
+            },
+            {
+             "t": "Art. 2 LO 1/1996 Interés superior del menor como criterio rector de la resolución."
+            },
+            {
+             "t": "Art. 3.1 CDN (1989) Interés superior del niño como consideración primordial."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Arts. 2 y 19 LJV",
+       "Art. 20 LJV",
+       "Art. 22.2 LJV",
+       "Arts. 121 y 124 CC",
+       "Arts. 131–140 CC",
+       "Art. 44 Ley 20/2011",
+       "Art. 2 LO 1/1996",
+       "Art. 3.1 CDN (1989)"
+      ],
+      "claves": "artículo 26 resolución juez auto 5 días criterios discernimiento veracidad verosimilitud interés reconocido menor discapacidad apelación registro civil inscripción eficacia efectos filiación apellidos alimentos sucesorios paterno-filiales"
+     }
+    },
+    {
+     "p": "No se encontraron artículos para «». Prueba otra búsqueda o categoría.",
+     "clase": "no-results"
+    }
+   ]
+  },
+  {
+   "id": "sec-timeline",
+   "titulo": "Indice de plazos procesales",
+   "recuento": "6 trámites",
+   "plegada": true,
+   "contenido": [
+    {
+     "tabla": {
+      "cabecera": [
+       "Acto o trámite procesal",
+       "Plazo",
+       "Fundamento normativo"
+      ],
+      "filas": [
+       [
+        "Subsanación de la solicitud por defecto de competencia (control de oficio)",
+        "5 días",
+        "Art. 16 LJV"
+       ],
+       [
+        "Antelación mínima de la citación a comparecencia",
+        "15 días",
+        "Art. 17 LJV"
+       ],
+       [
+        "Plazo para formular oposición desde la citación",
+        "5 días",
+        "Art. 17 LJV"
+       ],
+       [
+        "Celebración de la comparecencia desde la admisión de la solicitud",
+        "30 días",
+        "Art. 18.1 LJV"
+       ],
+       [
+        "Informe escrito del Ministerio Fiscal (si no es precisa comparecencia)",
+        "10 días",
+        "Art. 17.2 LJV"
+       ],
+       [
+        "Resolución del Juez mediante auto desde la comparecencia o última diligencia",
+        "5 días",
+        "Arts. 2 y 19 LJV"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-actors",
+   "titulo": "Mapa de participantes y actores",
+   "recuento": "4 categorías · 10+ actores",
+   "plegada": true,
+   "contenido": [
+    {
+     "p": "Órganos judiciales",
+     "clase": "participant-col-head phead-c1"
+    },
+    {
+     "lista": [
+      {
+       "t": "Juez de Primera Instancia (decisión de fondo, auto)"
+      },
+      {
+       "t": "Secretario judicial (admisión y citaciones)"
+      },
+      {
+       "t": "Registro Civil (inscripción registral automática)"
+      }
+     ]
+    },
+    {
+     "p": "Partes activas",
+     "clase": "participant-col-head phead-c2"
+    },
+    {
+     "lista": [
+      {
+       "t": "Progenitor autor del reconocimiento (único legitimado activo)"
+      },
+      {
+       "t": "Representante legal / tutor (si el reconociente es menor o con discapacidad)"
+      },
+      {
+       "t": "Curador (asistencia al reconociente con medidas de apoyo)"
+      }
+     ]
+    },
+    {
+     "p": "Intervinientes necesarios",
+     "clase": "participant-col-head phead-c3"
+    },
+    {
+     "lista": [
+      {
+       "t": "Ministerio Fiscal (intervención preceptiva)"
+      },
+      {
+       "t": "Reconocido menor (audiencia si &gt;12 años o madurez suficiente)"
+      },
+      {
+       "t": "Progenitor conocido (supuestos b) y c) art. 23.3)"
+      },
+      {
+       "t": "Descendientes del reconocido fallecido (efectos sucesorios)"
+      }
+     ]
+    },
+    {
+     "p": "Protección e intereses",
+     "clase": "participant-col-head phead-c4"
+    },
+    {
+     "lista": [
+      {
+       "t": "Defensor judicial (conflicto de intereses del representante)"
+      },
+      {
+       "t": "Especialistas / peritos (evaluación de madurez del reconocido)"
+      },
+      {
+       "t": "Personas que se estime oportuno (cláusula abierta art. 18.2.2.ª)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-norms",
+   "titulo": "Ecosistema normativo — conexiones relacionadas",
+   "recuento": "5 cuerpos normativos",
+   "plegada": true,
+   "contenido": [
+    {
+     "p": "Código Civil",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Filiación no matrimonial — determinación y efectos",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Arts. 120–126</strong> — modos de determinación, reconocimiento, consentimientos y aprobación judicial.<br><strong>Arts. 109 y 111</strong> — atribución de apellidos y efectos de la filiación.<br><strong>Arts. 131–140</strong> — reclamación e impugnación de la filiación (vía contenciosa alternativa).<br><strong>Arts. 143, 154, 807 y ss.</strong> — alimentos, relaciones paterno-filiales y derechos sucesorios.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Derecho sustantivo",
+     "clase": "norm-tag tag-info"
+    },
+    {
+     "p": "LJV 15/2015",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Ley de la Jurisdicción Voluntaria — normas generales",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Arts. 2 y 3</strong> — competencia objetiva y postulación.<br><strong>Arts. 14–22</strong> — tramitación general: solicitud, admisión, comparecencia, resolución y recursos.<br><strong>Art. 4</strong> — intervención preceptiva del Ministerio Fiscal.<br><strong>Art. 7 bis</strong> — adaptaciones para personas con discapacidad.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Ley de procedimiento",
+     "clase": "norm-tag tag-ok"
+    },
+    {
+     "p": "Ley 20/2011 — Registro Civil",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Inscripción de la filiación y efectos registrales",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 44</strong> — inscripción obligatoria de la filiación; eficacia erga omnes.<br><strong>Art. 44.5</strong> — suspensión de inscripción a petición de la madre: presupuesto del supuesto c) del art. 23.3 LJV.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Registro Civil",
+     "clase": "norm-tag tag-warn"
+    },
+    {
+     "p": "LO 1/1996 — Protección del Menor",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Interés superior del menor y derecho a ser escuchado",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 2</strong> — interés superior del menor como criterio rector y prevalente en la resolución judicial.<br><strong>Art. 9</strong> — derecho del menor a ser escuchado en función de su madurez.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Protección del menor",
+     "clase": "norm-tag tag-alert"
+    },
+    {
+     "p": "CDN — Convención sobre los Derechos del Niño (1989)",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Interés superior del niño — estándar internacional",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 3.1</strong> — el interés superior del niño debe ser una consideración primordial en todas las medidas concernientes a los niños.<br><strong>Art. 12</strong> — derecho del niño a expresar su opinión en asuntos que le afecten.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Derecho internacional",
+     "clase": "norm-tag tag-gray"
+    }
+   ]
+  }
+ ],
+ "sinCapturar": [],
+ "texto": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO I De la autorización o aprobación judicial del reconocimiento de la filiación no matrimonial Artículos 23 a 26 LJV LJV 15/2015 Arts. 23–26 Título II, Cap. I Filiación no matrimonial Imprimir / PDF 4 Artículos base 20+ Conexiones normativas 10+ Actores identificados 6 Plazos procesales Todos Art. 23 · Ámbito Art. 24 · Competencia Art. 25 · Tramitación Art. 26 · Resolución Expandir todo Contraer todo − 100% + ↻ Capítulo I — Artículos 23 a 26 4 artículos ▼ Artículo 23 Ámbito de aplicación Ámbito de aplicación Define cuándo es necesaria la intervención judicial para reconocer la filiación no matrimonial, distinguiendo entre autorización y aprobación. normas conexas 7 supuestos regulados 4 Ver contenido completo ▾ Regla general Aplicación en todos los casos en que el reconocimiento de la filiación no matrimonial necesite, conforme a la ley, autorización o aprobación judicial para su validez. La distinción fundamental y sus efectos → condición de , previa al reconocimiento. Sin ella, el reconocimiento no puede otorgarse; si se otorgara, sería inválido desde el origen. Autorización validez → condición de , posterior al reconocimiento ya otorgado. El acto existe como declaración de voluntad pero queda en suspenso; si se deniega, deviene ineficaz sin retroactividad sobre la declaración. Aprobación eficacia Supuesto de autorización judicial Reconocimiento por cuya filiación está determinada, cuando el reconocido sea menor o persona con discapacidad con medidas de apoyo. hermano o consanguíneo en línea recta del progenitor Riesgo de encubrimiento de relación incestuosa: el hijo sería simultáneamente hijo y sobrino (u otro pariente) del progenitor conocido. Fundamento: · La autorización solo se concede cuando sea en interés del reconocido (art. 26.2 LJV). Art. 124 CC Supuestos de aprobación judicial — tres casos del apdo. 3 Reconocimiento por quien no pueda contraer matrimonio (menor de edad no emancipado). El reconociente carece de plena capacidad de obrar; la aprobación judicial sustituye la intervención representativa que en otros actos se requeriría. a) por razón de edad Art. 121 CC Reconocimiento sin del reconocido ni del progenitor conocido — salvo que hubiera sido reconocido en testamento o dentro del plazo de inscripción del nacimiento. Las excepciones responden a que el testamento se otorga ante notario con plenas garantías, y el reconocimiento en el plazo de inscripción se realiza con inmediatez al nacimiento bajo supervisión registral. b) consentimiento del representante legal ni asistencia del curador Art. 123 CC Reconocimiento paterno realizado cuando esta se hubiera . La aprobación judicial dirime la discrepancia entre el padre que quiere reconocer y la madre que se opone, atendiendo al interés del menor. c) dentro del plazo de inscripción suspendido a petición de la madre Art. 44.5 Ley 20/2011 Aprobación para reconocimiento por persona con discapacidad También se insta aprobación para la validez del reconocimiento otorgado por una , con independencia de la condición del reconocido. Tutela tanto el discernimiento del reconociente como el interés del reconocido. persona con discapacidad con medidas de apoyo Relación con otros expedientes del Título II Cap. I bis (arts. 26 bis y ss.): aprobación judicial de la modificación registral del sexo para menores de 12 a 14 años; mismo esquema de control judicial como condición de eficacia de una declaración de voluntad. Cap. II (arts. 27 y ss.): nombramiento de defensor judicial, relevante cuando el reconocido carece de representante legal o este tiene intereses opuestos. Conexión normativa — Código Civil Modos de determinación de la filiación no matrimonial: reconocimiento, resolución registral, sentencia firme y posesión de estado. Art. 120 CC Reconocimiento por menor o persona con discapacidad: aprobación judicial con audiencia del MF. Art. 121 CC Consentimiento o aprobación judicial para eficacia del reconocimiento del menor o persona con discapacidad. Art. 123 CC Prohibición sin autorización judicial del reconocimiento por hermano o pariente consanguíneo del otro progenitor. Art. 124 CC Reconocimiento por uno de los progenitores no casados entre sí: no perjudica los derechos del otro. Art. 125 CC Reconocimiento del mayor de edad: no precisa control judicial; delimita el ámbito de aplicación del art. 23 LJV. Art. 126 CC Suspensión de la inscripción de nacimiento a petición de la madre: presupuesto fáctico del supuesto c). Art. 44.5 Ley 20/2011 Art. 120 CC Art. 121 CC Art. 123 CC Art. 124 CC Art. 125 CC Art. 126 CC Art. 44.5 Ley 20/2011 Artículo 24 Competencia y postulación Competencia, legitimación y postulación Regula qué órgano judicial es competente, quién puede instar el expediente y si es necesaria postulación técnica. normas conexas 5 fueros en cascada 3 Ver contenido completo ▾ Competencia territorial — fueros en cascada Juzgado de Primera Instancia del . El expediente se sitúa en el entorno vital de quien ve afectado su estado civil. Fuero principal domicilio del reconocido Si no tiene domicilio en España: en territorio nacional. Fuero secundario residencia del reconocido Si no tiene residencia en España: . Opera cuando el reconocido carece de todo vínculo territorial con España, garantizando que siempre exista un órgano español competente cuando el reconociente sí tenga vínculos. Fuero subsidiario domicilio o residencia del progenitor autor del reconocimiento Competencia objetiva y atribución de la decisión de fondo Juzgado de Primera Instancia · Decisión de fondo reservada al , mediante , por afectar al estado civil y a derechos de menores o personas con discapacidad. Juez auto Art. 2 LJV Legitimación activa — exclusividad y flexibilidad Exclusivamente el : carácter personalísimo del acto; ni el reconocido ni terceros pueden suplir esa voluntad. progenitor autor del reconocimiento Puede actuar asistido de su representante legal, tutor o curador cuando el propio reconociente sea menor de edad o persona con discapacidad. Si el reconociente es menor: la solicitud la presenta el menor asistido, no el representante en solitario, pues la voluntad de reconocer ha de ser del propio reconociente. Postulación — ausencia de exigencia preceptiva y consecuencias la intervención de Abogado ni Procurador: acceso facilitado dado el carácter familiar y personal del expediente. No preceptiva Formulario normalizado disponible en la Oficina judicial o sede electrónica; no exige fundamentación jurídica. Art. 14.3 LJV Postulación : las partes pueden comparecer con Abogado y Procurador aunque no sea preceptivo. voluntaria Art. 3.3 LJV Postulación desde el momento en que se formule oposición y para los recursos de revisión o apelación. obligatoria Art. 3.4 LJV Defensor judicial del reconocido en supuestos de conflicto de intereses Si el representante legal del reconocido tiene intereses opuestos al reconocido —p. ej., es cónyuge del reconociente—: puede nombrarse un conforme al (Cap. II del Tít. II) para actuar en nombre del reconocido en el expediente. defensor judicial Art. 27 LJV Conexión normativa Competencia objetiva y atribución al Juez · Régimen de postulación. Art. 2 LJV Art. 3 LJV Formulario normalizado cuando no es preceptiva la postulación. Art. 14.3 LJV Defensor judicial en supuestos de conflicto de intereses. Art. 27 LJV Supuestos internacionales: competencia territorial complementada por la regla subsidiaria del art. 9.2 (efectos principales o ejecución). Art. 9 LJV Ley personal del hijo: norma de conflicto para la determinación de la filiación en casos internacionales ( ). Art. 9.4 CC Art. 10 LJV Art. 2 LJV Art. 3 LJV Art. 9 LJV Art. 14.3 LJV Art. 27 LJV Art. 9.4 CC Artículo 25 Tramitación Tramitación Regula la admisión de la solicitud, la convocatoria de comparecencia, los sujetos citados y los plazos y garantías procesales aplicables. normas conexas 6 sujetos procesales 6 Ver contenido completo ▾ Admisión y convocatoria de comparecencia Admitida la solicitud por el Secretario judicial, este cita a comparecencia a todos los sujetos que deben intervenir según proceda en cada caso. Sujetos citados — análisis individualizado el progenitor autor del reconocimiento, único legitimado activo. Su incomparecencia determina el archivo por desistimiento. Solicitante: Art. 18.2.1.ª LJV cuando existe filiación determinada respecto de la otra línea. Su audiencia garantiza el principio de contradicción en los supuestos b) y c) del art. 23.3. Progenitor conocido: tutela los intereses del reconocido menor o con discapacidad. Si tiene intereses opuestos: nombramiento de defensor judicial. Representante legal o curador del reconocido: Art. 27 LJV si tuviera suficiente madurez · en todo caso si fuera . El propio reconocido mayor de 12 años Derecho a ser escuchado: · Art. 9 LO 1/1996 Art. 12 CDN (1989) La «suficiente madurez» por debajo de los 12 años es apreciada caso a caso con auxilio de especialistas si fuera necesario. El umbral de 12 años es coherente con arts. 92, 156 y 177.3 CC y con el art. 26 quater LJV. si hubiere fallecido y los hubiere: los efectos del reconocimiento post mortem les afectan desde el punto de vista sucesorio y del estado de familia. Descendientes del reconocido cláusula abierta para ampliar el círculo de citados según las circunstancias. Personas que se estime oportuno: Art. 18.2.2.ª LJV intervención por afectar al estado civil y a menores o personas con discapacidad. Si no es precisa la comparecencia: informe escrito en 10 días. Ministerio Fiscal: preceptiva Art. 4 LJV Art. 17.2 LJV Normas comunes aplicables — plazos y garantías Contenido de la solicitud; formulario normalizado disponible. Art. 14 LJV Control de oficio de la competencia; subsanación en . 5 días Art. 16 LJV Citación con · Oposición en desde la citación (no hace contencioso el expediente; desde la oposición: postulación obligatoria). 15 días de antelación 5 días Arts. 17 y 3 LJV Comparecencia dentro de los desde la admisión. 30 días Art. 18.1 LJV Audiencia del reconocido menor o con discapacidad en condiciones idóneas; auxilio de especialistas; posibilidad de acto separado con MF. Art. 18.2.4.ª LJV Adaptaciones y ajustes para personas con discapacidad. Art. 7 bis LJV Grabación audiovisual de la comparecencia. Art. 18.2.6.ª LJV Art. 4 LJV Art. 14 LJV Art. 16 LJV Art. 17 LJV Art. 18 LJV Art. 27 LJV Art. 9 LO 1/1996 Art. 12 CDN Artículo 26 Resolución Resolución Regula la forma, los criterios de valoración, los efectos de la resolución judicial y el régimen de recursos e inscripción registral. normas conexas 9 criterios de valoración 4 Ver contenido completo ▾ Competencia, forma y plazo El resuelve mediante , en el plazo de desde la comparecencia o la última diligencia. Juez auto 5 días Arts. 2 y 19 LJV Criterios de valoración — cuatro parámetros con jerarquía implícita aptitud para comprender el alcance y efectos del reconocimiento. No equivale a plena capacidad de obrar: en los supuestos del art. 23.3 a) y 23.4, el reconociente no la tiene y el Juez aprecia si tiene la madurez o apoyo suficientes. Discernimiento del progenitor: voluntad real y libre de vicios (presiones externas, engaño, error esencial sobre la existencia del vínculo biológico). Veracidad o autenticidad del acto: basta la credibilidad del vínculo biológico, sustentada en elementos indiciarios. El estándar es inferior a la prueba plena pero superior a la mera afirmación unilateral: el Juez ha de encontrar razones objetivas, aunque indiciarias, que hagan plausible la relación. Verosimilitud de la relación de procreación, sin prueba plena: cuando sea menor o persona con discapacidad: de los demás. El Juez puede denegar incluso si los tres criterios anteriores resultan satisfechos, si la determinación de la filiación no redunda en interés del reconocido. Fundamento: · Interés del reconocido criterio prevalente y rector Art. 2 LO 1/1996 Art. 3.1 CDN (1989) Regla especial — reconocimiento por pariente del otro progenitor El Juez cuando sea : el interés actúa como filtro necesario y suficiente. solo autorizará en interés del menor o de la persona con discapacidad La carga de la argumentación recae sobre el promotor: debe acreditar el interés positivo, no limitarse a no rebatirlo. si el reconocido, una vez , presenta documento público manifestando su oposición, el Juez invalidará la determinación. Sin plazo preclusivo. Expresión del principio de autonomía de la voluntad y del derecho a decidir sobre el propio estado civil. Invalidación posterior por documento público: alcanzada la plena capacidad Efectos de la resolución se establece el vínculo de filiación con todos sus efectos: apellidos · alimentos · derechos sucesorios · relaciones paterno-filiales . Autorización o aprobación concedida: Arts. 109 y 111 CC Art. 143 CC Arts. 807 y ss. CC Arts. 154 y ss. CC no se establece la filiación por esta vía. No cierra definitivamente la cuestión: el interesado puede acudir a la vía contenciosa mediante la acción de reclamación de filiación. Autorización o aprobación denegada: Arts. 131 y ss. CC Eficacia registral El testimonio de la resolución se remite al competente para su inscripción. La remisión es automática, sin instancia de parte. La inscripción tiene eficacia erga omnes. · Registro Civil Art. 44 Ley 20/2011 Art. 22.2 LJV Recursos Régimen general: contra la resolución definitiva del Juez, por cualquier interesado perjudicado. : la resolución puede ejecutarse —y el reconocimiento inscribirse— mientras se sustancia la apelación. apelación Sin efectos suspensivos Art. 20 LJV Para el recurso: postulación de Abogado y Procurador obligatoria aunque no lo fuera en instancia. Art. 3.4 LJV Conexión normativa Competencia del Juez, forma de auto y plazo. Arts. 2 y 19 LJV Apelación sin efectos suspensivos. Art. 20 LJV Testimonio al Registro Civil: automático, sin instancia de parte. Art. 22.2 LJV Normas sustantivas directamente desarrolladas por este artículo. Arts. 121 y 124 CC Reclamación e impugnación de la filiación: vía contenciosa alternativa si se deniega la autorización o aprobación. Arts. 131–140 CC Efectos sustantivos de la filiación determinada: apellidos, alimentos, derechos sucesorios y relaciones paterno-filiales. Arts. 109, 111, 143, 154, 807 CC Inscripción obligatoria de la filiación en el Registro Civil. Art. 44 Ley 20/2011 Interés superior del menor como criterio rector de la resolución. Art. 2 LO 1/1996 Interés superior del niño como consideración primordial. Art. 3.1 CDN (1989) Arts. 2 y 19 LJV Art. 20 LJV Art. 22.2 LJV Arts. 121 y 124 CC Arts. 131–140 CC Art. 44 Ley 20/2011 Art. 2 LO 1/1996 Art. 3.1 CDN (1989) No se encontraron artículos para « ». Prueba otra búsqueda o categoría. Indice de plazos procesales 6 trámites ▼ Acto o trámite procesal Plazo Fundamento normativo Subsanación de la solicitud por defecto de competencia (control de oficio) 5 días Art. 16 LJV Antelación mínima de la citación a comparecencia 15 días Art. 17 LJV Plazo para formular oposición desde la citación 5 días Art. 17 LJV Celebración de la comparecencia desde la admisión de la solicitud 30 días Art. 18.1 LJV Informe escrito del Ministerio Fiscal (si no es precisa comparecencia) 10 días Art. 17.2 LJV Resolución del Juez mediante auto desde la comparecencia o última diligencia 5 días Arts. 2 y 19 LJV Mapa de participantes y actores 4 categorías · 10+ actores ▼ Órganos judiciales Juez de Primera Instancia (decisión de fondo, auto) Secretario judicial (admisión y citaciones) Registro Civil (inscripción registral automática) Partes activas Progenitor autor del reconocimiento (único legitimado activo) Representante legal / tutor (si el reconociente es menor o con discapacidad) Curador (asistencia al reconociente con medidas de apoyo) Intervinientes necesarios Ministerio Fiscal (intervención preceptiva) Reconocido menor (audiencia si >12 años o madurez suficiente) Progenitor conocido (supuestos b) y c) art. 23.3) Descendientes del reconocido fallecido (efectos sucesorios) Protección e intereses Defensor judicial (conflicto de intereses del representante) Especialistas / peritos (evaluación de madurez del reconocido) Personas que se estime oportuno (cláusula abierta art. 18.2.2.ª) Ecosistema normativo — conexiones relacionadas 5 cuerpos normativos ▼ Código Civil Filiación no matrimonial — determinación y efectos — modos de determinación, reconocimiento, consentimientos y aprobación judicial. — atribución de apellidos y efectos de la filiación. — reclamación e impugnación de la filiación (vía contenciosa alternativa). — alimentos, relaciones paterno-filiales y derechos sucesorios. Arts. 120–126 Arts. 109 y 111 Arts. 131–140 Arts. 143, 154, 807 y ss. Derecho sustantivo LJV 15/2015 Ley de la Jurisdicción Voluntaria — normas generales — competencia objetiva y postulación. — tramitación general: solicitud, admisión, comparecencia, resolución y recursos. — intervención preceptiva del Ministerio Fiscal. — adaptaciones para personas con discapacidad. Arts. 2 y 3 Arts. 14–22 Art. 4 Art. 7 bis Ley de procedimiento Ley 20/2011 — Registro Civil Inscripción de la filiación y efectos registrales — inscripción obligatoria de la filiación; eficacia erga omnes. — suspensión de inscripción a petición de la madre: presupuesto del supuesto c) del art. 23.3 LJV. Art. 44 Art. 44.5 Registro Civil LO 1/1996 — Protección del Menor Interés superior del menor y derecho a ser escuchado — interés superior del menor como criterio rector y prevalente en la resolución judicial. — derecho del menor a ser escuchado en función de su madurez. Art. 2 Art. 9 Protección del menor CDN — Convención sobre los Derechos del Niño (1989) Interés superior del niño — estándar internacional — el interés superior del niño debe ser una consideración primordial en todas las medidas concernientes a los niños. — derecho del niño a expresar su opinión en asuntos que le afecten. Art. 3.1 Art. 12 Derecho internacional Leyenda de colores por categoría Art. 23 · Ámbito de aplicación Art. 24 · Competencia, legitimación y postulación Art. 25 · Tramitación Art. 26 · Resolución Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo I · Arts. 23–26 · Generado como plantilla HTML reutilizable"
+}

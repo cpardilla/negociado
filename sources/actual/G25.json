@@ -1,0 +1,1339 @@
+{
+ "id": "G25",
+ "tipo": "guia",
+ "ruta": "03 - Guías de tramitación/LJV/06 - TÍTULO IX - De la conciliación/TÍTULO IX - De la conciliación.html",
+ "titulo": "De la conciliación (artículos 139 a 148 LJV)",
+ "cabecera": null,
+ "texto": "☰ ⚖ LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO IX De la conciliación Artículos 139 a 148 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar Inicio › Procedencia › Competencia › Solicitud › Admisión › Prescripción › Comparecencia › Celebración › Cierre › Posterior Inicio del expediente de con… Mapa Recorrido Inicio ▾ Inicio del expediente de conci… Inadmisión de plano por uso in… Verificación de competencia ob… Verificación de materias exclu… Procedencia ▾ Excluido: Menores y Personas c… Excluido: Administraciones Púb… Excluido: Jueces y Magistrados… Excluido: Materias No Transigi… Verificación de proceso jurisd… Archivo por proceso jurisdicci… Verificación de proceso conten… Suspensión por proceso prejudi… Verificación de intervención d… Competencia ▾ Competencia: Tipo de Órgano Competencia Territorial: Domic… Competencia: Última Residencia… Verificación — Persona jurídic… Domicilio Desconocido: Procedi… Solicitud ▾ Solicitud de Conciliación (art… Admisión ▾ Examen de la solicitud: verifi… Requerimiento de subsanación d… Desistimiento por falta de sub… Admisión de la solicitud y señ… Citación de los interesados Prescripción ▾ Efectos sobre la Prescripción … Comparecencia ▾ Comparecencia del solicitante … Incomparecencia del solicitant… Suspensión por justa causa del… Desistimiento por incomparecen… Comparecencia del requerido o … Incomparecencia del requerido … Suspensión por justa causa del… Conciliación intentada por inc… Celebración ▾ Celebración parcial con los re… Celebración del acto de concil… Conciliación intentada por cue… Verificación de conformidad en… Avenencia total — formalizació… Avenencia parcial — formalizac… Conciliación celebrada sin ave… Cierre ▾ Cierre con Avenencia: Decreto/… Testimonio del Acta y Gastos (… Acuerdo Firme y Consentido Posterior ▾ Fuerza ejecutiva del acuerdo (… Competencia para la Ejecución Ejecución cumplida sin oposici… Acción de Nulidad del Acuerdo … Acción de nulidad caducada — A… Resolución sobre la acción de … Nulidad estimada — acuerdo anu… Nulidad desestimada — acuerdo … Ley 15/2015, de 2 de julio Jurisdicción Voluntaria Título IX · Arts. 139–148 LEC 1/2000 · CC · LOPJ 6/1985 Inicio del expediente de conciliac… 1 Ley 15/2015, de 2 de julio Jurisdicción Voluntaria Título IX · Arts. 139–148 LEC 1/2000 · CC · LOPJ 6/1985 Letrado Adm. Justicia Inicio del expediente de conciliación Paso 1 de este recorrido · Fase 1: Inicio La conciliación es un medio alternativo de resolución de conflictos regulado en el Título IX de la Ley 15/2015 (arts. 139 a 148). Constituye un acto prejudicial voluntario, previo al ejercicio de acciones judiciales, que persigue evitar el acceso innecesario a los tribunales cuando las partes pueden alcanzar un acuerdo satisfactorio. Información Su fundamento constitucional se halla en el art. 24 CE (tutela judicial efectiva) y en el art. 39 CE (protección de la familia). El art. 2.3 LJV atribuye al LAJ el impulso y la dirección de los expedientes, correspondiendo al Juez la decisión de fondo en los casos previstos. Información Este guía interactivo recorre el procedimiento completo, desde la verificación de procedencia y las exclusiones hasta las posibles vías posteriores al acuerdo. Nota Ley 15/2015, arts. 2, 139-148; CE arts. 24 y 39; LEC art. 517.2.9º; CC art. 1973 Referencia legal ¿La pretensión tiene por finalidad lícita alcanzar un acuerdo para evitar un pleito? A Sí, la finalidad es lícita y procede verificar B No, es un uso indebido (interrupción artificiosa, fraude de ley) ← Volver Mapa completo del procedimiento de conciliación ← Volver al recorrido",
+ "inicio": "inicio",
+ "actores": {
+  "etiquetas": {
+   "ambos": "LAJ o Juez",
+   "juez": "Juez de Paz / Juez",
+   "laj": "Letrado Adm. Justicia",
+   "partes": "Ambas partes",
+   "solicitante": "Solicitante"
+  },
+  "sinEtiqueta": []
+ },
+ "pasos": {
+  "inicio": {
+   "ph": 0,
+   "t": "Inicio del expediente de conciliación",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "La conciliación es un medio alternativo de resolución de conflictos regulado en el Título IX de la Ley 15/2015 (arts. 139 a 148). Constituye un acto prejudicial voluntario, previo al ejercicio de acciones judiciales, que persigue evitar el acceso innecesario a los tribunales cuando las partes pueden alcanzar un acuerdo satisfactorio."
+    ],
+    [
+     "i",
+     "Su fundamento constitucional se halla en el art. 24 CE (tutela judicial efectiva) y en el art. 39 CE (protección de la familia). El art. 2.3 LJV atribuye al LAJ el impulso y la dirección de los expedientes, correspondiendo al Juez la decisión de fondo en los casos previstos."
+    ],
+    [
+     "n",
+     "Este guía interactivo recorre el procedimiento completo, desde la verificación de procedencia y las exclusiones hasta las posibles vías posteriores al acuerdo."
+    ],
+    [
+     "l",
+     "Ley 15/2015, arts. 2, 139-148; CE arts. 24 y 39; LEC art. 517.2.9º; CC art. 1973"
+    ]
+   ],
+   "q": "¿La pretensión tiene por finalidad lícita alcanzar un acuerdo para evitar un pleito?",
+   "opts": [
+    {
+     "t": "Sí, la finalidad es lícita y procede verificar",
+     "l": "ok",
+     "n": "verifica_competencia"
+    },
+    {
+     "t": "No, es un uso indebido (interrupción artificiosa, fraude de ley)",
+     "l": "bad",
+     "n": "fin_abuso"
+    }
+   ]
+  },
+  "fin_abuso": {
+   "ph": 0,
+   "t": "Inadmisión de plano por uso indebido",
+   "ac": "ambos",
+   "end": "error",
+   "c": [
+    [
+     "w",
+     "La utilización del expediente para finalidades distintas de alcanzar un acuerdo que suponga un manifiesto abuso de derecho (CC art. 7.2) o entrañe fraude de ley o procesal dará lugar a la inadmisión de plano (art. 139.1 in fine)."
+    ],
+    [
+     "l",
+     "Art. 139.1, párrafo segundo, Ley 15/2015; CC art. 7.2, 11.2"
+    ]
+   ]
+  },
+  "verifica_competencia": {
+   "ph": 0,
+   "t": "Verificación de competencia objetiva y territorial",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "Compruebe que el órgano ante el que se acude tiene competencia. La competencia territorial viene fijada por el domicilio del requerido (art. 140.1), sin que quepa modificarla por sumisión (art. 2.2 LJV)."
+    ],
+    [
+     "cl",
+     "Verificación de competencia",
+     [
+      "JPI o Mercantil: competencia objetiva general (art. 2.1 LJV)",
+      "Domicilio del requerido: regla general territorial",
+      "Fuero alternativo: persona jurídica con establecimiento en domicilio del solicitante",
+      "Última residencia en España: si no tuviere domicilio en territorio nacional",
+      "Cuantía < 6.000 € y no mercantil: Juez de Paz (art. 140.3)"
+     ]
+    ],
+    [
+     "l",
+     "Art. 2.1-2 LJV · Art. 140.1 LJV"
+    ]
+   ],
+   "nx": "verifica_exclusion"
+  },
+  "verifica_exclusion": {
+   "ph": 0,
+   "t": "Verificación de materias excluidas (art. 139.2)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Determine si la materia objeto de la conciliación está excluida por razón del objeto. Estas exclusiones son de orden público procesal, no susceptibles de renuncia ni interpretación extensiva."
+    ],
+    [
+     "w",
+     "La inadmisión de plano es la consecuencia de intentar la conciliación sobre materias excluidas."
+    ]
+   ],
+   "q": "¿La materia solicitada está entre las excluidas por el art. 139.2 LJV?",
+   "opts": [
+    {
+     "t": "Sí: Menores o personas con discapacidad con medidas de apoyo (art. 139.2.1º)",
+     "l": "bad",
+     "n": "fin_excluido_menores"
+    },
+    {
+     "t": "Sí: Estado, CC.AA. o Administraciones públicas (art. 139.2.2º)",
+     "l": "bad",
+     "n": "fin_excluido_admin"
+    },
+    {
+     "t": "Sí: Responsabilidad civil de Jueces y Magistrados (art. 139.2.3º)",
+     "l": "bad",
+     "n": "fin_excluido_jueces"
+    },
+    {
+     "t": "Sí: Materias no susceptibles de transacción ni compromiso (art. 139.2.4º)",
+     "l": "bad",
+     "n": "fin_excluido_transaccion"
+    },
+    {
+     "t": "No — La materia es susceptible de conciliación",
+     "l": "ok",
+     "n": "verifica_proceso"
+    }
+   ]
+  },
+  "fin_excluido_menores": {
+   "ph": 1,
+   "t": "Excluido: Menores y Personas con Discapacidad",
+   "ac": "laj",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "El art. 139.2.1º excluye los asuntos en que estén interesados menores o personas con capacidad modificada judicialmente, salvo que la ley disponga lo contrario. La exclusión se justifica por la especial protección (CE art. 39, LO 8/2021)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 139.2.1º; CE art. 39; LO 8/2021; CC art. 162; LEC art. 749"
+    ]
+   ]
+  },
+  "fin_excluido_admin": {
+   "ph": 1,
+   "t": "Excluido: Administraciones Públicas",
+   "ac": "laj",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "El art. 139.2.2º excluye los asuntos en que estén interesadas las Administraciones públicas, por el principio de indisponibilidad de los intereses públicos (Ley 40/2015, art. 47 y ss.)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 139.2.2º; Ley 40/2015, arts. 47 y 77"
+    ]
+   ]
+  },
+  "fin_excluido_jueces": {
+   "ph": 1,
+   "t": "Excluido: Jueces y Magistrados (Responsabilidad Civil)",
+   "ac": "laj",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "El art. 139.2.3º excluye la conciliación cuando se trate de la responsabilidad civil de Jueces y Magistrados. Régimen específico incompatible con la conciliación (LOPJ arts. 295 y ss.)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 139.2.3º; LOPJ arts. 295 y ss.; CE art. 117"
+    ]
+   ]
+  },
+  "fin_excluido_transaccion": {
+   "ph": 1,
+   "t": "Excluido: Materias No Transigibles",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "El art. 139.2.4º excluye las cuestiones que no sean susceptibles de transacción. No son transigibles los derechos irrenunciables, los de carácter personalísimo, los derechos fundamentales en su núcleo, ni los derechos laborales mínimos irrenunciables (ET art. 3.5)."
+    ],
+    [
+     "w",
+     "La exclusión debe valorarse caso por caso. Lo que no es transigible es el derecho en sí, pero sus consecuencias patrimoniales sí pueden ser susceptibles de acuerdo."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 139.2.4º; CC art. 1809; CE arts. 15, 18"
+    ]
+   ]
+  },
+  "verifica_proceso": {
+   "ph": 1,
+   "t": "Verificación de proceso jurisdiccional en curso (art. 6.2)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Compruebe si el mismo objeto está siendo sustanciado en un proceso jurisdiccional contencioso."
+    ],
+    [
+     "w",
+     "No se podrá iniciar ni continuar un expediente de JV sobre un objeto que esté siendo sustanciado en un proceso jurisdiccional."
+    ]
+   ],
+   "q": "¿Existe un proceso jurisdiccional en curso sobre el mismo objeto?",
+   "opts": [
+    {
+     "t": "Sí — Hay demanda presentada sobre el mismo objeto",
+     "l": "bad",
+     "n": "fin_proceso"
+    },
+    {
+     "t": "No — No hay proceso jurisdiccional sobre este objeto",
+     "l": "ok",
+     "n": "verifica_concurrente"
+    }
+   ]
+  },
+  "fin_proceso": {
+   "ph": 1,
+   "t": "Archivo por proceso jurisdiccional en curso",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "Se archiva el expediente, remitiéndose las actuaciones al tribunal que conoce del proceso para que las incorpore a los autos."
+    ],
+    [
+     "l",
+     "Art. 6.2 LJV"
+    ]
+   ]
+  },
+  "verifica_concurrente": {
+   "ph": 1,
+   "t": "Verificación de proceso contencioso prejudicial (art. 6.3)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Verifique si existe un proceso jurisdiccional contencioso cuya resolución pudiese afectar al expediente."
+    ],
+    [
+     "n",
+     "Se acuerda la suspensión del expediente tramitando el incidente conforme al art. 43 LEC (cuestión prejudicial civil)."
+    ]
+   ],
+   "q": "¿Existe un proceso contencioso cuya resolución pueda afectar al expediente?",
+   "opts": [
+    {
+     "t": "Sí — Se acuerda la suspensión",
+     "l": "warn",
+     "n": "fin_concurrente"
+    },
+    {
+     "t": "No — No existe proceso que afecte",
+     "l": "ok",
+     "n": "verifica_fiscal"
+    }
+   ]
+  },
+  "fin_concurrente": {
+   "ph": 1,
+   "t": "Suspensión por proceso prejudicial",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "Se acuerda la suspensión tramitando el incidente conforme al art. 43 LEC."
+    ],
+    [
+     "l",
+     "Art. 6.3 LJV · Art. 43 LEC"
+    ]
+   ]
+  },
+  "verifica_fiscal": {
+   "ph": 1,
+   "t": "Verificación de intervención del Ministerio Fiscal (art. 4)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Determine si el Ministerio Fiscal debe intervenir en el expediente."
+    ],
+    [
+     "n",
+     "El Fiscal interviene cuando afecta al estado civil, interés de menor o persona con discapacidad, o cuando la ley lo declare expresamente."
+    ]
+   ],
+   "q": "¿Procede la intervención del Ministerio Fiscal?",
+   "opts": [
+    {
+     "t": "Sí — Afecta a estado civil, menores o personas con discapacidad",
+     "l": "warn",
+     "n": "competencia_tipo"
+    },
+    {
+     "t": "No — No concurren las circunstancias del art. 4",
+     "l": "ok",
+     "n": "competencia_tipo"
+    }
+   ]
+  },
+  "competencia_tipo": {
+   "ph": 2,
+   "t": "Competencia: Tipo de Órgano",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Determinar el órgano competente es esencial. Serán competentes los JPI, los Juzgados de lo Mercantil y los Jueces de Paz."
+    ]
+   ],
+   "q": "¿Qué órgano es competente en este caso?",
+   "opts": [
+    {
+     "t": "Juzgado de Primera Instancia (competencia general)",
+     "l": "ok",
+     "n": "competencia_domicilio"
+    },
+    {
+     "t": "Juzgado de lo Mercantil (competencia desleal, publicidad, PI/PII)",
+     "l": "ok",
+     "n": "competencia_domicilio"
+    },
+    {
+     "t": "Juez de Paz (cuantía < 6.000€ o sin JPI en la localidad)",
+     "l": "neutral",
+     "n": "competencia_domicilio"
+    }
+   ]
+  },
+  "competencia_domicilio": {
+   "ph": 2,
+   "t": "Competencia Territorial: Domicilio del Requerido",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "La competencia territorial se determina por el domicilio del requerido (art. 140.1). El domicilio se entiende como el lugar de residencia habitual (CC art. 40) y domicilio social para personas jurídicas."
+    ],
+    [
+     "w",
+     "Si el domicilio es desconocido, deberá acudirse a reglas supletorias."
+    ]
+   ],
+   "q": "¿Se conoce el domicilio del requerido?",
+   "opts": [
+    {
+     "t": "Sí, el domicilio es conocido",
+     "l": "ok",
+     "n": "competencia_pj"
+    },
+    {
+     "t": "Se conoce el último domicilio en España",
+     "l": "warn",
+     "n": "competencia_ultima_residencia"
+    },
+    {
+     "t": "El domicilio es desconocido",
+     "l": "bad",
+     "n": "competencia_domicilio_desconocido"
+    }
+   ]
+  },
+  "competencia_ultima_residencia": {
+   "ph": 2,
+   "t": "Competencia: Última Residencia en España",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Si no se conoce el domicilio actual pero sí su última residencia en España, será competente el Juzgado correspondiente a dicha última residencia."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 140.1; LEC art. 51"
+    ]
+   ],
+   "nx": "competencia_pj"
+  },
+  "competencia_pj": {
+   "ph": 2,
+   "t": "Verificación — Persona jurídica con presencia local",
+   "ac": "solicitante",
+   "c": [
+    [
+     "i",
+     "Si el requerido es persona jurídica, existe un fuero alternativo: será también competente el órgano del domicilio del solicitante, siempre que en dicho lugar tenga el requerido delegación, sucursal, establecimiento u oficina abierta al público o representante autorizado."
+    ],
+    [
+     "l",
+     "Art. 140.1, párrafo cuarto, Ley 15/2015; STJUE Somafer 22-2-1979"
+    ]
+   ],
+   "q": "¿El requerido es persona jurídica con establecimiento en el domicilio del solicitante?",
+   "opts": [
+    {
+     "t": "Sí — se acredita delegación, sucursal u oficina en mi domicilio",
+     "l": "ok",
+     "n": "solicitud"
+    },
+    {
+     "t": "No — el requerido es persona física, o no tiene establecimiento",
+     "l": "neutral",
+     "n": "solicitud"
+    }
+   ]
+  },
+  "competencia_domicilio_desconocido": {
+   "ph": 2,
+   "t": "Domicilio Desconocido: Procedimiento Concluido",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "Si el domicilio es totalmente desconocido, el LAJ declarará concluso el procedimiento con reserva del derecho del solicitante para ejercitar su acción ante los tribunales competentes."
+    ],
+    [
+     "w",
+     "Antes de declarar el domicilio desconocido, deben agotarse los medios de localización razonablemente disponibles."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 140.1; LEC arts. 155, 164; STS 15-3-2004"
+    ]
+   ]
+  },
+  "solicitud": {
+   "ph": 3,
+   "t": "Solicitud de Conciliación (art. 141)",
+   "ac": "solicitante",
+   "c": [
+    [
+     "i",
+     "El solicitante presenta la solicitud por escrito o mediante impresos normalizados. La presentación constituye el acto de iniciación y produce efectos interruptivos de la prescripción desde su fecha."
+    ],
+    [
+     "cl",
+     "Contenido obligatorio de la solicitud",
+     [
+      "Datos identificativos del solicitante y del requerido",
+      "Domicilio a efectos de notificaciones y citaciones",
+      "Objeto de la conciliación con claridad y precisión",
+      "Exposición de hechos y fundamentos jurídicos",
+      "Documentos y dictámenes de interés",
+      "Tantas copias cuantos sean los interesados"
+     ]
+    ],
+    [
+     "n",
+     "No es preceptiva la intervención de Abogado ni Procurador, aunque es recomendable en asuntos complejos pues el acuerdo tiene fuerza ejecutiva."
+    ],
+    [
+     "l",
+     "Art. 141 Ley 15/2015; LEC art. 135; CC art. 1973"
+    ]
+   ],
+   "nx": "verifica_defectos"
+  },
+  "verifica_defectos": {
+   "ph": 4,
+   "t": "Examen de la solicitud: verificación de requisitos",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El LAJ examina la solicitud para verificar que reúne los requisitos formales del art. 141 LJV."
+    ],
+    [
+     "n",
+     "Si la solicitud no reúne los requisitos, el LAJ requerirá al solicitante para que subsane las deficiencias, con advertencia de desistimiento."
+    ]
+   ],
+   "q": "¿La solicitud reúne todos los requisitos formales?",
+   "opts": [
+    {
+     "t": "Sí — La solicitud es completa y formalmente correcta",
+     "l": "ok",
+     "n": "admision"
+    },
+    {
+     "t": "No — Faltan datos o documentos; se requiere subsanación",
+     "l": "warn",
+     "n": "subsanar"
+    }
+   ]
+  },
+  "subsanar": {
+   "ph": 4,
+   "t": "Requerimiento de subsanación de la solicitud",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El LAJ requiere al solicitante para que subsane las deficiencias detectadas, señalando un plazo y advirtiendo de las consecuencias del incumplimiento."
+    ],
+    [
+     "w",
+     "Si el solicitante no subsana en el plazo indicado, se tendrá por desistido de su petición y se archivará el expediente."
+    ]
+   ],
+   "q": "¿El solicitante ha subsanado las deficiencias en el plazo?",
+   "opts": [
+    {
+     "t": "Sí — Subsanación cumplida; la solicitud reúne los requisitos",
+     "l": "ok",
+     "n": "admision"
+    },
+    {
+     "t": "No — No subsana dentro del plazo",
+     "l": "bad",
+     "n": "fin_desistimiento_sol"
+    }
+   ]
+  },
+  "fin_desistimiento_sol": {
+   "ph": 4,
+   "t": "Desistimiento por falta de subsanación",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "El solicitante no subsana en plazo. Se tiene por desistido y se archiva, sin perjuicio de promover uno nuevo."
+    ]
+   ]
+  },
+  "admision": {
+   "ph": 4,
+   "t": "Admisión de la solicitud y señalamiento",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El LAJ, en los cinco días hábiles siguientes a la presentación, dicta resolución de admisión y cita a los interesados, señalando día y hora del acto."
+    ],
+    [
+     "d",
+     "Plazo de admisión: 5 días hábiles · Antelación mínima: 5 días · Demora máxima: 10 días desde admisión"
+    ],
+    [
+     "cl",
+     "La resolución debe contener",
+     [
+      "Cumplimiento de requisitos formales",
+      "Señalamiento del día y hora del acto",
+      "Medio de citación (electrónico o diligencia)",
+      "Advertencia de consecuencias de la incomparecencia"
+     ]
+    ],
+    [
+     "l",
+     "Art. 142.1-2 LJV · Art. 130 LEC"
+    ]
+   ],
+   "nx": "citacion"
+  },
+  "citacion": {
+   "ph": 4,
+   "t": "Citación de los interesados",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Se practica la citación en el domicilio señalado. Debe contener: identificación del órgano, fecha, hora, lugar, identidad de las partes y advertencia de incomparecencia."
+    ],
+    [
+     "n",
+     "La citación se realiza preferentemente por medios electrónicos o por diligencia de comunicación."
+    ],
+    [
+     "l",
+     "Art. 142.2 LJV; LEC arts. 149-164"
+    ]
+   ],
+   "nx": "efectos_prescripcion"
+  },
+  "efectos_prescripcion": {
+   "ph": 5,
+   "t": "Efectos sobre la Prescripción (art. 143)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "La presentación con ulterior admisión de la solicitud interrumpe la prescripción, tanto adquisitiva como extintiva, desde el momento de su presentación. El efecto es retroactivo a la fecha de presentación."
+    ],
+    [
+     "n",
+     "La interrupción implica que, una vez finalizado el expediente, el plazo de prescripción comienza a computarse íntegramente de nuevo (CC art. 1974)."
+    ],
+    [
+     "w",
+     "El riesgo de abuso del procedimiento con fines meramente interruptivos sin intención real de acuerdo podría ser considerado abusivo (CC art. 7.2)."
+    ],
+    [
+     "d",
+     "Interrupción: desde la fecha de presentación. Nuevo cómputo: desde la terminación del procedimiento."
+    ],
+    [
+     "l",
+     "Art. 143 LJV; CC arts. 1973 y 1974; STS 23-5-2000; STS 14-3-2006"
+    ]
+   ],
+   "nx": "comparecencia_solicitante"
+  },
+  "comparecencia_solicitante": {
+   "ph": 6,
+   "t": "Comparecencia del solicitante al acto",
+   "ac": "solicitante",
+   "c": [
+    [
+     "i",
+     "Las partes deben comparecer por sí mismas o por medio de Procurador con poder suficiente. La comparecencia incluye presencia física o telemática, y el representante necesita poder suficiente para transigir (CC art. 1809)."
+    ],
+    [
+     "l",
+     "Art. 144.1 Ley 15/2015 · Artículos 23 y ss. LEC; CC art. 1809"
+    ]
+   ],
+   "q": "¿Comparece el solicitante (o su Procurador)?",
+   "opts": [
+    {
+     "t": "Sí — El solicitante comparece al acto",
+     "l": "ok",
+     "n": "comparecencia_requerido"
+    },
+    {
+     "t": "No — El solicitante no comparece",
+     "l": "bad",
+     "n": "incomp_sol_justacausa"
+    }
+   ]
+  },
+  "incomp_sol_justacausa": {
+   "ph": 6,
+   "t": "Incomparecencia del solicitante — ¿justa causa?",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Si el solicitante no comparece, se verifica si ha alegado justa causa (enfermedad, fuerza mayor, etc.). La fuerza mayor debe reunir los requisitos del CC art. 1105."
+    ],
+    [
+     "d",
+     "Plazo para justificar: 3 días desde la fecha del señalamiento fallido."
+    ],
+    [
+     "l",
+     "Art. 144.2 y 144.4 Ley 15/2015; CC art. 1105"
+    ]
+   ],
+   "q": "¿El solicitante ha alegado justa causa acreditada?",
+   "opts": [
+    {
+     "t": "No — Incomparecencia injustificada",
+     "l": "bad",
+     "n": "fin_desistimiento"
+    },
+    {
+     "t": "Sí — Justa causa acreditada",
+     "l": "warn",
+     "n": "suspension_sol"
+    }
+   ]
+  },
+  "suspension_sol": {
+   "ph": 6,
+   "t": "Suspensión por justa causa del solicitante",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Considerando acreditada la justa causa, el LAJ/Juez de Paz señalará nuevo día y hora para la celebración."
+    ],
+    [
+     "d",
+     "Nuevo señalamiento: dentro de los 5 días siguientes a la decisión de suspender."
+    ],
+    [
+     "l",
+     "Art. 144.4 Ley 15/2015"
+    ]
+   ],
+   "nx": "comparecencia_solicitante"
+  },
+  "fin_desistimiento": {
+   "ph": 6,
+   "t": "Desistimiento por incomparecencia del solicitante",
+   "ac": "ambos",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "Si no comparece el solicitante ni alega justa causa, se le tendrá por desistido y se archivará el expediente."
+    ],
+    [
+     "w",
+     "El requerido podrá reclamar indemnización de daños y perjuicios (CC arts. 1101, 1107). La incomparecencia injustificada puede constituir temeridad o mala fe (LEC art. 394)."
+    ],
+    [
+     "d",
+     "Plazo de traslado de la reclamación de indemnización: 5 días."
+    ],
+    [
+     "l",
+     "Art. 144.2 Ley 15/2015; CC art. 1101 y ss."
+    ]
+   ]
+  },
+  "comparecencia_requerido": {
+   "ph": 6,
+   "t": "Comparecencia del requerido o requeridos",
+   "ac": "partes",
+   "c": [
+    [
+     "i",
+     "Se verifica la comparecencia del requerido o requeridos. A diferencia del solicitante, su incumplimiento no genera las mismas consecuencias sancionadoras."
+    ],
+    [
+     "l",
+     "Art. 144.3 Ley 15/2015"
+    ]
+   ],
+   "q": "¿Comparece(n) el/los requerido(s)?",
+   "opts": [
+    {
+     "t": "Sí — Todos los requeridos comparecen",
+     "l": "ok",
+     "n": "celebracion"
+    },
+    {
+     "t": "No comparecen sin justa causa — Conciliación por intentada",
+     "l": "bad",
+     "n": "incomp_req_justacausa"
+    },
+    {
+     "t": "No comparecen con justa causa — Se reprograma",
+     "l": "warn",
+     "n": "suspension_req"
+    },
+    {
+     "t": "Algunos comparecen y otros no — Se celebra con los presentes",
+     "l": "neutral",
+     "n": "celebracion_parcial"
+    }
+   ]
+  },
+  "incomp_req_justacausa": {
+   "ph": 6,
+   "t": "Incomparecencia del requerido — ¿justa causa?",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Si el requerido no comparece sin justa causa, el LAJ declara la conciliación intentada sin efecto."
+    ],
+    [
+     "l",
+     "Art. 144.3 y 144.4 Ley 15/2015"
+    ]
+   ],
+   "q": "¿El requerido ha alegado justa causa acreditada?",
+   "opts": [
+    {
+     "t": "No — Incomparecencia injustificada",
+     "l": "bad",
+     "n": "fin_intentada_incomp"
+    },
+    {
+     "t": "Sí — Justa causa acreditada",
+     "l": "warn",
+     "n": "suspension_req"
+    }
+   ]
+  },
+  "suspension_req": {
+   "ph": 6,
+   "t": "Suspensión por justa causa del requerido",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Acreditada la justa causa, se señala nuevo día y hora."
+    ],
+    [
+     "d",
+     "Nuevo señalamiento: dentro de los 5 días siguientes."
+    ],
+    [
+     "l",
+     "Art. 144.4 Ley 15/2015"
+    ]
+   ],
+   "nx": "comparecencia_requerido"
+  },
+  "fin_intentada_incomp": {
+   "ph": 6,
+   "t": "Conciliación intentada por incomparecencia del requerido",
+   "ac": "ambos",
+   "end": "neutral",
+   "c": [
+    [
+     "i",
+     "El requerido no comparece sin justa causa. Se tiene por intentada a todos los efectos legales, habilitando al solicitante para ejercitar acciones judiciales. El efecto interruptivo de la prescripción se mantiene."
+    ],
+    [
+     "l",
+     "Art. 144.3 Ley 15/2015; CC arts. 1973, 1974"
+    ]
+   ]
+  },
+  "celebracion_parcial": {
+   "ph": 7,
+   "t": "Celebración parcial con los requeridos presentes",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Siendo varios los requeridos y concurriendo solo alguno, se celebra con los presentes y se tiene por intentada respecto de los restantes."
+    ],
+    [
+     "l",
+     "Art. 144.3 Ley 15/2015"
+    ]
+   ],
+   "nx": "celebracion"
+  },
+  "celebracion": {
+   "ph": 7,
+   "t": "Celebración del acto de conciliación",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "El acto se estructura en fases: expositiva, contestación, probatoria (documental), avenencia y cierre. El LAJ/Juez invitará a las partes a alcanzar acuerdo, sin imponer solución."
+    ],
+    [
+     "cl",
+     "Fases del acto de conciliación",
+     [
+      "1.ª Exposición: el solicitante presenta su reclamación y fundamentos.",
+      "2.ª Contestación: el requerido responde lo que crea conveniente.",
+      "3.ª Aportación documental: los intervinientes pueden exhibir o aportar documentos.",
+      "4.ª Mediación: si no hay avenencia, el órgano procura avenirlos con réplica y contrarréplica.",
+      "5.ª Cierre: Se levanta acta con o sin avenencia."
+     ]
+    ],
+    [
+     "n",
+     "El desarrollo se registrará, si fuera posible, en soporte apto para grabación de sonido e imagen. El acuerdo requiere conformidad libre y voluntaria."
+    ],
+    [
+     "l",
+     "Art. 145.1 y 145.4 Ley 15/2015"
+    ]
+   ],
+   "q": "¿Se alega alguna cuestión que impida la válida prosecución del acto?",
+   "opts": [
+    {
+     "t": "No — El acto se desarrolla con normalidad",
+     "l": "ok",
+     "n": "verifica_acuerdo"
+    },
+    {
+     "t": "Sí — Se alega cuestión impeditiva (falta de capacidad, litispendencia, etc.)",
+     "l": "warn",
+     "n": "fin_impeditiva"
+    }
+   ]
+  },
+  "fin_impeditiva": {
+   "ph": 7,
+   "t": "Conciliación intentada por cuestión impeditiva",
+   "ac": "ambos",
+   "end": "neutral",
+   "c": [
+    [
+     "i",
+     "Si se alega cuestión impeditiva (falta de capacidad, defecto de citación, litispendencia, cosa juzgada), se da por terminado el acto y se tiene por intentada sin más trámites. El efecto interruptivo de la prescripción se mantiene."
+    ],
+    [
+     "l",
+     "Art. 145.2 Ley 15/2015; LEC arts. 9, 222, 416"
+    ]
+   ]
+  },
+  "verifica_acuerdo": {
+   "ph": 7,
+   "t": "Verificación de conformidad entre las partes",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Celebrado el acto sin cuestiones impeditivas, se determina si las partes han alcanzado un acuerdo. La avenencia debe respetar los límites de la autonomía de la voluntad (CC art. 1255) y no puede perjudicar a terceros (CC art. 1256)."
+    ],
+    [
+     "l",
+     "Art. 145.3 Ley 15/2015; CC arts. 1255, 1256, 1275-1277"
+    ]
+   ],
+   "q": "¿Cuál es el resultado del acto de conciliación?",
+   "opts": [
+    {
+     "t": "Avenencia total — acuerdo completo sobre el objeto",
+     "l": "ok",
+     "n": "avenencia_total"
+    },
+    {
+     "t": "Avenencia parcial — acuerdo sobre algún punto",
+     "l": "warn",
+     "n": "avenencia_parcial"
+    },
+    {
+     "t": "Sin avenencia — no se consigue acuerdo alguno",
+     "l": "bad",
+     "n": "sin_avenencia"
+    }
+   ]
+  },
+  "avenencia_total": {
+   "ph": 7,
+   "t": "Avenencia total — formalización del acta",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Las partes acuerdan sobre la totalidad del objeto. Se hace constar detalladamente en un acta, que debe ser firmada por los comparecientes. El acuerdo tiene fuerza de título ejecutivo (LEC art. 517.2.9º) y efectos de cosa juzgada material (CC art. 1216)."
+    ],
+    [
+     "w",
+     "El contenido del acta es crucial: constituye la base del título ejecutivo. Debe ser claro, preciso y susceptible de ejecución forzosa."
+    ],
+    [
+     "l",
+     "Art. 145.3 Ley 15/2015; LEC art. 517.2.9º; CC arts. 1156, 1216, 1809-1819"
+    ]
+   ],
+   "nx": "cierre_avenencia"
+  },
+  "avenencia_parcial": {
+   "ph": 7,
+   "t": "Avenencia parcial — formalización del acta",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Acuerdo sobre parte del objeto. Se identifican los extremos acordados y los aspectos sobre los que no hubo conformidad. El acta parcial tiene fuerza ejecutiva respecto de los extremos acordados."
+    ],
+    [
+     "n",
+     "El solicitante conserva la acción para reclamar judicialmente la parte no conciliada."
+    ],
+    [
+     "l",
+     "Art. 145.3 Ley 15/2015; STS 12-7-2002"
+    ]
+   ],
+   "nx": "cierre_avenencia"
+  },
+  "sin_avenencia": {
+   "ph": 7,
+   "t": "Conciliación celebrada sin avenencia",
+   "ac": "ambos",
+   "end": "neutral",
+   "c": [
+    [
+     "i",
+     "No se consigue acuerdo. El LAJ dictará decreto o el Juez de Paz auto acordando el archivo definitivo. El solicitante queda habilitado para ejercitar las acciones que le correspondan."
+    ],
+    [
+     "i",
+     "Las manifestaciones realizadas en el acto no vinculan en el posterior proceso judicial, pero las admisiones de hechos pueden ser tenidas en cuenta como elementos de prueba."
+    ],
+    [
+     "l",
+     "Art. 145.3 y 145.4 Ley 15/2015; CC arts. 1973, 1974"
+    ]
+   ]
+  },
+  "cierre_avenencia": {
+   "ph": 8,
+   "t": "Cierre con Avenencia: Decreto/Auto de Aprobación",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El LAJ dicta decreto o el Juez dicta auto haciendo constar la avenencia. El decreto/auto, junto con el acta, conforman el título ejecutivo dual."
+    ],
+    [
+     "cl",
+     "Contenido del decreto/auto de aprobación",
+     [
+      "Fecha y órgano que lo dicta",
+      "Identificación de las partes",
+      "Términos del acuerdo alcanzado",
+      "Declaración de carácter de título ejecutivo",
+      "Acuerdo de archivo definitivo"
+     ]
+    ],
+    [
+     "l",
+     "Art. 145.4 Ley 15/2015; LEC art. 517.2.9º"
+    ]
+   ],
+   "nx": "testimonio_gastos"
+  },
+  "testimonio_gastos": {
+   "ph": 8,
+   "t": "Testimonio del Acta y Gastos (art. 146)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Las partes pueden solicitar testimonio del acta. El testimonio es la copia autorizada necesaria para la ejecución forzosa."
+    ],
+    [
+     "i",
+     "Los gastos del acto de conciliación serán de cuenta del que lo hubiere promovido (el solicitante), con independencia del resultado, salvo pacto en contrario. La tasa judicial está exenta (Ley 10/2012, art. 4)."
+    ],
+    [
+     "d",
+     "Plazo para expedir testimonio: 5 días desde la solicitud."
+    ],
+    [
+     "l",
+     "Art. 146 Ley 15/2015; Ley 10/2012, art. 4; LEC art. 241"
+    ]
+   ],
+   "q": "¿Se solicita el despacho de ejecución o se ejerce acción de nulidad?",
+   "opts": [
+    {
+     "t": "Se insta la ejecución forzosa del acuerdo",
+     "l": "ok",
+     "n": "ejecucion"
+    },
+    {
+     "t": "No — El acuerdo se cumple voluntariamente",
+     "l": "ok",
+     "n": "fin_avenencia_firme"
+    },
+    {
+     "t": "Se ejerce acción de nulidad contra lo convenido",
+     "l": "warn",
+     "n": "nulidad"
+    }
+   ]
+  },
+  "fin_avenencia_firme": {
+   "ph": 8,
+   "t": "Acuerdo Firme y Consentido",
+   "ac": "partes",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "El acuerdo se cumple voluntariamente y no es impugnado en el plazo de 15 días (art. 148). Adquiere firmeza definitiva y produce efectos de cosa juzgada material (CC art. 1216)."
+    ],
+    [
+     "n",
+     "En caso de incumplimiento futuro, el solicitante podrá instar la ejecución en cualquier momento dentro del plazo de 5 años (LEC art. 518)."
+    ],
+    [
+     "l",
+     "Art. 146, 147 y 148 Ley 15/2015; CC art. 1216; LEC art. 518"
+    ]
+   ]
+  },
+  "ejecucion": {
+   "ph": 9,
+   "t": "Fuerza ejecutiva del acuerdo (art. 147)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El testimonio del acta junto con el decreto/auto lleva aparejada ejecución a los efectos del art. 517.2.9.º LEC. El título ejecutivo se compone de dos documentos conjuntos e inseparables."
+    ],
+    [
+     "i",
+     "A otros efectos, lo convenido tiene el valor y eficacia de un convenio consignado en documento público y solemne."
+    ],
+    [
+     "cl",
+     "Requisitos para la ejecución",
+     [
+      "Título ejecutivo: decreto/auto + acta de conciliación",
+      "Determinación de la obligación: cantidad líquida o determinable",
+      "Plazo: dentro del período de prescripción de la acción ejecutiva (LEC art. 518)"
+     ]
+    ],
+    [
+     "l",
+     "Art. 147.1 Ley 15/2015 · Art. 517.2.9.º LEC"
+    ]
+   ],
+   "nx": "ejecucion_competencia"
+  },
+  "ejecucion_competencia": {
+   "ph": 9,
+   "t": "Competencia para la Ejecución",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "Se determina el órgano competente para la ejecución forzosa. La competencia territorial no es disponible por las partes en la ejecución de títulos judiciales."
+    ],
+    [
+     "cl",
+     "Reglas de competencia",
+     [
+      "Mismo Juzgado que tramitó: cuando sea asunto de su competencia",
+      "Juzgado de Primera Instancia: en los demás casos (art. 545 LEC)"
+     ]
+    ],
+    [
+     "l",
+     "Art. 147.2-3 Ley 15/2015; LEC arts. 50, 545"
+    ]
+   ],
+   "q": "¿Se formula oposición a la ejecución?",
+   "opts": [
+    {
+     "t": "No — Sin oposición; la ejecución prosigue",
+     "l": "ok",
+     "n": "fin_ejecucion"
+    },
+    {
+     "t": "Sí — Se formula oposición mediante acción de nulidad",
+     "l": "warn",
+     "n": "nulidad"
+    }
+   ]
+  },
+  "fin_ejecucion": {
+   "ph": 9,
+   "t": "Ejecución cumplida sin oposición",
+   "ac": "juez",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "La ejecución se ha cumplido sin oposición. El procedimiento concluye con la satisfacción del derecho reconocido. Se seguirán los trámites de la LEC: requerimiento de pago, embargo y realización de bienes."
+    ],
+    [
+     "l",
+     "Art. 147 Ley 15/2015 · Arts. 538-603 LEC"
+    ]
+   ]
+  },
+  "nulidad": {
+   "ph": 9,
+   "t": "Acción de Nulidad del Acuerdo (art. 148)",
+   "ac": "partes",
+   "c": [
+    [
+     "i",
+     "Contra lo convenido sólo podrá ejercitarse la acción de nulidad por las causas que invalidan los contratos (vicios del consentimiento, defectos de objeto o causa, contravención de normas imperativas). La carga de la prueba recae sobre quien invoca la nulidad."
+    ],
+    [
+     "d",
+     "Plazo de caducidad: 15 días desde la celebración del acto. Este plazo es improrrogable y extintivo."
+    ],
+    [
+     "i",
+     "La demanda se sustanciará por los trámites del juicio que corresponda (ordinario o verbal)."
+    ],
+    [
+     "w",
+     "Acreditado el ejercicio de la acción de nulidad, queda en suspenso la ejecución ipso iure hasta que se resuelva definitivamente."
+    ],
+    [
+     "l",
+     "Art. 148.1-2 Ley 15/2015; CC arts. 1261, 1265-1270, 1275-1309; LEC arts. 248, 437"
+    ]
+   ],
+   "q": "¿Se interpone demanda de nulidad dentro del plazo de 15 días?",
+   "opts": [
+    {
+     "t": "Sí — Dentro del plazo; se suspende la ejecución",
+     "l": "ok",
+     "n": "resuelve_nulidad"
+    },
+    {
+     "t": "No — Fuera del plazo de caducidad",
+     "l": "bad",
+     "n": "fin_caducada"
+    }
+   ]
+  },
+  "fin_caducada": {
+   "ph": 9,
+   "t": "Acción de nulidad caducada — Acuerdo Firme",
+   "ac": "juez",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "El transcurso del plazo de caducidad de 15 días determina la firmeza del acuerdo. El título ejecutivo conserva toda su fuerza y la ejecución prosigue."
+    ],
+    [
+     "w",
+     "El plazo de 15 días es de caducidad, no de prescripción: no admite interrupción ni suspensión. La parte debe actuar con la máxima diligencia."
+    ],
+    [
+     "l",
+     "Art. 148.1 Ley 15/2015; CC arts. 1265-1270"
+    ]
+   ]
+  },
+  "resuelve_nulidad": {
+   "ph": 9,
+   "t": "Resolución sobre la acción de nulidad",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "El tribunal resuelve por sentencia firme estimando o desestimando la demanda."
+    ]
+   ],
+   "q": "¿Cuál es el resultado de la demanda de nulidad?",
+   "opts": [
+    {
+     "t": "Estimada — El acuerdo se declara nulo",
+     "l": "bad",
+     "n": "fin_nulidad_estimada"
+    },
+    {
+     "t": "Desestimada — El acuerdo se confirma",
+     "l": "ok",
+     "n": "fin_nulidad_desestimada"
+    }
+   ]
+  },
+  "fin_nulidad_estimada": {
+   "ph": 9,
+   "t": "Nulidad estimada — acuerdo anulado",
+   "ac": "juez",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "El acuerdo queda sin efecto. Las partes deben restituirse recíprocamente las prestaciones (CC art. 1303), volviendo las cosas al estado anterior a la conciliación."
+    ],
+    [
+     "n",
+     "Las partes quedan habilitadas para acudir a la vía judicial ordinaria sobre el fondo del asunto."
+    ],
+    [
+     "l",
+     "Art. 148 Ley 15/2015; CC arts. 1303, 1973-1975"
+    ]
+   ]
+  },
+  "fin_nulidad_desestimada": {
+   "ph": 9,
+   "t": "Nulidad desestimada — acuerdo confirmado",
+   "ac": "juez",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "El acuerdo mantiene plena validez y eficacia. La ejecución suspendida puede reanudarse desde el punto de suspensión."
+    ],
+    [
+     "n",
+     "El título ejecutivo del artículo 147 conserva toda su fuerza. La parte ejecutante puede solicitar la continuación de la ejecución forzosa."
+    ],
+    [
+     "l",
+     "Art. 148.3 Ley 15/2015; LEC arts. 394, 517.2.9º"
+    ]
+   ]
+  }
+ },
+ "otrosDatos": {
+  "ACTORS": {
+   "laj": "Letrado Adm. Justicia",
+   "juez": "Juez de Paz / Juez",
+   "ambos": "LAJ o Juez",
+   "solicitante": "Solicitante",
+   "partes": "Ambas partes"
+  },
+  "PHASES": [
+   "Inicio",
+   "Procedencia",
+   "Competencia",
+   "Solicitud",
+   "Admisión",
+   "Prescripción",
+   "Comparecencia",
+   "Celebración",
+   "Cierre",
+   "Posterior"
+  ],
+  "PH_COLORS": [
+   "var(--ph0)",
+   "var(--ph1)",
+   "var(--ph2)",
+   "var(--ph3)",
+   "var(--ph4)",
+   "var(--ph5)",
+   "var(--ph6)",
+   "var(--ph7)",
+   "var(--ph8)",
+   "var(--ph9)"
+  ],
+  "SB_FOOT": "<div class=\"sb-foot\"><div class=\"law\">Ley 15/2015, de 2 de julio<br>Jurisdicción Voluntaria<br>Título IX · Arts. 139–148<br>LEC 1/2000 · CC · LOPJ 6/1985</div></div>",
+  "LABELS": {
+   "i": "Información",
+   "d": "Plazo",
+   "n": "Nota",
+   "w": "Advertencia",
+   "l": "Referencia legal"
+  }
+ }
+}

@@ -1,0 +1,873 @@
+{
+ "id": "E25",
+ "tipo": "esquema",
+ "ruta": "02 - Esquemas interactivos/LJV/06 - TÍTULO VI - De los expedientes de jurisdicción voluntaria relativos a los derechos reales/01 - CAPÍTULO I - De la autorización judicial al usufructuario para reclamar créditos vencidos que formen parte del usufructo.html",
+ "titulo": "Mapa mental — Ley 15/2015, arts. 100-103 LJV · Autorización judicial al usufructuario",
+ "cabecera": {
+  "migas": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO VI: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA RELATIVOS A LOS DERECHOS REALES · CAPÍTULO I",
+  "titulo": "De la autorización judicial al usufructuario para reclamar créditos vencidos que formen parte del usufructo",
+  "subtitulo": "Artículos 100 a 103 LJV · Artículo 507 CC",
+  "etiquetas": [
+   "Ley 15/2015, de 2 de julio",
+   "Arts. 100-103 LJV",
+   "Art. 507 CC",
+   "Jurisdicción Voluntaria"
+  ]
+ },
+ "estadisticas": [
+  {
+   "valor": "5",
+   "etiqueta": "Artículos base"
+  },
+  {
+   "valor": "15+",
+   "etiqueta": "Conexiones normativas"
+  },
+  {
+   "valor": "8+",
+   "etiqueta": "Actores identificados"
+  },
+  {
+   "valor": "3",
+   "etiqueta": "Plazos procesales"
+  }
+ ],
+ "filtros": [
+  {
+   "categoria": "all",
+   "texto": "Todos"
+  },
+  {
+   "categoria": "c1",
+   "texto": "Ámbito y presupuestos"
+  },
+  {
+   "categoria": "c2",
+   "texto": "Competencia y postulación"
+  },
+  {
+   "categoria": "c3",
+   "texto": "Solicitud e iniciación"
+  },
+  {
+   "categoria": "c4",
+   "texto": "Tramitación y resolución"
+  },
+  {
+   "categoria": "c5",
+   "texto": "Recursos y ejecución"
+  },
+  {
+   "categoria": "c6",
+   "texto": "Conexiones normativas"
+  }
+ ],
+ "leyenda": [
+  {
+   "texto": "Ámbito de aplicación y presupuestos",
+   "color": "background:var(--c1)"
+  },
+  {
+   "texto": "Competencia y postulación",
+   "color": "background:var(--c2)"
+  },
+  {
+   "texto": "Solicitud e iniciación",
+   "color": "background:var(--c3)"
+  },
+  {
+   "texto": "Tramitación y resolución",
+   "color": "background:var(--c4)"
+  },
+  {
+   "texto": "Recursos y ejecución",
+   "color": "background:var(--c5)"
+  },
+  {
+   "texto": "Conexiones normativas",
+   "color": "background:var(--c6)"
+  }
+ ],
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título VI, Capítulo I · Artículos 100 a 103 LJV · Artículo 507 CC · Generado como plantilla HTML reutilizable",
+ "secciones": [
+  {
+   "id": "sec-articulos",
+   "titulo": "Artículos principales del Capítulo I",
+   "recuento": "5 artículos",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c1",
+      "articulo": "Artículo 507 CC",
+      "etiquetas": [
+       {
+        "texto": "Base sustantiva",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Reclamación de créditos vencidos e inversión del capital por el usufructuario",
+      "resumen": "Precepto del Código Civil que constituye la base material del expediente de jurisdicción voluntaria regulado en los artículos 100 a 103 LJV.",
+      "contadores": [
+       "2 supuestos principales",
+       "4 reglas"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Usufructuario con fianza",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Regla general:</strong> el usufructuario podrá reclamar por sí los créditos vencidos que formen parte del usufructo si tuviese dada o diere la fianza correspondiente."
+            },
+            {
+             "t": "<strong>Libertad de disposición:</strong> el usufructuario con fianza podrá dar al capital que realice el destino que estime conveniente."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Usufructuario sin fianza o con fianza insuficiente",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Necesidad de autorización:</strong> si el usufructuario estuviese dispensado de prestar fianza, o no hubiese podido constituirla, o la constituida no fuese suficiente, necesitará autorización del propietario, o del Juez en su defecto, para cobrar dichos créditos."
+            },
+            {
+             "t": "<strong>Destino del capital:</strong> el usufructuario sin fianza deberá poner a interés dicho capital de acuerdo con el propietario; a falta de acuerdo entre ambos, con autorización judicial; y, en todo caso, con las garantías suficientes para mantener la integridad del capital usufructuado."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Arts. 100-103 LJV",
+       "Art. 491 CC",
+       "Art. 494 CC"
+      ],
+      "claves": "artículo 507 código civil usufructuario créditos vencidos fianza autorización propietario juez capital interés garantías integridad usufructo"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c1",
+      "articulo": "Artículo 100 LJV",
+      "etiquetas": [
+       {
+        "texto": "Ámbito de aplicación",
+        "clase": "tag-ok"
+       }
+      ],
+      "titulo": "Ámbito de aplicación del expediente",
+      "resumen": "Disposiciones aplicables cuando el usufructuario pretenda reclamar y cobrar por sí los créditos vencidos que formen parte del usufructo, cuando no cuente con fianza suficiente ni con la autorización del propietario.",
+      "contadores": [
+       "2 objetos del expediente",
+       "4 presupuestos"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Doble objeto del expediente",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Objeto primero:</strong> autorización judicial para reclamar y cobrar por sí los créditos vencidos que formen parte del usufructo."
+            },
+            {
+             "t": "<strong>Objeto segundo:</strong> autorización judicial para poner a interés el capital obtenido con dicha reclamación."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Presupuestos habilitantes para la reclamación de créditos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Dispensa de fianza:</strong> que el usufructuario esté dispensado de prestar fianza."
+            },
+            {
+             "t": "<strong>Imposibilidad de constituirla:</strong> que no hubiese podido constituir la fianza."
+            },
+            {
+             "t": "<strong>Insuficiencia:</strong> que la fianza constituida no fuese suficiente."
+            },
+            {
+             "t": "<strong>Falta de autorización del propietario:</strong> en todo caso, que no cuente con la autorización del propietario para cobrar."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Presupuesto para poner a interés el capital",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Falta de acuerdo:</strong> que el usufructuario no cuente con el acuerdo del propietario sobre el destino o inversión del capital obtenido."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Presupuesto común a todos los supuestos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Crédito vencido:</strong> la existencia previa de un crédito vencido que forme parte del usufructo."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Legitimación",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Legitimación activa:</strong> corresponde exclusivamente al usufructuario, conforme a los artículos 100 y 102 LJV y al artículo 507 CC."
+            },
+            {
+             "t": "<strong>Interesados en el expediente:</strong> el nudo propietario que se ha negado a autorizar la reclamación, así como aquellos terceros que pudieran estar interesados en el cobro del crédito."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Art. 507 CC",
+       "Art. 102 LJV",
+       "Art. 2 LJV"
+      ],
+      "claves": "artículo 100 ley jurisdicción voluntaria ámbito aplicación usufructuario reclamar cobrar créditos vencidos fianza dispensada insuficiente autorización propietario poner interés capital"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c2",
+      "articulo": "Artículo 101 LJV",
+      "etiquetas": [
+       {
+        "texto": "Competencia y postulación",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Competencia y postulación",
+      "resumen": "Regulación del juzgado competente, las normas de tramitación aplicables y el régimen de intervención de Abogado y Procurador en estos expedientes.",
+      "contadores": [
+       "2 apartados",
+       "3 conexiones"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Competencia (apartado 1)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Juzgado competente:</strong> será competente para conocer de estos expedientes el Juzgado de Primera Instancia del último domicilio o, en su defecto, de la última residencia del solicitante."
+            },
+            {
+             "t": "<strong>Normas de tramitación:</strong> la tramitación se ajustará a las normas comunes de la presente Ley, lo que enlaza directamente con los artículos 13 a 22 LJV (Título I, Capítulo II, Normas de tramitación)."
+            },
+            {
+             "t": "<strong>Competencia objetiva:</strong> la competencia objetiva se atribuye con carácter general a los Juzgados de Primera Instancia en los expedientes civiles de jurisdicción voluntaria (artículo 2 LJV y artículo 85 LOPJ)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Postulación (apartado 2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Regla general:</strong> para la actuación en estos expedientes no será preceptiva la intervención de Abogado ni de Procurador."
+            },
+            {
+             "t": "<strong>Excepciones:</strong> conforme al régimen general (artículo 3 LJV) y al régimen de recursos (artículo 20 LJV, por remisión a la LEC ex artículo 8 LJV), la intervención de Abogado y Procurador podrá devenir preceptiva cuando se formule oposición o cuando se interpongan recursos de revisión o apelación."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Art. 13-22 LJV",
+       "Art. 2 LJV",
+       "Art. 3 LJV",
+       "Art. 20 LJV",
+       "Art. 85 LOPJ"
+      ],
+      "claves": "artículo 101 ley jurisdicción voluntaria competencia postulación juzgado primera instancia domicilio residencia abogado procurador intervención preceptiva oposición recursos"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c3",
+      "articulo": "Artículo 102 LJV",
+      "etiquetas": [
+       {
+        "texto": "Solicitud e iniciación",
+        "clase": "tag-warn"
+       }
+      ],
+      "titulo": "Solicitud del expediente",
+      "resumen": "Requisitos de la solicitud de iniciación, documentos y medios de prueba que deben acompañarse, y exigencia adicional para poner a interés el capital.",
+      "contadores": [
+       "3 grupos de documentos",
+       "1 requisito adicional"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Iniciación del expediente",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Forma de iniciación:</strong> el expediente se iniciará mediante solicitud del usufructuario."
+            },
+            {
+             "t": "<strong>Contenido formal:</strong> la solicitud se integra con el artículo 14 LJV, conforme al cual se consignarán los datos y circunstancias de identificación del solicitante, con indicación de un domicilio a efectos de notificaciones, exponiendo con claridad y precisión lo que se pida, así como los hechos y fundamentos jurídicos en que se funde la pretensión."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Documentos y medios de prueba que han de acompañarse",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Título constitutivo del usufructo:</strong> su derecho, esto es, el título constitutivo del usufructo (testamento, escritura pública, resolución judicial, etc.)."
+            },
+            {
+             "t": "<strong>Existencia del crédito vencido:</strong> la existencia del crédito vencido que se pretenda reclamar o, en su caso, el importe cobrado al realizar el mismo y que pretenda poner a interés."
+            },
+            {
+             "t": "<strong>Falta de autorización del propietario:</strong> la falta de la autorización del propietario."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Requisito adicional para poner a interés el capital",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Garantías suficientes:</strong> en el supuesto de que solicitara la autorización para poner a interés el capital obtenido tras cobrar el crédito vencido, deberá ofrecer garantías suficientes para conservar su integridad."
+            },
+            {
+             "t": "<strong>Conexión con el artículo 507 CC:</strong> esta exigencia entronca directamente con el inciso final del artículo 507 CC, que reclama «las garantías suficientes para mantener la integridad del capital usufructuado»."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Art. 14 LJV",
+       "Art. 507 CC",
+       "Art. 100 LJV"
+      ],
+      "claves": "artículo 102 ley jurisdicción voluntaria solicitud iniciación expediente documentos prueba título constitutivo usufructo crédito vencido falta autorización garantías integridad capital"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c4",
+      "articulo": "Artículo 103 LJV",
+      "etiquetas": [
+       {
+        "texto": "Tramitación y resolución",
+        "clase": "tag-alert"
+       }
+      ],
+      "titulo": "Tramitación y resolución del expediente",
+      "resumen": "Desarrollo de la comparecencia, orden de audiencia, efecto de la oposición, resolución judicial y contenido específico según el tipo de autorización concedida.",
+      "contadores": [
+       "2 apartados",
+       "6 conexiones normativas"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Tramitación (apartado 1)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Admisión a trámite:</strong> admitida a trámite por el Secretario judicial la solicitud (hoy Letrado de la Administración de Justicia, tras la reforma operada por la Ley Orgánica 7/2015), convocará a la comparecencia a quienes han de ser oídos."
+            },
+            {
+             "t": "<strong>Citados y orden de audiencia:</strong> se les oirá precisamente por este orden: 1) el promotor (usufructuario); 2) el propietario (nudo propietario); 3) aquellos que pudieran estar interesados en el cobro del crédito."
+            },
+            {
+             "t": "<strong>Práctica de pruebas:</strong> posteriormente, se practicarán aquellas pruebas que hubieren sido propuestas y acordadas."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Efecto de la eventual oposición",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Principio general:</strong> salvo que la Ley expresamente lo prevea, la formulación de oposición por alguno de los interesados no hará contencioso el expediente ni impedirá que continúe su tramitación hasta que sea resuelto."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Resolución (apartado 2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Criterio judicial:</strong> el Juez, teniendo en cuenta la justificación ofrecida y valorando la conveniencia del cobro del crédito que forma parte del usufructo o de la inversión del capital obtenido, resolverá concediendo o denegando la autorización solicitada."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Contenido específico: autorización para cobrar crédito",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Obligación de informar:</strong> si la autorización otorgada fuera para cobrar un crédito vencido que forme parte del usufructo, deberá establecerse la obligación del usufructuario de informar periódicamente, dentro de los plazos otorgados, al Tribunal sobre las gestiones realizadas, así como del resultado final."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Contenido específico: autorización para poner a interés el capital",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Garantías en la resolución:</strong> si la autorización lo fuera para poner a interés el capital obtenido por el cobro de ese crédito, la resolución deberá contener las garantías a establecer por el usufructuario para conservar la integridad del capital."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Arts. 13-22 LJV",
+       "Art. 20 LJV",
+       "Art. 22 LJV",
+       "Art. 7 LJV",
+       "Art. 507 CC",
+       "LO 7/2015"
+      ],
+      "claves": "artículo 103 ley jurisdicción voluntaria tramitación resolución secretario judicial letrado administración justicia comparecencia promotor propietario pruebas oposición recursos ejecución garantías información periódica"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Régimen de recursos y ejecución",
+      "etiquetas": [
+       {
+        "texto": "Derivado del art. 103 LJV",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Recursos, ejecución y gastos del expediente",
+      "resumen": "Normas aplicables a los recursos contra la resolución, al cumplimiento y ejecución, y al régimen de gastos del expediente de jurisdicción voluntaria.",
+      "contadores": [
+       "3 preceptos clave"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Régimen de recursos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Artículo 20 LJV:</strong> contra la resolución que pone fin al expediente cabrá recurso conforme al artículo 20 LJV, que se remite, con carácter general, al régimen de recursos de la Ley de Enjuiciamiento Civil."
+            },
+            {
+             "t": "<strong>Intervención preceptiva:</strong> la intervención de Abogado y Procurador podrá devenir preceptiva cuando se interpongan recursos de revisión o apelación, conforme al artículo 20 LJV por remisión a la LEC ex artículo 8 LJV."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Cumplimiento y ejecución",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Artículo 22 LJV:</strong> el cumplimiento y ejecución de la resolución que pone fin al expediente se rigen por el artículo 22 LJV."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Gastos del expediente",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Artículo 7 LJV:</strong> conforme al artículo 7 LJV, los gastos ocasionados por el expediente serán de cuenta del solicitante, salvo que la Ley disponga otra cosa."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Art. 20 LJV",
+       "Art. 22 LJV",
+       "Art. 7 LJV",
+       "Art. 8 LJV",
+       "LEC"
+      ],
+      "claves": "recursos ejecución gastos expediente artículo 20 ley jurisdicción voluntaria artículo 22 cumplimiento artículo 7 gastos solicitante enjuiciamiento civil supletorio"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c6",
+      "articulo": "Normas comunes LJV",
+      "etiquetas": [
+       {
+        "texto": "Conexiones internas",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Título Preliminar y normas comunes de tramitación de la LJV",
+      "resumen": "Disposiciones generales (artículos 1 a 8) y normas de tramitación (artículos 13 a 22) de la Ley 15/2015, aplicables por remisión directa del artículo 101 LJV.",
+      "contadores": [
+       "8 artículos generales",
+       "10 artículos tramitación"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Título Preliminar — Disposiciones generales (arts. 1 a 8)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Artículo 1:</strong> ámbito de aplicación de la Ley de Jurisdicción Voluntaria."
+            },
+            {
+             "t": "<strong>Artículo 2:</strong> competencia objetiva de los Juzgados de Primera Instancia en los expedientes civiles de jurisdicción voluntaria."
+            },
+            {
+             "t": "<strong>Artículo 3:</strong> legitimación y postulación en los expedientes de jurisdicción voluntaria."
+            },
+            {
+             "t": "<strong>Artículo 4:</strong> intervención del Ministerio Fiscal."
+            },
+            {
+             "t": "<strong>Artículo 5:</strong> prueba en los expedientes de jurisdicción voluntaria."
+            },
+            {
+             "t": "<strong>Artículo 6:</strong> tramitación simultánea o posterior de expedientes o procesos."
+            },
+            {
+             "t": "<strong>Artículo 7:</strong> gastos ocasionados por el expediente, de cuenta del solicitante salvo que la Ley disponga otra cosa."
+            },
+            {
+             "t": "<strong>Artículo 8:</strong> carácter supletorio de la Ley de Enjuiciamiento Civil."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Título I, Capítulo II — Normas de tramitación (arts. 13 a 22)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Artículo 14:</strong> iniciación del expediente."
+            },
+            {
+             "t": "<strong>Artículo 15:</strong> acumulación de expedientes."
+            },
+            {
+             "t": "<strong>Artículo 16:</strong> apreciación de oficio de la falta de competencia y otros defectos u omisiones."
+            },
+            {
+             "t": "<strong>Artículo 17:</strong> admisión de la solicitud y citación de los interesados."
+            },
+            {
+             "t": "<strong>Artículo 18:</strong> celebración de la comparecencia."
+            },
+            {
+             "t": "<strong>Artículo 19:</strong> decisión del expediente."
+            },
+            {
+             "t": "<strong>Artículo 20:</strong> recursos."
+            },
+            {
+             "t": "<strong>Artículo 21:</strong> caducidad del expediente."
+            },
+            {
+             "t": "<strong>Artículo 22:</strong> cumplimiento y ejecución de la resolución que pone fin al expediente."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Arts. 1-8 LJV",
+       "Arts. 13-22 LJV",
+       "Art. 8 LJV → LEC"
+      ],
+      "claves": "título preliminar disposiciones generales artículos 1 a 8 ley jurisdicción voluntaria ámbito aplicación competencia legitimación postulación ministerio fiscal prueba tramitación simultánea posterior gastos supletorio enjuiciamiento civil"
+     }
+    },
+    {
+     "p": "No se encontraron artículos para «». Prueba otra búsqueda o categoría.",
+     "clase": "no-results"
+    }
+   ]
+  },
+  {
+   "id": "sec-timeline",
+   "titulo": "Indice de plazos procesales",
+   "recuento": "3 trámites",
+   "plegada": true,
+   "contenido": [
+    {
+     "tabla": {
+      "cabecera": [
+       "Acto o trámite procesal",
+       "Plazo",
+       "Fundamento normativo"
+      ],
+      "filas": [
+       [
+        "Información periódica del usufructuario al Tribunal sobre las gestiones realizadas para el cobro del crédito y el resultado final",
+        "Dentro de los plazos otorgados por el Juez",
+        "Artículo 103.2 LJV"
+       ],
+       [
+        "Caducidad del expediente de jurisdicción voluntaria por inactividad de las partes",
+        "Plazo legal (art. 21 LJV)",
+        "Artículo 21 LJV (por remisión del art. 101.1 LJV)"
+       ],
+       [
+        "Interposición de recursos contra la resolución que pone fin al expediente",
+        "Plazos LEC (art. 20 LJV)",
+        "Artículo 20 LJV → LEC (por remisión del art. 8 LJV)"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-actors",
+   "titulo": "Mapa de participantes y actores",
+   "recuento": "4 categorías · 8+ actores",
+   "plegada": true,
+   "contenido": [
+    {
+     "p": "Órgano jurisdiccional",
+     "clase": "participant-col-head phead-c1"
+    },
+    {
+     "lista": [
+      {
+       "t": "Juzgado de Primera Instancia (competente por domicilio o residencia del solicitante)"
+      },
+      {
+       "t": "Juez (resuelve concediendo o denegando la autorización)"
+      },
+      {
+       "t": "Letrado de la Administración de Justicia (admite a trámite y convoca la comparecencia)"
+      }
+     ]
+    },
+    {
+     "p": "Parte solicitante",
+     "clase": "participant-col-head phead-c2"
+    },
+    {
+     "lista": [
+      {
+       "t": "Usufructuario (legitimado activo exclusivo; promueve el expediente)"
+      }
+     ]
+    },
+    {
+     "p": "Interesados en el expediente",
+     "clase": "participant-col-head phead-c3"
+    },
+    {
+     "lista": [
+      {
+       "t": "Nudo propietario (cuya autorización se ha denegado; oído en la comparecencia)"
+      },
+      {
+       "t": "Terceros interesados en el cobro del crédito (oídos en la comparecencia)"
+      }
+     ]
+    },
+    {
+     "p": "Intervención facultativa",
+     "clase": "participant-col-head phead-c4"
+    },
+    {
+     "lista": [
+      {
+       "t": "Abogado (no preceptivo salvo oposición o recursos)"
+      },
+      {
+       "t": "Procurador (no preceptivo salvo oposición o recursos)"
+      },
+      {
+       "t": "Ministerio Fiscal (intervención conforme al artículo 4 LJV)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-norms",
+   "titulo": "Ecosistema normativo — conexiones relacionadas",
+   "recuento": "4 cuerpos normativos",
+   "plegada": true,
+   "contenido": [
+    {
+     "p": "Código Civil",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Régimen material del usufructo",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Artículo 467</strong> — Concepto de usufructo: derecho a disfrutar los bienes ajenos con la obligación de conservar su forma y sustancia.<br><strong>Artículo 491</strong> — Obligaciones previas al goce: inventario y fianza.<br><strong>Artículo 492</strong> — Dispensa legal de la fianza (vendedor/donante, padres, cónyuge sobreviviente).<br><strong>Artículo 493</strong> — Dispensa convencional de inventario o fianza.<br><strong>Artículo 494</strong> — Consecuencias de la falta de fianza: administración, venta de muebles, inversión de capitales.<br><strong>Artículo 495</strong> — Caución juratoria: entrega de muebles y asignación de habitación.<br><strong>Artículo 507</strong> — Reclamación de créditos vencidos e inversión del capital (precepto neurálgico).",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Derecho sustantivo",
+     "clase": "norm-tag tag-info"
+    },
+    {
+     "p": "Ley 15/2015, de 2 de julio (LJV)",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Jurisdicción Voluntaria — Normas de tramitación",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Artículos 1 a 8</strong> — Disposiciones generales: ámbito, competencia, legitimación, postulación, Ministerio Fiscal, prueba, gastos, supletoriedad de la LEC.<br><strong>Artículos 13 a 22</strong> — Normas comunes de tramitación: iniciación, acumulación, competencia, admisión, comparecencia, decisión, recursos, caducidad, cumplimiento y ejecución.<br><strong>Artículos 100 a 103</strong> — Capítulo I del Título VI: autorización judicial al usufructuario.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Procedimiento principal",
+     "clase": "norm-tag tag-ok"
+    },
+    {
+     "p": "Ley Orgánica del Poder Judicial (LOPJ)",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Atribución orgánica de competencia",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Artículo 85</strong> — Atribución a los Juzgados de Primera Instancia del conocimiento de los expedientes de jurisdicción voluntaria de naturaleza civil.<br><strong>Ley Orgánica 7/2015</strong> — Reforma que transformó la figura del Secretario judicial en Letrado de la Administración de Justicia.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Competencia orgánica",
+     "clase": "norm-tag tag-gray"
+    },
+    {
+     "p": "Ley 1/2000, de 7 de enero (LEC)",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Enjuiciamiento Civil — Derecho supletorio",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Aplicación supletoria</strong> — Por remisión expresa del artículo 8 LJV, la LEC se aplica de forma supletoria tanto en la tramitación general como, específicamente, en el régimen de recursos contra la resolución que pone fin al expediente.<br><strong>Plazos de recursos</strong> — Los plazos y formas de los recursos contra la resolución se rigen por la LEC cuando el artículo 20 LJV remite a ella.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Derecho supletorio",
+     "clase": "norm-tag tag-warn"
+    }
+   ]
+  }
+ ],
+ "sinCapturar": [],
+ "texto": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO VI: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA RELATIVOS A LOS DERECHOS REALES · CAPÍTULO I De la autorización judicial al usufructuario para reclamar créditos vencidos que formen parte del usufructo Artículos 100 a 103 LJV · Artículo 507 CC Ley 15/2015, de 2 de julio Arts. 100-103 LJV Art. 507 CC Jurisdicción Voluntaria Imprimir / PDF 5 Artículos base 15+ Conexiones normativas 8+ Actores identificados 3 Plazos procesales Todos Ámbito y presupuestos Competencia y postulación Solicitud e iniciación Tramitación y resolución Recursos y ejecución Conexiones normativas Expandir todo Contraer todo − 100% + ↻ Artículos principales del Capítulo I 5 artículos ▲ Artículo 507 CC Base sustantiva Reclamación de créditos vencidos e inversión del capital por el usufructuario Precepto del Código Civil que constituye la base material del expediente de jurisdicción voluntaria regulado en los artículos 100 a 103 LJV. supuestos principales 2 reglas 4 Ver contenido completo ▾ Usufructuario con fianza el usufructuario podrá reclamar por sí los créditos vencidos que formen parte del usufructo si tuviese dada o diere la fianza correspondiente. Regla general: el usufructuario con fianza podrá dar al capital que realice el destino que estime conveniente. Libertad de disposición: Usufructuario sin fianza o con fianza insuficiente si el usufructuario estuviese dispensado de prestar fianza, o no hubiese podido constituirla, o la constituida no fuese suficiente, necesitará autorización del propietario, o del Juez en su defecto, para cobrar dichos créditos. Necesidad de autorización: el usufructuario sin fianza deberá poner a interés dicho capital de acuerdo con el propietario; a falta de acuerdo entre ambos, con autorización judicial; y, en todo caso, con las garantías suficientes para mantener la integridad del capital usufructuado. Destino del capital: Arts. 100-103 LJV Art. 491 CC Art. 494 CC Artículo 100 LJV Ámbito de aplicación Ámbito de aplicación del expediente Disposiciones aplicables cuando el usufructuario pretenda reclamar y cobrar por sí los créditos vencidos que formen parte del usufructo, cuando no cuente con fianza suficiente ni con la autorización del propietario. objetos del expediente 2 presupuestos 4 Ver contenido completo ▾ Doble objeto del expediente autorización judicial para reclamar y cobrar por sí los créditos vencidos que formen parte del usufructo. Objeto primero: autorización judicial para poner a interés el capital obtenido con dicha reclamación. Objeto segundo: Presupuestos habilitantes para la reclamación de créditos que el usufructuario esté dispensado de prestar fianza. Dispensa de fianza: que no hubiese podido constituir la fianza. Imposibilidad de constituirla: que la fianza constituida no fuese suficiente. Insuficiencia: en todo caso, que no cuente con la autorización del propietario para cobrar. Falta de autorización del propietario: Presupuesto para poner a interés el capital que el usufructuario no cuente con el acuerdo del propietario sobre el destino o inversión del capital obtenido. Falta de acuerdo: Presupuesto común a todos los supuestos la existencia previa de un crédito vencido que forme parte del usufructo. Crédito vencido: Legitimación corresponde exclusivamente al usufructuario, conforme a los artículos 100 y 102 LJV y al artículo 507 CC. Legitimación activa: el nudo propietario que se ha negado a autorizar la reclamación, así como aquellos terceros que pudieran estar interesados en el cobro del crédito. Interesados en el expediente: Art. 507 CC Art. 102 LJV Art. 2 LJV Artículo 101 LJV Competencia y postulación Competencia y postulación Regulación del juzgado competente, las normas de tramitación aplicables y el régimen de intervención de Abogado y Procurador en estos expedientes. apartados 2 conexiones 3 Ver contenido completo ▾ Competencia (apartado 1) será competente para conocer de estos expedientes el Juzgado de Primera Instancia del último domicilio o, en su defecto, de la última residencia del solicitante. Juzgado competente: la tramitación se ajustará a las normas comunes de la presente Ley, lo que enlaza directamente con los artículos 13 a 22 LJV (Título I, Capítulo II, Normas de tramitación). Normas de tramitación: la competencia objetiva se atribuye con carácter general a los Juzgados de Primera Instancia en los expedientes civiles de jurisdicción voluntaria (artículo 2 LJV y artículo 85 LOPJ). Competencia objetiva: Postulación (apartado 2) para la actuación en estos expedientes no será preceptiva la intervención de Abogado ni de Procurador. Regla general: conforme al régimen general (artículo 3 LJV) y al régimen de recursos (artículo 20 LJV, por remisión a la LEC ex artículo 8 LJV), la intervención de Abogado y Procurador podrá devenir preceptiva cuando se formule oposición o cuando se interpongan recursos de revisión o apelación. Excepciones: Art. 13-22 LJV Art. 2 LJV Art. 3 LJV Art. 20 LJV Art. 85 LOPJ Artículo 102 LJV Solicitud e iniciación Solicitud del expediente Requisitos de la solicitud de iniciación, documentos y medios de prueba que deben acompañarse, y exigencia adicional para poner a interés el capital. grupos de documentos 3 requisito adicional 1 Ver contenido completo ▾ Iniciación del expediente el expediente se iniciará mediante solicitud del usufructuario. Forma de iniciación: la solicitud se integra con el artículo 14 LJV, conforme al cual se consignarán los datos y circunstancias de identificación del solicitante, con indicación de un domicilio a efectos de notificaciones, exponiendo con claridad y precisión lo que se pida, así como los hechos y fundamentos jurídicos en que se funde la pretensión. Contenido formal: Documentos y medios de prueba que han de acompañarse su derecho, esto es, el título constitutivo del usufructo (testamento, escritura pública, resolución judicial, etc.). Título constitutivo del usufructo: la existencia del crédito vencido que se pretenda reclamar o, en su caso, el importe cobrado al realizar el mismo y que pretenda poner a interés. Existencia del crédito vencido: la falta de la autorización del propietario. Falta de autorización del propietario: Requisito adicional para poner a interés el capital en el supuesto de que solicitara la autorización para poner a interés el capital obtenido tras cobrar el crédito vencido, deberá ofrecer garantías suficientes para conservar su integridad. Garantías suficientes: esta exigencia entronca directamente con el inciso final del artículo 507 CC, que reclama «las garantías suficientes para mantener la integridad del capital usufructuado». Conexión con el artículo 507 CC: Art. 14 LJV Art. 507 CC Art. 100 LJV Artículo 103 LJV Tramitación y resolución Tramitación y resolución del expediente Desarrollo de la comparecencia, orden de audiencia, efecto de la oposición, resolución judicial y contenido específico según el tipo de autorización concedida. apartados 2 conexiones normativas 6 Ver contenido completo ▾ Tramitación (apartado 1) admitida a trámite por el Secretario judicial la solicitud (hoy Letrado de la Administración de Justicia, tras la reforma operada por la Ley Orgánica 7/2015), convocará a la comparecencia a quienes han de ser oídos. Admisión a trámite: se les oirá precisamente por este orden: 1) el promotor (usufructuario); 2) el propietario (nudo propietario); 3) aquellos que pudieran estar interesados en el cobro del crédito. Citados y orden de audiencia: posteriormente, se practicarán aquellas pruebas que hubieren sido propuestas y acordadas. Práctica de pruebas: Efecto de la eventual oposición salvo que la Ley expresamente lo prevea, la formulación de oposición por alguno de los interesados no hará contencioso el expediente ni impedirá que continúe su tramitación hasta que sea resuelto. Principio general: Resolución (apartado 2) el Juez, teniendo en cuenta la justificación ofrecida y valorando la conveniencia del cobro del crédito que forma parte del usufructo o de la inversión del capital obtenido, resolverá concediendo o denegando la autorización solicitada. Criterio judicial: Contenido específico: autorización para cobrar crédito si la autorización otorgada fuera para cobrar un crédito vencido que forme parte del usufructo, deberá establecerse la obligación del usufructuario de informar periódicamente, dentro de los plazos otorgados, al Tribunal sobre las gestiones realizadas, así como del resultado final. Obligación de informar: Contenido específico: autorización para poner a interés el capital si la autorización lo fuera para poner a interés el capital obtenido por el cobro de ese crédito, la resolución deberá contener las garantías a establecer por el usufructuario para conservar la integridad del capital. Garantías en la resolución: Arts. 13-22 LJV Art. 20 LJV Art. 22 LJV Art. 7 LJV Art. 507 CC LO 7/2015 Régimen de recursos y ejecución Derivado del art. 103 LJV Recursos, ejecución y gastos del expediente Normas aplicables a los recursos contra la resolución, al cumplimiento y ejecución, y al régimen de gastos del expediente de jurisdicción voluntaria. preceptos clave 3 Ver contenido completo ▾ Régimen de recursos contra la resolución que pone fin al expediente cabrá recurso conforme al artículo 20 LJV, que se remite, con carácter general, al régimen de recursos de la Ley de Enjuiciamiento Civil. Artículo 20 LJV: la intervención de Abogado y Procurador podrá devenir preceptiva cuando se interpongan recursos de revisión o apelación, conforme al artículo 20 LJV por remisión a la LEC ex artículo 8 LJV. Intervención preceptiva: Cumplimiento y ejecución el cumplimiento y ejecución de la resolución que pone fin al expediente se rigen por el artículo 22 LJV. Artículo 22 LJV: Gastos del expediente conforme al artículo 7 LJV, los gastos ocasionados por el expediente serán de cuenta del solicitante, salvo que la Ley disponga otra cosa. Artículo 7 LJV: Art. 20 LJV Art. 22 LJV Art. 7 LJV Art. 8 LJV LEC Normas comunes LJV Conexiones internas Título Preliminar y normas comunes de tramitación de la LJV Disposiciones generales (artículos 1 a 8) y normas de tramitación (artículos 13 a 22) de la Ley 15/2015, aplicables por remisión directa del artículo 101 LJV. artículos generales 8 artículos tramitación 10 Ver contenido completo ▾ Título Preliminar — Disposiciones generales (arts. 1 a 8) ámbito de aplicación de la Ley de Jurisdicción Voluntaria. Artículo 1: competencia objetiva de los Juzgados de Primera Instancia en los expedientes civiles de jurisdicción voluntaria. Artículo 2: legitimación y postulación en los expedientes de jurisdicción voluntaria. Artículo 3: intervención del Ministerio Fiscal. Artículo 4: prueba en los expedientes de jurisdicción voluntaria. Artículo 5: tramitación simultánea o posterior de expedientes o procesos. Artículo 6: gastos ocasionados por el expediente, de cuenta del solicitante salvo que la Ley disponga otra cosa. Artículo 7: carácter supletorio de la Ley de Enjuiciamiento Civil. Artículo 8: Título I, Capítulo II — Normas de tramitación (arts. 13 a 22) iniciación del expediente. Artículo 14: acumulación de expedientes. Artículo 15: apreciación de oficio de la falta de competencia y otros defectos u omisiones. Artículo 16: admisión de la solicitud y citación de los interesados. Artículo 17: celebración de la comparecencia. Artículo 18: decisión del expediente. Artículo 19: recursos. Artículo 20: caducidad del expediente. Artículo 21: cumplimiento y ejecución de la resolución que pone fin al expediente. Artículo 22: Arts. 1-8 LJV Arts. 13-22 LJV Art. 8 LJV → LEC No se encontraron artículos para « ». Prueba otra búsqueda o categoría. Indice de plazos procesales 3 trámites ▼ Acto o trámite procesal Plazo Fundamento normativo Información periódica del usufructuario al Tribunal sobre las gestiones realizadas para el cobro del crédito y el resultado final Dentro de los plazos otorgados por el Juez Artículo 103.2 LJV Caducidad del expediente de jurisdicción voluntaria por inactividad de las partes Plazo legal (art. 21 LJV) Artículo 21 LJV (por remisión del art. 101.1 LJV) Interposición de recursos contra la resolución que pone fin al expediente Plazos LEC (art. 20 LJV) Artículo 20 LJV → LEC (por remisión del art. 8 LJV) Mapa de participantes y actores 4 categorías · 8+ actores ▼ Órgano jurisdiccional Juzgado de Primera Instancia (competente por domicilio o residencia del solicitante) Juez (resuelve concediendo o denegando la autorización) Letrado de la Administración de Justicia (admite a trámite y convoca la comparecencia) Parte solicitante Usufructuario (legitimado activo exclusivo; promueve el expediente) Interesados en el expediente Nudo propietario (cuya autorización se ha denegado; oído en la comparecencia) Terceros interesados en el cobro del crédito (oídos en la comparecencia) Intervención facultativa Abogado (no preceptivo salvo oposición o recursos) Procurador (no preceptivo salvo oposición o recursos) Ministerio Fiscal (intervención conforme al artículo 4 LJV) Ecosistema normativo — conexiones relacionadas 4 cuerpos normativos ▼ Código Civil Régimen material del usufructo — Concepto de usufructo: derecho a disfrutar los bienes ajenos con la obligación de conservar su forma y sustancia. — Obligaciones previas al goce: inventario y fianza. — Dispensa legal de la fianza (vendedor/donante, padres, cónyuge sobreviviente). — Dispensa convencional de inventario o fianza. — Consecuencias de la falta de fianza: administración, venta de muebles, inversión de capitales. — Caución juratoria: entrega de muebles y asignación de habitación. — Reclamación de créditos vencidos e inversión del capital (precepto neurálgico). Artículo 467 Artículo 491 Artículo 492 Artículo 493 Artículo 494 Artículo 495 Artículo 507 Derecho sustantivo Ley 15/2015, de 2 de julio (LJV) Jurisdicción Voluntaria — Normas de tramitación — Disposiciones generales: ámbito, competencia, legitimación, postulación, Ministerio Fiscal, prueba, gastos, supletoriedad de la LEC. — Normas comunes de tramitación: iniciación, acumulación, competencia, admisión, comparecencia, decisión, recursos, caducidad, cumplimiento y ejecución. — Capítulo I del Título VI: autorización judicial al usufructuario. Artículos 1 a 8 Artículos 13 a 22 Artículos 100 a 103 Procedimiento principal Ley Orgánica del Poder Judicial (LOPJ) Atribución orgánica de competencia — Atribución a los Juzgados de Primera Instancia del conocimiento de los expedientes de jurisdicción voluntaria de naturaleza civil. — Reforma que transformó la figura del Secretario judicial en Letrado de la Administración de Justicia. Artículo 85 Ley Orgánica 7/2015 Competencia orgánica Ley 1/2000, de 7 de enero (LEC) Enjuiciamiento Civil — Derecho supletorio — Por remisión expresa del artículo 8 LJV, la LEC se aplica de forma supletoria tanto en la tramitación general como, específicamente, en el régimen de recursos contra la resolución que pone fin al expediente. — Los plazos y formas de los recursos contra la resolución se rigen por la LEC cuando el artículo 20 LJV remite a ella. Aplicación supletoria Plazos de recursos Derecho supletorio Leyenda de colores por categoría Ámbito de aplicación y presupuestos Competencia y postulación Solicitud e iniciación Tramitación y resolución Recursos y ejecución Conexiones normativas Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título VI, Capítulo I · Artículos 100 a 103 LJV · Artículo 507 CC · Generado como plantilla HTML reutilizable"
+}

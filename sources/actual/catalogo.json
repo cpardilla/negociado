@@ -1,0 +1,287 @@
+[
+ {
+  "id": "I-LEC",
+  "tipo": "indice",
+  "ruta": "00 - Indices/LEC - Indice interactivo.html"
+ },
+ {
+  "id": "I-LJV",
+  "tipo": "indice",
+  "ruta": "00 - Indices/LJV - Indice interactivo.html"
+ },
+ {
+  "id": "L-LEC",
+  "tipo": "legislacion",
+  "ruta": "01 - Legislación completa interactiva/Ley 1-2000, de 7 de enero, de Enjuiciamiento Civil.html"
+ },
+ {
+  "id": "L-LJV",
+  "tipo": "legislacion",
+  "ruta": "01 - Legislación completa interactiva/Ley 15-2015, de 2 de julio, de la Jurisdicción Voluntaria.html"
+ },
+ {
+  "id": "E01",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LEC/01 - De las diligencias preliminares/De las diligencias preliminares.html"
+ },
+ {
+  "id": "E02",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LEC/02 - De la división judicial de patrimonios/01 - CAPÍTULO I - De la división de la herencia/01 - Del procedimiento para la división de la herencia.html"
+ },
+ {
+  "id": "E03",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LEC/02 - De la división judicial de patrimonios/01 - CAPÍTULO I - De la división de la herencia/02 - De la intervención del caudal hereditario.html"
+ },
+ {
+  "id": "E04",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LEC/02 - De la división judicial de patrimonios/01 - CAPÍTULO I - De la división de la herencia/03 - De la administración del caudal hereditario.html"
+ },
+ {
+  "id": "E05",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LEC/02 - De la división judicial de patrimonios/02 - CAPÍTULO II - Del procedimiento para la liquidación del régimen económico matrimonial/Del procedimiento para la liquidación del REM.html"
+ },
+ {
+  "id": "E06",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/01 - TÍTULO PRELIMINAR - Disposiciones generales/TÍTULO PRELIMINAR - Disposiciones generales.html"
+ },
+ {
+  "id": "E07",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/02 - TÍTULO I - De las normas comunes en materia de tramitación de los expedientes de JV/TÍTULO I - De las normas comunes en materia de tramitación de los expedientes de JV.html"
+ },
+ {
+  "id": "E08",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/01 - CAPÍTULO I - De la autorización o aprobación judicial del reconocimiento de la filiación no matrimonial.html"
+ },
+ {
+  "id": "E09",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/02 - CAPÍTULO I BIS - De la aprobación judicial de la modificación de la mención registral del sexo de personas mayores de doce años y menores de catorce.html"
+ },
+ {
+  "id": "E10",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/03 - CAPÍTULO I TER - De la aprobación judicial de la nueva modificación de la mención registral relativa al sexo con posterioridad a una reversión de la rectificación de la mención registral.html"
+ },
+ {
+  "id": "E11",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/04 - CAPÍTULO I BIS & TER - Aprobación judicial de la modificación de la mención registral relativa al sexo - Capítulos I Bis y I Ter de la Ley 15-2015.html"
+ },
+ {
+  "id": "E12",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/05 - CAPÍTULO II - De la habilitación para comparecer en juicio y del nombramiento de defensor judicial.html"
+ },
+ {
+  "id": "E13",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/06 - CAPÍTULO III - De la adopción.html"
+ },
+ {
+  "id": "E14",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/07 - CAPÍTULO III bis - Del expediente de provisión de medidas judiciales de apoyo a personas con discapacidad.html"
+ },
+ {
+  "id": "E15",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/08 - CAPÍTULO IV - De la tutela, la curatela y la guarda de hecho.html"
+ },
+ {
+  "id": "E16",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/09 - CAPÍTULO V - De la concesión judicial de la emancipación y del beneficio de la mayoría de edad.html"
+ },
+ {
+  "id": "E17",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/10 - CAPÍTULO VI - De la protección del patrimonio de las personas con discapacidad.html"
+ },
+ {
+  "id": "E18",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/11 - CAPÍTULO VII - Del derecho al honor, a la intimidad y a la propia imagen del menor o persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica.html"
+ },
+ {
+  "id": "E19",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/12 - CAPÍTULO VIII - De la autorización o aprobación judicial para la realización de actos de disposición, gravamen u otros que se refieran a los bienes y derechos de menores y personas con discapacidad con medidas de apoyo.html"
+ },
+ {
+  "id": "E20",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/13 - CAPÍTULO IX - De la declaración de ausencia y fallecimiento.html"
+ },
+ {
+  "id": "E21",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/14 - CAPÍTULO X - De la extracción de órganos de donantes vivos.html"
+ },
+ {
+  "id": "E22",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/15 - CAPÍTULO XI - De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados.html"
+ },
+ {
+  "id": "E23",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/04 - TÍTULO IV - De los expedientes de jurisdicción voluntaria relativos al Derecho sucesorio/TÍTULO IV - De los expedientes de jurisdicción voluntaria relativos al Derecho sucesorio.html"
+ },
+ {
+  "id": "E24",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/05 - TÍTULO V - De los expedientes de jurisdicción voluntaria relativos al Derecho de obligaciones/TÍTULO V - De los expedientes de jurisdicción voluntaria relativos al Derecho de obligaciones.html"
+ },
+ {
+  "id": "E25",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/06 - TÍTULO VI - De los expedientes de jurisdicción voluntaria relativos a los derechos reales/01 - CAPÍTULO I - De la autorización judicial al usufructuario para reclamar créditos vencidos que formen parte del usufructo.html"
+ },
+ {
+  "id": "E26",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/06 - TÍTULO VI - De los expedientes de jurisdicción voluntaria relativos a los derechos reales/02 - CAPÍTULO II - Del expediente de deslinde de fincas no inscritas.html"
+ },
+ {
+  "id": "E27",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/07 - TÍTULO VII - De los expedientes de subastas voluntarias/TÍTULO VII - De los expedientes de subastas voluntarias.html"
+ },
+ {
+  "id": "E28",
+  "tipo": "esquema",
+  "ruta": "02 - Esquemas interactivos/LJV/08 - TÍTULO IX - De la conciliación/TÍTULO IX - De la conciliación.html"
+ },
+ {
+  "id": "G01",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LEC/01 - De las diligencias preliminares/De las diligencias preliminares.html"
+ },
+ {
+  "id": "G02",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LEC/02 - De la división judicial de patrimonios/01 - CAPÍTULO I - De la división de la herencia/01 - Del procedimiento para la división de la herencia.html"
+ },
+ {
+  "id": "G03",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LEC/02 - De la división judicial de patrimonios/01 - CAPÍTULO I - De la división de la herencia/02 - De la intervención del caudal hereditario.html"
+ },
+ {
+  "id": "G04",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LEC/02 - De la división judicial de patrimonios/01 - CAPÍTULO I - De la división de la herencia/03 - De la administración del caudal hereditario.html"
+ },
+ {
+  "id": "G05",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LEC/02 - De la división judicial de patrimonios/02 - CAPÍTULO II - Del procedimiento para la liquidación del régimen económico matrimonial/Del procedimiento para la liquidación del régimen económico matrimonial.html"
+ },
+ {
+  "id": "G06",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/01 - CAPÍTULO I - De la autorización o aprobación judicial del reconocimiento de la filiación no matrimonial.html"
+ },
+ {
+  "id": "G07",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/02 - CAPÍTULO I BIS - De la aprobación judicial de la modificación de la mención registral del sexo de personas mayores de doce años y menores de catorce.html"
+ },
+ {
+  "id": "G08",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/03 - CAPÍTULO I TER - De la aprobación judicial de la nueva modificación de la mención registral relativa al sexo con posterioridad a una reversión de la rectificación de la mención registral.html"
+ },
+ {
+  "id": "G09",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/04 - CAPÍTULO II - De la habilitación para comparecer en juicio y del nombramiento de defensor judicial.html"
+ },
+ {
+  "id": "G10",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/05 - CAPÍTULO III - De la adopción.html"
+ },
+ {
+  "id": "G11",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/06 - CAPÍTULO III bis - Del expediente de provisión de medidas judiciales de apoyo a personas con discapacidad.html"
+ },
+ {
+  "id": "G12",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/07 - CAPÍTULO IV - De la tutela, la curatela y la guarda de hecho.html"
+ },
+ {
+  "id": "G13",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/08 - CAPÍTULO V - De la concesión judicial de la emancipación y del beneficio de la mayoría de edad.html"
+ },
+ {
+  "id": "G14",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/09 - CAPÍTULO VI - De la protección del patrimonio de las personas con discapacidad.html"
+ },
+ {
+  "id": "G15",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/10 - CAPÍTULO VII - Del derecho al honor, a la intimidad y a la propia imagen del menor o persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica.html"
+ },
+ {
+  "id": "G16",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/11 - CAPÍTULO VIII - De la autorización o aprobación judicial para la realización de actos de disposición, gravamen u otros que se refieran a los bienes y derechos de menores y personas con discapacidad con medidas de apoyo.html"
+ },
+ {
+  "id": "G17",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/12 - CAPÍTULO IX - De la declaración de ausencia y fallecimiento.html"
+ },
+ {
+  "id": "G18",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/13 - CAPÍTULO X - De la extracción de órganos de donantes vivos.html"
+ },
+ {
+  "id": "G19",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/14 - CAPÍTULO XI - De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados.html"
+ },
+ {
+  "id": "G20",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/02 - TÍTULO IV - De los expedientes de jurisdicción voluntaria relativos al Derecho sucesorio/TÍTULO IV - De los expedientes de jurisdicción voluntaria relativos al Derecho sucesorio.html"
+ },
+ {
+  "id": "G21",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/03 - TÍTULO V - De los expedientes de jurisdicción voluntaria relativos al Derecho de obligaciones/TÍTULO V - De los expedientes de jurisdicción voluntaria relativos al Derecho de obligaciones.html"
+ },
+ {
+  "id": "G22",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/04 - TÍTULO VI - De los expedientes de jurisdicción voluntaria relativos a los derechos reales/01 - CAPÍTULO I - De la autorización judicial al usufructuario para reclamar créditos vencidos que formen parte del usufructo.html"
+ },
+ {
+  "id": "G23",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/04 - TÍTULO VI - De los expedientes de jurisdicción voluntaria relativos a los derechos reales/02 - CAPÍTULO II - Del expediente de deslinde de fincas no inscritas.html"
+ },
+ {
+  "id": "G24",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/05 - TÍTULO VII - De los expedientes de subastas voluntarias/TÍTULO VII - De los expedientes de subastas voluntarias.html"
+ },
+ {
+  "id": "G25",
+  "tipo": "guia",
+  "ruta": "03 - Guías de tramitación/LJV/06 - TÍTULO IX - De la conciliación/TÍTULO IX - De la conciliación.html"
+ }
+]

@@ -1,0 +1,911 @@
+{
+ "id": "G24",
+ "tipo": "guia",
+ "ruta": "03 - Guías de tramitación/LJV/05 - TÍTULO VII - De los expedientes de subastas voluntarias/TÍTULO VII - De los expedientes de subastas voluntarias.html",
+ "titulo": "De los expedientes de subastas voluntarias (artículos 108 a 111 LJV)",
+ "cabecera": {
+  "migas": "",
+  "titulo": "☰ ⚖ LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO VII De los expedientes de subastas voluntarias Artículos 108 a 111 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+  "subtitulo": "",
+  "etiquetas": []
+ },
+ "texto": "☰ ⚖ LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO VII De los expedientes de subastas voluntarias Artículos 108 a 111 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar Admisión y competencia › Solicitud y documentación › Tramitación previa › Publicidad y celebración › Resolución y adjudicación Identificación del supuesto… Mapa Recorrido Admisión y competencia ▾ Identificación del supuesto. Ám… El supuesto queda fuera del Tít… Competencia territorial. Fuero … Fuero del lugar de radicación d… Fuero del domicilio del titular Postulación. Intervención de Ab… Solicitud y documentación ▾ Preparación de la solicitud de … Documentación adicional para bi… Documentación para bienes o der… Existencia de arrendatarios u o… Comunicaciones a arrendatarios … Modo de realización: subasta el… Venta por persona o entidad esp… Pliego de condiciones particula… Tramitación previa ▾ Consulta previa al Registro Púb… Suspensión por afectación concu… Resolución del LAJ sobre la cel… Inadmisión de la solicitud Solicitud de certificación regi… Certificación, nota marginal y … Publicidad y celebración ▾ Celebración electrónica en el P… Análisis del resultado de la su… Sobreseimiento por falta de pos… Resolución y adjudicación ▾ Aprobación directa del remate Vista al solicitante por reserv… Sobreseimiento por no aprobació… Vista al solicitante por oferta… Sobreseimiento por rechazo de l… Decreto de adjudicación Testimonio del decreto. Título … Comunicaciones finales: Registr… Expediente concluido con adjudi… Referencias normativas Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria. Título VII — Arts. 108 a 111. LEC — Arts. 641, 648, 661. RDLeg 1/2020 (TRLC). Registro Público Concursal. Ley 19/2015 — Subasta electrónica AEBOE. Identificación del supuesto. Ámbito de aplicación del Título VII Referencias normativas Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria. Título VII — Arts. 108 a 111. LEC — Arts. 641, 648, 661. RDLeg 1/2020 (TRLC). Registro Público Concursal. Ley 19/2015 — Subasta electrónica AEBOE. LAJ / Interesado Identificación del supuesto. Ámbito de aplicación del Título VII Paso 1 de este recorrido · Fase 1: Admisión y competencia Antes de iniciar el expediente, compruebe si el supuesto encaja en el ámbito del Título VII: enajenación en subasta, fuera de un procedimiento de apremio, de bienes o derechos determinados, a instancia del propio interesado. Ámbito de aplicación. Artículo 108 de la Ley 15/2015. Requisitos acumulativos del artículo 108 Se trata de una enajenación en subasta. La subasta se celebra fuera de un procedimiento de apremio. El objeto son bienes o derechos determinados. La iniciativa parte del propio interesado (titular o con poder de disposición). Si falta cualquiera de los requisitos, este Título no resulta aplicable: la subasta deberá encauzarse por la vía ejecutiva ordinaria (arts. 643 y siguientes de la Ley de Enjuiciamiento Civil) o por la vía concursal correspondiente. Nota ¿El supuesto reúne los cuatro requisitos del artículo 108? A Sí, concurren todos los requisitos B No, falta alguno de los requisitos ← Volver",
+ "inicio": "inicio",
+ "actores": {
+  "etiquetas": {
+   "ambos": "LAJ / Interesado",
+   "laj": "Letrado de la Admón. de Justicia"
+  },
+  "sinEtiqueta": []
+ },
+ "pasos": {
+  "inicio": {
+   "ph": 0,
+   "t": "Identificación del supuesto. Ámbito de aplicación del Título VII",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Antes de iniciar el expediente, compruebe si el supuesto encaja en el ámbito del Título VII: enajenación en subasta, fuera de un procedimiento de apremio, de bienes o derechos determinados, a instancia del propio interesado."
+    ],
+    [
+     "l",
+     "<b>Artículo 108 de la Ley 15/2015.</b> Ámbito de aplicación."
+    ],
+    [
+     "cl",
+     "Requisitos acumulativos del artículo 108",
+     [
+      "Se trata de una enajenación en subasta.",
+      "La subasta se celebra fuera de un procedimiento de apremio.",
+      "El objeto son bienes o derechos determinados.",
+      "La iniciativa parte del propio interesado (titular o con poder de disposición)."
+     ]
+    ],
+    [
+     "n",
+     "Si falta cualquiera de los requisitos, este Título no resulta aplicable: la subasta deberá encauzarse por la vía ejecutiva ordinaria (arts. 643 y siguientes de la Ley de Enjuiciamiento Civil) o por la vía concursal correspondiente."
+    ]
+   ],
+   "q": "¿El supuesto reúne los cuatro requisitos del artículo 108?",
+   "opts": [
+    {
+     "t": "Sí, concurren todos los requisitos",
+     "l": "A",
+     "n": "competencia"
+    },
+    {
+     "t": "No, falta alguno de los requisitos",
+     "l": "B",
+     "n": "fin_no_ambito"
+    }
+   ]
+  },
+  "fin_no_ambito": {
+   "ph": 0,
+   "t": "El supuesto queda fuera del Título VII",
+   "ac": "ambos",
+   "c": [
+    [
+     "w",
+     "El expediente de subasta voluntaria del Título VII no es aplicable a este supuesto. Reconduzca la tramitación por el cauce adecuado."
+    ],
+    [
+     "i",
+     "Posibles vías alternativas, según el caso:"
+    ],
+    [
+     "cl",
+     "Vías alternativas",
+     [
+      "Subasta judicial ejecutiva (procedimiento de apremio): artículos 643 y siguientes de la Ley de Enjuiciamiento Civil.",
+      "Subasta notarial o administrativa, si procediere por la naturaleza del bien o del título.",
+      "Venta directa autorizada judicialmente en otros expedientes de jurisdicción voluntaria.",
+      "Vía concursal si el titular se halla en situación de concurso (Texto Refundido de la Ley Concursal)."
+     ]
+    ]
+   ],
+   "end": "error"
+  },
+  "competencia": {
+   "ph": 0,
+   "t": "Competencia territorial. Fuero aplicable",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "La competencia objetiva corresponde siempre al Juzgado de Primera Instancia. El fuero territorial depende de la naturaleza del bien."
+    ],
+    [
+     "l",
+     "<b>Artículo 109.1 de la Ley 15/2015.</b> Competencia."
+    ]
+   ],
+   "q": "¿Qué tipo de bien o derecho se pretende subastar?",
+   "opts": [
+    {
+     "t": "Bien inmueble",
+     "l": "A",
+     "n": "competencia_inmueble"
+    },
+    {
+     "t": "Bien mueble o derecho no inmobiliario",
+     "l": "B",
+     "n": "competencia_mueble"
+    }
+   ]
+  },
+  "competencia_inmueble": {
+   "ph": 0,
+   "t": "Fuero del lugar de radicación del inmueble",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Tratándose de bienes inmuebles, será competente el Juzgado de Primera Instancia del lugar donde éstos radiquen (forum rei sitae)."
+    ],
+    [
+     "l",
+     "<b>Artículo 109.1, párrafo segundo, de la Ley 15/2015.</b>"
+    ],
+    [
+     "n",
+     "Este fuero es imperativo y no admite elección por el solicitante, aun cuando el titular tenga su domicilio en otra demarcación."
+    ]
+   ],
+   "nx": "postulacion"
+  },
+  "competencia_mueble": {
+   "ph": 0,
+   "t": "Fuero del domicilio del titular",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Será competente el Juzgado de Primera Instancia que corresponda al domicilio del titular. Si fueran varios titulares, el correspondiente a cualquiera de ellos, a elección del solicitante."
+    ],
+    [
+     "l",
+     "<b>Artículo 109.1, párrafo primero, de la Ley 15/2015.</b>"
+    ]
+   ],
+   "nx": "postulacion"
+  },
+  "postulacion": {
+   "ph": 0,
+   "t": "Postulación. Intervención de Abogado y Procurador",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Para la actuación en este expediente no será preceptiva la intervención de Abogado y Procurador."
+    ],
+    [
+     "l",
+     "<b>Artículo 109.2 de la Ley 15/2015.</b> Postulación."
+    ],
+    [
+     "n",
+     "El interesado podrá, no obstante, valerse voluntariamente de dichos profesionales, asumiendo sus honorarios. Esta regla enlaza con el régimen general de postulación de la jurisdicción voluntaria previsto en el artículo 3 de la propia Ley 15/2015."
+    ]
+   ],
+   "nx": "solicitud"
+  },
+  "solicitud": {
+   "ph": 1,
+   "t": "Preparación de la solicitud de iniciación del expediente",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Será necesaria solicitud de iniciación del expediente, con la identificación y estado del bien o derecho."
+    ],
+    [
+     "l",
+     "<b>Artículo 110.1 de la Ley 15/2015.</b> Solicitud."
+    ],
+    [
+     "cl",
+     "Contenido mínimo de la solicitud",
+     [
+      "Identificación completa del solicitante.",
+      "Identificación y estado del bien o derecho que se pretende subastar.",
+      "Documentos acreditativos de la capacidad legal para contratar del solicitante (letra a).",
+      "Documentos que acrediten su poder de disposición sobre el objeto o derecho de la subasta (letra b).",
+      "Pliego de condiciones particulares con la valoración de los bienes o derechos (letra c)."
+     ]
+    ]
+   ],
+   "q": "¿El bien o derecho está sujeto a publicidad registral?",
+   "opts": [
+    {
+     "t": "Sí, es un bien o derecho registrable",
+     "l": "A",
+     "n": "doc_registrable"
+    },
+    {
+     "t": "No, no está sujeto a publicidad registral",
+     "l": "B",
+     "n": "doc_no_registrable"
+    }
+   ]
+  },
+  "doc_registrable": {
+   "ph": 1,
+   "t": "Documentación adicional para bienes o derechos registrables",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Cuando se trate de bienes o derechos registrables, se acompañará certificación registral de dominio y cargas."
+    ],
+    [
+     "l",
+     "<b>Artículo 110.1.b) de la Ley 15/2015.</b>"
+    ],
+    [
+     "cl",
+     "Documentos a adjuntar por el solicitante",
+     [
+      "Documentos acreditativos de la capacidad legal para contratar.",
+      "Documentos acreditativos del poder de disposición.",
+      "Certificación registral de dominio y cargas, actualizada.",
+      "Pliego de condiciones particulares con la valoración."
+     ]
+    ]
+   ],
+   "nx": "arrendatarios"
+  },
+  "doc_no_registrable": {
+   "ph": 1,
+   "t": "Documentación para bienes o derechos no registrables",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Cuando el bien o derecho no esté sujeto a publicidad registral, bastará con la documentación general del artículo 110.1, sin necesidad de certificación registral."
+    ],
+    [
+     "cl",
+     "Documentos a adjuntar",
+     [
+      "Documentos acreditativos de la capacidad legal para contratar.",
+      "Documentos acreditativos del poder de disposición sobre el objeto o derecho.",
+      "Pliego de condiciones particulares con la valoración."
+     ]
+    ]
+   ],
+   "nx": "arrendatarios"
+  },
+  "arrendatarios": {
+   "ph": 1,
+   "t": "Existencia de arrendatarios u ocupantes del inmueble",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Solo relevante cuando la subasta recae sobre un inmueble. En caso de existir arrendatarios u ocupantes del inmueble de cuya enajenación se trate, el solicitante deberá identificarlos en su solicitud inicial."
+    ],
+    [
+     "l",
+     "<b>Artículo 110.2 de la Ley 15/2015</b>, que se remite al <b>artículo 661 de la Ley de Enjuiciamiento Civil.</b>"
+    ],
+    [
+     "w",
+     "La omisión de esta identificación puede generar indefensión a los ocupantes y nulidad de actuaciones, así como responsabilidad del solicitante frente al adjudicatario por cargas o situaciones posesorias ocultas."
+    ]
+   ],
+   "q": "¿Existen arrendatarios u ocupantes del inmueble?",
+   "opts": [
+    {
+     "t": "Sí, hay arrendatarios u ocupantes",
+     "l": "A",
+     "n": "notif_661"
+    },
+    {
+     "t": "No (o no se trata de un inmueble)",
+     "l": "B",
+     "n": "modo_venta"
+    }
+   ]
+  },
+  "notif_661": {
+   "ph": 1,
+   "t": "Comunicaciones a arrendatarios y ocupantes (artículo 661 LEC)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El solicitante identificará a los arrendatarios y ocupantes en la solicitud inicial, y se procederá en la forma prescrita en el artículo 661 de la Ley de Enjuiciamiento Civil."
+    ],
+    [
+     "l",
+     "<b>Artículo 661 de la Ley de Enjuiciamiento Civil.</b> Comunicaciones a arrendatarios y ocupantes de hecho. Trámites para determinar si tienen o no derecho a permanecer en el inmueble tras la enajenación."
+    ],
+    [
+     "cl",
+     "Actuaciones a practicar",
+     [
+      "Notificación individual a cada arrendatario u ocupante identificado.",
+      "Traslado de la información relevante sobre la subasta prevista.",
+      "En su caso, tramitación del incidente sobre el derecho a permanecer en el inmueble conforme al artículo 661 de la LEC."
+     ]
+    ]
+   ],
+   "nx": "modo_venta"
+  },
+  "modo_venta": {
+   "ph": 1,
+   "t": "Modo de realización: subasta electrónica o entidad especializada",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "En la solicitud podrá pedirse al Secretario judicial que acuerde la venta del bien o derecho por persona o entidad especializada. De estimarse procedente, se acordará con sujeción a lo establecido en el artículo 641 de la Ley de Enjuiciamiento Civil en cuanto sea compatible con este Título."
+    ],
+    [
+     "l",
+     "<b>Artículo 110.3 de la Ley 15/2015</b>, en relación con el <b>artículo 641 de la Ley de Enjuiciamiento Civil.</b>"
+    ]
+   ],
+   "q": "¿Qué modo de realización se solicita?",
+   "opts": [
+    {
+     "t": "Subasta electrónica ordinaria (Portal AEBOE)",
+     "l": "A",
+     "n": "pliego"
+    },
+    {
+     "t": "Venta por persona o entidad especializada (art. 641 LEC)",
+     "l": "B",
+     "n": "especializada"
+    }
+   ]
+  },
+  "especializada": {
+   "ph": 1,
+   "t": "Venta por persona o entidad especializada",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "De estimarse procedente la petición del solicitante, el Secretario judicial acordará la venta por persona o entidad especializada con sujeción al artículo 641 de la Ley de Enjuiciamiento Civil en cuanto sea compatible con las disposiciones del Título VII."
+    ],
+    [
+     "l",
+     "<b>Artículo 641 de la Ley de Enjuiciamiento Civil.</b> Realización por persona o entidad especializada: requisitos, caución, precio mínimo y régimen temporal."
+    ],
+    [
+     "n",
+     "Aun cuando se opte por esta vía, el pliego de condiciones particulares del artículo 110.1.c) sigue siendo necesario, pues fija las reglas económicas y materiales de la enajenación."
+    ]
+   ],
+   "nx": "pliego"
+  },
+  "pliego": {
+   "ph": 1,
+   "t": "Pliego de condiciones particulares",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "El pliego de condiciones particulares recoge las reglas con arreglo a las cuales ha de celebrarse la subasta y la valoración de los bienes o derechos a subastar."
+    ],
+    [
+     "l",
+     "<b>Artículo 110.1.c) de la Ley 15/2015.</b>"
+    ],
+    [
+     "cl",
+     "Contenido típico del pliego",
+     [
+      "Valoración o tipo de salida del bien o derecho.",
+      "Tipo mínimo por debajo del cual el solicitante no aceptará el remate.",
+      "Reserva, en su caso, del derecho del solicitante a aprobar o rechazar el remate.",
+      "Reglas sobre consignación o depósito previo de los licitadores.",
+      "Condiciones de pago del precio: plazo, forma y consecuencias del impago.",
+      "Gastos e impuestos a cargo del adjudicatario.",
+      "Cargas, servidumbres, gravámenes o situaciones posesorias subsistentes."
+     ]
+    ],
+    [
+     "n",
+     "El pliego opera como lex specialis de la subasta: rige en todo aquello no previsto por la Ley de Enjuiciamiento Civil, y se expresará íntegramente en los edictos (artículo 111.5)."
+    ]
+   ],
+   "nx": "consulta_rpc"
+  },
+  "consulta_rpc": {
+   "ph": 2,
+   "t": "Consulta previa al Registro Público Concursal",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El Secretario judicial, antes de resolver sobre la solicitud, consultará el Registro Público Concursal a los efectos previstos en la legislación especial."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.1 de la Ley 15/2015</b>, en relación con el <b>Texto Refundido de la Ley Concursal (Real Decreto Legislativo 1/2020, de 5 de mayo).</b>"
+    ],
+    [
+     "n",
+     "Finalidad: comprobar que el titular no se halla en situación de concurso o preconcurso que pudiera afectar a su facultad de disposición sobre el bien o a la competencia del juez del concurso respecto de la enajenación."
+    ]
+   ],
+   "q": "¿La consulta revela alguna inscripción concursal relevante asociada al titular?",
+   "opts": [
+    {
+     "t": "No, no hay inscripciones que afecten",
+     "l": "A",
+     "n": "resolucion_celebracion"
+    },
+    {
+     "t": "Sí, el titular consta en concurso o situación similar",
+     "l": "B",
+     "n": "fin_concurso"
+    }
+   ]
+  },
+  "fin_concurso": {
+   "ph": 2,
+   "t": "Suspensión por afectación concursal",
+   "ac": "laj",
+   "c": [
+    [
+     "w",
+     "Detectada una inscripción concursal relevante, el expediente no puede continuar por este cauce: debe estarse a lo dispuesto por la legislación concursal sobre la enajenación de bienes del concursado."
+    ],
+    [
+     "cl",
+     "Actuaciones a practicar",
+     [
+      "Comunicar al solicitante la existencia de la inscripción concursal.",
+      "Remitir, en su caso, las actuaciones al juez del concurso competente.",
+      "Abstenerse de acordar la celebración de la subasta en tanto subsista la limitación."
+     ]
+    ],
+    [
+     "l",
+     "Texto Refundido de la Ley Concursal (RDLeg 1/2020): régimen de la facultad de disposición del concursado y de la realización de bienes en sede concursal."
+    ]
+   ],
+   "end": "warning"
+  },
+  "resolucion_celebracion": {
+   "ph": 2,
+   "t": "Resolución del LAJ sobre la celebración de la subasta",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "A la vista de la documentación, el Secretario judicial resolverá lo que proceda sobre la celebración de la subasta."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.2 de la Ley 15/2015.</b>"
+    ],
+    [
+     "cl",
+     "Contenido del decreto de admisión",
+     [
+      "Declaración de procedencia de la subasta.",
+      "Fijación del régimen de publicidad conforme al pliego.",
+      "Comunicación al Registro Público Concursal de la existencia del expediente, con expresa especificación del número de identificación fiscal del titular (persona física o jurídica) cuyo bien vaya a ser objeto de la subasta.",
+      "Orden de práctica de los actos preparatorios (certificación registral, edictos, etc.)."
+     ]
+    ],
+    [
+     "n",
+     "El Registro Público Concursal notificará al Juzgado la práctica de cualquier asiento asociado al NIF notificado. El Secretario judicial comunicará asimismo la finalización del expediente cuando ésta se produzca."
+    ]
+   ],
+   "q": "¿La documentación y presupuestos son suficientes para acordar la celebración?",
+   "opts": [
+    {
+     "t": "Sí, se acuerda la celebración de la subasta",
+     "l": "A",
+     "n": "certificacion_registral"
+    },
+    {
+     "t": "No, se inadmite la solicitud",
+     "l": "B",
+     "n": "fin_inadmision"
+    }
+   ]
+  },
+  "fin_inadmision": {
+   "ph": 2,
+   "t": "Inadmisión de la solicitud",
+   "ac": "laj",
+   "c": [
+    [
+     "n",
+     "El decreto de inadmisión pone fin al expediente sin adjudicación. El interesado podrá subsanar los defectos detectados y promover, en su caso, un nuevo expediente."
+    ],
+    [
+     "i",
+     "La finalización del expediente deberá comunicarse al Registro Público Concursal, tal como prevé el artículo 111.2, párrafo cuarto."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.2 de la Ley 15/2015.</b>"
+    ]
+   ],
+   "end": "neutral"
+  },
+  "certificacion_registral": {
+   "ph": 2,
+   "t": "Solicitud de certificación registral de dominio y cargas",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Acordada la celebración, si se tratare de la subasta de un bien inmueble o derecho real inscrito en el Registro de la Propiedad o de bienes muebles sujetos a un régimen de publicidad registral similar, el Secretario judicial solicitará por procedimientos electrónicos certificación registral de dominio y cargas."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.3, párrafo primero, de la Ley 15/2015.</b>"
+    ]
+   ],
+   "q": "¿El bien está sujeto a publicidad registral?",
+   "opts": [
+    {
+     "t": "Sí (Registro de la Propiedad, Bienes Muebles, etc.)",
+     "l": "A",
+     "n": "nota_marginal"
+    },
+    {
+     "t": "No",
+     "l": "B",
+     "n": "celebracion_subasta"
+    }
+   ]
+  },
+  "nota_marginal": {
+   "ph": 2,
+   "t": "Certificación, nota marginal y deber de notificación continuada",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El Registrador de la propiedad expedirá la certificación con información continuada por medios electrónicos y hará constar por nota al margen del bien o derecho esta circunstancia."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.3 de la Ley 15/2015.</b>"
+    ],
+    [
+     "d",
+     "<b>Caducidad de la nota marginal: seis meses.</b> Caducará a los seis meses de su fecha salvo que con anterioridad el Secretario judicial notifique al Registrador el cierre del expediente o su suspensión, en cuyo caso el plazo se computará desde que el Secretario judicial notifique su reanudación."
+    ],
+    [
+     "cl",
+     "Deberes del Registrador",
+     [
+      "Expedir la certificación de dominio y cargas con información continuada por procedimientos electrónicos.",
+      "Hacer constar por nota marginal la situación de venta en subasta del bien o derecho.",
+      "Notificar, inmediatamente y de forma telemática, al Secretario judicial y al Portal de Subastas de la Agencia Estatal Boletín Oficial del Estado la presentación de otro u otros títulos que afecten o modifiquen la información inicial."
+     ]
+    ],
+    [
+     "n",
+     "El Portal de Subastas recogerá la información proporcionada por el Registro de modo inmediato para su traslado a los que consulten su contenido."
+    ]
+   ],
+   "nx": "celebracion_subasta"
+  },
+  "celebracion_subasta": {
+   "ph": 3,
+   "t": "Celebración electrónica en el Portal de Subastas de la AEBOE",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "La subasta se llevará a cabo, en todo caso, de forma electrónica en el Portal de Subastas de la Agencia Estatal Boletín Oficial del Estado, bajo la responsabilidad del Secretario judicial."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.4 de la Ley 15/2015.</b> Forma de celebración. Aplicación de las disposiciones de la Ley de Enjuiciamiento Civil en cuanto sean compatibles."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.5 de la Ley 15/2015.</b> La publicidad y celebración se ajustarán a lo establecido en la Ley de Enjuiciamiento Civil en todo aquello no previsto en el pliego de condiciones particulares. <b>En los edictos se expresará el pliego de condiciones.</b>"
+    ],
+    [
+     "cl",
+     "Actuaciones durante la fase de publicidad y celebración",
+     [
+      "Publicación de la subasta en el Portal de Subastas AEBOE.",
+      "Edictos con expresión íntegra del pliego de condiciones.",
+      "Aplicación supletoria de la LEC: requisitos de los licitadores, depósito, duración de la subasta electrónica (artículo 648 LEC), etc.",
+      "Información continuada al Portal por parte del Registrador de títulos sobrevenidos que afecten a la información inicial."
+     ]
+    ],
+    [
+     "n",
+     "La electronificación obligatoria, impuesta desde la reforma operada por la Ley 19/2015, de 13 de julio, busca maximizar la concurrencia, la transparencia y la obtención del mejor precio."
+    ]
+   ],
+   "nx": "resultado_subasta"
+  },
+  "resultado_subasta": {
+   "ph": 3,
+   "t": "Análisis del resultado de la subasta",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Terminada la subasta, el Secretario judicial, mediante decreto, aprobará el remate en favor del único o mejor postor, siempre y cuando cubra el tipo mínimo que hubiera fijado el solicitante o no se hubiere reservado expresamente el derecho a aprobarla."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.6 y 111.7 de la Ley 15/2015.</b>"
+    ]
+   ],
+   "q": "¿Cuál es el resultado de la subasta?",
+   "opts": [
+    {
+     "t": "Hay postor que cubre el tipo mínimo y no hay reserva de aprobación",
+     "l": "A",
+     "n": "aprobacion_directa"
+    },
+    {
+     "t": "Hay postor, pero el solicitante se reservó el derecho a aprobar el remate",
+     "l": "B",
+     "n": "vista_solicitante"
+    },
+    {
+     "t": "Hay oferta modificando alguna de las condiciones",
+     "l": "C",
+     "n": "vista_modificacion"
+    },
+    {
+     "t": "No ha habido ningún postor",
+     "l": "D",
+     "n": "fin_sin_postores"
+    }
+   ]
+  },
+  "fin_sin_postores": {
+   "ph": 3,
+   "t": "Sobreseimiento por falta de postores",
+   "ac": "laj",
+   "c": [
+    [
+     "n",
+     "Cuando en la subasta no hubiere ningún postor, se sobreseerá el expediente."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.7 de la Ley 15/2015.</b>"
+    ],
+    [
+     "cl",
+     "Actuaciones de cierre",
+     [
+      "Decreto de sobreseimiento del expediente.",
+      "Comunicación al Registro Público Concursal de la finalización del expediente (art. 111.2, párrafo cuarto).",
+      "Comunicación al Registrador para la cancelación de la nota marginal, si se hubiera practicado (art. 111.3).",
+      "El interesado podrá promover un nuevo expediente en el futuro con otro pliego de condiciones o con nueva valoración."
+     ]
+    ]
+   ],
+   "end": "neutral"
+  },
+  "aprobacion_directa": {
+   "ph": 4,
+   "t": "Aprobación directa del remate",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Cuando el postor cubre el tipo mínimo fijado por el solicitante y éste no se hubiere reservado expresamente el derecho a aprobar la subasta, el Secretario judicial, mediante decreto, aprobará el remate en favor del único o mejor postor."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.6, párrafo primero, de la Ley 15/2015.</b>"
+    ]
+   ],
+   "nx": "decreto_adjudicacion"
+  },
+  "vista_solicitante": {
+   "ph": 4,
+   "t": "Vista al solicitante por reserva del derecho a aprobar el remate",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Si el solicitante se hubiera reservado expresamente el derecho a aprobar el remate, se le dará vista del expediente para que en el término de tres días pida lo que le interese."
+    ],
+    [
+     "d",
+     "<b>Plazo: tres días.</b> Término para que el solicitante se pronuncie tras dársele vista del expediente (artículo 111.6)."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.6, párrafo segundo, de la Ley 15/2015.</b>"
+    ]
+   ],
+   "q": "¿Qué resuelve el solicitante en el plazo de tres días?",
+   "opts": [
+    {
+     "t": "Aprueba el remate",
+     "l": "A",
+     "n": "decreto_adjudicacion"
+    },
+    {
+     "t": "No aprueba el remate",
+     "l": "B",
+     "n": "fin_no_aprobacion"
+    }
+   ]
+  },
+  "fin_no_aprobacion": {
+   "ph": 4,
+   "t": "Sobreseimiento por no aprobación del solicitante",
+   "ac": "laj",
+   "c": [
+    [
+     "n",
+     "Cuando el solicitante, tras la vista, no aprueba el remate ofrecido, se sobreseerá el expediente."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.7 de la Ley 15/2015.</b> «Cuando en la subasta no hubiere ningún postor o el solicitante no hubiera aceptado la proposición, se sobreseerá el expediente.»"
+    ],
+    [
+     "cl",
+     "Actuaciones de cierre",
+     [
+      "Decreto de sobreseimiento del expediente.",
+      "Comunicación al Registro Público Concursal de la finalización del expediente.",
+      "Comunicación al Registrador para la cancelación de la nota marginal, si se hubiera practicado."
+     ]
+    ]
+   ],
+   "end": "neutral"
+  },
+  "vista_modificacion": {
+   "ph": 4,
+   "t": "Vista al solicitante por oferta con condiciones modificadas",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Igual comunicación se le dará al solicitante en el caso de que por algún licitador se hiciere la oferta de aceptar el remate modificando algunas de las condiciones. Si el solicitante aprueba el remate o acepta la proposición, se resolverá teniendo por aprobado el remate en favor del licitador de la misma."
+    ],
+    [
+     "d",
+     "<b>Plazo: tres días.</b> Término para que el solicitante se pronuncie sobre la proposición modificada."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.6, párrafos segundo y tercero, de la Ley 15/2015.</b>"
+    ]
+   ],
+   "q": "¿Qué resuelve el solicitante sobre la proposición modificada?",
+   "opts": [
+    {
+     "t": "Acepta la proposición",
+     "l": "A",
+     "n": "decreto_adjudicacion"
+    },
+    {
+     "t": "No acepta la proposición",
+     "l": "B",
+     "n": "fin_rechazo_modificacion"
+    }
+   ]
+  },
+  "fin_rechazo_modificacion": {
+   "ph": 4,
+   "t": "Sobreseimiento por rechazo de la proposición modificada",
+   "ac": "laj",
+   "c": [
+    [
+     "n",
+     "Si el solicitante no acepta la proposición de remate con condiciones modificadas, se sobreseerá el expediente por aplicación del artículo 111.7."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.7 de la Ley 15/2015.</b> Sobreseimiento por no aceptación de la proposición."
+    ],
+    [
+     "cl",
+     "Actuaciones de cierre",
+     [
+      "Decreto de sobreseimiento.",
+      "Comunicación al Registro Público Concursal de la finalización.",
+      "Cancelación, en su caso, de la nota marginal registral."
+     ]
+    ]
+   ],
+   "end": "neutral"
+  },
+  "decreto_adjudicacion": {
+   "ph": 4,
+   "t": "Decreto de adjudicación",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El decreto de adjudicación es la resolución que cierra positivamente la subasta y sirve de título inscribible al adjudicatario."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.8 de la Ley 15/2015.</b>"
+    ],
+    [
+     "cl",
+     "Contenido obligatorio del decreto de adjudicación",
+     [
+      "Descripción del bien o derecho.",
+      "Identificación de los intervinientes (solicitante, adjudicatario y, en su caso, sus representantes).",
+      "Expresión de las condiciones de la adjudicación (precio, forma de pago, cargas asumidas, etc.).",
+      "Los demás requisitos necesarios, en su caso, para la inscripción registral (descripción catastral, referencia registral, manifestaciones fiscales, etc.)."
+     ]
+    ]
+   ],
+   "nx": "testimonio"
+  },
+  "testimonio": {
+   "ph": 4,
+   "t": "Testimonio del decreto. Título para la inscripción registral",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Un testimonio del decreto de adjudicación, que se entregará al adjudicatario, será título suficiente para la práctica de las inscripciones registrales que, en su caso, correspondan."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.8, párrafo segundo, de la Ley 15/2015.</b>"
+    ],
+    [
+     "n",
+     "El testimonio tiene eficacia equivalente a una escritura pública de compraventa a efectos registrales en relación con las inscripciones derivadas de la adjudicación."
+    ]
+   ],
+   "nx": "comunicacion_final_rpc"
+  },
+  "comunicacion_final_rpc": {
+   "ph": 4,
+   "t": "Comunicaciones finales: Registro Público Concursal y Registro",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El Secretario judicial pondrá en conocimiento del Registro Público Concursal la finalización del expediente cuando la misma se produzca."
+    ],
+    [
+     "l",
+     "<b>Artículo 111.2, párrafo cuarto, de la Ley 15/2015.</b>"
+    ],
+    [
+     "cl",
+     "Actuaciones finales",
+     [
+      "Comunicación al Registro Público Concursal de la finalización del expediente.",
+      "Notificación al Registrador del cierre del expediente a los efectos de la nota marginal (art. 111.3).",
+      "Entrega del testimonio del decreto de adjudicación al adjudicatario.",
+      "Archivo del expediente."
+     ]
+    ]
+   ],
+   "nx": "fin_exitoso"
+  },
+  "fin_exitoso": {
+   "ph": 4,
+   "t": "Expediente concluido con adjudicación",
+   "ac": "laj",
+   "c": [
+    [
+     "n",
+     "El expediente de subasta voluntaria ha concluido con adjudicación firme. El adjudicatario dispone del testimonio del decreto como título suficiente para la inscripción registral que corresponda."
+    ],
+    [
+     "cl",
+     "Resultados alcanzados",
+     [
+      "Aprobación del remate mediante decreto del Secretario judicial.",
+      "Decreto de adjudicación con todos los requisitos del artículo 111.8.",
+      "Testimonio entregado al adjudicatario como título inscribible.",
+      "Comunicación al Registro Público Concursal de la finalización del expediente.",
+      "Notificación al Registrador para el cierre del expediente y de la nota marginal."
+     ]
+    ]
+   ],
+   "end": "success"
+  }
+ },
+ "otrosDatos": {
+  "PHASES": [
+   "Admisión y competencia",
+   "Solicitud y documentación",
+   "Tramitación previa",
+   "Publicidad y celebración",
+   "Resolución y adjudicación"
+  ]
+ }
+}

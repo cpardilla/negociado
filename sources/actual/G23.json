@@ -1,0 +1,798 @@
+{
+ "id": "G23",
+ "tipo": "guia",
+ "ruta": "03 - Guías de tramitación/LJV/04 - TÍTULO VI - De los expedientes de jurisdicción voluntaria relativos a los derechos reales/02 - CAPÍTULO II - Del expediente de deslinde de fincas no inscritas.html",
+ "titulo": "Del expediente de deslinde de fincas no inscritas (artículos 104 a 107 LJV)",
+ "cabecera": {
+  "migas": "",
+  "titulo": "☰ ⚖ LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO VI: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA RELATIVOS A LOS DERECHOS REALES · CAPÍTULO II Del expediente de deslinde de fincas no inscritas Artículos 104 a 107 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+  "subtitulo": "",
+  "etiquetas": []
+ },
+ "texto": "☰ ⚖ LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO VI: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA RELATIVOS A LOS DERECHOS REALES · CAPÍTULO II Del expediente de deslinde de fincas no inscritas Artículos 104 a 107 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar Admisibilidad › Competencia › Solicitud › Tramitación › Acto de deslinde › Resolución Verificación del ámbito de aplicación (I): inscripción regi… Mapa Recorrido Admisibilidad ▼ Verificación del ámbito de apli… Verificación del ámbito de apli… Presupuesto material: confusión… Expediente improcedente: finca … Expediente improcedente: inmueb… No concurre el presupuesto mate… Competencia ▼ Determinación del órgano compet… Verificación de la legitimación… Determinación de la postulación… Intervención preceptiva de Abog… Intervención facultativa de Abo… Solicitud ▼ Redacción del escrito de inicia… Aportación de documentación pre… Representación gráfica: cotejo … Aportación de representación gr… Presentación de la solicitud en… Tramitación ▼ Admisión y comunicación del ini… Fase de alegaciones y pruebas Archivo parcial por oposición p… Traslado de documentación y cit… Acto de deslinde ▼ Celebración del acto de deslinde Resolución ▼ Avenencia total entre los inter… Avenencia parcial respecto de a… Acto celebrado sin avenencia Ley 15/2015, arts. 104–107 Código Civil, arts. 384–387 Ley Hipotecaria, art. 200 Ley 33/2003, arts. 50 y ss. RDLeg 1/2004 (Catastro) LJV, arts. 13–22 (normas comunes) Referencias normativas Verificación del ámbito de aplicaci… Ley 15/2015, arts. 104–107 Código Civil, arts. 384–387 Ley Hipotecaria, art. 200 Ley 33/2003, arts. 50 y ss. RDLeg 1/2004 (Catastro) LJV, arts. 13–22 (normas comunes) Referencias normativas LAJ Verificación del ámbito de aplicación (I): inscripción registral Paso 1 de este recorrido · Fase 1: Admisibilidad El expediente de deslinde de fincas no inscritas se regula en los artículos 104 a 107 de la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria, dentro del Capítulo II del Título VI relativo a los expedientes de jurisdicción voluntaria sobre derechos reales. Se aplicarán las disposiciones de este Capítulo cuando se pretenda obtener el deslinde de fincas que no estuvieran inscritas en el Registro de la Propiedad. Tratándose de fincas inscritas, se aplicará lo dispuesto en la legislación hipotecaria (artículo 200 de la Ley Hipotecaria, expediente notarial). Artículo 104 LJV — Ámbito de aplicación ¿La finca cuyo deslinde se pretende está inscrita en el Registro de la Propiedad? A Sí, la finca está inscrita B No, la finca no está inscrita ← Volver",
+ "inicio": "inicio",
+ "actores": {
+  "etiquetas": {
+   "ambos": "LAJ e interesados",
+   "laj": "LAJ"
+  },
+  "sinEtiqueta": []
+ },
+ "pasos": {
+  "inicio": {
+   "ph": 0,
+   "t": "Verificación del ámbito de aplicación (I): inscripción registral",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El expediente de deslinde de fincas no inscritas se regula en los artículos 104 a 107 de la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria, dentro del Capítulo II del Título VI relativo a los expedientes de jurisdicción voluntaria sobre derechos reales."
+    ],
+    [
+     "n",
+     "Se aplicarán las disposiciones de este Capítulo cuando se pretenda obtener el deslinde de fincas que no estuvieran inscritas en el Registro de la Propiedad."
+    ],
+    [
+     "w",
+     "Tratándose de fincas inscritas, se aplicará lo dispuesto en la legislación hipotecaria (artículo 200 de la Ley Hipotecaria, expediente notarial)."
+    ],
+    [
+     "l",
+     "Artículo 104 LJV — Ámbito de aplicación"
+    ]
+   ],
+   "q": "¿La finca cuyo deslinde se pretende está inscrita en el Registro de la Propiedad?",
+   "opts": [
+    {
+     "t": "Sí, la finca está inscrita",
+     "l": "A",
+     "v": "bad",
+     "n": "fin_inscrita"
+    },
+    {
+     "t": "No, la finca no está inscrita",
+     "l": "B",
+     "v": "ok",
+     "n": "verificar_admin"
+    }
+   ]
+  },
+  "verificar_admin": {
+   "ph": 0,
+   "t": "Verificación del ámbito de aplicación (II): titularidad pública",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Descartada la inscripción registral, debe comprobarse si el inmueble pertenece a una Administración Pública, supuesto igualmente excluido de este expediente."
+    ],
+    [
+     "w",
+     "No resultarán de aplicación a los inmuebles cuya titularidad corresponda a las Administraciones Públicas, cuyo deslinde se practicará conforme a su legislación específica."
+    ],
+    [
+     "l",
+     "Artículo 104 LJV — Ámbito de aplicación"
+    ]
+   ],
+   "q": "¿El inmueble es de titularidad de una Administración Pública?",
+   "opts": [
+    {
+     "t": "Sí, es un bien de una Administración Pública",
+     "l": "A",
+     "v": "bad",
+     "n": "fin_admin"
+    },
+    {
+     "t": "No, es un bien de titularidad privada",
+     "l": "B",
+     "v": "ok",
+     "n": "confusion_lindes"
+    }
+   ]
+  },
+  "confusion_lindes": {
+   "ph": 0,
+   "t": "Presupuesto material: confusión de linderos",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Superado el filtro del ámbito de aplicación, debe verificarse el presupuesto material de la acción de deslinde: la existencia de confusión de linderos."
+    ],
+    [
+     "n",
+     "La jurisprudencia del Tribunal Supremo exige, como requisito objetivo de la acción de deslinde, la existencia de confusión de linderos entre las fincas, de suerte que no se pueda tener conocimiento exacto de la línea perimetral de cada propiedad, con la consiguiente incertidumbre respecto de la aparente extensión superficial de cada una de ellas."
+    ],
+    [
+     "w",
+     "Si los predios están perfectamente identificados y delimitados, no cabe el ejercicio de esta acción."
+    ],
+    [
+     "l",
+     "Artículos 384 a 387 del Código Civil — Régimen sustantivo del deslinde"
+    ]
+   ],
+   "q": "¿Existe confusión de linderos entre la finca y las fincas colindantes?",
+   "opts": [
+    {
+     "t": "Sí, existe confusión de linderos",
+     "l": "A",
+     "v": "ok",
+     "n": "competencia"
+    },
+    {
+     "t": "No, los linderos están claros",
+     "l": "B",
+     "v": "warn",
+     "n": "fin_sin_confusion"
+    }
+   ]
+  },
+  "competencia": {
+   "ph": 1,
+   "t": "Determinación del órgano competente",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Admitido que el procedimiento es el adecuado, corresponde determinar el órgano competente para el conocimiento del expediente."
+    ],
+    [
+     "n",
+     "Será competente para el conocimiento de este expediente el Secretario judicial del Juzgado de Primera Instancia correspondiente al lugar donde estuviera situada la finca o la mayor parte de ella."
+    ],
+    [
+     "cl",
+     "Comprobaciones de competencia",
+     [
+      "Identificar el lugar donde está situada la finca",
+      "Si la finca abarca varios partidos judiciales, determinar en cuál se encuentra la mayor parte de ella",
+      "Atribuir el conocimiento al Secretario judicial del Juzgado de Primera Instancia correspondiente"
+     ]
+    ],
+    [
+     "l",
+     "Artículo 105.1 LJV — Competencia"
+    ]
+   ],
+   "nx": "legitimacion"
+  },
+  "legitimacion": {
+   "ph": 1,
+   "t": "Verificación de la legitimación activa",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Tras determinar la competencia, debe verificarse la legitimación del solicitante para instar el expediente."
+    ],
+    [
+     "n",
+     "Se iniciará el expediente a instancia del titular del dominio de la finca o, de ser varios, de cualquiera de ellos, o del titular de cualquier derecho real de uso y disfrute sobre la misma."
+    ],
+    [
+     "cl",
+     "Verificación de legitimación",
+     [
+      "El solicitante es titular del dominio de la finca, o",
+      "Siendo varios titulares, basta con que inste cualquiera de ellos, o",
+      "El solicitante es titular de un derecho real de uso y disfrute sobre la finca"
+     ]
+    ],
+    [
+     "l",
+     "Artículo 105.2 LJV; artículo 384 del Código Civil"
+    ]
+   ],
+   "nx": "postulacion"
+  },
+  "postulacion": {
+   "ph": 1,
+   "t": "Determinación de la postulación procesal",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "La preceptividad de Abogado depende del valor de la finca objeto del deslinde."
+    ],
+    [
+     "n",
+     "En la tramitación del presente expediente será preceptiva la intervención de Abogado si el valor de la finca fuera superior a 6.000 euros."
+    ],
+    [
+     "l",
+     "Artículo 105.3 LJV — Postulación"
+    ]
+   ],
+   "q": "¿El valor de la finca es superior a 6.000 euros?",
+   "opts": [
+    {
+     "t": "Sí, el valor excede de 6.000 €",
+     "l": "A",
+     "v": "warn",
+     "n": "con_abogado"
+    },
+    {
+     "t": "No, el valor es igual o inferior a 6.000 €",
+     "l": "B",
+     "v": "neutral",
+     "n": "sin_abogado"
+    }
+   ]
+  },
+  "con_abogado": {
+   "ph": 1,
+   "t": "Intervención preceptiva de Abogado",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Al superar el valor de la finca los 6.000 euros, será preceptiva la intervención de Abogado en la tramitación del expediente."
+    ],
+    [
+     "w",
+     "La intervención de Abogado es preceptiva cuando el valor de la finca supera los 6.000 euros."
+    ],
+    [
+     "n",
+     "Esta cuantía coincide con la que delimita el juicio verbal y el juicio ordinario en la Ley de Enjuiciamiento Civil, de modo que, si el expediente deviene contencioso, el proceso declarativo posterior se tramitará conforme a esas reglas."
+    ],
+    [
+     "l",
+     "Artículo 105.3 LJV"
+    ]
+   ],
+   "nx": "solicitud"
+  },
+  "sin_abogado": {
+   "ph": 1,
+   "t": "Intervención facultativa de Abogado",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Al no superar el valor de la finca los 6.000 euros, la intervención de Abogado no es preceptiva."
+    ],
+    [
+     "n",
+     "La postulación procesal tendrá, en consecuencia, carácter facultativo."
+    ],
+    [
+     "l",
+     "Artículo 105.3 LJV"
+    ]
+   ],
+   "nx": "solicitud"
+  },
+  "solicitud": {
+   "ph": 2,
+   "t": "Redacción del escrito de iniciación",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Se procede a la redacción del escrito mediante el cual se iniciará el expediente."
+    ],
+    [
+     "cl",
+     "Contenido obligatorio del escrito",
+     [
+      "Circunstancias de la finca que se pretende deslindar",
+      "Circunstancias de las fincas colindantes",
+      "Datos identificativos de los titulares de la finca a deslindar, incluidos los catastrales, con su domicilio si fuera conocido por el solicitante",
+      "Datos identificativos de los titulares de las fincas colindantes, incluidos los catastrales, con su domicilio si fuera conocido por el solicitante",
+      "Cuando el deslinde no se refiera a la totalidad del perímetro de la finca, determinación de la parte a que haya de contraerse"
+     ]
+    ],
+    [
+     "n",
+     "Se admite el deslinde parcial, posibilidad avalada por la jurisprudencia y por la Dirección General de Seguridad Jurídica y Fe Pública, y recogida expresamente en el artículo 200 de la Ley Hipotecaria para fincas inscritas."
+    ],
+    [
+     "l",
+     "Artículo 106.1 LJV — Solicitud"
+    ]
+   ],
+   "nx": "documentacion"
+  },
+  "documentacion": {
+   "ph": 2,
+   "t": "Aportación de documentación preceptiva",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Al escrito deberá acompañarse, en todo caso, la documentación exigida por la norma."
+    ],
+    [
+     "cl",
+     "Documentación preceptiva",
+     [
+      "Certificación registral respecto de las fincas colindantes que aparezcan inscritas en el Registro de la Propiedad",
+      "Certificación catastral descriptiva y gráfica de la finca objeto del deslinde",
+      "Certificación catastral descriptiva y gráfica de las fincas colindantes",
+      "Documentos o justificantes que sirvan de fundamento a la pretensión (títulos de propiedad, mediciones, planos, actas notariales previas, etc.)"
+     ]
+    ],
+    [
+     "l",
+     "Artículo 106.1 LJV, párrafos segundo y tercero"
+    ]
+   ],
+   "nx": "rep_grafica"
+  },
+  "rep_grafica": {
+   "ph": 2,
+   "t": "Representación gráfica: cotejo con la catastral",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Debe comprobarse si la representación gráfica catastral coincide con el deslinde que se solicita, para determinar si basta con aquella o es necesaria una representación gráfica alternativa."
+    ],
+    [
+     "l",
+     "Artículo 106.1 LJV, párrafos cuarto a sexto"
+    ]
+   ],
+   "q": "¿Coincide la representación gráfica catastral con el deslinde solicitado?",
+   "opts": [
+    {
+     "t": "Sí, coincide con la representación catastral",
+     "l": "A",
+     "v": "ok",
+     "n": "presentacion"
+    },
+    {
+     "t": "No, no coincide con la catastral",
+     "l": "B",
+     "v": "warn",
+     "n": "rep_alternativa"
+    }
+   ]
+  },
+  "rep_alternativa": {
+   "ph": 2,
+   "t": "Aportación de representación gráfica alternativa",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "El promotor manifiesta que la representación gráfica catastral no coincide con la del deslinde solicitado."
+    ],
+    [
+     "w",
+     "Deberá aportar representación gráfica georreferenciada del mismo."
+    ],
+    [
+     "cl",
+     "Requisitos de la representación gráfica alternativa",
+     [
+      "Debe respetar el resto de la delimitación de las fincas afectadas que resulten de la cartografía catastral en lo no afectado por el deslinde",
+      "Debe estar debidamente georreferenciada",
+      "Debe estar suscrita por técnico competente",
+      "Debe permitir su incorporación al Catastro una vez practicado el deslinde"
+     ]
+    ],
+    [
+     "l",
+     "Artículo 106.1 LJV, párrafos quinto y sexto; Texto Refundido de la Ley del Catastro Inmobiliario (RDLeg 1/2004)"
+    ]
+   ],
+   "nx": "presentacion"
+  },
+  "presentacion": {
+   "ph": 2,
+   "t": "Presentación de la solicitud en el Juzgado",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Completada la preparación documental, se presenta la solicitud, junto con toda la documentación, ante el Juzgado de Primera Instancia competente."
+    ],
+    [
+     "n",
+     "El escrito se dirige al Secretario judicial (Letrado de la Administración de Justicia) del Juzgado de Primera Instancia del lugar donde esté situada la finca o la mayor parte de ella."
+    ],
+    [
+     "l",
+     "Artículos 105.1 y 106.1 LJV"
+    ]
+   ],
+   "nx": "admision"
+  },
+  "admision": {
+   "ph": 3,
+   "t": "Admisión y comunicación del inicio a los interesados",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Recibida la solicitud, el Secretario judicial resuelve sobre su admisión y, en caso de admitirla, comunica el inicio del expediente a todos los interesados."
+    ],
+    [
+     "n",
+     "El Secretario judicial, admitida la solicitud, comunicará el inicio del expediente a todos los interesados."
+    ],
+    [
+     "cl",
+     "Actuaciones del LAJ tras la admisión",
+     [
+      "Dictar la correspondiente resolución de admisión",
+      "Identificar a todos los interesados (solicitante, titulares de fincas colindantes, titulares de derechos reales afectados)",
+      "Comunicar el inicio del expediente a cada uno de ellos"
+     ]
+    ],
+    [
+     "l",
+     "Artículo 106.2 LJV, párrafo primero"
+    ]
+   ],
+   "nx": "alegaciones"
+  },
+  "alegaciones": {
+   "ph": 3,
+   "t": "Fase de alegaciones y pruebas",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Comunicado el inicio del expediente, se abre el plazo para que los interesados presenten alegaciones y pruebas."
+    ],
+    [
+     "d",
+     "Plazo: quince días desde la comunicación del inicio del expediente."
+    ],
+    [
+     "n",
+     "Los interesados, en el plazo de quince días, podrán hacer las alegaciones y presentar las pruebas que estimen procedentes."
+    ],
+    [
+     "l",
+     "Artículo 106.2 LJV, párrafo primero"
+    ]
+   ],
+   "q": "Durante este plazo (o antes de la comparecencia), ¿se opone al deslinde el dueño de alguna finca colindante?",
+   "opts": [
+    {
+     "t": "Sí, hay oposición de un colindante",
+     "l": "A",
+     "v": "warn",
+     "n": "archivo_parcial"
+    },
+    {
+     "t": "No, no hay oposición previa",
+     "l": "B",
+     "v": "ok",
+     "n": "traslado"
+    }
+   ]
+  },
+  "archivo_parcial": {
+   "ph": 3,
+   "t": "Archivo parcial por oposición previa a la comparecencia",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Antes de la comparecencia, el dueño de alguna de las fincas colindantes se ha opuesto al deslinde."
+    ],
+    [
+     "w",
+     "Si antes de la comparecencia, el dueño de alguna de las fincas colindantes se opusiera al deslinde, archivará el expediente en relación a la parte de la finca lindante con la del opositor, reservando a las partes su derecho para que lo ejerciten en el juicio declarativo que corresponda."
+    ],
+    [
+     "n",
+     "El expediente continuará respecto del resto de linderos no afectados por la oposición."
+    ],
+    [
+     "cl",
+     "Actuaciones del LAJ ante la oposición previa",
+     [
+      "Archivar el expediente en la parte relativa al lindero con el opositor",
+      "Hacer constar la reserva a las partes para acudir al juicio declarativo que corresponda",
+      "Continuar con el resto de linderos no afectados por la oposición"
+     ]
+    ],
+    [
+     "l",
+     "Artículo 106.2 LJV, párrafo cuarto; artículo 17.3 LJV (archivo por oposición, régimen general)"
+    ]
+   ],
+   "nx": "traslado"
+  },
+  "traslado": {
+   "ph": 3,
+   "t": "Traslado de documentación y citación al acto de deslinde",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Transcurrido el plazo de alegaciones (o, en su caso, tras el archivo parcial del lindero afectado por la oposición), el LAJ traslada la documentación a los interesados y los cita al acto de deslinde."
+    ],
+    [
+     "d",
+     "Plazo: treinta días para la celebración del acto de deslinde."
+    ],
+    [
+     "n",
+     "Transcurrido el plazo, el Secretario judicial dará traslado a dichos interesados de toda la documentación aportada y les citará al acto de deslinde a celebrar en el plazo de treinta días para buscar la avenencia entre ellos."
+    ],
+    [
+     "cl",
+     "Actuaciones del LAJ",
+     [
+      "Dar traslado a los interesados de toda la documentación aportada",
+      "Citarles al acto de deslinde",
+      "Señalar el acto dentro del plazo de treinta días"
+     ]
+    ],
+    [
+     "l",
+     "Artículo 106.2 LJV, párrafo segundo"
+    ]
+   ],
+   "nx": "acto_deslinde"
+  },
+  "acto_deslinde": {
+   "ph": 4,
+   "t": "Celebración del acto de deslinde",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Llegada la fecha señalada, se celebra el acto de deslinde con los interesados que hayan comparecido, con el objetivo de alcanzar la avenencia."
+    ],
+    [
+     "w",
+     "No se suspenderá la práctica del deslinde por la falta de asistencia de alguno de los dueños colindantes, quedando a salvo su derecho para demandar, en el juicio declarativo que corresponda, la posesión o propiedad de las que se creyese despojado en virtud del deslinde."
+    ],
+    [
+     "n",
+     "La comparecencia no es obligatoria, lo que resulta coherente con la naturaleza voluntaria del expediente (artículo 1.2 LJV)."
+    ],
+    [
+     "l",
+     "Artículo 106.2 LJV, párrafo tercero"
+    ]
+   ],
+   "q": "¿Qué resultado se obtiene en el acto de deslinde?",
+   "opts": [
+    {
+     "t": "Avenencia total entre todos los interesados",
+     "l": "A",
+     "v": "ok",
+     "n": "fin_avenencia_total"
+    },
+    {
+     "t": "Avenencia parcial (solo respecto de algunos linderos)",
+     "l": "B",
+     "v": "warn",
+     "n": "fin_avenencia_parcial"
+    },
+    {
+     "t": "No se logra acuerdo alguno",
+     "l": "C",
+     "v": "neutral",
+     "n": "fin_sin_avenencia"
+    }
+   ]
+  },
+  "fin_avenencia_total": {
+   "ph": 5,
+   "t": "Avenencia total entre los interesados",
+   "ac": "laj",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "Se ha logrado el acuerdo entre todos los interesados respecto a la totalidad de los linderos objeto del deslinde."
+    ],
+    [
+     "n",
+     "El Secretario judicial hará constar en un acta todo cuanto acuerden y que el acto terminó con avenencia total, así como los términos de la misma, debiendo ser firmada por los comparecientes."
+    ],
+    [
+     "n",
+     "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar la avenencia, acordándose el archivo definitivo de las actuaciones."
+    ],
+    [
+     "n",
+     "Al decreto se incorporará el acta y, en todo caso, la certificación catastral descriptiva y gráfica y, en el supuesto de discordancia con esta, la representación gráfica alternativa aportada."
+    ],
+    [
+     "cl",
+     "Actuaciones finales del LAJ",
+     [
+      "Levantar acta firmada por los comparecientes haciendo constar la avenencia total y sus términos",
+      "Dictar decreto haciendo constar la avenencia",
+      "Acordar el archivo definitivo de las actuaciones",
+      "Incorporar al decreto el acta y la certificación catastral (o representación gráfica alternativa en caso de discordancia)",
+      "Remitir testimonio del acta y del decreto al Catastro para las alteraciones catastrales que correspondan"
+     ]
+    ],
+    [
+     "l",
+     "Artículo 107 LJV — Resolución; Texto Refundido de la Ley del Catastro Inmobiliario (RDLeg 1/2004)"
+    ]
+   ]
+  },
+  "fin_avenencia_parcial": {
+   "ph": 5,
+   "t": "Avenencia parcial respecto de alguno o algunos de los linderos",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "Se ha logrado avenencia parcial: el acuerdo afecta solo a alguno o algunos de los linderos objeto del deslinde."
+    ],
+    [
+     "n",
+     "El Secretario judicial hará constar en acta todo cuanto acuerden y que el acto terminó con avenencia parcial respecto de alguno o algunos de los linderos, así como los términos de la misma, debiendo ser firmada por los comparecientes."
+    ],
+    [
+     "n",
+     "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar que la avenencia fue parcial respecto de alguno o algunos de los linderos, acordándose el archivo definitivo de las actuaciones."
+    ],
+    [
+     "n",
+     "Al decreto se incorporará el acta y, en todo caso, la certificación catastral descriptiva y gráfica y, en el supuesto de discordancia con esta, la representación gráfica alternativa aportada."
+    ],
+    [
+     "w",
+     "Sobre los linderos respecto de los que no se alcanzó acuerdo queda a salvo el derecho de los interesados para ejercitarlo en el juicio declarativo que corresponda, donde regirán los criterios sustantivos de los artículos 385 a 387 del Código Civil."
+    ],
+    [
+     "cl",
+     "Actuaciones finales del LAJ",
+     [
+      "Levantar acta firmada por los comparecientes haciendo constar la avenencia parcial",
+      "Dictar decreto haciendo constar la avenencia parcial respecto de los linderos concretos",
+      "Incorporar al decreto el acta y la certificación catastral (o representación gráfica alternativa)",
+      "Remitir testimonio del acta y del decreto al Catastro a los efectos de las alteraciones catastrales que correspondan",
+      "Reservar a las partes su derecho a acudir al juicio declarativo respecto de los linderos sin acuerdo"
+     ]
+    ],
+    [
+     "l",
+     "Artículo 107 LJV; artículos 385 a 387 del Código Civil"
+    ]
+   ]
+  },
+  "fin_sin_avenencia": {
+   "ph": 5,
+   "t": "Acto celebrado sin avenencia",
+   "ac": "laj",
+   "end": "neutral",
+   "c": [
+    [
+     "i",
+     "No ha podido conseguirse acuerdo alguno entre los interesados."
+    ],
+    [
+     "n",
+     "Si no pudiere conseguirse acuerdo alguno, se hará constar que el acto terminó sin avenencia."
+    ],
+    [
+     "n",
+     "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar que se celebró sin avenencia, acordándose el archivo definitivo de las actuaciones."
+    ],
+    [
+     "w",
+     "Queda a salvo el derecho de los interesados para ejercitarlo en el juicio declarativo que corresponda, donde se aplicarán los criterios sustantivos del Código Civil."
+    ],
+    [
+     "cl",
+     "Actuaciones finales del LAJ",
+     [
+      "Hacer constar en acta que el acto terminó sin avenencia",
+      "Dictar decreto haciendo constar que se celebró sin avenencia",
+      "Acordar el archivo definitivo de las actuaciones",
+      "Reservar a las partes su derecho a acudir al juicio declarativo correspondiente"
+     ]
+    ],
+    [
+     "n",
+     "En el juicio declarativo posterior regirán los artículos 385 a 387 del Código Civil: el deslinde se hará en conformidad con los títulos de cada propietario y, a falta de títulos suficientes, por lo que resultare de la posesión; en defecto de ambos, distribuyendo el terreno en partes iguales; y, si los títulos indicasen un espacio mayor o menor que el total, distribuyendo la diferencia proporcionalmente."
+    ],
+    [
+     "l",
+     "Artículo 107 LJV; artículos 385 a 387 del Código Civil"
+    ]
+   ]
+  },
+  "fin_inscrita": {
+   "ph": 0,
+   "t": "Expediente improcedente: finca inscrita",
+   "ac": "laj",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "El expediente regulado en los artículos 104 a 107 de la Ley 15/2015 no es aplicable a fincas inscritas."
+    ],
+    [
+     "w",
+     "Tratándose de fincas inscritas, se aplicará lo dispuesto en la legislación hipotecaria."
+    ],
+    [
+     "n",
+     "Debe remitirse al interesado al expediente notarial de deslinde previsto en el artículo 200 de la Ley Hipotecaria (en la redacción dada por la Ley 13/2015, de 24 de junio)."
+    ],
+    [
+     "cl",
+     "Vía alternativa",
+     [
+      "Expediente notarial de deslinde del artículo 200 LH",
+      "Competencia: Notario del distrito donde radique la finca o en uno de los distritos colindantes",
+      "En caso de oposición, cauce judicial contencioso (juicio verbal u ordinario según cuantía, LEC)"
+     ]
+    ],
+    [
+     "l",
+     "Artículo 104 LJV; artículo 200 de la Ley Hipotecaria; Ley 13/2015, de 24 de junio"
+    ]
+   ]
+  },
+  "fin_admin": {
+   "ph": 0,
+   "t": "Expediente improcedente: inmueble de Administración Pública",
+   "ac": "laj",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "El expediente regulado en los artículos 104 a 107 LJV no resulta aplicable a los inmuebles de titularidad pública."
+    ],
+    [
+     "w",
+     "No resultarán de aplicación a los inmuebles cuya titularidad corresponda a las Administraciones Públicas, cuyo deslinde se practicará conforme a su legislación específica."
+    ],
+    [
+     "n",
+     "Procederá aplicar los artículos 50 y siguientes de la Ley 33/2003, de 3 de noviembre, del Patrimonio de las Administraciones Públicas, y, en su caso, la legislación sectorial correspondiente (Ley 43/2003 de Montes, Ley 22/1988 de Costas, Ley 3/1995 de Vías Pecuarias, TR Ley de Aguas, etc.)."
+    ],
+    [
+     "l",
+     "Artículo 104 LJV; artículos 50 a 54 de la Ley 33/2003, de 3 de noviembre, del Patrimonio de las Administraciones Públicas"
+    ]
+   ]
+  },
+  "fin_sin_confusion": {
+   "ph": 0,
+   "t": "No concurre el presupuesto material: inexistencia de confusión de linderos",
+   "ac": "laj",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "No se cumple el presupuesto material de la acción de deslinde."
+    ],
+    [
+     "w",
+     "La jurisprudencia exige la existencia de confusión de linderos como requisito objetivo. Si los predios están perfectamente identificados y delimitados, no cabe el ejercicio de esta acción."
+    ],
+    [
+     "n",
+     "En caso de controversia sobre la propiedad o la posesión que no se reduzca a la delimitación física de la finca, el cauce procesal adecuado es la acción reivindicatoria, la declarativa de dominio u otra acción contenciosa, no el expediente de jurisdicción voluntaria del Capítulo II del Título VI de la LJV."
+    ],
+    [
+     "l",
+     "Artículos 384 a 387 del Código Civil; jurisprudencia del Tribunal Supremo (entre otras, STS 1.ª de 14 de octubre de 1991)"
+    ]
+   ]
+  }
+ },
+ "otrosDatos": {
+  "PHASES": [
+   "Admisibilidad",
+   "Competencia",
+   "Solicitud",
+   "Tramitación",
+   "Acto de deslinde",
+   "Resolución"
+  ]
+ }
+}

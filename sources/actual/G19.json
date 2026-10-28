@@ -1,0 +1,634 @@
+{
+ "id": "G19",
+ "tipo": "guia",
+ "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/14 - CAPÍTULO XI - De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados.html",
+ "titulo": "De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados (artículos 80 bis a 80 quinquies LJV)",
+ "cabecera": null,
+ "texto": "☰ ⚖ LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO XI De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados Artículos 80 bis a 80 quinquies LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar 1. Viabilidad › 2. Competencia y admisión › 3. Tramitación › 4. Resolución y recursos Recepción de la solicitud de… Mapa Recorrido Viabilidad ▼ ● Recepción de la solicitud de d… ○ Contenido de la solicitud ○ Verificación de las 5 condicio… Competencia y admisión ▼ ○ Determinación de la competenci… ○ Control previo de admisibilida… ○ Auto del Juez sobre admisibili… ○ Admisión a trámite y convocato… Tramitación ▼ ○ Actuaciones probatorias previa… ○ Celebración de la comparecenci… ○ Oposición a la declaración jud… ○ Resolución del Juez sobre la o… Resolución y recursos ▼ ○ Resolución del expediente por … ○ Hechos inscribibles en registr… ○ Inscripción registral (art. 22… ■ No procede el expediente ■ Expediente inadmitido por auto… ■ Sobreseimiento del expediente … ■ Declaración judicial denegada ■ Declaración judicial emitida c… ■ Declaración emitida con inscri… Ley 15/2015, arts. 80 bis-80 quinquies Ley 20/2022, disp. final 3.ª LO 1/2025, disp. adic. 1.ª LOPJ, arts. 86.5.j) y 89.6.g) Recepción de la solicitud de dec… Ley 15/2015, arts. 80 bis-80 quinquies Ley 20/2022, disp. final 3.ª LO 1/2025, disp. adic. 1.ª LOPJ, arts. 86.5.j) y 89.6.g) Ir directamente a un paso Recepción de la solicitud de declaración judicial sobre hechos pasados Contenido de la solicitud Verificación de las 5 condiciones cumulativas (art. 80 bis.2) Determinación de la competencia territorial Control previo de admisibilidad por el LAJ Auto del Juez sobre admisibilidad Admisión a trámite y convocatoria a comparecencia Actuaciones probatorias previas a la comparecencia Celebración de la comparecencia Oposición a la declaración judicial Resolución del Juez sobre la oposición Resolución del expediente por auto (5 días) Hechos inscribibles en registros públicos Inscripción registral (art. 22.2 LJVol) [Fin] No procede el expediente [Fin] Expediente inadmitido por auto del Juez [Fin] Sobreseimiento del expediente por oposición estimada [Fin] Declaración judicial denegada [Fin] Declaración judicial emitida con éxito [Fin] Declaración emitida con inscripción registral Ambos Recepción de la solicitud de declaración judicial sobre hechos pasados Paso 1 de este recorrido · Fase 1: Viabilidad Se ha recibido una solicitud para obtener una declaración judicial sobre la realidad y las circunstancias de hechos pasados determinados. Este expediente se tramita conforme al Capítulo XI del Título II de la Ley 15/2015, de la Jurisdicción Voluntaria (artículos 80 bis a 80 quinquies), introducido por la disposición final tercera de la Ley 20/2022, de Memoria Democrática. El expediente reintroduce, con carácter renovado, la antigua figura de la \"información para perpetua memoria\" de la LEC de 1881 (arts. 2002-2010), derogada por la Ley 15/2015 y recuperada por la Ley 20/2022. Ley 15/2015, arts. 80 bis - 80 quinquies; Ley 20/2022, disp. final 3.ª; LEC 1881, arts. 2002-2010 Verificaciones iniciales La solicitud se refiere a hechos pasados determinados No existe controversia que deba sustanciarse en proceso contencioso Se ha presentado ante el órgano judicial competente Se acompaña principio de prueba de los hechos ¿Quién promueve el expediente? A Persona interesada (titular de derechos o intereses legítimos) B Ministerio Fiscal (de oficio o a solicitud de cualquier persona) ← Volver ← Volver al recorrido",
+ "inicio": "inicio",
+ "actores": {
+  "etiquetas": {
+   "juez": "Juez",
+   "laj": "LAJ",
+   "ambos": "Ambos"
+  },
+  "sinEtiqueta": []
+ },
+ "pasos": {
+  "inicio": {
+   "ph": 0,
+   "t": "Recepción de la solicitud de declaración judicial sobre hechos pasados",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Se ha recibido una solicitud para obtener una declaración judicial sobre la realidad y las circunstancias de hechos pasados determinados. Este expediente se tramita conforme al Capítulo XI del Título II de la Ley 15/2015, de la Jurisdicción Voluntaria (artículos 80 bis a 80 quinquies), introducido por la disposición final tercera de la Ley 20/2022, de Memoria Democrática."
+    ],
+    [
+     "n",
+     "El expediente reintroduce, con carácter renovado, la antigua figura de la \"información para perpetua memoria\" de la LEC de 1881 (arts. 2002-2010), derogada por la Ley 15/2015 y recuperada por la Ley 20/2022."
+    ],
+    [
+     "l",
+     "Ley 15/2015, arts. 80 bis - 80 quinquies; Ley 20/2022, disp. final 3.ª; LEC 1881, arts. 2002-2010"
+    ],
+    [
+     "cl",
+     "Verificaciones iniciales",
+     [
+      "La solicitud se refiere a hechos pasados determinados",
+      "No existe controversia que deba sustanciarse en proceso contencioso",
+      "Se ha presentado ante el órgano judicial competente",
+      "Se acompaña principio de prueba de los hechos"
+     ]
+    ]
+   ],
+   "q": "¿Quién promueve el expediente?",
+   "opts": [
+    {
+     "t": "Persona interesada (titular de derechos o intereses legítimos)",
+     "l": "A",
+     "n": "contenido_solicitud",
+     "v": "ok"
+    },
+    {
+     "t": "Ministerio Fiscal (de oficio o a solicitud de cualquier persona)",
+     "l": "B",
+     "n": "contenido_solicitud",
+     "v": "neutral"
+    }
+   ]
+  },
+  "contenido_solicitud": {
+   "ph": 0,
+   "t": "Contenido de la solicitud",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "La solicitud debe expresar con claridad los siguientes extremos para que el Letrado de la Administración de Justicia pueda realizar el control de admisibilidad y, en su caso, admitirla a trámite:"
+    ],
+    [
+     "cl",
+     "Requisitos de la solicitud (art. 80 quáter.1)",
+     [
+      "Contenido de la declaración judicial que se interesa",
+      "Relato de las circunstancias relevantes a los efectos de la solicitud",
+      "Principio de prueba de los hechos sobre los que se interesa la información",
+      "Identificación de las personas que puedan estar interesadas"
+     ]
+    ],
+    [
+     "n",
+     "No es preceptiva la defensa de Letrado ni la representación por Procurador. En la Oficina Judicial existirán impresos normalizados a disposición de los interesados para formular la solicitud (art. 80 ter.3)."
+    ],
+    [
+     "n",
+     "El Ministerio Fiscal será siempre parte en este expediente, garantizando el control de legalidad y la protección de los intereses generales (art. 80 ter.4)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, arts. 80 ter.3, 80 ter.4, 80 quáter.1"
+    ]
+   ],
+   "nx": "check_condiciones"
+  },
+  "check_condiciones": {
+   "ph": 0,
+   "t": "Verificación de las 5 condiciones cumulativas (art. 80 bis.2)",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "Para que proceda el expediente de declaración judicial sobre hechos pasados, deben concurrir cumulativamente las cinco condiciones establecidas en el apartado 2 del artículo 80 bis. Si alguna de ellas no se cumple, el expediente no es viable por esta vía."
+    ],
+    [
+     "cl",
+     "Condiciones cumulativas (art. 80 bis.2)",
+     [
+      "1.ª: Que su objeto sea posible y lícito",
+      "2.ª: Que exista un principio de prueba de los hechos",
+      "3.ª: Que de los hechos no resulte perjuicio para una persona cierta y determinada",
+      "4.ª: Que los hechos no sean objeto de un procedimiento judicial en trámite",
+      "5.ª: Que no exista otro procedimiento judicial indicado para la demostración de los hechos (carácter subsidiario o residual)"
+     ]
+    ],
+    [
+     "w",
+     "Si surge una auténtica contienda sobre los hechos, el cauce adecuado será el proceso declarativo contencioso correspondiente, no este expediente de jurisdicción voluntaria."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 80 bis.2; art. 6; art. 1"
+    ]
+   ],
+   "q": "¿Se cumplen todas las condiciones cumulativas del art. 80 bis.2?",
+   "opts": [
+    {
+     "t": "Sí, las cinco condiciones se cumplen",
+     "l": "A",
+     "n": "competencia",
+     "v": "ok"
+    },
+    {
+     "t": "No, al menos una condición no se cumple",
+     "l": "B",
+     "n": "fin_no_viable",
+     "v": "bad"
+    }
+   ]
+  },
+  "competencia": {
+   "ph": 1,
+   "t": "Determinación de la competencia territorial",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Es necesario determinar el órgano judicial competente para conocer del expediente. La competencia territorial se fija en función del lugar donde acaecieron los hechos o, en su defecto, del domicilio del solicitante."
+    ],
+    [
+     "n",
+     "Tras la Ley Orgánica 1/2025, de 2 de enero, las referencias al Juzgado de Primera Instancia deben entenderse hechas a la sección civil del Tribunal de Instancia correspondiente. La determinación de la sección competente se rige por el art. 86.5.j) o, en su caso, el art. 89.6.g) de la LOPJ."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 80 ter.1; LO 1/2025, disp. adic. 1.ª; LOPJ, arts. 86.5.j) y 89.6.g)"
+    ]
+   ],
+   "q": "¿Cuál es el fuero de competencia aplicable?",
+   "opts": [
+    {
+     "t": "JPI / Sección del TI del lugar donde acaecieron los hechos (fuero principal)",
+     "l": "A",
+     "n": "control_laj",
+     "v": "ok"
+    },
+    {
+     "t": "Varios lugares: a elección del solicitante",
+     "l": "B",
+     "n": "control_laj",
+     "v": "ok"
+    },
+    {
+     "t": "JPI / Sección del TI del domicilio del solicitante (fuero residual)",
+     "l": "C",
+     "n": "control_laj",
+     "v": "neutral"
+    }
+   ]
+  },
+  "control_laj": {
+   "ph": 1,
+   "t": "Control previo de admisibilidad por el LAJ",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El Letrado de la Administración de Justicia realiza un control previo de admisibilidad de la solicitud. Si no detecta ningún defecto, admite directamente a trámite. Si advierte la falta de competencia objetiva o territorial, o la falta de alguna de las condiciones del art. 80 bis.2, dará cuenta al Juez para que este decida."
+    ],
+    [
+     "n",
+     "El control del LAJ es un filtro previo y no sustituye la decisión judicial. Solo el Juez puede inadmitir el expediente, previa audiencia del Ministerio Fiscal y del solicitante."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 80 quáter.2"
+    ]
+   ],
+   "q": "¿El LAJ detecta algún defecto en la solicitud?",
+   "opts": [
+    {
+     "t": "No, no detecta defectos: la solicitud cumple los requisitos",
+     "l": "A",
+     "n": "admision_tramite",
+     "v": "ok"
+    },
+    {
+     "t": "Sí, detecta falta de competencia o incumplimiento de las condiciones del art. 80 bis.2",
+     "l": "B",
+     "n": "auto_juez_admision",
+     "v": "warn"
+    }
+   ]
+  },
+  "auto_juez_admision": {
+   "ph": 1,
+   "t": "Auto del Juez sobre admisibilidad",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "El Juez, previa audiencia del Ministerio Fiscal y del solicitante, decide por auto sobre la admisibilidad del expediente. Esta decisión es susceptible de recurso de apelación conforme a la LEC."
+    ],
+    [
+     "w",
+     "El auto que inadmite el expediente es susceptible de recurso de apelación (art. 80 quinquies)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, arts. 80 quáter.2, 80 quinquies; LEC, recurso de apelación"
+    ]
+   ],
+   "q": "¿El Juez admite o inadmite el expediente?",
+   "opts": [
+    {
+     "t": "Admite el expediente",
+     "l": "A",
+     "n": "admision_tramite",
+     "v": "ok"
+    },
+    {
+     "t": "Inadmite el expediente por auto",
+     "l": "B",
+     "n": "fin_inadmitido",
+     "v": "bad"
+    }
+   ]
+  },
+  "admision_tramite": {
+   "ph": 1,
+   "t": "Admisión a trámite y convocatoria a comparecencia",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Cumplidos los requisitos de admisibilidad, el Letrado de la Administración de Justicia admite a trámite la solicitud y convoca a una comparecencia al promotor, al Ministerio Fiscal y a cuantas personas pudieran estar interesadas en los hechos respecto de los que se interesa la información."
+    ],
+    [
+     "n",
+     "La convocatoria a comparecencia inicia la fase probatoria del expediente. Todas las personas con interés legítimo deben ser citadas."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 80 quáter.3"
+    ]
+   ],
+   "nx": "actuaciones_probatorias"
+  },
+  "actuaciones_probatorias": {
+   "ph": 2,
+   "t": "Actuaciones probatorias previas a la comparecencia",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "En el plazo común de cinco días desde la recepción de la citación, las partes pueden solicitar actuaciones probatorias previas a la celebración de la comparecencia."
+    ],
+    [
+     "d",
+     "Plazo común de 5 días desde la recepción de la citación"
+    ],
+    [
+     "cl",
+     "Actuaciones disponibles en el plazo de 5 días",
+     [
+      "Citación de testigos o peritos que no puedan ser presentados por las partes (citados por el LAJ)",
+      "Solicitud de respuestas escritas a personas jurídicas o entidades públicas (art. 381 LEC)"
+     ]
+    ],
+    [
+     "n",
+     "La práctica de este trámite no suspende la celebración de la comparecencia, salvo que el Juez lo estime necesario para impedir la indefensión. Si las respuestas se reciben con posterioridad, se dará audiencia a los interesados y al Ministerio Fiscal."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 80 quáter.4; LEC, art. 381"
+    ]
+   ],
+   "nx": "comparecencia"
+  },
+  "comparecencia": {
+   "ph": 2,
+   "t": "Celebración de la comparecencia",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "La comparecencia se sustancia por los trámites previstos en la Ley de Enjuiciamiento Civil para la vista del juicio verbal, practicándose la prueba pertinente y útil que propongan las partes en el acto."
+    ],
+    [
+     "n",
+     "Durante la comparecencia o en cualquier momento de la tramitación, los interesados o afectados por los hechos objeto del expediente pueden formular oposición a la emisión de la declaración judicial."
+    ],
+    [
+     "n",
+     "Las resoluciones interlocutorias dictadas durante la tramitación son susceptibles de recurso de reposición conforme a la LEC."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 80 quáter.5-6, art. 80 quinquies; LEC, juicio verbal, recurso de reposición"
+    ]
+   ],
+   "nx": "check_oposicion"
+  },
+  "check_oposicion": {
+   "ph": 2,
+   "t": "Oposición a la declaración judicial",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "En cualquier momento durante la tramitación del expediente, los interesados o afectados por los hechos objeto del mismo pueden formular su oposición a la emisión de la declaración judicial interesada. El Juez resolverá sobre la oposición por auto."
+    ],
+    [
+     "w",
+     "Si el Juez estima justificada la oposición, acordará el sobreseimiento del expediente con reserva del derecho a ejercitar la acción correspondiente. Si no la estima justificada, ordenará la continuación del expediente."
+    ],
+    [
+     "n",
+     "El auto que resuelve sobre la oposición es susceptible de recurso de apelación (art. 80 quinquies)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 80 quáter.6, art. 80 quinquies"
+    ]
+   ],
+   "q": "¿Se formula oposición por algún interesado o afectado?",
+   "opts": [
+    {
+     "t": "No se formula oposición",
+     "l": "A",
+     "n": "resolucion_5dias",
+     "v": "ok"
+    },
+    {
+     "t": "Sí, se formula oposición a la declaración judicial",
+     "l": "B",
+     "n": "juez_oposicion",
+     "v": "warn"
+    }
+   ]
+  },
+  "juez_oposicion": {
+   "ph": 2,
+   "t": "Resolución del Juez sobre la oposición",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "El Juez resuelve sobre la oposición formulada por auto. Si la estima justificada, acuerda el sobreseimiento del expediente, con reserva a las partes de su derecho a ejercitar la acción correspondiente. Si no la estima justificada, manda la continuación del expediente hasta su resolución."
+    ],
+    [
+     "w",
+     "El auto de sobreseimiento cierra esta vía pero no impide que las partes ejerciten la acción correspondiente en otro procedimiento."
+    ],
+    [
+     "n",
+     "El auto que resuelve sobre la oposición es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, arts. 80 quáter.6, 80 quinquies"
+    ]
+   ],
+   "q": "¿El Juez estima o no estima justificada la oposición?",
+   "opts": [
+    {
+     "t": "Oposición estimada: se acuerda el sobreseimiento",
+     "l": "A",
+     "n": "fin_sobreseimiento",
+     "v": "bad"
+    },
+    {
+     "t": "Oposición no estimada: continúa el expediente",
+     "l": "B",
+     "n": "resolucion_5dias",
+     "v": "ok"
+    }
+   ]
+  },
+  "resolucion_5dias": {
+   "ph": 3,
+   "t": "Resolución del expediente por auto (5 días)",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "En el plazo de cinco días tras la celebración de la comparecencia, el Juez dictará auto por el que acceda o deniegue la emisión de la declaración judicial interesada."
+    ],
+    [
+     "d",
+     "Plazo de 5 días desde la celebración de la comparecencia"
+    ],
+    [
+     "i",
+     "Si el Juez accede a la solicitud, realizará en la parte dispositiva del auto la declaración sobre hechos pasados determinados interesada por el promotor, con expresión de sus circunstancias. Se pronunciará, en su caso, en relación con las consecuencias que se deriven de la declaración."
+    ],
+    [
+     "w",
+     "Tanto el auto que accede como el que deniega la declaración son susceptibles de recurso de apelación (art. 80 quinquies)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 80 quáter.5, art. 80 quinquies"
+    ]
+   ],
+   "q": "¿El Juez accede o deniega la emisión de la declaración judicial?",
+   "opts": [
+    {
+     "t": "Accede a la solicitud: emite la declaración judicial",
+     "l": "A",
+     "n": "check_inscribible",
+     "v": "ok"
+    },
+    {
+     "t": "Deniega la emisión de la declaración judicial",
+     "l": "B",
+     "n": "fin_denegada",
+     "v": "bad"
+    }
+   ]
+  },
+  "check_inscribible": {
+   "ph": 3,
+   "t": "Hechos inscribibles en registros públicos",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Si de la declaración judicial se derivara la existencia de un hecho inscribible en el Registro de la Propiedad, Mercantil u otro registro público, será aplicable lo dispuesto en el artículo 22.2 de la Ley de la Jurisdicción Voluntaria, relativo al cumplimiento y ejecución de la resolución que pone fin al expediente."
+    ],
+    [
+     "n",
+     "La inscripción registral no es automática; requiere que el hecho declarado sea materialmente inscribible conforme a la normativa del registro de que se trate."
+    ],
+    [
+     "l",
+     "Ley 15/2015, arts. 80 quáter.5 (in fine), 22.2, 11"
+    ]
+   ],
+   "q": "¿La declaración deriva en un hecho inscribible en un registro público?",
+   "opts": [
+    {
+     "t": "Sí, es inscribible en el Registro de la Propiedad, Mercantil u otro",
+     "l": "A",
+     "n": "inscripcion_registral",
+     "v": "ok"
+    },
+    {
+     "t": "No, no deriva en hecho inscribible",
+     "l": "B",
+     "n": "fin_exito",
+     "v": "neutral"
+    }
+   ]
+  },
+  "inscripcion_registral": {
+   "ph": 3,
+   "t": "Inscripción registral (art. 22.2 LJVol)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Se procede a la inscripción del hecho declarado en el registro público correspondiente, conforme a lo dispuesto en el artículo 22.2 de la Ley de la Jurisdicción Voluntaria, relativo al cumplimiento y ejecución de la resolución que pone fin al expediente."
+    ],
+    [
+     "n",
+     "La inscripción se realizará conforme a las normas propias del registro de que se trate (Registro de la Propiedad, Mercantil, etc.)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, arts. 22.2, 11"
+    ]
+   ],
+   "nx": "fin_exito_inscripcion"
+  },
+  "fin_no_viable": {
+   "ph": 3,
+   "t": "No procede el expediente",
+   "ac": "juez",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "No se cumplen una o más de las condiciones cumulativas del artículo 80 bis.2, por lo que el expediente de declaración judicial sobre hechos pasados no resulta viable por esta vía."
+    ],
+    [
+     "w",
+     "Si la causa de inviabilidad es la existencia de controversia, el cauce adecuado será el proceso declarativo contencioso correspondiente."
+    ],
+    [
+     "n",
+     "Si la causa es la existencia de otro procedimiento judicial indicado (condición 5.ª), el carácter subsidiario del expediente impide su tramitación mientras exista esa vía preferente."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 80 bis.2, art. 1, art. 6"
+    ]
+   ]
+  },
+  "fin_inadmitido": {
+   "ph": 3,
+   "t": "Expediente inadmitido por auto del Juez",
+   "ac": "juez",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "El Juez ha inadmitido el expediente por auto, previa audiencia del Ministerio Fiscal y del solicitante, al estimar la falta de competencia objetiva o territorial, o bien la falta de alguna de las condiciones del artículo 80 bis.2."
+    ],
+    [
+     "n",
+     "El auto de inadmisión es susceptible de recurso de apelación conforme a la Ley de Enjuiciamiento Civil (art. 80 quinquies)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, arts. 80 quáter.2, 80 quinquies; LEC, recurso de apelación"
+    ]
+   ]
+  },
+  "fin_sobreseimiento": {
+   "ph": 3,
+   "t": "Sobreseimiento del expediente por oposición estimada",
+   "ac": "juez",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "El Juez ha estimado justificada la oposición formulada y ha acordado por auto el sobreseimiento del expediente, con reserva a las partes de su derecho a ejercitar la acción correspondiente en el procedimiento que estimen pertinente."
+    ],
+    [
+     "n",
+     "El auto de sobreseimiento no impide a las partes ejercitar la acción correspondiente en otra vía procesal. El sobreseimiento cierra esta vía de jurisdicción voluntaria, pero no prejuzga el fondo del asunto."
+    ],
+    [
+     "n",
+     "El auto que resuelve sobre la oposición es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, arts. 80 quáter.6, 80 quinquies"
+    ]
+   ]
+  },
+  "fin_denegada": {
+   "ph": 3,
+   "t": "Declaración judicial denegada",
+   "ac": "juez",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "El Juez ha denegado por auto la emisión de la declaración judicial interesada, tras la celebración de la comparecencia. El expediente concluye sin que se emita la declaración."
+    ],
+    [
+     "n",
+     "El auto que deniega la declaración es susceptible de recurso de apelación conforme a la Ley de Enjuiciamiento Civil (art. 80 quinquies)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, arts. 80 quáter.5, 80 quinquies; LEC, recurso de apelación"
+    ]
+   ]
+  },
+  "fin_exito": {
+   "ph": 3,
+   "t": "Declaración judicial emitida con éxito",
+   "ac": "juez",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "El Juez ha accedido a la solicitud y ha emitido en la parte dispositiva del auto la declaración sobre hechos pasados determinados, con expresión de sus circunstancias. Se ha pronunciado, en su caso, sobre las consecuencias que se derivan de la declaración."
+    ],
+    [
+     "n",
+     "El auto que accede a la declaración es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies), si bien normalmente quien obtuvo la declaración no tendría interés en recurrir."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 80 quáter.5, art. 80 quinquies"
+    ]
+   ]
+  },
+  "fin_exito_inscripcion": {
+   "ph": 3,
+   "t": "Declaración emitida con inscripción registral",
+   "ac": "ambos",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "El Juez ha accedido a la solicitud y ha emitido la declaración judicial. Adicionalmente, al derivar la declaración en un hecho inscribible, se ha procedido a la inscripción en el registro público correspondiente conforme al artículo 22.2 de la Ley de la Jurisdicción Voluntaria."
+    ],
+    [
+     "n",
+     "La inscripción se ha realizado conforme a las normas del registro de que se trate (Registro de la Propiedad, Mercantil u otro registro público)."
+    ],
+    [
+     "l",
+     "Ley 15/2015, arts. 80 quáter.5, 22.2, 11"
+    ]
+   ]
+  }
+ },
+ "otrosDatos": {
+  "PHASES": [
+   "Viabilidad",
+   "Competencia y admisión",
+   "Tramitación",
+   "Resolución y recursos"
+  ]
+ }
+}

@@ -1,0 +1,1986 @@
+{
+ "id": "E05",
+ "tipo": "esquema",
+ "ruta": "02 - Esquemas interactivos/LEC/02 - De la división judicial de patrimonios/02 - CAPÍTULO II - Del procedimiento para la liquidación del régimen económico matrimonial/Del procedimiento para la liquidación del REM.html",
+ "titulo": "Liquidación del Régimen Económico Matrimonial — LEC Arts. 806–811 · Esquema Definitivo",
+ "cabecera": {
+  "migas": "LEY 1/2000, DE 7 DE ENERO, DE ENJUICIAMIENTO CIVIL · LIBRO IV: DE LOS PROCESOS ESPECIALES · TÍTULO II: DE LA DIVISIÓN JUDICIAL DE PATRIMONIOS · CAPÍTULO II",
+  "titulo": "Del procedimiento para la liquidación del régimen económico matrimonial",
+  "subtitulo": "Artículos 806 a 811 LEC y conexos (784–788)",
+  "etiquetas": [
+   "LEC 1/2000",
+   "Arts. 806–811",
+   "Arts. conexos 784–788",
+   "Libro IV · Procesos especiales",
+   "CC arts. 1315–1444",
+   "Reg. (UE) 2016/1103"
+  ]
+ },
+ "estadisticas": [
+  {
+   "valor": "11",
+   "etiqueta": "Artículos analizados"
+  },
+  {
+   "valor": "18+",
+   "etiqueta": "Conexiones normativas"
+  },
+  {
+   "valor": "12+",
+   "etiqueta": "Actores identificados"
+  },
+  {
+   "valor": "7",
+   "etiqueta": "Plazos procesales"
+  }
+ ],
+ "filtros": [
+  {
+   "categoria": "all",
+   "texto": "Todos"
+  },
+  {
+   "categoria": "c1",
+   "texto": "Ámbito y competencia"
+  },
+  {
+   "categoria": "c2",
+   "texto": "Inventario"
+  },
+  {
+   "categoria": "c3",
+   "texto": "Liquidación"
+  },
+  {
+   "categoria": "c4",
+   "texto": "Participación"
+  },
+  {
+   "categoria": "c5",
+   "texto": "Arts. conexos"
+  }
+ ],
+ "leyenda": [
+  {
+   "texto": "Ámbito de aplicación y competencia (arts. 806–807)",
+   "color": "background:var(--c1)"
+  },
+  {
+   "texto": "Inventario: solicitud y formación (arts. 808–809)",
+   "color": "background:var(--c2)"
+  },
+  {
+   "texto": "Liquidación del régimen económico matrimonial (art. 810)",
+   "color": "background:var(--c3)"
+  },
+  {
+   "texto": "Liquidación del régimen de participación (art. 811)",
+   "color": "background:var(--c4)"
+  },
+  {
+   "texto": "Artículos conexos LEC — Operaciones divisorias (arts. 784–788)",
+   "color": "background:var(--c5)"
+  },
+  {
+   "texto": "General / Referencias normativas",
+   "color": "background:var(--c6)"
+  }
+ ],
+ "pie": "LEC, Ley 1/2000, de 7 de enero — Libro IV, Título II, Capítulo II — Arts. 806–811 y conexos 784–788 · Esquema definitivo fusionado · Incluye ecosistema normativo ampliado (LEC Arts. 782-789 + CC Arts. 1315-1418 + LO 1/2004 + DF Forales)",
+ "secciones": [
+  {
+   "id": "sec-ambito",
+   "titulo": "Ámbito de aplicación y competencia",
+   "recuento": "2 artículos · 806–807",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c1",
+      "articulo": "Artículo 806",
+      "etiquetas": [
+       {
+        "texto": "Ámbito general",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Ámbito de aplicación",
+      "resumen": "Delimita los regímenes económicos matrimoniales sujetos al procedimiento del capítulo y la condición subsidiaria de su aplicación.",
+      "contadores": [
+       "4 regímenes incluidos",
+       "2 regímenes excluidos",
+       "1 condición"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Función del precepto",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Norma de derecho procesal sustantivo:</strong> delimita el ámbito de aplicación del capítulo por referencia a la estructura del régimen (existencia de masa común) y remite al derecho civil material para su contenido."
+            },
+            {
+             "t": "<strong>Regímenes incluidos:</strong> aquellos que, por capitulaciones matrimoniales o por disposición legal, determinen la existencia de una masa común de bienes y derechos sujeta a cargas y obligaciones."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Regímenes económicos incluidos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Sociedad de gananciales</strong> (CC arts. 1344–1410): régimen legal supletorio en derecho común. Activo: bienes del trabajo, frutos de bienes privativos y comunes, adquisiciones a título oneroso a costa del caudal común (CC art. 1347). Pasivo: sostenimiento familiar, gastos de los bienes comunes, deudas conjuntas (CC arts. 1362–1374)."
+            },
+            {
+             "t": "<strong>Régimen de participación</strong> (CC arts. 1411–1434): separación durante el matrimonio; comunidad liquidatoria a la disolución. Liquidación con especialidades en el artículo 811."
+            },
+            {
+             "t": "<strong>Regímenes forales de comunidad:</strong> conquistas navarras (Ley Foral 1/1973, Leyes 82–112), comunicación foral vasca (DLeg. 1/2023, arts. 127 y ss.), consorcio conyugal aragonés (DLeg. 1/2011, arts. 210–261), derecho civil catalán, gallego, balear y valenciano."
+            },
+            {
+             "t": "<strong>Cualquier otro régimen de comunidad pactado</strong> en capitulaciones matrimoniales, siempre que genere masa común."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Regímenes excluidos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Separación de bienes</strong> (CC arts. 1435–1444): no genera masa común; los bienes en copropiedad se dividen conforme a las normas de la comunidad ordinaria (CC arts. 392–406)."
+            },
+            {
+             "t": "<strong>Bienes privativos</strong> de cada cónyuge: quedan fuera del objeto de la liquidación, salvo en cuanto generadores de créditos de reintegro frente a la comunidad o viceversa (CC arts. 1364, 1390–1391)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Condición de aplicabilidad: defecto de acuerdo",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El procedimiento es <strong>subsidiario</strong> del acuerdo privado. Si los cónyuges se han puesto de acuerdo, la liquidación puede instrumentarse vía:",
+             "sub": [
+              {
+               "t": "<strong>Convenio regulador</strong> aprobado judicialmente (CC art. 90; LEC art. 774.1): el convenio puede incluir la liquidación del régimen y, aprobado por el juez, tiene valor de sentencia."
+              },
+              {
+               "t": "<strong>Escritura pública notarial</strong> (CC art. 1404 para gananciales): plena eficacia sin intervención judicial."
+              }
+             ]
+            },
+            {
+             "t": "Si el acuerdo es <strong>parcial</strong>, el procedimiento del capítulo se aplica al resto de la masa no acordada."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Normas civiles aplicables",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Código Civil</strong> (derecho común)."
+            },
+            {
+             "t": "<strong>Compilaciones y códigos civiles forales</strong> o especiales (art. 149.1.8.ª CE), de aplicación preferente en sus territorios."
+            },
+            {
+             "t": "<strong>Reglamento (UE) 2016/1103</strong> del Consejo, de 24 de junio de 2016, aplicable desde el 29 de enero de 2019 para determinar la ley aplicable cuando concurre elemento de extranjería (distintas nacionalidades, residencia habitual en Estado miembro distinto del de celebración del matrimonio)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "CC arts. 1315–1324",
+       "CC arts. 1344–1410",
+       "CC arts. 1411–1434",
+       "CC art. 90 (conv. regulador)",
+       "Reg. (UE) 2016/1103"
+      ],
+      "claves": "artículo 806 ámbito aplicación régimen económico matrimonial capitulaciones matrimoniales disposición legal masa común bienes derechos cargas obligaciones acuerdo cónyuges normas civiles sociedad gananciales participación foral separación bienes reglamento europeo convenio regulador notario"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c1",
+      "articulo": "Artículo 807",
+      "etiquetas": [
+       {
+        "texto": "Competencia",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Competencia",
+      "resumen": "Determina el juzgado competente para la liquidación mediante el principio de vis attractiva: el tribunal del proceso principal es el competente.",
+      "contadores": [
+       "2 órganos competentes",
+       "3 supuestos",
+       "Funcional e inderogable"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Principio de vis attractiva",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "La liquidación queda <strong>atraída</strong> al juzgado del proceso de crisis matrimonial, evitando la dispersión de procedimientos."
+            },
+            {
+             "t": "Competencia <strong>funcional</strong>: inderogable por sumisión expresa o tácita (LEC art. 62). Su infracción determina la nulidad de actuaciones."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Juzgado de Primera Instancia (JPI)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Competente cuando el proceso de nulidad, separación o divorcio se sigue ante él (LEC arts. 769–770)."
+            },
+            {
+             "t": "Competente también cuando la disolución del régimen se produce por causas civiles sin proceso matrimonial (CC art. 1392 para gananciales): concurso de acreedores, separación judicial, tutela, ausencia, incapacitación, abandono de familia."
+            },
+            {
+             "t": "En partidos judiciales con varios JPI, la liquidación se acumula al <strong>juzgado concreto</strong> que tramitó el proceso principal (LEC art. 68 sobre reparto)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Juzgado de Violencia sobre la Mujer (JVSM)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Competente cuando el proceso principal se tramita ante él (arts. 87 ter LOPJ y 49 bis LEC, introducidos por la LO 1/2004)."
+            },
+            {
+             "t": "La competencia civil del JVSM cesa si se dicta sentencia penal absolutoria firme o se archiva el procedimiento penal: <strong>inhibición</strong> a favor del JPI (art. 49 bis.4 LEC)."
+            },
+            {
+             "t": "En este juzgado son especialmente relevantes las medidas de protección civil adoptadas (uso de la vivienda familiar, suspensión de la guarda y custodia)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Competencia objetiva y territorial",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Objetiva:</strong> siempre el JPI (arts. 85.1 LOPJ y 45 LEC). Nunca Juzgados de Paz ni Audiencias Provinciales en primera instancia."
+            },
+            {
+             "t": "<strong>Territorial:</strong> la del juzgado del proceso principal. No opera la regla del domicilio del demandado al solicitar la liquidación."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Competencia internacional",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Reglamento (UE) 2016/1103:</strong> el tribunal competente para conocer de la sucesión o del divorcio/separación/nulidad lo es también para el régimen económico matrimonial (arts. 4–5)."
+            },
+            {
+             "t": "En defecto de los criterios anteriores: tribunal del Estado miembro de la última residencia habitual común, de la nacionalidad común, o del domicilio de cualquier cónyuge (art. 6)."
+            },
+            {
+             "t": "Los cónyuges pueden pactar la competencia del tribunal que haya de conocer de la disolución del matrimonio (art. 7 del Reglamento)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "LEC art. 769",
+       "LEC art. 49 bis",
+       "LOPJ art. 87 ter",
+       "LO 1/2004",
+       "Reg. (UE) 2016/1103 arts. 4–7"
+      ],
+      "claves": "artículo 807 competencia juzgado primera instancia violencia mujer nulidad separación divorcio disolución vis attractiva funcional territorial internacional reglamento europeo lopj 87 ter 49 bis inhibición reparto"
+     }
+    },
+    {
+     "p": "No se encontraron artículos para «».",
+     "clase": "no-results"
+    }
+   ]
+  },
+  {
+   "id": "sec-inventario",
+   "titulo": "Formación del inventario",
+   "recuento": "2 artículos · 808–809",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c2",
+      "articulo": "Artículo 808",
+      "etiquetas": [
+       {
+        "texto": "Solicitud",
+        "clase": "tag-warn"
+       }
+      ],
+      "titulo": "Solicitud de inventario",
+      "resumen": "Regula quién puede solicitar la formación de inventario, cuándo puede hacerlo y con qué documentación debe acompañarse la solicitud.",
+      "contadores": [
+       "2 legitimados",
+       "2 momentos habilitantes",
+       "3 masas patrimoniales"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Naturaleza jurídica",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Acto de parte de <strong>impulso procedimental</strong>: no es una demanda en sentido estricto ni genera contestación formal de la parte contraria."
+            },
+            {
+             "t": "Carácter <strong>voluntario</strong>: los cónyuges pueden acordar extrajudicialmente el inventario (CC art. 1396 para gananciales). Solo si no hay acuerdo procede este trámite judicial."
+            },
+            {
+             "t": "No requiere procurador ni abogado obligatoriamente en esta fase inicial <em>(salvo que ya intervengan en el proceso principal)</em>."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Momento procesal habilitante",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Admisión de la demanda de nulidad, separación o divorcio:</strong> el legislador adelanta el momento a la mera admisión (no a la sentencia), facilitando la actuación temprana sobre el patrimonio común. La valoración de los bienes en la sociedad de gananciales se fijará, no obstante, en el momento de la disolución (CC art. 1396)."
+            },
+            {
+             "t": "<strong>Inicio del proceso de disolución por causa civil</strong> (CC art. 1392 para gananciales): concurso de acreedores, privación de patria potestad, separación judicial, tutela, ausencia, incapacitación o abandono de familia."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Legitimación",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Cualquiera de los cónyuges:</strong> con independencia de quién haya demandado en el proceso principal."
+            },
+            {
+             "t": "<strong>Herederos de los cónyuges:</strong> únicamente si el cónyuge legitimado ha fallecido antes de formular la solicitud. Si son varios, deben actuar conjuntamente o designar representante común (CC art. 1058)."
+            },
+            {
+             "t": "<strong>Excluidos:</strong> los acreedores de los cónyuges (carecen de legitimación directa; deben esperar al proceso o acudir a la acción subrogatoria, CC art. 1111)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Contenido de la propuesta — Activo ganancial (CC arts. 1347–1361)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Bienes obtenidos por el trabajo o industria de cualquier cónyuge durante el matrimonio."
+            },
+            {
+             "t": "Frutos, rentas e intereses producidos por bienes privativos y gananciales."
+            },
+            {
+             "t": "Bienes adquiridos a título oneroso a costa del caudal común (aunque la adquisición sea solo para uno de los cónyuges)."
+            },
+            {
+             "t": "Empresas y establecimientos fundados durante la vigencia del régimen a expensas de los bienes comunes."
+            },
+            {
+             "t": "Bienes de naturaleza dudosa: presunción de ganancialidad (CC art. 1361)."
+            },
+            {
+             "t": "Bienes adquiridos en parte con fondos comunes y en parte privativos: regla de proporcionalidad (CC art. 1354)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Contenido de la propuesta — Pasivo ganancial (CC arts. 1362–1374)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Gastos de sostenimiento de la familia, alimentación y educación de los hijos comunes y los que convivan en el hogar."
+            },
+            {
+             "t": "Adquisición, tenencia y disfrute de los bienes comunes."
+            },
+            {
+             "t": "Administración ordinaria de los bienes privativos de cada cónyuge."
+            },
+            {
+             "t": "Deudas contraídas conjuntamente o por uno de ellos con consentimiento del otro."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Créditos de reintegro y compensación entre masas",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Reintegros al haber ganancial</strong> por gastos de la comunidad sufragados con bienes privativos de un cónyuge (CC art. 1364)."
+            },
+            {
+             "t": "<strong>Reintegros al haber privativo</strong> por bienes privativos empleados en beneficio de la comunidad (CC art. 1365.1)."
+            },
+            {
+             "t": "<strong>Indemnización al patrimonio privativo</strong> cuando bienes gananciales se apliquen a negocios privativos (CC art. 1390)."
+            },
+            {
+             "t": "<strong>Indemnización al patrimonio ganancial</strong> cuando bienes privativos generen ganancias integradas en la comunidad (CC art. 1391)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Documentación justificativa",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Títulos de propiedad de bienes inmuebles (escrituras públicas, notas registrales actualizadas)."
+            },
+            {
+             "t": "Certificados bancarios de saldos, depósitos, fondos de inversión y planes de pensiones."
+            },
+            {
+             "t": "Escrituras de participaciones en sociedades o certificados del Registro Mercantil."
+            },
+            {
+             "t": "Tasaciones o informes periciales de valor de bienes de difícil valoración objetiva (inmuebles, empresas, obras de arte)."
+            },
+            {
+             "t": "Documentación acreditativa de deudas pendientes (pólizas de crédito, préstamos hipotecarios, avales)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "CC arts. 1347–1361",
+       "CC arts. 1362–1374",
+       "CC art. 1354",
+       "CC arts. 1364, 1390–1391",
+       "LEC art. 809"
+      ],
+      "claves": "artículo 808 solicitud inventario demanda admisión cónyuges herederos propuesta partidas activo pasivo gananciales privativo reintegros documentos escrituras certificados tasaciones legitimación momento procesal"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c2",
+      "articulo": "Artículo 809",
+      "etiquetas": [
+       {
+        "texto": "Procedimiento",
+        "clase": "tag-warn"
+       }
+      ],
+      "titulo": "Formación del inventario",
+      "resumen": "Regula el señalamiento, el desarrollo del acto de formación del inventario, los supuestos de incomparecencia y acuerdo, y la vía contenciosa para la resolución de controversias.",
+      "contadores": [
+       "4 supuestos",
+       "10 días plazo máx.",
+       "Mismo día/siguiente resolución"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "El LAJ: posición y funciones",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Actúa como <strong>fedatario judicial</strong> y director del acto, no como juzgador. Le incumbe señalar, citar, levantar acta y dar fe del resultado."
+            },
+            {
+             "t": "La función resolutoria sobre controversias de fondo (calificación de bienes, valoración de partidas) corresponde en todo caso al <strong>Tribunal</strong> (Juez o Magistrado)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Señalamiento y citación",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Plazo máximo de diez días</strong> desde la presentación de la solicitud hasta la celebración del acto."
+            },
+            {
+             "t": "Citación conforme a los artículos 152–168 LEC. Si los cónyuges tienen procurador constituido, la citación se entiende con este (LEC art. 153)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Supuesto 1 — Incomparecencia injustificada",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Conformidad ficta</strong> del incompareciente con la propuesta del cónyuge que haya comparecido. Mecanismo de sanción procesal que desincentiva la obstrucción."
+            },
+            {
+             "t": "«Sin mediar causa justificada»: la causa ha de alegarse y acreditarse en el momento o mediante escrito previo. La indefensión sobrevenida puede dar lugar a nulidad del acto (LEC art. 185 en relación con el art. 238.3 LOPJ)."
+            },
+            {
+             "t": "La incomparecencia <strong>justificada</strong> (enfermedad acreditada, causa de fuerza mayor) no genera conformidad ficta; el LAJ señalará nueva fecha."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Supuesto 2 — Acuerdo entre los cónyuges",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Se consigna el inventario acordado en el acta, con valor de documento judicial."
+            },
+            {
+             "t": "El acto se da por concluido."
+            },
+            {
+             "t": "En el mismo día o en el siguiente, el <strong>Tribunal</strong> resolverá por auto sobre la administración y disposición de los bienes inventariados (LEC art. 773; CC art. 103.4)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Resolución del Tribunal sobre administración y disposición",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El auto puede atribuir la <strong>administración exclusiva</strong> a uno de los cónyuges."
+            },
+            {
+             "t": "Puede establecer la necesidad de <strong>consentimiento conjunto</strong> para actos de disposición."
+            },
+            {
+             "t": "Puede nombrar <strong>administrador judicial</strong> en casos de conflicto grave o riesgo de deterioro del patrimonio."
+            },
+            {
+             "t": "Contra el auto: recurso de reposición (LEC art. 451) y, en su caso, apelación (LEC art. 455)."
+            },
+            {
+             "t": "Complementa las medidas provisionales del artículo 103 CC y del artículo 773 LEC."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Supuesto 3 — Controversia sobre el inventario (art. 809.2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Causas: discrepancia sobre inclusión/exclusión de bienes, calificación jurídica (ganancial o privativo), importe o valor de una partida, existencia o cuantía de crédito de reintegro."
+            },
+            {
+             "t": "El LAJ hace constar en el acta las pretensiones y su fundamentación jurídica."
+            },
+            {
+             "t": "Señala <strong>vista</strong> conforme al <strong>juicio verbal</strong> (LEC arts. 437–447): señalamiento en los veinte días siguientes, práctica de prueba en el propio acto, sentencia en veinte días."
+            },
+            {
+             "t": "La <strong>sentencia</strong> aprueba el inventario, resuelve todas las cuestiones controvertidas y dispone sobre la administración y disposición de los bienes comunes."
+            },
+            {
+             "t": "Contra la sentencia: <strong>recurso de apelación</strong> (LEC arts. 455–467)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "LEC arts. 152–168 (citaciones)",
+       "LEC art. 773 (medidas)",
+       "LEC arts. 437–447 (juicio verbal)",
+       "LEC art. 455 (apelación)",
+       "CC art. 103.4"
+      ],
+      "claves": "artículo 809 formación inventario letrado administración justicia diez días citación conformidad ficta acuerdo acta tribunal auto administración disposición bienes controversia juicio verbal sentencia incomparecencia recurso apelación medidas cautelares provisionales 103 cc"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-liquidacion",
+   "titulo": "Liquidación del régimen económico matrimonial",
+   "recuento": "1 artículo · 810",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c3",
+      "articulo": "Artículo 810",
+      "etiquetas": [
+       {
+        "texto": "Liquidación general",
+        "clase": "tag-ok"
+       }
+      ],
+      "titulo": "Liquidación del régimen económico matrimonial",
+      "resumen": "Establece el procedimiento completo de liquidación: requisitos de acceso, contenido de la propuesta, comparecencia ante el LAJ y vías de resolución según el resultado (acuerdo o falta de acuerdo).",
+      "contadores": [
+       "2 requisitos previos",
+       "3 supuestos",
+       "10 días plazo",
+       "Art. 788 ejecución"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Naturaleza y finalidad",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Efecto constitutivo:</strong> transforma las cuotas abstractas sobre el patrimonio común en titularidades singulares y exclusivas sobre bienes o derechos concretos. A diferencia del inventario (descriptivo), la liquidación es extintiva y atributiva."
+            },
+            {
+             "t": "<strong>No es una transmisión:</strong> implica especificación de derechos preexistentes, con importantes consecuencias fiscales (AJD, no ITP onerosa)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Requisitos previos y legitimación",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Conclusión del inventario</strong> con firmeza (por acuerdo o por sentencia firme del art. 809.2)."
+            },
+            {
+             "t": "<strong>Firmeza de la resolución de disolución</strong> (en su caso): la sentencia de separación, divorcio o nulidad, o el auto de disolución por causa civil, debe ser firme (LEC art. 207.2). La firmeza impide que la reconciliación conyugal (CC art. 84) reabra el régimen ya disuelto."
+            },
+            {
+             "t": "<strong>Legitimados:</strong> cualquier cónyuge o, fallecido, sus herederos."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Contenido de la propuesta — Indemnizaciones y reintegros",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Reintegros al haber ganancial por gastos de la comunidad sufragados con bienes privativos (CC art. 1364)."
+            },
+            {
+             "t": "Reintegros al haber privativo por bienes privativos empleados en la comunidad (CC art. 1365.1)."
+            },
+            {
+             "t": "Indemnización al patrimonio privativo cuando bienes gananciales se aplicaron a negocios privativos (CC art. 1390)."
+            },
+            {
+             "t": "Indemnización al patrimonio ganancial cuando bienes privativos generaron ganancias comunes (CC art. 1391)."
+            },
+            {
+             "t": "Abono de cantidades adeudadas por cualquier cónyuge a la sociedad (CC art. 1397.3)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Contenido de la propuesta — División del remanente y formación de lotes",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>División por mitad</strong> del remanente en la sociedad de gananciales (CC art. 1404)."
+            },
+            {
+             "t": "<strong>Preferencias en la formación de lotes</strong> (CC arts. 1406–1407):",
+             "sub": [
+              {
+               "t": "Bienes de uso personal no suntuario (CC art. 1406.1)."
+              },
+              {
+               "t": "Explotación económica gestionada efectivamente (CC art. 1406.2)."
+              },
+              {
+               "t": "Local en que se ejerce la profesión u oficio (CC art. 1406.3)."
+              },
+              {
+               "t": "<strong>Vivienda habitual de la familia</strong> (CC art. 1406.4): derecho de especial relevancia práctica."
+              }
+             ]
+            },
+            {
+             "t": "Si el valor del bien excede la cuota del adjudicatario, este <strong>compensará en metálico</strong> (CC art. 1407). Si no puede pagar, el Tribunal puede acordar aplazamiento o adjudicación compartida."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Señalamiento por el LAJ — Plazo de diez días",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Admitida la solicitud, el LAJ señala, en el <strong>plazo máximo de diez días</strong>, la comparecencia para: (a) intentar el acuerdo; y (b) en defecto de acuerdo, designar contador y, en su caso, peritos."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Supuesto 1 — Incomparecencia injustificada",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Conformidad ficta del incompareciente (cónyuge o heredero) con la propuesta del compareciente. Mismo mecanismo que en el artículo 809.1."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Supuesto 2 — Acuerdo",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Se consigna en el acta y se da por concluido el acto."
+            },
+            {
+             "t": "Ejecución del acuerdo conforme a los <strong>dos primeros apartados del artículo 788 LEC</strong>:",
+             "sub": [
+              {
+               "t": "Art. 788.1: el LAJ aprueba la liquidación mediante <strong>decreto</strong>."
+              },
+              {
+               "t": "Art. 788.2: si algún interesado se opone, el Tribunal resuelve mediante <strong>auto</strong>."
+              }
+             ]
+            },
+            {
+             "t": "El decreto o auto aprobatorio tiene <strong>fuerza ejecutiva directa</strong> (LEC art. 517.2.9.ª)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Supuesto 3 — Falta de acuerdo: operaciones divisorias",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Nombramiento de <strong>contador</strong> y, en su caso, <strong>peritos</strong> conforme al artículo 784 LEC."
+            },
+            {
+             "t": "Las operaciones divisorias siguen la tramitación de los artículos 785–788 LEC (cuaderno particional, oposición, aprobación judicial, ejecución)."
+            },
+            {
+             "t": "<strong>Plazo del contador:</strong> máximo <strong>dos meses</strong> desde el inicio de las operaciones divisorias para presentar el cuaderno particional (Art. 786.2 LEC)."
+            },
+            {
+             "t": "Art. 788.3: si persiste desacuerdo parcial sobre adjudicaciones, el LAJ puede proceder a <strong>sacar a suerte</strong> los lotes discutidos."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Efectos registrales y fiscales",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Registro de la Propiedad:</strong> los bienes adjudicados deben inscribirse a nombre del adjudicatario (arts. 2 y 10 LH); efectos frente a terceros (LH arts. 32, 34, 38)."
+            },
+            {
+             "t": "<strong>Tributación:</strong> la liquidación de gananciales está sujeta a <strong>AJD</strong> (no a ITP onerosa, pues no hay transmisión). Si hay excesos de adjudicación no compensados, pueden tributar por ITP onerosa."
+            },
+            {
+             "t": "<strong>IRPF:</strong> el valor de adjudicación de la vivienda habitual, si se transmite posteriormente, opera como valor de adquisición a efectos de la ganancia patrimonial (Ley 35/2006, art. 35)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "CC arts. 1364, 1390–1391",
+       "CC arts. 1397–1399",
+       "CC arts. 1404, 1406–1407",
+       "LEC art. 784",
+       "LEC arts. 785–787",
+       "LEC art. 788 (apts. 1–3)",
+       "LEC art. 517.2.9.ª",
+       "RDLeg. 1/1993 art. 45.I.B.3"
+      ],
+      "claves": "artículo 810 liquidación régimen económico matrimonial inventario firme resolución cónyuges herederos propuesta indemnizaciones reintegros remanente lotes preferencias vivienda habitual local profesional diez días contador peritos acuerdo acta 788 784 785 ejecutiva fiscal registro propiedad ajd itp adjudicación"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-participacion",
+   "titulo": "Liquidación del régimen de participación",
+   "recuento": "1 artículo · 811",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c4",
+      "articulo": "Artículo 811",
+      "etiquetas": [
+       {
+        "texto": "Régimen especial",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Liquidación del régimen de participación",
+      "resumen": "Regula la liquidación del régimen de participación en las ganancias: firmeza obligatoria, cálculo del crédito de participación, propuesta sobre patrimonios y vías de resolución.",
+      "contadores": [
+       "Firmeza obligatoria",
+       "3 supuestos",
+       "3 años prescripción",
+       "Juicio verbal si no hay acuerdo"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Caracterización del régimen",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Durante el matrimonio:</strong> separación de bienes plena; cada cónyuge administra, disfruta y dispone de sus bienes con plena independencia."
+            },
+            {
+             "t": "<strong>A la disolución:</strong> cada cónyuge tiene derecho a participar en las ganancias obtenidas por el otro (CC arts. 1411–1434)."
+            },
+            {
+             "t": "No existe masa común: el objeto de la liquidación es el cálculo bilateral de patrimonios para determinar el <strong>crédito de participación</strong>."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Requisito previo — Firmeza obligatoria e incondicional",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El artículo 811.1 exige, de forma <strong>absoluta e inequívoca</strong>, que la resolución de disolución sea firme antes de solicitar la liquidación (a diferencia del art. 810.1, que dice «en su caso»)."
+            },
+            {
+             "t": "Razón: sin la firmeza no existe certeza sobre la <strong>fecha de cierre</strong> de los patrimonios inicial y final, y no puede calcularse el crédito."
+            },
+            {
+             "t": "Firmeza (LEC art. 207.2): resolución no recurrible o con plazo de recurso transcurrido sin interposición."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Cálculo del crédito de participación",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Patrimonio inicial</strong> (CC arts. 1417–1419): bienes al inicio del régimen + bienes adquiridos a título gratuito durante el matrimonio − deudas iniciales. Si resulta negativo, se computa como <strong>cero</strong>."
+            },
+            {
+             "t": "<strong>Patrimonio final</strong> (CC arts. 1420–1421): bienes al momento de la disolución − obligaciones pendientes + adición ficticia de donaciones fraudulentas realizadas sin consentimiento del otro cónyuge (CC art. 1422)."
+            },
+            {
+             "t": "<strong>Crédito de participación</strong> (CC arts. 1423–1424):",
+             "sub": [
+              {
+               "t": "Si ambos cónyuges han obtenido ganancias: el que las obtuvo en menor cuantía participa en la <strong>mitad de la diferencia</strong>."
+              },
+              {
+               "t": "Si solo uno obtuvo ganancias: el otro tiene derecho a la <strong>mitad de ellas</strong>."
+              }
+             ]
+            },
+            {
+             "t": "<strong>Prescripción:</strong> el crédito prescribe a los <strong>tres años</strong> desde la disolución del régimen (CC art. 1424), salvo interrupción. Plazo que opera como límite absoluto para ejercitar la acción de liquidación."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Contenido de la propuesta de liquidación",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Estimación del <strong>patrimonio inicial</strong> de cada cónyuge (referencia: fecha de inicio del régimen)."
+            },
+            {
+             "t": "Estimación del <strong>patrimonio final</strong> de cada cónyuge (referencia: fecha de disolución)."
+            },
+            {
+             "t": "<strong>Cantidad resultante a pagar</strong>: crédito calculado conforme a los artículos 1423–1424 CC, con la forma de pago propuesta."
+            },
+            {
+             "t": "A diferencia de la propuesta del artículo 808, no existe masa común que inventariar; la propuesta opera sobre <strong>patrimonios separados</strong>."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Señalamiento — Plazo de diez días",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El LAJ señala, en el plazo máximo de <strong>diez días</strong> desde la admisión de la solicitud, el día y hora de comparecencia para alcanzar un acuerdo."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Supuesto 1 — Incomparecencia injustificada",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Conformidad ficta del incompareciente con la propuesta del cónyuge compareciente."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Supuesto 2 — Acuerdo",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Se consigna en el acta y se da por concluido el acto."
+            },
+            {
+             "t": "El artículo 811.4 no remite expresamente al artículo 788, pero la doctrina mayoritaria entiende aplicable analógicamente dicha remisión para la ejecución del acuerdo."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Supuesto 3 — Falta de acuerdo: juicio verbal",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El LAJ cita a los cónyuges a una <strong>vista</strong> conforme al juicio verbal (LEC arts. 437–447)."
+            },
+            {
+             "t": "<strong>Diferencia esencial</strong> respecto al art. 810.5: aquí no se prevé el nombramiento de contador ni peritos; la tramitación es íntegramente contenciosa desde el primer desacuerdo."
+            },
+            {
+             "t": "La <strong>sentencia</strong> determinará:",
+             "sub": [
+              {
+               "t": "Los patrimonios iniciales y finales de cada cónyuge (con todos sus componentes, incluidas adiciones del art. 1422 CC)."
+              },
+              {
+               "t": "La cantidad que deba satisfacer el cónyuge con mayor incremento patrimonial."
+              },
+              {
+               "t": "La forma de pago: dinero en primer lugar; si no es posible, bienes por autorización judicial (CC art. 1432)."
+              }
+             ]
+            },
+            {
+             "t": "Contra la sentencia: <strong>recurso de apelación</strong> (LEC arts. 455–467)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Garantía y formas de pago del crédito",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El crédito de participación goza de <strong>garantía real hipotecaria</strong> sobre los bienes del deudor (CC art. 1414)."
+            },
+            {
+             "t": "Formas de pago reguladas en los arts. 1415–1418 CC: dinero, bienes concretos con autorización judicial, aplazamientos, etc."
+            },
+            {
+             "t": "En todo caso, prevalece el pago en <strong>dinero</strong>; el pago en especie requiere autorización judicial expresa (CC art. 1432)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "CC arts. 1411–1434",
+       "CC arts. 1417–1424",
+       "CC art. 1422 (donaciones fraudulentas)",
+       "CC art. 1432 (pago en bienes)",
+       "CC art. 1414 (garantía hipotecaria)",
+       "CC art. 1424 (prescripción 3 años)",
+       "LEC arts. 437–447 (juicio verbal)"
+      ],
+      "claves": "artículo 811 liquidación régimen participación patrimonio inicial final cónyuge incremento patrimonial firme resolución letrado administración justicia diez días acuerdo incomparecencia juicio verbal sentencia forma pago dinero bienes prescripción tres años crédito participación donaciones fraudulentas garantía hipotecaria"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-conexos",
+   "titulo": "Artículos conexos LEC — Operaciones divisorias (arts. 784–788)",
+   "recuento": "5 artículos · remitidos por art. 810",
+   "plegada": true,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Artículo 784",
+      "etiquetas": [
+       {
+        "texto": "Conexo art. 810.5",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Nombramiento de contador y peritos",
+      "resumen": "Regula la designación del contador y los peritos para las operaciones divisorias cuando no hay acuerdo en la liquidación.",
+      "contadores": [
+       "2 vías de designación"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Designación del contador",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Por acuerdo de los interesados:</strong> pueden designar de común acuerdo a la persona de su confianza o profesional especializado (abogado, notario, economista)."
+            },
+            {
+             "t": "<strong>Por el LAJ en defecto de acuerdo:</strong> designación de entre los listados de peritos judiciales (LEC art. 341) o, si no existen listados suficientes, de entre personas con conocimientos adecuados (contables, graduados sociales, economistas)."
+            },
+            {
+             "t": "El contador debe <strong>aceptar el cargo</strong> y jurar o prometer desempeñarlo fielmente."
+            },
+            {
+             "t": "El LAJ fijará al contador un <strong>plazo</strong> para presentar el cuaderno particional (habitualmente dos meses, prorrogables)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Designación de peritos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Se acuerda cuando los partícipes no han podido tasar de común acuerdo los bienes que deban incluirse en el cuaderno."
+            },
+            {
+             "t": "Los peritos actúan paralelamente al contador: valoran los bienes y remiten su informe al contador para su incorporación al cuaderno."
+            },
+            {
+             "t": "Pueden designarse varios peritos especializados según la naturaleza de los bienes (inmuebles, empresas, participaciones sociales, obras de arte)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "LEC art. 341 (listados peritos)",
+       "LEC art. 810.5 (remisión)"
+      ],
+      "claves": "artículo 784 nombramiento contador peritos operaciones divisorias acuerdo partes listado lec 341 cuaderno particional plazo"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Artículo 785",
+      "etiquetas": [
+       {
+        "texto": "Conexo art. 810.5",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Presentación del cuaderno particional y oposición",
+      "resumen": "Regula la presentación del cuaderno particional por el contador, el traslado a los interesados y los efectos de la ausencia de oposición.",
+      "contadores": [
+       "10 días traslado",
+       "Decreto si no hay oposición"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Elaboración y presentación del cuaderno",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El contador elabora el <strong>cuaderno particional</strong>: documento técnico-jurídico que incluye el inventario de la comunidad (activo y pasivo), las operaciones de liquidación (reintegros, indemnizaciones, pago del pasivo) y la formación de lotes para adjudicación."
+            },
+            {
+             "t": "El cuaderno se presenta ante el LAJ dentro del plazo fijado al contador."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Traslado a los interesados",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El LAJ da traslado del cuaderno a los interesados por un plazo de <strong>diez días</strong> para que formulen oposición o lo aprueben expresamente."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Aprobación sin oposición",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Si no hay oposición o si los interesados aprueban expresamente el cuaderno, el LAJ lo aprueba mediante <strong>decreto</strong>."
+            },
+            {
+             "t": "El decreto es título ejecutivo directo (LEC art. 517.2.9.ª): se puede acudir directamente al proceso de ejecución."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Oposición al cuaderno",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Si hay oposición, continúa la tramitación conforme al artículo 786."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "LEC art. 784 (contador)",
+       "LEC art. 786 (si hay oposición)",
+       "LEC art. 517.2.9.ª (ejecución)"
+      ],
+      "claves": "artículo 785 cuaderno particional oposición traslado interesados diez días aprobación decreto contador plazo liquidación operaciones"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Artículo 786",
+      "etiquetas": [
+       {
+        "texto": "Conexo art. 810.5",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Resolución de la oposición al cuaderno particional",
+      "resumen": "Regula la fase contenciosa de la oposición al cuaderno: comparecencia ante el Tribunal y vías de resolución.",
+      "contadores": [
+       "2 vías de resolución"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Comparecencia ante el Tribunal",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El Tribunal convoca a los interesados a una comparecencia para intentar un acuerdo."
+            },
+            {
+             "t": "<strong>Si hay acuerdo:</strong> el LAJ lo aprueba mediante decreto."
+            },
+            {
+             "t": "<strong>Si no hay acuerdo:</strong> el Tribunal puede:",
+             "sub": [
+              {
+               "t": "Resolver la oposición mediante <strong>auto</strong>, aprobando o modificando el cuaderno según lo acreditado."
+              },
+              {
+               "t": "Acordar la celebración de una <strong>vista</strong> conforme al juicio verbal si la complejidad de las cuestiones lo exige."
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "LEC art. 785 (oposición)",
+       "LEC art. 787 (aprobación)",
+       "LEC arts. 437–447 (juicio verbal)"
+      ],
+      "claves": "artículo 786 oposición cuaderno particional comparecencia tribunal acuerdo auto juicio verbal resolución"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Artículo 787",
+      "etiquetas": [
+       {
+        "texto": "Conexo art. 810.5",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Aprobación judicial de las operaciones divisorias",
+      "resumen": "Regula la resolución judicial de aprobación del cuaderno particional y los recursos contra ella.",
+      "contadores": [
+       "Auto aprobatorio",
+       "Apelación recurso"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Auto de aprobación",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El Tribunal aprueba las operaciones divisorias mediante <strong>auto</strong>."
+            },
+            {
+             "t": "El auto puede aprobar el cuaderno tal como fue presentado por el contador, o modificarlo en los puntos que hayan sido objeto de oposición fundada."
+            },
+            {
+             "t": "Contra el auto de aprobación cabe <strong>recurso de apelación</strong> (LEC art. 455)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "LEC art. 786 (oposición)",
+       "LEC art. 788 (ejecución)",
+       "LEC art. 455 (apelación)"
+      ],
+      "claves": "artículo 787 aprobación judicial operaciones divisorias auto recurso apelación"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Artículo 788",
+      "etiquetas": [
+       {
+        "texto": "Remisión expresa art. 810.4",
+        "clase": "tag-ok"
+       }
+      ],
+      "titulo": "Ejecución de las operaciones divisorias",
+      "resumen": "Regula la ejecución de las operaciones divisorias aprobadas y la fuerza ejecutiva de la resolución. Los dos primeros apartados son remitidos expresamente por el artículo 810.4.",
+      "contadores": [
+       "Fuerza ejecutiva directa",
+       "LEC art. 517.2.9.ª"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Artículo 788.1 — Entrega de bienes adjudicados",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Una vez aprobadas las operaciones (por acuerdo o por resolución judicial), el LAJ procede a la <strong>entrega a cada adjudicatario</strong> de los bienes que le hayan sido adjudicados."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Artículo 788.2 — Ejecución forzosa",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Si el adjudicatario se niega a recibir, o el actual poseedor se niega a entregar, se aplican las normas de <strong>ejecución forzosa</strong>:",
+             "sub": [
+              {
+               "t": "Bienes inmuebles: LEC arts. 699 y ss."
+              },
+              {
+               "t": "Bienes muebles: LEC arts. 701 y ss."
+              }
+             ]
+            },
+            {
+             "t": "La resolución aprobatoria (decreto del LAJ o auto judicial) tiene <strong>fuerza ejecutiva directa</strong> (LEC art. 517.2.9.ª): no se necesita nueva sentencia de condena para acudir al proceso de ejecución."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Artículo 788.3 — Adjudicación por suerte",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Si persiste desacuerdo parcial sobre la adjudicación de lotes concretos tras la aprobación del cuaderno, el LAJ puede proceder a <strong>sacar a suerte</strong> dichos lotes entre los partícipes."
+            },
+            {
+             "t": "Los lotes no discutidos se adjudican conforme al cuaderno aprobado."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "LEC art. 517.2.9.ª",
+       "LEC arts. 699 y ss. (inmuebles)",
+       "LEC arts. 701 y ss. (muebles)",
+       "LEC art. 810.4 (remisión)"
+      ],
+      "claves": "artículo 788 ejecución operaciones divisorias decreto auto entrega bienes adjudicados ejecución forzosa título ejecutivo 517 remisión artículo 810"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-flujo",
+   "titulo": "Diagrama de flujo del procedimiento",
+   "recuento": "Fases secuenciales",
+   "plegada": true,
+   "contenido": [
+    {
+     "p": "1",
+     "clase": "flow-num"
+    },
+    {
+     "p": "Proceso previo de crisis matrimonial",
+     "clase": "flow-title"
+    },
+    {
+     "p": "Nulidad, separación o divorcio (o disolución del REM por causa civil). Admisión de demanda = momento inicial para solicitar inventario.",
+     "clase": "flow-desc"
+    },
+    {
+     "p": "↓",
+     "clase": "flow-arrow"
+    },
+    {
+     "p": "2",
+     "clase": "flow-num"
+    },
+    {
+     "p": "Solicitud de inventario (Art. 808)",
+     "clase": "flow-title"
+    },
+    {
+     "p": "Cualquier cónyuge o heredero presenta propuesta de inventario con documentación. Plazo señalamiento: máx. 10 días.",
+     "clase": "flow-desc"
+    },
+    {
+     "p": "↓",
+     "clase": "flow-arrow"
+    },
+    {
+     "p": "3",
+     "clase": "flow-num"
+    },
+    {
+     "p": "Acto de formación de inventario (Art. 809)",
+     "clase": "flow-title"
+    },
+    {
+     "p": "Comparecencia ante el LAJ. Posibles salidas: ACUERDO (→ fin) | INCOMPARENCIA (→ conformidad) | CONTROVERSIA (→ Juicio Verbal)",
+     "clase": "flow-desc"
+    },
+    {
+     "p": "↓",
+     "clase": "flow-arrow"
+    },
+    {
+     "p": "4",
+     "clase": "flow-num"
+    },
+    {
+     "p": "Resolución firme de disolución del REM",
+     "clase": "flow-title"
+    },
+    {
+     "p": "Requisito previo para iniciar la fase de liquidación (absoluto en régimen de participación, Art. 811).",
+     "clase": "flow-desc"
+    },
+    {
+     "p": "↓",
+     "clase": "flow-arrow"
+    },
+    {
+     "p": "5",
+     "clase": "flow-num"
+    },
+    {
+     "p": "Solicitud de liquidación (Art. 810 u 811)",
+     "clase": "flow-title"
+    },
+    {
+     "p": "Presentación de propuesta de liquidación. Señalamiento: máx. 10 días. Comparecencia para acuerdo o designación de contador/peritos.",
+     "clase": "flow-desc"
+    },
+    {
+     "p": "↓",
+     "clase": "flow-arrow"
+    },
+    {
+     "p": "6",
+     "clase": "flow-num"
+    },
+    {
+     "p": "Ejecución o designación de contador-peritos",
+     "clase": "flow-title"
+    },
+    {
+     "p": "ACUERDO → Ejecución (Art. 788 LEC). DESACUERDO → Contador + Peritos (Art. 784 LEC) → Operaciones divisorias (Art. 786 LEC) → Cuaderno particional → Aprobación/Impugnación (Art. 787 LEC) → Adjudicación (Art. 788-789 LEC).",
+     "clase": "flow-desc"
+    }
+   ]
+  },
+  {
+   "id": "sec-timeline",
+   "titulo": "Indice de plazos procesales",
+   "recuento": "7 trámites",
+   "plegada": true,
+   "contenido": [
+    {
+     "tabla": {
+      "cabecera": [
+       "Acto o trámite procesal",
+       "Plazo",
+       "Fundamento normativo"
+      ],
+      "filas": [
+       [
+        "Señalamiento del acto de formación del inventario por el LAJ, desde la presentación de la solicitud",
+        "Máx. 10 días",
+        "Art. 809.1 LEC"
+       ],
+       [
+        "Resolución del Tribunal sobre administración y disposición de los bienes inventariados (auto)",
+        "Mismo día o siguiente",
+        "Art. 809.1 LEC (párr. final)"
+       ],
+       [
+        "Señalamiento de comparecencia para la liquidación del REM (general), desde la admisión de la solicitud",
+        "Máx. 10 días",
+        "Art. 810.3 LEC"
+       ],
+       [
+        "Señalamiento de comparecencia para la liquidación del régimen de participación, desde la admisión de la solicitud",
+        "Máx. 10 días",
+        "Art. 811.3 LEC"
+       ],
+       [
+        "Traslado del cuaderno particional a los interesados para formular oposición",
+        "10 días",
+        "Art. 785 LEC"
+       ],
+       [
+        "Práctica de operaciones divisorias por el contador",
+        "2 meses máx.",
+        "Art. 786.2 LEC (vía remisión Art. 810.5)"
+       ],
+       [
+        "Prescripción del crédito de participación desde la disolución del régimen",
+        "3 años",
+        "CC art. 1424"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-actors",
+   "titulo": "Mapa de participantes y actores",
+   "recuento": "6 categorías · 12+ actores",
+   "plegada": true,
+   "contenido": [
+    {
+     "p": "Órganos jurisdiccionales",
+     "clase": "participant-col-head phead-c1"
+    },
+    {
+     "lista": [
+      {
+       "t": "Juzgado de Primera Instancia (competencia principal)"
+      },
+      {
+       "t": "Juzgado de Violencia sobre la Mujer (competencia LO 1/2004)"
+      },
+      {
+       "t": "Tribunal / Juez o Magistrado (resoluciones de fondo, autos, sentencias)"
+      },
+      {
+       "t": "Audiencia Provincial (recurso de apelación)"
+      }
+     ]
+    },
+    {
+     "p": "Secretaría judicial",
+     "clase": "participant-col-head phead-c2"
+    },
+    {
+     "lista": [
+      {
+       "t": "Letrado de la Administración de Justicia (LAJ) (figura central: señala, preside, cita, nombra contador, levanta actas)"
+      }
+     ]
+    },
+    {
+     "p": "Partes procesales",
+     "clase": "participant-col-head phead-c3"
+    },
+    {
+     "lista": [
+      {
+       "t": "Cónyuge solicitante (impulso del procedimiento)"
+      },
+      {
+       "t": "Cónyuge requerido (parte activa o pasiva)"
+      },
+      {
+       "t": "Herederos de los cónyuges (legitimados si hubo fallecimiento)"
+      }
+     ]
+    },
+    {
+     "p": "Auxiliares y peritos",
+     "clase": "participant-col-head phead-c4"
+    },
+    {
+     "lista": [
+      {
+       "t": "Contador-Partidor (cuaderno particional, arts. 784–785)"
+      },
+      {
+       "t": "Peritos tasadores (valoración de bienes, inmuebles, empresas, arte)"
+      },
+      {
+       "t": "Administrador judicial (art. 809, si se nombra por conflicto)"
+      }
+     ]
+    },
+    {
+     "p": "Representación procesal",
+     "clase": "participant-col-head phead-c5"
+    },
+    {
+     "lista": [
+      {
+       "t": "Abogado/a (defensa técnica; no preceptivo en todos los trámites)"
+      },
+      {
+       "t": "Procurador/a (representación procesal; citaciones art. 153 LEC)"
+      },
+      {
+       "t": "Notario/a (documentación de la liquidación acordada extrajudicialmente)"
+      }
+     ]
+    },
+    {
+     "p": "Marco normativo",
+     "clase": "participant-col-head phead-c6"
+    },
+    {
+     "lista": [
+      {
+       "t": "Código Civil (derecho sustantivo REM)"
+      },
+      {
+       "t": "Derechos Forales / Autonómicos (normas territoriales especiales)"
+      },
+      {
+       "t": "LEC Libro IV (procedimiento división patrimonios)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-norms",
+   "titulo": "Ecosistema normativo — conexiones relacionadas",
+   "recuento": "12 cuerpos normativos",
+   "plegada": true,
+   "contenido": [
+    {
+     "p": "LEC — Ley 1/2000",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Capítulo I: División de la Herencia (Arts. 782–783)",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 782</strong> — Solicitud de división judicial de la herencia. Proceso paralelo análogo al de liquidación del REM.<br><strong>Art. 783</strong> — Sustanciación: inventario, avalúo, liquidación, división y adjudicación.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Proceso paralelo",
+     "clase": "norm-tag tag-info"
+    },
+    {
+     "p": "LEC — Ley 1/2000",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Operaciones divisorias (arts. 784–788)",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 784</strong> — Nombramiento de contador y peritos (junta, sorteo art. 341).<br><strong>Art. 785</strong> — Presentación del cuaderno particional; traslado de diez días; decreto si no hay oposición.<br><strong>Art. 786</strong> — Resolución de la oposición: comparecencia y auto o juicio verbal.<br><strong>Art. 787</strong> — Auto de aprobación; recurso de apelación.<br><strong>Art. 788 (apts. 1–3)</strong> — Ejecución de las operaciones aprobadas; fuerza ejecutiva directa; suerte.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Remisión expresa art. 810",
+     "clase": "norm-tag tag-info"
+    },
+    {
+     "p": "LEC — Ley 1/2000",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Juicio verbal (arts. 437–447)",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Arts. 437–447</strong> — Regulación del juicio verbal al que remiten el artículo 809.2 (controversia sobre el inventario) y el artículo 811.5 (falta de acuerdo en el régimen de participación). Señalamiento en los veinte días siguientes; práctica de prueba en el propio acto; sentencia en veinte días.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Remisión expresa arts. 809 y 811",
+     "clase": "norm-tag tag-info"
+    },
+    {
+     "p": "LEC — Ley 1/2000",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Competencia en procesos matrimoniales (arts. 769–770)",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 769</strong> — Competencia territorial en procesos de nulidad, separación y divorcio: juzgado del domicilio conyugal; si los cónyuges residen en distintos partidos, el del último domicilio conyugal o el del domicilio del demandante.<br><strong>Art. 770</strong> — Procedimiento contencioso; especialidades procesales.<br><strong>Art. 774</strong> — Efectos de la sentencia: convenio regulador como título ejecutivo.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Conexión competencial art. 807",
+     "clase": "norm-tag tag-gray"
+    },
+    {
+     "p": "LEC — Ley 1/2000",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Medidas durante el proceso y ejecución",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 773</strong> — Medidas sobre el patrimonio común durante el proceso matrimonial (administración, disposición, custodia).<br><strong>Art. 517.2.9.ª</strong> — Los decretos del LAJ y los autos aprobatorios de las operaciones divisorias como títulos ejecutivos directos.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Medidas cautelares y ejecución",
+     "clase": "norm-tag tag-gray"
+    },
+    {
+     "p": "LEC — Libro I",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Designación de peritos por sorteo (Art. 341)",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 341</strong> — Designación por sorteo entre abogados ejercientes con conocimientos especiales y despacho en el lugar del juicio. Aplicable vía Art. 784.3 LEC para el nombramiento del contador cuando no hay acuerdo.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Remisión indirecta",
+     "clase": "norm-tag tag-gray"
+    },
+    {
+     "p": "Código Civil — Título III, Libro IV",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Disposiciones Generales REM (Arts. 1315–1321)",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 1315</strong> — Autonomía de la voluntad en capitulaciones.<br><strong>Art. 1316</strong> — Supletoriedad de la sociedad de gananciales.<br><strong>Art. 1317</strong> — Modificación del REM y derechos de terceros.<br><strong>Art. 1318</strong> — Cargas del matrimonio y medidas cautelares.<br><strong>Art. 1319</strong> — Gastos ordinarios de la familia.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Derecho sustantivo base",
+     "clase": "norm-tag tag-ok"
+    },
+    {
+     "p": "Código Civil — Cap. IV, Sec. V",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Disolución y liquidación de gananciales (Arts. 1392–1409)",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 1392</strong> — Causas de disolución de la sociedad de gananciales.<br><strong>Art. 1397</strong> — Activo de la sociedad: bienes gananciales, valor actualizado, créditos de la sociedad.<br><strong>Art. 1398</strong> — Pasivo de la sociedad: deudas y cargas.<br><strong>Arts. 1399–1409</strong> — Operaciones de liquidación: pago de deudas, formación de lotes, adjudicación, división.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Sustantivo gananciales",
+     "clase": "norm-tag tag-ok"
+    },
+    {
+     "p": "Código Civil — Cap. IV, Sec. VI",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Régimen de Participación (Arts. 1411–1418)",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 1411</strong> — Concepto y funcionamiento del régimen de participación.<br><strong>Art. 1412</strong> — No aplicable; la prescripción se rige por el art. 1424 CC (3 años).<br><strong>Art. 1414</strong> — Garantía hipotecaria del crédito de participación.<br><strong>Arts. 1415–1418</strong> — Formas de pago del crédito de participación.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Sustantivo participación",
+     "clase": "norm-tag tag-info"
+    },
+    {
+     "p": "Código Civil",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Convenio regulador y medidas provisionales",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 84</strong> — Efectos de la reconciliación: no produce la reanudación del régimen ya disuelto.<br><strong>Art. 90</strong> — Contenido del convenio regulador; puede incluir la liquidación del régimen económico matrimonial.<br><strong>Art. 103</strong> — Medidas provisionales por demanda de nulidad/separación/divorcio; medida 4.ª sobre el régimen de administración y disposición de bienes.<br><strong>Art. 1404</strong> — Liquidación de gananciales de mutuo acuerdo ante notario.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Relación con acuerdo extrajudicial",
+     "clase": "norm-tag tag-warn"
+    },
+    {
+     "p": "LO 1/2004 + LOPJ",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Juzgados de Violencia sobre la Mujer",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 87 ter LOPJ</strong> — Competencia civil de los JVSM: nulidad, separación y divorcio, liquidación del régimen económico matrimonial, filiación, etc.<br><strong>Art. 49 bis LEC</strong> — Reglas de inhibición entre JPI y JVSM; cese de competencia civil si archivo/absolutoria penal.<br><strong>Art. 49 bis.4 LEC</strong> — Inhibición a favor del JPI cuando cesa la competencia del JVSM.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Competencia JVSM art. 807",
+     "clase": "norm-tag tag-alert"
+    },
+    {
+     "p": "Reg. (UE) 2016/1103 + Derecho foral",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Dimensión internacional y foral",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Reg. (UE) 2016/1103</strong> (aplic. desde 29/01/2019) — Competencia judicial internacional (arts. 4–7), ley aplicable (arts. 20–35) y reconocimiento de resoluciones en materia de regímenes económicos matrimoniales con elemento extranjero.<br><strong>Cataluña</strong> — Separación de bienes como régimen legal (CCCat art. 232-1); escasa aplicación del cap. II.<br><strong>Navarra, País Vasco, Aragón</strong> — Regímenes de comunidad propios que generan masa común sujeta al procedimiento del art. 806.<br><strong>Galicia, Baleares, Comunidad Valenciana</strong> — Derecho civil propio con incidencia en el REM.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Remisión genérica arts. 806–807",
+     "clase": "norm-tag tag-gray"
+    }
+   ]
+  }
+ ],
+ "sinCapturar": [],
+ "texto": "LEY 1/2000, DE 7 DE ENERO, DE ENJUICIAMIENTO CIVIL · LIBRO IV: DE LOS PROCESOS ESPECIALES · TÍTULO II: DE LA DIVISIÓN JUDICIAL DE PATRIMONIOS · CAPÍTULO II Del procedimiento para la liquidación del régimen económico matrimonial Artículos 806 a 811 LEC y conexos (784–788) LEC 1/2000 Arts. 806–811 Arts. conexos 784–788 Libro IV · Procesos especiales CC arts. 1315–1444 Reg. (UE) 2016/1103 Imprimir / PDF 11 Artículos analizados 18+ Conexiones normativas 12+ Actores identificados 7 Plazos procesales Todos Ámbito y competencia Inventario Liquidación Participación Arts. conexos Expandir todo Contraer todo − 100% + ↻ Ámbito de aplicación y competencia 2 artículos · 806–807 ▼ Artículo 806 Ámbito general Ámbito de aplicación Delimita los regímenes económicos matrimoniales sujetos al procedimiento del capítulo y la condición subsidiaria de su aplicación. regímenes incluidos 4 regímenes excluidos 2 condición 1 Ver contenido completo ▾ Función del precepto delimita el ámbito de aplicación del capítulo por referencia a la estructura del régimen (existencia de masa común) y remite al derecho civil material para su contenido. Norma de derecho procesal sustantivo: aquellos que, por capitulaciones matrimoniales o por disposición legal, determinen la existencia de una masa común de bienes y derechos sujeta a cargas y obligaciones. Regímenes incluidos: Regímenes económicos incluidos (CC arts. 1344–1410): régimen legal supletorio en derecho común. Activo: bienes del trabajo, frutos de bienes privativos y comunes, adquisiciones a título oneroso a costa del caudal común (CC art. 1347). Pasivo: sostenimiento familiar, gastos de los bienes comunes, deudas conjuntas (CC arts. 1362–1374). Sociedad de gananciales (CC arts. 1411–1434): separación durante el matrimonio; comunidad liquidatoria a la disolución. Liquidación con especialidades en el artículo 811. Régimen de participación conquistas navarras (Ley Foral 1/1973, Leyes 82–112), comunicación foral vasca (DLeg. 1/2023, arts. 127 y ss.), consorcio conyugal aragonés (DLeg. 1/2011, arts. 210–261), derecho civil catalán, gallego, balear y valenciano. Regímenes forales de comunidad: en capitulaciones matrimoniales, siempre que genere masa común. Cualquier otro régimen de comunidad pactado Regímenes excluidos (CC arts. 1435–1444): no genera masa común; los bienes en copropiedad se dividen conforme a las normas de la comunidad ordinaria (CC arts. 392–406). Separación de bienes de cada cónyuge: quedan fuera del objeto de la liquidación, salvo en cuanto generadores de créditos de reintegro frente a la comunidad o viceversa (CC arts. 1364, 1390–1391). Bienes privativos Condición de aplicabilidad: defecto de acuerdo El procedimiento es del acuerdo privado. Si los cónyuges se han puesto de acuerdo, la liquidación puede instrumentarse vía: subsidiario aprobado judicialmente (CC art. 90; LEC art. 774.1): el convenio puede incluir la liquidación del régimen y, aprobado por el juez, tiene valor de sentencia. Convenio regulador (CC art. 1404 para gananciales): plena eficacia sin intervención judicial. Escritura pública notarial Si el acuerdo es , el procedimiento del capítulo se aplica al resto de la masa no acordada. parcial Normas civiles aplicables (derecho común). Código Civil o especiales (art. 149.1.8.ª CE), de aplicación preferente en sus territorios. Compilaciones y códigos civiles forales del Consejo, de 24 de junio de 2016, aplicable desde el 29 de enero de 2019 para determinar la ley aplicable cuando concurre elemento de extranjería (distintas nacionalidades, residencia habitual en Estado miembro distinto del de celebración del matrimonio). Reglamento (UE) 2016/1103 CC arts. 1315–1324 CC arts. 1344–1410 CC arts. 1411–1434 CC art. 90 (conv. regulador) Reg. (UE) 2016/1103 Artículo 807 Competencia Competencia Determina el juzgado competente para la liquidación mediante el principio de vis attractiva: el tribunal del proceso principal es el competente. órganos competentes 2 supuestos 3 e inderogable Funcional Ver contenido completo ▾ Principio de vis attractiva La liquidación queda al juzgado del proceso de crisis matrimonial, evitando la dispersión de procedimientos. atraída Competencia : inderogable por sumisión expresa o tácita (LEC art. 62). Su infracción determina la nulidad de actuaciones. funcional Juzgado de Primera Instancia (JPI) Competente cuando el proceso de nulidad, separación o divorcio se sigue ante él (LEC arts. 769–770). Competente también cuando la disolución del régimen se produce por causas civiles sin proceso matrimonial (CC art. 1392 para gananciales): concurso de acreedores, separación judicial, tutela, ausencia, incapacitación, abandono de familia. En partidos judiciales con varios JPI, la liquidación se acumula al que tramitó el proceso principal (LEC art. 68 sobre reparto). juzgado concreto Juzgado de Violencia sobre la Mujer (JVSM) Competente cuando el proceso principal se tramita ante él (arts. 87 ter LOPJ y 49 bis LEC, introducidos por la LO 1/2004). La competencia civil del JVSM cesa si se dicta sentencia penal absolutoria firme o se archiva el procedimiento penal: a favor del JPI (art. 49 bis.4 LEC). inhibición En este juzgado son especialmente relevantes las medidas de protección civil adoptadas (uso de la vivienda familiar, suspensión de la guarda y custodia). Competencia objetiva y territorial siempre el JPI (arts. 85.1 LOPJ y 45 LEC). Nunca Juzgados de Paz ni Audiencias Provinciales en primera instancia. Objetiva: la del juzgado del proceso principal. No opera la regla del domicilio del demandado al solicitar la liquidación. Territorial: Competencia internacional el tribunal competente para conocer de la sucesión o del divorcio/separación/nulidad lo es también para el régimen económico matrimonial (arts. 4–5). Reglamento (UE) 2016/1103: En defecto de los criterios anteriores: tribunal del Estado miembro de la última residencia habitual común, de la nacionalidad común, o del domicilio de cualquier cónyuge (art. 6). Los cónyuges pueden pactar la competencia del tribunal que haya de conocer de la disolución del matrimonio (art. 7 del Reglamento). LEC art. 769 LEC art. 49 bis LOPJ art. 87 ter LO 1/2004 Reg. (UE) 2016/1103 arts. 4–7 No se encontraron artículos para « ». Formación del inventario 2 artículos · 808–809 ▼ Artículo 808 Solicitud Solicitud de inventario Regula quién puede solicitar la formación de inventario, cuándo puede hacerlo y con qué documentación debe acompañarse la solicitud. legitimados 2 momentos habilitantes 2 masas patrimoniales 3 Ver contenido completo ▾ Naturaleza jurídica Acto de parte de : no es una demanda en sentido estricto ni genera contestación formal de la parte contraria. impulso procedimental Carácter : los cónyuges pueden acordar extrajudicialmente el inventario (CC art. 1396 para gananciales). Solo si no hay acuerdo procede este trámite judicial. voluntario No requiere procurador ni abogado obligatoriamente en esta fase inicial . (salvo que ya intervengan en el proceso principal) Momento procesal habilitante el legislador adelanta el momento a la mera admisión (no a la sentencia), facilitando la actuación temprana sobre el patrimonio común. La valoración de los bienes en la sociedad de gananciales se fijará, no obstante, en el momento de la disolución (CC art. 1396). Admisión de la demanda de nulidad, separación o divorcio: (CC art. 1392 para gananciales): concurso de acreedores, privación de patria potestad, separación judicial, tutela, ausencia, incapacitación o abandono de familia. Inicio del proceso de disolución por causa civil Legitimación con independencia de quién haya demandado en el proceso principal. Cualquiera de los cónyuges: únicamente si el cónyuge legitimado ha fallecido antes de formular la solicitud. Si son varios, deben actuar conjuntamente o designar representante común (CC art. 1058). Herederos de los cónyuges: los acreedores de los cónyuges (carecen de legitimación directa; deben esperar al proceso o acudir a la acción subrogatoria, CC art. 1111). Excluidos: Contenido de la propuesta — Activo ganancial (CC arts. 1347–1361) Bienes obtenidos por el trabajo o industria de cualquier cónyuge durante el matrimonio. Frutos, rentas e intereses producidos por bienes privativos y gananciales. Bienes adquiridos a título oneroso a costa del caudal común (aunque la adquisición sea solo para uno de los cónyuges). Empresas y establecimientos fundados durante la vigencia del régimen a expensas de los bienes comunes. Bienes de naturaleza dudosa: presunción de ganancialidad (CC art. 1361). Bienes adquiridos en parte con fondos comunes y en parte privativos: regla de proporcionalidad (CC art. 1354). Contenido de la propuesta — Pasivo ganancial (CC arts. 1362–1374) Gastos de sostenimiento de la familia, alimentación y educación de los hijos comunes y los que convivan en el hogar. Adquisición, tenencia y disfrute de los bienes comunes. Administración ordinaria de los bienes privativos de cada cónyuge. Deudas contraídas conjuntamente o por uno de ellos con consentimiento del otro. Créditos de reintegro y compensación entre masas por gastos de la comunidad sufragados con bienes privativos de un cónyuge (CC art. 1364). Reintegros al haber ganancial por bienes privativos empleados en beneficio de la comunidad (CC art. 1365.1). Reintegros al haber privativo cuando bienes gananciales se apliquen a negocios privativos (CC art. 1390). Indemnización al patrimonio privativo cuando bienes privativos generen ganancias integradas en la comunidad (CC art. 1391). Indemnización al patrimonio ganancial Documentación justificativa Títulos de propiedad de bienes inmuebles (escrituras públicas, notas registrales actualizadas). Certificados bancarios de saldos, depósitos, fondos de inversión y planes de pensiones. Escrituras de participaciones en sociedades o certificados del Registro Mercantil. Tasaciones o informes periciales de valor de bienes de difícil valoración objetiva (inmuebles, empresas, obras de arte). Documentación acreditativa de deudas pendientes (pólizas de crédito, préstamos hipotecarios, avales). CC arts. 1347–1361 CC arts. 1362–1374 CC art. 1354 CC arts. 1364, 1390–1391 LEC art. 809 Artículo 809 Procedimiento Formación del inventario Regula el señalamiento, el desarrollo del acto de formación del inventario, los supuestos de incomparecencia y acuerdo, y la vía contenciosa para la resolución de controversias. supuestos 4 plazo máx. 10 días resolución Mismo día/siguiente Ver contenido completo ▾ El LAJ: posición y funciones Actúa como y director del acto, no como juzgador. Le incumbe señalar, citar, levantar acta y dar fe del resultado. fedatario judicial La función resolutoria sobre controversias de fondo (calificación de bienes, valoración de partidas) corresponde en todo caso al (Juez o Magistrado). Tribunal Señalamiento y citación desde la presentación de la solicitud hasta la celebración del acto. Plazo máximo de diez días Citación conforme a los artículos 152–168 LEC. Si los cónyuges tienen procurador constituido, la citación se entiende con este (LEC art. 153). Supuesto 1 — Incomparecencia injustificada del incompareciente con la propuesta del cónyuge que haya comparecido. Mecanismo de sanción procesal que desincentiva la obstrucción. Conformidad ficta «Sin mediar causa justificada»: la causa ha de alegarse y acreditarse en el momento o mediante escrito previo. La indefensión sobrevenida puede dar lugar a nulidad del acto (LEC art. 185 en relación con el art. 238.3 LOPJ). La incomparecencia (enfermedad acreditada, causa de fuerza mayor) no genera conformidad ficta; el LAJ señalará nueva fecha. justificada Supuesto 2 — Acuerdo entre los cónyuges Se consigna el inventario acordado en el acta, con valor de documento judicial. El acto se da por concluido. En el mismo día o en el siguiente, el resolverá por auto sobre la administración y disposición de los bienes inventariados (LEC art. 773; CC art. 103.4). Tribunal Resolución del Tribunal sobre administración y disposición El auto puede atribuir la a uno de los cónyuges. administración exclusiva Puede establecer la necesidad de para actos de disposición. consentimiento conjunto Puede nombrar en casos de conflicto grave o riesgo de deterioro del patrimonio. administrador judicial Contra el auto: recurso de reposición (LEC art. 451) y, en su caso, apelación (LEC art. 455). Complementa las medidas provisionales del artículo 103 CC y del artículo 773 LEC. Supuesto 3 — Controversia sobre el inventario (art. 809.2) Causas: discrepancia sobre inclusión/exclusión de bienes, calificación jurídica (ganancial o privativo), importe o valor de una partida, existencia o cuantía de crédito de reintegro. El LAJ hace constar en el acta las pretensiones y su fundamentación jurídica. Señala conforme al (LEC arts. 437–447): señalamiento en los veinte días siguientes, práctica de prueba en el propio acto, sentencia en veinte días. vista juicio verbal La aprueba el inventario, resuelve todas las cuestiones controvertidas y dispone sobre la administración y disposición de los bienes comunes. sentencia Contra la sentencia: (LEC arts. 455–467). recurso de apelación LEC arts. 152–168 (citaciones) LEC art. 773 (medidas) LEC arts. 437–447 (juicio verbal) LEC art. 455 (apelación) CC art. 103.4 Liquidación del régimen económico matrimonial 1 artículo · 810 ▼ Artículo 810 Liquidación general Liquidación del régimen económico matrimonial Establece el procedimiento completo de liquidación: requisitos de acceso, contenido de la propuesta, comparecencia ante el LAJ y vías de resolución según el resultado (acuerdo o falta de acuerdo). requisitos previos 2 supuestos 3 plazo 10 días ejecución Art. 788 Ver contenido completo ▾ Naturaleza y finalidad transforma las cuotas abstractas sobre el patrimonio común en titularidades singulares y exclusivas sobre bienes o derechos concretos. A diferencia del inventario (descriptivo), la liquidación es extintiva y atributiva. Efecto constitutivo: implica especificación de derechos preexistentes, con importantes consecuencias fiscales (AJD, no ITP onerosa). No es una transmisión: Requisitos previos y legitimación con firmeza (por acuerdo o por sentencia firme del art. 809.2). Conclusión del inventario (en su caso): la sentencia de separación, divorcio o nulidad, o el auto de disolución por causa civil, debe ser firme (LEC art. 207.2). La firmeza impide que la reconciliación conyugal (CC art. 84) reabra el régimen ya disuelto. Firmeza de la resolución de disolución cualquier cónyuge o, fallecido, sus herederos. Legitimados: Contenido de la propuesta — Indemnizaciones y reintegros Reintegros al haber ganancial por gastos de la comunidad sufragados con bienes privativos (CC art. 1364). Reintegros al haber privativo por bienes privativos empleados en la comunidad (CC art. 1365.1). Indemnización al patrimonio privativo cuando bienes gananciales se aplicaron a negocios privativos (CC art. 1390). Indemnización al patrimonio ganancial cuando bienes privativos generaron ganancias comunes (CC art. 1391). Abono de cantidades adeudadas por cualquier cónyuge a la sociedad (CC art. 1397.3). Contenido de la propuesta — División del remanente y formación de lotes del remanente en la sociedad de gananciales (CC art. 1404). División por mitad (CC arts. 1406–1407): Preferencias en la formación de lotes Bienes de uso personal no suntuario (CC art. 1406.1). Explotación económica gestionada efectivamente (CC art. 1406.2). Local en que se ejerce la profesión u oficio (CC art. 1406.3). (CC art. 1406.4): derecho de especial relevancia práctica. Vivienda habitual de la familia Si el valor del bien excede la cuota del adjudicatario, este (CC art. 1407). Si no puede pagar, el Tribunal puede acordar aplazamiento o adjudicación compartida. compensará en metálico Señalamiento por el LAJ — Plazo de diez días Admitida la solicitud, el LAJ señala, en el , la comparecencia para: (a) intentar el acuerdo; y (b) en defecto de acuerdo, designar contador y, en su caso, peritos. plazo máximo de diez días Supuesto 1 — Incomparecencia injustificada Conformidad ficta del incompareciente (cónyuge o heredero) con la propuesta del compareciente. Mismo mecanismo que en el artículo 809.1. Supuesto 2 — Acuerdo Se consigna en el acta y se da por concluido el acto. Ejecución del acuerdo conforme a los : dos primeros apartados del artículo 788 LEC Art. 788.1: el LAJ aprueba la liquidación mediante . decreto Art. 788.2: si algún interesado se opone, el Tribunal resuelve mediante . auto El decreto o auto aprobatorio tiene (LEC art. 517.2.9.ª). fuerza ejecutiva directa Supuesto 3 — Falta de acuerdo: operaciones divisorias Nombramiento de y, en su caso, conforme al artículo 784 LEC. contador peritos Las operaciones divisorias siguen la tramitación de los artículos 785–788 LEC (cuaderno particional, oposición, aprobación judicial, ejecución). máximo desde el inicio de las operaciones divisorias para presentar el cuaderno particional (Art. 786.2 LEC). Plazo del contador: dos meses Art. 788.3: si persiste desacuerdo parcial sobre adjudicaciones, el LAJ puede proceder a los lotes discutidos. sacar a suerte Efectos registrales y fiscales los bienes adjudicados deben inscribirse a nombre del adjudicatario (arts. 2 y 10 LH); efectos frente a terceros (LH arts. 32, 34, 38). Registro de la Propiedad: la liquidación de gananciales está sujeta a (no a ITP onerosa, pues no hay transmisión). Si hay excesos de adjudicación no compensados, pueden tributar por ITP onerosa. Tributación: AJD el valor de adjudicación de la vivienda habitual, si se transmite posteriormente, opera como valor de adquisición a efectos de la ganancia patrimonial (Ley 35/2006, art. 35). IRPF: CC arts. 1364, 1390–1391 CC arts. 1397–1399 CC arts. 1404, 1406–1407 LEC art. 784 LEC arts. 785–787 LEC art. 788 (apts. 1–3) LEC art. 517.2.9.ª RDLeg. 1/1993 art. 45.I.B.3 Liquidación del régimen de participación 1 artículo · 811 ▼ Artículo 811 Régimen especial Liquidación del régimen de participación Regula la liquidación del régimen de participación en las ganancias: firmeza obligatoria, cálculo del crédito de participación, propuesta sobre patrimonios y vías de resolución. Firmeza obligatoria supuestos 3 prescripción 3 años si no hay acuerdo Juicio verbal Ver contenido completo ▾ Caracterización del régimen separación de bienes plena; cada cónyuge administra, disfruta y dispone de sus bienes con plena independencia. Durante el matrimonio: cada cónyuge tiene derecho a participar en las ganancias obtenidas por el otro (CC arts. 1411–1434). A la disolución: No existe masa común: el objeto de la liquidación es el cálculo bilateral de patrimonios para determinar el . crédito de participación Requisito previo — Firmeza obligatoria e incondicional El artículo 811.1 exige, de forma , que la resolución de disolución sea firme antes de solicitar la liquidación (a diferencia del art. 810.1, que dice «en su caso»). absoluta e inequívoca Razón: sin la firmeza no existe certeza sobre la de los patrimonios inicial y final, y no puede calcularse el crédito. fecha de cierre Firmeza (LEC art. 207.2): resolución no recurrible o con plazo de recurso transcurrido sin interposición. Cálculo del crédito de participación (CC arts. 1417–1419): bienes al inicio del régimen + bienes adquiridos a título gratuito durante el matrimonio − deudas iniciales. Si resulta negativo, se computa como . Patrimonio inicial cero (CC arts. 1420–1421): bienes al momento de la disolución − obligaciones pendientes + adición ficticia de donaciones fraudulentas realizadas sin consentimiento del otro cónyuge (CC art. 1422). Patrimonio final (CC arts. 1423–1424): Crédito de participación Si ambos cónyuges han obtenido ganancias: el que las obtuvo en menor cuantía participa en la . mitad de la diferencia Si solo uno obtuvo ganancias: el otro tiene derecho a la . mitad de ellas el crédito prescribe a los desde la disolución del régimen (CC art. 1424), salvo interrupción. Plazo que opera como límite absoluto para ejercitar la acción de liquidación. Prescripción: tres años Contenido de la propuesta de liquidación Estimación del de cada cónyuge (referencia: fecha de inicio del régimen). patrimonio inicial Estimación del de cada cónyuge (referencia: fecha de disolución). patrimonio final : crédito calculado conforme a los artículos 1423–1424 CC, con la forma de pago propuesta. Cantidad resultante a pagar A diferencia de la propuesta del artículo 808, no existe masa común que inventariar; la propuesta opera sobre . patrimonios separados Señalamiento — Plazo de diez días El LAJ señala, en el plazo máximo de desde la admisión de la solicitud, el día y hora de comparecencia para alcanzar un acuerdo. diez días Supuesto 1 — Incomparecencia injustificada Conformidad ficta del incompareciente con la propuesta del cónyuge compareciente. Supuesto 2 — Acuerdo Se consigna en el acta y se da por concluido el acto. El artículo 811.4 no remite expresamente al artículo 788, pero la doctrina mayoritaria entiende aplicable analógicamente dicha remisión para la ejecución del acuerdo. Supuesto 3 — Falta de acuerdo: juicio verbal El LAJ cita a los cónyuges a una conforme al juicio verbal (LEC arts. 437–447). vista respecto al art. 810.5: aquí no se prevé el nombramiento de contador ni peritos; la tramitación es íntegramente contenciosa desde el primer desacuerdo. Diferencia esencial La determinará: sentencia Los patrimonios iniciales y finales de cada cónyuge (con todos sus componentes, incluidas adiciones del art. 1422 CC). La cantidad que deba satisfacer el cónyuge con mayor incremento patrimonial. La forma de pago: dinero en primer lugar; si no es posible, bienes por autorización judicial (CC art. 1432). Contra la sentencia: (LEC arts. 455–467). recurso de apelación Garantía y formas de pago del crédito El crédito de participación goza de sobre los bienes del deudor (CC art. 1414). garantía real hipotecaria Formas de pago reguladas en los arts. 1415–1418 CC: dinero, bienes concretos con autorización judicial, aplazamientos, etc. En todo caso, prevalece el pago en ; el pago en especie requiere autorización judicial expresa (CC art. 1432). dinero CC arts. 1411–1434 CC arts. 1417–1424 CC art. 1422 (donaciones fraudulentas) CC art. 1432 (pago en bienes) CC art. 1414 (garantía hipotecaria) CC art. 1424 (prescripción 3 años) LEC arts. 437–447 (juicio verbal) Artículos conexos LEC — Operaciones divisorias (arts. 784–788) 5 artículos · remitidos por art. 810 ► Artículo 784 Conexo art. 810.5 Nombramiento de contador y peritos Regula la designación del contador y los peritos para las operaciones divisorias cuando no hay acuerdo en la liquidación. vías de designación 2 Ver contenido completo ▾ Designación del contador pueden designar de común acuerdo a la persona de su confianza o profesional especializado (abogado, notario, economista). Por acuerdo de los interesados: designación de entre los listados de peritos judiciales (LEC art. 341) o, si no existen listados suficientes, de entre personas con conocimientos adecuados (contables, graduados sociales, economistas). Por el LAJ en defecto de acuerdo: El contador debe y jurar o prometer desempeñarlo fielmente. aceptar el cargo El LAJ fijará al contador un para presentar el cuaderno particional (habitualmente dos meses, prorrogables). plazo Designación de peritos Se acuerda cuando los partícipes no han podido tasar de común acuerdo los bienes que deban incluirse en el cuaderno. Los peritos actúan paralelamente al contador: valoran los bienes y remiten su informe al contador para su incorporación al cuaderno. Pueden designarse varios peritos especializados según la naturaleza de los bienes (inmuebles, empresas, participaciones sociales, obras de arte). LEC art. 341 (listados peritos) LEC art. 810.5 (remisión) Artículo 785 Conexo art. 810.5 Presentación del cuaderno particional y oposición Regula la presentación del cuaderno particional por el contador, el traslado a los interesados y los efectos de la ausencia de oposición. traslado 10 días si no hay oposición Decreto Ver contenido completo ▾ Elaboración y presentación del cuaderno El contador elabora el : documento técnico-jurídico que incluye el inventario de la comunidad (activo y pasivo), las operaciones de liquidación (reintegros, indemnizaciones, pago del pasivo) y la formación de lotes para adjudicación. cuaderno particional El cuaderno se presenta ante el LAJ dentro del plazo fijado al contador. Traslado a los interesados El LAJ da traslado del cuaderno a los interesados por un plazo de para que formulen oposición o lo aprueben expresamente. diez días Aprobación sin oposición Si no hay oposición o si los interesados aprueban expresamente el cuaderno, el LAJ lo aprueba mediante . decreto El decreto es título ejecutivo directo (LEC art. 517.2.9.ª): se puede acudir directamente al proceso de ejecución. Oposición al cuaderno Si hay oposición, continúa la tramitación conforme al artículo 786. LEC art. 784 (contador) LEC art. 786 (si hay oposición) LEC art. 517.2.9.ª (ejecución) Artículo 786 Conexo art. 810.5 Resolución de la oposición al cuaderno particional Regula la fase contenciosa de la oposición al cuaderno: comparecencia ante el Tribunal y vías de resolución. vías de resolución 2 Ver contenido completo ▾ Comparecencia ante el Tribunal El Tribunal convoca a los interesados a una comparecencia para intentar un acuerdo. el LAJ lo aprueba mediante decreto. Si hay acuerdo: el Tribunal puede: Si no hay acuerdo: Resolver la oposición mediante , aprobando o modificando el cuaderno según lo acreditado. auto Acordar la celebración de una conforme al juicio verbal si la complejidad de las cuestiones lo exige. vista LEC art. 785 (oposición) LEC art. 787 (aprobación) LEC arts. 437–447 (juicio verbal) Artículo 787 Conexo art. 810.5 Aprobación judicial de las operaciones divisorias Regula la resolución judicial de aprobación del cuaderno particional y los recursos contra ella. aprobatorio Auto recurso Apelación Ver contenido completo ▾ Auto de aprobación El Tribunal aprueba las operaciones divisorias mediante . auto El auto puede aprobar el cuaderno tal como fue presentado por el contador, o modificarlo en los puntos que hayan sido objeto de oposición fundada. Contra el auto de aprobación cabe (LEC art. 455). recurso de apelación LEC art. 786 (oposición) LEC art. 788 (ejecución) LEC art. 455 (apelación) Artículo 788 Remisión expresa art. 810.4 Ejecución de las operaciones divisorias Regula la ejecución de las operaciones divisorias aprobadas y la fuerza ejecutiva de la resolución. Los dos primeros apartados son remitidos expresamente por el artículo 810.4. Fuerza ejecutiva directa LEC art. 517.2.9.ª Ver contenido completo ▾ Artículo 788.1 — Entrega de bienes adjudicados Una vez aprobadas las operaciones (por acuerdo o por resolución judicial), el LAJ procede a la de los bienes que le hayan sido adjudicados. entrega a cada adjudicatario Artículo 788.2 — Ejecución forzosa Si el adjudicatario se niega a recibir, o el actual poseedor se niega a entregar, se aplican las normas de : ejecución forzosa Bienes inmuebles: LEC arts. 699 y ss. Bienes muebles: LEC arts. 701 y ss. La resolución aprobatoria (decreto del LAJ o auto judicial) tiene (LEC art. 517.2.9.ª): no se necesita nueva sentencia de condena para acudir al proceso de ejecución. fuerza ejecutiva directa Artículo 788.3 — Adjudicación por suerte Si persiste desacuerdo parcial sobre la adjudicación de lotes concretos tras la aprobación del cuaderno, el LAJ puede proceder a dichos lotes entre los partícipes. sacar a suerte Los lotes no discutidos se adjudican conforme al cuaderno aprobado. LEC art. 517.2.9.ª LEC arts. 699 y ss. (inmuebles) LEC arts. 701 y ss. (muebles) LEC art. 810.4 (remisión) Diagrama de flujo del procedimiento Fases secuenciales ► 1 Proceso previo de crisis matrimonial Nulidad, separación o divorcio (o disolución del REM por causa civil). Admisión de demanda = momento inicial para solicitar inventario. ↓ 2 Solicitud de inventario (Art. 808) Cualquier cónyuge o heredero presenta propuesta de inventario con documentación. Plazo señalamiento: máx. 10 días. ↓ 3 Acto de formación de inventario (Art. 809) Comparecencia ante el LAJ. Posibles salidas: ACUERDO (→ fin) | INCOMPARENCIA (→ conformidad) | CONTROVERSIA (→ Juicio Verbal) ↓ 4 Resolución firme de disolución del REM Requisito previo para iniciar la fase de liquidación (absoluto en régimen de participación, Art. 811). ↓ 5 Solicitud de liquidación (Art. 810 u 811) Presentación de propuesta de liquidación. Señalamiento: máx. 10 días. Comparecencia para acuerdo o designación de contador/peritos. ↓ 6 Ejecución o designación de contador-peritos ACUERDO → Ejecución (Art. 788 LEC). DESACUERDO → Contador + Peritos (Art. 784 LEC) → Operaciones divisorias (Art. 786 LEC) → Cuaderno particional → Aprobación/Impugnación (Art. 787 LEC) → Adjudicación (Art. 788-789 LEC). Indice de plazos procesales 7 trámites ► Acto o trámite procesal Plazo Fundamento normativo Señalamiento del acto de formación del inventario por el LAJ, desde la presentación de la solicitud Máx. 10 días Art. 809.1 LEC Resolución del Tribunal sobre administración y disposición de los bienes inventariados (auto) Mismo día o siguiente Art. 809.1 LEC (párr. final) Señalamiento de comparecencia para la liquidación del REM (general), desde la admisión de la solicitud Máx. 10 días Art. 810.3 LEC Señalamiento de comparecencia para la liquidación del régimen de participación, desde la admisión de la solicitud Máx. 10 días Art. 811.3 LEC Traslado del cuaderno particional a los interesados para formular oposición 10 días Art. 785 LEC Práctica de operaciones divisorias por el contador 2 meses máx. Art. 786.2 LEC (vía remisión Art. 810.5) Prescripción del crédito de participación desde la disolución del régimen 3 años CC art. 1424 Mapa de participantes y actores 6 categorías · 12+ actores ► Órganos jurisdiccionales Juzgado de Primera Instancia (competencia principal) Juzgado de Violencia sobre la Mujer (competencia LO 1/2004) Tribunal / Juez o Magistrado (resoluciones de fondo, autos, sentencias) Audiencia Provincial (recurso de apelación) Secretaría judicial Letrado de la Administración de Justicia (LAJ) (figura central: señala, preside, cita, nombra contador, levanta actas) Partes procesales Cónyuge solicitante (impulso del procedimiento) Cónyuge requerido (parte activa o pasiva) Herederos de los cónyuges (legitimados si hubo fallecimiento) Auxiliares y peritos Contador-Partidor (cuaderno particional, arts. 784–785) Peritos tasadores (valoración de bienes, inmuebles, empresas, arte) Administrador judicial (art. 809, si se nombra por conflicto) Representación procesal Abogado/a (defensa técnica; no preceptivo en todos los trámites) Procurador/a (representación procesal; citaciones art. 153 LEC) Notario/a (documentación de la liquidación acordada extrajudicialmente) Marco normativo Código Civil (derecho sustantivo REM) Derechos Forales / Autonómicos (normas territoriales especiales) LEC Libro IV (procedimiento división patrimonios) Ecosistema normativo — conexiones relacionadas 12 cuerpos normativos ► LEC — Ley 1/2000 Capítulo I: División de la Herencia (Arts. 782–783) — Solicitud de división judicial de la herencia. Proceso paralelo análogo al de liquidación del REM. — Sustanciación: inventario, avalúo, liquidación, división y adjudicación. Art. 782 Art. 783 Proceso paralelo LEC — Ley 1/2000 Operaciones divisorias (arts. 784–788) — Nombramiento de contador y peritos (junta, sorteo art. 341). — Presentación del cuaderno particional; traslado de diez días; decreto si no hay oposición. — Resolución de la oposición: comparecencia y auto o juicio verbal. — Auto de aprobación; recurso de apelación. — Ejecución de las operaciones aprobadas; fuerza ejecutiva directa; suerte. Art. 784 Art. 785 Art. 786 Art. 787 Art. 788 (apts. 1–3) Remisión expresa art. 810 LEC — Ley 1/2000 Juicio verbal (arts. 437–447) — Regulación del juicio verbal al que remiten el artículo 809.2 (controversia sobre el inventario) y el artículo 811.5 (falta de acuerdo en el régimen de participación). Señalamiento en los veinte días siguientes; práctica de prueba en el propio acto; sentencia en veinte días. Arts. 437–447 Remisión expresa arts. 809 y 811 LEC — Ley 1/2000 Competencia en procesos matrimoniales (arts. 769–770) — Competencia territorial en procesos de nulidad, separación y divorcio: juzgado del domicilio conyugal; si los cónyuges residen en distintos partidos, el del último domicilio conyugal o el del domicilio del demandante. — Procedimiento contencioso; especialidades procesales. — Efectos de la sentencia: convenio regulador como título ejecutivo. Art. 769 Art. 770 Art. 774 Conexión competencial art. 807 LEC — Ley 1/2000 Medidas durante el proceso y ejecución — Medidas sobre el patrimonio común durante el proceso matrimonial (administración, disposición, custodia). — Los decretos del LAJ y los autos aprobatorios de las operaciones divisorias como títulos ejecutivos directos. Art. 773 Art. 517.2.9.ª Medidas cautelares y ejecución LEC — Libro I Designación de peritos por sorteo (Art. 341) — Designación por sorteo entre abogados ejercientes con conocimientos especiales y despacho en el lugar del juicio. Aplicable vía Art. 784.3 LEC para el nombramiento del contador cuando no hay acuerdo. Art. 341 Remisión indirecta Código Civil — Título III, Libro IV Disposiciones Generales REM (Arts. 1315–1321) — Autonomía de la voluntad en capitulaciones. — Supletoriedad de la sociedad de gananciales. — Modificación del REM y derechos de terceros. — Cargas del matrimonio y medidas cautelares. — Gastos ordinarios de la familia. Art. 1315 Art. 1316 Art. 1317 Art. 1318 Art. 1319 Derecho sustantivo base Código Civil — Cap. IV, Sec. V Disolución y liquidación de gananciales (Arts. 1392–1409) — Causas de disolución de la sociedad de gananciales. — Activo de la sociedad: bienes gananciales, valor actualizado, créditos de la sociedad. — Pasivo de la sociedad: deudas y cargas. — Operaciones de liquidación: pago de deudas, formación de lotes, adjudicación, división. Art. 1392 Art. 1397 Art. 1398 Arts. 1399–1409 Sustantivo gananciales Código Civil — Cap. IV, Sec. VI Régimen de Participación (Arts. 1411–1418) — Concepto y funcionamiento del régimen de participación. — No aplicable; la prescripción se rige por el art. 1424 CC (3 años). — Garantía hipotecaria del crédito de participación. — Formas de pago del crédito de participación. Art. 1411 Art. 1412 Art. 1414 Arts. 1415–1418 Sustantivo participación Código Civil Convenio regulador y medidas provisionales — Efectos de la reconciliación: no produce la reanudación del régimen ya disuelto. — Contenido del convenio regulador; puede incluir la liquidación del régimen económico matrimonial. — Medidas provisionales por demanda de nulidad/separación/divorcio; medida 4.ª sobre el régimen de administración y disposición de bienes. — Liquidación de gananciales de mutuo acuerdo ante notario. Art. 84 Art. 90 Art. 103 Art. 1404 Relación con acuerdo extrajudicial LO 1/2004 + LOPJ Juzgados de Violencia sobre la Mujer — Competencia civil de los JVSM: nulidad, separación y divorcio, liquidación del régimen económico matrimonial, filiación, etc. — Reglas de inhibición entre JPI y JVSM; cese de competencia civil si archivo/absolutoria penal. — Inhibición a favor del JPI cuando cesa la competencia del JVSM. Art. 87 ter LOPJ Art. 49 bis LEC Art. 49 bis.4 LEC Competencia JVSM art. 807 Reg. (UE) 2016/1103 + Derecho foral Dimensión internacional y foral (aplic. desde 29/01/2019) — Competencia judicial internacional (arts. 4–7), ley aplicable (arts. 20–35) y reconocimiento de resoluciones en materia de regímenes económicos matrimoniales con elemento extranjero. — Separación de bienes como régimen legal (CCCat art. 232-1); escasa aplicación del cap. II. — Regímenes de comunidad propios que generan masa común sujeta al procedimiento del art. 806. — Derecho civil propio con incidencia en el REM. Reg. (UE) 2016/1103 Cataluña Navarra, País Vasco, Aragón Galicia, Baleares, Comunidad Valenciana Remisión genérica arts. 806–807 Leyenda de colores por categoría Ámbito de aplicación y competencia (arts. 806–807) Inventario: solicitud y formación (arts. 808–809) Liquidación del régimen económico matrimonial (art. 810) Liquidación del régimen de participación (art. 811) Artículos conexos LEC — Operaciones divisorias (arts. 784–788) General / Referencias normativas LEC, Ley 1/2000, de 7 de enero — Libro IV, Título II, Capítulo II — Arts. 806–811 y conexos 784–788 · Esquema definitivo fusionado · Incluye ecosistema normativo ampliado (LEC Arts. 782-789 + CC Arts. 1315-1418 + LO 1/2004 + DF Forales)"
+}

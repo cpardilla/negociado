@@ -1,0 +1,25 @@
+{
+ "id": "L-LEC",
+ "tipo": "legislacion",
+ "ruta": "01 - Legislación completa interactiva/Ley 1-2000, de 7 de enero, de Enjuiciamiento Civil.html",
+ "titulo": "Markmap",
+ "opciones": {
+  "maxWidth": 300,
+  "embedAssets": true,
+  "initialExpandLevel": 1,
+  "htmlParser": null,
+  "selector": "h1,h2,h3,h4,h5,h6,ul,ol,li,table,pre"
+ },
+ "nodos": 5363,
+ "etiquetas": {
+  "h1": 1,
+  "h2": 5,
+  "h6": 850,
+  "li": 4337,
+  "h3": 23,
+  "h4": 81,
+  "pre": 8,
+  "h5": 55,
+  "ol": 3
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "id": "L-LJV",
+ "tipo": "legislacion",
+ "ruta": "01 - Legislación completa interactiva/Ley 15-2015, de 2 de julio, de la Jurisdicción Voluntaria.html",
+ "titulo": "Markmap",
+ "opciones": {
+  "maxWidth": 300,
+  "embedAssets": true,
+  "initialExpandLevel": 1,
+  "htmlParser": {
+   "selector": "h1,h2,h3,h4,h5,h6,ul,ol,li,table,pre"
+  }
+ },
+ "nodos": 985,
+ "etiquetas": {
+  "h1": 1,
+  "h2": 10,
+  "h5": 165,
+  "li": 769,
+  "h3": 34,
+  "h4": 6
+ }
+}

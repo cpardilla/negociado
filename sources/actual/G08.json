@@ -1,0 +1,545 @@
+{
+ "id": "G08",
+ "tipo": "guia",
+ "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/03 - CAPÍTULO I TER - De la aprobación judicial de la nueva modificación de la mención registral relativa al sexo con posterioridad a una reversión de la rectificación de la mención registral.html",
+ "titulo": "De la aprobación judicial de la nueva modificación de la mención registral relativa al sexo con posterioridad a una reversión de la rectificación de la mención registral (artículos 26 sexies a 26 nonies LJV)",
+ "cabecera": {
+  "migas": "",
+  "titulo": "☰ ⚖ LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO I TER De la aprobación judicial de la nueva modificación de la mención registral relativa al sexo con posterioridad a una reversión de la rectificación de la mención registral Artículos 26 sexies a 26 nonies LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+  "subtitulo": "",
+  "etiquetas": []
+ },
+ "texto": "☰ ⚖ LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO I TER De la aprobación judicial de la nueva modificación de la mención registral relativa al sexo con posterioridad a una reversión de la rectificación de la mención registral Artículos 26 sexies a 26 nonies LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar Verificación previa › Competencia y legitimación › Postulación y garantías › Tramitación › Resolución y desenlace Verificación del supuesto de hec… Mapa Recorrido Verificación previa Verificación del supuesto de hec… No procede la aplicación del Cap… Competencia y legitimación Legitimación activa (artículo 26… Falta de legitimación para promo… Competencia territorial (artícul… Competencia territorial — Menor … Competencia territorial — Menor … Competencia territorial — Person… Postulación y garantías Postulación (artículo 26 septies… Postulación y garantías del meno… Postulación — Persona con discap… Nombramiento de defensor judicia… Tramitación Presentación de la solicitud (ar… Admisión a trámite Solicitud inadmitida a trámite Comparecencia de los interesados… Práctica de pruebas (artículo 26… Resolución y desenlace Resolución judicial (artículo 26… Denegación de la aprobación judi… Remisión al Registro Civil (artí… Inscripción registral Procedimiento concluido con insc… Aprobación judicial concedida pe… Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria. Capítulo I ter del Título II. Administración / Interesado Verificación del supuesto de hecho (artículo 26 sexies) Paso 1 de este recorrido · Fase 1: Verificación previa Se aplicarán las disposiciones de este Capítulo para recabar aprobación judicial para la modificación de la mención registral relativa al sexo cuando respecto de la misma persona ya se haya realizado una rectificación de la inscripción registral relativa al sexo y una reversión de dicha modificación, de conformidad con lo dispuesto en el artículo 47, párrafo segundo, de la Ley para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI. Advertencia Este Capítulo no resulta aplicable a la primera rectificación ni a la primera reversión, sino exclusivamente a la nueva modificación solicitada con posterioridad a una rectificación y a una reversión ya inscritas. Fundamento normativo Ley 15/2015, art. 26 sexies | Ley 4/2023, art. 47, párrafo segundo ¿Respecto de la misma persona ya se ha realizado una rectificación de la inscripción registral relativa al sexo y una reversión de dicha modificación conforme al artículo 47 de la Ley 4/2023? S Sí, se cumplen ambas condiciones N No, falta alguna de las condiciones previas ← Volver Vista de mapa completo del procedimiento ← Volver al recorrido",
+ "inicio": "inicio",
+ "actores": {
+  "etiquetas": {
+   "juez": "Juez / Órgano judicial",
+   "laj": "Administración / Interesado",
+   "ambos": "Intervención conjunta"
+  },
+  "sinEtiqueta": []
+ },
+ "pasos": {
+  "inicio": {
+   "ph": 0,
+   "t": "Verificación del supuesto de hecho (artículo 26 sexies)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Se aplicarán las disposiciones de este Capítulo para recabar aprobación judicial para la modificación de la mención registral relativa al sexo cuando respecto de la misma persona ya se haya realizado una rectificación de la inscripción registral relativa al sexo y una reversión de dicha modificación, de conformidad con lo dispuesto en el artículo 47, párrafo segundo, de la Ley para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI."
+    ],
+    [
+     "w",
+     "Este Capítulo no resulta aplicable a la primera rectificación ni a la primera reversión, sino exclusivamente a la nueva modificación solicitada con posterioridad a una rectificación y a una reversión ya inscritas."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 26 sexies | Ley 4/2023, art. 47, párrafo segundo"
+    ]
+   ],
+   "q": "¿Respecto de la misma persona ya se ha realizado una rectificación de la inscripción registral relativa al sexo y una reversión de dicha modificación conforme al artículo 47 de la Ley 4/2023?",
+   "opts": [
+    {
+     "t": "Sí, se cumplen ambas condiciones",
+     "l": "Sí",
+     "n": "legitima"
+    },
+    {
+     "t": "No, falta alguna de las condiciones previas",
+     "l": "No",
+     "n": "fin_no_procede"
+    }
+   ]
+  },
+  "fin_no_procede": {
+   "ph": 0,
+   "t": "No procede la aplicación del Capítulo I ter",
+   "ac": "laj",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "El Capítulo I ter de la Ley 15/2015 tiene un ámbito de aplicación excepcional y subsidiario. Si no concurren las dos circunstancias previas de manera acumulativa —una rectificación previa de la inscripción registral relativa al sexo y una reversión posterior de dicha modificación—, no es de aplicación este procedimiento de jurisdicción voluntaria."
+    ],
+    [
+     "n",
+     "En su caso, deberá acudirse al procedimiento administrativo ordinario de rectificación registral ante el Registro Civil (artículos 43 y 44 de la Ley 4/2023) o, si corresponde, al Capítulo I bis de la Ley 15/2015 para menores de catorce años y mayores de doce."
+    ]
+   ]
+  },
+  "legitima": {
+   "ph": 1,
+   "t": "Legitimación activa (artículo 26 septies.2 y artículo 43 de la Ley 4/2023)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Podrá promover este expediente cualquiera de las personas que estén legitimadas para instar la rectificación de la mención registral del sexo. El artículo 43 de la Ley 4/2023 determina quiénes pueden solicitar la rectificación registral de la mención relativa al sexo."
+    ],
+    [
+     "cl",
+     "Verificar legitimación",
+     [
+      "Persona de nacionalidad española mayor de dieciséis años: solicita por sí misma ante el Registro Civil.",
+      "Persona menor de dieciséis años y mayor de catorce: presenta la solicitud por sí misma, asistida por sus representantes legales.",
+      "Persona menor de catorce años y mayor de doce: solicita la autorización judicial conforme al Capítulo I bis (primera rectificación); para nueva modificación tras reversión, se aplica el Capítulo I ter.",
+      "Persona con discapacidad: solicita con las medidas de apoyo que precise.",
+      "Si hay desacuerdo entre progenitores o representantes legales: nombramiento de defensor judicial (arts. 235-236 CC)."
+     ]
+    ],
+    [
+     "l",
+     "Ley 4/2023, art. 43 | Código Civil, arts. 235-236"
+    ]
+   ],
+   "q": "¿El solicitante está legitimado para instar la rectificación de la mención registral del sexo según el artículo 43 de la Ley 4/2023?",
+   "opts": [
+    {
+     "t": "Mayor de dieciséis años",
+     "l": "Mayor de 16",
+     "n": "competencia"
+    },
+    {
+     "t": "Menor de dieciséis y mayor de catorce (asistido)",
+     "l": "14-16 asistido",
+     "n": "competencia_menor_14_16"
+    },
+    {
+     "t": "Menor de catorce y mayor de doce",
+     "l": "12-14",
+     "n": "competencia_menor_12_14"
+    },
+    {
+     "t": "Persona con discapacidad",
+     "l": "Discapacidad",
+     "n": "competencia_discapacidad"
+    },
+    {
+     "t": "No está legitimado",
+     "l": "No legitimado",
+     "n": "fin_no_legitimado"
+    }
+   ]
+  },
+  "fin_no_legitimado": {
+   "ph": 1,
+   "t": "Falta de legitimación para promover el expediente",
+   "ac": "laj",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "Si el solicitante no se encuentra entre las personas legitimadas conforme al artículo 43 de la Ley 4/2023, no podrá promover el expediente de jurisdicción voluntaria del Capítulo I ter de la Ley 15/2015."
+    ],
+    [
+     "n",
+     "La legitimación corresponde a la persona interesada según su tramo de edad y capacidad, con las salvaguardas procesales que correspondan."
+    ]
+   ]
+  },
+  "competencia": {
+   "ph": 1,
+   "t": "Competencia territorial (artículo 26 septies.1)",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Será competente para conocer de este expediente el Juzgado de Primera Instancia del domicilio de la persona cuya mención registral pretenda rectificarse o, si no lo tuviera en territorio nacional, el de su residencia en dicho territorio."
+    ],
+    [
+     "n",
+     "Este criterio coincide con el establecido para el Capítulo I bis y garantiza la proximidad del órgano judicial al centro de intereses de la persona afectada."
+    ]
+   ],
+   "nx": "postulacion"
+  },
+  "competencia_menor_14_16": {
+   "ph": 1,
+   "t": "Competencia territorial — Menor de dieciséis y mayor de catorce",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Mismo criterio de competencia territorial: Juzgado de Primera Instancia del domicilio o, en su defecto, de la residencia en territorio nacional. El menor presenta la solicitud por sí mismo asistido por sus representantes legales."
+    ],
+    [
+     "l",
+     "Ley 4/2023, art. 43.2 | Ley 15/2015, art. 26 septies.1"
+    ]
+   ],
+   "nx": "postulacion_menor"
+  },
+  "competencia_menor_12_14": {
+   "ph": 1,
+   "t": "Competencia territorial — Menor de catorce y mayor de doce",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Mismo criterio territorial. Este tramo de edad requiere aprobación judicial conforme al Capítulo I bis para la primera rectificación; para la nueva modificación tras reversión se aplica el Capítulo I ter, sin perjuicio de la asistencia de representantes legales y de las garantías del menor."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 26 septies | Ley 4/2023, art. 43.4"
+    ]
+   ],
+   "nx": "postulacion_menor"
+  },
+  "competencia_discapacidad": {
+   "ph": 1,
+   "t": "Competencia territorial — Persona con discapacidad",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Mismo criterio territorial. La persona solicita con las medidas de apoyo que precise, sin que sea preceptiva la intervención de abogado ni procurador."
+    ],
+    [
+     "l",
+     "Ley 4/2023, art. 43.3"
+    ]
+   ],
+   "nx": "postulacion_discapacidad"
+  },
+  "postulacion": {
+   "ph": 2,
+   "t": "Postulación (artículo 26 septies.3)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "En la tramitación del presente expediente no será preceptiva la intervención de abogado ni procurador."
+    ],
+    [
+     "n",
+     "Esta excepción a la postulación parts-based responde a la naturaleza de jurisdicción voluntaria del expediente y facilita el acceso a la justicia, evitando la generación de costas procesales."
+    ]
+   ],
+   "nx": "solicitud"
+  },
+  "postulacion_menor": {
+   "ph": 2,
+   "t": "Postulación y garantías del menor",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "No es preceptiva la intervención de abogado ni procurador. Si hay desacuerdo entre los progenitores o representantes legales, entre sí o con la persona menor de edad, se procederá al nombramiento de un defensor judicial conforme a los artículos 235 y 236 del Código Civil."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 26 septies.3 | Código Civil, arts. 235-236"
+    ]
+   ],
+   "q": "¿Existe desacuerdo entre los progenitores o representantes legales, o entre ellos y la persona menor de edad?",
+   "opts": [
+    {
+     "t": "Sí, existe desacuerdo",
+     "l": "Desacuerdo",
+     "n": "defensor_judicial"
+    },
+    {
+     "t": "No, existe conformidad",
+     "l": "Conformidad",
+     "n": "solicitud"
+    }
+   ]
+  },
+  "postulacion_discapacidad": {
+   "ph": 2,
+   "t": "Postulación — Persona con discapacidad",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "No es preceptiva la intervención de abogado ni procurador. La persona actúa con las medidas de apoyo que precise."
+    ]
+   ],
+   "nx": "solicitud"
+  },
+  "defensor_judicial": {
+   "ph": 2,
+   "t": "Nombramiento de defensor judicial (artículos 235-236 del Código Civil)",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "El Juez nombra un defensor judicial del menor cuando exista conflicto de intereses entre los menores y sus representantes legales. El defensor ejercerá su cargo en interés del menor, de acuerdo con su personalidad y con respeto a sus derechos, siendo aplicables al defensor judicial del menor las normas del defensor judicial de las personas con discapacidad."
+    ],
+    [
+     "n",
+     "El defensor judicial actúa como garantía procesal del interés superior del menor en caso de conflicto entre sus representantes legales."
+    ]
+   ],
+   "nx": "solicitud"
+  },
+  "solicitud": {
+   "ph": 3,
+   "t": "Presentación de la solicitud (artículo 26 octies.1)",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El expediente, que será de tramitación preferente, comenzará con la presentación de una solicitud en la que la persona interesada manifieste su voluntad de revertir la rectificación registral anteriormente producida."
+    ],
+    [
+     "cl",
+     "Requisitos de la solicitud",
+     [
+      "Manifestación expresa de voluntad de revertir la rectificación registral anteriormente producida.",
+      "Acompañar los medios de prueba que se deseen utilizar (sin lista taxativa).",
+      "No se exige informe médico ni psicológico ni modificación corporal previa (art. 44.3 Ley 4/2023)."
+     ]
+    ],
+    [
+     "d",
+     "Tramitación preferente: el expediente recibe atención prioritaria y plazos acortados."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 26 octies.1 | Ley 4/2023, art. 44.3"
+    ]
+   ],
+   "nx": "admision"
+  },
+  "admision": {
+   "ph": 3,
+   "t": "Admisión a trámite",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "El Juez examina la solicitud y los documentos aportados para decidir sobre su admisión a trámite. Si la solicitud no cumple los requisitos formales, podrá requerir al interesado para que subsane las deficiencias o, en su caso, acuerde el archivo."
+    ]
+   ],
+   "q": "¿El Juez admite a trámite la solicitud?",
+   "opts": [
+    {
+     "t": "Sí, se admite a trámite",
+     "l": "Admitida",
+     "n": "comparecencia"
+    },
+    {
+     "t": "No, se inadmitie la solicitud",
+     "l": "Inadmitida",
+     "n": "fin_inadmision"
+    }
+   ]
+  },
+  "fin_inadmision": {
+   "ph": 3,
+   "t": "Solicitud inadmitida a trámite",
+   "ac": "juez",
+   "end": "error",
+   "c": [
+    [
+     "i",
+     "Si la solicitud no cumple los requisitos legales o formales exigidos, el Juez acordará su inadmisión a trámite, poniendo fin al expediente en esta vía."
+    ],
+    [
+     "n",
+     "La inadmisión puede ser recurrible según la normativa procesal aplicable a la jurisdicción voluntaria."
+    ]
+   ]
+  },
+  "comparecencia": {
+   "ph": 3,
+   "t": "Comparecencia de los interesados (artículo 26 octies.2)",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "Admitida a trámite la solicitud, el Juez citará a comparecencia al solicitante y, en su caso, a sus representantes legales, a las demás personas que estime oportuno, así como al Ministerio Fiscal."
+    ],
+    [
+     "cl",
+     "Actores citados a comparecencia",
+     [
+      "Solicitante (comparecencia personal esencial).",
+      "Representantes legales (si el solicitante es menor de edad o persona con discapacidad).",
+      "Ministerio Fiscal (representante de la legalidad e interés público).",
+      "Demás personas que el Juez estime oportuno (facultad discrecional)."
+     ]
+    ],
+    [
+     "n",
+     "La comparecencia personal del solicitante permite al Juez valorar directamente la voluntad de la persona."
+    ]
+   ],
+   "nx": "pruebas"
+  },
+  "pruebas": {
+   "ph": 3,
+   "t": "Práctica de pruebas (artículo 26 octies.3)",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "El Juez podrá solicitar la práctica de cualesquiera otras pruebas que considere oportunas. Esta facultad es amplia y discrecional, permitiendo practicar todo tipo de pruebas que considere necesarias para formar su convicción sobre la autenticidad y estabilidad de la voluntad manifestada."
+    ],
+    [
+     "w",
+     "El ejercicio del derecho a la rectificación registral de la mención relativa al sexo en ningún caso podrá estar condicionado a la previa exhibición de informe médico o psicológico relativo a la disconformidad con el sexo mencionado en la inscripción de nacimiento, ni a la previa modificación de la apariencia o función corporal de la persona a través de procedimientos médicos, quirúrgicos o de otra índole."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 26 octies.3 | Ley 4/2023, art. 44.3"
+    ]
+   ],
+   "nx": "resolucion"
+  },
+  "resolucion": {
+   "ph": 4,
+   "t": "Resolución judicial (artículo 26 nonies)",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "El Juez resolverá sobre la concesión o denegación de la aprobación judicial, considerando en todo caso, si el solicitante fuera persona menor de edad, el interés superior del menor."
+    ],
+    [
+     "n",
+     "La resolución judicial constituye el acto final del procedimiento de jurisdicción voluntaria. El Juez actúa con independencia y sometido únicamente al imperio de la ley, valorando la prueba practicada y la manifestación de voluntad del solicitante."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 26 nonies.1"
+    ]
+   ],
+   "q": "¿El Juez concede la aprobación judicial para la nueva modificación de la mención registral relativa al sexo?",
+   "opts": [
+    {
+     "t": "Sí, se concede la aprobación",
+     "l": "Concede",
+     "n": "remision_registro"
+    },
+    {
+     "t": "No, se deniega la aprobación",
+     "l": "Deniega",
+     "n": "fin_denegacion"
+    }
+   ]
+  },
+  "fin_denegacion": {
+   "ph": 4,
+   "t": "Denegación de la aprobación judicial",
+   "ac": "juez",
+   "end": "neutral",
+   "c": [
+    [
+     "i",
+     "El Juez ha denegado la aprobación judicial solicitada. La denegación debe ser motivada y podrá ser recurrible conforme a la normativa procesal aplicable a la jurisdicción voluntaria."
+    ],
+    [
+     "n",
+     "La denegación no impide que, en su caso, la persona interesada pueda reiterar la solicitud cuando concurran nuevas circunstancias o se subsanen los motivos de la denegación."
+    ]
+   ]
+  },
+  "remision_registro": {
+   "ph": 4,
+   "t": "Remisión al Registro Civil (artículo 26 nonies.2)",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "El testimonio de dicha resolución se remitirá al Registro Civil competente para proceder, en su caso, a la inscripción de la rectificación aprobada judicialmente."
+    ],
+    [
+     "n",
+     "La resolución que acuerde la rectificación de la mención registral del sexo tendrá efectos constitutivos a partir de su inscripción en el Registro Civil (artículo 46.1 de la Ley 4/2023). El cambio de la condición jurídica de la persona no se produce con la mera resolución judicial, sino con su inscripción registral."
+    ],
+    [
+     "l",
+     "Ley 15/2015, art. 26 nonies.2 | Ley 4/2023, art. 46.1 | Ley 20/2011, art. 91.2"
+    ]
+   ],
+   "nx": "inscripcion"
+  },
+  "inscripcion": {
+   "ph": 4,
+   "t": "Inscripción registral",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "El Registro Civil competente recibe el testimonio de la resolución judicial y procede a la inscripción de la rectificación aprobada. La inscripción tiene eficacia constitutiva."
+    ],
+    [
+     "cl",
+     "Actuaciones del Registro Civil",
+     [
+      "Recibir el testimonio de la resolución judicial.",
+      "Verificar la competencia y la autenticidad del testimonio.",
+      "Proceder a la inscripción de la rectificación de la mención registral relativa al sexo.",
+      "Conservar el mismo número del Documento Nacional de Identidad (art. 49 Ley 4/2023)."
+     ]
+    ],
+    [
+     "d",
+     "La persona interesada o su representante podrán solicitar la reexpedición de documentos ajustados a la nueva inscripción (art. 49 Ley 4/2023)."
+    ]
+   ],
+   "q": "¿El Registro Civil inscribe la rectificación aprobada judicialmente?",
+   "opts": [
+    {
+     "t": "Sí, se inscribe la rectificación",
+     "l": "Inscrita",
+     "n": "fin_exitoso"
+    },
+    {
+     "t": "No, la inscripción queda pendiente",
+     "l": "Pendiente",
+     "n": "fin_inscripcion_pendiente"
+    }
+   ]
+  },
+  "fin_exitoso": {
+   "ph": 4,
+   "t": "Procedimiento concluido con inscripción",
+   "ac": "ambos",
+   "end": "success",
+   "c": [
+    [
+     "i",
+     "La nueva modificación de la mención registral relativa al sexo ha sido aprobada judicialmente e inscrita en el Registro Civil. La persona puede ejercer todos los derechos inherentes a su nueva condición desde la inscripción."
+    ],
+    [
+     "n",
+     "Se conserva en todo caso el mismo número del Documento Nacional de Identidad y se facilita la reexpedición de documentos ajustados a la nueva mención registral."
+    ]
+   ]
+  },
+  "fin_inscripcion_pendiente": {
+   "ph": 4,
+   "t": "Aprobación judicial concedida pero inscripción pendiente",
+   "ac": "ambos",
+   "end": "warning",
+   "c": [
+    [
+     "i",
+     "El Juez ha concedido la aprobación judicial, pero la inscripción en el Registro Civil no ha podido materializarse o está pendiente de trámite."
+    ],
+    [
+     "w",
+     "Sin la inscripción registral, la resolución judicial no adquiere eficacia constitutiva. Es necesario subsanar la causa de la pendencia para que la rectificación produzca efectos jurídicos plenos."
+    ],
+    [
+     "n",
+     "La persona interesada o su representante deberán agilizar la remisión del testimonio o resolver cualquier incidencia registral que impida la inscripción."
+    ]
+   ]
+  }
+ },
+ "otrosDatos": {
+  "PHASES": [
+   "Verificación previa",
+   "Competencia y legitimación",
+   "Postulación y garantías",
+   "Tramitación",
+   "Resolución y desenlace"
+  ],
+  "SB_FOOT": "<div class=\"sb-foot\">Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria.<br>Capítulo I ter del Título II.</div>"
+ }
+}

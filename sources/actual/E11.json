@@ -1,0 +1,2274 @@
+{
+ "id": "E11",
+ "tipo": "esquema",
+ "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/04 - CAPÍTULO I BIS & TER - Aprobación judicial de la modificación de la mención registral relativa al sexo - Capítulos I Bis y I Ter de la Ley 15-2015.html",
+ "titulo": "Mapa Mental Expandido — Ley 15/2015 · Capítulos I Bis y I Ter · Jurisdicción Voluntaria",
+ "cabecera": {
+  "migas": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULOS I BIS y I TER",
+  "titulo": "CAPÍTULOS I BIS &amp; TER DE LA LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA",
+  "subtitulo": "Arts. 26 bis a 26 nonies LJV",
+  "etiquetas": [
+   "Ley 15/2015",
+   "Arts. 26 bis – 26 nonies",
+   "Ley 4/2023 (Disposición Final 13.1)",
+   "Jurisdicción Voluntaria",
+   "Personas trans y LGTBI"
+  ]
+ },
+ "estadisticas": [
+  {
+   "valor": "9",
+   "etiqueta": "Artículos base"
+  },
+  {
+   "valor": "10+",
+   "etiqueta": "Conexiones normativas"
+  },
+  {
+   "valor": "13+",
+   "etiqueta": "Actores identificados"
+  },
+  {
+   "valor": "7",
+   "etiqueta": "Plazos procesales"
+  }
+ ],
+ "filtros": [
+  {
+   "categoria": "all",
+   "texto": "Todos"
+  },
+  {
+   "categoria": "c1",
+   "texto": "Contexto"
+  },
+  {
+   "categoria": "c2",
+   "texto": "Cap. I Bis"
+  },
+  {
+   "categoria": "c3",
+   "texto": "Cap. I Ter"
+  },
+  {
+   "categoria": "c4",
+   "texto": "Ley 4/2023"
+  },
+  {
+   "categoria": "c5",
+   "texto": "Normas comunes"
+  },
+  {
+   "categoria": "c6",
+   "texto": "Actores"
+  },
+  {
+   "categoria": "c7",
+   "texto": "Plazos"
+  },
+  {
+   "categoria": "c8",
+   "texto": "Ecosistema"
+  }
+ ],
+ "leyenda": [
+  {
+   "texto": "Contexto normativo general y marco",
+   "color": "background:var(--c1)"
+  },
+  {
+   "texto": "Capítulo I Bis (arts. 26 bis-26 quinquies)",
+   "color": "background:var(--c2)"
+  },
+  {
+   "texto": "Capítulo I Ter (arts. 26 sexies-26 nonies)",
+   "color": "background:var(--c3)"
+  },
+  {
+   "texto": "Ley 4/2023 — Rectificación y efectos",
+   "color": "background:var(--c4)"
+  },
+  {
+   "texto": "Normas comunes del Título I",
+   "color": "background:var(--c5)"
+  },
+  {
+   "texto": "Participantes y actores",
+   "color": "background:var(--c6)"
+  },
+  {
+   "texto": "Plazos procesales",
+   "color": "background:var(--c7)"
+  },
+  {
+   "texto": "Ecosistema normativo",
+   "color": "background:var(--c8)"
+  }
+ ],
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II · Capítulos I Bis y I Ter · Arts. 26 bis a 26 nonies · Añadidos por la DF 13.1 de la Ley 4/2023 · Generado como plantilla HTML reutilizable",
+ "secciones": [
+  {
+   "id": "sec-contexto",
+   "titulo": "Contexto normativo general y marco de la rectificación registral",
+   "recuento": "4 tarjetas",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c1",
+      "articulo": "Contexto General",
+      "etiquetas": [
+       {
+        "texto": "Marco normativo",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Contexto normativo general del expediente de jurisdicción voluntaria",
+      "resumen": "El Título II de la Ley 15/2015 regula los expedientes de jurisdicción voluntaria en materia de personas, estructurado en diversos capítulos que abarcan desde la autorización de reconocimiento de filiación no matrimonial hasta la aprobación judicial de modificación de la mención registral del sexo.",
+      "contadores": [
+       "5 capítulos referenciados",
+       "2 títulos"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Estructura del Título II",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Capítulo I (arts. 23-26):</strong> autorización judicial de reconocimiento de filiación no matrimonial de menores o personas con discapacidad."
+            },
+            {
+             "t": "<strong>Capítulo I Bis (arts. 26 bis-26 quinquies):</strong> aprobación judicial de modificación de la mención registral del sexo de personas mayores de 12 y menores de 14 años."
+            },
+            {
+             "t": "<strong>Capítulo I Ter (arts. 26 sexies-26 nonies):</strong> aprobación judicial de modificación de la mención registral del sexo tras reversión previa."
+            },
+            {
+             "t": "<strong>Capítulo II (arts. 27 y ss.):</strong> habilitación para comparecer en juicio y nombramiento de defensor judicial."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Normas comunes supletorias — Título I (arts. 9-22)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Competencia (arts. 9, 13, 16):</strong> Juzgados de Primera Instancia; la competencia territorial viene fijada por la ley y no puede ser alterada por sumisión; el Letrado de la Administración de Justicia la comprobará de oficio."
+            },
+            {
+             "t": "<strong>Postulación (art. 3):</strong> la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente."
+            },
+            {
+             "t": "<strong>Comparecencia (arts. 17-18):</strong> el Secretario judicial citará a los interesados; la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión, aplicándose las reglas del juicio verbal."
+            },
+            {
+             "t": "<strong>Decisión (art. 19):</strong> el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación."
+            },
+            {
+             "t": "<strong>Recursos (art. 20):</strong> contra las resoluciones del Juez cabrá recurso de reposición y apelación; contra las del Secretario judicial, recurso de revisión."
+            },
+            {
+             "t": "<strong>Caducidad (art. 21):</strong> el expediente caducará cuando sea paralizado por inactividad del interesado durante 3 meses."
+            },
+            {
+             "t": "<strong>Ejecución (art. 22):</strong> las resoluciones firmes producen efectos de cosa juzgada; las que afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 arts. 1-22",
+       "Ley 15/2015 arts. 23-27",
+       "LEC art. 1.2 (aplicación supletoria)"
+      ],
+      "claves": "contexto normativo general título II expedientes jurisdicción voluntaria materia personas ley 15/2015 estructura capítulos filiación autorización reconocimiento"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c1",
+      "articulo": "Marco Ley 4/2023",
+      "etiquetas": [
+       {
+        "texto": "Ley trans",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Marco normativo de la rectificación registral del sexo — Ley 4/2023",
+      "resumen": "La Ley 4/2023 introduce en su Capítulo III del Título I (arts. 43-49) el régimen completo de rectificación registral de la mención relativa al sexo, incluyendo la reversibilidad. Los arts. 26 bis a 26 nonies de la Ley 15/2015 fueron añadidos por la disposición final 13.1 de la Ley 4/2023.",
+      "contadores": [
+       "7 artículos (43-49)",
+       "1 disposición final"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Origen normativo de los Capítulos I Bis y I Ter",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Disposición final 13.1 de la Ley 4/2023:</strong> añade los arts. 26 bis a 26 nonies a la Ley 15/2015."
+            },
+            {
+             "t": "<strong>Publicación:</strong> 01/03/2023 en el BOE."
+            },
+            {
+             "t": "<strong>Entrada en vigor:</strong> 02/03/2023."
+            },
+            {
+             "t": "<strong>Denominación completa:</strong> Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Estructura del Capítulo III del Título I (arts. 43-49)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Art. 43:</strong> legitimación por grupos de edad."
+            },
+            {
+             "t": "<strong>Art. 44:</strong> procedimiento registral de rectificación."
+            },
+            {
+             "t": "<strong>Art. 45:</strong> competencia del Registro Civil."
+            },
+            {
+             "t": "<strong>Art. 46:</strong> efectos de la rectificación."
+            },
+            {
+             "t": "<strong>Art. 47:</strong> reversibilidad de la rectificación."
+            },
+            {
+             "t": "<strong>Art. 48:</strong> cambio de nombre en el Registro Civil para menores de edad."
+            },
+            {
+             "t": "<strong>Art. 49:</strong> adecuación de documentos a la mención registral relativa al sexo."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 4/2023 arts. 43-49",
+       "DF 13.1 Ley 4/2023"
+      ],
+      "claves": "marco normativo rectificación registral sexo ley 4/2023 capítulo III título I arts 43 a 49 disposición final 13 entrada en vigor 2 marzo 2023"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c1",
+      "articulo": "Sistema de Legitimación",
+      "etiquetas": [
+       {
+        "texto": "Por grupo de edad",
+        "clase": "tag-warn"
+       }
+      ],
+      "titulo": "Sistema de legitimación por grupos de edad",
+      "resumen": "El artículo 43 de la Ley 4/2023 establece un sistema escalonado de legitimación para la rectificación registral del sexo en función de la edad y la capacidad de la persona solicitante.",
+      "contadores": [
+       "5 grupos de legitimación",
+       "4 apartados del art. 43"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Mayores de 16 años (art. 43.1)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Legitimación:</strong> toda persona de nacionalidad española mayor de 16 años podrá solicitar por sí misma ante el Registro Civil la rectificación de la mención registral relativa al sexo."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Mayores de 14 y menores de 16 (art. 43.2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Legitimación:</strong> pueden presentar la solicitud por sí mismas, asistidas por sus representantes legales."
+            },
+            {
+             "t": "<strong>Desacuerdo:</strong> en caso de desacuerdo de los progenitores o representante legal entre sí o con la persona menor, se procede al nombramiento de defensor judicial (arts. 235 y 236 del Código Civil)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Personas con discapacidad (art. 43.3)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Legitimación:</strong> pueden solicitar, con las medidas de apoyo que precisen, la rectificación registral de la mención relativa al sexo."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Mayores de 12 y menores de 14 (art. 43.4)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Vía judicial:</strong> pueden solicitar la autorización judicial para la modificación de la mención registral del sexo en los términos del Capítulo I Bis del Título II de la Ley 15/2015 (arts. 26 bis a 26 quinquies)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Reversión tras rectificación (art. 47)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Plazo:</strong> transcurridos 6 meses desde la inscripción, las personas que hubieran promovido la rectificación podrán recuperar la mención registral del sexo previa."
+            },
+            {
+             "t": "<strong>Segunda rectificación:</strong> tras haberse rectificado la modificación inicial, para una nueva rectificación habrá de seguirse el procedimiento del Capítulo I Ter del Título II de la Ley 15/2015 (arts. 26 sexies a 26 nonies)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 4/2023 art. 43",
+       "CC arts. 235-236",
+       "Ley 15/2015 arts. 26 bis-26 nonies"
+      ],
+      "claves": "sistema legitimación grupos edad mayores 16 años 14 a 16 discapacidad menores 14 a 12 reversión ley 4/2023 artículo 43"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c2",
+      "articulo": "Cap. I Bis",
+      "etiquetas": [
+       {
+        "texto": "Conexión con Cap. I Ter",
+        "clase": "tag-ok"
+       }
+      ],
+      "titulo": "Capítulo I Bis — Relación con el Capítulo I Ter",
+      "resumen": "El Capítulo I Bis regula el procedimiento para menores de 12 a 14 años que solicitan por primera vez la modificación registral del sexo vía judicial. El Capítulo I Ter regula el procedimiento para cualquier persona que, habiendo ya rectificado y revertido, solicita una nueva modificación.",
+      "contadores": [
+       "5 artículos (26 bis-26 quinquies)",
+       "4 elementos comunes"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Elementos comunes entre ambos capítulos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Estructura:</strong> ambos son expedientes de jurisdicción voluntaria del Título II de la Ley 15/2015."
+            },
+            {
+             "t": "<strong>Tramitación preferente:</strong> carácter prioritario en ambos procedimientos."
+            },
+            {
+             "t": "<strong>No necesidad de abogado ni procurador:</strong> postulación no preceptiva en ambos capítulos."
+            },
+            {
+             "t": "<strong>Remisión al Registro Civil:</strong> el testimonio de la resolución se remite al Registro Civil para inscribir la rectificación."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Diferencias fundamentales",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Cap. I Bis:</strong> primera modificación registral del sexo para menores de 12 a 14 años vía judicial."
+            },
+            {
+             "t": "<strong>Cap. I Ter:</strong> segunda modificación registral tras haber rectificado y revertido previamente, aplicable a cualquier edad."
+            },
+            {
+             "t": "<strong>Cap. I Bis:</strong> exige acreditar madurez del menor y estabilidad de su voluntad."
+            },
+            {
+             "t": "<strong>Cap. I Ter:</strong> exige acreditar que ya se ha producido una rectificación previa y su reversión."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 arts. 26 bis-26 quinquies",
+       "Ley 15/2015 arts. 26 sexies-26 nonies"
+      ],
+      "claves": "capítulo I bis conexión aprobación judicial modificación mención registral sexo personas mayores 12 menores 14 años relación capítulo I ter procedimiento"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-capibis",
+   "titulo": "Capítulo I Bis — Arts. 26 bis a 26 quinquies (modificación registral para mayores de 12 y menores de 14)",
+   "recuento": "5 artículos",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c2",
+      "articulo": "Artículo 26 bis",
+      "etiquetas": [
+       {
+        "texto": "Ámbito de aplicación",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Ámbito de aplicación (Cap. I Bis)",
+      "resumen": "Se aplican las disposiciones de este Capítulo para recabar aprobación judicial para la modificación de la mención registral del sexo por personas mayores de 12 años y menores de 14.",
+      "contadores": [
+       "1 norma conexa",
+       "1 grupo de edad"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Objeto",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Finalidad:</strong> recabar aprobación judicial para la modificación de la mención registral del sexo por personas mayores de 12 años y menores de 14."
+            },
+            {
+             "t": "<strong>Origen normativo:</strong> añadido por la disposición final 13.1 de la Ley 4/2023, de 28 de febrero."
+            },
+            {
+             "t": "<strong>Publicación:</strong> 01/03/2023; <strong>entrada en vigor:</strong> 02/03/2023."
+            },
+            {
+             "t": "<strong>Conexión:</strong> este Capítulo I Bis es la vía paralela al procedimiento registral ordinario del art. 43.1-43.3 de la Ley 4/2023, reservado a quienes tienen 16 años o más."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 26 bis",
+       "DF 13.1 Ley 4/2023",
+       "Ley 4/2023 art. 43.4"
+      ],
+      "claves": "artículo 26 bis ámbito de aplicación modificación mención registral sexo mayores 12 menores 14 años disposición final 13 ley 4/2023"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c2",
+      "articulo": "Artículo 26 ter",
+      "etiquetas": [
+       {
+        "texto": "Competencia y legitimación",
+        "clase": "tag-ok"
+       }
+      ],
+      "titulo": "Competencia, legitimación y postulación (Cap. I Bis)",
+      "resumen": "Determina el Juzgado competente, las personas legitimadas (menores de 12-14 asistidos por representantes), el nombramiento de defensor judicial en caso de desacuerdo, y la no necesidad de abogado ni procurador.",
+      "contadores": [
+       "4 apartados",
+       "4 cuestiones reguladas"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Competencia judicial territorial (apartado 1)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Órgano competente:</strong> Juzgado de Primera Instancia."
+            },
+            {
+             "t": "<strong>Criterio:</strong> domicilio de la persona cuya mención registral pretenda rectificarse; subsidiariamente, residencia en territorio nacional."
+            },
+            {
+             "t": "<strong>Conexión con normas generales:</strong> el art. 9 de la Ley 15/2015 establece la competencia objetiva en los Juzgados de Primera Instancia; el art. 16 dispone que la competencia territorial viene fijada por la ley y no puede ser alterada por sumisión."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Legitimación activa (apartado 2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Personas legitimadas:</strong> mayores de 12 y menores de 14, asistidas por sus representantes legales."
+            },
+            {
+             "t": "<strong>Desacuerdo:</strong> en caso de desacuerdo de los progenitores o representante legal, se procede al nombramiento de defensor judicial conforme a los arts. 235 y 236 del Código Civil."
+            },
+            {
+             "t": "<strong>Conexión con el Código Civil:</strong> los arts. 235 y 236 CC regulan el nombramiento de defensor judicial cuando los progenitores tienen un interés contrario al del menor o cuando se produce un conflicto de intereses."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Medidas de apoyo para personas con discapacidad (apartado 3)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Garantía:</strong> si el expediente se insta por una persona menor con discapacidad, deberán disponerse en su favor las medidas de apoyo que pueda precisar."
+            },
+            {
+             "t": "<strong>Conexión con la Ley 4/2023:</strong> el art. 43.3 de la Ley 4/2023 establece la misma garantía para el procedimiento registral ordinario."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Postulación procesal (apartado 4)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>No preceptiva:</strong> no será preceptiva la intervención de abogado ni procurador."
+            },
+            {
+             "t": "<strong>Conexión con el art. 3 de la Ley 15/2015:</strong> la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley, o para la interposición de recursos y revisión, o una vez formulada oposición formal."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 26 ter",
+       "CC arts. 235-236",
+       "Ley 15/2015 arts. 3, 9, 16",
+       "Ley 4/2023 art. 43.3"
+      ],
+      "claves": "artículo 26 ter competencia legitimación postulación juzgado primera instancia domicilio residencia defensor judicial código civil discapacidad abogado procurador"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c2",
+      "articulo": "Artículo 26 quater",
+      "etiquetas": [
+       {
+        "texto": "Tramitación",
+        "clase": "tag-warn"
+       }
+      ],
+      "titulo": "Tramitación (Cap. I Bis)",
+      "resumen": "Regula el inicio del expediente con solicitud de disconformidad estable, el acompañamiento probatorio, la citación a comparecencia, las pruebas de oficio, la información al menor y la idoneidad de testigos.",
+      "contadores": [
+       "4 apartados",
+       "4 sujetos citados"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Solicitud inicial (apartado 1)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Carácter preferente:</strong> el expediente será de tramitación preferente."
+            },
+            {
+             "t": "<strong>Inicio:</strong> mediante solicitud en la que la persona legitimada manifieste su disconformidad con el sexo mencionado en su inscripción de nacimiento y solicite autorización judicial para la rectificación registral de la mención al sexo y, en su caso, al nombre."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Acompañamiento probatorio y comparecencia (apartado 2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Medios probatorios:</strong> la solicitud deberá venir acompañada de cualesquiera medios documentales o testificales acreditativos de que la persona ha mantenido de forma estable la disconformidad."
+            },
+            {
+             "t": "<strong>Citación:</strong> admitida a trámite, el Juez citará a comparecer al solicitante, sus representantes legales, las demás personas que estime oportuno, y al Ministerio Fiscal."
+            },
+            {
+             "t": "<strong>Conexión con el art. 17:</strong> la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Pruebas de oficio e información al menor (apartado 3)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Pruebas:</strong> el Juez podrá solicitar la práctica de las pruebas necesarias para acreditar la madurez del menor y la estabilidad de su voluntad."
+            },
+            {
+             "t": "<strong>Interés superior:</strong> tendrá en consideración en todo momento el interés superior de la persona menor de edad."
+            },
+            {
+             "t": "<strong>Información al menor:</strong> se le facilitará información sobre las consecuencias jurídicas de la rectificación en un lenguaje claro, accesible y adaptado."
+            },
+            {
+             "t": "<strong>Medidas de asistencia:</strong> deberá informarle de las medidas de asistencia e información disponibles en los ámbitos sanitario, social, laboral, educativo y administrativo, incluyendo protección contra la discriminación."
+            },
+            {
+             "t": "<strong>Asociaciones:</strong> se pondrá en conocimiento del menor la existencia de asociaciones y organizaciones de protección de los derechos en este ámbito."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Idoneidad de testigos (apartado 4)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Testigos idóneos:</strong> todas las personas mayores de edad, aun cuando estén ligadas al solicitante por parentesco, consanguinidad o afinidad en cualquier grado, vínculos de adopción, tutela o análogos, o relación de amistad."
+            },
+            {
+             "t": "<strong>Conexión con el art. 18:</strong> la comparecencia se celebra ante el Juez o el Secretario judicial, aplicándose las reglas del juicio verbal."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 26 quater",
+       "Ley 15/2015 arts. 17-18",
+       "Ley 15/2015 art. 19.2"
+      ],
+      "claves": "artículo 26 quater tramitación solicitud inicial comparecencia pruebas testigos idoneidad disconformidad estable información menor madurez"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c2",
+      "articulo": "Artículo 26 quinquies",
+      "etiquetas": [
+       {
+        "texto": "Resolución",
+        "clase": "tag-alert"
+       }
+      ],
+      "titulo": "Resolución (Cap. I Bis)",
+      "resumen": "El Juez resuelve sobre la concesión o denegación atendiendo al interés superior del menor, su madurez y voluntad estable, con prohibición expresa de exigir informes médicos o psicológicos, y remite testimonio al Registro Civil.",
+      "contadores": [
+       "2 apartados",
+       "2 efectos"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Decisión del Juez (apartado 1)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Contenido:</strong> previa audiencia de la persona menor, el Juez resolverá sobre la concesión o denegación de la aprobación judicial."
+            },
+            {
+             "t": "<strong>Criterios:</strong> considerando en todo caso el interés superior del menor de edad, previa comprobación de su voluntad estable de modificar la inscripción registral y de su madurez suficiente para comprender y evaluar de forma razonable e independiente las consecuencias de su decisión."
+            },
+            {
+             "t": "<strong>Prohibición expresa:</strong> la concesión no podrá estar condicionada a la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a la previa modificación de la apariencia o función corporal mediante procedimientos médicos, quirúrgicos o de otra índole."
+            },
+            {
+             "t": "<strong>Conexión con el art. 19:</strong> el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación."
+            },
+            {
+             "t": "<strong>Conexión con el art. 19.2:</strong> el Juez podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Remisión al Registro Civil (apartado 2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Acto de comunicación:</strong> el testimonio de la resolución se remitirá al Registro Civil competente para proceder a la inscripción de la rectificación aprobada judicialmente."
+            },
+            {
+             "t": "<strong>Conexión con el art. 22.2:</strong> las resoluciones que pongan fin al expediente y afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil competente."
+            },
+            {
+             "t": "<strong>Conexión con el art. 46.1 de la Ley 4/2023:</strong> la resolución tendrá efectos constitutivos a partir de su inscripción en el Registro Civil."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 26 quinquies",
+       "Ley 15/2015 arts. 19, 22.2",
+       "Ley 4/2023 art. 46.1"
+      ],
+      "claves": "artículo 26 quinquies resolución concesión denegación interés superior menor madurez voluntad estable prohibición informe médico psicológico registro civil testimonio"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-capiter",
+   "titulo": "Capítulo I Ter — Arts. 26 sexies a 26 nonies (modificación tras reversión previa)",
+   "recuento": "4 artículos",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c3",
+      "articulo": "Artículo 26 sexies",
+      "etiquetas": [
+       {
+        "texto": "Ámbito de aplicación",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Ámbito de aplicación (Cap. I Ter)",
+      "resumen": "Dispone que las normas de este Capítulo se aplican para recabar aprobación judicial de modificación de la mención registral del sexo cuando ya se ha producido una rectificación previa y su posterior reversión.",
+      "contadores": [
+       "2 normas conexas",
+       "2 requisitos previos"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Objeto del expediente — Naturaleza singular",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Finalidad:</strong> recabar aprobación judicial para la modificación de la mención registral relativa al sexo."
+            },
+            {
+             "t": "<strong>Procedimiento de tercer nivel:</strong> no es la rectificación inicial (vía registral, art. 44 Ley 4/2023), ni la reversión (también vía registral, art. 47.1 Ley 4/2023), sino una segunda rectificación tras reversión, que exige intervención judicial."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Requisitos previos indispensables",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Primera condición:</strong> que respecto de la misma persona ya se haya realizado una rectificación de la inscripción registral relativa al sexo."
+            },
+            {
+             "t": "<strong>Segunda condición:</strong> que se haya producido una reversión de dicha modificación."
+            },
+            {
+             "t": "<strong>Fundamento de la reversión:</strong> lo dispuesto en el artículo 47, párrafo segundo, de la Ley 4/2023."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Origen normativo",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Añadido</strong> por la disposición final 13.1 de la Ley 4/2023, de 28 de febrero. Publicado el 01/03/2023, en vigor desde el 02/03/2023."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 26 sexies",
+       "Ley 4/2023 art. 47",
+       "Ley 4/2023 art. 44"
+      ],
+      "claves": "artículo 26 sexies ámbito de aplicación modificación mención registral sexo reversión previa rectificación inscripción procedimiento tercer nivel ley 4/2023 artículo 47"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c4",
+      "articulo": "Art. 47 Ley 4/2023",
+      "etiquetas": [
+       {
+        "texto": "Reversibilidad",
+        "clase": "tag-warn"
+       }
+      ],
+      "titulo": "Reversibilidad de la rectificación — Artículo 47 de la Ley 4/2023",
+      "resumen": "Transcurridos seis meses desde la inscripción de la rectificación, las personas podrán recuperar la mención registral del sexo previa; para una nueva rectificación tras reversión, habrá de seguirse el procedimiento del Capítulo I Ter de la Ley 15/2015.",
+      "contadores": [
+       "2 párrafos",
+       "1 plazo: 6 meses"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Plazo y procedimiento de reversión (párrafo 1º)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Plazo de espera:</strong> transcurridos 6 meses desde la inscripción en el Registro Civil de la rectificación de la mención registral relativa al sexo."
+            },
+            {
+             "t": "<strong>Legitimación:</strong> las personas que hubieran promovido dicha rectificación podrán recuperar la mención registral del sexo que figuraba previamente."
+            },
+            {
+             "t": "<strong>Procedimiento:</strong> se seguirá el mismo procedimiento establecido en el Capítulo III del Título I de la Ley 4/2023 para la rectificación registral (arts. 44 y ss.)."
+            },
+            {
+             "t": "<strong>Consecuencia:</strong> el efecto de la reversión es recuperar la mención registral del sexo que figuraba antes de la rectificación del Registro Civil."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Segunda rectificación tras reversión (párrafo 2º)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Remisión expresa:</strong> en el caso de que, tras haberse rectificado la modificación inicial, se quisiese proceder a una nueva rectificación, habrá de seguirse el procedimiento establecido en el Capítulo I Ter del Título II de la Ley 15/2015 (arts. 26 sexies a 26 nonies)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 4/2023 art. 47",
+       "Ley 15/2015 arts. 26 sexies-26 nonies"
+      ],
+      "claves": "artículo 47 ley 4/2023 reversibilidad rectificación mención registral sexo seis meses procedimiento segunda rectificación capítulo I ter"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c4",
+      "articulo": "Art. 44 Ley 4/2023",
+      "etiquetas": [
+       {
+        "texto": "Procedimiento registral",
+        "clase": "tag-ok"
+       }
+      ],
+      "titulo": "Procedimiento para la rectificación registral — Art. 44 de la Ley 4/2023",
+      "resumen": "Regula el procedimiento registral de rectificación: solicitud ante cualquier Registro Civil, comparecencia inicial, segunda comparecencia en 3 meses, resolución en 1 mes, y recurso de alzada ante la Dirección General de Seguridad Jurídica.",
+      "contadores": [
+       "11 apartados",
+       "2 plazos: 3 meses + 1 mes"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Tramitación e inicio (apartados 1-2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Tramitación:</strong> se tramitará y acordará con sujeción a las disposiciones de la Ley 4/2023 y de conformidad con la normativa reguladora del Registro Civil (Ley 20/2011)."
+            },
+            {
+             "t": "<strong>Inicio:</strong> la solicitud de iniciación podrá presentarse ante la persona encargada de cualquier Oficina del Registro Civil."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Prohibiciones expresas (apartado 3)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Prohibición:</strong> en ningún caso podrá estar condicionado a la previa exhibición de informe médico o psicológico relativo a la disconformidad con el sexo mencionado, ni a la previa modificación de la apariencia o función corporal mediante procedimientos médicos, quirúrgicos o de otra índole."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Comparecencia inicial (apartado 4)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Citación:</strong> recibida la solicitud, se citará a la persona legitimada para que comparezca."
+            },
+            {
+             "t": "<strong>Manifestación:</strong> la persona encargada del Registro Civil recogerá su manifestación de disconformidad y su solicitud de rectificación."
+            },
+            {
+             "t": "<strong>Nombre propio:</strong> se incluirá la elección de un nuevo nombre propio salvo cuando la persona quiera conservar el que ostente."
+            },
+            {
+             "t": "<strong>Traslado de folio registral:</strong> en esta comparecencia también podrá incluir la petición de traslado total del folio registral cuando a su inscripción de nacimiento le sea aplicable la Ley de 8 de junio de 1957."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Información al solicitante (apartado 5)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Consecuencias jurídicas:</strong> la persona encargada del Registro Civil informará de las consecuencias jurídicas de la rectificación pretendida, incluido el régimen de reversión."
+            },
+            {
+             "t": "<strong>Medidas de asistencia:</strong> información sobre medidas disponibles en los ámbitos sanitario, social, laboral, educativo y administrativo, incluyendo protección contra la discriminación, promoción del respeto y fomento de la igualdad de trato."
+            },
+            {
+             "t": "<strong>Asociaciones:</strong> se pondrá en conocimiento de la persona legitimada la existencia de asociaciones y otras organizaciones de protección de los derechos en este ámbito."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Menores de edad (apartado 6)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Interés superior:</strong> todos los intervinientes tendrán en consideración el interés superior de la persona menor de 18 y mayor de 14 años, a quien se dará audiencia."
+            },
+            {
+             "t": "<strong>Información adaptada:</strong> se le facilitará información en un lenguaje claro, accesible y adaptado a sus necesidades."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Segunda comparecencia y resolución (apartados 7-10)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Suscripción:</strong> tras la información facilitada, la persona legitimada suscribirá, de estar conforme, la comparecencia inicial reiterando su petición."
+            },
+            {
+             "t": "<strong>Segunda comparecencia:</strong> en el plazo máximo de 3 meses desde la comparecencia inicial, la persona encargada del Registro Civil deberá citar para que comparezca de nuevo y ratifique su solicitud, aseverando la persistencia de su decisión."
+            },
+            {
+             "t": "<strong>Resolución:</strong> previa comprobación de la documentación, la persona encargada del Registro Civil dictará resolución dentro del plazo máximo de 1 mes a contar desde la fecha de la segunda comparecencia."
+            },
+            {
+             "t": "<strong>Recurso:</strong> la resolución será recurrible mediante recurso de alzada ante la Dirección General de Seguridad Jurídica y Fe Pública."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Personas con discapacidad (apartado 11)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Garantías:</strong> se garantizarán los medios y recursos de apoyo, materiales y humanos, incluidas las medidas de accesibilidad y diseño universales, para que reciban la información, formen y expresen su voluntad, otorguen su consentimiento y se comuniquen e interactúen con el entorno de modo libre."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 4/2023 art. 44",
+       "Ley 20/2011 del Registro Civil",
+       "Ley de 8 de junio de 1957"
+      ],
+      "claves": "artículo 44 ley 4/2023 procedimiento rectificación registral comparecencia inicial segunda comparecencia resolución recurso alzada dirección general seguridad jurídica prohibición informe médico"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c3",
+      "articulo": "Artículo 26 septies",
+      "etiquetas": [
+       {
+        "texto": "Competencia y legitimación",
+        "clase": "tag-ok"
+       }
+      ],
+      "titulo": "Competencia, legitimación y postulación (Cap. I Ter)",
+      "resumen": "Determina el Juzgado competente, las personas legitimadas para promover el expediente (remisión al art. 43 Ley 4/2023), y la no necesidad de intervención de abogado ni procurador.",
+      "contadores": [
+       "3 apartados",
+       "3 cuestiones reguladas"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Competencia judicial territorial (apartado 1)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Órgano competente:</strong> Juzgado de Primera Instancia."
+            },
+            {
+             "t": "<strong>Criterio:</strong> domicilio de la persona cuya mención registral pretenda rectificarse; subsidiariamente, residencia en territorio nacional."
+            },
+            {
+             "t": "<strong>Conexión con normas generales:</strong> el art. 9 de la Ley 15/2015 fija la competencia objetiva; el art. 13 determina que la competencia territorial viene fijada por la ley y no puede ser alterada por sumisión."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Legitimación activa (apartado 2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Personas legitimadas:</strong> cualquiera de las personas que estén legitimadas para instar la rectificación de la mención registral del sexo."
+            },
+            {
+             "t": "<strong>Remisión:</strong> la legitimación se remite al régimen general del artículo 43 de la Ley 4/2023 (mayores de 16 años por sí mismas; mayores de 14 y menores de 16 asistidas; personas con discapacidad con medidas de apoyo)."
+            },
+            {
+             "t": "<strong>Conexión con el art. 5:</strong> el art. 5 de la Ley 15/2015 dispone que podrán instar los expedientes quienes tengan un legítimo interés."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Postulación procesal (apartado 3)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>No preceptiva:</strong> no será preceptiva la intervención de abogado ni procurador."
+            },
+            {
+             "t": "<strong>Conexión con el art. 3.1:</strong> la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley, o para la interposición de recursos y revisión, o una vez formulada oposición formal."
+            },
+            {
+             "t": "<strong>Consecuencia práctica:</strong> el solicitante puede actuar sin representación técnica ni defensa letrada obligatoria, pudiendo utilizar los modelos normalizados que se establezcan (art. 3.3 de la Ley 15/2015)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 26 septies",
+       "Ley 15/2015 arts. 3, 5, 9, 13",
+       "Ley 4/2023 art. 43"
+      ],
+      "claves": "artículo 26 septies competencia legitimación postulación juzgado primera instancia domicilio residencia legitimadas rectificación abogado procurador no preceptiva modelos normalizados"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c3",
+      "articulo": "Artículo 26 octies",
+      "etiquetas": [
+       {
+        "texto": "Tramitación",
+        "clase": "tag-warn"
+       }
+      ],
+      "titulo": "Tramitación (Cap. I Ter)",
+      "resumen": "Regula el inicio del expediente con solicitud de voluntad de revertir, la citación a comparecencia del solicitante, representantes, Ministerio Fiscal y demás personas, y la facultad del Juez para acordar pruebas adicionales.",
+      "contadores": [
+       "3 apartados",
+       "4 sujetos citados"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Solicitud inicial (apartado 1)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Carácter preferente:</strong> el expediente será de tramitación preferente."
+            },
+            {
+             "t": "<strong>Inicio:</strong> comienza con la presentación de una solicitud en la que la persona interesada manifieste su voluntad de revertir la rectificación registral anteriormente producida."
+            },
+            {
+             "t": "<strong>Acompañamiento:</strong> la solicitud deberá ir acompañada de los medios de prueba que se deseen utilizar."
+            },
+            {
+             "t": "<strong>Conexión con el art. 17:</strong> admitida la solicitud, el Secretario judicial citará a los interesados; la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Citación a comparecencia (apartado 2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Solicitante:</strong> siempre citado a comparecer."
+            },
+            {
+             "t": "<strong>Representantes legales:</strong> comparecen en su caso."
+            },
+            {
+             "t": "<strong>Otras personas:</strong> las que el Juez estime oportuno."
+            },
+            {
+             "t": "<strong>Ministerio Fiscal:</strong> siempre citado a comparecer."
+            },
+            {
+             "t": "<strong>Conexión con el art. 4:</strong> el Ministerio Fiscal será parte en los expedientes que afecten al estado civil de las personas."
+            },
+            {
+             "t": "<strong>Conexión con el art. 18:</strong> la comparecencia se celebrará ante el Juez o el Secretario judicial; el comparendo del solicitante sin causa justificada determinará el archivo del expediente."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Pruebas de oficio (apartado 3)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Facultad del Juez:</strong> podrá solicitar la práctica de cualesquiera otras pruebas que considere oportunas."
+            },
+            {
+             "t": "<strong>Conexión con el art. 19.2:</strong> el Juez podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad que requieran medidas de apoyo, o por razones de interés público."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 26 octies",
+       "Ley 15/2015 arts. 4, 17-19"
+      ],
+      "claves": "artículo 26 octies tramitación solicitud preferente comparecencia solicitante representante legales ministerio fiscal pruebas oficio"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c3",
+      "articulo": "Artículo 26 nonies",
+      "etiquetas": [
+       {
+        "texto": "Resolución",
+        "clase": "tag-alert"
+       }
+      ],
+      "titulo": "Resolución (Cap. I Ter)",
+      "resumen": "El Juez resuelve la concesión o denegación de la aprobación judicial, atendiendo al interés superior del menor si el solicitante fuere menor de edad, y remite testimonio al Registro Civil para la inscripción.",
+      "contadores": [
+       "2 apartados",
+       "2 efectos"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Decisión del Juez (apartado 1)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Contenido:</strong> el Juez resolverá sobre la concesión o denegación de la aprobación judicial."
+            },
+            {
+             "t": "<strong>Consideración especial:</strong> si el solicitante fuere persona menor de edad, se atenderá en todo caso al interés superior del menor."
+            },
+            {
+             "t": "<strong>Conexión con el art. 19:</strong> el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación."
+            },
+            {
+             "t": "<strong>Conexión con el art. 20:</strong> contra el Auto cabrá recurso de reposición ante el mismo Juez y recurso de apelación ante la Audiencia Provincial; la apelación no tendrá, en general, efectos suspensivos."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Remisión al Registro Civil (apartado 2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Acto de comunicación:</strong> el testimonio de la resolución se remitirá al Registro Civil competente para proceder, en su caso, a la inscripción de la rectificación aprobada judicialmente."
+            },
+            {
+             "t": "<strong>Conexión con el art. 22.2:</strong> las resoluciones que pongan fin al expediente y afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil competente."
+            },
+            {
+             "t": "<strong>Conexión con el art. 46.1 de la Ley 4/2023:</strong> la resolución tendrá efectos constitutivos a partir de su inscripción en el Registro Civil."
+            },
+            {
+             "t": "<strong>Conexión con el art. 46.2 de la Ley 4/2023:</strong> la rectificación registral permitirá a la persona ejercer todos los derechos inherentes a su nueva condición."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 26 nonies",
+       "Ley 15/2015 arts. 19-22",
+       "Ley 4/2023 arts. 46.1-46.2"
+      ],
+      "claves": "artículo 26 nonies resolución concesión denegación interés superior menor testimonio registro civil inscripción efectos constitutivos cosa juzgada"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-normas-comunes",
+   "titulo": "Normas comunes del Título I — Arts. 3, 4, 5, 9, 13, 16-22 de la Ley 15/2015",
+   "recuento": "10 normas supletorias",
+   "plegada": true,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Artículo 3",
+      "etiquetas": [
+       {
+        "texto": "Postulación",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Postulación — Art. 3",
+      "resumen": "La intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley, o para la interposición de recursos y revisión, o una vez formulada oposición formal.",
+      "contadores": [],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Regla general y excepciones",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Regla general:</strong> la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley."
+            },
+            {
+             "t": "<strong>Excepción 1:</strong> para la interposición de recursos y revisión."
+            },
+            {
+             "t": "<strong>Excepción 2:</strong> una vez formulada oposición formal."
+            },
+            {
+             "t": "<strong>Modelos normalizados:</strong> cuando no sea preceptiva, podrán utilizarse los modelos normalizados que se establezcan (art. 3.3)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 3"
+      ],
+      "claves": "artículo 3 postulación abogado procurador obligatorio modelos normalizados interposición recursos revisión oposición formal"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Artículo 4",
+      "etiquetas": [
+       {
+        "texto": "Ministerio Fiscal",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Intervención del Ministerio Fiscal — Art. 4",
+      "resumen": "El Ministerio Fiscal será parte en los expedientes que afecten al estado civil de las personas, como es el presente de modificación de la mención registral del sexo.",
+      "contadores": [],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Intervención obligatoria",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Ámbito:</strong> expedientes que afecten al estado civil de las personas."
+            },
+            {
+             "t": "<strong>Otros supuestos:</strong> expedientes que afecten a menores o personas con discapacidad que requieran medidas de apoyo, o cuando así lo establezca expresamente la ley."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 4"
+      ],
+      "claves": "artículo 4 ministerio fiscal parte expedientes estado civil personas menores discapacidad"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Artículo 5",
+      "etiquetas": [
+       {
+        "texto": "Legitimación",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Legitimación — Art. 5",
+      "resumen": "Podrán instar los expedientes de jurisdicción voluntaria quienes tengan un legítimo interés, conforme al régimen general de la ley.",
+      "contadores": [],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Legítimo interés",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Requisito:</strong> tener un legítimo interés para instar el expediente."
+            },
+            {
+             "t": "<strong>Conexión:</strong> el art. 26 septies.2 remite al régimen general de legitimación para la rectificación registral del sexo (art. 43 Ley 4/2023)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 5"
+      ],
+      "claves": "artículo 5 legitimación legítimo interés instar expedientes jurisdicción voluntaria"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Arts. 9, 13, 16",
+      "etiquetas": [
+       {
+        "texto": "Competencia",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Competencia — Arts. 9, 13, 16",
+      "resumen": "La competencia objetiva corresponde a los Juzgados de Primera Instancia; la territorial viene fijada por la ley y no puede ser alterada por sumisión; el Letrado de la Administración de Justicia la comprobará de oficio.",
+      "contadores": [],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Competencia objetiva (art. 9)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Órgano:</strong> corresponde a los Juzgados de Primera Instancia."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Competencia territorial (art. 13)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Fijación legal:</strong> viene fijada por la ley y no puede ser alterada por sumisión expresa o tácita."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Comprobación de oficio (art. 16)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Control:</strong> el Letrado de la Administración de Justicia comprobará de oficio la competencia."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 arts. 9, 13, 16"
+      ],
+      "claves": "artículo 9 competencia objetiva juzgados primera instancia artículo 13 competencia territorial sumisión expresa tácita artículo 16 comprobación oficio letrado administración justicia"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Arts. 17-18",
+      "etiquetas": [
+       {
+        "texto": "Comparecencia",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Comparecencia — Arts. 17-18",
+      "resumen": "El Secretario judicial convocará la comparecencia dentro de los 30 días siguientes al de la admisión; se celebrará ante el Juez o el Secretario judicial, aplicándose las reglas del juicio verbal.",
+      "contadores": [],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Convocatoria (art. 17)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Plazo:</strong> la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión."
+            },
+            {
+             "t": "<strong>Citación:</strong> el Secretario judicial citará a los interesados cuando haya de oírse a otras personas, practicarse prueba o lo estime oportuno."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Celebración (art. 18)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Ante quién:</strong> se celebrará ante el Juez o el Secretario judicial, aplicándose las reglas del juicio verbal."
+            },
+            {
+             "t": "<strong>Comparendo del solicitante:</strong> la comparecencia del solicitante sin causa justificada determinará el archivo del expediente."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 arts. 17-18"
+      ],
+      "claves": "artículo 17 convocatoria comparecencia treinta días admisión artículo 18 celebración comparecencia juez secretario juicio verbal comparendo solicitante archivo expediente"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Artículo 19",
+      "etiquetas": [
+       {
+        "texto": "Decisión",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Decisión del expediente — Art. 19",
+      "resumen": "El Juez resolverá mediante Auto dentro de los 5 días siguientes; podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad.",
+      "contadores": [],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Decisión del Juez (apartados 1-2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Resolución:</strong> el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación."
+            },
+            {
+             "t": "<strong>Pruebas de oficio:</strong> el Juez podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad que requieran medidas de apoyo, o por razones de interés público."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Decisión del Secretario judicial (apartado 3)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Decreto:</strong> el Secretario judicial decidirá mediante Decreto en los casos que la ley determine."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 19"
+      ],
+      "claves": "artículo 19 decisión expediente auto cinco días comparecencia pruebas oficio menores discapacidad interés público secretario judicial decreto"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Artículo 20",
+      "etiquetas": [
+       {
+        "texto": "Recursos",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Recursos — Art. 20",
+      "resumen": "Contra las resoluciones del Juez cabrá recurso de reposición y apelación; contra las del Secretario judicial, recurso de revisión ante el Juez competente.",
+      "contadores": [],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Recursos contra resoluciones del Juez",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Reposición:</strong> recurso de reposición ante el mismo Juez."
+            },
+            {
+             "t": "<strong>Apelación:</strong> recurso de apelación ante la Audiencia Provincial; en general, no tendrá efectos suspensivos."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Recurso contra resoluciones del Secretario judicial",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Revisión:</strong> recurso de revisión ante el Juez competente."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 art. 20"
+      ],
+      "claves": "artículo 20 recursos reposición apelación audiencia provincial revisión secretario judicial efectos suspensivos"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Arts. 21-22",
+      "etiquetas": [
+       {
+        "texto": "Caducidad y ejecución",
+        "clase": "tag-gray"
+       }
+      ],
+      "titulo": "Caducidad y ejecución — Arts. 21-22",
+      "resumen": "El expediente caducará por inactividad del interesado durante 3 meses; las resoluciones firmes producen efectos de cosa juzgada y las que afecten al estado civil se remiten electrónicamente al Registro Civil.",
+      "contadores": [],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Caducidad (art. 21)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Plazo:</strong> el expediente caducará cuando sea paralizado por inactividad del interesado durante 3 meses."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Cumplimiento y ejecución (art. 22)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Cosa juzgada:</strong> las resoluciones firmes producirán efectos de cosa juzgada."
+            },
+            {
+             "t": "<strong>Estado civil:</strong> las resoluciones que pongan fin al expediente y afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil competente."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015 arts. 21-22"
+      ],
+      "claves": "artículo 21 caducidad expediente inactividad interesado tres meses artículo 22 cumplimiento ejecución cosa juzgada registro civil testimonio electrónico"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-efectos",
+   "titulo": "Efectos de la rectificación y adecuación de documentos — Arts. 46 y 49 de la Ley 4/2023",
+   "recuento": "2 artículos",
+   "plegada": true,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c4",
+      "articulo": "Art. 46 Ley 4/2023",
+      "etiquetas": [
+       {
+        "texto": "Efectos",
+        "clase": "tag-ok"
+       }
+      ],
+      "titulo": "Efectos de la rectificación — Art. 46 de la Ley 4/2023",
+      "resumen": "La resolución tendrá efectos constitutivos desde la inscripción; la rectificación permite ejercer todos los derechos inherentes a la nueva condición, sin alterar el régimen de violencia de género ni los derechos patrimoniales consolidados.",
+      "contadores": [
+       "5 apartados",
+       "3 leyes conexas"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Efectos constitutivos y ejercicio de derechos (apartados 1-2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Efectos constitutivos (art. 46.1):</strong> la resolución que acuerde la rectificación tendrá efectos constitutivos a partir de su inscripción en el Registro Civil."
+            },
+            {
+             "t": "<strong>Ejercicio de derechos (art. 46.2):</strong> la rectificación registral permitirá a la persona ejercer todos los derechos inherentes a su nueva condición."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Violencia de género (apartado 3)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>No alteración:</strong> la rectificación no alterará el régimen jurídico aplicable a los efectos de la Ley Orgánica 1/2004, de Medidas de Protección Integral contra la Violencia de Género."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Acción positiva (apartado 4)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Masculino a femenino:</strong> podrá ser beneficiaria de medidas de acción positiva adoptadas en favor de las mujeres a partir de la efectividad del cambio registral, pero no respecto de situaciones jurídicas anteriores."
+            },
+            {
+             "t": "<strong>Femenino a masculino:</strong> conservará los derechos patrimoniales consolidados sin lugar a reintegro o devolución."
+            },
+            {
+             "t": "<strong>Conexión:</strong> art. 11 de la Ley Orgánica 3/2007, para la Igualdad Efectiva de Mujeres y Hombres."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Situaciones jurídicas originadas en el sexo al nacimiento (apartado 5)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Conservación:</strong> la persona conservará, en su caso, los derechos inherentes al mismo en los términos establecidos en la legislación sectorial."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 4/2023 art. 46",
+       "LO 1/2004",
+       "LO 3/2007 art. 11"
+      ],
+      "claves": "artículo 46 ley 4/2023 efectos rectificación constitutivos ejercicio derechos violencia de género acción positiva situaciones jurídicas sexo nacimiento"
+     }
+    },
+    {
+     "tarjeta": {
+      "categoria": "c4",
+      "articulo": "Art. 49 Ley 4/2023",
+      "etiquetas": [
+       {
+        "texto": "Adecuación de documentos",
+        "clase": "tag-ok"
+       }
+      ],
+      "titulo": "Adecuación de documentos — Art. 49 de la Ley 4/2023",
+      "resumen": "Tras la rectificación, se expedirá un nuevo DNI y pasaporte conservando el mismo número; la persona podrá solicitar la reexpedición de cualquier documento, título o certificado, con tasas adaptadas al principio de capacidad económica.",
+      "contadores": [
+       "4 apartados",
+       "1 ley conexa"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Documentos oficiales de identidad (apartado 1)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Determinación del sexo:</strong> en los documentos oficiales de identidad, la determinación del sexo se corresponderá con la registral."
+            },
+            {
+             "t": "<strong>Nuevo DNI y pasaporte:</strong> tras la rectificación, se expedirá un nuevo DNI y, en su caso, pasaporte, conservando el mismo número."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Reexpedición de documentos (apartado 2)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Amplitud:</strong> la persona interesada podrá solicitar la reexpedición de cualquier documento, título, diploma o certificado ajustado a la inscripción registral rectificada."
+            },
+            {
+             "t": "<strong>Identificación:</strong> se garantizará la adecuada identificación, en su caso, mediante el mismo número de DNI o la misma clave registral."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Tasas (apartado 3)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Principio de capacidad económica:</strong> las tasas que graven los trámites se adecuarán al principio de capacidad económica (art. 8 de la Ley 8/1989, de Tasas y Precios Públicos)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Procedimientos accesibles (apartado 4)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Garantías:</strong> las Administraciones públicas establecerán procedimientos accesibles, ágiles y que garanticen la protección de los datos de carácter personal."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 4/2023 art. 49",
+       "Ley 8/1989 art. 8"
+      ],
+      "claves": "artículo 49 ley 4/2023 adecuación documentos dni pasaporte tasas capacidad económica procedimientos accesibles protección datos personales"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-timeline",
+   "titulo": "Indice de plazos procesales",
+   "recuento": "7 plazos",
+   "plegada": true,
+   "contenido": [
+    {
+     "tabla": {
+      "cabecera": [
+       "Acto o trámite procesal",
+       "Plazo",
+       "Fundamento normativo"
+      ],
+      "filas": [
+       [
+        "Convocatoria y celebración de comparecencia ante el Juez o Secretario judicial",
+        "30 días siguientes a la admisión",
+        "Art. 17 Ley 15/2015"
+       ],
+       [
+        "Resolución judicial — Auto de concesión o denegación de la aprobación judicial",
+        "5 días siguientes a la comparecencia o última actuación",
+        "Art. 19 Ley 15/2015"
+       ],
+       [
+        "Caducidad del expediente por inactividad del interesado",
+        "3 meses",
+        "Art. 21 Ley 15/2015"
+       ],
+       [
+        "Plazo de espera para solicitar la reversión de la rectificación registral",
+        "6 meses desde la inscripción",
+        "Art. 47.1 Ley 4/2023"
+       ],
+       [
+        "Segunda comparecencia registral para ratificar la solicitud de rectificación o reversión",
+        "3 meses desde la comparecencia inicial",
+        "Art. 44.8 Ley 4/2023"
+       ],
+       [
+        "Resolución registral de rectificación o reversión",
+        "1 mes desde la segunda comparecencia",
+        "Art. 44.9 Ley 4/2023"
+       ],
+       [
+        "Tramitación preferente del expediente (carácter prioritario sin cuantificación adicional)",
+        "Preferente (sin plazo tasado)",
+        "Art. 26 octies.1"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-actors",
+   "titulo": "Mapa de participantes y actores",
+   "recuento": "8 categorías · 13+ actores",
+   "plegada": true,
+   "contenido": [
+    {
+     "p": "Órgano judicial",
+     "clase": "participant-col-head phead-c2"
+    },
+    {
+     "lista": [
+      {
+       "t": "Juzgado de Primera Instancia (competente por territorio)"
+      },
+      {
+       "t": "Juez (dirige el expediente, cita, acuerda pruebas, resuelve mediante Auto)"
+      },
+      {
+       "t": "Letrado de la Administración de Justicia (comprueba competencia, convoca comparecencia, decide por Decreto)"
+      }
+     ]
+    },
+    {
+     "p": "Parte interesada",
+     "clase": "participant-col-head phead-c3"
+    },
+    {
+     "lista": [
+      {
+       "t": "Solicitante (persona cuya mención registral pretende rectificarse)"
+      },
+      {
+       "t": "Representantes legales (comparecen en su caso)"
+      },
+      {
+       "t": "Defensor judicial (nombrado en caso de desacuerdo de progenitores, arts. 235-236 CC)"
+      }
+     ]
+    },
+    {
+     "p": "Ministerio Público",
+     "clase": "participant-col-head phead-c5"
+    },
+    {
+     "lista": [
+      {
+       "t": "Ministerio Fiscal (siempre citado a comparecencia, art. 4 Ley 15/2015)"
+      }
+     ]
+    },
+    {
+     "p": "Registro y Administración",
+     "clase": "participant-col-head phead-c4"
+    },
+    {
+     "lista": [
+      {
+       "t": "Registro Civil competente (destinatario del testimonio de resolución)"
+      },
+      {
+       "t": "Dirección General de Seguridad Jurídica y Fe Pública (recurso de alzada contra resolución registral)"
+      }
+     ]
+    },
+    {
+     "p": "Órgano de apelación",
+     "clase": "participant-col-head phead-c7"
+    },
+    {
+     "lista": [
+      {
+       "t": "Audiencia Provincial (recurso de apelación contra Auto del Juez)"
+      }
+     ]
+    },
+    {
+     "p": "Profesionales no preceptivos",
+     "clase": "participant-col-head phead-c1"
+    },
+    {
+     "lista": [
+      {
+       "t": "Abogado (no preceptivo, pero necesario para recursos)"
+      },
+      {
+       "t": "Procurador (no preceptivo, pero necesario para recursos)"
+      }
+     ]
+    },
+    {
+     "p": "Testigos y terceros",
+     "clase": "participant-col-head phead-c6"
+    },
+    {
+     "lista": [
+      {
+       "t": "Testigos (todas las personas mayores de edad, aun con parentesco o amistad)"
+      },
+      {
+       "t": "Otras personas citadas (las que el Juez estime oportuno)"
+      }
+     ]
+    },
+    {
+     "p": "Asociaciones y organizaciones",
+     "clase": "participant-col-head phead-c8"
+    },
+    {
+     "lista": [
+      {
+       "t": "Asociaciones de protección de derechos (el Juez pondrá en conocimiento del menor su existencia)"
+      },
+      {
+       "t": "Organizaciones de apoyo (disponibles en ámbitos sanitario, social, laboral, educativo y administrativo)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-norms",
+   "titulo": "Ecosistema normativo — conexiones relacionadas",
+   "recuento": "10 cuerpos normativos",
+   "plegada": true,
+   "contenido": [
+    {
+     "p": "Ley 15/2015, de 2 de julio",
+     "clase": "norm-law"
+    },
+    {
+     "p": "De la Jurisdicción Voluntaria — Norma marco",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Título Preliminar (arts. 1-8):</strong> objeto, ámbito, principios generales.<br><strong>Título I (arts. 9-22):</strong> normas comunes de tramitación.<br><strong>Título II (arts. 23-50+):</strong> expedientes en materia de personas.<br><strong>Capítulo I (arts. 23-26):</strong> filiación no matrimonial.<br><strong>Capítulo I Bis (arts. 26 bis-26 quinquies):</strong> modificación registral para mayores de 12 y menores de 14.<br><strong>Capítulo I Ter (arts. 26 sexies-26 nonies):</strong> el presente expediente.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Norma marco",
+     "clase": "norm-tag tag-info"
+    },
+    {
+     "p": "Ley 4/2023, de 28 de febrero",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Para la igualdad real y efectiva de las personas trans y garantía de derechos LGTBI",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Capítulo III del Título I (arts. 43-49):</strong> régimen completo de rectificación registral del sexo.<br><strong>Art. 43:</strong> legitimación por grupos de edad.<br><strong>Art. 44:</strong> procedimiento registral.<br><strong>Art. 46:</strong> efectos de la rectificación.<br><strong>Art. 47:</strong> reversibilidad.<br><strong>Art. 49:</strong> adecuación de documentos.<br><strong>DF 13.1:</strong> añade los arts. 26 bis a 26 nonies a la Ley 15/2015.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Remisión expresa",
+     "clase": "norm-tag tag-warn"
+    },
+    {
+     "p": "Ley 20/2011, de 21 de julio",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Del Registro Civil",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Normativa reguladora del procedimiento registral</strong> al que se remiten tanto la Ley 4/2023 como la Ley 15/2015 para la inscripción de la rectificación. Regula las inscripciones de estado civil, las rectificaciones y las anotaciones.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Conexión instrumental",
+     "clase": "norm-tag tag-ok"
+    },
+    {
+     "p": "Código Civil",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Defensor judicial y estado civil",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Arts. 235-236:</strong> nombramiento de defensor judicial en caso de conflicto de intereses entre los progenitores o representante legal y el menor.<br><strong>Art. 54 y ss.:</strong> regulación del estado civil de las personas, conexión sustantiva con la mención registral del sexo.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Conexión sustantiva",
+     "clase": "norm-tag tag-gray"
+    },
+    {
+     "p": "Ley Orgánica 1/2004, de 28 de diciembre",
+     "clase": "norm-law"
+    },
+    {
+     "p": "De Medidas de Protección Integral contra la Violencia de Género",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Conexión con el art. 46.3 de la Ley 4/2023:</strong> la rectificación de la mención registral del sexo no altera el régimen jurídico aplicable a los efectos de esta Ley Orgánica.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "No alteración",
+     "clase": "norm-tag tag-alert"
+    },
+    {
+     "p": "Ley Orgánica 3/2007, de 22 de marzo",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Para la Igualdad Efectiva de Mujeres y Hombres",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Conexión con el art. 46.4 de la Ley 4/2023:</strong> medidas de acción positiva adoptadas en favor de las mujeres (art. 11). La persona que rectifique pasando del sexo masculino al femenino podrá ser beneficiaria de estas medidas a partir de la efectividad del cambio registral.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Acción positiva",
+     "clase": "norm-tag tag-info"
+    },
+    {
+     "p": "Ley 8/1989, de 13 de abril",
+     "clase": "norm-law"
+    },
+    {
+     "p": "De Tasas y Precios Públicos",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Conexión con el art. 49.3 de la Ley 4/2023:</strong> las tasas que graven los trámites de adecuación de documentos se adecuarán al principio de capacidad económica (art. 8 de la Ley 8/1989).",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Principio de capacidad económica",
+     "clase": "norm-tag tag-gray"
+    },
+    {
+     "p": "Ley de Enjuiciamiento Civil (LEC)",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Aplicación supletoria",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Art. 1.2 LEC:</strong> aplicación supletoria cuando la Ley 15/2015 no contemple normas específicas. Las reglas del juicio verbal se aplican a la comparecencia (art. 18 Ley 15/2015).",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Aplicación supletoria",
+     "clase": "norm-tag tag-warn"
+    },
+    {
+     "p": "Ley de 8 de junio de 1957",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Sobre el Registro Civil",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Conexión con el art. 44.4 de la Ley 4/2023:</strong> en la comparecencia inicial, la persona podrá incluir la petición de traslado total del folio registral cuando a su inscripción de nacimiento le sea aplicable esta Ley de 1957.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Traslado de folio registral",
+     "clase": "norm-tag tag-gray"
+    },
+    {
+     "p": "Ley 15/2015 — Título II, Capítulos I y II",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Filiación no matrimonial y habilitación para comparecer",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Capítulo I (arts. 23-26):</strong> autorización judicial de reconocimiento de filiación no matrimonial.<br><strong>Capítulo II (arts. 27 y ss.):</strong> habilitación para comparecer en juicio y nombramiento de defensor judicial.<br>Ambos capítulos comparten la estructura de expediente de jurisdicción voluntaria.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Estructura paralela",
+     "clase": "norm-tag tag-info"
+    }
+   ]
+  }
+ ],
+ "sinCapturar": [],
+ "texto": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULOS I BIS y I TER CAPÍTULOS I BIS & TER DE LA LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA Arts. 26 bis a 26 nonies LJV Ley 15/2015 Arts. 26 bis – 26 nonies Ley 4/2023 (Disposición Final 13.1) Jurisdicción Voluntaria Personas trans y LGTBI Imprimir / PDF 9 Artículos base 10+ Conexiones normativas 13+ Actores identificados 7 Plazos procesales Todos Contexto Cap. I Bis Cap. I Ter Ley 4/2023 Normas comunes Actores Plazos Ecosistema Expandir todo Contraer todo − 100% + ↻ Contexto normativo general y marco de la rectificación registral 4 tarjetas ▼ Contexto General Marco normativo Contexto normativo general del expediente de jurisdicción voluntaria El Título II de la Ley 15/2015 regula los expedientes de jurisdicción voluntaria en materia de personas, estructurado en diversos capítulos que abarcan desde la autorización de reconocimiento de filiación no matrimonial hasta la aprobación judicial de modificación de la mención registral del sexo. capítulos referenciados 5 títulos 2 Ver contenido completo ▾ Estructura del Título II autorización judicial de reconocimiento de filiación no matrimonial de menores o personas con discapacidad. Capítulo I (arts. 23-26): aprobación judicial de modificación de la mención registral del sexo de personas mayores de 12 y menores de 14 años. Capítulo I Bis (arts. 26 bis-26 quinquies): aprobación judicial de modificación de la mención registral del sexo tras reversión previa. Capítulo I Ter (arts. 26 sexies-26 nonies): habilitación para comparecer en juicio y nombramiento de defensor judicial. Capítulo II (arts. 27 y ss.): Normas comunes supletorias — Título I (arts. 9-22) Juzgados de Primera Instancia; la competencia territorial viene fijada por la ley y no puede ser alterada por sumisión; el Letrado de la Administración de Justicia la comprobará de oficio. Competencia (arts. 9, 13, 16): la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente. Postulación (art. 3): el Secretario judicial citará a los interesados; la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión, aplicándose las reglas del juicio verbal. Comparecencia (arts. 17-18): el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación. Decisión (art. 19): contra las resoluciones del Juez cabrá recurso de reposición y apelación; contra las del Secretario judicial, recurso de revisión. Recursos (art. 20): el expediente caducará cuando sea paralizado por inactividad del interesado durante 3 meses. Caducidad (art. 21): las resoluciones firmes producen efectos de cosa juzgada; las que afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil. Ejecución (art. 22): Ley 15/2015 arts. 1-22 Ley 15/2015 arts. 23-27 LEC art. 1.2 (aplicación supletoria) Marco Ley 4/2023 Ley trans Marco normativo de la rectificación registral del sexo — Ley 4/2023 La Ley 4/2023 introduce en su Capítulo III del Título I (arts. 43-49) el régimen completo de rectificación registral de la mención relativa al sexo, incluyendo la reversibilidad. Los arts. 26 bis a 26 nonies de la Ley 15/2015 fueron añadidos por la disposición final 13.1 de la Ley 4/2023. artículos (43-49) 7 disposición final 1 Ver contenido completo ▾ Origen normativo de los Capítulos I Bis y I Ter añade los arts. 26 bis a 26 nonies a la Ley 15/2015. Disposición final 13.1 de la Ley 4/2023: 01/03/2023 en el BOE. Publicación: 02/03/2023. Entrada en vigor: Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI. Denominación completa: Estructura del Capítulo III del Título I (arts. 43-49) legitimación por grupos de edad. Art. 43: procedimiento registral de rectificación. Art. 44: competencia del Registro Civil. Art. 45: efectos de la rectificación. Art. 46: reversibilidad de la rectificación. Art. 47: cambio de nombre en el Registro Civil para menores de edad. Art. 48: adecuación de documentos a la mención registral relativa al sexo. Art. 49: Ley 4/2023 arts. 43-49 DF 13.1 Ley 4/2023 Sistema de Legitimación Por grupo de edad Sistema de legitimación por grupos de edad El artículo 43 de la Ley 4/2023 establece un sistema escalonado de legitimación para la rectificación registral del sexo en función de la edad y la capacidad de la persona solicitante. grupos de legitimación 5 apartados del art. 43 4 Ver contenido completo ▾ Mayores de 16 años (art. 43.1) toda persona de nacionalidad española mayor de 16 años podrá solicitar por sí misma ante el Registro Civil la rectificación de la mención registral relativa al sexo. Legitimación: Mayores de 14 y menores de 16 (art. 43.2) pueden presentar la solicitud por sí mismas, asistidas por sus representantes legales. Legitimación: en caso de desacuerdo de los progenitores o representante legal entre sí o con la persona menor, se procede al nombramiento de defensor judicial (arts. 235 y 236 del Código Civil). Desacuerdo: Personas con discapacidad (art. 43.3) pueden solicitar, con las medidas de apoyo que precisen, la rectificación registral de la mención relativa al sexo. Legitimación: Mayores de 12 y menores de 14 (art. 43.4) pueden solicitar la autorización judicial para la modificación de la mención registral del sexo en los términos del Capítulo I Bis del Título II de la Ley 15/2015 (arts. 26 bis a 26 quinquies). Vía judicial: Reversión tras rectificación (art. 47) transcurridos 6 meses desde la inscripción, las personas que hubieran promovido la rectificación podrán recuperar la mención registral del sexo previa. Plazo: tras haberse rectificado la modificación inicial, para una nueva rectificación habrá de seguirse el procedimiento del Capítulo I Ter del Título II de la Ley 15/2015 (arts. 26 sexies a 26 nonies). Segunda rectificación: Ley 4/2023 art. 43 CC arts. 235-236 Ley 15/2015 arts. 26 bis-26 nonies Cap. I Bis Conexión con Cap. I Ter Capítulo I Bis — Relación con el Capítulo I Ter El Capítulo I Bis regula el procedimiento para menores de 12 a 14 años que solicitan por primera vez la modificación registral del sexo vía judicial. El Capítulo I Ter regula el procedimiento para cualquier persona que, habiendo ya rectificado y revertido, solicita una nueva modificación. artículos (26 bis-26 quinquies) 5 elementos comunes 4 Ver contenido completo ▾ Elementos comunes entre ambos capítulos ambos son expedientes de jurisdicción voluntaria del Título II de la Ley 15/2015. Estructura: carácter prioritario en ambos procedimientos. Tramitación preferente: postulación no preceptiva en ambos capítulos. No necesidad de abogado ni procurador: el testimonio de la resolución se remite al Registro Civil para inscribir la rectificación. Remisión al Registro Civil: Diferencias fundamentales primera modificación registral del sexo para menores de 12 a 14 años vía judicial. Cap. I Bis: segunda modificación registral tras haber rectificado y revertido previamente, aplicable a cualquier edad. Cap. I Ter: exige acreditar madurez del menor y estabilidad de su voluntad. Cap. I Bis: exige acreditar que ya se ha producido una rectificación previa y su reversión. Cap. I Ter: Ley 15/2015 arts. 26 bis-26 quinquies Ley 15/2015 arts. 26 sexies-26 nonies Capítulo I Bis — Arts. 26 bis a 26 quinquies (modificación registral para mayores de 12 y menores de 14) 5 artículos ▼ Artículo 26 bis Ámbito de aplicación Ámbito de aplicación (Cap. I Bis) Se aplican las disposiciones de este Capítulo para recabar aprobación judicial para la modificación de la mención registral del sexo por personas mayores de 12 años y menores de 14. norma conexa 1 grupo de edad 1 Ver contenido completo ▾ Objeto recabar aprobación judicial para la modificación de la mención registral del sexo por personas mayores de 12 años y menores de 14. Finalidad: añadido por la disposición final 13.1 de la Ley 4/2023, de 28 de febrero. Origen normativo: 01/03/2023; 02/03/2023. Publicación: entrada en vigor: este Capítulo I Bis es la vía paralela al procedimiento registral ordinario del art. 43.1-43.3 de la Ley 4/2023, reservado a quienes tienen 16 años o más. Conexión: Ley 15/2015 art. 26 bis DF 13.1 Ley 4/2023 Ley 4/2023 art. 43.4 Artículo 26 ter Competencia y legitimación Competencia, legitimación y postulación (Cap. I Bis) Determina el Juzgado competente, las personas legitimadas (menores de 12-14 asistidos por representantes), el nombramiento de defensor judicial en caso de desacuerdo, y la no necesidad de abogado ni procurador. apartados 4 cuestiones reguladas 4 Ver contenido completo ▾ Competencia judicial territorial (apartado 1) Juzgado de Primera Instancia. Órgano competente: domicilio de la persona cuya mención registral pretenda rectificarse; subsidiariamente, residencia en territorio nacional. Criterio: el art. 9 de la Ley 15/2015 establece la competencia objetiva en los Juzgados de Primera Instancia; el art. 16 dispone que la competencia territorial viene fijada por la ley y no puede ser alterada por sumisión. Conexión con normas generales: Legitimación activa (apartado 2) mayores de 12 y menores de 14, asistidas por sus representantes legales. Personas legitimadas: en caso de desacuerdo de los progenitores o representante legal, se procede al nombramiento de defensor judicial conforme a los arts. 235 y 236 del Código Civil. Desacuerdo: los arts. 235 y 236 CC regulan el nombramiento de defensor judicial cuando los progenitores tienen un interés contrario al del menor o cuando se produce un conflicto de intereses. Conexión con el Código Civil: Medidas de apoyo para personas con discapacidad (apartado 3) si el expediente se insta por una persona menor con discapacidad, deberán disponerse en su favor las medidas de apoyo que pueda precisar. Garantía: el art. 43.3 de la Ley 4/2023 establece la misma garantía para el procedimiento registral ordinario. Conexión con la Ley 4/2023: Postulación procesal (apartado 4) no será preceptiva la intervención de abogado ni procurador. No preceptiva: la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley, o para la interposición de recursos y revisión, o una vez formulada oposición formal. Conexión con el art. 3 de la Ley 15/2015: Ley 15/2015 art. 26 ter CC arts. 235-236 Ley 15/2015 arts. 3, 9, 16 Ley 4/2023 art. 43.3 Artículo 26 quater Tramitación Tramitación (Cap. I Bis) Regula el inicio del expediente con solicitud de disconformidad estable, el acompañamiento probatorio, la citación a comparecencia, las pruebas de oficio, la información al menor y la idoneidad de testigos. apartados 4 sujetos citados 4 Ver contenido completo ▾ Solicitud inicial (apartado 1) el expediente será de tramitación preferente. Carácter preferente: mediante solicitud en la que la persona legitimada manifieste su disconformidad con el sexo mencionado en su inscripción de nacimiento y solicite autorización judicial para la rectificación registral de la mención al sexo y, en su caso, al nombre. Inicio: Acompañamiento probatorio y comparecencia (apartado 2) la solicitud deberá venir acompañada de cualesquiera medios documentales o testificales acreditativos de que la persona ha mantenido de forma estable la disconformidad. Medios probatorios: admitida a trámite, el Juez citará a comparecer al solicitante, sus representantes legales, las demás personas que estime oportuno, y al Ministerio Fiscal. Citación: la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión. Conexión con el art. 17: Pruebas de oficio e información al menor (apartado 3) el Juez podrá solicitar la práctica de las pruebas necesarias para acreditar la madurez del menor y la estabilidad de su voluntad. Pruebas: tendrá en consideración en todo momento el interés superior de la persona menor de edad. Interés superior: se le facilitará información sobre las consecuencias jurídicas de la rectificación en un lenguaje claro, accesible y adaptado. Información al menor: deberá informarle de las medidas de asistencia e información disponibles en los ámbitos sanitario, social, laboral, educativo y administrativo, incluyendo protección contra la discriminación. Medidas de asistencia: se pondrá en conocimiento del menor la existencia de asociaciones y organizaciones de protección de los derechos en este ámbito. Asociaciones: Idoneidad de testigos (apartado 4) todas las personas mayores de edad, aun cuando estén ligadas al solicitante por parentesco, consanguinidad o afinidad en cualquier grado, vínculos de adopción, tutela o análogos, o relación de amistad. Testigos idóneos: la comparecencia se celebra ante el Juez o el Secretario judicial, aplicándose las reglas del juicio verbal. Conexión con el art. 18: Ley 15/2015 art. 26 quater Ley 15/2015 arts. 17-18 Ley 15/2015 art. 19.2 Artículo 26 quinquies Resolución Resolución (Cap. I Bis) El Juez resuelve sobre la concesión o denegación atendiendo al interés superior del menor, su madurez y voluntad estable, con prohibición expresa de exigir informes médicos o psicológicos, y remite testimonio al Registro Civil. apartados 2 efectos 2 Ver contenido completo ▾ Decisión del Juez (apartado 1) previa audiencia de la persona menor, el Juez resolverá sobre la concesión o denegación de la aprobación judicial. Contenido: considerando en todo caso el interés superior del menor de edad, previa comprobación de su voluntad estable de modificar la inscripción registral y de su madurez suficiente para comprender y evaluar de forma razonable e independiente las consecuencias de su decisión. Criterios: la concesión no podrá estar condicionada a la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a la previa modificación de la apariencia o función corporal mediante procedimientos médicos, quirúrgicos o de otra índole. Prohibición expresa: el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación. Conexión con el art. 19: el Juez podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad. Conexión con el art. 19.2: Remisión al Registro Civil (apartado 2) el testimonio de la resolución se remitirá al Registro Civil competente para proceder a la inscripción de la rectificación aprobada judicialmente. Acto de comunicación: las resoluciones que pongan fin al expediente y afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil competente. Conexión con el art. 22.2: la resolución tendrá efectos constitutivos a partir de su inscripción en el Registro Civil. Conexión con el art. 46.1 de la Ley 4/2023: Ley 15/2015 art. 26 quinquies Ley 15/2015 arts. 19, 22.2 Ley 4/2023 art. 46.1 Capítulo I Ter — Arts. 26 sexies a 26 nonies (modificación tras reversión previa) 4 artículos ▼ Artículo 26 sexies Ámbito de aplicación Ámbito de aplicación (Cap. I Ter) Dispone que las normas de este Capítulo se aplican para recabar aprobación judicial de modificación de la mención registral del sexo cuando ya se ha producido una rectificación previa y su posterior reversión. normas conexas 2 requisitos previos 2 Ver contenido completo ▾ Objeto del expediente — Naturaleza singular recabar aprobación judicial para la modificación de la mención registral relativa al sexo. Finalidad: no es la rectificación inicial (vía registral, art. 44 Ley 4/2023), ni la reversión (también vía registral, art. 47.1 Ley 4/2023), sino una segunda rectificación tras reversión, que exige intervención judicial. Procedimiento de tercer nivel: Requisitos previos indispensables que respecto de la misma persona ya se haya realizado una rectificación de la inscripción registral relativa al sexo. Primera condición: que se haya producido una reversión de dicha modificación. Segunda condición: lo dispuesto en el artículo 47, párrafo segundo, de la Ley 4/2023. Fundamento de la reversión: Origen normativo por la disposición final 13.1 de la Ley 4/2023, de 28 de febrero. Publicado el 01/03/2023, en vigor desde el 02/03/2023. Añadido Ley 15/2015 art. 26 sexies Ley 4/2023 art. 47 Ley 4/2023 art. 44 Art. 47 Ley 4/2023 Reversibilidad Reversibilidad de la rectificación — Artículo 47 de la Ley 4/2023 Transcurridos seis meses desde la inscripción de la rectificación, las personas podrán recuperar la mención registral del sexo previa; para una nueva rectificación tras reversión, habrá de seguirse el procedimiento del Capítulo I Ter de la Ley 15/2015. párrafos 2 plazo: 6 meses 1 Ver contenido completo ▾ Plazo y procedimiento de reversión (párrafo 1º) transcurridos 6 meses desde la inscripción en el Registro Civil de la rectificación de la mención registral relativa al sexo. Plazo de espera: las personas que hubieran promovido dicha rectificación podrán recuperar la mención registral del sexo que figuraba previamente. Legitimación: se seguirá el mismo procedimiento establecido en el Capítulo III del Título I de la Ley 4/2023 para la rectificación registral (arts. 44 y ss.). Procedimiento: el efecto de la reversión es recuperar la mención registral del sexo que figuraba antes de la rectificación del Registro Civil. Consecuencia: Segunda rectificación tras reversión (párrafo 2º) en el caso de que, tras haberse rectificado la modificación inicial, se quisiese proceder a una nueva rectificación, habrá de seguirse el procedimiento establecido en el Capítulo I Ter del Título II de la Ley 15/2015 (arts. 26 sexies a 26 nonies). Remisión expresa: Ley 4/2023 art. 47 Ley 15/2015 arts. 26 sexies-26 nonies Art. 44 Ley 4/2023 Procedimiento registral Procedimiento para la rectificación registral — Art. 44 de la Ley 4/2023 Regula el procedimiento registral de rectificación: solicitud ante cualquier Registro Civil, comparecencia inicial, segunda comparecencia en 3 meses, resolución en 1 mes, y recurso de alzada ante la Dirección General de Seguridad Jurídica. apartados 11 plazos: 3 meses + 1 mes 2 Ver contenido completo ▾ Tramitación e inicio (apartados 1-2) se tramitará y acordará con sujeción a las disposiciones de la Ley 4/2023 y de conformidad con la normativa reguladora del Registro Civil (Ley 20/2011). Tramitación: la solicitud de iniciación podrá presentarse ante la persona encargada de cualquier Oficina del Registro Civil. Inicio: Prohibiciones expresas (apartado 3) en ningún caso podrá estar condicionado a la previa exhibición de informe médico o psicológico relativo a la disconformidad con el sexo mencionado, ni a la previa modificación de la apariencia o función corporal mediante procedimientos médicos, quirúrgicos o de otra índole. Prohibición: Comparecencia inicial (apartado 4) recibida la solicitud, se citará a la persona legitimada para que comparezca. Citación: la persona encargada del Registro Civil recogerá su manifestación de disconformidad y su solicitud de rectificación. Manifestación: se incluirá la elección de un nuevo nombre propio salvo cuando la persona quiera conservar el que ostente. Nombre propio: en esta comparecencia también podrá incluir la petición de traslado total del folio registral cuando a su inscripción de nacimiento le sea aplicable la Ley de 8 de junio de 1957. Traslado de folio registral: Información al solicitante (apartado 5) la persona encargada del Registro Civil informará de las consecuencias jurídicas de la rectificación pretendida, incluido el régimen de reversión. Consecuencias jurídicas: información sobre medidas disponibles en los ámbitos sanitario, social, laboral, educativo y administrativo, incluyendo protección contra la discriminación, promoción del respeto y fomento de la igualdad de trato. Medidas de asistencia: se pondrá en conocimiento de la persona legitimada la existencia de asociaciones y otras organizaciones de protección de los derechos en este ámbito. Asociaciones: Menores de edad (apartado 6) todos los intervinientes tendrán en consideración el interés superior de la persona menor de 18 y mayor de 14 años, a quien se dará audiencia. Interés superior: se le facilitará información en un lenguaje claro, accesible y adaptado a sus necesidades. Información adaptada: Segunda comparecencia y resolución (apartados 7-10) tras la información facilitada, la persona legitimada suscribirá, de estar conforme, la comparecencia inicial reiterando su petición. Suscripción: en el plazo máximo de 3 meses desde la comparecencia inicial, la persona encargada del Registro Civil deberá citar para que comparezca de nuevo y ratifique su solicitud, aseverando la persistencia de su decisión. Segunda comparecencia: previa comprobación de la documentación, la persona encargada del Registro Civil dictará resolución dentro del plazo máximo de 1 mes a contar desde la fecha de la segunda comparecencia. Resolución: la resolución será recurrible mediante recurso de alzada ante la Dirección General de Seguridad Jurídica y Fe Pública. Recurso: Personas con discapacidad (apartado 11) se garantizarán los medios y recursos de apoyo, materiales y humanos, incluidas las medidas de accesibilidad y diseño universales, para que reciban la información, formen y expresen su voluntad, otorguen su consentimiento y se comuniquen e interactúen con el entorno de modo libre. Garantías: Ley 4/2023 art. 44 Ley 20/2011 del Registro Civil Ley de 8 de junio de 1957 Artículo 26 septies Competencia y legitimación Competencia, legitimación y postulación (Cap. I Ter) Determina el Juzgado competente, las personas legitimadas para promover el expediente (remisión al art. 43 Ley 4/2023), y la no necesidad de intervención de abogado ni procurador. apartados 3 cuestiones reguladas 3 Ver contenido completo ▾ Competencia judicial territorial (apartado 1) Juzgado de Primera Instancia. Órgano competente: domicilio de la persona cuya mención registral pretenda rectificarse; subsidiariamente, residencia en territorio nacional. Criterio: el art. 9 de la Ley 15/2015 fija la competencia objetiva; el art. 13 determina que la competencia territorial viene fijada por la ley y no puede ser alterada por sumisión. Conexión con normas generales: Legitimación activa (apartado 2) cualquiera de las personas que estén legitimadas para instar la rectificación de la mención registral del sexo. Personas legitimadas: la legitimación se remite al régimen general del artículo 43 de la Ley 4/2023 (mayores de 16 años por sí mismas; mayores de 14 y menores de 16 asistidas; personas con discapacidad con medidas de apoyo). Remisión: el art. 5 de la Ley 15/2015 dispone que podrán instar los expedientes quienes tengan un legítimo interés. Conexión con el art. 5: Postulación procesal (apartado 3) no será preceptiva la intervención de abogado ni procurador. No preceptiva: la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley, o para la interposición de recursos y revisión, o una vez formulada oposición formal. Conexión con el art. 3.1: el solicitante puede actuar sin representación técnica ni defensa letrada obligatoria, pudiendo utilizar los modelos normalizados que se establezcan (art. 3.3 de la Ley 15/2015). Consecuencia práctica: Ley 15/2015 art. 26 septies Ley 15/2015 arts. 3, 5, 9, 13 Ley 4/2023 art. 43 Artículo 26 octies Tramitación Tramitación (Cap. I Ter) Regula el inicio del expediente con solicitud de voluntad de revertir, la citación a comparecencia del solicitante, representantes, Ministerio Fiscal y demás personas, y la facultad del Juez para acordar pruebas adicionales. apartados 3 sujetos citados 4 Ver contenido completo ▾ Solicitud inicial (apartado 1) el expediente será de tramitación preferente. Carácter preferente: comienza con la presentación de una solicitud en la que la persona interesada manifieste su voluntad de revertir la rectificación registral anteriormente producida. Inicio: la solicitud deberá ir acompañada de los medios de prueba que se deseen utilizar. Acompañamiento: admitida la solicitud, el Secretario judicial citará a los interesados; la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión. Conexión con el art. 17: Citación a comparecencia (apartado 2) siempre citado a comparecer. Solicitante: comparecen en su caso. Representantes legales: las que el Juez estime oportuno. Otras personas: siempre citado a comparecer. Ministerio Fiscal: el Ministerio Fiscal será parte en los expedientes que afecten al estado civil de las personas. Conexión con el art. 4: la comparecencia se celebrará ante el Juez o el Secretario judicial; el comparendo del solicitante sin causa justificada determinará el archivo del expediente. Conexión con el art. 18: Pruebas de oficio (apartado 3) podrá solicitar la práctica de cualesquiera otras pruebas que considere oportunas. Facultad del Juez: el Juez podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad que requieran medidas de apoyo, o por razones de interés público. Conexión con el art. 19.2: Ley 15/2015 art. 26 octies Ley 15/2015 arts. 4, 17-19 Artículo 26 nonies Resolución Resolución (Cap. I Ter) El Juez resuelve la concesión o denegación de la aprobación judicial, atendiendo al interés superior del menor si el solicitante fuere menor de edad, y remite testimonio al Registro Civil para la inscripción. apartados 2 efectos 2 Ver contenido completo ▾ Decisión del Juez (apartado 1) el Juez resolverá sobre la concesión o denegación de la aprobación judicial. Contenido: si el solicitante fuere persona menor de edad, se atenderá en todo caso al interés superior del menor. Consideración especial: el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación. Conexión con el art. 19: contra el Auto cabrá recurso de reposición ante el mismo Juez y recurso de apelación ante la Audiencia Provincial; la apelación no tendrá, en general, efectos suspensivos. Conexión con el art. 20: Remisión al Registro Civil (apartado 2) el testimonio de la resolución se remitirá al Registro Civil competente para proceder, en su caso, a la inscripción de la rectificación aprobada judicialmente. Acto de comunicación: las resoluciones que pongan fin al expediente y afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil competente. Conexión con el art. 22.2: la resolución tendrá efectos constitutivos a partir de su inscripción en el Registro Civil. Conexión con el art. 46.1 de la Ley 4/2023: la rectificación registral permitirá a la persona ejercer todos los derechos inherentes a su nueva condición. Conexión con el art. 46.2 de la Ley 4/2023: Ley 15/2015 art. 26 nonies Ley 15/2015 arts. 19-22 Ley 4/2023 arts. 46.1-46.2 Normas comunes del Título I — Arts. 3, 4, 5, 9, 13, 16-22 de la Ley 15/2015 10 normas supletorias ▼ Artículo 3 Postulación Postulación — Art. 3 La intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley, o para la interposición de recursos y revisión, o una vez formulada oposición formal. Ver contenido completo ▾ Regla general y excepciones la intervención de abogado y procurador solo será obligatoria cuando así se establezca expresamente en la ley. Regla general: para la interposición de recursos y revisión. Excepción 1: una vez formulada oposición formal. Excepción 2: cuando no sea preceptiva, podrán utilizarse los modelos normalizados que se establezcan (art. 3.3). Modelos normalizados: Ley 15/2015 art. 3 Artículo 4 Ministerio Fiscal Intervención del Ministerio Fiscal — Art. 4 El Ministerio Fiscal será parte en los expedientes que afecten al estado civil de las personas, como es el presente de modificación de la mención registral del sexo. Ver contenido completo ▾ Intervención obligatoria expedientes que afecten al estado civil de las personas. Ámbito: expedientes que afecten a menores o personas con discapacidad que requieran medidas de apoyo, o cuando así lo establezca expresamente la ley. Otros supuestos: Ley 15/2015 art. 4 Artículo 5 Legitimación Legitimación — Art. 5 Podrán instar los expedientes de jurisdicción voluntaria quienes tengan un legítimo interés, conforme al régimen general de la ley. Ver contenido completo ▾ Legítimo interés tener un legítimo interés para instar el expediente. Requisito: el art. 26 septies.2 remite al régimen general de legitimación para la rectificación registral del sexo (art. 43 Ley 4/2023). Conexión: Ley 15/2015 art. 5 Arts. 9, 13, 16 Competencia Competencia — Arts. 9, 13, 16 La competencia objetiva corresponde a los Juzgados de Primera Instancia; la territorial viene fijada por la ley y no puede ser alterada por sumisión; el Letrado de la Administración de Justicia la comprobará de oficio. Ver contenido completo ▾ Competencia objetiva (art. 9) corresponde a los Juzgados de Primera Instancia. Órgano: Competencia territorial (art. 13) viene fijada por la ley y no puede ser alterada por sumisión expresa o tácita. Fijación legal: Comprobación de oficio (art. 16) el Letrado de la Administración de Justicia comprobará de oficio la competencia. Control: Ley 15/2015 arts. 9, 13, 16 Arts. 17-18 Comparecencia Comparecencia — Arts. 17-18 El Secretario judicial convocará la comparecencia dentro de los 30 días siguientes al de la admisión; se celebrará ante el Juez o el Secretario judicial, aplicándose las reglas del juicio verbal. Ver contenido completo ▾ Convocatoria (art. 17) la comparecencia se celebrará dentro de los 30 días siguientes al de la admisión. Plazo: el Secretario judicial citará a los interesados cuando haya de oírse a otras personas, practicarse prueba o lo estime oportuno. Citación: Celebración (art. 18) se celebrará ante el Juez o el Secretario judicial, aplicándose las reglas del juicio verbal. Ante quién: la comparecencia del solicitante sin causa justificada determinará el archivo del expediente. Comparendo del solicitante: Ley 15/2015 arts. 17-18 Artículo 19 Decisión Decisión del expediente — Art. 19 El Juez resolverá mediante Auto dentro de los 5 días siguientes; podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad. Ver contenido completo ▾ Decisión del Juez (apartados 1-2) el Juez resolverá mediante Auto dentro de los 5 días siguientes a la finalización de la comparecencia o de la última actuación. Resolución: el Juez podrá acordar de oficio la práctica de pruebas cuando esté en juego el interés de menores o personas con discapacidad que requieran medidas de apoyo, o por razones de interés público. Pruebas de oficio: Decisión del Secretario judicial (apartado 3) el Secretario judicial decidirá mediante Decreto en los casos que la ley determine. Decreto: Ley 15/2015 art. 19 Artículo 20 Recursos Recursos — Art. 20 Contra las resoluciones del Juez cabrá recurso de reposición y apelación; contra las del Secretario judicial, recurso de revisión ante el Juez competente. Ver contenido completo ▾ Recursos contra resoluciones del Juez recurso de reposición ante el mismo Juez. Reposición: recurso de apelación ante la Audiencia Provincial; en general, no tendrá efectos suspensivos. Apelación: Recurso contra resoluciones del Secretario judicial recurso de revisión ante el Juez competente. Revisión: Ley 15/2015 art. 20 Arts. 21-22 Caducidad y ejecución Caducidad y ejecución — Arts. 21-22 El expediente caducará por inactividad del interesado durante 3 meses; las resoluciones firmes producen efectos de cosa juzgada y las que afecten al estado civil se remiten electrónicamente al Registro Civil. Ver contenido completo ▾ Caducidad (art. 21) el expediente caducará cuando sea paralizado por inactividad del interesado durante 3 meses. Plazo: Cumplimiento y ejecución (art. 22) las resoluciones firmes producirán efectos de cosa juzgada. Cosa juzgada: las resoluciones que pongan fin al expediente y afecten al estado civil se testimoniarán y remitirán electrónicamente al Registro Civil competente. Estado civil: Ley 15/2015 arts. 21-22 Efectos de la rectificación y adecuación de documentos — Arts. 46 y 49 de la Ley 4/2023 2 artículos ▼ Art. 46 Ley 4/2023 Efectos Efectos de la rectificación — Art. 46 de la Ley 4/2023 La resolución tendrá efectos constitutivos desde la inscripción; la rectificación permite ejercer todos los derechos inherentes a la nueva condición, sin alterar el régimen de violencia de género ni los derechos patrimoniales consolidados. apartados 5 leyes conexas 3 Ver contenido completo ▾ Efectos constitutivos y ejercicio de derechos (apartados 1-2) la resolución que acuerde la rectificación tendrá efectos constitutivos a partir de su inscripción en el Registro Civil. Efectos constitutivos (art. 46.1): la rectificación registral permitirá a la persona ejercer todos los derechos inherentes a su nueva condición. Ejercicio de derechos (art. 46.2): Violencia de género (apartado 3) la rectificación no alterará el régimen jurídico aplicable a los efectos de la Ley Orgánica 1/2004, de Medidas de Protección Integral contra la Violencia de Género. No alteración: Acción positiva (apartado 4) podrá ser beneficiaria de medidas de acción positiva adoptadas en favor de las mujeres a partir de la efectividad del cambio registral, pero no respecto de situaciones jurídicas anteriores. Masculino a femenino: conservará los derechos patrimoniales consolidados sin lugar a reintegro o devolución. Femenino a masculino: art. 11 de la Ley Orgánica 3/2007, para la Igualdad Efectiva de Mujeres y Hombres. Conexión: Situaciones jurídicas originadas en el sexo al nacimiento (apartado 5) la persona conservará, en su caso, los derechos inherentes al mismo en los términos establecidos en la legislación sectorial. Conservación: Ley 4/2023 art. 46 LO 1/2004 LO 3/2007 art. 11 Art. 49 Ley 4/2023 Adecuación de documentos Adecuación de documentos — Art. 49 de la Ley 4/2023 Tras la rectificación, se expedirá un nuevo DNI y pasaporte conservando el mismo número; la persona podrá solicitar la reexpedición de cualquier documento, título o certificado, con tasas adaptadas al principio de capacidad económica. apartados 4 ley conexa 1 Ver contenido completo ▾ Documentos oficiales de identidad (apartado 1) en los documentos oficiales de identidad, la determinación del sexo se corresponderá con la registral. Determinación del sexo: tras la rectificación, se expedirá un nuevo DNI y, en su caso, pasaporte, conservando el mismo número. Nuevo DNI y pasaporte: Reexpedición de documentos (apartado 2) la persona interesada podrá solicitar la reexpedición de cualquier documento, título, diploma o certificado ajustado a la inscripción registral rectificada. Amplitud: se garantizará la adecuada identificación, en su caso, mediante el mismo número de DNI o la misma clave registral. Identificación: Tasas (apartado 3) las tasas que graven los trámites se adecuarán al principio de capacidad económica (art. 8 de la Ley 8/1989, de Tasas y Precios Públicos). Principio de capacidad económica: Procedimientos accesibles (apartado 4) las Administraciones públicas establecerán procedimientos accesibles, ágiles y que garanticen la protección de los datos de carácter personal. Garantías: Ley 4/2023 art. 49 Ley 8/1989 art. 8 Indice de plazos procesales 7 plazos ▼ Acto o trámite procesal Plazo Fundamento normativo Convocatoria y celebración de comparecencia ante el Juez o Secretario judicial 30 días siguientes a la admisión Art. 17 Ley 15/2015 Resolución judicial — Auto de concesión o denegación de la aprobación judicial 5 días siguientes a la comparecencia o última actuación Art. 19 Ley 15/2015 Caducidad del expediente por inactividad del interesado 3 meses Art. 21 Ley 15/2015 Plazo de espera para solicitar la reversión de la rectificación registral 6 meses desde la inscripción Art. 47.1 Ley 4/2023 Segunda comparecencia registral para ratificar la solicitud de rectificación o reversión 3 meses desde la comparecencia inicial Art. 44.8 Ley 4/2023 Resolución registral de rectificación o reversión 1 mes desde la segunda comparecencia Art. 44.9 Ley 4/2023 Tramitación preferente del expediente (carácter prioritario sin cuantificación adicional) Preferente (sin plazo tasado) Art. 26 octies.1 Mapa de participantes y actores 8 categorías · 13+ actores ▼ Órgano judicial Juzgado de Primera Instancia (competente por territorio) Juez (dirige el expediente, cita, acuerda pruebas, resuelve mediante Auto) Letrado de la Administración de Justicia (comprueba competencia, convoca comparecencia, decide por Decreto) Parte interesada Solicitante (persona cuya mención registral pretende rectificarse) Representantes legales (comparecen en su caso) Defensor judicial (nombrado en caso de desacuerdo de progenitores, arts. 235-236 CC) Ministerio Público Ministerio Fiscal (siempre citado a comparecencia, art. 4 Ley 15/2015) Registro y Administración Registro Civil competente (destinatario del testimonio de resolución) Dirección General de Seguridad Jurídica y Fe Pública (recurso de alzada contra resolución registral) Órgano de apelación Audiencia Provincial (recurso de apelación contra Auto del Juez) Profesionales no preceptivos Abogado (no preceptivo, pero necesario para recursos) Procurador (no preceptivo, pero necesario para recursos) Testigos y terceros Testigos (todas las personas mayores de edad, aun con parentesco o amistad) Otras personas citadas (las que el Juez estime oportuno) Asociaciones y organizaciones Asociaciones de protección de derechos (el Juez pondrá en conocimiento del menor su existencia) Organizaciones de apoyo (disponibles en ámbitos sanitario, social, laboral, educativo y administrativo) Ecosistema normativo — conexiones relacionadas 10 cuerpos normativos ▼ Ley 15/2015, de 2 de julio De la Jurisdicción Voluntaria — Norma marco objeto, ámbito, principios generales. normas comunes de tramitación. expedientes en materia de personas. filiación no matrimonial. modificación registral para mayores de 12 y menores de 14. el presente expediente. Título Preliminar (arts. 1-8): Título I (arts. 9-22): Título II (arts. 23-50+): Capítulo I (arts. 23-26): Capítulo I Bis (arts. 26 bis-26 quinquies): Capítulo I Ter (arts. 26 sexies-26 nonies): Norma marco Ley 4/2023, de 28 de febrero Para la igualdad real y efectiva de las personas trans y garantía de derechos LGTBI régimen completo de rectificación registral del sexo. legitimación por grupos de edad. procedimiento registral. efectos de la rectificación. reversibilidad. adecuación de documentos. añade los arts. 26 bis a 26 nonies a la Ley 15/2015. Capítulo III del Título I (arts. 43-49): Art. 43: Art. 44: Art. 46: Art. 47: Art. 49: DF 13.1: Remisión expresa Ley 20/2011, de 21 de julio Del Registro Civil al que se remiten tanto la Ley 4/2023 como la Ley 15/2015 para la inscripción de la rectificación. Regula las inscripciones de estado civil, las rectificaciones y las anotaciones. Normativa reguladora del procedimiento registral Conexión instrumental Código Civil Defensor judicial y estado civil nombramiento de defensor judicial en caso de conflicto de intereses entre los progenitores o representante legal y el menor. regulación del estado civil de las personas, conexión sustantiva con la mención registral del sexo. Arts. 235-236: Art. 54 y ss.: Conexión sustantiva Ley Orgánica 1/2004, de 28 de diciembre De Medidas de Protección Integral contra la Violencia de Género la rectificación de la mención registral del sexo no altera el régimen jurídico aplicable a los efectos de esta Ley Orgánica. Conexión con el art. 46.3 de la Ley 4/2023: No alteración Ley Orgánica 3/2007, de 22 de marzo Para la Igualdad Efectiva de Mujeres y Hombres medidas de acción positiva adoptadas en favor de las mujeres (art. 11). La persona que rectifique pasando del sexo masculino al femenino podrá ser beneficiaria de estas medidas a partir de la efectividad del cambio registral. Conexión con el art. 46.4 de la Ley 4/2023: Acción positiva Ley 8/1989, de 13 de abril De Tasas y Precios Públicos las tasas que graven los trámites de adecuación de documentos se adecuarán al principio de capacidad económica (art. 8 de la Ley 8/1989). Conexión con el art. 49.3 de la Ley 4/2023: Principio de capacidad económica Ley de Enjuiciamiento Civil (LEC) Aplicación supletoria aplicación supletoria cuando la Ley 15/2015 no contemple normas específicas. Las reglas del juicio verbal se aplican a la comparecencia (art. 18 Ley 15/2015). Art. 1.2 LEC: Aplicación supletoria Ley de 8 de junio de 1957 Sobre el Registro Civil en la comparecencia inicial, la persona podrá incluir la petición de traslado total del folio registral cuando a su inscripción de nacimiento le sea aplicable esta Ley de 1957. Conexión con el art. 44.4 de la Ley 4/2023: Traslado de folio registral Ley 15/2015 — Título II, Capítulos I y II Filiación no matrimonial y habilitación para comparecer autorización judicial de reconocimiento de filiación no matrimonial. habilitación para comparecer en juicio y nombramiento de defensor judicial. Ambos capítulos comparten la estructura de expediente de jurisdicción voluntaria. Capítulo I (arts. 23-26): Capítulo II (arts. 27 y ss.): Estructura paralela Leyenda de colores por categoría Contexto normativo general y marco Capítulo I Bis (arts. 26 bis-26 quinquies) Capítulo I Ter (arts. 26 sexies-26 nonies) Ley 4/2023 — Rectificación y efectos Normas comunes del Título I Participantes y actores Plazos procesales Ecosistema normativo Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II · Capítulos I Bis y I Ter · Arts. 26 bis a 26 nonies · Añadidos por la DF 13.1 de la Ley 4/2023 · Generado como plantilla HTML reutilizable"
+}

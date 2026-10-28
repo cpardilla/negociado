@@ -1,0 +1,731 @@
+{
+ "id": "G14",
+ "tipo": "guia",
+ "ruta": "03 - Guías de tramitación/LJV/01 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/09 - CAPÍTULO VI - De la protección del patrimonio de las personas con discapacidad.html",
+ "titulo": "De la protección del patrimonio de las personas con discapacidad (artículos 56 a 58 LJV)",
+ "cabecera": {
+  "migas": "",
+  "titulo": "☰ ⚖ LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO VI De la protección del patrimonio de las personas con discapacidad Artículos 56 a 58 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+  "subtitulo": "",
+  "etiquetas": []
+ },
+ "texto": "☰ ⚖ LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO VI De la protección del patrimonio de las personas con discapacidad Artículos 56 a 58 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar Identificación y ámbito › Competencia y legitimación › Solicitud y documentación › Tramitación › Resolución judicial › Recursos y eficacia registral Inicio: Verificación del ám… Mapa Recorrido Identificación y ámbito Inicio: Verificación de… → Fin: Fuera de ámbito → Supuestos del Artículo … → Competencia y legitimación Supuesto a): Constituci… → Supuesto b): Nombramien… → Supuesto c): Exenciones… → Supuesto d): Medidas po… → Competencia territorial… → Fin: Incompetencia terr… → Legitimación: Monopolio… → Fin: Falta de legitimac… → Postulación profesional… → Solicitud y documentación Solicitud: Requisitos f… → Fin: Inadmisión de la s… → Audiencia a los interes… → Tramitación Tramitación: Normas gen… → Medidas cautelares prov… → Resolución judicial Resolución judicial: Cr… → Resolución estimatoria:… → Resolución desestimator… → Recursos y eficacia registral Régimen de recursos: Ap… → Trámite del recurso de … → Inscripción registral y… → Inscripción de bienes r… → Fin: Patrimonio protegi… → Referencias: Ley 15/2015 Arts. 56-58 Ley 41/2003 Capítulo I Ley 8/2021 · CC Arts. 269-270 Letrado de la Administración Inicio: Verificación del ámbito material Paso 1 de este recorrido · Fase 1: Identificación y ámbito Este expediente de jurisdicción voluntaria se tramita cuando concurren los supuestos del Artículo 56 de la Ley 15/2015 sobre protección patrimonial de personas con discapacidad. El procedimiento es no contencioso. El Ministerio Fiscal actúa como único legitimado para promoverlo, de oficio o a solicitud de cualquier persona. Nota: Ley 15/2015 Art. 56.1; Ley 41/2003 Capítulo I ¿El expediente tiene por objeto alguna de las actuaciones previstas en el Capítulo I de la Ley 41/2003? A Sí: Constitución, administración, fiscalización, modificación o extinción de patrimonio protegido B No: El asunto no encaja en este procedimiento ← Volver ← Volver al recorrido",
+ "inicio": "inicio",
+ "actores": {
+  "etiquetas": {
+   "juez": "Juez",
+   "laj": "Letrado de la Administración",
+   "ambos": "Ambos"
+  },
+  "sinEtiqueta": []
+ },
+ "pasos": {
+  "inicio": {
+   "ph": 0,
+   "t": "Inicio: Verificación del ámbito material",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Este expediente de jurisdicción voluntaria se tramita cuando concurren los supuestos del Artículo 56 de la Ley 15/2015 sobre protección patrimonial de personas con discapacidad."
+    ],
+    [
+     "n",
+     "El procedimiento es no contencioso. El Ministerio Fiscal actúa como único legitimado para promoverlo, de oficio o a solicitud de cualquier persona."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 56.1; Ley 41/2003 Capítulo I"
+    ]
+   ],
+   "q": "¿El expediente tiene por objeto alguna de las actuaciones previstas en el Capítulo I de la Ley 41/2003?",
+   "opts": [
+    {
+     "t": "Sí: Constitución, administración, fiscalización, modificación o extinción de patrimonio protegido",
+     "l": "A",
+     "n": "supuestos_art56"
+    },
+    {
+     "t": "No: El asunto no encaja en este procedimiento",
+     "l": "B",
+     "n": "fin_no_ambito"
+    }
+   ]
+  },
+  "fin_no_ambito": {
+   "ph": 0,
+   "t": "Fin: Fuera de ámbito",
+   "ac": "laj",
+   "c": [
+    [
+     "w",
+     "El expediente no procede por no encuadrarse en los supuestos del Artículo 56 de la Ley 15/2015."
+    ],
+    [
+     "n",
+     "Deberá valorarse la tramitación por la vía procesal ordinaria o el procedimiento de jurisdicción voluntaria que corresponda según la materia."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 56; Ley 41/2003 Arts. 1-8"
+    ]
+   ],
+   "end": "error"
+  },
+  "supuestos_art56": {
+   "ph": 0,
+   "t": "Supuestos del Artículo 56: Selección del tipo de actuación",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Identifique cuál de los cuatro supuestos del Artículo 56 motiva el expediente:"
+    ],
+    [
+     "cl",
+     "Supuestos contemplados",
+     [
+      "a) Constitución o aprobación de aportaciones con negativa injustificada de representantes",
+      "b) Nombramiento de administrador cuando no pueda realizarse conforme al título",
+      "c) Establecimiento de exenciones a la autorización judicial para actos de disposición",
+      "d) Medidas posteriores: sustitución, cambio de reglas, fiscalización, extinción"
+     ]
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 56.2-5; Ley 41/2003 Arts. 3, 5-7"
+    ]
+   ],
+   "q": "Seleccione el supuesto aplicable:",
+   "opts": [
+    {
+     "t": "a) Constitución/aportaciones con negativa de consentimiento",
+     "l": "A",
+     "n": "supuesto_a"
+    },
+    {
+     "t": "b) Nombramiento de administrador por imposibilidad",
+     "l": "B",
+     "n": "supuesto_b"
+    },
+    {
+     "t": "c) Exenciones de autorización judicial",
+     "l": "C",
+     "n": "supuesto_c"
+    },
+    {
+     "t": "d) Medidas posteriores a la constitución",
+     "l": "D",
+     "n": "supuesto_d"
+    }
+   ]
+  },
+  "supuesto_a": {
+   "ph": 1,
+   "t": "Supuesto a): Constitución con negativa",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Se solicita la constitución del patrimonio protegido o aprobación de aportaciones cuando los progenitores, tutor o curador se niegan injustificadamente a prestar consentimiento."
+    ],
+    [
+     "n",
+     "Criterio judicial: El Juez valorará si la negativa es injustificada, ponderando el interés superior del beneficiario y su autonomía."
+    ],
+    [
+     "l",
+     "Ley 41/2003 Art. 3"
+    ]
+   ],
+   "nx": "competencia"
+  },
+  "supuesto_b": {
+   "ph": 1,
+   "t": "Supuesto b): Nombramiento de administrador",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Procede cuando no se pueda realizar el nombramiento conforme al título de constitución por fallecimiento, incapacidad, renuncia, conflicto de intereses o incumplimiento grave."
+    ],
+    [
+     "n",
+     "Facultades del administrador: gestión ordinaria, percepción de rentas, actos de conservación. Requiere autorización judicial para actos de disposición salvo exención."
+    ],
+    [
+     "l",
+     "Ley 41/2003 Art. 5"
+    ]
+   ],
+   "nx": "competencia"
+  },
+  "supuesto_c": {
+   "ph": 1,
+   "t": "Supuesto c): Exenciones de autorización judicial",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Se solicita el establecimiento de exenciones a la exigencia de autorización judicial para actos de disposición, gravamen u otros sobre bienes del patrimonio protegido."
+    ],
+    [
+     "n",
+     "Criterios: idoneidad del administrador, naturaleza y valor de bienes, interés superior del beneficiario, existencia de mecanismos alternativos de control."
+    ],
+    [
+     "l",
+     "Ley 41/2003 Art. 5.2"
+    ]
+   ],
+   "nx": "competencia"
+  },
+  "supuesto_d": {
+   "ph": 1,
+   "t": "Supuesto d): Medidas posteriores",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Se solicitan medidas como sustitución del administrador, cambio de reglas de administración, fiscalización especial, cautelas o extinción del patrimonio protegido."
+    ],
+    [
+     "n",
+     "El Ministerio Fiscal velará por el correcto funcionamiento, pudiendo solicitar rendición de cuentas periódica."
+    ],
+    [
+     "l",
+     "Ley 41/2003 Arts. 5.3, 6, 7"
+    ]
+   ],
+   "nx": "competencia"
+  },
+  "competencia": {
+   "ph": 1,
+   "t": "Competencia territorial y objetiva",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Verificación del órgano competente para conocer del expediente."
+    ],
+    [
+     "d",
+     "Competencia: Juzgado de Primera Instancia del domicilio o, en su defecto, de la residencia de la persona con discapacidad."
+    ],
+    [
+     "n",
+     "Criterio de domicilio: LEC Art. 50. A falta de domicilio legal, se atiende al lugar de residencia habitual o último domicilio conocido."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Arts. 2.1, 57.1; LEC Art. 50"
+    ]
+   ],
+   "q": "¿Está determinada correctamente la competencia territorial?",
+   "opts": [
+    {
+     "t": "Sí: Domicilio/residencia del beneficiario identificado",
+     "l": "A",
+     "n": "legitimacion"
+    },
+    {
+     "t": "No: Incompetencia territorial apreciada de oficio",
+     "l": "B",
+     "n": "fin_incompetencia"
+    }
+   ]
+  },
+  "fin_incompetencia": {
+   "ph": 1,
+   "t": "Fin: Incompetencia territorial",
+   "ac": "juez",
+   "c": [
+    [
+     "w",
+     "El expediente no puede tramitarse por falta de competencia territorial."
+    ],
+    [
+     "n",
+     "El órgano judicial apreciará de oficio la falta de competencia conforme al Artículo 16 de la Ley 15/2015, inadmitiendo la solicitud o remitiendo al Juzgado competente."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 16; LEC Art. 50"
+    ]
+   ],
+   "end": "error"
+  },
+  "legitimacion": {
+   "ph": 1,
+   "t": "Legitimación: Monopolio del Ministerio Fiscal",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El Ministerio Fiscal es el único legitimado para promover este expediente, actuando de oficio o a solicitud de cualquier persona."
+    ],
+    [
+     "n",
+     "Intervención preceptiva: Debe ser oído en todas las actuaciones judiciales relativas al patrimonio protegido. Cualquier persona puede poner en conocimiento del Fiscal las circunstancias justificantes."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 57.2; Ley 41/2003 Art. 7"
+    ]
+   ],
+   "q": "¿La solicitud ha sido formulada por el Ministerio Fiscal?",
+   "opts": [
+    {
+     "t": "Sí: Solicitud fiscal válida",
+     "l": "A",
+     "n": "postulacion"
+    },
+    {
+     "t": "No: Solicitud de particular sin intervención fiscal",
+     "l": "B",
+     "n": "fin_legitimacion"
+    }
+   ]
+  },
+  "fin_legitimacion": {
+   "ph": 1,
+   "t": "Fin: Falta de legitimación",
+   "ac": "juez",
+   "c": [
+    [
+     "w",
+     "El expediente no puede tramitarse por falta de legitimación activa."
+    ],
+    [
+     "n",
+     "Solo el Ministerio Fiscal puede promover estos expedientes. La solicitud de un particular debe ser puesta en conocimiento del Fiscal para que valore su actuación de oficio."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 57.2"
+    ]
+   ],
+   "end": "error"
+  },
+  "postulacion": {
+   "ph": 1,
+   "t": "Postulación profesional: Acceso directo",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Los interesados no precisan de Abogado ni Procurador para intervenir en este expediente de jurisdicción voluntaria."
+    ],
+    [
+     "n",
+     "Fundamento: Ley 15/2015 Art. 3. No obstante, podrán contar con asesoramiento letrado voluntario. Aplicación de la Ley de Asistencia Jurídica Gratuita cuando se acredite insuficiencia de recursos."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 3; Ley 1/1996 AJG"
+    ]
+   ],
+   "nx": "solicitud"
+  },
+  "solicitud": {
+   "ph": 2,
+   "t": "Solicitud: Requisitos formales y contenido",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El expediente se inicia mediante solicitud por escrito del Ministerio Fiscal."
+    ],
+    [
+     "cl",
+     "Contenido mínimo de la solicitud",
+     [
+      "Datos de identificación de la persona con discapacidad",
+      "Representantes legales, tutores o curadores",
+      "Domicilios para citaciones y notificaciones",
+      "Hechos y alegaciones que fundamentan la petición"
+     ]
+    ],
+    [
+     "d",
+     "Documentación anexa preceptiva: Certificado de discapacidad, informe médico o psicosocial, inventario preliminar de bienes, documento público de constitución o título de designación de administrador."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 58.1; Art. 14.3 (modelo normalizado)"
+    ]
+   ],
+   "q": "¿La solicitud cumple los requisitos formales y documentales?",
+   "opts": [
+    {
+     "t": "Sí: Solicitud completa y subsanada",
+     "l": "A",
+     "n": "audiencia"
+    },
+    {
+     "t": "No: Defectos insubsanables o no subsanados en plazo",
+     "l": "B",
+     "n": "fin_solicitud"
+    }
+   ]
+  },
+  "fin_solicitud": {
+   "ph": 2,
+   "t": "Fin: Inadmisión de la solicitud",
+   "ac": "juez",
+   "c": [
+    [
+     "w",
+     "La solicitud se inadmite por defectos formales insubsanables o no subsanados en plazo."
+    ],
+    [
+     "n",
+     "El órgano judicial apreciará de oficio la inadecuación del procedimiento o cualquier defecto que impida válida tramitación, conforme al Artículo 16 de la Ley 15/2015."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 16; Art. 58.1"
+    ]
+   ],
+   "end": "error"
+  },
+  "audiencia": {
+   "ph": 2,
+   "t": "Audiencia a los interesados",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "Antes de la resolución, el Juez podrá acordar audiencia de la persona con discapacidad, sus representantes, administrador designado y cualquier otro interesado."
+    ],
+    [
+     "n",
+     "Garantías procesales: Derecho de defensa y contradicción, posibilidad de aportar pruebas y alegaciones, motivación reforzada de las resoluciones."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 58.1 in fine"
+    ]
+   ],
+   "nx": "tramitacion"
+  },
+  "tramitacion": {
+   "ph": 3,
+   "t": "Tramitación: Normas generales aplicables",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "El expediente se tramita conforme a las normas generales de la Ley 15/2015, con aplicación subsidiaria de las disposiciones del Título I."
+    ],
+    [
+     "cl",
+     "Principios rectores de la tramitación",
+     [
+      "Celeridad y economía procesal",
+      "Oralidad en actos de audiencia",
+      "Prevalencia del interés superior de la persona con discapacidad",
+      "Posibilidad de acumulación de expedientes relacionados"
+     ]
+    ],
+    [
+     "n",
+     "Efectos de la pendencia: La tramitación no impide la adopción de medidas cautelares urgentes cuando exista riesgo para el patrimonio o el beneficiario."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Arts. 13, 15, 58.2"
+    ]
+   ],
+   "q": "¿Procede la adopción de medidas cautelares urgentes?",
+   "opts": [
+    {
+     "t": "Sí: Riesgo para patrimonio/beneficiario",
+     "l": "A",
+     "n": "cautelares"
+    },
+    {
+     "t": "No: Continuar tramitación ordinaria",
+     "l": "B",
+     "n": "resolucion"
+    }
+   ]
+  },
+  "cautelares": {
+   "ph": 3,
+   "t": "Medidas cautelares provisionales",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "El Juez podrá adoptar cautelas provisionales para garantizar la protección del patrimonio durante la tramitación del expediente."
+    ],
+    [
+     "n",
+     "Las medidas cautelares se adoptarán ponderando la apariencia de buen derecho y el peligro en la demora, siempre en interés superior del beneficiario."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 56.5 in fine"
+    ]
+   ],
+   "nx": "resolucion"
+  },
+  "resolucion": {
+   "ph": 4,
+   "t": "Resolución judicial: Criterios y contenido",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "El Juez dictará la resolución en interés de la persona con discapacidad, fundamentándose en su interés superior, autonomía, voluntad y preferencias."
+    ],
+    [
+     "n",
+     "Motivación reforzada: La resolución deberá expresar con claridad hechos probados, fundamentos de derecho aplicables y ponderación de intereses, especialmente cuando se limiten facultades de administración."
+    ],
+    [
+     "cl",
+     "Contenido mínimo si se constituye patrimonio",
+     [
+      "Inventario de bienes y derechos iniciales (naturaleza, descripción, valor, titularidad)",
+      "Reglas de administración: facultades ordinarias/extraordinarias, rendición de cuentas",
+      "Mecanismos de fiscalización y control",
+      "Procedimientos de designación de órganos"
+     ]
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 58.3; Ley 8/2021; Convención Internacional sobre Derechos de las Personas con Discapacidad"
+    ]
+   ],
+   "q": "¿Se estima la solicitud del Ministerio Fiscal?",
+   "opts": [
+    {
+     "t": "Sí: Se acuerda la medida solicitada",
+     "l": "A",
+     "n": "resolucion_estimada"
+    },
+    {
+     "t": "No: Se desestima la solicitud",
+     "l": "B",
+     "n": "resolucion_desestimada"
+    }
+   ]
+  },
+  "resolucion_estimada": {
+   "ph": 4,
+   "t": "Resolución estimatoria: Constitución o medida acordada",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "Se acuerda la constitución del patrimonio protegido, el nombramiento de administrador, las exenciones solicitadas o las medidas posteriores procedentes."
+    ],
+    [
+     "d",
+     "La resolución será notificada a los interesados y al Ministerio Fiscal."
+    ],
+    [
+     "n",
+     "Eficacia: La resolución produce efectos desde su firmeza, sin perjuicio de la posibilidad de adopción de medidas provisionales ejecutivas."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 58.3"
+    ]
+   ],
+   "nx": "recursos"
+  },
+  "resolucion_desestimada": {
+   "ph": 4,
+   "t": "Resolución desestimatoria",
+   "ac": "juez",
+   "c": [
+    [
+     "i",
+     "Se desestima la solicitud por no concurrir los presupuestos legales, no acreditarse el interés superior del beneficiario o existir causas que desaconsejen la medida."
+    ],
+    [
+     "n",
+     "La resolución deberá motivar expresamente las razones de la desestimación, con especial atención a la ponderación del interés superior y la autonomía de la persona con discapacidad."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 58.3"
+    ]
+   ],
+   "nx": "recursos"
+  },
+  "recursos": {
+   "ph": 5,
+   "t": "Régimen de recursos: Apelación",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "Contra la resolución judicial cabe recurso de apelación ante la Audiencia Provincial correspondiente."
+    ],
+    [
+     "d",
+     "Plazo de interposición: 20 días siguientes a la notificación de la resolución (LEC Art. 457)."
+    ],
+    [
+     "n",
+     "Efecto suspensivo general: La interposición del recurso suspenderá la ejecución de la resolución recurrida. Excepción: cuando la resolución se limite a nombrar administrador por imposibilidad conforme al título, el recurso NO tendrá efectos suspensivos."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 58.4; LEC Arts. 455-459"
+    ]
+   ],
+   "q": "¿Se interpone recurso de apelación en plazo?",
+   "opts": [
+    {
+     "t": "Sí: Recurso interpuesto",
+     "l": "A",
+     "n": "recurso_pendiente"
+    },
+    {
+     "t": "No: Resolución firme",
+     "l": "B",
+     "n": "inscripcion"
+    }
+   ]
+  },
+  "recurso_pendiente": {
+   "ph": 5,
+   "t": "Trámite del recurso de apelación",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "El recurso se sustanciará ante la Audiencia Provincial, con audiencia de las partes y, en su caso, práctica de pruebas complementarias."
+    ],
+    [
+     "n",
+     "Resolución: La Audiencia resolverá mediante auto motivado. Contra el auto de la Audiencia podrá interponerse recurso extraordinario por infracción procesal o casación en supuestos de especial trascendencia."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 58.4; LEC Arts. 455-459"
+    ]
+   ],
+   "q": "¿La Audiencia estima el recurso?",
+   "opts": [
+    {
+     "t": "Sí: Se revoca o modifica la resolución",
+     "l": "A",
+     "n": "resolucion_estimada"
+    },
+    {
+     "t": "No: Se confirma la resolución",
+     "l": "B",
+     "n": "inscripcion"
+    }
+   ]
+  },
+  "inscripcion": {
+   "ph": 5,
+   "t": "Inscripción registral y comunicación",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "Comunicación de la resolución firme para su inscripción en los Registros correspondientes."
+    ],
+    [
+     "cl",
+     "Registros afectados",
+     [
+      "Registro Civil (Ley 20/2011 Arts. 58, 72): cuando el administrador no sea el beneficiario, para inscripción de circunstancias del patrimonio y designación/modificación de administradores",
+      "Registro de la Propiedad (Ley Hipotecaria Arts. 2, 18): cuando el patrimonio incluya bienes inmuebles o derechos reales inscribibles",
+      "Registro Mercantil o entidades gestoras: para valores mobiliarios, acciones o participaciones societarias"
+     ]
+    ],
+    [
+     "n",
+     "Eficacia erga omnes: La inscripción registral confiere publicidad y oponibilidad frente a terceros de la constitución del patrimonio y designación del administrador."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 58.5; Ley 20/2011; Ley Hipotecaria"
+    ]
+   ],
+   "q": "¿El patrimonio incluye bienes registrables?",
+   "opts": [
+    {
+     "t": "Sí: Bienes inmuebles, derechos reales o valores",
+     "l": "A",
+     "n": "inscripcion_registrables"
+    },
+    {
+     "t": "No: Solo bienes no registrables o efectivo",
+     "l": "B",
+     "n": "fin_exitoso"
+    }
+   ]
+  },
+  "inscripcion_registrables": {
+   "ph": 5,
+   "t": "Inscripción de bienes registrables",
+   "ac": "laj",
+   "c": [
+    [
+     "i",
+     "El testimonio judicial de la resolución deberá presentarse en el Registro correspondiente para inscripción o anotación preventiva."
+    ],
+    [
+     "n",
+     "Plazo: Aunque la ley no establece plazo perentorio, se recomienda inscripción inmediata para evitar inseguridad jurídica o perjuicios económicos al patrimonio protegido."
+    ],
+    [
+     "d",
+     "Comunicación telemática: La remisión al Registro Civil podrá realizarse por medios electrónicos, conforme a protocolos de interoperabilidad."
+    ],
+    [
+     "l",
+     "Ley 15/2015 Art. 58.5; Ley Hipotecaria Arts. 2, 18"
+    ]
+   ],
+   "nx": "fin_exitoso"
+  },
+  "fin_exitoso": {
+   "ph": 5,
+   "t": "Fin: Patrimonio protegido constituido y registrado",
+   "ac": "ambos",
+   "c": [
+    [
+     "i",
+     "El procedimiento ha concluido con la constitución efectiva del patrimonio protegido y la inscripción registral de las medidas acordadas."
+    ],
+    [
+     "cl",
+     "Obligaciones posteriores",
+     [
+      "Rendición de cuentas del administrador: periodicidad anual (Ley 41/2003 Art. 7)",
+      "Fiscalización por el Ministerio Fiscal: supervisión permanente del correcto funcionamiento",
+      "Revisión periódica de medidas de apoyo: máximo cada 3 años (Ley 8/2021 Art. 269 CC)"
+     ]
+    ],
+    [
+     "l",
+     "Ley 41/2003 Arts. 5-7; Ley 8/2021; Ley 15/2015 Art. 58"
+    ]
+   ],
+   "end": "success"
+  }
+ },
+ "otrosDatos": {
+  "PHASES": [
+   "Identificación y ámbito",
+   "Competencia y legitimación",
+   "Solicitud y documentación",
+   "Tramitación",
+   "Resolución judicial",
+   "Recursos y eficacia registral"
+  ],
+  "SB_FOOT": "\n    <div class=\"sb-foot\">\n      <strong>Referencias:</strong><br>\n      <span class=\"law\">Ley 15/2015 Arts. 56-58</span><br>\n      <span class=\"law\">Ley 41/2003 Capítulo I</span><br>\n      <span class=\"law\">Ley 8/2021 · CC Arts. 269-270</span>\n    </div>\n  "
+ }
+}

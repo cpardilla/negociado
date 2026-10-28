@@ -1,0 +1,826 @@
+{
+ "id": "E22",
+ "tipo": "esquema",
+ "ruta": "02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/15 - CAPÍTULO XI - De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados.html",
+ "titulo": "Mapa mental — Capítulo XI. Ley 15/2015, Jurisdicción Voluntaria",
+ "cabecera": {
+  "migas": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO XI",
+  "titulo": "De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados",
+  "subtitulo": "Artículos 80 bis a 80 quinquies LJV · Introducidos por la disposición final tercera de la Ley 20/2022, de 19 de octubre, de Memoria Democrática",
+  "etiquetas": [
+   "Ley 15/2015, de 2 de julio",
+   "Artículos 80 bis – 80 quinquies",
+   "Ley 20/2022, de 19 de octubre",
+   "Ley Orgánica 1/2025"
+  ]
+ },
+ "estadisticas": [
+  {
+   "valor": "4",
+   "etiqueta": "Artículos base"
+  },
+  {
+   "valor": "15+",
+   "etiqueta": "Conexiones normativas"
+  },
+  {
+   "valor": "9+",
+   "etiqueta": "Actores identificados"
+  },
+  {
+   "valor": "3",
+   "etiqueta": "Plazos procesales"
+  }
+ ],
+ "filtros": [
+  {
+   "categoria": "all",
+   "texto": "Todos"
+  },
+  {
+   "categoria": "c5",
+   "texto": "Marco general"
+  },
+  {
+   "categoria": "c1",
+   "texto": "Ámbito de aplicación"
+  },
+  {
+   "categoria": "c2",
+   "texto": "Competencia y legitimación"
+  },
+  {
+   "categoria": "c3",
+   "texto": "Tramitación y resolución"
+  },
+  {
+   "categoria": "c4",
+   "texto": "Recursos"
+  }
+ ],
+ "leyenda": [
+  {
+   "texto": "Marco general y origen normativo",
+   "color": "background:var(--c5)"
+  },
+  {
+   "texto": "Ámbito de aplicación",
+   "color": "background:var(--c1)"
+  },
+  {
+   "texto": "Competencia y legitimación",
+   "color": "background:var(--c2)"
+  },
+  {
+   "texto": "Tramitación y resolución",
+   "color": "background:var(--c3)"
+  },
+  {
+   "texto": "Recursos",
+   "color": "background:var(--c4)"
+  }
+ ],
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II · Capítulo XI (artículos 80 bis a 80 quinquies) · Generado como plantilla HTML reutilizable",
+ "secciones": [
+  {
+   "id": "sec-marco",
+   "titulo": "Marco general y origen normativo",
+   "recuento": "1 artículo · 3 subapartados",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c5",
+      "articulo": "Marco general",
+      "etiquetas": [
+       {
+        "texto": "Origen normativo",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Introducción del Capítulo XI en la Ley 15/2015",
+      "resumen": "El Capítulo XI del Título II fue introducido en la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria, por la disposición final tercera de la Ley 20/2022, de 19 de octubre, de Memoria Democrática. Los artículos 80 bis a 80 quinquies se insertan bajo la rúbrica «De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados».",
+      "contadores": [],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Antecedente histórico-procesal",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El expediente reintroduce, con carácter renovado, la antigua figura de la <strong>«información para perpetua memoria»</strong>, que estuvo regulada en los artículos 2002 a 2010 de la Ley de Enjuiciamiento Civil de 1881 y que fue derogada al entrar en vigor la Ley 15/2015."
+            },
+            {
+             "t": "La <strong>Exposición de Motivos de la Ley 20/2022</strong> (apartado IV) justifica la recuperación de esta vía para posibilitar, entre otras finalidades, la identificación y exhumación de las víctimas de la Guerra y la Dictadura y, a través de ella, la digna sepultura de las víctimas."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Adaptación a la nueva organización judicial",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Conforme a la <strong>disposición adicional primera de la Ley Orgánica 1/2025</strong>, de 2 de enero, de medidas en materia de eficiencia del Servicio Público de Justicia, las referencias de la Ley de la Jurisdicción Voluntaria a los Juzgados de Primera Instancia deben entenderse hechas a las secciones correspondientes de los <strong>Tribunales de Instancia</strong>, cuya implementación concluye el 31 de diciembre de 2025."
+            },
+            {
+             "t": "La determinación de la sección competente atenderá a lo dispuesto en el apartado 5 del <strong>artículo 86 de la Ley Orgánica del Poder Judicial</strong>, letra j), o, en su caso, en el apartado 6 del <strong>artículo 89 de la misma ley</strong>, letra g)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 20/2022, disp. final 3.ª",
+       "LEC 1881, arts. 2002-2010",
+       "LO 1/2025, disp. adic. 1.ª",
+       "LOPJ, arts. 86.5.j) y 89.6.g)"
+      ],
+      "claves": "marco general origen normativo capítulo xi ley 15/2015 jurisdicción voluntaria ley 20/2022 memoria democrática información para perpetua memoria ley enjuiciamiento civil 1881 tribunal de instancia ley orgánica 1/2025"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-80bis",
+   "titulo": "Ámbito de aplicación — Artículo 80 bis",
+   "recuento": "1 artículo · 3 subapartados",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c1",
+      "articulo": "Artículo 80 bis",
+      "etiquetas": [
+       {
+        "texto": "Ámbito de aplicación",
+        "clase": "tag-ok"
+       }
+      ],
+      "titulo": "Ámbito de aplicación",
+      "resumen": "Se aplicarán las disposiciones de este título a los expedientes que tengan por objeto la obtención de una declaración judicial sobre la realidad y las circunstancias de hechos pasados determinados, siempre que no exista controversia que deba sustanciarse en un proceso contencioso.",
+      "contadores": [
+       "5 condiciones cumulativas",
+       "2 normas conexas"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Objeto del expediente",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Se aplicarán las disposiciones de este título a los expedientes que tengan por objeto la obtención de una <strong>declaración judicial sobre la realidad y las circunstancias de hechos pasados determinados</strong>, siempre que no exista controversia que deba sustanciarse en un proceso contencioso."
+            },
+            {
+             "t": "Podrá interesarse la emisión de declaración judicial sobre hechos de <strong>cualquier naturaleza, concretos, ya acaecidos</strong>, percibidos o no por el promotor del expediente."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Carácter no contencioso del expediente",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "La vía queda reservada a supuestos en los que <strong>no existe controversia intersubjetiva</strong> sobre los hechos."
+            },
+            {
+             "t": "Si surge una auténtica contienda, el cauce adecuado será el <strong>proceso declarativo contencioso correspondiente</strong>."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Condiciones cumulativas para acudir al expediente",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Primera:</strong> Que su objeto sea posible y lícito."
+            },
+            {
+             "t": "<strong>Segunda:</strong> Que exista un principio de prueba de los hechos sobre los que se interesa la información."
+            },
+            {
+             "t": "<strong>Tercera:</strong> Que de los hechos sobre los que se interesa la información no resulte perjuicio para una persona cierta y determinada."
+            },
+            {
+             "t": "<strong>Cuarta:</strong> Que los hechos sobre los que se interesa la información no sean objeto de un procedimiento judicial en trámite."
+            },
+            {
+             "t": "<strong>Quinta:</strong> Que no exista otro procedimiento judicial legalmente indicado para la demostración de los hechos sobre los que se interesa la información, lo que confiere al expediente un <strong>carácter subsidiario o residual</strong>."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015, art. 6",
+       "Ley 15/2015, art. 1"
+      ],
+      "claves": "artículo 80 bis ámbito de aplicación declaración judicial hechos pasados no contencioso condiciones cumulativas objeto lícito principio de prueba perjuicio procedimiento judicial en trámite carácter subsidiario residual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-80ter",
+   "titulo": "Competencia, legitimación y postulación — Artículo 80 ter",
+   "recuento": "1 artículo · 4 subapartados",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c2",
+      "articulo": "Artículo 80 ter",
+      "etiquetas": [
+       {
+        "texto": "Competencia y legitimación",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Competencia, legitimación y postulación",
+      "resumen": "Regula la competencia territorial, la legitimación activa, la postulación procesal no preceptiva y la intervención obligatoria del Ministerio Fiscal en el expediente.",
+      "contadores": [
+       "4 subapartados",
+       "3 normas conexas"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Competencia territorial",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Será competente para conocer de este expediente el <strong>Juzgado de Primera Instancia del lugar donde acaecieron los hechos</strong> a los que se refiere la declaración judicial interesada y, si fueran varios lugares, el de cualquiera de ellos a elección del solicitante."
+            },
+            {
+             "t": "En su defecto, será competente el Juzgado de Primera Instancia que corresponda al <strong>domicilio del solicitante</strong>, como fuero residual."
+            },
+            {
+             "t": "Tras la Ley Orgánica 1/2025, la referencia al Juzgado de Primera Instancia ha de entenderse hecha a la <strong>sección civil del Tribunal de Instancia correspondiente</strong>."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Legitimación activa",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Quienes sean titulares de derechos o intereses legítimos</strong> en relación con los hechos respecto de los cuales se interesa la información."
+            },
+            {
+             "t": "<strong>El Ministerio Fiscal</strong>, quien actuará de oficio o a solicitud de cualquier persona."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Postulación procesal",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>No es preceptiva la defensa de Letrado ni la representación por Procurador</strong> para la promoción e intervención en este expediente."
+            },
+            {
+             "t": "En la Oficina Judicial existirán, a disposición de los interesados, <strong>impresos normalizados</strong> para formular la solicitud, como instrumento de facilitación del acceso a esta vía."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Intervención obligatoria del Ministerio Fiscal",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El <strong>Ministerio Fiscal será siempre parte</strong> en este expediente, lo que garantiza el control de legalidad y la protección de los intereses generales y de las personas que pudieran verse afectadas por la declaración."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015, art. 2",
+       "Ley 15/2015, art. 3",
+       "Ley 15/2015, art. 4"
+      ],
+      "claves": "artículo 80 ter competencia legitimación postulación juzgado primera instancia tribunal de instancia fuero residual ministerio fiscal impresos normalizados abogado procurador no preceptivo derechos intereses legítimos"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-80quater",
+   "titulo": "Tramitación y resolución — Artículo 80 quater",
+   "recuento": "1 artículo · 7 subapartados",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c3",
+      "articulo": "Artículo 80 quater",
+      "etiquetas": [
+       {
+        "texto": "Procedimiento principal",
+        "clase": "tag-warn"
+       }
+      ],
+      "titulo": "Tramitación y resolución",
+      "resumen": "Regula la iniciación, el contenido de la solicitud, el control de admisibilidad, la comparecencia, la práctica de pruebas, la resolución por auto, la inscripción registral y la oposición a la declaración.",
+      "contadores": [
+       "7 subapartados",
+       "2 plazos"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Iniciación del expediente",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "El expediente se iniciará <strong>a solicitud de la persona interesada o del Ministerio Fiscal</strong>."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Contenido de la solicitud",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "La solicitud expresará con claridad: <strong>el contenido de la declaración judicial que se interesa</strong>; un relato de las circunstancias relevantes a los efectos de la solicitud; el principio de prueba; la identificación de las personas que puedan estar interesadas."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Control previo de admisibilidad",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Si el <strong>Letrado de la Administración de Justicia</strong> entendiese que no existe competencia objetiva o territorial para conocer del expediente, o bien advirtiese la falta de alguna de las condiciones recogidas en el apartado 2 del artículo 80 bis, dará cuenta al Juez."
+            },
+            {
+             "t": "El <strong>Juez, previa audiencia del Ministerio Fiscal y del solicitante</strong>, decidirá por auto sobre la admisibilidad del expediente."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Admisión a trámite y convocatoria a comparecencia",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Cumplidos los requisitos de admisibilidad, el <strong>Letrado de la Administración de Justicia admitirá a trámite la solicitud</strong> y convocará a una comparecencia al promotor, al Ministerio Fiscal y a cuantas personas pudieran estar interesadas en los hechos respecto de los que se interesa la información."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Actuaciones probatorias previas a la comparecencia (plazo común de cinco días tras la recepción de la citación)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Citación de testigos o peritos:</strong> el promotor del expediente y el resto de los interesados podrán interesar la citación de las personas que, por no poderlas presentar, han de ser citadas por el Letrado de la Administración de Justicia a la vista para que declaren en calidad de testigos o peritos."
+            },
+            {
+             "t": "<strong>Respuestas escritas de personas jurídicas o entidades públicas:</strong> en el mismo plazo de cinco días podrán las partes pedir respuestas escritas a cargo de personas jurídicas o entidades públicas, por los trámites establecidos en el artículo 381 de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil."
+            },
+            {
+             "t": "<strong>Régimen de suspensión:</strong> la práctica de este trámite no suspenderá la celebración de la comparecencia, salvo que el Juez lo estime necesario para impedir la indefensión de una o las dos partes."
+            },
+            {
+             "t": "<strong>Llegada tardía de las respuestas:</strong> en todo caso, si se recibieran con posterioridad a la misma, se dará audiencia a los interesados y al Ministerio Fiscal."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Celebración de la comparecencia",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "La comparecencia se sustanciará por los trámites previstos en la <strong>Ley de Enjuiciamiento Civil para la vista del juicio verbal</strong>, practicándose la prueba pertinente y útil que propongan las partes en el acto."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Resolución del expediente",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "En el plazo de <strong>cinco días tras la celebración de la comparecencia</strong>, el Juez dictará auto por el que se acceda o se deniegue la emisión de la declaración judicial interesada."
+            },
+            {
+             "t": "<strong>Si accediere a la solicitud:</strong> el Juez realizará en la parte dispositiva del auto la declaración sobre hechos pasados determinados interesada por el promotor, con expresión de sus circunstancias. Se pronunciará, en su caso, en relación con las consecuencias que se deriven de la declaración."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Hechos inscribibles en registros públicos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Si de la declaración se derivara la existencia de un hecho inscribible en el <strong>Registro de la Propiedad, Mercantil u otro registro público</strong>, será aplicable lo dispuesto en el <strong>artículo 22.2 de la propia Ley de la Jurisdicción Voluntaria</strong>, relativo al cumplimiento y ejecución de la resolución que pone fin al expediente."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Oposición a la emisión de la declaración",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "En cualquier momento durante la tramitación del expediente, los interesados o afectados por los hechos objeto del mismo podrán formular su <strong>oposición a la emisión de la declaración judicial interesada</strong>."
+            },
+            {
+             "t": "<strong>Si el Juez estimare justificada la oposición:</strong> acordará por auto el sobreseimiento del expediente, con reserva a las partes de su derecho a ejercitar la acción correspondiente."
+            },
+            {
+             "t": "<strong>Si el Juez no estimare justificada la oposición:</strong> mandará por auto la continuación del expediente hasta su resolución."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "Ley 15/2015, art. 22.2",
+       "LEC, art. 381",
+       "Ley 15/2015, arts. 13-22",
+       "Ley 15/2015, art. 5"
+      ],
+      "claves": "artículo 80 quater tramitación resolución iniciación solicitud contenido control previo admisibilidad letrado administración de justicia comparecencia pruebas testigos peritos personas jurídicas entidades públicas auto sobreseimiento oposición registros públicos inscripción plazo cinco días"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-80quinquies",
+   "titulo": "Recursos — Artículo 80 quinquies",
+   "recuento": "1 artículo · 2 subapartados",
+   "plegada": false,
+   "contenido": [
+    {
+     "tarjeta": {
+      "categoria": "c4",
+      "articulo": "Artículo 80 quinquies",
+      "etiquetas": [
+       {
+        "texto": "Régimen de recursos",
+        "clase": "tag-info"
+       }
+      ],
+      "titulo": "Recursos",
+      "resumen": "Las resoluciones interlocutorias son susceptibles de recurso de reposición; la resolución definitiva es susceptible de recurso de apelación, conforme a la Ley de Enjuiciamiento Civil.",
+      "contadores": [
+       "2 tipos de recurso",
+       "3 resoluciones apelables"
+      ],
+      "cuerpo": [
+       {
+        "apartado": {
+         "titulo": "Resoluciones interlocutorias",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Las resoluciones interlocutorias dictadas durante la tramitación del expediente son susceptibles de <strong>recurso de reposición</strong>, en los términos previstos en la Ley de Enjuiciamiento Civil."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Resolución definitiva",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "La resolución definitiva dictada según lo previsto en los apartados segundo, quinto o sexto del artículo anterior es susceptible de <strong>recurso de apelación</strong>, en los términos previstos en la Ley de Enjuiciamiento Civil. Comprende, por tanto:"
+            },
+            {
+             "t": "<strong>El auto sobre admisibilidad</strong> tras el control previo del Letrado de la Administración de Justicia (apartado 2)."
+            },
+            {
+             "t": "<strong>El auto que accede o deniega la emisión de la declaración</strong> tras la comparecencia (apartado 5)."
+            },
+            {
+             "t": "<strong>El auto que resuelve sobre la oposición</strong> formulada durante la tramitación (apartado 6)."
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ],
+      "referencias": [
+       "LEC, recurso de reposición",
+       "LEC, recurso de apelación",
+       "Ley 15/2015, art. 80 quater aps. 2, 5 y 6"
+      ],
+      "claves": "artículo 80 quinquies recursos reposición apelación resoluciones interlocutorias resolución definitiva auto admisibilidad auto declaración oposición letrado administración de justicia ley enjuiciamiento civil"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-timeline",
+   "titulo": "Indice de plazos procesales",
+   "recuento": "3 trámites",
+   "plegada": true,
+   "contenido": [
+    {
+     "tabla": {
+      "cabecera": [
+       "Acto o trámite procesal",
+       "Plazo",
+       "Fundamento normativo"
+      ],
+      "filas": [
+       [
+        "Plazo común para solicitar la citación de testigos o peritos y pedir respuestas escritas a personas jurídicas o entidades públicas (actuaciones probatorias previas a la comparecencia)",
+        "5 días",
+        "Artículo 80 quater, apartado 4"
+       ],
+       [
+        "Plazo para que el Juez dicte auto accediendo o denegando la emisión de la declaración judicial tras la celebración de la comparecencia",
+        "5 días",
+        "Artículo 80 quater, apartado 5"
+       ],
+       [
+        "Plazo de implementación de los Tribunales de Instancia (sustitución de las referencias a los Juzgados de Primera Instancia)",
+        "31 de diciembre de 2025",
+        "Ley Orgánica 1/2025, disposición adicional primera"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "sec-actors",
+   "titulo": "Mapa de participantes y actores",
+   "recuento": "4 categorías · 9+ actores",
+   "plegada": true,
+   "contenido": [
+    {
+     "p": "Órganos judiciales",
+     "clase": "participant-col-head phead-c1"
+    },
+    {
+     "lista": [
+      {
+       "t": "Juez (resuelve por auto, admite, deniega, decide oposición)"
+      },
+      {
+       "t": "Letrado de la Administración de Justicia (control previo de admisibilidad, admisión a trámite, citación)"
+      },
+      {
+       "t": "Juzgado de Primera Instancia / Sección civil del Tribunal de Instancia (competencia territorial)"
+      }
+     ]
+    },
+    {
+     "p": "Sujetos activos",
+     "clase": "participant-col-head phead-c2"
+    },
+    {
+     "lista": [
+      {
+       "t": "Promotor / Solicitante (titular de derechos o intereses legítimos)"
+      },
+      {
+       "t": "Ministerio Fiscal (intervención obligatoria, legitimación activa, actúa de oficio o a solicitud)"
+      }
+     ]
+    },
+    {
+     "p": "Terceros interesados",
+     "clase": "participant-col-head phead-c3"
+    },
+    {
+     "lista": [
+      {
+       "t": "Interesados / Afectados (pueden formular oposición)"
+      },
+      {
+       "t": "Testigos (citados por el LAJ a solicitud de las partes)"
+      },
+      {
+       "t": "Peritos (citados por el LAJ a solicitud de las partes)"
+      }
+     ]
+    },
+    {
+     "p": "Otros sujetos",
+     "clase": "participant-col-head phead-c4"
+    },
+    {
+     "lista": [
+      {
+       "t": "Personas jurídicas / Entidades públicas (pueden emitir respuestas escritas conforme al art. 381 LEC)"
+      },
+      {
+       "t": "Oficina Judicial (impresos normalizados a disposición de los interesados)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-norms",
+   "titulo": "Ecosistema normativo — conexiones relacionadas",
+   "recuento": "7 cuerpos normativos",
+   "plegada": true,
+   "contenido": [
+    {
+     "p": "Ley 15/2015, de 2 de julio",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Ley de la Jurisdicción Voluntaria",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Artículo 1</strong> — Objeto y ámbito de aplicación: enmarca el expediente dentro del sistema general de jurisdicción voluntaria. <strong>Artículo 2</strong> — Competencia en materia de jurisdicción voluntaria: reglas generales sobre competencia objetiva. <strong>Artículo 3</strong> — Legitimación y postulación: complementa la regla de postulación no preceptiva del artículo 80 ter. <strong>Artículo 4</strong> — Intervención del Ministerio Fiscal: fundamento general de su presencia como parte. <strong>Artículo 5</strong> — Prueba: régimen común probatorio aplicable al expediente. <strong>Artículo 6</strong> — Tramitación simultánea o posterior: se conecta con la exigencia del artículo 80 bis de que los hechos no sean objeto de un procedimiento judicial en trámite. <strong>Artículo 7 bis</strong> — Ajustes para personas con discapacidad. <strong>Artículo 8</strong> — Carácter supletorio de la LEC: fundamento general de las remisiones expresas. <strong>Artículo 11</strong> — Inscripción en registros públicos: régimen general del acceso registral. <strong>Artículos 13 a 22</strong> — Normas comunes de tramitación: iniciación, acumulación, competencia, admisión, comparecencia, decisión, recursos, caducidad, cumplimiento y ejecución. <strong>Artículo 22.2</strong> — Cumplimiento y ejecución: remisión expresa del artículo 80 quater para hechos inscribibles.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Norma principal",
+     "clase": "norm-tag tag-ok"
+    },
+    {
+     "p": "Ley 1/2000, de 7 de enero",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Ley de Enjuiciamiento Civil",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Artículo 381</strong> — Respuestas escritas a cargo de personas jurídicas o entidades públicas, cauce probatorio expresamente previsto para este expediente. <strong>Trámites de la vista del juicio verbal</strong> — Régimen procesal aplicable a la comparecencia prevista en el artículo 80 quater. <strong>Recurso de reposición</strong> — Régimen aplicable a las resoluciones interlocutorias dictadas en el expediente. <strong>Recurso de apelación</strong> — Régimen aplicable a la resolución definitiva dictada conforme a los apartados segundo, quinto o sexto del artículo 80 quater.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Supletoria",
+     "clase": "norm-tag tag-info"
+    },
+    {
+     "p": "Ley 20/2022, de 19 de octubre",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Ley de Memoria Democrática",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Disposición final tercera</strong> — Introduce el Capítulo XI en la Ley 15/2015. <strong>Exposición de Motivos, apartado IV</strong> — Explicita la finalidad de posibilitar la identificación y exhumación de las víctimas de la Guerra y la Dictadura y darles digna sepultura.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Norma introductoria",
+     "clase": "norm-tag tag-warn"
+    },
+    {
+     "p": "Ley Orgánica 1/2025, de 2 de enero",
+     "clase": "norm-law"
+    },
+    {
+     "p": "De medidas en materia de eficiencia del Servicio Público de Justicia",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Disposición adicional primera</strong> — Reorganización judicial que afecta a la competencia, sustituyendo las referencias a los Juzgados de Primera Instancia por las secciones civiles correspondientes de los Tribunales de Instancia; además, dispensa de la obligación de acudir a medios adecuados de solución de controversias para iniciar expedientes de jurisdicción voluntaria.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Reforma orgánica",
+     "clase": "norm-tag tag-alert"
+    },
+    {
+     "p": "Ley Orgánica 6/1985, de 1 de julio",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Ley Orgánica del Poder Judicial",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Artículo 86.5.j)</strong> — Para la identificación de la sección competente dentro del Tribunal de Instancia. <strong>Artículo 89.6.g)</strong> — Para la identificación de la sección competente dentro del Tribunal de Instancia (supuesto alternativo).",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Competencia",
+     "clase": "norm-tag tag-gray"
+    },
+    {
+     "p": "Ley 50/1981, de 30 de diciembre",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Estatuto Orgánico del Ministerio Fiscal",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Régimen del Ministerio Fiscal</strong> — Legitimado activo y parte necesaria en este expediente.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Ministerio Fiscal",
+     "clase": "norm-tag tag-gray"
+    },
+    {
+     "p": "Ley de Enjuiciamiento Civil de 1881",
+     "clase": "norm-law"
+    },
+    {
+     "p": "Antecedente histórico: información para perpetua memoria",
+     "clase": "norm-title"
+    },
+    {
+     "p": "<strong>Artículos 2002 a 2010</strong> — Antecedente histórico de la «información para perpetua memoria», derogada por la Ley 15/2015 y recuperada, con nueva configuración, por la Ley 20/2022.",
+     "clase": "norm-arts"
+    },
+    {
+     "p": "Antecedente derogado",
+     "clase": "norm-tag tag-gray"
+    }
+   ]
+  }
+ ],
+ "sinCapturar": [],
+ "texto": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO XI De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados Artículos 80 bis a 80 quinquies LJV · Introducidos por la disposición final tercera de la Ley 20/2022, de 19 de octubre, de Memoria Democrática Ley 15/2015, de 2 de julio Artículos 80 bis – 80 quinquies Ley 20/2022, de 19 de octubre Ley Orgánica 1/2025 Imprimir / PDF 4 Artículos base 15+ Conexiones normativas 9+ Actores identificados 3 Plazos procesales Todos Marco general Ámbito de aplicación Competencia y legitimación Tramitación y resolución Recursos Expandir todo Contraer todo − 100% + ↻ Marco general y origen normativo 1 artículo · 3 subapartados ▼ Marco general Origen normativo Introducción del Capítulo XI en la Ley 15/2015 El Capítulo XI del Título II fue introducido en la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria, por la disposición final tercera de la Ley 20/2022, de 19 de octubre, de Memoria Democrática. Los artículos 80 bis a 80 quinquies se insertan bajo la rúbrica «De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados». Ver contenido completo ▾ Antecedente histórico-procesal El expediente reintroduce, con carácter renovado, la antigua figura de la , que estuvo regulada en los artículos 2002 a 2010 de la Ley de Enjuiciamiento Civil de 1881 y que fue derogada al entrar en vigor la Ley 15/2015. «información para perpetua memoria» La (apartado IV) justifica la recuperación de esta vía para posibilitar, entre otras finalidades, la identificación y exhumación de las víctimas de la Guerra y la Dictadura y, a través de ella, la digna sepultura de las víctimas. Exposición de Motivos de la Ley 20/2022 Adaptación a la nueva organización judicial Conforme a la , de 2 de enero, de medidas en materia de eficiencia del Servicio Público de Justicia, las referencias de la Ley de la Jurisdicción Voluntaria a los Juzgados de Primera Instancia deben entenderse hechas a las secciones correspondientes de los , cuya implementación concluye el 31 de diciembre de 2025. disposición adicional primera de la Ley Orgánica 1/2025 Tribunales de Instancia La determinación de la sección competente atenderá a lo dispuesto en el apartado 5 del , letra j), o, en su caso, en el apartado 6 del , letra g). artículo 86 de la Ley Orgánica del Poder Judicial artículo 89 de la misma ley Ley 20/2022, disp. final 3.ª LEC 1881, arts. 2002-2010 LO 1/2025, disp. adic. 1.ª LOPJ, arts. 86.5.j) y 89.6.g) Ámbito de aplicación — Artículo 80 bis 1 artículo · 3 subapartados ▼ Artículo 80 bis Ámbito de aplicación Ámbito de aplicación Se aplicarán las disposiciones de este título a los expedientes que tengan por objeto la obtención de una declaración judicial sobre la realidad y las circunstancias de hechos pasados determinados, siempre que no exista controversia que deba sustanciarse en un proceso contencioso. condiciones cumulativas 5 normas conexas 2 Ver contenido completo ▾ Objeto del expediente Se aplicarán las disposiciones de este título a los expedientes que tengan por objeto la obtención de una , siempre que no exista controversia que deba sustanciarse en un proceso contencioso. declaración judicial sobre la realidad y las circunstancias de hechos pasados determinados Podrá interesarse la emisión de declaración judicial sobre hechos de , percibidos o no por el promotor del expediente. cualquier naturaleza, concretos, ya acaecidos Carácter no contencioso del expediente La vía queda reservada a supuestos en los que sobre los hechos. no existe controversia intersubjetiva Si surge una auténtica contienda, el cauce adecuado será el . proceso declarativo contencioso correspondiente Condiciones cumulativas para acudir al expediente Que su objeto sea posible y lícito. Primera: Que exista un principio de prueba de los hechos sobre los que se interesa la información. Segunda: Que de los hechos sobre los que se interesa la información no resulte perjuicio para una persona cierta y determinada. Tercera: Que los hechos sobre los que se interesa la información no sean objeto de un procedimiento judicial en trámite. Cuarta: Que no exista otro procedimiento judicial legalmente indicado para la demostración de los hechos sobre los que se interesa la información, lo que confiere al expediente un . Quinta: carácter subsidiario o residual Ley 15/2015, art. 6 Ley 15/2015, art. 1 Competencia, legitimación y postulación — Artículo 80 ter 1 artículo · 4 subapartados ▼ Artículo 80 ter Competencia y legitimación Competencia, legitimación y postulación Regula la competencia territorial, la legitimación activa, la postulación procesal no preceptiva y la intervención obligatoria del Ministerio Fiscal en el expediente. subapartados 4 normas conexas 3 Ver contenido completo ▾ Competencia territorial Será competente para conocer de este expediente el a los que se refiere la declaración judicial interesada y, si fueran varios lugares, el de cualquiera de ellos a elección del solicitante. Juzgado de Primera Instancia del lugar donde acaecieron los hechos En su defecto, será competente el Juzgado de Primera Instancia que corresponda al , como fuero residual. domicilio del solicitante Tras la Ley Orgánica 1/2025, la referencia al Juzgado de Primera Instancia ha de entenderse hecha a la . sección civil del Tribunal de Instancia correspondiente Legitimación activa en relación con los hechos respecto de los cuales se interesa la información. Quienes sean titulares de derechos o intereses legítimos , quien actuará de oficio o a solicitud de cualquier persona. El Ministerio Fiscal Postulación procesal para la promoción e intervención en este expediente. No es preceptiva la defensa de Letrado ni la representación por Procurador En la Oficina Judicial existirán, a disposición de los interesados, para formular la solicitud, como instrumento de facilitación del acceso a esta vía. impresos normalizados Intervención obligatoria del Ministerio Fiscal El en este expediente, lo que garantiza el control de legalidad y la protección de los intereses generales y de las personas que pudieran verse afectadas por la declaración. Ministerio Fiscal será siempre parte Ley 15/2015, art. 2 Ley 15/2015, art. 3 Ley 15/2015, art. 4 Tramitación y resolución — Artículo 80 quater 1 artículo · 7 subapartados ▼ Artículo 80 quater Procedimiento principal Tramitación y resolución Regula la iniciación, el contenido de la solicitud, el control de admisibilidad, la comparecencia, la práctica de pruebas, la resolución por auto, la inscripción registral y la oposición a la declaración. subapartados 7 plazos 2 Ver contenido completo ▾ Iniciación del expediente El expediente se iniciará . a solicitud de la persona interesada o del Ministerio Fiscal Contenido de la solicitud La solicitud expresará con claridad: ; un relato de las circunstancias relevantes a los efectos de la solicitud; el principio de prueba; la identificación de las personas que puedan estar interesadas. el contenido de la declaración judicial que se interesa Control previo de admisibilidad Si el entendiese que no existe competencia objetiva o territorial para conocer del expediente, o bien advirtiese la falta de alguna de las condiciones recogidas en el apartado 2 del artículo 80 bis, dará cuenta al Juez. Letrado de la Administración de Justicia El , decidirá por auto sobre la admisibilidad del expediente. Juez, previa audiencia del Ministerio Fiscal y del solicitante Admisión a trámite y convocatoria a comparecencia Cumplidos los requisitos de admisibilidad, el y convocará a una comparecencia al promotor, al Ministerio Fiscal y a cuantas personas pudieran estar interesadas en los hechos respecto de los que se interesa la información. Letrado de la Administración de Justicia admitirá a trámite la solicitud Actuaciones probatorias previas a la comparecencia (plazo común de cinco días tras la recepción de la citación) el promotor del expediente y el resto de los interesados podrán interesar la citación de las personas que, por no poderlas presentar, han de ser citadas por el Letrado de la Administración de Justicia a la vista para que declaren en calidad de testigos o peritos. Citación de testigos o peritos: en el mismo plazo de cinco días podrán las partes pedir respuestas escritas a cargo de personas jurídicas o entidades públicas, por los trámites establecidos en el artículo 381 de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil. Respuestas escritas de personas jurídicas o entidades públicas: la práctica de este trámite no suspenderá la celebración de la comparecencia, salvo que el Juez lo estime necesario para impedir la indefensión de una o las dos partes. Régimen de suspensión: en todo caso, si se recibieran con posterioridad a la misma, se dará audiencia a los interesados y al Ministerio Fiscal. Llegada tardía de las respuestas: Celebración de la comparecencia La comparecencia se sustanciará por los trámites previstos en la , practicándose la prueba pertinente y útil que propongan las partes en el acto. Ley de Enjuiciamiento Civil para la vista del juicio verbal Resolución del expediente En el plazo de , el Juez dictará auto por el que se acceda o se deniegue la emisión de la declaración judicial interesada. cinco días tras la celebración de la comparecencia el Juez realizará en la parte dispositiva del auto la declaración sobre hechos pasados determinados interesada por el promotor, con expresión de sus circunstancias. Se pronunciará, en su caso, en relación con las consecuencias que se deriven de la declaración. Si accediere a la solicitud: Hechos inscribibles en registros públicos Si de la declaración se derivara la existencia de un hecho inscribible en el , será aplicable lo dispuesto en el , relativo al cumplimiento y ejecución de la resolución que pone fin al expediente. Registro de la Propiedad, Mercantil u otro registro público artículo 22.2 de la propia Ley de la Jurisdicción Voluntaria Oposición a la emisión de la declaración En cualquier momento durante la tramitación del expediente, los interesados o afectados por los hechos objeto del mismo podrán formular su . oposición a la emisión de la declaración judicial interesada acordará por auto el sobreseimiento del expediente, con reserva a las partes de su derecho a ejercitar la acción correspondiente. Si el Juez estimare justificada la oposición: mandará por auto la continuación del expediente hasta su resolución. Si el Juez no estimare justificada la oposición: Ley 15/2015, art. 22.2 LEC, art. 381 Ley 15/2015, arts. 13-22 Ley 15/2015, art. 5 Recursos — Artículo 80 quinquies 1 artículo · 2 subapartados ▼ Artículo 80 quinquies Régimen de recursos Recursos Las resoluciones interlocutorias son susceptibles de recurso de reposición; la resolución definitiva es susceptible de recurso de apelación, conforme a la Ley de Enjuiciamiento Civil. tipos de recurso 2 resoluciones apelables 3 Ver contenido completo ▾ Resoluciones interlocutorias Las resoluciones interlocutorias dictadas durante la tramitación del expediente son susceptibles de , en los términos previstos en la Ley de Enjuiciamiento Civil. recurso de reposición Resolución definitiva La resolución definitiva dictada según lo previsto en los apartados segundo, quinto o sexto del artículo anterior es susceptible de , en los términos previstos en la Ley de Enjuiciamiento Civil. Comprende, por tanto: recurso de apelación tras el control previo del Letrado de la Administración de Justicia (apartado 2). El auto sobre admisibilidad tras la comparecencia (apartado 5). El auto que accede o deniega la emisión de la declaración formulada durante la tramitación (apartado 6). El auto que resuelve sobre la oposición LEC, recurso de reposición LEC, recurso de apelación Ley 15/2015, art. 80 quater aps. 2, 5 y 6 Indice de plazos procesales 3 trámites ▶ Acto o trámite procesal Plazo Fundamento normativo Plazo común para solicitar la citación de testigos o peritos y pedir respuestas escritas a personas jurídicas o entidades públicas (actuaciones probatorias previas a la comparecencia) 5 días Artículo 80 quater, apartado 4 Plazo para que el Juez dicte auto accediendo o denegando la emisión de la declaración judicial tras la celebración de la comparecencia 5 días Artículo 80 quater, apartado 5 Plazo de implementación de los Tribunales de Instancia (sustitución de las referencias a los Juzgados de Primera Instancia) 31 de diciembre de 2025 Ley Orgánica 1/2025, disposición adicional primera Mapa de participantes y actores 4 categorías · 9+ actores ▶ Órganos judiciales Juez (resuelve por auto, admite, deniega, decide oposición) Letrado de la Administración de Justicia (control previo de admisibilidad, admisión a trámite, citación) Juzgado de Primera Instancia / Sección civil del Tribunal de Instancia (competencia territorial) Sujetos activos Promotor / Solicitante (titular de derechos o intereses legítimos) Ministerio Fiscal (intervención obligatoria, legitimación activa, actúa de oficio o a solicitud) Terceros interesados Interesados / Afectados (pueden formular oposición) Testigos (citados por el LAJ a solicitud de las partes) Peritos (citados por el LAJ a solicitud de las partes) Otros sujetos Personas jurídicas / Entidades públicas (pueden emitir respuestas escritas conforme al art. 381 LEC) Oficina Judicial (impresos normalizados a disposición de los interesados) Ecosistema normativo — conexiones relacionadas 7 cuerpos normativos ▶ Ley 15/2015, de 2 de julio Ley de la Jurisdicción Voluntaria — Objeto y ámbito de aplicación: enmarca el expediente dentro del sistema general de jurisdicción voluntaria. — Competencia en materia de jurisdicción voluntaria: reglas generales sobre competencia objetiva. — Legitimación y postulación: complementa la regla de postulación no preceptiva del artículo 80 ter. — Intervención del Ministerio Fiscal: fundamento general de su presencia como parte. — Prueba: régimen común probatorio aplicable al expediente. — Tramitación simultánea o posterior: se conecta con la exigencia del artículo 80 bis de que los hechos no sean objeto de un procedimiento judicial en trámite. — Ajustes para personas con discapacidad. — Carácter supletorio de la LEC: fundamento general de las remisiones expresas. — Inscripción en registros públicos: régimen general del acceso registral. — Normas comunes de tramitación: iniciación, acumulación, competencia, admisión, comparecencia, decisión, recursos, caducidad, cumplimiento y ejecución. — Cumplimiento y ejecución: remisión expresa del artículo 80 quater para hechos inscribibles. Artículo 1 Artículo 2 Artículo 3 Artículo 4 Artículo 5 Artículo 6 Artículo 7 bis Artículo 8 Artículo 11 Artículos 13 a 22 Artículo 22.2 Norma principal Ley 1/2000, de 7 de enero Ley de Enjuiciamiento Civil — Respuestas escritas a cargo de personas jurídicas o entidades públicas, cauce probatorio expresamente previsto para este expediente. — Régimen procesal aplicable a la comparecencia prevista en el artículo 80 quater. — Régimen aplicable a las resoluciones interlocutorias dictadas en el expediente. — Régimen aplicable a la resolución definitiva dictada conforme a los apartados segundo, quinto o sexto del artículo 80 quater. Artículo 381 Trámites de la vista del juicio verbal Recurso de reposición Recurso de apelación Supletoria Ley 20/2022, de 19 de octubre Ley de Memoria Democrática — Introduce el Capítulo XI en la Ley 15/2015. — Explicita la finalidad de posibilitar la identificación y exhumación de las víctimas de la Guerra y la Dictadura y darles digna sepultura. Disposición final tercera Exposición de Motivos, apartado IV Norma introductoria Ley Orgánica 1/2025, de 2 de enero De medidas en materia de eficiencia del Servicio Público de Justicia — Reorganización judicial que afecta a la competencia, sustituyendo las referencias a los Juzgados de Primera Instancia por las secciones civiles correspondientes de los Tribunales de Instancia; además, dispensa de la obligación de acudir a medios adecuados de solución de controversias para iniciar expedientes de jurisdicción voluntaria. Disposición adicional primera Reforma orgánica Ley Orgánica 6/1985, de 1 de julio Ley Orgánica del Poder Judicial — Para la identificación de la sección competente dentro del Tribunal de Instancia. — Para la identificación de la sección competente dentro del Tribunal de Instancia (supuesto alternativo). Artículo 86.5.j) Artículo 89.6.g) Competencia Ley 50/1981, de 30 de diciembre Estatuto Orgánico del Ministerio Fiscal — Legitimado activo y parte necesaria en este expediente. Régimen del Ministerio Fiscal Ministerio Fiscal Ley de Enjuiciamiento Civil de 1881 Antecedente histórico: información para perpetua memoria — Antecedente histórico de la «información para perpetua memoria», derogada por la Ley 15/2015 y recuperada, con nueva configuración, por la Ley 20/2022. Artículos 2002 a 2010 Antecedente derogado No se encontraron artículos para « ». Prueba otra búsqueda o categoría. Leyenda de colores por categoría Marco general y origen normativo Ámbito de aplicación Competencia y legitimación Tramitación y resolución Recursos Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II · Capítulo XI (artículos 80 bis a 80 quinquies) · Generado como plantilla HTML reutilizable"
+}
