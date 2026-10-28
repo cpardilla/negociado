@@ -17,6 +17,36 @@
     return me ? me.replace(/assets\/js\/core\/data\.js(\?.*)?$/, "") : "";
   })();
 
+  /** Loads a classic script of the app once (relative to the app's folder). */
+  const scripts = new Map();
+  Neg.loadScript = (rel) => {
+    if (!scripts.has(rel))
+      scripts.set(
+        rel,
+        new Promise((resolve, reject) => {
+          const s = document.createElement("script");
+          s.src = base + rel;
+          s.onload = resolve;
+          s.onerror = () => {
+            scripts.delete(rel); // allow a retry
+            reject(new Error(`No se ha podido cargar ${rel}`));
+          };
+          document.head.appendChild(s);
+        })
+      );
+    return scripts.get(rel);
+  };
+
+  /** Adds a stylesheet of the app once (relative to the app's folder). */
+  Neg.loadStyle = (rel) => {
+    if (document.querySelector(`link[data-rel="${rel}"]`)) return;
+    const l = document.createElement("link");
+    l.rel = "stylesheet";
+    l.href = base + rel;
+    l.dataset.rel = rel;
+    document.head.appendChild(l);
+  };
+
   Neg.data = {
     /** Called by each data file. */
     register(record) {
@@ -30,21 +60,21 @@
 
     /** Resolves with the record, loading its file once if needed. */
     load(tipo, id) {
-      if (records[tipo] && records[tipo][id]) return Promise.resolve(records[tipo][id]);
+      if (!records[tipo]) return Promise.reject(new Error(`Tipo de datos desconocido: ${tipo}`));
+      if (records[tipo][id]) return Promise.resolve(records[tipo][id]);
       const key = `${tipo}/${id}`;
-      if (pending.has(key)) return pending.get(key);
-      const p = new Promise((resolve, reject) => {
-        const s = document.createElement("script");
-        s.src = `${base}data/${FOLDERS[tipo]}${encodeURIComponent(id)}.js`;
-        s.onload = () => (records[tipo][id] ? resolve(records[tipo][id]) : reject(new Error(`${key}: el fichero no registra sus datos`)));
-        s.onerror = () => {
-          pending.delete(key); // allow a retry
-          reject(new Error(`No se ha podido cargar ${key}`));
-        };
-        document.head.appendChild(s);
-      });
-      pending.set(key, p);
-      return p;
+      if (!pending.has(key))
+        pending.set(
+          key,
+          Neg.loadScript(`data/${FOLDERS[tipo]}${encodeURIComponent(id)}.js`).then(
+            () => records[tipo][id] || Promise.reject(new Error(`${key}: el fichero no registra sus datos`)),
+            (err) => {
+              pending.delete(key);
+              throw err;
+            }
+          )
+        );
+      return pending.get(key);
     },
   };
 })();

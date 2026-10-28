@@ -75,7 +75,7 @@ for (const law of leyes) {
     for (const x of list) {
       if (typeof x === "string") {
         const a = law.articulos[x];
-        entradas.push({ k: "ley", t: `Art. ${x}. ${a.r}`, c: [law.id, ...trail].join(" › "), u: `#/ley/${law.id}/${encodeURIComponent(x)}` });
+        entradas.push({ k: "ley", t: `Art. ${a.n || x}. ${a.r}`, c: [law.id, ...trail].join(" › "), u: `#/ley/${law.id}/${encodeURIComponent(x)}` });
       } else {
         entradas.push({ k: "ley", t: `${x.num}. ${x.t}`.replace(/\.\s*\.$/, "."), c: [law.id, ...trail].join(" › "), u: `#/ley/${law.id}/${encodeURIComponent(firstArticle(x))}` });
         walk(x.h, [...trail, x.num]);

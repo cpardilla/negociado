@@ -37,9 +37,12 @@
     const el = document.getElementById("view");
     const content = document.querySelector(".content");
     const view = views[where.name];
-    // A new view starts at the top; moving inside the same view (another step, another article)
-    // lets the view decide.
-    if (where.name !== lastName && content) content.scrollTop = 0;
+    // A new view starts at the top and from scratch (el.dataset.view is where a view notes what it
+    // drew, to update only what changes when moving inside it: another article, another step).
+    if (where.name !== lastName) {
+      if (content) content.scrollTop = 0;
+      delete el.dataset.view;
+    }
     lastName = where.name;
     Neg.shell && Neg.shell.markCurrent(where);
     if (!view) {

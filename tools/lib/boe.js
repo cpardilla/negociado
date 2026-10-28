@@ -124,12 +124,13 @@ function load(clave) {
   const articulos = new Map();
   const orden = [];
   const keysOfBlock = new Map(); // block id → article keys it stands for
-  const add = (key, b, rubrica) => {
+  const add = (key, b, rubrica, numero) => {
     // Two blocks with one key means a numbering form the reader does not know: stop, never overwrite.
     if (articulos.has(key)) throw new Error(`${clave}: dos artículos con la clave «${key}» (${articulos.get(key).bloque}, ${b.id})`);
     const texto = b.parrafos.map((p) => p[1]).join("\n");
     articulos.set(key, {
       key,
+      numero: numero || key, // as the BOE writes it ("778 quáter", "42 bis a)")
       bloque: b.id,
       rubrica,
       parrafos: b.parrafos,
@@ -152,7 +153,7 @@ function load(clave) {
       continue;
     }
     const m = head.match(ARTICLE);
-    if (m) add(articleKey(m[1]), b, m[2].replace(/\.$/, "").trim()); // others: disposiciones, preámbulo…
+    if (m) add(articleKey(m[1]), b, m[2].replace(/\.$/, "").trim(), m[1].trim()); // others: disposiciones, preámbulo…
   }
   // Structure: every heading (libro, título, capítulo, sección) with the articles under it.
   const LEVELS = { libro: 1, titulo: 2, capitulo: 3, seccion: 4 };

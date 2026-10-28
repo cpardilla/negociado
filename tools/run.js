@@ -165,7 +165,7 @@ async function run(opts) {
       })()`,
     });
 
-    const body = opts.script ? fs.readFileSync(path.resolve(opts.script), "utf8") : "return document.title;";
+    const body = opts.body || (opts.script ? fs.readFileSync(path.resolve(opts.script), "utf8") : "return document.title;");
     const argValue = opts.arg.length > 1 ? opts.arg : opts.arg[0] ?? null;
     const { result, exceptionDetails } = await send("Runtime.evaluate", {
       expression: `(async (__arg) => { ${body}\n })(${JSON.stringify(argValue)})`,

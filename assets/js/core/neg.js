@@ -106,9 +106,15 @@
     toggle() {
       Neg.prefs.set("tema", Neg.theme.get() === "oscuro" ? "claro" : "oscuro");
       Neg.theme.apply();
+      document.dispatchEvent(new Event("neg:tema"));
     },
   };
   Neg.theme.apply();
+  // Following the system: its changes are announced too (views that read colours redraw).
+  if (window.matchMedia)
+    matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+      if (!Neg.prefs.get("tema", null)) document.dispatchEvent(new Event("neg:tema"));
+    });
 
   /** A short message at the bottom of the screen. */
   Neg.toast = (msg) => {

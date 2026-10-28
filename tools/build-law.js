@@ -60,7 +60,9 @@ function build(clave) {
   for (const key of law.orden) {
     const a = law.articulos.get(key);
     articulos[key] = {
+      ...(a.numero !== key ? { n: a.numero } : {}), // number as the BOE writes it, when not the key
       r: a.rubrica,
+      b: a.bloque, // BOE anchor: …act.php?id=…#<b>
       v: a.vigencia,
       ...(a.norma && a.norma !== law.id ? { m: a.norma } : {}),
       ...(a.sinContenido ? { x: 1 } : {}),
