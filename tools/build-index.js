@@ -61,7 +61,8 @@ const entry = (r) => ({ id: r.id, ley: r.ley, grupo: r.grupo || "", titulo: r.ti
 const catalogo = {
   tipo: "catalogo",
   id: "catalogo",
-  leyes: LEYES.filter((l) => lawById.has(l.clave)).map((l) => {
+  // The menu's laws: the complete ones (the others carry only the articles the content cites).
+  leyes: LEYES.filter((l) => lawById.has(l.clave) && !lawById.get(l.clave).parcial).map((l) => {
     const law = lawById.get(l.clave);
     return { id: law.id, nombre: law.nombre, titulo: law.titulo, fecha: law.boe.fecha, articulos: law.orden.length };
   }),
@@ -69,13 +70,13 @@ const catalogo = {
   guias: guias.sort(byLaw).map(entry),
   // Every law the content may cite (tools/leyes.json), for the live references: its BOE page,
   // and whether the app carries its text (data/leyes/<id>.js: whole, or only the cited articles).
-  normas: LEYES.map((l) => ({ id: l.clave, boe: l.id, texto: lawById.has(l.clave) ? (l.completa ? "completa" : "citada") : null })),
+  normas: LEYES.map((l) => ({ id: l.clave, boe: l.id, texto: lawById.has(l.clave) ? (lawById.get(l.clave).parcial ? "citada" : "completa") : null })),
   alias: Object.fromEntries(LEYES.flatMap((l) => [[l.clave, l.clave], ...l.alias.map((a) => [a, l.clave])])),
 };
 
 // Search index: k (kind) · t (title) · d (detail) · c (context) · u (address).
 const entradas = [];
-for (const law of leyes) {
+for (const law of leyes.filter((l) => !l.parcial)) {
   (function walk(list, trail) {
     for (const x of list) {
       if (typeof x === "string") {

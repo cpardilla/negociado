@@ -129,7 +129,8 @@ test("live references: links, cited apartado only, no inner scroll, inside the s
   assert.ok(r.first.noScroll, "sin barra de desplazamiento propia");
   assert.ok(r.first.inside, "dentro de la pantalla");
   assert.ok(r.escClosed, "Esc la cierra");
-  assert.match(r.other, /no está incluido en la aplicación.*Ver la norma en el BOE/);
+  // Cited laws now carry the cited articles: text plus a direct link to the article in the BOE.
+  assert.match(r.other, /Art\. 1973 CC.*Ver en el BOE/);
   assert.ok(r.xClosed, "✕ la cierra");
   assert.ok(r.insideAgain, "dentro de la pantalla aunque el enlace no esté a la vista");
 });

@@ -67,16 +67,40 @@ function ordinalNumber(words) {
   }
   return null;
 }
-/** "Artículo primero. Rúbrica" → "Artículo 1. Rúbrica" (heading text only). */
-function numericHeading(head) {
-  const m = head.match(/^(Art[íi]culo\s+)((?:[A-Za-zÁÉÍÓÚáéíóú]+)(?:\s+[A-Za-zÁÉÍÓÚáéíóú]+)?)(?=[.\s]|$)/);
+// Cardinals: the LOPJ numbers some articles so ("Artículo doscientos ochenta y uno").
+const CARD_UNITS = { un: 1, uno: 1, una: 1, dos: 2, tres: 3, cuatro: 4, cinco: 5, seis: 6, siete: 7, ocho: 8, nueve: 9 };
+const CARD_TEENS = { diez: 10, once: 11, doce: 12, trece: 13, catorce: 14, quince: 15, dieciseis: 16, diecisiete: 17, dieciocho: 18, diecinueve: 19, veinte: 20, veintiuno: 21, veintiun: 21, veintidos: 22, veintitres: 23, veinticuatro: 24, veinticinco: 25, veintiseis: 26, veintisiete: 27, veintiocho: 28, veintinueve: 29 };
+const CARD_TENS = { treinta: 30, cuarenta: 40, cincuenta: 50, sesenta: 60, setenta: 70, ochenta: 80, noventa: 90 };
+const CARD_HUNDREDS = { cien: 100, ciento: 100, doscientos: 200, trescientos: 300, cuatrocientos: 400, quinientos: 500, seiscientos: 600, setecientos: 700, ochocientos: 800, novecientos: 900 };
+/** "doscientos ochenta y uno" → 281 (1–999); null when the words are not a whole cardinal. */
+function cardinalNumber(words) {
+  const w = fold(words).split(/\s+/).filter(Boolean);
+  let n = 0;
+  let i = 0;
+  if (CARD_HUNDREDS[w[i]]) n += CARD_HUNDREDS[w[i++]];
+  if (CARD_TEENS[w[i]]) n += CARD_TEENS[w[i++]];
+  else if (CARD_TENS[w[i]]) {
+    n += CARD_TENS[w[i++]];
+    if (w[i] === "y" && CARD_UNITS[w[i + 1]]) {
+      n += CARD_UNITS[w[i + 1]];
+      i += 2;
+    }
+  } else if (CARD_UNITS[w[i]]) n += CARD_UNITS[w[i++]];
+  return n && i === w.length ? n : null;
+}
+
+/** "Artículo doscientos ochenta y uno. Rúbrica" → "Artículo 281. Rúbrica"; with `ordinals`, also
+ *  "Artículo primero" → "Artículo 1" (only for laws numbered in words throughout: elsewhere an
+ *  ordinal-numbered article belongs to the approving decree). Heading text only. */
+function numericHeading(head, ordinals) {
+  const m = head.match(/^(Art[íi]culo\s+)([A-Za-zÁÉÍÓÚáéíóú]+(?:\s+[A-Za-zÁÉÍÓÚáéíóú]+){0,4})(?=[.\s]|$)/);
   if (!m) return head;
-  // Try two words first ("vigésimo segundo"), then one ("primero").
+  // The longest run of words that is a number: "doscientos ochenta y uno", "vigésimo segundo", "primero".
   const words = m[2].split(/\s+/);
-  for (const take of [2, 1]) {
-    if (words.length < take) continue;
-    const n = ordinalNumber(words.slice(0, take).join(" "));
-    if (n) return m[1] + n + head.slice(m[1].length + words.slice(0, take).join(" ").length);
+  for (let take = words.length; take >= 1; take--) {
+    const text = words.slice(0, take).join(" ");
+    const n = cardinalNumber(text) || (ordinals && ordinalNumber(text));
+    if (n) return m[1] + n + head.slice(m[1].length + text.length);
   }
   return head;
 }
@@ -99,7 +123,8 @@ function load(clave) {
   // Words → numbers only in laws numbered in words throughout (LO 1/1982, Ley 30/1979). Where
   // numbered articles exist (RH), "Artículo primero…" belong to the approving decree: left out.
   const wordsOnly = !snap.bloques.some((b) => b.tipo === "precepto" && b.parrafos.length && /^Art[íi]culo\s+\d/i.test(b.parrafos[0][1]));
-  const heads = (b) => (b.tipo === "precepto" && b.parrafos.length ? (wordsOnly ? numericHeading(b.parrafos[0][1]) : b.parrafos[0][1]) : "");
+  // Cardinals in words are always the law's own numbering (LOPJ); ordinals only where wordsOnly.
+  const heads = (b) => (b.tipo === "precepto" && b.parrafos.length ? numericHeading(b.parrafos[0][1], wordsOnly) : "");
   const own = new Set(snap.bloques.map((b) => heads(b).match(ARTICLE)).filter((m) => m && !RANGE.test(m[0])).map((m) => articleKey(m[1])));
 
   const articulos = new Map();
@@ -189,4 +214,4 @@ function division(law, names) {
   return best;
 }
 
-module.exports = { load, fold, articleKey, range, division, ordinalNumber, SUFFIXES, ART_NUM };
+module.exports = { load, fold, articleKey, range, division, ordinalNumber, cardinalNumber, SUFFIXES, ART_NUM };

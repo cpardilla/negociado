@@ -55,10 +55,11 @@
       return paragraphs.map(([role, t]) => `<p${cls[role] ? ` class="${cls[role]}"` : ""}>${highlight ? highlight(t) : esc(t)}</p>`).join("");
     },
 
-    /** Address of the article in the BOE's consolidated text. */
+    /** The article in the BOE's consolidated text, at the version the app quotes:
+     *  act.php?id=<law>&p=<consolidation date>&tn=1#<block> (the BOE's own article links). */
     boe(law, key) {
       const a = law.articulos[key];
-      return `${law.boe.url}${a && a.b ? `#${a.b}` : ""}`;
+      return `${law.boe.url}&p=${law.boe.fecha}&tn=1${a && a.b ? `#${a.b}` : ""}`;
     },
 
     /** Esquemas and guías covering an article, from the catalogue. */
