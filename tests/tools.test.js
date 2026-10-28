@@ -21,6 +21,14 @@ test("articleKey normalises article numbers", () => {
   assert.equal(articleKey("42 bis a)"), "42 bis a");
   assert.equal(articleKey("42 bis.b)"), "42 bis b");
   assert.equal(articleKey("80 quinquies"), "80 quinquies");
+  assert.equal(articleKey("778 quáter"), "778 quater", "the BOE writes it with an accent");
+});
+
+test("LEC: 778 and 778 quáter are two articles (no key collision)", () => {
+  const lec = load("LEC");
+  assert.match(lec.articulos.get("778").rubrica, /^Eficacia civil de resoluciones/);
+  assert.match(lec.articulos.get("778 quater").rubrica, /^Ámbito de aplicación/);
+  assert.equal(new Set(lec.orden).size, lec.orden.length);
 });
 
 test("BOE snapshots: every law in tools/leyes.json is present and well formed", () => {
@@ -208,14 +216,13 @@ test("inventory: índice entries match the source", () => {
 
 // ── Headless runner ─────────────────────────────────────────────────────────
 
-test("runner opens the current index over file:// and http", { timeout: 120000 }, async () => {
+test("runner opens the app over file:// and http", { timeout: 120000 }, async () => {
   const { run } = require("../tools/run");
   for (const http of [false, true]) {
-    const r = await run({ page: "index.html", http, browser: "edge", wait: 200, arg: [] });
-    assert.equal(r.result, "Recursos Interactivos – Negociado", `http=${http}`);
+    const r = await run({ page: "index.html", http, browser: "edge", wait: 400, arg: [] });
+    assert.equal(r.result, "Negociado", `http=${http}`);
     assert.deepEqual(r.exceptions, [], `http=${http}`);
-    // Over http the current site has no favicon (as on GitHub Pages): the only expected error.
-    assert.deepEqual(r.consoleErrors.filter((e) => !/favicon\.ico/.test(e)), [], `http=${http}`);
+    assert.deepEqual(r.consoleErrors, [], `http=${http}`);
   }
 });
 

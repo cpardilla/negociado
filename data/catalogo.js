@@ -1,0 +1,2 @@
+/* Generado por tools/build-index.js — 2 leyes, 0 esquemas, 0 guías. No editar. */
+Neg.data.register({"tipo":"catalogo","id":"catalogo","leyes":[{"id":"LEC","nombre":"Ley de Enjuiciamiento Civil","titulo":"Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil","fecha":"20261007","articulos":867},{"id":"LJV","nombre":"Ley de la Jurisdicción Voluntaria","titulo":"Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria","fecha":"20260305","articulos":165}],"esquemas":[],"guias":[]});

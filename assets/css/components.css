@@ -639,11 +639,6 @@
   color: var(--primary);
   font-weight: 600;
 }
-.tree mark {
-  background: var(--gold-soft);
-  color: inherit;
-  border-radius: 2px;
-}
 .article {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -798,6 +793,77 @@
 .tile p {
   font-size: var(--fs-sm);
   color: var(--text-2);
+}
+
+/* ── Search results ─────────────────────────────────────────────────────── */
+.results {
+  display: grid;
+  gap: var(--sp-2);
+}
+.results li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+.results a {
+  display: grid;
+  gap: 2px;
+  color: inherit;
+  text-decoration: none;
+}
+.results a:hover strong {
+  color: var(--link);
+  text-decoration: underline;
+}
+.results span {
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+}
+.results small {
+  flex-shrink: 0;
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+.results mark,
+.tree mark {
+  background: var(--gold-soft);
+  color: inherit;
+  border-radius: 2px;
+}
+
+/* ── Toast (short confirmation, e.g. "Copiado") ─────────────────────────── */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: var(--sp-6);
+  z-index: 50;
+  transform: translate(-50%, 140%);
+  padding: var(--sp-2) var(--sp-5);
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--on-ink);
+  font-size: var(--fs-sm);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--t-norm);
+  pointer-events: none;
+}
+.toast.visible {
+  transform: translate(-50%, 0);
+}
+
+/* ── Messages inside a view (loading, error, not found, no results) ─────── */
+.message {
+  padding: var(--sp-8) var(--sp-4);
+  text-align: center;
+  color: var(--text-2);
+}
+.message h2 {
+  margin-bottom: var(--sp-2);
 }
 
 /* ── Notice (e.g. "material de apoyo") ──────────────────────────────────── */
