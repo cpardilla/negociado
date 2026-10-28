@@ -6,3 +6,6 @@ node_modules/
 tests/results/
 tests/shots/
 *.log
+
+# Capturas de la propuesta visual (se regeneran con tools/run.js)
+docs/diseno/capturas/
