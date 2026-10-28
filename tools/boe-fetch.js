@@ -46,12 +46,12 @@ async function get(url, accept) {
 function parseVersion(body) {
   const parrafos = [];
   const notas = [];
-  const re = /<blockquote>([\s\S]*?)<\/blockquote>|<p([^>]*)>([\s\S]*?)<\/p>|<table[\s\S]*?<\/table>/g;
+  const re = /<blockquote>([\s\S]*?)<\/blockquote>|<p(\s[^>]*)?>([\s\S]*?)<\/p>|<table[\s\S]*?<\/table>/g;
   for (const m of body.matchAll(re)) {
     if (m[1] !== undefined) {
-      for (const p of m[1].matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)) notas.push(text(p[1]));
-    } else if (m[2] !== undefined) {
-      const clase = attrs(m[2]).class || "";
+      for (const p of m[1].matchAll(/<p(?:\s[^>]*)?>([\s\S]*?)<\/p>/g)) notas.push(text(p[1]));
+    } else if (m[3] !== undefined) {
+      const clase = attrs(m[2] || "").class || "";
       const t = text(m[3]);
       if (t) parrafos.push([clase, t]);
     } else {

@@ -32,7 +32,7 @@ function handler(req, res) {
     return;
   }
   let file = path.join(ROOT, rel);
-  if (!file.startsWith(ROOT)) {
+  if (file !== ROOT && !file.startsWith(ROOT + path.sep)) {
     res.writeHead(403).end();
     return;
   }

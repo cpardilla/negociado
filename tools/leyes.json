@@ -1,4 +1,20 @@
 [
-  { "clave": "LEC", "id": "BOE-A-2000-323" },
-  { "clave": "LJV", "id": "BOE-A-2015-7391" }
+  { "clave": "LEC", "id": "BOE-A-2000-323", "alias": ["Ley 1/2000"] },
+  { "clave": "LJV", "id": "BOE-A-2015-7391", "alias": ["Ley 15/2015"] },
+  { "clave": "CC", "id": "BOE-A-1889-4763", "alias": [] },
+  { "clave": "CE", "id": "BOE-A-1978-31229", "alias": [] },
+  { "clave": "LOPJ", "id": "BOE-A-1985-12666", "alias": ["LO 6/1985", "Ley Orgánica 6/1985"] },
+  { "clave": "LRC", "id": "BOE-A-2011-12628", "alias": ["Ley 20/2011"] },
+  { "clave": "LH", "id": "BOE-A-1946-2453", "alias": [] },
+  { "clave": "RH", "id": "BOE-A-1947-3843", "alias": [] },
+  { "clave": "LN", "id": "BOE-A-1862-4073", "alias": [] },
+  { "clave": "CP", "id": "BOE-A-1995-25444", "alias": ["LO 10/1995", "Ley Orgánica 10/1995"] },
+  { "clave": "LSC", "id": "BOE-A-2010-10544", "alias": ["RDL 1/2010", "RDLeg 1/2010", "Real Decreto Legislativo 1/2010"] },
+  { "clave": "LOPJM", "id": "BOE-A-1996-1069", "alias": ["LO 1/1996", "Ley Orgánica 1/1996"] },
+  { "clave": "LOPDH", "id": "BOE-A-1982-11196", "alias": ["LO 1/1982", "Ley Orgánica 1/1982"] },
+  { "clave": "LPPD", "id": "BOE-A-2003-21053", "alias": ["Ley 41/2003"] },
+  { "clave": "LTRANS", "id": "BOE-A-2023-5366", "alias": ["Ley 4/2023"] },
+  { "clave": "LTO", "id": "BOE-A-1979-26445", "alias": ["Ley 30/1979"] },
+  { "clave": "RDTO", "id": "BOE-A-2012-15715", "alias": ["RD 1723/2012", "Real Decreto 1723/2012"] },
+  { "clave": "L8-2021", "id": "BOE-A-2021-9233", "alias": ["Ley 8/2021"] }
 ]

@@ -118,12 +118,31 @@ Para cada esquema y cada guía, lectura completa contra el texto vigente:
 
 ## 7. Fases
 
-### Fase 0 · Red de seguridad y base de verdad (sin cambios en la app) ☐
-1. ☐ Tag `baseline-2026-10-28`; rama de trabajo `rediseno`; `CLAUDE.md`; este plan; `.gitignore`; `.specstory/` fuera del control de versiones (se conserva en disco; hoy es visible en el repositorio público) — *confirmar*; rama local `master` obsoleta — *confirmar si se borra*.
-2. ☐ `tools/boe-fetch.js`: descarga y guarda en `sources/boe/` LEC y LJV (y leyes citadas) con su fecha.
-3. ☐ `tools/extract-current.js`: extrae el contenido actual de los 57 ficheros a JSON (inventario fiel, base para la migración y para comparar).
-4. ☐ `tools/check-content.js` sobre el inventario: **primer informe de hallazgos automáticos** (citas, plazos, terminología, grafos) → `docs/revision/_informe-inicial.md`. Da una visión temprana del estado del contenido antes de rediseñar nada.
-5. ☐ Ejecutor headless (`tools/run.js`, como `edge-run.js` de Agenda), que abre la app por `file://` y por un servidor local http (equivalente a Pages), y captura de pantallas de referencia de cada recurso actual.
+### Fase 0 · Red de seguridad y base de verdad (sin cambios en la app) ✅
+
+Hecha el 2026-10-28, en la rama `rediseno`. La app no se ha tocado.
+
+1. ✅ Tag `baseline-2026-10-28` (estado anterior); rama `rediseno`; `CLAUDE.md`; este plan; `.gitignore`; `.specstory/` fuera de git (se conserva en disco); rama local `master` borrada (estaba contenida en `main`).
+2. ✅ `tools/boe-fetch.js` → `sources/boe/`: 18 leyes con su fecha de actualización (LEC a 07-10-2026, LJV a 05-03-2026, CC a 07-09-2026, CE, LOPJ a 09-10-2026, LRC, LH, RH, LN, CP, LSC, LO 1/1996, LO 1/1982, Ley 41/2003, Ley 4/2023, Ley 30/1979, RD 1723/2012, Ley 8/2021). Lista y alias en `tools/leyes.json`. Para cada artículo, la redacción vigente y, aparte, la publicada aún no vigente (hoy no hay ninguna).
+3. ✅ `tools/extract-current.js` → `sources/actual/` (57 ficheros, 3,7 MB; ids I-LEC, I-LJV, L-LEC, L-LJV, E01–E28, G01–G25 en `catalogo.json`). Esquemas leídos de la página renderizada, con control de texto no capturado (cero); guías: grafo, inicio, etiquetas de actores y demás constantes.
+4. ✅ `tools/check-content.js` + `tools/lib/boe.js` → **`docs/revision/informe-inicial.md`**: 390 hallazgos (82 errores, 29 avisos, 279 para revisar). Comprobaciones: citas (artículo, apartado, letra, ordinal; derogados), alcance (contra la estructura real de la ley, deducida del BOE), rúbricas, plazos, citas literales, terminología y grafos.
+5. ✅ `tools/run.js` (Edge/Chrome headless por DevTools, `file://` o `--http`) y `tools/serve.js` (servidor como GitHub Pages). Las capturas de referencia no se versionan: el tag permite regenerarlas cuando se necesiten.
+
+Auditoría (segunda vuelta) y tests: corregidos en las propias herramientas seis fallos (unidad «meses», palabras con tilde entre número y unidad, citas sin espacio «art.140», `<pre>` tomado por párrafo, error del puente de capturas que tumbaba el proceso, comprobación de ruta del servidor) y dos de lectura del BOE (ordinales con «°» y artículos numerados en letra: «Artículo primero»). `npm test`: 18 tests, todos pasan (lector del BOE, analizador de citas y plazos, grafos, fidelidad del inventario frente a los HTML, ejecutor en `file://` y http, servidor).
+
+#### Hallazgos de la fase 0 (para las fases 3–5)
+- **22 de los 57 recursos no se pueden abrir en local** desde `file://` en este PC: su ruta supera los 260 caracteres de Windows. En Pages funcionan; los nombres cortos del rediseño lo eliminan.
+- **Contenido** (detalle en el informe; lo más grave):
+  - **Emancipación (E16, G13): cita los arts. 314–324 CC**, sin contenido desde la Ley 8/2021; la emancipación está hoy en los **arts. 239–248 CC** (33 + 20 errores).
+  - **Subastas voluntarias (E27, G24): art. 641 LEC**, sin contenido, citado como vigente («venta por persona o entidad especializada»).
+  - **Apelación: art. 457 LEC** (preparación del recurso, suprimida en 2011) citado como vigente en varios recursos; y plazos de apelación de 5 días donde el art. 458 LEC fija 20.
+  - **«art. 753 bis LEC»** (no existe) en tutela/curatela (E15, G12); **arts. 66 bis y 66 ter de la Ley del Notariado** (no existen) en división de la herencia (E02).
+  - Apartados inexistentes: arts. 786.3/786.4, 787.7, 791.4, 258.4, 260.7 LEC; 3.3/3.4, 17.4, 59.4 LJV.
+  - 24 plazos que no aparecen en el precepto citado, a revisar uno a uno.
+  - Terminología: «Secretario judicial», «Juzgado de Primera Instancia», «incapacitación»… en 90 grupos (ojo: el propio texto consolidado del BOE conserva «Secretario judicial» y «Juzgado de Primera Instancia», porque la LO 7/2015 y la LO 1/2025 cambian la denominación por remisión general; en citas literales se respeta, en el texto explicativo se actualiza).
+- **Guías**: 9 pasos huérfanos (ya conocidos). Los códigos de actor significan cosas distintas según la guía (`ambos` = «LAJ + Tribunal», «LAJ / Juez», «LAJ o Juez», «Juez + LAJ»… y en una, «LAJ e interesados»).
+- **Contenido duplicado entre esquemas** (DRY de contenido, fase 3): E06 (Título Preliminar) tiene tarjetas de los arts. 13–22 (Título I) y E07 de los arts. 1–8; E05 (liquidación del REM) repite tarjetas de los arts. 784–788 LEC (división de la herencia); E16 (emancipación) repite arts. de las normas comunes de la LJV.
+- La LJV numera tres artículos como «42 bis a), b) y c)»: el formato de datos nuevo debe admitirlo.
 
 ### Publicación ☐
 - Cada bloque terminado (p. ej. «leyes completas», «guías migradas») se propone para `main` con un resumen; al fusionarse, Pages lo publica.
@@ -258,4 +277,5 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-28 · Fase 0 completada. El ejecutor (0.5) se adelantó al inventario (0.3) porque el inventario de los esquemas se lee de la página renderizada. Además de LEC y LJV se descargaron las 16 leyes más citadas.
 - 2026-10-28 · Forma de trabajar fijada por el propietario: idioma de respuesta según el suyo; auditoría completa + batería de tests tras cada implementación; Agenda y Plantillas intocables; memoria USB fuera del alcance.

@@ -143,12 +143,18 @@ async function run(opts) {
       if (msg.sessionId !== sessionId || msg.method !== "Runtime.bindingCalled" || msg.params.name !== "__runBinding") return;
       const { id, req } = JSON.parse(msg.params.payload);
       let out = null;
-      if (req.viewport) await send("Emulation.setDeviceMetricsOverride", { width: req.viewport[0], height: req.viewport[1], deviceScaleFactor: 1, mobile: false });
-      if (req.shot) {
-        if (!opts.shots) throw new Error("--shots no indicado");
-        fs.mkdirSync(opts.shots, { recursive: true });
-        const { data } = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: !!req.full });
-        fs.writeFileSync(path.join(opts.shots, `${req.shot}.png`), Buffer.from(data, "base64"));
+      try {
+        if (req.viewport) await send("Emulation.setDeviceMetricsOverride", { width: req.viewport[0], height: req.viewport[1], deviceScaleFactor: 1, mobile: false });
+        if (req.shot) {
+          if (!opts.shots) throw new Error("captura pedida sin --shots");
+          fs.mkdirSync(opts.shots, { recursive: true });
+          const { data } = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: !!req.full });
+          fs.writeFileSync(path.join(opts.shots, `${req.shot}.png`), Buffer.from(data, "base64"));
+        }
+      } catch (err) {
+        // Reported, never thrown: an exception here would end the whole run without a report.
+        report.exceptions.push(`[__run] ${err.message}`);
+        out = { error: err.message };
       }
       await send("Runtime.evaluate", { expression: `window.__runDone(${JSON.stringify(id)}, ${JSON.stringify(out)})` });
     });
