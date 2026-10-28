@@ -793,7 +793,7 @@
 
 /* ── Reference popover (literal text of a cited article) ────────────────── */
 .popover {
-  position: absolute;
+  position: fixed; /* placed by referencias.js next to its link, inside the screen */
   z-index: 30;
   width: min(480px, calc(100vw - 32px));
   background: var(--surface);
@@ -801,6 +801,10 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
+}
+/* It receives focus when it opens (for Esc and screen readers): no ring around the whole window. */
+.popover:focus {
+  outline: none;
 }
 .popover-head {
   display: flex;
@@ -823,6 +827,7 @@
 /* Natural height, no inner scroll: it shows only the cited apartado; the whole
  * article is one click away ("Ver artículo completo"). */
 .popover-body {
+  margin: 0;
   padding: var(--sp-3) var(--sp-4);
   font-family: var(--font-display);
   font-size: var(--fs-sm);

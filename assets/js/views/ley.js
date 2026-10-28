@@ -148,6 +148,9 @@
         <div class="law"><nav class="tree" aria-label="Índice de la ${esc(law.id)}">${tree.html}</nav><div class="law-main">${key ? articleHtml(law, key, words) : overviewHtml(law)}</div></div>`;
       wire(el, law);
     }
+    // "conforme al artículo 17": a link that shows that article without leaving this one.
+    const text = el.querySelector(".law-main .law-text");
+    if (text) Neg.referencias.link(text, law.id);
     const counter = el.querySelector("[data-count]");
     counter.textContent = words.length ? `${tree.count} artículo${tree.count === 1 ? "" : "s"}` : "";
     document.title = key ? `Art. ${Neg.leyes.label(law, key)} ${law.id} · Negociado` : `${law.nombre} · Negociado`;

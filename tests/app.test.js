@@ -94,6 +94,46 @@ for (const http of [false, true]) {
   });
 }
 
+test("live references: links, cited apartado only, no inner scroll, inside the screen, Esc and ✕", { timeout: 90000 }, async () => {
+  const r = await page(
+    `await go('#/ley/LJV/6', 1000);
+     // (the BOE text has non-breaking spaces: compared with spaces normalised)
+     const inLaw = [...document.querySelectorAll('.law-text a.ref')].map((a) => a.textContent.replace(/\\s+/g, ' ') + ' → ' + a.dataset.ley + ' ' + a.dataset.art);
+     // A text like an esquema's: one citation to a law the app carries, one to a law it does not.
+     const box = document.createElement('p');
+     box.textContent = 'Competencia: art. 140.1 LJV; prescripción: art. 1973 CC.';
+     document.querySelector('.page-head').append(box);
+     Neg.referencias.link(box, 'LJV');
+     const refs = [...box.querySelectorAll('a.ref')].map((a) => a.textContent);
+     box.querySelector('a.ref').click(); await wait(500);
+     const p = document.querySelector('.popover'); const rect = p.getBoundingClientRect();
+     const first = { head: p.querySelector('.popover-head strong').textContent, paras: [...p.querySelectorAll('.popover-body p')].map((x) => x.textContent.slice(0, 12)), foot: p.querySelector('.popover-foot').textContent,
+       noScroll: p.scrollHeight <= p.clientHeight + 1, inside: rect.top >= 0 && rect.bottom <= innerHeight && rect.left >= 0 && rect.right <= innerWidth };
+     document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' })); await wait(50);
+     const escClosed = !document.querySelector('.popover');
+     box.querySelectorAll('a.ref')[1].click(); await wait(400);
+     const other = document.querySelector('.popover').textContent.replace(/\\s+/g, ' ');
+     document.querySelector('.popover [data-action="close-ref"]').click(); await wait(50);
+     const xClosed = !document.querySelector('.popover');
+     // Off-screen link (scrolled away): the window still opens inside the screen.
+     document.querySelector('.law-text a.ref').click(); await wait(500);
+     const r2 = document.querySelector('.popover').getBoundingClientRect();
+     const insideAgain = r2.top >= 0 && r2.bottom <= innerHeight;
+     return { inLaw, refs, first, escClosed, other, xClosed, insideAgain };`
+  );
+  assert.deepEqual(r.inLaw, ["artículo 43 de la Ley de Enjuiciamiento Civil → LEC 43"]);
+  assert.deepEqual(r.refs, ["art. 140.1 LJV", "art. 1973 CC"]);
+  assert.equal(r.first.head, "Art. 140.1 LJV");
+  assert.deepEqual(r.first.paras, ["1. Será comp", "Si el requer", "Si tras la r"], "solo el apartado 1 (con sus párrafos)");
+  assert.match(r.first.foot, /Ver artículo completo/);
+  assert.ok(r.first.noScroll, "sin barra de desplazamiento propia");
+  assert.ok(r.first.inside, "dentro de la pantalla");
+  assert.ok(r.escClosed, "Esc la cierra");
+  assert.match(r.other, /no está incluido en la aplicación.*Ver la norma en el BOE/);
+  assert.ok(r.xClosed, "✕ la cierra");
+  assert.ok(r.insideAgain, "dentro de la pantalla aunque el enlace no esté a la vista");
+});
+
 test("search: accents and case ignored, every word must match", { timeout: 60000 }, async () => {
   const r = await page(
     `await go('#/buscar?q=CONCILIACION%20celebracion', 900);
