@@ -40,3 +40,9 @@ API de datos abiertos del BOE, legislación consolidada: `https://www.boe.es/dat
 - Push a GitHub solo cuando el propietario lo pida.
 - Actualizar `docs/ROADMAP.md` con cada paso.
 - Construir HTML siempre escapando el texto (una única función compartida) o con APIs del DOM.
+
+## Reglas de diseño (del propietario)
+
+- Sin barras de desplazamiento dentro de ventanas o paneles pequeños siempre que se pueda: altura natural y, si el contenido es largo, mostrar lo esencial con un enlace a la vista completa. Solo desplazan la columna de navegación y la página.
+- Cabecera de 64 px, con el buscador holgado (no apretado).
+- Contraste mínimo WCAG AA (4,5:1) en ambos temas: lo comprueba `tests/contrast.test.js`.

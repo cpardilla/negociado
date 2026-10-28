@@ -254,6 +254,6 @@
   .app-header.searching .header-search {
     display: block;
     position: absolute;
-    inset: 8px var(--sp-4);
+    inset: calc((var(--header-h) - 40px) / 2) var(--sp-4);
   }
 }

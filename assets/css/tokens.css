@@ -41,7 +41,7 @@
   --t-norm: 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Layout */
-  --header-h: 56px;
+  --header-h: 64px;
   --sidebar-w: 320px;
   --content-max: 1200px;
   --reading-max: 72ch;
