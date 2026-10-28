@@ -6,7 +6,14 @@ const fs = require("fs");
 const path = require("path");
 
 const DIR = path.join(__dirname, "..", "..", "sources", "boe");
-const SUFFIXES = "bis|ter|quater|quinquies|sexies|septies|octies|nonies|decies";
+// Latin suffixes of inserted articles. The BOE writes some with an accent ("778 quáter"): both
+// forms are read, keys use the plain one. Always used with (?![a-z]), so "ter" never takes the
+// start of "terdecies".
+// Compound ones are built, not listed: un/duo/ter/… + decies/vicies/tricies ("529 tervicies" in the LSC).
+const SUFFIXES = "bis|ter|qu[aá]ter|quinquies|sexies|s[eé]pties|octies|nonies|(?:un|duo|ter|qu[aá]ter|quin|sex|sept|octo|novo)?(?:decies|vicies|tricies)";
+// An article number in every form the BOE uses: "140", "26 bis", "778 quáter", "529 terdecies",
+// "216 bis 2" (LOPJ), "42 bis a)" (LJV), "236-a", "236-ñ", "354 a)", "398.a" (RH).
+const ART_NUM = `\\d+(?:\\s*(?:${SUFFIXES})(?![a-zñ])(?:\\s+\\d+(?!\\d))?)?(?:[-.][a-zñ](?![a-zñ])|\\s*\\.?\\s*[a-zñ]\\))?`;
 
 /** Lowercase, no accents, single spaces: for comparisons that ignore typography. */
 function fold(s) {
@@ -20,11 +27,19 @@ function fold(s) {
     .trim();
 }
 
-/** "26 bis" / "26bis" / "26 BIS" → "26 bis"; "42 bis a)" / "42 bis.a)" → "42 bis a" (LJV numbers some articles so). */
+/** Canonical key of an article number: "26BIS" → "26 bis", "778 quáter" → "778 quater",
+ *  "42 bis.b)" → "42 bis b", "216 bis 2" → "216 bis 2", "236-a" / "398.a" / "354 a)" → "236 a"…
+ *  Accents go, but "ñ" stays a letter of its own ("236-ñ" is not "236-n"). */
 function articleKey(s) {
-  const m = String(s).trim().toLowerCase().match(new RegExp(`^(\\d+)\\s*(${SUFFIXES})?(?:\\s*\\.?\\s*([a-z])\\))?`));
+  const t = String(s)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/ñ/g, "ñ")
+    .replace(/[̀-ͯ]/g, "")
+    .trim();
+  const m = t.match(new RegExp(`^(\\d+)(?:\\s*(${SUFFIXES})(?![a-zñ])(?:\\s+(\\d+)(?!\\d))?)?(?:[-.]([a-zñ])(?![a-zñ])|\\s*\\.?\\s*([a-zñ])\\))?`));
   if (!m) return null;
-  return [m[1], m[2], m[2] && m[3]].filter(Boolean).join(" ");
+  return [m[1], m[2], m[3], m[4] || m[5]].filter(Boolean).join(" ");
 }
 
 // Older laws (LH, LN…) write ordinals as words: "Primero.", "Segundo."…
@@ -94,28 +109,50 @@ function load(clave) {
     return null;
   }
   const snap = JSON.parse(fs.readFileSync(file, "utf8"));
+  // Some BOE texts carry decomposed accents (NFD): normalise once, so every comparison holds.
+  for (const b of snap.bloques) for (const p of b.parrafos || []) p[1] = p[1].normalize("NFC");
+
+  const ARTICLE = new RegExp(`^Art[íi]culo\\s+(${ART_NUM})\\.?\\s*(.*)$`, "i");
+  // "Artículo 301 a 324. (Derogados)": one block standing for a run of repealed articles.
+  const RANGE = /^Art[íi]culos?\s+(\d+)\s+(?:a|al)\s+(\d+)\b/i;
+  // Words → numbers only in laws numbered in words throughout (LO 1/1982, Ley 30/1979). Where
+  // numbered articles exist (RH), "Artículo primero…" belong to the approving decree: left out.
+  const wordsOnly = !snap.bloques.some((b) => b.tipo === "precepto" && b.parrafos.length && /^Art[íi]culo\s+\d/i.test(b.parrafos[0][1]));
+  const heads = (b) => (b.tipo === "precepto" && b.parrafos.length ? (wordsOnly ? numericHeading(b.parrafos[0][1]) : b.parrafos[0][1]) : "");
+  const own = new Set(snap.bloques.map((b) => heads(b).match(ARTICLE)).filter((m) => m && !RANGE.test(m[0])).map((m) => articleKey(m[1])));
+
   const articulos = new Map();
   const orden = [];
-  for (const b of snap.bloques) {
-    if (b.tipo !== "precepto" || !b.parrafos.length) continue;
-    const head = numericHeading(b.parrafos[0][1]);
-    const m = head.match(new RegExp(`^Art[íi]culo\\s+(\\d+(?:\\s*(?:${SUFFIXES})(?:\\s*\\.?\\s*[a-z]\\))?)?)\\.?\\s*(.*)$`, "i"));
-    if (!m) continue; // disposiciones, preámbulo…
-    const key = articleKey(m[1]);
+  const keysOfBlock = new Map(); // block id → article keys it stands for
+  const add = (key, b, rubrica) => {
+    // Two blocks with one key means a numbering form the reader does not know: stop, never overwrite.
+    if (articulos.has(key)) throw new Error(`${clave}: dos artículos con la clave «${key}» (${articulos.get(key).bloque}, ${b.id})`);
     const texto = b.parrafos.map((p) => p[1]).join("\n");
     articulos.set(key, {
       key,
-      rubrica: m[2].replace(/\.$/, "").trim(),
+      bloque: b.id,
+      rubrica,
       parrafos: b.parrafos,
       texto,
       plano: fold(texto),
-      sinContenido: /^\(?(sin contenido|derogad[oa])\b/i.test(b.parrafos.slice(1).map((p) => p[1]).join(" ").trim()),
+      sinContenido: /^\(?(sin contenido|derogad[oa]s?)\b/i.test(b.parrafos.slice(1).map((p) => p[1]).join(" ").trim()),
       vigencia: b.vigencia,
       norma: b.norma,
       pendiente: b.pendiente || null,
       apartados: structure(b.parrafos),
     });
     orden.push(key);
+    keysOfBlock.set(b.id, [...(keysOfBlock.get(b.id) || []), key]);
+  };
+  for (const b of snap.bloques) {
+    const head = heads(b);
+    const r = head.match(RANGE);
+    if (r) {
+      for (let n = Number(r[1]); n <= Number(r[2]); n++) if (!own.has(String(n))) add(String(n), b, "");
+      continue;
+    }
+    const m = head.match(ARTICLE);
+    if (m) add(articleKey(m[1]), b, m[2].replace(/\.$/, "").trim()); // others: disposiciones, preámbulo…
   }
   // Structure: every heading (libro, título, capítulo, sección) with the articles under it.
   const LEVELS = { libro: 1, titulo: 2, capitulo: 3, seccion: 4 };
@@ -128,13 +165,12 @@ function load(clave) {
       if (!nivel) continue;
       const numero = nivel === "seccion" ? (b.parrafos[0][1].match(/^Secci[oó]n \S+/) || [""])[0] : b.parrafos[0][1];
       const titulo = nivel === "seccion" ? b.parrafos[0][1].replace(/^Secci[oó]n \S+\s*/, "") : (b.parrafos.find((p) => /_tit$/.test(p[0])) || ["", ""])[1];
-      const d = { nivel, numero, titulo: titulo.replace(/\.$/, ""), articulos: [] };
+      const d = { nivel, numero, titulo: titulo.replace(/\.$/, ""), bloque: b.id, articulos: [] };
       while (open.length && LEVELS[open[open.length - 1].nivel] >= LEVELS[nivel]) open.pop();
       open.push(d);
       divisiones.push(d);
     } else if (b.tipo === "precepto") {
-      const m = b.parrafos.length && numericHeading(b.parrafos[0][1]).match(new RegExp(`^Art[íi]culo\\s+(\\d+(?:\\s*(?:${SUFFIXES})(?:\\s*\\.?\\s*[a-z]\\))?)?)`, "i"));
-      if (m && articulos.has(articleKey(m[1]))) open.forEach((d) => d.articulos.push(articleKey(m[1])));
+      for (const key of keysOfBlock.get(b.id) || []) open.forEach((d) => d.articulos.push(key));
     } else if (b.tipo !== "nota_inicial" && b.tipo !== "preambulo") open.length = 0; // disposiciones close the articulado
   }
   const law = { clave, id: snap.id, titulo: snap.titulo, fecha: snap.fecha_actualizacion, articulos, orden, divisiones, plano: fold([...articulos.values()].map((a) => a.texto).join("\n")) };
@@ -171,4 +207,4 @@ function division(law, names) {
   return best;
 }
 
-module.exports = { load, fold, articleKey, range, division, ordinalNumber, SUFFIXES };
+module.exports = { load, fold, articleKey, range, division, ordinalNumber, SUFFIXES, ART_NUM };

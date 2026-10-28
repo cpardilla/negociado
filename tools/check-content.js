@@ -147,7 +147,7 @@ function units(rec) {
 
 // ── Citations ───────────────────────────────────────────────────────────────
 
-const NUM = `\\d+(?:\\s*(?:${SUFFIXES})\\b)?(?:\\.\\d+(?:\\s*\\.?\\s*[ºª°])?)*(?:\\.?\\s*[a-zñ]\\))?`;
+const NUM = `\\d+(?:\\s*(?:${SUFFIXES})(?![a-z]))?(?:\\.\\d+(?:\\s*\\.?\\s*[ºª°])?)*(?:\\.?\\s*[a-zñ]\\))?`;
 // "art. 5", "art.5", "arts. 5 a 9", "artículos 6, 7 y 9"
 const CITE = new RegExp(`\\b(?:art[ií]culos?\\s+|arts?\\.\\s*|arts?\\s+)(${NUM}(?:\\s*(?:,|y|e|a|al|–|-)\\s*${NUM})*)`, "gi");
 
@@ -160,7 +160,7 @@ function parseCitation(numbers) {
     const t = tokens[i].trim();
     if (!t) continue;
     const sep = tokens[i - 1];
-    const m = t.match(new RegExp(`^(\\d+(?:\\s*(?:${SUFFIXES}))?)((?:\\.\\d+)?)((?:\\.\\d+)?)\\s*(\\.?\\s*[ºª°])?\\.?\\s*(?:([a-zñ])\\))?`, "i"));
+    const m = t.match(new RegExp(`^(\\d+(?:\\s*(?:${SUFFIXES})(?![a-z]))?)((?:\\.\\d+)?)((?:\\.\\d+)?)\\s*(\\.?\\s*[ºª°])?\\.?\\s*(?:([a-zñ])\\))?`, "i"));
     if (!m) continue;
     // "18.4.ª" is the 4th rule (regla) of article 18, not its apartado 4.
     const ordinalOnly = m[2] && !m[3] && m[4];
@@ -363,7 +363,7 @@ function checkResource(rec) {
 
     // Card title vs BOE heading (cards for a single LEC/LJV article).
     if (u.card && defaultLaw) {
-      const m = strip(u.card.articulo).match(new RegExp(`^Art[íi]culo\\s+(\\d+(?:\\s*(?:${SUFFIXES}))?)\\s*(?:(LEC|LJV|CC)\\b)?$`, "i"));
+      const m = strip(u.card.articulo).match(new RegExp(`^Art[íi]culo\\s+(\\d+(?:\\s*(?:${SUFFIXES})(?![a-z]))?)\\s*(?:(LEC|LJV|CC)\\b)?$`, "i"));
       if (m && (!m[2] || m[2] === defaultLaw)) {
         const art = load(defaultLaw).articulos.get(articleKey(m[1]));
         if (art) {

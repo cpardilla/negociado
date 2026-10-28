@@ -30,7 +30,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | E19 | CAPÍTULO VIII · De la autorización o aprobación judicial para la realización de actos de dispos | 1R | · | · | · | · | · | 1R |
 | E20 | CAPÍTULO IX · De la declaración de ausencia y fallecimiento | 22R | · | · | · | · | · | 1R |
 | E21 | CAPÍTULO X · De la extracción de órganos de donantes vivos | · | · | · | · | · | · | · |
-| E22 | CAPÍTULO XI · De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciale | 4R | · | · | · | 1R | · | 1R |
+| E22 | CAPÍTULO XI · De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciale | 3R | · | · | · | 1R | · | 1R |
 | E23 | TÍTULO IV - De los expedientes de jurisdicción voluntaria relativos al Derecho sucesorio | · | · | · | · | · | · | 2R |
 | E24 | TÍTULO V - De los expedientes de jurisdicción voluntaria relativos al Derecho de obligaciones | 3R | · | · | · | · | · | 2R |
 | E25 | CAPÍTULO I · De la autorización judicial al usufructuario para reclamar créditos vencidos que f | · | · | · | · | · | · | 2R |
@@ -62,7 +62,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | G23 | CAPÍTULO II · Del expediente de deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | G24 | TÍTULO VII - De los expedientes de subastas voluntarias | 3E | · | · | · | · | · | 2R |
 | G25 | TÍTULO IX - De la conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 78E 29A 151R | 0E 0A 6R | 0E 0A 5R | 0E 0A 24R | 0E 0A 2R | 4E 0A 1R | 0E 0A 90R |
+| | **Total** | 78E 29A 150R | 0E 0A 6R | 0E 0A 5R | 0E 0A 24R | 0E 0A 2R | 4E 0A 1R | 0E 0A 90R |
 
 E = error · A = aviso · R = revisar.
 
@@ -590,7 +590,6 @@ Sin hallazgos automáticos.
 **citas**
 
 - [revisar] «artículos 2002 a 2010»: la LEC vigente acaba en el art. 827; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Marco general y origen normativo» › tarjeta «Marco general» › «Antecedente histórico-procesal» › 1 › punto.1_
-- [revisar] «arts. 86.5.j) y 89.6.g)»: el art. 86 LOPJ no tiene apartado 5 (no tiene apartados numerados) — _sección «Marco general y origen normativo» › tarjeta «Marco general» › referencia 4_
 - [revisar] «Artículo 86.5.j)»: el art. 86 LJV no tiene apartado 5 (tiene 1, 2, 3) (ley por defecto) — _sección «Ecosistema normativo — conexiones relacionadas» › 19_
 - [revisar] «Artículo 89.6.g)»: el art. 89 LJV no tiene apartado 6 (no tiene apartados numerados) (ley por defecto) — _sección «Ecosistema normativo — conexiones relacionadas» › 19_
 

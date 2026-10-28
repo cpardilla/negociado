@@ -25,7 +25,8 @@ function decode(s) {
     return ENTITIES[e] ?? m;
   });
 }
-const text = (html) => decode(html.replace(/<br\s*\/?>/gi, "\n").replace(/<[^>]+>/g, "")).replace(/[ \t\r\n]+/g, " ").trim();
+// NFC: some BOE texts carry decomposed accents, which would break every text comparison.
+const text = (html) => decode(html.replace(/<br\s*\/?>/gi, "\n").replace(/<[^>]+>/g, "")).replace(/[ \t\r\n]+/g, " ").trim().normalize("NFC");
 const attrs = (tag) => Object.fromEntries([...tag.matchAll(/(\w+)="([^"]*)"/g)].map((m) => [m[1], decode(m[2])]));
 
 async function get(url, accept) {
