@@ -88,9 +88,15 @@
   font-size: var(--fs-xs);
   font-weight: 600;
   white-space: nowrap;
-  color: var(--tone, var(--text-2));
-  background: var(--tone-bg, var(--surface-2));
-  border: 1px solid var(--tone-bd, var(--border));
+  color: var(--text-2);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+/* A tag takes a tone only from its own class: never from a toned card or block around it. */
+.tag:is(.c1, .c2, .c3, .c4, .c5, .c6, .t-info, .t-plazo, .t-nota, .t-aviso, .t-ok, .t-ley) {
+  color: var(--tone);
+  background: var(--tone-bg);
+  border-color: var(--tone-bd);
 }
 .tag-on-ink {
   color: var(--on-ink);
@@ -252,6 +258,13 @@
   font-size: var(--fs-sm);
   color: var(--text-3);
 }
+/* A tall toolbar (several rows of filters) scrolls with the page instead of covering it. */
+.toolbar.static {
+  position: static;
+}
+.toolbar .chips.row {
+  flex-basis: 100%;
+}
 
 /* ── Section heading inside a view ──────────────────────────────────────── */
 .section {
@@ -351,11 +364,18 @@
   gap: var(--sp-5) var(--sp-8);
 }
 .card-refs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-1);
   padding: var(--sp-3) var(--sp-5);
   border-top: 1px solid var(--border);
+  font-size: var(--fs-xs);
+  line-height: 1.9;
+  color: var(--text-2);
+}
+.card-refs .label {
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: var(--sp-2);
 }
 
 /* A titled group of points (inside cards and guía steps) */
@@ -391,6 +411,151 @@
 }
 .points li strong {
   color: var(--text-1);
+}
+
+/* ── Esquema blocks ─────────────────────────────────────────────────────── */
+.esq-section .section-head {
+  width: 100%;
+  border-width: 0 0 1px;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+.esq-section .section-head .fold-icon {
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  align-self: center;
+  color: var(--text-3);
+  transition: transform var(--t-fast);
+}
+.esq-section .section-head[aria-expanded="false"] .fold-icon {
+  transform: rotate(-90deg);
+}
+.chapter {
+  margin-top: var(--sp-10);
+  font-size: var(--fs-xl);
+}
+.chapter span {
+  color: var(--gold-text);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: block;
+}
+.prose {
+  max-width: var(--reading-max);
+  color: var(--text-2);
+  margin: var(--sp-3) 0;
+}
+.refs-line {
+  font-size: var(--fs-sm);
+}
+.items {
+  display: grid;
+  gap: var(--sp-2);
+  margin: var(--sp-2) 0;
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+}
+.items li {
+  position: relative;
+  padding-left: var(--sp-4);
+}
+.items li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+}
+.items li strong {
+  color: var(--text-1);
+}
+.items .items {
+  margin: var(--sp-1) 0 0;
+}
+.card-body > .points + .points,
+.card-body > * + .block {
+  margin-top: 0;
+}
+.card.flash {
+  animation: flash 1.6s ease-out;
+}
+@keyframes flash {
+  from {
+    box-shadow: 0 0 0 4px var(--gold);
+  }
+}
+.esq-foot {
+  margin-top: var(--sp-8);
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+/* Normative connections, participant columns, phases */
+.norms,
+.groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--sp-3);
+  margin: var(--sp-3) 0;
+}
+.norm,
+.group {
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+}
+.norm-law {
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+.norm-title {
+  font-family: var(--font-display);
+  font-weight: 650;
+  margin-bottom: var(--sp-2);
+}
+.norm-text {
+  color: var(--text-2);
+  margin-bottom: var(--sp-2);
+}
+.group {
+  border-top: 3px solid var(--tone, var(--border-md));
+}
+.group h4 {
+  font-size: var(--fs-sm);
+  color: var(--tone, var(--text-1));
+}
+.steps {
+  display: grid;
+  gap: var(--sp-2);
+  margin: var(--sp-3) 0;
+  counter-reset: step;
+}
+.step-item {
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+}
+.step-n {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 700;
+}
+.step-title {
+  font-weight: 650;
 }
 
 /* ── Content blocks (guía steps, notes in esquemas) ─────────────────────── */

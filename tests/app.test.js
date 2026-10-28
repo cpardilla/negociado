@@ -134,10 +134,53 @@ test("live references: links, cited apartado only, no inner scroll, inside the s
   assert.ok(r.insideAgain, "dentro de la pantalla aunque el enlace no esté a la vista");
 });
 
+test("esquema view: cards, filters, search, direct link to an article's card, references", { timeout: 90000 }, async () => {
+  const r = await page(
+    `await go('#/esquema/ljv-conciliacion', 1000);
+     const base = { cards: document.querySelectorAll('[data-card]').length, open: document.querySelectorAll('[data-card][aria-expanded="true"]').length,
+       refs: document.querySelectorAll('.esq-body a.ref').length, norms: document.querySelectorAll('.norm').length, groups: document.querySelectorAll('.group').length,
+       pending: document.querySelector('.page-meta .t-aviso').textContent, neutralTagColor: getComputedStyle(document.querySelector('.card .card-meta .tag:not([class*=" c"]):not([class*=" t-"])') || document.body).color };
+     const first = document.querySelector('[data-card] [data-action="toggle"]'); first.click(); await wait(50);
+     const toggled = first.closest('[data-card]').getAttribute('aria-expanded');
+     document.querySelector('.chip[data-cat="c4"]').click(); await wait(100);
+     const cat = document.querySelector('[data-count]').textContent;
+     document.querySelector('.chip[data-cat="c4"]').click(); await wait(100);
+     const input = document.querySelector('.toolbar input');
+     input.value = 'PRESCRIPCION'; input.dispatchEvent(new Event('input')); await wait(300);
+     const search = document.querySelector('[data-count]').textContent;
+     input.value = 'zzzz'; input.dispatchEvent(new Event('input')); await wait(300);
+     const empty = !!document.querySelector('.esq-empty');
+     input.value = ''; input.dispatchEvent(new Event('input')); await wait(200);
+     document.querySelector('[data-action="expand"]').click();
+     const all = document.querySelectorAll('[data-card][aria-expanded="true"]').length;
+     await go('#/esquema/ljv-conciliacion/148', 900);
+     // (cards opened before stay open: the one the address points to is the highlighted one)
+     const target = document.querySelector('.card.flash');
+     const deep = target.querySelector('.card-art').textContent + ' ' + target.getAttribute('aria-expanded');
+     await go('#/esquema/no-existe', 300);
+     const missing = document.getElementById('view').textContent;
+     return { base, toggled, cat, search, empty, all, deep, missing };`
+  );
+  assert.equal(r.base.cards, 31);
+  assert.equal(r.base.open, 0, "las fichas empiezan plegadas");
+  assert.ok(r.base.refs > 200, "las citas son enlaces");
+  assert.equal(r.base.norms, 9);
+  assert.equal(r.base.groups, 4);
+  assert.equal(r.base.pending, "Pendiente de revisión");
+  assert.equal(r.toggled, "true");
+  assert.equal(r.cat, "2 de 31 fichas");
+  assert.equal(r.search, "6 de 31 fichas", "sin tildes ni mayúsculas");
+  assert.ok(r.empty, "aviso cuando nada coincide");
+  assert.equal(r.all, 31);
+  assert.equal(r.deep, "Artículo 148 true");
+  assert.match(r.missing, /No existe este esquema/);
+});
+
 test("search: accents and case ignored, every word must match", { timeout: 60000 }, async () => {
   const r = await page(
     `await go('#/buscar?q=CONCILIACION%20celebracion', 900);
      return [...document.querySelectorAll('.results li strong')].map((s) => s.textContent);`
   );
-  assert.deepEqual(r, ["Art. 145. Celebración del acto de conciliación"]);
+  // The article in the law and its card in the esquema.
+  assert.deepEqual(r, ["Art. 145. Celebración del acto de conciliación", "Artículo 145 · Celebración del acto de conciliación"]);
 });

@@ -11,6 +11,7 @@
 const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
+const citas = require("../assets/js/core/citas");
 
 const ROOT = path.join(__dirname, "..");
 const DATA = path.join(ROOT, "data");
@@ -95,8 +96,22 @@ function firstArticle(div) {
   }
   return "";
 }
-for (const [kind, list] of [["esquema", esquemas], ["guia", guias]])
-  for (const r of list) for (const e of r.busqueda || []) entradas.push({ k: kind, ...e, c: `${r.ley} · ${r.corto || r.titulo}` });
+// Esquemas: every card (its article, title and summary), linked to the card itself.
+const plain = (h) => String(h || "").replace(/<br>/g, " ").replace(/<[^>]+>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+for (const r of esquemas) {
+  (function walk(v) {
+    if (Array.isArray(v)) return v.forEach(walk);
+    if (!v || typeof v !== "object") return;
+    if (v.tarjeta) {
+      const c = v.tarjeta;
+      const found = citas.find(plain(c.articulo).replace(/^Art[íi]culos?/i, "art."), { defaultLaw: r.ley }).filter((f) => f.law === r.ley);
+      const art = found.length ? found[0].refs[0].art : null;
+      entradas.push({ k: "esquema", t: `${plain(c.articulo)} · ${plain(c.titulo)}`, d: plain(c.resumen).slice(0, 160), c: `${r.ley} · ${r.corto}`, u: `#/esquema/${r.id}${art ? `/${encodeURIComponent(art)}` : ""}` });
+    }
+    Object.values(v).forEach(walk);
+  })(r.secciones);
+}
+for (const r of guias) for (const e of r.busqueda || []) entradas.push({ k: "guia", ...e, c: `${r.ley} · ${r.corto || r.titulo}` });
 
 console.log(write("catalogo", catalogo, `${catalogo.leyes.length} leyes, ${catalogo.esquemas.length} esquemas, ${catalogo.guias.length} guías`));
 console.log(write("busqueda", { tipo: "catalogo", id: "busqueda", entradas }, `${entradas.length} entradas`));
