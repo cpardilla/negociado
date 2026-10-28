@@ -149,19 +149,26 @@ Auditoría (segunda vuelta) y tests: corregidos en las propias herramientas seis
 - Antes de fusionar: tests en `file://` y http, enlaces internos comprobados, y la web publicada revisada tras el despliegue.
 - Las URL antiguas (`/02%20-%20Esquemas.../...html`) dejarán de existir: `404.html` redirige cada una a su equivalente nuevo; las que no tengan equivalente muestran un aviso para actualizar favoritos (decisión 8).
 
-### Fase 1 · Arquitectura común ▶
-Visto bueno para empezar: 2026-10-28.
+### Fase 1 · Arquitectura común ✅
+Visto bueno para empezar: 2026-10-28. Terminada el 2026-10-28, con trabajo adelantado de las fases 2 y 3 (los motores se construyeron sobre datos reales, no sobre muestras). `npm test`: 42/42.
 
-1. ▶ Sistema de estilos y **propuesta visual** — hecha, pendiente de visto bueno del propietario. `assets/css/`: `fonts.css` (Plus Jakarta Sans y Outfit incrustadas, generadas por `tools/build-fonts.js`; 117 KB; funcionan en `file://` y https, sin peticiones a terceros), `tokens.css` (cada color una vez con `light-dark()`, tema según el sistema o el interruptor), `base.css`, `layout.css`, `components.css`, `print.css`. Maqueta: `docs/diseno/muestra.html` (#inicio · #ley · #esquema · #guia; `?tema=oscuro`). Continuidad con la app actual: fondo papel, cabecera tinta con filete dorado, los seis colores de categoría, las mismas tipografías, el logotipo de la balanza. Auditoría: tres defectos corregidos tras ver las capturas (resaltado de búsqueda que partía las líneas del índice, desbordamiento horizontal en móvil por la ventana de referencia —ahora hoja inferior—, buscador inaccesible en móvil); `tests/contrast.test.js` (contraste WCAG AA de todos los pares texto/fondo, claro y oscuro: obligó a oscurecer `--text-3` y `--ok`); sin desbordamiento horizontal a 390 y 1440 px. `npm test`: 21/21.
+1. ✅ Sistema de estilos y **propuesta visual** — aprobada por el propietario con dos peticiones, aplicadas: cabecera de 64 px con el buscador holgado, y sin barras de desplazamiento en ventanas o paneles pequeños (reglas en `CLAUDE.md`). `assets/css/`: `fonts.css` (Plus Jakarta Sans y Outfit incrustadas, generadas por `tools/build-fonts.js`; 117 KB; funcionan en `file://` y https, sin peticiones a terceros), `tokens.css` (cada color una vez con `light-dark()`, tema según el sistema o el interruptor), `base.css`, `layout.css`, `components.css`, `print.css`. Maqueta: `docs/diseno/muestra.html` (#inicio · #ley · #esquema · #guia; `?tema=oscuro`). Continuidad con la app actual: fondo papel, cabecera tinta con filete dorado, los seis colores de categoría, las mismas tipografías, el logotipo de la balanza. Auditoría: tres defectos corregidos tras ver las capturas (resaltado de búsqueda que partía las líneas del índice, desbordamiento horizontal en móvil por la ventana de referencia —ahora hoja inferior—, buscador inaccesible en móvil); `tests/contrast.test.js` (contraste WCAG AA de todos los pares texto/fondo, claro y oscuro: obligó a oscurecer `--text-3` y `--ok`); sin desbordamiento horizontal a 390 y 1440 px. `npm test`: 21/21.
    - Para la migración: la paleta tiene 6 tonos de categoría (+ neutro). El esquema de conciliación usa 9 categorías y la guía 10 fases: habrá que agruparlas (las fases pueden repetir tono, como en la maqueta).
-2. ☐ Carcasa nueva (`index.html`): menú lateral desde `catalogo.js`, router `#hash`, buscador global, sin `<iframe>`.
-3. ☐ Motores: `ley.js`, `esquema.js`, `guia.js`, `referencia.js`.
-4. ☐ Tests de cada motor (`tests/*.js`) en Chromium 144 y Edge.
+2. ✅ Carcasa (`index.html`, sustituye a la de marcos en la rama): núcleo en `assets/js/core/` — utilidades (una sola función de escape), tema sin parpadeo, preferencias `negociado.*`, cargador de datos por `<script>` (funciona en `file://` y Pages), rutas `#/…` compartibles, menú generado desde `data/catalogo.js`; vistas de inicio y de búsqueda global (sin tildes ni mayúsculas, todas las palabras; índice `data/busqueda.js` con artículos, fichas y pasos). `tools/build-index.js` genera catálogo e índice desde los propios datos. Retirado `build_index.js`.
+3. ✅ Motores:
+   - **Ley** (`views/ley.js`, `core/leyes.js`): índice plegable con búsqueda en número, rúbrica y texto; artículo con su texto literal vigente, redacción vigente y norma que la dio, contiguos, enlaces a esquema/guía/BOE, «Copiar» (ruta y texto); el artículo queda fijo junto al índice solo si cabe en pantalla. **Mapa** (markmap) generado de los mismos datos.
+   - **Referencias vivas** (`core/referencias.js`, `core/citas.js`): toda cita es un enlace a una ventana con el apartado citado, a su altura natural; Esc o ✕ la cierran; en móvil, hoja inferior; también dentro del texto de las leyes. Un solo analizador de citas para la app y las herramientas.
+   - **Esquema** (`views/esquema.js`): secciones plegables, fichas por artículo con enlace directo (`#/esquema/<id>/<art>`), notas, tablas, conexiones normativas, columnas de participantes y fases reconstruidas; filtros por categoría, búsqueda, expandir/contraer, imprimir.
+   - **Guía** (`views/guia.js`): cada paso con su dirección (Atrás del navegador incluido), fases, actor, bloques, listas de comprobación recordadas, decisiones A/B…, final con el recorrido, panel «Tu recorrido», progreso guardado en el navegador, mapa de pasos por fase.
+4. ✅ Tests: `tests/app.test.js` en navegador real, `file://` y http (inicio, tema, ley, mapa, referencias, esquema, guía, búsqueda, que **todos** los recursos se dibujan sin errores y que no hay desbordamiento horizontal a 390 ni a 1366 px); `tests/data.test.js` (HTML permitido en los datos, ids, catálogo, grafos de las guías, fidelidad de la migración); `tests/contrast.test.js`; `tests/tools.test.js`.
 
-### Fase 2 · Leyes completas (markmap) e índices ☐
-1. ☐ `tools/build-law.js`: BOE → `data/leyes/{lec,ljv}.js`, con la jerarquía y el estilo actuales (7.1).
-2. ☐ Vista «Ley» con modos Índice y Mapa; sustituye a `00 - Indices` y `01 - Legislación completa interactiva`.
-3. ☐ Comprobación de cobertura: número de artículos, disposiciones y bloques igual al BOE.
+Auditorías de la fase (lo encontrado y corregido): manejador de «Copiar» que se acumulaba en cada visita; mapa sin redibujar al cambiar de tema; ley inexistente que pedía un fichero; colisión de claves «778» / «778 quáter» en el lector del BOE (afectaba también a las comprobaciones), y con ella todas las formas de numerar artículos del BOE (sufijos compuestos, «216 bis 2», «236-ñ», bloques de rango «301 a 324», tildes descompuestas, artículos del decreto aprobatorio); escapes `\uXXXX` convertidos en caracteres invisibles por la herramienta de edición (ahora `\p{M}`, vigilado por un test); etiquetas neutras que heredaban el color de la ficha; barra de herramientas demasiado alta para quedar fija; ventana de referencia que podía salir de la pantalla; resultados de búsqueda que desbordaban a 390 px.
+
+### Fase 2 · Leyes completas (markmap) e índices ✅ (hecha dentro de la fase 1)
+1. ✅ `tools/build-law.js`: BOE → `data/leyes/{LEC,LJV}.js` (LEC 867 artículos, 164 divisiones; LJV 165 artículos, 50 divisiones), con el papel de cada párrafo (apartado, subapartado, párrafo, fila de tabla) y la comprobación de que cada artículo aparece una vez en la estructura.
+2. ✅ Vista «Ley» con modos Índice y Mapa: sustituye a `00 - Indices` y `01 - Legislación completa interactiva` (se retiran en la fase 3 · 2).
+3. ✅ Cobertura: el articulado completo, igual al del BOE (comprobado al generar). Disposiciones y preámbulo, fuera por decisión 3.
+4. ☐ Pendiente para las referencias vivas: incluir de las demás normas (CC, LOPJ…) solo los artículos citados en los esquemas y guías (`data/leyes/<CLAVE>.js` parciales). Hoy esas citas enlazan al BOE.
 
 #### 7.1 Lo aprendido del markmap actual (preferencias a conservar)
 - Jerarquía: Ley → Libro/Título → Título/Capítulo → Capítulo/Sección → **Artículo** («Artículo N. Rúbrica.») → apartados → letras y ordinales.
@@ -169,17 +176,17 @@ Visto bueno para empezar: 2026-10-28.
 - Nodos estructurales en **negrita**; texto normativo sin negrita.
 - Ancho máximo de nodo 300 px; al abrir, solo el primer nivel desplegado; barra de herramientas de markmap; modo oscuro automático.
 
-Defectos a corregir:
-- **Alcance**: articulado completo de ambas leyes. Disposiciones y preámbulo no se incluyen por ahora (decisión 3), pero el generador lo admitirá con una opción.
-- **Desfasada**: la LEC del BOE tiene cambios hasta 07-10-2026; la LJV hasta la LO 1/2025.
-- **Incoherencias entre las dos**: título en mayúsculas en una y no en la otra; los artículos son `h6` en la LEC y `h5` en la LJV; la LJV repite el número de apartado fuera del texto; «Sección 1.ª.» vs «Sección 1.ª».
-- **Errores de conversión**: 8 nodos de la LEC se muestran como bloque de código (sangrías del Markdown de origen) y 3 nodos de lista vacíos; las pestañas se titulan «Markmap».
-- Cada fichero lleva su propia copia de d3 y markmap (~280 KB cada uno): una sola copia en `vendor/`.
+Defectos del markmap anterior — todos resueltos al generar el mapa de los mismos datos que el índice:
+- ✅ **Alcance**: articulado completo de ambas leyes. Disposiciones y preámbulo no se incluyen por ahora (decisión 3).
+- ✅ **Desfasada**: ahora el texto vigente del BOE (LEC a 07-10-2026; LJV a 05-03-2026).
+- ✅ **Incoherencias entre las dos**: un único generador, la misma jerarquía y el mismo formato para ambas.
+- ✅ **Errores de conversión** (bloques de código, nodos vacíos, pestañas «Markmap»): no hay conversión desde Markdown.
+- ✅ Una sola copia de d3 y markmap en `vendor/` (markmap 0.18.12, d3 7.9.0; `tools/vendor-fetch.js`), cargada solo al abrir un mapa.
 
-### Fase 3 · Migración mecánica de esquemas y guías ☐
-1. ☐ `tools/migrate.js`: de cada HTML actual a `data/esquemas/*.js` y `data/guias/*.js` **sin cambiar el contenido** (comprobación automática: el texto visible antes y después es idéntico).
-2. ☐ Retirada de los 53 HTML antiguos (quedan en el historial de git y en el tag).
-3. ☐ El esquema combinado «CAPÍTULO I BIS & TER» se elimina (decisión 4); antes se comprueba si contiene algo que no esté en los separados, y eso se traslada a ellos en la fase 4.
+### Fase 3 · Migración mecánica de esquemas y guías ▶
+1. ✅ `tools/migrate.js` + `tools/migracion.json` (ids nuevos; esquema y guía del mismo ámbito comparten id): 27 esquemas y 25 guías a `data/`, **texto idéntico** (y en las guías también el grafo), comprobado al migrar y en los tests. Se dejaron fuera, por ser interfaz y no contenido: la barra de cifras escritas a mano de los esquemas («40+ conexiones»), los contadores de cada ficha, la leyenda (repite las categorías), el mensaje «sin resultados», las flechas de los diagramas y los títulos de final propios de cada guía (el motor usa unos comunes). Los textos de las guías, que eran HTML sin depurar, quedan en el subconjunto seguro de los esquemas. Las categorías de un esquema por encima de seis repiten tono.
+2. ☐ Retirada de los 57 HTML antiguos (quedan en el historial de git y en el tag) y `404.html` con las redirecciones de las direcciones antiguas (decisión 8).
+3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
 ### Fase 4 · Revisión de contenido de los esquemas (28) ☐
 Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabla (decisión 6). Los más usados (E01–E04, E28) con atención especial.
@@ -280,5 +287,6 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-28 · Fase 1 completada, con las fases 2 y 3 · 1 adelantadas (los motores necesitaban datos reales). Siguiente: fase 3 · 2 (retirar los HTML antiguos y redirigir sus direcciones) y fase 4 (revisión de contenido de los esquemas).
 - 2026-10-28 · Fase 0 completada. El ejecutor (0.5) se adelantó al inventario (0.3) porque el inventario de los esquemas se lee de la página renderizada. Además de LEC y LJV se descargaron las 16 leyes más citadas.
 - 2026-10-28 · Forma de trabajar fijada por el propietario: idioma de respuesta según el suyo; auditoría completa + batería de tests tras cada implementación; Agenda y Plantillas intocables; memoria USB fuera del alcance.

@@ -217,6 +217,42 @@ test("guía view: steps with addresses, choices, back button, route, ends, map, 
   assert.equal(r.badStep, "#/guia/ljv-conciliacion/inicio", "un paso inexistente lleva al paso guardado");
 });
 
+test("every esquema, guía and law renders, with no page error", { timeout: 300000 }, async () => {
+  const r = await page(
+    `const out = {};
+     for (const e of Neg.catalogo.esquemas) { await go('#/esquema/' + e.id, 500); out['esquema/' + e.id] = document.querySelectorAll('[data-card]').length; }
+     for (const g of Neg.catalogo.guias) {
+       localStorage.removeItem('negociado.guia.' + g.id);
+       await go('#/guia/' + g.id, 500); out['guia/' + g.id] = document.querySelectorAll('.step h2').length;
+       await go('#/guia/' + g.id + '/mapa', 300); out['mapa/' + g.id] = document.querySelectorAll('.map-phase li').length;
+     }
+     for (const l of Neg.catalogo.leyes) { await go('#/ley/' + l.id, 900); out['ley/' + l.id] = document.querySelectorAll('.tree-div').length; }
+     return out;`
+  );
+  const zero = Object.entries(r).filter(([, n]) => !n);
+  assert.deepEqual(zero, [], "cada recurso dibuja su contenido");
+  assert.equal(Object.keys(r).length, 27 + 25 * 2 + 2);
+});
+
+test("no horizontal overflow at phone or desktop width, in any view", { timeout: 180000 }, async () => {
+  const r = await page(
+    `const views = ['#/', '#/ley/LJV', '#/ley/LJV/140', '#/ley/LJV/mapa', '#/esquema/ljv-conciliacion', '#/esquema/lec-division-herencia', '#/guia/ljv-conciliacion/inicio', '#/guia/ljv-conciliacion/mapa', '#/buscar?q=caucion'];
+     const out = [];
+     for (const w of [390, 1366]) {
+       await __run({ viewport: [w, 844] });
+       for (const v of views) {
+         await go(v, v.includes('mapa') && v.includes('ley') ? 1800 : 700);
+         const content = document.getElementById('content');
+         const page = document.documentElement.scrollWidth - document.documentElement.clientWidth;
+         const inner = content.scrollWidth - content.clientWidth;
+         if (page > 0 || inner > 0) out.push(w + ' ' + v + ': ' + page + '/' + inner);
+       }
+     }
+     return out;`
+  );
+  assert.deepEqual(r, []);
+});
+
 test("search: accents and case ignored, every word must match", { timeout: 60000 }, async () => {
   const r = await page(
     `await go('#/buscar?q=CONCILIACION%20celebracion', 900);
