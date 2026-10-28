@@ -176,11 +176,52 @@ test("esquema view: cards, filters, search, direct link to an article's card, re
   assert.match(r.missing, /No existe este esquema/);
 });
 
+test("guía view: steps with addresses, choices, back button, route, ends, map, saved progress", { timeout: 120000 }, async () => {
+  const r = await page(
+    `localStorage.removeItem('negociado.guia.ljv-conciliacion');
+     await go('#/guia/ljv-conciliacion', 1200);
+     const start = { hash: location.hash, options: document.querySelectorAll('.option').length, keys: [...document.querySelectorAll('.option .key')].map((k) => k.textContent).join('') };
+     document.querySelector('.option').click(); await wait(600);
+     const chose = { hash: location.hash, route: document.querySelectorAll('.panel .route li').length, choice: document.querySelector('.panel .route .choice').textContent };
+     document.querySelector('[data-go][data-choice=""]').click(); await wait(600);
+     const next = location.hash;
+     history.back(); await wait(700);
+     const back = { hash: location.hash, route: document.querySelectorAll('.panel .route li').length };
+     document.querySelector('.checklist input').click(); await wait(50);
+     const saved = JSON.parse(localStorage.getItem('negociado.guia.ljv-conciliacion'));
+     await go('#/guia/ljv-conciliacion/fin_abuso');
+     const end = document.querySelector('.block.end').textContent;
+     await go('#/guia/ljv-conciliacion/mapa', 900);
+     const map = { phases: document.querySelectorAll('.map-phase').length, steps: document.querySelectorAll('.map-phase li').length };
+     await go('#/guia/ljv-conciliacion', 800); // back to where the viewer was
+     const resumed = location.hash;
+     document.querySelector('[data-action="restart"]').click(); await wait(700);
+     const restarted = { hash: location.hash, route: document.querySelectorAll('.panel .route li').length };
+     await go('#/guia/ljv-conciliacion/no_existe', 900);
+     const badStep = location.hash;
+     return { start, chose, next, back, saved, end, map, resumed, restarted, badStep };`
+  );
+  assert.equal(r.start.hash, "#/guia/ljv-conciliacion/inicio");
+  assert.equal(r.start.keys, "AB");
+  assert.equal(r.chose.hash, "#/guia/ljv-conciliacion/verifica_competencia");
+  assert.equal(r.chose.route, 2);
+  assert.match(r.chose.choice, /^→ Sí, la finalidad es lícita/);
+  assert.equal(r.next, "#/guia/ljv-conciliacion/verifica_exclusion");
+  assert.deepEqual(r.back, { hash: "#/guia/ljv-conciliacion/verifica_competencia", route: 2 }, "el botón Atrás del navegador vuelve un paso");
+  assert.equal(r.saved.cur, "verifica_competencia");
+  assert.deepEqual(r.saved.checks.verifica_competencia, ["1:0"]);
+  assert.match(r.end, /Procedimiento finalizado sin éxito/);
+  assert.deepEqual(r.map, { phases: 10, steps: 51 });
+  assert.equal(r.resumed, "#/guia/ljv-conciliacion/fin_abuso", "vuelve donde se dejó");
+  assert.deepEqual(r.restarted, { hash: "#/guia/ljv-conciliacion/inicio", route: 1 });
+  assert.equal(r.badStep, "#/guia/ljv-conciliacion/inicio", "un paso inexistente lleva al paso guardado");
+});
+
 test("search: accents and case ignored, every word must match", { timeout: 60000 }, async () => {
   const r = await page(
     `await go('#/buscar?q=CONCILIACION%20celebracion', 900);
      return [...document.querySelectorAll('.results li strong')].map((s) => s.textContent);`
   );
-  // The article in the law and its card in the esquema.
-  assert.deepEqual(r, ["Art. 145. Celebración del acto de conciliación", "Artículo 145 · Celebración del acto de conciliación"]);
+  // The article in the law, its card in the esquema and the step in the guía.
+  assert.deepEqual(r, ["Art. 145. Celebración del acto de conciliación", "Artículo 145 · Celebración del acto de conciliación", "Celebración del acto de conciliación"]);
 });

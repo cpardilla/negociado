@@ -25,6 +25,7 @@ const read = (folder) =>
     : [];
 const catalogo = read("").find((x) => x.file === "catalogo.js").rec;
 const esquemas = read("esquemas");
+const guias = read("guias");
 
 /** Every string in a structure, with its path. */
 function strings(v, where = "", out = []) {
@@ -36,7 +37,7 @@ function strings(v, where = "", out = []) {
 
 test("data: inline HTML is only the allowed subset over escaped text (safe to insert as is)", () => {
   const bad = [];
-  for (const { file, rec } of esquemas)
+  for (const { file, rec } of [...esquemas, ...guias])
     for (const [where, s] of strings(rec)) {
       const tags = s.match(/<\/?([a-z0-9]+)[^>]*>/gi) || [];
       for (const t of tags) if (!/^<\/?(strong|em|br|sup|sub|code|u)>$/.test(t)) bad.push(`${file}${where}: ${t}`);
@@ -67,6 +68,33 @@ test("data: every card and block has what the view needs", () => {
       }
       Object.values(v).forEach(walk);
     })(rec.secciones);
+  }
+});
+
+test("guías: catalogue complete, every exit leads to an existing step, ends and tones known", () => {
+  assert.deepEqual(catalogo.guias.map((g) => g.id).sort(), guias.map((g) => g.rec.id).sort());
+  for (const { file, rec } of guias) {
+    assert.equal(file, `${rec.id}.js`);
+    assert.ok(rec.pasos[rec.inicio], `${rec.id}: inicio`);
+    for (const [id, p] of Object.entries(rec.pasos)) {
+      for (const to of [p.siguiente, ...(p.opciones || []).map((o) => o.destino)].filter(Boolean)) assert.ok(rec.pasos[to], `${rec.id}.${id} → ${to}`);
+      if (p.fin) assert.match(p.fin, /^(success|error|warning|neutral)$/);
+      (p.opciones || []).forEach((o) => assert.match(o.tono, /^t-(ok|aviso|plazo|nota)$/));
+      assert.ok(p.fase >= 0 && p.fase < rec.fases.length, `${rec.id}.${id}: fase`);
+      assert.ok(rec.actores[p.actor], `${rec.id}.${id}: actor «${p.actor}» con etiqueta`);
+    }
+  }
+});
+
+test("migration: every guía keeps every text and its graph", () => {
+  const { guia, guiaFidelity } = require("../tools/migrate");
+  const { recursos } = JSON.parse(fs.readFileSync(path.join(ROOT, "tools", "migracion.json"), "utf8"));
+  for (const invId of Object.keys(recursos).filter((k) => /^G\d+$/.test(k))) {
+    const inv = JSON.parse(fs.readFileSync(path.join(ROOT, "sources", "actual", `${invId}.json`), "utf8"));
+    const fresh = guia(invId);
+    assert.deepEqual(guiaFidelity(inv, fresh), [], `${invId}: texto y grafo idénticos`);
+    const onDisk = guias.find((x) => x.rec.id === fresh.id).rec;
+    if (onDisk.revision.estado === "sin revisar") assert.deepEqual(onDisk.pasos, JSON.parse(JSON.stringify(fresh.pasos)), `${invId}: fichero = migración`);
   }
 });
 

@@ -1,0 +1,843 @@
+/* Migrado por tools/migrate.js desde sources/actual/G18.json (contenido sin cambios; pendiente de revisión). */
+Neg.data.register({
+ "tipo": "guia",
+ "id": "ljv-donantes-vivos",
+ "ley": "LJV",
+ "grupo": "Título II · Personas",
+ "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO X De la extracción de órganos de donantes vivos Artículos 78 a 80 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "corto": "Extracción de órganos de donantes vivos",
+ "articulos": [
+  "78",
+  "79",
+  "80"
+ ],
+ "revision": {
+  "estado": "sin revisar",
+  "boe": "20260305",
+  "origen": "G18"
+ },
+ "fases": [
+  "Inicio y competencia",
+  "Solicitud y requisitos",
+  "Comparecencia",
+  "Resolución",
+  "Post-resolución"
+ ],
+ "actores": {
+  "juez": "Juez",
+  "laj": "Letrado AJ",
+  "ambos": "Ambos"
+ },
+ "inicio": "inicio",
+ "pasos": {
+  "inicio": {
+   "fase": 0,
+   "titulo": "Recepción de la solicitud o comunicación",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Se ha recibido una solicitud o comunicación para iniciar un expediente de jurisdicción voluntaria sobre extracción y trasplante de órganos de un donante vivo, conforme a los artículos 78 a 80 de la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria."
+    },
+    {
+     "tipo": "nota",
+     "texto": "La finalidad del expediente es la constatación judicial de que concurre el consentimiento libre, consciente y desinteresado del donante y demás requisitos legales para la extracción y trasplante."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "Este procedimiento NO constituye un acto de enjuiciamiento. La intervención judicial es una garantía de derechos individuales, fundamentalmente del derecho a la integridad física del donante."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, arts. 78-80 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Directiva 2010/45/UE"
+    }
+   ],
+   "pregunta": "¿Quién promueve el inicio del expediente?",
+   "opciones": [
+    {
+     "texto": "El donante (solicitud directa)",
+     "tono": "t-ok",
+     "destino": "inicio_donante"
+    },
+    {
+     "texto": "El Director del centro sanitario (comunicación)",
+     "tono": "t-nota",
+     "destino": "inicio_director"
+    }
+   ]
+  },
+  "inicio_donante": {
+   "fase": 0,
+   "titulo": "Solicitud presentada por el donante",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El donante ha presentado directamente la solicitud ante el Juzgado para iniciar el expediente de constatación judicial. Esta es la vía habitual de inicio del procedimiento."
+    },
+    {
+     "tipo": "nota",
+     "texto": "No es necesaria la intervención de Abogado ni de Procurador para este expediente, conforme al artículo 79.1 de la Ley 15/2015 y al régimen general del artículo 3 de la misma Ley."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 79.1 · Ley 15/2015, art. 3"
+    }
+   ],
+   "siguiente": "competencia_objetiva"
+  },
+  "inicio_director": {
+   "fase": 0,
+   "titulo": "Comunicación del Director del centro sanitario",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El Director del centro sanitario en que vaya a efectuarse la extracción, o la persona en quien delegue, ha remitido la comunicación al Juzgado para iniciar el expediente."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Esta vía de inicio es alternativa a la solicitud directa del donante. El Director del centro actúa en su condición de responsable del centro donde se realizará la intervención quirúrgica."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 79.1"
+    }
+   ],
+   "siguiente": "competencia_objetiva"
+  },
+  "competencia_objetiva": {
+   "fase": 0,
+   "titulo": "Determinar la competencia objetiva",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Es competente para conocer de estos expedientes el Juez de Primera Instancia. Tras la reforma operada por la Ley Orgánica 1/2025, de 2 de enero, la referencia debe entenderse hecha al juez o jueza de la sección civil del Tribunal de Instancia correspondiente."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Novedad relevante: la competencia deja de corresponder al Juez encargado del Registro Civil (régimen anterior) y pasa al Juez de Primera Instancia / sección civil del Tribunal de Instancia."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "En este expediente, a diferencia de otros de jurisdicción voluntaria, NO se sustituye la figura del Juez por la del Letrado de la Administración de Justicia. La intervención judicial directa es imprescindible."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 78.2 · Ley 15/2015, art. 2 · LO 1/2025, DA 1.ª"
+    }
+   ],
+   "pregunta": "¿Es competente objetivamente el órgano judicial receptor?",
+   "opciones": [
+    {
+     "texto": "Sí, es Juez de Primera Instancia / sección civil del Tribunal de Instancia",
+     "tono": "t-ok",
+     "destino": "competencia_territorial"
+    },
+    {
+     "texto": "No, corresponde a otro órgano judicial",
+     "tono": "t-aviso",
+     "destino": "fin_incompetencia_objetiva"
+    }
+   ]
+  },
+  "competencia_territorial": {
+   "fase": 0,
+   "titulo": "Determinar la competencia territorial",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "La competencia territorial se configura mediante dos fueros alternativos, a elección del solicitante: el partido judicial donde haya de realizarse la extracción o el partido judicial donde haya de realizarse el trasplante."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Se trata de fueros alternativos: el solicitante puede elegir cuál de los dos le resulta más conveniente. No es necesario que la extracción y el trasplante se realicen en el mismo partido judicial."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 78.2"
+    }
+   ],
+   "pregunta": "¿El Juzgado es territorialmente competente?",
+   "opciones": [
+    {
+     "texto": "Sí, es el partido de la extracción o del trasplante",
+     "tono": "t-ok",
+     "destino": "solicitud_contenido"
+    },
+    {
+     "texto": "No, corresponde a otro partido judicial",
+     "tono": "t-aviso",
+     "destino": "fin_incompetencia_territorial"
+    }
+   ]
+  },
+  "solicitud_contenido": {
+   "fase": 1,
+   "titulo": "Verificar el contenido de la solicitud o comunicación",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "La solicitud o comunicación debe contener los siguientes elementos esenciales para que el expediente pueda tramitarse correctamente:"
+    },
+    {
+     "tipo": "lista",
+     "titulo": "Contenido obligatorio de la solicitud",
+     "items": [
+      "Circunstancias personales y familiares del donante",
+      "Objeto de la donación (órgano o parte de órgano que se dona)",
+      "Identificación del centro sanitario donde se efectuará la extracción",
+      "Identidad del médico responsable del trasplante o extracción (o persona en quien delegue)",
+      "Certificado médico sobre la salud mental y física del donante, emitido conforme a la normativa correspondiente"
+     ],
+     "marcar": true
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 79.1 · Ley 15/2015, art. 17"
+    }
+   ],
+   "pregunta": "¿La solicitud o comunicación contiene todos los elementos requeridos?",
+   "opciones": [
+    {
+     "texto": "Sí, la documentación está completa",
+     "tono": "t-ok",
+     "destino": "requisitos_donante"
+    },
+    {
+     "texto": "No, faltan documentos o datos esenciales",
+     "tono": "t-plazo",
+     "destino": "requerir_subsanacion"
+    }
+   ]
+  },
+  "requerir_subsanacion": {
+   "fase": 1,
+   "titulo": "Requerir la subsanación de la solicitud",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "La solicitud o comunicación no reúne todos los requisitos exigidos. El Letrado de la Administración de Justicia debe requerir al solicitante para que subsane las deficiencias detectadas en el plazo que se le conceda al efecto."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Plazo de subsanación: el que fije el Letrado de la Administración de Justicia, conforme a los artículos 13 y siguientes de la Ley 15/2015 (normas comunes de tramitación)."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "Si el solicitante no subsana las deficiencias en el plazo concedido, el expediente no podrá continuar y se procederá al archivo de las actuaciones."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, arts. 13-22 (normas comunes de tramitación)"
+    }
+   ],
+   "pregunta": "¿Se ha subsanado la solicitud en plazo?",
+   "opciones": [
+    {
+     "texto": "Sí, la documentación ya está completa",
+     "tono": "t-ok",
+     "destino": "requisitos_donante"
+    },
+    {
+     "texto": "No, no se ha subsanado o ha transcurrido el plazo",
+     "tono": "t-aviso",
+     "destino": "fin_solicitud_incompleta"
+    }
+   ]
+  },
+  "requisitos_donante": {
+   "fase": 1,
+   "titulo": "Verificar los requisitos legales del donante",
+   "actor": "ambos",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El donante debe cumplir una serie de requisitos sustantivos, establecidos en la Ley 30/1979 y en el Real Decreto 1723/2012, que el Juez debe verificar durante la tramitación del expediente. El incumplimiento de cualquiera de ellos impide la autorización de la extracción."
+    },
+    {
+     "tipo": "lista",
+     "titulo": "Requisitos legales del donante vivo",
+     "items": [
+      "Ser mayor de edad (no se autoriza la obtención de órganos de menores, ni siquiera con consentimiento de padres o tutores)",
+      "Plenitud de facultades mentales y estado de salud adecuado",
+      "Haber recibido información previa de las consecuencias de la extracción y del trasplante, adaptada a sus necesidades (incluidas personas con discapacidad)",
+      "Consentimiento expreso, libre, consciente y desinteresado, por escrito y firmado",
+      "Que el órgano o parte de él sea compatible con la vida y su función pueda ser compensada por el organismo del donante",
+      "Gratuidad de la donación: sin compensación económica alguna para el donante, ni precio exigido al receptor"
+     ],
+     "marcar": true
+    },
+    {
+     "tipo": "nota",
+     "texto": "La información previa debe ajustarse, en su caso, a las necesidades de las personas con discapacidad, mediante sistemas comprensibles o adaptados a su discapacidad."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Ley 15/2015, art. 79 · Convenio de Oviedo · Directiva 2010/45/UE"
+    }
+   ],
+   "pregunta": "¿Concurren todos los requisitos legales del donante?",
+   "opciones": [
+    {
+     "texto": "Sí, todos los requisitos se cumplen",
+     "tono": "t-ok",
+     "destino": "requisitos_especificos_ok"
+    },
+    {
+     "texto": "El donante es menor de edad",
+     "tono": "t-aviso",
+     "destino": "fin_menor_edad"
+    },
+    {
+     "texto": "No concurre plenitud de facultades mentales",
+     "tono": "t-aviso",
+     "destino": "fin_sin_facultades"
+    },
+    {
+     "texto": "No se ha prestado consentimiento válido o hay ánimo de lucro",
+     "tono": "t-aviso",
+     "destino": "fin_consentimiento_invalido"
+    },
+    {
+     "texto": "La extracción no es compatible con la vida del donante",
+     "tono": "t-aviso",
+     "destino": "fin_incompatible"
+    }
+   ]
+  },
+  "requisitos_especificos_ok": {
+   "fase": 1,
+   "titulo": "Requisitos verificados — Certificado médico",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Todos los requisitos legales del donante han sido verificados documentalmente. El certificado médico sobre la salud mental y física del donante ha sido emitido de conformidad con la normativa correspondiente."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El certificado médico es un documento esencial que acredita la aptitud del donante tanto desde el punto de vista físico como mental para la extracción del órgano. Debe estar emitido por un profesional sanitario competente."
+    },
+    {
+     "tipo": "ley",
+     "texto": "RD 1723/2012, art. 8 · Ley 30/1979, art. 4"
+    }
+   ],
+   "pregunta": "¿Se ha adjuntado el certificado médico de salud física y mental del donante?",
+   "opciones": [
+    {
+     "texto": "Sí, el certificado médico está adjunto y es conforme",
+     "tono": "t-ok",
+     "destino": "citacion_comparecencia"
+    },
+    {
+     "texto": "No, no se ha aportado el certificado médico",
+     "tono": "t-aviso",
+     "destino": "fin_certificado_no_adjunto"
+    }
+   ]
+  },
+  "citacion_comparecencia": {
+   "fase": 2,
+   "titulo": "Preparar y cursar la citación a la comparecencia",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El Letrado de la Administración de Justicia debe citar a todas las personas que deben intervenir en la comparecencia judicial. La citación es un trámite esencial para garantizar que todos los intervinientes puedan ejercer sus funciones y derechos en el acto."
+    },
+    {
+     "tipo": "lista",
+     "titulo": "Personas que deben ser citadas a la comparecencia",
+     "items": [
+      "El médico que ha de efectuar la extracción",
+      "El médico firmante del certificado de salud física y mental del donante",
+      "El médico responsable del trasplante o persona en quien delegue",
+      "La persona a quien corresponda dar la autorización para la intervención, conforme al documento de autorización para la extracción de órganos concedida al centro sanitario"
+     ],
+     "marcar": true
+    },
+    {
+     "tipo": "nota",
+     "texto": "El receptor del órgano podrá intervenir como persona con interés legítimo, conforme a los artículos 3 y 17 de la Ley 15/2015, aunque no esté expresamente mencionado en el artículo 79."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El Letrado de la Administración de Justicia debe estar presente para dar fe de lo actuado."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 79.2 · Ley 15/2015, arts. 3 y 17 · Ley 15/2015, art. 18"
+    }
+   ],
+   "siguiente": "desarrollo_comparecencia"
+  },
+  "desarrollo_comparecencia": {
+   "fase": 2,
+   "titulo": "Desarrollo de la comparecencia",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "La comparecencia se celebra ante el Juez con la asistencia de todas las personas citadas. El desarrollo sigue un orden habitual de intervenciones que debe respetarse para garantizar la correcta información del donante."
+    },
+    {
+     "tipo": "lista",
+     "titulo": "Orden de intervenciones en la comparecencia",
+     "items": [
+      "Primero: el médico encargado de realizar la intervención quirúrgica explica las características y riesgos de la extracción",
+      "Después: los demás intervinientes aportan las aclaraciones que consideren pertinentes",
+      "El Juez podrá requerir a cualquiera de los asistentes las explicaciones que estime oportunas sobre la concurrencia de los requisitos legales",
+      "Finalmente: el donante presta su consentimiento de forma libre, consciente y desinteresada, ante el Juez"
+     ],
+     "marcar": true
+    },
+    {
+     "tipo": "nota",
+     "texto": "El Juez debe cerciorarse de que el donante ha comprendido plenamente las consecuencias de la extracción y del trasplante antes de prestar su consentimiento. La información debe haberse ajustado, en su caso, a las necesidades de las personas con discapacidad."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 79.3 · Ley 15/2015, art. 18 · Convenio de Oviedo · Ley 41/2002 (autonomía del paciente)"
+    }
+   ],
+   "siguiente": "consentimiento_juez"
+  },
+  "consentimiento_juez": {
+   "fase": 2,
+   "titulo": "Otorgamiento del consentimiento por el donante ante el Juez",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El momento central de la comparecencia es el otorgamiento del consentimiento por el donante ante el Juez. El consentimiento debe ser expreso, libre, consciente y desinteresado, y se prestará tras oír las explicaciones del médico y de los demás asistentes."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "El Juez debe valorar si el consentimiento se presta de forma genuinamente libre, sin coacción, presión o indebida influencia, y si el donante actúa de manera completamente desinteresada, sin ánimo de lucro ni compensación económica."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Conforme al Convenio de Oviedo, el consentimiento debe ser expreso y específicamente otorgado, por escrito o ante una instancia oficial. La extracción de órganos sólidos de donante vivo se limita al interés terapéutico del receptor cuando no se disponga de órgano de persona fallecida ni de alternativa terapéutica de comparable eficacia."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 79.3 · Ley 30/1979, art. 4 · Convenio de Oviedo · Ley 41/2002"
+    }
+   ],
+   "pregunta": "¿El Juez considera que el consentimiento ha sido prestado de forma libre, consciente y desinteresada?",
+   "opciones": [
+    {
+     "texto": "Sí, el consentimiento es válido",
+     "tono": "t-ok",
+     "destino": "verificar_oposicion"
+    },
+    {
+     "texto": "No, el consentimiento no reúne los requisitos legales",
+     "tono": "t-aviso",
+     "destino": "fin_denegacion"
+    }
+   ]
+  },
+  "verificar_oposicion": {
+   "fase": 2,
+   "titulo": "Verificar si existe oposición a la donación",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Si alguno de los firmantes dudara de que el consentimiento prestado haya sido de forma expresa, libre, consciente y desinteresada, podrá oponerse a la donación. La oposición impide la formalización del documento de cesión del órgano."
+    },
+    {
+     "tipo": "nota",
+     "texto": "La oposición puede plantearla cualquiera de las personas que deben firmar el documento de cesión: el donante, el médico que ha de efectuar la extracción o los demás asistentes a la comparecencia."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "La oposición no requiere fundamentación especial: basta con que el firmante exprese dudas razonables sobre la validez del consentimiento para que el documento de cesión no pueda formalizarse."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 80"
+    }
+   ],
+   "pregunta": "¿Se ha opuesto algún firmante a la donación?",
+   "opciones": [
+    {
+     "texto": "No, nadie se ha opuesto",
+     "tono": "t-ok",
+     "destino": "resolucion_conceder"
+    },
+    {
+     "texto": "Sí, al menos un firmante se ha opuesto",
+     "tono": "t-plazo",
+     "destino": "fin_oposicion"
+    }
+   ]
+  },
+  "resolucion_conceder": {
+   "fase": 3,
+   "titulo": "Extensión del documento de cesión del órgano",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El Juez estima que se han cumplido todos los requisitos legales y procede a extender por escrito el documento de cesión del órgano. Este documento es el resultado positivo del expediente y constituye la autorización judicial para la extracción y trasplante."
+    },
+    {
+     "tipo": "lista",
+     "titulo": "Firmantes del documento de cesión",
+     "items": [
+      "El donante (interesado)",
+      "El médico que ha de efectuar la extracción",
+      "Los demás asistentes a la comparecencia"
+     ],
+     "marcar": true
+    },
+    {
+     "tipo": "info",
+     "texto": "El documento de cesión debe hacer constar expresamente la posibilidad que tiene el donante de revocar el consentimiento en cualquier momento previo a la intervención quirúrgica. Se facilitará copia del documento al donante."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 80 · Ley 15/2015, art. 19"
+    }
+   ],
+   "siguiente": "documento_cesion_firmado"
+  },
+  "documento_cesion_firmado": {
+   "fase": 3,
+   "titulo": "Documento de cesión firmado y entregado",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El documento de cesión del órgano ha sido firmado por todos los intervinientes y se ha facilitado copia al donante. El expediente ha concluido favorablemente en su tramitación judicial."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Entre la firma del documento de cesión del órgano y la extracción efectiva deben transcurrir al menos 24 horas, conforme a la normativa sustantiva (Ley 30/1979 y RD 1723/2012)."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "Durante ese plazo mínimo de 24 horas, y en cualquier momento anterior a la intervención, el donante puede revocar libremente su consentimiento, sin sujeción a formalidad alguna. Esta circunstancia debe constar en el documento de cesión."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El régimen de impugnación de la resolución es el previsto en el artículo 20 de la Ley 15/2015 (recursos)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 80 · Ley 15/2015, art. 20 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8"
+    }
+   ],
+   "siguiente": "plazo_reflexion"
+  },
+  "plazo_reflexion": {
+   "fase": 4,
+   "titulo": "Plazo de reflexión mínimo de 24 horas",
+   "actor": "ambos",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Debe transcurrir un plazo mínimo de 24 horas entre la firma del documento de cesión del órgano y la extracción efectiva. Este plazo constituye un período de reflexión obligatorio para el donante."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Plazo mínimo: 24 horas entre la firma del documento de cesión y la extracción."
+    },
+    {
+     "tipo": "info",
+     "texto": "Durante este plazo, el donante puede revocar libremente su consentimiento en cualquier momento anterior a la intervención quirúrgica, sin necesidad de formalidad alguna y sin que la revocación produzca efecto jurídico adverso para el donante."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El derecho de revocación es una manifestación del carácter libre del consentimiento: si el donante cambia de opinión, la revocación es plenamente eficaz y la extracción no puede realizarse."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 80 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8"
+    }
+   ],
+   "pregunta": "¿El donante ha revocado su consentimiento durante el plazo de reflexión?",
+   "opciones": [
+    {
+     "texto": "No, el donante mantiene su consentimiento",
+     "tono": "t-ok",
+     "destino": "fin_exito"
+    },
+    {
+     "texto": "Sí, el donante ha revocado su consentimiento",
+     "tono": "t-plazo",
+     "destino": "fin_revocacion"
+    }
+   ]
+  },
+  "fin_exito": {
+   "fase": 4,
+   "titulo": "Procedimiento concluido con éxito",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El expediente de jurisdicción voluntaria ha concluido favorablemente. El documento de cesión del órgano ha sido extendido, firmado por todos los intervinientes, y se ha entregado copia al donante. El plazo mínimo de 24 horas ha transcurrido sin que el donante haya revocado su consentimiento."
+    },
+    {
+     "tipo": "info",
+     "texto": "La extracción y el trasplante pueden ahora llevarse a cabo conforme a la legislación vigente, bajo la responsabilidad del equipo médico del centro sanitario autorizado."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Recuerde: incluso después de este momento, y hasta el inicio efectivo de la intervención quirúrgica, el donante conserva el derecho a revocar su consentimiento en cualquier momento y sin formalidad alguna."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 80 · Ley 30/1979 · RD 1723/2012 · Directiva 2010/45/UE"
+    }
+   ],
+   "fin": "success"
+  },
+  "fin_denegacion": {
+   "fase": 2,
+   "titulo": "Denegación — Consentimiento no válido",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El Juez ha considerado que el consentimiento prestado por el donante no lo ha sido de forma libre, consciente y desinteresada, o no se cumplen los demás requisitos establecidos legalmente. Por tanto, NO se extenderá el documento de cesión del órgano."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "La denegación impide que la extracción y el trasplante puedan llevarse a cabo. El expediente se archiva sin haberse autorizado la donación."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Contra la resolución de denegación cabe recurso conforme al artículo 20 de la Ley 15/2015. El donante podrá iniciar un nuevo expediente si se modifican las circunstancias que motivaron la denegación."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 80 · Ley 15/2015, art. 20"
+    }
+   ],
+   "fin": "error"
+  },
+  "fin_oposicion": {
+   "fase": 2,
+   "titulo": "Oposición de un firmante",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Al menos uno de los firmantes ha dudado de que el consentimiento prestado por el donante haya sido de forma expresa, libre, consciente y desinteresado, y se ha opuesto a la donación. Esta oposición impide la formalización del documento de cesión del órgano."
+    },
+    {
+     "tipo": "nota",
+     "texto": "La oposición no significa necesariamente que la donación sea inválida, pero el legislador ha optado por un régimen de máxima cautela: basta la duda de cualquiera de los firmantes para bloquear la formalización del documento."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El expediente puede reanudarse si se disipan las dudas que motivaron la oposición y se celebra una nueva comparecencia."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 80"
+    }
+   ],
+   "fin": "warning"
+  },
+  "fin_incompetencia_objetiva": {
+   "fase": 0,
+   "titulo": "Incompetencia objetiva del órgano judicial",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El órgano judicial que ha recibido la solicitud o comunicación no es competente objetivamente para conocer de este expediente. La competencia corresponde al Juez de Primera Instancia o, tras la LO 1/2025, al juez o jueza de la sección civil del Tribunal de Instancia."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Se debe remitir la documentación al órgano judicial competente, indicando al solicitante la razón de la incompetencia y el Juzgado al que debe dirigirse."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 78.2 · LO 1/2025, DA 1.ª"
+    }
+   ],
+   "fin": "error"
+  },
+  "fin_incompetencia_territorial": {
+   "fase": 0,
+   "titulo": "Incompetencia territorial del órgano judicial",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El Juzgado no es territorialmente competente. La competencia territorial corresponde al partido judicial donde haya de realizarse la extracción o el trasplante, a elección del solicitante."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Se debe indicar al solicitante que debe dirigirse al Juzgado de Primera Instancia del partido judicial correspondiente al lugar de la extracción o del trasplante."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 78.2"
+    }
+   ],
+   "fin": "error"
+  },
+  "fin_menor_edad": {
+   "fase": 1,
+   "titulo": "Donante menor de edad — Imposible proceder",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El donante es menor de edad. La ley prohíbe categóricamente la obtención de órganos de menores de edad para trasplante, ni siquiera con el consentimiento de sus padres o tutores. No existe excepción legal alguna a esta prohibición."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "Esta prohibición es absoluta y no admite excepciones. Ni el consentimiento de los padres, tutores o representantes legales del menor puede suplir este requisito."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Convenio de Oviedo"
+    }
+   ],
+   "fin": "error"
+  },
+  "fin_sin_facultades": {
+   "fase": 1,
+   "titulo": "Donante sin plenitud de facultades mentales",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El donante no cuenta con la plenitud de facultades mentales requerida por la ley para prestar un consentimiento válido. El consentimiento debe ser consciente, lo que implica que el donante debe comprender plenamente el significado y las consecuencias de su decisión."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Si el donante tiene una discapacidad intelectual que no le impide comprender la naturaleza y consecuencias de la donación, la información debe adaptarse a sus necesidades mediante sistemas comprensibles. La falta de plenitud de facultades debe acreditarse debidamente."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Ley 41/2002 (autonomía del paciente)"
+    }
+   ],
+   "fin": "error"
+  },
+  "fin_consentimiento_invalido": {
+   "fase": 1,
+   "titulo": "Consentimiento no válido o donación no gratuita",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El consentimiento del donante no cumple los requisitos legales de ser expreso, libre, consciente y desinteresado, o existe indicios de que la donación no es gratuita (ánimo de lucro, compensación económica). Ambas circunstancias impiden la autorización judicial de la extracción."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "El Código Penal tipifica el tráfico de órganos humanos como garantía penal de la gratuidad y el altruismo que presiden la donación en vida. Cualquier indicio de tráfico o compensación económica debe comunicarse a las autoridades competentes."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El consentimiento debe manifestarse por escrito y firmado por el donante. Si el consentimiento no es expreso, libre, consciente y desinteresado, el documento no puede extenderse."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 30/1979, arts. 1 y 4 · RD 1723/2012, art. 8 · Código Penal · Convenio de Oviedo"
+    }
+   ],
+   "fin": "error"
+  },
+  "fin_incompatible": {
+   "fase": 1,
+   "titulo": "Extracción no compatible con la vida del donante",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El órgano o parte de él cuya extracción se solicita no es compatible con la vida del donante, o su función no puede ser compensada por el organismo del donante de forma adecuada y suficientemente segura. La ley exige que la extracción sea compatible con la vida y funcionalmente compensable."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Conforme al Convenio de Oviedo, la extracción de órganos sólidos de donante vivo se limita al interés terapéutico del receptor cuando no se disponga de órgano de persona fallecida ni de alternativa terapéutica de comparable eficacia."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Convenio de Oviedo · Directiva 2010/45/UE"
+    }
+   ],
+   "fin": "error"
+  },
+  "fin_solicitud_incompleta": {
+   "fase": 1,
+   "titulo": "Solicitud no subsanada — Archivo",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El solicitante no ha subsanado las deficiencias de la solicitud en el plazo concedido. El expediente no puede continuar y se procederá al archivo de las actuaciones."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El solicitante podrá iniciar un nuevo expediente aportando desde el inicio toda la documentación requerida."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, arts. 13-22 (normas comunes de tramitación)"
+    }
+   ],
+   "fin": "warning"
+  },
+  "fin_certificado_no_adjunto": {
+   "fase": 1,
+   "titulo": "Certificado médico no aportado",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "No se ha aportado el certificado médico sobre la salud física y mental del donante, emitido de conformidad con la normativa correspondiente. Este documento es un requisito imprescindible para la tramitación del expediente."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El certificado médico debe ser emitido por un profesional sanitario competente y conforme a lo dispuesto en el Real Decreto 1723/2012, en particular su artículo 8. Sin él, no es posible acreditar la aptitud del donante para la extracción."
+    },
+    {
+     "tipo": "ley",
+     "texto": "RD 1723/2012, art. 8 · Ley 15/2015, art. 79.1"
+    }
+   ],
+   "fin": "error"
+  },
+  "fin_revocacion": {
+   "fase": 4,
+   "titulo": "Revocación del consentimiento por el donante",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El donante ha revocado su consentimiento durante el plazo de reflexión o en cualquier momento anterior a la intervención quirúrgica. La revocación es libre y no está sujeta a formalidad alguna."
+    },
+    {
+     "tipo": "info",
+     "texto": "La revocación es plenamente eficaz e impide que la extracción y el trasplante puedan llevarse a cabo. El documento de cesión del órgano pierde su validez."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El derecho de revocación es una manifestación del carácter libre del consentimiento. La revocación no produce efecto jurídico adverso para el donante. Si el donante cambia de opinión nuevamente, podrá iniciar un nuevo expediente de constatación judicial."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 80 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8"
+    }
+   ],
+   "fin": "warning"
+  }
+ },
+ "pie": "Ley 15/2015, arts. 78-80 · Ley 30/1979 · RD 1723/2012 · Directiva 2010/45/UE · Convenio de Oviedo"
+});

@@ -182,6 +182,143 @@ const dropNoResults = (list) =>
     .filter((b) => !(b.p !== undefined && ["no-results", "flow-arrow", "tl-arrow"].includes(b.clase)))
     .map((b) => (b.tarjeta ? { ...b, tarjeta: { ...b.tarjeta, cuerpo: dropNoResults(b.tarjeta.cuerpo) } } : b.apartado ? { ...b, apartado: { ...b.apartado, contenido: dropNoResults(b.apartado.contenido) } } : b));
 
+// ── Guías ──────────────────────────────────────────────────────────────────
+// The old option field `l` meant three things depending on the guía: a tone (ok/bad/warn/neutral),
+// the option's letter (A, B… — the engine numbers options itself), or a short label of its own.
+
+const OPT_TONE = { ok: "t-ok", bad: "t-aviso", warn: "t-plazo", neutral: "t-nota" };
+const BLOCK = { i: "info", n: "nota", l: "ley", w: "aviso", d: "plazo" };
+const isLetter = (s) => /^[A-Z]$/.test(s);
+
+function option(o) {
+  const tone = OPT_TONE[o.v] || OPT_TONE[o.l] || "t-nota";
+  const label = o.l && !OPT_TONE[o.l] && !isLetter(o.l) ? o.l : null;
+  return { texto: o.t, tono: tone, ...(label ? { nota: label } : {}), destino: o.n };
+}
+
+function stepBlocks(c) {
+  return (c || []).map((b) => {
+    if (b[0] === "cl" || b[0] === "ul") return { tipo: "lista", titulo: b[1], items: b[2], ...(b[0] === "cl" ? { marcar: true } : {}) };
+    if (!BLOCK[b[0]]) throw new Error(`Bloque de guía desconocido: ${b[0]}`);
+    return { tipo: BLOCK[b[0]], texto: b[1] };
+  });
+}
+
+/** The sidebar footer (SB_FOOT): its text with line breaks, without the old wrapper markup. Some
+ *  guías give it as HTML, one (G15) as a list of plain lines. */
+const escHtml = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const footer = (v) => {
+  if (!v) return "";
+  if (Array.isArray(v)) return v.map(escHtml).join("<br>");
+  return v.replace(/<\/?div[^>]*>/g, "").replace(/<br\s*\/?>/g, "<br>").trim();
+};
+
+/** The guías' texts were raw HTML (inserted as such): normalised to the subset the esquemas use —
+ *  text escaped, <b>→<strong>, <i>→<em>, <span> unwrapped, other tags dropped (content kept). */
+const KEEP = { b: "strong", strong: "strong", i: "em", em: "em", br: "br", sup: "sup", sub: "sub", code: "code", u: "u" };
+const ENT = { "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&#39;": "'", "&nbsp;": " " };
+function safe(s) {
+  if (typeof s !== "string") return s;
+  let out = "";
+  for (const part of s.split(/(<\/?[a-z][a-z0-9]*\b[^>]*>)/i)) {
+    const tag = part.match(/^<(\/?)([a-z][a-z0-9]*)\b[^>]*>$/i);
+    if (tag) {
+      const keep = KEEP[tag[2].toLowerCase()];
+      if (keep === "br") out += "<br>";
+      else if (keep) out += `<${tag[1]}${keep}>`;
+    } else out += escHtml(part.replace(/&(amp|lt|gt|quot|#39|nbsp);/g, (m) => ENT[m]));
+  }
+  return out;
+}
+const safeDeep = (v) => (typeof v === "string" ? safe(v) : Array.isArray(v) ? v.map(safeDeep) : v && typeof v === "object" ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, ["destino", "actor", "tono", "siguiente", "fin", "tipo"].includes(k) ? x : safeDeep(x)])) : v);
+
+function guia(invId) {
+  const inv = read(invId);
+  const esq = recursos[recursos[invId].esquema];
+  const ley = lawOf(invId);
+  const phases = (inv.otrosDatos.PHASES || []).map((p) => (typeof p === "string" ? p : p.name || p.label || p.t));
+  const pasos = {};
+  for (const [id, s] of Object.entries(inv.pasos)) {
+    pasos[id] = safeDeep({
+      fase: s.ph,
+      titulo: s.t,
+      actor: s.ac,
+      bloques: stepBlocks(s.c),
+      ...(s.q ? { pregunta: s.q } : {}),
+      ...(s.opts ? { opciones: s.opts.map(option) } : {}),
+      ...(s.nx ? { siguiente: s.nx } : {}),
+      ...(s.end ? { fin: s.end } : {}),
+    });
+  }
+  return {
+    tipo: "guia",
+    id: esq.id,
+    ley,
+    ...(esq.grupo ? { grupo: esq.grupo } : {}),
+    titulo: strip(inv.cabecera ? inv.cabecera.titulo : inv.titulo).replace(/^[☰⚖\s]+/, ""),
+    corto: esq.corto,
+    articulos: articlesOf(inv),
+    revision: { estado: "sin revisar", boe: load(ley).fecha, origen: invId },
+    fases: phases.map(safe),
+    actores: Object.fromEntries(Object.entries(inv.actores.etiquetas).map(([k, l]) => [k, safe(l)])),
+    inicio: inv.inicio,
+    pasos,
+    ...(inv.otrosDatos.SB_FOOT ? { pie: safe(footer(inv.otrosDatos.SB_FOOT)) } : {}),
+  };
+}
+
+function guiaFidelity(inv, rec) {
+  const before = [];
+  const after = [];
+  const add = (list, s) => {
+    const t = strip(s || "");
+    if (t) list.push(t);
+  };
+  for (const s of Object.values(inv.pasos)) {
+    add(before, s.t);
+    add(before, s.q);
+    for (const o of s.opts || []) {
+      add(before, o.t);
+      if (o.l && !OPT_TONE[o.l] && !isLetter(o.l)) add(before, o.l);
+    }
+    for (const b of s.c || []) b.slice(1).forEach((x) => (Array.isArray(x) ? x.forEach((y) => add(before, y)) : add(before, x)));
+  }
+  (inv.otrosDatos.PHASES || []).forEach((p) => add(before, typeof p === "string" ? p : p.name || p.label || p.t));
+  Object.values(inv.actores.etiquetas).forEach((l) => add(before, l));
+  add(before, footer(inv.otrosDatos.SB_FOOT));
+
+  for (const s of Object.values(rec.pasos)) {
+    add(after, s.titulo);
+    add(after, s.pregunta);
+    for (const o of s.opciones || []) {
+      add(after, o.texto);
+      add(after, o.nota);
+    }
+    for (const b of s.bloques) {
+      add(after, b.titulo);
+      add(after, b.texto);
+      (b.items || []).forEach((y) => add(after, y));
+    }
+  }
+  rec.fases.forEach((p) => add(after, p));
+  Object.values(rec.actores).forEach((l) => add(after, l));
+  add(after, rec.pie);
+
+  const count = (list) => list.reduce((m, t) => m.set(t, (m.get(t) || 0) + 1), new Map());
+  const a = count(before);
+  const b = count(after);
+  const diff = [];
+  for (const [t, n] of a) if (b.get(t) !== n) diff.push(`antes ×${n}, después ×${b.get(t) || 0}: «${t.slice(0, 90)}»`);
+  for (const [t, n] of b) if (!a.has(t)) diff.push(`solo después ×${n}: «${t.slice(0, 90)}»`);
+  // The graph must not change either: same steps, same exits.
+  for (const [id, s] of Object.entries(inv.pasos)) {
+    const r = rec.pasos[id];
+    const exits = (x) => [x.nx || x.siguiente, ...(x.opts || x.opciones || []).map((o) => o.n || o.destino)].filter(Boolean).join(",");
+    if (!r || exits(s) !== exits(r) || (s.end || null) !== (r.fin || null) || s.ph !== r.fase) diff.push(`paso «${id}»: grafo distinto`);
+  }
+  return diff;
+}
+
 // ── Main ───────────────────────────────────────────────────────────────────
 
 function write(folder, rec, origin) {
@@ -214,8 +351,22 @@ function main() {
       console.log(`${invId} → ${rec.id}: ${cards.length} tarjetas, ${rec.articulos.length} artículos de ámbito, texto idéntico (${(fs.statSync(file).size / 1024).toFixed(0)} KB)`);
     }
   }
+  if (what === "guias") {
+    for (const invId of Object.keys(recursos).filter((k) => /^G\d+$/.test(k))) {
+      const inv = read(invId);
+      const rec = guia(invId);
+      const diff = guiaFidelity(inv, rec);
+      if (diff.length) {
+        failed++;
+        console.log(`${invId} → ${rec.id}: ${diff.length} diferencias\n  ${diff.slice(0, 8).join("\n  ")}`);
+        continue;
+      }
+      const file = write("guias", rec, invId);
+      console.log(`${invId} → ${rec.id}: ${Object.keys(rec.pasos).length} pasos, ${rec.fases.length} fases, texto y grafo idénticos (${(fs.statSync(file).size / 1024).toFixed(0)} KB)`);
+    }
+  }
   process.exitCode = failed ? 1 : 0;
 }
 
-module.exports = { blocks, esquema, fidelity, texts };
+module.exports = { blocks, esquema, fidelity, texts, guia, guiaFidelity };
 if (require.main === module) main();

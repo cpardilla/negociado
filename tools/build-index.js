@@ -111,7 +111,9 @@ for (const r of esquemas) {
     Object.values(v).forEach(walk);
   })(r.secciones);
 }
-for (const r of guias) for (const e of r.busqueda || []) entradas.push({ k: "guia", ...e, c: `${r.ley} · ${r.corto || r.titulo}` });
+// Guías: every step's title, linked to the step.
+for (const r of guias)
+  for (const [id, p] of Object.entries(r.pasos)) entradas.push({ k: "guia", t: plain(p.titulo), d: p.pregunta ? plain(p.pregunta).slice(0, 160) : "", c: `${r.ley} · ${r.corto}`, u: `#/guia/${r.id}/${encodeURIComponent(id)}` });
 
 console.log(write("catalogo", catalogo, `${catalogo.leyes.length} leyes, ${catalogo.esquemas.length} esquemas, ${catalogo.guias.length} guías`));
 console.log(write("busqueda", { tipo: "catalogo", id: "busqueda", entradas }, `${entradas.length} entradas`));
