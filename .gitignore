@@ -1,0 +1,8 @@
+# Historial local de SpecStory (chats): no se publica (el repositorio es público)
+.specstory/
+
+# Dependencias y salidas de herramientas de desarrollo
+node_modules/
+tests/results/
+tests/shots/
+*.log

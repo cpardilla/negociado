@@ -1,0 +1,42 @@
+# Negociado
+
+Material de apoyo para la tramitación en el Negociado de los juzgados de Las Palmas (interfaz en español): leyes completas (LEC y LJV), índices, esquemas interactivos por artículo y guías de tramitación paso a paso. Publicado en GitHub Pages (https://cpardilla.github.io/negociado/, desde la raíz de `main`) y usable también como copia local desde `file://`.
+
+El plan, el estado de cada fase y las decisiones están en `docs/ROADMAP.md`; la revisión jurídica de cada recurso, en `docs/revision/<id>.md`.
+
+## Principio rector
+
+**El contenido manda.** Lo más importante es que todo lo que dice la app sea exacto y esté vigente. Cada afirmación jurídica se puede contrastar con el texto consolidado del BOE, y cada corrección se registra con su fuente. Ante la duda en una cuestión jurídica o de práctica del juzgado, se pregunta al propietario; no se decide en silencio.
+
+## Restricciones
+
+- Tiene que funcionar igual en **https (GitHub Pages)** y en **`file://`**: `<script src>` clásicos, sin módulos ES, sin `fetch()` de ficheros locales, sin service workers. Los datos son ficheros `.js` que se registran en un objeto global.
+- Vanilla (HTML, CSS, JS). Sin frameworks ni paso de compilación para publicar: lo generado se genera en desarrollo y se versiona. Las herramientas en node (`tools/`) son solo de desarrollo.
+- Sin recursos de terceros en ejecución (ni CDN ni Google Fonts).
+- El repositorio es público: nada personal, de expedientes ni historiales de chat.
+- `localStorage` solo con claves `negociado.*`. En `file://` el origen es compartido con Agenda y Plantillas: nunca se tocan sus claves.
+
+## Arquitectura (objetivo; ver ROADMAP §5)
+
+`index.html` (carcasa) · `assets/css/` (tokens + componentes) · `assets/js/core|views/` (motores de ley, esquema, guía y referencia) · `vendor/markmap/` · `data/leyes|esquemas|guias/*.js` + `data/catalogo.js` · `sources/boe/` (instantáneas del BOE con fecha) · `tools/` · `tests/`.
+
+Estado actual (antes del rediseño): 57 HTML autocontenidos en `00 - Indices/`, `01 - Legislación completa interactiva/`, `02 - Esquemas interactivos/`, `03 - Guías de tramitación/`, y `index.html` generado por `build_index.js` (no ejecutarlo sin motivo: el `index.html` versionado está reformateado a mano y el diff sería enorme).
+
+## Fuente de verdad jurídica
+
+API de datos abiertos del BOE, legislación consolidada: `https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/{id}/...` (LEC `BOE-A-2000-323`, LJV `BOE-A-2015-7391`). Las instantáneas se guardan en `sources/boe/` con su fecha de actualización; toda revisión anota su fecha de corte.
+
+## Forma de trabajar
+
+- Idioma de la respuesta: el del propietario. En castellano → castellano (de «tú»); en inglés → inglés; mezclado → inglés.
+- **Ningún cambio en la app sin visto bueno del propietario.** Fase a fase: plan → aprobación → un commit por paso → verificación → informe honesto con cifras.
+- **Tras cada implementación (uno o varios pasos), siempre dos cosas más, en este orden:**
+  1. **Auditoría completa (segunda vuelta)**: revisar lo hecho y lo que toca, buscando fallos ya existentes o introducidos por los cambios recientes, y despistes. Lo encontrado se corrige o se anota en el ROADMAP.
+  2. **Batería de tests** que compruebe que todo funciona como debe (https/servidor local y `file://`), con los resultados en el informe.
+- Preguntas interactivas al propietario cuando él lo pida o cuando haga falta su criterio para seguir.
+- **Agenda y Plantillas no se modifican nunca** (corresponde a sus propios chats); sus repositorios se pueden leer como referencia. La memoria USB se ignora: Negociado no está en ella.
+- La forma y el fondo nunca van en el mismo commit: migrar o rediseñar no cambia el contenido; las correcciones de contenido van en commits propios con su registro.
+- El trabajo se hace en la rama `rediseno`; a `main` (= la web publicada) solo llegan bloques completos y probados, con visto bueno.
+- Push a GitHub solo cuando el propietario lo pida.
+- Actualizar `docs/ROADMAP.md` con cada paso.
+- Construir HTML siempre escapando el texto (una única función compartida) o con APIs del DOM.
