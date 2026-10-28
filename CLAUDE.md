@@ -40,6 +40,8 @@ API de datos abiertos del BOE, legislación consolidada: `https://www.boe.es/dat
 - Push a GitHub solo cuando el propietario lo pida.
 - Actualizar `docs/ROADMAP.md` con cada paso.
 - Construir HTML siempre escapando el texto (una única función compartida) o con APIs del DOM.
+- En expresiones regulares, nada de escapes `\uXXXX` escritos con la herramienta de edición (los convierte en caracteres literales invisibles): usar clases Unicode (`\p{M}`, `\p{L}` con la bandera `u`). Lo vigila un test.
+- Un solo analizador de citas (`assets/js/core/citas.js`) para la app y las herramientas.
 
 ## Reglas de diseño (del propietario)
 

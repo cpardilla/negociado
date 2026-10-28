@@ -5,21 +5,16 @@
 const fs = require("fs");
 const path = require("path");
 
+// Article numbering (suffixes, the forms of a number, its canonical key) is shared with the app.
+const { SUFFIXES, ART_NUM, articleKey } = require("../../assets/js/core/citas");
+
 const DIR = path.join(__dirname, "..", "..", "sources", "boe");
-// Latin suffixes of inserted articles. The BOE writes some with an accent ("778 quáter"): both
-// forms are read, keys use the plain one. Always used with (?![a-z]), so "ter" never takes the
-// start of "terdecies".
-// Compound ones are built, not listed: un/duo/ter/… + decies/vicies/tricies ("529 tervicies" in the LSC).
-const SUFFIXES = "bis|ter|qu[aá]ter|quinquies|sexies|s[eé]pties|octies|nonies|(?:un|duo|ter|qu[aá]ter|quin|sex|sept|octo|novo)?(?:decies|vicies|tricies)";
-// An article number in every form the BOE uses: "140", "26 bis", "778 quáter", "529 terdecies",
-// "216 bis 2" (LOPJ), "42 bis a)" (LJV), "236-a", "236-ñ", "354 a)", "398.a" (RH).
-const ART_NUM = `\\d+(?:\\s*(?:${SUFFIXES})(?![a-zñ])(?:\\s+\\d+(?!\\d))?)?(?:[-.][a-zñ](?![a-zñ])|\\s*\\.?\\s*[a-zñ]\\))?`;
 
 /** Lowercase, no accents, single spaces: for comparisons that ignore typography. */
 function fold(s) {
   return s
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
+    .replace(/\p{M}/gu, "")
     .toLowerCase()
     .replace(/[“”«»"']/g, '"')
     .replace(/[–—]/g, "-")
@@ -27,20 +22,6 @@ function fold(s) {
     .trim();
 }
 
-/** Canonical key of an article number: "26BIS" → "26 bis", "778 quáter" → "778 quater",
- *  "42 bis.b)" → "42 bis b", "216 bis 2" → "216 bis 2", "236-a" / "398.a" / "354 a)" → "236 a"…
- *  Accents go, but "ñ" stays a letter of its own ("236-ñ" is not "236-n"). */
-function articleKey(s) {
-  const t = String(s)
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/ñ/g, "ñ")
-    .replace(/[̀-ͯ]/g, "")
-    .trim();
-  const m = t.match(new RegExp(`^(\\d+)(?:\\s*(${SUFFIXES})(?![a-zñ])(?:\\s+(\\d+)(?!\\d))?)?(?:[-.]([a-zñ])(?![a-zñ])|\\s*\\.?\\s*([a-zñ])\\))?`));
-  if (!m) return null;
-  return [m[1], m[2], m[3], m[4] || m[5]].filter(Boolean).join(" ");
-}
 
 // Older laws (LH, LN…) write ordinals as words: "Primero.", "Segundo."…
 const ORDINAL_WORDS = ["primer[oa]", "segund[oa]", "tercer[oa]", "cuart[oa]", "quint[oa]", "sext[oa]", "s[eé]ptim[oa]", "octav[oa]", "noven[oa]", "d[eé]cim[oa]", "und[eé]cim[oa]", "duod[eé]cim[oa]"];

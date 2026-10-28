@@ -83,6 +83,35 @@ test("range and division follow the law's own order and headings", () => {
   assert.equal(division(load("LJV"), ["Disposición común"]), null);
 });
 
+test("sources hold no literal combining marks (regexes stay readable: \\p{M})", () => {
+  const offenders = [];
+  (function walk(dir) {
+    for (const f of fs.readdirSync(dir)) {
+      const p = path.join(dir, f);
+      if (fs.statSync(p).isDirectory()) walk(p);
+      else if (/\.(js|css|html)$/.test(f) && /\p{M}/u.test(fs.readFileSync(p, "utf8"))) offenders.push(path.relative(ROOT, p));
+    }
+  })(path.join(ROOT, "assets"));
+  for (const d of ["tools", "tests"]) (function walk(dir) {
+    for (const f of fs.readdirSync(dir)) {
+      const p = path.join(dir, f);
+      if (fs.statSync(p).isDirectory()) walk(p);
+      else if (/\.js$/.test(f) && /\p{M}/u.test(fs.readFileSync(p, "utf8"))) offenders.push(path.relative(ROOT, p));
+    }
+  })(path.join(ROOT, d));
+  assert.deepEqual(offenders, []);
+});
+
+test("one citation parser for app and tools", () => {
+  const citas = require("../assets/js/core/citas");
+  assert.equal(citas.articleKey("236-ñ"), "236 ñ");
+  assert.notEqual(citas.articleKey("236-ñ"), citas.articleKey("236-n"));
+  assert.equal(require("../tools/lib/boe").articleKey, citas.articleKey, "the BOE reader uses the shared one");
+  const found = citas.find("Véase el art. 140.1 LJV y el artículo 1973 del Código Civil.", { defaultLaw: "LEC" });
+  assert.deepEqual(found.map((c) => [c.law, c.refs[0].art, c.refs[0].apdo]), [["LJV", "140", "1"], ["CC", "1973", null]]);
+  assert.equal(found[0].lawLength, 4, "the link can cover « LJV»");
+});
+
 // ── Citation and term parsing ───────────────────────────────────────────────
 
 test("parseCitation: ranges, lists, apartados, lettered articles", () => {

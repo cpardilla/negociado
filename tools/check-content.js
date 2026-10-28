@@ -22,6 +22,7 @@
 const fs = require("fs");
 const path = require("path");
 const { load, fold, articleKey, range, division, SUFFIXES } = require("./lib/boe");
+const citas = require("../assets/js/core/citas");
 
 const ROOT = path.join(__dirname, "..");
 const ACTUAL = path.join(ROOT, "sources", "actual");
@@ -29,45 +30,11 @@ let undetermined = 0; // citations whose law cannot be told (see citations / che
 
 // ── Laws ────────────────────────────────────────────────────────────────────
 
-const LAW_PATTERNS = [
-  ["LEC", /^(?:LEC(?:iv)?\b|Ley 1\/2000\b|Ley de Enjuiciamiento Civil\b)/],
-  ["LJV", /^(?:LJV\b|Ley 15\/2015\b|Ley de (?:la )?Jurisdicci[oó]n Voluntaria\b)/],
-  ["LECrim", /^(?:LECrim\b|Ley de Enjuiciamiento Criminal\b)/],
-  ["CC", /^(?:CC\b|C[oó]digo Civil\b|C\.C\.)/],
-  ["LOPJ", /^(?:LOPJ\b|Ley Org[aá]nica del Poder Judicial\b|LO 6\/1985\b)/],
-  ["CE", /^(?:CE\b|Constituci[oó]n(?: Española)?\b)/],
-  ["LRC", /^(?:LRC\b|Ley del Registro Civil\b|Ley 20\/2011\b)/],
-  ["LH", /^(?:LH\b|Ley Hipotecaria\b)/],
-  ["RH", /^(?:RH\b|Reglamento Hipotecario\b)/],
-  ["LN", /^(?:LN\b|Ley del Notariado\b)/],
-  ["CCom", /^(?:CCom\b|C[oó]digo de Comercio\b)/],
-  ["LSC", /^(?:LSC\b|Ley de Sociedades de Capital\b)/],
-  ["TRLC", /^(?:TRLC\b|LC\b|Ley Concursal\b)/],
-  ["CP", /^(?:CP\b|C[oó]digo Penal\b)/],
-  ["LJCA", /^(?:LJCA\b)/],
-  ["LJS", /^(?:LJS\b|LRJS\b)/],
-  ["LPAP", /^(?:LPAP\b|Ley 33\/2003\b)/],
-  ["LOPJM", /^(?:LOPJM\b|LO 1\/1996\b|Ley Org[aá]nica 1\/1996\b)/],
-  ["LO 1/2025", /^(?:LO 1\/2025\b|Ley Org[aá]nica 1\/2025\b)/],
-  ["TRLGDCU", /^(?:TRLGDCU\b|RDL(?:eg)? 1\/2007\b)/],
-  ["UE", /^(?:Directiva\b|Dir\.\s|Reglamento \(UE\)|Reglamento \(CE\)|Reglamento Bruselas|TFUE\b|CDFUE\b|Convenio\b)/],
-  ["otra", /^(?:Ley(?: Org[aá]nica)? \d+\/\d{4}\b|LO \d+\/\d{4}\b|RD(?:L|Leg)? ?\d+\/\d{4}\b|Real Decreto(?:-ley| Legislativo)? \d+\/\d{4}\b|Reglamento\b)/],
-];
 // "LO 1/1996" → "LOPJM": the names used in tools/leyes.json, so that their snapshots are found.
 const ALIAS = {};
 for (const l of JSON.parse(fs.readFileSync(path.join(__dirname, "leyes.json"), "utf8"))) {
   ALIAS[l.clave] = l.clave;
   for (const a of l.alias) ALIAS[a] = l.clave;
-}
-function lawAt(s) {
-  for (const [key, re] of LAW_PATTERNS) {
-    const m = s.match(re);
-    if (m) {
-      const raw = key === "otra" ? m[0].replace(/^Ley Org[aá]nica /, "LO ").replace(/^Real Decreto /, "RD ") : key;
-      return { key: ALIAS[raw] || raw, length: m[0].length };
-    }
-  }
-  return null;
 }
 
 // ── Text units ──────────────────────────────────────────────────────────────
@@ -146,32 +113,7 @@ function units(rec) {
 }
 
 // ── Citations ───────────────────────────────────────────────────────────────
-
-const NUM = `\\d+(?:\\s*(?:${SUFFIXES})(?![a-z]))?(?:\\.\\d+(?:\\s*\\.?\\s*[ºª°])?)*(?:\\.?\\s*[a-zñ]\\))?`;
-// "art. 5", "art.5", "arts. 5 a 9", "artículos 6, 7 y 9"
-const CITE = new RegExp(`\\b(?:art[ií]culos?\\s+|arts?\\.\\s*|arts?\\s+)(${NUM}(?:\\s*(?:,|y|e|a|al|–|-)\\s*${NUM})*)`, "gi");
-
-function parseCitation(numbers) {
-  // "256 a 263" / "256-263" are ranges; "6, 7 y 9" a list.
-  const parts = [];
-  // A word separator must be followed by a number: the "a" in "42 bis a)" is part of the article.
-  const tokens = numbers.split(/\s*(,|\by\b(?=\s*\d)|\be\b(?=\s*\d)|\ba\b(?=\s*\d)|\bal\b(?=\s*\d)|–|-)\s*/i);
-  for (let i = 0; i < tokens.length; i += 2) {
-    const t = tokens[i].trim();
-    if (!t) continue;
-    const sep = tokens[i - 1];
-    const m = t.match(new RegExp(`^(\\d+(?:\\s*(?:${SUFFIXES})(?![a-z]))?)((?:\\.\\d+)?)((?:\\.\\d+)?)\\s*(\\.?\\s*[ºª°])?\\.?\\s*(?:([a-zñ])\\))?`, "i"));
-    if (!m) continue;
-    // "18.4.ª" is the 4th rule (regla) of article 18, not its apartado 4.
-    const ordinalOnly = m[2] && !m[3] && m[4];
-    const ref = ordinalOnly
-      ? { art: articleKey(m[1]), apdo: null, regla: m[2].slice(1) }
-      : { art: articleKey(m[1]), apdo: m[2] ? m[2].slice(1) : null, sub: m[3] ? m[3].slice(1) : m[5] || null };
-    if (sep && /^(a|al|–|-)$/i.test(sep) && parts.length && !ref.apdo) parts[parts.length - 1].hasta = ref.art;
-    else parts.push(ref);
-  }
-  return parts;
-}
+// Parsing is shared with the app (assets/js/core/citas.js); here only the checker's policy.
 
 /** "art. 42 bis b)": in the LJV the letter is part of the article number, not a sub-item. */
 function resolveLettered(law, r) {
@@ -185,44 +127,16 @@ function resolveLettered(law, r) {
   return r;
 }
 
-/** Laws named anywhere in a text. */
-function lawsIn(text) {
-  const found = new Set();
-  for (const m of text.matchAll(/(?:^|[\s(,;:·])(?=[A-ZDRL])/g)) {
-    const l = lawAt(text.slice(m.index + m[0].length));
-    if (l) found.add(l.key);
-  }
-  return found;
-}
-
+/** Citations whose law is known (explicit, or the resource's own by default); the others are
+ *  counted as undetermined when `count` is set. */
 function citations(text, defaultLaw, count = true) {
   const out = [];
-  // A text that names other laws but never the resource's own: a bare "art. 7" is not its own law's.
-  let fallback = defaultLaw;
-  if (defaultLaw) {
-    const named = lawsIn(text);
-    if (named.size && !named.has(defaultLaw)) fallback = null;
-  }
-  for (const m of text.matchAll(CITE)) {
-    const after = text.slice(m.index + m[0].length);
-    const before = text.slice(Math.max(0, m.index - 40), m.index);
-    let law = null;
-    const a = after.match(/^\s*,?\s*(?:de\s+(?:la|el)\s+|del\s+|\()?/);
-    const la = lawAt(after.slice(a[0].length));
-    if (la) law = la.key;
-    if (!law) {
-      // "LEC art. 517", "Ley 15/2015, arts. 2"
-      const b = before.match(/([A-Z][\w/.() ]{1,45}?)\s*,?\s*$/);
-      if (b) for (let i = 0; i < b[1].length && !law; i++) {
-        const lb = lawAt(b[1].slice(i));
-        if (lb && i + lb.length >= b[1].trimEnd().length - 1) law = lb.key;
-      }
-    }
-    if (!law && !fallback) {
+  for (const c of citas.find(text, { defaultLaw, alias: ALIAS })) {
+    if (!c.law) {
       if (count) undetermined++;
       continue;
     }
-    out.push({ texto: m[0], law: law || fallback, porDefecto: !law, refs: parseCitation(m[1]) });
+    out.push(c);
   }
   return out;
 }
@@ -511,6 +425,6 @@ function main() {
   for (const c of ORDER) console.log(`  ${c.padEnd(13)} ${LEVELS.map((l) => count(all, (f) => f.check === c && f.level === l)).join(" / ")}`);
 }
 
-module.exports = { citations, parseCitation, plazos, termInText, inQuotes, checkResource, units };
+module.exports = { citations, parseCitation: citas.parseCitation, plazos, termInText, inQuotes, checkResource, units };
 
 if (require.main === module) main();

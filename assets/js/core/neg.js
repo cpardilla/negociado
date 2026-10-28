@@ -12,7 +12,7 @@
   Neg.fold = (s) =>
     String(s == null ? "" : s)
       .normalize("NFD")
-      .replace(/[̀-ͯ]/g, "")
+      .replace(/\p{M}/gu, "")
       .toLowerCase();
 
   /** "20260305" → "05-03-2026". */
