@@ -24,7 +24,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | · | · | · | 1R | · | · | 1R |
 | ljv-emancipacion | Esquema · LJV · Emancipación y beneficio de la mayoría de edad | · | · | · | · | · | · | · |
-| ljv-patrimonio-protegido | Esquema · LJV · Patrimonio de las personas con discapacidad | 2E | · | · | 2R | · | · | 1R |
+| ljv-patrimonio-protegido | Esquema · LJV · Patrimonio de las personas con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-honor-menor | Esquema · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 3E 3A 41R | · | · | 1R | 1R | · | 2R |
 | ljv-actos-disposicion | Esquema · LJV · Actos de disposición sobre bienes de menores y personas con apoyos | 2R | · | · | · | · | · | 1R |
 | ljv-ausencia-fallecimiento | Esquema · LJV · Declaración de ausencia y fallecimiento | 22R | · | · | · | · | · | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 69E 38A 137R | 0E 0A 0R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 74R |
+| | **Total** | 67E 38A 137R | 0E 0A 0R | 0E 0A 0R | 0E 0A 11R | 0E 0A 9R | 4E 0A 1R | 0E 0A 74R |
 
 E = error · A = aviso · R = revisar.
 
@@ -70,18 +70,18 @@ E = error · A = aviso · R = revisar.
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
 - ✓ LJV (BOE a 05-03-2026): 2541
-- ✓ LEC (BOE a 07-10-2026): 1515
-- ✓ CC (BOE a 07-09-2026): 1383
-- ✓ LOPJ (BOE a 09-10-2026): 70
+- ✓ LEC (BOE a 07-10-2026): 1514
+- ✓ CC (BOE a 07-09-2026): 1384
+- ✓ LOPJ (BOE a 09-10-2026): 72
 - ✓ CE (BOE a 20-05-2026): 64
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 57
 - UE: 52
 - ✓ LOPDH (BOE a 16-12-2025): 42
-- ✓ LRC (BOE a 24-02-2026): 39
-- ✓ LH (BOE a 07-01-2026): 33
+- ✓ LRC (BOE a 24-02-2026): 37
+- ✓ LPPD (BOE a 18-12-2025): 33
+- ✓ LH (BOE a 07-01-2026): 32
 - ✓ LN (BOE a 22-10-2026): 29
-- ✓ LPPD (BOE a 18-12-2025): 24
 - ✓ LOPDGDD (BOE a 08-10-2026): 16
 - ✓ LTO (BOE a 16-12-2025): 16
 - ✓ RDTO (BOE a 19-12-2025): 16
@@ -112,7 +112,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 542 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 533 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -216,19 +216,9 @@ Sin hallazgos automáticos.
 
 ### ljv-patrimonio-protegido · Esquema · LJV · Patrimonio de las personas con discapacidad
 
-**citas**
-
-- [error] «Art. 457»: el art. 457 LEC está sin contenido/derogado — _sección «Artículos 56-58: Régimen aplicable ampliado» › tarjeta «Artículo 58» › «Régimen de recursos: apelación con efectos suspensivos y excepción» › 1 › punto.2_
-- [error] «Art. 457»: el art. 457 LEC está sin contenido/derogado — _sección «Indice de plazos procesales» › 1 › tabla fila 1_
-
-**plazos**
-
-- [revisar] plazo «20 días» no aparece en el precepto citado (Art. 58.4 LJV; Art. 457 LEC): «Interposición de recurso de apelación contra resolución judicial · 20 días · Ley 15/2015 Art. 58.4; LEC Art. 457» — _sección «Indice de plazos procesales» › 1 › tabla fila 1_
-- [revisar] plazo «3 años» no aparece en el precepto citado (Art. 269 CC; Art. 58.3 LJV): «Revisión periódica de medidas de apoyo judicialmente adoptadas · Máx. 3 años · Ley 8/2021 Art. 269 CC; Ley 15/2015 Art. 58.3» — _sección «Indice de plazos procesales» › 1 › tabla fila 4_
-
 **terminologia**
 
-- [revisar] «Juzgado de Primera Instancia» × 3 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos 56-58: Régimen aplicable ampliado» › tarjeta «Artículo 57» › «Competencia territorial y objetiva» › 1 › punto.1 | sección «Artículos 56-58: Régimen aplicable ampliado» › tarjeta «Artículo 57» › «Competencia territorial y objetiva» › 1 › punto.3 | sección «Mapa de participantes y actores» › 1 › grupo «Órganos judiciales».1_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos 56–58 y régimen de la Ley 41/2003» › tarjeta «Artículo 57» › «Competencia (apartado 1)» › 1 › punto.1_
 
 ### ljv-honor-menor · Esquema · LJV · Honor, intimidad e imagen del menor o persona con discapacidad
 
