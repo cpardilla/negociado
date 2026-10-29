@@ -284,11 +284,13 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 8. ✅ URL antiguas: redirección cuando sea posible; si no, aviso para actualizar favoritos («if → else»). Implementación: `404.html` de GitHub Pages con la tabla de correspondencias antigua → nueva; si la dirección está en la tabla, redirige; si no, muestra el aviso con enlace a la portada.
 9. ✅ (2026-10-29) **Alcance de los esquemas**: se ciñen a lo que usa el juzgado: sus artículos y las normas del CC, LJV, LN, LH… que se aplican en la tramitación, todo comprobado. Fiscalidad, derechos forales y detalle internacional fuera (como mucho, una mención donde afecten a la tramitación). Lo duplicado en otro esquema se sustituye por una remisión. Todo lo retirado se anota en el registro de revisión.
 10. ✅ (2026-10-29) **Jurisprudencia**: se retira la que no se puede verificar y queda anotada en el registro, para reincorporarla con su ECLI si el propietario la aporta. Sin búsquedas en la web.
+11. ✅ (2026-10-29) **Art. 86.5 j) LOPJ**: la excepción «capítulos IX y X del título I» se lee como **Título II** de la LJV (errata de la ley). Ausencia y fallecimiento (cap. IX) y extracción de órganos de donantes vivos (cap. X) no son de la Sección de Familia, Infancia y Capacidad: van a la Sección Civil del Tribunal de Instancia.
 
 ## 11. Registro de cambios del plan
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-29 · Decisión 11 (art. 86.5 j) LOPJ → Título II LJV, caps. IX y X a la Sección Civil).
 - 2026-10-29 · E19 (actos de disposición) revisado. Siguiente: E20.
 - 2026-10-29 · E18 (honor e imagen del menor) revisado; lector del BOE: apartados en letra. Siguiente: E19.
 - 2026-10-29 · E17 (patrimonio protegido) revisado. Siguiente: E18.
