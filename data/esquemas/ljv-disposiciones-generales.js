@@ -176,7 +176,7 @@ Neg.data.register({
              "t": "Juzgados de Primera Instancia o de lo Mercantil, según el caso (denominación que conserva la LJV)."
             },
             {
-             "t": "Desde la LO 1/2025: Secciones Civiles de los Tribunales de Instancia (art. 85 LOPJ) y Secciones de lo Mercantil (art. 87 LOPJ). Los expedientes en materia de personas y familia corresponden, donde exista, a la Sección de Familia, Infancia y Capacidad, con carácter exclusivo y excluyente (art. 86.5 j) LOPJ)."
+             "t": "Desde la LO 1/2025: Secciones Civiles de los Tribunales de Instancia (art. 85 LOPJ) y Secciones de lo Mercantil (art. 87 LOPJ). Los expedientes en materia de personas y familia corresponden, donde exista, a la Sección de Familia, Infancia y Capacidad, con carácter exclusivo y excluyente (art. 86.5 j) LOPJ), salvo los de ausencia y fallecimiento y los de extracción de órganos de donantes vivos (caps. IX y X del Título II LJV), que van a la Sección Civil."
             }
            ]
           }
@@ -989,7 +989,7 @@ Neg.data.register({
      "norma": {
       "ley": "LOPJ (LO 1/2025)",
       "titulo": "Tribunales de Instancia",
-      "texto": "<strong>Art. 85 LOPJ</strong> — Secciones Civiles.<br><strong>Art. 86 LOPJ</strong> — Secciones de Familia, Infancia y Capacidad (expedientes de jurisdicción voluntaria en materia de personas y familia, art. 86.5 j).<br><strong>Art. 87 LOPJ</strong> — Secciones de lo Mercantil.",
+      "texto": "<strong>Art. 85 LOPJ</strong> — Secciones Civiles.<br><strong>Art. 86 LOPJ</strong> — Secciones de Familia, Infancia y Capacidad (expedientes de jurisdicción voluntaria en materia de personas y familia, salvo ausencia y fallecimiento y extracción de órganos, art. 86.5 j).<br><strong>Art. 87 LOPJ</strong> — Secciones de lo Mercantil.",
       "etiqueta": "Organización",
       "tono": "t-plazo"
      }

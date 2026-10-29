@@ -37,3 +37,9 @@ Las cinco fichas de los arts. 13–22 (Título I) duplicaban el esquema E07 («N
 ## Corrección posterior (2026-10-29)
 
 Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).
+
+## Corrección posterior (2026-10-29) — decisión 11
+
+| # | Ficha | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| D11 | Art. 2 y ecosistema | incompleto | Todos los expedientes de personas y familia, a la Sección de Familia, Infancia y Capacidad | Salvo ausencia y fallecimiento y extracción de órganos (caps. IX y X del Título II LJV), que van a la Sección Civil | LOPJ art. 86.5 j); decisión 11 |
