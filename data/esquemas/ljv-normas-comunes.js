@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E07.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E07.json; revisado con el BOE (registro: docs/revision/ljv-normas-comunes.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-normas-comunes",
@@ -22,675 +22,106 @@ Neg.data.register({
   "22"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E07"
  },
  "cabecera": {
   "migas": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO I",
-  "subtitulo": "CAPÍTULO I: NORMAS DE DERECHO INTERNACIONAL PRIVADO (arts. 9 a 12 LJV) · CAPÍTULO II: NORMAS DE TRAMITACIÓN (arts. 13 a 22 LJV)",
+  "subtitulo": "Arts. 9 a 22 LJV · Derecho internacional privado (9–12) y normas de tramitación (13–22)",
   "etiquetas": [
-   "Ley 15/2015, de 2 de julio",
-   "Arts. 1-22",
-   "Jurisdicción Voluntaria",
-   "Conexiones LEC · CC · LOPJ",
-   "Fusionado"
+   "Ley 15/2015",
+   "Arts. 9–22",
+   "14 artículos",
+   "RDL 6/2023"
   ]
  },
  "categorias": [
   {
-   "id": "c0",
-   "nombre": "Contexto",
-   "tono": "c6"
-  },
-  {
    "id": "c1",
-   "nombre": "Tít. Prel. (1-8)",
+   "nombre": "Remisión",
    "tono": "c1"
   },
   {
    "id": "c2",
-   "nombre": "DIPr (9-12)",
+   "nombre": "DIPr (9–12)",
    "tono": "c2"
   },
   {
    "id": "c3",
-   "nombre": "Iniciación (13-16)",
+   "nombre": "Iniciación (13–16)",
    "tono": "c3"
   },
   {
    "id": "c4",
-   "nombre": "Comparecencia (17-19)",
+   "nombre": "Comparecencia y decisión (17–19)",
    "tono": "c4"
   },
   {
    "id": "c5",
-   "nombre": "Resol./Recur. (20-21)",
+   "nombre": "Recursos y caducidad (20–21)",
    "tono": "c5"
   },
   {
    "id": "c6",
-   "nombre": "Cad./Ejec. (21-22)",
+   "nombre": "Ejecución (22)",
    "tono": "c6"
   }
  ],
  "secciones": [
   {
-   "titulo": "Contexto normativo y antecedentes",
-   "recuento": "Arts. 1-8 LJV · DF 18ª LEC · Desjudicialización",
+   "titulo": "Remisión al Título Preliminar",
+   "recuento": "arts. 1–8",
    "bloques": [
     {
      "tarjeta": {
-      "articulo": "Contexto",
-      "categoria": "c0",
-      "tono": "c6",
+      "articulo": "Título Preliminar",
+      "categoria": "c1",
+      "tono": "c1",
       "etiquetas": [
        {
-        "texto": "Norma suprema",
-        "tono": "t-plazo"
+        "texto": "Remisión",
+        "tono": "t-nota"
        }
       ],
-      "titulo": "Contexto normativo y antecedentes de la Ley 15/2015",
-      "resumen": "Antecedentes históricos, ámbito objetivo y distribución competencial. Desjudicialización de la jurisdicción voluntaria.",
+      "titulo": "Disposiciones generales (arts. 1–8 LJV)",
+      "resumen": "Objeto, competencia, legitimación y postulación, Ministerio Fiscal, prueba, tramitación simultánea, gastos, ajustes por discapacidad y supletoriedad de la LEC tienen su propio esquema: «Disposiciones generales». Aquí, lo que necesitan las normas comunes.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Antecedentes históricos",
+         "titulo": "Lo esencial",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Disposición Final decimoctava de la LEC 1/2000:</strong> La Ley 15/2015 colma el compromiso del legislador contenido en la DF 18ª LEC, que encomendaba al Gobierno la elaboración de una ley especial sobre jurisdicción voluntaria."
+             "t": "Competencia objetiva: juzgados de primera instancia o de lo mercantil (hoy, Secciones de los Tribunales de Instancia); la territorial la fija cada expediente, sin sumisión (art. 2)."
             },
             {
-             "t": "<strong>Superación de la regulación anterior:</strong> Reemplaza la regulación dispersa y anticuada de la LEC de 1881 y la Ley de Bases de 1944."
+             "t": "Impulsa y dirige el Letrado de la Administración de Justicia; decide el juez o el LAJ según la ley o la regla del art. 2.3."
             },
             {
-             "t": "<strong>Desjudicialización:</strong> Objetivo fundamental: separar los expedientes de JV de los procedimientos judiciales comunes, atribuyendo su conocimiento de forma concurrente a Jueces, Letrados de la Administración de Justicia (Secretarios judiciales), Notarios y Registradores."
+             "t": "Abogado y procurador cuando la ley lo prevea y siempre en revisión y apelación y desde la oposición (art. 3.2)."
+            },
+            {
+             "t": "La LEC es supletoria en todo lo no regulado (art. 8)."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Ámbito objetivo y distribución competencial (Arts. 1-8 LJV)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Artículo 1 LJV — Ámbito objetivo:</strong> Regula los expedientes de JV que requieran intervención de un órgano jurisdiccional, sin perjuicio de la competencia concurrente de Notarios y Registradores."
-            },
-            {
-             "t": "<strong>Artículo 2 LJV — Competencia Juez/LAJ:</strong> El Juez decide expedientes en materia de personas y familia, y aquellos con controversia; el LAJ conoce de los demás expedientes."
-            },
-            {
-             "t": "<strong>Artículo 3 LJV — Competencia concurrente:</strong> Atribuye a Notarios determinados expedientes (subastas voluntarias, testamentos, consignaciones) y a Registradores otros (sociedades, depósitos de cuentas)."
-            },
-            {
-             "t": "<strong>Artículo 4 LJV — Carácter supletorio de la LEC:</strong> En lo no previsto en esta Ley, se aplicarán supletoriamente las disposiciones de la LEC."
-            },
-            {
-             "t": "<strong>Artículos 5-8 LJV:</strong> Intervención del Ministerio Fiscal (art. 5), representación y defensa (art. 6), acumulación (art. 7), efectos de las resoluciones (art. 8)."
-            },
-            {
-             "t": "<strong>Artículo 7 bis LJV:</strong> Ajustes para personas con discapacidad — adaptaciones necesarias para garantizar participación en igualdad (añadido por reforma posterior)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "LJV arts. 1-8 DF 18ª LEC 1/2000 LEC 1881 Ley Bases 1944 LO 7/2015",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "LJV arts. 1-8",
-       "DF 18ª LEC 1/2000",
-       "LEC 1881",
-       "Ley Bases 1944",
-       "LO 7/2015"
+       "LJV arts. 1–8"
       ],
-      "claves": "contexto normativo antecedentes ley 15/2015 jurisdicción voluntaria disposición final decimoctava LEC 1881 ley bases 1944 desjudicialización notarios registradores secretarios judiciales letrados administración justicia artículo 1 2 3 4 5 6 7 8 7 bis ámbito objetivo competencia distribución"
+      "claves": "titulo preliminar remision disposiciones generales competencia postulacion supletoriedad"
      }
     }
    ]
   },
   {
-   "titulo": "Título Preliminar — Disposiciones generales",
-   "recuento": "8 artículos · arts. 1-8 (+ 7 bis)",
-   "bloques": [
-    {
-     "tarjeta": {
-      "articulo": "Artículo 1",
-      "categoria": "c1",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Vigente",
-        "tono": "t-ok"
-       }
-      ],
-      "titulo": "Objeto y ámbito de aplicación",
-      "resumen": "Definición y naturaleza de la jurisdicción voluntaria. Expedientes que requieren intervención de un órgano jurisdiccional sin controversia contenciosa.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Definición y naturaleza",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Regulación de los <strong>expedientes de jurisdicción voluntaria</strong> que se tramitan ante los <strong>órganos jurisdiccionales</strong>."
-            },
-            {
-             "t": "Se consideran tales aquellos que requieran intervención de un <strong>órgano jurisdiccional</strong> para la tutela de <strong>derechos e intereses</strong> en materia de <strong>Derecho civil y mercantil</strong>, sin que exista <strong>controversia</strong> que deba sustanciarse en proceso contencioso."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Características esenciales",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Ausencia de litigio:</strong> no existe controversia entre partes que requiera un proceso contradictorio."
-            },
-            {
-             "t": "<strong>Tutela de derechos e intereses:</strong> el órgano jurisdiccional actúa como garante, no como decisor de un conflicto."
-            },
-            {
-             "t": "<strong>Ámbito material:</strong> Derecho civil y mercantil exclusivamente."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 8 LEC (supletoria)",
-        "estilo": "refs"
-       }
-      ],
-      "referencias": [
-       "Art. 8 LEC (supletoria)"
-      ],
-      "claves": "art 1 artículo 1 objeto ámbito aplicación jurisdicción voluntaria órganos jurisdiccionales tutela derechos intereses derecho civil mercantil ausencia controversia"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Artículo 2",
-      "categoria": "c1",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Vigente",
-        "tono": "t-ok"
-       }
-      ],
-      "titulo": "Competencia en materia de jurisdicción voluntaria",
-      "resumen": "Competencia objetiva, territorial y distribución de funciones entre Juez y Secretario judicial (LAJ).",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Competencia objetiva",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Juzgados de Primera Instancia</strong> o de lo <strong>Mercantil</strong>, según el caso, tendrán competencia objetiva."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Competencia territorial",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Vendrá fijada por el <strong>precepto correspondiente en cada caso</strong>."
-            },
-            {
-             "t": "<strong>No cabe</strong> modificarla por <strong>sumisión expresa o tácita</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Distribución de funciones (Juez vs. LAJ)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Impulso y dirección:</strong> corresponde a los <strong>Secretarios judiciales</strong>."
-            },
-            {
-             "t": "<strong>Decisión de fondo:</strong> se atribuye al <strong>Juez</strong> o al <strong>Secretario judicial</strong>, según el caso."
-            },
-            {
-             "t": "<strong>Juez decide</strong> cuando la materia afecte al: <strong>interés público</strong>, <strong>estado civil de las personas</strong>, <strong>tutela de normas sustantivas</strong>, actos de <strong>disposición, reconocimiento, creación o extinción de derechos subjetivos</strong>, o derechos de <strong>menores</strong> o <strong>personas con discapacidad con medidas de apoyo</strong>."
-            },
-            {
-             "t": "<strong>Resto de expedientes:</strong> resueltos por el <strong>Secretario judicial</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Arts. 9-12 LOPJArt. 16 (examen de oficio)",
-        "estilo": "refs"
-       }
-      ],
-      "referencias": [
-       "Arts. 9-12 LOPJ",
-       "Art. 16 (examen de oficio)"
-      ],
-      "claves": "art 2 artículo 2 competencia objetiva territorial jurisdicción voluntaria juzgados primera instancia mercantil secretario judicial letrado administración justicia distribución funciones"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Artículo 3",
-      "categoria": "c1",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Vigente",
-        "tono": "t-ok"
-       }
-      ],
-      "titulo": "Legitimación y postulación",
-      "resumen": "Legitimación activa y postulación profesional obligatoria en determinados supuestos.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Legitimación activa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Podrán promover quienes sean <strong>titulares de derechos o intereses legítimos</strong> o cuya legitimación les venga conferida <strong>legalmente</strong>."
-            },
-            {
-             "t": "Sin perjuicio de los casos en que el expediente pueda iniciarse <strong>de oficio</strong> o a instancia del <strong>Ministerio Fiscal</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Postulación profesional",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Tanto solicitantes como interesados deberán actuar <strong>defendidos por Letrado y representados por Procurador</strong> cuando la ley así lo prevea."
-            },
-            {
-             "t": "Aun cuando no sea requerido, las partes podrán actuar <strong>asistidas o representadas</strong> voluntariamente."
-            },
-            {
-             "t": "<strong>Siempre necesaria</strong> la actuación de Abogado y Procurador para: la presentación de los <strong>recursos de revisión y apelación</strong>; a partir del momento en que se <strong>formulase oposición</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 14 (iniciación)Art. 17.3 (oposición)Art. 20 (recursos)",
-        "estilo": "refs"
-       }
-      ],
-      "referencias": [
-       "Art. 14 (iniciación)",
-       "Art. 17.3 (oposición)",
-       "Art. 20 (recursos)"
-      ],
-      "claves": "art 3 artículo 3 legitimación postulación abogado procurador solicitante interesados recursos oposición"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Artículo 4",
-      "categoria": "c1",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Intervención MF",
-        "tono": "t-info"
-       }
-      ],
-      "titulo": "Intervención del Ministerio Fiscal",
-      "resumen": "Supuestos de intervención preceptiva del Ministerio Fiscal en los expedientes de JV.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Supuestos de intervención preceptiva",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Cuando afecten al <strong>estado civil o condición de la persona</strong>."
-            },
-            {
-             "t": "Cuando esté comprometido el <strong>interés de un menor</strong> o una <strong>persona con discapacidad con medidas de apoyo</strong> para el ejercicio de su capacidad jurídica."
-            },
-            {
-             "t": "En aquellos otros casos en que la <strong>ley expresamente</strong> así lo declare."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 17.2 (informe por escrito)Art. 18 (comparecencia)",
-        "estilo": "refs"
-       }
-      ],
-      "referencias": [
-       "Art. 17.2 (informe por escrito)",
-       "Art. 18 (comparecencia)"
-      ],
-      "claves": "art 4 artículo 4 intervención ministerio fiscal preceptiva estado civil menores discapacidad"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Artículo 5",
-      "categoria": "c1",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Prueba",
-        "tono": "t-info"
-       }
-      ],
-      "titulo": "Prueba",
-      "resumen": "Admisión y práctica de prueba, incluyendo la prueba de oficio en supuestos tasados.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Admisión y práctica de prueba",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "El <strong>Juez</strong> o el <strong>Secretario judicial</strong> decidirá sobre la <strong>admisión de los medios de prueba</strong> que se propongan."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Prueba de oficio",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Podrán ordenar <strong>prueba de oficio</strong> cuando: exista un <strong>interés público</strong>; se afecte a <strong>menores</strong> o <strong>personas con discapacidad con medidas de apoyo</strong>; lo estime <strong>conveniente para clarificar</strong> algún elemento relevante y determinante; expresamente lo <strong>prevea la ley</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 17.2.b (prueba en comparecencia)Art. 18 (práctica en comparecencia)",
-        "estilo": "refs"
-       }
-      ],
-      "referencias": [
-       "Art. 17.2.b (prueba en comparecencia)",
-       "Art. 18 (práctica en comparecencia)"
-      ],
-      "claves": "art 5 artículo 5 prueba admisión práctica oficio interés público menores discapacidad"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Artículo 6",
-      "categoria": "c1",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Conflictos",
-        "tono": "t-plazo"
-       }
-      ],
-      "titulo": "Tramitación simultánea o posterior de expedientes o procesos",
-      "resumen": "Expedientes simultáneos con idéntico objeto, incompatibilidad con procesos contenciosos y suspensión por prejudicialidad.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Expedientes simultáneos con idéntico objeto",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Proseguirá la tramitación del que <strong>primero se hubiera iniciado</strong>; se acordará el <strong>archivo de los posteriormente incoados</strong>."
-            },
-            {
-             "t": "Aplicable también a expedientes tramitados por <strong>Notarios y Registradores</strong> en materias de competencia concurrente."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Incompatibilidad con proceso jurisdiccional en curso",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>No se podrá iniciar o continuar</strong> un expediente que verse sobre un objeto sustanciado en un <strong>proceso jurisdiccional</strong>."
-            },
-            {
-             "t": "Acreditada la presentación de la <strong>demanda</strong>, se procederá al <strong>archivo del expediente</strong>, remitiéndose actuaciones al <strong>tribunal que esté conociendo</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Suspensión por prejudicialidad",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Se acordará la <strong>suspensión del expediente</strong> cuando exista un <strong>proceso jurisdiccional contencioso</strong> cuya resolución pudiese afectarle. Tramitación conforme al <strong>artículo 43 de la LEC</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 15 (acumulación)Art. 43 LECArt. 19.4 (relación con procesos contenciosos)",
-        "estilo": "refs"
-       }
-      ],
-      "referencias": [
-       "Art. 15 (acumulación)",
-       "Art. 43 LEC",
-       "Art. 19.4 (relación con procesos contenciosos)"
-      ],
-      "claves": "art 6 artículo 6 tramitación simultánea posterior expedientes procesos idéntico objeto archivo suspensión prejudicialidad civil LEC"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Artículo 7",
-      "categoria": "c1",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Gastos",
-        "tono": "t-nota"
-       }
-      ],
-      "titulo": "Gastos",
-      "resumen": "Imputación de gastos del expediente al solicitante y distribución de costas de testigos y peritos.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Imputación de gastos",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Los gastos serán a <strong>cargo del solicitante</strong>, salvo que la ley disponga otra cosa."
-            },
-            {
-             "t": "Los gastos de <strong>testigos y peritos</strong> serán a cargo de <strong>quien los proponga</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [],
-      "claves": "art 7 artículo 7 gastos imputación solicitante testigos peritos"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Art. 7 bis",
-      "categoria": "c1",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Discapacidad",
-        "tono": "t-info"
-       }
-      ],
-      "titulo": "Ajustes para personas con discapacidad",
-      "resumen": "Adaptaciones y ajustes necesarios para garantizar la participación en condiciones de igualdad.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Adaptaciones y ajustes necesarios",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Se realizarán las <strong>adaptaciones y ajustes</strong> necesarios para garantizar la participación en <strong>condiciones de igualdad</strong>."
-            },
-            {
-             "t": "Tanto a <strong>petición de cualquiera de las partes o del MF</strong>, como <strong>de oficio</strong> por el propio Tribunal, en todas las <strong>fases y actuaciones procesales</strong>, incluyendo los <strong>actos de comunicación</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Derecho a entender y ser entendidas",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>a)</strong> Comunicaciones en <strong>lenguaje claro, sencillo y accesible</strong>, incluyendo <strong>lectura fácil</strong>."
-            },
-            {
-             "t": "<strong>b)</strong> Se facilitará <strong>asistencia o apoyos</strong>, incluyendo <strong>interpretación en lenguas de signos</strong> y <strong>medios de apoyo a la comunicación oral</strong>."
-            },
-            {
-             "t": "<strong>c)</strong> Participación de un <strong>profesional experto</strong> como facilitador para tareas de adaptación y ajuste."
-            },
-            {
-             "t": "<strong>d)</strong> La persona con discapacidad podrá estar <strong>acompañada de una persona de su elección</strong> desde el primer contacto con las autoridades y funcionarios."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 14 (adaptación en solicitud)Art. 18.2.2ª y 4ª (comparecencia)",
-        "estilo": "refs"
-       }
-      ],
-      "referencias": [
-       "Art. 14 (adaptación en solicitud)",
-       "Art. 18.2.2ª y 4ª (comparecencia)"
-      ],
-      "claves": "art 7 bis artículo 7 bis ajustes personas discapacidad adaptaciones igualdad participación lenguaje claro lectura fácil apoyos"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Artículo 8",
-      "categoria": "c1",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Supletoriedad",
-        "tono": "t-nota"
-       }
-      ],
-      "titulo": "Carácter supletorio de la Ley de Enjuiciamiento Civil",
-      "resumen": "Aplicación supletoria de la LEC en todo lo no regulado por la LJV.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Aplicación supletoria de la LEC",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Las disposiciones de la <strong>Ley de Enjuiciamiento Civil</strong> serán de aplicación <strong>supletoria</strong> a los expedientes de jurisdicción voluntaria en todo lo <strong>no regulado</strong> por la presente Ley."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "LEC 1/2000 (supletoria)Art. 13 (carácter supletorio del Capítulo II)",
-        "estilo": "refs"
-       }
-      ],
-      "referencias": [
-       "LEC 1/2000 (supletoria)",
-       "Art. 13 (carácter supletorio del Capítulo II)"
-      ],
-      "claves": "art 8 artículo 8 carácter supletorio ley enjuiciamiento civil LEC aplicación subsidiaria"
-     }
-    }
-   ]
-  },
-  {
-   "titulo": "Capítulo I — Normas de Derecho Internacional Privado",
-   "recuento": "4 artículos · arts. 9-12",
+   "titulo": "Capítulo I — Normas de Derecho internacional privado",
+   "recuento": "4 artículos · arts. 9–12",
    "bloques": [
     {
      "tarjeta": {
@@ -699,24 +130,24 @@ Neg.data.register({
       "tono": "c2",
       "etiquetas": [
        {
-        "texto": "DIPr · Competencia",
+        "texto": "Competencia internacional",
         "tono": "t-info"
        }
       ],
       "titulo": "Competencia internacional",
-      "resumen": "Jerarquía de fuentes y foros subsidiarios de competencia en expedientes con elemento internacional.",
+      "resumen": "Los órganos españoles son competentes en los casos internacionales cuando concurran los foros de los tratados y normas internacionales en vigor para España; en lo no regulado por ellos, los de la LOPJ. Si son competentes pero no puede concretarse el territorialmente competente, lo es el del lugar donde el acto deba producir sus efectos principales o el de su ejecución.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Fuentes — jerarquía de dos niveles",
+         "titulo": "Fuentes (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "1.er nivel Tratados y normas internacionales en vigor para España — incluidos reglamentos UE de aplicación directa."
+             "t": "1.º Tratados y otras normas internacionales en vigor para España, incluidos los reglamentos de la Unión Europea (por ejemplo, el 2019/1111 en responsabilidad parental, el 650/2012 en sucesiones o el 2016/1103 en regímenes económicos matrimoniales)."
             },
             {
-             "t": "2.º nivel Subsidiario: foros de la LOPJ (arts. 22 bis–22 quinquies, redacción LO 7/2015) cuando el caso no quede cubierto por el primer nivel."
+             "t": "2.º En lo no regulado por ellos, los foros de la LOPJ (arts. 22 a 22 nonies)."
             }
            ]
           }
@@ -725,81 +156,24 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Competencia territorial subsidiaria en casos internacionales",
+         "titulo": "Competencia territorial subsidiaria (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Opera cuando los órganos españoles son competentes internacionalmente pero no es posible concretar el órgano territorialmente competente conforme al art. 2."
-            },
-            {
-             "t": "Foros alternativos: lugar de los <strong>efectos principales</strong> · lugar de <strong>ejecución</strong>."
+             "t": "Si los órganos españoles son competentes pero los criterios de la LJV no permiten concretar cuál, lo es el del lugar donde los actos deban producir sus <strong>efectos principales</strong> o el de su <strong>ejecución</strong>."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Reglamentos UE con foros de competencia aplicables",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Bruselas I bis (1215/2012) · Bruselas II bis (2201/2003) / <strong>Bruselas II ter (2019/1111)</strong> en vigor desde 1 agosto 2022."
-            },
-            {
-             "t": "Sucesiones (650/2012) · Alimentos (4/2009) · Regímenes matrimoniales (2016/1103) · Uniones registradas (2016/1104)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Conexión normativa del Artículo 9",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 2 LJV Competencia interna: la regla subsidiaria del art. 9.2 opera cuando los criterios del art. 2 no permiten individualizar el órgano."
-            },
-            {
-             "t": "Art. 10 LJV La competencia internacional del art. 9 es presupuesto lógico de la aplicación de la ley extranjera del art. 10."
-            },
-            {
-             "t": "Art. 41 LJV Adopción internacional: norma especial que remite al art. 9.5 CC y a la Ley 54/2007."
-            },
-            {
-             "t": "LOPJ arts. 22–22 nonies Foros de competencia internacional de los tribunales españoles."
-            },
-            {
-             "t": "Reglamento (UE) 1215/2012 Bruselas I bis — norma primaria de competencia judicial internacional en materia civil y mercantil."
-            },
-            {
-             "t": "Constitución Española, art. 117 Potestad jurisdiccional exclusiva de Jueces y Tribunales."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 2 LJVArt. 10 LJVArt. 41 LJV LOPJ arts. 22–22 noniesReglamento UE 1215/2012CE art. 117",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Art. 2 LJV",
-       "Art. 10 LJV",
-       "Art. 41 LJV",
        "LOPJ arts. 22–22 nonies",
-       "Reglamento UE 1215/2012",
-       "CE art. 117"
+       "LJV art. 2"
       ],
-      "claves": "art 9 artículo 9 competencia internacional jurisdicción voluntaria foros tratados lopj reglamentos ue bruselas territorialidad efectos principales ejecución"
+      "claves": "9 competencia internacional tratados reglamentos ue lopj 22 foros efectos principales ejecucion"
      }
     },
     {
@@ -809,97 +183,36 @@ Neg.data.register({
       "tono": "c2",
       "etiquetas": [
        {
-        "texto": "DIPr · Ley aplicable",
+        "texto": "Ley aplicable",
         "tono": "t-info"
        }
       ],
-      "titulo": "Ley aplicable en los casos internacionales",
-      "resumen": "Norma de conflicto de segundo grado que remite a la fuente normativa que contiene la regla de conflicto aplicable al caso.",
+      "titulo": "Ley aplicable a los expedientes de jurisdicción voluntaria en los casos internacionales",
+      "resumen": "Los órganos españoles aplican la ley que determinen las normas de Derecho internacional privado de la Unión Europea o españolas.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Naturaleza — norma de conflicto de segundo grado",
+         "titulo": "Contenido",
          "contenido": [
           {
            "lista": [
             {
-             "t": "No designa directamente la ley material aplicable: señala qué fuente normativa contiene la norma de conflicto a emplear."
+             "t": "No designa directamente la ley aplicable: remite a las normas de conflicto de la Unión Europea o españolas (estas, principalmente en los arts. 9 a 12 CC)."
             },
             {
-             "t": "La ley finalmente aplicable puede ser extranjera, con implicaciones en prueba del Derecho extranjero, reenvío y excepción de orden público."
+             "t": "La aplicación del Derecho extranjero exige probar su contenido y vigencia (art. 281.2 LEC, aplicable supletoriamente)."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Reglamentos UE con normas de conflicto propias",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Sucesiones 650/2012 (arts. 21 y ss.): ley de la residencia habitual del causante; professio iuris (ley de la nacionalidad)."
-            },
-            {
-             "t": "Regímenes matrimoniales 2016/1103 (arts. 22 y ss.): autonomía conflictual y, subsidiariamente, ley de la primera residencia habitual común."
-            },
-            {
-             "t": "Uniones registradas 2016/1104 · Alimentos 4/2009 → remite al Protocolo de La Haya 2007."
-            },
-            {
-             "t": "Bruselas II ter (2019/1111): sin normas de conflicto propias; se aplica el Convenio de La Haya de 19 octubre 1996 para responsabilidad parental."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Normas del CC aplicables subsidiariamente",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 9.1 CC estatuto personal · Art. 9.4 CC filiación · Art. 9.6 CC tutela e instituciones análogas."
-            },
-            {
-             "t": "Art. 10.1 CC estatuto real (lex situs) · Art. 12.3 CC orden público · Art. 12.6 CC aplicación de oficio del DIPr español."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Prueba del Derecho extranjero",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Se rige por el art. 281.2 LEC (supletorio por art. 8 LJV): el Derecho extranjero debe ser probado en su contenido y vigencia; el Tribunal puede valerse de cuantos medios de averiguación estime necesarios."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 281.2 LECArt. 8 LJVSucesiones 650/2012 CC arts. 9, 10, 12Roma I y Roma II",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Art. 281.2 LEC",
-       "Art. 8 LJV",
-       "Sucesiones 650/2012",
-       "CC arts. 9, 10, 12",
-       "Roma I y Roma II"
+       "CC arts. 9–12",
+       "LEC art. 281.2"
       ],
-      "claves": "art 10 artículo 10 ley aplicable casos internacionales norma conflicto segundo grado reglamentos ue sucesiones régimen matrimonial alimentos código civil DIPr"
+      "claves": "10 ley aplicable casos internacionales normas de conflicto union europea derecho internacional privado prueba derecho extranjero"
      }
     },
     {
@@ -909,24 +222,24 @@ Neg.data.register({
       "tono": "c2",
       "etiquetas": [
        {
-        "texto": "Acceso registral",
+        "texto": "Registros",
         "tono": "t-plazo"
        }
       ],
       "titulo": "Inscripción en registros públicos",
-      "resumen": "Condiciones de acceso de resoluciones extranjeras a los registros públicos españoles: inscripción plena o anotación preventiva.",
+      "resumen": "Las resoluciones definitivas extranjeras de jurisdicción voluntaria pueden inscribirse en los registros españoles tras el exequátur o el reconocimiento incidental (antes, solo anotación preventiva), o por el Encargado del registro si verifica los requisitos. Las no definitivas, solo anotación preventiva.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Inscripción de resoluciones definitivas extranjeras — dos vías",
+         "titulo": "Resoluciones definitivas (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Vía a) Previa superación del <strong>exequátur</strong> o del <strong>reconocimiento incidental</strong> (art. 12). Mientras tanto: solo <strong>anotación preventiva</strong>."
+             "t": "a) Previa superación del exequátur o del reconocimiento incidental en España; hasta entonces, solo anotación preventiva."
             },
             {
-             "t": "Vía b) Por el <strong>Encargado del registro</strong>, previa verificación de los requisitos del art. 12: vía directa sin intervención judicial previa."
+             "t": "b) Por el Encargado del registro, si verifica la concurrencia de los requisitos exigidos."
             }
            ]
           }
@@ -935,12 +248,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Resoluciones no definitivas",
+         "titulo": "Resoluciones no definitivas (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Solo procede la <strong>anotación preventiva</strong>. La firmeza se aprecia conforme al ordenamiento del Estado de origen."
+             "t": "Solo anotación preventiva."
             }
            ]
           }
@@ -949,77 +262,24 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Extensión a autoridades extranjeras no judiciales",
+         "titulo": "Autoridades no judiciales (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Mismo régimen para resoluciones de notarios, registradores o autoridades administrativas extranjeras cuando la competencia corresponda, según esta Ley, a órganos judiciales españoles."
-            },
-            {
-             "t": "Relevante en sistemas europeos donde la JV es ejercida por autoridades no judiciales (Francia, Alemania, Austria, etc.)."
-            },
-            {
-             "t": "Límite: la equiparación solo opera cuando la competencia para el acto corresponde en España a órganos judiciales."
+             "t": "El mismo régimen se aplica a las resoluciones de autoridades extranjeras no judiciales en materias que en España corresponden a los órganos judiciales."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Distinción con el art. 12",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 11: condiciones de <strong>acceso registral</strong> (inscripción vs. anotación preventiva)."
-            },
-            {
-             "t": "Art. 12: efectos jurídicos generales y procedimiento de <strong>reconocimiento incidental</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Conexión normativa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 12 LJV Mecanismo de reconocimiento incidental que abre la vía a)."
-            },
-            {
-             "t": "Art. 22 LJV Contrapunto: mandamiento registral para resoluciones españolas de JV."
-            },
-            {
-             "t": "Ley 29/2015, de 30 de julio, de Cooperación Jurídica Internacional en Materia Civil: norma general supletoria."
-            },
-            {
-             "t": "Ley Hipotecaria, arts. 1, 2 y 4 · Ley 20/2011, de 21 de julio, del Registro Civil."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 12 LJVArt. 22 LJVLey 29/2015 Ley HipotecariaLey 20/2011 RC",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Art. 12 LJV",
-       "Art. 22 LJV",
-       "Ley 29/2015",
-       "Ley Hipotecaria",
-       "Ley 20/2011 RC"
+       "LJV art. 12",
+       "LJV art. 22"
       ],
-      "claves": "art 11 artículo 11 inscripción registros públicos resoluciones extranjeras exequátur reconocimiento incidental anotación preventiva encargado registro autoridades no judiciales"
+      "claves": "11 inscripcion registros publicos resoluciones extranjeras exequatur reconocimiento incidental anotacion preventiva encargado del registro"
      }
     },
     {
@@ -1029,21 +289,24 @@ Neg.data.register({
       "tono": "c2",
       "etiquetas": [
        {
-        "texto": "Reconocimiento · 4 causas",
-        "tono": "t-plazo"
+        "texto": "Reconocimiento",
+        "tono": "t-aviso"
        }
       ],
-      "titulo": "Efectos en España de actos acordados por autoridades extranjeras",
-      "resumen": "Reconocimiento incidental de actos extranjeros de JV, con lista tasada de cuatro causas de denegación.",
+      "titulo": "Efectos en España de los expedientes y actos de jurisdicción voluntaria acordados por autoridades extranjeras",
+      "resumen": "Los actos firmes de autoridades extranjeras surten efectos y acceden a los registros españoles tras su reconocimiento, que el órgano judicial o el Encargado del registro pueden otorgar de modo incidental, sin procedimiento previo. Solo se deniega por cuatro causas.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Condición general",
+         "titulo": "Reconocimiento (apartados 1 y 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Actos firmes (firmeza apreciada conforme al Derecho del Estado de origen): surten efectos y acceden a registros públicos previa superación del reconocimiento conforme a la legislación vigente."
+             "t": "Los actos firmes surten efectos y acceden a los registros públicos tras su reconocimiento conforme a la legislación vigente."
+            },
+            {
+             "t": "El órgano judicial español o el Encargado del registro competente pueden reconocerlos de modo incidental, sin procedimiento específico previo."
             }
            ]
           }
@@ -1052,15 +315,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Reconocimiento incidental — innovación principal",
+         "titulo": "Causas de denegación (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El órgano judicial español o el Encargado del registro otorgan el reconocimiento <strong>de modo incidental</strong>, integrado en el expediente registral o judicial donde se hace valer el acto."
+             "t": "a) Autoridad extranjera manifiestamente incompetente: es competente si el supuesto presenta vínculos fundados con su Estado; es manifiestamente incompetente si la materia es de competencia exclusiva española."
             },
             {
-             "t": "No se requiere procedimiento autónomo previo: supresión del exequátur como vía obligatoria."
+             "t": "b) Manifiesta infracción de los derechos de defensa de cualquiera de los implicados."
+            },
+            {
+             "t": "c) Efectos manifiestamente contrarios al orden público español."
+            },
+            {
+             "t": "d) Violación de un derecho fundamental o libertad pública."
             }
            ]
           }
@@ -1068,96 +337,25 @@ Neg.data.register({
         }
        },
        {
-        "apartado": {
-         "titulo": "Causas de denegación — numerus clausus (solo cuatro)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>a)</strong> Autoridad extranjera <strong>manifiestamente incompetente</strong>.",
-             "sub": [
-              {
-               "t": "Competente: si el supuesto presenta <em>vínculos fundados</em> con el Estado de origen (estándar flexible; rechaza el doble exequátur)."
-              },
-              {
-               "t": "Manif. incompetente en todo caso: materia de competencia exclusiva de órganos o autoridades españolas."
-              }
-             ]
-            },
-            {
-             "t": "<strong>b)</strong> <strong>Manifiesta infracción de los derechos de defensa</strong> (contradicción, notificación, derecho a ser oído). Grado cualificado de gravedad."
-            },
-            {
-             "t": "<strong>c)</strong> Efectos <strong>manifiestamente contrarios al orden público español</strong>. No basta diferencia con el Derecho español: la contrariedad ha de ser grave y evidente; conforme a la doctrina del TS."
-            },
-            {
-             "t": "<strong>d)</strong> <strong>Violación de un derecho fundamental o libertad pública</strong> del ordenamiento español — causa específica de este artículo, más allá del orden público clásico; puede invocarse directamente con referencia a la CE e instrumentos internacionales de derechos humanos."
-            }
-           ]
-          }
-         ]
+        "nota": {
+         "tono": "t-info",
+         "etiqueta": "Norma general",
+         "texto": "Ley 29/2015, de cooperación jurídica internacional en materia civil (reconocimiento y ejecución de resoluciones extranjeras), y los reglamentos de la UE con régimen propio de reconocimiento."
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Principio: máxima eficacia de los actos extranjeros",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Lista tasada · Exigencia de «manifiesta» irregularidad en a), b) y c) · Prohibición de revisión de fondo del acto extranjero."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Conexión normativa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 11 LJV Reconocimiento incidental como mecanismo de acceso registral."
-            },
-            {
-             "t": "Art. 46 Ley 29/2015 Causas de denegación análogas (norma general supletoria)."
-            },
-            {
-             "t": "Reglamentos UE con reconocimiento propio: Bruselas I bis (arts. 45–46) · Bruselas II ter (arts. 38 y ss.) · Sucesiones 650/2012 (arts. 40 y ss.)."
-            },
-            {
-             "t": "Art. 9 LJV La incompetencia manifiesta de la causa a) se valora conforme a los criterios del art. 9."
-            },
-            {
-             "t": "Constitución Española, arts. 24 y 53.1 Tutela judicial efectiva y vinculación de derechos fundamentales."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 11 LJVArt. 9 LJVArt. 46 Ley 29/2015 Bruselas I bis arts. 45-46CE arts. 24 y 53.1",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Art. 11 LJV",
-       "Art. 9 LJV",
-       "Art. 46 Ley 29/2015",
-       "Bruselas I bis arts. 45-46",
-       "CE arts. 24 y 53.1"
+       "LJV art. 11",
+       "Ley 29/2015"
       ],
-      "claves": "art 12 artículo 12 efectos españa actos acordados autoridades extranjeras reconocimiento incidental causas denegación orden público derechos defensa incompetencia manifiesta derecho fundamental libertad pública"
+      "claves": "12 efectos reconocimiento incidental actos extranjeros firmes causas denegacion incompetencia defensa orden publico derecho fundamental"
      }
     }
    ]
   },
   {
-   "titulo": "Capítulo II — Iniciación y tramitación del expediente",
-   "recuento": "4 artículos · arts. 13-16",
+   "titulo": "Capítulo II — Iniciación y control",
+   "recuento": "4 artículos · arts. 13–16",
    "bloques": [
     {
      "tarjeta": {
@@ -1166,24 +364,27 @@ Neg.data.register({
       "tono": "c3",
       "etiquetas": [
        {
-        "texto": "Ámbito cap. II",
-        "tono": "t-info"
+        "texto": "Ámbito",
+        "tono": "t-nota"
        }
       ],
       "titulo": "Aplicación de las disposiciones de este Capítulo",
-      "resumen": "Cláusula de apertura y cierre que proyecta los arts. 14-22 sobre todos los expedientes, con principio de especialidad.",
+      "resumen": "Las normas de tramitación (arts. 14–22) se aplican a todos los expedientes en lo que no se opongan a las normas específicas de cada uno.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Naturaleza — cláusula de apertura y de cierre",
+         "titulo": "Orden de aplicación",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Proyecta los arts. 14-22 sobre todos los expedientes de los Títulos II a IX, pero los somete al principio de especialidad."
+             "t": "1.º Normas específicas del expediente (Títulos II a IX)."
             },
             {
-             "t": "La norma específica del expediente desplaza a la norma general cuando sean incompatibles."
+             "t": "2.º Arts. 14–22."
+            },
+            {
+             "t": "3.º LEC, supletoria (art. 8)."
             }
            ]
           }
@@ -1192,52 +393,27 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Jerarquía normativa en cada expediente",
+         "titulo": "Ejemplos de norma especial",
          "contenido": [
           {
            "lista": [
             {
-             "t": "1.º Normas específicas del expediente (Títulos II–IX LJV)."
+             "t": "La oposición hace contencioso el expediente en la adopción (art. 39.3), la remoción de tutor o curador (art. 49) o la extinción de poderes preventivos (art. 51 bis), frente a la regla general del art. 17.3."
             },
             {
-             "t": "2.º Arts. 14–22 de este Capítulo."
-            },
-            {
-             "t": "3.º LEC (supletoria, art. 8 LJV)."
+             "t": "La apelación tiene efectos suspensivos en algunos expedientes (por ejemplo, arts. 58.4, 60.4, 65.5 y 95.3), frente a la regla general del art. 20.2."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Ejemplos de desplazamiento por norma especial",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Adopción (art. 39.3 LJV): la oposición hace contencioso el expediente, a diferencia de la regla general del art. 17."
-            },
-            {
-             "t": "Algunos expedientes tienen plazos propios de comparecencia, resolución o recurso distintos de los generales."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 8 LJVArt. 39.3 LJVLEC (supletoria)",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Art. 8 LJV",
-       "Art. 39.3 LJV",
-       "LEC (supletoria)"
+       "LJV art. 8",
+       "LJV arts. 39, 49, 51 bis"
       ],
-      "claves": "art 13 artículo 13 aplicación disposiciones capítulo cláusula apertura cierre principio especialidad jerarquía normativa expedientes supletorio"
+      "claves": "13 aplicacion disposiciones comunes norma especial supletoria oposicion contencioso excepciones apelacion suspensiva"
      }
     },
     {
@@ -1252,16 +428,16 @@ Neg.data.register({
        }
       ],
       "titulo": "Iniciación del expediente",
-      "resumen": "Formas de iniciación del expediente y contenido obligatorio de la solicitud según el tipo de promotor.",
+      "resumen": "De oficio, a instancia del Ministerio Fiscal o por solicitud de persona legitimada. Si no son preceptivos abogado y procurador, puede usarse un impreso normalizado sin concretar la fundamentación jurídica.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Formas de iniciación",
+         "titulo": "Formas de iniciación (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "De oficio (solo en supuestos expresamente previstos) · A instancia del Ministerio Fiscal · Por solicitud de persona legitimada."
+             "t": "De oficio · a instancia del Ministerio Fiscal · por solicitud de persona legitimada."
             }
            ]
           }
@@ -1270,21 +446,24 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Contenido obligatorio de la solicitud",
+         "titulo": "Contenido de la solicitud (apartados 1 y 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Identificación del solicitante · Domicilio a efectos de notificaciones."
+             "t": "Identificación del solicitante y domicilio a efectos de notificaciones."
             },
             {
-             "t": "Correo electrónico: obligatorio para personas jurídicas, entidades sin personalidad, profesionales colegiados y empleados públicos (Ley 18/2011) · voluntario en los demás casos."
+             "t": "Dirección de correo electrónico: obligatoria para quienes deban relacionarse electrónicamente con la Administración de Justicia; voluntaria para los demás (redacción del RDL 6/2023)."
             },
             {
-             "t": "Exposición clara y precisa de lo pedido · Hechos y fundamentos jurídicos."
+             "t": "Exposición clara y precisa de lo que se pide, con los hechos y fundamentos jurídicos."
             },
             {
-             "t": "Documentos y dictámenes de interés · Identificación de personas interesadas y domicilios para su citación."
+             "t": "Documentos y dictámenes de interés."
+            },
+            {
+             "t": "Identificación y domicilio de los posibles interesados."
             }
            ]
           }
@@ -1293,63 +472,27 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Régimen cuando no es preceptiva la postulación",
+         "titulo": "Sin abogado ni procurador preceptivos (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Impreso normalizado o formulario en Oficina judicial o sede electrónica."
+             "t": "Impreso normalizado o formulario en la Oficina judicial o en la sede electrónica; no hace falta concretar la fundamentación jurídica."
             },
             {
-             "t": "No exige concretar la fundamentación jurídica."
-            },
-            {
-             "t": "Presentación por cualquier medio, incluido el electrónico; en papel, tantas copias como interesados."
-            },
-            {
-             "t": "Fundamento: derecho a la tutela judicial efectiva (art. 24 CE) sin cargas económicas desproporcionadas."
+             "t": "Presentación por cualquier medio, incluidos los electrónicos; en papel, con tantas copias como interesados."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Conexión normativa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Arts. 3-4 LJV Legitimación y supuestos de iniciación por el MF."
-            },
-            {
-             "t": "Art. 16 LJV Control de oficio de competencia y subsanación de defectos."
-            },
-            {
-             "t": "Ley 18/2011 Regulación del uso de las TIC en la Administración de Justicia."
-            },
-            {
-             "t": "RD-ley 6/2023 Refuerzo de la presentación telemática como vía ordinaria."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Arts. 3-4 LJVArt. 16 LJVLey 18/2011RD-ley 6/2023Art. 24 CE",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Arts. 3-4 LJV",
-       "Art. 16 LJV",
-       "Ley 18/2011",
-       "RD-ley 6/2023",
-       "Art. 24 CE"
+       "LJV arts. 3, 16",
+       "RDL 6/2023"
       ],
-      "claves": "art 14 artículo 14 iniciación expediente oficio ministerio fiscal solicitud legitimada contenido obligatorio notificaciones correo electrónico abogado procurador impreso normalizado TIC"
+      "claves": "14 iniciacion solicitud de oficio ministerio fiscal correo electronico impreso normalizado copias"
      }
     },
     {
@@ -1364,25 +507,25 @@ Neg.data.register({
        }
       ],
       "titulo": "Acumulación de expedientes",
-      "resumen": "Presupuestos y especialidades procedimentales para la acumulación de expedientes con riesgo de resoluciones contradictorias.",
+      "resumen": "De oficio o a instancia del interesado o del Ministerio Fiscal, cuando la resolución de uno pueda afectar a otro o haya riesgo de resoluciones contradictorias. No si la resolución corresponde a sujetos distintos, y nunca con procesos contenciosos.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Presupuesto y legitimación",
+         "titulo": "Presupuestos (apartados 1 y 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "La resolución de uno puede afectar a otro, o riesgo de resoluciones contradictorias."
+             "t": "La resolución de uno puede afectar a otro, o hay conexión que podría dar lugar a resoluciones contradictorias."
             },
             {
-             "t": "De oficio o a instancia del interesado o del MF."
+             "t": "La acuerda el juez o el LAJ, según quién sea competente, de oficio o a instancia del interesado o del Ministerio Fiscal."
             },
             {
-             "t": "No procede cuando la resolución corresponda a sujetos distintos."
+             "t": "No cabe si su resolución corresponde a sujetos distintos (juez y LAJ)."
             },
             {
-             "t": "Incompatibilidad absoluta con procesos contenciosos."
+             "t": "Los expedientes no se acumulan a ningún proceso contencioso."
             }
            ]
           }
@@ -1391,69 +534,30 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Especialidades procedimentales",
+         "titulo": "Tramitación (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Mismo órgano: escrito antes de la comparecencia señalada en primer lugar."
+             "t": "Normas de la LEC sobre acumulación de procesos en el juicio verbal, con especialidades:"
             },
             {
-             "t": "Distintos órganos: escrito ante el órgano que se estime competente antes de la comparecencia; discrepancia → <strong>Tribunal superior común</strong>."
+             "t": "a) Mismo órgano: se pide por escrito antes de la comparecencia señalada en primer lugar."
+            },
+            {
+             "t": "b) Distintos órganos: por escrito ante el que se estime competente, antes de la comparecencia; si no accede, resuelve el tribunal superior común."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Arts. 6 y 15 como dos caras del mismo problema",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 6: mayor coincidencia (idéntico objeto) → <strong>archivo</strong> del posterior o suspensión."
-            },
-            {
-             "t": "Art. 15: menor coincidencia pero riesgo de contradicción → <strong>acumulación</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Conexión normativa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 6 LJV Norma complementaria inversa."
-            },
-            {
-             "t": "Arts. 74-98 LEC Acumulación de acciones y procesos: norma supletoria."
-            },
-            {
-             "t": "Arts. 76-77 LEC Acumulación de procesos en juicio verbal."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 6 LJVArts. 74-98 LECArts. 76-77 LEC",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Art. 6 LJV",
-       "Arts. 74-98 LEC",
-       "Arts. 76-77 LEC"
+       "LJV art. 6",
+       "LEC arts. 74 y ss."
       ],
-      "claves": "art 15 artículo 15 acumulación expedientes presupuesto legitimación resoluciones contradictorias tribunal superior común inacumulabilidad procesos contenciosos"
+      "claves": "15 acumulacion expedientes conexion resoluciones contradictorias sujetos distintos tribunal superior comun"
      }
     },
     {
@@ -1463,27 +567,27 @@ Neg.data.register({
       "tono": "c3",
       "etiquetas": [
        {
-        "texto": "Control competencia",
-        "tono": "t-plazo"
+        "texto": "Control",
+        "tono": "t-aviso"
        }
       ],
-      "titulo": "Apreciación de oficio de la falta de competencia y otros defectos",
-      "resumen": "Control de competencia objetiva y territorial, y régimen de subsanación de defectos en la solicitud con plazo de cinco días.",
+      "titulo": "Apreciación de oficio de la falta de competencia y otros defectos u omisiones",
+      "resumen": "Presentada la solicitud, el Letrado de la Administración de Justicia examina de oficio la competencia objetiva y territorial y los defectos de la solicitud (subsanación en cinco días). Si el expediente es del juez, le da cuenta.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Control de competencia objetiva",
+         "titulo": "Competencia objetiva (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Exp. del Secretario judicial: <strong>archivo</strong> previa audiencia del MF y del solicitante."
+             "t": "Expediente del LAJ: puede archivar, previa audiencia del Ministerio Fiscal y del solicitante."
             },
             {
-             "t": "Exp. del Juez: dación de cuenta al Juez, oídos el MF y el solicitante."
+             "t": "Expediente del juez: le da cuenta y resuelve el juez, oídos el Ministerio Fiscal y el solicitante."
             },
             {
-             "t": "La resolución <strong>debe indicar el órgano que se estima competente</strong> (orientación al solicitante; evita indefensión)."
+             "t": "La resolución debe indicar el órgano que se estima competente."
             }
            ]
           }
@@ -1492,18 +596,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Control de competencia territorial",
+         "titulo": "Competencia territorial (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Exp. del Secretario judicial: <strong>remisión</strong> al órgano competente, previa audiencia del MF y del solicitante (sin archivo)."
+             "t": "Expediente del LAJ: puede remitirlo al órgano que considere competente, previa audiencia del Ministerio Fiscal y del solicitante."
             },
             {
-             "t": "Exp. del Juez: dación de cuenta al Juez."
-            },
-            {
-             "t": "Distinción clave: competencia objetiva → archivo; competencia territorial → remisión."
+             "t": "Expediente del juez: le da cuenta."
             }
            ]
           }
@@ -1512,63 +613,33 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Subsanación de defectos u omisiones",
+         "titulo": "Defectos u omisiones (apartado 4)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Plazo: <strong>5 días</strong> · Expresión del principio antiformalista de la JV."
+             "t": "Plazo de cinco días para subsanar."
             },
             {
-             "t": "Si no se subsana: solicitud tenida por no presentada; archivo (exp. del Secretario) o dación de cuenta al Juez."
-            },
-            {
-             "t": "Fundamento: tutela judicial efectiva (art. 24 CE)."
+             "t": "Si no se subsana: se tiene por no presentada la solicitud y se archiva (expedientes del LAJ) o se da cuenta al juez."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Conexión normativa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 2 LJV Criterios de competencia interna controlados."
-            },
-            {
-             "t": "Art. 9 LJV En casos internacionales: el art. 16 controla la fase interna una vez confirmada la competencia internacional del art. 9."
-            },
-            {
-             "t": "Arts. 48-68 LEC Control de la competencia y declinatoria: norma supletoria."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 2 LJVArt. 9 LJVArts. 48-68 LECPlazo: 5 días",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Art. 2 LJV",
-       "Art. 9 LJV",
-       "Arts. 48-68 LEC",
-       "Plazo: 5 días"
+       "LJV art. 2"
       ],
-      "claves": "art 16 artículo 16 apreciación oficio falta competencia defectos subsanación archivo remisión secretario judicial juez ministerio fiscal plazo 5 días"
+      "claves": "16 examen de oficio competencia objetiva territorial archivo remision subsanacion cinco dias"
      }
     }
    ]
   },
   {
-   "titulo": "Capítulo II — Comparecencia y decisión del expediente",
-   "recuento": "3 artículos · arts. 17-19",
+   "titulo": "Capítulo II — Admisión, comparecencia y decisión",
+   "recuento": "3 artículos · arts. 17–19",
    "bloques": [
     {
      "tarjeta": {
@@ -1577,24 +648,21 @@ Neg.data.register({
       "tono": "c4",
       "etiquetas": [
        {
-        "texto": "Admisión · Citación",
-        "tono": "t-info"
+        "texto": "Admisión y citación",
+        "tono": "t-plazo"
        }
       ],
       "titulo": "Admisión de la solicitud y citación de los interesados",
-      "resumen": "Decisión sobre admisibilidad, causas de comparecencia, régimen de citación y de oposición.",
+      "resumen": "El LAJ resuelve sobre la admisión (decreto de archivo o cuenta al juez). Cita a comparecencia si hay que oír a otros interesados, practicar prueba o el órgano lo estima necesario; si solo hay que oír al Fiscal sin prueba, informe escrito en diez días. Citación con quince días de antelación. Oposición en cinco días, sin hacer contencioso el expediente.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Decisión sobre admisibilidad",
+         "titulo": "Admisión (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Decreto de archivo (Secretario judicial) si no resulta admisible, o dación de cuenta al Juez si es él el competente."
-            },
-            {
-             "t": "La inadmisión no genera cosa juzgada: el solicitante puede reproducir su petición si desaparecen las causas."
+             "t": "Si no es admisible, el Letrado de la Administración de Justicia dicta decreto de archivo o da cuenta al juez, cuando sea este el competente."
             }
            ]
           }
@@ -1603,24 +671,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Causas que determinan la comparecencia — tres supuestos taxativos",
+         "titulo": "Cuándo hay comparecencia (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>a)</strong> Interesados distintos del solicitante que la ley manda oír."
+             "t": "a) Si deben ser oídos interesados distintos del solicitante."
             },
             {
-             "t": "<strong>b)</strong> Pruebas a practicar ante el Juez o el Secretario judicial."
+             "t": "b) Si hay que practicar prueba ante el juez o el LAJ."
             },
             {
-             "t": "<strong>c)</strong> El órgano lo considera necesario para la mejor resolución."
+             "t": "c) Si el juez o el LAJ la consideran necesaria para la mejor resolución."
             },
             {
-             "t": "Si solo hay que oír al MF sin prueba: <strong>informe escrito en 10 días</strong> (vía más ágil, sin comparecencia)."
-            },
-            {
-             "t": "Si no concurre ninguna causa y no interviene el MF: resolución directa sin comparecencia."
+             "t": "Si solo hay que oír al Ministerio Fiscal y no hace falta prueba: informe escrito en diez días."
             }
            ]
           }
@@ -1629,18 +694,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Régimen de la citación",
+         "titulo": "Citación (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Antelación mínima: <strong>15 días</strong> · Aviso de acudir con medios de prueba."
+             "t": "Con al menos quince días de antelación, avisando de que deben acudir con sus medios de prueba."
             },
             {
-             "t": "Entrega de copia de la resolución, solicitud y documentos: exigencia del principio de contradicción."
-            },
-            {
-             "t": "Forma: conforme a la LEC (arts. 155-168 LEC)."
+             "t": "En la forma de la LEC, con copia de la resolución, de la solicitud y de los documentos."
             }
            ]
           }
@@ -1649,39 +711,30 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Régimen de la oposición",
+         "titulo": "Oposición (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Plazo: <strong>5 días</strong> desde la citación · Traslado al solicitante: <strong>inmediatamente</strong>."
+             "t": "En los cinco días siguientes a la citación; se da traslado inmediato al solicitante."
             },
             {
-             "t": "Regla general: <strong>no hace contencioso</strong> el expediente ni suspende su tramitación (salvo ley en contrario)."
+             "t": "<strong>No hace contencioso el expediente ni impide que continúe</strong>, salvo que la ley lo prevea (véase la ficha del art. 13)."
             },
             {
-             "t": "Excepción: adopción (art. 39.3 LJV): la oposición sí determina la contenciosidad sobrevenida."
-            },
-            {
-             "t": "Desde la oposición: Abogado y Procurador obligatorios. Art. 3 LJV"
+             "t": "Desde que se formula, abogado y procurador son preceptivos (art. 3.2)."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "p": "Arts. 155-168 LECArt. 3 LJVArt. 39.3 LJVPlazos: 5, 10, 15 días",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Arts. 155-168 LEC",
-       "Art. 3 LJV",
-       "Art. 39.3 LJV",
-       "Plazos: 5, 10, 15 días"
+       "LJV arts. 3, 13",
+       "LEC arts. 149 y ss."
       ],
-      "claves": "art 17 artículo 17 admisión solicitud citación interesados comparecencia oposición plazo 5 días 15 días 10 días mf informe escrito abogado procurador"
+      "claves": "17 admision decreto archivo comparecencia interesados prueba informe fiscal diez dias citacion quince dias oposicion cinco dias no contencioso"
      }
     },
     {
@@ -1691,24 +744,24 @@ Neg.data.register({
       "tono": "c4",
       "etiquetas": [
        {
-        "texto": "Comparecencia · plazos",
-        "tono": "t-plazo"
+        "texto": "Comparecencia",
+        "tono": "t-info"
        }
       ],
       "titulo": "Celebración de la comparecencia",
-      "resumen": "Desarrollo de la comparecencia, incomparecencias, audiencia de partes y régimen especial para menores y personas con discapacidad.",
+      "resumen": "Ante el juez o el LAJ, dentro de los treinta días siguientes a la admisión, por los trámites de la vista del juicio verbal, con seis especialidades: incomparecencias, audiencia, cuestiones procesales, menores y personas con discapacidad, conclusiones y grabación.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Plazo y órgano",
+         "titulo": "Plazo y forma (apartados 1 y 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Plazo <strong>máximo</strong>: <strong>30 días</strong> desde la admisión · Ante el Juez o el Secretario judicial competente para resolver."
+             "t": "Dentro de los treinta días siguientes a la admisión, ante quien deba resolver."
             },
             {
-             "t": "Tramitación: conforme al juicio verbal de la LEC (arts. 431-445 LEC)."
+             "t": "Por los trámites de la vista del juicio verbal (arts. 437 y ss. LEC)."
             }
            ]
           }
@@ -1722,10 +775,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Solicitante: <strong>archivo</strong> por desistimiento (no genera cosa juzgada; puede reproducirse la petición)."
+             "t": "Si no asiste el solicitante: archivo, teniéndole por desistido."
             },
             {
-             "t": "Demás citados: el acto se celebra y el expediente continúa sin más citaciones ni notificaciones."
+             "t": "Si no asiste otro citado: se celebra el acto y continúa el expediente sin más citaciones ni notificaciones que las legales."
             }
            ]
           }
@@ -1734,18 +787,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "2.ª Audiencia y participación",
+         "titulo": "2.ª Audiencia",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El órgano oye al solicitante, a los citados y a quienes la ley disponga."
+             "t": "Se oye al solicitante, a los citados y a quienes disponga la ley; de oficio o a instancia del solicitante o del Fiscal, puede oírse a otros afectados."
             },
             {
-             "t": "Puede acordar de oficio o a instancia del solicitante o del MF la audiencia de afectados."
-            },
-            {
-             "t": "Personas con discapacidad: intervención en términos accesibles y comprensibles, con medios y apoyos necesarios. Art. 7 bis LJV"
+             "t": "Se garantiza la intervención de las personas con discapacidad en términos accesibles y comprensibles (véase el art. 7 bis)."
             }
            ]
           }
@@ -1759,7 +809,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Se resuelven <strong>oralmente en el propio acto</strong>: concentración procedimental."
+             "t": "Incluidas las de competencia: se resuelven oralmente en el acto, oídos los comparecientes."
             }
            ]
           }
@@ -1773,22 +823,16 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Diligencias en el acto o en los <strong>10 días siguientes</strong>."
+             "t": "Diligencias en el mismo acto o, si no es posible, en los diez días siguientes."
             },
             {
-             "t": "Audiencia en <strong>acto separado</strong> posible, con MF; condiciones idóneas (edad, madurez, circunstancias); auxilio de especialistas."
+             "t": "Audiencia en acto separado posible, con asistencia del Ministerio Fiscal, en condiciones idóneas y con auxilio de especialistas si es necesario."
             },
             {
-             "t": "Acta del LAJ: datos objetivos, manifestaciones imprescindibles por significativas, con preservación de la intimidad."
+             "t": "Acta del LAJ con los datos objetivos y las manifestaciones imprescindibles, preservando la intimidad; si es posterior a la comparecencia, alegaciones en cinco días."
             },
             {
-             "t": "Si el acto es posterior a la comparecencia: alegaciones de los interesados en <strong>5 días</strong>."
-            },
-            {
-             "t": "MF y autoridad judicial deben <strong>valorar motivadamente</strong> la exploración."
-            },
-            {
-             "t": "Norma supletoria: LO 1/1996, de 15 de enero, de Protección Jurídica del Menor."
+             "t": "El Fiscal y la resolución deben valorar motivadamente la exploración. Supletoria: LO 1/1996, de Protección Jurídica del Menor."
             }
            ]
           }
@@ -1797,54 +841,28 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "5.ª Conclusiones orales · 6.ª Grabación audiovisual",
+         "titulo": "5.ª y 6.ª Conclusiones y grabación",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Conclusiones: estructura de acto contradictorio completo (prueba + alegaciones)."
+             "t": "Practicada la prueba, conclusiones orales."
             },
             {
-             "t": "Grabación: documentación íntegra; permite revisión completa por Tribunales superiores en caso de recurso."
+             "t": "Grabación de imagen y sonido conforme a la LEC."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Conexión normativa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 7 bis LJV Marco general de los ajustes para discapacidad."
-            },
-            {
-             "t": "Art. 39.2 CE · Art. 3.1 Convención ONU sobre los Derechos del Niño (1989): interés superior del menor."
-            },
-            {
-             "t": "Arts. 431-445 LEC Juicio verbal supletorio."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 7 bis LJVArts. 431-445 LECLO 1/1996Art. 39.2 CEPlazos: 30, 10, 5 días",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Art. 7 bis LJV",
-       "Arts. 431-445 LEC",
-       "LO 1/1996",
-       "Art. 39.2 CE",
-       "Plazos: 30, 10, 5 días"
+       "LEC arts. 437 y ss.",
+       "LJV art. 7 bis",
+       "LO 1/1996"
       ],
-      "claves": "art 18 artículo 18 celebración comparecencia plazo 30 días incomparecencias audiencia menores discapacidad grabación audiovisual conclusiones verbales juicio verbal cuestiones procesales orales"
+      "claves": "18 comparecencia treinta dias juicio verbal incomparecencia desistimiento audiencia cuestiones procesales menores discapacidad acto separado acta diez dias cinco dias conclusiones grabacion"
      }
     },
     {
@@ -1859,19 +877,16 @@ Neg.data.register({
        }
       ],
       "titulo": "Decisión del expediente",
-      "resumen": "Forma y plazo de la resolución, principio inquisitivo reforzado y efecto de cosa decidida.",
+      "resumen": "Auto (juez) o decreto (LAJ) en cinco días desde la comparecencia o la última diligencia. Con menores o personas con discapacidad, puede fundarse en hechos no invocados. Firme, no cabe otro expediente sobre idéntico objeto salvo cambio de circunstancias; no impide un proceso posterior.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Forma y plazo",
+         "titulo": "Forma y plazo (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Auto (Juez) · Decreto (Secretario judicial): dualidad vinculada al art. 2."
-            },
-            {
-             "t": "Plazo: <strong>5 días</strong> desde la comparecencia o desde la última diligencia."
+             "t": "Auto o decreto, en cinco días desde la terminación de la comparecencia o, si no la hubo, desde la última diligencia."
             }
            ]
           }
@@ -1880,15 +895,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Principio inquisitivo reforzado",
+         "titulo": "Menores y personas con discapacidad (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Cuando afecte a menores o personas con discapacidad con medidas de apoyo: la decisión puede fundarse en hechos conocidos aunque no los hubieran invocado las partes."
-            },
-            {
-             "t": "Modulación del principio dispositivo justificada por la especial vulnerabilidad de los sujetos concernidos."
+             "t": "La decisión puede fundarse en cualesquiera hechos conocidos por las alegaciones, las pruebas o la comparecencia, aunque nadie los haya invocado."
             }
            ]
           }
@@ -1897,83 +909,33 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Efecto de cosa decidida — contenido y límites",
+         "titulo": "Efectos (apartados 3 y 4)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Firme la resolución: no puede iniciarse otro expediente sobre <strong>idéntico objeto</strong>, salvo cambio de circunstancias."
+             "t": "Firme la resolución, no puede iniciarse otro expediente sobre idéntico objeto, salvo cambio de las circunstancias; lo decidido vincula a las actuaciones o expedientes conexos posteriores, también ante Notarios y Registradores en materias concurrentes."
             },
             {
-             "t": "Lo decidido vincula actuaciones y expedientes conexos posteriores."
-            },
-            {
-             "t": "Extensible a expedientes de Notarios y Registradores en materias de competencia concurrente."
-            },
-            {
-             "t": "Nota: no produce <strong>cosa juzgada en sentido técnico</strong> (art. 222 LEC): efecto vinculante más limitado y específico de la JV."
+             "t": "No impide un proceso jurisdiccional posterior con el mismo objeto; su resolución debe confirmar, modificar o revocar lo acordado."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Compatibilidad con proceso contencioso posterior",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "La resolución de JV <strong>no impide</strong> el proceso contencioso posterior."
-            },
-            {
-             "t": "La sentencia debe pronunciarse expresamente sobre la <strong>confirmación, modificación o revocación</strong> de lo acordado en JV."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Conexión normativa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 6 LJV Anverso: relación entre JV y proceso contencioso durante la tramitación."
-            },
-            {
-             "t": "Art. 222 LEC Cosa juzgada material: el efecto vinculante del art. 19 es más limitado."
-            },
-            {
-             "t": "Art. 2 LO 1/1996 Interés superior del menor."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 6 LJVArt. 222 LECArt. 2 LO 1/1996Plazo: 5 días",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Art. 6 LJV",
-       "Art. 222 LEC",
-       "Art. 2 LO 1/1996",
-       "Plazo: 5 días"
+       "LJV art. 6"
       ],
-      "claves": "art 19 artículo 19 decisión expediente auto decreto plazo 5 días principio inquisitivo cosa decidida resolución firme menores discapacidad compatibilidad proceso contencioso"
+      "claves": "19 decision auto decreto cinco dias hechos no invocados menores discapacidad identico objeto cambio circunstancias proceso posterior"
      }
     }
    ]
   },
   {
-   "titulo": "Capítulo II — Recursos y caducidad",
-   "recuento": "2 artículos · arts. 20-21",
+   "titulo": "Capítulo II — Recursos, caducidad y ejecución",
+   "recuento": "3 artículos · arts. 20–22",
    "bloques": [
     {
      "tarjeta": {
@@ -1983,20 +945,20 @@ Neg.data.register({
       "etiquetas": [
        {
         "texto": "Recursos",
-        "tono": "t-info"
+        "tono": "t-aviso"
        }
       ],
       "titulo": "Recursos",
-      "resumen": "Recursos contra resoluciones interlocutorias y definitivas del Juez y del Secretario judicial; regla universal de postulación en recursos.",
+      "resumen": "Reposición contra las resoluciones interlocutorias (oral si se dictan en la comparecencia). Contra las definitivas: apelación si son del juez (sin efectos suspensivos salvo ley) y revisión ante el juez si son del LAJ.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Contra resoluciones interlocutorias",
+         "titulo": "Interlocutorias (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Recurso de reposición (LEC). Si se acordó en comparecencia: tramitación y resolución <strong>orales en ese mismo momento</strong>."
+             "t": "Reposición, en los términos de la LEC (cinco días, art. 452 LEC); si la resolución se dictó en la comparecencia, se tramita y resuelve oralmente en ese momento."
             }
            ]
           }
@@ -2005,88 +967,30 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Contra resoluciones definitivas del Juez",
+         "titulo": "Definitivas (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Recurso de apelación (LEC) · Cualquier interesado que se considere perjudicado."
+             "t": "Del juez: apelación por cualquier interesado perjudicado (veinte días, art. 458 LEC). <strong>Sin efectos suspensivos</strong>, salvo que la ley disponga otra cosa (véase la ficha del art. 13)."
             },
             {
-             "t": "<strong>Sin efectos suspensivos</strong> como regla general."
+             "t": "Del LAJ: revisión ante el juez competente (cinco días, art. 454 bis LEC)."
             },
             {
-             "t": "Excepciones expresas: provisión de medidas judiciales de apoyo y otros expedientes donde la Ley lo establezca."
-            },
-            {
-             "t": "Adopción (art. 39.4 LJV): apelación con carácter preferente, sin efectos suspensivos."
+             "t": "Abogado y procurador son siempre preceptivos para revisión y apelación (art. 3.2)."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Contra resoluciones definitivas del Secretario judicial",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Recurso de revisión ante el Juez competente (LEC): garantiza el control judicial de toda resolución definitiva de JV."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Postulación en recursos — regla universal",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Abogado y Procurador obligatorios <strong>con independencia de que fueran preceptivos en instancia</strong>. Art. 3 LJV"
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Conexión normativa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Arts. 451-454 LEC Reposición · Art. 454 bis LEC Revisión de decretos del LAJ · Arts. 455-467 LEC Apelación."
-            },
-            {
-             "t": "Art. 3 LJV Postulación obligatoria en recursos."
-            },
-            {
-             "t": "Art. 21.3 LJV Contra decreto de caducidad sólo cabe recurso de revisión."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Arts. 451-454 LECArt. 454 bis LECArts. 455-467 LECArt. 3 LJVArt. 21.3 LJV",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Arts. 451-454 LEC",
-       "Art. 454 bis LEC",
-       "Arts. 455-467 LEC",
-       "Art. 3 LJV",
-       "Art. 21.3 LJV"
+       "LEC arts. 451–455, 458",
+       "LJV art. 3"
       ],
-      "claves": "art 20 artículo 20 recursos reposición apelación revisión interlocutorias definitivas secretario judicial sin efectos suspensivos postulación abogado procurador"
+      "claves": "20 recursos reposicion interlocutorias apelacion sin efectos suspensivos revision decreto letrado abogado procurador"
      }
     },
     {
@@ -2097,23 +1001,20 @@ Neg.data.register({
       "etiquetas": [
        {
         "texto": "Caducidad",
-        "tono": "t-aviso"
+        "tono": "t-nota"
        }
       ],
       "titulo": "Caducidad del expediente",
-      "resumen": "Caducidad por inactividad de seis meses desde la última notificación; declarada por el Secretario judicial mediante decreto.",
+      "resumen": "Se tiene por abandonado el expediente si, pese al impulso de oficio, los interesados no promueven actividad en seis meses desde la última notificación. La declara el LAJ; contra el decreto, solo revisión.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Presupuesto y plazo — dos singularidades respecto a la LEC",
+         "titulo": "Presupuesto (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Inactividad de los interesados durante <strong>6 meses</strong> desde la <strong>última notificación practicada</strong>."
-            },
-            {
-             "t": "Puede declararse <strong>pese al impulso de oficio</strong>: solo se sanciona la inactividad de los interesados, no la del órgano."
+             "t": "Seis meses sin actividad promovida por los interesados desde la última notificación practicada, aunque haya habido impulso de oficio."
             }
            ]
           }
@@ -2122,81 +1023,25 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Declaración y recurso",
+         "titulo": "Declaración y recurso (apartados 2 y 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El <strong>Secretario judicial</strong> la declara mediante decreto, con independencia de a quién corresponda el fondo."
-            },
-            {
-             "t": "Solo cabe recurso de revisión: la caducidad es una decisión procesal, no de fondo."
+             "t": "La declara el Letrado de la Administración de Justicia por decreto, sea quien sea el competente para el fondo; solo cabe recurso de revisión."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Efectos de la declaración de caducidad",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "No produce cosa juzgada: el art. 19 permite la reapertura si cambian las circunstancias."
-            },
-            {
-             "t": "El interesado puede presentar nueva solicitud desde el principio."
-            },
-            {
-             "t": "Gastos de actuaciones ya practicadas: a cargo del solicitante (art. 7 LJV)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Conexión normativa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 237 LEC Caducidad de la instancia: norma supletoria con matices propios de la JV."
-            },
-            {
-             "t": "Art. 19 LJV La cosa decidida solo opera cuando el expediente ha sido resuelto por resolución firme."
-            },
-            {
-             "t": "Art. 2.3 LJV Impulso de oficio por el Secretario judicial."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 237 LECArt. 19 LJVArt. 7 LJVPlazo: 6 meses",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Art. 237 LEC",
-       "Art. 19 LJV",
-       "Art. 7 LJV",
-       "Plazo: 6 meses"
+       "LEC art. 454 bis"
       ],
-      "claves": "art 21 artículo 21 caducidad expediente inactividad interesados 6 meses última notificación declaración secretario judicial recurso revisión efectos"
+      "claves": "21 caducidad abandono seis meses ultima notificacion decreto letrado revision"
      }
-    }
-   ]
-  },
-  {
-   "titulo": "Capítulo II — Ejecución de la resolución",
-   "recuento": "1 artículo · art. 22",
-   "bloques": [
+    },
     {
      "tarjeta": {
       "articulo": "Artículo 22",
@@ -2204,24 +1049,24 @@ Neg.data.register({
       "tono": "c6",
       "etiquetas": [
        {
-        "texto": "Ejecución registral",
+        "texto": "Ejecución",
         "tono": "t-ok"
        }
       ],
       "titulo": "Cumplimiento y ejecución de la resolución que pone fin al expediente",
-      "resumen": "Régimen de ejecución e inscripción registral según el tipo de registro; calificación tasada del Registrador (cuatro límites).",
+      "resumen": "La ejecución de la resolución firme se rige por la LEC, en especial sus arts. 521 y 522, y puede instarse de inmediato lo necesario para dar eficacia a lo decidido. Para el Registro Civil, testimonio; para los demás registros, mandamiento a instancia de parte, por medios electrónicos.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Régimen general de ejecución",
+         "titulo": "Ejecución (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Conforme a la LEC, en particular: art. 521 LEC (condenas de dar, hacer o no hacer) · art. 522 LEC (resoluciones declarativas y constitutivas)."
+             "t": "Conforme a la LEC, en particular los arts. 521 (sentencias meramente declarativas y constitutivas) y 522 (acatamiento y cumplimiento de las constitutivas)."
             },
             {
-             "t": "Puede instarse <strong>de inmediato</strong>: coherente con el carácter no suspensivo del recurso de apelación (art. 20)."
+             "t": "Puede instarse de inmediato la realización de los actos precisos para dar eficacia a lo decidido."
             }
            ]
           }
@@ -2230,181 +1075,107 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Inscripción en el Registro Civil",
+         "titulo": "Registros (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Testimonio de la resolución</strong>: vía automática; no requiere mandamiento ni instancia de parte."
+             "t": "Registro Civil: se expide testimonio de la resolución para su inscripción o anotación."
             },
             {
-             "t": "Norma de referencia: Ley 20/2011, de 21 de julio, del Registro Civil."
+             "t": "Registro de la Propiedad, Mercantil u otros: mandamiento, a instancia de parte, remitido por medios electrónicos."
+            },
+            {
+             "t": "La calificación del Registrador se limita a la competencia del juez o del LAJ, la congruencia del mandato con el expediente, las formalidades extrínsecas y los obstáculos que surjan del Registro (como, en general, el art. 100 RH)."
             }
            ]
           }
          ]
         }
-       },
-       {
-        "apartado": {
-         "titulo": "Inscripción en el Registro de la Propiedad, Mercantil u otros",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>A instancia de parte</strong>: mandamiento expedido por el órgano (no opera automáticamente)."
-            },
-            {
-             "t": "Remisión por <strong>medios electrónicos</strong>: celeridad y seguridad."
-            },
-            {
-             "t": "Normas de referencia: Ley Hipotecaria (arts. 1, 2 y 4) · RH, art. 100 · RDLeg 1/2010 (Ley de Sociedades de Capital) para resoluciones mercantiles."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Calificación del Registrador — numerus clausus, cuatro límites",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Competencia</strong> del Juez o Secretario judicial."
-            },
-            {
-             "t": "<strong>Congruencia del mandato</strong> con el expediente."
-            },
-            {
-             "t": "<strong>Formalidades extrínsecas</strong> de la resolución."
-            },
-            {
-             "t": "<strong>Obstáculos registrales</strong> que surjan del Registro."
-            },
-            {
-             "t": "El Registrador <strong>no puede revisar el fondo</strong> del asunto resuelto (coherente con RH, art. 100 y doctrina del TS)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Distinción Registro Civil / demás registros",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Registro Civil: <strong>testimonio</strong>, sin instancia de parte, de forma automática."
-            },
-            {
-             "t": "Registro de la Propiedad / Mercantil: <strong>mandamiento a instancia de parte</strong>."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Conexión normativa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 11 LJV Contrapunto: inscripción registral de resoluciones extranjeras de JV."
-            },
-            {
-             "t": "Art. 19 LJV La ejecución puede iniciarse antes del proceso contencioso posterior."
-            },
-            {
-             "t": "Ley 24/2001, art. 112 Remisión electrónica de mandamientos judiciales."
-            },
-            {
-             "t": "DA 1ª LJV Coordinación del régimen de inscripción y calificación registral."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "p": "Art. 521-522 LECLey 20/2011 RCLey HipotecariaArt. 11 LJVLey 24/2001DA 1ª LJV",
-        "estilo": "refs"
        }
       ],
       "referencias": [
-       "Art. 521-522 LEC",
-       "Ley 20/2011 RC",
-       "Ley Hipotecaria",
-       "Art. 11 LJV",
-       "Ley 24/2001",
-       "DA 1ª LJV"
+       "LEC arts. 521–522",
+       "RH art. 100",
+       "Ley 20/2011"
       ],
-      "claves": "art 22 artículo 22 cumplimiento ejecución resolución expediente inscripción registro civil propiedad mercantil mandamiento testimonio calificación registrador limitada cuatro extremos medios electrónicos"
+      "claves": "22 ejecucion resolucion firme 521 522 registro civil testimonio mandamiento instancia de parte medios electronicos calificacion registrador"
      }
     }
    ]
   },
   {
-   "titulo": "Indice de plazos procesales",
+   "titulo": "Índice de plazos",
+   "recuento": "12 plazos",
    "plegada": true,
    "bloques": [
     {
      "tabla": {
       "cabecera": [
-       "Acto o trámite procesal",
+       "Acto o trámite",
        "Plazo",
-       "Fundamento normativo"
+       "Fundamento"
       ],
       "filas": [
        [
-        "Subsanación de defectos u omisiones en la solicitud",
+        "Subsanación de defectos u omisiones de la solicitud",
         "5 días",
-        "Art. 16 LJV"
+        "Art. 16.4 LJV"
        ],
        [
-        "Informe escrito del MF (sin comparecencia)",
+        "Informe escrito del Ministerio Fiscal (sin comparecencia)",
         "10 días",
-        "Art. 17 LJV"
+        "Art. 17.2 LJV"
        ],
        [
-        "Antelación mínima para la citación de interesados",
+        "Antelación mínima de la citación",
         "15 días",
-        "Art. 17 LJV"
+        "Art. 17.3 LJV"
        ],
        [
         "Oposición de los interesados desde la citación",
         "5 días",
-        "Art. 17 LJV"
+        "Art. 17.3 LJV"
        ],
        [
-        "Celebración de la comparecencia desde la admisión (máximo)",
-        "30 días",
-        "Art. 18 LJV"
+        "Celebración de la comparecencia desde la admisión",
+        "Dentro de 30 días",
+        "Art. 18.1 LJV"
        ],
        [
         "Diligencias sobre menores o personas con discapacidad",
-        "10 días",
-        "Art. 18 LJV"
+        "En el acto o en los 10 días siguientes",
+        "Art. 18.2.4.ª LJV"
        ],
        [
-        "Alegaciones de interesados tras exploración posterior a comparecencia",
+        "Alegaciones tras exploración posterior a la comparecencia",
         "5 días",
-        "Art. 18 LJV"
+        "Art. 18.2.4.ª LJV"
        ],
        [
-        "Resolución del expediente desde la comparecencia o última diligencia",
+        "Resolución desde la comparecencia o la última diligencia",
         "5 días",
-        "Art. 19 LJV"
+        "Art. 19.1 LJV"
        ],
        [
-        "Caducidad por inactividad de los interesados desde última notificación",
-        "6 meses",
-        "Art. 21 LJV"
+        "Recurso de reposición",
+        "5 días",
+        "Art. 452 LEC"
+       ],
+       [
+        "Recurso de revisión",
+        "5 días",
+        "Art. 454 bis LEC"
+       ],
+       [
+        "Recurso de apelación",
+        "20 días",
+        "Art. 458 LEC"
+       ],
+       [
+        "Caducidad por inactividad de los interesados",
+        "6 meses desde la última notificación",
+        "Art. 21.1 LJV"
        ]
       ]
      }
@@ -2412,80 +1183,77 @@ Neg.data.register({
    ]
   },
   {
-   "titulo": "Mapa de participantes y actores",
-   "recuento": "5 categorías · 15+ actores",
+   "titulo": "Participantes",
+   "recuento": "5 grupos · 14 participantes",
    "plegada": true,
    "bloques": [
     {
      "grupo": {
-      "titulo": "Órganos judiciales",
+      "titulo": "Tribunales y oficina judicial",
       "tono": "c1",
       "items": [
        {
-        "t": "Juez (auto; competencia en expedientes judiciales)"
+        "t": "Juez — resuelve por auto los expedientes que le corresponden"
        },
        {
-        "t": "Secretario judicial / LAJ (decreto; impulso y dirección)"
+        "t": "Letrado de la Administración de Justicia — admisión, control de oficio, citaciones, decreto de archivo o de caducidad y resolución de los expedientes que le corresponden"
        },
        {
-        "t": "Tribunal superior común (discrepancias de acumulación)"
+        "t": "Tribunal superior común — discrepancias sobre acumulación (art. 15.2.b)"
        },
        {
-        "t": "Órgano judicial español competente (DIPr, art. 9)"
+        "t": "Audiencia Provincial — apelación (art. 20.2)"
        }
       ]
      }
     },
     {
      "grupo": {
-      "titulo": "Partes procesales",
-      "tono": "c2",
-      "items": [
-       {
-        "t": "Solicitante (legitimado activo; impulso)"
-       },
-       {
-        "t": "Personas interesadas / citadas (pueden formular oposición)"
-       },
-       {
-        "t": "Abogado y Procurador (obligatorios en recursos y desde oposición)"
-       },
-       {
-        "t": "Abogado del Estado (intervención en ciertos expedientes)"
-       }
-      ]
-     }
-    },
-    {
-     "grupo": {
-      "titulo": "Autoridades públicas",
+      "titulo": "Partes",
       "tono": "c3",
       "items": [
        {
-        "t": "Ministerio Fiscal (MF) (intervención preceptiva; informe o comparecencia)"
+        "t": "Solicitante — si no comparece, se le tiene por desistido (art. 18.2.1.ª)"
        },
        {
-        "t": "Encargado del Registro (calificación tasada; reconocimiento incidental)"
+        "t": "Interesados citados — pueden oponerse en cinco días (art. 17.3)"
        },
        {
-        "t": "Funcionario de la Oficina Judicial (tramitación y notificaciones)"
+        "t": "Abogado y procurador — siempre en revisión y apelación y desde la oposición (art. 3.2)"
        }
       ]
      }
     },
     {
      "grupo": {
-      "titulo": "Sujetos protegidos",
+      "titulo": "Autoridades",
       "tono": "c4",
       "items": [
        {
-        "t": "Menores (exploración en acto separado; interés superior)"
+        "t": "Ministerio Fiscal — informe escrito o comparecencia; audiencia de menores y personas con discapacidad (arts. 17.2 y 18.2)"
        },
        {
-        "t": "Personas con discapacidad (intervención accesible; apoyos)"
+        "t": "Encargado del registro — inscripción y reconocimiento incidental de actos extranjeros (arts. 11–12)"
        },
        {
-        "t": "Especialistas / peritos (auxilio en exploración de menores)"
+        "t": "Registradores — calificación limitada de los mandamientos (art. 22.2)"
+       }
+      ]
+     }
+    },
+    {
+     "grupo": {
+      "titulo": "Personas protegidas",
+      "tono": "c6",
+      "items": [
+       {
+        "t": "Menores — audiencia en condiciones idóneas, en su caso en acto separado (art. 18.2.4.ª)"
+       },
+       {
+        "t": "Personas con discapacidad — intervención accesible y comprensible (art. 18.2.2.ª)"
+       },
+       {
+        "t": "Especialistas — auxilio en la audiencia (art. 18.2.4.ª)"
        }
       ]
      }
@@ -2493,16 +1261,10 @@ Neg.data.register({
     {
      "grupo": {
       "titulo": "Autoridades extranjeras",
-      "tono": "c5",
+      "tono": "c2",
       "items": [
        {
-        "t": "Autoridades judiciales extranjeras (resoluciones sujetas a reconocimiento)"
-       },
-       {
-        "t": "Notarios / Registradores extranjeros (equiparación limitada del art. 11)"
-       },
-       {
-        "t": "Autoridades adm. extranjeras (mismo régimen si la competencia corresponde a órganos judiciales españoles)"
+        "t": "Judiciales y no judiciales — sus actos se reconocen conforme a los arts. 11 y 12"
        }
       ]
      }
@@ -2510,156 +1272,93 @@ Neg.data.register({
    ]
   },
   {
-   "titulo": "Ecosistema normativo — Conexiones relacionadas",
-   "recuento": "16 cuerpos normativos",
+   "titulo": "Ecosistema normativo",
+   "recuento": "9 normas",
    "plegada": true,
    "bloques": [
     {
      "norma": {
-      "ley": "Ley especial",
-      "titulo": "Ley 15/2015 de Jurisdicción Voluntaria (LJV)",
-      "texto": "<strong>Arts. 1-8, 9-22, 23 y ss.:</strong> Norma principal. Título Preliminar + Título I (normas comunes) + Títulos II-IX (expedientes específicos).",
+      "ley": "Ley 15/2015, de la Jurisdicción Voluntaria",
+      "titulo": "Estructura",
+      "texto": "<strong>Arts. 1–8</strong> — Disposiciones generales (con su propio esquema).<br><strong>Arts. 9–12</strong> — Derecho internacional privado.<br><strong>Arts. 13–22</strong> — Normas de tramitación.<br><strong>Títulos II–IX</strong> — Expedientes.",
       "etiqueta": "Norma principal",
-      "tono": "t-ok"
+      "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "Ley Procesal",
-      "titulo": "Ley 1/2000 de Enjuiciamiento Civil (LEC)",
-      "texto": "<strong>Arts. 37-40, 43, 48-68, 73, 74-98, 76-78, 81-82, 152-168, 197, 206-208, 222, 237, 281.2, 397, 402, 429-447, 440-442, 451-468, 509-512, 517-550, 521-522:</strong> Normas procesales supletorias.",
-      "etiqueta": "Supletoria · art. 8 LJV",
+      "ley": "Ley 1/2000, de Enjuiciamiento Civil",
+      "titulo": "Aplicación supletoria (art. 8 LJV)",
+      "texto": "<strong>Arts. 74 y ss. LEC</strong> — Acumulación (art. 15).<br><strong>Arts. 437 y ss. LEC</strong> — Vista del juicio verbal (art. 18).<br><strong>Arts. 451–455 y 458 LEC</strong> — Reposición, revisión y apelación (art. 20).<br><strong>Arts. 521–522 LEC</strong> — Ejecución (art. 22).",
+      "etiqueta": "Supletoria",
       "tono": "t-nota"
      }
     },
     {
      "norma": {
-      "ley": "Ley Orgánica",
-      "titulo": "Ley Orgánica 6/1985 del Poder Judicial (LOPJ)",
-      "texto": "<strong>Arts. 21-22, 22 bis-22 quinquies, 52, 456, 770:</strong> Foros de competencia internacional, conflictos de competencia, recurso de revisión, intervención del MF.",
-      "etiqueta": "Ley Orgánica",
+      "ley": "LOPJ",
+      "titulo": "Competencia internacional",
+      "texto": "<strong>Arts. 22 a 22 nonies LOPJ</strong> — Foros de competencia internacional (art. 9.1 LJV).",
+      "etiqueta": "Competencia",
       "tono": "t-plazo"
      }
     },
     {
      "norma": {
       "ley": "Código Civil",
-      "titulo": "Código Civil",
-      "texto": "<strong>Arts. 9-12</strong> (DIPr), <strong>art. 107</strong> (ley aplicable a separación y divorcio), <strong>art. 1.209</strong> (actos propios).",
-      "etiqueta": "Derecho sustantivo",
-      "tono": "t-nota"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Reglamento UE",
-      "titulo": "Reglamento (UE) 1215/2012 — Bruselas I bis",
-      "texto": "<strong>Arts. 4-26, 45-46:</strong> Competencia judicial internacional y reconocimiento en materia civil y mercantil.",
-      "etiqueta": "Competencia UE",
+      "titulo": "Normas de Derecho internacional privado",
+      "texto": "<strong>Arts. 9 a 12 CC</strong> — Normas de conflicto españolas (art. 10 LJV).",
+      "etiqueta": "DIPr",
       "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "Reglamento UE",
-      "titulo": "Reglamento (UE) 2201/2003 — Bruselas II bis / 2019/1111 Bruselas II ter",
-      "texto": "<strong>Arts. 1-16, 22, cap. III:</strong> Competencia, reconocimiento y ejecución en materia matrimonial y de responsabilidad parental.",
-      "etiqueta": "Familia UE",
+      "ley": "Ley 29/2015",
+      "titulo": "Cooperación jurídica internacional en materia civil",
+      "texto": "Reconocimiento y ejecución de resoluciones extranjeras, con carácter general (arts. 11–12 LJV).",
+      "etiqueta": "DIPr",
       "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "Reglamento UE",
-      "titulo": "Reglamento (UE) 650/2012 — Sucesiones",
-      "texto": "Ley de la residencia habitual del causante; professio iuris (ley de la nacionalidad). Foros de competencia y reconocimiento.",
-      "etiqueta": "Sucesiones UE",
+      "ley": "Reglamentos de la Unión Europea",
+      "titulo": "Competencia y reconocimiento",
+      "texto": "Entre otros: 2019/1111 (matrimonio y responsabilidad parental), 650/2012 (sucesiones), 2016/1103 (regímenes económicos matrimoniales), 1215/2012 (civil y mercantil).",
+      "etiqueta": "Derecho UE",
       "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "Reglamento UE",
-      "titulo": "Reglamentos Roma I (CE 593/2008) y Roma II (CE 864/2007)",
-      "texto": "Ley aplicable a obligaciones contractuales y extracontractuales en el sistema de DIPr de la UE.",
-      "etiqueta": "DIPr europeo",
-      "tono": "t-nota"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley",
-      "titulo": "Ley 29/2015, de 30 de julio, de Cooperación Jurídica Internacional en Materia Civil (LCJI)",
-      "texto": "<strong>Arts. 41-61 (Título V):</strong> Régimen de reconocimiento y ejecución de resoluciones extranjeras. <strong>Art. 46:</strong> Causas de denegación.",
-      "etiqueta": "Supletoria DIPr",
-      "tono": "t-nota"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley Registral",
-      "titulo": "Ley Hipotecaria (LH) y Reglamento Hipotecario",
-      "texto": "<strong>Arts. 1, 2, 4 y 18 LH; art. 100 RH:</strong> Calificación registral limitada a competencia, congruencia, formalidades y obstáculos registrales.",
-      "etiqueta": "Ejecución registral",
+      "ley": "Ley Hipotecaria y Reglamento Hipotecario",
+      "titulo": "Calificación registral",
+      "texto": "Calificación de los documentos judiciales (art. 100 RH), a la que corresponde el art. 22.2 LJV.",
+      "etiqueta": "Registro",
       "tono": "t-ok"
      }
     },
     {
      "norma": {
-      "ley": "Ley Registral",
-      "titulo": "Ley 20/2011, de 21 de julio, del Registro Civil",
-      "texto": "Inscripción automática mediante testimonio de la resolución judicial de JV. Sin mandamiento ni instancia de parte.",
-      "etiqueta": "Ejecución registral",
+      "ley": "Ley 20/2011, del Registro Civil",
+      "titulo": "Inscripción",
+      "texto": "Inscripción o anotación mediante testimonio de la resolución (art. 22.2 LJV).",
+      "etiqueta": "Registro",
       "tono": "t-ok"
      }
     },
     {
      "norma": {
-      "ley": "Constitución Española",
-      "titulo": "Constitución Española de 1978",
-      "texto": "<strong>Art. 24</strong> (tutela judicial efectiva), <strong>art. 53.1</strong> (vinculación derechos fundamentales), <strong>art. 117</strong> (potestad jurisdiccional), <strong>art. 149.1.6ª</strong> (competencia estatal en legislación procesal).",
-      "etiqueta": "Norma suprema",
-      "tono": "t-plazo"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley Orgánica",
-      "titulo": "LO 1/1996 de Protección Jurídica del Menor",
-      "texto": "<strong>Art. 2:</strong> Interés superior del menor. <strong>Art. 9:</strong> Derecho del menor a ser oído.",
-      "etiqueta": "Protección de menores",
+      "ley": "LO 1/1996, de Protección Jurídica del Menor",
+      "titulo": "Audiencia del menor",
+      "texto": "Supletoria en la audiencia de menores (art. 18.2.4.ª LJV).",
+      "etiqueta": "Menores",
       "tono": "t-aviso"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Convención Internacional",
-      "titulo": "Convención ONU sobre los Derechos de las Personas con Discapacidad (2006)",
-      "texto": "<strong>Arts. 12 y 13:</strong> Acceso a la justicia en igualdad de condiciones. Base del art. 7 bis y 18 LJV.",
-      "etiqueta": "Derecho internacional",
-      "tono": "t-info"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Convención Internacional",
-      "titulo": "Convención de la Haya de 1996",
-      "texto": "Competencia, ley aplicable, reconocimiento y cooperación en materia de responsabilidad parental y medidas de protección de los niños.",
-      "etiqueta": "Protección internacional de menores",
-      "tono": "t-info"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley / Real Decreto",
-      "titulo": "Ley 18/2011 y RD 1065/2015 — TIC en la Administración de Justicia",
-      "texto": "Obligación de relación electrónica para personas jurídicas, profesionales y empleados públicos. RD 1065/2015: Reglamento de acceso electrónico.",
-      "etiqueta": "Comunicación electrónica",
-      "tono": "t-nota"
      }
     }
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Arts. 1-22 · Esquema completo fusionado con todas las conexiones normativas"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título I · Arts. 9–22"
 });
