@@ -25,7 +25,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | · | · | · | 1R | · | · | 1R |
 | ljv-emancipacion | Esquema · LJV · Emancipación y beneficio de la mayoría de edad | · | · | · | · | · | · | · |
 | ljv-patrimonio-protegido | Esquema · LJV · Patrimonio de las personas con discapacidad | · | · | · | · | · | · | 1R |
-| ljv-honor-menor | Esquema · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 3E 3A 41R | · | · | 1R | 1R | · | 2R |
+| ljv-honor-menor | Esquema · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 3E 3A 25R | · | · | 1R | 1R | · | 2R |
 | ljv-actos-disposicion | Esquema · LJV · Actos de disposición sobre bienes de menores y personas con apoyos | 2R | · | · | · | · | · | 1R |
 | ljv-ausencia-fallecimiento | Esquema · LJV · Declaración de ausencia y fallecimiento | 22R | · | · | · | · | · | 1R |
 | ljv-donantes-vivos | Esquema · LJV · Extracción de órganos de donantes vivos | · | · | · | · | · | · | · |
@@ -50,7 +50,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-tutela-curatela | Guía · LJV · Tutela, curatela y guarda de hecho | 3E 1A 1R | · | · | · | · | 1E | 2R |
 | ljv-emancipacion | Guía · LJV · Emancipación y beneficio de la mayoría de edad | 49E | · | · | · | · | 1E 1R | 3R |
 | ljv-patrimonio-protegido | Guía · LJV · Patrimonio de las personas con discapacidad | 1E 1A 1R | · | · | 1R | · | · | 1R |
-| ljv-honor-menor | Guía · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 1E 2A 9R | · | · | · | · | · | · |
+| ljv-honor-menor | Guía · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 1E 2A 3R | · | · | · | · | · | · |
 | ljv-actos-disposicion | Guía · LJV · Actos de disposición sobre bienes de menores y personas con apoyos | 6R | · | · | · | · | · | 1R |
 | ljv-ausencia-fallecimiento | Guía · LJV · Declaración de ausencia y fallecimiento | 13R | · | · | · | · | · | 1R |
 | ljv-donantes-vivos | Guía · LJV · Extracción de órganos de donantes vivos | · | · | · | · | · | · | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 67E 38A 137R | 0E 0A 0R | 0E 0A 0R | 0E 0A 11R | 0E 0A 9R | 4E 0A 1R | 0E 0A 74R |
+| | **Total** | 67E 38A 115R | 0E 0A 0R | 0E 0A 0R | 0E 0A 11R | 0E 0A 9R | 4E 0A 1R | 0E 0A 74R |
 
 E = error · A = aviso · R = revisar.
 
@@ -230,25 +230,17 @@ Sin hallazgos automáticos.
 - [aviso] «art. 59.4»: el art. 59 LJV no tiene apartado 4 (tiene 1, 2, 3) — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.4» › «Regla general: no preceptiva» › 1 › punto.1_
 - [aviso] «art. 1.4»: el art. 1 LOPDH no tiene apartado 4 (tiene 1, 2, 3) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.5» › «Efectos sobre contratos con terceros» › 1 › punto.1_
 - [aviso] «arts. 1.4, 2.3 y 9.3»: el art. 1 LOPDH no tiene apartado 4 (tiene 1, 2, 3) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.5» › referencia 2_
-- [revisar] «art. 2.2»: el art. 2 LOPDH no tiene apartado 2 (no tiene apartados numerados) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Estructura y objeto» › 1 › punto.4_
 - [revisar] «Art. 7.1 y 7.2»: el art. 7 LJV no tiene apartado 1 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.1_
 - [revisar] «Art. 7.1 y 7.2»: el art. 7 LJV no tiene apartado 2 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.1_
 - [revisar] «Art. 7.4»: el art. 7 LJV no tiene apartado 4 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.2_
 - [revisar] «Art. 7.5»: el art. 7 LJV no tiene apartado 5 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.3_
 - [revisar] «Art. 7.6»: el art. 7 LJV no tiene apartado 6 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.4_
 - [revisar] «Art. 7.7»: el art. 7 LJV no tiene apartado 7 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.5_
-- [revisar] «Art. 9.3»: el art. 9 LOPDH no tiene apartado 3 (no tiene apartados numerados) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Tutela judicial y resarcimiento» › 1 › punto.2_
-- [revisar] «art. 3.2»: el art. 3 LOPDH no tiene apartado 2 (no tiene apartados numerados) — _sección «Art. 59 — Ámbito de aplicación y presupuesto habilitante» › tarjeta «Art. 59.1» › resumen_
-- [revisar] «art. 3.2»: el art. 3 LOPDH no tiene apartado 2 (no tiene apartados numerados) — _sección «Art. 59 — Ámbito de aplicación y presupuesto habilitante» › tarjeta «Art. 59.1» › «Doble requisito acumulativo» › 1 › punto.2_
 - [revisar] «Art. 3.6»: el art. 3 LJV no tiene apartado 6 (tiene 1, 2) (ley por defecto) — _sección «Art. 59 — Ámbito de aplicación y presupuesto habilitante» › tarjeta «Art. 59.1» › «El Ministerio Fiscal como garante institucional» › 1 › punto.2_
-- [revisar] «arts. 2.3, 3 y 3.2»: el art. 2 LOPDH no tiene apartado 3 (no tiene apartados numerados) — _sección «Art. 59 — Ámbito de aplicación y presupuesto habilitante» › tarjeta «Art. 59.1» › referencia 2_
-- [revisar] «arts. 2.3, 3 y 3.2»: el art. 3 LOPDH no tiene apartado 2 (no tiene apartados numerados) — _sección «Art. 59 — Ámbito de aplicación y presupuesto habilitante» › tarjeta «Art. 59.1» › referencia 2_
 - [revisar] «arts. 249, 256-272, 287, 300»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.3» › referencia 3_
 - [revisar] «arts. 249, 256-272, 287, 300»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.3» › referencia 3_
 - [revisar] «arts. 249, 256-272, 287, 300»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.3» › referencia 3_
 - [revisar] «arts. 249, 256-272, 287, 300»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.3» › referencia 3_
-- [revisar] «art. 3.2»: el art. 3 LOPDH no tiene apartado 2 (no tiene apartados numerados) — _sección «Art. 60 — Tramitación: solicitud, admisión, comparecencia y cautelares» › tarjeta «Art. 60.1» › «Documentación preceptiva» › 1 › punto.2_
-- [revisar] «arts. 3 y 3.2»: el art. 3 LOPDH no tiene apartado 2 (no tiene apartados numerados) — _sección «Art. 60 — Tramitación: solicitud, admisión, comparecencia y cautelares» › tarjeta «Art. 60.1» › referencia 2_
 - [revisar] «art. 249»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 60 — Tramitación: solicitud, admisión, comparecencia y cautelares» › tarjeta «Art. 60.1-2» › referencia 4_
 - [revisar] «arts. 249 y 268»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 60 — Tramitación: solicitud, admisión, comparecencia y cautelares» › tarjeta «Art. 60.2» › referencia 4_
 - [revisar] «arts. 249 y 268»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 60 — Tramitación: solicitud, admisión, comparecencia y cautelares» › tarjeta «Art. 60.2» › referencia 4_
@@ -257,16 +249,8 @@ Sin hallazgos automáticos.
 - [revisar] «art. 12.4»: el art. 12 LJV no tiene apartado 4 (tiene 1, 2, 3) (ley por defecto) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.3» › referencia 5_
 - [revisar] «arts. 455-467»: el art. 467 LEC está sin contenido/derogado (extremo de un rango) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.4» › «Legitimación, plazo y tramitación» › 1 › punto.5_
 - [revisar] «arts. 455-467 y 458.1»: el art. 467 LEC está sin contenido/derogado (extremo de un rango) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.4» › referencia 2_
-- [revisar] «art. 3.1»: el art. 3 LOPDH no tiene apartado 1 (no tiene apartados numerados) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.5» › «Régimen legal y procedimiento» › 1 › punto.2_
-- [revisar] «Art. 2.3»: el art. 2 LOPDH no tiene apartado 3 (no tiene apartados numerados) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.5» › «Régimen legal y procedimiento» › 1 › punto.6_
-- [revisar] «Art. 9.3»: el art. 9 LOPDH no tiene apartado 3 (no tiene apartados numerados) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.5» › «Efectos sobre contratos con terceros» › 1 › punto.3_
-- [revisar] «arts. 1.4, 2.3 y 9.3»: el art. 2 LOPDH no tiene apartado 3 (no tiene apartados numerados) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.5» › referencia 2_
-- [revisar] «arts. 1.4, 2.3 y 9.3»: el art. 9 LOPDH no tiene apartado 3 (no tiene apartados numerados) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.5» › referencia 2_
 - [revisar] «arts. 249 y 268»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Perspectivas transversales y vías de tutela complementarias» › tarjeta «P4» › referencia 3_
 - [revisar] «arts. 249 y 268»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Perspectivas transversales y vías de tutela complementarias» › tarjeta «P4» › referencia 3_
-- [revisar] «art. 9.2»: el art. 9 LOPDH no tiene apartado 2 (no tiene apartados numerados) — _sección «Perspectivas transversales y vías de tutela complementarias» › tarjeta «P5» › «Vía administrativa (AEPD)» › 1 › punto.2_
-- [revisar] «arts. 9 y 9.2»: el art. 9 LOPDH no tiene apartado 2 (no tiene apartados numerados) — _sección «Perspectivas transversales y vías de tutela complementarias» › tarjeta «P5» › referencia 2_
-- [revisar] «Art. 3.2»: el art. 3 LOPDH no tiene apartado 2 (no tiene apartados numerados) — _sección «Indice de plazos procesales y línea temporal del expediente» › 1 › tabla fila 1_
 - [revisar] «art. 3.7»: el art. 3 LJV no tiene apartado 7 (tiene 1, 2) (ley por defecto) — _sección «Mapa de participantes y actores del expediente» › 2 › grupo «Ministerio Fiscal».1_
 - [revisar] «art. 158»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Ecosistema normativo conectado» › 10 › norma «Norma sustantiva de referencia»_
 - [revisar] «Art. 3.6»: el art. 3 LJV no tiene apartado 6 (tiene 1, 2) (ley por defecto) — _sección «Ecosistema normativo conectado» › 12 › norma «Estatuto Orgánico del Ministerio Fiscal»_
@@ -698,14 +682,8 @@ Sin hallazgos automáticos.
 - [aviso] «art. 59.4»: el art. 59 LJV no tiene apartado 4 (tiene 1, 2, 3) — _paso «inicio» › nota 3_
 - [aviso] «art. 1.4»: el art. 1 LOPDH no tiene apartado 4 (tiene 1, 2, 3) — _paso «revocacion» › aviso 3_
 - [revisar] «art. 3.7»: el art. 3 LJV no tiene apartado 7 (tiene 1, 2) (ley por defecto) — _paso «presupuesto» › ley 4_
-- [revisar] «art. 2.1»: el art. 2 LOPDH no tiene apartado 1 (no tiene apartados numerados) — _paso «auto_autoriza» › nota 2_
-- [revisar] «art. 2.1»: el art. 2 LOPDH no tiene apartado 1 (no tiene apartados numerados) — _paso «auto_autoriza» › ley 4_
 - [revisar] «arts. 455-467»: el art. 467 LEC está sin contenido/derogado (extremo de un rango) — _paso «apelacion_mf» › ley 6_
 - [revisar] «arts. 455-467»: el art. 467 LEC está sin contenido/derogado (extremo de un rango) — _paso «apelacion_rep» › ley 5_
-- [revisar] «art. 2.3»: el art. 2 LOPDH no tiene apartado 3 (no tiene apartados numerados) — _paso «notificacion_auto» › nota 3_
-- [revisar] «art. 2.3»: el art. 2 LOPDH no tiene apartado 3 (no tiene apartados numerados) — _paso «notificacion_auto» › ley 4_
-- [revisar] «art. 2.3»: el art. 2 LOPDH no tiene apartado 3 (no tiene apartados numerados) — _paso «revocacion» › nota 2_
-- [revisar] «art. 2.3»: el art. 2 LOPDH no tiene apartado 3 (no tiene apartados numerados) — _paso «revocacion» › ley 6_
 
 ### ljv-actos-disposicion · Guía · LJV · Actos de disposición sobre bienes de menores y personas con apoyos
 

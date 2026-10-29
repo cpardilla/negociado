@@ -83,6 +83,11 @@ test("ordinals: '2.°' (degree sign) and 'Primero.' are sub-items", () => {
   assert.ok(lh42.has("1") && lh42.has("9"));
 });
 
+test("apartados numbered in words ('Uno.', 'Dos.', LO 1/1982) are apartados", () => {
+  assert.deepEqual([...load("LOPDH").articulos.get("3").apartados.keys()], ["1", "2"]);
+  assert.deepEqual([...load("LOPDH").articulos.get("2").apartados.keys()], ["1", "2", "3"]);
+});
+
 test("range and division follow the law's own order and headings", () => {
   assert.deepEqual(range(load("LJV"), "26 bis", "26 quinquies"), ["26 bis", "26 ter", "26 quater", "26 quinquies"]);
   assert.equal(range(load("LJV"), "30", "20"), null);

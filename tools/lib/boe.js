@@ -33,8 +33,11 @@ function structure(parrafos) {
   let current = null;
   for (const [, t] of parrafos.slice(1)) {
     const ap = t.match(/^(\d+)\.\s/);
-    if (ap && !/^\d+\.\s*[ºª°]/.test(t)) {
-      current = ap[1];
+    // Some laws (LO 1/1982…) number apartados in words: "Uno.", "Dos.", "Tres."
+    const cardWord = !ap && t.match(/^(\p{Lu}\p{Ll}+)\.\s/u);
+    const n = cardWord && cardinalNumber(cardWord[1]);
+    if ((ap && !/^\d+\.\s*[ºª°]/.test(t)) || n) {
+      current = ap ? ap[1] : String(n);
       apartados.set(current, { texto: [t], subs: new Set() });
       continue;
     }
