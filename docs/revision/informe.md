@@ -22,7 +22,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | · | · | · | · | · | · | 3R |
 | ljv-adopcion | Esquema · LJV · Adopción | · | · | · | 1R | · | · | 1R |
 | ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | · | · | · | · | · | 1R |
-| ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | 3E | · | · | 1R | · | · | 3R |
+| ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | · | · | · | 1R | · | · | 1R |
 | ljv-emancipacion | Esquema · LJV · Emancipación y beneficio de la mayoría de edad | 33E 4R | 1R | · | · | · | · | 2R |
 | ljv-patrimonio-protegido | Esquema · LJV · Patrimonio de las personas con discapacidad | 2E | · | · | 2R | · | · | 1R |
 | ljv-honor-menor | Esquema · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 3E 3A 41R | · | · | 1R | 1R | · | 2R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 105E 38A 141R | 0E 0A 1R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 78R |
+| | **Total** | 102E 38A 141R | 0E 0A 1R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 76R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,15 +69,15 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2613
-- ✓ LEC (BOE a 07-10-2026): 1527
-- ✓ CC (BOE a 07-09-2026): 1401
-- ✓ CE (BOE a 20-05-2026): 76
-- ✓ LOPJ (BOE a 09-10-2026): 71
-- ✓ LOPJM (BOE a 18-12-2025): 58
+- ✓ LJV (BOE a 05-03-2026): 2610
+- ✓ LEC (BOE a 07-10-2026): 1526
+- ✓ CC (BOE a 07-09-2026): 1408
+- ✓ CE (BOE a 20-05-2026): 74
+- ✓ LOPJ (BOE a 09-10-2026): 73
 - ✓ LTRANS (BOE a 20-12-2025): 58
-- UE: 54
-- ✓ LRC (BOE a 24-02-2026): 50
+- ✓ LOPJM (BOE a 18-12-2025): 57
+- UE: 55
+- ✓ LRC (BOE a 24-02-2026): 48
 - ✓ LOPDH (BOE a 16-12-2025): 42
 - ✓ LH (BOE a 07-01-2026): 33
 - ✓ LN (BOE a 22-10-2026): 29
@@ -112,7 +112,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 633 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 596 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -202,21 +202,13 @@ Sin hallazgos automáticos.
 
 ### ljv-tutela-curatela · Esquema · LJV · Tutela, curatela y guarda de hecho
 
-**citas**
-
-- [error] «art. 753 bis»: el art. 753 bis no existe en la LEC — _sección «Sección 2.ª — Constitución de tutela y curatela» › tarjeta «Artículo 44» › «Aplicación restrictiva a la curatela» › 1 › punto.2_
-- [error] «art. 753 bis»: el art. 753 bis no existe en la LEC — _sección «Sección 2.ª — Constitución de tutela y curatela» › tarjeta «Artículo 44» › referencia 2_
-- [error] «art. 753 bis»: el art. 753 bis no existe en la LEC — _sección «Sección 2.ª — Ejercicio del cargo» › tarjeta «Artículo 48» › referencia 2_
-
 **plazos**
 
-- [revisar] plazo «10 días» no aparece en el precepto citado (Art. 51.2 LJV): «Solicitud de comparecencia tras traslado de informes o rendición de cuentas · 10 días · Art. 51.2 · Desde el traslado por el LAJ» — _sección «Indice de plazos procesales» › 1 › tabla fila 4_
+- [revisar] plazo «10 días» no aparece en el precepto citado (Art. 51.2 LJV): «Petición de comparecencia tras el traslado de informes o cuentas · 10 días · Art. 51.2 LJV» — _sección «Índice de plazos» › 1 › tabla fila 5_
 
 **terminologia**
 
-- [revisar] «incapacitación» × 3 → Ley 8/2021: medidas de apoyo; ya no existe la incapacitación — _sección «Principios inspiradores del sistema» › tarjeta «Principio 1» › «Fundamento normativo» › 1 › punto.2 | sección «Principios inspiradores del sistema» › tarjeta «Principio 5» › «Desarrollo» › 1 › punto.2 | sección «Ecosistema normativo — conexiones relacionadas» › 2 › norma «Reforma civil y procesal para el apoyo a personas con discapacidad»_
-- [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Sección 1.ª — Disposición común» › tarjeta «Artículo 43» › «Competencia territorial» › 1 › punto.1 | sección «Mapa de participantes y actores» › 1 › grupo «Órganos judiciales y auxiliares».1_
-- [revisar] «Secretario judicial» × 5 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Sección 2.ª — Ejercicio del cargo» › tarjeta «Artículo 47» › «Presentación del inventario» › 1 › punto.3 | sección «Sección 2.ª — Ejercicio del cargo» › tarjeta «Artículo 47» › «Controversia sobre bienes» › 1 › punto.1 | sección «Sección 2.ª — Ejercicio del cargo» › tarjeta «Artículo 47» › «Aprobación del inventario» › 1 › punto.1 …_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Sección 1.ª — Disposición común» › tarjeta «Artículo 43» › «Competencia (apartados 1 y 2)» › 1 › punto.1_
 
 ### ljv-emancipacion · Esquema · LJV · Emancipación y beneficio de la mayoría de edad
 

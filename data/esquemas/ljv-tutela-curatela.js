@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E15.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E15.json; revisado con el BOE (registro: docs/revision/ljv-tutela-curatela.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-tutela-curatela",
@@ -20,17 +20,17 @@ Neg.data.register({
   "52"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E15"
  },
  "cabecera": {
   "migas": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO IV",
-  "subtitulo": "Artículos 43 a 52 LJV · Conexiones con el Código Civil, la Ley 8/2021, la LEC, la Constitución y la Convención ONU",
+  "subtitulo": "Arts. 43 a 52 LJV · Competencia, constitución, ejercicio, remoción, excusa, cuentas, poderes preventivos y guarda de hecho · CC según la Ley 8/2021",
   "etiquetas": [
-   "Ley 15/2015, de 2 de julio",
-   "Jurisdicción Voluntaria",
+   "Ley 15/2015",
    "Arts. 43–52",
+   "11 artículos",
    "Ley 8/2021"
   ]
  },
@@ -68,233 +68,76 @@ Neg.data.register({
  ],
  "secciones": [
   {
-   "titulo": "Principios inspiradores del sistema",
-   "recuento": "5 principios",
+   "titulo": "Principios",
+   "recuento": "Ley 8/2021",
    "bloques": [
     {
      "tarjeta": {
-      "articulo": "Principio 1",
+      "articulo": "Principios",
       "categoria": "c6",
       "tono": "c6",
       "etiquetas": [
        {
-        "texto": "Fundamental",
+        "texto": "Ley 8/2021",
         "tono": "t-ok"
        }
       ],
-      "titulo": "Voluntad, deseos y preferencias",
-      "resumen": "La persona con discapacidad tiene derecho a que se respeten su voluntad, deseos y preferencias en todos los procedimientos que le afecten.",
+      "titulo": "Principios del sistema tras la Ley 8/2021",
+      "resumen": "La tutela queda reservada a los menores no sujetos a patria potestad; las personas con discapacidad reciben medidas de apoyo, preferentemente voluntarias, y la curatela solo cuando no hay otra suficiente. En todo el procedimiento se respeta la voluntad, deseos y preferencias de la persona y el interés del menor.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Fundamento normativo",
+         "titulo": "Tutela y apoyos",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Convención ONU art. 12:</strong> igual reconocimiento como persona ante la ley; los Estados deben proporcionar apoyo para el ejercicio de la capacidad jurídica respetando la voluntad y preferencias."
+             "t": "Tutela: menores no emancipados en situación de desamparo o no sujetos a patria potestad (arts. 199 y ss. CC)."
             },
             {
-             "t": "<strong>Ley 8/2021:</strong> transforma el sistema español abandonando el modelo sustitutorio de la incapacitación y adoptando un modelo de apoyo respetuoso con la autonomía."
+             "t": "Personas con discapacidad: medidas de apoyo voluntarias, guarda de hecho, curatela y defensor judicial (art. 250 CC); la curatela, solo cuando no exista otra medida de apoyo suficiente (art. 269 CC)."
             },
             {
-             "t": "<strong>Art. 45.2 Ley 15/2015:</strong> el Juez y el Ministerio Fiscal actuarán respetando la voluntad, deseos y preferencias de la persona con discapacidad en lo que conste."
-            },
-            {
-             "t": "<strong>Alcance:</strong> la audiencia de la persona con discapacidad no es un mero trámite formal, sino una garantía sustantiva que informa todo el procedimiento."
+             "t": "Las medidas atienden a la voluntad, deseos y preferencias de la persona y a los principios de necesidad y proporcionalidad (art. 249 CC)."
             }
            ]
           }
          ]
         }
-       }
-      ],
-      "referencias": [
-       "Conv. ONU art. 12",
-       "Ley 8/2021",
-       "Art. 45.2"
-      ],
-      "claves": "voluntad deseos preferencias persona discapacidad convención onu artículo 12 autonomía apoyo ley 8/2021 artículo 45.2 respeto capacidad jurídica"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Principio 2",
-      "categoria": "c6",
-      "tono": "c6",
-      "etiquetas": [
-       {
-        "texto": "Procesal",
-        "tono": "t-info"
-       }
-      ],
-      "titulo": "Intervención mínima y proporcionalidad",
-      "resumen": "Las medidas de apoyo deben ser las menos restrictivas posibles y proporcionadas a la situación de la persona.",
-      "cuerpo": [
+       },
        {
         "apartado": {
-         "titulo": "Desarrollo",
+         "titulo": "En el expediente",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Jerarquía de apoyos:</strong> la curatela solo procede cuando no exista otra medida de apoyo suficiente, ya sea voluntaria (autotutela, poderes preventivos) o informal (guarda de hecho)."
+             "t": "El Juez y el Ministerio Fiscal actúan de oficio en interés del menor y respetando la voluntad, deseos y preferencias de la persona con discapacidad (art. 45.2 LJV)."
             },
             {
-             "t": "<strong>Art. 44.2:</strong> la restricción del ámbito del expediente de curatela a la sustitución de curador ya nombrado responde a este principio."
+             "t": "Se oye al menor si tiene suficiente madurez y, en todo caso, si es mayor de doce años (arts. 45, 47, 48, 49, 50 y 51 LJV)."
             },
             {
-             "t": "<strong>Art. 52:</strong> la guarda de hecho se potencia como medida de apoyo suficiente para personas con discapacidad sin necesidad de constituir curatela si el apoyo ya es adecuado."
+             "t": "Ajustes para personas con discapacidad: art. 7 bis LJV."
             }
            ]
           }
          ]
         }
-       }
-      ],
-      "referencias": [
-       "Art. 44.2",
-       "Art. 52",
-       "CC art. 248"
-      ],
-      "claves": "intervención mínima proporcionalidad medidas apoyo menos restrictivas curatela guarda hecho voluntaria autotutela poderes preventivos artículo 44 restricción ámbito"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Principio 3",
-      "categoria": "c6",
-      "tono": "c6",
-      "etiquetas": [
+       },
        {
-        "texto": "Menores",
-        "tono": "t-info"
-       }
-      ],
-      "titulo": "Interés superior del menor",
-      "resumen": "En todos los expedientes que afecten a menores, su interés superior debe ser la consideración primordial.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Desarrollo",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Convención Niño art. 3:</strong> el interés superior del menor es la consideración primordial en todas las medidas que le afecten."
-            },
-            {
-             "t": "<strong>LO 1/1996 art. 9.2:</strong> el menor tiene derecho a ser oído en los procedimientos que le afecten."
-            },
-            {
-             "t": "<strong>Art. 45.2:</strong> el Juez y el Ministerio Fiscal actuarán de oficio en interés del menor, adoptando y proponiendo medidas, diligencias, informes periciales y pruebas que estimen oportunas."
-            }
-           ]
-          }
-         ]
+        "nota": {
+         "tono": "t-info",
+         "etiqueta": "Registro Civil",
+         "texto": "Las resoluciones judiciales y los documentos notariales sobre cargos tutelares y medidas de apoyo se inscriben en el Registro Civil (art. 300 CC); la LJV ordena remitir testimonio en los arts. 46.5, 49.3 y 50.4."
         }
        }
       ],
       "referencias": [
-       "Conv. Niño art. 3",
-       "LO 1/1996",
-       "Art. 45.2"
+       "CC arts. 199, 249–250, 269, 300",
+       "LJV arts. 7 bis, 45.2"
       ],
-      "claves": "interés superior menor convención derechos niño artículo 3 ley orgánica protección jurídica menor 1/1996 artículo 45.2 oficio medidas diligencias informes periciales pruebas"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Principio 4",
-      "categoria": "c6",
-      "tono": "c6",
-      "etiquetas": [
-       {
-        "texto": "Sustantivo",
-        "tono": "t-ok"
-       }
-      ],
-      "titulo": "Prioridad de medidas voluntarias",
-      "resumen": "Las medidas voluntarias de apoyo prevalecen sobre las legales o judiciales.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Desarrollo",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>CC art. 216:</strong> las medidas de apoyo se aplicarán respetando la voluntad de la persona con discapacidad."
-            },
-            {
-             "t": "<strong>Art. 45.1:</strong> se acompañarán los documentos notariales de los progenitores o de la propia persona con discapacidad sobre medidas de apoyo."
-            },
-            {
-             "t": "<strong>Art. 45.4:</strong> se adoptarán las medidas de fiscalización establecidas por los progenitores o por el propio afectado, salvo que sea otro su interés."
-            },
-            {
-             "t": "<strong>CC art. 223:</strong> tutela testamentaria: los progenitores pueden nombrar tutor en testamento."
-            },
-            {
-             "t": "<strong>CC art. 248:</strong> poderes preventivos y autotutela, introducidos por la Ley 8/2021."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "CC art. 216",
-       "CC art. 223",
-       "CC art. 248",
-       "Art. 45.1",
-       "Art. 45.4"
-      ],
-      "claves": "prioridad medidas voluntarias legales autotutela poderes preventivos testamento documento notarial progenitores disposición previsión código civil 223 248 fiscalización artículo 45.1 45.4"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Principio 5",
-      "categoria": "c6",
-      "tono": "c6",
-      "etiquetas": [
-       {
-        "texto": "Constitucional",
-        "tono": "t-ok"
-       }
-      ],
-      "titulo": "Capacidad jurídica igualitaria y publicidad registral",
-      "resumen": "Las personas con discapacidad ejercen sus derechos en condiciones de libertad e igualdad reales y efectivas.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Desarrollo",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>CE art. 49:</strong> las personas con discapacidad ejercen los derechos del Título I en condiciones de libertad e igualdad reales y efectivas. Reforma de 2024: eliminación de la referencia a «disminuidos»."
-            },
-            {
-             "t": "<strong>Ley 8/2021:</strong> supresión de la incapacitación judicial y configuración de un sistema de apoyos que respeta la plena capacidad jurídica."
-            },
-            {
-             "t": "<strong>Publicidad registral:</strong> la inscripción en el Registro Civil (Ley 20/2011, arts. 60 y ss.) garantiza la oponibilidad frente a terceros. Comunicación preceptiva en arts. 46.5, 49.3 y 50.4."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "CE art. 49",
-       "Ley 8/2021",
-       "Ley 20/2011"
-      ],
-      "claves": "capacidad jurídica igualitaria constitución artículo 49 discapacidad reforma 2024 ley 8/2021 incapacitación supresión plena capacidad jurídica igualdad libertad publicidad registral registro civil ley 20/2011"
+      "claves": "principios ley 8/2021 tutela menores medidas de apoyo curatela subsidiaria voluntad deseos preferencias interes del menor registro civil"
      }
     }
    ]
@@ -310,27 +153,27 @@ Neg.data.register({
       "tono": "c1",
       "etiquetas": [
        {
-        "texto": "Procedimiento",
-        "tono": "t-info"
+        "texto": "Competencia",
+        "tono": "t-plazo"
        }
       ],
       "titulo": "Competencia y postulación",
-      "resumen": "Regula el Juzgado competente territorial y funcionalmente, y la intervención preceptiva o no de abogado y procurador según el tipo de expediente.",
+      "resumen": "Juzgado del domicilio o, en su defecto, de la residencia del menor o persona con discapacidad. El que conoció del expediente conoce de todas las incidencias posteriores si la persona sigue en la misma circunscripción. Sin abogado ni procurador, salvo abogado en la remoción y en la extinción de poderes preventivos.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Competencia territorial",
+         "titulo": "Competencia (apartados 1 y 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Será competente el Juzgado de Primera Instancia del domicilio o, en su defecto, de la residencia del menor o persona con discapacidad."
+             "t": "Juzgado de Primera Instancia del domicilio o, en su defecto, de la residencia del menor o persona con discapacidad. Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 LOPJ); si no, la Sección Civil."
             },
             {
-             "t": "<strong>Justificación:</strong> proximidad del órgano judicial a la persona protegida, facilitando diligencias, audiencia personal y seguimiento de medidas."
+             "t": "El órgano que conoció del expediente de tutela, curatela o guarda de hecho conoce de las incidencias, trámites, medidas y revisiones posteriores si la persona reside en la misma circunscripción."
             },
             {
-             "t": "<strong>LEC art. 52:</strong> coherente con la regla de competencia territorial en procedimientos de capacidad."
+             "t": "Si no, se pide testimonio completo al juzgado anterior, que lo remite en diez días."
             }
            ]
           }
@@ -339,41 +182,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Competencia funcional por conexión",
+         "titulo": "Postulación (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Prórroga:</strong> el órgano judicial que conoció del expediente será competente para todas las incidencias posteriores si la persona reside en la misma circunscripción."
+             "t": "No es preceptiva la intervención de abogado ni procurador."
             },
             {
-             "t": "<strong>Fundamento:</strong> unidad de conocimiento del expediente; el Juez que constituyó la tutela conoce mejor las circunstancias personales y patrimoniales."
-            },
-            {
-             "t": "<strong>Cambio de circunscripción:</strong> se pedirá testimonio completo al Juzgado anterior, que lo remitirá en 10 días. Garantiza información completa para evitar resoluciones contradictorias."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Postulación",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Regla general:</strong> no preceptiva la intervención de abogado y procurador."
-            },
-            {
-             "t": "<strong>Excepciones:</strong> remoción del tutor o curador (art. 49) y extinción de poderes preventivos (art. 51 bis), donde es necesaria la intervención de abogado."
-            },
-            {
-             "t": "<strong>Justificación:</strong> la remoción y la extinción pueden generar controversia y enfrentamiento entre partes."
-            },
-            {
-             "t": "<strong>Intervención voluntaria:</strong> la persona interesada podrá valerse de abogado en los demás expedientes, asumiendo los costes."
+             "t": "Salvo en la remoción del tutor o curador (art. 49) y en la extinción de poderes preventivos (art. 51 bis), en las que es necesaria la intervención de abogado."
             }
            ]
           }
@@ -382,19 +199,16 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 215",
-       "LEC art. 52",
-       "LEC art. 748",
-       "Art. 49",
-       "Art. 51 bis"
+       "LJV arts. 49, 51 bis",
+       "LOPJ art. 86.5"
       ],
-      "claves": "competencia postulación juzgado primera instancia domicilio residencia menor discapacidad abogado procurador remoción testimonio expediente circunscripción incidencias prorroga funcional territorial letrado administracion justicia secretario judicial ministerio fiscal"
+      "claves": "43 competencia domicilio residencia incidencias posteriores testimonio diez dias postulacion abogado remocion poderes preventivos"
      }
     }
    ]
   },
   {
-   "titulo": "Sección 2.ª — Constitución de tutela y curatela",
+   "titulo": "Sección 2.ª — Constitución de la tutela y la curatela",
    "recuento": "2 artículos",
    "bloques": [
     {
@@ -409,19 +223,16 @@ Neg.data.register({
        }
       ],
       "titulo": "Ámbito de aplicación",
-      "resumen": "Delimita el ámbito de la sección a tutela y curatela, con una restricción específica para la curatela que se explica por la diferente naturaleza procesal tras la Ley 8/2021.",
+      "resumen": "Esta sección rige los expedientes de tutela y curatela. Para la curatela, el expediente de constitución solo se aplica cuando, tras un proceso de provisión de medidas de apoyo, haya que nombrar un nuevo curador en sustitución de otro removido o fallecido.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Aplicación general",
+         "titulo": "Tutela (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Se aplicará lo dispuesto en esta sección para la tramitación de los expedientes relativos a la tutela y la curatela."
-            },
-            {
-             "t": "<strong>Naturaleza procesal:</strong> la Ley 15/2015 regula el cómo (procedimiento), no el qué (régimen sustantivo), que corresponde al Código Civil (arts. 215 a 312)."
+             "t": "La tutela de los menores se constituye mediante este expediente de jurisdicción voluntaria (art. 208 CC)."
             }
            ]
           }
@@ -430,21 +241,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Aplicación restrictiva a la curatela",
+         "titulo": "Curatela (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Solo aplicable a la curatela cuando, tras la tramitación de un proceso sobre adopción de medidas judiciales de apoyo, sea procedente el nombramiento de un nuevo curador, en sustitución de otro removido o fallecido."
+             "t": "El expediente del art. 45 solo se aplica a la curatela para nombrar un nuevo curador, en sustitución de otro removido o fallecido, tras un proceso de provisión de medidas de apoyo."
             },
             {
-             "t": "<strong>Razón:</strong> la constitución originaria de la curatela se realiza mediante el procedimiento de provisión de apoyos (LEC art. 753 bis), proceso contencioso con garantías reforzadas."
-            },
-            {
-             "t": "El expediente de jurisdicción voluntaria solo interviene en la sustitución posterior del curador."
-            },
-            {
-             "t": "<strong>Tutela:</strong> se constituye para menores sin patria potestad efectiva, sin requerir proceso contencioso previo, por lo que el expediente de jurisdicción voluntaria es el cauce adecuado."
+             "t": "La curatela se constituye en el expediente de provisión de medidas judiciales de apoyo (arts. 42 bis a)–42 bis c) LJV) o, si hay oposición, en el proceso contencioso (arts. 756 y ss. LEC)."
             }
            ]
           }
@@ -453,11 +258,11 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 286",
-       "LEC art. 753 bis",
-       "Ley 8/2021"
+       "CC art. 208",
+       "LJV arts. 42 bis a)–42 bis c)",
+       "LEC arts. 756 y ss."
       ],
-      "claves": "ámbito aplicación tutela curatela expediente nombramiento curador sustitución removido fallecido medidas judiciales apoyo discapacidad provisión apoyos LEC 753 bis proceso contencioso constitución originaria"
+      "claves": "44 ambito tutela curatela nuevo curador sustitucion removido fallecido provision de apoyos"
      }
     },
     {
@@ -467,27 +272,27 @@ Neg.data.register({
       "tono": "c2",
       "etiquetas": [
        {
-        "texto": "Tramitación compleja",
-        "tono": "t-plazo"
+        "texto": "Constitución",
+        "tono": "t-ok"
        }
       ],
       "titulo": "Tramitación, resolución y recurso",
-      "resumen": "Regula íntegramente el procedimiento de constitución: solicitud, comparecencia, designación, fiscalización, fianza y recurso de apelación sin efectos suspensivos.",
+      "resumen": "Solicitud del Ministerio Fiscal o de los legitimados, con los documentos de los progenitores o de la propia persona. Comparecencia con audiencia del promotor, el propuesto, la persona afectada, los parientes y el Fiscal. El Juez designa tutor o curador conforme al Código Civil, adopta las medidas de fiscalización y, excepcionalmente, fianza. Apelación sin efectos suspensivos.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Iniciación del expediente",
+         "titulo": "Solicitud (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Legitimados:</strong> Ministerio Fiscal o cualquiera de las personas legalmente indicadas (CC art. 227: cónyuge, padres, ascendientes, hermanos, hijos mayores, cualquier persona con conocimiento de la situación)."
+             "t": "La presentan el Ministerio Fiscal o cualquiera de las personas legalmente indicadas para promover la tutela o curatela (para la tutela, art. 206 CC: los parientes llamados a ejercerla y quien tenga al menor bajo su guarda; cualquier persona puede comunicarlo al Fiscal o al juez, art. 207 CC)."
             },
             {
-             "t": "<strong>Contenido de la solicitud:</strong> hecho que da lugar a la tutela o curatela, documentos acreditativos de legitimación, parientes más próximos y domicilios."
+             "t": "Se expresa el hecho que da lugar a la tutela o curatela, los documentos de legitimación y los parientes más próximos con sus domicilios."
             },
             {
-             "t": "<strong>Documentación preceptiva:</strong> certificado de nacimiento; en su caso, certificado de últimas voluntades, testamento o documento notarial de los progenitores (CC art. 223: tutela testamentaria), documento notarial de la propia persona con discapacidad (CC art. 248: autotutela y poderes preventivos)."
+             "t": "Se acompaña certificado de nacimiento y, en su caso, el certificado de últimas voluntades de los progenitores, su testamento o documento notarial sobre la tutela o curatela de sus hijos (arts. 201–205 CC) o el documento notarial de la propia persona con discapacidad sobre su curatela u otras medidas voluntarias (autocuratela, arts. 271–274 CC)."
             }
            ]
           }
@@ -496,21 +301,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Comparecencia",
+         "titulo": "Comparecencia (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Personas que deben ser oídas:</strong> promotor, persona cuya designación se proponga, la persona cuya tutela o curatela se pretenda (si mayor de 12 años o con suficiente madurez), parientes más próximos, Ministerio Fiscal, y cuantas personas se considere oportuno."
+             "t": "Se oye al promotor, a la persona cuya designación se propone, a aquel cuya tutela o curatela se pretende si es mayor de doce años o tiene suficiente madurez, a los parientes más próximos, al Ministerio Fiscal y a quien se considere oportuno."
             },
             {
-             "t": "<strong>Audiencia del menor:</strong> responde al art. 12 Conv. Niño y art. 9.2 LO 1/1996. «Suficiente madurez» se valora caso por caso."
-            },
-            {
-             "t": "<strong>Audiencia de la persona con discapacidad:</strong> garantía fundamental del art. 12 Conv. ONU discapacidad."
-            },
-            {
-             "t": "<strong>Intervención de oficio:</strong> Juez y Ministerio Fiscal actúan de oficio en interés del menor, respetando voluntad, deseos y preferencias. Principio inquisitivo frente al dispositivo del proceso civil ordinario."
+             "t": "Juez y Fiscal actúan de oficio, adoptando o proponiendo las diligencias, informes y pruebas oportunos."
             }
            ]
           }
@@ -519,18 +318,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Designación de tutor o curador",
+         "titulo": "Designación (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>CC arts. 222-229 (tutela):</strong> orden preferente: designado por progenitores en testamento (art. 223), cónyuge, padres y ascendientes, hermanos y descendientes. El Juez puede alterar el orden si es contrario al interés del tutelado."
+             "t": "Tutor: preferencia de los designados por los progenitores en testamento o documento notarial y, después, del ascendiente o hermano que designe la autoridad judicial; excepcionalmente, por resolución motivada, puede alterarse el orden (arts. 211–217 CC; art. 213)."
             },
             {
-             "t": "<strong>CC arts. 286-298 (curatela):</strong> criterio rector: persona que mejor pueda ejercer el cargo, atendiendo a relaciones de confianza y afectividad. La persona con discapacidad tiene derecho a ser oída sobre la designación."
-            },
-            {
-             "t": "<strong>CC art. 228:</strong> nombramiento de varios tutores o curadores con distribución de funciones."
+             "t": "Curador: el propuesto por la propia persona o por quien ella designó; en su defecto, el orden del art. 276 CC (aptitud, art. 275)."
             }
            ]
           }
@@ -539,21 +335,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Medidas de fiscalización",
+         "titulo": "Fiscalización y fianza (apartados 4 y 5)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Medidas de progenitores o afectado:</strong> se adoptarán las establecidas en testamento o documento notarial (rendición periódica, autorización judicial, fiscalizador), salvo que sea otro el interés del afectado."
+             "t": "Se adoptan las medidas de fiscalización establecidas por los progenitores o por la propia persona en documento público notarial, salvo que sea otro su interés."
             },
             {
-             "t": "<strong>Medidas de vigilancia y control:</strong> el Juez podrá exigir informes sobre situación personal y administración de bienes."
+             "t": "El Juez puede acordar medidas de vigilancia y control y exigir informes sobre la situación personal y la administración de los bienes (arts. 210 y 270 CC). Si se acuerdan después, previa audiencia del tutor o curador, del menor con madurez o mayor de doce años, de la persona afectada y del Fiscal."
             },
             {
-             "t": "<strong>CC arts. 271-278:</strong> actos que requieren autorización judicial (enajenación, renuncia de derechos, arrendamiento, préstamos, etc.)."
-            },
-            {
-             "t": "<strong>Audiencia previa:</strong> si se adoptaren en resolución posterior, se oirá al tutor/curador, al menor con suficiente madurez o mayor de 12 años, a la persona sujeta a curatela y al Ministerio Fiscal."
+             "t": "Fianza: solo de modo excepcional, con modalidad y cuantía fijadas por el Juez (art. 284 CC para el curador); puede modificarse o dejarse sin efecto, con las mismas audiencias."
             }
            ]
           }
@@ -562,41 +355,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Fianza excepcional",
+         "titulo": "Recurso (apartado 6)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El Juez podrá exigir fianza de modo excepcional, determinando modalidad y cuantía."
+             "t": "Apelación sin efectos suspensivos (veinte días, art. 458 LEC)."
             },
             {
-             "t": "<strong>Justificación:</strong> garantía patrimonial para resarcimiento de daños. Excepcionalidad: patrimonio cuantioso o falta de confianza en solvencia/diligencia."
-            },
-            {
-             "t": "<strong>Modalidades:</strong> metálico, aval bancario, póliza de caución u otra garantía suficiente."
-            },
-            {
-             "t": "<strong>Modificación:</strong> de oficio o a instancia de parte, previa audiencia de tutor/curador, persona con discapacidad, menor con suficiente madurez y Ministerio Fiscal."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Recurso de apelación",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Recurrible en apelación sin efectos suspensivos (LEC arts. 455 y ss.)."
-            },
-            {
-             "t": "<strong>Sin efectos suspensivos:</strong> la resolución se ejecuta provisionalmente, garantizando la inmediatez de la protección."
-            },
-            {
-             "t": "<strong>Continuidad:</strong> durante el recurso, el tutor o curador electo queda a cargo del cuidado y administración, bajo las garantías que el Juez considere suficientes."
+             "t": "Durante el recurso, e incluso si se insta un proceso ordinario posterior, el tutor o curador electo queda a cargo del cuidado y la administración, bajo las garantías que el Juez estime suficientes."
             }
            ]
           }
@@ -605,18 +372,11 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 222",
-       "CC art. 223",
-       "CC art. 227",
-       "CC art. 228",
-       "CC art. 234",
-       "CC art. 248",
-       "CC art. 271",
-       "CC art. 274",
-       "LEC art. 455",
-       "Conv. ONU art. 12"
+       "CC arts. 201–217",
+       "CC arts. 270–276, 284",
+       "LEC art. 458"
       ],
-      "claves": "tramitación resolución recurso solicitud ministerio fiscal promotor comparecencia audiencia designación tutor curador fianza fiscalización apelación efectos suspensivos código civil medidas vigilancia control inventario poderes preventivos autotutela testamento notarial representantes legítimos delación 222 223 227 234 271 278 274 260"
+      "claves": "45 solicitud ministerio fiscal legitimados documentos progenitores autocuratela comparecencia audiencia designacion tutor curador preferencia fiscalizacion vigilancia fianza excepcional apelacion sin efectos suspensivos"
      }
     }
    ]
@@ -632,27 +392,27 @@ Neg.data.register({
       "tono": "c3",
       "etiquetas": [
        {
-        "texto": "Procedimiento",
-        "tono": "t-info"
+        "texto": "Posesión",
+        "tono": "t-ok"
        }
       ],
       "titulo": "Prestación de fianza, aceptación y posesión del cargo",
-      "resumen": "Regula el procedimiento posterior a la firmeza: prestación de fianza, aceptación del cargo, toma de posesión, presentación de inventario y comunicación al Registro Civil.",
+      "resumen": "Firme la resolución, se cita al designado en quince días para prestar, en su caso, la fianza y aceptar o excusarse. Acepta en acta ante el Letrado de la Administración de Justicia, que le da posesión y le entrega certificación. El tutor o administrador de bienes presenta inventario en sesenta días. Testimonio al Registro Civil.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Comparecencia y fianza",
+         "titulo": "Fianza y aceptación (apartados 1 a 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Firmeza:</strong> requisito previo indispensable. Si hay apelación, el nombrado puede ejercer provisionalmente (art. 45.6)."
+             "t": "Firme la resolución, se cita al designado para que comparezca en quince días, preste la fianza si se exigió y acepte el cargo o formule excusa."
             },
             {
-             "t": "<strong>Plazo de 15 días:</strong> improrrogable; incumplimiento puede dar lugar a responsabilidad o remoción."
+             "t": "Prestada la fianza, el Juez la declara suficiente y acuerda las inscripciones, depósitos y diligencias convenientes."
             },
             {
-             "t": "<strong>Declaración de suficiencia:</strong> el Juez valora cuantía, modalidad y adecuación al valor de los bienes administrados."
+             "t": "El nombrado acepta en acta ante el Letrado de la Administración de Justicia, que le da posesión, le confiere las facultades de la resolución y le entrega certificación (para el curador, art. 282 CC)."
             }
            ]
           }
@@ -661,18 +421,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Aceptación y posesión del cargo",
+         "titulo": "Inventario (apartado 4)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El nombrado acepta en acta ante el Letrado de la Administración de Justicia, comprometiéndose a cumplir los deberes legales."
+             "t": "Si es tutor o administrador de bienes, se le requiere para presentar inventario en los sesenta días siguientes (curador con facultades representativas: art. 285 CC)."
             },
             {
-             "t": "El LAJ da posesión del cargo, confiere facultades y entrega certificación de la resolución judicial de nombramiento."
-            },
-            {
-             "t": "<strong>Certificación:</strong> documento que acredita la condición de tutor o curador frente a terceros."
+             "t": "Hasta su aprobación, queda a cargo del cuidado y de la administración bajo las garantías que el Juez estime suficientes."
             }
            ]
           }
@@ -681,35 +438,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Presentación de inventario",
+         "titulo": "Registro Civil (apartado 5)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Plazo de 60 días:</strong> obligación ineludible; incumplimiento puede ser causa de remoción (CC art. 234)."
-            },
-            {
-             "t": "<strong>Administración provisional:</strong> hasta la aprobación del inventario, la persona nombrada administra bajo garantías del Juez (limitación de actos, prohibición de disposición sin autorización)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Inscripción registral",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Remisión de testimonio al Registro Civil: resolución dictada y acta de posesión del cargo."
-            },
-            {
-             "t": "<strong>Carácter obligatorio y constitutivo:</strong> la tutela o curatela no es oponible a terceros de buena fe hasta la inscripción."
-            },
-            {
-             "t": "<strong>Ley 20/2011 arts. 60 y ss.:</strong> inscripción de resoluciones judiciales sobre capacidad, tutela y curatela."
+             "t": "Se remite testimonio de la resolución y del acta de posesión (art. 300 CC)."
             }
            ]
           }
@@ -718,12 +452,9 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 234",
-       "CC art. 258",
-       "CC art. 279",
-       "Ley 20/2011"
+       "CC arts. 282, 284, 285, 300"
       ],
-      "claves": "fianza aceptación posesión cargo inventario quince días sesenta días registro civil letrado administración justicia resolución firme inscripciones depósitos diligencias certificación administrador bienes acta compromiso documento público oponibilidad terceros"
+      "claves": "46 firmeza quince dias fianza aceptacion excusa acta posesion certificacion inventario sesenta dias registro civil"
      }
     },
     {
@@ -733,27 +464,24 @@ Neg.data.register({
       "tono": "c3",
       "etiquetas": [
        {
-        "texto": "Procedimiento",
+        "texto": "Inventario",
         "tono": "t-info"
        }
       ],
       "titulo": "Formación de inventario",
-      "resumen": "Regula la presentación del inventario, la citación a interesados, la resolución de controversias sobre bienes y la aprobación final.",
+      "resumen": "El administrador presenta el inventario en el plazo otorgado; el Letrado de la Administración de Justicia señala su formación y cita a los interesados. Si se discute la inclusión o exclusión de bienes, vista y juicio verbal, con suspensión del inventario. Sin oposición o resuelta, el LAJ lo aprueba.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Presentación del inventario",
+         "titulo": "Presentación y formación (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El administrador presentará inventario con relación de bienes, escrituras, documentos y papeles de importancia."
+             "t": "Relación de los bienes del afectado y de las escrituras, documentos y papeles de importancia."
             },
             {
-             "t": "<strong>Exhaustividad:</strong> debe incluir bienes muebles e inmuebles, derechos reales y de crédito, cuentas bancarias, valores mobiliarios. La omisión deliberada puede constituir ilícito civil e incluso penal."
-            },
-            {
-             "t": "El Secretario judicial fijará día y hora y citará a interesados, personas afectadas con suficiente madurez, menor mayor de 12 años y Ministerio Fiscal."
+             "t": "El Letrado de la Administración de Justicia fija día y hora y cita a los interesados, a las personas afectadas con suficiente madurez y, en todo caso, al menor mayor de doce años y al Ministerio Fiscal."
             }
            ]
           }
@@ -762,15 +490,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Controversia sobre bienes",
+         "titulo": "Controversia (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Transformación en contencioso:</strong> si hay controversia sobre inclusión o exclusión, el Secretario judicial cita a vista con tramitación de juicio verbal (LEC art. 250). Pauta constante en arts. 49, 50 y 51 bis."
+             "t": "Si se discute la inclusión o exclusión de bienes: vista y juicio verbal (arts. 437 y ss. LEC), suspendiéndose la formación del inventario hasta que se resuelva."
             },
             {
-             "t": "<strong>Derechos de terceros:</strong> la sentencia deja a salvo los derechos de terceros, que podrán ejercitar acciones en proceso declarativo."
+             "t": "La sentencia deja a salvo los derechos de terceros."
             }
            ]
           }
@@ -779,18 +507,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Aprobación del inventario",
+         "titulo": "Aprobación (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Sin oposición o resuelta esta, el Secretario judicial aprueba el inventario."
-            },
-            {
-             "t": "La persona designada procederá a la administración conforme a la resolución judicial y a las normas del CC sobre administración (arts. 258-278)."
-            },
-            {
-             "t": "<strong>CC art. 260:</strong> actos de administración ordinaria sin autorización judicial; CC art. 271: actos que requieren autorización."
+             "t": "Sin oposición, o resuelta, el Letrado de la Administración de Justicia aprueba el inventario y la persona designada administra en los términos de la resolución judicial."
             }
            ]
           }
@@ -799,12 +521,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 258",
-       "CC art. 260",
-       "CC art. 271",
-       "LEC art. 250"
+       "LEC arts. 437 y ss.",
+       "CC art. 285"
       ],
-      "claves": "formación inventario bienes escrituras documentos controversia inclusión exclusión juicio verbal secretario judicial aprobación oposición sentencia terceros derechos salvaguarda contradicción transformación contencioso"
+      "claves": "47 inventario formacion citacion controversia vista juicio verbal suspension aprobacion letrado"
      }
     },
     {
@@ -815,32 +535,29 @@ Neg.data.register({
       "etiquetas": [
        {
         "texto": "Retribución",
-        "tono": "t-ok"
+        "tono": "t-nota"
        }
       ],
       "titulo": "Retribución del cargo",
-      "resumen": "Establece el procedimiento para fijar, modificar o extinguir la retribución del tutor o curador, conforme al CC art. 274.",
+      "resumen": "Firme la resolución de tutela o dictada la sentencia de provisión de apoyos, si el tutor o curador la pide, el Juez fija la retribución atendiendo a la complejidad y extensión de las funciones y al valor y rentabilidad de los bienes. Apelación sin efectos suspensivos. El mismo trámite sirve para modificarla o extinguirla.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Solicitud y fijación",
+         "titulo": "Fijación (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Momento:</strong> una vez firme la resolución de constitución de tutela o la sentencia de provisión de apoyos."
+             "t": "Derecho a retribución si el patrimonio lo permite: tutor, art. 229 CC; curador, art. 281 CC."
             },
             {
-             "t": "<strong>CC art. 274:</strong> el cargo es gratuito salvo que el Juez fije retribución equitativa a petición del tutor o curador."
+             "t": "Criterios: complejidad y extensión de las funciones; valor y rentabilidad de los bienes."
             },
             {
-             "t": "<strong>Criterios:</strong> complejidad (naturaleza y frecuencia de actos), extensión (ámbito temporal y material), valor de los bienes, rentabilidad del patrimonio."
+             "t": "Se oye al solicitante, a la persona con discapacidad, al menor con madurez o mayor de doce años, al Fiscal y a quien se considere oportuno."
             },
             {
-             "t": "<strong>Audiencia:</strong> solicitante, persona con discapacidad, menor si tuviera suficiente madurez y en todo caso si mayor de 12 años, Ministerio Fiscal y cuantas personas considere oportuno."
-            },
-            {
-             "t": "<strong>Apelación no suspensiva:</strong> el auto se ejecuta sin perjuicio del recurso, para evitar dilaciones indebidas."
+             "t": "El auto se ejecuta sin perjuicio de la apelación, que no tiene efectos suspensivos."
             }
            ]
           }
@@ -849,12 +566,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Modificación o extinción",
+         "titulo": "Modificación o extinción (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Mismo procedimiento para modificar o extinguir la retribución cuando varíen las circunstancias (reducción patrimonial, simplificación de funciones, gestión menos compleja)."
+             "t": "Por el mismo procedimiento."
             }
            ]
           }
@@ -863,17 +580,15 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 274",
-       "LEC art. 753 bis",
-       "Ley 8/2021"
+       "CC arts. 229, 281"
       ],
-      "claves": "retribución cargo tutor curador provisión apoyos complejidad funciones valor rentabilidad bienes apelación no suspensivo modificación extinción solicitud ministerio fiscal pericial pruebas gratuidad artículo 274 código civil equitativa criterios"
+      "claves": "48 retribucion tutor curador patrimonio complejidad extension valor rentabilidad auto apelacion modificacion extincion"
      }
     }
    ]
   },
   {
-   "titulo": "Sección 2.ª — Crisis y extinción de la tutela y la curatela",
+   "titulo": "Sección 2.ª — Remoción, excusa, cuentas y poderes preventivos",
    "recuento": "4 artículos",
    "bloques": [
     {
@@ -888,28 +603,25 @@ Neg.data.register({
        }
       ],
       "titulo": "Remoción",
-      "resumen": "Regula la remoción del tutor o curador: legitimación, comparecencia, conversión en contencioso, suspensión cautelar y nombramiento de defensor judicial.",
+      "resumen": "En los casos de la legislación civil, de oficio o a instancia del Fiscal, del afectado o de otro interesado, previa comparecencia. Con oposición, juicio verbal. El Juez puede suspender al tutor o curador y el LAJ nombra defensor judicial. El Juez nombra nuevo tutor o curador y lo comunica al Registro Civil.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Iniciación y comparecencia",
+         "titulo": "Causas y legitimación (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>CC art. 234 (causas):</strong> incumplimiento de deberes, mala administración, condena por delito doloso, insolvencia, pérdida de confianza."
+             "t": "Causas: las de la legislación civil: curador que incurra en inhabilidad, se conduzca mal en el desempeño, por notoria ineptitud o por problemas de convivencia graves y continuados (art. 278 CC); a la tutela se le aplican las causas de la curatela (art. 223 CC)."
             },
             {
-             "t": "<strong>CC art. 251:</strong> inhábiles para el cargo quienes hubieren sido removidos de tutela anterior."
+             "t": "De oficio, a instancia del Ministerio Fiscal, del tutelado, del sujeto a curatela o de otro interesado."
             },
             {
-             "t": "<strong>Legitimación amplia:</strong> de oficio, Ministerio Fiscal, tutelado, sujeto a curatela o cualquier persona interesada."
+             "t": "Se oye al tutor o curador, a quienes puedan sustituirle, a la persona con discapacidad, al menor con madurez o mayor de doce años y al Fiscal."
             },
             {
-             "t": "<strong>Audiencia:</strong> tutor/curador, personas que puedan sustituirle, persona con discapacidad, menor con suficiente madurez o mayor de 12 años, Ministerio Fiscal."
-            },
-            {
-             "t": "<strong>Oposición:</strong> el expediente se hace contencioso con tramitación de juicio verbal. Garantiza contradicción y derecho de defensa."
+             "t": "Abogado preceptivo (art. 43.3). Si hay oposición, el expediente se hace contencioso: vista y juicio verbal."
             }
            ]
           }
@@ -918,18 +630,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Medidas cautelares",
+         "titulo": "Durante el expediente (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El Juez podrá suspender al tutor/curador en sus funciones."
-            },
-            {
-             "t": "El Secretario judicial nombrará un defensor judicial (CC art. 299): asume temporalmente las funciones."
-            },
-            {
-             "t": "<strong>Naturaleza:</strong> medida de protección, no obligatoria; procede cuando la gravedad de los hechos lo justifica."
+             "t": "El Juez puede suspender al tutor o curador; el Letrado de la Administración de Justicia nombra un defensor judicial."
             }
            ]
           }
@@ -938,15 +644,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Resolución",
+         "titulo": "Resolución (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Nombramiento de nuevo tutor/curador conforme al CC (arts. 222-229 y 286 ss.)."
-            },
-            {
-             "t": "Comunicación al Registro Civil: garantiza publicidad y actualización de la información registral."
+             "t": "El Juez acuerda lo procedente, nombra nuevo tutor o curador conforme a la legislación civil y lo comunica al Registro Civil."
             }
            ]
           }
@@ -955,12 +658,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 234",
-       "CC art. 251",
-       "CC art. 299",
-       "LEC art. 250"
+       "CC arts. 223, 278",
+       "LJV art. 43.3"
       ],
-      "claves": "remoción tutor curador legislación civil oficio ministerio fiscal tutelado sujeto curatela comparecencia oposición contencioso juicio verbal suspensión funciones defensor judicial nombramiento nuevo registro civil causas 234 251 inhabilidad incumplimiento deberes mala administración condena doloso"
+      "claves": "49 remocion causas inhabilidad mala conducta ineptitud convivencia oposicion contencioso suspension defensor judicial nuevo tutor curador registro civil abogado"
      }
     },
     {
@@ -971,29 +672,23 @@ Neg.data.register({
       "etiquetas": [
        {
         "texto": "Excusa",
-        "tono": "t-plazo"
+        "tono": "t-aviso"
        }
       ],
       "titulo": "Excusa",
-      "resumen": "Regula la excusa del tutor o curador: plazo para alegarla, causas del CC, obligación de ejercer durante la tramitación y efectos de admisión o rechazo.",
+      "resumen": "La excusa se alega en quince días desde que se conoce el nombramiento, o en cualquier momento si es sobrevenida. Comparecencia. Mientras se tramita, quien se excusa debe ejercer el cargo; si no lo hace, se nombra un defensor y, si la excusa se rechaza, paga todos los gastos. Admitida, nuevo nombramiento y comunicación al Registro Civil.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Plazo para alegar la excusa",
+         "titulo": "Plazo y causas (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Plazo de 15 días:</strong> desde el conocimiento del nombramiento."
+             "t": "Quince días desde que se tenga conocimiento del nombramiento; si la causa sobreviene durante el ejercicio, en cualquier momento (salvo personas jurídicas, si no hay quien pueda sustituirlas en parecidas condiciones)."
             },
             {
-             "t": "<strong>CC arts. 243-246 (causas):</strong> mayor de 65 años, enfermedad, cargo con 3+ hijos, residencia en lugar distinto, cargos públicos, cualquier causa que dificulte gravemente el cargo."
-            },
-            {
-             "t": "<strong>Excusa sobrevenida:</strong> alegable en cualquier momento (CC art. 247)."
-            },
-            {
-             "t": "<strong>Personas jurídicas (CC art. 242):</strong> solo pueden excusarse si hay persona de parecidas condiciones para sustituirles. Razón: asumen la tutela como parte de su función institucional."
+             "t": "Causas: que la curatela resulte excesivamente gravosa o entrañe grave dificultad; las personas jurídicas privadas, si carecen de medios suficientes (art. 279 CC; para la tutela, art. 223 CC)."
             }
            ]
           }
@@ -1002,15 +697,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Comparecencia",
+         "titulo": "Comparecencia (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Audiencia necesaria: persona que se excuse, quien le vaya a sustituir, afectado con suficiente madurez, menor mayor de 12 años y Ministerio Fiscal."
-            },
-            {
-             "t": "<strong>Audiencia del sustituto:</strong> garantiza que está dispuesto y es idóneo para asumir el cargo."
+             "t": "Se oye a quien se excusa, a quien le vaya a sustituir, al afectado con madurez, al menor mayor de doce años y al Ministerio Fiscal."
             }
            ]
           }
@@ -1019,15 +711,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Obligación de ejercicio durante la tramitación",
+         "titulo": "Durante el expediente (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El excusante está obligado a ejercer la función; de no hacerlo, se nombra defensor judicial (CC art. 299)."
-            },
-            {
-             "t": "<strong>Responsabilidad:</strong> si la excusa es rechazada, el sustituido responde de todos los gastos ocasionados. Disuade excusas infundadas o dilatorias."
+             "t": "Quien se excusa debe seguir ejerciendo; si no lo hace, se nombra un defensor que le sustituya, y si la excusa se rechaza responde de todos los gastos ocasionados."
             }
            ]
           }
@@ -1036,15 +725,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Efectos de la admisión",
+         "titulo": "Admisión (apartado 4)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Nombramiento de nuevo tutor o curador según reglas de delación del CC."
-            },
-            {
-             "t": "Comunicación al Registro Civil para actualización de la información registral."
+             "t": "Nombramiento de nuevo tutor o curador y comunicación al Registro Civil."
             }
            ]
           }
@@ -1053,12 +739,9 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 242",
-       "CC art. 243",
-       "CC art. 247",
-       "CC art. 299"
+       "CC arts. 223, 279–280"
       ],
-      "claves": "excusa tutor curador código civil quince días nombramiento sobrevenido personas jurídicas comparecencia obligación ejercicio defensor gastos rechazada registro civil nuevo nombramiento causas 243 244 245 246 247 242 entidades públicas"
+      "claves": "50 excusa quince dias sobrevenida gravosa dificultad personas juridicas comparecencia ejercicio defensor gastos nuevo nombramiento"
      }
     },
     {
@@ -1068,24 +751,27 @@ Neg.data.register({
       "tono": "c4",
       "etiquetas": [
        {
-        "texto": "Rendición",
-        "tono": "t-info"
+        "texto": "Cuentas",
+        "tono": "t-plazo"
        }
       ],
       "titulo": "Rendición de cuentas",
-      "resumen": "Regula la presentación de informes y rendiciones de cuentas, el traslado, la comparecencia, la prueba pericial y la rendición final por extinción.",
+      "resumen": "El tutor o curador presenta los informes o cuentas que dispongan la ley o la resolución. El LAJ los traslada; si alguien lo pide en diez días, comparecencia. El Juez puede acordar de oficio una pericial contable. El Juez resuelve por auto. Rendición final en tres meses desde el cese. La aprobación no impide las acciones recíprocas.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Presentación de informes",
+         "titulo": "Informes y traslado (apartados 1 y 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>CC art. 279:</strong> obligación fundamental del tutor o curador de rendir cuentas periódicas o finales."
+             "t": "Informes sobre la situación personal o rendiciones de cuentas, según la legislación civil o la resolución."
             },
             {
-             "t": "Informes sobre situación personal del menor o persona con discapacidad, o rendiciones de cuentas."
+             "t": "El Letrado de la Administración de Justicia los traslada a la persona con discapacidad, al menor con madurez o mayor de doce años, a los interesados y al Fiscal; si alguno lo pide en diez días, comparecencia con las diligencias y pruebas oportunas."
+            },
+            {
+             "t": "El Juez puede ordenar de oficio, a costa del patrimonio del tutelado o asistido, una pericial contable o de auditoría si hay operaciones complejas."
             }
            ]
           }
@@ -1094,21 +780,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Traslado y comparecencia",
+         "titulo": "Resolución (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El LAJ traslada informes a persona con discapacidad, menor con suficiente madurez o mayor de 12 años, interesados y Ministerio Fiscal."
-            },
-            {
-             "t": "<strong>Plazo de 10 días:</strong> para solicitar comparecencia, con proposición de diligencias y pruebas."
-            },
-            {
-             "t": "<strong>Prueba pericial de oficio:</strong> el Juez puede ordenar pericial contable o auditoría a costa del patrimonio del tutelado si hay operaciones complejas, aunque nadie haya solicitado comparecencia."
-            },
-            {
-             "t": "<strong>Justificación del coste:</strong> la rendición de cuentas es un deber del cargo, no una carga para la persona protegida; la prueba pericial beneficia a esta última."
+             "t": "Celebrada o no la comparecencia, el Juez resuelve por auto."
             }
            ]
           }
@@ -1117,12 +794,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Resolución",
+         "titulo": "Rendición final (apartado 4)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El Juez resuelve por auto. Aprobación: liberación de responsabilidad. Desaprobación: resarcimiento de daños y perjuicios (CC art. 280)."
+             "t": "Por extinción de la tutela o curatela: en tres meses desde el cese, prorrogables por justa causa (tutor, art. 232 CC; curador, art. 292 CC)."
+            },
+            {
+             "t": "Se oye también, si procede, al nuevo tutor o curador y a los herederos."
+            },
+            {
+             "t": "Causas de extinción: tutela, art. 231 CC; curatela, art. 291 CC."
             }
            ]
           }
@@ -1131,35 +814,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Rendición final de cuentas por extinción",
+         "titulo": "Acciones (apartado 5)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Plazo de 3 meses:</strong> desde el cese del cargo, prorrogables por justa causa (complejidad del patrimonio, dificultad documental)."
-            },
-            {
-             "t": "<strong>CC arts. 312-313 (causas extinción):</strong> mayoría de edad, fallecimiento, adopción, suspensión o extinción de patria potestad."
-            },
-            {
-             "t": "<strong>Audiencia adicional:</strong> nuevo tutor o curador, y herederos del tutelado o asistido si ha fallecido."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Acciones recíprocas",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "La aprobación judicial no impide el ejercicio de acciones recíprocas entre tutor/curador y tutelado/asistido o sus causahabientes."
-            },
-            {
-             "t": "<strong>Efecto:</strong> la aprobación no tiene efecto de cosa juzgada material; solo verifica corrección formal. Cabe ejercicio de acciones civiles posteriores."
+             "t": "La aprobación no impide las acciones que recíprocamente puedan ejercitar el tutor o curador y la persona tutelada o asistida o sus causahabientes."
             }
            ]
           }
@@ -1168,13 +828,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 279",
-       "CC art. 280",
-       "CC art. 281",
-       "CC art. 312",
-       "Ley 8/2021"
+       "CC arts. 231–233",
+       "CC arts. 291–294"
       ],
-      "claves": "rendición cuentas informes situación personal letrado administración justicia traslado comparecencia diez días pericial contable auditoría auto extinción tres meses prorrogables herederos acciones recíprocas causahabientes 279 280 281 312 313 aprobación desaprobación resarcimiento daños perjuicios cosa juzgada formal"
+      "claves": "51 rendicion de cuentas informes traslado diez dias comparecencia pericial contable auditoria auto rendicion final tres meses cese acciones reciprocas"
      }
     },
     {
@@ -1184,30 +841,24 @@ Neg.data.register({
       "tono": "c4",
       "etiquetas": [
        {
-        "texto": "Extinción",
+        "texto": "Poderes preventivos",
         "tono": "t-aviso"
        }
       ],
       "titulo": "Extinción de los poderes preventivos",
-      "resumen": "Regula la extinción de los poderes preventivos (CC art. 248) cuando el apoderado incurre en causas de remoción del curador.",
+      "resumen": "Los legitimados para instar la provisión de apoyos y el curador pueden pedir la extinción de los poderes preventivos si en el apoderado concurre una causa de remoción del curador. Comparecencia; con oposición, juicio verbal. Abogado preceptivo.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Legitimación",
+         "titulo": "Legitimación y causa (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Legitimados:</strong> cualquier persona legitimada para instar la provisión de apoyos y el curador, si lo hubiere."
+             "t": "Cualquier persona legitimada para instar la provisión de apoyos (art. 42 bis a).3 LJV) y el curador, si lo hay."
             },
             {
-             "t": "<strong>CC art. 248:</strong> poderes preventivos introducidos por la Ley 8/2021: permiten otorgar poder en previsión de futura necesidad de apoyo."
-            },
-            {
-             "t": "<strong>Causa:</strong> que en el apoderado concurra alguna de las causas previstas para la remoción del curador."
-            },
-            {
-             "t": "<strong>Legitimación del curador:</strong> coherente con su función de velar porque las demás medidas de apoyo sean adecuadas."
+             "t": "Causa: que en el apoderado concurra alguna de las causas de remoción del curador (art. 278 CC); poderes preventivos, arts. 256–262 CC (en particular, art. 258)."
             }
            ]
           }
@@ -1216,18 +867,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Tramitación",
+         "titulo": "Tramitación (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Comparecencia: solicitante, apoderado, persona con discapacidad y Ministerio Fiscal."
+             "t": "Comparecencia del solicitante, el apoderado, la persona con discapacidad y el Fiscal."
             },
             {
-             "t": "<strong>Oposición:</strong> el expediente se hace contencioso con tramitación de juicio verbal. Pauta constante en arts. 47, 49 y 50."
+             "t": "Si hay oposición, el expediente se hace contencioso y el Letrado de la Administración de Justicia cita a una vista (juicio verbal)."
             },
             {
-             "t": "<strong>Intervención de abogado preceptiva:</strong> conforme al art. 43.3, por la naturaleza contenciosa potencial y la trascendencia de los derechos en juego."
+             "t": "Abogado preceptivo (art. 43.3)."
             }
            ]
           }
@@ -1236,12 +887,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 234",
-       "CC art. 248",
-       "LEC art. 250",
-       "Ley 8/2021"
+       "CC arts. 256–262, 278",
+       "LJV art. 42 bis a)"
       ],
-      "claves": "extinción poderes preventivos apoderado persona discapacidad curador provisión apoyos remoción contencioso juicio verbal letrado administración justicia oposición legitimación artículo 248 código civil autotutela confianza 8/2021"
+      "claves": "51 bis extincion poderes preventivos apoderado causas remocion curador oposicion juicio verbal abogado"
      }
     }
    ]
@@ -1262,22 +911,19 @@ Neg.data.register({
        }
       ],
       "titulo": "Requerimiento y medidas de control",
-      "resumen": "Regula el requerimiento al guardador de hecho, las medidas de control y vigilancia, y la autorización judicial para actos del guardador.",
+      "resumen": "A instancia del Fiscal, de la persona que precise apoyo o de cualquier interesado, la autoridad judicial puede requerir al guardador de hecho que informe y establecer medidas de control y vigilancia, previa comparecencia. Cuando el guardador de una persona con discapacidad necesite autorización judicial, el juez entrevista personalmente a la persona.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Requerimiento al guardador de hecho",
+         "titulo": "Requerimiento (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Legitimados:</strong> Ministerio Fiscal, persona que precise medidas de apoyo, cualquiera con interés legítimo."
+             "t": "A instancia del Ministerio Fiscal, de la persona que precise apoyo o de cualquiera con interés legítimo: informe sobre la situación de la persona y bienes del menor o de la persona con discapacidad y sobre su actuación."
             },
             {
-             "t": "<strong>CC art. 300 tras Ley 8/2021:</strong> la guarda de hecho se reconoce como verdadera institución jurídica de apoyo, superando su anterior carácter de mera situación fáctica."
-            },
-            {
-             "t": "El requerimiento no implica necesariamente constitución de tutela o curatela; verifica que la actuación del guardador es adecuada."
+             "t": "Personas con discapacidad: arts. 263–267 CC (la guarda de hecho es medida de apoyo; requerimiento y rendición de cuentas, art. 265). Menores: arts. 237–238 CC."
             }
            ]
           }
@@ -1286,21 +932,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Medidas de control y vigilancia",
+         "titulo": "Control y vigilancia (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El Juez podrá establecer medidas de control y vigilancia sin perjuicio de promover constitución de tutela para menores si procediera."
+             "t": "Medidas de control y vigilancia, sin perjuicio de promover la constitución de la tutela en el caso de los menores."
             },
             {
-             "t": "<strong>Menores:</strong> constitución de tutela puede ser necesaria porque necesitan representante legal con plenas facultades."
-            },
-            {
-             "t": "<strong>Personas con discapacidad:</strong> la Ley 8/2021 potencia la guarda de hecho como medida de apoyo suficiente sin necesidad de curatela si el apoyo ya es adecuado."
-            },
-            {
-             "t": "Adopción previa comparecencia: persona afectada, guardador y Ministerio Fiscal."
+             "t": "Previa comparecencia de la persona afectada, el guardador y el Ministerio Fiscal."
             }
            ]
           }
@@ -1309,21 +949,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Autorización judicial del guardador",
+         "titulo": "Autorización judicial (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>CC art. 300:</strong> el guardador debe solicitar autorización judicial para actos que, de haber sido curador, requerirían autorización conforme al CC art. 287 (enajenación, renuncia de derechos, aceptación de herencias sin beneficio de inventario)."
+             "t": "Cuando el guardador de una persona con discapacidad deba pedir autorización judicial (actuación representativa excepcional, art. 264 CC), la autoridad judicial entrevista por sí misma a la persona y puede pedir un informe pericial."
             },
             {
-             "t": "<strong>Entrevista personal:</strong> la autoridad judicial entrevistará por sí misma a la persona con discapacidad. Garantía reforzada que va más allá de la mera audiencia."
-            },
-            {
-             "t": "<strong>Informe pericial:</strong> podrá solicitarse para acreditar la situación de la persona con discapacidad."
-            },
-            {
-             "t": "<strong>Comparecencia ampliada:</strong> se podrá citar a cuantas personas se considere necesario oír (profesionales sanitarios, trabajadores sociales, familiares)."
+             "t": "Puede citar a quien considere necesario oír según el acto."
             }
            ]
           }
@@ -1332,19 +966,16 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 287",
-       "CC art. 300",
-       "Ley 8/2021",
-       "Conv. ONU art. 12",
-       "Conv. ONU art. 13"
+       "CC arts. 237–238",
+       "CC arts. 263–267"
       ],
-      "claves": "guarda de hecho requerimiento guardador medidas control vigilancia autorización judicial entrevista pericial menor discapacidad constitución tutela comparecencia ministerio fiscal interés legítimo institución jurídica apoyo fáctica 300 287 código civil ley 8/2021"
+      "claves": "52 guarda de hecho requerimiento informe medidas control vigilancia comparecencia autorizacion judicial actuacion representativa entrevista informe pericial"
      }
     }
    ]
   },
   {
-   "titulo": "Cuadro comparativo: Tutela, Curatela y Guarda de hecho",
+   "titulo": "Cuadro comparativo",
    "recuento": "3 figuras",
    "plegada": true,
    "bloques": [
@@ -1358,52 +989,46 @@ Neg.data.register({
       ],
       "filas": [
        [
-        "Naturaleza",
-        "Medida de representación para menores sin patria potestad efectiva",
-        "Medida de apoyo para personas con discapacidad que precisan apoyo continuado",
-        "Situación fáctica de cuidado y protección asumida voluntariamente"
+        "Personas",
+        "Menores no emancipados en desamparo o no sujetos a patria potestad (art. 199 CC)",
+        "Personas con discapacidad, cuando no haya otra medida de apoyo suficiente (art. 269 CC)",
+        "Personas con discapacidad (arts. 263–267 CC) y menores (arts. 237–238 CC)"
        ],
        [
-        "Sujetos",
-        "Menores de edad",
-        "Personas con discapacidad",
-        "Menores y personas con discapacidad"
+        "Naturaleza",
+        "Representación del menor (art. 225 CC)",
+        "Apoyo; asistencial y, excepcionalmente, representativa (art. 269 CC)",
+        "Medida informal de apoyo; actuación representativa solo con autorización judicial (art. 264 CC)"
        ],
        [
         "Constitución",
-        "Expediente JV (art. 45) o provisión de apoyos (LEC 753 bis)",
-        "Provisión de apoyos (LEC 753 bis); expediente JV solo para sustitución (art. 44)",
-        "No requiere constitución formal; se reconoce de facto"
-       ],
-       [
-        "Funciones",
-        "Representación legal y administración de bienes",
-        "Asistencia en actos jurídicos que la persona no pueda realizar por sí misma",
-        "Cuidado y protección; administración bajo autorización judicial"
+        "Expediente de jurisdicción voluntaria (art. 208 CC; arts. 44–45 LJV)",
+        "Provisión de medidas de apoyo (arts. 42 bis a)–c) LJV o arts. 756 y ss. LEC); el art. 45 LJV, solo para sustituir al curador",
+        "No se constituye; se reconoce y controla (art. 52 LJV; art. 265 CC)"
        ],
        [
         "Autorización judicial",
-        "Sí, para actos de disposición (CC art. 271)",
-        "Sí, según alcance fijado por el Juez",
-        "Sí, para actos que excedan administración ordinaria (CC art. 300)"
+        "Arts. 224 y 287 CC (supletoriedad de la curatela)",
+        "Curador con facultades de representación, art. 287 CC",
+        "Para la actuación representativa, art. 264 CC"
        ],
        [
-        "Intervención abogado",
-        "No preceptiva (salvo remoción)",
-        "No preceptiva (salvo remoción)",
-        "No preceptiva"
+        "Abogado",
+        "No preceptivo, salvo en la remoción (art. 43.3 LJV)",
+        "No preceptivo, salvo en la remoción (art. 43.3 LJV)",
+        "No preceptivo"
        ],
        [
-        "Remoción",
-        "Art. 49 y CC art. 234",
-        "Art. 49 y CC art. 234",
-        "No procede; se aplican medidas de control (art. 52)"
+        "Remoción y excusa",
+        "Las de la curatela (art. 223 CC); arts. 49–50 LJV",
+        "Arts. 278–279 CC; arts. 49–50 LJV",
+        "Extinción de la guarda (art. 267 CC); medidas de control (art. 52 LJV)"
        ],
        [
         "Registro Civil",
-        "Inscripción obligatoria (art. 46.5)",
-        "Inscripción obligatoria (art. 46.5)",
-        "No procede"
+        "Inscripción (art. 300 CC; art. 46.5 LJV)",
+        "Inscripción (art. 300 CC; art. 46.5 LJV)",
+        "—"
        ]
       ]
      }
@@ -1411,54 +1036,52 @@ Neg.data.register({
    ]
   },
   {
-   "titulo": "Indice de plazos procesales",
-   "recuento": "6 trámites",
+   "titulo": "Índice de plazos",
+   "recuento": "7 plazos",
    "plegada": true,
    "bloques": [
     {
      "tabla": {
       "cabecera": [
-       "Acto o trámite procesal",
+       "Acto o trámite",
        "Plazo",
-       "Fundamento",
-       "Observaciones"
+       "Fundamento"
       ],
       "filas": [
        [
-        "Remisión de testimonio del expediente al nuevo Juzgado competente",
+        "Remisión del testimonio al nuevo juzgado competente",
         "10 días",
-        "Art. 43.2",
-        "Desde la solicitud del nuevo Juzgado"
+        "Art. 43.2 LJV"
        ],
        [
-        "Comparecencia para prestar fianza y aceptar cargo o formular excusa",
-        "15 días",
-        "Art. 46.1",
-        "Desde la citación tras la firmeza"
+        "Comparecencia para prestar fianza y aceptar el cargo o excusarse",
+        "15 días desde la citación, tras la firmeza",
+        "Art. 46.1 LJV"
        ],
        [
-        "Alegación de excusa desde el conocimiento del nombramiento",
-        "15 días",
-        "Art. 50.1",
-        "Plazo improrrogable"
-       ],
-       [
-        "Solicitud de comparecencia tras traslado de informes o rendición de cuentas",
-        "10 días",
-        "Art. 51.2",
-        "Desde el traslado por el LAJ"
-       ],
-       [
-        "Presentación del inventario de bienes",
+        "Presentación del inventario por el tutor o administrador",
         "60 días",
-        "Art. 46.4",
-        "Desde el requerimiento"
+        "Art. 46.4 LJV; art. 285 CC"
        ],
        [
-        "Rendición final de cuentas por extinción de la tutela o curatela",
-        "3 meses",
-        "Art. 51.4",
-        "Desde el cese; prorrogables por justa causa"
+        "Alegación de la excusa",
+        "15 días desde que se conoce el nombramiento",
+        "Art. 50.1 LJV"
+       ],
+       [
+        "Petición de comparecencia tras el traslado de informes o cuentas",
+        "10 días",
+        "Art. 51.2 LJV"
+       ],
+       [
+        "Rendición final de cuentas",
+        "3 meses desde el cese, prorrogables",
+        "Art. 51.4 LJV; arts. 232 y 292 CC"
+       ],
+       [
+        "Apelación",
+        "20 días",
+        "Art. 458 LEC"
        ]
       ]
      }
@@ -1466,23 +1089,20 @@ Neg.data.register({
    ]
   },
   {
-   "titulo": "Mapa de participantes y actores",
-   "recuento": "6 categorías · 16+ actores",
+   "titulo": "Participantes",
+   "recuento": "5 grupos · 14 participantes",
    "plegada": true,
    "bloques": [
     {
      "grupo": {
-      "titulo": "Órganos judiciales y auxiliares",
+      "titulo": "Tribunales y oficina judicial",
       "tono": "c1",
       "items": [
        {
-        "t": "Juez / Juzgado de Primera Instancia (competente, designa tutor/curador, adopta medidas)"
+        "t": "Juez — Sección de Familia, Infancia y Capacidad o, si no existe, Sección Civil: constitución, designación, fianza, remoción, cuentas"
        },
        {
-        "t": "Letrado de la Administración de Justicia (acta aceptación, traslado informes, citas vistas)"
-       },
-       {
-        "t": "Secretario judicial (inventario, defensor judicial, aprobación sin oposición)"
+        "t": "Letrado de la Administración de Justicia — admisión, citaciones, acta de aceptación y posesión, inventario, defensor judicial durante la remoción"
        }
       ]
      }
@@ -1490,33 +1110,33 @@ Neg.data.register({
     {
      "grupo": {
       "titulo": "Ministerio Fiscal",
-      "tono": "c2",
+      "tono": "c4",
       "items": [
        {
-        "t": "Ministerio Fiscal (promotor, audiencia preceptiva, actuación de oficio)"
+        "t": "Promotor, oído en todos los trámites, actuación de oficio (art. 45 LJV); vigilancia de la tutela (art. 209 CC)"
        }
       ]
      }
     },
     {
      "grupo": {
-      "titulo": "Figuras tutelares y de apoyo",
+      "titulo": "Cargos y apoyos",
       "tono": "c3",
       "items": [
        {
-        "t": "Tutor (representación, administración, fiscalización, rendición)"
+        "t": "Tutor (menores)"
        },
        {
-        "t": "Curador (asistencia, mismas obligaciones que tutor)"
+        "t": "Curador (personas con discapacidad)"
        },
        {
-        "t": "Guardador de hecho (cuidado voluntario, autorización judicial)"
+        "t": "Guardador de hecho"
        },
        {
-        "t": "Defensor judicial (remoción, excusa; CC art. 299)"
+        "t": "Defensor judicial (art. 49.2 LJV)"
        },
        {
-        "t": "Apoderado (poderes preventivos, CC art. 248)"
+        "t": "Apoderado preventivo (arts. 256–262 CC)"
        }
       ]
      }
@@ -1524,16 +1144,13 @@ Neg.data.register({
     {
      "grupo": {
       "titulo": "Personas protegidas",
-      "tono": "c4",
+      "tono": "c6",
       "items": [
        {
-        "t": "Menor (mayor 12 años o suficiente madurez)"
+        "t": "Menor — oído si tiene madurez y siempre si es mayor de doce años"
        },
        {
-        "t": "Persona con discapacidad (voluntad, deseos, preferencias)"
-       },
-       {
-        "t": "Persona que precise medidas de apoyo (terminología Ley 8/2021)"
+        "t": "Persona con discapacidad — su voluntad, deseos y preferencias"
        }
       ]
      }
@@ -1544,39 +1161,16 @@ Neg.data.register({
       "tono": "c5",
       "items": [
        {
-        "t": "Parientes más próximos (audiencia, pueden instar remoción)"
+        "t": "Parientes más próximos"
        },
        {
-        "t": "Progenitores (medidas fiscalización, tutela testamentaria CC 223)"
+        "t": "Progenitores — disposiciones en testamento o documento notarial (arts. 201–205 CC)"
        },
        {
-        "t": "Herederos del tutelado/asistido (rendición final cuentas)"
+        "t": "Herederos — en la rendición final de cuentas (art. 51.4 LJV)"
        },
        {
-        "t": "Personas legitimadas para promover tutela/curatela (CC arts. 222, 227)"
-       },
-       {
-        "t": "Cualquiera con interés legítimo (guarda de hecho)"
-       },
-       {
-        "t": "Personas que puedan sustituir al tutor/curador (audiencia remoción)"
-       }
-      ]
-     }
-    },
-    {
-     "grupo": {
-      "titulo": "Terceros y otros",
-      "tono": "c6",
-      "items": [
-       {
-        "t": "Terceros de buena fe (derechos a salvo en sentencia inventario)"
-       },
-       {
-        "t": "Administrador del patrimonio protegido (Ley 41/2003)"
-       },
-       {
-        "t": "Notario (poderes preventivos, autotutela, testamentos)"
+        "t": "Notario — autocuratela, poderes preventivos, disposiciones de los progenitores"
        }
       ]
      }
@@ -1584,93 +1178,84 @@ Neg.data.register({
    ]
   },
   {
-   "titulo": "Ecosistema normativo — conexiones relacionadas",
-   "recuento": "9 cuerpos normativos",
+   "titulo": "Ecosistema normativo",
+   "recuento": "8 normas",
    "plegada": true,
    "bloques": [
     {
      "norma": {
-      "ley": "Código Civil",
-      "titulo": "Título X — Tutela, curatela y guarda (arts. 215–313)",
-      "texto": "<strong>Arts. 215-218</strong> — Disposiciones generales: delación, prioridad medidas voluntarias, interés superior.<br><strong>Arts. 222-229</strong> — Delación tutela: orden preferente, tutela testamentaria (223), tutor dativo.<br><strong>Arts. 234, 251</strong> — Remoción e inhabilidad del tutor.<br><strong>Arts. 239-242</strong> — Tutor testamentario y dativo; personas jurídicas (242).<br><strong>Arts. 243-247</strong> — Excusa: causas y plazo.<br><strong>Art. 248</strong> — Poderes preventivos y autotutela (Ley 8/2021).<br><strong>Arts. 258-260</strong> — Administración e inventario.<br><strong>Arts. 269-270</strong> — Actos sin autorización judicial.<br><strong>Arts. 271-278</strong> — Autorización judicial para actos de disposición.<br><strong>Art. 274</strong> — Retribución del tutor.<br><strong>Arts. 279-281</strong> — Rendición de cuentas y responsabilidad.<br><strong>Arts. 286-298</strong> — Curatela: ámbito y funciones.<br><strong>Art. 299</strong> — Defensor judicial.<br><strong>Art. 300</strong> — Guarda de hecho (reformado por Ley 8/2021).<br><strong>Arts. 312-313</strong> — Extinción de tutela y curatela.",
-      "etiqueta": "Legislación sustantiva",
+      "ley": "Código Civil — Título IX",
+      "titulo": "Tutela de menores (arts. 199–238 CC)",
+      "texto": "<strong>Arts. 199–205 CC</strong> — Sujetos y disposiciones de los progenitores.<br><strong>Arts. 206–210 CC</strong> — Promoción, constitución por expediente, vigilancia del Fiscal y medidas.<br><strong>Arts. 211–222 CC</strong> — Aptitud, preferencia, inhábiles, pluralidad; desamparo.<br><strong>Arts. 223–234 CC</strong> — Remoción y excusa (como la curatela), ejercicio, retribución, extinción y cuentas.<br><strong>Arts. 235–238 CC</strong> — Defensor judicial y guarda de hecho del menor.",
+      "etiqueta": "Sustantivo",
       "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "Ley 8/2021, de 2 de junio",
-      "titulo": "Reforma civil y procesal para el apoyo a personas con discapacidad",
-      "texto": "<strong>Reforma del CC:</strong> supresión de incapacitación, curatela como medida preferente, poderes preventivos (248), guarda de hecho como institución (300), principio de voluntad y preferencias.<br><strong>Reforma de la LEC:</strong> procedimiento de provisión de apoyos (753 bis), garantías reforzadas.<br><strong>Reforma de la Ley 15/2015:</strong> art. 51 bis, adaptación guarda de hecho, ajustes postulación.<br><strong>Principios:</strong> art. 12 Conv. ONU, modelo de apoyo vs. modelo sustitutorio.",
-      "etiqueta": "Reforma clave",
+      "ley": "Código Civil — Título XI",
+      "titulo": "Medidas de apoyo (arts. 249–300 CC)",
+      "texto": "<strong>Arts. 249–253 CC</strong> — Disposiciones generales.<br><strong>Arts. 255–262 CC</strong> — Medidas voluntarias y poderes preventivos.<br><strong>Arts. 263–267 CC</strong> — Guarda de hecho.<br><strong>Arts. 268–294 CC</strong> — Curatela (autocuratela 271–274; nombramiento 275–277; remoción 278; excusa 279; retribución 281; posesión 282; fianza 284; inventario 285; autorizaciones 287–290; extinción 291; cuentas 292–294).<br><strong>Arts. 295–298 CC</strong> — Defensor judicial.<br><strong>Art. 300 CC</strong> — Inscripción en el Registro Civil.",
+      "etiqueta": "Sustantivo",
+      "tono": "t-ok"
+     }
+    },
+    {
+     "norma": {
+      "ley": "LEC",
+      "titulo": "Procesos conexos",
+      "texto": "<strong>Arts. 437 y ss. LEC</strong> — Juicio verbal, cuando el expediente se hace contencioso.<br><strong>Arts. 756 y ss. LEC</strong> — Proceso de provisión de medidas de apoyo.<br><strong>Art. 458 LEC</strong> — Apelación.",
+      "etiqueta": "Procesal",
+      "tono": "t-nota"
+     }
+    },
+    {
+     "norma": {
+      "ley": "LJV — otros capítulos",
+      "titulo": "Expedientes conexos",
+      "texto": "<strong>Arts. 27–32 LJV</strong> — Defensor judicial.<br><strong>Arts. 42 bis a)–42 bis c) LJV</strong> — Provisión de medidas de apoyo.",
+      "etiqueta": "Procesal",
+      "tono": "t-nota"
+     }
+    },
+    {
+     "norma": {
+      "ley": "Ley 8/2021",
+      "titulo": "Reforma del apoyo a las personas con discapacidad",
+      "texto": "Nuevo Título XI del CC, tutela solo para menores, art. 51 bis y redacción vigente de los arts. 43–52 LJV.",
+      "etiqueta": "Reforma",
+      "tono": "t-ok"
+     }
+    },
+    {
+     "norma": {
+      "ley": "LO 1/1996",
+      "titulo": "Protección Jurídica del Menor",
+      "texto": "<strong>Art. 9 LO 1/1996</strong> — Derecho del menor a ser oído.",
+      "etiqueta": "Menores",
       "tono": "t-aviso"
      }
     },
     {
      "norma": {
-      "ley": "Ley de Enjuiciamiento Civil 1/2000",
-      "titulo": "Tramitación procesal supletoria y procedimientos conexos",
-      "texto": "<strong>Arts. 250 y ss.</strong> — Juicio verbal: tramitación cuando el expediente JV se hace contencioso.<br><strong>Arts. 455 y ss.</strong> — Recurso de apelación: sin efectos suspensivos en materia de tutela/curatela.<br><strong>Arts. 748-755</strong> — Procedimientos sobre capacidad y menores.<br><strong>Art. 753 bis</strong> — Procedimiento de provisión de apoyos (Ley 8/2021): cauce para constitución originaria de curatela.",
-      "etiqueta": "Procesal",
+      "ley": "Ley 41/2003",
+      "titulo": "Patrimonio protegido de las personas con discapacidad",
+      "texto": "Administración de un patrimonio afecto a las necesidades de la persona.",
+      "etiqueta": "Patrimonial",
       "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "Constitución Española",
-      "titulo": "Artículo 49 — Personas con discapacidad",
-      "texto": "<strong>Art. 49:</strong> las personas con discapacidad ejercen los derechos del Título I en condiciones de libertad e igualdad reales y efectivas. Los poderes públicos realizarán una política de previsión, tratamiento, rehabilitación e integración. Reforma de 2024: eliminación de la referencia a «disminuidos», refuerzo del lenguaje de derechos.",
-      "etiqueta": "Constitucional",
-      "tono": "t-ok"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Convención ONU, 2006",
-      "titulo": "Derechos de las Personas con Discapacidad",
-      "texto": "<strong>Art. 1</strong> — Propósito: promover y proteger derechos humanos en igualdad.<br><strong>Art. 3</strong> — Principios: autonomía individual, no discriminación, participación plena, igualdad de oportunidades, accesibilidad.<br><strong>Art. 12</strong> — Igual reconocimiento como persona ante la ley: base del modelo de apoyo (Ley 8/2021) y del art. 45.2 Ley 15/2015.<br><strong>Art. 13</strong> — Acceso a la justicia: ajustes de procedimiento para participación efectiva.",
+      "ley": "Convención ONU (2006)",
+      "titulo": "Derechos de las personas con discapacidad",
+      "texto": "Igual reconocimiento ante la ley y acceso a la justicia (arts. 12 y 13 de la Convención).",
       "etiqueta": "Internacional",
-      "tono": "t-ok"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley 20/2011, de 21 de julio",
-      "titulo": "Del Registro Civil",
-      "texto": "<strong>Arts. 60 y ss.</strong> — Inscripción de resoluciones judiciales sobre capacidad, tutela, curatela y medidas de apoyo. Carácter obligatorio, efectos de oponibilidad frente a terceros. Comunicación preceptiva en arts. 46.5, 49.3 y 50.4 de la Ley 15/2015.",
-      "etiqueta": "Registral",
-      "tono": "t-nota"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley 41/2003, de 18 de noviembre",
-      "titulo": "Protección patrimonial de las personas con discapacidad",
-      "texto": "<strong>Patrimonio protegido:</strong> masa de bienes afectada a necesidades vitales de la persona con discapacidad. Administración a cargo del tutor, curador, guardador u otra persona designada. Conexiones con inventario (art. 47), rendición de cuentas (art. 51) y autorización judicial para actos de disposición.",
-      "etiqueta": "Patrimonial",
-      "tono": "t-nota"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley del Notariado",
-      "titulo": "Documentos públicos notariales sobre medidas de apoyo",
-      "texto": "<strong>Testamentos y documentos notariales:</strong> disposiciones de progenitores sobre tutela/curatela (arts. 45.1, 45.4), poderes preventivos (CC art. 248), autotutela. La Ley 8/2021 ha reforzado el papel del notario en la formalización de medidas voluntarias de apoyo sin necesidad de vía judicial.",
-      "etiqueta": "Notarial",
-      "tono": "t-nota"
-     }
-    },
-    {
-     "norma": {
-      "ley": "LO 1/1996, de 15 de enero",
-      "titulo": "Protección Jurídica del Menor",
-      "texto": "<strong>Art. 9.2:</strong> el menor tiene derecho a ser oído en los procedimientos que le afecten, tanto en el ámbito judicial como administrativo. Fundamento de la audiencia del menor mayor de 12 años o con suficiente madurez en los procedimientos de tutela y curatela (arts. 45.2, 46.3, 49.1, 50.2 y 51.2).",
-      "etiqueta": "Menores",
       "tono": "t-info"
      }
     }
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II · Capítulo IV · Arts. 43–52 · Versión expandida con conexiones normativas · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo IV · Arts. 43–52"
 });
