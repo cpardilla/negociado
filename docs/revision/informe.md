@@ -16,7 +16,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | lec-liquidacion-rem | Esquema · LEC · Liquidación del régimen económico matrimonial | · | · | · | · | · | · | · |
 | ljv-disposiciones-generales | Esquema · LJV · Título Preliminar · Disposiciones generales | · | · | · | · | · | · | 1R |
 | ljv-normas-comunes | Esquema · LJV · Título I · Normas comunes de tramitación | · | · | · | · | · | · | 1R |
-| ljv-filiacion | Esquema · LJV · Reconocimiento de la filiación no matrimonial | 3A 1R | · | · | · | · | · | 2R |
+| ljv-filiacion | Esquema · LJV · Reconocimiento de la filiación no matrimonial | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-12-14 | Esquema · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-reversion | Esquema · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | 2R | · | · | 1R |
 | ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | 2R | · | · | · | · | · | 3R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 105E 41A 144R | 0E 0A 2R | 0E 0A 0R | 0E 0A 15R | 0E 0A 9R | 4E 0A 1R | 0E 0A 82R |
+| | **Total** | 105E 38A 143R | 0E 0A 2R | 0E 0A 0R | 0E 0A 15R | 0E 0A 9R | 4E 0A 1R | 0E 0A 81R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,17 +69,17 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2627
-- ✓ LEC (BOE a 07-10-2026): 1507
-- ✓ CC (BOE a 07-09-2026): 1375
-- ✓ CE (BOE a 20-05-2026): 77
+- ✓ LJV (BOE a 05-03-2026): 2607
+- ✓ LEC (BOE a 07-10-2026): 1509
+- ✓ CC (BOE a 07-09-2026): 1379
+- ✓ CE (BOE a 20-05-2026): 76
 - ✓ LOPJ (BOE a 09-10-2026): 58
 - ✓ LOPJM (BOE a 18-12-2025): 58
+- UE: 56
 - ✓ LTRANS (BOE a 20-12-2025): 48
-- ✓ LRC (BOE a 24-02-2026): 47
+- ✓ LRC (BOE a 24-02-2026): 46
 - ✓ LOPDH (BOE a 16-12-2025): 42
 - ✓ LH (BOE a 07-01-2026): 33
-- UE: 29
 - ✓ LN (BOE a 22-10-2026): 29
 - ✓ LPPD (BOE a 18-12-2025): 24
 - ✓ LOPDGDD (BOE a 08-10-2026): 16
@@ -112,7 +112,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 667 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 660 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -155,17 +155,9 @@ Sin hallazgos automáticos.
 
 ### ljv-filiacion · Esquema · LJV · Reconocimiento de la filiación no matrimonial
 
-**citas**
-
-- [aviso] «Art. 3.3»: el art. 3 LJV no tiene apartado 3 (tiene 1, 2) — _sección «Capítulo I — Artículos 23 a 26» › tarjeta «Artículo 24» › «Postulación — ausencia de exigencia preceptiva y consecuencias» › 1 › punto.3_
-- [aviso] «Art. 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _sección «Capítulo I — Artículos 23 a 26» › tarjeta «Artículo 24» › «Postulación — ausencia de exigencia preceptiva y consecuencias» › 1 › punto.4_
-- [aviso] «Art. 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _sección «Capítulo I — Artículos 23 a 26» › tarjeta «Artículo 26» › «Recursos» › 1 › punto.2_
-- [revisar] «Art. 44.5»: el art. 44 LJV no tiene apartado 5 (tiene 1, 2) (ley por defecto) — _sección «Ecosistema normativo — conexiones relacionadas» › 3 › norma «Inscripción de la filiación y efectos registrales»_
-
 **terminologia**
 
-- [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Capítulo I — Artículos 23 a 26» › tarjeta «Artículo 24» › «Competencia territorial — fueros en cascada» › 1 › punto.1 | sección «Capítulo I — Artículos 23 a 26» › tarjeta «Artículo 24» › «Competencia objetiva y atribución de la decisión de fondo» › 1 › punto.1_
-- [revisar] «Secretario judicial» × 2 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Capítulo I — Artículos 23 a 26» › tarjeta «Artículo 25» › «Admisión y convocatoria de comparecencia» › 1 › punto.1 | sección «Mapa de participantes y actores» › 1 › grupo «Órganos judiciales».2_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Capítulo I — Artículos 23 a 26» › tarjeta «Artículo 24» › «Competencia objetiva y atribución de la decisión de fondo» › 1 › punto.1_
 
 ### ljv-mencion-sexo-12-14 · Esquema · LJV · Mención registral del sexo (12 a 14 años)
 

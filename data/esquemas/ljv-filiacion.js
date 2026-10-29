@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E08.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E08.json; revisado con el BOE (registro: docs/revision/ljv-filiacion.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-filiacion",
@@ -13,7 +13,7 @@ Neg.data.register({
   "26"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E08"
  },
@@ -112,7 +112,7 @@ Neg.data.register({
                "t": "Riesgo de encubrimiento de relación incestuosa: el hijo sería simultáneamente hijo y sobrino (u otro pariente) del progenitor conocido."
               },
               {
-               "t": "Fundamento: Art. 124 CC · La autorización solo se concede cuando sea en interés del reconocido (art. 26.2 LJV)."
+               "t": "Fundamento: art. 125 CC. La autorización solo se concede cuando sea en interés del reconocido (art. 26.2 LJV)."
               }
              ]
             }
@@ -131,10 +131,10 @@ Neg.data.register({
              "t": "<strong>a)</strong> Reconocimiento por quien no pueda contraer matrimonio <strong>por razón de edad</strong> (menor de edad no emancipado). El reconociente carece de plena capacidad de obrar; la aprobación judicial sustituye la intervención representativa que en otros actos se requeriría. Art. 121 CC"
             },
             {
-             "t": "<strong>b)</strong> Reconocimiento sin <strong>consentimiento del representante legal ni asistencia del curador</strong> del reconocido ni del progenitor conocido — salvo que hubiera sido reconocido en testamento o dentro del plazo de inscripción del nacimiento. Las excepciones responden a que el testamento se otorga ante notario con plenas garantías, y el reconocimiento en el plazo de inscripción se realiza con inmediatez al nacimiento bajo supervisión registral. Art. 123 CC"
+             "t": "<strong>b)</strong> Reconocimiento sin <strong>consentimiento del representante legal ni asistencia del curador</strong> del reconocido ni del progenitor conocido — salvo que hubiera sido reconocido en testamento o dentro del plazo de inscripción del nacimiento. Art. 124 CC, párrafo primero (eficacia del reconocimiento de la persona menor de edad)."
             },
             {
-             "t": "<strong>c)</strong> Reconocimiento paterno realizado <strong>dentro del plazo de inscripción</strong> cuando esta se hubiera <strong>suspendido a petición de la madre</strong>. La aprobación judicial dirime la discrepancia entre el padre que quiere reconocer y la madre que se opone, atendiendo al interés del menor. Art. 44.5 Ley 20/2011"
+             "t": "<strong>c)</strong> Reconocimiento paterno realizado <strong>dentro del plazo de inscripción</strong> cuando esta se hubiera <strong>suspendido a petición de la madre</strong>. La madre o progenitor gestante puede pedir la suspensión de esa inscripción durante el año siguiente al nacimiento; si el padre o progenitor no gestante pide su confirmación, hace falta aprobación judicial con audiencia del Ministerio Fiscal (art. 124 CC, párrafo segundo)."
             }
            ]
           }
@@ -148,7 +148,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "También se insta aprobación para la validez del reconocimiento otorgado por una <strong>persona con discapacidad con medidas de apoyo</strong>, con independencia de la condición del reconocido. Tutela tanto el discernimiento del reconociente como el interés del reconocido."
+             "t": "También se insta aprobación para la validez del reconocimiento otorgado por una <strong>persona con discapacidad con medidas de apoyo</strong> (art. 23.4 LJV). El Código Civil remite a lo que disponga la resolución judicial o la escritura pública de las medidas de apoyo (art. 121 CC, párrafo segundo)."
             }
            ]
           }
@@ -162,7 +162,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Cap. I bis (arts. 26 bis y ss.): aprobación judicial de la modificación registral del sexo para menores de 12 a 14 años; mismo esquema de control judicial como condición de eficacia de una declaración de voluntad."
+             "t": "Cap. I bis (arts. 26 bis y ss.): autorización judicial de la modificación registral de la mención del sexo de las personas de 12 a 14 años."
             },
             {
              "t": "Cap. II (arts. 27 y ss.): nombramiento de defensor judicial, relevante cuando el reconocido carece de representante legal o este tiene intereses opuestos."
@@ -179,25 +179,25 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Art. 120 CC Modos de determinación de la filiación no matrimonial: reconocimiento, resolución registral, sentencia firme y posesión de estado."
+             "t": "Art. 120 CC Modos de determinación de la filiación no matrimonial: declaración conforme en la inscripción del nacimiento, reconocimiento, resolución en expediente registral, sentencia firme y, para la materna, constancia en la inscripción."
             },
             {
-             "t": "Art. 121 CC Reconocimiento por menor o persona con discapacidad: aprobación judicial con audiencia del MF."
+             "t": "Art. 121 CC Reconocimiento por menores no emancipados (aprobación judicial con audiencia del Ministerio Fiscal) y por mayores con medidas de apoyo."
             },
             {
-             "t": "Art. 123 CC Consentimiento o aprobación judicial para eficacia del reconocimiento del menor o persona con discapacidad."
+             "t": "Art. 123 CC Reconocimiento de un hijo mayor de edad: necesita su consentimiento expreso o tácito (con los apoyos que precise, si tiene discapacidad); no hay expediente judicial."
             },
             {
-             "t": "Art. 124 CC Prohibición sin autorización judicial del reconocimiento por hermano o pariente consanguíneo del otro progenitor."
+             "t": "Art. 124 CC Reconocimiento de la persona menor de edad: consentimiento de su representante legal o aprobación judicial; excepciones del testamento y del plazo de inscripción; suspensión a petición de la madre."
             },
             {
-             "t": "Art. 125 CC Reconocimiento por uno de los progenitores no casados entre sí: no perjudica los derechos del otro."
+             "t": "Art. 125 CC Progenitores hermanos o consanguíneos en línea recta: autorización judicial cuando convenga al interés del menor; este puede invalidar la determinación al alcanzar la mayoría de edad si no la consintió."
             },
             {
-             "t": "Art. 126 CC Reconocimiento del mayor de edad: no precisa control judicial; delimita el ámbito de aplicación del art. 23 LJV."
+             "t": "Art. 126 CC Reconocimiento del ya fallecido: solo surte efecto si lo consienten sus descendientes."
             },
             {
-             "t": "Art. 44.5 Ley 20/2011 Suspensión de la inscripción de nacimiento a petición de la madre: presupuesto fáctico del supuesto c)."
+             "t": "Art. 44 Ley 20/2011 Inscripción del nacimiento y de la filiación."
             }
            ]
           }
@@ -206,13 +206,8 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Art. 120 CC",
-       "Art. 121 CC",
-       "Art. 123 CC",
-       "Art. 124 CC",
-       "Art. 125 CC",
-       "Art. 126 CC",
-       "Art. 44.5 Ley 20/2011"
+       "CC arts. 120–126",
+       "Ley 20/2011 art. 44"
       ],
       "claves": "artículo 23 ámbito aplicación reconocimiento filiación no matrimonial autorización aprobación judicial validez eficacia autorización aprobación distinción hermano consanguíneo progenitor menor discapacidad código civil"
      }
@@ -238,7 +233,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Fuero principal Juzgado de Primera Instancia del <strong>domicilio del reconocido</strong>. El expediente se sitúa en el entorno vital de quien ve afectado su estado civil."
+             "t": "Fuero principal: el tribunal del <strong>domicilio del reconocido</strong>. El expediente se sitúa en el entorno vital de quien ve afectado su estado civil."
             },
             {
              "t": "Fuero secundario Si no tiene domicilio en España: <strong>residencia del reconocido</strong> en territorio nacional."
@@ -258,7 +253,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Juzgado de Primera Instancia · Decisión de fondo reservada al <strong>Juez</strong>, mediante <strong>auto</strong>, por afectar al estado civil y a derechos de menores o personas con discapacidad. Art. 2 LJV"
+             "t": "Juzgado de Primera Instancia (hoy, Sección Civil del Tribunal de Instancia). Decide el <strong>Juez</strong>, mediante <strong>auto</strong> (art. 26.1 LJV; art. 2.3: estado civil, menores y personas con discapacidad)."
             }
            ]
           }
@@ -272,13 +267,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Exclusivamente el <strong>progenitor autor del reconocimiento</strong>: carácter personalísimo del acto; ni el reconocido ni terceros pueden suplir esa voluntad."
+             "t": "El <strong>progenitor autor del reconocimiento</strong> (art. 24.2 LJV): el reconocimiento es un acto personal."
             },
             {
              "t": "Puede actuar asistido de su representante legal, tutor o curador cuando el propio reconociente sea menor de edad o persona con discapacidad."
-            },
-            {
-             "t": "Si el reconociente es menor: la solicitud la presenta el menor asistido, no el representante en solitario, pues la voluntad de reconocer ha de ser del propio reconociente."
             }
            ]
           }
@@ -298,10 +290,10 @@ Neg.data.register({
              "t": "Formulario normalizado disponible en la Oficina judicial o sede electrónica; no exige fundamentación jurídica. Art. 14.3 LJV"
             },
             {
-             "t": "Postulación <strong>voluntaria</strong>: las partes pueden comparecer con Abogado y Procurador aunque no sea preceptivo. Art. 3.3 LJV"
+             "t": "Postulación <strong>voluntaria</strong>: las partes pueden actuar con Abogado y Procurador aunque no sea preceptivo (art. 3.2, párrafo primero, LJV)."
             },
             {
-             "t": "Postulación <strong>obligatoria</strong> desde el momento en que se formule oposición y para los recursos de revisión o apelación. Art. 3.4 LJV"
+             "t": "Postulación <strong>obligatoria</strong> desde el momento en que se formule oposición y para los recursos de revisión o apelación (art. 3.2, párrafo segundo, LJV)."
             }
            ]
           }
@@ -381,7 +373,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Admitida la solicitud por el Secretario judicial, este cita a comparecencia a todos los sujetos que deben intervenir según proceda en cada caso."
+             "t": "Admitida la solicitud por el Letrado de la Administración de Justicia (la ley dice aún «Secretario judicial»), este cita a comparecencia a todos los sujetos que deben intervenir según proceda en cada caso."
             }
            ]
           }
@@ -413,12 +405,12 @@ Neg.data.register({
                "t": "La «suficiente madurez» por debajo de los 12 años es apreciada caso a caso con auxilio de especialistas si fuera necesario."
               },
               {
-               "t": "El umbral de 12 años es coherente con arts. 92, 156 y 177.3 CC y con el art. 26 quater LJV."
+               "t": "El mismo umbral de 12 años rige, por ejemplo, para el consentimiento del adoptando (art. 177.1 CC)."
               }
              ]
             },
             {
-             "t": "<strong>Descendientes del reconocido</strong> si hubiere fallecido y los hubiere: los efectos del reconocimiento post mortem les afectan desde el punto de vista sucesorio y del estado de familia."
+             "t": "<strong>Descendientes del reconocido</strong> si hubiere fallecido y los hubiere: el reconocimiento del fallecido solo surte efecto si ellos lo consienten (art. 126 CC)."
             },
             {
              "t": "<strong>Personas que se estime oportuno:</strong> cláusula abierta para ampliar el círculo de citados según las circunstancias. Art. 18.2.2.ª LJV"
@@ -538,10 +530,10 @@ Neg.data.register({
              "t": "El Juez <strong>solo autorizará</strong> cuando sea <strong>en interés del menor o de la persona con discapacidad</strong>: el interés actúa como filtro necesario y suficiente."
             },
             {
-             "t": "La carga de la argumentación recae sobre el promotor: debe acreditar el interés positivo, no limitarse a no rebatirlo."
+             "t": "Si no consta ese interés, no se autoriza."
             },
             {
-             "t": "<strong>Invalidación posterior por documento público:</strong> si el reconocido, una vez <strong>alcanzada la plena capacidad</strong>, presenta documento público manifestando su oposición, el Juez invalidará la determinación. Sin plazo preclusivo. Expresión del principio de autonomía de la voluntad y del derecho a decidir sobre el propio estado civil."
+             "t": "<strong>Invalidación posterior por documento público:</strong> si se presenta un documento público con la manifestación del reconocido realizada una vez <strong>alcanzada la plena capacidad</strong>, el Juez invalidará la determinación (art. 26.2 LJV; según el art. 125 CC, el hijo puede invalidarla al llegar a la mayoría de edad si no la consintió)."
             }
            ]
           }
@@ -555,10 +547,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Autorización o aprobación concedida:</strong> se establece el vínculo de filiación con todos sus efectos: apellidos Arts. 109 y 111 CC · alimentos Art. 143 CC · derechos sucesorios Arts. 807 y ss. CC · relaciones paterno-filiales Arts. 154 y ss. CC."
+             "t": "<strong>Autorización o aprobación concedida:</strong> queda determinada la filiación con sus efectos: apellidos (art. 109 CC), alimentos (art. 143 CC), patria potestad (arts. 154 y ss. CC) y derechos sucesorios (arts. 807 y ss. CC)."
             },
             {
-             "t": "<strong>Autorización o aprobación denegada:</strong> no se establece la filiación por esta vía. No cierra definitivamente la cuestión: el interesado puede acudir a la vía contenciosa mediante la acción de reclamación de filiación. Arts. 131 y ss. CC"
+             "t": "<strong>Autorización o aprobación denegada:</strong> no se establece la filiación por esta vía. No cierra la cuestión: cabe la acción de reclamación de la filiación (arts. 131 y ss. CC; art. 19.4 LJV)."
             }
            ]
           }
@@ -572,7 +564,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "El testimonio de la resolución se remite al <strong>Registro Civil</strong> competente para su inscripción. La remisión es automática, sin instancia de parte. La inscripción tiene eficacia erga omnes. Art. 44 Ley 20/2011 · Art. 22.2 LJV"
+             "t": "El testimonio de la resolución se remite al <strong>Registro Civil</strong> competente para su inscripción (art. 26.3 LJV; art. 22.2 LJV)."
             }
            ]
           }
@@ -589,7 +581,7 @@ Neg.data.register({
              "t": "Régimen general: <strong>apelación</strong> contra la resolución definitiva del Juez, por cualquier interesado perjudicado. <strong>Sin efectos suspensivos</strong>: la resolución puede ejecutarse —y el reconocimiento inscribirse— mientras se sustancia la apelación. Art. 20 LJV"
             },
             {
-             "t": "Para el recurso: postulación de Abogado y Procurador obligatoria aunque no lo fuera en instancia. Art. 3.4 LJV"
+             "t": "Para el recurso: Abogado y Procurador obligatorios aunque no lo fueran en la instancia (art. 3.2 LJV). Plazo: veinte días (art. 458 LEC)."
             }
            ]
           }
@@ -612,16 +604,16 @@ Neg.data.register({
              "t": "Art. 22.2 LJV Testimonio al Registro Civil: automático, sin instancia de parte."
             },
             {
-             "t": "Arts. 121 y 124 CC Normas sustantivas directamente desarrolladas por este artículo."
+             "t": "Arts. 121, 124 y 125 CC Normas sustantivas que desarrolla este artículo."
             },
             {
-             "t": "Arts. 131–140 CC Reclamación e impugnación de la filiación: vía contenciosa alternativa si se deniega la autorización o aprobación."
+             "t": "Arts. 131 y ss. CC Acciones de reclamación e impugnación de la filiación."
             },
             {
-             "t": "Arts. 109, 111, 143, 154, 807 CC Efectos sustantivos de la filiación determinada: apellidos, alimentos, derechos sucesorios y relaciones paterno-filiales."
+             "t": "Arts. 109, 143, 154 y 807 CC Efectos de la filiación: apellidos, alimentos, patria potestad y derechos sucesorios."
             },
             {
-             "t": "Art. 44 Ley 20/2011 Inscripción obligatoria de la filiación en el Registro Civil."
+             "t": "Art. 44 Ley 20/2011 Inscripción del nacimiento y de la filiación."
             },
             {
              "t": "Art. 2 LO 1/1996 Interés superior del menor como criterio rector de la resolución."
@@ -636,14 +628,11 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Arts. 2 y 19 LJV",
-       "Art. 20 LJV",
-       "Art. 22.2 LJV",
-       "Arts. 121 y 124 CC",
-       "Arts. 131–140 CC",
-       "Art. 44 Ley 20/2011",
-       "Art. 2 LO 1/1996",
-       "Art. 3.1 CDN (1989)"
+       "LJV arts. 19, 20, 22",
+       "CC arts. 121, 124, 125",
+       "CC arts. 131 y ss.",
+       "Ley 20/2011 art. 44",
+       "LO 1/1996 art. 2"
       ],
       "claves": "artículo 26 resolución juez auto 5 días criterios discernimiento veracidad verosimilitud interés reconocido menor discapacidad apelación registro civil inscripción eficacia efectos filiación apellidos alimentos sucesorios paterno-filiales"
      }
@@ -652,7 +641,7 @@ Neg.data.register({
   },
   {
    "titulo": "Indice de plazos procesales",
-   "recuento": "6 trámites",
+   "recuento": "7 trámites",
    "plegada": true,
    "bloques": [
     {
@@ -664,7 +653,7 @@ Neg.data.register({
       ],
       "filas": [
        [
-        "Subsanación de la solicitud por defecto de competencia (control de oficio)",
+        "Subsanación de defectos u omisiones de la solicitud",
         "5 días",
         "Art. 16 LJV"
        ],
@@ -692,6 +681,11 @@ Neg.data.register({
         "Resolución del Juez mediante auto desde la comparecencia o última diligencia",
         "5 días",
         "Arts. 2 y 19 LJV"
+       ],
+       [
+        "Recurso de apelación contra el auto",
+        "20 días",
+        "Art. 20.2 LJV · art. 458 LEC"
        ]
       ]
      }
@@ -709,13 +703,13 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Juez de Primera Instancia (decisión de fondo, auto)"
+        "t": "Juez — Sección Civil del Tribunal de Instancia (decide por auto)"
        },
        {
-        "t": "Secretario judicial (admisión y citaciones)"
+        "t": "Letrado de la Administración de Justicia (admisión y citaciones)"
        },
        {
-        "t": "Registro Civil (inscripción registral automática)"
+        "t": "Registro Civil (inscripción por testimonio, art. 26.3)"
        }
       ]
      }
@@ -785,7 +779,7 @@ Neg.data.register({
      "norma": {
       "ley": "Código Civil",
       "titulo": "Filiación no matrimonial — determinación y efectos",
-      "texto": "<strong>Arts. 120–126</strong> — modos de determinación, reconocimiento, consentimientos y aprobación judicial.<br><strong>Arts. 109 y 111</strong> — atribución de apellidos y efectos de la filiación.<br><strong>Arts. 131–140</strong> — reclamación e impugnación de la filiación (vía contenciosa alternativa).<br><strong>Arts. 143, 154, 807 y ss.</strong> — alimentos, relaciones paterno-filiales y derechos sucesorios.",
+      "texto": "<strong>Arts. 120–126 CC</strong> — determinación de la filiación no matrimonial, reconocimiento, consentimientos y aprobación o autorización judicial (art. 124: menores; art. 125: progenitores hermanos o consanguíneos; art. 126: reconocido fallecido).<br><strong>Art. 109 CC</strong> — apellidos.<br><strong>Arts. 131 y ss. CC</strong> — reclamación e impugnación de la filiación.<br><strong>Arts. 143, 154 y 807 y ss. CC</strong> — alimentos, patria potestad y derechos sucesorios.",
       "etiqueta": "Derecho sustantivo",
       "tono": "t-info"
      }
@@ -803,7 +797,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 20/2011 — Registro Civil",
       "titulo": "Inscripción de la filiación y efectos registrales",
-      "texto": "<strong>Art. 44</strong> — inscripción obligatoria de la filiación; eficacia erga omnes.<br><strong>Art. 44.5</strong> — suspensión de inscripción a petición de la madre: presupuesto del supuesto c) del art. 23.3 LJV.",
+      "texto": "<strong>Art. 44 LRC</strong> — inscripción del nacimiento y de la filiación. La suspensión de la inscripción a petición de la madre o progenitor gestante está en el art. 124 CC, párrafo segundo.",
       "etiqueta": "Registro Civil",
       "tono": "t-plazo"
      }
@@ -829,5 +823,5 @@ Neg.data.register({
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo I · Arts. 23–26 · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo I · Arts. 23–26"
 });
