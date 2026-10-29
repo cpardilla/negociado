@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E02.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E02.json; revisado con el BOE (registro: docs/revision/lec-division-herencia.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "lec-division-herencia",
@@ -17,19 +17,18 @@ Neg.data.register({
   "789"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20261007",
   "origen": "E02"
  },
  "cabecera": {
   "migas": "LEY 1/2000, DE 7 DE ENERO, DE ENJUICIAMIENTO CIVIL · LIBRO IV — PROCESOS ESPECIALES · TÍTULO II: DE LA DIVISIÓN JUDICIAL DE PATRIMONIOS · CAPÍTULO I: DE LA DIVISIÓN DE LA HERENCIA · SECCIÓN 1.ª",
-  "subtitulo": "Artículos 782 a 789 LEC · Procedimiento completo, fundamentos, actores, plazos, conexiones normativas, fiscalidad, derechos forales y dimensión internacional",
+  "subtitulo": "Artículos 782 a 789 LEC · Solicitud, Junta, contador y peritos, operaciones divisorias, oposición, entrega y terminación por acuerdo",
   "etiquetas": [
    "LEC 1/2000",
    "Arts. 782–789",
-   "45+ Conexiones",
-   "25+ Actores",
-   "Edición fusionada"
+   "8 artículos",
+   "Tribunales de Instancia (LO 1/2025)"
   ]
  },
  "categorias": [
@@ -44,18 +43,8 @@ Neg.data.register({
    "tono": "c2"
   },
   {
-   "id": "c3",
-   "nombre": "Figuras clave",
-   "tono": "c3"
-  },
-  {
-   "id": "c4",
-   "nombre": "Plazos y fiscalidad",
-   "tono": "c4"
-  },
-  {
    "id": "c5",
-   "nombre": "Excepciones y vías",
+   "nombre": "Alternativas e impugnación",
    "tono": "c5"
   },
   {
@@ -66,8 +55,8 @@ Neg.data.register({
  ],
  "secciones": [
   {
-   "titulo": "Esquema temático completo — Fundamentos, artículos y materias conexas",
-   "recuento": "26 bloques temáticos",
+   "titulo": "Esquema temático — fundamentos, artículos y materias conexas",
+   "recuento": "16 fichas",
    "bloques": [
     {
      "tarjeta": {
@@ -80,8 +69,8 @@ Neg.data.register({
         "tono": "t-info"
        }
       ],
-      "titulo": "Contexto Normativo y Ubicación Sistemática",
-      "resumen": "Inserción del procedimiento en la LEC, relación con la Sección 2.ª (intervención del caudal) y con la administración del caudal (arts. 797-805).",
+      "titulo": "Ubicación y estructura del procedimiento",
+      "resumen": "Proceso especial del Libro IV de la LEC. Lo dirige el Letrado de la Administración de Justicia hasta que se presentan las operaciones divisorias; si alguien se opone, decide el tribunal por los trámites del juicio verbal, con una sentencia que no produce cosa juzgada.",
       "cuerpo": [
        {
         "apartado": {
@@ -90,16 +79,16 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Libro IV.</strong> De los procesos especiales · <strong>Título II.</strong> De la división judicial de patrimonios · <strong>Capítulo I.</strong> De la división de la herencia · <strong>Sección 1.ª</strong> Del procedimiento (arts. 782-789)."
+             "t": "<strong>Libro IV</strong> (procesos especiales) · <strong>Título II</strong> (división judicial de patrimonios) · <strong>Capítulo I</strong> (división de la herencia) · <strong>Sección 1.ª</strong>: procedimiento (arts. 782–789)."
             },
             {
-             "t": "<strong>Sección 2.ª</strong> (arts. 790-796): intervención del caudal hereditario como medida cautelar complementaria."
+             "t": "<strong>Sección 2.ª</strong> (arts. 790–796): intervención del caudal hereditario. Tiene su propio esquema."
             },
             {
-             "t": "<strong>Arts. 797-805:</strong> administración del caudal durante la intervención (representación, cuentas, conservación, retribución)."
+             "t": "<strong>Sección 3.ª</strong> (arts. 797–805): administración del caudal hereditario. Tiene su propio esquema."
             },
             {
-             "t": "<strong>Sección 3.ª</strong> (arts. 806-819): división judicial del condominio por extinción de comunidad (analogía con la herencia)."
+             "t": "<strong>Capítulo II</strong> (arts. 806–811): liquidación del régimen económico matrimonial, a menudo previa a la partición. Tiene su propio esquema."
             }
            ]
           }
@@ -108,121 +97,39 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Naturaleza mixta del procedimiento",
+         "titulo": "Estructura",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Participa simultáneamente de caracteres jurisdiccionales y no jurisdiccionales."
+             "t": "Ante el Letrado de la Administración de Justicia: convocatoria y Junta, designación de contador y peritos, operaciones divisorias y, si nadie se opone, decreto de aprobación (arts. 783–787.2)."
             },
             {
-             "t": "Fase inicial de carácter voluntario (designación de contador, acuerdos); fase contenciosa si surge oposición."
+             "t": "Si hay oposición: comparecencia ante el tribunal y, sin acuerdo, juicio verbal y sentencia (art. 787.3–5)."
             },
             {
-             "t": "Ausencia de cosa juzgada material (art. 787.5 LEC) y preeminencia del acuerdo entre partes."
+             "t": "La sentencia no tiene eficacia de cosa juzgada: los interesados pueden acudir al juicio ordinario sobre los bienes adjudicados (art. 787.5)."
+            },
+            {
+             "t": "Los interesados pueden separarse del procedimiento y acordar lo que estimen en cualquier momento (art. 789)."
             }
            ]
           }
          ]
+        }
+       },
+       {
+        "nota": {
+         "tono": "t-nota",
+         "etiqueta": "Fuera de este esquema",
+         "texto": "Fiscalidad de la herencia (sucesiones, plusvalía…), derechos civiles autonómicos y sucesiones internacionales: solo se mencionan donde afectan a la tramitación."
         }
        }
       ],
       "referencias": [
-       "LEC arts. 782-805",
-       "LEC arts. 806-819"
+       "LEC arts. 782–811"
       ],
-      "claves": "contexto normativo ubicación sistemática LEC libro IV título II capítulo I sección 1"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Fundamentos",
-      "categoria": "c2",
-      "tono": "c2",
-      "etiquetas": [
-       {
-        "texto": "Constitución",
-        "tono": "t-ok"
-       }
-      ],
-      "titulo": "Fundamentos Constitucionales",
-      "resumen": "Art. 24 CE (tutela judicial efectiva y proceso sin dilaciones), art. 39 CE (protección de la familia) y garantías para menores y ausentes.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Art. 24.1 CE — Tutela judicial efectiva",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Derecho de cualquier coheredero o legatario de parte alícuota a reclamar la división judicial (art. 782.1 LEC)."
-            },
-            {
-             "t": "Comprende acceso a la jurisdicción, resolución motivada y ejecución en plazo razonable (STC 119/2001)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 24.2 CE — Proceso sin dilaciones indebidas",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Plazos breves (10 días Junta, 2 meses operaciones, 10 días oposición, 10 días comparecencia)."
-            },
-            {
-             "t": "En la práctica, los plazos frecuentemente se exceden en herencias complejas (doctrina TEDH)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 24.1 CE — Tutela de menores y ausentes",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Intervención del Ministerio Fiscal (art. 783.4 LEC) como garantía de defensa de quienes no pueden defenderse."
-            },
-            {
-             "t": "Doble fundamento: defensa de derechos de incapaces (art. 54 CE) y mandato del art. 749.2 LEC."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 39 CE — Protección de la familia",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 789 LEC (terminación por acuerdo) y vías alternativas responden a la obligación de proteger social, económica y jurídicamente a la familia."
-            },
-            {
-             "t": "El legislador evita que el conflicto sucesorio fracture aún más las relaciones familiares tras el fallecimiento."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "CE arts. 24, 39, 54",
-       "STC 119/2001",
-       "LEC art. 749.2"
-      ],
-      "claves": "fundamentos constitucionales artículo 24 CE tutela judicial efectiva dilaciones indebidas menores ausentes familia"
+      "claves": "ubicacion estructura proceso especial libro IV division judicial patrimonios seccion intervencion administracion caudal liquidacion regimen economico matrimonial"
      }
     },
     {
@@ -236,23 +143,26 @@ Neg.data.register({
         "tono": "t-info"
        }
       ],
-      "titulo": "Base Sustantiva: Código Civil",
-      "resumen": "El Código Civil regula el fondo material (el qué), mientras la LEC regula el procedimiento (el cómo). Art. 1059 CC como puente normativo.",
+      "titulo": "Base sustantiva: Código Civil",
+      "resumen": "El Código Civil regula la partición (arts. 1051–1087 CC): quién puede pedirla, quién puede hacerla y sus efectos. Su art. 1059 CC remite a la LEC cuando los herederos mayores de edad no se entienden sobre el modo de hacerla.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Distinción ley procesal / sustantiva",
+         "titulo": "Reglas del Código Civil",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Arts. 782-789 LEC = procedimiento (cómo se llega a la división)."
+             "t": "Ningún coheredero está obligado a permanecer en la indivisión, salvo prohibición expresa del testador y con los límites del art. 1051 CC."
             },
             {
-             "t": "CC arts. 1051-1087 = fondo material (quién es heredero, cuánto le corresponde, cómo se calcula la legítima)."
+             "t": "Puede pedir la partición el coheredero con libre administración y disposición de sus bienes; si está en situación de ausencia, sus representantes legales; si tiene medidas de apoyo, se estará a lo que estas dispongan (art. 1052 CC)."
             },
             {
-             "t": "El contador aplica el CC (o derecho foral) al realizar las operaciones divisorias (art. 786.1 LEC)."
+             "t": "Los herederos bajo condición no pueden pedirla hasta que se cumpla; los demás sí, asegurando su derecho, y entretanto la partición es provisional (art. 1054 CC)."
+            },
+            {
+             "t": "Los herederos mayores con libre administración pueden repartir como tengan por conveniente (art. 1058 CC); si no se entienden, la vía es la de la LEC (art. 1059 CC)."
             }
            ]
           }
@@ -261,15 +171,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Puente normativo: art. 1059 CC",
+         "titulo": "Ley que aplica el contador",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Remite expresamente a la LEC cuando los coherederos no se ponen de acuerdo."
+             "t": "El contador hace las operaciones con arreglo a la ley aplicable a la sucesión (art. 786.1 LEC): el Código Civil o, si corresponde por la vecindad civil del causante, el derecho civil autonómico (arts. 9.8 y 16 CC)."
             },
             {
-             "t": "La remisión es imperativa: impone la vía judicial como mecanismo subsidiario de resolución del conflicto."
+             "t": "Si el causante tenía su residencia habitual en otro Estado, la ley aplicable la determina el Reglamento (UE) 650/2012 (sucesiones abiertas desde el 17 de agosto de 2015)."
             }
            ]
           }
@@ -278,11 +188,12 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC arts. 1051-1087",
+       "CC arts. 1051–1087",
        "CC art. 1059",
-       "LEC art. 786.1"
+       "LEC art. 786.1",
+       "CC arts. 9.8, 16"
       ],
-      "claves": "base sustantiva código civil derecho material partición arts 1051-1087 puente normativo art 1059"
+      "claves": "codigo civil particion 1051 1052 1054 1058 1059 remision lec ley aplicable vecindad civil derecho foral"
      }
     },
     {
@@ -296,20 +207,17 @@ Neg.data.register({
         "tono": "t-plazo"
        }
       ],
-      "titulo": "Competencia Judicial",
-      "resumen": "Fuero general, fuero especial, competencia objetiva, conflicto de competencia y dimensión internacional (Reg. UE 650/2012).",
+      "titulo": "Competencia y postulación",
+      "resumen": "Fuero imperativo del art. 52.1.4º LEC: el último domicilio del causante; si lo tuvo en el extranjero, su último domicilio en España o el lugar donde esté la mayor parte de sus bienes, a elección del solicitante.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Fuero general: domicilio del causante",
+         "titulo": "Competencia objetiva",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Art. 15.1 LEC:</strong> Juzgado del domicilio del causante al fallecimiento (regla general)."
-            },
-            {
-             "t": "<strong>Art. 16.1 LEC:</strong> si no tuviere domicilio en España, el del lugar donde se encuentre cualquier bien."
+             "t": "Tribunal de Instancia, Sección Civil (art. 45 LEC, que aún dice «Juzgados de Primera Instancia»; LO 1/2025)."
             }
            ]
           }
@@ -318,15 +226,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Fuero especial: lugar de los bienes",
+         "titulo": "Competencia territorial",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Art. 52 LEC:</strong> si el causante no tuviere domicilio en España, competencia del lugar de la mayor parte de los bienes."
+             "t": "Tribunal del lugar del último domicilio del causante (art. 52.1.4º LEC)."
             },
             {
-             "t": "<strong>Reg. UE 650/2012, art. 4:</strong> competencia de los tribunales del Estado de residencia habitual del causante."
+             "t": "Si lo tuvo en el extranjero: el de su último domicilio en España o el del lugar donde esté la mayor parte de sus bienes, a elección del solicitante."
+            },
+            {
+             "t": "Es imperativo: no cabe sumisión (art. 54.1 LEC). El Letrado de la Administración de Justicia examina la competencia territorial al presentarse la solicitud y, si entiende que falta, da cuenta al juez, que resuelve por auto, previa audiencia del Ministerio Fiscal y de las partes personadas (art. 58 LEC)."
+            },
+            {
+             "t": "Competencia internacional en la UE: Reglamento (UE) 650/2012 (art. 4, tribunales del Estado de la última residencia habitual del causante)."
             }
            ]
           }
@@ -335,15 +249,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Competencia objetiva y examen de oficio",
+         "titulo": "Postulación",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Juzgado de Primera Instancia</strong> (art. 85 LEC), dado que la cuantía suele superar los 2.000 €."
+             "t": "Abogado y procurador conforme a las reglas generales (arts. 23 y 31 LEC)."
             },
             {
-             "t": "<strong>Art. 45.2 LEC:</strong> examen de oficio de la competencia territorial en todo momento; inhibición si es necesaria."
+             "t": "Asistencia jurídica gratuita: Ley 1/1996."
             }
            ]
           }
@@ -352,84 +266,12 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC arts. 15, 16, 45, 52, 85",
-       "Reg. UE 650/2012 art. 4"
-      ],
-      "claves": "competencia judicial fuero domicilio causante art 15 LEC art 52 LEC reglamento UE 650/2012 juzgado primera instancia"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Fundamentos",
-      "categoria": "c2",
-      "tono": "c2",
-      "etiquetas": [
-       {
-        "texto": "Partes",
-        "tono": "t-info"
-       }
-      ],
-      "titulo": "Postulación Procesal",
-      "resumen": "Necesidad de abogado y procurador, gratuidad de justicia, particularidades de la Junta (art. 783) y representación del Abogado del Estado.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Abogado y procurador (arts. 23 y 31 LEC)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Preceptiva la intervención de ambos profesionales (art. 31.1 LEC)."
-            },
-            {
-             "t": "Excepción del art. 31.2 LEC (juicios verbales ≤ 2.000 €), raramente aplicable dada la cuantía hereditaria."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Gratuidad de justicia (Ley 1/1996 LJG)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Designación de abogado y procurador de oficio, exención de tasas y copias."
-            },
-            {
-             "t": "Especial relevancia para coherederos de menor capacidad económica."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Particularidades en la Junta (art. 783)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Los personados son citados por procurador; los no personados, personalmente sin necesidad de procurador."
-            },
-            {
-             "t": "La Junta es un acto de negociación, no de controversia jurisdiccional plena."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
+       "LEC art. 52.1.4º",
+       "LEC arts. 54, 58",
        "LEC arts. 23, 31",
-       "Ley 1/1996 LJG",
-       "LEC art. 783"
+       "Reg. (UE) 650/2012 art. 4"
       ],
-      "claves": "postulación procesal abogado procurador art 23 art 31 LEC gratuidad justicia junta art 783"
+      "claves": "competencia territorial ultimo domicilio causante 52.1.4 imperativo examen de oficio 58 tribunal de instancia seccion civil postulacion abogado procurador"
      }
     },
     {
@@ -443,23 +285,23 @@ Neg.data.register({
         "tono": "t-plazo"
        }
       ],
-      "titulo": "Aceptación y Repudiación de la Herencia",
-      "resumen": "Presupuesto de la división judicial, aceptación pura y simple vs. a beneficio de inventario, repudiación y efectos sobre el procedimiento.",
+      "titulo": "Aceptación y repudiación de la herencia",
+      "resumen": "Pedir la división presupone ser heredero o legatario de parte alícuota. La aceptación puede ser expresa o tácita; la repudiación se hace ante Notario. Ambas son irrevocables.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Aceptación como presupuesto",
+         "titulo": "Aceptación",
          "contenido": [
           {
            "lista": [
             {
-             "t": "La herencia debe estar aceptada para poder dividirse (art. 657 CC)."
+             "t": "Expresa (en documento público o privado) o tácita (actos que suponen necesariamente la voluntad de aceptar) (art. 999 CC). Pedir la partición suele valorarse como aceptación tácita."
             },
             {
-             "t": "La solicitud de división judicial constituye aceptación tácita (doctrina mayoritaria)."
+             "t": "Irrevocable, salvo vicios del consentimiento o aparición de un testamento desconocido (art. 997 CC); no puede hacerse en parte, a plazo ni condicionalmente (art. 990 CC)."
             },
             {
-             "t": "Acto personalísimo e irrevocable (art. 988 CC): expresa (escritura pública) o tácita (actos de disposición)."
+             "t": "Aceptación pura y simple: el heredero responde de las cargas de la herencia también con sus bienes propios (art. 1003 CC)."
             }
            ]
           }
@@ -468,18 +310,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Aceptación pura y simple vs. a beneficio de inventario",
+         "titulo": "Beneficio de inventario (arts. 1010–1034 CC)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Pura y simple (art. 1023 CC):</strong> responsabilidad ilimitada por deudas hereditarias. Presunta si no se declara en contrario."
+             "t": "Se declara ante Notario (art. 1011 CC)."
             },
             {
-             "t": "<strong>A beneficio de inventario (arts. 1023-1032 CC):</strong> responsabilidad limitada al valor de los bienes hereditarios."
+             "t": "El heredero que tenga en su poder la herencia debe comunicarlo ante Notario y pedir la formación de inventario en los 30 días siguientes a saber que es heredero (art. 1014 CC)."
             },
             {
-             "t": "Plazos improrrogables: 30 días hábiles para solicitarlo + 90 días hábiles para formar inventario (art. 1028 CC)."
+             "t": "El inventario se principia en los 30 días siguientes a la citación de acreedores y legatarios y concluye en otros 60, que el Notario puede prorrogar hasta un año (art. 1017 CC)."
+            },
+            {
+             "t": "Efecto: el heredero solo responde de las deudas hasta donde alcancen los bienes de la herencia (art. 1023 CC)."
             }
            ]
           }
@@ -488,18 +333,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Repudiación (art. 992 CC)",
+         "titulo": "Repudiación",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Debe ser expresa, total y ante Notario o Juzgado. No admite repudiación tácita ni parcial."
+             "t": "Ante Notario en instrumento público (art. 1008 CC); irrevocable (art. 997 CC)."
             },
             {
-             "t": "Efecto: el repudiante se trata como si nunca hubiera sido heredero; su cuota acrece a los demás (acreción)."
-            },
-            {
-             "t": "Si se produce durante el procedimiento, cesará en él y las operaciones deberán reformarse."
+             "t": "La repudiación en nombre de menores, y la aceptación sin beneficio de inventario o la repudiación por tutores y curadores representativos, necesitan autorización judicial en los casos del art. 93 LJV."
             }
            ]
           }
@@ -508,85 +350,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC arts. 657, 988, 992, 1023-1032"
+       "CC arts. 988–1034",
+       "LJV art. 93"
       ],
-      "claves": "aceptación repudiación herencia art 988 art 992 CC beneficio inventario art 1023-1032 herencia yacente"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Fundamentos",
-      "categoria": "c2",
-      "tono": "c2",
-      "etiquetas": [
-       {
-        "texto": "Régimen previo",
-        "tono": "t-nota"
-       }
-      ],
-      "titulo": "Herencia Yacente y su Administración",
-      "resumen": "Naturaleza jurídica, administración de facto por los herederos (art. 1011 CC) y diferencias con la intervención judicial (arts. 790-796).",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Naturaleza de la herencia yacente (art. 1009 CC)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Situación entre el fallecimiento y la aceptación: universalidad jurídica sin titular determinado."
-            },
-            {
-             "t": "No es persona jurídica ni comunidad propiamente dicha, sino patrimonio en espera de titular."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Administración de facto (art. 1011 CC)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Corresponde a quien tenga la posesión de los bienes (habitualmente cónyuge viudo o hijo conviviente)."
-            },
-            {
-             "t": "Obligaciones de conservación y gestión prudente; sin facultades de disposición."
-            },
-            {
-             "t": "Derecho a reembolso de gastos necesarios y útiles."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Diferencias con la intervención judicial (arts. 790-796)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Administrador de facto:</strong> sin nombramiento ni caución; sin facultades de disposición; rinde cuentas a demanda."
-            },
-            {
-             "t": "<strong>Administrador judicial:</strong> nombrado por el Juzgado; presta caución; puede enajenar con autorización; rinde cuentas periódicas (arts. 799-800 LEC)."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "CC arts. 1009, 1011",
-       "LEC arts. 790-796, 797-805"
-      ],
-      "claves": "herencia yacente art 1009 CC art 1011 CC administración de facto intervención judicial diferencias"
+      "claves": "aceptacion expresa tacita irrevocable repudiacion notario beneficio de inventario 1011 1014 1017 1023 autorizacion judicial"
      }
     },
     {
@@ -600,54 +367,23 @@ Neg.data.register({
         "tono": "t-plazo"
        }
       ],
-      "titulo": "Liquidación del Régimen Económico Matrimonial",
-      "resumen": "Necesidad de liquidación previa en gananciales, tramitación en sede de división judicial y doctrina del Tribunal Supremo.",
+      "titulo": "Liquidación del régimen económico matrimonial",
+      "resumen": "Si el causante estaba casado en gananciales (u otro régimen de comunidad), hay que liquidarlo para saber qué bienes forman la herencia: sus bienes privativos más su mitad del haber ganancial.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Necesidad de liquidación previa",
+         "titulo": "Relación con la división",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Cuando el causante estaba casado en gananciales, la partición requiere la previa liquidación de la sociedad (art. 806 CC)."
+             "t": "El fallecimiento disuelve la sociedad de gananciales (art. 1392 CC); se liquida empezando por un inventario del activo y pasivo (art. 1396 CC) y el remanente se divide por mitad entre el cónyuge viudo y los herederos del fallecido (art. 1404 CC)."
             },
             {
-             "t": "Delimita el caudal privativo partible (bienes propios + mitad gananciales del causante)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Procedimiento en sede de división judicial",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "El contador incluye la liquidación de gananciales en sus operaciones divisorias."
+             "t": "Sin acuerdo, la LEC regula un procedimiento propio (arts. 806–811), con su propio esquema."
             },
             {
-             "t": "Controversias sobre inclusión/exclusión de bienes → juicio verbal (art. 794.2 LEC)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Doctrina del Tribunal Supremo",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>STS 261/2013:</strong> la liquidación es presupuesto necesario; no puede eludirse ni siquiera de común acuerdo si perjudica a terceros."
-            },
-            {
-             "t": "<strong>STS 489/2016:</strong> liquidación y adjudicación son operaciones jurídicas distintas pero sucesivas."
+             "t": "El cónyuge sobreviviente es convocado a la Junta (art. 783.2 LEC)."
             }
            ]
           }
@@ -656,11 +392,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC arts. 806, 1392-1410",
-       "LEC art. 794.2",
-       "STS 261/2013, STS 489/2016"
+       "CC arts. 1392–1410",
+       "LEC arts. 806–811"
       ],
-      "claves": "liquidación gananciales régimen económico matrimonial sociedad gananciales art 806 CC STS 261/2013 STS 489/2016"
+      "claves": "liquidacion gananciales regimen economico matrimonial conyuge viudo 1392 1396 1404 806"
      }
     },
     {
@@ -675,25 +410,22 @@ Neg.data.register({
        }
       ],
       "titulo": "Solicitud de división judicial de la herencia",
-      "resumen": "Naturaleza subsidiaria, presupuestos de admisión, legitimación activa, documentación y régimen completo de los tres tipos de acreedor.",
+      "resumen": "Pueden pedirla los coherederos y los legatarios de parte alícuota, salvo que la división deba hacerla un comisario o contador-partidor designado por el testador, por acuerdo de los coherederos o por el Letrado de la Administración de Justicia o el Notario. Con la solicitud: certificado de defunción y título de heredero o legatario.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Naturaleza jurídica y carácter subsidiario",
+         "titulo": "Legitimación y carácter subsidiario (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Proceso especial</strong> (Libro IV LEC): voluntario en su fase inicial; contencioso cuando surge oposición."
+             "t": "<strong>Coheredero</strong> (sucede a título universal, art. 660 CC) o <strong>legatario de parte alícuota</strong>. No los legatarios de cosa determinada ni los acreedores (apartado 3)."
             },
             {
-             "t": "<strong>Subsidiariedad:</strong> solo procede a falta de contador-partidor testamentario (CC art. 1057.1), de acuerdo entre coherederos (CC art. 1058) o de procedimiento ante LAJ/Notario (CC art. 1057.2; LJV arts. 66–68)."
+             "t": "No procede si la partición corresponde a un comisario o contador-partidor designado por el testador (art. 1057, párrafo primero, CC), a los coherederos de común acuerdo (art. 1058 CC) o a un contador-partidor dativo nombrado por el Letrado de la Administración de Justicia o el Notario (art. 1057, párrafo segundo, CC; art. 92 LJV; art. 66 LN)."
             },
             {
-             "t": "<strong>Exclusividad de vía:</strong> iniciada la vía judicial, no puede simultanearse con la notarial."
-            },
-            {
-             "t": "<strong>Partición testamentaria por el testador (CC art. 1056.1):</strong> si el testador hace la partición en el propio testamento, no procede la judicial, salvo lesión de legítimas."
+             "t": "Si el testador hizo la partición, se pasa por ella en cuanto no perjudique la legítima (art. 1056 CC)."
             }
            ]
           }
@@ -702,18 +434,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Competencia objetiva y territorial",
+         "titulo": "Documentos (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Objetiva:</strong> Juzgado de Primera Instancia (LEC art. 85)."
+             "t": "<strong>Certificado de defunción</strong>."
             },
             {
-             "t": "<strong>Territorial (LEC art. 52.1.4.º):</strong> lugar del último domicilio o residencia habitual del causante; subsidiariamente, lugar de la mayor parte de los inmuebles; en último término, lugar del fallecimiento."
+             "t": "<strong>Título sucesorio</strong> del solicitante: testamento (copia autorizada); testamento ológrafo adverado y protocolizado ante Notario (arts. 61–63 LN); acta notarial de declaración de herederos abintestato (arts. 55–56 LN); o, si hereda el Estado, la declaración administrativa (art. 958 CC). Son también los títulos sucesorios a efectos del Registro (art. 14 LH)."
             },
             {
-             "t": "<strong>Supuestos internacionales (Reg. UE 650/2012, art. 4):</strong> competencia de los tribunales del Estado de residencia habitual del causante al tiempo del fallecimiento; la professio iuris (art. 22) permite designar la ley de la nacionalidad."
+             "t": "Habitualmente se aporta además el certificado del Registro General de Actos de Última Voluntad."
             }
            ]
           }
@@ -722,81 +454,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Legitimación activa (apartado 1)",
+         "titulo": "Acreedores de la herencia (apartados 3 y 4)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Coheredero:</strong> llamado a la sucesión a título universal (CC art. 660), por testamento o por ley."
+             "t": "No pueden instar la división. Sus acciones contra la herencia, la comunidad hereditaria o los coherederos se ejercitan en el juicio declarativo que corresponda, sin suspender ni entorpecer la división."
             },
             {
-             "t": "<strong>Legatario de parte alícuota:</strong> recibe una cuota proporcional del haber neto; distinto del legatario de cosa cierta (CC art. 858), que no tiene esta legitimación porque su derecho se satisface con la entrega directa del bien."
-            },
-            {
-             "t": "<strong>Exclusiones:</strong> acreedores ordinarios, legatarios de cosa cierta, acreedores de los coherederos (solo tienen derecho de intervención, no de solicitud)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Documentación obligatoria (apartado 2)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Certificado de defunción:</strong> acredita el fallecimiento y la apertura de la sucesión (CC art. 657)."
-            },
-            {
-             "t": "<strong>Título sucesorio:</strong> copia autorizada del testamento notarial; testamento ológrafo con auto de protocolización (LN art. 61); declaración de herederos ab intestato (acta notarial de notoriedad, LJV art. 55; o resolución del LAJ, LJV art. 56)."
-            },
-            {
-             "t": "<strong>Certificado del RAUV</strong> (Registro de Actos de Última Voluntad, D. 2-VI-1944): verifica existencia/inexistencia de testamento."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Acreedores ordinarios de la herencia (apartado 3)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Prohibición:</strong> no pueden instar la división; fundamento: la partición es un derecho personalísimo de los herederos."
-            },
-            {
-             "t": "<strong>Acciones disponibles:</strong> demanda en juicio declarativo ordinario contra la herencia yacente, la comunidad hereditaria o los coherederos individualmente; tercería de dominio (LEC arts. 595–604); anotación preventiva de embargo (LH art. 42.9.º)."
-            },
-            {
-             "t": "<strong>Límite:</strong> no pueden suspender ni entorpecer las actuaciones de división."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Acreedores privilegiados: derecho de oposición (apartado 4)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Sujetos:</strong> reconocidos en testamento o por los coherederos; y los que tienen título ejecutivo (LEC art. 517)."
-            },
-            {
-             "t": "<strong>Facultad:</strong> oponerse a la entrega de bienes hasta recibir pago o garantía suficiente (fianza personal, caución real, aval bancario)."
-            },
-            {
-             "t": "<strong>Momento:</strong> en cualquier momento, antes de la entrega de bienes (art. 788.1); efecto suspensivo sobre la entrega pero no sobre las operaciones divisorias."
-            },
-            {
-             "t": "<strong>Fundamento:</strong> responsabilidad hereditaria del heredero (CC arts. 1003 y 1023); los acreedores de la herencia cobran antes de que los herederos perciban sus hijuelas."
+             "t": "Excepción: los reconocidos en el testamento o por los coherederos y los que tengan título ejecutivo pueden oponerse a que se lleve a efecto la partición hasta que se les pague o afiance su crédito, en cualquier momento antes de la entrega de los bienes. Consecuencia: no se entrega nada a nadie hasta que estén pagados o garantizados a su satisfacción (art. 788.3)."
             }
            ]
           }
@@ -810,16 +476,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Legitimados:</strong> acreedores personales de uno o más coherederos (no de la herencia)."
+             "t": "Pueden intervenir a su costa en la partición para evitar que se haga en fraude o perjuicio de sus derechos (igual que el art. 1083 CC)."
             },
             {
-             "t": "<strong>Facultad:</strong> intervención a su costa con función de vigilancia antifraudulenta."
-            },
-            {
-             "t": "<strong>Acción rescisoria posterior (CC arts. 1083 y 1291.3.º):</strong> si la partición se hizo en fraude de sus derechos; prescripción: cuatro años desde conocimiento del fraude (CC art. 1299)."
-            },
-            {
-             "t": "<strong>Medida cautelar:</strong> pueden solicitar anotación preventiva de la demanda en el Registro de la Propiedad (LH art. 42.1.º)."
+             "t": "Si la partición se hizo en fraude de acreedores, cabe después la acción rescisoria (art. 1291.3º CC), que dura cuatro años (art. 1299 CC)."
             }
            ]
           }
@@ -828,14 +488,13 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC arts. 657, 660, 858, 1003, 1056–1058",
-       "LEC arts. 52, 85, 517, 595–604",
-       "LJV arts. 55, 56, 66–68",
-       "LH art. 42.1.º y 9.º",
-       "Reg. UE 650/2012 arts. 4, 21, 22",
-       "CC arts. 1083, 1291.3.º, 1299"
+       "CC arts. 660, 1056–1058, 1083",
+       "LJV art. 92",
+       "LN arts. 55–56, 61–63, 66",
+       "LH art. 14",
+       "CC arts. 1291, 1299"
       ],
-      "claves": "artículo 782 solicitud división judicial herencia coheredero legatario alícuota acreedor oposición partición certificado defunción título ejecutivo fraude comunidad hereditaria comisario contador-partidor notario letrado competencia vecindad civil legitimación rescisoria embargo anotación preventiva"
+      "claves": "782 solicitud legitimacion coheredero legatario parte alicuota contador partidor comisario documentos certificado defuncion titulo sucesorio acreedores oposicion afianzamiento intervencion fraude"
      }
     },
     {
@@ -850,7 +509,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Convocatoria de Junta para designar contador y peritos",
-      "resumen": "Intervención y formación del inventario del caudal, convocatoria de todos los interesados, formas de citación y función del Ministerio Fiscal como representante de menores y ausentes.",
+      "resumen": "Si se pide y procede, primero la intervención del caudal y el inventario. Después, o directamente a la vista de la solicitud, el Letrado de la Administración de Justicia convoca a Junta a herederos, legatarios de parte alícuota y cónyuge sobreviviente, señalando día dentro de los diez siguientes. También convoca al Ministerio Fiscal si hay menores sin representación o ausentes de paradero desconocido.",
       "cuerpo": [
        {
         "apartado": {
@@ -859,16 +518,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Presupuesto:</strong> solicitud expresa y que el tribunal lo estime procedente."
-            },
-            {
-             "t": "<strong>Régimen:</strong> arts. 790–796 LEC (diligencias de intervención del caudal hereditario)."
-            },
-            {
-             "t": "<strong>Administrador del caudal (art. 795 LEC):</strong> nombrado por el tribunal; gestión ordinaria sin necesidad de autorización; actos de disposición requieren autorización judicial; retribución con cargo al caudal."
-            },
-            {
-             "t": "<strong>Inventario:</strong> documentación de todos los bienes, derechos y obligaciones del causante; base para el avalúo y liquidación del contador; puede servir de base para la aceptación a beneficio de inventario (CC arts. 1010–1034) si cumple sus requisitos."
+             "t": "Solo si se pide y resulta procedente. Se rige por los arts. 790–805 LEC (esquemas de intervención y de administración del caudal hereditario)."
             }
            ]
           }
@@ -877,21 +527,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Convocatoria de Junta (apartado 2)",
+         "titulo": "Convocatoria (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Órgano:</strong> Letrado de la Administración de Justicia, una vez practicadas las diligencias previas o, si no son necesarias, a la vista de la solicitud."
+             "t": "La hace el Letrado de la Administración de Justicia, una vez practicadas las actuaciones del apartado 1 o, si no son necesarias, a la vista de la solicitud."
             },
             {
-             "t": "<strong>Convocados necesarios:</strong> herederos, legatarios de parte alícuota y cónyuge sobreviviente."
+             "t": "Convocados: herederos, legatarios de parte alícuota y cónyuge sobreviviente."
             },
             {
-             "t": "<strong>Cónyuge sobreviviente:</strong> puede concurrir como heredero instituido y/o en defensa de sus derechos sobre la sociedad de gananciales disuelta (CC arts. 1392–1410); la liquidación de la sociedad de gananciales es presupuesto práctico frecuente de la partición, pues delimita el caudal privativo partible."
-            },
-            {
-             "t": "<strong>Plazo:</strong> señalando día dentro de los diez días siguientes a la solicitud o a la conclusión de las actuaciones previas."
+             "t": "Día de la Junta: dentro de los diez días siguientes."
             }
            ]
           }
@@ -900,21 +547,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Formas de citación (apartado 3)",
+         "titulo": "Citación (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Personados en autos:</strong> por medio del procurador (LEC art. 23)."
+             "t": "Personados: por medio de su procurador."
             },
             {
-             "t": "<strong>No personados con residencia conocida:</strong> citación personal mediante cédula (LEC art. 152) u otro medio fehaciente."
+             "t": "No personados con residencia conocida: personalmente."
             },
             {
-             "t": "<strong>Residencia desconocida:</strong> edictos (LEC art. 164): BOE, tablón del juzgado y, si el tribunal lo estima conveniente, medios de comunicación adicionales."
+             "t": "Residencia desconocida: por edictos (art. 164 LEC), hoy en el Tablón Edictal Judicial Único."
             },
             {
-             "t": "<strong>Interesados extranjeros no localizados:</strong> comunicación por vía diplomática o consular (LEC art. 177)."
+             "t": "Si hay que practicar actuaciones en el extranjero: cooperación judicial internacional (art. 177 LEC)."
             }
            ]
           }
@@ -923,24 +570,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Convocatoria al Ministerio Fiscal (apartado 4)",
+         "titulo": "Ministerio Fiscal (apartado 4)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Función:</strong> representar a herederos/legatarios menores sin representación legítima o con conflicto de intereses con su representante; y a ausentes de paradero desconocido."
+             "t": "Representa a los interesados menores que no tengan representación legítima y a los ausentes cuyo paradero se ignore."
             },
             {
-             "t": "<strong>Ausente declarado judicialmente (CC arts. 181–186):</strong> si el paradero lleva tiempo ignorado, puede ser conveniente promover la declaración de ausencia y nombrar representante del ausente, que actuará en el procedimiento."
+             "t": "Cesa cuando los menores estén habilitados de representante legal y, respecto de los ausentes, cuando se presenten o puedan ser citados personalmente, aunque vuelvan a ausentarse."
             },
             {
-             "t": "<strong>Personas con discapacidad (Ley 8/2021, de 2 de junio):</strong> sus medidas de apoyo voluntarias o judiciales determinan quién actúa en su nombre; el MF puede actuar supletoriamente si no hay apoyos suficientes."
+             "t": "Desde la Ley 8/2021 el apartado ya no menciona a los «incapacitados»: las personas con discapacidad intervienen con sus medidas de apoyo (art. 1052 CC); si hay conflicto de intereses con quien presta el apoyo, procede un defensor judicial."
             },
             {
-             "t": "<strong>Cese respecto de menores:</strong> cuando estén habilitados de representante legal."
-            },
-            {
-             "t": "<strong>Cese respecto de ausentes:</strong> cuando se presenten o puedan ser citados personalmente; la representación no se restaura automáticamente si vuelven a ausentarse."
+             "t": "Si el paradero se ignora desde hace tiempo, puede promoverse el nombramiento de defensor del desaparecido o la declaración de ausencia (arts. 181 y ss. CC)."
             }
            ]
           }
@@ -949,18 +593,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Acreedores del artículo 782.5 en la Junta (apartado 5)",
+         "titulo": "Acreedores de los coherederos en la Junta (apartado 5)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Personados:</strong> convocados expresamente por el LAJ."
+             "t": "Personados: se les convoca."
             },
             {
-             "t": "<strong>No personados:</strong> no se les cita, pero pueden participar si acuden aportando sus títulos justificativos."
-            },
-            {
-             "t": "<strong>Límite:</strong> su participación no les convierte en parte procesal plena; función de vigilancia antifraudulenta únicamente."
+             "t": "No personados: no se les cita, pero pueden participar si comparecen el día señalado con los títulos justificativos de sus créditos."
             }
            ]
           }
@@ -969,11 +610,12 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC arts. 23, 152, 164, 177, 790–796",
-       "CC arts. 181–186, 1010–1034, 1392–1410",
-       "Ley 8/2021 (discapacidad)"
+       "LEC arts. 164, 177",
+       "LEC arts. 790–805",
+       "CC arts. 181 y ss.",
+       "CC art. 1052"
       ],
-      "claves": "artículo 783 junta convocatoria herederos legatarios cónyuge sobreviviente ministerio fiscal menores ausentes edictos procurador personados diez días inventario caudal intervención gananciales discapacidad ausente declarado"
+      "claves": "783 junta convocatoria diez dias herederos legatarios conyuge citacion procurador personalmente edictos tablon edictal ministerio fiscal menores ausentes intervencion inventario acreedores"
      }
     },
     {
@@ -988,22 +630,19 @@ Neg.data.register({
        }
       ],
       "titulo": "Designación del contador y de los peritos",
-      "resumen": "Celebración de la Junta, nombramiento del contador y los peritos por acuerdo o por sorteo, y régimen de recusación, honorarios y responsabilidad del contador designado judicialmente.",
+      "resumen": "La Junta se celebra con los que concurran y la preside el Letrado de la Administración de Justicia. Los interesados deben ponerse de acuerdo sobre el contador y los peritos; si no, sorteo. Nunca más de un perito por cada clase de bienes.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Celebración de la Junta (apartado 1)",
+         "titulo": "Junta (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Quórum:</strong> válida con cualquier número de concurrentes; no requiere mínimo."
+             "t": "Se celebra con los que concurran, el día y hora señalados."
             },
             {
-             "t": "<strong>Presidencia:</strong> Letrado de la Administración de Justicia, que levantará acta (LEC art. 146)."
-            },
-            {
-             "t": "<strong>Efecto vinculante:</strong> los acuerdos obligan a todos los interesados, incluidos los no asistentes, si la citación se practicó en forma legal."
+             "t": "La preside el Letrado de la Administración de Justicia; se documenta en acta (art. 146 LEC)."
             }
            ]
           }
@@ -1017,30 +656,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Contador (por acuerdo):</strong> no requiere titulación específica; habitualmente abogado, economista, gestor o experto en valoración de patrimonios; función técnico-jurídica: aplica la ley sustantiva, respeta legítimas e instrucciones del testador y redacta el cuaderno particional."
+             "t": "Contador que practique las operaciones divisorias y perito o peritos para el avalúo."
             },
             {
-             "t": "<strong>Peritos (por acuerdo):</strong> valorarán los bienes del caudal conforme a criterios técnicos objetivos.",
-             "sub": [
-              {
-               "t": "Inmuebles: arquitecto técnico o perito tasador (API)."
-              },
-              {
-               "t": "Valores y participaciones: economista o auditor."
-              },
-              {
-               "t": "Obras de arte: tasador acreditado por Ministerio de Cultura."
-              },
-              {
-               "t": "Fondo de comercio: economista o experto en valoración de empresas."
-              },
-              {
-               "t": "Bienes cotizados: cotización oficial en mercado regulado; no es obligatorio perito."
-              }
-             ]
-            },
-            {
-             "t": "<strong>Límite:</strong> máximo un perito por cada clase de bienes que hayan de ser justipreciados."
+             "t": "No más de un perito por cada clase de bienes que haya que justipreciar."
             }
            ]
           }
@@ -1049,18 +668,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Nombramiento por sorteo: contador (apartado 3)",
+         "titulo": "Sin acuerdo: sorteo (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Mecanismo:</strong> sorteo conforme al artículo 341 LEC (lista del Colegio de Abogados del partido judicial)."
+             "t": "Contador: por sorteo conforme al art. 341 LEC, entre abogados ejercientes con especiales conocimientos en la materia y despacho profesional en el lugar del juicio."
             },
             {
-             "t": "<strong>Requisitos:</strong> abogado en ejercicio; especiales conocimientos en la materia (derecho sucesorio, contabilidad patrimonial); despacho profesional en el lugar del juicio."
-            },
-            {
-             "t": "<strong>Honorarios (LEC arts. 341–346):</strong> derecho a provisión de fondos previa (LEC art. 342); liquidación final a prorrata entre interesados, salvo pacto."
+             "t": "Peritos: por el mismo procedimiento, los que el contador estime necesarios, nunca más de uno por clase de bienes."
             }
            ]
           }
@@ -1069,15 +685,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Nombramiento por sorteo: peritos (apartado 3)",
+         "titulo": "Contador designado por sorteo (apartado 4)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Procedimiento:</strong> igual que el contador (LEC art. 341.1); sorteo entre las listas anuales remitidas por los Colegios Profesionales."
+             "t": "Se le aplica lo dispuesto para la recusación (arts. 124–128 LEC) y la provisión de fondos (art. 342.3 LEC) de los peritos."
             },
             {
-             "t": "<strong>Iniciativa:</strong> el contador determina qué tipos de peritación son necesarios dentro del límite de uno por clase."
+             "t": "Causas de recusación: las de la LOPJ y las del art. 124.3 LEC (dictamen anterior contrario al recusante, servicios prestados a la parte contraria o dependencia o sociedad con ella, participación en una sociedad que sea parte)."
             }
            ]
           }
@@ -1085,35 +701,18 @@ Neg.data.register({
         }
        },
        {
-        "apartado": {
-         "titulo": "Régimen del contador designado por sorteo (apartado 4)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Causas de recusación (LEC arts. 124–128):</strong> parentesco con las partes; interés directo o indirecto en el asunto; amistad íntima o enemistad; haber emitido dictamen contrario; dependencia o subordinación respecto de una parte."
-            },
-            {
-             "t": "<strong>Abstención:</strong> el contador puede abstenerse si aprecia causa de recusación (LEC art. 124)."
-            },
-            {
-             "t": "<strong>Responsabilidad civil:</strong> por negligencia o dolo, régimen análogo al del perito (LEC art. 335.2; CC art. 1902)."
-            },
-            {
-             "t": "<strong>Responsabilidad penal:</strong> informe manifiestamente falso → falso testimonio del perito (CP art. 459); avalúo corrompido por dádiva → cohecho pasivo (CP arts. 419–427), conectado con el supuesto de suspensión del artículo 787.6 LEC."
-            }
-           ]
-          }
-         ]
+        "nota": {
+         "tono": "t-aviso",
+         "etiqueta": "Responsabilidad penal",
+         "texto": "Falso testimonio de peritos (art. 459 CP). Si se investiga un cohecho en el avalúo, véase la suspensión del art. 787.6 LEC."
         }
        }
       ],
       "referencias": [
-       "LEC arts. 124–128, 146, 341–346",
-       "CC art. 1902",
-       "CP arts. 419–427 (cohecho), 459 (falso testimonio)"
+       "LEC arts. 124–128, 146, 341–342",
+       "CP art. 459"
       ],
-      "claves": "artículo 784 designación contador peritos sorteo junta acuerdo abogados avalúo bienes recusación provisión fondos tasación clases especiales conocimientos despacho honorarios responsabilidad penal cohecho"
+      "claves": "784 junta designacion contador peritos acuerdo sorteo 341 abogados un perito por clase recusacion provision de fondos"
      }
     },
     {
@@ -1128,48 +727,22 @@ Neg.data.register({
        }
       ],
       "titulo": "Entrega de la documentación al contador. Obligación de cumplir el encargo aceptado y plazo para hacerlo",
-      "resumen": "La aceptación del cargo genera una obligación personalísima de hacer. Regula los documentos entregados, la exigibilidad del encargo y la responsabilidad civil por incumplimiento del plazo fijado.",
+      "resumen": "Aceptado el cargo, el Letrado de la Administración de Justicia entrega los autos al contador y pone a su disposición y a la de los peritos lo que necesiten. La aceptación permite a cada interesado obligarle a cumplir; a instancia de parte puede fijársele plazo, y si no cumple responde de los daños y perjuicios.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Entrega de documentación (apartado 1)",
+         "titulo": "Entrega (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Presupuesto:</strong> aceptación formal del cargo; constitutiva de las obligaciones del artículo 785.2; si no acepta, se procede a nuevo nombramiento."
+             "t": "Previa aceptación del contador y, en su caso, de los peritos."
             },
             {
-             "t": "<strong>Órgano:</strong> Letrado de la Administración de Justicia."
+             "t": "El Letrado de la Administración de Justicia entrega los autos al contador y pone a disposición de él y de los peritos cuantos objetos, documentos y papeles necesiten para el inventario (si no estaba hecho), el avalúo, la liquidación y la división."
             },
             {
-             "t": "<strong>Documentos entregados al contador:</strong>",
-             "sub": [
-              {
-               "t": "Autos del procedimiento (soporte papel o expediente electrónico, Ley 18/2011)."
-              },
-              {
-               "t": "Inventario, si ya se hubiera formado (art. 783.1)."
-              },
-              {
-               "t": "Certificaciones registrales (Registro de la Propiedad, Registro Mercantil, Registro de Bienes Muebles)."
-              },
-              {
-               "t": "Extractos bancarios y de entidades financieras del causante."
-              },
-              {
-               "t": "Escrituras de propiedad, contratos, pólizas de seguros, títulos de valores y participaciones sociales."
-              },
-              {
-               "t": "Declaraciones tributarias del causante (IRPF, ISD, IP) relevantes para determinar el caudal."
-              },
-              {
-               "t": "Cualquier otro documento necesario para el inventario, avalúo, liquidación y división."
-              }
-             ]
-            },
-            {
-             "t": "<strong>Acceso de los peritos a los bienes:</strong> reconocimiento y valoración in situ (LEC art. 345), con posibilidad de asistencia de las partes."
+             "t": "Las partes pueden presenciar los reconocimientos que hagan los peritos, si no estorban su labor (art. 345 LEC)."
             }
            ]
           }
@@ -1178,18 +751,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Obligación de cumplir el encargo (apartado 2)",
+         "titulo": "Obligación de cumplir (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Carácter personalísimo:</strong> no puede delegarse sin autorización judicial."
-            },
-            {
-             "t": "<strong>Fundamento:</strong> la aceptación crea un vínculo análogo al del mandato (CC art. 1718); todos los interesados están legitimados para exigir su cumplimiento."
-            },
-            {
-             "t": "<strong>Mecanismos de exigencia:</strong> fijación de plazo por el LAJ (apartado 3); si persiste el incumplimiento, remoción del contador y nombramiento de otro."
+             "t": "La aceptación da derecho a cada uno de los interesados a obligar al contador a cumplir su encargo."
             }
            ]
           }
@@ -1198,21 +765,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Fijación de plazo y responsabilidad (apartado 3)",
+         "titulo": "Plazo (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Legitimación:</strong> cualquier interesado."
+             "t": "A instancia de parte, el Letrado de la Administración de Justicia puede fijarle mediante diligencia un plazo para presentar las operaciones."
             },
             {
-             "t": "<strong>Forma:</strong> diligencia de ordenación del LAJ."
+             "t": "Si no las presenta, es responsable de los daños y perjuicios."
             },
             {
-             "t": "<strong>Responsabilidad civil por incumplimiento:</strong> de naturaleza contractual/cuasi-contractual (CC arts. 1101–1103); los daños incluyen demora en obtener el haber, costas adicionales y pérdidas de oportunidad."
-            },
-            {
-             "t": "<strong>Prescripción:</strong> cinco años (CC art. 1964, en redacción dada por la Ley 42/2015)."
+             "t": "Recuérdese el plazo legal máximo de dos meses desde que se iniciaron (art. 786.2)."
             }
            ]
           }
@@ -1221,11 +785,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC arts. 345, 18/2011 (TIC)",
-       "CC arts. 1101–1103, 1718, 1964",
-       "LEC art. 786 (operaciones divisorias)"
+       "LEC art. 345",
+       "LEC art. 786.2"
       ],
-      "claves": "artículo 785 documentación contador autos entrega aceptación plazo operaciones divisorias daños perjuicios inventario avalúo liquidación división caudal diligencia instancia prescripción responsabilidad delegación"
+      "claves": "785 entrega autos documentacion contador peritos aceptacion obligacion encargo plazo diligencia daños perjuicios"
      }
     },
     {
@@ -1240,22 +803,25 @@ Neg.data.register({
        }
       ],
       "titulo": "Práctica de las operaciones divisorias",
-      "resumen": "Ley aplicable (DIPr y derecho interregional), autonomía del testador con límite de legítimas, reglas de colación, inventario, avalúo, liquidación, adjudicación y repercusiones fiscales de la partición.",
+      "resumen": "El contador aplica la ley de la sucesión y las reglas del testador que no perjudiquen las legítimas, procurando evitar la indivisión y la excesiva división de las fincas. Plazo máximo: dos meses desde que inició las operaciones, en un escrito con la relación de bienes, su avalúo y la liquidación, división y adjudicación.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Ley aplicable a las operaciones divisorias",
+         "titulo": "Reglas (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Derecho interregional:</strong> ley de la vecindad civil del causante al tiempo del fallecimiento (CC art. 9.8); p. ej.: vecindad catalana → Codi Civil de Catalunya (arts. 411-1 y ss.); vecindad navarra → Compilación Foral 1/1973."
+             "t": "Ley aplicable a la sucesión del causante (véase la ficha «Base sustantiva»)."
             },
             {
-             "t": "<strong>Derecho internacional privado (Reg. UE 650/2012):</strong> regla general: ley de la residencia habitual del causante al fallecimiento (art. 21); professio iuris: puede elegirse la ley de la nacionalidad (art. 22); aplicable a fallecimientos desde el 17 de agosto de 2015."
+             "t": "Si el testador estableció reglas para el inventario, avalúo, liquidación y división, se atiende a ellas siempre que no perjudiquen las legítimas de los herederos forzosos."
             },
             {
-             "t": "<strong>Autonomía del testador:</strong> puede establecer reglas distintas para inventario, avalúo, liquidación y división (CC arts. 1056 y 1057), siempre que no perjudiquen las legítimas."
+             "t": "Procurará evitar la indivisión y la excesiva división de las fincas. Cosa indivisible o que desmerezca mucho por su división: puede adjudicarse a uno, abonando a los otros el exceso en dinero; pero basta que un heredero pida su venta en pública subasta, con admisión de licitadores extraños, para que así se haga (art. 1062 CC)."
+            },
+            {
+             "t": "Posible igualdad: lotes o adjudicación a cada coheredero de cosas de la misma naturaleza, calidad o especie (art. 1061 CC)."
             }
            ]
           }
@@ -1264,24 +830,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Legítimas y cuota vidual — límites infranqueables",
+         "titulo": "Legítimas (Código Civil común)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Descendientes (CC art. 808):</strong> dos tercios del haber hereditario (legítima estricta: 1/3; mejora: 1/3; libre disposición: 1/3)."
+             "t": "Hijos y descendientes: dos tercios del haber hereditario, de los que uno puede destinarse a mejora (art. 808 CC)."
             },
             {
-             "t": "<strong>Ascendientes (CC art. 809):</strong> mitad (o un tercio si concurre cónyuge viudo)."
+             "t": "Padres y ascendientes: la mitad; un tercio si concurren con el cónyuge viudo (art. 809 CC)."
             },
             {
-             "t": "<strong>Cónyuge viudo (CC arts. 834–840):</strong> usufructo sobre cuota variable según los coherederos concurrentes."
+             "t": "Cónyuge viudo: usufructo, cuya cuantía depende de con quién concurra (arts. 834–840 CC)."
             },
             {
-             "t": "<strong>Principio antiindivisión:</strong> evitar comunidades hereditarias prolongadas (CC arts. 392–406)."
-            },
-            {
-             "t": "<strong>Principio antiparcelación:</strong> evitar excesiva división de fincas; adjudicación de bien indivisible (CC art. 1062): a un heredero con compensación en metálico; sin acuerdo, subasta con admisión de licitadores extraños."
+             "t": "Colación: el heredero forzoso que concurra con otros debe traer a la masa el valor de lo recibido en vida del causante por título lucrativo (art. 1035 CC), salvo dispensa del donante o repudiación del donatario (art. 1036 CC); se colaciona el valor de lo donado al tiempo en que se evalúen los bienes hereditarios (art. 1045 CC)."
             }
            ]
           }
@@ -1290,76 +853,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Colación (CC arts. 1035–1050)",
+         "titulo": "Contenido y plazo (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Obligación:</strong> las donaciones del causante a herederos forzosos se imputan al haber de cada uno para calcular legítimas e hijuelas."
+             "t": "Plazo máximo: dos meses desde que fueron iniciadas."
             },
             {
-             "t": "<strong>Dispensa:</strong> el testador puede dispensar de colacionar (CC art. 1036), pero sin perjuicio de las legítimas de los demás."
-            },
-            {
-             "t": "<strong>Cómputo:</strong> la colación afecta a la masa de cálculo de legítimas (caudal ficticio), no necesariamente al caudal real partible."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Inventario, avalúo, liquidación y adjudicación (apartado 2)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Inventario (activo):</strong> inmuebles, muebles de valor, valores mobiliarios, depósitos bancarios, créditos, participaciones societarias, propiedad intelectual, bienes en el extranjero."
-            },
-            {
-             "t": "<strong>Inventario (pasivo):</strong> deudas del causante, gastos de última enfermedad y entierro (CC art. 902), ISD devengado (Ley 29/1987)."
-            },
-            {
-             "t": "<strong>Caudal neto partible:</strong> activo menos pasivo."
-            },
-            {
-             "t": "<strong>Hijuela de deudas:</strong> parte del caudal reservada para el pago de las obligaciones hereditarias pendientes; no se adjudica a ningún heredero hasta su satisfacción."
-            },
-            {
-             "t": "<strong>Avalúo:</strong> valor real de mercado al momento de la partición (doctrina mayoritaria); inmuebles → perito tasador o valor de referencia catastral (Ley 11/2021); participaciones no cotizadas → auditor; obras de arte → tasador del Ministerio de Cultura; valores cotizados → cotización media en mercado regulado."
-            },
-            {
-             "t": "<strong>Adjudicación:</strong> igualdad cualitativa (CC art. 1061): evitar que una misma hijuela contenga bienes de diferente naturaleza o calidad."
-            },
-            {
-             "t": "<strong>Plazo:</strong> dos meses desde el inicio; ampliable a instancia de parte (art. 785.3)."
-            },
-            {
-             "t": "<strong>Escrito de operaciones:</strong> relación del caudal partible · avalúo · liquidación, división y adjudicación a cada partícipe."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Repercusiones fiscales",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>ISD (Ley 29/1987):</strong> se devenga con el fallecimiento; plazo de autoliquidación: seis meses desde el fallecimiento, prorrogable otros seis (art. 67); gestionado por las CCAA con competencia normativa."
-            },
-            {
-             "t": "<strong>Cierre registral (LH art. 254):</strong> no se practican asientos en el Registro de la Propiedad sin justificar el pago o exención del ISD."
-            },
-            {
-             "t": "<strong>IRPF (LIRPF art. 33.2):</strong> excesos de adjudicación onerosos compensados en metálico tributan como ganancia o pérdida patrimonial."
-            },
-            {
-             "t": "<strong>ITP y AJD (TRLITPAJD art. 7.2.b):</strong> la adjudicación hereditaria estricta está exenta del ITP; los excesos de adjudicación onerosos sí quedan sujetos."
+             "t": "Escrito firmado por el contador con: 1.º relación de los bienes del caudal partible; 2.º su avalúo; 3.º liquidación del caudal, división y adjudicación a cada partícipe."
             }
            ]
           }
@@ -1368,15 +870,11 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC arts. 808–822 (legítimas), 1035–1050 (colación), 1051–1082 (partición)",
-       "Reg. UE 650/2012",
-       "Ley 29/1987 (ISD)",
-       "LIRPF art. 33.2",
-       "TRLITPAJD art. 7.2.b",
-       "LH art. 254",
-       "Ley 11/2021 (catastro)"
+       "CC arts. 806–840",
+       "CC arts. 1035–1050",
+       "CC arts. 1061–1062"
       ],
-      "claves": "artículo 786 operaciones divisorias ley sucesión testador reglas avalúo liquidación división bienes legítimas forzosos indivisión fincas dos meses plazo relación adjudicación partícipes caudal inventario colación gananciales reg 650 vecindad fiscal isd irpf itp catastro"
+      "claves": "786 operaciones divisorias contador ley aplicable reglas testador legitimas indivision fincas inventario avaluo liquidacion adjudicacion dos meses colacion mejora 1061 1062"
      }
     },
     {
@@ -1391,31 +889,22 @@ Neg.data.register({
        }
       ],
       "titulo": "Aprobación de las operaciones divisorias. Oposición a ellas",
-      "resumen": "Traslado y plazo de oposición con sus posibles motivos; aprobación por decreto; comparecencia conciliatoria; tramitación como juicio verbal con sentencia sin efecto de cosa juzgada; suspensión por prejudicialidad penal por cohecho.",
+      "resumen": "Traslado a las partes por diez días para oponerse. Sin oposición, o con la conformidad de todos, el Letrado de la Administración de Justicia aprueba las operaciones por decreto y manda protocolizarlas. Con oposición: comparecencia ante el tribunal en diez días; si no hay acuerdo, juicio verbal y sentencia sin eficacia de cosa juzgada.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Traslado y plazo de oposición (apartado 1)",
+         "titulo": "Traslado (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Traslado:</strong> acto del LAJ que pone en conocimiento de todos los interesados las operaciones presentadas por el contador."
+             "t": "El Letrado de la Administración de Justicia da traslado de las operaciones a las partes y las emplaza por diez días (hábiles, art. 133.2 LEC) para que se opongan."
             },
             {
-             "t": "<strong>Plazo:</strong> diez días hábiles (LEC art. 133)."
+             "t": "Durante el plazo pueden examinar en la Oficina judicial los autos y las operaciones y obtener copias a su costa."
             },
             {
-             "t": "<strong>Derechos durante el plazo:</strong> examen de los autos (Oficina Judicial o expediente electrónico, Ley 18/2011); obtención de copias a su costa."
-            },
-            {
-             "t": "<strong>Forma de la oposición:</strong> escrito firmado por procurador y letrado (LEC arts. 23 y 31); identificación precisa de los puntos impugnados y razones en que se funda."
-            },
-            {
-             "t": "<strong>Posibles motivos:</strong> errores en el inventario (omisión/inclusión indebida de bienes o deudas); discrepancias en el avalúo; pasivo incorrecto; vulneración de legítimas o cuota vidual; incumplimiento de las reglas del testador; defectos formales; omisión de donaciones colacionables."
-            },
-            {
-             "t": "<strong>Oposición extemporánea o defectuosa:</strong> el LAJ la tiene por no formulada y dicta decreto de aprobación."
+             "t": "La oposición se formula por escrito, expresando los puntos de las operaciones a que se refiere y las razones en que se funda."
             }
            ]
           }
@@ -1429,13 +918,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Supuestos:</strong> transcurso del plazo sin oposición; o manifestación expresa de conformidad de todos."
+             "t": "Pasado el plazo sin oposición, o en cuanto todos manifiesten su conformidad, el Letrado de la Administración de Justicia dicta decreto aprobando las operaciones y mandando protocolizarlas."
             },
             {
-             "t": "<strong>Resolución:</strong> decreto del LAJ (LEC art. 206.2.º) que aprueba las operaciones y ordena su protocolización."
-            },
-            {
-             "t": "<strong>Protocolización notarial (LN art. 17; RN art. 144):</strong> las operaciones se incorporan al protocolo como documento público (CC art. 1216); título formal para la inscripción en el Registro de la Propiedad (LH arts. 14 y 16) y en el Registro Mercantil si hay participaciones societarias (RRM art. 175)."
+             "t": "Para inscribir en el Registro las adjudicaciones concretas hace falta escritura pública o sentencia firme (art. 14 LH): de ahí la protocolización notarial."
             }
            ]
           }
@@ -1444,18 +930,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Comparecencia ante el Tribunal (apartado 3)",
+         "titulo": "Comparecencia (apartados 3 y 4)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Convocados:</strong> contador y partes."
+             "t": "Formalizada la oposición en tiempo, el Letrado de la Administración de Justicia convoca al contador y a las partes a una comparecencia ante el tribunal, dentro de los diez días siguientes."
             },
             {
-             "t": "<strong>Plazo:</strong> dentro de los diez días siguientes a la formalización de la oposición."
-            },
-            {
-             "t": "<strong>Carácter conciliatorio:</strong> se busca que los interesados alcancen un acuerdo sobre los puntos controvertidos."
+             "t": "Si todos se ponen de acuerdo, se ejecuta lo acordado: el contador hace las reformas convenidas y se aprueban por decreto como en el apartado 2."
             }
            ]
           }
@@ -1464,15 +947,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Conformidad en la comparecencia (apartado 4)",
+         "titulo": "Sin conformidad: juicio verbal (apartado 5)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Efecto:</strong> el contador introduce las reformas convenidas; el LAJ dicta decreto de aprobación (apartado 2)."
+             "t": "El tribunal oye a las partes, admite las pruebas que no sean impertinentes o inútiles y continúa por los trámites del juicio verbal (arts. 437 y ss. LEC)."
             },
             {
-             "t": "El acuerdo tiene valor de transacción procesal (LEC art. 19.2) y es ejecutable como tal."
+             "t": "La sentencia se lleva a efecto según el art. 788, pero no tiene eficacia de cosa juzgada: los interesados pueden hacer valer sus derechos sobre los bienes adjudicados en el juicio ordinario que corresponda."
+            },
+            {
+             "t": "Recurso: apelación (art. 455 LEC)."
             }
            ]
           }
@@ -1481,44 +967,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Falta de conformidad: juicio verbal (apartado 5)",
+         "titulo": "Cohecho en el avalúo (apartado 6)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Trámite:</strong> el Tribunal oye a las partes y admite las pruebas no impertinentes ni inútiles; sustanciación conforme al juicio verbal (LEC arts. 437–447)."
-            },
-            {
-             "t": "<strong>Sentencia:</strong> se ejecuta conforme al artículo 788 LEC."
-            },
-            {
-             "t": "<strong>Sin efecto de cosa juzgada material</strong> (excepción a LEC art. 222): los interesados conservan la acción en el juicio ordinario para hacer valer sus derechos sobre los bienes adjudicados; responde a la naturaleza sumaria del cauce y a la preferencia por la efectividad de la partición."
-            },
-            {
-             "t": "<strong>Recursos:</strong> apelable ante la Audiencia Provincial (LEC art. 455); la apelación no suspende automáticamente la ejecución salvo medida cautelar."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Suspensión por causa penal — cohecho en el avalúo (apartado 6)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Supuesto:</strong> actuaciones suspendidas conforme al artículo 40 LEC (prejudicialidad penal) por causa que investigue cohecho (CP arts. 419–427) en el avalúo de los bienes hereditarios."
-            },
-            {
-             "t": "<strong>Alzamiento de la suspensión:</strong> sin esperar resolución firme penal, en cuanto los interesados presenten un nuevo avalúo de común acuerdo, prescindiendo del impugnado."
-            },
-            {
-             "t": "<strong>Resolución:</strong> sentencia con arreglo al nuevo avalúo."
-            },
-            {
-             "t": "<strong>Finalidad:</strong> evitar la parálisis indefinida de la herencia cuando los interesados han llegado a un acuerdo sobre valoración alternativa."
+             "t": "Si las actuaciones se suspendieron por prejudicialidad penal (art. 40 LEC) por una causa en que se investigue un cohecho cometido en el avalúo, el Letrado de la Administración de Justicia alza la suspensión, sin esperar a que la causa termine, en cuanto los interesados presenten de común acuerdo otro avalúo, y se dicta sentencia conforme a él."
             }
            ]
           }
@@ -1527,12 +981,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC arts. 19.2, 23, 31, 40, 133, 206, 222, 437–447, 455",
-       "LN art. 17; RN art. 144",
-       "LH arts. 14, 16",
-       "CP arts. 419–427 (cohecho)"
+       "LEC arts. 40, 133, 437, 455",
+       "LH art. 14"
       ],
-      "claves": "artículo 787 aprobación operaciones divisorias oposición traslado diez días comparecencia tribunal juicio verbal sentencia cosa juzgada conformidad cohecho avalúo suspensión penal decreto protocolización reformas apelación recurso motivos impugnación prejudicialidad"
+      "claves": "787 traslado diez dias oposicion escrito decreto aprobacion protocolizacion comparecencia juicio verbal sentencia cosa juzgada cohecho avaluo suspension"
      }
     },
     {
@@ -1547,45 +999,19 @@ Neg.data.register({
        }
       ],
       "titulo": "Entrega de los bienes adjudicados a cada heredero",
-      "resumen": "Entrega de bienes y títulos tras la aprobación definitiva, inscripción registral, testimonio de haber y adjudicación, y excepción erga omnes por oposición de acreedores privilegiados hasta pago o garantía.",
+      "resumen": "Aprobadas definitivamente las particiones, el Letrado de la Administración de Justicia entrega a cada interesado lo adjudicado y los títulos de propiedad, con nota de la adjudicación. Protocolizadas, da a quien lo pida testimonio de su haber y adjudicación. Si un acreedor del art. 782.4 se opuso, no se entrega nada hasta que esté pagado o garantizado a su satisfacción.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Entrega de bienes y títulos (apartado 1)",
+         "titulo": "Entrega (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Presupuesto:</strong> aprobación definitiva de las particiones (decreto del LAJ, art. 787.2; o sentencia firme, art. 787.5)."
+             "t": "Presupuesto: particiones aprobadas definitivamente (decreto del art. 787.2 o sentencia del art. 787.5)."
             },
             {
-             "t": "<strong>Órgano:</strong> Letrado de la Administración de Justicia."
-            },
-            {
-             "t": "<strong>Formalidad previa:</strong> el actuario pone en los títulos de propiedad notas expresivas de la adjudicación (valor de documento público; base para inscripción registral)."
-            },
-            {
-             "t": "<strong>Entrega según la naturaleza del bien:</strong>",
-             "sub": [
-              {
-               "t": "Inmuebles: escritura de protocolización; inscripción en el Registro de la Propiedad (LH arts. 14, 16 y 80)."
-              },
-              {
-               "t": "Muebles de valor: entrega material o instrumental (llaves, títulos representativos)."
-              },
-              {
-               "t": "Participaciones en SL: anotación en el libro de socios (LSC art. 104)."
-              },
-              {
-               "t": "Acciones en SA: endoso o transferencia del título (LSC arts. 120–123)."
-              },
-              {
-               "t": "Valores cotizados: transferencia en IBERCLEAR (sistema de registro y liquidación)."
-              }
-             ]
-            },
-            {
-             "t": "<strong>Inscripción en el Registro de la Propiedad:</strong> potestativa (LH art. 319) pero imprescindible para oponibilidad frente a terceros (LH art. 32); requiere previa liquidación del ISD (LH art. 254: cierre registral)."
+             "t": "El Letrado de la Administración de Justicia entrega a cada interesado lo adjudicado y los títulos de propiedad, poniendo antes en estos notas expresivas de la adjudicación."
             }
            ]
           }
@@ -1594,21 +1020,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Testimonio de haber y adjudicación (apartado 2)",
+         "titulo": "Testimonio (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Presupuesto:</strong> protocolización de las particiones."
+             "t": "Protocolizadas las particiones, se da a los partícipes que lo pidan testimonio de su haber y adjudicación."
             },
             {
-             "t": "<strong>Legitimados:</strong> los partícipes que lo soliciten."
-            },
-            {
-             "t": "<strong>Contenido:</strong> testimonio del haber y la adjudicación respectivos del solicitante."
-            },
-            {
-             "t": "<strong>Utilidad:</strong> acredita el derecho ante entidades financieras, administraciones y registros; sirve de título para la liquidación del ISD; puede sustituir provisionalmente al título registral."
+             "t": "Inscripción en el Registro de la Propiedad: los títulos no inscritos no perjudican a tercero (art. 32 LH), y antes hay que acreditar el pago o la presentación de los impuestos que devengue el acto (art. 254 LH)."
             }
            ]
           }
@@ -1617,21 +1037,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Excepción a la entrega: acreedores del artículo 782.4 (apartado 3)",
+         "titulo": "Oposición de acreedores (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Efecto:</strong> no se entrega ningún bien a ningún heredero ni legatario."
-            },
-            {
-             "t": "<strong>Alcance erga omnes:</strong> afecta a todos los adjudicatarios, no solo al deudor del acreedor opuesto."
-            },
-            {
-             "t": "<strong>Condición de levantamiento:</strong> pago íntegro o garantía suficiente a satisfacción de los acreedores (fianza personal, hipoteca, prenda, aval bancario o cualquier otra que el tribunal estime bastante)."
-            },
-            {
-             "t": "<strong>Fundamento:</strong> responsabilidad hereditaria del heredero (CC art. 1003: acepta pura y simplemente → responde de las deudas hereditarias con todos sus bienes presentes y futuros)."
+             "t": "Si algún acreedor de la herencia hizo la petición del art. 782.4, no se entrega ningún bien a ningún heredero ni legatario hasta que esos acreedores estén completamente pagados o garantizados a su satisfacción."
             }
            ]
           }
@@ -1640,13 +1051,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LH arts. 14, 16, 32, 80, 254, 319",
-       "LSC arts. 104, 120–123",
-       "LEC art. 782.4 (oposición acreedores)",
-       "CC art. 1003",
-       "Ley 29/1987 ISD"
+       "LEC art. 782.4",
+       "LH arts. 14, 32, 254"
       ],
-      "claves": "artículo 788 entrega bienes adjudicados heredero protocolización títulos propiedad actuario testimonio partícipes acreedores pago garantía inscripción registro propiedad cierre registral isd fiscal iberclear lsc participaciones"
+      "claves": "788 entrega bienes adjudicados titulos notas adjudicacion testimonio haber protocolizacion acreedores pagados garantizados registro"
      }
     },
     {
@@ -1661,22 +1069,22 @@ Neg.data.register({
        }
       ],
       "titulo": "Terminación del procedimiento por acuerdo de los coherederos",
-      "resumen": "Expresión del principio dispositivo. En cualquier estado del juicio los interesados pueden separarse y acordar libremente; la solicitud unánime obliga al LAJ a sobreseer y poner los bienes a su disposición.",
+      "resumen": "En cualquier estado del juicio los interesados pueden separarse de su seguimiento y adoptar los acuerdos que estimen convenientes. Si lo piden de común acuerdo, el Letrado de la Administración de Justicia debe sobreseer y poner los bienes a disposición de los herederos.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Naturaleza y fundamento",
+         "titulo": "Separación y acuerdo",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Principio dispositivo (LEC art. 19):</strong> las partes pueden disponer del objeto del proceso en cualquier momento."
+             "t": "Manifestación del poder de disposición de las partes (art. 19 LEC)."
             },
             {
-             "t": "<strong>Autonomía de la voluntad (CC arts. 1255 y 1058):</strong> los herederos pueden formalizar su acuerdo extrajudicialmente sin necesidad de continuar el procedimiento."
+             "t": "Formas habituales del acuerdo: partición convencional (art. 1058 CC), transacción (arts. 1809 y ss. CC) o acuerdo alcanzado en mediación (Ley 5/2012), que formalizado ante Notario es título ejecutivo (art. 25 Ley 5/2012)."
             },
             {
-             "t": "<strong>Solución extrajudicial sobrevenida:</strong> los herederos llegan a un acuerdo privado durante el procedimiento, que queda sin objeto."
+             "t": "Para negociar, las partes pueden pedir la suspensión del proceso, que acuerda el Letrado de la Administración de Justicia por decreto por un máximo de sesenta días (art. 19.4 LEC)."
             }
            ]
           }
@@ -1685,49 +1093,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Facultad de separación (párrafo 1)",
+         "titulo": "Sobreseimiento",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Momento:</strong> en cualquier estado del juicio (antes de la Junta; durante las operaciones; tras la presentación de estas; durante la tramitación de la oposición; en fase del juicio verbal)."
+             "t": "Requisito: petición de común acuerdo de los interesados."
             },
             {
-             "t": "<strong>Formas del acuerdo alcanzado:</strong>",
-             "sub": [
-              {
-               "t": "Partición convencional (CC art. 1058): escritura notarial de partición extrajudicial."
-              },
-              {
-               "t": "Transacción (CC arts. 1809–1819): elevable a escritura pública."
-              },
-              {
-               "t": "Acuerdo de mediación (Ley 5/2012): eleva el acuerdo a escritura pública y surte efectos de título ejecutivo (art. 25 Ley 5/2012)."
-              },
-              {
-               "t": "Protocolo familiar: instrumento para regular la transmisión y gobierno de la empresa familiar integrada en el caudal."
-              }
-             ]
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Sobreseimiento a petición conjunta (párrafo 2)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Requisito:</strong> solicitud de todos los interesados de común acuerdo; si hay menores o ausentes representados por el MF, se requiere la conformidad o ausencia de oposición del MF."
-            },
-            {
-             "t": "<strong>Obligación del LAJ:</strong> deberá sobreseer el juicio y poner los bienes a disposición de los herederos (actuación reglada, no discrecional)."
-            },
-            {
-             "t": "<strong>Efectos del sobreseimiento:</strong> decreto de sobreseimiento; bienes a disposición de los herederos para practicar la partición extrajudicial; costas devengadas hasta ese momento a cargo de los interesados (LEC arts. 394–398); no impide iniciar un nuevo procedimiento judicial si el acuerdo fracasa."
+             "t": "El Letrado de la Administración de Justicia debe sobreseer el juicio y poner los bienes a disposición de los herederos."
             }
            ]
           }
@@ -1736,101 +1110,11 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC arts. 19, 237, 394–398",
-       "CC arts. 1058, 1255, 1809–1819",
-       "Ley 5/2012 de mediación (art. 25)",
-       "LJV arts. 66–68"
+       "LEC art. 19",
+       "CC arts. 1058, 1809",
+       "Ley 5/2012 art. 25"
       ],
-      "claves": "artículo 789 terminación acuerdo coherederos sobreseimiento bienes disposición interesados separación seguimiento autonomía voluntad transacción mediación extrajudicial notarial protocolo familiar costas"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Figuras",
-      "categoria": "c3",
-      "tono": "c3",
-      "etiquetas": [
-       {
-        "texto": "Responsabilidad",
-        "tono": "t-aviso"
-       }
-      ],
-      "titulo": "Responsabilidad del Contador-Partidor",
-      "resumen": "Naturaleza contractual/extracontractual, supuestos de responsabilidad, plazos de prescripción y diferencias según la forma de designación.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Naturaleza de la responsabilidad",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Contador testamentario:</strong> predominantemente contractual (encargo testamentario, art. 1057 CC)."
-            },
-            {
-             "t": "<strong>Contador designado por sorteo (art. 784 LEC):</strong> mixta: contractual (aceptación del cargo) y extracontractual (asimilado al perito judicial)."
-            },
-            {
-             "t": "<strong>Contador dativo (art. 1057 CC, LJV):</strong> intermedia; responsabilidad profesional."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Supuestos de responsabilidad",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Negligencia en el inventario:</strong> omisión de bienes (STS 1.ª 735/2017)."
-            },
-            {
-             "t": "<strong>Error en el avalúo:</strong> valoración incorrecta que distorsiona las operaciones (STS 1.ª 562/2020: criterio del valor de mercado)."
-            },
-            {
-             "t": "<strong>Omisión de legados:</strong> incumplimiento de la obligación fundamental de satisfacer legados antes de la adjudicación."
-            },
-            {
-             "t": "<strong>Vulneración de legítimas:</strong> error en el cálculo de porciones legitimarias (arts. 814-815 CC)."
-            },
-            {
-             "t": "<strong>Incumplimiento de instrucciones testamentarias:</strong> siempre que no perjudiquen legítimas."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Plazo de prescripción",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Contractual:</strong> 5 años (art. 1964 CC) desde que se conoció el daño y la identidad del responsable."
-            },
-            {
-             "t": "<strong>Extracontractual:</strong> 5 años (art. 1968.2 CC) desde que se produjo el daño."
-            },
-            {
-             "t": "Debe compatibilizarse con plazos específicos de impugnación de la partición (rescisión por lesión: 4 años, art. 1076 CC)."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "CC arts. 1902, 1964, 1968.2",
-       "STS 562/2020, STS 735/2017",
-       "LEC arts. 335.2, 784"
-      ],
-      "claves": "responsabilidad contador partidor negligencia inventario avalúo omisión legados legítima prescripción cinco años art 1964 CC art 1902 CC"
+      "claves": "789 terminacion acuerdo coherederos sobreseimiento bienes disposicion herederos mediacion transaccion suspension sesenta dias"
      }
     },
     {
@@ -1844,23 +1128,20 @@ Neg.data.register({
         "tono": "t-ok"
        }
       ],
-      "titulo": "Vías Alternativas a la División Judicial",
-      "resumen": "Partición testamentaria, contador-partidor dativo, partición notarial, mediación (Ley 36/2006) y arbitraje (Ley 60/2003).",
+      "titulo": "Vías alternativas a la división judicial",
+      "resumen": "Partición hecha por el testador, por contador-partidor testamentario o dativo, o por los herederos de común acuerdo; mediación y arbitraje testamentario.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Partición testamentaria (art. 1056 CC)",
+         "titulo": "Partición por el testador (art. 1056 CC)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El testador puede realizar la partición por acto entre vivos o en testamento."
+             "t": "Por acto entre vivos o de última voluntad; se pasa por ella en cuanto no perjudique la legítima."
             },
             {
-             "t": "Pasa por ella si no perjudica la legítima de los herederos forzosos."
-            },
-            {
-             "t": "Puede preservar indivisa una explotación y pagar la legítima en metálico (Ley 7/2003)."
+             "t": "Para conservar una empresa o explotación puede adjudicarla a uno y ordenar que se pague en metálico la legítima de los demás (art. 1056, párrafo segundo, CC)."
             }
            ]
           }
@@ -1869,15 +1150,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Contador-partidor dativo (art. 1057 CC)",
+         "titulo": "Contador-partidor testamentario y dativo (art. 1057 CC)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Designado por Notario o Secretario judicial a petición del 50% del haber hereditario."
+             "t": "El testador puede encomendar la partición a cualquier persona que no sea coheredero."
             },
             {
-             "t": "Regulado en la LJV (arts. 88-92): vía desjudicializada que agiliza el proceso."
+             "t": "Dativo: si no hay testamento, contador designado o el cargo está vacante, lo nombra el Letrado de la Administración de Justicia (art. 92 LJV) o el Notario (art. 66 LN), a petición de herederos y legatarios que representen al menos el 50 % del haber hereditario y con citación de los demás."
+            },
+            {
+             "t": "La partición del contador dativo necesita aprobación (del Letrado de la Administración de Justicia o del Notario) salvo confirmación expresa de todos los herederos y legatarios (art. 92.1.c LJV; art. 66.1.d LN)."
+            },
+            {
+             "t": "En estos expedientes no son preceptivos abogado ni procurador si el haber hereditario es inferior a 6.000 € (art. 92.2 LJV)."
             }
            ]
           }
@@ -1886,15 +1173,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Partición notarial (arts. 66 bis y 66 ter LN)",
+         "titulo": "Partición convencional (art. 1058 CC)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Cuando todos los herederos están de acuerdo, pueden otorgar escritura pública de partición ante Notario."
-            },
-            {
-             "t": "Produce título inscribible directamente en el Registro de la Propiedad."
+             "t": "Herederos mayores con libre administración, de común acuerdo; se formaliza normalmente en escritura pública, título inscribible (art. 14 LH)."
             }
            ]
           }
@@ -1903,35 +1187,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Mediación (Ley 36/2006)",
+         "titulo": "Mediación y arbitraje",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Aplicable a conflictos sucesorios. El tribunal puede suspender el procedimiento por ≤ 60 días (art. 19)."
+             "t": "Mediación: Ley 5/2012; el acuerdo formalizado ante Notario es título ejecutivo (art. 25)."
             },
             {
-             "t": "El acuerdo de mediación elevado a escritura pública tiene eficacia de título ejecutivo (art. 25)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Arbitraje (Ley 60/2003)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "La distribución patrimonial es arbitrable (materia de libre disposición)."
-            },
-            {
-             "t": "No es arbitrable la determinación de quién es heredero (cuestión de estado)."
-            },
-            {
-             "t": "El laudo tiene la misma eficacia que la sentencia judicial firme (art. 37)."
+             "t": "Arbitraje testamentario: válido para diferencias entre herederos no forzosos o legatarios sobre la distribución o administración de la herencia (art. 10 Ley 60/2003); el laudo produce efectos de cosa juzgada (art. 43)."
             }
            ]
           }
@@ -1940,528 +1204,13 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC arts. 1056-1058",
-       "LJV arts. 88-92",
-       "LN arts. 66 bis, 66 ter",
-       "Ley 36/2006",
-       "Ley 60/2003"
+       "CC arts. 1056–1058",
+       "LJV art. 92",
+       "LN art. 66",
+       "Ley 5/2012",
+       "Ley 60/2003 arts. 10, 43"
       ],
-      "claves": "vías alternativas partición testamentaria art 1056 CC contador dativo notario art 1057 CC partición notarial mediación arbitraje ley 60/2003"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Plazos / Fiscal",
-      "categoria": "c4",
-      "tono": "c4",
-      "etiquetas": [
-       {
-        "texto": "Tributario",
-        "tono": "t-plazo"
-       }
-      ],
-      "titulo": "Tratamiento Fiscal de la Herencia y la Partición",
-      "resumen": "ISD, plusvalía municipal (IIVTNU), IRPF, ITP-AJD y cierre registral. Heterogeneidad autonómica y repercusión en las operaciones divisorias.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Impuesto de Sucesiones y Donaciones (ISD)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Ley 29/1987:</strong> devengo al momento del fallecimiento (art. 24)."
-            },
-            {
-             "t": "<strong>Plazo:</strong> 6 meses desde el fallecimiento, prorrogables 6 más (art. 67/68)."
-            },
-            {
-             "t": "<strong>Gestión:</strong> cedido a las CCAA; gran heterogeneidad en bonificaciones (Andalucía, Madrid, C. Valenciana: ~99% para descendientes; Asturias, Cataluña: tipos más elevados)."
-            },
-            {
-             "t": "<strong>Cierre registral (LH art. 254):</strong> sin acreditar pago/exención, no se practican asientos registrales."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Plusvalía municipal (IIVTNU)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Grava el incremento de valor de terrenos de naturaleza urbana (RD-Leg. 2/2004, arts. 104-110)."
-            },
-            {
-             "t": "Sujeto pasivo: causahabiente (adjudicatario del inmueble)."
-            },
-            {
-             "t": "Plazo habitual: 6 meses desde el fallecimiento (varía por Ayuntamiento)."
-            },
-            {
-             "t": "STS (Pleno) 2680/2019: declaró inconstitucional el método de cálculo cuando no existe incremento real de valor."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "IRPF e ITP-AJD",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>IRPF (art. 33.2 LIRPF):</strong> excesos de adjudicación onerosos compensados en metálico tributan como ganancia/pérdida patrimonial."
-            },
-            {
-             "t": "<strong>ITP-AJD (art. 7.2.b TRLITPAJD):</strong> adjudicación hereditaria estricta exenta; excesos onerosos sujetos."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "Ley 29/1987 (ISD)",
-       "LH art. 254",
-       "LIRPF art. 33.2",
-       "TRLITPAJD art. 7.2.b",
-       "RD-Leg. 2/2004 (IIVTNU)"
-      ],
-      "claves": "tratamiento fiscal ISD impuesto sucesiones donaciones ley 29/1987 plusvalía municipal IIVTNU IRPF ITP AJD cierre registral art 254 LH bonificaciones autonómicas"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Conexiones",
-      "categoria": "c6",
-      "tono": "c6",
-      "etiquetas": [
-       {
-        "texto": "Jurisprudencia",
-        "tono": "t-info"
-       }
-      ],
-      "titulo": "Jurisprudencia Clave del Tribunal Supremo",
-      "resumen": "Sentencias de referencia sobre valoración de bienes, legítima, colación, lesión y efecto declarativo de la partición.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "STS 562/2020 — Valoración de bienes",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Criterio preferente: <strong>valor de mercado</strong> (precio entre partes razonables en condiciones de libre competencia)."
-            },
-            {
-             "t": "Valoraciones fiscales/catastrales son meramente indiciarias y no vinculan al contador ni al Juzgado."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "STS 321/2019 — Legítima y partición testamentaria",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Las reglas testamentarias no pueden perjudicar la legítima (art. 786.1 LEC + art. 806 CC)."
-            },
-            {
-             "t": "El contador debe inaplicar las instrucciones testamentarias que vulneren porciones legitimarias."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "STS 148/2018 — Colación de donaciones",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Valor a colacionar: el que tenían los bienes al tiempo de la donación, con actualización monetaria hasta la partición (art. 1037 CC)."
-            },
-            {
-             "t": "No se colaciona el valor de mercado al fallecimiento, salvo disposición expresa en contrario."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "STS 735/2017 — Lesión en la partición",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Interpretación restrictiva de la acción de rescisión por lesión (art. 1074 CC)."
-            },
-            {
-             "t": "La lesión debe ser real y efectiva, comparando el valor de lo adjudicado a cada heredero (no con el valor total de la herencia)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "STS 422/2016 — Efecto declarativo (art. 1068 CC)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "La partición no transmite la propiedad, sino que <strong>declara</strong> una titularidad que se remonta al fallecimiento."
-            },
-            {
-             "t": "Cargas y gravámenes al tiempo del fallecimiento se transmiten a los adjudicatarios proporcionalmente a sus cuotas."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "STS 562/2020",
-       "STS 321/2019",
-       "STS 148/2018",
-       "STS 735/2017",
-       "STS 422/2016"
-      ],
-      "claves": "jurisprudencia tribunal supremo STS 562 2020 STS 321 2019 STS 148 2018 STS 735 2017 STS 422 2016 valoración legítima colación lesión efecto declarativo"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Conexiones",
-      "categoria": "c6",
-      "tono": "c6",
-      "etiquetas": [
-       {
-        "texto": "Foral",
-        "tono": "t-ok"
-       }
-      ],
-      "titulo": "La Partición en los Derechos Forales",
-      "resumen": "Peculiaridades de Cataluña, País Vasco, Aragón, Galicia, Navarra, C. Valenciana y Baleares en materia de legítima, mejora y partición.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Cataluña (Ley 10/2008)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Legítima catalana: solo protege a descendientes y, a falta de éstos, al cónyuge viudo. Ascendientes no son legitimarios."
-            },
-            {
-             "t": "Responsabilidad intra vires (con los bienes de la herencia). Cónyuge: usufructo de la cuarta parte con descendientes."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "País Vasco (Ley 5/2015)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Legítima amplia: comprende bienes familiares (vivienda, ajuar, explotación agrícola) especialmente protegidos."
-            },
-            {
-             "t": "Partición por testamento, escritura pública o contador dativo ante Notario."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Aragón (Decreto Legislativo 1/2011)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Partición directa: el testador puede designar directamente los bienes de cada heredero sin contador."
-            },
-            {
-             "t": "Legítima sobre el relictum (no sobre relictum + donaciones)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Navarra (Fuero Nuevo)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Legítima más restringida de España: solo sobre el relictum (no incluye donaciones)."
-            },
-            {
-             "t": "Amplia porción disponible; mejora foral con régimen propio."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Galicia, C. Valenciana y Baleares",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Galicia (Ley 2/2006):</strong> legítima amplia (2/3), protección de vivienda y explotación familiar."
-            },
-            {
-             "t": "<strong>C. Valenciana (Ley 5/2006):</strong> legítima amplísima (2/3 para descendientes); cónyuge con usufructo sobre tercio de libre disposición."
-            },
-            {
-             "t": "<strong>Baleares:</strong> sistema diversificado por islas (Mallorca, Menorca, Ibiza-Formentera) con legítimas y posesiones históricas propias."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "CC art. 9.8",
-       "Ley 10/2008 (Cat)",
-       "Ley 5/2015 (PV)",
-       "DL 1/2011 (Aragón)",
-       "Ley 2/2006 (Gal)",
-       "Ley 5/2006 (CV)"
-      ],
-      "claves": "derechos forales cataluña país vasco aragón galicia navarra baleares comunidad valenciana legítima foral partición foral"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Artículos LEC",
-      "categoria": "c1",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Administración",
-        "tono": "t-nota"
-       }
-      ],
-      "titulo": "Administración del Caudal Hereditario (Arts. 797-805 LEC)",
-      "resumen": "Régimen de administración judicial del caudal: posesión del cargo, representación, cuentas, conservación y retribución.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Art. 797 — Posesición del cargo",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "El LAJ pone al administrador en posesión, dándole testimonio o copia auténtica del nombramiento."
-            },
-            {
-             "t": "Inscribible en el Registro de la Propiedad el estado de administración (RD-ley 6/2023)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 798 — Representación de la herencia",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "El administrador representa a la herencia en pleitos pendientes hasta la declaración de herederos."
-            },
-            {
-             "t": "Tras la aceptación, solo representa en lo relativo a administración, custodia y conservación."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Arts. 799-800 — Rendición de cuentas",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Periódica:</strong> en plazos proporcionados, máximo 1 año (art. 799). Inspeccionable por cualquier interesado."
-            },
-            {
-             "t": "<strong>Final:</strong> al cesar en el cargo; sin oposición → decreto aprobando y liberando caución; con oposición → posible vista (juicio verbal)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 801 — Conservación de bienes",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Obligación de conservar sin menoscabo y procurar rentas/productos."
-            },
-            {
-             "t": "Reparaciones ordinarias por el administrador; extraordinarias: conocimiento al Juzgado, comparecencia con interesados, reconocimiento pericial y presupuesto."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 803 — Prohibición de enajenar",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Prohibición general de enajenar o gravar bienes inventariados."
-            },
-            {
-             "t": "Excepciones: bienes deteriorables, de costosa conservación, frutos con circunstancias ventajosas, venta necesaria para pago de deudas. Venta por pública subasta."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 804 — Retribución",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Comisiones: 2% sobre venta de frutos/bienes muebles; 1% sobre bienes raíces/cobro de valores; 0,5% sobre efectos públicos; 4-10% sobre demás ingresos."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "LEC arts. 797-805",
-       "RD-ley 6/2023"
-      ],
-      "claves": "administración caudal hereditario arts 797 805 LEC posesión cargo representación herencia rendición cuentas conservación bienes retribución administrador"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Conexiones",
-      "categoria": "c6",
-      "tono": "c6",
-      "etiquetas": [
-       {
-        "texto": "Sustantivo",
-        "tono": "t-info"
-       }
-      ],
-      "titulo": "Materias Conexas: Colación, Mejora y Legítima",
-      "resumen": "Operaciones previas y límites infranqueables que el contador debe observar al practicar las operaciones divisorias.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Colación (arts. 1035-1040 CC)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Obligación de los legitimarios (y otros llamados a la sucesión) de traer a la masa hereditaria lo recibido por donación del causante."
-            },
-            {
-             "t": "Imputación al haber de cada uno para calcular legítimas e hijuelas."
-            },
-            {
-             "t": "Dispensa posible por el testador (art. 1036), pero sin perjuicio de las legítimas de los demás."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Mejora (arts. 808-822 CC)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Facultad del testador de disponer a favor de uno o varios herederos forzosos."
-            },
-            {
-             "t": "Imputación preferente a la porción libre y subsidiariamente a la legítima (art. 808)."
-            },
-            {
-             "t": "Cónyuge viudo: usufructo de tercio de mejora (art. 812)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Legítima (arts. 807 y ss. CC)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Porción de la herencia de la que el testador no puede disponer libremente."
-            },
-            {
-             "t": "Herederos forzosos: descendientes; a falta de éstos, ascendientes; y el cónyuge sobreviviente."
-            },
-            {
-             "t": "Vulneración → acción de reducción (arts. 814-815 CC)."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "CC arts. 1035-1040",
-       "CC arts. 807-822"
-      ],
-      "claves": "materias conexas colación art 1035 CC mejora art 808 CC legítima art 807 CC derechos forzosos porción disponible"
+      "claves": "alternativas particion testador contador partidor testamentario dativo 1057 50 por ciento letrado notario particion convencional mediacion arbitraje testamentario"
      }
     },
     {
@@ -2475,17 +1224,17 @@ Neg.data.register({
         "tono": "t-aviso"
        }
       ],
-      "titulo": "Rescisión e Impugnación de la Partición (CC)",
-      "resumen": "Causas de rescisión, acción por lesión, plazos, nulidad y complemento de la partición. Coherencia con la ausencia de cosa juzgada del art. 787.5 LEC.",
+      "titulo": "Rescisión e impugnación de la partición (CC)",
+      "resumen": "Las particiones se rescinden por las mismas causas que las obligaciones y por lesión en más de la cuarta parte. Coherente con la falta de cosa juzgada de la sentencia del art. 787.5 LEC.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Rescisión por causas de obligaciones (art. 1073 CC)",
+         "titulo": "Causas de las obligaciones (art. 1073 CC)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Error, dolo, violencia o intimidación. Acción independiente del procedimiento de división."
+             "t": "Error, dolo, violencia o intimidación: la acción de anulación caduca a los cuatro años (art. 1301 CC)."
             }
            ]
           }
@@ -2494,21 +1243,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Rescisión por lesión (art. 1074 CC)",
+         "titulo": "Lesión (arts. 1074–1078 CC)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Lesión en más de la cuarta parte, atendido el valor de las cosas cuando fueron adjudicadas."
+             "t": "Lesión en más de la cuarta parte, atendido el valor de las cosas cuando fueron adjudicadas (art. 1074 CC)."
             },
             {
-             "t": "Plazo: 4 años desde la partición (art. 1076 CC)."
+             "t": "La acción dura cuatro años desde que se hizo la partición (art. 1076 CC)."
             },
             {
-             "t": "El demandado puede optar entre indemnizar o hacer nueva partición (art. 1077 CC)."
+             "t": "El demandado puede optar entre indemnizar o consentir una nueva partición (art. 1077 CC)."
             },
             {
-             "t": "Pierde la acción quien haya enajenado bienes inmuebles adjudicados (art. 1078 CC)."
+             "t": "No puede ejercitarla quien haya enajenado el todo o una parte considerable de los inmuebles que se le adjudicaron (art. 1078 CC)."
             }
            ]
           }
@@ -2517,18 +1266,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Otras causas",
+         "titulo": "Otros supuestos",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Omisión de bienes (art. 1079 CC):</strong> no da lugar a rescisión, sino a complemento o adición."
+             "t": "Omisión de bienes: no se rescinde, se completa o adiciona (art. 1079 CC)."
             },
             {
-             "t": "<strong>Partición con preterido (art. 1080 CC):</strong> no se rescinde salvo mala fe o dolo; obligación de pagar la legítima."
+             "t": "Preterición de un heredero: no se rescinde salvo mala fe o dolo de los demás, que deben pagarle su parte (art. 1080 CC)."
             },
             {
-             "t": "<strong>Partición con persona no heredera (art. 1081 CC):</strong> nula de pleno derecho."
+             "t": "Partición hecha con quien se creyó heredero sin serlo: nula (art. 1081 CC)."
             }
            ]
           }
@@ -2537,10 +1286,11 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC arts. 1073-1081",
+       "CC arts. 1073–1081",
+       "CC art. 1301",
        "LEC art. 787.5"
       ],
-      "claves": "rescisión impugnación partición art 1073 CC art 1074 CC lesión cuarta parte art 1076 CC cuatro años art 1079 CC omisión bienes art 1081 CC nulidad"
+      "claves": "rescision lesion cuarta parte cuatro años 1074 1076 1077 1078 omision bienes 1079 preterido 1080 nula 1081"
      }
     },
     {
@@ -2554,8 +1304,8 @@ Neg.data.register({
         "tono": "t-info"
        }
       ],
-      "titulo": "Conexiones Normativas Internas de la LEC",
-      "resumen": "Artículos de la LEC directamente relacionados con el procedimiento de división: prejudicialidad penal, edictos, designación de peritos y juicio verbal.",
+      "titulo": "Conexiones normativas internas de la LEC",
+      "resumen": "Artículos de la LEC a los que remite el procedimiento: prejudicialidad penal, comunicaciones, designación de peritos y juicio verbal.",
       "cuerpo": [
        {
         "apartado": {
@@ -2564,10 +1314,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Suspensión de actuaciones civiles si existe causa criminal sobre los mismos hechos y la decisión penal puede influir decisivamente en la resolución civil."
-            },
-            {
-             "t": "Relevancia en la división: cohecho en el avalúo (art. 787.6 LEC)."
+             "t": "Suspensión del proceso civil cuando concurren sus requisitos; en la división, el cohecho en el avalúo (art. 787.6)."
             }
            ]
           }
@@ -2581,10 +1328,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Citación por edictos cuando no se conoce el domicilio del destinatario."
-            },
-            {
-             "t": "Aplicable en el art. 783.3 LEC para interesados de paradero desconocido."
+             "t": "Para los interesados de residencia desconocida (art. 783.3), a través del Tablón Edictal Judicial Único."
             }
            ]
           }
@@ -2593,15 +1337,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Art. 341 LEC — Designación judicial de perito",
+         "titulo": "Arts. 341–342 LEC — Designación judicial de perito",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Sorteo entre listas anuales de Colegios Profesionales."
-            },
-            {
-             "t": "Aplicable al contador y a los peritos cuando no hay acuerdo en la Junta (art. 784 LEC)."
+             "t": "Sorteo sobre las listas anuales de los colegios profesionales; aceptación y provisión de fondos. Se aplican al contador y a los peritos sin acuerdo (art. 784)."
             }
            ]
           }
@@ -2615,7 +1356,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Cauce procesal aplicable cuando no hay conformidad en la comparecencia del art. 787.3 LEC."
+             "t": "Cauce de la oposición a las operaciones sin conformidad en la comparecencia (art. 787.5)."
             }
            ]
           }
@@ -2624,92 +1365,16 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC arts. 40, 164, 341, 437 ss."
+       "LEC arts. 40, 164, 341–342, 437"
       ],
-      "claves": "conexiones normativas internas art 40 LEC prejudicialidad penal art 164 LEC edictos art 341 LEC designación perito art 437 LEC juicio verbal diligencias preliminares"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Conexiones",
-      "categoria": "c6",
-      "tono": "c6",
-      "etiquetas": [
-       {
-        "texto": "Derecho UE",
-        "tono": "t-info"
-       }
-      ],
-      "titulo": "Dimensión Internacional de la Sucesión",
-      "resumen": "Reglamento (UE) nº 650/2012: competencia judicial, ley aplicable, professio iuris y certificado sucesorio europeo.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Competencia judicial (art. 4)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Competen los órganos jurisdiccionales del Estado miembro en que el causante tuviera su <strong>residencia habitual</strong> al tiempo de la muerte."
-            },
-            {
-             "t": "Salvo que el causante hubiera elegido la ley de su nacionalidad (professio iuris, art. 22)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Ley aplicable (art. 21)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Regla general: ley del Estado de residencia habitual del causante al fallecimiento."
-            },
-            {
-             "t": "Elección de ley: limitada a la nacionalidad del causante (art. 22)."
-            },
-            {
-             "t": "Aplicable a fallecimientos desde el 17 de agosto de 2015."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Certificado sucesorio europeo (arts. 24-25)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Documento público que acredita la calidad de heredero/legatario y los poderes del administrador."
-            },
-            {
-             "t": "Surte efectos en todos los Estados miembros sin necesidad de reconocimiento ni ejecución especiales."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "Reg. (UE) 650/2012 arts. 4, 21, 22, 24, 25",
-       "CC art. 9.8"
-      ],
-      "claves": "dimensión internacional reglamento UE 650 2012 sucesiones mortis causa competencia residencia habitual ley aplicable certificado sucesorio europeo art 24"
+      "claves": "conexiones lec prejudicialidad penal 40 edictos 164 peritos 341 juicio verbal 437"
      }
     }
    ]
   },
   {
-   "titulo": "📅 Fases del Procedimiento — Visión Secuencial",
-   "recuento": "10 fases",
+   "titulo": "Fases del procedimiento",
+   "recuento": "8 fases",
    "plegada": true,
    "bloques": [
     {
@@ -2718,13 +1383,13 @@ Neg.data.register({
       "titulo": "Solicitud y competencia",
       "items": [
        {
-        "t": "Solicitud por coheredero/legatario de parte alícuota."
+        "t": "Solicitud por coheredero o legatario de parte alícuota (art. 782.1)."
        },
        {
-        "t": "Certificado de defunción y título sucesorio."
+        "t": "Certificado de defunción y título sucesorio (art. 782.2)."
        },
        {
-        "t": "Examen de competencia territorial y objetiva."
+        "t": "Examen de la competencia territorial, imperativa (arts. 52.1.4º y 58)."
        }
       ]
      }
@@ -2732,16 +1397,13 @@ Neg.data.register({
     {
      "paso": {
       "n": "2",
-      "titulo": "Intervención del caudal",
+      "titulo": "Intervención del caudal (si se pide)",
       "items": [
        {
-        "t": "Aseguramiento de bienes (arts. 790-791)."
+        "t": "Intervención y formación de inventario, si se piden y proceden (art. 783.1)."
        },
        {
-        "t": "Formación de inventario (art. 794)."
-       },
-       {
-        "t": "Nombramiento de administrador (art. 795)."
+        "t": "Se rigen por los arts. 790–805 (esquemas propios)."
        }
       ]
      }
@@ -2749,16 +1411,16 @@ Neg.data.register({
     {
      "paso": {
       "n": "3",
-      "titulo": "Convocatoria de Junta",
+      "titulo": "Convocatoria de la Junta",
       "items": [
        {
-        "t": "Citación de herederos, legatarios y cónyuge."
+        "t": "Herederos, legatarios de parte alícuota y cónyuge sobreviviente (art. 783.2)."
        },
        {
-        "t": "Intervención del Ministerio Fiscal (menores/ausentes)."
+        "t": "Ministerio Fiscal si hay menores sin representación o ausentes (art. 783.4)."
        },
        {
-        "t": "Plazo: 10 días (art. 783.2)."
+        "t": "Día dentro de los diez siguientes."
        }
       ]
      }
@@ -2769,13 +1431,13 @@ Neg.data.register({
       "titulo": "Designación de contador y peritos",
       "items": [
        {
-        "t": "Acuerdo en Junta o designación por sorteo (art. 784)."
+        "t": "Acuerdo en la Junta o sorteo (art. 784)."
        },
        {
-        "t": "Máximo un perito por clase de bienes."
+        "t": "Un perito como máximo por clase de bienes."
        },
        {
-        "t": "Recusación y provisión de fondos."
+        "t": "Recusación y provisión de fondos del contador sorteado."
        }
       ]
      }
@@ -2783,16 +1445,16 @@ Neg.data.register({
     {
      "paso": {
       "n": "5",
-      "titulo": "Liquidación de gananciales",
+      "titulo": "Operaciones divisorias",
       "items": [
        {
-        "t": "Presupuesto cuando exista sociedad de gananciales."
+        "t": "Entrega de autos y documentos (art. 785)."
        },
        {
-        "t": "Determinación del caudal privativo partible."
+        "t": "Relación de bienes, avalúo, liquidación y adjudicación (art. 786.2)."
        },
        {
-        "t": "Doctrina TS: operación previa indispensable."
+        "t": "Plazo máximo: dos meses."
        }
       ]
      }
@@ -2800,16 +1462,16 @@ Neg.data.register({
     {
      "paso": {
       "n": "6",
-      "titulo": "Operaciones divisorias",
+      "titulo": "Aprobación u oposición",
       "items": [
        {
-        "t": "Inventario, avalúo, liquidación, colación."
+        "t": "Traslado por diez días (art. 787.1)."
        },
        {
-        "t": "Cálculo de legítimas y mejora."
+        "t": "Sin oposición: decreto de aprobación y protocolización."
        },
        {
-        "t": "Plazo máximo: 2 meses (art. 786.3)."
+        "t": "Con oposición: comparecencia en diez días y, sin acuerdo, juicio verbal."
        }
       ]
      }
@@ -2817,16 +1479,16 @@ Neg.data.register({
     {
      "paso": {
       "n": "7",
-      "titulo": "Aprobación / Oposición",
+      "titulo": "Entrega de bienes",
       "items": [
        {
-        "t": "Traslado a partes (10 días para oponerse)."
+        "t": "Entrega de lo adjudicado y de los títulos con nota (art. 788.1)."
        },
        {
-        "t": "Comparecencia conciliatoria (10 días)."
+        "t": "Testimonio de haber y adjudicación (art. 788.2)."
        },
        {
-        "t": "Juicio verbal si no hay conformidad."
+        "t": "Bloqueo si se opuso un acreedor del art. 782.4 (art. 788.3)."
        }
       ]
      }
@@ -2834,50 +1496,13 @@ Neg.data.register({
     {
      "paso": {
       "n": "8",
-      "titulo": "Entrega de bienes",
+      "titulo": "Terminación por acuerdo (en cualquier momento)",
       "items": [
        {
-        "t": "Entrega material y títulos de propiedad."
+        "t": "Petición de común acuerdo (art. 789)."
        },
        {
-        "t": "Notas de adjudicación en títulos."
-       },
-       {
-        "t": "Excepción por acreedores opuestos (art. 788.3)."
-       }
-      ]
-     }
-    },
-    {
-     "paso": {
-      "n": "9",
-      "titulo": "Terminación por acuerdo",
-      "items": [
-       {
-        "t": "Sobreseimiento en cualquier estado del juicio."
-       },
-       {
-        "t": "Unanimidad requerida (art. 789)."
-       },
-       {
-        "t": "Partición notarial, mediación o arbitraje."
-       }
-      ]
-     }
-    },
-    {
-     "paso": {
-      "n": "10",
-      "titulo": "Impugnaciones posteriores",
-      "items": [
-       {
-        "t": "Rescisión por lesión (4 años)."
-       },
-       {
-        "t": "Complemento por omisión de bienes."
-       },
-       {
-        "t": "Responsabilidad del contador (5 años)."
+        "t": "Sobreseimiento y bienes a disposición de los herederos."
        }
       ]
      }
@@ -2885,77 +1510,67 @@ Neg.data.register({
    ]
   },
   {
-   "titulo": "⏱️ Indice de Plazos Procesales",
-   "recuento": "12 trámites",
+   "titulo": "Índice de plazos",
+   "recuento": "10 trámites",
    "plegada": true,
    "bloques": [
     {
      "tabla": {
       "cabecera": [
-       "Acto o trámite procesal",
+       "Acto o trámite",
        "Plazo",
-       "Fundamento normativo"
+       "Fundamento"
       ],
       "filas": [
        [
-        "Señalamiento de Junta por el LAJ",
-        "10 días",
+        "Señalamiento de la Junta",
+        "Dentro de los 10 días siguientes",
         "Art. 783.2 LEC"
        ],
        [
-        "Presentación de operaciones divisorias por el contador",
-        "2 meses",
-        "Art. 786.3 LEC"
+        "Presentación de las operaciones divisorias",
+        "Máximo 2 meses desde su inicio",
+        "Art. 786.2 LEC"
        ],
        [
-        "Emplazamiento para formular oposición",
+        "Plazo fijado al contador a instancia de parte",
+        "El que fije el LAJ",
+        "Art. 785.3 LEC"
+       ],
+       [
+        "Oposición a las operaciones divisorias",
         "10 días",
         "Art. 787.1 LEC"
        ],
        [
-        "Celebración de comparecencia ante el Tribunal",
-        "10 días",
+        "Comparecencia ante el tribunal",
+        "Dentro de los 10 días siguientes",
         "Art. 787.3 LEC"
        ],
        [
-        "Solicitud de beneficio de inventario",
-        "30 días hábiles",
-        "Art. 1028 CC"
+        "Suspensión del proceso a petición de las partes",
+        "Máximo 60 días",
+        "Art. 19.4 LEC"
        ],
        [
-        "Formación de inventario para beneficio de inventario",
-        "90 días hábiles",
-        "Art. 1028 CC"
+        "Beneficio de inventario: pedir la formación de inventario",
+        "30 días desde que se sabe heredero",
+        "Art. 1014 CC"
        ],
        [
-        "Suspensión del procedimiento para mediación",
-        "Máx. 60 días",
-        "Art. 19 Ley 36/2006"
-       ],
-       [
-        "Autoliquidación del ISD",
-        "6 meses (+6)",
-        "Art. 67 Ley 29/1987 · LH art. 254"
+        "Beneficio de inventario: formación del inventario",
+        "Empezar en 30 días y concluir en otros 60 (prorrogables hasta 1 año)",
+        "Art. 1017 CC"
        ],
        [
         "Acción rescisoria por lesión",
+        "4 años desde la partición",
+        "Art. 1076 CC"
+       ],
+       [
+        "Acción de anulación (error, dolo, violencia)",
         "4 años",
-        "CC art. 1076"
-       ],
-       [
-        "Acción de nulidad (error, dolo, violencia)",
-        "4 años",
-        "CC art. 1301"
-       ],
-       [
-        "Responsabilidad contra contador (contractual)",
-        "5 años",
-        "CC art. 1964"
-       ],
-       [
-        "Responsabilidad contra contador (extracontractual)",
-        "5 años",
-        "CC art. 1968.2"
+        "Art. 1301 CC"
        ]
       ]
      }
@@ -2963,8 +1578,8 @@ Neg.data.register({
    ]
   },
   {
-   "titulo": "👥 Mapa de Participantes y Actores",
-   "recuento": "6 categorías · 25+ actores",
+   "titulo": "Participantes",
+   "recuento": "5 grupos · 21 participantes",
    "plegada": true,
    "bloques": [
     {
@@ -2973,19 +1588,19 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Coherederos Legitimados activos principales (art. 782.1)"
+        "t": "Coherederos — legitimados para pedir la división (art. 782.1)"
        },
        {
-        "t": "Legatarios de parte alícuota Posición idéntica a coheredero"
+        "t": "Legatarios de parte alícuota — misma legitimación (art. 782.1)"
        },
        {
-        "t": "Cónyuge viudo Interés por gananciales y legítima usufructo"
+        "t": "Cónyuge sobreviviente — convocado a la Junta (art. 783.2)"
        },
        {
-        "t": "Herederos bajo condición Partición provisional"
+        "t": "Herederos bajo condición — partición provisional (art. 1054 CC)"
        },
        {
-        "t": "Coherederos con medidas de apoyo Ley 8/2021"
+        "t": "Coherederos con medidas de apoyo — según sus medidas (art. 1052 CC)"
        }
       ]
      }
@@ -2996,88 +1611,56 @@ Neg.data.register({
       "tono": "c2",
       "items": [
        {
-        "t": "Contador-partidor Abogado experto en sucesiones"
+        "t": "Contador — por acuerdo o por sorteo entre abogados (art. 784)"
        },
        {
-        "t": "Peritos tasadores Máx. 1 por clase de bienes"
+        "t": "Peritos — uno como máximo por clase de bienes (art. 784)"
        },
        {
-        "t": "Abogado de cada parte Preceptivo si cuantía &gt; 2.000 €"
+        "t": "Abogado y procurador de las partes (arts. 23 y 31 LEC)"
        },
        {
-        "t": "Procurador Preceptivo si cuantía &gt; 2.000 €"
-       },
-       {
-        "t": "Notario Protocolización y vía notarial"
+        "t": "Notario — protocolización de las operaciones aprobadas (art. 787.2)"
        }
       ]
      }
     },
     {
      "grupo": {
-      "titulo": "Órganos judiciales",
-      "tono": "c3",
-      "items": [
-       {
-        "t": "Juzgado de Primera Instancia Competencia objetiva"
-       },
-       {
-        "t": "Letrado de la Administración de Justicia Director del procedimiento"
-       },
-       {
-        "t": "Ministerio Fiscal Representa a menores y ausentes"
-       },
-       {
-        "t": "Administrador judicial Arts. 797-805 LEC"
-       },
-       {
-        "t": "Defensor judicial del ausente Art. 181 CC"
-       }
-      ]
-     }
-    },
-    {
-     "grupo": {
-      "titulo": "Acreedores y terceros",
+      "titulo": "Oficina judicial y Fiscalía",
       "tono": "c4",
       "items": [
        {
-        "t": "Acreedores de la herencia Reconocidos en testamento o con título ejecutivo"
+        "t": "Tribunal de Instancia, Sección Civil — competencia objetiva"
        },
        {
-        "t": "Acreedores reconocidos por coherederos Derecho de oposición"
+        "t": "Letrado de la Administración de Justicia — dirige el procedimiento y aprueba por decreto"
        },
        {
-        "t": "Acreedores de coherederos Intervención cautelar a su costa"
+        "t": "Ministerio Fiscal — menores sin representación y ausentes (art. 783.4)"
        },
        {
-        "t": "Abogado del Estado Cuando Hacienda es heredera abintestato"
+        "t": "Administrador del caudal — si hay intervención (arts. 795–805)"
        },
        {
-        "t": "Administración Pública Herencia vacante (art. 911 CC)"
+        "t": "Defensor del desaparecido — art. 181 CC"
        }
       ]
      }
     },
     {
      "grupo": {
-      "titulo": "Sujetos protegidos",
+      "titulo": "Acreedores",
       "tono": "c5",
       "items": [
        {
-        "t": "Menores sin representante Representación por MF"
+        "t": "Acreedores de la herencia — no pueden instar la división (art. 782.3)"
        },
        {
-        "t": "Personas con medidas de apoyo Ley 8/2021"
+        "t": "Acreedores reconocidos o con título ejecutivo — pueden oponerse a la partición hasta cobrar (art. 782.4)"
        },
        {
-        "t": "Ausentes con paradero ignorado Representación por MF"
-       },
-       {
-        "t": "Herederos con beneficio de inventario Responsabilidad limitada"
-       },
-       {
-        "t": "Legitimarios Protección de legítima inderogable"
+        "t": "Acreedores de los coherederos — intervención a su costa (art. 782.5)"
        }
       ]
      }
@@ -3088,19 +1671,16 @@ Neg.data.register({
       "tono": "c6",
       "items": [
        {
-        "t": "Contador-partidor testamentario Designado por testador (art. 1057 CC)"
+        "t": "Contador-partidor testamentario — su existencia excluye la vía judicial (art. 782.1)"
        },
        {
-        "t": "Contador-partidor dativo Designado por Notario/LAJ"
+        "t": "Contador-partidor dativo — nombrado por el LAJ o el Notario (art. 1057 CC)"
        },
        {
-        "t": "Árbitro Ley 60/2003"
+        "t": "Mediador — Ley 5/2012"
        },
        {
-        "t": "Mediador Ley 36/2006 (suspensión ≤ 60 días)"
-       },
-       {
-        "t": "Albacea Si fue designado excluye la vía judicial"
+        "t": "Árbitro — arbitraje testamentario (art. 10 Ley 60/2003)"
        }
       ]
      }
@@ -3108,120 +1688,111 @@ Neg.data.register({
    ]
   },
   {
-   "titulo": "🔗 Ecosistema Normativo — Conexiones Relacionadas",
-   "recuento": "12 cuerpos normativos",
+   "titulo": "Ecosistema normativo",
+   "recuento": "11 normas",
    "plegada": true,
    "bloques": [
     {
      "norma": {
-      "ley": "Código Civil — Libro III, Título III",
-      "titulo": "De las Sucesiones — Partición (arts. 1051-1087)",
-      "texto": "<strong>Art. 1051</strong> — Derecho a pedir la partición (ius partitionis).<br><strong>Art. 1052</strong> — Requisito de libre administración.<br><strong>Art. 1056</strong> — Partición testamentaria.<br><strong>Art. 1057</strong> — Contador testamentario y dativo.<br><strong>Art. 1058</strong> — Partición convencional.<br><strong>Art. 1059</strong> — Remisión a la LEC.",
+      "ley": "Código Civil — Libro III",
+      "titulo": "Partición (arts. 1051–1087 CC)",
+      "texto": "<strong>Art. 1051 CC</strong> — Nadie está obligado a permanecer en la indivisión.<br><strong>Art. 1052 CC</strong> — Quién puede pedir la partición.<br><strong>Art. 1056 CC</strong> — Partición por el testador.<br><strong>Art. 1057 CC</strong> — Contador-partidor testamentario y dativo.<br><strong>Art. 1058 CC</strong> — Partición por los herederos.<br><strong>Art. 1059 CC</strong> — Remisión a la LEC.",
       "etiqueta": "Base sustantiva",
       "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "Código Civil — Libro III, Título III",
-      "titulo": "Rescisión e Impugnación (arts. 1073-1081)",
-      "texto": "<strong>Art. 1073</strong> — Rescisión por causas de obligaciones.<br><strong>Art. 1074</strong> — Rescisión por lesión &gt; ¼.<br><strong>Art. 1076</strong> — Prescripción: 4 años.<br><strong>Art. 1079</strong> — Omisión de bienes: complemento.<br><strong>Art. 1081</strong> — Partición con no heredero: nula.",
+      "ley": "Código Civil — Libro III",
+      "titulo": "Rescisión de la partición (arts. 1073–1081 CC)",
+      "texto": "<strong>Art. 1073 CC</strong> — Mismas causas que las obligaciones.<br><strong>Art. 1074 CC</strong> — Lesión en más de la cuarta parte.<br><strong>Art. 1076 CC</strong> — Cuatro años.<br><strong>Art. 1079 CC</strong> — Omisión de bienes: complemento.<br><strong>Art. 1081 CC</strong> — Partición con quien no era heredero: nula.",
       "etiqueta": "Impugnación",
       "tono": "t-aviso"
      }
     },
     {
      "norma": {
-      "ley": "Código Civil — Libro III, Título III",
-      "titulo": "Legítima (arts. 807-822)",
-      "texto": "<strong>Art. 807</strong> — Definición de legítima.<br><strong>Art. 806</strong> — Límite de reglas testamentarias.<br><strong>Art. 808-809</strong> — Mejora.<br><strong>Art. 812</strong> — Usufructo del cónyuge viudo.<br><strong>Arts. 814-815</strong> — Acción de reducción.",
-      "etiqueta": "Límite inderogable",
-      "tono": "t-plazo"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Código Civil — Libro III, Título III",
-      "titulo": "Aceptación y Repudiación (arts. 988-993, 1009, 1011, 1023-1032)",
-      "texto": "<strong>Art. 988</strong> — Aceptación irrevocable.<br><strong>Art. 992</strong> — Repudiación: ante Notario o Juzgado.<br><strong>Art. 1009</strong> — Herencia yacente.<br><strong>Arts. 1023-1032</strong> — Beneficio de inventario.",
-      "etiqueta": "Presupuesto",
-      "tono": "t-ok"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Código Civil — Libro III, Título III",
-      "titulo": "Colación de Donaciones (arts. 1035-1040)",
-      "texto": "<strong>Art. 1035</strong> — Obligación de colacionar.<br><strong>Art. 1036</strong> — Sujetos obligados.<br><strong>Art. 1037</strong> — Reglas de cómputo.<br><strong>Doctrina STS 148/2018:</strong> valor al tiempo de la donación con actualización monetaria.",
-      "etiqueta": "Operación divisoria",
+      "ley": "Código Civil — Libro III",
+      "titulo": "Legítimas (arts. 806–840 CC)",
+      "texto": "<strong>Art. 806 CC</strong> — Concepto de legítima.<br><strong>Art. 807 CC</strong> — Herederos forzosos.<br><strong>Arts. 808–809 CC</strong> — Legítima de descendientes (con la mejora) y de ascendientes.<br><strong>Arts. 834–840 CC</strong> — Derechos del cónyuge viudo.",
+      "etiqueta": "Límite",
       "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "LEC — Libro IV, Título II, Cap. I",
-      "titulo": "Intervención del Caudal (arts. 790-796)",
-      "texto": "<strong>Art. 790</strong> — Aseguramiento de bienes.<br><strong>Art. 792</strong> — Intervención durante división.<br><strong>Art. 794</strong> — Formación del inventario.<br><strong>Art. 795</strong> — Administrador y caución.<br><strong>Art. 796</strong> — Cesación.",
-      "etiqueta": "Medida cautelar",
+      "ley": "Código Civil — Libro III",
+      "titulo": "Aceptación y repudiación (arts. 988–1034 CC)",
+      "texto": "<strong>Art. 997 CC</strong> — Irrevocabilidad.<br><strong>Art. 999 CC</strong> — Aceptación expresa o tácita.<br><strong>Art. 1008 CC</strong> — Repudiación ante Notario.<br><strong>Arts. 1010–1034 CC</strong> — Beneficio de inventario.",
+      "etiqueta": "Presupuesto",
       "tono": "t-plazo"
      }
     },
     {
      "norma": {
-      "ley": "LEC — Libro IV, Título II, Cap. I",
-      "titulo": "Administración del Caudal (arts. 797-805)",
-      "texto": "<strong>Art. 797</strong> — Posesión del cargo.<br><strong>Art. 798</strong> — Representación.<br><strong>Art. 799</strong> — Cuentas periódicas.<br><strong>Art. 800</strong> — Cuentas finales.<br><strong>Art. 803</strong> — Prohibición de enajenar.<br><strong>Art. 804</strong> — Retribución.",
-      "etiqueta": "Régimen administrativo",
+      "ley": "Código Civil — Libro III",
+      "titulo": "Colación (arts. 1035–1050 CC)",
+      "texto": "<strong>Art. 1035 CC</strong> — Obligación de colacionar.<br><strong>Art. 1036 CC</strong> — Dispensa y repudiación.<br><strong>Art. 1045 CC</strong> — Se colaciona el valor al tiempo de la evaluación de los bienes hereditarios.",
+      "etiqueta": "Operación divisoria",
+      "tono": "t-ok"
+     }
+    },
+    {
+     "norma": {
+      "ley": "LEC — Libro IV, Título II, Capítulo I",
+      "titulo": "Intervención y administración del caudal (arts. 790–805)",
+      "texto": "<strong>Arts. 790–796</strong> — Intervención del caudal hereditario e inventario.<br><strong>Arts. 797–805</strong> — Administración del caudal.<br>Con sus propios esquemas.",
+      "etiqueta": "Medidas",
       "tono": "t-nota"
      }
     },
     {
      "norma": {
-      "ley": "Ley 15/2015 de Jurisdicción Voluntaria",
-      "titulo": "Expedientes de División (arts. 88-94)",
-      "texto": "<strong>Art. 88</strong> — Expediente de división.<br><strong>Art. 89</strong> — Solicitud al Notario.<br><strong>Art. 90</strong> — Citación (15 días).<br><strong>Art. 91</strong> — Designación de contador dativo.<br><strong>Art. 92</strong> — Aprobación notarial.",
+      "ley": "Ley 15/2015 de la Jurisdicción Voluntaria",
+      "titulo": "Contador-partidor dativo (art. 92)",
+      "texto": "Designación por el Letrado de la Administración de Justicia, renuncia o prórroga y aprobación de la partición no confirmada por todos. Sin abogado ni procurador si el haber es inferior a 6.000 €.",
       "etiqueta": "Vía desjudicializada",
       "tono": "t-ok"
      }
     },
     {
      "norma": {
-      "ley": "Ley 15/2015 de Jurisdicción Voluntaria",
-      "titulo": "Actas de Notoriedad (arts. 55-59)",
-      "texto": "Declaración notarial de herederos abintestato. Requiere testigos. Sin abogado ni procurador. Título suficiente para cualquier vía de división.",
-      "etiqueta": "Determinación de herederos",
-      "tono": "t-info"
+      "ley": "Ley del Notariado",
+      "titulo": "Arts. 55–56, 61–63 y 66",
+      "texto": "<strong>Arts. 55–56</strong> — Declaración de herederos abintestato (acta de notoriedad).<br><strong>Arts. 61–63</strong> — Testamento ológrafo.<br><strong>Art. 66</strong> — Contador-partidor dativo y aprobación de la partición ante Notario.",
+      "etiqueta": "Vía notarial",
+      "tono": "t-ok"
      }
     },
     {
      "norma": {
-      "ley": "Reglamento (UE) nº 650/2012",
-      "titulo": "Sucesiones «mortis causa»",
-      "texto": "<strong>Art. 4</strong> — Competencia: residencia habitual.<br><strong>Art. 21</strong> — Ley aplicable: residencia habitual.<br><strong>Art. 24</strong> — Certificado sucesorio europeo.<br><strong>Art. 25</strong> — Eficacia sin reconocimiento.",
-      "etiqueta": "Derecho UE",
-      "tono": "t-aviso"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley 29/1987 ISD + Normas Autonómicas",
-      "titulo": "Impuesto de Sucesiones y Donaciones",
-      "texto": "<strong>Art. 24 LISD</strong> — Devengo al fallecimiento.<br><strong>Art. 68 LISD</strong> — Plazo: 6 meses (+ prórroga).<br><strong>LH art. 254</strong> — Cierre registral.<br><strong>Heterogeneidad autonómica:</strong> bonificaciones muy dispares.",
-      "etiqueta": "Requisito registral",
+      "ley": "Ley Hipotecaria",
+      "titulo": "Arts. 14, 32 y 254",
+      "texto": "<strong>Art. 14</strong> — Títulos de la sucesión hereditaria; las adjudicaciones concretas requieren escritura pública o sentencia firme.<br><strong>Art. 32</strong> — Lo no inscrito no perjudica a tercero.<br><strong>Art. 254</strong> — Acreditar el pago de los impuestos antes de inscribir.",
+      "etiqueta": "Registro",
       "tono": "t-plazo"
      }
     },
     {
      "norma": {
-      "ley": "LEC — Conexiones Internas",
-      "titulo": "Artículos relacionados del procedimiento civil",
-      "texto": "<strong>Art. 15-16</strong> — Competencia territorial.<br><strong>Art. 40</strong> — Prejudicialidad penal.<br><strong>Art. 45.2</strong> — Examen de oficio.<br><strong>Art. 52</strong> — Fuero especial.<br><strong>Art. 164</strong> — Edictos.<br><strong>Art. 341</strong> — Sorteo peritos.<br><strong>Arts. 437 ss.</strong> — Juicio verbal.",
+      "ley": "Reglamento (UE) 650/2012",
+      "titulo": "Sucesiones internacionales",
+      "texto": "<strong>Art. 4</strong> — Competencia: Estado de la última residencia habitual.<br><strong>Arts. 21–22</strong> — Ley aplicable: residencia habitual, o la nacionalidad si el causante la eligió.",
+      "etiqueta": "Derecho UE",
+      "tono": "t-info"
+     }
+    },
+    {
+     "norma": {
+      "ley": "LEC — Conexiones internas",
+      "titulo": "Artículos relacionados",
+      "texto": "<strong>Art. 52.1.4º</strong> — Competencia territorial.<br><strong>Arts. 54 y 58</strong> — Fuero imperativo y examen de oficio.<br><strong>Art. 40</strong> — Prejudicialidad penal.<br><strong>Art. 164</strong> — Edictos.<br><strong>Arts. 341–342</strong> — Sorteo de peritos.<br><strong>Arts. 437 y ss.</strong> — Juicio verbal.",
       "etiqueta": "Procesal civil",
-      "tono": "t-nota"
+      "tono": "t-info"
      }
     }
    ]
   }
  ],
- "pie": "Esquema definitivo fusionado · LEC arts. 782-789 · Incluye contenido de tres esquemas originales optimizados · 26 bloques temáticos, 10 fases secuenciales, 12 plazos, 25+ actores, 12 cuerpos normativos · Generado como plantilla HTML reutilizable"
+ "pie": "LEC 1/2000, de 7 de enero · Libro IV, Título II, Capítulo I, Sección 1.ª · Arts. 782–789"
 });

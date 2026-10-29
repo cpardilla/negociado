@@ -188,13 +188,13 @@ Defectos del markmap anterior — todos resueltos al generar el mapa de los mism
 2. ✅ (2026-10-29) Retirados los 57 HTML antiguos (quedan en el historial de git y en el tag `baseline-2026-10-28`). `404.html` (`tools/build-404.js`, autosuficiente): 56 direcciones antiguas redirigen a su sitio nuevo; la del esquema combinado I bis & ter (sin equivalente único) y cualquier otra inexistente muestran el aviso de actualizar favoritos (decisión 8). `.nojekyll` en la raíz. Los tres tests que comparaban el inventario con los HTML antiguos solo se ejecutan donde existen (el tag); `tools/extract-current.js` queda como histórico. Tests en navegador de las redirecciones, servidas como en Pages.
 3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
-### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (1/27)
+### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (2/27)
 Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabla (decisión 6). Los más usados (E01–E04, E28) con atención especial.
 
 | # | Esquema | Estado |
 |---|---|---|
 | E01 | LEC · Diligencias preliminares | ✅ 2026-10-29 · 53 correcciones + jurisprudencia no verificable retirada ([registro](revision/lec-diligencias-preliminares.md)) |
-| E02 | LEC · División de la herencia — procedimiento | ☐ |
+| E02 | LEC · División de la herencia — procedimiento | ✅ 2026-10-29 · de 26 a 16 fichas (decisión 9), 39 correcciones ([registro](revision/lec-division-herencia.md)) |
 | E03 | LEC · Intervención del caudal hereditario | ☐ |
 | E04 | LEC · Administración del caudal hereditario | ☐ |
 | E05 | LEC · Liquidación del régimen económico matrimonial | ☐ |
@@ -282,11 +282,14 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 6. ✅ Orden: primero los esquemas y después las guías, en el orden actual. Los más usados —diligencias preliminares, división judicial de la herencia y conciliación— con atención especial.
 7. ⏸ Cobertura nueva (fase 7): no es prioritaria ahora.
 8. ✅ URL antiguas: redirección cuando sea posible; si no, aviso para actualizar favoritos («if → else»). Implementación: `404.html` de GitHub Pages con la tabla de correspondencias antigua → nueva; si la dirección está en la tabla, redirige; si no, muestra el aviso con enlace a la portada.
+9. ✅ (2026-10-29) **Alcance de los esquemas**: se ciñen a lo que usa el juzgado: sus artículos y las normas del CC, LJV, LN, LH… que se aplican en la tramitación, todo comprobado. Fiscalidad, derechos forales y detalle internacional fuera (como mucho, una mención donde afecten a la tramitación). Lo duplicado en otro esquema se sustituye por una remisión. Todo lo retirado se anota en el registro de revisión.
+10. ✅ (2026-10-29) **Jurisprudencia**: se retira la que no se puede verificar y queda anotada en el registro, para reincorporarla con su ECLI si el propietario la aporta. Sin búsquedas en la web.
 
 ## 11. Registro de cambios del plan
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-29 · E02 (división de la herencia) revisado. Decisiones 9 (alcance de los esquemas) y 10 (jurisprudencia no verificable). Siguiente: E03.
 - 2026-10-29 · Fase 4 · E01 (diligencias preliminares) revisado: 53 correcciones contra el BOE y retirada de toda la jurisprudencia no verificable (método aplicable al resto: `tools/dump.js citas` contrasta cada cita con el artículo citado). El analizador de citas reconoce ya las normas de la UE (antes «Dir. 2004/48/CE art. 6» se enlazaba al art. 6 CE). 16 leyes más descargadas para comprobar citas (Patentes, Marcas, Competencia Desleal, Secretos Empresariales, LPI, LCS, CCom…). Siguiente: E02.
 - 2026-10-29 · Fase 3 completada: HTML antiguos retirados y direcciones antiguas redirigidas. Siguiente: fase 4.
 - 2026-10-28 · Enlaces directos al artículo en el BOE y texto de los artículos citados de las demás normas (petición del propietario).

@@ -10,7 +10,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | Id | Recurso | citas | alcance | rubricas | plazos | literales | grafos | terminologia |
 |---|---|---|---|---|---|---|---|---|
 | lec-diligencias-preliminares | Esquema · LEC · Diligencias preliminares | · | · | · | · | · | · | 2R |
-| lec-division-herencia | Esquema · LEC · División de la herencia | 4E 1A 9R | · | · | 5R | · | · | 2R |
+| lec-division-herencia | Esquema · LEC · División de la herencia | · | · | · | 1R | · | · | · |
 | lec-intervencion-caudal | Esquema · LEC · Intervención del caudal hereditario | 3A | · | 1R | 2R | · | · | 2R |
 | lec-administracion-caudal | Esquema · LEC · Administración del caudal hereditario | · | · | · | · | · | · | · |
 | lec-liquidacion-rem | Esquema · LEC · Liquidación del régimen económico matrimonial | 13R | 1R | 3R | 2R | · | · | 4R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 111E 45A 169R | 0E 0A 5R | 0E 0A 4R | 0E 0A 22R | 0E 0A 9R | 4E 0A 1R | 0E 0A 94R |
+| | **Total** | 107E 44A 160R | 0E 0A 5R | 0E 0A 4R | 0E 0A 18R | 0E 0A 9R | 4E 0A 1R | 0E 0A 92R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,42 +69,41 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2767
-- ✓ LEC (BOE a 07-10-2026): 1616
-- ✓ CC (BOE a 07-09-2026): 1392
-- ✓ CE (BOE a 20-05-2026): 108
+- ✓ LJV (BOE a 05-03-2026): 2768
+- ✓ LEC (BOE a 07-10-2026): 1546
+- ✓ CC (BOE a 07-09-2026): 1397
+- ✓ CE (BOE a 20-05-2026): 100
 - ✓ LOPJ (BOE a 09-10-2026): 62
 - ✓ LOPJM (BOE a 18-12-2025): 60
-- ✓ LH (BOE a 07-01-2026): 47
 - ✓ LRC (BOE a 24-02-2026): 47
 - ✓ LTRANS (BOE a 20-12-2025): 46
 - ✓ LOPDH (BOE a 16-12-2025): 42
+- ✓ LH (BOE a 07-01-2026): 39
 - ✓ LPPD (BOE a 18-12-2025): 24
-- UE: 20
-- ✓ LN (BOE a 22-10-2026): 19
+- UE: 22
+- ✓ LN (BOE a 22-10-2026): 20
 - ✓ LOPDGDD (BOE a 08-10-2026): 16
 - ✓ LTO (BOE a 16-12-2025): 16
 - ✓ RDTO (BOE a 19-12-2025): 16
-- ✓ CP (BOE a 09-04-2026): 14
-- ✓ LSC (BOE a 19-12-2025): 10
+- ✓ CP (BOE a 09-04-2026): 11
+- ✓ LSC (BOE a 19-12-2025): 7
 - ✓ L8-2021 (BOE a 20-12-2025): 7
 - ✓ RH (BOE a 16-12-2025): 6
 - ✓ CCom (BOE a 16-12-2025): 4
 - ✓ LCS (BOE a 05-10-2026): 4
+- ✓ LA (BOE a 18-12-2025): 4
 - LO 1/2025: 4
+- ✓ LMED (BOE a 19-12-2025): 3
 - Reglamento: 3
 - LPAP: 3
 - ✓ LPI (BOE a 31-07-2026): 2
 - ✓ LPAT (BOE a 31-07-2026): 2
 - ✓ LCD (BOE a 29-12-2025): 2
 - ✓ LSE (BOE a 31-07-2026): 2
-- ✓ LMED (BOE a 19-12-2025): 2
 - Ley 29/2015: 2
 - LO 8/2015: 2
 - Ley 40/2015: 2
 - Ley 10/2012: 2
-- Ley 36/2006: 1
-- Ley 29/1987: 1
 - Ley 35/2006: 1
 - Ley 24/2001: 1
 - LO 3/2007: 1
@@ -113,11 +112,10 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 1/1996: 1
 - Ley 39/2015: 1
 - LO 1/2023: 1
-- ✓ LA (BOE a 18-12-2025): 1
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 852 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 825 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -130,35 +128,9 @@ Además, 852 referencias sin ley explícita cuyo número no corresponde a la ley
 
 ### lec-division-herencia · Esquema · LEC · División de la herencia
 
-**citas**
-
-- [error] «arts. 66 bis y 66 ter»: el art. 66 bis no existe en la LN — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Excepciones» › 3 › apartado_
-- [error] «arts. 66 bis y 66 ter»: el art. 66 ter no existe en la LN — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Excepciones» › 3 › apartado_
-- [error] «arts. 66 bis, 66 ter»: el art. 66 bis no existe en la LN — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Excepciones» › referencia 3_
-- [error] «arts. 66 bis, 66 ter»: el art. 66 ter no existe en la LN — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Excepciones» › referencia 3_
-- [aviso] «Art. 786.3»: el art. 786 LEC no tiene apartado 3 (tiene 1, 2) — _sección «⏱️ Indice de Plazos Procesales» › 1 › tabla fila 2_
-- [revisar] «Art. 45.2»: el art. 45 LEC no tiene apartado 2 (no tiene apartados numerados) — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Fundamentos» › «Competencia objetiva y examen de oficio» › 1 › punto.2_
-- [revisar] «art. 1057.1»: el art. 1057 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Artículo 782» › «Naturaleza jurídica y carácter subsidiario» › 1 › punto.2_
-- [revisar] «art. 1057.2»: el art. 1057 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Artículo 782» › «Naturaleza jurídica y carácter subsidiario» › 1 › punto.2_
-- [revisar] «art. 1056.1»: el art. 1056 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Artículo 782» › «Naturaleza jurídica y carácter subsidiario» › 1 › punto.4_
-- [revisar] «art. 1968.2»: el art. 1968 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Figuras» › «Plazo de prescripción» › 1 › punto.2_
-- [revisar] «arts. 1902, 1964, 1968.2»: el art. 1968 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Figuras» › referencia 1_
-- [revisar] «art. 786.3»: el art. 786 LEC no tiene apartado 3 (tiene 1, 2) (ley por defecto) — _sección «📅 Fases del Procedimiento — Visión Secuencial» › 6 › fase «Operaciones divisorias».3_
-- [revisar] «art. 1968.2»: el art. 1968 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «⏱️ Indice de Plazos Procesales» › 1 › tabla fila 12_
-- [revisar] «Art. 45.2»: el art. 45 LEC no tiene apartado 2 (no tiene apartados numerados) (ley por defecto) — _sección «🔗 Ecosistema Normativo — Conexiones Relacionadas» › 12 › norma «Artículos relacionados del procedimiento civil»_
-
 **plazos**
 
-- [revisar] plazo «10 días» no aparece en el precepto citado (Art. 783.2 LEC): «Señalamiento de Junta por el LAJ · 10 días · Art. 783.2 LEC» — _sección «⏱️ Indice de Plazos Procesales» › 1 › tabla fila 1_
-- [revisar] plazo «30 días» no aparece en el precepto citado (Art. 1028 CC): «Solicitud de beneficio de inventario · 30 días hábiles · Art. 1028 CC» — _sección «⏱️ Indice de Plazos Procesales» › 1 › tabla fila 5_
-- [revisar] plazo «90 días» no aparece en el precepto citado (Art. 1028 CC): «Formación de inventario para beneficio de inventario · 90 días hábiles · Art. 1028 CC» — _sección «⏱️ Indice de Plazos Procesales» › 1 › tabla fila 6_
-- [revisar] plazo «6 meses» no aparece en el precepto citado (Art. 67 Ley 29/1987; art. 254 LH): «Autoliquidación del ISD · 6 meses (+6) · Art. 67 Ley 29/1987 · LH art. 254» — _sección «⏱️ Indice de Plazos Procesales» › 1 › tabla fila 8_
-- [revisar] plazo «5 años» no aparece en el precepto citado (art. 1968.2 CC): «Responsabilidad contra contador (extracontractual) · 5 años · CC art. 1968.2» — _sección «⏱️ Indice de Plazos Procesales» › 1 › tabla fila 12_
-
-**terminologia**
-
-- [revisar] «Juzgado de Primera Instancia» × 3 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Fundamentos» › «Competencia objetiva y examen de oficio» › 1 › punto.1 | sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Artículo 782» › «Competencia objetiva y territorial» › 1 › punto.1 | sección «👥 Mapa de Participantes y Actores» › 3 › grupo «Órganos judiciales».1_
-- [revisar] «Secretario judicial» × 1 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Esquema temático completo — Fundamentos, artículos y materias conexas» › tarjeta «Excepciones» › «Contador-partidor dativo (art. 1057 CC)» › 1 › punto.1_
+- [revisar] plazo «10 días» no aparece en el precepto citado (Art. 783.2 LEC): «Señalamiento de la Junta · Dentro de los 10 días siguientes · Art. 783.2 LEC» — _sección «Índice de plazos» › 1 › tabla fila 1_
 
 ### lec-intervencion-caudal · Esquema · LEC · Intervención del caudal hereditario
 
