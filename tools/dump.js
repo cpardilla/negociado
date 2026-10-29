@@ -91,8 +91,34 @@ function guia(id, withLaw) {
   if (withLaw) law(r.ley, r.articulos);
 }
 
+/** Every citation in a resource with the heading of the article it points to (for checking that
+ *  each cited article says what the text claims). */
+function citations(kind, id) {
+  const citas = require("../assets/js/core/citas");
+  const { units } = require("./check-content");
+  const LEYES = JSON.parse(fs.readFileSync(path.join(__dirname, "leyes.json"), "utf8"));
+  const alias = Object.fromEntries(LEYES.flatMap((l) => [[l.clave, l.clave], ...l.alias.map((a) => [a, l.clave])]));
+  const rec = JSON.parse(JSON.stringify(read(kind === "guia" ? "guias" : "esquemas", id)));
+  const seen = new Set();
+  for (const u of units(rec)) {
+    for (const c of citas.find(u.text, { defaultLaw: rec.ley, alias })) {
+      if (!c.law) continue;
+      const l = load(c.law);
+      for (const r of c.refs) {
+        const key = `${c.law} ${r.art}${r.apdo ? "." + r.apdo : ""}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        const a = l && l.articulos.get(r.art);
+        const what = !l ? "(ley sin instantánea)" : !a ? "NO EXISTE" : a.sinContenido ? "SIN CONTENIDO" : a.rubrica || a.texto.split("\n")[1].slice(0, 90);
+        console.log(`${key.padEnd(22)} ${what}  ← «${u.text.slice(Math.max(0, c.index - 30), c.index + 70)}»`);
+      }
+    }
+  }
+}
+
 const [kind, id, ...rest] = process.argv.slice(2);
-if (kind === "esquema") esquema(id, rest.includes("--ley"));
+if (kind === "citas") citations(id, rest[0]);
+else if (kind === "esquema") esquema(id, rest.includes("--ley"));
 else if (kind === "guia") guia(id, rest.includes("--ley"));
 else if (kind === "ley") law(id, rest);
 else console.error("Uso: node tools/dump.js esquema|guia <id> [--ley] · ley <CLAVE> <art>…");

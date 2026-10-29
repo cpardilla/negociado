@@ -9,9 +9,9 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 
 | Id | Recurso | citas | alcance | rubricas | plazos | literales | grafos | terminologia |
 |---|---|---|---|---|---|---|---|---|
-| lec-diligencias-preliminares | Esquema · LEC · Diligencias preliminares | 1A 1R | · | · | · | · | · | 3R |
+| lec-diligencias-preliminares | Esquema · LEC · Diligencias preliminares | · | · | · | · | · | · | 2R |
 | lec-division-herencia | Esquema · LEC · División de la herencia | 4E 1A 9R | · | · | 5R | · | · | 2R |
-| lec-intervencion-caudal | Esquema · LEC · Intervención del caudal hereditario | 4A | · | 1R | 2R | · | · | 2R |
+| lec-intervencion-caudal | Esquema · LEC · Intervención del caudal hereditario | 3A | · | 1R | 2R | · | · | 2R |
 | lec-administracion-caudal | Esquema · LEC · Administración del caudal hereditario | · | · | · | · | · | · | · |
 | lec-liquidacion-rem | Esquema · LEC · Liquidación del régimen económico matrimonial | 13R | 1R | 3R | 2R | · | · | 4R |
 | ljv-disposiciones-generales | Esquema · LJV · Título Preliminar · Disposiciones generales | 2E 1R | 1R | · | 1R | · | · | 4R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 111E 47A 170R | 0E 0A 5R | 0E 0A 4R | 0E 0A 22R | 0E 0A 9R | 4E 0A 1R | 0E 0A 95R |
+| | **Total** | 111E 45A 169R | 0E 0A 5R | 0E 0A 4R | 0E 0A 22R | 0E 0A 9R | 4E 0A 1R | 0E 0A 94R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,10 +69,10 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2792
-- ✓ LEC (BOE a 07-10-2026): 1617
-- ✓ CC (BOE a 07-09-2026): 1390
-- ✓ CE (BOE a 20-05-2026): 113
+- ✓ LJV (BOE a 05-03-2026): 2767
+- ✓ LEC (BOE a 07-10-2026): 1616
+- ✓ CC (BOE a 07-09-2026): 1392
+- ✓ CE (BOE a 20-05-2026): 108
 - ✓ LOPJ (BOE a 09-10-2026): 62
 - ✓ LOPJM (BOE a 18-12-2025): 60
 - ✓ LH (BOE a 07-01-2026): 47
@@ -80,59 +80,53 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LTRANS (BOE a 20-12-2025): 46
 - ✓ LOPDH (BOE a 16-12-2025): 42
 - ✓ LPPD (BOE a 18-12-2025): 24
+- UE: 20
 - ✓ LN (BOE a 22-10-2026): 19
+- ✓ LOPDGDD (BOE a 08-10-2026): 16
 - ✓ LTO (BOE a 16-12-2025): 16
 - ✓ RDTO (BOE a 19-12-2025): 16
 - ✓ CP (BOE a 09-04-2026): 14
-- ✓ LSC (BOE a 19-12-2025): 11
+- ✓ LSC (BOE a 19-12-2025): 10
 - ✓ L8-2021 (BOE a 20-12-2025): 7
 - ✓ RH (BOE a 16-12-2025): 6
-- CCom: 4
+- ✓ CCom (BOE a 16-12-2025): 4
+- ✓ LCS (BOE a 05-10-2026): 4
 - LO 1/2025: 4
 - Reglamento: 3
 - LPAP: 3
-- UE: 3
-- Ley 60/2003: 2
-- Ley 5/2012: 2
+- ✓ LPI (BOE a 31-07-2026): 2
+- ✓ LPAT (BOE a 31-07-2026): 2
+- ✓ LCD (BOE a 29-12-2025): 2
+- ✓ LSE (BOE a 31-07-2026): 2
+- ✓ LMED (BOE a 19-12-2025): 2
 - Ley 29/2015: 2
 - LO 8/2015: 2
 - Ley 40/2015: 2
 - Ley 10/2012: 2
-- RDL 8/2004: 1
-- Ley 17/2001: 1
-- Ley 24/2015: 1
-- Ley 3/1991: 1
-- Ley 1/2019: 1
-- TRLGDCU: 1
 - Ley 36/2006: 1
 - Ley 29/1987: 1
 - Ley 35/2006: 1
 - Ley 24/2001: 1
 - LO 3/2007: 1
-- Ley 41/2002: 1
+- ✓ LAP (BOE a 18-12-2025): 1
 - LO 50/1981: 1
 - Ley 1/1996: 1
 - Ley 39/2015: 1
 - LO 1/2023: 1
+- ✓ LA (BOE a 18-12-2025): 1
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 827 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 852 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
 ### lec-diligencias-preliminares · Esquema · LEC · Diligencias preliminares
 
-**citas**
-
-- [aviso] «art. 8.3»: el art. 8 LEC no tiene apartado 3 (tiene 1, 2) — _sección «Art. 257 — Competencia Judicial Territorial» › tarjeta «Art. 257.1» › «Determinación del domicilio» › 1 › punto.3_
-- [revisar] «art. 727.11»: el art. 727 LEC no tiene apartado 11 (no tiene apartados numerados) (ley por defecto) — _sección «Ecosistema normativo — conexiones relacionadas» › 2 › norma «Arts. 394–410, 427, 430, 498, 721–738 LEC»_
-
 **terminologia**
 
 - [revisar] «incapacitación» × 1 → Ley 8/2021: medidas de apoyo; ya no existe la incapacitación — _sección «Art. 256 — Clases de Diligencias Preliminares y su Solicitud» › tarjeta «Art. 256.1.1º» › 3 › nota «Reforma Ley 8/2021»_
-- [revisar] «Juzgado de lo Mercantil» × 3 → Tribunal de Instancia, Sección de lo Mercantil (LO 1/2025) — verificar — _sección «Art. 256 — Clases de Diligencias Preliminares y su Solicitud» › tarjeta «Art. 256.1.9º» › «Leyes especiales con régimen propio» › 1 › punto.8 | sección «Art. 257 — Competencia Judicial Territorial» › tarjeta «Art. 257.1» › 4 › nota «Conexiones normativas» | sección «Mapa de participantes y actores» › 1 › grupo «Órgano Judicial».2_
-- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Art. 257 — Competencia Judicial Territorial» › tarjeta «Art. 257.1» › título_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Mapa de participantes y actores» › 1 › grupo «Órgano Judicial».1_
 
 ### lec-division-herencia · Esquema · LEC · División de la herencia
 
@@ -170,7 +164,6 @@ Además, 827 referencias sin ley explícita cuyo número no corresponde a la ley
 
 **citas**
 
-- [aviso] «art. 6.1.e)»: el art. 6.1 LEC no tiene «e» (tiene 1, 2, 3, 4, 5, 6, 7, 8) (ley por defecto) — _sección «Artículos de la Sección 2.ª — Versión Expandida» › tarjeta «Artículo 790» › «Medidas de oficio: contenido y límites» › 1 › punto.4_
 - [aviso] «art. 791.4»: el art. 791 LEC no tiene apartado 4 (tiene 1, 2, 3) — _sección «Indice de plazos procesales» › 1 › tabla fila 3_
 - [aviso] «art. 791.4»: el art. 791 LEC no tiene apartado 4 (tiene 1, 2, 3) — _sección «Indice de plazos procesales» › 1 › tabla fila 4_
 - [aviso] «art. 791.4»: el art. 791 LEC no tiene apartado 4 (tiene 1, 2, 3) — _sección «Indice de plazos procesales» › 1 › tabla fila 5_

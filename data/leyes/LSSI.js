@@ -1,0 +1,2 @@
+/* Generado por tools/build-law.js desde sources/boe/LSSI.json (BOE BOE-A-2002-13758, consolidado a 20251218). No editar. */
+Neg.data.register({"tipo":"ley","id":"LSSI","nombre":"Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico","titulo":"Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico","boe":{"id":"BOE-A-2002-13758","fecha":"20251218","url":"https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758"},"parcial":true,"estructura":[],"orden":[],"articulos":{}});

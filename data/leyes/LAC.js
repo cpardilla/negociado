@@ -1,0 +1,2 @@
+/* Generado por tools/build-law.js desde sources/boe/LAC.json (BOE BOE-A-2015-8147, consolidado a 20260710). No editar. */
+Neg.data.register({"tipo":"ley","id":"LAC","nombre":"Ley 22/2015, de 20 de julio, de Auditoría de Cuentas","titulo":"Ley 22/2015, de 20 de julio, de Auditoría de Cuentas","boe":{"id":"BOE-A-2015-8147","fecha":"20260710","url":"https://www.boe.es/buscar/act.php?id=BOE-A-2015-8147"},"parcial":true,"estructura":[],"orden":[],"articulos":{}});

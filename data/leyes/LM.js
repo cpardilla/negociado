@@ -1,0 +1,2 @@
+/* Generado por tools/build-law.js desde sources/boe/LM.json (BOE BOE-A-2001-23093, consolidado a 20251218). No editar. */
+Neg.data.register({"tipo":"ley","id":"LM","nombre":"Ley 17/2001, de 7 de diciembre, de Marcas","titulo":"Ley 17/2001, de 7 de diciembre, de Marcas","boe":{"id":"BOE-A-2001-23093","fecha":"20251218","url":"https://www.boe.es/buscar/act.php?id=BOE-A-2001-23093"},"parcial":true,"estructura":[],"orden":[],"articulos":{}});

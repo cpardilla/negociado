@@ -148,6 +148,11 @@ test("citations: the law is taken from after or before the article", () => {
   assert.equal(bare.porDefecto, true);
   // A text naming only other laws: a bare article is not the resource's own law.
   assert.equal(citations("Ley Orgánica 1/1982: véase el art. 7", "LJV", false).length, 0);
+  // EU instruments: the "CE" of a directive's number is not the Constitution, nor RGPD the LEC.
+  assert.equal(one("Dir. 2004/48/CE art. 6", "LEC").law, "UE");
+  assert.equal(one("datos de salud (art. 9 RGPD)", "LEC").law, "UE");
+  assert.equal(one("Directiva (UE) 2016/943, art. 9", "LEC").law, "UE");
+  assert.equal(one("intimidad (art. 18.1 CE)", "LEC").law, "CE");
 });
 
 test("plazos and termInText", () => {

@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E01.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E01.json; revisado con el BOE (registro: docs/revision/lec-diligencias-preliminares.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "lec-diligencias-preliminares",
@@ -16,7 +16,7 @@ Neg.data.register({
   "263"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20261007",
   "origen": "E01"
  },
@@ -26,8 +26,8 @@ Neg.data.register({
   "etiquetas": [
    "LEC 1/2000",
    "Arts. 256–263",
-   "40+ Conexiones normativas",
-   "20+ Actores"
+   "8 artículos",
+   "Tribunales de Instancia (LO 1/2025)"
   ]
  },
  "categorias": [
@@ -88,16 +88,16 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Determinar si existe medida de apoyo (Ley 8/2021): curatela representativa o asistencial, que puede limitar la capacidad de obrar del requerido."
+             "t": "Determinar si existe medida de apoyo (Ley 8/2021): curatela asistencial o, excepcionalmente, representativa, que condiciona cómo debe actuar el requerido."
             },
             {
-             "t": "Comprobar la existencia de autorización judicial para actos dispositivos del curador, especialmente en enajenación de bienes o renuncia de derechos."
+             "t": "Comprobar si el curador con funciones de representación necesita autorización judicial para el acto de que se trate (art. 287 CC)."
             },
             {
-             "t": "Verificar el estado civil y la capacidad negocial de la contraparte antes de interponer la demanda, para evitar nulidades procesales posteriores."
+             "t": "Saber quién representa a la contraparte antes de interponer la demanda, para dirigirla correctamente."
             },
             {
-             "t": "Conocer la existencia de guarda de hecho o poderes preventivos (arts. 249, 250 CC reformado por la Ley 8/2021)."
+             "t": "Conocer la existencia de poderes y mandatos preventivos (arts. 256–262 CC) o de guarda de hecho (arts. 263–267 CC), en la redacción de la Ley 8/2021."
             }
            ]
           }
@@ -125,14 +125,14 @@ Neg.data.register({
         "nota": {
          "tono": "t-info",
          "etiqueta": "Reforma Ley 8/2021",
-         "texto": "La Ley 8/2021 eliminó la incapacitación y la sustituyó por el sistema de medidas de apoyo. El antiguo art. 199 CC es sustituido por la nueva curatela (arts. 269–294 CC). Esta diligencia adquiere nueva relevancia para verificar qué régimen de apoyo afecta al futuro demandado."
+         "texto": "La Ley 8/2021 suprimió la incapacitación judicial y la sustituyó por las medidas de apoyo a las personas con discapacidad (arts. 249 y ss. CC); la curatela está hoy en los arts. 268–294 CC. Esta diligencia adquiere nueva relevancia para verificar qué régimen de apoyo afecta al futuro demandado."
         }
        }
       ],
       "referencias": [
        "Ley 8/2021",
-       "CC arts. 249-250",
-       "CC arts. 269-294",
+       "CC arts. 249–262",
+       "CC arts. 268–294",
        "LRC 20/2011"
       ],
       "claves": "256.1.1 declaracion capacidad representacion legitimacion juramento promesa exhibicion documentos acreditativos Ley 8/2021"
@@ -149,8 +149,8 @@ Neg.data.register({
         "tono": "t-info"
        }
       ],
-      "titulo": "Exhibición de cosa mueble",
-      "resumen": "Permite solicitar la exhibición de una cosa mueble que el futuro demandado tenga en su poder y a la que se haya de referir el juicio. Presupone la tenencia material de la cosa por el requerido y que el proceso futuro versará sobre ella. No se exige que la cosa sea propiedad del exhibidor; basta con que la tenga bajo su control efectivo.",
+      "titulo": "Exhibición de la cosa",
+      "resumen": "Permite solicitar la exhibición de la cosa que el futuro demandado tenga en su poder y a la que se haya de referir el juicio. Presupone la tenencia material de la cosa por el requerido y que el proceso futuro versará sobre ella. No se exige que la cosa sea propiedad del exhibidor; basta con que la tenga bajo su control efectivo.",
       "cuerpo": [
        {
         "apartado": {
@@ -159,10 +159,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Cualquier bien mueble identificable, sea fungible o no fungible, que tenga relevancia probatoria para un futuro proceso: joyas, obras de arte, vehículos, maquinaria, mercancías, títulos-valor, documentos con valor patrimonial."
+             "t": "Cualquier cosa identificable, sea fungible o no fungible, que tenga relevancia probatoria para un futuro proceso: joyas, obras de arte, vehículos, maquinaria, mercancías, títulos-valor, documentos con valor patrimonial."
             },
             {
-             "t": "No procede para bienes inmuebles, que se rigen por el reconocimiento judicial del art. 353 LEC."
+             "t": "La ley dice «la cosa», sin distinguir; se aplica sobre todo a muebles, porque el examen de un inmueble se obtiene por reconocimiento judicial (art. 353 LEC), si es preciso como prueba anticipada (art. 293 LEC)."
             },
             {
              "t": "El solicitante debe identificar la cosa con la mayor precisión posible para evitar diligencias genéricas o exploratorias."
@@ -199,19 +199,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Prohibición de diligencias puramente exploratorias (STS 146/2017, de 8 de marzo)."
-            },
-            {
              "t": "Respeto al derecho a la intimidad y a la protección de datos personales (art. 18 CE; RGPD)."
             },
             {
              "t": "El tribunal puede establecer condiciones para la exhibición (lugar, forma, presencia de peritos)."
-            },
-            {
-             "t": "STS 234/2015: la exhibición de cosa mueble no requiere prueba de propiedad, basta acreditar interés legítimo."
-            },
-            {
-             "t": "STS 89/2018: el tenedor no propietario también está obligado a exhibir si se acredita la futura pretensión."
             }
            ]
           }
@@ -222,18 +213,15 @@ Neg.data.register({
         "nota": {
          "tono": "t-info",
          "etiqueta": "Conexiones normativas",
-         "texto": "Art. 348 CC (acción reivindicatoria). Art. 335 LEC (peritación de muebles). Art. 353 LEC (reconocimiento judicial). Directiva 2004/48/CE, art. 6 sobre medidas de obtención de pruebas. STJUE C-427/07 (EGMA) sobre exhibición de pruebas en PI."
+         "texto": "Art. 348 CC (acción reivindicatoria). Art. 353 LEC (reconocimiento judicial). En propiedad intelectual e industrial, la Directiva 2004/48/CE (relativa al respeto de los derechos de propiedad intelectual) regula la obtención de pruebas (art. 6 de la Directiva)."
         }
        }
       ],
       "referencias": [
        "Art. 348 CC",
-       "Art. 335 LEC",
-       "Art. 353 LEC",
-       "STS 146/2017",
-       "STS 234/2015"
+       "Art. 353 LEC"
       ],
-      "claves": "256.1.2 exhibicion cosa mueble posesion tenencia deposito objeto juicio futuro demandado STS 146/2017"
+      "claves": "256.1.2 exhibicion cosa mueble posesion tenencia deposito objeto juicio futuro demandado"
      }
     },
     {
@@ -263,7 +251,7 @@ Neg.data.register({
              "t": "Legitimación activa: quien se considere heredero, coheredero o legatario. No se exige acreditar previamente la condición de heredero, basta con manifestarla."
             },
             {
-             "t": "Legitimación pasiva: cualquier persona que lo tenga en su poder, incluidos otros coherederos, notarios o instituciones depositarias."
+             "t": "Legitimación pasiva: cualquier persona que lo tenga en su poder, por ejemplo, otro coheredero o quien conserve un testamento ológrafo."
             },
             {
              "t": "El Registro General de Actos de Última Voluntad puede complementar esta diligencia para determinar la existencia y fecha del testamento."
@@ -275,8 +263,7 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "RGAUV",
-       "Arts. 762-763 LEC"
+       "RGAUV"
       ],
       "claves": "256.1.3 acto ultima voluntad heredero coheredero legatario causante testamento sucesion"
      }
@@ -311,7 +298,7 @@ Neg.data.register({
              "t": "Contratos y correspondencia relevante para la acción proyectada. Informes de auditoría, cuentas anuales no depositadas."
             },
             {
-             "t": "No abarca documentación auxiliar o ficheros internos salvo que sean imprescindibles. El tribunal puede ordenar la revisión por auditor externo si hay datos sensibles."
+             "t": "El tribunal valora en cada caso que lo pedido sea adecuado a la finalidad que se persigue (art. 258.1 LEC)."
             }
            ]
           }
@@ -325,7 +312,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Socios con participación directa o indirecta en el capital. No es necesaria una participación mínima (a diferencia del derecho de información en junta)."
+             "t": "Socios con participación directa o indirecta en el capital. La ley no exige una participación mínima."
             },
             {
              "t": "Los herederos del socio fallecido que aún no hayan inscrito la adquisición. Comuneros de bienes proindivisos."
@@ -342,13 +329,13 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Fundamentar una acción social de responsabilidad de administradores (art. 236 LSC)."
+             "t": "Fundamentar una acción social de responsabilidad contra los administradores (arts. 238–240 LSC)."
             },
             {
-             "t": "Verificar la legalidad de acuerdos sociales impugnables (arts. 204–211 LSC)."
+             "t": "Verificar la legalidad de acuerdos sociales impugnables (arts. 204–208 LSC)."
             },
             {
-             "t": "Preparar una acción individual de indemnización por daños al socio."
+             "t": "Preparar una acción individual de responsabilidad por daños al socio (art. 241 LSC)."
             }
            ]
           }
@@ -359,15 +346,14 @@ Neg.data.register({
         "nota": {
          "tono": "t-info",
          "etiqueta": "Conexiones normativas",
-         "texto": "RDL 1/2010 LSC arts. 236, 204–211, 272. CCom arts. 25–27. STS 241/2015 (derecho de información del socio). Ley 22/2015 de Auditoría de Cuentas."
+         "texto": "LSC: arts. 236–241 (responsabilidad de los administradores), 204–208 (impugnación de acuerdos) y 272 (derecho del socio a obtener las cuentas anuales). CCom arts. 25–27 (contabilidad y libros). Ley 22/2015, de Auditoría de Cuentas."
         }
        }
       ],
       "referencias": [
-       "LSC art. 236",
-       "LSC art. 204",
-       "CCom art. 25",
-       "STS 241/2015"
+       "LSC arts. 236–241",
+       "LSC arts. 204–208",
+       "CCom art. 25"
       ],
       "claves": "256.1.4 documentos sociedad comunidad socio comunero cuentas contabilidad derecho informacion LSC"
      }
@@ -384,7 +370,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Exhibición del contrato de seguro de responsabilidad civil",
-      "resumen": "Permite al perjudicado solicitar al posible responsable que exhiba el contrato de seguro de responsabilidad civil o de cualquier otra naturaleza que cubra el siniestro o daño objeto del futuro proceso. Facilita conocer la identidad del asegurador, los límites de cobertura y las condiciones de la póliza.",
+      "resumen": "Permite a quien se considere perjudicado por un hecho que pudiera estar cubierto por un seguro de responsabilidad civil pedir que se exhiba el contrato de seguro a quien lo tenga en su poder. Solo comprende el seguro de responsabilidad civil. Facilita conocer la identidad del asegurador, los límites de cobertura y las condiciones de la póliza.",
       "cuerpo": [
        {
         "apartado": {
@@ -396,16 +382,10 @@ Neg.data.register({
              "t": "Seguro de responsabilidad civil (arts. 73–76 LCS): permite la acción directa contra asegurador (art. 76 LCS)."
             },
             {
-             "t": "Seguro de accidentes de trabajo: facilita la reclamación por el trabajador o sus herederos."
+             "t": "Accidentes de circulación: seguro obligatorio del RDL 8/2004 (Ley sobre responsabilidad civil y seguro en la circulación de vehículos a motor)."
             },
             {
-             "t": "Seguro de vida: identifica beneficiarios y coberturas en disputas sucesorias."
-            },
-            {
-             "t": "Accidentes de tráfico: art. 7 RDL 8/2004 (obligación de comunicar el seguro)."
-            },
-            {
-             "t": "Responsabilidad civil de profesionales (médicos, arquitectos, abogados) y de la Administración Pública cuando actúa asegurada."
+             "t": "Responsabilidad civil de profesionales (médicos, arquitectos, abogados) y demás seguros de responsabilidad civil, voluntarios u obligatorios."
             }
            ]
           }
@@ -442,16 +422,16 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Ley 41/2002: regulación del contenido, acceso y confidencialidad de la historia clínica."
+             "t": "Ley 41/2002: contenido de la historia clínica (art. 15), usos (art. 16), conservación (art. 17) y derechos de acceso (art. 18)."
             },
             {
              "t": "Datos especialmente protegidos (art. 9 RGPD): datos de salud, diagnósticos, informes clínicos, historiales médicos."
             },
             {
-             "t": "El tribunal puede acordar medidas de minimización: acceso parcial, anonimización, seudonimización, designación de perito con deber de confidencialidad reforzado."
+             "t": "Al tratarse de datos de salud, el auto debe limitar lo pedido a lo necesario para el pleito (adecuación del art. 258.1 LEC) y puede acordar que las actuaciones sean reservadas."
             },
             {
-             "t": "El solicitante puede acudir asesorado por perito médico, siempre a su costa (art. 259)."
+             "t": "El solicitante puede acudir asesorado por un experto, por ejemplo un médico, siempre a su costa (art. 259.2)."
             }
            ]
           }
@@ -497,7 +477,7 @@ Neg.data.register({
              "t": "Relevante para acciones de cesación y defensa de intereses colectivos de consumidores y usuarios."
             },
             {
-             "t": "Los representantes legales de asociaciones de consumidores están legitimados para solicitarla."
+             "t": "Pueden solicitarla quienes estén legitimados para defender esos intereses colectivos (art. 11 LEC), como las asociaciones de consumidores y usuarios."
             }
            ]
           }
@@ -539,10 +519,10 @@ Neg.data.register({
              "t": "Cantidades producidas, entregadas, recibidas o encargadas, y el precio pagado o por el que se ofrecieron."
             },
             {
-             "t": "Identidad de cualquier otra persona implicada en la producción o distribución de los productos infractores."
+             "t": "Modelos y características técnicas de las mercancías, y quienes con fines comerciales hubieran estado en posesión de ellas."
             },
             {
-             "t": "La enumeración es abierta: cabe solicitar cualquier otro dato relevante para la tutela del derecho."
+             "t": "La enumeración es abierta («en particular»): cabe pedir otros datos sobre el infractor, el origen y las redes de distribución."
             }
            ]
           }
@@ -551,18 +531,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Rasgos comunes (núms. 7º, 8º, 10º y 11º)",
+         "titulo": "Rasgos de los núms. 7º, 8º, 10º y 11º",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Actos no realizados por meros consumidores finales de buena fe: se dirigen contra quienes actúan en el circuito comercial de la infracción."
+             "t": "Todos preparan una acción por infracción de derechos de propiedad industrial o intelectual (el 11º, solo intelectual)."
             },
             {
-             "t": "Orientación a identificar al infractor y sus redes de distribución, no al consumidor final."
+             "t": "Los núms. 7º y 11º excluyen los actos de meros consumidores finales de buena fe y sin ánimo de obtener beneficios; el 8º exige actos a escala comercial."
             },
             {
-             "t": "Normas especiales de confidencialidad (art. 259): el tribunal puede ordenar la celebración a puerta cerrada y atribuir carácter reservado a las actuaciones."
+             "t": "Confidencialidad (art. 259.4): la información obtenida solo puede usarse para la tutela de esos derechos y el tribunal puede declarar reservadas las actuaciones. La puerta cerrada del interrogatorio (art. 259.3) es solo para el núm. 7º."
             },
             {
              "t": "<strong>Definición legal de «actos desarrollados a escala comercial»:</strong> aquellos que, a los efectos de los números 7º y 8º, son realizados para obtener beneficios económicos o comerciales directos o indirectos."
@@ -576,14 +556,13 @@ Neg.data.register({
         "nota": {
          "tono": "t-info",
          "etiqueta": "Directiva 2004/48/CE",
-         "texto": "Arts. 6–7: derecho a la prueba y medidas para preservarla. Art. 8: derecho de información sobre el origen y las redes de distribución del producto infractor. Transpuesta por Ley 19/2006. STJUE C-427/07 (EGMA): las medidas de obtención de pruebas en PI deben ser efectivas, proporcionadas y disuasorias."
+         "texto": "Arts. 6–7: derecho a la prueba y medidas para preservarla. Art. 8: derecho de información sobre el origen y las redes de distribución del producto infractor. Su art. 3 exige que las medidas sean justas, equitativas, proporcionadas, efectivas y disuasorias. Transpuesta por la Ley 19/2006."
         }
        }
       ],
       "referencias": [
        "Dir. 2004/48/CE",
-       "STJUE C-427/07",
-       "LPI art. 139",
+       "LPI art. 138",
        "Ley 24/2015",
        "Ley 17/2001",
        "Ley 19/2006"
@@ -603,7 +582,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Exhibición de documentos bancarios, financieros, comerciales o aduaneros",
-      "resumen": "Permite solicitar la exhibición de documentos bancarios, financieros, comerciales o aduaneros producidos en un determinado tiempo, por actos desarrollados a escala comercial. Requisito específico: acompañar un principio de prueba de la infracción (muestra de ejemplares, mercancías o productos). Posibilidad de solicitar testimonio del Secretario si el requerido no se desprende de los documentos.",
+      "resumen": "Permite solicitar la exhibición de documentos bancarios, financieros, comerciales o aduaneros producidos en un determinado tiempo, por actos desarrollados a escala comercial. Requisito específico: acompañar un principio de prueba de la infracción (muestra de ejemplares, mercancías o productos). El solicitante puede pedir que el Letrado de la Administración de Justicia (el «Secretario» del texto legal) extienda testimonio de los documentos si el requerido no quiere desprenderse de ellos.",
       "cuerpo": [
        {
         "apartado": {
@@ -615,13 +594,10 @@ Neg.data.register({
              "t": "Debe acompañarse un <strong>principio de prueba</strong> de la infracción: muestra de ejemplares, mercancías o productos que fundamente razonablemente la sospecha."
             },
             {
-             "t": "La enumeración de documentos es abierta: bancarios, financieros, comerciales, aduaneros. Cualquier otro documento relevante puede incluirse."
+             "t": "Documentos bancarios, financieros, comerciales o aduaneros, producidos en un determinado tiempo y que se presuman en poder de quien sería demandado como responsable."
             },
             {
-             "t": "Posibilidad de solicitar testimonio del Secretario si el requerido no se desprende voluntariamente de los documentos."
-            },
-            {
-             "t": "STJUE C-524/21 (Nintendo): la exhibición de pruebas bancarias puede acordarse en el marco de una acción por infracción de PI, especialmente contra operadores de plataformas que presten servicios a escala comercial."
+             "t": "Testimonio por el Letrado de la Administración de Justicia (el texto legal dice aún «Secretario») si el requerido no se desprende voluntariamente de los documentos; la misma petición cabe en el núm. 7º."
             }
            ]
           }
@@ -630,10 +606,9 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "STJUE C-524/21",
        "Dir. 2004/48/CE art. 6"
       ],
-      "claves": "256.1.8 documentos bancarios financieros comerciales aduaneros infraccion escala comercial principio prueba muestra STJUE Nintendo"
+      "claves": "256.1.8 documentos bancarios financieros comerciales aduaneros infraccion escala comercial principio prueba muestra testimonio"
      }
     },
     {
@@ -657,28 +632,25 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>PI:</strong> LPI arts. 139–145 (acciones de cesación, indemnización, medidas de obtención de pruebas reforzadas)."
+             "t": "<strong>PI:</strong> Ley de Propiedad Intelectual: acciones y medidas cautelares (arts. 138–141 LPI); no regula diligencias propias, por lo que se aplican las de la LEC."
             },
             {
-             "t": "<strong>Marcas:</strong> Ley 17/2001 arts. 43–51 (acciones civiles por infracción de marca). Reglamento (UE) 2017/1001 (marca de la UE)."
+             "t": "<strong>Marcas:</strong> Ley 17/2001: acciones civiles por violación de marca (arts. 40–45). Reglamento (UE) 2017/1001 (marca de la UE)."
             },
             {
-             "t": "<strong>Patentes:</strong> Ley 24/2015 arts. 55–62 (acciones por infracción de patente). Reglamento (UE) 1257/2012 (patente unitaria)."
+             "t": "<strong>Patentes:</strong> Ley 24/2015: <strong>diligencias de comprobación de hechos</strong> (arts. 123–126), el régimen al que remiten las demás leyes especiales."
             },
             {
-             "t": "<strong>Competencia desleal:</strong> Ley 3/1991 arts. 18–21 (acciones de cesación, remoción e indemnización)."
+             "t": "<strong>Competencia desleal:</strong> Ley 3/1991: <strong>diligencias preliminares</strong> (art. 36), que se sustancian por el régimen de la Ley de Patentes y pueden extenderse a todo el ámbito interno de la empresa."
             },
             {
-             "t": "<strong>Secretos empresariales:</strong> Ley 1/2019 arts. 5–9 (medidas de protección del secreto y acciones por violación)."
-            },
-            {
-             "t": "<strong>Arbitraje:</strong> Ley 60/2003 art. 23 (medidas cautelares ante el tribunal ordinario en apoyo del arbitraje)."
+             "t": "<strong>Secretos empresariales:</strong> Ley 1/2019: <strong>diligencias de comprobación de hechos</strong> (art. 17), acceso a fuentes de prueba (art. 18) y aseguramiento de la prueba (art. 19)."
             },
             {
              "t": "<strong>Diseños industriales:</strong> Ley 20/2003. Reglamento (CE) 6/2002."
             },
             {
-             "t": "Principio de especialidad: lex specialis derogat generali. Las particularidades pueden afectar a competencia (Juzgados de lo Mercantil), plazos, caución, medidas de protección del secreto y régimen de recursos."
+             "t": "Principio de especialidad (art. 263 LEC): la ley especial se aplica en primer lugar y la LEC en lo que no se le oponga. Estas materias son competencia de la Sección de lo Mercantil del Tribunal de Instancia (art. 87.6 LOPJ)."
             }
            ]
           }
@@ -689,15 +661,15 @@ Neg.data.register({
         "nota": {
          "tono": "t-info",
          "etiqueta": "Directivas europeas relevantes",
-         "texto": "Dir. 2004/48/CE arts. 6–9 (medidas de prueba y cautelares). Dir. (UE) 2016/943 arts. 6–8 (protección secretos empresariales). Reglamento (UE) 2022/2065 (DSA): obligaciones de información de prestadores de servicios intermediarios. Dir. 2019/770 (contratos de contenidos y servicios digitales)."
+         "texto": "Dir. 2004/48/CE arts. 6–9 (pruebas, derecho de información y medidas cautelares). Dir. (UE) 2016/943 (secretos comerciales; art. 9: confidencialidad en el proceso). Reglamento (UE) 2022/2065 (DSA): obligaciones de información de prestadores de servicios intermediarios. Dir. 2019/770 (contratos de contenidos y servicios digitales)."
         }
        }
       ],
       "referencias": [
-       "LPI art. 139",
-       "Ley 1/2019",
-       "Ley 24/2015",
-       "Ley 60/2003",
+       "Art. 263 LEC",
+       "Ley 24/2015 arts. 123–126",
+       "Ley 3/1991 art. 36",
+       "Ley 1/2019 art. 17",
        "Dir. 2004/48/CE"
       ],
       "claves": "256.1.9 leyes especiales clausula abierta averiguaciones proteccion derechos supletoriedad art 263"
@@ -724,16 +696,13 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Prestadores de servicios de la sociedad de la información que alojen o faciliten el acceso a contenidos presuntamente infractores."
+             "t": "Prestadores de servicios de la sociedad de la información que mantengan o hayan mantenido en los últimos doce meses relaciones de servicio con el prestador que se desea identificar."
             },
             {
              "t": "Prestadores de servicios de pagos electrónicos que procesen transacciones relacionadas con las infracciones."
             },
             {
              "t": "Prestadores de servicios de publicidad en línea que publiciten los productos o servicios infractores."
-            },
-            {
-             "t": "Operadores de plataformas de comercio electrónico (Amazon, eBay, Alibaba) tras la STJUE C-524/21 (Nintendo), que amplió el alcance de la obligación de información a las plataformas."
             }
            ]
           }
@@ -803,7 +772,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Identificación del usuario de servicios de la sociedad de la información",
-      "resumen": "Permite la identificación de usuarios de servicios de la sociedad de la información que infrinjan derechos de propiedad intelectual. Ámbito más restringido que el número 10º: solo se aplica a la propiedad intelectual (no a la industrial), y se dirige contra actos que no sean de meros consumidores finales de buena fe. Se exige un volumen apreciable de obras no autorizadas y relaciones de servicio en los últimos 12 meses.",
+      "resumen": "Permite la identificación de usuarios de servicios de la sociedad de la información que infrinjan derechos de propiedad intelectual. Ámbito más restringido que el número 10º: solo se aplica a la propiedad intelectual (no a la industrial), y se dirige contra actos que no sean de meros consumidores finales de buena fe. Se atiende a un volumen apreciable de obras no autorizadas y relaciones de servicio en los últimos 12 meses.",
       "cuerpo": [
        {
         "apartado": {
@@ -818,13 +787,13 @@ Neg.data.register({
              "t": "Ámbito más restringido: solo protección de la propiedad intelectual (derechos de autor y derechos conexos), no de la propiedad industrial (marcas, patentes, diseños)."
             },
             {
-             "t": "Los actos del usuario no deben ser propios de un mero consumidor final de buena fe: se excluyen las descargas privadas sin ánimo de lucro."
+             "t": "Los actos del usuario no deben ser propios de un mero consumidor final de buena fe y sin ánimo de obtener beneficios económicos o comerciales."
             },
             {
              "t": "Relaciones de servicio en los últimos 12 meses (idéntico al número 10º)."
             },
             {
-             "t": "Volumen apreciable de obras no autorizadas como requisito habilitante, para evitar solicitudes desproporcionadas contra usuarios menores."
+             "t": "Se tiene en cuenta el volumen apreciable de obras y prestaciones protegidas no autorizadas puestas a disposición o difundidas."
             }
            ]
           }
@@ -851,7 +820,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Contenido de la solicitud, gastos y régimen de la caución",
-      "resumen": "El solicitante debe expresar los fundamentos de su petición con referencia circunstanciada al asunto objeto del juicio que se quiera preparar. Los gastos de todas las personas que intervengan serán a cargo del solicitante. Al pedir las diligencias, deberá ofrecer caución para responder de gastos, daños y perjuicios. La caución se pierde si no se interpone la demanda en el plazo de un mes desde la terminación de las diligencias, sin justificación suficiente. La forma de prestación se rige por el art. 64.2 LEC.",
+      "resumen": "El solicitante debe expresar los fundamentos de su petición con referencia circunstanciada al asunto objeto del juicio que se quiera preparar. Los gastos de todas las personas que intervengan serán a cargo del solicitante. Al pedir las diligencias, deberá ofrecer caución para responder de gastos, daños y perjuicios. La caución se pierde si no se interpone la demanda en el plazo de un mes desde la terminación de las diligencias, sin justificación suficiente. Puede prestarse en la forma del párrafo segundo del art. 64.2 LEC.",
       "cuerpo": [
        {
         "apartado": {
@@ -860,7 +829,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Fundamentos expresados:</strong> con referencia circunstanciada al asunto objeto del juicio que se quiera preparar. La solicitud no puede ser genérica o exploratoria (STS 146/2017, STS 563/2019)."
+             "t": "<strong>Fundamentos expresados:</strong> con referencia circunstanciada al asunto objeto del juicio que se quiera preparar. La solicitud no puede ser genérica ni servir para averiguar si se tiene o no un derecho."
             },
             {
              "t": "Debe identificarse la pretensión futura con razonable precisión."
@@ -877,19 +846,16 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Gastos a cargo del solicitante:</strong> de todas las personas que intervengan en las diligencias. El solicitante debe anticipar los gastos de peritos, notificaciones y desplazamientos."
+             "t": "<strong>Gastos a cargo del solicitante:</strong> de todas las personas que intervengan en las diligencias. Se incluyen, por ejemplo, desplazamientos o el coste de obtener copias."
             },
             {
              "t": "<strong>Oferta de caución:</strong> para responder de gastos, daños y perjuicios que las diligencias puedan irrogar al afectado."
             },
             {
-             "t": "<strong>Pérdida de caución:</strong> si no se interpone demanda en un mes desde la terminación, sin justificación suficiente a juicio del tribunal."
+             "t": "<strong>Pérdida de caución:</strong> en favor de esas personas, si transcurrido un mes desde la terminación de las diligencias no se interpone la demanda, sin justificación suficiente a juicio del tribunal."
             },
             {
-             "t": "<strong>Forma de prestación</strong> (art. 64.2 LEC): dinero efectivo, aval solidario de duración indefinida pagadero a primer requerimiento, o cualquier otro medio que garantice la inmediata disponibilidad."
-            },
-            {
-             "t": "STS 89/2020: la cuantía de la caución debe ser proporcionada al riesgo previsible de daño."
+             "t": "<strong>Forma de prestación</strong> (art. 64.2, párrafo segundo, LEC): dinero efectivo, aval solidario de duración indefinida y pagadero a primer requerimiento emitido por entidad de crédito o sociedad de garantía recíproca, o cualquier otro medio que, a juicio del tribunal, garantice la inmediata disponibilidad de la cantidad."
             }
            ]
           }
@@ -898,21 +864,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Prueba anticipada (conexión arts. 427, 430, 498)",
+         "titulo": "No confundir con la prueba anticipada (arts. 293–298 LEC)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Cuando exista <strong>peligro inminente</strong> de desaparición de la prueba o imposibilidad de práctica ulterior, las diligencias pueden tramitarse como prueba anticipada."
+             "t": "Las diligencias preliminares preparan el juicio (datos, documentos, cosas). Si lo que se teme es que una prueba no pueda practicarse en su momento, la vía es la <strong>prueba anticipada</strong> (art. 293 LEC) o las <strong>medidas de aseguramiento de la prueba</strong> (arts. 297–298 LEC)."
             },
             {
-             "t": "Se exigen las garantías de contradicción del art. 427 LEC: citación de las partes, intervención del LAJ y posibilidad de repreguntar."
+             "t": "Prueba anticipada antes del proceso: se cita, con al menos cinco días de antelación, a quienes se piensa demandar (art. 295.1 LEC)."
             },
             {
-             "t": "La prueba anticipada tiene pleno valor probatorio en el proceso principal, no meramente preparatorio."
+             "t": "Lo actuado pierde valor probatorio si la demanda no se interpone en dos meses desde la práctica, salvo fuerza mayor (art. 295.3 LEC); y puede repetirse si es posible y una parte lo pide (art. 295.4)."
             },
             {
-             "t": "Supuestos de urgencia: enfermedad grave o riesgo de muerte de testigo esencial; deterioro progresivo de cosa o muestra; contenido digital eliminable; ruina inminente."
+             "t": "Supuestos típicos de prueba anticipada: enfermedad grave o riesgo de muerte de testigo esencial; deterioro progresivo de cosa o muestra; contenido digital eliminable; ruina inminente."
             }
            ]
           }
@@ -923,18 +889,15 @@ Neg.data.register({
         "nota": {
          "tono": "t-plazo",
          "etiqueta": "Plazos clave",
-         "texto": "<strong>Interposición de demanda:</strong> 1 mes desde la terminación de las diligencias (art. 256.3). Incumplimiento = pérdida de caución + responsabilidad por daños y perjuicios. STS 112/2019: la caducidad opera de pleno derecho sin necesidad de declaración judicial. STS 345/2020: no cabe subsanación del plazo por ser de caducidad, no de prescripción."
+         "texto": "<strong>Interposición de demanda:</strong> 1 mes desde la terminación de las diligencias (art. 256.3). Si no se interpone sin justificación suficiente, a juicio del tribunal, la caución se pierde en favor de las personas que intervinieron; el remanente no se devuelve antes de ese mes (art. 262.2)."
         }
        }
       ],
       "referencias": [
        "Art. 64.2 LEC",
-       "Art. 427 LEC",
-       "Art. 430 LEC",
-       "STS 112/2019",
-       "Art. 24.2 CE"
+       "Arts. 293–298 LEC"
       ],
-      "claves": "256.2 solicitud fundamentos referencia circunstanciada asunto objeto juicio caucion gastos art 64.2 demanda un mes"
+      "claves": "256.2 solicitud fundamentos referencia circunstanciada asunto objeto juicio caucion gastos art 64.2 demanda un mes prueba anticipada aseguramiento"
      }
     }
    ]
@@ -954,8 +917,8 @@ Neg.data.register({
         "tono": "t-ok"
        }
       ],
-      "titulo": "Competencia del Juzgado de Primera Instancia del domicilio del requerido",
-      "resumen": "Regla general: es competente el Juez de Primera Instancia o de lo Mercantil, según proceda, del domicilio de la persona que hubiera de declarar, exhibir o intervenir. Se aplica tanto a personas físicas como jurídicas. La referencia al juez de lo mercantil conecta con el art. 86 ter LOPJ (propiedad industrial e intelectual, sociedades, seguros).",
+      "titulo": "Competencia del tribunal del domicilio del requerido",
+      "resumen": "Regla general: es competente el juez de primera instancia o de lo mercantil, cuando proceda, del domicilio de la persona que hubiera de declarar, exhibir o intervenir. Desde la LO 1/2025, son la Sección Civil del Tribunal de Instancia y la Sección de lo Mercantil (art. 87.6 LOPJ: propiedad intelectual e industrial, competencia desleal, sociedades mercantiles…).",
       "cuerpo": [
        {
         "apartado": {
@@ -967,13 +930,10 @@ Neg.data.register({
              "t": "Persona física: domicilio habitual (art. 40 CC); en su defecto, lugar de última residencia."
             },
             {
-             "t": "Persona jurídica: domicilio del art. 8.2 LEC (sede de administración o principal establecimiento)."
+             "t": "Persona jurídica: el que fijen la ley o sus estatutos; en su defecto, donde esté su representación legal o ejerza sus principales funciones (art. 41 CC)."
             },
             {
-             "t": "Empresario individual: establecimiento principal o domicilio habitual (art. 8.3 LEC)."
-            },
-            {
-             "t": "Si hay varios requeridos en distintos domicilios, el solicitante puede elegir cualquiera de ellos (conexidad objetiva, art. 53 LEC)."
+             "t": "Varios requeridos con domicilios distintos: la ley no lo resuelve; suele aplicarse por analogía la elección entre los domicilios de los demandados (art. 53.2 LEC)."
             }
            ]
           }
@@ -987,10 +947,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Tribunal ante el que haya de presentarse la demanda determinada. El fuero del domicilio del requerido cede ante el del tribunal competente para el proceso principal."
-            },
-            {
-             "t": "Si las diligencias afectan a bienes inmuebles, puede ser competente el juzgado de la situación del bien."
+             "t": "Es competente el tribunal ante el que haya de presentarse la demanda: el fuero del domicilio del requerido cede ante el del proceso principal."
             }
            ]
           }
@@ -1015,17 +972,17 @@ Neg.data.register({
         "nota": {
          "tono": "t-info",
          "etiqueta": "Conexiones normativas",
-         "texto": "Arts. 50, 60 LOPJ (competencia objetiva y territorial). Art. 86ter LOPJ (Juzgados de lo Mercantil para diligencias en materia de PI, competencia y marcas). Arts. 8, 53, 63 LEC (domicilio, conexidad). Reglamento Bruselas I bis (UE) 1215/2012: foros internacionales en materia civil y mercantil."
+         "texto": "Art. 87 LOPJ (Secciones de lo Mercantil). Arts. 40 y 41 CC (domicilio). Art. 53.2 LEC (pluralidad de demandados). Reglamento Bruselas I bis (UE) 1215/2012: competencia judicial internacional en materia civil y mercantil."
         }
        }
       ],
       "referencias": [
-       "Art. 50 LOPJ",
-       "Art. 86ter LOPJ",
-       "Arts. 8, 53, 63 LEC",
+       "Art. 87 LOPJ",
+       "Arts. 40–41 CC",
+       "Art. 53.2 LEC",
        "RB I bis 1215/2012"
       ],
-      "claves": "257.1 competencia juez primera instancia mercantil domicilio requerido art 86ter LOPJ foro especial"
+      "claves": "257.1 competencia juez primera instancia mercantil seccion civil tribunal de instancia domicilio requerido art 87 LOPJ foro especial"
      }
     },
     {
@@ -1040,7 +997,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Control de competencia: inadmisión de declinatoria",
-      "resumen": "No se admite declinatoria en las diligencias preliminares. El juez revisará de oficio su competencia de forma obligatoria. Si no es competente, se abstendrá e indicará al solicitante el juzgado al que debe acudir. El conflicto negativo de competencia lo resuelve el tribunal inmediato superior común (art. 60 LEC).",
+      "resumen": "No se admite declinatoria en las diligencias preliminares. El juez revisará de oficio su competencia de forma obligatoria. Si no es competente, se abstendrá e indicará al solicitante el tribunal al que debe acudir. El conflicto negativo de competencia lo resuelve el tribunal inmediato superior común (art. 60 LEC).",
       "cuerpo": [
        {
         "apartado": {
@@ -1052,13 +1009,13 @@ Neg.data.register({
              "t": "<strong>No se admite declinatoria:</strong> la vía específica de la declinatoria queda excluida para evitar dilaciones en un procedimiento de carácter preparatorio que debe ser rápido."
             },
             {
-             "t": "<strong>Revisión de oficio:</strong> el juez revisa obligatoriamente su competencia antes de pronunciarse sobre el fondo."
+             "t": "<strong>Revisión de oficio:</strong> el juez revisa de oficio su competencia antes de decidir sobre la solicitud."
             },
             {
-             "t": "<strong>Abstención:</strong> si no es competente, se abstiene e indica al solicitante el juzgado competente al que debe acudir."
+             "t": "<strong>Abstención:</strong> si no es competente, se abstiene e indica al solicitante el tribunal al que debe acudir (la ley dice aún «Juzgado de Primera Instancia»)."
             },
             {
-             "t": "<strong>Conflicto negativo:</strong> lo resuelve el tribunal inmediato superior común (art. 60 LEC), por auto sin ulterior recurso, dentro de los 10 días siguientes."
+             "t": "<strong>Conflicto negativo:</strong> lo resuelve el tribunal inmediato superior común (art. 60 LEC), por auto y sin ulterior recurso."
             }
            ]
           }
@@ -1068,7 +1025,6 @@ Neg.data.register({
       ],
       "referencias": [
        "Art. 60 LEC",
-       "Art. 86ter LOPJ",
        "RB I bis 1215/2012"
       ],
       "claves": "257.2 inadmision declinatoria control competencia revision oficio abstencion conflicto negativo art 60"
@@ -1127,7 +1083,7 @@ Neg.data.register({
              "t": "El tribunal rechazará la petición si no considera justificadas las diligencias (incumplimiento de cualquiera de los tres requisitos o defectos formales)."
             },
             {
-             "t": "El auto debe motivar la proporcionalidad de la medida: equilibrio entre el interés del solicitante y los derechos del afectado (STS 315/2018). La falta de motivación puede ser causa de nulidad."
+             "t": "El auto, como todos, ha de ser motivado (art. 208.2 LEC): debe razonar por qué la diligencia es o no adecuada y si concurren justa causa e interés legítimo."
             }
            ]
           }
@@ -1138,15 +1094,13 @@ Neg.data.register({
         "nota": {
          "tono": "t-plazo",
          "etiqueta": "Plazos",
-         "texto": "<strong>Resolución de la solicitud:</strong> 5 días desde la presentación. <strong>Prestación de la caución:</strong> 3 días desde el auto de admisión. Si no se presta en plazo → archivo definitivo por decreto del Letrado de la Administración de Justicia."
+         "texto": "<strong>Resolución de la solicitud:</strong> 5 días desde la presentación. <strong>Prestación de la caución:</strong> 3 días desde que se dicta el auto que las concede. Si no se presta en plazo → archivo definitivo por decreto del Letrado de la Administración de Justicia."
         }
        }
       ],
       "referencias": [
-       "Art. 209 LEC",
-       "Art. 24.1 CE",
-       "STS 315/2018",
-       "STS 146/2017"
+       "Art. 208.2 LEC",
+       "Art. 24.1 CE"
       ],
       "claves": "258.1 decision auto motivado triple control adecuacion justa causa interes legitimo cinco dias caucion"
      }
@@ -1189,13 +1143,13 @@ Neg.data.register({
         "nota": {
          "tono": "t-aviso",
          "etiqueta": "Vías extraordinarias",
-         "texto": "Contra la resolución del recurso de apelación no cabe recurso ordinario ulterior, pero sí el incidente de nulidad de actuaciones (art. 241 LEC) por vulneración del art. 24 CE (tutela judicial efectiva)."
+         "texto": "Frente a una resolución que no admita recurso cabe, excepcionalmente, el incidente de nulidad de actuaciones por vulneración de un derecho fundamental del art. 53.2 CE, como la tutela judicial efectiva (art. 228 LEC y art. 241 LOPJ)."
         }
        }
       ],
       "referencias": [
        "Art. 260 LEC",
-       "Art. 241 LEC",
+       "Art. 228 LEC",
        "Art. 24 CE"
       ],
       "claves": "258.2 recurso apelacion auto acordando irrecurrible auto denegando apelacion asimetria recursiva"
@@ -1213,10 +1167,10 @@ Neg.data.register({
        }
       ],
       "titulo": "Incumplimiento de caución: archivo definitivo",
-      "resumen": "Si el solicitante no presta la caución en el plazo de 3 días desde la notificación del auto de admisión, se procederá al archivo definitivo de las actuaciones por decreto del Letrado de la Administración de Justicia. Es un plazo de caducidad, no susceptible de ampliación.",
+      "resumen": "Si el solicitante no presta la caución en tres días, contados desde que se dicte el auto que concede las diligencias (no desde su notificación), el Letrado de la Administración de Justicia archiva definitivamente las actuaciones por decreto. Como todos los plazos de la LEC, es improrrogable (art. 134 LEC).",
       "cuerpo": [],
       "referencias": [
-       "Art. 133 LEC"
+       "Art. 134 LEC"
       ],
       "claves": "258.3 incumplimiento caucion tres dias archivo definitivo decreto LAJ"
      }
@@ -1239,7 +1193,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Citación y requerimiento",
-      "resumen": "El auto de admisión cita y requiere a los interesados para la práctica de las diligencias. Doble función: llamar a comparecer e intimar al cumplimiento. Lugar: sede de la Oficina judicial u otro que se considere oportuno. Plazo: dentro de los 10 días siguientes al auto.",
+      "resumen": "El auto de admisión cita y requiere a los interesados para la práctica de las diligencias. Doble función: llamar a comparecer e intimar al cumplimiento. Lugar: sede de la Oficina judicial o el lugar y modo que se consideren oportunos. Plazo: dentro de los diez días siguientes.",
       "cuerpo": [
        {
         "apartado": {
@@ -1248,16 +1202,13 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Identificación del tribunal y del Letrado de la Administración de Justicia."
+             "t": "Identificación del tribunal, del solicitante y de la diligencia acordada."
             },
             {
-             "t": "Descripción de la diligencia acordada y su fundamento legal. Día, hora y lugar de la actuación."
+             "t": "Lugar y modo de la diligencia y plazo de diez días para llevarla a cabo (art. 259.1)."
             },
             {
-             "t": "Apercibimiento de las consecuencias de la incomparecencia (arts. 260 y 261)."
-            },
-            {
-             "t": "Información sobre la posibilidad de designar abogado y procurador."
+             "t": "Indicación de que puede oponerse en cinco días (art. 260.1) y de las medidas que puede acordar el tribunal si no atiende el requerimiento ni se opone (art. 261)."
             }
            ]
           }
@@ -1271,13 +1222,13 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Cédula de citación: diligencia firmada por el LAJ con los datos del art. 158 LEC. Entrega en mano al requerido o persona autorizada (art. 160 LEC)."
+             "t": "Los actos de comunicación se hacen bajo la dirección del Letrado de la Administración de Justicia (art. 152 LEC): por medios electrónicos, por correo con acuse o por entrega de copia de la resolución o cédula (arts. 160–162 LEC)."
             },
             {
-             "t": "Si no se localiza: edictos (art. 164 LEC) como última ratio."
+             "t": "Si no se localiza al requerido tras las averiguaciones: comunicación edictal (art. 164 LEC), como último recurso."
             },
             {
-             "t": "Medios electrónicos: si el requerido está obligado a relacionarse electrónicamente (art. 14 LEC), la citación puede practicarse por esta vía."
+             "t": "Medios electrónicos: si el requerido está obligado a relacionarse electrónicamente con la Administración de Justicia (art. 273.3 LEC), la citación se practica por esa vía (art. 162 LEC)."
             }
            ]
           }
@@ -1286,11 +1237,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Arts. 158-164 LEC",
-       "Art. 14 LEC",
-       "Ley 39/2015"
+       "Arts. 152–164 LEC",
+       "Art. 273 LEC"
       ],
-      "claves": "259.1 citacion requerimiento sede oficina judicial diez dias comparecencia cedula 158 LEC"
+      "claves": "259.1 citacion requerimiento sede oficina judicial diez dias comparecencia cedula 152 LEC"
      }
     },
     {
@@ -1323,7 +1273,7 @@ Neg.data.register({
              "t": "Asistencia de experto: relevante en diligencias técnicas (PI, contabilidad, informática forense). Siempre a costa del solicitante."
             },
             {
-             "t": "La comparecencia del requerido es facultativa, no obligatoria. Si comparece, puede estar asistido de abogado y representado por procurador."
+             "t": "El requerido debe llevar a cabo la diligencia o, en cinco días, oponerse (art. 260); si no hace ni una cosa ni otra, el tribunal puede acordar las medidas del art. 261."
             }
            ]
           }
@@ -1332,8 +1282,6 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Art. 23 LEC",
-       "Art. 31 LEC",
        "Art. 260 LEC"
       ],
       "claves": "259.2 presentacion telematica documentos electronicos copia electronica asesor tecnico perito experto"
@@ -1341,7 +1289,7 @@ Neg.data.register({
     },
     {
      "tarjeta": {
-      "articulo": "Art. 259.3",
+      "articulo": "Art. 259.3–4",
       "categoria": "c4",
       "tono": "c4",
       "etiquetas": [
@@ -1351,7 +1299,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Confidencialidad y reserva",
-      "resumen": "Tres niveles de protección: (1) puerta cerrada para el interrogatorio del art. 256.1.7º, conforme al art. 138.3 LEC; (2) uso exclusivo de la información obtenida (núms. 7, 8, 10 y 11) para la tutela jurisdiccional de los derechos de PI del solicitante, con prohibición de divulgación o comunicación a terceros; (3) carácter reservado del conjunto de las actuaciones, a instancia de cualquier interesado, para proteger datos confidenciales frente a terceros ajenos al procedimiento.",
+      "resumen": "Tres niveles de protección: (1) puerta cerrada para el interrogatorio del art. 256.1.7º, a solicitud de cualquiera que acredite interés legítimo y en la forma del art. 138.3 LEC (apdo. 3); (2) uso exclusivo de la información obtenida (núms. 7, 8, 10 y 11) para la tutela jurisdiccional de los derechos de PI del solicitante, con prohibición de divulgación o comunicación a terceros (apdo. 4); (3) carácter reservado del conjunto de las actuaciones, a instancia de cualquier interesado, para proteger datos confidenciales frente a terceros ajenos al procedimiento.",
       "cuerpo": [
        {
         "apartado": {
@@ -1360,13 +1308,13 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Puerta cerrada (art. 256.1.7º):</strong> el tribunal podrá ordenar la celebración a puerta cerrada del interrogatorio. Procedimiento conforme al art. 138.3 LEC: audiencia previa a las partes presentes; auto irrecurrible con posibilidad de protesta."
+             "t": "<strong>Puerta cerrada (art. 256.1.7º):</strong> el tribunal podrá ordenar la celebración a puerta cerrada del interrogatorio. A solicitud de cualquiera que acredite interés legítimo. Forma del art. 138.3 LEC: se oye antes a las partes presentes y se resuelve por auto sin recurso, sin perjuicio de protesta."
             },
             {
              "t": "<strong>Uso exclusivo (núms. 7, 8, 10 y 11):</strong> la información solo puede utilizarse para la tutela jurisdiccional de los derechos de propiedad industrial o intelectual del solicitante. Prohibición de divulgación o comunicación a terceros."
             },
             {
-             "t": "<strong>Carácter reservado:</strong> a instancia de cualquier interesado, el tribunal podrá atribuir carácter reservado al conjunto de las actuaciones, protegiendo datos confidenciales frente a terceros ajenos al procedimiento."
+             "t": "<strong>Carácter reservado:</strong> a instancia de cualquier interesado, el tribunal podrá atribuir carácter reservado al conjunto de las actuaciones, para garantizar la protección de los datos e información confidenciales (art. 259.4)."
             }
            ]
           }
@@ -1399,7 +1347,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Tramitación de la oposición",
-      "resumen": "El requerido puede formular oposición en el plazo de 5 días desde la citación. Se da traslado al requirente, quien puede impugnarla en 5 días. Cualquier parte puede solicitar vista, que se sigue por los trámites del juicio verbal (arts. 437 y ss.). Resolución por auto motivado.",
+      "resumen": "El requerido puede formular oposición en el plazo de 5 días desde la citación. Se da traslado al requirente, quien puede impugnarla en 5 días. Cualquier parte puede solicitar vista, que se sigue por los trámites del juicio verbal (arts. 437 y ss.). Celebrada, en su caso, la vista, el tribunal resuelve por auto si la oposición está o no justificada (apdo. 2).",
       "cuerpo": [
        {
         "apartado": {
@@ -1417,13 +1365,13 @@ Neg.data.register({
              "t": "Vulneración de derechos fundamentales: intimidad (art. 18.1 CE), secreto de comunicaciones (art. 18.3 CE), protección de datos (art. 18.4 CE)."
             },
             {
-             "t": "Secreto profesional: abogado (art. 542.3 LOPJ), médico (Ley 41/2002), sacerdote (art. 416.2 LEC), periodista (art. 20.1.d CE; STC 159/2009; STEDH Goodwin)."
+             "t": "Secreto profesional: abogados (art. 542.3 LOPJ), profesionales sanitarios (Ley 41/2002), periodistas (secreto profesional del art. 20.1.d CE), ministros de culto."
             },
             {
              "t": "Secreto comercial, industrial o empresarial (Ley 1/2019 de Secretos Empresariales)."
             },
             {
-             "t": "Falta de competencia del tribunal (art. 257)."
+             "t": "La falta de competencia no se alega por declinatoria (art. 257.2): el tribunal la controla de oficio."
             }
            ]
           }
@@ -1432,12 +1380,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Ley 42/2015 (reforma LEC)",
+         "titulo": "Redacción vigente",
          "contenido": [
           {
            "lista": [
             {
-             "t": "La Ley 42/2015 reforzó los mecanismos de oposición introduciendo mayores garantías para el requerido, especialmente en materia de protección de datos y secretos empresariales. Se incrementó la exigencia de motivación del auto de admisión y se ampliaron los motivos de oposición legítima."
+             "t": "Los arts. 259 y 260 tienen la redacción de la Ley 42/2015, de 5 de octubre (en vigor desde el 7 de octubre de 2015). La ley no enumera motivos de oposición: los anteriores son los habituales en la práctica."
             }
            ]
           }
@@ -1447,18 +1395,17 @@ Neg.data.register({
       ],
       "referencias": [
        "Art. 18 CE",
-       "Art. 416 LEC",
+       "Art. 542.3 LOPJ",
        "Ley 1/2019",
        "Ley 42/2015",
-       "RGPD",
-       "STC 159/2009"
+       "RGPD"
       ],
       "claves": "260.1 oposicion cinco dias traslado impugnacion vista juicio verbal 437 motivos legitimas"
      }
     },
     {
      "tarjeta": {
-      "articulo": "Art. 260.2",
+      "articulo": "Art. 260.3",
       "categoria": "c5",
       "tono": "c5",
       "etiquetas": [
@@ -1468,17 +1415,15 @@ Neg.data.register({
        }
       ],
       "titulo": "Oposición injustificada",
-      "resumen": "Si la oposición resulta injustificada, se condenará al requerido al pago de las costas del incidente. El auto que así lo acuerde es irrecurrible. Función disuasoria: desincentiva la oposición meramente dilatoria o infundada, protegiendo el derecho del solicitante a preparar su juicio.",
+      "resumen": "Si el tribunal considera injustificada la oposición, condenará al requerido al pago de las costas causadas por el incidente. El auto que así lo acuerde es irrecurrible. Función disuasoria: desincentiva la oposición meramente dilatoria o infundada, protegiendo el derecho del solicitante a preparar su juicio.",
       "cuerpo": [],
-      "referencias": [
-       "Art. 260.3"
-      ],
-      "claves": "260.2 oposicion injustificada costas irrecurrible disuasoria"
+      "referencias": [],
+      "claves": "260.3 oposicion injustificada costas irrecurrible disuasoria"
      }
     },
     {
      "tarjeta": {
-      "articulo": "Art. 260.3",
+      "articulo": "Art. 260.4",
       "categoria": "c5",
       "tono": "c5",
       "etiquetas": [
@@ -1494,7 +1439,7 @@ Neg.data.register({
        "Art. 260",
        "Art. 258.2"
       ],
-      "claves": "260.3 oposicion justificada auto apelacion revision tribunal superior"
+      "claves": "260.4 oposicion justificada auto apelacion revision tribunal superior"
      }
     }
    ]
@@ -1515,7 +1460,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Negativa a llevar a cabo las diligencias",
-      "resumen": "Cuando la persona citada no atiende el requerimiento ni formula oposición, el tribunal acordarán las medidas que resulten proporcionadas (ponderación gravedad/interés), por auto motivado. Las medidas varían según el tipo de diligencia de que se trate, desde la ficta confessio hasta la entrada y registro.",
+      "resumen": "Cuando la persona citada no atiende el requerimiento ni formula oposición, el tribunal acordará las medidas que resulten proporcionadas (ponderación gravedad/interés), por auto motivado. Las medidas varían según el tipo de diligencia de que se trate, desde la ficta confessio hasta la entrada y registro.",
       "cuerpo": [
        {
         "apartado": {
@@ -1533,7 +1478,7 @@ Neg.data.register({
              "t": "<strong>3ª Exhibición de una cosa:</strong> procedimiento análogo al de documentos; además, el solicitante podrá pedir el depósito o la medida de garantía más adecuada para la conservación de la cosa."
             },
             {
-             "t": "<strong>4ª Documentos contables:</strong> las cuentas y datos que presente el solicitante se podrán tener por ciertos a efectos del juicio posterior (inversión de la carga de la prueba)."
+             "t": "<strong>4ª Documentos contables:</strong> las cuentas y datos que presente el solicitante se podrán tener por ciertos a efectos del juicio posterior (efecto que el tribunal puede acordar, no automático)."
             },
             {
              "t": "<strong>5ª Grupo de afectados (art. 256.1.6º) y extensión a los números 5 bis, 7º y 8º:</strong> medidas de intervención, incluida entrada y registro, para encontrar documentos o datos. Alcanza a cualquier persona que pudiera colaborar. Sin perjuicio de responsabilidad penal por desobediencia a la autoridad judicial (arts. 556 y concordantes del Código Penal)."
@@ -1547,7 +1492,7 @@ Neg.data.register({
         "nota": {
          "tono": "t-info",
          "etiqueta": "Conexiones normativas",
-         "texto": "Art. 556 CP: delito de desobediencia a la autoridad judicial si el requerido incumple la orden judicial. Art. 711 LEC: multas coercitivas. Art. 217.7 LEC: valoración de la negativa como indicio en el proceso principal."
+         "texto": "Art. 556 CP: delito de desobediencia a la autoridad judicial si el requerido incumple la orden judicial. Art. 711 LEC: multas coercitivas. Art. 217.7 LEC: en el juicio posterior, el tribunal tiene en cuenta la disponibilidad y facilidad probatoria de cada parte."
         }
        }
       ],
@@ -1590,7 +1535,7 @@ Neg.data.register({
              "t": "<strong>Audiencia:</strong> oído el solicitante. <strong>Recurso:</strong> apelación sin efectos suspensivos (la decisión se ejecuta mientras se tramita el recurso)."
             },
             {
-             "t": "<strong>Remanente:</strong> no se devuelve hasta que transcurra el plazo de un mes del art. 256.3. Si el solicitante no interpone demanda en ese plazo, también pierde el remanente. Si interpone la demanda, se le devuelve."
+             "t": "<strong>Remanente:</strong> no se devuelve hasta que transcurra el plazo de un mes del art. 256.3. Si en ese mes no interpone la demanda sin justificación suficiente, pierde la caución (art. 256.3); si la interpone, se le devuelve el remanente."
             }
            ]
           }
@@ -1600,8 +1545,7 @@ Neg.data.register({
       ],
       "referencias": [
        "Art. 256.3",
-       "Art. 262.2",
-       "Art. 1902 CC"
+       "Art. 262.2"
       ],
       "claves": "262 aplicacion caucion cinco dias remanente devolucion mes archivo apelacion sin efectos suspensivos"
      }
@@ -1618,28 +1562,19 @@ Neg.data.register({
        }
       ],
       "titulo": "Diligencias previstas en leyes especiales",
-      "resumen": "Lo dispuesto en los artículos anteriores se entiende sin perjuicio de lo establecido en las leyes especiales sobre propiedad intelectual, competencia, marcas, patentes, secretos empresariales y arbitraje. Los preceptos del Capítulo II se aplican supletoriamente en lo que no se oponga a la legislación especial (lex specialis derogat generali). Las particularidades pueden afectar a competencia, plazos, caución, protección del secreto y régimen de recursos.",
+      "resumen": "Cuando se trate de las diligencias del art. 256.1.9º (las previstas en leyes especiales), los preceptos de este capítulo se aplican en lo que no se oponga a la legislación especial de la materia. Ejemplos: diligencias de comprobación de hechos de la Ley de Patentes (arts. 123–126), de la Ley de Competencia Desleal (art. 36) y de la Ley de Secretos Empresariales (art. 17).",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Principio de especialidad y jurisprudencia",
+         "titulo": "Principio de especialidad",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Las leyes especiales prevalecen sobre el régimen general de la LEC en sus ámbitos respectivos."
+             "t": "La ley especial prevalece sobre el régimen general de la LEC en su ámbito."
             },
             {
              "t": "Donde la ley especial calle, se aplica supletoriamente el régimen de los arts. 256–263 LEC."
-            },
-            {
-             "t": "STJUE C-427/07 (EGMA): las medidas de obtención de pruebas en PI deben ser efectivas, proporcionadas y disuasorias."
-            },
-            {
-             "t": "STJUE C-524/21 (Nintendo): la exhibición de pruebas bancarias puede acordarse en el marco de una acción por infracción de PI."
-            },
-            {
-             "t": "STJUE C-235/09 (Abdida): efecto directo de las directivas de PI en los ordenamientos nacionales."
             }
            ]
           }
@@ -1648,20 +1583,19 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Art. 256.1.9",
-       "Ley 1/2019",
-       "Dir. 2004/48/CE",
-       "STJUE C-427/07",
-       "STJUE C-524/21"
+       "Art. 256.1.9 LEC",
+       "Ley 24/2015 arts. 123–126",
+       "Ley 3/1991 art. 36",
+       "Ley 1/2019 art. 17"
       ],
-      "claves": "263 leyes especiales supletoriedad propiedad intelectual competencia marcas patentes secretos DSA"
+      "claves": "263 leyes especiales supletoriedad patentes comprobacion hechos competencia desleal secretos empresariales"
      }
     }
    ]
   },
   {
    "titulo": "Indice de plazos procesales",
-   "recuento": "10 trámites",
+   "recuento": "8 trámites",
    "plegada": true,
    "bloques": [
     {
@@ -1673,22 +1607,22 @@ Neg.data.register({
       ],
       "filas": [
        [
-        "Resolución sobre solicitud de diligencias preliminares",
+        "Resolución sobre la solicitud de diligencias preliminares",
         "5 días",
         "Art. 258.1"
        ],
        [
-        "Prestación de caución tras auto concediendo diligencias",
+        "Prestación de la caución, desde que se dicta el auto que concede las diligencias",
         "3 días",
         "Art. 258.3"
        ],
        [
-        "Práctica de la diligencia acordada desde citación",
+        "Práctica de la diligencia acordada",
         "10 días",
         "Art. 259.1"
        ],
        [
-        "Oposición a las diligencias por el requerido",
+        "Oposición del requerido, desde que recibe la citación",
         "5 días",
         "Art. 260.1"
        ],
@@ -1711,16 +1645,6 @@ Neg.data.register({
         "Interposición de demanda tras terminación de diligencias (sanción por no hacerlo)",
         "1 mes",
         "Art. 256.3"
-       ],
-       [
-        "Acción de saneamiento por vicios ocultos en compraventa",
-        "6 meses (caducidad)",
-        "CC art. 1490"
-       ],
-       [
-        "Garantía legal en compraventa de consumidores (Ley 7/2022)",
-        "3 años",
-        "RDL 1/2007 art. 120"
        ]
       ]
      }
@@ -1729,7 +1653,7 @@ Neg.data.register({
   },
   {
    "titulo": "Mapa de participantes y actores",
-   "recuento": "5 categorías · 20+ actores",
+   "recuento": "5 categorías · 24 actores",
    "plegada": true,
    "bloques": [
     {
@@ -1738,10 +1662,10 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Juzgado de 1ª Instancia (competencia general, art. 257)"
+        "t": "Tribunal de Instancia, Sección Civil (antes Juzgado de Primera Instancia; art. 257)"
        },
        {
-        "t": "Juzgado de lo Mercantil (PI, marcas, competencia: art. 86ter LOPJ)"
+        "t": "Tribunal de Instancia, Sección de lo Mercantil (propiedad intelectual e industrial, competencia desleal: art. 87 LOPJ)"
        },
        {
         "t": "Audiencia Provincial (resolución de recursos de apelación)"
@@ -1758,10 +1682,10 @@ Neg.data.register({
       "tono": "c2",
       "items": [
        {
-        "t": "Notario (actas de hechos, art. 178 RN)"
+        "t": "Notario (actas de presencia o de hechos, fuera del proceso)"
        },
        {
-        "t": "Perito judicial (designado de lista oficial, art. 341 LEC)"
+        "t": "Experto que asesora al solicitante, a su costa (art. 259.2)"
        },
        {
         "t": "Auditor de cuentas (exhibición libros societarios, Ley 22/2015)"
@@ -1790,10 +1714,10 @@ Neg.data.register({
         "t": "Abogado (asistencia técnica, art. 31 LEC)"
        },
        {
-        "t": "Tenedor / Depositario (obligado a exhibir cosa mueble)"
+        "t": "Tenedor / Depositario (obligado a exhibir la cosa)"
        },
        {
-        "t": "Socio / Comunero (derecho de información, LSC art. 272)"
+        "t": "Socio / Comunero (exhibición de documentos y cuentas, art. 256.1.4º)"
        }
       ]
      }
@@ -1810,13 +1734,13 @@ Neg.data.register({
         "t": "Médico / Profesional sanitario (secreto, Ley 41/2002)"
        },
        {
-        "t": "Sacerdote / Ministro de culto (sigilo sacramental, art. 416.2 LEC)"
+        "t": "Ministro de culto (secreto religioso)"
        },
        {
         "t": "Periodista (secreto de fuentes, art. 20.1.d CE)"
        },
        {
-        "t": "Administrador societario (requerido para rendir cuentas, art. 236 LSC)"
+        "t": "Administrador societario (posible demandado por responsabilidad, arts. 236–241 LSC)"
        }
       ]
      }
@@ -1827,7 +1751,7 @@ Neg.data.register({
       "tono": "c6",
       "items": [
        {
-        "t": "Registro de la Propiedad (certificaciones con valor probatorio, LH art. 34)"
+        "t": "Registro de la Propiedad (publicidad registral y certificaciones, arts. 221–227 LH)"
        },
        {
         "t": "Registro Mercantil (documentación societaria pública)"
@@ -1848,7 +1772,7 @@ Neg.data.register({
   },
   {
    "titulo": "Ecosistema normativo — conexiones relacionadas",
-   "recuento": "13+ normas",
+   "recuento": "10 normas",
    "plegada": true,
    "bloques": [
     {
@@ -1863,17 +1787,17 @@ Neg.data.register({
     {
      "norma": {
       "ley": "LEC · Conexiones internas",
-      "titulo": "Arts. 394–410, 427, 430, 498, 721–738 LEC",
-      "texto": "Régimen de condena en costas. Prueba anticipada con garantías de contradicción. Medidas cautelares que pueden coexistir con las diligencias (art. 727.11: medida cautelar innominada).",
+      "titulo": "Arts. 293–298, 394–398 y 721–747 LEC",
+      "texto": "Prueba anticipada y medidas de aseguramiento de la prueba (arts. 293–298). Costas (arts. 394–398). Medidas cautelares, que pueden coexistir con las diligencias (art. 727.11ª: otras medidas necesarias para asegurar la efectividad de la tutela).",
       "etiqueta": "Conexiones",
       "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "Ley estatal · Reforma 2015",
-      "titulo": "Ley 42/2015, de reforma de la LEC",
-      "texto": "Reforzó los mecanismos de oposición y las garantías del requerido, especialmente en materia de protección de datos y secretos empresariales. Incrementó la exigencia de motivación del auto de admisión.",
+      "ley": "Ley estatal · Reformas",
+      "titulo": "Leyes 21/2014 y 42/2015",
+      "texto": "La Ley 21/2014 (reforma de la Ley de Propiedad Intelectual) modificó el núm. 7º y añadió los núms. 10º y 11º del art. 256.1; la Ley 42/2015 dio la redacción vigente de los arts. 259 y 260.",
       "etiqueta": "Reforma",
       "tono": "t-nota"
      }
@@ -1882,7 +1806,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley estatal · Secretos empresariales",
       "titulo": "Ley 1/2019 de Secretos Empresariales",
-      "texto": "Transpone la Dir. 2016/943. Regula la protección del know-how empresarial y las medidas de preservación del secreto en el proceso civil (arts. 5–9).",
+      "texto": "Transpone la Dir. 2016/943. Acciones civiles (arts. 8–11) y normas procesales (arts. 12–25): tratamiento de la información confidencial (art. 15) y diligencias de comprobación de hechos (art. 17).",
       "etiqueta": "PI",
       "tono": "t-ok"
      }
@@ -1891,7 +1815,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley estatal · Sociedades de capital",
       "titulo": "RDL 1/2010, Texto Refundido LSC",
-      "texto": "<strong>Art. 236</strong> — responsabilidad de administradores. <strong>Arts. 204–211</strong> — impugnación de acuerdos sociales. Relevante para la diligencia de exhibición de libros contables.",
+      "texto": "<strong>Arts. 236–241</strong> — responsabilidad de los administradores. <strong>Arts. 204–208</strong> — impugnación de acuerdos sociales. Relevante para la diligencia de exhibición de libros contables.",
       "etiqueta": "Societario",
       "tono": "t-plazo"
      }
@@ -1900,7 +1824,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley estatal · Consumidores",
       "titulo": "RDL 1/2007, Estatuto de Consumidores",
-      "texto": "<strong>Arts. 114–127</strong> — garantías postventa. Reformado por Ley 7/2022 (ampliación de garantía a 3 años). Relevante para diligencias de reconocimiento de productos defectuosos.",
+      "texto": "Relevante para el núm. 6º (procesos para la defensa de los intereses colectivos de consumidores y usuarios), junto con el art. 11 LEC (legitimación).",
       "etiqueta": "Consumidores",
       "tono": "t-plazo"
      }
@@ -1918,7 +1842,7 @@ Neg.data.register({
      "norma": {
       "ley": "Derecho UE · Secretos empresariales",
       "titulo": "Directiva (UE) 2016/943",
-      "texto": "<strong>Arts. 6–8</strong> — medidas de protección del secreto en el proceso civil. Transpuesta por la Ley 1/2019. Principio de proporcionalidad.",
+      "texto": "Medidas, procedimientos y recursos (arts. 6–15); confidencialidad de los secretos en el proceso (art. 9). Transpuesta por la Ley 1/2019.",
       "etiqueta": "UE · Secretos",
       "tono": "t-ok"
      }
@@ -1927,7 +1851,7 @@ Neg.data.register({
      "norma": {
       "ley": "Derecho UE · Protección de datos",
       "titulo": "RGPD (UE) 2016/679",
-      "texto": "<strong>Arts. 5–11</strong> — principios de licitud, minimización y categorías especiales de datos. Relevante cuando las diligencias acceden a datos personales especialmente protegidos.",
+      "texto": "Principios de licitud y minimización, y categorías especiales de datos, como los de salud (arts. 5 a 11 RGPD). Relevante cuando las diligencias acceden a datos personales especialmente protegidos.",
       "etiqueta": "UE · Datos",
       "tono": "t-aviso"
      }
@@ -1939,24 +1863,6 @@ Neg.data.register({
       "texto": "Competencia judicial internacional en materia civil y mercantil. Determina el tribunal competente cuando el requerido reside en otro Estado miembro.",
       "etiqueta": "UE · Competencia",
       "tono": "t-info"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Jurisprudencia española",
-      "titulo": "STS 146/2017, 563/2019, 315/2018",
-      "texto": "<strong>STS 146/2017</strong> — prohibición de diligencias exploratorias. <strong>STS 563/2019</strong> — la diligencia no sirve para averiguar si existe un derecho. <strong>STS 315/2018</strong> — exigencia de motivación del auto de admisión.",
-      "etiqueta": "Jurisprudencia",
-      "tono": "t-nota"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Jurisprudencia UE",
-      "titulo": "STJUE C-427/07 (EGMA) · C-524/21 (Nintendo)",
-      "texto": "<strong>C-427/07</strong> — medidas de obtención de pruebas en PI deben ser efectivas y proporcionadas. <strong>C-524/21</strong> — exhibición de pruebas bancarias en acción por infracción de PI en plataformas.",
-      "etiqueta": "Jurisprudencia UE",
-      "tono": "t-nota"
      }
     }
    ]

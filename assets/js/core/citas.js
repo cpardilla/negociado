@@ -69,7 +69,9 @@
     ["LOPDGDD", /^(?:LOPDGDD\b)/],
     ["LMED", /^(?:Ley de [Mm]ediaci[oó]n\b)/],
     ["LAP", /^(?:Ley de autonom[ií]a del paciente\b)/],
-    ["UE", /^(?:Directiva\b|Dir\.\s|Reglamento \(UE\)|Reglamento \(CE\)|Reglamento Bruselas|TFUE\b|CDFUE\b|Convenio\b)/],
+    // EU instruments, whole ("Dir. 2004/48/CE", "Directiva (UE) 2016/943"), so that the "CE" of a
+    // directive's number is not read as the Constitution.
+    ["UE", /^(?:(?:Directiva|Dir\.)(?:\s*\((?:UE|CE)\))?(?:\s*\d+\/\d+(?:\/(?:CEE?|UE))?)?|Reglamento \((?:UE|CE)\)(?:\s*(?:n\.?º\s*)?\d+\/\d+)?|Reglamento Bruselas(?: I bis)?|RGPD\b|DSA\b|TFUE\b|CDFUE\b|Convenio\b)/],
     ["otra", /^(?:Ley(?: Org[aá]nica)? \d+\/\d{4}\b|LO \d+\/\d{4}\b|RD(?:L|Leg)? ?\d+\/\d{4}\b|Real Decreto(?:-ley| Legislativo)? \d+\/\d{4}\b|Reglamento\b)/],
   ];
 
@@ -149,6 +151,7 @@
         const b = before.match(/([A-Z][\w/.() ]{1,45}?)\s*,?\s*$/);
         if (b)
           for (let i = 0; i < b[1].length && !law; i++) {
+            if (i > 0 && /[\w/]/.test(b[1][i - 1])) continue; // a law name starts a word
             const lb = lawAt(b[1].slice(i), alias);
             if (lb && i + lb.length >= b[1].trimEnd().length - 1) law = lb.key;
           }
