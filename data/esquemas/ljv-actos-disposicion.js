@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E19.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E19.json; revisado con el BOE (registro: docs/revision/ljv-actos-disposicion.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-actos-disposicion",
@@ -15,13 +15,13 @@ Neg.data.register({
   "66"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E19"
  },
  "cabecera": {
   "migas": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO VIII",
-  "subtitulo": "Artículos 61 a 66 LJV · Código Civil arts. 166, 249, 264, 269, 287, 1060 · Ley 41/2003 · Ley 8/2021 · Convención ONU 2006",
+  "subtitulo": "Arts. 61 a 66 LJV · Arts. 166, 264, 287, 289 y 1060 CC · Ley 41/2003 · Ley 8/2021 · Convención ONU 2006",
   "etiquetas": [
    "Ley 15/2015, LJV",
    "Arts. 61–66",
@@ -113,7 +113,10 @@ Neg.data.register({
              "t": "<strong>Aprobación:</strong> es posterior; otorga validez al acto ya ejecutado."
             },
             {
-             "t": "<strong>Excepción de tramitación específica:</strong> remite, entre otros, a los cauces previstos para la partición hereditaria (artículo 1060 del Código Civil), para la liquidación de la sociedad de gananciales o para actuaciones específicas del albaceazgo y de la guarda de hecho."
+             "t": "<strong>Excepción de tramitación específica:</strong> la principal es la aceptación sin beneficio de inventario o la repudiación de la herencia o legados en nombre del menor o de la persona con discapacidad, que se tramita por el expediente de los arts. 93 a 95 LJV (competente: el juzgado de la residencia del menor o de la persona con discapacidad; si se deniega, la herencia solo puede aceptarse a beneficio de inventario)."
+            },
+            {
+             "t": "<strong>Aprobación de particiones:</strong> sí se tramita por este capítulo. La partición hecha por el tutor o por el curador con facultades de representación no necesita autorización, pero sí aprobación judicial una vez practicada (arts. 289 y 1060 CC); la solicitud acompaña las operaciones particionales (art. 63.1 LJV)."
             }
            ]
           }
@@ -127,19 +130,19 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Respecto del menor (artículo 166 del Código Civil):</strong> los progenitores titulares de la patria potestad necesitan autorización judicial para renunciar a los derechos de que sean titulares los hijos, enajenar o gravar sus bienes inmuebles, establecimientos mercantiles o industriales, objetos preciosos y valores mobiliarios —salvo el derecho de suscripción preferente de acciones— por causas justificadas de utilidad o necesidad y con audiencia del Ministerio Fiscal; así como para repudiar herencia o legado deferidos al hijo."
+             "t": "<strong>Respecto del menor (artículo 166 del Código Civil):</strong> los progenitores titulares de la patria potestad necesitan autorización judicial para renunciar a los derechos de que sean titulares los hijos, enajenar o gravar sus bienes inmuebles, establecimientos mercantiles o industriales, objetos preciosos y valores mobiliarios —salvo el derecho de suscripción preferente de acciones— por causas justificadas de utilidad o necesidad y con audiencia del Ministerio Fiscal. La autorización para repudiar la herencia o legado deferidos al hijo se pide por los arts. 93 a 95 LJV."
             },
             {
              "t": "<strong>Exención para el menor mayor de dieciséis años:</strong> no será necesaria autorización judicial si el menor hubiese cumplido dieciséis años y consintiere en documento público, ni para la enajenación de valores mobiliarios siempre que su importe se reinvierta en bienes o valores seguros."
             },
             {
-             "t": "<strong>Respecto de la persona con discapacidad (artículo 287 del Código Civil):</strong> el curador con funciones de representación necesita autorización judicial para los actos que determine la resolución y, en todo caso, para los enumerados en sus ordinales 1.º a 9.º (actos de trascendencia personal o familiar; enajenar o gravar bienes inmuebles, establecimientos mercantiles o industriales, bienes o derechos de especial significado personal o familiar, bienes muebles de extraordinario valor, objetos preciosos y valores mobiliarios no cotizados; dar inmuebles en arrendamiento por término inicial superior a seis años; disposiciones a título gratuito; renuncias, transacciones o arbitrajes; aceptación sin beneficio de inventario o repudiación de herencias y liberalidades; gastos extraordinarios; interposición de demandas; préstamos, avales o fianzas; seguros de vida y rentas vitalicias de cuantía extraordinaria)."
+             "t": "<strong>Respecto de la persona con discapacidad (artículo 287 del Código Civil):</strong> el curador con funciones de representación necesita autorización judicial para los actos que determine la resolución y, en todo caso, para los enumerados en sus ordinales 1.º a 9.º (actos de trascendencia personal o familiar; enajenar o gravar bienes inmuebles, establecimientos mercantiles o industriales, bienes o derechos de especial significado personal o familiar, bienes muebles de extraordinario valor, objetos preciosos y valores mobiliarios no cotizados; dar inmuebles en arrendamiento por término inicial superior a seis años; disposiciones a título gratuito; renuncias, transacciones o arbitrajes; aceptación sin beneficio de inventario o repudiación de herencias y liberalidades; gastos extraordinarios; interposición de demandas; préstamos, avales o fianzas; seguros de vida y rentas vitalicias de cuantía extraordinaria). El ordinal 2.º incluye también los contratos o actos dispositivos susceptibles de inscripción, y dispone que la enajenación se haga <strong>mediante venta directa</strong>, salvo que el Tribunal considere necesaria la subasta judicial."
             },
             {
-             "t": "<strong>Respecto del guardador de hecho (artículo 264 del Código Civil):</strong> cuando excepcionalmente requiera actuación representativa, deberá recabar autorización judicial a través del correspondiente expediente de jurisdicción voluntaria, en los términos del artículo 287."
+             "t": "<strong>Respecto del guardador de hecho (artículo 264 del Código Civil):</strong> cuando excepcionalmente requiera actuación representativa, deberá recabar autorización judicial a través del correspondiente expediente de jurisdicción voluntaria, en el que se oirá a la persona con discapacidad; en todo caso, para los actos del artículo 287. No la necesita para pedir una prestación económica a favor de la persona ni para actos de escasa relevancia económica y sin especial significado personal o familiar."
             },
             {
-             "t": "<strong>Respecto del administrador del patrimonio protegido (artículo 5 de la Ley 41/2003):</strong> las reglas de administración deberán prever la autorización judicial en los mismos supuestos que el curador representativo, sin perjuicio de que los constituyentes o el administrador puedan instar al Ministerio Fiscal la excepción de la autorización en atención a la composición del patrimonio, las circunstancias personales del beneficiario u otras análogas."
+             "t": "<strong>Respecto del administrador del patrimonio protegido (artículo 5 de la Ley 41/2003):</strong> la administración se rige por el documento público de constitución o aportación, con los apoyos o salvaguardas que se establezcan (art. 5.2); nunca es necesaria la subasta pública para enajenar sus bienes. Los constituyentes o el administrador pueden instar al Ministerio Fiscal que pida la excepción de la autorización judicial en atención a la composición del patrimonio, las circunstancias del beneficiario u otras análogas (art. 5.3)."
             }
            ]
           }
@@ -148,11 +151,9 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 166",
-       "CC art. 264",
-       "CC art. 287",
-       "LPPPD art. 5",
-       "CC art. 1060"
+       "CC arts. 166, 264, 287, 289, 1060",
+       "Ley 41/2003 art. 5",
+       "LJV arts. 93–95"
       ],
       "claves": "artículo 61 ámbito aplicación autorización aprobación judicial disposición gravamen bienes derechos menores discapacidad patrimonio protegido representante legal apoyo administrador excepción tramitación específica"
      }
@@ -178,7 +179,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Juzgado competente:</strong> el Juzgado de Primera Instancia de la residencia del menor o persona con discapacidad."
+             "t": "<strong>Juzgado competente:</strong> el Juzgado de Primera Instancia de la residencia del menor o persona con discapacidad. Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 j) LOPJ); si no, la Sección Civil."
             },
             {
              "t": "<strong>Criterio de competencia:</strong> se concreta por el lugar de residencia de la persona protegida y no por el de ubicación del bien o derecho sobre el que recae el acto."
@@ -228,6 +229,9 @@ Neg.data.register({
             },
             {
              "t": "<strong>Facultad judicial:</strong> sin perjuicio de lo anterior, el Juez podrá ordenar la actuación de todos los interesados por medio de abogado cuando la complejidad de la operación así lo requiera o comparezcan sujetos con intereses enfrentados."
+            },
+            {
+             "t": "<strong>Recurso:</strong> para apelar son necesarios abogado y procurador (art. 3.2 LJV)."
             }
            ]
           }
@@ -236,9 +240,8 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LJV art. 4",
-       "LJV arts. 1–22",
-       "LEC"
+       "LJV art. 3",
+       "LOPJ art. 86.5"
       ],
       "claves": "artículo 62 competencia legitimación postulación juzgado primera instancia residencia menor discapacidad cambio residencia abogado procurador 6000 euros umbral exención complejidad intereses enfrentados representante legal apoyo administrador transmitente tutor bienes patrimonio protegido"
      }
@@ -352,7 +355,7 @@ Neg.data.register({
              "t": "<strong>Intervinientes preceptivos:</strong> el Ministerio Fiscal; todas las personas que, según los distintos casos, exijan las leyes; y en todo caso, a la persona con discapacidad y al menor que tenga suficiente madurez y, en todo caso, cuando sea mayor de doce años."
             },
             {
-             "t": "<strong>Sentido de la audiencia:</strong> la citación del menor mayor de doce años y de la persona con discapacidad es una manifestación del derecho a ser oído y expresa voluntad, deseos y preferencias, conforme al principio rector de respeto a la voluntad de la persona con discapacidad (artículo 249 del Código Civil) y a la Convención de Nueva York de 2006."
+             "t": "<strong>Sentido de la audiencia:</strong> la citación del menor mayor de doce años y de la persona con discapacidad es una manifestación del derecho a ser oído y expresa voluntad, deseos y preferencias, conforme al principio rector de respeto a la voluntad de la persona con discapacidad (artículo 249 del Código Civil) ; con los ajustes necesarios para su participación en condiciones de igualdad (art. 7 bis LJV)."
             }
            ]
           }
@@ -382,8 +385,7 @@ Neg.data.register({
       ],
       "referencias": [
        "CC art. 249",
-       "Convención ONU 2006",
-       "LJV art. 63"
+       "LJV art. 7 bis"
       ],
       "claves": "artículo 64 tramitación admisión citación comparecencia ministerio fiscal letrado administración justicia menor doce años discapacidad madurez audiencia voluntad deseos preferencias dictamen pericial perito comparecencia oficio instancia parte"
      }
@@ -410,6 +412,20 @@ Neg.data.register({
            "lista": [
             {
              "t": "<strong>Criterio rector:</strong> el Juez, teniendo en cuenta la justificación ofrecida y valorando su conveniencia a los intereses del menor o persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica, resolverá concediendo o denegando la autorización o aprobación solicitada."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Apartado 2 (suprimido)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Suprimido por la Ley 8/2021 (desde el 3-9-2021). Exigía la pública subasta, salvo venta directa autorizada. Hoy, la venta directa puede pedirse en la solicitud (art. 63.3 LJV), y para el curador representativo es la regla (art. 287.2.º CC)."
             }
            ]
           }
@@ -451,7 +467,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Recurso de apelación:</strong> la resolución será recurrible en apelación con efectos suspensivos."
+             "t": "<strong>Recurso de apelación:</strong> la resolución será recurrible en apelación con efectos suspensivos (excepción a la regla del art. 20.2 LJV). Plazo: veinte días (art. 458.1 LEC), con abogado y procurador (art. 3.2 LJV)."
             },
             {
              "t": "<strong>Efectos suspensivos:</strong> la eficacia de la resolución queda en suspenso hasta la resolución del recurso y, en consecuencia, el acto autorizado no podrá ejecutarse entre tanto."
@@ -463,10 +479,9 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC (recurso apelación)",
-       "LJV art. 22",
-       "CC art. 1060",
-       "LJV art. 63"
+       "LJV art. 20",
+       "LEC art. 458",
+       "CC art. 287"
       ],
       "claves": "artículo 65 resolución juez concediendo denegando autorización aprobación transigir testimonio gravamen extinción derechos reales formalidades venta subasta recurso apelación efectos suspensivos eficacia suspenso acto autorizado ejecutarse"
      }
@@ -512,7 +527,7 @@ Neg.data.register({
              "t": "<strong>Medidas:</strong> permite adoptar medidas de aseguramiento para evitar el desvío del precio o de la contraprestación a fines ajenos a los que justificaron la autorización."
             },
             {
-             "t": "<strong>Ejemplos de medidas:</strong> consignación, depósito, reinversión tutelada."
+             "t": "<strong>Medidas:</strong> la ley no las enumera; en la práctica, por ejemplo, consignación, depósito o reinversión bajo control judicial."
             }
            ]
           }
@@ -521,7 +536,6 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LJV art. 65",
        "LJV art. 63"
       ],
       "claves": "artículo 66 destino cantidad obtenida enajenación gravamen negocio contrato autorización medidas asegurar finalidad garantía interés superior menor discapacidad consignación depósito reinversión tutelada precio contraprestación desvío"
@@ -555,10 +569,10 @@ Neg.data.register({
        [
         "Arrendamiento de inmuebles que requiere autorización judicial del curador representativo",
         "Término superior a 6 años",
-        "Artículo 287.3 Código Civil"
+        "Artículo 287.2.º Código Civil"
        ],
        [
-        "Límite para arrendamiento de bienes de menores por progenitores o tutores sin autorización judicial",
+        "Límite para arrendamiento de bienes de menores por progenitores o tutores",
         "6 años",
         "Artículo 1548 Código Civil"
        ],
@@ -568,7 +582,7 @@ Neg.data.register({
         "Artículo 62.3 LJV"
        ],
        [
-        "Recurso de apelación contra la resolución del Juez",
+        "Recurso de apelación contra la resolución del Juez (veinte días, art. 458.1 LEC)",
         "Efectos suspensivos",
         "Artículo 65.5 LJV"
        ],
@@ -610,7 +624,7 @@ Neg.data.register({
       "tono": "c2",
       "items": [
        {
-        "t": "Juez de Primera Instancia (competente, residencia del menor o persona con discapacidad)"
+        "t": "Juez — Sección de Familia, Infancia y Capacidad o, si no existe, Sección Civil (residencia del menor o persona con discapacidad)"
        },
        {
         "t": "Letrado de la Administración de Justicia (admisión a trámite y citación)"
@@ -644,7 +658,7 @@ Neg.data.register({
         "t": "Ministerio Fiscal (citación preceptiva en comparecencia y audiencia previa en art. 166 CC)"
        },
        {
-        "t": "Comisión de Protección Patrimonial de las Personas con Discapacidad (auxilio en supervisión, LPPPD art. 7)"
+        "t": "Comisión de Protección Patrimonial de las Personas con Discapacidad (auxilio en supervisión, art. 7 Ley 41/2003)"
        }
       ]
      }
@@ -655,7 +669,7 @@ Neg.data.register({
       "tono": "c5",
       "items": [
        {
-        "t": "Administrador del patrimonio protegido (LPPPD art. 5)"
+        "t": "Administrador del patrimonio protegido (art. 5 Ley 41/2003)"
        },
        {
         "t": "Administrador designado por el transmitente (administración conferida a título gratuito)"
@@ -672,10 +686,10 @@ Neg.data.register({
       "tono": "c6",
       "items": [
        {
-        "t": "Abogado (preceptivo sobre 6.000 € o por complejidad)"
+        "t": "Abogado (no preceptivo hasta 6.000 €; por encima, la solicitud inicial puede hacerse sin él y el Juez puede ordenarlo por complejidad o intereses enfrentados; necesario para apelar)"
        },
        {
-        "t": "Procurador (mismo régimen que abogado)"
+        "t": "Procurador (no preceptivo hasta 6.000 €; necesario para apelar)"
        },
        {
         "t": "Perito o peritos (dictamen de valoración, comparecencia si se acuerda)"
@@ -694,7 +708,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 15/2015, de la Jurisdicción Voluntaria",
       "titulo": "Conexiones internas de la propia LJV",
-      "texto": "<strong>Artículos 1 a 22</strong> — Disposiciones generales: objeto, ámbito, competencia, legitimación, postulación, intervención del Ministerio Fiscal (artículo 4), prueba, tramitación simultánea o posterior, gastos, carácter supletorio de la LEC, competencia internacional, inscripción registral, cumplimiento y ejecución (artículo 22).<br><strong>Artículos 56 a 58</strong> — Capítulo VI del Título II: expediente de protección del patrimonio de las personas con discapacidad.<br><strong>Artículos 85 a 89</strong> — Capítulo II del Título III: intervención judicial en relación con la patria potestad.<br><strong>Título IV</strong> — Expedientes sucesorios: autorizaciones al albacea y aprobación judicial de la aceptación o repudiación de la herencia.<br><strong>Artículo 42 bis</strong> — Provisión de medidas de apoyo a personas con discapacidad.<br><strong>Artículo 7 bis</strong> — Ajustes razonables para personas con discapacidad.",
+      "texto": "<strong>Artículos 1 a 22</strong> — Disposiciones generales: objeto, ámbito, competencia, legitimación, postulación, intervención del Ministerio Fiscal (artículo 4), prueba, tramitación simultánea o posterior, gastos, carácter supletorio de la LEC, competencia internacional, inscripción registral, cumplimiento y ejecución (artículo 22).<br><strong>Artículos 56 a 58</strong> — Capítulo VI del Título II: expediente de protección del patrimonio de las personas con discapacidad.<br><strong>Artículos 85 a 89</strong> — Capítulo II del Título III: intervención judicial en relación con la patria potestad.<br><strong>Artículos 93 a 95</strong> — Título IV: autorización o aprobación judicial de la aceptación o repudiación de la herencia (tramitación específica).<br><strong>Artículos 42 bis a) a 42 bis c)</strong> — Provisión de medidas de apoyo a personas con discapacidad.<br><strong>Artículo 7 bis</strong> — Ajustes para personas con discapacidad.",
       "etiqueta": "LJV interna",
       "tono": "t-info"
      }
@@ -703,7 +717,7 @@ Neg.data.register({
      "norma": {
       "ley": "Código Civil",
       "titulo": "Remisiones sustantivas principales",
-      "texto": "<strong>Artículo 166</strong> — Límites a la enajenación y gravamen de bienes de los hijos por sus progenitores; requiere causas justificadas de utilidad o necesidad y audiencia del Ministerio Fiscal.<br><strong>Artículo 249</strong> — Principio rector del ejercicio de las medidas de apoyo conforme a la voluntad, deseos y preferencias de la persona con discapacidad.<br><strong>Artículo 264</strong> — Actuación del guardador de hecho y necesidad de autorización judicial para los actos del artículo 287.<br><strong>Artículo 269</strong> — Precisión en la resolución judicial de los actos para los que el curador asumirá representación.<br><strong>Artículo 285</strong> — Obligación del curador representativo de hacer inventario.<br><strong>Artículo 287</strong> — Catálogo taxativo de actos del curador representativo que requieren autorización judicial (ordinales 1.º a 9.º).<br><strong>Artículo 289</strong> — Régimen de la curatela asistencial.<br><strong>Artículo 665</strong> — Otorgamiento de testamento por persona con discapacidad, no sometido a curatela.<br><strong>Artículo 1060</strong> — Partición realizada por el curador representativo: no necesita autorización judicial, pero sí aprobación judicial posterior.<br><strong>Artículo 1548</strong> — Límite de seis años para el arrendamiento de bienes de menores sin autorización judicial.",
+      "texto": "<strong>Artículo 166</strong> — Límites a la enajenación y gravamen de bienes de los hijos por sus progenitores; requiere causas justificadas de utilidad o necesidad y audiencia del Ministerio Fiscal.<br><strong>Artículo 249</strong> — Principio rector del ejercicio de las medidas de apoyo conforme a la voluntad, deseos y preferencias de la persona con discapacidad.<br><strong>Artículo 264</strong> — Actuación del guardador de hecho y necesidad de autorización judicial para los actos del artículo 287.<br><strong>Artículo 269</strong> — Precisión en la resolución judicial de los actos para los que el curador asumirá representación.<br><strong>Artículo 285</strong> — Obligación del curador representativo de hacer inventario.<br><strong>Artículo 287</strong> — Catálogo taxativo de actos del curador representativo que requieren autorización judicial (ordinales 1.º a 9.º).<br><strong>Artículo 289</strong> — Partición de herencia o división de cosa común por el curador representativo: sin autorización, pero con aprobación judicial posterior.<br><strong>Artículo 1060</strong> — Partición con menores representados o por el curador representativo: sin autorización, pero con aprobación judicial posterior.<br><strong>Artículo 1548</strong> — Progenitores o tutores no pueden dar en arrendamiento los bienes de los menores por más de seis años.",
       "etiqueta": "Código Civil",
       "tono": "t-plazo"
      }
@@ -712,8 +726,8 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 41/2003, de 18 de noviembre",
       "titulo": "Protección patrimonial de las personas con discapacidad",
-      "texto": "<strong>Artículo 3</strong> — Constitución del patrimonio protegido.<br><strong>Artículo 4</strong> — Aportaciones al patrimonio protegido.<br><strong>Artículo 5</strong> — Reglas de administración; sujeción a autorización judicial en los mismos supuestos que el curador representativo; posibilidad de instar al Ministerio Fiscal la excepción de la autorización.<br><strong>Artículo 7</strong> — Supervisión por el Ministerio Fiscal, con auxilio de la Comisión de Protección Patrimonial de las Personas con Discapacidad.",
-      "etiqueta": "LPPPD",
+      "texto": "<strong>Artículo 3</strong> — Constitución del patrimonio protegido.<br><strong>Artículo 4</strong> — Aportaciones al patrimonio protegido.<br><strong>Artículo 5</strong> — Administración conforme al documento de constitución, sin subasta pública; posibilidad de instar al Ministerio Fiscal la excepción de la autorización judicial.<br><strong>Artículo 7</strong> — Supervisión por el Ministerio Fiscal, con auxilio de la Comisión de Protección Patrimonial de las Personas con Discapacidad.",
+      "etiqueta": "Ley 41/2003",
       "tono": "t-ok"
      }
     },
@@ -721,7 +735,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 1/2000, de 7 de enero",
       "titulo": "Ley de Enjuiciamiento Civil",
-      "texto": "<strong>Aplicación supletoria</strong> — En lo no previsto por la LJV, resulta de aplicación la LEC como norma procesal supletoria.<br><strong>Recurso de apelación</strong> — Régimen del recurso de apelación al que remite el artículo 65.5 de la LJV.<br><strong>Formalidades de enajenación</strong> — Formalidades de la enajenación a que remite el artículo 65.4 de la LJV.",
+      "texto": "<strong>Aplicación supletoria</strong> — En lo no previsto por la LJV, resulta de aplicación la LEC como norma procesal supletoria.<br><strong>Artículo 458 LEC</strong> — Apelación: veinte días (art. 65.5 LJV: con efectos suspensivos).",
       "etiqueta": "LEC",
       "tono": "t-nota"
      }
@@ -730,7 +744,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 8/2021, de 2 de junio",
       "titulo": "Reforma para el apoyo a las personas con discapacidad en el ejercicio de su capacidad jurídica",
-      "texto": "<strong>Origen de la terminología vigente</strong> — Sustituye la expresión «persona con capacidad modificada judicialmente» por «persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica».<br><strong>Reforma del Código Civil</strong> — Nueva redacción del Título XI del Libro Primero: «De las medidas de apoyo a las personas con discapacidad». Principales figuras: curatela representativa, curatela asistencial, guarda de hecho, autotutela.<br><strong>Reforma de la LJV</strong> — Adaptación de los expedientes de jurisdicción voluntaria al nuevo sistema de apoyos.",
+      "texto": "<strong>Origen de la terminología vigente</strong> — Sustituye la expresión «persona con capacidad modificada judicialmente» por «persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica».<br><strong>Reforma del Código Civil</strong> — Nueva redacción del Título XI del Libro Primero: «De las medidas de apoyo a las personas con discapacidad». Principales figuras: curatela representativa, curatela asistencial, guarda de hecho, autocuratela, poderes y mandatos preventivos.<br><strong>Reforma de la LJV</strong> — Adaptación de los expedientes de jurisdicción voluntaria al nuevo sistema de apoyos.",
       "etiqueta": "Ley 8/2021",
       "tono": "t-aviso"
      }
@@ -747,5 +761,5 @@ Neg.data.register({
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria — Título II, Capítulo VIII, artículos 61 a 66 · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria — Título II, Capítulo VIII, artículos 61 a 66"
 });
