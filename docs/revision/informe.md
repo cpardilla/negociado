@@ -19,7 +19,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-filiacion | Esquema · LJV · Reconocimiento de la filiación no matrimonial | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-12-14 | Esquema · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-reversion | Esquema · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
-| ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | 2R | · | · | · | · | · | 3R |
+| ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | · | · | · | · | · | · | 3R |
 | ljv-adopcion | Esquema · LJV · Adopción | · | · | · | 1R | · | · | 2R |
 | ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | 1R | · | · | · | · | 3R |
 | ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | 3E | · | · | 1R | · | · | 3R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 105E 38A 143R | 0E 0A 2R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 81R |
+| | **Total** | 105E 38A 141R | 0E 0A 2R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 81R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,15 +69,15 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2612
-- ✓ LEC (BOE a 07-10-2026): 1510
-- ✓ CC (BOE a 07-09-2026): 1384
+- ✓ LJV (BOE a 05-03-2026): 2609
+- ✓ LEC (BOE a 07-10-2026): 1515
+- ✓ CC (BOE a 07-09-2026): 1392
 - ✓ CE (BOE a 20-05-2026): 76
 - ✓ LOPJ (BOE a 09-10-2026): 58
 - ✓ LOPJM (BOE a 18-12-2025): 58
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - UE: 54
-- ✓ LRC (BOE a 24-02-2026): 48
+- ✓ LRC (BOE a 24-02-2026): 50
 - ✓ LOPDH (BOE a 16-12-2025): 42
 - ✓ LH (BOE a 07-01-2026): 33
 - ✓ LN (BOE a 22-10-2026): 29
@@ -112,7 +112,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 649 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 646 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -173,15 +173,10 @@ Sin hallazgos automáticos.
 
 ### ljv-defensor-judicial · Esquema · LJV · Habilitación para comparecer y defensor judicial
 
-**citas**
-
-- [revisar] «Arts. 235–236»: la LJV vigente acaba en el art. 148; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Ecosistema normativo — conexiones relacionadas» › 2 › norma «Supuestos materiales y régimen del defensor»_
-- [revisar] «Art. 7.2»: el art. 7 LJV no tiene apartado 2 (no tiene apartados numerados) (ley por defecto) — _sección «Ecosistema normativo — conexiones relacionadas» › 3 › norma «Espejo contencioso del Cap. II LJV»_
-
 **terminologia**
 
-- [revisar] «Secretario judicial» × 8 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Capítulo II — Artículos 27 a 32» › tarjeta «Artículo 28» › resumen | sección «Capítulo II — Artículos 27 a 32» › tarjeta «Artículo 28» › «Competencia territorial (imperativa)» › 1 › punto.1 | sección «Capítulo II — Artículos 27 a 32» › tarjeta «Artículo 28» › «Competencia territorial (imperativa)» › 2 › nota «» …_
-- [revisar] «JPI» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar — _sección «Capítulo II — Artículos 27 a 32» › tarjeta «Artículo 28» › «Competencia territorial (imperativa)» › 1 › punto.1 | sección «Capítulo II — Artículos 27 a 32» › tarjeta «Artículo 28» › «Competencia territorial (imperativa)» › 1 › punto.3_
+- [revisar] «Secretario judicial» × 3 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Capítulo II — Artículos 27 a 32» › tarjeta «Artículo 28» › resumen | sección «Capítulo II — Artículos 27 a 32» › tarjeta «Artículo 30» › «Sujetos convocados a comparecencia» › 1 › punto.3 | sección «Capítulo II — Artículos 27 a 32» › tarjeta «Artículo 30» › «Criterio de nombramiento: «más idóneo para el cargo»» › 1 › punto.1_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Capítulo II — Artículos 27 a 32» › tarjeta «Artículo 28» › «Competencia territorial (imperativa)» › 1 › punto.1_
 - [revisar] «incapacitación» × 1 → Ley 8/2021: medidas de apoyo; ya no existe la incapacitación — _sección «Ecosistema normativo — conexiones relacionadas» › 4 › norma «Marco legal complementario»_
 
 ### ljv-adopcion · Esquema · LJV · Adopción

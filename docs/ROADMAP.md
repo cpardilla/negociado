@@ -188,7 +188,7 @@ Defectos del markmap anterior — todos resueltos al generar el mapa de los mism
 2. ✅ (2026-10-29) Retirados los 57 HTML antiguos (quedan en el historial de git y en el tag `baseline-2026-10-28`). `404.html` (`tools/build-404.js`, autosuficiente): 56 direcciones antiguas redirigen a su sitio nuevo; la del esquema combinado I bis & ter (sin equivalente único) y cualquier otra inexistente muestran el aviso de actualizar favoritos (decisión 8). `.nojekyll` en la raíz. Los tres tests que comparaban el inventario con los HTML antiguos solo se ejecutan donde existen (el tag); `tools/extract-current.js` queda como histórico. Tests en navegador de las redirecciones, servidas como en Pages.
 3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
-### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (11/27)
+### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (12/27)
 Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabla (decisión 6). Los más usados (E01–E04, E28) con atención especial.
 
 | # | Esquema | Estado |
@@ -204,7 +204,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E09 | LJV · T. II Cap. I bis — Mención registral del sexo (12–14 años) | ✅ 2026-10-29 · corregido; la reversión no es «solo una vez» (art. 47 Ley 4/2023) ([registro](revision/ljv-mencion-sexo-12-14.md)) |
 | E10 | LJV · T. II Cap. I ter — Nueva modificación tras reversión | ✅ 2026-10-29 · corregido; plazos del procedimiento registral (arts. 44.8–9 Ley 4/2023) distinguidos de los del expediente judicial ([registro](revision/ljv-mencion-sexo-reversion.md)) |
 | E11 | LJV · T. II Cap. I bis y ter (combinado) | ✖ eliminado (decisión 4); comprobado el 2026-10-29: nada útil sin trasladar (registro en E10) |
-| E12 | LJV · T. II Cap. II — Habilitación y defensor judicial | ☐ |
+| E12 | LJV · T. II Cap. II — Habilitación y defensor judicial | ✅ 2026-10-29 · corregido; excusa, remoción y cuentas del defensor las decide el LAJ (art. 32 LJV), no el Juez; la inscripción del art. 30.3 remite a una letra suprimida por la Ley 8/2021 ([registro](revision/ljv-defensor-judicial.md)) |
 | E13 | LJV · T. II Cap. III — Adopción | ☐ |
 | E14 | LJV · T. II Cap. III bis — Medidas judiciales de apoyo | ☐ |
 | E15 | LJV · T. II Cap. IV — Tutela, curatela y guarda de hecho | ☐ |
@@ -289,6 +289,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-29 · E12 (defensor judicial) revisado; el analizador lee «42 bis a)» LJV como artículo. Siguiente: E13.
 - 2026-10-29 · E09 y E10 (mención registral del sexo) revisados; E11 comprobado y cerrado. Siguiente: E12.
 - 2026-10-29 · E08 (filiación no matrimonial) revisado. Siguiente: E09.
 - 2026-10-29 · E07 (normas comunes LJV) revisado. Cada artículo de la LJV queda en un solo esquema. Siguiente: E08.

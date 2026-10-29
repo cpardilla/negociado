@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E12.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E12.json; revisado con el BOE (registro: docs/revision/ljv-defensor-judicial.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-defensor-judicial",
@@ -15,7 +15,7 @@ Neg.data.register({
   "32"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E12"
  },
@@ -88,7 +88,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Se aplica cuando proceda conforme a la ley el nombramiento de un defensor judicial de menores o personas con discapacidad. Opera cuando el Código Civil —especialmente los artículos 163, 235 y 295— prevé directamente el nombramiento, sin necesidad de habilitación previa."
+             "t": "Se aplica cuando proceda conforme a la ley el nombramiento de un defensor judicial de menores o personas con discapacidad. Opera cuando el Código Civil prevé el nombramiento: arts. 163 y 235 (menores) y 295 (personas con discapacidad)."
             }
            ]
           }
@@ -111,7 +111,7 @@ Neg.data.register({
              "t": "<strong>b) Negativa de AMBOS representantes.</strong> Si solo uno se niega, el otro puede actuar; no procede la habilitación."
             },
             {
-             "t": "<strong>c) Imposibilidad de hecho.</strong> Único supuesto que exige inscripción de la resolución de nombramiento en el Registro Civil (art. 30.3 LJV). Paralelo en el art. 295.1.º CC."
+             "t": "<strong>c) Imposibilidad de hecho</strong> para la representación o asistencia en juicio. Paralelo en el art. 295.1.º CC."
             }
            ]
           },
@@ -138,7 +138,7 @@ Neg.data.register({
              "t": "Para instar expedientes de jurisdicción voluntaria."
             },
             {
-             "t": "Cuando el MF inste medidas de apoyo (arts. 42 bis a) LJV y 758 LEC)."
+             "t": "Cuando esté legitimado en el procedimiento de medidas de apoyo instado por el Ministerio Fiscal (art. 758 LEC)."
             }
            ]
           },
@@ -159,19 +159,19 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "El art. 27 LJV es la norma de cauce; el CC (arts. 163, 235–236, 295–298) es la norma de supuesto. La figura aparece además en otros expedientes de la propia LJV:"
+             "t": "El art. 27 LJV es la norma de cauce; el CC (arts. 163, 235–236 y 295–298 CC) es la norma de supuesto. La figura aparece además en otros expedientes de la propia LJV:"
             },
             {
              "t": "<strong>Art. 26 ter.2:</strong> desacuerdo en rectificación registral del sexo → arts. 235–236 CC."
             },
             {
-             "t": "<strong>Art. 42 bis a).4:</strong> provisión de medidas judiciales de apoyo."
+             "t": "<strong>Art. 42 bis a) LJV:</strong> provisión de medidas judiciales de apoyo."
             },
             {
              "t": "<strong>Art. 49.2:</strong> durante la remoción del tutor o curador."
             },
             {
-             "t": "<strong>Art. 50.3:</strong> durante la excusa del tutor o curador."
+             "t": "<strong>Art. 50.3:</strong> durante la excusa del tutor o curador, si quien se excusa no ejerce la función (véase también el art. 295.3.º CC)."
             },
             {
              "t": "<strong>Art. 54:</strong> emancipación cuando progenitores/tutor no asisten."
@@ -214,13 +214,13 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>1.º</strong> Secretario judicial del JPI del domicilio del menor o persona con discapacidad."
+             "t": "<strong>1.º</strong> Letrado de la Administración de Justicia del Juzgado de Primera Instancia (hoy, Sección Civil del Tribunal de Instancia) del domicilio del menor o persona con discapacidad."
             },
             {
              "t": "<strong>2.º</strong> En defecto de domicilio: de la residencia."
             },
             {
-             "t": "<strong>3.º</strong> Del JPI que esté conociendo del asunto que exija el nombramiento."
+             "t": "<strong>O, en su caso,</strong> el del Juzgado que esté conociendo del asunto que exija el nombramiento."
             },
             {
              "t": "No puede modificarse por sumisión expresa ni tácita (art. 2.2 LJV). Verificar la inexistencia de expediente simultáneo con idéntico objeto (art. 6 LJV)."
@@ -231,7 +231,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "Tensión doctrinal: el art. 295 CC habla de «autoridad judicial» (= Juez), pero el art. 28 LJV atribuye la competencia al Secretario judicial. La solución dominante es que prevalece la norma especial procesal."
+            "texto": "El art. 295 CC habla de «autoridad judicial»; el art. 28 LJV atribuye el expediente al Letrado de la Administración de Justicia (la LJV dice aún «Secretario judicial»)."
            }
           }
          ]
@@ -362,7 +362,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "Paralelo en el art. 8.2 LEC (proceso contencioso): el proceso queda en suspenso mientras no conste la intervención del MF. El art. 4 LJV fundamenta estructuralmente esta intervención preceptiva del MF."
+            "texto": "Paralelo en el art. 8.2 LEC (proceso contencioso): el proceso queda en suspenso mientras no conste la intervención del Ministerio Fiscal."
            }
           }
          ]
@@ -422,7 +422,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "Garantías de la audiencia del menor (art. 18.4.ª LJV): posibilidad de acto separado sin interferencias, con asistencia preceptiva del MF, levantamiento de acta por el LAJ, condiciones idóneas y adaptadas, y valoración motivada en la resolución final."
+            "texto": "Garantías de la audiencia del menor (art. 18.2.4.ª LJV): posibilidad de acto separado sin interferencias, con asistencia preceptiva del MF, levantamiento de acta por el LAJ, condiciones idóneas y adaptadas, y valoración motivada en la resolución final."
            }
           }
          ]
@@ -450,12 +450,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Inscripción en el Registro Civil (supuesto c)",
+         "titulo": "Inscripción en el Registro Civil (art. 30.3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El testimonio de la resolución de nombramiento en el caso del art. 27.2.c) (imposibilidad de hecho) se remite al Registro Civil competente para su inscripción. Remisión por medios electrónicos (art. 22 LJV). Solo el supuesto c) genera este deber registral. La inscripción se rige por la Ley 20/2011 del Registro Civil."
+             "t": "El art. 30.3 manda remitir al Registro Civil el testimonio del nombramiento «en el caso previsto en la letra c) del apartado 1 del artículo 27». Esa letra la suprimió la Ley 8/2021: se refería al defensor nombrado para administrar los bienes mientras se constituía la tutela o curatela, supuesto que hoy recoge el art. 295.4.º CC (provisión de medidas de apoyo en trámite). No se refiere a la imposibilidad de hecho del art. 27.2.c). Véase también el art. 74 LRC."
             }
            ]
           }
@@ -464,7 +464,7 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Art. 18.4.ª LJV",
+       "Art. 18.2.4.ª LJV",
        "Art. 22 LJV",
        "Art. 9 LO 1/1996",
        "Arts. 236 y 295 CC",
@@ -494,7 +494,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "El defensor judicial vigila y comunica al órgano judicial cuándo se producen las causas de cesación, a fin de que el órgano judicial declare formalmente la extinción del cargo."
+             "t": "El defensor judicial debe comunicar al órgano judicial cuándo se producen las causas de cesación."
             }
            ]
           }
@@ -508,7 +508,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "La <strong>desaparición de la causa</strong> que motivó el nombramiento (correspondencia simétrica con las causas a, b y c del art. 27.2)."
+             "t": "La <strong>desaparición de la causa</strong> que motivó el nombramiento (art. 31.1)."
             },
             {
              "t": "Cuando progenitores, representantes o curador se <strong>presten a comparecer</strong> en juicio por el afectado."
@@ -547,7 +547,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Rendición de cuentas, excusa y remoción del defensor judicial",
-      "resumen": "Remite al régimen de la tutela y curatela (arts. 47–51 LJV) para el inventario, excusa, remoción y rendición de cuentas del defensor.",
+      "resumen": "Remite al régimen de la tutela y curatela (arts. 47–51 LJV) para el inventario, la excusa, la remoción y la rendición de cuentas del defensor, pero los tramita y <strong>decide el Letrado de la Administración de Justicia</strong> competente.",
       "cuerpo": [
        {
         "apartado": {
@@ -556,7 +556,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Cláusula de remisión al régimen de la tutela y curatela (arts. 47–51 LJV) para la formación de inventario, excusa, remoción y rendición de cuentas. El art. 297 CC hace aplicables al defensor judicial las causas de inhabilidad, excusa y remoción del curador, y el art. 298 CC impone el deber de rendir cuentas."
+             "t": "Cláusula de remisión a los arts. 47–51 LJV para la formación de inventario, excusa, remoción y rendición de cuentas, que «se tramitarán y decidirán por el Secretario judicial competente» (hoy, Letrado de la Administración de Justicia). El art. 297 CC hace aplicables al defensor judicial las causas de inhabilidad, excusa y remoción del curador, y el art. 298 CC impone el deber de rendir cuentas."
             }
            ]
           }
@@ -584,7 +584,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Plazo: <strong>15 días</strong> desde el nombramiento (causa sobrevenida: en cualquier momento)."
+             "t": "Plazo: <strong>15 días</strong> desde que se tenga conocimiento del nombramiento (causa sobrevenida: en cualquier momento) (art. 50.1)."
             },
             {
              "t": "Comparecencia con el defensor, sustituto propuesto, afectado (si &gt;12 años o madurez suficiente) y MF."
@@ -602,12 +602,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Remoción (art. 49 LJV) — decisión del Juez",
+         "titulo": "Remoción (art. 49 LJV)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "De oficio, a instancia del MF, del afectado o de cualquier interesado. Si hay oposición: juicio verbal contencioso. El Juez puede suspender provisionalmente al defensor durante la tramitación; el Secretario judicial nombra defensor provisional."
+             "t": "De oficio, a instancia del Ministerio Fiscal, del afectado o de cualquier interesado, previa comparecencia. Si hay oposición, el expediente se hace contencioso y sigue el juicio verbal (art. 49.1)."
             }
            ]
           },
@@ -615,7 +615,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Importante</strong>La resolución de remoción corresponde al <strong>Juez</strong> (no al Secretario judicial), aunque el expediente haya sido tramitado por el LAJ (art. 49.3 LJV)."
+            "texto": "<strong>Importante</strong>En la tutela y la curatela la remoción la acuerda el Juez (art. 49.3); pero para el defensor judicial el art. 32 LJV atribuye la decisión al Letrado de la Administración de Justicia."
            }
           }
          ]
@@ -623,21 +623,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Rendición de cuentas (art. 51 LJV) — auto del Juez",
+         "titulo": "Rendición de cuentas (art. 51 LJV)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Plazo: <strong>3 meses</strong> desde el cese del cargo (prorrogables por justa causa)."
+             "t": "Rendición final: en el plazo de <strong>3 meses</strong> desde el cese, prorrogable por justa causa (art. 51.4); el defensor debe rendir cuentas de su gestión (art. 298 CC)."
             },
             {
              "t": "Traslado al afectado, interesados y MF; plazo de 10 días para solicitar comparecencia."
             },
             {
-             "t": "El Juez puede acordar pericial contable de oficio para operaciones complejas."
+             "t": "Cabe acordar de oficio una pericial contable o de auditoría si hay operaciones complejas (art. 51.2)."
             },
             {
-             "t": "Resolución por <strong>auto del Juez</strong>."
+             "t": "En la tutela y la curatela resuelve el Juez por auto (art. 51.3); para el defensor judicial, el Letrado de la Administración de Justicia (art. 32)."
             },
             {
              "t": "La aprobación no impide las acciones recíprocas por razón de la gestión (art. 51.5 LJV)."
@@ -671,7 +671,7 @@ Neg.data.register({
       ],
       "filas": [
        [
-        "Excusa del defensor judicial desde la notificación del nombramiento",
+        "Excusa del defensor judicial desde que conoce el nombramiento",
         "15 días",
         "Art. 50 LJV"
        ],
@@ -696,9 +696,9 @@ Neg.data.register({
         "Art. 21 LJV"
        ],
        [
-        "Rendición de cuentas desde el cese del cargo del defensor judicial",
+        "Rendición final de cuentas desde el cese del cargo",
         "3 meses",
-        "Art. 51 LJV"
+        "Art. 51.4 LJV (por remisión del art. 32)"
        ]
       ]
      }
@@ -716,13 +716,13 @@ Neg.data.register({
       "tono": "c2",
       "items": [
        {
-        "t": "Secretario judicial / LAJ (nombramiento, comparecencia)"
+        "t": "Letrado de la Administración de Justicia (nombramiento; excusa, remoción y cuentas del defensor, art. 32)"
        },
        {
-        "t": "Juez de Primera Instancia (remoción, rendición de cuentas)"
+        "t": "Juez (recurso de revisión contra los decretos del LAJ, art. 20.2)"
        },
        {
-        "t": "Registro Civil (inscripción supuesto c) art. 27.2)"
+        "t": "Registro Civil (inscripción en el caso del art. 30.3; art. 74 LRC)"
        }
       ]
      }
@@ -801,7 +801,7 @@ Neg.data.register({
      "norma": {
       "ley": "Código Civil",
       "titulo": "Supuestos materiales y régimen del defensor",
-      "texto": "<strong>Art. 163</strong> — conflicto de intereses progenitores-hijo; uno de los principales activadores del art. 27 LJV.<br><strong>Arts. 235–236</strong> — defensor judicial del menor: casos y criterios de actuación (post-Ley 8/2021).<br><strong>Arts. 295–298</strong> — defensor judicial de la persona con discapacidad: cinco supuestos, régimen de inhabilidad, excusa, remoción y deber de rendir cuentas.<br><strong>Arts. 1961 y ss.</strong> — prescripción de acciones; suspensión ex art. 29 LJV.",
+      "texto": "<strong>Art. 163 CC</strong> — conflicto de intereses progenitores-hijo; uno de los principales activadores del art. 27 LJV.<br><strong>Arts. 235–236 CC</strong> — defensor judicial del menor: casos y criterios de actuación (post-Ley 8/2021).<br><strong>Arts. 295–298 CC</strong> — defensor judicial de la persona con discapacidad: cinco supuestos, régimen de inhabilidad, excusa, remoción y deber de rendir cuentas.<br><strong>Arts. 1961 y ss. CC</strong> — prescripción de acciones; suspensión ex art. 29 LJV.",
       "etiqueta": "Derecho sustantivo",
       "tono": "t-plazo"
      }
@@ -810,7 +810,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley de Enjuiciamiento Civil (LEC)",
       "titulo": "Espejo contencioso del Cap. II LJV",
-      "texto": "<strong>Art. 7.2</strong> — comparecencia en juicio de menores y personas con medidas de apoyo: presupuesto material que activa el Cap. II cuando falla la representación.<br><strong>Art. 8</strong> — nombramiento de defensor judicial por el LAJ en proceso contencioso; MF asume la defensa provisionalmente.<br><strong>Art. 9</strong> — apreciación de oficio de la falta de capacidad: mecanismo de activación.<br><strong>Art. 758</strong> — defensor judicial en proceso de medidas de apoyo; nuevo plazo de 20 días; conecta con el art. 27.3 LJV.",
+      "texto": "<strong>Art. 7.2 LEC</strong> — comparecencia en juicio de menores y personas con medidas de apoyo: presupuesto material que activa el Cap. II cuando falla la representación.<br><strong>Art. 8 LEC</strong> — nombramiento de defensor judicial por el LAJ en proceso contencioso; MF asume la defensa provisionalmente.<br><strong>Art. 9 LEC</strong> — apreciación de oficio de la falta de capacidad: mecanismo de activación.<br><strong>Art. 758 LEC</strong> — designación de defensor judicial en el proceso de provisión de medidas de apoyo si la persona no comparece con su propia defensa; conecta con el art. 27.3 LJV.",
       "etiqueta": "Proceso contencioso",
       "tono": "t-info"
      }
@@ -819,7 +819,7 @@ Neg.data.register({
      "norma": {
       "ley": "Otras leyes",
       "titulo": "Marco legal complementario",
-      "texto": "<strong>Ley 8/2021, de 2 de junio</strong> — abolió la incapacitación y la tutela para adultos; introdujo curatela asistencial, guarda de hecho y poderes preventivos; rediseñó el defensor judicial como apoyo ocasional autónomo (art. 295.5.º CC).<br><strong>LO 1/1996, art. 9</strong> — derecho del menor a ser oído; umbral de 12 años para audiencia obligatoria.<br><strong>Ley 20/2011 (Registro Civil)</strong> — inscripción del nombramiento en el supuesto c) del art. 27.2.<br><strong>CDPD (ONU, 2006) arts. 12 y 13</strong> — igual reconocimiento ante la ley; acceso a la justicia; marco inspirador de la Ley 8/2021.",
+      "texto": "<strong>Ley 8/2021, de 2 de junio</strong> — suprimió la incapacitación y la tutela de los adultos; introdujo curatela asistencial, guarda de hecho y poderes preventivos; rediseñó el defensor judicial como apoyo ocasional autónomo (art. 295.5.º CC).<br><strong>LO 1/1996, art. 9</strong> — derecho del menor a ser oído; umbral de 12 años para audiencia obligatoria.<br><strong>Ley 20/2011 (Registro Civil), art. 74</strong> — acceso al Registro de la designación de defensor judicial en el caso legalmente previsto (art. 30.3 LJV).<br><strong>CDPD (ONU, 2006) arts. 12 y 13</strong> — igual reconocimiento ante la ley; acceso a la justicia; marco inspirador de la Ley 8/2021.",
       "etiqueta": "Leyes especiales e internacional",
       "tono": "t-aviso"
      }
@@ -827,5 +827,5 @@ Neg.data.register({
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo II · Arts. 27–32 · Con conexiones al CC, LEC, LO 1/1996, Ley 8/2021, Ley 20/2011 y CDPD · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo II · Arts. 27–32"
 });
