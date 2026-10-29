@@ -25,3 +25,7 @@
 ## Herramienta común (commit propio)
 
 «Art. 12 CDN» (Convención sobre los Derechos del Niño) se leía como art. 12 LJV: el analizador ya no enlaza CDN ni CEDH a la ley del recurso.
+
+## Corrección posterior (2026-10-29)
+
+Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).

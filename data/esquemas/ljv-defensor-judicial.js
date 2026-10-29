@@ -214,7 +214,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>1.º</strong> Letrado de la Administración de Justicia del Juzgado de Primera Instancia (hoy, Sección Civil del Tribunal de Instancia) del domicilio del menor o persona con discapacidad."
+             "t": "<strong>1.º</strong> Letrado de la Administración de Justicia del Juzgado de Primera Instancia (hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 LOPJ) y, si no, la Sección Civil) del domicilio del menor o persona con discapacidad."
             },
             {
              "t": "<strong>2.º</strong> En defecto de domicilio: de la residencia."

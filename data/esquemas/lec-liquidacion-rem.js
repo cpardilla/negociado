@@ -165,7 +165,7 @@ Neg.data.register({
              "t": "Si el régimen se disolvió por otra causa civil (por ejemplo, las del art. 1393 CC, a petición de un cónyuge), el tribunal ante el que se sigan o se hayan seguido esas actuaciones."
             },
             {
-             "t": "Desde la LO 1/2025: la Sección Civil (o de Familia) del Tribunal de Instancia, o la Sección de Violencia sobre la Mujer, que conoce también en el orden civil de los asuntos relativos al régimen económico matrimonial (art. 89.6 LOPJ). La LEC conserva las denominaciones «Juzgado de Primera Instancia» y «Juzgado de Violencia sobre la Mujer»."
+             "t": "Desde la LO 1/2025: la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista, con competencia exclusiva sobre el régimen económico matrimonial (art. 86.5 a) LOPJ), o, si no, la Sección Civil; o la Sección de Violencia sobre la Mujer, que conoce también en el orden civil de los asuntos relativos al régimen económico matrimonial (art. 89.6 LOPJ). La LEC conserva las denominaciones «Juzgado de Primera Instancia» y «Juzgado de Violencia sobre la Mujer»."
             },
             {
              "t": "Pérdida de la competencia del juzgado civil por actos de violencia sobre la mujer: art. 49 bis LEC."
@@ -806,7 +806,7 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Tribunal de Instancia: Sección Civil o de Familia, o Sección de Violencia sobre la Mujer (art. 807 LEC; art. 89.6 LOPJ)"
+        "t": "Tribunal de Instancia: Sección de Familia, Infancia y Capacidad (o Sección Civil donde no exista), o Sección de Violencia sobre la Mujer (art. 807 LEC; arts. 86.5 a) y 89.6 LOPJ)"
        },
        {
         "t": "Letrado de la Administración de Justicia — señala, forma el inventario, preside la comparecencia, nombra contador por diligencia (arts. 809–811)"

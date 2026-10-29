@@ -21,3 +21,7 @@
 ## Herramienta común (commits propios)
 
 El analizador de citas reconoce «, párrafo segundo,» entre el artículo y la ley y el nombre completo de la Ley 4/2023 («artículo 47, párrafo segundo, de la Ley para la igualdad real…» se enlazaba al art. 47 LJV).
+
+## Corrección posterior (2026-10-29)
+
+Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).

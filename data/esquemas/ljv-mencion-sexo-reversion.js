@@ -465,7 +465,7 @@ Neg.data.register({
       "tono": "c2",
       "items": [
        {
-        "t": "Tribunal de Instancia, Sección Civil (antes Juzgado de Primera Instancia; competente por domicilio o residencia)"
+        "t": "Tribunal de Instancia: Sección de Familia, Infancia y Capacidad o, si no existe, Sección Civil (antes Juzgado de Primera Instancia; art. 86.5 j) LOPJ; competente por domicilio o residencia)"
        },
        {
         "t": "Juez (cita a comparecencia, practica pruebas, resuelve)"

@@ -183,7 +183,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Juzgado de Primera Instancia (hoy, Sección Civil del Tribunal de Instancia) del <strong>domicilio</strong> de la persona cuya mención registral pretenda rectificarse o, si no lo tuviera en territorio nacional, el de su <strong>residencia</strong>. La competencia territorial es inderogable (artículo 2.2 LJV): no cabe sumisión expresa ni tácita. La competencia objetiva es del Juzgado de Primera Instancia —no del de lo Mercantil— al tratarse de estado civil de un menor."
+             "t": "Juzgado de Primera Instancia (hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 LOPJ) y, si no, la Sección Civil) del <strong>domicilio</strong> de la persona cuya mención registral pretenda rectificarse o, si no lo tuviera en territorio nacional, el de su <strong>residencia</strong>. La competencia territorial es inderogable (artículo 2.2 LJV): no cabe sumisión expresa ni tácita. La competencia objetiva es del Juzgado de Primera Instancia —no del de lo Mercantil— al tratarse de estado civil de un menor."
             }
            ]
           }
@@ -560,7 +560,7 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Juez — Sección Civil del Tribunal de Instancia (audiencia, prueba, resolución por auto)"
+        "t": "Juez — Sección de Familia, Infancia y Capacidad o, si no existe, Sección Civil (audiencia, prueba, resolución por auto)"
        },
        {
         "t": "Registro Civil (inscripción de la rectificación)"

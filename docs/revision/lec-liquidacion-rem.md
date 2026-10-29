@@ -29,3 +29,7 @@
 | 17 | Plazos | error | «Traslado del cuaderno, 10 días, art. 785»; «prescripción del crédito, 3 años, art. 1424» | Oposición: art. 787.1; aplazamiento del pago hasta 3 años: art. 1431 | LEC, CC |
 | 18 | Participantes | error | «Administrador judicial (art. 809)»; grupo «Marco normativo» (no son participantes); «abogado no preceptivo en todos los trámites» | Retirados | — |
 | 19 | Fases | estilo | «INCOMPARENCIA»; «Adjudicación (arts. 788–789)» | Fases rehechas, con la variante del régimen de participación | — |
+
+## Corrección posterior (2026-10-29)
+
+Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).

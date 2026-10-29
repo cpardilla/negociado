@@ -30,3 +30,7 @@
 ## Para el propietario
 
 La remisión del art. 30.3 LJV a una letra suprimida es un defecto del propio texto legal tras la Ley 8/2021. Si el juzgado tiene un criterio práctico sobre qué nombramientos de defensor judicial se comunican al Registro Civil, conviene incorporarlo a la ficha.
+
+## Corrección posterior (2026-10-29)
+
+Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).

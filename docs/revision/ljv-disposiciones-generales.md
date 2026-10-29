@@ -33,3 +33,7 @@ Las cinco fichas de los arts. 13–22 (Título I) duplicaban el esquema E07 («N
 
 - El analizador de citas no enlaza los convenios y convenciones internacionales («art. 9 de la Convención» se leía como art. 9 LJV).
 - Reconoce «y ss.» / «y siguientes» entre el artículo y la ley («arts. 437 y ss. LEC» se leía como art. 437 de la ley del recurso). Esta corrección afecta a todos los recursos: el informe general pasa de 405 a 407 hallazgos porque ahora se comprueban citas que antes se atribuían a la ley equivocada.
+
+## Corrección posterior (2026-10-29)
+
+Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).

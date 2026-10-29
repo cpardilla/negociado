@@ -29,3 +29,7 @@ Decisión 4 del propietario: el combinado no se migra, pero se comprueba si cont
 - Se añadió a E09 lo único útil que faltaba: la referencia al cambio de nombre de los menores (art. 48 Ley 4/2023).
 
 No hay nada más que trasladar. E11 queda cerrado.
+
+## Corrección posterior (2026-10-29)
+
+Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).

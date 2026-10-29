@@ -253,7 +253,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Juzgado de Primera Instancia (hoy, Sección Civil del Tribunal de Instancia). Decide el <strong>Juez</strong>, mediante <strong>auto</strong> (art. 26.1 LJV; art. 2.3: estado civil, menores y personas con discapacidad)."
+             "t": "Juzgado de Primera Instancia (hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 LOPJ) y, si no, la Sección Civil). Decide el <strong>Juez</strong>, mediante <strong>auto</strong> (art. 26.1 LJV; art. 2.3: estado civil, menores y personas con discapacidad)."
             }
            ]
           }
@@ -703,7 +703,7 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Juez — Sección Civil del Tribunal de Instancia (decide por auto)"
+        "t": "Juez — Sección de Familia, Infancia y Capacidad o, si no existe, Sección Civil (decide por auto)"
        },
        {
         "t": "Letrado de la Administración de Justicia (admisión y citaciones)"
