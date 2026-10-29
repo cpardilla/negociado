@@ -188,7 +188,7 @@ Defectos del markmap anterior — todos resueltos al generar el mapa de los mism
 2. ✅ (2026-10-29) Retirados los 57 HTML antiguos (quedan en el historial de git y en el tag `baseline-2026-10-28`). `404.html` (`tools/build-404.js`, autosuficiente): 56 direcciones antiguas redirigen a su sitio nuevo; la del esquema combinado I bis & ter (sin equivalente único) y cualquier otra inexistente muestran el aviso de actualizar favoritos (decisión 8). `.nojekyll` en la raíz. Los tres tests que comparaban el inventario con los HTML antiguos solo se ejecutan donde existen (el tag); `tools/extract-current.js` queda como histórico. Tests en navegador de las redirecciones, servidas como en Pages.
 3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
-### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (15/27)
+### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (16/27)
 Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabla (decisión 6). Los más usados (E01–E04, E28) con atención especial.
 
 | # | Esquema | Estado |
@@ -208,7 +208,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E13 | LJV · T. II Cap. III — Adopción | ✅ 2026-10-29 · corregido; apelación sin efectos suspensivos (había una afirmación contraria); art. 37.2 por el art. 781 LEC; competencia de la Sección de Familia, Infancia y Capacidad (art. 86.5 LOPJ), corregida también en E05–E12 ([registro](revision/ljv-adopcion.md)) |
 | E14 | LJV · T. II Cap. III bis — Medidas judiciales de apoyo | ✅ 2026-10-29 · corregido; competencia de la Sección de Familia (art. 86.5 g) LOPJ); defensor judicial arts. 295–298 CC (no 299); medidas voluntarias arts. 255–262; recurso y revisión por el art. 761 LEC ([registro](revision/ljv-medidas-apoyo.md)) |
 | E15 | LJV · T. II Cap. IV — Tutela, curatela y guarda de hecho | ✅ 2026-10-29 · rehecho; las referencias al CC seguían la numeración anterior a la Ley 8/2021 (tabla de correspondencias en el registro); fuera el «art. 753 bis LEC» ([registro](revision/ljv-tutela-curatela.md)) |
-| E16 | LJV · T. II Cap. V — Emancipación y beneficio de mayoría de edad | ☐ |
+| E16 | LJV · T. II Cap. V — Emancipación y beneficio de mayoría de edad | ✅ 2026-10-29 · rehecho; arts. 314–324 CC → 239–248; el beneficio de la mayor edad tiene las mismas limitaciones que la emancipación; el matrimonio ya no emancipa ([registro](revision/ljv-emancipacion.md)) |
 | E17 | LJV · T. II Cap. VI — Patrimonio de personas con discapacidad | ☐ |
 | E18 | LJV · T. II Cap. VII — Honor, intimidad e imagen del menor | ☐ |
 | E19 | LJV · T. II Cap. VIII — Actos de disposición sobre bienes de menores y personas con apoyos | ☐ |
@@ -289,6 +289,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-29 · E16 (emancipación) revisado: de 83 errores a 0. Siguiente: E17.
 - 2026-10-29 · E15 (tutela, curatela y guarda de hecho) revisado: numeración del CC actualizada a la Ley 8/2021. Siguiente: E16.
 - 2026-10-29 · E14 (medidas judiciales de apoyo) revisado. Siguiente: E15.
 - 2026-10-29 · E13 (adopción) revisado. Hallazgo transversal: art. 86.5 LOPJ (Secciones de Familia, Infancia y Capacidad), corregido en E05, E06, E08, E09, E10 y E12. Siguiente: E14.

@@ -23,7 +23,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-adopcion | Esquema · LJV · Adopción | · | · | · | 1R | · | · | 1R |
 | ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | · | · | · | 1R | · | · | 1R |
-| ljv-emancipacion | Esquema · LJV · Emancipación y beneficio de la mayoría de edad | 33E 4R | 1R | · | · | · | · | 2R |
+| ljv-emancipacion | Esquema · LJV · Emancipación y beneficio de la mayoría de edad | · | · | · | · | · | · | · |
 | ljv-patrimonio-protegido | Esquema · LJV · Patrimonio de las personas con discapacidad | 2E | · | · | 2R | · | · | 1R |
 | ljv-honor-menor | Esquema · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 3E 3A 41R | · | · | 1R | 1R | · | 2R |
 | ljv-actos-disposicion | Esquema · LJV · Actos de disposición sobre bienes de menores y personas con apoyos | 2R | · | · | · | · | · | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 102E 38A 141R | 0E 0A 1R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 76R |
+| | **Total** | 69E 38A 137R | 0E 0A 0R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 74R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,16 +69,16 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2610
-- ✓ LEC (BOE a 07-10-2026): 1526
-- ✓ CC (BOE a 07-09-2026): 1408
-- ✓ CE (BOE a 20-05-2026): 74
-- ✓ LOPJ (BOE a 09-10-2026): 73
+- ✓ LJV (BOE a 05-03-2026): 2541
+- ✓ LEC (BOE a 07-10-2026): 1515
+- ✓ CC (BOE a 07-09-2026): 1383
+- ✓ LOPJ (BOE a 09-10-2026): 70
+- ✓ CE (BOE a 20-05-2026): 64
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 57
-- UE: 55
-- ✓ LRC (BOE a 24-02-2026): 48
+- UE: 52
 - ✓ LOPDH (BOE a 16-12-2025): 42
+- ✓ LRC (BOE a 24-02-2026): 39
 - ✓ LH (BOE a 07-01-2026): 33
 - ✓ LN (BOE a 22-10-2026): 29
 - ✓ LPPD (BOE a 18-12-2025): 24
@@ -112,7 +112,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 596 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 542 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -212,54 +212,7 @@ Sin hallazgos automáticos.
 
 ### ljv-emancipacion · Esquema · LJV · Emancipación y beneficio de la mayoría de edad
 
-**citas**
-
-- [error] «art. 320»: el art. 320 CC está sin contenido/derogado — _sección «Artículo 53 — Competencia, legitimación y postulación» › tarjeta «Art. 53.1» › resumen_
-- [error] «art. 319»: el art. 319 CC está sin contenido/derogado — _sección «Artículo 53 — Competencia, legitimación y postulación» › tarjeta «Art. 53.1» › resumen_
-- [error] «art. 320»: el art. 320 CC está sin contenido/derogado — _sección «Artículo 53 — Competencia, legitimación y postulación» › tarjeta «Art. 53.1» › referencia 1_
-- [error] «art. 319»: el art. 319 CC está sin contenido/derogado — _sección «Artículo 53 — Competencia, legitimación y postulación» › tarjeta «Art. 53.1» › referencia 2_
-- [error] «art. 321»: el art. 321 CC está sin contenido/derogado — _sección «Artículo 53 — Competencia, legitimación y postulación» › tarjeta «Art. 53.2» › resumen_
-- [error] «Artículo 321»: el art. 321 CC está sin contenido/derogado — _sección «Artículo 53 — Competencia, legitimación y postulación» › tarjeta «Art. 53.2» › «Naturaleza jurídica del beneficio de mayor de edad» › 1 › punto.3_
-- [error] «art. 321»: el art. 321 CC está sin contenido/derogado — _sección «Artículo 53 — Competencia, legitimación y postulación» › tarjeta «Art. 53.2» › referencia 1_
-- [error] «artículo 321»: el art. 321 CC está sin contenido/derogado — _sección «Artículo 54 — Solicitud» › tarjeta «Art. 54.2» › «Documentación exigible según supuesto» › 1 › punto.4_
-- [error] «artículo 315»: el art. 315 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › «Capacidad personal y patrimonial» › 1 › punto.1_
-- [error] «art. 316»: el art. 316 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › «Capacidad personal y patrimonial» › 1 › punto.3_
-- [error] «art. 315.2»: el art. 315 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › «Limitaciones a la capacidad del emancipado» › 1 › punto.5_
-- [error] «artículo 318»: el art. 318 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › «Irrevocabilidad» › 1 › punto.1_
-- [error] «art. 315»: el art. 315 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › «Extinción de la patria potestad» › 1 › punto.2_
-- [error] «art. 315»: el art. 315 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › referencia 1_
-- [error] «art. 316»: el art. 316 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › referencia 2_
-- [error] «art. 317»: el art. 317 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › referencia 3_
-- [error] «art. 318»: el art. 318 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › referencia 4_
-- [error] «art. 319»: el art. 319 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › referencia 5_
-- [error] «art. 320»: el art. 320 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › referencia 6_
-- [error] «artículo 321»: el art. 321 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › «Capacidad plena anticipada» › 1 › punto.1_
-- [error] «art. 321»: el art. 321 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › «Capacidad plena anticipada» › 1 › punto.2_
-- [error] «art. 315»: el art. 315 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › «Capacidad plena anticipada» › 1 › punto.3_
-- [error] «art. 321»: el art. 321 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › referencia 1_
-- [error] «art. 322»: el art. 322 CC está sin contenido/derogado — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › referencia 2_
-- [error] «art. 315»: el art. 315 CC está sin contenido/derogado — _sección «Normativa conexa completa — Ecosistema jurídico» › tarjeta «CC» › «Artículo 224 — Aplicación supletoria de la curatela» › 1 › punto.2_
-- [error] «art. 315»: el art. 315 CC está sin contenido/derogado — _sección «Normativa conexa completa — Ecosistema jurídico» › tarjeta «CC» › referencia 1_
-- [error] «art. 316»: el art. 316 CC está sin contenido/derogado — _sección «Normativa conexa completa — Ecosistema jurídico» › tarjeta «CC» › referencia 2_
-- [error] «art. 317»: el art. 317 CC está sin contenido/derogado — _sección «Normativa conexa completa — Ecosistema jurídico» › tarjeta «CC» › referencia 3_
-- [error] «art. 318»: el art. 318 CC está sin contenido/derogado — _sección «Normativa conexa completa — Ecosistema jurídico» › tarjeta «CC» › referencia 4_
-- [error] «art. 319»: el art. 319 CC está sin contenido/derogado — _sección «Normativa conexa completa — Ecosistema jurídico» › tarjeta «CC» › referencia 5_
-- [error] «art. 320»: el art. 320 CC está sin contenido/derogado — _sección «Normativa conexa completa — Ecosistema jurídico» › tarjeta «CC» › referencia 6_
-- [error] «art. 321»: el art. 321 CC está sin contenido/derogado — _sección «Normativa conexa completa — Ecosistema jurídico» › tarjeta «CC» › referencia 1_
-- [error] «art. 322»: el art. 322 CC está sin contenido/derogado — _sección «Normativa conexa completa — Ecosistema jurídico» › tarjeta «CC» › referencia 2_
-- [revisar] «arts. 320-321»: el art. 320 CC está sin contenido/derogado (extremo de un rango) — _sección «Artículo 54 — Solicitud» › tarjeta «Art. 54.2» › referencia 1_
-- [revisar] «arts. 320-321»: el art. 321 CC está sin contenido/derogado (extremo de un rango) — _sección «Artículo 54 — Solicitud» › tarjeta «Art. 54.2» › referencia 1_
-- [revisar] «art. 315.2»: el art. 315 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Efectos jurídicos de la emancipación y del beneficio de mayor de edad» › tarjeta «Efectos» › «Limitaciones a la capacidad del emancipado» › 1 › punto.5_
-- [revisar] «Artículo 32.5»: el art. 32 LJV no tiene apartado 5 (no tiene apartados numerados) (ley por defecto) — _sección «Normativa conexa completa — Ecosistema jurídico» › tarjeta «LOPJ / LEC» › «Arts. 31-32 LEC — Intervención de abogado y procurador» › 1 › punto.2_
-
-**alcance**
-
-- [revisar] tarjetas de artículos fuera de su ámbito CAPÍTULO V «De la concesión judicial de la emancipación y del beneficio de la mayoría de edad» (arts. 53–55 LJV): art. 1, art. 2, art. 4, art. 5, art. 8, art. 17, art. 18, art. 19, art. 20 — ¿duplican otro esquema? — _tarjetas_
-
-**terminologia**
-
-- [revisar] «Juzgado de Primera Instancia» × 7 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículo 53 — Competencia, legitimación y postulación» › tarjeta «Art. 53.1» › «Competencia judicial» › 1 › punto.2 | sección «Marco general de la Jurisdicción Voluntaria aplicable» › tarjeta «Art. 2» › resumen | sección «Marco general de la Jurisdicción Voluntaria aplicable» › tarjeta «Art. 2» › «Contenido» › 1 › punto.1 …_
-- [revisar] «Secretario judicial» × 20 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Artículo 55 — Tramitación y resolución» › tarjeta «Art. 55.1» › resumen | sección «Artículo 55 — Tramitación y resolución» › tarjeta «Art. 55.1» › «Admisión a trámite» › 1 › punto.1 | sección «Artículo 55 — Tramitación y resolución» › tarjeta «Art. 55.1» › «Admisión a trámite» › 1 › punto.2 …_
+Sin hallazgos automáticos.
 
 ### ljv-patrimonio-protegido · Esquema · LJV · Patrimonio de las personas con discapacidad
 
