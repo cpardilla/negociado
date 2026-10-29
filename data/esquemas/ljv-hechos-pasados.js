@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E22.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E22.json; revisado con el BOE (registro: docs/revision/ljv-hechos-pasados.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-hechos-pasados",
@@ -13,13 +13,13 @@ Neg.data.register({
   "80 quinquies"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E22"
  },
  "cabecera": {
   "migas": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO XI",
-  "subtitulo": "Artículos 80 bis a 80 quinquies LJV · Introducidos por la disposición final tercera de la Ley 20/2022, de 19 de octubre, de Memoria Democrática",
+  "subtitulo": "Artículos 80 bis a 80 quinquies LJV · Introducidos por la Ley 20/2022, de 19 de octubre, de Memoria Democrática",
   "etiquetas": [
    "Ley 15/2015, de 2 de julio",
    "Artículos 80 bis – 80 quinquies",
@@ -71,19 +71,19 @@ Neg.data.register({
        }
       ],
       "titulo": "Introducción del Capítulo XI en la Ley 15/2015",
-      "resumen": "El Capítulo XI del Título II fue introducido en la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria, por la disposición final tercera de la Ley 20/2022, de 19 de octubre, de Memoria Democrática. Los artículos 80 bis a 80 quinquies se insertan bajo la rúbrica «De los expedientes de jurisdicción voluntaria relativos a declaraciones judiciales sobre hechos pasados».",
+      "resumen": "Capítulo XI del Título II de la LJV (arts. 80 bis a 80 quinquies), introducido por la Ley 20/2022, de 19 de octubre, de Memoria Democrática, en vigor desde el 21 de octubre de 2022: declaración judicial sobre la realidad y circunstancias de hechos pasados, sin controversia.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Antecedente histórico-procesal",
+         "titulo": "Origen",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El expediente reintroduce, con carácter renovado, la antigua figura de la <strong>«información para perpetua memoria»</strong>, que estuvo regulada en los artículos 2002 a 2010 de la Ley de Enjuiciamiento Civil de 1881 y que fue derogada al entrar en vigor la Ley 15/2015."
+             "t": "Introducido por la Ley 20/2022, de 19 de octubre, de Memoria Democrática (BOE-A-2022-17099), con vigencia desde el 21 de octubre de 2022."
             },
             {
-             "t": "La <strong>Exposición de Motivos de la Ley 20/2022</strong> (apartado IV) justifica la recuperación de esta vía para posibilitar, entre otras finalidades, la identificación y exhumación de las víctimas de la Guerra y la Dictadura y, a través de ella, la digna sepultura de las víctimas."
+             "t": "Aunque el art. 80 bis habla de «este título», el expediente forma el Capítulo XI del Título II."
             }
            ]
           }
@@ -92,15 +92,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Adaptación a la nueva organización judicial",
+         "titulo": "Órgano competente",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Conforme a la <strong>disposición adicional primera de la Ley Orgánica 1/2025</strong>, de 2 de enero, de medidas en materia de eficiencia del Servicio Público de Justicia, las referencias de la Ley de la Jurisdicción Voluntaria a los Juzgados de Primera Instancia deben entenderse hechas a las secciones correspondientes de los <strong>Tribunales de Instancia</strong>, cuya implementación concluye el 31 de diciembre de 2025."
-            },
-            {
-             "t": "La determinación de la sección competente atenderá a lo dispuesto en el apartado 5 del <strong>artículo 86 de la Ley Orgánica del Poder Judicial</strong>, letra j), o, en su caso, en el apartado 6 del <strong>artículo 89 de la misma ley</strong>, letra g)."
+             "t": "Juzgado de Primera Instancia (art. 80 ter LJV). Hoy, el Tribunal de Instancia. Por estar en el Título II LJV (expedientes en materia de personas), el art. 86.5 j) LOPJ lo atribuye, donde exista, a la Sección de Familia, Infancia y Capacidad (la excepción solo alcanza a los capítulos IX y X); si no existe, a la Sección Civil."
             }
            ]
           }
@@ -109,12 +106,9 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Ley 20/2022, disp. final 3.ª",
-       "LEC 1881, arts. 2002-2010",
-       "LO 1/2025, disp. adic. 1.ª",
-       "LOPJ, arts. 86.5.j) y 89.6.g)"
+       "LOPJ art. 86.5"
       ],
-      "claves": "marco general origen normativo capítulo xi ley 15/2015 jurisdicción voluntaria ley 20/2022 memoria democrática información para perpetua memoria ley enjuiciamiento civil 1881 tribunal de instancia ley orgánica 1/2025"
+      "claves": "marco general origen ley 20/2022 memoria democratica capitulo xi titulo ii seccion de familia infancia y capacidad seccion civil"
      }
     }
    ]
@@ -238,7 +232,7 @@ Neg.data.register({
              "t": "En su defecto, será competente el Juzgado de Primera Instancia que corresponda al <strong>domicilio del solicitante</strong>, como fuero residual."
             },
             {
-             "t": "Tras la Ley Orgánica 1/2025, la referencia al Juzgado de Primera Instancia ha de entenderse hecha a la <strong>sección civil del Tribunal de Instancia correspondiente</strong>."
+             "t": "Hoy, el Tribunal de Instancia. Por estar en el Título II LJV (expedientes en materia de personas), el art. 86.5 j) LOPJ lo atribuye, donde exista, a la Sección de Familia, Infancia y Capacidad (la excepción solo alcanza a los capítulos IX y X); si no existe, a la Sección Civil."
             }
            ]
           }
@@ -507,6 +501,9 @@ Neg.data.register({
            "lista": [
             {
              "t": "Las resoluciones interlocutorias dictadas durante la tramitación del expediente son susceptibles de <strong>recurso de reposición</strong>, en los términos previstos en la Ley de Enjuiciamiento Civil."
+            },
+            {
+             "t": "Plazo: cinco días (art. 452 LEC)."
             }
            ]
           }
@@ -530,6 +527,12 @@ Neg.data.register({
             },
             {
              "t": "<strong>El auto que resuelve sobre la oposición</strong> formulada durante la tramitación (apartado 6)."
+            },
+            {
+             "t": "Plazo: veinte días (art. 458.1 LEC). Sin efectos suspensivos, porque la ley no dispone otra cosa (art. 20.2 LJV)."
+            },
+            {
+             "t": "Para apelar son necesarios abogado y procurador (art. 3.2 LJV), aunque no lo sean para promover e intervenir (art. 80 ter.3)."
             }
            ]
           }
@@ -538,9 +541,8 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC, recurso de reposición",
-       "LEC, recurso de apelación",
-       "Ley 15/2015, art. 80 quater aps. 2, 5 y 6"
+       "LEC arts. 452, 458",
+       "LJV arts. 3, 20"
       ],
       "claves": "artículo 80 quinquies recursos reposición apelación resoluciones interlocutorias resolución definitiva auto admisibilidad auto declaración oposición letrado administración de justicia ley enjuiciamiento civil"
      }
@@ -571,9 +573,14 @@ Neg.data.register({
         "Artículo 80 quater, apartado 5"
        ],
        [
-        "Plazo de implementación de los Tribunales de Instancia (sustitución de las referencias a los Juzgados de Primera Instancia)",
-        "31 de diciembre de 2025",
-        "Ley Orgánica 1/2025, disposición adicional primera"
+        "Recurso de reposición contra resoluciones interlocutorias",
+        "5 días",
+        "Art. 80 quinquies.1 LJV; art. 452 LEC"
+       ],
+       [
+        "Recurso de apelación contra el auto de admisibilidad, el definitivo o el de sobreseimiento",
+        "20 días",
+        "Art. 80 quinquies.2 LJV; art. 458.1 LEC"
        ]
       ]
      }
@@ -597,7 +604,7 @@ Neg.data.register({
         "t": "Letrado de la Administración de Justicia (control previo de admisibilidad, admisión a trámite, citación)"
        },
        {
-        "t": "Juzgado de Primera Instancia / Sección civil del Tribunal de Instancia (competencia territorial)"
+        "t": "Tribunal de Instancia — Sección de Familia, Infancia y Capacidad donde exista; si no, Sección Civil (lugar de los hechos o domicilio del solicitante)"
        }
       ]
      }
@@ -651,14 +658,14 @@ Neg.data.register({
   },
   {
    "titulo": "Ecosistema normativo — conexiones relacionadas",
-   "recuento": "7 cuerpos normativos",
+   "recuento": "4 normas",
    "plegada": true,
    "bloques": [
     {
      "norma": {
       "ley": "Ley 15/2015, de 2 de julio",
       "titulo": "Ley de la Jurisdicción Voluntaria",
-      "texto": "<strong>Artículo 1</strong> — Objeto y ámbito de aplicación: enmarca el expediente dentro del sistema general de jurisdicción voluntaria. <strong>Artículo 2</strong> — Competencia en materia de jurisdicción voluntaria: reglas generales sobre competencia objetiva. <strong>Artículo 3</strong> — Legitimación y postulación: complementa la regla de postulación no preceptiva del artículo 80 ter. <strong>Artículo 4</strong> — Intervención del Ministerio Fiscal: fundamento general de su presencia como parte. <strong>Artículo 5</strong> — Prueba: régimen común probatorio aplicable al expediente. <strong>Artículo 6</strong> — Tramitación simultánea o posterior: se conecta con la exigencia del artículo 80 bis de que los hechos no sean objeto de un procedimiento judicial en trámite. <strong>Artículo 7 bis</strong> — Ajustes para personas con discapacidad. <strong>Artículo 8</strong> — Carácter supletorio de la LEC: fundamento general de las remisiones expresas. <strong>Artículo 11</strong> — Inscripción en registros públicos: régimen general del acceso registral. <strong>Artículos 13 a 22</strong> — Normas comunes de tramitación: iniciación, acumulación, competencia, admisión, comparecencia, decisión, recursos, caducidad, cumplimiento y ejecución. <strong>Artículo 22.2</strong> — Cumplimiento y ejecución: remisión expresa del artículo 80 quater para hechos inscribibles.",
+      "texto": "<strong>Artículo 3</strong> — Legitimación y postulación (abogado y procurador para los recursos). <strong>Artículo 4</strong> — Intervención del Ministerio Fiscal. <strong>Artículo 6</strong> — Tramitación simultánea o posterior de expedientes o procesos (en relación con el art. 80 bis.2 d). <strong>Artículo 7 bis</strong> — Ajustes para personas con discapacidad. <strong>Artículo 8</strong> — Carácter supletorio de la LEC. <strong>Artículos 13 a 22 LJV</strong> — Normas comunes de tramitación. <strong>Artículo 22.2 LJV</strong> — Testimonio para la inscripción en registros públicos (remisión del art. 80 quater.5).",
       "etiqueta": "Norma principal",
       "tono": "t-ok"
      }
@@ -667,58 +674,31 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 1/2000, de 7 de enero",
       "titulo": "Ley de Enjuiciamiento Civil",
-      "texto": "<strong>Artículo 381</strong> — Respuestas escritas a cargo de personas jurídicas o entidades públicas, cauce probatorio expresamente previsto para este expediente. <strong>Trámites de la vista del juicio verbal</strong> — Régimen procesal aplicable a la comparecencia prevista en el artículo 80 quater. <strong>Recurso de reposición</strong> — Régimen aplicable a las resoluciones interlocutorias dictadas en el expediente. <strong>Recurso de apelación</strong> — Régimen aplicable a la resolución definitiva dictada conforme a los apartados segundo, quinto o sexto del artículo 80 quater.",
+      "texto": "<strong>Artículo 381 LEC</strong> — Respuestas escritas de personas jurídicas o entidades públicas. <strong>Arts. 443 y ss. LEC</strong> — Vista del juicio verbal (comparecencia). <strong>Art. 452 LEC</strong> — Reposición. <strong>Art. 458 LEC</strong> — Apelación.",
       "etiqueta": "Supletoria",
-      "tono": "t-info"
+      "tono": "t-nota"
      }
     },
     {
      "norma": {
       "ley": "Ley 20/2022, de 19 de octubre",
       "titulo": "Ley de Memoria Democrática",
-      "texto": "<strong>Disposición final tercera</strong> — Introduce el Capítulo XI en la Ley 15/2015. <strong>Exposición de Motivos, apartado IV</strong> — Explicita la finalidad de posibilitar la identificación y exhumación de las víctimas de la Guerra y la Dictadura y darles digna sepultura.",
+      "texto": "Introduce el Capítulo XI en la Ley 15/2015 (vigente desde el 21 de octubre de 2022).",
       "etiqueta": "Norma introductoria",
-      "tono": "t-plazo"
+      "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "Ley Orgánica 1/2025, de 2 de enero",
-      "titulo": "De medidas en materia de eficiencia del Servicio Público de Justicia",
-      "texto": "<strong>Disposición adicional primera</strong> — Reorganización judicial que afecta a la competencia, sustituyendo las referencias a los Juzgados de Primera Instancia por las secciones civiles correspondientes de los Tribunales de Instancia; además, dispensa de la obligación de acudir a medios adecuados de solución de controversias para iniciar expedientes de jurisdicción voluntaria.",
-      "etiqueta": "Reforma orgánica",
-      "tono": "t-aviso"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley Orgánica 6/1985, de 1 de julio",
-      "titulo": "Ley Orgánica del Poder Judicial",
-      "texto": "<strong>Artículo 86.5.j)</strong> — Para la identificación de la sección competente dentro del Tribunal de Instancia. <strong>Artículo 89.6.g)</strong> — Para la identificación de la sección competente dentro del Tribunal de Instancia (supuesto alternativo).",
+      "ley": "LOPJ (LO 1/2025)",
+      "titulo": "Tribunales de Instancia",
+      "texto": "<strong>Art. 86.5 j) LOPJ</strong> — Expedientes de jurisdicción voluntaria en materia de personas y familia: Sección de Familia, Infancia y Capacidad, salvo los capítulos IX y X del Título II.",
       "etiqueta": "Competencia",
-      "tono": "t-nota"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley 50/1981, de 30 de diciembre",
-      "titulo": "Estatuto Orgánico del Ministerio Fiscal",
-      "texto": "<strong>Régimen del Ministerio Fiscal</strong> — Legitimado activo y parte necesaria en este expediente.",
-      "etiqueta": "Ministerio Fiscal",
-      "tono": "t-nota"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley de Enjuiciamiento Civil de 1881",
-      "titulo": "Antecedente histórico: información para perpetua memoria",
-      "texto": "<strong>Artículos 2002 a 2010</strong> — Antecedente histórico de la «información para perpetua memoria», derogada por la Ley 15/2015 y recuperada, con nueva configuración, por la Ley 20/2022.",
-      "etiqueta": "Antecedente derogado",
-      "tono": "t-nota"
+      "tono": "t-info"
      }
     }
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II · Capítulo XI (artículos 80 bis a 80 quinquies) · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II · Capítulo XI (artículos 80 bis a 80 quinquies)"
 });

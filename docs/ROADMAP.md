@@ -188,7 +188,7 @@ Defectos del markmap anterior — todos resueltos al generar el mapa de los mism
 2. ✅ (2026-10-29) Retirados los 57 HTML antiguos (quedan en el historial de git y en el tag `baseline-2026-10-28`). `404.html` (`tools/build-404.js`, autosuficiente): 56 direcciones antiguas redirigen a su sitio nuevo; la del esquema combinado I bis & ter (sin equivalente único) y cualquier otra inexistente muestran el aviso de actualizar favoritos (decisión 8). `.nojekyll` en la raíz. Los tres tests que comparaban el inventario con los HTML antiguos solo se ejecutan donde existen (el tag); `tools/extract-current.js` queda como histórico. Tests en navegador de las redirecciones, servidas como en Pages.
 3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
-### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (21/27)
+### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (22/27)
 Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabla (decisión 6). Los más usados (E01–E04, E28) con atención especial.
 
 | # | Esquema | Estado |
@@ -214,7 +214,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E19 | LJV · T. II Cap. VIII — Actos de disposición sobre bienes de menores y personas con apoyos | ✅ 2026-10-29 · corregido (texto LJV fiel); la repudiación de herencia va por los arts. 93–95 LJV y la partición sí por este capítulo; art. 5 Ley 41/2003 vigente; art. 65.2 suprimido y venta directa; apelación 20 días ([registro](revision/ljv-actos-disposicion.md)) |
 | E20 | LJV · T. II Cap. IX — Ausencia y fallecimiento | ✅ 2026-10-29 · rehecho (11 fichas infladas → 6); fuera medidas, plazos y trámites inventados y normas ajenas; plazos exactos de los arts. 183, 193 y 194 CC; revisión en 5 días; Sección Civil (decisión 11) ([registro](revision/ljv-ausencia-fallecimiento.md)) |
 | E21 | LJV · T. II Cap. X — Extracción de órganos de donantes vivos | ✅ 2026-10-29 · rehecho en forma compacta; 24 horas: art. 8.6 RD 1723/2012 (no la LJV); fuera «Cap. IX = filiación», rúbricas erróneas, receptor como interesado y normas ajenas; requisitos del donante con su base; Sección Civil ([registro](revision/ljv-donantes-vivos.md)) |
-| E22 | LJV · T. II Cap. XI — Declaraciones sobre hechos pasados | ☐ |
+| E22 | LJV · T. II Cap. XI — Declaraciones sobre hechos pasados | ✅ 2026-10-29 · corregido (texto fiel); fuera la «DA 1.ª LO 1/2025», el art. 89.6 g) como alternativa y la LEC de 1881; recursos con plazos; sección: Familia, Infancia y Capacidad por el art. 86.5 j) — pregunta abierta ([registro](revision/ljv-hechos-pasados.md)) |
 | E23 | LJV · Título IV — Derecho sucesorio | ☐ |
 | E24 | LJV · Título V — Derecho de obligaciones | ☐ |
 | E25 | LJV · T. VI Cap. I — Usufructuario y créditos vencidos | ☐ |
@@ -245,7 +245,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G16 | LJV · T. II Cap. VIII — Actos de disposición | pie «Código Civil arts.…» mal leído; «Juzgado de Primera Instancia» × 3 | ☐ |
 | G17 | LJV · T. II Cap. IX — Ausencia y fallecimiento | ordinales del CC como apartados («194.1», «193.2», «196.2»); «Secretario judicial» × 2 | ☐ |
 | G18 | LJV · T. II Cap. X — Órganos de donantes vivos | «Juzgado de Primera Instancia» × 1; comprobar el plazo de 24 h | ☐ |
-| G19 | LJV · T. II Cap. XI — Hechos pasados | — | ☐ |
+| G19 | LJV · T. II Cap. XI — Hechos pasados | «JPI» × 2, «Juzgado de Primera Instancia» × 1 | ☐ |
 | G20 | LJV · Título IV — Derecho sucesorio | — | ☐ |
 | G21 | LJV · Título V — Derecho de obligaciones | — | ☐ |
 | G22 | LJV · T. VI Cap. I — Usufructuario | — | ☐ |
@@ -284,12 +284,13 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 8. ✅ URL antiguas: redirección cuando sea posible; si no, aviso para actualizar favoritos («if → else»). Implementación: `404.html` de GitHub Pages con la tabla de correspondencias antigua → nueva; si la dirección está en la tabla, redirige; si no, muestra el aviso con enlace a la portada.
 9. ✅ (2026-10-29) **Alcance de los esquemas**: se ciñen a lo que usa el juzgado: sus artículos y las normas del CC, LJV, LN, LH… que se aplican en la tramitación, todo comprobado. Fiscalidad, derechos forales y detalle internacional fuera (como mucho, una mención donde afecten a la tramitación). Lo duplicado en otro esquema se sustituye por una remisión. Todo lo retirado se anota en el registro de revisión.
 10. ✅ (2026-10-29) **Jurisprudencia**: se retira la que no se puede verificar y queda anotada en el registro, para reincorporarla con su ECLI si el propietario la aporta. Sin búsquedas en la web.
-11. ✅ (2026-10-29) **Art. 86.5 j) LOPJ**: la excepción «capítulos IX y X del título I» se lee como **Título II** de la LJV (errata de la ley). Ausencia y fallecimiento (cap. IX) y extracción de órganos de donantes vivos (cap. X) no son de la Sección de Familia, Infancia y Capacidad: van a la Sección Civil del Tribunal de Instancia.
+11. ✅ (2026-10-29) **Art. 86.5 j) LOPJ**: la excepción «capítulos IX y X del título I» se lee como **Título II** de la LJV (errata de la ley). Ausencia y fallecimiento (cap. IX) y extracción de órganos de donantes vivos (cap. X) no son de la Sección de Familia, Infancia y Capacidad: van a la Sección Civil del Tribunal de Instancia. Lo confirma el art. 89.6 g) LOPJ, que en la misma excepción dice «título II».
 
 ## 11. Registro de cambios del plan
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-29 · E22 (hechos pasados) revisado; pregunta al propietario: ¿Sección de Familia o Civil? Siguiente: E23.
 - 2026-10-29 · E21 (donantes vivos) revisado. Siguiente: E22.
 - 2026-10-29 · E20 (ausencia y fallecimiento) revisado. Pendiente en el analizador: «art. 194.2.º y 3.º CC» se lee como LJV. Siguiente: E21.
 - 2026-10-29 · Decisión 11 (art. 86.5 j) LOPJ → Título II LJV, caps. IX y X a la Sección Civil).
