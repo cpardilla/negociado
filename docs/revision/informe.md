@@ -20,7 +20,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-mencion-sexo-12-14 | Esquema · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-reversion | Esquema · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
 | ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | · | · | · | · | · | · | 3R |
-| ljv-adopcion | Esquema · LJV · Adopción | · | · | · | 1R | · | · | 2R |
+| ljv-adopcion | Esquema · LJV · Adopción | · | · | · | 1R | · | · | 1R |
 | ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | 1R | · | · | · | · | 3R |
 | ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | 3E | · | · | 1R | · | · | 3R |
 | ljv-emancipacion | Esquema · LJV · Emancipación y beneficio de la mayoría de edad | 33E 4R | 1R | · | · | · | · | 2R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 105E 38A 141R | 0E 0A 2R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 81R |
+| | **Total** | 105E 38A 141R | 0E 0A 2R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 80R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,11 +69,11 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2609
-- ✓ LEC (BOE a 07-10-2026): 1515
-- ✓ CC (BOE a 07-09-2026): 1392
+- ✓ LJV (BOE a 05-03-2026): 2612
+- ✓ LEC (BOE a 07-10-2026): 1521
+- ✓ CC (BOE a 07-09-2026): 1397
 - ✓ CE (BOE a 20-05-2026): 76
-- ✓ LOPJ (BOE a 09-10-2026): 58
+- ✓ LOPJ (BOE a 09-10-2026): 69
 - ✓ LOPJM (BOE a 18-12-2025): 58
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - UE: 54
@@ -112,7 +112,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 646 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 640 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -187,8 +187,7 @@ Sin hallazgos automáticos.
 
 **terminologia**
 
-- [revisar] «Juzgado de Primera Instancia» × 3 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos del Capítulo III» › tarjeta «Artículo 33» › resumen | sección «Artículos del Capítulo III» › tarjeta «Artículo 33» › «Regla de competencia» › 1 › punto.1 | sección «Mapa de participantes y actores» › 1 › grupo «Órganos Judiciales y Fiscal».3_
-- [revisar] «Secretario judicial» × 10 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Artículos del Capítulo III» › tarjeta «Artículo 36» › resumen | sección «Artículos del Capítulo III» › tarjeta «Artículo 36» › «Consentimiento en el expediente» › 1 › punto.1 | sección «Artículos del Capítulo III» › tarjeta «Artículo 37» › «Reclamación de la necesidad de asentimiento por progenitores» › 1 › punto.2 …_
+- [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos del Capítulo III» › tarjeta «Artículo 33» › resumen | sección «Artículos del Capítulo III» › tarjeta «Artículo 33» › «Regla de competencia» › 1 › punto.1_
 
 ### ljv-medidas-apoyo · Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad
 

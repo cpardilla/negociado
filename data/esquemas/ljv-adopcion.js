@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E13.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E13.json; revisado con el BOE (registro: docs/revision/ljv-adopcion.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-adopcion",
@@ -19,7 +19,7 @@ Neg.data.register({
   "42"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E13"
  },
@@ -99,6 +99,26 @@ Neg.data.register({
        },
        {
         "apartado": {
+         "titulo": "Requisitos de adoptante y adoptando (art. 175 CC)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Adoptante mayor de veinticinco años (si son dos, basta uno); diferencia de edad de al menos dieciséis años y no más de cuarenta y cinco, salvo los casos del art. 176.2 CC y las excepciones del propio artículo."
+            },
+            {
+             "t": "Solo pueden adoptarse menores no emancipados; por excepción, un mayor de edad o menor emancipado si antes hubo acogimiento o convivencia estable con los adoptantes de al menos un año."
+            },
+            {
+             "t": "No puede adoptarse a un descendiente, a un pariente en segundo grado de la línea colateral ni al pupilo por su tutor hasta aprobarse la cuenta general de la tutela."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
          "titulo": "Idoneidad del adoptante",
          "contenido": [
           {
@@ -127,7 +147,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Quienes se encuentren privados de la patria potestad o tengan suspendido su ejercicio."
+             "t": "Quienes se encuentren privados de la patria potestad o tengan suspendido su ejercicio (art. 176.3 CC)."
             },
             {
              "t": "Quienes tengan confiada la guarda de su hijo a la Entidad Pública."
@@ -139,7 +159,7 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Código Civil"
+       "CC arts. 175–176"
       ],
       "claves": "fundamento sustantivo marco jurídico adopción código civil idoneidad prohibiciones"
      }
@@ -156,7 +176,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Competencia",
-      "resumen": "Juzgado de Primera Instancia de la sede de la Entidad Pública o del domicilio del adoptante.",
+      "resumen": "Juzgado de Primera Instancia de la sede de la Entidad Pública o del domicilio del adoptante. Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 d) LOPJ) y, si no, la Sección Civil.",
       "cuerpo": [
        {
         "apartado": {
@@ -383,7 +403,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Consentimiento",
-      "resumen": "Citación por el Secretario judicial para manifestar consentimiento ante el Juez.",
+      "resumen": "Citación por el Letrado de la Administración de Justicia (la LJV dice aún «Secretario judicial») para manifestar el consentimiento ante el Juez.",
       "cuerpo": [
        {
         "apartado": {
@@ -392,7 +412,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "En el expediente, el Secretario judicial citará, para manifestar su consentimiento en presencia del Juez, al adoptante o adoptantes y al adoptando si fuere mayor de 12 años."
+             "t": "En el expediente, el Letrado de la Administración de Justicia citará, para manifestar su consentimiento en presencia del Juez, al adoptante o adoptantes y al adoptando si fuere mayor de 12 años."
             }
            ]
           }
@@ -515,16 +535,13 @@ Neg.data.register({
              "t": "Si los progenitores pretendieran que se les reconozca la necesidad de prestar su asentimiento a la adopción, deberán ponerlo de manifiesto en el expediente."
             },
             {
-             "t": "El Secretario judicial acordará la suspensión del expediente y otorgará el plazo de 15 días para la presentación de la demanda, de la que conocerá el mismo Tribunal."
+             "t": "El Letrado de la Administración de Justicia acordará la suspensión del expediente y otorgará el plazo de 15 días para la presentación de la demanda, de la que conocerá el mismo Tribunal."
             },
             {
-             "t": "Presentada la demanda dentro de plazo, el Secretario judicial dictará decreto declarando contencioso el expediente de adopción y acordará la tramitación de la demanda presentada en el mismo procedimiento, como pieza separada, con arreglo a lo previsto en el artículo 753 de la Ley de Enjuiciamiento Civil."
+             "t": "Presentada la demanda dentro de plazo, el Letrado de la Administración de Justicia dictará decreto declarando contencioso el expediente de adopción y acordará seguir su tramitación conforme al artículo 781 LEC (que, a su vez, remite a los trámites del art. 753 LEC)."
             },
             {
-             "t": "Una vez firme la resolución que se dicte en la pieza separada sobre la necesidad del asentimiento de los progenitores del adoptando, el Secretario judicial acordará la citación ante el Juez de las personas indicadas en el artículo 177 del Código Civil que deban prestar el consentimiento o el asentimiento a la adopción así como ser oídos, y que todavía no lo hayan hecho, debiendo resolver a continuación sobre la adopción."
-            },
-            {
-             "t": "Si no se presentara la demanda en el plazo fijado, el Secretario judicial dictará decreto dando por finalizado el trámite y alzando la suspensión del expediente de adopción."
+             "t": "Si no se presentara la demanda en el plazo fijado, el Letrado de la Administración de Justicia dictará decreto dando por finalizado el trámite y alzando la suspensión del expediente de adopción."
             },
             {
              "t": "El decreto será recurrible directamente en revisión ante el Tribunal."
@@ -559,6 +576,13 @@ Neg.data.register({
           }
          ]
         }
+       },
+       {
+        "nota": {
+         "tono": "t-aviso",
+         "etiqueta": "Plazo",
+         "texto": "El art. 37.2 LJV fija 15 días para presentar la demanda; el art. 781.1 LEC habla de un plazo «que no podrá ser superior a veinte días». Para el expediente de adopción rige el plazo de la LJV."
+        }
        }
       ],
       "referencias": [
@@ -591,7 +615,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Si en la propuesta de adopción o en el ofrecimiento para la adopción no constare el domicilio de los que deban ser citados, el Secretario judicial practicará inmediatamente las diligencias oportunas para la averiguación del domicilio conforme a lo prevenido en el artículo 156 de la Ley de Enjuiciamiento Civil y los citará ante el Juez dentro de los quince días siguientes, debiendo garantizar la debida reserva."
+             "t": "Si en la propuesta de adopción o en el ofrecimiento para la adopción no constare el domicilio de los que deban ser citados, el Letrado de la Administración de Justicia practicará inmediatamente las diligencias oportunas para la averiguación del domicilio conforme a lo prevenido en el artículo 156 de la Ley de Enjuiciamiento Civil y los citará ante el Juez dentro de los quince días siguientes, debiendo garantizar la debida reserva."
             },
             {
              "t": "En la citación a los progenitores se hará constar, en su caso, la circunstancia por la cual basta su audiencia."
@@ -631,7 +655,7 @@ Neg.data.register({
              "t": "Cuando no haya podido conocerse el domicilio o paradero de alguna persona que deba ser citada, o si citada debidamente, con los apercibimientos oportunos, no compareciese, se prescindirá del trámite y la adopción acordada será válida, sin perjuicio, en su caso, del derecho que a los progenitores concede el apartado 2 del artículo 180 del Código Civil."
             },
             {
-             "t": "<strong>Derecho de los progenitores a solicitar la extinción (artículo 180.2 del Código Civil):</strong> El Juez acordará la extinción de la adopción a petición de cualquiera de los progenitores que, sin culpa suya, no hubieren intervenido en el expediente en los términos expresados en el artículo 177. Será también necesario que la demanda se interponga dentro de los dos años siguientes a la adopción y que la extinción solicitada no perjudique gravemente al menor."
+             "t": "<strong>Derecho de los progenitores a solicitar la extinción (artículo 180.2 del Código Civil):</strong> El Juez acordará la extinción de la adopción a petición de cualquiera de los progenitores que, sin culpa suya, no hubieren intervenido en el expediente en los términos expresados en el artículo 177 CC. Será también necesario que la demanda se interponga dentro de los dos años siguientes a la adopción y que la extinción solicitada no perjudique gravemente al menor."
             }
            ]
           }
@@ -707,7 +731,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Si se suscitare oposición, el expediente se hará contencioso y el Secretario judicial citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
+             "t": "Si se suscitare oposición, el expediente se hará contencioso y el Letrado de la Administración de Justicia citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
             }
            ]
           }
@@ -722,9 +746,6 @@ Neg.data.register({
            "lista": [
             {
              "t": "Contra el auto que resuelva el expediente cabe recurso de apelación, que tendrá carácter preferente, sin que produzca efectos suspensivos."
-            },
-            {
-             "t": "<strong>Efectos del recurso de apelación:</strong> El auto que ponga fin al procedimiento será susceptible de recurso de apelación, que tendrá efectos suspensivos."
             }
            ]
           }
@@ -811,7 +832,7 @@ Neg.data.register({
              "t": "<strong>Irrevocabilidad:</strong> La adopción es irrevocable."
             },
             {
-             "t": "<strong>Extinción a petición de progenitores:</strong> El Juez acordará la extinción de la adopción a petición de cualquiera de los progenitores que, sin culpa suya, no hubieren intervenido en el expediente en los términos expresados en el artículo 177. Será también necesario que la demanda se interponga dentro de los dos años siguientes a la adopción y que la extinción solicitada no perjudique gravemente al menor."
+             "t": "<strong>Extinción a petición de progenitores:</strong> El Juez acordará la extinción de la adopción a petición de cualquiera de los progenitores que, sin culpa suya, no hubieren intervenido en el expediente en los términos expresados en el artículo 177 CC. Será también necesario que la demanda se interponga dentro de los dos años siguientes a la adopción y que la extinción solicitada no perjudique gravemente al menor."
             },
             {
              "t": "<strong>Consentimiento del adoptado mayor de edad:</strong> Si el adoptado fuere mayor de edad, la extinción de la adopción requerirá su consentimiento expreso."
@@ -1081,7 +1102,7 @@ Neg.data.register({
         "Artículo 37.2 Ley 15/2015 / Art. 781 LEC"
        ],
        [
-        "Citación ante el Juez tras averiguación de domicilio por el Secretario judicial",
+        "Citación ante el Juez tras averiguación de domicilio por el Letrado de la Administración de Justicia",
         "15 días",
         "Artículo 38.1 Ley 15/2015"
        ],
@@ -1129,10 +1150,10 @@ Neg.data.register({
         "t": "Juez (práctica diligencias, consentimiento, resoluciones)"
        },
        {
-        "t": "Secretario Judicial (citaciones, decretos, suspensiones)"
+        "t": "Letrado de la Administración de Justicia (citaciones, decretos, suspensiones)"
        },
        {
-        "t": "Juzgado de Primera Instancia (competente)"
+        "t": "Tribunal de Instancia: Sección de Familia, Infancia y Capacidad o, si no existe, Sección Civil (art. 33 LJV; art. 86.5 d) LOPJ)"
        },
        {
         "t": "Ministerio Fiscal (intervención, propuestas, audiencias)"
@@ -1223,7 +1244,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley de Enjuiciamiento Civil",
       "titulo": "Procedimientos aplicables a la jurisdicción voluntaria y oposición",
-      "texto": "<strong>Artículo 156</strong> — Averiguación del domicilio de los que deban ser citados.<br><strong>Artículo 753</strong> — Tramitación en pieza separada de la necesidad de asentimiento de progenitores.<br><strong>Artículo 781</strong> — Comparecencia y demanda de progenitores para reconocimiento de asentimiento.",
+      "texto": "<strong>Artículo 156 LEC</strong> — Averiguación del domicilio de los que deban ser citados.<br><strong>Artículo 753 LEC</strong> — Trámites a los que remite el art. 781 LEC para la demanda sobre la necesidad del asentimiento.<br><strong>Artículo 781 LEC</strong> — Procedimiento para determinar la necesidad del asentimiento de los progenitores (art. 37.2 LJV).",
       "etiqueta": "Procesal",
       "tono": "t-plazo"
      }
@@ -1249,5 +1270,5 @@ Neg.data.register({
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · TÍTULO II · CAPÍTULO III · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo III · Arts. 33–42"
 });
