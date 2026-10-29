@@ -25,7 +25,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | · | · | · | 1R | · | · | 1R |
 | ljv-emancipacion | Esquema · LJV · Emancipación y beneficio de la mayoría de edad | · | · | · | · | · | · | · |
 | ljv-patrimonio-protegido | Esquema · LJV · Patrimonio de las personas con discapacidad | · | · | · | · | · | · | 1R |
-| ljv-honor-menor | Esquema · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 3E 3A 25R | · | · | 1R | 1R | · | 2R |
+| ljv-honor-menor | Esquema · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-actos-disposicion | Esquema · LJV · Actos de disposición sobre bienes de menores y personas con apoyos | 2R | · | · | · | · | · | 1R |
 | ljv-ausencia-fallecimiento | Esquema · LJV · Declaración de ausencia y fallecimiento | 22R | · | · | · | · | · | 1R |
 | ljv-donantes-vivos | Esquema · LJV · Extracción de órganos de donantes vivos | · | · | · | · | · | · | · |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 67E 38A 115R | 0E 0A 0R | 0E 0A 0R | 0E 0A 11R | 0E 0A 9R | 4E 0A 1R | 0E 0A 74R |
+| | **Total** | 64E 35A 90R | 0E 0A 0R | 0E 0A 0R | 0E 0A 10R | 0E 0A 8R | 4E 0A 1R | 0E 0A 73R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,50 +69,44 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2541
-- ✓ LEC (BOE a 07-10-2026): 1514
-- ✓ CC (BOE a 07-09-2026): 1384
-- ✓ LOPJ (BOE a 09-10-2026): 72
-- ✓ CE (BOE a 20-05-2026): 64
+- ✓ LJV (BOE a 05-03-2026): 2467
+- ✓ LEC (BOE a 07-10-2026): 1501
+- ✓ CC (BOE a 07-09-2026): 1366
+- ✓ LOPJ (BOE a 09-10-2026): 69
 - ✓ LTRANS (BOE a 20-12-2025): 58
-- ✓ LOPJM (BOE a 18-12-2025): 57
-- UE: 52
-- ✓ LOPDH (BOE a 16-12-2025): 42
+- ✓ LOPJM (BOE a 18-12-2025): 48
+- ✓ CE (BOE a 20-05-2026): 46
+- UE: 40
 - ✓ LRC (BOE a 24-02-2026): 37
 - ✓ LPPD (BOE a 18-12-2025): 33
+- ✓ LOPDH (BOE a 16-12-2025): 33
 - ✓ LH (BOE a 07-01-2026): 32
 - ✓ LN (BOE a 22-10-2026): 29
-- ✓ LOPDGDD (BOE a 08-10-2026): 16
 - ✓ LTO (BOE a 16-12-2025): 16
 - ✓ RDTO (BOE a 19-12-2025): 16
-- ✓ CP (BOE a 09-04-2026): 14
 - ✓ LSC (BOE a 19-12-2025): 7
-- ✓ L8-2021 (BOE a 20-12-2025): 7
+- ✓ CP (BOE a 09-04-2026): 6
 - ✓ CCom (BOE a 16-12-2025): 4
 - ✓ LCS (BOE a 05-10-2026): 4
 - ✓ LA (BOE a 18-12-2025): 4
 - ✓ RH (BOE a 16-12-2025): 4
 - LPAP: 4
 - LO 1/2025: 4
+- ✓ LOPDGDD (BOE a 08-10-2026): 4
 - ✓ LMED (BOE a 19-12-2025): 3
 - ✓ LPI (BOE a 31-07-2026): 2
 - ✓ LPAT (BOE a 31-07-2026): 2
 - ✓ LCD (BOE a 29-12-2025): 2
 - ✓ LSE (BOE a 31-07-2026): 2
-- LO 8/2015: 2
 - Ley 40/2015: 2
 - Ley 10/2012: 2
 - LO 3/2007: 1
-- ✓ LAP (BOE a 18-12-2025): 1
-- LO 50/1981: 1
-- Ley 1/1996: 1
-- Ley 39/2015: 1
-- LO 1/2023: 1
 - Reglamento: 1
 - Ley 54/2007: 1
+- ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 533 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 479 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -222,52 +216,9 @@ Sin hallazgos automáticos.
 
 ### ljv-honor-menor · Esquema · LJV · Honor, intimidad e imagen del menor o persona con discapacidad
 
-**citas**
-
-- [error] «art. 315»: el art. 315 CC está sin contenido/derogado — _sección «Art. 59 — Ámbito de aplicación y presupuesto habilitante» › tarjeta «Art. 59.1» › «Sujetos protegidos» › 1 › punto.1_
-- [error] «art. 98»: el art. 98 LOPJ está sin contenido/derogado — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.2» › «Juzgados especializados y conflictos de competencia» › 1 › punto.1_
-- [error] «arts. 86 ter y 98»: el art. 98 LOPJ está sin contenido/derogado — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.2» › referencia 2_
-- [aviso] «art. 59.4»: el art. 59 LJV no tiene apartado 4 (tiene 1, 2, 3) — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.4» › «Regla general: no preceptiva» › 1 › punto.1_
-- [aviso] «art. 1.4»: el art. 1 LOPDH no tiene apartado 4 (tiene 1, 2, 3) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.5» › «Efectos sobre contratos con terceros» › 1 › punto.1_
-- [aviso] «arts. 1.4, 2.3 y 9.3»: el art. 1 LOPDH no tiene apartado 4 (tiene 1, 2, 3) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.5» › referencia 2_
-- [revisar] «Art. 7.1 y 7.2»: el art. 7 LJV no tiene apartado 1 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.1_
-- [revisar] «Art. 7.1 y 7.2»: el art. 7 LJV no tiene apartado 2 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.1_
-- [revisar] «Art. 7.4»: el art. 7 LJV no tiene apartado 4 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.2_
-- [revisar] «Art. 7.5»: el art. 7 LJV no tiene apartado 5 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.3_
-- [revisar] «Art. 7.6»: el art. 7 LJV no tiene apartado 6 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.4_
-- [revisar] «Art. 7.7»: el art. 7 LJV no tiene apartado 7 (no tiene apartados numerados) (ley por defecto) — _sección «Fundamentos constitucionales, supranacionales y sustantivos» › tarjeta «F2» › «Catálogo de intromisiones ilegítimas (art. 7)» › 1 › punto.5_
-- [revisar] «Art. 3.6»: el art. 3 LJV no tiene apartado 6 (tiene 1, 2) (ley por defecto) — _sección «Art. 59 — Ámbito de aplicación y presupuesto habilitante» › tarjeta «Art. 59.1» › «El Ministerio Fiscal como garante institucional» › 1 › punto.2_
-- [revisar] «arts. 249, 256-272, 287, 300»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.3» › referencia 3_
-- [revisar] «arts. 249, 256-272, 287, 300»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.3» › referencia 3_
-- [revisar] «arts. 249, 256-272, 287, 300»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.3» › referencia 3_
-- [revisar] «arts. 249, 256-272, 287, 300»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.3» › referencia 3_
-- [revisar] «art. 249»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 60 — Tramitación: solicitud, admisión, comparecencia y cautelares» › tarjeta «Art. 60.1-2» › referencia 4_
-- [revisar] «arts. 249 y 268»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 60 — Tramitación: solicitud, admisión, comparecencia y cautelares» › tarjeta «Art. 60.2» › referencia 4_
-- [revisar] «arts. 249 y 268»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 60 — Tramitación: solicitud, admisión, comparecencia y cautelares» › tarjeta «Art. 60.2» › referencia 4_
-- [revisar] «art. 12.4»: el art. 12 LJV no tiene apartado 4 (tiene 1, 2, 3) (ley por defecto) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.3» › «Estándar para personas con discapacidad» › 1 › punto.1_
-- [revisar] «art. 249»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.3» › referencia 4_
-- [revisar] «art. 12.4»: el art. 12 LJV no tiene apartado 4 (tiene 1, 2, 3) (ley por defecto) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.3» › referencia 5_
-- [revisar] «arts. 455-467»: el art. 467 LEC está sin contenido/derogado (extremo de un rango) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.4» › «Legitimación, plazo y tramitación» › 1 › punto.5_
-- [revisar] «arts. 455-467 y 458.1»: el art. 467 LEC está sin contenido/derogado (extremo de un rango) — _sección «Art. 60 — Resolución judicial, recursos y revocación» › tarjeta «Art. 60.4» › referencia 2_
-- [revisar] «arts. 249 y 268»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Perspectivas transversales y vías de tutela complementarias» › tarjeta «P4» › referencia 3_
-- [revisar] «arts. 249 y 268»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Perspectivas transversales y vías de tutela complementarias» › tarjeta «P4» › referencia 3_
-- [revisar] «art. 3.7»: el art. 3 LJV no tiene apartado 7 (tiene 1, 2) (ley por defecto) — _sección «Mapa de participantes y actores del expediente» › 2 › grupo «Ministerio Fiscal».1_
-- [revisar] «art. 158»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _sección «Ecosistema normativo conectado» › 10 › norma «Norma sustantiva de referencia»_
-- [revisar] «Art. 3.6»: el art. 3 LJV no tiene apartado 6 (tiene 1, 2) (ley por defecto) — _sección «Ecosistema normativo conectado» › 12 › norma «Estatuto Orgánico del Ministerio Fiscal»_
-- [revisar] «art. 3.7»: el art. 3 LJV no tiene apartado 7 (tiene 1, 2) (ley por defecto) — _sección «Ecosistema normativo conectado» › 12 › norma «Estatuto Orgánico del Ministerio Fiscal»_
-
-**plazos**
-
-- [revisar] plazo «5 días» no aparece en el precepto citado (Art. 20.2 LJV): «Plazo general de apelación en jurisdicción voluntaria (arts. no especiales) · 5 días · Art. 20.2 Ley 15/2015» — _sección «Indice de plazos procesales y línea temporal del expediente» › 1 › tabla fila 4_
-
-**literales**
-
-- [revisar] texto entrecomillado no hallado literalmente en LJV: «relativos a los derechos de la personalidad u otros que el hijo, de acuerdo con las leyes y sus condiciones de madurez, pueda realizar por s» — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.3» › «Actos personalísimos y acreditación» › 1 › punto.1_
-
 **terminologia**
 
-- [revisar] «Juzgado de Primera Instancia» × 5 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.2» › resumen | sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.2» › «Órgano competente y criterios de atribución» › 1 › punto.1 | sección «Art. 59 — Competencia, legitimación y postulación» › tarjeta «Art. 59.2» › «Órgano competente y criterios de atribución» › 1 › punto.2 …_
-- [revisar] «Secretario judicial» × 1 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Art. 60 — Tramitación: solicitud, admisión, comparecencia y cautelares» › tarjeta «Art. 60.1-2» › «El Letrado de la Administración de Justicia (LAJ)» › 1 › punto.1_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos 59 y 60 y marco sustantivo» › tarjeta «Artículo 59.2–3» › «Competencia (apartado 2)» › 1 › punto.1_
 
 ### ljv-actos-disposicion · Esquema · LJV · Actos de disposición sobre bienes de menores y personas con apoyos
 

@@ -188,7 +188,7 @@ Defectos del markmap anterior — todos resueltos al generar el mapa de los mism
 2. ✅ (2026-10-29) Retirados los 57 HTML antiguos (quedan en el historial de git y en el tag `baseline-2026-10-28`). `404.html` (`tools/build-404.js`, autosuficiente): 56 direcciones antiguas redirigen a su sitio nuevo; la del esquema combinado I bis & ter (sin equivalente único) y cualquier otra inexistente muestran el aviso de actualizar favoritos (decisión 8). `.nojekyll` en la raíz. Los tres tests que comparaban el inventario con los HTML antiguos solo se ejecutan donde existen (el tag); `tools/extract-current.js` queda como histórico. Tests en navegador de las redirecciones, servidas como en Pages.
 3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
-### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (17/27)
+### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (18/27)
 Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabla (decisión 6). Los más usados (E01–E04, E28) con atención especial.
 
 | # | Esquema | Estado |
@@ -210,7 +210,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E15 | LJV · T. II Cap. IV — Tutela, curatela y guarda de hecho | ✅ 2026-10-29 · rehecho; las referencias al CC seguían la numeración anterior a la Ley 8/2021 (tabla de correspondencias en el registro); fuera el «art. 753 bis LEC» ([registro](revision/ljv-tutela-curatela.md)) |
 | E16 | LJV · T. II Cap. V — Emancipación y beneficio de mayoría de edad | ✅ 2026-10-29 · rehecho; arts. 314–324 CC → 239–248; el beneficio de la mayor edad tiene las mismas limitaciones que la emancipación; el matrimonio ya no emancipa ([registro](revision/ljv-emancipacion.md)) |
 | E17 | LJV · T. II Cap. VI — Patrimonio de personas con discapacidad | ✅ 2026-10-29 · rehecho; apelación por el art. 458 LEC (no 457); régimen de la Ley 41/2003 citado artículo por artículo; fuera afirmaciones sin base ([registro](revision/ljv-patrimonio-protegido.md)) |
-| E18 | LJV · T. II Cap. VII — Honor, intimidad e imagen del menor | ☐ |
+| E18 | LJV · T. II Cap. VII — Honor, intimidad e imagen del menor | ✅ 2026-10-29 · rehecho (16 → 6 fichas); fuera art. 315 CC, LOPJ 86 ter/98, «art. 59.4», «art. 1.4 LO 1/1982», costas inventadas y plazo de apelación de 5 días; apelación 20 días (art. 458 LEC) con efectos suspensivos; el lector del BOE ya entiende los apartados «Uno., Dos.» ([registro](revision/ljv-honor-menor.md)) |
 | E19 | LJV · T. II Cap. VIII — Actos de disposición sobre bienes de menores y personas con apoyos | ☐ |
 | E20 | LJV · T. II Cap. IX — Ausencia y fallecimiento | ☐ |
 | E21 | LJV · T. II Cap. X — Extracción de órganos de donantes vivos | ☐ |
@@ -241,7 +241,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G12 | LJV · T. II Cap. IV — Tutela, curatela y guarda de hecho | 1 huérfano | ☐ |
 | G13 | LJV · T. II Cap. V — Emancipación | 1 huérfano | ☐ |
 | G14 | LJV · T. II Cap. VI — Patrimonio protegido | — | ☐ |
-| G15 | LJV · T. II Cap. VII — Honor, intimidad e imagen | dependencia de CDN | ☐ |
+| G15 | LJV · T. II Cap. VII — Honor, intimidad e imagen | dependencia de CDN; «art. 98 LOPJ», «art. 59.4», «art. 1.4 LO 1/1982» | ☐ |
 | G16 | LJV · T. II Cap. VIII — Actos de disposición | — | ☐ |
 | G17 | LJV · T. II Cap. IX — Ausencia y fallecimiento | — | ☐ |
 | G18 | LJV · T. II Cap. X — Órganos de donantes vivos | — | ☐ |
@@ -289,6 +289,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-29 · E18 (honor e imagen del menor) revisado; lector del BOE: apartados en letra. Siguiente: E19.
 - 2026-10-29 · E17 (patrimonio protegido) revisado. Siguiente: E18.
 - 2026-10-29 · E16 (emancipación) revisado: de 83 errores a 0. Siguiente: E17.
 - 2026-10-29 · E15 (tutela, curatela y guarda de hecho) revisado: numeración del CC actualizada a la Ley 8/2021. Siguiente: E16.
