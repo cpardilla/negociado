@@ -20,6 +20,7 @@ test("articleKey normalises article numbers", () => {
   assert.equal(articleKey("26BIS"), "26 bis");
   assert.equal(articleKey("42 bis a)"), "42 bis a");
   assert.equal(articleKey("42 bis.b)"), "42 bis b");
+  for (const k of ["42 bis a", "354 a", "236 ñ", "778 quater", "216 bis 2"]) assert.equal(articleKey(k), k, `canonical key «${k}» round-trips`);
   assert.equal(articleKey("80 quinquies"), "80 quinquies");
   assert.equal(articleKey("778 quáter"), "778 quater", "the BOE writes it with an accent");
 });

@@ -30,9 +30,10 @@
       .replace(/n\p{M}/gu, "ñ")
       .replace(/\p{M}/gu, "")
       .trim();
-    const m = t.match(new RegExp(`^(\\d+)(?:\\s*(${SUFFIXES})(?![a-zñ])(?:\\s+(\\d+)(?!\\d))?)?(?:[-.]([a-zñ])(?![a-zñ])|\\s*\\.?\\s*([a-zñ])\\))?`));
+    // The last alternative reads canonical keys back ("42 bis a", "354 a"), so keys round-trip.
+    const m = t.match(new RegExp(`^(\\d+)(?:\\s*(${SUFFIXES})(?![a-zñ])(?:\\s+(\\d+)(?!\\d))?)?(?:[-.]([a-zñ])(?![a-zñ])|\\s*\\.?\\s*([a-zñ])\\)|\\s+([a-zñ])$)?`));
     if (!m) return null;
-    return [m[1], m[2], m[3], m[4] || m[5]].filter(Boolean).join(" ");
+    return [m[1], m[2], m[3], m[4] || m[5] || m[6]].filter(Boolean).join(" ");
   }
 
   // ── Law names ────────────────────────────────────────────────────────────
