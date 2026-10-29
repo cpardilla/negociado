@@ -154,6 +154,7 @@ test("citations: the law is taken from after or before the article", () => {
   assert.equal(one("Directiva (UE) 2016/943, art. 9", "LEC").law, "UE");
   assert.equal(one("Reg. (UE) 650/2012 art. 4", "LEC").law, "UE");
   assert.equal(one("el art. 9 de la Convención", "LJV").law, "UE", "international treaties are not linked");
+  assert.equal(one("Art. 12 CDN (1989)", "LJV").law, "UE");
   assert.equal(one("arts. 437 y ss. LEC", "LJV").law, "LEC", "«y ss.» between the article and the law");
   assert.equal(one("los arts. 404 y siguientes de la Ley de Enjuiciamiento Civil", "LJV").law, "LEC");
   assert.equal(one("intimidad (art. 18.1 CE)", "LEC").law, "CE");
