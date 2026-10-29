@@ -27,7 +27,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-patrimonio-protegido | Esquema · LJV · Patrimonio de las personas con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-honor-menor | Esquema · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-actos-disposicion | Esquema · LJV · Actos de disposición sobre bienes de menores y personas con apoyos | · | · | · | · | · | · | 1R |
-| ljv-ausencia-fallecimiento | Esquema · LJV · Declaración de ausencia y fallecimiento | 22R | · | · | · | · | · | 1R |
+| ljv-ausencia-fallecimiento | Esquema · LJV · Declaración de ausencia y fallecimiento | · | · | · | · | · | · | 1R |
 | ljv-donantes-vivos | Esquema · LJV · Extracción de órganos de donantes vivos | · | · | · | · | · | · | · |
 | ljv-hechos-pasados | Esquema · LJV · Declaraciones judiciales sobre hechos pasados | 1R | · | · | · | 1R | · | 1R |
 | ljv-sucesorio | Esquema · LJV · Título IV · Derecho sucesorio | · | · | · | · | · | · | 2R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 64E 35A 88R | 0E 0A 0R | 0E 0A 0R | 0E 0A 10R | 0E 0A 8R | 4E 0A 1R | 0E 0A 73R |
+| | **Total** | 64E 35A 66R | 0E 0A 0R | 0E 0A 0R | 0E 0A 10R | 0E 0A 8R | 4E 0A 1R | 0E 0A 73R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,15 +69,15 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2469
-- ✓ LEC (BOE a 07-10-2026): 1505
-- ✓ CC (BOE a 07-09-2026): 1365
-- ✓ LOPJ (BOE a 09-10-2026): 71
+- ✓ LJV (BOE a 05-03-2026): 2475
+- ✓ LEC (BOE a 07-10-2026): 1497
+- ✓ CC (BOE a 07-09-2026): 1338
+- ✓ LOPJ (BOE a 09-10-2026): 74
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - ✓ CE (BOE a 20-05-2026): 46
 - UE: 40
-- ✓ LRC (BOE a 24-02-2026): 37
+- ✓ LRC (BOE a 24-02-2026): 36
 - ✓ LPPD (BOE a 18-12-2025): 36
 - ✓ LOPDH (BOE a 16-12-2025): 33
 - ✓ LH (BOE a 07-01-2026): 32
@@ -106,7 +106,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 474 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 450 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -228,34 +228,9 @@ Sin hallazgos automáticos.
 
 ### ljv-ausencia-fallecimiento · Esquema · LJV · Declaración de ausencia y fallecimiento
 
-**citas**
-
-- [revisar] «art. 185.1»: el art. 185 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Artículos del Capítulo IX — Desarrollo exhaustivo» › tarjeta «Artículo 73» › resumen_
-- [revisar] «art. 185.1»: el art. 185 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Artículos del Capítulo IX — Desarrollo exhaustivo» › tarjeta «Artículo 73» › referencia 1_
-- [revisar] «Art. 194.2»: el art. 194 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Artículos del Capítulo IX — Desarrollo exhaustivo» › tarjeta «Artículo 74» › «Supuestos arts. 194.2-3 CC: siniestro de nave o aeronave» › 1 › punto.2_
-- [revisar] «Art. 194.3»: el art. 194 CC no tiene apartado 3 (no tiene apartados numerados) — _sección «Artículos del Capítulo IX — Desarrollo exhaustivo» › tarjeta «Artículo 74» › «Supuestos arts. 194.2-3 CC: siniestro de nave o aeronave» › 1 › punto.2_
-- [revisar] «art. 193 y 194.1,4,5»: el art. 194 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Artículos del Capítulo IX — Desarrollo exhaustivo» › tarjeta «Artículo 74» › 2 › apartado_
-- [revisar] «Art. 194.1»: el art. 194 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Artículos del Capítulo IX — Desarrollo exhaustivo» › tarjeta «Artículo 74» › «Supuestos art. 193 y 194.1,4,5 CC: desaparición sin evidencia de siniestro» › 1 › punto.3_
-- [revisar] «art. 196.2»: el art. 196 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Artículos del Capítulo IX — Desarrollo exhaustivo» › tarjeta «Artículo 74» › «Apertura de la sucesión y adjudicación de bienes» › 1 › punto.3_
-- [revisar] «art. 194.3»: el art. 194 CC no tiene apartado 3 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 9_
-- [revisar] «art. 183.1»: el art. 183 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 10_
-- [revisar] «Art. 183.1»: el art. 183 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 10_
-- [revisar] «art. 183.2»: el art. 183 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 11_
-- [revisar] «Art. 183.2»: el art. 183 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 11_
-- [revisar] «art. 193.1»: el art. 193 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 12_
-- [revisar] «Art. 193.1»: el art. 193 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 12_
-- [revisar] «art. 193.2»: el art. 193 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 13_
-- [revisar] «Art. 193.2»: el art. 193 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 13_
-- [revisar] «art. 193.3»: el art. 193 CC no tiene apartado 3 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 14_
-- [revisar] «Art. 193.3»: el art. 193 CC no tiene apartado 3 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 14_
-- [revisar] «art. 193.3»: el art. 193 CC no tiene apartado 3 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 15_
-- [revisar] «Art. 193.3»: el art. 193 CC no tiene apartado 3 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 15_
-- [revisar] «art. 196.2»: el art. 196 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 16_
-- [revisar] «Art. 196.2»: el art. 196 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Indice exhaustivo de plazos procesales y sustantivos» › 1 › tabla fila 16_
-
 **terminologia**
 
-- [revisar] «Secretario judicial» × 14 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Artículos del Capítulo IX — Desarrollo exhaustivo» › tarjeta «Artículo 67» › «Referencia normativa principal y naturaleza jurídica» › 1 › punto.1 | sección «Artículos del Capítulo IX — Desarrollo exhaustivo» › tarjeta «Artículo 68» › «Contenido de solicitud inicial y postulación» › 1 › punto.4 | sección «Artículos del Capítulo IX — Desarrollo exhaustivo» › tarjeta «Artículo 69» › «Nombramiento ordinario: presupuestos y procedimiento» › 1 › punto.5 …_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos 67 a 77» › tarjeta «Artículos 67 y 68» › «Competencia (art. 68.1)» › 1 › punto.1_
 
 ### ljv-donantes-vivos · Esquema · LJV · Extracción de órganos de donantes vivos
 
