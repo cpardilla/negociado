@@ -11,7 +11,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 |---|---|---|---|---|---|---|---|---|
 | lec-diligencias-preliminares | Esquema · LEC · Diligencias preliminares | · | · | · | · | · | · | 2R |
 | lec-division-herencia | Esquema · LEC · División de la herencia | · | · | · | 1R | · | · | · |
-| lec-intervencion-caudal | Esquema · LEC · Intervención del caudal hereditario | 3A | · | 1R | 2R | · | · | 2R |
+| lec-intervencion-caudal | Esquema · LEC · Intervención del caudal hereditario | · | · | · | · | · | · | · |
 | lec-administracion-caudal | Esquema · LEC · Administración del caudal hereditario | · | · | · | · | · | · | · |
 | lec-liquidacion-rem | Esquema · LEC · Liquidación del régimen económico matrimonial | 13R | 1R | 3R | 2R | · | · | 4R |
 | ljv-disposiciones-generales | Esquema · LJV · Título Preliminar · Disposiciones generales | 2E 1R | 1R | · | 1R | · | · | 4R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 107E 44A 160R | 0E 0A 5R | 0E 0A 4R | 0E 0A 18R | 0E 0A 9R | 4E 0A 1R | 0E 0A 92R |
+| | **Total** | 107E 41A 160R | 0E 0A 5R | 0E 0A 3R | 0E 0A 16R | 0E 0A 9R | 4E 0A 1R | 0E 0A 90R |
 
 E = error · A = aviso · R = revisar.
 
@@ -70,18 +70,18 @@ E = error · A = aviso · R = revisar.
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
 - ✓ LJV (BOE a 05-03-2026): 2768
-- ✓ LEC (BOE a 07-10-2026): 1546
-- ✓ CC (BOE a 07-09-2026): 1397
-- ✓ CE (BOE a 20-05-2026): 100
+- ✓ LEC (BOE a 07-10-2026): 1549
+- ✓ CC (BOE a 07-09-2026): 1398
+- ✓ CE (BOE a 20-05-2026): 97
 - ✓ LOPJ (BOE a 09-10-2026): 62
 - ✓ LOPJM (BOE a 18-12-2025): 60
 - ✓ LRC (BOE a 24-02-2026): 47
 - ✓ LTRANS (BOE a 20-12-2025): 46
 - ✓ LOPDH (BOE a 16-12-2025): 42
 - ✓ LH (BOE a 07-01-2026): 39
+- ✓ LN (BOE a 22-10-2026): 24
 - ✓ LPPD (BOE a 18-12-2025): 24
 - UE: 22
-- ✓ LN (BOE a 22-10-2026): 20
 - ✓ LOPDGDD (BOE a 08-10-2026): 16
 - ✓ LTO (BOE a 16-12-2025): 16
 - ✓ RDTO (BOE a 19-12-2025): 16
@@ -94,14 +94,14 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LA (BOE a 18-12-2025): 4
 - LO 1/2025: 4
 - ✓ LMED (BOE a 19-12-2025): 3
-- Reglamento: 3
-- LPAP: 3
 - ✓ LPI (BOE a 31-07-2026): 2
 - ✓ LPAT (BOE a 31-07-2026): 2
 - ✓ LCD (BOE a 29-12-2025): 2
 - ✓ LSE (BOE a 31-07-2026): 2
+- Reglamento: 2
 - Ley 29/2015: 2
 - LO 8/2015: 2
+- LPAP: 2
 - Ley 40/2015: 2
 - Ley 10/2012: 2
 - Ley 35/2006: 1
@@ -115,7 +115,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 825 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 800 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -134,25 +134,7 @@ Además, 825 referencias sin ley explícita cuyo número no corresponde a la ley
 
 ### lec-intervencion-caudal · Esquema · LEC · Intervención del caudal hereditario
 
-**citas**
-
-- [aviso] «art. 791.4»: el art. 791 LEC no tiene apartado 4 (tiene 1, 2, 3) — _sección «Indice de plazos procesales» › 1 › tabla fila 3_
-- [aviso] «art. 791.4»: el art. 791 LEC no tiene apartado 4 (tiene 1, 2, 3) — _sección «Indice de plazos procesales» › 1 › tabla fila 4_
-- [aviso] «art. 791.4»: el art. 791 LEC no tiene apartado 4 (tiene 1, 2, 3) — _sección «Indice de plazos procesales» › 1 › tabla fila 5_
-
-**rubricas**
-
-- [revisar] título «Intervención a instancia de parte y de acreedores» frente a la rúbrica del BOE «Intervención judicial de la herencia durante la tramitación de la declaración de herederos o de la división judicial de la herencia. Intervención a instancia de los acreedores de la herencia» (art. 792 LEC) — _sección «Artículos de la Sección 2.ª — Versión Expandida» › tarjeta «Artículo 792» › título_
-
-**plazos**
-
-- [revisar] plazo «15 días» no aparece en el precepto citado (art. 795 LEC): «Presentación de inventario inicial por administrador designado · 15 días · LEC art. 795 (desarrollo reglamentario)» — _sección «Indice de plazos procesales» › 1 › tabla fila 6_
-- [revisar] plazo «30 días» no aparece en el precepto citado (art. 796 LEC): «Rendición de cuentas definitivas por administrador saliente tras cese · 30 días · LEC art. 796 (desarrollo reglamentario)» — _sección «Indice de plazos procesales» › 1 › tabla fila 7_
-
-**terminologia**
-
-- [revisar] «incapacitación» × 6 → Ley 8/2021: medidas de apoyo; ya no existe la incapacitación — _sección «Artículos de la Sección 2.ª — Versión Expandida» › tarjeta «Artículo 790» › «Ámbito de aplicación subjetivo y objetivo» › 1 › punto.4 | sección «Artículos de la Sección 2.ª — Versión Expandida» › tarjeta «Artículo 793» › «Sujetos obligatoriamente citados y consecuencias de omisión» › 1 › punto.5.1 | sección «Artículos de la Sección 2.ª — Versión Expandida» › tarjeta «Artículo 793» › «Sujetos obligatoriamente citados y consecuencias de omisión» › 1 › punto.5.2 …_
-- [revisar] «Secretario judicial» × 1 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Mapa de participantes y actores» › 1 › grupo «Órganos judiciales».3_
+Sin hallazgos automáticos.
 
 ### lec-administracion-caudal · Esquema · LEC · Administración del caudal hereditario
 
