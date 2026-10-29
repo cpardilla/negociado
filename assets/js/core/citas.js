@@ -140,7 +140,8 @@
       const before = text.slice(Math.max(0, m.index - 40), m.index);
       let law = null;
       let lawLength = 0;
-      const a = after.match(/^(?:\s+y\s+(?:ss\.|sigs?\.|siguientes))?\s*,?\s*(?:de\s+(?:la|el)\s+|del\s+|\()?/);
+      // "art. 47 y ss. LEC", "artículo 47, párrafo segundo, de la Ley…", "art. 64.2, párrafo segundo, LEC"
+      const a = after.match(/^(?:\s+y\s+(?:ss\.|sigs?\.|siguientes))?(?:\s*,\s*párrafo\s+\p{L}+\s*(?=,))?\s*,?\s*(?:de\s+(?:la|el)\s+|del\s+|\()?/u);
       const la = lawAt(after.slice(a[0].length), alias);
       if (la) {
         law = la.key;
