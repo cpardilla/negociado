@@ -159,17 +159,17 @@ test("inQuotes", () => {
 
 test("checkResource: guía graph faults are found", () => {
   const rec = {
-    id: "G99",
+    id: "prueba",
     tipo: "guia",
-    ruta: "03 - Guías de tramitación/LJV/99 - Prueba.html",
-    cabecera: null,
+    ley: "LJV",
+    articulos: [],
     inicio: "inicio",
-    actores: { etiquetas: { laj: "LAJ" }, sinEtiqueta: [] },
+    actores: { laj: "LAJ" },
     pasos: {
-      inicio: { t: "Inicio", ac: "laj", opts: [{ t: "Sí", n: "a" }, { t: "No", n: "falta" }] },
-      a: { t: "Paso A", ac: "juez" },
-      fin: { t: "Fin", ac: "laj", end: "success" },
-      suelto: { t: "Huérfano", ac: "laj", end: "neutral" },
+      inicio: { fase: 0, titulo: "Inicio", actor: "laj", bloques: [], opciones: [{ texto: "Sí", destino: "a" }, { texto: "No", destino: "falta" }] },
+      a: { fase: 0, titulo: "Paso A", actor: "juez", bloques: [] },
+      fin: { fase: 0, titulo: "Fin", actor: "laj", bloques: [], fin: "success" },
+      suelto: { fase: 0, titulo: "Huérfano", actor: "laj", bloques: [], fin: "neutral" },
     },
   };
   const msgs = checkResource(rec).findings.filter((f) => f.check === "grafos").map((f) => f.msg);
@@ -181,13 +181,13 @@ test("checkResource: guía graph faults are found", () => {
 
 test("checkResource: a repealed article and a missing apartado are errors/warnings", () => {
   const rec = {
-    id: "G98",
+    id: "prueba",
     tipo: "guia",
-    ruta: "03 - Guías de tramitación/LJV/98 - Prueba.html",
-    cabecera: null,
+    ley: "LJV",
+    articulos: [],
     inicio: "inicio",
-    actores: { etiquetas: { laj: "LAJ" }, sinEtiqueta: [] },
-    pasos: { inicio: { t: "Apelación (art. 457 LEC); competencia del art. 140.5 LJV", ac: "laj", end: "neutral" } },
+    actores: { laj: "LAJ" },
+    pasos: { inicio: { fase: 0, titulo: "Apelación (art. 457 LEC); competencia del art. 140.5 LJV", actor: "laj", bloques: [], fin: "neutral" } },
   };
   const f = checkResource(rec).findings.filter((x) => x.check === "citas");
   assert.ok(f.some((x) => x.level === "error" && x.msg.includes("457 LEC está sin contenido")));

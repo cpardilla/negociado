@@ -1,16 +1,17 @@
 #!/usr/bin/env node
-// Automatic content checks of the inventory (sources/actual/*.json) against the
+// Automatic content checks of the app's esquemas and guías (data/esquemas, data/guias) against the
 // BOE snapshots (sources/boe/*.json). Writes a Markdown report.
+// (docs/revision/informe-inicial.md is the first report, made on the pre-redesign inventory: kept
+// as the record of the starting point.)
 //
-// Usage: node tools/check-content.js [--out=docs/revision/informe-inicial.md] [id ...]
+// Usage: node tools/check-content.js [--out=docs/revision/informe.md] [id ...]
 //
 // Checks (each finding has a level: error · aviso · revisar):
 //   citas        cited article / apartado / sub-item exists in the law in force;
 //                articles now without content (repealed) flagged
 //   rubricas     an esquema card for one article: its title vs the BOE heading
-//   alcance      the law division a resource covers (its folder/file names matched with
-//                the BOE headings): esquemas have a card per article and no cards of
-//                other divisions; guías cite every article of it
+//   alcance      the articles a resource covers (its `articulos`): esquemas have a card per
+//                article and no cards of other articles; guías cite every one of them
 //   plazos       a term ("5 días") given with an article: the article says it
 //   literales    quoted text (≥ 40 characters) next to a LEC/LJV citation: found verbatim
 //   terminologia outdated names outside literal quotes (list below, to be kept up to date)
@@ -25,7 +26,7 @@ const { load, fold, articleKey, range, division, SUFFIXES } = require("./lib/boe
 const citas = require("../assets/js/core/citas");
 
 const ROOT = path.join(__dirname, "..");
-const ACTUAL = path.join(ROOT, "sources", "actual");
+const vm = require("vm");
 let undetermined = 0; // citations whose law cannot be told (see citations / checkResource)
 
 // ── Laws ────────────────────────────────────────────────────────────────────
@@ -56,12 +57,15 @@ function units(rec) {
     const t = strip(text || "");
     if (t) out.push({ where, text: t, ...extra });
   };
-  if (rec.cabecera) {
-    add("cabecera › título", rec.cabecera.titulo);
+  if (rec.tipo === "esquema") {
+    add("cabecera › título", rec.titulo);
     add("cabecera › subtítulo", rec.cabecera.subtitulo);
     rec.cabecera.etiquetas.forEach((e, i) => add(`cabecera › etiqueta ${i + 1}`, e));
-  }
-  if (rec.tipo === "esquema") {
+    const items = (arr, iw) =>
+      arr.forEach((it, j) => {
+        add(`${iw}.${j + 1}`, it.t);
+        if (it.sub) items(it.sub, `${iw}.${j + 1}`);
+      });
     const blocks = (list, where) =>
       list.forEach((b, i) => {
         const w = `${where} › ${i + 1}`;
@@ -75,39 +79,40 @@ function units(rec) {
         } else if (b.apartado) {
           add(`${w} › apartado`, b.apartado.titulo);
           blocks(b.apartado.contenido, `${where} › «${strip(b.apartado.titulo)}»`);
-        } else if (b.lista) {
-          const items = (arr, iw) =>
-            arr.forEach((it, j) => {
-              add(`${iw}.${j + 1}`, it.t);
-              if (it.sub) items(it.sub, `${iw}.${j + 1}`);
-            });
-          items(b.lista, `${w} › punto`);
-        } else if (b.nota) add(`${w} › nota «${strip(b.nota.etiqueta)}»`, `${strip(b.nota.etiqueta)}: ${b.nota.texto}`);
-        else if (b.tabla) {
-          b.tabla.filas.forEach((row, j) => add(`${w} › tabla fila ${j + 1}`, row.join(" · "), { row, head: b.tabla.cabecera }));
+        } else if (b.lista) items(b.lista, `${w} › punto`);
+        else if (b.nota) add(`${w} › nota «${strip(b.nota.etiqueta)}»`, `${strip(b.nota.etiqueta)}: ${b.nota.texto}`);
+        else if (b.tabla) b.tabla.filas.forEach((row, j) => add(`${w} › tabla fila ${j + 1}`, row.join(" · "), { row, head: b.tabla.cabecera }));
+        else if (b.norma) add(`${w} › norma «${strip(b.norma.titulo || b.norma.ley)}»`, [b.norma.ley, b.norma.titulo, b.norma.texto].filter(Boolean).join(" · "));
+        else if (b.grupo) {
+          add(`${w} › grupo`, b.grupo.titulo);
+          items(b.grupo.items || [], `${w} › grupo «${strip(b.grupo.titulo)}»`);
+        } else if (b.paso) {
+          add(`${w} › fase`, [b.paso.titulo, b.paso.texto].filter(Boolean).join(" · "));
+          items(b.paso.items || [], `${w} › fase «${strip(b.paso.titulo || "")}»`);
         } else if (b.p !== undefined) add(w, b.p);
       });
     rec.secciones.forEach((s, i) => {
       if (s.capitulo) return add(`capítulo ${i + 1}`, `${s.capitulo.numero} ${s.capitulo.nombre}`);
       const sw = `sección «${s.titulo}»`;
       add(sw, s.titulo);
-      blocks(s.contenido, sw);
+      blocks(s.bloques, sw);
     });
     add("pie", rec.pie);
   }
   if (rec.tipo === "guia") {
-    for (const [id, step] of Object.entries(rec.pasos || {})) {
-      (function walk(v, where, key) {
-        if (typeof v === "string") {
-          // Codes (ids, tones, block types) are not text.
-          if (!/^[a-z0-9_]{1,40}$/.test(v) && !["n", "nx", "ac", "end", "l"].includes(key)) add(where, v, { step: id, kind: key });
-        } else if (Array.isArray(v)) {
-          // Content blocks: ["d", "texto"] → kind "d".
-          if (typeof v[0] === "string" && /^[a-z]{1,2}$/.test(v[0]) && v.length >= 2) v.slice(1).forEach((x, i) => walk(x, `${where}[${v[0]}]`, i === 0 ? v[0] : `${v[0]}+`));
-          else v.forEach((x, i) => walk(x, `${where}.${i + 1}`, key));
-        } else if (v && typeof v === "object") for (const k of Object.keys(v)) walk(v[k], `${where} › ${k}`, k);
-      })(step, `paso «${id}»`, null);
+    for (const [id, s] of Object.entries(rec.pasos)) {
+      const w = `paso «${id}»`;
+      add(`${w} › título`, s.titulo);
+      add(`${w} › pregunta`, s.pregunta);
+      (s.opciones || []).forEach((o, i) => add(`${w} › opción ${i + 1}`, [o.texto, o.nota].filter(Boolean).join(" · ")));
+      s.bloques.forEach((b, i) => {
+        if (b.tipo === "lista") {
+          add(`${w} › ${b.marcar ? "comprobación" : "lista"} ${i + 1}`, b.titulo);
+          b.items.forEach((it, j) => add(`${w} › ${b.marcar ? "comprobación" : "lista"} ${i + 1}.${j + 1}`, it));
+        } else add(`${w} › ${b.tipo} ${i + 1}`, b.texto, { kind: b.tipo });
+      });
     }
+    add("pie", rec.pie);
   }
   return out;
 }
@@ -180,7 +185,7 @@ function termInText(p, haystack) {
 function checkResource(rec) {
   const findings = [];
   const add = (check, level, where, msg) => findings.push({ check, level, where, msg });
-  const defaultLaw = rec.tipo === "guia" || rec.tipo === "esquema" ? (/^(E0[1-5]|G0[1-5])$/.test(rec.id) ? "LEC" : "LJV") : null;
+  const defaultLaw = rec.ley;
   const cited = {};
   const terms = {};
 
@@ -241,7 +246,7 @@ function checkResource(rec) {
       const pi = h.findIndex((x) => x.includes("plazo"));
       const fi = h.findIndex((x) => /fundamento|norma|precepto|art/.test(x));
       if (pi >= 0 && fi >= 0) termCheck = { terms: plazos(strip(u.row[pi])), cites: citations(strip(u.row[fi]), defaultLaw, false) };
-    } else if (u.kind === "d") termCheck = { terms: plazos(u.text), cites: cites };
+    } else if (u.kind === "plazo") termCheck = { terms: plazos(u.text), cites: cites };
     if (termCheck && termCheck.terms.length && termCheck.cites.length) {
       const texts = [];
       for (const c of termCheck.cites) {
@@ -291,13 +296,13 @@ function checkResource(rec) {
     }
   }
 
-  // Scope: the law division the resource is about (from its folder and file names, matched
-  // against the BOE headings). Esquemas: one card per article; guías: every article cited.
+  // Scope: the articles the resource covers (rec.articulos, the law division it is about).
+  // Esquemas: one card per article; guías: every article cited.
   const law = defaultLaw && load(defaultLaw);
-  const div = law && rec.id !== "E11" && division(law, rec.ruta.split("/").slice(2).map((s) => s.replace(/\.html$/, "").replace(/^\d+\s*-\s*/, "").replace(/^(T[ÍI]TULO|CAP[ÍI]TULO)\s+[^-]+-\s*/i, "")));
-  if (div) {
-    const scope = div.articulos.filter((k) => !law.articulos.get(k).sinContenido);
-    const label = `${div.numero} «${div.titulo}» (arts. ${div.articulos[0]}–${div.articulos[div.articulos.length - 1]} ${defaultLaw})`;
+  if (law && rec.articulos && rec.articulos.length) {
+    const scope = rec.articulos.filter((k) => law.articulos.has(k) && !law.articulos.get(k).sinContenido);
+    const div = law.divisiones.find((d) => d.articulos.length === rec.articulos.length && d.articulos[0] === rec.articulos[0]);
+    const label = `${div ? `${div.numero} «${div.titulo}» ` : ""}(arts. ${rec.articulos[0]}–${rec.articulos[rec.articulos.length - 1]} ${defaultLaw})`;
     const keysOf = (text) =>
       citations(text, defaultLaw, false)
         .filter((x) => x.law === defaultLaw)
@@ -305,14 +310,14 @@ function checkResource(rec) {
         .flatMap((r) => (r.hasta ? range(law, r.art, r.hasta) || [r.art] : [r.art]));
     if (rec.tipo === "esquema") {
       const covered = new Set();
-      const cards = rec.secciones.flatMap((s) => s.contenido || []).filter((b) => b.tarjeta).map((b) => b.tarjeta);
+      const cards = rec.secciones.flatMap((s) => s.bloques || []).filter((b) => b.tarjeta).map((b) => b.tarjeta);
       // The badge ("Artículo 8", "Arts. 16–18") says which article a card is; its title may name other laws.
       cards.forEach((c) => keysOf(strip(c.articulo).replace(/^Art[íi]culos?/i, "art.")).forEach((k) => covered.add(k)));
       const missing = scope.filter((k) => !covered.has(k));
       if (missing.length) add("alcance", "aviso", "tarjetas", `${label}: sin tarjeta propia ${missing.map((k) => `art. ${k}`).join(", ")}`);
       // Cards for articles of another division duplicate the esquema that covers them.
-      const outside = [...covered].filter((k) => !div.articulos.includes(k) && law.articulos.has(k));
-      if (outside.length) add("alcance", "revisar", "tarjetas", `tarjetas de artículos fuera de ${div.numero}: ${outside.map((k) => `art. ${k}`).join(", ")} — ¿duplican otro esquema?`);
+      const outside = [...covered].filter((k) => !rec.articulos.includes(k) && law.articulos.has(k));
+      if (outside.length) add("alcance", "revisar", "tarjetas", `tarjetas de artículos fuera de su ámbito ${label}: ${outside.map((k) => `art. ${k}`).join(", ")} — ¿duplican otro esquema?`);
       const head = strip([rec.cabecera.subtitulo, ...rec.cabecera.etiquetas].join(" · "));
       const declared = new Set(keysOf(head.replace(/\bArt[íi]culos\b/gi, "arts.")));
       const notDeclared = scope.filter((k) => !declared.has(k));
@@ -322,17 +327,17 @@ function checkResource(rec) {
       const never = scope.filter((k) => !cited.has(k));
       if (never.length) add("alcance", "revisar", "guía", `${label}: la guía nunca cita ${never.map((k) => `art. ${k} («${law.articulos.get(k).rubrica}»)`).join(", ")} — ¿falta algún paso?`);
     }
-  } else if (defaultLaw && rec.id !== "E11") add("alcance", "revisar", "ruta", "no se ha podido identificar la división de la ley a la que corresponde");
+  } else if (defaultLaw) add("alcance", "revisar", "ámbito", "sin artículos de ámbito: no se ha podido identificar la división de la ley a la que corresponde");
 
   // Guía graphs.
   if (rec.tipo === "guia" && rec.pasos) {
     const steps = rec.pasos;
-    const next = (s) => [s.nx, ...(s.opts || []).map((o) => o.n)].filter(Boolean);
+    const next = (s) => [s.siguiente, ...(s.opciones || []).map((o) => o.destino)].filter(Boolean);
     for (const [id, s] of Object.entries(steps)) {
       for (const n of next(s)) if (!steps[n]) add("grafos", "error", `paso «${id}»`, `apunta a «${n}», que no existe`);
-      if (!next(s).length && !s.end) add("grafos", "error", `paso «${id}»`, "no tiene salida ni es final");
-      if (s.end && next(s).length) add("grafos", "revisar", `paso «${id}»`, "es final pero tiene salidas");
-      if (s.ac && rec.actores && !rec.actores.etiquetas[s.ac]) add("grafos", "aviso", `paso «${id}»`, `actor «${s.ac}» sin etiqueta`);
+      if (!next(s).length && !s.fin) add("grafos", "error", `paso «${id}»`, "no tiene salida ni es final");
+      if (s.fin && next(s).length) add("grafos", "revisar", `paso «${id}»`, "es final pero tiene salidas");
+      if (s.actor && rec.actores && !rec.actores[s.actor]) add("grafos", "aviso", `paso «${id}»`, `actor «${s.actor}» sin etiqueta`);
     }
     const seen = new Set([rec.inicio]);
     const queue = [rec.inicio];
@@ -350,13 +355,7 @@ function checkResource(rec) {
 const ORDER = ["citas", "alcance", "rubricas", "plazos", "literales", "grafos", "terminologia"];
 const LEVELS = ["error", "aviso", "revisar"];
 
-// The resource's own name (its file name without numbering), the same for esquemas and guías.
-const title = (rec) =>
-  path
-    .basename(rec.ruta, ".html")
-    .replace(/^\d+\s*-\s*/, "")
-    .replace(/^(CAP[ÍI]TULO\s+[^-]+)-\s*/i, "$1· ")
-    .slice(0, 95);
+const title = (rec) => `${rec.tipo === "guia" ? "Guía" : "Esquema"} · ${rec.ley} · ${rec.corto}`;
 const fecha = (d) => `${d.slice(6, 8)}-${d.slice(4, 6)}-${d.slice(0, 4)}`;
 const count = (list, pred) => list.filter(pred).length;
 
@@ -364,7 +363,7 @@ function report(results, allCited) {
   const lec = load("LEC");
   const ljv = load("LJV");
   let md = `# Informe automático de contenido\n\n`;
-  md += `Generado por \`tools/check-content.js\` el ${new Date().toLocaleDateString("es-ES")} sobre el inventario \`sources/actual/\`.\n`;
+  md += `Generado por \`tools/check-content.js\` el ${new Date().toLocaleDateString("es-ES")} sobre los datos de la app (\`data/esquemas\`, \`data/guias\`). El informe del punto de partida es \`informe-inicial.md\`.\n`;
   md += `Fuente: BOE, LEC consolidada a ${fecha(lec.fecha)} y LJV a ${fecha(ljv.fecha)} (\`sources/boe/\`).\n\n`;
   md += `Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · **revisar** (necesita lectura humana; puede ser correcto). `;
   md += `Las citas sin ley explícita se atribuyen a la ley del recurso y se marcan «ley por defecto»: el contexto puede referirse a otra norma. `;
@@ -403,17 +402,27 @@ function report(results, allCited) {
   return md;
 }
 
+/** The records of data/<folder>/*.js, in the order of the catalogue (the laws' own order). */
+function readData(folder) {
+  const ctx = (rec) => ({ Neg: { data: { register: (r) => rec.push(r) } } });
+  const read = (file) => {
+    const out = [];
+    vm.runInNewContext(fs.readFileSync(file, "utf8"), ctx(out));
+    return JSON.parse(JSON.stringify(out[0]));
+  };
+  const cat = read(path.join(ROOT, "data", "catalogo.js"));
+  return cat[folder].map((e) => read(path.join(ROOT, "data", folder, `${e.id}.js`)));
+}
+
 function main() {
   const args = process.argv.slice(2);
   const outArg = args.find((a) => a.startsWith("--out="));
-  const out = path.join(ROOT, outArg ? outArg.slice(6) : "docs/revision/informe-inicial.md");
+  const out = path.join(ROOT, outArg ? outArg.slice(6) : "docs/revision/informe.md");
   const only = args.filter((a) => !a.startsWith("--"));
-  const catalogo = JSON.parse(fs.readFileSync(path.join(ACTUAL, "catalogo.json"), "utf8")).filter((c) => c.tipo === "esquema" || c.tipo === "guia");
   const results = [];
   const allCited = {};
-  for (const item of catalogo) {
-    if (only.length && !only.includes(item.id)) continue;
-    const rec = JSON.parse(fs.readFileSync(path.join(ACTUAL, `${item.id}.json`), "utf8"));
+  for (const rec of [...readData("esquemas"), ...readData("guias")]) {
+    if (only.length && !only.includes(rec.id) && !only.includes(`${rec.tipo}/${rec.id}`)) continue;
     const r = checkResource(rec);
     for (const [k, v] of Object.entries(r.cited)) allCited[k] = (allCited[k] || 0) + v;
     results.push({ rec, ...r });
