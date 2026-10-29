@@ -14,7 +14,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | lec-intervencion-caudal | Esquema · LEC · Intervención del caudal hereditario | · | · | · | · | · | · | · |
 | lec-administracion-caudal | Esquema · LEC · Administración del caudal hereditario | · | · | · | · | · | · | · |
 | lec-liquidacion-rem | Esquema · LEC · Liquidación del régimen económico matrimonial | · | · | · | · | · | · | · |
-| ljv-disposiciones-generales | Esquema · LJV · Título Preliminar · Disposiciones generales | 2E 1R | 1R | · | 1R | · | · | 4R |
+| ljv-disposiciones-generales | Esquema · LJV · Título Preliminar · Disposiciones generales | · | · | · | · | · | · | 1R |
 | ljv-normas-comunes | Esquema · LJV · Título I · Normas comunes de tramitación | 2R | 1R | · | · | · | · | 2R |
 | ljv-filiacion | Esquema · LJV · Reconocimiento de la filiación no matrimonial | 3A 1R | · | · | · | · | · | 2R |
 | ljv-mencion-sexo-12-14 | Esquema · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
@@ -41,7 +41,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | lec-intervencion-caudal | Guía · LEC · Intervención del caudal hereditario | · | · | · | · | · | · | · |
 | lec-administracion-caudal | Guía · LEC · Administración del caudal hereditario | 1R | · | · | · | 1R | 1E | 1R |
 | lec-liquidacion-rem | Guía · LEC · Liquidación del régimen económico matrimonial | 7R | · | · | · | · | · | 3R |
-| ljv-filiacion | Guía · LJV · Reconocimiento de la filiación no matrimonial | 7A | · | · | · | · | · | 2R |
+| ljv-filiacion | Guía · LJV · Reconocimiento de la filiación no matrimonial | 7A | · | · | 2R | · | · | 2R |
 | ljv-mencion-sexo-12-14 | Guía · LJV · Mención registral del sexo (12 a 14 años) | 3A 1R | · | · | · | · | · | 3R |
 | ljv-mencion-sexo-reversion | Guía · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
 | ljv-defensor-judicial | Guía · LJV · Habilitación para comparecer y defensor judicial | 4A | · | · | · | 1R | · | 2R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 107E 41A 147R | 0E 0A 4R | 0E 0A 0R | 0E 0A 14R | 0E 0A 9R | 4E 0A 1R | 0E 0A 86R |
+| | **Total** | 105E 41A 146R | 0E 0A 3R | 0E 0A 0R | 0E 0A 15R | 0E 0A 9R | 4E 0A 1R | 0E 0A 83R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,29 +69,30 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2769
-- ✓ LEC (BOE a 07-10-2026): 1502
-- ✓ CC (BOE a 07-09-2026): 1359
-- ✓ CE (BOE a 20-05-2026): 96
-- ✓ LOPJ (BOE a 09-10-2026): 61
+- ✓ LJV (BOE a 05-03-2026): 2709
+- ✓ LEC (BOE a 07-10-2026): 1519
+- ✓ CC (BOE a 07-09-2026): 1381
+- ✓ CE (BOE a 20-05-2026): 86
+- ✓ LOPJ (BOE a 09-10-2026): 60
 - ✓ LOPJM (BOE a 18-12-2025): 60
+- ✓ LTRANS (BOE a 20-12-2025): 48
 - ✓ LRC (BOE a 24-02-2026): 47
-- ✓ LTRANS (BOE a 20-12-2025): 46
 - ✓ LOPDH (BOE a 16-12-2025): 42
 - ✓ LH (BOE a 07-01-2026): 35
+- UE: 30
 - ✓ LN (BOE a 22-10-2026): 29
 - ✓ LPPD (BOE a 18-12-2025): 24
-- UE: 21
 - ✓ LOPDGDD (BOE a 08-10-2026): 16
 - ✓ LTO (BOE a 16-12-2025): 16
 - ✓ RDTO (BOE a 19-12-2025): 16
-- ✓ CP (BOE a 09-04-2026): 11
+- ✓ CP (BOE a 09-04-2026): 14
 - ✓ LSC (BOE a 19-12-2025): 7
 - ✓ L8-2021 (BOE a 20-12-2025): 7
 - ✓ CCom (BOE a 16-12-2025): 4
 - ✓ LCS (BOE a 05-10-2026): 4
 - ✓ LA (BOE a 18-12-2025): 4
 - ✓ RH (BOE a 16-12-2025): 4
+- LPAP: 4
 - LO 1/2025: 4
 - ✓ LMED (BOE a 19-12-2025): 3
 - ✓ LPI (BOE a 31-07-2026): 2
@@ -100,7 +101,6 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LSE (BOE a 31-07-2026): 2
 - Ley 29/2015: 2
 - LO 8/2015: 2
-- LPAP: 2
 - Ley 40/2015: 2
 - Ley 10/2012: 2
 - Ley 24/2001: 1
@@ -114,7 +114,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 788 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 690 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -145,26 +145,9 @@ Sin hallazgos automáticos.
 
 ### ljv-disposiciones-generales · Esquema · LJV · Título Preliminar · Disposiciones generales
 
-**citas**
-
-- [error] «Art. 641»: el art. 641 LEC está sin contenido/derogado — _sección «Artículos del Título Preliminar» › tarjeta «Artículo 8» › «Artículos de la LEC expresamente invocados en la LJV» › 1 › punto.4_
-- [error] «art. 457»: el art. 457 LEC está sin contenido/derogado — _sección «Indice de plazos procesales» › 1 › tabla fila 8_
-- [revisar] «Arts. 206-223, 451-459»: el art. 223 LEC está sin contenido/derogado (extremo de un rango) — _sección «Artículos del Título Preliminar» › tarjeta «Artículo 8» › «Ámbito de aplicación supletoria» › 1 › punto.3_
-
-**alcance**
-
-- [revisar] tarjetas de artículos fuera de su ámbito TÍTULO PRELIMINAR «Disposiciones generales» (arts. 1–8 LJV): art. 13, art. 14, art. 15, art. 16, art. 17, art. 18, art. 19, art. 20, art. 21, art. 22 — ¿duplican otro esquema? — _tarjetas_
-
-**plazos**
-
-- [revisar] plazo «5 días» no aparece en el precepto citado (art. 457 LEC): «Recurso de apelación contra auto del Juez · 5 días · LEC art. 457» — _sección «Indice de plazos procesales» › 1 › tabla fila 8_
-
 **terminologia**
 
-- [revisar] «Secretario judicial» × 22 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Artículos del Título Preliminar» › tarjeta «Artículo 2» › resumen | sección «Artículos del Título Preliminar» › tarjeta «Artículo 2» › 4 › apartado | sección «Artículos del Título Preliminar» › tarjeta «Artículo 2» › «Impulso, dirección y resolución: Secretario judicial» › 1 › punto.1 …_
-- [revisar] «Juzgado de Primera Instancia» × 6 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos del Título Preliminar» › tarjeta «Artículo 2» › 1 › apartado | sección «Artículos del Título Preliminar» › tarjeta «Artículo 2» › «Competencia objetiva: Juzgados de Primera Instancia» › 1 › punto.1 | sección «Artículos del Título Preliminar» › tarjeta «Artículo 2» › «Competencia objetiva: Juzgados de Primera Instancia» › 1 › punto.2 …_
-- [revisar] «Juzgado de lo Mercantil» × 3 → Tribunal de Instancia, Sección de lo Mercantil (LO 1/2025) — verificar — _sección «Artículos del Título Preliminar» › tarjeta «Artículo 2» › 2 › apartado | sección «Mapa de participantes y actores» › 1 › grupo «Órganos Jurisdiccionales».2 | sección «Ecosistema normativo — conexiones relacionadas» › 4 › norma «Organización judicial y competencia»_
-- [revisar] «incapacitación» × 3 → Ley 8/2021: medidas de apoyo; ya no existe la incapacitación — _sección «Artículos del Título Preliminar» › tarjeta «Artículo 7 bis» › «Contexto normativo de la reforma» › 1 › punto.2 | sección «Artículos del Título Preliminar» › tarjeta «Artículo 7 bis» › «Contexto normativo de la reforma» › 1 › punto.3 | sección «Ecosistema normativo — conexiones relacionadas» › 6 › norma «Reforma para apoyo a personas con discapacidad»_
+- [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos del Título Preliminar» › tarjeta «Artículo 2» › resumen | sección «Artículos del Título Preliminar» › tarjeta «Artículo 2» › «Competencia objetiva (apartado 1)» › 1 › punto.1_
 
 ### ljv-normas-comunes · Esquema · LJV · Título I · Normas comunes de tramitación
 
@@ -643,6 +626,11 @@ Sin hallazgos automáticos.
 - [aviso] «art. 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _paso «recurso_auto_est» › ley 4_
 - [aviso] «art. 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _paso «recurso_auto_des» › aviso 2_
 - [aviso] «art. 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _paso «recurso_auto_des» › ley 4_
+
+**plazos**
+
+- [revisar] plazo «20 días» no aparece en el precepto citado (arts. 455 LEC): «Plazo para interponer el recurso de apelación: conforme a los arts. 455 y ss. LEC (20 días desde la notificación del auto).» — _paso «recurso_auto_est» › plazo 3_
+- [revisar] plazo «20 días» no aparece en el precepto citado (arts. 455 LEC): «Plazo para interponer el recurso de apelación: conforme a los arts. 455 y ss. LEC (20 días desde la notificación del auto).» — _paso «recurso_auto_des» › plazo 3_
 
 **terminologia**
 

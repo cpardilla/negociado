@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E06.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E06.json; revisado con el BOE (registro: docs/revision/ljv-disposiciones-generales.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-disposiciones-generales",
@@ -17,19 +17,18 @@ Neg.data.register({
   "8"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E06"
  },
  "cabecera": {
   "migas": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO PRELIMINAR",
-  "subtitulo": "Arts. 1 a 8 LJV",
+  "subtitulo": "Arts. 1 a 8 LJV · Objeto, competencia, legitimación y postulación, Ministerio Fiscal, prueba, tramitación simultánea, gastos, ajustes por discapacidad y supletoriedad",
   "etiquetas": [
    "Ley 15/2015",
-   "Arts. 1-8",
-   "Arts. 13-22",
-   "60+ ref. normativas",
-   "Reforma Ley 8/2021"
+   "Arts. 1–8",
+   "9 artículos",
+   "Ley 8/2021"
   ]
  },
  "categorias": [
@@ -72,7 +71,7 @@ Neg.data.register({
  "secciones": [
   {
    "titulo": "Artículos del Título Preliminar",
-   "recuento": "9 artículos · versión fusionada completa",
+   "recuento": "9 artículos",
    "bloques": [
     {
      "tarjeta": {
@@ -86,16 +85,22 @@ Neg.data.register({
        }
       ],
       "titulo": "Objeto y ámbito de aplicación",
-      "resumen": "Regulación de expedientes de JV ante órganos jurisdiccionales en materia civil y mercantil, sin controversia contenciosa. Naturaleza constitucional y evolución histórica. Competencia concurrente de Notarios y Registradores.",
+      "resumen": "La Ley regula los expedientes de jurisdicción voluntaria que se tramitan ante los órganos jurisdiccionales: los que requieren la intervención de un órgano jurisdiccional para tutelar derechos e intereses en materia civil y mercantil, sin que exista controversia que deba sustanciarse en un proceso contencioso.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Objeto de la Ley",
+         "titulo": "Elementos de la definición (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Regulación de los expedientes de jurisdicción voluntaria que se tramitan ante los órganos jurisdiccionales."
+             "t": "Intervención de un órgano jurisdiccional."
+            },
+            {
+             "t": "Tutela de derechos e intereses en materia de Derecho civil y mercantil."
+            },
+            {
+             "t": "Sin controversia que deba sustanciarse en un proceso contencioso."
             }
            ]
           }
@@ -104,24 +109,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Definición y elementos constitutivos",
+         "titulo": "Contenido de la Ley",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Intervención de un órgano jurisdiccional:</strong> La tutela requiere necesariamente la actuación de un juez, magistrado o tribunal; no basta la intervención de autoridades administrativas."
+             "t": "Título Preliminar (arts. 1–8): disposiciones generales. Título I (arts. 9–22): normas comunes (Derecho internacional privado y tramitación)."
             },
             {
-             "t": "<strong>Tutela de derechos e intereses:</strong> Finalidad de protección, reconocimiento, constitución o modificación de derechos e intereses jurídicamente relevantes."
+             "t": "Títulos II a IX: expedientes en materia de personas, familia, derecho sucesorio, obligaciones, derechos reales, subastas voluntarias, materia mercantil y conciliación."
             },
             {
-             "t": "<strong>Materia civil y mercantil:</strong> Ámbito material circunscrito al Derecho civil y mercantil; excluidos expresamente Derecho penal, contencioso-administrativo y social."
-            },
-            {
-             "t": "<strong>Ausencia de controversia:</strong> Elemento definitorio esencial: no debe existir controversia que deba sustanciarse en un proceso contencioso."
-            },
-            {
-             "t": "<strong>Competencia concurrente:</strong> También se atribuye competencia, de forma concurrente, a Notarios y Registradores en determinadas materias."
+             "t": "Algunas materias se atribuyen también a Notarios y Registradores; sus expedientes se rigen por su propia legislación (véanse los arts. 6.1 y 19.3)."
             }
            ]
           }
@@ -130,121 +129,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Materias objeto de la Ley — Títulos II a IX",
+         "titulo": "Si hay oposición",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Personas · Familia · Registro Civil · Sucesiones · Derechos reales · Obligaciones · Materia mercantil · Conciliación."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Fundamentación constitucional",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Artículo 117.3 CE:</strong> Potestad de juzgar y hacer ejecutar lo juzgado; manifestación de la función jurisdiccional del Estado."
+             "t": "La oposición de un interesado <strong>no hace contencioso el expediente ni impide que continúe</strong> hasta su resolución, salvo que la ley lo prevea expresamente (art. 17.3 LJV)."
             },
             {
-             "t": "<strong>Artículo 24 CE:</strong> Derecho a la tutela judicial efectiva; vertiente de aplicación en jurisdicción voluntaria."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Evolución histórica y antecedentes",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>LEC 1881 (arts. 1810-1823):</strong> Regulación general de actos de jurisdicción voluntaria (insuficiente y anticuada)."
-            },
-            {
-             "t": "<strong>Código Civil:</strong> Expedientes en materia de estado civil, capacidad, tutela, curatela."
-            },
-            {
-             "t": "<strong>Ley del Notariado de 1862:</strong> Competencias notariales en JV, mantenidas y reforzadas en la Ley 15/2015."
-            },
-            {
-             "t": "<strong>Ley de Registro Civil:</strong> Expedientes de inscripción de actos del estado civil."
-            },
-            {
-             "t": "<strong>Ley 15/2015:</strong> Unifica, sistematiza y moderniza la regulación dispersa creando un marco normativo común."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Ámbito material: Derecho civil",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Estado civil de las personas: nacionalidad, vecindad civil, nombre y apellidos, actas de notoriedad."
-            },
-            {
-             "t": "Capacidad jurídica: medidas de apoyo para personas con discapacidad (tutela, curatela, defensor judicial, guarda de hecho con facultades de representación)."
-            },
-            {
-             "t": "Relaciones familiares: emancipación, asistencia de menores no emancipados, autorización para contraer matrimonio, oposición al matrimonio."
-            },
-            {
-             "t": "Sucesiones: declaración de herederos, testamentos, aceptación de herencia a beneficio de inventario."
-            },
-            {
-             "t": "Ausencia y fallecimiento: declaración de ausencia y de fallecimiento."
-            },
-            {
-             "t": "Derechos reales: constitución, modificación y extinción sobre bienes inmuebles."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Ámbito material: Derecho mercantil",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Sociedades mercantiles: convocatoria de juntas generales, intervención judicial de sociedades, nombramiento de auditores de cuentas."
-            },
-            {
-             "t": "Títulos-valores: amortización de títulos-valores destruidos o extraviados."
-            },
-            {
-             "t": "Concurso de acreedores: determinados aspectos de la JV en materia concursal."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Exclusión de la controversia contenciosa",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Elemento diferenciador:</strong> Ausencia de controversia entre partes frente al proceso contencioso."
-            },
-            {
-             "t": "<strong>Transformación por oposición:</strong> Si surge oposición, se transforma en proceso contencioso y se archiva el expediente JV (art. 6.2)."
+             "t": "Si la cuestión se está discutiendo ya en un proceso contencioso, el expediente no puede iniciarse ni continuar (art. 6.2)."
             }
            ]
           }
@@ -253,12 +146,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CE art. 24",
-       "CE art. 117.3",
-       "LEC 1881 arts. 1810-1823",
-       "Ley 15/2015 art. 6.2"
+       "LJV art. 6",
+       "LJV art. 17.3"
       ],
-      "claves": "objeto ámbito aplicación expedientes jurisdicción voluntaria órganos jurisdiccionales tutela derechos intereses derecho civil mercantil controversia proceso contencioso naturaleza constitucional CE 24 117 evolución histórica LEC 1881 notariado registro civil estado civil capacidad menores sucesiones sociedades mercantiles títulos II IX notarios registradores competencia concurrente"
+      "claves": "1 objeto ambito jurisdiccion voluntaria expediente organo jurisdiccional civil mercantil sin controversia oposicion no hace contencioso"
      }
     },
     {
@@ -273,22 +164,19 @@ Neg.data.register({
        }
       ],
       "titulo": "Competencia en materia de jurisdicción voluntaria",
-      "resumen": "Competencia objetiva, territorial y distribución de funciones entre Juez y Secretario judicial. Prohibición de sumisión. Control de oficio. Formas de resolución.",
+      "resumen": "Competencia objetiva de los juzgados de primera instancia o de lo mercantil (hoy, Secciones Civiles y de lo Mercantil de los Tribunales de Instancia). La territorial la fija cada precepto y no admite sumisión. El Letrado de la Administración de Justicia impulsa y dirige; la decisión de fondo es del juez o del LAJ según la ley y, en su defecto, según la regla del apartado 3.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Competencia objetiva: Juzgados de Primera Instancia",
+         "titulo": "Competencia objetiva (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Órganos naturales:</strong> Juzgados de Primera Instancia son los órganos generales para conocer de los expedientes de JV en materia civil."
+             "t": "Juzgados de Primera Instancia o de lo Mercantil, según el caso (denominación que conserva la LJV)."
             },
             {
-             "t": "<strong>Fundamento LOPJ:</strong> Artículo 45 LOPJ atribuye a los Juzgados de Primera Instancia los asuntos civiles que las leyes les encomienden."
-            },
-            {
-             "t": "<strong>Referencia LEC:</strong> Artículo 82 LEC establece la competencia de los Juzgados de Primera Instancia en materia civil."
+             "t": "Desde la LO 1/2025: Secciones Civiles de los Tribunales de Instancia (art. 85 LOPJ) y Secciones de lo Mercantil (art. 87 LOPJ)."
             }
            ]
           }
@@ -297,12 +185,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Competencia objetiva: Juzgados de lo Mercantil",
+         "titulo": "Competencia territorial (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Competencia especializada:</strong> Conocen de expedientes de JV en materia mercantil (LOPJ art. 86 ter), especialmente del Título VIII (exhibición de libros, juntas generales, auditores, obligacionistas, títulos valor, perito en seguros)."
+             "t": "La fija el precepto de cada expediente."
+            },
+            {
+             "t": "No cabe modificarla por sumisión expresa ni tácita."
+            },
+            {
+             "t": "Se examina de oficio al presentarse la solicitud (art. 16 LJV)."
             }
            ]
           }
@@ -311,141 +205,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Competencia territorial: reglas y prohibiciones",
+         "titulo": "Impulso, dirección y decisión (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Criterio de determinación:</strong> Se fija por el precepto correspondiente en cada caso (domicilio del interesado, ubicación del bien, lugar de celebración del acto, etc.)."
+             "t": "Impulso y dirección: el Letrado de la Administración de Justicia (la LJV dice aún «Secretario judicial»)."
             },
             {
-             "t": "<strong>Prohibición de sumisión expresa:</strong> Las partes no pueden pactar que un órgano judicial diferente al competente por la ley conozca del expediente."
+             "t": "Decisión de fondo: el juez o el LAJ, según atribuya la ley en cada expediente."
             },
             {
-             "t": "<strong>Prohibición de sumisión tácita:</strong> No opera la sumisión tácita; la competencia territorial viene impuesta por la ley y es improrrogable."
+             "t": "Si la ley no lo atribuye expresamente, decide el <strong>juez</strong> los expedientes que afecten al interés público o al estado civil, los que precisen la tutela de normas sustantivas o puedan deparar actos de disposición, reconocimiento, creación o extinción de derechos subjetivos, y los que afecten a menores o a personas con discapacidad con medidas de apoyo. Los demás los resuelve el <strong>LAJ</strong>."
             },
             {
-             "t": "<strong>Fundamento:</strong> Naturaleza no dispositiva de la JV: al no existir litigio entre partes, no cabe la prórroga de competencia."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Impulso, dirección y resolución: Secretario judicial",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Impulso procesal:</strong> Corresponde al Secretario judicial el deber de impulsar el expediente de oficio."
-            },
-            {
-             "t": "<strong>Dirección del procedimiento:</strong> Dirige la tramitación, acordando las diligencias necesarias."
-            },
-            {
-             "t": "<strong>Fundamento LOPJ:</strong> Artículo 451 LOPJ; el término «Secretario judicial» corresponde a la denominación actual de «Letrado de la Administración de Justicia» (LAJ)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Funciones decisorias: Juez — Supuestos reservados",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Interés público:</strong> Expedientes que afecten al interés público general."
-            },
-            {
-             "t": "<strong>Estado civil de las personas:</strong> Nacionalidad, vecindad civil, nombre y apellidos, filiación, matrimonio."
-            },
-            {
-             "t": "<strong>Tutela de normas sustantivas:</strong> Aplicación e interpretación de normas de Derecho sustantivo."
-            },
-            {
-             "t": "<strong>Actos de disposición:</strong> Actos de disposición, reconocimiento, creación o extinción de derechos subjetivos."
-            },
-            {
-             "t": "<strong>Derechos de menores:</strong> Protección reforzada (CE art. 39)."
-            },
-            {
-             "t": "<strong>Personas con discapacidad:</strong> Medidas de apoyo para el ejercicio de su capacidad jurídica (Ley 8/2021)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Funciones decisorias: Secretario judicial — Regla residual",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Principio de economía procesal:</strong> Se descarga al Juez de expedientes de menor complejidad."
-            },
-            {
-             "t": "<strong>Naturaleza de las resoluciones:</strong> El Secretario judicial resuelve mediante decreto; el Juez lo hace mediante auto."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Formas de resolución y plazo",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Auto Juez · Decreto Secretario judicial · Plazo: 5 días desde la comparecencia o la última diligencia. Art. 19 LJV"
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Control de oficio de la competencia",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "El Secretario judicial examina de oficio la competencia objetiva y territorial presentada la solicitud. Art. 16 LJV"
-            },
-            {
-             "t": "Falta de competencia objetiva: archivo previa audiencia del MF y del solicitante; en su caso, dación de cuenta al Juez."
-            },
-            {
-             "t": "Falta de competencia territorial: remisión al órgano competente."
-            },
-            {
-             "t": "Defectos u omisiones en la solicitud: plazo de 5 días para subsanación."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Otros órganos con competencia",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Notarios:</strong> Competencia concurrente con los Secretarios judiciales en determinadas materias."
-            },
-            {
-             "t": "<strong>Registradores:</strong> Competencia concurrente en el ámbito registral."
+             "t": "El juez resuelve por auto y el LAJ por decreto, en cinco días (art. 19.1 LJV)."
             }
            ]
           }
@@ -454,15 +228,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LOPJ art. 45",
-       "LOPJ art. 82",
-       "LOPJ art. 86 ter",
-       "LOPJ art. 451",
-       "LEC art. 13",
-       "Art. 16 LJV",
-       "Art. 19 LJV"
+       "LJV arts. 16, 19",
+       "LOPJ arts. 85, 87"
       ],
-      "claves": "competencia objetiva territorial juzgados primera instancia mercantil secretario judicial juez impulso dirección resolución interés público estado civil menores discapacidad LOPJ 45 82 86 ter 451 notario registrador sumisión control oficio auto decreto plazo 5 días art 16 19 LJV"
+      "claves": "2 competencia objetiva primera instancia mercantil seccion civil territorial sin sumision letrado secretario impulso direccion decision juez interes publico estado civil menores discapacidad"
      }
     },
     {
@@ -472,16 +241,16 @@ Neg.data.register({
       "tono": "c3",
       "etiquetas": [
        {
-        "texto": "Legitimación",
+        "texto": "Postulación",
         "tono": "t-ok"
        }
       ],
       "titulo": "Legitimación y postulación",
-      "resumen": "Define quiénes pueden promover expedientes y cuándo es preceptiva la intervención de Abogado y Procurador. Régimen de la oposición. Modulaciones por tipo de expediente.",
+      "resumen": "Pueden promover expedientes e intervenir en ellos los titulares de derechos o intereses legítimos y los legitimados por la ley; algunos se inician de oficio o a instancia del Ministerio Fiscal. Abogado y procurador solo cuando la ley lo prevea, pero siempre para los recursos de revisión y apelación contra la resolución definitiva y desde que se formule oposición.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Legitimación activa — tres vías",
+         "titulo": "Legitimación (apartado 1)",
          "contenido": [
           {
            "lista": [
@@ -489,10 +258,10 @@ Neg.data.register({
              "t": "Titulares de derechos o intereses legítimos."
             },
             {
-             "t": "Quienes tengan legitimación conferida legalmente sobre la materia del objeto del expediente."
+             "t": "Quienes tengan legitimación conferida legalmente sobre la materia."
             },
             {
-             "t": "Iniciación de oficio o a instancia del Ministerio Fiscal."
+             "t": "Sin perjuicio de los expedientes que se inician de oficio o a instancia del Ministerio Fiscal."
             }
            ]
           }
@@ -501,21 +270,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Postulación procesal: regla general",
+         "titulo": "Postulación (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Defensa letrada:</strong> El Letrado (Abogado) presta asistencia jurídica técnica."
+             "t": "Abogado y procurador, solo en los expedientes en que la LJV lo prevea; aunque no se exijan, las partes pueden valerse de ellos."
             },
             {
-             "t": "<strong>Representación procesal:</strong> El Procurador ostenta la representación procesal."
-            },
-            {
-             "t": "<strong>Fundamento LEC:</strong> Artículos 23 y 31 LEC."
-            },
-            {
-             "t": "<strong>Facultad voluntaria:</strong> Aun cuando no sea requerido por la ley, las partes pueden actuar con Abogado y Procurador."
+             "t": "<strong>Siempre</strong>: para los recursos de revisión y apelación contra la resolución definitiva, y a partir del momento en que se formule oposición."
             }
            ]
           }
@@ -524,89 +287,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Supuestos de postulación preceptiva",
+         "titulo": "Ejemplos en la propia LJV",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Recursos de revisión y apelación:</strong> Necesaria la actuación de Abogado y Procurador contra la resolución definitiva. Art. 20 LJV"
+             "t": "No preceptivos: reconocimiento de filiación no matrimonial (art. 24), dispensa de impedimentos matrimoniales (art. 81), contador-partidor dativo y albaceazgo si el haber es inferior a 6.000 € (arts. 91–92), consignación (art. 98), usufructo (art. 101), subasta voluntaria (art. 109), perito en el contrato de seguro (art. 137), conciliación (art. 141)."
             },
             {
-             "t": "<strong>Oposición:</strong> Necesaria la actuación de Abogado y Procurador a partir del momento en que se formulase oposición. Art. 17 LJV"
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Modulaciones en expedientes específicos",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "No preceptiva en reconocimiento de filiación (art. 24), dispensa de impedimento matrimonial (art. 81), extracción de órganos (art. 79), deslinde ≤ 6.000 € (art. 105), subasta voluntaria (art. 109), usufructo (art. 101), perito en seguros (art. 137)."
+             "t": "Preceptivos: exhibición de libros (art. 113), convocatoria de juntas generales (art. 118), obligacionistas (art. 130), robo, hurto o extravío de títulos valor (art. 133); deslinde, abogado si el valor de la finca supera 6.000 € (art. 105)."
             },
             {
-             "t": "Sí preceptiva en exhibición de libros contables (art. 113), convocatoria de juntas generales (art. 118), obligacionistas (art. 130), títulos valor (art. 133)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Formulario normalizado cuando no es preceptiva la postulación",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Se facilita en la Oficina judicial o sede electrónica; no es necesario concretar la fundamentación jurídica. Art. 14.3 LJV"
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Oposición y sus efectos",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Se formula en los 5 días siguientes a la citación. Art. 17 LJV"
-            },
-            {
-             "t": "No hace contencioso el expediente ni suspende su tramitación, salvo que la ley expresamente lo prevea."
-            },
-            {
-             "t": "Del escrito de oposición se da traslado inmediato al solicitante."
-            },
-            {
-             "t": "Desde este momento es obligatoria la actuación de Abogado y Procurador."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Régimen de la oposición (transformación)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Concepto:</strong> Acto procesal por el cual un interesado manifiesta su disentimiento con respecto a lo solicitado."
-            },
-            {
-             "t": "<strong>Transformación del procedimiento:</strong> El expediente de JV se transforma en un proceso contencioso, aplicándose las normas procesales correspondientes."
-            },
-            {
-             "t": "<strong>Continuación:</strong> Se tramitará conforme a las reglas del proceso contencioso que corresponda (LEC)."
+             "t": "Cuando no son preceptivos, la solicitud puede presentarse en impreso normalizado (art. 14.3 LJV)."
             }
            ]
           }
@@ -615,14 +307,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC art. 23",
-       "LEC art. 31",
-       "LEC art. 6",
-       "Art. 14 LJV",
-       "Art. 17 LJV",
-       "Art. 20 LJV"
+       "LJV arts. 14, 17, 20",
+       "LEC arts. 23, 31"
       ],
-      "claves": "legitimación postulación solicitantes interesados letrado procurador abogado recursos revisión apelación oposición ministerio fiscal LEC 23 31 6 formulario normalizado modulaciones expedientes específicos art 14 17 20 LJV"
+      "claves": "3 legitimacion interes legitimo de oficio ministerio fiscal postulacion abogado procurador recursos revision apelacion oposicion preceptivo impreso normalizado"
      }
     },
     {
@@ -632,24 +320,30 @@ Neg.data.register({
       "tono": "c4",
       "etiquetas": [
        {
-        "texto": "Intervención fiscal",
+        "texto": "Fiscal",
         "tono": "t-info"
        }
       ],
       "titulo": "Intervención del Ministerio Fiscal",
-      "resumen": "Supuestos de intervención preceptiva del Fiscal: estado civil, menores, personas con discapacidad. Modalidades de intervención y expedientes destacados.",
+      "resumen": "El Ministerio Fiscal interviene cuando el expediente afecte al estado civil o condición de la persona o esté comprometido el interés de un menor o de una persona con discapacidad con medidas de apoyo, y en los demás casos en que la ley lo declare.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Fundamento constitucional y orgánico",
+         "titulo": "Supuestos",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Artículo 124 CE:</strong> Promoción de la acción de la justicia en defensa de la legalidad, de los derechos de los ciudadanos y del interés público."
+             "t": "Estado civil o condición de la persona."
             },
             {
-             "t": "<strong>LOFSEM:</strong> Ley Orgánica 50/1981, art. 3: funciones del Fiscal en procesos civiles."
+             "t": "Interés de un menor."
+            },
+            {
+             "t": "Interés de una persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica (redacción de la Ley 8/2021)."
+            },
+            {
+             "t": "Los demás casos en que la ley lo declare expresamente."
             }
            ]
           }
@@ -658,78 +352,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Supuestos de intervención preceptiva",
+         "titulo": "Cómo interviene (Título I)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Estado civil o condición de la persona:</strong> Nacionalidad, vecindad civil, nombre, apellidos, filiación, matrimonio, emancipación."
+             "t": "Informe escrito en diez días si solo hay que oírle y no hace falta prueba (art. 17.2)."
             },
             {
-             "t": "<strong>Interés de menores:</strong> Protección reforzada (CE art. 39); Convención sobre los Derechos del Niño (ONU, 1989) art. 3."
+             "t": "En la comparecencia puede pedir la audiencia de otros afectados y diligencias en interés de menores o personas con discapacidad, y asiste a su audiencia en acto separado (art. 18.2, reglas 2.ª y 4.ª)."
             },
             {
-             "t": "<strong>Personas con discapacidad:</strong> Medidas de apoyo para el ejercicio de su capacidad jurídica; reforma Ley 8/2021; Convención ONU 2006 arts. 12 y 13."
+             "t": "Debe valorar motivadamente en su informe la exploración practicada (art. 18.2.4.ª)."
             },
             {
-             "t": "<strong>Otros casos de intervención legal:</strong> Cláusula abierta: otras leyes pueden atribuir al Fiscal la intervención."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Modalidades de intervención en el procedimiento",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Informe escrito en el plazo de 10 días cuando solo haya que oírle y no sea necesaria la prueba. Art. 17 LJV"
-            },
-            {
-             "t": "Participación activa en la comparecencia: propuesta de audiencia de afectados, prueba de oficio. Art. 18 LJV"
-            },
-            {
-             "t": "En expedientes de menores y personas con discapacidad, debe valorar motivadamente la exploración practicada. Art. 18.2.4.ª LJV"
-            },
-            {
-             "t": "Puede instar la acumulación de expedientes. Art. 15 LJV"
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Expedientes con intervención preceptiva destacada",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Tutela y curatela (art. 43) · Medidas de apoyo a personas con discapacidad (art. 42 bis a)) · Adopción (arts. 33 y ss.) · Dispensa del impedimento de muerte dolosa del cónyuge (art. 83)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Consecuencias procesales de la intervención fiscal",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Audiencia preceptiva: el expediente debe tramitarse con audiencia del Fiscal, quien emite dictamen antes de la resolución."
-            },
-            {
-             "t": "Iniciativa probatoria: el Fiscal puede proponer medios de prueba (art. 5)."
-            },
-            {
-             "t": "Recurribilidad: el Fiscal puede interponer los recursos que procedan."
+             "t": "Puede pedir la acumulación de expedientes (art. 15.1)."
             }
            ]
           }
@@ -738,13 +375,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CE art. 124",
-       "LOFSEM art. 3",
-       "CE art. 39",
-       "Convención ONU 2006 arts. 12, 13",
-       "Art. 17-18 LJV"
+       "LJV arts. 15, 17, 18",
+       "Ley 50/1981 (Estatuto Orgánico del Ministerio Fiscal), art. 3"
       ],
-      "claves": "ministerio fiscal intervención estado civil condición persona menor discapacidad capacidad jurídica ley expresa CE 124 LOFSEM 3 protección menores Ley 8/2021 Convención ONU discapacidad informe 10 días comparecencia tutela curatela adopción dispensa"
+      "claves": "4 ministerio fiscal estado civil condicion persona menor discapacidad medidas apoyo informe diez dias comparecencia exploracion"
      }
     },
     {
@@ -755,26 +389,20 @@ Neg.data.register({
       "etiquetas": [
        {
         "texto": "Prueba",
-        "tono": "t-nota"
+        "tono": "t-info"
        }
       ],
       "titulo": "Prueba",
-      "resumen": "Régimen probatorio: admisión de medios de prueba por Juez o Secretario judicial; prueba de oficio en supuestos tasados. Práctica en comparecencia.",
+      "resumen": "El juez o el Letrado de la Administración de Justicia, según quien sea competente, decide sobre la admisión de la prueba y puede acordarla de oficio si hay interés público, si se afecta a menores o a personas con discapacidad con medidas de apoyo, si lo estima conveniente para aclarar algún elemento relevante y determinante, o si la ley lo prevé.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Órgano competente y naturaleza",
+         "titulo": "Admisión",
          "contenido": [
           {
            "lista": [
             {
-             "t": "El Juez o el Secretario judicial, según quien conozca del expediente, decide sobre la admisión de prueba."
-            },
-            {
-             "t": "<strong>Principio de investigación:</strong> Al no existir partes enfrentadas, el órgano judicial adopta una actitud más activa."
-            },
-            {
-             "t": "<strong>Flexibilidad probatoria:</strong> Mismos medios que en el proceso contencioso, pero régimen más flexible."
+             "t": "Decide el juez o el LAJ, según quién conozca del expediente."
             }
            ]
           }
@@ -783,15 +411,21 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Admisión de medios de prueba",
+         "titulo": "Prueba de oficio",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Medios admisibles:</strong> Interrogatorio de partes, documentos (públicos y privados), testigos, peritos, reconocimiento judicial y cualesquiera otros admitidos por la ley."
+             "t": "Interés público."
             },
             {
-             "t": "<strong>Referencia LEC:</strong> Arts. 281-283 LEC: carga de la prueba y valoración de medios probatorios."
+             "t": "Afectación de menores o de personas con discapacidad con medidas de apoyo."
+            },
+            {
+             "t": "Conveniencia para clarificar algún elemento relevante y determinante de la cuestión."
+            },
+            {
+             "t": "Previsión legal expresa."
             }
            ]
           }
@@ -800,95 +434,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Prueba de oficio — cuatro supuestos",
+         "titulo": "Práctica (Título I)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Interés público:</strong> Cuando exista interés público en la correcta averiguación de los hechos."
+             "t": "Los interesados son citados con al menos quince días de antelación y deben acudir con sus medios de prueba (art. 17.3)."
             },
             {
-             "t": "<strong>Menores o personas con discapacidad:</strong> Cuando se afecte a menores o personas con discapacidad con medidas de apoyo."
+             "t": "La comparecencia se sustancia por los trámites de la vista del juicio verbal (art. 18.2) y se graba (regla 6.ª)."
             },
             {
-             "t": "<strong>Clarificación de elementos relevantes:</strong> Cuando el órgano judicial lo estime conveniente."
-            },
-            {
-             "t": "<strong>Previsión legal expresa:</strong> Cuando expresamente lo prevea la ley."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Práctica de la prueba en la comparecencia",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Tramitada conforme al juicio verbal de la LEC; los interesados se citan con 15 días de antelación. Art. 17-18 LJV"
-            },
-            {
-             "t": "Los interesados deben acudir a la comparecencia con los medios de prueba de que intenten valerse."
-            },
-            {
-             "t": "En expedientes de menores/discapacidad: diligencias adicionales en el mismo acto o en los 10 días siguientes; acta del LAJ."
-            },
-            {
-             "t": "El desarrollo de la comparecencia se registra en soporte audiovisual. Art. 18.2.6.ª LJV"
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Principio inquisitivo reforzado en la decisión",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Cuando se afecten intereses de menores o personas con discapacidad, la decisión puede fundarse en hechos no invocados por las partes pero conocidos durante el expediente. Art. 19.2 LJV"
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Supletoriedad de la LEC",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Normas de admisión y práctica de prueba en el juicio verbal son de aplicación supletoria. Art. 8 LJV"
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Trámite probatorio",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Proposición: las partes proponen los medios de prueba que estimen pertinentes."
-            },
-            {
-             "t": "Admisión: el Juez o Secretario judicial decide sobre la admisibilidad."
-            },
-            {
-             "t": "Práctica: conforme a las reglas generales del proceso civil."
-            },
-            {
-             "t": "Valoración: conforme a las reglas de la sana crítica."
+             "t": "En expedientes de menores o personas con discapacidad, la decisión puede fundarse en hechos conocidos durante el expediente aunque nadie los haya invocado (art. 19.2)."
             }
            ]
           }
@@ -897,12 +454,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC arts. 281-283",
-       "LEC art. 303",
-       "LEC art. 429",
-       "Art. 17-19 LJV"
+       "LJV arts. 17–19",
+       "LEC (prueba, aplicación supletoria)"
       ],
-      "claves": "prueba admisión medios prueba oficio interés público menores discapacidad clarificar elemento relevante ley LEC 281 283 303 429 interrogatorio testigos peritos reconocimiento comparecencia juicio verbal 15 días grabación audiovisual art 18 19 LJV principio inquisitivo"
+      "claves": "5 prueba admision juez letrado prueba de oficio interes publico menores discapacidad comparecencia quince dias juicio verbal grabacion"
      }
     },
     {
@@ -917,22 +472,19 @@ Neg.data.register({
        }
       ],
       "titulo": "Tramitación simultánea o posterior de expedientes o procesos",
-      "resumen": "Litispendencia entre expedientes, incompatibilidad con procesos jurisdiccionales, suspensión por prejudicialidad, cosa decidida y acumulación.",
+      "resumen": "Si hay dos expedientes con idéntico objeto, sigue el primero y se archivan los demás. No puede iniciarse ni continuar un expediente sobre un objeto que se está sustanciando en un proceso jurisdiccional. Se suspende si hay un proceso contencioso cuya resolución pueda afectarle.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Litispendencia entre expedientes de JV",
+         "titulo": "Expedientes simultáneos (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Regla del prior in tempore:</strong> Proseguirá la tramitación del expediente primero iniciado; se archivan los posteriormente incoados."
+             "t": "Con idéntico objeto: prosigue el que primero se inició y se archivan los posteriores."
             },
             {
-             "t": "<strong>Identidad de objeto:</strong> Requiere identidad de objeto (misma materia y finalidad)."
-            },
-            {
-             "t": "<strong>Extensión a Notarios y Registradores:</strong> Aplicable también a expedientes tramitados por Notarios y Registradores."
+             "t": "Se aplica también a los expedientes de Notarios y Registradores en materias de competencia concurrente con el LAJ."
             }
            ]
           }
@@ -941,18 +493,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Incompatibilidad con proceso jurisdiccional",
+         "titulo": "Proceso jurisdiccional sobre el mismo objeto (apartado 2)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Prohibición:</strong> No se podrá iniciar o continuar un expediente de JV sobre objeto que esté siendo sustanciado en un proceso jurisdiccional."
+             "t": "No puede iniciarse ni continuar el expediente."
             },
             {
-             "t": "<strong>Preeminencia del proceso contencioso:</strong> Si existe controversia, lo procedente es el proceso contencioso."
-            },
-            {
-             "t": "<strong>Archivo y remisión:</strong> Acreditada la presentación de la demanda, se archiva el expediente y se remiten actuaciones al tribunal."
+             "t": "Acreditada la presentación de la demanda, se archiva y se remiten las actuaciones al tribunal del proceso para que las incorpore a los autos."
             }
            ]
           }
@@ -961,15 +510,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Suspensión por prejudicialidad",
+         "titulo": "Prejudicialidad (apartado 3)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Concepto:</strong> Se suspende el expediente cuando exista un proceso jurisdiccional contencioso cuya resolución pudiese afectarle."
-            },
-            {
-             "t": "<strong>Trámite del incidente:</strong> Conforme al artículo 43 de la LEC (cuestión prejudicial civil)."
+             "t": "Suspensión si se acredita un proceso contencioso cuya resolución pueda afectar al expediente; el incidente se tramita conforme al art. 43 LEC."
             }
            ]
           }
@@ -978,32 +524,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Efecto de cosa decidida y proceso posterior",
+         "titulo": "Relación con el art. 19 LJV",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Firme la resolución: no puede iniciarse otro expediente sobre idéntico objeto, salvo cambio de circunstancias. Art. 19.3 LJV"
+             "t": "Firme la resolución, no puede iniciarse otro expediente sobre idéntico objeto salvo cambio de circunstancias (art. 19.3)."
             },
             {
-             "t": "La resolución de la JV no impide un proceso contencioso posterior con el mismo objeto; la sentencia debe pronunciarse sobre su confirmación, modificación o revocación. Art. 19.4 LJV"
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Acumulación activa de expedientes",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "El Juez o Secretario judicial puede acordar de oficio la acumulación cuando la resolución de uno pueda afectar a otro o exista riesgo de resoluciones contradictorias. Art. 15 LJV"
+             "t": "Lo resuelto no impide un proceso posterior con el mismo objeto; la sentencia confirmará, modificará o revocará lo acordado (art. 19.4)."
             },
             {
-             "t": "No procede si la resolución corresponde a sujetos distintos, ni es posible acumular expedientes de JV a procesos contenciosos."
+             "t": "Los expedientes no se acumulan a procesos contenciosos (art. 15.3)."
             }
            ]
           }
@@ -1013,12 +545,9 @@ Neg.data.register({
       ],
       "referencias": [
        "LEC art. 43",
-       "LEC art. 69",
-       "Art. 15 LJV",
-       "Art. 19 LJV",
-       "Ley del Notariado"
+       "LJV arts. 15, 19"
       ],
-      "claves": "tramitación simultánea posterior expedientes procesos idéntico objeto notario registrador archivo remisión suspensión proceso contencioso incidente LEC 43 69 litispendencia incompatibilidad prejudicialidad cosa decidida art 19 3 4 acumulación art 15 LJV"
+      "claves": "6 tramitacion simultanea identico objeto archivo proceso jurisdiccional demanda remision suspension prejudicialidad 43 lec cosa decidida"
      }
     },
     {
@@ -1033,22 +562,19 @@ Neg.data.register({
        }
       ],
       "titulo": "Gastos",
-      "resumen": "Régimen de gastos: solicitante como responsable principal; gastos de testigos y peritos a cargo de quien los proponga. Reglas especiales por expediente.",
+      "resumen": "Los gastos son a cargo del solicitante, salvo que la ley disponga otra cosa. Los de testigos y peritos, a cargo de quien los proponga.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Regla general: solicitante como responsable",
+         "titulo": "Reglas",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Concepto de gastos:</strong> Tasas judiciales, derechos arancelarios, gastos de notificaciones, citaciones, actos de comunicación y práctica de pruebas."
+             "t": "Regla general: a cargo del solicitante, salvo disposición legal en contrario."
             },
             {
-             "t": "<strong>Naturaleza:</strong> El solicitante asume la carga económica como contraprestación del servicio de tutela judicial."
-            },
-            {
-             "t": "<strong>Comparación:</strong> En el proceso contencioso rige el principio de vencimiento (LEC art. 394); en JV, al no existir vencimiento, los gastos corren a cargo del solicitante."
+             "t": "Testigos y peritos: a cargo de quien los proponga."
             }
            ]
           }
@@ -1057,66 +583,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Gastos de testigos y peritos",
+         "titulo": "Ejemplos de reglas especiales",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Testigos:</strong> Gastos de citación, comparecencia e indemnización a cargo de quien los proponga."
+             "t": "Consignación: los gastos son de cuenta del acreedor si se declara bien hecha y, si no, del que la promovió (art. 99.6 LJV)."
             },
             {
-             "t": "<strong>Peritos:</strong> Honorarios a cargo de quien los proponga; si el perito es designado de oficio, los gastos son a cargo del expediente."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Reglas especiales en expedientes concretos",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Consignación (art. 99): a cargo del acreedor si se declara bien hecha; a cargo del promotor si se declara improcedente."
+             "t": "Conciliación: art. 146 LJV."
             },
             {
-             "t": "Conciliación (art. 146): a cargo del que la hubiere promovido."
-            },
-            {
-             "t": "Robo o extravío de títulos valor (art. 135.6): la retribución del administrador corre a cargo del solicitante."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Relación con la caducidad del expediente",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Se aplica a las actuaciones practicadas antes de que el Secretario judicial declare la caducidad por inactividad de seis meses. Art. 21 LJV"
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Tasación y liquidación",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Tasación de costas:</strong> El Secretario judicial procede conforme a los arts. 241-246 LEC."
-            },
-            {
-             "t": "<strong>Impugnación:</strong> La tasación puede ser impugnada ante el Juez."
+             "t": "Excusa del tutor o curador rechazada: art. 50 LJV."
             }
            ]
           }
@@ -1125,11 +603,9 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC arts. 241-246",
-       "LEC art. 394",
-       "Art. 21 LJV"
+       "LJV arts. 50, 99, 146"
       ],
-      "claves": "gastos solicitante testigos peritos quien proponga costes expediente LEC 241 242 243 244 245 246 costas vencimiento tasación consignación conciliación títulos valor caducidad art 21 LJV"
+      "claves": "7 gastos solicitante testigos peritos quien los proponga consignacion conciliacion"
      }
     },
     {
@@ -1140,69 +616,26 @@ Neg.data.register({
       "etiquetas": [
        {
         "texto": "Accesibilidad",
-        "tono": "t-aviso"
+        "tono": "t-ok"
        }
       ],
       "titulo": "Ajustes para personas con discapacidad",
-      "resumen": "Garantiza la participación en condiciones de igualdad mediante adaptaciones en comunicación, comprensión e interacción. Incorporado por Ley 8/2021.",
+      "resumen": "En los expedientes en que participen personas con discapacidad se harán las adaptaciones y ajustes necesarios para su participación en condiciones de igualdad, a petición de parte o del Ministerio Fiscal o de oficio, en todas las fases, incluidos los actos de comunicación. Derecho a entender y ser entendidas. Introducido por la Ley 8/2021.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Contexto normativo de la reforma",
+         "titulo": "Adaptaciones y ajustes (apartado 1)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Origen:</strong> Incorporado por la Ley 8/2021, de 2 de junio."
+             "t": "A petición de cualquiera de las partes o del Ministerio Fiscal, o de oficio por el tribunal."
             },
             {
-             "t": "<strong>Modelo médico-rehabilitador (superado):</strong> La discapacidad era objeto de protección mediante incapacitación judicial."
+             "t": "En todas las fases y actuaciones en que sea necesario, incluidos los actos de comunicación."
             },
             {
-             "t": "<strong>Modelo social de derechos (vigente):</strong> La persona es sujeto de derechos; la incapacitación sustituida por sistema de apoyos."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Marco internacional",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Convención ONU 2006 (art. 9):</strong> Accesibilidad. <strong>(art. 12):</strong> Igual reconocimiento como persona ante la ley. <strong>(art. 13):</strong> Acceso efectivo a la justicia."
-            },
-            {
-             "t": "<strong>Carta de Derechos Fundamentales UE:</strong> Art. 21: prohibición de discriminación; Art. 26: autonomía e integración."
-            },
-            {
-             "t": "<strong>CEDH:</strong> Art. 6: proceso equitativo; Art. 14: prohibición de discriminación."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Obligación de adaptar — alcance (apartado 1)",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Obligación imperativa:</strong> No es facultad discrecional del órgano judicial."
-            },
-            {
-             "t": "<strong>Iniciativa:</strong> A petición de las partes, del Ministerio Fiscal, o de oficio por el Tribunal."
-            },
-            {
-             "t": "<strong>Ámbito:</strong> En todas las fases y actuaciones procesales, incluidos los actos de comunicación."
-            },
-            {
-             "t": "<strong>Tipos:</strong> Comunicación, comprensión e interacción con el entorno."
+             "t": "Pueden referirse a la comunicación, la comprensión y la interacción con el entorno."
             }
            ]
           }
@@ -1216,16 +649,16 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>a) Lenguaje claro y accesible:</strong> Comunicaciones en lenguaje claro, sencillo y accesible, con lectura fácil."
+             "t": "a) Comunicaciones en lenguaje claro, sencillo y accesible, con medios como la lectura fácil; si es necesario, también a la persona que presta el apoyo."
             },
             {
-             "t": "<strong>b) Asistencia y apoyos comunicativos:</strong> Interpretación en lenguas de signos (LSE y LSC, Ley 27/2007); medios de apoyo a la comunicación oral."
+             "t": "b) Asistencia o apoyos para hacerse entender, incluida la interpretación en las lenguas de signos reconocidas legalmente (Ley 27/2007) y los medios de apoyo a la comunicación oral."
             },
             {
-             "t": "<strong>c) Profesional experto facilitador:</strong> Psicólogo, educador social, logopeda o profesional con formación específica."
+             "t": "c) Participación de un profesional experto que actúe como facilitador."
             },
             {
-             "t": "<strong>d) Acompañamiento:</strong> Derecho a estar acompañado de una persona de elección desde el primer contacto."
+             "t": "d) Acompañamiento de una persona de su elección desde el primer contacto con las autoridades y funcionarios."
             }
            ]
           }
@@ -1233,69 +666,20 @@ Neg.data.register({
         }
        },
        {
-        "apartado": {
-         "titulo": "Proyección en el procedimiento",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "En la comparecencia: intervención en términos accesibles y comprensibles; posibilidad de audiencia en acto separado con asistencia del MF. Art. 18.2.2.ª y 4.ª LJV"
-            },
-            {
-             "t": "En expedientes de provisión de medidas judiciales de apoyo (arts. 42 bis a) y ss.): garantías reforzadas."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Marco normativo complementario",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Real Decreto Legislativo 1/2013: Texto Refundido de la Ley General de derechos de las personas con discapacidad."
-            },
-            {
-             "t": "Ley Orgánica 8/2021, de 4 de junio: protección integral a la infancia y la adolescencia."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Relación con el sistema de apoyos de la Ley 8/2021",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Guarda de hecho</strong> con facultades de representación."
-            },
-            {
-             "t": "<strong>Curatela:</strong> Medida de apoyo personal o patrimonial."
-            },
-            {
-             "t": "<strong>Defensor judicial:</strong> Para actos concretos con conflicto de intereses."
-            }
-           ]
-          }
-         ]
+        "nota": {
+         "tono": "t-info",
+         "etiqueta": "Marco",
+         "texto": "Desarrolla los arts. 9 (accesibilidad), 12 y 13 (acceso a la justicia) de la Convención de la ONU sobre los derechos de las personas con discapacidad (2006). Véase también la regla 2.ª del art. 18.2 LJV."
         }
        }
       ],
       "referencias": [
        "Ley 8/2021",
-       "Convención ONU 2006 arts. 9, 12, 13",
-       "CE art. 49",
        "Ley 27/2007",
-       "Carta UE arts. 21, 26",
-       "Art. 18 LJV"
+       "Convención ONU 2006",
+       "LJV art. 18"
       ],
-      "claves": "ajustes discapacidad accesibilidad adaptaciones comunicación comprensión interacción lenguaje claro lectura fácil lengua signos facilitador acompañamiento Ley 8/2021 Convención ONU 9 12 13 Carta UE 21 26 CEDH 6 14 Ley 27/2007 LSE LSC Real Decreto Legislativo 1/2013 comparecencia art 18 LJV"
+      "claves": "7 bis ajustes adaptaciones discapacidad lenguaje claro lectura facil lengua de signos facilitador acompañamiento ley 8/2021"
      }
     },
     {
@@ -1310,22 +694,22 @@ Neg.data.register({
        }
       ],
       "titulo": "Carácter supletorio de la Ley de Enjuiciamiento Civil",
-      "resumen": "La LEC se aplica supletoriamente en todo lo no regulado por la Ley 15/2015. Jerarquía normativa y artículos de la LEC expresamente invocados.",
+      "resumen": "La LEC se aplica supletoriamente a los expedientes de jurisdicción voluntaria en todo lo no regulado por la LJV.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Concepto de aplicación supletoria",
+         "titulo": "Orden de aplicación",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Carácter subsidiario:</strong> La LEC solo se aplica cuando la Ley 15/2015 no contiene regulación específica."
+             "t": "1.º Las normas del expediente concreto (Títulos II a IX)."
             },
             {
-             "t": "<strong>Compatibilidad:</strong> Las disposiciones de la LEC deben ser compatibles con la naturaleza de la JV."
+             "t": "2.º Las normas comunes del Título I, en lo que no se opongan a aquellas (art. 13 LJV)."
             },
             {
-             "t": "<strong>Fundamento CC:</strong> Artículo 4.1 CC: principio de analogía; Art. 4.3 CC: normas procesales en leyes sustantivas."
+             "t": "3.º La LEC, en lo no regulado."
             }
            ]
           }
@@ -1334,84 +718,27 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Jerarquía normativa aplicable a cada expediente",
+         "titulo": "Remisiones expresas de la LJV a la LEC (ejemplos)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "1.º Normas específicas del expediente (Títulos II–IX de la LJV)."
+             "t": "Art. 6.3 LJV: prejudicialidad, art. 43 LEC."
             },
             {
-             "t": "2.º Normas generales del Título I de la LJV (arts. 13–22). Art. 13 LJV"
+             "t": "Art. 15.2 LJV: acumulación, normas de acumulación de procesos en el juicio verbal."
             },
             {
-             "t": "3.º LEC como norma de cierre supletoria."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Artículos de la LEC expresamente invocados en la LJV",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Art. 43 LEC Prejudicialidad civil → suspensión del expediente (art. 6.3 LJV)."
+             "t": "Art. 18.2 LJV: comparecencia, trámites de la vista del juicio verbal."
             },
             {
-             "t": "Arts. 521–522 LEC Ejecución de resoluciones no dinerarias → cumplimiento (art. 22 LJV)."
+             "t": "Art. 20 LJV: recursos de reposición, revisión y apelación, en los términos de la LEC."
             },
             {
-             "t": "Art. 381 LEC Respuestas escritas de personas jurídicas → comparecencia (art. 80 quater LJV)."
+             "t": "Art. 22.1 LJV: ejecución, arts. 521 y 522 LEC."
             },
             {
-             "t": "Art. 641 LEC Venta por persona especializada → subasta voluntaria (art. 110.3 LJV)."
-            },
-            {
-             "t": "Art. 661 LEC Derechos de arrendatarios → subasta voluntaria (art. 110.2 LJV)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Ámbito de aplicación supletoria",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Normas generales:</strong> Arts. 1-58 LEC (jurisdicción y competencia); arts. 133-147 (actos de comunicación)."
-            },
-            {
-             "t": "<strong>Normas sobre prueba:</strong> Arts. 281-352 LEC."
-            },
-            {
-             "t": "<strong>Normas sobre resolución y recursos:</strong> Arts. 206-223, 451-459 LEC."
-            },
-            {
-             "t": "<strong>Normas sobre costas:</strong> Arts. 241-246 LEC."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Limitaciones de la supletoriedad",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Normas incompatibles:</strong> No resultan aplicables normas propias del proceso contencioso (demanda, contestación, reconvención, vista oral, sentencia)."
-            },
-            {
-             "t": "<strong>Normas expresamente excluidas:</strong> Prórroga de competencia (art. 2.2 Ley 15/2015)."
+             "t": "Art. 80 quater LJV: respuestas escritas de personas jurídicas, art. 381 LEC."
             }
            ]
           }
@@ -1420,401 +747,49 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC (aplicación supletoria)",
-       "CC art. 4.1",
-       "CC art. 4.3",
-       "Art. 13 LJV",
-       "Art. 22 LJV"
+       "LJV art. 13",
+       "LEC arts. 43, 381, 521–522"
       ],
-      "claves": "carácter supletorio ley enjuiciamiento civil LEC aplicación supletoria no regulado CC 4 analogía normas procedimiento prueba recursos costas cautelares jerarquía normativa artículos LEC expresamente invocados 43 521 522 381 641 661"
+      "claves": "8 supletoriedad ley enjuiciamiento civil no regulado orden aplicacion remisiones expresas"
      }
     }
    ]
   },
   {
-   "titulo": "Ecosistema normativo: Título I (arts. 13–22) — Disposiciones comunes de tramitación",
-   "recuento": "5 bloques · 10 artículos procesales",
-   "plegada": true,
+   "titulo": "Remisión al Título I",
+   "recuento": "arts. 13–22",
    "bloques": [
     {
      "tarjeta": {
-      "articulo": "Art. 13",
+      "articulo": "Título I",
       "categoria": "c7",
       "tono": "c1",
       "etiquetas": [
        {
-        "texto": "General",
-        "tono": "t-ok"
-       }
-      ],
-      "titulo": "Ámbito de aplicación de las disposiciones comunes",
-      "resumen": "Aplicable a todos los expedientes de JV en lo que no se opongan a las normas específicas. Complementa el artículo 1 y el artículo 8.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Regla de aplicación",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Aplicable a todos los expedientes de JV en lo que no se opongan a las normas que específicamente regulen las actuaciones de que se trate."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "Art. 1 LJV",
-       "Art. 8 LJV"
-      ],
-      "claves": "art 13 ámbito aplicación disposiciones comunes expedientes JV complementa artículo 1 8"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Art. 14",
-      "categoria": "c7",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Iniciación",
-        "tono": "t-ok"
-       }
-      ],
-      "titulo": "Iniciación del expediente",
-      "resumen": "Formas de iniciación, contenido de la solicitud y formulario normalizado cuando no es preceptiva la postulación.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Formas de iniciación",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "De oficio · A instancia del Ministerio Fiscal · Por solicitud de persona legitimada."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Contenido de la solicitud",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Datos e identificación del solicitante · Domicilio a efectos de notificaciones."
-            },
-            {
-             "t": "Correo electrónico: obligatorio para quienes estén obligados a relacionarse electrónicamente con la Administración de Justicia."
-            },
-            {
-             "t": "Exposición clara y precisa de lo que se pide y de los hechos y fundamentos jurídicos."
-            },
-            {
-             "t": "Documentos y dictámenes que el solicitante considere de interés."
-            },
-            {
-             "t": "Identificación de personas interesadas y domicilio o datos para su citación."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Formulario normalizado",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Disponible en la Oficina judicial o sede electrónica; no es necesario concretar la fundamentación jurídica."
-            },
-            {
-             "t": "Presentación por cualquier medio, incluidos los electrónicos."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "Art. 3 LJV",
-       "Art. 14.3 LJV"
-      ],
-      "claves": "art 14 iniciación expediente oficio instancia ministerio fiscal solicitud persona legitimada contenido solicitud correo electrónico formulario normalizado sede electrónica"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Art. 15",
-      "categoria": "c7",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Acumulación",
-        "tono": "t-plazo"
-       }
-      ],
-      "titulo": "Acumulación de expedientes",
-      "resumen": "Presupuestos, procedimiento y especialidades de la acumulación de expedientes de JV.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Presupuestos de la acumulación",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "La resolución de uno pueda afectar a otro, o exista conexión que pueda dar lugar a resoluciones contradictorias."
-            },
-            {
-             "t": "Se acuerda de oficio, a instancia del interesado o del Ministerio Fiscal."
-            },
-            {
-             "t": "No procede si la resolución corresponde a sujetos distintos."
-            },
-            {
-             "t": "Los expedientes de JV no son acumulables a procesos contenciosos."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Especialidades procedimentales",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Mismo órgano: escrito antes de la comparecencia señalada en primer lugar."
-            },
-            {
-             "t": "Distintos órganos: escrito ante el órgano que se estime competente antes de la comparecencia; discrepancia resuelta por el Tribunal superior común."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "Art. 6 LJV",
-       "Art. 4 LJV"
-      ],
-      "claves": "art 15 acumulación expedientes resolución afecte conexión resoluciones contradictorias oficio instancia interesado ministerio fiscal mismo órgano distintos órganos tribunal superior"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Arts. 16–18",
-      "categoria": "c7",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Procedimiento",
-        "tono": "t-info"
-       }
-      ],
-      "titulo": "Admisión, control de competencia y comparecencia",
-      "resumen": "Control de oficio, admisión, citación, oposición y desarrollo de la comparecencia conforme al juicio verbal.",
-      "cuerpo": [
-       {
-        "apartado": {
-         "titulo": "Art. 16 — Control de oficio de competencia y defectos",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Examen de competencia objetiva y territorial al presentarse la solicitud."
-            },
-            {
-             "t": "Falta de competencia objetiva: archivo o dación de cuenta al Juez, previa audiencia del MF y del solicitante."
-            },
-            {
-             "t": "Falta de competencia territorial: remisión al órgano competente."
-            },
-            {
-             "t": "Defectos u omisiones: plazo de 5 días para subsanar; si no, se tiene por no presentada la solicitud."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 17 — Admisión y citación",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "El Secretario judicial admite la solicitud o la archiva / da cuenta al Juez."
-            },
-            {
-             "t": "Se convoca comparecencia cuando: haya otros interesados que oír · haya prueba a practicar · el órgano lo estime necesario."
-            },
-            {
-             "t": "Si solo hay que oír al MF sin prueba: informe escrito en 10 días."
-            },
-            {
-             "t": "Citación con 15 días de antelación mínimo."
-            },
-            {
-             "t": "Oposición: formulada en los 5 días siguientes a la citación; traslado inmediato al solicitante; no suspende el expediente salvo ley en contrario; exige Abogado y Procurador."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 18 — Comparecencia",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Celebración dentro de los 30 días siguientes a la admisión."
-            },
-            {
-             "t": "Tramitada conforme al juicio verbal de la LEC."
-            },
-            {
-             "t": "Incomparecencia del solicitante: archivo del expediente por desistimiento."
-            },
-            {
-             "t": "Incomparecencia de otros citados: continúa el expediente sin más citaciones."
-            },
-            {
-             "t": "Cuestiones procesales: se resuelven oralmente en el acto."
-            },
-            {
-             "t": "Expedientes de menores/discapacidad: audiencia en acto separado posible, con asistencia del MF; acta del LAJ."
-            },
-            {
-             "t": "Grabación audiovisual del desarrollo de la comparecencia."
-            },
-            {
-             "t": "Conclusiones orales de los interesados al final del acto."
-            }
-           ]
-          }
-         ]
-        }
-       }
-      ],
-      "referencias": [
-       "Art. 2 LJV",
-       "Art. 3 LJV",
-       "Art. 5 LJV",
-       "LEC juicio verbal"
-      ],
-      "claves": "arts 16 17 18 admisión control competencia comparecencia juicio verbal 30 días citación 15 días oposición 5 días incomparecencia archivo desistimiento grabación audiovisual menores discapacidad acto separado"
-     }
-    },
-    {
-     "tarjeta": {
-      "articulo": "Arts. 19–22",
-      "categoria": "c7",
-      "tono": "c1",
-      "etiquetas": [
-       {
-        "texto": "Resolución",
+        "texto": "Remisión",
         "tono": "t-nota"
        }
       ],
-      "titulo": "Decisión, recursos, caducidad y ejecución",
-      "resumen": "Forma de la decisión, cosa decidida, régimen de recursos, caducidad del expediente y cumplimiento/ejecución de la resolución.",
+      "titulo": "Normas comunes de tramitación (arts. 13–22)",
+      "resumen": "Iniciación, acumulación, control de competencia, admisión y citación, comparecencia, decisión, recursos, caducidad y ejecución tienen su propio esquema: «Normas comunes de tramitación». Aquí solo se recogen las referencias que necesitan los arts. 1–8.",
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Art. 19 — Decisión del expediente",
+         "titulo": "Lo esencial",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Auto (Juez) o decreto (Secretario judicial) en el plazo de 5 días."
+             "t": "Oposición: en los 5 días siguientes a la citación; no hace contencioso el expediente (art. 17.3)."
             },
             {
-             "t": "Principio inquisitivo reforzado cuando se afecten intereses de menores o personas con discapacidad."
+             "t": "Comparecencia: dentro de los 30 días siguientes a la admisión; citación con al menos 15 días de antelación (arts. 17.3 y 18.1)."
             },
             {
-             "t": "Cosa decidida: firme la resolución, no puede iniciarse otro expediente sobre idéntico objeto salvo cambio de circunstancias; vincula expedientes conexos posteriores, incluyendo los tramitados por Notarios y Registradores."
+             "t": "Decisión: auto o decreto en 5 días (art. 19.1). Recursos: reposición, apelación o revisión (art. 20)."
             },
             {
-             "t": "La resolución de JV no impide el proceso contencioso posterior; la sentencia debe pronunciarse sobre su confirmación, modificación o revocación."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 20 — Recursos",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Resoluciones interlocutorias: recurso de reposición (LEC); en comparecencia, se resuelve oralmente en el acto."
-            },
-            {
-             "t": "Resoluciones definitivas del Juez: recurso de apelación (LEC); sin efecto suspensivo salvo ley en contrario."
-            },
-            {
-             "t": "Resoluciones definitivas del Secretario judicial: recurso de revisión ante el Juez (LEC)."
-            },
-            {
-             "t": "En todo caso, Abogado y Procurador son preceptivos para interponer los recursos."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 21 — Caducidad del expediente",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Plazo: 6 meses de inactividad de los interesados desde la última notificación, pese al impulso de oficio."
-            },
-            {
-             "t": "La declara el Secretario judicial mediante decreto; solo cabe recurso de revisión."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Art. 22 — Cumplimiento y ejecución",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "Ejecución conforme a los Arts. 521–522 LEC; puede instarse de inmediato."
-            },
-            {
-             "t": "Hechos inscribibles en el Registro Civil: se expide testimonio de la resolución."
-            },
-            {
-             "t": "Hechos inscribibles en el Registro de la Propiedad, Mercantil u otros: mandamiento expedido a instancia de parte; remisión por medios electrónicos."
-            },
-            {
-             "t": "Calificación del Registrador: limitada a la competencia del órgano, congruencia del mandato, formalidades extrínsecas y obstáculos registrales."
+             "t": "Caducidad: seis meses sin actividad de los interesados (art. 21)."
             }
            ]
           }
@@ -1823,78 +798,75 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Art. 2 LJV",
-       "Art. 7 LJV",
-       "LEC arts. 521-522",
-       "LEC recursos"
+       "LJV arts. 13–22"
       ],
-      "claves": "arts 19 20 21 22 decisión auto decreto 5 días cosa decidida recursos apelación revisión reposición caducidad 6 meses ejecución arts 521 522 LEC registro civil propiedad mercantil mandamiento calificación registrador"
+      "claves": "titulo i normas comunes tramitacion remision oposicion comparecencia decision recursos caducidad"
      }
     }
    ]
   },
   {
-   "titulo": "Indice de plazos procesales",
-   "recuento": "10 plazos de referencia (LEC y LJV)",
+   "titulo": "Índice de plazos",
+   "recuento": "10 plazos",
    "plegada": true,
    "bloques": [
     {
      "tabla": {
       "cabecera": [
-       "Acto o trámite procesal",
+       "Acto o trámite",
        "Plazo",
-       "Fundamento normativo"
+       "Fundamento"
       ],
       "filas": [
        [
-        "Resolución del expediente (auto o decreto)",
+        "Subsanación de defectos de la solicitud",
         "5 días",
-        "Art. 19 LJV"
+        "Art. 16.4 LJV"
        ],
        [
-        "Subsanación de defectos en la solicitud",
-        "5 días",
-        "Art. 16 LJV"
-       ],
-       [
-        "Formulación de oposición",
-        "5 días desde citación",
-        "Art. 17 LJV"
-       ],
-       [
-        "Informe escrito del Ministerio Fiscal",
+        "Informe escrito del Ministerio Fiscal (si solo hay que oírle)",
         "10 días",
-        "Art. 17 LJV"
+        "Art. 17.2 LJV"
        ],
        [
-        "Citación para comparecencia (antelación mínima)",
+        "Citación a la comparecencia (antelación mínima)",
         "15 días",
-        "Art. 17 LJV"
+        "Art. 17.3 LJV"
+       ],
+       [
+        "Oposición de un interesado",
+        "5 días desde la citación",
+        "Art. 17.3 LJV"
        ],
        [
         "Celebración de la comparecencia",
-        "Dentro de 30 días desde admisión",
-        "Art. 18 LJV"
+        "Dentro de 30 días desde la admisión",
+        "Art. 18.1 LJV"
        ],
        [
-        "Recurso de revisión contra decreto del Secretario judicial",
+        "Resolución (auto o decreto)",
         "5 días",
-        "LEC art. 454 bis"
+        "Art. 19.1 LJV"
        ],
        [
-        "Recurso de apelación contra auto del Juez",
+        "Recurso de reposición",
         "5 días",
-        "LEC art. 457"
+        "Art. 452 LEC"
        ],
        [
-        "Caducidad del expediente por inactividad",
-        "6 meses",
+        "Recurso de revisión contra el decreto del LAJ",
+        "5 días",
+        "Art. 454 bis LEC"
+       ],
+       [
+        "Recurso de apelación contra el auto del juez",
+        "20 días",
+        "Art. 458 LEC"
+       ],
+       [
+        "Caducidad del expediente",
+        "6 meses sin actividad de los interesados",
         "Art. 21 LJV"
-       ],
-       [
-        "Suspensión por prejudicialidad civil",
-        "Hasta resolución del proceso contencioso",
-        "LEC art. 43"
        ]
       ]
      }
@@ -1902,140 +874,88 @@ Neg.data.register({
    ]
   },
   {
-   "titulo": "Mapa de participantes y actores",
-   "recuento": "7 categorías · 25+ actores",
+   "titulo": "Participantes",
+   "recuento": "5 grupos · 14 participantes",
    "plegada": true,
    "bloques": [
     {
      "grupo": {
-      "titulo": "Órganos Jurisdiccionales",
+      "titulo": "Tribunales y oficina judicial",
       "tono": "c1",
       "items": [
        {
-        "t": "Juzgados de Primera Instancia (competencia objetiva, art. 2.1; LOPJ 45, 82)"
+        "t": "Tribunal de Instancia: Secciones Civiles y de lo Mercantil (art. 2.1 LJV; arts. 85 y 87 LOPJ)"
        },
        {
-        "t": "Juzgados de lo Mercantil (materia mercantil, art. 2.1; LOPJ 86 ter)"
+        "t": "Juez — decide los expedientes que le atribuye la ley o la regla del art. 2.3"
        },
        {
-        "t": "Audiencia Provincial (recursos de apelación, LEC 457)"
+        "t": "Letrado de la Administración de Justicia — impulsa, dirige y decide los demás (art. 2.3)"
        },
        {
-        "t": "Tribunal superior común (discrepancia en acumulación, art. 15)"
+        "t": "Audiencia Provincial — apelación (art. 20.2)"
        }
       ]
      }
     },
     {
      "grupo": {
-      "titulo": "Impulso y Resolución",
-      "tono": "c2",
-      "items": [
-       {
-        "t": "Secretario judicial (LAJ) (impulso, dirección, resolución residual; LOPJ 451)"
-       },
-       {
-        "t": "Juez (decisión fondo supuestos reservados, art. 2.3)"
-       },
-       {
-        "t": "Ministerio Fiscal (intervención preceptiva; CE 124; LOFSEM 3)"
-       }
-      ]
-     }
-    },
-    {
-     "grupo": {
-      "titulo": "Partes y Legitimados",
-      "tono": "c3",
-      "items": [
-       {
-        "t": "Solicitante (titular derechos; asume gastos, arts. 3.1, 7)"
-       },
-       {
-        "t": "Interesados (intereses legítimos, art. 3.1)"
-       },
-       {
-        "t": "Entidades públicas (legitimación por ministerio de la ley)"
-       },
-       {
-        "t": "Ministerio Fiscal (iniciativa de oficio, arts. 3.1, 4)"
-       }
-      ]
-     }
-    },
-    {
-     "grupo": {
-      "titulo": "Profesionales",
+      "titulo": "Fiscalía",
       "tono": "c4",
       "items": [
        {
-        "t": "Abogado / Letrado (defensa preceptiva/voluntaria; art. 3.2; LEC 23)"
-       },
-       {
-        "t": "Procurador (representación preceptiva/voluntaria; art. 3.2; LEC 31)"
-       },
-       {
-        "t": "Testigos (medio de prueba; gastos a cargo de quien los propone)"
-       },
-       {
-        "t": "Peritos (medio de prueba; honorarios a cargo de quien los propone)"
-       },
-       {
-        "t": "Profesional experto facilitador (adaptación discapacidad; art. 7 bis.2.c)"
-       },
-       {
-        "t": "Intérprete de lengua de signos (LSE/LSC; Ley 27/2007; art. 7 bis.2.b)"
+        "t": "Ministerio Fiscal — estado civil, menores, personas con discapacidad con medidas de apoyo y demás casos legales (art. 4)"
        }
       ]
      }
     },
     {
      "grupo": {
-      "titulo": "Competencia Concurrente",
-      "tono": "c5",
+      "titulo": "Partes",
+      "tono": "c3",
       "items": [
        {
-        "t": "Notarios (competencia concurrente; art. 6.1; Ley del Notariado)"
+        "t": "Solicitante — titular de derechos o intereses legítimos; soporta los gastos (arts. 3.1 y 7)"
        },
        {
-        "t": "Registradores (competencia concurrente; art. 6.1; Ley Hipotecaria)"
+        "t": "Interesados (art. 3.1)"
+       },
+       {
+        "t": "Abogado y procurador — cuando la ley lo prevé y siempre en recursos y desde la oposición (art. 3.2)"
        }
       ]
      }
     },
     {
      "grupo": {
-      "titulo": "Personas Protegidas",
+      "titulo": "Prueba y accesibilidad",
       "tono": "c6",
       "items": [
        {
-        "t": "Menores (protección reforzada CE 39; arts. 2.3, 4, 5)"
+        "t": "Testigos y peritos — sus gastos, a cargo de quien los propone (art. 7)"
        },
        {
-        "t": "Personas con discapacidad (sistema de apoyos; arts. 2.3, 4, 5, 7 bis; Ley 8/2021)"
+        "t": "Profesional experto facilitador (art. 7 bis.2.c)"
        },
        {
-        "t": "Persona de apoyo (curador, defensor judicial, guarda de hecho; art. 7 bis.2.a)"
+        "t": "Intérprete de lengua de signos (art. 7 bis.2.b)"
        },
        {
-        "t": "Persona de acompañamiento (de elección; desde primer contacto; art. 7 bis.2.d)"
+        "t": "Persona de apoyo y persona de acompañamiento (art. 7 bis.2.a y d)"
        }
       ]
      }
     },
     {
      "grupo": {
-      "titulo": "Órganos de Ejecución",
-      "tono": "c1",
+      "titulo": "Otras autoridades",
+      "tono": "c5",
       "items": [
        {
-        "t": "Registro Civil (inscripción de resoluciones; art. 22 LJV)"
+        "t": "Notarios y Registradores — expedientes en materias de competencia concurrente (arts. 6.1 y 19.3)"
        },
        {
-        "t": "Registro de la Propiedad (mandamiento; calificación registral; art. 22 LJV)"
-       },
-       {
-        "t": "Registro Mercantil (mandamiento por medios electrónicos; art. 22 LJV)"
+        "t": "Registros públicos — inscripción de lo resuelto (art. 22.2)"
        }
       ]
      }
@@ -2043,147 +963,75 @@ Neg.data.register({
    ]
   },
   {
-   "titulo": "Ecosistema normativo — conexiones relacionadas",
-   "recuento": "15 cuerpos normativos",
+   "titulo": "Ecosistema normativo",
+   "recuento": "7 normas",
    "plegada": true,
    "bloques": [
     {
      "norma": {
       "ley": "Ley 15/2015, de la Jurisdicción Voluntaria",
-      "titulo": "Título Preliminar y Títulos sucesivos",
-      "texto": "<strong>Arts. 1-8</strong> — Disposiciones generales de aplicación transversal. <strong>Arts. 13-22</strong> — Disposiciones comunes de tramitación. <strong>Títulos II-IX</strong> — Regulación específica de cada tipo de expediente.",
+      "titulo": "Estructura",
+      "texto": "<strong>Arts. 1–8</strong> — Disposiciones generales.<br><strong>Arts. 9–22</strong> — Normas comunes (con su propio esquema).<br><strong>Títulos II–IX</strong> — Expedientes.",
       "etiqueta": "Norma principal",
       "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "Ley 1/2000, de Enjuiciamiento Civil (LEC)",
-      "titulo": "Aplicación supletoria (art. 8) y conexiones procesales",
-      "texto": "<strong>Art. 43</strong> — Cuestión prejudicial. <strong>Art. 69</strong> — Acumulación de acciones. <strong>Arts. 133-147</strong> — Actos de comunicación. <strong>Arts. 241-246</strong> — Costas. <strong>Arts. 281-352</strong> — Prueba. <strong>Arts. 451-459</strong> — Apelación. <strong>Arts. 521-522</strong> — Ejecución no dineraria.",
-      "etiqueta": "Supletoriedad (art. 8)",
-      "tono": "t-ok"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Constitución Española de 1978",
-      "titulo": "Fundamentos constitucionales",
-      "texto": "<strong>Art. 24</strong> — Tutela judicial efectiva. <strong>Art. 39</strong> — Protección de menores. <strong>Art. 49</strong> — Protección de personas con discapacidad. <strong>Art. 117</strong> — Unidad jurisdiccional. <strong>Art. 124</strong> — Ministerio Fiscal.",
-      "etiqueta": "Fundamento constitucional",
-      "tono": "t-aviso"
-     }
-    },
-    {
-     "norma": {
-      "ley": "LOPJ — Ley Orgánica 6/1985",
-      "titulo": "Organización judicial y competencia",
-      "texto": "<strong>Art. 45</strong> — Juzgados de Primera Instancia. <strong>Art. 82</strong> — Competencia civil. <strong>Art. 86 ter</strong> — Juzgados de lo Mercantil. <strong>Art. 451</strong> — Funciones de Secretarios judiciales (LAJ).",
-      "etiqueta": "Organización judicial",
-      "tono": "t-plazo"
-     }
-    },
-    {
-     "norma": {
-      "ley": "LOFSEM — Estatuto Orgánico del Ministerio Fiscal",
-      "titulo": "Funciones del Ministerio Fiscal",
-      "texto": "<strong>Art. 3</strong> — Funciones del Fiscal en procesos civiles.",
-      "etiqueta": "Intervención fiscal",
-      "tono": "t-info"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley 8/2021, de 2 de junio",
-      "titulo": "Reforma para apoyo a personas con discapacidad",
-      "texto": "Incorporó el <strong>art. 7 bis</strong>. Reformó el Código Civil sustituyendo el régimen de incapacitación por el sistema de apoyos.",
-      "etiqueta": "Reforma art. 7 bis",
-      "tono": "t-plazo"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Código Civil",
-      "titulo": "Estado civil, capacidad jurídica y analogía",
-      "texto": "<strong>Art. 4.1</strong> — Principio de analogía. <strong>Arts. 215 y ss.</strong> — Capacidad jurídica y sistema de apoyos.",
-      "etiqueta": "Derecho sustantivo",
+      "ley": "Ley 1/2000, de Enjuiciamiento Civil",
+      "titulo": "Aplicación supletoria (art. 8 LJV)",
+      "texto": "<strong>Art. 43 LEC</strong> — Prejudicialidad civil.<br><strong>Arts. 437 y ss. LEC</strong> — Vista del juicio verbal (art. 18.2 LJV).<br><strong>Arts. 451–455 LEC</strong> — Reposición, revisión y apelación.<br><strong>Arts. 521–522 LEC</strong> — Ejecución (art. 22 LJV).",
+      "etiqueta": "Supletoriedad",
       "tono": "t-nota"
      }
     },
     {
      "norma": {
-      "ley": "Convención ONU sobre Discapacidad (2006)",
-      "titulo": "Accesibilidad y acceso a la justicia",
-      "texto": "<strong>Art. 9</strong> — Accesibilidad. <strong>Art. 12</strong> — Igual reconocimiento ante la ley. <strong>Art. 13</strong> — Acceso efectivo a la justicia.",
-      "etiqueta": "Derecho internacional",
-      "tono": "t-info"
+      "ley": "LOPJ (LO 1/2025)",
+      "titulo": "Tribunales de Instancia",
+      "texto": "<strong>Art. 85</strong> — Secciones Civiles.<br><strong>Art. 87</strong> — Secciones de lo Mercantil.",
+      "etiqueta": "Organización",
+      "tono": "t-plazo"
      }
     },
     {
      "norma": {
-      "ley": "Convención sobre los Derechos del Niño (ONU, 1989)",
-      "titulo": "Protección de menores",
-      "texto": "<strong>Art. 3</strong> — Interés superior del niño.",
-      "etiqueta": "Derecho internacional",
-      "tono": "t-info"
+      "ley": "Ley 8/2021, de 2 de junio",
+      "titulo": "Apoyo a las personas con discapacidad",
+      "texto": "Introdujo el art. 7 bis y dio la redacción vigente de los arts. 2.3, 4 y 5 LJV.",
+      "etiqueta": "Reforma",
+      "tono": "t-ok"
      }
     },
     {
      "norma": {
       "ley": "Ley 27/2007, de 23 de octubre",
       "titulo": "Lenguas de signos españolas",
-      "texto": "Reconoce la <strong>LSE</strong> y la <strong>LSC</strong>. Regula medios de apoyo a la comunicación oral.",
-      "etiqueta": "Accesibilidad comunicativa",
+      "texto": "Lenguas de signos y medios de apoyo a la comunicación oral (art. 7 bis.2.b LJV).",
+      "etiqueta": "Accesibilidad",
+      "tono": "t-ok"
+     }
+    },
+    {
+     "norma": {
+      "ley": "Convención ONU (2006)",
+      "titulo": "Derechos de las personas con discapacidad",
+      "texto": "Accesibilidad (art. 9 de la Convención), igual reconocimiento como persona ante la ley (art. 12 de la Convención) y acceso a la justicia (art. 13 de la Convención).",
+      "etiqueta": "Internacional",
       "tono": "t-info"
      }
     },
     {
      "norma": {
-      "ley": "Carta de los Derechos Fundamentales de la UE",
-      "titulo": "Prohibición de discriminación",
-      "texto": "<strong>Art. 21</strong> — No discriminación. <strong>Art. 26</strong> — Autonomía e integración.",
-      "etiqueta": "Derecho UE",
-      "tono": "t-info"
-     }
-    },
-    {
-     "norma": {
-      "ley": "CEDH — Convenio Europeo de Derechos Humanos",
-      "titulo": "Proceso equitativo",
-      "texto": "<strong>Art. 6</strong> — Proceso equitativo. <strong>Art. 14</strong> — Prohibición de discriminación.",
-      "etiqueta": "Derecho europeo",
-      "tono": "t-info"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley del Notariado (1862)",
-      "titulo": "Competencia notarial en JV",
-      "texto": "Competencia concurrente con el Secretario judicial (art. 6.1).",
-      "etiqueta": "Competencia concurrente",
-      "tono": "t-plazo"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley Hipotecaria y Reglamento Hipotecario",
-      "titulo": "Competencia registral",
-      "texto": "Competencia concurrente en determinadas materias (art. 6.1).",
-      "etiqueta": "Competencia concurrente",
-      "tono": "t-plazo"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Reglamento (UE) 2019/1111 — Bruselas II ter",
-      "titulo": "Competencia en materia matrimonial",
-      "texto": "Implicaciones en expedientes de JV sobre responsabilidad parental y desplazamientos de menores.",
-      "etiqueta": "Derecho UE",
+      "ley": "Ley 50/1981",
+      "titulo": "Estatuto Orgánico del Ministerio Fiscal",
+      "texto": "Funciones del Ministerio Fiscal (art. 3).",
+      "etiqueta": "Fiscalía",
       "tono": "t-info"
      }
     }
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título Preliminar · Arts. 1-8 y 13-22 · Versión fusionada completa · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título Preliminar · Arts. 1–8"
 });
