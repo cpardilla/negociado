@@ -130,7 +130,9 @@ test("parseCitation: ranges, lists, apartados, lettered articles", () => {
   assert.deepEqual(parseCitation("6, 7 y 9").map((r) => r.art), ["6", "7", "9"]);
   assert.deepEqual(parseCitation("517.2.9º")[0], { art: "517", apdo: "2", sub: "9" });
   // The "a" of "42 bis a)" is part of the article, not a range separator.
-  assert.deepEqual(parseCitation("42 bis a)")[0], { art: "42 bis", apdo: null, sub: "a" });
+  // and, as in the LJV, «42 bis a)» is the article itself (the LJV numbers three articles that way).
+  assert.deepEqual(parseCitation("42 bis a)")[0], { art: "42 bis a", apdo: null, sub: null });
+  assert.deepEqual(parseCitation("354 a)")[0], { art: "354", apdo: null, sub: "a" }, "without a suffix the letter stays a sub-item");
   // "18.4.ª" is a rule (regla), not apartado 4.
   assert.deepEqual(parseCitation("18.4.ª")[0], { art: "18", apdo: null, regla: "4" });
 });

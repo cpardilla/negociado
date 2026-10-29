@@ -117,7 +117,11 @@
       const m = t.match(new RegExp(`^(\\d+(?:\\s*(?:${SUFFIXES})(?![a-z]))?)((?:\\.\\d+)?)((?:\\.\\d+)?)\\s*(\\.?\\s*[ºª°])?\\.?\\s*(?:([a-zñ])\\))?`, "i"));
       if (!m) continue;
       const ordinalOnly = m[2] && !m[3] && m[4];
-      const ref = ordinalOnly
+      // "42 bis a)" (LJV) is an article of its own: a suffix followed by a letter, with no apartado.
+      const letteredSuffix = !m[2] && m[5] && /\D/.test(m[1]);
+      const ref = letteredSuffix
+        ? { art: articleKey(`${m[1]} ${m[5]})`), apdo: null, sub: null }
+        : ordinalOnly
         ? { art: articleKey(m[1]), apdo: null, regla: m[2].slice(1) }
         : { art: articleKey(m[1]), apdo: m[2] ? m[2].slice(1) : null, sub: m[3] ? m[3].slice(1) : m[5] || null };
       if (sep && /^(a|al|–|-)$/i.test(sep) && parts.length && !ref.apdo) parts[parts.length - 1].hasta = ref.art;
