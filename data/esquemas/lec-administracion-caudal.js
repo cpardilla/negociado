@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E04.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E04.json; revisado con el BOE (registro: docs/revision/lec-administracion-caudal.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "lec-administracion-caudal",
@@ -18,13 +18,13 @@ Neg.data.register({
   "805"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20261007",
   "origen": "E04"
  },
  "cabecera": {
   "migas": "LEY 1/2000, DE 7 DE ENERO, DE ENJUICIAMIENTO CIVIL · LIBRO IV — PROCESOS ESPECIALES · TÍTULO II: DE LA DIVISIÓN JUDICIAL DE PATRIMONIOS · CAPÍTULO I: DE LA DIVISIÓN DE LA HERENCIA · SECCIÓN 3.ª",
-  "subtitulo": "Artículos 797 a 805 LEC. Incluye análisis de conexiones normativas internas (Arts. 782-796, 793, 438), remisiones al Código Civil, legislación hipotecaria, notarial y de jurisdicción voluntaria.",
+  "subtitulo": "Artículos 797 a 805 LEC · Posesión, representación, cuentas, conservación, depósito de lo recaudado, enajenaciones, retribución y administraciones subalternas",
   "etiquetas": [
    "Ley de Enjuiciamiento Civil",
    "Arts. 797–805",
@@ -93,7 +93,7 @@ Neg.data.register({
              "t": "<strong>Prestación de caución:</strong> El administrador debe haber prestado caución antes de ser puesto en posesión."
             },
             {
-             "t": "<strong>Naturaleza:</strong> La caución constituye garantía frente a posibles daños o perjuicios derivados de la administración (conexión con régimen general de cauciones procesales)."
+             "t": "<strong>Naturaleza:</strong> La caución la fija el tribunal al nombrarlo y responde de los bienes que se le entreguen; puede dispensarse en los casos del art. 795 (reglas 3.ª y 4.ª)."
             }
            ]
           }
@@ -164,7 +164,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Nota de conexión normativa:</strong> La inscripción produce efectos frente a terceros de conformidad con los principios hipotecarios de publicidad fe pública (Arts. 17 y 32 LH). El mandamiento judicial debe cumplir los requisitos del art. 209 RH para su acceso al Registro."
+            "texto": "<strong>Nota de conexión normativa:</strong> Es una constancia potestativa («podrá hacerse constar»), mediante mandamiento del Letrado de la Administración de Justicia con los requisitos de la legislación hipotecaria; advierte a terceros de que las fincas están bajo administración judicial."
            }
           }
          ]
@@ -172,9 +172,8 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Legislación Hipotecaria",
-       "Registro de la Propiedad",
-       "Caución previa"
+       "LEC art. 795",
+       "Legislación hipotecaria"
       ],
       "claves": "posesión cargo administrador herencia caución letrado administración justicia testimonio copia auténtica registro propiedad mandamiento hipotecaria acreditación representación personas designadas fincas estado administración"
      }
@@ -214,7 +213,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Fundamento:</strong> Durante la yacencia hereditaria (CC arts. 998-1012), no existiendo heredero aceptante, el administrador asume la defensa del acervo hereditario como representante necesario de la masa."
+            "texto": "<strong>Fundamento:</strong> Mientras no hay aceptación, la herencia no tiene un titular que la defienda: el administrador la representa en juicio hasta la declaración de herederos."
            }
           }
          ]
@@ -244,34 +243,16 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Conexión con el CC:</strong> Una vez aceptada la herencia (CC arts. 988-999), los herederos adquieren la titularidad del patrimonio hereditario, reduciendo consecuentemente el ámbito de actuación del administrador a funciones meramente conservatorias y de administración ordinaria."
+            "texto": "<strong>Conexión con el CC:</strong> Aceptada la herencia (arts. 988 y ss. CC), los herederos actúan por sí en lo demás; el administrador conserva la representación solo en lo relativo a la administración, custodia y conservación del caudal."
            }
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Notas sobre legitimación",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Naturaleza jurídica:</strong> La representación del administrador es una forma de legitimación extraordinaria ad processum (no ad causam)."
-            },
-            {
-             "t": "<strong>Efecto principal:</strong> Permite al administrador comparecer en juicio en nombre de la herencia como entidad patrimonial temporalmente sin titular."
-            }
-           ]
           }
          ]
         }
        }
       ],
       "referencias": [
-       "CC Arts. 988-1012",
-       "Declaración de herederos",
-       "Herencia yacente"
+       "CC arts. 988 y ss.",
+       "Declaración de herederos"
       ],
       "claves": "representación herencia administrador pleitos acciones difunto declaración herederos aceptación custodia conservación gestión conducente plena limitada proceso principiado fallecimiento causante"
      }
@@ -311,7 +292,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Plazo identificado:</strong> Máximo 1 año entre rendiciones periódicas. Este límite opera como techo inderogable, independientemente de la complejidad del caudal."
+            "texto": "<strong>Plazo identificado:</strong> Máximo 1 año entre rendiciones periódicas, cualquiera que sea la complejidad del caudal."
            }
           }
          ]
@@ -408,9 +389,6 @@ Neg.data.register({
             },
             {
              "t": "<strong>Naturaleza:</strong> Rendirá una cuenta final complementaria de las ya presentadas (abarca el período desde la última cuenta parcial hasta el cese)."
-            },
-            {
-             "t": "<strong>Contenido:</strong> Debe comprender la totalidad de operaciones realizadas durante toda la gestión, consolidando las cuentas parciales previas."
             }
            ]
           }
@@ -464,7 +442,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Naturaleza del silencio:</strong> Se trata de un silencio aprobatorio o positivo, no declarativo. La ausencia de impugnación en plazo produce la aprobación automática de las cuentas por ministerio de la ley."
+            "texto": "<strong>Naturaleza del silencio:</strong> La falta de oposición en el término no aprueba las cuentas por sí sola: el Letrado de la Administración de Justicia tiene que dictar el decreto que las aprueba, exime de responsabilidad al administrador y manda devolver la caución."
            }
           }
          ]
@@ -480,13 +458,10 @@ Neg.data.register({
              "t": "<strong>Plazo:</strong> Dentro del término común señalado por el LAJ (tiempo hábil)."
             },
             {
-             "t": "<strong>Traslado:</strong> Se dará traslado del escrito de impugnación al cuentadante (administrador) para que conteste conforme al art. 438 LEC."
+             "t": "<strong>Traslado:</strong> Se da traslado del escrito de impugnación al cuentadante (administrador) para que conteste conforme a los arts. 404 y ss. LEC (contestación del juicio ordinario: veinte días, art. 404.1)."
             },
             {
-             "t": "<strong>Solicitud de vista:</strong> Las partes, en sus respectivos escritos de impugnación y contestación, podrán solicitar la celebración de vista."
-            },
-            {
-             "t": "<strong>Tramitación subsiguiente:</strong> Continuará con arreglo a lo dispuesto para el juicio verbal (LEC Libro II, Título III)."
+             "t": "<strong>Tramitación subsiguiente:</strong> Después, se sigue con arreglo a lo dispuesto para el juicio verbal (arts. 437 y ss. LEC)."
             }
            ]
           },
@@ -494,7 +469,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Conexión con el art. 438 LEC:</strong> Este artículo regula la contestación a la demanda en el juicio verbal. Su aplicación aquí es analógica: el administrador-cuentadante contestará a los motivos de impugnación alegando cuanto considere pertinente en su defensa."
+            "texto": "<strong>Remisión a los arts. 404 y ss. LEC:</strong> El art. 800.4 remite a los arts. 404 y ss. (contestación en el juicio ordinario), no al art. 438 (contestación en el juicio verbal): la contestación sigue las reglas del ordinario y el resto de la tramitación, las del verbal."
            }
           }
          ]
@@ -502,10 +477,8 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC Art. 438",
-       "Juicio Verbal",
-       "Caución",
-       "Silencio aprobatorio"
+       "LEC arts. 404 y ss.",
+       "LEC arts. 437 y ss."
       ],
       "claves": "rendición final cuentas cese impugnación oposición término común decreto aprobación exención responsabilidad caución traslado contestación artículo 438 vista juicio verbal complementaria manifiesto partes oficia silencio aprobatorio"
      }
@@ -537,16 +510,9 @@ Neg.data.register({
              "t": "<strong>Deber de rentabilidad:</strong> Debe procurar que los bienes produzcan las rentas, productos o utilidades que corresponda según su naturaleza."
             },
             {
-             "t": "<strong>Alcance subjetivo:</strong> La responsabilidad es personal y directa del administrador, sin perjuicio de las acciones de regreso que puedan corresponder."
+             "t": "<strong>Alcance subjetivo:</strong> La ley lo dice expresamente: «bajo su responsabilidad»."
             }
            ]
-          },
-          {
-           "nota": {
-            "tono": "t-nota",
-            "etiqueta": "",
-            "texto": "<strong>Fundamento civil:</strong> Este deber conecta con la figura del administrador de hecho de la herencia yacente (CC art. 998) y con las reglas de la posesión civil en interés de la herencia (CC arts. 1967-1969)."
-           }
           }
          ]
         }
@@ -561,7 +527,7 @@ Neg.data.register({
              "t": "<strong>Facultad autónoma:</strong> El administrador podrá realizar por sí mismo las reparaciones ordinarias que sean indispensables para la conservación de los bienes."
             },
             {
-             "t": "<strong>Criterio de ordinariedad:</strong> Son aquellas necesarias para el mantenimiento habitual de los bienes, sin alterar su estructura ni valor sustancial."
+             "t": "<strong>Criterio de ordinariedad:</strong> La ley no las define: son las indispensables para la conservación de los bienes."
             },
             {
              "t": "<strong>No requieren autorización previa:</strong> Pueden realizarse directamente, debiendo luego justificarse en la rendición de cuentas."
@@ -598,7 +564,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Conexión con el art. 793.3 LEC:</strong> Este apartado identifica a los «interesados» que deben ser oídos: los que tengan reconocido un derecho de any kind sobre la herencia, incluyendo acreedores, legatarios, cotitulares y cualquiera con interés legítimo."
+            "texto": "<strong>Conexión con el art. 793.3 LEC:</strong> Los «interesados» son los del art. 793.3: cónyuge sobreviviente, parientes conocidos con posible derecho (si no hay testamento ni declaración de herederos), herederos y legatarios de parte alícuota, acreedores que instaron la intervención o personados en la división, Ministerio Fiscal y Abogado del Estado en sus casos."
            }
           }
          ]
@@ -606,8 +572,7 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC Art. 793.3",
-       "CC Arts. 998, 1967-1969",
+       "LEC art. 793.3",
        "Reconocimiento pericial"
       ],
       "claves": "conservación bienes herencia responsabilidad menoscabo rentas productos utilidades reparaciones ordinarias indispensables extraordinarias gastos comparecencia interesados artículo 793 reconocimiento pericial presupuesto circunstancias caso"
@@ -736,7 +701,7 @@ Neg.data.register({
              "t": "<strong>Ámbito objetivo:</strong> Se refiere exclusivamente a los bienes ya incluidos en el inventario hereditario."
             },
             {
-             "t": "<strong>Actos comprendidos:</strong> Enajenación (venta, permuta, donación) y gravamen (hipoteca, prenda, servidumbre, arrendamiento superior a cierto plazo según jurisprudencia)."
+             "t": "<strong>Actos comprendidos:</strong> Enajenación (venta, permuta, donación…) y gravamen (hipoteca, prenda…)."
             }
            ]
           },
@@ -757,13 +722,13 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Excepción 1.ª — Bienes perecederos:</strong> Los que puedan deteriorarse por el paso del tiempo o su naturaleza (productos agrícolas, ganado, alimentos perecederos)."
+             "t": "<strong>Excepción 1.ª — Bienes perecederos:</strong> Los que puedan deteriorarse (por ejemplo, productos perecederos)."
             },
             {
-             "t": "<strong>Excepción 2.ª — Bienes de conservación onerosa:</strong> Los que sean de difícil y costosa conservación (inmuebles en ruina inminente, vehículos de mantenimiento elevado, maquinaria obsoleta)."
+             "t": "<strong>Excepción 2.ª — Bienes de conservación onerosa:</strong> Los que sean de difícil y costosa conservación."
             },
             {
-             "t": "<strong>Excepción 3.ª — Oportunidad ventajosa:</strong> Los frutos para cuya enajenación se presenten circunstancias que se estimen ventajosas (cotizaciones favorables, ofertas excepcionales)."
+             "t": "<strong>Excepción 3.ª — Oportunidad ventajosa:</strong> Los frutos para cuya enajenación se presenten circunstancias que se estimen ventajosas."
             },
             {
              "t": "<strong>Excepción 4.ª — Necesidad de liquidez:</strong> Los demás bienes cuya enajenación sea necesaria para el pago de deudas de la herencia o para cubrir otras atenciones de la administración."
@@ -786,13 +751,13 @@ Neg.data.register({
              "t": "<strong>Audiencia:</strong> Oyendo a los interesados a que se refiere el apartado 3 del artículo 793."
             },
             {
-             "t": "<strong>Resolución:</strong> Providencia del tribunal decretando la venta (motivada)."
+             "t": "<strong>Resolución:</strong> Providencia del tribunal decretando la venta."
             },
             {
-             "t": "<strong>Forma de realización — Opción A:</strong> Pública subasta conforme a la legislación notarial."
+             "t": "<strong>Forma de realización — Opción A:</strong> Pública subasta conforme a la legislación notarial (subasta ante Notario, arts. 72–77 de la Ley del Notariado)."
             },
             {
-             "t": "<strong>Forma de realización — Opción B:</strong> Procedimiento de jurisdicción voluntaria."
+             "t": "<strong>Forma de realización — Opción B:</strong> Procedimiento de jurisdicción voluntaria (subasta voluntaria, arts. 108 y ss. LJV)."
             },
             {
              "t": "<strong>Forma especial — Valores cotizados:</strong> Los admitidos a cotización oficial se venderán a través del mercado oficial correspondiente."
@@ -803,7 +768,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Conexión con la Ley de Jurisdicción Voluntaria (Ley 15/2015):</strong> La venta en jurisdicción voluntaria sigue el procedimiento de los arts. 271 y ss. LJyV, con intervención notarial o del secretario judicial según casos. La subasta notarial se rige por la Ley 21/2007, de Notaría."
+            "texto": "<strong>Formas de la subasta:</strong> La subasta voluntaria judicial se tramita ante el Letrado de la Administración de Justicia (arts. 108 y ss. LJV); la notarial, conforme a los arts. 72–77 de la Ley del Notariado."
            }
           }
          ]
@@ -811,9 +776,9 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC Art. 793.3",
-       "Ley Notarial 21/2007",
-       "Ley JV 15/2015"
+       "LEC art. 793.3",
+       "LN arts. 72–77",
+       "LJV arts. 108 y ss."
       ],
       "claves": "prohibición enajenar gravar bienes inventariados excepciones deteriorarse difícil costosa conservación frutos ventajosas pago deudas atenciones administración propuesta administrador interesados artículo 793 providencia pública subasta notarial jurisdicción voluntaria cotización oficial mercado valores"
      }
@@ -839,22 +804,15 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Venta de frutos y bienes muebles:</strong> Sobre el producto líquido, percibirá el <strong>2%</strong>. Incluye cosechas, ganadería, mobiliario, vehículos, dinero en efectivo obtenido."
+             "t": "<strong>Venta de frutos y bienes muebles:</strong> Sobre el producto líquido, percibirá el <strong>2%</strong>."
             },
             {
-             "t": "<strong>Venta de bienes inmuebles (raíces) y cobranza de valores:</strong> Sobre el producto líquido, el <strong>1%</strong>. Comprende fincas, solares, edificios, y cualquier valor mobiliario cobrado."
+             "t": "<strong>Venta de bienes inmuebles (raíces) y cobranza de valores:</strong> Sobre el producto líquido, el <strong>1%</strong>."
             },
             {
-             "t": "<strong>Venta de efectos públicos:</strong> Sobre el producto líquido, el <strong>medio por 100 (0,5%)</strong>. Se refiere a títulos de deuda pública, bonos del Estado, obligaciones similares."
+             "t": "<strong>Venta de efectos públicos:</strong> Sobre el producto líquido, el <strong>medio por 100 (0,5%)</strong>."
             }
            ]
-          },
-          {
-           "nota": {
-            "tono": "t-nota",
-            "etiqueta": "",
-            "texto": "<strong>Concepto de «producto líquido»:</strong> Es el importe neto resultante de deducir del precio de venta los gastos directos de la enajenación (tasación, publicidad, comisiones). No se computan los gastos generales de administración."
-           }
           }
          ]
         }
@@ -883,7 +841,7 @@ Neg.data.register({
              ]
             },
             {
-             "t": "<strong>Forma de fijación:</strong> Mediante resolución motivada del LAJ, revisable en la rendición de cuentas."
+             "t": "<strong>Forma de fijación:</strong> Lo señala el LAJ dentro de ese margen."
             }
            ]
           }
@@ -940,7 +898,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Conservación automática:</strong> Se mantienen las administraciones subalternas que para el cuidado de sus bienes tuviera el finado."
+             "t": "<strong>Conservación automática:</strong> Se conservan las administraciones subalternas que para el cuidado de sus bienes tuviera el finado."
             },
             {
              "t": "<strong>Mantenimiento de condiciones:</strong> Con la misma retribución y facultades que aquél les hubiere otorgado."
@@ -1032,7 +990,7 @@ Neg.data.register({
   },
   {
    "titulo": "Indice de plazos procesales",
-   "recuento": "4 trámites identificados",
+   "recuento": "4 trámites",
    "plegada": true,
    "bloques": [
     {
@@ -1055,8 +1013,8 @@ Neg.data.register({
        ],
        [
         "Contestación del cuentadante a la impugnación de cuentas",
-        "Según art. 438 LEC (10 días desde traslado)",
-        "Artículo 800.4 + Art. 438 LEC"
+        "20 días (contestación del juicio ordinario)",
+        "Art. 800.4 + art. 404.1 LEC"
        ],
        [
         "Acceso a la inspección de cuentas por las partes",
@@ -1070,7 +1028,7 @@ Neg.data.register({
   },
   {
    "titulo": "Mapa de participantes y actores",
-   "recuento": "6 categorías · 14+ actores",
+   "recuento": "6 grupos · 18 participantes",
    "plegada": true,
    "bloques": [
     {
@@ -1079,10 +1037,7 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Juez/Juzgado (resuelve reparaciones extraordinarias, ventas, provisiones de fondos)"
-       },
-       {
-        "t": "Tribunal (señala plazos de cuentas, dicta providencias)"
+        "t": "Tribunal (señala los plazos de las cuentas; resuelve sobre gastos extraordinarios, provisiones de fondos y ventas)"
        },
        {
         "t": "Letrado de la Administración de Justicia (LAJ) (pone en posesión, expide testimonios, aprueba cuentas, dicta decretos, señala términos, convoca comparecencias)"
@@ -1096,13 +1051,10 @@ Neg.data.register({
       "tono": "c2",
       "items": [
        {
-        "t": "Administrador judicial de la herencia (figura central regulada en esta sección; designado en el procedimiento divisorio)"
+        "t": "Administrador judicial de la herencia (nombrado por auto tras el inventario, art. 795)"
        },
        {
         "t": "Administradores subalternos (preexistentes del causante; dependientes del judicial)"
-       },
-       {
-        "t": "Administradores interinos/sustitutos (posibles en caso de cese, muerte o incapacidad del titular)"
        }
       ]
      }
@@ -1116,30 +1068,24 @@ Neg.data.register({
         "t": "Herederos (una vez aceptada la herencia; limitan la representación del administrador)"
        },
        {
-        "t": "Hederos aparentes o putativos (mientras no se declare heredero definitivo)"
-       },
-       {
-        "t": "Causante/difunto (sus derechos y acciones se ejercitan por el administrador hasta declaración de herederos)"
+        "t": "Causante (sus acciones las ejercita el administrador hasta la declaración de herederos, art. 798)"
        },
        {
         "t": "Legatarios (interesados en la conservación del caudal)"
        },
        {
-        "t": "Interesados del art. 793.3 (oidos en comparecencias sobre ventas y reparaciones)"
+        "t": "Interesados del art. 793.3 (oídos sobre reparaciones extraordinarias y ventas)"
        }
       ]
      }
     },
     {
      "grupo": {
-      "titulo": "Acreedores y tercero",
+      "titulo": "Acreedores y terceros",
       "tono": "c4",
       "items": [
        {
         "t": "Acreedores de la herencia (pueden ser interesados; su pago puede justificar ventas excepcionales)"
-       },
-       {
-        "t": "Acreedores del causante (distintos de los de la herencia; legitimación según CC)"
        },
        {
         "t": "Registro de la Propiedad (inscripción del estado de administración y nombramiento)"
@@ -1152,7 +1098,7 @@ Neg.data.register({
     },
     {
      "grupo": {
-      "titulo": "Profesionales interviniente",
+      "titulo": "Profesionales intervinientes",
       "tono": "c5",
       "items": [
        {
@@ -1177,9 +1123,6 @@ Neg.data.register({
        },
        {
         "t": "Entidades de crédito depositarias (custodia de fondos consignados)"
-       },
-       {
-        "t": "Compañías aseguradoras (seguros de bienes hereditarios, eventualmente)"
        }
       ]
      }
@@ -1188,14 +1131,14 @@ Neg.data.register({
   },
   {
    "titulo": "Ecosistema normativo — conexiones relacionadas",
-   "recuento": "12 cuerpos normativos",
+   "recuento": "8 normas",
    "plegada": true,
    "bloques": [
     {
      "norma": {
       "ley": "Ley 1/2000 de Enjuiciamiento Civil",
-      "titulo": "Artículo 793 — Intervenedores y personados en la división judicial",
-      "texto": "<strong>Apartado 3:</strong> Identifica a los «interesados» que deben ser oídos en comparecencias. Remitido expresamente en los arts. 801.2 (reparaciones extraordinarias) y 803.3 (autorización de ventas). Determina quiénes tienen legitimación para intervenir en el procedimiento divisorio.",
+      "titulo": "Art. 793.3 — Interesados citados al inventario",
+      "texto": "<strong>Apartado 3:</strong> Identifica a los «interesados» que deben ser oídos en comparecencias. Remitido expresamente en los arts. 801.2 (reparaciones extraordinarias) y 803.3 (autorización de ventas). Son los que deben ser citados para formar el inventario (cónyuge, parientes conocidos, herederos y legatarios de parte alícuota, acreedores, Ministerio Fiscal y Abogado del Estado en sus casos).",
       "etiqueta": "Remisión interna",
       "tono": "t-info"
      }
@@ -1203,8 +1146,8 @@ Neg.data.register({
     {
      "norma": {
       "ley": "Ley 1/2000 de Enjuiciamiento Civil",
-      "titulo": "Artículo 438 — Contestación a la demanda en juicio verbal",
-      "texto": "<strong>Aplicación analógica:</strong> Remitido en el art. 800.4 para regular la contestación del cuentadante (administrador) al escrito de impugnación de cuentas presentado por cualquier parte. Establece el plazo de 10 días y el contenido de la contestación.",
+      "titulo": "Arts. 404 y ss. — Contestación (y no el art. 438)",
+      "texto": "<strong>Remisión del art. 800.4:</strong> No es el aplicable: el art. 800.4 remite a los arts. 404 y ss. (contestación en el juicio ordinario, veinte días) y, después, a la tramitación del juicio verbal.",
       "etiqueta": "Procesal civil",
       "tono": "t-plazo"
      }
@@ -1213,7 +1156,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 1/2000 de Enjuiciamiento Civil",
       "titulo": "Arts. 782-796 — Procedimiento de división judicial de herencia",
-      "texto": "<strong>Contexto procedimental:</strong> Los arts. 797-805 se insertan en el marco del procedimiento de división judicial de la herencia iniciado en el art. 782. El nombramiento del administrador se produce en fases anteriores (inventario, avalúo). La administración es una fase intermedia hasta la partición.",
+      "texto": "<strong>Contexto procedimental:</strong> La administración nace de la intervención del caudal (arts. 790–796): hecho el inventario, el tribunal nombra administrador por auto (art. 795). Dura hasta que cesa la intervención (art. 796), que puede llegar a la entrega de los bienes adjudicados en la división (art. 788).",
       "etiqueta": "Marco procedimental",
       "tono": "t-info"
      }
@@ -1230,45 +1173,27 @@ Neg.data.register({
     {
      "norma": {
       "ley": "Código Civil (Real Decreto de 24 julio 1889)",
-      "titulo": "Arts. 988-1012 — Aceptación y repudiación de la herencia",
-      "texto": "<strong>Conexión con art. 798:</strong> La aceptación de la herencia (arts. 988-999) marca el punto de inflexión que reduce la representación del administrador de plena a limitada. La herencia yacente (periodo entre apertura y aceptación) se rige por los arts. 998-1012.",
+      "titulo": "Arts. 988 y ss. CC — Aceptación y repudiación de la herencia",
+      "texto": "<strong>Conexión con art. 798:</strong> La aceptación de la herencia (arts. 988 y ss.) reduce la representación del administrador a la administración, custodia y conservación del caudal (art. 798).",
       "etiqueta": "Derecho civil sustantivo",
       "tono": "t-ok"
      }
     },
     {
      "norma": {
-      "ley": "Código Civil (Real Decreto de 24 julio 1889)",
-      "titulo": "Arts. 1967-1969 — Posesión en interés de la herencia",
-      "texto": "<strong>Conexión con art. 801:</strong> El deber de conservación del administrador conecta con la posesión civilísima en interés de la herencia (art. 1967), que atribuye al poseedor los frutos percibidos y le obliga a la conservación de la cosa.",
-      "etiqueta": "Derecho civil sustantivo",
-      "tono": "t-ok"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Código Civil (Real Decreto de 24 julio 1889)",
-      "titulo": "Art. 998 — Posesión de la herencia yacente",
-      "texto": "<strong>Administrador de hecho:</strong> Quien esté en posesión de una herencia yacente tiene las obligaciones de un administrador de bienes ajenos. El administrador judicial del art. 797 asume funciones análogas pero con habilitación judicial expresa.",
-      "etiqueta": "Derecho civil sustantivo",
-      "tono": "t-ok"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley Hipotecaria (Decreto 8 febrero 1946, texto refundido RD 1093/1997)",
+      "ley": "Ley Hipotecaria (Decreto de 8 de febrero de 1946)",
       "titulo": "Inscripción del estado de administración hereditaria",
-      "texto": "<strong>Art. 9 LH + Art. 209 RH:</strong> El art. 797.3 exige que el mandamiento de inscripción cumpla los requisitos de la legislación hipotecaria. Esto incluye: competencia del juez, certificación del secretario, descripción de fincas, y datos del administrador nominado.",
+      "texto": "El art. 797.3 permite hacer constar en el Registro de la Propiedad el estado de administración de las fincas y el nombramiento, mediante mandamiento del Letrado de la Administración de Justicia con los requisitos de la legislación hipotecaria.",
       "etiqueta": "Registral",
       "tono": "t-aviso"
      }
     },
     {
      "norma": {
-      "ley": "Ley 21/2007, de 8 de noviembre, de Notaría",
+      "ley": "Ley del Notariado, arts. 72–77",
       "titulo": "Subasta notarial de bienes hereditarios",
-      "texto": "<strong>Conexión con art. 803.3:</strong> La venta de bienes del caudal autorizada judicialmente puede verificarse en pública subasta notarial. El notario actúa como funcionario público garantizando la transparencia del procedimiento de realización.",
-      "etiqueta": "Venta forzosa",
+      "texto": "<strong>Conexión con art. 803.3:</strong> La venta autorizada por el tribunal puede hacerse en pública subasta ante Notario, regida por los arts. 72–77 de la Ley del Notariado.",
+      "etiqueta": "Subasta",
       "tono": "t-ok"
      }
     },
@@ -1276,31 +1201,13 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 15/2015, de 2 de julio, de Jurisdicción Voluntaria",
       "titulo": "Procedimiento de realización de bienes hereditarios",
-      "texto": "<strong>Arts. 271 y ss.:</strong> Alternativa a la subasta notarial para la venta de bienes del caudal (art. 803.3). El LAJ dirige el procedimiento con intervención de los interesados, publicidad de la subasta y adjudicación al mejor postor.",
+      "texto": "<strong>Arts. 108 y ss.:</strong> Subasta voluntaria ante el Letrado de la Administración de Justicia, alternativa a la notarial para la venta de bienes del caudal (art. 803.3).",
       "etiqueta": "Procedimiento alternativo",
       "tono": "t-info"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Legislación del Mercado de Valores (LMV, RD 4/2015)",
-      "titulo": "Venta de valores cotizados del caudal hereditario",
-      "texto": "<strong>Conexión con art. 803.3:</strong> Los valores admitidos a cotización oficial se venderán a través del mercado correspondiente. Aplicación de normas sobre órdenes de venta, liquidación y registro de transacciones.",
-      "etiqueta": "Financiero",
-      "tono": "t-info"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley 1/2000 de Enjuiciamiento Civil",
-      "titulo": "Régimen general de cauciones procesales",
-      "texto": "<strong>Conexión con arts. 797 y 800:</strong> La caución que debe prestar el administrador (requisito previo a la posesión, art. 797) y que se devuelve tras la aprobación de cuentas (art. 800.3) se rige por las reglas generales de cauciones del art. 581 y concordantes LEC.",
-      "etiqueta": "Garantías procesales",
-      "tono": "t-nota"
      }
     }
    ]
   }
  ],
- "pie": "Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil · Libro IV, Título II, Capítulo I, Sección 3.ª (Arts. 797-805) · Mapa mental jurídico interactivo completo con ecosistema normativo expandido · Incluye conexiones con Código Civil (Arts. 988-1012, 1967-1969, 998), Legislación Hipotecaria, Ley Notarial 21/2007, Ley de Jurisdicción Voluntaria 15/2015, LMV y LEC interna (Arts. 782-796, 793, 438, 581) · Generado como plantilla HTML reutilizable 100% offline"
+ "pie": "LEC 1/2000, de 7 de enero · Libro IV, Título II, Capítulo I, Sección 3.ª · Arts. 797–805"
 });
