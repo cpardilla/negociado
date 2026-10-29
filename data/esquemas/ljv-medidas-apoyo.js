@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E14.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E14.json; revisado con el BOE (registro: docs/revision/ljv-medidas-apoyo.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-medidas-apoyo",
@@ -12,19 +12,19 @@ Neg.data.register({
   "42 bis c"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E14"
  },
  "cabecera": {
   "migas": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO III BIS",
-  "subtitulo": "Artículos 42 bis a), b) y c) LJV",
+  "subtitulo": "Artículos 42 bis a), 42 bis b) y 42 bis c) LJV · Ámbito, competencia y legitimación; procedimiento; auto y revisión",
   "etiquetas": [
    "LJV 15/2015",
    "Arts. 42 bis a)–c)",
    "Título II, Cap. III bis",
    "Ley 8/2021",
-   "CC Arts. 249–299"
+   "CC Arts. 249–298"
   ]
  },
  "categorias": [
@@ -87,7 +87,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Juzgado de Primera Instancia</strong> del lugar donde resida la persona con discapacidad. Criterio: residencia habitual (fuero personal real)."
+             "t": "<strong>Juzgado de Primera Instancia</strong> del lugar donde resida la persona con discapacidad. Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista, con carácter exclusivo y excluyente (art. 86.5 g) LOPJ); si no, la Sección Civil."
             }
            ]
           },
@@ -161,7 +161,7 @@ Neg.data.register({
              "t": "La persona con discapacidad <strong>podrá actuar con su propia defensa y representación</strong>. Presunción de capacidad procesal: no se exige medida de apoyo previa para iniciar o participar en el expediente."
             },
             {
-             "t": "Si no fuera previsible que proceda a realizar por sí misma tal designación, con la solicitud se pedirá que se le nombre un <strong>defensor judicial</strong>, que actuará por medio de <strong>Abogado y Procurador</strong>. Art. 27 LJV Arts. 295–299 CC"
+             "t": "Si no fuera previsible que proceda a realizar por sí misma tal designación, con la solicitud se pedirá que se le nombre un <strong>defensor judicial</strong>, que actuará por medio de <strong>Abogado y Procurador</strong>. Art. 27 LJV Arts. 295–298 CC"
             }
            ]
           }
@@ -338,7 +338,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Matización crítica — no es oposición</strong>No se considerará oposición a los efectos señalados la relativa únicamente a la <strong>designación como curador de una persona concreta</strong>. Si la persona se opone a quién sea curador (pero no a la curatela en sí), el expediente continúa y el Juez designará otra persona."
+            "texto": "<strong>Matización crítica — no es oposición</strong>No se considerará oposición a los efectos señalados la relativa únicamente a la <strong>designación como curador de una persona concreta</strong>. Si solo se discute quién debe ser curador (no la curatela en sí), el expediente continúa y la designación se resuelve en él conforme a la legislación civil (arts. 275 y ss. CC)."
            }
           }
          ]
@@ -354,7 +354,7 @@ Neg.data.register({
              "t": "Sin perjuicio del cierre del expediente voluntario, la autoridad judicial podrá adoptar <strong>provisionalmente las medidas de apoyo</strong> que considere convenientes sobre la persona o su patrimonio."
             },
             {
-             "t": "Plazo máximo: 30 días. Durante ese plazo debe presentarse demanda en proceso contencioso Art. 756 LEC si se pretende continuar con la adopción forzosa de medidas."
+             "t": "Las medidas provisionales se mantienen como máximo treinta días, salvo que antes se presente la demanda de adopción de medidas de apoyo en el proceso contencioso (arts. 756 y ss. LEC)."
             }
            ]
           }
@@ -392,7 +392,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Las medidas adoptadas en el auto que ponga fin al expediente deben ser <strong>conformes a la legislación civil</strong> sobre esta cuestión. Referencia principal: Título XI CC Arts. 249–299 CC."
+             "t": "Las medidas adoptadas en el auto que ponga fin al expediente deben ser <strong>conformes a la legislación civil</strong> sobre esta cuestión. Referencia principal: Título XI CC Arts. 249–298 CC."
             }
            ]
           },
@@ -502,10 +502,30 @@ Neg.data.register({
           }
          ]
         }
+       },
+       {
+        "apartado": {
+         "titulo": "Recurso y revisión de las medidas acordadas en sentencia",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Contra el auto cabe recurso de apelación (art. 20.2 LJV), en veinte días (art. 458 LEC)."
+            },
+            {
+             "t": "Si en la revisión alguien se opone, se pone fin al expediente y la revisión se insta por el proceso contencioso (art. 42 bis c).3 LJV; art. 761 LEC)."
+            },
+            {
+             "t": "Las medidas acordadas en sentencia (proceso contencioso) también se revisan por los trámites de este artículo (art. 761 LEC)."
+            }
+           ]
+          }
+         ]
+        }
        }
       ],
       "referencias": [
-       "Arts. 249–299 CC",
+       "Arts. 249–298 CC",
        "Arts. 268–294 CC"
       ],
       "claves": "artículo 42 bis c auto resolución revisión periódica medidas necesidad proporcionalidad voluntad deseos preferencias subsidiariedad flexibilidad revisión anticipada curador cambio residencia 10 días testimonio dictamen pericial entrevista nuevo auto confirmación modificación extinción"
@@ -562,7 +582,7 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Juzgado de Primera Instancia (órgano competente)"
+        "t": "Tribunal de Instancia: Sección de Familia, Infancia y Capacidad o, si no existe, Sección Civil (art. 86.5 g) LOPJ)"
        },
        {
         "t": "Juez / Autoridad judicial (entrevista, auto, revisión)"
@@ -650,7 +670,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 8/2021, de 2 de junio",
       "titulo": "Reforma del sistema de apoyo a personas con discapacidad",
-      "texto": "<strong>Introduce</strong> los arts. 42 bis a), b) y c) en la LJV.<br><strong>Deroga</strong> los arts. 299 bis a 324 CC (antiguo régimen de incapacitación).<br><strong>Reforma</strong> el Título XI del CC (nuevo sistema de medidas de apoyo).<br><strong>Modifica</strong> la LEC (proceso contencioso de apoyos).<br>Inspirada en la Convención ONU 2006 sobre Derechos de Personas con Discapacidad. Vigente desde 3 de septiembre de 2021.",
+      "texto": "<strong>Introduce</strong> los arts. 42 bis a), b) y c) en la LJV.<br><strong>Reordena</strong> el Código Civil: el régimen anterior queda sustituido y los arts. 299 bis a 324 CC quedan sin contenido.<br><strong>Reforma</strong> el Título XI del CC (nuevo sistema de medidas de apoyo).<br><strong>Modifica</strong> la LEC (proceso contencioso de apoyos).<br>Inspirada en la Convención ONU 2006 sobre Derechos de Personas con Discapacidad. Vigente desde 3 de septiembre de 2021.",
       "etiqueta": "Norma habilitante",
       "tono": "t-aviso"
      }
@@ -659,7 +679,7 @@ Neg.data.register({
      "norma": {
       "ley": "Código Civil — Título XI (Arts. 249–299)",
       "titulo": "Marco sustantivo de las medidas de apoyo",
-      "texto": "<strong>Art. 249</strong> — finalidad (desarrollo pleno, dignidad), principios de necesidad y proporcionalidad, deber de atender a voluntad, deseos y preferencias.<br><strong>Art. 250</strong> — tipología: medidas voluntarias, guarda de hecho, curatela, defensor judicial.<br><strong>Arts. 251–262</strong> — medidas voluntarias (autocuratela, poderes preventivos): preferibles a las judiciales.<br><strong>Arts. 263–267</strong> — guarda de hecho: medida informal asistencial o representativa.<br><strong>Arts. 268–294</strong> — curatela: medida formal continua, principalmente asistencial; extensión determinada judicialmente.<br><strong>Arts. 295–299</strong> — defensor judicial: medida formal para necesidades ocasionales.",
+      "texto": "<strong>Art. 249</strong> — finalidad (desarrollo pleno, dignidad), principios de necesidad y proporcionalidad, deber de atender a voluntad, deseos y preferencias.<br><strong>Art. 250</strong> — tipología: medidas voluntarias, guarda de hecho, curatela, defensor judicial.<br><strong>Arts. 251–253 CC</strong> — prohibiciones y disposiciones comunes. <strong>Arts. 255–262 CC</strong> — medidas voluntarias (autocuratela, poderes y mandatos preventivos): preferentes a las judiciales.<br><strong>Arts. 263–267</strong> — guarda de hecho: medida informal asistencial o representativa.<br><strong>Arts. 268–294</strong> — curatela: medida formal continua, principalmente asistencial; extensión determinada judicialmente.<br><strong>Arts. 295–298 CC</strong> — defensor judicial: medida formal para necesidades ocasionales.",
       "etiqueta": "Derecho sustantivo",
       "tono": "t-plazo"
      }
@@ -668,7 +688,7 @@ Neg.data.register({
      "norma": {
       "ley": "LEC — Libro IV, Título I",
       "titulo": "Proceso contencioso de apoyos",
-      "texto": "<strong>Art. 748</strong> — ámbito de aplicación (incluye medidas de apoyo).<br><strong>Art. 756</strong> — competencia: JPI del lugar de residencia; destino del expediente voluntario cuando hay oposición.<br><strong>Art. 757</strong> — legitimación activa (misma lista que art. 42 bis a)). Proceso declarativo con plenas garantías.<br><strong>Conexión clave:</strong> art. 42 bis b) apdo. 5 → derivación al proceso contencioso del art. 756 LEC cuando hay oposición y se pretende continuar.",
+      "texto": "<strong>Art. 748 LEC</strong> — ámbito de aplicación (incluye medidas de apoyo).<br><strong>Art. 756 LEC</strong> — ámbito (oposición en el expediente o expediente que no pudo resolverse) y competencia: la autoridad judicial que conoció del expediente previo.<br><strong>Art. 757 LEC</strong> — legitimación: la persona, su cónyuge o asimilado, descendientes, ascendientes o hermanos; el Ministerio Fiscal, si ellos no existen o no demandan. Proceso declarativo con plenas garantías.<br><strong>Conexión clave:</strong> art. 42 bis b) apdo. 5 → proceso contencioso de los arts. 756 y ss. LEC cuando hay oposición y se pretende continuar.",
       "etiqueta": "Proceso contencioso",
       "tono": "t-info"
      }
@@ -703,5 +723,5 @@ Neg.data.register({
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo III bis · Arts. 42 bis a), b) y c) · Introducido por la Ley 8/2021, de 2 de junio · Con conexiones al CC Título XI (Arts. 249–299), LEC Libro IV, CDPD ONU 2006 · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo III bis · Arts. 42 bis a)–42 bis c) LJV, introducidos por la Ley 8/2021"
 });

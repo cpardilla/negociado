@@ -21,7 +21,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-mencion-sexo-reversion | Esquema · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
 | ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | · | · | · | · | · | · | 3R |
 | ljv-adopcion | Esquema · LJV · Adopción | · | · | · | 1R | · | · | 1R |
-| ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | 1R | · | · | · | · | 3R |
+| ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | 3E | · | · | 1R | · | · | 3R |
 | ljv-emancipacion | Esquema · LJV · Emancipación y beneficio de la mayoría de edad | 33E 4R | 1R | · | · | · | · | 2R |
 | ljv-patrimonio-protegido | Esquema · LJV · Patrimonio de las personas con discapacidad | 2E | · | · | 2R | · | · | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 105E 38A 141R | 0E 0A 2R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 80R |
+| | **Total** | 105E 38A 141R | 0E 0A 1R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 78R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,11 +69,11 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2612
-- ✓ LEC (BOE a 07-10-2026): 1521
-- ✓ CC (BOE a 07-09-2026): 1397
+- ✓ LJV (BOE a 05-03-2026): 2613
+- ✓ LEC (BOE a 07-10-2026): 1527
+- ✓ CC (BOE a 07-09-2026): 1401
 - ✓ CE (BOE a 20-05-2026): 76
-- ✓ LOPJ (BOE a 09-10-2026): 69
+- ✓ LOPJ (BOE a 09-10-2026): 71
 - ✓ LOPJM (BOE a 18-12-2025): 58
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - UE: 54
@@ -112,7 +112,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 640 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 633 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -196,15 +196,9 @@ Sin hallazgos automáticos.
 - [revisar] «arts. 299 bis a 324»: el art. 299 bis CC está sin contenido/derogado (extremo de un rango) — _sección «Ecosistema normativo — conexiones relacionadas» › 1 › norma «Reforma del sistema de apoyo a personas con discapacidad»_
 - [revisar] «arts. 299 bis a 324»: el art. 324 CC está sin contenido/derogado (extremo de un rango) — _sección «Ecosistema normativo — conexiones relacionadas» › 1 › norma «Reforma del sistema de apoyo a personas con discapacidad»_
 
-**alcance**
-
-- [revisar] la cabecera no menciona art. 42 bis b, art. 42 bis c de CAPÍTULO III bis «Del expediente de provisión de medidas judiciales de apoyo a personas con discapacidad» (arts. 42 bis a–42 bis c LJV) — _cabecera_
-
 **terminologia**
 
-- [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Capítulo III bis — Artículos 42 bis a), b) y c)» › tarjeta «Art. 42 bis a)» › «Competencia territorial» › 1 › punto.1 | sección «Mapa de participantes y actores» › 1 › grupo «Órganos judiciales».1_
-- [revisar] «incapacitación» × 1 → Ley 8/2021: medidas de apoyo; ya no existe la incapacitación — _sección «Ecosistema normativo — conexiones relacionadas» › 1 › norma «Reforma del sistema de apoyo a personas con discapacidad»_
-- [revisar] «JPI» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar — _sección «Ecosistema normativo — conexiones relacionadas» › 3 › norma «Proceso contencioso de apoyos»_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Capítulo III bis — Artículos 42 bis a), b) y c)» › tarjeta «Art. 42 bis a)» › «Competencia territorial» › 1 › punto.1_
 
 ### ljv-tutela-curatela · Esquema · LJV · Tutela, curatela y guarda de hecho
 
