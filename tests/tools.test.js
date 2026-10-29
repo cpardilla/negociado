@@ -157,6 +157,7 @@ test("citations: the law is taken from after or before the article", () => {
   assert.equal(one("Art. 12 CDN (1989)", "LJV").law, "UE");
   assert.equal(one("el artículo 47, párrafo segundo, de la Ley 4/2023", "LJV").law, "LTRANS", "«, párrafo segundo,» between the article and the law");
   assert.equal(one("art. 1057, párrafo primero, CC", "LEC").law, "CC");
+  assert.equal(one("el artículo 47, párrafo segundo, de la Ley para la igualdad real y efectiva de las personas trans y…", "LJV").law, "LTRANS");
   assert.equal(one("arts. 437 y ss. LEC", "LJV").law, "LEC", "«y ss.» between the article and the law");
   assert.equal(one("los arts. 404 y siguientes de la Ley de Enjuiciamiento Civil", "LJV").law, "LEC");
   assert.equal(one("intimidad (art. 18.1 CE)", "LEC").law, "CE");

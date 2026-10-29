@@ -69,6 +69,7 @@
     ["LOPDGDD", /^(?:LOPDGDD\b)/],
     ["LMED", /^(?:Ley de [Mm]ediaci[oó]n\b)/],
     ["LAP", /^(?:Ley de autonom[ií]a del paciente\b)/],
+    ["LTRANS", /^(?:Ley para la igualdad real y efectiva de las personas trans\b)/],
     // EU instruments, whole ("Dir. 2004/48/CE", "Directiva (UE) 2016/943"), so that the "CE" of a
     // directive's number is not read as the Constitution.
     ["UE", /^(?:(?:Directiva|Dir\.)(?:\s*\((?:UE|CE)\))?(?:\s*\d+\/\d+(?:\/(?:CEE?|UE))?)?|(?:Reglamento|Reg\.) \((?:UE|CE)\)(?:\s*(?:n\.?º\s*)?\d+\/\d+)?|Reglamento Bruselas(?: I bis)?|RGPD\b|DSA\b|TFUE\b|CDFUE\b|Convenio\b|Convención\b|CDN\b|CEDH\b)/],
