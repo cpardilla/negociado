@@ -18,7 +18,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-normas-comunes | Esquema · LJV · Título I · Normas comunes de tramitación | · | · | · | · | · | · | 1R |
 | ljv-filiacion | Esquema · LJV · Reconocimiento de la filiación no matrimonial | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-12-14 | Esquema · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
-| ljv-mencion-sexo-reversion | Esquema · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | 2R | · | · | 1R |
+| ljv-mencion-sexo-reversion | Esquema · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
 | ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | 2R | · | · | · | · | · | 3R |
 | ljv-adopcion | Esquema · LJV · Adopción | · | · | · | 1R | · | · | 2R |
 | ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | 1R | · | · | · | · | 3R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 105E 38A 143R | 0E 0A 2R | 0E 0A 0R | 0E 0A 15R | 0E 0A 9R | 4E 0A 1R | 0E 0A 81R |
+| | **Total** | 105E 38A 143R | 0E 0A 2R | 0E 0A 0R | 0E 0A 13R | 0E 0A 9R | 4E 0A 1R | 0E 0A 81R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,15 +69,15 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2607
-- ✓ LEC (BOE a 07-10-2026): 1509
-- ✓ CC (BOE a 07-09-2026): 1379
+- ✓ LJV (BOE a 05-03-2026): 2612
+- ✓ LEC (BOE a 07-10-2026): 1510
+- ✓ CC (BOE a 07-09-2026): 1384
 - ✓ CE (BOE a 20-05-2026): 76
 - ✓ LOPJ (BOE a 09-10-2026): 58
 - ✓ LOPJM (BOE a 18-12-2025): 58
-- UE: 56
-- ✓ LTRANS (BOE a 20-12-2025): 48
-- ✓ LRC (BOE a 24-02-2026): 46
+- ✓ LTRANS (BOE a 20-12-2025): 58
+- UE: 54
+- ✓ LRC (BOE a 24-02-2026): 48
 - ✓ LOPDH (BOE a 16-12-2025): 42
 - ✓ LH (BOE a 07-01-2026): 33
 - ✓ LN (BOE a 22-10-2026): 29
@@ -112,7 +112,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 660 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 649 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -166,11 +166,6 @@ Sin hallazgos automáticos.
 - [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Capítulo I bis — Artículos 26 bis a 26 quinquies» › tarjeta «Artículo 26 ter» › «Competencia territorial» › 1 › punto.1 | sección «Capítulo I bis — Artículos 26 bis a 26 quinquies» › tarjeta «Artículo 26 ter» › «Competencia territorial» › 1 › punto.1_
 
 ### ljv-mencion-sexo-reversion · Esquema · LJV · Nueva modificación de la mención del sexo tras reversión
-
-**plazos**
-
-- [revisar] plazo «3 meses» no aparece en el precepto citado (art. 44.2 LTRANS): «Comparecencia de ratificación de la solicitud de rectificación registral (desde la comparecencia inicial) · 3 meses · Ley 4/2023, art. 44.2» — _sección «Indice de plazos procesales» › 1 › tabla fila 2_
-- [revisar] plazo «1 mes» no aparece en el precepto citado (art. 44.2 LTRANS): «Resolución del encargado del Registro Civil sobre la solicitud de rectificación (desde la segunda comparecencia) · 1 mes · Ley 4/2023, art. 44.2» — _sección «Indice de plazos procesales» › 1 › tabla fila 3_
 
 **terminologia**
 

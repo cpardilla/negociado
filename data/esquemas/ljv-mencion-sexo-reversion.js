@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E10.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E10.json; revisado con el BOE (registro: docs/revision/ljv-mencion-sexo-reversion.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-mencion-sexo-reversion",
@@ -13,7 +13,7 @@ Neg.data.register({
   "26 nonies"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E10"
  },
@@ -123,7 +123,7 @@ Neg.data.register({
            ]
           },
           {
-           "p": "En consecuencia, el Capítulo I ter no resulta aplicable a la primera rectificación de la mención registral del sexo —que para personas mayores de dieciséis años se tramita administrativamente ante el Registro Civil, y para personas menores de catorce años y mayores de doce mediante el Capítulo I bis de la Ley 15/2015—, ni tampoco a la primera reversión —que sigue el procedimiento administrativo ordinario de rectificación registral—, sino exclusivamente a la <strong>nueva modificación</strong> solicitada con posterioridad a una rectificación y a una reversión ya inscritas."
+           "p": "En consecuencia, el Capítulo I ter no resulta aplicable a la primera rectificación de la mención registral del sexo —que se tramita ante el Registro Civil a partir de los catorce años (arts. 43.1 y 43.2 Ley 4/2023) y, de los doce a los catorce, por el Capítulo I bis de la Ley 15/2015—, ni tampoco a la primera reversión —que sigue el procedimiento administrativo ordinario de rectificación registral—, sino exclusivamente a la <strong>nueva modificación</strong> solicitada con posterioridad a una rectificación y a una reversión ya inscritas."
           }
          ]
         }
@@ -133,7 +133,7 @@ Neg.data.register({
          "titulo": "Incorporación normativa",
          "contenido": [
           {
-           "p": "Este Capítulo I ter fue añadido a la Ley 15/2015 por la disposición final 13.2 de la Ley 4/2023, de 28 de febrero, publicada el 1 de marzo de 2023 y en vigor a partir del 2 de marzo de 2023."
+           "p": "Este Capítulo I ter fue añadido a la Ley 15/2015 por la Ley 4/2023, de 28 de febrero, en vigor desde el 2 de marzo de 2023."
           }
          ]
         }
@@ -197,12 +197,12 @@ Neg.data.register({
              "t": "<strong>Personas con discapacidad:</strong> podrán solicitar, con las medidas de apoyo que en su caso precisen, la rectificación registral de la mención relativa al sexo."
             },
             {
-             "t": "<strong>Personas menores de catorce y mayores de doce:</strong> podrán solicitar la autorización judicial para la modificación de la mención registral del sexo en los términos del capítulo I bis del título II de la Ley 15/2015, de 2 de julio, de Jurisdicción Voluntaria. Si una persona en este tramo de edad ya hubiere obtenido la rectificación y posterior reversión, y pretendiera una nueva modificación, cabe inferir que la legitimación para el Capítulo I ter se extiende también a ellas, siempre que se cumplan las condiciones generales de legitimación del artículo 43 de la Ley 4/2023."
+             "t": "<strong>Personas menores de catorce y mayores de doce:</strong> podrán solicitar la autorización judicial para la modificación de la mención registral del sexo en los términos del capítulo I bis del título II de la Ley 15/2015, de 2 de julio, de Jurisdicción Voluntaria. La ley no aclara expresamente cómo se aplica el Capítulo I ter a quien esté en este tramo de edad; el art. 26 septies.2 se refiere a quienes estén legitimados para instar la rectificación."
             }
            ]
           },
           {
-           "p": "En este sentido, el Capítulo I ter presenta una legitimación más amplia que la del Capítulo I bis, pues este último se circunscribe exclusivamente a personas mayores de doce años y menores de catorce, asistidas por sus representantes legales, con la salvaguarda del defensor judicial en caso de desacuerdo. En cambio, el Capítulo I ter acoge a cualquier persona legitimada conforme al artículo 43 de la Ley 4/2023, sin restricción expresa de edad en su precepto, lo que comprende a mayores de edad, menores de dieciséis asistidos, personas con discapacidad y, por extensión lógica, menores de catorce y mayores de doce que ya hayan transitado por el Capítulo I bis en su primera rectificación."
+           "p": "En este sentido, el Capítulo I ter presenta una legitimación más amplia que la del Capítulo I bis, pues este último se circunscribe exclusivamente a personas mayores de doce años y menores de catorce, asistidas por sus representantes legales, con la salvaguarda del defensor judicial en caso de desacuerdo. En cambio, el Capítulo I ter acoge a cualquier persona legitimada conforme al artículo 43 de la Ley 4/2023, sin otra restricción de edad en su precepto."
           }
          ]
         }
@@ -215,7 +215,7 @@ Neg.data.register({
            "p": "En la tramitación del presente expediente no será preceptiva la intervención de abogado ni procurador."
           },
           {
-           "p": "Esta excepción a la postulación parts-based responde a la naturaleza de jurisdicción voluntaria del expediente y se alinea con la regulación del Capítulo I bis, cuyo artículo 26 ter.4 establece idéntica no preceptividad, facilitando el acceso a la justicia de las personas interesadas y evitando la generación de costas procesales que pudieran dificultar el ejercicio de este derecho."
+           "p": "Igual que en el Capítulo I bis (art. 26 ter.4). Si se formula oposición o se recurre en revisión o apelación, abogado y procurador son preceptivos (art. 3.2, párrafo segundo)."
           }
          ]
         }
@@ -225,7 +225,7 @@ Neg.data.register({
          "titulo": "Conexión con el nombramiento de defensor judicial",
          "contenido": [
           {
-           "p": "Si bien el artículo 26 septies no menciona expresamente al defensor judicial, la remisión implícita a la legitimación del artículo 43 de la Ley 4/2023 activa la aplicación supletoria de los artículos 235 y 236 del Código Civil cuando se produzca desacuerdo entre los progenitores o representantes legales, entre sí o con la persona menor de edad. El artículo 235 del Código Civil impone el nombramiento de un defensor judicial del menor cuando exista conflicto de intereses entre los menores y sus representantes legales, y el artículo 236 dispone que el defensor judicial del menor ejercerá su cargo en interés del menor, de acuerdo con su personalidad y con respeto a sus derechos, siendo aplicables al defensor judicial del menor las normas del defensor judicial de las personas con discapacidad."
+           "p": "El artículo 26 septies no menciona al defensor judicial; el art. 43.2 de la Ley 4/2023, al que remite la legitimación, prevé su nombramiento conforme a los arts. 235 y 236 CC si hay desacuerdo de los progenitores o representantes legales, entre sí o con la persona menor. El artículo 235 del Código Civil impone el nombramiento de un defensor judicial del menor cuando exista conflicto de intereses entre los menores y sus representantes legales, y el artículo 236 dispone que el defensor judicial del menor ejercerá su cargo en interés del menor, de acuerdo con su personalidad y con respeto a sus derechos, siendo aplicables al defensor judicial del menor las normas del defensor judicial de las personas con discapacidad."
           }
          ]
         }
@@ -371,10 +371,10 @@ Neg.data.register({
            "p": "El testimonio de dicha resolución se remitirá al Registro Civil competente para proceder, en su caso, a la inscripción de la rectificación aprobada judicialmente."
           },
           {
-           "p": "La remisión del testimonio de la resolución al Registro Civil competente es el mecanismo de ejecución de la decisión judicial. El Registro Civil, una vez recibido el testimono, procederá a la inscripción de la rectificación aprobada, si la resolución es favorable. Conforme al artículo 46.1 de la Ley 4/2023, la resolución que acuerde la rectificación de la mención registral del sexo tendrá efectos constitutivos a partir de su inscripción en el Registro Civil, de modo que el cambio de la condición jurídica de la persona no se produce con la mera sentencia o resolución judicial, sino con su inscripción registral."
+           "p": "La remisión del testimonio de la resolución al Registro Civil competente es el mecanismo de ejecución de la decisión judicial. El Registro Civil, una vez recibido el testimonio, procederá a la inscripción de la rectificación aprobada, si la resolución es favorable. Conforme al artículo 46.1 de la Ley 4/2023, la resolución que acuerde la rectificación de la mención registral del sexo tendrá efectos constitutivos a partir de su inscripción en el Registro Civil, de modo que el cambio de la condición jurídica de la persona no se produce con la mera sentencia o resolución judicial, sino con su inscripción registral."
           },
           {
-           "p": "Asimismo, el artículo 91.2 de la Ley 20/2011, de 21 de julio, del Registro Civil, modificado por la disposición final undécima de la Ley 4/2023, establece que las menciones registrales relativas al nombre y sexo de las personas, cuando se cumplan los requisitos de la Ley 4/2023, se rectificarán mediante el procedimiento registral previsto en dicha norma, y que en tales casos la inscripción tendrá eficacia constitutiva."
+           "p": "Por su parte, el artículo 91.2 de la Ley 20/2011, del Registro Civil, remite para la rectificación de las menciones de nombre y sexo al procedimiento registral de la Ley 4/2023."
           }
          ]
         }
@@ -413,7 +413,7 @@ Neg.data.register({
   },
   {
    "titulo": "Indice de plazos procesales",
-   "recuento": "3 trámites",
+   "recuento": "5 trámites",
    "plegada": true,
    "bloques": [
     {
@@ -432,12 +432,22 @@ Neg.data.register({
        [
         "Comparecencia de ratificación de la solicitud de rectificación registral (desde la comparecencia inicial)",
         "3 meses",
-        "Ley 4/2023, art. 44.2"
+        "Ley 4/2023, art. 44.8 (procedimiento registral)"
        ],
        [
         "Resolución del encargado del Registro Civil sobre la solicitud de rectificación (desde la segunda comparecencia)",
         "1 mes",
-        "Ley 4/2023, art. 44.2"
+        "Ley 4/2023, art. 44.9 (procedimiento registral)"
+       ],
+       [
+        "Resolución del expediente judicial (auto)",
+        "5 días desde la comparecencia",
+        "Art. 19.1 LJV"
+       ],
+       [
+        "Apelación contra el auto",
+        "20 días",
+        "Art. 20.2 LJV · art. 458 LEC"
        ]
       ]
      }
@@ -455,7 +465,7 @@ Neg.data.register({
       "tono": "c2",
       "items": [
        {
-        "t": "Juzgado de Primera Instancia (competente por domicilio o residencia)"
+        "t": "Tribunal de Instancia, Sección Civil (antes Juzgado de Primera Instancia; competente por domicilio o residencia)"
        },
        {
         "t": "Juez (cita a comparecencia, practica pruebas, resuelve)"
@@ -492,7 +502,7 @@ Neg.data.register({
         "t": "Registro Civil (recibe testimonio de la resolución e inscribe)"
        },
        {
-        "t": "Dirección General de Seguridad Jurídica y Fe Pública (vía recurso de alzada)"
+        "t": "Dirección General de Seguridad Jurídica y Fe Pública (alzada contra las resoluciones del procedimiento registral, no contra el auto judicial: art. 44.10 Ley 4/2023)"
        }
       ]
      }
@@ -519,7 +529,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 4/2023, de 28 de febrero",
       "titulo": "Igualdad real y efectiva de las personas trans y garantía de los derechos de las personas LGTBI",
-      "texto": "<strong>Artículo 43</strong> — Legitimación para la rectificación registral del sexo.<br><strong>Artículo 44</strong> — Procedimiento de rectificación registral ante el Registro Civil.<br><strong>Artículo 45</strong> — Autoridad competente (Oficina del Registro Civil).<br><strong>Artículo 46</strong> — Efectos constitutivos desde la inscripción registral.<br><strong>Artículo 47</strong> — Reversibilidad de la rectificación (párrafos primero y segundo).<br><strong>Artículo 49</strong> — Adecuación de documentos a la nueva mención registral.<br><strong>Artículo 50</strong> — Adecuación de documentos a personas extranjeras.<br><strong>Artículo 51</strong> — Adecuación de documentos al cambio de nombre en menores.<br><strong>Disposición transitoria segunda</strong> — Reconducción de procedimientos en trámite.",
+      "texto": "<strong>Artículo 43</strong> — Legitimación para la rectificación registral del sexo.<br><strong>Artículo 44</strong> — Procedimiento de rectificación registral ante el Registro Civil.<br><strong>Artículo 45</strong> — Autoridad competente (Oficina del Registro Civil).<br><strong>Artículo 46</strong> — Efectos constitutivos desde la inscripción registral.<br><strong>Artículo 47</strong> — Reversibilidad de la rectificación (párrafos primero y segundo).<br><strong>Artículo 49</strong> — Adecuación de documentos a la nueva mención registral.<br><strong>Artículo 50</strong> — Adecuación de documentos a personas extranjeras.<br><strong>Artículo 51</strong> — Adecuación de documentos al cambio de nombre en menores.",
       "etiqueta": "Norma matriz",
       "tono": "t-info"
      }
@@ -528,7 +538,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 15/2015, de 2 de julio",
       "titulo": "Jurisdicción Voluntaria — Título II, Capítulo I bis",
-      "texto": "<strong>Artículo 26 ter</strong> — Competencia, legitimación y postulación para menores de 14 y mayores de 12.<br><strong>Artículo 26 quater</strong> — Tramitación preferente con requisitos específicos de protección menor.<br><strong>Artículo 26 quinquies</strong> — Resolución con audiencia previa del menor y prohibición de condicionamiento.<br><strong>Disposición final 13.1</strong> — Incorporación del Capítulo I bis por la Ley 4/2023.",
+      "texto": "<strong>Artículo 26 ter</strong> — Competencia, legitimación y postulación para menores de 14 y mayores de 12.<br><strong>Artículo 26 quater</strong> — Tramitación preferente con requisitos específicos de protección menor.<br><strong>Artículo 26 quinquies</strong> — Resolución con audiencia previa del menor y prohibición de condicionamiento.",
       "etiqueta": "Procedimiento paralelo",
       "tono": "t-plazo"
      }
@@ -546,7 +556,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 20/2011, de 21 de julio",
       "titulo": "Registro Civil",
-      "texto": "<strong>Artículo 4.4</strong> — El sexo y el cambio de sexo constituyen hechos y actos inscribibles al amparo del derecho a la identidad.<br><strong>Artículo 11.j</strong> — Derecho a promover la rectificación o modificación de los asientos registrales.<br><strong>Artículo 49.5</strong> — Mención del sexo en blanco por condición intersexual (plazo máximo de un año).<br><strong>Artículo 51</strong> — Principio de libre elección del nombre propio; irrelevancia de la correspondencia con el sexo.<br><strong>Artículo 83</strong> — La rectificación del sexo es dato especialmente protegido con publicidad restringida.<br><strong>Artículo 91.2</strong> — Eficacia constitutiva de la inscripción registral de nombre y sexo.",
+      "texto": "<strong>Artículo 4.4</strong> — El sexo y el cambio de sexo constituyen hechos y actos inscribibles al amparo del derecho a la identidad.<br><strong>Artículo 11.j</strong> — Derecho a promover la rectificación o modificación de los asientos registrales.<br><strong>Artículo 51</strong> — Principio de libre elección del nombre propio; irrelevancia de la correspondencia con el sexo.<br><strong>Artículo 83</strong> — La rectificación del sexo es dato especialmente protegido con publicidad restringida.<br><strong>Artículo 91.2</strong> — Eficacia constitutiva de la inscripción registral de nombre y sexo.",
       "etiqueta": "Marco registral",
       "tono": "t-nota"
      }
@@ -572,5 +582,5 @@ Neg.data.register({
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Capítulo I ter del Título II · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo I ter · Arts. 26 sexies–26 nonies LJV (introducidos por la Ley 4/2023)"
 });

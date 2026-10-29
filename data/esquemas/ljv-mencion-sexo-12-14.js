@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E09.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E09.json; revisado con el BOE (registro: docs/revision/ljv-mencion-sexo-12-14.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-mencion-sexo-12-14",
@@ -13,7 +13,7 @@ Neg.data.register({
   "26 quinquies"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E09"
  },
@@ -61,16 +61,16 @@ Neg.data.register({
     {
      "lista": [
       {
-       "t": "<strong>Mayores de 16 años o emancipados</strong>Procedimiento administrativo ante el Registro Civil por sí mismos, sin asistencia ni autorización."
+       "t": "<strong>Mayores de 16 años</strong> (art. 43.1 Ley 4/2023): por sí mismos, ante el Registro Civil."
       },
       {
-       "t": "<strong>Mayores de 14 y menores de 16</strong>Procedimiento administrativo ante el Registro Civil, asistidos por sus representantes legales."
+       "t": "<strong>Mayores de 14 y menores de 16</strong> (art. 43.2 Ley 4/2023): por sí mismos, asistidos por sus representantes legales, ante el Registro Civil; si hay desacuerdo, defensor judicial."
       },
       {
-       "t": "<strong>Mayores de 12 y menores de 14</strong>Requieren aprobación judicial previa. Procedimiento regulado en este Capítulo I bis."
+       "t": "<strong>Mayores de 12 y menores de 14</strong> (art. 43.4 Ley 4/2023): aprobación judicial por el procedimiento de este Capítulo I bis."
       },
       {
-       "t": "<strong>Menores de 12 años</strong>El ordenamiento no les reconoce capacidad para instar el expediente de rectificación registral del sexo."
+       "t": "<strong>Menores de 12 años</strong>: la Ley 4/2023 no prevé para ellos la rectificación de la mención del sexo; sí el cambio de nombre (art. 48 Ley 4/2023)."
       }
      ]
     },
@@ -183,7 +183,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Juzgado de Primera Instancia del <strong>domicilio</strong> de la persona cuya mención registral pretenda rectificarse o, si no lo tuviera en territorio nacional, el de su <strong>residencia</strong>. La competencia territorial es inderogable (artículo 2.2 LJV): no cabe sumisión expresa ni tácita. La competencia objetiva es del Juzgado de Primera Instancia —no del de lo Mercantil— al tratarse de estado civil de un menor."
+             "t": "Juzgado de Primera Instancia (hoy, Sección Civil del Tribunal de Instancia) del <strong>domicilio</strong> de la persona cuya mención registral pretenda rectificarse o, si no lo tuviera en territorio nacional, el de su <strong>residencia</strong>. La competencia territorial es inderogable (artículo 2.2 LJV): no cabe sumisión expresa ni tácita. La competencia objetiva es del Juzgado de Primera Instancia —no del de lo Mercantil— al tratarse de estado civil de un menor."
             }
            ]
           }
@@ -250,10 +250,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "No es preceptiva la intervención de <strong>abogado ni procurador</strong> en la tramitación ordinaria del expediente. Excepción a la regla general del artículo 3.2 LJV, que responde a la naturaleza no contenciosa del expediente y a la eliminación de barreras de acceso."
+             "t": "No es preceptiva la intervención de <strong>abogado ni procurador</strong> en la tramitación ordinaria del expediente. Así lo dispone el art. 26 ter.4 LJV."
             },
             {
-             "t": "Si se formulase oposición o se interpusiesen recursos, la intervención sí será preceptiva (artículo 3.2, párrafo tercero, LJV). Art. 3.2 LJV"
+             "t": "Si se formulase oposición o se interpusiesen recursos de revisión o apelación, la intervención sí será preceptiva (artículo 3.2, párrafo segundo, LJV). Art. 3.2 LJV"
             }
            ]
           }
@@ -501,7 +501,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-aviso",
             "etiqueta": "",
-            "texto": "<strong>Prohibición expresa e irrestricta</strong> La concesión no podrá estar condicionada a la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a la previa modificación de la apariencia o función corporal a través de procedimientos médicos, quirúrgicos o de otra índole. El término «no podrá» excluye cualquier margen de discrecionalidad judicial. Supone la desmedicalización expresa del procedimiento, en línea con la OMS (desclasificación de la incongruencia de género en 2019), el Consejo de Europa, el Parlamento Europeo y los Principios de Yogyakarta."
+            "texto": "<strong>Prohibición expresa e irrestricta</strong> La concesión no podrá estar condicionada a la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a la previa modificación de la apariencia o función corporal a través de procedimientos médicos, quirúrgicos o de otra índole. El término «no podrá» excluye cualquier margen de discrecionalidad judicial. La misma regla rige con carácter general para la rectificación registral (art. 44.3 Ley 4/2023)."
            }
           }
          ]
@@ -514,7 +514,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "El testimonio de la resolución se remitirá al <strong>Registro Civil</strong> competente para proceder, en su caso, a la inscripción de la rectificación aprobada judicialmente. La inscripción tiene valor de prueba plena del estado civil (Ley 20/2011) y es oponible frente a terceros. El titular deberá tramitar la actualización de los documentos que incorporen la mención rectificada (DNI, pasaporte, expediente académico, tarjeta sanitaria, etc.)."
+             "t": "El testimonio de la resolución se remitirá al <strong>Registro Civil</strong> competente para proceder, en su caso, a la inscripción de la rectificación aprobada judicialmente. La rectificación produce efectos constitutivos desde su inscripción (art. 46.1 Ley 4/2023). El titular deberá tramitar la actualización de los documentos que incorporen la mención rectificada (DNI, pasaporte, expediente académico, tarjeta sanitaria, etc.)."
             }
            ]
           }
@@ -528,7 +528,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "La resolución estimatoria no es irreversible en términos absolutos. La Ley Trans permite la reversión de la rectificación, pero solo una vez. Si, tras la reversión, la persona desea volver a modificar la mención registral del sexo, deberá acudir al procedimiento judicial del <strong>Capítulo I ter</strong> (artículos 26 sexies a 26 nonies, también de tramitación preferente). Art. 47 Ley 4/2023"
+             "t": "Transcurridos seis meses desde la inscripción de la rectificación, puede recuperarse la mención anterior por el mismo procedimiento registral (art. 47 de la Ley 4/2023, párrafo primero). Si después se quiere una nueva rectificación, hay que seguir el procedimiento judicial del <strong>Capítulo I ter</strong> (arts. 26 sexies a 26 nonies LJV; art. 47 de la Ley 4/2023, párrafo segundo)."
             }
            ]
           }
@@ -560,7 +560,7 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Juez de Primera Instancia (resolución, audiencia, prueba)"
+        "t": "Juez — Sección Civil del Tribunal de Instancia (audiencia, prueba, resolución por auto)"
        },
        {
         "t": "Registro Civil (inscripción de la rectificación)"
@@ -620,7 +620,7 @@ Neg.data.register({
   },
   {
    "titulo": "Ecosistema normativo — conexiones relacionadas",
-   "recuento": "8 cuerpos normativos",
+   "recuento": "6 normas",
    "plegada": true,
    "bloques": [
     {
@@ -645,7 +645,7 @@ Neg.data.register({
      "norma": {
       "ley": "Código Civil",
       "titulo": "Representación legal, patria potestad y defensor judicial",
-      "texto": "<strong>Arts. 235 y 236</strong> — referenciados expresamente en el art. 26 ter; defensor judicial de menores y sus funciones.<br><strong>Art. 154</strong> — patria potestad en beneficio del hijo; desacuerdo como ejercicio discorde.<br><strong>Art. 162</strong> — límites de la representación legal; carácter personalísimo del derecho a solicitar la rectificación.",
+      "texto": "<strong>Arts. 235 y 236</strong> — referenciados expresamente en el art. 26 ter; defensor judicial de menores y sus funciones.<br><strong>Art. 156</strong> — ejercicio de la patria potestad y desacuerdo de los progenitores.<br><strong>Art. 162</strong> — los padres no representan al hijo en los actos relativos a los derechos de la personalidad que pueda ejercitar por sí según su madurez.",
       "etiqueta": "Derecho sustantivo",
       "tono": "t-plazo"
      }
@@ -654,7 +654,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley Trans — Ley 4/2023",
       "titulo": "Marco general y sistema escalonado por edades",
-      "texto": "<strong>Marco general</strong> — introdujo el Cap. I bis; libre autodeterminación de género sin diagnóstico médico ni tratamiento.<br><strong>Art. 47 párr. 2.º</strong> — reversión de la rectificación, solo una vez; nueva rectificación tras reversión exige procedimiento judicial del Cap. I ter.",
+      "texto": "<strong>Marco general</strong> — introdujo el Cap. I bis; libre autodeterminación de género sin diagnóstico médico ni tratamiento.<br><strong>Art. 43</strong> — legitimación por edades. <strong>Art. 46</strong> — efectos constitutivos desde la inscripción. <strong>Art. 47</strong> — reversión a los seis meses (párrafo primero) y nueva rectificación por el Cap. I ter (párrafo segundo).",
       "etiqueta": "Norma habilitante",
       "tono": "t-aviso"
      }
@@ -663,7 +663,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 20/2011 — Registro Civil",
       "titulo": "Inscripción de la rectificación y eficacia registral",
-      "texto": "<strong>Ley 20/2011</strong> — recibido el testimonio de la resolución judicial, el Registro Civil inscribe la rectificación. La inscripción tiene valor de prueba plena del estado civil y surte plenos efectos frente a terceros desde su práctica.",
+      "texto": "Recibido el testimonio de la resolución judicial, el Registro Civil inscribe la rectificación (art. 26 quinquies.2 LJV); el sexo y su cambio son inscribibles (art. 4 LRC) y la rectificación del sexo es dato de publicidad restringida (art. 83 LRC).",
       "etiqueta": "Registro Civil",
       "tono": "t-nota"
      }
@@ -676,27 +676,9 @@ Neg.data.register({
       "etiqueta": "Protección del menor",
       "tono": "t-aviso"
      }
-    },
-    {
-     "norma": {
-      "ley": "Constitución Española",
-      "titulo": "Fundamentos constitucionales del procedimiento",
-      "texto": "<strong>Art. 10.1</strong> — dignidad y libre desarrollo de la personalidad; fundamento constitucional último del derecho a la identidad de género.<br><strong>Art. 14</strong> — igualdad y no discriminación; medidas de protección frente a trato diferenciado injustificado.<br><strong>Art. 18.1</strong> — intimidad personal; desmedicalización del proceso.<br><strong>Art. 24</strong> — tutela judicial efectiva; fundamenta la audiencia inderogable.<br><strong>Art. 39.4</strong> — protección integral de los menores; justifica intervención judicial.",
-      "etiqueta": "Derecho constitucional",
-      "tono": "t-plazo"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Derecho internacional y europeo",
-      "titulo": "Estándares internacionales aplicables",
-      "texto": "<strong>CDN, Arts. 3 y 12</strong> — interés superior del niño como consideración primordial; derecho del niño a ser escuchado en procedimientos judiciales.<br><strong>CEDH, Art. 8</strong> — el TEDH exige procedimientos accesibles para el reconocimiento jurídico de la identidad de género, incluyendo a menores.<br><strong>Carta DFUE, Arts. 7 y 21</strong> — vida privada y no discriminación por identidad sexual en el ámbito de la UE.",
-      "etiqueta": "Derecho internacional",
-      "tono": "t-info"
-     }
     }
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo I bis · Arts. 26 bis – 26 quinquies · Introducido por la Ley 4/2023 (Ley Trans) · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título II, Capítulo I bis · Arts. 26 bis–26 quinquies LJV (introducidos por la Ley 4/2023)"
 });
