@@ -117,20 +117,38 @@ function load(clave) {
   // Some BOE texts carry decomposed accents (NFD): normalise once, so every comparison holds.
   for (const b of snap.bloques) for (const p of b.parrafos || []) p[1] = p[1].normalize("NFC");
 
-  const ARTICLE = new RegExp(`^Art[íi]culo\\s+(${ART_NUM})\\.?\\s*(.*)$`, "i");
-  // "Artículo 301 a 324. (Derogados)": one block standing for a run of repealed articles.
-  const RANGE = /^Art[íi]culos?\s+(\d+)\s+(?:a|al)\s+(\d+)\b/i;
+  // "Artículo 5.", "Artículo 1º." and, in the Commercial Code, "Art. 25." / "Arts. 10".
+  const ARTICLE = new RegExp(`^(?:Art[íi]culos?|Arts?\\.)\\s+(${ART_NUM})\\s*[ºª°]?\\.?\\s*(.*)$`, "i");
+  // "Artículo 301 a 324. (Derogados)", "Arts. 145 a 148", "Arts. 1863 bis a 1873 bis": one block
+  // standing for a run of articles.
+  const RANGE = new RegExp(`^(?:Art[íi]culos?|Arts?\\.)\\s+(\\d+(?:\\s*(?:${SUFFIXES})(?![a-zñ]))?)\\s+(?:a|al)\\s+(\\d+(?:\\s*(?:${SUFFIXES})(?![a-zñ]))?)\\b`, "i");
+  // "Arts. 10 y 11": one block for two articles.
+  const PAIR = /^(?:Art[íi]culos|Arts\.)\s+(\d+)\s+y\s+(\d+)\b/i;
   // Words → numbers only in laws numbered in words throughout (LO 1/1982, Ley 30/1979). Where
   // numbered articles exist (RH), "Artículo primero…" belong to the approving decree: left out.
-  const wordsOnly = !snap.bloques.some((b) => b.tipo === "precepto" && b.parrafos.length && /^Art[íi]culo\s+\d/i.test(b.parrafos[0][1]));
+  const wordsOnly = !snap.bloques.some((b) => b.tipo === "precepto" && b.parrafos.length && /^(?:Art[íi]culos?|Arts?\.)\s+\d/i.test(b.parrafos[0][1]));
   // Cardinals in words are always the law's own numbering (LOPJ); ordinals only where wordsOnly.
-  const heads = (b) => (b.tipo === "precepto" && b.parrafos.length ? numericHeading(b.parrafos[0][1], wordsOnly) : "");
-  const own = new Set(snap.bloques.map((b) => heads(b).match(ARTICLE)).filter((m) => m && !RANGE.test(m[0])).map((m) => articleKey(m[1])));
+  // A code or regulation published by a decree (CC, CCom, RH…): the decree's own articles come before
+  // its signature block, the text's after it. Where articles follow the signature, those before it
+  // are the approving instrument's and are left out.
+  // (Only a signature placed before the text's first heading: in an ordinary law the signature
+  // comes at the very end, sometimes followed by annexes.)
+  const firma = snap.bloques.findIndex((b) => b.tipo === "firma");
+  const firstHeading = snap.bloques.findIndex((b) => b.tipo === "encabezado");
+  const decree = firma > 0 && firstHeading > firma && snap.bloques.slice(firma + 1).some((b) => b.tipo === "precepto");
+  const beforeSignature = new Set(decree ? snap.bloques.slice(0, firma).map((b) => b.id) : []);
+  const heads = (b) => (b.tipo === "precepto" && b.parrafos.length && !beforeSignature.has(b.id) ? numericHeading(b.parrafos[0][1], wordsOnly) : "");
+  const own = new Set(snap.bloques.map((b) => heads(b).match(ARTICLE)).filter((m) => m && !RANGE.test(m[0]) && !PAIR.test(m[0])).map((m) => articleKey(m[1])));
 
   const articulos = new Map();
   const orden = [];
   const keysOfBlock = new Map(); // block id → article keys it stands for
+  // Where the BOE keeps two blocks for one article, tools/leyes.json says which one counts
+  // ("bloques": { key: block id }) — written down and reviewed, never guessed.
+  const meta = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "leyes.json"), "utf8")).find((l) => l.clave === clave) || {};
+  const chosen = meta.bloques || {};
   const add = (key, b, rubrica, numero) => {
+    if (chosen[key] && chosen[key] !== b.id) return;
     // Two blocks with one key means a numbering form the reader does not know: stop, never overwrite.
     if (articulos.has(key)) throw new Error(`${clave}: dos artículos con la clave «${key}» (${articulos.get(key).bloque}, ${b.id})`);
     const texto = b.parrafos.map((p) => p[1]).join("\n");
@@ -155,7 +173,15 @@ function load(clave) {
     const head = heads(b);
     const r = head.match(RANGE);
     if (r) {
-      for (let n = Number(r[1]); n <= Number(r[2]); n++) if (!own.has(String(n))) add(String(n), b, "");
+      const [from, to] = [articleKey(r[1]), articleKey(r[2])];
+      // Plain numbers: every article in between; with suffixes ("1863 bis a 1873 bis"): the two ends.
+      const keys = /^\d+$/.test(from) && /^\d+$/.test(to) ? Array.from({ length: Number(to) - Number(from) + 1 }, (_, i) => String(Number(from) + i)) : [from, to];
+      for (const k of keys) if (!own.has(k) && !articulos.has(k)) add(k, b, "");
+      continue;
+    }
+    const pair = head.match(PAIR);
+    if (pair) {
+      for (const n of [pair[1], pair[2]]) if (!own.has(n)) add(n, b, "");
       continue;
     }
     const m = head.match(ARTICLE);

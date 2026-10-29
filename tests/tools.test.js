@@ -65,6 +65,17 @@ test("articles numbered in words ('Artículo primero') are indexed by number", (
   assert.ok(load("LTO").articulos.has("4"), "Ley 30/1979 art. 4");
 });
 
+test("BOE quirks: decree articles, 'Art. 25.', pairs and suffixed ranges, cardinals in words, a duplicate chosen in leyes.json", () => {
+  const ccom = load("CCom");
+  assert.match(ccom.articulos.get("1").texto, /Son comerciantes/, "art. 1 CCom is the Code's, not the publishing decree's");
+  assert.match(ccom.articulos.get("25").texto, /libro de Inventarios y Cuentas anuales/i, "«Art. 25.» headings");
+  assert.equal(load("LCD").articulos.get("4").rubrica, "Cláusula general", "the block chosen in tools/leyes.json");
+  assert.ok(load("CC").articulos.has("1863 bis"));
+  assert.equal(load("LOPJ").articulos.get("281").bloque, "adoscientosochentayuno", "«Artículo doscientos ochenta y uno»");
+  assert.equal(load("LOPJ").orden.length, 713);
+  assert.equal(load("RH").articulos.get("1").bloque !== "aprimero", true, "RH art. 1 is the Regulation's");
+});
+
 test("ordinals: '2.°' (degree sign) and 'Primero.' are sub-items", () => {
   assert.ok(load("CC").articulos.get("169").apartados.get("_").subs.has("2"));
   const lh42 = load("LH").articulos.get("42").apartados.get("_").subs;

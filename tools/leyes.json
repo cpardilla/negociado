@@ -16,5 +16,21 @@
   { "clave": "LTRANS", "id": "BOE-A-2023-5366", "alias": ["Ley 4/2023"] },
   { "clave": "LTO", "id": "BOE-A-1979-26445", "alias": ["Ley 30/1979"] },
   { "clave": "RDTO", "id": "BOE-A-2012-15715", "alias": ["RD 1723/2012", "Real Decreto 1723/2012"] },
-  { "clave": "L8-2021", "id": "BOE-A-2021-9233", "alias": ["Ley 8/2021"] }
+  { "clave": "L8-2021", "id": "BOE-A-2021-9233", "alias": ["Ley 8/2021"] },
+  { "clave": "CCom", "id": "BOE-A-1885-6627", "alias": [] },
+  { "clave": "TRLGDCU", "id": "BOE-A-2007-20555", "alias": ["RDL 1/2007", "RDLeg 1/2007", "Real Decreto Legislativo 1/2007"] },
+  { "clave": "LM", "id": "BOE-A-2001-23093", "alias": ["Ley 17/2001"] },
+  { "clave": "LPAT", "id": "BOE-A-2015-8328", "alias": ["Ley 24/2015"] },
+  { "clave": "LCD", "id": "BOE-A-1991-628", "alias": ["Ley 3/1991"], "bloques": { "4": "a4-2" }, "_bloques": "El BOE conserva el art. 4 de 1991 («Ámbito territorial», bloque a4) junto al vigente desde la Ley 29/2009 («Cláusula general», a4-2)." },
+  { "clave": "LSE", "id": "BOE-A-2019-2364", "alias": ["Ley 1/2019"] },
+  { "clave": "LA", "id": "BOE-A-2003-23646", "alias": ["Ley 60/2003"] },
+  { "clave": "LPI", "id": "BOE-A-1996-8930", "alias": ["RDL 1/1996", "RDLeg 1/1996", "Real Decreto Legislativo 1/1996"] },
+  { "clave": "LCS", "id": "BOE-A-1980-22501", "alias": ["Ley 50/1980"] },
+  { "clave": "LAP", "id": "BOE-A-2002-22188", "alias": ["Ley 41/2002"] },
+  { "clave": "LCDCE", "id": "BOE-A-2007-18243", "alias": ["Ley 25/2007"] },
+  { "clave": "LSSI", "id": "BOE-A-2002-13758", "alias": ["Ley 34/2002"] },
+  { "clave": "LOPDGDD", "id": "BOE-A-2018-16673", "alias": ["LO 3/2018", "Ley Orgánica 3/2018"] },
+  { "clave": "LAC", "id": "BOE-A-2015-8147", "alias": ["Ley 22/2015"] },
+  { "clave": "LMED", "id": "BOE-A-2012-9112", "alias": ["Ley 5/2012"] },
+  { "clave": "TRLRCSCVM", "id": "BOE-A-2004-18911", "alias": ["RDL 8/2004", "RDLeg 8/2004", "Real Decreto Legislativo 8/2004"] }
 ]
