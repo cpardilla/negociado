@@ -140,7 +140,7 @@
       const before = text.slice(Math.max(0, m.index - 40), m.index);
       let law = null;
       let lawLength = 0;
-      const a = after.match(/^\s*,?\s*(?:de\s+(?:la|el)\s+|del\s+|\()?/);
+      const a = after.match(/^(?:\s+y\s+(?:ss\.|sigs?\.|siguientes))?\s*,?\s*(?:de\s+(?:la|el)\s+|del\s+|\()?/);
       const la = lawAt(after.slice(a[0].length), alias);
       if (la) {
         law = la.key;
