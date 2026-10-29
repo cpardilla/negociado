@@ -254,6 +254,24 @@ test("no horizontal overflow at phone or desktop width, in any view", { timeout:
   assert.deepEqual(r, []);
 });
 
+test("old addresses (as GitHub Pages serves them) redirect to their new place, or explain", { timeout: 120000 }, async () => {
+  const cases = [
+    ["00 - Indices/LJV - Indice interactivo.html", "#/ley/LJV"],
+    ["01 - Legislación completa interactiva/Ley 1-2000, de 7 de enero, de Enjuiciamiento Civil.html", "#/ley/LEC/mapa"],
+    ["02 - Esquemas interactivos/LJV/08 - TÍTULO IX - De la conciliación/TÍTULO IX - De la conciliación.html", "#/esquema/ljv-conciliacion"],
+    ["03 - Guías de tramitación/LEC/01 - De las diligencias preliminares/De las diligencias preliminares.html", "#/guia/lec-diligencias-preliminares"],
+    ["02 - Esquemas interactivos/LJV/03 - TÍTULO II - De los expedientes de jurisdicción voluntaria en materia de personas/04 - CAPÍTULO I BIS & TER - Aprobación judicial de la modificación de la mención registral relativa al sexo - Capítulos I Bis y I Ter de la Ley 15-2015.html", null],
+    ["no-existe/nada.html", null],
+  ];
+  for (const [old, target] of cases) {
+    const r = await run({ page: old, http: true, browser: "edge", wait: 1500, arg: [], body: "return { hash: location.hash, path: location.pathname, text: document.body.innerText.slice(0, 200) };" });
+    if (target) {
+      assert.equal(r.result.hash.startsWith(target), true, `${old} → ${r.result.hash}`);
+      assert.equal(r.result.path, "/", old);
+    } else assert.match(r.result.text, /Esta dirección ya no existe/, old);
+  }
+});
+
 test("search: accents and case ignored, every word must match", { timeout: 60000 }, async () => {
   const r = await page(
     `await go('#/buscar?q=CONCILIACION%20celebracion', 900);

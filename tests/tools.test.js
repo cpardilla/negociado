@@ -199,6 +199,9 @@ test("checkResource: a repealed article and a missing apartado are errors/warnin
 const catalogo = JSON.parse(fs.readFileSync(path.join(ROOT, "sources", "actual", "catalogo.json"), "utf8"));
 const record = (id) => JSON.parse(fs.readFileSync(path.join(ROOT, "sources", "actual", `${id}.json`), "utf8"));
 const html = (item) => fs.readFileSync(path.join(ROOT, item.ruta), "utf8");
+// The old HTML files were removed in phase 3 · 2 (they live on in the tag baseline-2026-10-28):
+// the checks against them run only where they exist; the inventory itself is now the record.
+const OLD = fs.existsSync(path.join(ROOT, catalogo[0].ruta)) ? {} : { skip: "HTML antiguos retirados (fase 3 · 2)" };
 
 test("inventory: 57 resources with stable ids, in folder order", () => {
   assert.equal(catalogo.length, 57);
@@ -208,7 +211,7 @@ test("inventory: 57 resources with stable ids, in folder order", () => {
   );
 });
 
-test("inventory: every esquema card extracted, no text left uncaptured", () => {
+test("inventory: every esquema card extracted, no text left uncaptured", OLD, () => {
   for (const item of catalogo.filter((c) => c.tipo === "esquema")) {
     const rec = record(item.id);
     const cards = rec.secciones.flatMap((s) => s.contenido || []).filter((b) => b.tarjeta).length;
@@ -220,7 +223,7 @@ test("inventory: every esquema card extracted, no text left uncaptured", () => {
   }
 });
 
-test("inventory: every guía step extracted, with a title and a known start", () => {
+test("inventory: every guía step extracted, with a title and a known start", OLD, () => {
   for (const item of catalogo.filter((c) => c.tipo === "guia")) {
     const rec = record(item.id);
     const ids = Object.keys(rec.pasos || {});
@@ -234,7 +237,7 @@ test("inventory: every guía step extracted, with a title and a known start", ()
   }
 });
 
-test("inventory: índice entries match the source", () => {
+test("inventory: índice entries match the source", OLD, () => {
   for (const item of catalogo.filter((c) => c.tipo === "indice")) {
     const extracted = JSON.stringify(record(item.id).indice).match(/"texto"/g).length;
     const src = html(item);

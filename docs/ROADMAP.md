@@ -168,7 +168,7 @@ Auditorías de la fase (lo encontrado y corregido): manejador de «Copiar» que 
 1. ✅ `tools/build-law.js`: BOE → `data/leyes/{LEC,LJV}.js` (LEC 867 artículos, 164 divisiones; LJV 165 artículos, 50 divisiones), con el papel de cada párrafo (apartado, subapartado, párrafo, fila de tabla) y la comprobación de que cada artículo aparece una vez en la estructura.
 2. ✅ Vista «Ley» con modos Índice y Mapa: sustituye a `00 - Indices` y `01 - Legislación completa interactiva` (se retiran en la fase 3 · 2).
 3. ✅ Cobertura: el articulado completo, igual al del BOE (comprobado al generar). Disposiciones y preámbulo, fuera por decisión 3.
-4. ☐ Pendiente para las referencias vivas: incluir de las demás normas (CC, LOPJ…) solo los artículos citados en los esquemas y guías (`data/leyes/<CLAVE>.js` parciales). Hoy esas citas enlazan al BOE.
+4. ✅ (2026-10-28, a petición del propietario) **Enlaces directos al artículo en el BOE**, con la forma de los enlaces del propio BOE: `act.php?id=<norma>&p=<fecha de consolidación>&tn=1#<bloque>` (el ancla es el id del bloque del artículo, a veces en letra: `#atreintayseis`; `p` fija la versión que cita la app). Las demás normas (CC, LOPJ, LRC…) llevan solo los artículos citados en esquemas, guías y texto de LEC/LJV (`tools/build-law.js --citadas`; CC 328, LOPJ 27…), así la ventana de referencia muestra el texto y enlaza al artículo; no salen en el menú de leyes. Hallado de paso: 14 artículos de la LOPJ numerados con cardinales en letra (231, 280–291, 455) que el lector perdía; y citas a artículos inexistentes de la Ley del Notariado (2), Ley 41/2003 (8) y Ley 8/2021 (8), para la fase 4.
 
 #### 7.1 Lo aprendido del markmap actual (preferencias a conservar)
 - Jerarquía: Ley → Libro/Título → Título/Capítulo → Capítulo/Sección → **Artículo** («Artículo N. Rúbrica.») → apartados → letras y ordinales.
@@ -183,9 +183,9 @@ Defectos del markmap anterior — todos resueltos al generar el mapa de los mism
 - ✅ **Errores de conversión** (bloques de código, nodos vacíos, pestañas «Markmap»): no hay conversión desde Markdown.
 - ✅ Una sola copia de d3 y markmap en `vendor/` (markmap 0.18.12, d3 7.9.0; `tools/vendor-fetch.js`), cargada solo al abrir un mapa.
 
-### Fase 3 · Migración mecánica de esquemas y guías ▶
+### Fase 3 · Migración mecánica de esquemas y guías ✅
 1. ✅ `tools/migrate.js` + `tools/migracion.json` (ids nuevos; esquema y guía del mismo ámbito comparten id): 27 esquemas y 25 guías a `data/`, **texto idéntico** (y en las guías también el grafo), comprobado al migrar y en los tests. Se dejaron fuera, por ser interfaz y no contenido: la barra de cifras escritas a mano de los esquemas («40+ conexiones»), los contadores de cada ficha, la leyenda (repite las categorías), el mensaje «sin resultados», las flechas de los diagramas y los títulos de final propios de cada guía (el motor usa unos comunes). Los textos de las guías, que eran HTML sin depurar, quedan en el subconjunto seguro de los esquemas. Las categorías de un esquema por encima de seis repiten tono.
-2. ☐ Retirada de los 57 HTML antiguos (quedan en el historial de git y en el tag) y `404.html` con las redirecciones de las direcciones antiguas (decisión 8).
+2. ✅ (2026-10-29) Retirados los 57 HTML antiguos (quedan en el historial de git y en el tag `baseline-2026-10-28`). `404.html` (`tools/build-404.js`, autosuficiente): 56 direcciones antiguas redirigen a su sitio nuevo; la del esquema combinado I bis & ter (sin equivalente único) y cualquier otra inexistente muestran el aviso de actualizar favoritos (decisión 8). `.nojekyll` en la raíz. Los tres tests que comparaban el inventario con los HTML antiguos solo se ejecutan donde existen (el tag); `tools/extract-current.js` queda como histórico. Tests en navegador de las redirecciones, servidas como en Pages.
 3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
 ### Fase 4 · Revisión de contenido de los esquemas (28) ☐
@@ -287,6 +287,8 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-29 · Fase 3 completada: HTML antiguos retirados y direcciones antiguas redirigidas. Siguiente: fase 4.
+- 2026-10-28 · Enlaces directos al artículo en el BOE y texto de los artículos citados de las demás normas (petición del propietario).
 - 2026-10-28 · Fase 1 completada, con las fases 2 y 3 · 1 adelantadas (los motores necesitaban datos reales). Siguiente: fase 3 · 2 (retirar los HTML antiguos y redirigir sus direcciones) y fase 4 (revisión de contenido de los esquemas).
 - 2026-10-28 · Fase 0 completada. El ejecutor (0.5) se adelantó al inventario (0.3) porque el inventario de los esquemas se lee de la página renderizada. Además de LEC y LJV se descargaron las 16 leyes más citadas.
 - 2026-10-28 · Forma de trabajar fijada por el propietario: idioma de respuesta según el suyo; auditoría completa + batería de tests tras cada implementación; Agenda y Plantillas intocables; memoria USB fuera del alcance.

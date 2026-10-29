@@ -3,6 +3,9 @@
 // resource into sources/actual/<id>.json, plus sources/actual/catalogo.json.
 // It is the faithful record the migration and the content checks start from.
 //
+// Historical: the old HTML files were removed in phase 3 · 2. To run it again, check out the tag
+// baseline-2026-10-28 (where they are) — sources/actual/ is the record it produced.
+//
 // Usage: node tools/extract-current.js [id ...]   (no arguments = everything)
 //
 // Ids: I-LEC, I-LJV (índices) · L-LEC, L-LJV (legislación completa) ·
