@@ -13,7 +13,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | lec-division-herencia | Esquema · LEC · División de la herencia | · | · | · | 1R | · | · | · |
 | lec-intervencion-caudal | Esquema · LEC · Intervención del caudal hereditario | · | · | · | · | · | · | · |
 | lec-administracion-caudal | Esquema · LEC · Administración del caudal hereditario | · | · | · | · | · | · | · |
-| lec-liquidacion-rem | Esquema · LEC · Liquidación del régimen económico matrimonial | 13R | 1R | 3R | 2R | · | · | 4R |
+| lec-liquidacion-rem | Esquema · LEC · Liquidación del régimen económico matrimonial | · | · | · | · | · | · | · |
 | ljv-disposiciones-generales | Esquema · LJV · Título Preliminar · Disposiciones generales | 2E 1R | 1R | · | 1R | · | · | 4R |
 | ljv-normas-comunes | Esquema · LJV · Título I · Normas comunes de tramitación | 2R | 1R | · | · | · | · | 2R |
 | ljv-filiacion | Esquema · LJV · Reconocimiento de la filiación no matrimonial | 3A 1R | · | · | · | · | · | 2R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 107E 41A 160R | 0E 0A 5R | 0E 0A 3R | 0E 0A 16R | 0E 0A 9R | 4E 0A 1R | 0E 0A 90R |
+| | **Total** | 107E 41A 147R | 0E 0A 4R | 0E 0A 0R | 0E 0A 14R | 0E 0A 9R | 4E 0A 1R | 0E 0A 86R |
 
 E = error · A = aviso · R = revisar.
 
@@ -70,18 +70,18 @@ E = error · A = aviso · R = revisar.
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
 - ✓ LJV (BOE a 05-03-2026): 2769
-- ✓ LEC (BOE a 07-10-2026): 1557
-- ✓ CC (BOE a 07-09-2026): 1393
-- ✓ CE (BOE a 20-05-2026): 97
-- ✓ LOPJ (BOE a 09-10-2026): 62
+- ✓ LEC (BOE a 07-10-2026): 1502
+- ✓ CC (BOE a 07-09-2026): 1359
+- ✓ CE (BOE a 20-05-2026): 96
+- ✓ LOPJ (BOE a 09-10-2026): 61
 - ✓ LOPJM (BOE a 18-12-2025): 60
 - ✓ LRC (BOE a 24-02-2026): 47
 - ✓ LTRANS (BOE a 20-12-2025): 46
 - ✓ LOPDH (BOE a 16-12-2025): 42
-- ✓ LH (BOE a 07-01-2026): 37
+- ✓ LH (BOE a 07-01-2026): 35
 - ✓ LN (BOE a 22-10-2026): 29
 - ✓ LPPD (BOE a 18-12-2025): 24
-- UE: 22
+- UE: 21
 - ✓ LOPDGDD (BOE a 08-10-2026): 16
 - ✓ LTO (BOE a 16-12-2025): 16
 - ✓ RDTO (BOE a 19-12-2025): 16
@@ -98,13 +98,11 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LPAT (BOE a 31-07-2026): 2
 - ✓ LCD (BOE a 29-12-2025): 2
 - ✓ LSE (BOE a 31-07-2026): 2
-- Reglamento: 2
 - Ley 29/2015: 2
 - LO 8/2015: 2
 - LPAP: 2
 - Ley 40/2015: 2
 - Ley 10/2012: 2
-- Ley 35/2006: 1
 - Ley 24/2001: 1
 - LO 3/2007: 1
 - ✓ LAP (BOE a 18-12-2025): 1
@@ -112,10 +110,11 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 1/1996: 1
 - Ley 39/2015: 1
 - LO 1/2023: 1
+- Reglamento: 1
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 793 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 788 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -142,43 +141,7 @@ Sin hallazgos automáticos.
 
 ### lec-liquidacion-rem · Esquema · LEC · Liquidación del régimen económico matrimonial
 
-**citas**
-
-- [revisar] «arts. 85.1»: el art. 85 LOPJ no tiene apartado 1 (no tiene apartados numerados) — _sección «Ámbito de aplicación y competencia» › tarjeta «Artículo 807» › «Competencia objetiva y territorial» › 1 › punto.1_
-- [revisar] «art. 1365.1»: el art. 1365 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Formación del inventario» › tarjeta «Artículo 808» › «Créditos de reintegro y compensación entre masas» › 1 › punto.2_
-- [revisar] «art. 238.3»: el art. 238 LOPJ no tiene apartado 3 (no tiene apartados numerados) — _sección «Formación del inventario» › tarjeta «Artículo 809» › «Supuesto 1 — Incomparecencia injustificada» › 1 › punto.2_
-- [revisar] «art. 103.4»: el art. 103 CC no tiene apartado 4 (no tiene apartados numerados) — _sección «Formación del inventario» › tarjeta «Artículo 809» › «Supuesto 2 — Acuerdo entre los cónyuges» › 1 › punto.3_
-- [revisar] «arts. 455–467»: el art. 467 LEC está sin contenido/derogado (extremo de un rango) — _sección «Formación del inventario» › tarjeta «Artículo 809» › «Supuesto 3 — Controversia sobre el inventario (art. 809.2)» › 1 › punto.5_
-- [revisar] «art. 103.4»: el art. 103 CC no tiene apartado 4 (no tiene apartados numerados) — _sección «Formación del inventario» › tarjeta «Artículo 809» › referencia 5_
-- [revisar] «art. 1365.1»: el art. 1365 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Liquidación del régimen económico matrimonial» › tarjeta «Artículo 810» › «Contenido de la propuesta — Indemnizaciones y reintegros» › 1 › punto.2_
-- [revisar] «art. 1397.3»: el art. 1397 CC no tiene apartado 3 (no tiene apartados numerados) — _sección «Liquidación del régimen económico matrimonial» › tarjeta «Artículo 810» › «Contenido de la propuesta — Indemnizaciones y reintegros» › 1 › punto.5_
-- [revisar] «art. 1406.1»: el art. 1406 CC no tiene apartado 1 (no tiene apartados numerados) — _sección «Liquidación del régimen económico matrimonial» › tarjeta «Artículo 810» › «Contenido de la propuesta — División del remanente y formación de lotes» › 1 › punto.2.1_
-- [revisar] «art. 1406.2»: el art. 1406 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Liquidación del régimen económico matrimonial» › tarjeta «Artículo 810» › «Contenido de la propuesta — División del remanente y formación de lotes» › 1 › punto.2.2_
-- [revisar] «art. 1406.3»: el art. 1406 CC no tiene apartado 3 (no tiene apartados numerados) — _sección «Liquidación del régimen económico matrimonial» › tarjeta «Artículo 810» › «Contenido de la propuesta — División del remanente y formación de lotes» › 1 › punto.2.3_
-- [revisar] «art. 1406.4»: el art. 1406 CC no tiene apartado 4 (no tiene apartados numerados) — _sección «Liquidación del régimen económico matrimonial» › tarjeta «Artículo 810» › «Contenido de la propuesta — División del remanente y formación de lotes» › 1 › punto.2.4_
-- [revisar] «arts. 455–467»: el art. 467 LEC está sin contenido/derogado (extremo de un rango) — _sección «Liquidación del régimen de participación» › tarjeta «Artículo 811» › «Supuesto 3 — Falta de acuerdo: juicio verbal» › 1 › punto.4_
-
-**alcance**
-
-- [revisar] tarjetas de artículos fuera de su ámbito CAPÍTULO II «Del procedimiento para la liquidación del régimen económico matrimonial» (arts. 806–811 LEC): art. 784, art. 785, art. 786, art. 787, art. 788 — ¿duplican otro esquema? — _tarjetas_
-
-**rubricas**
-
-- [revisar] título «Presentación del cuaderno particional y oposición» frente a la rúbrica del BOE «Entrega de la documentación al contador. Obligación de cumplir el encargo aceptado y plazo para hacerlo» (art. 785 LEC) — _sección «Artículos conexos LEC — Operaciones divisorias (arts. 784–788)» › tarjeta «Artículo 785» › título_
-- [revisar] título «Resolución de la oposición al cuaderno particional» frente a la rúbrica del BOE «Práctica de las operaciones divisorias» (art. 786 LEC) — _sección «Artículos conexos LEC — Operaciones divisorias (arts. 784–788)» › tarjeta «Artículo 786» › título_
-- [revisar] título «Ejecución de las operaciones divisorias» frente a la rúbrica del BOE «Entrega de los bienes adjudicados a cada heredero» (art. 788 LEC) — _sección «Artículos conexos LEC — Operaciones divisorias (arts. 784–788)» › tarjeta «Artículo 788» › título_
-
-**plazos**
-
-- [revisar] plazo «10 días» no aparece en el precepto citado (Art. 785 LEC): «Traslado del cuaderno particional a los interesados para formular oposición · 10 días · Art. 785 LEC» — _sección «Indice de plazos procesales» › 1 › tabla fila 5_
-- [revisar] plazo «3 años» no aparece en el precepto citado (art. 1424 CC): «Prescripción del crédito de participación desde la disolución del régimen · 3 años · CC art. 1424» — _sección «Indice de plazos procesales» › 1 › tabla fila 7_
-
-**terminologia**
-
-- [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Ámbito de aplicación y competencia» › tarjeta «Artículo 807» › 2 › apartado | sección «Mapa de participantes y actores» › 1 › grupo «Órganos jurisdiccionales».1_
-- [revisar] «JPI» × 6 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar — _sección «Ámbito de aplicación y competencia» › tarjeta «Artículo 807» › 2 › apartado | sección «Ámbito de aplicación y competencia» › tarjeta «Artículo 807» › «Juzgado de Primera Instancia (JPI)» › 1 › punto.3 | sección «Ámbito de aplicación y competencia» › tarjeta «Artículo 807» › «Juzgado de Violencia sobre la Mujer (JVSM)» › 1 › punto.2 …_
-- [revisar] «incapacitación» × 2 → Ley 8/2021: medidas de apoyo; ya no existe la incapacitación — _sección «Ámbito de aplicación y competencia» › tarjeta «Artículo 807» › «Juzgado de Primera Instancia (JPI)» › 1 › punto.2 | sección «Formación del inventario» › tarjeta «Artículo 808» › «Momento procesal habilitante» › 1 › punto.2_
-- [revisar] «Juzgado de Paz» × 1 → Juzgados de Paz → Oficinas de Justicia en los municipios (LO 1/2025) — verificar — _sección «Ámbito de aplicación y competencia» › tarjeta «Artículo 807» › «Competencia objetiva y territorial» › 1 › punto.1_
+Sin hallazgos automáticos.
 
 ### ljv-disposiciones-generales · Esquema · LJV · Título Preliminar · Disposiciones generales
 

@@ -188,7 +188,7 @@ Defectos del markmap anterior — todos resueltos al generar el mapa de los mism
 2. ✅ (2026-10-29) Retirados los 57 HTML antiguos (quedan en el historial de git y en el tag `baseline-2026-10-28`). `404.html` (`tools/build-404.js`, autosuficiente): 56 direcciones antiguas redirigen a su sitio nuevo; la del esquema combinado I bis & ter (sin equivalente único) y cualquier otra inexistente muestran el aviso de actualizar favoritos (decisión 8). `.nojekyll` en la raíz. Los tres tests que comparaban el inventario con los HTML antiguos solo se ejecutan donde existen (el tag); `tools/extract-current.js` queda como histórico. Tests en navegador de las redirecciones, servidas como en Pages.
 3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
-### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (4/27)
+### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (5/27)
 Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabla (decisión 6). Los más usados (E01–E04, E28) con atención especial.
 
 | # | Esquema | Estado |
@@ -197,7 +197,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E02 | LEC · División de la herencia — procedimiento | ✅ 2026-10-29 · de 26 a 16 fichas (decisión 9), 39 correcciones ([registro](revision/lec-division-herencia.md)) |
 | E03 | LEC · Intervención del caudal hereditario | ✅ 2026-10-29 · las 7 fichas rehechas desde el texto vigente; 20 grupos de hallazgos ([registro](revision/lec-intervencion-caudal.md)) |
 | E04 | LEC · Administración del caudal hereditario | ✅ 2026-10-29 · corregido (no rehecho): 17 hallazgos; el más relevante, la contestación a la impugnación de cuentas va por los arts. 404 y ss. (20 días), no por el 438 ([registro](revision/lec-administracion-caudal.md)) |
-| E05 | LEC · Liquidación del régimen económico matrimonial | ☐ |
+| E05 | LEC · Liquidación del régimen económico matrimonial | ✅ 2026-10-29 · rehecho; las 5 fichas de los arts. 784–788, que los describían mal, pasan a una ficha de remisión; corregido el «plazo de prescripción de 3 años» del crédito de participación (es el aplazamiento del pago, art. 1431 CC) ([registro](revision/lec-liquidacion-rem.md)) |
 | E06 | LJV · Título Preliminar — Disposiciones generales | ☐ |
 | E07 | LJV · Título I — Normas comunes de tramitación | ☐ |
 | E08 | LJV · T. II Cap. I — Reconocimiento de filiación no matrimonial | ☐ |
@@ -289,6 +289,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-29 · E05 (liquidación del REM) revisado. Siguiente: E06.
 - 2026-10-29 · E04 (administración del caudal) revisado. Siguiente: E05.
 - 2026-10-29 · E03 (intervención del caudal) revisado: contenido rehecho desde los arts. 790–796 (cifras y plazos inventados, citas erróneas, 12 resoluciones no verificables). Siguiente: E04.
 - 2026-10-29 · E02 (división de la herencia) revisado. Decisiones 9 (alcance de los esquemas) y 10 (jurisprudencia no verificable). Siguiente: E03.
