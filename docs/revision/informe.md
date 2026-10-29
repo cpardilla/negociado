@@ -69,10 +69,10 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2475
+- ✓ LJV (BOE a 05-03-2026): 2438
 - ✓ LEC (BOE a 07-10-2026): 1497
 - ✓ CC (BOE a 07-09-2026): 1338
-- ✓ LOPJ (BOE a 09-10-2026): 74
+- ✓ LOPJ (BOE a 09-10-2026): 77
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - ✓ CE (BOE a 20-05-2026): 46
@@ -82,8 +82,8 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LOPDH (BOE a 16-12-2025): 33
 - ✓ LH (BOE a 07-01-2026): 32
 - ✓ LN (BOE a 22-10-2026): 29
-- ✓ LTO (BOE a 16-12-2025): 16
-- ✓ RDTO (BOE a 19-12-2025): 16
+- ✓ RDTO (BOE a 19-12-2025): 25
+- ✓ LTO (BOE a 16-12-2025): 19
 - ✓ LSC (BOE a 19-12-2025): 7
 - ✓ CP (BOE a 09-04-2026): 6
 - ✓ CCom (BOE a 16-12-2025): 4
@@ -106,7 +106,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 450 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 448 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
