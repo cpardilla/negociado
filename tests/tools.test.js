@@ -152,6 +152,7 @@ test("citations: the law is taken from after or before the article", () => {
   assert.equal(one("Dir. 2004/48/CE art. 6", "LEC").law, "UE");
   assert.equal(one("datos de salud (art. 9 RGPD)", "LEC").law, "UE");
   assert.equal(one("Directiva (UE) 2016/943, art. 9", "LEC").law, "UE");
+  assert.equal(one("Reg. (UE) 650/2012 art. 4", "LEC").law, "UE");
   assert.equal(one("intimidad (art. 18.1 CE)", "LEC").law, "CE");
 });
 

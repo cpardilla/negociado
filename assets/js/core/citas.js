@@ -71,7 +71,7 @@
     ["LAP", /^(?:Ley de autonom[ií]a del paciente\b)/],
     // EU instruments, whole ("Dir. 2004/48/CE", "Directiva (UE) 2016/943"), so that the "CE" of a
     // directive's number is not read as the Constitution.
-    ["UE", /^(?:(?:Directiva|Dir\.)(?:\s*\((?:UE|CE)\))?(?:\s*\d+\/\d+(?:\/(?:CEE?|UE))?)?|Reglamento \((?:UE|CE)\)(?:\s*(?:n\.?º\s*)?\d+\/\d+)?|Reglamento Bruselas(?: I bis)?|RGPD\b|DSA\b|TFUE\b|CDFUE\b|Convenio\b)/],
+    ["UE", /^(?:(?:Directiva|Dir\.)(?:\s*\((?:UE|CE)\))?(?:\s*\d+\/\d+(?:\/(?:CEE?|UE))?)?|(?:Reglamento|Reg\.) \((?:UE|CE)\)(?:\s*(?:n\.?º\s*)?\d+\/\d+)?|Reglamento Bruselas(?: I bis)?|RGPD\b|DSA\b|TFUE\b|CDFUE\b|Convenio\b)/],
     ["otra", /^(?:Ley(?: Org[aá]nica)? \d+\/\d{4}\b|LO \d+\/\d{4}\b|RD(?:L|Leg)? ?\d+\/\d{4}\b|Real Decreto(?:-ley| Legislativo)? \d+\/\d{4}\b|Reglamento\b)/],
   ];
 
