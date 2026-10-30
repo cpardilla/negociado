@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G01.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G01.json; revisado con el BOE (registro: docs/revision/lec-diligencias-preliminares.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "lec-diligencias-preliminares",
@@ -16,7 +16,7 @@ Neg.data.register({
   "263"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20261007",
   "origen": "G01"
  },
@@ -32,109 +32,98 @@ Neg.data.register({
  "actores": {
   "ambos": "Juez + LAJ",
   "juez": "Juez / Tribunal",
-  "laj": "Letrado de la Admón. de Justicia"
+  "laj": "Letrado de la Administración de Justicia"
  },
  "inicio": "inicio",
  "pasos": {
   "inicio": {
    "fase": 0,
-   "titulo": "Análisis inicial y recepción de la solicitud",
+   "titulo": "Recepción de la solicitud",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se recibe en el registro del juzgado la solicitud de diligencias preliminares. El LAJ debe verificar el cumplimiento de los requisitos formales mínimos y el solicitante debe haber realizado un análisis exhaustivo de la viabilidad."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Las diligencias preliminares constituyen un numerus clausus interpretado flexiblemente. Su finalidad es preparar el juicio, no obtener prueba anticipada. No proceden diligencias meramente indagatorias."
+     "texto": "Se presenta la solicitud de diligencias preliminares para preparar un juicio. Solo caben las diligencias del art. 256.1 LEC (y las de leyes especiales, núm. 9.º)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 256.1 LEC: \"Toda persona que se considere con derecho a ejercitar una acción contra otra... podrá instar del Juez la práctica de las diligencias que se indican a continuación...\""
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Atención: Si no se cumple alguno de los tres presupuestos esenciales (adecuación, justa causa e interés legítimo), la solicitud será inadmitida."
+     "texto": "Art. 256.1 LEC: «Todo juicio podrá prepararse» por las diligencias que enumera (núms. 1.º a 11.º)."
     },
     {
      "tipo": "lista",
-     "titulo": "Verificación preliminar",
+     "titulo": "Comprobación inicial",
      "items": [
-      "Identificar la acción principal que se pretende ejercitar",
-      "Determinar si se necesita información previa para fundamentar la demanda",
-      "Evaluar si alguna de las 11 categorías del art. 256.1 LEC es aplicable",
-      "Verificar la existencia de legitimación activa y pasiva",
-      "Comprobar referencia circunstanciada al asunto",
-      "Verificar ofrecimiento de caución",
-      "En su caso, principio de prueba de la infracción (núm. 8º)"
+      "La diligencia pedida es una de las del art. 256.1 LEC",
+      "La solicitud expresa sus fundamentos, con referencia circunstanciada al asunto del juicio que se quiere preparar (art. 256.2)",
+      "Se ofrece caución para los gastos y los daños y perjuicios de quienes intervengan (art. 256.3)",
+      "Núm. 8.º: se acompaña principio de prueba de la infracción"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "Los gastos que se ocasionen a las personas que hubieren de intervenir serán siempre a cargo del solicitante (art. 256.4 LEC)."
+     "texto": "Los gastos de las personas que intervengan en las diligencias son a cargo del solicitante (art. 256.3 LEC)."
     }
    ],
-   "pregunta": "¿Qué tipo de diligencia preliminar necesita?",
+   "pregunta": "¿Qué diligencia se pide?",
    "opciones": [
     {
-     "texto": "Declaración jurada sobre capacidad/representación (art. 256.1.1º)",
+     "texto": "1.º Declaración o documentos sobre capacidad, representación o legitimación",
      "tono": "t-ok",
      "destino": "det_256_1_1"
     },
     {
-     "texto": "Exhibición de cosa mueble (art. 256.1.2º)",
+     "texto": "2.º Exhibición de la cosa a la que se refiera el juicio",
      "tono": "t-nota",
      "destino": "det_256_1_2"
     },
     {
-     "texto": "Exhibición de testamento (art. 256.1.3º)",
+     "texto": "3.º Exhibición del acto de última voluntad",
      "tono": "t-nota",
      "destino": "det_256_1_3"
     },
     {
-     "texto": "Documentos y cuentas de sociedad (art. 256.1.4º)",
+     "texto": "4.º Documentos y cuentas de sociedad o comunidad",
      "tono": "t-nota",
      "destino": "det_256_1_4"
     },
     {
-     "texto": "Contrato de seguro de responsabilidad civil (art. 256.1.5º)",
+     "texto": "5.º Contrato de seguro de responsabilidad civil",
      "tono": "t-nota",
      "destino": "det_256_1_5"
     },
     {
-     "texto": "Historia clínica (art. 256.1.5º bis)",
+     "texto": "5.º bis Historia clínica",
      "tono": "t-nota",
      "destino": "det_256_1_5bis"
     },
     {
-     "texto": "Datos sobre grupo de consumidores (art. 256.1.6º)",
+     "texto": "6.º Integrantes de un grupo de consumidores",
      "tono": "t-nota",
      "destino": "det_256_1_6"
     },
     {
-     "texto": "Datos de infracción de PI/PIndustrial (art. 256.1.7º)",
+     "texto": "7.º Datos sobre infracción de propiedad industrial o intelectual",
      "tono": "t-plazo",
      "destino": "det_256_1_7"
     },
     {
-     "texto": "Documentos bancarios escala comercial (art. 256.1.8º)",
+     "texto": "8.º Documentos bancarios, financieros, comerciales o aduaneros (escala comercial)",
      "tono": "t-plazo",
      "destino": "det_256_1_8"
     },
     {
-     "texto": "Leyes especiales (art. 256.1.9º)",
+     "texto": "9.º Diligencias previstas en leyes especiales",
      "tono": "t-nota",
      "destino": "det_256_1_9"
     },
     {
-     "texto": "Identificación de prestador SSI (art. 256.1.10º)",
+     "texto": "10.º Identificación de un prestador de servicios de la sociedad de la información",
      "tono": "t-plazo",
      "destino": "det_256_1_10"
     },
     {
-     "texto": "Identificación de usuario SSI (art. 256.1.11º)",
+     "texto": "11.º Identificación de un usuario de servicios de la sociedad de la información",
      "tono": "t-plazo",
      "destino": "det_256_1_11"
     }
@@ -142,465 +131,326 @@ Neg.data.register({
   },
   "det_256_1_1": {
    "fase": 0,
-   "titulo": "Declaración jurada sobre capacidad o representación (art. 256.1.1º)",
+   "titulo": "Capacidad, representación o legitimación (art. 256.1.1.º LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Permite recabar información sobre la capacidad civil de una persona o sobre su representación legal o voluntaria. Es especialmente útil cuando se ignora quién ostenta la condición de heredero, tutor o apoderado."
+     "texto": "Petición de que la persona a quien se dirigiría la demanda declare, bajo juramento o promesa de decir verdad, sobre algún hecho relativo a su capacidad, representación o legitimación cuyo conocimiento sea necesario para el pleito, o exhiba los documentos en que conste."
     },
     {
-     "tipo": "ley",
-     "texto": "Art. 256.1.1º LEC: \"Que declare bajo juramento o promesa sobre cuál es su capacidad o representación legal o voluntaria...\""
-    },
-    {
-     "tipo": "plazo",
-     "texto": "El requerido dispone de 10 días para cumplir voluntariamente desde la citación. Si se opone, tiene 5 días para formular escrito de oposición."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "La diligencia no puede usarse como medio de investigación general sobre la solvencia o patrimonio del futuro demandado."
+     "tipo": "nota",
+     "texto": "Si no atiende el requerimiento ni se opone, pueden tenerse por respondidas afirmativamente las preguntas (art. 261.1.ª LEC)."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "det_256_1_2": {
    "fase": 0,
-   "titulo": "Exhibición de cosa mueble (art. 256.1.2º)",
+   "titulo": "Exhibición de la cosa (art. 256.1.2.º LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Permite solicitar que una persona exhiba una cosa mueble que obre en su poder, cuando resulte necesario para fundamentar la futura demanda."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 256.1.2º LEC: \"Que exhiba la cosa mueble que obre en su poder, a fin de que el solicitante o la persona designada por el tribunal pueda examinarla...\""
-    },
-    {
-     "tipo": "plazo",
-     "texto": "Plazo de 10 días para cumplimiento voluntario. Si no se cumple, el tribunal puede ordenar entrada y registro."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Frecuente en reclamaciones por vicios ocultos de productos."
+     "texto": "Solicitud de que la persona a la que se pretende demandar exhiba la cosa que tenga en su poder y a la que se haya de referir el juicio."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "det_256_1_3": {
    "fase": 0,
-   "titulo": "Exhibición de testamento (art. 256.1.3º)",
+   "titulo": "Exhibición del acto de última voluntad (art. 256.1.3.º LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Obliga a quien tenga en su poder un testamento cerrado u ológrafo a exhibirlo ante el tribunal. Esencial en procedimientos hereditarios."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Si el testamento es abierto, no es necesaria esta diligencia porque ya consta en el protocolo notarial."
+     "texto": "Petición de quien se considere heredero, coheredero o legatario de que se exhiba, por quien lo tenga en su poder, el acto de última voluntad del causante."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "det_256_1_4": {
    "fase": 0,
-   "titulo": "Documentos y cuentas de sociedad (art. 256.1.4º)",
+   "titulo": "Documentos y cuentas de sociedad o comunidad (art. 256.1.4.º LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Permite a socios y partícipes recabar la exhibición de documentos y cuentas de una sociedad."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "El solicitante debe acreditar su condición de socio o partícipe. No puede usarse por terceros ajenos."
+     "texto": "Petición de un socio o comunero para que se le exhiban los documentos y cuentas de la sociedad o comunidad, dirigida a estas o al consocio o condueño que los tenga."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "det_256_1_5": {
    "fase": 0,
-   "titulo": "Contrato de seguro de responsabilidad civil (art. 256.1.5º)",
+   "titulo": "Contrato de seguro de responsabilidad civil (art. 256.1.5.º LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Permite obtener información sobre la existencia, condiciones y límites de un contrato de seguro de responsabilidad civil. Esencial en reclamaciones de daños."
-    },
-    {
-     "tipo": "nota",
-     "texto": "El art. 256.1.5º fue modificado por la Ley 20/2015, ampliando su alcance para incluir no solo la exhibición del contrato, sino también la mera información."
+     "texto": "Petición de quien se considere perjudicado por un hecho que pudiera estar cubierto por seguro de responsabilidad civil, de que se exhiba el contrato de seguro por quien lo tenga en su poder."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "det_256_1_5bis": {
    "fase": 0,
-   "titulo": "Historia clínica (art. 256.1.5º bis)",
+   "titulo": "Historia clínica (art. 256.1.5.º bis LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Permite recabar la historia clínica cuando sea preciso para fundamentar una reclamación por daños personales."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "El acceso está sujeto a la normativa de protección de datos y ley de autonomía del paciente. El solicitante debe acreditar su legitimación."
+     "texto": "Petición de la historia clínica al centro sanitario o profesional que la custodie, en las condiciones y con el contenido que establece la ley."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "det_256_1_6": {
    "fase": 0,
-   "titulo": "Datos sobre grupo de consumidores (art. 256.1.6º)",
+   "titulo": "Integrantes de un grupo de consumidores (art. 256.1.6.º LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Permite obtener información necesaria para la identificación de los miembros de un grupo de consumidores afectados."
+     "texto": "Para quien pretenda iniciar un proceso en defensa de intereses colectivos de consumidores y usuarios, a fin de concretar a los integrantes del grupo cuando, no estando determinados, sean fácilmente determinables. El tribunal adopta las medidas oportunas, incluido el requerimiento al demandado para que colabore."
     },
     {
      "tipo": "aviso",
-     "texto": "Competencia especial: es competente el tribunal ante el que haya de presentarse la demanda, no el del domicilio del requerido."
+     "texto": "Competencia: el tribunal ante el que haya de presentarse la demanda (art. 257.1, párrafo segundo, LEC)."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "det_256_1_7": {
    "fase": 0,
-   "titulo": "Datos de infracción de PI/PIndustrial (art. 256.1.7º)",
+   "titulo": "Datos sobre una infracción de propiedad industrial o intelectual (art. 256.1.7.º LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Permite obtener información sobre el origen y las redes de distribución de productos o servicios que infrinjan derechos de PI."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "La solicitud del núm. 8º deberá acompañarse de un principio de prueba de la realidad de la infracción."
+     "texto": "Para quien pretenda ejercitar una acción por infracción cometida mediante actos que no sean de meros consumidores finales de buena fe y sin ánimo de lucro: datos sobre el posible infractor, el origen y las redes de distribución; en particular, nombres y direcciones de productores, fabricantes, distribuidores y mayoristas o minoristas, y cantidades y precios."
     },
     {
      "tipo": "nota",
-     "texto": "La información obtenida (núms. 7, 8, 10 y 11) se utilizará exclusivamente para la tutela jurisdiccional, con prohibición de divulgarla (art. 259.5 LEC)."
+     "texto": "Puede acordarse que el interrogatorio sea a puerta cerrada (art. 259.3 LEC). La información obtenida solo puede usarse para la tutela jurisdiccional del derecho (art. 259.4 LEC)."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "Competencia: el tribunal ante el que haya de presentarse la demanda (art. 257.1, párrafo segundo, LEC)."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "det_256_1_8": {
    "fase": 0,
-   "titulo": "Documentos bancarios escala comercial (art. 256.1.8º)",
+   "titulo": "Documentos bancarios, financieros, comerciales o aduaneros (art. 256.1.8.º LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Permite solicitar de entidades bancarias la exhibición de documentos que obren en su poder a escala comercial."
+     "texto": "Para quien pretenda ejercitar una acción por infracción de propiedad industrial o intelectual cometida a escala comercial (para obtener beneficios económicos o comerciales directos o indirectos): exhibición de esos documentos, producidos en un determinado tiempo, que se presuman en poder del futuro demandado."
     },
     {
      "tipo": "aviso",
-     "texto": "La solicitud debe ser proporcional y concreta. No se admite una solicitud genérica de \"todos los documentos bancarios\". Debe acompañarse de un principio de prueba."
+     "texto": "La solicitud debe acompañarse de un principio de prueba de la infracción (p. ej., una muestra de los productos). Puede pedirse testimonio de los documentos si el requerido no quiere desprenderse de ellos."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "Competencia: el tribunal ante el que haya de presentarse la demanda (art. 257.1, párrafo segundo, LEC)."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "det_256_1_9": {
    "fase": 0,
-   "titulo": "Leyes especiales (art. 256.1.9º)",
+   "titulo": "Diligencias de leyes especiales (art. 256.1.9.º LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Remite a las diligencias que estén previstas en leyes especiales para casos concretos."
+     "texto": "Las diligencias y averiguaciones que, para la protección de determinados derechos, prevean las leyes especiales."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Se aplica este capítulo de la LEC en lo que no se oponga a la ley especial (art. 263 LEC)."
     },
     {
      "tipo": "aviso",
-     "texto": "Es necesario identificar con precisión la ley especial que habilita la diligencia. No puede usarse como cláusula general."
+     "texto": "Competencia: el tribunal ante el que haya de presentarse la demanda (art. 257.1, párrafo segundo, LEC)."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "det_256_1_10": {
    "fase": 0,
-   "titulo": "Identificación de prestador SSI (art. 256.1.10º)",
+   "titulo": "Identificación de un prestador de servicios de la sociedad de la información (art. 256.1.10.º LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Permite recabar datos de identificación de un prestador de servicios de la sociedad de la información que figuren en registros públicos."
+     "texto": "Para quien pretenda ejercitar una acción por infracción de propiedad industrial o intelectual: identificación de un prestador de servicios de la sociedad de la información del que haya indicios razonables de que difunde contenidos protegidos sin autorización, con audiencia o volumen apreciable en España."
     },
     {
-     "tipo": "aviso",
-     "texto": "Se limita a datos ya registrados públicamente. No autoriza la obtención de datos personales no públicos."
+     "tipo": "nota",
+     "texto": "Puede dirigirse a los prestadores de servicios de la sociedad de la información, de pagos electrónicos y de publicidad que hayan mantenido relación con él en los últimos doce meses. La información solo puede usarse para la tutela jurisdiccional del derecho (art. 259.4 LEC)."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "det_256_1_11": {
    "fase": 0,
-   "titulo": "Identificación de usuario SSI (art. 256.1.11º)",
+   "titulo": "Identificación de un usuario de servicios de la sociedad de la información (art. 256.1.11.º LEC)",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Permite obtener datos de identificación de un usuario de SSI a través del prestador del servicio. Clave para identificar a autores de infracciones en internet."
+     "texto": "Para el titular de un derecho de propiedad intelectual: que un prestador de servicios de la sociedad de la información aporte los datos para identificar a un usuario (relación en los últimos doce meses) del que haya indicios razonables de que difunde contenidos protegidos sin autorización, mediante actos que no sean de meros consumidores finales de buena fe y sin ánimo de lucro, con volumen apreciable."
     },
     {
-     "tipo": "aviso",
-     "texto": "Debe respetar la normativa de protección de datos. Los datos solo podrán utilizarse para el ejercicio de la acción que motiva la diligencia."
+     "tipo": "nota",
+     "texto": "La información solo puede usarse para la tutela jurisdiccional del derecho (art. 259.4 LEC)."
     }
    ],
    "siguiente": "solicitud_formal"
   },
   "solicitud_formal": {
    "fase": 0,
-   "titulo": "Formalización de la solicitud",
+   "titulo": "Contenido de la solicitud",
    "actor": "ambos",
    "bloques": [
-    {
-     "tipo": "info",
-     "texto": "La solicitud debe formularse por escrito, expresando con claridad la diligencia, los fundamentos jurídicos, y una referencia circunstanciada de los hechos y personas afectadas."
-    },
     {
      "tipo": "ley",
-     "texto": "Art. 256.2 LEC: \"Las diligencias preliminares se solicitarán al Juez mediante escrito, acompañado de los documentos en que se funde...\""
+     "texto": "Art. 256.2 LEC: «En la solicitud de diligencias preliminares se expresarán sus fundamentos, con referencia circunstanciada al asunto objeto del juicio que se quiera preparar»."
     },
     {
      "tipo": "lista",
-     "titulo": "Contenido obligatorio",
+     "titulo": "Contenido",
      "items": [
-      "Identificación del solicitante, Letrado y Procurador",
-      "Expresión clara de la diligencia solicitada (art. 256.1)",
-      "Fundamentos jurídicos",
-      "Referencia circunstanciada de los hechos",
-      "Identificación de las personas afectadas",
-      "Ofrecimiento de caución",
-      "Principio de prueba (núms. 8º, 10º, 11º)"
+      "Diligencia que se pide (art. 256.1)",
+      "Fundamentos y referencia circunstanciada al asunto del juicio",
+      "Persona que ha de declarar, exhibir o intervenir",
+      "Ofrecimiento de caución (art. 256.3); puede prestarse en la forma del art. 64.2, párrafo segundo, LEC"
      ],
      "marcar": true
     },
     {
      "tipo": "aviso",
-     "texto": "Salvo excepción, la solicitud requiere procurador y abogado."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "La caución se perderá si transcurrido 1 mes desde la terminación de las diligencias no se interpone demanda sin justificación suficiente (art. 256.5)."
+     "texto": "Si, en el mes siguiente a la terminación de las diligencias, no se interpone la demanda sin justificación suficiente a juicio del tribunal, la caución se pierde a favor de las personas que intervinieron (art. 256.3 LEC)."
     }
    ],
-   "siguiente": "verificar_presupuestos"
-  },
-  "verificar_presupuestos": {
-   "fase": 0,
-   "titulo": "Verificación de presupuestos procesales",
-   "actor": "ambos",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "Deben concurrir simultáneamente tres presupuestos procesales esenciales que el tribunal examinará de oficio."
-    },
-    {
-     "tipo": "lista",
-     "titulo": "Presupuestos procesales (art. 258.1)",
-     "items": [
-      "Adecuación: La diligencia debe encajar en el art. 256.1 LEC y ser idónea para la finalidad perseguida",
-      "Justa causa: Indicios racionales de necesidad para preparar la demanda",
-      "Interés legítimo: Interés actual y directo del solicitante"
-     ],
-     "marcar": true
-    },
-    {
-     "tipo": "aviso",
-     "texto": "La falta de cualquiera determina la inadmisión."
-    }
-   ],
-   "pregunta": "¿Concurren los tres presupuestos?",
-   "opciones": [
-    {
-     "texto": "Sí, concurren",
-     "tono": "t-ok",
-     "destino": "competencia"
-    },
-    {
-     "texto": "No concurren plenamente",
-     "tono": "t-aviso",
-     "destino": "fin_no_admision"
-    }
-   ]
-  },
-  "fin_no_admision": {
-   "fase": 0,
-   "titulo": "No admisión por falta de presupuestos",
-   "actor": "ambos",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "La solicitud no ha sido admitida por falta de alguno de los presupuestos esenciales. El tribunal ha dictado auto de denegación."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Antes de intentar una nueva solicitud, analice qué presupuesto falló y si es posible subsanarlo."
-    }
-   ],
-   "fin": "warning"
+   "siguiente": "competencia"
   },
   "competencia": {
    "fase": 1,
-   "titulo": "Determinación de la competencia territorial",
-   "actor": "ambos",
+   "titulo": "Competencia (art. 257 LEC)",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Determinar el Juez competente es esencial. El juez revisa de oficio; no se admite declinatoria."
-    },
-    {
-     "tipo": "lista",
-     "titulo": "Reglas de competencia",
-     "items": [
-      "Regla general (núms. 1º a 5º bis, 10º y 11º): Juez del domicilio del requerido",
-      "Regla especial (núms. 6º, 7º, 8º y 9º): Tribunal ante el que haya de presentarse la demanda",
-      "Nuevas diligencias derivadas: Mismo tribunal o el competente por nuevos hechos"
-     ],
-     "marcar": true
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Si el requerido es persona jurídica, el domicilio es el domicilio social."
+     "texto": "No se admite declinatoria: el juez revisa de oficio su competencia (art. 257.2)."
     }
    ],
-   "pregunta": "¿Se trata de los supuestos de los núms. 6º, 7º, 8º o 9º?",
+   "pregunta": "¿Es una diligencia de los núms. 6.º, 7.º, 8.º o 9.º?",
    "opciones": [
     {
-     "texto": "Sí (consumidores, PI/PInd, docs bancarios, leyes especiales)",
-     "tono": "t-nota",
+     "texto": "Sí: consumidores, propiedad industrial o intelectual (7.º y 8.º), leyes especiales",
+     "tono": "t-plazo",
      "destino": "comp_especial"
     },
     {
-     "texto": "No (núms. 1º a 5º bis, 10º y 11º)",
-     "tono": "t-ok",
+     "texto": "No: núms. 1.º a 5.º bis, 10.º y 11.º",
+     "tono": "t-nota",
      "destino": "comp_general"
     }
    ]
   },
   "comp_general": {
    "fase": 1,
-   "titulo": "Competencia general: Juez del domicilio del requerido",
-   "actor": "ambos",
+   "titulo": "Regla general: domicilio de quien ha de intervenir",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Es competente el Juez de Primera Instancia o de lo Mercantil del domicilio del requerido."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 257.1.1º LEC."
+     "texto": "Juez de primera instancia o de lo mercantil, cuando proceda, del domicilio de la persona que hubiera de declarar, exhibir o intervenir en las diligencias (art. 257.1 LEC). Hoy, Sección Civil o de lo Mercantil del Tribunal de Instancia."
     }
    ],
    "siguiente": "conflicto_competencia"
   },
   "comp_especial": {
    "fase": 1,
-   "titulo": "Competencia especial: Tribunal de la futura demanda",
-   "actor": "ambos",
+   "titulo": "Regla especial: tribunal de la futura demanda",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Para los núms. 6º, 7º, 8º y 9º, es competente el Tribunal ante el que haya de presentarse la demanda."
+     "texto": "En los núms. 6.º a 9.º es competente el tribunal ante el que haya de presentarse la demanda (art. 257.1, párrafo segundo, LEC)."
     },
     {
-     "tipo": "ley",
-     "texto": "Art. 257.1.2º LEC."
-    }
-   ],
-   "siguiente": "nuevas_diligencias"
-  },
-  "nuevas_diligencias": {
-   "fase": 1,
-   "titulo": "Nuevas diligencias por ampliación (art. 257.2)",
-   "actor": "ambos",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "Si del resultado de las primeras diligencias se deriva la necesidad de practicar otras nuevas, podrán instarse del mismo tribunal o del competente por los nuevos hechos."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "No es automático. Debe justificarse la necesidad."
+     "tipo": "nota",
+     "texto": "Si a raíz del resultado se piden nuevas diligencias, pueden instarse del mismo tribunal o del que resultaría competente por los hechos averiguados."
     }
    ],
    "siguiente": "conflicto_competencia"
   },
   "conflicto_competencia": {
    "fase": 1,
-   "titulo": "Inhibición y conflicto negativo de competencia",
+   "titulo": "Revisión de oficio de la competencia (art. 257.2 LEC)",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si el juez se inhibe, indicará al solicitante el Juzgado al que debe acudir. Si el indicado también se inhibe, se produce un conflicto negativo."
-    },
-    {
-     "tipo": "plazo",
-     "texto": "Conflicto negativo: el tribunal superior decide por auto, sin ulterior recurso, en 10 días."
+     "texto": "Si el juez entiende que no le corresponde, se abstiene e indica al solicitante el Juzgado al que debe acudir. Si este también se inhibe, decide el conflicto negativo el tribunal inmediato superior común (art. 60 LEC)."
     }
    ],
-   "pregunta": "¿Existe conflicto de competencia?",
+   "pregunta": "¿Es competente el juzgado?",
    "opciones": [
     {
-     "texto": "No, el juzgado es competente",
+     "texto": "Sí",
      "tono": "t-ok",
      "destino": "resolucion_fondo"
     },
     {
-     "texto": "Sí, se inhibe y hay conflicto negativo",
-     "tono": "t-plazo",
+     "texto": "No, y el indicado también se inhibe: conflicto negativo",
+     "tono": "t-aviso",
      "destino": "resolucion_conflicto"
     }
    ]
   },
   "resolucion_conflicto": {
    "fase": 1,
-   "titulo": "Resolución del conflicto negativo (art. 60 LEC)",
+   "titulo": "Conflicto negativo de competencia",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El tribunal inmediato superior común decide por auto, sin ulterior recurso."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 60 LEC."
+     "texto": "Lo decide el tribunal inmediato superior común conforme al art. 60 LEC."
     }
    ],
    "fin": "neutral"
   },
   "resolucion_fondo": {
    "fase": 2,
-   "titulo": "Triple control de admisibilidad (art. 258 LEC)",
+   "titulo": "Decisión sobre la solicitud (art. 258.1 LEC)",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El tribunal evalúa si concurren adecuación, justa causa e interés legítimo."
+     "texto": "El tribunal accede si la diligencia es adecuada a la finalidad que persigue el solicitante y concurren justa causa e interés legítimo; si no resultan justificadas, la rechaza."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo para resolver: 5 días desde la presentación."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 258.1 LEC."
+     "texto": "Debe resolverse en los cinco días siguientes a la presentación."
     }
    ],
-   "pregunta": "¿Concurren adecuación, justa causa e interés legítimo?",
+   "pregunta": "¿Son adecuadas y concurren justa causa e interés legítimo?",
    "opciones": [
     {
-     "texto": "Sí — El tribunal admite la solicitud",
+     "texto": "Sí: auto que las acuerda",
      "tono": "t-ok",
      "destino": "auto_admision"
     },
     {
-     "texto": "No — Las diligencias no resultan justificadas",
+     "texto": "No: auto que las deniega",
      "tono": "t-aviso",
      "destino": "auto_denegacion"
     }
@@ -608,39 +458,31 @@ Neg.data.register({
   },
   "auto_admision": {
    "fase": 2,
-   "titulo": "Auto acordando diligencias y fijando caución",
+   "titulo": "Auto que acuerda las diligencias",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El juez dicta auto acordando las diligencias y fijando la cuantía de la caución."
+     "texto": "Fija la caución que deba prestarse (art. 258.1) y cita y requiere a los interesados para que, en la sede de la Oficina judicial o en el lugar y modo que se acuerden, lleven a cabo la diligencia dentro de los diez días siguientes (art. 259.1)."
     },
     {
      "tipo": "aviso",
-     "texto": "Contra el auto que acuerde las diligencias no se dará recurso alguno (art. 258.3)."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La caución puede prestarse en dinero, aval bancario solidario, o cualquier medio que garantice disponibilidad inmediata (art. 64.2 LEC)."
+     "texto": "Contra el auto que acuerda las diligencias no cabe recurso alguno (art. 258.2 LEC)."
     }
    ],
    "siguiente": "caucion_plazo"
   },
   "auto_denegacion": {
    "fase": 2,
-   "titulo": "Auto denegando las diligencias",
+   "titulo": "Auto que deniega las diligencias",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El juez rechaza la petición. Contra el auto denegatorio cabe recurso de apelación (art. 258.4)."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Solo cabe apelación contra el auto desestimatorio. El estimatorio es irrecurrible."
+     "texto": "Contra el auto que las deniega cabe recurso de apelación (art. 258.2 LEC)."
     }
    ],
-   "pregunta": "¿Se interpone recurso de apelación?",
+   "pregunta": "¿Se interpone apelación?",
    "opciones": [
     {
      "texto": "Sí",
@@ -648,47 +490,43 @@ Neg.data.register({
      "destino": "recurso_apelacion"
     },
     {
-     "texto": "No, se acepta",
-     "tono": "t-aviso",
+     "texto": "No",
+     "tono": "t-nota",
      "destino": "fin_denegacion_aceptada"
     }
    ]
   },
   "fin_denegacion_aceptada": {
    "fase": 2,
-   "titulo": "Denegación aceptada sin recurso",
+   "titulo": "Denegación firme",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La decisión es firme. La denegación solo afecta a la vía preparatoria, no impide interponer la demanda principal si se cuenta con información suficiente."
+     "texto": "Las diligencias no se practican. La denegación no impide presentar la demanda."
     }
    ],
    "fin": "error"
   },
   "recurso_apelacion": {
    "fase": 2,
-   "titulo": "Recurso de apelación (art. 258.4 LEC)",
+   "titulo": "Apelación contra el auto que deniega",
    "actor": "ambos",
    "bloques": [
     {
-     "tipo": "info",
-     "texto": "Contra el auto que deniega cabe apelación ante la Audiencia Provincial."
-    },
-    {
      "tipo": "plazo",
-     "texto": "Plazo de apelación: 5 días (art. 459 LEC)."
+     "texto": "Veinte días desde la notificación (art. 458.1 LEC)."
     }
    ],
-   "pregunta": "La Audiencia estima el recurso?",
+   "pregunta": "¿Estima el recurso la Audiencia Provincial?",
    "opciones": [
     {
-     "texto": "Sí, estima y acuerda diligencias",
+     "texto": "Sí: acuerda las diligencias",
      "tono": "t-ok",
      "destino": "auto_admision"
     },
     {
-     "texto": "No, confirma la denegación",
+     "texto": "No: confirma la denegación",
      "tono": "t-aviso",
      "destino": "fin_denegacion_definitiva"
     }
@@ -696,43 +534,39 @@ Neg.data.register({
   },
   "fin_denegacion_definitiva": {
    "fase": 2,
-   "titulo": "Denegación definitiva tras recurso",
+   "titulo": "Denegación confirmada",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La decisión es firme. Solo cabría casación si se dan los requisitos del art. 477 LEC. No impide interponer la demanda principal."
+     "texto": "Las diligencias no se practican. La denegación no impide presentar la demanda."
     }
    ],
    "fin": "error"
   },
   "caucion_plazo": {
    "fase": 2,
-   "titulo": "Control de la prestación de la caución",
+   "titulo": "Prestación de la caución (art. 258.3 LEC)",
    "actor": "laj",
    "bloques": [
     {
-     "tipo": "info",
-     "texto": "Se verifica si el solicitante presta la caución en el plazo de 3 días. Es improrrogable."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 258.5 LEC."
+     "tipo": "plazo",
+     "texto": "Tres días desde que se dicta el auto que concede las diligencias."
     },
     {
      "tipo": "aviso",
-     "texto": "Si no se presta, el LAJ archivará definitivamente las actuaciones mediante decreto. No cabe subsanación."
+     "texto": "Si no se presta, el Letrado de la Administración de Justicia acuerda por decreto el archivo definitivo de las actuaciones."
     }
    ],
-   "pregunta": "¿Se presta la caución en 3 días?",
+   "pregunta": "¿Se presta la caución en tres días?",
    "opciones": [
     {
-     "texto": "Sí — Caución prestada",
+     "texto": "Sí",
      "tono": "t-ok",
      "destino": "citacion"
     },
     {
-     "texto": "No — Archivo definitivo",
+     "texto": "No",
      "tono": "t-aviso",
      "destino": "archivo_definitivo"
     }
@@ -745,39 +579,27 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ dicta decreto de archivo definitivo. No cabe recurso. Si se desea iniciar de nuevo, habrá de formularse una solicitud nueva."
+     "texto": "Decreto del Letrado de la Administración de Justicia que archiva definitivamente las actuaciones (art. 258.3 LEC)."
     }
    ],
    "fin": "error"
   },
   "citacion": {
    "fase": 3,
-   "titulo": "Citación y requerimiento (art. 259 LEC)",
+   "titulo": "Práctica: citación y requerimiento (art. 259 LEC)",
    "actor": "laj",
    "bloques": [
     {
-     "tipo": "info",
-     "texto": "Se cita y requiere a los interesados para que lleven a cabo la diligencia en 10 días."
-    },
-    {
      "tipo": "lista",
-     "titulo": "Incluir en la citación",
+     "titulo": "A tener en cuenta",
      "items": [
-      "Lugar de la práctica",
-      "Plazo de 10 días",
-      "Posibilidad de exhibición telemática (art. 259.2)",
-      "Posibilidad de acudir con experto a costa del solicitante (art. 259.3)",
-      "Advertencia de consecuencias de incomparecencia (art. 261)"
+      "Lugar y modo de la práctica y plazo de diez días (art. 259.1)",
+      "Los documentos pueden presentarse por medios telemáticos o electrónicos; se examinan en la oficina judicial y el solicitante puede obtener copia electrónica (art. 259.2)",
+      "El solicitante puede acudir asesorado por un experto, a su costa (art. 259.2)",
+      "Núm. 7.º: el interrogatorio puede celebrarse a puerta cerrada (art. 259.3 y 138.3 LEC)",
+      "Núms. 7.º, 8.º, 10.º y 11.º: uso exclusivo para la tutela jurisdiccional; a instancia de interesado, carácter reservado de las actuaciones (art. 259.4)"
      ],
      "marcar": true
-    },
-    {
-     "tipo": "nota",
-     "texto": "En diligencias del art. 256.1.7º, puede ordenarse puerta cerrada (art. 259.4 y 138.3 LEC)."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La información de los núms. 7, 8, 10 y 11 es exclusiva para tutela jurisdiccional (art. 259.5 LEC)."
     }
    ],
    "siguiente": "respuesta_requerido"
@@ -788,28 +610,24 @@ Neg.data.register({
    "actor": "laj",
    "bloques": [
     {
-     "tipo": "info",
-     "texto": "Tres escenarios: atiende el requerimiento, formula oposición en 5 días, o no atiende ni se opone."
-    },
-    {
      "tipo": "plazo",
-     "texto": "Plazo para oponerse: 5 días desde la citación (art. 260.1)."
+     "texto": "Puede oponerse dentro de los cinco días siguientes a aquel en que reciba la citación (art. 260.1 LEC)."
     }
    ],
-   "pregunta": "¿Cuál es la actitud del requerido?",
+   "pregunta": "¿Qué hace el requerido?",
    "opciones": [
     {
-     "texto": "Atiende y practica la diligencia",
+     "texto": "Atiende el requerimiento",
      "tono": "t-ok",
      "destino": "practica"
     },
     {
-     "texto": "Formula oposición en plazo",
+     "texto": "Se opone en plazo",
      "tono": "t-plazo",
      "destino": "oposicion"
     },
     {
-     "texto": "No atiende ni formula oposición",
+     "texto": "Ni atiende ni se opone",
      "tono": "t-aviso",
      "destino": "negativa_tipo"
     }
@@ -822,58 +640,42 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El requerido lleva a cabo la diligencia. Se documenta con intervención del LAJ."
-    },
-    {
-     "tipo": "lista",
-     "titulo": "Aspectos a controlar",
-     "items": [
-      "Verificar identidad de intervinientes",
-      "Documentar la diligencia",
-      "Si procede puerta cerrada (núm. 7º), adoptarla",
-      "Atribuir carácter reservado si lo solicita algún interesado (art. 259.6)"
-     ],
-     "marcar": true
+     "texto": "Se lleva a cabo la diligencia acordada en la oficina judicial o en el lugar y modo fijados."
     }
    ],
-   "pregunta": "¿Cumple completamente?",
+   "pregunta": "¿La cumple por completo?",
    "opciones": [
     {
-     "texto": "Sí, cumple completamente",
+     "texto": "Sí",
      "tono": "t-ok",
      "destino": "fin_diligencias_practicadas"
     },
     {
-     "texto": "Cumple parcialmente",
+     "texto": "Solo en parte",
      "tono": "t-plazo",
      "destino": "cumplimiento_parcial"
-    },
-    {
-     "texto": "No, se niega a cumplir",
-     "tono": "t-aviso",
-     "destino": "negativa_tipo"
     }
    ]
   },
   "cumplimiento_parcial": {
    "fase": 3,
    "titulo": "Cumplimiento parcial",
-   "actor": "laj",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El requerido ha cumplido parcialmente. El tribunal valorará si es suficiente."
+     "texto": "El tribunal valora si lo aportado basta. Si el requerido no atiende el requerimiento en lo restante, pueden acordarse las medidas del art. 261 LEC."
     }
    ],
-   "pregunta": "¿Es suficiente el cumplimiento parcial?",
+   "pregunta": "¿Es suficiente?",
    "opciones": [
     {
-     "texto": "Sí, es suficiente",
+     "texto": "Sí",
      "tono": "t-ok",
      "destino": "fin_diligencias_practicadas"
     },
     {
-     "texto": "No, se requiere total",
+     "texto": "No",
      "tono": "t-aviso",
      "destino": "negativa_tipo"
     }
@@ -881,55 +683,43 @@ Neg.data.register({
   },
   "fin_diligencias_practicadas": {
    "fase": 3,
-   "titulo": "Diligencias practicadas con éxito",
+   "titulo": "Diligencias practicadas",
    "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El requirente dispone de la información necesaria para interponer la demanda principal."
-    },
-    {
-     "tipo": "plazo",
-     "texto": "Plazo de 1 mes para interponer la demanda. Si no, se pierde la caución (art. 256.3 LEC)."
-    },
-    {
-     "tipo": "nota",
-     "texto": "El tribunal resolverá sobre la aplicación de la caución en 5 días (art. 262 LEC). Apelable sin efectos suspensivos."
+     "texto": "Practicadas las diligencias, el tribunal resuelve sobre la aplicación de la caución (art. 262.1 LEC) y empieza a contar el mes para presentar la demanda (art. 256.3 LEC)."
     }
    ],
-   "fin": "success"
+   "siguiente": "caucion_final"
   },
   "oposicion": {
    "fase": 4,
-   "titulo": "Oposición del requerido (art. 260 LEC)",
-   "actor": "laj",
+   "titulo": "Oposición del requerido (art. 260.1 LEC)",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El requerido formula oposición en 5 días. Se da traslado al solicitante para impugnar en 5 días."
+     "texto": "Se da traslado de la oposición al solicitante, que puede impugnarla por escrito en cinco días. En los escritos de oposición e impugnación las partes pueden pedir vista, que se sigue por los trámites del juicio verbal."
     },
     {
-     "tipo": "ley",
-     "texto": "Art. 260.1 LEC. Causas: a) No concurren presupuestos; b) No es de las previstas; c) Inadecuada; d) Otra causa bastante."
-    },
-    {
-     "tipo": "nota",
-     "texto": "El requirente puede impugnar en 5 días. Si no lo hace, el tribunal puede considerar que acepta la oposición."
+     "tipo": "plazo",
+     "texto": "Impugnación: cinco días desde el traslado."
     }
    ],
    "siguiente": "vista_check"
   },
   "vista_check": {
    "fase": 4,
-   "titulo": "¿Se solicita vista?",
-   "actor": "laj",
+   "titulo": "¿Se ha pedido vista?",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La vista no es preceptiva; solo se celebra a instancia de parte, siguiendo trámites de juicio verbal."
+     "texto": "Solo hay vista si la ha pedido alguna de las partes en su escrito (art. 260.1 LEC)."
     }
    ],
-   "pregunta": "¿Se solicita vista?",
+   "pregunta": "¿Se ha pedido vista?",
    "opciones": [
     {
      "texto": "Sí",
@@ -937,56 +727,48 @@ Neg.data.register({
      "destino": "celebrar_vista"
     },
     {
-     "texto": "No, se resuelve sin vista",
-     "tono": "t-ok",
+     "texto": "No",
+     "tono": "t-nota",
      "destino": "resolucion_oposicion"
     }
    ]
   },
   "celebrar_vista": {
    "fase": 4,
-   "titulo": "Celebración de vista (art. 260.3 LEC)",
+   "titulo": "Vista (juicio verbal)",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se celebra vista siguiendo los trámites del juicio verbal. Ambas partes exponen sus argumentos."
-    },
-    {
-     "tipo": "plazo",
-     "texto": "La resolución se dicta en los 5 días siguientes a la vista."
+     "texto": "Se celebra por los trámites del juicio verbal y después el tribunal resuelve por auto (art. 260.2 LEC)."
     }
    ],
    "siguiente": "resolucion_oposicion"
   },
   "resolucion_oposicion": {
    "fase": 4,
-   "titulo": "Resolución sobre la oposición (art. 260.4-7)",
+   "titulo": "Auto sobre la oposición (art. 260 LEC)",
    "actor": "juez",
    "bloques": [
     {
-     "tipo": "info",
-     "texto": "El tribunal resuelve mediante auto motivado si la oposición es justificada o injustificada."
-    },
-    {
      "tipo": "lista",
-     "titulo": "Decisiones posibles",
+     "titulo": "Posibles decisiones",
      "items": [
-      "Injustificada: Condena al requerido al pago de costas (auto irrecurrible, art. 260.5-6)",
-      "Justificada: Se declara justificada (auto apelable, art. 260.7)"
+      "Injustificada: condena al requerido a las costas del incidente; auto sin recurso (art. 260.3)",
+      "Justificada: así lo declara; auto apelable (art. 260.4)"
      ],
      "marcar": true
     }
    ],
-   "pregunta": "¿El tribunal considera justificada la oposición?",
+   "pregunta": "¿Es justificada la oposición?",
    "opciones": [
     {
-     "texto": "No — Injustificada",
+     "texto": "No: injustificada",
      "tono": "t-ok",
      "destino": "op_injustificada"
     },
     {
-     "texto": "Sí — Justificada",
+     "texto": "Sí: justificada",
      "tono": "t-aviso",
      "destino": "op_justificada"
     }
@@ -999,22 +781,18 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El tribunal condena al requerido al pago de costas. La diligencia debe practicarse."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Contra este auto no cabe recurso alguno (art. 260.6)."
+     "texto": "Condena en costas del incidente al requerido (art. 260.3 LEC) y sigue la práctica de la diligencia."
     }
    ],
-   "pregunta": "¿El requerido cumple tras la desestimación?",
+   "pregunta": "¿Atiende ahora el requerimiento?",
    "opciones": [
     {
-     "texto": "Sí — Practica la diligencia",
+     "texto": "Sí",
      "tono": "t-ok",
      "destino": "practica"
     },
     {
-     "texto": "No — Persiste en la negativa",
+     "texto": "No",
      "tono": "t-aviso",
      "destino": "negativa_tipo"
     }
@@ -1027,125 +805,106 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Las diligencias no se practicarán. Se procede a resolver sobre la aplicación de la caución."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Contra este auto cabe recurso de apelación por parte del solicitante (art. 260.7 LEC)."
+     "texto": "Las diligencias no se practican. El auto puede recurrirse en apelación (art. 260.4 LEC); plazo de veinte días (art. 458.1 LEC)."
     }
    ],
-   "pregunta": "¿Se interpone apelación por el solicitante?",
-   "opciones": [
-    {
-     "texto": "Sí",
-     "tono": "t-plazo",
-     "destino": "caucion_op"
-    },
-    {
-     "texto": "No, se acepta",
-     "tono": "t-nota",
-     "destino": "caucion_op"
-    }
-   ]
+   "siguiente": "caucion_op"
   },
   "negativa_tipo": {
    "fase": 5,
-   "titulo": "Negativa — Selección de medida (art. 261 LEC)",
+   "titulo": "Negativa: medidas del art. 261 LEC",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El tribunal acuerda medidas proporcionadas mediante auto motivado."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Las medidas varían según el tipo de diligencia."
+     "texto": "Si el requerido ni atiende el requerimiento ni se opone, el tribunal acuerda por auto motivado, cuando resulte proporcionado, la medida que corresponda a la diligencia pedida."
     }
    ],
-   "pregunta": "¿Qué tipo de diligencia se solicitó?",
+   "pregunta": "¿Qué se había pedido?",
    "opciones": [
     {
-     "texto": "1º: Capacidad/representación",
+     "texto": "Declaración sobre capacidad, representación o legitimación (1.º)",
      "tono": "t-nota",
      "destino": "medida_1"
     },
     {
-     "texto": "2º, 3º, 5º: Exhibición docs/cosa/testamento/seguro",
-     "tono": "t-plazo",
+     "texto": "Exhibición de títulos y documentos",
+     "tono": "t-nota",
      "destino": "medida_2"
     },
     {
-     "texto": "4º: Documentos contables",
+     "texto": "Exhibición de una cosa (2.º)",
+     "tono": "t-nota",
+     "destino": "medida_3"
+    },
+    {
+     "texto": "Exhibición de documentos contables",
      "tono": "t-nota",
      "destino": "medida_4"
     },
     {
-     "texto": "5º bis, 6º, 7º, 8º: HC, consumidores, PI",
-     "tono": "t-aviso",
+     "texto": "Grupo de consumidores (6.º) o documentos de los núms. 5.º bis, 7.º u 8.º",
+     "tono": "t-plazo",
      "destino": "medida_5"
     }
    ]
   },
   "medida_1": {
    "fase": 5,
-   "titulo": "Ficta confessio — Hechos admitidos (art. 261.1.1º)",
+   "titulo": "Hechos tenidos por admitidos (art. 261.1.ª LEC)",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se tendrán por respondidas afirmativamente las preguntas. Los hechos se consideran admitidos a efectos del juicio posterior (presunción iuris tantum)."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Solo a \"efectos del juicio ulterior\". No constituyen prueba plena."
+     "texto": "Pueden tenerse por respondidas afirmativamente las preguntas que el solicitante pretendía formular, y los hechos se consideran admitidos a efectos del juicio posterior."
     }
    ],
    "siguiente": "caucion_final"
   },
   "medida_2": {
    "fase": 5,
-   "titulo": "Entrada y registro (art. 261.1.2º y 3º)",
+   "titulo": "Entrada y registro para ocupar documentos (art. 261.2.ª LEC)",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si hay indicios suficientes, se ordena entrada y registro. Los documentos/cosas se ocupan y ponen a disposición del solicitante en sede judicial."
-    },
+     "texto": "Si hay indicios suficientes de que pueden hallarse en un lugar determinado, se ordena la entrada y registro; los documentos que se encuentren se ocupan y se ponen a disposición del solicitante en la sede del tribunal."
+    }
+   ],
+   "siguiente": "caucion_final"
+  },
+  "medida_3": {
+   "fase": 5,
+   "titulo": "Entrada y registro para presentar la cosa (art. 261.3.ª LEC)",
+   "actor": "juez",
+   "bloques": [
     {
-     "tipo": "aviso",
-     "texto": "Requiere autorización judicial específica y garantías del art. 18.3 CE."
+     "tipo": "info",
+     "texto": "Si se conoce o presume fundadamente dónde está la cosa, se procede de modo semejante y se presenta al solicitante, que puede pedir su depósito o la medida de garantía más adecuada."
     }
    ],
    "siguiente": "caucion_final"
   },
   "medida_4": {
    "fase": 5,
-   "titulo": "Cuentas tenidas por ciertas (art. 261.1.4º)",
+   "titulo": "Cuentas tenidas por ciertas (art. 261.4.ª LEC)",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se tendrán por ciertos los datos que presente el solicitante. Inversión de la carga de la prueba. Presunción relativa."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Especialmente gravosa para el requerido."
+     "texto": "Pueden tenerse por ciertos, a los efectos del juicio posterior, las cuentas y datos que presente el solicitante."
     }
    ],
    "siguiente": "caucion_final"
   },
   "medida_5": {
    "fase": 5,
-   "titulo": "Medidas de intervención (art. 261.1.5º)",
+   "titulo": "Medidas de intervención (art. 261.5.ª LEC)",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se ordenan medidas de intervención necesarias, incluida entrada y registro."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Sin perjuicio de responsabilidad penal por desobediencia (art. 556 CP: prisión 3 meses a 1 año)."
+     "texto": "El tribunal ordena las medidas de intervención necesarias, incluida la entrada y registro, para encontrar los documentos o datos precisos, sin perjuicio de la responsabilidad penal por desobediencia a la autoridad judicial."
     }
    ],
    "siguiente": "caucion_final"
@@ -1157,31 +916,31 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El tribunal resuelve sobre la caución a vista de la petición de indemnización y justificación de gastos."
+     "texto": "Practicadas las diligencias, el tribunal resuelve por auto sobre la aplicación de la caución, a la vista de la petición de indemnización y de la justificación de gastos que se presente, oído el solicitante."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo: 5 días, oído el solicitante (art. 262.1)."
+     "texto": "Cinco días (art. 262.1 LEC)."
     },
     {
      "tipo": "aviso",
-     "texto": "Apelable sin efectos suspensivos (art. 262.2)."
+     "texto": "Apelable sin efectos suspensivos (art. 262.1, párrafo segundo, LEC)."
     },
     {
      "tipo": "nota",
-     "texto": "Si queda remanente, no se devuelve hasta que transcurra el plazo de 1 mes (art. 262.3)."
+     "texto": "Si queda remanente, no se devuelve al solicitante hasta que pase el mes del art. 256.3 LEC (art. 262.2 LEC)."
     }
    ],
    "siguiente": "control_demanda"
   },
   "caucion_op": {
    "fase": 6,
-   "titulo": "Caución tras oposición justificada",
+   "titulo": "Aplicación de la caución tras la oposición justificada (art. 262.1 LEC)",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se aplica la caución para resarcir al requerido de gastos y perjuicios."
+     "texto": "Denegadas las diligencias por oposición justificada, el tribunal resuelve en cinco días sobre la aplicación de la caución, a la vista de la petición de indemnización y de la justificación de gastos, oído el solicitante."
     },
     {
      "tipo": "aviso",
@@ -1192,48 +951,40 @@ Neg.data.register({
   },
   "fin_op_justificada": {
    "fase": 6,
-   "titulo": "Fin — Oposición justificada firme",
+   "titulo": "Fin: diligencias denegadas por oposición justificada",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Las diligencias no se practicarán. La caución se ha aplicado. El procedimiento concluye."
-    },
-    {
-     "tipo": "nota",
-     "texto": "El requirente podrá intentar otras vías o interponer la demanda si cuenta con elementos suficientes."
+     "texto": "Las diligencias no se practican y se ha resuelto sobre la caución. El solicitante puede presentar la demanda si cuenta con elementos suficientes."
     }
    ],
    "fin": "warning"
   },
   "control_demanda": {
    "fase": 6,
-   "titulo": "Plazo de interposición de demanda (art. 256.3)",
+   "titulo": "Plazo para presentar la demanda (art. 256.3 LEC)",
    "actor": "laj",
    "bloques": [
     {
-     "tipo": "info",
-     "texto": "El solicitante dispone de 1 mes para interponer la demanda. Si no, se pierde la caución."
-    },
-    {
      "tipo": "plazo",
-     "texto": "Plazo: 1 mes desde la terminación de las diligencias. Improrrogable."
+     "texto": "Un mes desde la terminación de las diligencias."
     }
    ],
-   "pregunta": "¿Se interpone demanda en 1 mes?",
+   "pregunta": "¿Se presenta la demanda en un mes?",
    "opciones": [
     {
-     "texto": "Sí — Demanda interpuesta",
+     "texto": "Sí",
      "tono": "t-ok",
      "destino": "fin_demanda_presentada"
     },
     {
-     "texto": "No, sin justificación",
+     "texto": "No, sin justificación suficiente",
      "tono": "t-aviso",
      "destino": "perdida_caucion"
     },
     {
-     "texto": "No, pero con justificación suficiente",
+     "texto": "No, con justificación suficiente a juicio del tribunal",
      "tono": "t-plazo",
      "destino": "fin_justificado"
     }
@@ -1241,20 +992,19 @@ Neg.data.register({
   },
   "fin_demanda_presentada": {
    "fase": 6,
-   "titulo": "Fin — Demanda interpuesta",
+   "titulo": "Fin: demanda presentada",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El solicitante ha interpuesto la demanda en plazo. Si queda remanente de caución, se devuelve. Las diligencias han cumplido su finalidad."
+     "texto": "Las diligencias han cumplido su finalidad. El remanente de la caución puede devolverse una vez transcurrido el mes (art. 262.2 LEC)."
     },
     {
      "tipo": "lista",
-     "titulo": "Próximos pasos",
+     "titulo": "Para la demanda",
      "items": [
-      "Utilizar la información para fundamentar la demanda",
-      "Aportar la documentación exhibida como prueba",
-      "Invocar hechos tenidos por admitidos si procede"
+      "Usar la información y los documentos obtenidos",
+      "Invocar, en su caso, los hechos o cuentas tenidos por ciertos (art. 261 LEC)"
      ],
      "marcar": true
     }
@@ -1263,36 +1013,28 @@ Neg.data.register({
   },
   "perdida_caucion": {
    "fase": 6,
-   "titulo": "Pérdida de caución por no demandar (art. 256.3)",
-   "actor": "ambos",
+   "titulo": "Pérdida de la caución",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La caución se pierde a favor de las personas que intervinieron, a prorrata del perjuicio. La pérdida es automática y no requiere resolución."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "No impide interponer la demanda después, pero se ha perdido la garantía económica."
+     "texto": "Si no se interpone la demanda en el mes sin justificación suficiente, a juicio del tribunal, la caución se pierde en favor de las personas que intervinieron en las diligencias (art. 256.3 LEC)."
     }
    ],
    "fin": "warning"
   },
   "fin_justificado": {
    "fase": 6,
-   "titulo": "No interposición justificada",
+   "titulo": "No presentación justificada",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El solicitante acredita justificación suficiente a juicio del tribunal. La caución no se pierde."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La valoración es discrecional del tribunal."
+     "texto": "El tribunal considera suficiente la justificación: la caución no se pierde por esta causa (art. 256.3 LEC)."
     }
    ],
    "fin": "warning"
   }
  },
- "pie": "Arts. 256–263 LEC · Ley 1/2000<br>Art. 60 LEC (conflicto)<br>Art. 64 LEC (caución)<br>Art. 138.3 LEC (puerta cerrada)<br>Art. 556 CP (desobediencia)"
+ "pie": "Arts. 256–263 LEC<br>Art. 60 LEC (conflicto de competencia)<br>Art. 64.2 LEC (forma de la caución)<br>Art. 138.3 LEC (puerta cerrada)<br>Art. 458 LEC (apelación)"
 });

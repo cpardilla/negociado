@@ -36,7 +36,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Esquema · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 1R |
 | ljv-subastas | Esquema · LJV · Título VII · Subastas voluntarias | 1E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Esquema · LJV · Título IX · Conciliación | · | · | · | · | · | · | 3R |
-| lec-diligencias-preliminares | Guía · LEC · Diligencias preliminares | 6A 10R | · | · | 1R | 4R | · | · |
+| lec-diligencias-preliminares | Guía · LEC · Diligencias preliminares | · | · | · | · | · | · | · |
 | lec-division-herencia | Guía · LEC · División de la herencia | 11A 6R | · | · | · | · | · | 2R |
 | lec-intervencion-caudal | Guía · LEC · Intervención del caudal hereditario | · | · | · | · | · | · | · |
 | lec-administracion-caudal | Guía · LEC · Administración del caudal hereditario | 1R | · | · | · | 1R | 1E | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 60E 35A 61R | 0E 0A 0R | 0E 0A 0R | 0E 0A 7R | 0E 0A 7R | 4E 0A 1R | 0E 0A 69R |
+| | **Total** | 60E 29A 51R | 0E 0A 0R | 0E 0A 0R | 0E 0A 6R | 0E 0A 3R | 4E 0A 1R | 0E 0A 69R |
 
 E = error · A = aviso · R = revisar.
 
@@ -70,13 +70,13 @@ E = error · A = aviso · R = revisar.
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
 - ✓ LJV (BOE a 05-03-2026): 2406
-- ✓ LEC (BOE a 07-10-2026): 1493
+- ✓ LEC (BOE a 07-10-2026): 1499
 - ✓ CC (BOE a 07-09-2026): 1303
 - ✓ LOPJ (BOE a 09-10-2026): 89
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - UE: 40
-- ✓ CE (BOE a 20-05-2026): 39
+- ✓ CE (BOE a 20-05-2026): 38
 - ✓ LRC (BOE a 24-02-2026): 36
 - ✓ LPPD (BOE a 18-12-2025): 36
 - ✓ LOPDH (BOE a 16-12-2025): 33
@@ -86,9 +86,9 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LTO (BOE a 16-12-2025): 19
 - LO 1/2025: 15
 - ✓ LSC (BOE a 19-12-2025): 7
-- ✓ CP (BOE a 09-04-2026): 6
 - ✓ CCom (BOE a 16-12-2025): 4
 - ✓ LCS (BOE a 05-10-2026): 4
+- ✓ CP (BOE a 09-04-2026): 4
 - ✓ RH (BOE a 16-12-2025): 4
 - ✓ LOPDGDD (BOE a 08-10-2026): 4
 - ✓ LA (BOE a 18-12-2025): 3
@@ -106,7 +106,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 346 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 343 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -289,35 +289,7 @@ Sin hallazgos automáticos.
 
 ### lec-diligencias-preliminares · Guía · LEC · Diligencias preliminares
 
-**citas**
-
-- [aviso] «art. 256.4»: el art. 256 LEC no tiene apartado 4 (tiene 1, 2, 3) — _paso «inicio» › nota 6_
-- [aviso] «art. 259.5»: el art. 259 LEC no tiene apartado 5 (tiene 1, 2, 3, 4) — _paso «det_256_1_7» › nota 3_
-- [aviso] «art. 258.4»: el art. 258 LEC no tiene apartado 4 (tiene 1, 2, 3) — _paso «recurso_apelacion» › título_
-- [aviso] «Art. 258.5»: el art. 258 LEC no tiene apartado 5 (tiene 1, 2, 3) — _paso «caucion_plazo» › ley 2_
-- [aviso] «art. 259.5»: el art. 259 LEC no tiene apartado 5 (tiene 1, 2, 3, 4) — _paso «citacion» › nota 4_
-- [aviso] «art. 260.7»: el art. 260 LEC no tiene apartado 7 (tiene 1, 2, 3, 4) — _paso «op_justificada» › aviso 2_
-- [revisar] «art. 256.5»: el art. 256 LEC no tiene apartado 5 (tiene 1, 2, 3) (ley por defecto) — _paso «solicitud_formal» › aviso 5_
-- [revisar] «art. 258.4»: el art. 258 LEC no tiene apartado 4 (tiene 1, 2, 3) (ley por defecto) — _paso «auto_denegacion» › info 1_
-- [revisar] «art. 259.6»: el art. 259 LEC no tiene apartado 6 (tiene 1, 2, 3, 4) (ley por defecto) — _paso «practica» › comprobación 2.4_
-- [revisar] «art. 260.7»: el art. 260 LEC no tiene apartado 7 (tiene 1, 2, 3, 4) (ley por defecto) — _paso «resolucion_oposicion» › comprobación 2.2_
-- [revisar] «art. 260.6»: el art. 260 LEC no tiene apartado 6 (tiene 1, 2, 3, 4) (ley por defecto) — _paso «op_injustificada» › aviso 2_
-- [revisar] «art. 261.1.1º»: el art. 261 LEC no tiene apartado 1 (no tiene apartados numerados) (ley por defecto) — _paso «medida_1» › título_
-- [revisar] «art. 261.1.2º y 3»: el art. 261 LEC no tiene apartado 1 (no tiene apartados numerados) (ley por defecto) — _paso «medida_2» › título_
-- [revisar] «art. 261.1.4º»: el art. 261 LEC no tiene apartado 1 (no tiene apartados numerados) (ley por defecto) — _paso «medida_4» › título_
-- [revisar] «art. 261.1.5º»: el art. 261 LEC no tiene apartado 1 (no tiene apartados numerados) (ley por defecto) — _paso «medida_5» › título_
-- [revisar] «art. 262.3»: el art. 262 LEC no tiene apartado 3 (tiene 1, 2) (ley por defecto) — _paso «caucion_final» › nota 4_
-
-**plazos**
-
-- [revisar] plazo «5 días» no aparece en el precepto citado (art. 459 LEC): «Plazo de apelación: 5 días (art. 459 LEC).» — _paso «recurso_apelacion» › plazo 2_
-
-**literales**
-
-- [revisar] texto entrecomillado no hallado literalmente en LEC: «Toda persona que se considere con derecho a ejercitar una acción contra otra... podrá instar del Juez la práctica de las diligencias que se » — _paso «inicio» › ley 3_
-- [revisar] texto entrecomillado no hallado literalmente en LEC: «Que declare bajo juramento o promesa sobre cuál es su capacidad o representación legal o voluntaria...» — _paso «det_256_1_1» › ley 2_
-- [revisar] texto entrecomillado no hallado literalmente en LEC: «Que exhiba la cosa mueble que obre en su poder, a fin de que el solicitante o la persona designada por el tribunal pueda examinarla...» — _paso «det_256_1_2» › ley 2_
-- [revisar] texto entrecomillado no hallado literalmente en LEC: «Las diligencias preliminares se solicitarán al Juez mediante escrito, acompañado de los documentos en que se funde...» — _paso «solicitud_formal» › ley 2_
+Sin hallazgos automáticos.
 
 ### lec-division-herencia · Guía · LEC · División de la herencia
 

@@ -93,3 +93,33 @@ El analizador de citas (`assets/js/core/citas.js`, compartido por la app y el co
 ## 5. Pendiente para la guía G01 (fase 5)
 
 El comprobador marca en la guía de diligencias preliminares 6 avisos y 10 «revisar» de citas, 1 plazo y 4 citas literales; se revisarán en su turno con lo aprendido aquí (en particular, el cómputo de la caución desde que se dicta el auto y la numeración de los apartados del art. 260).
+
+---
+
+# Revisión · G01 · Guía de tramitación de las diligencias preliminares
+
+- **Recurso**: `data/guias/lec-diligencias-preliminares.js` (origen G01).
+- **Fecha de revisión**: 2026-10-30. **Corte del BOE**: LEC a 07-10-2026.
+- **Método**: fase 5 (ROADMAP): mismo método que los esquemas, más pasos que faltan o sobran (criterio 6.3). Se conserva el recorrido y las direcciones de los pasos que siguen teniendo sentido; cada paso se rehace con el texto de los arts. 256–263 LEC (ya revisados en E01).
+- **Resultado del comprobador**: 0 hallazgos (citas, plazos y grafo: sin huérfanos ni pasos sin salida). 51 pasos.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | inicio, solicitud_formal | **error** | Gastos a cargo del solicitante «art. 256.4» y pérdida de la caución «art. 256.5» | Art. 256.3 (el 256 tiene tres apartados) | LEC |
+| 2 | inicio, det_256_1_1, det_256_1_2, solicitud_formal | **error** | Citas literales inventadas («Toda persona que se considere con derecho…», «Que exhiba la cosa mueble…», «Las diligencias preliminares se solicitarán al Juez mediante escrito…») | Texto literal del art. 256 o paráfrasis sin comillas | LEC |
+| 3 | recurso_apelacion | **error** | «Plazo de apelación: 5 días (art. 459 LEC)»; «art. 258.4» | Veinte días (art. 458.1 LEC); el recurso está en el art. 258.2 | LEC |
+| 4 | caucion_plazo, auto_admision | **error** | Caución «art. 258.5»; irrecurribilidad «art. 258.3» | Arts. 258.3 y 258.2 respectivamente | LEC |
+| 5 | citacion, det_256_1_7, practica | **error** | Uso exclusivo «art. 259.5»; carácter reservado «art. 259.6»; puerta cerrada «art. 259.4»; experto «art. 259.3» | Arts. 259.4, 259.4, 259.3 y 259.2 | LEC |
+| 6 | resolucion_oposicion, op_* | **error** | Arts. «260.5-7»; «causas de oposición a) b) c) d)»; «si el solicitante no impugna, se entiende que acepta»; «resolución en 5 días tras la vista» | Arts. 260.3 (injustificada, sin recurso) y 260.4 (justificada, apelable); lo demás, retirado (no está en la ley) | LEC |
+| 7 | negativa_tipo, medida_* | **error** | Medidas del «art. 261.1.1º…5º» mal asignadas (cosa y documentos juntos; 6.º y 5.º bis mezclados; sin la medida 3.ª) | Cinco salidas según el art. 261 (1.ª a 5.ª), con la medida 3.ª (cosa) añadida | LEC |
+| 8 | medida_5 | error | «Art. 556 CP: prisión de 3 meses a 1 año» | «Responsabilidad penal por desobediencia» (lo que dice el art. 261.5.ª), sin pena no comprobada | LEC |
+| 9 | caucion_final | error | Apelable «art. 262.2»; remanente «art. 262.3» | Arts. 262.1, párrafo segundo, y 262.2 | LEC |
+| 10 | perdida_caucion | **error** | «La pérdida es automática y no requiere resolución» | Se pierde si no se demanda «sin justificación suficiente, a juicio del tribunal» (art. 256.3) | LEC |
+| 11 | det_256_1_* | error | 2.º «cosa mueble»; 3.º solo testamento cerrado u ológrafo; 5.º «ampliado por la Ley 20/2015 a la mera información»; 7.º con el principio de prueba del 8.º; 10.º «datos de registros públicos» | Contenido de cada número según el art. 256.1 | LEC |
+| 12 | fin_denegacion_definitiva, archivo_definitivo | error | «Cabría casación (art. 477)»; «contra el decreto de archivo no cabe recurso» | Retirados (sin base) | — |
+| 13 | grafo | estructura | Dos controles de admisión duplicados (verificar_presupuestos y resolucion_fondo); paso de «nuevas diligencias» en mitad del recorrido; pregunta de op_justificada con dos respuestas al mismo destino; diligencias practicadas como final sin pasar por la caución | Un solo control (art. 258.1); las nuevas diligencias, como nota de la competencia especial; op_justificada sigue directo; practicadas → aplicación de la caución (art. 262.1) → plazo de la demanda | LEC |
+| 14 | comp_general | desfasado | Juzgado de Primera Instancia o de lo Mercantil | Hoy, Sección Civil o de lo Mercantil del Tribunal de Instancia | LO 1/2025 |
+
+Pasos retirados: `verificar_presupuestos`, `fin_no_admision`, `nuevas_diligencias`. Paso nuevo: `medida_3`. Una dirección guardada que apunte a un paso retirado lleva al paso guardado (comportamiento de la app ya probado).

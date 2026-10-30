@@ -222,12 +222,12 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — criterio del propietario incorporado (decisión 13); artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
 | E28 | LJV · Título IX — Conciliación | ✅ 2026-10-30 · rehecho (31 fichas → 11, una por artículo); artículos de la transacción (CC 1810–1817) y de la ejecución (LEC 518, 520, 556/557) corregidos; umbral del Juez de Paz 10.000 € (decisión 14); conciliación como requisito de procedibilidad (art. 5.1 LO 1/2025) ([registro](revision/ljv-conciliacion.md)) |
 
-### Fase 5 · Revisión de contenido de las guías (25) ☐
+### Fase 5 · Revisión de contenido de las guías (25) ◐ (1/25)
 Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfanos (reconectar al punto correcto del flujo o eliminar, con motivo).
 
 | # | Guía | Hallazgos previos | Estado |
 |---|---|---|---|
-| G01 | LEC · Diligencias preliminares | — | ☐ |
+| G01 | LEC · Diligencias preliminares | — | ✅ 2026-10-30 · 51 pasos rehechos con los arts. 256–263 LEC; apartados y plazos corregidos (apelación 20 días); medidas del art. 261 bien asignadas; grafo depurado (control duplicado, practicadas → caución → demanda) ([registro](revision/lec-diligencias-preliminares.md)) |
 | G02 | LEC · División de la herencia — procedimiento | — | ☐ |
 | G03 | LEC · Intervención del caudal hereditario | — | ☐ |
 | G04 | LEC · Administración del caudal hereditario | 3 huérfanos | ☐ |
@@ -293,6 +293,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-30 · Fase 5 · G01 (diligencias preliminares) revisada. Siguiente: G02.
 - 2026-10-30 · Decisión 14 (Juez de Paz: 10.000 €) y LO 1/2025 (arts. 5 y 14, comprobados en la web del BOE: la API daba error 500) incorporados a E28. Pendiente: instantánea de la LO 1/2025 cuando la API responda.
 - 2026-10-30 · E28 (conciliación) revisado: fase 4 terminada. Preguntas: umbral del Juez de Paz (6.000 / 10.000 €) y relación con los MASC (LO 1/2025, sin instantánea; API del BOE con error 500). Siguiente: fase 5 (guías).
 - 2026-10-30 · `npm test` registra cada ejecución y los fallos con su nombre (`tools/run-tests.js`), para identificar el fallo intermitente. Siguiente: E28.
