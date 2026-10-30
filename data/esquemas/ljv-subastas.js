@@ -287,7 +287,7 @@ Neg.data.register({
              "t": "<strong>Resolución:</strong> de estimarse procedente, el Letrado de la Administración de Justicia acordará dicha venta con sujeción a lo establecido en el artículo 641 de la Ley de Enjuiciamiento Civil en cuanto sea compatible con las disposiciones de este Título."
             },
             {
-             "t": "<strong>Remisión vacía:</strong> ese artículo de la LEC está sin contenido desde el 3 de abril de 2025 (LO 1/2025), que suprimió la sección dedicada a la realización por persona o entidad especializada. La realización por persona o entidad especializada aparece ahora dentro del convenio de realización del art. 640 LEC, pensado para la ejecución."
+             "t": "<strong>Remisión vacía:</strong> ese artículo de la LEC está sin contenido desde el 3 de abril de 2025 por el art. 22.54 de la LO 1/2025 (BOE-A-2025-76), que suprimió la sección dedicada a la realización por persona o entidad especializada. La realización por persona o entidad especializada aparece ahora dentro del convenio de realización del art. 640 LEC, pensado para la ejecución."
             }
            ]
           }

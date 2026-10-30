@@ -10,7 +10,7 @@
 
 | # | Ficha | Tipo | Antes | Ahora | Fuente |
 |---|---|---|---|---|---|
-| 1 | 110, participantes, ecosistema | **error** | Art. 641 LEC descrito como vigente («entidades especializadas, previa caución, precio mínimo y plazos») | Sin contenido desde el 3-4-2025 (LO 1/2025 suprime la Sección 4.ª); la realización por persona o entidad especializada figura en el convenio de realización del art. 640 LEC. Remisión vacía del art. 110.3 LJV — **pregunta al propietario** | LEC |
+| 1 | 110, participantes, ecosistema | **error** | Art. 641 LEC descrito como vigente («entidades especializadas, previa caución, precio mínimo y plazos») | Sin contenido desde el 3-4-2025 por el art. 22.54 de la LO 1/2025 (BOE-A-2025-76; suprime también la Sección 4.ª); la realización por persona o entidad especializada figura en el convenio de realización del art. 640 LEC. Remisión vacía del art. 110.3 LJV — **pregunta al propietario** | LEC |
 | 2 | 111 | **error** | LEC aplicable: «arts. 644 a 680 para inmuebles y 643 a 654 para muebles» | Arts. 643–654 (muebles) y 655–675 (inmuebles y muebles con publicidad registral similar) | LEC |
 | 3 | 110 | error | Omitir a los ocupantes «puede generar nulidad y responsabilidad por vicios ocultos» | Retirado (sin base en el texto) | — |
 | 4 | 111 | error | El testimonio del decreto «equivale funcionalmente a una escritura pública de compraventa» | Retirado; queda lo que dice la ley: título suficiente para la inscripción | LJV |
@@ -26,3 +26,5 @@ El art. 110.3 LJV permite pedir la venta «por persona o entidad especializada»
 ## Para la fase 5 (G24)
 
 La guía cita el art. 641 LEC como vigente en cinco lugares (pasos «modo_venta» y «especializada»), y usa «Secretario judicial» × 14 y «Juzgado de Primera Instancia» × 3.
+
+**Confirmación del propietario (2026-10-30)**: nota del BOE — «Se deja sin contenido, con efectos de 3 de abril de 2025, por el art. 22.54 de la Ley Orgánica 1/2025, de 2 de enero. Ref. BOE-A-2025-76». Coincide con la instantánea de `sources/boe/LEC.json`. Sigue abierta la pregunta sobre la práctica del juzgado.

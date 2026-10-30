@@ -86,11 +86,11 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LTO (BOE a 16-12-2025): 19
 - ✓ LSC (BOE a 19-12-2025): 7
 - ✓ CP (BOE a 09-04-2026): 6
+- LO 1/2025: 5
 - ✓ CCom (BOE a 16-12-2025): 4
 - ✓ LCS (BOE a 05-10-2026): 4
 - ✓ LA (BOE a 18-12-2025): 4
 - ✓ RH (BOE a 16-12-2025): 4
-- LO 1/2025: 4
 - ✓ LOPDGDD (BOE a 08-10-2026): 4
 - ✓ LMED (BOE a 19-12-2025): 3
 - ✓ LPI (BOE a 31-07-2026): 2
