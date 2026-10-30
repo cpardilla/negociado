@@ -140,7 +140,7 @@ test("esquema view: cards, filters, search, direct link to an article's card, re
     `await go('#/esquema/ljv-conciliacion', 1000);
      const base = { cards: document.querySelectorAll('[data-card]').length, open: document.querySelectorAll('[data-card][aria-expanded="true"]').length,
        refs: document.querySelectorAll('.esq-body a.ref').length, norms: document.querySelectorAll('.norm').length, groups: document.querySelectorAll('.group').length,
-       pending: document.querySelector('.page-meta .t-aviso').textContent, neutralTagColor: getComputedStyle(document.querySelector('.card .card-meta .tag:not([class*=" c"]):not([class*=" t-"])') || document.body).color };
+       revision: document.querySelector('.page-meta .t-ok').textContent, neutralTagColor: getComputedStyle(document.querySelector('.card .card-meta .tag:not([class*=" c"]):not([class*=" t-"])') || document.body).color };
      const first = document.querySelector('[data-card] [data-action="toggle"]'); first.click(); await wait(50);
      const toggled = first.closest('[data-card]').getAttribute('aria-expanded');
      document.querySelector('.chip[data-cat="c4"]').click(); await wait(100);
@@ -162,17 +162,17 @@ test("esquema view: cards, filters, search, direct link to an article's card, re
      const missing = document.getElementById('view').textContent;
      return { base, toggled, cat, search, empty, all, deep, missing };`
   );
-  assert.equal(r.base.cards, 31);
+  assert.equal(r.base.cards, 11);
   assert.equal(r.base.open, 0, "las fichas empiezan plegadas");
-  assert.ok(r.base.refs > 200, "las citas son enlaces");
-  assert.equal(r.base.norms, 9);
-  assert.equal(r.base.groups, 4);
-  assert.equal(r.base.pending, "Pendiente de revisión");
+  assert.ok(r.base.refs > 50, "las citas son enlaces");
+  assert.equal(r.base.norms, 4);
+  assert.equal(r.base.groups, 3);
+  assert.match(r.base.revision, /^Revisado con el BOE a /);
   assert.equal(r.toggled, "true");
-  assert.equal(r.cat, "2 de 31 fichas");
-  assert.equal(r.search, "6 de 31 fichas", "sin tildes ni mayúsculas");
+  assert.equal(r.cat, "2 de 11 fichas");
+  assert.equal(r.search, "2 de 11 fichas", "sin tildes ni mayúsculas");
   assert.ok(r.empty, "aviso cuando nada coincide");
-  assert.equal(r.all, 31);
+  assert.equal(r.all, 11);
   assert.equal(r.deep, "Artículo 148 true");
   assert.match(r.missing, /No existe este esquema/);
 });

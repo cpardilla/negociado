@@ -188,7 +188,7 @@ Defectos del markmap anterior — todos resueltos al generar el mapa de los mism
 2. ✅ (2026-10-29) Retirados los 57 HTML antiguos (quedan en el historial de git y en el tag `baseline-2026-10-28`). `404.html` (`tools/build-404.js`, autosuficiente): 56 direcciones antiguas redirigen a su sitio nuevo; la del esquema combinado I bis & ter (sin equivalente único) y cualquier otra inexistente muestran el aviso de actualizar favoritos (decisión 8). `.nojekyll` en la raíz. Los tres tests que comparaban el inventario con los HTML antiguos solo se ejecutan donde existen (el tag); `tools/extract-current.js` queda como histórico. Tests en navegador de las redirecciones, servidas como en Pages.
 3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
-### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (27/28: E01–E27 cerrados, E11 eliminado; falta E28)
+### Fase 4 · Revisión de contenido de los esquemas (28) ✅ (28/28: E11 eliminado; preguntas abiertas en E28)
 Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabla (decisión 6). Los más usados (E01–E04, E28) con atención especial.
 
 | # | Esquema | Estado |
@@ -220,7 +220,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E25 | LJV · T. VI Cap. I — Usufructuario y créditos vencidos | ✅ 2026-10-30 · corregido (texto fiel); postulación del art. 3.2 LJV (necesaria para recurrir y desde la oposición); recursos y caducidad concretos; Sección Civil ([registro](revision/ljv-usufructuario.md)) |
 | E26 | LJV · T. VI Cap. II — Deslinde de fincas no inscritas | ✅ 2026-10-30 · corregido (texto fiel); juicio verbal hasta 15.000 € (no 6.000); art. 17.3 LJV leído al revés; postulación exacta; fuera jurisprudencia sin cita; recurso de revisión; Sección Civil ([registro](revision/ljv-deslinde.md)) |
 | E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — criterio del propietario incorporado (decisión 13); artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
-| E28 | LJV · Título IX — Conciliación | ☐ |
+| E28 | LJV · Título IX — Conciliación | ✅ 2026-10-30 · rehecho (31 fichas → 11, una por artículo); artículos de la transacción (CC 1810–1817) y de la ejecución (LEC 518, 520, 556/557) corregidos; discordancia 6.000 € (art. 140.1 LJV) / 10.000 € (art. 47.2 LEC, LO 1/2025) — pregunta; MASC pendiente de comprobar ([registro](revision/ljv-conciliacion.md)) |
 
 ### Fase 5 · Revisión de contenido de las guías (25) ☐
 Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfanos (reconectar al punto correcto del flujo o eliminar, con motivo).
@@ -251,7 +251,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G22 | LJV · T. VI Cap. I — Usufructuario | «Juzgado de Primera Instancia» × 3; «Secretario judicial» × 1 | ☐ |
 | G23 | LJV · T. VI Cap. II — Deslinde | «Secretario judicial» × 11; comprobar 6.000 € = verbal y art. 17.3 | ☐ |
 | G24 | LJV · Título VII — Subastas voluntarias | art. 641 LEC (sin contenido) × 5; «Secretario judicial» × 14 | ☐ |
-| G25 | LJV · Título IX — Conciliación | — | ☐ |
+| G25 | LJV · Título IX — Conciliación | «art. 140.3», «art. 3.5»; «JPI» × 3; umbral de cuantía | ☐ |
 
 ### Fase 6 · Interfaz: homogeneización y mejoras ☐
 Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de uso que se decidan tras ver la versión migrada: referencias vivas, enlace directo a cada paso, progreso de la guía guardado, impresión de un recorrido como hoja de tramitación, accesibilidad (teclado, contraste ≥ 4,5:1, foco visible).
@@ -292,11 +292,12 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-30 · E28 (conciliación) revisado: fase 4 terminada. Preguntas: umbral del Juez de Paz (6.000 / 10.000 €) y relación con los MASC (LO 1/2025, sin instantánea; API del BOE con error 500). Siguiente: fase 5 (guías).
 - 2026-10-30 · `npm test` registra cada ejecución y los fallos con su nombre (`tools/run-tests.js`), para identificar el fallo intermitente. Siguiente: E28.
 - 2026-10-30 · Decisión 13 (art. 110.3 LJV) incorporada a E27.
 - 2026-10-30 · E27 (subastas) revisado; pregunta al propietario sobre el art. 110.3 LJV (remite al art. 641 LEC, vacío). Siguiente: E28 (conciliación).
 - 2026-10-30 · Decisión 12: hechos pasados → Sección Civil; E22 actualizado.
-- 2026-10-30 · E26 (deslinde) revisado. Siguiente: E27. Nota: una ejecución de la batería dio 1 fallo que no se reprodujo en tres ejecuciones seguidas; probablemente una prueba de navegador de tests/app.test.js con esperas fijas, sensible a la carga. Pendiente: identificarla y hacerla robusta. Segunda vez el 2026-10-30 (tras el ajuste de E27): 1 fallo; después, cuatro ejecuciones limpias, también con el comprobador corriendo a la vez. La salida no conservaba el nombre de la prueba: desde el 2026-10-30, `npm test` pasa por `tools/run-tests.js`, que guarda cada ejecución en `tests/results/pruebas/` (no se publica) y anota en `fallos.txt` el nombre de cada prueba que falle.
+- 2026-10-30 · E26 (deslinde) revisado. Siguiente: E27. Nota: una ejecución de la batería dio 1 fallo que no se reprodujo en tres ejecuciones seguidas; probablemente una prueba de navegador de tests/app.test.js con esperas fijas, sensible a la carga. Pendiente: identificarla y hacerla robusta. Segunda vez el 2026-10-30 (tras el ajuste de E27): 1 fallo; después, cuatro ejecuciones limpias, también con el comprobador corriendo a la vez. La salida no conservaba el nombre de la prueba: desde el 2026-10-30, `npm test` pasa por `tools/run-tests.js`, que guarda cada ejecución en `tests/results/pruebas/` (no se publica) y anota en `fallos.txt` el nombre de cada prueba que falle. **Identificado y corregido (2026-10-30)**: «old addresses… redirect» falló con EPERM al borrar el perfil temporal del navegador (Windows lo mantiene bloqueado unos instantes); `tools/run.js` espera a que el navegador termine, reintenta durante unos segundos, avisa en vez de fallar y barre los perfiles antiguos.
 - 2026-10-30 · E25 (usufructuario) revisado. Siguiente: E26.
 - 2026-10-30 · E24 (obligaciones) revisado. Siguiente: E25.
 - 2026-10-30 · E23 (sucesiones) revisado. Siguiente: E24.

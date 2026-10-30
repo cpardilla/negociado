@@ -35,7 +35,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-usufructuario | Esquema · LJV · Usufructuario: reclamación de créditos vencidos | · | · | · | · | · | · | 2R |
 | ljv-deslinde | Esquema · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 1R |
 | ljv-subastas | Esquema · LJV · Título VII · Subastas voluntarias | 1E | · | · | · | · | · | 2R |
-| ljv-conciliacion | Esquema · LJV · Título IX · Conciliación | 1R | · | · | 3R | · | · | 4R |
+| ljv-conciliacion | Esquema · LJV · Título IX · Conciliación | · | · | · | · | · | · | 3R |
 | lec-diligencias-preliminares | Guía · LEC · Diligencias preliminares | 6A 10R | · | · | 1R | 4R | · | · |
 | lec-division-herencia | Guía · LEC · División de la herencia | 11A 6R | · | · | · | · | · | 2R |
 | lec-intervencion-caudal | Guía · LEC · Intervención del caudal hereditario | · | · | · | · | · | · | · |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 60E 35A 62R | 0E 0A 0R | 0E 0A 0R | 0E 0A 10R | 0E 0A 7R | 4E 0A 1R | 0E 0A 70R |
+| | **Total** | 60E 35A 61R | 0E 0A 0R | 0E 0A 0R | 0E 0A 7R | 0E 0A 7R | 4E 0A 1R | 0E 0A 69R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,14 +69,14 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2462
-- ✓ LEC (BOE a 07-10-2026): 1522
-- ✓ CC (BOE a 07-09-2026): 1339
-- ✓ LOPJ (BOE a 09-10-2026): 90
+- ✓ LJV (BOE a 05-03-2026): 2407
+- ✓ LEC (BOE a 07-10-2026): 1484
+- ✓ CC (BOE a 07-09-2026): 1302
+- ✓ LOPJ (BOE a 09-10-2026): 89
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
-- ✓ CE (BOE a 20-05-2026): 44
 - UE: 40
+- ✓ CE (BOE a 20-05-2026): 39
 - ✓ LRC (BOE a 24-02-2026): 36
 - ✓ LPPD (BOE a 18-12-2025): 36
 - ✓ LOPDH (BOE a 16-12-2025): 33
@@ -89,14 +89,14 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - LO 1/2025: 5
 - ✓ CCom (BOE a 16-12-2025): 4
 - ✓ LCS (BOE a 05-10-2026): 4
-- ✓ LA (BOE a 18-12-2025): 4
 - ✓ RH (BOE a 16-12-2025): 4
 - ✓ LOPDGDD (BOE a 08-10-2026): 4
-- ✓ LMED (BOE a 19-12-2025): 3
+- ✓ LA (BOE a 18-12-2025): 3
 - ✓ LPI (BOE a 31-07-2026): 2
 - ✓ LPAT (BOE a 31-07-2026): 2
 - ✓ LCD (BOE a 29-12-2025): 2
 - ✓ LSE (BOE a 31-07-2026): 2
+- ✓ LMED (BOE a 19-12-2025): 2
 - LPAP: 2
 - Ley 40/2015: 2
 - Ley 10/2012: 2
@@ -106,7 +106,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 422 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 346 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -281,22 +281,11 @@ Sin hallazgos automáticos.
 
 ### ljv-conciliacion · Esquema · LJV · Título IX · Conciliación
 
-**citas**
-
-- [revisar] «art. 147.4»: el art. 147 LEC no tiene apartado 4 (no tiene apartados numerados) — _sección «Artículos del Título IX — De la conciliación» › tarjeta «Artículo 145» › referencia 2_
-
-**plazos**
-
-- [revisar] plazo «5 días» no aparece en el precepto citado (arts. 133 LEC): «Resolución de admisión de la solicitud · 5 días hábiles · Resolución · Artículo 142.1 / LEC arts. 133+» — _sección «Indice de plazos procesales» › 1 › tabla fila 1_
-- [revisar] plazo «5 días» no aparece en el precepto citado (arts. 1101 CC): «Traslado al solicitante por reclamación de daños y perjuicios · 5 días · Alegaciones · Artículo 144.2 / CC arts. 1101+» — _sección «Indice de plazos procesales» › 1 › tabla fila 4_
-- [revisar] plazo «5 días» no aparece en el precepto citado (art. 520 LEC): «Requerimiento de pago en ejecución · 5 días · Pago voluntario · LEC art. 520 (vía art. 147.3)» — _sección «Indice de plazos procesales» › 1 › tabla fila 7_
-
 **terminologia**
 
-- [revisar] «Secretario judicial» × 17 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Artículos del Título IX — De la conciliación» › tarjeta «Artículo 140» › «Reglas generales de competencia territorial y objetiva» › 1 › punto.1 | sección «Artículos del Título IX — De la conciliación» › tarjeta «Artículo 140» › «Terminación por falta de localización» › 1 › punto.1 | sección «Artículos del Título IX — De la conciliación» › tarjeta «Artículo 140» › «Cuestiones de competencia y recusación» › 1 › punto.1 …_
-- [revisar] «Juzgado de Primera Instancia» × 4 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos del Título IX — De la conciliación» › tarjeta «Artículo 140» › «Reglas generales de competencia territorial y objetiva» › 1 › punto.1 | sección «Artículos del Título IX — De la conciliación» › tarjeta «Artículo 147» › «Competencia para la ejecución» › 1 › punto.2 | sección «Artículos del Título IX — De la conciliación» › tarjeta «Artículo 147» › «Reglas de competencia ejecutiva» › 1 › punto.2 …_
-- [revisar] «Juzgado de lo Mercantil» × 5 → Tribunal de Instancia, Sección de lo Mercantil (LO 1/2025) — verificar — _sección «Artículos del Título IX — De la conciliación» › tarjeta «Artículo 140» › «Reglas generales de competencia territorial y objetiva» › 1 › punto.1 | sección «Artículos del Título IX — De la conciliación» › tarjeta «Artículo 140» › «Reglas generales de competencia territorial y objetiva» › 1 › punto.3 | sección «Artículos del Título IX — De la conciliación» › tarjeta «Artículo 140» › «Sistema de determinación de la competencia» › 1 › punto.3 …_
-- [revisar] «Juzgado de Paz» × 2 → Juzgados de Paz → Oficinas de Justicia en los municipios (LO 1/2025) — verificar — _sección «Artículos del Título IX — De la conciliación» › tarjeta «Artículo 145» › «Grabación y resolución final» › 1 › punto.1 | sección «Ecosistema normativo — conexiones relacionadas» › 1 › norma «Ley de Enjuiciamiento Civil (LEC)»_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos 139 a 148 y transacción» › tarjeta «Artículo 140» › «Regla general (apartado 1)» › 1 › punto.1_
+- [revisar] «Juzgado de lo Mercantil» × 1 → Tribunal de Instancia, Sección de lo Mercantil (LO 1/2025) — verificar — _sección «Artículos 139 a 148 y transacción» › tarjeta «Artículo 140» › «Regla general (apartado 1)» › 1 › punto.1_
+- [revisar] «Juzgado de Paz» × 2 → Juzgados de Paz → Oficinas de Justicia en los municipios (LO 1/2025) — verificar — _sección «Ecosistema normativo» › 4 › norma «Tribunales de Instancia y Juzgados de Paz» | sección «Ecosistema normativo» › 4 › norma «Tribunales de Instancia y Juzgados de Paz»_
 
 ### lec-diligencias-preliminares · Guía · LEC · Diligencias preliminares
 
