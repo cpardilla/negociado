@@ -34,3 +34,28 @@ Las siete fichas (una por artículo) se mantienen, pero su contenido se ha **reh
 | 18 | estilo | Rúbrica de la ficha del art. 792 abreviada | Rúbrica oficial | BOE |
 | 19 | estilo / desfasado | Actor «Secretario Judicial» junto al LAJ (duplicado y denominación derogada) | Retirado | LO 7/2015 |
 | 20 | estilo | Cabecera «Versión expandida», «45+ subnodos», «25+ actores»; pie «plantilla HTML reutilizable» | Cifras reales y ubicación en la LEC | — |
+
+---
+
+# Revisión · G03 · Guía de tramitación de la intervención del caudal hereditario
+
+- **Recurso**: `data/guias/lec-intervencion-caudal.js` (origen G03).
+- **Fecha de revisión**: 2026-10-30. **Corte del BOE**: LEC a 07-10-2026; CC; Ley del Notariado.
+- **Método**: fase 5. La guía seguía bien los arts. 790–798 LEC; se conservan recorrido y direcciones y se rehace cada paso con el texto, retirando lo que no está en la ley.
+- **Resultado del comprobador**: 0 hallazgos (antes también 0: lo corregido salió de la lectura). 26 → 27 pasos.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | inventario_794 | **error** | «Paralelismo con el beneficio de inventario del art. 1065 CC» | Retirado: el art. 1065 CC trata de la entrega de títulos (el beneficio de inventario está en los arts. 1010 y ss.) | CC |
+| 2 | caucion_imperativa | **error** | Caución «en proporción al valor del caudal»; formas: «depósito, aval, fianza personal» | Caución fijada por el tribunal en las formas permitidas por la LEC (art. 795, regla 3.ª); la fianza personal no es una de ellas | LEC |
+| 3 | bloqueo_acreedores_796_3 | **error** (grafo) | Pasaba directamente a «cese tras el pago» sin comprobar el pago | Pregunta: ¿pagados o afianzados? Sí → cese; No → la intervención continúa (paso nuevo `fin_bloqueo_acreedores`) | LEC |
+| 4 | controversia_794_4 | error | La sentencia «tiene fuerza de cosa juzgada entre las partes» | Lo que dice la ley: deja a salvo los derechos de terceros (art. 794.4) | LEC |
+| 5 | senalamiento_793_2, cesacion_acuerdo_check | error | «La omisión de una citación puede determinar la nulidad del inventario»; «responsabilidad disciplinaria y nulidad» | Retirados (sin base) | — |
+| 6 | posesion_797, fin_* | error | «Comunicar al Registro de la Propiedad la administración judicial» y «levantar la anotación registral» | Retirados (no los prevé la LEC); se completa el art. 797 (dar a conocer al administrador; testimonio) y el art. 798 (representación antes y después de la aceptación) | LEC |
+| 7 | medidas_790, bloqueo_menores_ausentes | desfasado | Tutela «arts. 215 ss. CC»; menores «reforma Ley 8/2021»; «la resolución es un AUTO» | Retirados (numeración anterior a 2021; el art. 790 no fija la forma) | CC |
+| 8 | inicio, averiguacion_791, auto_791_2 | error | Reglamento (UE) 650/2012, «Decreto de 2 de junio de 1944», Ley 39/2015, lista de comunidades con derecho civil propio | Retirados (decisión 9) | — |
+| 9 | entrega_790 | incompleto | Sin la salvedad del art. 791 | «Cesa la intervención, salvo lo dispuesto en el art. 791» | LEC |
+
+Paso nuevo: `fin_bloqueo_acreedores`. La pregunta de `cesacion_796` deja de ofrecer «pago a los acreedores» como causa independiente: se llega a ella desde el cese por acuerdo (art. 796.3).
