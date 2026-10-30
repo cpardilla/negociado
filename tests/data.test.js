@@ -66,6 +66,8 @@ test("data: every card and block has what the view needs", () => {
         assert.ok(rec.categorias.some((c) => c.id === v.tarjeta.categoria) || !v.tarjeta.categoria, `${rec.id}: categoría de ${v.tarjeta.articulo}`);
         v.tarjeta.etiquetas.forEach((e) => assert.match(e.tono, TONES));
       }
+      // A list item is text: a note or a block put inside a list renders as an empty bullet.
+      if (v.lista) v.lista.forEach((it, i) => assert.ok(typeof it.t === "string" && it.t.trim(), `${rec.id}: elemento ${i + 1} de una lista sin texto`));
       Object.values(v).forEach(walk);
     })(rec.secciones);
   }

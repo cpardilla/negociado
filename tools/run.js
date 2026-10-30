@@ -84,7 +84,22 @@ class Cdp {
   }
 }
 
+/** Removes browser profiles left behind by earlier runs (older than 10 minutes). */
+function sweepProfiles() {
+  const limit = Date.now() - 10 * 60 * 1000;
+  for (const d of fs.readdirSync(os.tmpdir())) {
+    if (!d.startsWith("negociado-run-")) continue;
+    const p = path.join(os.tmpdir(), d);
+    try {
+      if (fs.statSync(p).mtimeMs < limit) fs.rmSync(p, { recursive: true, force: true });
+    } catch {
+      /* still locked: next time */
+    }
+  }
+}
+
 async function run(opts) {
+  sweepProfiles();
   const exe = browserPath(opts.browser);
   if (!exe) throw new Error(`Navegador no encontrado: ${opts.browser}`);
 
@@ -182,8 +197,27 @@ async function run(opts) {
     }
     proc.kill();
     if (server) server.close();
-    await sleep(300);
-    fs.rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+    // Wait for the browser to exit before removing its profile (up to 5 s).
+    await new Promise((resolve) => {
+      if (proc.exitCode !== null || proc.signalCode !== null) return resolve();
+      proc.once("exit", resolve);
+      setTimeout(resolve, 5000);
+    });
+    // Windows may keep the profile locked for a few seconds after the browser exits (EPERM/EBUSY):
+    // retry for up to ~6 s; a folder still left behind must not turn a passing check into a
+    // failure (the next run sweeps it, see sweepProfiles).
+    for (let i = 0; ; i++) {
+      try {
+        fs.rmSync(profile, { recursive: true, force: true });
+        break;
+      } catch (err) {
+        if (i >= 20) {
+          process.emitWarning(`No se pudo borrar el perfil temporal ${profile} (${err.code}).`);
+          break;
+        }
+        await sleep(300);
+      }
+    }
   }
   return report;
 }
