@@ -31,7 +31,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-donantes-vivos | Esquema · LJV · Extracción de órganos de donantes vivos | · | · | · | · | · | · | · |
 | ljv-hechos-pasados | Esquema · LJV · Declaraciones judiciales sobre hechos pasados | · | · | · | · | · | · | 1R |
 | ljv-sucesorio | Esquema · LJV · Título IV · Derecho sucesorio | · | · | · | · | · | · | 2R |
-| ljv-obligaciones | Esquema · LJV · Título V · Derecho de obligaciones | 3R | · | · | · | · | · | 2R |
+| ljv-obligaciones | Esquema · LJV · Título V · Derecho de obligaciones | · | · | · | · | · | · | 1R |
 | ljv-usufructuario | Esquema · LJV · Usufructuario: reclamación de créditos vencidos | · | · | · | · | · | · | 2R |
 | ljv-deslinde | Esquema · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Esquema · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 3R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 64E 35A 65R | 0E 0A 0R | 0E 0A 0R | 0E 0A 10R | 0E 0A 7R | 4E 0A 1R | 0E 0A 73R |
+| | **Total** | 64E 35A 62R | 0E 0A 0R | 0E 0A 0R | 0E 0A 10R | 0E 0A 7R | 4E 0A 1R | 0E 0A 72R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,19 +69,19 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2444
-- ✓ LEC (BOE a 07-10-2026): 1506
-- ✓ CC (BOE a 07-09-2026): 1341
-- ✓ LOPJ (BOE a 09-10-2026): 80
+- ✓ LJV (BOE a 05-03-2026): 2451
+- ✓ LEC (BOE a 07-10-2026): 1511
+- ✓ CC (BOE a 07-09-2026): 1338
+- ✓ LOPJ (BOE a 09-10-2026): 84
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
-- ✓ CE (BOE a 20-05-2026): 46
+- ✓ CE (BOE a 20-05-2026): 44
 - UE: 40
 - ✓ LRC (BOE a 24-02-2026): 36
 - ✓ LPPD (BOE a 18-12-2025): 36
 - ✓ LOPDH (BOE a 16-12-2025): 33
 - ✓ LH (BOE a 07-01-2026): 32
-- ✓ LN (BOE a 22-10-2026): 29
+- ✓ LN (BOE a 22-10-2026): 31
 - ✓ RDTO (BOE a 19-12-2025): 25
 - ✓ LTO (BOE a 16-12-2025): 19
 - ✓ LSC (BOE a 19-12-2025): 7
@@ -106,7 +106,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 435 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 430 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -251,15 +251,8 @@ Sin hallazgos automáticos.
 
 ### ljv-obligaciones · Esquema · LJV · Título V · Derecho de obligaciones
 
-**citas**
-
-- [revisar] «artículos 1158, 1159 y 1210.2»: el art. 1210 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Artículos 98 y 99 — Consignación judicial» › tarjeta «Artículo 98» › «Legitimación» › 1 › punto.1_
-- [revisar] «art. 1210.2»: el art. 1210 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Artículos 98 y 99 — Consignación judicial» › tarjeta «Artículo 98» › referencia 4_
-- [revisar] «arts. 1158, 1159, 1210.2»: el art. 1210 CC no tiene apartado 2 (no tiene apartados numerados) — _sección «Mapa de participantes y actores» › 2 › grupo «Partes del expediente».3_
-
 **terminologia**
 
-- [revisar] «Secretario judicial» × 12 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Artículos 96 y 97 — Fijación judicial del plazo» › tarjeta «Artículo 97» › «Conversión en contencioso por oposición (apartado 3)» › 1 › punto.1 | sección «Artículos 98 y 99 — Consignación judicial» › tarjeta «Artículo 99» › «Admisión o inadmisión de la solicitud (apartado 2)» › 1 › punto.1 | sección «Artículos 98 y 99 — Consignación judicial» › tarjeta «Artículo 99» › «Admisión o inadmisión de la solicitud (apartado 2)» › 1 › punto.2 …_
 - [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos 98 y 99 — Consignación judicial» › tarjeta «Artículo 98» › resumen | sección «Artículos 98 y 99 — Consignación judicial» › tarjeta «Artículo 98» › «Competencia (apartado 2)» › 1 › punto.1_
 
 ### ljv-usufructuario · Esquema · LJV · Usufructuario: reclamación de créditos vencidos

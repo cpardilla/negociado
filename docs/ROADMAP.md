@@ -188,7 +188,7 @@ Defectos del markmap anterior — todos resueltos al generar el mapa de los mism
 2. ✅ (2026-10-29) Retirados los 57 HTML antiguos (quedan en el historial de git y en el tag `baseline-2026-10-28`). `404.html` (`tools/build-404.js`, autosuficiente): 56 direcciones antiguas redirigen a su sitio nuevo; la del esquema combinado I bis & ter (sin equivalente único) y cualquier otra inexistente muestran el aviso de actualizar favoritos (decisión 8). `.nojekyll` en la raíz. Los tres tests que comparaban el inventario con los HTML antiguos solo se ejecutan donde existen (el tag); `tools/extract-current.js` queda como histórico. Tests en navegador de las redirecciones, servidas como en Pages.
 3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
-### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (23/27)
+### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (24/27)
 Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabla (decisión 6). Los más usados (E01–E04, E28) con atención especial.
 
 | # | Esquema | Estado |
@@ -216,7 +216,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E21 | LJV · T. II Cap. X — Extracción de órganos de donantes vivos | ✅ 2026-10-29 · rehecho en forma compacta; 24 horas: art. 8.6 RD 1723/2012 (no la LJV); fuera «Cap. IX = filiación», rúbricas erróneas, receptor como interesado y normas ajenas; requisitos del donante con su base; Sección Civil ([registro](revision/ljv-donantes-vivos.md)) |
 | E22 | LJV · T. II Cap. XI — Declaraciones sobre hechos pasados | ✅ 2026-10-29 · corregido (texto fiel); fuera la «DA 1.ª LO 1/2025», el art. 89.6 g) como alternativa y la LEC de 1881; recursos con plazos; sección: Familia, Infancia y Capacidad por el art. 86.5 j) — pregunta abierta ([registro](revision/ljv-hechos-pasados.md)) |
 | E23 | LJV · Título IV — Derecho sucesorio | ✅ 2026-10-30 · corregido (texto LJV fiel); arts. 898, 899, 903, 906 y 911 CC mal descritos; tutor: arts. 224 y 287 CC (no 271); fuera art. 749 LEC; recursos con plazos; Sección Civil ([registro](revision/ljv-sucesorio.md)) |
-| E24 | LJV · Título V — Derecho de obligaciones | ☐ |
+| E24 | LJV · Título V — Derecho de obligaciones | ✅ 2026-10-30 · corregido (texto fiel); fuera jurisprudencia sin cita y normas ajenas; legitimación del tercero por los arts. 1158 y 1178 CC; recursos añadidos; Sección Civil ([registro](revision/ljv-obligaciones.md)) |
 | E25 | LJV · T. VI Cap. I — Usufructuario y créditos vencidos | ☐ |
 | E26 | LJV · T. VI Cap. II — Deslinde de fincas no inscritas | ☐ |
 | E27 | LJV · Título VII — Subastas voluntarias | ☐ |
@@ -247,7 +247,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G18 | LJV · T. II Cap. X — Órganos de donantes vivos | «Juzgado de Primera Instancia» × 1; comprobar el plazo de 24 h | ☐ |
 | G19 | LJV · T. II Cap. XI — Hechos pasados | «JPI» × 2, «Juzgado de Primera Instancia» × 1 | ☐ |
 | G20 | LJV · Título IV — Derecho sucesorio | «art. 1057.2» × 5; «JPI» × 22 | ☐ |
-| G21 | LJV · Título V — Derecho de obligaciones | — | ☐ |
+| G21 | LJV · Título V — Derecho de obligaciones | «arts. 1158, 1159 y 1210.2» × 3; «Secretario judicial» × 8 | ☐ |
 | G22 | LJV · T. VI Cap. I — Usufructuario | — | ☐ |
 | G23 | LJV · T. VI Cap. II — Deslinde | — | ☐ |
 | G24 | LJV · Título VII — Subastas voluntarias | — | ☐ |
@@ -290,6 +290,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-30 · E24 (obligaciones) revisado. Siguiente: E25.
 - 2026-10-30 · E23 (sucesiones) revisado. Siguiente: E24.
 - 2026-10-29 · E22 (hechos pasados) revisado; pregunta al propietario: ¿Sección de Familia o Civil? Siguiente: E23.
 - 2026-10-29 · E21 (donantes vivos) revisado. Siguiente: E22.

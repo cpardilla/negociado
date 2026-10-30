@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E24.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E24.json; revisado con el BOE (registro: docs/revision/ljv-obligaciones.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-obligaciones",
@@ -12,7 +12,7 @@ Neg.data.register({
   "99"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E24"
  },
@@ -128,23 +128,6 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Presupuestos exigidos por la jurisprudencia",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Principio rogatorio:</strong> la fijación del plazo debe ser solicitada por parte interesada, sin que pueda establecerse de oficio, pues de lo contrario se incurriría en incongruencia extra petita, inadmisible procesal y constitucionalmente (artículo 24 de la Constitución Española)."
-            },
-            {
-             "t": "<strong>Existencia previa de un acto, negocio o relación jurídica</strong> de la que nace una obligación exigible, vigente y no extinguida por satisfacción."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
          "titulo": "Remisión interna a las normas comunes de la Ley 15/2015",
          "contenido": [
           {
@@ -156,12 +139,28 @@ Neg.data.register({
           }
          ]
         }
+       },
+       {
+        "apartado": {
+         "titulo": "Resolución y recursos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Sin oposición, el Juez fija el plazo por auto (art. 19.1 LJV)."
+            },
+            {
+             "t": "Apelación en veinte días (art. 20.2 LJV; art. 458.1 LEC), sin efectos suspensivos, con abogado y procurador (art. 3.2 LJV)."
+            }
+           ]
+          }
+         ]
+        }
        }
       ],
       "referencias": [
        "CC art. 1128",
        "CC arts. 1125–1130",
-       "CE art. 24",
        "LJV arts. 13–22"
       ],
       "claves": "artículo 96 ámbito de aplicación fijación del plazo cumplimiento obligaciones artículo 1128 código civil tribunales deudor naturaleza circunstancias remisión normas comunes jurisdicción voluntaria principio rogatorio jurisprudencia artículo 24 constitución capítulo i"
@@ -188,13 +187,13 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "La tramitación y resolución del presente expediente corresponderá al Juez de Primera Instancia del domicilio del deudor."
+             "t": "La tramitación y resolución del presente expediente corresponderá al Juez de Primera Instancia del domicilio del deudor. Hoy, la Sección Civil del Tribunal de Instancia (art. 85 LOPJ)."
             },
             {
              "t": "<strong>Regla especial de protección del consumidor:</strong> si la relación trabada fuera entre un consumidor o usuario y un empresario o profesional y éste fuera el deudor de la prestación, la competencia podrá corresponder también al Juez de Primera Instancia del domicilio del acreedor, a elección de éste."
             },
             {
-             "t": "Proyección del principio de protección del consumidor, en línea con el texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios, aprobado por el Real Decreto Legislativo 1/2007, de 16 de noviembre."
+             "t": "Es decir: cuando el deudor es el empresario o profesional, el consumidor acreedor puede acudir al juez de su propio domicilio."
             }
            ]
           }
@@ -222,10 +221,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Si se suscitare oposición, el expediente se hará contencioso y el Secretario judicial citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
+             "t": "Si se suscitare oposición, el expediente se hará contencioso y el Letrado de la Administración de Justicia citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
             },
             {
-             "t": "Remisión procesal a los artículos 437 y siguientes de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil."
+             "t": "Remisión procesal a los artículos 437 y siguientes de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil. Es una de las excepciones a la regla general de que la oposición no hace contencioso el expediente (art. 17.3 LJV)."
             }
            ]
           }
@@ -234,9 +233,9 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "RDL 1/2007",
-       "LJV art. 3",
-       "LEC arts. 437+"
+       "LJV arts. 3, 17",
+       "LEC arts. 437 y ss.",
+       "LOPJ art. 85"
       ],
       "claves": "artículo 97 competencia postulación fijación del plazo juez primera instancia domicilio deudor consumidor acreedor empresario profesional abogado procurador oposición contencioso juicio verbal secretario judicial artículos 437 enjuiciamiento civil capítulo i"
      }
@@ -323,7 +322,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Será competente el Juzgado de Primera Instancia correspondiente al lugar donde deba cumplirse la obligación y, si pudiera cumplirse en distintos lugares, cualquiera de ellos a elección del solicitante."
+             "t": "Será competente el Juzgado de Primera Instancia correspondiente al lugar donde deba cumplirse la obligación y, si pudiera cumplirse en distintos lugares, cualquiera de ellos a elección del solicitante. Hoy, la Sección Civil del Tribunal de Instancia."
             },
             {
              "t": "En su defecto, será competente el que corresponda al domicilio del deudor."
@@ -354,7 +353,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Podrá promover la consignación el deudor o un tercero, conforme al artículo 1178 del Código Civil y a las reglas del pago por tercero de los artículos 1158, 1159 y 1210.2 del Código Civil."
+             "t": "Podrá promover la consignación el deudor o un tercero (art. 1178 CC); cualquier persona puede pagar por el deudor (art. 1158 CC)."
             }
            ]
           }
@@ -363,13 +362,10 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC art. 1176",
-       "CC art. 1178",
-       "CC arts. 1158, 1159",
-       "CC art. 1210.2",
+       "CC arts. 1158, 1176, 1178",
        "LN art. 69"
       ],
-      "claves": "artículo 98 ámbito aplicación competencia postulación consignación judicial notario artículo 69 ley notariado artículo 1176 código civil acreedor negativa ausencia impedimento desconocimiento extravío título cláusula cierre gravoso deudor juzgado primera instancia legitimación tercero artículo 1178 artículos 1158 1159 1210 capítulo ii"
+      "claves": "artículo 98 ámbito aplicación competencia postulación consignación judicial notario artículo 69 ley notariado artículo 1176 código civil acreedor negativa ausencia impedimento desconocimiento extravío título cláusula cierre gravoso deudor juzgado primera instancia legitimación tercero artículo 1178 artículos 1158 capítulo ii"
      }
     },
     {
@@ -444,10 +440,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Si la solicitud no reuniera los requisitos necesarios, el Secretario judicial dictará decreto que así lo declare y mandará devolver al promotor lo consignado."
+             "t": "Si la solicitud no reuniera los requisitos necesarios, el Letrado de la Administración de Justicia dictará decreto que así lo declare y mandará devolver al promotor lo consignado."
             },
             {
-             "t": "En caso contrario, admitida la solicitud por el Secretario judicial, éste notificará a los interesados la existencia de la consignación, a los efectos de que en el plazo de diez días retiren la cosa debida o realicen las alegaciones que consideren oportunas."
+             "t": "En caso contrario, admitida la solicitud por el Letrado de la Administración de Justicia, éste notificará a los interesados la existencia de la consignación, a los efectos de que en el plazo de diez días retiren la cosa debida o realicen las alegaciones que consideren oportunas."
             },
             {
              "t": "Igualmente adoptará las medidas oportunas en cuanto al depósito de la cosa debida."
@@ -464,7 +460,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Cuando los interesados comparecidos retirasen la cosa debida aceptando expresamente la consignación, el Secretario judicial dictará decreto teniéndola por aceptada, con los efectos legales procedentes, mandando cancelar la obligación y, en su caso, la garantía, si así lo solicitara el promotor."
+             "t": "Cuando los interesados comparecidos retirasen la cosa debida aceptando expresamente la consignación, el Letrado de la Administración de Justicia dictará decreto teniéndola por aceptada, con los efectos legales procedentes, mandando cancelar la obligación y, en su caso, la garantía, si así lo solicitara el promotor."
             },
             {
              "t": "Proyección del artículo 1180 del Código Civil: hecha debidamente la consignación, podrá el deudor pedir al Juez que mande cancelar la obligación."
@@ -484,10 +480,10 @@ Neg.data.register({
              "t": "Si transcurrido el plazo no procedieran a retirar la cosa debida, no realizaran ninguna alegación o rechazaran la consignación, se dará traslado al promotor para que inste, en el plazo de cinco días, la devolución de lo consignado o el mantenimiento de la consignación."
             },
             {
-             "t": "<strong>Devolución de lo consignado:</strong> en el caso de que el promotor solicitara la devolución de lo consignado, se dará traslado de la petición al acreedor por cinco días. Si le autorizara a retirarlo, el Secretario judicial dictará decreto acordando el archivo del expediente y el acreedor perderá toda preferencia que tuviere sobre la cosa y los copromotores y fiadores quedarán libres, efecto concordante con el artículo 1181 del Código Civil. Si la cosa fuera retirada por la exclusiva voluntad del promotor, el archivo del expediente dejará subsistente la obligación, en armonía con el artículo 1180, párrafo segundo, del Código Civil, que permite al deudor retirar la cosa o cantidad consignada mientras no exista aceptación o declaración judicial de estar bien hecha, dejando subsistente la obligación."
+             "t": "<strong>Devolución de lo consignado:</strong> en el caso de que el promotor solicitara la devolución de lo consignado, se dará traslado de la petición al acreedor por cinco días. Si le autorizara a retirarlo, el Letrado de la Administración de Justicia dictará decreto acordando el archivo del expediente y el acreedor perderá toda preferencia que tuviere sobre la cosa y los copromotores y fiadores quedarán libres, efecto concordante con el artículo 1181 del Código Civil. Si la cosa fuera retirada por la exclusiva voluntad del promotor, el archivo del expediente dejará subsistente la obligación, en armonía con el artículo 1180, párrafo segundo, del Código Civil, que permite al deudor retirar la cosa o cantidad consignada mientras no exista aceptación o declaración judicial de estar bien hecha, dejando subsistente la obligación."
             },
             {
-             "t": "<strong>Mantenimiento de la consignación:</strong> cuando el promotor instara el mantenimiento de la consignación, el Secretario judicial citará al promotor, al acreedor y a aquellos que pudieran estar interesados a una comparecencia a celebrar ante el Juez, en la que serán oídos y se practicarán aquellas pruebas que hubieren sido propuestas y acordadas. La comparecencia se tramita conforme a las normas comunes de los artículos 17 a 19 de la Ley 15/2015 y, supletoriamente, a la Ley de Enjuiciamiento Civil."
+             "t": "<strong>Mantenimiento de la consignación:</strong> cuando el promotor instara el mantenimiento de la consignación, el Letrado de la Administración de Justicia citará al promotor, al acreedor y a aquellos que pudieran estar interesados a una comparecencia a celebrar ante el Juez, en la que serán oídos y se practicarán aquellas pruebas que hubieren sido propuestas y acordadas. La comparecencia se tramita conforme a las normas comunes de los artículos 17 a 19 de la Ley 15/2015 y, supletoriamente, a la Ley de Enjuiciamiento Civil."
             }
            ]
           }
@@ -531,6 +527,26 @@ Neg.data.register({
             },
             {
              "t": "Regla concordante con el artículo 1179 del Código Civil, según el cual los gastos de la consignación, cuando fuere procedente, serán de cuenta del acreedor."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Recursos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Contra los decretos del Letrado de la Administración de Justicia (inadmisión, consignación aceptada, archivo): recurso de revisión ante el Juez en cinco días (art. 20.2 LJV; art. 454 bis LEC)."
+            },
+            {
+             "t": "Contra el auto del Juez que declara o no bien hecha la consignación: apelación en veinte días (art. 458.1 LEC), sin efectos suspensivos."
+            },
+            {
+             "t": "Para recurrir, abogado y procurador (art. 3.2 LJV)."
             }
            ]
           }
@@ -584,10 +600,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Si se suscitare oposición, el expediente se hará contencioso y el Secretario judicial citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
+             "t": "Si se suscitare oposición, el expediente se hará contencioso y el Letrado de la Administración de Justicia citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
             },
             {
-             "t": "Remisión procesal a los artículos 437 y siguientes de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil."
+             "t": "Remisión procesal a los artículos 437 y siguientes de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil. Es una de las excepciones a la regla general de que la oposición no hace contencioso el expediente (art. 17.3 LJV)."
             }
            ]
           }
@@ -601,7 +617,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "En el expediente de consignación, la oposición se canaliza a través del mantenimiento de la consignación: el Secretario judicial citará al promotor, al acreedor y a aquellos que pudieran estar interesados a una comparecencia a celebrar ante el Juez, en la que serán oídos y se practicarán aquellas pruebas que hubieren sido propuestas y acordadas."
+             "t": "En el expediente de consignación, la oposición se canaliza a través del mantenimiento de la consignación: el Letrado de la Administración de Justicia citará al promotor, al acreedor y a aquellos que pudieran estar interesados a una comparecencia a celebrar ante el Juez, en la que serán oídos y se practicarán aquellas pruebas que hubieren sido propuestas y acordadas."
             },
             {
              "t": "El Juez resolverá declarando o no estar bien hecha la consignación, con los efectos legales procedentes en cada caso."
@@ -667,6 +683,16 @@ Neg.data.register({
         "Traslado al acreedor de la petición de devolución formulada por el promotor (Capítulo II, artículo 99.4)",
         "5 días",
         "Artículo 99.4 de la Ley 15/2015"
+       ],
+       [
+        "Recurso de revisión contra los decretos del LAJ (consignación)",
+        "5 días",
+        "Art. 20.2 LJV; art. 454 bis LEC"
+       ],
+       [
+        "Apelación contra el auto que fija el plazo o declara bien hecha la consignación",
+        "20 días",
+        "Art. 20.2 LJV; art. 458.1 LEC"
        ]
       ]
      }
@@ -684,10 +710,10 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Juez de Primera Instancia (resolución y decisión)"
+        "t": "Juez — Sección Civil del Tribunal de Instancia (resolución y decisión)"
        },
        {
-        "t": "Secretario judicial / Letrado de la Administración de Justicia (decretos, admisión, notificación)"
+        "t": "Letrado de la Administración de Justicia (decretos, admisión, notificación)"
        }
       ]
      }
@@ -704,7 +730,7 @@ Neg.data.register({
         "t": "Acreedor (destinatario de la consignación o de la fijación)"
        },
        {
-        "t": "Tercero pagador (legitimado para promover la consignación, CC arts. 1158, 1159, 1210.2)"
+        "t": "Tercero pagador (legitimado para promover la consignación, arts. 1158 y 1178 CC)"
        },
        {
         "t": "Copromotores (quedan libres si el acreedor autoriza la retirada, CC art. 1181)"
@@ -753,14 +779,14 @@ Neg.data.register({
   },
   {
    "titulo": "Ecosistema normativo — conexiones relacionadas",
-   "recuento": "8 cuerpos normativos",
+   "recuento": "5 normas",
    "plegada": true,
    "bloques": [
     {
      "norma": {
       "ley": "Código Civil",
       "titulo": "Obligaciones a plazo y consignación",
-      "texto": "<strong>Artículos 1125 a 1130</strong> — Régimen general de las obligaciones a plazo, incluida la pérdida del beneficio del plazo por el deudor (artículo 1129).<br><strong>Artículos 1156 y 1157</strong> — Causas de extinción de las obligaciones e integridad del pago.<br><strong>Artículo 1158</strong> — Pago por tercero.<br><strong>Artículo 1162</strong> — Persona a quien debe hacerse el pago.<br><strong>Artículos 1176 a 1181</strong> — Soporte sustantivo del Capítulo II: supuestos de procedencia, anuncio, depósito, gastos, cancelación y pérdida de preferencias.<br><strong>Artículo 1210.2</strong> — Subrogación legal del tercero que paga con consentimiento del deudor.",
+      "texto": "<strong>Artículos 1125 a 1130</strong> — Régimen general de las obligaciones a plazo, incluida la pérdida del beneficio del plazo por el deudor (artículo 1129).<br><strong>Artículos 1156 y 1157</strong> — Causas de extinción de las obligaciones e integridad del pago.<br><strong>Artículo 1158</strong> — Pago por tercero.<br><strong>Artículo 1162</strong> — Persona a quien debe hacerse el pago.<br><strong>Artículos 1176 a 1181</strong> — Soporte sustantivo del Capítulo II: supuestos de procedencia, anuncio, depósito, gastos, cancelación y pérdida de preferencias.<br><strong>Artículo 1210.2.º</strong> — Se presume la subrogación del tercero no interesado que paga con aprobación expresa o tácita del deudor.",
       "etiqueta": "Derecho sustantivo",
       "tono": "t-info"
      }
@@ -769,7 +795,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 15/2015, de 2 de julio",
       "titulo": "De la Jurisdicción Voluntaria",
-      "texto": "<strong>Artículos 1 a 8</strong> — Disposiciones generales: objeto, competencia, legitimación y postulación, Ministerio Fiscal, prueba, tramitación simultánea, gastos, ajustes para personas con discapacidad y carácter supletorio de la LEC.<br><strong>Artículos 13 a 22</strong> — Normas comunes de tramitación: solicitud inicial, admisión, citación de interesados, comparecencia, práctica de la prueba, resolución y recursos.",
+      "texto": "<strong>Artículos 1 a 8</strong> — Disposiciones generales: objeto, competencia, legitimación y postulación, Ministerio Fiscal, prueba, tramitación simultánea, gastos, ajustes para personas con discapacidad y carácter supletorio de la LEC.<br><strong>Artículos 13 a 22 LJV</strong> — Normas comunes de tramitación: solicitud inicial, admisión, citación de interesados, comparecencia, práctica de la prueba, resolución y recursos.",
       "etiqueta": "Norma principal",
       "tono": "t-ok"
      }
@@ -778,7 +804,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 1/2000, de 7 de enero",
       "titulo": "De Enjuiciamiento Civil",
-      "texto": "<strong>Artículos 437 y siguientes</strong> — Reguladores del juicio verbal, aplicables cuando el expediente deviene contencioso por oposición conforme al artículo 97.3.<br><strong>Artículo 8 de la Ley 15/2015</strong> — Establece el carácter supletorio de la LEC para todo lo no previsto en la Ley de Jurisdicción Voluntaria.",
+      "texto": "<strong>Arts. 437 y ss. LEC</strong> — Reguladores del juicio verbal, aplicables cuando el expediente deviene contencioso por oposición conforme al artículo 97.3.<br><strong>Artículo 8 de la Ley 15/2015</strong> — Establece el carácter supletorio de la LEC para todo lo no previsto en la Ley de Jurisdicción Voluntaria.",
       "etiqueta": "Supletoria",
       "tono": "t-plazo"
      }
@@ -787,49 +813,22 @@ Neg.data.register({
      "norma": {
       "ley": "Ley del Notariado",
       "titulo": "Consignación y reclamación notarial de deudas",
-      "texto": "<strong>Artículo 69</strong> — Expediente notarial de ofrecimiento de pago y consignación, introducido por la Ley 15/2015 como vía alternativa a la judicial.<br><strong>Artículo 70</strong> — Reclamación notarial de deudas dinerarias no contradichas, con exclusiones subjetivas cuando el deudor sea consumidor o esté concernida una Administración Pública.",
+      "texto": "<strong>Art. 69 LN</strong> — Expediente notarial de ofrecimiento de pago y consignación, introducido por la Ley 15/2015 como vía alternativa a la judicial.<br><strong>Art. 70 LN</strong> — Reclamación notarial de deudas dinerarias no contradichas, con exclusiones subjetivas cuando el deudor sea consumidor o esté concernida una Administración Pública.",
       "etiqueta": "Vía alternativa",
       "tono": "t-nota"
      }
     },
     {
      "norma": {
-      "ley": "Constitución Española",
-      "titulo": "Garantías procesales constitucionales",
-      "texto": "<strong>Artículo 24</strong> — Invocado por la jurisprudencia para excluir la fijación de oficio del plazo en el expediente del artículo 96, pues constituiría incongruencia extra petita inadmisible procesal y constitucionalmente.",
-      "etiqueta": "Constitucional",
-      "tono": "t-aviso"
-     }
-    },
-    {
-     "norma": {
-      "ley": "RDL 1/2007, de 16 de noviembre",
-      "titulo": "Ley General para la Defensa de los Consumidores y Usuarios",
-      "texto": "<strong>Texto refundido</strong> — Proyección del principio de protección del consumidor que fundamenta la regla especial de competencia del artículo 97.1, permitiendo al acreedor consumidor elegir el Juez de Primera Instancia de su propio domicilio.",
-      "etiqueta": "Protección consumidores",
-      "tono": "t-info"
-     }
-    },
-    {
-     "norma": {
       "ley": "Ley Orgánica del Poder Judicial",
-      "titulo": "Competencias del Secretario judicial",
-      "texto": "<strong>Artículo 456</strong> — Atribuye competencias al Secretario judicial en materia de jurisdicción voluntaria cuando así lo prevean las leyes procesales.",
+      "titulo": "Tribunal de Instancia y Letrado de la Administración de Justicia",
+      "texto": "<strong>Art. 85 LOPJ</strong> — Secciones Civiles del Tribunal de Instancia. <strong>Art. 456.6 b) LOPJ</strong> — El Letrado de la Administración de Justicia tramita y resuelve en jurisdicción voluntaria cuando lo prevean las leyes.",
       "etiqueta": "Orgánico",
-      "tono": "t-nota"
-     }
-    },
-    {
-     "norma": {
-      "ley": "Ley 13/2009, de 3 de noviembre",
-      "titulo": "Reforma procesal para la implantación de la nueva Oficina judicial",
-      "texto": "<strong>Ley completa</strong> — De ella deriva la atribución de funciones procesales al Secretario judicial, hoy denominado Letrado o Letrada de la Administración de Justicia, que interviene activamente en los expedientes del Título V.",
-      "etiqueta": "Orgánico-procesal",
       "tono": "t-nota"
      }
     }
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria — Título V (Artículos 96 a 99) · Capítulo I: Fijación del plazo · Capítulo II: Consignación · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria — Título V (Artículos 96 a 99) · Capítulo I: Fijación del plazo · Capítulo II: Consignación"
 });
