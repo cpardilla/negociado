@@ -34,7 +34,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-obligaciones | Esquema · LJV · Título V · Derecho de obligaciones | · | · | · | · | · | · | 1R |
 | ljv-usufructuario | Esquema · LJV · Usufructuario: reclamación de créditos vencidos | · | · | · | · | · | · | 2R |
 | ljv-deslinde | Esquema · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 1R |
-| ljv-subastas | Esquema · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 3R |
+| ljv-subastas | Esquema · LJV · Título VII · Subastas voluntarias | 1E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Esquema · LJV · Título IX · Conciliación | 1R | · | · | 3R | · | · | 4R |
 | lec-diligencias-preliminares | Guía · LEC · Diligencias preliminares | 6A 10R | · | · | 1R | 4R | · | · |
 | lec-division-herencia | Guía · LEC · División de la herencia | 11A 6R | · | · | · | · | · | 2R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 64E 35A 62R | 0E 0A 0R | 0E 0A 0R | 0E 0A 10R | 0E 0A 7R | 4E 0A 1R | 0E 0A 71R |
+| | **Total** | 60E 35A 62R | 0E 0A 0R | 0E 0A 0R | 0E 0A 10R | 0E 0A 7R | 4E 0A 1R | 0E 0A 70R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,10 +69,10 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2450
+- ✓ LJV (BOE a 05-03-2026): 2458
 - ✓ LEC (BOE a 07-10-2026): 1521
 - ✓ CC (BOE a 07-09-2026): 1339
-- ✓ LOPJ (BOE a 09-10-2026): 89
+- ✓ LOPJ (BOE a 09-10-2026): 90
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - ✓ CE (BOE a 20-05-2026): 44
@@ -106,7 +106,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 425 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 422 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -273,16 +273,11 @@ Sin hallazgos automáticos.
 **citas**
 
 - [error] «artículo 641»: el art. 641 LEC está sin contenido/derogado — _sección «Artículos del Título VII» › tarjeta «Artículo 110» › «Venta por persona o entidad especializada (apartado 3)» › 1 › punto.2_
-- [error] «Artículo 641»: el art. 641 LEC está sin contenido/derogado — _sección «Artículos del Título VII» › tarjeta «Artículo 110» › «Venta por persona o entidad especializada (apartado 3)» › 1 › punto.3_
-- [error] «Art. 641»: el art. 641 LEC está sin contenido/derogado — _sección «Artículos del Título VII» › tarjeta «Artículo 110» › referencia 2_
-- [error] «art. 641»: el art. 641 LEC está sin contenido/derogado — _sección «Mapa de participantes y actores» › 4 › grupo «Plataformas y auxiliares».2_
-- [error] «Artículo 641»: el art. 641 LEC está sin contenido/derogado — _sección «Ecosistema normativo — conexiones relacionadas» › 1 › norma «Régimen general de la subasta judicial»_
 
 **terminologia**
 
-- [revisar] «Juzgado de Primera Instancia» × 3 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos del Título VII» › tarjeta «Artículo 109» › «Competencia territorial (apartado 1)» › 1 › punto.1 | sección «Artículos del Título VII» › tarjeta «Artículo 109» › «Competencia territorial (apartado 1)» › 1 › punto.4 | sección «Mapa de participantes y actores» › 1 › grupo «Órgano judicial».1_
-- [revisar] «Juzgado de lo Mercantil» × 1 → Tribunal de Instancia, Sección de lo Mercantil (LO 1/2025) — verificar — _sección «Artículos del Título VII» › tarjeta «Artículo 109» › «Competencia territorial (apartado 1)» › 1 › punto.4_
-- [revisar] «Secretario judicial» × 16 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Artículos del Título VII» › tarjeta «Artículo 110» › «Venta por persona o entidad especializada (apartado 3)» › 1 › punto.1 | sección «Artículos del Título VII» › tarjeta «Artículo 110» › «Venta por persona o entidad especializada (apartado 3)» › 1 › punto.2 | sección «Artículos del Título VII» › tarjeta «Artículo 111» › «Consulta previa al Registro Público Concursal (apartado 1)» › 1 › punto.1 …_
+- [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos del Título VII» › tarjeta «Artículo 109» › «Competencia territorial (apartado 1)» › 1 › punto.1 | sección «Artículos del Título VII» › tarjeta «Artículo 109» › «Competencia territorial (apartado 1)» › 1 › punto.4_
+- [revisar] «Secretario judicial» × 1 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Ecosistema normativo — conexiones relacionadas» › 6 › norma «Letrado de la Administración de Justicia»_
 
 ### ljv-conciliacion · Esquema · LJV · Título IX · Conciliación
 

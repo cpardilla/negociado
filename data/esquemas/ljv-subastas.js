@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E27.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E27.json; revisado con el BOE (registro: docs/revision/ljv-subastas.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-subastas",
@@ -12,7 +12,7 @@ Neg.data.register({
   "111"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E27"
  },
@@ -144,7 +144,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Regla general:</strong> será competente el Juzgado de Primera Instancia que corresponda al domicilio del titular."
+             "t": "<strong>Regla general:</strong> será competente el Juzgado de Primera Instancia que corresponda al domicilio del titular. Hoy, la Sección Civil del Tribunal de Instancia (art. 85 LOPJ)."
             },
             {
              "t": "<strong>Pluralidad de titulares:</strong> si fueran varios titulares, el correspondiente a cualquiera de ellos, a elección del solicitante."
@@ -153,7 +153,7 @@ Neg.data.register({
              "t": "<strong>Bienes inmuebles:</strong> será competente el del lugar donde éstos radiquen (fuero especial imperativo, coherente con el principio forum rei sitae)."
             },
             {
-             "t": "<strong>Competencia objetiva:</strong> recae siempre en los Juzgados de Primera Instancia, no en los Juzgados de lo Mercantil, aun cuando el titular fuera comerciante o sociedad, salvo previsión legal específica."
+             "t": "<strong>Competencia objetiva:</strong> el art. 109 atribuye el expediente al Juzgado de Primera Instancia (Sección Civil), también si el titular es comerciante o sociedad."
             }
            ]
           }
@@ -227,7 +227,7 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Contenido típico del pliego de condiciones particulares",
+         "titulo": "Contenido habitual del pliego de condiciones (práctica; la ley solo exige la valoración)",
          "contenido": [
           {
            "lista": [
@@ -268,9 +268,6 @@ Neg.data.register({
             },
             {
              "t": "<strong>Remisión al artículo 661 LEC:</strong> procediéndose en la forma prescrita en el artículo 661 de la Ley de Enjuiciamiento Civil, que regula las comunicaciones al arrendatario y a los ocupantes de hecho, así como la posibilidad de declarar su derecho a permanecer o no en el inmueble tras la enajenación."
-            },
-            {
-             "t": "<strong>Consecuencia de la omisión:</strong> puede generar indefensión a los ocupantes y eventual nulidad de actuaciones, además de responsabilidad del solicitante frente al adjudicatario por vicios ocultos o cargas ocultas."
             }
            ]
           }
@@ -284,24 +281,29 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Petición:</strong> en la solicitud podrá pedirse al Secretario judicial que acuerde la venta del bien o derecho por persona o entidad especializada."
+             "t": "<strong>Petición:</strong> en la solicitud podrá pedirse al Letrado de la Administración de Justicia que acuerde la venta del bien o derecho por persona o entidad especializada."
             },
             {
-             "t": "<strong>Resolución:</strong> de estimarse procedente, el Secretario judicial acordará dicha venta con sujeción a lo establecido en el artículo 641 de la Ley de Enjuiciamiento Civil en cuanto sea compatible con las disposiciones de este Título."
+             "t": "<strong>Resolución:</strong> de estimarse procedente, el Letrado de la Administración de Justicia acordará dicha venta con sujeción a lo establecido en el artículo 641 de la Ley de Enjuiciamiento Civil en cuanto sea compatible con las disposiciones de este Título."
             },
             {
-             "t": "<strong>Artículo 641 LEC:</strong> prevé, entre otros extremos, el recurso a entidades especializadas públicas o privadas, previa prestación de caución, con un régimen de precio mínimo y plazos de realización específicos."
+             "t": "<strong>Remisión vacía:</strong> ese artículo de la LEC está sin contenido desde el 3 de abril de 2025 (LO 1/2025), que suprimió la sección dedicada a la realización por persona o entidad especializada. La realización por persona o entidad especializada aparece ahora dentro del convenio de realización del art. 640 LEC, pensado para la ejecución."
             }
            ]
           }
          ]
         }
+       },
+       {
+        "nota": {
+         "tono": "t-aviso",
+         "etiqueta": "Pendiente",
+         "texto": "Cómo aplica hoy el juzgado la venta por persona o entidad especializada del art. 110.3 LJV, con el artículo de la LEC al que remite vacío: pregunta abierta al propietario."
+        }
        }
       ],
       "referencias": [
-       "Art. 661 LEC",
-       "Art. 641 LEC",
-       "Ley 15/2015, art. 110"
+       "LEC arts. 640, 661"
       ],
       "claves": "solicitud iniciación expediente capacidad legal poder disposición certificación registral dominio cargas pliego condiciones particulares valoración arrendatarios ocupantes artículo 661 lec venta persona entidad especializada artículo 641 lec"
      }
@@ -327,7 +329,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Consulta obligatoria:</strong> el Secretario judicial, antes de resolver sobre la solicitud, consultará el Registro Público Concursal a los efectos previstos en la legislación especial (hoy, Texto Refundido de la Ley Concursal aprobado por Real Decreto Legislativo 1/2020)."
+             "t": "<strong>Consulta obligatoria:</strong> el Letrado de la Administración de Justicia, antes de resolver sobre la solicitud, consultará el Registro Público Concursal a los efectos previstos en la legislación especial (hoy, Texto Refundido de la Ley Concursal aprobado por Real Decreto Legislativo 1/2020)."
             },
             {
              "t": "<strong>Finalidad:</strong> comprobar que el titular no se halla en situación de concurso o preconcurso que pudiera afectar a la libre disposición del bien y, en su caso, a la competencia del juez del concurso respecto de la enajenación."
@@ -344,7 +346,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Decreto motivado:</strong> a la vista de la documentación, el Secretario judicial resolverá lo que proceda sobre la celebración de la subasta."
+             "t": "<strong>Decreto motivado:</strong> a la vista de la documentación, el Letrado de la Administración de Justicia resolverá lo que proceda sobre la celebración de la subasta."
             },
             {
              "t": "<strong>Si acordare su procedencia:</strong> pondrá en conocimiento del Registro Público Concursal la existencia del expediente, con expresa especificación del número de identificación fiscal (NIF) del titular persona física o jurídica cuyo bien vaya a ser objeto de la subasta."
@@ -353,7 +355,7 @@ Neg.data.register({
              "t": "<strong>Notificación recíproca:</strong> el Registro Público Concursal notificará al Juzgado que esté conociendo del expediente la práctica de cualquier asiento que se lleve a cabo asociado al NIF notificado, a los efectos previstos en la legislación concursal (suspensión, paralización o remisión al juez del concurso)."
             },
             {
-             "t": "<strong>Cierre informativo:</strong> el Secretario judicial pondrá en conocimiento del Registro Público Concursal la finalización del expediente cuando la misma se produzca."
+             "t": "<strong>Cierre informativo:</strong> el Letrado de la Administración de Justicia pondrá en conocimiento del Registro Público Concursal la finalización del expediente cuando la misma se produzca."
             }
            ]
           }
@@ -367,7 +369,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Solicitud de certificación:</strong> acordada su celebración, si se tratare de la subasta de un bien inmueble o derecho real inscrito en el Registro de la Propiedad o de bienes muebles sujetos a un régimen de publicidad registral similar, el Secretario judicial solicitará por procedimientos electrónicos certificación registral de dominio y cargas."
+             "t": "<strong>Solicitud de certificación:</strong> acordada su celebración, si se tratare de la subasta de un bien inmueble o derecho real inscrito en el Registro de la Propiedad o de bienes muebles sujetos a un régimen de publicidad registral similar, el Letrado de la Administración de Justicia solicitará por procedimientos electrónicos certificación registral de dominio y cargas."
             },
             {
              "t": "<strong>Información continuada:</strong> el Registrador de la propiedad expedirá la certificación con información continuada por igual medio y hará constar por nota al margen esta circunstancia."
@@ -376,10 +378,10 @@ Neg.data.register({
              "t": "<strong>Efecto de la nota marginal:</strong> indicar la situación de venta en subasta del bien o derecho frente a terceros, con valor de publicidad registral."
             },
             {
-             "t": "<strong>Plazo de caducidad:</strong> caducará a los seis meses de su fecha, salvo que con anterioridad el Secretario judicial notifique al Registrador el cierre del expediente o su suspensión. En el caso de suspensión, el plazo se computará desde que el Secretario judicial notifique su reanudación."
+             "t": "<strong>Plazo de caducidad:</strong> caducará a los seis meses de su fecha, salvo que con anterioridad el Letrado de la Administración de Justicia notifique al Registrador el cierre del expediente o su suspensión. En el caso de suspensión, el plazo se computará desde que el Letrado de la Administración de Justicia notifique su reanudación."
             },
             {
-             "t": "<strong>Deber de notificación sobrevenida del Registrador:</strong> notificará, inmediatamente y de forma telemática, al Secretario judicial y al Portal de Subastas el hecho de haberse presentado otro u otros títulos que afecten o modifiquen la información inicial (por ejemplo, nuevas cargas, anotaciones de embargo, transmisiones o demandas)."
+             "t": "<strong>Deber de notificación sobrevenida del Registrador:</strong> notificará, inmediatamente y de forma telemática, al Letrado de la Administración de Justicia y al Portal de Subastas el hecho de haberse presentado otro u otros títulos que afecten o modifiquen la información inicial (por ejemplo, nuevas cargas, anotaciones de embargo, transmisiones o demandas)."
             },
             {
              "t": "<strong>Actualización inmediata del Portal:</strong> el Portal de Subastas recogerá la información proporcionada por el Registro de modo inmediato, garantizando que los potenciales postores liciten con información actualizada."
@@ -399,10 +401,10 @@ Neg.data.register({
              "t": "<strong>Electrónica obligatoria:</strong> la subasta se llevará a cabo, en todo caso, de forma electrónica en el Portal de Subastas de la Agencia Estatal Boletín Oficial del Estado."
             },
             {
-             "t": "<strong>Responsabilidad:</strong> bajo la responsabilidad del Secretario judicial, que actúa como director del procedimiento y garante de su legalidad."
+             "t": "<strong>Responsabilidad:</strong> bajo la responsabilidad del Letrado de la Administración de Justicia, que actúa como director del procedimiento y garante de su legalidad."
             },
             {
-             "t": "<strong>Aplicación supletoria de la LEC:</strong> serán de aplicación las disposiciones de la Ley de Enjuiciamiento Civil al respecto (singularmente los artículos 644 a 680 LEC para inmuebles y 643 a 654 LEC para muebles, así como el artículo 648 LEC sobre subasta electrónica), en cuanto sean compatibles con lo previsto en este Título."
+             "t": "<strong>Aplicación supletoria de la LEC:</strong> serán de aplicación las disposiciones de la Ley de Enjuiciamiento Civil al respecto (arts. 643 a 654 LEC para muebles y 655 a 675 LEC para inmuebles y muebles con publicidad registral similar; art. 648 LEC, subasta electrónica), en cuanto sean compatibles con lo previsto en este Título."
             },
             {
              "t": "<strong>Finalidad de la electronificación:</strong> impuesta desde la reforma operada por la Ley 19/2015, de 13 de julio, busca maximizar la concurrencia, la transparencia y la obtención del mejor precio posible."
@@ -436,7 +438,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Decreto del Secretario judicial:</strong> terminada la subasta, el Secretario judicial, mediante decreto, aprobará el remate en favor del único o mejor postor, siempre y cuando cubra el tipo mínimo que hubiera fijado el solicitante, o el solicitante no se hubiere reservado expresamente el derecho a aprobarla."
+             "t": "<strong>Decreto del Letrado de la Administración de Justicia:</strong> terminada la subasta, el Letrado de la Administración de Justicia, mediante decreto, aprobará el remate en favor del único o mejor postor, siempre y cuando cubra el tipo mínimo que hubiera fijado el solicitante, o el solicitante no se hubiere reservado expresamente el derecho a aprobarla."
             },
             {
              "t": "<strong>Reserva de aprobación:</strong> si el solicitante se hubiera reservado ese derecho, se le dará vista del expediente para que en el término de tres días pida lo que le interese."
@@ -448,7 +450,7 @@ Neg.data.register({
              "t": "<strong>Aprobación:</strong> si el solicitante aprueba el remate o acepta la proposición, se resolverá teniendo por aprobado el remate en favor del licitador de la misma."
             },
             {
-             "t": "<strong>Decremento aprobatorio:</strong> pone fin a la fase de licitación y abre la fase de ejecución del remate (pago del precio, otorgamiento del título)."
+             "t": "<strong>Decreto aprobatorio:</strong> pone fin a la fase de licitación y abre la fase de ejecución del remate (pago del precio, otorgamiento del título)."
             }
            ]
           }
@@ -485,7 +487,21 @@ Neg.data.register({
              "t": "<strong>Contenido del decreto:</strong> la descripción del bien o derecho, la identificación de los intervinientes (solicitante, adjudicatario y, en su caso, representantes), expresión de las condiciones de la adjudicación (precio, forma de pago, cargas asumidas, etc.) y los demás requisitos necesarios para la inscripción registral (descripción catastral, referencia registral, manifestaciones fiscales, etc.)."
             },
             {
-             "t": "<strong>Título inscribible:</strong> un testimonio de dicha resolución, que se entregará al adjudicatario, será título suficiente para la práctica de las inscripciones registrales que, en su caso, correspondan, equiparándose funcionalmente a una escritura pública de compraventa."
+             "t": "<strong>Título inscribible:</strong> un testimonio de dicha resolución, que se entregará al adjudicatario, será título suficiente para la práctica de las inscripciones registrales que, en su caso, correspondan."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Recursos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Contra los decretos del Letrado de la Administración de Justicia (celebración, aprobación del remate, sobreseimiento, adjudicación): recurso de revisión ante el Juez en cinco días (art. 20.2 LJV; art. 454 bis LEC), con abogado y procurador (art. 3.2 LJV)."
             }
            ]
           }
@@ -525,7 +541,7 @@ Neg.data.register({
         "Artículo 111.6 de la Ley 15/2015"
        ],
        [
-        "Plazo de caducidad de la nota marginal de expedición de la certificación registral (salvo cierre, suspensión o reanudación notificadas por el Secretario judicial)",
+        "Plazo de caducidad de la nota marginal de expedición de la certificación registral (salvo cierre, suspensión o reanudación notificadas por el Letrado de la Administración de Justicia)",
         "6 meses",
         "Artículo 111.3 de la Ley 15/2015"
        ],
@@ -533,6 +549,11 @@ Neg.data.register({
         "Notificación por el Registrador de títulos sobrevenidos y reflejo en el Portal de Subastas",
         "Inmediato (telemático)",
         "Artículo 111.3 de la Ley 15/2015"
+       ],
+       [
+        "Recurso de revisión contra los decretos del LAJ",
+        "5 días",
+        "Art. 20.2 LJV; art. 454 bis LEC"
        ]
       ]
      }
@@ -550,10 +571,10 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Juzgado de Primera Instancia (competencia objetiva y territorial)"
+        "t": "Tribunal de Instancia, Sección Civil (competencia objetiva y territorial)"
        },
        {
-        "t": "Secretario judicial / Letrado de la Administración de Justicia (director del expediente)"
+        "t": "Letrado de la Administración de Justicia (director del expediente)"
        }
       ]
      }
@@ -601,7 +622,7 @@ Neg.data.register({
         "t": "Portal de Subastas de la AEBOE (celebración electrónica)"
        },
        {
-        "t": "Persona o entidad especializada (art. 641 LEC, eventual)"
+        "t": "Persona o entidad especializada (art. 110.3 LJV; el artículo de la LEC al que remite está sin contenido)"
        }
       ]
      }
@@ -617,7 +638,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley de Enjuiciamiento Civil",
       "titulo": "Régimen general de la subasta judicial",
-      "texto": "<strong>Artículo 641 LEC</strong> — Realización por persona o entidad especializada. Aplicable por remisión del artículo 110.3.<br><strong>Artículo 648 LEC</strong> — Subasta electrónica. Marco operativo del Portal de Subastas.<br><strong>Artículo 661 LEC</strong> — Comunicaciones a arrendatarios y ocupantes. Aplicable por remisión del artículo 110.2.<br><strong>Artículos 643 a 680 LEC</strong> — Régimen general de subasta judicial de muebles e inmuebles, aplicable en cuanto sea compatible.<br><strong>Artículo 670 LEC</strong> — Aprobación del remate de inmuebles. Modelo interpretativo para el apartado 6 del artículo 111.",
+      "texto": "<strong>Artículo 640 LEC</strong> — Convenio de realización, que incluye la realización por persona o entidad especializada (el artículo de la LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025).<br><strong>Artículo 648 LEC</strong> — Subasta electrónica. Marco operativo del Portal de Subastas.<br><strong>Artículo 661 LEC</strong> — Comunicaciones a arrendatarios y ocupantes. Aplicable por remisión del artículo 110.2.<br><strong>Artículos 643 a 675 LEC</strong> — Régimen general de subasta judicial de muebles e inmuebles, aplicable en cuanto sea compatible.<br><strong>Artículo 670 LEC</strong> — Aprobación del remate de inmuebles. Modelo interpretativo para el apartado 6 del artículo 111.",
       "etiqueta": "Subasta judicial",
       "tono": "t-info"
      }
@@ -635,7 +656,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 15/2015 (interna)",
       "titulo": "Disposiciones generales de la jurisdicción voluntaria",
-      "texto": "<strong>Artículos 1 a 22</strong> — Reglas sobre competencia, postulación, tramitación, recursos (recurso de revisión frente a los decretos del Secretario judicial ante el juez), caducidad y archivo.<br><strong>Artículo 3</strong> — Fundamento de la no preceptividad de Abogado y Procurador.<br><strong>Artículo 17</strong> — Esquema general de tramitación supletorio.<br><strong>Artículo 20</strong> — Régimen de recursos aplicable.<br><strong>Título VI</strong> — Expedientes relativos a derechos reales. Antecedente sistemático del Título VII.",
+      "texto": "<strong>Artículos 1 a 22 LJV</strong> — Reglas sobre competencia, postulación, tramitación, recursos (recurso de revisión frente a los decretos del Letrado de la Administración de Justicia ante el juez), caducidad y archivo.<br><strong>Artículo 3</strong> — Fundamento de la no preceptividad de Abogado y Procurador.<br><strong>Artículo 17</strong> — Esquema general de tramitación supletorio.<br><strong>Artículo 20</strong> — Régimen de recursos aplicable.<br><strong>Título VI</strong> — Expedientes relativos a derechos reales. Antecedente sistemático del Título VII.",
       "etiqueta": "Jurisdicción voluntaria",
       "tono": "t-ok"
      }
@@ -644,7 +665,7 @@ Neg.data.register({
      "norma": {
       "ley": "Legislación hipotecaria y registral",
       "titulo": "Ley Hipotecaria y Reglamento Hipotecario",
-      "texto": "<strong>Ley Hipotecaria</strong> (Decreto de 8 de febrero de 1946) y <strong>Reglamento Hipotecario</strong>: regulan la certificación registral de dominio y cargas, la nota marginal, su caducidad y los asientos de inscripción del adjudicatario.<br><strong>Ley 14/2013, de 27 de septiembre</strong>: introdujo la comunicación electrónica entre juzgados y registros.<br><strong>Reglamento del Registro de Bienes Muebles</strong> y normativa de registros sectoriales (Buques, Aeronaves, Propiedad Intelectual e Industrial).",
+      "texto": "<strong>Ley Hipotecaria</strong> (Decreto de 8 de febrero de 1946) y <strong>Reglamento Hipotecario</strong>: regulan la certificación registral de dominio y cargas, la nota marginal, su caducidad y los asientos de inscripción del adjudicatario.",
       "etiqueta": "Registral",
       "tono": "t-plazo"
      }
@@ -653,7 +674,7 @@ Neg.data.register({
      "norma": {
       "ley": "Normativa del Portal de Subastas",
       "titulo": "Subasta electrónica obligatoria",
-      "texto": "<strong>Ley 19/2015, de 13 de julio</strong> — De medidas de reforma administrativa en el ámbito de la Administración de Justicia y del Registro Civil. Consolidó la subasta electrónica.<br><strong>Orden HAP/1335/2012</strong> y disposiciones concordantes sobre el funcionamiento del Portal de Subastas de la AEBOE.",
+      "texto": "<strong>Ley 19/2015, de 13 de julio</strong> — De medidas de reforma administrativa en el ámbito de la Administración de Justicia y del Registro Civil. Consolidó la subasta electrónica.",
       "etiqueta": "Portal electrónico",
       "tono": "t-info"
      }
@@ -662,7 +683,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley Orgánica 7/2015",
       "titulo": "Letrado de la Administración de Justicia",
-      "texto": "<strong>Ley Orgánica 7/2015</strong> — Denominación actual del Secretario judicial como Letrado de la Administración de Justicia, figura central en la tramitación del expediente de subasta voluntaria.",
+      "texto": "<strong>Ley Orgánica 7/2015</strong> — El Secretario judicial pasa a denominarse Letrado de la Administración de Justicia, figura central en la tramitación del expediente de subasta voluntaria.",
       "etiqueta": "Orgánica",
       "tono": "t-nota"
      }
@@ -670,5 +691,5 @@ Neg.data.register({
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título VII · Artículos 108–111 · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título VII · Artículos 108–111"
 });
