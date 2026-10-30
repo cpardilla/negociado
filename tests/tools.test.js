@@ -304,3 +304,17 @@ test("dev server refuses paths outside the repository and hides dotfiles", { tim
     close();
   }
 });
+
+test("run-tests: failed test names are read from the spec output (no duplicates, no summary line)", () => {
+  const { failures } = require("../tools/run-tests");
+  const out = [
+    "✔ pasa (0.5ms)",
+    "✖ [http] falla aquí (1.2ms)",
+    "▶ grupo",
+    "  ✖ sub falla (0.4ms)",
+    "✖ failing tests:",
+    "",
+    "✖ [http] falla aquí (1.2ms)",
+  ].join("\n");
+  assert.deepEqual(failures(out), ["[http] falla aquí", "sub falla"]);
+});

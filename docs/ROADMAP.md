@@ -292,10 +292,11 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-30 · `npm test` registra cada ejecución y los fallos con su nombre (`tools/run-tests.js`), para identificar el fallo intermitente. Siguiente: E28.
 - 2026-10-30 · Decisión 13 (art. 110.3 LJV) incorporada a E27.
 - 2026-10-30 · E27 (subastas) revisado; pregunta al propietario sobre el art. 110.3 LJV (remite al art. 641 LEC, vacío). Siguiente: E28 (conciliación).
 - 2026-10-30 · Decisión 12: hechos pasados → Sección Civil; E22 actualizado.
-- 2026-10-30 · E26 (deslinde) revisado. Siguiente: E27. Nota: una ejecución de la batería dio 1 fallo que no se reprodujo en tres ejecuciones seguidas; probablemente una prueba de navegador de tests/app.test.js con esperas fijas, sensible a la carga. Pendiente: identificarla y hacerla robusta. Segunda vez el 2026-10-30 (tras el ajuste de E27): 1 fallo; después, cuatro ejecuciones limpias, también con el comprobador corriendo a la vez. La salida no conserva el nombre de la prueba: hace falta un reportero que lo guarde (p. ej. --test-reporter=spec a un fichero).
+- 2026-10-30 · E26 (deslinde) revisado. Siguiente: E27. Nota: una ejecución de la batería dio 1 fallo que no se reprodujo en tres ejecuciones seguidas; probablemente una prueba de navegador de tests/app.test.js con esperas fijas, sensible a la carga. Pendiente: identificarla y hacerla robusta. Segunda vez el 2026-10-30 (tras el ajuste de E27): 1 fallo; después, cuatro ejecuciones limpias, también con el comprobador corriendo a la vez. La salida no conservaba el nombre de la prueba: desde el 2026-10-30, `npm test` pasa por `tools/run-tests.js`, que guarda cada ejecución en `tests/results/pruebas/` (no se publica) y anota en `fallos.txt` el nombre de cada prueba que falle.
 - 2026-10-30 · E25 (usufructuario) revisado. Siguiente: E26.
 - 2026-10-30 · E24 (obligaciones) revisado. Siguiente: E25.
 - 2026-10-30 · E23 (sucesiones) revisado. Siguiente: E24.

@@ -3,7 +3,7 @@
   "private": true,
   "description": "Herramientas de desarrollo de Negociado (la app publicada no las usa).",
   "scripts": {
-    "test": "node --test \"tests/**/*.test.js\"",
+    "test": "node tools/run-tests.js",
     "check": "node tools/check-content.js",
     "extract": "node tools/extract-current.js",
     "boe": "node tools/boe-fetch.js",
