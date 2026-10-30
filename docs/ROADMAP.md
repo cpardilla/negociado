@@ -188,7 +188,7 @@ Defectos del markmap anterior — todos resueltos al generar el mapa de los mism
 2. ✅ (2026-10-29) Retirados los 57 HTML antiguos (quedan en el historial de git y en el tag `baseline-2026-10-28`). `404.html` (`tools/build-404.js`, autosuficiente): 56 direcciones antiguas redirigen a su sitio nuevo; la del esquema combinado I bis & ter (sin equivalente único) y cualquier otra inexistente muestran el aviso de actualizar favoritos (decisión 8). `.nojekyll` en la raíz. Los tres tests que comparaban el inventario con los HTML antiguos solo se ejecutan donde existen (el tag); `tools/extract-current.js` queda como histórico. Tests en navegador de las redirecciones, servidas como en Pages.
 3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
-### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (25/27)
+### Fase 4 · Revisión de contenido de los esquemas (28) ◐ (26/27)
 Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabla (decisión 6). Los más usados (E01–E04, E28) con atención especial.
 
 | # | Esquema | Estado |
@@ -218,7 +218,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E23 | LJV · Título IV — Derecho sucesorio | ✅ 2026-10-30 · corregido (texto LJV fiel); arts. 898, 899, 903, 906 y 911 CC mal descritos; tutor: arts. 224 y 287 CC (no 271); fuera art. 749 LEC; recursos con plazos; Sección Civil ([registro](revision/ljv-sucesorio.md)) |
 | E24 | LJV · Título V — Derecho de obligaciones | ✅ 2026-10-30 · corregido (texto fiel); fuera jurisprudencia sin cita y normas ajenas; legitimación del tercero por los arts. 1158 y 1178 CC; recursos añadidos; Sección Civil ([registro](revision/ljv-obligaciones.md)) |
 | E25 | LJV · T. VI Cap. I — Usufructuario y créditos vencidos | ✅ 2026-10-30 · corregido (texto fiel); postulación del art. 3.2 LJV (necesaria para recurrir y desde la oposición); recursos y caducidad concretos; Sección Civil ([registro](revision/ljv-usufructuario.md)) |
-| E26 | LJV · T. VI Cap. II — Deslinde de fincas no inscritas | ☐ |
+| E26 | LJV · T. VI Cap. II — Deslinde de fincas no inscritas | ✅ 2026-10-30 · corregido (texto fiel); juicio verbal hasta 15.000 € (no 6.000); art. 17.3 LJV leído al revés; postulación exacta; fuera jurisprudencia sin cita; recurso de revisión; Sección Civil ([registro](revision/ljv-deslinde.md)) |
 | E27 | LJV · Título VII — Subastas voluntarias | ☐ |
 | E28 | LJV · Título IX — Conciliación | ☐ |
 
@@ -249,7 +249,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G20 | LJV · Título IV — Derecho sucesorio | «art. 1057.2» × 5; «JPI» × 22 | ☐ |
 | G21 | LJV · Título V — Derecho de obligaciones | «arts. 1158, 1159 y 1210.2» × 3; «Secretario judicial» × 8 | ☐ |
 | G22 | LJV · T. VI Cap. I — Usufructuario | «Juzgado de Primera Instancia» × 3; «Secretario judicial» × 1 | ☐ |
-| G23 | LJV · T. VI Cap. II — Deslinde | — | ☐ |
+| G23 | LJV · T. VI Cap. II — Deslinde | «Secretario judicial» × 11; comprobar 6.000 € = verbal y art. 17.3 | ☐ |
 | G24 | LJV · Título VII — Subastas voluntarias | — | ☐ |
 | G25 | LJV · Título IX — Conciliación | — | ☐ |
 
@@ -290,6 +290,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-30 · E26 (deslinde) revisado. Siguiente: E27. Nota: una ejecución de la batería dio 1 fallo que no se reprodujo en tres ejecuciones seguidas; probablemente una prueba de navegador de tests/app.test.js con esperas fijas, sensible a la carga. Pendiente: identificarla y hacerla robusta.
 - 2026-10-30 · E25 (usufructuario) revisado. Siguiente: E26.
 - 2026-10-30 · E24 (obligaciones) revisado. Siguiente: E25.
 - 2026-10-30 · E23 (sucesiones) revisado. Siguiente: E24.

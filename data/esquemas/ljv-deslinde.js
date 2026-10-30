@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E26.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E26.json; revisado con el BOE (registro: docs/revision/ljv-deslinde.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-deslinde",
@@ -13,7 +13,7 @@ Neg.data.register({
   "107"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E26"
  },
@@ -88,9 +88,6 @@ Neg.data.register({
             },
             {
              "t": "<strong>Delimitación por eliminación:</strong> el artículo 104 enuncia los deslindes que no pueden tramitarse por esta vía, y el resto constituye su ámbito de aplicación."
-            },
-            {
-             "t": "<strong>Finca inscrita colindante con no inscrita:</strong> la doctrina y la jurisprudencia admiten que cuando colinden una finca inscrita y otra no inscrita, pueda también seguirse este cauce, en conexión con el artículo 106.1 que exige aportar certificación registral de las colindantes inscritas."
             }
            ]
           }
@@ -107,24 +104,7 @@ Neg.data.register({
              "t": "<strong>Fincas inscritas en el Registro de la Propiedad:</strong> tratándose de fincas inscritas, se aplicará lo dispuesto en la legislación hipotecaria, concretamente el expediente regulado en el artículo 200 de la Ley Hipotecaria (en la redacción dada por la Ley 13/2015, de 24 de junio, de Reforma de la Ley Hipotecaria y del Texto Refundido de la Ley del Catastro Inmobiliario), que atribuye su tramitación al Notario."
             },
             {
-             "t": "<strong>Inmuebles de titularidad pública:</strong> tampoco resultarán de aplicación a los inmuebles cuya titularidad corresponda a las Administraciones Públicas, cuyo deslinde se practicará conforme a su legislación específica, en particular los artículos 50 y siguientes de la Ley 33/2003, de 3 de noviembre, del Patrimonio de las Administraciones Públicas, y la normativa sectorial correspondiente (montes, costas, vías pecuarias, dominio público hidráulico, etc.)."
-            }
-           ]
-          }
-         ]
-        }
-       },
-       {
-        "apartado": {
-         "titulo": "Presupuesto material de la acción",
-         "contenido": [
-          {
-           "lista": [
-            {
-             "t": "<strong>Confusión de linderos:</strong> la jurisprudencia exige como requisito objetivo la existencia de confusión de linderos entre las fincas, de modo que no se pueda tener conocimiento exacto de la línea perimetral de cada propiedad, con la consiguiente incertidumbre sobre la extensión superficial."
-            },
-            {
-             "t": "<strong>Predios delimitados:</strong> si los predios están perfectamente identificados y delimitados, no cabe acudir a este expediente."
+             "t": "<strong>Inmuebles de titularidad pública:</strong> tampoco resultarán de aplicación a los inmuebles cuya titularidad corresponda a las Administraciones Públicas, cuyo deslinde se practicará conforme a su legislación específica, por ejemplo, la Ley 33/2003, de 3 de noviembre, del Patrimonio de las Administraciones Públicas, y la normativa sectorial (montes, costas, vías pecuarias, dominio público hidráulico…)."
             }
            ]
           }
@@ -134,8 +114,6 @@ Neg.data.register({
       ],
       "referencias": [
        "LH art. 200",
-       "Ley 13/2015",
-       "Ley 33/2003 arts. 50+",
        "CC art. 384"
       ],
       "claves": "ámbito aplicación deslinde fincas no inscritas registro propiedad supuestos incluidos excluidos confusión linderos artículo 104"
@@ -162,10 +140,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Órgano competente:</strong> será competente para el conocimiento de este expediente el Secretario judicial —hoy Letrado o Letrada de la Administración de Justicia— del Juzgado de Primera Instancia correspondiente al lugar donde estuviera situada la finca o la mayor parte de ella."
+             "t": "<strong>Órgano competente:</strong> será competente para el conocimiento de este expediente el Letrado de la Administración de Justicia (hoy, Letrado de la Administración de Justicia) del Juzgado de Primera Instancia correspondiente al lugar donde estuviera situada la finca o la mayor parte de ella."
             },
             {
-             "t": "<strong>Competencia objetiva:</strong> se atribuye al Letrado de la Administración de Justicia del Juzgado de Primera Instancia (actual Tribunal de Instancia, sección civil)."
+             "t": "<strong>Competencia objetiva:</strong> tramita y resuelve el Letrado de la Administración de Justicia; hoy, del Tribunal de Instancia, Sección Civil (art. 85 LOPJ)."
             },
             {
              "t": "<strong>Competencia territorial:</strong> fuero único determinado por el lugar de situación de la finca; cuando esta abarque más de un partido judicial, prevalece el Tribunal en cuya jurisdicción se encuentre la mayor parte de ella."
@@ -205,10 +183,10 @@ Neg.data.register({
              "t": "<strong>Intervención preceptiva de Abogado:</strong> en la tramitación del presente expediente será preceptiva la intervención de Abogado si el valor de la finca fuera superior a 6.000 euros."
             },
             {
-             "t": "<strong>Cuantía y enjuiciamiento:</strong> esta cuantía coincide con la que delimita el juicio verbal y el juicio ordinario en la Ley de Enjuiciamiento Civil, de modo que, si el expediente deviene contencioso, el proceso declarativo posterior se tramitará conforme a esas reglas."
+             "t": "<strong>Cuantía y juicio posterior:</strong> el umbral de 6.000 euros solo rige la postulación del expediente. Si después se acude al juicio declarativo, su clase se determina por la LEC: hoy, juicio verbal hasta 15.000 euros (art. 250.2 LEC)."
             },
             {
-             "t": "<strong>Facultatividad por debajo del umbral:</strong> por debajo de dicha cuantía, la intervención de Abogado y Procurador es facultativa."
+             "t": "<strong>Procurador:</strong> la ley no lo exige en ningún caso para la tramitación; por debajo de 6.000 euros tampoco el Abogado. Para recurrir el decreto, ambos son necesarios (art. 3.2 LJV)."
             }
            ]
           }
@@ -218,7 +196,9 @@ Neg.data.register({
       ],
       "referencias": [
        "CC art. 384",
-       "LEC cuantía 6.000 €"
+       "LJV art. 3",
+       "LEC art. 250",
+       "LOPJ art. 85"
       ],
       "claves": "competencia legitimación postulación secretario judicial letrado administración justicia juzgado primera instancia abogado procurador artículo 105"
      }
@@ -235,7 +215,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Solicitud y tramitación",
-      "resumen": "Requisitos del escrito de iniciación, documentación, representación gráfica alternativa, tramitación por el Secretario judicial e incidencias.",
+      "resumen": "Requisitos del escrito de iniciación, documentación, representación gráfica alternativa, tramitación por el Letrado de la Administración de Justicia e incidencias.",
       "cuerpo": [
        {
         "apartado": {
@@ -250,7 +230,7 @@ Neg.data.register({
              "t": "<strong>Datos identificativos:</strong> los datos identificativos de los titulares de una y otras, incluidos los catastrales, con su domicilio si fuera conocido por el solicitante."
             },
             {
-             "t": "<strong>Deslinde parcial:</strong> cuando el deslinde solicitado no se refiriera a la totalidad del perímetro de la finca, se determinará la parte a que haya de contraerse, posibilidad admitida asimismo por la jurisprudencia y por la Dirección General de Seguridad Jurídica y Fe Pública, y recogida expresamente en el artículo 200 de la Ley Hipotecaria para fincas inscritas."
+             "t": "<strong>Deslinde parcial:</strong> cuando el deslinde solicitado no se refiriera a la totalidad del perímetro de la finca, se determinará la parte a que haya de contraerse; la Ley Hipotecaria prevé también el deslinde parcial para las fincas inscritas (art. 200 LH)."
             }
            ]
           }
@@ -299,18 +279,18 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Tramitación por el Secretario judicial",
+         "titulo": "Tramitación por el Letrado de la Administración de Justicia",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Comunicación del inicio:</strong> admitida la solicitud, el Secretario judicial comunicará el inicio del expediente a todos los interesados."
+             "t": "<strong>Comunicación del inicio:</strong> admitida la solicitud, el Letrado de la Administración de Justicia comunicará el inicio del expediente a todos los interesados."
             },
             {
              "t": "<strong>Plazo de alegaciones:</strong> en el plazo de quince días, los interesados podrán hacer las alegaciones y presentar las pruebas que estimen procedentes."
             },
             {
-             "t": "<strong>Citación al acto de deslinde:</strong> transcurrido el plazo, el Secretario judicial dará traslado a dichos interesados de toda la documentación aportada y les citará al acto de deslinde, a celebrar en el plazo de treinta días, para buscar la avenencia entre ellos."
+             "t": "<strong>Citación al acto de deslinde:</strong> transcurrido el plazo, el Letrado de la Administración de Justicia dará traslado a dichos interesados de toda la documentación aportada y les citará al acto de deslinde, a celebrar en el plazo de treinta días, para buscar la avenencia entre ellos."
             }
            ]
           }
@@ -327,7 +307,7 @@ Neg.data.register({
              "t": "<strong>Falta de asistencia de algún colindante:</strong> no se suspenderá la práctica del deslinde por la falta de asistencia de alguno de los dueños colindantes, quedando a salvo su derecho para demandar, en el juicio declarativo que corresponda, la posesión o propiedad de las que se creyese despojado en virtud del deslinde. La comparecencia no es obligatoria, lo que resulta coherente con la naturaleza voluntaria del expediente."
             },
             {
-             "t": "<strong>Oposición antes de la comparecencia:</strong> si antes de la comparecencia, el dueño de alguna de las fincas colindantes se opusiera al deslinde, se archivará el expediente en relación a la parte de la finca lindante con la del opositor, reservando a las partes su derecho para que lo ejerciten en el juicio declarativo que corresponda, y continuará con el resto. Esta solución enlaza con la regla general del artículo 17.3 de la Ley 15/2015, que prevé el archivo del expediente cuando existe oposición que lo convierta en contencioso."
+             "t": "<strong>Oposición antes de la comparecencia:</strong> si antes de la comparecencia, el dueño de alguna de las fincas colindantes se opusiera al deslinde, se archivará el expediente en relación a la parte de la finca lindante con la del opositor, reservando a las partes su derecho para que lo ejerciten en el juicio declarativo que corresponda, y continuará con el resto. Es una regla especial frente a la general del artículo 17.3 de la Ley 15/2015, según la cual la oposición no hace contencioso el expediente ni impide que continúe."
             }
            ]
           }
@@ -355,7 +335,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Resolución",
-      "resumen": "Acta del acto de deslinde, decreto del Secretario judicial, comunicación al Catastro y efectos y límites de la resolución.",
+      "resumen": "Acta del acto de deslinde, decreto del Letrado de la Administración de Justicia, comunicación al Catastro y efectos y límites de la resolución.",
       "cuerpo": [
        {
         "apartado": {
@@ -364,7 +344,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Avenencia total o parcial:</strong> de lograrse el acuerdo, entre todos los interesados o parte de ellos, el Secretario judicial hará constar en un acta todo cuanto acuerden y que el acto terminó con avenencia total o parcial respecto de alguno o algunos de los linderos, así como los términos de la misma, debiendo ser firmada por los comparecientes."
+             "t": "<strong>Avenencia total o parcial:</strong> de lograrse el acuerdo, entre todos los interesados o parte de ellos, el Letrado de la Administración de Justicia hará constar en un acta todo cuanto acuerden y que el acto terminó con avenencia total o parcial respecto de alguno o algunos de los linderos, así como los términos de la misma, debiendo ser firmada por los comparecientes."
             },
             {
              "t": "<strong>Sin avenencia:</strong> si no pudiere conseguirse acuerdo alguno, se hará constar que el acto terminó sin avenencia."
@@ -376,12 +356,12 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Decreto del Secretario judicial",
+         "titulo": "Decreto del Letrado de la Administración de Justicia",
          "contenido": [
           {
            "lista": [
             {
-             "t": "<strong>Contenido del decreto:</strong> finalizado el acto, el Secretario judicial dictará decreto haciendo constar la avenencia; que fue parcial respecto de alguno o algunos de los linderos; o que se celebró sin avenencia, acordándose el archivo definitivo de las actuaciones."
+             "t": "<strong>Contenido del decreto:</strong> finalizado el acto, el Letrado de la Administración de Justicia dictará decreto haciendo constar la avenencia; que fue parcial respecto de alguno o algunos de los linderos; o que se celebró sin avenencia, acordándose el archivo definitivo de las actuaciones."
             },
             {
              "t": "<strong>Documentación incorporada:</strong> al decreto se incorporará el acta y, en todo caso, la certificación catastral descriptiva y gráfica y, en el supuesto de discordancia con esta, la representación gráfica alternativa aportada."
@@ -398,7 +378,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Remisión de testimonio:</strong> el Secretario judicial remitirá testimonio del acta y del decreto al Catastro a los efectos de que puedan realizarse por este, en su caso, las alteraciones catastrales que correspondan, según su normativa reguladora (Texto Refundido de la Ley del Catastro Inmobiliario, Real Decreto Legislativo 1/2004, de 5 de marzo, y su reglamento de desarrollo)."
+             "t": "<strong>Remisión de testimonio:</strong> el Letrado de la Administración de Justicia remitirá testimonio del acta y del decreto al Catastro a los efectos de que puedan realizarse por este, en su caso, las alteraciones catastrales que correspondan, según su normativa reguladora (Texto Refundido de la Ley del Catastro Inmobiliario, Real Decreto Legislativo 1/2004, de 5 de marzo, y su reglamento de desarrollo)."
             }
            ]
           }
@@ -412,10 +392,24 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>No produce cosa juzgada:</strong> la resolución, por tratarse de jurisdicción voluntaria, no produce cosa juzgada material en el sentido estricto: si no hay avenencia o esta es parcial, subsiste siempre la posibilidad de acudir al juicio declarativo correspondiente para que un juez fije la línea divisoria."
+             "t": "<strong>Juicio declarativo:</strong> si no hay avenencia, o es parcial, queda la vía del juicio declarativo para fijar la línea divisoria; también la tienen el colindante que no asistió y el que se opuso antes del acto (art. 106.2)."
             },
             {
              "t": "<strong>Juicio declarativo contencioso:</strong> en ese juicio declarativo contencioso regirán las reglas sustantivas de los artículos 385 a 387 del Código Civil, que constituyen un sistema de criterios de aplicación necesaria para el órgano jurisdiccional."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
+         "titulo": "Recursos",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "Contra el decreto del Letrado de la Administración de Justicia: recurso de revisión ante el Juez en cinco días (art. 20.2 LJV; art. 454 bis LEC), con abogado y procurador (art. 3.2 LJV)."
             }
            ]
           }
@@ -427,7 +421,7 @@ Neg.data.register({
        "CC arts. 385–387",
        "TRLCI RDLeg 1/2004"
       ],
-      "claves": "resolución acta avenencia decreto secretario judicial comunicación catastro efectos cosa juzgada artículo 107"
+      "claves": "resolución acta avenencia decreto secretario judicial comunicación catastro efectos juicio declarativo recurso revision artículo 107"
      }
     }
    ]
@@ -462,9 +456,6 @@ Neg.data.register({
             },
             {
              "t": "<strong>Derechos reales:</strong> la misma facultad corresponderá a los que tengan derechos reales."
-            },
-            {
-             "t": "<strong>Aplicación analógica:</strong> el Tribunal Supremo (Sala 1.ª, Sentencia de 11 de febrero de 2016) admite que, por aplicación analógica de los artículos 384 y siguientes, pueda determinarse la situación física de una finca enclavada en otra mayor."
             }
            ]
           }
@@ -473,8 +464,7 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Ley 15/2015 art. 105",
-       "TS S 11 feb 2016"
+       "LJV art. 105"
       ],
       "claves": "derecho deslindar propietario derechos reales citación colindantes artículo 384 código civil"
      }
@@ -576,9 +566,6 @@ Neg.data.register({
            "lista": [
             {
              "t": "<strong>Distribución proporcional:</strong> si los títulos de los colindantes indicasen un espacio mayor o menor del que comprende la totalidad del terreno, el aumento o la falta se distribuirá proporcionalmente."
-            },
-            {
-             "t": "<strong>Doctrina del Tribunal Supremo:</strong> la doctrina del Tribunal Supremo considera este precepto complementario del artículo 385, aplicable incluso cuando los títulos y los elementos aportados no sean del todo expresivos, pues completa el artículo 385 en los casos de discordancia entre los datos escriturados y la extensión efectiva del terreno."
             }
            ]
           }
@@ -616,6 +603,11 @@ Neg.data.register({
         "Plazo para la celebración del acto de deslinde, citados los interesados con traslado de la documentación",
         "30 días",
         "Artículo 106.2 de la Ley 15/2015"
+       ],
+       [
+        "Recurso de revisión contra el decreto del LAJ",
+        "5 días",
+        "Art. 20.2 LJV; art. 454 bis LEC"
        ]
       ]
      }
@@ -633,10 +625,10 @@ Neg.data.register({
       "tono": "c2",
       "items": [
        {
-        "t": "Secretario judicial (hoy Letrado/a de la Administración de Justicia)"
+        "t": "Letrado de la Administración de Justicia"
        },
        {
-        "t": "Juzgado de Primera Instancia (competencia territorial: lugar de situación de la finca)"
+        "t": "Tribunal de Instancia, Sección Civil (competencia territorial: lugar de situación de la finca)"
        }
       ]
      }
@@ -675,7 +667,7 @@ Neg.data.register({
         "t": "Abogado (preceptivo si finca &gt; 6.000 €)"
        },
        {
-        "t": "Procurador (facultativo por debajo de 6.000 €)"
+        "t": "Procurador (no preceptivo en la tramitación; necesario para recurrir)"
        },
        {
         "t": "Técnico competente (representación gráfica georreferenciada)"
@@ -711,7 +703,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 15/2015, de 2 de julio",
       "titulo": "Jurisdicción Voluntaria",
-      "texto": "<strong>Artículo 1.2</strong> — definición de expedientes de jurisdicción voluntaria. <strong>Artículos 13 a 22</strong> — normas comunes de tramitación, de aplicación supletoria. <strong>Artículo 17.3</strong> — archivo del expediente en caso de oposición. <strong>Artículos 100 a 103</strong> — autorización judicial al usufructuario para reclamar créditos vencidos.",
+      "texto": "<strong>Artículo 1.2</strong> — definición de expedientes de jurisdicción voluntaria. <strong>Artículos 13 a 22</strong> — normas comunes de tramitación, de aplicación supletoria. <strong>Artículo 17.3</strong> — la oposición no hace contencioso el expediente, salvo que la ley disponga otra cosa (el art. 106.2 lo hace respecto de la parte del colindante opositor). <strong>Artículos 100 a 103</strong> — autorización judicial al usufructuario para reclamar créditos vencidos.",
       "etiqueta": "Tramitación",
       "tono": "t-info"
      }
@@ -729,7 +721,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 33/2003, de 3 de noviembre",
       "titulo": "Patrimonio de las Administraciones Públicas",
-      "texto": "<strong>Artículos 50 a 54</strong> — regulan el deslinde administrativo de los bienes de titularidad pública, excluidos del expediente del Capítulo II del Título VI de la Ley 15/2015 por el artículo 104.",
+      "texto": "<strong>Deslinde administrativo</strong> de los bienes de titularidad pública, excluidos del expediente del Capítulo II del Título VI de la Ley 15/2015 por el artículo 104.",
       "etiqueta": "Sector público",
       "tono": "t-plazo"
      }
@@ -756,7 +748,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 1/2000, de 7 de enero",
       "titulo": "Ley de Enjuiciamiento Civil",
-      "texto": "<strong>Juicio declarativo posterior</strong> — se aplica, en su caso, al juicio declarativo posterior cuando el expediente deviene contencioso por oposición o falta de avenencia; la cuantía de 6.000 euros del artículo 105.3 determina la modalidad de juicio verbal u ordinario.",
+      "texto": "<strong>Juicio declarativo posterior</strong> — tras la oposición de un colindante o la falta de avenencia; la clase de juicio sigue las reglas generales (art. 250.2 LEC: verbal hasta 15.000 euros). <strong>Art. 454 bis LEC</strong> — recurso de revisión.",
       "etiqueta": "Procesal",
       "tono": "t-aviso"
      }
@@ -764,5 +756,5 @@ Neg.data.register({
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título VI, Capítulo II, artículos 104 a 107 · Código Civil, artículos 384 a 387 · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título VI, Capítulo II, artículos 104 a 107 · Arts. 384 a 387 CC"
 });

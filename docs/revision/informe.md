@@ -33,7 +33,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-sucesorio | Esquema · LJV · Título IV · Derecho sucesorio | · | · | · | · | · | · | 2R |
 | ljv-obligaciones | Esquema · LJV · Título V · Derecho de obligaciones | · | · | · | · | · | · | 1R |
 | ljv-usufructuario | Esquema · LJV · Usufructuario: reclamación de créditos vencidos | · | · | · | · | · | · | 2R |
-| ljv-deslinde | Esquema · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
+| ljv-deslinde | Esquema · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 1R |
 | ljv-subastas | Esquema · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 3R |
 | ljv-conciliacion | Esquema · LJV · Título IX · Conciliación | 1R | · | · | 3R | · | · | 4R |
 | lec-diligencias-preliminares | Guía · LEC · Diligencias preliminares | 6A 10R | · | · | 1R | 4R | · | · |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 64E 35A 62R | 0E 0A 0R | 0E 0A 0R | 0E 0A 10R | 0E 0A 7R | 4E 0A 1R | 0E 0A 72R |
+| | **Total** | 64E 35A 62R | 0E 0A 0R | 0E 0A 0R | 0E 0A 10R | 0E 0A 7R | 4E 0A 1R | 0E 0A 71R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,10 +69,10 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2449
-- ✓ LEC (BOE a 07-10-2026): 1515
-- ✓ CC (BOE a 07-09-2026): 1338
-- ✓ LOPJ (BOE a 09-10-2026): 84
+- ✓ LJV (BOE a 05-03-2026): 2450
+- ✓ LEC (BOE a 07-10-2026): 1521
+- ✓ CC (BOE a 07-09-2026): 1339
+- ✓ LOPJ (BOE a 09-10-2026): 86
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - ✓ CE (BOE a 20-05-2026): 44
@@ -90,7 +90,6 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LCS (BOE a 05-10-2026): 4
 - ✓ LA (BOE a 18-12-2025): 4
 - ✓ RH (BOE a 16-12-2025): 4
-- LPAP: 4
 - LO 1/2025: 4
 - ✓ LOPDGDD (BOE a 08-10-2026): 4
 - ✓ LMED (BOE a 19-12-2025): 3
@@ -98,6 +97,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LPAT (BOE a 31-07-2026): 2
 - ✓ LCD (BOE a 29-12-2025): 2
 - ✓ LSE (BOE a 31-07-2026): 2
+- LPAP: 2
 - Ley 40/2015: 2
 - Ley 10/2012: 2
 - LO 3/2007: 1
@@ -106,7 +106,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 430 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 425 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -266,8 +266,7 @@ Sin hallazgos automáticos.
 
 **terminologia**
 
-- [revisar] «Secretario judicial» × 11 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Artículos principales — Ley 15/2015, Capítulo II, Título VI» › tarjeta «Artículo 105» › «Competencia» › 1 › punto.1 | sección «Artículos principales — Ley 15/2015, Capítulo II, Título VI» › tarjeta «Artículo 106» › resumen | sección «Artículos principales — Ley 15/2015, Capítulo II, Título VI» › tarjeta «Artículo 106» › 4 › apartado …_
-- [revisar] «Juzgado de Primera Instancia» × 3 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos principales — Ley 15/2015, Capítulo II, Título VI» › tarjeta «Artículo 105» › «Competencia» › 1 › punto.1 | sección «Artículos principales — Ley 15/2015, Capítulo II, Título VI» › tarjeta «Artículo 105» › «Competencia» › 1 › punto.2 | sección «Mapa de participantes y actores» › 1 › grupo «Órgano jurisdiccional».2_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos principales — Ley 15/2015, Capítulo II, Título VI» › tarjeta «Artículo 105» › «Competencia» › 1 › punto.1_
 
 ### ljv-subastas · Esquema · LJV · Título VII · Subastas voluntarias
 
