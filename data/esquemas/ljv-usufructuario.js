@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E25.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E25.json; revisado con el BOE (registro: docs/revision/ljv-usufructuario.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-usufructuario",
@@ -13,7 +13,7 @@ Neg.data.register({
   "103"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E25"
  },
@@ -250,13 +250,13 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Juzgado competente:</strong> será competente para conocer de estos expedientes el Juzgado de Primera Instancia del último domicilio o, en su defecto, de la última residencia del solicitante."
+             "t": "<strong>Juzgado competente:</strong> será competente para conocer de estos expedientes el Juzgado de Primera Instancia del último domicilio o, en su defecto, de la última residencia del solicitante. Hoy, la Sección Civil del Tribunal de Instancia."
             },
             {
              "t": "<strong>Normas de tramitación:</strong> la tramitación se ajustará a las normas comunes de la presente Ley, lo que enlaza directamente con los artículos 13 a 22 LJV (Título I, Capítulo II, Normas de tramitación)."
             },
             {
-             "t": "<strong>Competencia objetiva:</strong> la competencia objetiva se atribuye con carácter general a los Juzgados de Primera Instancia en los expedientes civiles de jurisdicción voluntaria (artículo 2 LJV y artículo 85 LOPJ)."
+             "t": "<strong>Competencia objetiva:</strong> Juzgados de Primera Instancia (art. 2.1 LJV); hoy, Secciones Civiles del Tribunal de Instancia (art. 85 LOPJ, LO 1/2025). Decide el Juez (art. 103.2 LJV)."
             }
            ]
           }
@@ -273,7 +273,7 @@ Neg.data.register({
              "t": "<strong>Regla general:</strong> para la actuación en estos expedientes no será preceptiva la intervención de Abogado ni de Procurador."
             },
             {
-             "t": "<strong>Excepciones:</strong> conforme al régimen general (artículo 3 LJV) y al régimen de recursos (artículo 20 LJV, por remisión a la LEC ex artículo 8 LJV), la intervención de Abogado y Procurador podrá devenir preceptiva cuando se formule oposición o cuando se interpongan recursos de revisión o apelación."
+             "t": "<strong>Excepciones:</strong> la intervención de Abogado y Procurador es necesaria en todo caso para interponer recursos de revisión o apelación y a partir del momento en que se formule oposición (art. 3.2 LJV)."
             }
            ]
           }
@@ -389,7 +389,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Admisión a trámite:</strong> admitida a trámite por el Secretario judicial la solicitud (hoy Letrado de la Administración de Justicia, tras la reforma operada por la Ley Orgánica 7/2015), convocará a la comparecencia a quienes han de ser oídos."
+             "t": "<strong>Admisión a trámite:</strong> admitida a trámite la solicitud por el Letrado de la Administración de Justicia (el texto legal aún dice «Secretario judicial»; LO 7/2015), este convocará a la comparecencia a quienes han de ser oídos."
             },
             {
              "t": "<strong>Citados y orden de audiencia:</strong> se les oirá precisamente por este orden: 1) el promotor (usufructuario); 2) el propietario (nudo propietario); 3) aquellos que pudieran estar interesados en el cobro del crédito."
@@ -409,7 +409,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Principio general:</strong> salvo que la Ley expresamente lo prevea, la formulación de oposición por alguno de los interesados no hará contencioso el expediente ni impedirá que continúe su tramitación hasta que sea resuelto."
+             "t": "<strong>Principio general (art. 17.3 LJV):</strong> salvo que la Ley expresamente lo prevea, la formulación de oposición por alguno de los interesados no hará contencioso el expediente ni impedirá que continúe su tramitación hasta que sea resuelto. Este capítulo no prevé otra cosa."
             }
            ]
           }
@@ -491,10 +491,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Artículo 20 LJV:</strong> contra la resolución que pone fin al expediente cabrá recurso conforme al artículo 20 LJV, que se remite, con carácter general, al régimen de recursos de la Ley de Enjuiciamiento Civil."
+             "t": "<strong>Artículo 20 LJV:</strong> contra el auto del Juez que concede o deniega la autorización cabe recurso de apelación en veinte días (art. 458.1 LEC), sin efectos suspensivos (art. 20.2 LJV); contra las resoluciones interlocutorias, reposición en cinco días (art. 452 LEC)."
             },
             {
-             "t": "<strong>Intervención preceptiva:</strong> la intervención de Abogado y Procurador podrá devenir preceptiva cuando se interpongan recursos de revisión o apelación, conforme al artículo 20 LJV por remisión a la LEC ex artículo 8 LJV."
+             "t": "<strong>Intervención preceptiva:</strong> para recurrir son necesarios Abogado y Procurador (art. 3.2 LJV)."
             }
            ]
           }
@@ -657,14 +657,19 @@ Neg.data.register({
         "Artículo 103.2 LJV"
        ],
        [
-        "Caducidad del expediente de jurisdicción voluntaria por inactividad de las partes",
-        "Plazo legal (art. 21 LJV)",
-        "Artículo 21 LJV (por remisión del art. 101.1 LJV)"
+        "Caducidad del expediente por falta de actividad de los interesados",
+        "6 meses desde la última notificación (la declara el LAJ; cabe revisión)",
+        "Art. 21 LJV"
        ],
        [
-        "Interposición de recursos contra la resolución que pone fin al expediente",
-        "Plazos LEC (art. 20 LJV)",
-        "Artículo 20 LJV → LEC (por remisión del art. 8 LJV)"
+        "Apelación contra el auto que concede o deniega la autorización",
+        "20 días",
+        "Art. 20.2 LJV; art. 458.1 LEC"
+       ],
+       [
+        "Reposición contra resoluciones interlocutorias",
+        "5 días",
+        "Art. 20.1 LJV; art. 452 LEC"
        ]
       ]
      }
@@ -682,7 +687,7 @@ Neg.data.register({
       "tono": "c1",
       "items": [
        {
-        "t": "Juzgado de Primera Instancia (competente por domicilio o residencia del solicitante)"
+        "t": "Tribunal de Instancia, Sección Civil (competente por domicilio o residencia del solicitante)"
        },
        {
         "t": "Juez (resuelve concediendo o denegando la autorización)"
@@ -724,13 +729,13 @@ Neg.data.register({
       "tono": "c4",
       "items": [
        {
-        "t": "Abogado (no preceptivo salvo oposición o recursos)"
+        "t": "Abogado (no preceptivo; necesario desde la oposición y para recurrir, art. 3.2 LJV)"
        },
        {
-        "t": "Procurador (no preceptivo salvo oposición o recursos)"
+        "t": "Procurador (no preceptivo; necesario desde la oposición y para recurrir, art. 3.2 LJV)"
        },
        {
-        "t": "Ministerio Fiscal (intervención conforme al artículo 4 LJV)"
+        "t": "Ministerio Fiscal (solo si concurre algún supuesto del art. 4 LJV, p. ej., propietario menor o con discapacidad)"
        }
       ]
      }
@@ -755,7 +760,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 15/2015, de 2 de julio (LJV)",
       "titulo": "Jurisdicción Voluntaria — Normas de tramitación",
-      "texto": "<strong>Artículos 1 a 8</strong> — Disposiciones generales: ámbito, competencia, legitimación, postulación, Ministerio Fiscal, prueba, gastos, supletoriedad de la LEC.<br><strong>Artículos 13 a 22</strong> — Normas comunes de tramitación: iniciación, acumulación, competencia, admisión, comparecencia, decisión, recursos, caducidad, cumplimiento y ejecución.<br><strong>Artículos 100 a 103</strong> — Capítulo I del Título VI: autorización judicial al usufructuario.",
+      "texto": "<strong>Artículos 1 a 8</strong> — Disposiciones generales: ámbito, competencia, legitimación, postulación, Ministerio Fiscal, prueba, gastos, supletoriedad de la LEC.<br><strong>Artículos 13 a 22 LJV</strong> — Normas comunes de tramitación: iniciación, acumulación, competencia, admisión, comparecencia, decisión, recursos, caducidad, cumplimiento y ejecución.<br><strong>Artículos 100 a 103</strong> — Capítulo I del Título VI: autorización judicial al usufructuario.",
       "etiqueta": "Procedimiento principal",
       "tono": "t-ok"
      }
@@ -764,7 +769,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley Orgánica del Poder Judicial (LOPJ)",
       "titulo": "Atribución orgánica de competencia",
-      "texto": "<strong>Artículo 85</strong> — Atribución a los Juzgados de Primera Instancia del conocimiento de los expedientes de jurisdicción voluntaria de naturaleza civil.<br><strong>Ley Orgánica 7/2015</strong> — Reforma que transformó la figura del Secretario judicial en Letrado de la Administración de Justicia.",
+      "texto": "<strong>Artículo 85</strong> — Secciones Civiles del Tribunal de Instancia (LO 1/2025): conocen de los expedientes civiles de jurisdicción voluntaria.<br><strong>Ley Orgánica 7/2015</strong> — Reforma que transformó la figura del Secretario judicial en Letrado de la Administración de Justicia.",
       "etiqueta": "Competencia orgánica",
       "tono": "t-nota"
      }
@@ -773,7 +778,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 1/2000, de 7 de enero (LEC)",
       "titulo": "Enjuiciamiento Civil — Derecho supletorio",
-      "texto": "<strong>Aplicación supletoria</strong> — Por remisión expresa del artículo 8 LJV, la LEC se aplica de forma supletoria tanto en la tramitación general como, específicamente, en el régimen de recursos contra la resolución que pone fin al expediente.<br><strong>Plazos de recursos</strong> — Los plazos y formas de los recursos contra la resolución se rigen por la LEC cuando el artículo 20 LJV remite a ella.",
+      "texto": "<strong>Aplicación supletoria</strong> — Por remisión expresa del artículo 8 LJV, la LEC se aplica de forma supletoria tanto en la tramitación general como, específicamente, en el régimen de recursos contra la resolución que pone fin al expediente.<br><strong>Arts. 452 y 458 LEC</strong> — Plazos de la reposición (cinco días) y de la apelación (veinte días).",
       "etiqueta": "Derecho supletorio",
       "tono": "t-plazo"
      }
@@ -781,5 +786,5 @@ Neg.data.register({
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título VI, Capítulo I · Artículos 100 a 103 LJV · Artículo 507 CC · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria · Título VI, Capítulo I · Artículos 100 a 103 LJV · Artículo 507 CC"
 });

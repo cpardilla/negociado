@@ -69,8 +69,8 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2451
-- ✓ LEC (BOE a 07-10-2026): 1511
+- ✓ LJV (BOE a 05-03-2026): 2449
+- ✓ LEC (BOE a 07-10-2026): 1515
 - ✓ CC (BOE a 07-09-2026): 1338
 - ✓ LOPJ (BOE a 09-10-2026): 84
 - ✓ LTRANS (BOE a 20-12-2025): 58
@@ -259,8 +259,8 @@ Sin hallazgos automáticos.
 
 **terminologia**
 
-- [revisar] «Juzgado de Primera Instancia» × 5 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos principales del Capítulo I» › tarjeta «Artículo 101 LJV» › «Competencia (apartado 1)» › 1 › punto.1 | sección «Artículos principales del Capítulo I» › tarjeta «Artículo 101 LJV» › «Competencia (apartado 1)» › 1 › punto.3 | sección «Artículos principales del Capítulo I» › tarjeta «Normas comunes LJV» › «Título Preliminar — Disposiciones generales (arts. 1 a 8)» › 1 › punto.2 …_
-- [revisar] «Secretario judicial» × 2 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Artículos principales del Capítulo I» › tarjeta «Artículo 103 LJV» › «Tramitación (apartado 1)» › 1 › punto.1 | sección «Ecosistema normativo — conexiones relacionadas» › 3 › norma «Atribución orgánica de competencia»_
+- [revisar] «Juzgado de Primera Instancia» × 3 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos principales del Capítulo I» › tarjeta «Artículo 101 LJV» › «Competencia (apartado 1)» › 1 › punto.1 | sección «Artículos principales del Capítulo I» › tarjeta «Artículo 101 LJV» › «Competencia (apartado 1)» › 1 › punto.3 | sección «Artículos principales del Capítulo I» › tarjeta «Normas comunes LJV» › «Título Preliminar — Disposiciones generales (arts. 1 a 8)» › 1 › punto.2_
+- [revisar] «Secretario judicial» × 1 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Ecosistema normativo — conexiones relacionadas» › 3 › norma «Atribución orgánica de competencia»_
 
 ### ljv-deslinde · Esquema · LJV · Deslinde de fincas no inscritas
 
