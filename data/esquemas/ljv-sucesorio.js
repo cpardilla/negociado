@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/E23.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/E23.json; revisado con el BOE (registro: docs/revision/ljv-sucesorio.md). */
 Neg.data.register({
  "tipo": "esquema",
  "id": "ljv-sucesorio",
@@ -13,7 +13,7 @@ Neg.data.register({
   "95"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "E23"
  },
@@ -194,7 +194,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Juzgado de Primera Instancia competente:</strong> será competente el Juzgado de Primera Instancia del último domicilio o residencia habitual del causante, o de donde estuviere la mayor parte de su patrimonio, o el del lugar en que hubiera fallecido, siempre que estuvieran en España, a elección del solicitante."
+             "t": "<strong>Juzgado de Primera Instancia competente:</strong> Hoy, la Sección Civil del Tribunal de Instancia (art. 85 LOPJ). Será competente el Juzgado de Primera Instancia del último domicilio o residencia habitual del causante, o de donde estuviere la mayor parte de su patrimonio, o el del lugar en que hubiera fallecido, siempre que estuvieran en España, a elección del solicitante."
             },
             {
              "t": "<strong>Fuero subsidiario:</strong> en defecto de todos ellos, será competente el Juzgado de Primera Instancia del lugar del domicilio del solicitante."
@@ -214,7 +214,7 @@ Neg.data.register({
              "t": "<strong>Decisión del Juez:</strong> la decisión de estos expedientes corresponderá al Juez, salvo la resolución de los supuestos previstos en el número 1.º del apartado 1."
             },
             {
-             "t": "<strong>Decisión del Secretario judicial:</strong> la resolución de los supuestos de renuncia del albacea o prórroga del plazo del albaceazgo (número 1.º del apartado 1) corresponderá al Secretario judicial."
+             "t": "<strong>Decisión del Letrado de la Administración de Justicia:</strong> la resolución de los supuestos de renuncia del albacea o prórroga del plazo del albaceazgo (número 1.º del apartado 1) corresponderá al Letrado de la Administración de Justicia."
             }
            ]
           }
@@ -228,31 +228,31 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Artículo 898 CC:</strong> el cargo de albacea es voluntario, pero una vez aceptado es obligatorio su desempeño salvo justa causa de renuncia."
+             "t": "<strong>Artículo 898 CC:</strong> el albaceazgo es cargo voluntario; se entiende aceptado si el nombrado no se excusa en los seis días siguientes a tener noticia de su nombramiento (o a saber la muerte del testador, si ya lo conocía)."
             },
             {
-             "t": "<strong>Artículo 899 CC:</strong> enumera las facultades y obligaciones del albacea, base del deber de rendir cuentas."
+             "t": "<strong>Artículo 899 CC:</strong> aceptado el cargo, el albacea queda obligado a desempeñarlo; puede renunciar alegando causa justa al criterio del Letrado de la Administración de Justicia o del Notario."
             },
             {
-             "t": "<strong>Artículo 903 CC:</strong> regla general de ausencia de facultades dispositivas del albacea salvo autorización."
+             "t": "<strong>Artículo 903 CC:</strong> si no hay dinero bastante para funerales y legados y los herederos no lo aportan, el albacea promueve la venta de muebles y, si no alcanzan, de inmuebles, con intervención de los herederos; si hay interesados menores, ausentes, corporaciones o establecimientos públicos, con las formalidades legales."
             },
             {
              "t": "<strong>Artículo 904 CC:</strong> el albacea a quien el testador no haya fijado plazo deberá cumplir su encargo dentro del año contado desde su aceptación o desde que terminen los litigios sobre la validez del testamento."
             },
             {
-             "t": "<strong>Artículo 905 CC:</strong> si el testador quisiere ampliar el plazo legal, deberá señalar expresamente el de la prórroga."
+             "t": "<strong>Artículo 905 CC:</strong> si el testador quiere ampliar el plazo legal, debe señalar expresamente el de la prórroga; si no lo señala, se entiende prorrogado un año; agotada esta prórroga, el Letrado de la Administración de Justicia o el Notario pueden conceder otra por el tiempo necesario."
             },
             {
-             "t": "<strong>Artículo 906 CC:</strong> posibilidad de prórroga por los herederos y legatarios de común acuerdo; si no hay conformidad, judicialmente por el tiempo necesario."
+             "t": "<strong>Artículo 906 CC:</strong> los herederos y legatarios pueden, de común acuerdo, prorrogar el plazo por el tiempo que crean necesario; si el acuerdo es solo por mayoría, la prórroga no puede exceder de un año."
             },
             {
-             "t": "<strong>Artículo 907 CC:</strong> obligación de los albaceas de dar cuenta de su encargo a los herederos."
+             "t": "<strong>Artículo 907 CC:</strong> los albaceas dan cuenta de su encargo a los herederos; si fueron nombrados para dar a los bienes la inversión o distribución dispuesta por el testador, rinden cuentas al Juez."
             },
             {
-             "t": "<strong>Artículo 910 CC:</strong> causas de extinción del albaceazgo (muerte, imposibilidad, renuncia, transcurso del plazo y remoción)."
+             "t": "<strong>Artículo 910 CC:</strong> el albaceazgo termina por muerte, imposibilidad, renuncia o remoción del albacea y por el transcurso del plazo; la remoción debe apreciarla el Juez."
             },
             {
-             "t": "<strong>Artículo 911 CC:</strong> consecuencias de la falta de albacea (consignación en los herederos o, en su defecto, del Juez)."
+             "t": "<strong>Artículo 911 CC:</strong> en esos casos, o si el albacea no aceptó, la ejecución de la voluntad del testador corresponde a los herederos."
             }
            ]
           }
@@ -335,7 +335,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Órgano competente:</strong> la tramitación y decisión corresponderá al Secretario judicial del Juzgado de Primera Instancia."
+             "t": "<strong>Órgano competente:</strong> la tramitación y decisión corresponderá al Letrado de la Administración de Justicia del Juzgado de Primera Instancia."
             },
             {
              "t": "<strong>Competencia territorial:</strong> último domicilio o residencia habitual del causante, mayor parte del patrimonio, o lugar de fallecimiento, a elección del solicitante."
@@ -355,7 +355,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Artículo 1057 CC (precepto clave):</strong> permite al testador encomendar la partición a cualquier persona que no sea coheredero. No habiendo nombrado, el Secretario judicial o el Notario, a petición de herederos que representen al menos el 50 % del haber, podrán nombrar un contador-partidor dativo."
+             "t": "<strong>Artículo 1057 CC (precepto clave):</strong> permite al testador encomendar la partición a cualquier persona que no sea coheredero. No habiendo testamento, contador-partidor designado o vacante el cargo, el Letrado de la Administración de Justicia o el Notario, a petición de herederos y legatarios que representen al menos el 50 % del haber, con citación de los demás interesados, puede nombrar un contador-partidor dativo; la partición así hecha requiere aprobación del LAJ o del Notario, salvo confirmación expresa de todos los herederos y legatarios."
             },
             {
              "t": "<strong>Artículo 1056 CC:</strong> el testador puede hacer por sí mismo la partición."
@@ -476,7 +476,7 @@ Neg.data.register({
              "t": "<strong>Art. 992 CC:</strong> capacidad general (libre disposición de bienes)."
             },
             {
-             "t": "<strong>Art. 996 CC:</strong> menor o persona con discapacidad: régimen de representación legal."
+             "t": "<strong>Art. 996 CC:</strong> la persona con discapacidad acepta por sí misma, salvo que otra cosa resulte de las medidas de apoyo."
             },
             {
              "t": "<strong>Art. 997 CC:</strong> irrevocabilidad una vez realizados."
@@ -606,13 +606,13 @@ Neg.data.register({
              "t": "<strong>Art. 166 CC:</strong> límites de la patria potestad; necesidad de autorización judicial para renunciar a derechos de los hijos."
             },
             {
-             "t": "<strong>Art. 271 CC:</strong> autorización judicial para el tutor: aceptar sin beneficio de inventario o repudiar."
+             "t": "<strong>Arts. 224 y 287.5.º CC:</strong> el tutor, como el curador representativo, necesita autorización judicial para aceptar sin beneficio de inventario o repudiar herencias o liberalidades."
             },
             {
              "t": "<strong>Art. 287 CC:</strong> actos del curador representativo que requieren autorización judicial."
             },
             {
-             "t": "<strong>Art. 749 LEC:</strong> intervención preceptiva del MF en procesos con menores, personas con discapacidad o ausentes."
+             "t": "<strong>Art. 4 LJV:</strong> intervención del Ministerio Fiscal cuando esté comprometido el interés de un menor o de una persona con discapacidad."
             }
            ]
           }
@@ -621,10 +621,8 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Art. 166 CC",
-       "Art. 271 CC",
-       "Art. 287 CC",
-       "Art. 749 LEC"
+       "CC arts. 166, 224, 287",
+       "LJV art. 4"
       ],
       "claves": "artículo 94 competencia legitimación postulación aceptación repudiación herencia juzgado primera instancia domicilio causante menores discapacidad medidas apoyo ministerio fiscal progenitores tutores curadores representativos defensores judiciales acreedores 6000 euros abogado procurador código civil 166 271 287 ley enjuiciamiento civil 749"
      }
@@ -678,7 +676,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Apelación con efectos suspensivos:</strong> excepción a la regla general del art. 20 LJV, que refuerza la tutela de menores, personas con medidas de apoyo, acreedores y personas jurídicas."
+             "t": "<strong>Apelación con efectos suspensivos:</strong> excepción a la regla general del art. 20.2 LJV. Plazo: veinte días (art. 458.1 LEC), con abogado y procurador (art. 3.2 LJV)."
             }
            ]
           }
@@ -787,7 +785,7 @@ Neg.data.register({
              "t": "<strong>Juez:</strong> decisión del Capítulo I (salvo renuncia/prórroga albacea) y todo el Capítulo III."
             },
             {
-             "t": "<strong>Secretario judicial / LAJ:</strong> renuncia y prórroga del albacea (art. 91.4) y totalidad de contadores-partidores dativos (art. 92.3)."
+             "t": "<strong>LAJ:</strong> renuncia y prórroga del albacea (art. 91.4) y totalidad de contadores-partidores dativos (art. 92.3)."
             }
            ]
           }
@@ -819,6 +817,15 @@ Neg.data.register({
             },
             {
              "t": "<strong>Especialidad Cap. III:</strong> art. 95.3 atribuye efecto suspensivo a la apelación."
+            },
+            {
+             "t": "<strong>Decisiones del LAJ</strong> (renuncia y prórroga del albacea; contador-partidor dativo): recurso de revisión ante el Juez en cinco días (art. 20.2 LJV; art. 454 bis LEC)."
+            },
+            {
+             "t": "<strong>Decisiones del Juez:</strong> apelación en veinte días (art. 458.1 LEC), sin efectos suspensivos salvo el Capítulo III (art. 95.3 LJV)."
+            },
+            {
+             "t": "<strong>Para recurrir</strong>, abogado y procurador (art. 3.2 LJV), aunque el haber no llegue a 6.000 euros."
             }
            ]
           }
@@ -857,9 +864,9 @@ Neg.data.register({
         "Artículo 904 del Código Civil (en conexión con el artículo 91 LJV)"
        ],
        [
-        "Prórroga del plazo del albaceazgo por los herederos y legatarios de común acuerdo, o judicialmente si no hay conformidad",
-        "El tiempo necesario (judicial)",
-        "Artículo 906 del Código Civil (en conexión con el artículo 91.1.1.º LJV)"
+        "Prórroga del plazo del albaceazgo",
+        "1 año si el testador no la fijó; después, la que conceda el LAJ o el Notario; por acuerdo de todos los herederos y legatarios, la que acuerden (por mayoría, máximo 1 año)",
+        "Arts. 905 y 906 CC (art. 91.1.1.º LJV)"
        ],
        [
         "Plazo del contador-partidor dativo para la realización de su encargo, con posibilidad de prórroga",
@@ -867,7 +874,7 @@ Neg.data.register({
         "Artículo 92.1.b) LJV"
        ],
        [
-        "Recurso de apelación contra las resoluciones dictadas en los expedientes del Capítulo III",
+        "Recurso de apelación contra las resoluciones del Capítulo III (veinte días, art. 458.1 LEC)",
         "Con efectos suspensivos",
         "Artículo 95.3 LJV; artículo 20 LJV; artículos 455 y siguientes LEC"
        ]
@@ -899,7 +906,7 @@ Neg.data.register({
         "t": "Juez (decide remoción, cuentas y autorización de disposición)"
        },
        {
-        "t": "Secretario judicial / LAJ (decide renuncia y prórroga del albacea)"
+        "t": "LAJ (decide renuncia y prórroga del albacea)"
        }
       ]
      }
@@ -910,7 +917,7 @@ Neg.data.register({
       "tono": "c2",
       "items": [
        {
-        "t": "Contador-partidor dativo (designado por Secretario judicial o Notario)"
+        "t": "Contador-partidor dativo (designado por Letrado de la Administración de Justicia o Notario)"
        },
        {
         "t": "Testador (puede encomendar la partición inter vivos o mortis causa)"
@@ -919,7 +926,7 @@ Neg.data.register({
         "t": "Herederos y legatarios (deben representar al menos el 50 % del haber)"
        },
        {
-        "t": "Secretario judicial / LAJ (tramita y decide; aprueba la partición)"
+        "t": "LAJ (tramita y decide; aprueba la partición)"
        },
        {
         "t": "Notario (puede nombrar y aprobar la partición)"
@@ -968,10 +975,10 @@ Neg.data.register({
       "tono": "c4",
       "items": [
        {
-        "t": "Juzgado de Primera Instancia (competencia territorial: domicilio, patrimonio, fallecimiento)"
+        "t": "Tribunal de Instancia, Sección Civil (competencia territorial: domicilio, patrimonio, fallecimiento)"
        },
        {
-        "t": "Letrado de la Administración de Justicia (antes Secretario judicial)"
+        "t": "Letrado de la Administración de Justicia (antes Letrado de la Administración de Justicia)"
        },
        {
         "t": "Ministerio Fiscal (intervención obligatoria en protección de menores y discapacidad)"
@@ -998,7 +1005,7 @@ Neg.data.register({
     {
      "norma": {
       "ley": "Código Civil",
-      "titulo": "Albaceazgo (artículos 892 a 911)",
+      "titulo": "Albaceazgo (arts. 892 a 911 CC)",
       "texto": "<strong>Arts. 898 a 911 CC</strong> — cargo de albacea, facultades, obligaciones, plazo, prórroga, rendición de cuentas, causas de extinción y consecuencias de la falta de albacea.",
       "etiqueta": "Sustantivo",
       "tono": "t-ok"
@@ -1007,7 +1014,7 @@ Neg.data.register({
     {
      "norma": {
       "ley": "Código Civil",
-      "titulo": "Aceptación y repudiación de la herencia (arts. 988 a 1009)",
+      "titulo": "Aceptación y repudiación de la herencia (arts. 988 a 1009 CC)",
       "texto": "<strong>Arts. 988 a 1009 CC</strong> — voluntariedad, retroacción, prohibición de aceptación parcial, capacidad, irrevocabilidad y acción subrogatoria de acreedores (art. 1001).",
       "etiqueta": "Sustantivo",
       "tono": "t-ok"
@@ -1016,7 +1023,7 @@ Neg.data.register({
     {
      "norma": {
       "ley": "Código Civil",
-      "titulo": "Beneficio de inventario (artículos 1010 a 1034)",
+      "titulo": "Beneficio de inventario (arts. 1010 a 1034 CC)",
       "texto": "<strong>Arts. 1010 a 1034 CC</strong> — conectado con los artículos 93.2.b y 95.2 LJV (aceptación sin beneficio y consecuencia de la denegación judicial).",
       "etiqueta": "Protección patrimonial",
       "tono": "t-plazo"
@@ -1025,7 +1032,7 @@ Neg.data.register({
     {
      "norma": {
       "ley": "Código Civil",
-      "titulo": "Partición hereditaria y contadores-partidores (arts. 1051 a 1087)",
+      "titulo": "Partición hereditaria y contadores-partidores (arts. 1051 a 1087 CC)",
       "texto": "<strong>Art. 1057 CC</strong> — designación del contador-partidor dativo. <strong>Arts. 1056, 1058, 1059 y 1060 CC</strong> — partición por el testador, por herederos, juicio de división y partición con menores.",
       "etiqueta": "Sustantivo",
       "tono": "t-ok"
@@ -1034,8 +1041,8 @@ Neg.data.register({
     {
      "norma": {
       "ley": "Código Civil",
-      "titulo": "Patria potestad y medidas de apoyo (arts. 154, 166, 271 y 287)",
-      "texto": "<strong>Art. 166 CC</strong> — límites de la patria potestad. <strong>Art. 271 CC</strong> — autorización judicial para el tutor. <strong>Art. 287 CC</strong> — actos del curador representativo.",
+      "titulo": "Patria potestad, tutela y medidas de apoyo (arts. 166, 224 y 287 CC)",
+      "texto": "<strong>Art. 166 CC</strong> — límites de la patria potestad. <strong>Arts. 224 y 287 CC</strong> — autorización judicial para el tutor y el curador representativo. <strong>Art. 287 CC</strong> — actos del curador representativo.",
       "etiqueta": "Protección de menores",
       "tono": "t-aviso"
      }
@@ -1044,7 +1051,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley de Enjuiciamiento Civil",
       "titulo": "Apelación, intervención del MF y división judicial de la herencia",
-      "texto": "<strong>Arts. 455 y ss. LEC</strong> — apelación supletoria. <strong>Art. 749 LEC</strong> — intervención del MF. <strong>Arts. 782 y ss. LEC</strong> — división judicial de la herencia.",
+      "texto": "<strong>Arts. 455 y ss. LEC</strong> — apelación supletoria. <strong>Arts. 782 y ss. LEC</strong> — división judicial de la herencia.",
       "etiqueta": "Procesal",
       "tono": "t-info"
      }
@@ -1053,7 +1060,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley Orgánica del Poder Judicial",
       "titulo": "Competencia objetiva y estatuto del LAJ",
-      "texto": "<strong>Art. 85 LOPJ</strong> — competencia objetiva de los Juzgados de Primera Instancia para expedientes de jurisdicción voluntaria. Disposiciones sobre el estatuto del LAJ.",
+      "texto": "<strong>Art. 85 LOPJ</strong> — Secciones Civiles del Tribunal de Instancia (LO 1/2025): conocen de estos expedientes.",
       "etiqueta": "Orgánico",
       "tono": "t-nota"
      }
@@ -1061,8 +1068,8 @@ Neg.data.register({
     {
      "norma": {
       "ley": "Ley Orgánica 7/2015",
-      "titulo": "Reforma del Secretario judicial en Letrado de la Administración de Justicia",
-      "texto": "Transformó la figura del Secretario judicial en la del Letrado de la Administración de Justicia, órgano competente para los expedientes desjudicializados en los arts. 91.4 y 92.3 LJV.",
+      "titulo": "Del Secretario judicial al Letrado de la Administración de Justicia",
+      "texto": "Transformó la figura del Letrado de la Administración de Justicia en la del Letrado de la Administración de Justicia, órgano competente para los expedientes desjudicializados en los arts. 91.4 y 92.3 LJV.",
       "etiqueta": "Orgánico",
       "tono": "t-nota"
      }
@@ -1070,5 +1077,5 @@ Neg.data.register({
    ]
   }
  ],
- "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria — Título IV, Capítulos I a III (Arts. 91–95) · Generado como plantilla HTML reutilizable"
+ "pie": "Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria — Título IV, Capítulos I a III (Arts. 91–95)"
 });

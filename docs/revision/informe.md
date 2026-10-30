@@ -1,6 +1,6 @@
 # Informe automático de contenido
 
-Generado por `tools/check-content.js` el 29/10/2026 sobre los datos de la app (`data/esquemas`, `data/guias`). El informe del punto de partida es `informe-inicial.md`.
+Generado por `tools/check-content.js` el 30/10/2026 sobre los datos de la app (`data/esquemas`, `data/guias`). El informe del punto de partida es `informe-inicial.md`.
 Fuente: BOE, LEC consolidada a 07-10-2026 y LJV a 05-03-2026 (`sources/boe/`).
 
 Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · **revisar** (necesita lectura humana; puede ser correcto). Las citas sin ley explícita se atribuyen a la ley del recurso y se marcan «ley por defecto»: el contexto puede referirse a otra norma. Es un primer cribado: la revisión manual de cada recurso (fases 4 y 5) parte de aquí, pero no se limita a ello.
@@ -69,10 +69,10 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2439
-- ✓ LEC (BOE a 07-10-2026): 1505
-- ✓ CC (BOE a 07-09-2026): 1338
-- ✓ LOPJ (BOE a 09-10-2026): 79
+- ✓ LJV (BOE a 05-03-2026): 2444
+- ✓ LEC (BOE a 07-10-2026): 1506
+- ✓ CC (BOE a 07-09-2026): 1341
+- ✓ LOPJ (BOE a 09-10-2026): 80
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - ✓ CE (BOE a 20-05-2026): 46
@@ -106,7 +106,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 440 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 435 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -246,8 +246,8 @@ Sin hallazgos automáticos.
 
 **terminologia**
 
-- [revisar] «Secretario judicial» × 12 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Marco normativo general del Título IV» › tarjeta «Marco general» › resumen | sección «Capítulo I — Del albaceazgo» › tarjeta «Artículo 91» › «Distribución funcional de la decisión (apartado 4)» › 1 › punto.2 | sección «Capítulo I — Del albaceazgo» › tarjeta «Artículo 91» › «Distribución funcional de la decisión (apartado 4)» › 1 › punto.2 …_
-- [revisar] «Juzgado de Primera Instancia» × 9 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Capítulo I — Del albaceazgo» › tarjeta «Artículo 91» › «Competencia territorial (apartado 3)» › 1 › punto.1 | sección «Capítulo I — Del albaceazgo» › tarjeta «Artículo 91» › «Competencia territorial (apartado 3)» › 1 › punto.1 | sección «Capítulo I — Del albaceazgo» › tarjeta «Artículo 91» › «Competencia territorial (apartado 3)» › 1 › punto.2 …_
+- [revisar] «Secretario judicial» × 2 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Marco normativo general del Título IV» › tarjeta «Marco general» › resumen | sección «Ecosistema normativo — conexiones relacionadas» › 9 › norma «Del Secretario judicial al Letrado de la Administración de Justicia»_
+- [revisar] «Juzgado de Primera Instancia» × 7 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Capítulo I — Del albaceazgo» › tarjeta «Artículo 91» › «Competencia territorial (apartado 3)» › 1 › punto.1 | sección «Capítulo I — Del albaceazgo» › tarjeta «Artículo 91» › «Competencia territorial (apartado 3)» › 1 › punto.1 | sección «Capítulo I — Del albaceazgo» › tarjeta «Artículo 91» › «Competencia territorial (apartado 3)» › 1 › punto.2 …_
 
 ### ljv-obligaciones · Esquema · LJV · Título V · Derecho de obligaciones
 
