@@ -97,7 +97,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Juzgado de Primera Instancia (art. 80 ter LJV). Hoy, el Tribunal de Instancia. Por estar en el Título II LJV (expedientes en materia de personas), el art. 86.5 j) LOPJ lo atribuye, donde exista, a la Sección de Familia, Infancia y Capacidad (la excepción solo alcanza a los capítulos IX y X); si no existe, a la Sección Civil."
+             "t": "Juzgado de Primera Instancia (art. 80 ter LJV). Hoy, la Sección Civil del Tribunal de Instancia (art. 85 LOPJ): por su objeto (hechos de cualquier naturaleza) no es materia de personas y familia del art. 86.5 j) LOPJ (criterio del juzgado)."
             }
            ]
           }
@@ -106,9 +106,9 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LOPJ art. 86.5"
+       "LOPJ art. 85"
       ],
-      "claves": "marco general origen ley 20/2022 memoria democratica capitulo xi titulo ii seccion de familia infancia y capacidad seccion civil"
+      "claves": "marco general origen ley 20/2022 memoria democratica capitulo xi titulo ii seccion civil tribunal de instancia"
      }
     }
    ]
@@ -232,7 +232,7 @@ Neg.data.register({
              "t": "En su defecto, será competente el Juzgado de Primera Instancia que corresponda al <strong>domicilio del solicitante</strong>, como fuero residual."
             },
             {
-             "t": "Hoy, el Tribunal de Instancia. Por estar en el Título II LJV (expedientes en materia de personas), el art. 86.5 j) LOPJ lo atribuye, donde exista, a la Sección de Familia, Infancia y Capacidad (la excepción solo alcanza a los capítulos IX y X); si no existe, a la Sección Civil."
+             "t": "Hoy, la Sección Civil del Tribunal de Instancia (art. 85 LOPJ): por su objeto (hechos de cualquier naturaleza) no es materia de personas y familia del art. 86.5 j) LOPJ (criterio del juzgado)."
             }
            ]
           }
@@ -604,7 +604,7 @@ Neg.data.register({
         "t": "Letrado de la Administración de Justicia (control previo de admisibilidad, admisión a trámite, citación)"
        },
        {
-        "t": "Tribunal de Instancia — Sección de Familia, Infancia y Capacidad donde exista; si no, Sección Civil (lugar de los hechos o domicilio del solicitante)"
+        "t": "Tribunal de Instancia, Sección Civil (lugar de los hechos o domicilio del solicitante)"
        }
       ]
      }
@@ -692,7 +692,7 @@ Neg.data.register({
      "norma": {
       "ley": "LOPJ (LO 1/2025)",
       "titulo": "Tribunales de Instancia",
-      "texto": "<strong>Art. 86.5 j) LOPJ</strong> — Expedientes de jurisdicción voluntaria en materia de personas y familia: Sección de Familia, Infancia y Capacidad, salvo los capítulos IX y X del Título II.",
+      "texto": "<strong>Art. 85 LOPJ</strong> — Secciones Civiles del Tribunal de Instancia: conocen de este expediente (no se considera materia de personas y familia del art. 86.5 j) LOPJ).",
       "etiqueta": "Competencia",
       "tono": "t-info"
      }

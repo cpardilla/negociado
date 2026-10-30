@@ -24,3 +24,11 @@ La letra j) del art. 86.5 LOPJ atribuye a la Sección de Familia, Infancia y Cap
 ## Para la fase 5 (G19)
 
 La guía dice «JPI» × 2 y «Juzgado de Primera Instancia» × 1 en el paso «competencia».
+
+## Respuesta del propietario (2026-10-30) — decisión 12
+
+Competente: Juzgado de Primera Instancia, hoy la **Sección Civil** del Tribunal de Instancia (art. 85 LOPJ). No se trata como materia de personas y familia del art. 86.5 j) LOPJ.
+
+| # | Ficha | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| D12 | Marco, 80 ter, participantes, ecosistema | criterio | Sección de Familia, Infancia y Capacidad donde exista (art. 86.5 j) LOPJ) | Sección Civil del Tribunal de Instancia | LOPJ art. 85; decisión 12 |
