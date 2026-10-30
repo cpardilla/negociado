@@ -165,7 +165,7 @@ test("esquema view: cards, filters, search, direct link to an article's card, re
   assert.equal(r.base.cards, 11);
   assert.equal(r.base.open, 0, "las fichas empiezan plegadas");
   assert.ok(r.base.refs > 50, "las citas son enlaces");
-  assert.equal(r.base.norms, 4);
+  assert.equal(r.base.norms, 5);
   assert.equal(r.base.groups, 3);
   assert.match(r.base.revision, /^Revisado con el BOE a /);
   assert.equal(r.toggled, "true");

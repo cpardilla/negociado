@@ -188,7 +188,7 @@ Defectos del markmap anterior — todos resueltos al generar el mapa de los mism
 2. ✅ (2026-10-29) Retirados los 57 HTML antiguos (quedan en el historial de git y en el tag `baseline-2026-10-28`). `404.html` (`tools/build-404.js`, autosuficiente): 56 direcciones antiguas redirigen a su sitio nuevo; la del esquema combinado I bis & ter (sin equivalente único) y cualquier otra inexistente muestran el aviso de actualizar favoritos (decisión 8). `.nojekyll` en la raíz. Los tres tests que comparaban el inventario con los HTML antiguos solo se ejecutan donde existen (el tag); `tools/extract-current.js` queda como histórico. Tests en navegador de las redirecciones, servidas como en Pages.
 3. ✅ El esquema combinado «CAPÍTULO I BIS & TER» no se migra (decisión 4); en la fase 4 se comprueba si contiene algo que no esté en los separados y se traslada a ellos.
 
-### Fase 4 · Revisión de contenido de los esquemas (28) ✅ (28/28: E11 eliminado; preguntas abiertas en E28)
+### Fase 4 · Revisión de contenido de los esquemas (28) ✅ (28/28: E11 eliminado)
 Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabla (decisión 6). Los más usados (E01–E04, E28) con atención especial.
 
 | # | Esquema | Estado |
@@ -220,7 +220,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E25 | LJV · T. VI Cap. I — Usufructuario y créditos vencidos | ✅ 2026-10-30 · corregido (texto fiel); postulación del art. 3.2 LJV (necesaria para recurrir y desde la oposición); recursos y caducidad concretos; Sección Civil ([registro](revision/ljv-usufructuario.md)) |
 | E26 | LJV · T. VI Cap. II — Deslinde de fincas no inscritas | ✅ 2026-10-30 · corregido (texto fiel); juicio verbal hasta 15.000 € (no 6.000); art. 17.3 LJV leído al revés; postulación exacta; fuera jurisprudencia sin cita; recurso de revisión; Sección Civil ([registro](revision/ljv-deslinde.md)) |
 | E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — criterio del propietario incorporado (decisión 13); artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
-| E28 | LJV · Título IX — Conciliación | ✅ 2026-10-30 · rehecho (31 fichas → 11, una por artículo); artículos de la transacción (CC 1810–1817) y de la ejecución (LEC 518, 520, 556/557) corregidos; discordancia 6.000 € (art. 140.1 LJV) / 10.000 € (art. 47.2 LEC, LO 1/2025) — pregunta; MASC pendiente de comprobar ([registro](revision/ljv-conciliacion.md)) |
+| E28 | LJV · Título IX — Conciliación | ✅ 2026-10-30 · rehecho (31 fichas → 11, una por artículo); artículos de la transacción (CC 1810–1817) y de la ejecución (LEC 518, 520, 556/557) corregidos; umbral del Juez de Paz 10.000 € (decisión 14); conciliación como requisito de procedibilidad (art. 5.1 LO 1/2025) ([registro](revision/ljv-conciliacion.md)) |
 
 ### Fase 5 · Revisión de contenido de las guías (25) ☐
 Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfanos (reconectar al punto correcto del flujo o eliminar, con motivo).
@@ -287,11 +287,13 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 11. ✅ (2026-10-29) **Art. 86.5 j) LOPJ**: la excepción «capítulos IX y X del título I» se lee como **Título II** de la LJV (errata de la ley). Ausencia y fallecimiento (cap. IX) y extracción de órganos de donantes vivos (cap. X) no son de la Sección de Familia, Infancia y Capacidad: van a la Sección Civil del Tribunal de Instancia. Lo confirma el art. 89.6 g) LOPJ, que en la misma excepción dice «título II».
 12. ✅ (2026-10-30) **Hechos pasados (arts. 80 bis–80 quinquies LJV)**: Juzgado de Primera Instancia, hoy la Sección Civil del Tribunal de Instancia; no se trata como materia de personas y familia del art. 86.5 j) LOPJ.
 13. ✅ (2026-10-30) **Venta por persona o entidad especializada en subasta voluntaria (art. 110.3 LJV)**: sigue habilitada pese al vaciado de los arts. 641 y 642 LEC; el LAJ decide; integración por el art. 8 LJV, con el art. 640 LEC como referencia; la resolución fija condiciones y la aprobación posterior de la transmisión.
+14. ✅ (2026-10-30) **Conciliación ante el Juez de Paz**: umbral de 10.000 € (art. 47.2 LEC y art. 14.6 LO 1/2025); el de 6.000 € del art. 140.1 LJV queda desplazado. Cautela: posible concurrencia con el LAJ entre 6.000 y 10.000 €, sin resolver expresamente.
 
 ## 11. Registro de cambios del plan
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-30 · Decisión 14 (Juez de Paz: 10.000 €) y LO 1/2025 (arts. 5 y 14, comprobados en la web del BOE: la API daba error 500) incorporados a E28. Pendiente: instantánea de la LO 1/2025 cuando la API responda.
 - 2026-10-30 · E28 (conciliación) revisado: fase 4 terminada. Preguntas: umbral del Juez de Paz (6.000 / 10.000 €) y relación con los MASC (LO 1/2025, sin instantánea; API del BOE con error 500). Siguiente: fase 5 (guías).
 - 2026-10-30 · `npm test` registra cada ejecución y los fallos con su nombre (`tools/run-tests.js`), para identificar el fallo intermitente. Siguiente: E28.
 - 2026-10-30 · Decisión 13 (art. 110.3 LJV) incorporada a E27.

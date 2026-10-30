@@ -136,11 +136,36 @@ Neg.data.register({
           }
          ]
         }
+       },
+       {
+        "apartado": {
+         "titulo": "Requisito de procedibilidad (LO 1/2025)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "En el orden civil, con carácter general, para que sea admisible la demanda hay que acudir antes a algún medio adecuado de solución de controversias; entre los que cumplen el requisito figura expresamente la <strong>conciliación</strong> (art. 5.1 LO 1/2025)."
+            },
+            {
+             "t": "Debe haber identidad entre el objeto de la negociación y el del litigio, aunque varíen las pretensiones (art. 5.1 LO 1/2025)."
+            },
+            {
+             "t": "Se exige en los procesos declarativos del Libro II y en los especiales del Libro IV de la LEC, salvo las materias exceptuadas del art. 5.2 LO 1/2025 (p. ej., derechos fundamentales, medidas del art. 158 CC, medidas de apoyo, filiación, tutela sumaria de la posesión)."
+            },
+            {
+             "t": "La conciliación ante el Letrado de la Administración de Justicia se rige por el título IX LJV y la del juez de paz, además, por el art. 47 LEC (art. 14.5 y 6 LO 1/2025). En la demanda deben constar los documentos que lo justifiquen (art. 399.3 LEC)."
+            }
+           ]
+          }
+         ]
+        }
        }
       ],
       "referencias": [
        "CC arts. 6, 7, 1814",
-       "LJV arts. 17, 20"
+       "LJV arts. 17, 20",
+       "LO 1/2025 arts. 5, 14",
+       "LEC art. 399"
       ],
       "claves": "139 procedencia evitar un pleito abuso de derecho fraude inadmision de plano menores discapacidad administraciones publicas responsabilidad civil jueces materias no transigibles"
      }
@@ -156,12 +181,12 @@ Neg.data.register({
         "tono": "t-plazo"
        },
        {
-        "texto": "Juez de Paz",
+        "texto": "Juez de Paz: < 10.000 €",
         "tono": "t-nota"
        }
       ],
       "titulo": "Competencia",
-      "resumen": "Letrado de la Administración de Justicia (Sección Civil o, en sus materias, Sección de lo Mercantil) o Juez de Paz del domicilio del requerido. Por debajo de cierta cuantía y sin materia mercantil, el Juez de Paz donde lo haya. Fuero adicional si el requerido es persona jurídica.",
+      "resumen": "Letrado de la Administración de Justicia (Sección Civil o, en sus materias, Sección de lo Mercantil) o Juez de Paz del domicilio del requerido. Por cuantía inferior a 10.000 euros y sin materia mercantil, el Juez de Paz donde lo haya (art. 47.2 LEC). Fuero adicional si el requerido es persona jurídica.",
       "cuerpo": [
        {
         "apartado": {
@@ -182,26 +207,25 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Jueces de Paz: cuantía",
+         "titulo": "Jueces de Paz: cuantía (criterio del juzgado, decisión 14)",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Art. 140.1 LJV: si la cuantía es <strong>inferior a 6.000 euros</strong> y no se trata de cuestiones mercantiles, la competencia corresponde, en su caso, a los Jueces de Paz."
+             "t": "Umbral aplicable: <strong>inferior a 10.000 euros</strong> (art. 47.2 LEC, en la redacción del art. 22.8 de la LO 1/2025, desde el 3-4-2025), sin cuestiones mercantiles."
             },
             {
-             "t": "Art. 47.2 LEC (redacción de la LO 1/2025, desde el 3-4-2025): corresponde a los jueces de paz el conocimiento de los expedientes de conciliación civil de cuantía <strong>inferior a 10.000 euros</strong>, en los términos del título IX LJV."
+             "t": "La propia LO 1/2025 dispone que la conciliación ante el juez de paz se rige por el art. 47 LEC y por el título IX LJV (art. 14.6 LO 1/2025). El límite de 6.000 euros del art. 140.1 LJV, no adaptado, queda desplazado en lo incompatible y no sirve para negar esa competencia."
+            },
+            {
+             "t": "Exactamente 10.000 euros o más: no es competente el juez de paz («inferior a»)."
+            },
+            {
+             "t": "Cautela: el art. 47.2 LEC no dice que la competencia del juez de paz sea exclusiva; si entre 6.000 y 10.000 euros cabe también la del Letrado de la Administración de Justicia es cuestión sin norma ni doctrina que la resuelva expresamente."
             }
            ]
           }
          ]
-        }
-       },
-       {
-        "nota": {
-         "tono": "t-aviso",
-         "etiqueta": "Discordancia",
-         "texto": "Las dos normas fijan umbrales distintos (6.000 y 10.000 euros) y el art. 140.1 LJV no se ha adaptado. Pendiente del criterio del juzgado."
         }
        },
        {
@@ -249,7 +273,8 @@ Neg.data.register({
       ],
       "referencias": [
        "LEC arts. 47, 51",
-       "LOPJ arts. 85, 87"
+       "LOPJ arts. 85, 87",
+       "LO 1/2025 art. 14"
       ],
       "claves": "140 competencia domicilio del requerido juez de paz letrado seccion civil mercantil 6000 10000 euros persona juridica sucursal averiguaciones otro partido recusacion"
      }
@@ -850,7 +875,7 @@ Neg.data.register({
         "t": "Letrado de la Administración de Justicia — Sección Civil o Sección de lo Mercantil del Tribunal de Instancia del domicilio del requerido: admite, cita, celebra y dicta decreto"
        },
        {
-        "t": "Juez de Paz — en los municipios donde lo haya, por razón de la cuantía (ver la discordancia 6.000 / 10.000 euros): dicta auto"
+        "t": "Juez de Paz — en los municipios donde lo haya, por cuantía inferior a 10.000 euros (art. 47.2 LEC): dicta auto"
        },
        {
         "t": "Juez — recurso de revisión; ejecución"
@@ -905,7 +930,7 @@ Neg.data.register({
   },
   {
    "titulo": "Ecosistema normativo",
-   "recuento": "4 normas",
+   "recuento": "5 normas",
    "plegada": true,
    "bloques": [
     {
@@ -921,7 +946,7 @@ Neg.data.register({
      "norma": {
       "ley": "LEC",
       "titulo": "Competencia, documentación y ejecución",
-      "texto": "<strong>Art. 47 LEC</strong> — Jueces de paz (conciliación de cuantía inferior a 10.000 euros desde el 3-4-2025). <strong>Art. 147 LEC</strong> — Grabación. <strong>Art. 250 LEC</strong> — Juicio verbal. <strong>Art. 454 bis LEC</strong> — Revisión. <strong>Art. 517.2.9.º LEC</strong> — Título ejecutivo. <strong>Art. 557 LEC</strong> — Oposición.",
+      "texto": "<strong>Art. 47 LEC</strong> — Jueces de paz (conciliación de cuantía inferior a 10.000 euros desde el 3-4-2025). <strong>Art. 399.3 LEC</strong> — Justificación de haber acudido a un medio adecuado de solución de controversias. <strong>Art. 147 LEC</strong> — Grabación. <strong>Art. 250 LEC</strong> — Juicio verbal. <strong>Art. 454 bis LEC</strong> — Revisión. <strong>Art. 517.2.9.º LEC</strong> — Título ejecutivo. <strong>Art. 557 LEC</strong> — Oposición.",
       "etiqueta": "Procesal",
       "tono": "t-nota"
      }
@@ -942,6 +967,15 @@ Neg.data.register({
       "texto": "<strong>Arts. 85 y 87 LOPJ</strong> — Secciones Civil y de lo Mercantil. <strong>Arts. 99 y ss. LOPJ</strong> — Juzgados de Paz.",
       "etiqueta": "Orgánico",
       "tono": "t-info"
+     }
+    },
+    {
+     "norma": {
+      "ley": "LO 1/2025",
+      "titulo": "Eficiencia del Servicio Público de Justicia",
+      "texto": "<strong>Art. 5 LO 1/2025</strong> — Requisito de procedibilidad: acudir antes a un medio adecuado de solución de controversias, entre ellos la conciliación. <strong>Art. 14 LO 1/2025</strong> — La conciliación ante el Letrado de la Administración de Justicia y ante el juez de paz se rigen por el título IX LJV (y el art. 47 LEC).",
+      "etiqueta": "Procesal",
+      "tono": "t-nota"
      }
     }
    ]

@@ -32,3 +32,9 @@
 ## Para la fase 5 (G25)
 
 La guía cita «art. 140.3» (el art. 140 tiene dos apartados) y «art. 3.5» LJV (tiene dos), y usa «JPI» × 3, «Juzgado de Primera Instancia» × 2 y «Juzgado de lo Mercantil» × 2. Revisar también el umbral de cuantía y cualquier cita a los arts. 518 y 520 LEC.
+
+## Criterio del propietario y comprobación de la LO 1/2025 (2026-10-30) — decisión 14
+
+- **Umbral del Juez de Paz**: se aplica el de **10.000 €** (art. 47.2 LEC, redacción del art. 22.8 LO 1/2025). El art. 14.6 LO 1/2025 remite la conciliación ante el juez de paz al art. 47 LEC y al título IX LJV; el límite de 6.000 € del art. 140.1 LJV queda desplazado en lo incompatible. Exactamente 10.000 € o más: no. Cautela anotada en el esquema: si entre 6.000 y 10.000 € cabe también la competencia del LAJ no está resuelto expresamente.
+- **Medios adecuados de solución de controversias**: el art. 5.1 LO 1/2025 incluye expresamente la conciliación entre los medios que cumplen el requisito de procedibilidad (con identidad de objeto); excepciones en el art. 5.2; arts. 14.5 y 14.6 (régimen de la conciliación ante el LAJ y el juez de paz). Añadido a la ficha del art. 139.
+- **Fuente**: texto consolidado de la LO 1/2025 en la web del BOE (`buscar/act.php?id=BOE-A-2025-76`), consultado el 2026-10-30, porque la API de datos abiertos devolvía error 500. **Pendiente**: añadir la instantánea `sources/boe/` de la LO 1/2025 cuando la API responda, para que el comprobador verifique también estas citas.
