@@ -222,7 +222,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — criterio del propietario incorporado (decisión 13); artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
 | E28 | LJV · Título IX — Conciliación | ✅ 2026-10-30 · rehecho (31 fichas → 11, una por artículo); artículos de la transacción (CC 1810–1817) y de la ejecución (LEC 518, 520, 556/557) corregidos; umbral del Juez de Paz 10.000 € (decisión 14); conciliación como requisito de procedibilidad (art. 5.1 LO 1/2025) ([registro](revision/ljv-conciliacion.md)) |
 
-### Fase 5 · Revisión de contenido de las guías (25) ◐ (3/25)
+### Fase 5 · Revisión de contenido de las guías (25) ◐ (4/25)
 Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfanos (reconectar al punto correcto del flujo o eliminar, con motivo).
 
 | # | Guía | Hallazgos previos | Estado |
@@ -230,7 +230,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G01 | LEC · Diligencias preliminares | — | ✅ 2026-10-30 · 51 pasos rehechos con los arts. 256–263 LEC; apartados y plazos corregidos (apelación 20 días); medidas del art. 261 bien asignadas; grafo depurado (control duplicado, practicadas → caución → demanda) ([registro](revision/lec-diligencias-preliminares.md)) |
 | G02 | LEC · División de la herencia — procedimiento | — | ✅ 2026-10-30 · 54 → 50 pasos rehechos; 786.2 y 787.5 (no 786.4 ni 787.7); fuera «787.6 = conformidad parcial», «205 LH», «LN 66 bis», Ley 36/2006, STS sin ECLI e impuestos; competencia por el art. 52.1.4.º y 58 LEC ([registro](revision/lec-division-herencia.md)) |
 | G03 | LEC · Intervención del caudal hereditario | — | ✅ 2026-10-30 · fiel en lo esencial; fuera «art. 1065 CC», «fianza personal», anotaciones registrales, nulidades y cosa juzgada sin base; rama de acreedores con comprobación de pago ([registro](revision/lec-intervencion-caudal.md)) |
-| G04 | LEC · Administración del caudal hereditario | 3 huérfanos | ☐ |
+| G04 | LEC · Administración del caudal hereditario | 3 huérfanos | ✅ 2026-10-30 · 69 → 66 pasos; huérfanos reconectados (caución) o retirados (nombramiento); fuera la inscripción registral del «art. 797.3», «Ley 21/2007», «LJV 271», «CC 1967–1969»; subastas por LN 72 y ss. o LJV 108–111 ([registro](revision/lec-administracion-caudal.md)) |
 | G05 | LEC · Liquidación del REM | — | ☐ |
 | G06 | LJV · T. II Cap. I — Filiación no matrimonial | — | ☐ |
 | G07 | LJV · T. II Cap. I bis — Mención registral del sexo | — | ☐ |
@@ -293,6 +293,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-30 · Fase 5 · G04 (administración del caudal) revisada. Siguiente: G05.
 - 2026-10-30 · Fase 5 · G03 (intervención del caudal) revisada. Siguiente: G04.
 - 2026-10-30 · Fase 5 · G02 (división de la herencia) revisada. Siguiente: G03.
 - 2026-10-30 · Fase 5 · G01 (diligencias preliminares) revisada. Siguiente: G02.

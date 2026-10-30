@@ -39,7 +39,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | lec-diligencias-preliminares | Guía · LEC · Diligencias preliminares | · | · | · | · | · | · | · |
 | lec-division-herencia | Guía · LEC · División de la herencia | · | · | · | · | · | · | · |
 | lec-intervencion-caudal | Guía · LEC · Intervención del caudal hereditario | · | · | · | · | · | · | · |
-| lec-administracion-caudal | Guía · LEC · Administración del caudal hereditario | 1R | · | · | · | 1R | 1E | 1R |
+| lec-administracion-caudal | Guía · LEC · Administración del caudal hereditario | · | · | · | · | · | · | · |
 | lec-liquidacion-rem | Guía · LEC · Liquidación del régimen económico matrimonial | 7R | · | · | · | · | · | 3R |
 | ljv-filiacion | Guía · LJV · Reconocimiento de la filiación no matrimonial | 7A | · | · | 2R | · | · | 2R |
 | ljv-mencion-sexo-12-14 | Guía · LJV · Mención registral del sexo (12 a 14 años) | 3A 1R | · | · | · | · | · | 3R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 60E 18A 45R | 0E 0A 0R | 0E 0A 0R | 0E 0A 6R | 0E 0A 3R | 4E 0A 1R | 0E 0A 67R |
+| | **Total** | 60E 18A 44R | 0E 0A 0R | 0E 0A 0R | 0E 0A 6R | 0E 0A 2R | 3E 0A 1R | 0E 0A 66R |
 
 E = error · A = aviso · R = revisar.
 
@@ -70,8 +70,8 @@ E = error · A = aviso · R = revisar.
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
 - ✓ LJV (BOE a 05-03-2026): 2404
-- ✓ LEC (BOE a 07-10-2026): 1310
-- ✓ CC (BOE a 07-09-2026): 1243
+- ✓ CC (BOE a 07-09-2026): 1236
+- ✓ LEC (BOE a 07-10-2026): 1224
 - ✓ LOPJ (BOE a 09-10-2026): 86
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
@@ -80,8 +80,8 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LPPD (BOE a 18-12-2025): 36
 - ✓ CE (BOE a 20-05-2026): 35
 - ✓ LOPDH (BOE a 16-12-2025): 33
-- ✓ LH (BOE a 07-01-2026): 29
-- ✓ LN (BOE a 22-10-2026): 27
+- ✓ LN (BOE a 22-10-2026): 30
+- ✓ LH (BOE a 07-01-2026): 27
 - ✓ RDTO (BOE a 19-12-2025): 25
 - ✓ LTO (BOE a 16-12-2025): 19
 - LO 1/2025: 16
@@ -89,9 +89,9 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ CCom (BOE a 16-12-2025): 4
 - ✓ LCS (BOE a 05-10-2026): 4
 - ✓ CP (BOE a 09-04-2026): 4
-- ✓ RH (BOE a 16-12-2025): 4
 - ✓ LOPDGDD (BOE a 08-10-2026): 4
 - ✓ LA (BOE a 18-12-2025): 3
+- ✓ RH (BOE a 16-12-2025): 3
 - ✓ LPI (BOE a 31-07-2026): 2
 - ✓ LPAT (BOE a 31-07-2026): 2
 - ✓ LCD (BOE a 29-12-2025): 2
@@ -300,21 +300,7 @@ Sin hallazgos automáticos.
 
 ### lec-administracion-caudal · Guía · LEC · Administración del caudal hereditario
 
-**citas**
-
-- [revisar] «arts. 271»: la LJV vigente acaba en el art. 148; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _paso «enajenacion_subasta» › comprobación 2.1_
-
-**literales**
-
-- [revisar] texto entrecomillado no hallado literalmente en LEC: «Nombrado el administrador y prestada por éste la caución, el Letrado de la Administración de Justicia le pondrá en posesión de su cargo.» — _paso «caucion_problema» › ley 3_
-
-**grafos**
-
-- [error] pasos inalcanzables desde «inicio»: nombramiento, caucion_pend, caucion_problema — _grafo_
-
-**terminologia**
-
-- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «declaracion_check» › nota 2_
+Sin hallazgos automáticos.
 
 ### lec-liquidacion-rem · Guía · LEC · Liquidación del régimen económico matrimonial
 

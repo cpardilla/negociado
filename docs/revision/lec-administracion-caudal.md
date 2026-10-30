@@ -27,3 +27,29 @@
 | 15 | Ecosistema | error | «Art. 793 — Intervenedores… determina la legitimación en la división» | Art. 793.3: interesados que se citan al inventario | LEC |
 | 16 | Participantes | error | «Administradores interinos/sustitutos», «Hederos aparentes o putativos», «Acreedores del causante (distintos de los de la herencia)», «compañías aseguradoras»; «Juez/Juzgado» y «Tribunal» duplicados | Retirados o unificados; el administrador, nombrado por auto tras el inventario (art. 795) | LEC |
 | 17 | Cabecera y pie | estilo | Subtítulo con «art. 438»; pie «plantilla HTML reutilizable 100 % offline» | Subtítulo con el contenido real; pie con la ubicación | — |
+
+---
+
+# Revisión · G04 · Guía de tramitación de la administración del caudal hereditario
+
+- **Recurso**: `data/guias/lec-administracion-caudal.js` (origen G04).
+- **Fecha de revisión**: 2026-10-30. **Corte del BOE**: LEC a 07-10-2026; Ley del Notariado; LJV.
+- **Método**: fase 5. Se conservan recorrido y direcciones; cada paso se rehace con los arts. 795–805 LEC (revisados en E04).
+- **Resultado del comprobador**: 0 hallazgos (antes: 1 error de grafo —tres pasos inalcanzables— y 3 «revisar»). 69 → 66 pasos.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | registro_decision, registro_propiedad | **error** | Dos pasos sobre la inscripción de la administración en el Registro de la Propiedad «por el art. 797.3 LEC» (con «arts. 9, 17, 32 LH» y «art. 209 RH») | Retirados: el art. 797 tiene dos apartados y no prevé esa inscripción | LEC |
+| 2 | grafo | **error** | `nombramiento`, `caucion_pend` y `caucion_problema` inalcanzables | `presupuestos` distingue: nombrado con caución → posesión; nombrado sin caución → `caucion_pend` (→ `caucion_problema` si hay discusión); sin nombramiento → fin. `nombramiento` se retira: situaba el nombramiento en la división judicial «tras el inventario y avalúo», cuando se hace en el auto del art. 795 | LEC |
+| 3 | enajenacion_subasta | **error** | Subasta conforme a la «Ley Notarial 21/2007» o la «LJV, arts. 271 y ss.» | Ley del Notariado (subastas notariales, arts. 72 y ss.) o LJV (subastas voluntarias, arts. 108 a 111) | LN, LJV |
+| 4 | inicio, rep_yacente | **error** | «Arts. 1967–1969 CC (posesión en interés de la herencia)»; «RD 4/2015 del Mercado de Valores» | Retirados: los arts. 1967–1969 CC tratan de la prescripción | CC |
+| 5 | declaracion_check, representacion_check | **error** | Declaración de herederos «judicial ante el Juzgado de Primera Instancia» o «acta de notoriedad (LJV arts. 55 y ss.)» | Notarial (arts. 55 y 56 de la Ley del Notariado) o, si el llamado es la Administración, en su propio procedimiento | LN |
+| 6 | presupuestos, caucion_pend | error | Caución «art. 795.4.ª»; formas «fianza personal o seguro de caución»; «arts. 581 y ss. LEC»; aprobación «por diligencia del LAJ» | Art. 795, reglas 3.ª y 4.ª: caución fijada por el tribunal en las formas de la LEC, con sus dispensas | LEC |
+| 7 | traslado_cuentadante | error | Contestación «conforme al art. 438 LEC (10 días)» | El art. 800.4 remite a los arts. 404 y ss. (el art. 404.1 fija veinte días) y luego al juicio verbal | LEC |
+| 8 | enajenacion_check, consultar_alt, venta_* | error | Responsabilidad «penal»; alternativas inventadas («adelanto de legítimas», crédito hipotecario…); definición propia de «producto líquido»; «nueva subasta con tipo reducido» | Retirados o reducidos a lo que dice el art. 803 y lo que decida el tribunal | — |
+| 9 | caucion_problema, sep_subalterno, fin_* | error | Cita literal recortada del art. 797.1; «audiencia al subalterno»; consecuencias de la impugnación inventadas | Texto del art. 797.1; arts. 800 y 805 sin añadidos | LEC |
+| 10 | prov_concedida | estructura | Opción «No, pasar a rendición de cuentas» llevaba a enajenaciones | Respuestas coherentes | — |
+
+Pasos retirados: `registro_decision`, `registro_propiedad`, `nombramiento`. Pasos reconectados: `caucion_pend`, `caucion_problema`.
