@@ -219,7 +219,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E24 | LJV · Título V — Derecho de obligaciones | ✅ 2026-10-30 · corregido (texto fiel); fuera jurisprudencia sin cita y normas ajenas; legitimación del tercero por los arts. 1158 y 1178 CC; recursos añadidos; Sección Civil ([registro](revision/ljv-obligaciones.md)) |
 | E25 | LJV · T. VI Cap. I — Usufructuario y créditos vencidos | ✅ 2026-10-30 · corregido (texto fiel); postulación del art. 3.2 LJV (necesaria para recurrir y desde la oposición); recursos y caducidad concretos; Sección Civil ([registro](revision/ljv-usufructuario.md)) |
 | E26 | LJV · T. VI Cap. II — Deslinde de fincas no inscritas | ✅ 2026-10-30 · corregido (texto fiel); juicio verbal hasta 15.000 € (no 6.000); art. 17.3 LJV leído al revés; postulación exacta; fuera jurisprudencia sin cita; recurso de revisión; Sección Civil ([registro](revision/ljv-deslinde.md)) |
-| E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — pregunta abierta; artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
+| E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — criterio del propietario incorporado (decisión 13); artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
 | E28 | LJV · Título IX — Conciliación | ☐ |
 
 ### Fase 5 · Revisión de contenido de las guías (25) ☐
@@ -286,11 +286,13 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 10. ✅ (2026-10-29) **Jurisprudencia**: se retira la que no se puede verificar y queda anotada en el registro, para reincorporarla con su ECLI si el propietario la aporta. Sin búsquedas en la web.
 11. ✅ (2026-10-29) **Art. 86.5 j) LOPJ**: la excepción «capítulos IX y X del título I» se lee como **Título II** de la LJV (errata de la ley). Ausencia y fallecimiento (cap. IX) y extracción de órganos de donantes vivos (cap. X) no son de la Sección de Familia, Infancia y Capacidad: van a la Sección Civil del Tribunal de Instancia. Lo confirma el art. 89.6 g) LOPJ, que en la misma excepción dice «título II».
 12. ✅ (2026-10-30) **Hechos pasados (arts. 80 bis–80 quinquies LJV)**: Juzgado de Primera Instancia, hoy la Sección Civil del Tribunal de Instancia; no se trata como materia de personas y familia del art. 86.5 j) LOPJ.
+13. ✅ (2026-10-30) **Venta por persona o entidad especializada en subasta voluntaria (art. 110.3 LJV)**: sigue habilitada pese al vaciado de los arts. 641 y 642 LEC; el LAJ decide; integración por el art. 8 LJV, con el art. 640 LEC como referencia; la resolución fija condiciones y la aprobación posterior de la transmisión.
 
 ## 11. Registro de cambios del plan
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-30 · Decisión 13 (art. 110.3 LJV) incorporada a E27.
 - 2026-10-30 · E27 (subastas) revisado; pregunta al propietario sobre el art. 110.3 LJV (remite al art. 641 LEC, vacío). Siguiente: E28 (conciliación).
 - 2026-10-30 · Decisión 12: hechos pasados → Sección Civil; E22 actualizado.
 - 2026-10-30 · E26 (deslinde) revisado. Siguiente: E27. Nota: una ejecución de la batería dio 1 fallo que no se reprodujo en tres ejecuciones seguidas; probablemente una prueba de navegador de tests/app.test.js con esperas fijas, sensible a la carga. Pendiente: identificarla y hacerla robusta. Segunda vez el 2026-10-30 (tras el ajuste de E27): 1 fallo; después, cuatro ejecuciones limpias, también con el comprobador corriendo a la vez. La salida no conserva el nombre de la prueba: hace falta un reportero que lo guarde (p. ej. --test-reporter=spec a un fichero).

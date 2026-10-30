@@ -69,8 +69,8 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2458
-- ✓ LEC (BOE a 07-10-2026): 1521
+- ✓ LJV (BOE a 05-03-2026): 2462
+- ✓ LEC (BOE a 07-10-2026): 1522
 - ✓ CC (BOE a 07-09-2026): 1339
 - ✓ LOPJ (BOE a 09-10-2026): 90
 - ✓ LTRANS (BOE a 20-12-2025): 58

@@ -28,3 +28,14 @@ El art. 110.3 LJV permite pedir la venta «por persona o entidad especializada»
 La guía cita el art. 641 LEC como vigente en cinco lugares (pasos «modo_venta» y «especializada»), y usa «Secretario judicial» × 14 y «Juzgado de Primera Instancia» × 3.
 
 **Confirmación del propietario (2026-10-30)**: nota del BOE — «Se deja sin contenido, con efectos de 3 de abril de 2025, por el art. 22.54 de la Ley Orgánica 1/2025, de 2 de enero. Ref. BOE-A-2025-76». Coincide con la instantánea de `sources/boe/LEC.json`. Sigue abierta la pregunta sobre la práctica del juzgado.
+
+## Criterio del propietario (2026-10-30) — decisión 13
+
+Respuesta a la pregunta sobre el art. 110.3 LJV, incorporada a la ficha del art. 110 («Criterio del juzgado tras la LO 1/2025»):
+
+- El art. 110.3 LJV sigue vigente y es habilitación propia: la petición de venta por persona o entidad especializada se admite y el LAJ decide si procede. El vaciado de los arts. 641 y 642 LEC (art. 22.54 LO 1/2025; ambos comprobados en la instantánea) no la deroga.
+- Lo no regulado se integra por el art. 8 LJV con las normas compatibles de la LEC; no se aplica mecánicamente el antiguo art. 641; el art. 640 LEC sirve de referencia para garantías (terceros, aprobación de la transmisión, cargas).
+- No se equipara a la subasta electrónica del art. 111.4 LJV.
+- La resolución que la acuerde fija las condiciones (rendición de cuentas, pago, adquirente, aprobación posterior de la transmisión por el LAJ, documentación e inscripción). Documentación adicional conveniente, marcada como práctica.
+
+No se ha incorporado la mención a la Ley 7/1996 de Ordenación del Comercio Minorista (arts. 56–61): no hay instantánea del BOE para comprobarla y el propio planteamiento indica que su art. 56.2 excluye las subastas judiciales (decisión 9).

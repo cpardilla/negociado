@@ -295,15 +295,35 @@ Neg.data.register({
         }
        },
        {
-        "nota": {
-         "tono": "t-aviso",
-         "etiqueta": "Pendiente",
-         "texto": "Cómo aplica hoy el juzgado la venta por persona o entidad especializada del art. 110.3 LJV, con el artículo de la LEC al que remite vacío: pregunta abierta al propietario."
+        "apartado": {
+         "titulo": "Criterio del juzgado tras la LO 1/2025 (decisión 13)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "<strong>Sigue habiendo habilitación:</strong> el art. 110.3 LJV no ha sido modificado y permite pedir la venta por persona o entidad especializada; la petición se admite y el Letrado de la Administración de Justicia decide si procede. Lo que desapareció es la regulación de la LEC a la que remitía (sin contenido desde el 3-4-2025, junto con la de subsistencia y cancelación de cargas que la acompañaba)."
+            },
+            {
+             "t": "<strong>Integración:</strong> lo no regulado se completa con las normas compatibles de la LEC (art. 8 LJV). No se aplica mecánicamente el antiguo procedimiento; el art. 640 LEC (convenio de realización) sirve de referencia para las garantías: derechos de terceros, aprobación de la transmisión por el LAJ y tratamiento de las cargas."
+            },
+            {
+             "t": "<strong>Modalidad distinta de la subasta electrónica:</strong> el art. 111.4 LJV regula la subasta en el Portal de Subastas; la venta por entidad especializada es otra modalidad y no se equiparan automáticamente."
+            },
+            {
+             "t": "<strong>La resolución que la acuerde fija las condiciones:</strong> rendición documentada del resultado por la entidad, acreditación del pago íntegro del precio, identificación del adquirente, pronunciamiento posterior del LAJ aprobando la transmisión y forma de documentarla y, en su caso, de acceder al Registro."
+            },
+            {
+             "t": "<strong>Documentación conveniente</strong> (práctica, no exigida por el art. 110): entidad propuesta y su experiencia; honorarios o comisión; publicidad y comercialización; duración; precio mínimo; recepción y selección de ofertas; forma de pago; entrega del bien; cargas y derechos de terceros."
+            }
+           ]
+          }
+         ]
         }
        }
       ],
       "referencias": [
-       "LEC arts. 640, 661"
+       "LEC arts. 640, 661",
+       "LJV art. 8"
       ],
       "claves": "solicitud iniciación expediente capacidad legal poder disposición certificación registral dominio cargas pliego condiciones particulares valoración arrendatarios ocupantes artículo 661 lec venta persona entidad especializada artículo 641 lec"
      }
