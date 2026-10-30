@@ -74,3 +74,35 @@ El esquema tenía 26 fichas; quedan 16. Lo retirado estaba fuera del ámbito de 
 ## 4. Pendiente para la guía G02 (fase 5)
 
 El comprobador marca en la guía: «art. 786.4» (×4) y «art. 787.7» (×7), que no existen; «arts. 66 bis» (Ley del Notariado, no existen); «art. 264.1.4.º» y «art. 45.2» LEC sin apartados numerados.
+
+---
+
+# Revisión · G02 · Guía de tramitación de la división judicial de la herencia
+
+- **Recurso**: `data/guias/lec-division-herencia.js` (origen G02).
+- **Fecha de revisión**: 2026-10-30. **Corte del BOE**: LEC a 07-10-2026; CC; LO 1/2025 (arts. 5, 7 y 10, consultados en la web del BOE: la API daba error 500).
+- **Método**: fase 5. Se conserva el recorrido y las direcciones de los pasos; cada paso se rehace con los arts. 782–789 y 792–796 LEC (revisados en E02–E04) y se retiran las notas repetidas (muchos pasos tenían el mismo texto dos veces).
+- **Resultado del comprobador**: 0 hallazgos (citas, plazos y grafo). 54 → 50 pasos.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | p3_*, p4_* | **error** | Plazo de dos meses «art. 786.4» | Art. 786.2 | LEC |
+| 2 | p5_*, fin_exitoso | **error** | Sin cosa juzgada «art. 787.7» | Art. 787.5, párrafo segundo (el 787 tiene seis apartados) | LEC |
+| 3 | p5_jv_parcial | **error** | «Conformidad parcial: lo acordado se aprueba y lo demás va a juicio verbal (art. 787.6)» | Retirado: el art. 787.6 regula la suspensión por causa penal; sin conformidad de todos, juicio verbal (art. 787.5) | LEC |
+| 4 | fin_partidor_previo, fin_acuerdo_coherederos | **error** | «Arts. 66 bis/66 ter LN» (no existen); mediación «Ley 36/2006»; arbitraje como alternativa | Contador dativo por el LAJ (art. 92 LJV) o Notario (art. 1057 CC); reparto por los herederos (art. 1058 CC); lo demás, retirado | LJV, CC |
+| 5 | p0_competencia, fin_inhibicion | **error** | «Art. 15.1 LEC», «art. 45.2 LEC (examen de oficio)», «Juzgados de Paz hasta 2.000 € (art. 85 LEC)», «art. 48», «art. 51: conflictos», «art. 53: TSJ», «inhibitoria», Reglamento (UE) 650/2012 | Art. 52.1.4.º LEC (último domicilio del finado); examen de oficio por el LAJ con audiencia del Fiscal y las partes y auto del Juez (art. 58 LEC); conflicto: art. 60 LEC | LEC |
+| 6 | p5_decreto, p6_protocolizacion | **error** | «Art. 205 LH: la escritura de partición es título inscribible» | Retirado: el art. 205 LH regula la inmatriculación | LH |
+| 7 | p0_inicio, fin_sin_masc | error | Requisito de los MASC «insubsanable»; «un año para acudir a la vía judicial»; «declaración responsable del letrado» | Lo que dicen los arts. 5, 7 y 10 LO 1/2025 y 264.4.º y 403.2 LEC (la declaración responsable es de la parte y solo por desconocer el domicilio o el medio) | LO 1/2025, LEC |
+| 8 | p2_gananciales, p2_jv_gananciales | **error** | «Art. 806 CC: la adjudicación de la cuota usufructuaria exige liquidar gananciales»; STS 261/2013 y 489/2016; juicio verbal de gananciales «art. 794.2» con cosa juzgada | Retirados (decisión 10 y sin base); la liquidación de gananciales, por los arts. 806 y ss. LEC o de común acuerdo | LEC |
+| 9 | p2_inventario | error | Controversia sobre el inventario «art. 794.2» | Art. 794.4 (vista y juicio verbal; deja a salvo derechos de terceros) | LEC |
+| 10 | p2_convocatoria | error | Acreedores del coheredero convocados «art. 783.5» (no existe); «no es preceptiva la intervención de abogado ni procurador» | Convocados según el art. 783.2 y 4; lo demás, retirado | LEC |
+| 11 | fin_inadmitida | error | «Reposición en cinco días (art. 451) y subsidiariamente apelación» | Retirado (no comprobado); se dice que puede volver a presentarse | — |
+| 12 | p3_* | error | «Responsabilidad del contador (arts. 124 ss. LEC)»; «el plazo se cuenta desde la aceptación del nuevo contador»; honorarios «a partes iguales proporcionalmente» | Arts. 785.2 y 3 LEC; art. 1064 CC; lo demás, retirado | LEC, CC |
+| 13 | p0_legitimacion | **error** | El legatario de parte alícuota saltaba la comprobación de contador-partidor | Ambos legitimados pasan por ella (art. 782.1) | LEC |
+| 14 | p4_presentacion, p5_jv_total | estructura | Preguntas cuyas respuestas no correspondían a la pregunta | Preguntas y respuestas coherentes | — |
+| 15 | fin_exitoso, p6_entrega | error | Impuesto de sucesiones (6 meses), plusvalía municipal | Retirados (decisión 9) | — |
+| 16 | Varios | desfasado | Juzgado de Primera Instancia | Sección Civil del Tribunal de Instancia | LO 1/2025 |
+
+Pasos retirados: `p2_jv_gananciales`, `p5_jv_parcial`, `p5_sentencia_est`, `p5_sentencia_des` (las dos sentencias se unen en `p5_sentencia`).

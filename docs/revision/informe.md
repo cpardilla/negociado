@@ -37,7 +37,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-subastas | Esquema · LJV · Título VII · Subastas voluntarias | 1E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Esquema · LJV · Título IX · Conciliación | · | · | · | · | · | · | 3R |
 | lec-diligencias-preliminares | Guía · LEC · Diligencias preliminares | · | · | · | · | · | · | · |
-| lec-division-herencia | Guía · LEC · División de la herencia | 11A 6R | · | · | · | · | · | 2R |
+| lec-division-herencia | Guía · LEC · División de la herencia | · | · | · | · | · | · | · |
 | lec-intervencion-caudal | Guía · LEC · Intervención del caudal hereditario | · | · | · | · | · | · | · |
 | lec-administracion-caudal | Guía · LEC · Administración del caudal hereditario | 1R | · | · | · | 1R | 1E | 1R |
 | lec-liquidacion-rem | Guía · LEC · Liquidación del régimen económico matrimonial | 7R | · | · | · | · | · | 3R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 60E 29A 51R | 0E 0A 0R | 0E 0A 0R | 0E 0A 6R | 0E 0A 3R | 4E 0A 1R | 0E 0A 69R |
+| | **Total** | 60E 18A 45R | 0E 0A 0R | 0E 0A 0R | 0E 0A 6R | 0E 0A 3R | 4E 0A 1R | 0E 0A 67R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,22 +69,22 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2406
-- ✓ LEC (BOE a 07-10-2026): 1499
-- ✓ CC (BOE a 07-09-2026): 1303
+- ✓ LJV (BOE a 05-03-2026): 2404
+- ✓ LEC (BOE a 07-10-2026): 1373
+- ✓ CC (BOE a 07-09-2026): 1255
 - ✓ LOPJ (BOE a 09-10-2026): 89
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - UE: 40
-- ✓ CE (BOE a 20-05-2026): 38
+- ✓ CE (BOE a 20-05-2026): 36
 - ✓ LRC (BOE a 24-02-2026): 36
 - ✓ LPPD (BOE a 18-12-2025): 36
 - ✓ LOPDH (BOE a 16-12-2025): 33
-- ✓ LH (BOE a 07-01-2026): 32
 - ✓ LN (BOE a 22-10-2026): 31
+- ✓ LH (BOE a 07-01-2026): 29
 - ✓ RDTO (BOE a 19-12-2025): 25
 - ✓ LTO (BOE a 16-12-2025): 19
-- LO 1/2025: 15
+- LO 1/2025: 16
 - ✓ LSC (BOE a 19-12-2025): 7
 - ✓ CCom (BOE a 16-12-2025): 4
 - ✓ LCS (BOE a 05-10-2026): 4
@@ -101,12 +101,11 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 40/2015: 2
 - Ley 10/2012: 2
 - LO 3/2007: 1
-- Reglamento: 1
 - Ley 54/2007: 1
 - ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 343 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 329 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -293,30 +292,7 @@ Sin hallazgos automáticos.
 
 ### lec-division-herencia · Guía · LEC · División de la herencia
 
-**citas**
-
-- [aviso] «art. 786.4»: el art. 786 LEC no tiene apartado 4 (tiene 1, 2) — _paso «p3_contador_acuerdo» › plazo 3_
-- [aviso] «art. 786.4»: el art. 786 LEC no tiene apartado 4 (tiene 1, 2) — _paso «p3_sustitucion» › plazo 3_
-- [aviso] «art. 786.4»: el art. 786 LEC no tiene apartado 4 (tiene 1, 2) — _paso «p4_incumplimiento» › info 1_
-- [aviso] «art. 786.4»: el art. 786 LEC no tiene apartado 4 (tiene 1, 2) — _paso «p4_presentacion» › nota 4_
-- [aviso] «art. 787.7»: el art. 787 LEC no tiene apartado 7 (tiene 1, 2, 3, 4, 5, 6) — _paso «p5_jv_parcial» › aviso 4_
-- [aviso] «art. 787.7»: el art. 787 LEC no tiene apartado 7 (tiene 1, 2, 3, 4, 5, 6) — _paso «p5_reformas» › nota 4_
-- [aviso] «art. 787.7»: el art. 787 LEC no tiene apartado 7 (tiene 1, 2, 3, 4, 5, 6) — _paso «p5_sentencia_des» › aviso 3_
-- [aviso] «Art. 787.7»: el art. 787 LEC no tiene apartado 7 (tiene 1, 2, 3, 4, 5, 6) — _paso «p5_sentencia_des» › ley 4_
-- [aviso] «art. 787.7»: el art. 787 LEC no tiene apartado 7 (tiene 1, 2, 3, 4, 5, 6) — _paso «p5_sentencia_est» › aviso 3_
-- [aviso] «Art. 787.7»: el art. 787 LEC no tiene apartado 7 (tiene 1, 2, 3, 4, 5, 6) — _paso «p5_sentencia_est» › ley 4_
-- [aviso] «art. 787.7»: el art. 787 LEC no tiene apartado 7 (tiene 1, 2, 3, 4, 5, 6) — _paso «fin_exitoso» › aviso 5_
-- [revisar] «Arts. 66 bis»: el art. 66 bis no existe en la LEC (ley por defecto) — _paso «fin_partidor_previo» › ley 2_
-- [revisar] «Art. 264.1.4.º»: el art. 264 LEC no tiene apartado 1 (no tiene apartados numerados) — _paso «fin_sin_masc» › ley 2_
-- [revisar] «Art. 45.2»: el art. 45 LEC no tiene apartado 2 (no tiene apartados numerados) — _paso «p0_competencia» › ley 2_
-- [revisar] «Art. 45.2»: el art. 45 LEC no tiene apartado 2 (no tiene apartados numerados) — _paso «p0_competencia» › ley 6_
-- [revisar] «Art. 264.1.4.º»: el art. 264 LEC no tiene apartado 1 (no tiene apartados numerados) — _paso «p0_inicio» › ley 2_
-- [revisar] «art. 264.1.4.º»: el art. 264 LEC no tiene apartado 1 (no tiene apartados numerados) — _paso «p0_documentacion» › comprobación 3.3_
-
-**terminologia**
-
-- [revisar] «Juzgado de Primera Instancia» × 4 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «p0_competencia» › info 1 | paso «p0_competencia» › nota 3 | paso «p0_competencia» › nota 7 …_
-- [revisar] «Juzgado de Paz» × 1 → Juzgados de Paz → Oficinas de Justicia en los municipios (LO 1/2025) — verificar — _paso «p0_competencia» › nota 3_
+Sin hallazgos automáticos.
 
 ### lec-intervencion-caudal · Guía · LEC · Intervención del caudal hereditario
 
