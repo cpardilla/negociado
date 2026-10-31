@@ -19,7 +19,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-filiacion | Esquema · LJV · Reconocimiento de la filiación no matrimonial | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-12-14 | Esquema · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-reversion | Esquema · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
-| ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | · | · | · | · | · | · | 3R |
+| ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | 1E | · | · | · | · | · | 3R |
 | ljv-adopcion | Esquema · LJV · Adopción | · | · | · | 1R | · | · | 1R |
 | ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | · | · | · | 1R | · | · | 1R |
@@ -44,7 +44,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-filiacion | Guía · LJV · Reconocimiento de la filiación no matrimonial | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-12-14 | Guía · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-reversion | Guía · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
-| ljv-defensor-judicial | Guía · LJV · Habilitación para comparecer y defensor judicial | · | · | · | · | · | · | 1R |
+| ljv-defensor-judicial | Guía · LJV · Habilitación para comparecer y defensor judicial | 1E | · | · | · | · | · | 1R |
 | ljv-adopcion | Guía · LJV · Adopción | · | · | · | · | · | 1E | 1R |
 | ljv-medidas-apoyo | Guía · LJV · Medidas judiciales de apoyo a personas con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Guía · LJV · Tutela, curatela y guarda de hecho | 3E 1A 1R | · | · | · | · | 1E | 2R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 60E 4A 36R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 3E 0A 1R | 0E 0A 60R |
+| | **Total** | 62E 4A 36R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 3E 0A 1R | 0E 0A 60R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,17 +69,17 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2401
-- ✓ CC (BOE a 07-09-2026): 1209
+- ✓ LJV (BOE a 05-03-2026): 2403
+- ✓ CC (BOE a 07-09-2026): 1218
 - ✓ LEC (BOE a 07-10-2026): 1116
 - ✓ LOPJ (BOE a 09-10-2026): 91
 - ✓ LTRANS (BOE a 20-12-2025): 62
 - ✓ LOPJM (BOE a 18-12-2025): 48
+- ✓ LRC (BOE a 24-02-2026): 38
 - ✓ LPPD (BOE a 18-12-2025): 36
 - UE: 33
 - ✓ LOPDH (BOE a 16-12-2025): 33
 - ✓ CE (BOE a 20-05-2026): 31
-- ✓ LRC (BOE a 24-02-2026): 31
 - ✓ LN (BOE a 22-10-2026): 30
 - ✓ RDTO (BOE a 19-12-2025): 25
 - ✓ LH (BOE a 07-01-2026): 22
@@ -165,6 +165,10 @@ Sin hallazgos automáticos.
 - [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Artículos del Capítulo I ter» › tarjeta «Artículo 26 septies» › «Competencia territorial» › 1 | sección «Mapa de participantes y actores» › 1 › grupo «Órganos judiciales».1_
 
 ### ljv-defensor-judicial · Esquema · LJV · Habilitación para comparecer y defensor judicial
+
+**citas**
+
+- [error] «art. 299 bis»: el art. 299 bis CC está sin contenido/derogado — _sección «Capítulo II — Artículos 27 a 32» › tarjeta «Artículo 30» › «Inscripción en el Registro Civil (art. 30.3)» › 1 › punto.1_
 
 **terminologia**
 
@@ -327,6 +331,10 @@ Sin hallazgos automáticos.
 - [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › info 1 | paso «competencia_menor_14_16» › info 1_
 
 ### ljv-defensor-judicial · Guía · LJV · Habilitación para comparecer y defensor judicial
+
+**citas**
+
+- [error] «art. 299 bis»: el art. 299 bis CC está sin contenido/derogado — _paso «resolucion_estimatoria» › nota 4_
 
 **terminologia**
 

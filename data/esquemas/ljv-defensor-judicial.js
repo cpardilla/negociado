@@ -455,7 +455,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "El art. 30.3 manda remitir al Registro Civil el testimonio del nombramiento «en el caso previsto en la letra c) del apartado 1 del artículo 27». Esa letra la suprimió la Ley 8/2021: se refería al defensor nombrado para administrar los bienes mientras se constituía la tutela o curatela, supuesto que hoy recoge el art. 295.4.º CC (provisión de medidas de apoyo en trámite). No se refiere a la imposibilidad de hecho del art. 27.2.c). Véase también el art. 74 LRC."
+             "t":"El art. 30.3 manda remitir al Registro Civil el testimonio del nombramiento «en el caso previsto en la letra c) del apartado 1 del artículo 27». Esa letra la suprimió la Ley 8/2021: se refería al defensor nombrado para administrar los bienes mientras se constituía la tutela o curatela, supuesto que hoy recoge el art. 295.4.º CC (provisión de medidas de apoyo en trámite). No se refiere a la imposibilidad de hecho del art. 27.2.c). El art. 74.1 LRC conserva una remisión igual de desfasada (al art. 299 bis CC, derogado); ambas se leen referidas al art. 295.4.º CC."
+            },
+            {
+             "t":"Criterio del juzgado: se remite testimonio (art. 22.2 LJV) del nombramiento del art. 295.4.º CC; del de cualquier otro defensor judicial de una persona con discapacidad, que es medida de apoyo (art. 250 CC; art. 72.1 LRC; art. 300 CC); y del defensor del menor emancipado (art. 4.13.º LRC). No, por defecto, el del menor no emancipado para un litigio o expediente concreto."
             }
            ]
           }
@@ -468,9 +471,10 @@ Neg.data.register({
        "Art. 22 LJV",
        "Art. 9 LO 1/1996",
        "Arts. 236 y 295 CC",
-       "Ley 20/2011 RC"
+       "Arts. 4, 72 y 74 LRC",
+       "Art. 300 CC"
       ],
-      "claves": "artículo 30 comparecencia resolución sujetos convocados ministerio fiscal menor 12 años madurez criterio nombramiento más idóneo inscripción registro civil supuesto c imposibilidad hecho art 295 cc art 236 cc"
+      "claves": "artículo 30 comparecencia resolución sujetos convocados ministerio fiscal menor 12 años madurez criterio nombramiento más idóneo inscripción registro civil supuesto c imposibilidad hecho art 295 cc art 236 cc art 295.4 administración bienes medidas de apoyo menor emancipado lrc 72 74"
      }
     },
     {
@@ -722,7 +726,7 @@ Neg.data.register({
         "t": "Juez (recurso de revisión contra los decretos del LAJ, art. 20.2)"
        },
        {
-        "t": "Registro Civil (inscripción en el caso del art. 30.3; art. 74 LRC)"
+        "t": "Registro Civil (inscripción: art. 30.3 LJV leído con el art. 295.4.º CC; arts. 4.11.º, 4.13.º, 72 y 74 LRC)"
        }
       ]
      }

@@ -63,4 +63,17 @@ Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Trib
 
 Pasos: 44 → 41 (retirados `competencia_rc`, `inscripcion_rc`, `recurso_apelacion`).
 
-**Pendiente del propietario**: la misma pregunta que en E12 sobre el art. 30.3 LJV (qué nombramientos de defensor judicial se comunican en la práctica al Registro Civil).
+**Pregunta al propietario** sobre el art. 30.3 LJV: resuelta el mismo día (decisión 15; véase abajo).
+
+## Corrección posterior (2026-10-31) · Decisión 15: comunicación al Registro Civil
+
+Criterio del propietario (ROADMAP §10, decisión 15), contrastado con el BOE (LJV a 05-03-2026; CC a 07-09-2026; LRC a 24-02-2026): redacción anterior del art. 27.1.c) LJV; arts. 250, 295, 299 bis (derogado) y 300 CC; arts. 4.11.º y 4.13.º, 72.1 y 74.1 LRC; art. 22.2 LJV.
+
+| Recurso | Lugar | Antes | Ahora |
+|---|---|---|---|
+| G09 | resolucion_estimatoria | Nota: remisión del art. 30.3 a una letra suprimida; pregunta abierta | Lista de comunicación al Registro Civil por testimonio (art. 22.2 LJV): sí en el art. 295.4.º CC (arts. 30.3 LJV y 74.1 LRC); sí en cualquier otro defensor de persona con discapacidad, que es medida de apoyo (art. 250 CC; art. 72.1 LRC; art. 300 CC); sí en el del menor emancipado (art. 4.13.º LRC); no, por defecto, en el del menor no emancipado para un asunto concreto. Nota: las remisiones desfasadas de los arts. 30.3 LJV y 74.1 LRC se leen referidas al art. 295.4.º CC |
+| G09 | verif_imposibilidad | Nota larga con la pregunta abierta | Remisión breve al paso del decreto |
+| E12 | Artículo 30 › Inscripción en el Registro Civil | Remisión desfasada del art. 30.3 | Añadida la del art. 74.1 LRC y el criterio de comunicación; normas y claves actualizadas |
+| E12 | Sujetos | «Registro Civil (art. 30.3; art. 74 LRC)» | Art. 30.3 LJV leído con el art. 295.4.º CC; arts. 4.11.º, 4.13.º, 72 y 74 LRC |
+
+Comprobador tras el cambio: 2 «errores» intencionados (la mención del art. 299 bis CC, derogado, al explicar la remisión desfasada del art. 74.1 LRC), uno en G09 y otro en E12.

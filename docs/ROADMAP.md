@@ -288,11 +288,13 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 12. ✅ (2026-10-30) **Hechos pasados (arts. 80 bis–80 quinquies LJV)**: Juzgado de Primera Instancia, hoy la Sección Civil del Tribunal de Instancia; no se trata como materia de personas y familia del art. 86.5 j) LOPJ.
 13. ✅ (2026-10-30) **Venta por persona o entidad especializada en subasta voluntaria (art. 110.3 LJV)**: sigue habilitada pese al vaciado de los arts. 641 y 642 LEC; el LAJ decide; integración por el art. 8 LJV, con el art. 640 LEC como referencia; la resolución fija condiciones y la aprobación posterior de la transmisión.
 14. ✅ (2026-10-30) **Conciliación ante el Juez de Paz**: umbral de 10.000 € (art. 47.2 LEC y art. 14.6 LO 1/2025); el de 6.000 € del art. 140.1 LJV queda desplazado. Cautela: posible concurrencia con el LAJ entre 6.000 y 10.000 €, sin resolver expresamente.
+15. ✅ (2026-10-31) **Defensor judicial y Registro Civil**: el art. 30.3 LJV (remite a la letra c) del art. 27.1, suprimida) y el art. 74.1 LRC (remite al art. 299 bis CC, derogado) se leen referidos al art. 295.4.º CC. Se remite testimonio (art. 22.2 LJV) del nombramiento del art. 295.4.º CC; del de cualquier defensor judicial de una persona con discapacidad, que es medida de apoyo (art. 250 CC; art. 72.1 LRC; art. 300 CC); y del defensor del menor emancipado (art. 4.13.º LRC). No, por defecto, del defensor del menor no emancipado para un litigio o expediente concreto.
 
 ## 11. Registro de cambios del plan
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-31 · Decisión 15 (defensor judicial y Registro Civil) aplicada a G09 y E12.
 - 2026-10-31 · Fase 5 · G09 (defensor judicial) revisada. Siguiente: G10.
 - 2026-10-31 · Fase 5 · G08 (nueva modificación tras reversión) revisada. Siguiente: G09.
 - 2026-10-31 · Fase 5 · G07 (mención del sexo, 12–14 años) revisada. Siguiente: G08.

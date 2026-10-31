@@ -246,7 +246,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El art. 30.3 LJV manda inscribir en el Registro Civil el nombramiento «en el caso previsto en la letra c) del apartado 1 del artículo 27», letra que la Ley 8/2021 suprimió (el supuesto pasó al art. 295.4.º CC: defensor mientras se tramita la provisión de medidas de apoyo, para administrar los bienes). No se refiere a la imposibilidad de hecho del art. 27.2.c). Pregunta abierta al propietario sobre la práctica del juzgado."
+     "texto": "La inscripción en el Registro Civil del art. 30.3 LJV no se refiere a este supuesto de imposibilidad de hecho; qué nombramientos se comunican al Registro se indica en el paso del decreto de nombramiento."
     },
     {
      "tipo": "ley",
@@ -631,12 +631,23 @@ Neg.data.register({
      "marcar": true
     },
     {
+     "tipo": "lista",
+     "titulo": "Comunicación al Registro Civil: testimonio del decreto (art. 22.2 LJV)",
+     "marcar": true,
+     "items": [
+      "Sí, siempre: defensor para administrar los bienes mientras se tramita la provisión de medidas judiciales de apoyo (art. 295.4.º CC; arts. 30.3 LJV y 74.1 LRC)",
+      "Sí: cualquier otro defensor judicial de una persona con discapacidad (art. 295.1.º, 2.º, 3.º y 5.º CC), que es una medida de apoyo (art. 250 CC; art. 72.1 LRC; art. 300 CC)",
+      "Sí: defensor judicial del menor emancipado (art. 4.13.º LRC)",
+      "No, por defecto: defensor del menor no emancipado para un litigio o expediente concreto (la ley no prevé su inscripción)"
+     ]
+    },
+    {
      "tipo": "nota",
-     "texto": "El art. 30.3 LJV manda inscribir en el Registro Civil el nombramiento «en el caso previsto en la letra c) del apartado 1 del artículo 27», letra que la Ley 8/2021 suprimió (el supuesto pasó al art. 295.4.º CC: defensor mientras se tramita la provisión de medidas de apoyo, para administrar los bienes). No se refiere a la imposibilidad de hecho del art. 27.2.c). Pregunta abierta al propietario sobre la práctica del juzgado."
+     "texto": "Criterio del juzgado. El art. 30.3 LJV remite a la letra c) del art. 27.1, suprimida por la Ley 8/2021, y el art. 74.1 LRC al art. 299 bis CC, derogado: ambos se leen hoy referidos al art. 295.4.º CC, que recoge el mismo supuesto."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 30.2 y 3 LJV · Arts. 235–236 CC · Arts. 295–298 CC"
+     "texto": "Art. 30.2 y 3 LJV · Art. 22.2 LJV · Arts. 235–236, 250 y 295–300 CC · Arts. 4, 72 y 74 LRC"
     }
    ],
    "siguiente": "notificacion_nombramiento"
