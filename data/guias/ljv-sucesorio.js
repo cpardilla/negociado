@@ -244,7 +244,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La decisión de la renuncia y la prórroga corresponde al LAJ (art. 91.4 LJV). Hoy, la Sección Civil del Tribunal de Instancia: el Título IV es materia sucesoria, no de personas y familia (art. 86.5 j) LOPJ)."
+     "texto": "La decisión de la renuncia y la prórroga corresponde al LAJ (art. 91.4 LJV). Hoy, la Sección Civil del Tribunal de Instancia (art. 85.2.º LOPJ): el Título IV es materia sucesoria, no de personas y familia del art. 86.5 j) LOPJ, aunque el llamado sea menor o tenga medidas de apoyo (decisión 19)."
     }
    ],
    "siguiente": "alb_postulacion"
@@ -260,7 +260,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Hoy, la Sección Civil del Tribunal de Instancia: el Título IV es materia sucesoria, no de personas y familia (art. 86.5 j) LOPJ)."
+     "texto": "Hoy, la Sección Civil del Tribunal de Instancia (art. 85.2.º LOPJ): el Título IV es materia sucesoria, no de personas y familia del art. 86.5 j) LOPJ, aunque el llamado sea menor o tenga medidas de apoyo (decisión 19)."
     },
     {
      "tipo": "ley",
@@ -370,7 +370,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La tramitación y decisión corresponden al LAJ (art. 92.3 LJV), que también fija los fueros. Hoy, la Sección Civil del Tribunal de Instancia: el Título IV es materia sucesoria, no de personas y familia (art. 86.5 j) LOPJ)."
+     "texto": "La tramitación y decisión corresponden al LAJ (art. 92.3 LJV), que también fija los fueros. Hoy, la Sección Civil del Tribunal de Instancia (art. 85.2.º LOPJ): el Título IV es materia sucesoria, no de personas y familia del art. 86.5 j) LOPJ, aunque el llamado sea menor o tenga medidas de apoyo (decisión 19)."
     },
     {
      "tipo": "ley",
@@ -487,7 +487,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Cuando sea llamado a la herencia un menor o una persona con medidas judiciales de apoyo a personas con discapacidad, el artículo 94.1, párrafo segundo, LJV atribuye la competencia al Juzgado del lugar donde estos residan. Hoy, la Sección Civil del Tribunal de Instancia: el Título IV es materia sucesoria, no de personas y familia (art. 86.5 j) LOPJ). Este fuero prevalece sobre el fuero general del art. 94.1 párrafo primero."
+     "texto": "Cuando sea llamado a la herencia un menor o una persona con medidas judiciales de apoyo a personas con discapacidad, el artículo 94.1, párrafo segundo, LJV atribuye la competencia al Juzgado del lugar donde estos residan. Hoy, la Sección Civil del Tribunal de Instancia (art. 85.2.º LOPJ): el Título IV es materia sucesoria, no de personas y familia del art. 86.5 j) LOPJ, aunque el llamado sea menor o tenga medidas de apoyo (decisión 19). Este fuero prevalece sobre el fuero general del art. 94.1 párrafo primero."
     },
     {
      "tipo": "ley",
@@ -522,7 +522,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Hoy, la Sección Civil del Tribunal de Instancia: el Título IV es materia sucesoria, no de personas y familia (art. 86.5 j) LOPJ)."
+     "texto": "Hoy, la Sección Civil del Tribunal de Instancia (art. 85.2.º LOPJ): el Título IV es materia sucesoria, no de personas y familia del art. 86.5 j) LOPJ, aunque el llamado sea menor o tenga medidas de apoyo (decisión 19)."
     },
     {
      "tipo": "ley",
