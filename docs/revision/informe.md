@@ -45,7 +45,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-mencion-sexo-12-14 | Guía · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-reversion | Guía · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
 | ljv-defensor-judicial | Guía · LJV · Habilitación para comparecer y defensor judicial | 1E | · | · | · | · | · | 1R |
-| ljv-adopcion | Guía · LJV · Adopción | · | · | · | · | · | 1E | 1R |
+| ljv-adopcion | Guía · LJV · Adopción | · | · | · | · | · | · | 1R |
 | ljv-medidas-apoyo | Guía · LJV · Medidas judiciales de apoyo a personas con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Guía · LJV · Tutela, curatela y guarda de hecho | 3E 1A 1R | · | · | · | · | 1E | 2R |
 | ljv-emancipacion | Guía · LJV · Emancipación y beneficio de la mayoría de edad | 49E | · | · | · | · | 1E 1R | 3R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 62E 4A 36R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 3E 0A 1R | 0E 0A 60R |
+| | **Total** | 62E 4A 36R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 2E 0A 1R | 0E 0A 60R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,10 +69,10 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2403
-- ✓ CC (BOE a 07-09-2026): 1218
-- ✓ LEC (BOE a 07-10-2026): 1116
-- ✓ LOPJ (BOE a 09-10-2026): 91
+- ✓ LJV (BOE a 05-03-2026): 2415
+- ✓ CC (BOE a 07-09-2026): 1223
+- ✓ LEC (BOE a 07-10-2026): 1119
+- ✓ LOPJ (BOE a 09-10-2026): 93
 - ✓ LTRANS (BOE a 20-12-2025): 62
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - ✓ LRC (BOE a 24-02-2026): 38
@@ -105,7 +105,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 329 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 330 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -341,10 +341,6 @@ Sin hallazgos automáticos.
 - [revisar] «Juzgado de Primera Instancia» × 4 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › info 1 | paso «competencia» › comprobación 2.1 | paso «competencia» › comprobación 2.2 …_
 
 ### ljv-adopcion · Guía · LJV · Adopción
-
-**grafos**
-
-- [error] pasos inalcanzables desde «inicio»: exclusion_extincion, fin_extincion, adopcion_internacional, conversion_simple — _grafo_
 
 **terminologia**
 

@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G10.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G10.json; revisado con el BOE (registro: docs/revision/ljv-adopcion.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-adopcion",
@@ -19,7 +19,7 @@ Neg.data.register({
   "42"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G10"
  },
@@ -34,7 +34,7 @@ Neg.data.register({
  "actores": {
   "ambos": "Juez / LAJ",
   "juez": "Juez",
-  "laj": "Letrado A. Justicia"
+  "laj": "Letrado de la Administración de Justicia"
  },
  "inicio": "inicio",
  "pasos": {
@@ -57,29 +57,42 @@ Neg.data.register({
      "items": [
       "Ser huérfano y pariente del adoptante en tercer grado por consanguinidad o afinidad",
       "Ser hijo del cónyuge o persona unida por análoga relación de afectividad a la conyugal",
-      "Llevar más de un año en guarda con fines de adopción o bajo tutela del adoptante",
+      "Llevar más de un año en guarda con fines de adopción o haber estado bajo tutela del adoptante por el mismo tiempo",
       "Ser mayor de edad o menor emancipado"
      ],
      "marcar": true
     },
     {
      "tipo": "ley",
-     "texto": "Art. 33, 34 y 35.1 Ley 15/2015 · Art. 176 Código Civil"
+     "texto": "Arts. 33, 34, 35 y 40 a 42 Ley 15/2015 · Art. 176 Código Civil"
     }
    ],
-   "pregunta": "¿Existe propuesta previa de la Entidad Pública a favor del adoptante?",
+   "pregunta": "¿Qué se tramita?",
    "opciones": [
     {
-     "texto": "Sí, hay propuesta previa de la Entidad Pública",
+     "texto": "Constitución de la adopción con propuesta previa de la Entidad Pública (art. 35.1 LJV)",
      "tono": "t-ok",
-     "nota": "Sí",
      "destino": "propuesta_ep"
     },
     {
-     "texto": "No, concurre una excepción del artículo 176 del Código Civil",
-     "tono": "t-plazo",
-     "nota": "No",
+     "texto": "Constitución sin propuesta: concurre una excepción del art. 176.2 CC (art. 35.3 LJV)",
+     "tono": "t-nota",
      "destino": "ofrecimiento_adoptante"
+    },
+    {
+     "texto": "Conversión de una adopción simple o no plena extranjera en plena (art. 42 LJV)",
+     "tono": "t-nota",
+     "destino": "conversion_simple"
+    },
+    {
+     "texto": "Adopción internacional (art. 41 LJV)",
+     "tono": "t-nota",
+     "destino": "adopcion_internacional"
+    },
+    {
+     "texto": "Exclusión de funciones tuitivas del adoptante o extinción de la adopción (art. 40 LJV)",
+     "tono": "t-aviso",
+     "destino": "exclusion_extincion"
     }
    ]
   },
@@ -97,13 +110,13 @@ Neg.data.register({
      "titulo": "La propuesta debe expresar especialmente (art. 35.2 LJV):",
      "items": [
       "a) Condiciones personales, familiares, sociales y medios de vida del adoptante y sus relaciones con el adoptando, con detalle de las razones que justifiquen la elección.",
-      "b) Último domicilio conocido del cónyuge del adoptante o persona unida por análoga relación de afectividad, o el de los progenitores, tutor, familia acogedora o guardadores del adoptando.",
+      "b) En su caso, cuando hayan de asentir o ser oídos, el último domicilio conocido del cónyuge del adoptante o persona unida por análoga relación de afectividad, o el de los progenitores, tutor, familia acogedora o guardadores del adoptando.",
       "c) Si unos y otros han formulado su asentimiento ante la Entidad Pública o en documento público."
      ],
      "marcar": true
     },
     {
-     "tipo": "plazo",
+     "tipo": "nota",
      "texto": "Con la propuesta se presentarán la declaración previa de idoneidad del adoptante para el ejercicio de la patria potestad emitida por la Entidad Pública, si procediere, y cuantos informes o documentos se juzguen oportunos (art. 35.4 LJV)."
     },
     {
@@ -152,8 +165,12 @@ Neg.data.register({
      "marcar": true
     },
     {
+     "tipo": "nota",
+     "texto": "Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 j) LOPJ) o, si no, la Sección Civil."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 33 Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria"
+     "texto": "Art. 33 Ley 15/2015 · Art. 86.5 LOPJ"
     }
    ],
    "siguiente": "intervencion_fiscal"
@@ -198,11 +215,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Los consentimientos y asentimientos deberán otorgarse libremente, en la forma legal requerida y por escrito, previa información de sus consecuencias jurídicas."
+     "texto": "Los consentimientos y asentimientos deberán otorgarse libremente, en la forma legal requerida y por escrito, previa información de sus consecuencias (art. 177.4 CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 36 Ley 15/2015 · Art. 177.1 Código Civil"
+     "texto": "Art. 36 Ley 15/2015 · Art. 177.1 y 4 Código Civil"
     }
    ],
    "siguiente": "asentimiento"
@@ -214,11 +231,21 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Determinar la necesidad de asentimiento de otras personas según el artículo 177.2 del Código Civil. Deberán ser citados para prestar asentimiento ante el Juez: 1.º El cónyuge o persona unida al adoptante por análoga relación de afectividad, salvo separación o divorcio legal o ruptura fehaciente. 2.º Los progenitores del adoptando que no se hallare emancipado, a menos que estuvieran privados de la patria potestad por sentencia firme o incursos en causa legal para tal privación."
+     "texto": "Determinar la necesidad de asentimiento de otras personas según el artículo 177.2 del Código Civil. Deberán ser citados para prestar asentimiento ante el Juez: 1.º El cónyuge o persona unida al adoptante por análoga relación de afectividad, salvo separación o divorcio legal o ruptura de la pareja que conste fehacientemente, excepto si la adopción se formaliza de forma conjunta. 2.º Los progenitores del adoptando que no se hallare emancipado, a menos que estuvieran privados de la patria potestad por sentencia firme o incursos en causa legal para tal privación."
     },
     {
      "tipo": "nota",
      "texto": "No serán citados aquellos que, siendo necesario su asentimiento, lo hubieran prestado con anterioridad a la iniciación del expediente ante la correspondiente Entidad Pública o en documento público, salvo que hubieran transcurrido más de seis meses desde que lo hicieron."
+    },
+    {
+     "tipo": "lista",
+     "titulo": "No es necesario el asentimiento (art. 177.2 CC)",
+     "marcar": true,
+     "items": [
+      "Cuando quien deba prestarlo esté imposibilitado, lo que se aprecia motivadamente en el auto que constituya la adopción",
+      "De los progenitores con la patria potestad suspendida, pasados dos años desde la notificación de la declaración de desamparo sin oposición, o desestimada la interpuesta en plazo (art. 172.2 CC)",
+      "La privación de la patria potestad o la causa legal para ella solo puede apreciarse en el procedimiento contradictorio de la LEC"
+     ]
     },
     {
      "tipo": "aviso",
@@ -229,7 +256,7 @@ Neg.data.register({
      "texto": "Art. 37.1 Ley 15/2015 · Art. 177.2 Código Civil"
     }
    ],
-   "pregunta": "¿Deben otros sujetos prestar asentimiento a la adopción (cónyuge del adoptante, progenitores no emancipados)?",
+   "pregunta": "¿Deben otros sujetos prestar asentimiento a la adopción (cónyuge o pareja del adoptante, progenitores del adoptando no emancipado)?",
    "opciones": [
     {
      "texto": "Sí, deben prestar asentimiento y no lo han prestado aún",
@@ -297,8 +324,12 @@ Neg.data.register({
      "texto": "Plazo de 15 días para la presentación de la demanda, de la que conocerá el mismo Tribunal (art. 37.2 LJV)."
     },
     {
+     "tipo": "nota",
+     "texto": "El art. 781.1 LEC, para el mismo trámite, dice que el LAJ señala el plazo que estime necesario, «que no podrá ser superior a veinte días». La guía sigue el art. 37.2 LJV (quince días). Pendiente de criterio del propietario."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 37.2 Ley 15/2015 · Art. 781 LEC"
+     "texto": "Art. 37.2 Ley 15/2015 · Art. 781.1 LEC"
     }
    ],
    "pregunta": "¿Presentan los progenitores demanda dentro del plazo de 15 días?",
@@ -336,7 +367,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 37.2 párrafo 4º Ley 15/2015"
+     "texto": "Art. 37.2, párrafo tercero, Ley 15/2015 · Art. 781.2 LEC"
     }
    ],
    "siguiente": "audiencia"
@@ -352,11 +383,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La tramitación se realizará como pieza separada, con arreglo a lo previsto en el artículo 753 LEC. Una vez firme la resolución que se dicte en la pieza separada sobre la necesidad del asentimiento, se continuará con la adopción."
+     "texto": "La demanda se tramita con arreglo al art. 753 LEC (art. 781.1 LEC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 37.2 párrafo 3º LJV · Art. 781 y 753 LEC"
+     "texto": "Art. 37.2, párrafo segundo, LJV · Arts. 781.1 y 753 LEC"
     }
    ],
    "fin": "warning"
@@ -395,6 +426,10 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "Proceder a realizar las citaciones para asentimiento y audiencia. En las citaciones que deban prestar su asentimiento o ser oídas se incluirá el apercibimiento de que si fueran citados personalmente y no comparecieran se seguirá el trámite sin más citaciones."
+    },
+    {
+     "tipo": "nota",
+     "texto": "En la citación a los progenitores se hace constar, en su caso, la circunstancia por la cual basta su audiencia (art. 38.1 LJV)."
     },
     {
      "tipo": "nota",
@@ -500,7 +535,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Sin perjuicio del derecho que a los progenitores concede el apartado 2 del artículo 180 del Código Civil: podrán solicitar la extinción de la adopción en los 2 años siguientes si no intervinieron sin culpa suya."
+     "texto": "Sin perjuicio del derecho del art. 180.2 CC: los progenitores que, sin culpa suya, no intervinieron en el expediente pueden pedir la extinción de la adopción mediante demanda en los dos años siguientes, siempre que no perjudique gravemente al menor."
     },
     {
      "tipo": "ley",
@@ -631,7 +666,7 @@ Neg.data.register({
   },
   "exclusion_extincion": {
    "fase": 5,
-   "titulo": "Exclusión de funciones tutelares / extinción de la adopción (arts. 179-180 CC)",
+   "titulo": "Exclusión de funciones tuitivas / extinción de la adopción (art. 40 LJV; arts. 179 y 180 CC)",
    "actor": "juez",
    "bloques": [
     {
@@ -643,8 +678,12 @@ Neg.data.register({
      "texto": "Durante la sustanciación del procedimiento, el Juez adoptará, incluso de oficio, y previa audiencia del Ministerio Fiscal, las medidas de protección oportunas sobre la persona y bienes del adoptado menor o persona con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica."
     },
     {
-     "tipo": "plazo",
+     "tipo": "nota",
      "texto": "Si el adoptado fuera mayor de edad, la extinción de la adopción requerirá su consentimiento expreso."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Exclusión: alcanzada la plena capacidad, solo la puede pedir el adoptado, en los dos años siguientes (art. 179.2 CC). Extinción: demanda de los progenitores en los dos años siguientes a la adopción (art. 180.2 CC)."
     },
     {
      "tipo": "ley",
@@ -654,7 +693,7 @@ Neg.data.register({
    "pregunta": "¿Cuál es el objeto del procedimiento posterior?",
    "opciones": [
     {
-     "texto": "Exclusión de funciones tutelares (art. 179 CC)",
+     "texto": "Exclusión de funciones tuitivas (art. 179 CC)",
      "tono": "t-plazo",
      "destino": "fin_extincion"
     },
@@ -696,7 +735,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El Convenio de La Haya de 29 de mayo de 1993 relativo a la protección del niño y a la cooperación en materia de adopción internacional es de aplicación preferente en los países signatarios."
+     "texto": "El art. 41 LJV menciona en especial el Convenio de La Haya de 29 de mayo de 1993, relativo a la protección del niño y a la cooperación en materia de adopción internacional."
     },
     {
      "tipo": "ley",
@@ -715,12 +754,22 @@ Neg.data.register({
      "texto": "El adoptante de adopción simple o no plena constituida por autoridad extranjera competente podrá instar ante los Tribunales españoles su conversión en una adopción regulada por el derecho español cuando concurra uno de los siguientes supuestos: a) Que el adoptando tenga su residencia habitual en España en el momento de constitución de la adopción; b) Que el adoptando haya sido o vaya a ser trasladado a España con la finalidad de establecer su residencia habitual en España; c) Que el adoptante tenga la nacionalidad española o tenga su residencia habitual en España."
     },
     {
+     "tipo": "info",
+     "texto": "La solicitud la presenta el adoptante, ofreciéndose para la adopción plena, sin propuesta previa de la Entidad Pública, con las indicaciones del art. 35 en lo aplicable; acompaña el documento de constitución por la autoridad extranjera y las pruebas de las circunstancias exigidas (art. 42.2 LJV)."
+    },
+    {
      "tipo": "nota",
      "texto": "Presentada la solicitud se seguirán los trámites establecidos en los artículos anteriores, en cuanto sean aplicables, debiendo examinar el Juez la concurrencia de los extremos enumerados en la Ley de Adopción Internacional."
     },
     {
-     "tipo": "plazo",
-     "texto": "En todo caso habrán de manifestar su consentimiento ante el Juez el adoptante o adoptantes y el adoptado si fuere mayor de doce años. Deberá asentir el cónyuge del adoptante o la persona a la que esté unida por análoga relación de afectividad a la conyugal. El testimonio del auto se remitirá al Registro Civil."
+     "tipo": "lista",
+     "titulo": "Consentimiento, asentimiento e inscripción (art. 42.4 y 5 LJV)",
+     "items": [
+      "Consienten ante el Juez el adoptante o adoptantes y el adoptado mayor de doce años; si es menor de esa edad, se le oye de acuerdo con su edad y madurez",
+      "Asiente el cónyuge del adoptante o la persona unida a él por análoga relación de afectividad",
+      "El testimonio del auto que declare la conversión se remite al Registro Civil para su inscripción"
+     ],
+     "marcar": true
     },
     {
      "tipo": "ley",
@@ -730,5 +779,5 @@ Neg.data.register({
    "fin": "success"
   }
  },
- "pie": "<strong>Referencias normativas</strong>\n  Ley 15/2015 (arts. 33‑42)\n  Código Civil: arts. 176‑180\n  LEC arts. 156, 753, 781\n  Ley 54/2007 Adopción Internacional"
+ "pie": "<strong>Referencias normativas</strong>\n  Ley 15/2015 (arts. 33‑42)\n  Código Civil: arts. 172, 176‑180\n  LEC arts. 156, 753, 781\n  Ley 54/2007 Adopción Internacional"
 });
