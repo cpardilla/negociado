@@ -3,7 +3,7 @@ Neg.data.register({
  "tipo": "guia",
  "id": "ljv-subastas",
  "ley": "LJV",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO VII De los expedientes de subastas voluntarias Artículos 108 a 111 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De los expedientes de subastas voluntarias",
  "corto": "Título VII · Subastas voluntarias",
  "articulos": [
   "108",

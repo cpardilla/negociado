@@ -4,7 +4,7 @@ Neg.data.register({
  "id": "ljv-deslinde",
  "ley": "LJV",
  "grupo": "Título VI · Derechos reales",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO VI: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA RELATIVOS A LOS DERECHOS REALES · CAPÍTULO II Del expediente de deslinde de fincas no inscritas Artículos 104 a 107 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "Del expediente de deslinde de fincas no inscritas",
  "corto": "Deslinde de fincas no inscritas",
  "articulos": [
   "104",

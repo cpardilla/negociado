@@ -4,7 +4,7 @@ Neg.data.register({
  "id": "ljv-tutela-curatela",
  "ley": "LJV",
  "grupo": "Título II · Personas",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA ENMATERIA DE PERSONAS · CAPÍTULO IV De la tutela, la curatela y la guarda de hecho Artículos 43 a 52 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De la tutela, la curatela y la guarda de hecho",
  "corto": "Tutela, curatela y guarda de hecho",
  "articulos": [
   "43",

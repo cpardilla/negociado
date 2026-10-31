@@ -3,7 +3,7 @@ Neg.data.register({
  "tipo": "guia",
  "id": "ljv-sucesorio",
  "ley": "LJV",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO IV De los expedientes de jurisdicción voluntaria relativos al Derecho sucesorio CAPÍTULO I: DEL ALBACEAZGO (artículo 91 LJV) · CAPÍTULO II: DE LOS CONTADORES-PARTIDORES DATIVOS (artículo 92 LJV) · CAPÍTULO III: DE LA ACEPTACIÓN Y REPUDIACIÓN DE LA HERENCIA (artículos 93 a 95 LJV) − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De los expedientes de jurisdicción voluntaria relativos al Derecho sucesorio",
  "corto": "Título IV · Derecho sucesorio",
  "articulos": [
   "91",

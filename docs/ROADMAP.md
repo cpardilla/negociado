@@ -293,6 +293,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-31 · Títulos de 15 guías LJV limpiados (llevaban texto de la barra de las páginas antiguas: «− 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar»); se toma el título del esquema homónimo. Nueva prueba que lo impide.
 - 2026-10-31 · Fase 5 · G05 (liquidación del régimen económico matrimonial) revisada. Hallazgo: 15 guías LJV tienen texto de la interfaz antigua en el título (se limpia aparte). Siguiente: G06.
 - 2026-10-30 · Fase 5 · G04 (administración del caudal) revisada. Siguiente: G05.
 - 2026-10-30 · Fase 5 · G03 (intervención del caudal) revisada. Siguiente: G04.

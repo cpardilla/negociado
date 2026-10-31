@@ -4,7 +4,7 @@ Neg.data.register({
  "id": "ljv-donantes-vivos",
  "ley": "LJV",
  "grupo": "Título II · Personas",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO X De la extracción de órganos de donantes vivos Artículos 78 a 80 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De la extracción de órganos de donantes vivos",
  "corto": "Extracción de órganos de donantes vivos",
  "articulos": [
   "78",

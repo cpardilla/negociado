@@ -4,7 +4,7 @@ Neg.data.register({
  "id": "ljv-filiacion",
  "ley": "LJV",
  "grupo": "Título II · Personas",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO I De la autorización o aprobación judicial del reconocimiento de la filiación no matrimonial Artículos 23 a 26 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De la autorización o aprobación judicial del reconocimiento de la filiación no matrimonial",
  "corto": "Reconocimiento de la filiación no matrimonial",
  "articulos": [
   "23",

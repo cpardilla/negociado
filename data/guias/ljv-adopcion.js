@@ -4,7 +4,7 @@ Neg.data.register({
  "id": "ljv-adopcion",
  "ley": "LJV",
  "grupo": "Título II · Personas",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO III De la adopción Artículos 33 a 42 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De la adopción",
  "corto": "Adopción",
  "articulos": [
   "33",

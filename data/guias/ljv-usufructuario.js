@@ -4,7 +4,7 @@ Neg.data.register({
  "id": "ljv-usufructuario",
  "ley": "LJV",
  "grupo": "Título VI · Derechos reales",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO VI: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA RELATIVOS A LOS DERECHOS REALES · CAPÍTULO I De la autorización judicial al usufructuario para reclamar créditos vencidos que formen parte del usufructo Artículos 100 a 103 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De la autorización judicial al usufructuario para reclamar créditos vencidos que formen parte del usufructo",
  "corto": "Usufructuario: reclamación de créditos vencidos",
  "articulos": [
   "100",

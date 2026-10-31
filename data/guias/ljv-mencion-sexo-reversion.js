@@ -4,7 +4,7 @@ Neg.data.register({
  "id": "ljv-mencion-sexo-reversion",
  "ley": "LJV",
  "grupo": "Título II · Personas",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO I TER De la aprobación judicial de la nueva modificación de la mención registral relativa al sexo con posterioridad a una reversión de la rectificación de la mención registral Artículos 26 sexies a 26 nonies LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De la aprobación judicial de la nueva modificación de la mención registral relativa al sexo con posterioridad a una reversión de la rectificación de la mención registral",
  "corto": "Nueva modificación de la mención del sexo tras reversión",
  "articulos": [
   "26 sexies",

@@ -4,7 +4,7 @@ Neg.data.register({
  "id": "ljv-mencion-sexo-12-14",
  "ley": "LJV",
  "grupo": "Título II · Personas",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO I BIS De la aprobación judicial de la modificación de la mención registral del sexo de personas mayores de doce años y menores de catorce Artículos 26 bis a 26 quinquies LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De la aprobación judicial de la modificación de la mención registral del sexo de personas mayores de doce años y menores de catorce",
  "corto": "Mención registral del sexo (12 a 14 años)",
  "articulos": [
   "26 bis",

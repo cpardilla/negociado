@@ -4,7 +4,7 @@ Neg.data.register({
  "id": "ljv-defensor-judicial",
  "ley": "LJV",
  "grupo": "Título II · Personas",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO II De la habilitación para comparecer en juicio y del nombramiento de defensor judicial Artículos 27 a 32 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De la habilitación para comparecer en juicio y del nombramiento de defensor judicial",
  "corto": "Habilitación para comparecer y defensor judicial",
  "articulos": [
   "27",

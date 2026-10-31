@@ -4,7 +4,7 @@ Neg.data.register({
  "id": "ljv-patrimonio-protegido",
  "ley": "LJV",
  "grupo": "Título II · Personas",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO II: DE LOS EXPEDIENTES DE JURISDICCIÓN VOLUNTARIA EN MATERIA DE PERSONAS · CAPÍTULO VI De la protección del patrimonio de las personas con discapacidad Artículos 56 a 58 LJV − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De la protección del patrimonio de las personas con discapacidad",
  "corto": "Patrimonio de las personas con discapacidad",
  "articulos": [
   "56",

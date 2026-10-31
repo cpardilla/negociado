@@ -112,3 +112,9 @@ test("migration: every esquema keeps every visible text of the original", () => 
     if (onDisk.revision.estado === "sin revisar") assert.deepEqual(onDisk.secciones, JSON.parse(JSON.stringify(fresh.secciones)), `${invId}: fichero = migración`);
   }
 });
+
+test("data: titles carry no text from the old pages' toolbar", () => {
+  for (const { rec } of [...esquemas, ...guias]) {
+    assert.doesNotMatch(`${rec.titulo} ${rec.corto}`, /Mapa|Descargar|Reiniciar|\d+ ?%|⊞/, `${rec.id}: título con texto de la interfaz`);
+  }
+});

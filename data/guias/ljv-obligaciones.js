@@ -3,7 +3,7 @@ Neg.data.register({
  "tipo": "guia",
  "id": "ljv-obligaciones",
  "ley": "LJV",
- "titulo": "LEY 15/2015, DE 2 DE JULIO, DE LA JURISDICCIÓN VOLUNTARIA · TÍTULO V De los expedientes de jurisdicción voluntaria relativos al Derecho de obligaciones CAPÍTULO I: DE LA FIJACIÓN DEL PLAZO PARA EL CUMPLIMIENTO DE LAS OBLIGACIONES CUANDO PROCEDA (artículos 96 y 97 LJV) · CAPÍTULO II: DE LA CONSIGNACIÓN (artículos 98 y 99 LJV) − 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar",
+ "titulo": "De los expedientes de jurisdicción voluntaria relativos al Derecho de obligaciones",
  "corto": "Título V · Derecho de obligaciones",
  "articulos": [
   "96",
