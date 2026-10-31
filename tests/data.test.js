@@ -118,3 +118,20 @@ test("data: titles carry no text from the old pages' toolbar", () => {
     assert.doesNotMatch(`${rec.titulo} ${rec.corto}`, /Mapa|Descargar|Reiniciar|\d+ ?%|⊞/, `${rec.id}: título con texto de la interfaz`);
   }
 });
+
+test("BOE: every correction in sources/boe/correcciones.json is applied to its snapshot and reaches the law data", () => {
+  const root = path.join(__dirname, "..");
+  const { correcciones } = JSON.parse(fs.readFileSync(path.join(root, "sources", "boe", "correcciones.json"), "utf8"));
+  for (const c of correcciones) {
+    assert.ok(c.motivo && c.decision, `${c.ley} ${c.bloque}: sin motivo o sin decisión del propietario`);
+    const snap = JSON.parse(fs.readFileSync(path.join(root, "sources", "boe", `${c.ley}.json`), "utf8"));
+    const b = snap.bloques.find((x) => x.id === c.bloque);
+    assert.ok(b && b.correccion, `${c.ley} ${c.bloque}: corrección sin aplicar (node tools/boe-correcciones.js)`);
+    assert.equal(`${b.vigencia} ${b.norma}`, `${c.version} ${c.norma}`, `${c.ley} ${c.bloque}: versión distinta de la corrección`);
+    const ley = path.join(root, "data", "leyes", `${c.ley}.js`);
+    if (fs.existsSync(ley)) {
+      const src = fs.readFileSync(ley, "utf8");
+      assert.ok(src.includes(`"b":"${c.bloque}","v":"${c.version}","m":"${c.norma}"`), `${c.ley} ${c.bloque}: data/leyes sin regenerar (node tools/build-law.js)`);
+    }
+  }
+});

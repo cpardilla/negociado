@@ -1,0 +1,149 @@
+{
+ "descripcion": "Correcciones a las instantáneas del BOE por errores de consolidación. Las aplica tools/lib/boe-correcciones.js; los candidatos salen de tools/boe-revisiones.js. Cada una, con el visto bueno del propietario (docs/ROADMAP.md §10).",
+ "correcciones": [
+  {
+   "ley": "LEC",
+   "bloque": "a14",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a64",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a159",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a165",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a167",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a243",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a274",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a333",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a540",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a560",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a781",
+   "version": "20150818",
+   "norma": "BOE-A-2015-8470",
+   "terminologia": false,
+   "motivo": "La versión de la LO 7/2015 (vigente desde el 1-10-2015, solo cambia «Secretario judicial») reproduce el texto anterior a la Ley 26/2015 («no podrá ser superior a veinte días»). La vigente es la de la Ley 26/2015 (art. 4.5; quince días, pieza separada).",
+   "decision": "Decisión 16 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a794",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a800",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a809",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a816",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LEC",
+   "bloque": "a826",
+   "version": "20151007",
+   "norma": "BOE-A-2015-10727",
+   "terminologia": true,
+   "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+   "decision": "Decisión 17 (2026-10-31)"
+  }
+ ]
+}

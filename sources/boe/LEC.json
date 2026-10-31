@@ -1841,8 +1841,8 @@
    "id": "a14",
    "tipo": "precepto",
    "titulo": "Artículo 14",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -1859,29 +1859,38 @@
     ],
     [
      "parrafo_2",
-     "1.ª El demandado solicitará del Tribunal que sea notificada al tercero la pendencia del juicio. La solicitud deberá presentarse dentro del plazo otorgado para contestar a la demanda o, cuando se trate de juicio verbal, al menos cinco días antes de la vista."
+     "1.ª El demandado solicitará del tribunal que sea notificada al tercero la pendencia del juicio. La solicitud deberá presentarse dentro del plazo otorgado para contestar a la demanda."
     ],
     [
      "parrafo",
-     "2.ª El Letrado de la Administración de Justicia ordenará la interrupción del plazo para contestar a la demanda o la suspensión del acto de juicio caso de que fuera verbal y acordará oír al demandante en el plazo de diez días, resolviendo el Tribunal mediante auto lo que proceda."
+     "2.ª El letrado de la Administración de Justicia ordenará la interrupción del plazo para contestar a la demanda con efectos desde el día en que se presentó la solicitud, y acordará oír al demandante en el plazo de diez días, resolviendo el tribunal mediante auto lo que proceda."
     ],
     [
      "parrafo",
-     "3.ª El plazo concedido al demandado para contestar a la demanda se reanudará con la notificación al demandado de la desestimación de su petición o, si es estimada, con el traslado del escrito de contestación presentado por el tercero y, en todo caso, al expirar el plazo concedido a este último para contestar a la demanda. Si se tratase de un juicio verbal y el Tribunal hubiera estimado la solicitud, el Letrado de la Administración de Justicia hará nuevo señalamiento para la vista, citando a las partes y al tercero llamado al proceso."
+     "3.ª El plazo concedido al demandado para contestar a la demanda se reanudará con la notificación al demandado de la desestimación de su petición o, si es estimada, con el traslado del escrito de contestación presentado por el tercero y, en todo caso, al expirar el plazo concedido a este último para contestar a la demanda."
     ],
     [
      "parrafo",
-     "4.ª Si comparecido el tercero, el demandado considerase que su lugar en el proceso debe ser ocupado por aquél, se procederá conforme a lo dispuesto en el artículo 18."
+     "4.ª Si comparecido el tercero, el demandado considerase que su lugar en el proceso debe ser ocupado por aquél, se procederá conforme a lo dispuesto en el artículo 18."
     ],
     [
      "parrafo",
-     "5.ª Caso de que en la sentencia resultase absuelto el tercero, las costas se podrán imponer a quien solicitó su intervención con arreglo a los criterios generales del artículo 394 de esta ley."
+     "5.ª Caso de que en la sentencia resultase absuelto el tercero, las costas se podrán imponer a quien solicitó su intervención con arreglo a los criterios generales del artículo 394."
     ]
    ],
    "notas": [
+    "Se modifica el apartado 2 por el art. único.1 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifica el apartado 2 por el art. 15.2 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a15",
@@ -4149,8 +4158,8 @@
    "id": "a64",
    "tipo": "precepto",
    "titulo": "Artículo 64",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -4159,7 +4168,7 @@
     ],
     [
      "parrafo",
-     "1. La declinatoria se habrá de proponer dentro de los diez primeros días del plazo para contestar a la demanda, o en los cinco primeros días posteriores a la citación para vista, y surtirá el efecto de suspender, hasta que sea resuelta, el plazo para contestar, o el cómputo para el día de la vista, y el curso del procedimiento principal, suspensión que acordará el Letrado de la Administración de Justicia."
+     "1. La declinatoria se habrá de proponer dentro de los diez primeros días del plazo para contestar a la demanda, y surtirá el efecto de suspender, hasta que sea resuelta, el plazo para contestar y el curso del procedimiento principal, suspensión que declarará el letrado de la Administración de Justicia."
     ],
     [
      "parrafo",
@@ -4171,9 +4180,18 @@
     ]
    ],
    "notas": [
+    "Se modifica el apartado 1 por el art. único.9 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifica el apartado 1 por el art. 15.25 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a65",
@@ -8065,8 +8083,8 @@
    "id": "a159",
    "tipo": "precepto",
    "titulo": "Artículo 159",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -8075,7 +8093,7 @@
     ],
     [
      "parrafo",
-     "1. Las comunicaciones que deban hacerse a testigos, peritos y otras personas que, sin ser parte en el juicio, deban intervenir en él, se remitirán a sus destinatarios con arreglo a lo dispuesto en el apartado 1 del artículo 160. La remisión se hará al domicilio que designe la parte interesada, pudiendo realizarse, en su caso, las averiguaciones a que se refiere el artículo 156."
+     "1. Las comunicaciones que deban hacerse a testigos, peritos y otras personas que, sin ser parte en el juicio, deban intervenir en él, se remitirán a sus destinatarios con arreglo a lo dispuesto en el apartado 1 del artículo 160. La remisión se hará al domicilio que designe la parte interesada, pudiendo realizarse, en su caso, las averiguaciones a que se refiere el artículo 156. Estas comunicaciones serán diligenciadas por el procurador de la parte que las haya propuesto, si así lo hubiera solicitado."
     ],
     [
      "parrafo",
@@ -8087,9 +8105,18 @@
     ]
    ],
    "notas": [
+    "Se modifica el apartado 1 por el art. único.20 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifican los apartados 2 y 3 por el art. 15.85 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a160",
@@ -8403,8 +8430,8 @@
    "id": "a165",
    "tipo": "precepto",
    "titulo": "Artículo 165",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -8413,21 +8440,31 @@
     ],
     [
      "parrafo",
-     "Cuando los actos de comunicación hayan de practicarse según lo dispuesto en el artículo 161 de esta ley por Tribunal distinto del que los hubiere ordenado, se acompañará al despacho la copia o cédula correspondiente y lo demás que en cada caso proceda."
+     "Cuando los actos de comunicación hayan de practicarse por tribunal distinto del que los hubiere ordenado, el despacho se remitirá por medio del sistema informático judicial salvo los supuestos en los que deba realizarse en soporte papel por ir el acto acompañado de elementos que no sean susceptibles de conversión en formato electrónico, y se acompañará la copia o cédula correspondiente y lo demás que en cada caso proceda."
     ],
     [
      "parrafo",
-     "Estos actos de comunicación se cumplimentarán en un plazo no superior a veinte días, contados a partir de su recepción. Cuando no se realice en el tiempo indicado, a cuyo efecto se requerirá al Letrado de la Administración de Justicia para su observancia, se habrán de expresar, en su caso, las causas de la dilación."
+     "Estos actos de comunicación se cumplimentarán en un plazo no superior a veinte días, contados a partir de su recepción, debiendo ser devuelto conforme a lo dispuesto en el párrafo anterior. Cuando no se realicen en el tiempo indicado, a cuyo efecto se requerirá al letrado de la Administración de Justicia para su observancia, se habrán de expresar, en su caso, las causas de la dilación."
     ],
     [
      "parrafo",
-     "Dichos actos podrán ser realizados, a instancia de parte, por procurador legalmente habilitado para actuar ante el órgano exhortado, encargándose de su cumplimiento en los mismos términos y plazos establecidos en el párrafo anterior."
+     "Dichos actos podrán ser realizados, a instancia de parte, por procurador, encargándose de su cumplimiento en los mismos términos y plazos establecidos en el párrafo anterior."
     ]
    ],
    "notas": [
+    "Se modifica por el art. único.24 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
+    "Téngase en cuenta, para su aplicación, lo dispuesto en la disposición final 12.2 de la citada Ley 42/2015.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifica por el art. 15.91 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a166",
@@ -8456,8 +8493,8 @@
    "id": "a167",
    "tipo": "precepto",
    "titulo": "Artículo 167",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -8466,7 +8503,7 @@
     ],
     [
      "parrafo",
-     "1. Los mandamientos y oficios se remitirán directamente por el Letrado de la Administración de Justicia que los expida a la autoridad o funcionario a que vayan dirigidos, pudiendo utilizarse los medios previstos en el artículo 162 de la presente ley."
+     "1. Los mandamientos y oficios se remitirán directamente por el letrado de la Administración de Justicia que los expida a la autoridad o funcionario a que vayan dirigidos, debiendo utilizarse los medios previstos en el artículo 162."
     ],
     [
      "parrafo",
@@ -8478,9 +8515,19 @@
     ]
    ],
    "notas": [
+    "Se modifica el apartado 1 por el art. único.25 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
+    "Téngase en cuenta, para su aplicación, lo dispuesto en la disposición final 12.2 de la citada Ley 42/2015.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifica por el art. 15.92 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a168",
@@ -11606,8 +11653,8 @@
    "id": "a243",
    "tipo": "precepto",
    "titulo": "Artículo 243",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -11624,11 +11671,15 @@
     ],
     [
      "parrafo",
-     "Tampoco serán incluidas en la tasación de costas los derechos de los procuradores devengados por actuaciones meramente facultativas, que hubieran podido ser practicadas en otro caso por las Oficinas judiciales."
+     "Tampoco serán incluidos en la tasación de costas los derechos de los procuradores devengados por la realización de los actos procesales de comunicación, cooperación y auxilio a la Administración de Justicia, así como de las demás actuaciones meramente facultativas que hubieran podido ser practicadas, en otro caso, por las Oficinas judiciales."
     ],
     [
      "parrafo",
-     "El Letrado de la Administración de Justicia reducirá el importe de los honorarios de los abogados y demás profesionales que no estén sujetos a tarifa o arancel, cuando los reclamados excedan del límite a que se refiere el apartado 3 del artículo 394 y no se hubiese declarado la temeridad del litigante condenado en costas."
+     "El Letrado de la Administración de Justicia reducirá el importe de los honorarios de los abogados y demás profesionales que no estén sujetos a tarifa o arancel, cuando los reclamados excedan del límite a que se refiere el apartado 3 del artículo 394 y no se hubiese declarado la temeridad del litigante condenado en costas."
+    ],
+    [
+     "parrafo",
+     "En las tasaciones de costas, los honorarios de abogado y derechos de procurador incluirán el Impuesto sobre el Valor Añadido de conformidad con lo dispuesto en la ley que lo regula. No se computará el importe de dicho impuesto a los efectos del apartado 3 del artículo 394."
     ],
     [
      "parrafo",
@@ -11636,9 +11687,18 @@
     ]
    ],
    "notas": [
+    "Se modifica el apartado 2 por el art. único.28 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifican los apartados 1 y 2 por el art. 15.138 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a244",
@@ -13418,27 +13478,37 @@
    "id": "a274",
    "tipo": "precepto",
    "titulo": "Artículo 274",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
      "articulo",
-     "Artículo 274. Traslado por el tribunal de las copias a las otras partes interesadas, cuando no intervengan procuradores."
+     "Artículo 274. Traslado por la oficina judicial de las copias a las otras partes interesadas, cuando no intervengan procuradores."
     ],
     [
      "parrafo",
-     "Cuando las partes no actúen representadas por Procurador, firmarán las copias de los escritos y documentos que presenten, respondiendo de su exactitud, y dichas copias se entregarán por el Letrado de la Administración de Justicia a la parte o partes contrarias."
+     "Cuando las partes no actúen representadas por procurador, firmarán las copias de los escritos y documentos que presenten, respondiendo de su exactitud, y dichas copias se entregarán por el Letrado de la Administración de Justicia a la parte o partes contrarias."
     ],
     [
      "parrafo",
-     "La presentación y el traslado de las copias podrán realizarse por los medios y con el resguardo acreditativo de su recepción a que se refiere el apartado 5 del artículo 135 de esta Ley, cuando se cumplan los presupuestos y requisitos que establece."
+     "Si la presentación se realizara por medios telemáticos por estar obligados o haber optado por ello, siempre que cumplan los presupuestos y requisitos exigidos, el traslado de las copias a las demás partes se realizará por la oficina judicial por el medio que proceda."
     ]
    ],
    "notas": [
+    "Se modifica por el art. único.35 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
+    "Téngase en cuenta, para su aplicación, lo dispuesto en la disposición final 12.2 de la citada Ley 42/2015.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifica por la disposición final 6.1.7 de la Ley 41/2007, de 7 de diciembre. Ref. BOE-A-2007-21086"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a275",
@@ -15877,22 +15947,35 @@
    "id": "a333",
    "tipo": "precepto",
    "titulo": "Artículo 333",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 3,
    "parrafos": [
     [
      "articulo",
-     "Artículo 333. Extracción de copias de documentos que no sean escritos."
+     "Artículo 333. Extracción de copias de documentos que no sean textos escritos."
     ],
     [
      "parrafo",
      "Cuando se trate de dibujos, fotografías, croquis, planos, mapas y otros documentos que no incorporen predominantemente textos escritos, si sólo existiese el original, la parte podrá solicitar que en la exhibición se obtenga copia, a presencia del Letrado de la Administración de Justicia, que dará fe de ser fiel y exacta reproducción del original."
+    ],
+    [
+     "parrafo",
+     "Si estos documentos se aportan de forma electrónica, las copias realizadas por medios electrónicos por la oficina judicial tendrán la consideración de copias auténticas."
     ]
    ],
    "notas": [
+    "Se modifica por el art. único.40 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a334",
@@ -24608,8 +24691,8 @@
    "id": "a540",
    "tipo": "precepto",
    "titulo": "Artículo 540",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -24618,21 +24701,34 @@
     ],
     [
      "parrafo",
-     "1. La ejecución podrá despacharse a favor de quien acredite ser sucesor del que figure como ejecutante en el título ejecutivo y frente al que se acredite que es el sucesor de quien en dicho título aparezca como ejecutado."
+     "1. La ejecución podrá despacharse o continuarse a favor de quien acredite ser sucesor del que figure como ejecutante en el título ejecutivo y frente al que se acredite que es el sucesor de quien en dicho título aparezca como ejecutado."
     ],
     [
      "parrafo",
-     "2. Para acreditar la sucesión, a los efectos del apartado anterior, habrán de presentarse al tribunal los documentos fehacientes en que aquélla conste. Si el tribunal los considera suficientes a tales efectos, procederá, sin más trámites, a despachar la ejecución a favor o frente a quien resulte ser sucesor en razón de los documentos presentados."
+     "2. Para acreditar la sucesión, a los efectos del apartado anterior, habrán de presentarse al tribunal los documentos fehacientes en que aquélla conste. Si el tribunal los considera suficientes a tales efectos por concurrir los requisitos exigidos para su validez, procederá, sin más trámites, a despachar la ejecución a favor o frente a quien resulte ser sucesor en razón de los documentos presentados."
     ],
     [
      "parrafo",
-     "3. Si la sucesión no constara en documentos fehacientes o el Tribunal no los considerare suficientes, de la petición que deduzca el ejecutante mandará que el Letrado de la Administración de Justicia dé traslado a quien conste como ejecutado en el título y a quien se pretenda que es su sucesor y, oídos todos ellos en comparecencia señalada por el Secretario, el Tribunal decidirá lo que proceda sobre la sucesión a los solos efectos del despacho de la ejecución."
+     "En el caso de que se hubiera despachado ya ejecución, se notificará la sucesión al ejecutado o ejecutante, según proceda, continuándose la ejecución a favor o frente a quien resulte ser sucesor."
+    ],
+    [
+     "parrafo",
+     "3. Si la sucesión no constara en documentos fehacientes o el tribunal no los considerare suficientes, mandará que el Letrado de la Administración de Justicia dé traslado de la petición que deduzca el ejecutante o ejecutado cuya sucesión se haya producido, a quien conste como ejecutado o ejecutante en el título y a quien se pretenda que es su sucesor, dándoles audiencia por el plazo de 15 días. Presentadas las alegaciones o transcurrido el plazo sin que las hayan efectuado, el tribunal decidirá lo que proceda sobre la sucesión a los solos efectos del despacho o de la prosecución de la ejecución."
     ]
    ],
    "notas": [
+    "Se modifica por el art. único.59 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifica el apartado 3 por el art. 15.217 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a541",
@@ -25474,8 +25570,8 @@
    "id": "a560",
    "tipo": "precepto",
    "titulo": "Artículo 560",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -25496,13 +25592,22 @@
     ],
     [
      "parrafo",
-     "Cuando se acuerde la celebración de vista, si no compareciere a ella el ejecutado el tribunal le tendrá por desistido de la oposición y adoptará las resoluciones previstas en el apartado 1 del artículo 442. Si no compareciere el ejecutante, el tribunal resolverá sin oírle sobre la oposición a la ejecución. Compareciendo ambas partes, se desarrollará la vista con arreglo a lo previsto para el juicio verbal, dictándose a continuación la resolución que proceda conforme a lo dispuesto en el artículo siguiente."
+     "Cuando se acuerde la celebración de vista, si no compareciere a ella el ejecutado el tribunal le tendrá por desistido de la oposición y adoptará las resoluciones previstas en el artículo 442. Si no compareciere el ejecutante, el tribunal resolverá sin oírle sobre la oposición a la ejecución. Compareciendo ambas partes, se desarrollará la vista con arreglo a lo previsto para el juicio verbal, dictándose a continuación la resolución que proceda conforme a lo dispuesto en el artículo siguiente."
     ]
    ],
    "notas": [
+    "Se modifica el último párrafo por el art. único.63 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifica el párrafo segundo por el art. 15.229 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a561",
@@ -34691,8 +34796,8 @@
    "id": "a781",
    "tipo": "precepto",
    "titulo": "Artículo 781",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20150818",
+   "norma": "BOE-A-2015-8470",
    "versiones": 5,
    "parrafos": [
     [
@@ -34701,18 +34806,47 @@
     ],
     [
      "parrafo",
-     "1. Los padres que pretendan que se reconozca la necesidad de su asentimiento para la adopción podrán comparecer ante el Tribunal que esté conociendo del correspondiente expediente y manifestarlo así. El Letrado de la Administración de Justicia, con suspensión del expediente, señalará el plazo que estime necesario para la presentación de la demanda, que no podrá ser superior a veinte días. Presentada la demanda, se tramitará con arreglo a lo previsto en el artículo 753."
+     "1. Los progenitores que pretendan que se reconozca la necesidad de su asentimiento para la adopción podrán comparecer ante el Tribunal que esté conociendo del correspondiente expediente de adopción y manifestarlo así. El Letrado de la Administración de Justicia, con suspensión del expediente, otorgará el plazo de quince días para la presentación de la demanda, para cuyo conocimiento será competente el mismo Tribunal."
     ],
     [
      "parrafo",
-     "2. Si no se presentara la demanda en el plazo fijado por el Letrado de la Administración de Justicia se dictará decreto dando por finalizado el trámite, decreto que será recurrible directamente en revisión ante el Tribunal. Firme dicha resolución, no se admitirá ninguna reclamación posterior de los mismos sujetos sobre necesidad de asentimiento para la adopción de que se trate."
+     "2. Si no se presentara la demanda en el plazo fijado, el Letrado de la Administración de Justicia dictará decreto dando por finalizado el trámite y alzando la suspensión del expediente de adopción, que continuará tramitándose de conformidad con lo establecido en la legislación de jurisdicción voluntaria. El decreto será recurrible directamente en revisión ante el Tribunal. Firme dicha resolución, no se admitirá ninguna reclamación posterior de los mismos sujetos sobre la necesidad de asentimiento para la adopción de que se trate."
+    ],
+    [
+     "parrafo",
+     "3. Presentada la demanda dentro de plazo, el Letrado de la Administración de Justicia dictará decreto declarando contencioso el expediente de adopción y acordará la tramitación de la demanda presentada en el mismo procedimiento, como pieza separada, con arreglo a lo previsto en el artículo 753."
+    ],
+    [
+     "parrafo",
+     "Una vez firme la resolución que se dicte en la pieza separada sobre la necesidad del asentimiento de los progenitores del adoptando, el Letrado de la Administración de Justicia acordará la citación ante el Juez de las personas indicadas en el artículo 177 del Código Civil que deban prestar el consentimiento o el asentimiento a la adopción así como ser oídos, y que todavía no lo hayan hecho, debiendo resolver a continuación sobre la adopción."
+    ],
+    [
+     "parrafo",
+     "Las citaciones se efectuarán de conformidad con las normas establecidas en la Ley de Jurisdicción Voluntaria para tales supuestos."
+    ],
+    [
+     "parrafo",
+     "El auto que ponga fin al procedimiento será susceptible de recurso de apelación, que tendrá efectos suspensivos."
+    ],
+    [
+     "parrafo",
+     "El testimonio de la resolución firme en la que se acuerde la adopción se remitirá al Registro Civil, para que se practique su inscripción."
     ]
    ],
    "notas": [
+    "Se modifica por el art. 4.5 de la Ley 26/2015, de 28 de julio. Ref. BOE-A-2015-8470#acuao.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifica por el art. 15.351 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493",
     "Se modifica el apartado 1 por la disposición final 2.5 de la Ley 54/2007, de 28 de diciembre. Ref. BOE-A-2007-22438"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión de la LO 7/2015 (vigente desde el 1-10-2015, solo cambia «Secretario judicial») reproduce el texto anterior a la Ley 26/2015 («no podrá ser superior a veinte días»). La vigente es la de la Ley 26/2015 (art. 4.5; quince días, pieza separada).",
+    "decision": "Decisión 16 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20150818",
+     "norma": "BOE-A-2015-8470"
+    }
+   }
   },
   {
    "id": "a781bis",
@@ -35341,8 +35475,8 @@
    "id": "a794",
    "tipo": "precepto",
    "titulo": "Artículo 794",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -35363,7 +35497,7 @@
     ],
     [
      "parrafo",
-     "4. Si se suscitare controversia sobre la inclusión o exclusión de bienes en el inventario el Letrado de la Administración de Justicia citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
+     "4. Si se suscitare controversia sobre la inclusión o exclusión de bienes en el inventario, el Letrado de la Administración de Justicia hará constar en el acta las pretensiones de cada una de las partes sobre los referidos bienes y su fundamentación jurídica, y citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
     ],
     [
      "parrafo",
@@ -35371,9 +35505,18 @@
     ]
    ],
    "notas": [
+    "Se modifica el apartado 4 por el art. único.73 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifica el párrafo primero del apartado 4 por el art. 15.360 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a795",
@@ -35583,8 +35726,8 @@
    "id": "a800",
    "tipo": "precepto",
    "titulo": "Artículo 800",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -35605,13 +35748,22 @@
     ],
     [
      "parrafo",
-     "4. Si las cuentas fueren impugnadas en tiempo hábil, se dará traslado del escrito de impugnación al cuentadante para que conteste conforme a lo previsto por los artículos 404 y siguientes, continuando la tramitación con arreglo a lo dispuesto para el juicio verbal."
+     "4. Si las cuentas fueren impugnadas en tiempo hábil, se dará traslado del escrito de impugnación al cuentadante para que conteste conforme a lo establecido en el artículo 438. Las partes, en sus respectivos escritos de impugnación y contestación a ésta, podrán solicitar la celebración de vista, continuando la tramitación con arreglo a lo dispuesto para el juicio verbal."
     ]
    ],
    "notas": [
+    "Se modifica el apartado 4 por el art. único.74 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifican los apartados 2 y 3 por el art. 15.364 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a801",
@@ -35875,8 +36027,8 @@
    "id": "a809",
    "tipo": "precepto",
    "titulo": "Artículo 809",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -35901,7 +36053,7 @@
     ],
     [
      "parrafo",
-     "2. Si se suscitare controversia sobre la inclusión o exclusión de algún concepto en el inventario o sobre el importe de cualquiera de las partidas, el Letrado de la Administración de Justicia citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
+     "2. Si se suscitare controversia sobre la inclusión o exclusión de algún concepto en el inventario o sobre el importe de cualquiera de las partidas, el Letrado de la Administración de Justicia hará constar en el acta las pretensiones de cada una de las partes sobre los referidos bienes y su fundamentación jurídica, y citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
     ],
     [
      "parrafo",
@@ -35909,9 +36061,18 @@
     ]
    ],
    "notas": [
+    "Se modifica el apartado 2 por el art. único.75 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifican los párrafos primero y cuarto del apartado 1 y el párrafo primero del apartado 2 por el art. 15.368 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a810",
@@ -36271,8 +36432,8 @@
    "id": "a816",
    "tipo": "precepto",
    "titulo": "Artículo 816",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -36281,7 +36442,7 @@
     ],
     [
      "parrafo",
-     "1. Si el deudor no atendiere el requerimiento de pago o no compareciere, el Letrado de la Administración de Justicia dictará decreto dando por terminado el proceso monitorio y dará traslado al acreedor para que inste el despacho de ejecución, bastando para ello con la mera solicitud."
+     "1. Si el deudor no atendiere el requerimiento de pago o no compareciere, el Letrado de la Administración de Justicia dictará decreto dando por terminado el proceso monitorio y dará traslado al acreedor para que inste el despacho de ejecución, bastando para ello con la mera solicitud, sin necesidad de que transcurra el plazo de veinte días previsto en el artículo 548 de esta Ley."
     ],
     [
      "parrafo",
@@ -36293,9 +36454,18 @@
     ]
    ],
    "notas": [
+    "Se modifica el apartado 1 por el art. único.77 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifica el apartado 1 por el art. 15.374 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a817",
@@ -36572,8 +36742,8 @@
    "id": "a826",
    "tipo": "precepto",
    "titulo": "Artículo 826",
-   "vigencia": "20151001",
-   "norma": "BOE-A-2015-8167",
+   "vigencia": "20151007",
+   "norma": "BOE-A-2015-10727",
    "versiones": 4,
    "parrafos": [
     [
@@ -36582,17 +36752,30 @@
     ],
     [
      "parrafo",
-     "Presentado por el deudor escrito de oposición, el Letrado de la Administración de Justicia dará traslado de él al acreedor con citación para la vista conforme a lo dispuesto en el apartado primero del artículo 440 para los juicios verbales."
+     "Presentado por el deudor escrito de oposición, el Letrado de la Administración de Justicia dará traslado de él al acreedor para que lo impugne por escrito en el plazo de diez días. Las partes, en sus respectivos escritos de oposición y de impugnación de ésta, podrán solicitar la celebración de vista, siguiendo los trámites previstos en los artículos 438 y siguientes para el juicio verbal."
     ],
     [
      "parrafo",
-     "La vista se celebrará del modo establecido en el artículo 443.Si no compareciere el deudor, el tribunal le tendrá por desistido de la oposición y adoptará las resoluciones previstas en el artículo anterior. Si no compareciere el acreedor, el tribunal resolverá sin oírle sobre la oposición."
+     "Si no se solicitara la vista o si el tribunal no considerase procedente su celebración, se resolverá sin más trámites la oposición."
+    ],
+    [
+     "parrafo",
+     "Cuando se acuerde la celebración de vista, si no compareciere el deudor, el tribunal le tendrá por desistido de la oposición y adoptará las resoluciones previstas en el artículo anterior. Si no compareciere el acreedor, el tribunal resolverá sin oírle sobre la oposición."
     ]
    ],
    "notas": [
+    "Se modifica por el art. único.79 de la Ley 42/2015, de 5 de octubre. Ref. BOE-A-2015-10727#aunico.",
     "Se modifican las referencias a \"Secretarios judiciales\" por la disposición adicional 1 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#daprimera",
     "Se modifica el párrafo primero por el art. 15.378 de la Ley 13/2009, de 3 de noviembre. Ref. BOE-A-2009-17493"
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
+    "decision": "Decisión 17 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20151007",
+     "norma": "BOE-A-2015-10727"
+    }
+   }
   },
   {
    "id": "a827",
