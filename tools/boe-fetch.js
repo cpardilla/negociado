@@ -107,6 +107,8 @@ async function fetchLaw({ clave, id }, today) {
     bloques,
   };
   fs.mkdirSync(OUT, { recursive: true });
+  // Known BOE consolidation errors are corrected before saving (sources/boe/correcciones.json).
+  await require("./lib/boe-correcciones").corregir(snapshot);
   fs.writeFileSync(path.join(OUT, `${clave}.json`), JSON.stringify(snapshot, null, 1) + "\n");
   const pendientes = bloques.filter((b) => b.pendiente).map((b) => b.id);
   console.log(
@@ -115,6 +117,11 @@ async function fetchLaw({ clave, id }, today) {
       (snapshot.derogada ? " · DEROGADA" : "") +
       `\n         ${titulo}`
   );
+}
+
+if (require.main !== module) {
+  module.exports = { get, parseVersion, API };
+  return;
 }
 
 (async () => {

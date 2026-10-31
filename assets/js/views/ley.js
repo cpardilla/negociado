@@ -96,6 +96,7 @@
       <div class="article-path">${esc(law.id)} › ${esc(path)}</div>
       <h2>Artículo ${esc(Neg.leyes.label(law, key))}.${a.r ? ` <span class="rubric">${esc(a.r)}</span>` : ""}</h2>
       ${a.x ? '<p class="page-meta"><span class="tag t-aviso">Sin contenido</span></p>' : ""}
+      ${a.c ? `<p class="page-meta"><span class="tag t-nota">Versión corregida</span> ${esc(a.c)}</p>` : ""}
       <div class="law-text">${Neg.leyes.html(a.p, words.length ? highlighter(words) : null)}</div>
       <div class="article-foot">
         <span>${vigor}</span><span class="spacer"></span>

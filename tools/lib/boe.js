@@ -167,6 +167,7 @@ function load(clave) {
       vigencia: b.vigencia,
       norma: b.norma,
       pendiente: b.pendiente || null,
+      correccion: b.correccion || null, // sources/boe/correcciones.json
       apartados: structure(b.parrafos),
     });
     orden.push(key);
