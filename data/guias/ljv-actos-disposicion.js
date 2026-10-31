@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G16.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G16.json; revisado con el BOE (registro: docs/revision/ljv-actos-disposicion.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-actos-disposicion",
@@ -15,7 +15,7 @@ Neg.data.register({
   "66"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G16"
  },
@@ -29,9 +29,9 @@ Neg.data.register({
   "Destino y garantías"
  ],
  "actores": {
-  "ambos": "Ambos",
+  "ambos": "Juez / LAJ",
   "juez": "Juez",
-  "laj": "LAJ"
+  "laj": "Letrado de la Administración de Justicia"
  },
  "inicio": "inicio",
  "pasos": {
@@ -46,7 +46,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El procedimiento se estructura como un grafo dirigido con múltiples ramas según el sujeto protegido, el tipo de acto, las condiciones de exención y las decisiones judiciales. Avance seleccionando la opción que corresponda a su caso."
+     "texto": "Se aplica cuando el representante legal del menor, quien presta apoyo a la persona con discapacidad o el administrador de un patrimonio protegido necesita autorización o aprobación judicial para la validez del acto, salvo que haya una tramitación específica (art. 61 LJV)."
     },
     {
      "tipo": "ley",
@@ -115,21 +115,17 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Antes de proseguir por la vía del artículo 61 LJV, debe verificarse si existe una tramitación específica establecida para el acto de que se trate. Si la hubiere, el expediente se sustanciará por esa vía específica y no por la del Capítulo VIII."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La excepción remite, entre otros, a los cauces previstos para la partición hereditaria (art. 1060 CC), la liquidación de la sociedad de gananciales, actuaciones específicas del albaceazgo y de la guarda de hecho."
+     "texto": "Si la ley establece una tramitación específica para el acto, se sigue esa y no la de este capítulo (art. 61 LJV). La aprobación de la partición hecha por el tutor, el curador representativo o el defensor judicial (art. 1060 CC) se tramita por este capítulo: la solicitud acompaña las operaciones particionales (art. 63.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 61 LJV — Excepción de tramitación específica; Art. 1060 CC"
+     "texto": "Art. 61 LJV · Art. 63.1 LJV · Art. 1060 CC"
     }
    ],
    "pregunta": "¿Existe una tramitación específica establecida para este acto?",
    "opciones": [
     {
-     "texto": "Sí, existe tramitación específica (ej. partición hereditaria, liquidación gananciales, albaceazgo)",
+     "texto": "Sí, la ley establece una tramitación específica para este acto",
      "tono": "t-plazo",
      "destino": "fin_tramit_especifica"
     },
@@ -163,12 +159,12 @@ Neg.data.register({
     {
      "texto": "Sí, menor mayor de 16 años que consiente en documento público",
      "tono": "t-ok",
-     "destino": "menor_exencion_valores"
+     "destino": "fin_exencion_menor"
     },
     {
      "texto": "No, el menor es menor de 16 años o no consiente en documento público",
      "tono": "t-nota",
-     "destino": "menor_cc166"
+     "destino": "menor_exencion_valores"
     }
    ]
   },
@@ -179,15 +175,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Además de la exención general por edad y consentimiento, el artículo 166 CC establece una exención específica para la enajenación de valores mobiliarios, siempre que su importe se reinvierta en bienes o valores seguros."
+     "texto": "Aunque el menor no haya cumplido dieciséis años o no consienta, el artículo 166 CC establece una exención específica para la enajenación de valores mobiliarios, siempre que su importe se reinvierta en bienes o valores seguros."
     },
     {
      "tipo": "nota",
      "texto": "Esta exención se justifica por la naturaleza fungible de los valores mobiliarios y la garantía que supone la reinversión en bienes o valores seguros, que preserva el patrimonio del menor."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "La reinversión debe efectuarse en bienes o valores seguros. Si la reinversión no se produce o se desvía a fines distintos, la exención podría ser objeto de revisión."
     },
     {
      "tipo": "ley",
@@ -215,26 +207,29 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Los progenitores titulares de la patria potestad necesitan autorización judicial para los siguientes actos relativos a los bienes de los hijos menores:"
+     "texto": "Los progenitores necesitan autorización judicial, que se concede por causas justificadas de utilidad o necesidad y con audiencia del Ministerio Fiscal (art. 166 CC), para:"
     },
     {
      "tipo": "lista",
-     "titulo": "Actos que requieren autorización judicial (art. 166 CC)",
+     "titulo": "Actos que requieren autorización (art. 166 CC)",
      "items": [
       "Renunciar a derechos de que sean titulares los hijos",
-      "Enajenar o gravar bienes inmuebles, establecimientos mercantiles o industriales, objetos preciosos y valores mobiliarios (salvo derecho de suscripción preferente de acciones)",
-      "Repudiar herencia o legado deferidos al hijo",
-      "Todo acto de disposición, gravamen u otro que se refiera a sus bienes o derechos, por causas justificadas de utilidad o necesidad"
+      "Enajenar o gravar sus bienes inmuebles, establecimientos mercantiles o industriales, objetos preciosos y valores mobiliarios, salvo el derecho de suscripción preferente de acciones",
+      "Repudiar la herencia o legado deferidos al hijo; si el Juez deniega la autorización, la herencia solo puede aceptarse a beneficio de inventario"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "La autorización debe concederse por causas justificadas de utilidad o necesidad y con audiencia del Ministerio Fiscal."
+     "texto": "Tutor del menor: se le aplican supletoriamente las normas de la curatela (art. 224 CC), entre ellas las autorizaciones del art. 287 CC."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El art. 166 CC habla del «Juez del domicilio»; la competencia del expediente es la del art. 62.1 LJV (residencia del menor)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 166 CC; Art. 61 LJV"
+     "texto": "Art. 166 CC · Art. 224 CC · Art. 61 LJV"
     }
    ],
    "siguiente": "competencia_menor"
@@ -278,7 +273,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Igual que para los menores, debe verificarse si existe una tramitación específica para el acto de que se trate. Si la hubiere, el expediente se sustanciará por esa vía."
+     "texto": "Si la ley establece una tramitación específica para el acto, se sigue esa y no la de este capítulo (art. 61 LJV). La aprobación de la partición hecha por el tutor, el curador representativo o el defensor judicial (art. 1060 CC) se tramita por este capítulo: la solicitud acompaña las operaciones particionales (art. 63.1 LJV)."
     },
     {
      "tipo": "ley",
@@ -351,31 +346,31 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El curador con funciones de representación necesita autorización judicial para los actos que determine la resolución judicial y, en todo caso, para los enumerados en los ordinales 1.º a 9.º del artículo 287 del Código Civil."
+     "texto": "El curador con funciones de representación necesita autorización judicial para los actos que determine la resolución y, en todo caso, para los del art. 287 CC."
     },
     {
      "tipo": "lista",
-     "titulo": "Actos que requieren autorización del curador representativo (art. 287 CC)",
+     "titulo": "Actos del art. 287 CC",
      "items": [
-      "Actos de trascendencia personal o familiar",
-      "Enajenar o gravar bienes inmuebles, establecimientos mercantiles o industriales",
-      "Enajenar o gravar bienes o derechos de especial significado personal o familiar",
-      "Enajenar o gravar bienes muebles de extraordinario valor, objetos preciosos y valores mobiliarios no cotizados",
-      "Dar inmuebles en arrendamiento por término inicial superior a seis años",
-      "Disposiciones a título gratuito",
-      "Renuncias, transacciones o arbitrajes",
-      "Aceptación sin beneficio de inventario o repudiación de herencias y liberalidades",
-      "Gastos extraordinarios, interposición de demandas, préstamos, avales o fianzas, seguros de vida y rentas vitalicias de cuantía extraordinaria"
+      "1.º Actos de trascendencia personal o familiar cuando la persona no pueda hacerlos por sí misma (a salvo internamiento, consentimiento informado y leyes especiales)",
+      "2.º Enajenar o gravar inmuebles, establecimientos mercantiles o industriales, bienes o derechos de especial significado personal o familiar, muebles de extraordinario valor, objetos preciosos y valores no cotizados; arrendar inmuebles por más de seis años; actos dispositivos inscribibles (salvo la venta del derecho de suscripción preferente)",
+      "3.º Disponer a título gratuito, salvo bienes de escasa relevancia económica y sin especial significado personal o familiar",
+      "4.º Renunciar derechos, transigir o someter a arbitraje, salvo escasa relevancia económica (no el arbitraje de consumo)",
+      "5.º Aceptar sin beneficio de inventario cualquier herencia o repudiarla, o repudiar liberalidades",
+      "6.º Hacer gastos extraordinarios en los bienes",
+      "7.º Interponer demanda en su nombre, salvo asuntos urgentes o de escasa cuantía (no para instar la revisión de sus apoyos)",
+      "8.º Dar y tomar dinero a préstamo y prestar aval o fianza",
+      "9.º Seguros de vida, renta vitalicia y análogos que requieran inversiones o aportaciones de cuantía extraordinaria"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "La resolución judicial que establezca la curatela determinará los actos para los que el curador necesitará autorización, además de los enumerados en el artículo 287."
+     "texto": "La enajenación de los bienes del 2.º se hace por venta directa, salvo que el Tribunal considere necesaria la subasta judicial (art. 287.2.º CC). Antes de autorizar, el Juez oye al Fiscal y a la persona con medidas de apoyo (art. 290 CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 287 CC; Art. 269 CC; Art. 61 LJV"
+     "texto": "Arts. 269, 287 y 290 CC · Art. 61 LJV"
     }
    ],
    "siguiente": "competencia_disc"
@@ -391,7 +386,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La actuación del guardador de hecho es, por principio, asistencial y no representativa. Solo de forma excepcional podrá actuar en representación, y en ese caso la autorización judicial se rige por los mismos términos que la del curador representativo (art. 287 CC)."
+     "texto": "La actuación representativa del guardador es excepcional. En todo caso necesita autorización para los actos del art. 287 CC; no la necesita para pedir una prestación económica que no cambie significativamente la forma de vida de la persona ni para actos sobre bienes de escasa relevancia económica y sin especial significado personal o familiar (art. 264 CC). La autoridad judicial entrevista por sí misma a la persona (art. 52.3 LJV)."
     },
     {
      "tipo": "aviso",
@@ -399,7 +394,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 264 CC; Art. 287 CC; Art. 61 LJV"
+     "texto": "Art. 264 CC · Art. 287 CC · Arts. 52.3 y 61 LJV"
     }
    ],
    "siguiente": "competencia_disc"
@@ -431,15 +426,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Las reglas de administración del patrimonio protegido (Ley 41/2003) deberán prever la autorización judicial en los mismos supuestos que el curador representativo."
+     "texto": "El administrador del patrimonio protegido necesita autorización o aprobación judicial cuando así resulte de las reglas de administración del documento público o de la resolución de constitución, o de los apoyos y salvaguardas establecidos (art. 5.2 Ley 41/2003)."
     },
     {
      "tipo": "nota",
-     "texto": "Los actos de disposición, gravamen u otros que se refieran a los bienes del patrimonio protegido necesitan autorización o aprobación judicial, conforme al artículo 5 de la Ley 41/2003."
+     "texto": "No hace falta subasta pública para enajenar sus bienes, y el gasto de dinero y el consumo de bienes fungibles para atender las necesidades vitales del beneficiario no son actos de disposición (art. 5.2 Ley 41/2003)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 5 LPPPD; Art. 61 LJV"
+     "texto": "Art. 5 Ley 41/2003 · Art. 61 LJV"
     }
    ],
    "pregunta": "¿Se trata de autorización previa o de aprobación posterior al acto?",
@@ -463,7 +458,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Debe verificarse si existe una tramitación específica. Si la hubiere, el expediente se sustanciará por esa vía."
+     "texto": "Si la ley establece una tramitación específica para el acto, se sigue esa y no la de este capítulo (art. 61 LJV)."
     },
     {
      "tipo": "ley",
@@ -491,26 +486,26 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El artículo 5 de la Ley 41/2003 permite que los constituyentes o el administrador del patrimonio protegido insten al Ministerio Fiscal la excepción de la autorización judicial en atención a la composición del patrimonio, las circunstancias personales del beneficiario u otras análogas."
+     "texto": "Los constituyentes o el administrador pueden instar al Ministerio Fiscal que solicite del Juez la excepción de la autorización judicial en determinados supuestos, atendiendo a la composición del patrimonio, las circunstancias personales del beneficiario, las necesidades derivadas de su discapacidad, la solvencia del administrador u otras análogas (art. 5.3 Ley 41/2003)."
     },
     {
      "tipo": "nota",
-     "texto": "Esta exención no es automática: requiere la instancia ante el Ministerio Fiscal y que éste la considere procedente en atención a las circunstancias."
+     "texto": "La excepción la concede el Juez en el expediente del art. 56 c) LJV, a instancia del Fiscal."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 5 LPPPD; Art. 7 LPPPD (supervisión del MF)"
+     "texto": "Art. 5.3 Ley 41/2003 · Art. 56 c) LJV"
     }
    ],
-   "pregunta": "¿Se ha instado al Ministerio Fiscal la exención de la autorización y ha sido estimada?",
+   "pregunta": "¿Ha concedido el Juez la excepción de la autorización para este acto?",
    "opciones": [
     {
-     "texto": "Sí, el Ministerio Fiscal ha estimado la exención",
+     "texto": "Sí, hay resolución judicial que exceptúa la autorización",
      "tono": "t-ok",
      "destino": "fin_exencion_patrimonio"
     },
     {
-     "texto": "No se ha instado, fue denegada o la exención no procede",
+     "texto": "No (no se ha pedido, se denegó o no comprende este acto)",
      "tono": "t-nota",
      "destino": "competencia_pat"
     }
@@ -527,15 +522,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
+     "texto": "Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 j) LOPJ); si no, la Sección Civil."
+    },
+    {
+     "tipo": "nota",
      "texto": "Si antes de la celebración de la comparecencia se produjera un cambio de la residencia habitual del menor, se remitirán las actuaciones al Juzgado correspondiente en el estado en que se hallen."
     },
     {
-     "tipo": "plazo",
-     "texto": "Cambio de residencia antes de la comparecencia: remisión de actuaciones al nuevo Juzgado competente."
-    },
-    {
      "tipo": "ley",
-     "texto": "Art. 62.1 LJV"
+     "texto": "Art. 62.1 LJV · Art. 86.5 j) LOPJ"
     }
    ],
    "siguiente": "legitimacion_menor"
@@ -551,15 +546,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
+     "texto": "Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 j) LOPJ); si no, la Sección Civil."
+    },
+    {
+     "tipo": "nota",
      "texto": "Si antes de la celebración de la comparecencia se produjera un cambio de la residencia habitual, se remitirán las actuaciones al Juzgado correspondiente en el estado en que se hallen."
     },
     {
-     "tipo": "plazo",
-     "texto": "Cambio de residencia antes de la comparecencia: remisión de actuaciones."
-    },
-    {
      "tipo": "ley",
-     "texto": "Art. 62.1 LJV"
+     "texto": "Art. 62.1 LJV · Art. 86.5 j) LOPJ"
     }
    ],
    "siguiente": "legitimacion_disc"
@@ -575,11 +570,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
+     "texto": "Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 j) LOPJ); si no, la Sección Civil."
+    },
+    {
+     "tipo": "nota",
      "texto": "Si antes de la celebración de la comparecencia se produjera un cambio de la residencia habitual, se remitirán las actuaciones al Juzgado correspondiente."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 62.1 LJV"
+     "texto": "Art. 62.1 LJV · Art. 86.5 j) LOPJ"
     }
    ],
    "siguiente": "legitimacion_pat"
@@ -688,7 +687,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 62.2 LJV; Art. 5 LPPPD"
+     "texto": "Art. 62.2 LJV; Art. 5 Ley 41/2003"
     }
    ],
    "siguiente": "postulacion"
@@ -716,7 +715,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 62.3 LJV; LJV art. 4; LEC"
+     "texto": "Art. 62.3 LJV"
     }
    ],
    "pregunta": "¿Cuál es el valor del acto para el que se insta el expediente?",
@@ -744,7 +743,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "El Juez puede ordenar la intervención de abogado de oficio si concurren circunstancias de complejidad o conflicto de intereses. Prepárese para esta posibilidad."
+     "texto": "El Juez puede ordenar, de oficio, que todos los interesados actúen por medio de abogado si la operación es compleja o comparecen sujetos con intereses enfrentados (art. 62.3 LJV)."
     },
     {
      "tipo": "ley",
@@ -772,15 +771,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Cuando concurran circunstancias de complejidad o intereses enfrentados, el Juez podrá ordenar la actuación de todos los interesados por medio de abogado. Deberá preverse la designación de abogado y, en su caso, de procurador."
+     "texto": "Cuando concurran circunstancias de complejidad o intereses enfrentados, el Juez podrá ordenar la actuación de todos los interesados por medio de abogado. La ley prevé la orden de actuar por medio de abogado, no de procurador."
     },
     {
      "tipo": "nota",
-     "texto": "Si el solicitante no dispone de abogado, podrá solicitar la designación de abogado del turno de oficio."
+     "texto": "Si reúne los requisitos, puede pedir el reconocimiento del derecho a la asistencia jurídica gratuita."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 62.3 LJV; LEC"
+     "texto": "Art. 62.3 LJV"
     }
    ],
    "siguiente": "solicitud_general"
@@ -792,7 +791,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El artículo 63.1 LJV establece el contenido obligatorio de la solicitud de autorización o aprobación judicial. Todos los extremos deben acreditarse documentalmente."
+     "texto": "El artículo 63.1 LJV establece el contenido obligatorio de la solicitud de autorización o aprobación judicial. Con ella se presentan los documentos y antecedentes necesarios para formular juicio exacto sobre el negocio."
     },
     {
      "tipo": "lista",
@@ -877,7 +876,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Sin dictamen pericial de valoración de mercado, la petición de venta directa no prosperará."
+     "texto": "La petición de venta directa debe acompañarse del dictamen pericial de valoración del precio de mercado (art. 63.3 LJV)."
     },
     {
      "tipo": "ley",
@@ -934,12 +933,16 @@ Neg.data.register({
      "marcar": true
     },
     {
+     "tipo": "plazo",
+     "texto": "Citación con al menos quince días de antelación; comparecencia dentro de los treinta días siguientes a la admisión (arts. 17.3 y 18.1 LJV)."
+    },
+    {
      "tipo": "nota",
      "texto": "La citación del menor mayor de doce años y de la persona con discapacidad es una manifestación del derecho a ser oído y expresa voluntad, deseos y preferencias, conforme al principio rector de respeto a la voluntad de la persona con discapacidad (art. 249 CC) y a la Convención de Nueva York de 2006."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 64.1 LJV; Art. 249 CC; Convención ONU 2006"
+     "texto": "Art. 64.1 LJV · Arts. 17.3 y 18.1 LJV · Art. 249 CC · Convención ONU 2006"
     }
    ],
    "siguiente": "tramitacion_dictamen"
@@ -989,11 +992,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El criterio rector es siempre el interés superior del menor o de la persona con discapacidad. El Juez valora la justificación ofrecida y la conveniencia del acto para los intereses de la persona protegida."
+     "texto": "El Juez resuelve por auto en los cinco días siguientes a la comparecencia (art. 19.1 LJV). En los actos de los progenitores, la autorización exige causas justificadas de utilidad o necesidad (art. 166 CC); en los del curador, oír al Fiscal y a la persona con medidas de apoyo (art. 290 CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 65.1 LJV"
+     "texto": "Art. 65.1 LJV · Art. 19.1 LJV · Arts. 166 y 290 CC"
     }
    ],
    "pregunta": "¿Cuál ha sido el resultado de la resolución judicial?",
@@ -1079,11 +1082,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La exclusión de la subasta en los actos de gravamen o extinción de derechos reales busca simplificar el procedimiento, aplicando las formalidades de la venta pero sin el trámite de la subasta pública."
+     "texto": "Se siguen las formalidades de la venta, sin subasta."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 65.4 LJV; Art. 1060 CC"
+     "texto": "Art. 65.4 LJV"
     }
    ],
    "siguiente": "res_recurso"
@@ -1095,7 +1098,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Cuando el acto autorizado sea de disposición con venta, deberá determinarse el régimen de la venta, que podrá ser mediante subasta o venta directa."
+     "texto": "Cuando el acto autorizado sea una venta, hay que estar a la forma de enajenación que fije la resolución."
     },
     {
      "tipo": "nota",
@@ -1103,11 +1106,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si no se solicitó venta directa, o el Juez no la estimó, se seguirá el régimen ordinario de enajenación judicial, que incluye la subasta."
+     "texto": "La Ley 8/2021 suprimió la regla de la pública subasta (art. 65.2 LJV). Para el curador representativo, la enajenación se hace por venta directa, salvo que el Tribunal considere necesaria la subasta judicial (art. 287.2.º CC); en el patrimonio protegido no hace falta subasta (art. 5.2 Ley 41/2003)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 63.3 LJV; Art. 65.4 LJV"
+     "texto": "Arts. 63.3 y 65 LJV · Art. 287.2.º CC · Art. 5.2 Ley 41/2003"
     }
    ],
    "siguiente": "res_recurso"
@@ -1142,6 +1145,10 @@ Neg.data.register({
      "texto": "La resolución judicial es recurrible en apelación con efectos suspensivos. Esto significa que la eficacia de la resolución queda en suspenso hasta la resolución del recurso y, en consecuencia, el acto autorizado no podrá ejecutarse entre tanto."
     },
     {
+     "tipo": "plazo",
+     "texto": "Veinte días desde la notificación, ante la Audiencia Provincial, con Abogado y Procurador (art. 458.1 LEC; art. 3.2 LJV)."
+    },
+    {
      "tipo": "nota",
      "texto": "<strong>Efectos suspensivos:</strong> Tanto si la resolución fue estimatoria como desestimatoria, la interposición del recurso de apelación suspende la eficacia de la resolución. Si la autorización fue concedida, no podrá ejecutarse el acto hasta que se resuelva el recurso. Si fue denegada, la denegación tampoco es firme."
     },
@@ -1151,7 +1158,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 65.5 LJV; LEC (recurso de apelación); LJV art. 22"
+     "texto": "Art. 65.5 LJV · Art. 3.2 LJV · Arts. 455 y ss. LEC"
     }
    ],
    "pregunta": "¿Se interpone recurso de apelación?",
@@ -1183,11 +1190,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si la apelación confirma la concesión, el acto podrá ejecutarse. Si la revoca, el acto no podrá realizarse. Si la apelación confirma la denegación, la vía judicial ordinaria se agota."
+     "texto": "Si la apelación confirma la concesión, el acto podrá ejecutarse. Si la revoca, el acto no podrá realizarse. Si confirma la denegación, cabe una nueva solicitud si cambian las circunstancias (art. 19.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 65.5 LJV; LEC"
+     "texto": "Art. 65.5 LJV · Arts. 458 y 461 LEC"
     }
    ],
    "pregunta": "¿Cuál es el resultado del recurso de apelación?",
@@ -1288,15 +1295,15 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "La realización de un acto sin la autorización judicial requerida puede generar responsabilidad civil e, incluso, penal para el representante legal o la persona que presta apoyo."
+     "texto": "El acto realizado sin la autorización exigida puede ser impugnado, y quien lo realizó responde de los daños causados por su culpa o negligencia (arts. 234 y 294 CC)."
     },
     {
      "tipo": "nota",
-     "texto": "Si las circunstancias cambian, podrá plantearse una nueva solicitud de autorización judicial con nueva justificación."
+     "texto": "Firme la resolución, no cabe otro expediente sobre idéntico objeto salvo que cambien las circunstancias (art. 19.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 65.1 LJV; Art. 166 CC; Art. 287 CC"
+     "texto": "Art. 65.1 LJV · Art. 19.3 LJV · Arts. 166, 234, 287 y 294 CC"
     }
    ],
    "fin": "error"
@@ -1308,15 +1315,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Existe una tramitación específica establecida para el acto de que se trate. El expediente deberá sustanciarse por la vía específica correspondiente y no por la del Capítulo VIII de la LJV."
+     "texto": "La ley establece una tramitación específica para el acto: el expediente se sustancia por esa vía y no por la del capítulo VIII de la LJV (art. 61 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "Las vías específicas más frecuentes son: la partición hereditaria (art. 1060 CC), la liquidación de la sociedad de gananciales, las actuaciones específicas del albaceazgo y de la guarda de hecho."
+     "texto": "No lo es la aprobación de la partición del art. 1060 CC, que se tramita por este capítulo (art. 63.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 61 LJV; Art. 1060 CC"
+     "texto": "Art. 61 LJV"
     }
    ],
    "fin": "warning"
@@ -1352,24 +1359,24 @@ Neg.data.register({
   },
   "fin_exencion_patrimonio": {
    "fase": 0,
-   "titulo": "Exención de autorización por estimación del Ministerio Fiscal",
+   "titulo": "Exención de autorización acordada por el Juez",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Los constituyentes o el administrador del patrimonio protegido han instado al Ministerio Fiscal la excepción de la autorización judicial, y ha sido estimada en atención a la composición del patrimonio, las circunstancias personales del beneficiario u otras análogas."
+     "texto": "Una resolución judicial, a instancia del Fiscal, ha exceptuado la autorización judicial para este supuesto (art. 5.3 Ley 41/2003; art. 56 c) LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "La exención no es definitiva: si cambian las circunstancias que la motivaron, podría dejarse sin efecto y exigirse la autorización judicial."
+     "texto": "El Fiscal sigue supervisando la administración y puede instar nuevas medidas (art. 7.1 Ley 41/2003)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 5 LPPPD; Art. 7 LPPPD"
+     "texto": "Arts. 5.3 y 7 Ley 41/2003 · Art. 56 c) LJV"
     }
    ],
    "fin": "success"
   }
  },
- "pie": "Ley 15/2015, LJV, Arts. 61-66<br>CC arts. 166, 249, 264, 269, 287, 1060<br>Ley 41/2003 (LPPPD)<br>Convención ONU 2006"
+ "pie": "*Referencias normativas*<br>Arts. 17 a 20 y 61 a 66 LJV<br>Arts. 166, 224, 249, 264, 269, 287, 290 y 1060 CC<br>Art. 5 Ley 41/2003<br>Convención ONU 2006"
 });
