@@ -1218,7 +1218,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se da traslado del escrito de impugnación al cuentadante para que conteste conforme a los arts. 404 y siguientes LEC (el art. 404.1 fija veinte días para contestar), y la tramitación continúa por los trámites del juicio verbal."
+     "texto": "Se da traslado del escrito de impugnación al cuentadante para que conteste conforme al art. 438 LEC (por escrito, en diez días). Las partes, en sus escritos de impugnación y contestación, pueden pedir vista; la tramitación continúa por los trámites del juicio verbal (art. 800.4 LEC)."
     }
    ],
    "siguiente": "vista_check"
@@ -1230,7 +1230,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se aplican las reglas del juicio verbal sobre la celebración de vista."
+     "texto": "Se aplican las reglas del juicio verbal sobre la celebración de vista; las partes pueden haberla pedido en sus escritos (art. 800.4 LEC)."
     }
    ],
    "pregunta": "¿Se celebra vista?",

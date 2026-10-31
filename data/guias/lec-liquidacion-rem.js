@@ -237,7 +237,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si se discute la inclusión o exclusión de algún concepto o el importe de alguna partida, el LAJ cita a los interesados a una vista y se sigue el juicio verbal."
+     "texto": "Si se discute la inclusión o exclusión de algún concepto o el importe de alguna partida, el LAJ hace constar en el acta las pretensiones de cada parte y su fundamentación jurídica, cita a los interesados a una vista y se sigue el juicio verbal."
     }
    ],
    "siguiente": "vista_verbal_inv"

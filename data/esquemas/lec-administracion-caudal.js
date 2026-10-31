@@ -458,7 +458,10 @@ Neg.data.register({
              "t": "<strong>Plazo:</strong> Dentro del término común señalado por el LAJ (tiempo hábil)."
             },
             {
-             "t": "<strong>Traslado:</strong> Se da traslado del escrito de impugnación al cuentadante (administrador) para que conteste conforme a los arts. 404 y ss. LEC (contestación del juicio ordinario: veinte días, art. 404.1)."
+             "t": "<strong>Traslado:</strong> Se da traslado del escrito de impugnación al cuentadante (administrador) para que conteste conforme al art. 438 LEC (contestación escrita del juicio verbal: diez días, art. 438.1)."
+            },
+            {
+             "t": "<strong>Vista:</strong> Las partes, en sus escritos de impugnación y contestación, pueden pedir la celebración de vista (art. 800.4)."
             },
             {
              "t": "<strong>Tramitación subsiguiente:</strong> Después, se sigue con arreglo a lo dispuesto para el juicio verbal (arts. 437 y ss. LEC)."
@@ -469,7 +472,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Remisión a los arts. 404 y ss. LEC:</strong> El art. 800.4 remite a los arts. 404 y ss. (contestación en el juicio ordinario), no al art. 438 (contestación en el juicio verbal): la contestación sigue las reglas del ordinario y el resto de la tramitación, las del verbal."
+            "texto": "<strong>Remisión al art. 438 LEC:</strong> El art. 800.4, en la redacción de la Ley 42/2015, remite al art. 438 (contestación escrita del juicio verbal, diez días) y permite pedir vista en los escritos. La versión consolidada del BOE fechada el 1-10-2015 conserva por error la redacción anterior («arts. 404 y siguientes»)."
            }
           }
          ]
@@ -477,7 +480,7 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC arts. 404 y ss.",
+       "LEC art. 438",
        "LEC arts. 437 y ss."
       ],
       "claves": "rendición final cuentas cese impugnación oposición término común decreto aprobación exención responsabilidad caución traslado contestación artículo 438 vista juicio verbal complementaria manifiesto partes oficia silencio aprobatorio"
@@ -1013,8 +1016,8 @@ Neg.data.register({
        ],
        [
         "Contestación del cuentadante a la impugnación de cuentas",
-        "20 días (contestación del juicio ordinario)",
-        "Art. 800.4 + art. 404.1 LEC"
+        "10 días (contestación del juicio verbal)",
+        "Art. 800.4 + art. 438.1 LEC"
        ],
        [
         "Acceso a la inspección de cuentas por las partes",
@@ -1146,8 +1149,8 @@ Neg.data.register({
     {
      "norma": {
       "ley": "Ley 1/2000 de Enjuiciamiento Civil",
-      "titulo": "Arts. 404 y ss. — Contestación (y no el art. 438)",
-      "texto": "<strong>Remisión del art. 800.4:</strong> No es el aplicable: el art. 800.4 remite a los arts. 404 y ss. (contestación en el juicio ordinario, veinte días) y, después, a la tramitación del juicio verbal.",
+      "titulo": "Art. 438 — Contestación en el juicio verbal",
+      "texto": "<strong>Remisión del art. 800.4:</strong> El cuentadante contesta conforme al art. 438 (por escrito, en diez días); las partes pueden pedir vista en sus escritos y se sigue la tramitación del juicio verbal.",
       "etiqueta": "Procesal civil",
       "tono": "t-plazo"
      }

@@ -59,3 +59,12 @@ Las siete fichas (una por artículo) se mantienen, pero su contenido se ha **reh
 | 9 | entrega_790 | incompleto | Sin la salvedad del art. 791 | «Cesa la intervención, salvo lo dispuesto en el art. 791» | LEC |
 
 Paso nuevo: `fin_bloqueo_acreedores`. La pregunta de `cesacion_796` deja de ofrecer «pago a los acreedores» como causa independiente: se llega a ella desde el cese por acuerdo (art. 796.3).
+
+## Corrección posterior (2026-10-31) · Decisión 17: instantánea del BOE corregida
+
+| Recurso | Lugar | Antes | Ahora |
+|---|---|---|---|
+| E03 | Artículo 794 › controversia (apartado 4) | El LAJ cita a vista | El LAJ hace constar en el acta las pretensiones de cada parte y su fundamentación jurídica, y cita a vista (art. 794.4) |
+| G03 | Controversia sobre el inventario | Ídem | Ídem |
+
+Origen: la instantánea de la LEC guardaba, para este artículo, la versión del BOE de 1-10-2015 (LO 7/2015), construida sobre el texto anterior a la Ley 42/2015; la vigente es la de la Ley 42/2015. Detalle en `boe-correcciones.md`.

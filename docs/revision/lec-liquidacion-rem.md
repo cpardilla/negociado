@@ -61,3 +61,12 @@ Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Trib
 | 12 | Título | migración | El título incluía texto de la interfaz antigua («− 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar») | Título limpio | — |
 
 Pasos retirados: `auto_788`, `fin_auto_788`, `decreto_acuerdo`, `ejecucion_forzosa`.
+
+## Corrección posterior (2026-10-31) · Decisión 17: instantánea del BOE corregida
+
+| Recurso | Lugar | Antes | Ahora |
+|---|---|---|---|
+| E05 | Artículo 809 › controversia (apartado 2) | El LAJ cita a vista | El LAJ hace constar en el acta las pretensiones de cada parte y su fundamentación jurídica, y cita a vista (art. 809.2) |
+| G05 | Controversia (art. 809.2) | Ídem | Ídem |
+
+Origen: la instantánea de la LEC guardaba, para este artículo, la versión del BOE de 1-10-2015 (LO 7/2015), construida sobre el texto anterior a la Ley 42/2015; la vigente es la de la Ley 42/2015. Detalle en `boe-correcciones.md`.

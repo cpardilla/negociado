@@ -348,7 +348,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Si se discute la inclusión o exclusión de algún concepto o el importe de alguna partida, el Letrado de la Administración de Justicia cita a una vista y se sigue con arreglo al juicio verbal (arts. 437 y ss. LEC)."
+             "t": "Si se discute la inclusión o exclusión de algún concepto o el importe de alguna partida, el Letrado de la Administración de Justicia hace constar en el acta las pretensiones de cada parte y su fundamentación jurídica, cita a los interesados a una vista y se sigue con arreglo al juicio verbal (arts. 437 y ss. LEC)."
             },
             {
              "t": "La sentencia resuelve todas las cuestiones, aprueba el inventario y dispone sobre la administración y disposición de los bienes comunes."

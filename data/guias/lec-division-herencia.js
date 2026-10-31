@@ -377,7 +377,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Si hay controversia sobre la inclusión o exclusión de bienes, el LAJ cita a una vista y se sigue el juicio verbal; la sentencia deja a salvo los derechos de terceros (art. 794.4 LEC)."
+     "texto": "Si hay controversia sobre la inclusión o exclusión de bienes, el LAJ hace constar en el acta las pretensiones de cada parte y su fundamentación jurídica y cita a una vista y se sigue el juicio verbal; la sentencia deja a salvo los derechos de terceros (art. 794.4 LEC)."
     },
     {
      "tipo": "nota",

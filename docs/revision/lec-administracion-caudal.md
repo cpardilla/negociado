@@ -53,3 +53,12 @@
 | 10 | prov_concedida | estructura | Opción «No, pasar a rendición de cuentas» llevaba a enajenaciones | Respuestas coherentes | — |
 
 Pasos retirados: `registro_decision`, `registro_propiedad`, `nombramiento`. Pasos reconectados: `caucion_pend`, `caucion_problema`.
+
+## Corrección posterior (2026-10-31) · Decisión 17: instantánea del BOE corregida
+
+| Recurso | Lugar | Antes | Ahora |
+|---|---|---|---|
+| E04 | Artículo 800 › impugnación; nota; tabla de plazos; ecosistema | «Contesta conforme a los arts. 404 y ss. (veinte días, art. 404.1), no al art. 438» (introducido en esta revisión: hallazgo 1) | Contesta conforme al art. 438 (por escrito, diez días, art. 438.1); las partes pueden pedir vista en sus escritos; juicio verbal. **El original estaba bien**: se deshace el hallazgo 1 |
+| G04 | traslado_cuentadante, vista_check | Ídem (hallazgo 7 de la revisión G04) | Art. 438, diez días; vista a petición en los escritos (art. 800.4). Se deshace el hallazgo 7 |
+
+Origen: la instantánea de la LEC guardaba, para este artículo, la versión del BOE de 1-10-2015 (LO 7/2015), construida sobre el texto anterior a la Ley 42/2015; la vigente es la de la Ley 42/2015. Detalle en `boe-correcciones.md`.

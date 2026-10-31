@@ -329,7 +329,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ cita a los interesados a una vista y se sigue la tramitación del juicio verbal."
+     "texto": "El LAJ hace constar en el acta las pretensiones de cada parte sobre esos bienes y su fundamentación jurídica, cita a los interesados a una vista y se sigue la tramitación del juicio verbal."
     },
     {
      "tipo": "aviso",

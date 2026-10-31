@@ -106,3 +106,11 @@ El comprobador marca en la guía: «art. 786.4» (×4) y «art. 787.7» (×7), q
 | 16 | Varios | desfasado | Juzgado de Primera Instancia | Sección Civil del Tribunal de Instancia | LO 1/2025 |
 
 Pasos retirados: `p2_jv_gananciales`, `p5_jv_parcial`, `p5_sentencia_est`, `p5_sentencia_des` (las dos sentencias se unen en `p5_sentencia`).
+
+## Corrección posterior (2026-10-31) · Decisión 17: instantánea del BOE corregida
+
+| Recurso | Lugar | Antes | Ahora |
+|---|---|---|---|
+| G02 | Inventario y administración (art. 794.4) | El LAJ cita a vista | El LAJ hace constar en el acta las pretensiones de cada parte y su fundamentación jurídica, y cita a vista |
+
+Origen: la instantánea de la LEC guardaba, para este artículo, la versión del BOE de 1-10-2015 (LO 7/2015), construida sobre el texto anterior a la Ley 42/2015; la vigente es la de la Ley 42/2015. Detalle en `boe-correcciones.md`.

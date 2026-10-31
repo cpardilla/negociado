@@ -434,7 +434,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Si se discute la inclusión o exclusión de bienes, el Letrado de la Administración de Justicia cita a los interesados a una vista y se sigue la tramitación del juicio verbal (arts. 437 y ss. LEC)."
+             "t": "Si se discute la inclusión o exclusión de bienes, el Letrado de la Administración de Justicia hace constar en el acta las pretensiones de cada parte sobre esos bienes y su fundamentación jurídica, cita a los interesados a una vista y se sigue la tramitación del juicio verbal (arts. 437 y ss. LEC)."
             },
             {
              "t": "La sentencia sobre la inclusión o exclusión deja a salvo los derechos de terceros."
