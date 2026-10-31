@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G11.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G11.json; revisado con el BOE (registro: docs/revision/ljv-medidas-apoyo.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-medidas-apoyo",
@@ -12,7 +12,7 @@ Neg.data.register({
   "42 bis c"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G11"
  },
@@ -24,9 +24,9 @@ Neg.data.register({
   "5. Revisión"
  ],
  "actores": {
-  "ambos": "ac-ambos",
-  "juez": "ac-juez",
-  "laj": "ac-laj"
+  "ambos": "Juez / LAJ",
+  "juez": "Juez",
+  "laj": "Letrado de la Administración de Justicia"
  },
  "inicio": "inicio",
  "pasos": {
@@ -41,11 +41,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Las medidas judiciales son el último recurso del sistema: solo proceden en ausencia de medidas voluntarias de apoyo suficientes (poderes preventivos, autocuratela, guarda de hecho, etc.)."
+     "texto": "Las medidas judiciales son el último recurso del sistema: solo proceden en ausencia de medidas voluntarias de apoyo suficientes (medidas en escritura pública, poderes y mandatos preventivos, guarda de hecho)."
     },
     {
      "tipo": "nota",
-     "texto": "Orden de preferencia (art. 249 CC): 1.º Medidas voluntarias (arts. 255–256 CC) · 2.º Guarda de hecho (arts. 291–298 CC) · 3.º Medidas judiciales (curatela; subsidiariamente, defensor judicial)."
+     "texto": "Las medidas judiciales solo proceden en defecto o por insuficiencia de las voluntarias (arts. 255–262 CC) y a falta de guarda de hecho que suponga apoyo suficiente (arts. 263–267 CC) (arts. 249 y 255 CC). Son la curatela, para el apoyo continuado, y el defensor judicial, para el ocasional aunque sea recurrente (art. 250 CC)."
     },
     {
      "tipo": "aviso",
@@ -56,14 +56,14 @@ Neg.data.register({
      "titulo": "Verificación previa",
      "items": [
       "La persona requiere apoyo de carácter estable para ejercer su capacidad jurídica",
-      "No existen medidas voluntarias suficientes (autocuratela, poder preventivo)",
+      "No existen medidas voluntarias suficientes (escritura pública de medidas de apoyo, poder preventivo)",
       "La persona reside en la circunscripción del juzgado competente"
      ],
      "marcar": true
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis a) LJV · Art. 249 CC (Ley 8/2021) · Art. 2.3 LJV · Art. 12 CRPD (2006)"
+     "texto": "Art. 42 bis a) LJV · Arts. 249, 250 y 255 CC · Art. 2.3 LJV · Art. 12 CRPD (2006)"
     }
    ],
    "pregunta": "¿Procede la provisión de una medida judicial de apoyo estable?",
@@ -152,7 +152,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis a) apdo. 3, párrs. 2.º y 3.º LJV · Art. 4 LJV"
+     "texto": "Art. 42 bis a) apdo. 3, párr. 2.º LJV · Art. 4 LJV"
     }
    ],
    "pregunta": "¿Cuál es el origen de la comunicación al Ministerio Fiscal?",
@@ -235,15 +235,19 @@ Neg.data.register({
       "Competencia territorial del Juzgado (residencia de la persona con discapacidad)",
       "Aportación del dictamen pericial social Y sanitario",
       "Aportación de documentación acreditativa de la necesidad de las medidas",
-      "Ausencia de resolución firme previa sobre el mismo objeto sin cambio de circunstancias (art. 19 LJV)",
-      "Inexistencia de proceso contencioso pendiente sobre el mismo objeto (art. 6 LJV)",
+      "Ausencia de resolución firme previa sobre el mismo objeto sin cambio de circunstancias (art. 19.3 LJV)",
+      "Inexistencia de proceso contencioso pendiente sobre el mismo objeto (art. 6.2 LJV)",
       "Inexistencia de expediente simultáneo sobre idéntico objeto (art. 6.1 LJV)"
      ],
      "marcar": true
     },
     {
+     "tipo": "nota",
+     "texto": "El LAJ examina la competencia y los defectos de la solicitud (art. 16 LJV) y la admite a trámite (art. 42 bis b) apdo. 2 LJV). Si entiende que no es admisible, da cuenta al Juez, a quien corresponde decidir este expediente (arts. 2.3 y 17.1 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdo. 2 LJV · Arts. 6 y 19 LJV · Art. 5 LJV"
+     "texto": "Art. 42 bis b) apdo. 2 LJV · Arts. 6, 16, 17 y 19.3 LJV"
     }
    ],
    "pregunta": "¿La solicitud cumple los requisitos de admisibilidad?",
@@ -276,15 +280,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "No existe en la LJV un plazo específico para la subsanación; se aplica la LEC supletoriamente (art. 8 LJV). El plazo habitual es de 10 días, salvo que el Juez disponga otro."
+     "texto": "Si no se subsana en plazo, el LAJ da cuenta al Juez, que acuerda lo que proceda (art. 16.4 LJV)."
     },
     {
-     "tipo": "aviso",
-     "texto": "Si el promotor es el Ministerio Fiscal, la subsanación se entiende de oficio sin necesidad de requerimiento externo."
+     "tipo": "plazo",
+     "texto": "Cinco días para subsanar (art. 16.4 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 8 LJV (supletoriedad LEC) · Art. 231 LEC"
+     "texto": "Art. 16.4 LJV · Art. 2.3 LJV"
     }
    ],
    "pregunta": "¿Se subsanan los defectos en el plazo concedido?",
@@ -308,7 +312,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Es competente el Juzgado de Primera Instancia del lugar donde resida la persona con discapacidad. La competencia territorial es imperativa e inderogable: no puede modificarse por sumisión de las partes (art. 2.2 LJV)."
+     "texto": "Es competente el Juzgado de Primera Instancia del lugar donde resida la persona con discapacidad (art. 42 bis a) apdo. 2 LJV). Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 g) LOPJ); si no, la Sección Civil. La competencia territorial no puede modificarse por sumisión expresa ni tácita (art. 2.2 LJV)."
     },
     {
      "tipo": "nota",
@@ -316,15 +320,15 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "ATENCIÓN: si se detecta cambio de residencia habitual ANTES de la celebración de la comparecencia, deben remitirse las actuaciones al Juzgado del nuevo domicilio en el estado en que se hallen."
+     "texto": "ATENCIÓN: si se detecta cambio de residencia habitual ANTES de la celebración de la comparecencia, deben remitirse las actuaciones al Juzgado de la nueva residencia en el estado en que se hallen."
     },
     {
      "tipo": "nota",
-     "texto": "Una vez celebrada la comparecencia, la competencia se consolida y no se traslada por cambio de residencia."
+     "texto": "Celebrada la comparecencia, el cambio de residencia ya no da lugar a la remisión de las actuaciones (art. 42 bis a) apdo. 2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis a) apdo. 2 LJV · Art. 2.2 LJV"
+     "texto": "Art. 42 bis a) apdo. 2 LJV · Art. 2.2 LJV · Art. 86.5 g) LOPJ"
     }
    ],
    "pregunta": "¿Ha cambiado la residencia habitual de la persona con discapacidad antes de la comparecencia?",
@@ -335,7 +339,7 @@ Neg.data.register({
      "destino": "diligencias"
     },
     {
-     "texto": "Sí — debe remitirse el expediente al Juzgado del nuevo domicilio",
+     "texto": "Sí — debe remitirse el expediente al Juzgado de la nueva residencia",
      "tono": "t-plazo",
      "destino": "fin_inhibicion"
     }
@@ -348,7 +352,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Antes de la comparecencia, el Letrado de la AJ y la Autoridad Judicial practican las diligencias de instrucción previstas en el art. 42 bis b) apdos. 3 y 4 LJV."
+     "texto": "Antes de la comparecencia, el Letrado de la AJ y la Autoridad Judicial practican las diligencias de instrucción previstas en el art. 42 bis b) apdo. 2 LJV."
     },
     {
      "tipo": "lista",
@@ -363,8 +367,9 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Diligencias POTESTATIVAS (a criterio de la Autoridad Judicial)",
      "items": [
-      "Solicitar informe a la entidad pública territorial con funciones de promoción de la autonomía y asistencia a personas con discapacidad (sistema SAAD, Ley 39/2006)",
-      "Solicitar informe a entidad del tercer sector de acción social debidamente habilitada como colaboradora de la Administración de Justicia"
+      "Solicitar informe a la entidad pública que en el territorio tenga encomendada la promoción de la autonomía y asistencia a las personas con discapacidad",
+      "Solicitar informe a entidad del tercer sector de acción social debidamente habilitada como colaboradora de la Administración de Justicia",
+      "Ordenar un dictamen pericial, cuando lo considere necesario atendiendo a las circunstancias del caso"
      ],
      "marcar": true
     },
@@ -378,7 +383,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdos. 3 y 4 LJV · Ley 39/2006 (SAAD)"
+     "texto": "Art. 42 bis b) apdo. 2 LJV"
     }
    ],
    "siguiente": "citacion"
@@ -415,11 +420,11 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "La citación debe realizarse con antelación suficiente para garantizar el ejercicio efectivo del derecho de defensa. Se aplica supletoriamente la LEC (art. 8 LJV)."
+     "texto": "La citación se hace con al menos quince días de antelación; la comparecencia se celebra dentro de los treinta días siguientes a la admisión (arts. 17.3 y 18.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdo. 2 LJV · Art. 8 LJV"
+     "texto": "Art. 42 bis b) apdo. 2 LJV · Arts. 17.3 y 18.1 LJV"
     }
    ],
    "siguiente": "prueba"
@@ -431,7 +436,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "plazo",
-     "texto": "Plazo de 5 días desde la recepción de la citación para que los interesados propongan diligencias de prueba para la comparecencia (art. 42 bis b) apdo. 3 LJV)."
+     "texto": "Plazo de 5 días desde la recepción de la citación para que los interesados propongan diligencias de prueba para la comparecencia (art. 42 bis b) apdo. 2 LJV)."
     },
     {
      "tipo": "info",
@@ -462,14 +467,14 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdo. 3 LJV · Art. 5 LJV"
+     "texto": "Art. 42 bis b) apdo. 2 LJV · Art. 5 LJV"
     }
    ],
    "siguiente": "informes_preparatorios"
   },
   "informes_preparatorios": {
    "fase": 1,
-   "titulo": "Recabación de informes pre-comparecencia (facultativo)",
+   "titulo": "Informes y dictamen pericial antes de la comparecencia (facultativos)",
    "actor": "juez",
    "bloques": [
     {
@@ -478,9 +483,9 @@ Neg.data.register({
     },
     {
      "tipo": "lista",
-     "titulo": "Entidades informantes (art. 42 bis b) apdo. 4 LJV)",
+     "titulo": "Entidades informantes (art. 42 bis b) apdo. 2, párr. 2.º LJV)",
      "items": [
-      "Entidad pública con funciones de promoción de autonomía y asistencia a personas con discapacidad (servicios sociales autonómicos)",
+      "Entidad pública que en el territorio tenga encomendada la promoción de la autonomía y asistencia a las personas con discapacidad",
       "Entidad del tercer sector de acción social habilitada como colaboradora de la Administración de Justicia"
      ],
      "marcar": true
@@ -491,11 +496,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El informe debe centrarse en alternativas de apoyo no judiciales y recursos de proximidad disponibles."
+     "texto": "La entidad informa sobre las eventuales alternativas de apoyo y sobre las posibilidades de prestarlo sin que la autoridad judicial adopte medida alguna."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Antes de la comparecencia, la autoridad judicial también puede ordenar un dictamen pericial cuando lo considere necesario atendiendo a las circunstancias del caso (art. 42 bis b) apdo. 2, párr. 3.º LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdo. 4 LJV · Ley 39/2006 (SAAD)"
+     "texto": "Art. 42 bis b) apdo. 2 LJV"
     }
    ],
    "siguiente": "postulacion"
@@ -519,7 +528,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis a) apdo. 4 LJV · Art. 3.2 LJV · Arts. 285 ss. CC · Cap. IV LJV (arts. 43 ss.)"
+     "texto": "Art. 42 bis a) apdo. 4 LJV · Art. 3.2 LJV · Arts. 27–32 LJV · Arts. 295–298 CC"
     }
    ],
    "pregunta": "¿Puede la persona con discapacidad actuar con su propia defensa y representación?",
@@ -539,7 +548,7 @@ Neg.data.register({
   "defensor_judicial": {
    "fase": 1,
    "titulo": "Nombramiento de defensor judicial",
-   "actor": "juez",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
@@ -550,7 +559,7 @@ Neg.data.register({
      "titulo": "Actuaciones para el nombramiento",
      "items": [
       "Solicitar el nombramiento de defensor judicial (junto con la solicitud o durante la instrucción)",
-      "El Juzgado tramita el nombramiento conforme al Cap. IV LJV y los arts. 285 ss. CC",
+      "El nombramiento se tramita conforme a los arts. 27 a 32 LJV; lo hace el LAJ (arts. 28.1 y 30.2 LJV)",
       "El defensor judicial designado nombra Abogado y Procurador para representar a la persona",
       "Notificar el nombramiento y dar traslado al defensor judicial de las actuaciones practicadas hasta el momento"
      ],
@@ -562,7 +571,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis a) apdo. 4, párr. 2.º LJV · Arts. 285 ss. CC · Cap. IV LJV (art. 43 ss.)"
+     "texto": "Art. 42 bis a) apdo. 4 LJV · Arts. 27–32 LJV · Arts. 295–298 CC"
     }
    ],
    "siguiente": "adaptaciones"
@@ -613,11 +622,11 @@ Neg.data.register({
      "titulo": "Actuaciones en la comparecencia (orden cronológico)",
      "items": [
       "1.º Entrevista de la Autoridad Judicial con la persona con discapacidad",
-      "2.º Información a la persona sobre las alternativas existentes para obtener el apoyo que precisa:",
+      "2.º A la vista de su situación, la autoridad judicial puede informarle de las alternativas existentes para obtener el apoyo que precisa:",
       "    a) Apoyo mediante su entorno social o comunitario",
-      "    b) Medidas de apoyo de naturaleza voluntaria (arts. 255 ss. CC: poderes preventivos, autocuratela)",
+      "    b) Medidas de apoyo de naturaleza voluntaria (arts. 255 ss. CC: escritura pública de medidas de apoyo, poderes y mandatos preventivos)",
       "3.º Práctica de las diligencias de prueba admitidas",
-      "4.º Formulación oral de conclusiones por los interesados"
+      "4.º Audiencia de las personas que hayan comparecido y manifiesten su voluntad de ser oídas"
      ],
      "marcar": true
     },
@@ -631,7 +640,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdos. 5 y 6 LJV · Art. 7 bis LJV · Arts. 255–256 CC"
+     "texto": "Art. 42 bis b) apdos. 3 y 4 LJV · Art. 7 bis LJV · Arts. 255–262 CC"
     }
    ],
    "pregunta": "¿La persona con discapacidad opta por una medida alternativa de apoyo (voluntaria o comunitaria) tras ser informada por la Autoridad Judicial?",
@@ -655,7 +664,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La Autoridad Judicial verifica si se ha producido oposición real a las medidas de apoyo. La oposición de determinados sujetos pone fin al expediente (art. 42 bis b) apdo. 7 LJV)."
+     "texto": "La Autoridad Judicial verifica si se ha producido oposición real a las medidas de apoyo. La oposición de determinados sujetos pone fin al expediente (art. 42 bis b) apdo. 5 LJV)."
     },
     {
      "tipo": "lista",
@@ -673,11 +682,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Solo la oposición global y absoluta a cualquier apoyo cierra la vía de jurisdicción voluntaria."
+     "texto": "Pone fin al expediente la oposición de la persona con discapacidad a cualquier tipo de apoyo, la del Ministerio Fiscal o la de cualquiera de los interesados en la adopción de las medidas; no la que se refiere solo a quién será curador."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdo. 7 LJV"
+     "texto": "Art. 42 bis b) apdo. 5 LJV"
     }
    ],
    "pregunta": "¿Se produce oposición real a las medidas de apoyo? (La discrepancia solo sobre la persona del curador NO es oposición)",
@@ -705,11 +714,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si se formula oposición, quienes tengan interés legítimo podrán valorar si instar el proceso contencioso previsto en los arts. 756 ss. LEC ante el mismo Juzgado."
+     "texto": "Si se formula oposición, quienes tengan interés legítimo podrán valorar si instar el proceso contencioso previsto en los arts. 756 ss. LEC."
     },
     {
      "tipo": "aviso",
-     "texto": "La oposición activa la competencia del mismo Juzgado para conocer del proceso contencioso (art. 756.2 LEC)."
+     "texto": "Para la demanda es competente la autoridad judicial que conoció del expediente, salvo que la persona cambie después de residencia (art. 756.2 LEC)."
     },
     {
      "tipo": "nota",
@@ -717,7 +726,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdo. 7 LJV · Art. 6.2 LJV · Arts. 756 ss. LEC"
+     "texto": "Art. 42 bis b) apdo. 5 LJV · Art. 6.2 LJV · Arts. 756 ss. LEC"
     }
    ],
    "pregunta": "¿Procede adoptar medidas provisionales de apoyo para la persona o su patrimonio antes de que el expediente se cierre?",
@@ -745,11 +754,11 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo máximo de vigencia: 30 días naturales. Las medidas se extinguen por el simple transcurso del plazo si no se presenta demanda contenciosa. La caducidad es automática: no requiere resolución judicial expresa."
+     "texto": "Las medidas se mantienen como máximo treinta días, salvo que antes se presente la demanda de adopción de medidas de apoyo en el proceso contencioso (art. 42 bis b) apdo. 5 LJV)."
     },
     {
      "tipo": "aviso",
-     "texto": "Las medidas provisionales se extinguen ANTICIPADAMENTE si antes de los 30 días se presenta la demanda de adopción de medidas de apoyo en juicio contencioso (arts. 756 ss. LEC). Quedan absorbidas por el marco del proceso contencioso (art. 762 LEC)."
+     "texto": "Presentada la demanda dentro de ese plazo, en el proceso contencioso el tribunal puede adoptar, de oficio o a instancia de parte, las medidas que estime necesarias para la protección de la persona o de su patrimonio (art. 762 LEC)."
     },
     {
      "tipo": "nota",
@@ -757,18 +766,18 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdo. 8 LJV · Art. 762 LEC"
+     "texto": "Art. 42 bis b) apdo. 5 LJV · Art. 762 LEC"
     }
    ],
    "pregunta": "¿Se presenta demanda contenciosa (arts. 756 ss. LEC) antes de que transcurran los 30 días de vigencia de las medidas provisionales?",
    "opciones": [
     {
-     "texto": "Sí — se presenta demanda contenciosa: las medidas provisionales quedan absorbidas por el proceso",
+     "texto": "Sí — se presenta la demanda en el proceso contencioso (arts. 756 ss. LEC)",
      "tono": "t-nota",
      "destino": "fin_derivacion_contenciosa"
     },
     {
-     "texto": "No — transcurren los 30 días sin demanda: las medidas provisionales se extinguen",
+     "texto": "No — pasan los treinta días sin demanda: las medidas ya no pueden mantenerse",
      "tono": "t-plazo",
      "destino": "fin_medidas_extintas"
     }
@@ -785,11 +794,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El proceso contencioso se insta ante el mismo Juzgado que conoció del expediente de JV (art. 756.2 LEC). No es necesario acudir a un órgano diferente."
+     "texto": "La demanda se presenta ante la autoridad judicial que conoció del expediente, salvo que la persona haya cambiado después de residencia: entonces, ante la del lugar en que resida (art. 756.2 LEC)."
     },
     {
      "tipo": "nota",
-     "texto": "Legitimados: personas del art. 757 LEC (mismas que para el expediente de JV). El MF DEBE promoverlo si los demás legitimados no lo hacen y no hay otras vías suficientes de apoyo (art. 757.2 LEC)."
+     "texto": "Legitimados: la propia persona, su cónyuge no separado o quien esté en situación de hecho asimilable, sus descendientes, ascendientes o hermanos (art. 757.1 LEC). El Fiscal debe promoverlo si esas personas no existen o no han presentado demanda, salvo que concluya que hay otras vías para que la persona obtenga los apoyos que precisa (art. 757.2 LEC)."
     },
     {
      "tipo": "ley",
@@ -799,7 +808,7 @@ Neg.data.register({
    "pregunta": "¿Se decide instar el proceso contencioso para la adopción de medidas judiciales de apoyo?",
    "opciones": [
     {
-     "texto": "Sí — se presenta demanda ante el mismo Juzgado (arts. 756 ss. LEC)",
+     "texto": "Sí — se presenta la demanda (arts. 756 ss. LEC)",
      "tono": "t-nota",
      "destino": "fin_derivacion_contenciosa"
     },
@@ -821,7 +830,7 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo para dictar el auto: 5 días desde la terminación de la comparecencia o desde la última diligencia practicada (art. 19 LJV)."
+     "texto": "Plazo para dictar el auto: 5 días desde la terminación de la comparecencia o desde la última diligencia practicada (art. 19.1 LJV)."
     },
     {
      "tipo": "lista",
@@ -829,9 +838,10 @@ Neg.data.register({
      "items": [
       "✦ Medidas de apoyo concretas adoptadas (curatela y/o defensor judicial)",
       "✦ Actos o ámbitos concretos para los que se precisa apoyo (especificación detallada)",
-      "✦ Tipo de curatela: ASISTENCIAL (regla general) o REPRESENTATIVA (excepcional: solo para actos que no pueden realizarse ni con apoyo)",
-      "✦ Plazo para la revisión periódica de las medidas (obligatorio — art. 42 bis c) LJV)",
-      "✦ Forma en que se practicará la revisión periódica"
+      "✦ Tipo de curatela: ASISTENCIAL (regla general) o REPRESENTATIVA (solo en casos excepcionales en que resulte imprescindible, con los actos concretos fijados en resolución motivada — art. 269 CC)",
+      "✦ Plazo para la revisión periódica: como máximo tres años; excepcionalmente, de forma motivada, hasta seis (art. 268 CC; art. 42 bis c) LJV)",
+      "✦ Forma en que se practicará la revisión periódica",
+      "Medidas de control que se estimen oportunas (art. 270 CC)"
      ],
      "marcar": true
     },
@@ -852,7 +862,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis c) apdo. 1 LJV · Arts. 249, 250, 268–270 CC · Art. 19 LJV"
+     "texto": "Art. 42 bis c) apdo. 1 LJV · Arts. 249, 250, 268–270 CC · Art. 19.1 LJV"
     }
    ],
    "siguiente": "notificacion"
@@ -872,14 +882,14 @@ Neg.data.register({
      "items": [
       "1.º Notificar el auto a todas las partes personadas en el expediente",
       "2.º Comunicar DE OFICIO al Registro Civil para la inscripción o anotación que corresponda (OBLIGATORIO — art. 22.2 LJV)",
-      "3.º A petición EXCLUSIVA de la persona en cuyo favor se constituyó el apoyo: comunicar al Registro de la Propiedad, Mercantil, de Bienes Muebles u otro Registro público pertinente",
+      "3.º Registro de la Propiedad, Mercantil, de Bienes Muebles u otro Registro público: mandamiento a instancia de parte (art. 22.2 LJV); en medidas de apoyo, solo a petición de la persona en cuyo favor se constituyó el apoyo (art. 755 LEC)",
       "4.º Expedir mandamiento o testimonio para inscripción registral — remisión por medios electrónicos (art. 22 LJV)"
      ],
      "marcar": true
     },
     {
      "tipo": "aviso",
-     "texto": "Las comunicaciones a Registros DISTINTOS del Civil solo se realizan a petición de la persona beneficiaria del apoyo (art. 755 LEC). NO se realizan de oficio. Esta regla protege la privacidad de la persona."
+     "texto": "Las comunicaciones a Registros DISTINTOS del Civil NO se realizan de oficio: el art. 22.2 LJV exige la instancia de parte, y el art. 755 LEC, escrito para el proceso contencioso, la reserva en medidas de apoyo a la persona en cuyo favor se constituyó."
     },
     {
      "tipo": "nota",
@@ -911,7 +921,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Las resoluciones definitivas (el auto que pone fin al expediente) pueden ser recurridas en apelación por cualquier interesado perjudicado (art. 20.2 LJV). Se requiere Abogado y Procurador (art. 3.2 LJV)."
+     "texto": "Las resoluciones definitivas (el auto que pone fin al expediente) pueden ser recurridas en apelación por cualquier interesado perjudicado (art. 20.2 LJV). Se requiere Abogado y Procurador (art. 3.2 LJV). Plazo: veinte días desde la notificación (art. 458.1 LEC)."
     },
     {
      "tipo": "aviso",
@@ -921,22 +931,22 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Actuaciones procesales",
      "items": [
-      "Recibir el escrito de interposición del recurso y verificar que se interpone con Abogado y Procurador",
-      "Remitir los autos a la Audiencia Provincial correspondiente",
-      "Las partes formulan sus alegaciones ante la Audiencia (escrito de oposición)",
-      "La Audiencia Provincial resuelve el recurso mediante auto"
+      "El recurso se interpone ante la Audiencia Provincial, con Abogado y Procurador (art. 458.1 LEC; art. 3.2 LJV)",
+      "El LAJ de la Audiencia requiere al Juzgado la elevación de las actuaciones (art. 458.3 LEC)",
+      "El LAJ del Juzgado remite los autos y emplaza a las partes no recurrentes para comparecer ante la Audiencia en diez días (art. 458.3 LEC)",
+      "La Audiencia da traslado a las demás partes por diez días para oposición o impugnación (art. 461.1 LEC) y resuelve el recurso mediante auto"
      ],
      "marcar": true
     },
     {
      "tipo": "ley",
-     "texto": "Art. 20.2 LJV · Art. 3.2 LJV"
+     "texto": "Art. 20.2 LJV · Art. 3.2 LJV · Arts. 458 y 461 LEC"
     }
    ],
    "pregunta": "¿Cuál es el resultado del recurso de apelación?",
    "opciones": [
     {
-     "texto": "Desestimado — la Audiencia Provincial confirma el auto del Juzgado de Primera Instancia",
+     "texto": "Desestimado — la Audiencia Provincial confirma el auto del Juzgado",
      "tono": "t-ok",
      "destino": "expediente_firme"
     },
@@ -966,7 +976,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis c) apdo. 1 LJV · Art. 278 CC"
+     "texto": "Art. 42 bis c) apdo. 1 LJV · Art. 268 CC"
     }
    ],
    "pregunta": "¿Qué ocurre a continuación en este procedimiento?",
@@ -1003,7 +1013,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis c) apdo. 1 LJV · Art. 278 CC · Art. 761 LEC"
+     "texto": "Art. 42 bis c) apdo. 1 LJV · Art. 268 CC · Art. 761 LEC"
     }
    ],
    "siguiente": "competencia_revision"
@@ -1036,8 +1046,7 @@ Neg.data.register({
       "Mejoría o empeoramiento de la situación de la persona",
       "Cambio en los recursos de apoyo disponibles",
       "Incumplimiento de deberes por parte del apoyante",
-      "Modificación de la voluntad o preferencias de la persona",
-      "Cambio de residencia a otra circunscripción judicial"
+      "Modificación de la voluntad o preferencias de la persona"
      ],
      "marcar": true
     },
@@ -1047,7 +1056,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis c) apdo. 1, párr. 2.º LJV"
+     "texto": "Art. 42 bis c) apdo. 1, párr. 2.º LJV · Art. 268 CC"
     }
    ],
    "siguiente": "competencia_revision"
@@ -1122,7 +1131,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis c) apdo. 2, párr. 2.º LJV"
+     "texto": "Art. 42 bis c) apdo. 2 LJV"
     }
    ],
    "siguiente": "actuaciones_revision"
@@ -1150,8 +1159,8 @@ Neg.data.register({
      "titulo": "Actuaciones POTESTATIVAS (a criterio de la Autoridad Judicial)",
      "items": [
       "Recabar dictamen pericial cuando lo considere necesario, atendiendo a las circunstancias del caso",
-      "Recabar informe de la entidad pública territorial (sistema SAAD, Ley 39/2006)",
-      "Recabar informe de entidad del tercer sector de acción social habilitada (art. 42 bis b) apdo. 4)",
+      "Recabar informe de la entidad pública a la que se refiere el art. 42 bis b) apdo. 2",
+      "Recabar informe de entidad del tercer sector de acción social habilitada (art. 42 bis b) apdo. 2)",
       "Cualquier otra actuación que considere necesaria para valorar la situación"
      ],
      "marcar": true
@@ -1162,7 +1171,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis c) apdo. 3 LJV · Ley 39/2006"
+     "texto": "Art. 42 bis c) apdo. 3 LJV"
     }
    ],
    "siguiente": "revision_traslado"
@@ -1266,7 +1275,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis c) apdo. 4 LJV · Arts. 249, 278 CC"
+     "texto": "Art. 42 bis c) apdo. 4 LJV · Arts. 249 y 268 CC"
     }
    ],
    "siguiente": "fin_revision_ok"
@@ -1284,9 +1293,9 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Motivos habituales de no proceder",
      "items": [
-      "Existencia de medidas voluntarias suficientes (autocuratela, poder preventivo)",
+      "Existencia de medidas voluntarias suficientes (escritura pública de medidas de apoyo, poder preventivo)",
       "La persona cuenta con apoyos informales adecuados del entorno",
-      "La necesidad de apoyo es ocasional y puede cubrirse con defensor judicial puntual",
+      "La necesidad de apoyo es ocasional, aunque sea recurrente, y puede cubrirse con defensor judicial (arts. 250 y 295.5.º CC)",
       "No se acredita la necesidad de intervención judicial"
      ],
      "marcar": true
@@ -1301,7 +1310,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 249 CC (principio de subsidiariedad)"
+     "texto": "Arts. 249 y 255 CC (principio de subsidiariedad)"
     }
    ],
    "fin": "neutral"
@@ -1323,9 +1332,9 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Alternativas que pueden haberse elegido",
      "items": [
-      "Autocuratela notarial (Arts. 251–255 CC)",
-      "Poder preventivo o mandato preventivo (Arts. 256–262 CC)",
-      "Guarda de hecho con reconocimiento judicial (Arts. 263–267 CC)",
+      "Medidas de apoyo en escritura pública (art. 255 CC)",
+      "Poderes y mandatos preventivos (arts. 256–262 CC)",
+      "Guarda de hecho (arts. 263–267 CC)",
       "Apoyos informales del entorno familiar o comunitario"
      ],
      "marcar": true
@@ -1336,7 +1345,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdo. 6 LJV · Art. 249 CC · Arts. 255–256 CC"
+     "texto": "Art. 42 bis b) apdo. 4 LJV · Art. 249 CC · Arts. 255–262 CC"
     }
    ],
    "fin": "success"
@@ -1352,15 +1361,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Contra la resolución de inadmisión: recurso de reposición si es interlocutoria, o recurso de apelación si pone fin al expediente (art. 20 LJV)."
+     "texto": "Si la solicitud no es admisible, el LAJ da cuenta al Juez, que resuelve (art. 17.1 LJV). Contra el auto que pone fin al expediente cabe apelación (art. 20.2 LJV)."
     },
     {
      "tipo": "aviso",
-     "texto": "Si el MF estima que existen hechos que justifican la apertura del expediente, puede promoverlo de oficio con independencia de la inadmisión de la solicitud particular (art. 4 LJV)."
+     "texto": "Si el MF estima que existen hechos que justifican la apertura del expediente, puede promoverlo de oficio con independencia de la inadmisión de la solicitud particular (art. 42 bis a) apdo. 3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 20 LJV · Art. 4 LJV"
+     "texto": "Arts. 16.4, 17.1 y 20.2 LJV · Art. 42 bis a) apdo. 3 LJV"
     }
    ],
    "fin": "error"
@@ -1372,13 +1381,13 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Este Juzgado no es territorialmente competente. Las actuaciones deben remitirse al Juzgado de Primera Instancia del lugar de residencia actual de la persona con discapacidad."
+     "texto": "La persona ha cambiado de residencia habitual antes de la comparecencia: las actuaciones se remiten al órgano del lugar de su nueva residencia en el estado en que se hallen (art. 42 bis a) apdo. 2 LJV)."
     },
     {
      "tipo": "lista",
      "titulo": "Actuaciones a realizar",
      "items": [
-      "Dictar resolución declarando la falta de competencia territorial",
+      "Acordar la remisión de las actuaciones por el cambio de residencia",
       "Remitir las actuaciones en el estado en que se hallen al Juzgado competente",
       "Notificar a las partes la remisión y el Juzgado al que se dirigen"
      ],
@@ -1408,10 +1417,10 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Aspectos clave del proceso contencioso de medidas de apoyo",
      "items": [
-      "Órgano competente: el mismo Juzgado que conoció del expediente de JV (art. 756.2 LEC)",
+      "Competencia: la autoridad judicial que conoció del expediente, salvo cambio posterior de residencia (art. 756.2 LEC)",
       "Tramitación: juicio verbal con especialidades (art. 753 LEC)",
       "Pruebas preceptivas de oficio: entrevista, audiencia a familiares, dictamen pericial (art. 759 LEC)",
-      "Tramitación PREFERENTE cuando se designa apoyo con funciones representativas (art. 753 LEC)",
+      "Tramitación PREFERENTE cuando alguno de los interesados es persona con discapacidad con medidas judiciales de apoyo en las que se designe un apoyo con funciones representativas (art. 753.3 LEC)",
       "La sentencia debe ser conforme a la legislación civil aplicable (art. 760 LEC)",
       "La revisión de las medidas de la sentencia se tramita por art. 42 bis c) LJV (art. 761 LEC)"
      ],
@@ -1422,9 +1431,8 @@ Neg.data.register({
      "titulo": "Diferencias clave con jurisdicción voluntaria:",
      "items": [
       "Contradicción plena entre partes",
-      "Mayor ámbito de prueba y recursos",
-      "Resolución mediante sentencia, no auto",
-      "Posibilidad de apelación ordinaria"
+      "Mayor ámbito de prueba",
+      "Resolución mediante sentencia, no auto"
      ]
     },
     {
@@ -1441,7 +1449,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Han transcurrido los 30 días desde la adopción de las medidas provisionales sin que se haya presentado demanda del proceso contencioso. Las medidas provisionales se extinguen automáticamente."
+     "texto": "Han transcurrido los 30 días desde la adopción de las medidas provisionales sin que se haya presentado demanda del proceso contencioso. Las medidas provisionales ya no pueden mantenerse (art. 42 bis b) apdo. 5 LJV)."
     },
     {
      "tipo": "aviso",
@@ -1462,7 +1470,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdo. 8 LJV · Arts. 756–757 LEC"
+     "texto": "Art. 42 bis b) apdo. 5 LJV · Arts. 756–757 LEC"
     }
    ],
    "fin": "warning"
@@ -1486,7 +1494,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdo. 7 LJV · Art. 757.2 LEC"
+     "texto": "Art. 42 bis b) apdo. 5 LJV · Art. 757.2 LEC"
     }
    ],
    "fin": "warning"
@@ -1498,7 +1506,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La Audiencia Provincial ha estimado el recurso de apelación y ha modificado o revocado el auto del Juzgado de Primera Instancia."
+     "texto": "La Audiencia Provincial ha estimado el recurso de apelación y ha modificado o revocado el auto del Juzgado."
     },
     {
      "tipo": "lista",
@@ -1544,7 +1552,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis c) LJV · Art. 278 CC"
+     "texto": "Art. 42 bis c) LJV · Art. 268 CC"
     }
    ],
    "fin": "success"
@@ -1572,7 +1580,6 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Efectos de la resolución",
      "items": [
-      "Las medidas confirmadas, modificadas o nuevas surten efecto desde la notificación",
       "Se procede a la inscripción registral de las modificaciones",
       "Se comunican los cambios a todos los interesados",
       "Se establece nuevo plazo para próxima revisión"
@@ -1585,11 +1592,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Contra el auto de revisión no cabe recurso ordinario, pero sí los recursos extraordinarios por infracción procesal o casación, en su caso."
+     "texto": "Contra el nuevo auto cabe recurso de apelación (art. 20.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis c) apdos. 3 y 4 LJV · Art. 278 CC"
+     "texto": "Art. 42 bis c) apdos. 3 y 4 LJV · Art. 268 CC"
     }
    ],
    "fin": "success"
@@ -1608,22 +1615,21 @@ Neg.data.register({
      "titulo": "Personas legitimadas para instar el proceso contencioso de revisión",
      "items": [
       "Las personas del art. 757 LEC (persona con discapacidad, cónyuge/asimilable, descendientes, ascendientes, hermanos)",
-      "El Ministerio Fiscal",
       "Quien ejerza el apoyo de la persona con discapacidad"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "El proceso contencioso de revisión se tramita ante el mismo Juzgado competente para la revisión."
+     "texto": "Competencia: la autoridad judicial que conoció del expediente de revisión, salvo cambio posterior de residencia (art. 756.2 LEC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 42 bis c) apdo. 3 LJV · Art. 761 LEC · Art. 757 LEC"
+     "texto": "Art. 42 bis c) apdo. 3 LJV · Art. 761 LEC · Arts. 756.2 y 757.1 LEC"
     }
    ],
    "fin": "neutral"
   }
  },
- "pie": "Referencias normativas\n  Art. 42 bis a), b), c) LJV\n  Arts. 249–298 CC (L. 8/2021)\n  Arts. 756–762 LEC\n  Art. 7 bis LJV\n  Art. 12 CRPD (2006)\n  Ley 39/2006 (SAAD)"
+ "pie": "*Referencias normativas*<br>Arts. 2, 7 bis, 16 a 22, 27 a 32 y 42 bis a) a 42 bis c) LJV<br>Arts. 249 a 298 CC<br>Arts. 458, 461 y 753 a 762 LEC<br>Art. 12 CRPD (2006)"
 });

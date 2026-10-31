@@ -288,7 +288,7 @@ Neg.data.register({
              "t": "Se celebra una <strong>entrevista obligatoria entre la autoridad judicial y la persona con discapacidad</strong>. Constituye el núcleo del procedimiento."
             },
             {
-             "t": "La autoridad judicial informa a la persona sobre las <strong>alternativas existentes</strong> para obtener apoyo: mediante su entorno social/comunitario, o a través de <strong>medidas voluntarias</strong> (autocuratela, poder preventivo, mandatos). Las medidas judiciales son subsidiarias."
+             "t": "La autoridad judicial informa a la persona sobre las <strong>alternativas existentes</strong> para obtener apoyo: mediante su entorno social/comunitario, o a través de <strong>medidas voluntarias</strong> (medidas en escritura pública, poderes y mandatos preventivos). Las medidas judiciales son subsidiarias."
             }
            ]
           }
@@ -679,7 +679,7 @@ Neg.data.register({
      "norma": {
       "ley": "Código Civil — Título XI (Arts. 249–299)",
       "titulo": "Marco sustantivo de las medidas de apoyo",
-      "texto": "<strong>Art. 249</strong> — finalidad (desarrollo pleno, dignidad), principios de necesidad y proporcionalidad, deber de atender a voluntad, deseos y preferencias.<br><strong>Art. 250</strong> — tipología: medidas voluntarias, guarda de hecho, curatela, defensor judicial.<br><strong>Arts. 251–253 CC</strong> — prohibiciones y disposiciones comunes. <strong>Arts. 255–262 CC</strong> — medidas voluntarias (autocuratela, poderes y mandatos preventivos): preferentes a las judiciales.<br><strong>Arts. 263–267</strong> — guarda de hecho: medida informal asistencial o representativa.<br><strong>Arts. 268–294</strong> — curatela: medida formal continua, principalmente asistencial; extensión determinada judicialmente.<br><strong>Arts. 295–298 CC</strong> — defensor judicial: medida formal para necesidades ocasionales.",
+      "texto": "<strong>Art. 249</strong> — finalidad (desarrollo pleno, dignidad), principios de necesidad y proporcionalidad, deber de atender a voluntad, deseos y preferencias.<br><strong>Art. 250</strong> — tipología: medidas voluntarias, guarda de hecho, curatela, defensor judicial.<br><strong>Arts. 251–253 CC</strong> — prohibiciones y disposiciones comunes. <strong>Arts. 255–262 CC</strong> — medidas voluntarias (escritura pública de medidas de apoyo, poderes y mandatos preventivos): preferentes a las judiciales.<br><strong>Arts. 263–267</strong> — guarda de hecho: medida informal asistencial o representativa.<br><strong>Arts. 268–294</strong> — curatela: medida formal continua, principalmente asistencial; extensión determinada judicialmente; la autocuratela (arts. 271–274) es la propuesta de curador en escritura pública, no una medida voluntaria alternativa.<br><strong>Arts. 295–298 CC</strong> — defensor judicial: medida formal para necesidades ocasionales.",
       "etiqueta": "Derecho sustantivo",
       "tono": "t-plazo"
      }

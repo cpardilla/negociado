@@ -69,10 +69,10 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2414
-- ✓ CC (BOE a 07-09-2026): 1224
-- ✓ LEC (BOE a 07-10-2026): 1120
-- ✓ LOPJ (BOE a 09-10-2026): 93
+- ✓ LJV (BOE a 05-03-2026): 2427
+- ✓ CC (BOE a 07-09-2026): 1232
+- ✓ LEC (BOE a 07-10-2026): 1128
+- ✓ LOPJ (BOE a 09-10-2026): 95
 - ✓ LTRANS (BOE a 20-12-2025): 62
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - ✓ LRC (BOE a 24-02-2026): 38
@@ -105,7 +105,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 330 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 328 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -350,7 +350,7 @@ Sin hallazgos automáticos.
 
 **terminologia**
 
-- [revisar] «Juzgado de Primera Instancia» × 4 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › info 1 | paso «recurso_apelacion» › opción 1 | paso «fin_inhibicion» › info 1 …_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › info 1_
 
 ### ljv-tutela-curatela · Guía · LJV · Tutela, curatela y guarda de hecho
 
