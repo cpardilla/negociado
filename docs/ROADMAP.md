@@ -298,6 +298,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-31 · Estilos: separación vertical entre tarjetas de esquema y entre piezas de los pasos de guía (ritmo en el contenedor; 0 cajas pegadas en las 54 vistas). Guías: 10 asteriscos literales de la fase 5 pasan a <strong>.
 - 2026-10-31 · Decisión 19: Sección Civil para la aceptación y repudiación de la herencia aunque el llamado sea menor o tenga medidas de apoyo; nota de G20 actualizada.
 - 2026-10-31 · Fase 5 · G25 (conciliación) revisada: **fase 5 completa (25/25)**.
 - 2026-10-31 · Fase 5 · G24 (subastas voluntarias) revisada. Siguiente: G25.
