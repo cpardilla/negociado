@@ -52,7 +52,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-patrimonio-protegido | Guía · LJV · Patrimonio de las personas con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-honor-menor | Guía · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-actos-disposicion | Guía · LJV · Actos de disposición sobre bienes de menores y personas con apoyos | · | · | · | · | · | · | 1R |
-| ljv-ausencia-fallecimiento | Guía · LJV · Declaración de ausencia y fallecimiento | 13R | · | · | · | · | · | 1R |
+| ljv-ausencia-fallecimiento | Guía · LJV · Declaración de ausencia y fallecimiento | · | · | · | · | · | · | 1R |
 | ljv-donantes-vivos | Guía · LJV · Extracción de órganos de donantes vivos | · | · | · | · | · | · | 1R |
 | ljv-hechos-pasados | Guía · LJV · Declaraciones judiciales sobre hechos pasados | · | · | · | · | · | · | 2R |
 | ljv-sucesorio | Guía · LJV · Título IV · Derecho sucesorio | 5R | · | · | · | 1R | · | 2R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 8E 0A 25R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 57R |
+| | **Total** | 8E 0A 12R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 57R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,14 +69,14 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2648
-- ✓ CC (BOE a 07-09-2026): 1273
-- ✓ LEC (BOE a 07-10-2026): 1134
-- ✓ LOPJ (BOE a 09-10-2026): 108
+- ✓ LJV (BOE a 05-03-2026): 2707
+- ✓ CC (BOE a 07-09-2026): 1286
+- ✓ LEC (BOE a 07-10-2026): 1128
+- ✓ LOPJ (BOE a 09-10-2026): 109
 - ✓ LPPD (BOE a 18-12-2025): 70
 - ✓ LTRANS (BOE a 20-12-2025): 62
 - ✓ LOPJM (BOE a 18-12-2025): 50
-- ✓ LRC (BOE a 24-02-2026): 40
+- ✓ LRC (BOE a 24-02-2026): 42
 - ✓ LOPDH (BOE a 16-12-2025): 38
 - UE: 33
 - ✓ LN (BOE a 22-10-2026): 30
@@ -104,7 +104,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 303 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 310 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -381,25 +381,9 @@ Sin hallazgos automáticos.
 
 ### ljv-ausencia-fallecimiento · Guía · LJV · Declaración de ausencia y fallecimiento
 
-**citas**
-
-- [revisar] «arts. 193 y 194.1,4,5»: el art. 194 CC no tiene apartado 1 (no tiene apartados numerados) — _paso «competencia_fallecimiento» › opción 2_
-- [revisar] «Art. 185.1»: el art. 185 CC no tiene apartado 1 (no tiene apartados numerados) — _paso «inventario_bienes» › info 1_
-- [revisar] «Art. 185.1»: el art. 185 CC no tiene apartado 1 (no tiene apartados numerados) — _paso «inventario_bienes» › ley 6_
-- [revisar] «Art. 194.1»: el art. 194 CC no tiene apartado 1 (no tiene apartados numerados) — _paso «fallecimiento_no_siniestro» › nota 2_
-- [revisar] «Art. 193.1»: el art. 193 CC no tiene apartado 1 (no tiene apartados numerados) — _paso «fallecimiento_no_siniestro» › comprobación 3.1_
-- [revisar] «Art. 193.2»: el art. 193 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «fallecimiento_no_siniestro» › comprobación 3.2_
-- [revisar] «Art. 194.1»: el art. 194 CC no tiene apartado 1 (no tiene apartados numerados) — _paso «fallecimiento_no_siniestro» › comprobación 3.4_
-- [revisar] «arts. 193, 194.1,4,5»: el art. 194 CC no tiene apartado 1 (no tiene apartados numerados) — _paso «fallecimiento_no_siniestro» › ley 4_
-- [revisar] «Art. 193.1»: el art. 193 CC no tiene apartado 1 (no tiene apartados numerados) — _paso «fallecimiento_con_ausencia» › opción 1_
-- [revisar] «Art. 193.2»: el art. 193 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «fallecimiento_con_ausencia» › opción 2_
-- [revisar] «Art. 194.1»: el art. 194 CC no tiene apartado 1 (no tiene apartados numerados) — _paso «fallecimiento_con_ausencia» › opción 4_
-- [revisar] «Art. 196.2»: el art. 196 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «resolucion_fallecimiento» › aviso 3_
-- [revisar] «Art. 196.2»: el art. 196 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «fin_fallecimiento_declarado» › nota 2_
-
 **terminologia**
 
-- [revisar] «Secretario judicial» × 2 → Letrado/a de la Administración de Justicia (LO 7/2015) — _paso «inicio» › nota 2 | paso «competencia_ausencia» › nota 2_
+- [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia_ausencia» › info 1 | paso «legitimacion_ausencia_siniestro» › info 1_
 
 ### ljv-donantes-vivos · Guía · LJV · Extracción de órganos de donantes vivos
 

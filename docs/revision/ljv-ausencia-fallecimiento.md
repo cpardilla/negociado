@@ -30,3 +30,34 @@ El analizador lee «art. 194.2.º y 3.º CC» como LJV (la «y 3.º» corta la l
 ## Para la fase 5 (G17)
 
 La guía cita «art. 194.1», «193.2», «196.2» (ordinales del CC escritos como apartados) y dice «Secretario judicial» en dos pasos.
+
+---
+
+# Revisión · G17 · Guía de tramitación de la declaración de ausencia y fallecimiento
+
+- **Recurso**: `data/guias/ljv-ausencia-fallecimiento.js` (origen G17).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026; CC, LRC, LEC y LOPJ en sus instantáneas.
+- **Método**: fase 5. Se conservan los 50 pasos y sus identificadores; se corrige el recorrido de la competencia y se reescriben los bloques erróneos o sin base legal.
+- **Resultado del comprobador**: 0 errores, 0 avisos (antes: 13 «revisar» de ordinales y 2 de terminología); queda la denominación legal «Juzgado de Primera Instancia» (art. 68.1 LJV), con la sección actual indicada.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | fallecimiento_*, resolucion_fallecimiento, fin_* | **error** | Ordinales como apartados: «art. 193.1/193.2», «art. 194.1, 4, 5», «art. 196.2», «art. 185.1» | Art. 193.1.º, 2.º y 3.º; art. 194.1.º a 5.º; art. 196, párrafo segundo; art. 185.1.ª | CC 185, 193, 194, 196 |
+| 2 | fallecimiento_no_siniestro, fallecimiento_con_ausencia | **error** | Riesgo inminente «1 año (art. 193 CC)»; plazos de los arts. 194.1.º, 4.º y 5.º sin precisar | Un año de fecha a fecha y **tres meses si es siniestro**; presunción de violencia en subversión (art. 193.3.º); cómputo desde el final del año natural; dos años tras el fin de la guerra; un mes en los arts. 194.4.º y 5.º | CC 193, 194 |
+| 3 | resolucion_fallecimiento, sucesion_judicial, fin_fallecimiento_declarado | **error** | Adjudicación judicial por los «arts. 777–782 LEC» | División judicial de la herencia, arts. 782 y ss. LEC | LEC 782 |
+| 4 | resolucion_fallecimiento, fin_fallecimiento_declarado | error | Prohibición de disponer a título gratuito con la «excepción» de los legados a beneficencia | La excepción es a la entrega de los legados durante cinco años (mandas piadosas y beneficencia), no a la prohibición de disponer | CC 196 |
+| 5 | competencia_ausencia, competencia_fallecimiento, legitimacion_ausencia_siniestro(_ext) | **error de recorrido** | La declaración de ausencia ofrecía la competencia por siniestro (que es solo del fallecimiento de los ordinales 2.º y 3.º del art. 194) y llevaba a la solicitud de ausencia | La ausencia va directa a la legitimación; los pasos de siniestro pasan al fallecimiento, con la regla completa del art. 68.1, párrafo segundo, y la legitimación exclusiva del Fiscal | LJV 68.1 y 2 |
+| 6 | defensor_judicial | error | Requisito: «inexistencia de cónyuge o pariente que asuma la representación nata»; «art. 300 CC — tutela supletoria» | El cónyuge y el pariente más próximo son los defensores natos (art. 181); no procede si hay representación voluntaria (art. 183); art. 300 CC fuera (es la inscripción de cargos tutelares) | CC 181, 183 |
+| 7 | defensor_urgente, defensor_aceptacion, fin_defensor_* | inventado | «Embargo preventivo», «LEC 721–742 por analogía»; régimen de tutela de los «Cap. IV y VIII CC» y responsabilidad «por dolo o negligencia grave» para el defensor | Art. 69.2: designación inmediata y medidas urgentes, ratificadas o revocadas al final; constancia registral (art. 198 CC) | LJV 69; CC 181, 198 |
+| 8 | inicio, competencia_ausencia | error | El LAJ decide «conforme al art. 67 LJV»; Letrado «por controversia sobrevenida» | El LAJ decide por los arts. 69 a 75; revisión ante el Juez (art. 20.2); postulación de los arts. 68.4 y 3.2; Sección Civil (decisión 11) | LJV 3.2, 20.2, 68.4 |
+| 9 | legitimacion_ausencia | error | «Otra persona con interés legítimo (art. 3 LJV, interpretación amplia)» | Solo los del art. 68.2 LJV; obligación de promoverla del art. 182 CC | LJV 68.2; CC 182 |
+| 10 | resolucion_ausencia, fin_ausencia_declarada | error | Extinción de los mandatos como «efecto inmediato» del decreto | Se extinguen al inscribirse la declaración en el Registro Civil (art. 183 CC); orden del art. 184 detallado | CC 183, 184 |
+| 11 | representante_ausente | error | Régimen supletorio de los «Cap. IV y VIII CC»; rendición «anual» | Capítulos IV y VIII de la LJV, decididos por el LAJ (art. 71.2); obligaciones del art. 185 y posesión temporal del art. 186 CC; cuentas al concluir la gestión | LJV 71.2; CC 185, 186 |
+| 12 | prueba_posterior_ausencia, medidas_* | error | Prueba posterior por el «art. 70.3»; «comparecencia simplificada», requisitos de «riesgo irreparable» y «LEC 721–742» | Prueba posterior, art. 70.4; medidas de averiguación y protección, art. 70.3; medidas del art. 72 | LJV 70, 72 |
+| 13 | inventario_bienes | incompleto | «Ley Hipotecaria; LEC 637–640»; sin deudas | Testimonio como título; incluye deudas u obligaciones; en el mismo expediente con el Fiscal y los interesados (art. 73); anotación registral (art. 198 CC) | LJV 73 |
+| 14 | presentacion_ausente, fin_revocacion_*, noticia_muerte, fallecimiento_comprobado | error | Restitución siempre por el art. 197; «validez de los actos de buena fe»; tras la noticia de muerte, archivo | Art. 187 (ausencia: sin productos, salvo mala fe) o art. 197 (fallecimiento); tras la noticia de muerte, resolución sobre la revocación (art. 75.4) y sucesión (art. 188); el archivo del art. 76 es durante la tramitación | CC 187, 188, 197; LJV 75, 76 |
+| 15 | comunicacion_registro, comunicacion_registro_fallecimiento | inventado | «Erga omnes», «Ley 39/2015», «plazo inmediato a firmeza, telemático» | Testimonios del art. 77 para lo previsto en el art. 198 CC; inscripción en el registro individual con la fecha de la muerte (art. 78 LRC) | LJV 77; CC 198; LRC 78 |
+| 16 | admision_ausencia, noticias_existencia, suspension_representante | impreciso | «LOPD 3/2018»; ratificación «por falta de oposición»; límites inventados a la suspensión | Art. 70.2 y 3; el LAJ convoca la comparecencia haya o no pruebas (art. 75.2); suspensión del art. 75.3 | LJV 70, 75 |
+| 17 | actores, pie | forma | «LAJ (Secretario judicial)» | Letrado de la Administración de Justicia; pie con las normas citadas | — |
