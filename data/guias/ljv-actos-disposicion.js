@@ -1378,5 +1378,5 @@ Neg.data.register({
    "fin": "success"
   }
  },
- "pie": "*Referencias normativas*<br>Arts. 17 a 20 y 61 a 66 LJV<br>Arts. 166, 224, 249, 264, 269, 287, 290 y 1060 CC<br>Art. 5 Ley 41/2003<br>Convención ONU 2006"
+ "pie": "<strong>Referencias normativas</strong><br>Arts. 17 a 20 y 61 a 66 LJV<br>Arts. 166, 224, 249, 264, 269, 287, 290 y 1060 CC<br>Art. 5 Ley 41/2003<br>Convención ONU 2006"
 });

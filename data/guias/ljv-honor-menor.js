@@ -867,5 +867,5 @@ Neg.data.register({
    "fin": "error"
   }
  },
- "pie": "*Referencias normativas*<br>Arts. 16 a 20, 59 y 60 LJV<br>Arts. 2 y 3 LO 1/1982<br>Arts. 2, 4 y 9 LOPJM<br>Arts. 156, 158, 163 y 295 CC<br>Arts. 84 y 94 LOPDGDD"
+ "pie": "<strong>Referencias normativas</strong><br>Arts. 16 a 20, 59 y 60 LJV<br>Arts. 2 y 3 LO 1/1982<br>Arts. 2, 4 y 9 LOPJM<br>Arts. 156, 158, 163 y 295 CC<br>Arts. 84 y 94 LOPDGDD"
 });

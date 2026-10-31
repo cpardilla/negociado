@@ -1742,5 +1742,5 @@ Neg.data.register({
    "fin": "error"
   }
  },
- "pie": "*Referencias normativas*<br>Arts. 2, 3, 16 a 22 y 43 a 52 LJV<br>Arts. 199 a 238 y 249 a 300 CC<br>Arts. 437, 458 y 461 LEC<br>Art. 86.5 LOPJ"
+ "pie": "<strong>Referencias normativas</strong><br>Arts. 2, 3, 16 a 22 y 43 a 52 LJV<br>Arts. 199 a 238 y 249 a 300 CC<br>Arts. 437, 458 y 461 LEC<br>Art. 86.5 LOPJ"
 });

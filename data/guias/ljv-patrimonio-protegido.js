@@ -726,5 +726,5 @@ Neg.data.register({
    "fin": "success"
   }
  },
- "pie": "*Referencias normativas*<br>Arts. 2, 13 a 22 y 56 a 58 LJV<br>Arts. 1 a 7 Ley 41/2003<br>Art. 76 LRC<br>Arts. 458 y 461 LEC"
+ "pie": "<strong>Referencias normativas</strong><br>Arts. 2, 13 a 22 y 56 a 58 LJV<br>Arts. 1 a 7 Ley 41/2003<br>Art. 76 LRC<br>Arts. 458 y 461 LEC"
 });

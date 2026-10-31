@@ -1563,5 +1563,5 @@ Neg.data.register({
    "fin": "neutral"
   }
  },
- "pie": "*Referencias normativas*<br>Arts. 3, 19, 20 y 67 a 77 LJV<br>Arts. 181 a 198 CC<br>Art. 78 LRC<br>Arts. 782 y ss. LEC"
+ "pie": "<strong>Referencias normativas</strong><br>Arts. 3, 19, 20 y 67 a 77 LJV<br>Arts. 181 a 198 CC<br>Art. 78 LRC<br>Arts. 782 y ss. LEC"
 });

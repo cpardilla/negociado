@@ -138,7 +138,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "*Artículo 109.1, segundo inciso, de la Ley 15/2015.* · Artículo 2.2 LJV"
+     "texto": "<strong>Artículo 109.1, segundo inciso, de la Ley 15/2015.</strong> · Artículo 2.2 LJV"
     },
     {
      "tipo": "nota",
@@ -158,7 +158,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "*Artículo 109.1, primer inciso, de la Ley 15/2015.*"
+     "texto": "<strong>Artículo 109.1, primer inciso, de la Ley 15/2015.</strong>"
     }
    ],
    "siguiente": "postulacion"
@@ -547,7 +547,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "*Artículo 111.2 de la Ley 15/2015.* · Artículo 20.2 LJV"
+     "texto": "<strong>Artículo 111.2 de la Ley 15/2015.</strong> · Artículo 20.2 LJV"
     }
    ],
    "fin": "neutral"

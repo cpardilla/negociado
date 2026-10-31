@@ -1631,5 +1631,5 @@ Neg.data.register({
    "fin": "neutral"
   }
  },
- "pie": "*Referencias normativas*<br>Arts. 2, 7 bis, 16 a 22, 27 a 32 y 42 bis a) a 42 bis c) LJV<br>Arts. 249 a 298 CC<br>Arts. 458, 461 y 753 a 762 LEC<br>Art. 12 CRPD (2006)"
+ "pie": "<strong>Referencias normativas</strong><br>Arts. 2, 7 bis, 16 a 22, 27 a 32 y 42 bis a) a 42 bis c) LJV<br>Arts. 249 a 298 CC<br>Arts. 458, 461 y 753 a 762 LEC<br>Art. 12 CRPD (2006)"
 });
