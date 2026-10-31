@@ -48,7 +48,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-adopcion | Guía · LJV · Adopción | · | · | · | · | · | · | 1R |
 | ljv-medidas-apoyo | Guía · LJV · Medidas judiciales de apoyo a personas con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Guía · LJV · Tutela, curatela y guarda de hecho | · | · | · | · | · | · | 1R |
-| ljv-emancipacion | Guía · LJV · Emancipación y beneficio de la mayoría de edad | 49E | · | · | · | · | 1E 1R | 3R |
+| ljv-emancipacion | Guía · LJV · Emancipación y beneficio de la mayoría de edad | · | · | · | · | · | · | · |
 | ljv-patrimonio-protegido | Guía · LJV · Patrimonio de las personas con discapacidad | 1E 1A 1R | · | · | 1R | · | · | 1R |
 | ljv-honor-menor | Guía · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 1E 2A 3R | · | · | · | · | · | · |
 | ljv-actos-disposicion | Guía · LJV · Actos de disposición sobre bienes de menores y personas con apoyos | 6R | · | · | · | · | · | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 59E 3A 35R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 1E 0A 1R | 0E 0A 59R |
+| | **Total** | 10E 3A 35R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 0E 0A 0R | 0E 0A 56R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,18 +69,18 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2524
-- ✓ CC (BOE a 07-09-2026): 1269
-- ✓ LEC (BOE a 07-10-2026): 1131
-- ✓ LOPJ (BOE a 09-10-2026): 99
+- ✓ LJV (BOE a 05-03-2026): 2554
+- ✓ CC (BOE a 07-09-2026): 1262
+- ✓ LEC (BOE a 07-10-2026): 1136
+- ✓ LOPJ (BOE a 09-10-2026): 101
 - ✓ LTRANS (BOE a 20-12-2025): 62
 - ✓ LOPJM (BOE a 18-12-2025): 47
 - ✓ LRC (BOE a 24-02-2026): 38
 - ✓ LPPD (BOE a 18-12-2025): 36
 - UE: 33
 - ✓ LOPDH (BOE a 16-12-2025): 33
-- ✓ CE (BOE a 20-05-2026): 31
 - ✓ LN (BOE a 22-10-2026): 30
+- ✓ CE (BOE a 20-05-2026): 29
 - ✓ RDTO (BOE a 19-12-2025): 25
 - ✓ LH (BOE a 07-01-2026): 22
 - ✓ LTO (BOE a 16-12-2025): 19
@@ -104,7 +104,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 304 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 305 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -359,68 +359,7 @@ Sin hallazgos automáticos.
 
 ### ljv-emancipacion · Guía · LJV · Emancipación y beneficio de la mayoría de edad
 
-**citas**
-
-- [error] «art. 320»: el art. 320 CC está sin contenido/derogado — _paso «inicio» › opción 1_
-- [error] «art. 321»: el art. 321 CC está sin contenido/derogado — _paso «inicio» › opción 2_
-- [error] «artículos 320 y 321»: el art. 320 CC está sin contenido/derogado — _paso «inicio» › info 1_
-- [error] «artículos 320 y 321»: el art. 321 CC está sin contenido/derogado — _paso «inicio» › info 1_
-- [error] «artículos 320 y 321»: el art. 320 CC está sin contenido/derogado — _paso «inicio» › ley 4_
-- [error] «artículos 320 y 321»: el art. 321 CC está sin contenido/derogado — _paso «inicio» › ley 4_
-- [error] «artículo 320»: el art. 320 CC está sin contenido/derogado — _paso «supuesto_emancipacion» › info 1_
-- [error] «Artículo 320»: el art. 320 CC está sin contenido/derogado — _paso «supuesto_emancipacion» › ley 3_
-- [error] «artículo 321»: el art. 321 CC está sin contenido/derogado — _paso «supuesto_beneficio» › info 1_
-- [error] «Artículo 321»: el art. 321 CC está sin contenido/derogado — _paso «supuesto_beneficio» › ley 4_
-- [error] «artículo 320»: el art. 320 CC está sin contenido/derogado — _paso «solicitud_quien» › ley 3_
-- [error] «artículo 321»: el art. 321 CC está sin contenido/derogado — _paso «solicitud_quien» › ley 3_
-- [error] «art. 320»: el art. 320 CC está sin contenido/derogado — _paso «solicitud_documentacion» › comprobación 3.2_
-- [error] «artículo 320»: el art. 320 CC está sin contenido/derogado — _paso «solicitud_documentacion» › ley 5_
-- [error] «artículo 321»: el art. 321 CC está sin contenido/derogado — _paso «solicitud_documentacion» › ley 5_
-- [error] «art. 318»: el art. 318 CC está sin contenido/derogado — _paso «resolucion_concede» › nota 2_
-- [error] «artículo 323»: el art. 323 CC está sin contenido/derogado — _paso «resolucion_concede» › nota 2_
-- [error] «artículo 318»: el art. 318 CC está sin contenido/derogado — _paso «resolucion_concede» › ley 3_
-- [error] «artículo 323»: el art. 323 CC está sin contenido/derogado — _paso «resolucion_concede» › ley 3_
-- [error] «artículo 318»: el art. 318 CC está sin contenido/derogado — _paso «inscripcion_remision» › ley 4_
-- [error] «art. 320»: el art. 320 CC está sin contenido/derogado — _paso «inscripcion_eficacia» › opción 1_
-- [error] «art. 321»: el art. 321 CC está sin contenido/derogado — _paso «inscripcion_eficacia» › opción 2_
-- [error] «art. 318»: el art. 318 CC está sin contenido/derogado — _paso «inscripcion_eficacia» › info 1_
-- [error] «Artículo 318»: el art. 318 CC está sin contenido/derogado — _paso «inscripcion_eficacia» › ley 3_
-- [error] «artículo 323»: el art. 323 CC está sin contenido/derogado — _paso «efectos_emancipacion» › info 1_
-- [error] «art. 324»: el art. 324 CC está sin contenido/derogado — _paso «efectos_emancipacion» › nota 3_
-- [error] «art. 318»: el art. 318 CC está sin contenido/derogado — _paso «efectos_emancipacion» › aviso 4_
-- [error] «Artículo 323»: el art. 323 CC está sin contenido/derogado — _paso «efectos_emancipacion» › ley 5_
-- [error] «artículo 324»: el art. 324 CC está sin contenido/derogado — _paso «efectos_emancipacion» › ley 5_
-- [error] «artículo 318»: el art. 318 CC está sin contenido/derogado — _paso «efectos_emancipacion» › ley 5_
-- [error] «artículo 322»: el art. 322 CC está sin contenido/derogado — _paso «efectos_emancipacion» › ley 5_
-- [error] «artículo 323»: el art. 323 CC está sin contenido/derogado — _paso «efectos_beneficio» › info 1_
-- [error] «art. 323»: el art. 323 CC está sin contenido/derogado — _paso «efectos_beneficio» › comprobación 2.3_
-- [error] «Artículo 323»: el art. 323 CC está sin contenido/derogado — _paso «efectos_beneficio» › ley 5_
-- [error] «artículo 321»: el art. 321 CC está sin contenido/derogado — _paso «efectos_beneficio» › ley 5_
-- [error] «art. 320»: el art. 320 CC está sin contenido/derogado — _paso «fin_emancipacion» › comprobación 2.1_
-- [error] «art. 318»: el art. 318 CC está sin contenido/derogado — _paso «fin_emancipacion» › comprobación 2.3_
-- [error] «art. 323»: el art. 323 CC está sin contenido/derogado — _paso «fin_emancipacion» › comprobación 2.4_
-- [error] «art. 318»: el art. 318 CC está sin contenido/derogado — _paso «fin_emancipacion» › comprobación 2.6_
-- [error] «artículos 314, 315, 318, 320, 322, 323»: el art. 314 CC está sin contenido/derogado — _paso «fin_emancipacion» › ley 3_
-- [error] «artículos 314, 315, 318, 320, 322, 323»: el art. 315 CC está sin contenido/derogado — _paso «fin_emancipacion» › ley 3_
-- [error] «artículos 314, 315, 318, 320, 322, 323»: el art. 318 CC está sin contenido/derogado — _paso «fin_emancipacion» › ley 3_
-- [error] «artículos 314, 315, 318, 320, 322, 323»: el art. 320 CC está sin contenido/derogado — _paso «fin_emancipacion» › ley 3_
-- [error] «artículos 314, 315, 318, 320, 322, 323»: el art. 322 CC está sin contenido/derogado — _paso «fin_emancipacion» › ley 3_
-- [error] «artículos 314, 315, 318, 320, 322, 323»: el art. 323 CC está sin contenido/derogado — _paso «fin_emancipacion» › ley 3_
-- [error] «art. 321»: el art. 321 CC está sin contenido/derogado — _paso «fin_beneficio» › comprobación 2.1_
-- [error] «art. 323»: el art. 323 CC está sin contenido/derogado — _paso «fin_beneficio» › comprobación 2.4_
-- [error] «artículos 321, 323, 222, 271, 232»: el art. 321 CC está sin contenido/derogado — _paso «fin_beneficio» › ley 3_
-- [error] «artículos 321, 323, 222, 271, 232»: el art. 323 CC está sin contenido/derogado — _paso «fin_beneficio» › ley 3_
-
-**grafos**
-
-- [error] pasos inalcanzables desde «inicio»: fin_denegada_sin_recurso — _grafo_
-- [revisar] es final pero tiene salidas — _paso «fin_denegada»_
-
-**terminologia**
-
-- [revisar] «JPI» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar — _paso «competencia» › nota 3 | paso «admision_revision» › comprobación 2.1_
-- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › plazo 4_
-- [revisar] «Secretario judicial» × 9 → Letrado/a de la Administración de Justicia (LO 7/2015) — _paso «solicitud_documentacion» › aviso 4 | paso «admision_revision» › título | paso «admision_revision» › pregunta …_
+Sin hallazgos automáticos.
 
 ### ljv-patrimonio-protegido · Guía · LJV · Patrimonio de las personas con discapacidad
 

@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G13.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G13.json; revisado con el BOE (registro: docs/revision/ljv-emancipacion.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-emancipacion",
@@ -12,7 +12,7 @@ Neg.data.register({
   "55"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G13"
  },
@@ -26,7 +26,7 @@ Neg.data.register({
  ],
  "actores": {
   "juez": "Juez",
-  "laj": "LAJ",
+  "laj": "Letrado de la Administración de Justicia",
   "ambos": "LAJ / Juez"
  },
  "inicio": "inicio",
@@ -38,31 +38,31 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Esta guía tramita paso a paso el expediente de concesión judicial de la emancipación o del beneficio de la mayoría de edad, conforme a los artículos 53 a 55 de la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria, en relación con los artículos 320 y 321 del Código Civil."
+     "texto": "Esta guía tramita paso a paso el expediente de concesión judicial de la emancipación o del beneficio de la mayoría de edad, conforme a los artículos 53 a 55 de la Ley 15/2015, de 2 de julio, de la Jurisdicción Voluntaria, en relación con los artículos 244 y 245 del Código Civil (el art. 53 LJV todavía los cita como arts. 320 y 321, su numeración anterior a la Ley 8/2021)."
     },
     {
      "tipo": "info",
-     "texto": "El procedimiento se inicia siempre a solicitud del menor mayor de dieciséis años, asistido por uno de sus progenitores o por su tutor, según corresponda. A lo largo del proceso, se presentarán bifurcaciones que determinarán el camino procedimental adecuado."
+     "texto": "El procedimiento se inicia siempre a solicitud del menor mayor de dieciséis años, asistido por uno de sus progenitores no privados ni suspendidos de la patria potestad o por su tutor; a falta de su asistencia, se le nombra defensor judicial (art. 54.1 LJV). A lo largo del proceso, se presentarán bifurcaciones que determinarán el camino procedimental adecuado."
     },
     {
      "tipo": "nota",
-     "texto": "Este expediente tiene naturaleza no contenciosa (art. 1 LJV), salvo que se formule oposición, en cuyo caso serán preceptivos Abogado y Procurador a partir de ese momento (art. 53.3 LJV)."
+     "texto": "No es preceptiva la intervención de Abogado ni Procurador; si se formula oposición, es preceptiva la asistencia de letrado desde ese momento (art. 53.3 LJV). La oposición no hace contencioso el expediente (art. 17.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 1 y artículo 53 de la Ley 15/2015; artículos 320 y 321 del Código Civil."
+     "texto": "Arts. 53 a 55 LJV · Arts. 244 y 245 CC"
     }
    ],
    "pregunta": "¿Qué tipo de solicitud se va a tramitar?",
    "opciones": [
     {
-     "texto": "Emancipación judicial (art. 320 CC)",
+     "texto": "Emancipación judicial (art. 244 CC)",
      "tono": "t-nota",
      "nota": "Emancipación",
      "destino": "supuesto_emancipacion"
     },
     {
-     "texto": "Beneficio de mayoría de edad (art. 321 CC)",
+     "texto": "Beneficio de mayoría de edad (art. 245 CC)",
      "tono": "t-nota",
      "nota": "Beneficio de mayoría de edad",
      "destino": "supuesto_beneficio"
@@ -76,7 +76,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El artículo 320 del Código Civil establece que el Juez podrá conceder la emancipación de los hijos mayores de dieciséis años, si estos la pidieren y previa audiencia de los padres, cuando concurra alguno de los siguientes supuestos:"
+     "texto": "El artículo 244 del Código Civil establece que el Juez podrá conceder la emancipación de los hijos mayores de dieciséis años, si estos la pidieren y previa audiencia de los progenitores, cuando concurra alguno de los siguientes supuestos:"
     },
     {
      "tipo": "nota",
@@ -84,7 +84,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 320 del Código Civil; artículo 53.1 LJV."
+     "texto": "Artículo 244 del Código Civil; artículo 53.1 LJV."
     }
    ],
    "pregunta": "Seleccione el supuesto habilitante que concurre en el caso:",
@@ -116,11 +116,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El artículo 321 del Código Civil permite al Juez, previo informe del Ministerio Fiscal, conceder el beneficio de la mayoría de edad al sujeto a tutela mayor de dieciséis años que lo solicitare."
+     "texto": "El artículo 245 del Código Civil permite al Juez, previo informe del Ministerio Fiscal, conceder el beneficio de la mayoría de edad al sujeto a tutela mayor de dieciséis años que lo solicitare."
     },
     {
      "tipo": "info",
-     "texto": "A diferencia de la emancipación, que se solicita por quien está bajo patria potestad, el beneficio de mayoría de edad se solicita por quien está sometido a tutela, es decir, por los menores no emancipados que no estén bajo la patria potestad (art. 222 CC)."
+     "texto": "A diferencia de la emancipación, que se solicita por quien está bajo patria potestad, el beneficio de mayoría de edad se solicita por quien está sometido a tutela, es decir, por los menores no emancipados en situación de desamparo o no sujetos a patria potestad (art. 199 CC)."
     },
     {
      "tipo": "nota",
@@ -128,7 +128,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 321 del Código Civil; artículo 222 del Código Civil; artículo 53.2 LJV."
+     "texto": "Artículo 245 del Código Civil; artículo 199 del Código Civil; artículo 53.2 LJV."
     }
    ],
    "pregunta": "Confirme la situación del menor:",
@@ -154,23 +154,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El órgano competente para conocer de la solicitud de emancipación o de beneficio de mayoría de edad es el Juez de Primera Instancia del domicilio del menor, conforme al artículo 53 de la Ley 15/2015 y al criterio territorial general de la Ley."
-    },
-    {
-     "tipo": "info",
-     "texto": "El criterio de atribución por el domicilio del menor asegura la proximidad geográfica del órgano jurisdiccional y facilita la práctica de las diligencias necesarias para la valoración del caso."
+     "texto": "El órgano competente para conocer de la solicitud de emancipación o de beneficio de mayoría de edad es el Juez de Primera Instancia del domicilio del menor (art. 53.1 y 2 LJV). Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 j) LOPJ); si no, la Sección Civil."
     },
     {
      "tipo": "nota",
-     "texto": "Tanto la solicitud de emancipación como la de beneficio de mayoría de edad se tramitan ante el mismo órgano: el JPI del domicilio del menor."
+     "texto": "La competencia territorial no puede modificarse por sumisión expresa ni tácita (art. 2.2 LJV); el LAJ la examina de oficio (art. 16 LJV)."
     },
     {
-     "tipo": "plazo",
-     "texto": "Determinar el Juzgado de Primera Instancia competente según el domicilio del menor."
+     "tipo": "nota",
+     "texto": "La emancipación judicial (art. 53.1) y el beneficio de la mayoría de edad (art. 53.2) se piden ante el mismo órgano."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 53 LJV; artículo 17 LJV (competencia objetiva y territorial)."
+     "texto": "Art. 53.1 y 2 LJV · Arts. 2.2 y 16 LJV · Art. 86.5 j) LOPJ"
     }
    ],
    "siguiente": "solicitud_quien"
@@ -182,15 +178,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El expediente se inicia mediante solicitud dirigida al Juzgado por el menor mayor de dieciséis años. La solicitud es un acto procesal del menor, legitimado activamente conforme al Código Civil, pero requiere la asistencia de un progenitor o del tutor."
+     "texto": "El expediente se inicia mediante solicitud dirigida al Juzgado por el menor mayor de dieciséis años. La solicitud es un acto procesal del menor, legitimado activamente conforme al Código Civil, con la asistencia de alguno de sus progenitores, no privados o suspendidos de la patria potestad, o del tutor (art. 54.1 LJV)."
     },
     {
      "tipo": "nota",
      "texto": "El menor actúa como parte solicitante, no como mero objeto del procedimiento, lo que es coherente con el derecho del menor a ser oído (art. 12 CDN y art. 39 CE)."
     },
     {
+     "tipo": "aviso",
+     "texto": "A falta de esa asistencia, se nombra defensor judicial al menor para instar el expediente; hasta su nombramiento, el Ministerio Fiscal asume su representación y defensa (art. 54.1 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Artículo 54 LJV; artículo 320 CC (emancipación); artículo 321 CC (beneficio); artículo 12 CDN; artículo 39 CE."
+     "texto": "Art. 54.1 LJV; arts. 244 y 245 CC; art. 12 CDN; art. 39 CE."
     }
    ],
    "pregunta": "¿Quién asiste al menor en la presentación de la solicitud?",
@@ -205,6 +205,11 @@ Neg.data.register({
      "texto": "El tutor del menor (en caso de beneficio de mayoría de edad)",
      "tono": "t-nota",
      "nota": "Asistencia del tutor",
+     "destino": "solicitud_documentacion"
+    },
+    {
+     "texto": "Nadie le asiste: se nombra defensor judicial y, entretanto, le representa el Ministerio Fiscal",
+     "tono": "t-aviso",
      "destino": "solicitud_documentacion"
     }
    ]
@@ -227,20 +232,20 @@ Neg.data.register({
      "titulo": "Documentación a preparar",
      "items": [
       "Solicitud dirigida al Juzgado competente, firmada por el menor y por el progenitor asistente o el tutor",
-      "Documentos acreditativos de la causa habilitante (supuesto a, b o c del art. 320 CC, o situación de tutela del art. 222 CC)",
+      "Documentos acreditativos de la causa habilitante (supuesto a, b o c del art. 244 CC, o situación de tutela del art. 199 CC)",
       "Proposición de los medios de prueba que se consideren pertinentes",
       "Certificado de nacimiento del menor (acreditación de la edad mayor de 16 años)",
-      "En su caso, certificado de defunción o sentencia de separación de los progenitores (según el supuesto)"
+      "En su caso, documentos que acrediten el nuevo matrimonio o convivencia, la separación de los progenitores o la causa que entorpece la patria potestad (según el supuesto)"
      ],
      "marcar": true
     },
     {
      "tipo": "aviso",
-     "texto": "La ausencia de documentación acreditativa de la causa puede motivar que el Secretario judicial no admita a trámite la solicitud."
+     "texto": "Si faltan documentos, el LAJ da cinco días para subsanar (art. 16.4 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 54.2 LJV; artículo 320 CC; artículo 321 CC."
+     "texto": "Artículo 54.2 LJV; artículo 244 CC; artículo 245 CC."
     }
    ],
    "siguiente": "solicitud_postulacion"
@@ -256,33 +261,29 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Si durante la tramitación se formulase oposición, a partir de ese momento sí será preceptiva la asistencia de letrado. La intervención de Abogado y Procurador también será necesaria para la interposición de recursos de revisión y apelación contra la resolución final."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Esta regla se alinea con el principio de economía procesal y la naturaleza no contenciosa de los expedientes de jurisdicción voluntaria (art. 1 LJV)."
+     "texto": "Si se formula oposición, a partir de ese momento es preceptiva la asistencia de letrado (art. 53.3 LJV). Para los recursos de revisión y apelación contra la resolución definitiva son necesarios Abogado y Procurador (art. 3.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 53.3 LJV; artículo 1 LJV; Ley 1/2000 de Enjuiciamiento Civil (aplicación supletoria, art. 4 LJV)."
+     "texto": "Art. 53.3 LJV; art. 3.2 LJV."
     }
    ],
    "siguiente": "admision_revision"
   },
   "admision_revision": {
    "fase": 2,
-   "titulo": "Revisión y admisión a trámite por el Secretario judicial",
+   "titulo": "Revisión y admisión a trámite por el LAJ",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Presentada la solicitud con la documentación correspondiente, corresponde al Secretario judicial revisar que se cumplen los requisitos formales y materiales para la admisión a trámite del expediente."
+     "texto": "Presentada la solicitud con la documentación correspondiente, el LAJ examina la competencia y los defectos de la solicitud y la admite a trámite (arts. 16 y 55.1 LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Aspectos a verificar por el Secretario judicial",
+     "titulo": "Aspectos a verificar por el LAJ",
      "items": [
-      "Competencia del Juzgado (JPI del domicilio del menor)",
+      "Competencia del Juzgado (domicilio del menor)",
       "Legitimación del solicitante (mayor de 16 años con asistencia de progenitor o tutor)",
       "Acreditación documental de la causa habilitante",
       "Cumplimiento de los requisitos formales de la solicitud"
@@ -290,24 +291,24 @@ Neg.data.register({
      "marcar": true
     },
     {
-     "tipo": "plazo",
-     "texto": "El Secretario judicial debe resolver sobre la admisión en el plazo más breve posible tras la presentación."
+     "tipo": "nota",
+     "texto": "Si la solicitud tiene defectos, el LAJ da cinco días para subsanarlos (art. 16.4 LJV). Si entiende que no es admisible, da cuenta al Juez, a quien corresponde resolver el expediente (arts. 17.1 y 55.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículos 17 y 53 LJV; artículo 54 LJV."
+     "texto": "Arts. 16, 17.1, 53, 54 y 55.1 LJV."
     }
    ],
-   "pregunta": "¿Cómo resuelve el Secretario judicial?",
+   "pregunta": "¿Es admisible la solicitud?",
    "opciones": [
     {
-     "texto": "Admite a trámite la solicitud",
+     "texto": "Sí: el LAJ la admite a trámite",
      "tono": "t-nota",
      "nota": "Admitida a trámite",
      "destino": "comparecencia_convocatoria"
     },
     {
-     "texto": "No admite a trámite (defectos insubsanables o falta de competencia)",
+     "texto": "No (defectos insubsanables o falta de competencia): el LAJ da cuenta al Juez",
      "tono": "t-nota",
      "nota": "No admitida a trámite",
      "destino": "fin_inadmitida"
@@ -317,19 +318,19 @@ Neg.data.register({
   "fin_inadmitida": {
    "fase": 2,
    "titulo": "Solicitud no admitida a trámite",
-   "actor": "laj",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Secretario judicial no ha admitido a trámite la solicitud. Las causas más frecuentes son la falta de competencia del Juzgado, la ausencia de legitimación del solicitante o defectos insubsanables en la documentación presentada."
+     "texto": "El Juez, a quien el LAJ ha dado cuenta, no admite la solicitud (art. 17.1 LJV). Las causas más frecuentes son la falta de competencia del Juzgado, la ausencia de legitimación del solicitante o defectos insubsanables en la documentación presentada."
     },
     {
      "tipo": "aviso",
-     "texto": "Contra la resolución de no admisión a trámite caben los recursos previstos en la Ley 15/2015. Será necesaria la intervención de Abogado y Procurador para la interposición del recurso de apelación."
+     "texto": "Contra el auto que pone fin al expediente cabe apelación, con Abogado y Procurador (arts. 3.2 y 20.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 19 LJV; Ley 1/2000 de Enjuiciamiento Civil (régimen de recursos)."
+     "texto": "Arts. 17.1, 3.2 y 20.2 LJV."
     }
    ],
    "fin": "error"
@@ -341,7 +342,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Admitida a trámite la solicitud, el Secretario judicial convocará a la comparecencia ante el Juez a los siguientes sujetos:"
+     "texto": "Admitida a trámite la solicitud, el LAJ convoca a la comparecencia ante el Juez a los siguientes sujetos, que serán oídos por este orden; después se practican las pruebas propuestas y acordadas (art. 55.1 LJV):"
     },
     {
      "tipo": "lista",
@@ -359,8 +360,12 @@ Neg.data.register({
      "texto": "La comparecencia constituye el acto central del expediente, donde se practican las diligencias y se valora la procedencia de la solicitud."
     },
     {
+     "tipo": "plazo",
+     "texto": "Citación con al menos quince días de antelación (art. 17.3 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Artículo 55.1 LJV."
+     "texto": "Art. 55.1 LJV; art. 17.3 LJV."
     }
    ],
    "siguiente": "comparecencia_plazo"
@@ -418,7 +423,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si el solicitante no asiste a la comparecencia, el Juez o el Secretario judicial acordará el archivo del expediente, teniéndole por desistido del mismo, conforme al artículo 18.2.1.ª de la Ley 15/2015."
+     "texto": "Si el solicitante no asiste a la comparecencia, el Juez acuerda el archivo del expediente, teniéndole por desistido del mismo, conforme al artículo 18.2.1.ª de la Ley 15/2015."
     },
     {
      "tipo": "nota",
@@ -451,8 +456,7 @@ Neg.data.register({
       "Audiencia del menor solicitante (en acto separado si el Juez lo acuerda)",
       "Audiencia de los progenitores o tutor",
       "Intervención del Ministerio Fiscal",
-      "Práctica de las pruebas propuestas y de las acordadas de oficio",
-      "Formulación oral de conclusiones por los interesados"
+      "Práctica de las pruebas propuestas y de las acordadas de oficio"
      ],
      "marcar": true
     },
@@ -463,6 +467,10 @@ Neg.data.register({
     {
      "tipo": "aviso",
      "texto": "Si se plantearan cuestiones procesales que puedan impedir la válida prosecución del expediente, el Juez las resolverá oralmente en el propio acto."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Beneficio de la mayoría de edad: se concede previo informe del Ministerio Fiscal (art. 245 CC)."
     },
     {
      "tipo": "ley",
@@ -492,11 +500,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "aviso",
-     "texto": "Al haberse formulado oposición, a partir de este momento será preceptiva la asistencia de Abogado para todas las partes. La oposición transforma parcialmente la naturaleza del expediente, pues obligará a seguir las reglas propias de la contradicción."
+     "texto": "Al haberse formulado oposición, a partir de este momento es preceptiva la asistencia de letrado (art. 53.3 LJV). La oposición no hace contencioso el expediente ni impide que continúe su tramitación hasta que se resuelva (art. 17.3 LJV)."
     },
     {
      "tipo": "info",
-     "texto": "El expediente continuará su tramitación, pero con las garantías propias de la contradicción. Será necesaria la intervención de Abogado y, en su caso, de Procurador para proseguir."
+     "texto": "El expediente continúa con la asistencia de letrado."
     },
     {
      "tipo": "nota",
@@ -504,7 +512,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 53.3 LJV; Ley 1/2000 de Enjuiciamiento Civil."
+     "texto": "Art. 53.3 LJV; art. 17.3 LJV; art. 3.2 LJV."
     }
    ],
    "siguiente": "resolucion_criterios"
@@ -556,7 +564,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La resolución deberá ser motivada, especificando las razones de la concesión o denegación."
+     "texto": "El Juez resuelve por auto motivado en los cinco días siguientes a la comparecencia (art. 19.1 LJV)."
     },
     {
      "tipo": "ley",
@@ -590,7 +598,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Contra la resolución que deniega la solicitud caben los recursos previstos en la Ley 15/2015. Para la interposición del recurso de apelación será necesaria la intervención de Abogado y Procurador."
+     "texto": "Contra el auto que deniega la solicitud cabe apelación, en veinte días ante la Audiencia Provincial, con Abogado y Procurador (arts. 3.2 y 20.2 LJV; art. 458.1 LEC)."
     },
     {
      "tipo": "nota",
@@ -598,7 +606,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 55.2 LJV; artículo 19 LJV; Ley 1/2000 de Enjuiciamiento Civil (régimen de recursos)."
+     "texto": "Art. 55.2 LJV; arts. 3.2 y 20.2 LJV; art. 458.1 LEC."
     }
    ],
    "pregunta": "¿Se interpone recurso contra la resolución?",
@@ -613,10 +621,9 @@ Neg.data.register({
      "texto": "No se interpone recurso",
      "tono": "t-nota",
      "nota": "Sin recurso",
-     "destino": null
+     "destino": "fin_denegada_sin_recurso"
     }
-   ],
-   "fin": "error"
+   ]
   },
   "fin_denegada_sin_recurso": {
    "fase": 4,
@@ -629,7 +636,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La denegación firme no impide que el menor pueda presentar una nueva solicitud en el futuro si cambian las circunstancias o se acredita una causa habilitante distinta."
+     "texto": "Firme la resolución, no puede iniciarse otro expediente sobre idéntico objeto salvo que cambien las circunstancias (art. 19.3 LJV)."
     },
     {
      "tipo": "aviso",
@@ -637,7 +644,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 55.2 LJV; artículo 19 LJV; Ley 1/2000 de Enjuiciamiento Civil."
+     "texto": "Art. 55.2 LJV; art. 19.3 LJV."
     }
    ],
    "fin": "error"
@@ -657,11 +664,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El recurso se tramitará conforme a las reglas de la Ley 15/2015 y, en lo no previsto, de la Ley 1/2000 de Enjuiciamiento Civil (aplicación supletoria, art. 4 LJV)."
+     "texto": "Se interpone ante la Audiencia Provincial en veinte días desde la notificación; su LAJ pide las actuaciones al Juzgado, que las remite y emplaza a las partes no recurrentes (arts. 458 y 461 LEC; art. 20.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 19 LJV; artículo 4 LJV; Ley 1/2000 de Enjuiciamiento Civil."
+     "texto": "Arts. 3.2 y 20.2 LJV; arts. 458 y 461 LEC."
     }
    ],
    "pregunta": "¿Cuál es el resultado del recurso?",
@@ -695,7 +702,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 19 LJV; Ley 1/2000 de Enjuiciamiento Civil."
+     "texto": "Art. 20.2 LJV; arts. 455 y ss. LEC."
     }
    ],
    "fin": "error"
@@ -707,15 +714,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez ha concedido la emancipación o el beneficio de mayoría de edad solicitados. La resolución es firme y habilita el siguiente paso: la inscripción en el Registro Civil."
+     "texto": "El Juez ha concedido la emancipación o el beneficio de mayoría de edad solicitados. Se remite al Registro Civil testimonio de la concesión para su inscripción (art. 55.3 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "Concedida la emancipación, no podrá ser revocada (art. 318 CC). El beneficiado adquiere la capacidad prevista en el artículo 323 del Código Civil."
+     "texto": "Concedida la emancipación, no puede ser revocada (art. 242 CC). El emancipado y quien obtiene el beneficio de la mayor edad tienen la capacidad del art. 247 CC."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 55.2 LJV; artículo 318 CC; artículo 323 CC."
+     "texto": "Artículo 55.2 LJV; artículo 242 CC; artículo 247 CC."
     }
    ],
    "siguiente": "inscripcion_remision"
@@ -727,19 +734,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se remitirá al Registro Civil el testimonio de la concesión de la emancipación o del beneficio de mayoría de edad para proceder a su inscripción, conforme al artículo 55 de la Ley 15/2015."
+     "texto": "Se remitirá al Registro Civil el testimonio de la concesión de la emancipación o del beneficio de mayoría de edad para proceder a su inscripción, conforme al artículo 55.3 de la Ley 15/2015."
     },
     {
-     "tipo": "info",
-     "texto": "La autoridad judicial deberá comunicar sin dilación al encargado del Registro Civil la resolución de concesión, en los términos previstos en los artículos 218 y 219 del Código Civil."
-    },
-    {
-     "tipo": "plazo",
-     "texto": "La remisión al Registro Civil debe efectuarse sin dilación una vez dictada la resolución."
+     "tipo": "nota",
+     "texto": "Se expide testimonio de la resolución a efectos de su inscripción (art. 22.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 55 LJV; artículo 318 CC; artículos 218 y 219 CC; Ley 20/2011 del Registro Civil."
+     "texto": "Art. 55.3 LJV; art. 22.2 LJV; art. 242 CC; Ley 20/2011 del Registro Civil."
     }
    ],
    "siguiente": "inscripcion_eficacia"
@@ -751,27 +754,27 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La concesión de emancipación habrá de inscribirse en el Registro Civil, no produciendo entre tanto efectos contra terceros (art. 318 CC). La inscripción es, por tanto, requisito esencial para la plena eficacia de la emancipación o del beneficio de mayoría de edad frente a terceros."
+     "texto": "La concesión de la emancipación ha de inscribirse en el Registro Civil y, entretanto, no produce efectos contra terceros (art. 242 CC)."
     },
     {
      "tipo": "nota",
-     "texto": "Hasta que se practique la inscripción, la emancipación o el beneficio producen efectos entre las partes, pero no son oponibles a terceros de buena fe."
+     "texto": "El testimonio de la concesión se remite al Registro Civil para su inscripción (art. 55.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 318 CC; artículos 218 y 219 CC; Ley 20/2011 del Registro Civil."
+     "texto": "Art. 242 CC; art. 55.3 LJV; Ley 20/2011 del Registro Civil."
     }
    ],
    "pregunta": "¿Cuál es el instituto concedido?",
    "opciones": [
     {
-     "texto": "Emancipación judicial (art. 320 CC)",
+     "texto": "Emancipación judicial (art. 244 CC)",
      "tono": "t-nota",
      "nota": "Emancipación",
      "destino": "efectos_emancipacion"
     },
     {
-     "texto": "Beneficio de mayoría de edad (art. 321 CC)",
+     "texto": "Beneficio de mayoría de edad (art. 245 CC)",
      "tono": "t-nota",
      "nota": "Beneficio de mayoría de edad",
      "destino": "efectos_beneficio"
@@ -785,7 +788,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La emancipación habilita al menor para regir su persona y bienes como si fuera mayor, de acuerdo con el artículo 323 del Código Civil. No obstante, hasta que llegue a la mayor edad (18 años), subsisten ciertas restricciones."
+     "texto": "La emancipación habilita al menor para regir su persona y bienes como si fuera mayor, de acuerdo con el artículo 247 del Código Civil. No obstante, hasta que llegue a la mayor edad (18 años), subsisten ciertas restricciones."
     },
     {
      "tipo": "lista",
@@ -793,25 +796,25 @@ Neg.data.register({
      "items": [
       "El menor emancipado puede regir su persona y bienes como si fuera mayor",
       "El menor emancipado podrá por sí solo comparecer en juicio",
-      "Hasta la mayoría de edad: no podrá tomar dinero a préstamo sin consentimiento de sus padres o curador",
-      "Hasta la mayoría de edad: no podrá gravar o enajenar bienes inmuebles sin consentimiento de sus padres o curador",
-      "Hasta la mayoría de edad: no podrá enajenar establecimientos mercantiles o industriales sin consentimiento",
-      "Hasta la mayoría de edad: no podrá enajenar objetos de extraordinario valor sin consentimiento",
+      "Hasta la mayoría de edad: no podrá tomar dinero a préstamo sin consentimiento de sus progenitores y, a falta de ambos, de su defensor judicial",
+      "Hasta la mayoría de edad: no podrá gravar o enajenar bienes inmuebles sin consentimiento de sus progenitores y, a falta de ambos, de su defensor judicial",
+      "Hasta la mayoría de edad: no podrá gravar o enajenar establecimientos mercantiles o industriales sin ese consentimiento",
+      "Hasta la mayoría de edad: no podrá gravar o enajenar objetos de extraordinario valor sin ese consentimiento",
       "La emancipación produce la extinción de la patria potestad sobre el menor (art. 169 CC)"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "Para que el menor emancipado casado pueda enajenar o gravar bienes comunes: si el otro cónyuge es mayor, basta el consentimiento de ambos; si también es menor, se necesitará además el de los padres o curadores de uno y otro (art. 324 CC)."
+     "texto": "Para que el menor emancipado casado pueda enajenar o gravar bienes comunes: si el otro cónyuge es mayor, basta el consentimiento de ambos; si también es menor, se necesitará además el de los progenitores o defensor judicial de uno y otro (art. 248 CC)."
     },
     {
      "tipo": "aviso",
-     "texto": "La emancipación, una vez inscrita, es irrevocable (art. 318 CC)."
+     "texto": "Concedida la emancipación, no puede ser revocada (art. 242 CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 323 CC; artículo 324 CC; artículo 169 CC; artículo 318 CC; artículo 322 CC."
+     "texto": "Arts. 242, 247 y 248 CC; art. 169 CC."
     }
    ],
    "siguiente": "fin_emancipacion"
@@ -823,7 +826,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Lo dispuesto en el artículo 323 del Código Civil es aplicable también al menor que hubiere obtenido judicialmente el beneficio de la mayor edad. El beneficiado adquiere la misma capacidad que el emancipado, con las mismas restricciones hasta alcanzar la mayoría de edad."
+     "texto": "Lo dispuesto en el artículo 247 del Código Civil es aplicable también al menor que hubiere obtenido judicialmente el beneficio de la mayor edad. El beneficiado adquiere la misma capacidad que el emancipado, con las mismas restricciones hasta alcanzar la mayoría de edad."
     },
     {
      "tipo": "lista",
@@ -831,22 +834,18 @@ Neg.data.register({
      "items": [
       "El menor podrá regir su persona y bienes como si fuera mayor",
       "Podrá comparecer en juicio por sí solo",
-      "Subsisten las restricciones del art. 323 CC hasta los 18 años (préstamos, disposición de inmuebles, etc.)",
-      "La tutela se extingue como consecuencia de la concesión del beneficio (art. 271 CC)"
+      "Subsisten las restricciones del art. 247 CC hasta los 18 años (préstamos, disposición de inmuebles, etc.)",
+      "La tutela se extingue por la concesión del beneficio de la mayoría de edad (art. 231.1.º CC)"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "A diferencia de la emancipación judicial por el artículo 320, el beneficio de mayoría de edad se concede a menores bajo tutela, por lo que la extinción afecta a la tutela (art. 271 CC) y no a la patria potestad (art. 169 CC)."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "El beneficio de mayoría de edad, una vez inscrito, es irrevocable."
+     "texto": "A diferencia de la emancipación judicial del artículo 244 CC, el beneficio de mayoría de edad se concede a menores bajo tutela, por lo que la extinción afecta a la tutela (art. 231.1.º CC) y no a la patria potestad (art. 169 CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 323 CC (aplicable); artículo 271 CC; artículo 321 CC; artículo 222 CC; artículo 232 CC (vigilancia MF)."
+     "texto": "Art. 247 CC; arts. 199, 231 y 245 CC."
     }
    ],
    "siguiente": "fin_beneficio"
@@ -858,24 +857,24 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El procedimiento ha concluido con éxito. La emancipación judicial ha sido concedida por el Juez e inscrita en el Registro Civil, produciendo plenos efectos frente a terceros."
+     "texto": "El procedimiento ha concluido con éxito. La emancipación judicial ha sido concedida por el Juez e remitida al Registro Civil para su inscripción, con la que produce efectos contra terceros (art. 242 CC)."
     },
     {
      "tipo": "lista",
      "titulo": "Resumen del resultado",
      "items": [
-      "El menor ha sido emancipado judicialmente conforme al art. 320 CC",
+      "El menor ha sido emancipado judicialmente conforme al art. 244 CC",
       "La resolución ha sido dictada por el Juez de Primera Instancia del domicilio del menor",
-      "Se ha practicado la inscripción en el Registro Civil (art. 318 CC)",
-      "El menor puede regir su persona y bienes, con restricciones hasta los 18 años (art. 323 CC)",
+      "Se ha remitido testimonio al Registro Civil para su inscripción (art. 55.3 LJV; art. 242 CC)",
+      "El menor puede regir su persona y bienes, con restricciones hasta los 18 años (art. 247 CC)",
       "La patria potestad sobre el menor ha quedado extinguida (art. 169 CC)",
-      "La emancipación es irrevocable (art. 318 CC)"
+      "Concedida, la emancipación no puede ser revocada (art. 242 CC)"
      ],
      "marcar": true
     },
     {
      "tipo": "ley",
-     "texto": "Artículos 53-55 LJV; artículos 314, 315, 318, 320, 322, 323 CC; artículo 39 CE; Ley 20/2011 del Registro Civil."
+     "texto": "Arts. 53 a 55 LJV; arts. 169, 239, 242, 244 y 247 CC; Ley 20/2011 del Registro Civil."
     }
    ],
    "fin": "success"
@@ -887,24 +886,23 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El procedimiento ha concluido con éxito. El beneficio de la mayoría de edad ha sido concedido por el Juez e inscrito en el Registro Civil, produciendo plenos efectos frente a terceros."
+     "texto": "El procedimiento ha concluido con éxito. El beneficio de la mayoría de edad ha sido concedido por el Juez y remitido al Registro Civil para su inscripción (art. 55.3 LJV)."
     },
     {
      "tipo": "lista",
      "titulo": "Resumen del resultado",
      "items": [
-      "El menor ha obtenido el beneficio de la mayoría de edad conforme al art. 321 CC",
+      "El menor ha obtenido el beneficio de la mayoría de edad conforme al art. 245 CC",
       "La resolución ha sido dictada por el Juez de Primera Instancia del domicilio del menor",
-      "Se ha practicado la inscripción en el Registro Civil",
-      "El menor puede regir su persona y bienes, con restricciones hasta los 18 años (art. 323 CC)",
-      "La tutela se ha extinguido como consecuencia de la concesión (art. 271 CC)",
-      "El beneficio de mayoría de edad es irrevocable una vez inscrito"
+      "Se ha remitido testimonio al Registro Civil para su inscripción (art. 55.3 LJV)",
+      "El menor puede regir su persona y bienes, con restricciones hasta los 18 años (art. 247 CC)",
+      "La tutela se ha extinguido por la concesión (art. 231.1.º CC)"
      ],
      "marcar": true
     },
     {
      "tipo": "ley",
-     "texto": "Artículos 53-55 LJV; artículos 321, 323, 222, 271, 232 CC; artículo 39 CE; Ley 20/2011 del Registro Civil."
+     "texto": "Arts. 53 a 55 LJV; arts. 199, 231, 245 y 247 CC; Ley 20/2011 del Registro Civil."
     }
    ],
    "fin": "success"

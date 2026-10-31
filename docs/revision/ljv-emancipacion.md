@@ -40,3 +40,27 @@ La Ley 8/2021 trasladó la emancipación a los **arts. 239–248 CC**. El esquem
 | 11 | Plazos | error | Tabla con «sin plazo específico» en casi todas las filas | Plazos reales de la LJV (17.3, 18.1, 19.1, apelación) y el del art. 168 CC | LJV, CC |
 | 12 | Marco general | estilo | Ocho fichas que repetían las normas generales de la LJV, con errores (art. 1 «ante Notarios y Registradores», art. 17 «examina la competencia»…) | Una ficha de remisión a E06 y E07 (DRY) | — |
 | 13 | Varios | desfasado | «Secretario judicial», «Juez de Primera Instancia» | LAJ; Sección de Familia | LO 7/2015, LO 1/2025 |
+
+---
+
+# Revisión · G13 · Guía de tramitación de la emancipación y del beneficio de la mayoría de edad
+
+- **Recurso**: `data/guias/ljv-emancipacion.js` (origen G13).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026; CC a 07-09-2026; LEC a 07-10-2026; LOPJ a 09-10-2026.
+- **Método**: fase 5. La guía seguía bien los arts. 53 a 55 LJV: **corregida**, no rehecha; se conservan los 27 pasos y sus identificadores.
+- **Resultado del comprobador**: sin hallazgos (antes: 49 errores de cita, 1 de grafo y 1 «final con salidas»).
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | toda la guía | **error** | Arts. 314–324 CC (sin contenido desde la Ley 8/2021); tutela «art. 222», extinción de la tutela «art. 271», Registro «arts. 218 y 219», vigilancia «art. 232» | La tabla de equivalencias de E16 (emancipación judicial, art. 244; beneficio, art. 245; inscripción e irrevocabilidad, art. 242; capacidad, art. 247; casado menor, art. 248); tutela de menores, art. 199; extinción por el beneficio, art. 231.1.º. Nota en el inicio: el art. 53 LJV aún dice «320 y 321» | CC 199, 231, 239–248 |
+| 2 | fin_denegada, fin_denegada_sin_recurso | **error** | `fin_denegada` era final y tenía salidas (una, a `null`); `fin_denegada_sin_recurso`, inalcanzable | `fin_denegada` es un paso con la pregunta del recurso; «No» lleva a `fin_denegada_sin_recurso` | — |
+| 3 | inicio, solicitud_postulacion, oposicion_letrado | **error** | Con oposición, «Abogado y Procurador» / «Abogado para todas las partes»; la oposición «transforma la naturaleza del expediente» | Solo asistencia de letrado desde la oposición (art. 53.3); la oposición no hace contencioso el expediente (art. 17.3); Abogado y Procurador para los recursos (art. 3.2) | LJV 3.2, 17.3, 53.3 |
+| 4 | solicitud_quien | incompleto | Sin el caso de falta de asistencia | Defensor judicial y, entretanto, representación del Ministerio Fiscal (art. 54.1); nueva opción | LJV 54.1 |
+| 5 | admision_revision, fin_inadmitida | error | El «Secretario judicial» inadmite; «en el plazo más breve posible»; recursos «del art. 19» | El LAJ admite (art. 55.1); subsanación en cinco días (art. 16.4); si no es admisible, da cuenta al Juez (art. 17.1); contra el auto, apelación (art. 20.2) | LJV 16, 17, 20, 55 |
+| 6 | recurso_apelacion, fin_denegada | error | «Art. 19 LJV», «LEC supletoria, art. 4 LJV» | Apelación del art. 20.2 LJV, veinte días ante la Audiencia (arts. 458 y 461 LEC); supletoriedad, art. 8 LJV | LJV 8, 20.2; LEC 458 |
+| 7 | inscripcion_*, efectos_*, fin_* | error | Inscripción «sin dilación (arts. 218–219 CC)»; inoponible «a terceros de buena fe»; emancipación irrevocable «una vez inscrita»; beneficio «irrevocable una vez inscrito»; resolución «firme» al concederse | Testimonio al Registro Civil (art. 55.3; art. 22.2 LJV); sin efectos contra terceros hasta la inscripción y no revocable una vez concedida (art. 242 CC); quitado lo del beneficio, que la ley no dice | LJV 55.3; CC 242 |
+| 8 | efectos_emancipacion | desfasado | Consentimiento «de sus padres o curador» | De sus progenitores y, a falta de ambos, de su defensor judicial (arts. 247 y 248 CC) | CC 247, 248 |
+| 9 | competencia, comparecencia_*, resolucion_criterios | incompleto | Competencia por «art. 17 LJV»; sin plazo de citación; «conclusiones orales»; archivo por «Juez o Secretario judicial» | Art. 53.1 y 2; hoy Sección de Familia, Infancia y Capacidad (art. 86.5 j) LOPJ); citación con quince días (art. 17.3); orden de audiencia del art. 55.1; informe del Fiscal en el beneficio (art. 245 CC); auto en cinco días (art. 19.1); archivo por el Juez | LJV 17–19, 53, 55; LOPJ |
+| 10 | actores, documentación | forma / impreciso | «LAJ»; «certificado de defunción» como prueba de la causa | Letrado de la Administración de Justicia; documentos de los tres supuestos del art. 244 CC | — |
