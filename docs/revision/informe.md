@@ -55,13 +55,13 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-ausencia-fallecimiento | Guía · LJV · Declaración de ausencia y fallecimiento | · | · | · | · | · | · | 1R |
 | ljv-donantes-vivos | Guía · LJV · Extracción de órganos de donantes vivos | · | · | · | · | · | · | · |
 | ljv-hechos-pasados | Guía · LJV · Declaraciones judiciales sobre hechos pasados | · | · | · | · | · | · | 1R |
-| ljv-sucesorio | Guía · LJV · Título IV · Derecho sucesorio | 5R | · | · | · | 1R | · | 2R |
+| ljv-sucesorio | Guía · LJV · Título IV · Derecho sucesorio | · | · | · | · | 1R | · | · |
 | ljv-obligaciones | Guía · LJV · Título V · Derecho de obligaciones | 3R | · | · | · | · | · | 2R |
 | ljv-usufructuario | Guía · LJV · Usufructuario: reclamación de créditos vencidos | · | · | · | · | · | · | 2R |
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 8E 0A 12R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 55R |
+| | **Total** | 8E 0A 7R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 53R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,10 +69,10 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2726
-- ✓ CC (BOE a 07-09-2026): 1286
-- ✓ LEC (BOE a 07-10-2026): 1129
-- ✓ LOPJ (BOE a 09-10-2026): 110
+- ✓ LJV (BOE a 05-03-2026): 2729
+- ✓ CC (BOE a 07-09-2026): 1287
+- ✓ LEC (BOE a 07-10-2026): 1125
+- ✓ LOPJ (BOE a 09-10-2026): 117
 - ✓ LPPD (BOE a 18-12-2025): 70
 - ✓ LTRANS (BOE a 20-12-2025): 62
 - ✓ LOPJM (BOE a 18-12-2025): 50
@@ -397,22 +397,9 @@ Sin hallazgos automáticos.
 
 ### ljv-sucesorio · Guía · LJV · Título IV · Derecho sucesorio
 
-**citas**
-
-- [revisar] «Art. 1057.2»: el art. 1057 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «cp_designa_50» › ley 2_
-- [revisar] «art. 1057.2»: el art. 1057 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «cp_comp_designa» › nota 4_
-- [revisar] «art. 1057.2»: el art. 1057 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «resolucion_cp_aprob» › info 1_
-- [revisar] «art. 1057.2»: el art. 1057 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «resolucion_cp_aprob» › ley 2_
-- [revisar] «Arts. 1057.2»: el art. 1057 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «fin_inadmision_50» › ley 2_
-
 **literales**
 
 - [revisar] texto entrecomillado no hallado literalmente en LJV: «De los expedientes de jurisdicción voluntaria relativos al Derecho sucesorio» — _paso «inicio» › ley 2_
-
-**terminologia**
-
-- [revisar] «Juzgado de Primera Instancia» × 6 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «alb_comp_laj» › ley 2 | paso «alb_comp_laj» › comprobación 3.1 | paso «alb_comp_laj» › nota 4 …_
-- [revisar] «JPI» × 22 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar — _paso «alb_comp_laj» › comprobación 3.2 | paso «alb_comp_laj» › comprobación 3.3 | paso «alb_comp_laj» › comprobación 3.4 …_
 
 ### ljv-obligaciones · Guía · LJV · Título V · Derecho de obligaciones
 

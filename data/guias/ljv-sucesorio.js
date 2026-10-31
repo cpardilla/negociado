@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G20.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G20.json; revisado con el BOE (registro: docs/revision/ljv-sucesorio.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-sucesorio",
@@ -13,7 +13,7 @@ Neg.data.register({
   "95"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G20"
  },
@@ -28,7 +28,7 @@ Neg.data.register({
  "actores": {
   "ambos": "LAJ / Juez",
   "juez": "Juez",
-  "laj": "LAJ"
+  "laj": "Letrado de la Administración de Justicia"
  },
  "inicio": "inicio",
  "pasos": {
@@ -178,8 +178,12 @@ Neg.data.register({
      "texto": "El artículo 93 LJV delimita los supuestos en que la validez de la aceptación o repudiación de la herencia precisa autorización o aprobación judicial. La identificación del supuesto condiciona el fuero (general o especial de protección), la legitimación, la eventual intervención del Ministerio Fiscal y las consecuencias de la denegación."
     },
     {
+     "tipo": "nota",
+     "texto": "Legitimación (art. 94.2 LJV): los llamados a la herencia y los acreedores del heredero que la repudió; si son menores, sus representantes y, en su defecto, el Fiscal; si tienen medidas de apoyo representativo para estos actos, quienes ejerzan el apoyo; y el defensor judicial si no se le dio la autorización en el nombramiento."
+    },
+    {
      "tipo": "ley",
-     "texto": "Arts. 93, 94 y 95 LJV. Normas conexas: arts. 166, 271, 287, 996, 1001 y 1008 CC; art. 749 LEC; arts. 1010 a 1034 CC (beneficio de inventario)."
+     "texto": "Arts. 93, 94 y 95 LJV · Arts. 166, 287, 996, 1001 y 1010 y ss. CC"
     },
     {
      "tipo": "nota",
@@ -193,7 +197,7 @@ Neg.data.register({
    "pregunta": "¿Cuál es el supuesto concreto solicitado?",
    "opciones": [
     {
-     "texto": "Progenitores que repudian la herencia o legados en nombre de hijos menores (art. 93.2.a) — interviene MF, fuero especial",
+     "texto": "Progenitores que repudian la herencia o legados en nombre de hijos menores de 16 años, o de mayores de esa edad que no consienten (art. 93.2.a) — interviene MF, fuero especial",
      "tono": "t-nota",
      "destino": "acep_comp_esp"
     },
@@ -225,22 +229,22 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 91.3 y 91.4 LJV; art. 85 LOPJ (competencia objetiva del Juzgado de Primera Instancia en jurisdicción voluntaria)."
+     "texto": "Art. 91.3 y 4 LJV · Art. 86.5 j) LOPJ"
     },
     {
      "tipo": "lista",
      "titulo": "Fueros competenciales (a elección del solicitante)",
      "items": [
-      "Juzgado de Primera Instancia del último domicilio o residencia habitual del causante en España",
-      "JPI donde estuviera la mayor parte del patrimonio del causante, con independencia de su naturaleza",
-      "JPI del lugar en que hubiera fallecido el causante, siempre que estuviera en España",
-      "En defecto de todos los anteriores: JPI del domicilio del solicitante (fuero subsidiario)"
+      "Juzgado del último domicilio o residencia habitual del causante, si estaban en España",
+      "Juzgado donde estuviera la mayor parte del patrimonio del causante, con independencia de su naturaleza",
+      "Juzgado del lugar en que hubiera fallecido el causante, si fue en España",
+      "En defecto de todos ellos: Juzgado del domicilio del solicitante"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "La competencia objetiva corresponde siempre al Juzgado de Primera Instancia; dentro de este, la decisión está atribuida funcionalmente al LAJ por disposición expresa."
+     "texto": "La decisión de la renuncia y la prórroga corresponde al LAJ (art. 91.4 LJV). Hoy, la Sección Civil del Tribunal de Instancia: el Título IV es materia sucesoria, no de personas y familia (art. 86.5 j) LOPJ)."
     }
    ],
    "siguiente": "alb_postulacion"
@@ -255,23 +259,27 @@ Neg.data.register({
      "texto": "Expediente de remoción del albacea, rendición de cuentas o autorización para actos de disposición sobre bienes de la herencia. Conforme al artículo 91.4 LJV, la decisión corresponde al Juez; la tramitación material sigue a cargo del LAJ en aplicación de las normas comunes (arts. 13 a 22 LJV)."
     },
     {
+     "tipo": "nota",
+     "texto": "Hoy, la Sección Civil del Tribunal de Instancia: el Título IV es materia sucesoria, no de personas y familia (art. 86.5 j) LOPJ)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 91.3 y 91.4 LJV; art. 903 CC (ausencia de facultades dispositivas del albacea salvo autorización)."
+     "texto": "Art. 91.3 y 4 LJV · Art. 86.5 j) LOPJ"
     },
     {
      "tipo": "lista",
      "titulo": "Fueros competenciales (a elección del solicitante)",
      "items": [
-      "JPI del último domicilio o residencia habitual del causante en España",
-      "JPI donde estuviera la mayor parte del patrimonio del causante",
-      "JPI del lugar en que hubiera fallecido el causante, siempre que estuviera en España",
-      "En defecto de todos los anteriores: JPI del domicilio del solicitante (fuero subsidiario)"
+      "Juzgado del último domicilio o residencia habitual del causante, si estaban en España",
+      "Juzgado donde estuviera la mayor parte del patrimonio del causante",
+      "Juzgado del lugar en que hubiera fallecido el causante, si fue en España",
+      "En defecto de todos ellos: Juzgado del domicilio del solicitante"
      ],
      "marcar": true
     },
     {
      "tipo": "aviso",
-     "texto": "Pese a que la decisión final corresponde al Juez, la tramitación procedimental (admisión, citaciones, celebración de la comparecencia, notificaciones) recae sobre el LAJ. El órgano debe organizarse para elevar al Juez la propuesta de resolución cuando proceda."
+     "texto": "Pese a que la decisión final corresponde al Juez, la tramitación procedimental (admisión, citaciones, celebración de la comparecencia, notificaciones) recae sobre el LAJ. El LAJ da cuenta al Juez para que resuelva."
     }
    ],
    "siguiente": "alb_postulacion"
@@ -318,8 +326,12 @@ Neg.data.register({
      "texto": "El artículo 1057 CC exige, como presupuesto ineludible para el nombramiento del contador-partidor dativo, que la petición sea formulada por herederos y legatarios que representen, al menos, el 50 % del haber hereditario. La falta de este presupuesto determina la inadmisión del expediente."
     },
     {
+     "tipo": "nota",
+     "texto": "Además: que no haya testamento, contador-partidor designado en él o que el cargo esté vacante; y se cita a los demás interesados si su domicilio es conocido (art. 1057, párrafo segundo, CC)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 1057.2 CC; art. 92.1.a LJV; art. 17 LJV (resolución sobre admisibilidad)."
+     "texto": "Art. 1057, párrafo segundo, CC; art. 92.1.a LJV; art. 17 LJV (resolución sobre admisibilidad)."
     },
     {
      "tipo": "lista",
@@ -358,7 +370,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La tramitación y decisión del expediente corresponde al Letrado de la Administración de Justicia del Juzgado de Primera Instancia (art. 92.3 LJV). La competencia territorial sigue las reglas generales del Título IV."
+     "texto": "La tramitación y decisión corresponden al LAJ (art. 92.3 LJV), que también fija los fueros. Hoy, la Sección Civil del Tribunal de Instancia: el Título IV es materia sucesoria, no de personas y familia (art. 86.5 j) LOPJ)."
     },
     {
      "tipo": "ley",
@@ -368,16 +380,16 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Fueros competenciales (a elección del solicitante)",
      "items": [
-      "JPI del último domicilio o residencia habitual del causante en España",
-      "JPI donde estuviera la mayor parte del patrimonio del causante",
-      "JPI del lugar del fallecimiento del causante, siempre que fuera en España",
-      "Fuero subsidiario: JPI del domicilio del solicitante"
+      "Juzgado del último domicilio o residencia habitual del causante, si estaban en España",
+      "Juzgado donde estuviera la mayor parte del patrimonio del causante",
+      "Juzgado del lugar en que hubiera fallecido el causante, si fue en España",
+      "En defecto de todos ellos: Juzgado del domicilio del solicitante"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "El Notario dispone de competencia alternativa para esta misma designación (art. 1057.2 CC). La elección entre vía notarial y judicial corresponde al solicitante."
+     "texto": "El Notario dispone de competencia alternativa para esta misma designación (art. 1057, párrafo segundo, CC). La elección entre vía notarial y judicial corresponde al solicitante."
     }
    ],
    "siguiente": "cp_postulacion"
@@ -389,7 +401,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Expediente de renuncia del contador-partidor nombrado o de prórroga del plazo fijado para la realización de su encargo. Tramitación y decisión por el LAJ del Juzgado de Primera Instancia (art. 92.3 LJV)."
+     "texto": "Expediente de renuncia del contador-partidor nombrado o de prórroga del plazo fijado para la realización de su encargo. Tramitación y decisión por el LAJ (art. 92.3 LJV)."
     },
     {
      "tipo": "ley",
@@ -399,10 +411,10 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Fueros competenciales",
      "items": [
-      "JPI del último domicilio o residencia habitual del causante",
-      "JPI donde estuviera la mayor parte del patrimonio",
-      "JPI del lugar del fallecimiento, siempre que fuera en España",
-      "Fuero subsidiario: JPI del domicilio del solicitante"
+      "Juzgado del último domicilio o residencia habitual del causante, si estaban en España",
+      "Juzgado donde estuviera la mayor parte del patrimonio",
+      "Juzgado del lugar en que hubiera fallecido el causante, si fue en España",
+      "En defecto de todos ellos: Juzgado del domicilio del solicitante"
      ],
      "marcar": true
     }
@@ -420,7 +432,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 92.1.c y 92.3 LJV; art. 1057.2, in fine, CC."
+     "texto": "Arts. 92.1.c y 92.3 LJV; art. 1057, párrafo segundo, CC."
     },
     {
      "tipo": "nota",
@@ -430,10 +442,10 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Fueros competenciales",
      "items": [
-      "JPI del último domicilio o residencia habitual del causante",
-      "JPI donde estuviera la mayor parte del patrimonio",
-      "JPI del lugar del fallecimiento, siempre que fuera en España",
-      "Fuero subsidiario: JPI del domicilio del solicitante"
+      "Juzgado del último domicilio o residencia habitual del causante, si estaban en España",
+      "Juzgado donde estuviera la mayor parte del patrimonio",
+      "Juzgado del lugar en que hubiera fallecido el causante, si fue en España",
+      "En defecto de todos ellos: Juzgado del domicilio del solicitante"
      ],
      "marcar": true
     }
@@ -475,11 +487,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Cuando sea llamado a la herencia un menor o una persona con medidas judiciales de apoyo a personas con discapacidad, el artículo 94.1, párrafo segundo, LJV atribuye la competencia al Juzgado de Primera Instancia del lugar donde estos residan. Este fuero prevalece sobre el fuero general del art. 94.1 párrafo primero."
+     "texto": "Cuando sea llamado a la herencia un menor o una persona con medidas judiciales de apoyo a personas con discapacidad, el artículo 94.1, párrafo segundo, LJV atribuye la competencia al Juzgado del lugar donde estos residan. Hoy, la Sección Civil del Tribunal de Instancia: el Título IV es materia sucesoria, no de personas y familia (art. 86.5 j) LOPJ). Este fuero prevalece sobre el fuero general del art. 94.1 párrafo primero."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 94.1, párrafo segundo, LJV; art. 749 LEC (fundamento de la intervención preceptiva del MF); arts. 166, 271 y 287 CC."
+     "texto": "Art. 94.1, párrafo segundo, y 94.3 LJV · Arts. 166 y 287 CC · Art. 86.5 j) LOPJ"
     },
     {
      "tipo": "aviso",
@@ -509,6 +521,10 @@ Neg.data.register({
      "texto": "El artículo 94.1, párrafo primero, LJV establece el fuero general para los expedientes del Capítulo III cuando no resulte aplicable el fuero especial de protección del párrafo segundo. La competencia para decidir corresponde al Juez (art. 95.1 LJV)."
     },
     {
+     "tipo": "nota",
+     "texto": "Hoy, la Sección Civil del Tribunal de Instancia: el Título IV es materia sucesoria, no de personas y familia (art. 86.5 j) LOPJ)."
+    },
+    {
      "tipo": "ley",
      "texto": "Art. 94.1 LJV; art. 95.1 LJV; art. 1001 CC (para la acción del acreedor del heredero repudiante); art. 93.3 LJV (para personas jurídicas)."
     },
@@ -516,9 +532,9 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Fueros competenciales",
      "items": [
-      "JPI del último domicilio del causante",
-      "En su defecto, JPI de la última residencia del causante",
-      "Si el causante tuvo su último domicilio en país extranjero: JPI del lugar de su último domicilio en España o donde estuviera la mayor parte de sus bienes, a elección del solicitante"
+      "Juzgado del último domicilio del causante",
+      "En su defecto, el de la última residencia del causante",
+      "Si tuvo su último domicilio en el extranjero: el de su último domicilio en España o donde estuviera la mayor parte de sus bienes, a elección del solicitante"
      ],
      "marcar": true
     },
@@ -579,7 +595,7 @@ Neg.data.register({
       "Exposición ordenada de los hechos y fundamentos jurídicos",
       "Petición que se formula, con claridad y precisión",
       "Documentos que se acompañan (certificado de defunción, certificado del Registro de Actos de Última Voluntad, testamento o declaración de herederos, acreditación del cargo cuando proceda, etc.)",
-      "Identificación de los demás interesados que deban ser citados conforme al art. 17.3 LJV"
+      "Identificación de los demás interesados y sus domicilios (art. 14.2 LJV)"
      ],
      "marcar": true
     }
@@ -605,19 +621,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ dicta diligencia requiriendo al solicitante para que subsane los defectos detectados en la solicitud (defectos de postulación, de identificación de interesados, de documentación acreditativa, etc.). El plazo habitual es de 5 días, aplicable por remisión del art. 14 LJV a las normas supletorias de la LEC (art. 231 LEC en cuanto a subsanación de actos procesales)."
+     "texto": "El LAJ requiere al solicitante para que subsane los defectos de la solicitud (postulación, identificación de interesados, documentación, etc.) (art. 16.4 LJV)."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo orientativo: 5 días hábiles desde la notificación del requerimiento."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Arts. 14 y 17.1 LJV; art. 231 LEC (subsanación) en cuanto supletorio."
+     "texto": "Cinco días para subsanar (art. 16.4 LJV)."
     },
     {
      "tipo": "aviso",
-     "texto": "La inactividad del solicitante dentro del plazo señalado determina la inadmisión y el archivo del expediente, sin perjuicio de que pueda promoverse de nuevo."
+     "texto": "Si no se subsana, en los expedientes que decide el LAJ (renuncia o prórroga del albacea, contador-partidor) este tiene por no presentada la solicitud y archiva; en los que decide el Juez, le da cuenta para que acuerde lo procedente (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 16.4 LJV"
     }
    ],
    "pregunta": "¿Se ha subsanado en plazo?",
@@ -641,7 +657,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ dicta decreto admitiendo el expediente a trámite, acordando las actuaciones que procedan conforme a las normas comunes y específicas del capítulo correspondiente. En particular, identifica a los interesados que han de ser citados y cita al solicitante a la comparecencia que señale (art. 18 LJV)."
+     "texto": "El LAJ dicta decreto admitiendo el expediente a trámite, acordando las actuaciones que procedan conforme a las normas comunes y específicas del capítulo correspondiente. En particular, identifica a los interesados que han de ser citados y cita a la comparecencia a quienes hayan de intervenir (art. 17.2 LJV)."
     },
     {
      "tipo": "ley",
@@ -669,7 +685,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ cita a todos aquellos que, según la Ley y el caso, deban intervenir en el expediente y puedan resultar afectados por la resolución. La citación se efectúa con al menos 15 días de antelación a la comparecencia (art. 18.1 LJV)."
+     "texto": "El LAJ cita a todos aquellos que, según la Ley y el caso, deban intervenir en el expediente y puedan resultar afectados por la resolución. La citación se efectúa con al menos quince días de antelación a la comparecencia (art. 17.3 LJV)."
     },
     {
      "tipo": "plazo",
@@ -677,7 +693,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 17.3 LJV (identificación de interesados); art. 18.1 LJV (plazo de citación)."
+     "texto": "Arts. 14.2 y 17.2 y 3 LJV"
     },
     {
      "tipo": "lista",
@@ -710,7 +726,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 94.3 LJV; art. 749 LEC; art. 166, 271 y 287 CC (fundamentos materiales de la protección)."
+     "texto": "Art. 94.3 LJV · Arts. 166 y 287 CC"
     },
     {
      "tipo": "nota",
@@ -742,7 +758,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 94.3 LJV; art. 749 LEC."
+     "texto": "Art. 94.3 LJV"
     },
     {
      "tipo": "lista",
@@ -768,8 +784,12 @@ Neg.data.register({
      "texto": "Una vez admitido el expediente y practicadas las citaciones, el LAJ fija día y hora para la celebración de la comparecencia. En la misma resolución puede acordar la práctica de las pruebas o actuaciones que estime necesarias."
     },
     {
+     "tipo": "plazo",
+     "texto": "La comparecencia se celebra dentro de los treinta días siguientes a la admisión (art. 18.1 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 18 LJV."
+     "texto": "Art. 18.1 LJV"
     },
     {
      "tipo": "nota",
@@ -789,7 +809,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 18 LJV."
+     "texto": "Arts. 6.2, 17.3 y 18 LJV"
     },
     {
      "tipo": "lista",
@@ -806,7 +826,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "El artículo 17.3, párrafo segundo, LJV establece que, cuando se formule oposición que haga contencioso el expediente, se sobreseerá el mismo, quedando a salvo el derecho de los interesados a promoverlo en la vía judicial contenciosa que corresponda."
+     "texto": "La oposición no hace contencioso el expediente ni impide que continúe hasta su resolución, salvo que la ley lo prevea (art. 17.3 LJV), y la LJV no lo prevé en el Título IV. Si se acredita que el objeto se está sustanciando en un proceso jurisdiccional, se archiva el expediente y se remiten las actuaciones al tribunal (art. 6.2 LJV)."
     }
    ],
    "pregunta": "¿Qué resultado ha tenido la comparecencia?",
@@ -822,12 +842,12 @@ Neg.data.register({
      "destino": "resolucion_tipo"
     },
     {
-     "texto": "Oposición planteada pero no hace contencioso el expediente — procede dictar resolución",
+     "texto": "Hay oposición: el expediente continúa hasta su resolución (art. 17.3 LJV)",
      "tono": "t-plazo",
      "destino": "resolucion_tipo"
     },
     {
-     "texto": "Oposición que hace contencioso el expediente — sobreseimiento (art. 17.3 LJV)",
+     "texto": "Se acredita un proceso jurisdiccional sobre el mismo objeto: archivo (art. 6.2 LJV)",
      "tono": "t-aviso",
      "destino": "fin_remision_contencioso"
     }
@@ -845,10 +865,6 @@ Neg.data.register({
     {
      "tipo": "ley",
      "texto": "Art. 19 LJV (resolución); art. 91.4 LJV (albaceazgo); art. 92.3 LJV (contador-partidor); art. 95 LJV (aceptación/repudiación)."
-    },
-    {
-     "tipo": "nota",
-     "texto": "El sidebar-mapa marcará como inalcanzables los supuestos incompatibles con su recorrido actual: basta elegir el que usted venía tramitando."
     }
    ],
    "pregunta": "¿Qué tipo de resolución corresponde dictar?",
@@ -892,11 +908,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ dicta decreto resolviendo sobre la renuncia del albacea o la prórroga del plazo del albaceazgo. Para la renuncia debe concurrir \"justa causa\" (art. 898 CC, que consagra la obligatoriedad del cargo aceptado salvo causa justificada). Para la prórroga, deberá ponderarse la imposibilidad material de culminar el encargo en el plazo legal (art. 904 CC) o señalado (art. 905 CC)."
+     "texto": "El LAJ dicta decreto resolviendo sobre la renuncia del albacea o la prórroga del plazo del albaceazgo. La renuncia exige alegar causa justa (art. 899 CC). La prórroga la puede conceder el LAJ por el tiempo necesario cuando, transcurrido el plazo legal (un año, art. 904) y su prórroga, no se haya cumplido la voluntad del testador (art. 905 CC); los herederos y legatarios también pueden prorrogarlo de común acuerdo (art. 906 CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 91.4 LJV; art. 19 LJV (contenido de la resolución); arts. 898, 904, 905, 906 y 910 CC."
+     "texto": "Art. 91.4 LJV · Arts. 899, 904, 905, 906 y 910 CC"
     },
     {
      "tipo": "lista",
@@ -933,7 +949,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez dicta auto resolviendo sobre la remoción del albacea, la rendición de cuentas o la autorización para actos de disposición sobre bienes de la herencia. Debe valorar la concurrencia de causa legal o justa para la remoción (art. 910 CC), la regularidad de las cuentas rendidas (art. 907 CC) o la necesidad y justificación del acto dispositivo proyectado (art. 903 CC)."
+     "texto": "El Juez dicta auto resolviendo sobre la remoción del albacea, la rendición de cuentas o la autorización para actos de disposición sobre bienes de la herencia. La remoción la aprecia el Juez (art. 910 CC); las cuentas se rinden al Juez cuando el albacea fue nombrado para invertir o distribuir los bienes (art. 907 CC); la autorización de actos de disposición, en los casos en que la legislación civil la exige (art. 91.1.4.º LJV; art. 903 CC)."
     },
     {
      "tipo": "ley",
@@ -985,7 +1001,7 @@ Neg.data.register({
      "titulo": "Contenido del decreto",
      "items": [
       "Constancia de la representación del ≥ 50 % del haber por los solicitantes",
-      "Nombramiento del contador-partidor dativo (por insaculación, designación directa razonada o conforme a lista de peritos)",
+      "Nombramiento del contador-partidor dativo según las reglas de la LEC para la designación de peritos (art. 1057 CC; art. 341 LEC: listas y sorteo)",
       "Fijación del plazo para ejecutar el encargo",
       "Acuerdo sobre aceptación del cargo y toma de posesión",
       "Régimen de recursos (art. 20 LJV)"
@@ -1014,7 +1030,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ resuelve sobre la renuncia del contador-partidor nombrado o sobre la prórroga del plazo fijado para su encargo. Debe valorarse la justificación de la renuncia (paralelismo con art. 898 CC) o de la prórroga (paralelismo con art. 906 CC)."
+     "texto": "El LAJ resuelve sobre la renuncia del contador-partidor nombrado o sobre la prórroga del plazo fijado para su encargo. Por analogía con el albacea: causa justa para la renuncia (art. 899 CC) y necesidad de la prórroga (art. 905 CC)."
     },
     {
      "tipo": "ley",
@@ -1042,11 +1058,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ resuelve sobre la aprobación de la partición realizada por el contador-partidor dativo cuando no ha sido confirmada expresamente por todos los herederos y legatarios (art. 1057.2 CC). La aprobación requiere verificar que la partición se ajusta a Derecho y respeta los derechos hereditarios."
+     "texto": "El LAJ resuelve sobre la aprobación de la partición realizada por el contador-partidor dativo cuando no ha sido confirmada expresamente por todos los herederos y legatarios (art. 1057, párrafo segundo, CC). La aprobación requiere verificar que la partición se ajusta a Derecho y respeta los derechos hereditarios."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 92.1.c y 92.3 LJV; art. 1057.2 CC."
+     "texto": "Art. 92.1.c y 92.3 LJV; art. 1057, párrafo segundo, CC."
     }
    ],
    "pregunta": "¿Sentido del decreto?",
@@ -1114,29 +1130,29 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Dictada la resolución definitiva, el LAJ la notifica a todos los comparecidos y al Ministerio Fiscal cuando haya intervenido. Contra la resolución cabe recurso de revisión o apelación según el régimen del art. 20 LJV, con la especialidad del art. 95.3 LJV para los expedientes del Capítulo III."
-    },
-    {
-     "tipo": "plazo",
-     "texto": "Plazo para interponer el recurso: 20 días desde la notificación de la resolución (apelación, art. 458.1 LEC por remisión del art. 20 LJV)."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 20 LJV (régimen de recursos en jurisdicción voluntaria); art. 95.3 LJV (apelación con efectos suspensivos en Cap. III); arts. 455 y siguientes LEC."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Especialidad del Capítulo III: las resoluciones en materia de aceptación/repudiación son recurribles en apelación CON EFECTOS SUSPENSIVOS (art. 95.3 LJV). En los Capítulos I y II rige el régimen general del art. 20 LJV (sin efectos suspensivos salvo que expresamente se acuerde)."
+     "texto": "Dictada la resolución, el LAJ la notifica a todos los comparecidos y al Ministerio Fiscal si intervino."
     },
     {
      "tipo": "lista",
-     "titulo": "Régimen aplicable",
+     "titulo": "Recursos",
      "items": [
-      "Capítulo I (albaceazgo, todas las decisiones): régimen general del art. 20 LJV",
-      "Capítulo II (contadores-partidores): régimen general del art. 20 LJV",
-      "Capítulo III (aceptación/repudiación): régimen especial del art. 95.3 LJV — apelación con efectos suspensivos"
+      "Decreto del LAJ que pone fin al expediente (renuncia o prórroga del albacea; contador-partidor): recurso de revisión ante el Juez, en cinco días (art. 20.2 LJV; art. 454 bis LEC)",
+      "Auto del Juez (albaceazgo en los demás casos): apelación, sin efectos suspensivos salvo que la ley disponga otra cosa (art. 20.2 LJV)",
+      "Auto del Juez sobre aceptación o repudiación: apelación con efectos suspensivos (art. 95.3 LJV)"
      ],
      "marcar": true
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Apelación: veinte días desde la notificación, ante la Audiencia Provincial (art. 458.1 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Para los recursos de revisión y apelación son necesarios Abogado y Procurador (art. 3.2 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 3.2, 20 y 95.3 LJV · Arts. 454 bis y 458 LEC"
     }
    ],
    "pregunta": "¿Se interpone recurso contra la resolución?",
@@ -1147,7 +1163,7 @@ Neg.data.register({
      "destino": "fin_firmeza"
     },
     {
-     "texto": "Sí, se interpone recurso de apelación",
+     "texto": "Sí, se interpone recurso (revisión o apelación)",
      "tono": "t-nota",
      "destino": "tramitacion_apelacion"
     }
@@ -1155,39 +1171,31 @@ Neg.data.register({
   },
   "tramitacion_apelacion": {
    "fase": 5,
-   "titulo": "Tramitación del recurso de apelación",
+   "titulo": "Tramitación del recurso",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ da curso al recurso conforme al art. 20 LJV y a los arts. 455 y siguientes LEC. Se da traslado a las demás partes por el plazo legal, se resuelven las impugnaciones y oposiciones y se elevan las actuaciones a la Audiencia Provincial."
+     "texto": "La revisión se resuelve por el Juez del propio Juzgado (art. 454 bis LEC). La apelación se interpone ante la Audiencia Provincial, cuyo LAJ pide las actuaciones al Juzgado; este las remite y emplaza a las partes no recurrentes; la Audiencia da traslado para oposición o impugnación y resuelve (arts. 458 a 465 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "En el Capítulo III la resolución no se ejecuta mientras se resuelve la apelación (art. 95.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 20 LJV; arts. 455 y siguientes LEC; art. 95.3 LJV (efectos suspensivos Cap. III)."
-    },
-    {
-     "tipo": "lista",
-     "titulo": "Trámites del recurso",
-     "items": [
-      "Admisión a trámite del recurso por el LAJ",
-      "Traslado a las demás partes para oposición o impugnación",
-      "Elevación de actuaciones a la Audiencia Provincial",
-      "En Cap. III: la resolución queda sin ejecutar mientras no se resuelva el recurso (efectos suspensivos)",
-      "Notificación de la sentencia de segunda instancia"
-     ],
-     "marcar": true
+     "texto": "Art. 20 LJV · Art. 95.3 LJV · Arts. 454 bis y 458 a 465 LEC"
     }
    ],
    "pregunta": "¿Cuál ha sido el resultado del recurso?",
    "opciones": [
     {
-     "texto": "Sentencia de la Audiencia estimatoria (total o parcial)",
+     "texto": "Se estima el recurso (total o parcialmente)",
      "tono": "t-nota",
      "destino": "fin_apelacion_estimada"
     },
     {
-     "texto": "Sentencia de la Audiencia desestimatoria",
+     "texto": "Se desestima el recurso",
      "tono": "t-ok",
      "destino": "fin_apelacion_desestimada"
     },
@@ -1209,7 +1217,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 1057.2 CC, 92.1.a LJV, 17 LJV."
+     "texto": "Art. 1057, párrafo segundo, CC, 92.1.a LJV, 17 LJV."
     },
     {
      "tipo": "nota",
@@ -1229,11 +1237,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Transcurrido el plazo concedido sin que el solicitante haya subsanado los defectos advertidos en la solicitud, el LAJ dicta decreto de archivo del expediente por inadmisión."
+     "texto": "Transcurridos los cinco días sin subsanar, el LAJ tiene por no presentada la solicitud y archiva o, si decide el Juez, le da cuenta (art. 16.4 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 14 y 17 LJV; art. 231 LEC (subsanación) como norma supletoria."
+     "texto": "Art. 16.4 LJV"
     },
     {
      "tipo": "nota",
@@ -1249,11 +1257,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La incomparecencia injustificada del solicitante a la comparecencia señalada determina el archivo del expediente, al faltar el impulso procesal imprescindible en los expedientes de jurisdicción voluntaria."
+     "texto": "Si el solicitante no asiste, quien deba resolver (Juez o LAJ) acuerda el archivo y le tiene por desistido (art. 18.2.1.ª LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 18 LJV en conexión con los principios de impulso a instancia del art. 17 LJV."
+     "texto": "Art. 18.2.1.ª LJV"
     },
     {
      "tipo": "nota",
@@ -1264,31 +1272,29 @@ Neg.data.register({
   },
   "fin_remision_contencioso": {
    "fase": 3,
-   "titulo": "SOBRESEIMIENTO por oposición — remisión a la vía contenciosa",
+   "titulo": "Archivo: el objeto se sustancia en un proceso jurisdiccional",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Planteada oposición que hace contencioso el expediente, el LAJ o el Juez, según corresponda, dicta resolución acordando el sobreseimiento y dejando a salvo el derecho de los interesados a acudir a la vía judicial contenciosa que resulte pertinente."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 17.3, párrafo segundo, LJV."
+     "texto": "Acreditada la presentación de la demanda de un proceso jurisdiccional sobre el mismo objeto, se archiva el expediente y se remiten las actuaciones al tribunal que conozca de ese proceso (art. 6.2 LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Vías contenciosas alternativas",
+     "titulo": "Procesos frecuentes",
      "items": [
-      "Juicio declarativo ordinario o verbal según cuantía y materia",
-      "División judicial de la herencia: arts. 782 y siguientes LEC",
-      "Impugnación de partición o de cuentas del albacea por procedimiento declarativo",
-      "Acciones derivadas de la protección de menores: procedimientos del Título I del Libro IV LEC"
+      "División judicial de la herencia (arts. 782 y ss. LEC)",
+      "Juicio declarativo sobre la partición o las cuentas del albacea"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "La resolución de sobreseimiento no produce efecto de cosa juzgada material; los interesados conservan íntegra su posición jurídica en la vía contenciosa."
+     "texto": "La resolución de un expediente de jurisdicción voluntaria tampoco impide un proceso posterior con el mismo objeto (art. 19.4 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 6.2 y 19.4 LJV"
     }
    ],
    "fin": "warning"
@@ -1313,7 +1319,6 @@ Neg.data.register({
       "Diligencia de constancia de la firmeza",
       "Expedición de testimonios para los interesados",
       "Comunicaciones a Registros (Civil, Mercantil, de la Propiedad) cuando proceda",
-      "Liquidación de derechos arancelarios y tasas",
       "Remisión del expediente a archivo"
      ],
      "marcar": true
@@ -1327,22 +1332,22 @@ Neg.data.register({
   },
   "fin_apelacion_estimada": {
    "fase": 5,
-   "titulo": "APELACIÓN ESTIMADA — sentencia de la Audiencia Provincial",
+   "titulo": "Recurso estimado",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La Audiencia Provincial estima el recurso de apelación, total o parcialmente. Las actuaciones se devuelven al Juzgado de origen para la ejecución de lo resuelto en segunda instancia."
+     "texto": "Se estima el recurso, total o parcialmente; si es apelación, la Audiencia devuelve las actuaciones al Juzgado para cumplir lo resuelto."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 455 y siguientes LEC; art. 20 LJV."
+     "texto": "Arts. 454 bis y 455 y ss. LEC · Art. 20 LJV"
     },
     {
      "tipo": "lista",
      "titulo": "Actuaciones tras la estimación",
      "items": [
-      "Recepción de la sentencia de segunda instancia",
+      "Recepción de la resolución del recurso",
       "Notificación a las partes y al Ministerio Fiscal si intervino",
       "Ejecución de lo resuelto en su caso",
       "Comunicaciones a Registros y archivo"
@@ -1354,22 +1359,22 @@ Neg.data.register({
   },
   "fin_apelacion_desestimada": {
    "fase": 5,
-   "titulo": "APELACIÓN DESESTIMADA — resolución de instancia confirmada",
+   "titulo": "Recurso desestimado: resolución confirmada",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La Audiencia Provincial desestima el recurso de apelación y confirma la resolución dictada en primera instancia, que deviene firme. Se procede a su ejecución y archivo."
+     "texto": "Se desestima el recurso y se confirma la resolución, que queda firme."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 455 y siguientes LEC; art. 20 LJV."
+     "texto": "Arts. 454 bis y 455 y ss. LEC · Art. 20 LJV"
     },
     {
      "tipo": "lista",
      "titulo": "Actuaciones de cierre",
      "items": [
-      "Recepción de la sentencia de segunda instancia y diligencia de firmeza",
+      "Recepción de la resolución del recurso y diligencia de firmeza",
       "Expedición de testimonios para los interesados",
       "Comunicaciones a Registros (Civil, Mercantil, de la Propiedad) cuando proceda",
       "Ejecución de lo resuelto en la instancia",

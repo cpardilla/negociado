@@ -26,3 +26,29 @@
 ## Para la fase 5 (G20)
 
 La guía cita «art. 1057.2» (párrafo segundo, no apartado) en cinco pasos, y usa «JPI» × 22 y «Juzgado de Primera Instancia» × 6.
+
+---
+
+# Revisión · G20 · Guía de tramitación de los expedientes de Derecho sucesorio (Título IV)
+
+- **Recurso**: `data/guias/ljv-sucesorio.js` (origen G20).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026 (art. 94.1 en la redacción de la LO 1/2025); CC, LEC y LOPJ en sus instantáneas.
+- **Método**: fase 5. La guía seguía bien los arts. 91 a 95 LJV y el art. 1057 CC: **corregida**; se conservan los 40 pasos.
+- **Resultado del comprobador**: 0 errores, 0 avisos; queda un «revisar» intencionado: el título del Título IV, citado literalmente, que el comprobador no busca en los encabezados.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | celebracion_comparecencia, fin_remision_contencioso | **error** | «El art. 17.3, párrafo segundo, LJV establece que, cuando se formule oposición que haga contencioso el expediente, se sobreseerá» | Es al revés: la oposición no hace contencioso el expediente ni impide que continúe, salvo previsión legal, que no existe en el Título IV (art. 17.3); el archivo procede si se acredita un proceso jurisdiccional sobre el mismo objeto (art. 6.2), con remisión de las actuaciones | LJV 6.2, 17.3 |
+| 2 | notificacion_recursos, tramitacion_apelacion, fin_apelacion_* | error | Contra todo, «revisión o apelación» en veinte días; Capítulos I y II sin efecto suspensivo «salvo que se acuerde»; el LAJ admite la apelación y eleva; «sentencia» de la Audiencia | Decretos del LAJ: revisión ante el Juez en cinco días (art. 454 bis LEC); autos: apelación en veinte días ante la Audiencia (art. 458), sin efecto suspensivo salvo que la ley lo disponga (art. 20.2) o con él en el Capítulo III (art. 95.3); trámite tras el RDL 6/2023; la Audiencia resuelve el recurso (no «sentencia») | LJV 20.2, 95.3; LEC 454 bis, 458 |
+| 3 | resolucion_alb_laj, resolucion_cp_renun | error | Renuncia del albacea con justa causa por el «art. 898 CC» | Art. 899 CC; prórroga por el LAJ tras el año legal y su prórroga (arts. 904 y 905) o por acuerdo de herederos y legatarios (art. 906) | CC 899, 904–906 |
+| 4 | subsanacion, fin_archivo_subsanacion | error | «Plazo orientativo de 5 días» por el art. 231 LEC; archivo siempre por el LAJ | Cinco días (art. 16.4 LJV); archiva el LAJ en sus expedientes y da cuenta al Juez en los demás | LJV 16.4 |
+| 5 | citacion_interesados, examen_solicitud, senalamiento_comparecencia | error | Quince días de antelación por el «art. 18.1»; interesados «del art. 17.3» | Quince días, art. 17.3; interesados, art. 14.2; comparecencia en treinta días, art. 18.1 | LJV 14.2, 17.3, 18.1 |
+| 6 | cp_designa_50, resolucion_cp_designa, resolucion_cp_aprob, fin_inadmision_50 | error | «Art. 1057.2 CC» (×5); nombramiento «por insaculación, designación directa razonada o lista de peritos» | Art. 1057, párrafo segundo; presupuestos (sin testamento, sin contador o vacante) y citación de los demás interesados; reglas de designación de peritos (art. 341 LEC) | CC 1057; LEC 341 |
+| 7 | fueros (alb_comp_*, cp_comp_*, acep_comp_*) | desfasado | «JPI» × 22; «art. 85 LOPJ» | «Juzgado» con los fueros de los arts. 91.3, 92.3 y 94.1; hoy, Sección Civil (materia sucesoria, no de personas y familia) | LJV 91–94; LOPJ 86.5 j) |
+| 8 | acep_clasif, acep_comp_esp, mf_* | error | «Arts. 166, 271 y 287 CC; art. 749 LEC» como fundamento | Arts. 166 y 287 CC (el 271 es la autocuratela; el 749 LEC, de procesos especiales); supuesto a) completo (menores de 16 o mayores que no consienten); legitimación del art. 94.2 | LJV 93.2, 94.2; CC 166, 287 |
+| 9 | resolucion_alb_juez, alb_comp_juez | impreciso | Criterios generales | Remoción apreciada por el Juez (art. 910); cuentas al Juez cuando el albacea invierte o distribuye (art. 907); autorizaciones cuando la ley civil las exige | CC 907, 910 |
+| 10 | fin_archivo_incomparecencia, fin_firmeza, resolucion_tipo, actores | impreciso / forma | Archivo «por falta de impulso»; «liquidación de derechos arancelarios»; nota sobre el «sidebar-mapa» | Desistimiento y archivo del art. 18.2.1.ª; quitados; nombres completos | LJV 18.2 |
+
+**Pregunta al propietario**: la sección de los expedientes del Capítulo III cuando el llamado es menor o persona con medidas de apoyo. La guía indica la Sección Civil (Título IV, materia sucesoria), aunque el fuero sea el de la residencia de la persona protegida (art. 94.1, párrafo segundo).

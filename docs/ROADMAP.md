@@ -222,7 +222,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — criterio del propietario incorporado (decisión 13); artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
 | E28 | LJV · Título IX — Conciliación | ✅ 2026-10-30 · rehecho (31 fichas → 11, una por artículo); artículos de la transacción (CC 1810–1817) y de la ejecución (LEC 518, 520, 556/557) corregidos; umbral del Juez de Paz 10.000 € (decisión 14); conciliación como requisito de procedibilidad (art. 5.1 LO 1/2025) ([registro](revision/ljv-conciliacion.md)) |
 
-### Fase 5 · Revisión de contenido de las guías (25) ◐ (19/25)
+### Fase 5 · Revisión de contenido de las guías (25) ◐ (20/25)
 Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfanos (reconectar al punto correcto del flujo o eliminar, con motivo).
 
 | # | Guía | Hallazgos previos | Estado |
@@ -246,7 +246,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G17 | LJV · T. II Cap. IX — Ausencia y fallecimiento | ordinales del CC como apartados («194.1», «193.2», «196.2»); «Secretario judicial» × 2 | ✅ 2026-10-31 · ordinales corregidos; riesgo inminente con los tres meses del siniestro (art. 193.3.º); división de la herencia arts. 782 y ss. LEC (no 777–782); la competencia por siniestro, solo en el fallecimiento; el cónyuge es defensor nato (art. 181 CC); mandatos extinguidos al inscribirse la ausencia ([registro](revision/ljv-ausencia-fallecimiento.md)) |
 | G18 | LJV · T. II Cap. X — Órganos de donantes vivos | «Juzgado de Primera Instancia» × 1; comprobar el plazo de 24 h | ✅ 2026-10-31 · 24 h comprobado (art. 8.6 RD 1723/2012); el receptor es anónimo y no interviene; subsanación cinco días; requisitos completos (Comité de Ética, certificado de médico distinto); revocación sin indemnización ([registro](revision/ljv-donantes-vivos.md)) |
 | G19 | LJV · T. II Cap. XI — Hechos pasados | «JPI» × 2, «Juzgado de Primera Instancia» × 1 | ✅ 2026-10-31 · fiel; Sección Civil (decisión 12, no 86.5 j)/89.6 g)); numeración del art. 80 quáter; inscripción por mandamiento del art. 22.2 (fuera el art. 11) ([registro](revision/ljv-hechos-pasados.md)) |
-| G20 | LJV · Título IV — Derecho sucesorio | «art. 1057.2» × 5; «JPI» × 22 | ☐ |
+| G20 | LJV · Título IV — Derecho sucesorio | «art. 1057.2» × 5; «JPI» × 22 | ✅ 2026-10-31 · la oposición no hace contencioso el expediente (art. 17.3; archivo solo por el art. 6.2); revisión en cinco días contra los decretos del LAJ (art. 454 bis LEC); renuncia del albacea art. 899 CC; subsanación cinco días; art. 1057, párrafo segundo; pendiente: sección en el Cap. III con menores ([registro](revision/ljv-sucesorio.md)) |
 | G21 | LJV · Título V — Derecho de obligaciones | «arts. 1158, 1159 y 1210.2» × 3; «Secretario judicial» × 8 | ☐ |
 | G22 | LJV · T. VI Cap. I — Usufructuario | «Juzgado de Primera Instancia» × 3; «Secretario judicial» × 1 | ☐ |
 | G23 | LJV · T. VI Cap. II — Deslinde | «Secretario judicial» × 11; comprobar 6.000 € = verbal y art. 17.3 | ☐ |
@@ -297,6 +297,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-31 · Fase 5 · G20 (Derecho sucesorio) revisada; pregunta al propietario sobre la sección en el Cap. III con menores. Siguiente: G21.
 - 2026-10-31 · Fase 5 · G19 (hechos pasados) revisada. Siguiente: G20.
 - 2026-10-31 · Fase 5 · G18 (donantes vivos) revisada. Siguiente: G19.
 - 2026-10-31 · Fase 5 · G17 (ausencia y fallecimiento) revisada. Siguiente: G18.
