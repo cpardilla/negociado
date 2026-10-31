@@ -1,6 +1,6 @@
 # Informe automático de contenido
 
-Generado por `tools/check-content.js` el 30/10/2026 sobre los datos de la app (`data/esquemas`, `data/guias`). El informe del punto de partida es `informe-inicial.md`.
+Generado por `tools/check-content.js` el 31/10/2026 sobre los datos de la app (`data/esquemas`, `data/guias`). El informe del punto de partida es `informe-inicial.md`.
 Fuente: BOE, LEC consolidada a 07-10-2026 y LJV a 05-03-2026 (`sources/boe/`).
 
 Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · **revisar** (necesita lectura humana; puede ser correcto). Las citas sin ley explícita se atribuyen a la ley del recurso y se marcan «ley por defecto»: el contexto puede referirse a otra norma. Es un primer cribado: la revisión manual de cada recurso (fases 4 y 5) parte de aquí, pero no se limita a ello.
@@ -40,7 +40,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | lec-division-herencia | Guía · LEC · División de la herencia | · | · | · | · | · | · | · |
 | lec-intervencion-caudal | Guía · LEC · Intervención del caudal hereditario | · | · | · | · | · | · | · |
 | lec-administracion-caudal | Guía · LEC · Administración del caudal hereditario | · | · | · | · | · | · | · |
-| lec-liquidacion-rem | Guía · LEC · Liquidación del régimen económico matrimonial | 7R | · | · | · | · | · | 3R |
+| lec-liquidacion-rem | Guía · LEC · Liquidación del régimen económico matrimonial | · | · | · | · | · | · | 1R |
 | ljv-filiacion | Guía · LJV · Reconocimiento de la filiación no matrimonial | 7A | · | · | 2R | · | · | 2R |
 | ljv-mencion-sexo-12-14 | Guía · LJV · Mención registral del sexo (12 a 14 años) | 3A 1R | · | · | · | · | · | 3R |
 | ljv-mencion-sexo-reversion | Guía · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 60E 18A 44R | 0E 0A 0R | 0E 0A 0R | 0E 0A 6R | 0E 0A 2R | 3E 0A 1R | 0E 0A 66R |
+| | **Total** | 60E 18A 37R | 0E 0A 0R | 0E 0A 0R | 0E 0A 6R | 0E 0A 2R | 3E 0A 1R | 0E 0A 64R |
 
 E = error · A = aviso · R = revisar.
 
@@ -70,9 +70,9 @@ E = error · A = aviso · R = revisar.
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
 - ✓ LJV (BOE a 05-03-2026): 2404
-- ✓ CC (BOE a 07-09-2026): 1236
-- ✓ LEC (BOE a 07-10-2026): 1224
-- ✓ LOPJ (BOE a 09-10-2026): 86
+- ✓ CC (BOE a 07-09-2026): 1198
+- ✓ LEC (BOE a 07-10-2026): 1117
+- ✓ LOPJ (BOE a 09-10-2026): 85
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - UE: 40
@@ -81,8 +81,8 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ CE (BOE a 20-05-2026): 35
 - ✓ LOPDH (BOE a 16-12-2025): 33
 - ✓ LN (BOE a 22-10-2026): 30
-- ✓ LH (BOE a 07-01-2026): 27
 - ✓ RDTO (BOE a 19-12-2025): 25
+- ✓ LH (BOE a 07-01-2026): 22
 - ✓ LTO (BOE a 16-12-2025): 19
 - LO 1/2025: 16
 - ✓ LSC (BOE a 19-12-2025): 7
@@ -304,21 +304,9 @@ Sin hallazgos automáticos.
 
 ### lec-liquidacion-rem · Guía · LEC · Liquidación del régimen económico matrimonial
 
-**citas**
-
-- [revisar] «art. 238.3»: el art. 238 LOPJ no tiene apartado 3 (no tiene apartados numerados) — _paso «nuevo_senalamiento_inv» › aviso 2_
-- [revisar] «Art. 238.3»: el art. 238 LOPJ no tiene apartado 3 (no tiene apartados numerados) — _paso «nuevo_senalamiento_inv» › ley 3_
-- [revisar] «art. 103.4»: el art. 103 CC no tiene apartado 4 (no tiene apartados numerados) — _paso «resolucion_administracion» › nota 4_
-- [revisar] «art. 103.4»: el art. 103 CC no tiene apartado 4 (no tiene apartados numerados) — _paso «resolucion_administracion» › ley 5_
-- [revisar] «art. 1406.4»: el art. 1406 CC no tiene apartado 4 (no tiene apartados numerados) — _paso «solicitud_liquidacion» › comprobación 2.3_
-- [revisar] «art. 1406.3»: el art. 1406 CC no tiene apartado 3 (no tiene apartados numerados) — _paso «solicitud_liquidacion» › comprobación 2.4_
-- [revisar] «art. 1406.2»: el art. 1406 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «solicitud_liquidacion» › comprobación 2.5_
-
 **terminologia**
 
-- [revisar] «incapacitación» × 1 → Ley 8/2021: medidas de apoyo; ya no existe la incapacitación — _paso «verificar_proceso» › nota 3_
-- [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › opción 1 | paso «competencia» › info 1_
-- [revisar] «JPI» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar — _paso «competencia» › opción 1 | paso «competencia» › nota 3_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › info 1_
 
 ### ljv-filiacion · Guía · LJV · Reconocimiento de la filiación no matrimonial
 

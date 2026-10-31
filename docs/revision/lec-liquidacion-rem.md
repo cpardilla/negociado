@@ -33,3 +33,31 @@
 ## Corrección posterior (2026-10-29)
 
 Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).
+
+---
+
+# Revisión · G05 · Guía de tramitación de la liquidación del régimen económico matrimonial
+
+- **Recurso**: `data/guias/lec-liquidacion-rem.js` (origen G05).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LEC a 07-10-2026; CC; LOPJ.
+- **Método**: fase 5. Se conservan recorrido y direcciones; cada paso se rehace con los arts. 806–811 LEC (y 784–788 por remisión del art. 810.5), ya revisados en E05.
+- **Resultado del comprobador**: 0 errores, 0 avisos; 1 «revisar» intencionado (denominación legal del art. 807). 55 → 51 pasos.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | ejecucion_788, decreto_acuerdo, auto_788 | **error** | Lo acordado se aprueba «por decreto del LAJ (art. 788.1)» o, si hay oposición, «por auto del tribunal (art. 788.2)», con «fuerza ejecutiva directa (art. 517.2.9.ª)» | El art. 810.4 remite a los dos primeros apartados del art. 788: entrega de lo adjudicado y títulos (788.1) y testimonio (788.2). Retirados los pasos de decreto y auto inventados | LEC |
+| 2 | presentacion_cuaderno, decreto_cuaderno, oposicion_cuaderno, acuerdo_786 | **error** | Traslado y aprobación «art. 785», comparecencia «art. 786» | Art. 787.1 (traslado, diez días), 787.2 (decreto), 787.3 (comparecencia en diez días) y 787.4 (reformas) | LEC |
+| 3 | auto_aprobacion | **error** | El tribunal aprueba «por auto» (con o sin vista) | Sin conformidad, juicio verbal y sentencia sin eficacia de cosa juzgada (art. 787.5) | LEC |
+| 4 | solicitud_liquidacion | **error** | Derecho preferente a la vivienda habitual en todo caso («art. 1406.4») y compensación en metálico general | Art. 1406 CC: la vivienda solo «en caso de muerte del otro cónyuge»; opción de propiedad o uso y abono de la diferencia solo para local y vivienda (art. 1407) | CC |
+| 5 | art811_inicio, fin_811_no_firme | **error** | «El crédito de participación prescribe a los tres años (art. 1424 CC)» | Retirado: el art. 1424 trata de los actos en fraude | CC |
+| 6 | designacion_contador | error | Contador «de los listados de peritos», «presta juramento», plazo «habitualmente dos meses, prorrogable» | Nombramiento por diligencia conforme al art. 784 (acuerdo o sorteo del art. 341); plazo máximo de dos meses (art. 786.2) | LEC |
+| 7 | competencia | error | «Art. 62 LEC», «art. 87 ter LOPJ», «inhibición del art. 49 bis.4» | Art. 807 LEC; hoy Sección de Familia, Infancia y Capacidad (art. 86.5 a) LOPJ) o Sección Civil, o Sección de Violencia sobre la Mujer (art. 89.6) | LOPJ |
+| 8 | verificar_proceso | **error** | Causas de disolución «art. 1392: concurso, privación de patria potestad, tutela, ausencia, incapacitación…» | Art. 1392 (de pleno derecho) y art. 1393 (por decisión judicial, redacción Ley 8/2021) | CC |
+| 9 | inicio, acuerdo_extrajudicial | error | Reg. (UE) 2016/1103; «escritura pública (art. 1404 CC)»; «acuerdo parcial: se liquida solo lo no acordado» | Retirados (el art. 1404 es la división por mitad) | CC |
+| 10 | Varios | error | Plazos inventados (vista en veinte días, sentencia en veinte días); nulidad por «art. 238.3 LOPJ»; «art. 103.4 CC»; reconciliación y firmeza; herederos «conjuntamente (art. 1058 CC)»; «doctrina mayoritaria» sobre el art. 811.4 | Retirados; art. 103 CC y art. 773 LEC como conexión | — |
+| 11 | ejecucion_forzosa, fin_* | error | Ejecución «art. 788.2» con arts. 699/701; tributación (AJD, ITP); inscripción (LH 32–34); «edicto de finalización» | Retirados (decisión 9 y sin base) | — |
+| 12 | Título | migración | El título incluía texto de la interfaz antigua («− 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar») | Título limpio | — |
+
+Pasos retirados: `auto_788`, `fin_auto_788`, `decreto_acuerdo`, `ejecucion_forzosa`.
