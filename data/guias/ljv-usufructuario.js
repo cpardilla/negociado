@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G22.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G22.json; revisado con el BOE (registro: docs/revision/ljv-usufructuario.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-usufructuario",
@@ -13,7 +13,7 @@ Neg.data.register({
   "103"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G22"
  },
@@ -25,9 +25,9 @@ Neg.data.register({
   "Resolución"
  ],
  "actores": {
-  "ambos": "Actor según trámite",
+  "ambos": "Juez / LAJ",
   "juez": "Juez",
-  "laj": "Letrado Admón. Justicia"
+  "laj": "Letrado de la Administración de Justicia"
  },
  "inicio": "inicio",
  "pasos": {
@@ -46,7 +46,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículos 100 a 103 LJV · Artículo 507 CC · Artículo 8 LJV · Artículo 85 LOPJ"
+     "texto": "Artículos 100 a 103 LJV · Artículo 507 CC · Artículo 8 LJV"
     }
    ],
    "siguiente": "verif_usufructo"
@@ -122,7 +122,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Dispensas legales del artículo 492 CC: vendedor o donante que se hubiere reservado el usufructo; padres usufructuarios de los bienes de los hijos; cónyuge sobreviviente respecto de la cuota legal usufructuaria. Dispensa convencional del artículo 493 CC, cuando de ello no resultare perjuicio a nadie."
+     "texto": "Dispensas legales del artículo 492 CC: vendedor o donante que se hubiere reservado el usufructo; padres usufructuarios de los bienes de los hijos y cónyuge sobreviviente respecto de la cuota legal usufructuaria, si no contraen ulterior matrimonio. Dispensa convencional del artículo 493 CC, cuando de ello no resultare perjuicio a nadie."
     },
     {
      "tipo": "ley",
@@ -245,11 +245,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La competencia objetiva corresponde con carácter general al Juzgado de Primera Instancia (artículo 2 LJV y artículo 85 LOPJ). La tramitación se ajustará a las normas comunes de la presente Ley (artículos 13 a 22 LJV)."
+     "texto": "Hoy, la Sección Civil del Tribunal de Instancia. La tramitación se ajusta a las normas comunes de la LJV (arts. 13 a 22)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 101.1 LJV · Artículo 2 LJV · Artículo 85 LOPJ · Artículo 13 LJV"
+     "texto": "Artículo 101.1 LJV · Artículo 2 LJV · Artículo 13 LJV"
     }
    ],
    "siguiente": "postulacion"
@@ -265,11 +265,11 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "No obstante, conforme al régimen general y al artículo 20 LJV (recursos, por remisión a la LEC ex artículo 8 LJV), la intervención de Abogado y Procurador podrá devenir preceptiva cuando se formule oposición o cuando se interpongan recursos de revisión o apelación."
+     "texto": "En todo caso, son necesarios Abogado y Procurador para los recursos de revisión y apelación contra la resolución definitiva y desde que se formule oposición (art. 3.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 101.2 LJV · Artículo 3 LJV · Artículo 20 LJV"
+     "texto": "Artículo 101.2 LJV · Artículo 3.2 LJV"
     }
    ],
    "siguiente": "preparar_solicitud"
@@ -329,11 +329,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Letrado de la Administración de Justicia (anteriormente Secretario judicial) examina la solicitud y resuelve sobre su admisión a trámite. Conforme al artículo 16 LJV, apreciará de oficio la falta de competencia y otros defectos u omisiones."
+     "texto": "El Letrado de la Administración de Justicia (el art. 103.1 aún dice «Secretario judicial») examina la solicitud y resuelve sobre su admisión a trámite. Conforme al artículo 16 LJV, apreciará de oficio la falta de competencia y otros defectos u omisiones."
     },
     {
      "tipo": "nota",
-     "texto": "Si concurren defectos subsanables se concederá plazo al promotor para corregirlos (artículo 17 LJV); de lo contrario, procederá la inadmisión."
+     "texto": "Si hay defectos, da cinco días para subsanarlos (art. 16.4 LJV). Si la solicitud no es admisible, da cuenta al Juez, a quien corresponde resolver el expediente (arts. 17.1 y 103.2 LJV)."
     },
     {
      "tipo": "ley",
@@ -366,11 +366,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se otorga plazo al promotor para que subsane los defectos observados en la solicitud. Si no se subsanan en el plazo concedido, procederá la inadmisión del expediente."
+     "texto": "Se dan al promotor cinco días para subsanar; si no lo hace, el LAJ da cuenta al Juez, que acuerda lo procedente (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Cinco días (art. 16.4 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 17 LJV · Artículo 231 LEC (por remisión del artículo 8 LJV)"
+     "texto": "Artículo 16.4 LJV"
     }
    ],
    "pregunta": "¿Se subsanan los defectos en el plazo otorgado?",
@@ -407,6 +411,10 @@ Neg.data.register({
      "marcar": true
     },
     {
+     "tipo": "plazo",
+     "texto": "Citación con al menos quince días de antelación; comparecencia dentro de los treinta días siguientes a la admisión (arts. 17.3 y 18.1 LJV)."
+    },
+    {
      "tipo": "ley",
      "texto": "Artículo 103.1 LJV · Artículo 17 LJV (citación de los interesados)"
     }
@@ -424,7 +432,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La incomparecencia injustificada del promotor debidamente citado puede determinar el archivo del expediente o su terminación por desistimiento tácito, conforme a las reglas comunes de la LJV."
+     "texto": "Si el solicitante no asiste, el Juez acuerda el archivo y le tiene por desistido; si falta otro citado, el acto se celebra (art. 18.2.1.ª LJV)."
     },
     {
      "tipo": "ley",
@@ -530,7 +538,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El sentido de la resolución determina el contenido obligatorio específico que debe incluir (artículo 103.2 LJV)."
+     "texto": "Resuelve por auto en los cinco días siguientes a la comparecencia (art. 19.1 LJV); su contenido obligatorio depende de lo autorizado (art. 103.2 LJV)."
     },
     {
      "tipo": "ley",
@@ -640,19 +648,19 @@ Neg.data.register({
   "fin_inadmision": {
    "fase": 3,
    "titulo": "Inadmisión a trámite de la solicitud",
-   "actor": "laj",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "aviso",
-     "texto": "La solicitud no ha sido admitida a trámite por concurrir defectos insubsanables, falta de competencia u omisiones apreciadas de oficio y no subsanadas en plazo."
+     "texto": "El Juez, a quien el LAJ ha dado cuenta, no admite la solicitud por defectos insubsanables, falta de competencia u omisiones no subsanadas (arts. 16 y 17.1 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "Contra la resolución de inadmisión podrán interponerse los recursos previstos en la Ley de Enjuiciamiento Civil, por remisión del artículo 20 LJV."
+     "texto": "Contra el auto cabe apelación, con Abogado y Procurador (arts. 3.2 y 20.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículos 16, 17 y 20 LJV · Artículo 8 LJV"
+     "texto": "Artículos 16, 17.1 y 20.2 LJV"
     }
    ],
    "fin": "error"
@@ -660,19 +668,19 @@ Neg.data.register({
   "fin_archivo": {
    "fase": 3,
    "titulo": "Archivo del expediente por incomparecencia del promotor",
-   "actor": "laj",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "aviso",
-     "texto": "La incomparecencia injustificada del promotor debidamente citado puede determinar el archivo del expediente o su terminación por desistimiento tácito, conforme a las reglas comunes de la LJV y, en su caso, a la LEC supletoriamente."
+     "texto": "El Juez acuerda el archivo del expediente y tiene al solicitante por desistido (art. 18.2.1.ª LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "Podrá promoverse de nuevo el expediente si subsisten los presupuestos y el usufructuario acredita las causas de la anterior incomparecencia."
+     "texto": "Podrá promoverse de nuevo el expediente si subsisten los presupuestos."
     },
     {
      "tipo": "ley",
-     "texto": "Artículos 18 y 21 LJV · Artículo 8 LJV"
+     "texto": "Artículo 18.2.1.ª LJV"
     }
    ],
    "fin": "error"
@@ -692,7 +700,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Contra la resolución cabe recurso conforme al artículo 20 LJV, con remisión al régimen de la Ley de Enjuiciamiento Civil. El cumplimiento y ejecución se rigen por el artículo 22 LJV."
+     "texto": "Contra el auto cabe apelación, sin efectos suspensivos, en veinte días ante la Audiencia Provincial (art. 20.2 LJV; art. 458 LEC). El cumplimiento y la ejecución se rigen por el art. 22 LJV."
     },
     {
      "tipo": "ley",
@@ -716,7 +724,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Contra la resolución cabe recurso conforme al artículo 20 LJV, con remisión al régimen de la Ley de Enjuiciamiento Civil. El cumplimiento y ejecución se rigen por el artículo 22 LJV."
+     "texto": "Contra el auto cabe apelación, sin efectos suspensivos, en veinte días ante la Audiencia Provincial (art. 20.2 LJV; art. 458 LEC). El cumplimiento y la ejecución se rigen por el art. 22 LJV."
     },
     {
      "tipo": "ley",
@@ -745,7 +753,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Contra la resolución cabe recurso conforme al artículo 20 LJV, con remisión al régimen de la Ley de Enjuiciamiento Civil. El cumplimiento y ejecución se rigen por el artículo 22 LJV."
+     "texto": "Contra el auto cabe apelación, sin efectos suspensivos, en veinte días ante la Audiencia Provincial (art. 20.2 LJV; art. 458 LEC). El cumplimiento y la ejecución se rigen por el art. 22 LJV."
     },
     {
      "tipo": "ley",
@@ -765,11 +773,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La denegación no agota la vía: contra la resolución cabe recurso conforme al artículo 20 LJV, con remisión al régimen general de la Ley de Enjuiciamiento Civil."
+     "texto": "Contra el auto cabe apelación (art. 20.2 LJV; art. 458 LEC)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 103.2 LJV · Artículo 20 LJV · Artículo 8 LJV"
+     "texto": "Artículo 103.2 LJV · Artículo 20.2 LJV"
     }
    ],
    "fin": "warning"
