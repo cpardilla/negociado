@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G15.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G15.json; revisado con el BOE (registro: docs/revision/ljv-honor-menor.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-honor-menor",
@@ -11,7 +11,7 @@ Neg.data.register({
   "60"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G15"
  },
@@ -25,9 +25,9 @@ Neg.data.register({
   "Cierre"
  ],
  "actores": {
-  "ambos": "LAJ + Juez",
+  "ambos": "Juez / LAJ",
   "juez": "Juez",
-  "laj": "LAJ"
+  "laj": "Letrado de la Administración de Justicia"
  },
  "inicio": "inicio",
  "pasos": {
@@ -38,27 +38,25 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El procedimiento de jurisdicción voluntaria del art. 60 LJV se inicia a instancia de parte, nunca de oficio. Corresponde al Letrado de la Administración de Justicia (LAJ) examinar la solicitud y verificar que reúne los requisitos formales y documentales mínimos antes de darle curso."
+     "texto": "Expediente de los arts. 59 y 60 LJV: autorización judicial del consentimiento que el representante legal de un menor o de una persona con discapacidad con medidas de apoyo ha dado a una intromisión en su honor, intimidad o propia imagen, cuando el Ministerio Fiscal se ha opuesto (art. 59.1 LJV; art. 3.2 LO 1/1982). Lo promueve el representante legal (art. 59.3 LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Documentación preceptiva (art. 60.1 LJV)",
+     "titulo": "Documentos que acompañan a la solicitud (art. 60.1 LJV)",
      "items": [
-      "Solicitud escrita identificando al solicitante y su condición de representante legal",
-      "Identificación del menor o persona con discapacidad cuyo interés se protege",
-      "Descripción detallada de la intromisión proyectada: tipo, soporte o medio, finalidad, duración, ámbito territorial y, si procede, contraprestación económica",
-      "Documento acreditativo de la oposición formal del Ministerio Fiscal (presupuesto habilitante)",
-      "Título habilitante de la representación legal: libro de familia, resolución judicial de tutela o curatela, escritura de poderes preventivos u otro título"
+      "El proyecto de consentimiento (conviene que describa la intromisión: soporte o medio, finalidad, duración, ámbito y, en su caso, contraprestación)",
+      "El documento en que conste la notificación de la oposición del Ministerio Fiscal",
+      "Los documentos que acrediten la representación legal (filiación, resolución de tutela o la que confiere al curador funciones representativas)"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "La postulación no es preceptiva: el representante legal puede actuar personalmente sin necesidad de Abogado ni Procurador (art. 3 LJV; art. 59.4 LJV a contrario)."
+     "texto": "No es preceptiva la intervención de Abogado ni Procurador (art. 59.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 59.3 y 60.1 LJV; art. 3 LO 1/1982; art. 3 LJV (postulación)"
+     "texto": "Arts. 59 y 60.1 LJV · Art. 3 LO 1/1982"
     }
    ],
    "pregunta": "La solicitud incluye toda la documentación preceptiva y es formalmente correcta?",
@@ -84,23 +82,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ requiere al solicitante para que corrija los defectos u omisiones detectados, concediéndole un plazo razonable (aplicación supletoria del art. 231 LEC)."
+     "texto": "El LAJ requiere al solicitante para que subsane los defectos u omisiones (art. 16.4 LJV)."
     },
     {
      "tipo": "aviso",
-     "texto": "El defecto más frecuente y grave es la ausencia del documento acreditativo de la oposición del Ministerio Fiscal. Sin ese documento el expediente carece de presupuesto habilitante y no puede admitirse a trámite."
+     "texto": "El defecto más grave es que falte el documento en que conste la notificación de la oposición del Fiscal: sin oposición no hay expediente (art. 59.1 LJV)."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo de subsanación: el LAJ fija un plazo razonable según la naturaleza del defecto. En la práctica suelen concederse entre 5 y 10 días hábiles."
-    },
-    {
-     "tipo": "nota",
-     "texto": "El LAJ puede requerir subsanación en una sola vez de todos los defectos advertidos para no dilatar innecesariamente el procedimiento."
+     "texto": "Cinco días para subsanar (art. 16.4 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 231 LEC (supletorio vía art. 8 LJV); art. 18 LJV; art. 60.1 LJV"
+     "texto": "Art. 16.4 LJV · Art. 60.1 LJV"
     }
    ],
    "pregunta": "El solicitante subsana los defectos en el plazo concedido?",
@@ -122,19 +116,19 @@ Neg.data.register({
   "fin_archivo": {
    "fase": 0,
    "titulo": "Archivo por falta de subsanación",
-   "actor": "laj",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Ante la falta de subsanación en plazo, el LAJ dicta decreto acordando el archivo del expediente por defectos insubsanados o ausencia del presupuesto habilitante."
+     "texto": "Si no se subsana en plazo, el LAJ da cuenta al Juez, a quien corresponde decidir el expediente, que acuerda lo procedente (art. 16.4 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "El solicitante podrá presentar una nueva solicitud una vez subsanados los defectos, siempre que el presupuesto habilitante (oposición del MF) siga vigente."
+     "texto": "Puede presentarse una nueva solicitud con los documentos completos."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 231 LEC; art. 18 LJV"
+     "texto": "Art. 16.4 LJV · Art. 60.3 LJV"
     }
    ],
    "fin": "error"
@@ -146,19 +140,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ —y en su caso el Juez— examina si el juzgado es territorialmente competente para conocer del expediente conforme al criterio del domicilio del sujeto protegido."
+     "texto": "El LAJ examina de oficio la competencia territorial (art. 16.1 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "Fuero principal: domicilio del menor o persona con discapacidad (art. 59.2 LJV). Fuero subsidiario: residencia habitual si no consta domicilio."
+     "texto": "Es competente el Juzgado de Primera Instancia del domicilio o, en su defecto, de la residencia del menor o persona con discapacidad (art. 59.2 LJV). Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 j) LOPJ); si no, la Sección Civil."
     },
     {
      "tipo": "nota",
-     "texto": "En partidos judiciales con Juzgados especializados en Familia (art. 98 LOPJ) pueden ser estos los competentes cuando la intromisión esté vinculada a una situación de crisis familiar."
+     "texto": "La competencia territorial no puede modificarse por sumisión (art. 2.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 59.2 LJV; art. 2.1 LJV; arts. 63-65 LEC (supletorio)"
+     "texto": "Art. 59.2 LJV · Arts. 2.2 y 16 LJV · Art. 86.5 j) LOPJ"
     }
    ],
    "pregunta": "Este juzgado es territorialmente competente?",
@@ -184,15 +178,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez dicta Auto inhibiéndose y ordenando la remisión de las actuaciones al juzgado territorialmente competente según el domicilio o residencia habitual del menor o persona con discapacidad."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Si el solicitante discrepa de la inhibición puede plantear declinatoria o conflicto de competencia ante el órgano superior común (arts. 63-65 LEC supletoriamente)."
+     "texto": "Como la decisión del expediente corresponde al Juez, el LAJ le da cuenta y el Juez, tras oír al Ministerio Fiscal y al solicitante, acuerda la remisión al órgano que considere competente (art. 16.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 63-65 LEC (supletorio vía art. 8 LJV); art. 59.2 LJV"
+     "texto": "Art. 16.3 LJV · Art. 59.2 LJV"
     }
    ],
    "fin": "neutral"
@@ -200,35 +190,35 @@ Neg.data.register({
   "presupuesto": {
    "fase": 1,
    "titulo": "Verificación del presupuesto habilitante",
-   "actor": "juez",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez examina si concurren los dos requisitos acumulativos del Capítulo VII: (1) que el representante legal haya prestado su consentimiento a la intromisión, y (2) que el Ministerio Fiscal se haya opuesto formalmente a dicho consentimiento."
+     "texto": "Presupuesto del expediente (art. 59.1 LJV; art. 3.2 LO 1/1982): el representante legal ha otorgado por escrito el consentimiento a la intromisión, lo ha puesto en conocimiento previo del Ministerio Fiscal y este se ha opuesto en el plazo de ocho días."
     },
     {
      "tipo": "aviso",
-     "texto": "Sin oposición formal del MF no existe presupuesto habilitante: el consentimiento del representante legal es por sí solo suficiente para legitimar la intromisión (art. 3 LO 1/1982) y el expediente carece de objeto."
+     "texto": "Si el Fiscal no se opone en ese plazo, no hay expediente: resuelve el Juez solo cuando hay oposición (art. 3.2 LO 1/1982)."
     },
     {
      "tipo": "nota",
-     "texto": "La oposición del MF debe ser anterior a la solicitud y estar motivada en la lesión al interés superior del menor o a la voluntad de la persona con discapacidad (art. 3.7 EOMF, LO 50/1981)."
+     "texto": "Si sus condiciones de madurez lo permiten, el menor o la persona con discapacidad presta el consentimiento por sí mismo (art. 3.1 LO 1/1982). Aun con consentimiento, el uso de la imagen o el nombre de un menor en los medios que menoscabe su honra o reputación o sea contrario a sus intereses es intromisión ilegítima (art. 4.3 LOPJM)."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 59.1 y 60.1 LJV; art. 3 LO 1/1982; art. 3.7 EOMF (LO 50/1981)"
+     "texto": "Art. 59.1 LJV · Art. 3 LO 1/1982 · Art. 4.3 LOPJM"
     }
    ],
-   "pregunta": "Consta en autos la oposición formal y motivada del Ministerio Fiscal al consentimiento del representante legal?",
+   "pregunta": "¿Consta la oposición del Ministerio Fiscal al consentimiento del representante legal?",
    "opciones": [
     {
-     "texto": "Sí — el MF ha formalizado su oposición con anterioridad a la solicitud",
+     "texto": "Sí — consta la notificación de la oposición del Fiscal",
      "tono": "t-nota",
      "nota": "Presupuesto concurrente",
      "destino": "admision"
     },
     {
-     "texto": "No — no hay oposición del MF o no está debidamente acreditada",
+     "texto": "No — no hay oposición del Fiscal o no está acreditada",
      "tono": "t-nota",
      "nota": "Presupuesto ausente",
      "destino": "inadmision"
@@ -237,24 +227,24 @@ Neg.data.register({
   },
   "inadmision": {
    "fase": 1,
-   "titulo": "Auto de inadmisión por falta de presupuesto habilitante",
+   "titulo": "Inadmisión por falta del presupuesto del expediente",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez dicta Auto inadmitiendo el expediente a trámite por no concurrir el presupuesto habilitante del Capítulo VII (ausencia de oposición del Ministerio Fiscal o del consentimiento del representante legal)."
+     "texto": "Si la solicitud no es admisible, el LAJ da cuenta al Juez, que resuelve (art. 17.1 LJV). Falta el presupuesto del expediente: la oposición del Fiscal o el consentimiento del representante legal (art. 59.1 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "El Auto de inadmisión es recurrible en apelación ante la Audiencia Provincial (art. 20 LJV en relación con el art. 455 LEC)."
+     "texto": "Contra el auto que pone fin al expediente cabe apelación (art. 20.2 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "Si el MF no había formalizado oposición, el consentimiento del representante legal basta para legitimar la intromisión (art. 3 LO 1/1982) sin necesidad de expediente judicial."
+     "texto": "Si el Fiscal no se opuso en ocho días, basta el consentimiento escrito del representante legal (art. 3.2 LO 1/1982)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 60.1 LJV; art. 3 LO 1/1982; art. 20 LJV"
+     "texto": "Arts. 17.1, 20.2 y 59.1 LJV · Art. 3.2 LO 1/1982"
     }
    ],
    "fin": "error"
@@ -266,19 +256,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Verificado el presupuesto habilitante, el LAJ dicta decreto admitiendo el expediente a trámite y señala el día y hora para la celebración de la comparecencia."
-    },
-    {
-     "tipo": "nota",
-     "texto": "No existe un plazo legal específico para el señalamiento. Se aplican los criterios generales de ordenación del juzgado, teniendo en cuenta la urgencia cuando sea relevante (contratos próximos a formalizarse, publicaciones inminentes)."
+     "texto": "Admitida la solicitud, el LAJ señala día y hora para la comparecencia (art. 60.2 LJV)."
     },
     {
      "tipo": "plazo",
-     "texto": "El señalamiento debe realizarse con suficiente antelación para permitir la correcta citación de todos los interesados preceptivos y la preparación del acto."
+     "texto": "La comparecencia se celebra dentro de los treinta días siguientes a la admisión, con citación al menos quince días antes (arts. 17.3 y 18.1 LJV). Si hay urgencia (publicación inminente), conviene tenerla en cuenta al señalar."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 16, 17 y 60.2 LJV"
+     "texto": "Art. 60.2 LJV · Arts. 16, 17 y 18.1 LJV"
     }
    ],
    "siguiente": "citaciones"
@@ -290,32 +276,30 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ practica las citaciones para la comparecencia. La ley distingue entre citaciones preceptivas (obligatorias en todo caso) y facultativas (a criterio del Juez según las circunstancias del expediente)."
+     "texto": "El LAJ cita a la comparecencia (art. 60.2 LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Citaciones preceptivas (art. 60.2 LJV)",
+     "titulo": "Se cita siempre (art. 60.2 LJV)",
      "items": [
-      "Ministerio Fiscal: como promotor de la oposición y garante institucional del interés del protegido",
-      "Representante legal: como parte promotora del expediente"
+      "Al Ministerio Fiscal",
+      "Al representante legal del menor o persona con discapacidad"
      ],
      "marcar": true
     },
     {
      "tipo": "lista",
-     "titulo": "Citaciones facultativas (acuerda el Juez)",
+     "titulo": "Además",
      "items": [
-      "Menor o persona con discapacidad — obligatoria si el menor tiene 12 años o más o madurez suficiente (art. 9 LOPJM)",
-      "El otro progenitor si no es el solicitante (art. 156 CC: la patria potestad se ejerce conjuntamente)",
-      "Empresa, medio de comunicación o tercero titular del proyecto de difusión",
-      "Entidades públicas de protección de menores si el expediente tiene relevancia supraindividual",
-      "Defensor judicial ad hoc si se aprecia conflicto de intereses (art. 163 CC)"
+      "Al menor o persona con discapacidad, si el Juez lo cree necesario (art. 60.2 LJV); el menor tiene derecho a ser oído, y con doce años cumplidos se considera que tiene suficiente madurez (art. 9 LOPJM)",
+      "A otros interesados, si el Juez lo acuerda de oficio o a instancia del Fiscal (art. 60.2 LJV): el otro progenitor si no es el solicitante (art. 156 CC); la empresa, medio o tercero titular del proyecto",
+      "Defensor judicial si los progenitores tienen un interés opuesto al del hijo (art. 163 CC) o hay conflicto con quien presta apoyo (art. 295 CC)"
      ],
      "marcar": true
     },
     {
      "tipo": "ley",
-     "texto": "Art. 60.2 LJV; art. 9 LOPJM; art. 156 CC; art. 163 CC"
+     "texto": "Art. 60.2 LJV · Art. 9 LOPJM · Arts. 156, 163 y 295 CC"
     }
    ],
    "pregunta": "Se ha solicitado o el Juez acuerda de oficio la adopción de medidas cautelares?",
@@ -341,27 +325,26 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez resuelve sobre las medidas cautelares solicitadas o acordadas de oficio para evitar que la intromisión se produzca o continúe antes de que recaiga resolución definitiva."
+     "texto": "El Juez puede adoptar las medidas necesarias para apartar al menor de un peligro o evitarle perjuicios, de oficio o a instancia del propio hijo, de un pariente o del Ministerio Fiscal, también en un expediente de jurisdicción voluntaria (art. 158 CC)."
     },
     {
      "tipo": "lista",
-     "titulo": "Medidas cautelares posibles",
+     "titulo": "Medidas posibles",
      "items": [
-      "Suspensión o prohibición de difusión de las imágenes o contenidos proyectados durante la tramitación",
-      "Retirada cautelar de contenidos ya difundidos al amparo de un consentimiento impugnado",
-      "Orden de no difusión dirigida a plataformas digitales o medios de comunicación",
-      "Designación de defensor judicial ad hoc si el interés del menor puede estar en conflicto con el del representante legal",
-      "Cualquier otra medida de protección del menor al amparo del art. 158 CC"
+      "Suspensión o prohibición de difundir las imágenes o contenidos durante la tramitación",
+      "Retirada de contenidos ya difundidos",
+      "Orden de no difusión dirigida a plataformas o medios",
+      "Nombramiento de defensor judicial si hay conflicto de intereses (arts. 163 y 295 CC)"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "En supuestos de extrema urgencia (publicación inminente en medios de gran difusión, emisión en directo), el Juez puede adoptar medidas inaudita parte antes de la comparecencia."
+     "texto": "Ante la difusión de imágenes o información de menores que pueda ser intromisión ilegítima, el Fiscal insta de inmediato medidas cautelares y de protección (art. 4.2 LOPJM; art. 84.2 LOPDGDD)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 158 CC; art. 9 LO 1/1982; arts. 721 y ss. LEC (supletorio); art. 60.2 LJV"
+     "texto": "Art. 158 CC · Art. 4.2 LOPJM · Art. 84.2 LOPDGDD"
     }
    ],
    "siguiente": "comparecencia"
@@ -391,11 +374,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si alguna de las partes preceptivas no comparece sin causa justificada, el acto puede celebrarse igualmente con los comparecidos."
+     "texto": "Si no asiste el solicitante, se le tiene por desistido y se archiva el expediente; si no asiste otro citado, el acto se celebra (art. 18.2.1.ª LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 18 LJV; arts. 60.2 y 60.3 LJV"
+     "texto": "Art. 18 LJV · Art. 60.2 LJV"
     }
    ],
    "pregunta": "Debe practicarse audiencia al menor o a la persona con discapacidad en el acto?",
@@ -421,30 +404,26 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez escucha personalmente al menor o a la persona con discapacidad en condiciones adecuadas para garantizar la libre expresión de su voluntad, deseos y preferencias."
+     "texto": "El Juez oye al menor o a la persona con discapacidad en condiciones idóneas, en términos accesibles, comprensibles y adaptados a su edad, madurez y circunstancias; puede acordar que sea en acto separado, sin interferencias, con asistencia del Fiscal (art. 18.2.4.ª LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Garantías de la audiencia",
+     "titulo": "Garantías",
      "items": [
-      "Puede practicarse sin presencia de los progenitores si su presencia pudiera coartar la libre expresión del menor",
-      "Con apoyo de psicólogo o trabajador social del equipo técnico si la situación lo requiere",
-      "Lenguaje y entorno adaptados a la edad y condición del menor",
-      "Para personas con discapacidad: respeto de su voluntad, deseos y preferencias (arts. 12 CDPD y 249 CC)"
+      "Del resultado se levanta acta por el LAJ; si es después de la comparecencia, se da traslado a los interesados para alegaciones en cinco días (art. 18.2.4.ª LJV)",
+      "Con el auxilio de especialistas cuando sea necesario (art. 18.2.4.ª LJV; art. 9.1 LOPJM)",
+      "El Fiscal en su informe y el Juez en la resolución valoran motivadamente la exploración (art. 18.2.4.ª LJV)",
+      "Para personas con discapacidad: respeto de su voluntad, deseos y preferencias (art. 12 CDPD; art. 249 CC)"
      ],
      "marcar": true
     },
     {
-     "tipo": "aviso",
-     "texto": "La omisión de la audiencia al menor de 12 años o más cuando era obligatoria puede constituir motivo de nulidad de actuaciones por infracción del art. 9 LOPJM y del art. 24 CE."
-    },
-    {
      "tipo": "nota",
-     "texto": "Si el Juez aprecia conflicto entre la voluntad del curador representativo y la de la persona con discapacidad, puede nombrar defensor judicial ad hoc (art. 295 CC) antes o durante el acto."
+     "texto": "Si hay conflicto entre el curador representativo y la persona con discapacidad, se nombra defensor judicial (art. 295.2.º CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 9 LOPJM; arts. 12 CDN y 12 CDPD; arts. 249 y 268 CC (Ley 8/2021); art. 295 CC"
+     "texto": "Art. 18.2.4.ª LJV · Art. 9 LOPJM · Art. 12 CDN · Art. 12 CDPD · Arts. 249 y 295 CC"
     }
    ],
    "siguiente": "prueba"
@@ -476,7 +455,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 18 LJV; arts. 281 y ss. LEC (supletorio); art. 60.3 LJV"
+     "texto": "Arts. 5 y 18 LJV · Arts. 281 y ss. LEC"
     }
    ],
    "siguiente": "deliberacion"
@@ -488,32 +467,30 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Concluida la comparecencia y practicada la prueba, el Juez delibera y dicta el Auto resolviendo el expediente. La resolución adopta la forma de Auto debidamente motivado (art. 19.1 LJV)."
+     "texto": "El Juez resuelve por auto motivado (art. 19.1 LJV), en atención al interés superior del menor o persona con discapacidad (art. 60.3 LJV)."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo: al término de la propia comparecencia (regla general, art. 60.3 LJV). Excepción: dentro de los cinco días siguientes si la complejidad del asunto lo justifica."
-    },
-    {
-     "tipo": "nota",
-     "texto": "El Auto debe expresar con claridad los hechos valorados, los criterios jurídicos aplicados —incluido el juicio de proporcionalidad constitucional triple: idoneidad, necesidad y proporcionalidad estricta— y la razón de la decisión."
+     "texto": "Al término de la comparecencia o, si la complejidad del asunto lo justifica, dentro de los cinco días siguientes (art. 60.3 LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Criterios del interés superior del menor a ponderar (art. 2 LOPJM y LO 8/2015)",
+     "titulo": "Criterios generales del interés superior del menor (art. 2.2 LOPJM)",
      "items": [
-      "Protección del derecho a la vida y el pleno desarrollo de la personalidad",
-      "Satisfacción de las necesidades básicas materiales y afectivas del menor",
-      "Consideración de los deseos, sentimientos y opiniones del menor",
-      "Irreversibilidad del contenido una vez difundido en internet y riesgo de huella digital permanente",
-      "Riesgo de uso secundario del contenido para fines no autorizados (IA generativa, redistribución)",
-      "Ausencia de discriminación y perspectiva de género (especialmente en el caso de niñas y adolescentes)"
+      "La protección de su derecho a la vida, supervivencia y desarrollo y la satisfacción de sus necesidades básicas, materiales, físicas, educativas, emocionales y afectivas",
+      "La consideración de sus deseos, sentimientos y opiniones, y su derecho a participar progresivamente en la determinación de su interés",
+      "Su desarrollo en un entorno familiar adecuado y libre de violencia",
+      "Y los demás del art. 2.2, más los que se estimen adecuados a las circunstancias del caso"
      ],
      "marcar": true
     },
     {
+     "tipo": "nota",
+     "texto": "El uso de la imagen o el nombre del menor en medios de comunicación que menoscabe su honra o reputación o sea contrario a sus intereses es intromisión ilegítima aun con el consentimiento de sus representantes (art. 4.3 LOPJM)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 60.3 LJV; art. 2 LOPJM (LO 8/2015); arts. 18.1, 20.4, 24 y 120.3 CE; art. 84 LOPDGDD"
+     "texto": "Art. 60.3 LJV · Art. 19.1 LJV · Arts. 2 y 4 LOPJM · Art. 18.1 CE"
     }
    ],
    "pregunta": "Cuál es el sentido de la resolución del Juez?",
@@ -549,15 +526,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La autorización judicial convierte en legítima la intromisión proyectada (art. 2.1 LO 1/1982). El representante legal puede ahora otorgar válidamente el consentimiento al tercero."
+     "texto": "Con la autorización, el consentimiento excluye la intromisión ilegítima (art. 2.2 LO 1/1982). El representante legal puede ahora otorgar válidamente el consentimiento al tercero."
     },
     {
      "tipo": "aviso",
-     "texto": "Los efectos del Auto quedan suspendidos automáticamente si cualquiera de las partes legitimadas interpone recurso de apelación (art. 60.4 LJV: efectos suspensivos del recurso). La intromisión no puede producirse hasta la resolución definitiva."
+     "texto": "Los efectos del Auto quedan suspendidos automáticamente si cualquiera de las partes legitimadas interpone recurso de apelación (art. 60.4 LJV). La intromisión no puede producirse hasta la resolución definitiva."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 60.3 LJV; art. 2.1 LO 1/1982; art. 60.4 LJV (efectos suspensivos)"
+     "texto": "Art. 60.3 y 4 LJV · Art. 2.2 LO 1/1982"
     }
    ],
    "pregunta": "Se interpone recurso de apelación contra este Auto?",
@@ -592,7 +569,6 @@ Neg.data.register({
       "Reducción del plazo máximo de difusión del contenido",
       "Limitación del soporte o medio autorizado (prohibición de redes sociales, solo prensa escrita, etc.)",
       "Exclusión de datos identificativos directos del menor (rostro, nombre, domicilio)",
-      "Exigencia de contraprestación económica en favor del menor con depósito judicial",
       "Condiciones técnicas de edición (desenfoque, ángulo, texto sobreimpreso)",
       "Prohibición de difusión en plataformas accesibles a menores de determinadas edades",
       "Obligación de eliminación del contenido transcurrido el plazo autorizado"
@@ -605,7 +581,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 60.3 LJV; art. 84 LOPDGDD; art. 2 LOPJM"
+     "texto": "Art. 60.3 y 4 LJV · Art. 2 LOPJM · Art. 84 LOPDGDD"
     }
    ],
    "pregunta": "Se interpone recurso de apelación contra el Auto condicionado?",
@@ -649,7 +625,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 60.3 LJV; art. 2 LOPJM; arts. 18.1 y 20.4 CE"
+     "texto": "Art. 60.3 y 4 LJV · Arts. 2 y 4 LOPJM · Art. 18.1 CE"
     }
    ],
    "pregunta": "Se interpone recurso de apelación contra el Auto denegatorio?",
@@ -679,7 +655,7 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo de interposición: 20 días desde la notificación del Auto (art. 458.1 LEC). Improrrogable."
+     "texto": "Veinte días desde la notificación (art. 458.1 LEC), ante la Audiencia Provincial, cuyo LAJ pide las actuaciones al Juzgado (art. 458.3 LEC)."
     },
     {
      "tipo": "aviso",
@@ -687,7 +663,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La Audiencia Provincial resuelve el recurso con tramitación preferente sobre asuntos ordinarios, atendiendo a la urgencia de los plazos contractuales y a la importancia del bien jurídico en juego."
+     "texto": "El recurso tiene efectos suspensivos y se resuelve con carácter preferente (art. 60.4 LJV)."
     },
     {
      "tipo": "nota",
@@ -695,7 +671,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 60.4 LJV; arts. 455-467 LEC; art. 82.2 LOPJ"
+     "texto": "Art. 60.4 LJV · Arts. 455 y ss. LEC"
     }
    ],
    "pregunta": "Cuál es el resultado del recurso resuelto por la Audiencia Provincial?",
@@ -725,7 +701,7 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo de interposición: 20 días desde la notificación del Auto (art. 458.1 LEC). Improrrogable."
+     "texto": "Veinte días desde la notificación (art. 458.1 LEC), ante la Audiencia Provincial, cuyo LAJ pide las actuaciones al Juzgado (art. 458.3 LEC)."
     },
     {
      "tipo": "nota",
@@ -737,7 +713,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 60.4 LJV; arts. 455-467 LEC; art. 82.2 LOPJ"
+     "texto": "Art. 60.4 LJV · Arts. 455 y ss. LEC"
     }
    ],
    "pregunta": "Cuál es el resultado del recurso resuelto por la Audiencia Provincial?",
@@ -763,19 +739,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ notifica el Auto firme a todas las partes. Desde la firmeza, el representante legal puede otorgar válidamente el consentimiento a la intromisión autorizada en los términos del Auto."
+     "texto": "El LAJ notifica el auto. Firme (art. 207.2 LEC), el representante legal puede otorgar el consentimiento en sus términos."
     },
     {
      "tipo": "nota",
-     "texto": "La autorización tiene efectos ex nunc desde la firmeza. No cubre intromisiones anteriores a la resolución judicial ni usos distintos de los expresamente autorizados."
+     "texto": "La autorización no cubre intromisiones anteriores ni usos distintos de los autorizados."
     },
     {
      "tipo": "nota",
-     "texto": "El consentimiento otorgado al amparo del Auto firme es revocable en cualquier momento (art. 60.5 LJV y art. 2.3 LO 1/1982), aunque la revocación puede generar obligación de indemnizar a terceros que actuaron de buena fe."
+     "texto": "El consentimiento es revocable en cualquier momento, pero se indemnizan los daños y perjuicios causados, incluidas las expectativas justificadas (art. 2.3 LO 1/1982). Si los representantes quieren revocar el consentimiento otorgado judicialmente, lo ponen en conocimiento del Juez (art. 60.5 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 60.3 y 60.5 LJV; art. 2.3 LO 1/1982; art. 208 LEC (firmeza)"
+     "texto": "Art. 60.5 LJV · Art. 2.3 LO 1/1982 · Art. 207 LEC"
     }
    ],
    "pregunta": "Los representantes legales desean revocar el consentimiento judicialmente autorizado?",
@@ -801,27 +777,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Los representantes legales comunican al Juzgado su voluntad de revocar el consentimiento judicialmente autorizado. El Juez dicta Auto dejando sin efecto la autorización concedida."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La revocación produce efectos ex nunc: desde la fecha del Auto de revocación. No convierte en ilegítimas las intromisiones ya consumadas al amparo de la autorización previa (art. 2.3 LO 1/1982)."
+     "texto": "Los representantes legales ponen en conocimiento del Juez que quieren que se revoque el consentimiento otorgado judicialmente, y el Juez dicta resolución dejándolo sin efecto (art. 60.5 LJV)."
     },
     {
      "tipo": "aviso",
-     "texto": "La revocación puede generar obligación de indemnizar a terceros que hubieran actuado de buena fe confiando en el consentimiento válidamente otorgado (art. 1.4 LO 1/1982; arts. 1101 y ss. CC)."
+     "texto": "La revocación obliga a indemnizar, en su caso, los daños y perjuicios causados, incluidas las expectativas justificadas (art. 2.3 LO 1/1982)."
     },
     {
      "tipo": "nota",
-     "texto": "En actividades de kidfluencer: la revocación puede poner fin a contratos de patrocinio con posibles reclamaciones por incumplimiento. El art. 26 LOPJM (mod. LOPIVI) protege el interés del menor frente al interés económico."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La revocación del art. 60.5 LJV y el ejercicio del derecho al olvido (art. 94 LOPDGDD; art. 17 RGPD) son mecanismos independientes pero complementarios que pueden ejercerse de forma coordinada."
+     "texto": "Es independiente del derecho de supresión de los datos personales (art. 17 RGPD) y del derecho al olvido en servicios de redes sociales (art. 94 LOPDGDD)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 60.5 LJV; art. 2.3 LO 1/1982; art. 94 LOPDGDD; art. 17 RGPD; art. 26 LOPJM (LOPIVI)"
+     "texto": "Art. 60.5 LJV · Art. 2.3 LO 1/1982 · Art. 94 LOPDGDD · Art. 17 RGPD"
     }
    ],
    "fin": "warning"
@@ -837,7 +805,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La autorización permanece revocable en cualquier momento por iniciativa exclusiva del representante legal (art. 60.5 LJV)."
+     "texto": "El consentimiento sigue siendo revocable (art. 2.3 LO 1/1982; art. 60.5 LJV)."
     },
     {
      "tipo": "nota",
@@ -881,23 +849,23 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La Audiencia Provincial ha estimado el recurso del Ministerio Fiscal y ha revocado la autorización concedida en primera instancia. La intromisión proyectada no puede realizarse."
+     "texto": "La Audiencia Provincial ha estimado el recurso del Fiscal y ha revocado la autorización. La intromisión proyectada no puede realizarse."
     },
     {
      "tipo": "nota",
-     "texto": "Contra la resolución de la Audiencia Provincial en este ámbito de la jurisdicción voluntaria no cabe recurso ordinario, salvo recurso de casación en los supuestos del art. 477 LEC (interés casacional)."
+     "texto": "Contra el auto de la Audiencia no cabe casación: el art. 477.1 LEC la reserva a las sentencias que ponen fin a la segunda instancia (y a ciertos autos sobre reconocimiento de resoluciones extranjeras)."
     },
     {
      "tipo": "nota",
-     "texto": "El representante legal puede replantear el proyecto con modificaciones sustanciales eliminando las razones de oposición del MF."
+     "texto": "El representante legal puede presentar un proyecto distinto, que de nuevo habrá de comunicar al Fiscal (art. 3.2 LO 1/1982)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 60.4 LJV; arts. 477 y ss. LEC; art. 2 LOPJM"
+     "texto": "Art. 60.4 LJV · Art. 477.1 LEC · Art. 3.2 LO 1/1982"
     }
    ],
    "fin": "error"
   }
  },
- "pie": "Arts. 59-60 LJV 15/2015<br>LO 1/1982 (honor, intimidad, imagen)<br>Ley 8/2021 (discapacidad)<br>LOPDGDD LO 3/2018<br>RGPD 2016/679"
+ "pie": "*Referencias normativas*<br>Arts. 16 a 20, 59 y 60 LJV<br>Arts. 2 y 3 LO 1/1982<br>Arts. 2, 4 y 9 LOPJM<br>Arts. 156, 158, 163 y 295 CC<br>Arts. 84 y 94 LOPDGDD"
 });

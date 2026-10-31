@@ -50,7 +50,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-tutela-curatela | Guía · LJV · Tutela, curatela y guarda de hecho | · | · | · | · | · | · | 1R |
 | ljv-emancipacion | Guía · LJV · Emancipación y beneficio de la mayoría de edad | · | · | · | · | · | · | · |
 | ljv-patrimonio-protegido | Guía · LJV · Patrimonio de las personas con discapacidad | · | · | · | · | · | · | 1R |
-| ljv-honor-menor | Guía · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 1E 2A 3R | · | · | · | · | · | · |
+| ljv-honor-menor | Guía · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-actos-disposicion | Guía · LJV · Actos de disposición sobre bienes de menores y personas con apoyos | 6R | · | · | · | · | · | 1R |
 | ljv-ausencia-fallecimiento | Guía · LJV · Declaración de ausencia y fallecimiento | 13R | · | · | · | · | · | 1R |
 | ljv-donantes-vivos | Guía · LJV · Extracción de órganos de donantes vivos | · | · | · | · | · | · | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 9E 2A 34R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 56R |
+| | **Total** | 8E 0A 31R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 57R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,27 +69,27 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2609
-- ✓ CC (BOE a 07-09-2026): 1261
-- ✓ LEC (BOE a 07-10-2026): 1136
-- ✓ LOPJ (BOE a 09-10-2026): 103
+- ✓ LJV (BOE a 05-03-2026): 2631
+- ✓ CC (BOE a 07-09-2026): 1262
+- ✓ LEC (BOE a 07-10-2026): 1131
+- ✓ LOPJ (BOE a 09-10-2026): 102
 - ✓ LTRANS (BOE a 20-12-2025): 62
 - ✓ LPPD (BOE a 18-12-2025): 61
-- ✓ LOPJM (BOE a 18-12-2025): 47
+- ✓ LOPJM (BOE a 18-12-2025): 50
 - ✓ LRC (BOE a 24-02-2026): 40
+- ✓ LOPDH (BOE a 16-12-2025): 38
 - UE: 33
-- ✓ LOPDH (BOE a 16-12-2025): 33
 - ✓ LN (BOE a 22-10-2026): 30
-- ✓ CE (BOE a 20-05-2026): 29
+- ✓ CE (BOE a 20-05-2026): 28
 - ✓ RDTO (BOE a 19-12-2025): 25
 - ✓ LH (BOE a 07-01-2026): 21
 - ✓ LTO (BOE a 16-12-2025): 19
 - LO 1/2025: 16
 - ✓ LSC (BOE a 19-12-2025): 7
+- ✓ LOPDGDD (BOE a 08-10-2026): 6
 - ✓ CCom (BOE a 16-12-2025): 4
 - ✓ LCS (BOE a 05-10-2026): 4
 - ✓ CP (BOE a 09-04-2026): 4
-- ✓ LOPDGDD (BOE a 08-10-2026): 4
 - ✓ LA (BOE a 18-12-2025): 3
 - ✓ RH (BOE a 16-12-2025): 3
 - ✓ LPI (BOE a 31-07-2026): 2
@@ -104,7 +104,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 305 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 304 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -369,14 +369,9 @@ Sin hallazgos automáticos.
 
 ### ljv-honor-menor · Guía · LJV · Honor, intimidad e imagen del menor o persona con discapacidad
 
-**citas**
+**terminologia**
 
-- [error] «art. 98»: el art. 98 LOPJ está sin contenido/derogado — _paso «competencia» › nota 3_
-- [aviso] «art. 59.4»: el art. 59 LJV no tiene apartado 4 (tiene 1, 2, 3) — _paso «inicio» › nota 3_
-- [aviso] «art. 1.4»: el art. 1 LOPDH no tiene apartado 4 (tiene 1, 2, 3) — _paso «revocacion» › aviso 3_
-- [revisar] «art. 3.7»: el art. 3 LJV no tiene apartado 7 (tiene 1, 2) (ley por defecto) — _paso «presupuesto» › ley 4_
-- [revisar] «arts. 455-467»: el art. 467 LEC está sin contenido/derogado (extremo de un rango) — _paso «apelacion_mf» › ley 6_
-- [revisar] «arts. 455-467»: el art. 467 LEC está sin contenido/derogado (extremo de un rango) — _paso «apelacion_rep» › ley 5_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › nota 2_
 
 ### ljv-actos-disposicion · Guía · LJV · Actos de disposición sobre bienes de menores y personas con apoyos
 

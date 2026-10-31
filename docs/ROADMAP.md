@@ -222,7 +222,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — criterio del propietario incorporado (decisión 13); artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
 | E28 | LJV · Título IX — Conciliación | ✅ 2026-10-30 · rehecho (31 fichas → 11, una por artículo); artículos de la transacción (CC 1810–1817) y de la ejecución (LEC 518, 520, 556/557) corregidos; umbral del Juez de Paz 10.000 € (decisión 14); conciliación como requisito de procedibilidad (art. 5.1 LO 1/2025) ([registro](revision/ljv-conciliacion.md)) |
 
-### Fase 5 · Revisión de contenido de las guías (25) ◐ (14/25)
+### Fase 5 · Revisión de contenido de las guías (25) ◐ (15/25)
 Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfanos (reconectar al punto correcto del flujo o eliminar, con motivo).
 
 | # | Guía | Hallazgos previos | Estado |
@@ -241,7 +241,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G12 | LJV · T. II Cap. IV — Tutela, curatela y guarda de hecho | 1 huérfano | ✅ 2026-10-31 · rehecha (59 pasos, mismos identificadores): sin tildes y con el CC anterior a la Ley 8/2021; huérfano conectado; «art. 753 bis LEC» fuera; cuentas aprobadas no liberan de responsabilidad; defensor en la remoción lo nombra el LAJ; excusa del art. 279 CC ([registro](revision/ljv-tutela-curatela.md)) |
 | G13 | LJV · T. II Cap. V — Emancipación | 1 huérfano | ✅ 2026-10-31 · corregida: arts. 314–324 → 239–248 CC; huérfano y «final con salidas» resueltos; con oposición solo letrado (art. 53.3); defensor judicial del art. 54.1; el LAJ admite y da cuenta al Juez si no es admisible ([registro](revision/ljv-emancipacion.md)) |
 | G14 | LJV · T. II Cap. VI — Patrimonio protegido | — | ✅ 2026-10-31 · recorrido fiel, bloques reescritos: art. 56 a)–d) (no «56.2-5»); apelación art. 458 LEC (no 457) con efecto suspensivo salvo nombramiento de administrador; fuera la «revisión trienal» y los criterios inventados; Registro Civil art. 76 LRC ([registro](revision/ljv-patrimonio-protegido.md)) |
-| G15 | LJV · T. II Cap. VII — Honor, intimidad e imagen | dependencia de CDN; «art. 98 LOPJ», «art. 59.4», «art. 1.4 LO 1/1982» | ☐ |
+| G15 | LJV · T. II Cap. VII — Honor, intimidad e imagen | dependencia de CDN; «art. 98 LOPJ», «art. 59.4», «art. 1.4 LO 1/1982» | ✅ 2026-10-31 · recorrido fiel; las tres citas corregidas (art. 86.5 j) LOPJ, art. 59.3 LJV, art. 2.3 LO 1/1982); subsanación cinco días; comparecencia en treinta; sin casación contra el auto de la Audiencia (art. 477 LEC); criterios del art. 2.2 LOPJM ([registro](revision/ljv-honor-menor.md)) |
 | G16 | LJV · T. II Cap. VIII — Actos de disposición | pie «Código Civil arts.…» mal leído; «Juzgado de Primera Instancia» × 3 | ☐ |
 | G17 | LJV · T. II Cap. IX — Ausencia y fallecimiento | ordinales del CC como apartados («194.1», «193.2», «196.2»); «Secretario judicial» × 2 | ☐ |
 | G18 | LJV · T. II Cap. X — Órganos de donantes vivos | «Juzgado de Primera Instancia» × 1; comprobar el plazo de 24 h | ☐ |
@@ -297,6 +297,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-31 · Fase 5 · G15 (honor, intimidad e imagen) revisada. Siguiente: G16.
 - 2026-10-31 · Fase 5 · G14 (patrimonio protegido) revisada. Siguiente: G15.
 - 2026-10-31 · Fase 5 · G13 (emancipación) revisada. Siguiente: G14.
 - 2026-10-31 · Fase 5 · G12 (tutela, curatela y guarda de hecho) rehecha. Siguiente: G13.
