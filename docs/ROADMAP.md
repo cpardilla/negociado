@@ -222,7 +222,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — criterio del propietario incorporado (decisión 13); artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
 | E28 | LJV · Título IX — Conciliación | ✅ 2026-10-30 · rehecho (31 fichas → 11, una por artículo); artículos de la transacción (CC 1810–1817) y de la ejecución (LEC 518, 520, 556/557) corregidos; umbral del Juez de Paz 10.000 € (decisión 14); conciliación como requisito de procedibilidad (art. 5.1 LO 1/2025) ([registro](revision/ljv-conciliacion.md)) |
 
-### Fase 5 · Revisión de contenido de las guías (25) ◐ (7/25)
+### Fase 5 · Revisión de contenido de las guías (25) ◐ (8/25)
 Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfanos (reconectar al punto correcto del flujo o eliminar, con motivo).
 
 | # | Guía | Hallazgos previos | Estado |
@@ -234,7 +234,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G05 | LEC · Liquidación del REM | — | ✅ 2026-10-31 · 55 → 51 pasos; el art. 810.4 remite a la entrega y testimonio del art. 788 (no a un decreto o auto); operaciones por el art. 787 (no 785/786) y sentencia sin cosa juzgada; vivienda preferente solo por muerte (art. 1406 CC); fuera «art. 1424: prescripción» e impuestos ([registro](revision/lec-liquidacion-rem.md)) |
 | G06 | LJV · T. II Cap. I — Filiación no matrimonial | — | ✅ 2026-10-31 · correcciones puntuales (recorrido fiel); postulación art. 3.2 LJV (no 3.4); testimonio para el Registro Civil por el art. 22.2 (no «26.3»); autorización del art. 23.2 con el art. 125 CC (no 124); apelación 20 días ([registro](revision/ljv-filiacion.md)) |
 | G07 | LJV · T. II Cap. I bis — Mención registral del sexo | — | ✅ 2026-10-31 · correcciones puntuales; 26 quinquies.2 (no .3); reversión por el art. 47 Ley 4/2023 (seis meses); fuera la representación del Fiscal «art. 29», OMS/Yogyakarta y «orden público» ([registro](revision/ljv-mencion-sexo-12-14.md)) |
-| G08 | LJV · T. II Cap. I ter — Nueva modificación | — | ☐ |
+| G08 | LJV · T. II Cap. I ter — Nueva modificación | — | ✅ 2026-10-31 · fiel; retoques: defensor judicial por el LAJ (no el Juez), recursos y art. 19.3 LJV, subsanación en cinco días, sección actual ([registro](revision/ljv-mencion-sexo-reversion.md)) |
 | G09 | LJV · T. II Cap. II — Habilitación y defensor judicial | 21 × «Secretario judicial» | ☐ |
 | G10 | LJV · T. II Cap. III — Adopción | 4 huérfanos | ☐ |
 | G11 | LJV · T. II Cap. III bis — Medidas de apoyo | — | ☐ |
@@ -293,6 +293,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-31 · Fase 5 · G08 (nueva modificación tras reversión) revisada. Siguiente: G09.
 - 2026-10-31 · Fase 5 · G07 (mención del sexo, 12–14 años) revisada. Siguiente: G08.
 - 2026-10-31 · Fase 5 · G06 (filiación no matrimonial) revisada. Siguiente: G07.
 - 2026-10-31 · Títulos de 15 guías LJV limpiados (llevaban texto de la barra de las páginas antiguas: «− 100% + ⊞ Mapa ↓ Descargar ↺ Reiniciar»); se toma el título del esquema homónimo. Nueva prueba que lo impide.

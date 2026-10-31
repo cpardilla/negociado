@@ -33,3 +33,23 @@ No hay nada más que trasladar. E11 queda cerrado.
 ## Corrección posterior (2026-10-29)
 
 Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).
+
+---
+
+# Revisión · G08 · Guía de tramitación de la nueva modificación de la mención registral del sexo tras una reversión
+
+- **Recurso**: `data/guias/ljv-mencion-sexo-reversion.js` (origen G08).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026; Ley 4/2023 (`LTRANS`); Ley 20/2011; LOPJ.
+- **Método**: fase 5. La guía es fiel a los arts. 26 sexies–26 nonies LJV y a los arts. 43, 44.3, 46.1 y 49 Ley 4/2023 y 91.2 Ley 20/2011 (todos comprobados); retoques puntuales sin tocar el recorrido.
+- **Resultado del comprobador**: 0 errores, 0 avisos; denominación legal «Juzgado de Primera Instancia» con la sección actual indicada.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | defensor_judicial | **error** | «El Juez nombra un defensor judicial» | El nombramiento se tramita por los arts. 27 y ss. LJV y lo resuelve el Letrado de la Administración de Justicia | LJV |
+| 2 | fin_denegacion, fin_inadmision | incompleto | «Podrá ser recurrible conforme a la normativa aplicable» | Apelación en veinte días, sin efectos suspensivos, con abogado y procurador (arts. 3.2 y 20.2 LJV; art. 458.1 LEC); nueva solicitud solo si cambian las circunstancias (art. 19.3 LJV) | LJV, LEC |
+| 3 | admision | incompleto | Subsanación sin plazo | Cinco días (art. 16.4 LJV) | LJV |
+| 4 | postulacion, solicitud, resolucion | error | «Excepción a la postulación parts-based… evitando costas»; «plazos acortados»; «el Juez actúa con independencia y sometido al imperio de la ley» | Retirados (sin base o sin contenido); tramitación preferente (art. 26 octies.1) y auto (art. 19.1) | LJV |
+| 5 | competencia | desfasado | Juzgado de Primera Instancia | Hoy, Sección de Familia, Infancia y Capacidad (art. 86.5 j) LOPJ) o Sección Civil | LO 1/2025 |
+| 6 | actores | error | Actor «laj» etiquetado como «Administración / Interesado» | «Solicitante / Oficina judicial» | — |

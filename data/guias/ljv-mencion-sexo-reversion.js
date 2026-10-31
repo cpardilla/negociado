@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G08.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G08.json; revisado con el BOE (registro: docs/revision/ljv-mencion-sexo-reversion.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-mencion-sexo-reversion",
@@ -13,7 +13,7 @@ Neg.data.register({
   "26 nonies"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G08"
  },
@@ -25,8 +25,8 @@ Neg.data.register({
   "Resolución y desenlace"
  ],
  "actores": {
-  "juez": "Juez / Órgano judicial",
-  "laj": "Administración / Interesado",
+  "juez": "Juez",
+  "laj": "Solicitante / Oficina judicial",
   "ambos": "Intervención conjunta"
  },
  "inicio": "inicio",
@@ -168,7 +168,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Este criterio coincide con el establecido para el Capítulo I bis y garantiza la proximidad del órgano judicial al centro de intereses de la persona afectada."
+     "texto": "Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 j) LOPJ) o, si no, la Sección Civil. Decide el Juez (art. 2.3 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 26 septies.1 | LOPJ, art. 86.5"
     }
    ],
    "siguiente": "postulacion"
@@ -232,7 +236,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Esta excepción a la postulación parts-based responde a la naturaleza de jurisdicción voluntaria del expediente y facilita el acceso a la justicia, evitando la generación de costas procesales."
+     "texto": "Para recurrir sí son necesarios abogado y procurador (art. 3.2, párrafo segundo, LJV)."
     }
    ],
    "siguiente": "solicitud"
@@ -281,16 +285,16 @@ Neg.data.register({
   },
   "defensor_judicial": {
    "fase": 2,
-   "titulo": "Nombramiento de defensor judicial (artículos 235-236 del Código Civil)",
-   "actor": "juez",
+   "titulo": "Nombramiento de defensor judicial (arts. 235 y 236 CC; arts. 27 y ss. LJV)",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez nombra un defensor judicial del menor cuando exista conflicto de intereses entre los menores y sus representantes legales. El defensor ejercerá su cargo en interés del menor, de acuerdo con su personalidad y con respeto a sus derechos, siendo aplicables al defensor judicial del menor las normas del defensor judicial de las personas con discapacidad."
+     "texto": "Si hay desacuerdo de los progenitores o representantes legales, entre sí o con la persona menor de edad, se nombra un defensor judicial (arts. 235 y 236 CC). El nombramiento se tramita por el expediente de los arts. 27 y siguientes LJV, que resuelve el Letrado de la Administración de Justicia."
     },
     {
-     "tipo": "nota",
-     "texto": "El defensor judicial actúa como garantía procesal del interés superior del menor en caso de conflicto entre sus representantes legales."
+     "tipo": "ley",
+     "texto": "Código Civil, arts. 235-236 | Ley 15/2015, arts. 27-32"
     }
    ],
    "siguiente": "solicitud"
@@ -316,7 +320,7 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "Tramitación preferente: el expediente recibe atención prioritaria y plazos acortados."
+     "texto": "Tramitación preferente (art. 26 octies.1 LJV)."
     },
     {
      "tipo": "ley",
@@ -332,7 +336,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez examina la solicitud y los documentos aportados para decidir sobre su admisión a trámite. Si la solicitud no cumple los requisitos formales, podrá requerir al interesado para que subsane las deficiencias o, en su caso, acuerde el archivo."
+     "texto": "El Juez examina la solicitud y los documentos aportados para decidir sobre su admisión a trámite. Si la solicitud tiene defectos, se concede un plazo de cinco días para subsanarlos; si no se subsanan, se archiva (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, arts. 16.4 y 26 octies.2"
     }
    ],
    "pregunta": "¿El Juez admite a trámite la solicitud?",
@@ -362,7 +370,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La inadmisión puede ser recurrible según la normativa procesal aplicable a la jurisdicción voluntaria."
+     "texto": "Puede presentarse una nueva solicitud corregida."
     }
    ],
    "fin": "error"
@@ -425,7 +433,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La resolución judicial constituye el acto final del procedimiento de jurisdicción voluntaria. El Juez actúa con independencia y sometido únicamente al imperio de la ley, valorando la prueba practicada y la manifestación de voluntad del solicitante."
+     "texto": "Se resuelve por auto (art. 19.1 LJV)."
     },
     {
      "tipo": "ley",
@@ -455,11 +463,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez ha denegado la aprobación judicial solicitada. La denegación debe ser motivada y podrá ser recurrible conforme a la normativa procesal aplicable a la jurisdicción voluntaria."
+     "texto": "El Juez ha denegado la aprobación judicial solicitada. Contra el auto cabe apelación en veinte días (art. 20.2 LJV; art. 458.1 LEC), sin efectos suspensivos y con abogado y procurador (art. 3.2 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "La denegación no impide que, en su caso, la persona interesada pueda reiterar la solicitud cuando concurran nuevas circunstancias o se subsanen los motivos de la denegación."
+     "texto": "Firme la resolución, no puede iniciarse otro expediente con idéntico objeto salvo que cambien las circunstancias (art. 19.3 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, arts. 3.2, 19.3 y 20.2 | LEC, art. 458"
     }
    ],
    "fin": "neutral"
@@ -491,14 +503,13 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Registro Civil competente recibe el testimonio de la resolución judicial y procede a la inscripción de la rectificación aprobada. La inscripción tiene eficacia constitutiva."
+     "texto": "El Registro Civil competente recibe el testimonio de la resolución judicial y procede a la inscripción de la rectificación aprobada. La inscripción tiene eficacia constitutiva (art. 46.1 Ley 4/2023; art. 91.2 Ley 20/2011)."
     },
     {
      "tipo": "lista",
      "titulo": "Actuaciones del Registro Civil",
      "items": [
       "Recibir el testimonio de la resolución judicial.",
-      "Verificar la competencia y la autenticidad del testimonio.",
       "Proceder a la inscripción de la rectificación de la mención registral relativa al sexo.",
       "Conservar el mismo número del Documento Nacional de Identidad (art. 49 Ley 4/2023)."
      ],
