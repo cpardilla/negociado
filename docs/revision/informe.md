@@ -49,7 +49,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-medidas-apoyo | Guía · LJV · Medidas judiciales de apoyo a personas con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Guía · LJV · Tutela, curatela y guarda de hecho | · | · | · | · | · | · | 1R |
 | ljv-emancipacion | Guía · LJV · Emancipación y beneficio de la mayoría de edad | · | · | · | · | · | · | · |
-| ljv-patrimonio-protegido | Guía · LJV · Patrimonio de las personas con discapacidad | 1E 1A 1R | · | · | 1R | · | · | 1R |
+| ljv-patrimonio-protegido | Guía · LJV · Patrimonio de las personas con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-honor-menor | Guía · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 1E 2A 3R | · | · | · | · | · | · |
 | ljv-actos-disposicion | Guía · LJV · Actos de disposición sobre bienes de menores y personas con apoyos | 6R | · | · | · | · | · | 1R |
 | ljv-ausencia-fallecimiento | Guía · LJV · Declaración de ausencia y fallecimiento | 13R | · | · | · | · | · | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 10E 3A 35R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 0E 0A 0R | 0E 0A 56R |
+| | **Total** | 9E 2A 34R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 56R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,20 +69,20 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2554
-- ✓ CC (BOE a 07-09-2026): 1262
+- ✓ LJV (BOE a 05-03-2026): 2609
+- ✓ CC (BOE a 07-09-2026): 1261
 - ✓ LEC (BOE a 07-10-2026): 1136
-- ✓ LOPJ (BOE a 09-10-2026): 101
+- ✓ LOPJ (BOE a 09-10-2026): 103
 - ✓ LTRANS (BOE a 20-12-2025): 62
+- ✓ LPPD (BOE a 18-12-2025): 61
 - ✓ LOPJM (BOE a 18-12-2025): 47
-- ✓ LRC (BOE a 24-02-2026): 38
-- ✓ LPPD (BOE a 18-12-2025): 36
+- ✓ LRC (BOE a 24-02-2026): 40
 - UE: 33
 - ✓ LOPDH (BOE a 16-12-2025): 33
 - ✓ LN (BOE a 22-10-2026): 30
 - ✓ CE (BOE a 20-05-2026): 29
 - ✓ RDTO (BOE a 19-12-2025): 25
-- ✓ LH (BOE a 07-01-2026): 22
+- ✓ LH (BOE a 07-01-2026): 21
 - ✓ LTO (BOE a 16-12-2025): 19
 - LO 1/2025: 16
 - ✓ LSC (BOE a 19-12-2025): 7
@@ -363,19 +363,9 @@ Sin hallazgos automáticos.
 
 ### ljv-patrimonio-protegido · Guía · LJV · Patrimonio de las personas con discapacidad
 
-**citas**
-
-- [error] «Art. 457»: el art. 457 LEC está sin contenido/derogado — _paso «recursos» › plazo 2_
-- [aviso] «Art. 56.5»: el art. 56 LJV no tiene apartado 5 (tiene 1) — _paso «cautelares» › ley 3_
-- [revisar] «Arts. 56-58»: la LPPD vigente acaba en el art. 17; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _pie_
-
-**plazos**
-
-- [revisar] plazo «20 días» no aparece en el precepto citado (Art. 457 LEC): «Plazo de interposición: 20 días siguientes a la notificación de la resolución (LEC Art. 457).» — _paso «recursos» › plazo 2_
-
 **terminologia**
 
-- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › plazo 2_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › info 1_
 
 ### ljv-honor-menor · Guía · LJV · Honor, intimidad e imagen del menor o persona con discapacidad
 
