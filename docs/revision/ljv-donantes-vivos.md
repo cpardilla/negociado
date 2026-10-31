@@ -22,3 +22,28 @@
 ## Para la fase 5 (G18)
 
 La guía dice «Juzgado de Primera Instancia» en un paso; revisar además si atribuye el plazo de 24 horas a la LJV.
+
+---
+
+# Revisión · G18 · Guía de tramitación de la extracción de órganos de donantes vivos
+
+- **Recurso**: `data/guias/ljv-donantes-vivos.js` (origen G18).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026; Ley 30/1979 (LTO), RD 1723/2012 (RDTO), CP y LOPJ en sus instantáneas.
+- **Método**: fase 5. Se conservan los 28 pasos y sus identificadores; se corrigen las fuentes y los bloques erróneos.
+- **Resultado del comprobador**: sin hallazgos (antes, 1 «revisar» de terminología). **Plazo de 24 horas** (pendiente en el ROADMAP): comprobado; está en el art. 8.6 RD 1723/2012, no en la Ley 30/1979.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | citacion_comparecencia | **error** | «El receptor podrá intervenir como persona con interés legítimo (arts. 3 y 17 LJV)» | El receptor no es parte: la ley garantiza su anonimato | Ley 30/1979 art. 4 d) |
+| 2 | documento_cesion_firmado, plazo_reflexion, fin_revocacion | error | Veinticuatro horas «conforme a la Ley 30/1979 y el RD»; la revocación «no produce efecto jurídico adverso» | Art. 8.6 RD 1723/2012; la revocación no puede dar lugar a indemnización alguna | RD 1723/2012 8.6 |
+| 3 | requerir_subsanacion, fin_solicitud_incompleta | error | Plazo «el que fije el LAJ»; archivo directo | Cinco días; como decide el Juez, el LAJ le da cuenta (art. 16.4) | LJV 16.4 |
+| 4 | requisitos_donante, requisitos_especificos_ok, fin_certificado_no_adjunto | incompleto | Sin destino a persona determinada ni anonimato; sin informe del Comité de Ética; certificado por «profesional competente» | Lista completa de los arts. 4 Ley 30/1979 y 8.1 y 2 RD 1723/2012 (incluidos el Comité de Ética y la exclusión por condicionamiento); certificado de médico distinto de los que extraen y trasplantan, con su contenido (art. 8.3) | Ley 30/1979 4; RD 8 |
+| 5 | competencia_objetiva | desfasado | «Novedad: deja de ser competente el Juez encargado del Registro Civil»; «LO 1/2025, DA 1.ª» | Juez de Primera Instancia (art. 78.2 LJV; art. 8.4 RD); hoy Sección Civil, por la excepción del art. 86.5 j) LOPJ (decisión 11) | LJV 78.2; LOPJ 86.5 |
+| 6 | competencia_territorial | impreciso | «Partido judicial» | «Localidad» de la extracción o el trasplante, como dice la ley | LJV 78.2 |
+| 7 | fin_incompetencia_* | error | «Indicar al solicitante que se dirija» al competente | El LAJ da cuenta al Juez, que, oídos el Fiscal y el solicitante, resuelve e indica el órgano competente o remite (art. 16.2 y 3) | LJV 16 |
+| 8 | verificar_oposicion, resolucion_conceder | impreciso | «Dudas razonables» | Basta la duda sobre el consentimiento para oponerse «eficazmente» (art. 8.5 RD); sin la firma previa del documento no hay extracción | LJV 80; RD 8.5; Ley 30/1979 4 c) |
+| 9 | fin_denegacion, fin_oposicion | impreciso | «Recurso conforme al art. 20»; «el expediente puede reanudarse» | Apelación (art. 20.2); nuevo expediente si cambian las circunstancias (art. 19.3) | LJV 19.3, 20.2 |
+| 10 | fin_consentimiento_invalido, fin_exito | impreciso | «Ley 30/1979, arts. 1 y 4»; «Código Penal» | Arts. 2 y 4; art. 156 bis CP; centros autorizados y asistencia al donante (art. 8.7 y 8 RD) | Ley 30/1979; CP 156 bis; RD 8 |
+| 11 | inicio_donante, actores, pie | forma | «Vía habitual»; «Letrado AJ», «Ambos» | Quitado; nombres completos; pie con las normas citadas | — |

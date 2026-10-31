@@ -222,7 +222,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — criterio del propietario incorporado (decisión 13); artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
 | E28 | LJV · Título IX — Conciliación | ✅ 2026-10-30 · rehecho (31 fichas → 11, una por artículo); artículos de la transacción (CC 1810–1817) y de la ejecución (LEC 518, 520, 556/557) corregidos; umbral del Juez de Paz 10.000 € (decisión 14); conciliación como requisito de procedibilidad (art. 5.1 LO 1/2025) ([registro](revision/ljv-conciliacion.md)) |
 
-### Fase 5 · Revisión de contenido de las guías (25) ◐ (17/25)
+### Fase 5 · Revisión de contenido de las guías (25) ◐ (18/25)
 Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfanos (reconectar al punto correcto del flujo o eliminar, con motivo).
 
 | # | Guía | Hallazgos previos | Estado |
@@ -244,7 +244,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G15 | LJV · T. II Cap. VII — Honor, intimidad e imagen | dependencia de CDN; «art. 98 LOPJ», «art. 59.4», «art. 1.4 LO 1/1982» | ✅ 2026-10-31 · recorrido fiel; las tres citas corregidas (art. 86.5 j) LOPJ, art. 59.3 LJV, art. 2.3 LO 1/1982); subsanación cinco días; comparecencia en treinta; sin casación contra el auto de la Audiencia (art. 477 LEC); criterios del art. 2.2 LOPJM ([registro](revision/ljv-honor-menor.md)) |
 | G16 | LJV · T. II Cap. VIII — Actos de disposición | pie «Código Civil arts.…» mal leído; «Juzgado de Primera Instancia» × 3 | ✅ 2026-10-31 · sin pública subasta por defecto desde la Ley 8/2021 (art. 65.2 suprimido; art. 287.2.º CC); recorrido de las exenciones del art. 166 CC corregido; la excepción del patrimonio protegido la concede el Juez; la partición del art. 1060 CC va por este capítulo; pie corregido ([registro](revision/ljv-actos-disposicion.md)) |
 | G17 | LJV · T. II Cap. IX — Ausencia y fallecimiento | ordinales del CC como apartados («194.1», «193.2», «196.2»); «Secretario judicial» × 2 | ✅ 2026-10-31 · ordinales corregidos; riesgo inminente con los tres meses del siniestro (art. 193.3.º); división de la herencia arts. 782 y ss. LEC (no 777–782); la competencia por siniestro, solo en el fallecimiento; el cónyuge es defensor nato (art. 181 CC); mandatos extinguidos al inscribirse la ausencia ([registro](revision/ljv-ausencia-fallecimiento.md)) |
-| G18 | LJV · T. II Cap. X — Órganos de donantes vivos | «Juzgado de Primera Instancia» × 1; comprobar el plazo de 24 h | ☐ |
+| G18 | LJV · T. II Cap. X — Órganos de donantes vivos | «Juzgado de Primera Instancia» × 1; comprobar el plazo de 24 h | ✅ 2026-10-31 · 24 h comprobado (art. 8.6 RD 1723/2012); el receptor es anónimo y no interviene; subsanación cinco días; requisitos completos (Comité de Ética, certificado de médico distinto); revocación sin indemnización ([registro](revision/ljv-donantes-vivos.md)) |
 | G19 | LJV · T. II Cap. XI — Hechos pasados | «JPI» × 2, «Juzgado de Primera Instancia» × 1 | ☐ |
 | G20 | LJV · Título IV — Derecho sucesorio | «art. 1057.2» × 5; «JPI» × 22 | ☐ |
 | G21 | LJV · Título V — Derecho de obligaciones | «arts. 1158, 1159 y 1210.2» × 3; «Secretario judicial» × 8 | ☐ |
@@ -297,6 +297,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-31 · Fase 5 · G18 (donantes vivos) revisada. Siguiente: G19.
 - 2026-10-31 · Fase 5 · G17 (ausencia y fallecimiento) revisada. Siguiente: G18.
 - 2026-10-31 · Fase 5 · G16 (actos de disposición) revisada. Siguiente: G17.
 - 2026-10-31 · Fase 5 · G15 (honor, intimidad e imagen) revisada. Siguiente: G16.

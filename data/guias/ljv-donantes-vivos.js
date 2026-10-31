@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G18.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G18.json; revisado con el BOE (registro: docs/revision/ljv-donantes-vivos.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-donantes-vivos",
@@ -12,7 +12,7 @@ Neg.data.register({
   "80"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G18"
  },
@@ -25,8 +25,8 @@ Neg.data.register({
  ],
  "actores": {
   "juez": "Juez",
-  "laj": "Letrado AJ",
-  "ambos": "Ambos"
+  "laj": "Letrado de la Administración de Justicia",
+  "ambos": "Juez / LAJ"
  },
  "inicio": "inicio",
  "pasos": {
@@ -73,7 +73,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El donante ha presentado directamente la solicitud ante el Juzgado para iniciar el expediente de constatación judicial. Esta es la vía habitual de inicio del procedimiento."
+     "texto": "El donante ha presentado directamente la solicitud ante el Juzgado para iniciar el expediente de constatación judicial."
     },
     {
      "tipo": "nota",
@@ -113,19 +113,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Es competente para conocer de estos expedientes el Juez de Primera Instancia. Tras la reforma operada por la Ley Orgánica 1/2025, de 2 de enero, la referencia debe entenderse hecha al juez o jueza de la sección civil del Tribunal de Instancia correspondiente."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Novedad relevante: la competencia deja de corresponder al Juez encargado del Registro Civil (régimen anterior) y pasa al Juez de Primera Instancia / sección civil del Tribunal de Instancia."
+     "texto": "Es competente el Juez de Primera Instancia (art. 78.2 LJV; art. 8.4 RD 1723/2012). Hoy, la Sección Civil del Tribunal de Instancia: el art. 86.5 j) LOPJ excluye este capítulo de la Sección de Familia, Infancia y Capacidad (decisión 11)."
     },
     {
      "tipo": "aviso",
-     "texto": "En este expediente, a diferencia de otros de jurisdicción voluntaria, NO se sustituye la figura del Juez por la del Letrado de la Administración de Justicia. La intervención judicial directa es imprescindible."
+     "texto": "Decide el Juez, ante quien el donante presta el consentimiento y que extiende el documento de cesión (arts. 79.3 y 80 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 78.2 · Ley 15/2015, art. 2 · LO 1/2025, DA 1.ª"
+     "texto": "Art. 78.2 LJV · Art. 8.4 RD 1723/2012 · Art. 86.5 j) LOPJ"
     }
    ],
    "pregunta": "¿Es competente objetivamente el órgano judicial receptor?",
@@ -149,11 +145,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La competencia territorial se configura mediante dos fueros alternativos, a elección del solicitante: el partido judicial donde haya de realizarse la extracción o el partido judicial donde haya de realizarse el trasplante."
+     "texto": "Es competente el Juez de la localidad donde haya de realizarse la extracción o el trasplante, a elección del solicitante (art. 78.2 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "Se trata de fueros alternativos: el solicitante puede elegir cuál de los dos le resulta más conveniente. No es necesario que la extracción y el trasplante se realicen en el mismo partido judicial."
+     "texto": "Se trata de fueros alternativos: el solicitante puede elegir cuál de los dos le resulta más conveniente. No es necesario que la extracción y el trasplante se realicen en la misma localidad."
     },
     {
      "tipo": "ley",
@@ -163,12 +159,12 @@ Neg.data.register({
    "pregunta": "¿El Juzgado es territorialmente competente?",
    "opciones": [
     {
-     "texto": "Sí, es el partido de la extracción o del trasplante",
+     "texto": "Sí, es la localidad de la extracción o del trasplante",
      "tono": "t-ok",
      "destino": "solicitud_contenido"
     },
     {
-     "texto": "No, corresponde a otro partido judicial",
+     "texto": "No, corresponde a otra localidad",
      "tono": "t-aviso",
      "destino": "fin_incompetencia_territorial"
     }
@@ -197,7 +193,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 79.1 · Ley 15/2015, art. 17"
+     "texto": "Art. 79.1 LJV · Art. 8.4 RD 1723/2012"
     }
    ],
    "pregunta": "¿La solicitud o comunicación contiene todos los elementos requeridos?",
@@ -221,19 +217,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La solicitud o comunicación no reúne todos los requisitos exigidos. El Letrado de la Administración de Justicia debe requerir al solicitante para que subsane las deficiencias detectadas en el plazo que se le conceda al efecto."
+     "texto": "El LAJ requiere al solicitante para que subsane los defectos u omisiones (art. 16.4 LJV)."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo de subsanación: el que fije el Letrado de la Administración de Justicia, conforme a los artículos 13 y siguientes de la Ley 15/2015 (normas comunes de tramitación)."
+     "texto": "Cinco días para subsanar (art. 16.4 LJV)."
     },
     {
      "tipo": "aviso",
-     "texto": "Si el solicitante no subsana las deficiencias en el plazo concedido, el expediente no podrá continuar y se procederá al archivo de las actuaciones."
+     "texto": "Si no se subsana en plazo, como el expediente lo resuelve el Juez, el LAJ le da cuenta y este acuerda lo que proceda (art. 16.4 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 13-22 (normas comunes de tramitación)"
+     "texto": "Art. 16.4 LJV · Art. 79.1 LJV"
     }
    ],
    "pregunta": "¿Se ha subsanado la solicitud en plazo?",
@@ -263,12 +259,14 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Requisitos legales del donante vivo",
      "items": [
-      "Ser mayor de edad (no se autoriza la obtención de órganos de menores, ni siquiera con consentimiento de padres o tutores)",
-      "Plenitud de facultades mentales y estado de salud adecuado",
-      "Haber recibido información previa de las consecuencias de la extracción y del trasplante, adaptada a sus necesidades (incluidas personas con discapacidad)",
-      "Consentimiento expreso, libre, consciente y desinteresado, por escrito y firmado",
-      "Que el órgano o parte de él sea compatible con la vida y su función pueda ser compensada por el organismo del donante",
-      "Gratuidad de la donación: sin compensación económica alguna para el donante, ni precio exigido al receptor"
+      "Ser mayor de edad (no se obtienen órganos de menores, aun con el consentimiento de padres o tutores)",
+      "Gozar de plenas facultades mentales y de un estado de salud adecuado",
+      "Haber sido informado previamente de las consecuencias de su decisión, de los riesgos para sí y para el receptor, de las contraindicaciones y de lo que hará el centro si no puede trasplantarse el órgano, en formatos accesibles si tiene discapacidad",
+      "Consentimiento expreso, libre, consciente y desinteresado",
+      "Órgano o parte de él cuya obtención sea compatible con la vida y cuya función pueda compensarse de forma adecuada y suficientemente segura",
+      "Destino: el trasplante a una persona determinada para mejorar sustancialmente su pronóstico vital o sus condiciones de vida, con el anonimato del receptor",
+      "Gratuidad: sin compensación económica para el donante ni precio para el receptor (art. 2 Ley 30/1979)",
+      "Informe del Comité de Ética correspondiente; no se obtienen órganos si hay sospecha de que se altera el libre consentimiento o media condicionamiento económico, social, psicológico o de otro tipo (art. 8.2 RD 1723/2012)"
      ],
      "marcar": true
     },
@@ -278,7 +276,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Ley 15/2015, art. 79 · Convenio de Oviedo · Directiva 2010/45/UE"
+     "texto": "Arts. 2 y 4 Ley 30/1979 · Art. 8.1 y 2 RD 1723/2012 · Art. 78.1 LJV · Convenio de Oviedo, art. 19"
     }
    ],
    "pregunta": "¿Concurren todos los requisitos legales del donante?",
@@ -321,11 +319,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El certificado médico es un documento esencial que acredita la aptitud del donante tanto desde el punto de vista físico como mental para la extracción del órgano. Debe estar emitido por un profesional sanitario competente."
+     "texto": "Lo emite un médico cualificado distinto de los que vayan a efectuar la extracción y el trasplante; se refiere necesariamente al estado de salud, a la información facilitada, a la respuesta y motivaciones libremente expresadas por el donante y, en su caso, a cualquier indicio de presión externa (art. 8.3 RD 1723/2012)."
     },
     {
      "tipo": "ley",
-     "texto": "RD 1723/2012, art. 8 · Ley 30/1979, art. 4"
+     "texto": "Art. 79.1 LJV · Art. 8.3 RD 1723/2012"
     }
    ],
    "pregunta": "¿Se ha adjuntado el certificado médico de salud física y mental del donante?",
@@ -364,7 +362,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El receptor del órgano podrá intervenir como persona con interés legítimo, conforme a los artículos 3 y 17 de la Ley 15/2015, aunque no esté expresamente mencionado en el artículo 79."
+     "texto": "El receptor no es parte: la ley garantiza su anonimato (art. 4 d) Ley 30/1979)."
     },
     {
      "tipo": "nota",
@@ -372,7 +370,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 79.2 · Ley 15/2015, arts. 3 y 17 · Ley 15/2015, art. 18"
+     "texto": "Art. 79.2 LJV · Art. 8.4 RD 1723/2012 · Art. 4 d) Ley 30/1979"
     }
    ],
    "siguiente": "desarrollo_comparecencia"
@@ -459,11 +457,11 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "La oposición no requiere fundamentación especial: basta con que el firmante exprese dudas razonables sobre la validez del consentimiento para que el documento de cesión no pueda formalizarse."
+     "texto": "Basta con que el firmante dude de que el consentimiento se haya prestado de forma expresa, libre, consciente y desinteresada: puede oponerse «eficazmente» a la donación (art. 80.2 LJV; art. 8.5 RD 1723/2012)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80"
+     "texto": "Art. 80.2 LJV · Art. 8.5 RD 1723/2012"
     }
    ],
    "pregunta": "¿Se ha opuesto algún firmante a la donación?",
@@ -504,8 +502,12 @@ Neg.data.register({
      "texto": "El documento de cesión debe hacer constar expresamente la posibilidad que tiene el donante de revocar el consentimiento en cualquier momento previo a la intervención quirúrgica. Se facilitará copia del documento al donante."
     },
     {
+     "tipo": "nota",
+     "texto": "En ningún caso puede efectuarse la extracción sin la firma previa de este documento (art. 4 c) Ley 30/1979; art. 8.5 RD 1723/2012)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 · Ley 15/2015, art. 19"
+     "texto": "Art. 80.2 y 3 LJV · Art. 8.5 RD 1723/2012"
     }
    ],
    "siguiente": "documento_cesion_firmado"
@@ -521,7 +523,7 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "Entre la firma del documento de cesión del órgano y la extracción efectiva deben transcurrir al menos 24 horas, conforme a la normativa sustantiva (Ley 30/1979 y RD 1723/2012)."
+     "texto": "Entre la firma del documento de cesión y la extracción deben transcurrir al menos veinticuatro horas (art. 8.6 RD 1723/2012)."
     },
     {
      "tipo": "aviso",
@@ -529,11 +531,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El régimen de impugnación de la resolución es el previsto en el artículo 20 de la Ley 15/2015 (recursos)."
+     "texto": "Contra la resolución definitiva cabe apelación (art. 20.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 · Ley 15/2015, art. 20 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8"
+     "texto": "Art. 80 LJV · Art. 20.2 LJV · Art. 8.5 y 6 RD 1723/2012"
     }
    ],
    "siguiente": "plazo_reflexion"
@@ -553,7 +555,7 @@ Neg.data.register({
     },
     {
      "tipo": "info",
-     "texto": "Durante este plazo, el donante puede revocar libremente su consentimiento en cualquier momento anterior a la intervención quirúrgica, sin necesidad de formalidad alguna y sin que la revocación produzca efecto jurídico adverso para el donante."
+     "texto": "Durante este plazo, el donante puede revocar libremente su consentimiento en cualquier momento anterior a la intervención quirúrgica, sin sujeción a formalidad alguna; la revocación no puede dar lugar a ningún tipo de indemnización (art. 8.6 RD 1723/2012)."
     },
     {
      "tipo": "nota",
@@ -561,7 +563,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8"
+     "texto": "Art. 80.3 LJV · Art. 8.6 RD 1723/2012"
     }
    ],
    "pregunta": "¿El donante ha revocado su consentimiento durante el plazo de reflexión?",
@@ -596,8 +598,12 @@ Neg.data.register({
      "texto": "Recuerde: incluso después de este momento, y hasta el inicio efectivo de la intervención quirúrgica, el donante conserva el derecho a revocar su consentimiento en cualquier momento y sin formalidad alguna."
     },
     {
+     "tipo": "nota",
+     "texto": "La obtención solo puede hacerse en centros expresamente autorizados, que informan antes a la autoridad competente; al donante se le presta asistencia para su restablecimiento y seguimiento clínico (art. 8.7 y 8 RD 1723/2012)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 · Ley 30/1979 · RD 1723/2012 · Directiva 2010/45/UE"
+     "texto": "Art. 80 LJV · Art. 8 RD 1723/2012 · Ley 30/1979"
     }
    ],
    "fin": "success"
@@ -617,11 +623,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Contra la resolución de denegación cabe recurso conforme al artículo 20 de la Ley 15/2015. El donante podrá iniciar un nuevo expediente si se modifican las circunstancias que motivaron la denegación."
+     "texto": "Contra la resolución cabe apelación (art. 20.2 LJV). Firme, no puede iniciarse otro expediente sobre idéntico objeto salvo que cambien las circunstancias (art. 19.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 · Ley 15/2015, art. 20"
+     "texto": "Art. 80.1 LJV · Arts. 19.3 y 20.2 LJV"
     }
    ],
    "fin": "error"
@@ -641,11 +647,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El expediente puede reanudarse si se disipan las dudas que motivaron la oposición y se celebra una nueva comparecencia."
+     "texto": "Si cambian las circunstancias, puede promoverse un nuevo expediente (art. 19.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80"
+     "texto": "Art. 80.2 LJV · Art. 8.5 RD 1723/2012 · Art. 19.3 LJV"
     }
    ],
    "fin": "warning"
@@ -657,15 +663,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El órgano judicial que ha recibido la solicitud o comunicación no es competente objetivamente para conocer de este expediente. La competencia corresponde al Juez de Primera Instancia o, tras la LO 1/2025, al juez o jueza de la sección civil del Tribunal de Instancia."
+     "texto": "El órgano que ha recibido la solicitud no es competente objetivamente. Es competente el Juez de Primera Instancia (art. 78.2 LJV); hoy, la Sección Civil del Tribunal de Instancia."
     },
     {
      "tipo": "nota",
-     "texto": "Se debe remitir la documentación al órgano judicial competente, indicando al solicitante la razón de la incompetencia y el Juzgado al que debe dirigirse."
+     "texto": "El LAJ da cuenta al Juez, que acuerda lo que proceda tras oír al Ministerio Fiscal y al solicitante; la resolución indica el órgano que se estima competente (art. 16.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 78.2 · LO 1/2025, DA 1.ª"
+     "texto": "Arts. 16.2 y 78.2 LJV"
     }
    ],
    "fin": "error"
@@ -677,15 +683,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juzgado no es territorialmente competente. La competencia territorial corresponde al partido judicial donde haya de realizarse la extracción o el trasplante, a elección del solicitante."
+     "texto": "El Juzgado no es territorialmente competente: lo es el de la localidad donde haya de realizarse la extracción o el trasplante, a elección del solicitante (art. 78.2 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "Se debe indicar al solicitante que debe dirigirse al Juzgado de Primera Instancia del partido judicial correspondiente al lugar de la extracción o del trasplante."
+     "texto": "El LAJ da cuenta al Juez, que, tras oír al Ministerio Fiscal y al solicitante, acuerda la remisión al Juzgado que considere competente (art. 16.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 78.2"
+     "texto": "Arts. 16.3 y 78.2 LJV"
     }
    ],
    "fin": "error"
@@ -741,7 +747,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "El Código Penal tipifica el tráfico de órganos humanos como garantía penal de la gratuidad y el altruismo que presiden la donación en vida. Cualquier indicio de tráfico o compensación económica debe comunicarse a las autoridades competentes."
+     "texto": "El tráfico de órganos humanos es delito (art. 156 bis CP). Cualquier indicio de tráfico o compensación económica debe comunicarse a las autoridades competentes."
     },
     {
      "tipo": "nota",
@@ -749,7 +755,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 30/1979, arts. 1 y 4 · RD 1723/2012, art. 8 · Código Penal · Convenio de Oviedo"
+     "texto": "Arts. 2 y 4 Ley 30/1979 · Art. 8.1 y 2 RD 1723/2012 · Art. 156 bis CP"
     }
    ],
    "fin": "error"
@@ -781,7 +787,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El solicitante no ha subsanado las deficiencias de la solicitud en el plazo concedido. El expediente no puede continuar y se procederá al archivo de las actuaciones."
+     "texto": "El solicitante no ha subsanado en los cinco días; el LAJ ha dado cuenta al Juez, que acuerda lo procedente (art. 16.4 LJV)."
     },
     {
      "tipo": "nota",
@@ -789,7 +795,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 13-22 (normas comunes de tramitación)"
+     "texto": "Art. 16.4 LJV"
     }
    ],
    "fin": "warning"
@@ -805,11 +811,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El certificado médico debe ser emitido por un profesional sanitario competente y conforme a lo dispuesto en el Real Decreto 1723/2012, en particular su artículo 8. Sin él, no es posible acreditar la aptitud del donante para la extracción."
+     "texto": "El certificado lo emite un médico cualificado distinto de los que vayan a efectuar la extracción y el trasplante (art. 8.3 RD 1723/2012). Sin él, no es posible acreditar la aptitud del donante para la extracción."
     },
     {
      "tipo": "ley",
-     "texto": "RD 1723/2012, art. 8 · Ley 15/2015, art. 79.1"
+     "texto": "Art. 79.1 LJV · Art. 8.3 RD 1723/2012"
     }
    ],
    "fin": "error"
@@ -829,15 +835,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El derecho de revocación es una manifestación del carácter libre del consentimiento. La revocación no produce efecto jurídico adverso para el donante. Si el donante cambia de opinión nuevamente, podrá iniciar un nuevo expediente de constatación judicial."
+     "texto": "El derecho de revocación es una manifestación del carácter libre del consentimiento. La revocación no puede dar lugar a ningún tipo de indemnización (art. 8.6 RD 1723/2012). Si el donante cambia de opinión nuevamente, podrá iniciar un nuevo expediente de constatación judicial."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8"
+     "texto": "Art. 80.3 LJV · Art. 8.6 RD 1723/2012"
     }
    ],
    "fin": "warning"
   }
  },
- "pie": "Ley 15/2015, arts. 78-80 · Ley 30/1979 · RD 1723/2012 · Directiva 2010/45/UE · Convenio de Oviedo"
+ "pie": "*Referencias normativas*<br>Arts. 16, 19, 20 y 78 a 80 LJV<br>Arts. 2 y 4 Ley 30/1979<br>Art. 8 RD 1723/2012<br>Art. 156 bis CP<br>Convenio de Oviedo, art. 19 · Directiva 2010/45/UE"
 });
