@@ -122,7 +122,9 @@ async function run(opts) {
     for (let i = 0; i < 100 && !port; i++) {
       await sleep(100);
       const f = path.join(profile, "DevToolsActivePort");
-      if (fs.existsSync(f)) port = fs.readFileSync(f, "utf8").split("\n")[0].trim();
+      // The file can be read half written (a truncated number gave «bad port»): wait for both lines.
+      const lines = fs.existsSync(f) ? fs.readFileSync(f, "utf8").split("\n") : [];
+      if (lines.length >= 2 && lines[1].trim() && /^\d{4,5}$/.test(lines[0].trim())) port = lines[0].trim();
     }
     if (!port) throw new Error("El navegador no abrió el puerto de depuración");
     const { webSocketDebuggerUrl } = await (await fetch(`http://127.0.0.1:${port}/json/version`)).json();
