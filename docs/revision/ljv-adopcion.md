@@ -52,4 +52,19 @@ Al revisar E13 se comprobó que el art. 86.5 LOPJ (LO 1/2025) atribuye a las Sec
 | 11 | competencia | desfasado | Juzgado de Primera Instancia | Hoy, Sección de Familia, Infancia y Capacidad (art. 86.5 j) LOPJ) o Sección Civil | LO 1/2025 |
 | 12 | actores | terminología | «Letrado A. Justicia» | Letrado de la Administración de Justicia | — |
 
-**Pendiente del propietario**: plazo para presentar la demanda de reconocimiento de la necesidad de asentimiento: quince días (art. 37.2 LJV) o el que señale el LAJ hasta veinte (art. 781.1 LEC).
+**Pregunta al propietario** sobre el plazo de la demanda de asentimiento: resuelta el mismo día (decisión 16; véase abajo).
+
+## Corrección posterior (2026-10-31) · Decisión 16: art. 781 LEC
+
+El propietario indicó que el art. 781 LEC vigente fija quince días desde la Ley 26/2015. Comprobado en la API del BOE (bloque `a781` de BOE-A-2000-323, consultado el 31-10-2026): la versión de la Ley 26/2015 (art. 4.5; BOE-A-2015-8470; vigente desde el 18-8-2015) dice «otorgará el plazo de quince días» y regula la pieza separada (apartado 3). La versión siguiente, fechada el 1-10-2015 y atribuida a la LO 7/2015 (solo cambia «Secretario judicial»), reproduce por error la redacción anterior («no podrá ser superior a veinte días»). Es la que recoge nuestra instantánea `sources/boe/LEC.json`, que guarda la última versión de cada artículo.
+
+| Recurso | Lugar | Antes | Ahora |
+|---|---|---|---|
+| G10 | reclamacion_asentimiento | Nota de discrepancia 15/20 días, pendiente del propietario | Quince días también en el art. 781.1 LEC (Ley 26/2015); la versión del BOE de 1-10-2015 es errónea |
+| G10 | contencioso_asentimiento | «Se tramita con arreglo al art. 753 LEC» (en la revisión G10 se retiró «pieza separada» por fiarse de la instantánea) | Pieza separada en el mismo procedimiento (art. 753 LEC); firme lo resuelto sobre el asentimiento, citación ante el Juez de quienes falten y resolución sobre la adopción; auto apelable con efectos suspensivos (art. 781.3 LEC) |
+| E13 | Artículo 37 › nota «Plazo» | «Para el expediente de adopción rige el plazo de la LJV» frente a los veinte días del art. 781.1 LEC | Quince días en ambos; aviso sobre la versión errónea del BOE |
+| E13 | Artículo 37 › reclamación | «Conforme al art. 781 LEC (que remite al art. 753)» | Contenido del art. 781.3 LEC (pieza separada, citaciones, apelación con efectos suspensivos) |
+
+**Pendiente**: el visor de la LEC de la app (`data/leyes/LEC.js`, generado de la instantánea) muestra el art. 781 con la redacción errónea. Corregirlo exige un mecanismo de corrección de instantáneas en `tools/build-law.js`: se propone al propietario.
+
+Comprobador tras el cambio: 3 avisos «el art. 781 LEC no tiene apartado 3», por la instantánea errónea; desaparecerán cuando se corrija.

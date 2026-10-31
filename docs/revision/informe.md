@@ -20,7 +20,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-mencion-sexo-12-14 | Esquema · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-reversion | Esquema · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
 | ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | 1E | · | · | · | · | · | 3R |
-| ljv-adopcion | Esquema · LJV · Adopción | · | · | · | 1R | · | · | 1R |
+| ljv-adopcion | Esquema · LJV · Adopción | 1A | · | · | 1R | · | · | 1R |
 | ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | · | · | · | 1R | · | · | 1R |
 | ljv-emancipacion | Esquema · LJV · Emancipación y beneficio de la mayoría de edad | · | · | · | · | · | · | · |
@@ -45,7 +45,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-mencion-sexo-12-14 | Guía · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-reversion | Guía · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
 | ljv-defensor-judicial | Guía · LJV · Habilitación para comparecer y defensor judicial | 1E | · | · | · | · | · | 1R |
-| ljv-adopcion | Guía · LJV · Adopción | · | · | · | · | · | · | 1R |
+| ljv-adopcion | Guía · LJV · Adopción | 2A | · | · | · | · | · | 1R |
 | ljv-medidas-apoyo | Guía · LJV · Medidas judiciales de apoyo a personas con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Guía · LJV · Tutela, curatela y guarda de hecho | 3E 1A 1R | · | · | · | · | 1E | 2R |
 | ljv-emancipacion | Guía · LJV · Emancipación y beneficio de la mayoría de edad | 49E | · | · | · | · | 1E 1R | 3R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 62E 4A 36R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 2E 0A 1R | 0E 0A 60R |
+| | **Total** | 62E 7A 36R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 2E 0A 1R | 0E 0A 60R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,9 +69,9 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2415
-- ✓ CC (BOE a 07-09-2026): 1223
-- ✓ LEC (BOE a 07-10-2026): 1119
+- ✓ LJV (BOE a 05-03-2026): 2414
+- ✓ CC (BOE a 07-09-2026): 1224
+- ✓ LEC (BOE a 07-10-2026): 1120
 - ✓ LOPJ (BOE a 09-10-2026): 93
 - ✓ LTRANS (BOE a 20-12-2025): 62
 - ✓ LOPJM (BOE a 18-12-2025): 48
@@ -177,6 +177,10 @@ Sin hallazgos automáticos.
 - [revisar] «incapacitación» × 1 → Ley 8/2021: medidas de apoyo; ya no existe la incapacitación — _sección «Ecosistema normativo — conexiones relacionadas» › 4 › norma «Marco legal complementario»_
 
 ### ljv-adopcion · Esquema · LJV · Adopción
+
+**citas**
+
+- [aviso] «art. 781.3»: el art. 781 LEC no tiene apartado 3 (tiene 1, 2) — _sección «Artículos del Capítulo III» › tarjeta «Artículo 37» › «Reclamación de la necesidad de asentimiento por progenitores» › 1 › punto.3_
 
 **plazos**
 
@@ -341,6 +345,11 @@ Sin hallazgos automáticos.
 - [revisar] «Juzgado de Primera Instancia» × 4 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › info 1 | paso «competencia» › comprobación 2.1 | paso «competencia» › comprobación 2.2 …_
 
 ### ljv-adopcion · Guía · LJV · Adopción
+
+**citas**
+
+- [aviso] «art. 781.3»: el art. 781 LEC no tiene apartado 3 (tiene 1, 2) — _paso «contencioso_asentimiento» › nota 2_
+- [aviso] «Arts. 781.3 y 753»: el art. 781 LEC no tiene apartado 3 (tiene 1, 2) — _paso «contencioso_asentimiento» › ley 3_
 
 **terminologia**
 

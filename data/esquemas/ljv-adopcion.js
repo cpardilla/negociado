@@ -538,7 +538,7 @@ Neg.data.register({
              "t": "El Letrado de la Administración de Justicia acordará la suspensión del expediente y otorgará el plazo de 15 días para la presentación de la demanda, de la que conocerá el mismo Tribunal."
             },
             {
-             "t": "Presentada la demanda dentro de plazo, el Letrado de la Administración de Justicia dictará decreto declarando contencioso el expediente de adopción y acordará seguir su tramitación conforme al artículo 781 LEC (que, a su vez, remite a los trámites del art. 753 LEC)."
+             "t": "Presentada la demanda dentro de plazo, el Letrado de la Administración de Justicia dictará decreto declarando contencioso el expediente de adopción y acordará seguir su tramitación conforme al artículo 781 LEC: la demanda se tramita en el mismo procedimiento, como pieza separada, con arreglo al art. 753 LEC; firme lo que se resuelva sobre el asentimiento, se cita ante el Juez a quienes aún deban consentir, asentir o ser oídos y se resuelve sobre la adopción; el auto final es apelable con efectos suspensivos (art. 781.3 LEC)."
             },
             {
              "t": "Si no se presentara la demanda en el plazo fijado, el Letrado de la Administración de Justicia dictará decreto dando por finalizado el trámite y alzando la suspensión del expediente de adopción."
@@ -581,7 +581,7 @@ Neg.data.register({
         "nota": {
          "tono": "t-aviso",
          "etiqueta": "Plazo",
-         "texto": "El art. 37.2 LJV fija 15 días para presentar la demanda; el art. 781.1 LEC habla de un plazo «que no podrá ser superior a veinte días». Para el expediente de adopción rige el plazo de la LJV."
+         "texto": "Quince días para presentar la demanda (art. 37.2 LJV). Plazo de quince días también en el art. 781.1 LEC, en la redacción de la Ley 26/2015 (vigente desde el 18-8-2015). La versión consolidada del BOE fechada el 1-10-2015 (cambio de «Secretario judicial» por la LO 7/2015) reproduce por error la redacción anterior («no superior a veinte días»): no debe aplicarse."
         }
        }
       ],

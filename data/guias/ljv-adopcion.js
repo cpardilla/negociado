@@ -325,7 +325,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El art. 781.1 LEC, para el mismo trámite, dice que el LAJ señala el plazo que estime necesario, «que no podrá ser superior a veinte días». La guía sigue el art. 37.2 LJV (quince días). Pendiente de criterio del propietario."
+     "texto": "Plazo de quince días también en el art. 781.1 LEC, en la redacción de la Ley 26/2015 (vigente desde el 18-8-2015). La versión consolidada del BOE fechada el 1-10-2015 (cambio de «Secretario judicial» por la LO 7/2015) reproduce por error la redacción anterior («no superior a veinte días»): no debe aplicarse."
     },
     {
      "tipo": "ley",
@@ -383,11 +383,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La demanda se tramita con arreglo al art. 753 LEC (art. 781.1 LEC)."
+     "texto": "La demanda se tramita en el mismo procedimiento, como pieza separada, con arreglo al art. 753 LEC. Firme la resolución sobre la necesidad del asentimiento, el LAJ cita ante el Juez a quienes aún deban consentir, asentir o ser oídos (art. 177 CC) y se resuelve sobre la adopción. El auto que pone fin al procedimiento es apelable con efectos suspensivos (art. 781.3 LEC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 37.2, párrafo segundo, LJV · Arts. 781.1 y 753 LEC"
+     "texto": "Art. 37.2, párrafo segundo, LJV · Arts. 781.3 y 753 LEC"
     }
    ],
    "fin": "warning"
