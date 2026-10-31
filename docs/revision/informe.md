@@ -59,9 +59,9 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-obligaciones | Guía · LJV · Título V · Derecho de obligaciones | · | · | · | · | · | · | 1R |
 | ljv-usufructuario | Guía · LJV · Usufructuario: reclamación de créditos vencidos | · | · | · | · | · | · | 1R |
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 1R |
-| ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
+| ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | · | · | · | · | · | · | 1R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 8E 0A 4R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 50R |
+| | **Total** | 3E 0A 4R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 49R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,9 +69,9 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2755
+- ✓ LJV (BOE a 05-03-2026): 2770
 - ✓ CC (BOE a 07-09-2026): 1291
-- ✓ LEC (BOE a 07-10-2026): 1139
+- ✓ LEC (BOE a 07-10-2026): 1138
 - ✓ LOPJ (BOE a 09-10-2026): 114
 - ✓ LPPD (BOE a 18-12-2025): 70
 - ✓ LTRANS (BOE a 20-12-2025): 62
@@ -84,7 +84,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ CE (BOE a 20-05-2026): 24
 - ✓ LH (BOE a 07-01-2026): 21
 - ✓ LTO (BOE a 16-12-2025): 20
-- LO 1/2025: 16
+- LO 1/2025: 18
 - ✓ LSC (BOE a 19-12-2025): 7
 - ✓ CP (BOE a 09-04-2026): 7
 - ✓ LOPDGDD (BOE a 08-10-2026): 6
@@ -421,18 +421,9 @@ Sin hallazgos automáticos.
 
 ### ljv-subastas · Guía · LJV · Título VII · Subastas voluntarias
 
-**citas**
-
-- [error] «art. 641»: el art. 641 LEC está sin contenido/derogado — _paso «modo_venta» › opción 2_
-- [error] «artículo 641»: el art. 641 LEC está sin contenido/derogado — _paso «modo_venta» › info 1_
-- [error] «artículo 641»: el art. 641 LEC está sin contenido/derogado — _paso «modo_venta» › ley 2_
-- [error] «artículo 641»: el art. 641 LEC está sin contenido/derogado — _paso «especializada» › info 1_
-- [error] «Artículo 641»: el art. 641 LEC está sin contenido/derogado — _paso «especializada» › ley 2_
-
 **terminologia**
 
 - [revisar] «Juzgado de Primera Instancia» × 3 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › info 1 | paso «competencia_inmueble» › info 1 | paso «competencia_mueble» › info 1_
-- [revisar] «Secretario judicial» × 14 → Letrado/a de la Administración de Justicia (LO 7/2015) — _paso «modo_venta» › info 1 | paso «especializada» › info 1 | paso «consulta_rpc» › info 1 …_
 
 ### ljv-conciliacion · Guía · LJV · Título IX · Conciliación
 

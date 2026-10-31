@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G24.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G24.json; revisado con el BOE (registro: docs/revision/ljv-subastas.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-subastas",
@@ -12,7 +12,7 @@ Neg.data.register({
   "111"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G24"
  },
@@ -25,7 +25,7 @@ Neg.data.register({
  ],
  "actores": {
   "ambos": "LAJ / Interesado",
-  "laj": "Letrado de la Admón. de Justicia"
+  "laj": "Letrado de la Administración de Justicia"
  },
  "inicio": "inicio",
  "pasos": {
@@ -106,7 +106,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La competencia objetiva corresponde siempre al Juzgado de Primera Instancia. El fuero territorial depende de la naturaleza del bien."
+     "texto": "Es competente el Juzgado de Primera Instancia; hoy, la Sección Civil del Tribunal de Instancia. El fuero territorial depende de la naturaleza del bien."
     },
     {
      "tipo": "ley",
@@ -138,11 +138,11 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "<strong>Artículo 109.1, párrafo segundo, de la Ley 15/2015.</strong>"
+     "texto": "*Artículo 109.1, segundo inciso, de la Ley 15/2015.* · Artículo 2.2 LJV"
     },
     {
      "tipo": "nota",
-     "texto": "Este fuero es imperativo y no admite elección por el solicitante, aun cuando el titular tenga su domicilio en otra demarcación."
+     "texto": "No puede modificarse por sumisión (art. 2.2 LJV), aunque el titular tenga su domicilio en otra demarcación."
     }
    ],
    "siguiente": "postulacion"
@@ -154,11 +154,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Será competente el Juzgado de Primera Instancia que corresponda al domicilio del titular. Si fueran varios titulares, el correspondiente a cualquiera de ellos, a elección del solicitante."
+     "texto": "Será competente el Juzgado de Primera Instancia que corresponda al domicilio del titular. Si fueran varios titulares, el correspondiente a cualquiera de ellos."
     },
     {
      "tipo": "ley",
-     "texto": "<strong>Artículo 109.1, párrafo primero, de la Ley 15/2015.</strong>"
+     "texto": "*Artículo 109.1, primer inciso, de la Ley 15/2015.*"
     }
    ],
    "siguiente": "postulacion"
@@ -287,7 +287,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "La omisión de esta identificación puede generar indefensión a los ocupantes y nulidad de actuaciones, así como responsabilidad del solicitante frente al adjudicatario por cargas o situaciones posesorias ocultas."
+     "texto": "La identificación permite tramitar las comunicaciones del art. 661 LEC, que determinan si los ocupantes tienen derecho a permanecer en el inmueble."
     }
    ],
    "pregunta": "¿Existen arrendatarios u ocupantes del inmueble?",
@@ -337,11 +337,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "En la solicitud podrá pedirse al Secretario judicial que acuerde la venta del bien o derecho por persona o entidad especializada. De estimarse procedente, se acordará con sujeción a lo establecido en el artículo 641 de la Ley de Enjuiciamiento Civil en cuanto sea compatible con este Título."
+     "texto": "En la solicitud puede pedirse al LAJ que acuerde la venta del bien o derecho por persona o entidad especializada (art. 110.3 LJV)."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "El art. 110.3 LJV remite a la regulación de la LEC sobre realización por persona o entidad especializada, que la LO 1/2025 dejó sin contenido desde el 3-4-2025 (art. 22.54 de la LO 1/2025). La habilitación del art. 110.3 sigue vigente (decisión 13)."
     },
     {
      "tipo": "ley",
-     "texto": "<strong>Artículo 110.3 de la Ley 15/2015</strong>, en relación con el <strong>artículo 641 de la Ley de Enjuiciamiento Civil.</strong>"
+     "texto": "Artículo 110.3 LJV · Art. 22.54 LO 1/2025 · Decisión 13"
     }
    ],
    "pregunta": "¿Qué modo de realización se solicita?",
@@ -352,7 +356,7 @@ Neg.data.register({
      "destino": "pliego"
     },
     {
-     "texto": "Venta por persona o entidad especializada (art. 641 LEC)",
+     "texto": "Venta por persona o entidad especializada (art. 110.3 LJV)",
      "tono": "t-nota",
      "destino": "especializada"
     }
@@ -365,15 +369,26 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "De estimarse procedente la petición del solicitante, el Secretario judicial acordará la venta por persona o entidad especializada con sujeción al artículo 641 de la Ley de Enjuiciamiento Civil en cuanto sea compatible con las disposiciones del Título VII."
+     "texto": "La petición se admite y el LAJ decide si procede (art. 110.3 LJV)."
     },
     {
-     "tipo": "ley",
-     "texto": "<strong>Artículo 641 de la Ley de Enjuiciamiento Civil.</strong> Realización por persona o entidad especializada: requisitos, caución, precio mínimo y régimen temporal."
+     "tipo": "lista",
+     "titulo": "Criterio del juzgado (decisión 13)",
+     "items": [
+      "Lo no regulado se integra con las normas compatibles de la LEC (art. 8 LJV); no se aplica mecánicamente el antiguo procedimiento de la LEC",
+      "El art. 640 LEC (convenio de realización) sirve de referencia para las garantías: derechos de terceros, aprobación de la transmisión por el LAJ y tratamiento de las cargas",
+      "No se equipara a la subasta electrónica del art. 111.4 LJV",
+      "La resolución que la acuerde fija las condiciones: rendición de cuentas, pago, adquirente, aprobación posterior de la transmisión por el LAJ, documentación e inscripción"
+     ],
+     "marcar": true
     },
     {
      "tipo": "nota",
      "texto": "Aun cuando se opte por esta vía, el pliego de condiciones particulares del artículo 110.1.c) sigue siendo necesario, pues fija las reglas económicas y materiales de la enajenación."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Artículo 110.3 LJV · Artículos 8 LJV y 640 LEC · Decisión 13"
     }
    ],
    "siguiente": "pliego"
@@ -407,7 +422,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El pliego opera como lex specialis de la subasta: rige en todo aquello no previsto por la Ley de Enjuiciamiento Civil, y se expresará íntegramente en los edictos (artículo 111.5)."
+     "texto": "La publicidad y celebración se ajustan a la LEC en todo lo que no esté previsto en el pliego; el pliego se expresa en los edictos (artículo 111.5)."
     }
    ],
    "siguiente": "consulta_rpc"
@@ -419,7 +434,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Secretario judicial, antes de resolver sobre la solicitud, consultará el Registro Público Concursal a los efectos previstos en la legislación especial."
+     "texto": "El LAJ, antes de resolver sobre la solicitud, consultará el Registro Público Concursal a los efectos previstos en la legislación especial."
     },
     {
      "tipo": "ley",
@@ -458,7 +473,7 @@ Neg.data.register({
      "titulo": "Actuaciones a practicar",
      "items": [
       "Comunicar al solicitante la existencia de la inscripción concursal.",
-      "Remitir, en su caso, las actuaciones al juez del concurso competente.",
+      "Estar a lo que disponga la legislación concursal sobre la enajenación de bienes del concursado.",
       "Abstenerse de acordar la celebración de la subasta en tanto subsista la limitación."
      ],
      "marcar": true
@@ -477,7 +492,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "A la vista de la documentación, el Secretario judicial resolverá lo que proceda sobre la celebración de la subasta."
+     "texto": "A la vista de la documentación, el LAJ resolverá lo que proceda sobre la celebración de la subasta."
     },
     {
      "tipo": "ley",
@@ -496,7 +511,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El Registro Público Concursal notificará al Juzgado la práctica de cualquier asiento asociado al NIF notificado. El Secretario judicial comunicará asimismo la finalización del expediente cuando ésta se produzca."
+     "texto": "El Registro Público Concursal notificará al Juzgado la práctica de cualquier asiento asociado al NIF notificado. El LAJ comunicará asimismo la finalización del expediente cuando ésta se produzca."
     }
    ],
    "pregunta": "¿La documentación y presupuestos son suficientes para acordar la celebración?",
@@ -527,8 +542,12 @@ Neg.data.register({
      "texto": "La finalización del expediente deberá comunicarse al Registro Público Concursal, tal como prevé el artículo 111.2, párrafo cuarto."
     },
     {
+     "tipo": "nota",
+     "texto": "Contra el decreto cabe recurso de revisión ante el Juez (art. 20.2 LJV; art. 454 bis LEC)."
+    },
+    {
      "tipo": "ley",
-     "texto": "<strong>Artículo 111.2 de la Ley 15/2015.</strong>"
+     "texto": "*Artículo 111.2 de la Ley 15/2015.* · Artículo 20.2 LJV"
     }
    ],
    "fin": "neutral"
@@ -540,7 +559,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Acordada la celebración, si se tratare de la subasta de un bien inmueble o derecho real inscrito en el Registro de la Propiedad o de bienes muebles sujetos a un régimen de publicidad registral similar, el Secretario judicial solicitará por procedimientos electrónicos certificación registral de dominio y cargas."
+     "texto": "Acordada la celebración, si se tratare de la subasta de un bien inmueble o derecho real inscrito en el Registro de la Propiedad o de bienes muebles sujetos a un régimen de publicidad registral similar, el LAJ solicitará por procedimientos electrónicos certificación registral de dominio y cargas."
     },
     {
      "tipo": "ley",
@@ -576,7 +595,7 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "<strong>Caducidad de la nota marginal: seis meses.</strong> Caducará a los seis meses de su fecha salvo que con anterioridad el Secretario judicial notifique al Registrador el cierre del expediente o su suspensión, en cuyo caso el plazo se computará desde que el Secretario judicial notifique su reanudación."
+     "texto": "<strong>Caducidad de la nota marginal: seis meses.</strong> Caducará a los seis meses de su fecha salvo que con anterioridad el LAJ notifique al Registrador el cierre del expediente o su suspensión, en cuyo caso el plazo se computará desde que el LAJ notifique su reanudación."
     },
     {
      "tipo": "lista",
@@ -584,7 +603,7 @@ Neg.data.register({
      "items": [
       "Expedir la certificación de dominio y cargas con información continuada por procedimientos electrónicos.",
       "Hacer constar por nota marginal la situación de venta en subasta del bien o derecho.",
-      "Notificar, inmediatamente y de forma telemática, al Secretario judicial y al Portal de Subastas de la Agencia Estatal Boletín Oficial del Estado la presentación de otro u otros títulos que afecten o modifiquen la información inicial."
+      "Notificar, inmediatamente y de forma telemática, al LAJ y al Portal de Subastas de la Agencia Estatal Boletín Oficial del Estado la presentación de otro u otros títulos que afecten o modifiquen la información inicial."
      ],
      "marcar": true
     },
@@ -602,7 +621,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La subasta se llevará a cabo, en todo caso, de forma electrónica en el Portal de Subastas de la Agencia Estatal Boletín Oficial del Estado, bajo la responsabilidad del Secretario judicial."
+     "texto": "La subasta se llevará a cabo, en todo caso, de forma electrónica en el Portal de Subastas de la Agencia Estatal Boletín Oficial del Estado, bajo la responsabilidad del LAJ."
     },
     {
      "tipo": "ley",
@@ -637,7 +656,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Terminada la subasta, el Secretario judicial, mediante decreto, aprobará el remate en favor del único o mejor postor, siempre y cuando cubra el tipo mínimo que hubiera fijado el solicitante o no se hubiere reservado expresamente el derecho a aprobarla."
+     "texto": "Terminada la subasta, el LAJ, mediante decreto, aprobará el remate en favor del único o mejor postor, siempre y cuando cubra el tipo mínimo que hubiera fijado el solicitante o no se hubiere reservado expresamente el derecho a aprobarla."
     },
     {
      "tipo": "ley",
@@ -702,7 +721,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Cuando el postor cubre el tipo mínimo fijado por el solicitante y éste no se hubiere reservado expresamente el derecho a aprobar la subasta, el Secretario judicial, mediante decreto, aprobará el remate en favor del único o mejor postor."
+     "texto": "Cuando el postor cubre el tipo mínimo fijado por el solicitante y éste no se hubiere reservado expresamente el derecho a aprobar la subasta, el LAJ, mediante decreto, aprobará el remate en favor del único o mejor postor."
     },
     {
      "tipo": "ley",
@@ -837,6 +856,10 @@ Neg.data.register({
      "texto": "El decreto de adjudicación es la resolución que cierra positivamente la subasta y sirve de título inscribible al adjudicatario."
     },
     {
+     "tipo": "nota",
+     "texto": "Contra el decreto cabe recurso de revisión ante el Juez, con Abogado y Procurador (arts. 3.2 y 20.2 LJV; art. 454 bis LEC)."
+    },
+    {
      "tipo": "ley",
      "texto": "<strong>Artículo 111.8 de la Ley 15/2015.</strong>"
     },
@@ -869,7 +892,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El testimonio tiene eficacia equivalente a una escritura pública de compraventa a efectos registrales en relación con las inscripciones derivadas de la adjudicación."
+     "texto": "Es título suficiente para las inscripciones registrales que correspondan (art. 111.8 LJV)."
     }
    ],
    "siguiente": "comunicacion_final_rpc"
@@ -881,7 +904,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Secretario judicial pondrá en conocimiento del Registro Público Concursal la finalización del expediente cuando la misma se produzca."
+     "texto": "El LAJ pondrá en conocimiento del Registro Público Concursal la finalización del expediente cuando la misma se produzca."
     },
     {
      "tipo": "ley",
@@ -908,13 +931,13 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "nota",
-     "texto": "El expediente de subasta voluntaria ha concluido con adjudicación firme. El adjudicatario dispone del testimonio del decreto como título suficiente para la inscripción registral que corresponda."
+     "texto": "El expediente de subasta voluntaria ha concluido con adjudicación. El adjudicatario dispone del testimonio del decreto como título suficiente para la inscripción registral que corresponda."
     },
     {
      "tipo": "lista",
      "titulo": "Resultados alcanzados",
      "items": [
-      "Aprobación del remate mediante decreto del Secretario judicial.",
+      "Aprobación del remate mediante decreto del LAJ.",
       "Decreto de adjudicación con todos los requisitos del artículo 111.8.",
       "Testimonio entregado al adjudicatario como título inscribible.",
       "Comunicación al Registro Público Concursal de la finalización del expediente.",

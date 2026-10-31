@@ -39,3 +39,24 @@ Respuesta a la pregunta sobre el art. 110.3 LJV, incorporada a la ficha del art.
 - La resolución que la acuerde fija las condiciones (rendición de cuentas, pago, adquirente, aprobación posterior de la transmisión por el LAJ, documentación e inscripción). Documentación adicional conveniente, marcada como práctica.
 
 No se ha incorporado la mención a la Ley 7/1996 de Ordenación del Comercio Minorista (arts. 56–61): no hay instantánea del BOE para comprobarla y el propio planteamiento indica que su art. 56.2 excluye las subastas judiciales (decisión 9).
+
+---
+
+# Revisión · G24 · Guía de tramitación de las subastas voluntarias (Título VII)
+
+- **Recurso**: `data/guias/ljv-subastas.js` (origen G24).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026; LEC a 07-10-2026 (art. 641 sin contenido desde el 3-4-2025, art. 22.54 LO 1/2025, comprobado); LOPJ en su instantánea.
+- **Método**: fase 5. La guía seguía fielmente los arts. 108 a 111 LJV: **corregida**; se conservan los 32 pasos. Aplicada la decisión 13, como en E27.
+- **Resultado del comprobador**: 0 errores, 0 avisos (antes: 5 errores por el art. 641 LEC); queda la denominación legal «Juzgado de Primera Instancia» (art. 109.1 LJV), con la sección actual indicada.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | modo_venta, especializada | **error** | Venta por persona o entidad especializada «con sujeción al art. 641 LEC» (requisitos, caución, precio mínimo, plazos) como vigente | El art. 641 está sin contenido (LO 1/2025); la habilitación del art. 110.3 LJV sigue: el LAJ decide; integración por el art. 8 LJV con el art. 640 LEC como referencia; no se equipara a la subasta electrónica; la resolución fija las condiciones (decisión 13) | LJV 8, 110.3; LEC 640; LO 1/2025 |
+| 2 | pliego | **error** | El pliego «rige en todo aquello no previsto por la LEC» | Al revés: la publicidad y la celebración se ajustan a la LEC en lo no previsto en el pliego (art. 111.5) | LJV 111.5 |
+| 3 | testimonio | inventado | El testimonio «equivale a una escritura pública de compraventa» | Título suficiente para las inscripciones (art. 111.8) | LJV 111.8 |
+| 4 | arrendatarios, fin_concurso | inventado | Omitir a los ocupantes causa «nulidad de actuaciones y responsabilidad»; «remitir las actuaciones al juez del concurso» | Finalidad de las comunicaciones del art. 661 LEC; estar a la legislación concursal | LEC 661 |
+| 5 | competencia_* | impreciso | Art. 109.1 «párrafo primero / segundo»; fuero «imperativo»; «a elección del solicitante» | Primer y segundo inciso (un solo párrafo); sin sumisión (art. 2.2); texto legal; hoy Sección Civil | LJV 2.2, 109.1 |
+| 6 | fin_inadmision, decreto_adjudicacion | incompleto | Sin recursos | Revisión ante el Juez contra los decretos del LAJ (art. 20.2 LJV; art. 454 bis LEC) | LJV 20.2 |
+| 7 | varios, actores | terminología | «Secretario judicial» × 14; «Letrado de la Admón. de Justicia» | LAJ; nombre completo | LO 7/2015 |
