@@ -479,6 +479,15 @@
 .card-body > * + .block {
   margin-top: 0;
 }
+/* Vertical rhythm: consecutive pieces of a section (cards, notes, tables) or of a guía step
+   (notes, checklists) never touch, whatever their combination. Later rules with their own
+   margin (.route-title) keep it. */
+.section-body > * + * {
+  margin-top: var(--sp-4);
+}
+.step-body > * + * {
+  margin-top: var(--sp-3);
+}
 .card.flash {
   animation: flash 1.6s ease-out;
 }
