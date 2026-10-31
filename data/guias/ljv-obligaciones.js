@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G21.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G21.json; revisado con el BOE (registro: docs/revision/ljv-obligaciones.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-obligaciones",
@@ -12,7 +12,7 @@ Neg.data.register({
   "99"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G21"
  },
@@ -25,8 +25,8 @@ Neg.data.register({
   "Resolución y cierre"
  ],
  "actores": {
-  "ambos": "LAJ y Juez",
-  "juez": "Juez de Primera Instancia",
+  "ambos": "Juez / LAJ",
+  "juez": "Juez",
   "laj": "Letrado/a de la Administración de Justicia"
  },
  "inicio": "inicio",
@@ -91,6 +91,10 @@ Neg.data.register({
      "texto": "La regla especial es proyección del principio de protección del consumidor, en línea con el texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios, aprobado por el Real Decreto Legislativo 1/2007, de 16 de noviembre."
     },
     {
+     "tipo": "nota",
+     "texto": "Hoy, la Sección Civil del Tribunal de Instancia."
+    },
+    {
      "tipo": "ley",
      "texto": "Art. 97.1 Ley 15/2015 · RDL 1/2007."
     }
@@ -145,7 +149,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ verifica que concurren los presupuestos del art. 96 y los que exige la jurisprudencia."
+     "texto": "El LAJ verifica que concurren los presupuestos del art. 96."
     },
     {
      "tipo": "lista",
@@ -153,7 +157,7 @@ Neg.data.register({
      "items": [
       "Que proceda conforme al artículo 1128 del Código Civil o cualquier otra disposición legal que permita el señalamiento judicial del plazo.",
       "Que exista previamente un acto, negocio o relación jurídica de la que nace una obligación exigible, vigente y no extinguida por satisfacción.",
-      "Principio rogatorio: la fijación del plazo ha sido solicitada por parte interesada (la fijación de oficio incurriría en incongruencia extra petita, inadmisible procesal y constitucionalmente a la luz del artículo 24 de la Constitución Española)."
+      "Que la pida alguno de los sujetos de la obligación (art. 96: «a instancia de alguno de los sujetos de la misma»)."
      ],
      "marcar": true
     },
@@ -163,7 +167,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 96 Ley 15/2015 · CC art. 1128 · CC arts. 1125–1130 · CE art. 24."
+     "texto": "Art. 96 Ley 15/2015 · CC art. 1128 · CC arts. 1125–1130"
     }
    ],
    "pregunta": "¿Concurren los presupuestos habilitantes de la fijación judicial del plazo?",
@@ -222,7 +226,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si se suscitare oposición, el expediente se hará contencioso y el Secretario judicial (LAJ) citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
+     "texto": "Si se suscitare oposición, el expediente se hará contencioso y el LAJ citará a los interesados a una vista, continuando la tramitación con arreglo a lo previsto para el juicio verbal."
     },
     {
      "tipo": "ley",
@@ -250,7 +254,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Practicada la prueba y oídos los interesados, el Juez resuelve por auto, conforme a las normas comunes de la Ley 15/2015."
+     "texto": "Practicada la prueba y oídos los interesados, el Juez resuelve por auto en los cinco días siguientes a la comparecencia (art. 19.1 Ley 15/2015)."
     },
     {
      "tipo": "lista",
@@ -287,7 +291,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ verifica que el expediente entra en el ámbito del Capítulo II: se aplica cuando, procediendo la consignación conforme a la ley, se realice ante el órgano judicial. Quedan fuera las consignaciones que se tramiten ante Notario con arreglo al artículo 69 de la Ley del Notariado."
+     "texto": "El LAJ verifica que el expediente entra en el ámbito del Capítulo II: se aplica cuando, procediendo la consignación conforme a la ley, se realice ante el órgano judicial. La consignación puede hacerse también ante Notario (art. 1178 CC; art. 69 LN), por un cauce distinto."
     },
     {
      "tipo": "lista",
@@ -305,7 +309,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 98.1 Ley 15/2015 · CC art. 1176 · LN art. 69."
+     "texto": "Art. 98.1 Ley 15/2015 · CC arts. 1176 y 1178 · LN art. 69"
     }
    ],
    "pregunta": "¿Concurre algún supuesto habilitante de consignación judicial?",
@@ -342,6 +346,10 @@ Neg.data.register({
      "marcar": true
     },
     {
+     "tipo": "nota",
+     "texto": "Hoy, la Sección Civil del Tribunal de Instancia."
+    },
+    {
      "tipo": "ley",
      "texto": "Art. 98.2 Ley 15/2015."
     }
@@ -371,11 +379,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La legitimación del tercero se rige por el artículo 1178 del Código Civil y por las reglas del pago por tercero de los artículos 1158, 1159 y 1210.2 del Código Civil."
+     "texto": "La legitimación del tercero se rige por el artículo 1178 del Código Civil y por las reglas del pago por tercero de los artículos 1158, 1159 y 1210.2.º del Código Civil."
     },
     {
      "tipo": "ley",
-     "texto": "CC art. 1178 · CC arts. 1158, 1159 · CC art. 1210.2."
+     "texto": "CC art. 1178 · CC arts. 1158, 1159 y 1210.2.º."
     }
    ],
    "pregunta": "¿Quién promueve la consignación?",
@@ -386,7 +394,7 @@ Neg.data.register({
      "destino": "cg_postulacion"
     },
     {
-     "texto": "Un tercero legitimado (pago por tercero, arts. 1158, 1159 y 1210.2 CC)",
+     "texto": "Un tercero legitimado (pago por tercero, arts. 1158, 1159 y 1210.2.º CC)",
      "tono": "t-nota",
      "destino": "cg_postulacion"
     }
@@ -434,7 +442,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Si la solicitud no reuniera los requisitos necesarios, el Secretario judicial dictará decreto que así lo declare y mandará devolver al promotor lo consignado (art. 99.2, primer inciso)."
+     "texto": "Si la solicitud no reuniera los requisitos necesarios, el LAJ dictará decreto que así lo declare y mandará devolver al promotor lo consignado (art. 99.2, primer inciso)."
     },
     {
      "tipo": "ley",
@@ -594,7 +602,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Cuando los interesados comparecidos retirasen la cosa debida aceptando expresamente la consignación, el Secretario judicial dictará decreto teniéndola por aceptada, con los efectos legales procedentes, mandando cancelar la obligación y, en su caso, la garantía, si así lo solicitara el promotor."
+     "texto": "Cuando los interesados comparecidos retirasen la cosa debida aceptando expresamente la consignación, el LAJ dictará decreto teniéndola por aceptada, con los efectos legales procedentes, mandando cancelar la obligación y, en su caso, la garantía, si así lo solicitara el promotor."
     },
     {
      "tipo": "nota",
@@ -683,7 +691,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Cuando el promotor instara el mantenimiento de la consignación, el Secretario judicial citará al promotor, al acreedor y a aquellos que pudieran estar interesados a una comparecencia a celebrar ante el Juez, en la que serán oídos y se practicarán aquellas pruebas que hubieren sido propuestas y acordadas."
+     "texto": "Cuando el promotor instara el mantenimiento de la consignación, el LAJ citará al promotor, al acreedor y a aquellos que pudieran estar interesados a una comparecencia a celebrar ante el Juez, en la que serán oídos y se practicarán aquellas pruebas que hubieren sido propuestas y acordadas."
     },
     {
      "tipo": "nota",
@@ -739,20 +747,16 @@ Neg.data.register({
   },
   "fin_derivacion_notarial": {
    "fase": 0,
-   "titulo": "Derivación a la vía notarial",
+   "titulo": "Ofrecimiento de pago y consignación ante Notario",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El expediente no corresponde a la jurisdicción civil, sino a la vía notarial. El LAJ informa al promotor sobre la vía aplicable."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Quedan fuera del Capítulo II las consignaciones que se tramiten ante Notario con arreglo al artículo 69 de la Ley del Notariado (redacción dada por la Ley 15/2015). Es una vía alternativa al cauce judicial del Capítulo II."
+     "texto": "El ofrecimiento de pago y la consignación pueden hacerse ante Notario (art. 69 LN; art. 1178 CC). Es una vía alternativa a la judicial de los arts. 98 y 99 LJV, que el promotor elige."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 98.1, segundo inciso, Ley 15/2015 · LN art. 69."
+     "texto": "Art. 98.1 Ley 15/2015 · Art. 1178 CC · Art. 69 LN"
     }
    ],
    "fin": "neutral"
@@ -768,11 +772,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El LAJ da cuenta al Juez para que dicte auto declarando la incompetencia, con indicación del órgano competente (Juez de Primera Instancia del domicilio del deudor o, en los supuestos de consumidor-empresario, el del domicilio del acreedor a elección de éste)."
+     "texto": "El LAJ da cuenta al Juez, que, oídos el Fiscal y el solicitante, acuerda lo procedente y remite al órgano competente (art. 16.3 LJV) (el del domicilio del deudor o, en los supuestos de consumidor-empresario, el del domicilio del acreedor a elección de este)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 97.1 Ley 15/2015 · Normas comunes sobre competencia (Ley 15/2015)."
+     "texto": "Art. 97.1 Ley 15/2015 · Art. 16.3 Ley 15/2015."
     }
    ],
    "fin": "error"
@@ -798,11 +802,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La fijación de oficio del plazo sería incongruente extra petita e inadmisible procesal y constitucionalmente (art. 24 CE)."
+     "texto": "El art. 96 exige que la pida alguno de los sujetos de la obligación. Si la solicitud no es admisible, el LAJ da cuenta al Juez, que resuelve (art. 17.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 96 Ley 15/2015 · CC art. 1128 · CE art. 24."
+     "texto": "Arts. 17.1 y 96 Ley 15/2015 · CC art. 1128"
     }
    ],
    "fin": "error"
@@ -821,7 +825,7 @@ Neg.data.register({
      "titulo": "Actuaciones tras la oposición (art. 97.3)",
      "items": [
       "El expediente se hace contencioso.",
-      "El Secretario judicial cita a los interesados a una vista.",
+      "El LAJ cita a los interesados a una vista.",
       "La tramitación continúa con arreglo a lo previsto para el juicio verbal (arts. 437 y siguientes LEC)."
      ],
      "marcar": true
@@ -851,6 +855,10 @@ Neg.data.register({
      "texto": "La resolución se rige por las normas comunes de la Ley 15/2015. Notificada y firme, integra el contenido obligacional y permite exigir el cumplimiento al vencimiento del plazo así fijado."
     },
     {
+     "tipo": "nota",
+     "texto": "Contra el auto cabe apelación, sin efectos suspensivos, en veinte días ante la Audiencia Provincial (art. 20.2 LJV; art. 458 LEC)."
+    },
+    {
      "tipo": "ley",
      "texto": "Art. 96 Ley 15/2015 · CC art. 1128 · Normas comunes Ley 15/2015."
     }
@@ -871,6 +879,10 @@ Neg.data.register({
      "texto": "La obligación mantiene el régimen temporal que le corresponda conforme a su título o a las reglas generales del Código Civil."
     },
     {
+     "tipo": "nota",
+     "texto": "Contra el auto cabe apelación (art. 20.2 LJV; art. 458 LEC)."
+    },
+    {
      "tipo": "ley",
      "texto": "Art. 96 Ley 15/2015 · CC arts. 1125 a 1130."
     }
@@ -880,19 +892,19 @@ Neg.data.register({
   "fin_no_procede_cg": {
    "fase": 0,
    "titulo": "No procede la consignación judicial",
-   "actor": "juez",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "No concurre ninguno de los supuestos del art. 1176 CC ni la cláusula de cierre. El cauce del Capítulo II no es el adecuado."
+     "texto": "No concurre ninguno de los supuestos del art. 1176 CC: la consignación no procede conforme a la ley (art. 98.1 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "El LAJ da cuenta al Juez para que dicte auto de inadmisión, ordenando en su caso la devolución de lo consignado."
+     "texto": "Si la solicitud no reúne los requisitos necesarios, el LAJ dicta decreto que así lo declara y manda devolver al promotor lo consignado (art. 99.2 LJV); cabe recurso de revisión ante el Juez (art. 20.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 98.1 Ley 15/2015 · CC art. 1176."
+     "texto": "Arts. 98.1, 99.2 y 20.2 Ley 15/2015 · CC art. 1176"
     }
    ],
    "fin": "error"
@@ -917,8 +929,12 @@ Neg.data.register({
      "marcar": true
     },
     {
+     "tipo": "nota",
+     "texto": "El LAJ da cuenta al Juez, que, oídos el Fiscal y el solicitante, acuerda la remisión al órgano competente (art. 16.3 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 98.2 Ley 15/2015."
+     "texto": "Arts. 16.3 y 98.2 Ley 15/2015"
     }
    ],
    "fin": "error"
@@ -936,10 +952,14 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Efectos de la inadmisión (art. 99.2, primer inciso)",
      "items": [
-      "El Secretario judicial dictará decreto declarando la inadmisión.",
+      "El LAJ dictará decreto declarando la inadmisión.",
       "Mandará devolver al promotor lo consignado."
      ],
      "marcar": true
+    },
+    {
+     "tipo": "nota",
+     "texto": "Contra el decreto cabe recurso de revisión ante el Juez (art. 20.2 LJV; art. 454 bis LEC)."
     },
     {
      "tipo": "ley",
@@ -955,7 +975,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Secretario judicial dicta decreto teniendo por aceptada la consignación, con los efectos legales procedentes, y manda cancelar la obligación y, en su caso, la garantía, si así lo solicitara el promotor."
+     "texto": "El LAJ dicta decreto teniendo por aceptada la consignación, con los efectos legales procedentes, y manda cancelar la obligación y, en su caso, la garantía, si así lo solicitara el promotor."
     },
     {
      "tipo": "nota",
@@ -995,7 +1015,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si el acreedor autorizara al promotor a retirar lo consignado, el Secretario judicial dictará decreto acordando el archivo del expediente."
+     "texto": "Si el acreedor autorizara al promotor a retirar lo consignado, el LAJ dictará decreto acordando el archivo del expediente."
     },
     {
      "tipo": "lista",
@@ -1068,6 +1088,10 @@ Neg.data.register({
      "texto": "Gastos: los gastos ocasionados por la consignación serán de cuenta del acreedor si fuera aceptada o se declarase estar bien hecha (art. 99.6 · CC art. 1179)."
     },
     {
+     "tipo": "nota",
+     "texto": "Contra el auto cabe apelación (art. 20.2 LJV; art. 458 LEC)."
+    },
+    {
      "tipo": "ley",
      "texto": "Art. 99.5 y 99.6 Ley 15/2015 · CC arts. 1179, 1180 y 1181."
     }
@@ -1090,6 +1114,10 @@ Neg.data.register({
     {
      "tipo": "aviso",
      "texto": "Gastos: los gastos serán de cuenta del promotor si la consignación fuera declarada improcedente o retirase la cosa consignada (art. 99.6)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Contra el auto cabe apelación (art. 20.2 LJV; art. 458 LEC)."
     },
     {
      "tipo": "ley",

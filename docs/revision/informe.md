@@ -56,12 +56,12 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-donantes-vivos | Guía · LJV · Extracción de órganos de donantes vivos | · | · | · | · | · | · | · |
 | ljv-hechos-pasados | Guía · LJV · Declaraciones judiciales sobre hechos pasados | · | · | · | · | · | · | 1R |
 | ljv-sucesorio | Guía · LJV · Título IV · Derecho sucesorio | · | · | · | · | 1R | · | · |
-| ljv-obligaciones | Guía · LJV · Título V · Derecho de obligaciones | 3R | · | · | · | · | · | 2R |
+| ljv-obligaciones | Guía · LJV · Título V · Derecho de obligaciones | · | · | · | · | · | · | 1R |
 | ljv-usufructuario | Guía · LJV · Usufructuario: reclamación de créditos vencidos | · | · | · | · | · | · | 2R |
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 8E 0A 7R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 53R |
+| | **Total** | 8E 0A 4R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 52R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,9 +69,9 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2729
-- ✓ CC (BOE a 07-09-2026): 1287
-- ✓ LEC (BOE a 07-10-2026): 1125
+- ✓ LJV (BOE a 05-03-2026): 2745
+- ✓ CC (BOE a 07-09-2026): 1289
+- ✓ LEC (BOE a 07-10-2026): 1130
 - ✓ LOPJ (BOE a 09-10-2026): 117
 - ✓ LPPD (BOE a 18-12-2025): 70
 - ✓ LTRANS (BOE a 20-12-2025): 62
@@ -81,7 +81,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LOPDH (BOE a 16-12-2025): 38
 - UE: 33
 - ✓ LN (BOE a 22-10-2026): 30
-- ✓ CE (BOE a 20-05-2026): 28
+- ✓ CE (BOE a 20-05-2026): 24
 - ✓ LH (BOE a 07-01-2026): 21
 - ✓ LTO (BOE a 16-12-2025): 20
 - LO 1/2025: 16
@@ -403,15 +403,8 @@ Sin hallazgos automáticos.
 
 ### ljv-obligaciones · Guía · LJV · Título V · Derecho de obligaciones
 
-**citas**
-
-- [revisar] «arts. 1158, 1159 y 1210.2»: el art. 1210 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «cg_legitimacion» › opción 2_
-- [revisar] «artículos 1158, 1159 y 1210.2»: el art. 1210 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «cg_legitimacion» › nota 2_
-- [revisar] «art. 1210.2»: el art. 1210 CC no tiene apartado 2 (no tiene apartados numerados) — _paso «cg_legitimacion» › ley 3_
-
 **terminologia**
 
-- [revisar] «Secretario judicial» × 8 → Letrado/a de la Administración de Justicia (LO 7/2015) — _paso «fp_tramitacion» › nota 2 | paso «cg_solicitud» › aviso 3 | paso «cg_aceptacion_expresa» › info 1 …_
 - [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «cg_competencia» › comprobación 2.1 | paso «fin_incompetencia_cg» › comprobación 2.1_
 
 ### ljv-usufructuario · Guía · LJV · Usufructuario: reclamación de créditos vencidos
