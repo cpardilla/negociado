@@ -222,7 +222,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — criterio del propietario incorporado (decisión 13); artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
 | E28 | LJV · Título IX — Conciliación | ✅ 2026-10-30 · rehecho (31 fichas → 11, una por artículo); artículos de la transacción (CC 1810–1817) y de la ejecución (LEC 518, 520, 556/557) corregidos; umbral del Juez de Paz 10.000 € (decisión 14); conciliación como requisito de procedibilidad (art. 5.1 LO 1/2025) ([registro](revision/ljv-conciliacion.md)) |
 
-### Fase 5 · Revisión de contenido de las guías (25) ◐ (24/25)
+### Fase 5 · Revisión de contenido de las guías (25) ✅ (25/25)
 Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfanos (reconectar al punto correcto del flujo o eliminar, con motivo).
 
 | # | Guía | Hallazgos previos | Estado |
@@ -251,7 +251,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G22 | LJV · T. VI Cap. I — Usufructuario | «Juzgado de Primera Instancia» × 3; «Secretario judicial» × 1 | ✅ 2026-10-31 · fiel; dispensa del art. 492 CC con su condición; subsanación cinco días y cuenta al Juez; archivo del art. 18.2.1.ª; auto en cinco días y apelación ([registro](revision/ljv-usufructuario.md)) |
 | G23 | LJV · T. VI Cap. II — Deslinde | «Secretario judicial» × 11; comprobar 6.000 € = verbal y art. 17.3 | ✅ 2026-10-31 · fiel; 6.000 € solo para la postulación (verbal hasta 15.000 €, art. 250.2 LEC); archivo parcial del art. 106.2 como excepción al 17.3; párrafos del art. 106; jurisprudencia retirada; revisión del decreto ([registro](revision/ljv-deslinde.md)) |
 | G24 | LJV · Título VII — Subastas voluntarias | art. 641 LEC (sin contenido) × 5; «Secretario judicial» × 14 | ✅ 2026-10-31 · decisión 13 aplicada (art. 641 sin contenido; habilitación del art. 110.3; art. 640 como referencia); pliego y LEC en el orden del art. 111.5; recursos de revisión; quitado lo inventado ([registro](revision/ljv-subastas.md)) |
-| G25 | LJV · Título IX — Conciliación | «art. 140.3», «art. 3.5»; «JPI» × 3; umbral de cuantía | ☐ |
+| G25 | LJV · Título IX — Conciliación | «art. 140.3», «art. 3.5»; «JPI» × 3; umbral de cuantía | ✅ 2026-10-31 · decisión 14 aplicada (Juez de Paz por debajo de 10.000 €, art. 47.2 LEC); sin «cosa juzgada» del art. 1216 CC; última residencia solo si no hay domicilio en España; mandato expreso para transigir (art. 1713 CC); plazos inventados y jurisprudencia retirados ([registro](revision/ljv-conciliacion.md)) |
 
 ### Fase 6 · Interfaz: homogeneización y mejoras ☐
 Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de uso que se decidan tras ver la versión migrada: referencias vivas, enlace directo a cada paso, progreso de la guía guardado, impresión de un recorrido como hoja de tramitación, accesibilidad (teclado, contraste ≥ 4,5:1, foco visible).
@@ -297,6 +297,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-31 · Fase 5 · G25 (conciliación) revisada: **fase 5 completa (25/25)**. Pendiente del propietario: sección en el Cap. III del Título IV con menores (G20).
 - 2026-10-31 · Fase 5 · G24 (subastas voluntarias) revisada. Siguiente: G25.
 - 2026-10-31 · Fase 5 · G23 (deslinde) revisada. Siguiente: G24.
 - 2026-10-31 · Fase 5 · G22 (usufructuario) revisada. Siguiente: G23.

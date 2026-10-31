@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G25.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G25.json; revisado con el BOE (registro: docs/revision/ljv-conciliacion.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-conciliacion",
@@ -18,7 +18,7 @@ Neg.data.register({
   "148"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G25"
  },
@@ -35,9 +35,9 @@ Neg.data.register({
   "Posterior"
  ],
  "actores": {
-  "ambos": "LAJ o Juez",
-  "juez": "Juez de Paz / Juez",
-  "laj": "Letrado Adm. Justicia",
+  "ambos": "LAJ o Juez de Paz",
+  "juez": "Juez de Paz",
+  "laj": "Letrado de la Administración de Justicia",
   "partes": "Ambas partes",
   "solicitante": "Solicitante"
  },
@@ -54,7 +54,7 @@ Neg.data.register({
     },
     {
      "tipo": "info",
-     "texto": "Su fundamento constitucional se halla en el art. 24 CE (tutela judicial efectiva) y en el art. 39 CE (protección de la familia). El art. 2.3 LJV atribuye al LAJ el impulso y la dirección de los expedientes, correspondiendo al Juez la decisión de fondo en los casos previstos."
+     "texto": "La celebran y resuelven el LAJ o el Juez de Paz (arts. 140, 142 y 145 LJV)."
     },
     {
      "tipo": "nota",
@@ -62,7 +62,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 2, 139-148; CE arts. 24 y 39; LEC art. 517.2.9º; CC art. 1973"
+     "texto": "Ley 15/2015, arts. 139-148; LEC art. 517.2.9.º; CC art. 1973"
     }
    ],
    "pregunta": "¿La pretensión tiene por finalidad lícita alcanzar un acuerdo para evitar un pleito?",
@@ -90,7 +90,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 139.1, párrafo segundo, Ley 15/2015; CC art. 7.2, 11.2"
+     "texto": "Art. 139.1, párrafo segundo, Ley 15/2015; CC arts. 6.4 y 7.2"
     }
    ],
    "fin": "error"
@@ -98,27 +98,30 @@ Neg.data.register({
   "verifica_competencia": {
    "fase": 0,
    "titulo": "Verificación de competencia objetiva y territorial",
-   "actor": "juez",
+   "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Compruebe que el órgano ante el que se acude tiene competencia. La competencia territorial viene fijada por el domicilio del requerido (art. 140.1), sin que quepa modificarla por sumisión (art. 2.2 LJV)."
+     "texto": "Compruebe que el órgano ante el que se acude es competente. La competencia territorial la fija el domicilio del requerido (art. 140.1) y no puede modificarse por sumisión (art. 2.2 LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Verificación de competencia",
+     "titulo": "Verificación de competencia (art. 140.1 LJV)",
      "items": [
-      "JPI o Mercantil: competencia objetiva general (art. 2.1 LJV)",
-      "Domicilio del requerido: regla general territorial",
-      "Fuero alternativo: persona jurídica con establecimiento en domicilio del solicitante",
-      "Última residencia en España: si no tuviere domicilio en territorio nacional",
-      "Cuantía &lt; 6.000 € y no mercantil: Juez de Paz (art. 140.3)"
+      "LAJ del Juzgado de Primera Instancia o del de lo Mercantil (hoy, Secciones Civil y de lo Mercantil del Tribunal de Instancia), según la materia",
+      "Domicilio del requerido; si no lo tiene en territorio nacional, su última residencia en España",
+      "Requerido persona jurídica: también el del domicilio del solicitante, si el requerido tiene allí delegación, sucursal, establecimiento, oficina abierta al público o representante autorizado (debe acreditarse)",
+      "Juez de Paz: si la cuantía es inferior a 10.000 euros y no se trata de cuestiones mercantiles (art. 47.2 LEC, redacción de la LO 1/2025; desplaza los 6.000 euros del art. 140.1 LJV; decisión 14)"
      ],
      "marcar": true
     },
     {
+     "tipo": "nota",
+     "texto": "Cautela (decisión 14): el art. 47.2 LEC no dice que la competencia del Juez de Paz sea exclusiva; si entre 6.000 y 10.000 euros cabe también la del LAJ es cuestión sin norma que la resuelva expresamente."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 2.1-2 LJV · Art. 140.1 LJV"
+     "texto": "Art. 140.1 LJV · Art. 2.2 LJV · Art. 47.2 LEC · Decisión 14"
     }
    ],
    "siguiente": "verifica_exclusion"
@@ -130,7 +133,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Determine si la materia objeto de la conciliación está excluida por razón del objeto. Estas exclusiones son de orden público procesal, no susceptibles de renuncia ni interpretación extensiva."
+     "texto": "Determine si la materia objeto de la conciliación está excluida por razón del objeto. Las peticiones sobre estas materias no se admiten a trámite (art. 139.2)."
     },
     {
      "tipo": "aviso",
@@ -173,11 +176,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El art. 139.2.1º excluye los asuntos en que estén interesados menores o personas con capacidad modificada judicialmente, salvo que la ley disponga lo contrario. La exclusión se justifica por la especial protección (CE art. 39, LO 8/2021)."
+     "texto": "No se admiten las peticiones de conciliación sobre juicios en que estén interesados menores o personas con discapacidad con medidas de apoyo para el ejercicio de su capacidad jurídica (art. 139.2.1.º LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 139.2.1º; CE art. 39; LO 8/2021; CC art. 162; LEC art. 749"
+     "texto": "Ley 15/2015, art. 139.2.1.º"
     }
    ],
    "fin": "error"
@@ -189,11 +192,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El art. 139.2.2º excluye los asuntos en que estén interesadas las Administraciones públicas, por el principio de indisponibilidad de los intereses públicos (Ley 40/2015, art. 47 y ss.)."
+     "texto": "No se admiten las peticiones sobre juicios en que estén interesados el Estado, las Comunidades Autónomas y las demás Administraciones públicas, Corporaciones o Instituciones de igual naturaleza (art. 139.2.2.º LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 139.2.2º; Ley 40/2015, arts. 47 y 77"
+     "texto": "Ley 15/2015, art. 139.2.2.º"
     }
    ],
    "fin": "error"
@@ -205,11 +208,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El art. 139.2.3º excluye la conciliación cuando se trate de la responsabilidad civil de Jueces y Magistrados. Régimen específico incompatible con la conciliación (LOPJ arts. 295 y ss.)."
+     "texto": "No se admiten las peticiones sobre el proceso de reclamación de responsabilidad civil contra Jueces y Magistrados (art. 139.2.3.º LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 139.2.3º; LOPJ arts. 295 y ss.; CE art. 117"
+     "texto": "Ley 15/2015, art. 139.2.3.º"
     }
    ],
    "fin": "error"
@@ -221,15 +224,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El art. 139.2.4º excluye las cuestiones que no sean susceptibles de transacción. No son transigibles los derechos irrenunciables, los de carácter personalísimo, los derechos fundamentales en su núcleo, ni los derechos laborales mínimos irrenunciables (ET art. 3.5)."
+     "texto": "No se admiten, en general, las peticiones sobre materias no susceptibles de transacción ni compromiso (art. 139.2.4.º LJV)."
     },
     {
      "tipo": "aviso",
-     "texto": "La exclusión debe valorarse caso por caso. Lo que no es transigible es el derecho en sí, pero sus consecuencias patrimoniales sí pueden ser susceptibles de acuerdo."
+     "texto": "Debe valorarse caso por caso: puede no ser transigible el derecho en sí y sí sus consecuencias patrimoniales (arts. 1809 y ss. y 1814 CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 139.2.4º; CC art. 1809; CE arts. 15, 18"
+     "texto": "Ley 15/2015, art. 139.2.4.º; CC arts. 1809 y 1814"
     }
    ],
    "fin": "warning"
@@ -357,23 +360,27 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Determinar el órgano competente es esencial. Serán competentes los JPI, los Juzgados de lo Mercantil y los Jueces de Paz."
+     "texto": "Son competentes el LAJ del Juzgado de Primera Instancia o del Juzgado de lo Mercantil, cuando se trate de materias de su competencia, y el Juez de Paz (art. 140.1 LJV). Hoy, Secciones Civil y de lo Mercantil del Tribunal de Instancia."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 140.1 LJV · Art. 47.2 LEC · Decisión 14"
     }
    ],
    "pregunta": "¿Qué órgano es competente en este caso?",
    "opciones": [
     {
-     "texto": "Juzgado de Primera Instancia (competencia general)",
+     "texto": "LAJ de la Sección Civil (antes Juzgado de Primera Instancia): competencia general",
      "tono": "t-ok",
      "destino": "competencia_domicilio"
     },
     {
-     "texto": "Juzgado de lo Mercantil (competencia desleal, publicidad, PI/PII)",
+     "texto": "LAJ de la Sección de lo Mercantil (antes Juzgado de lo Mercantil): materias de su competencia",
      "tono": "t-ok",
      "destino": "competencia_domicilio"
     },
     {
-     "texto": "Juez de Paz (cuantía &lt; 6.000€ o sin JPI en la localidad)",
+     "texto": "Juez de Paz: cuantía inferior a 10.000 euros y no mercantil (art. 47.2 LEC)",
      "tono": "t-nota",
      "destino": "competencia_domicilio"
     }
@@ -390,7 +397,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Si el domicilio es desconocido, deberá acudirse a reglas supletorias."
+     "texto": "Si el requerido no tiene domicilio en territorio nacional, es competente el de su última residencia en España (art. 140.1)."
     }
    ],
    "pregunta": "¿Se conoce el domicilio del requerido?",
@@ -401,12 +408,12 @@ Neg.data.register({
      "destino": "competencia_pj"
     },
     {
-     "texto": "Se conoce el último domicilio en España",
+     "texto": "El requerido no tiene domicilio en España: se conoce su última residencia en España",
      "tono": "t-plazo",
      "destino": "competencia_ultima_residencia"
     },
     {
-     "texto": "El domicilio es desconocido",
+     "texto": "No se le localiza, o está en otro partido judicial",
      "tono": "t-aviso",
      "destino": "competencia_domicilio_desconocido"
     }
@@ -414,16 +421,16 @@ Neg.data.register({
   },
   "competencia_ultima_residencia": {
    "fase": 2,
-   "titulo": "Competencia: Última Residencia en España",
+   "titulo": "Competencia: última residencia en España",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si no se conoce el domicilio actual pero sí su última residencia en España, será competente el Juzgado correspondiente a dicha última residencia."
+     "texto": "Si el requerido no tiene domicilio en territorio nacional, es competente el órgano de su última residencia en España (art. 140.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 140.1; LEC art. 51"
+     "texto": "Ley 15/2015, art. 140.1"
     }
    ],
    "siguiente": "competencia_pj"
@@ -435,11 +442,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si el requerido es persona jurídica, existe un fuero alternativo: será también competente el órgano del domicilio del solicitante, siempre que en dicho lugar tenga el requerido delegación, sucursal, establecimiento u oficina abierta al público o representante autorizado."
+     "texto": "Si el requerido es persona jurídica, existe un fuero alternativo: será también competente el órgano del domicilio del solicitante, siempre que en dicho lugar tenga el requerido delegación, sucursal, establecimiento u oficina abierta al público o representante autorizado para actuar en nombre de la entidad; el solicitante debe acreditarlo."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 140.1, párrafo cuarto, Ley 15/2015; STJUE Somafer 22-2-1979"
+     "texto": "Art. 140.1, párrafo segundo, Ley 15/2015"
     }
    ],
    "pregunta": "¿El requerido es persona jurídica con establecimiento en el domicilio del solicitante?",
@@ -458,20 +465,16 @@ Neg.data.register({
   },
   "competencia_domicilio_desconocido": {
    "fase": 2,
-   "titulo": "Domicilio Desconocido: Procedimiento Concluido",
+   "titulo": "Requerido no localizado o en otro partido: expediente terminado",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si el domicilio es totalmente desconocido, el LAJ declarará concluso el procedimiento con reserva del derecho del solicitante para ejercitar su acción ante los tribunales competentes."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Antes de declarar el domicilio desconocido, deben agotarse los medios de localización razonablemente disponibles."
+     "texto": "Si las averiguaciones sobre el domicilio o residencia son infructuosas, o el requerido se localiza en otro partido judicial, el LAJ dicta decreto o el Juez de Paz auto dando por terminado el expediente, haciendo constar esa circunstancia y reservando al solicitante el derecho a promoverlo de nuevo ante el órgano competente (art. 140.1, párrafo tercero, LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 140.1; LEC arts. 155, 164; STS 15-3-2004"
+     "texto": "Ley 15/2015, art. 140.1, párrafo tercero; LEC art. 156"
     }
    ],
    "fin": "warning"
@@ -483,28 +486,26 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El solicitante presenta la solicitud por escrito o mediante impresos normalizados. La presentación constituye el acto de iniciación y produce efectos interruptivos de la prescripción desde su fecha."
+     "texto": "El solicitante presenta la solicitud por escrito o con los impresos normalizados del órgano (art. 141.1). Su presentación, si después se admite, interrumpe la prescripción desde su fecha (art. 143)."
     },
     {
      "tipo": "lista",
-     "titulo": "Contenido obligatorio de la solicitud",
+     "titulo": "Contenido de la solicitud (art. 141.1 LJV)",
      "items": [
-      "Datos identificativos del solicitante y del requerido",
-      "Domicilio a efectos de notificaciones y citaciones",
-      "Objeto de la conciliación con claridad y precisión",
-      "Exposición de hechos y fundamentos jurídicos",
-      "Documentos y dictámenes de interés",
-      "Tantas copias cuantos sean los interesados"
+      "Datos y circunstancias de identificación del solicitante y del requerido o requeridos",
+      "Domicilio o domicilios en que pueden ser citados",
+      "Objeto de la conciliación y fecha, determinando con claridad y precisión el objeto de la avenencia",
+      "Documentos que el solicitante considere oportunos (art. 141.2)"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "No es preceptiva la intervención de Abogado ni Procurador, aunque es recomendable en asuntos complejos pues el acuerdo tiene fuerza ejecutiva."
+     "texto": "No es preceptiva la intervención de Abogado ni Procurador (art. 141.3)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 141 Ley 15/2015; LEC art. 135; CC art. 1973"
+     "texto": "Art. 141 Ley 15/2015; art. 143 Ley 15/2015"
     }
    ],
    "siguiente": "verifica_defectos"
@@ -520,7 +521,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si la solicitud no reúne los requisitos, el LAJ requerirá al solicitante para que subsane las deficiencias, con advertencia de desistimiento."
+     "texto": "Si hay defectos, se da un plazo de cinco días para subsanarlos (art. 16.4 LJV)."
     }
    ],
    "pregunta": "¿La solicitud reúne todos los requisitos formales?",
@@ -544,11 +545,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ requiere al solicitante para que subsane las deficiencias detectadas, señalando un plazo y advirtiendo de las consecuencias del incumplimiento."
+     "texto": "Se requiere al solicitante para que subsane los defectos (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Cinco días (art. 16.4 LJV)."
     },
     {
      "tipo": "aviso",
-     "texto": "Si el solicitante no subsana en el plazo indicado, se tendrá por desistido de su petición y se archivará el expediente."
+     "texto": "Si no subsana, se tiene por no presentada la solicitud y se archivan las actuaciones (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 16.4 LJV"
     }
    ],
    "pregunta": "¿El solicitante ha subsanado las deficiencias en el plazo?",
@@ -567,12 +576,12 @@ Neg.data.register({
   },
   "fin_desistimiento_sol": {
    "fase": 4,
-   "titulo": "Desistimiento por falta de subsanación",
+   "titulo": "Archivo por falta de subsanación",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El solicitante no subsana en plazo. Se tiene por desistido y se archiva, sin perjuicio de promover uno nuevo."
+     "texto": "El solicitante no subsana en plazo: se tiene por no presentada la solicitud y se archiva (art. 16.4 LJV), sin perjuicio de promover un nuevo expediente."
     }
    ],
    "fin": "warning"
@@ -584,7 +593,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ, en los cinco días hábiles siguientes a la presentación, dicta resolución de admisión y cita a los interesados, señalando día y hora del acto."
+     "texto": "El LAJ o el Juez de Paz, en los cinco días hábiles siguientes a la presentación, dicta resolución de admisión y cita a los interesados, señalando día y hora del acto."
     },
     {
      "tipo": "plazo",
@@ -639,11 +648,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La interrupción implica que, una vez finalizado el expediente, el plazo de prescripción comienza a computarse íntegramente de nuevo (CC art. 1974)."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "El riesgo de abuso del procedimiento con fines meramente interruptivos sin intención real de acuerdo podría ser considerado abusivo (CC art. 7.2)."
+     "texto": "El plazo de prescripción vuelve a computarse desde que recae el decreto del LAJ o el auto del Juez de Paz que pone término al expediente (art. 143)."
     },
     {
      "tipo": "plazo",
@@ -651,7 +656,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 143 LJV; CC arts. 1973 y 1974; STS 23-5-2000; STS 14-3-2006"
+     "texto": "Art. 143 LJV; CC art. 1973"
     }
    ],
    "siguiente": "comparecencia_solicitante"
@@ -663,11 +668,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Las partes deben comparecer por sí mismas o por medio de Procurador con poder suficiente. La comparecencia incluye presencia física o telemática, y el representante necesita poder suficiente para transigir (CC art. 1809)."
+     "texto": "Las partes deben comparecer por sí mismas o por medio de Procurador con poder suficiente. La comparecencia incluye presencia física o telemática, y para transigir hace falta mandato expreso (CC art. 1713)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 144.1 Ley 15/2015 · Artículos 23 y ss. LEC; CC art. 1809"
+     "texto": "Art. 144.1 Ley 15/2015 · Artículos 23 y ss. LEC; CC art. 1713"
     }
    ],
    "pregunta": "¿Comparece el solicitante (o su Procurador)?",
@@ -691,15 +696,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si el solicitante no comparece, se verifica si ha alegado justa causa (enfermedad, fuerza mayor, etc.). La fuerza mayor debe reunir los requisitos del CC art. 1105."
-    },
-    {
-     "tipo": "plazo",
-     "texto": "Plazo para justificar: 3 días desde la fecha del señalamiento fallido."
+     "texto": "Si el solicitante no comparece, se comprueba si ha alegado justa causa para no concurrir (art. 144.2)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 144.2 y 144.4 Ley 15/2015; CC art. 1105"
+     "texto": "Art. 144.2 y 4 Ley 15/2015"
     }
    ],
    "pregunta": "¿El solicitante ha alegado justa causa acreditada?",
@@ -743,19 +744,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si no comparece el solicitante ni alega justa causa, se le tendrá por desistido y se archivará el expediente."
+     "texto": "Si no comparece el solicitante ni alega justa causa, se le tiene por desistido y se archiva el expediente (art. 144.2)."
     },
     {
      "tipo": "aviso",
-     "texto": "El requerido podrá reclamar indemnización de daños y perjuicios (CC arts. 1101, 1107). La incomparecencia injustificada puede constituir temeridad o mala fe (LEC art. 394)."
+     "texto": "El requerido puede reclamarle la indemnización de los daños y perjuicios que su comparecencia le haya originado; se da traslado al solicitante por cinco días y resuelve el LAJ o el Juez de Paz, sin ulterior recurso (art. 144.2)."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo de traslado de la reclamación de indemnización: 5 días."
+     "texto": "Traslado de la reclamación de indemnización: cinco días."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 144.2 Ley 15/2015; CC art. 1101 y ss."
+     "texto": "Art. 144.2 Ley 15/2015"
     }
    ],
    "fin": "error"
@@ -857,7 +858,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 144.3 Ley 15/2015; CC arts. 1973, 1974"
+     "texto": "Art. 144.3 Ley 15/2015; art. 143 Ley 15/2015"
     }
    ],
    "fin": "neutral"
@@ -929,11 +930,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si se alega cuestión impeditiva (falta de capacidad, defecto de citación, litispendencia, cosa juzgada), se da por terminado el acto y se tiene por intentada sin más trámites. El efecto interruptivo de la prescripción se mantiene."
+     "texto": "Si se alega alguna cuestión que pueda impedir la válida prosecución del acto (falta de capacidad, defecto de citación, litispendencia, cosa juzgada), se da por terminado el acto y se tiene por intentada la conciliación sin más trámites (art. 145.2). Lo mismo si se suscitan cuestiones de competencia o de recusación del LAJ o del Juez de Paz (art. 140.2)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 145.2 Ley 15/2015; LEC arts. 9, 222, 416"
+     "texto": "Arts. 140.2 y 145.2 Ley 15/2015"
     }
    ],
    "fin": "neutral"
@@ -945,11 +946,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Celebrado el acto sin cuestiones impeditivas, se determina si las partes han alcanzado un acuerdo. La avenencia debe respetar los límites de la autonomía de la voluntad (CC art. 1255) y no puede perjudicar a terceros (CC art. 1256)."
+     "texto": "Celebrado el acto sin cuestiones impeditivas, se determina si las partes han alcanzado un acuerdo. La avenencia debe respetar los límites de la autonomía de la voluntad (CC art. 1255) y solo produce efecto entre quienes la otorgan (CC art. 1257)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 145.3 Ley 15/2015; CC arts. 1255, 1256, 1275-1277"
+     "texto": "Art. 145.3 Ley 15/2015; CC arts. 1255, 1257, 1275-1277"
     }
    ],
    "pregunta": "¿Cuál es el resultado del acto de conciliación?",
@@ -978,7 +979,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Las partes acuerdan sobre la totalidad del objeto. Se hace constar detalladamente en un acta, que debe ser firmada por los comparecientes. El acuerdo tiene fuerza de título ejecutivo (LEC art. 517.2.9º) y efectos de cosa juzgada material (CC art. 1216)."
+     "texto": "Las partes acuerdan sobre la totalidad del objeto. Se hace constar detalladamente en un acta, que debe ser firmada por los comparecientes. El testimonio del acta y del decreto o auto que hace constar la avenencia lleva aparejada ejecución; a otros efectos, lo convenido tiene el valor de un convenio consignado en documento público y solemne (art. 147.1 LJV; art. 517.2.9.º LEC)."
     },
     {
      "tipo": "aviso",
@@ -986,7 +987,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 145.3 Ley 15/2015; LEC art. 517.2.9º; CC arts. 1156, 1216, 1809-1819"
+     "texto": "Art. 145.3 Ley 15/2015; art. 147 Ley 15/2015; LEC art. 517.2.9.º; CC arts. 1809 y ss."
     }
    ],
    "siguiente": "cierre_avenencia"
@@ -1006,7 +1007,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 145.3 Ley 15/2015; STS 12-7-2002"
+     "texto": "Art. 145.3 Ley 15/2015"
     }
    ],
    "siguiente": "cierre_avenencia"
@@ -1018,43 +1019,27 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "No se consigue acuerdo. El LAJ dictará decreto o el Juez de Paz auto acordando el archivo definitivo. El solicitante queda habilitado para ejercitar las acciones que le correspondan."
-    },
-    {
-     "tipo": "info",
-     "texto": "Las manifestaciones realizadas en el acto no vinculan en el posterior proceso judicial, pero las admisiones de hechos pueden ser tenidas en cuenta como elementos de prueba."
+     "texto": "No se consigue acuerdo: se hace constar que el acto terminó sin avenencia, y el LAJ dicta decreto o el Juez de Paz auto acordando el archivo definitivo (art. 145.3 y 4). El solicitante puede ejercitar las acciones que le correspondan."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 145.3 y 145.4 Ley 15/2015; CC arts. 1973, 1974"
+     "texto": "Art. 145.3 y 4 Ley 15/2015; art. 143 Ley 15/2015"
     }
    ],
    "fin": "neutral"
   },
   "cierre_avenencia": {
    "fase": 8,
-   "titulo": "Cierre con Avenencia: Decreto/Auto de Aprobación",
+   "titulo": "Cierre con avenencia: decreto o auto",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ dicta decreto o el Juez dicta auto haciendo constar la avenencia. El decreto/auto, junto con el acta, conforman el título ejecutivo dual."
-    },
-    {
-     "tipo": "lista",
-     "titulo": "Contenido del decreto/auto de aprobación",
-     "items": [
-      "Fecha y órgano que lo dicta",
-      "Identificación de las partes",
-      "Términos del acuerdo alcanzado",
-      "Declaración de carácter de título ejecutivo",
-      "Acuerdo de archivo definitivo"
-     ],
-     "marcar": true
+     "texto": "Finalizado el acto, el LAJ dicta decreto o el Juez de Paz auto haciendo constar la avenencia y acordando el archivo definitivo (art. 145.4). El testimonio del acta junto con el de ese decreto o auto lleva aparejada ejecución (art. 147.1)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 145.4 Ley 15/2015; LEC art. 517.2.9º"
+     "texto": "Art. 145.4 Ley 15/2015; art. 147.1 Ley 15/2015; LEC art. 517.2.9.º"
     }
    ],
    "siguiente": "testimonio_gastos"
@@ -1066,19 +1051,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Las partes pueden solicitar testimonio del acta. El testimonio es la copia autorizada necesaria para la ejecución forzosa."
+     "texto": "Las partes pueden solicitar testimonio del acta que pone fin al acto de conciliación (art. 146)."
     },
     {
      "tipo": "info",
-     "texto": "Los gastos del acto de conciliación serán de cuenta del que lo hubiere promovido (el solicitante), con independencia del resultado, salvo pacto en contrario. La tasa judicial está exenta (Ley 10/2012, art. 4)."
-    },
-    {
-     "tipo": "plazo",
-     "texto": "Plazo para expedir testimonio: 5 días desde la solicitud."
+     "texto": "Los gastos del acto de conciliación son de cuenta de quien lo promovió (art. 146)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 146 Ley 15/2015; Ley 10/2012, art. 4; LEC art. 241"
+     "texto": "Art. 146 Ley 15/2015"
     }
    ],
    "pregunta": "¿Se solicita el despacho de ejecución o se ejerce acción de nulidad?",
@@ -1107,15 +1088,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El acuerdo se cumple voluntariamente y no es impugnado en el plazo de 15 días (art. 148). Adquiere firmeza definitiva y produce efectos de cosa juzgada material (CC art. 1216)."
+     "texto": "El acuerdo se cumple voluntariamente y no se ejercita la acción de nulidad en los quince días siguientes al acto (art. 148.2)."
     },
     {
      "tipo": "nota",
-     "texto": "En caso de incumplimiento futuro, el solicitante podrá instar la ejecución en cualquier momento dentro del plazo de 5 años (LEC art. 518)."
+     "texto": "Si después se incumple, puede instarse la ejecución (art. 147). El art. 518 LEC fija una caducidad de cinco años para la acción ejecutiva fundada en sentencias y en resoluciones que aprueban transacciones o acuerdos; no menciona expresamente la conciliación."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 146, 147 y 148 Ley 15/2015; CC art. 1216; LEC art. 518"
+     "texto": "Arts. 146, 147 y 148 Ley 15/2015; LEC art. 518"
     }
    ],
    "fin": "success"
@@ -1139,7 +1120,7 @@ Neg.data.register({
      "items": [
       "Título ejecutivo: decreto/auto + acta de conciliación",
       "Determinación de la obligación: cantidad líquida o determinable",
-      "Plazo: dentro del período de prescripción de la acción ejecutiva (LEC art. 518)"
+      "Plazo: véase el art. 518 LEC (caducidad de cinco años para sentencias y resoluciones que aprueban transacciones o acuerdos; no menciona la conciliación)"
      ],
      "marcar": true
     },
@@ -1164,13 +1145,13 @@ Neg.data.register({
      "titulo": "Reglas de competencia",
      "items": [
       "Mismo Juzgado que tramitó: cuando sea asunto de su competencia",
-      "Juzgado de Primera Instancia: en los demás casos (art. 545 LEC)"
+      "En los demás casos, el Juzgado de Primera Instancia a quien hubiera correspondido conocer de la demanda (art. 147.2 LJV)"
      ],
      "marcar": true
     },
     {
      "tipo": "ley",
-     "texto": "Art. 147.2-3 Ley 15/2015; LEC arts. 50, 545"
+     "texto": "Art. 147.2 y 3 Ley 15/2015; LEC art. 545"
     }
    ],
    "pregunta": "¿Se formula oposición a la ejecución?",
@@ -1302,7 +1283,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 148 Ley 15/2015; CC arts. 1303, 1973-1975"
+     "texto": "Art. 148 Ley 15/2015; CC art. 1303"
     }
    ],
    "fin": "error"

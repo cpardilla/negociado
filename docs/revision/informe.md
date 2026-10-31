@@ -60,8 +60,8 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-usufructuario | Guía · LJV · Usufructuario: reclamación de créditos vencidos | · | · | · | · | · | · | 1R |
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 1R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | · | · | · | · | · | · | 1R |
-| ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 3E 0A 4R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 49R |
+| ljv-conciliacion | Guía · LJV · Título IX · Conciliación | · | · | · | · | · | · | 2R |
+| | **Total** | 3E 0A 2R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 48R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,10 +69,10 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2770
-- ✓ CC (BOE a 07-09-2026): 1291
-- ✓ LEC (BOE a 07-10-2026): 1138
-- ✓ LOPJ (BOE a 09-10-2026): 114
+- ✓ LJV (BOE a 05-03-2026): 2808
+- ✓ CC (BOE a 07-09-2026): 1278
+- ✓ LEC (BOE a 07-10-2026): 1136
+- ✓ LOPJ (BOE a 09-10-2026): 112
 - ✓ LPPD (BOE a 18-12-2025): 70
 - ✓ LTRANS (BOE a 20-12-2025): 62
 - ✓ LOPJM (BOE a 18-12-2025): 50
@@ -81,9 +81,9 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LOPDH (BOE a 16-12-2025): 38
 - UE: 33
 - ✓ LN (BOE a 22-10-2026): 30
-- ✓ CE (BOE a 20-05-2026): 24
 - ✓ LH (BOE a 07-01-2026): 21
 - ✓ LTO (BOE a 16-12-2025): 20
+- ✓ CE (BOE a 20-05-2026): 18
 - LO 1/2025: 18
 - ✓ LSC (BOE a 19-12-2025): 7
 - ✓ CP (BOE a 09-04-2026): 7
@@ -98,13 +98,10 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LSE (BOE a 31-07-2026): 2
 - ✓ LMED (BOE a 19-12-2025): 2
 - LPAP: 2
-- Ley 40/2015: 2
-- Ley 10/2012: 2
 - LO 3/2007: 1
 - Ley 54/2007: 1
-- LO 8/2021: 1
 
-Además, 307 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 304 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -427,14 +424,8 @@ Sin hallazgos automáticos.
 
 ### ljv-conciliacion · Guía · LJV · Título IX · Conciliación
 
-**citas**
-
-- [revisar] «art. 140.3»: el art. 140 LJV no tiene apartado 3 (tiene 1, 2) (ley por defecto) — _paso «verifica_competencia» › comprobación 2.5_
-- [revisar] «art. 3.5»: el art. 3 LJV no tiene apartado 5 (tiene 1, 2) (ley por defecto) — _paso «fin_excluido_transaccion» › info 1_
-
 **terminologia**
 
-- [revisar] «JPI» × 3 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar — _paso «verifica_competencia» › comprobación 2.1 | paso «competencia_tipo» › opción 3 | paso «competencia_tipo» › info 1_
-- [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia_tipo» › opción 1 | paso «ejecucion_competencia» › comprobación 2.2_
+- [revisar] «Juzgado de Primera Instancia» × 4 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «verifica_competencia» › comprobación 2.1 | paso «competencia_tipo» › opción 1 | paso «competencia_tipo» › info 1 …_
 - [revisar] «Juzgado de lo Mercantil» × 2 → Tribunal de Instancia, Sección de lo Mercantil (LO 1/2025) — verificar — _paso «competencia_tipo» › opción 2 | paso «competencia_tipo» › info 1_
 
