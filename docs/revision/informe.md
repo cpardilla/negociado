@@ -44,7 +44,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-filiacion | Guía · LJV · Reconocimiento de la filiación no matrimonial | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-12-14 | Guía · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-reversion | Guía · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
-| ljv-defensor-judicial | Guía · LJV · Habilitación para comparecer y defensor judicial | 4A | · | · | · | 1R | · | 2R |
+| ljv-defensor-judicial | Guía · LJV · Habilitación para comparecer y defensor judicial | · | · | · | · | · | · | 1R |
 | ljv-adopcion | Guía · LJV · Adopción | · | · | · | · | · | 1E | 1R |
 | ljv-medidas-apoyo | Guía · LJV · Medidas judiciales de apoyo a personas con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Guía · LJV · Tutela, curatela y guarda de hecho | 3E 1A 1R | · | · | · | · | 1E | 2R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 60E 8A 36R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 2R | 3E 0A 1R | 0E 0A 61R |
+| | **Total** | 60E 4A 36R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 3E 0A 1R | 0E 0A 60R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,10 +69,10 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2421
-- ✓ CC (BOE a 07-09-2026): 1205
-- ✓ LEC (BOE a 07-10-2026): 1117
-- ✓ LOPJ (BOE a 09-10-2026): 90
+- ✓ LJV (BOE a 05-03-2026): 2401
+- ✓ CC (BOE a 07-09-2026): 1209
+- ✓ LEC (BOE a 07-10-2026): 1116
+- ✓ LOPJ (BOE a 09-10-2026): 91
 - ✓ LTRANS (BOE a 20-12-2025): 62
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - ✓ LPPD (BOE a 18-12-2025): 36
@@ -328,21 +328,9 @@ Sin hallazgos automáticos.
 
 ### ljv-defensor-judicial · Guía · LJV · Habilitación para comparecer y defensor judicial
 
-**citas**
-
-- [aviso] «art. 17.4»: el art. 17 LJV no tiene apartado 4 (tiene 1, 2, 3) — _paso «subsanacion» › título_
-- [aviso] «Art. 17.4»: el art. 17 LJV no tiene apartado 4 (tiene 1, 2, 3) — _paso «subsanacion» › ley 3_
-- [aviso] «art. 17.4»: el art. 17 LJV no tiene apartado 4 (tiene 1, 2, 3) — _paso «fin_archivo_subsanacion» › info 1_
-- [aviso] «Art. 17.4»: el art. 17 LJV no tiene apartado 4 (tiene 1, 2, 3) — _paso «fin_archivo_subsanacion» › ley 2_
-
-**literales**
-
-- [revisar] texto entrecomillado no hallado literalmente en LJV: «Supuesto art. 27.2.c): testimonio de la resolución de nombramiento se remitirá al Registro Civil competente (art. 30.3 LJV y art. 22 LJV)» — _paso «competencia_rc» › nota 2_
-
 **terminologia**
 
-- [revisar] «Secretario judicial» × 21 → Letrado/a de la Administración de Justicia (LO 7/2015) — _paso «competencia» › info 1 | paso «admision» › info 1 | paso «subsanacion» › info 1 …_
-- [revisar] «JPI» × 4 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar — _paso «competencia» › info 1 | paso «competencia» › comprobación 2.1 | paso «competencia» › comprobación 2.2 …_
+- [revisar] «Juzgado de Primera Instancia» × 4 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › info 1 | paso «competencia» › comprobación 2.1 | paso «competencia» › comprobación 2.2 …_
 
 ### ljv-adopcion · Guía · LJV · Adopción
 

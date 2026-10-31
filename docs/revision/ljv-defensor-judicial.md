@@ -34,3 +34,33 @@ La remisión del art. 30.3 LJV a una letra suprimida es un defecto del propio te
 ## Corrección posterior (2026-10-29)
 
 Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).
+
+---
+
+# Revisión · G09 · Guía de tramitación de la habilitación para comparecer en juicio y del nombramiento de defensor judicial
+
+- **Recurso**: `data/guias/ljv-defensor-judicial.js` (origen G09).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026; CC a 07-09-2026; LEC a 07-10-2026; LOPJ a 09-10-2026.
+- **Método**: fase 5. Contraste paso a paso con los arts. 16 a 22 y 27 a 32 LJV, los arts. 49 a 51 LJV (aplicables por remisión del art. 32), los arts. 235–236 y 295–298 CC y el art. 454 bis LEC. Se conservan los identificadores de paso; se retiran tres pasos y se reescriben los de excusa, remoción y cuentas.
+- **Resultado del comprobador**: 0 errores, 0 avisos (antes: 4 avisos «art. 17.4»); queda la denominación legal «Juzgado de Primera Instancia» (art. 28.1 LJV), con la sección actual indicada.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | verif_imposibilidad, competencia_rc, inscripcion_rc, resolucion_estimatoria | **error** | El art. 30.3 LJV (inscripción en el Registro Civil) se aplicaba a la imposibilidad de hecho del art. 27.2.c), «único supuesto que exige inscripción», con pasos propios | El art. 30.3 remite a la letra c) del art. 27.1, suprimida por la Ley 8/2021 (hoy art. 295.4.º CC); nota en dos pasos y **pregunta abierta al propietario**; pasos `competencia_rc` e `inscripcion_rc` retirados | LJV 27, 30.3; CC 295 |
+| 2 | excusa, remocion, rendicion_cuentas, comparecencia_cuentas, aprobacion_cuentas | **error** | Remoción «corresponde al JUEZ (art. 49.3)»; cuentas «por auto del Juez (art. 51.3)», pericial contable de oficio, rendición «en 3 meses desde el cese», «acciones recíprocas (art. 51.5)» | Las tramita y decide el LAJ (art. 32 LJV), con el procedimiento de los arts. 49, 50 y 51.2; contra su decreto, revisión ante el Juez. Retirados el plazo de 3 meses y el art. 51.5 (el art. 51 tiene tres apartados) | LJV 32, 49–51; CC 297–298 |
+| 3 | resolucion_desestimatoria, recurso_apelacion | **error** | Contra el decreto del LAJ cabía revisión o apelación | Solo revisión ante el Juez (art. 20.2 LJV), en cinco días (art. 454 bis LEC), con abogado y procurador; paso `recurso_apelacion` retirado | LJV 3.2, 20.2; LEC 454 bis |
+| 4 | admision, subsanacion, fin_* | error | Subsanación «art. 17.4 LJV», «5 días hábiles» | Art. 16.4 LJV, cinco días | LJV 16.4 |
+| 5 | admision | error | Suspensión de plazos «desde la presentación de la solicitud»; el MF representa siempre, con cita del «art. 8.2 LEC» | Desde que se solicita la habilitación hasta la aceptación o el archivo firme; el MF solo si es demandado o ha quedado sin representación (art. 29 LJV) | LJV 29 |
+| 6 | convocatoria, comparecencia, practica_prueba, comparecencia_oposicion | error | «Art. 18.4.ª / 18.5.ª / 18.6.ª LJV»; mayor de 12 años citado por el «art. 9 LO 1/1996»; «el MF puede proponer diligencias (art. 5)» | Art. 18.2, 4.ª, 5.ª y 6.ª; art. 30.1 LJV; diligencias de oficio o a instancia del MF (art. 18.2, 4.ª); acta de la exploración en todo caso | LJV 18, 30.1 |
+| 7 | ejercicio_cargo | sin base | Obligaciones inventadas (liberalidades, etc.) | Las de los arts. 235–236, 297 y 298 CC y el art. 31 LJV | CC, LJV |
+| 8 | cesacion_causa | sin base | «Comunicar la extinción al Registro Civil por analogía con el art. 30.3»; cita del art. 22 | Retirados | LJV 31 |
+| 9 | decision_fondo | impreciso | Cinco días «desde la comparecencia o desde la última diligencia» | O, si no se celebró, desde la última diligencia (art. 19.1) | LJV 19.1 |
+| 10 | fin_desistimiento, fin_inadmision | sin base | «Sin causa justificada… puede acreditarse»; cita del art. 21 (caducidad); «o da cuenta al Juez» | Retirados: el art. 18.2, 1.ª no prevé la justificación; resuelve el LAJ | LJV 17.1, 18.2 |
+| 11 | competencia | desfasado | «Juzgado de Primera Instancia» sin más | Hoy, Sección de Familia, Infancia y Capacidad (art. 86.5 LOPJ) o Sección Civil | LO 1/2025 |
+| 12 | todos | terminología | 21 × «Secretario judicial», «JPI» | Letrado de la Administración de Justicia; Juzgado de Primera Instancia | LO 7/2015 |
+
+Pasos: 44 → 41 (retirados `competencia_rc`, `inscripcion_rc`, `recurso_apelacion`).
+
+**Pendiente del propietario**: la misma pregunta que en E12 sobre el art. 30.3 LJV (qué nombramientos de defensor judicial se comunican en la práctica al Registro Civil).

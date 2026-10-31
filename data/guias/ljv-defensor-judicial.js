@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G09.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G09.json; revisado con el BOE (registro: docs/revision/ljv-defensor-judicial.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-defensor-judicial",
@@ -15,7 +15,7 @@ Neg.data.register({
   "32"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G09"
  },
@@ -29,7 +29,7 @@ Neg.data.register({
  ],
  "actores": {
   "juez": "Juez",
-  "laj": "LAJ / Sec. Judicial"
+  "laj": "Letrado de la Administración de Justicia"
  },
  "inicio": "inicio",
  "pasos": {
@@ -123,11 +123,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La habilitación se insta cuando el menor no emancipado o la persona con discapacidad, siendo demandado o sufriendo gran perjuicio de no promover la demanda, se encuentre en una de estas tres situaciones tasadas."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La causa c) —imposibilidad de hecho— exige además la inscripción de la resolución de nombramiento en el Registro Civil (art. 30.3 LJV). Identifique correctamente la causa para tramitar el expediente de forma adecuada."
+     "texto": "La habilitación se insta cuando el menor no emancipado o la persona con discapacidad, siendo demandado o siguiéndosele gran perjuicio de no promover la demanda, se encuentra en una de estas situaciones (art. 27.2 LJV)."
     },
     {
      "tipo": "ley",
@@ -246,39 +242,27 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Concurre cuando los progenitores, tutor o persona de apoyo se encuentran en una situación fáctica —no jurídica— que les impide asumir la representación o asistencia en juicio: enfermedad grave, ingreso hospitalario, privación de libertad u otra causa análoga."
-    },
-    {
-     "tipo": "lista",
-     "titulo": "Documentación acreditativa",
-     "items": [
-      "Informe médico o certificado de ingreso hospitalario",
-      "Resolución de internamiento o situación de privación de libertad",
-      "Cualquier otro medio de prueba que objetice la imposibilidad física de actuar"
-     ],
-     "marcar": true
+     "texto": "Concurre cuando los progenitores, tutor o persona designada para el apoyo se hallan en una situación de imposibilidad de hecho para la representación o asistencia en juicio."
     },
     {
      "tipo": "nota",
-     "texto": "Este supuesto es el único que exige inscripción de la resolución de nombramiento en el Registro Civil (art. 30.3 LJV). Déjese constancia en el expediente desde el inicio."
+     "texto": "El art. 30.3 LJV manda inscribir en el Registro Civil el nombramiento «en el caso previsto en la letra c) del apartado 1 del artículo 27», letra que la Ley 8/2021 suprimió (el supuesto pasó al art. 295.4.º CC: defensor mientras se tramita la provisión de medidas de apoyo, para administrar los bienes). No se refiere a la imposibilidad de hecho del art. 27.2.c). Pregunta abierta al propietario sobre la práctica del juzgado."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 27.2.c) LJV · Art. 30.3 LJV · Art. 295.1.º CC"
+     "texto": "Art. 27.2.c) LJV · Art. 295.1.º CC"
     }
    ],
    "pregunta": "¿Se acredita la imposibilidad de hecho?",
    "opciones": [
     {
-     "texto": "Sí — causa c) acreditada. La resolución de nombramiento se inscribirá en el RC",
+     "texto": "Sí — imposibilidad de hecho acreditada",
      "tono": "t-ok",
-     "nota": "Acreditada",
-     "destino": "competencia_rc"
+     "destino": "competencia"
     },
     {
-     "texto": "No — la situación no constituye imposibilidad de hecho",
+     "texto": "No — no constituye imposibilidad de hecho",
      "tono": "t-aviso",
-     "nota": "No procede",
      "destino": "fin_no_procede"
     }
    ]
@@ -290,15 +274,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Secretario judicial competente es el del JPI que corresponda según el criterio de preferencia del art. 28.1 LJV. La competencia territorial es imperativa: no puede modificarse por sumisión expresa ni tácita (art. 2.2 LJV)."
+     "texto": "El Letrado de la Administración de Justicia competente es el del Juzgado de Primera Instancia que corresponda según el criterio de preferencia del art. 28.1 LJV. No puede modificarse por sumisión expresa ni tácita (art. 2.2 LJV). Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 LOPJ) o, si no, la Sección Civil."
     },
     {
      "tipo": "lista",
      "titulo": "Criterios de competencia (orden de preferencia)",
      "items": [
-      "1.º JPI del domicilio del menor o persona con discapacidad",
-      "2.º En defecto de domicilio: JPI de la residencia",
-      "3.º JPI que ya esté conociendo del asunto que exige el nombramiento"
+      "1.º Juzgado de Primera Instancia del domicilio del menor o persona con discapacidad",
+      "2.º En defecto de domicilio: Juzgado de Primera Instancia de la residencia",
+      "3.º Juzgado de Primera Instancia que ya esté conociendo del asunto que exige el nombramiento"
      ],
      "marcar": true
     },
@@ -309,26 +293,6 @@ Neg.data.register({
     {
      "tipo": "ley",
      "texto": "Art. 28.1 LJV · Art. 2.2 LJV · Art. 6 LJV"
-    }
-   ],
-   "siguiente": "iniciacion"
-  },
-  "competencia_rc": {
-   "fase": 1,
-   "titulo": "Competencia territorial — supuesto c) con inscripción RC",
-   "actor": "laj",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "Mismos criterios de competencia del art. 28.1 LJV. Dado que el supuesto es la causa c) del art. 27.2, anotar en el expediente que la resolución de nombramiento deberá remitirse al Registro Civil competente para su inscripción."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Anotar en la portada del expediente: «Supuesto art. 27.2.c): testimonio de la resolución de nombramiento se remitirá al Registro Civil competente (art. 30.3 LJV y art. 22 LJV)»."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 28.1 LJV · Art. 30.3 LJV · Art. 22 LJV · Ley 20/2011 Registro Civil"
     }
    ],
    "siguiente": "iniciacion"
@@ -346,7 +310,7 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Vías de iniciación",
      "items": [
-      "De oficio (LAJ o iniciativa del Juez)",
+      "De oficio",
       "A petición del Ministerio Fiscal",
       "Por el menor, la persona con discapacidad con medidas de apoyo, o cualquier persona que actúe en su interés"
      ],
@@ -374,19 +338,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Secretario judicial examina la solicitud. Verifica competencia, legitimación, ausencia de defectos y que no exista expediente simultáneo con idéntico objeto (art. 6 LJV)."
+     "texto": "El Letrado de la Administración de Justicia examina la solicitud. Verifica competencia, legitimación, ausencia de defectos y que no exista expediente simultáneo con idéntico objeto (art. 6 LJV)."
     },
     {
      "tipo": "plazo",
-     "texto": "Desde la presentación de la solicitud quedan suspendidos los plazos de prescripción y caducidad de la acción de cuyo ejercicio se trate (art. 29 LJV)."
+     "texto": "Desde que se solicita la habilitación y hasta que el defensor acepte o se archive el expediente por resolución firme, se suspenden los plazos de prescripción o caducidad de la acción de que se trate (art. 29 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "Si el menor o la persona con discapacidad debe comparecer como demandado o queda sin representación procesal, el MF asume su representación y defensa de forma provisional (art. 29 LJV · art. 8.2 LEC)."
+     "texto": "Si el menor o la persona con discapacidad debe comparecer como demandado o ha quedado sin representación procesal, el Ministerio Fiscal asume su representación y defensa hasta el nombramiento (art. 29 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 17 LJV · Art. 29 LJV · Art. 8.2 LEC · Art. 6 LJV"
+     "texto": "Arts. 6, 16, 17 y 29 LJV"
     }
    ],
    "pregunta": "¿La solicitud es admisible?",
@@ -413,20 +377,20 @@ Neg.data.register({
   },
   "subsanacion": {
    "fase": 1,
-   "titulo": "Trámite de subsanación (art. 17.4 LJV)",
+   "titulo": "Trámite de subsanación (art. 16.4 LJV)",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Secretario judicial otorga al solicitante un plazo de 5 días para subsanar los defectos u omisiones. Transcurrido sin subsanación: se tendrá por no presentada la solicitud y se archivará el expediente."
+     "texto": "El Letrado de la Administración de Justicia otorga al solicitante un plazo de 5 días para subsanar los defectos u omisiones. Transcurrido sin subsanación: se tendrá por no presentada la solicitud y se archivará el expediente."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo de subsanación: 5 días hábiles desde la notificación del requerimiento"
+     "texto": "Plazo de subsanación: cinco días (art. 16.4 LJV)"
     },
     {
      "tipo": "ley",
-     "texto": "Art. 17.4 LJV"
+     "texto": "Art. 16.4 LJV"
     }
    ],
    "pregunta": "¿Se subsana el defecto en el plazo de 5 días?",
@@ -452,7 +416,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Admitida la solicitud, el Secretario judicial convoca a comparecencia. Citación con al menos 15 días de antelación (art. 17.3 LJV), acompañando copia de la solicitud y documentos. La comparecencia debe celebrarse dentro de los 30 días siguientes a la admisión."
+     "texto": "Admitida la solicitud, el Letrado de la Administración de Justicia convoca a comparecencia. Citación con al menos 15 días de antelación (art. 17.3 LJV), acompañando copia de la solicitud y documentos. La comparecencia debe celebrarse dentro de los 30 días siguientes a la admisión."
     },
     {
      "tipo": "lista",
@@ -461,9 +425,9 @@ Neg.data.register({
       "El solicitante",
       "Los interesados que consten en el expediente",
       "El menor o persona con discapacidad, si tuvieren suficiente madurez",
-      "En todo caso, el menor si tuviere más de 12 años (art. 9 LO 1/1996)",
+      "En todo caso, el menor si tuviere más de 12 años (art. 30.1 LJV)",
       "El Ministerio Fiscal (siempre, sin excepción)",
-      "Quienes el Secretario judicial estime pertinente"
+      "Quienes el Letrado de la Administración de Justicia estime pertinente"
      ],
      "marcar": true
     },
@@ -531,11 +495,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si el opositor propone prueba que no puede practicarse en la comparecencia, puede acordarse su práctica en los 10 días siguientes (art. 18.4.ª LJV)."
+     "texto": "Si el opositor propone prueba que no puede practicarse en la comparecencia, puede acordarse su práctica en los 10 días siguientes (art. 18.2, 4.ª, LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 17.3 LJV · Art. 3.2 LJV · Art. 18.4.ª LJV"
+     "texto": "Art. 17.3 LJV · Art. 3.2 LJV · Art. 18.2, 4.ª, LJV"
     }
    ],
    "siguiente": "comparecencia"
@@ -547,17 +511,17 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La comparecencia se celebra ante el Secretario judicial, que la preside. Se sustancia por los trámites del juicio verbal (art. 18.2 LJV) con las especialidades propias del expediente."
+     "texto": "La comparecencia se celebra ante el Letrado de la Administración de Justicia, que la preside. Se sustancia por los trámites del juicio verbal (art. 18.2 LJV) con las especialidades propias del expediente."
     },
     {
      "tipo": "lista",
      "titulo": "Especialidades procedimentales",
      "items": [
-      "Audiencia del menor/persona con discapacidad: puede ser en acto separado, sin interferencias (art. 18.4.ª LJV), con asistencia del MF y levantamiento de acta",
+      "Audiencia del menor/persona con discapacidad: puede ser en acto separado, sin interferencias (art. 18.2, 4.ª, LJV), con asistencia del MF y levantamiento de acta",
       "Valoración motivada de la exploración practicada en la resolución final",
       "Ajustes para personas con discapacidad: lenguaje claro, facilitadores, apoyos (art. 7 bis LJV)",
-      "Grabación audiovisual de la comparecencia (art. 18.6.ª LJV)",
-      "El MF puede proponer diligencias de oficio (art. 5 LJV)"
+      "Grabación audiovisual de la comparecencia (art. 18.2, 6.ª, LJV)",
+      "Diligencias relativas a sus intereses, de oficio o a instancia del Ministerio Fiscal, en el mismo acto o en los diez días siguientes (art. 18.2, 4.ª, LJV)"
      ],
      "marcar": true
     },
@@ -579,7 +543,7 @@ Neg.data.register({
      "destino": "practica_prueba"
     },
     {
-     "texto": "No asiste sin causa justificada — tenerle por desistido y archivar",
+     "texto": "No asiste — tenerle por desistido y archivar",
      "tono": "t-aviso",
      "nota": "No asiste",
      "destino": "fin_desistimiento"
@@ -593,14 +557,14 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se practican las pruebas admitidas, se realizan las diligencias relativas al interés del menor o persona con discapacidad acordadas de oficio o a instancia del MF, y los interesados formulan oralmente sus conclusiones (art. 18.5.ª LJV)."
+     "texto": "Se practican las pruebas admitidas, se realizan las diligencias relativas al interés del menor o persona con discapacidad acordadas de oficio o a instancia del MF, y los interesados formulan oralmente sus conclusiones (art. 18.2, 5.ª, LJV)."
     },
     {
      "tipo": "lista",
      "titulo": "Documentación del acto",
      "items": [
-      "Grabación audiovisual de la comparecencia (art. 18.6.ª LJV)",
-      "Acta de la audiencia del menor, si se practicó en acto separado (art. 18.4.ª LJV)",
+      "Grabación audiovisual de la comparecencia (art. 18.2, 6.ª, LJV)",
+      "Acta de la exploración, que el LAJ levanta en todo caso (art. 18.2, 4.ª, LJV)",
       "Testimonio de las pruebas practicadas",
       "Traslado del acta a las partes para alegaciones en 5 días si la audiencia del menor fue posterior a la comparecencia"
      ],
@@ -620,11 +584,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Terminada la comparecencia, el Secretario judicial dispone de 5 días para resolver. La decisión puede fundarse en cualquier hecho conocido durante el expediente, aunque no hubiera sido invocado por las partes (art. 19.2 LJV)."
+     "texto": "Terminada la comparecencia, el Letrado de la Administración de Justicia dispone de 5 días para resolver. La decisión puede fundarse en cualquier hecho conocido durante el expediente, aunque no hubiera sido invocado por las partes (art. 19.2 LJV)."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo para resolver: 5 días desde la terminación de la comparecencia o desde la última diligencia practicada (art. 19.1 LJV)"
+     "texto": "Plazo para resolver: 5 días desde la terminación de la comparecencia o, si no se celebró, desde la última diligencia practicada (art. 19.1 LJV)"
     },
     {
      "tipo": "ley",
@@ -654,64 +618,25 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Secretario judicial dicta decreto de nombramiento designando al defensor judicial y determinando las atribuciones que le confiere. Criterio: idoneidad para el cargo (art. 30.2 LJV · art. 295 CC)."
+     "texto": "El LAJ nombra defensor judicial a quien estime más idóneo para el cargo, con determinación de las atribuciones que le confiera (art. 30.2 LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Contenido obligatorio del decreto",
+     "titulo": "Contenido",
      "items": [
-      "Identificación del defensor judicial nombrado",
-      "Atribuciones conferidas: estrictamente limitadas al objeto del expediente",
-      "Advertencia de las obligaciones del cargo (arts. 235–236 CC para menores; arts. 295–298 CC para personas con discapacidad)",
-      "Indicación del plazo para aceptar el cargo",
-      "Si causa c): indicación de la obligación de remisión al Registro Civil (art. 30.3 LJV)"
+      "Identificación del defensor judicial",
+      "Atribuciones que se le confieren",
+      "Recordatorio de sus obligaciones (arts. 235–236 CC; arts. 295–298 CC)"
      ],
      "marcar": true
     },
     {
-     "tipo": "ley",
-     "texto": "Art. 30.2 LJV · Arts. 235–236 CC · Arts. 295–298 CC"
-    }
-   ],
-   "pregunta": "¿El supuesto es la causa c) del art. 27.2 LJV (imposibilidad de hecho)?",
-   "opciones": [
-    {
-     "texto": "Sí — remitir testimonio al Registro Civil antes de notificar el nombramiento",
-     "tono": "t-nota",
-     "nota": "Causa c)",
-     "destino": "inscripcion_rc"
-    },
-    {
-     "texto": "No, otro supuesto — proceder directamente a la notificación del nombramiento",
-     "tono": "t-nota",
-     "nota": "Otro supuesto",
-     "destino": "notificacion_nombramiento"
-    }
-   ]
-  },
-  "inscripcion_rc": {
-   "fase": 3,
-   "titulo": "Remisión al Registro Civil para inscripción (art. 30.3 LJV)",
-   "actor": "laj",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "El testimonio de la resolución de nombramiento en el supuesto del art. 27.2.c) debe remitirse al Registro Civil competente para su inscripción. Esta publicidad registral produce efectos frente a terceros."
-    },
-    {
-     "tipo": "lista",
-     "titulo": "Actuaciones",
-     "items": [
-      "Expedir testimonio de la resolución de nombramiento",
-      "Remitir el testimonio al Registro Civil del domicilio del afectado",
-      "Dejar constancia en el expediente de la remisión y de la fecha",
-      "Aguardar confirmación de la inscripción antes de expedir el título al defensor"
-     ],
-     "marcar": true
+     "tipo": "nota",
+     "texto": "El art. 30.3 LJV manda inscribir en el Registro Civil el nombramiento «en el caso previsto en la letra c) del apartado 1 del artículo 27», letra que la Ley 8/2021 suprimió (el supuesto pasó al art. 295.4.º CC: defensor mientras se tramita la provisión de medidas de apoyo, para administrar los bienes). No se refiere a la imposibilidad de hecho del art. 27.2.c). Pregunta abierta al propietario sobre la práctica del juzgado."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 30.3 LJV · Art. 22 LJV · Ley 20/2011 Registro Civil"
+     "texto": "Art. 30.2 y 3 LJV · Arts. 235–236 CC · Arts. 295–298 CC"
     }
    ],
    "siguiente": "notificacion_nombramiento"
@@ -755,11 +680,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Secretario judicial dicta decreto desestimando la solicitud. La resolución firme produce cosa juzgada: no cabe iniciar otro expediente sobre idéntico objeto salvo cambio de circunstancias (art. 19.3 LJV). Sí cabe, sin embargo, el proceso contencioso posterior (art. 19.4 LJV)."
+     "texto": "El Letrado de la Administración de Justicia dicta decreto desestimando la solicitud. Firme, no cabe iniciar otro expediente sobre idéntico objeto salvo cambio de circunstancias (art. 19.3 LJV). Sí cabe, sin embargo, el proceso contencioso posterior (art. 19.4 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "La interposición de recursos de revisión o apelación requiere Abogado y Procurador (art. 3.2 LJV)."
+     "texto": "El recurso de revisión requiere abogado y procurador (art. 3.2 LJV)."
     },
     {
      "tipo": "ley",
@@ -769,22 +694,14 @@ Neg.data.register({
    "pregunta": "¿Se interpone recurso contra la resolución desestimatoria?",
    "opciones": [
     {
-     "texto": "No — la resolución deviene firme",
+     "texto": "No — la resolución deviene firme (Sin recurso)",
      "tono": "t-nota",
-     "nota": "Sin recurso",
      "destino": "fin_desestimacion_firme"
     },
     {
-     "texto": "Sí — recurso de revisión ante el Juez (resolución del Secretario judicial, art. 20.2 LJV)",
+     "texto": "Sí — recurso de revisión ante el Juez (art. 20.2 LJV)",
      "tono": "t-plazo",
-     "nota": "Revisión",
      "destino": "recurso_revision"
-    },
-    {
-     "texto": "Sí — recurso de apelación (resolución del Juez, art. 20.2 LJV)",
-     "tono": "t-plazo",
-     "nota": "Apelación",
-     "destino": "recurso_apelacion"
     }
    ]
   },
@@ -795,48 +712,22 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Cuando la resolución desestimatoria proviene del Secretario judicial, el recurso es la revisión ante el Juez competente (art. 20.2 LJV). El recurso de apelación posterior no tiene efectos suspensivos salvo disposición expresa contraria."
+     "texto": "Contra el decreto del LAJ que pone fin al expediente cabe recurso de revisión ante el Juez (art. 20.2 LJV)."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Cinco días (art. 454 bis.2 LEC)."
     },
     {
      "tipo": "nota",
-     "texto": "La interposición del recurso requiere Abogado y Procurador (art. 3.2 LJV)."
+     "texto": "Para interponerlo son necesarios abogado y procurador (art. 3.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 20.2 LJV · Art. 3.2 LJV"
+     "texto": "Art. 20.2 LJV · Art. 454 bis LEC · Art. 3.2 LJV"
     }
    ],
    "pregunta": "¿El Juez estima el recurso de revisión?",
-   "opciones": [
-    {
-     "texto": "Sí — devolver al cauce de nombramiento",
-     "tono": "t-ok",
-     "nota": "Estimado",
-     "destino": "resolucion_estimatoria"
-    },
-    {
-     "texto": "No — confirmación desestimatoria",
-     "tono": "t-aviso",
-     "nota": "Desestimado",
-     "destino": "fin_desestimacion_firme"
-    }
-   ]
-  },
-  "recurso_apelacion": {
-   "fase": 3,
-   "titulo": "Recurso de apelación ante la Audiencia Provincial (art. 20.2 LJV)",
-   "actor": "juez",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "Cuando la resolución desestimatoria fue dictada por el Juez, cabe recurso de apelación ante la Audiencia Provincial. Sin efectos suspensivos (art. 20.2 LJV in fine) salvo disposición expresa contraria. Requiere Abogado y Procurador."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 20.2 LJV · Art. 3.2 LJV"
-    }
-   ],
-   "pregunta": "¿La Audiencia Provincial estima el recurso de apelación?",
    "opciones": [
     {
      "texto": "Sí — devolver al cauce de nombramiento",
@@ -859,17 +750,16 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El defensor judicial ejerce las atribuciones determinadas en el decreto de nombramiento. Su cargo es tuitivo, ocasional y estrictamente limitado al objeto del expediente. Debe actuar en interés del afectado, respetando su voluntad, deseos y preferencias."
+     "texto": "El defensor judicial ejerce las atribuciones que le confiere la resolución de nombramiento (art. 30.2 LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Obligaciones del defensor judicial (arts. 235–236 CC y arts. 295–298 CC)",
+     "titulo": "Obligaciones",
      "items": [
-      "Actuar en el interés del menor o persona con discapacidad",
-      "Respetar la voluntad, deseos y preferencias del afectado (en especial, personas con discapacidad)",
-      "Prohibición de recibir liberalidades del afectado hasta aprobación definitiva de la gestión",
-      "Prohibición de actuar con conflicto de intereses propio o de terceros",
-      "Deber activo de comunicación al órgano judicial ante cualquier causa de cesación (art. 31 LJV)"
+      "El defensor del menor ejerce el cargo en interés de este, de acuerdo con su personalidad y respetando sus derechos (arts. 235 y 236 CC)",
+      "El de la persona con discapacidad debe conocer y respetar su voluntad, deseos y preferencias (art. 297 CC)",
+      "Rendir cuentas una vez realizada su gestión (art. 298 CC)",
+      "Comunicar al órgano judicial las causas de cesación (art. 31 LJV)"
      ],
      "marcar": true
     },
@@ -887,7 +777,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El defensor judicial vigila activamente la concurrencia de causas de cesación y las comunica de inmediato al órgano judicial (art. 31 LJV). El carácter provisional del cargo exige esta vigilancia permanente. Además pueden presentarse incidencias como la excusa o remoción."
+     "texto": "El defensor judicial vigila activamente la concurrencia de causas de cesación y las comunica de inmediato al órgano judicial (art. 31 LJV). Además pueden presentarse incidencias como la excusa o remoción."
     },
     {
      "tipo": "lista",
@@ -901,7 +791,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 31 LJV · Art. 49 LJV (remoción) · Art. 50 LJV (excusa) · Art. 32 LJV"
+     "texto": "Arts. 31 y 32 LJV (con remisión a los arts. 49 a 51)"
     }
    ],
    "pregunta": "¿Qué incidencia se produce durante el ejercicio del cargo?",
@@ -945,22 +835,21 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El defensor judicial comunica al órgano judicial la desaparición de la causa que motivó su nombramiento. El Secretario judicial verifica la efectiva desaparición y dicta decreto declarando extinguido el cargo. Notificar a las partes y al MF."
+     "texto": "El defensor judicial comunica al órgano judicial la desaparición de la causa que motivó su nombramiento. El LAJ resuelve lo que proceda. Notificar a las partes y al MF."
     },
     {
      "tipo": "lista",
-     "titulo": "Actuaciones del Secretario judicial",
+     "titulo": "Actuaciones del Letrado de la Administración de Justicia",
      "items": [
       "Recibir y verificar la comunicación del defensor judicial",
       "Dictar decreto declarando extinguido el cargo",
-      "Notificar a las partes, al afectado y al MF",
-      "Si fue causa c): comunicar la extinción al Registro Civil (por analogía con art. 30.3 LJV)"
+      "Notificar a las partes, al afectado y al MF"
      ],
      "marcar": true
     },
     {
      "tipo": "ley",
-     "texto": "Art. 31.1 LJV · Art. 22 LJV"
+     "texto": "Art. 31.1 LJV"
     }
    ],
    "siguiente": "rendicion_cuentas"
@@ -976,7 +865,7 @@ Neg.data.register({
     },
     {
      "tipo": "lista",
-     "titulo": "Actuaciones del Secretario judicial",
+     "titulo": "Actuaciones del Letrado de la Administración de Justicia",
      "items": [
       "Recibir la comunicación del defensor judicial",
       "Verificar la disponibilidad y capacidad del representante",
@@ -999,7 +888,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El defensor judicial comunica la terminación del procedimiento o expediente que motivó su habilitación y nombramiento. La extinción del proceso principal extingue ipso facto la justificación del cargo. Tramitar el decreto de cese y la rendición de cuentas."
+     "texto": "El defensor judicial comunica la terminación del procedimiento o expediente que motivó su habilitación y nombramiento. Tramitar el decreto de cese y la rendición de cuentas."
     },
     {
      "tipo": "ley",
@@ -1010,31 +899,29 @@ Neg.data.register({
   },
   "excusa": {
    "fase": 5,
-   "titulo": "Expediente de excusa del defensor judicial (art. 50 LJV, vía art. 32 LJV)",
+   "titulo": "Excusa del defensor judicial (art. 32 LJV, con el art. 50)",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Deben alegarse las causas de excusa dentro de los 15 días desde el nombramiento. Si la causa es sobrevenida, puede alegarse en cualquier momento, siempre que haya persona de parecidas condiciones para sustituir."
+     "texto": "Se aplican las causas de excusa del curador (art. 297 CC) y el procedimiento del art. 50 LJV; la tramita y decide el LAJ (art. 32 LJV)."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo para alegar excusa: 15 días desde el nombramiento (o en cualquier momento si la causa es sobrevenida)"
+     "texto": "Debe alegarse dentro de los quince días desde que conoce el nombramiento; si el motivo sobreviene, en cualquier momento, siempre que haya persona de parecidas condiciones para sustituirle (art. 50.1 LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Trámites del expediente de excusa",
+     "titulo": "Trámite",
      "items": [
-      "Comparecencia: se oye al defensor, al sustituto propuesto, al afectado (si tiene suficiente madurez o &gt;12 años) y al MF",
-      "Mientras se tramita: el defensor está obligado a continuar en el cargo",
-      "Si no ejerce: el Secretario judicial nombra un defensor provisional que le sustituye",
-      "Si la excusa es rechazada: el defensor responsable soporta todos los gastos ocasionados (art. 50.3 LJV)"
+      "Comparecencia con quien se excusa, quien vaya a sustituirle, el afectado si tiene suficiente madurez y en todo caso el menor de más de doce años, y el Ministerio Fiscal (art. 50.2)",
+      "Mientras se tramita, debe seguir ejerciendo; si no lo hace, se nombra un sustituto y, si la excusa se rechaza, responde de los gastos (art. 50.3)"
      ],
      "marcar": true
     },
     {
      "tipo": "ley",
-     "texto": "Art. 50 LJV · Art. 32 LJV · Art. 297 CC"
+     "texto": "Art. 32 LJV · Art. 50 LJV · Art. 297 CC"
     }
    ],
    "pregunta": "¿Se admite la excusa?",
@@ -1046,7 +933,7 @@ Neg.data.register({
      "destino": "nuevo_defensor"
     },
     {
-     "texto": "No — el defensor continúa en el cargo; los gastos del expediente son a su cargo",
+     "texto": "No — el defensor continúa en el cargo",
      "tono": "t-aviso",
      "nota": "Rechazada",
      "destino": "excusa_rechazada"
@@ -1060,11 +947,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Rechazada la excusa, el defensor judicial continúa en el cargo. Queda responsable de todos los gastos causados por el expediente de excusa (art. 50.3 LJV). El expediente principal retoma su curso."
+     "texto": "Rechazada la excusa, continúa en el cargo y responde de los gastos ocasionados si no siguió ejerciendo durante la tramitación (art. 50.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 50.3 LJV · Art. 32 LJV"
+     "texto": "Arts. 32 y 50.3 LJV"
     }
    ],
    "siguiente": "vigilancia_cesacion"
@@ -1076,50 +963,39 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Admitida la excusa o acordada la remoción, el Secretario judicial procede al nombramiento de un nuevo defensor judicial conforme al art. 30.2 LJV, con determinación de las atribuciones que le confiera."
-    },
-    {
-     "tipo": "nota",
-     "texto": "El nuevo nombramiento sigue los mismos criterios de idoneidad: art. 236 CC para menores y art. 295 CC para personas con discapacidad."
+     "texto": "Admitida la excusa o acordada la remoción, se nombra nuevo defensor judicial con sus atribuciones (arts. 30.2 y 50.4 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 50.4 LJV · Art. 30.2 LJV · Arts. 236, 295 CC"
+     "texto": "Arts. 30.2, 32 y 50.4 LJV · Arts. 235–236 y 295 CC"
     }
    ],
    "siguiente": "ejercicio_cargo"
   },
   "remocion": {
    "fase": 5,
-   "titulo": "Expediente de remoción del defensor judicial (art. 49 LJV, vía art. 32 LJV)",
-   "actor": "juez",
+   "titulo": "Remoción del defensor judicial (art. 32 LJV, con el art. 49)",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La remoción puede acordarse de oficio, a solicitud del MF, del afectado o de cualquier persona interesada. Se tramita mediante comparecencia. El Juez puede suspender provisionalmente al defensor y el Secretario judicial nombrará un defensor provisional durante la tramitación."
+     "texto": "Se aplican las causas de remoción del curador (art. 297 CC). Puede acordarse de oficio o a solicitud del Ministerio Fiscal, del afectado o de otra persona interesada, previa comparecencia; la tramita y decide el LAJ (art. 32 LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Trámites del expediente de remoción",
+     "titulo": "Trámite (art. 49.1 LJV)",
      "items": [
-      "Comparecencia: se oye al defensor, a los posibles sustitutos, al afectado (si &gt;12 años o suficiente madurez) y al MF",
-      "Si hay oposición: el expediente se hace contencioso — juicio verbal (art. 49.1 LJV)",
-      "La resolución de remoción corresponde al JUEZ —no al Secretario judicial— (art. 49.3 LJV)",
-      "Si se acuerda la remoción: el Juez nombra nuevo defensor conforme a la legislación civil",
-      "Comunicar la remoción al Registro Civil si procede"
+      "Comparecencia con el defensor, las personas que puedan sustituirle, la persona con discapacidad, el menor si tiene suficiente madurez y en todo caso si es mayor de doce años, y el Ministerio Fiscal",
+      "Si hay oposición, el expediente se hace contencioso: vista y juicio verbal"
      ],
      "marcar": true
     },
     {
-     "tipo": "aviso",
-     "texto": "La resolución de remoción es del JUEZ, no del Secretario judicial, aunque el expediente haya sido tramitado por el LAJ."
-    },
-    {
      "tipo": "ley",
-     "texto": "Art. 49 LJV · Art. 32 LJV · Art. 297 CC"
+     "texto": "Art. 32 LJV · Art. 49 LJV · Art. 297 CC"
     }
    ],
-   "pregunta": "¿El Juez acuerda la remoción?",
+   "pregunta": "¿Se acuerda la remoción?",
    "opciones": [
     {
      "texto": "Sí — proceder al nombramiento de nuevo defensor judicial",
@@ -1142,43 +1018,36 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Extinguido el cargo, el defensor judicial debe rendir cuentas de su gestión. La rendición final debe presentarse en el plazo de 3 meses desde el cese (prorrogables por justa causa). Los informes se trasladan al afectado, interesados y MF."
-    },
-    {
-     "tipo": "plazo",
-     "texto": "Plazo para la rendición de cuentas finales: 3 meses desde el cese del cargo (prorrogable por justa causa)"
+     "texto": "Realizada su gestión, el defensor judicial rinde cuentas (art. 298 CC). Se tramitan y deciden por el LAJ (art. 32 LJV), con los trámites del art. 51.2 LJV."
     },
     {
      "tipo": "lista",
-     "titulo": "Trámites de la rendición de cuentas",
+     "titulo": "Trámite (art. 51.2 LJV)",
      "items": [
-      "Presentación del informe/cuentas por el defensor al Secretario judicial",
-      "Traslado por el LAJ al afectado (si tiene suficiente madurez), a los interesados y al MF",
-      "Plazo para solicitar comparecencia: 10 días desde el traslado",
-      "El Juez puede acordar pericial contable de oficio si hay operaciones complejas (art. 51.3 LJV)",
-      "Resolución por auto del Juez (art. 51.3 LJV)"
+      "Presentadas las cuentas, el LAJ las traslada a la persona con discapacidad, al menor si tiene suficiente madurez y en todo caso si es mayor de doce años, a los interesados y al Ministerio Fiscal",
+      "Si alguno lo pide en diez días, se cita a todos a una comparecencia, en la que pueden proponerse diligencias y pruebas"
      ],
      "marcar": true
     },
     {
-     "tipo": "nota",
-     "texto": "La aprobación de las cuentas no impide las acciones recíprocas entre el defensor y el afectado o sus causahabientes por razón de la gestión (art. 51.5 LJV)."
+     "tipo": "plazo",
+     "texto": "Diez días desde el traslado para pedir comparecencia."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 51 LJV · Art. 32 LJV · Art. 298 CC"
+     "texto": "Arts. 32 y 51.2 LJV · Art. 298 CC"
     }
    ],
    "pregunta": "¿Algún interesado solicita comparecencia sobre las cuentas en el plazo de 10 días?",
    "opciones": [
     {
-     "texto": "No — tramitación sin comparecencia; el Juez resuelve por auto",
+     "texto": "No — sin comparecencia; resuelve el LAJ",
      "tono": "t-ok",
      "nota": "Sin comparecencia",
      "destino": "aprobacion_cuentas"
     },
     {
-     "texto": "Sí — celebrar comparecencia; el Juez puede ordenar pericial contable",
+     "texto": "Sí — celebrar comparecencia",
      "tono": "t-nota",
      "nota": "Con comparecencia",
      "destino": "comparecencia_cuentas"
@@ -1188,34 +1057,34 @@ Neg.data.register({
   "comparecencia_cuentas": {
    "fase": 5,
    "titulo": "Comparecencia sobre las cuentas (art. 51.2 LJV)",
-   "actor": "juez",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se celebra comparecencia con todos los interesados, el afectado (si tiene suficiente madurez o es mayor de 12 años) y el MF. El Juez puede acordar de oficio una pericial contable o de auditoría si las operaciones son complejas o requieren justificación técnica."
+     "texto": "Comparecencia con todos los citados; pueden proponerse de oficio o a instancia de parte diligencias y pruebas (art. 51.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 51.2 y 51.3 LJV"
+     "texto": "Arts. 32 y 51.2 LJV"
     }
    ],
    "siguiente": "aprobacion_cuentas"
   },
   "aprobacion_cuentas": {
    "fase": 5,
-   "titulo": "Resolución sobre las cuentas: auto del Juez (art. 51.3 LJV)",
-   "actor": "juez",
+   "titulo": "Resolución sobre las cuentas",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez resuelve por auto sobre la rendición de cuentas. La aprobación judicial cierra el expediente de rendición pero no impide las acciones recíprocas posteriores entre el defensor y el afectado."
+     "texto": "Las decide el LAJ (art. 32 LJV). Contra su decreto cabe revisión ante el Juez (art. 20.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 51.3 y 51.5 LJV"
+     "texto": "Arts. 20.2 y 32 LJV"
     }
    ],
-   "pregunta": "¿El Juez aprueba las cuentas?",
+   "pregunta": "¿Se aprueban las cuentas?",
    "opciones": [
     {
      "texto": "Sí, cuentas aprobadas — expediente concluido correctamente",
@@ -1224,7 +1093,7 @@ Neg.data.register({
      "destino": "fin_exitoso"
     },
     {
-     "texto": "No aprobadas — acciones recíprocas expeditas",
+     "texto": "No aprobadas",
      "tono": "t-aviso",
      "nota": "No aprobadas",
      "destino": "fin_cuentas_no_aprobadas"
@@ -1238,22 +1107,22 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El expediente ha concluido satisfactoriamente. El defensor judicial ha cesado por causa legal, las cuentas de gestión han sido aprobadas judicialmente y todos los efectos del art. 29 LJV han quedado extinguidos desde la aceptación del cargo."
+     "texto": "El expediente ha concluido satisfactoriamente. El defensor judicial ha cesado y sus cuentas han sido aprobadas."
     },
     {
      "tipo": "nota",
-     "texto": "Resolución firme: cosa juzgada sobre el objeto del expediente (art. 19.3 LJV). La aprobación de cuentas no impide las acciones recíprocas por razón de la gestión (art. 51.5 LJV)."
+     "texto": "Firme la resolución, no puede iniciarse otro expediente con idéntico objeto salvo que cambien las circunstancias (art. 19.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 19.3 LJV · Art. 29 LJV · Art. 51.5 LJV"
+     "texto": "Art. 19.3 LJV · Art. 298 CC"
     }
    ],
    "fin": "success"
   },
   "fin_limite_directo": {
    "fase": 0,
-   "titulo": "No procede: límite del artículo 27 in fine",
+   "titulo": "No procede: límite del art. 27.3 in fine",
    "actor": "laj",
    "bloques": [
     {
@@ -1306,7 +1175,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La solicitud presenta un defecto insubsanable. El Secretario judicial dicta decreto archivando el expediente o da cuenta al Juez si a él corresponde la resolución (art. 17.1 LJV). Si el archivo se produce antes de que el defensor acepte el cargo, los plazos del art. 29 LJV no llegan a suspenderse."
+     "texto": "La solicitud presenta un defecto insubsanable. El Letrado de la Administración de Justicia dicta decreto archivando el expediente (art. 17.1 LJV). La suspensión de plazos del art. 29 LJV cesa con el archivo por resolución firme."
     },
     {
      "tipo": "ley",
@@ -1322,11 +1191,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El solicitante no subsanó el defecto en el plazo de 5 días. Se tiene por no presentada la solicitud y se archiva el expediente (art. 17.4 LJV). La suspensión de plazos del art. 29 LJV —si llegó a iniciarse— queda sin efecto con el archivo firme."
+     "texto": "El solicitante no subsanó el defecto en el plazo de 5 días. Se tiene por no presentada la solicitud y se archiva el expediente (art. 16.4 LJV). La suspensión de plazos del art. 29 LJV —si llegó a iniciarse— queda sin efecto con el archivo firme."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 17.4 LJV · Art. 29 LJV"
+     "texto": "Art. 16.4 LJV · Art. 29 LJV"
     }
    ],
    "fin": "error"
@@ -1338,11 +1207,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El solicitante no asistió a la comparecencia sin causa justificada. Se le tiene por desistido y el expediente se archiva (art. 18.2, 1.ª LJV). La suspensión de plazos del art. 29 LJV cesa con el archivo firme. Si la no asistencia tiene causa justificada, puede acreditarse para evitar este efecto."
+     "texto": "El solicitante no asistió a la comparecencia. Se le tiene por desistido y el expediente se archiva (art. 18.2, 1.ª LJV). La suspensión de plazos del art. 29 LJV cesa con el archivo firme."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 18.2, 1.ª LJV · Art. 21 LJV · Art. 29 LJV"
+     "texto": "Art. 18.2, 1.ª LJV · Art. 29 LJV"
     }
    ],
    "fin": "warning"
@@ -1354,7 +1223,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La resolución desestimatoria ha devenido firme. Cosa juzgada sobre el objeto del expediente: no cabe nuevo expediente sobre idéntico objeto salvo cambio de circunstancias. El art. 19.4 LJV permite, sin embargo, la incoacin de un proceso contencioso posterior con el mismo objeto."
+     "texto": "La resolución desestimatoria ha devenido firme. No cabe nuevo expediente sobre idéntico objeto salvo cambio de circunstancias (art. 19.3 LJV). El art. 19.4 LJV permite, sin embargo, la incoación de un proceso contencioso posterior con el mismo objeto."
     },
     {
      "tipo": "ley",
@@ -1365,24 +1234,20 @@ Neg.data.register({
   },
   "fin_cuentas_no_aprobadas": {
    "fase": 5,
-   "titulo": "Cuentas no aprobadas: acciones recíprocas expeditas (art. 51.5 LJV)",
-   "actor": "juez",
+   "titulo": "Cuentas no aprobadas",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez no ha aprobado las cuentas. Quedan expeditas las acciones recíprocas entre el defensor judicial y el afectado o sus causahabientes por razón de la gestión (art. 51.5 LJV). El cargo queda extinguido en todo caso."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La no aprobación no implica automáticamente responsabilidad civil o penal del defensor: será preciso ejercitar las acciones correspondientes en la vía oportuna."
+     "texto": "Las cuentas no se han aprobado. Las responsabilidades que procedan se exigirán en la vía correspondiente."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 51.5 LJV · Art. 32 LJV · Art. 298 CC"
+     "texto": "Arts. 32 y 51 LJV · Art. 298 CC"
     }
    ],
    "fin": "warning"
   }
  },
- "pie": "Referencias claveArts. 27–32 LJV<br>Arts. 235–236, 295–298 CC<br>Arts. 7–9 LEC · Art. 7 bis LJV<br>Ley 8/2021 · LO 1/1996"
+ "pie": "Arts. 27–32 LJV (y 49–51 por remisión del art. 32)<br>Arts. 163, 235–236 y 295–298 CC<br>Art. 7 bis LJV · Art. 9 LO 1/1996"
 });
