@@ -222,7 +222,7 @@ Un commit por esquema, con su registro en `docs/revision/`. Orden: el de la tabl
 | E27 | LJV · Título VII — Subastas voluntarias | ✅ 2026-10-30 · corregido (texto fiel); el art. 641 LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025 — criterio del propietario incorporado (decisión 13); artículos de la LEC de la subasta corregidos; recurso de revisión; Sección Civil ([registro](revision/ljv-subastas.md)) |
 | E28 | LJV · Título IX — Conciliación | ✅ 2026-10-30 · rehecho (31 fichas → 11, una por artículo); artículos de la transacción (CC 1810–1817) y de la ejecución (LEC 518, 520, 556/557) corregidos; umbral del Juez de Paz 10.000 € (decisión 14); conciliación como requisito de procedibilidad (art. 5.1 LO 1/2025) ([registro](revision/ljv-conciliacion.md)) |
 
-### Fase 5 · Revisión de contenido de las guías (25) ◐ (11/25)
+### Fase 5 · Revisión de contenido de las guías (25) ◐ (12/25)
 Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfanos (reconectar al punto correcto del flujo o eliminar, con motivo).
 
 | # | Guía | Hallazgos previos | Estado |
@@ -238,7 +238,7 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G09 | LJV · T. II Cap. II — Habilitación y defensor judicial | 21 × «Secretario judicial» | ✅ 2026-10-31 · excusa, remoción y cuentas las decide el LAJ (art. 32); solo revisión contra el decreto; art. 30.3 no es la imposibilidad de hecho (pregunta abierta, como E12); 16.4, 18.2 y 29 corregidos ([registro](revision/ljv-defensor-judicial.md)) |
 | G10 | LJV · T. II Cap. III — Adopción | 4 huérfanos | ✅ 2026-10-31 · fiel; los 4 pasos huérfanos (arts. 40–42) se enlazan desde el inicio; salvedades del art. 177.2 CC, plazos de los arts. 179–180 CC, art. 42.2 LJV; discrepancia 15 días (art. 37.2 LJV) / hasta 20 (art. 781.1 LEC) pendiente del propietario ([registro](revision/ljv-adopcion.md)) |
 | G11 | LJV · T. II Cap. III bis — Medidas de apoyo | — | ✅ 2026-10-31 · estructura fiel; numeración del art. 42 bis b) corregida (cinco apartados); subsanación en cinco días (art. 16.4); apelación contra el auto de revisión; apelación tras el RDL 6/2023; autocuratela (también en E14), arts. 250, 263, 268–270 y 295 CC; defensor judicial por el LAJ (arts. 27–32 LJV) ([registro](revision/ljv-medidas-apoyo.md)) |
-| G12 | LJV · T. II Cap. IV — Tutela, curatela y guarda de hecho | 1 huérfano | ☐ |
+| G12 | LJV · T. II Cap. IV — Tutela, curatela y guarda de hecho | 1 huérfano | ✅ 2026-10-31 · rehecha (59 pasos, mismos identificadores): sin tildes y con el CC anterior a la Ley 8/2021; huérfano conectado; «art. 753 bis LEC» fuera; cuentas aprobadas no liberan de responsabilidad; defensor en la remoción lo nombra el LAJ; excusa del art. 279 CC ([registro](revision/ljv-tutela-curatela.md)) |
 | G13 | LJV · T. II Cap. V — Emancipación | 1 huérfano | ☐ |
 | G14 | LJV · T. II Cap. VI — Patrimonio protegido | — | ☐ |
 | G15 | LJV · T. II Cap. VII — Honor, intimidad e imagen | dependencia de CDN; «art. 98 LOPJ», «art. 59.4», «art. 1.4 LO 1/1982» | ☐ |
@@ -297,6 +297,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-10-31 · Fase 5 · G12 (tutela, curatela y guarda de hecho) rehecha. Siguiente: G13.
 - 2026-10-31 · Fase 5 · G11 (medidas de apoyo) revisada; arrastre a E14 (autocuratela). Siguiente: G12.
 - 2026-10-31 · Decisión 18: LOPJ 231, 455 y 564 y epígrafe del CP corregidos en las instantáneas; sin efecto en el contenido. `tools/run.js`: espera a que el navegador termine de escribir el puerto de depuración (fallo intermitente «bad port»). Siguiente: G11.
 - 2026-10-31 · Decisión 17: detección de errores de consolidación del BOE (`tools/boe-revisiones.js`) y corrección de instantáneas (`sources/boe/correcciones.json`); 16 artículos de la LEC corregidos; arrastre en E04/G04 (art. 800.4: art. 438, diez días; se deshace un cambio de las revisiones), E03/G03/G02 (art. 794.4) y E05/G05 (art. 809.2). Pendientes: LOPJ 231, 455 y 564, epígrafe del CP y las reversiones de otro tipo.

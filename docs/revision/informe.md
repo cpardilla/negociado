@@ -47,7 +47,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-defensor-judicial | Guía · LJV · Habilitación para comparecer y defensor judicial | 1E | · | · | · | · | · | 1R |
 | ljv-adopcion | Guía · LJV · Adopción | · | · | · | · | · | · | 1R |
 | ljv-medidas-apoyo | Guía · LJV · Medidas judiciales de apoyo a personas con discapacidad | · | · | · | · | · | · | 1R |
-| ljv-tutela-curatela | Guía · LJV · Tutela, curatela y guarda de hecho | 3E 1A 1R | · | · | · | · | 1E | 2R |
+| ljv-tutela-curatela | Guía · LJV · Tutela, curatela y guarda de hecho | · | · | · | · | · | · | 1R |
 | ljv-emancipacion | Guía · LJV · Emancipación y beneficio de la mayoría de edad | 49E | · | · | · | · | 1E 1R | 3R |
 | ljv-patrimonio-protegido | Guía · LJV · Patrimonio de las personas con discapacidad | 1E 1A 1R | · | · | 1R | · | · | 1R |
 | ljv-honor-menor | Guía · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | 1E 2A 3R | · | · | · | · | · | · |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 62E 4A 36R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 2E 0A 1R | 0E 0A 60R |
+| | **Total** | 59E 3A 35R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 1R | 1E 0A 1R | 0E 0A 59R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,12 +69,12 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2427
-- ✓ CC (BOE a 07-09-2026): 1232
-- ✓ LEC (BOE a 07-10-2026): 1128
-- ✓ LOPJ (BOE a 09-10-2026): 95
+- ✓ LJV (BOE a 05-03-2026): 2524
+- ✓ CC (BOE a 07-09-2026): 1269
+- ✓ LEC (BOE a 07-10-2026): 1131
+- ✓ LOPJ (BOE a 09-10-2026): 99
 - ✓ LTRANS (BOE a 20-12-2025): 62
-- ✓ LOPJM (BOE a 18-12-2025): 48
+- ✓ LOPJM (BOE a 18-12-2025): 47
 - ✓ LRC (BOE a 24-02-2026): 38
 - ✓ LPPD (BOE a 18-12-2025): 36
 - UE: 33
@@ -102,10 +102,9 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 10/2012: 2
 - LO 3/2007: 1
 - Ley 54/2007: 1
-- ✓ L8-2021 (BOE a 20-12-2025): 1
 - LO 8/2021: 1
 
-Además, 328 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 304 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -354,22 +353,9 @@ Sin hallazgos automáticos.
 
 ### ljv-tutela-curatela · Guía · LJV · Tutela, curatela y guarda de hecho
 
-**citas**
-
-- [error] «art. 753 bis»: el art. 753 bis no existe en la LEC — _paso «comp_curatela» › info 1_
-- [error] «art. 753 bis»: el art. 753 bis no existe en la LEC — _paso «fin_curatela_originaria» › info 1_
-- [error] «art. 753 bis»: el art. 753 bis no existe en la LEC — _paso «fin_curatela_originaria» › ley 3_
-- [aviso] «Art. 49.4»: el art. 49 LJV no tiene apartado 4 (tiene 1, 2, 3) — _paso «nuevo_nombramiento» › ley 3_
-- [revisar] «Art. 12»: la L8-2021 vigente acaba en el art. 8; ¿se refiere a otra norma (p. ej. la LEC de 1881 o el CC)? — _paso «guarda_concepto» › ley 6_
-
-**grafos**
-
-- [error] pasos inalcanzables desde «inicio»: fin_error_incompetencia — _grafo_
-
 **terminologia**
 
-- [revisar] «Juzgado de Primera Instancia» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «comp_tutela» › plazo 2 | paso «comp_tutela» › plazo 3_
-- [revisar] «Secretario judicial» × 3 → Letrado/a de la Administración de Justicia (LO 7/2015) — _paso «formacion_inventario» › info 1 | paso «controversia_inventario» › info 2 | paso «aprobacion_inventario» › info 1_
+- [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «comp_tutela» › info 1_
 
 ### ljv-emancipacion · Guía · LJV · Emancipación y beneficio de la mayoría de edad
 
