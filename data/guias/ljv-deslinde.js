@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G23.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G23.json; revisado con el BOE (registro: docs/revision/ljv-deslinde.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-deslinde",
@@ -13,7 +13,7 @@ Neg.data.register({
   "107"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G23"
  },
@@ -27,7 +27,7 @@ Neg.data.register({
  ],
  "actores": {
   "ambos": "LAJ e interesados",
-  "laj": "LAJ"
+  "laj": "Letrado de la Administración de Justicia"
  },
  "inicio": "inicio",
  "pasos": {
@@ -110,7 +110,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La jurisprudencia del Tribunal Supremo exige, como requisito objetivo de la acción de deslinde, la existencia de confusión de linderos entre las fincas, de suerte que no se pueda tener conocimiento exacto de la línea perimetral de cada propiedad, con la consiguiente incertidumbre respecto de la aparente extensión superficial de cada una de ellas."
+     "texto": "El deslinde fija la línea divisoria entre la finca y las colindantes (art. 384 CC): presupone que esa línea sea incierta o discutida."
     },
     {
      "tipo": "aviso",
@@ -146,7 +146,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Será competente para el conocimiento de este expediente el Secretario judicial del Juzgado de Primera Instancia correspondiente al lugar donde estuviera situada la finca o la mayor parte de ella."
+     "texto": "Será competente para el conocimiento de este expediente el LAJ del Juzgado de Primera Instancia correspondiente al lugar donde estuviera situada la finca o la mayor parte de ella."
     },
     {
      "tipo": "lista",
@@ -154,9 +154,13 @@ Neg.data.register({
      "items": [
       "Identificar el lugar donde está situada la finca",
       "Si la finca abarca varios partidos judiciales, determinar en cuál se encuentra la mayor parte de ella",
-      "Atribuir el conocimiento al Secretario judicial del Juzgado de Primera Instancia correspondiente"
+      "Atribuir el conocimiento al LAJ del Juzgado de Primera Instancia correspondiente"
      ],
      "marcar": true
+    },
+    {
+     "tipo": "nota",
+     "texto": "Hoy, la Sección Civil del Tribunal de Instancia. El art. 105.1 dice aún «Secretario judicial»."
     },
     {
      "tipo": "ley",
@@ -242,11 +246,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Esta cuantía coincide con la que delimita el juicio verbal y el juicio ordinario en la Ley de Enjuiciamiento Civil, de modo que, si el expediente deviene contencioso, el proceso declarativo posterior se tramitará conforme a esas reglas."
+     "texto": "Los 6.000 euros solo fijan aquí la postulación. No coinciden con el límite del juicio verbal, que hoy es de 15.000 euros (art. 250.2 LEC)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 105.3 LJV"
+     "texto": "Artículo 105.3 LJV · Artículo 250.2 LEC"
     }
    ],
    "siguiente": "solicitud"
@@ -294,7 +298,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Se admite el deslinde parcial, posibilidad avalada por la jurisprudencia y por la Dirección General de Seguridad Jurídica y Fe Pública, y recogida expresamente en el artículo 200 de la Ley Hipotecaria para fincas inscritas."
+     "texto": "Se admite el deslinde parcial: el propio art. 106.1 LJV lo prevé (y el art. 200 LH, para fincas inscritas)."
     },
     {
      "tipo": "ley",
@@ -325,7 +329,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 106.1 LJV, párrafos segundo y tercero"
+     "texto": "Artículo 106.1 LJV, párrafo primero (certificación registral) y párrafo segundo"
     }
    ],
    "siguiente": "rep_grafica"
@@ -341,7 +345,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 106.1 LJV, párrafos cuarto a sexto"
+     "texto": "Artículo 106.1 LJV, párrafo segundo"
     }
    ],
    "pregunta": "¿Coincide la representación gráfica catastral con el deslinde solicitado?",
@@ -384,7 +388,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 106.1 LJV, párrafos quinto y sexto; Texto Refundido de la Ley del Catastro Inmobiliario (RDLeg 1/2004)"
+     "texto": "Artículo 106.1 LJV, párrafo segundo; Texto Refundido de la Ley del Catastro Inmobiliario (RDLeg 1/2004)"
     }
    ],
    "siguiente": "presentacion"
@@ -400,7 +404,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El escrito se dirige al Secretario judicial (Letrado de la Administración de Justicia) del Juzgado de Primera Instancia del lugar donde esté situada la finca o la mayor parte de ella."
+     "texto": "El escrito se dirige al LAJ del Juzgado de Primera Instancia del lugar donde esté situada la finca o la mayor parte de ella."
     },
     {
      "tipo": "ley",
@@ -416,11 +420,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Recibida la solicitud, el Secretario judicial resuelve sobre su admisión y, en caso de admitirla, comunica el inicio del expediente a todos los interesados."
+     "texto": "Recibida la solicitud, el LAJ resuelve sobre su admisión y, en caso de admitirla, comunica el inicio del expediente a todos los interesados."
     },
     {
      "tipo": "nota",
-     "texto": "El Secretario judicial, admitida la solicitud, comunicará el inicio del expediente a todos los interesados."
+     "texto": "El LAJ, admitida la solicitud, comunicará el inicio del expediente a todos los interesados."
     },
     {
      "tipo": "lista",
@@ -504,7 +508,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 106.2 LJV, párrafo cuarto; artículo 17.3 LJV (archivo por oposición, régimen general)"
+     "texto": "Artículo 106.2 LJV, párrafo segundo (excepción a la regla general del art. 17.3 LJV, según la cual la oposición no hace contencioso el expediente)"
     }
    ],
    "siguiente": "traslado"
@@ -524,7 +528,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Transcurrido el plazo, el Secretario judicial dará traslado a dichos interesados de toda la documentación aportada y les citará al acto de deslinde a celebrar en el plazo de treinta días para buscar la avenencia entre ellos."
+     "texto": "Transcurrido el plazo, el LAJ dará traslado a dichos interesados de toda la documentación aportada y les citará al acto de deslinde a celebrar en el plazo de treinta días para buscar la avenencia entre ellos."
     },
     {
      "tipo": "lista",
@@ -558,11 +562,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La comparecencia no es obligatoria, lo que resulta coherente con la naturaleza voluntaria del expediente (artículo 1.2 LJV)."
+     "texto": "La falta de asistencia de algún colindante no impide celebrar el acto (art. 106.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 106.2 LJV, párrafo tercero"
+     "texto": "Artículo 106.2 LJV, párrafo segundo"
     }
    ],
    "pregunta": "¿Qué resultado se obtiene en el acto de deslinde?",
@@ -595,11 +599,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El Secretario judicial hará constar en un acta todo cuanto acuerden y que el acto terminó con avenencia total, así como los términos de la misma, debiendo ser firmada por los comparecientes."
+     "texto": "El LAJ hará constar en un acta todo cuanto acuerden y que el acto terminó con avenencia total, así como los términos de la misma, debiendo ser firmada por los comparecientes."
     },
     {
      "tipo": "nota",
-     "texto": "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar la avenencia, acordándose el archivo definitivo de las actuaciones."
+     "texto": "Finalizado el acto, el LAJ dictará decreto haciendo constar la avenencia, acordándose el archivo definitivo de las actuaciones."
     },
     {
      "tipo": "nota",
@@ -618,8 +622,12 @@ Neg.data.register({
      "marcar": true
     },
     {
+     "tipo": "nota",
+     "texto": "Contra el decreto cabe recurso de revisión ante el Juez, con Abogado y Procurador (arts. 3.2 y 20.2 LJV; art. 454 bis LEC)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Artículo 107 LJV — Resolución; Texto Refundido de la Ley del Catastro Inmobiliario (RDLeg 1/2004)"
+     "texto": "Artículo 107 LJV · Artículo 20.2 LJV · Texto Refundido de la Ley del Catastro Inmobiliario (RDLeg 1/2004)"
     }
    ],
    "fin": "success"
@@ -635,11 +643,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El Secretario judicial hará constar en acta todo cuanto acuerden y que el acto terminó con avenencia parcial respecto de alguno o algunos de los linderos, así como los términos de la misma, debiendo ser firmada por los comparecientes."
+     "texto": "El LAJ hará constar en acta todo cuanto acuerden y que el acto terminó con avenencia parcial respecto de alguno o algunos de los linderos, así como los términos de la misma, debiendo ser firmada por los comparecientes."
     },
     {
      "tipo": "nota",
-     "texto": "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar que la avenencia fue parcial respecto de alguno o algunos de los linderos, acordándose el archivo definitivo de las actuaciones."
+     "texto": "Finalizado el acto, el LAJ dictará decreto haciendo constar que la avenencia fue parcial respecto de alguno o algunos de los linderos, acordándose el archivo definitivo de las actuaciones."
     },
     {
      "tipo": "nota",
@@ -662,8 +670,12 @@ Neg.data.register({
      "marcar": true
     },
     {
+     "tipo": "nota",
+     "texto": "Contra el decreto cabe recurso de revisión ante el Juez, con Abogado y Procurador (arts. 3.2 y 20.2 LJV; art. 454 bis LEC)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Artículo 107 LJV; artículos 385 a 387 del Código Civil"
+     "texto": "Artículo 107 LJV · Artículo 20.2 LJV · Artículos 385 a 387 del Código Civil"
     }
    ],
    "fin": "warning"
@@ -683,7 +695,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Finalizado el acto, el Secretario judicial dictará decreto haciendo constar que se celebró sin avenencia, acordándose el archivo definitivo de las actuaciones."
+     "texto": "Finalizado el acto, el LAJ dictará decreto haciendo constar que se celebró sin avenencia, acordándose el archivo definitivo de las actuaciones."
     },
     {
      "tipo": "aviso",
@@ -705,8 +717,12 @@ Neg.data.register({
      "texto": "En el juicio declarativo posterior regirán los artículos 385 a 387 del Código Civil: el deslinde se hará en conformidad con los títulos de cada propietario y, a falta de títulos suficientes, por lo que resultare de la posesión; en defecto de ambos, distribuyendo el terreno en partes iguales; y, si los títulos indicasen un espacio mayor o menor que el total, distribuyendo la diferencia proporcionalmente."
     },
     {
+     "tipo": "nota",
+     "texto": "Contra el decreto cabe recurso de revisión ante el Juez, con Abogado y Procurador (arts. 3.2 y 20.2 LJV; art. 454 bis LEC)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Artículo 107 LJV; artículos 385 a 387 del Código Civil"
+     "texto": "Artículo 107 LJV · Artículo 20.2 LJV · Artículos 385 a 387 del Código Civil"
     }
    ],
    "fin": "neutral"
@@ -734,7 +750,7 @@ Neg.data.register({
      "items": [
       "Expediente notarial de deslinde del artículo 200 LH",
       "Competencia: Notario del distrito donde radique la finca o en uno de los distritos colindantes",
-      "En caso de oposición, cauce judicial contencioso (juicio verbal u ordinario según cuantía, LEC)"
+      "Si no hay acuerdo, queda a salvo el juicio declarativo que corresponda (juicio verbal hasta 15.000 euros, art. 250.2 LEC)"
      ],
      "marcar": true
     },
@@ -780,7 +796,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "La jurisprudencia exige la existencia de confusión de linderos como requisito objetivo. Si los predios están perfectamente identificados y delimitados, no cabe el ejercicio de esta acción."
+     "texto": "Si los predios están perfectamente identificados y delimitados, no hay nada que deslindar (art. 384 CC)."
     },
     {
      "tipo": "nota",
@@ -788,7 +804,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículos 384 a 387 del Código Civil; jurisprudencia del Tribunal Supremo (entre otras, STS 1.ª de 14 de octubre de 1991)"
+     "texto": "Artículos 384 a 387 del Código Civil"
     }
    ],
    "fin": "warning"

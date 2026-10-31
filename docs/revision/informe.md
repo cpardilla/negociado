@@ -58,10 +58,10 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-sucesorio | Guía · LJV · Título IV · Derecho sucesorio | · | · | · | · | 1R | · | · |
 | ljv-obligaciones | Guía · LJV · Título V · Derecho de obligaciones | · | · | · | · | · | · | 1R |
 | ljv-usufructuario | Guía · LJV · Usufructuario: reclamación de créditos vencidos | · | · | · | · | · | · | 1R |
-| ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
+| ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 1R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 8E 0A 4R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 51R |
+| | **Total** | 8E 0A 4R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 50R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,9 +69,9 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2747
-- ✓ CC (BOE a 07-09-2026): 1289
-- ✓ LEC (BOE a 07-10-2026): 1133
+- ✓ LJV (BOE a 05-03-2026): 2755
+- ✓ CC (BOE a 07-09-2026): 1291
+- ✓ LEC (BOE a 07-10-2026): 1139
 - ✓ LOPJ (BOE a 09-10-2026): 114
 - ✓ LPPD (BOE a 18-12-2025): 70
 - ✓ LTRANS (BOE a 20-12-2025): 62
@@ -417,7 +417,6 @@ Sin hallazgos automáticos.
 
 **terminologia**
 
-- [revisar] «Secretario judicial» × 11 → Letrado/a de la Administración de Justicia (LO 7/2015) — _paso «competencia» › nota 2 | paso «competencia» › comprobación 3.3 | paso «presentacion» › nota 2 …_
 - [revisar] «Juzgado de Primera Instancia» × 4 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › nota 2 | paso «competencia» › comprobación 3.3 | paso «presentacion» › info 1 …_
 
 ### ljv-subastas · Guía · LJV · Título VII · Subastas voluntarias

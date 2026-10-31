@@ -22,3 +22,25 @@
 ## Para la fase 5 (G23)
 
 La guía dice «Secretario judicial» × 11 y «Juzgado de Primera Instancia» × 4; comprobar si repite la equivalencia 6.000 € = juicio verbal y la lectura del art. 17.3.
+
+---
+
+# Revisión · G23 · Guía de tramitación del deslinde de fincas no inscritas
+
+- **Recurso**: `data/guias/ljv-deslinde.js` (origen G23).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026; CC, LH, LEC y LOPJ en sus instantáneas.
+- **Método**: fase 5. La guía reproducía fielmente los arts. 104 a 107 LJV y el art. 200 LH (comprobados): **corregida**; se conservan los 24 pasos.
+- **Resultado del comprobador**: 0 errores, 0 avisos; queda la denominación legal «Juzgado de Primera Instancia» (art. 105.1 LJV), con la sección actual indicada. **Pendientes del ROADMAP** (6.000 € y juicio verbal; art. 17.3): resueltos abajo.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | con_abogado, fin_inscrita | **error** | Los 6.000 € «coinciden con la cuantía que delimita el juicio verbal y el ordinario» | Solo fijan la postulación; el juicio verbal llega hoy a 15.000 € (art. 250.2 LEC), como ya dice el esquema | LJV 105.3; LEC 250.2 |
+| 2 | archivo_parcial | error | Archivo «por el art. 17.3 LJV (régimen general)» | Art. 106.2, párrafo segundo: regla especial frente al art. 17.3, que dice que la oposición no hace contencioso el expediente | LJV 17.3, 106.2 |
+| 3 | documentacion, rep_grafica, rep_alternativa, acto_deslinde | error | Párrafos «segundo y tercero», «cuarto a sexto», «quinto y sexto» del art. 106.1 y «tercero» y «cuarto» del 106.2 | El art. 106.1 tiene dos párrafos y el 106.2, dos | LJV 106 |
+| 4 | confusion_lindes, fin_sin_confusion, solicitud | jurisprudencia | Requisito de «confusión de linderos» atribuido a la jurisprudencia del TS (STS 14-10-1991); deslinde parcial «avalado por la jurisprudencia y la DGSJFP» | Retirada la jurisprudencia no verificada (decisión 10); el paso se apoya en el art. 384 CC; el deslinde parcial lo prevé el propio art. 106.1 | CC 384; LJV 106.1 |
+| 5 | fin_avenencia_total, fin_avenencia_parcial, fin_sin_avenencia | incompleto | Sin recurso | Revisión ante el Juez contra el decreto (art. 20.2 LJV; art. 454 bis LEC) | LJV 20.2 |
+| 6 | varios | terminología | «Secretario judicial» × 11; «art. 1.2 LJV» | LAJ; hoy, Sección Civil | LO 7/2015 |
+
+**Jurisprudencia retirada** (decisión 10), para reincorporarla con su ECLI si el propietario la aporta: STS, Sala 1.ª, 14-10-1991 (confusión de linderos como presupuesto de la acción de deslinde).
