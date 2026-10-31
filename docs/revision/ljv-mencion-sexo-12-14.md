@@ -25,3 +25,27 @@ El analizador de citas reconoce «, párrafo segundo,» entre el artículo y la 
 ## Corrección posterior (2026-10-29)
 
 Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).
+
+---
+
+# Revisión · G07 · Guía de tramitación de la modificación de la mención registral del sexo (12 a 14 años)
+
+- **Recurso**: `data/guias/ljv-mencion-sexo-12-14.js` (origen G07).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026; Ley 4/2023 (`LTRANS`); LOPJ.
+- **Método**: fase 5. La guía seguía bien los arts. 26 bis–26 quinquies LJV; correcciones puntuales sin tocar el recorrido.
+- **Resultado del comprobador**: 0 errores, 0 avisos (antes: 3 avisos y 2 «revisar»); se mantiene la denominación legal «Juzgado de Primera Instancia», con la sección actual indicada al inicio.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | testimonio, inscripcion, fin_exitoso | **error** | Remisión al Registro Civil «art. 26 quinquies.3» | Art. 26 quinquies.2 (el artículo tiene dos apartados) | LJV |
+| 2 | fin_exitoso | **error** | «La reversión solo puede hacerse una vez (art. 47.2 Ley 4/2023)» | Art. 47 Ley 4/2023: tras seis meses desde la inscripción, por el mismo procedimiento; una nueva rectificación posterior va por el Capítulo I ter LJV | LTRANS |
+| 3 | edad_check, fin_edad_incorrecta | error | Mayores de 16 «o emancipados» | Art. 43 Ley 4/2023: mayores de dieciséis por sí mismos; de catorce a dieciséis asistidos; doce a catorce, este expediente | LTRANS |
+| 4 | repr_desacuerdo | **error** | «Mientras se nombra defensor, el Ministerio Fiscal asume la representación del menor (art. 29 LJV)»; «se suspenden los plazos de prescripción»; «no se requiere habilitación previa (art. 27.3)» | Retirado: el art. 29 LJV prevé esa representación solo si el menor es demandado o queda sin representación procesal, y la suspensión se refiere a la acción para la que se pide la habilitación | LJV |
+| 5 | postulacion_info, recurso_apelacion | error | Art. 3.2 «párrafo 2.º» y «párrafo 3.º» | Párrafo primero (actuación voluntaria) y segundo (recursos y oposición) | LJV |
+| 6 | domicilio_ok, inicio | error | «Competencia de orden público, no saneable»; «el Juez dirige el expediente» | Remisión al competente (art. 16.3 LJV); decide el Juez (art. 2.3); hoy Sección de Familia, Infancia y Capacidad o Sección Civil | LJV, LOPJ |
+| 7 | subsanacion, admision_auto | error | Subsanación «arts. 231 y ss. LEC»; «auto de admisión» | Cinco días (art. 16.4 LJV); admisión sin forma impuesta | LJV |
+| 8 | testimonio, inscripcion | error | «Registro de la inscripción de nacimiento»; «prueba plena y oponibilidad» | «Registro Civil competente» (art. 26 quinquies.2); lo demás, retirado | LJV |
+| 9 | concesion, audiencia_menor, deliberacion, recurso_apelacion | error | OMS, Principios de Yogyakarta, CEDH, CE, CDN, CDPD; interés superior «prevalente»; «el expediente queda en suspenso durante la apelación» | Retirados (decisión 9); la apelación no tiene efectos suspensivos (art. 20.2 LJV) | LJV |
+| 10 | Varios | desfasado | «Secretario judicial», «JPI» | Letrado de la Administración de Justicia; Juzgado de Primera Instancia | LO 7/2015 |

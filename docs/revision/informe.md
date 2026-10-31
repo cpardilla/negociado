@@ -42,7 +42,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | lec-administracion-caudal | Guía · LEC · Administración del caudal hereditario | · | · | · | · | · | · | · |
 | lec-liquidacion-rem | Guía · LEC · Liquidación del régimen económico matrimonial | · | · | · | · | · | · | 1R |
 | ljv-filiacion | Guía · LJV · Reconocimiento de la filiación no matrimonial | · | · | · | · | · | · | 1R |
-| ljv-mencion-sexo-12-14 | Guía · LJV · Mención registral del sexo (12 a 14 años) | 3A 1R | · | · | · | · | · | 3R |
+| ljv-mencion-sexo-12-14 | Guía · LJV · Mención registral del sexo (12 a 14 años) | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-reversion | Guía · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
 | ljv-defensor-judicial | Guía · LJV · Habilitación para comparecer y defensor judicial | 4A | · | · | · | 1R | · | 2R |
 | ljv-adopcion | Guía · LJV · Adopción | · | · | · | · | · | 1E | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 60E 11A 37R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 2R | 3E 0A 1R | 0E 0A 63R |
+| | **Total** | 60E 8A 36R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 2R | 3E 0A 1R | 0E 0A 61R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,16 +69,16 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2407
+- ✓ LJV (BOE a 05-03-2026): 2406
 - ✓ CC (BOE a 07-09-2026): 1204
-- ✓ LEC (BOE a 07-10-2026): 1117
-- ✓ LOPJ (BOE a 09-10-2026): 87
-- ✓ LTRANS (BOE a 20-12-2025): 58
+- ✓ LEC (BOE a 07-10-2026): 1115
+- ✓ LOPJ (BOE a 09-10-2026): 88
+- ✓ LTRANS (BOE a 20-12-2025): 61
 - ✓ LOPJM (BOE a 18-12-2025): 48
-- UE: 40
 - ✓ LPPD (BOE a 18-12-2025): 36
-- ✓ CE (BOE a 20-05-2026): 35
+- UE: 33
 - ✓ LOPDH (BOE a 16-12-2025): 33
+- ✓ CE (BOE a 20-05-2026): 31
 - ✓ LN (BOE a 22-10-2026): 30
 - ✓ LRC (BOE a 24-02-2026): 30
 - ✓ RDTO (BOE a 19-12-2025): 25
@@ -316,18 +316,9 @@ Sin hallazgos automáticos.
 
 ### ljv-mencion-sexo-12-14 · Guía · LJV · Mención registral del sexo (12 a 14 años)
 
-**citas**
-
-- [aviso] «Art. 26 quinquies.3»: el art. 26 quinquies LJV no tiene apartado 3 (tiene 1, 2) — _paso «testimonio» › ley 3_
-- [aviso] «Art. 26 quinquies.3»: el art. 26 quinquies LJV no tiene apartado 3 (tiene 1, 2) — _paso «inscripcion» › ley 4_
-- [aviso] «Art. 26 quinquies.3»: el art. 26 quinquies LJV no tiene apartado 3 (tiene 1, 2) — _paso «fin_exitoso» › ley 3_
-- [revisar] «Art. 47.2»: el art. 47 LTRANS no tiene apartado 2 (no tiene apartados numerados) — _paso «fin_exitoso» › ley 3_
-
 **terminologia**
 
 - [revisar] «Juzgado de Primera Instancia» × 8 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «inicio» › info 1 | paso «inicio» › nota 2 | paso «domicilio_ok» › info 1 …_
-- [revisar] «Secretario judicial» × 5 → Letrado/a de la Administración de Justicia (LO 7/2015) — _paso «inicio» › nota 2 | paso «nombramiento_defensor» › info 1 | paso «nombramiento_defensor» › comprobación 2.1 …_
-- [revisar] «JPI» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar — _paso «nombramiento_defensor» › comprobación 2.1 | paso «testimonio» › info 1_
 
 ### ljv-mencion-sexo-reversion · Guía · LJV · Nueva modificación de la mención del sexo tras reversión
 

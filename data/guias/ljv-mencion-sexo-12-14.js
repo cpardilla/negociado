@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G07.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G07.json; revisado con el BOE (registro: docs/revision/ljv-mencion-sexo-12-14.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-mencion-sexo-12-14",
@@ -13,7 +13,7 @@ Neg.data.register({
   "26 quinquies"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G07"
  },
@@ -39,11 +39,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Antes de presentar cualquier solicitud, verifique que el Juzgado de Primera Instancia ante el que se va a actuar es territorialmente competente conforme al artículo 26 ter.1 de la LJV. La competencia territorial en los expedientes de jurisdicción voluntaria es inderogable: no puede modificarse ni ampliarse por sumisión expresa ni tácita."
+     "texto": "Antes de presentar cualquier solicitud, verifique que el Juzgado de Primera Instancia ante el que se va a actuar es territorialmente competente conforme al artículo 26 ter.1 de la LJV. No cabe modificarla por sumisión expresa o tácita (art. 2.2 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "Competencia objetiva: Juzgado de Primera Instancia (no de lo Mercantil). El expediente afecta al estado civil de un menor, que es materia de Derecho civil. Es el Juez —no el Secretario judicial— quien dirige y decide el expediente (art. 2.3 LJV)."
+     "texto": "Competencia objetiva: Juzgado de Primera Instancia; hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 j) LOPJ) o, si no, la Sección Civil. Decide el Juez: afecta al estado civil y a un menor (art. 2.3 LJV)."
     },
     {
      "tipo": "ley",
@@ -103,11 +103,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si se presentase la solicitud ante un juzgado incompetente, este deberá declarar su incompetencia e indicar al solicitante el órgano territorialmente competente. La competencia territorial es de orden público y no saneable por las partes."
+     "texto": "Si se presenta ante un juzgado sin competencia territorial, se remite al competente previa audiencia del Ministerio Fiscal y del solicitante (art. 16.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 ter.1 LJV · Art. 2.2 LJV"
+     "texto": "Art. 26 ter.1 LJV · Arts. 2.2 y 16.3 LJV"
     }
    ],
    "siguiente": "edad_check"
@@ -123,11 +123,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Sistema escalonado (Ley 4/2023, Ley Trans): mayores de 16 o emancipados → procedimiento administrativo ante el RC por sí mismos; entre 14 y 16 → procedimiento administrativo asistidos por representantes legales; entre 12 y 14 → este expediente de aprobación judicial (Cap. I bis); menores de 12 → sin cauce habilitado."
+     "texto": "Por edades (art. 43 Ley 4/2023): mayores de dieciséis años, por sí mismos ante el Registro Civil; entre catorce y dieciséis, por sí mismos asistidos por sus representantes legales; entre doce y catorce, este expediente de aprobación judicial (Capítulo I bis LJV). La ley no prevé cauce para los menores de doce."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 bis LJV · Arts. 1 y ss. Ley 4/2023"
+     "texto": "Art. 26 bis LJV · Art. 43 Ley 4/2023"
     }
    ],
    "pregunta": "¿Es la persona solicitante mayor de doce años y menor de catorce?",
@@ -187,15 +187,11 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "No se requiere habilitación previa para nombrar al defensor judicial cuando se trata de instar expedientes de jurisdicción voluntaria (art. 27.3 LJV). El nombramiento puede iniciarse de oficio, a petición del Ministerio Fiscal o por iniciativa del propio menor."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Mientras se tramita el nombramiento del defensor judicial, el Ministerio Fiscal asumirá la representación y defensa del menor (art. 29 LJV). Desde que se solicita el nombramiento queda suspendido el cómputo de plazos de prescripción o caducidad afectados."
+     "texto": "El nombramiento se tramita por el expediente de los arts. 27 y siguientes LJV."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 ter.2 LJV · Arts. 235 y 236 CC · Arts. 27 a 32 LJV · Art. 29 LJV"
+     "texto": "Art. 26 ter.2 LJV · Arts. 235 y 236 CC · Arts. 27 a 32 LJV"
     }
    ],
    "siguiente": "nombramiento_defensor"
@@ -207,24 +203,21 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se inicia el expediente de nombramiento de defensor judicial conforme al Capítulo II del Título II de la LJV (arts. 27 a 32). Este expediente es instrumental y previo a la tramitación del Capítulo I bis. El Secretario judicial del Juzgado de Primera Instancia del domicilio o residencia del menor es el competente."
+     "texto": "Se tramita el expediente de nombramiento de defensor judicial (arts. 27 a 32 LJV), previo al de este capítulo. Lo resuelve el Letrado de la Administración de Justicia del domicilio o residencia del menor."
     },
     {
      "tipo": "lista",
-     "titulo": "Actuaciones del expediente de nombramiento de defensor judicial",
+     "titulo": "Trámites principales",
      "items": [
-      "Presentación de la solicitud ante el Secretario judicial del JPIª del domicilio/residencia del menor (art. 28.1 LJV)",
-      "El expediente puede iniciarse de oficio, a petición del Ministerio Fiscal o por iniciativa del propio menor (art. 28.2 LJV)",
-      "La solicitud suspende el cómputo de plazos de prescripción o caducidad hasta que el defensor judicial acepte el cargo o el expediente se archive (art. 29 LJV)",
-      "El Secretario judicial convoca a comparecencia al solicitante, interesados, Ministerio Fiscal y al menor si tiene más de 12 años (art. 30.1 LJV)",
-      "El Secretario judicial nombra defensor judicial, determinando sus atribuciones (art. 30.2 LJV)",
-      "El defensor judicial comunica al órgano judicial cuando cese la causa que motivó su nombramiento (art. 31 LJV)"
+      "Solicitud ante el LAJ del domicilio o residencia del menor (art. 28 LJV)",
+      "Comparecencia con el solicitante, los interesados, el Ministerio Fiscal y el menor si tiene suficiente madurez y, en todo caso, si es mayor de doce años (art. 30.1 LJV)",
+      "Nombramiento del defensor judicial"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "El defensor judicial actúa exclusivamente a los efectos de este expediente concreto. No sustituye ni desplaza a los representantes legales para otros fines."
+     "texto": "El defensor judicial actúa a los efectos de este expediente."
     },
     {
      "tipo": "ley",
@@ -244,7 +237,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 ter.3 LJV · Art. 7 bis LJV · Convención sobre los Derechos de las Personas con Discapacidad (CDPD)"
+     "texto": "Art. 26 ter.3 LJV · Art. 7 bis LJV"
     }
    ],
    "pregunta": "¿Es la persona solicitante una persona menor con discapacidad?",
@@ -288,7 +281,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 7 bis LJV · Art. 26 ter.3 LJV · CDPD"
+     "texto": "Art. 7 bis LJV · Art. 26 ter.3 LJV"
     }
    ],
    "siguiente": "postulacion_info"
@@ -304,11 +297,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si el solicitante o su familia desean actuar voluntariamente asistidos por abogado y representados por procurador, pueden hacerlo (art. 3.2, párrafo 2.º, LJV)."
+     "texto": "Si el solicitante o su familia desean actuar voluntariamente asistidos por abogado y representados por procurador, pueden hacerlo (art. 3.2, párrafo primero, LJV)."
     },
     {
      "tipo": "aviso",
-     "texto": "EXCEPCIÓN IMPORTANTE: Si se formulase oposición o si se interpusiesen recursos de revisión o apelación contra la resolución definitiva, la intervención de abogado y procurador SÍ SERÁ PRECEPTIVA (art. 3.2, párrafo 3.º, LJV). Informe de ello al solicitante desde el inicio."
+     "texto": "EXCEPCIÓN IMPORTANTE: Si se formulase oposición o si se interpusiesen recursos de revisión o apelación contra la resolución definitiva, la intervención de abogado y procurador SÍ SERÁ PRECEPTIVA (art. 3.2, párrafo segundo, LJV). Informe de ello al solicitante desde el inicio."
     },
     {
      "tipo": "ley",
@@ -461,7 +454,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si la solicitud presenta defectos formales subsanables (documentación incompleta, insuficiente acreditación de la representación legal, falta de firma, etc.), el Juez requiere al solicitante para que los subsane en el plazo que se establezca. Las normas supletorias de la LEC (art. 8 LJV) son de aplicación."
+     "texto": "Si la solicitud presenta defectos formales subsanables (documentación incompleta, insuficiente acreditación de la representación legal, falta de firma, etc.), el Juez requiere al solicitante para que los subsane en el plazo que se establezca. El plazo de subsanación es de cinco días (art. 16.4 LJV)."
     },
     {
      "tipo": "aviso",
@@ -469,7 +462,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 8 LJV · Arts. 231 y ss. LEC (aplicación supletoria)"
+     "texto": "Art. 16.4 LJV"
     }
    ],
    "pregunta": "¿Subsana el solicitante los defectos dentro del plazo concedido?",
@@ -488,12 +481,12 @@ Neg.data.register({
   },
   "admision_auto": {
    "fase": 2,
-   "titulo": "Auto de admisión a trámite — carácter preferente",
+   "titulo": "Admisión a trámite — carácter preferente",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez dicta auto admitiendo a trámite la solicitud. El expediente queda calificado como de tramitación preferente y se procede a la siguiente fase: la citación de los interesados para la comparecencia."
+     "texto": "Se admite a trámite la solicitud. El expediente queda calificado como de tramitación preferente y se procede a la siguiente fase: la citación de los interesados para la comparecencia."
     },
     {
      "tipo": "nota",
@@ -651,11 +644,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Esta obligación garantiza que la decisión del menor sea libre, informada e independiente. Conecta con el art. 9 LO 1/1996 (derecho a ser oído con información suficiente) y el art. 12 de la Convención sobre los Derechos del Niño."
+     "texto": "Esta obligación garantiza que la decisión del menor sea libre, informada e independiente. Conecta con el art. 9 LO 1/1996 (derecho a ser oído e informado)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quater.3 LJV · Art. 9 LO 1/1996 · Art. 12 CDN"
+     "texto": "Art. 26 quater.3 LJV · Art. 9 LO 1/1996"
     }
    ],
    "siguiente": "audiencia_menor"
@@ -675,11 +668,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Fundamento múltiple: art. 24 CE (tutela judicial efectiva), art. 9 LO 1/1996 (derecho a ser oído, preceptivo para mayores de 12 años), art. 12 Convención sobre los Derechos del Niño, art. 6 CEDH."
+     "texto": "Conexión: derecho del menor a ser oído y escuchado (art. 9 LO 1/1996)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quinquies.1 LJV · Art. 9 LO 1/1996 · Art. 24 CE · Art. 12 CDN"
+     "texto": "Art. 26 quinquies.1 LJV · Art. 9 LO 1/1996"
     }
    ],
    "siguiente": "deliberacion"
@@ -697,7 +690,7 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Tres criterios concurrentes (art. 26 quinquies.1 LJV)",
      "items": [
-      "1.º INTERÉS SUPERIOR DEL MENOR: criterio rector y prevalente, que debe ponderarse en cada caso concreto atendiendo a las circunstancias personales, familiares y sociales del menor (art. 2 LO 1/1996, art. 39.4 CE, art. 3 CDN)",
+      "1.º INTERÉS SUPERIOR DEL MENOR, considerado en todo caso (art. 26 quinquies.1 LJV; art. 2 LO 1/1996)",
       "2.º VOLUNTAD ESTABLE: la disconformidad no es transitoria ni circunstancial, sino persistente en el tiempo. La estabilidad excluye voluntades meramente coyunturales pero no exige permanencia indefinida",
       "3.º MADUREZ SUFICIENTE: capacidad del menor para comprender y evaluar de forma razonable e independiente las consecuencias de su decisión. Se valora individualmente, no solo por edad cronológica, sino por el grado de desarrollo cognitivo y emocional del solicitante"
      ],
@@ -705,7 +698,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quinquies.1 LJV · Art. 2 LO 1/1996 · Art. 39.4 CE · Art. 3 CDN"
+     "texto": "Art. 26 quinquies.1 LJV · Art. 2 LO 1/1996"
     }
    ],
    "siguiente": "criterios_eval"
@@ -746,10 +739,6 @@ Neg.data.register({
     {
      "tipo": "aviso",
      "texto": "PROHIBICIÓN ABSOLUTA E IRRESTRICTA (art. 26 quinquies.2 LJV): La concesión no puede condicionarse, en ningún caso, a (1) la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a (2) la previa modificación de la apariencia o función corporal del menor a través de procedimientos médicos, quirúrgicos o de otra índole. El término «no podrá» excluye cualquier margen de discrecionalidad judicial al respecto."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Esta prohibición supone la desmedicalización expresa del procedimiento. Está en línea con la posición de la OMS (desclasificación de la incongruencia de género como trastorno en 2019), el Consejo de Europa, el Parlamento Europeo y los Principios de Yogyakarta."
     },
     {
      "tipo": "ley",
@@ -801,7 +790,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Para los recursos de revisión y apelación contra la resolución definitiva, la intervención de ABOGADO y PROCURADOR ES PRECEPTIVA (art. 3.2, párrafo 3.º, LJV), aunque no lo fuera durante la tramitación ordinaria del expediente. El solicitante debe proveerse de representación letrada antes de interponer el recurso."
+     "texto": "Para los recursos de revisión y apelación contra la resolución definitiva, la intervención de ABOGADO y PROCURADOR ES PRECEPTIVA (art. 3.2, párrafo segundo, LJV), aunque no lo fuera durante la tramitación ordinaria del expediente. El solicitante debe proveerse de representación letrada antes de interponer el recurso."
     },
     {
      "tipo": "plazo",
@@ -809,7 +798,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Durante la tramitación del recurso, el expediente de primera instancia permanece en suspenso. La Audiencia Provincial puede confirmar la denegación (resuelve por sí misma) o revocarla y conceder la aprobación judicial."
+     "texto": "La apelación no tiene efectos suspensivos (art. 20.2 LJV). La Audiencia Provincial puede confirmar la denegación o revocarla y conceder la aprobación."
     },
     {
      "tipo": "ley",
@@ -857,15 +846,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Dictado el auto de concesión (por el JPI o por la Audiencia Provincial en apelación), el órgano judicial libra testimonio de la resolución y lo remite de oficio al Registro Civil competente para proceder a la inscripción de la rectificación aprobada judicialmente."
+     "texto": "Dictado el auto de concesión (por el Juzgado de Primera Instancia o por la Audiencia Provincial en apelación), el órgano judicial libra testimonio de la resolución y lo remite de oficio al Registro Civil competente para proceder a la inscripción de la rectificación aprobada judicialmente."
     },
     {
      "tipo": "nota",
-     "texto": "El Registro Civil competente es el de la inscripción de nacimiento del solicitante, que es el asiento registral que contiene la mención del sexo y del nombre que se rectifican. El testimonio debe incluir todos los elementos identificativos necesarios para practicar la inscripción."
+     "texto": "El testimonio se remite al Registro Civil competente (art. 26 quinquies.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quinquies.3 LJV · Ley 20/2011, de 21 de julio, del Registro Civil"
+     "texto": "Art. 26 quinquies.2 LJV · Ley 20/2011, de 21 de julio, del Registro Civil"
     }
    ],
    "siguiente": "inscripcion"
@@ -878,10 +867,6 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "El Registro Civil recibe el testimonio de la resolución judicial y procede a practicar la inscripción de la rectificación de la mención del sexo y, en su caso, del nombre en la inscripción de nacimiento del solicitante."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La inscripción tiene valor de prueba plena del estado civil de la persona (Ley 20/2011) y es oponible frente a terceros desde su práctica en virtud del principio de publicidad registral. El Registro Civil debe notificar al interesado la práctica de la inscripción."
     },
     {
      "tipo": "lista",
@@ -897,7 +882,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quinquies.3 LJV · Ley 20/2011, del Registro Civil"
+     "texto": "Art. 26 quinquies.2 LJV · Ley 20/2011, del Registro Civil"
     }
    ],
    "siguiente": "fin_exitoso"
@@ -909,15 +894,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El expediente ha concluido satisfactoriamente. La rectificación de la mención registral del sexo —y del nombre, en su caso— ha sido practicada en el Registro Civil. La modificación tiene valor de prueba plena del estado civil y es plenamente oponible frente a terceros."
+     "texto": "El expediente ha concluido satisfactoriamente. La rectificación de la mención registral del sexo —y del nombre, en su caso— ha sido practicada en el Registro Civil. "
     },
     {
      "tipo": "nota",
-     "texto": "Posibilidad de reversión: la Ley 4/2023 (Ley Trans) permite la reversión de la rectificación, pero únicamente puede realizarse una vez. Si, tras la reversión, la persona desea volver a modificar la mención registral del sexo, deberá instar el procedimiento del Capítulo I ter de la LJV (arts. 26 sexies a 26 nonies, también de tramitación preferente y sin postulación preceptiva)."
+     "texto": "Reversión: transcurridos seis meses desde la inscripción, quien promovió la rectificación puede recuperar la mención anterior por el mismo procedimiento; si después quisiera una nueva rectificación, habrá de seguir el Capítulo I ter de la LJV (arts. 26 sexies y ss.) (art. 47 Ley 4/2023)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quinquies.3 LJV · Art. 47.2 Ley 4/2023 · Ley 20/2011"
+     "texto": "Art. 26 quinquies.2 LJV · Art. 47 Ley 4/2023 · Ley 20/2011"
     }
    ],
    "fin": "success"
@@ -953,11 +938,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Procedimientos alternativos (Ley 4/2023): entre 14 y 16 años → procedimiento administrativo ante el Registro Civil con asistencia de representantes legales; 16 años o más / emancipados → procedimiento administrativo ante el Registro Civil por sí mismo; menores de 12 años → el ordenamiento no reconoce capacidad para instar este expediente."
+     "texto": "Procedimientos alternativos (Ley 4/2023): entre catorce y dieciséis años, ante el Registro Civil, por sí mismos y asistidos por sus representantes legales; mayores de dieciséis, por sí mismos; menores de doce, la ley no prevé cauce (art. 43 Ley 4/2023)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 bis LJV · Arts. 1 y ss. Ley 4/2023"
+     "texto": "Art. 26 bis LJV · Art. 43 Ley 4/2023"
     }
    ],
    "fin": "warning"
@@ -977,7 +962,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 8 LJV · Arts. 231 y ss. LEC"
+     "texto": "Arts. 16.4 y 17.1 LJV"
     }
    ],
    "fin": "error"
