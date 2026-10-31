@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G06.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G06.json; revisado con el BOE (registro: docs/revision/ljv-filiacion.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-filiacion",
@@ -13,7 +13,7 @@ Neg.data.register({
   "26"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G06"
  },
@@ -26,7 +26,7 @@ Neg.data.register({
  ],
  "actores": {
   "juez": "Juez",
-  "laj": "LAJ / Secretario Judicial"
+  "laj": "Letrado de la Administración de Justicia"
  },
  "inicio": "inicio",
  "pasos": {
@@ -41,11 +41,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "AUTORIZACIÓN: condición de VALIDEZ, previa al reconocimiento. Sin ella el acto no puede otorgarse; si se otorgara sería inválido desde el origen. APROBACIÓN: condición de EFICACIA, posterior. El acto existe pero queda en suspenso; si se deniega, deviene ineficaz sin retroactividad sobre la declaración de voluntad."
+     "texto": "AUTORIZACIÓN: previa; sin ella no puede quedar determinada la filiación (art. 125 CC). APROBACIÓN: posterior a un reconocimiento ya otorgado; según el caso, la ley la exige para su validez (art. 23.4 LJV; art. 121 CC) o para su eficacia (art. 23.3 LJV; art. 124 CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 23 LJV 15/2015; arts. 121, 123, 124 CC"
+     "texto": "Art. 23 LJV 15/2015; arts. 121, 124 y 125 CC"
     }
    ],
    "pregunta": "¿Cuál es el supuesto concreto que motiva el expediente?",
@@ -66,7 +66,7 @@ Neg.data.register({
      "destino": "tipo_ap_b"
     },
     {
-     "texto": "APROBACIÓN (art. 23.3.c) — Reconocimiento paterno realizado dentro del plazo de inscripción, cuando la inscripción fue suspendida a petición de la madre (art. 44.5 Ley 20/2011 RC).",
+     "texto": "APROBACIÓN (art. 23.3.c) — Reconocimiento paterno realizado dentro del plazo de inscripción, cuando la inscripción fue suspendida a petición de la madre (art. 124, párrafo segundo, CC).",
      "tono": "t-ok",
      "destino": "tipo_ap_c"
     },
@@ -79,7 +79,7 @@ Neg.data.register({
   },
   "tipo_aut": {
    "fase": 0,
-   "titulo": "Autorización judicial previa — art. 23.2 LJV / art. 124 CC",
+   "titulo": "Autorización judicial previa — art. 23.2 LJV / art. 125 CC",
    "actor": "laj",
    "bloques": [
     {
@@ -88,7 +88,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "ATENCIÓN: el Juez solo autorizará cuando la determinación sea en interés del menor o de la persona con discapacidad (art. 26.2 LJV / art. 124 CC). La carga de acreditar ese interés recae sobre el promotor del expediente."
+     "texto": "ATENCIÓN: el Juez solo autorizará cuando la determinación sea en interés del menor o de la persona con discapacidad (art. 26.2 LJV; art. 125 CC: «cuando convenga al interés del menor»). "
     },
     {
      "tipo": "nota",
@@ -96,7 +96,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 124 CC; art. 23.2 LJV 15/2015; art. 26.2 LJV 15/2015"
+     "texto": "Art. 125 CC; art. 23.2 LJV 15/2015; art. 26.2 LJV 15/2015"
     }
    ],
    "siguiente": "competencia"
@@ -123,7 +123,7 @@ Neg.data.register({
   },
   "tipo_ap_b": {
    "fase": 0,
-   "titulo": "Aprobación judicial — Sin consentimiento ni asistencia (art. 23.3.b / art. 123 CC)",
+   "titulo": "Aprobación judicial — Sin consentimiento ni asistencia (art. 23.3.b / art. 124 CC)",
    "actor": "laj",
    "bloques": [
     {
@@ -136,7 +136,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 123 CC; art. 23.3.b LJV 15/2015"
+     "texto": "Art. 124 CC; art. 23.3.b LJV 15/2015"
     }
    ],
    "siguiente": "competencia"
@@ -148,7 +148,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Supuesto de APROBACIÓN: el padre realizó el reconocimiento dentro del plazo para practicar la inscripción del nacimiento, pero la madre solicitó la suspensión de esa inscripción conforme al art. 44.5 Ley 20/2011 del Registro Civil."
+     "texto": "Supuesto de APROBACIÓN: el padre realizó el reconocimiento dentro del plazo para practicar la inscripción del nacimiento, pero la madre solicitó la suspensión de esa inscripción (art. 124, párrafo segundo, CC: puede pedirla durante el año siguiente al nacimiento; si el padre pide la confirmación de la inscripción, hace falta aprobación judicial con audiencia del Ministerio Fiscal)."
     },
     {
      "tipo": "nota",
@@ -156,7 +156,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 44.5 Ley 20/2011 del Registro Civil; art. 23.3.c LJV 15/2015"
+     "texto": "Art. 124 CC; art. 23.3.c LJV 15/2015"
     }
    ],
    "siguiente": "competencia"
@@ -176,7 +176,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 121 CC; art. 23.4 LJV 15/2015; art. 26.1 LJV 15/2015"
+     "texto": "Art. 121, párrafo segundo, CC; art. 23.4 LJV 15/2015; art. 26.1 LJV 15/2015"
     }
    ],
    "siguiente": "competencia"
@@ -192,11 +192,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Competencia objetiva: siempre el Juzgado de Primera Instancia. La decisión de fondo es reservada al Juez (no al LAJ) por afectar al estado civil y a derechos de menores o personas con discapacidad (art. 2.3 LJV)."
+     "texto": "Competencia objetiva: el Juzgado de Primera Instancia; hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 d) LOPJ) o, si no, la Sección Civil. La decisión de fondo es reservada al Juez (no al LAJ) por afectar al estado civil y a derechos de menores o personas con discapacidad (art. 2.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 24.1 LJV 15/2015; art. 2 LJV 15/2015"
+     "texto": "Art. 24.1 LJV 15/2015; art. 2 LJV 15/2015; art. 86.5 LOPJ"
     }
    ],
    "pregunta": "¿Dónde tiene su domicilio o residencia el reconocido?",
@@ -294,7 +294,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "POSTULACIÓN: aunque no sea preceptiva, las partes pueden comparecer con Abogado y Procurador voluntariamente. Si cualquier interesado formula oposición, la postulación deviene OBLIGATORIA desde ese momento (art. 3.4 LJV). También es obligatoria para interponer recursos."
+     "texto": "POSTULACIÓN: aunque no sea preceptiva, las partes pueden comparecer con Abogado y Procurador voluntariamente. Si cualquier interesado formula oposición, la actuación de Abogado y Procurador es necesaria desde ese momento, y también para interponer recursos (art. 3.2, párrafo segundo, LJV)."
     },
     {
      "tipo": "ley",
@@ -484,7 +484,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Competencia para el nombramiento: Secretario judicial del Juzgado de Primera Instancia del domicilio o residencia del menor o persona con discapacidad (art. 28.1 LJV). El nombramiento se notifica al designado para que acepte o rechace el cargo. La aceptación activa la representación del reconocido."
+     "texto": "Competencia para el nombramiento: Letrado de la Administración de Justicia del Juzgado de Primera Instancia del domicilio o residencia del menor o persona con discapacidad (art. 28.1 LJV). El nombramiento se notifica al designado para que acepte o rechace el cargo. La aceptación activa la representación del reconocido."
     },
     {
      "tipo": "ley",
@@ -578,7 +578,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "ATENCIÓN — OPOSICIÓN: si algún interesado prevé formular oposición, deberá hacerlo en los 5 días siguientes a la citación. La oposición NO hace contencioso el expediente ni suspende su tramitación, pero desde ese momento la actuación de Abogado y Procurador es OBLIGATORIA para todas las partes (arts. 17.3 y 3.4 LJV)."
+     "texto": "ATENCIÓN — OPOSICIÓN: si algún interesado prevé formular oposición, deberá hacerlo en los 5 días siguientes a la citación. La oposición NO hace contencioso el expediente ni suspende su tramitación, pero desde ese momento la actuación de Abogado y Procurador es necesaria (arts. 17.3 y 3.2 LJV)."
     },
     {
      "tipo": "ley",
@@ -613,16 +613,12 @@ Neg.data.register({
      "texto": "PUNTO CRÍTICO: la oposición NO hace contencioso el expediente ni impide que continúe su tramitación hasta que sea resuelto. El expediente sigue adelante con normalidad."
     },
     {
-     "tipo": "aviso",
-     "texto": "POSTULACIÓN OBLIGATORIA: desde el momento en que se formula oposición, la actuación de Abogado y Procurador es OBLIGATORIA para todas las partes. Verificar que los interesados que prosigan sin postulación sean requeridos para subsanarla."
-    },
-    {
      "tipo": "nota",
      "texto": "El escrito de oposición se traslada INMEDIATAMENTE al solicitante. La comparecencia se celebra con normalidad; el oponente hará valer su posición en ese acto procesal."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 17.3 LJV 15/2015; art. 3.4 LJV 15/2015"
+     "texto": "Art. 17.3 LJV 15/2015; art. 3.2 LJV 15/2015"
     }
    ],
    "siguiente": "comparecencia"
@@ -714,12 +710,12 @@ Neg.data.register({
     },
     {
      "tipo": "lista",
-     "titulo": "Criterios de valoración del Juez (art. 26.1 LJV — cuatro parámetros con jerarquía implícita)",
+     "titulo": "Criterios de valoración del Juez (art. 26.1 LJV)",
      "items": [
       "(1) Discernimiento del progenitor: aptitud para comprender el alcance y efectos del reconocimiento. No equivale a plena capacidad de obrar.",
       "(2) Veracidad o autenticidad del acto: voluntad real y libre de vicios (presiones externas, engaño, error esencial sobre el vínculo biológico).",
       "(3) Verosimilitud de la relación de procreación — SIN necesidad de prueba plena: basta la credibilidad del vínculo biológico sustentada en elementos indiciarios.",
-      "(4) Interés del reconocido cuando sea menor o persona con discapacidad: CRITERIO PREVALENTE. El Juez puede denegar aunque los tres criterios anteriores concurran, si la filiación no redunda en interés del reconocido."
+      "(4) Interés del reconocido cuando sea menor o persona con discapacidad con medidas de apoyo."
      ],
      "marcar": true
     },
@@ -729,7 +725,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "SUPUESTO ESPECIAL (art. 23.2 / art. 26.2): en el caso de autorización por hermano o pariente consanguíneo del otro progenitor, el Juez SOLO autorizará cuando sea en interés del menor o persona con discapacidad. La carga de acreditar ese interés positivo recae sobre el promotor."
+     "texto": "SUPUESTO ESPECIAL (art. 23.2 / art. 26.2): en el caso de autorización por hermano o pariente consanguíneo del otro progenitor, el Juez SOLO autorizará cuando sea en interés del menor o persona con discapacidad. "
     },
     {
      "tipo": "ley",
@@ -757,7 +753,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez dicta auto concediendo la autorización (supuestos del art. 23.2) o la aprobación (supuestos del art. 23.3 y 23.4) solicitada. El auto es ejecutivo aunque no sea firme (el recurso de apelación no tiene efectos suspensivos)."
+     "texto": "El Juez dicta auto concediendo la autorización (supuestos del art. 23.2) o la aprobación (supuestos del art. 23.3 y 23.4) solicitada. El recurso de apelación no tiene efectos suspensivos (art. 20.2 LJV)."
     },
     {
      "tipo": "nota",
@@ -765,39 +761,31 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Efectos sustantivos de la filiación determinada: apellidos (arts. 109 y 111 CC) · obligaciones de alimentos (art. 143 CC) · derechos sucesorios (arts. 807 y ss. CC) · relaciones paterno-filiales (arts. 154 y ss. CC)."
+     "texto": "Efectos sustantivos de la filiación determinada: apellidos (art. 109 CC) · obligaciones de alimentos (art. 143 CC) · derechos sucesorios (arts. 807 y ss. CC) · relaciones paterno-filiales (arts. 154 y ss. CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26.1 LJV 15/2015; arts. 109, 111, 143, 154, 807 CC"
+     "texto": "Art. 26.1 LJV 15/2015; arts. 109, 143, 154 y 807 CC"
     }
    ],
    "siguiente": "eficacia_registral"
   },
   "eficacia_registral": {
    "fase": 4,
-   "titulo": "Remisión del testimonio al Registro Civil (art. 26.3 LJV)",
+   "titulo": "Testimonio para el Registro Civil (art. 22.2 LJV)",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ expide testimonio del auto estimatorio y lo remite al Registro Civil competente para proceder a la inscripción de la filiación no matrimonial. La remisión es AUTOMÁTICA y no requiere instancia de parte."
-    },
-    {
-     "tipo": "plazo",
-     "texto": "Verificar: el testimonio debe remitirse al Registro Civil de la circunscripción donde esté inscrito el nacimiento del reconocido. La remisión se realiza por medios electrónicos (art. 22.2 LJV)."
+     "texto": "Si el expediente da lugar a un hecho o acto inscribible en el Registro Civil, se expide testimonio de la resolución a efectos de su inscripción (art. 22.2 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "La inscripción en el Registro Civil tiene eficacia ERGA OMNES: la filiación queda oponible frente a todos desde ese momento. El reconocido pasa a figurar en el Registro con los apellidos que correspondan conforme a los arts. 109 y 111 CC."
-    },
-    {
-     "tipo": "nota",
-     "texto": "NOTA ESPECIAL (supuesto del art. 23.2 — autorización): si en el futuro el reconocido presenta ante el Juez un documento público con su manifestación en contrario, realizada una vez alcanzada la plena capacidad, el Juez INVALIDARÁ la determinación de la filiación (art. 26.2 LJV). Ausencia de plazo preclusivo."
+     "texto": "NOTA ESPECIAL (supuesto del art. 23.2 — autorización): el Juez invalidará la determinación si se presenta un documento público con la manifestación del reconocido al respecto, hecha una vez alcanzada la plena capacidad (art. 26.2 LJV; art. 125, párrafo segundo, CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26.3 LJV 15/2015; art. 22.2 LJV 15/2015; art. 44 Ley 20/2011 del Registro Civil"
+     "texto": "Art. 22.2 LJV 15/2015; art. 26.2 LJV 15/2015"
     }
    ],
    "siguiente": "recurso_auto_est"
@@ -833,15 +821,15 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "POSTULACIÓN OBLIGATORIA para el recurso: la actuación de Abogado y Procurador es siempre obligatoria para interponer el recurso de apelación, aunque no lo fuera en el expediente de instancia (art. 3.4 LJV)."
+     "texto": "POSTULACIÓN OBLIGATORIA para el recurso: la actuación de Abogado y Procurador es siempre obligatoria para interponer el recurso de apelación, aunque no lo fuera en el expediente de instancia (art. 3.2, párrafo segundo, LJV)."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo para interponer el recurso de apelación: conforme a los arts. 455 y ss. LEC (20 días desde la notificación del auto)."
+     "texto": "Plazo para interponer el recurso de apelación: veinte días desde la notificación del auto (art. 458.1 LEC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 20 LJV 15/2015; art. 3.4 LJV 15/2015; arts. 455 y ss. LEC"
+     "texto": "Art. 20 LJV 15/2015; art. 3.2 LJV 15/2015; art. 458 LEC"
     }
    ],
    "pregunta": "¿Se interpone recurso de apelación contra el auto estimatorio?",
@@ -869,15 +857,15 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "POSTULACIÓN OBLIGATORIA para el recurso: la actuación de Abogado y Procurador es siempre obligatoria para interponer el recurso de apelación, aunque no lo fuera en el expediente de instancia (art. 3.4 LJV)."
+     "texto": "POSTULACIÓN OBLIGATORIA para el recurso: la actuación de Abogado y Procurador es siempre obligatoria para interponer el recurso de apelación, aunque no lo fuera en el expediente de instancia (art. 3.2, párrafo segundo, LJV)."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo para interponer el recurso de apelación: conforme a los arts. 455 y ss. LEC (20 días desde la notificación del auto)."
+     "texto": "Plazo para interponer el recurso de apelación: veinte días desde la notificación del auto (art. 458.1 LEC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 20 LJV 15/2015; art. 3.4 LJV 15/2015; arts. 455 y ss. LEC"
+     "texto": "Art. 20 LJV 15/2015; art. 3.2 LJV 15/2015; art. 458 LEC"
     }
    ],
    "pregunta": "¿Se interpone recurso de apelación contra el auto desestimatorio?",
@@ -961,15 +949,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El auto estimatorio ha adquirido firmeza. La filiación no matrimonial queda judicialmente controlada y la inscripción en el Registro Civil produce efectos erga omnes. El expediente de jurisdicción voluntaria concluye."
+     "texto": "El auto estimatorio ha adquirido firmeza. La filiación no matrimonial queda judicialmente controlada y se inscribe en el Registro Civil. El expediente de jurisdicción voluntaria concluye."
     },
     {
      "tipo": "nota",
-     "texto": "NOTA ESPECIAL (supuesto de autorización, art. 23.2): si en el futuro el reconocido presenta ante el Juez un documento público con su manifestación en contrario —realizada una vez alcanzada la plena capacidad—, el Juez deberá invalidar la determinación de la filiación (art. 26.2 LJV). No existe plazo preclusivo para ejercitar este derecho."
+     "texto": "NOTA ESPECIAL (supuesto de autorización, art. 23.2): si en el futuro el reconocido presenta ante el Juez un documento público con su manifestación en contrario —realizada una vez alcanzada la plena capacidad—, el Juez deberá invalidar la determinación de la filiación (art. 26.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 23–26 LJV 15/2015; art. 44 Ley 20/2011 RC"
+     "texto": "Arts. 22.2 y 23–26 LJV 15/2015"
     }
    ],
    "fin": "success"
@@ -981,7 +969,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La Audiencia Provincial ha resuelto el recurso de apelación de forma favorable a la concesión. La autorización o aprobación queda firme y la inscripción en el Registro Civil produce efectos erga omnes."
+     "texto": "La Audiencia Provincial ha resuelto el recurso de apelación de forma favorable a la concesión. La autorización o aprobación queda firme y se inscribe en el Registro Civil."
     },
     {
      "tipo": "nota",
@@ -989,7 +977,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 23–26 LJV 15/2015; art. 44 Ley 20/2011 RC"
+     "texto": "Arts. 22.2 y 23–26 LJV 15/2015"
     }
    ],
    "fin": "success"

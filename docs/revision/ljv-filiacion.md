@@ -29,3 +29,26 @@
 ## Corrección posterior (2026-10-29)
 
 Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia, con carácter exclusivo y excluyente (art. 86.5 LOPJ); si no, la Sección Civil. Detectado al revisar E13 (véase `ljv-adopcion.md`).
+
+---
+
+# Revisión · G06 · Guía de tramitación de la autorización o aprobación del reconocimiento de la filiación no matrimonial
+
+- **Recurso**: `data/guias/ljv-filiacion.js` (origen G06).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026; CC; LEC; LOPJ.
+- **Método**: fase 5. La guía seguía bien los arts. 23–26 y 14–20 LJV; correcciones puntuales sin tocar el recorrido (43 pasos).
+- **Resultado del comprobador**: 0 errores, 0 avisos (antes: 7 avisos); se mantiene la denominación legal «Juzgado de Primera Instancia» (12), con la sección actual indicada en el paso de competencia.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | solicitud, citacion, oposicion, recurso_auto_* | **error** | Postulación obligatoria desde la oposición y para recurrir «art. 3.4 LJV» (× 7) | Art. 3.2, párrafo segundo, LJV (el art. 3 tiene dos apartados) | LJV |
+| 2 | eficacia_registral | **error** | Remisión al Registro Civil «art. 26.3 LJV», «automática», «por medios electrónicos», al Registro «de la circunscripción del nacimiento», con «eficacia erga omnes» | Testimonio para la inscripción (art. 22.2 LJV); lo demás, retirado | LJV |
+| 3 | tipo_aut, inicio | **error** | La autorización del art. 23.2 se basaba en el «art. 124 CC» | Art. 125 CC (progenitores hermanos o consanguíneos en línea recta: autorización «cuando convenga al interés del menor»; invalidación al alcanzar la mayoría de edad) | CC |
+| 4 | tipo_ap_b | error | Fundamento «art. 123 CC» | Art. 124 CC (consentimiento del representante legal o aprobación judicial; excepciones del testamento y del plazo de inscripción) | CC |
+| 5 | tipo_ap_c, inicio | error | Suspensión de la inscripción «art. 44.5 Ley 20/2011» | Art. 124, párrafo segundo, CC (a petición de la madre en el año siguiente al nacimiento; la confirmación exige aprobación judicial) | CC |
+| 6 | recurso_auto_* | error | Plazo de apelación «conforme a los arts. 455 y ss.» | Veinte días (art. 458.1 LEC); sin efectos suspensivos (art. 20.2 LJV) | LEC, LJV |
+| 7 | inicio, deliberacion, fin_* | error | «Aprobación: eficacia sin retroactividad»; «jerarquía implícita» de los criterios con el interés del menor «prevalente»; «la carga de acreditar el interés recae en el promotor»; «sin plazo preclusivo» | Retirados (sin base); los cuatro criterios del art. 26.1 sin jerarquía; la aprobación es requisito de validez o de eficacia según el supuesto (arts. 23.3 y 23.4 LJV; arts. 121 y 124 CC) | LJV, CC |
+| 8 | auto_estimatorio | error | Apellidos «arts. 109 y 111 CC» | Art. 109 CC (el art. 111 trata de la exclusión de la patria potestad) | CC |
+| 9 | competencia, defensor_judicial | desfasado | «Siempre el Juzgado de Primera Instancia»; «Secretario judicial» | Hoy, Sección de Familia, Infancia y Capacidad (art. 86.5 d) LOPJ) o Sección Civil; Letrado de la Administración de Justicia | LO 1/2025, LO 7/2015 |

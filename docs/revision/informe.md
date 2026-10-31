@@ -41,7 +41,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | lec-intervencion-caudal | Guía · LEC · Intervención del caudal hereditario | · | · | · | · | · | · | · |
 | lec-administracion-caudal | Guía · LEC · Administración del caudal hereditario | · | · | · | · | · | · | · |
 | lec-liquidacion-rem | Guía · LEC · Liquidación del régimen económico matrimonial | · | · | · | · | · | · | 1R |
-| ljv-filiacion | Guía · LJV · Reconocimiento de la filiación no matrimonial | 7A | · | · | 2R | · | · | 2R |
+| ljv-filiacion | Guía · LJV · Reconocimiento de la filiación no matrimonial | · | · | · | · | · | · | 1R |
 | ljv-mencion-sexo-12-14 | Guía · LJV · Mención registral del sexo (12 a 14 años) | 3A 1R | · | · | · | · | · | 3R |
 | ljv-mencion-sexo-reversion | Guía · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
 | ljv-defensor-judicial | Guía · LJV · Habilitación para comparecer y defensor judicial | 4A | · | · | · | 1R | · | 2R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 60E 18A 37R | 0E 0A 0R | 0E 0A 0R | 0E 0A 6R | 0E 0A 2R | 3E 0A 1R | 0E 0A 64R |
+| | **Total** | 60E 11A 37R | 0E 0A 0R | 0E 0A 0R | 0E 0A 4R | 0E 0A 2R | 3E 0A 1R | 0E 0A 63R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,18 +69,18 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2404
-- ✓ CC (BOE a 07-09-2026): 1198
+- ✓ LJV (BOE a 05-03-2026): 2407
+- ✓ CC (BOE a 07-09-2026): 1204
 - ✓ LEC (BOE a 07-10-2026): 1117
-- ✓ LOPJ (BOE a 09-10-2026): 85
+- ✓ LOPJ (BOE a 09-10-2026): 87
 - ✓ LTRANS (BOE a 20-12-2025): 58
 - ✓ LOPJM (BOE a 18-12-2025): 48
 - UE: 40
-- ✓ LRC (BOE a 24-02-2026): 36
 - ✓ LPPD (BOE a 18-12-2025): 36
 - ✓ CE (BOE a 20-05-2026): 35
 - ✓ LOPDH (BOE a 16-12-2025): 33
 - ✓ LN (BOE a 22-10-2026): 30
+- ✓ LRC (BOE a 24-02-2026): 30
 - ✓ RDTO (BOE a 19-12-2025): 25
 - ✓ LH (BOE a 07-01-2026): 22
 - ✓ LTO (BOE a 16-12-2025): 19
@@ -310,25 +310,9 @@ Sin hallazgos automáticos.
 
 ### ljv-filiacion · Guía · LJV · Reconocimiento de la filiación no matrimonial
 
-**citas**
-
-- [aviso] «art. 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _paso «solicitud» › aviso 3_
-- [aviso] «arts. 17.3 y 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _paso «citacion» › aviso 4_
-- [aviso] «art. 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _paso «oposicion» › ley 5_
-- [aviso] «art. 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _paso «recurso_auto_est» › aviso 2_
-- [aviso] «art. 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _paso «recurso_auto_est» › ley 4_
-- [aviso] «art. 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _paso «recurso_auto_des» › aviso 2_
-- [aviso] «art. 3.4»: el art. 3 LJV no tiene apartado 4 (tiene 1, 2) — _paso «recurso_auto_des» › ley 4_
-
-**plazos**
-
-- [revisar] plazo «20 días» no aparece en el precepto citado (arts. 455 LEC): «Plazo para interponer el recurso de apelación: conforme a los arts. 455 y ss. LEC (20 días desde la notificación del auto).» — _paso «recurso_auto_est» › plazo 3_
-- [revisar] plazo «20 días» no aparece en el precepto citado (arts. 455 LEC): «Plazo para interponer el recurso de apelación: conforme a los arts. 455 y ss. LEC (20 días desde la notificación del auto).» — _paso «recurso_auto_des» › plazo 3_
-
 **terminologia**
 
 - [revisar] «Juzgado de Primera Instancia» × 12 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › opción 1 | paso «competencia» › opción 2 | paso «competencia» › info 1 …_
-- [revisar] «Secretario judicial» × 1 → Letrado/a de la Administración de Justicia (LO 7/2015) — _paso «defensor_judicial» › nota 3_
 
 ### ljv-mencion-sexo-12-14 · Guía · LJV · Mención registral del sexo (12 a 14 años)
 
