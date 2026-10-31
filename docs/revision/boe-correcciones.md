@@ -18,12 +18,15 @@ Regla que se aplica: la versión completa es la vigente **publicada en último l
 |---|---|---|
 | LEC | arts. 14, 64, 159, 165, 167, 243, 274, 333, 540, 560, 794, 800, 809, 816 y 826 | **Corregidos**: versión de la Ley 42/2015 |
 | LEC | art. 781 | **Corregido**: versión de la Ley 26/2015 (decisión 16) |
-| LOPJ | arts. 231, 455 y 564 | Pendientes del propietario (no los usa la app más que para comprobar citas) |
-| CP | epígrafe de una sección 2.ª | Pendiente (sin uso en la app) |
+| LOPJ | arts. 231 y 455 | **Corregidos** (decisión 18): el BOE lista al final una «versión» sin fecha de vigencia (BOE-A-2000-9230, nota de la STC 105/2000) con el texto antiguo; se toma la de la LO 5/2015 (art. 231) y la de la LO 7/2015 (art. 455) |
+| LOPJ | art. 564 | **Corregido** (decisión 18): versión de la LO 4/2018; el BOE lista después la de 26-12-2016 (nota de la STC 191/2016) |
+| CP | sección 2.ª del cap. III del título XII | **Corregido** (decisión 18): «De la sustracción de menores» (LO 9/2002); el BOE lista después el epígrafe original de 1996 |
 
 Falsos positivos de una primera regla (la más reciente por fecha de vigencia), descartados con la regla de publicación: art. 33 LEC, art. 18 LJV, arts. 59, 60, 74, 78 y DF 5.ª LRC, arts. 60 y 99 TRLGDCU, arts. 567 y 599 LOPJ. El aviso inicial sobre los arts. 439 y 685 LEC también desaparece: la instantánea ya tiene la versión publicada en último lugar.
 
 Quedan, sin revisar, las «reversiones» que no son de este tipo (una versión que vuelve al texto de otra anterior): pueden ser legítimas (derogaciones, anulaciones, fin de regímenes transitorios). Listado: `node tools/boe-revisiones.js --out=…` (LEC 45, 525, 685, 763; RH 16; LSSI 19; CC 2; CP 2; LSC, CCom, TRLGDCU, LAC 1).
+
+Las correcciones de la decisión 18 no cambian el contenido: esos bloques no están en `data/leyes` (la LOPJ y el CP solo llevan los artículos citados) y el comprobador de citas da el mismo resultado. La única otra versión sin fecha de vigencia que queda como última en las instantáneas (disposición adicional primera de la LOPJ) tiene el mismo texto que la versión de 1994.
 
 ## Efecto en el contenido
 

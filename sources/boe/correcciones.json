@@ -144,6 +144,38 @@
    "terminologia": true,
    "motivo": "La versión en vigor es la de la Ley 42/2015 (vigente desde el 7-10-2015). El BOE lista después la de la LO 7/2015 (vigente desde el 1-10-2015, que solo cambia «Secretario judicial»), construida sobre el texto anterior a la Ley 42/2015, publicada más tarde.",
    "decision": "Decisión 17 (2026-10-31)"
+  },
+  {
+   "ley": "LOPJ",
+   "bloque": "adoscientostreintayuno",
+   "version": "20151028",
+   "norma": "BOE-A-2015-4605",
+   "motivo": "El BOE lista en último lugar una «versión» sin fecha de vigencia (BOE-A-2000-9230, nota de la STC 105/2000) que reproduce el texto anterior; la versión en vigor es la de la LO 5/2015 (vigente desde el 28-10-2015).",
+   "decision": "Decisión 18 (2026-10-31)"
+  },
+  {
+   "ley": "LOPJ",
+   "bloque": "acuatrocientoscincuentaycinco",
+   "version": "20151001",
+   "norma": "BOE-A-2015-8167",
+   "motivo": "El BOE lista en último lugar una «versión» sin fecha de vigencia (BOE-A-2000-9230, nota de la STC 105/2000) que reproduce el texto anterior; la versión en vigor es la de la LO 7/2015 (vigente desde el 1-10-2015).",
+   "decision": "Decisión 18 (2026-10-31)"
+  },
+  {
+   "ley": "LOPJ",
+   "bloque": "aquinientossesentaycuatro",
+   "version": "20190118",
+   "norma": "BOE-A-2018-17987",
+   "motivo": "La versión en vigor es la de la LO 4/2018 (vigente desde el 18-1-2019). El BOE lista después la de 26-12-2016 (nota de la STC 191/2016), construida sobre el texto anterior a la LO 4/2018, publicada más tarde.",
+   "decision": "Decisión 18 (2026-10-31)"
+  },
+  {
+   "ley": "CP",
+   "bloque": "s2-5",
+   "version": "20021212",
+   "norma": "BOE-A-2002-24044",
+   "motivo": "La versión en vigor es la de la LO 9/2002 (vigente desde el 12-12-2002: «De la sustracción de menores»). El BOE lista después el epígrafe original de 1996.",
+   "decision": "Decisión 18 (2026-10-31)"
   }
  ]
 }

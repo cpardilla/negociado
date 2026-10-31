@@ -10803,13 +10803,13 @@
    "id": "adoscientostreintayuno",
    "tipo": "precepto",
    "titulo": "Artículo doscientos treinta y uno",
-   "vigencia": "",
-   "norma": "BOE-A-2000-9230",
+   "vigencia": "20151028",
+   "norma": "BOE-A-2015-4605",
    "versiones": 5,
    "parrafos": [
     [
      "articulo",
-     "Artículo doscientos treinta y uno"
+     "Artículo 231."
     ],
     [
      "parrafo",
@@ -10829,14 +10829,36 @@
     ],
     [
      "parrafo",
-     "5. En las actuaciones orales, el Juez o Tribunal podrá habilitar como intérprete a cualquier persona conocedora de la lengua empleada, previo juramento o promesa de aquélla."
+     "5. La habilitación como intérprete en las actuaciones orales o en lengua de signos se realizará de conformidad con lo dispuesto en la ley procesal aplicable."
+    ],
+    [
+     "parrafo",
+     "Téngase en cuenta que esta última actualización del apartado 5 entra en vigor el 28 de octubre de 2015, conforme a la disposición final 4 de la Ley Orgánica 5/2015, de 27 de abril. Ref. BOE-A-2015-4605."
+    ],
+    [
+     "cita_con_pleca",
+     "Redacción anterior:"
+    ],
+    [
+     "parrafo",
+     "5. En las actuaciones orales se podrá habilitar como intérprete a cualquier persona conocedora de la lengua empleada, previo juramento o promesa de aquélla."
     ]
    ],
    "notas": [
+    "Se modifica el apartado 5 por el art. 3 de la Ley Orgánica 5/2015, de 27 de abril. Ref. BOE-A-2015-4605.",
+    "Se modifica el apartado 5 por el art. 1.4 de la Ley Orgánica 1/2009, de 3 de noviembre. Ref. BOE-A-2009-17492.",
     "Se declara que el apartado 4 no es inconstitucional, en la redacción dada por la Ley Orgánica 16/1984, de 8 de noviembre, interpretado en el sentido indicado en el fundamento jurídico 12 de la Sentencia 105/2000, de 13 de abril. Ref. BOE-T-2000-9230.",
     "Se modifica el apartado 4 por el art. 8.3 de la Ley Orgánica 16/1994, de 8 de noviembre. Ref. BOE-A-1994-24612",
     "Redactado el apartado 2 conforme a la corrección de errores publicada en BOE núm. 264, de 4 de noviembre de 1985. Ref. BOE-A-1985-22752"
-   ]
+   ],
+   "correccion": {
+    "motivo": "El BOE lista en último lugar una «versión» sin fecha de vigencia (BOE-A-2000-9230, nota de la STC 105/2000) que reproduce el texto anterior; la versión en vigor es la de la LO 5/2015 (vigente desde el 28-10-2015).",
+    "decision": "Decisión 18 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "",
+     "norma": "BOE-A-2000-9230"
+    }
+   }
   },
   {
    "id": "adoscientostreintaydos",
@@ -20202,23 +20224,33 @@
    "id": "acuatrocientoscincuentaycinco",
    "tipo": "precepto",
    "titulo": "Artículo cuatrocientos cincuenta y cinco",
-   "vigencia": "",
-   "norma": "BOE-A-2000-9230",
+   "vigencia": "20151001",
+   "norma": "BOE-A-2015-8167",
    "versiones": 5,
    "parrafos": [
     [
      "articulo",
-     "Artículo cuatrocientos cincuenta y cinco"
+     "Artículo 455."
     ],
     [
      "parrafo",
-     "Las competencias respecto de todo el personal al servicio de la Administración de Justicia incluido en el artículo anterior corresponden al Ministerio de Justicia o, en su caso, a las Comunidades Autónomas en todas las materias relativas a su Estatuto y régimen jurídico, comprendidas la selección, formación inicial y continuada, provisión de destinos, ascensos, situaciones administrativas, jornada laboral, horario de trabajo y régimen disciplinario."
+     "Será responsabilidad del Letrado de la Administración de Justicia organizar la dación de cuenta, que se realizará en los términos establecidos en las leyes procesales."
     ]
    ],
    "notas": [
+    "Se modifica por el art. único.67 de la Ley Orgánica 7/2015, de 21 de julio. Ref. BOE-A-2015-8167#aunico.",
+    "Se modifica por el art. único.123 de la Ley Orgánica 19/2003, de 23 de diciembre. Ref. BOE-A-2003-23644",
     "Se declara que este artículo no es inconstitucional, en la redacción dada por la Ley Orgánica 16/1984, de 8 de noviembre, interpretado en el sentido indicado en el fundamento jurídico 5 de la Sentencia 105/2000, de 13 de abril. Ref. BOE-T-2000-9230.",
     "Se modifica por el art. 16 de la Ley Orgánica 16/1994, de 8 de noviembre. Ref. BOE-A-1994-24612"
-   ]
+   ],
+   "correccion": {
+    "motivo": "El BOE lista en último lugar una «versión» sin fecha de vigencia (BOE-A-2000-9230, nota de la STC 105/2000) que reproduce el texto anterior; la versión en vigor es la de la LO 7/2015 (vigente desde el 1-10-2015).",
+    "decision": "Decisión 18 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "",
+     "norma": "BOE-A-2000-9230"
+    }
+   }
   },
   {
    "id": "acuatrocientoscincuentayseis",
@@ -26351,8 +26383,8 @@
    "id": "aquinientossesentaycuatro",
    "tipo": "precepto",
    "titulo": "Artículo quinientos sesenta y cuatro",
-   "vigencia": "20161226",
-   "norma": "BOE-A-2016-12361",
+   "vigencia": "20190118",
+   "norma": "BOE-A-2018-17987",
    "versiones": 3,
    "parrafos": [
     [
@@ -26361,13 +26393,22 @@
     ],
     [
      "parrafo",
-     "Fuera del supuesto previsto en el artículo anterior, sobre el Presidente del Tribunal Supremo y los Vocales del Consejo General del Poder Judicial no recaerá deber alguno de comparecer ante las Cámaras por razón de sus funciones."
+     "Fuera de los supuestos previstos en el artículo anterior, sobre el Presidente del Tribunal Supremo y los Vocales del Consejo General del Poder Judicial no recaerá deber alguno de comparecer ante las Cámaras por razón de sus funciones."
     ]
    ],
    "notas": [
+    "Se modifica por el art. único.47 de la Ley Orgánica 4/2018, de 28 de diciembre. Ref. BOE-A-2018-17987",
     "Véase la Sentencia del TC 191/2016, de 15 de noviembre, según la cual hay que entender que el artículo 564 es constitucional interpretado de conformidad con lo razonado en su fundamento jurídico 6. Ref. BOE-A-2016-12361.",
     "Se añade por el art. único.1 de la Ley Orgánica 4/2013, de 28 de junio. Ref. BOE-A-2013-7061."
-   ]
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la LO 4/2018 (vigente desde el 18-1-2019). El BOE lista después la de 26-12-2016 (nota de la STC 191/2016), construida sobre el texto anterior a la LO 4/2018, publicada más tarde.",
+    "decision": "Decisión 18 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "20161226",
+     "norma": "BOE-A-2016-12361"
+    }
+   }
   },
   {
    "id": "aquinientossesentaycinco",

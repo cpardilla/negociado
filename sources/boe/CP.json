@@ -10663,16 +10663,26 @@
    "id": "s2-5",
    "tipo": "Cabecera",
    "titulo": "SECCIÓN 2",
-   "vigencia": "19960524",
-   "norma": "BOE-A-1995-25444",
+   "vigencia": "20021212",
+   "norma": "BOE-A-2002-24044",
    "versiones": 2,
    "parrafos": [
     [
      "seccion",
-     "Sección 2.ª Del abandono de familia, menores o incapaces"
+     "Sección 2.ª De la sustracción de menores"
     ]
    ],
-   "notas": []
+   "notas": [
+    "Se modifica por el art. 1.1 de la Ley Orgánica 9/2002, de 10 de diciembre. Ref. BOE-A-2002-24044"
+   ],
+   "correccion": {
+    "motivo": "La versión en vigor es la de la LO 9/2002 (vigente desde el 12-12-2002: «De la sustracción de menores»). El BOE lista después el epígrafe original de 1996.",
+    "decision": "Decisión 18 (2026-10-31)",
+    "sustituye": {
+     "vigencia": "19960524",
+     "norma": "BOE-A-1995-25444"
+    }
+   }
   },
   {
    "id": "a225bis",

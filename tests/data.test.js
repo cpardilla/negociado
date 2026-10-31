@@ -129,8 +129,9 @@ test("BOE: every correction in sources/boe/correcciones.json is applied to its s
     assert.ok(b && b.correccion, `${c.ley} ${c.bloque}: corrección sin aplicar (node tools/boe-correcciones.js)`);
     assert.equal(`${b.vigencia} ${b.norma}`, `${c.version} ${c.norma}`, `${c.ley} ${c.bloque}: versión distinta de la corrección`);
     const ley = path.join(root, "data", "leyes", `${c.ley}.js`);
-    if (fs.existsSync(ley)) {
-      const src = fs.readFileSync(ley, "utf8");
+    // Laws built with --citadas keep only the cited blocks: check the block only if it is there.
+    const src = fs.existsSync(ley) ? fs.readFileSync(ley, "utf8") : "";
+    if (src.includes(`"b":"${c.bloque}"`)) {
       assert.ok(src.includes(`"b":"${c.bloque}","v":"${c.version}","m":"${c.norma}"`), `${c.ley} ${c.bloque}: data/leyes sin regenerar (node tools/build-law.js)`);
     }
   }
