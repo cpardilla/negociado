@@ -54,14 +54,14 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-actos-disposicion | Guía · LJV · Actos de disposición sobre bienes de menores y personas con apoyos | · | · | · | · | · | · | 1R |
 | ljv-ausencia-fallecimiento | Guía · LJV · Declaración de ausencia y fallecimiento | · | · | · | · | · | · | 1R |
 | ljv-donantes-vivos | Guía · LJV · Extracción de órganos de donantes vivos | · | · | · | · | · | · | · |
-| ljv-hechos-pasados | Guía · LJV · Declaraciones judiciales sobre hechos pasados | · | · | · | · | · | · | 2R |
+| ljv-hechos-pasados | Guía · LJV · Declaraciones judiciales sobre hechos pasados | · | · | · | · | · | · | 1R |
 | ljv-sucesorio | Guía · LJV · Título IV · Derecho sucesorio | 5R | · | · | · | 1R | · | 2R |
 | ljv-obligaciones | Guía · LJV · Título V · Derecho de obligaciones | 3R | · | · | · | · | · | 2R |
 | ljv-usufructuario | Guía · LJV · Usufructuario: reclamación de créditos vencidos | · | · | · | · | · | · | 2R |
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 2R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | 5E | · | · | · | · | · | 2R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | 2R | · | · | · | · | · | 3R |
-| | **Total** | 8E 0A 12R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 56R |
+| | **Total** | 8E 0A 12R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 55R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,10 +69,10 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2718
+- ✓ LJV (BOE a 05-03-2026): 2726
 - ✓ CC (BOE a 07-09-2026): 1286
-- ✓ LEC (BOE a 07-10-2026): 1128
-- ✓ LOPJ (BOE a 09-10-2026): 111
+- ✓ LEC (BOE a 07-10-2026): 1129
+- ✓ LOPJ (BOE a 09-10-2026): 110
 - ✓ LPPD (BOE a 18-12-2025): 70
 - ✓ LTRANS (BOE a 20-12-2025): 62
 - ✓ LOPJM (BOE a 18-12-2025): 50
@@ -104,7 +104,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - Ley 54/2007: 1
 - LO 8/2021: 1
 
-Además, 309 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 307 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -393,7 +393,6 @@ Sin hallazgos automáticos.
 
 **terminologia**
 
-- [revisar] «JPI» × 2 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar — _paso «competencia» › opción 1 | paso «competencia» › opción 3_
 - [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › nota 2_
 
 ### ljv-sucesorio · Guía · LJV · Título IV · Derecho sucesorio

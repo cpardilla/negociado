@@ -1,4 +1,4 @@
-/* Migrado por tools/migrate.js desde sources/actual/G19.json (contenido sin cambios; pendiente de revisión). */
+/* Migrado por tools/migrate.js desde sources/actual/G19.json; revisado con el BOE (registro: docs/revision/ljv-hechos-pasados.md). */
 Neg.data.register({
  "tipo": "guia",
  "id": "ljv-hechos-pasados",
@@ -13,7 +13,7 @@ Neg.data.register({
   "80 quinquies"
  ],
  "revision": {
-  "estado": "sin revisar",
+  "estado": "revisado",
   "boe": "20260305",
   "origen": "G19"
  },
@@ -25,8 +25,8 @@ Neg.data.register({
  ],
  "actores": {
   "juez": "Juez",
-  "laj": "LAJ",
-  "ambos": "Ambos"
+  "laj": "Letrado de la Administración de Justicia",
+  "ambos": "Juez / LAJ"
  },
  "inicio": "inicio",
  "pasos": {
@@ -111,11 +111,11 @@ Neg.data.register({
   "check_condiciones": {
    "fase": 0,
    "titulo": "Verificación de las 5 condiciones cumulativas (art. 80 bis.2)",
-   "actor": "juez",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Para que proceda el expediente de declaración judicial sobre hechos pasados, deben concurrir cumulativamente las cinco condiciones establecidas en el apartado 2 del artículo 80 bis. Si alguna de ellas no se cumple, el expediente no es viable por esta vía."
+     "texto": "Deben concurrir las cinco condiciones del art. 80 bis.2. Las examina el LAJ; si advierte que falta alguna, da cuenta al Juez, que decide por auto sobre la admisibilidad, oídos el Fiscal y el solicitante (art. 80 quáter.2)."
     },
     {
      "tipo": "lista",
@@ -125,7 +125,7 @@ Neg.data.register({
       "2.ª: Que exista un principio de prueba de los hechos",
       "3.ª: Que de los hechos no resulte perjuicio para una persona cierta y determinada",
       "4.ª: Que los hechos no sean objeto de un procedimiento judicial en trámite",
-      "5.ª: Que no exista otro procedimiento judicial indicado para la demostración de los hechos (carácter subsidiario o residual)"
+      "5.ª: Que no exista otro procedimiento judicial legalmente indicado para la demostración de los hechos"
      ],
      "marcar": true
     },
@@ -135,7 +135,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 bis.2; art. 6; art. 1"
+     "texto": "Art. 80 bis LJV · Art. 80 quáter.2 LJV"
     }
    ],
    "pregunta": "¿Se cumplen todas las condiciones cumulativas del art. 80 bis.2?",
@@ -163,27 +163,27 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Tras la Ley Orgánica 1/2025, de 2 de enero, las referencias al Juzgado de Primera Instancia deben entenderse hechas a la sección civil del Tribunal de Instancia correspondiente. La determinación de la sección competente se rige por el art. 86.5.j) o, en su caso, el art. 89.6.g) de la LOPJ."
+     "texto": "Es competente el Juzgado de Primera Instancia del lugar de los hechos (art. 80 ter.1 LJV). Hoy, la Sección Civil del Tribunal de Instancia: este expediente no es materia de personas y familia del art. 86.5 j) LOPJ (decisión 12)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 ter.1; LO 1/2025, disp. adic. 1.ª; LOPJ, arts. 86.5.j) y 89.6.g)"
+     "texto": "Art. 80 ter.1 LJV"
     }
    ],
    "pregunta": "¿Cuál es el fuero de competencia aplicable?",
    "opciones": [
     {
-     "texto": "JPI / Sección del TI del lugar donde acaecieron los hechos (fuero principal)",
+     "texto": "El del lugar donde acaecieron los hechos",
      "tono": "t-ok",
      "destino": "control_laj"
     },
     {
-     "texto": "Varios lugares: a elección del solicitante",
+     "texto": "Si fueron varios lugares, el de cualquiera de ellos, a elección del solicitante",
      "tono": "t-ok",
      "destino": "control_laj"
     },
     {
-     "texto": "JPI / Sección del TI del domicilio del solicitante (fuero residual)",
+     "texto": "En su defecto, el del domicilio del solicitante",
      "tono": "t-nota",
      "destino": "control_laj"
     }
@@ -232,11 +232,11 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "El auto que inadmite el expediente es susceptible de recurso de apelación (art. 80 quinquies)."
+     "texto": "El auto que inadmite el expediente es susceptible de recurso de apelación (art. 80 quinquies.2)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 80 quáter.2, 80 quinquies; LEC, recurso de apelación"
+     "texto": "Arts. 80 quáter.2 y 80 quinquies.2 LJV"
     }
    ],
    "pregunta": "¿El Juez admite o inadmite el expediente?",
@@ -280,7 +280,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "En el plazo común de cinco días desde la recepción de la citación, las partes pueden solicitar actuaciones probatorias previas a la celebración de la comparecencia."
+     "texto": "En los cinco días siguientes a la recepción de la citación, el promotor y los demás interesados pueden pedir que se cite a la vista a los testigos o peritos que no puedan presentar, y pedir respuestas escritas de personas jurídicas o entidades públicas (art. 80 quáter.3)."
     },
     {
      "tipo": "plazo",
@@ -301,7 +301,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 quáter.4; LEC, art. 381"
+     "texto": "Art. 80 quáter.3, párrafos segundo y tercero, LJV · Art. 381 LEC"
     }
    ],
    "siguiente": "comparecencia"
@@ -325,7 +325,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 quáter.5-6, art. 80 quinquies; LEC, juicio verbal, recurso de reposición"
+     "texto": "Art. 80 quáter.4 y 6 LJV · Art. 80 quinquies.1 LJV · Arts. 437 y ss. LEC"
     }
    ],
    "siguiente": "check_oposicion"
@@ -345,7 +345,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El auto que resuelve sobre la oposición es susceptible de recurso de apelación (art. 80 quinquies)."
+     "texto": "El auto que resuelve sobre la oposición es susceptible de recurso de apelación (art. 80 quinquies.2)."
     },
     {
      "tipo": "ley",
@@ -381,7 +381,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El auto que resuelve sobre la oposición es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies)."
+     "texto": "El auto que resuelve sobre la oposición es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies.2)."
     },
     {
      "tipo": "ley",
@@ -421,7 +421,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Tanto el auto que accede como el que deniega la declaración son susceptibles de recurso de apelación (art. 80 quinquies)."
+     "texto": "Tanto el auto que accede como el que deniega la declaración son susceptibles de recurso de apelación (art. 80 quinquies.2)."
     },
     {
      "tipo": "ley",
@@ -453,11 +453,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La inscripción registral no es automática; requiere que el hecho declarado sea materialmente inscribible conforme a la normativa del registro de que se trate."
+     "texto": "Para el Registro de la Propiedad, Mercantil u otro registro público se expide mandamiento a instancia de parte, por medios electrónicos; la calificación del registrador se limita a la competencia, la congruencia del mandato, las formalidades extrínsecas y los obstáculos del Registro (art. 22.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 80 quáter.5 (in fine), 22.2, 11"
+     "texto": "Art. 80 quáter.5 LJV · Art. 22.2 LJV"
     }
    ],
    "pregunta": "¿La declaración deriva en un hecho inscribible en un registro público?",
@@ -481,7 +481,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se procede a la inscripción del hecho declarado en el registro público correspondiente, conforme a lo dispuesto en el artículo 22.2 de la Ley de la Jurisdicción Voluntaria, relativo al cumplimiento y ejecución de la resolución que pone fin al expediente."
+     "texto": "A instancia de parte, se expide mandamiento al registro correspondiente para la constancia registral del hecho declarado; la remisión se hace por medios electrónicos (art. 22.2 LJV)."
     },
     {
      "tipo": "nota",
@@ -489,7 +489,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 22.2, 11"
+     "texto": "Art. 22.2 LJV"
     }
    ],
    "siguiente": "fin_exito_inscripcion"
@@ -501,7 +501,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "No se cumplen una o más de las condiciones cumulativas del artículo 80 bis.2, por lo que el expediente de declaración judicial sobre hechos pasados no resulta viable por esta vía."
+     "texto": "Falta alguna de las condiciones del art. 80 bis.2: el LAJ da cuenta al Juez, que, oídos el Fiscal y el solicitante, decide por auto sobre la admisibilidad (art. 80 quáter.2); contra el auto cabe apelación (art. 80 quinquies.2)."
     },
     {
      "tipo": "aviso",
@@ -513,7 +513,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 bis.2, art. 1, art. 6"
+     "texto": "Art. 80 bis.2 LJV · Arts. 80 quáter.2 y 80 quinquies.2 LJV · Art. 6 LJV"
     }
    ],
    "fin": "error"
@@ -529,11 +529,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El auto de inadmisión es susceptible de recurso de apelación conforme a la Ley de Enjuiciamiento Civil (art. 80 quinquies)."
+     "texto": "El auto de inadmisión es susceptible de recurso de apelación conforme a la Ley de Enjuiciamiento Civil (art. 80 quinquies.2)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 80 quáter.2, 80 quinquies; LEC, recurso de apelación"
+     "texto": "Arts. 80 quáter.2 y 80 quinquies.2 LJV"
     }
    ],
    "fin": "error"
@@ -553,7 +553,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El auto que resuelve sobre la oposición es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies)."
+     "texto": "El auto que resuelve sobre la oposición es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies.2)."
     },
     {
      "tipo": "ley",
@@ -573,7 +573,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El auto que deniega la declaración es susceptible de recurso de apelación conforme a la Ley de Enjuiciamiento Civil (art. 80 quinquies)."
+     "texto": "El auto que deniega la declaración es susceptible de recurso de apelación conforme a la Ley de Enjuiciamiento Civil (art. 80 quinquies.2)."
     },
     {
      "tipo": "ley",
@@ -593,7 +593,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El auto que accede a la declaración es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies), si bien normalmente quien obtuvo la declaración no tendría interés en recurrir."
+     "texto": "El auto que accede a la declaración es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies.2), si bien normalmente quien obtuvo la declaración no tendría interés en recurrir."
     },
     {
      "tipo": "ley",
@@ -609,15 +609,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez ha accedido a la solicitud y ha emitido la declaración judicial. Adicionalmente, al derivar la declaración en un hecho inscribible, se ha procedido a la inscripción en el registro público correspondiente conforme al artículo 22.2 de la Ley de la Jurisdicción Voluntaria."
+     "texto": "El Juez ha accedido a la solicitud y ha emitido la declaración judicial. Al derivar la declaración en un hecho inscribible, se ha expedido, a instancia de parte, el mandamiento para su constancia en el registro correspondiente (art. 22.2 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "La inscripción se ha realizado conforme a las normas del registro de que se trate (Registro de la Propiedad, Mercantil u otro registro público)."
+     "texto": "La inscripción la practica el registrador, cuya calificación se limita a lo previsto en el art. 22.2 LJV."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 80 quáter.5, 22.2, 11"
+     "texto": "Art. 80 quáter.5 LJV · Art. 22.2 LJV"
     }
    ],
    "fin": "success"

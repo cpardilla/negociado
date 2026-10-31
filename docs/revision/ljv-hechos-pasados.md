@@ -32,3 +32,22 @@ Competente: Juzgado de Primera Instancia, hoy la **Sección Civil** del Tribunal
 | # | Ficha | Tipo | Antes | Ahora | Fuente |
 |---|---|---|---|---|---|
 | D12 | Marco, 80 ter, participantes, ecosistema | criterio | Sección de Familia, Infancia y Capacidad donde exista (art. 86.5 j) LOPJ) | Sección Civil del Tribunal de Instancia | LOPJ art. 85; decisión 12 |
+
+---
+
+# Revisión · G19 · Guía de tramitación de las declaraciones judiciales sobre hechos pasados
+
+- **Recurso**: `data/guias/ljv-hechos-pasados.js` (origen G19).
+- **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026 (capítulo XI añadido por la disposición final 3.ª de la Ley 20/2022, comprobado en la instantánea); LEC y LOPJ en sus instantáneas.
+- **Método**: fase 5. La guía seguía fielmente los arts. 80 bis a 80 quinquies: **corregida**; se conservan los 20 pasos.
+- **Resultado del comprobador**: 0 errores, 0 avisos; queda la denominación legal «Juzgado de Primera Instancia» (art. 80 ter.1 LJV), con la sección actual indicada.
+
+## Hallazgos
+
+| # | Paso | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| 1 | competencia | **error** | Sección por el «art. 86.5 j) o, en su caso, el art. 89.6 g) LOPJ»; «LO 1/2025, disp. adic. 1.ª»; opciones con «JPI» | Sección Civil (decisión 12: no es materia de personas y familia), como en el esquema; fueros del art. 80 ter.1 con sus palabras | LJV 80 ter.1; decisión 12 |
+| 2 | actuaciones_probatorias, comparecencia | error | «Art. 80 quáter.4» (plazo de cinco días) y «80 quáter.5-6» (comparecencia) | Art. 80 quáter.3, párrafos segundo y tercero; art. 80 quáter.4 (y .6 para la oposición); qué se puede pedir en los cinco días | LJV 80 quáter |
+| 3 | check_inscribible, inscripcion_registral, fin_exito_inscripcion | error | Cita del «art. 11 LJV» (es el de las resoluciones extranjeras); «se procede a la inscripción» | Art. 22.2: mandamiento a instancia de parte, por medios electrónicos, con calificación limitada del registrador | LJV 22.2 |
+| 4 | check_condiciones, fin_no_viable | impreciso | Las verificaba «el Juez»; condición 5.ª «procedimiento indicado (carácter subsidiario)» | Las examina el LAJ y, si falta alguna, da cuenta al Juez, que decide por auto oídos el Fiscal y el solicitante (art. 80 quáter.2); «legalmente indicado»; apelación (art. 80 quinquies.2) | LJV 80 bis.2, 80 quáter.2 |
+| 5 | recursos, actores | forma | «Art. 80 quinquies» sin apartado; «LAJ», «Ambos» | Art. 80 quinquies.1 (reposición) y .2 (apelación); nombres completos | LJV 80 quinquies |
