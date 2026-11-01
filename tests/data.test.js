@@ -167,3 +167,26 @@ test("citados: every entry points to an article of the law, an existing resource
   assert.deepEqual(bad.slice(0, 10), []);
   assert.ok(Object.keys(citados.leyes.LJV).length > 100, "el índice no está vacío");
 });
+
+test("leyes citadas: every article the content cites has its text in data/leyes (node tools/build-law.js --citadas)", () => {
+  // As build-law.js --citadas reads the content: each cited article, and both ends of a range.
+  const citas = require("../assets/js/core/citas");
+  const boe = require("../tools/lib/boe");
+  const LEYES = JSON.parse(fs.readFileSync(path.join(ROOT, "tools", "leyes.json"), "utf8"));
+  const alias = Object.fromEntries(LEYES.flatMap((l) => [[l.clave, l.clave], ...l.alias.map((x) => [x, l.clave])]));
+  const leyes = Object.fromEntries(read("leyes").map((l) => [l.rec.id, l.rec]));
+  const missing = new Set();
+  for (const { rec } of [...esquemas, ...guias])
+    for (const [, t] of strings(rec))
+      for (const c of citas.find(t, { defaultLaw: rec.ley, alias })) {
+        const law = c.law && leyes[c.law];
+        const snap = law && boe.load(c.law);
+        if (!snap) continue;
+        for (const r of c.refs)
+          for (const k of [r.art, r.hasta]) {
+            const key = k && citas.articleKey(k);
+            if (key && snap.articulos.has(key) && !law.orden.includes(key)) missing.add(`${c.law} ${key}`);
+          }
+      }
+  assert.deepEqual([...missing].slice(0, 15), [], "leyes citadas sin regenerar");
+});
