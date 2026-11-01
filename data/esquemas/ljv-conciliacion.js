@@ -153,7 +153,7 @@ Neg.data.register({
              "t": "Se exige en los procesos declarativos del Libro II y en los especiales del Libro IV de la LEC, salvo las materias exceptuadas del art. 5.2 LO 1/2025 (p. ej., derechos fundamentales, medidas del art. 158 CC, medidas de apoyo, filiación, tutela sumaria de la posesión)."
             },
             {
-             "t": "La conciliación ante el Letrado de la Administración de Justicia se rige por el título IX LJV y la del juez de paz, además, por el art. 47 LEC (art. 14.5 y 6 LO 1/2025). En la demanda deben constar los documentos que lo justifiquen (art. 399.3 LEC)."
+             "t": "La conciliación ante el Letrado de la Administración de Justicia se rige por el título IX LJV y la del juez de paz, además, por el art. 47 LEC (arts. 14.5 y 14.6 LO 1/2025). En la demanda deben constar los documentos que lo justifiquen (art. 399.3 LEC)."
             }
            ]
           }

@@ -88,3 +88,12 @@ Fuente: art. 5 LO 1/2025, consultado en la API del BOE el 2026-11-01 (bloque `a5
 |---|---|---|---|---|---|
 | G25 | inicio | **desfasado** | «Medio alternativo de resolución de conflictos»; «acto prejudicial voluntario» | «Medio adecuado de solución de controversias»; «acto previo al ejercicio de acciones judiciales» | LO 1/2025, art. 5.1 |
 | G25 | inicio | incompleto | Sin mencionar el requisito de procedibilidad (sí en E28) | Nota con el art. 5.1 y 5.2, con el mismo contenido que E28 | LO 1/2025, art. 5 |
+
+## Corrección posterior (2026-11-01) · Instantánea de la LO 1/2025
+
+Ya hay instantánea: `sources/boe/LO1-2025.json` (BOE-A-2025-76, consolidada a 09-07-2026), con lo que se cierra el pendiente anotado arriba. Comprobadas contra ella todas las citas de E28, G25, E27, G24 y G02: arts. 5.1 y 5.2, 7, 10, 14.5 y 14.6, y 22.8 (redacción del art. 47 LEC) y 22.54 (arts. 641 y 642 LEC sin contenido). Sin cambio de fondo.
+
+| Recurso | Lugar | Tipo | Antes | Ahora |
+|---|---|---|---|---|
+| E28 | Art. 139 › Requisito de procedibilidad | cita | «art. 14.5 y 6» (el analizador lee «6» como otro artículo) | «arts. 14.5 y 14.6» |
+| G02 | p0_inicio | cita | «art. 5.1 y 2» (ídem) | «arts. 5.1 y 5.2» |

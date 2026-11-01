@@ -44,7 +44,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La división judicial de la herencia es un proceso especial del Libro IV de la LEC: para que se admita hay que haber acudido antes a un medio adecuado de solución de controversias (art. 5.1 y 2 LO 1/2025; no figura entre las materias exceptuadas)."
+     "texto": "La división judicial de la herencia es un proceso especial del Libro IV de la LEC: para que se admita hay que haber acudido antes a un medio adecuado de solución de controversias (arts. 5.1 y 5.2 LO 1/2025; no figura entre las materias exceptuadas)."
     },
     {
      "tipo": "ley",
