@@ -26,12 +26,19 @@
       const frag = document.createDocumentFragment();
       let at = 0;
       for (const c of found) {
-        const end = c.index + c.length + c.lawLength;
-        frag.append(text.slice(at, c.index));
+        let start = c.index;
+        let end = c.index + c.length + c.lawLength;
+        // A citation that is exactly a parenthesis, «(art. 201 CC)», takes its brackets into the
+        // link: outside it they look detached from the tag.
+        if (text[start - 1] === "(" && text[end] === ")" && start - 1 >= at) {
+          start--;
+          end++;
+        }
+        frag.append(text.slice(at, start));
         const r = c.refs[0];
         const a = document.createElement("a");
         a.className = "ref";
-        a.textContent = text.slice(c.index, end);
+        a.textContent = text.slice(start, end);
         a.dataset.ley = c.law;
         a.dataset.art = r.art;
         if (r.apdo) a.dataset.apdo = r.apdo;
