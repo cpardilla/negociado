@@ -81,3 +81,13 @@ Corte del BOE: LO 1/2025 a 09-07-2026; LEC a 07-10-2026. Criterio del propietari
 | G05 | inicio; pie | incompleto | Sin el requisito | Nota con la exigencia y la acreditación; aviso sobre el momento | Ídem |
 
 **Pregunta al propietario**: los arts. 264.4.º y 403.2 LEC y el art. 5.1 LO 1/2025 hablan de la demanda, y aquí hay dos solicitudes (arts. 808 y 810 LEC), la primera dentro de un proceso ya iniciado. El texto lo dice así, sin elegir. Por eso G05 no lleva, como G02, una pregunta que corte el recorrido: se añadirá en el paso que corresponda cuando el propietario lo indique.
+
+**Respuesta del propietario (2026-11-01) — decisión 22**: se acredita con cada solicitud. Fuente comprobada en su original: acuerdos de la Junta Sectorial de Magistrados de las Secciones de Familia de la Audiencia Provincial de Madrid de 6-11-2025, II.4 («En los procedimientos de división judicial de patrimonios, es exigible MASC tanto en la fase de formación de inventario como en la de liquidación»; PDF publicado por el ICAM). No es norma ni vincula a Las Palmas: la app lo dice así. Los acuerdos no tratan el art. 811 LEC ni si un intento sirve para las dos fases: lo primero sale del art. 5.2 LO 1/2025 y lo segundo, de la identidad de objeto del art. 5.1.
+
+| Recurso | Lugar | Antes | Ahora |
+|---|---|---|---|
+| E05 | Artículo 806 › Actividad negociadora previa | Advertencia: las normas no precisan en qué solicitud | Con cada solicitud y con la única del art. 811; identidad de objeto |
+| G05 | inicio | Ídem | Ídem |
+| G05 | solicitud_inventario, solicitud_liquidacion, art811_solicitud | Sin comprobación | Pregunta «¿Se acredita…?»; si no, paso nuevo `fin_sin_masc` |
+
+**Sin incorporar**: la STS 703/2015, de 21 de diciembre, que se aportó como apoyo de la autonomía de inventario y liquidación: no se ha podido localizar (decisión 10; se puede añadir con su ECLI).

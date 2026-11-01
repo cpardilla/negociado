@@ -145,7 +145,10 @@ Neg.data.register({
              "t": "Se presenta el documento que acredite haberla intentado o la declaración responsable de la imposibilidad de llevarla a cabo por desconocer el domicilio de la otra parte o el medio para requerirla (art. 264.4.º LEC); si no consta, no se admite (art. 403.2 LEC)."
             },
             {
-             "t": "Estas normas hablan de la demanda: no precisan si se acredita con la solicitud de inventario (art. 808 LEC) o con la de liquidación (art. 810 LEC)."
+             "t": "Cuándo: esas normas hablan de la demanda y no distinguen las solicitudes de este procedimiento. Se acredita con la solicitud de inventario (art. 808 LEC) y con la de liquidación (art. 810 LEC), según el criterio, no vinculante, de la Junta Sectorial de Magistrados de las Secciones de Familia de la Audiencia Provincial de Madrid (acuerdo de 6-11-2025, II.4); en el régimen de participación, con su única solicitud (art. 811 LEC)."
+            },
+            {
+             "t": "Una negociación anterior sirve para la liquidación solo si comprendía también ese objeto: debe haber identidad entre el objeto de la negociación y el del litigio (art. 5.1 LO 1/2025)."
             }
            ]
           }

@@ -48,8 +48,8 @@ Neg.data.register({
      "texto": "Actividad negociadora previa: la liquidación judicial del régimen económico matrimonial es un proceso especial del Libro IV de la LEC y su materia no figura entre las exceptuadas: hay que haber acudido antes a un medio adecuado de solución de controversias, con identidad entre el objeto de la negociación y el del litigio (arts. 5.1 y 5.2 LO 1/2025). Se presenta el documento que acredite haberla intentado o la declaración responsable de la imposibilidad de llevarla a cabo por desconocer el domicilio de la otra parte o el medio para requerirla (art. 264.4.º LEC); si no consta, no se admite (art. 403.2 LEC)."
     },
     {
-     "tipo": "aviso",
-     "texto": "Estas normas hablan de la demanda: no precisan si se acredita con la solicitud de inventario (art. 808 LEC) o con la de liquidación (art. 810 LEC)."
+     "tipo": "nota",
+     "texto": "Cuándo: esas normas hablan de la demanda y no distinguen las solicitudes de este procedimiento. Se acredita con la solicitud de inventario (art. 808 LEC) y con la de liquidación (art. 810 LEC), según el criterio, no vinculante, de la Junta Sectorial de Magistrados de las Secciones de Familia de la Audiencia Provincial de Madrid (acuerdo de 6-11-2025, II.4); en el régimen de participación, con su única solicitud (art. 811 LEC)."
     }
    ],
    "pregunta": "¿Qué régimen se liquida?",
@@ -152,9 +152,25 @@ Neg.data.register({
       "Documentos que justifiquen las partidas"
      ],
      "marcar": true
+    },
+    {
+     "tipo": "nota",
+     "texto": "Actividad negociadora previa: se acredita con esta solicitud (art. 264.4.º LEC); si no consta, no se admite (art. 403.2 LEC)."
     }
    ],
-   "siguiente": "senalamiento_inventario"
+   "pregunta": "¿Se acredita la actividad negociadora previa (o la declaración responsable)?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "senalamiento_inventario"
+    },
+    {
+     "texto": "No",
+     "tono": "t-aviso",
+     "destino": "fin_sin_masc"
+    }
+   ]
   },
   "senalamiento_inventario": {
    "fase": 1,
@@ -385,9 +401,25 @@ Neg.data.register({
       "En los casos del local y la vivienda, puede pedirse la propiedad o un derecho de uso o habitación; si su valor supera el haber del adjudicatario, abona la diferencia en dinero (art. 1407 CC)"
      ],
      "marcar": true
+    },
+    {
+     "tipo": "nota",
+     "texto": "Actividad negociadora previa: se acredita también con esta solicitud (art. 264.4.º LEC); si no consta, no se admite (art. 403.2 LEC). Una negociación anterior sirve para la liquidación solo si comprendía también ese objeto: debe haber identidad entre el objeto de la negociación y el del litigio (art. 5.1 LO 1/2025)."
     }
    ],
-   "siguiente": "senalamiento_liquidacion"
+   "pregunta": "¿Se acredita la actividad negociadora previa (o la declaración responsable)?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "senalamiento_liquidacion"
+    },
+    {
+     "texto": "No",
+     "tono": "t-aviso",
+     "destino": "fin_sin_masc"
+    }
+   ]
   },
   "senalamiento_liquidacion": {
    "fase": 2,
@@ -690,9 +722,25 @@ Neg.data.register({
       "Pago en dinero, con posible aplazamiento judicial de hasta tres años garantizado (art. 1431 CC), o en bienes concretos por acuerdo o concesión del juez a petición fundada del deudor (art. 1432 CC)"
      ],
      "marcar": true
+    },
+    {
+     "tipo": "nota",
+     "texto": "Actividad negociadora previa: se acredita con esta solicitud, la única de este régimen (art. 264.4.º LEC); si no consta, no se admite (art. 403.2 LEC)."
     }
    ],
-   "siguiente": "art811_senalamiento"
+   "pregunta": "¿Se acredita la actividad negociadora previa (o la declaración responsable)?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "art811_senalamiento"
+    },
+    {
+     "texto": "No",
+     "tono": "t-aviso",
+     "destino": "fin_sin_masc"
+    }
+   ]
   },
   "art811_senalamiento": {
    "fase": 4,
@@ -897,6 +945,22 @@ Neg.data.register({
     }
    ],
    "fin": "success"
+  },
+  "fin_sin_masc": {
+   "fase": 5,
+   "titulo": "Inadmisión: falta la actividad negociadora previa",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "No se admite cuando no consta haber acudido al medio adecuado de solución de controversias exigido como requisito de procedibilidad (art. 403.2 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El interesado puede acudir a un medio adecuado y presentar de nuevo la solicitud con su acreditación (art. 10 LO 1/2025)."
+    }
+   ],
+   "fin": "error"
   }
  },
  "pie": "Arts. 806–811 LEC (y 784–788 por remisión del art. 810)<br>Arts. 264.4.º y 403.2 LEC y art. 5 LO 1/2025 (actividad negociadora previa)<br>Arts. 1392–1410 CC (gananciales) · Arts. 1411–1434 CC (participación)"
