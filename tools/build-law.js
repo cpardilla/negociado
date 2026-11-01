@@ -21,15 +21,8 @@ const ROOT = path.join(__dirname, "..");
 const OUT = path.join(ROOT, "data", "leyes");
 const LEYES = JSON.parse(fs.readFileSync(path.join(__dirname, "leyes.json"), "utf8"));
 
-const ORDINAL = /^(?:[a-zñ]\)|\d+\.?\s*[ºª°]|(?:primer[oa]|segund[oa]|tercer[oa]|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa]|d[eé]cim[oa]|und[eé]cim[oa]|duod[eé]cim[oa])[.:])\s/i;
-
-/** Paragraph → [role, text]. */
-function role([cls, text]) {
-  if (cls === "tabla") return ["t", text];
-  if (/^\d+\.\s/.test(text) && !/^\d+\.\s*[ºª°]/.test(text)) return ["a", text];
-  if (ORDINAL.test(text)) return ["i", text];
-  return ["p", text];
-}
+// Paragraph → [role, text]: one definition, shared with the app's check against the BOE.
+const { role } = require("../assets/js/core/vigencia");
 
 /** One article as the app reads it. */
 function article(law, key) {

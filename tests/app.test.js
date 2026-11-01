@@ -375,3 +375,24 @@ test("law article: «Comprobar vigencia» (the BOE's answer simulated: no networ
   assert.deepEqual(r.futura, ["Vigente sin cambios", "Modificación publicada, aún no vigente"]);
   assert.deepEqual(r.sinRed, ["No se ha podido consultar el BOE"]);
 });
+
+test("law article: «Actualizar contenido» puts the BOE's text in force in this browser, and it can be undone", { timeout: 60000 }, async () => {
+  const r = await page(
+    `localStorage.removeItem('negociado.leyes.actualizado');
+     await go('#/ley/LEC/5', 900);
+     const original = document.querySelector('.law-main .law-text p').textContent;
+     window.fetch = async () => ({ ok: true, text: async () => '<version id_norma="BOE-A-2026-1" fecha_publicacion="20261020" fecha_vigencia="20261025"><p class="articulo">Artículo 5.</p><p class="parrafo">1. Texto nuevo.</p></version>' });
+     document.querySelector('[data-action="vigencia"]').click(); await wait(300);
+     document.querySelector('[data-action="actualizar"]').click(); await wait(200);
+     const updated = { text: document.querySelector('.law-main .law-text p').textContent, notice: !!document.querySelector('.updated'), saved: !!JSON.parse(localStorage.getItem('negociado.leyes.actualizado')).LEC['5'] };
+     await go('#/ley/LEC/6'); await go('#/ley/LEC/5');
+     const kept = document.querySelector('.law-main .law-text p').textContent;
+     document.querySelector('[data-action="restaurar"]').click(); await wait(200);
+     return { original, updated, kept, restored: document.querySelector('.law-main .law-text p').textContent, cleared: localStorage.getItem('negociado.leyes.actualizado'), rows: new Set([...document.querySelectorAll('.article-actions > *')].map((b) => Math.round(b.getBoundingClientRect().top))).size };`
+  );
+  assert.deepEqual(r.updated, { text: "1. Texto nuevo.", notice: true, saved: true });
+  assert.equal(r.kept, "1. Texto nuevo.", "sigue actualizado al volver al artículo");
+  assert.equal(r.restored, r.original, "vuelve el texto de la aplicación");
+  assert.equal(r.cleared, null);
+  assert.equal(r.rows, 1, "los botones del artículo, en una fila");
+});

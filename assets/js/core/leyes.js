@@ -27,9 +27,73 @@
   /** The article's number as the BOE writes it ("778 quáter", "42 bis a)"); the key otherwise. */
   const label = (law, key) => (law.articulos[key] && law.articulos[key].n) || key;
 
+  // ── Articles updated from the BOE in this browser ("Actualizar contenido") ──
+  // negociado.leyes.actualizado = { <law>: { <key>: { v, m, p, fecha } } }. The app's own text stays
+  // in a._orig, to go back to it. An update the app's data has caught up with is dropped.
+  const PREF = "leyes.actualizado";
+  const updates = () => Neg.prefs.get(PREF, {}) || {};
+  const forget = (a) => {
+    delete a._head;
+    delete a._text;
+  };
+
+  function applyUpdate(law, key, u) {
+    const a = law.articulos[key];
+    if (!a) return;
+    if (!a._orig) a._orig = { v: a.v, m: a.m, p: a.p, c: a.c };
+    Object.assign(a, { v: u.v, m: u.m === law.boe.id ? undefined : u.m, p: u.p, c: undefined, u: u.fecha });
+    forget(a);
+  }
+
+  function applyUpdates(law) {
+    const all = updates();
+    const mine = all[law.id] || {};
+    let changed = false;
+    for (const [key, u] of Object.entries(mine)) {
+      const a = law.articulos[key];
+      const base = a && (a._orig || a);
+      if (!a || (base.v === u.v && (base.m || law.boe.id) === u.m)) {
+        delete mine[key]; // the app's data already carries it (or the article is gone)
+        changed = true;
+      } else if (a.u !== u.fecha) applyUpdate(law, key, u);
+    }
+    if (changed) {
+      if (Object.keys(mine).length) all[law.id] = mine;
+      else delete all[law.id];
+      Neg.prefs.set(PREF, Object.keys(all).length ? all : null);
+    }
+    return law;
+  }
+
   Neg.leyes = {
     async load(id) {
-      return index(await Neg.data.load("ley", id));
+      return applyUpdates(index(await Neg.data.load("ley", id)));
+    },
+
+    /** Replaces the article's text with the BOE's version in force (this browser only). */
+    actualizar(law, key, version) {
+      const today = new Date().toLocaleDateString("sv-SE").replace(/-/g, "");
+      const u = { v: version.vigencia, m: version.norma, p: version.parrafos, fecha: today };
+      const all = updates();
+      (all[law.id] = all[law.id] || {})[key] = u;
+      Neg.prefs.set(PREF, all);
+      applyUpdate(law, key, u);
+    },
+
+    /** Back to the app's own text. */
+    restaurar(law, key) {
+      const a = law.articulos[key];
+      if (a && a._orig) {
+        Object.assign(a, a._orig, { u: undefined });
+        delete a._orig;
+        forget(a);
+      }
+      const all = updates();
+      if (all[law.id]) {
+        delete all[law.id][key];
+        if (!Object.keys(all[law.id]).length) delete all[law.id];
+      }
+      Neg.prefs.set(PREF, Object.keys(all).length ? all : null);
     },
 
     label,

@@ -354,5 +354,5 @@ test("vigencia: the version in force, BOE lists out of order, quoted articles, a
   assert.equal(r.pendiente.vigencia, "20270101");
   // A quoted article inside the text keeps its paragraph (only the heading goes).
   const quoted = `<version id_norma="X" fecha_publicacion="20230101" fecha_vigencia="20230101"><p class="articulo">Artículo 479. Interposición.</p><p class="parrafo">1. Uno.</p><p class="articulo">«Artículo 479. Anterior.</p></version>`;
-  assert.deepEqual(V.versions(quoted)[0].parrafos, ["1. Uno.", "«Artículo 479. Anterior."]);
+  assert.deepEqual(V.versions(quoted)[0].parrafos, [["a", "1. Uno."], ["p", "«Artículo 479. Anterior."]]);
 });

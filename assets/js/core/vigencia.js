@@ -38,27 +38,38 @@
       if (m[2] !== undefined) {
         const cls = attrs(m[1] || "").class || "";
         const t = text(m[2]);
-        if (t && !(cls === "articulo" && !out.length && !heading)) out.push(t);
+        if (t && !(cls === "articulo" && !out.length && !heading)) out.push([cls, t]);
         else if (cls === "articulo") heading = true;
       } else {
         const rows = m[0].match(/<tr[\s\S]*?<\/tr>/g) || [];
         for (const row of rows) {
           const cells = (row.match(/<t[dh][^>]*>[\s\S]*?<\/t[dh]>/g) || []).map((c) => text(c.replace(/^<t[dh][^>]*>|<\/t[dh]>$/g, "")));
-          if (cells.some(Boolean)) out.push(cells.join(" | "));
+          if (cells.some(Boolean)) out.push(["tabla", cells.join(" | ")]);
         }
       }
     }
     return out;
   }
 
-  /** Every version of the block, as the BOE lists them. */
+  // Role of each paragraph, as the app reads them (one definition, also used by tools/build-law.js):
+  //   a  starts an apartado ("1. …")        i  a sub-item ("a) …", "1.º …", "Primero. …")
+  //   p  other paragraph                    t  a table row
+  const ORDINAL = /^(?:[a-zñ]\)|\d+\.?\s*[ºª°]|(?:primer[oa]|segund[oa]|tercer[oa]|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa]|d[eé]cim[oa]|und[eé]cim[oa]|duod[eé]cim[oa])[.:])\s/i;
+  function role([cls, text]) {
+    if (cls === "tabla") return ["t", text];
+    if (/^\d+\.\s/.test(text) && !/^\d+\.\s*[ºª°]/.test(text)) return ["a", text];
+    if (ORDINAL.test(text)) return ["i", text];
+    return ["p", text];
+  }
+
+  /** Every version of the block, as the BOE lists them; parrafos as the app keeps them ([role, text]). */
   function versions(xml) {
     const out = [];
     const re = /<version([^>]*)>([\s\S]*?)<\/version>/g;
     let m;
     while ((m = re.exec(xml))) {
       const a = attrs(m[1]);
-      out.push({ norma: a.id_norma, publicada: a.fecha_publicacion || "", vigencia: a.fecha_vigencia || "", parrafos: paragraphs(m[2]) });
+      out.push({ norma: a.id_norma, publicada: a.fecha_publicacion || "", vigencia: a.fecha_vigencia || "", parrafos: paragraphs(m[2]).map(role) });
     }
     return out;
   }
@@ -76,6 +87,7 @@
   }
 
   const same = (a, b) => a.length === b.length && a.every((t, i) => t === b[i]);
+  const texts = (ps) => ps.map((p) => String(p[1]).normalize("NFC"));
 
   /** Compares the BOE's answer with the article the app carries.
    *  art: { v: vigencia, m: norma (absent when it is the law's own), p: [[role, text]], c: corrected }
@@ -91,11 +103,11 @@
     if (now.vigencia !== mine.vigencia || now.norma !== mine.norma) estado = "posterior";
     // Same version, different words: the BOE retouched the text. Not looked at in a corrected
     // article, whose text carries the renaming of the LO 7/2015 that the BOE did not apply.
-    else if (!art.c && !same(now.parrafos, art.p.map((p) => String(p[1]).normalize("NFC")))) estado = "texto";
+    else if (!art.c && !same(texts(now.parrafos), texts(art.p))) estado = "texto";
     return { estado, actual: now, pendiente: future };
   }
 
   const url = (lawBoeId, block) => `${API}${encodeURIComponent(lawBoeId)}/texto/bloque/${encodeURIComponent(block)}`;
 
-  return { versions, actual, comparar, url, paragraphs };
+  return { versions, actual, comparar, url, paragraphs, role };
 });

@@ -1177,6 +1177,51 @@ a.phase:hover {
   font-size: var(--fs-xs);
   color: var(--text-3);
 }
+/* The date of the text on its own line; every action of the article in one row under it. */
+.article-vigor {
+  flex-basis: 100%;
+  margin: 0;
+}
+.article-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.article-actions .btn {
+  padding: 6px 11px;
+}
+.article-actions .btn-short {
+  display: none;
+}
+/* Phones: Copiar and BOE keep only their icon, "Comprobar vigencia" says "Vigencia": one row. */
+@media (max-width: 560px) {
+  .article-actions .btn-long {
+    display: none;
+  }
+  .article-actions .btn-short {
+    display: inline;
+  }
+  .article-actions .btn-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+.article .updated {
+  margin-top: var(--sp-3);
+}
+.vigencia-update {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--text-2);
+}
 
 /* ── Reference popover (literal text of a cited article) ────────────────── */
 .popover {

@@ -120,14 +120,17 @@
       <h2>Artículo ${esc(Neg.leyes.label(law, key))}.${a.r ? ` <span class="rubric">${esc(a.r)}</span>` : ""}</h2>
       ${a.x ? '<p class="page-meta"><span class="tag t-aviso">Sin contenido</span></p>' : ""}
       ${a.c ? `<p class="page-meta"><span class="tag t-nota">Versión corregida</span> ${esc(a.c)}</p>` : ""}
+      ${a.u ? `<div class="block t-plazo updated"><span class="block-label">Actualizado desde el BOE el ${Neg.fecha(a.u)}</span>Texto tomado del BOE en este navegador; el de la aplicación es el consolidado a ${Neg.fecha(law.boe.fecha)}. Los esquemas y guías no cambian.<p><button class="btn" data-action="restaurar">Volver al texto de la aplicación</button></p></div>` : ""}
       <div class="law-text">${Neg.leyes.html(a.p, words.length ? highlighter(words) : null)}</div>
       ${cited}
       <div class="article-foot">
-        <span>${vigor}</span><span class="spacer"></span>
+        <p class="article-vigor">${vigor}</p>
+        <div class="article-actions">
         ${links}
-        <button class="btn" data-action="copy" title="Copia la ruta y el texto del artículo">${Neg.icon("copy")} Copiar</button>
-        <button class="btn" data-action="vigencia" title="Pregunta al BOE si este artículo ha cambiado desde ${Neg.fecha(law.boe.fecha)}">${Neg.icon("check")} Comprobar vigencia</button>
-        <a class="btn" href="${esc(Neg.leyes.boe(law, key))}" target="_blank" rel="noopener">BOE ${Neg.icon("out")}</a>
+        <button class="btn" data-action="copy" title="Copia la ruta y el texto del artículo" aria-label="Copiar">${Neg.icon("copy")}<span class="btn-text">Copiar</span></button>
+        <button class="btn" data-action="vigencia" title="Pregunta al BOE si este artículo ha cambiado desde ${Neg.fecha(law.boe.fecha)}">${Neg.icon("check")}<span class="btn-long">Comprobar vigencia</span><span class="btn-short">Vigencia</span></button>
+        <a class="btn" href="${esc(Neg.leyes.boe(law, key))}" target="_blank" rel="noopener" aria-label="Ver en el BOE"><span class="btn-text">BOE</span>${Neg.icon("out")}</a>
+        </div>
       </div>
       <div class="vigencia" data-vigencia role="status"></div>
       <nav class="article-nav" aria-label="Artículos contiguos">
@@ -143,14 +146,18 @@
   function vigenciaHtml(law, key, r) {
     const a = law.articulos[key];
     const norma = (id) => (id === law.boe.id ? "la redacción original" : `<a href="https://www.boe.es/buscar/act.php?id=${esc(id)}" target="_blank" rel="noopener">${esc(id)}</a>`);
-    const texto = (v, label) => `<details class="vigencia-text"><summary>${label}</summary><div class="law-text">${v.parrafos.map((t) => `<p>${esc(t)}</p>`).join("")}</div></details>`;
+    const texto = (v, label) => `<details class="vigencia-text"><summary>${label}</summary><div class="law-text">${Neg.leyes.html(v.parrafos)}</div></details>`;
     const out = [];
     if (r.estado === "igual")
       out.push(`<div class="block t-ok"><span class="block-label">Vigente sin cambios</span>El BOE de hoy da la misma redacción que la aplicación: vigente desde ${Neg.fecha(r.actual.vigencia)}, ${norma(r.actual.norma)}.${a.c ? " Es la versión corregida que se indica arriba." : ""}</div>`);
-    else if (r.estado === "posterior")
-      out.push(`<div class="block t-aviso"><span class="block-label">Hay una redacción posterior</span>El BOE da otra redacción, vigente desde ${Neg.fecha(r.actual.vigencia)} (${norma(r.actual.norma)}). La de la aplicación es la vigente desde ${Neg.fecha(a.v)}.${texto(r.actual, "Ver la redacción del BOE")}</div>`);
-    else
-      out.push(`<div class="block t-nota"><span class="block-label">Misma versión, texto retocado</span>El BOE mantiene la versión vigente desde ${Neg.fecha(r.actual.vigencia)}, pero su texto ya no coincide palabra por palabra con el de la aplicación.${texto(r.actual, "Ver el texto del BOE")}</div>`);
+    else {
+      // The text in force can replace the app's one, in this browser (Neg.leyes.actualizar).
+      const update = `<p class="vigencia-update"><button class="btn btn-primary" data-action="actualizar">${Neg.icon("restart")} Actualizar contenido</button><span>Sustituye el texto por el del BOE en este navegador.</span></p>`;
+      if (r.estado === "posterior")
+        out.push(`<div class="block t-aviso"><span class="block-label">Hay una redacción posterior</span>El BOE da otra redacción, vigente desde ${Neg.fecha(r.actual.vigencia)} (${norma(r.actual.norma)}). La de la aplicación es la vigente desde ${Neg.fecha(a.v)}.${texto(r.actual, "Ver la redacción del BOE")}${update}</div>`);
+      else
+        out.push(`<div class="block t-nota"><span class="block-label">Misma versión, texto retocado</span>El BOE mantiene la versión vigente desde ${Neg.fecha(r.actual.vigencia)}, pero su texto ya no coincide palabra por palabra con el de la aplicación.${texto(r.actual, "Ver el texto del BOE")}${update}</div>`);
+    }
     if (r.pendiente)
       out.push(`<div class="block t-plazo"><span class="block-label">Modificación publicada, aún no vigente</span>Entrará en vigor el ${Neg.fecha(r.pendiente.vigencia)} (${norma(r.pendiente.norma)}).${texto(r.pendiente, "Ver la redacción futura")}</div>`);
     return out.join("");
@@ -170,6 +177,7 @@
       const r = Neg.vigencia.comparar(await res.text(), a, law.boe.id, today);
       if (Neg.where().args[1] !== key) return; // the reader moved to another article meanwhile
       box.innerHTML = vigenciaHtml(law, key, r);
+      box._result = r; // what "Actualizar contenido" applies
     } catch (err) {
       if (Neg.where().args[1] !== key) return;
       box.innerHTML = `<div class="block t-nota"><span class="block-label">No se ha podido consultar el BOE</span>Sin conexión o servicio no disponible en este momento. El texto de la aplicación es el consolidado a ${Neg.fecha(law.boe.fecha)}.</div>`;
@@ -256,6 +264,23 @@
       if (more) {
         more.parentElement.querySelectorAll(".cited-link[hidden]").forEach((a) => (a.hidden = false));
         more.remove();
+        placeArticle(el, false);
+        return;
+      }
+      const upd = e.target.closest('[data-action="actualizar"], [data-action="restaurar"]');
+      if (upd) {
+        const key = Neg.where().args[1];
+        if (upd.dataset.action === "actualizar") {
+          const r = el.querySelector("[data-vigencia]")._result;
+          if (!r) return;
+          Neg.leyes.actualizar(law, key, r.actual);
+          Neg.toast("Artículo actualizado con el texto del BOE");
+        } else {
+          Neg.leyes.restaurar(law, key);
+          Neg.toast("Vuelve a mostrarse el texto de la aplicación");
+        }
+        el.querySelector(".law-main").innerHTML = articleHtml(law, key, []);
+        Neg.referencias.link(el.querySelector(".law-main .law-text"), law.id);
         placeArticle(el, false);
         return;
       }
