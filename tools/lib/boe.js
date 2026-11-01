@@ -31,13 +31,13 @@ const ORDINAL_RE = new RegExp(`^(${ORDINAL_WORDS.join("|")})[.:]\\s`, "i");
 function structure(parrafos) {
   const apartados = new Map();
   let current = null;
+  // Where apartados go in words, a line "8. …" is text quoted by the amending law, not an apartado.
+  const inWords = parrafos.slice(1).some(([, t]) => cardinalApartado(t));
   for (const [, t] of parrafos.slice(1)) {
-    const ap = t.match(/^(\d+)\.\s/);
-    // Some laws (LO 1/1982…) number apartados in words: "Uno.", "Dos.", "Tres."
-    const cardWord = !ap && t.match(/^(\p{Lu}\p{Ll}+)\.\s/u);
-    const n = cardWord && cardinalNumber(cardWord[1]);
+    const ap = !inWords && t.match(/^(\d+)\.\s/);
+    const n = inWords && cardinalApartado(t);
     if ((ap && !/^\d+\.\s*[ºª°]/.test(t)) || n) {
-      current = ap ? ap[1] : String(n);
+      current = ap ? ap[1] : n;
       apartados.set(current, { texto: [t], subs: new Set() });
       continue;
     }
@@ -90,6 +90,14 @@ function cardinalNumber(words) {
     }
   } else if (CARD_UNITS[w[i]]) n += CARD_UNITS[w[i++]];
   return n && i === w.length ? n : null;
+}
+
+/** Some laws number apartados in words (LO 1/1982: "Uno."; LO 1/2025: "Cincuenta y cuatro."):
+ *  the apartado's number as text, or null when the paragraph does not start with one. */
+function cardinalApartado(t) {
+  const m = t.match(/^(\p{Lu}\p{Ll}+(?:\s+\p{Ll}+){0,3})\.\s/u);
+  const n = m && cardinalNumber(m[1]);
+  return n ? String(n) : null;
 }
 
 /** "Artículo doscientos ochenta y uno. Rúbrica" → "Artículo 281. Rúbrica"; with `ordinals`, also
@@ -244,4 +252,4 @@ function division(law, names) {
   return best;
 }
 
-module.exports = { load, fold, articleKey, range, division, ordinalNumber, cardinalNumber, SUFFIXES, ART_NUM };
+module.exports = { load, fold, articleKey, range, division, ordinalNumber, cardinalNumber, cardinalApartado, SUFFIXES, ART_NUM };

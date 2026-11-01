@@ -88,6 +88,17 @@ test("apartados numbered in words ('Uno.', 'Dos.', LO 1/1982) are apartados", ()
   assert.deepEqual([...load("LOPDH").articulos.get("2").apartados.keys()], ["1", "2", "3"]);
 });
 
+test("apartados numbered in compound words ('Cincuenta y cuatro.', LO 1/2025) are apartados", () => {
+  const { cardinalApartado } = require("../tools/lib/boe");
+  assert.equal(cardinalApartado("Cincuenta y cuatro. Se modifica el artículo 641"), "54");
+  assert.equal(cardinalApartado("Ocho. Se modifica"), "8");
+  assert.equal(cardinalApartado("Veinte días después."), null);
+  assert.equal(cardinalApartado("Primero. Texto"), null);
+  const a22 = load("LO1-2025").articulos.get("22").apartados;
+  assert.match(a22.get("8").texto[0], /^Ocho\./, "not the «8. …» of a quoted article");
+  assert.match(a22.get("54").texto[0], /^Cincuenta y cuatro\./);
+});
+
 test("range and division follow the law's own order and headings", () => {
   assert.deepEqual(range(load("LJV"), "26 bis", "26 quinquies"), ["26 bis", "26 ter", "26 quater", "26 quinquies"]);
   assert.equal(range(load("LJV"), "30", "20"), null);

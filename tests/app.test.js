@@ -186,6 +186,33 @@ test("live references: links, cited apartado only, no inner scroll, inside the s
   assert.ok(r.insideAgain, "dentro de la pantalla aunque el enlace no esté a la vista");
 });
 
+test("live references: a law cited by its name (LO 1/2025), and an apartado numbered in words shown alone", { timeout: 60000 }, async () => {
+  const r = await page(
+    `await go('#/', 300);
+     const box = document.createElement('p');
+     box.textContent = 'Requisito: art. 5.1 LO 1/2025; umbral: art. 22.8 de la LO 1/2025; art. 22.54 de la Ley Orgánica 1/2025.';
+     document.querySelector('.page-head').append(box);
+     Neg.referencias.link(box, 'LJV');
+     const open = async (i) => {
+       box.querySelectorAll('a.ref')[i].click(); await wait(600);
+       const p = document.querySelector('.popover');
+       const out = { head: p.querySelector('.popover-head strong').textContent, body: p.querySelector('.popover-body').textContent, paras: p.querySelectorAll('.popover-body p').length, foot: p.querySelector('.popover-foot').textContent };
+       document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' })); await wait(50);
+       return out;
+     };
+     const refs = [...box.querySelectorAll('a.ref')].map((a) => a.dataset.ley + ' ' + a.dataset.art + '.' + a.dataset.apdo);
+     return { refs, a: await open(0), b: await open(1), c: await open(2) };`
+  );
+  assert.deepEqual(r.refs, ["LO1-2025 5.1", "LO1-2025 22.8", "LO1-2025 22.54"]);
+  assert.equal(r.a.head, "Art. 5.1 LO 1/2025");
+  assert.match(r.a.body, /^1\. En el orden jurisdiccional civil/);
+  assert.equal(r.b.head, "Art. 22.8 LO 1/2025");
+  assert.match(r.b.body, /^Ocho\./);
+  assert.match(r.c.body, /^Cincuenta y cuatro\./);
+  assert.ok(r.c.body.length < 2000, "solo el apartado citado, no los miles de párrafos del artículo");
+  assert.match(r.a.foot, /Ver en el BOE/);
+});
+
 test("esquema view: cards, filters, search, direct link to an article's card, references", { timeout: 90000 }, async () => {
   const r = await page(
     `await go('#/esquema/ljv-conciliacion', 1000);

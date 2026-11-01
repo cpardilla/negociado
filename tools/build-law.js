@@ -14,7 +14,7 @@
 const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
-const { load } = require("./lib/boe");
+const { load, cardinalApartado } = require("./lib/boe");
 const citas = require("../assets/js/core/citas");
 
 const ROOT = path.join(__dirname, "..");
@@ -23,6 +23,19 @@ const LEYES = JSON.parse(fs.readFileSync(path.join(__dirname, "leyes.json"), "ut
 
 // Paragraph → [role, text]: one definition, shared with the app's check against the BOE.
 const { role } = require("../assets/js/core/vigencia");
+
+/** The paragraphs as the app reads them. An apartado numbered in words also carries its number
+ *  (["a", "Ocho. Se modifica…", "8"]), so that a citation of "art. 22.8" finds it; in such an
+ *  article, a line "8. …" is text quoted by the amending law, not an apartado. */
+function paragraphs(list) {
+  const inWords = list.some(([, t]) => cardinalApartado(t));
+  return list.map((p) => {
+    const [r, t] = role(p);
+    if (!inWords || r === "t") return [r, t];
+    const n = cardinalApartado(t);
+    return n ? ["a", t, n] : [r === "a" ? "p" : r, t];
+  });
+}
 
 /** One article as the app reads it. */
 function article(law, key) {
@@ -35,7 +48,7 @@ function article(law, key) {
     ...(a.norma && a.norma !== law.id ? { m: a.norma } : {}),
     ...(a.sinContenido ? { x: 1 } : {}),
     ...(a.correccion ? { c: a.correccion.motivo } : {}), // the snapshot was corrected (sources/boe/correcciones.json)
-    p: a.parrafos.slice(1).map(role),
+    p: paragraphs(a.parrafos.slice(1)),
   };
 }
 

@@ -107,7 +107,8 @@
     /** Paragraphs of apartado `n` (all of them when the article has no such apartado). */
     apartado(art, n) {
       if (!n) return art.p;
-      const start = art.p.findIndex(([role, t]) => role === "a" && t.startsWith(`${n}. `));
+      // (an apartado numbered in words, "Ocho.", carries its number: tools/build-law.js)
+      const start = art.p.findIndex(([role, t, num]) => role === "a" && (num === n || t.startsWith(`${n}. `)));
       if (start < 0) return art.p;
       const end = art.p.findIndex(([role], i) => i > start && role === "a");
       return art.p.slice(start, end < 0 ? undefined : end);

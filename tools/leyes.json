@@ -17,6 +17,7 @@
   { "clave": "LTO", "id": "BOE-A-1979-26445", "alias": ["Ley 30/1979"] },
   { "clave": "RDTO", "id": "BOE-A-2012-15715", "alias": ["RD 1723/2012", "Real Decreto 1723/2012"] },
   { "clave": "L8-2021", "id": "BOE-A-2021-9233", "alias": ["Ley 8/2021"] },
+  { "clave": "LO1-2025", "id": "BOE-A-2025-76", "alias": ["LO 1/2025", "Ley Orgánica 1/2025"], "sigla": "LO 1/2025" },
   { "clave": "CCom", "id": "BOE-A-1885-6627", "alias": [] },
   { "clave": "TRLGDCU", "id": "BOE-A-2007-20555", "alias": ["RDL 1/2007", "RDLeg 1/2007", "Real Decreto Legislativo 1/2007"] },
   { "clave": "LM", "id": "BOE-A-2001-23093", "alias": ["Ley 17/2001"] },

@@ -1,6 +1,6 @@
 # Informe automático de contenido
 
-Generado por `tools/check-content.js` el 31/10/2026 sobre los datos de la app (`data/esquemas`, `data/guias`). El informe del punto de partida es `informe-inicial.md`.
+Generado por `tools/check-content.js` el 1/11/2026 sobre los datos de la app (`data/esquemas`, `data/guias`). El informe del punto de partida es `informe-inicial.md`.
 Fuente: BOE, LEC consolidada a 07-10-2026 y LJV a 05-03-2026 (`sources/boe/`).
 
 Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · **revisar** (necesita lectura humana; puede ser correcto). Las citas sin ley explícita se atribuyen a la ley del recurso y se marcan «ley por defecto»: el contexto puede referirse a otra norma. Es un primer cribado: la revisión manual de cada recurso (fases 4 y 5) parte de aquí, pero no se limita a ello.
@@ -69,9 +69,9 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2808
-- ✓ CC (BOE a 07-09-2026): 1278
-- ✓ LEC (BOE a 07-10-2026): 1136
+- ✓ LJV (BOE a 05-03-2026): 2809
+- ✓ CC (BOE a 07-09-2026): 1282
+- ✓ LEC (BOE a 07-10-2026): 1146
 - ✓ LOPJ (BOE a 09-10-2026): 117
 - ✓ LPPD (BOE a 18-12-2025): 70
 - ✓ LTRANS (BOE a 20-12-2025): 62
@@ -82,9 +82,9 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - UE: 33
 - ✓ LN (BOE a 22-10-2026): 30
 - ✓ LH (BOE a 07-01-2026): 21
+- ✓ LO1-2025 (BOE a 09-07-2026): 21
 - ✓ LTO (BOE a 16-12-2025): 20
 - ✓ CE (BOE a 20-05-2026): 18
-- LO 1/2025: 18
 - ✓ LSC (BOE a 19-12-2025): 7
 - ✓ CP (BOE a 09-04-2026): 7
 - ✓ LOPDGDD (BOE a 08-10-2026): 6
@@ -101,7 +101,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - LO 3/2007: 1
 - Ley 54/2007: 1
 
-Además, 304 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 303 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 

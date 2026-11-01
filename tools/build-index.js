@@ -88,7 +88,7 @@ const catalogo = {
   guias: guias.sort(byLaw).map(entry),
   // Every law the content may cite (tools/leyes.json), for the live references: its BOE page,
   // and whether the app carries its text (data/leyes/<id>.js: whole, or only the cited articles).
-  normas: LEYES.map((l) => ({ id: l.clave, boe: l.id, texto: lawById.has(l.clave) ? (lawById.get(l.clave).parcial ? "citada" : "completa") : null })),
+  normas: LEYES.map((l) => ({ id: l.clave, boe: l.id, texto: lawById.has(l.clave) ? (lawById.get(l.clave).parcial ? "citada" : "completa") : null, ...(l.sigla ? { sigla: l.sigla } : {}) })),
   alias: Object.fromEntries(LEYES.flatMap((l) => [[l.clave, l.clave], ...l.alias.map((a) => [a, l.clave])])),
 };
 
