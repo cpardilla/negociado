@@ -50,7 +50,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La conciliación es un medio alternativo de resolución de conflictos regulado en el Título IX de la Ley 15/2015 (arts. 139 a 148). Constituye un acto prejudicial voluntario, previo al ejercicio de acciones judiciales, que persigue evitar el acceso innecesario a los tribunales cuando las partes pueden alcanzar un acuerdo satisfactorio."
+     "texto": "La conciliación es un medio adecuado de solución de controversias regulado en el Título IX de la Ley 15/2015 (arts. 139 a 148). Es un acto previo al ejercicio de acciones judiciales, que persigue evitar el acceso innecesario a los tribunales cuando las partes pueden alcanzar un acuerdo satisfactorio."
     },
     {
      "tipo": "info",
@@ -58,11 +58,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
+     "texto": "Requisito de procedibilidad: en el orden civil, con carácter general, para que sea admisible la demanda hay que acudir antes a algún medio adecuado de solución de controversias; entre los que cumplen el requisito figura expresamente la conciliación, siempre que haya identidad entre el objeto de la negociación y el del litigio (art. 5.1 LO 1/2025). Se exige en los procesos declarativos del Libro II y en los especiales del Libro IV de la LEC, salvo las materias exceptuadas (art. 5.2 LO 1/2025; p. ej., derechos fundamentales, medidas del art. 158 CC, medidas de apoyo, filiación, tutela sumaria de la posesión)."
+    },
+    {
+     "tipo": "nota",
      "texto": "Esta guía interactiva recorre el procedimiento completo, desde la verificación de procedencia y las exclusiones hasta las posibles vías posteriores al acuerdo."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 139-148; LEC art. 517.2.9.º; CC art. 1973"
+     "texto": "Ley 15/2015, arts. 139-148; LO 1/2025, art. 5; LEC art. 517.2.9.º; CC art. 1973"
     }
    ],
    "pregunta": "¿La pretensión tiene por finalidad lícita alcanzar un acuerdo para evitar un pleito?",

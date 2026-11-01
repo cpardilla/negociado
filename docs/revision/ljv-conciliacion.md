@@ -79,3 +79,12 @@ Corte del BOE: LEC a 07-10-2026; CC a 07-09-2026; LJV a 05-03-2026.
 | G25 | competencia_pj | incompleto | Solo el art. 140.1 LJV | Se añade «cf. art. 51.1 LEC», como ya hacía el esquema E28 | LEC 51.1 |
 
 E28 no cambia: cita el art. 51.1 LEC y no cita los arts. 40 y 41 CC.
+
+## Corrección posterior (2026-11-01) · Decisión 21: requisito de procedibilidad en G25
+
+Fuente: art. 5 LO 1/2025, consultado en la API del BOE el 2026-11-01 (bloque `a5` de BOE-A-2025-76, versión única, vigente desde el 3-4-2025). La LO 1/2025 sigue sin instantánea en `sources/boe/`.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| G25 | inicio | **desfasado** | «Medio alternativo de resolución de conflictos»; «acto prejudicial voluntario» | «Medio adecuado de solución de controversias»; «acto previo al ejercicio de acciones judiciales» | LO 1/2025, art. 5.1 |
+| G25 | inicio | incompleto | Sin mencionar el requisito de procedibilidad (sí en E28) | Nota con el art. 5.1 y 5.2, con el mismo contenido que E28 | LO 1/2025, art. 5 |
