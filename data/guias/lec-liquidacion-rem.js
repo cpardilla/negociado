@@ -49,7 +49,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Cuándo: esas normas hablan de la demanda y no distinguen las solicitudes de este procedimiento. Se acredita con la solicitud de inventario (art. 808 LEC) y con la de liquidación (art. 810 LEC), según el criterio, no vinculante, de la Junta Sectorial de Magistrados de las Secciones de Familia de la Audiencia Provincial de Madrid (acuerdo de 6-11-2025, II.4); en el régimen de participación, con su única solicitud (art. 811 LEC)."
+     "texto": "Cuándo: esas normas hablan de la demanda y no precisan si se acredita con la solicitud de inventario (art. 808 LEC), con la de liquidación (art. 810 LEC) o con ambas; en el régimen de participación hay una sola solicitud (art. 811 LEC)."
     }
    ],
    "pregunta": "¿Qué régimen se liquida?",
@@ -155,27 +155,10 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Actividad negociadora previa: se acredita con esta solicitud (art. 264.4.º LEC); si no consta, no se admite (art. 403.2 LEC)."
+     "texto": "Actividad negociadora previa: los arts. 264.4.º y 403.2 LEC hablan de la demanda y no precisan en cuál de las solicitudes de este procedimiento se acredita."
     }
    ],
-   "pregunta": "¿Se acredita la actividad negociadora previa (o la declaración responsable)?",
-   "opciones": [
-    {
-     "texto": "Sí",
-     "tono": "t-ok",
-     "destino": "senalamiento_inventario"
-    },
-    {
-     "texto": "Se aporta, pero la justificación tiene un defecto formal",
-     "tono": "t-plazo",
-     "destino": "subsanar_masc_inventario"
-    },
-    {
-     "texto": "No",
-     "tono": "t-aviso",
-     "destino": "fin_sin_masc"
-    }
-   ]
+   "siguiente": "senalamiento_inventario"
   },
   "senalamiento_inventario": {
    "fase": 1,
@@ -409,27 +392,10 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Actividad negociadora previa: se acredita también con esta solicitud (art. 264.4.º LEC); si no consta, no se admite (art. 403.2 LEC). Una negociación anterior sirve para la liquidación solo si comprendía también ese objeto: debe haber identidad entre el objeto de la negociación y el del litigio (art. 5.1 LO 1/2025)."
+     "texto": "Actividad negociadora previa: los arts. 264.4.º y 403.2 LEC hablan de la demanda y no precisan en cuál de las solicitudes de este procedimiento se acredita. Una negociación anterior sirve para la liquidación solo si comprendía también ese objeto: debe haber identidad entre el objeto de la negociación y el del litigio (art. 5.1 LO 1/2025)."
     }
    ],
-   "pregunta": "¿Se acredita la actividad negociadora previa (o la declaración responsable)?",
-   "opciones": [
-    {
-     "texto": "Sí",
-     "tono": "t-ok",
-     "destino": "senalamiento_liquidacion"
-    },
-    {
-     "texto": "Se aporta, pero la justificación tiene un defecto formal",
-     "tono": "t-plazo",
-     "destino": "subsanar_masc_liquidacion"
-    },
-    {
-     "texto": "No",
-     "tono": "t-aviso",
-     "destino": "fin_sin_masc"
-    }
-   ]
+   "siguiente": "senalamiento_liquidacion"
   },
   "senalamiento_liquidacion": {
    "fase": 2,
@@ -976,62 +942,6 @@ Neg.data.register({
     }
    ],
    "fin": "error"
-  },
-  "subsanar_masc_inventario": {
-   "fase": 1,
-   "titulo": "Subsanación del defecto en la justificación (art. 231 LEC)",
-   "actor": "laj",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "El Tribunal y el Letrado de la Administración de Justicia cuidarán de que puedan subsanarse los defectos de los actos procesales de las partes (art. 231 LEC)."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Si no se acompaña el documento exigido, no se admite (art. 403.2 LEC). A título orientativo y no vinculante, los acuerdos de la Audiencia Provincial de Madrid de 6-11-2025 (III.6) consideran subsanables, antes de admitir, los defectos formales de esta justificación."
-    }
-   ],
-   "pregunta": "¿Se subsana el defecto?",
-   "opciones": [
-    {
-     "texto": "Sí",
-     "tono": "t-ok",
-     "destino": "senalamiento_inventario"
-    },
-    {
-     "texto": "No",
-     "tono": "t-aviso",
-     "destino": "fin_sin_masc"
-    }
-   ]
-  },
-  "subsanar_masc_liquidacion": {
-   "fase": 2,
-   "titulo": "Subsanación del defecto en la justificación (art. 231 LEC)",
-   "actor": "laj",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "El Tribunal y el Letrado de la Administración de Justicia cuidarán de que puedan subsanarse los defectos de los actos procesales de las partes (art. 231 LEC)."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Si no se acompaña el documento exigido, no se admite (art. 403.2 LEC). A título orientativo y no vinculante, los acuerdos de la Audiencia Provincial de Madrid de 6-11-2025 (III.6) consideran subsanables, antes de admitir, los defectos formales de esta justificación."
-    }
-   ],
-   "pregunta": "¿Se subsana el defecto?",
-   "opciones": [
-    {
-     "texto": "Sí",
-     "tono": "t-ok",
-     "destino": "senalamiento_liquidacion"
-    },
-    {
-     "texto": "No",
-     "tono": "t-aviso",
-     "destino": "fin_sin_masc"
-    }
-   ]
   },
   "subsanar_masc_811": {
    "fase": 4,

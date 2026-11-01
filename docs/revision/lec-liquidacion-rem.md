@@ -110,3 +110,16 @@ Corte del BOE: LEC a 07-10-2026; LO 1/2025 a 09-07-2026. El propietario indica q
 |---|---|---|---|---|
 | G05 | `subsanar_masc_*` (3) | Regla atribuida al «criterio, no vinculante» de la Junta Sectorial; «sin justificación alguna, no hay defecto que subsanar», sin fuente | Sin documento, no se admite (art. 403.2 LEC); los acuerdos, en una frase, a título orientativo y no vinculante | LEC 231, 403.2; acuerdos III.6 |
 | E05 | Art. 806 › Actividad negociadora previa | «Según el criterio, no vinculante» | Regla en el art. 231 LEC; los acuerdos, como orientación no vinculante | LEC 231; acuerdos III.6 |
+
+## Corrección posterior (2026-11-01) · Decisión 24: en qué solicitud se acredita el requisito
+
+Corte del BOE: LEC a 07-10-2026; LO 1/2025 a 09-07-2026. Modifica la decisión 22. Los arts. 5.1 LO 1/2025, 264.4.º y 403.2 LEC hablan de la demanda y no distinguen la solicitud de inventario de la de liquidación; la única fuente de «con cada solicitud» eran los acuerdos de la AP de Madrid (II.4), que dejan de usarse aquí.
+
+| Recurso | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| E05 | Art. 806 › Actividad negociadora previa | Se acredita con cada solicitud, según los acuerdos II.4 | Aviso: las normas no precisan en cuál; en participación hay una sola solicitud | LEC 264.4.º, 403.2, 808, 810, 811; LO 1/2025 art. 5.1 |
+| G05 | inicio | Ídem | Ídem | Ídem |
+| G05 | `solicitud_inventario`, `solicitud_liquidacion` | Pregunta «¿Se acredita…?» que podía llevar a la inadmisión | Nota con el aviso; el recorrido sigue sin preguntar | Ídem |
+| G05 | `subsanar_masc_inventario`, `subsanar_masc_liquidacion` | Pasos de subsanación | Retirados | — |
+
+Se mantienen la pregunta, la subsanación (`subsanar_masc_811`) y la inadmisión en la solicitud única del art. 811 LEC.
