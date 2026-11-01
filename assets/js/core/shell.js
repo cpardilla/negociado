@@ -83,6 +83,12 @@
       </form>
       <div class="header-actions">
         <button class="icon-btn search-btn" data-action="open-search" aria-label="Buscar">${Neg.icon("search")}</button>
+        <div class="view-tools" role="group" aria-label="Vista">
+          <div class="zoom-cluster" role="group" aria-label="Tamaño del contenido"><button data-action="zoom-out" aria-label="Reducir">&minus;</button><output data-zoom aria-live="polite">100%</output><button data-action="zoom-in" aria-label="Ampliar">+</button></div>
+          <button class="icon-btn" data-action="zoom-reset" aria-label="Tamaño original (100 %)" title="Tamaño original">${Neg.icon("restart")}</button>
+          <button class="tool-btn" data-action="new-tab" title="Abrir esta página en una pestaña nueva">${Neg.icon("out")}<span>Nueva pestaña</span></button>
+          <button class="tool-btn" data-action="fullscreen" title="Ver el contenido a pantalla completa">${Neg.icon("fullscreen")}<span>Pantalla completa</span></button>
+        </div>
         <button class="icon-btn" data-action="theme" aria-label="Cambiar a tema oscuro">${Neg.icon("moon")}</button>
       </div>`;
   }
@@ -95,6 +101,37 @@
     btn.setAttribute("aria-label", dark ? "Cambiar a tema claro" : "Cambiar a tema oscuro");
   }
 
+  // ── View tools (as in the old pages): zoom of the content, new tab, full screen ──
+  const ZOOM = { step: 10, min: 50, max: 200 };
+  let zoom = Neg.prefs.get("zoom", 100);
+  function applyZoom() {
+    zoom = Math.min(ZOOM.max, Math.max(ZOOM.min, zoom));
+    const inner = document.querySelector(".content-inner");
+    if (inner) inner.style.zoom = zoom === 100 ? "" : String(zoom / 100);
+    const out = document.querySelector("[data-zoom]");
+    if (out) out.textContent = `${zoom}%`;
+    const less = document.querySelector('[data-action="zoom-out"]');
+    const more = document.querySelector('[data-action="zoom-in"]');
+    if (less) less.disabled = zoom <= ZOOM.min;
+    if (more) more.disabled = zoom >= ZOOM.max;
+    Neg.prefs.set("zoom", zoom);
+  }
+  const setZoom = (z) => {
+    zoom = z;
+    applyZoom();
+  };
+  function paintFullscreen() {
+    const btn = document.querySelector('[data-action="fullscreen"]');
+    if (!btn) return;
+    const on = !!document.fullscreenElement;
+    btn.innerHTML = `${Neg.icon(on ? "exitfs" : "fullscreen")}<span>${on ? "Salir de pantalla completa" : "Pantalla completa"}</span>`;
+    btn.title = on ? "Salir de la pantalla completa" : "Ver el contenido a pantalla completa";
+  }
+  function toggleFullscreen() {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.getElementById("content").requestFullscreen().catch(() => {});
+  }
+
   function setDrawer(open) {
     document.getElementById("sidebar").classList.toggle("open", open);
     document.querySelector('[data-action="menu"]').setAttribute("aria-expanded", String(open));
@@ -105,6 +142,20 @@
       const head = document.getElementById("header");
       head.innerHTML = header();
       paintThemeButton();
+      applyZoom();
+      paintFullscreen();
+      document.addEventListener("fullscreenchange", paintFullscreen);
+      // Zoom from the keyboard, as in the old pages: Ctrl/⌘ with + − 0, or + − 0 alone outside a field.
+      document.addEventListener("keydown", (e) => {
+        const typing = e.target.closest && e.target.closest("input, textarea, select, [contenteditable]");
+        if (e.altKey || (!e.ctrlKey && !e.metaKey && typing)) return;
+        const k = e.key;
+        if (k === "+" || k === "=") setZoom(zoom + ZOOM.step);
+        else if (k === "-" || k === "_") setZoom(zoom - ZOOM.step);
+        else if (k === "0") setZoom(100);
+        else return;
+        e.preventDefault();
+      });
       const cat = await Neg.data.load("catalogo", "catalogo");
       Neg.catalogo = cat;
       const nav = document.getElementById("sidebar");
@@ -128,6 +179,11 @@
           paintThemeButton();
         }
         if (a.dataset.action === "menu") setDrawer(!nav.classList.contains("open"));
+        if (a.dataset.action === "zoom-in") setZoom(zoom + ZOOM.step);
+        if (a.dataset.action === "zoom-out") setZoom(zoom - ZOOM.step);
+        if (a.dataset.action === "zoom-reset") setZoom(100);
+        if (a.dataset.action === "new-tab") window.open(location.href, "_blank", "noopener");
+        if (a.dataset.action === "fullscreen") toggleFullscreen();
         if (a.dataset.action === "open-search") {
           head.classList.add("searching");
           head.querySelector('input[name="q"]').focus();
