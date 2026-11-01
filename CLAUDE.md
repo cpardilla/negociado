@@ -6,7 +6,7 @@ El plan, el estado de cada fase y las decisiones están en `docs/ROADMAP.md`; la
 
 ## Principio rector
 
-**El contenido manda.** Lo más importante es que todo lo que dice la app sea exacto y esté vigente. Cada afirmación jurídica se puede contrastar con el texto consolidado del BOE, y cada corrección se registra con su fuente. Ante la duda en una cuestión jurídica o de práctica del juzgado, se pregunta al propietario; no se decide en silencio.
+**El contenido manda.** Lo más importante es que todo lo que dice la app sea exacto y esté vigente. Cada afirmación jurídica se puede contrastar con el texto consolidado del BOE, y cada corrección se registra con su fuente. Ante la duda en una cuestión jurídica o de práctica del juzgado, se pregunta al propietario; no se decide en silencio. En materia de competencia, salvo indicación en contrario, la LEC se cita y se muestra antes que el CC (decisión 20).
 
 ## Restricciones
 
