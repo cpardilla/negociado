@@ -8,7 +8,8 @@
 //   script.js   evaluated in the page as the body of an async function; its return
 //               value (JSON-serialisable) becomes `result`. Default: document.title.
 //               Inside it: `await __run({ shot: 'name' })` saves <shots>/<name>.png,
-//               `await __run({ viewport: [w, h] })` resizes the window.
+//               `await __run({ viewport: [w, h] })` resizes the window,
+//               `await __run({ media: "print" })` shows the print styles ("" goes back to screen).
 //   --http          serve the repository with tools/serve.js (as GitHub Pages) instead of file://
 //   --browser=edge|chrome|<path>   default edge
 //   --wait=ms       pause after load before the script runs (default 300)
@@ -162,6 +163,7 @@ async function run(opts) {
       let out = null;
       try {
         if (req.viewport) await send("Emulation.setDeviceMetricsOverride", { width: req.viewport[0], height: req.viewport[1], deviceScaleFactor: 1, mobile: false });
+        if (req.media !== undefined) await send("Emulation.setEmulatedMedia", { media: req.media }); // "print" or "" (screen)
         if (req.shot) {
           if (!opts.shots) throw new Error("captura pedida sin --shots");
           fs.mkdirSync(opts.shots, { recursive: true });
