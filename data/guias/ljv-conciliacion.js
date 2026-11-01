@@ -58,7 +58,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Este guía interactivo recorre el procedimiento completo, desde la verificación de procedencia y las exclusiones hasta las posibles vías posteriores al acuerdo."
+     "texto": "Esta guía interactiva recorre el procedimiento completo, desde la verificación de procedencia y las exclusiones hasta las posibles vías posteriores al acuerdo."
     },
     {
      "tipo": "ley",
