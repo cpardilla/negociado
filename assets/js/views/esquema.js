@@ -74,7 +74,7 @@
       </div>
       ${c.cuerpo.length ? `<div class="card-body">${blocks(c.cuerpo, ctx)}</div>` : ""}
       ${c.referencias.length ? `<div class="card-refs"><span class="label">Normas</span>${c.referencias.map((r) => `<span>${esc(r)}</span>`).join(" · ")}</div>` : ""}
-      ${c.cuerpo.length ? `<button class="card-toggle" data-action="toggle" aria-label="${open ? "Ocultar" : "Ver"} el contenido de ${esc(c.articulo)}"><span>${open ? "Ocultar contenido" : "Ver contenido"}</span>${Neg.icon("down")}</button>` : ""}
+      ${c.cuerpo.length ? `<button class="card-toggle" data-action="toggle" aria-expanded="${open}" aria-label="${open ? "Ocultar" : "Ver"} el contenido de ${esc(c.articulo)}"><span>${open ? "Ocultar contenido" : "Ver contenido"}</span>${Neg.icon("down")}</button>` : ""}
     </article>`;
   }
 
@@ -152,6 +152,7 @@
     node.setAttribute("aria-expanded", String(open));
     const btn = node.querySelector('[data-action="toggle"]');
     if (btn) {
+      btn.setAttribute("aria-expanded", String(open));
       btn.querySelector("span").textContent = open ? "Ocultar contenido" : "Ver contenido";
       btn.setAttribute("aria-label", `${open ? "Ocultar" : "Ver"} el contenido de ${ctx.cards[i].articulo.replace(/<[^>]+>/g, "")}`);
     }

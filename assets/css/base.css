@@ -87,8 +87,50 @@ a:hover {
   border-radius: var(--radius-sm);
 }
 
+/* Controls flush with the edge of a box that clips its overflow: the ring goes inside. */
+.card-toggle:focus-visible,
+.zoom-cluster button:focus-visible,
+.section-head:focus-visible {
+  outline-offset: -3px;
+}
+
+/* Headings and the main area take the focus only to start reading there: no ring around them. */
+h1[tabindex="-1"]:focus,
+h2[tabindex="-1"]:focus,
+main:focus {
+  outline: none;
+}
+
 ::selection {
   background: var(--gold-soft);
+}
+
+/* Keyboard users jump past the header and the menu (shown only when focused). */
+.skip-link {
+  position: absolute;
+  left: var(--sp-4);
+  top: -100px;
+  z-index: 50;
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--link);
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+}
+.skip-link:focus {
+  top: var(--sp-3);
+}
+
+/* Who prefers less motion gets none. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Text for screen readers only. */

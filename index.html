@@ -16,18 +16,20 @@
     <script src="assets/js/core/neg.js"></script>
   </head>
   <body>
+    <a class="skip-link" href="#content" data-action="skip">Saltar al contenido</a>
     <div class="app">
       <header class="app-header" id="header"></header>
       <div class="app-main">
         <nav class="sidebar" id="sidebar" aria-label="Recursos"></nav>
         <main class="content" id="content">
           <div class="content-inner">
-            <div id="view" aria-live="polite"></div>
+            <div id="view"></div>
             <footer class="app-footer">Negociado · Material de apoyo, no fuente oficial · Texto legal: BOE, legislación consolidada.</footer>
           </div>
         </main>
       </div>
     </div>
+    <div class="sr-only" id="announce" role="status" aria-live="polite"></div>
     <noscript><p class="message">Esta aplicación necesita JavaScript.</p></noscript>
 
     <script src="assets/js/core/data.js"></script>

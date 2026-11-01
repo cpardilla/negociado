@@ -808,7 +808,7 @@ a.phase:hover {
   border-radius: var(--radius-lg);
   padding: var(--sp-3) var(--sp-4);
 }
-.map-phase h3 {
+.map-phase h2 {
   font-size: var(--fs-sm);
   color: var(--tone);
   margin-bottom: var(--sp-2);
@@ -1223,8 +1223,10 @@ a.phase:hover {
   box-shadow: var(--shadow-md);
   border-color: var(--border-md);
 }
-.tile h3 {
+.tile h2 {
   margin: var(--sp-3) 0 var(--sp-1);
+  font-size: var(--fs-lg);
+  font-weight: 650;
 }
 .tile p {
   font-size: var(--fs-sm);

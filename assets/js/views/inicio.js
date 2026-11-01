@@ -12,7 +12,7 @@
   Neg.view("inicio", (el) => {
     const cat = Neg.catalogo;
     const tile = (href, tag, tone, title, text) =>
-      `<a class="tile" href="${href}"><span class="tag ${tone}">${esc(tag)}</span><h3>${esc(title)}</h3><p>${esc(text)}</p></a>`;
+      `<a class="tile" href="${href}"><span class="tag ${tone}">${esc(tag)}</span><h2>${esc(title)}</h2><p>${esc(text)}</p></a>`;
     const first = (list) => (list[0] ? Neg.href(list === cat.leyes ? "ley" : list === cat.esquemas ? "esquema" : "guia", list[0].id) : "#/");
     const fechas = cat.leyes.map((l) => `${l.id} a ${Neg.fecha(l.fecha)}`).join(", ");
     const find = (kind, id) => (kind === "ley" ? cat.leyes : kind === "esquema" ? cat.esquemas : cat.guias).find((r) => r.id === id);

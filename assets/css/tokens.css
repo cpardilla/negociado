@@ -73,7 +73,7 @@
   --primary-soft: light-dark(#e8edfb, rgba(143, 168, 240, 0.14));
   --on-primary: light-dark(#ffffff, #0d1220);
   --link: light-dark(#2e4daa, #9fb4f2);
-  --focus: #c8a96e;
+  --focus: light-dark(#8a6a2a, #c8a96e); /* ≥ 3:1 on the page and on the ink header */
 
   /* Categories (esquemas) and phases (guías): text · background · border */
   --c1: light-dark(#0e7490, #5fd0e4); --c1-bg: light-dark(#ecfeff, rgba(14, 116, 144, 0.18)); --c1-bd: light-dark(#a5f3fc, rgba(95, 208, 228, 0.35));

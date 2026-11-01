@@ -31,7 +31,16 @@
     location.hash = Neg.href(...parts).slice(1);
   };
 
+  /** Where a keyboard or screen-reader user lands: the page's main heading. */
+  function focusHeading() {
+    const h = document.querySelector("#view h1") || document.getElementById("content");
+    if (!h) return;
+    if (!h.hasAttribute("tabindex")) h.setAttribute("tabindex", "-1");
+    h.focus({ preventScroll: true });
+  }
+
   let lastName = null;
+  let first = true;
   async function render() {
     const where = Neg.where();
     const el = document.getElementById("view");
@@ -60,6 +69,15 @@
       console.error(err);
       el.innerHTML = Neg.message("No se ha podido abrir", err.message, true);
     }
+    // After moving to another page: screen readers hear its name, and the keyboard focus, if the
+    // control that had it is gone with the old page, starts again at the new heading.
+    if (!first) {
+      const announce = document.getElementById("announce");
+      if (announce) announce.textContent = document.title.replace(/ · Negociado$/, "");
+      const at = document.activeElement;
+      if (!at || at === document.body || !at.isConnected) focusHeading();
+    }
+    first = false;
   }
 
   /** Standard message block (loading, error, not found). */
@@ -67,6 +85,12 @@
     `<div class="message"><h2>${Neg.esc(title)}</h2><p>${Neg.esc(text || "")}</p>${home ? `<p style="margin-top:16px"><a class="btn" href="#/">Ir al inicio</a></p>` : ""}</div>`;
 
   Neg.start = () => {
+    // "Saltar al contenido": the hash holds the route, so the jump is done here, not by the link.
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest('[data-action="skip"]')) return;
+      e.preventDefault();
+      focusHeading();
+    });
     window.addEventListener("hashchange", render);
     render();
   };

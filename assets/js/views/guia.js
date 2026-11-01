@@ -172,7 +172,7 @@
       .map((name, i) => {
         const steps = Object.keys(rec.pasos).filter((k) => rec.pasos[k].fase === i);
         if (!steps.length) return "";
-        return `<section class="map-phase ${tone(i)}"><h3>${i + 1}. ${rich(name)}</h3><ul>${steps
+        return `<section class="map-phase ${tone(i)}"><h2>${i + 1}. ${rich(name)}</h2><ul>${steps
           .map((k) => {
             const p = rec.pasos[k];
             const cls = [k === s.cur ? "current" : visited.has(k) ? "visited" : "", p.fin ? `end ${(ENDS[p.fin] || ENDS.neutral)[0]}` : ""].join(" ");
@@ -203,6 +203,12 @@
     Neg.referencias.link(el.querySelector("[data-step] .step-body"), rec.ley);
     document.title = `${plain(step.titulo)} · ${rec.corto} · Negociado`;
     if (same) {
+      const at = document.activeElement;
+      if (!at || at === document.body || !at.isConnected) {
+        const h = el.querySelector("[data-step] h2");
+        h.setAttribute("tabindex", "-1");
+        h.focus({ preventScroll: true });
+      }
       const top = el.querySelector("[data-phases]");
       const content = document.getElementById("content");
       if (top.getBoundingClientRect().top < content.getBoundingClientRect().top) top.scrollIntoView({ block: "start" });
