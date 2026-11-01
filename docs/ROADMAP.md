@@ -298,6 +298,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-11-01 · Cabecera: recuperados el zoom del contenido (50–200 %, teclado, recordado), «Nueva pestaña» y «Pantalla completa» de la versión anterior; ocultos en tabletas y móviles.
 - 2026-11-01 · Menú lateral rehecho según el índice de cada ley (ruta de cada recurso en el catálogo; orden y jerarquía de Libro/Título/Capítulo/Sección; sin carpetas de un elemento; entradas alineadas).
 - 2026-11-01 · Estilos: texto de los artículos justificado (visor de la ley y ventana de la cita), a petición del propietario.
 - 2026-11-01 · Estilos: repaso aprobado (propuestas 1–6): fichas abiertas en columnas sin huecos, menú lateral solo con el camino a la página actual, filtros y acciones compactos en móvil, citas sin mayúsculas heredadas, índice de ley más ligero. Pendiente: propuesta 7 (accesos directos en el inicio). Errata de G25 corregida.
