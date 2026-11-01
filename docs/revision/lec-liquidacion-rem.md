@@ -134,3 +134,12 @@ Corte del BOE: LEC a 07-10-2026; LO 1/2025 a 09-07-2026.
 | G05 | `subsanar_masc_811` | incompleto | Sin decir qué ocurre si no se subsana | Si no se subsana en el plazo que conceda el LAJ, este da cuenta al Tribunal | LEC 404.2 |
 | G05 | `fin_sin_masc` | **cita** | «Puede acudir a un medio adecuado y presentar de nuevo la solicitud (art. 10 LO 1/2025)»: el art. 10 regula la acreditación del intento y la terminación sin acuerdo | Frase retirada | LO 1/2025 art. 10 |
 | G05 | pie | cita | Sin el art. 404.2 LEC | Añadido el art. 404.2 LEC | — |
+
+## Corrección posterior (2026-11-01) · Decisión 24: dos finales de inadmisión en G05
+
+A petición del propietario. El art. 404.2 LEC habla de defectos formales no subsanados y no contempla literalmente el caso de que no se aporte nada.
+
+| Recurso | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| G05 | `subsanar_masc_811`, salida «No» | Llevaba a `fin_sin_masc` | Paso nuevo `fin_masc_no_subsanado`: el LAJ da cuenta al Tribunal | LEC 404.2 |
+| G05 | `fin_sin_masc` (no se aporta nada) | Afirmaba la dación de cuenta del art. 404.2 | No se admite (art. 403.2); nota de que el art. 404 no menciona expresamente este caso | LEC 403.2, 404 |

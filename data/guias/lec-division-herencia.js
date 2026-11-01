@@ -84,8 +84,8 @@ Neg.data.register({
      "texto": "No se admiten las demandas cuando no se acompañan los documentos que la ley exige para su admisión o no consta haber acudido al medio adecuado de solución de controversias exigido como requisito de procedibilidad (art. 403.2 LEC)."
     },
     {
-     "tipo": "info",
-     "texto": "El Letrado de la Administración de Justicia da cuenta al Tribunal para que resuelva sobre la admisión (art. 404.2 LEC)."
+     "tipo": "nota",
+     "texto": "El art. 404 LEC prevé que el Letrado de la Administración de Justicia admita por decreto (apartado 1) y que dé cuenta al Tribunal para que resuelva sobre la admisión en los casos de su apartado 2, que no menciona expresamente este."
     }
    ],
    "fin": "error"
@@ -1098,9 +1098,21 @@ Neg.data.register({
     {
      "texto": "No",
      "tono": "t-aviso",
-     "destino": "fin_sin_masc"
+     "destino": "fin_masc_no_subsanado"
     }
    ]
+  },
+  "fin_masc_no_subsanado": {
+   "fase": 0,
+   "titulo": "Inadmisión: defecto de la justificación no subsanado",
+   "actor": "ambos",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Si el defecto formal no se subsana en el plazo concedido, el Letrado de la Administración de Justicia da cuenta al Tribunal para que resuelva sobre la admisión (art. 404.2 LEC)."
+    }
+   ],
+   "fin": "error"
   }
  },
  "pie": "Arts. 782–789 LEC (división) · Arts. 792–796 LEC (intervención del caudal)<br>Art. 52.1.4.º LEC (competencia) · Arts. 264.4.º, 403.2 y 404.2 LEC y arts. 5 y 7 LO 1/2025 (actividad negociadora previa)<br>Arts. 1056–1069 y 1082–1084 CC"

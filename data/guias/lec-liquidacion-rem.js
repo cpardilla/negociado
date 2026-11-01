@@ -937,8 +937,8 @@ Neg.data.register({
      "texto": "No se admite cuando no consta haber acudido al medio adecuado de solución de controversias exigido como requisito de procedibilidad (art. 403.2 LEC)."
     },
     {
-     "tipo": "info",
-     "texto": "El LAJ da cuenta al Tribunal para que resuelva sobre la admisión (art. 404.2 LEC)."
+     "tipo": "nota",
+     "texto": "El art. 404 LEC prevé que el LAJ admita por decreto (apartado 1) y que dé cuenta al Tribunal para que resuelva sobre la admisión en los casos de su apartado 2, que no menciona expresamente este."
     }
    ],
    "fin": "error"
@@ -967,9 +967,21 @@ Neg.data.register({
     {
      "texto": "No",
      "tono": "t-aviso",
-     "destino": "fin_sin_masc"
+     "destino": "fin_masc_no_subsanado"
     }
    ]
+  },
+  "fin_masc_no_subsanado": {
+   "fase": 5,
+   "titulo": "Inadmisión: defecto de la justificación no subsanado",
+   "actor": "ambos",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Si el defecto formal no se subsana en el plazo concedido, el LAJ da cuenta al Tribunal para que resuelva sobre la admisión (art. 404.2 LEC)."
+    }
+   ],
+   "fin": "error"
   }
  },
  "pie": "Arts. 806–811 LEC (y 784–788 por remisión del art. 810)<br>Arts. 264.4.º, 403.2 y 404.2 LEC y art. 5 LO 1/2025 (actividad negociadora previa)<br>Arts. 1392–1410 CC (gananciales) · Arts. 1411–1434 CC (participación)"
