@@ -12,7 +12,7 @@ El plan, el estado de cada fase y las decisiones están en `docs/ROADMAP.md`; la
 
 - Tiene que funcionar igual en **https (GitHub Pages)** y en **`file://`**: `<script src>` clásicos, sin módulos ES, sin `fetch()` de ficheros locales, sin service workers. Los datos son ficheros `.js` que se registran en un objeto global.
 - Vanilla (HTML, CSS, JS). Sin frameworks ni paso de compilación para publicar: lo generado se genera en desarrollo y se versiona. Las herramientas en node (`tools/`) son solo de desarrollo.
-- Sin recursos de terceros en ejecución (ni CDN ni Google Fonts).
+- Recursos externos en ejecución solo cuando sean imprescindibles para una característica y sin abusar de ellos (criterio del propietario: la app no maneja datos personales, privados ni de procedimientos judiciales, así que no necesita el aislamiento de Agenda y Plantillas). Nada de CDN ni Google Fonts: lo que pueda ir en el repositorio va en el repositorio. Caso aprobado: la consulta a la API de datos abiertos del BOE al pulsar «Comprobar vigencia» en un artículo.
 - El repositorio es público: nada personal, de expedientes ni historiales de chat.
 - `localStorage` solo con claves `negociado.*`. En `file://` el origen es compartido con Agenda y Plantillas: nunca se tocan sus claves.
 
