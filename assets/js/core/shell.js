@@ -62,14 +62,18 @@
     return render(root.kids);
   }
 
+  /** The heading of each block of the menu, with its icon. */
+  const GROUP_ICON = { ley: "book", esquema: "cards", guia: "route" };
+  const groupTitle = (kind, title) => `<h2 class="nav-group-title">${Neg.icon(GROUP_ICON[kind])}<span>${Neg.esc(title)}</span></h2>`;
+
   function sidebar(cat) {
     const leyes = cat.leyes.map((l) => link(Neg.href("ley", l.id), l.nombre, l.id)).join("");
     const block = (kind, title, items) => {
       if (!items.length) return "";
       const laws = cat.leyes.filter((l) => items.some((r) => r.ley === l.id));
-      return `<div class="nav-group"><div class="nav-group-title">${title}</div>${laws.map((l) => navGroup(`${kind}/${l.id}`, l.id, resources(kind, items, l.id))).join("")}</div>`;
+      return `<div class="nav-group">${groupTitle(kind, title)}${laws.map((l) => navGroup(`${kind}/${l.id}`, l.id, resources(kind, items, l.id))).join("")}</div>`;
     };
-    return `<div class="nav-group"><div class="nav-group-title">Leyes</div>${leyes}</div>` + block("esquema", "Esquemas", cat.esquemas) + block("guia", "Guías de tramitación", cat.guias);
+    return `<div class="nav-group">${groupTitle("ley", "Leyes")}${leyes}</div>` + block("esquema", "Esquemas", cat.esquemas) + block("guia", "Guías de tramitación", cat.guias);
   }
 
   function header() {

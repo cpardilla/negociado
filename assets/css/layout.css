@@ -181,15 +181,34 @@
   padding: var(--sp-3) var(--sp-2) var(--sp-6);
 }
 .nav-group + .nav-group {
-  margin-top: var(--sp-4);
+  margin-top: var(--sp-5);
 }
+/* The heading of each block (Leyes, Esquemas, Guías): icon, gold accent and a rule to the edge. */
 .nav-group-title {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: 0 0 var(--sp-1);
   padding: var(--sp-2) var(--sp-3);
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
   text-transform: uppercase;
-  color: var(--text-3);
+  color: var(--gold-text);
+}
+.nav-group-title svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+.nav-group-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  margin-left: var(--sp-1);
+  background: var(--border-md);
 }
 .nav-item {
   display: flex;
