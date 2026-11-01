@@ -136,6 +136,23 @@
     return `<aside class="panel"><h3>Tu recorrido</h3><ol class="route">${items}${cur}</ol>${rec.pie ? `<div class="panel-foot">${rich(rec.pie)}</div>` : ""}</aside>`;
   }
 
+  /** The route taken, printed as a procedure sheet: every step followed, with its blocks, the
+   *  boxes ticked and the choice made, instead of the step on screen only. */
+  function sheetHtml(rec, s) {
+    const route = [...s.hist, { s: s.cur, c: "" }];
+    const today = new Date();
+    const fecha = `${String(today.getDate()).padStart(2, "0")}-${String(today.getMonth() + 1).padStart(2, "0")}-${today.getFullYear()}`;
+    const steps = route
+      .map(({ s: id, c }, i) => {
+        const p = rec.pasos[id];
+        const end = p.fin ? `<div class="block ${(ENDS[p.fin] || ENDS.neutral)[0]} end"><span class="block-label">Fin del recorrido</span><strong>${(ENDS[p.fin] || ENDS.neutral)[1]}</strong></div>` : "";
+        const choice = c ? `<p class="sheet-choice"><strong>Decisión:</strong> ${esc(c)}</p>` : "";
+        return `<section class="sheet-step ${tone(p.fase)}"><span class="sheet-n">${i + 1}</span><div class="sheet-body"><div class="sheet-meta">Fase ${p.fase + 1}: ${esc(plain(rec.fases[p.fase] || ""))} · ${actor(rec, p.actor)}</div><h3>${rich(p.titulo)}</h3>${end}${blocks(p.bloques, s, id)}${choice}</div></section>`;
+      })
+      .join("");
+    return `<p class="sheet-head">Hoja de tramitación · ${route.length} ${route.length === 1 ? "paso" : "pasos"} del recorrido seguido · impresa el ${fecha}</p>${steps}${rec.pie ? `<div class="sheet-foot">${rich(rec.pie)}</div>` : ""}`;
+  }
+
   function head(rec, mode) {
     const rev =
       rec.revision.estado === "revisado"
@@ -145,7 +162,7 @@
     return (
       Neg.shell.head({ crumbs: [["Guías"], [rec.ley], [rec.corto]], kicker: `Guía de tramitación · ${rec.ley}${arts}`, title: rec.corto, sub: rec.titulo !== rec.corto ? rec.titulo : "", meta: rev }) +
       `<div class="toolbar static"><div class="segmented" role="group" aria-label="Vista"><a href="${Neg.href("guia", rec.id, states[rec.id].cur)}" aria-pressed="${mode === "paso"}">Paso a paso</a><a href="${Neg.href("guia", rec.id, "mapa")}" aria-pressed="${mode === "mapa"}">Mapa de pasos</a></div>
-        <span class="spacer"></span>${rec.articulos.length && Neg.catalogo.esquemas.some((e) => e.id === rec.id) ? `<a class="btn" href="${Neg.href("esquema", rec.id)}">Esquema</a>` : ""}<button class="btn" data-action="print" aria-label="Imprimir">${Neg.icon("print")}<span class="btn-text">Imprimir</span></button></div>`
+        <span class="spacer"></span>${rec.articulos.length && Neg.catalogo.esquemas.some((e) => e.id === rec.id) ? `<a class="btn" href="${Neg.href("esquema", rec.id)}">Esquema</a>` : ""}<button class="btn" data-action="print" aria-label="Imprimir"${mode === "paso" ? ' title="Imprime el recorrido seguido como hoja de tramitación"' : ""}>${Neg.icon("print")}<span class="btn-text">Imprimir</span></button></div>`
     );
   }
 
@@ -175,7 +192,7 @@
     const same = el.dataset.view === `guia/${rec.id}`;
     if (!same) {
       el.dataset.view = `guia/${rec.id}`;
-      el.innerHTML = head(rec, "paso") + `<div data-phases></div><div class="guide"><div data-step></div><div data-panel></div></div>`;
+      el.innerHTML = head(rec, "paso") + `<div class="sheet-source" data-phases></div><div class="guide sheet-source"><div data-step></div><div data-panel></div></div><div class="print-sheet" data-sheet></div>`;
       wireToolbar(el, rec, s);
       wire(el, rec, s);
     }
@@ -229,6 +246,15 @@
       save(rec, s);
     });
   }
+
+  // Printing a step (button or Ctrl+P) prints the whole route: the sheet is drawn just before.
+  window.addEventListener("beforeprint", () => {
+    const sheet = document.querySelector("#view [data-sheet]");
+    const w = Neg.where();
+    if (!sheet || w.name !== "guia" || !states[w.args[0]] || !Neg.data.get) return;
+    const rec = Neg.data.get("guia", w.args[0]);
+    if (rec) sheet.innerHTML = sheetHtml(rec, states[rec.id]);
+  });
 
   Neg.view("guia", async (el, [id, step]) => {
     if (!id) {

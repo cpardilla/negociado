@@ -55,4 +55,59 @@
     color: inherit;
     text-decoration: none;
   }
+
+  /* A guía prints the route taken as a procedure sheet instead of the step on screen. */
+  .sheet-source {
+    display: none !important;
+  }
+  .print-sheet {
+    display: block;
+  }
+  .sheet-head {
+    margin-bottom: 12pt;
+    padding-bottom: 6pt;
+    border-bottom: 1px solid #999;
+    font-size: 9pt;
+    color: #444;
+  }
+  .sheet-step {
+    display: flex;
+    gap: 10pt;
+    padding: 8pt 0;
+    border-bottom: 1px solid #ddd;
+    break-inside: avoid;
+  }
+  .sheet-n {
+    flex-shrink: 0;
+    width: 20pt;
+    height: 20pt;
+    display: grid;
+    place-items: center;
+    border: 1.5pt solid var(--tone, #333);
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 9pt;
+  }
+  .sheet-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .sheet-body > * + * {
+    margin-top: 5pt;
+  }
+  .sheet-meta {
+    font-size: 8.5pt;
+    color: #555;
+  }
+  .sheet-body h3 {
+    font-size: 11.5pt;
+  }
+  .sheet-choice {
+    font-size: 9.5pt;
+  }
+  .sheet-foot {
+    margin-top: 10pt;
+    font-size: 8.5pt;
+    color: #555;
+  }
 }

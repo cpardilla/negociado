@@ -763,6 +763,10 @@ a.phase:hover {
   font-family: var(--font-display);
   font-size: var(--fs-lg);
 }
+/* The printed route (guia.js sheetHtml): only on paper. */
+.print-sheet {
+  display: none;
+}
 .route-title {
   margin: var(--sp-5) 0 var(--sp-3);
   font-size: var(--fs-sm);
