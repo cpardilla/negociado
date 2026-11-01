@@ -61,4 +61,6 @@ Los demás artículos corregidos (14, 64, 159, 165, 167, 243, 274, 333, 540, 560
 
 Las reversiones en versiones anteriores a la vigente (LEC 29, CP 4, CC 2, LOPJ 1) no se han leído una a una: ya no son el texto en vigor. Tampoco se han revisado aquí las 66 filas vigentes de «LO 7/2015 con cambios de fondo» (LOPJ 56, LEC 10), que son otro tipo de candidato; las 10 de la LEC, vistas por encima, parecen reformas reales de esa ley.
 
-**Vigilar**: el RDL 29/2026 (BOE-A-2026-20823, en vigor desde el 8-10-2026) da la redacción vigente de los arts. 22 y 685 LEC y, según la ficha del Congreso (130/000060), estaba pendiente de convalidación al revisar. Su antecesor, el RDL 26/2026, fue derogado. Si decae, `tools/boe-diff.js` lo mostrará. El art. 22 lo cita E02, sin referirse al apartado 6 que añade ese RDL.
+**Vigilar**: el RDL 29/2026 (BOE-A-2026-20823, en vigor desde el 8-10-2026) da la redacción vigente de los arts. 22 y 685 LEC y, según la ficha del Congreso (130/000060), estaba pendiente de convalidación al revisar. Su antecesor, el RDL 26/2026, fue derogado. Si decae, `tools/boe-diff.js` lo mostrará. Ninguno de los dos se cita de verdad en la app.
+
+**Hallazgo de paso, sin corregir**: E02 (ecosistema normativo, Reglamento (UE) 650/2012) dice «Art. 4 — Competencia» y «Arts. 21–22 — Ley aplicable» sin nombrar la norma en esa frase, y el analizador los lee como artículos de la LEC: los enlaza mal y aparecen en «Lo citan» de esos artículos. Pendiente del visto bueno del propietario.
