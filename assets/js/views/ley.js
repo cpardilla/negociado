@@ -126,13 +126,58 @@
         <span>${vigor}</span><span class="spacer"></span>
         ${links}
         <button class="btn" data-action="copy" title="Copia la ruta y el texto del artículo">${Neg.icon("copy")} Copiar</button>
+        <button class="btn" data-action="vigencia" title="Pregunta al BOE si este artículo ha cambiado desde ${Neg.fecha(law.boe.fecha)}">${Neg.icon("check")} Comprobar vigencia</button>
         <a class="btn" href="${esc(Neg.leyes.boe(law, key))}" target="_blank" rel="noopener">BOE ${Neg.icon("out")}</a>
       </div>
+      <div class="vigencia" data-vigencia role="status"></div>
       <nav class="article-nav" aria-label="Artículos contiguos">
         ${prev ? `<a class="btn" href="${Neg.href("ley", law.id, prev)}">${Neg.icon("back")} Art. ${esc(Neg.leyes.label(law, prev))}</a>` : "<span></span>"}
         ${next ? `<a class="btn" href="${Neg.href("ley", law.id, next)}">Art. ${esc(Neg.leyes.label(law, next))} ${Neg.icon("chev")}</a>` : "<span></span>"}
       </nav>
     </article>`;
+  }
+
+  // ── Checking the article against the BOE (only when asked: one request to its open-data API) ──
+
+  /** The answer of "Comprobar vigencia", as blocks under the article. */
+  function vigenciaHtml(law, key, r) {
+    const a = law.articulos[key];
+    const norma = (id) => (id === law.boe.id ? "la redacción original" : `<a href="https://www.boe.es/buscar/act.php?id=${esc(id)}" target="_blank" rel="noopener">${esc(id)}</a>`);
+    const texto = (v, label) => `<details class="vigencia-text"><summary>${label}</summary><div class="law-text">${v.parrafos.map((t) => `<p>${esc(t)}</p>`).join("")}</div></details>`;
+    const out = [];
+    if (r.estado === "igual")
+      out.push(`<div class="block t-ok"><span class="block-label">Vigente sin cambios</span>El BOE de hoy da la misma redacción que la aplicación: vigente desde ${Neg.fecha(r.actual.vigencia)}, ${norma(r.actual.norma)}.${a.c ? " Es la versión corregida que se indica arriba." : ""}</div>`);
+    else if (r.estado === "posterior")
+      out.push(`<div class="block t-aviso"><span class="block-label">Hay una redacción posterior</span>El BOE da otra redacción, vigente desde ${Neg.fecha(r.actual.vigencia)} (${norma(r.actual.norma)}). La de la aplicación es la vigente desde ${Neg.fecha(a.v)}.${texto(r.actual, "Ver la redacción del BOE")}</div>`);
+    else
+      out.push(`<div class="block t-nota"><span class="block-label">Misma versión, texto retocado</span>El BOE mantiene la versión vigente desde ${Neg.fecha(r.actual.vigencia)}, pero su texto ya no coincide palabra por palabra con el de la aplicación.${texto(r.actual, "Ver el texto del BOE")}</div>`);
+    if (r.pendiente)
+      out.push(`<div class="block t-plazo"><span class="block-label">Modificación publicada, aún no vigente</span>Entrará en vigor el ${Neg.fecha(r.pendiente.vigencia)} (${norma(r.pendiente.norma)}).${texto(r.pendiente, "Ver la redacción futura")}</div>`);
+    return out.join("");
+  }
+
+  async function checkVigencia(el, law, key, btn) {
+    const box = el.querySelector("[data-vigencia]");
+    const a = law.articulos[key];
+    btn.disabled = true;
+    box.innerHTML = `<p class="vigencia-wait">Consultando el BOE…</p>`;
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 15000);
+    try {
+      const res = await fetch(Neg.vigencia.url(law.boe.id, a.b), { headers: { Accept: "application/xml" }, signal: ctrl.signal });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const today = new Date().toLocaleDateString("sv-SE").replace(/-/g, "");
+      const r = Neg.vigencia.comparar(await res.text(), a, law.boe.id, today);
+      if (Neg.where().args[1] !== key) return; // the reader moved to another article meanwhile
+      box.innerHTML = vigenciaHtml(law, key, r);
+    } catch (err) {
+      if (Neg.where().args[1] !== key) return;
+      box.innerHTML = `<div class="block t-nota"><span class="block-label">No se ha podido consultar el BOE</span>Sin conexión o servicio no disponible en este momento. El texto de la aplicación es el consolidado a ${Neg.fecha(law.boe.fecha)}.</div>`;
+    } finally {
+      clearTimeout(timer);
+      btn.disabled = false;
+      placeArticle(el, false);
+    }
   }
 
   /** Pins the article beside the index only when it fits on screen (no inner scroll bars). */
@@ -214,6 +259,8 @@
         placeArticle(el, false);
         return;
       }
+      const check = e.target.closest('[data-action="vigencia"]');
+      if (check) return checkVigencia(el, law, Neg.where().args[1], check);
       if (!e.target.closest('[data-action="copy"]')) return;
       const key = Neg.where().args[1];
       const a = law.articulos[key];

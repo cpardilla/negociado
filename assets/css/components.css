@@ -811,6 +811,32 @@ a.phase:hover {
   color: var(--text-1);
 }
 
+/* "Comprobar vigencia": the BOE's answer under the article */
+.vigencia:empty {
+  display: none;
+}
+.vigencia {
+  margin-top: var(--sp-4);
+  display: grid;
+  gap: var(--sp-3);
+}
+.vigencia-wait {
+  font-size: var(--fs-sm);
+  color: var(--text-3);
+}
+.vigencia-text {
+  margin-top: var(--sp-2);
+}
+.vigencia-text summary {
+  cursor: pointer;
+  color: var(--link);
+  font-weight: 600;
+}
+.vigencia-text .law-text {
+  margin-top: var(--sp-2);
+  color: var(--text-1);
+}
+
 /* The printed route (guia.js sheetHtml): only on paper. */
 .print-sheet {
   display: none;

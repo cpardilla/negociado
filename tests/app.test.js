@@ -351,3 +351,27 @@ test("guía printed: the route taken as a procedure sheet, the screen unchanged"
   assert.ok(r.choices >= 1 && r.choices < r.steps, "la decisión tomada donde hubo que elegir");
   assert.match(r.last, /Acuerdo firme/i);
 });
+
+test("law article: «Comprobar vigencia» (the BOE's answer simulated: no network in tests)", { timeout: 60000 }, async () => {
+  const r = await page(
+    `const run = async (xml) => {
+       window.fetch = xml === null ? async () => { throw new TypeError('Failed to fetch'); } : async (url) => ({ ok: true, text: async () => (run.url = url, xml) });
+       document.querySelector('[data-action="vigencia"]').click(); await wait(300);
+       return [...document.querySelectorAll('[data-vigencia] .block-label')].map((x) => x.textContent);
+     };
+     await go('#/ley/LJV/140', 900);
+     const a = (await Neg.leyes.load('LJV')).articulos['140'];
+     const same = '<version id_norma="' + (a.m || 'BOE-A-2015-7391') + '" fecha_publicacion="' + a.v + '" fecha_vigencia="' + a.v + '"><p class="articulo">Artículo 140.</p>' + a.p.map((p) => '<p class="parrafo">' + p[1].replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</p>').join('') + '</version>';
+     const igual = await run(same);
+     const url = run.url;
+     const posterior = await run(same + '<version id_norma="BOE-A-2026-1" fecha_publicacion="20261020" fecha_vigencia="20261025"><p class="parrafo">Nuevo.</p></version>');
+     const futura = await run(same + '<version id_norma="BOE-A-2099-1" fecha_publicacion="20990101" fecha_vigencia="20990201"><p class="parrafo">Futuro.</p></version>');
+     const sinRed = await run(null);
+     return { igual, url, posterior, futura, sinRed };`
+  );
+  assert.deepEqual(r.igual, ["Vigente sin cambios"]);
+  assert.equal(r.url, "https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-2015-7391/texto/bloque/a140");
+  assert.deepEqual(r.posterior, ["Hay una redacción posterior"]);
+  assert.deepEqual(r.futura, ["Vigente sin cambios", "Modificación publicada, aún no vigente"]);
+  assert.deepEqual(r.sinRed, ["No se ha podido consultar el BOE"]);
+});

@@ -336,3 +336,23 @@ test("boe-diff: a new version, an announced one and a removed block are found, w
   assert.ok(by["a140 modificado"].citan.includes("Esquema ljv-conciliacion") && by["a140 modificado"].citan.includes("Guía ljv-conciliacion"), "lo citan el esquema y la guía de conciliación");
   assert.ok(by["a110 pendiente"].citan.includes("Guía ljv-subastas"));
 });
+
+test("vigencia: the version in force, BOE lists out of order, quoted articles, announced versions", () => {
+  const V = require("../assets/js/core/vigencia");
+  const v = (norma, pub, vig, ...ps) => `<version id_norma="${norma}" fecha_publicacion="${pub}" fecha_vigencia="${vig}"><p class="articulo">Artículo 14. Intervención.</p>${ps.map((p) => `<p class="parrafo">${p}</p>`).join("")}<blockquote><p>Nota del BOE.</p></blockquote></version>`;
+  // Decision 17: LO 7/2015 (published 22-07, in force 1-10) listed after Ley 42/2015 (published 6-10, in force 7-10).
+  const xml = `<bloque id="a14">${v("BOE-A-2000-323", "20000108", "20010108", "Original.")}${v("BOE-A-2015-10727", "20151006", "20151007", "Ley 42.")}${v("BOE-A-2015-8167", "20150722", "20151001", "LO 7.")}</bloque>`;
+  assert.equal(V.actual(V.versions(xml), "20261101").norma, "BOE-A-2015-10727", "vale la vigente publicada en último lugar");
+  const art = { v: "20151007", m: "BOE-A-2015-10727", p: [["p", "Ley 42."]] };
+  assert.equal(V.comparar(xml, art, "BOE-A-2000-323", "20261101").estado, "igual");
+  assert.equal(V.comparar(xml, { ...art, p: [["p", "Otro texto."]] }, "BOE-A-2000-323", "20261101").estado, "texto");
+  assert.equal(V.comparar(xml, { ...art, p: [["p", "Otro texto."]], c: "corregido" }, "BOE-A-2000-323", "20261101").estado, "igual", "en un artículo corregido solo cuenta la versión");
+  assert.equal(V.comparar(xml, { v: "20010108", p: [["p", "Original."]] }, "BOE-A-2000-323", "20261101").estado, "posterior");
+  const future = xml.replace("</bloque>", `${v("BOE-A-2026-1", "20261030", "20270101", "Futuro.")}</bloque>`);
+  const r = V.comparar(future, art, "BOE-A-2000-323", "20261101");
+  assert.equal(r.estado, "igual");
+  assert.equal(r.pendiente.vigencia, "20270101");
+  // A quoted article inside the text keeps its paragraph (only the heading goes).
+  const quoted = `<version id_norma="X" fecha_publicacion="20230101" fecha_vigencia="20230101"><p class="articulo">Artículo 479. Interposición.</p><p class="parrafo">1. Uno.</p><p class="articulo">«Artículo 479. Anterior.</p></version>`;
+  assert.deepEqual(V.versions(quoted)[0].parrafos, ["1. Uno.", "«Artículo 479. Anterior."]);
+});
