@@ -1,6 +1,6 @@
 # Negociado
 
-Material de apoyo para la tramitación en el Negociado de los juzgados de Las Palmas (interfaz en español): leyes completas (LEC y LJV), índices, esquemas interactivos por artículo y guías de tramitación paso a paso. Publicado en GitHub Pages (https://cpardilla.github.io/negociado/, desde la raíz de `main`) y usable también como copia local desde `file://`.
+Material de apoyo para la tramitación en el Negociado de los juzgados de Las Palmas (interfaz en español): leyes completas (LEC y LJV) con índice y mapa, esquemas interactivos por artículo y guías de tramitación paso a paso. Publicado en GitHub Pages (https://cpardilla.github.io/negociado/, desde la raíz de `main`) y usable también como copia local desde `file://`.
 
 El plan, el estado de cada fase y las decisiones están en `docs/ROADMAP.md`; la revisión jurídica de cada recurso, en `docs/revision/<id>.md`.
 
@@ -16,15 +16,24 @@ El plan, el estado de cada fase y las decisiones están en `docs/ROADMAP.md`; la
 - El repositorio es público: nada personal, de expedientes ni historiales de chat.
 - `localStorage` solo con claves `negociado.*`. En `file://` el origen es compartido con Agenda y Plantillas: nunca se tocan sus claves.
 
-## Arquitectura (objetivo; ver ROADMAP §5)
+## Arquitectura
 
-`index.html` (carcasa) · `assets/css/` (tokens + componentes) · `assets/js/core|views/` (motores de ley, esquema, guía y referencia) · `vendor/markmap/` · `data/leyes|esquemas|guias/*.js` + `data/catalogo.js` · `sources/boe/` (instantáneas del BOE con fecha) · `tools/` · `tests/`.
+Una sola aplicación con rutas `#/…` (el rediseño ya está publicado; historia y detalle en el ROADMAP):
 
-Estado actual (antes del rediseño): 57 HTML autocontenidos en `00 - Indices/`, `01 - Legislación completa interactiva/`, `02 - Esquemas interactivos/`, `03 - Guías de tramitación/`, y `index.html` generado por `build_index.js` (no ejecutarlo sin motivo: el `index.html` versionado está reformateado a mano y el diff sería enorme).
+- `index.html` (carcasa) · `404.html` (redirige las direcciones antiguas).
+- `assets/css/`: `tokens`, `base`, `layout`, `components`, `print` y `fonts` (fuentes incrustadas).
+- `assets/js/core/`: utilidades (`neg`), carga de datos, rutas, carcasa, citas, leyes, referencias y vigencia. `assets/js/views/`: inicio, ley, esquema, guía y búsqueda.
+- `vendor/markmap/`: d3 y markmap, versión fijada.
+- `data/esquemas/` y `data/guias/`: el contenido, un fichero por recurso; esquema y guía del mismo ámbito comparten id.
+- `data/leyes/`: LEC y LJV completas; de las demás normas, solo los artículos citados. `data/catalogo.js`, `data/busqueda.js`, `data/citados.js`: catálogo e índices.
+- `sources/boe/`: instantáneas del BOE con fecha y `correcciones.json`. `sources/actual/`: inventario de la app anterior (histórico).
+- `tools/` · `tests/` · `docs/`.
+
+Lo generado no se edita a mano: `data/leyes/`, `data/catalogo.js`, `data/busqueda.js`, `data/citados.js`, `404.html` y `assets/css/fonts.css`. Al cambiar un esquema o una guía, regenerar con `node tools/build-law.js --citadas` y después `node tools/build-index.js`. Comprobaciones: `npm test` (necesita Edge) y `npm run check` (actualiza `docs/revision/informe.md`).
 
 ## Fuente de verdad jurídica
 
-API de datos abiertos del BOE, legislación consolidada: `https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/{id}/...` (LEC `BOE-A-2000-323`, LJV `BOE-A-2015-7391`). Las instantáneas se guardan en `sources/boe/` con su fecha de actualización; toda revisión anota su fecha de corte.
+API de datos abiertos del BOE, legislación consolidada: `https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/{id}/...` (LEC `BOE-A-2000-323`, LJV `BOE-A-2015-7391`). Las leyes están en `tools/leyes.json`. Las instantáneas se guardan en `sources/boe/` con su fecha de actualización; toda revisión anota su fecha de corte. El BOE a veces lista como última una versión errónea: vale la vigente publicada en último lugar (decisión 17), y las correcciones van en `sources/boe/correcciones.json`. `node tools/boe-diff.js` lista lo que ha cambiado en el BOE y qué recursos lo citan, sin tocar nada.
 
 ## Forma de trabajar
 
@@ -39,6 +48,7 @@ API de datos abiertos del BOE, legislación consolidada: `https://www.boe.es/dat
 - El trabajo se hace en la rama `rediseno`; a `main` (= la web publicada) solo llegan bloques completos y probados, con visto bueno.
 - Push a GitHub solo cuando el propietario lo pida.
 - Actualizar `docs/ROADMAP.md` con cada paso.
+- Lo interno no llega a la app: números de decisión, «criterio del propietario» o del juzgado, códigos de recurso (E14, G10), fases o referencias a `docs/` se quedan en `docs/`. Lo vigila `tests/data.test.js`.
 - Construir HTML siempre escapando el texto (una única función compartida) o con APIs del DOM.
 - En expresiones regulares, nada de escapes `\uXXXX` escritos con la herramienta de edición (los convierte en caracteres literales invisibles): usar clases Unicode (`\p{M}`, `\p{L}` con la bandera `u`). Lo vigila un test.
 - Un solo analizador de citas (`assets/js/core/citas.js`) para la app y las herramientas.
