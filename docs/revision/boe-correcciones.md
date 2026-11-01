@@ -40,3 +40,25 @@ Los recursos revisados contra la instantánea errónea, corregidos en commit pro
 | E13 y G10 (adopción) | Art. 781 LEC | Ya corregido (decisión 16); desaparecen los 3 avisos «no tiene apartado 3» | — |
 
 Los demás artículos corregidos (14, 64, 159, 165, 167, 243, 274, 333, 540, 560, 816, 826) no se citan en el contenido de forma que cambie lo que dice (el art. 64.2, sobre la caución, no varía).
+
+## Reversiones revisadas (2026-11-01)
+
+`node tools/boe-revisiones.js` sobre las 35 leyes, con el historial y las notas del BOE de cada artículo. Quedaban por revisar las reversiones en la versión vigente que no son errores de desorden. **Ninguna es un error de consolidación: todas tienen causa en una norma o resolución, y la instantánea coincide con la última versión. No cambia nada en la app ni en `correcciones.json`.**
+
+| Ley | Artículos | Causa | ¿Se cita en la app? |
+|---|---|---|---|
+| LEC | 45 | Disposición final 1.1 de la LO 7/2022 deshace el cambio de la LO 7/2015 | Sí (E02), sin efecto |
+| LEC | 525 | Art. 22.43 LO 1/2025 retira la oposición a resoluciones de protección de menores; coincide por azar con el texto de 2015 | No |
+| LEC | 685 | RDL 26/2026, derogado por el Congreso (Resolución de 2-10-2026) y vuelto a aprobar en el RDL 29/2026 | No |
+| LEC | 763 | Desaparece la nota sobre la STC 132/2010 al darle carácter orgánico la LO 8/2015 | No |
+| CP | 576 bis y epígrafe del título VIII | LO 2/2015; epígrafe según la versión de BOE-A-2022-14630 (no leída su nota) | No |
+| LSC | 5 | Art. 2.3 de la Ley 18/2022 | No |
+| CCom | 580 | Disposición derogatoria de la Ley 38/2011 | No |
+| TRLGDCU | 20 | Derogación del RDL 4/2026 por el Congreso | No |
+| LAC | 35 | Art. 5.2 de la Ley 5/2021 | No |
+| RH | 16 artículos | Muestra leída: arts. 250 (RD 2388/1984 deja sin efecto la derogación de 1982) y 457 (STS de 6-7-2012 anula el RD 253/2011); los demás, por la misma norma | No |
+| LSSI | 19 artículos | Muestra leída: art. 14. El Congreso deroga el RDL 9/2024 (Resolución de 22-1-2025); los demás, por la misma norma | No |
+
+Las reversiones en versiones anteriores a la vigente (LEC 29, CP 4, CC 2, LOPJ 1) no se han leído una a una: ya no son el texto en vigor. Tampoco se han revisado aquí las 66 filas vigentes de «LO 7/2015 con cambios de fondo» (LOPJ 56, LEC 10), que son otro tipo de candidato; las 10 de la LEC, vistas por encima, parecen reformas reales de esa ley.
+
+**Vigilar**: el RDL 29/2026 (BOE-A-2026-20823, en vigor desde el 8-10-2026) da la redacción vigente de los arts. 22 y 685 LEC y, según la ficha del Congreso (130/000060), estaba pendiente de convalidación al revisar. Su antecesor, el RDL 26/2026, fue derogado. Si decae, `tools/boe-diff.js` lo mostrará. El art. 22 lo cita E02, sin referirse al apartado 6 que añade ese RDL.
