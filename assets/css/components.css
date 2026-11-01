@@ -1110,12 +1110,17 @@ a.phase:hover {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
+  /* Never taller than the screen: a long article scrolls inside its body, never cut short. */
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 32px);
 }
 /* It receives focus when it opens (for Esc and screen readers): no ring around the whole window. */
 .popover:focus {
   outline: none;
 }
 .popover-head {
+  flex-shrink: 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -1133,9 +1138,12 @@ a.phase:hover {
   font-size: var(--fs-sm);
   color: var(--text-2);
 }
-/* Natural height, no inner scroll: it shows only the cited apartado; the whole
- * article is one click away ("Ver artículo completo"). */
+/* Natural height: it shows only the cited apartado, the whole article one click away
+ * ("Ver artículo completo"). Only when that does not fit on the screen does it scroll. */
 .popover-body {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   margin: 0;
   padding: var(--sp-3) var(--sp-4);
   font-family: var(--font-display);
@@ -1149,6 +1157,7 @@ a.phase:hover {
   border-radius: 3px;
 }
 .popover-foot {
+  flex-shrink: 0;
   display: flex;
   justify-content: space-between;
   padding: var(--sp-2) var(--sp-4);
@@ -1358,10 +1367,9 @@ a.phase:hover {
     width: auto;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
-  /* Only a very long apartado can exceed the screen: the sheet then scrolls as a last resort. */
+  /* Only a very long apartado can exceed the screen: its body then scrolls as a last resort. */
   .popover {
     max-height: 85vh;
-    overflow-y: auto;
   }
   .article {
     padding: var(--sp-5);
