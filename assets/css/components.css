@@ -1019,6 +1019,14 @@ a.phase:hover {
   font-family: var(--font-display);
   font-size: var(--fs-md);
   line-height: 1.7;
+  /* Owner's choice: article text justified (law view and reference window). Hyphenation (the
+     page is lang="es") avoids wide gaps between words in the narrow window. */
+  text-align: justify;
+  hyphens: auto;
+}
+.law-text .fila {
+  text-align: left;
+  hyphens: manual;
 }
 .law-text p + p {
   margin-top: var(--sp-3);
