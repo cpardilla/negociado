@@ -102,7 +102,7 @@
       <span class="spacer"></span>
       <button class="btn" data-action="expand">Expandir todo</button>
       <button class="btn" data-action="collapse">Contraer todo</button>
-      <button class="btn" data-action="print">${Neg.icon("print")} Imprimir</button>
+      <button class="btn" data-action="print" aria-label="Imprimir">${Neg.icon("print")}<span class="btn-text">Imprimir</span></button>
       <div class="chips row" role="group" aria-label="Categorías">${chips}</div>
     </div>`;
   }

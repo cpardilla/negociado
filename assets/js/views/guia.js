@@ -145,7 +145,7 @@
     return (
       Neg.shell.head({ crumbs: [["Guías"], [rec.ley], [rec.corto]], kicker: `Guía de tramitación · ${rec.ley}${arts}`, title: rec.corto, sub: rec.titulo !== rec.corto ? rec.titulo : "", meta: rev }) +
       `<div class="toolbar static"><div class="segmented" role="group" aria-label="Vista"><a href="${Neg.href("guia", rec.id, states[rec.id].cur)}" aria-pressed="${mode === "paso"}">Paso a paso</a><a href="${Neg.href("guia", rec.id, "mapa")}" aria-pressed="${mode === "mapa"}">Mapa de pasos</a></div>
-        <span class="spacer"></span>${rec.articulos.length && Neg.catalogo.esquemas.some((e) => e.id === rec.id) ? `<a class="btn" href="${Neg.href("esquema", rec.id)}">Esquema</a>` : ""}<button class="btn" data-action="print">${Neg.icon("print")} Imprimir</button></div>`
+        <span class="spacer"></span>${rec.articulos.length && Neg.catalogo.esquemas.some((e) => e.id === rec.id) ? `<a class="btn" href="${Neg.href("esquema", rec.id)}">Esquema</a>` : ""}<button class="btn" data-action="print" aria-label="Imprimir">${Neg.icon("print")}<span class="btn-text">Imprimir</span></button></div>`
     );
   }
 

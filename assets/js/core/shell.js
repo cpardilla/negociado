@@ -119,7 +119,9 @@
       });
     },
 
-    /** Highlights the navigation entry of the current place and opens its groups. */
+    /** Highlights the navigation entry of the current place and opens its groups. On a page with
+     *  an entry, only the groups that lead to it stay open (the menu does not keep growing as one
+     *  moves between esquemas and guías); groups opened by hand stay until the next page. */
     markCurrent(where) {
       const nav = document.getElementById("sidebar");
       if (!nav) return;
@@ -130,10 +132,17 @@
         if (on) found = a;
         on ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current");
       });
-      for (let sub = found && found.closest(".nav-sub"); sub; sub = sub.parentElement.closest(".nav-sub")) {
-        sub.hidden = false;
-        sub.previousElementSibling.setAttribute("aria-expanded", "true");
-      }
+      if (!found) return;
+      const path = new Set();
+      for (let sub = found.closest(".nav-sub"); sub; sub = sub.parentElement.closest(".nav-sub")) path.add(sub);
+      nav.querySelectorAll(".nav-sub").forEach((sub) => {
+        const open = path.has(sub);
+        sub.hidden = !open;
+        sub.previousElementSibling.setAttribute("aria-expanded", String(open));
+      });
+      groupsOpen.clear();
+      path.forEach((sub) => groupsOpen.add(sub.previousElementSibling.dataset.group));
+      saveGroups();
     },
 
     /** The header of a page: breadcrumbs (none when `crumbs` is null), kicker, title, subtitle,

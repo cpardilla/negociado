@@ -142,6 +142,9 @@
   font-weight: 600;
   white-space: nowrap;
   text-decoration: none;
+  /* Same look everywhere, also inside uppercase labels and headings. */
+  text-transform: none;
+  letter-spacing: normal;
   cursor: pointer;
 }
 .ref:hover {
@@ -358,10 +361,23 @@
   padding: var(--sp-4) var(--sp-5) var(--sp-5);
   border-top: 1px solid var(--border);
 }
+/* Columns that fill on their own (not rows): a short block next to a long one leaves no hole. */
 .card[aria-expanded="true"] .card-body {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--sp-5) var(--sp-8);
+  display: block;
+  columns: 300px 2;
+  column-gap: var(--sp-8);
+}
+.card-body > * {
+  break-inside: avoid;
+  margin: 0 0 var(--sp-5);
+}
+.card-body > :last-child {
+  margin-bottom: 0;
+}
+/* Notes and tables read better across the whole card. */
+.card-body > .block,
+.card-body > .table-wrap {
+  column-span: all;
 }
 .card-refs {
   padding: var(--sp-3) var(--sp-5);
@@ -913,11 +929,11 @@ a.phase:hover {
 .tree-div {
   display: flex;
   gap: var(--sp-1);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-1);
 }
 .tree-div.lvl-0 {
-  font-weight: 700;
+  font-weight: 600;
 }
 .tree-div .chev {
   flex-shrink: 0;
@@ -971,6 +987,15 @@ a.phase:hover {
   margin-top: var(--sp-4);
   display: grid;
   gap: var(--sp-2);
+}
+.overview a {
+  color: var(--text-1);
+  font-weight: 500;
+  text-decoration: none;
+}
+.overview a:hover {
+  color: var(--primary);
+  text-decoration: underline;
 }
 .overview .count {
   font-size: var(--fs-xs);
@@ -1284,16 +1309,39 @@ a.phase:hover {
   .cards {
     grid-template-columns: 1fr;
   }
-  /* Filters: one swipeable row instead of half a screen of chips. */
+  /* Filters wrap (no row cut off at the edge, no scrolling strip), in a smaller size so that
+     they do not take half the screen. */
   .toolbar .chips {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    margin: 0 calc(-1 * var(--sp-4));
-    padding: 0 var(--sp-4);
+    gap: var(--sp-1) var(--sp-2);
   }
   .toolbar .chips .chip {
-    flex-shrink: 0;
+    padding: 3px 10px;
+    font-size: var(--fs-xs);
+  }
+  /* Toolbar actions in one compact row: the search takes its own line, printing is just its icon
+     (the name stays for screen readers), the other buttons lose some padding. */
+  .toolbar {
+    gap: var(--sp-2);
+  }
+  .toolbar .search {
+    flex-basis: 100%;
+    max-width: none;
+  }
+  .toolbar .spacer {
+    display: none;
+  }
+  .toolbar .btn,
+  .toolbar .segmented button,
+  .toolbar .segmented a {
+    padding: 6px 10px;
+  }
+  .toolbar .btn .btn-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
   /* The reference opens as a sheet from the bottom of the screen. */
   .popover {
