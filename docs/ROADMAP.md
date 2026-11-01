@@ -145,7 +145,7 @@ Auditoría (segunda vuelta) y tests: corregidos en las propias herramientas seis
 - **Contenido duplicado entre esquemas** (DRY de contenido, fase 3): E06 (Título Preliminar) tiene tarjetas de los arts. 13–22 (Título I) y E07 de los arts. 1–8; E05 (liquidación del REM) repite tarjetas de los arts. 784–788 LEC (división de la herencia); E16 (emancipación) repite arts. de las normas comunes de la LJV.
 - La LJV numera tres artículos como «42 bis a), b) y c)»: el formato de datos nuevo debe admitirlo.
 
-### Publicación ☐
+### Publicación ✅ (2026-11-01: `rediseno` llevado a `main` por avance rápido, 133 commits; web publicada comprobada)
 - Cada bloque terminado (p. ej. «leyes completas», «guías migradas») se propone para `main` con un resumen; al fusionarse, Pages lo publica.
 - Antes de fusionar: tests en `file://` y http, enlaces internos comprobados, y la web publicada revisada tras el despliegue.
 - Las URL antiguas (`/02%20-%20Esquemas.../...html`) dejarán de existir: `404.html` redirige cada una a su equivalente nuevo; las que no tengan equivalente muestran un aviso para actualizar favoritos (decisión 8).
