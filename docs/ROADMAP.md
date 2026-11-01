@@ -307,7 +307,8 @@ Se fue aplicando con los motores (fase 1) y el repaso de estilos; el 2026-11-01 
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
-- 2026-11-01 · Decisión 23 aplicada a G02 y G05 (cuatro pasos nuevos de subsanación).
+- 2026-11-01 · Publicación: `rediseno` llevado a `main` por avance rápido, con la decisiones 20–23, la instantánea de la LO 1/2025 y el arreglo de las distancias.
+- 2026-11-01 · Decisión 23 aplicada a G02 y G05 (cuatro pasos nuevos de subsanación) y, con una línea, a E02 y E05.
 - 2026-11-01 · Instantánea de la LO 1/2025 (`sources/boe/LO1-2025.json`, consolidada a 09-07-2026): sus citas se comprueban y son enlaces, y todas coinciden con el texto. El lector entiende los apartados en letra compuestos («Cincuenta y cuatro.») y, en esos artículos, no toma por apartado el texto citado («8. …»); la ventana de la cita muestra solo el apartado citado y la norma con su nombre (`sigla` en `tools/leyes.json`; de momento, solo esta ley). 35 leyes. Después, decisión 22: requisito de procedibilidad en E02, E05 y G05, con comprobación en G05 (paso nuevo `fin_sin_masc`). Pendiente de hablar: el art. 5.3 LO 1/2025 en las diligencias preliminares.
 - 2026-11-01 · Decisión 21 aplicada a G25.
 - 2026-11-01 · Estilos: las notas de ancho completo de una ficha abierta quedaban pegadas a lo anterior (0 px en 22 notas: el margen se pierde al acabar la columna); ahora 20 px. Dentro de un grupo de puntos, de 8 a 12 px (29 casos). Test que lo vigila, en todas las fichas y a dos anchos.
