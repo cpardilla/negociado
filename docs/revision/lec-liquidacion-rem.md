@@ -70,3 +70,14 @@ Pasos retirados: `auto_788`, `fin_auto_788`, `decreto_acuerdo`, `ejecucion_forzo
 | G05 | Controversia (art. 809.2) | Ídem | Ídem |
 
 Origen: la instantánea de la LEC guardaba, para este artículo, la versión del BOE de 1-10-2015 (LO 7/2015), construida sobre el texto anterior a la Ley 42/2015; la vigente es la de la Ley 42/2015. Detalle en `boe-correcciones.md`.
+
+## Corrección posterior (2026-11-01) · Requisito de procedibilidad en E05 y G05
+
+Corte del BOE: LO 1/2025 a 09-07-2026; LEC a 07-10-2026. Criterio del propietario: se añade el requisito (decisión 22).
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| E05 | Artículo 806 › nuevo apartado | incompleto | Sin el requisito | Actividad negociadora previa: exigencia, medios y acreditación | LO 1/2025 art. 5.1 y 5.2; LEC 264.4.º, 403.2 |
+| G05 | inicio; pie | incompleto | Sin el requisito | Nota con la exigencia y la acreditación; aviso sobre el momento | Ídem |
+
+**Pregunta al propietario**: los arts. 264.4.º y 403.2 LEC y el art. 5.1 LO 1/2025 hablan de la demanda, y aquí hay dos solicitudes (arts. 808 y 810 LEC), la primera dentro de un proceso ya iniciado. El texto lo dice así, sin elegir. Por eso G05 no lleva, como G02, una pregunta que corte el recorrido: se añadirá en el paso que corresponda cuando el propietario lo indique.

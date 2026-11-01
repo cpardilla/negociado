@@ -454,6 +454,26 @@ Neg.data.register({
        },
        {
         "apartado": {
+         "titulo": "Actividad negociadora previa (LO 1/2025)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "La división judicial de la herencia es un proceso especial del Libro IV de la LEC y su materia no figura entre las exceptuadas: hay que haber acudido antes a un medio adecuado de solución de controversias, con identidad entre el objeto de la negociación y el del litigio (arts. 5.1 y 5.2 LO 1/2025)."
+            },
+            {
+             "t": "Medios válidos, entre otros: mediación, conciliación, opinión neutral de experto, oferta vinculante confidencial o negociación directa o entre abogados (art. 5.1 LO 1/2025)."
+            },
+            {
+             "t": "Se presenta el documento que acredite haberla intentado o la declaración responsable de la imposibilidad de llevarla a cabo por desconocer el domicilio de la otra parte o el medio para requerirla (art. 264.4.º LEC); si no consta, no se admite (art. 403.2 LEC)."
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "apartado": {
          "titulo": "Acreedores de la herencia (apartados 3 y 4)",
          "contenido": [
           {
@@ -492,7 +512,9 @@ Neg.data.register({
        "LJV art. 92",
        "LN arts. 55–56, 61–63, 66",
        "LH art. 14",
-       "CC arts. 1291, 1299"
+       "CC arts. 1291, 1299",
+       "LEC arts. 264.4.º, 403.2",
+       "LO 1/2025 art. 5"
       ],
       "claves": "782 solicitud legitimacion coheredero legatario parte alicuota contador partidor comisario documentos certificado defuncion titulo sucesorio acreedores oposicion afianzamiento intervencion fraude"
      }

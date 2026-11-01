@@ -114,3 +114,11 @@ Pasos retirados: `p2_jv_gananciales`, `p5_jv_parcial`, `p5_sentencia_est`, `p5_s
 | G02 | Inventario y administración (art. 794.4) | El LAJ cita a vista | El LAJ hace constar en el acta las pretensiones de cada parte y su fundamentación jurídica, y cita a vista |
 
 Origen: la instantánea de la LEC guardaba, para este artículo, la versión del BOE de 1-10-2015 (LO 7/2015), construida sobre el texto anterior a la Ley 42/2015; la vigente es la de la Ley 42/2015. Detalle en `boe-correcciones.md`.
+
+## Corrección posterior (2026-11-01) · Requisito de procedibilidad en E02
+
+Corte del BOE: LO 1/2025 a 09-07-2026; LEC a 07-10-2026. Criterio del propietario: se añade el requisito (decisión 22).
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| E02 | Artículo 782 › nuevo apartado | incompleto | Sin el requisito, que G02 sí recogía | Actividad negociadora previa: exigencia, medios y acreditación, con el mismo contenido que G02 | LO 1/2025 art. 5.1 y 5.2; LEC 264.4.º, 403.2 |

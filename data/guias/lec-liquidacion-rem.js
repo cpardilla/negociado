@@ -42,6 +42,14 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "Se aplica a cualquier régimen que, por capitulaciones o por ley, determine una masa común de bienes y derechos sujeta a cargas y obligaciones, en defecto de acuerdo entre los cónyuges. El régimen de participación tiene su propio cauce (art. 811 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Actividad negociadora previa: la liquidación judicial del régimen económico matrimonial es un proceso especial del Libro IV de la LEC y su materia no figura entre las exceptuadas: hay que haber acudido antes a un medio adecuado de solución de controversias, con identidad entre el objeto de la negociación y el del litigio (arts. 5.1 y 5.2 LO 1/2025). Se presenta el documento que acredite haberla intentado o la declaración responsable de la imposibilidad de llevarla a cabo por desconocer el domicilio de la otra parte o el medio para requerirla (art. 264.4.º LEC); si no consta, no se admite (art. 403.2 LEC)."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "Estas normas hablan de la demanda: no precisan si se acredita con la solicitud de inventario (art. 808 LEC) o con la de liquidación (art. 810 LEC)."
     }
    ],
    "pregunta": "¿Qué régimen se liquida?",
@@ -891,5 +899,5 @@ Neg.data.register({
    "fin": "success"
   }
  },
- "pie": "Arts. 806–811 LEC (y 784–788 por remisión del art. 810)<br>Arts. 1392–1410 CC (gananciales) · Arts. 1411–1434 CC (participación)"
+ "pie": "Arts. 806–811 LEC (y 784–788 por remisión del art. 810)<br>Arts. 264.4.º y 403.2 LEC y art. 5 LO 1/2025 (actividad negociadora previa)<br>Arts. 1392–1410 CC (gananciales) · Arts. 1411–1434 CC (participación)"
 });

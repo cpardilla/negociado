@@ -128,12 +128,37 @@ Neg.data.register({
           }
          ]
         }
+       },
+       {
+        "apartado": {
+         "titulo": "Actividad negociadora previa (LO 1/2025)",
+         "contenido": [
+          {
+           "lista": [
+            {
+             "t": "La liquidación judicial del régimen económico matrimonial es un proceso especial del Libro IV de la LEC y su materia no figura entre las exceptuadas: hay que haber acudido antes a un medio adecuado de solución de controversias, con identidad entre el objeto de la negociación y el del litigio (arts. 5.1 y 5.2 LO 1/2025)."
+            },
+            {
+             "t": "Medios válidos, entre otros: mediación, conciliación, opinión neutral de experto, oferta vinculante confidencial o negociación directa o entre abogados (art. 5.1 LO 1/2025)."
+            },
+            {
+             "t": "Se presenta el documento que acredite haberla intentado o la declaración responsable de la imposibilidad de llevarla a cabo por desconocer el domicilio de la otra parte o el medio para requerirla (art. 264.4.º LEC); si no consta, no se admite (art. 403.2 LEC)."
+            },
+            {
+             "t": "Estas normas hablan de la demanda: no precisan si se acredita con la solicitud de inventario (art. 808 LEC) o con la de liquidación (art. 810 LEC)."
+            }
+           ]
+          }
+         ]
+        }
        }
       ],
       "referencias": [
        "CC arts. 1316, 1344–1444",
        "CC art. 90",
-       "Reg. (UE) 2016/1103"
+       "Reg. (UE) 2016/1103",
+       "LEC arts. 264.4.º, 403.2",
+       "LO 1/2025 art. 5"
       ],
       "claves": "806 ambito regimen economico matrimonial masa comun gananciales participacion separacion de bienes defecto de acuerdo convenio regulador"
      }
