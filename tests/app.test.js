@@ -92,6 +92,57 @@ for (const http of [false, true]) {
     assert.deepEqual(r.items, ["Acercar", "Alejar", "Ajustar a la ventana", "Desplegar o plegar también lo que cuelga del nodo"]);
     assert.equal(r.brand, false);
   });
+
+  test(`[${mode}] accessibility: names, controls, headings, skip link, focus after a choice`, { timeout: 120000 }, async () => {
+    const r = await page(
+      `const name = (e) => e.getAttribute('aria-label') || (e.labels && e.labels[0] && e.labels[0].textContent.trim()) || e.textContent.trim() || e.getAttribute('title') || e.getAttribute('placeholder') || '';
+       const faults = [];
+       for (const h of ['#/', '#/ley/LJV/140', '#/ley/LJV/mapa', '#/esquema/ljv-conciliacion', '#/guia/ljv-conciliacion/verifica_competencia', '#/guia/ljv-conciliacion/mapa', '#/buscar?q=plazo']) {
+         await go(h, 900);
+         for (const e of document.querySelectorAll('a[href], button, input, select, textarea')) if (e.getClientRects().length && !name(e)) faults.push(h + ': control sin nombre ' + e.outerHTML.slice(0, 80));
+         for (const e of document.querySelectorAll('[data-action],[data-go],[data-group],[data-check]')) if (!/^(A|BUTTON|INPUT|FORM)$/.test(e.tagName)) faults.push(h + ': ' + e.tagName + ' con acción y sin ser control');
+         const levels = [...document.querySelectorAll('#view :is(h1,h2,h3,h4)')].filter((x) => x.getClientRects().length).map((x) => +x.tagName[1]);
+         if (levels.filter((l) => l === 1).length !== 1) faults.push(h + ': no hay exactamente un h1');
+         levels.forEach((l, i) => i && l > levels[i - 1] + 1 && faults.push(h + ': salto h' + levels[i - 1] + '→h' + l));
+       }
+       await go('#/ley/LJV', 800);
+       const hash = location.hash;
+       document.querySelector('.skip-link').click(); await wait(100);
+       const skip = { sameHash: location.hash === hash, focus: document.activeElement.tagName };
+       localStorage.removeItem('negociado.guia.ljv-conciliacion');
+       await go('#/guia/ljv-conciliacion/inicio', 800);
+       const opt = document.querySelector('[data-go]'); opt.focus(); opt.click(); await wait(600);
+       const afterChoice = document.activeElement.tagName;
+       await go('#/esquema/ljv-conciliacion', 800);
+       const t = document.querySelector('.card-toggle'); const closed = t.getAttribute('aria-expanded'); t.click();
+       return { faults, skip, afterChoice, toggle: [closed, t.getAttribute('aria-expanded')], announce: document.getElementById('announce').textContent, live: document.getElementById('view').getAttribute('aria-live') };`,
+      { http }
+    );
+    assert.deepEqual(r.faults, []);
+    assert.deepEqual(r.skip, { sameHash: true, focus: "H1" }, "«Saltar al contenido» lleva al título sin tocar la dirección");
+    assert.equal(r.afterChoice, "H2", "tras elegir una opción, el foco pasa al título del paso nuevo");
+    assert.deepEqual(r.toggle, ["false", "true"], "el botón de la ficha dice si está abierta");
+    assert.match(r.announce, /conciliación/i, "se anuncia la página nueva");
+    assert.equal(r.live, null, "la vista entera no es una región viva");
+  });
+
+  test(`[${mode}] home shortcuts: most used and recently visited (this browser only)`, { timeout: 60000 }, async () => {
+    const r = await page(
+      `localStorage.removeItem('negociado.recientes');
+       await go('#/', 400);
+       const fixed = document.querySelectorAll('.shortcut').length;
+       for (const h of ['#/ley/LJV/140', '#/esquema/lec-division-herencia', '#/guia/ljv-conciliacion', '#/esquema/no-existe', '#/guia/ljv-conciliacion']) await go(h, 600);
+       await go('#/', 400);
+       const recent = [...document.querySelectorAll('.shortcut-link')].map((a) => a.getAttribute('href'));
+       document.querySelector('[data-action="clear-recent"]').click();
+       return { fixed, recent, cleared: localStorage.getItem('negociado.recientes'), gone: !document.querySelector('.shortcut-link') };`,
+      { http }
+    );
+    assert.equal(r.fixed, 3, "tres accesos fijos");
+    assert.deepEqual(r.recent, ["#/guia/ljv-conciliacion", "#/esquema/lec-division-herencia", "#/ley/LJV"], "lo último primero, sin repetidos ni direcciones erróneas");
+    assert.equal(r.cleared, null);
+    assert.ok(r.gone);
+  });
 }
 
 test("live references: links, cited apartado only, no inner scroll, inside the screen, Esc and ✕", { timeout: 90000 }, async () => {
@@ -279,4 +330,24 @@ test("search: accents and case ignored, every word must match", { timeout: 60000
   );
   // The article in the law, its card in the esquema and the step in the guía.
   assert.deepEqual(r, ["Art. 145. Celebración del acto de conciliación", "Artículo 145 · Celebración del acto de conciliación", "Celebración del acto de conciliación"]);
+});
+
+test("guía printed: the route taken as a procedure sheet, the screen unchanged", { timeout: 60000 }, async () => {
+  const r = await page(
+    `localStorage.removeItem('negociado.guia.ljv-conciliacion');
+     await go('#/guia/ljv-conciliacion/fin_avenencia_firme', 900);
+     const sheet = document.querySelector('.print-sheet');
+     const screen = getComputedStyle(sheet).display;
+     window.dispatchEvent(new Event('beforeprint'));
+     await __run({ media: 'print' }); await wait(100);
+     const out = { screen, print: getComputedStyle(sheet).display, step: getComputedStyle(document.querySelector('.guide')).display, steps: sheet.querySelectorAll('.sheet-step').length, last: sheet.querySelector('.sheet-step:last-of-type h3').textContent, choices: sheet.querySelectorAll('.sheet-choice').length };
+     await __run({ media: '' });
+     return out;`
+  );
+  assert.equal(r.screen, "none", "en pantalla no se ve");
+  assert.equal(r.print, "block");
+  assert.equal(r.step, "none", "en papel, la hoja sustituye al paso");
+  assert.ok(r.steps > 5, "todos los pasos del recorrido");
+  assert.ok(r.choices >= 1 && r.choices < r.steps, "la decisión tomada donde hubo que elegir");
+  assert.match(r.last, /Acuerdo firme/i);
 });
