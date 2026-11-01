@@ -374,10 +374,18 @@
 .card-body > :last-child {
   margin-bottom: 0;
 }
-/* Notes and tables read better across the whole card. */
+/* Notes and tables read better across the whole card. A column ends where they start, and the
+   margin of what comes last in it may be lost there (with two columns it is, with one it is not):
+   the distance is theirs alone, the same with any number of columns. */
 .card-body > .block,
 .card-body > .table-wrap {
   column-span: all;
+}
+.card-body > :is(.block, .table-wrap):not(:first-child) {
+  margin-top: var(--sp-5);
+}
+.card-body > :has(+ :is(.block, .table-wrap)) {
+  margin-bottom: 0;
 }
 .card-refs {
   padding: var(--sp-3) var(--sp-5);
@@ -491,13 +499,15 @@
 .items .items {
   margin: var(--sp-1) 0 0;
 }
-.card-body > .points + .points,
-.card-body > * + .block {
-  margin-top: 0;
-}
 /* Vertical rhythm: consecutive pieces of a section (cards, notes, tables) or of a guía step
    (notes, checklists) never touch, whatever their combination. Later rules with their own
-   margin (.route-title) keep it. */
+   margin (.route-title) keep it. Inside a group of points, a note keeps the same distance. */
+.points > .block {
+  margin-block: var(--sp-3);
+}
+.points > :last-child {
+  margin-bottom: 0;
+}
 .section-body > * + * {
   margin-top: var(--sp-4);
 }

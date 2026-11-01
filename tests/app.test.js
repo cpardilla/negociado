@@ -305,6 +305,34 @@ test("no horizontal overflow at phone or desktop width, in any view", { timeout:
   assert.deepEqual(r, []);
 });
 
+test("notes and tables keep their distance from what surrounds them, in every open card, at both widths", { timeout: 180000 }, async () => {
+  const r = await page(
+    `const faults = [];
+     const vis = (e) => e.getClientRects().length > 0 && e.getBoundingClientRect().height > 0;
+     for (const w of [1366, 390]) {
+       await __run({ viewport: [w, 844] });
+       for (const e of Neg.catalogo.esquemas) {
+         await go('#/esquema/' + e.id, 350);
+         document.querySelectorAll('[data-action="fold"][aria-expanded="false"]').forEach((b) => b.click());
+         document.querySelector('[data-action="expand"]').click();
+         await wait(60);
+         for (const el of document.querySelectorAll('.esq-body :is(.card-body, .points) > :is(.block, .table-wrap)')) {
+           const kids = [...el.parentElement.children].filter(vis);
+           const i = kids.indexOf(el);
+           if (i < 1) continue;
+           // In a card with columns, what is above is the lowest of everything before it.
+           const gap = el.getBoundingClientRect().top - Math.max(...kids.slice(0, i).map((k) => k.getBoundingClientRect().bottom));
+           const min = el.parentElement.matches('.card-body') ? 20 : 12;
+           // With one column it is exact; with two, balancing them can leave a little more.
+           if (gap < min - 1 || (w === 390 && gap > min + 1)) faults.push(w + ' ' + e.id + ': ' + Math.round(gap) + ' px');
+         }
+       }
+     }
+     return faults;`
+  );
+  assert.deepEqual(r, []);
+});
+
 test("old addresses (as GitHub Pages serves them) redirect to their new place, or explain", { timeout: 120000 }, async () => {
   const cases = [
     ["00 - Indices/LJV - Indice interactivo.html", "#/ley/LJV"],
