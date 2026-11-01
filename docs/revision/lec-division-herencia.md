@@ -132,3 +132,12 @@ Fuente: art. 231 LEC (corte a 07-10-2026) y acuerdos de la Junta Sectorial de Ma
 | G02 | p0_inicio | incompleto | «No» llevaba a la inadmisión en todo caso | Tercera salida para el defecto formal, con el paso nuevo `p0_subsanar_masc`: si se subsana, sigue; si no, inadmisión. Sin justificación alguna, inadmisión directa |
 
 Arrastre a E02 (mismo día, a petición del propietario): en la ficha del art. 782, línea sobre la subsanación de los defectos formales, con la misma fuente.
+
+## Corrección posterior (2026-11-01) · Decisión 24: la subsanación se apoya en la ley
+
+Corte del BOE: LEC a 07-10-2026; LO 1/2025 a 09-07-2026. El propietario indica que no hay criterio particular en Las Palmas y que se atiende a las disposiciones generales de las leyes vigentes; los acuerdos de la AP de Madrid se conservan solo como orientación.
+
+| Recurso | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| G02 | `p0_subsanar_masc` (1) | Regla atribuida al «criterio, no vinculante» de la Junta Sectorial; «sin justificación alguna, no hay defecto que subsanar», sin fuente | Sin documento, no se admite (art. 403.2 LEC); los acuerdos, en una frase, a título orientativo y no vinculante | LEC 231, 403.2; acuerdos III.6 |
+| E02 | Art. 782 › Actividad negociadora previa | «Según el criterio, no vinculante» | Regla en el art. 231 LEC; los acuerdos, como orientación no vinculante | LEC 231; acuerdos III.6 |

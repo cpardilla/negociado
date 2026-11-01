@@ -1085,7 +1085,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Antes de admitir, los defectos formales en la justificación del intento son subsanables, según el criterio, no vinculante, de la Junta Sectorial de Magistrados de las Secciones de Familia de la Audiencia Provincial de Madrid (acuerdo de 6-11-2025, III.6). Si no se aporta justificación alguna, no hay defecto que subsanar."
+     "texto": "Si no se acompaña el documento exigido, no se admite (art. 403.2 LEC). A título orientativo y no vinculante, los acuerdos de la Audiencia Provincial de Madrid de 6-11-2025 (III.6) consideran subsanables, antes de admitir, los defectos formales de esta justificación."
     }
    ],
    "pregunta": "¿Se subsana el defecto?",
