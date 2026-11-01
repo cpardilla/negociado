@@ -163,7 +163,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Es competente el Juzgado de Primera Instancia del lugar de los hechos (art. 80 ter.1 LJV). Hoy, la Sección Civil del Tribunal de Instancia: este expediente no es materia de personas y familia del art. 86.5 j) LOPJ (decisión 12)."
+     "texto": "Es competente el Juzgado de Primera Instancia del lugar de los hechos (art. 80 ter.1 LJV). Hoy, la Sección Civil del Tribunal de Instancia: este expediente no es materia de personas y familia del art. 86.5 j) LOPJ."
     },
     {
      "tipo": "ley",

@@ -110,7 +110,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Juzgado de Primera Instancia del <strong>último domicilio</strong> de la persona o, en su defecto, de su <strong>última residencia</strong>. Hoy, la Sección Civil del Tribunal de Instancia: estos expedientes están excluidos de la Sección de Familia, Infancia y Capacidad (art. 86.5 j) LOPJ; decisión 11)."
+             "t": "Juzgado de Primera Instancia del <strong>último domicilio</strong> de la persona o, en su defecto, de su <strong>última residencia</strong>. Hoy, la Sección Civil del Tribunal de Instancia: estos expedientes están excluidos de la Sección de Familia, Infancia y Capacidad (art. 86.5 j) LOPJ)."
             },
             {
              "t": "Fallecimiento por naufragio o siniestro aéreo (arts. 194.2.º y 194.3.º CC), para todos los afectados: el juzgado del <strong>lugar del siniestro</strong>; si ocurrió fuera de España, para españoles y residentes, el del lugar donde <strong>se inició el viaje</strong>; si el viaje empezó en el extranjero, el del domicilio o residencia en España de la <strong>mayoría de los afectados</strong>; en último término, el del domicilio o residencia de cualquiera de ellos."

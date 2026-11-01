@@ -296,7 +296,7 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Criterio del juzgado tras la LO 1/2025 (decisión 13)",
+         "titulo": "Cómo se tramita tras la LO 1/2025",
          "contenido": [
           {
            "lista": [

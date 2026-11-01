@@ -111,17 +111,17 @@ Neg.data.register({
       "LAJ del Juzgado de Primera Instancia o del de lo Mercantil (hoy, Secciones Civil y de lo Mercantil del Tribunal de Instancia), según la materia",
       "Domicilio del requerido; si no lo tiene en territorio nacional, su última residencia en España",
       "Requerido persona jurídica: también el del domicilio del solicitante, si el requerido tiene allí delegación, sucursal, establecimiento, oficina abierta al público o representante autorizado (debe acreditarse)",
-      "Juez de Paz: si la cuantía es inferior a 10.000 euros y no se trata de cuestiones mercantiles (art. 47.2 LEC, redacción de la LO 1/2025; desplaza los 6.000 euros del art. 140.1 LJV; decisión 14)"
+      "Juez de Paz: si la cuantía es inferior a 10.000 euros y no se trata de cuestiones mercantiles (art. 47.2 LEC, redacción de la LO 1/2025; desplaza los 6.000 euros del art. 140.1 LJV)"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
-     "texto": "Cautela (decisión 14): el art. 47.2 LEC no dice que la competencia del Juez de Paz sea exclusiva; si entre 6.000 y 10.000 euros cabe también la del LAJ es cuestión sin norma que la resuelva expresamente."
+     "texto": "Cautela: el art. 47.2 LEC no dice que la competencia del Juez de Paz sea exclusiva; si entre 6.000 y 10.000 euros cabe también la del LAJ es cuestión sin norma que la resuelva expresamente."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 140.1 LJV · Art. 2.2 LJV · Art. 47.2 LEC · Decisión 14"
+     "texto": "Art. 140.1 LJV · Art. 2.2 LJV · Art. 47.2 LEC"
     }
    ],
    "siguiente": "verifica_exclusion"
@@ -364,7 +364,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 140.1 LJV · Art. 47.2 LEC · Decisión 14"
+     "texto": "Art. 140.1 LJV · Art. 47.2 LEC"
     }
    ],
    "pregunta": "¿Qué órgano es competente en este caso?",

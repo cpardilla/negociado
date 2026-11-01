@@ -177,7 +177,7 @@ Neg.data.register({
              "t": "Juez de Primera Instancia de la localidad donde haya de realizarse la <strong>extracción</strong> o el <strong>trasplante</strong>, a elección del solicitante (también art. 8.4 RD 1723/2012)."
             },
             {
-             "t": "Hoy, la Sección Civil del Tribunal de Instancia: estos expedientes están excluidos de la Sección de Familia, Infancia y Capacidad (art. 86.5 j) LOPJ; decisión 11)."
+             "t": "Hoy, la Sección Civil del Tribunal de Instancia: estos expedientes están excluidos de la Sección de Familia, Infancia y Capacidad (art. 86.5 j) LOPJ)."
             },
             {
              "t": "Resuelve el <strong>Juez</strong>: el consentimiento se presta ante él (art. 79.3 LJV)."

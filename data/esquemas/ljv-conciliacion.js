@@ -207,7 +207,7 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Jueces de Paz: cuantía (criterio del juzgado, decisión 14)",
+         "titulo": "Jueces de Paz: cuantía",
          "contenido": [
           {
            "lista": [

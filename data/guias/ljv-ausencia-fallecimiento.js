@@ -97,7 +97,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Es competente el Juzgado de Primera Instancia del último domicilio del desaparecido o, en su defecto, de su última residencia (art. 68.1 LJV). Hoy, la Sección Civil del Tribunal de Instancia (decisión 11: el capítulo IX no es de la Sección de Familia, Infancia y Capacidad)."
+     "texto": "Es competente el Juzgado de Primera Instancia del último domicilio del desaparecido o, en su defecto, de su última residencia (art. 68.1 LJV). Hoy, la Sección Civil del Tribunal de Instancia: el capítulo IX no es de la Sección de Familia, Infancia y Capacidad."
     },
     {
      "tipo": "nota",

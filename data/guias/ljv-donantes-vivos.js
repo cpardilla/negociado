@@ -113,7 +113,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Es competente el Juez de Primera Instancia (art. 78.2 LJV; art. 8.4 RD 1723/2012). Hoy, la Sección Civil del Tribunal de Instancia: el art. 86.5 j) LOPJ excluye este capítulo de la Sección de Familia, Infancia y Capacidad (decisión 11)."
+     "texto": "Es competente el Juez de Primera Instancia (art. 78.2 LJV; art. 8.4 RD 1723/2012). Hoy, la Sección Civil del Tribunal de Instancia: el art. 86.5 j) LOPJ excluye este capítulo de la Sección de Familia, Infancia y Capacidad."
     },
     {
      "tipo": "aviso",

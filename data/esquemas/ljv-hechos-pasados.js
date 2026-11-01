@@ -97,7 +97,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Juzgado de Primera Instancia (art. 80 ter LJV). Hoy, la Sección Civil del Tribunal de Instancia (art. 85 LOPJ): por su objeto (hechos de cualquier naturaleza) no es materia de personas y familia del art. 86.5 j) LOPJ (criterio del juzgado)."
+             "t": "Juzgado de Primera Instancia (art. 80 ter LJV). Hoy, la Sección Civil del Tribunal de Instancia (art. 85 LOPJ): por su objeto (hechos de cualquier naturaleza) no es materia de personas y familia del art. 86.5 j) LOPJ."
             }
            ]
           }
@@ -232,7 +232,7 @@ Neg.data.register({
              "t": "En su defecto, será competente el Juzgado de Primera Instancia que corresponda al <strong>domicilio del solicitante</strong>, como fuero residual."
             },
             {
-             "t": "Hoy, la Sección Civil del Tribunal de Instancia (art. 85 LOPJ): por su objeto (hechos de cualquier naturaleza) no es materia de personas y familia del art. 86.5 j) LOPJ (criterio del juzgado)."
+             "t": "Hoy, la Sección Civil del Tribunal de Instancia (art. 85 LOPJ): por su objeto (hechos de cualquier naturaleza) no es materia de personas y familia del art. 86.5 j) LOPJ."
             }
            ]
           }

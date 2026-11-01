@@ -341,11 +341,11 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "El art. 110.3 LJV remite a la regulación de la LEC sobre realización por persona o entidad especializada, que la LO 1/2025 dejó sin contenido desde el 3-4-2025 (art. 22.54 de la LO 1/2025). La habilitación del art. 110.3 sigue vigente (decisión 13)."
+     "texto": "El art. 110.3 LJV remite a la regulación de la LEC sobre realización por persona o entidad especializada, que la LO 1/2025 dejó sin contenido desde el 3-4-2025 (art. 22.54 de la LO 1/2025). La habilitación del art. 110.3 sigue vigente."
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 110.3 LJV · Art. 22.54 LO 1/2025 · Decisión 13"
+     "texto": "Artículo 110.3 LJV · Art. 22.54 LO 1/2025"
     }
    ],
    "pregunta": "¿Qué modo de realización se solicita?",
@@ -373,7 +373,7 @@ Neg.data.register({
     },
     {
      "tipo": "lista",
-     "titulo": "Criterio del juzgado (decisión 13)",
+     "titulo": "Cómo se tramita tras la LO 1/2025",
      "items": [
       "Lo no regulado se integra con las normas compatibles de la LEC (art. 8 LJV); no se aplica mecánicamente el antiguo procedimiento de la LEC",
       "El art. 640 LEC (convenio de realización) sirve de referencia para las garantías: derechos de terceros, aprobación de la transmisión por el LAJ y tratamiento de las cargas",
@@ -388,7 +388,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 110.3 LJV · Artículos 8 LJV y 640 LEC · Decisión 13"
+     "texto": "Artículo 110.3 LJV · Artículos 8 LJV y 640 LEC"
     }
    ],
    "siguiente": "pliego"

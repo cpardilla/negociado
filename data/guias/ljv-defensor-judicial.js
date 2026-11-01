@@ -643,7 +643,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Criterio del juzgado. El art. 30.3 LJV remite a la letra c) del art. 27.1, suprimida por la Ley 8/2021, y el art. 74.1 LRC al art. 299 bis CC, derogado: ambos se leen hoy referidos al art. 295.4.º CC, que recoge el mismo supuesto."
+     "texto": "Remisiones desfasadas. El art. 30.3 LJV remite a la letra c) del art. 27.1, suprimida por la Ley 8/2021, y el art. 74.1 LRC al art. 299 bis CC, derogado: ambos se leen hoy referidos al art. 295.4.º CC, que recoge el mismo supuesto."
     },
     {
      "tipo": "ley",

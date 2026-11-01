@@ -121,6 +121,16 @@ test("data: titles carry no text from the old pages' toolbar", () => {
   }
 });
 
+test("data: no references to the internal work (decisions, owner's criteria, resource codes) in what the app shows", () => {
+  const INTERNAL = /decisi[oó]n\s*\d|criterio del (juzgado|propietario)|pendiente de criterio|\b[EG]\d{2}\b|roadmap|docs\//i;
+  const bad = [];
+  for (const { file, rec } of [...esquemas, ...guias])
+    for (const [where, s] of strings(rec))
+      // .revision is bookkeeping: the view shows only its state and BOE date.
+      if (!where.startsWith(".revision") && INTERNAL.test(s)) bad.push(`${file}${where}: «${s.match(INTERNAL)[0]}»`);
+  assert.deepEqual(bad.slice(0, 10), []);
+});
+
 test("BOE: every correction in sources/boe/correcciones.json is applied to its snapshot and reaches the law data", () => {
   const root = path.join(__dirname, "..");
   const { correcciones } = JSON.parse(fs.readFileSync(path.join(root, "sources", "boe", "correcciones.json"), "utf8"));
