@@ -77,15 +77,15 @@ Neg.data.register({
   "fin_sin_masc": {
    "fase": 0,
    "titulo": "Inadmisión: falta la actividad negociadora previa",
-   "actor": "laj",
+   "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
      "texto": "No se admiten las demandas cuando no se acompañan los documentos que la ley exige para su admisión o no consta haber acudido al medio adecuado de solución de controversias exigido como requisito de procedibilidad (art. 403.2 LEC)."
     },
     {
-     "tipo": "nota",
-     "texto": "El interesado puede acudir a un medio adecuado y presentar de nuevo la solicitud con su acreditación (art. 10 LO 1/2025)."
+     "tipo": "info",
+     "texto": "El Letrado de la Administración de Justicia da cuenta al Tribunal para que resuelva sobre la admisión (art. 404.2 LEC)."
     }
    ],
    "fin": "error"
@@ -1081,7 +1081,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Tribunal y el Letrado de la Administración de Justicia cuidarán de que puedan subsanarse los defectos de los actos procesales de las partes (art. 231 LEC)."
+     "texto": "El Tribunal y el Letrado de la Administración de Justicia cuidarán de que puedan subsanarse los defectos de los actos procesales de las partes (art. 231 LEC). Si el defecto no se subsana en el plazo que conceda el Letrado de la Administración de Justicia, este da cuenta al Tribunal para que resuelva sobre la admisión (art. 404.2 LEC)."
     },
     {
      "tipo": "nota",
@@ -1103,5 +1103,5 @@ Neg.data.register({
    ]
   }
  },
- "pie": "Arts. 782–789 LEC (división) · Arts. 792–796 LEC (intervención del caudal)<br>Art. 52.1.4.º LEC (competencia) · Arts. 264.4.º y 403.2 LEC y arts. 5, 7 y 10 LO 1/2025 (actividad negociadora previa)<br>Arts. 1056–1069 y 1082–1084 CC"
+ "pie": "Arts. 782–789 LEC (división) · Arts. 792–796 LEC (intervención del caudal)<br>Art. 52.1.4.º LEC (competencia) · Arts. 264.4.º, 403.2 y 404.2 LEC y arts. 5 y 7 LO 1/2025 (actividad negociadora previa)<br>Arts. 1056–1069 y 1082–1084 CC"
 });

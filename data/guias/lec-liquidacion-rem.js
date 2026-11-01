@@ -930,15 +930,15 @@ Neg.data.register({
   "fin_sin_masc": {
    "fase": 5,
    "titulo": "Inadmisión: falta la actividad negociadora previa",
-   "actor": "laj",
+   "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
      "texto": "No se admite cuando no consta haber acudido al medio adecuado de solución de controversias exigido como requisito de procedibilidad (art. 403.2 LEC)."
     },
     {
-     "tipo": "nota",
-     "texto": "El interesado puede acudir a un medio adecuado y presentar de nuevo la solicitud con su acreditación (art. 10 LO 1/2025)."
+     "tipo": "info",
+     "texto": "El LAJ da cuenta al Tribunal para que resuelva sobre la admisión (art. 404.2 LEC)."
     }
    ],
    "fin": "error"
@@ -950,7 +950,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Tribunal y el Letrado de la Administración de Justicia cuidarán de que puedan subsanarse los defectos de los actos procesales de las partes (art. 231 LEC)."
+     "texto": "El Tribunal y el Letrado de la Administración de Justicia cuidarán de que puedan subsanarse los defectos de los actos procesales de las partes (art. 231 LEC). Si el defecto no se subsana en el plazo que conceda el LAJ, este da cuenta al Tribunal para que resuelva sobre la admisión (art. 404.2 LEC)."
     },
     {
      "tipo": "nota",
@@ -972,5 +972,5 @@ Neg.data.register({
    ]
   }
  },
- "pie": "Arts. 806–811 LEC (y 784–788 por remisión del art. 810)<br>Arts. 264.4.º y 403.2 LEC y art. 5 LO 1/2025 (actividad negociadora previa)<br>Arts. 1392–1410 CC (gananciales) · Arts. 1411–1434 CC (participación)"
+ "pie": "Arts. 806–811 LEC (y 784–788 por remisión del art. 810)<br>Arts. 264.4.º, 403.2 y 404.2 LEC y art. 5 LO 1/2025 (actividad negociadora previa)<br>Arts. 1392–1410 CC (gananciales) · Arts. 1411–1434 CC (participación)"
 });

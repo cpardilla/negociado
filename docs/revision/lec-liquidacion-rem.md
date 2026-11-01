@@ -123,3 +123,14 @@ Corte del BOE: LEC a 07-10-2026; LO 1/2025 a 09-07-2026. Modifica la decisión 2
 | G05 | `subsanar_masc_inventario`, `subsanar_masc_liquidacion` | Pasos de subsanación | Retirados | — |
 
 Se mantienen la pregunta, la subsanación (`subsanar_masc_811`) y la inadmisión en la solicitud única del art. 811 LEC.
+
+## Corrección posterior (2026-11-01) · Decisión 24: inadmisión (art. 404.2 LEC) y frase sin respaldo en el art. 10 LO 1/2025
+
+Corte del BOE: LEC a 07-10-2026; LO 1/2025 a 09-07-2026.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| G05 | `fin_sin_masc` | **error** | Paso atribuido al LAJ | LAJ y Tribunal: el LAJ da cuenta al Tribunal, que resuelve sobre la admisión | LEC 404.2 |
+| G05 | `subsanar_masc_811` | incompleto | Sin decir qué ocurre si no se subsana | Si no se subsana en el plazo que conceda el LAJ, este da cuenta al Tribunal | LEC 404.2 |
+| G05 | `fin_sin_masc` | **cita** | «Puede acudir a un medio adecuado y presentar de nuevo la solicitud (art. 10 LO 1/2025)»: el art. 10 regula la acreditación del intento y la terminación sin acuerdo | Frase retirada | LO 1/2025 art. 10 |
+| G05 | pie | cita | Sin el art. 404.2 LEC | Añadido el art. 404.2 LEC | — |

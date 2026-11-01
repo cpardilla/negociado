@@ -141,3 +141,14 @@ Corte del BOE: LEC a 07-10-2026; LO 1/2025 a 09-07-2026. El propietario indica q
 |---|---|---|---|---|
 | G02 | `p0_subsanar_masc` (1) | Regla atribuida al «criterio, no vinculante» de la Junta Sectorial; «sin justificación alguna, no hay defecto que subsanar», sin fuente | Sin documento, no se admite (art. 403.2 LEC); los acuerdos, en una frase, a título orientativo y no vinculante | LEC 231, 403.2; acuerdos III.6 |
 | E02 | Art. 782 › Actividad negociadora previa | «Según el criterio, no vinculante» | Regla en el art. 231 LEC; los acuerdos, como orientación no vinculante | LEC 231; acuerdos III.6 |
+
+## Corrección posterior (2026-11-01) · Decisión 24: inadmisión (art. 404.2 LEC) y frase sin respaldo en el art. 10 LO 1/2025
+
+Corte del BOE: LEC a 07-10-2026; LO 1/2025 a 09-07-2026.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| G02 | `fin_sin_masc` | **error** | Paso atribuido al LAJ | LAJ y Tribunal: el LAJ da cuenta al Tribunal, que resuelve sobre la admisión | LEC 404.2 |
+| G02 | `p0_subsanar_masc` | incompleto | Sin decir qué ocurre si no se subsana | Si no se subsana en el plazo que conceda el LAJ, este da cuenta al Tribunal | LEC 404.2 |
+| G02 | `fin_sin_masc` | **cita** | «Puede acudir a un medio adecuado y presentar de nuevo la solicitud (art. 10 LO 1/2025)»: el art. 10 regula la acreditación del intento y la terminación sin acuerdo | Frase retirada | LO 1/2025 art. 10 |
+| G02 | pie | cita | Arts. 5, 7 y 10 LO 1/2025 | Arts. 5 y 7 LO 1/2025; añadido el art. 404.2 LEC | — |
