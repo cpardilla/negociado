@@ -372,6 +372,10 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "Juez de primera instancia o de lo mercantil, cuando proceda, del domicilio de la persona que hubiera de declarar, exhibir o intervenir en las diligencias (art. 257.1 LEC). Hoy, Sección Civil o de lo Mercantil del Tribunal de Instancia."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Domicilio: persona física, art. 50 LEC (y art. 40 CC: residencia habitual); persona jurídica, art. 51.1 LEC (y art. 41 CC)."
     }
    ],
    "siguiente": "conflicto_competencia"

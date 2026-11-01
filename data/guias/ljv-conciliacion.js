@@ -393,7 +393,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La competencia territorial se determina por el domicilio del requerido (art. 140.1). El domicilio se entiende como el lugar de residencia habitual (CC art. 40) y domicilio social para personas jurídicas."
+     "texto": "La competencia territorial se determina por el domicilio del requerido (art. 140.1 LJV). Persona física: su domicilio (art. 50.1 LEC), que es el lugar de residencia habitual (art. 40 CC). Persona jurídica: su domicilio (art. 51.1 LEC), que es el que fijen la ley o sus estatutos; en su defecto, donde esté su representación legal o ejerza sus principales funciones (art. 41 CC)."
     },
     {
      "tipo": "aviso",
@@ -446,7 +446,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 140.1, párrafo segundo, Ley 15/2015"
+     "texto": "Art. 140.1, párrafo segundo, Ley 15/2015; cf. art. 51.1 LEC"
     }
    ],
    "pregunta": "¿El requerido es persona jurídica con establecimiento en el domicilio del solicitante?",

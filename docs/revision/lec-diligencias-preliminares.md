@@ -123,3 +123,16 @@ El comprobador marca en la guía de diligencias preliminares 6 avisos y 10 «rev
 | 14 | comp_general | desfasado | Juzgado de Primera Instancia o de lo Mercantil | Hoy, Sección Civil o de lo Mercantil del Tribunal de Instancia | LO 1/2025 |
 
 Pasos retirados: `verificar_presupuestos`, `fin_no_admision`, `nuevas_diligencias`. Paso nuevo: `medida_3`. Una dirección guardada que apunte a un paso retirado lleva al paso guardado (comportamiento de la app ya probado).
+
+## Corrección posterior (2026-11-01) · Decisión 20: en competencia, la LEC antes que el CC
+
+Corte del BOE: LEC a 07-10-2026; CC a 07-09-2026.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| E01 | Art. 257.1 › Determinación del domicilio (persona física) | **error** | «Domicilio habitual (art. 40 CC); en su defecto, lugar de última residencia»: el art. 40 CC habla de residencia habitual y no contiene esa regla subsidiaria | Fuero de los arts. 50.1 y 50.2 LEC; el art. 40 CC, solo para definir el domicilio | LEC 50; CC 40 |
+| E01 | Ídem (persona jurídica) | incompleto | Solo el art. 41 CC | Art. 51.1 LEC y, para definir el domicilio, art. 41 CC | LEC 51.1; CC 41 |
+| E01 | Conexiones normativas y «Normas» de la ficha | orden | CC antes que LEC | Arts. 50 y 51 LEC, art. 53.2 LEC y después arts. 40 y 41 CC | Decisión 20 |
+| G01 | comp_general | incompleto | Sin decir cómo se determina el domicilio | Nota con los arts. 50 y 51.1 LEC y 40 y 41 CC | LEC 50, 51; CC 40, 41 |
+
+**Sin incorporar, pendiente del propietario**: si en las diligencias preliminares valen también los fueros adicionales del art. 50.3 LEC (empresarios y profesionales), del art. 51.1, segundo inciso, LEC (lugar de la relación jurídica con establecimiento o representante) y del art. 51.2 LEC (entes sin personalidad), dado que el art. 257.1 se refiere solo al domicilio de quien ha de intervenir.

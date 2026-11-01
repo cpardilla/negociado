@@ -927,10 +927,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Persona física: domicilio habitual (art. 40 CC); en su defecto, lugar de última residencia."
+             "t": "Persona física: su domicilio y, si no lo tiene en España, su residencia en España (art. 50.1 LEC); sin domicilio ni residencia en España, el lugar en que se encuentre o el de su última residencia en España y, si así no puede determinarse, el domicilio del actor (art. 50.2 LEC). El domicilio es el lugar de residencia habitual (art. 40 CC)."
             },
             {
-             "t": "Persona jurídica: el que fijen la ley o sus estatutos; en su defecto, donde esté su representación legal o ejerza sus principales funciones (art. 41 CC)."
+             "t": "Persona jurídica: el lugar de su domicilio (art. 51.1 LEC), que es el que fijen la ley o sus estatutos; en su defecto, donde esté su representación legal o ejerza sus principales funciones (art. 41 CC)."
             },
             {
              "t": "Varios requeridos con domicilios distintos: la ley no lo resuelve; suele aplicarse por analogía la elección entre los domicilios de los demandados (art. 53.2 LEC)."
@@ -972,17 +972,18 @@ Neg.data.register({
         "nota": {
          "tono": "t-info",
          "etiqueta": "Conexiones normativas",
-         "texto": "Art. 87 LOPJ (Secciones de lo Mercantil). Arts. 40 y 41 CC (domicilio). Art. 53.2 LEC (pluralidad de demandados). Reglamento Bruselas I bis (UE) 1215/2012: competencia judicial internacional en materia civil y mercantil."
+         "texto": "Art. 87 LOPJ (Secciones de lo Mercantil). Arts. 50 y 51 LEC (fuero general). Art. 53.2 LEC (pluralidad de demandados). Arts. 40 y 41 CC (domicilio). Reglamento Bruselas I bis (UE) 1215/2012: competencia judicial internacional en materia civil y mercantil."
         }
        }
       ],
       "referencias": [
        "Art. 87 LOPJ",
-       "Arts. 40–41 CC",
+       "Arts. 50–51 LEC",
        "Art. 53.2 LEC",
+       "Arts. 40–41 CC",
        "RB I bis 1215/2012"
       ],
-      "claves": "257.1 competencia juez primera instancia mercantil seccion civil tribunal de instancia domicilio requerido art 87 LOPJ foro especial"
+      "claves": "257.1 competencia juez primera instancia mercantil seccion civil tribunal de instancia domicilio requerido fuero general art 50 art 51 LEC art 87 LOPJ foro especial"
      }
     },
     {

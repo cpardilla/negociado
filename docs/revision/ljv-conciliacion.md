@@ -68,3 +68,14 @@ La guía cita «art. 140.3» (el art. 140 tiene dos apartados) y «art. 3.5» LJ
 | 14 | competencia_pj, inicio, fin_abuso, varios | impreciso | «Art. 140.1, párrafo cuarto», «STJUE Somafer»; fundamento en el «art. 39 CE»; «CC art. 11.2»; «JPI» | Párrafo segundo y acreditación del establecimiento; quitados; arts. 6.4 y 7.2 CC; secciones actuales; actores con nombre completo | LJV 140.1 |
 
 **Jurisprudencia retirada** (decisión 10), para reincorporarla con su ECLI si el propietario la aporta: STS 15-3-2004 (domicilio desconocido), STS 23-5-2000 y 14-3-2006 (prescripción), STS 12-7-2002 (avenencia parcial) y STJUE Somafer, 22-2-1979 (establecimiento secundario).
+
+## Corrección posterior (2026-11-01) · Decisión 20: en competencia, la LEC antes que el CC
+
+Corte del BOE: LEC a 07-10-2026; CC a 07-09-2026; LJV a 05-03-2026.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| G25 | competencia_domicilio | **error** | Domicilio como residencia habitual (art. 40 CC) y «domicilio social para personas jurídicas», sin fuente; «art. 140.1» sin ley, que la app no enlazaba | Arts. 50.1 y 51.1 LEC, con los arts. 40 y 41 CC para definir el domicilio; «art. 140.1 LJV» | LEC 50.1, 51.1; CC 40, 41 |
+| G25 | competencia_pj | incompleto | Solo el art. 140.1 LJV | Se añade «cf. art. 51.1 LEC», como ya hacía el esquema E28 | LEC 51.1 |
+
+E28 no cambia: cita el art. 51.1 LEC y no cita los arts. 40 y 41 CC.
