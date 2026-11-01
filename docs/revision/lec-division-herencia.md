@@ -130,3 +130,5 @@ Fuente: art. 231 LEC (corte a 07-10-2026) y acuerdos de la Junta Sectorial de Ma
 | Recurso | Lugar | Tipo | Antes | Ahora |
 |---|---|---|---|---|
 | G02 | p0_inicio | incompleto | «No» llevaba a la inadmisión en todo caso | Tercera salida para el defecto formal, con el paso nuevo `p0_subsanar_masc`: si se subsana, sigue; si no, inadmisión. Sin justificación alguna, inadmisión directa |
+
+Arrastre a E02 (mismo día, a petición del propietario): en la ficha del art. 782, línea sobre la subsanación de los defectos formales, con la misma fuente.

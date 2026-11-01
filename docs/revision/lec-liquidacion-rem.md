@@ -99,3 +99,5 @@ Fuente: art. 231 LEC (corte a 07-10-2026) y acuerdos de la Junta Sectorial de Ma
 | Recurso | Lugar | Tipo | Antes | Ahora |
 |---|---|---|---|---|
 | G05 | solicitud_inventario, solicitud_liquidacion, art811_solicitud | incompleto | «No» llevaba a la inadmisión en todo caso | Tercera salida para el defecto formal, con los pasos nuevos `subsanar_masc_inventario`, `subsanar_masc_liquidacion` y `subsanar_masc_811`: si se subsana, sigue; si no, inadmisión. Sin justificación alguna, inadmisión directa |
+
+Arrastre a E05 (mismo día, a petición del propietario): en la ficha del art. 806, línea sobre la subsanación de los defectos formales, con la misma fuente.

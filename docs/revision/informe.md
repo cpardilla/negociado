@@ -71,7 +71,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 
 - ✓ LJV (BOE a 05-03-2026): 2809
 - ✓ CC (BOE a 07-09-2026): 1282
-- ✓ LEC (BOE a 07-10-2026): 1176
+- ✓ LEC (BOE a 07-10-2026): 1178
 - ✓ LOPJ (BOE a 09-10-2026): 117
 - ✓ LPPD (BOE a 18-12-2025): 70
 - ✓ LTRANS (BOE a 20-12-2025): 62
