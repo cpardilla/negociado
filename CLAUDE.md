@@ -45,6 +45,6 @@ API de datos abiertos del BOE, legislación consolidada: `https://www.boe.es/dat
 
 ## Reglas de diseño (del propietario)
 
-- Sin barras de desplazamiento dentro de ventanas o paneles pequeños siempre que se pueda: altura natural y, si el contenido es largo, mostrar lo esencial con un enlace a la vista completa. Solo desplazan la columna de navegación y la página.
+- Sin barras de desplazamiento dentro de ventanas o paneles pequeños siempre que se pueda: altura natural y, si el contenido es largo, mostrar lo esencial con un enlace a la vista completa. Solo desplazan la columna de navegación y la página. Si no hay más remedio (un artículo largo en la ventana de la cita), se permite el desplazamiento vertical: el contenido nunca se corta.
 - Cabecera de 64 px, con el buscador holgado (no apretado).
 - Contraste mínimo WCAG AA (4,5:1) en ambos temas: lo comprueba `tests/contrast.test.js`.

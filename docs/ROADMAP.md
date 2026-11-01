@@ -299,6 +299,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-11-01 · Ventana de la cita: nunca más alta que la pantalla; si el artículo no cabe, desplaza su texto con la cabecera y el pie fijos (antes un artículo largo, como el 158 CC, quedaba cortado). Regla de diseño precisada en `CLAUDE.md`.
 - 2026-11-01 · Fuera de la app toda referencia al trabajo interno (petición del propietario): 24 textos en 13 ficheros (6 esquemas, 7 guías) que citaban «decisión N» o «criterio del juzgado»; mismo contenido jurídico, redactado sin etiquetas. Nuevo test en `tests/data.test.js` que lo impide en adelante.
 - 2026-11-01 · Estilos: rejillas con `auto-fit` en vez de `auto-fill` (tarjetas, grupos, mapa, accesos): ocupan todo el ancho sin columnas vacías a la derecha.
 - 2026-11-01 · Cabecera: recuperados el zoom del contenido (50–200 %, teclado, recordado), «Nueva pestaña» y «Pantalla completa» de la versión anterior; ocultos en tabletas y móviles.
