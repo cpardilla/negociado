@@ -23,6 +23,7 @@ Rediseñar la app por completo conservando lo que funciona de la base actual (as
 - **Separar siempre la forma del fondo**: la migración al nuevo formato no cambia ni una palabra del contenido; la revisión jurídica se hace después, en commits propios, para que cada corrección sea visible y revisable por separado.
 - Cada corrección de contenido queda registrada con su **fuente** (precepto y versión del BOE) en el registro de revisión (sección 6.4).
 - Las decisiones jurídicas dudosas (eliminar un paso, interpretar un precepto discutido, práctica del juzgado) **se consultan al propietario**; no se deciden en silencio.
+- **Lo interno no llega a la app**: números de decisión, «criterio del propietario/del juzgado», códigos de recurso (E14, G10), fases o referencias a este documento se quedan en `docs/`. En la app, el contenido se redacta tal cual (lo vigila `tests/data.test.js`).
 - **Cada implementación (uno o varios pasos) va seguida de una auditoría completa** —segunda vuelta en busca de fallos existentes o introducidos y de despistes— **y de una batería de tests**; el informe de cada paso recoge ambas.
 - Agenda y Plantillas no se modifican nunca (solo se leen como referencia).
 - Push a GitHub solo cuando el propietario lo pida. **`main` es la web publicada** (GitHub Pages, https://cpardilla.github.io/negociado/): el rediseño se hace en una rama propia (`rediseno`) y solo se lleva a `main` con visto bueno, por bloques completos que funcionen. Así la web nunca queda a medias.
@@ -298,6 +299,8 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-11-01 · Fuera de la app toda referencia al trabajo interno (petición del propietario): 24 textos en 13 ficheros (6 esquemas, 7 guías) que citaban «decisión N» o «criterio del juzgado»; mismo contenido jurídico, redactado sin etiquetas. Nuevo test en `tests/data.test.js` que lo impide en adelante.
+- 2026-11-01 · Estilos: rejillas con `auto-fit` en vez de `auto-fill` (tarjetas, grupos, mapa, accesos): ocupan todo el ancho sin columnas vacías a la derecha.
 - 2026-11-01 · Cabecera: recuperados el zoom del contenido (50–200 %, teclado, recordado), «Nueva pestaña» y «Pantalla completa» de la versión anterior; ocultos en tabletas y móviles.
 - 2026-11-01 · Menú lateral rehecho según el índice de cada ley (ruta de cada recurso en el catálogo; orden y jerarquía de Libro/Título/Capítulo/Sección; sin carpetas de un elemento; entradas alineadas).
 - 2026-11-01 · Estilos: texto de los artículos justificado (visor de la ley y ventana de la cita), a petición del propietario.
