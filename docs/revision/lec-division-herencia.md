@@ -122,3 +122,11 @@ Corte del BOE: LO 1/2025 a 09-07-2026; LEC a 07-10-2026. Criterio del propietari
 | Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
 |---|---|---|---|---|---|
 | E02 | Artículo 782 › nuevo apartado | incompleto | Sin el requisito, que G02 sí recogía | Actividad negociadora previa: exigencia, medios y acreditación, con el mismo contenido que G02 | LO 1/2025 art. 5.1 y 5.2; LEC 264.4.º, 403.2 |
+
+## Corrección posterior (2026-11-01) · Decisión 23: subsanación de la justificación (G02)
+
+Fuente: art. 231 LEC (corte a 07-10-2026) y acuerdos de la Junta Sectorial de Magistrados de las Secciones de Familia de la Audiencia Provincial de Madrid de 6-11-2025, III.6 («Con carácter previo a la admisión de demandas, los defectos formales en la justificación del intento de MASC son subsanables (art. 231 LEC)»), comprobado en el PDF original. No vinculante, y la app lo dice. El art. 231 LEC no fija plazo: no se indica ninguno.
+
+| Recurso | Lugar | Tipo | Antes | Ahora |
+|---|---|---|---|---|
+| G02 | p0_inicio | incompleto | «No» llevaba a la inadmisión en todo caso | Tercera salida para el defecto formal, con el paso nuevo `p0_subsanar_masc`: si se subsana, sigue; si no, inadmisión. Sin justificación alguna, inadmisión directa |

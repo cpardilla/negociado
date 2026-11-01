@@ -91,3 +91,11 @@ Corte del BOE: LO 1/2025 a 09-07-2026; LEC a 07-10-2026. Criterio del propietari
 | G05 | solicitud_inventario, solicitud_liquidacion, art811_solicitud | Sin comprobación | Pregunta «¿Se acredita…?»; si no, paso nuevo `fin_sin_masc` |
 
 **Sin incorporar**: la STS 703/2015, de 21 de diciembre, que se aportó como apoyo de la autonomía de inventario y liquidación: no se ha podido localizar (decisión 10; se puede añadir con su ECLI).
+
+## Corrección posterior (2026-11-01) · Decisión 23: subsanación de la justificación (G05)
+
+Fuente: art. 231 LEC (corte a 07-10-2026) y acuerdos de la Junta Sectorial de Magistrados de las Secciones de Familia de la Audiencia Provincial de Madrid de 6-11-2025, III.6 («Con carácter previo a la admisión de demandas, los defectos formales en la justificación del intento de MASC son subsanables (art. 231 LEC)»), comprobado en el PDF original. No vinculante, y la app lo dice. El art. 231 LEC no fija plazo: no se indica ninguno.
+
+| Recurso | Lugar | Tipo | Antes | Ahora |
+|---|---|---|---|---|
+| G05 | solicitud_inventario, solicitud_liquidacion, art811_solicitud | incompleto | «No» llevaba a la inadmisión en todo caso | Tercera salida para el defecto formal, con los pasos nuevos `subsanar_masc_inventario`, `subsanar_masc_liquidacion` y `subsanar_masc_811`: si se subsana, sigue; si no, inadmisión. Sin justificación alguna, inadmisión directa |

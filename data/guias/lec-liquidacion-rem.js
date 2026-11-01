@@ -166,6 +166,11 @@ Neg.data.register({
      "destino": "senalamiento_inventario"
     },
     {
+     "texto": "Se aporta, pero la justificación tiene un defecto formal",
+     "tono": "t-plazo",
+     "destino": "subsanar_masc_inventario"
+    },
+    {
      "texto": "No",
      "tono": "t-aviso",
      "destino": "fin_sin_masc"
@@ -413,6 +418,11 @@ Neg.data.register({
      "texto": "Sí",
      "tono": "t-ok",
      "destino": "senalamiento_liquidacion"
+    },
+    {
+     "texto": "Se aporta, pero la justificación tiene un defecto formal",
+     "tono": "t-plazo",
+     "destino": "subsanar_masc_liquidacion"
     },
     {
      "texto": "No",
@@ -736,6 +746,11 @@ Neg.data.register({
      "destino": "art811_senalamiento"
     },
     {
+     "texto": "Se aporta, pero la justificación tiene un defecto formal",
+     "tono": "t-plazo",
+     "destino": "subsanar_masc_811"
+    },
+    {
      "texto": "No",
      "tono": "t-aviso",
      "destino": "fin_sin_masc"
@@ -961,6 +976,90 @@ Neg.data.register({
     }
    ],
    "fin": "error"
+  },
+  "subsanar_masc_inventario": {
+   "fase": 1,
+   "titulo": "Subsanación del defecto en la justificación (art. 231 LEC)",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El Tribunal y el Letrado de la Administración de Justicia cuidarán de que puedan subsanarse los defectos de los actos procesales de las partes (art. 231 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Antes de admitir, los defectos formales en la justificación del intento son subsanables, según el criterio, no vinculante, de la Junta Sectorial de Magistrados de las Secciones de Familia de la Audiencia Provincial de Madrid (acuerdo de 6-11-2025, III.6). Si no se aporta justificación alguna, no hay defecto que subsanar."
+    }
+   ],
+   "pregunta": "¿Se subsana el defecto?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "senalamiento_inventario"
+    },
+    {
+     "texto": "No",
+     "tono": "t-aviso",
+     "destino": "fin_sin_masc"
+    }
+   ]
+  },
+  "subsanar_masc_liquidacion": {
+   "fase": 2,
+   "titulo": "Subsanación del defecto en la justificación (art. 231 LEC)",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El Tribunal y el Letrado de la Administración de Justicia cuidarán de que puedan subsanarse los defectos de los actos procesales de las partes (art. 231 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Antes de admitir, los defectos formales en la justificación del intento son subsanables, según el criterio, no vinculante, de la Junta Sectorial de Magistrados de las Secciones de Familia de la Audiencia Provincial de Madrid (acuerdo de 6-11-2025, III.6). Si no se aporta justificación alguna, no hay defecto que subsanar."
+    }
+   ],
+   "pregunta": "¿Se subsana el defecto?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "senalamiento_liquidacion"
+    },
+    {
+     "texto": "No",
+     "tono": "t-aviso",
+     "destino": "fin_sin_masc"
+    }
+   ]
+  },
+  "subsanar_masc_811": {
+   "fase": 4,
+   "titulo": "Subsanación del defecto en la justificación (art. 231 LEC)",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El Tribunal y el Letrado de la Administración de Justicia cuidarán de que puedan subsanarse los defectos de los actos procesales de las partes (art. 231 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Antes de admitir, los defectos formales en la justificación del intento son subsanables, según el criterio, no vinculante, de la Junta Sectorial de Magistrados de las Secciones de Familia de la Audiencia Provincial de Madrid (acuerdo de 6-11-2025, III.6). Si no se aporta justificación alguna, no hay defecto que subsanar."
+    }
+   ],
+   "pregunta": "¿Se subsana el defecto?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "art811_senalamiento"
+    },
+    {
+     "texto": "No",
+     "tono": "t-aviso",
+     "destino": "fin_sin_masc"
+    }
+   ]
   }
  },
  "pie": "Arts. 806–811 LEC (y 784–788 por remisión del art. 810)<br>Arts. 264.4.º y 403.2 LEC y art. 5 LO 1/2025 (actividad negociadora previa)<br>Arts. 1392–1410 CC (gananciales) · Arts. 1411–1434 CC (participación)"

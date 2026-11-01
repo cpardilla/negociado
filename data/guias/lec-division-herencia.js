@@ -63,6 +63,11 @@ Neg.data.register({
      "destino": "p0_legitimacion"
     },
     {
+     "texto": "Se aporta, pero la justificación tiene un defecto formal",
+     "tono": "t-plazo",
+     "destino": "p0_subsanar_masc"
+    },
+    {
      "texto": "No",
      "tono": "t-aviso",
      "destino": "fin_sin_masc"
@@ -1068,6 +1073,34 @@ Neg.data.register({
     }
    ],
    "fin": "neutral"
+  },
+  "p0_subsanar_masc": {
+   "fase": 0,
+   "titulo": "Subsanación del defecto en la justificación (art. 231 LEC)",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El Tribunal y el Letrado de la Administración de Justicia cuidarán de que puedan subsanarse los defectos de los actos procesales de las partes (art. 231 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Antes de admitir, los defectos formales en la justificación del intento son subsanables, según el criterio, no vinculante, de la Junta Sectorial de Magistrados de las Secciones de Familia de la Audiencia Provincial de Madrid (acuerdo de 6-11-2025, III.6). Si no se aporta justificación alguna, no hay defecto que subsanar."
+    }
+   ],
+   "pregunta": "¿Se subsana el defecto?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "p0_legitimacion"
+    },
+    {
+     "texto": "No",
+     "tono": "t-aviso",
+     "destino": "fin_sin_masc"
+    }
+   ]
   }
  },
  "pie": "Arts. 782–789 LEC (división) · Arts. 792–796 LEC (intervención del caudal)<br>Art. 52.1.4.º LEC (competencia) · Arts. 264.4.º y 403.2 LEC y arts. 5, 7 y 10 LO 1/2025 (actividad negociadora previa)<br>Arts. 1056–1069 y 1082–1084 CC"
