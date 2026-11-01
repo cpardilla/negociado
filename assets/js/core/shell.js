@@ -15,17 +15,51 @@
   }
   const link = (href, label, tag) => `<a class="nav-item" href="${esc(href)}"><span>${esc(label)}</span>${tag ? `<span class="tag">${esc(tag)}</span>` : ""}</a>`;
 
-  /** Esquemas or guías of one law, grouped by their division (Título…). */
+  /** «TÍTULO II» → «Título II», «CAPÍTULO I BIS» → «Cap. I bis» (short: «Tít. II»). */
+  function division(num, short) {
+    const [first, ...rest] = num.trim().split(/\s+/);
+    const name = { TÍTULO: short ? "Tít." : "Título", CAPÍTULO: "Cap.", LIBRO: "Libro", SECCIÓN: "Secc." }[first.toUpperCase()] || first;
+    return [name, ...rest.map((w) => (/^[IVXLC]+$/.test(w) ? w : w.toLowerCase()))].join(" ").replace(/ preliminar$/, " Preliminar");
+  }
+
+  /** Esquemas or guías of one law, placed as the law's own index places them (catalogo `ruta`:
+   *  the divisions that contain every article of the resource). A division holding a single
+   *  division or a single resource is merged with it, so there are no one-item folders; the rest
+   *  are folders, in the law's order, and every entry of a level lines up with its peers. */
   function resources(kind, items, ley) {
-    const mine = items.filter((r) => r.ley === ley);
-    const byGroup = new Map();
-    for (const r of mine) byGroup.set(r.grupo || "", [...(byGroup.get(r.grupo || "") || []), r]);
-    let html = "";
-    for (const [grupo, list] of byGroup) {
-      if (list.length === 1 || !grupo) html += list.map((r) => link(Neg.href(kind, r.id), r.corto || r.titulo)).join("");
-      else html += navGroup(`${kind}/${ley}/${grupo}`, `${grupo} (${list.length})`, list.map((r) => link(Neg.href(kind, r.id), r.corto || r.titulo)).join(""));
+    const root = { kids: [] };
+    for (const r of items.filter((x) => x.ley === ley)) {
+      let node = root;
+      for (const d of r.ruta || []) {
+        let next = node.kids.find((k) => !k.res && k.num === d.num);
+        if (!next) node.kids.push((next = { num: d.num, t: d.t, kids: [] }));
+        node = next;
+      }
+      node.kids.push({ res: r });
     }
-    return html;
+    const under = (n) => (n.res ? [n.res] : n.kids.flatMap(under));
+    const leaf = (r, chain) => {
+      const name = r.corto || r.titulo;
+      const where = chain.map((d) => division(d.num, chain.length > 1)).join(" › ");
+      const label = !where || name.startsWith(division(chain[chain.length - 1].num)) ? name : `${where} · ${name}`;
+      return `<a class="nav-item" href="${esc(Neg.href(kind, r.id))}"><span class="chev-space"></span><span>${esc(label)}</span></a>`;
+    };
+    const render = (kids) =>
+      kids
+        .map((k) => {
+          if (k.res) return leaf(k.res, []);
+          const chain = [k];
+          while (chain[chain.length - 1].kids.length === 1 && !chain[chain.length - 1].kids[0].res) chain.push(chain[chain.length - 1].kids[0]);
+          const last = chain[chain.length - 1];
+          if (last.kids.length === 1) return leaf(last.kids[0].res, chain);
+          const list = under(last);
+          const grupo = list[0].grupo;
+          const where = chain.map((d) => division(d.num, chain.length > 1)).join(" › ");
+          const label = grupo && list.every((r) => r.grupo === grupo) && grupo.startsWith(division(last.num)) ? grupo : `${where} · ${last.t}`;
+          return navGroup(`${kind}/${ley}/${chain.map((d) => d.num).join("/")}`, `${label} (${list.length})`, render(last.kids));
+        })
+        .join("");
+    return render(root.kids);
   }
 
   function sidebar(cat) {

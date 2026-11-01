@@ -52,6 +52,8 @@ test("data: ids unique, file names match ids, catalogue complete", () => {
   for (const { file, rec } of esquemas) assert.equal(file, `${rec.id}.js`);
   assert.deepEqual(catalogo.esquemas.map((e) => e.id).sort(), ids.sort(), "el catálogo lista exactamente los esquemas que hay");
   for (const e of catalogo.esquemas) assert.ok(e.articulos.length, `${e.id}: artículos de su ámbito`);
+  // The side menu places each resource where the law's index places it (catalogo `ruta`).
+  for (const r of [...catalogo.esquemas, ...catalogo.guias]) assert.ok(r.ruta && r.ruta.length, `${r.id}: sin ruta en el índice de la ley (menú lateral)`);
 });
 
 test("data: every card and block has what the view needs", () => {

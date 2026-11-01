@@ -148,6 +148,11 @@
 .nav-item .tag {
   margin-left: auto;
 }
+/* An entry without a chevron keeps its place, so it lines up with the folders of its level. */
+.nav-item .chev-space {
+  flex-shrink: 0;
+  width: 14px;
+}
 .nav-sub {
   padding-left: var(--sp-4);
 }

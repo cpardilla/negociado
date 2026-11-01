@@ -56,7 +56,25 @@ const byLaw = (a, b) => {
   const [lb, ib] = position(b);
   return la - lb || ia - ib || a.titulo.localeCompare(b.titulo, "es");
 };
-const entry = (r) => ({ id: r.id, ley: r.ley, grupo: r.grupo || "", titulo: r.titulo, corto: r.corto || r.titulo, articulos: r.articulos || [] });
+/** Where a resource sits in its law's index: the divisions (Libro, Título, Capítulo, Sección…)
+ *  that contain every article it covers, outermost first. The menu is built from it, so it
+ *  follows the law's own hierarchy. */
+function ruta(r) {
+  const law = lawById.get(r.ley);
+  const arts = (r.articulos || []).filter((a) => law && law.orden.includes(a));
+  if (!law || !law.estructura || !arts.length) return [];
+  const all = (node) => node.h.flatMap((x) => (typeof x === "string" ? [x] : all(x)));
+  const walk = (nodes, path) => {
+    for (const d of nodes) {
+      if (typeof d === "string") continue;
+      const has = new Set(all(d));
+      if (arts.every((a) => has.has(a))) return walk(d.h, [...path, { num: d.num, t: d.t }]);
+    }
+    return path;
+  };
+  return walk(law.estructura, []);
+}
+const entry = (r) => ({ id: r.id, ley: r.ley, grupo: r.grupo || "", titulo: r.titulo, corto: r.corto || r.titulo, articulos: r.articulos || [], ruta: ruta(r) });
 
 const catalogo = {
   tipo: "catalogo",
