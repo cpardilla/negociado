@@ -51,7 +51,7 @@ API de datos abiertos del BOE, legislación consolidada: `https://www.boe.es/dat
 - Lo interno no llega a la app: números de decisión, «criterio del propietario» o del juzgado, códigos de recurso (E14, G10), fases o referencias a `docs/` se quedan en `docs/`. Lo vigila `tests/data.test.js`.
 - Construir HTML siempre escapando el texto (una única función compartida) o con APIs del DOM.
 - En expresiones regulares, nada de escapes `\uXXXX` escritos con la herramienta de edición (los convierte en caracteres literales invisibles): usar clases Unicode (`\p{M}`, `\p{L}` con la bandera `u`). Lo vigila un test.
-- Un solo analizador de citas (`assets/js/core/citas.js`) para la app y las herramientas.
+- Un solo analizador de citas (`assets/js/core/citas.js`) para la app y las herramientas. En un bloque de normas de un esquema, una cita sin ley es de la ley que nombra el bloque; si es de otra, se escribe su ley (lo vigila `tests/data.test.js`).
 
 ## Reglas de diseño (del propietario)
 
