@@ -89,7 +89,9 @@ function parseLaw(xml, today) {
   return bloques;
 }
 
-async function fetchLaw({ clave, id }, today) {
+/** The snapshot of one law as the BOE gives it today, known consolidation errors corrected
+ *  (sources/boe/correcciones.json). Nothing is written: tools/boe-diff.js compares it. */
+async function snapshot({ clave, id }, today) {
   const meta = await get(`${API}${id}/metadatos`, "application/xml");
   const field = (name) => decode((meta.match(new RegExp(`<${name}[^>]*>([\\s\\S]*?)</${name}>`)) || [])[1] || "");
   const titulo = field("titulo");
@@ -106,23 +108,26 @@ async function fetchLaw({ clave, id }, today) {
     url: `https://www.boe.es/buscar/act.php?id=${id}`,
     bloques,
   };
-  fs.mkdirSync(OUT, { recursive: true });
-  // Known BOE consolidation errors are corrected before saving (sources/boe/correcciones.json).
   await require("./lib/boe-correcciones").corregir(snapshot);
-  fs.writeFileSync(path.join(OUT, `${clave}.json`), JSON.stringify(snapshot, null, 1) + "\n");
+  return snapshot;
+}
+
+async function fetchLaw(ley, today) {
+  const snap = await snapshot(ley, today);
+  const { clave, id, titulo, bloques } = snap;
+  fs.mkdirSync(OUT, { recursive: true });
+  fs.writeFileSync(path.join(OUT, `${clave}.json`), JSON.stringify(snap, null, 1) + "\n");
   const pendientes = bloques.filter((b) => b.pendiente).map((b) => b.id);
   console.log(
-    `${clave.padEnd(8)} ${id.padEnd(17)} actualizada ${snapshot.fecha_actualizacion} · ${bloques.length} bloques` +
+    `${clave.padEnd(8)} ${id.padEnd(17)} actualizada ${snap.fecha_actualizacion} · ${bloques.length} bloques` +
       (pendientes.length ? ` · ${pendientes.length} con versión aún no vigente: ${pendientes.join(", ")}` : "") +
-      (snapshot.derogada ? " · DEROGADA" : "") +
+      (snap.derogada ? " · DEROGADA" : "") +
       `\n         ${titulo}`
   );
 }
 
-if (require.main !== module) {
-  module.exports = { get, parseVersion, API };
-  return;
-}
+module.exports = { get, parseVersion, snapshot, API };
+if (require.main !== module) return;
 
 (async () => {
   const leyes = JSON.parse(fs.readFileSync(path.join(__dirname, "leyes.json"), "utf8"));

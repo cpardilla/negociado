@@ -318,3 +318,21 @@ test("run-tests: failed test names are read from the spec output (no duplicates,
   ].join("\n");
   assert.deepEqual(failures(out), ["[http] falla aquí", "sub falla"]);
 });
+
+test("boe-diff: a new version, an announced one and a removed block are found, with who cites them", () => {
+  const { report, citing } = require("../tools/boe-diff");
+  const old = JSON.parse(fs.readFileSync(path.join(ROOT, "sources", "boe", "LJV.json"), "utf8"));
+  const now = JSON.parse(JSON.stringify(old));
+  const block = (id) => now.bloques.find((b) => b.id === id);
+  Object.assign(block("a140"), { vigencia: "20270101", norma: "BOE-A-2099-1" });
+  block("a110").pendiente = { vigencia: "20270601", norma: "BOE-A-2099-2", parrafos: [], notas: [] };
+  now.bloques = now.bloques.filter((b) => b.id !== "a148");
+  // Same text with its accents decomposed (older snapshots): not a change.
+  block("a139").parrafos = block("a139").parrafos.map(([c, t]) => [c, t.normalize("NFD")]);
+  const r = report("LJV", old, now, citing());
+  const by = Object.fromEntries(r.cambios.map((c) => [`${c.bloque} ${c.tipo}`, c]));
+  assert.deepEqual(Object.keys(by).sort(), ["a110 pendiente", "a140 modificado", "a148 suprimido"]);
+  assert.deepEqual(by["a140 modificado"].articulos, ["140"]);
+  assert.ok(by["a140 modificado"].citan.includes("Esquema ljv-conciliacion") && by["a140 modificado"].citan.includes("Guía ljv-conciliacion"), "lo citan el esquema y la guía de conciliación");
+  assert.ok(by["a110 pendiente"].citan.includes("Guía ljv-subastas"));
+});
