@@ -254,8 +254,12 @@ Mismo método; además, pasos que faltan y sobran (criterio 6.3) y los 9 huérfa
 | G24 | LJV · Título VII — Subastas voluntarias | art. 641 LEC (sin contenido) × 5; «Secretario judicial» × 14 | ✅ 2026-10-31 · decisión 13 aplicada (art. 641 sin contenido; habilitación del art. 110.3; art. 640 como referencia); pliego y LEC en el orden del art. 111.5; recursos de revisión; quitado lo inventado ([registro](revision/ljv-subastas.md)) |
 | G25 | LJV · Título IX — Conciliación | «art. 140.3», «art. 3.5»; «JPI» × 3; umbral de cuantía | ✅ 2026-10-31 · decisión 14 aplicada (Juez de Paz por debajo de 10.000 €, art. 47.2 LEC); sin «cosa juzgada» del art. 1216 CC; última residencia solo si no hay domicilio en España; mandato expreso para transigir (art. 1713 CC); plazos inventados y jurisprudencia retirados ([registro](revision/ljv-conciliacion.md)) |
 
-### Fase 6 · Interfaz: homogeneización y mejoras ☐
-Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de uso que se decidan tras ver la versión migrada: referencias vivas, enlace directo a cada paso, progreso de la guía guardado, impresión de un recorrido como hoja de tramitación, accesibilidad (teclado, contraste ≥ 4,5:1, foco visible).
+### Fase 6 · Interfaz: homogeneización y mejoras ✅
+Se fue aplicando con los motores (fase 1) y el repaso de estilos; el 2026-11-01 se completó con las propuestas pendientes que aprobó el propietario:
+1. ✅ Referencias vivas, enlace directo a cada paso y progreso de la guía guardado (fase 1).
+2. ✅ **Inicio**: accesos a lo más usado (diligencias preliminares, división de la herencia, conciliación: esquema y guía) y a los seis últimos recursos visitados en este navegador (`negociado.recientes`, solo tipo e id; botón «Vaciar»).
+3. ✅ **Hoja de tramitación**: imprimir una guía (botón o Ctrl+P) imprime el recorrido seguido —cada paso con fase, actor, bloques, casillas y la decisión tomada— con la fecha de impresión.
+4. ✅ **Accesibilidad**: anillo de foco ≥ 3:1 en ambos temas, «Saltar al contenido», foco al título del paso tras elegir una opción y al título de la página cuando el control desaparece, aviso del nombre de la página nueva (la vista ya no es una región viva entera), estado de las fichas (`aria-expanded` en su botón), encabezados sin saltos, sin animaciones con «reducir movimiento». Lo vigila un test en navegador (`file://` y http).
 
 ### Fase 7 · Cobertura nueva (propuestas — a decidir) ☐
 - LJV Título III (familia) y Título VIII (mercantil): esquema y guía — con ellos la LJV quedaría completa.
@@ -263,15 +267,15 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - LEC: otros procedimientos de uso frecuente en el Negociado (el propietario indica cuáles).
 
 ## 8. Otras sugerencias (a valorar)
-1. **Referencias vivas** al texto literal (sección 5) — probablemente la de mayor valor para el día a día.
-2. **Buscador global** en leyes, esquemas y guías, insensible a tildes.
-3. **Aviso de desactualización**: cada recurso muestra la fecha de corte del BOE con la que se revisó; el comparador (sección 9) indica qué artículos citados han cambiado después.
+1. ✅ **Referencias vivas** al texto literal (sección 5) — probablemente la de mayor valor para el día a día.
+2. ✅ **Buscador global** en leyes, esquemas y guías, insensible a tildes.
+3. ✅ **Aviso de desactualización**: cada recurso muestra la fecha de corte del BOE con la que se revisó; el comparador (sección 9) indica qué artículos citados han cambiado después.
 4. **Modelos de resolución** (diligencias, decretos) como bloque de las guías, enlazables con Plantillas — *solo si encaja con Plantillas; a hablar*.
-5. Impresión cuidada de esquemas y de un recorrido de guía.
+5. ✅ Impresión cuidada de esquemas y de un recorrido de guía.
 6. Enlace con Agenda: los plazos de una guía muestran «N días hábiles» con la misma regla (sin escribir nunca datos de Agenda).
 
 ## 9. Mantenimiento posterior
-- `tools/boe-fetch.js` + `tools/boe-diff.js`: vuelve a descargar las leyes, lista los artículos modificados desde la última fecha de corte y los recursos que los citan → lista de trabajo de actualización.
+- ✅ `tools/boe-diff.js` (2026-11-01): descarga cada ley sin tocar `sources/boe/`, la compara bloque a bloque con su instantánea y lista las versiones nuevas, las publicadas aún no vigentes y los bloques añadidos o suprimidos, cada uno con los esquemas y guías que citan sus artículos (`--out=…md` para el informe; `--desde=carpeta` sin conexión). Después, `tools/boe-fetch.js` actualiza las instantáneas. Primera pasada (2026-11-01): ningún artículo cambiado en las 34 leyes; la LEC y la CE tienen fecha de actualización nueva en el BOE (29-10-2026) sin cambios en su articulado.
 - `tools/check-content.js` y los tests en navegador antes de cada commit.
 
 ## 10. Decisiones del propietario
@@ -299,6 +303,7 @@ Se va aplicando con los motores (fase 1), pero aquí se recogen las mejoras de u
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-11-01 · Propuestas pendientes aprobadas y hechas: accesos de inicio (propuesta 7), hoja de tramitación impresa, accesibilidad y comparador del BOE (`tools/boe-diff.js`). **Fase 6 completa.** Pendientes de hablar: plazos en días hábiles (Agenda) y modelos de resolución (Plantillas).
 - 2026-11-01 · Ventana de la cita: nunca más alta que la pantalla; si el artículo no cabe, desplaza su texto con la cabecera y el pie fijos (antes un artículo largo, como el 158 CC, quedaba cortado). Regla de diseño precisada en `CLAUDE.md`.
 - 2026-11-01 · Fuera de la app toda referencia al trabajo interno (petición del propietario): 24 textos en 13 ficheros (6 esquemas, 7 guías) que citaban «decisión N» o «criterio del juzgado»; mismo contenido jurídico, redactado sin etiquetas. Nuevo test en `tests/data.test.js` que lo impide en adelante.
 - 2026-11-01 · Estilos: rejillas con `auto-fit` en vez de `auto-fill` (tarjetas, grupos, mapa, accesos): ocupan todo el ancho sin columnas vacías a la derecha.
