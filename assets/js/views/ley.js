@@ -80,6 +80,28 @@
     </article>`;
   }
 
+  /** "Lo citan": the other esquemas and guías whose text cites the article (data/citados.js), each
+   *  linked to the card or step that cites it. Those with their own button above are left out. */
+  function citedHtml(law, key, own) {
+    const idx = Neg.data.get("catalogo", "citados");
+    const list = ((idx && idx.leyes[law.id]) || {})[key] || [];
+    const cat = Neg.catalogo;
+    const items = list
+      .filter(([k, id]) => !own.includes(`${k}:${id}`))
+      .map(([k, id, loc]) => {
+        const r = (k === "e" ? cat.esquemas : cat.guias).find((x) => x.id === id);
+        if (!r) return "";
+        const href = Neg.href(k === "e" ? "esquema" : "guia", id, loc || null);
+        return `<a class="cited-link" href="${href}"><span class="tag ${k === "e" ? "c1" : "c3"}">${k === "e" ? "Esquema" : "Guía"}</span>${esc(r.ley)} · ${esc(r.corto)}</a>`;
+      })
+      .filter(Boolean);
+    // The essential first: six, and the rest one click away, in place (no inner scroll).
+    const SHOWN = 6;
+    const more = items.length - SHOWN;
+    const html = items.map((x, i) => (i < SHOWN ? x : x.replace('<a class="cited-link"', '<a class="cited-link" hidden'))).join("");
+    return items.length ? `<div class="cited"><span class="cited-label">Lo citan</span>${html}${more > 0 ? `<button class="cited-more" data-action="cited-more">y ${more} más</button>` : ""}</div>` : "";
+  }
+
   function articleHtml(law, key, words) {
     const a = law.articulos[key];
     if (!a) return Neg.message("Artículo no encontrado", `La ${law.id} no tiene artículo ${key}.`);
@@ -92,12 +114,14 @@
       : `Redacción original, vigente desde ${Neg.fecha(a.v)}`;
     const { esquemas, guias } = Neg.leyes.recursos(law.id, key);
     const links = [...esquemas.map((r) => `<a class="btn" href="${Neg.href("esquema", r.id, key)}">Esquema</a>`), ...guias.map((r) => `<a class="btn" href="${Neg.href("guia", r.id)}">Guía</a>`)].join("");
+    const cited = citedHtml(law, key, [...esquemas.map((r) => `e:${r.id}`), ...guias.map((r) => `g:${r.id}`)]);
     return `<article class="article" id="articulo" tabindex="-1">
       <div class="article-path">${esc(law.id)} › ${esc(path)}</div>
       <h2>Artículo ${esc(Neg.leyes.label(law, key))}.${a.r ? ` <span class="rubric">${esc(a.r)}</span>` : ""}</h2>
       ${a.x ? '<p class="page-meta"><span class="tag t-aviso">Sin contenido</span></p>' : ""}
       ${a.c ? `<p class="page-meta"><span class="tag t-nota">Versión corregida</span> ${esc(a.c)}</p>` : ""}
       <div class="law-text">${Neg.leyes.html(a.p, words.length ? highlighter(words) : null)}</div>
+      ${cited}
       <div class="article-foot">
         <span>${vigor}</span><span class="spacer"></span>
         ${links}
@@ -183,6 +207,13 @@
     // On .law (redrawn with the view), never on #view itself: #view persists, and listeners
     // added to it on every visit would pile up.
     el.querySelector(".law").addEventListener("click", async (e) => {
+      const more = e.target.closest('[data-action="cited-more"]');
+      if (more) {
+        more.parentElement.querySelectorAll(".cited-link[hidden]").forEach((a) => (a.hidden = false));
+        more.remove();
+        placeArticle(el, false);
+        return;
+      }
       if (!e.target.closest('[data-action="copy"]')) return;
       const key = Neg.where().args[1];
       const a = law.articulos[key];
@@ -275,6 +306,8 @@
     }
     if (!el.dataset.view || !el.dataset.view.startsWith(`ley/${id}/`)) el.innerHTML = Neg.message("Cargando la ley…");
     const law = await Neg.leyes.load(id);
+    // Who cites each article ("Lo citan"): loaded once; without it the article simply has no list.
+    await Neg.data.load("catalogo", "citados").catch(() => null);
     if (sub === "mapa") return renderMap(el, law);
     return renderIndex(el, law, sub || null);
   });

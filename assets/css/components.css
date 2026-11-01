@@ -763,6 +763,54 @@ a.phase:hover {
   font-family: var(--font-display);
   font-size: var(--fs-lg);
 }
+/* "Lo citan" under an article of a law: the esquemas and guías that cite it */
+.cited {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+  font-size: var(--fs-sm);
+}
+.cited-label {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-right: var(--sp-1);
+}
+.cited-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 3px 10px 3px 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-2);
+  text-decoration: none;
+}
+.cited-link[hidden] {
+  display: none;
+}
+.cited-more {
+  padding: 3px 10px;
+  border: 1px dashed var(--border-md);
+  border-radius: 999px;
+  background: none;
+  color: var(--link);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+.cited-more:hover {
+  background: var(--surface-2);
+}
+.cited-link:hover {
+  border-color: var(--border-md);
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+
 /* The printed route (guia.js sheetHtml): only on paper. */
 .print-sheet {
   display: none;

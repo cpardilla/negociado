@@ -134,5 +134,15 @@ for (const r of esquemas) {
 for (const r of guias)
   for (const [id, p] of Object.entries(r.pasos)) entradas.push({ k: "guia", t: plain(p.titulo), d: p.pregunta ? plain(p.pregunta).slice(0, 160) : "", c: `${r.ley} · ${r.corto}`, u: `#/guia/${r.id}/${encodeURIComponent(id)}` });
 
+// Who cites each article of the complete laws ("Lo citan" in the law view): [kind, id, place], the
+// place being the card's article (esquema) or the step (guía) whose text cites it.
+const todos = require("./lib/citados").citados();
+const citados = { tipo: "catalogo", id: "citados", leyes: {} };
+for (const l of catalogo.leyes) {
+  const arts = todos[l.id] || {};
+  citados.leyes[l.id] = Object.fromEntries(Object.keys(arts).sort((a, b) => lawById.get(l.id).orden.indexOf(a) - lawById.get(l.id).orden.indexOf(b)).map((k) => [k, arts[k].map((x) => [x.k === "esquema" ? "e" : "g", x.id, x.loc])]));
+}
+
 console.log(write("catalogo", catalogo, `${catalogo.leyes.length} leyes, ${catalogo.esquemas.length} esquemas, ${catalogo.guias.length} guías`));
 console.log(write("busqueda", { tipo: "catalogo", id: "busqueda", entradas }, `${entradas.length} entradas`));
+console.log(write("citados", citados, `artículos citados: ${Object.entries(citados.leyes).map(([k, v]) => `${k} ${Object.keys(v).length}`).join(", ")}`));

@@ -14,13 +14,10 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
-const vm = require("vm");
-const citas = require("../assets/js/core/citas");
 const boe = require("./lib/boe");
 
 const ROOT = path.join(__dirname, "..");
 const LEYES = JSON.parse(fs.readFileSync(path.join(__dirname, "leyes.json"), "utf8"));
-const ALIAS = Object.fromEntries(LEYES.flatMap((l) => [[l.clave, l.clave], ...l.alias.map((a) => [a, l.clave])]));
 
 /** What changed in one law, block by block. */
 function diff(oldSnap, newSnap) {
@@ -45,39 +42,19 @@ function diff(oldSnap, newSnap) {
   return cambios;
 }
 
-/** Every article each esquema and guía cites (its own scope too): "LJV:140" → ["Esquema ljv-conciliacion", …]. */
+/** Who cites each article: "LJV:140" → Set of "Esquema ljv-conciliacion", "Guía …" (the text's
+ *  citations, tools/lib/citados.js, and each resource's own scope). */
 function citing() {
+  const { citados, read } = require("./lib/citados");
   const index = new Map();
   const add = (law, art, who) => {
     const k = `${law}:${art}`;
     if (!index.has(k)) index.set(k, new Set());
     index.get(k).add(who);
   };
-  const plain = (h) => String(h).replace(/<br>/g, " ").replace(/<[^>]+>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
-  const strings = (v, out = []) => {
-    if (typeof v === "string") out.push(v);
-    else if (Array.isArray(v)) v.forEach((x) => strings(x, out));
-    else if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) if (k !== "revision") strings(x, out);
-    return out;
-  };
-  for (const [folder, label] of [["esquemas", "Esquema"], ["guias", "Guía"]]) {
-    const dir = path.join(ROOT, "data", folder);
-    for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".js"))) {
-      let rec;
-      vm.runInNewContext(fs.readFileSync(path.join(dir, f), "utf8"), { Neg: { data: { register: (r) => (rec = r) } } });
-      const who = `${label} ${rec.id}`;
-      for (const a of rec.articulos || []) add(rec.ley, a, who);
-      for (const s of strings(rec))
-        for (const c of citas.find(plain(s), { defaultLaw: rec.ley, alias: ALIAS })) {
-          if (!c.law) continue;
-          const law = boe.load(c.law);
-          for (const r of c.refs) {
-            const keys = r.hasta && law ? boe.range(law, r.art, r.hasta) || [r.art, r.hasta] : [r.art];
-            for (const k of keys) if (k) add(c.law, citas.articleKey(k) || k, who);
-          }
-        }
-    }
-  }
+  const LABEL = { esquema: "Esquema", guia: "Guía" };
+  for (const [law, arts] of Object.entries(citados())) for (const [art, list] of Object.entries(arts)) for (const x of list) add(law, art, `${LABEL[x.k]} ${x.id}`);
+  for (const [folder, k] of [["esquemas", "esquema"], ["guias", "guia"]]) for (const r of read(folder)) for (const a of r.articulos || []) add(r.ley, a, `${LABEL[k]} ${r.id}`);
   return index;
 }
 

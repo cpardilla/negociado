@@ -148,3 +148,22 @@ test("BOE: every correction in sources/boe/correcciones.json is applied to its s
     }
   }
 });
+
+test("citados: every entry points to an article of the law, an existing resource, and its card or step", () => {
+  const citados = read("").find((x) => x.file === "citados.js").rec;
+  const leyes = read("leyes");
+  const bad = [];
+  for (const [ley, arts] of Object.entries(citados.leyes)) {
+    const law = leyes.find((l) => l.rec.id === ley).rec;
+    for (const [art, list] of Object.entries(arts)) {
+      if (!law.orden.includes(art)) bad.push(`${ley} ${art}: no es artículo de la ley`);
+      for (const [k, id, loc] of list) {
+        const rec = (k === "e" ? esquemas : guias).find((x) => x.rec.id === id);
+        if (!rec) bad.push(`${ley} ${art}: ${k} ${id} no existe`);
+        else if (k === "g" && loc && !rec.rec.pasos[loc]) bad.push(`${ley} ${art}: ${id} sin paso ${loc}`);
+      }
+    }
+  }
+  assert.deepEqual(bad.slice(0, 10), []);
+  assert.ok(Object.keys(citados.leyes.LJV).length > 100, "el índice no está vacío");
+});
