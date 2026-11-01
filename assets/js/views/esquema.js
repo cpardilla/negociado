@@ -50,7 +50,7 @@
     return "";
   }
 
-  const norma = (n) => `<div class="norm"><div class="norm-law">${rich(n.ley)}</div>${n.titulo ? `<div class="norm-title">${rich(n.titulo)}</div>` : ""}${n.texto ? `<div class="norm-text">${rich(n.texto)}</div>` : ""}${n.etiqueta ? `<span class="tag ${n.tono}">${rich(n.etiqueta)}</span>` : ""}</div>`;
+  const norma = (n) => `<div class="norm" data-norma-ley="${esc(Neg.citas.normaLaw(n, Neg.catalogo.alias) || "")}"><div class="norm-law">${rich(n.ley)}</div>${n.titulo ? `<div class="norm-title">${rich(n.titulo)}</div>` : ""}${n.texto ? `<div class="norm-text">${rich(n.texto)}</div>` : ""}${n.etiqueta ? `<span class="tag ${n.tono}">${rich(n.etiqueta)}</span>` : ""}</div>`;
   const grupo = (g) => `<div class="group ${g.tono}"><h4>${rich(g.titulo)}</h4>${g.items ? items(g.items) : ""}</div>`;
   const paso = (p) => `<li class="step-item">${p.n ? `<span class="step-n">${esc(p.n)}</span>` : ""}<div><div class="step-title">${rich(p.titulo || "")}</div>${p.texto ? `<p>${rich(p.texto)}</p>` : ""}${p.items ? items(p.items) : ""}</div></li>`;
 

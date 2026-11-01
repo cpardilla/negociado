@@ -82,7 +82,8 @@ function units(rec) {
         } else if (b.lista) items(b.lista, `${w} › punto`);
         else if (b.nota) add(`${w} › nota «${strip(b.nota.etiqueta)}»`, `${strip(b.nota.etiqueta)}: ${b.nota.texto}`);
         else if (b.tabla) b.tabla.filas.forEach((row, j) => add(`${w} › tabla fila ${j + 1}`, row.join(" · "), { row, head: b.tabla.cabecera }));
-        else if (b.norma) add(`${w} › norma «${strip(b.norma.titulo || b.norma.ley)}»`, [b.norma.ley, b.norma.titulo, b.norma.texto].filter(Boolean).join(" · "));
+        // Piece by piece, each with the block's own law (as the app links it).
+        else if (b.norma) citas.textos({ norma: b.norma }, rec.ley, ALIAS).forEach(([t, law]) => add(`${w} › norma «${strip(b.norma.titulo || b.norma.ley)}»`, t, { law }));
         else if (b.grupo) {
           add(`${w} › grupo`, b.grupo.titulo);
           items(b.grupo.items || [], `${w} › grupo «${strip(b.grupo.titulo)}»`);
@@ -190,7 +191,7 @@ function checkResource(rec) {
   const terms = {};
 
   for (const u of units(rec)) {
-    const cites = citations(u.text, defaultLaw);
+    const cites = citations(u.text, "law" in u ? u.law : defaultLaw);
     for (const c of cites) {
       cited[c.law] = (cited[c.law] || 0) + 1;
       const law = load(c.law);

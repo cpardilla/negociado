@@ -177,8 +177,8 @@ test("leyes citadas: every article the content cites has its text in data/leyes 
   const leyes = Object.fromEntries(read("leyes").map((l) => [l.rec.id, l.rec]));
   const missing = new Set();
   for (const { rec } of [...esquemas, ...guias])
-    for (const [, t] of strings(rec))
-      for (const c of citas.find(t, { defaultLaw: rec.ley, alias })) {
+    for (const [t, ley] of citas.textos(rec, rec.ley, alias))
+      for (const c of citas.find(t, { defaultLaw: ley, alias })) {
         const law = c.law && leyes[c.law];
         const snap = law && boe.load(c.law);
         if (!snap) continue;
@@ -189,4 +189,25 @@ test("leyes citadas: every article the content cites has its text in data/leyes 
           }
       }
   assert.deepEqual([...missing].slice(0, 15), [], "leyes citadas sin regenerar");
+});
+
+test("related-law blocks: every bare citation exists in the law the block names", () => {
+  const citas = require("../assets/js/core/citas");
+  const boe = require("../tools/lib/boe");
+  const LEYES = JSON.parse(fs.readFileSync(path.join(ROOT, "tools", "leyes.json"), "utf8"));
+  const alias = Object.fromEntries(LEYES.flatMap((l) => [[l.clave, l.clave], ...l.alias.map((a) => [a, l.clave])]));
+  const bad = [];
+  for (const { rec } of esquemas)
+    (function walk(v) {
+      if (Array.isArray(v)) return v.forEach(walk);
+      if (!v || typeof v !== "object") return;
+      if (v.norma)
+        for (const [t, ley] of citas.textos({ norma: v.norma }, rec.ley, alias))
+          for (const c of citas.find(t, { defaultLaw: ley, alias })) {
+            const snap = c.porDefecto && c.law && boe.load(c.law);
+            if (snap) for (const r of c.refs) if (!snap.articulos.has(r.art)) bad.push(`${rec.id}: «${c.texto}» no está en ${c.law} (hay que nombrar su ley)`);
+          }
+      Object.values(v).forEach(walk);
+    })(rec.secciones);
+  assert.deepEqual(bad.slice(0, 10), []);
 });

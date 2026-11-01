@@ -141,7 +141,7 @@ function buildCited() {
   const scan = (text, defaultLaw) => {
     for (const c of citas.find(text, { defaultLaw, alias })) for (const r of c.refs) [r.art, r.hasta].forEach((k) => c.law && note(c.law, k));
   };
-  for (const rec of [...readData("esquemas"), ...readData("guias")]) strings(rec).forEach((t) => scan(t, rec.ley));
+  for (const rec of [...readData("esquemas"), ...readData("guias")]) citas.textos(rec, rec.ley, alias).forEach(([t, ley]) => scan(t, ley));
   for (const l of LEYES.filter((x) => x.completa)) {
     const law = load(l.clave);
     for (const key of law.orden) law.articulos.get(key).parrafos.forEach(([, t]) => scan(t, l.clave));

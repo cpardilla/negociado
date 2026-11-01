@@ -21,7 +21,9 @@
     for (let n = walker.nextNode(); n; n = walker.nextNode()) if (/art/i.test(n.nodeValue)) nodes.push(n);
     for (const node of nodes) {
       const text = node.nodeValue;
-      const found = Neg.citas.find(text, { defaultLaw, alias }).filter((c) => c.law && norma(c.law) && c.refs.length);
+      // In a block on a related law, a bare "art. 4" is of that law, not of the resource.
+      const block = node.parentElement.closest("[data-norma-ley]");
+      const found = Neg.citas.find(text, { defaultLaw: block ? block.dataset.normaLey || null : defaultLaw, alias }).filter((c) => c.law && norma(c.law) && c.refs.length);
       if (!found.length) continue;
       const frag = document.createDocumentFragment();
       let at = 0;

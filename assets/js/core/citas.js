@@ -103,7 +103,7 @@
 
   const NUM = `\\d+(?:\\s*(?:${SUFFIXES})(?![a-z]))?(?:\\.\\d+(?:\\s*\\.?\\s*[ºª°])?)*(?:\\.?\\s*[a-zñ]\\))?`;
   // "art. 5", "art.5", "arts. 5 a 9", "artículos 6, 7 y 9"
-  const CITE = new RegExp(`\\b(?:art[ií]culos?\\s+|arts?\\.\\s*|arts?\\s+)(${NUM}(?:\\s*(?:,|y|e|a|al|–|-)\\s*${NUM})*)`, "gi");
+  const CITE = new RegExp(`\\b(?:art[ií]culos?\\s+|arts?\\.\\s*|arts?\\s+)(${NUM}(?:\\s*(?:,|y|e|a|al|–|-)\\s*${NUM})*(?:\\.?\\s*[ºª°])?)`, "gi");
 
   /** "256 a 263" / "256-263" are ranges; "6, 7 y 9" a list; "517.2.9º" article.apartado.sub-item;
    *  "18.4.ª" the 4th rule (regla) of article 18. */
@@ -115,6 +115,13 @@
       const t = tokens[i].trim();
       if (!t) continue;
       const sep = tokens[i - 1];
+      // "194.2.º y 3.º": another rule of the same article, not article 3.
+      const prev = parts[parts.length - 1];
+      const rule = t.match(/^(\d+)\.?\s*[ºª°]$/);
+      if (rule && prev && prev.regla && /^(,|y|e)$/i.test(sep || "")) {
+        parts.push({ art: prev.art, apdo: null, regla: rule[1] });
+        continue;
+      }
       const m = t.match(new RegExp(`^(\\d+(?:\\s*(?:${SUFFIXES})(?![a-z]))?)((?:\\.\\d+)?)((?:\\.\\d+)?)\\s*(\\.?\\s*[ºª°])?\\.?\\s*(?:([a-zñ])\\))?`, "i"));
       if (!m) continue;
       const ordinalOnly = m[2] && !m[3] && m[4];
@@ -168,5 +175,38 @@
     return out;
   }
 
-  return { SUFFIXES, ART_NUM, articleKey, LAW_PATTERNS, lawAt, lawsIn, parseCitation, find };
+  // ── The related-law blocks of the esquemas ───────────────────────────────
+
+  const untagged = (h) => String(h || "").replace(/<[^>]+>/g, " ");
+
+  /** The law a block on a related law speaks of, from its heading ({ ley, titulo }): the law a bare
+   *  "art. 4" inside it belongs to. Null when the heading names none, or several ("Otras leyes"):
+   *  a bare citation there belongs to no law. It may be a law the app does not know: not linked. */
+  function normaLaw(norma, alias) {
+    for (const s of [untagged(norma.ley), untagged(norma.titulo)]) {
+      const at = lawAt(s.trim(), alias);
+      if (at) return at.key;
+      const named = lawsIn(s, alias);
+      if (named.size) return named.size === 1 ? [...named][0] : null;
+    }
+    return null;
+  }
+
+  /** Every string of a record with the law its bare citations belong to: [text, law]. A related-law
+   *  block goes piece by piece, as the app links it (each text node). */
+  function textos(v, defaultLaw, alias, skip = [], out = [], inBlock = false) {
+    if (typeof v === "string") {
+      if (inBlock) v.split(/<[^>]+>/).forEach((t) => t.trim() && out.push([t, defaultLaw]));
+      else out.push([v, defaultLaw]);
+    } else if (Array.isArray(v)) v.forEach((x) => textos(x, defaultLaw, alias, skip, out, inBlock));
+    else if (v && typeof v === "object")
+      for (const [k, x] of Object.entries(v)) {
+        if (skip.includes(k)) continue;
+        if (k === "norma" && x) textos(x, normaLaw(x, alias), alias, [...skip, "tono"], out, true);
+        else textos(x, defaultLaw, alias, skip, out, inBlock);
+      }
+    return out;
+  }
+
+  return { SUFFIXES, ART_NUM, articleKey, LAW_PATTERNS, lawAt, lawsIn, parseCitation, find, normaLaw, textos };
 });

@@ -367,3 +367,32 @@ test("vigencia: the version in force, BOE lists out of order, quoted articles, a
   const quoted = `<version id_norma="X" fecha_publicacion="20230101" fecha_vigencia="20230101"><p class="articulo">Artículo 479. Interposición.</p><p class="parrafo">1. Uno.</p><p class="articulo">«Artículo 479. Anterior.</p></version>`;
   assert.deepEqual(V.versions(quoted)[0].parrafos, [["a", "1. Uno."], ["p", "«Artículo 479. Anterior."]]);
 });
+
+test("citations: an ordinal may close a list, «art. 194.2.º y 3.º CC», both rules of that article", () => {
+  const citas = require("../assets/js/core/citas");
+  const [c] = citas.find("Siniestro (art. 194.2.º y 3.º CC): competencia", { defaultLaw: "LJV", alias: { CC: "CC" } });
+  assert.equal(c.law, "CC");
+  assert.deepEqual(c.refs.map((r) => [r.art, r.regla]), [["194", "2"], ["194", "3"]]);
+  assert.deepEqual(citas.find("arts. 6, 7 y 9 LJV", { alias: { LJV: "LJV" } })[0].refs.map((r) => r.art), ["6", "7", "9"]);
+});
+
+test("related-law blocks: the law a bare citation belongs to comes from the block's heading", () => {
+  const citas = require("../assets/js/core/citas");
+  const LEYES = JSON.parse(fs.readFileSync(path.join(ROOT, "tools", "leyes.json"), "utf8"));
+  const alias = Object.fromEntries(LEYES.flatMap((l) => [[l.clave, l.clave], ...l.alias.map((a) => [a, l.clave])]));
+  const cases = [
+    ["Código Civil (Real Decreto de 24 julio 1889)", "", "CC"],
+    ["Ley del Notariado, arts. 72–77", "", "LN"],
+    ["Ley 15/2015, de 2 de julio", "", "LJV"],
+    ["LEC — Libro IV, Título I", "", "LEC"],
+    ["LOPJ (LO 1/2025)", "", "LOPJ"],
+    ["Ley Trans — Ley 4/2023", "", "LTRANS"],
+    ["Ley estatal · Sociedades de capital", "RDL 1/2010", "LSC"],
+    ["Reglamento (UE) 650/2012", "", "UE"],
+    ["Otras leyes", "Marco legal complementario", null],
+  ];
+  for (const [ley, titulo, want] of cases) assert.equal(citas.normaLaw({ ley, titulo }, alias), want, ley);
+  // Each piece with its law; explicit citations keep theirs.
+  const pieces = citas.textos({ a: "art. 1", norma: { ley: "Ley Hipotecaria", texto: "<strong>Art. 14</strong> — títulos (art. 2 LEC)." } }, "LJV", alias);
+  assert.deepEqual(pieces, [["art. 1", "LJV"], ["Ley Hipotecaria", "LH"], ["Art. 14", "LH"], [" — títulos (art. 2 LEC).", "LH"]]);
+});

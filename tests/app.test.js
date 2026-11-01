@@ -451,3 +451,25 @@ test("law article: «Actualizar contenido» puts the BOE's text in force in this
   assert.equal(r.cleared, null);
   assert.equal(r.rows, 1, "los botones del artículo, en una fila");
 });
+
+test("related-law blocks link to the law they name; a law the app does not carry is not linked", { timeout: 60000 }, async () => {
+  const r = await page(
+    `const refs = (n) => [...n.querySelectorAll('a.ref')].map((a) => a.dataset.ley + ' ' + a.dataset.art);
+     const block = (re) => [...document.querySelectorAll('.norm')].find((n) => re.test(n.querySelector('.norm-law').textContent));
+     await go('#/esquema/lec-division-herencia', 1200);
+     const reglamento = refs(block(/650\\/2012/));
+     const hipotecaria = refs(block(/Ley Hipotecaria/));
+     await go('#/esquema/ljv-filiacion', 1200);
+     const cc = refs(block(/Código Civil/));
+     await go('#/esquema/lec-administracion-caudal', 1200);
+     const excepcion = refs(block(/Ley Hipotecaria/));
+     await go('#/guia/ljv-ausencia-fallecimiento/competencia_fallecimiento', 1200);
+     const g17 = [...document.querySelectorAll('[data-step] .step-body a.ref')].filter((a) => a.textContent.includes('194')).map((a) => a.textContent + ' ' + a.dataset.ley);
+     return { reglamento, hipotecaria, cc, excepcion, g17 };`
+  );
+  assert.deepEqual(r.reglamento, [], "el Reglamento 650/2012 no se enlaza a la LEC");
+  assert.ok(r.hipotecaria.includes("LH 14"), "Ley Hipotecaria");
+  assert.ok(r.cc.includes("CC 124") && !r.cc.some((x) => x.startsWith("LJV")), "Código Civil, no LJV");
+  assert.deepEqual(r.excepcion, ["LEC 797"], "la excepción nombrada lleva a su ley");
+  assert.ok(r.g17.includes("(art. 194.2.º y 3.º CC) CC"), "G17: Código Civil, la cita entera");
+});

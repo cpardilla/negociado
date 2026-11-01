@@ -16,12 +16,8 @@ const ALIAS = Object.fromEntries(LEYES.flatMap((l) => [[l.clave, l.clave], ...l.
 
 const plain = (h) => String(h).replace(/<br>/g, " ").replace(/<[^>]+>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 
-function strings(v, out = []) {
-  if (typeof v === "string") out.push(v);
-  else if (Array.isArray(v)) v.forEach((x) => strings(x, out));
-  else if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) if (k !== "revision" && k !== "origen" && k !== "claves") strings(x, out);
-  return out;
-}
+/** Every text of a part of a record, with the law its bare citations belong to. */
+const strings = (v, ley) => citas.textos(v, ley, ALIAS, ["revision", "origen", "claves"]);
 
 function read(folder) {
   const dir = path.join(ROOT, "data", folder);
@@ -76,20 +72,20 @@ function citados() {
       if (!v || typeof v !== "object") return;
       if (v.tarjeta) {
         const loc = cardKey(v.tarjeta, r.ley);
-        for (const s of strings(v.tarjeta)) {
+        for (const [s, ley] of strings(v.tarjeta, r.ley)) {
           inCards.add(s);
-          for (const [law, art] of cited(s, r.ley)) add(law, art, "esquema", r.id, loc);
+          for (const [law, art] of cited(s, ley)) add(law, art, "esquema", r.id, loc);
         }
         return;
       }
       Object.values(v).forEach(walk);
     })(r.secciones);
-    for (const s of strings({ cabecera: r.cabecera, secciones: r.secciones, pie: r.pie }))
-      if (!inCards.has(s)) for (const [law, art] of cited(s, r.ley)) add(law, art, "esquema", r.id, "");
+    for (const [s, ley] of strings({ cabecera: r.cabecera, secciones: r.secciones, pie: r.pie }, r.ley))
+      if (!inCards.has(s)) for (const [law, art] of cited(s, ley)) add(law, art, "esquema", r.id, "");
   }
   for (const r of read("guias")) {
-    for (const [id, p] of Object.entries(r.pasos)) for (const s of strings(p)) for (const [law, art] of cited(s, r.ley)) add(law, art, "guia", r.id, id);
-    for (const s of strings({ pie: r.pie, titulo: r.titulo })) for (const [law, art] of cited(s, r.ley)) add(law, art, "guia", r.id, "");
+    for (const [id, p] of Object.entries(r.pasos)) for (const [s, ley] of strings(p, r.ley)) for (const [law, art] of cited(s, ley)) add(law, art, "guia", r.id, id);
+    for (const [s, ley] of strings({ pie: r.pie, titulo: r.titulo }, r.ley)) for (const [law, art] of cited(s, ley)) add(law, art, "guia", r.id, "");
   }
   return index;
 }

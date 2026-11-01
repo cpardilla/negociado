@@ -69,27 +69,28 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2809
-- ✓ CC (BOE a 07-09-2026): 1282
-- ✓ LEC (BOE a 07-10-2026): 1180
-- ✓ LOPJ (BOE a 09-10-2026): 117
-- ✓ LPPD (BOE a 18-12-2025): 70
-- ✓ LTRANS (BOE a 20-12-2025): 62
-- ✓ LOPJM (BOE a 18-12-2025): 50
-- ✓ RDTO (BOE a 19-12-2025): 43
-- ✓ LRC (BOE a 24-02-2026): 42
-- ✓ LOPDH (BOE a 16-12-2025): 38
-- UE: 33
-- ✓ LN (BOE a 22-10-2026): 30
+- ✓ LJV (BOE a 05-03-2026): 2808
+- ✓ CC (BOE a 07-09-2026): 1351
+- ✓ LEC (BOE a 07-10-2026): 1187
+- ✓ LOPJ (BOE a 09-10-2026): 119
+- ✓ LPPD (BOE a 18-12-2025): 75
+- ✓ LTRANS (BOE a 20-12-2025): 70
+- ✓ LOPJM (BOE a 18-12-2025): 54
+- ✓ LRC (BOE a 24-02-2026): 47
+- UE: 46
+- ✓ RDTO (BOE a 19-12-2025): 44
+- ✓ LOPDH (BOE a 16-12-2025): 40
+- ✓ LN (BOE a 22-10-2026): 34
 - ✓ LO1-2025 (BOE a 09-07-2026): 30
-- ✓ LH (BOE a 07-01-2026): 21
-- ✓ LTO (BOE a 16-12-2025): 20
+- ✓ LH (BOE a 07-01-2026): 28
+- ✓ LTO (BOE a 16-12-2025): 22
 - ✓ CE (BOE a 20-05-2026): 18
-- ✓ LSC (BOE a 19-12-2025): 7
+- ✓ LSC (BOE a 19-12-2025): 9
 - ✓ CP (BOE a 09-04-2026): 7
 - ✓ LOPDGDD (BOE a 08-10-2026): 6
 - ✓ CCom (BOE a 16-12-2025): 4
 - ✓ LCS (BOE a 05-10-2026): 4
+- LO 3/2007: 4
 - ✓ LA (BOE a 18-12-2025): 3
 - ✓ RH (BOE a 16-12-2025): 3
 - ✓ LPI (BOE a 31-07-2026): 2
@@ -98,10 +99,11 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LSE (BOE a 31-07-2026): 2
 - ✓ LMED (BOE a 19-12-2025): 2
 - LPAP: 2
-- LO 3/2007: 1
+- Ley 50/1981: 1
+- LO 1/2004: 1
 - Ley 54/2007: 1
 
-Además, 303 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 165 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
