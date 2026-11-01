@@ -998,7 +998,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 8/2021, de 2 de junio",
       "titulo": "Apoyo a las personas con discapacidad",
-      "texto": "Introdujo el art. 7 bis y dio la redacción vigente de los arts. 2.3, 4 y 5 LJV.",
+      "texto": "Introdujo el art. 7 bis LJV y dio la redacción vigente de los arts. 2.3, 4 y 5 LJV.",
       "etiqueta": "Reforma",
       "tono": "t-ok"
      }
@@ -1007,7 +1007,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 27/2007, de 23 de octubre",
       "titulo": "Lenguas de signos españolas",
-      "texto": "Lenguas de signos y medios de apoyo a la comunicación oral (art. 7 bis.2.b LJV).",
+      "texto": "Lenguas de signos y medios de apoyo a la comunicación oral (art. 7 bis.2 b) LJV).",
       "etiqueta": "Accesibilidad",
       "tono": "t-ok"
      }

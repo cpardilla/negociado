@@ -60,3 +60,13 @@ No se ha incorporado la mención a la Ley 7/1996 de Ordenación del Comercio Min
 | 5 | competencia_* | impreciso | Art. 109.1 «párrafo primero / segundo»; fuero «imperativo»; «a elección del solicitante» | Primer y segundo inciso (un solo párrafo); sin sumisión (art. 2.2); texto legal; hoy Sección Civil | LJV 2.2, 109.1 |
 | 6 | fin_inadmision, decreto_adjudicacion | incompleto | Sin recursos | Revisión ante el Juez contra los decretos del LAJ (art. 20.2 LJV; art. 454 bis LEC) | LJV 20.2 |
 | 7 | varios, actores | terminología | «Secretario judicial» × 14; «Letrado de la Admón. de Justicia» | LAJ; nombre completo | LO 7/2015 |
+
+## Corrección posterior (2026-11-01) · Citas de los bloques de normas
+
+La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora, como de la ley que nombra el bloque. Estas se refieren a otra ley y se nombra expresamente. Sin cambio de fondo.
+
+| Antes | Ahora |
+|---|---|
+| Aplicable por remisión del artículo 110.2. | Aplicable por remisión del artículo 110.2 LJV. |
+| para el apartado 6 del artículo 111. | para el apartado 6 del artículo 111 LJV. |
+| impuesto por los artículos 111.1 y 111.2. | impuesto por los artículos 111.1 y 111.2 LJV. |

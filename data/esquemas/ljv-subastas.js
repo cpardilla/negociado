@@ -658,7 +658,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley de Enjuiciamiento Civil",
       "titulo": "Régimen general de la subasta judicial",
-      "texto": "<strong>Artículo 640 LEC</strong> — Convenio de realización, que incluye la realización por persona o entidad especializada (el artículo de la LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025).<br><strong>Artículo 648 LEC</strong> — Subasta electrónica. Marco operativo del Portal de Subastas.<br><strong>Artículo 661 LEC</strong> — Comunicaciones a arrendatarios y ocupantes. Aplicable por remisión del artículo 110.2.<br><strong>Artículos 643 a 675 LEC</strong> — Régimen general de subasta judicial de muebles e inmuebles, aplicable en cuanto sea compatible.<br><strong>Artículo 670 LEC</strong> — Aprobación del remate de inmuebles. Modelo interpretativo para el apartado 6 del artículo 111.",
+      "texto": "<strong>Artículo 640 LEC</strong> — Convenio de realización, que incluye la realización por persona o entidad especializada (el artículo de la LEC al que remite el art. 110.3 LJV está sin contenido desde el 3-4-2025).<br><strong>Artículo 648 LEC</strong> — Subasta electrónica. Marco operativo del Portal de Subastas.<br><strong>Artículo 661 LEC</strong> — Comunicaciones a arrendatarios y ocupantes. Aplicable por remisión del artículo 110.2 LJV.<br><strong>Artículos 643 a 675 LEC</strong> — Régimen general de subasta judicial de muebles e inmuebles, aplicable en cuanto sea compatible.<br><strong>Artículo 670 LEC</strong> — Aprobación del remate de inmuebles. Modelo interpretativo para el apartado 6 del artículo 111 LJV.",
       "etiqueta": "Subasta judicial",
       "tono": "t-info"
      }
@@ -667,7 +667,7 @@ Neg.data.register({
      "norma": {
       "ley": "Legislación concursal",
       "titulo": "Texto Refundido de la Ley Concursal (RD Leg. 1/2020)",
-      "texto": "<strong>TRLC</strong> — Determina los efectos del concurso sobre la facultad de disposición del deudor y condiciona la viabilidad de la subasta voluntaria. El Registro Público Concursal es instrumento de información y coordinación obligatoria impuesto por los artículos 111.1 y 111.2.",
+      "texto": "<strong>TRLC</strong> — Determina los efectos del concurso sobre la facultad de disposición del deudor y condiciona la viabilidad de la subasta voluntaria. El Registro Público Concursal es instrumento de información y coordinación obligatoria impuesto por los artículos 111.1 y 111.2 LJV.",
       "etiqueta": "Concursal",
       "tono": "t-aviso"
      }

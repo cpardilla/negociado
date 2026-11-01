@@ -58,3 +58,12 @@
 ## Arrastre al esquema E14
 
 El mismo error del hallazgo 6 estaba en dos tarjetas de E14 («medidas voluntarias (autocuratela, …)»): corregido en el mismo commit; la tarjeta de la curatela explica la autocuratela (arts. 271–274 CC).
+
+## Corrección posterior (2026-11-01) · Citas de los bloques de normas
+
+La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora, como de la ley que nombra el bloque. Estas se refieren a otra ley y se nombra expresamente. Sin cambio de fondo.
+
+| Antes | Ahora |
+|---|---|
+| los arts. 42 bis a), b) y c) en la LJV. | los arts. 42 bis a) a 42 bis c) LJV. |
+| art. 42 bis b) apdo. 5 → | art. 42 bis b) LJV, apdo. 5 → |

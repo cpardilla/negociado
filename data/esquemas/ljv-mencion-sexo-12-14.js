@@ -645,7 +645,7 @@ Neg.data.register({
      "norma": {
       "ley": "Código Civil",
       "titulo": "Representación legal, patria potestad y defensor judicial",
-      "texto": "<strong>Arts. 235 y 236</strong> — referenciados expresamente en el art. 26 ter; defensor judicial de menores y sus funciones.<br><strong>Art. 156</strong> — ejercicio de la patria potestad y desacuerdo de los progenitores.<br><strong>Art. 162</strong> — los padres no representan al hijo en los actos relativos a los derechos de la personalidad que pueda ejercitar por sí según su madurez.",
+      "texto": "<strong>Arts. 235 y 236</strong> — referenciados expresamente en el art. 26 ter LJV; defensor judicial de menores y sus funciones.<br><strong>Art. 156</strong> — ejercicio de la patria potestad y desacuerdo de los progenitores.<br><strong>Art. 162</strong> — los padres no representan al hijo en los actos relativos a los derechos de la personalidad que pueda ejercitar por sí según su madurez.",
       "etiqueta": "Derecho sustantivo",
       "tono": "t-plazo"
      }
@@ -672,7 +672,7 @@ Neg.data.register({
      "norma": {
       "ley": "LO 1/1996 — Protección Jurídica del Menor",
       "titulo": "Interés superior del menor y derecho a ser oído",
-      "texto": "<strong>Art. 2</strong> — interés superior del menor como criterio interpretativo y decisorio prevalente; referente material del art. 26 quater.<br><strong>Art. 9</strong> — derecho del menor a ser oído; fundamenta la audiencia inderogable del art. 26 quinquies.",
+      "texto": "<strong>Art. 2</strong> — interés superior del menor como criterio interpretativo y decisorio prevalente; referente material del art. 26 quater LJV.<br><strong>Art. 9</strong> — derecho del menor a ser oído; fundamenta la audiencia inderogable del art. 26 quinquies LJV.",
       "etiqueta": "Protección del menor",
       "tono": "t-aviso"
      }

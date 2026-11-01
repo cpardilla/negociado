@@ -26,3 +26,14 @@ La ficha «Contexto» y las nueve fichas de los arts. 1–8 (Título Preliminar)
 | 10 | Varios | desfasado | «Secretario judicial» en el texto explicativo (19 veces) | Letrado de la Administración de Justicia | LO 7/2015 |
 | 11 | Varios | estilo | Fundamentos doctrinales (art. 24 CE, «principio antiformalista», «máxima eficacia»…) | Retirados (decisión 9) | — |
 | 12 | Cabecera y pie | estilo | «Arts. 1–22», «Fusionado»; plazos sin recuento | Cifras y ubicación reales; tabla de plazos completada con los recursos | — |
+
+## Corrección posterior (2026-11-01) · Citas de los bloques de normas
+
+La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora, como de la ley que nombra el bloque. Estas se refieren a otra ley y se nombra expresamente. Sin cambio de fondo.
+
+| Antes | Ahora |
+|---|---|
+| Acumulación (art. 15). | Acumulación (art. 15 LJV). |
+| Vista del juicio verbal (art. 18). | Vista del juicio verbal (art. 18 LJV). |
+| Reposición, revisión y apelación (art. 20). | Reposición, revisión y apelación (art. 20 LJV). |
+| — Ejecución (art. 22). | — Ejecución (art. 22 LJV). |

@@ -44,3 +44,11 @@ La guía repite «arts. 1158, 1159 y 1210.2» (tres pasos), «Secretario judicia
 | 7 | varios, actores | terminología | «Secretario judicial» × 8; «Juez de Primera Instancia» como actor | LAJ (LO 7/2015); «Juez»; hoy, Sección Civil en los pasos de competencia | LO 7/2015; LOPJ |
 
 Se confirma lo que la guía ya decía: en la fijación del plazo, la oposición **sí** hace contencioso el expediente, por previsión expresa del art. 97.3 LJV (excepción a la regla del art. 17.3).
+
+## Corrección posterior (2026-11-01) · Citas de los bloques de normas
+
+La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora, como de la ley que nombra el bloque. Estas se refieren a otra ley y se nombra expresamente. Sin cambio de fondo.
+
+| Antes | Ahora |
+|---|---|
+| por oposición conforme al artículo 97.3. | por oposición conforme al artículo 97.3 LJV. |

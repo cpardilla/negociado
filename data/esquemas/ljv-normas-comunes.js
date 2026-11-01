@@ -1289,7 +1289,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 1/2000, de Enjuiciamiento Civil",
       "titulo": "Aplicación supletoria (art. 8 LJV)",
-      "texto": "<strong>Arts. 74 y ss. LEC</strong> — Acumulación (art. 15).<br><strong>Arts. 437 y ss. LEC</strong> — Vista del juicio verbal (art. 18).<br><strong>Arts. 451–455 y 458 LEC</strong> — Reposición, revisión y apelación (art. 20).<br><strong>Arts. 521–522 LEC</strong> — Ejecución (art. 22).",
+      "texto": "<strong>Arts. 74 y ss. LEC</strong> — Acumulación (art. 15 LJV).<br><strong>Arts. 437 y ss. LEC</strong> — Vista del juicio verbal (art. 18 LJV).<br><strong>Arts. 451–455 y 458 LEC</strong> — Reposición, revisión y apelación (art. 20 LJV).<br><strong>Arts. 521–522 LEC</strong> — Ejecución (art. 22 LJV).",
       "etiqueta": "Supletoria",
       "tono": "t-nota"
      }

@@ -43,3 +43,12 @@ Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Trib
 | # | Ficha | Tipo | Antes | Ahora | Fuente |
 |---|---|---|---|---|---|
 | D11 | Art. 2 y ecosistema | incompleto | Todos los expedientes de personas y familia, a la Sección de Familia, Infancia y Capacidad | Salvo ausencia y fallecimiento y extracción de órganos (caps. IX y X del Título II LJV), que van a la Sección Civil | LOPJ art. 86.5 j); decisión 11 |
+
+## Corrección posterior (2026-11-01) · Citas de los bloques de normas
+
+La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora, como de la ley que nombra el bloque. Estas se refieren a otra ley y se nombra expresamente. Sin cambio de fondo.
+
+| Antes | Ahora |
+|---|---|
+| Introdujo el art. 7 bis y dio | Introdujo el art. 7 bis LJV y dio |
+| (art. 7 bis.2.b LJV) | (art. 7 bis.2 b) LJV) |

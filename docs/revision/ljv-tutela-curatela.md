@@ -73,3 +73,11 @@ La Ley 8/2021 reordenó los Títulos IX y X del Libro I del CC. El esquema citab
 | 17 | designacion, fiscalizacion, fianza | error | Orden de la tutela con cónyuge, padres, colaterales (régimen derogado); orden de la curatela incompleto; medidas de fiscalización y modalidades de fianza inventadas | Arts. 213–214 (tutela) y 276 (curatela, siete llamamientos); arts. 45.4 LJV, 209, 210 y 270 CC; art. 284 CC | LJV 45; CC 213, 276, 284 |
 | 18 | ejercicio_cargo, retribucion, extincion_cargo | error | Deberes del curador «art. 273»; retribución «si está prevista (art. 279)»; extinción con causas inventadas («recuperación de la capacidad», «revocación de la medida de apoyo») | Arts. 228 y 282; art. 48 LJV y arts. 229 y 281 CC; arts. 231 y 291 CC; cuenta general en tres meses, acción a los cinco años | CC 228, 229, 231, 281, 282, 291, 292 |
 | 19 | actores, fases, pie | forma | «Letrado de la Admon. de Justicia», «Juez + LAJ»; fases y pie sin tildes, «guía fusionada de tres fuentes» | Nombres y textos corregidos | — |
+
+## Corrección posterior (2026-11-01) · Citas de los bloques de normas
+
+La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora, como de la ley que nombra el bloque. Estas se refieren a otra ley y se nombra expresamente. Sin cambio de fondo.
+
+| Antes | Ahora |
+|---|---|
+| tutela solo para menores, art. 51 bis y redacción | tutela solo para menores, art. 51 bis LJV y redacción |

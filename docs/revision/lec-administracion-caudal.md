@@ -62,3 +62,15 @@ Pasos retirados: `registro_decision`, `registro_propiedad`, `nombramiento`. Paso
 | G04 | traslado_cuentadante, vista_check | Ídem (hallazgo 7 de la revisión G04) | Art. 438, diez días; vista a petición en los escritos (art. 800.4). Se deshace el hallazgo 7 |
 
 Origen: la instantánea de la LEC guardaba, para este artículo, la versión del BOE de 1-10-2015 (LO 7/2015), construida sobre el texto anterior a la Ley 42/2015; la vigente es la de la Ley 42/2015. Detalle en `boe-correcciones.md`.
+
+## Corrección posterior (2026-11-01) · Citas de los bloques de normas
+
+La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora, como de la ley que nombra el bloque. Estas se refieren a otra ley y se nombra expresamente. Sin cambio de fondo.
+
+| Antes | Ahora |
+|---|---|
+| Conexión con art. 798: | Conexión con art. 798 LEC: |
+| caudal (art. 798). | caudal (art. 798 LEC). |
+| El art. 797.3 permite | El art. 797.3 LEC permite |
+| Conexión con art. 803.3: | Conexión con art. 803.3 LEC: |
+| venta de bienes del caudal (art. 803.3). | venta de bienes del caudal (art. 803.3 LEC). |

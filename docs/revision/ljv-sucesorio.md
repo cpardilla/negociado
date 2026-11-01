@@ -54,3 +54,11 @@ La guía cita «art. 1057.2» (párrafo segundo, no apartado) en cinco pasos, y 
 **Pregunta al propietario**: la sección de los expedientes del Capítulo III cuando el llamado es menor o persona con medidas de apoyo. La guía indica la Sección Civil (Título IV, materia sucesoria), aunque el fuero sea el de la residencia de la persona protegida (art. 94.1, párrafo segundo).
 
 **Respuesta del propietario (2026-10-31) — decisión 19**: Sección Civil también cuando el llamado es menor o persona con medidas de apoyo. El art. 94.1, párrafo segundo, LJV cambia solo el fuero territorial (residencia del llamado), no la sección: la autorización para aceptar o repudiar es expediente sucesorio del Título IV, no de personas y familia del art. 86.5 j) LOPJ; las Secciones Civiles conocen de los actos de jurisdicción voluntaria en los términos que prevean las leyes (art. 85, ordinal 2.º, LOPJ; el propietario lo citó como «art. 85.2», que no tiene apartados). Si en el mismo asunto se plantea una cuestión autónoma de Familia, Infancia y Capacidad (por ejemplo, sobre el ejercicio de la patria potestad), se examina por separado. La nota de sección de la guía cita ahora la decisión 19.
+
+## Corrección posterior (2026-11-01) · Citas de los bloques de normas
+
+La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora, como de la ley que nombra el bloque. Estas se refieren a otra ley y se nombra expresamente. Sin cambio de fondo.
+
+| Antes | Ahora |
+|---|---|
+| conectado con los artículos 93.2.b y 95.2 LJV | conectado con los artículos 93.2 b) y 95.2 LJV |

@@ -49,3 +49,13 @@ Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Trib
 | 8 | testimonio, inscripcion | error | «Registro de la inscripción de nacimiento»; «prueba plena y oponibilidad» | «Registro Civil competente» (art. 26 quinquies.2); lo demás, retirado | LJV |
 | 9 | concesion, audiencia_menor, deliberacion, recurso_apelacion | error | OMS, Principios de Yogyakarta, CEDH, CE, CDN, CDPD; interés superior «prevalente»; «el expediente queda en suspenso durante la apelación» | Retirados (decisión 9); la apelación no tiene efectos suspensivos (art. 20.2 LJV) | LJV |
 | 10 | Varios | desfasado | «Secretario judicial», «JPI» | Letrado de la Administración de Justicia; Juzgado de Primera Instancia | LO 7/2015 |
+
+## Corrección posterior (2026-11-01) · Citas de los bloques de normas
+
+La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora, como de la ley que nombra el bloque. Estas se refieren a otra ley y se nombra expresamente. Sin cambio de fondo.
+
+| Antes | Ahora |
+|---|---|
+| referenciados expresamente en el art. 26 ter; | referenciados expresamente en el art. 26 ter LJV; |
+| referente material del art. 26 quater. | referente material del art. 26 quater LJV. |
+| audiencia inderogable del art. 26 quinquies. | audiencia inderogable del art. 26 quinquies LJV. |

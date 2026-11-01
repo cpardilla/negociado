@@ -44,3 +44,13 @@ La guía dice «Secretario judicial» × 11 y «Juzgado de Primera Instancia» �
 | 6 | varios | terminología | «Secretario judicial» × 11; «art. 1.2 LJV» | LAJ; hoy, Sección Civil | LO 7/2015 |
 
 **Jurisprudencia retirada** (decisión 10), para reincorporarla con su ECLI si el propietario la aporta: STS, Sala 1.ª, 14-10-1991 (confusión de linderos como presupuesto de la acción de deslinde).
+
+## Corrección posterior (2026-11-01) · Citas de los bloques de normas
+
+La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora, como de la ley que nombra el bloque. Estas se refieren a otra ley y se nombra expresamente. Sin cambio de fondo.
+
+| Antes | Ahora |
+|---|---|
+| Título VI de la Ley 15/2015 por el artículo 104. | Título VI de la Ley 15/2015 por el artículo 104 LJV. |
+| al que remite el artículo 107.3 para | al que remite el artículo 107.3 LJV para |
+| representación gráfica del artículo 106. | representación gráfica del artículo 106 LJV. |

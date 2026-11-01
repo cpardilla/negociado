@@ -138,3 +138,11 @@ Corte del BOE: LEC a 07-10-2026; CC a 07-09-2026.
 **Sin incorporar, pendiente del propietario**: si en las diligencias preliminares valen también los fueros adicionales del art. 50.3 LEC (empresarios y profesionales), del art. 51.1, segundo inciso, LEC (lugar de la relación jurídica con establecimiento o representante) y del art. 51.2 LEC (entes sin personalidad), dado que el art. 257.1 se refiere solo al domicilio de quien ha de intervenir.
 
 **Respuesta del propietario (2026-11-01)**: los fueros adicionales de los arts. 50.3, 51.1, segundo inciso, y 51.2 LEC no se incorporan a E01: el art. 257.1 se refiere solo al domicilio de quien ha de intervenir. Del art. 50.2 LEC se mantiene la expresión legal «domicilio del actor».
+
+## Corrección posterior (2026-11-01) · Citas de los bloques de normas
+
+La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora, como de la ley que nombra el bloque. Estas se refieren a otra ley y se nombra expresamente. Sin cambio de fondo.
+
+| Antes | Ahora |
+|---|---|
+| núms. 10º y 11º del art. 256.1; la Ley 42/2015 dio la redacción vigente de los arts. 259 y 260. | núms. 10º y 11º del art. 256.1 LEC; la Ley 42/2015 dio la redacción vigente de los arts. 259 y 260 LEC. |

@@ -556,7 +556,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 20/2011, de 21 de julio",
       "titulo": "Registro Civil",
-      "texto": "<strong>Artículo 4.4</strong> — El sexo y el cambio de sexo constituyen hechos y actos inscribibles al amparo del derecho a la identidad.<br><strong>Artículo 11.j</strong> — Derecho a promover la rectificación o modificación de los asientos registrales.<br><strong>Artículo 51</strong> — Principio de libre elección del nombre propio; irrelevancia de la correspondencia con el sexo.<br><strong>Artículo 83</strong> — La rectificación del sexo es dato especialmente protegido con publicidad restringida.<br><strong>Artículo 91.2</strong> — Eficacia constitutiva de la inscripción registral de nombre y sexo.",
+      "texto": "<strong>Artículo 4.4.º</strong> — El sexo y el cambio de sexo constituyen hechos y actos inscribibles al amparo del derecho a la identidad.<br><strong>Artículo 11.j</strong> — Derecho a promover la rectificación o modificación de los asientos registrales.<br><strong>Artículo 51</strong> — Principio de libre elección del nombre propio; irrelevancia de la correspondencia con el sexo.<br><strong>Artículo 83</strong> — La rectificación del sexo es dato especialmente protegido con publicidad restringida.<br><strong>Artículo 91.2</strong> — Eficacia constitutiva de la inscripción registral de nombre y sexo.",
       "etiqueta": "Marco registral",
       "tono": "t-nota"
      }

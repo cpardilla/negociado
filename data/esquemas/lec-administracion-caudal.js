@@ -1177,7 +1177,7 @@ Neg.data.register({
      "norma": {
       "ley": "Código Civil (Real Decreto de 24 julio 1889)",
       "titulo": "Arts. 988 y ss. CC — Aceptación y repudiación de la herencia",
-      "texto": "<strong>Conexión con art. 798:</strong> La aceptación de la herencia (arts. 988 y ss.) reduce la representación del administrador a la administración, custodia y conservación del caudal (art. 798).",
+      "texto": "<strong>Conexión con art. 798 LEC:</strong> La aceptación de la herencia (arts. 988 y ss.) reduce la representación del administrador a la administración, custodia y conservación del caudal (art. 798 LEC).",
       "etiqueta": "Derecho civil sustantivo",
       "tono": "t-ok"
      }
@@ -1186,7 +1186,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley Hipotecaria (Decreto de 8 de febrero de 1946)",
       "titulo": "Inscripción del estado de administración hereditaria",
-      "texto": "El art. 797.3 permite hacer constar en el Registro de la Propiedad el estado de administración de las fincas y el nombramiento, mediante mandamiento del Letrado de la Administración de Justicia con los requisitos de la legislación hipotecaria.",
+      "texto": "El art. 797.3 LEC permite hacer constar en el Registro de la Propiedad el estado de administración de las fincas y el nombramiento, mediante mandamiento del Letrado de la Administración de Justicia con los requisitos de la legislación hipotecaria.",
       "etiqueta": "Registral",
       "tono": "t-aviso"
      }
@@ -1195,7 +1195,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley del Notariado, arts. 72–77",
       "titulo": "Subasta notarial de bienes hereditarios",
-      "texto": "<strong>Conexión con art. 803.3:</strong> La venta autorizada por el tribunal puede hacerse en pública subasta ante Notario, regida por los arts. 72–77 de la Ley del Notariado.",
+      "texto": "<strong>Conexión con art. 803.3 LEC:</strong> La venta autorizada por el tribunal puede hacerse en pública subasta ante Notario, regida por los arts. 72–77 de la Ley del Notariado.",
       "etiqueta": "Subasta",
       "tono": "t-ok"
      }
@@ -1204,7 +1204,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 15/2015, de 2 de julio, de Jurisdicción Voluntaria",
       "titulo": "Procedimiento de realización de bienes hereditarios",
-      "texto": "<strong>Arts. 108 y ss.:</strong> Subasta voluntaria ante el Letrado de la Administración de Justicia, alternativa a la notarial para la venta de bienes del caudal (art. 803.3).",
+      "texto": "<strong>Arts. 108 y ss.:</strong> Subasta voluntaria ante el Letrado de la Administración de Justicia, alternativa a la notarial para la venta de bienes del caudal (art. 803.3 LEC).",
       "etiqueta": "Procedimiento alternativo",
       "tono": "t-info"
      }

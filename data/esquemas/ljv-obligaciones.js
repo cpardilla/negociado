@@ -804,7 +804,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 1/2000, de 7 de enero",
       "titulo": "De Enjuiciamiento Civil",
-      "texto": "<strong>Arts. 437 y ss. LEC</strong> — Reguladores del juicio verbal, aplicables cuando el expediente deviene contencioso por oposición conforme al artículo 97.3.<br><strong>Artículo 8 de la Ley 15/2015</strong> — Establece el carácter supletorio de la LEC para todo lo no previsto en la Ley de Jurisdicción Voluntaria.",
+      "texto": "<strong>Arts. 437 y ss. LEC</strong> — Reguladores del juicio verbal, aplicables cuando el expediente deviene contencioso por oposición conforme al artículo 97.3 LJV.<br><strong>Artículo 8 de la Ley 15/2015</strong> — Establece el carácter supletorio de la LEC para todo lo no previsto en la Ley de Jurisdicción Voluntaria.",
       "etiqueta": "Supletoria",
       "tono": "t-plazo"
      }

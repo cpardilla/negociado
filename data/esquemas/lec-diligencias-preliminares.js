@@ -1798,7 +1798,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley estatal · Reformas",
       "titulo": "Leyes 21/2014 y 42/2015",
-      "texto": "La Ley 21/2014 (reforma de la Ley de Propiedad Intelectual) modificó el núm. 7º y añadió los núms. 10º y 11º del art. 256.1; la Ley 42/2015 dio la redacción vigente de los arts. 259 y 260.",
+      "texto": "La Ley 21/2014 (reforma de la Ley de Propiedad Intelectual) modificó el núm. 7º y añadió los núms. 10º y 11º del art. 256.1 LEC; la Ley 42/2015 dio la redacción vigente de los arts. 259 y 260 LEC.",
       "etiqueta": "Reforma",
       "tono": "t-nota"
      }

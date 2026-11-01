@@ -1024,7 +1024,7 @@ Neg.data.register({
      "norma": {
       "ley": "Código Civil",
       "titulo": "Beneficio de inventario (arts. 1010 a 1034 CC)",
-      "texto": "<strong>Arts. 1010 a 1034 CC</strong> — conectado con los artículos 93.2.b y 95.2 LJV (aceptación sin beneficio y consecuencia de la denegación judicial).",
+      "texto": "<strong>Arts. 1010 a 1034 CC</strong> — conectado con los artículos 93.2 b) y 95.2 LJV (aceptación sin beneficio y consecuencia de la denegación judicial).",
       "etiqueta": "Protección patrimonial",
       "tono": "t-plazo"
      }

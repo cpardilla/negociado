@@ -721,7 +721,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 33/2003, de 3 de noviembre",
       "titulo": "Patrimonio de las Administraciones Públicas",
-      "texto": "<strong>Deslinde administrativo</strong> de los bienes de titularidad pública, excluidos del expediente del Capítulo II del Título VI de la Ley 15/2015 por el artículo 104.",
+      "texto": "<strong>Deslinde administrativo</strong> de los bienes de titularidad pública, excluidos del expediente del Capítulo II del Título VI de la Ley 15/2015 por el artículo 104 LJV.",
       "etiqueta": "Sector público",
       "tono": "t-plazo"
      }
@@ -730,7 +730,7 @@ Neg.data.register({
      "norma": {
       "ley": "RD Legislativo 1/2004, de 5 de marzo",
       "titulo": "Texto Refundido de la Ley del Catastro Inmobiliario",
-      "texto": "<strong>Marco normativo</strong> — al que remite el artículo 107.3 para la práctica de las alteraciones catastrales derivadas del deslinde y para la incorporación de la representación gráfica georreferenciada.",
+      "texto": "<strong>Marco normativo</strong> — al que remite el artículo 107.3 LJV para la práctica de las alteraciones catastrales derivadas del deslinde y para la incorporación de la representación gráfica georreferenciada.",
       "etiqueta": "Catastro",
       "tono": "t-nota"
      }
@@ -739,7 +739,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 13/2015, de 24 de junio",
       "titulo": "Reforma de la Ley Hipotecaria y del Catastro Inmobiliario",
-      "texto": "<strong>Coordinación gráfica Registro-Catastro</strong> — reforma conjunta orientada a la coordinación, telón de fondo de las exigencias de representación gráfica del artículo 106. Redacción vigente del artículo 200 de la Ley Hipotecaria.",
+      "texto": "<strong>Coordinación gráfica Registro-Catastro</strong> — reforma conjunta orientada a la coordinación, telón de fondo de las exigencias de representación gráfica del artículo 106 LJV. Redacción vigente del artículo 200 de la Ley Hipotecaria.",
       "etiqueta": "Coordinación",
       "tono": "t-info"
      }

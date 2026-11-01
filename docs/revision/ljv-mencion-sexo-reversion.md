@@ -53,3 +53,11 @@ Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Trib
 | 4 | postulacion, solicitud, resolucion | error | «Excepción a la postulación parts-based… evitando costas»; «plazos acortados»; «el Juez actúa con independencia y sometido al imperio de la ley» | Retirados (sin base o sin contenido); tramitación preferente (art. 26 octies.1) y auto (art. 19.1) | LJV |
 | 5 | competencia | desfasado | Juzgado de Primera Instancia | Hoy, Sección de Familia, Infancia y Capacidad (art. 86.5 j) LOPJ) o Sección Civil | LO 1/2025 |
 | 6 | actores | error | Actor «laj» etiquetado como «Administración / Interesado» | «Solicitante / Oficina judicial» | — |
+
+## Corrección posterior (2026-11-01) · Cita del art. 4 LRC
+
+Corte del BOE: LRC a 24-02-2026. Encontrada al comprobar por fin las citas de los bloques de normas contra su propia ley.
+
+| Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| Ecosistema normativo › Ley 20/2011 | cita | «Artículo 4.4» (el art. 4 no tiene apartados) | «Artículo 4.4.º» (ordinal 4.º: el sexo y el cambio de sexo) | LRC 4 |

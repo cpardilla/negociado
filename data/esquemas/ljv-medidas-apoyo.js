@@ -670,7 +670,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 8/2021, de 2 de junio",
       "titulo": "Reforma del sistema de apoyo a personas con discapacidad",
-      "texto": "<strong>Introduce</strong> los arts. 42 bis a), b) y c) en la LJV.<br><strong>Reordena</strong> el Código Civil: el régimen anterior queda sustituido y los arts. 299 bis a 324 CC quedan sin contenido.<br><strong>Reforma</strong> el Título XI del CC (nuevo sistema de medidas de apoyo).<br><strong>Modifica</strong> la LEC (proceso contencioso de apoyos).<br>Inspirada en la Convención ONU 2006 sobre Derechos de Personas con Discapacidad. Vigente desde 3 de septiembre de 2021.",
+      "texto": "<strong>Introduce</strong> los arts. 42 bis a) a 42 bis c) LJV.<br><strong>Reordena</strong> el Código Civil: el régimen anterior queda sustituido y los arts. 299 bis a 324 CC quedan sin contenido.<br><strong>Reforma</strong> el Título XI del CC (nuevo sistema de medidas de apoyo).<br><strong>Modifica</strong> la LEC (proceso contencioso de apoyos).<br>Inspirada en la Convención ONU 2006 sobre Derechos de Personas con Discapacidad. Vigente desde 3 de septiembre de 2021.",
       "etiqueta": "Norma habilitante",
       "tono": "t-aviso"
      }
@@ -688,7 +688,7 @@ Neg.data.register({
      "norma": {
       "ley": "LEC — Libro IV, Título I",
       "titulo": "Proceso contencioso de apoyos",
-      "texto": "<strong>Art. 748 LEC</strong> — ámbito de aplicación (incluye medidas de apoyo).<br><strong>Art. 756 LEC</strong> — ámbito (oposición en el expediente o expediente que no pudo resolverse) y competencia: la autoridad judicial que conoció del expediente previo.<br><strong>Art. 757 LEC</strong> — legitimación: la persona, su cónyuge o asimilado, descendientes, ascendientes o hermanos; el Ministerio Fiscal, si ellos no existen o no demandan. Proceso declarativo con plenas garantías.<br><strong>Conexión clave:</strong> art. 42 bis b) apdo. 5 → proceso contencioso de los arts. 756 y ss. LEC cuando hay oposición y se pretende continuar.",
+      "texto": "<strong>Art. 748 LEC</strong> — ámbito de aplicación (incluye medidas de apoyo).<br><strong>Art. 756 LEC</strong> — ámbito (oposición en el expediente o expediente que no pudo resolverse) y competencia: la autoridad judicial que conoció del expediente previo.<br><strong>Art. 757 LEC</strong> — legitimación: la persona, su cónyuge o asimilado, descendientes, ascendientes o hermanos; el Ministerio Fiscal, si ellos no existen o no demandan. Proceso declarativo con plenas garantías.<br><strong>Conexión clave:</strong> art. 42 bis b) LJV, apdo. 5 → proceso contencioso de los arts. 756 y ss. LEC cuando hay oposición y se pretende continuar.",
       "etiqueta": "Proceso contencioso",
       "tono": "t-info"
      }

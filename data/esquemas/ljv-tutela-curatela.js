@@ -1222,7 +1222,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 8/2021",
       "titulo": "Reforma del apoyo a las personas con discapacidad",
-      "texto": "Nuevo Título XI del CC, tutela solo para menores, art. 51 bis y redacción vigente de los arts. 43–52 LJV.",
+      "texto": "Nuevo Título XI del CC, tutela solo para menores, art. 51 bis LJV y redacción vigente de los arts. 43–52 LJV.",
       "etiqueta": "Reforma",
       "tono": "t-ok"
      }
