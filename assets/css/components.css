@@ -292,7 +292,7 @@
 /* ── Esquema card ───────────────────────────────────────────────────────── */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: var(--sp-4);
   align-items: start;
 }
@@ -521,7 +521,7 @@
 .norms,
 .groups {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--sp-3);
   margin: var(--sp-3) 0;
 }
@@ -793,7 +793,7 @@ a.phase:hover {
 }
 .map-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--sp-4);
   align-items: start;
 }
@@ -1192,7 +1192,7 @@ a.phase:hover {
 /* ── Home tiles ─────────────────────────────────────────────────────────── */
 .tiles {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--sp-4);
 }
 .tile {
