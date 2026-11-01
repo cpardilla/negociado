@@ -47,6 +47,18 @@
     },
   };
 
+  /** Recently visited resources (laws, esquemas, guías), newest first, in this browser only.
+   *  Only [kind, id] is kept: titles come from the catalogue, so they never go stale. */
+  Neg.recientes = {
+    MAX: 6,
+    list: () => Neg.prefs.get("recientes", []).filter((x) => Array.isArray(x) && x.length === 2),
+    add(kind, id) {
+      const rest = Neg.recientes.list().filter(([k, i]) => k !== kind || i !== id);
+      Neg.prefs.set("recientes", [[kind, id], ...rest].slice(0, Neg.recientes.MAX));
+    },
+    clear: () => Neg.prefs.set("recientes", null),
+  };
+
   /** Inline SVG icons (stroke style), by name. */
   const ICONS = {
     search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',

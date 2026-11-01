@@ -52,6 +52,10 @@
     }
     try {
       await view(el, where.args, where.query);
+      // Remembered for the home page, only if it is a resource of the catalogue (not a wrong address).
+      const lists = { ley: "leyes", esquema: "esquemas", guia: "guias" };
+      const id = where.args[0];
+      if (lists[where.name] && Neg.catalogo && Neg.catalogo[lists[where.name]].some((r) => r.id === id)) Neg.recientes.add(where.name, id);
     } catch (err) {
       console.error(err);
       el.innerHTML = Neg.message("No se ha podido abrir", err.message, true);
