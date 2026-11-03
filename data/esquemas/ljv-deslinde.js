@@ -140,7 +140,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Órgano competente:</strong> será competente para el conocimiento de este expediente el Letrado de la Administración de Justicia (hoy, Letrado de la Administración de Justicia) del Juzgado de Primera Instancia correspondiente al lugar donde estuviera situada la finca o la mayor parte de ella."
+             "t": "<strong>Órgano competente:</strong> será competente para el conocimiento de este expediente el Letrado de la Administración de Justicia (la ley dice aún «Secretario judicial») del Juzgado de Primera Instancia correspondiente al lugar donde estuviera situada la finca o la mayor parte de ella."
             },
             {
              "t": "<strong>Competencia objetiva:</strong> tramita y resuelve el Letrado de la Administración de Justicia; hoy, del Tribunal de Instancia, Sección Civil (art. 85 LOPJ)."
@@ -304,7 +304,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Falta de asistencia de algún colindante:</strong> no se suspenderá la práctica del deslinde por la falta de asistencia de alguno de los dueños colindantes, quedando a salvo su derecho para demandar, en el juicio declarativo que corresponda, la posesión o propiedad de las que se creyese despojado en virtud del deslinde. La comparecencia no es obligatoria, lo que resulta coherente con la naturaleza voluntaria del expediente."
+             "t": "<strong>Falta de asistencia de algún colindante:</strong> no se suspenderá la práctica del deslinde por la falta de asistencia de alguno de los dueños colindantes, quedando a salvo su derecho para demandar, en el juicio declarativo que corresponda, la posesión o propiedad de las que se creyese despojado en virtud del deslinde."
             },
             {
              "t": "<strong>Oposición antes de la comparecencia:</strong> si antes de la comparecencia, el dueño de alguna de las fincas colindantes se opusiera al deslinde, se archivará el expediente en relación a la parte de la finca lindante con la del opositor, reservando a las partes su derecho para que lo ejerciten en el juicio declarativo que corresponda, y continuará con el resto. Es una regla especial frente a la general del artículo 17.3 de la Ley 15/2015, según la cual la oposición no hace contencioso el expediente ni impide que continúe."
@@ -583,7 +583,7 @@ Neg.data.register({
   },
   {
    "titulo": "Indice de plazos procesales",
-   "recuento": "2 trámites",
+   "recuento": "3 trámites",
    "plegada": true,
    "bloques": [
     {
@@ -703,7 +703,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 15/2015, de 2 de julio",
       "titulo": "Jurisdicción Voluntaria",
-      "texto": "<strong>Artículo 1.2</strong> — definición de expedientes de jurisdicción voluntaria. <strong>Artículos 13 a 22</strong> — normas comunes de tramitación, de aplicación supletoria. <strong>Artículo 17.3</strong> — la oposición no hace contencioso el expediente, salvo que la ley disponga otra cosa (el art. 106.2 lo hace respecto de la parte del colindante opositor). <strong>Artículos 100 a 103</strong> — autorización judicial al usufructuario para reclamar créditos vencidos.",
+      "texto": "<strong>Artículo 1.2</strong> — definición de expedientes de jurisdicción voluntaria. <strong>Artículos 13 a 22</strong> — normas comunes de tramitación. <strong>Artículo 17.3</strong> — la oposición no hace contencioso el expediente, salvo que la ley disponga otra cosa (el art. 106.2 prevé otra cosa: archivo en la parte del colindante opositor). <strong>Artículos 100 a 103</strong> — autorización judicial al usufructuario para reclamar créditos vencidos.",
       "etiqueta": "Tramitación",
       "tono": "t-info"
      }

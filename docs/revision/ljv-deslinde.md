@@ -66,3 +66,10 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 2 | admision; nuevos subsanacion y fin_no_admitida | Sin defectos, competencia ni inadmisión | Reglas generales | LJV 13, 16, 17.1 |
 | 3 | confusion_lindes, fin_sin_confusion | «no cabe el ejercicio de esta acción» | Presentado como deducción | CC 384 |
 | 4 | fin_sin_avenencia | Sin certificación ni Catastro | Añadidos | LJV 107.2, 107.3 |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 1 | Art. 105 | «Letrado… (hoy, Letrado…)» | «la ley dice aún Secretario judicial» | LJV 105.1 |
+| 5 | Ecosistema, art. 106, índice | «lo hace» contencioso; «supletoria»; glosa; «2 trámites» | Corregido | LJV 13, 106.2 |
