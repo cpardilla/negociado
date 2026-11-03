@@ -172,3 +172,12 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de la relectura (`relectura-20
 | E02 | Aceptación; art. 782; art. 789 | sin fuente | «suele valorarse como aceptación tácita» (retirado); «Habitualmente»; «Formas habituales» | «Puede aportarse»; «Formas» | Decisión 24 |
 | G02 | fin_inadmitida | **error** | Atribuida al LAJ; «puede presentarse de nuevo» | LAJ y Tribunal: si no se subsana, da cuenta al Tribunal | LEC 404.2 |
 | G02 | fin_acreedor, fin_partidor_previo | **error** | Inadmisión atribuida al LAJ | LAJ y Tribunal, con nota de que el art. 404 no menciona expresamente el caso | LEC 404 |
+
+## Protocolización de las operaciones divisorias: guía (2026-11-03)
+
+| Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|
+| p5_decreto | Solo el decreto | Recurso de revisión y firmeza | LEC 454 bis; DGSJFP 11-6-2026 |
+| p5_sentencia | Siempre a protocolizar | Paso nuevo p6_sentencia_titulo: la sentencia firme es título inscribible | LH 14; RH 80.1 a); DGSJFP 2-3-2022 |
+| p6_protocolizacion y pasos nuevos | Una frase | Quién designa Notario, testimonios, acta, título y testimonios del art. 788.2 | RN 128, 211, 213; RH 80, 100; LH 14, 254.2; DGRN 1-2-2018 y 26-7-2019; DGSJFP 14-6-2023 y 14-5-2025 |
+| fin_acuerdo_coherederos | Sin aviso | Hay que elevar el acuerdo a público para inscribir | DGSJFP 2-3-2022 |

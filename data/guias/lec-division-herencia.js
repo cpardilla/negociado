@@ -33,7 +33,8 @@ Neg.data.register({
  "actores": {
   "ambos": "LAJ / Tribunal",
   "juez": "Tribunal",
-  "laj": "Letrado de la Administración de Justicia"
+  "laj": "Letrado de la Administración de Justicia",
+  "notario": "Notario"
  },
  "inicio": "p0_inicio",
  "pasos": {
@@ -838,6 +839,14 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "El LAJ dicta decreto aprobando las operaciones divisorias y mandando protocolizarlas."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Contra el decreto, que pone fin al procedimiento, cabe recurso directo de revisión en cinco días, sin efectos suspensivos (art. 454 bis.1 y 2 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Conviene que conste la firmeza del decreto: un registrador la exigió para inscribir, y la Dirección General la dio por acreditada con la diligencia de ordenación reseñada en la escritura (Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 11 de junio de 2026)."
     }
    ],
    "siguiente": "p6_protocolizacion"
@@ -956,16 +965,170 @@ Neg.data.register({
      "texto": "No tiene eficacia de cosa juzgada: los interesados pueden hacer valer los derechos que crean corresponderles sobre los bienes adjudicados en el juicio ordinario que corresponda (art. 787.5, párrafo segundo, LEC)."
     }
    ],
-   "siguiente": "p6_protocolizacion"
+   "siguiente": "p6_sentencia_titulo"
   },
-  "p6_protocolizacion": {
+  "p6_sentencia_titulo": {
    "fase": 6,
-   "titulo": "Protocolización",
+   "titulo": "Título para inscribir tras la sentencia",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Aprobadas las operaciones, se protocolizan (art. 787.2 LEC). Una vez protocolizadas, el LAJ da a los partícipes que lo pidan testimonio de su haber y adjudicación (art. 788.2 LEC)."
+     "texto": "La sentencia firme es título suficiente para inscribir, sin protocolización: se presentan testimonio de la sentencia, con su firmeza, y del cuaderno particional (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "Tiene que quedar claro qué cuaderno refleja lo aprobado, y determinarlo corresponde al Juez: una inscripción se suspendió porque se presentaron dos versiones sin constancia de cuál era la buena (Resolución de la Dirección General de los Registros y del Notariado de 26 de julio de 2019)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 787.5 LEC · Art. 14 LH · Art. 80.1 a) RH"
+    }
+   ],
+   "siguiente": "p6_acreedores"
+  },
+  "p6_protocolizacion": {
+   "fase": 6,
+   "titulo": "Protocolización: a quién corresponde",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Aprobadas las operaciones por decreto, se protocolizan ante Notario, mediante acta (art. 787.2 LEC; arts. 211 y 213 RN). El Notario depende de lo que decidan los interesados."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "El testimonio del decreto no es título inscribible: para inscribir las adjudicaciones hay que protocolizar las operaciones ante Notario, salvo que en el mismo procedimiento se dispusiera otra cosa (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de los Registros y del Notariado de 1 de febrero de 2018; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 787.2 LEC · Art. 128 RN · Art. 14 LH · Art. 80.1 a) RH"
+    }
+   ],
+   "pregunta": "¿Designan los interesados un Notario por unanimidad?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "p6_notario_unanime"
+    },
+    {
+     "texto": "No hay acuerdo",
+     "tono": "t-aviso",
+     "destino": "p6_notario_turno"
+    }
+   ]
+  },
+  "p6_notario_unanime": {
+   "fase": 6,
+   "titulo": "Notario designado por los interesados",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Protocoliza el Notario que, residiendo dentro del partido judicial, designen unánimemente los interesados."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 128, párrafo tercero, RN"
+    }
+   ],
+   "siguiente": "p6_testimonios_notario"
+  },
+  "p6_notario_turno": {
+   "fase": 6,
+   "titulo": "Notario designado por turno",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "A falta de acuerdo, el Juez o Tribunal designa al Notario a quien corresponda, con arreglo a un turno establecido entre los Notarios del distrito notarial."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 128, párrafo cuarto, RN"
+    }
+   ],
+   "siguiente": "p6_testimonios_notario"
+  },
+  "p6_testimonios_notario": {
+   "fase": 6,
+   "titulo": "Testimonios para el Notario",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "lista",
+     "titulo": "Se expide testimonio de",
+     "marcar": true,
+     "items": [
+      "El decreto que aprueba las operaciones y manda protocolizarlas, con expresión de su firmeza",
+      "El cuaderno particional aprobado; si hubo reformas, con las reformas convenidas (art. 787.4 LEC)"
+     ]
+    },
+    {
+     "tipo": "nota",
+     "texto": "El art. 213 RN habla de entregar «el expediente con el auto judicial» que ordena protocolizar. En la práctica se hace con testimonios, y hoy la resolución que lo ordena es el decreto."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "Tiene que quedar claro cuál es el cuaderno aprobado: una inscripción se suspendió porque se protocolizaron dos versiones sin constancia de cuál era la buena (Resolución de la Dirección General de los Registros y del Notariado de 26 de julio de 2019)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 787.2 y 4 LEC · Art. 213 RN"
+    }
+   ],
+   "siguiente": "p6_acta_protocolizacion"
+  },
+  "p6_acta_protocolizacion": {
+   "fase": 6,
+   "titulo": "Acta de protocolización",
+   "actor": "notario",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El Notario extiende y suscribe el acta a requerimiento de cualquier persona que le entregue la documentación con la resolución que ordena protocolizar (art. 213 RN)."
+    },
+    {
+     "tipo": "lista",
+     "titulo": "El acta hace constar",
+     "items": [
+      "Que el Notario ha examinado el documento que se protocoliza",
+      "La declaración de voluntad del requirente o el cumplimiento de la resolución que ordena protocolizar",
+      "Que el expediente queda unido al protocolo, con el número de folios que contiene"
+     ]
+    },
+    {
+     "tipo": "nota",
+     "texto": "El art. 80.1 a) RH admite como título tanto la escritura como el acta de protocolización de operaciones particionales."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 211 y 213 RN · Art. 80.1 a) RH"
+    }
+   ],
+   "siguiente": "p6_titulo_testimonios"
+  },
+  "p6_titulo_testimonios": {
+   "fase": 6,
+   "titulo": "Título inscribible y testimonios (art. 788.2 LEC)",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Una vez protocolizadas las operaciones, el LAJ da a los partícipes que lo pidan testimonio de su haber y adjudicación (art. 788.2 LEC)."
+    },
+    {
+     "tipo": "info",
+     "texto": "Lo protocolizado es el título para inscribir (art. 80.1 a) RH). El registrador lo califica como documento judicial: competencia, congruencia, formalidades extrínsecas y obstáculos del Registro, sin entrar en el fondo (art. 100 RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 14 de junio de 2023)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Para inscribir tienen que constar los números de identificación fiscal de los interesados, también en un título judicial (art. 254.2 LH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 14 de mayo de 2025)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 788.2 LEC · Art. 80.1 a) y art. 100 RH · Art. 254.2 LH"
     }
    ],
    "siguiente": "p6_acreedores"
@@ -1078,6 +1241,10 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "Pedido de común acuerdo por todos los interesados, el LAJ sobresee el juicio y pone los bienes a disposición de los herederos."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "La resolución que sobresee no es directamente inscribible, porque no resuelve sobre el fondo: para inscribir, hay que elevar el acuerdo a público (Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
     }
    ],
    "fin": "neutral"
