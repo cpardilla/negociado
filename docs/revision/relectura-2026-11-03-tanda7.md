@@ -1,6 +1,6 @@
 # Relectura, séptima tanda (2026-11-03)
 
-E y G del Derecho sucesorio (arts. 91-95 LJV) y de la emancipación y el beneficio de la mayoría de edad (arts. 53-55 LJV). Corte del BOE: descarga del 2026-11-03. **Sin cambios en la app: pendiente del visto bueno del propietario.**
+E y G del Derecho sucesorio (arts. 91-95 LJV) y de la emancipación y el beneficio de la mayoría de edad (arts. 53-55 LJV). Corte del BOE: descarga del 2026-11-03. **Aplicados con el visto bueno del propietario; detalle en el registro de cada recurso.**
 
 Cotejado con el texto: arts. 13, 16-20 y 53-55, 91-95 LJV; arts. 46, 168, 169, 239-248, 898, 899, 903-907, 910, 911, 990, 992, 996, 1001, 1007, 1057 y 1060 CC (de varios, solo el principio); arts. 341 y 450 LEC y arts. 70 y 71 LRC (el principio).
 
