@@ -56,8 +56,25 @@ Neg.data.register({
      "texto": "Sí, y un interesado pide la intervención del caudal (art. 792)",
      "tono": "t-nota",
      "destino": "intervencion_a_instancia"
+    },
+    {
+     "texto": "Sí, y nadie pide la intervención",
+     "tono": "t-nota",
+     "destino": "sin_intervencion"
     }
    ]
+  },
+  "sin_intervencion": {
+   "fase": 0,
+   "titulo": "Sin intervención del caudal",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Las medidas de oficio del art. 790.1 LEC proceden cuando no consta testamento ni parientes, cuando estos están ausentes o cuando algún menor no tiene representante legal. Fuera de esos casos, la intervención del caudal se acuerda a instancia de parte (art. 792 LEC): si nadie la pide, no se abre."
+    }
+   ],
+   "fin": "neutral"
   },
   "medidas_790": {
    "fase": 1,

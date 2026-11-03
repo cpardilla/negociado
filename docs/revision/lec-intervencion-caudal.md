@@ -78,3 +78,13 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | G03 | averiguacion_791 | recorrido | Testamento o parientes llevaban siempre a la intervención a instancia de parte | Si comparecen parientes, a la entrega; si aparece testamento o un interesado la pide, a la intervención | LEC 790.2, 792 |
 | G03 | auto_791_2 | forma | La comunicación a Hacienda iba en un bloque «Plazo» sin plazo | Bloque «Información» | LEC 791.2 |
 | G03 | bloqueo_acreedores_796_3 | cita | Solo art. 1082 CC | Arts. 796.3 y 782.4 LEC; art. 1082 CC | LEC 796.3, 782.4 |
+
+## Corrección posterior (2026-11-03) · Relectura, segunda tanda
+
+Corte del BOE: descarga del 2026-11-03. Salida anotada en la primera tanda, aplicada con el visto bueno del propietario.
+
+| Paso | Antes | Ahora | Fuente |
+|---|---|---|---|
+| inicio; nuevo sin_intervencion | Si constaban testamento o parientes y nadie pedía la intervención, la guía no ofrecía salida | Tercera opción con fin propio | LEC 790.1, 792 |
+
+«Si nadie la pide, no se abre» es deducción de ambos artículos: la ley no lo dice con esas palabras.
