@@ -597,7 +597,7 @@ Neg.data.register({
              "t": "Durante la tramitación: el defensor debe continuar ejerciendo el cargo."
             },
             {
-             "t": "Excusa rechazada: el defensor soporta todos los gastos del expediente (art. 50.3 LJV)."
+             "t": "Excusa rechazada: si dejó de ejercer durante la tramitación, responde de todos los gastos ocasionados por la excusa (art. 50.3 LJV)."
             }
            ]
           }
@@ -663,7 +663,7 @@ Neg.data.register({
   },
   {
    "titulo": "Indice de plazos procesales",
-   "recuento": "6 trámites",
+   "recuento": "10 trámites",
    "plegada": true,
    "bloques": [
     {
@@ -680,12 +680,12 @@ Neg.data.register({
         "Art. 50 LJV"
        ],
        [
-        "Citación con antelación mínima para comparecencia (normas supletorias)",
+        "Citación con antelación mínima para comparecencia",
         "15 días",
         "Art. 17 LJV"
        ],
        [
-        "Comparecencia desde la admisión de la solicitud (normas supletorias)",
+        "Comparecencia desde la admisión de la solicitud",
         "30 días",
         "Art. 18.1 LJV"
        ],
@@ -703,6 +703,26 @@ Neg.data.register({
         "Rendición final de cuentas desde el cese del cargo",
         "3 meses",
         "Art. 51.4 LJV (por remisión del art. 32)"
+       ],
+       [
+        "Subsanación de defectos u omisiones",
+        "5 días",
+        "Art. 16.4 LJV"
+       ],
+       [
+        "Oposición de los interesados desde la citación",
+        "5 días",
+        "Art. 17.3 LJV"
+       ],
+       [
+        "Recurso de revisión contra el decreto",
+        "5 días",
+        "Art. 20.2 LJV; art. 454 bis LEC"
+       ],
+       [
+        "Petición de comparecencia tras el traslado de las cuentas",
+        "10 días",
+        "Art. 51.2 LJV (por remisión del art. 32)"
        ]
       ]
      }

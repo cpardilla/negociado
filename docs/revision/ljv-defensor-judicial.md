@@ -96,3 +96,10 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 5 | rendicion_cuentas | Sin plazo de presentación | Tres meses | LJV 51.4 |
 | 7 | cesacion_causa, cesacion_representante, verif_negativa, fin_no_procede, fin_limite_directo | Contenidos sin fuente | Rotulados o suprimidos | LJV 31 |
 | 8 | excusa | Sin la salvedad de las personas jurídicas | Añadida | LJV 50.1 |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 4 | Art. 50, excusa rechazada | «soporta todos los gastos del expediente» | Solo si dejó de ejercer, los ocasionados por la excusa | LJV 50.3 |
+| 6 | Índice de plazos | Sin cuatro plazos; «normas supletorias» | Añadidos; suprimido | LJV 13, 16.4, 17.3, 51.2; LEC 454 bis |
