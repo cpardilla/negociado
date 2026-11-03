@@ -946,7 +946,16 @@ Neg.data.register({
              "t": "Pasado el plazo sin oposición, o en cuanto todos manifiesten su conformidad, el Letrado de la Administración de Justicia dicta decreto aprobando las operaciones y mandando protocolizarlas."
             },
             {
-             "t": "Para inscribir en el Registro las adjudicaciones concretas hace falta escritura pública o sentencia firme (art. 14 LH): de ahí la protocolización notarial."
+             "t": "Para inscribir las adjudicaciones concretas hace falta escritura pública o sentencia firme (art. 14 LH). El testimonio del decreto no es título inscribible: para inscribir las adjudicaciones hay que protocolizar las operaciones ante Notario, salvo que en el mismo procedimiento se dispusiera otra cosa (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de los Registros y del Notariado de 1 de febrero de 2018; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
+            },
+            {
+             "t": "Contra el decreto, que pone fin al procedimiento, cabe recurso directo de revisión en cinco días, sin efectos suspensivos (art. 454 bis.1 y 2 LEC)."
+            },
+            {
+             "t": "Protocoliza, mediante acta, el Notario que, residiendo dentro del partido judicial, designen unánimemente los interesados; a falta de acuerdo, el Juez o Tribunal lo designa por turno entre los Notarios del distrito notarial (arts. 128, 211 y 213 RN)."
+            },
+            {
+             "t": "El acta se extiende a requerimiento de cualquier persona que entregue la documentación con la resolución que ordena protocolizar (art. 213 RN). En la práctica, con testimonio del decreto, con su firmeza, y del cuaderno aprobado."
             }
            ]
           }
@@ -983,6 +992,9 @@ Neg.data.register({
              "t": "La sentencia se lleva a efecto según el art. 788, pero no tiene eficacia de cosa juzgada: los interesados pueden hacer valer sus derechos sobre los bienes adjudicados en el juicio ordinario que corresponda."
             },
             {
+             "t": "La sentencia firme es título suficiente para inscribir, sin protocolización: se presentan testimonio de la sentencia, con su firmeza, y del cuaderno particional (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
+            },
+            {
              "t": "Recurso: apelación (art. 455 LEC)."
             }
            ]
@@ -1007,7 +1019,11 @@ Neg.data.register({
       ],
       "referencias": [
        "LEC arts. 40, 133, 437, 455",
-       "LH art. 14"
+       "LH art. 14",
+       "LEC art. 454 bis",
+       "LH art. 14",
+       "RH art. 80",
+       "RN arts. 128, 211, 213"
       ],
       "claves": "787 traslado diez dias oposicion escrito decreto aprobacion protocolizacion comparecencia juicio verbal sentencia cosa juzgada cohecho avaluo suspension"
      }
@@ -1110,6 +1126,9 @@ Neg.data.register({
             },
             {
              "t": "Para negociar, las partes pueden pedir la suspensión del proceso, que acuerda el Letrado de la Administración de Justicia por decreto por un máximo de sesenta días (art. 19.4 LEC)."
+            },
+            {
+             "t": "La resolución que sobresee no es directamente inscribible, porque no resuelve sobre el fondo: para inscribir, hay que elevar el acuerdo a público (Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
             }
            ]
           }
@@ -1645,7 +1664,7 @@ Neg.data.register({
         "t": "Abogado y procurador de las partes (arts. 23 y 31 LEC)"
        },
        {
-        "t": "Notario — protocolización de las operaciones aprobadas (art. 787.2)"
+        "t": "Notario — protocolización de las operaciones aprobadas (art. 787.2; arts. 128, 211 y 213 RN)"
        }
       ]
      }

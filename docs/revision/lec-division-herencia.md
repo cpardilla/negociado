@@ -181,3 +181,11 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de la relectura (`relectura-20
 | p5_sentencia | Siempre a protocolizar | Paso nuevo p6_sentencia_titulo: la sentencia firme es título inscribible | LH 14; RH 80.1 a); DGSJFP 2-3-2022 |
 | p6_protocolizacion y pasos nuevos | Una frase | Quién designa Notario, testimonios, acta, título y testimonios del art. 788.2 | RN 128, 211, 213; RH 80, 100; LH 14, 254.2; DGRN 1-2-2018 y 26-7-2019; DGSJFP 14-6-2023 y 14-5-2025 |
 | fin_acuerdo_coherederos | Sin aviso | Hay que elevar el acuerdo a público para inscribir | DGSJFP 2-3-2022 |
+
+## Protocolización de las operaciones divisorias: esquema (2026-11-03)
+
+| Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|
+| Art. 787, apartado 2 | «de ahí la protocolización notarial» | Por qué es necesaria, recurso, Notario y acta | LEC 454 bis; LH 14; RH 80.1 a); RN 128, 211, 213; DGRN 1-2-2018; DGSJFP 2-3-2022 |
+| Art. 787, apartado 5 | Sin título | La sentencia firme es título inscribible | DGSJFP 2-3-2022 |
+| Art. 789 | Sin aviso | Elevar el acuerdo a público para inscribir | DGSJFP 2-3-2022 |
