@@ -79,3 +79,11 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 16 | solicitud_documentacion, supuesto_emancipacion | Letras atribuidas al art. 244 CC | Letras del art. 53.1 LJV | LJV 53.1; CC 244 |
 | 17 | fin_archivo | Actor LAJ | Juez | LJV 18.2.1.ª |
 | 18 | admision_revision | Sin decir qué pasa si no se subsana | Da cuenta al Juez | LJV 16.4 |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 12 | Formas de emancipación | «menor de dieciséis años cumplidos» | Que tenga dieciséis años cumplidos | CC 241 |
+| 13 | Índice de plazos | Sin subsanación ni oposición | Añadidas | LJV 16.4, 17.3 |
+| 16 | Supuestos | Letras atribuidas al art. 244 CC | Letras del art. 53.1 LJV | LJV 53.1; CC 244 |

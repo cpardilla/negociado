@@ -105,7 +105,7 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Supuestos (art. 244 CC)",
+         "titulo": "Supuestos (art. 53.1 LJV, letras a a c; art. 244 CC, ordinales 1.º a 3.º)",
          "contenido": [
           {
            "lista": [
@@ -554,7 +554,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Por la mayor edad (dieciocho años, art. 240 CC), por concesión de quienes ejerzan la patria potestad (art. 241 CC: menor de dieciséis años cumplidos que la consienta; escritura pública o comparecencia ante el encargado del Registro Civil) o por concesión judicial (art. 244 CC)."
+             "t": "Por la mayor edad (dieciocho años, art. 240 CC), por concesión de quienes ejerzan la patria potestad (art. 241 CC: que el menor tenga dieciséis años cumplidos y la consienta; escritura pública o comparecencia ante el encargado del Registro Civil) o por concesión judicial (art. 244 CC)."
             },
             {
              "t": "Además, se reputa emancipado al mayor de dieciséis años que vive independientemente con consentimiento de los progenitores, que pueden revocarlo (art. 243 CC)."
@@ -624,7 +624,7 @@ Neg.data.register({
   },
   {
    "titulo": "Índice de plazos",
-   "recuento": "5 plazos",
+   "recuento": "7 plazos",
    "plegada": true,
    "bloques": [
     {
@@ -659,6 +659,16 @@ Neg.data.register({
         "Rendición de cuentas de los padres al término de la patria potestad (prescripción de la acción)",
         "3 años",
         "Art. 168 CC"
+       ],
+       [
+        "Subsanación de defectos u omisiones",
+        "5 días",
+        "Art. 16.4 LJV"
+       ],
+       [
+        "Oposición de los interesados desde la citación",
+        "5 días",
+        "Art. 17.3 LJV"
        ]
       ]
      }
