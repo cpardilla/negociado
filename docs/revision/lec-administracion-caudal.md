@@ -74,3 +74,17 @@ La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora,
 | El art. 797.3 permite | El art. 797.3 LEC permite |
 | Conexión con art. 803.3: | Conexión con art. 803.3 LEC: |
 | venta de bienes del caudal (art. 803.3). | venta de bienes del caudal (art. 803.3 LEC). |
+
+## Corrección posterior (2026-11-03) · Relectura, primera tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda1.md`, aplicados con el visto bueno del propietario.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| E04 | Art. 801 › reparaciones ordinarias | **error** | «Facultad autónoma»: «podrá realizar»; «pueden realizarse» | «Deber»: «debe hacer»; «las hace directamente» | LEC 801.2 |
+| E04 | Art. 798 › herencia no aceptada | se aparta | «todas las acciones… tanto activas como pasivas» | «las acciones que pudieran corresponder al difunto» | LEC 798 |
+| E04 | Art. 799 › inspección | se aparta | «Cualquier parte del procedimiento de división judicial» | «La parte que lo pida» | LEC 799.3 |
+| E04 | Art. 798 › herencia aceptada | sin fuente | «Exclusión» de actos de disposición y titulares dominicales | Retirado | LEC 798 |
+| E04 | Art. 802 › nota | sin fuente | «providencia motivada», con finalidad añadida | «mediante providencia» | LEC 802.2, 208.1 |
+| E04 | Art. 803 › resumen y regla | redacción | «principio de intangibilidad», «prohibición absoluta» | «regla general» | LEC 803.1 y 2 |
+| E04 | «Normas» de las fichas 798, 799, 801, 802, 804 y 805 | forma | Incluían lo que no son normas | Solo normas; vacías en 799, 804 y 805 | — |

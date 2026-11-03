@@ -202,7 +202,7 @@ Neg.data.register({
              "t": "<strong>Representación plena e integral:</strong> El administrador representa a la herencia en todos los pleitos que se promuevan o estuvieren principiados al fallecer el causante."
             },
             {
-             "t": "<strong>Ejercicio de acciones:</strong> Ejercitará todas las acciones que pudieran corresponder al difunto, tanto activas como pasivas."
+             "t": "<strong>Ejercicio de acciones:</strong> Ejercitará las acciones que pudieran corresponder al difunto."
             },
             {
              "t": "<strong>Límite temporal objetivo:</strong> Esta representación plena se mantiene hasta que se haga la declaración de herederos."
@@ -233,9 +233,6 @@ Neg.data.register({
             },
             {
              "t": "<strong>Facultades concretas:</strong> Podrá y deberá gestionar lo que sea conducente, ejercitando las acciones que procedan dentro de ese ámbito."
-            },
-            {
-             "t": "<strong>Exclusión:</strong> Quedan fuera de su representación los actos de disposición no autorizados y las cuestiones que correspondan ya a los herederos como titulares dominicales."
             }
            ]
           },
@@ -251,8 +248,7 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "CC arts. 988 y ss.",
-       "Declaración de herederos"
+       "CC arts. 988 y ss."
       ],
       "claves": "representación herencia administrador pleitos acciones difunto declaración herederos aceptación custodia conservación gestión conducente plena limitada proceso principiado fallecimiento causante"
      }
@@ -325,7 +321,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Titular del derecho:</strong> Cualquier parte del procedimiento de división judicial."
+             "t": "<strong>Titular del derecho:</strong> La parte que lo pida."
             },
             {
              "t": "<strong>Momento de ejercicio:</strong> En cualquier tiempo (no hay plazo precluyente para solicitar la vista)."
@@ -356,11 +352,7 @@ Neg.data.register({
         }
        }
       ],
-      "referencias": [
-       "Oficina Judicial",
-       "Depósito judicial",
-       "Plazo: máx. 1 año"
-      ],
+      "referencias": [],
       "claves": "rendición periódica cuentas plazos tribunal proporcionados importancia caudal año máximo consignación saldo depósito diligencia inspección oficina judicial rectificación aprobación cualquier tiempo parte peticione"
      }
     },
@@ -527,13 +519,13 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Facultad autónoma:</strong> El administrador podrá realizar por sí mismo las reparaciones ordinarias que sean indispensables para la conservación de los bienes."
+             "t": "<strong>Deber:</strong> El administrador debe hacer las reparaciones ordinarias que sean indispensables para la conservación de los bienes."
             },
             {
              "t": "<strong>Criterio de ordinariedad:</strong> La ley no las define: son las indispensables para la conservación de los bienes."
             },
             {
-             "t": "<strong>No requieren autorización previa:</strong> Pueden realizarse directamente, debiendo luego justificarse en la rendición de cuentas."
+             "t": "<strong>No requieren autorización previa:</strong> Las hace directamente y luego las justifica en la rendición de cuentas."
             }
            ]
           }
@@ -575,8 +567,7 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC art. 793.3",
-       "Reconocimiento pericial"
+       "LEC art. 793.3"
       ],
       "claves": "conservación bienes herencia responsabilidad menoscabo rentas productos utilidades reparaciones ordinarias indispensables extraordinarias gastos comparecencia interesados artículo 793 reconocimiento pericial presupuesto circunstancias caso"
      }
@@ -662,7 +653,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Control judicial:</strong> Toda provisión de fondos requiere providencia motivada, garantizando que las extracciones del depósito queden documentadas y sean revisables en la rendición de cuentas."
+            "texto": "<strong>Control judicial:</strong> La provisión de fondos se acuerda mediante providencia (art. 802.2 LEC)."
            }
           }
          ]
@@ -670,9 +661,7 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "LEC Art. 801",
-       "Providencia judicial",
-       "Depósito judicial"
+       "LEC art. 801"
       ],
       "claves": "destino cantidades recaudadas depositar disposición juzgado dilación retener gastos pleitos notariales contribuciones atenciones ordinarias extraordinarios providencia suma depósito ingresos insuficiencia fondos"
      }
@@ -689,7 +678,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Prohibición de enajenar los bienes inventariados. Excepciones",
-      "resumen": "Consagra el principio de intangibilidad del inventario hereditario con prohibición absoluta de enajenar o gravar, salvo cuatro excepciones tasadas sujetas a procedimiento de autorización judicial con audiencia de interesados.",
+      "resumen": "Prohíbe como regla general enajenar o gravar los bienes inventariados, salvo cuatro excepciones tasadas sujetas a procedimiento de autorización judicial con audiencia de interesados.",
       "cuerpo": [
        {
         "apartado": {
@@ -698,7 +687,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Prohibición absoluta:</strong> El administrador no podrá enajenar ni gravar los bienes inventariados."
+             "t": "<strong>Regla general:</strong> El administrador no podrá enajenar ni gravar los bienes inventariados."
             },
             {
              "t": "<strong>Ámbito objetivo:</strong> Se refiere exclusivamente a los bienes ya incluidos en el inventario hereditario."
@@ -872,11 +861,7 @@ Neg.data.register({
         }
        }
       ],
-      "referencias": [
-       "Honorarios administrativos",
-       "Decreto del LAJ",
-       "Producto líquido"
-      ],
+      "referencias": [],
       "claves": "retribución administrador producto líquido venta frutos muebles raíces valores efectos públicos porcentaje dos uno medio cuatro diez por ciento gastos viajes decreto justo necesidad desempeño criterio discrecional"
      }
     },
@@ -981,11 +966,7 @@ Neg.data.register({
         }
        }
       ],
-      "referencias": [
-       "Administrador judicial",
-       "Decreto del LAJ",
-       "Estructura jerárquica"
-      ],
+      "referencias": [],
       "claves": "administraciones subalternas finado retribución facultades cuentas remitir recaudación dependientes separación causa justa autorización decreto vacantes responsabilidad proveer cobertura"
      }
     }
