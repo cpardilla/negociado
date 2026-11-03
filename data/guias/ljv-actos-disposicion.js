@@ -79,7 +79,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El artículo 61 LJV establece una distinción conceptual fundamental entre dos figuras procesales que determinan el momento de la intervención judicial y sus efectos."
+     "texto": "El artículo 61 LJV nombra la autorización y la aprobación sin definirlas. Se distinguen por el momento de la intervención judicial."
     },
     {
      "tipo": "nota",
@@ -91,7 +91,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 61 LJV — Distinción conceptual"
+     "texto": "Art. 61 LJV"
     }
    ],
    "pregunta": "¿Se trata de autorización previa o de aprobación posterior al acto?",
@@ -115,11 +115,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si la ley establece una tramitación específica para el acto, se sigue esa y no la de este capítulo (art. 61 LJV). La aprobación de la partición hecha por el tutor, el curador representativo o el defensor judicial (art. 1060 CC) se tramita por este capítulo: la solicitud acompaña las operaciones particionales (art. 63.1 LJV)."
+     "texto": "Si la ley establece una tramitación específica para el acto, se sigue esa y no la de este capítulo (art. 61 LJV). Es el caso de repudiar la herencia o legados en nombre del menor: se tramita por los arts. 93 a 95 LJV. La aprobación de la partición hecha por el tutor, el curador representativo o el defensor judicial (art. 1060 CC) se tramita por este capítulo: la solicitud acompaña las operaciones particionales (art. 63.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 61 LJV · Art. 63.1 LJV · Art. 1060 CC"
+     "texto": "Art. 61 LJV · Art. 63.1 LJV · Art. 93 LJV · Art. 1060 CC"
     }
    ],
    "pregunta": "¿Existe una tramitación específica establecida para este acto?",
@@ -143,7 +143,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El artículo 166 del Código Civil establece una exención relevante: no será necesaria autorización judicial si el menor hubiese cumplido dieciséis años y consintiere en documento público. Esta exención supone un reconocimiento de la madurez del menor para determinados actos."
+     "texto": "El artículo 166 del Código Civil establece una exención relevante: no será necesaria autorización judicial si el menor hubiese cumplido dieciséis años y consintiere en documento público."
     },
     {
      "tipo": "nota",
@@ -178,10 +178,6 @@ Neg.data.register({
      "texto": "Aunque el menor no haya cumplido dieciséis años o no consienta, el artículo 166 CC establece una exención específica para la enajenación de valores mobiliarios, siempre que su importe se reinvierta en bienes o valores seguros."
     },
     {
-     "tipo": "nota",
-     "texto": "Esta exención se justifica por la naturaleza fungible de los valores mobiliarios y la garantía que supone la reinversión en bienes o valores seguros, que preserva el patrimonio del menor."
-    },
-    {
      "tipo": "ley",
      "texto": "Art. 166 CC — Enajenación de valores mobiliarios"
     }
@@ -214,8 +210,7 @@ Neg.data.register({
      "titulo": "Actos que requieren autorización (art. 166 CC)",
      "items": [
       "Renunciar a derechos de que sean titulares los hijos",
-      "Enajenar o gravar sus bienes inmuebles, establecimientos mercantiles o industriales, objetos preciosos y valores mobiliarios, salvo el derecho de suscripción preferente de acciones",
-      "Repudiar la herencia o legado deferidos al hijo; si el Juez deniega la autorización, la herencia solo puede aceptarse a beneficio de inventario"
+      "Enajenar o gravar sus bienes inmuebles, establecimientos mercantiles o industriales, objetos preciosos y valores mobiliarios, salvo el derecho de suscripción preferente de acciones"
      ],
      "marcar": true
     },
@@ -228,8 +223,12 @@ Neg.data.register({
      "texto": "El art. 166 CC habla del «Juez del domicilio»; la competencia del expediente es la del art. 62.1 LJV (residencia del menor)."
     },
     {
+     "tipo": "aviso",
+     "texto": "Repudiar la herencia o legado deferidos al hijo también exige autorización, pero no por este capítulo, sino por los arts. 93 a 95 LJV. Si el Juez la deniega, la herencia solo puede aceptarse a beneficio de inventario (art. 166 CC)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 166 CC · Art. 224 CC · Art. 61 LJV"
+     "texto": "Art. 166 CC · Art. 224 CC · Arts. 61 y 93 LJV"
     }
    ],
    "siguiente": "competencia_menor"
@@ -241,7 +240,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Al igual que en el caso de los menores, la LJV distingue entre autorización previa y aprobación posterior respecto de los actos sobre bienes y derechos de la persona con discapacidad con medidas de apoyo."
+     "texto": "Al igual que en el caso de los menores, se distingue entre autorización previa y aprobación posterior respecto de los actos sobre bienes y derechos de la persona con discapacidad con medidas de apoyo."
     },
     {
      "tipo": "nota",
@@ -273,11 +272,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si la ley establece una tramitación específica para el acto, se sigue esa y no la de este capítulo (art. 61 LJV). La aprobación de la partición hecha por el tutor, el curador representativo o el defensor judicial (art. 1060 CC) se tramita por este capítulo: la solicitud acompaña las operaciones particionales (art. 63.1 LJV)."
+     "texto": "Si la ley establece una tramitación específica para el acto, se sigue esa y no la de este capítulo (art. 61 LJV). Es el caso de aceptar sin beneficio de inventario o repudiar la herencia o legados: se tramita por los arts. 93 a 95 LJV. La aprobación de la partición hecha por el tutor, el curador representativo o el defensor judicial (art. 1060 CC) se tramita por este capítulo: la solicitud acompaña las operaciones particionales (art. 63.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 61 LJV — Excepción de tramitación específica"
+     "texto": "Art. 61 LJV · Art. 93 LJV — Excepción de tramitación específica"
     }
    ],
    "pregunta": "¿Existe una tramitación específica establecida para este acto?",
@@ -369,8 +368,12 @@ Neg.data.register({
      "texto": "La enajenación de los bienes del 2.º se hace por venta directa, salvo que el Tribunal considere necesaria la subasta judicial (art. 287.2.º CC). Antes de autorizar, el Juez oye al Fiscal y a la persona con medidas de apoyo (art. 290 CC)."
     },
     {
+     "tipo": "aviso",
+     "texto": "Lo del 5.º no sigue este capítulo: aceptar sin beneficio de inventario o repudiar herencias o legados se tramita por los arts. 93 a 95 LJV."
+    },
+    {
      "tipo": "ley",
-     "texto": "Arts. 269, 287 y 290 CC · Art. 61 LJV"
+     "texto": "Arts. 269, 287 y 290 CC · Arts. 61 y 93 LJV"
     }
    ],
    "siguiente": "competencia_disc"
@@ -831,7 +834,7 @@ Neg.data.register({
     {
      "texto": "No, es una solicitud general sin supuestos especiales",
      "tono": "t-ok",
-     "destino": "tramitacion_admision"
+     "destino": "examen_solicitud"
     }
    ]
   },
@@ -853,7 +856,7 @@ Neg.data.register({
      "texto": "Art. 63.2 LJV"
     }
    ],
-   "siguiente": "tramitacion_admision"
+   "siguiente": "examen_solicitud"
   },
   "solicitud_venta_directa": {
    "fase": 3,
@@ -883,7 +886,7 @@ Neg.data.register({
      "texto": "Art. 63.3 LJV"
     }
    ],
-   "siguiente": "tramitacion_admision"
+   "siguiente": "examen_solicitud"
   },
   "solicitud_ambos": {
    "fase": 3,
@@ -910,7 +913,96 @@ Neg.data.register({
      "texto": "Arts. 63.2 y 63.3 LJV"
     }
    ],
-   "siguiente": "tramitacion_admision"
+   "siguiente": "examen_solicitud"
+  },
+  "examen_solicitud": {
+   "fase": 4,
+   "titulo": "Examen de la competencia y de la solicitud",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Presentada la solicitud, el Letrado de la Administración de Justicia examina de oficio la competencia y los posibles defectos u omisiones, y resuelve sobre su admisión (arts. 13, 16.1, 16.4 y 17.1 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 13, 16 y 17.1 LJV"
+    }
+   ],
+   "pregunta": "¿Qué resulta del examen?",
+   "opciones": [
+    {
+     "texto": "Es competente y la solicitud es admisible",
+     "tono": "t-ok",
+     "destino": "tramitacion_admision"
+    },
+    {
+     "texto": "Hay defectos u omisiones que subsanar",
+     "tono": "t-plazo",
+     "destino": "subsanacion"
+    },
+    {
+     "texto": "Entiende que falta competencia o que no es admisible",
+     "tono": "t-aviso",
+     "destino": "dacion_cuenta"
+    }
+   ]
+  },
+  "subsanacion": {
+   "fase": 4,
+   "titulo": "Subsanación de defectos u omisiones",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "plazo",
+     "texto": "Cinco días para subsanar (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 16.4 LJV"
+    }
+   ],
+   "pregunta": "¿Se subsanan en plazo?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "tramitacion_admision"
+    },
+    {
+     "texto": "No: se da cuenta al Juez",
+     "tono": "t-aviso",
+     "destino": "dacion_cuenta"
+    }
+   ]
+  },
+  "dacion_cuenta": {
+   "fase": 4,
+   "titulo": "Dación de cuenta al Juez",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Como este expediente lo resuelve el Juez (art. 65.1 LJV), el Letrado de la Administración de Justicia le da cuenta y el Juez acuerda lo que proceda; en la falta de competencia, tras oír al Ministerio Fiscal y al solicitante (arts. 16.2 a 16.4 y 17.1 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 16 y 17.1 LJV · Art. 65.1 LJV"
+    }
+   ],
+   "pregunta": "¿Qué acuerda el Juez?",
+   "opciones": [
+    {
+     "texto": "Admitir a trámite la solicitud",
+     "tono": "t-ok",
+     "destino": "tramitacion_admision"
+    },
+    {
+     "texto": "No admitirla, o apreciar la falta de competencia",
+     "tono": "t-aviso",
+     "destino": "fin_inadmision"
+    }
+   ]
   },
   "tramitacion_admision": {
    "fase": 4,
@@ -979,7 +1071,39 @@ Neg.data.register({
      "texto": "Art. 64.2 LJV"
     }
    ],
-   "siguiente": "resolucion"
+   "siguiente": "comparecencia"
+  },
+  "comparecencia": {
+   "fase": 4,
+   "titulo": "Celebración de la comparecencia",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Se celebra ante el Juez por los trámites de la vista del juicio verbal, con las especialidades del art. 18.2 LJV."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Si no asiste otro citado, se celebra el acto y continúa el expediente (art. 18.2.1.ª LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 18 LJV"
+    }
+   ],
+   "pregunta": "¿Asiste el solicitante?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "resolucion"
+    },
+    {
+     "texto": "No: se archiva el expediente",
+     "tono": "t-aviso",
+     "destino": "fin_desistido"
+    }
+   ]
   },
   "resolucion": {
    "fase": 5,
@@ -1264,7 +1388,7 @@ Neg.data.register({
     },
     {
      "tipo": "lista",
-     "titulo": "Posibles medidas de aseguramiento (art. 66 LJV)",
+     "titulo": "Medidas posibles en la práctica (el art. 66 LJV no las enumera)",
      "items": [
       "Consignación de la cantidad obtenida",
       "Depósito en entidad financiera",
@@ -1272,10 +1396,6 @@ Neg.data.register({
       "Cualquier otra medida que asegure la aplicación de la cantidad a la finalidad autorizada"
      ],
      "marcar": true
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Si el solicitante desvía la cantidad obtenida a fines distintos de los que justificaron la autorización, podría incurrir en responsabilidad y las medidas de aseguramiento podrían activarse."
     },
     {
      "tipo": "ley",
@@ -1295,7 +1415,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "El acto realizado sin la autorización exigida puede ser impugnado, y quien lo realizó responde de los daños causados por su culpa o negligencia (arts. 234 y 294 CC)."
+     "texto": "El tutor y el curador responden de los daños causados por su culpa o negligencia (arts. 234 y 294 CC)."
     },
     {
      "tipo": "nota",
@@ -1308,6 +1428,38 @@ Neg.data.register({
    ],
    "fin": "error"
   },
+  "fin_inadmision": {
+   "fase": 4,
+   "titulo": "Solicitud no admitida o falta de competencia",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El Juez, a quien el Letrado de la Administración de Justicia ha dado cuenta, no admite la solicitud o aprecia la falta de competencia. En este último caso, la resolución indica el órgano que se estima competente (art. 16.2 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 16 y 17.1 LJV"
+    }
+   ],
+   "fin": "error"
+  },
+  "fin_desistido": {
+   "fase": 4,
+   "titulo": "Archivo por desistimiento",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Si el solicitante no asiste a la comparecencia, el Juez acuerda el archivo del expediente y le tiene por desistido (art. 18.2.1.ª LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 18.2 LJV"
+    }
+   ],
+   "fin": "warning"
+  },
   "fin_tramit_especifica": {
    "fase": 0,
    "titulo": "Procedimiento por tramitación específica",
@@ -1315,7 +1467,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La ley establece una tramitación específica para el acto: el expediente se sustancia por esa vía y no por la del capítulo VIII de la LJV (art. 61 LJV)."
+     "texto": "La ley establece una tramitación específica para el acto: el expediente se sustancia por esa vía y no por la del capítulo VIII de la LJV (art. 61 LJV). Por ejemplo, la aceptación sin beneficio de inventario o la repudiación de la herencia (arts. 93 a 95 LJV)."
     },
     {
      "tipo": "nota",
@@ -1323,7 +1475,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 61 LJV"
+     "texto": "Arts. 61 y 93 LJV"
     }
    ],
    "fin": "warning"
@@ -1345,10 +1497,6 @@ Neg.data.register({
       "Enajenación de valores mobiliarios siempre que su importe se reinvierta en bienes o valores seguros"
      ],
      "marcar": true
-    },
-    {
-     "tipo": "nota",
-     "texto": "Esta exención reconoce la madurez del menor para determinados actos y la naturaleza fungible de los valores mobiliarios con reinversión garantizada."
     },
     {
      "tipo": "ley",

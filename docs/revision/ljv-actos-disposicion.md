@@ -62,3 +62,18 @@ Corte del BOE: Ley 41/2003, redacción de la Ley 8/2021. Sin cambio de fondo.
 | Recurso | Antes | Ahora | Fuente |
 |---|---|---|---|
 | G16 | «que solicite del Juez la excepción» (redacción anterior) | «que solicite de la autoridad judicial competente la excepción» | Ley 41/2003 art. 5.3 |
+
+## Corrección posterior (2026-11-03) · Relectura, quinta tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda5.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 6 | menor_tramit_esp, disc_tramit_esp, menor_cc166, disc_curador, fin_tramit_especifica | Repudiar o aceptar sin inventario seguía por este capítulo | Avisa del expediente propio | LJV 61, 93-95; CC 166, 287 |
+| 7 | solicitud_*, tramitacion_dictamen; nuevos examen_solicitud, subsanacion, dacion_cuenta, comparecencia, fin_inadmision, fin_desistido | Sin examen, subsanación ni comparecencia | Reglas generales | LJV 13, 16, 17.1, 18 |
+| 8 | fin_concesion_firme | Lista bajo «art. 66»; aviso de responsabilidad | Rotulada como práctica; aviso suprimido | LJV 66 |
+| 9 | fin_denegacion_firme | «quien lo realizó responde»; «puede ser impugnado» | Tutor y curador | CC 234, 294 |
+| 10 | menor_tipo, discapacidad_tipo | «distinción conceptual» atribuida al art. 61 | El art. 61 las nombra sin definirlas | LJV 61 |
+| 11 | menor_exencion16, menor_exencion_valores, fin_exencion_menor | Glosas sobre la madurez y lo fungible | Suprimidas | CC 166 |
