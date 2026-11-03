@@ -56,6 +56,9 @@
     ["LJCA", /^(?:LJCA\b)/],
     ["LJS", /^(?:LJS\b|LRJS\b)/],
     ["LPAP", /^(?:LPAP\b|Ley 33\/2003\b)/],
+    ["CDPD", /^(?:CDPD\b|CRPD\b|Convenci[oó]n ONU\b)/],
+    ["EOMF", /^(?:EOMF\b|Ley 50\/1981\b|Estatuto Org[aá]nico del Ministerio Fiscal\b)/],
+    ["Oviedo", /^(?:Convenio de Oviedo\b)/],
     ["LOPJM", /^(?:LOPJM\b|LO 1\/1996\b|Ley Org[aá]nica 1\/1996\b)/],
     ["LO 1/2025", /^(?:LO 1\/2025\b|Ley Org[aá]nica 1\/2025\b)/],
     ["TRLGDCU", /^(?:TRLGDCU\b|RDL(?:eg)? 1\/2007\b)/],
@@ -106,8 +109,10 @@
   const CITE = new RegExp(`\\b(?:art[ií]culos?\\s+|arts?\\.\\s*|arts?\\s+)(${NUM}(?:\\s*(?:,|y|e|a|al|–|-)\\s*${NUM})*(?:\\.?\\s*[ºª°])?)`, "gi");
 
   /** "256 a 263" / "256-263" are ranges; "6, 7 y 9" a list; "517.2.9º" article.apartado.sub-item;
-   *  "18.4.ª" the 4th rule (regla) of article 18. */
-  function parseCitation(numbers) {
+   *  "18.4.ª" the 4th rule (regla) of article 18. A bare number after an apartado is another apartado
+   *  when the citation is singular ("art. 60.3 y 4"); plural, it is an article ("arts. 2.2 y 16"). A range
+   *  after an apartado stays inside the article ("art. 51.2 a 4", "arts. 99.4–5"). */
+  function parseCitation(numbers, singular = false) {
     const parts = [];
     // A word separator must be followed by a number: the "a" in "42 bis a)" is part of the article.
     const tokens = numbers.split(/\s*(,|\by\b(?=\s*\d)|\be\b(?=\s*\d)|\ba\b(?=\s*\d)|\bal\b(?=\s*\d)|–|-)\s*/i);
@@ -121,6 +126,22 @@
       if (rule && prev && prev.regla && /^(,|y|e)$/i.test(sep || "")) {
         parts.push({ art: prev.art, apdo: null, regla: rule[1] });
         continue;
+      }
+      // "18.2, 1.ª": a rule of the apartado just cited, not article 1.
+      if (rule && prev && prev.apdo && sep === ",") {
+        parts.push({ art: prev.art, apdo: prev.apdo, regla: rule[1] });
+        continue;
+      }
+      if (prev && prev.apdo && /^\d+$/.test(t)) {
+        if (singular && /^(,|y|e)$/i.test(sep || "")) {
+          parts.push({ art: prev.art, apdo: t, sub: null });
+          continue;
+        }
+        const n = Number(t);
+        if (/^(a|al|–|-)$/i.test(sep || "") && n > Number(prev.apdo) && (singular || n < parseInt(prev.art, 10))) {
+          prev.apdoHasta = t;
+          continue;
+        }
       }
       const m = t.match(new RegExp(`^(\\d+(?:\\s*(?:${SUFFIXES})(?![a-z]))?)((?:\\.\\d+)?)((?:\\.\\d+)?)\\s*(\\.?\\s*[ºª°])?\\.?\\s*(?:([a-zñ])\\))?`, "i"));
       if (!m) continue;
@@ -170,7 +191,7 @@
             if (lb && i + lb.length >= b[1].trimEnd().length - 1) law = lb.key;
           }
       }
-      out.push({ index: m.index, length: m[0].length, lawLength, texto: m[0], law: law || fallback, porDefecto: !law, refs: parseCitation(m[1]) });
+      out.push({ index: m.index, length: m[0].length, lawLength, texto: m[0], law: law || fallback, porDefecto: !law, refs: parseCitation(m[1], !/^art[ií]culos|^arts/i.test(m[0])) });
     }
     return out;
   }

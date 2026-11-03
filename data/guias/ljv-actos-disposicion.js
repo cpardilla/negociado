@@ -417,7 +417,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 62.2 LJV; Art. 249 CC; Convención ONU 2006, arts. 12 y 13"
+     "texto": "Art. 62.2 LJV; Art. 249 CC; arts. 12 y 13 Convención ONU 2006"
     }
    ],
    "siguiente": "competencia_disc"

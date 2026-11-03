@@ -730,7 +730,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 14.2 y 17.2 y 3 LJV"
+     "texto": "Arts. 14.2, 17.2 y 17.3 LJV"
     },
     {
      "tipo": "lista",

@@ -368,6 +368,38 @@ test("vigencia: the version in force, BOE lists out of order, quoted articles, a
   assert.deepEqual(V.versions(quoted)[0].parrafos, [["a", "1. Uno."], ["p", "«Artículo 479. Anterior."]]);
 });
 
+test("citations: a bare number after an apartado is an apartado in the singular and an article in the plural", () => {
+  const citas = require("../assets/js/core/citas");
+  const refs = (t) => citas.find(t, { defaultLaw: "LJV", alias: {} })[0].refs;
+  assert.deepEqual(refs("art. 60.3 y 4 LJV").map((r) => [r.art, r.apdo]), [["60", "3"], ["60", "4"]]);
+  assert.deepEqual(refs("Art. 5.2, 5 y 6 LJV").map((r) => [r.art, r.apdo]), [["5", "2"], ["5", "5"], ["5", "6"]]);
+  assert.deepEqual(refs("arts. 2.2 y 16 LJV").map((r) => [r.art, r.apdo]), [["2", "2"], ["16", null]]);
+  assert.deepEqual(refs("arts. 60.3 y 61.2 LJV").map((r) => [r.art, r.apdo]), [["60", "3"], ["61", "2"]]);
+});
+
+test("citations: a citation of a law the app does not have never falls back on the resource's law", () => {
+  const citas = require("../assets/js/core/citas");
+  for (const [t, ley] of [["Art. 12 CDPD (2006)", "CDPD"], ["arts. 1 y 3 EOMF;", "EOMF"], ["arts. 12 y 13 Convención ONU 2006", "CDPD"], ["Convenio de Oviedo, art. 19", "Oviedo"]]) {
+    const [c] = citas.find(t, { defaultLaw: "LJV", alias: {} });
+    assert.equal(c.law, ley, t);
+    assert.equal(c.porDefecto, false, t);
+  }
+});
+
+test("citations: a range after an apartado stays in the article; «18.2, 1.ª» is a rule of it", () => {
+  const citas = require("../assets/js/core/citas");
+  const refs = (t) => citas.find(t, { defaultLaw: "LJV", alias: {} })[0].refs;
+  for (const t of ["art. 51.2 a 4 LJV", "art. 51.2–4 LJV", "arts. 51.2–4 LJV"]) {
+    const r = refs(t);
+    assert.equal(r.length, 1, t);
+    assert.equal(r[0].art, "51");
+    assert.equal(r[0].hasta, undefined, t);
+  }
+  assert.equal(refs("arts. 2.2 a 16 LJV")[0].hasta, "16");
+  assert.deepEqual(refs("art. 18.2, 1.ª LJV").map((r) => r.art), ["18", "18"]);
+  assert.equal(refs("arts. 5 a 9 LJV")[0].hasta, "9");
+});
+
 test("citations: an ordinal may close a list, «art. 194.2.º y 3.º CC», both rules of that article", () => {
   const citas = require("../assets/js/core/citas");
   const [c] = citas.find("Siniestro (art. 194.2.º y 3.º CC): competencia", { defaultLaw: "LJV", alias: { CC: "CC" } });

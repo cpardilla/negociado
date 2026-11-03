@@ -2,7 +2,7 @@
 
 Cierre de lo que los registros de la relectura dejaron como «No cotejado» o leído solo en parte. Corte: instantáneas de `sources/boe/` para las normas del repositorio; API del BOE y Oficina de Publicaciones de la UE, consultadas el 2026-11-03, para las demás (leídas fuera del repositorio; no se ha añadido ningún texto).
 
-**Estado: nada aplicado.** Pendiente del visto bueno del propietario.
+**Estado: aplicado con el visto bueno del propietario (2026-11-03).** Detalle en el registro de cada recurso.
 
 ## Alcance
 
@@ -39,7 +39,7 @@ Normas externas, leídas en su texto oficial: Ley 50/1981 (arts. 1 y 3), Ley 54/
 | 10 | Esquema | Diligencias preliminares | impreciso | «Art. 556 CP: delito de desobediencia» | CP 556.1: «desobedecieren gravemente» | «desobediencia grave» |
 | 11 | Esquema | Obligaciones, Ley del Notariado | incompleto | LN 70: exclusiones «cuando el deudor sea consumidor o esté concernida una Administración» | LN 70.1: contrato entre empresario y consumidor; art. 21 LPH; alimentos de menores; materias indisponibles u operaciones sujetas a autorización judicial; Administración | Enumerar las cuatro letras |
 | 12 | Esquema | Ausencia y fallecimiento | errata | «Fallecimiento del arts. 194.2.º y 194.3.º CC» | — | «de los arts.» |
-| 13 | Guía y esquema | Medidas de apoyo | nombre | «CRPD» (siglas inglesas), en 3 lugares | El resto de la app dice CDPD | «CDPD» |
+| 13 | Guía | Medidas de apoyo | nombre | «CRPD» (siglas inglesas), en 2 lugares | El resto de la app dice CDPD | «CDPD» |
 
 ## Hallazgo de código (forma, no fondo)
 
@@ -51,7 +51,9 @@ Normas externas, leídas en su texto oficial: Ley 50/1981 (arts. 1 y 3), Ley 54/
 - **Sobran artículos**: los arts. 2 y 6 del RD 1723/2012 están en `data/leyes/RDTO.js` solo por esto.
 - Lo mismo en «Art. 18.2, 1.ª» (art. 18.2, regla 1.ª), leída como art. 1 LJV.
 
-Propuesta: en una cita en singular, un número sin apartado tras otro con apartado es apartado del mismo artículo, y un rango «N.A a B» o «N.A–B» se queda dentro del artículo N. Los 2 casos en plural se reescriben. Con test y regeneración de índices.
+**Hallado al aplicarlo: citas de normas que la app no tiene y que abrían un artículo de la LJV.** «Art. 12 CDPD» (2 lugares), «arts. 1 y 3 EOMF», «Convención ONU 2006, arts. 12 y 13» y «Convenio de Oviedo, art. 19» (2 lugares) tomaban la ley del recurso: el enlace llevaba al art. 12, 1 o 19 LJV. Ahora esas normas se reconocen y la cita no enlaza.
+
+Propuesta, aplicada: en una cita en singular, un número sin apartado tras otro con apartado es apartado del mismo artículo, y un rango «N.A a B» o «N.A–B» se queda dentro del artículo N. Los 2 casos en plural se reescriben. Con test y regeneración de índices.
 
 ## Revisado sin hallazgo
 

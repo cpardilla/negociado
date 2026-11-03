@@ -912,7 +912,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Lo acordado se ha llevado a efecto con la entrega de lo adjudicado y los testimonios pedidos (arts. 810.4 y 788.1 y 2 LEC)."
+     "texto": "Lo acordado se ha llevado a efecto con la entrega de lo adjudicado y los testimonios pedidos (arts. 810.4, 788.1 y 788.2 LEC)."
     }
    ],
    "fin": "success"
