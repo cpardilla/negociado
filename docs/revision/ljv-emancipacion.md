@@ -64,3 +64,18 @@ La Ley 8/2021 trasladó la emancipación a los **arts. 239–248 CC**. El esquem
 | 8 | efectos_emancipacion | desfasado | Consentimiento «de sus padres o curador» | De sus progenitores y, a falta de ambos, de su defensor judicial (arts. 247 y 248 CC) | CC 247, 248 |
 | 9 | competencia, comparecencia_*, resolucion_criterios | incompleto | Competencia por «art. 17 LJV»; sin plazo de citación; «conclusiones orales»; archivo por «Juez o Secretario judicial» | Art. 53.1 y 2; hoy Sección de Familia, Infancia y Capacidad (art. 86.5 j) LOPJ); citación con quince días (art. 17.3); orden de audiencia del art. 55.1; informe del Fiscal en el beneficio (art. 245 CC); auto en cinco días (art. 19.1); archivo por el Juez | LJV 17–19, 53, 55; LOPJ |
 | 10 | actores, documentación | forma / impreciso | «LAJ»; «certificado de defunción» como prueba de la causa | Letrado de la Administración de Justicia; documentos de los tres supuestos del art. 244 CC | — |
+
+## Corrección posterior (2026-11-03) · Relectura, séptima tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda7.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 13 | comparecencia_convocatoria, comparecencia_audiencia | Oposición «durante la comparecencia» | Cinco días desde la citación | LJV 17.3 |
+| 14 | resolucion_concede | Sin apelación | Nota añadida | LJV 20.2 |
+| 15 | resolucion_criterios | «parámetro rector»; cinco criterios | Los de la ley | LJV 55.2, 18.2.4.ª; CC 245 |
+| 16 | solicitud_documentacion, supuesto_emancipacion | Letras atribuidas al art. 244 CC | Letras del art. 53.1 LJV | LJV 53.1; CC 244 |
+| 17 | fin_archivo | Actor LAJ | Juez | LJV 18.2.1.ª |
+| 18 | admision_revision | Sin decir qué pasa si no se subsana | Da cuenta al Juez | LJV 16.4 |

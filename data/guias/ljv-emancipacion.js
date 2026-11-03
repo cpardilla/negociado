@@ -76,7 +76,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El artículo 244 del Código Civil establece que el Juez podrá conceder la emancipación de los hijos mayores de dieciséis años, si estos la pidieren y previa audiencia de los progenitores, cuando concurra alguno de los siguientes supuestos:"
+     "texto": "El artículo 244 del Código Civil establece que el Juez podrá conceder la emancipación de los hijos mayores de dieciséis años, si estos la pidieren y previa audiencia de los progenitores, cuando concurra alguno de los siguientes supuestos (con las letras del art. 53.1 LJV):"
     },
     {
      "tipo": "nota",
@@ -232,7 +232,7 @@ Neg.data.register({
      "titulo": "Documentación a preparar",
      "items": [
       "Solicitud dirigida al Juzgado competente, firmada por el menor y por el progenitor asistente o el tutor",
-      "Documentos acreditativos de la causa habilitante (supuesto a, b o c del art. 244 CC, o situación de tutela del art. 199 CC)",
+      "Documentos acreditativos de la causa habilitante (art. 53.1 a), b) o c) LJV y art. 244 CC, o situación de tutela del art. 199 CC)",
       "Proposición de los medios de prueba que se consideren pertinentes",
       "Certificado de nacimiento del menor (acreditación de la edad mayor de 16 años)",
       "En su caso, documentos que acrediten el nuevo matrimonio o convivencia, la separación de los progenitores o la causa que entorpece la patria potestad (según el supuesto)"
@@ -292,7 +292,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si la solicitud tiene defectos, el LAJ da cinco días para subsanarlos (art. 16.4 LJV). Si entiende que no es admisible, da cuenta al Juez, a quien corresponde resolver el expediente (arts. 17.1 y 55.2 LJV)."
+     "texto": "Si la solicitud tiene defectos, el LAJ da cinco días para subsanarlos; si no se subsanan, da cuenta al Juez (art. 16.4 LJV). Si entiende que no es admisible, da cuenta al Juez, a quien corresponde resolver el expediente (arts. 17.1 y 55.2 LJV)."
     },
     {
      "tipo": "ley",
@@ -361,7 +361,7 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "Citación con al menos quince días de antelación (art. 17.3 LJV)."
+     "texto": "Citación con al menos quince días de antelación. Quien vaya a oponerse lo hace en los cinco días siguientes a su citación, con traslado inmediato al solicitante (art. 17.3 LJV)."
     },
     {
      "tipo": "ley",
@@ -419,7 +419,7 @@ Neg.data.register({
   "fin_archivo": {
    "fase": 3,
    "titulo": "Archivo del expediente por inasistencia",
-   "actor": "laj",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
@@ -477,7 +477,7 @@ Neg.data.register({
      "texto": "Artículo 55.1 LJV; artículo 18.2 LJV; LO 1/1996 de Protección Jurídica del Menor."
     }
    ],
-   "pregunta": "¿Se ha formulado oposición durante la comparecencia?",
+   "pregunta": "¿Se ha formulado oposición (art. 17.3 LJV)?",
    "opciones": [
     {
      "texto": "Sí, se ha formulado oposición",
@@ -544,23 +544,18 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez resolverá concediendo o denegando la emancipación o el beneficio de mayoría de edad solicitados, teniendo en cuenta los siguientes criterios:"
+     "texto": "El Juez resuelve concediendo o denegando la emancipación o el beneficio de mayoría de edad, teniendo en cuenta la justificación ofrecida y valorando el interés del menor (art. 55.2 LJV)."
     },
     {
      "tipo": "lista",
-     "titulo": "Criterios valorados por el Juez",
+     "titulo": "Elementos de la decisión",
      "items": [
-      "La justificación ofrecida por el solicitante",
-      "El interés del menor (parámetro rector de la decisión)",
-      "El informe del Ministerio Fiscal",
-      "Las diligencias practicadas en la comparecencia",
-      "La exploración del menor (valorada motivadamente)"
+      "La justificación ofrecida (art. 55.2 LJV)",
+      "El interés del menor (art. 55.2 LJV)",
+      "En el beneficio de la mayoría de edad, el informe del Ministerio Fiscal (art. 245 CC)",
+      "La exploración del menor, valorada motivadamente (art. 18.2.4.ª LJV)"
      ],
      "marcar": true
-    },
-    {
-     "tipo": "nota",
-     "texto": "El interés del menor constituye el parámetro rector, en consonancia con el artículo 39 de la Constitución Española y la Convención sobre los Derechos del Niño."
     },
     {
      "tipo": "nota",
@@ -568,7 +563,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 55.2 LJV; artículo 39 CE; artículo 12 CDN; artículo 18.2.4.ª LJV."
+     "texto": "Artículo 55.2 LJV; artículo 18.2.4.ª LJV; artículo 245 CC."
     }
    ],
    "pregunta": "¿Qué resuelve el Juez?",
@@ -721,8 +716,12 @@ Neg.data.register({
      "texto": "Concedida la emancipación, no puede ser revocada (art. 242 CC). El emancipado y quien obtiene el beneficio de la mayor edad tienen la capacidad del art. 247 CC."
     },
     {
+     "tipo": "nota",
+     "texto": "Cualquier interesado que se considere perjudicado puede apelar el auto; la apelación no tiene efectos suspensivos salvo que la ley disponga lo contrario (art. 20.2 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Artículo 55.2 LJV; artículo 242 CC; artículo 247 CC."
+     "texto": "Artículo 55.2 LJV; artículo 20.2 LJV; artículo 242 CC; artículo 247 CC."
     }
    ],
    "siguiente": "inscripcion_remision"
