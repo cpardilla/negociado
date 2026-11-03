@@ -54,3 +54,15 @@ La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora,
 | Título VI de la Ley 15/2015 por el artículo 104. | Título VI de la Ley 15/2015 por el artículo 104 LJV. |
 | al que remite el artículo 107.3 para | al que remite el artículo 107.3 LJV para |
 | representación gráfica del artículo 106. | representación gráfica del artículo 106 LJV. |
+
+## Corrección posterior (2026-11-03) · Relectura, novena tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda9.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 2 | admision; nuevos subsanacion y fin_no_admitida | Sin defectos, competencia ni inadmisión | Reglas generales | LJV 13, 16, 17.1 |
+| 3 | confusion_lindes, fin_sin_confusion | «no cabe el ejercicio de esta acción» | Presentado como deducción | CC 384 |
+| 4 | fin_sin_avenencia | Sin certificación ni Catastro | Añadidos | LJV 107.2, 107.3 |

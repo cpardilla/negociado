@@ -114,7 +114,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Si los predios están perfectamente identificados y delimitados, no cabe el ejercicio de esta acción."
+     "texto": "La LJV no menciona este presupuesto: se deduce de la finalidad del deslinde (art. 384 CC). Si los predios están perfectamente identificados y delimitados, no hay nada que deslindar."
     },
     {
      "tipo": "ley",
@@ -420,7 +420,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Recibida la solicitud, el LAJ resuelve sobre su admisión y, en caso de admitirla, comunica el inicio del expediente a todos los interesados."
+     "texto": "Recibida la solicitud, el LAJ examina de oficio la competencia y los posibles defectos u omisiones (arts. 13 y 16 LJV) y resuelve sobre su admisión (art. 17.1 LJV); si la admite, comunica el inicio del expediente a todos los interesados."
     },
     {
      "tipo": "nota",
@@ -438,10 +438,55 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Artículo 106.2 LJV, párrafo primero"
+     "texto": "Artículo 106.2 LJV, párrafo primero · Artículos 13, 16 y 17.1 LJV"
     }
    ],
-   "siguiente": "alegaciones"
+   "pregunta": "¿Qué resulta del examen?",
+   "opciones": [
+    {
+     "texto": "Es competente y la solicitud es admisible",
+     "tono": "t-ok",
+     "destino": "alegaciones"
+    },
+    {
+     "texto": "Hay defectos u omisiones que subsanar",
+     "tono": "t-plazo",
+     "destino": "subsanacion"
+    },
+    {
+     "texto": "Falta competencia o la solicitud no es admisible",
+     "tono": "t-aviso",
+     "destino": "fin_no_admitida"
+    }
+   ]
+  },
+  "subsanacion": {
+   "fase": 3,
+   "titulo": "Subsanación de defectos u omisiones",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "plazo",
+     "texto": "Cinco días para subsanar (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Artículo 16.4 LJV"
+    }
+   ],
+   "pregunta": "¿Se subsanan en plazo?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "alegaciones"
+    },
+    {
+     "texto": "No",
+     "tono": "t-aviso",
+     "destino": "fin_no_admitida"
+    }
+   ]
   },
   "alegaciones": {
    "fase": 3,
@@ -708,7 +753,9 @@ Neg.data.register({
       "Hacer constar en acta que el acto terminó sin avenencia",
       "Dictar decreto haciendo constar que se celebró sin avenencia",
       "Acordar el archivo definitivo de las actuaciones",
-      "Reservar a las partes su derecho a acudir al juicio declarativo correspondiente"
+      "Reservar a las partes su derecho a acudir al juicio declarativo correspondiente",
+      "Incorporar al decreto el acta y la certificación catastral (o representación gráfica alternativa, en caso de discordancia) (art. 107.2 LJV)",
+      "Remitir testimonio del acta y del decreto al Catastro, a los efectos que correspondan (art. 107.3 LJV)"
      ],
      "marcar": true
     },
@@ -796,7 +843,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Si los predios están perfectamente identificados y delimitados, no hay nada que deslindar (art. 384 CC)."
+     "texto": "Si los predios están perfectamente identificados y delimitados, no hay nada que deslindar. Es una deducción de la finalidad del deslinde (art. 384 CC)."
     },
     {
      "tipo": "nota",
@@ -808,6 +855,26 @@ Neg.data.register({
     }
    ],
    "fin": "warning"
+  },
+  "fin_no_admitida": {
+   "fase": 3,
+   "titulo": "Solicitud no admitida o falta de competencia",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Si no se subsana en plazo, el LAJ tiene por no presentada la solicitud y archiva (art. 16.4 LJV). Si no es admisible, dicta decreto de archivo (art. 17.1 LJV). Si falta competencia, previa audiencia del Ministerio Fiscal y del solicitante, puede acordar el archivo (objetiva), indicando el órgano competente, o la remisión a ese órgano (territorial) (art. 16.2 y 16.3 LJV)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Contra el decreto que pone fin al expediente cabe recurso de revisión ante el Juez, con Abogado y Procurador (arts. 3.2 y 20.2 LJV; art. 454 bis LEC)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Artículos 16, 17.1 y 20.2 LJV"
+    }
+   ],
+   "fin": "error"
   }
  }
 });
