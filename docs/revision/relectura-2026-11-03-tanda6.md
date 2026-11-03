@@ -1,6 +1,6 @@
 # Relectura, sexta tanda (2026-11-03)
 
-E y G del defensor judicial (arts. 27-32 LJV) y de la tutela, la curatela y la guarda de hecho (arts. 43-52 LJV). Corte del BOE: descarga del 2026-11-03. **Sin cambios en la app: pendiente del visto bueno del propietario.**
+E y G del defensor judicial (arts. 27-32 LJV) y de la tutela, la curatela y la guarda de hecho (arts. 43-52 LJV). Corte del BOE: descarga del 2026-11-03. **Aplicados con el visto bueno del propietario; detalle en el registro de cada recurso.**
 
 Cotejado con el texto: arts. 27-32, 43-52 y 54 LJV; arts. 163, 199-201, 205-210, 212-214, 222-225, 227-233, 235-238, 258, 260, 263, 265, 267, 275, 276, 278-282, 284-286, 291-293 y 295-298 CC (de varios, solo el principio); arts. 8 y 758 LEC (el principio); art. 9 LO 1/1996 (el principio).
 
