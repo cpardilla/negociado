@@ -1,6 +1,6 @@
 # Relectura, quinta tanda (2026-11-03)
 
-Esquemas de las disposiciones generales (arts. 1-8 LJV) y de las normas comunes (arts. 9-22 LJV), más E y G de los actos de disposición (arts. 61-66 LJV) y de las medidas de apoyo (arts. 42 bis a-c LJV). Corte del BOE: descarga del 2026-11-03. **Sin cambios en la app: pendiente del visto bueno del propietario.**
+Esquemas de las disposiciones generales (arts. 1-8 LJV) y de las normas comunes (arts. 9-22 LJV), más E y G de los actos de disposición (arts. 61-66 LJV) y de las medidas de apoyo (arts. 42 bis a-c LJV). Corte del BOE: descarga del 2026-11-03. **Aplicados con el visto bueno del propietario; detalle en el registro de cada recurso.**
 
 Cotejado con el texto: arts. 1, 2, 6-22, 42 bis a-c, 61-66 y 93 LJV; los ejemplos de postulación, oposición, apelación suspensiva y gastos que citan los esquemas generales (arts. 24, 39, 49, 50, 51 bis, 58, 60, 65, 81, 91, 92, 95, 98, 99, 101, 105, 109, 113, 118, 130, 133, 137, 141 y 146 LJV); arts. 166, 234, 264, 268, 287, 289, 290, 294, 1060 y 1548 CC (del 264 y el 287, solo el principio); arts. 74, 136, 281, 521, 522, 755, 756, 761 y 753 LEC (varios, solo el principio); art. 100 RH.
 
