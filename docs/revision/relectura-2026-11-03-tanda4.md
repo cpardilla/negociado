@@ -1,6 +1,6 @@
 # Relectura, cuarta tanda (2026-11-03)
 
-E y G de la adopción (arts. 33-42 LJV), de la ausencia y el fallecimiento (arts. 67-77 LJV) y de los hechos pasados (arts. 80 bis-80 quinquies LJV). Corte del BOE: descarga del 2026-11-03. **Sin cambios en la app: pendiente del visto bueno del propietario.**
+E y G de la adopción (arts. 33-42 LJV), de la ausencia y el fallecimiento (arts. 67-77 LJV) y de los hechos pasados (arts. 80 bis-80 quinquies LJV). Corte del BOE: descarga del 2026-11-03. **Aplicados con el visto bueno del propietario; detalle en el registro de cada recurso.** Art. 458.1 LEC cotejado al aplicarlos.
 
 Cotejado con el texto: arts. 13, 16-20, 22, 33-42, 67-77 y 80 bis-80 quinquies LJV; arts. 175-187 y 193-198 CC (del 178, el 180, el 194 y algún otro, hasta donde alcanzó el extracto); arts. 437, 443 y 781 LEC (de los dos primeros, solo el principio); art. 86.5 LOPJ. No cotejado: Ley 54/2007, Convenio de La Haya, arts. 172, 188 y 657 y ss. CC, art. 78 LRC, arts. 156, 164, 381, 452, 458 y 753 LEC.
 
