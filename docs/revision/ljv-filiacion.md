@@ -36,7 +36,7 @@ Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Trib
 
 - **Recurso**: `data/guias/ljv-filiacion.js` (origen G06).
 - **Fecha de revisión**: 2026-10-31. **Corte del BOE**: LJV a 05-03-2026; CC; LEC; LOPJ.
-- **Método**: fase 5. La guía seguía bien los arts. 23–26 y 14–20 LJV; correcciones puntuales sin tocar el recorrido (43 pasos).
+- **Método**: fase 5. La guía seguía bien los arts. 23–26 y 14–20 LJV; correcciones puntuales sin tocar el recorrido (36 pasos; corregido el 2026-11-03: este registro decía 43, y tanto los datos como el original tienen 36).
 - **Resultado del comprobador**: 0 errores, 0 avisos (antes: 7 avisos); se mantiene la denominación legal «Juzgado de Primera Instancia» (12), con la sección actual indicada en el paso de competencia.
 
 ## Hallazgos
