@@ -71,7 +71,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 
 - ✓ LJV (BOE a 05-03-2026): 3041
 - ✓ CC (BOE a 07-09-2026): 1365
-- ✓ LEC (BOE a 29-10-2026): 1220
+- ✓ LEC (BOE a 29-10-2026): 1233
 - ✓ LOPJ (BOE a 09-10-2026): 121
 - ✓ LPPD (BOE a 18-12-2025): 76
 - ✓ LTRANS (BOE a 20-12-2025): 70
@@ -79,11 +79,13 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LRC (BOE a 24-02-2026): 47
 - ✓ RDTO (BOE a 19-12-2025): 43
 - UE: 42
+- ✓ LH (BOE a 07-01-2026): 40
 - ✓ LOPDH (BOE a 16-12-2025): 40
 - ✓ LO1-2025 (BOE a 09-07-2026): 34
 - ✓ LN (BOE a 22-10-2026): 34
-- ✓ LH (BOE a 07-01-2026): 28
 - ✓ LTO (BOE a 16-12-2025): 22
+- ✓ RH (BOE a 16-12-2025): 19
+- ✓ RN (BOE a 16-12-2025): 17
 - ✓ CE (BOE a 29-10-2026): 16
 - ✓ LSC (BOE a 19-12-2025): 9
 - CDPD: 8
@@ -94,7 +96,6 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LCS (BOE a 05-10-2026): 4
 - LO 3/2007: 4
 - ✓ LA (BOE a 18-12-2025): 3
-- ✓ RH (BOE a 16-12-2025): 3
 - ✓ LPI (BOE a 31-07-2026): 2
 - ✓ LPAT (BOE a 31-07-2026): 2
 - ✓ LCD (BOE a 29-12-2025): 2
@@ -105,7 +106,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - LO 1/2004: 1
 - Ley 54/2007: 1
 
-Además, 151 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 152 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 

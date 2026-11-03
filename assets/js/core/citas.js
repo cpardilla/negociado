@@ -15,7 +15,7 @@
   // forms are read, keys use the plain one. Compound ones are built, not listed (un/duo/ter/… +
   // decies/vicies/tricies: "529 tervicies" in the LSC). Always used with (?![a-z]), so "ter" never
   // takes the start of "terdecies".
-  const SUFFIXES = "bis|ter|qu[aá]ter|quinquies|sexies|s[eé]pties|octies|nonies|(?:un|duo|ter|qu[aá]ter|quin|sex|sept|octo|novo)?(?:decies|vicies|tricies)";
+  const SUFFIXES = "bis|ter|qu[aá]ter|quinquies|sexies|sexiens|s[eé]pties|octies|nonies|(?:un|duo|ter|qu[aá]ter|quin|sex|sept|octo|novo)?(?:decies|vicies|tricies)";
   // An article number in every form the BOE uses: "140", "26 bis", "778 quáter", "529 terdecies",
   // "216 bis 2" (LOPJ), "42 bis a)" (LJV), "236-a", "236-ñ", "354 a)", "398.a" (RH).
   const ART_NUM = `\\d+(?:\\s*(?:${SUFFIXES})(?![a-zñ])(?:\\s+\\d+(?!\\d))?)?(?:[-.][a-zñ](?![a-zñ])|\\s*\\.?\\s*[a-zñ]\\))?`;

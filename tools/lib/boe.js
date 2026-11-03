@@ -125,6 +125,14 @@ function load(clave) {
     return null;
   }
   const snap = JSON.parse(fs.readFileSync(file, "utf8"));
+  // Annexes numbered on their own would collide with the text's articles: tools/leyes.json can say
+  // where the articles end ("hasta": block id). Written down and reviewed, never guessed.
+  const hasta = (JSON.parse(fs.readFileSync(path.join(__dirname, "..", "leyes.json"), "utf8")).find((l) => l.clave === clave) || {}).hasta;
+  if (hasta) {
+    const fin = snap.bloques.findIndex((b) => b.id === hasta);
+    if (fin < 0) throw new Error(`${clave}: no está el bloque «${hasta}» donde terminan los artículos`);
+    snap.bloques = snap.bloques.slice(0, fin);
+  }
   // Some BOE texts carry decomposed accents (NFD): normalise once, so every comparison holds.
   for (const b of snap.bloques) for (const p of b.parrafos || []) p[1] = p[1].normalize("NFC");
 

@@ -1128,7 +1128,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 788.2 LEC · Art. 80.1 a) y art. 100 RH · Art. 254.2 LH"
+     "texto": "Art. 788.2 LEC · Art. 80.1 a) RH · Art. 100 RH · Art. 254.2 LH"
     }
    ],
    "siguiente": "p6_acreedores"
