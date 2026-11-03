@@ -1,6 +1,6 @@
 # Relectura, segunda tanda (2026-11-03)
 
-E y G de la mención registral del sexo de 12 a 14 años (arts. 26 bis a 26 quinquies LJV) y de la nueva modificación tras una reversión (arts. 26 sexies a 26 nonies LJV), elegidos por tener más prosa adornada (búsqueda automática de expresiones como «prohibición absoluta», «garantizando» o «salvaguarda»). Corte del BOE: descarga del 2026-11-03. **Sin cambios en la app: pendiente del visto bueno del propietario.**
+E y G de la mención registral del sexo de 12 a 14 años (arts. 26 bis a 26 quinquies LJV) y de la nueva modificación tras una reversión (arts. 26 sexies a 26 nonies LJV), elegidos por tener más prosa adornada (búsqueda automática de expresiones como «prohibición absoluta», «garantizando» o «salvaguarda»). Corte del BOE: descarga del 2026-11-03. **Aplicados con el visto bueno del propietario; detalle en el registro de cada recurso.**
 
 Cotejado con el texto: arts. 2-5, 7, 7 bis, 8, 9, 13, 14, 16-20, 25-32 y 34 LJV (de los arts. 28, 29, 31 y 32, solo el principio), arts. 43-51 Ley 4/2023, arts. 4, 11, 51, 83 y 91 LRC, art. 86.5 LOPJ y arts. 235-236 CC. No cotejado: LO 1/1996, CDN, CE y arts. 156 y 162 CC.
 
@@ -41,4 +41,4 @@ Glosas que no cambian el sentido: «raigambre constitucional», «inderogable»,
 
 ## Anotado de la primera tanda
 
-G03, paso inicio: si constan testamento o parientes y nadie pide la intervención, la guía no ofrece salida. Pendiente de visto bueno.
+G03, paso inicio: si constan testamento o parientes y nadie pide la intervención, la guía no ofrece salida. Aplicado.
