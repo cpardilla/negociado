@@ -216,11 +216,11 @@ test("live references: a law cited by its name (LO 1/2025), and an apartado numb
 test("esquema view: cards, filters, search, direct link to an article's card, references", { timeout: 90000 }, async () => {
   const r = await page(
     `await go('#/esquema/ljv-conciliacion', 1000);
-     const base = { cards: document.querySelectorAll('[data-card]').length, open: document.querySelectorAll('[data-card][aria-expanded="true"]').length,
+     const base = { cards: document.querySelectorAll('[data-card]').length, open: document.querySelectorAll('[data-card][data-open="true"]').length,
        refs: document.querySelectorAll('.esq-body a.ref').length, norms: document.querySelectorAll('.norm').length, groups: document.querySelectorAll('.group').length,
        revision: document.querySelector('.page-meta .t-ok').textContent, neutralTagColor: getComputedStyle(document.querySelector('.card .card-meta .tag:not([class*=" c"]):not([class*=" t-"])') || document.body).color };
      const first = document.querySelector('[data-card] [data-action="toggle"]'); first.click(); await wait(50);
-     const toggled = first.closest('[data-card]').getAttribute('aria-expanded');
+     const toggled = first.closest('[data-card]').dataset.open;
      document.querySelector('.chip[data-cat="c4"]').click(); await wait(100);
      const cat = document.querySelector('[data-count]').textContent;
      document.querySelector('.chip[data-cat="c4"]').click(); await wait(100);
@@ -231,11 +231,11 @@ test("esquema view: cards, filters, search, direct link to an article's card, re
      const empty = !!document.querySelector('.esq-empty');
      input.value = ''; input.dispatchEvent(new Event('input')); await wait(200);
      document.querySelector('[data-action="expand"]').click();
-     const all = document.querySelectorAll('[data-card][aria-expanded="true"]').length;
+     const all = document.querySelectorAll('[data-card][data-open="true"]').length;
      await go('#/esquema/ljv-conciliacion/148', 900);
      // (cards opened before stay open: the one the address points to is the highlighted one)
      const target = document.querySelector('.card.flash');
-     const deep = target.querySelector('.card-art').textContent + ' ' + target.getAttribute('aria-expanded');
+     const deep = target.querySelector('.card-art').textContent + ' ' + target.dataset.open;
      await go('#/esquema/no-existe', 300);
      const missing = document.getElementById('view').textContent;
      return { base, toggled, cat, search, empty, all, deep, missing };`

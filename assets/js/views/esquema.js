@@ -66,7 +66,7 @@
     const i = ctx.cards.length;
     ctx.cards.push(c);
     const open = ctx.state.open.has(i);
-    return `<article class="card ${c.tono}" data-card="${i}" data-cat="${esc(c.categoria)}" aria-expanded="${open}">
+    return `<article class="card ${c.tono}" data-card="${i}" data-cat="${esc(c.categoria)}" data-open="${open}">
       <div class="card-head">
         <div class="card-meta"><span class="card-art">${rich(c.articulo)}</span>${c.etiquetas.map((t) => `<span class="tag ${t.tono}">${esc(t.texto)}</span>`).join("")}</div>
         <h3>${rich(c.titulo)}</h3>
@@ -149,7 +149,7 @@
   function setOpen(node, ctx, open) {
     const i = Number(node.dataset.card);
     open ? ctx.state.open.add(i) : ctx.state.open.delete(i);
-    node.setAttribute("aria-expanded", String(open));
+    node.dataset.open = String(open);
     const btn = node.querySelector('[data-action="toggle"]');
     if (btn) {
       btn.setAttribute("aria-expanded", String(open));
@@ -203,7 +203,7 @@
       if (!act) return;
       if (act.dataset.action === "toggle") {
         const node = act.closest("[data-card]");
-        setOpen(node, ctx, node.getAttribute("aria-expanded") !== "true");
+        setOpen(node, ctx, node.dataset.open !== "true");
       }
       if (act.dataset.action === "fold") {
         const sec = act.closest("[data-section]");

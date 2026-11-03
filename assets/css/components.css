@@ -293,7 +293,7 @@
   overflow: hidden;
   border-top: 3px solid var(--tone, var(--border-md));
 }
-.card[aria-expanded="true"] {
+.card[data-open="true"] {
   grid-column: 1 / -1;
   box-shadow: var(--shadow-md);
 }
@@ -342,7 +342,7 @@
   height: 16px;
   transition: transform var(--t-fast);
 }
-.card[aria-expanded="true"] .card-toggle svg {
+.card[data-open="true"] .card-toggle svg {
   transform: rotate(180deg);
 }
 .card-body {
@@ -351,7 +351,7 @@
   border-top: 1px solid var(--border);
 }
 /* Columns that fill on their own (not rows): a short block next to a long one leaves no hole. */
-.card[aria-expanded="true"] .card-body {
+.card[data-open="true"] .card-body {
   display: block;
   columns: 300px 2;
   column-gap: var(--sp-8);
