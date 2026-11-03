@@ -59,3 +59,25 @@ La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora,
 | referenciados expresamente en el art. 26 ter; | referenciados expresamente en el art. 26 ter LJV; |
 | referente material del art. 26 quater. | referente material del art. 26 quater LJV. |
 | audiencia inderogable del art. 26 quinquies. | audiencia inderogable del art. 26 quinquies LJV. |
+
+## Corrección posterior (2026-11-03) · Relectura, segunda tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda2.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 1 | presentacion, examen_formal, subsanacion, admision_auto; nuevo dacion_cuenta | El Juez examinaba y requería la subsanación; sin LAJ como actor | Examina y admite el LAJ; si no se subsana o no es admisible, da cuenta al Juez | LJV 2.3, 16.1, 16.4, 17.1 |
+| 2 | nuevos falta_competencia y fin_remision_archivo | La incompetencia llevaba a la inadmisión directa | Dación de cuenta; el Juez resuelve tras oír al Fiscal y al solicitante | LJV 16.2, 16.3 |
+| 3 | documentacion_acred, prueba_decision, concesion | «art. 26 quinquies.2» | Art. 26 quinquies.1, párrafo segundo | LJV 26 quinquies.1 |
+| 4 | practica_prueba | «No hay plazo legal expreso» | Mismo acto o diez días siguientes | LJV 18.2.4.ª |
+| 5 | citacion, concesion, denegacion | Sin plazos | 15 días de antelación, 30 días para la comparecencia, 5 para el auto; también los 5 días de la oposición | LJV 17.3, 18.1, 19.1 |
+| 6 | comparecencia; nuevo fin_desistido | Sin salida si no acude el solicitante | Archivo por desistimiento | LJV 18.2.1.ª |
+| 7 | repr_check | «tutor, curador o persona designada…» | «progenitores o representante legal» | LJV 26 ter.2 |
+| 8 | documentacion_acred, prueba_decision, concesion | «absoluta e irrestricta», alcance ampliado a la admisión y la prueba | Los términos de la ley | LJV 26 quinquies.1 |
+| 9 | solicitud_contenido | Lista bajo el art. 26 quater.1; DNI, tomo y folio, firma | Contenido de los arts. 14 y 26 quater.1, con impreso normalizado (14.3) | LJV 14, 26 quater.1 |
+| 10 | informacion_menor, audiencia_menor, comparecencia | «infracción procedimental», «vicio», «plena discrecionalidad» | Suprimidos | Sin fuente |
+| 11 | concesion | La apelación solo constaba contra la denegación | Nota sobre la apelación de cualquier interesado | LJV 20.2 |
+
+Criterio aplicado: la citación sigue siendo del Juez porque la norma específica lo dice (art. 26 quater.2 LJV, que prevalece sobre el art. 17.2 según el art. 13). La remisión y el archivo del art. 16 están escritos para el LAJ; cuando decide el Juez, la ley dice «acordará lo que proceda», y la guía lo refleja así.

@@ -27,6 +27,7 @@ Neg.data.register({
  ],
  "actores": {
   "juez": "Juez",
+  "laj": "Letrado de la Administración de Justicia",
   "rc": "Registro Civil",
   "solicitante": "Solicitante / Familia"
  },
@@ -151,7 +152,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "En este rango de edad, el menor debe actuar asistido por sus representantes legales (progenitores o, en su caso, tutor, curador o persona designada para ejercer el apoyo). Verifique si los representantes están presentes y de acuerdo entre sí y con el menor para instar el expediente."
+     "texto": "En este rango de edad, el menor debe actuar asistido por sus representantes legales (progenitores o representante legal). Verifique si los representantes están presentes y de acuerdo entre sí y con el menor para instar el expediente."
     },
     {
      "tipo": "nota",
@@ -199,7 +200,7 @@ Neg.data.register({
   "nombramiento_defensor": {
    "fase": 0,
    "titulo": "Expediente de nombramiento de defensor judicial",
-   "actor": "juez",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
@@ -332,30 +333,33 @@ Neg.data.register({
   },
   "solicitud_contenido": {
    "fase": 1,
-   "titulo": "Contenido mínimo obligatorio de la solicitud",
+   "titulo": "Contenido de la solicitud",
    "actor": "solicitante",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Verifique que la solicitud incluye todos los elementos que configuran su contenido mínimo legal antes de presentarla al Juzgado."
+     "texto": "Verifique que la solicitud incluye lo que exigen los arts. 14 y 26 quater.1 LJV antes de presentarla al Juzgado."
     },
     {
      "tipo": "lista",
-     "titulo": "Checklist de contenido de la solicitud (art. 26 quater.1 LJV)",
+     "titulo": "Checklist de contenido de la solicitud (arts. 14 y 26 quater.1 LJV)",
      "items": [
-      "Identificación completa del solicitante: nombre, apellidos, fecha de nacimiento, DNI/NIE y datos de la inscripción registral",
-      "Manifestación expresa y clara de disconformidad con el sexo mencionado en la inscripción de nacimiento",
-      "Solicitud expresa de autorización judicial para la rectificación registral de la mención al sexo",
-      "En su caso: solicitud adicional de modificación del nombre que consta en la inscripción de nacimiento",
-      "Identificación del Registro Civil en el que consta la inscripción que se pretende rectificar (municipio, tomo y folio, si se dispone de ellos)",
-      "Datos identificativos y de contacto de los representantes legales o del defensor judicial que asisten al menor",
-      "Firma de la persona solicitante y de sus representantes legales o defensor judicial"
+      "Datos y circunstancias de identificación del solicitante, con un domicilio a efectos de notificaciones (art. 14.1 LJV)",
+      "Manifestación de disconformidad con el sexo mencionado en la inscripción de nacimiento (art. 26 quater.1 LJV)",
+      "Solicitud de autorización judicial para la rectificación registral de la mención al sexo (art. 26 quater.1 LJV)",
+      "En su caso, solicitud de rectificación del nombre que aparece en la inscripción (art. 26 quater.1 LJV)",
+      "Exposición clara de lo que se pide y de los hechos en que se funda (art. 14.1 LJV)",
+      "Datos de identificación y domicilio de las personas que puedan estar interesadas (art. 14.2 LJV)"
      ],
      "marcar": true
     },
     {
+     "tipo": "nota",
+     "texto": "Como no es preceptiva la intervención de abogado ni procurador, en la Oficina judicial o en la sede electrónica se facilita un impreso normalizado y no hace falta concretar la fundamentación jurídica (art. 14.3 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 26 quater.1 LJV"
+     "texto": "Art. 14 LJV · Art. 26 quater.1 LJV"
     }
    ],
    "siguiente": "documentacion_acred"
@@ -371,7 +375,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "PROHIBICIÓN: No debe exigirse —ni aceptarse como condición de admisión— la aportación de informes médicos o psicológicos relativos a la identidad sexual. Tal exigencia sería contraria al art. 26 quinquies.2 LJV (prohibición absoluta de condicionantes medicalizados)."
+     "texto": "La concesión no podrá estar condicionada a la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a la previa modificación de la apariencia o función corporal de la persona a través de procedimientos médicos, quirúrgicos o de otra índole (art. 26 quinquies.1, párrafo segundo, LJV)."
     },
     {
      "tipo": "lista",
@@ -390,7 +394,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quater.2 y .4 LJV · Art. 26 quinquies.2 LJV"
+     "texto": "Art. 26 quater.2 y .4 LJV · Art. 26 quinquies.1 LJV"
     }
    ],
    "siguiente": "presentacion"
@@ -402,7 +406,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La solicitud, junto con toda la documentación acreditativa, se presenta en el Registro del Juzgado de Primera Instancia competente. A partir de su presentación, el Juez dispone del expediente y debe proceder a su examen de admisión con carácter preferente."
+     "texto": "La solicitud, junto con toda la documentación acreditativa, se presenta en el Registro del Juzgado de Primera Instancia competente. Presentada, el Letrado de la Administración de Justicia examina de oficio la competencia y los posibles defectos u omisiones (art. 16.1 y 16.4 LJV). El expediente es de tramitación preferente (art. 26 quater.1 LJV)."
     },
     {
      "tipo": "nota",
@@ -410,83 +414,153 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quater.1 LJV · Art. 26 ter.4 LJV"
+     "texto": "Art. 26 quater.1 LJV · Art. 26 ter.4 LJV · Art. 16.1 y 16.4 LJV"
     }
    ],
    "siguiente": "examen_formal"
   },
   "examen_formal": {
    "fase": 2,
-   "titulo": "Examen formal de la solicitud por el Juez",
-   "actor": "juez",
+   "titulo": "Examen de la solicitud por el Letrado de la Administración de Justicia",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez examina si la solicitud cumple los requisitos que permiten su admisión a trámite: competencia territorial del juzgado, legitimación del solicitante, edad dentro del rango legal, asistencia de representantes legales o defensor judicial, y aportación de documentación mínima."
+     "texto": "El Letrado de la Administración de Justicia examina de oficio la competencia objetiva y territorial (art. 16.1 LJV) y los posibles defectos u omisiones de la solicitud (art. 16.4 LJV), y resuelve sobre su admisión (art. 17.1 LJV). Comprueba, entre otros extremos, la legitimación del solicitante, la edad dentro del tramo legal, la asistencia de representantes legales o defensor judicial y la documentación."
     },
     {
      "tipo": "nota",
-     "texto": "Este examen es formal, no de fondo: el Juez no prejuzga si concederá o denegará la aprobación, sino únicamente si la solicitud puede ser tramitada."
+     "texto": "Este examen no prejuzga el fondo: la concesión o denegación de la aprobación corresponde al Juez (art. 26 quinquies.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 26 bis, 26 ter y 26 quater LJV"
+     "texto": "Arts. 16.1, 16.4 y 17.1 LJV · Arts. 26 bis, 26 ter y 26 quater LJV"
     }
    ],
-   "pregunta": "¿Cumple la solicitud los requisitos formales de admisión?",
+   "pregunta": "¿Qué resulta del examen?",
    "opciones": [
     {
-     "texto": "Sí — cumple todos los requisitos formales",
+     "texto": "Es competente y la solicitud es admisible",
      "tono": "t-ok",
      "destino": "admision_auto"
     },
     {
-     "texto": "No — presenta defectos subsanables o insubsanables",
+     "texto": "Hay defectos u omisiones que subsanar",
      "tono": "t-plazo",
      "destino": "subsanacion"
+    },
+    {
+     "texto": "Entiende que falta competencia objetiva o territorial",
+     "tono": "t-aviso",
+     "destino": "falta_competencia"
+    },
+    {
+     "texto": "Entiende que no resulta admisible por otra causa (edad fuera del tramo, falta de legitimación)",
+     "tono": "t-aviso",
+     "destino": "dacion_cuenta"
     }
    ]
   },
   "subsanacion": {
    "fase": 2,
    "titulo": "Requerimiento de subsanación de defectos",
-   "actor": "juez",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si la solicitud presenta defectos formales subsanables (documentación incompleta, insuficiente acreditación de la representación legal, falta de firma, etc.), el Juez requiere al solicitante para que los subsane en el plazo que se establezca. El plazo de subsanación es de cinco días (art. 16.4 LJV)."
+     "texto": "Si la solicitud presenta defectos u omisiones (documentación incompleta, insuficiente acreditación de la representación legal, etc.), el Letrado de la Administración de Justicia da un plazo para subsanarlos."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Cinco días para la subsanación (art. 16.4 LJV)."
     },
     {
      "tipo": "aviso",
-     "texto": "Si los defectos son insubsanables (incompetencia territorial o material del juzgado, solicitante claramente fuera del rango de edad, ausencia absoluta de legitimación), procede directamente la inadmisión sin trámite de subsanación."
+     "texto": "Si no se subsanan en plazo, el Letrado de la Administración de Justicia da cuenta al Juez, que acuerda lo que proceda: el archivo directo por el Letrado de la Administración de Justicia solo se prevé en los expedientes de su competencia, y este lo decide el Juez (arts. 2.3 y 16.4 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 16.4 LJV"
+     "texto": "Arts. 2.3 y 16.4 LJV"
     }
    ],
    "pregunta": "¿Subsana el solicitante los defectos dentro del plazo concedido?",
    "opciones": [
     {
-     "texto": "Sí — subsana correctamente en plazo",
+     "texto": "Sí, subsana en plazo",
      "tono": "t-ok",
      "destino": "admision_auto"
     },
     {
-     "texto": "No — no subsana, subsana fuera de plazo, o defecto insubsanable",
+     "texto": "No subsana en plazo: se da cuenta al Juez",
+     "tono": "t-aviso",
+     "destino": "dacion_cuenta"
+    }
+   ]
+  },
+  "dacion_cuenta": {
+   "fase": 2,
+   "titulo": "Dación de cuenta al Juez",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Como la decisión de este expediente corresponde al Juez (art. 2.3 LJV), el Letrado de la Administración de Justicia le da cuenta si no se subsanan los defectos o si entiende que la solicitud no resulta admisible. El Juez acuerda lo que proceda (arts. 16.4 y 17.1 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 2.3, 16.4 y 17.1 LJV"
+    }
+   ],
+   "pregunta": "¿Qué acuerda el Juez?",
+   "opciones": [
+    {
+     "texto": "Admitir a trámite la solicitud",
+     "tono": "t-ok",
+     "destino": "admision_auto"
+    },
+    {
+     "texto": "No admitirla",
      "tono": "t-aviso",
      "destino": "fin_inadmision"
+    }
+   ]
+  },
+  "falta_competencia": {
+   "fase": 2,
+   "titulo": "Falta de competencia: dación de cuenta al Juez",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Si el Letrado de la Administración de Justicia entiende que falta la competencia objetiva o la territorial, da cuenta al Juez, que acuerda lo que proceda tras oír al Ministerio Fiscal y al solicitante (art. 16.2 y 16.3 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 16.2 y 16.3 LJV"
+    }
+   ],
+   "pregunta": "¿Qué aprecia el Juez?",
+   "opciones": [
+    {
+     "texto": "Es competente",
+     "tono": "t-ok",
+     "destino": "admision_auto"
+    },
+    {
+     "texto": "No es competente",
+     "tono": "t-aviso",
+     "destino": "fin_remision_archivo"
     }
    ]
   },
   "admision_auto": {
    "fase": 2,
    "titulo": "Admisión a trámite — carácter preferente",
-   "actor": "juez",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se admite a trámite la solicitud. El expediente queda calificado como de tramitación preferente y se procede a la siguiente fase: la citación de los interesados para la comparecencia."
+     "texto": "Se admite a trámite la solicitud (art. 17.1 LJV). El expediente es de tramitación preferente (art. 26 quater.1 LJV) y se pasa a la citación para la comparecencia."
     },
     {
      "tipo": "nota",
@@ -494,7 +568,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quater.1 LJV"
+     "texto": "Art. 17.1 LJV · Art. 26 quater.1 LJV"
     }
    ],
    "siguiente": "citacion"
@@ -506,7 +580,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Admitida a trámite la solicitud, el Juez procede a citar a todas las personas que deben comparecer en el expediente. Al tratarse de un expediente preferente, la citación debe tramitarse con la mayor celeridad posible."
+     "texto": "Admitida a trámite la solicitud, el Juez cita a comparecer a las personas que deben intervenir en el expediente (art. 26 quater.2 LJV), avisándoles de que acudan con los medios de prueba de que intenten valerse (art. 17.3 LJV)."
     },
     {
      "tipo": "lista",
@@ -524,8 +598,12 @@ Neg.data.register({
      "texto": "La citación del Ministerio Fiscal no es potestativa sino preceptiva: su intervención en el expediente es obligatoria por mandato legal (art. 4 LJV)."
     },
     {
+     "tipo": "plazo",
+     "texto": "La citación se hace con al menos quince días de antelación (art. 17.3 LJV) y la comparecencia se celebra dentro de los treinta días siguientes a la admisión (art. 18.1 LJV). Quien vaya a oponerse lo hace en los cinco días siguientes a su citación (art. 17.3 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 26 quater.2 LJV · Art. 4 LJV"
+     "texto": "Art. 26 quater.2 LJV · Art. 4 LJV · Arts. 17.3 y 18.1 LJV"
     }
    ],
    "siguiente": "comparecencia"
@@ -541,7 +619,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La comparecencia es el acto procesal central de la instrucción. El Juez dirige el acto con plena discrecionalidad sobre su desarrollo, velando en todo momento por el interés superior del menor."
+     "texto": "Si no asiste alguno de los demás citados, se celebra el acto y continúa el expediente (art. 18.2.1.ª LJV). El Juez tiene en consideración en todo momento el interés superior de la persona menor de edad (art. 26 quater.3 LJV)."
     },
     {
      "tipo": "nota",
@@ -549,10 +627,22 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quater.2, .3 y .4 LJV · Art. 4 LJV · Art. 7 LJV"
+     "texto": "Art. 26 quater.2, .3 y .4 LJV · Art. 18.2 LJV · Art. 4 LJV · Art. 7 LJV"
     }
    ],
-   "siguiente": "prueba_decision"
+   "pregunta": "¿Asiste el solicitante a la comparecencia?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "prueba_decision"
+    },
+    {
+     "texto": "No: se archiva el expediente",
+     "tono": "t-aviso",
+     "destino": "fin_desistido"
+    }
+   ]
   },
   "prueba_decision": {
    "fase": 3,
@@ -565,11 +655,11 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "PROHIBICIÓN ABSOLUTA (art. 26 quinquies.2 LJV): En ningún caso puede el Juez exigir como prueba —ni admitir como condición— la aportación de informes médicos o psicológicos relativos a la identidad sexual del menor, ni ningún tipo de modificación de su apariencia o función corporal."
+     "texto": "La concesión no podrá estar condicionada a la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a la previa modificación de la apariencia o función corporal de la persona a través de procedimientos médicos, quirúrgicos o de otra índole (art. 26 quinquies.1, párrafo segundo, LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quater.3 LJV · Art. 5 LJV · Art. 26 quinquies.2 LJV"
+     "texto": "Art. 26 quater.3 LJV · Art. 5 LJV · Art. 26 quinquies.1 LJV"
     }
    ],
    "pregunta": "¿Acuerda el Juez la práctica de prueba adicional?",
@@ -612,11 +702,11 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "No hay plazo legal expreso para la práctica de la prueba, pero el carácter preferente del expediente impone la máxima celeridad posible."
+     "texto": "Las diligencias relativas a los intereses de la persona menor que se acuerden de oficio o a instancia del Ministerio Fiscal se practican en el mismo acto de la comparecencia o, si no fuere posible, en los diez días siguientes (art. 18.2.4.ª LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quater.3 y .4 LJV · Art. 7 LJV"
+     "texto": "Art. 26 quater.3 y .4 LJV · Art. 18.2 LJV · Art. 7 LJV"
     }
    ],
    "siguiente": "informacion_menor"
@@ -628,7 +718,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez tiene la obligación legal de facilitar al menor determinada información en un lenguaje claro, accesible y adaptado a sus necesidades. Esta obligación es un derecho del menor y una garantía esencial del procedimiento. Su omisión podría constituir una infracción procedimental."
+     "texto": "El Juez tiene la obligación legal de facilitar al menor determinada información en un lenguaje claro, accesible y adaptado a sus necesidades."
     },
     {
      "tipo": "lista",
@@ -664,7 +754,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "La omisión de la audiencia del menor constituye un vicio de procedimiento de entidad suficiente para afectar a la validez de la resolución. Es un requisito expresamente establecido en el art. 26 quinquies.1 LJV con carácter imperativo («previa audiencia de la persona menor»)."
+     "texto": "El art. 26 quinquies.1 LJV exige resolver «previa audiencia de la persona menor»."
     },
     {
      "tipo": "nota",
@@ -738,11 +828,19 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "PROHIBICIÓN ABSOLUTA E IRRESTRICTA (art. 26 quinquies.2 LJV): La concesión no puede condicionarse, en ningún caso, a (1) la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a (2) la previa modificación de la apariencia o función corporal del menor a través de procedimientos médicos, quirúrgicos o de otra índole. El término «no podrá» excluye cualquier margen de discrecionalidad judicial al respecto."
+     "texto": "La concesión no podrá estar condicionada a la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a la previa modificación de la apariencia o función corporal de la persona a través de procedimientos médicos, quirúrgicos o de otra índole (art. 26 quinquies.1, párrafo segundo, LJV)."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Auto en cinco días desde la terminación de la comparecencia (art. 19.1 LJV)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Cualquier interesado que se considere perjudicado puede apelar el auto; la apelación no tiene efectos suspensivos salvo que la ley disponga lo contrario (art. 20.2 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 26 quinquies.1 y .2 LJV"
+     "texto": "Art. 26 quinquies.1 LJV · Arts. 19.1 y 20.2 LJV"
     }
    ],
    "siguiente": "testimonio"
@@ -761,8 +859,12 @@ Neg.data.register({
      "texto": "La resolución debe notificarse al solicitante, a sus representantes legales (o defensor judicial) y al Ministerio Fiscal. La notificación debe incluir información sobre los recursos disponibles y los plazos para interponerlos."
     },
     {
+     "tipo": "plazo",
+     "texto": "Auto en cinco días desde la terminación de la comparecencia (art. 19.1 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 26 quinquies.1 LJV"
+     "texto": "Art. 26 quinquies.1 LJV · Art. 19.1 LJV"
     }
    ],
    "pregunta": "¿Interpone el solicitante recurso de apelación contra el auto de denegación?",
@@ -954,7 +1056,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La solicitud ha sido inadmitida a trámite. El solicitante puede, una vez corregidas las deficiencias que motivaron la inadmisión y cumplidos los requisitos exigidos, presentar una nueva solicitud."
+     "texto": "El Juez, a quien el Letrado de la Administración de Justicia ha dado cuenta, no admite la solicitud a trámite. El solicitante puede, una vez corregidas las deficiencias que motivaron la inadmisión y cumplidos los requisitos exigidos, presentar una nueva solicitud."
     },
     {
      "tipo": "nota",
@@ -966,6 +1068,38 @@ Neg.data.register({
     }
    ],
    "fin": "error"
+  },
+  "fin_remision_archivo": {
+   "fase": 2,
+   "titulo": "Fin — Falta de competencia",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "La ley prevé la remisión al órgano que se considere competente si falta la competencia territorial (art. 16.3 LJV) y el archivo si falta la objetiva (art. 16.2 LJV). La resolución en que se aprecie la falta de competencia ha de indicar el órgano que se estima competente (art. 16.2, párrafo segundo, LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 16.2 y 16.3 LJV"
+    }
+   ],
+   "fin": "warning"
+  },
+  "fin_desistido": {
+   "fase": 3,
+   "titulo": "Fin — Archivo por desistimiento",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Si el solicitante no asiste a la comparecencia, el Juez acuerda el archivo del expediente y le tiene por desistido (art. 18.2.1.ª LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 18.2 LJV"
+    }
+   ],
+   "fin": "warning"
   },
   "fin_denegacion_firme": {
    "fase": 4,
