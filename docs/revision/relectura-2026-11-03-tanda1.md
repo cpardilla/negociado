@@ -2,7 +2,9 @@
 
 E03/G03 (intervención del caudal), E04/G04 (administración del caudal) y E05/G05 (liquidación del régimen económico matrimonial), leídos enteros contra el texto vigente. Corte del BOE: descarga del 2026-11-03. **Sin cambios en la app: pendiente del visto bueno del propietario.**
 
-Sin hallazgos en E03, G04 y E05. Todos los plazos y las citas de artículos son correctos. Ninguno procede de la «Redacción anterior».
+Sin hallazgos que proponer en E03, G04 y E05. Los plazos son correctos. Una cita se queda corta (n.º 12). Ningún hallazgo procede de la «Redacción anterior».
+
+Comprobado contra el texto: arts. 790-811 LEC, 782.4 y 208 LEC, y los artículos del CC y de la LN (55 y 56) que estos recursos resumen. De los arts. 72-77 LN y 108-111 LJV solo se ha comprobado que existen y que tratan de la subasta; no se ha cotejado su detalle. Las remisiones por bloque («arts. 1344-1410 CC», «arts. 913-958 CC») no se han leído artículo por artículo.
 
 | # | Recurso | Lugar | Tipo | Dice | La ley | Propuesta |
 |---|---|---|---|---|---|---|
@@ -17,3 +19,12 @@ Sin hallazgos en E03, G04 y E05. Todos los plazos y las citas de artículos son 
 | 9 | E04 | Art. 803 | redacción | «Prohibición absoluta» y, acto seguido, cuatro excepciones | Art. 803.1 y 2 LEC | «Regla general» |
 | 10 | E04 | «Normas» de varias fichas | forma | «Oficina Judicial», «Honorarios administrativos», «Producto líquido», «Estructura jerárquica»…: no son normas | — | Dejar solo normas |
 | 11 | G03 | auto_791_2 | forma | Bloque «Plazo» que no da un plazo (comunicación a Hacienda) | Art. 791.2 LEC | Cambiarlo a «Información» |
+| 12 | G03 | Cese de la intervención | cita | Acreedores «reconocidos en el testamento o por los coherederos, o con título ejecutivo» (art. 1082 CC) | Ese detalle está en el art. 782.4 LEC; el art. 1082 CC solo dice «acreedores reconocidos» | Citar también el art. 782.4 LEC |
+
+## Vistos y no propuestos
+
+Expresiones sin apoyo literal que no cambian el sentido. Se dejan salvo que el propietario prefiera lo contrario:
+
+- E04: «finalidad protectora», «estrictamente necesarias» (la ley dice «necesarias»), «principio de intangibilidad», «hecho inscribible» (la ley dice «hacer constar»), ejemplos añadidos en dos fichas y el «Causante» entre los intervinientes.
+- G04: el detalle «ingresos, gastos, saldo y justificantes» de las cuentas periódicas, y que la retribución solo aparece en el recorrido al cesar el administrador.
+- G05: «se señala nuevo día» en la incomparecencia justificada del inventario, que la ley no dice expresamente.
