@@ -767,7 +767,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Aun cuando la intervención no sea preceptiva, el MF podrá actuar siempre que lo considere oportuno en defensa de la legalidad o del interés general (art. 3 EOMF)."
+     "texto": "La misión general del MF de defender la legalidad y el interés público está en los arts. 1 y 3 EOMF; su intervención en el expediente, en el art. 4 LJV."
     }
    ],
    "pregunta": "¿Es preceptiva la intervención del Ministerio Fiscal en este expediente?",

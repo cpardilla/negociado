@@ -87,3 +87,9 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 2 | Mapa, ecosistema | «antes Letrado…»; «figura del Letrado… en la del Letrado» | Secretario judicial | LO 7/2015 |
 | 6 | Transversal | Fuero común incluía el art. 94.1 | Separado | LJV 91.3, 92.3, 94.1 |
 | 11 | Marco, ecosistema, mapa | «supletorias»; solo menores de 16 | Corregido | LJV 91.3, 92.3, 93.2.a, 94.1 |
+
+## Normas no cotejadas (2026-11-03)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 5 | Guía, intervención del Fiscal | «podrá actuar siempre que lo considere oportuno (art. 3 EOMF)» | Misión general, arts. 1 y 3 EOMF; intervención en el expediente, art. 4 LJV | EOMF 1 y 3; LJV 4 |
