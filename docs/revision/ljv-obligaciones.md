@@ -52,3 +52,17 @@ La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora,
 | Antes | Ahora |
 |---|---|
 | por oposición conforme al artículo 97.3. | por oposición conforme al artículo 97.3 LJV. |
+
+## Corrección posterior (2026-11-03) · Relectura, novena tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda9.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 6 | cg_puesta_disposicion | Art. 1178 CC en redacción derogada | Redacción vigente | CC 1178 |
+| 7 | cg_aceptacion_expresa | Art. 1180 CC en redacción derogada | Redacción vigente | CC 1180 |
+| 9 | fp_admision, cg_comparecencia, cg_resolucion | Sin plazos ni incomparecencia | Añadidos | LJV 13, 17.3, 18.1, 18.2.1.ª, 19.1 |
+| 10 | cg_actos_previos, fin_aceptacion_cg, fin_devolucion_autorizada | Glosas sin fuente | Suprimidas | Sin fuente |
+| 11 | inicio | «supletoria» | Suprimido | LJV 13 |

@@ -42,7 +42,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El Título V regula dos expedientes distintos: la fijación judicial del plazo para el cumplimiento de obligaciones (Capítulo I, arts. 96 y 97) y la consignación judicial (Capítulo II, arts. 98 y 99). Ambos comparten rasgos —postulación no preceptiva, aplicación supletoria de las normas comunes— pero tienen presupuestos y trámites propios."
+     "texto": "El Título V regula dos expedientes distintos: la fijación judicial del plazo para el cumplimiento de obligaciones (Capítulo I, arts. 96 y 97) y la consignación judicial (Capítulo II, arts. 98 y 99). Ambos comparten rasgos —postulación no preceptiva, aplicación de las normas comunes— pero tienen presupuestos y trámites propios."
     },
     {
      "tipo": "ley",
@@ -209,8 +209,16 @@ Neg.data.register({
      "texto": "El LAJ dicta decreto de admisión, cita a los interesados y convoca comparecencia si procede. Los actos de admisión son competencia del LAJ; la resolución final es competencia del Juez."
     },
     {
+     "tipo": "plazo",
+     "texto": "Reglas generales (art. 13 LJV): citación con al menos quince días de antelación y comparecencia dentro de los treinta días siguientes a la admisión (arts. 17.3 y 18.1 LJV). Quien vaya a oponerse lo hace en los cinco días siguientes a su citación (art. 17.3 LJV); aquí, la oposición hace contencioso el expediente (art. 97.3 LJV)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Si no asiste el solicitante, el Juez acuerda el archivo y le tiene por desistido; si falta otro citado, se celebra el acto (art. 18.2.1.ª LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 96 Ley 15/2015 · Arts. 13 a 22 Ley 15/2015."
+     "texto": "Art. 96 Ley 15/2015 · Arts. 13 a 22 Ley 15/2015 · Art. 97.3 Ley 15/2015."
     }
    ],
    "siguiente": "fp_tramitacion"
@@ -482,10 +490,6 @@ Neg.data.register({
      "marcar": true
     },
     {
-     "tipo": "nota",
-     "texto": "El ofrecimiento de pago y el anuncio de la consignación son trámites distintos que, aun realizados con unidad de acto, deben diferenciarse y documentarse separadamente, especialmente cuando se instrumenten mediante requerimiento notarial."
-    },
-    {
      "tipo": "aviso",
      "texto": "El anuncio de la consignación es exigido en todo caso por el art. 1177 CC. El ofrecimiento de pago procederá cuando lo exija la naturaleza del supuesto (p. ej., no procede en los casos de desconocimiento del acreedor o extravío del título)."
     },
@@ -524,7 +528,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Concordancia con el artículo 1178 del Código Civil, conforme al cual la consignación se hará depositando las cosas debidas a disposición de la Autoridad judicial, con notificación posterior a los interesados."
+     "texto": "Concordancia con el artículo 1178 del Código Civil: la consignación se hace por el deudor o por un tercero, poniendo las cosas debidas a disposición del Juzgado o del Notario."
     },
     {
      "tipo": "ley",
@@ -606,7 +610,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Proyección del artículo 1180 del Código Civil: hecha debidamente la consignación, podrá el deudor pedir al Juez que mande cancelar la obligación."
+     "texto": "Proyección del artículo 1180 del Código Civil: la aceptación de la consignación por el acreedor o la declaración judicial de que está bien hecha extingue la obligación, y el deudor puede pedir que se mande cancelar la obligación y la garantía."
     },
     {
      "tipo": "ley",
@@ -698,6 +702,14 @@ Neg.data.register({
      "texto": "La comparecencia se tramita conforme a las normas comunes de los artículos 17 a 19 de la Ley 15/2015 y, supletoriamente, a la Ley de Enjuiciamiento Civil."
     },
     {
+     "tipo": "plazo",
+     "texto": "Reglas generales (art. 13 LJV): citación con al menos quince días de antelación y comparecencia dentro de los treinta días siguientes a la admisión (arts. 17.3 y 18.1 LJV)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Si no asiste el solicitante, el Juez acuerda el archivo y le tiene por desistido; si falta otro citado, se celebra el acto (art. 18.2.1.ª LJV)."
+    },
+    {
      "tipo": "ley",
      "texto": "Art. 99.4, segundo inciso, Ley 15/2015 · Arts. 17 a 19 Ley 15/2015 · LEC (supletoria)."
     }
@@ -727,8 +739,12 @@ Neg.data.register({
      "texto": "El efecto liberatorio de la consignación no se produce por la mera actividad del deudor al depositar lo adeudado, sino que es necesaria la aceptación del acreedor o la resolución judicial que declare bien hecha la consignación."
     },
     {
+     "tipo": "plazo",
+     "texto": "Auto en cinco días desde la terminación de la comparecencia (art. 19.1 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 99.5 Ley 15/2015 · CC arts. 1180 y 1181."
+     "texto": "Art. 99.5 Ley 15/2015 · Art. 19.1 Ley 15/2015 · CC arts. 1180 y 1181."
     }
    ],
    "pregunta": "¿Qué declara el Juez?",
@@ -978,10 +994,6 @@ Neg.data.register({
      "texto": "El LAJ dicta decreto teniendo por aceptada la consignación, con los efectos legales procedentes, y manda cancelar la obligación y, en su caso, la garantía, si así lo solicitara el promotor."
     },
     {
-     "tipo": "nota",
-     "texto": "Este desenlace se produce por la sola voluntad expresa del acreedor, sin necesidad de resolución judicial previa sobre la corrección de la consignación. Es la vía más rápida de extinción de la obligación por consignación."
-    },
-    {
      "tipo": "ley",
      "texto": "Art. 99.3 Ley 15/2015 · CC art. 1180."
     }
@@ -1028,7 +1040,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Los efectos son concordantes con el artículo 1181 del Código Civil. Este desenlace es favorable al promotor porque recupera el objeto consignado con las garantías normativas sobre las preferencias y sobre los copromotores y fiadores."
+     "texto": "Los efectos son concordantes con el artículo 1181 del Código Civil."
     },
     {
      "tipo": "ley",
