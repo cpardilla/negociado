@@ -82,3 +82,11 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 11 | Art. 26, recursos | Inscripción durante la apelación | «La ley no aclara» | LJV 20.2, 22.1 |
 | 12 | Art. 23 | «encubrimiento», «sustituye la intervención representativa» | Suprimido | Sin fuente |
 | 13 | Mapa de actores | «efectos sucesorios» | Han de consentir | CC 126 |
+
+## Corrección posterior (2026-11-03) · Relectura, quinta tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda5.md`, aplicados con el visto bueno del propietario.
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 1 | Guía: eficacia_registral, recurso_auto_est | Solo la mención a la resolución firme | También lo que puede instarse de inmediato; la ley sigue sin aclarar la inscripción | LJV 22.1 |

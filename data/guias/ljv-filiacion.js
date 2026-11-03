@@ -837,7 +837,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si se recurre, la ley no aclara si el reconocimiento puede inscribirse antes de la firmeza: la apelación no tiene efectos suspensivos (art. 20.2 LJV), pero el art. 22.1 LJV habla de la ejecución de la resolución firme."
+     "texto": "Si se recurre, la ley no aclara si el reconocimiento puede inscribirse antes de la firmeza: la apelación no tiene efectos suspensivos (art. 20.2 LJV), pero el art. 22.1 LJV habla de la ejecución de la resolución firme, aunque permite instar «de inmediato» lo preciso para dar eficacia a lo decidido."
     },
     {
      "tipo": "ley",
@@ -873,7 +873,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Cualquier interesado que se considere perjudicado por el auto estimatorio puede interponer recurso de apelación conforme a la LEC ante la Audiencia Provincial. El recurso NO tiene efectos suspensivos (art. 20.2 LJV). La ley no aclara si el reconocimiento puede inscribirse antes de la firmeza: el art. 22.1 LJV habla de la ejecución de la resolución firme."
+     "texto": "Cualquier interesado que se considere perjudicado por el auto estimatorio puede interponer recurso de apelación conforme a la LEC ante la Audiencia Provincial. El recurso NO tiene efectos suspensivos (art. 20.2 LJV). La ley no aclara si el reconocimiento puede inscribirse antes de la firmeza: el art. 22.1 LJV habla de la ejecución de la resolución firme, aunque permite instar «de inmediato» lo preciso para dar eficacia a lo decidido."
     },
     {
      "tipo": "aviso",
