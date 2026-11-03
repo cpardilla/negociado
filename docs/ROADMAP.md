@@ -308,6 +308,7 @@ Se fue aplicando con los motores (fase 1) y el repaso de estilos; el 2026-11-01 
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-11-03 · Tanda 8 publicada. Relectura, novena tanda (deslinde, obligaciones, usufructuario; `revision/relectura-2026-11-03-tanda9.md`): 14 hallazgos, 4 de ellos errores. Aplicados. **Relectura terminada: los 52 recursos.** Pendiente de vigilancia: RDL 29/2026 (arts. 22 y 685 LEC).
 - 2026-11-03 · Tanda 7 publicada. Relectura, octava tanda (honor del menor, patrimonio protegido, donantes vivos; `revision/relectura-2026-11-03-tanda8.md`): 14 hallazgos, 3 de ellos errores. Aplicados.
 - 2026-11-03 · Tanda 6 publicada. Relectura, séptima tanda (Derecho sucesorio; emancipación; `revision/relectura-2026-11-03-tanda7.md`): 18 hallazgos, 4 de ellos errores. Aplicados.
 - 2026-11-03 · Tanda 5 publicada. Relectura, sexta tanda (defensor judicial; tutela, curatela y guarda de hecho; `revision/relectura-2026-11-03-tanda6.md`): 13 hallazgos, 2 de ellos errores. Aplicados.
