@@ -77,3 +77,12 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 19 | inscripcion | Bloque «Plazo» sin plazo; DNI entre las actuaciones del Registro | Nota aparte, atribuida a las autoridades que expiden | Ley 4/2023, art. 49 |
 | 20 | postulacion | Solo «para recurrir» | También desde la oposición | LJV 3.2 |
 | 21 | fin_no_procede | «excepcional y subsidiario» | «específico» | LJV 26 sexies |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 14 | Ecosistema, LO 3/2007 | Conservación de derechos patrimoniales en el «art. 46.5» | Art. 46.4, segunda frase; se añade el contenido real del 46.5 | Ley 4/2023, art. 46 |
+| 15 | Art. 26 octies, contraste | «El Juez debe acreditar» | «podrá solicitar la práctica de las pruebas… para acreditar» | LJV 26 quater.3 |
+| 18 | Art. 26 octies, pruebas | «amplia y discrecional», «autenticidad» | Suprimido (misma glosa que la guía) | LJV 26 octies.3 |
+| 21 | Varios | «excepcional y subsidiario», «acortando los plazos», «recursiva», «mera sentencia» | Corregido | LJV 26 sexies, 26 octies.1; se resuelve por auto (19.1) |

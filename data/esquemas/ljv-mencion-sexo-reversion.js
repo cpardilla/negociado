@@ -87,7 +87,7 @@ Neg.data.register({
          "titulo": "Delimitación del supuesto de hecho",
          "contenido": [
           {
-           "p": "Este precepto configura un ámbito de aplicación excepcional y subsidiario, que únicamente se activa cuando concurren dos circunstancias previas de manera acumulativa respecto de una misma persona:"
+           "p": "Este precepto configura un ámbito de aplicación específico, que se activa cuando concurren dos circunstancias previas de manera acumulativa respecto de una misma persona:"
           },
           {
            "lista": [
@@ -261,7 +261,7 @@ Neg.data.register({
            "p": "El expediente, que será de tramitación preferente, comenzará con la presentación de una solicitud en la que la persona interesada manifieste su voluntad de revertir la rectificación registral anteriormente producida. Deberá ir acompañada de los medios de prueba que desee utilizar."
           },
           {
-           "p": "La tramitación preferente implica que el expediente deberá recibir una atención prioritaria por parte del órgano judicial, acortando los plazos de tramitación y evitando dilaciones indebidas en la resolución de un asunto que afecta a la identidad personal de la solicitante. La solicitud debe contener una manifestación expresa de voluntad de revertir la rectificación registral anteriormente producida, esto es, de proceder a una nueva modificación de la mención registral del sexo tras la rectificación y reversión ya operadas. A diferencia del Capítulo I bis, donde la solicitud debe manifestar la disconformidad con el sexo mencionado en la inscripción de nacimiento y solicitar autorización judicial para la rectificación registral de la mención al sexo y, en su caso, al nombre, en el Capítulo I ter la solicitud se centra en la voluntad de revertir la rectificación anteriormente producida, lo que refleja la naturaleza sucesiva y recursiva de este procedimiento."
+           "p": "La tramitación preferente implica que el expediente recibe atención prioritaria por parte del órgano judicial, sin que la ley acorte por ello los plazos. La solicitud debe contener una manifestación expresa de voluntad de revertir la rectificación registral anteriormente producida, esto es, de proceder a una nueva modificación de la mención registral del sexo tras la rectificación y reversión ya operadas. A diferencia del Capítulo I bis, donde la solicitud debe manifestar la disconformidad con el sexo mencionado en la inscripción de nacimiento y solicitar autorización judicial para la rectificación registral de la mención al sexo y, en su caso, al nombre, en el Capítulo I ter la solicitud se centra en la voluntad de revertir la rectificación anteriormente producida."
           },
           {
            "p": "La solicitud deberá ir acompañada de los medios de prueba que la persona interesada desee utilizar, sin que la ley imponga unos medios probatorios determinados ni establezca una lista taxativa de documentos."
@@ -290,7 +290,7 @@ Neg.data.register({
            "p": "El Juez podrá solicitar la práctica de cualesquiera otras pruebas que considere oportunas."
           },
           {
-           "p": "Esta facultad del Juez es amplia y discrecional, permitiendo practicar todo tipo de pruebas que considere necesarias para formar su convicción sobre la autenticidad y estabilidad de la voluntad manifestada por la persona interesada, siempre dentro de los límites del respeto a la dignidad, la intimidad y la identidad personal. No obstante, debe tenerse en cuenta que el ejercicio del derecho a la rectificación registral de la mención relativa al sexo en ningún caso podrá estar condicionado a la previa exhibición de informe médico o psicológico relativo a la disconformidad con el sexo mencionado en la inscripción de nacimiento, ni a la previa modificación de la apariencia o función corporal de la persona a través de procedimientos médicos, quirúrgicos o de otra índole, conforme al artículo 44.3 de la Ley 4/2023, principio general que vincula a todos los procedimientos de rectificación registral del sexo, incluido el judicial del Capítulo I ter."
+           "p": "Debe tenerse en cuenta que el ejercicio del derecho a la rectificación registral de la mención relativa al sexo en ningún caso podrá estar condicionado a la previa exhibición de informe médico o psicológico relativo a la disconformidad con el sexo mencionado en la inscripción de nacimiento, ni a la previa modificación de la apariencia o función corporal de la persona a través de procedimientos médicos, quirúrgicos o de otra índole, conforme al artículo 44.3 de la Ley 4/2023, principio general que vincula a todos los procedimientos de rectificación registral del sexo, incluido el judicial del Capítulo I ter."
           }
          ]
         }
@@ -311,7 +311,7 @@ Neg.data.register({
              "t": "Debe acompañarse de cualesquiera medios documentales o testificales acreditativos de que la persona ha mantenido de forma estable la disconformidad a la que se refiere el apartado anterior."
             },
             {
-             "t": "El Juez debe acreditar la madurez necesaria de la persona menor de edad y la estabilidad de su voluntad, teniendo en consideración en todo momento el interés superior de la persona menor de edad."
+             "t": "El Juez podrá solicitar la práctica de las pruebas que considere necesarias para acreditar la madurez necesaria de la persona menor de edad y la estabilidad de su voluntad, teniendo en consideración en todo momento el interés superior de la persona menor de edad."
             },
             {
              "t": "El Juez deberá facilitarle información sobre las consecuencias jurídicas de la rectificación en lenguaje claro, accesible y adaptado a sus necesidades, e informarle de las medidas de asistencia e información disponibles en los ámbitos sanitario, social, laboral, educativo y administrativo, así como de asociaciones de protección de los derechos en este ámbito."
@@ -371,7 +371,7 @@ Neg.data.register({
            "p": "El testimonio de dicha resolución se remitirá al Registro Civil competente para proceder, en su caso, a la inscripción de la rectificación aprobada judicialmente."
           },
           {
-           "p": "La remisión del testimonio de la resolución al Registro Civil competente es el mecanismo de ejecución de la decisión judicial. El Registro Civil, una vez recibido el testimonio, procederá a la inscripción de la rectificación aprobada, si la resolución es favorable. Conforme al artículo 46.1 de la Ley 4/2023, la resolución que acuerde la rectificación de la mención registral del sexo tendrá efectos constitutivos a partir de su inscripción en el Registro Civil, de modo que el cambio de la condición jurídica de la persona no se produce con la mera sentencia o resolución judicial, sino con su inscripción registral."
+           "p": "La remisión del testimonio de la resolución al Registro Civil competente es el mecanismo de ejecución de la decisión judicial. El Registro Civil, una vez recibido el testimonio, procederá a la inscripción de la rectificación aprobada, si la resolución es favorable. Conforme al artículo 46.1 de la Ley 4/2023, la resolución que acuerde la rectificación de la mención registral del sexo tendrá efectos constitutivos a partir de su inscripción en el Registro Civil, de modo que el cambio de la condición jurídica de la persona no se produce con la mera resolución judicial, sino con su inscripción registral."
           },
           {
            "p": "Por su parte, el artículo 91.2 de la Ley 20/2011, del Registro Civil, remite para la rectificación de las menciones de nombre y sexo al procedimiento registral de la Ley 4/2023."
@@ -574,7 +574,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley Orgánica 3/2007, de 22 de marzo",
       "titulo": "Para la Igualdad Efectiva de Mujeres y Hombres",
-      "texto": "<strong>Artículo 11</strong> — Medidas de acción positiva en favor de las mujeres.<br><strong>Artículo 46.4</strong> de la Ley 4/2023 — La persona que rectifique la mención registral del sexo pasando del sexo masculino al femenino podrá ser beneficiaria de medidas de acción positiva adoptadas específicamente en favor de las mujeres en virtud del artículo 11 de la Ley Orgánica 3/2007, para aquellas situaciones generadas a partir de que se haga efectivo el cambio registral, pero no respecto de las situaciones jurídicas anteriores a la rectificación registral.<br><strong>Artículo 46.5</strong> de la Ley 4/2023 — La persona que rectifique la mención registral pasando del sexo femenino al masculino conservará los derechos patrimoniales consolidados que se hayan derivado de estas medidas de acción positiva, sin que haya lugar a su reintegro o devolución.",
+      "texto": "<strong>Artículo 11</strong> — Medidas de acción positiva en favor de las mujeres.<br><strong>Artículo 46.4</strong> de la Ley 4/2023 — La persona que rectifique la mención registral del sexo pasando del sexo masculino al femenino podrá ser beneficiaria de medidas de acción positiva adoptadas específicamente en favor de las mujeres en virtud del artículo 11 de la Ley Orgánica 3/2007, para aquellas situaciones generadas a partir de que se haga efectivo el cambio registral, pero no respecto de las situaciones jurídicas anteriores a la rectificación registral. No obstante, la persona que rectifique la mención registral pasando del sexo femenino al masculino conservará los derechos patrimoniales consolidados que se hayan derivado de estas medidas de acción positiva, sin que haya lugar a su reintegro o devolución.<br><strong>Artículo 46.5</strong> de la Ley 4/2023 — Respecto de las situaciones jurídicas que traigan causa del sexo registral en el momento del nacimiento, la persona conservará, en su caso, los derechos inherentes al mismo en los términos establecidos en la legislación sectorial.",
       "etiqueta": "Igualdad y acción positiva",
       "tono": "t-info"
      }
