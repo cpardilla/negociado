@@ -91,3 +91,9 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 2 | Índice de plazos | Sin auto ni apelación | Dos filas añadidas | LJV 19.1, 39.4; LEC 458.1 |
 | 5 | Art. 175 | «si antes hubo» | «inmediatamente antes de la emancipación» | CC 175.2 |
 | 8 | Art. 38 | Frase del art. 781.3 LEC | Suprimida aquí | LJV 38 |
+
+## Normas no cotejadas (2026-11-03)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 6 | Esquema, actores y Ley 54/2007 | «Entidad Colaboradora Autorizada / ECAI»; «las ECAI» | «Organismos acreditados» | Ley 54/2007, arts. 1 y 6 |

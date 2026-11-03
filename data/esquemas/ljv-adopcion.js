@@ -1186,7 +1186,7 @@ Neg.data.register({
         "t": "Entidad Pública (propuesta, idoneidad, informe, conservación datos)"
        },
        {
-        "t": "Entidad Colaboradora Autorizada / ECAI (sesiones preparación, mediación)"
+        "t": "Organismo acreditado para la adopción internacional, antes ECAI (sesiones de preparación, intermediación)"
        }
       ]
      }
@@ -1260,7 +1260,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 54/2007",
       "titulo": "Ley de Adopción Internacional",
-      "texto": "<strong>Ley 54/2007, de 28 de diciembre</strong> — Conjuga los principios constitucionales con las disposiciones de los instrumentos internacionales en materia de adopción que son parte del ordenamiento jurídico español. Regula la intervención de las ECAI y las competencias de las Comunidades Autónomas.",
+      "texto": "<strong>Ley 54/2007, de 28 de diciembre</strong> — Conjuga los principios constitucionales con las disposiciones de los instrumentos internacionales en materia de adopción que son parte del ordenamiento jurídico español. Regula la intervención de los organismos acreditados (antes, ECAI) y las competencias de las Comunidades Autónomas.",
       "etiqueta": "Especial",
       "tono": "t-ok"
      }
