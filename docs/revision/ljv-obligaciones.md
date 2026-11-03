@@ -75,3 +75,9 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 8 | Arts. 97.3 y 99.4-5 | «En ambos Capítulos, la oposición transforma el cauce» | Solo en el art. 97.3 | LJV 97.3, 99.4 |
 | 10 | Art. 99 | «deben documentarse separadamente» | Suprimido | Sin fuente |
 | 11 | Mapa, índice, cabecera | «LJV art. 3»; recuentos | Corregidos | LJV 97.2, 98.3 |
+
+## Normas no cotejadas (2026-11-03)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 11 | Esquema, Ley del Notariado | Art. 70 LN: dos exclusiones | Las cuatro letras del art. 70.1 | LN 70.1 |

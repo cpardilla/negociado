@@ -810,7 +810,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley del Notariado",
       "titulo": "Consignación y reclamación notarial de deudas",
-      "texto": "<strong>Art. 69 LN</strong> — Expediente notarial de ofrecimiento de pago y consignación, introducido por la Ley 15/2015 como vía alternativa a la judicial.<br><strong>Art. 70 LN</strong> — Reclamación notarial de deudas dinerarias no contradichas, con exclusiones subjetivas cuando el deudor sea consumidor o esté concernida una Administración Pública.",
+      "texto": "<strong>Art. 69 LN</strong> — Expediente notarial de ofrecimiento de pago y consignación, introducido por la Ley 15/2015 como vía alternativa a la judicial.<br><strong>Art. 70 LN</strong> — Reclamación notarial de deudas dinerarias no contradichas. Quedan fuera las que se funden en un contrato entre empresario o profesional y consumidor o usuario; las de la comunidad de propietarios que se reclaman por la Ley de Propiedad Horizontal; las de alimentos en las que estén interesados menores y las que recaigan sobre materias indisponibles u operaciones sujetas a autorización judicial; y aquellas en las que esté concernida una Administración Pública.",
       "etiqueta": "Vía alternativa",
       "tono": "t-nota"
      }
