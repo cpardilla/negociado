@@ -155,3 +155,7 @@ Corte del BOE: LO 1/2025 a 09-07-2026. A petición del propietario.
 |---|---|---|---|---|---|
 | E01 | Art. 256.2–3 › Contenido de la solicitud | incompleto | Sin mencionarlo | Línea: no hace falta el trámite previo; referencia añadida | LO 1/2025 art. 5.3 |
 | G01 | inicio; pie | incompleto | Sin mencionarlo | Nota con la misma regla; precepto en el pie | LO 1/2025 art. 5.3 |
+
+## Corrección posterior (2026-11-03) · Citas de la Ley 1/2019
+
+Ecosistema normativo › Secretos empresariales: la mención de la Directiva pasa a su propia línea, y las citas de los arts. 8–11, 12–25, 15 y 17 enlazan a la Ley 1/2019. Sin cambio de fondo.

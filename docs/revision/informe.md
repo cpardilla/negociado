@@ -76,7 +76,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LPPD (BOE a 18-12-2025): 75
 - ✓ LTRANS (BOE a 20-12-2025): 70
 - ✓ LOPJM (BOE a 18-12-2025): 54
-- ✓ LRC (BOE a 24-02-2026): 47
+- ✓ LRC (BOE a 24-02-2026): 48
 - UE: 46
 - ✓ RDTO (BOE a 19-12-2025): 44
 - ✓ LOPDH (BOE a 16-12-2025): 40
@@ -87,6 +87,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ CE (BOE a 29-10-2026): 18
 - ✓ LSC (BOE a 19-12-2025): 9
 - ✓ CP (BOE a 09-04-2026): 7
+- ✓ LSE (BOE a 31-07-2026): 6
 - ✓ LOPDGDD (BOE a 08-10-2026): 6
 - ✓ CCom (BOE a 16-12-2025): 4
 - ✓ LCS (BOE a 05-10-2026): 4
@@ -96,14 +97,13 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LPI (BOE a 31-07-2026): 2
 - ✓ LPAT (BOE a 31-07-2026): 2
 - ✓ LCD (BOE a 29-12-2025): 2
-- ✓ LSE (BOE a 31-07-2026): 2
 - ✓ LMED (BOE a 19-12-2025): 2
 - LPAP: 2
 - Ley 50/1981: 1
 - LO 1/2004: 1
 - Ley 54/2007: 1
 
-Además, 165 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 160 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 

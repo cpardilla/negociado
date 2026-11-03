@@ -1811,7 +1811,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley estatal · Secretos empresariales",
       "titulo": "Ley 1/2019 de Secretos Empresariales",
-      "texto": "Transpone la Dir. 2016/943. Acciones civiles (arts. 8–11) y normas procesales (arts. 12–25): tratamiento de la información confidencial (art. 15) y diligencias de comprobación de hechos (art. 17).",
+      "texto": "Transpone la Dir. 2016/943.<br>Acciones civiles (arts. 8–11) y normas procesales (arts. 12–25): tratamiento de la información confidencial (art. 15) y diligencias de comprobación de hechos (art. 17).",
       "etiqueta": "PI",
       "tono": "t-ok"
      }

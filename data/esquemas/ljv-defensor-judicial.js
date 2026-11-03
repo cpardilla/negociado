@@ -455,10 +455,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t":"El art. 30.3 manda remitir al Registro Civil el testimonio del nombramiento «en el caso previsto en la letra c) del apartado 1 del artículo 27». Esa letra la suprimió la Ley 8/2021: se refería al defensor nombrado para administrar los bienes mientras se constituía la tutela o curatela, supuesto que hoy recoge el art. 295.4.º CC (provisión de medidas de apoyo en trámite). No se refiere a la imposibilidad de hecho del art. 27.2.c). El art. 74.1 LRC conserva una remisión igual de desfasada (al art. 299 bis CC, derogado); ambas se leen referidas al art. 295.4.º CC."
+             "t": "El art. 30.3 manda remitir al Registro Civil el testimonio del nombramiento «en el caso previsto en la letra c) del apartado 1 del artículo 27». Esa letra la suprimió la Ley 8/2021: se refería al defensor nombrado para administrar los bienes mientras se constituía la tutela o curatela, supuesto que hoy recoge el art. 295.4.º CC (provisión de medidas de apoyo en trámite). No se refiere a la imposibilidad de hecho del art. 27.2.c). El art. 74.1 LRC conserva una remisión igual de desfasada (al art. 299 bis CC, derogado); ambas se leen referidas al art. 295.4.º CC."
             },
             {
-             "t":"Se remite testimonio (art. 22.2 LJV) del nombramiento del art. 295.4.º CC; del de cualquier otro defensor judicial de una persona con discapacidad, que es medida de apoyo (art. 250 CC; art. 72.1 LRC; art. 300 CC); y del defensor del menor emancipado (art. 4.13.º LRC). No, por defecto, el del menor no emancipado para un litigio o expediente concreto."
+             "t": "Se remite testimonio (art. 22.2 LJV) del nombramiento del art. 295.4.º CC; del de cualquier otro defensor judicial de una persona con discapacidad, que es medida de apoyo (art. 250 CC; art. 72.1 LRC; art. 300 CC); y del defensor del menor emancipado (art. 4.13.º LRC). No, por defecto, el del menor no emancipado para un litigio o expediente concreto."
             }
            ]
           }
@@ -823,7 +823,7 @@ Neg.data.register({
      "norma": {
       "ley": "Otras leyes",
       "titulo": "Marco legal complementario",
-      "texto": "<strong>Ley 8/2021, de 2 de junio</strong> — suprimió la incapacitación y la tutela de los adultos; introdujo curatela asistencial, guarda de hecho y poderes preventivos; rediseñó el defensor judicial como apoyo ocasional autónomo (art. 295.5.º CC).<br><strong>LO 1/1996, art. 9</strong> — derecho del menor a ser oído; umbral de 12 años para audiencia obligatoria.<br><strong>Ley 20/2011 (Registro Civil), art. 74</strong> — acceso al Registro de la designación de defensor judicial en el caso legalmente previsto (art. 30.3 LJV).<br><strong>CDPD (ONU, 2006) arts. 12 y 13</strong> — igual reconocimiento ante la ley; acceso a la justicia; marco inspirador de la Ley 8/2021.",
+      "texto": "<strong>Ley 8/2021, de 2 de junio</strong> — suprimió la incapacitación y la tutela de los adultos; introdujo curatela asistencial, guarda de hecho y poderes preventivos; rediseñó el defensor judicial como apoyo ocasional autónomo (art. 295.5.º CC).<br><strong>LO 1/1996, art. 9</strong> — derecho del menor a ser oído; umbral de 12 años para audiencia obligatoria.<br><strong>Art. 74 de la Ley 20/2011 (Registro Civil)</strong> — acceso al Registro de la designación de defensor judicial en el caso legalmente previsto (art. 30.3 LJV).<br><strong>CDPD (ONU, 2006) arts. 12 y 13</strong> — igual reconocimiento ante la ley; acceso a la justicia; marco inspirador de la Ley 8/2021.",
       "etiqueta": "Leyes especiales e internacional",
       "tono": "t-aviso"
      }

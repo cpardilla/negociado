@@ -77,3 +77,7 @@ Criterio del propietario (ROADMAP §10, decisión 15), contrastado con el BOE (L
 | E12 | Sujetos | «Registro Civil (art. 30.3; art. 74 LRC)» | Art. 30.3 LJV leído con el art. 295.4.º CC; arts. 4.11.º, 4.13.º, 72 y 74 LRC |
 
 Comprobador tras el cambio: 2 «errores» intencionados (la mención del art. 299 bis CC, derogado, al explicar la remisión desfasada del art. 74.1 LRC), uno en G09 y otro en E12.
+
+## Corrección posterior (2026-11-03) · Cita del art. 74 LRC
+
+Ecosistema normativo › Otras leyes: «Ley 20/2011 (Registro Civil), art. 74» pasa a «Art. 74 de la Ley 20/2011 (Registro Civil)», que enlaza. Sin cambio de fondo.
