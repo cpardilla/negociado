@@ -1,8 +1,8 @@
 # Relectura, primera tanda (2026-11-03)
 
-E03/G03 (intervención del caudal), E04/G04 (administración del caudal) y E05/G05 (liquidación del régimen económico matrimonial), leídos enteros contra el texto vigente. Corte del BOE: descarga del 2026-11-03. **Sin cambios en la app: pendiente del visto bueno del propietario.**
+E03/G03 (intervención del caudal), E04/G04 (administración del caudal) y E05/G05 (liquidación del régimen económico matrimonial), leídos enteros contra el texto vigente. Corte del BOE: descarga del 2026-11-03. **Hallazgos aplicados el 2026-11-03 con el visto bueno del propietario** (registros de cada recurso).
 
-Sin hallazgos que proponer en E03, G04 y E05. Los plazos son correctos. Una cita se queda corta (n.º 12). Ningún hallazgo procede de la «Redacción anterior».
+Sin hallazgos que proponer en E03, G04 y E05. Los plazos son correctos. Una cita se queda corta (n.º 12: al aplicarla se vio que el propio art. 796.3 LEC recoge el detalle, así que la app cita los arts. 796.3 y 782.4 LEC y el art. 1082 CC). Ningún hallazgo procede de la «Redacción anterior».
 
 Comprobado contra el texto: arts. 790-811 LEC, 782.4 y 208 LEC, y los artículos del CC y de la LN (55 y 56) que estos recursos resumen. De los arts. 72-77 LN y 108-111 LJV solo se ha comprobado que existen y que tratan de la subasta; no se ha cotejado su detalle. Las remisiones por bloque («arts. 1344-1410 CC», «arts. 913-958 CC») no se han leído artículo por artículo.
 
