@@ -47,3 +47,15 @@ La guía dice «Juzgado de Primera Instancia» en un paso; revisar además si at
 | 9 | fin_denegacion, fin_oposicion | impreciso | «Recurso conforme al art. 20»; «el expediente puede reanudarse» | Apelación (art. 20.2); nuevo expediente si cambian las circunstancias (art. 19.3) | LJV 19.3, 20.2 |
 | 10 | fin_consentimiento_invalido, fin_exito | impreciso | «Ley 30/1979, arts. 1 y 4»; «Código Penal» | Arts. 2 y 4; art. 156 bis CP; centros autorizados y asistencia al donante (art. 8.7 y 8 RD) | Ley 30/1979; CP 156 bis; RD 8 |
 | 11 | inicio_donante, actores, pie | forma | «Vía habitual»; «Letrado AJ», «Ambos» | Quitado; nombres completos; pie con las normas citadas | — |
+
+## Corrección posterior (2026-11-03) · Relectura, octava tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda8.md`, aplicados con el visto bueno del propietario.
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 9 | requisitos_especificos_ok; se suprime fin_certificado_no_adjunto | Fin directo sin certificado | Subsanación | LJV 16.4 |
+| 10 | citacion_comparecencia, desarrollo_comparecencia; nuevo fin_incomparecencia | Sin plazos, donante ni salida | Añadidos | LJV 13, 17.3, 18.1, 18.2.1.ª, 79.3 |
+| 11 | fin_incompetencia_*, fin_solicitud_incompleta | Actor LAJ | Juez | LJV 16 |
+| 12 y 14 | requisitos_donante | Sin posibilidades de éxito ni quién decide | Añadidos | RD 1723/2012, art. 8.2; LJV 17.1 |
+| 13 | inicio, fin_oposicion, fin_consentimiento_invalido, fin_revocacion | Glosas sin fuente | Suprimidas | Sin fuente |

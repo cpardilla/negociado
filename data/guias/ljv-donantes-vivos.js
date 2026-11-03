@@ -44,10 +44,6 @@ Neg.data.register({
      "texto": "La finalidad del expediente es la constatación judicial de que concurre el consentimiento libre, consciente y desinteresado del donante y demás requisitos legales para la extracción y trasplante."
     },
     {
-     "tipo": "aviso",
-     "texto": "Este procedimiento NO constituye un acto de enjuiciamiento. La intervención judicial es una garantía de derechos individuales, fundamentalmente del derecho a la integridad física del donante."
-    },
-    {
      "tipo": "ley",
      "texto": "Ley 15/2015, arts. 78-80 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Directiva 2010/45/UE"
     }
@@ -266,13 +262,18 @@ Neg.data.register({
       "Órgano o parte de él cuya obtención sea compatible con la vida y cuya función pueda compensarse de forma adecuada y suficientemente segura",
       "Destino: el trasplante a una persona determinada para mejorar sustancialmente su pronóstico vital o sus condiciones de vida, con el anonimato del receptor",
       "Gratuidad: sin compensación económica para el donante ni precio para el receptor (art. 2 Ley 30/1979)",
-      "Informe del Comité de Ética correspondiente; no se obtienen órganos si hay sospecha de que se altera el libre consentimiento o media condicionamiento económico, social, psicológico o de otro tipo (art. 8.2 RD 1723/2012)"
+      "Informe del Comité de Ética correspondiente; no se obtienen órganos si hay sospecha de que se altera el libre consentimiento o media condicionamiento económico, social, psicológico o de otro tipo (art. 8.2 RD 1723/2012)",
+      "Que se esperen suficientes posibilidades de éxito del trasplante (art. 8.2 RD 1723/2012)"
      ],
      "marcar": true
     },
     {
      "tipo": "nota",
      "texto": "La información previa debe ajustarse, en su caso, a las necesidades de las personas con discapacidad, mediante sistemas comprensibles o adaptados a su discapacidad."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Si el LAJ entiende que la solicitud no resulta admisible, da cuenta al Juez, que acuerda lo que proceda (art. 17.1 LJV). Si llega a la comparecencia, el Juez decide conforme al art. 80 LJV."
     },
     {
      "tipo": "ley",
@@ -334,9 +335,9 @@ Neg.data.register({
      "destino": "citacion_comparecencia"
     },
     {
-     "texto": "No, no se ha aportado el certificado médico",
+     "texto": "No, no se ha aportado: requerir la subsanación",
      "tono": "t-aviso",
-     "destino": "fin_certificado_no_adjunto"
+     "destino": "requerir_subsanacion"
     }
    ]
   },
@@ -353,6 +354,7 @@ Neg.data.register({
      "tipo": "lista",
      "titulo": "Personas que deben ser citadas a la comparecencia",
      "items": [
+      "El donante, que ha de consentir ante el Juez (art. 79.3 LJV)",
       "El médico que ha de efectuar la extracción",
       "El médico firmante del certificado de salud física y mental del donante",
       "El médico responsable del trasplante o persona en quien delegue",
@@ -369,8 +371,12 @@ Neg.data.register({
      "texto": "El Letrado de la Administración de Justicia debe estar presente para dar fe de lo actuado."
     },
     {
+     "tipo": "plazo",
+     "texto": "Reglas generales (art. 13 LJV): citación con al menos quince días de antelación y comparecencia dentro de los treinta días siguientes a la admisión (arts. 17.3 y 18.1 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 79.2 LJV · Art. 8.4 RD 1723/2012 · Art. 4 d) Ley 30/1979"
+     "texto": "Art. 79.2 y 79.3 LJV · Arts. 13, 17.3 y 18.1 LJV · Art. 8.4 RD 1723/2012 · Art. 4 d) Ley 30/1979"
     }
    ],
    "siguiente": "desarrollo_comparecencia"
@@ -404,7 +410,19 @@ Neg.data.register({
      "texto": "Ley 15/2015, art. 79.3 · Ley 15/2015, art. 18 · Convenio de Oviedo · Ley 41/2002 (autonomía del paciente)"
     }
    ],
-   "siguiente": "consentimiento_juez"
+   "pregunta": "¿Asiste el donante?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "consentimiento_juez"
+    },
+    {
+     "texto": "No",
+     "tono": "t-aviso",
+     "destino": "fin_incomparecencia"
+    }
+   ]
   },
   "consentimiento_juez": {
    "fase": 2,
@@ -643,10 +661,6 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La oposición no significa necesariamente que la donación sea inválida, pero el legislador ha optado por un régimen de máxima cautela: basta la duda de cualquiera de los firmantes para bloquear la formalización del documento."
-    },
-    {
-     "tipo": "nota",
      "texto": "Si cambian las circunstancias, puede promoverse un nuevo expediente (art. 19.3 LJV)."
     },
     {
@@ -656,10 +670,26 @@ Neg.data.register({
    ],
    "fin": "warning"
   },
+  "fin_incomparecencia": {
+   "fase": 2,
+   "titulo": "No asiste el donante",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Sin el donante no puede prestarse el consentimiento ante el Juez (art. 79.3 LJV), y sin él no se extiende el documento de cesión (art. 80.1 LJV). Si el donante es el solicitante, el Juez acuerda el archivo y le tiene por desistido (art. 18.2.1.ª LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 18.2, 79.3 y 80.1 LJV"
+    }
+   ],
+   "fin": "warning"
+  },
   "fin_incompetencia_objetiva": {
    "fase": 0,
    "titulo": "Incompetencia objetiva del órgano judicial",
-   "actor": "laj",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
@@ -679,7 +709,7 @@ Neg.data.register({
   "fin_incompetencia_territorial": {
    "fase": 0,
    "titulo": "Incompetencia territorial del órgano judicial",
-   "actor": "laj",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
@@ -747,7 +777,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "El tráfico de órganos humanos es delito (art. 156 bis CP). Cualquier indicio de tráfico o compensación económica debe comunicarse a las autoridades competentes."
+     "texto": "El tráfico de órganos humanos es delito (art. 156 bis CP)."
     },
     {
      "tipo": "nota",
@@ -783,7 +813,7 @@ Neg.data.register({
   "fin_solicitud_incompleta": {
    "fase": 1,
    "titulo": "Solicitud no subsanada — Archivo",
-   "actor": "laj",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
@@ -800,26 +830,6 @@ Neg.data.register({
    ],
    "fin": "warning"
   },
-  "fin_certificado_no_adjunto": {
-   "fase": 1,
-   "titulo": "Certificado médico no aportado",
-   "actor": "laj",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "No se ha aportado el certificado médico sobre la salud física y mental del donante, emitido de conformidad con la normativa correspondiente. Este documento es un requisito imprescindible para la tramitación del expediente."
-    },
-    {
-     "tipo": "nota",
-     "texto": "El certificado lo emite un médico cualificado distinto de los que vayan a efectuar la extracción y el trasplante (art. 8.3 RD 1723/2012). Sin él, no es posible acreditar la aptitud del donante para la extracción."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 79.1 LJV · Art. 8.3 RD 1723/2012"
-    }
-   ],
-   "fin": "error"
-  },
   "fin_revocacion": {
    "fase": 4,
    "titulo": "Revocación del consentimiento por el donante",
@@ -831,11 +841,11 @@ Neg.data.register({
     },
     {
      "tipo": "info",
-     "texto": "La revocación es plenamente eficaz e impide que la extracción y el trasplante puedan llevarse a cabo. El documento de cesión del órgano pierde su validez."
+     "texto": "La revocación es plenamente eficaz e impide que la extracción y el trasplante puedan llevarse a cabo."
     },
     {
      "tipo": "nota",
-     "texto": "El derecho de revocación es una manifestación del carácter libre del consentimiento. La revocación no puede dar lugar a ningún tipo de indemnización (art. 8.6 RD 1723/2012). Si el donante cambia de opinión nuevamente, podrá iniciar un nuevo expediente de constatación judicial."
+     "texto": "El derecho de revocación es una manifestación del carácter libre del consentimiento. La revocación no puede dar lugar a ningún tipo de indemnización (art. 8.6 RD 1723/2012)."
     },
     {
      "tipo": "ley",
