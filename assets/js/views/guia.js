@@ -15,7 +15,7 @@
     warning: ["t-plazo", "Procedimiento finalizado con observaciones"],
     neutral: ["t-nota", "Fin de esta vía"],
   };
-  const ROLE = { laj: "laj", juez: "juez", ambos: "ambos", fiscal: "fiscal", mf: "fiscal", registro: "registro" };
+  const ROLE = { laj: "laj", juez: "juez", tribunal: "juez", ambos: "ambos", fiscal: "fiscal", mf: "fiscal", registro: "registro" };
   const tone = (phase) => `c${(phase % 6) + 1}`;
   const plain = (h) => String(h || "").replace(/<[^>]+>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
 

@@ -69,9 +69,9 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2808
-- ✓ CC (BOE a 07-09-2026): 1350
-- ✓ LEC (BOE a 29-10-2026): 1196
+- ✓ LJV (BOE a 05-03-2026): 2813
+- ✓ CC (BOE a 07-09-2026): 1349
+- ✓ LEC (BOE a 29-10-2026): 1200
 - ✓ LOPJ (BOE a 09-10-2026): 119
 - ✓ LPPD (BOE a 18-12-2025): 75
 - ✓ LTRANS (BOE a 20-12-2025): 70
@@ -103,7 +103,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - LO 1/2004: 1
 - Ley 54/2007: 1
 
-Además, 160 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 159 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 

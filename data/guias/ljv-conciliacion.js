@@ -39,7 +39,8 @@ Neg.data.register({
   "juez": "Juez de Paz",
   "laj": "Letrado de la Administración de Justicia",
   "partes": "Ambas partes",
-  "solicitante": "Solicitante"
+  "solicitante": "Solicitante",
+  "tribunal": "Tribunal competente"
  },
  "inicio": "inicio",
  "pasos": {
@@ -138,10 +139,6 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "Determine si la materia objeto de la conciliación está excluida por razón del objeto. Las peticiones sobre estas materias no se admiten a trámite (art. 139.2)."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "La inadmisión de plano es la consecuencia de intentar la conciliación sobre materias excluidas."
     }
    ],
    "pregunta": "¿La materia solicitada está entre las excluidas por el art. 139.2 LJV?",
@@ -309,7 +306,7 @@ Neg.data.register({
     {
      "texto": "No — No existe proceso que afecte",
      "tono": "t-ok",
-     "destino": "verifica_fiscal"
+     "destino": "competencia_tipo"
     }
    ]
   },
@@ -328,34 +325,6 @@ Neg.data.register({
     }
    ],
    "fin": "warning"
-  },
-  "verifica_fiscal": {
-   "fase": 1,
-   "titulo": "Verificación de intervención del Ministerio Fiscal (art. 4)",
-   "actor": "laj",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "Determine si el Ministerio Fiscal debe intervenir en el expediente."
-    },
-    {
-     "tipo": "nota",
-     "texto": "El Fiscal interviene cuando afecta al estado civil, interés de menor o persona con discapacidad, o cuando la ley lo declare expresamente."
-    }
-   ],
-   "pregunta": "¿Procede la intervención del Ministerio Fiscal?",
-   "opciones": [
-    {
-     "texto": "Sí — Afecta a estado civil, menores o personas con discapacidad",
-     "tono": "t-plazo",
-     "destino": "competencia_tipo"
-    },
-    {
-     "texto": "No — No concurren las circunstancias del art. 4",
-     "tono": "t-ok",
-     "destino": "competencia_tipo"
-    }
-   ]
   },
   "competencia_tipo": {
    "fase": 2,
@@ -604,19 +573,8 @@ Neg.data.register({
      "texto": "Plazo de admisión: 5 días hábiles · Antelación mínima: 5 días · Demora máxima: 10 días desde admisión"
     },
     {
-     "tipo": "lista",
-     "titulo": "La resolución debe contener",
-     "items": [
-      "Cumplimiento de requisitos formales",
-      "Señalamiento del día y hora del acto",
-      "Medio de citación (electrónico o diligencia)",
-      "Advertencia de consecuencias de la incomparecencia"
-     ],
-     "marcar": true
-    },
-    {
      "tipo": "ley",
-     "texto": "Art. 142.1-2 LJV · Art. 130 LEC"
+     "texto": "Art. 142 LJV"
     }
    ],
    "siguiente": "citacion"
@@ -628,11 +586,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se practica la citación en el domicilio señalado. Debe contener: identificación del órgano, fecha, hora, lugar, identidad de las partes y advertencia de incomparecencia."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La citación se realiza preferentemente por medios electrónicos o por diligencia de comunicación."
+     "texto": "Se cita a los interesados en los domicilios que consten en la solicitud (art. 141.1 LJV), en la forma prevista en la LEC."
     },
     {
      "tipo": "ley",
@@ -672,11 +626,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Las partes deben comparecer por sí mismas o por medio de Procurador con poder suficiente. La comparecencia incluye presencia física o telemática, y para transigir hace falta mandato expreso (CC art. 1713)."
+     "texto": "Las partes deben comparecer por sí mismas o por medio de Procurador. Para transigir, el Procurador necesita poder especial (art. 25.2.1.º LEC) y el mandatario, mandato expreso (art. 1713 CC)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 144.1 Ley 15/2015 · Artículos 23 y ss. LEC; CC art. 1713"
+     "texto": "Art. 144.1 Ley 15/2015 · Arts. 23 y ss. LEC; art. 25.2.1.º LEC; CC art. 1713"
     }
    ],
    "pregunta": "¿Comparece el solicitante (o su Procurador)?",
@@ -858,7 +812,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El requerido no comparece sin justa causa. Se tiene por intentada a todos los efectos legales, habilitando al solicitante para ejercitar acciones judiciales. El efecto interruptivo de la prescripción se mantiene."
+     "texto": "El requerido no comparece sin justa causa. Se tiene por intentada a todos los efectos legales, habilitando al solicitante para ejercitar acciones judiciales. El plazo de prescripción vuelve a computarse desde la resolución que pone término al expediente (art. 143)."
     },
     {
      "tipo": "ley",
@@ -1138,11 +1092,11 @@ Neg.data.register({
   "ejecucion_competencia": {
    "fase": 9,
    "titulo": "Competencia para la Ejecución",
-   "actor": "juez",
+   "actor": "tribunal",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se determina el órgano competente para la ejecución forzosa. La competencia territorial no es disponible por las partes en la ejecución de títulos judiciales."
+     "texto": "Se determina el órgano competente para la ejecución forzosa (art. 147.2 LJV)."
     },
     {
      "tipo": "lista",
@@ -1155,7 +1109,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 147.2 y 3 Ley 15/2015; LEC art. 545"
+     "texto": "Art. 147.2 y 3 Ley 15/2015"
     }
    ],
    "pregunta": "¿Se formula oposición a la ejecución?",
@@ -1166,7 +1120,12 @@ Neg.data.register({
      "destino": "fin_ejecucion"
     },
     {
-     "texto": "Sí — Se formula oposición mediante acción de nulidad",
+     "texto": "Sí — Oposición por las causas del art. 557 LEC",
+     "tono": "t-plazo",
+     "destino": "oposicion_ejecucion"
+    },
+    {
+     "texto": "Se ejercita la acción de nulidad (art. 148 LJV)",
      "tono": "t-plazo",
      "destino": "nulidad"
     }
@@ -1175,7 +1134,7 @@ Neg.data.register({
   "fin_ejecucion": {
    "fase": 9,
    "titulo": "Ejecución cumplida sin oposición",
-   "actor": "juez",
+   "actor": "tribunal",
    "bloques": [
     {
      "tipo": "info",
@@ -1195,11 +1154,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Contra lo convenido sólo podrá ejercitarse la acción de nulidad por las causas que invalidan los contratos (vicios del consentimiento, defectos de objeto o causa, contravención de normas imperativas). La carga de la prueba recae sobre quien invoca la nulidad."
+     "texto": "Contra lo convenido sólo podrá ejercitarse la acción de nulidad por las causas que invalidan los contratos (vicios del consentimiento, defectos de objeto o causa, contravención de normas imperativas)."
     },
     {
      "tipo": "plazo",
-     "texto": "Plazo de caducidad: 15 días desde la celebración del acto. Este plazo es improrrogable y extintivo."
+     "texto": "Quince días desde que se celebró la conciliación (art. 148.2 LJV)."
     },
     {
      "tipo": "info",
@@ -1207,11 +1166,11 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Acreditado el ejercicio de la acción de nulidad, queda en suspenso la ejecución ipso iure hasta que se resuelva definitivamente."
+     "texto": "Acreditado el ejercicio de la acción de nulidad, queda en suspenso la ejecución hasta que se resuelva definitivamente (art. 148.3 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 148.1-2 Ley 15/2015; CC arts. 1261, 1265-1270, 1275-1309; LEC arts. 248, 437"
+     "texto": "Art. 148 Ley 15/2015; CC arts. 1261, 1265-1270, 1275-1309"
     }
    ],
    "pregunta": "¿Se interpone demanda de nulidad dentro del plazo de 15 días?",
@@ -1222,7 +1181,7 @@ Neg.data.register({
      "destino": "resuelve_nulidad"
     },
     {
-     "texto": "No — Fuera del plazo de caducidad",
+     "texto": "No — Fuera de plazo",
      "tono": "t-aviso",
      "destino": "fin_caducada"
     }
@@ -1230,20 +1189,16 @@ Neg.data.register({
   },
   "fin_caducada": {
    "fase": 9,
-   "titulo": "Acción de nulidad caducada — Acuerdo Firme",
-   "actor": "juez",
+   "titulo": "Acción de nulidad fuera de plazo",
+   "actor": "tribunal",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El transcurso del plazo de caducidad de 15 días determina la firmeza del acuerdo. El título ejecutivo conserva toda su fuerza y la ejecución prosigue."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "El plazo de 15 días es de caducidad, no de prescripción: no admite interrupción ni suspensión. La parte debe actuar con la máxima diligencia."
+     "texto": "Pasados los quince días sin interponer la demanda (art. 148.2 LJV), lo convenido no queda en suspenso y la ejecución prosigue."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 148.1 Ley 15/2015; CC arts. 1265-1270"
+     "texto": "Art. 148 Ley 15/2015"
     }
    ],
    "fin": "warning"
@@ -1251,7 +1206,7 @@ Neg.data.register({
   "resuelve_nulidad": {
    "fase": 9,
    "titulo": "Resolución sobre la acción de nulidad",
-   "actor": "juez",
+   "actor": "tribunal",
    "bloques": [
     {
      "tipo": "info",
@@ -1275,7 +1230,7 @@ Neg.data.register({
   "fin_nulidad_estimada": {
    "fase": 9,
    "titulo": "Nulidad estimada — acuerdo anulado",
-   "actor": "juez",
+   "actor": "tribunal",
    "bloques": [
     {
      "tipo": "info",
@@ -1295,7 +1250,7 @@ Neg.data.register({
   "fin_nulidad_desestimada": {
    "fase": 9,
    "titulo": "Nulidad desestimada — acuerdo confirmado",
-   "actor": "juez",
+   "actor": "tribunal",
    "bloques": [
     {
      "tipo": "info",
@@ -1311,6 +1266,26 @@ Neg.data.register({
     }
    ],
    "fin": "success"
+  },
+  "oposicion_ejecucion": {
+   "fase": 9,
+   "titulo": "Oposición a la ejecución (art. 557 LEC)",
+   "actor": "tribunal",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El ejecutado solo puede oponerse por las causas del art. 557.1 LEC (títulos del art. 517.2.9.º): pago, compensación, pluspetición, prescripción y caducidad, quita o espera, transacción en documento público y cláusulas abusivas."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Diez días desde la notificación del auto que despacha ejecución (arts. 556.1 y 557.1 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Formulada la oposición, el Letrado de la Administración de Justicia suspende el curso de la ejecución por diligencia de ordenación (art. 557.2 LEC)."
+    }
+   ],
+   "fin": "neutral"
   }
  },
  "pie": "Ley 15/2015, de 2 de julio<br>Jurisdicción Voluntaria<br>Título IX · Arts. 139–148<br>LEC 1/2000 · CC · LOPJ 6/1985"

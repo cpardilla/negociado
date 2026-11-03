@@ -97,3 +97,19 @@ Ya hay instantánea: `sources/boe/LO1-2025.json` (BOE-A-2025-76, consolidada a 0
 |---|---|---|---|---|
 | E28 | Art. 139 › Requisito de procedibilidad | cita | «art. 14.5 y 6» (el analizador lee «6» como otro artículo) | «arts. 14.5 y 14.6» |
 | G02 | p0_inicio | cita | «art. 5.1 y 2» (ídem) | «arts. 5.1 y 5.2» |
+
+## Corrección posterior (2026-11-03) · Relectura
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de la relectura (`relectura-2026-11-03.md`), aplicados con el visto bueno del propietario.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| G25 | ejecucion_competencia | **error** | Oposición a la ejecución «mediante acción de nulidad» | Tres salidas; paso nuevo `oposicion_ejecucion` | LEC 556.1, 557; LJV 148 |
+| G25 | ejecucion_competencia | **error** | «títulos judiciales», art. 545 LEC | Competencia del art. 147.2 LJV | LJV 147.2 |
+| G25 | verifica_exclusion | **error** | «inadmisión de plano» | Aviso retirado: el paso ya dice «no se admiten a trámite» | LJV 139.2 |
+| G25 | nulidad, fin_caducada | sin fuente | «caducidad», «improrrogable y extintivo», «no admite interrupción ni suspensión», carga de la prueba, «ipso iure» | «Quince días»; art. 148.3 | LJV 148 |
+| G25 | admision, citacion | sin fuente | Contenido obligatorio de la resolución y de la citación; art. 130 LEC | Solo lo que dicen los arts. 141 y 142 | LJV 141, 142 |
+| G25 | fin_intentada_incomp | **error** | «el efecto interruptivo se mantiene» | El plazo vuelve a computarse | LJV 143 |
+| G25 | verifica_fiscal | incompleto | Paso sin efecto, contradictorio con el art. 139.2.1.º | Retirado | LJV 4, 139.2 |
+| G25 | comparecencia_solicitante | incompleto | Sin el poder especial; «telemática» sin cita | Art. 25.2.1.º LEC | LEC 25.2 |
+| G25 | ejecución y nulidad (6 pasos) | **error** | Actor «Juez de Paz» | «Tribunal competente» | LJV 147.2, 148.2 |
