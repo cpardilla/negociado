@@ -329,7 +329,7 @@ Neg.data.register({
     },
     {
      "tipo": "lista",
-     "titulo": "Medidas posibles",
+     "titulo": "Ejemplos de medidas posibles",
      "items": [
       "Suspensión o prohibición de difundir las imágenes o contenidos durante la tramitación",
       "Retirada de contenidos ya difundidos",
@@ -356,7 +356,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La comparecencia es el acto oral central del expediente (art. 18 LJV). En ella se oye a los interesados, se propone y practica la prueba, y se formulan alegaciones finales. El principio de inmediación impone que sea el mismo Juez que resolverá quien dirija el acto."
+     "texto": "La comparecencia es el acto oral central del expediente (art. 18 LJV). En ella se oye a los interesados, se propone y practica la prueba, y se formulan alegaciones finales."
     },
     {
      "tipo": "lista",
@@ -450,10 +450,6 @@ Neg.data.register({
      "marcar": true
     },
     {
-     "tipo": "nota",
-     "texto": "La prueba documental en expedientes digitales debe incluir datos sobre la audiencia o alcance del medio, el contrato o acuerdo de difusión y las condiciones técnicas de acceso al contenido."
-    },
-    {
      "tipo": "ley",
      "texto": "Arts. 5 y 18 LJV · Arts. 281 y ss. LEC"
     }
@@ -533,6 +529,10 @@ Neg.data.register({
      "texto": "Los efectos del Auto quedan suspendidos automáticamente si cualquiera de las partes legitimadas interpone recurso de apelación (art. 60.4 LJV). La intromisión no puede producirse hasta la resolución definitiva."
     },
     {
+     "tipo": "nota",
+     "texto": "Puede apelar cualquier interesado que se considere perjudicado (art. 20.2 LJV)."
+    },
+    {
      "tipo": "ley",
      "texto": "Art. 60.3 y 4 LJV · Art. 2.2 LO 1/1982"
     }
@@ -578,6 +578,10 @@ Neg.data.register({
     {
      "tipo": "aviso",
      "texto": "Los efectos quedan suspendidos si se interpone recurso de apelación (art. 60.4 LJV)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "La ley no regula expresamente la autorización condicionada: el art. 60.3 LJV dice que el Juez resuelve en atención al interés superior."
     },
     {
      "tipo": "ley",
@@ -701,7 +705,7 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "Veinte días desde la notificación (art. 458.1 LEC), ante la Audiencia Provincial, cuyo LAJ pide las actuaciones al Juzgado (art. 458.3 LEC)."
+     "texto": "Veinte días desde la notificación (art. 458.1 LEC), ante la Audiencia Provincial, cuyo LAJ pide las actuaciones al Juzgado (art. 458.3 LEC), con abogado y procurador (art. 3.2 LJV)."
     },
     {
      "tipo": "nota",
@@ -713,7 +717,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 60.4 LJV · Arts. 455 y ss. LEC"
+     "texto": "Art. 60.4 LJV · Art. 3.2 LJV · Arts. 455 y ss. LEC"
     }
    ],
    "pregunta": "Cuál es el resultado del recurso resuelto por la Audiencia Provincial?",
@@ -725,10 +729,15 @@ Neg.data.register({
      "destino": "notificacion_auto"
     },
     {
-     "texto": "La AP desestima el recurso y confirma la denegación o las condiciones",
+     "texto": "La AP desestima el recurso y confirma la denegación",
      "tono": "t-nota",
      "nota": "AP confirma denegación",
      "destino": "fin_denegacion"
+    },
+    {
+     "texto": "La AP desestima el recurso y confirma las condiciones de la autorización",
+     "tono": "t-nota",
+     "destino": "notificacion_auto"
     }
    ]
   },

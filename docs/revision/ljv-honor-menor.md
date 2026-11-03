@@ -56,3 +56,14 @@ La guía repite tres errores del esquema: «art. 98 LOPJ» (paso «competencia»
 | 11 | apelacion_*, fin_denegacion_ap | error | «Arts. 455–467 LEC», «art. 82.2 LOPJ»; casación contra el auto de la Audiencia «en los supuestos del art. 477» | Veinte días ante la Audiencia (art. 458), suspensiva y preferente (art. 60.4); no cabe casación, que el art. 477.1 LEC reserva a las sentencias | LJV 60.4; LEC 458, 477 |
 | 12 | auto_autoriza, auto_condiciona | impreciso | «Art. 2.1 LO 1/1982»; condición de «contraprestación con depósito judicial» | Art. 2.2; quitada la condición sin base | LO 1/1982 2.2 |
 | 13 | actores, pie | forma | «LAJ», «LAJ + Juez» | Nombres completos; pie con las normas citadas | — |
+
+## Corrección posterior (2026-11-03) · Relectura, octava tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda8.md`, aplicados con el visto bueno del propietario.
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 1 | apelacion_rep | Confirmar las condiciones llevaba a «denegada» | Opción propia hacia la notificación | LJV 60 |
+| 2 | apelacion_rep | Sin abogado ni procurador | Añadidos | LJV 3.2 |
+| 3 | auto_condiciona, cautelares, prueba, comparecencia | Contenidos sin fuente | Avisado, rotulado o suprimido | LJV 60.3 |
+| 4 | auto_autoriza | Solo el Fiscal | Cualquier interesado | LJV 20.2 |
