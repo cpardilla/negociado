@@ -79,3 +79,11 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 8 | celebracion_comparecencia | Sin menores ni personas con discapacidad | Nota añadida | LJV 18.2.4.ª |
 | 9 | senalamiento_comparecencia | Fija día y hora después de citar | Al admitir | LJV 17.3 |
 | 10 | alb_postulacion, admision_tramite, resolucion_cp_designa, resolucion_acep | Contenidos sin fuente | Suprimidos o rotulados como práctica | Sin fuente |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 2 | Mapa, ecosistema | «antes Letrado…»; «figura del Letrado… en la del Letrado» | Secretario judicial | LO 7/2015 |
+| 6 | Transversal | Fuero común incluía el art. 94.1 | Separado | LJV 91.3, 92.3, 94.1 |
+| 11 | Marco, ecosistema, mapa | «supletorias»; solo menores de 16 | Corregido | LJV 91.3, 92.3, 93.2.a, 94.1 |

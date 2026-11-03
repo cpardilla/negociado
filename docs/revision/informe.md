@@ -243,7 +243,7 @@ Sin hallazgos automáticos.
 
 **terminologia**
 
-- [revisar] «Secretario judicial» × 2 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Marco normativo general del Título IV» › tarjeta «Marco general» › resumen | sección «Ecosistema normativo — conexiones relacionadas» › 9 › norma «Del Secretario judicial al Letrado de la Administración de Justicia»_
+- [revisar] «Secretario judicial» × 4 → Letrado/a de la Administración de Justicia (LO 7/2015) — _sección «Marco normativo general del Título IV» › tarjeta «Marco general» › resumen | sección «Mapa de participantes y actores» › 4 › grupo «Órganos y operadores».2 | sección «Ecosistema normativo — conexiones relacionadas» › 9 › norma «Del Secretario judicial al Letrado de la Administración de Justicia» …_
 - [revisar] «Juzgado de Primera Instancia» × 7 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Capítulo I — Del albaceazgo» › tarjeta «Artículo 91» › «Competencia territorial (apartado 3)» › 1 › punto.1 | sección «Capítulo I — Del albaceazgo» › tarjeta «Artículo 91» › «Competencia territorial (apartado 3)» › 1 › punto.1 | sección «Capítulo I — Del albaceazgo» › tarjeta «Artículo 91» › «Competencia territorial (apartado 3)» › 1 › punto.2 …_
 
 ### ljv-obligaciones · Esquema · LJV · Título V · Derecho de obligaciones

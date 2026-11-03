@@ -74,7 +74,7 @@ Neg.data.register({
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Normas comunes supletorias (artículos 13 a 22 LJV)",
+         "titulo": "Normas comunes (artículos 13 a 22 LJV)",
          "contenido": [
           {
            "lista": [
@@ -734,7 +734,7 @@ Neg.data.register({
       "cuerpo": [
        {
         "apartado": {
-         "titulo": "Fuero común (artículos 91.3, 92.3 y 94.1)",
+         "titulo": "Fuero común (artículos 91.3 y 92.3)",
          "contenido": [
           {
            "lista": [
@@ -754,7 +754,7 @@ Neg.data.register({
              "t": "<strong>Fuero subsidiario:</strong> domicilio del solicitante (arts. 91.3 y 92.3)."
             },
             {
-             "t": "<strong>Fuero especial de protección:</strong> lugar de residencia del menor o persona con medidas de apoyo (art. 94.1)."
+             "t": "<strong>Capítulo III (art. 94.1), otro fuero:</strong> último domicilio o, en su defecto, última residencia del causante; si lo tuvo en el extranjero, último domicilio en España o mayor parte de sus bienes, a elección del solicitante. Si es llamado un menor o una persona con medidas judiciales de apoyo, lugar de su residencia."
             }
            ]
           }
@@ -943,7 +943,7 @@ Neg.data.register({
         "t": "Progenitores (ejercicio de la patria potestad)"
        },
        {
-        "t": "Menores de 16 años (sujetos a repudiación por progenitores)"
+        "t": "Menores de 16 años y mayores de esa edad que no consientan (repudiación por progenitores)"
        },
        {
         "t": "Tutores (necesitan autorización para aceptar sin beneficio o repudiar)"
@@ -978,7 +978,7 @@ Neg.data.register({
         "t": "Tribunal de Instancia, Sección Civil (competencia territorial: domicilio, patrimonio, fallecimiento)"
        },
        {
-        "t": "Letrado de la Administración de Justicia (antes Letrado de la Administración de Justicia)"
+        "t": "Letrado de la Administración de Justicia (antes, Secretario judicial)"
        },
        {
         "t": "Ministerio Fiscal (intervención obligatoria en protección de menores y discapacidad)"
@@ -997,7 +997,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 15/2015, de 2 de julio",
       "titulo": "Ley de la Jurisdicción Voluntaria",
-      "texto": "<strong>Artículos 1 y 2</strong> — ámbito de aplicación y concepto. <strong>Artículos 13 a 22</strong> — normas comunes de tramitación, aplicables con carácter supletorio.",
+      "texto": "<strong>Artículos 1 y 2</strong> — ámbito de aplicación y concepto. <strong>Artículos 13 a 22</strong> — normas comunes de tramitación.",
       "etiqueta": "Normas comunes",
       "tono": "t-info"
      }
@@ -1069,7 +1069,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley Orgánica 7/2015",
       "titulo": "Del Secretario judicial al Letrado de la Administración de Justicia",
-      "texto": "Transformó la figura del Letrado de la Administración de Justicia en la del Letrado de la Administración de Justicia, órgano competente para los expedientes desjudicializados en los arts. 91.4 y 92.3 LJV.",
+      "texto": "Transformó la figura del Secretario judicial en la del Letrado de la Administración de Justicia, órgano competente para los expedientes desjudicializados en los arts. 91.4 y 92.3 LJV.",
       "etiqueta": "Orgánico",
       "tono": "t-nota"
      }
