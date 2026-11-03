@@ -330,7 +330,7 @@ Neg.data.register({
              "t": "Art. 9 LJV Supuestos internacionales: competencia territorial complementada por la regla subsidiaria del art. 9.2 (efectos principales o ejecución)."
             },
             {
-             "t": "Art. 9.4 CC Ley personal del hijo: norma de conflicto para la determinación de la filiación en casos internacionales (Art. 10 LJV)."
+             "t": "Art. 9.4 CC Ley de la residencia habitual del hijo y, subsidiariamente, su ley nacional y la ley sustantiva española: norma de conflicto para la determinación de la filiación en casos internacionales (Art. 10 LJV)."
             }
            ]
           }

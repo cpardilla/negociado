@@ -92,3 +92,9 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 1 | Guía: eficacia_registral, recurso_auto_est | Solo la mención a la resolución firme | También lo que puede instarse de inmediato; la ley sigue sin aclarar la inscripción | LJV 22.1 |
 
 | 1 | Esquema: Art. 26, recursos | Igual que la guía | Igual que la guía | LJV 22.1 |
+
+## Normas no cotejadas (2026-11-03)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 1 | Esquema, conexiones | Art. 9.4 CC: «ley personal del hijo» | Ley de la residencia habitual; subsidiariamente, ley nacional y ley española | CC 9.4 |
