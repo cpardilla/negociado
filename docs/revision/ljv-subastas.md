@@ -98,3 +98,11 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 20 | Varios | Contenidos sin fuente | Suprimidos | LJV 111.8 |
 | 21 | Art. 108 | «Supuestos típicos», bienes de menores | «Ejemplos», sin ese supuesto | LJV 108 |
 | 23 | Art. 111, normas | Arts. 643–680 LEC | Arts. 643–675 LEC | Coherencia interna |
+
+## Corrección posterior (2026-11-03) · Relectura, cuarta tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda4.md`, aplicados con el visto bueno del propietario.
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 11 | Esquema, índice de plazos | «3 trámites» con 4 filas | «4 trámites» | Coherencia interna |
