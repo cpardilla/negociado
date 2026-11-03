@@ -64,3 +64,20 @@ Las reversiones en versiones anteriores a la vigente (LEC 29, CP 4, CC 2, LOPJ 1
 **Vigilar**: el RDL 29/2026 (BOE-A-2026-20823, en vigor desde el 8-10-2026) da la redacción vigente de los arts. 22 y 685 LEC y, según la ficha del Congreso (130/000060), estaba pendiente de convalidación al revisar. Su antecesor, el RDL 26/2026, fue derogado. Si decae, `tools/boe-diff.js` lo mostrará. Ninguno de los dos se cita de verdad en la app.
 
 **Hallazgo de paso, sin corregir**: E02 (ecosistema normativo, Reglamento (UE) 650/2012) dice «Art. 4 — Competencia» y «Arts. 21–22 — Ley aplicable» sin nombrar la norma en esa frase, y el analizador los lee como artículos de la LEC: los enlaza mal y aparecen en «Lo citan» de esos artículos. Pendiente del visto bueno del propietario.
+
+## «LO 7/2015 con cambios de fondo» revisadas (2026-11-03)
+
+Las 66 filas vigentes de `tools/boe-revisiones.js` (LOPJ 56, LEC 10). Pregunta: ¿es una reforma real o una versión construida sobre un texto anticuado, como el art. 781 LEC? Método: lo que añade cada versión se busca en el texto de la propia LO 7/2015 (BOE-A-2015-8167) y en las versiones anteriores del artículo. **Ninguna es un error de consolidación. No cambia nada en la app ni en `correcciones.json`.**
+
+| Ley | Artículos | Resultado |
+|---|---|---|
+| LEC | 115, 116, 117, 140, 266, 510, 511 | Reforma real: disposición final 4.ª; el 100 % de lo añadido está en la LO |
+| LEC | 138, 512 | Ídem (95 % y 94 %): lo no hallado son las palabras en la frontera entre el texto reformado y el que no («recurso de reposición», «del referido tribunal») |
+| LEC | 123 | Sin cambio de fondo: el BOE corrige una errata de maquetación («mani festará») |
+| LOPJ | 56 artículos | Reforma real: 2.647 de las 2.651 palabras añadidas están en la LO; lo demás es la frontera «de esta ley 2» del art. 495. Ninguna coincide con una versión antigua. En 14 filas lo añadido son menos de 8 palabras, prueba menos fuerte, pero no son textos anticuados. La app cita dos: arts. 22 y 456 |
+
+Las filas de la LEC con texto de una versión antigua son las 16 ya corregidas por la decisión 17: la prueba las detecta, lo que la valida.
+
+**Hallazgo al revisar, pendiente del visto bueno del propietario: notas del BOE dentro del texto de los artículos.** El BOE envuelve en `<blockquote caduca="…" class="soloTexto">` y `<blockquote class="noDesde…">` sus avisos, a menudo con la «Redacción anterior». El lector (`tools/boe-fetch.js`, y también `assets/js/core/vigencia.js`) solo reconoce `<blockquote>` sin atributos, así que ese contenido se guarda como texto del artículo. Afecta a 225 artículos de los que lleva la app (189 con «Redacción anterior»): LEC 165/150, LJV 41/21, LPPD 6/6, LH 5/4, LRC 4/4, LN 2/2, LMED 1/1, LOPJ 1/1. Ejemplo: el art. 117 LEC se muestra con sus apartados vigentes y, debajo, con los anteriores. `class="sangrado"` no es una nota: es texto legal (LO 1/2025, Ley 4/2023) y debe conservarse.
+
+Simulado el arreglo en una copia aparte: 503 bloques cambian en las instantáneas y todos son solo supresión; no queda ninguna nota en los artículos de la app; el comprobador sigue con 3 errores y pierde un aviso falso (art. 51.2 LJV, cuyo apartado 2 lo pisaba el de la redacción anterior). Ninguna cita, plazo o rúbrica dependía solo del texto derogado, en lo que el comprobador examina; no cubre toda afirmación de las guías. Solo una nota sigue viva en esos artículos: art. 2 LOPDH (inciso anulado por la STC 9/1990).
