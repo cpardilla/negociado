@@ -77,3 +77,10 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 9 | fin_denegacion_firme | «quien lo realizó responde»; «puede ser impugnado» | Tutor y curador | CC 234, 294 |
 | 10 | menor_tipo, discapacidad_tipo | «distinción conceptual» atribuida al art. 61 | El art. 61 las nombra sin definirlas | LJV 61 |
 | 11 | menor_exencion16, menor_exencion_valores, fin_exencion_menor | Glosas sobre la madurez y lo fungible | Suprimidas | CC 166 |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 10 | Art. 61 | «Distinción conceptual» | «el art. 61 las nombra sin definirlas» | LJV 61 |
+| 11 | Art. 61 | «Exención para el menor mayor de dieciséis» | «Exenciones del art. 166 CC» | CC 166 |

@@ -102,7 +102,7 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Distinción conceptual",
+         "titulo": "Autorización y aprobación (el art. 61 las nombra sin definirlas)",
          "contenido": [
           {
            "lista": [
@@ -133,7 +133,7 @@ Neg.data.register({
              "t": "<strong>Respecto del menor (artículo 166 del Código Civil):</strong> los progenitores titulares de la patria potestad necesitan autorización judicial para renunciar a los derechos de que sean titulares los hijos, enajenar o gravar sus bienes inmuebles, establecimientos mercantiles o industriales, objetos preciosos y valores mobiliarios —salvo el derecho de suscripción preferente de acciones— por causas justificadas de utilidad o necesidad y con audiencia del Ministerio Fiscal. La autorización para repudiar la herencia o legado deferidos al hijo se pide por los arts. 93 a 95 LJV."
             },
             {
-             "t": "<strong>Exención para el menor mayor de dieciséis años:</strong> no será necesaria autorización judicial si el menor hubiese cumplido dieciséis años y consintiere en documento público, ni para la enajenación de valores mobiliarios siempre que su importe se reinvierta en bienes o valores seguros."
+             "t": "<strong>Exenciones del art. 166 CC:</strong> no será necesaria autorización judicial si el menor hubiese cumplido dieciséis años y consintiere en documento público, ni para la enajenación de valores mobiliarios siempre que su importe se reinvierta en bienes o valores seguros."
             },
             {
              "t": "<strong>Respecto de la persona con discapacidad (artículo 287 del Código Civil):</strong> el curador con funciones de representación necesita autorización judicial para los actos que determine la resolución y, en todo caso, para los enumerados en sus ordinales 1.º a 9.º (actos de trascendencia personal o familiar; enajenar o gravar bienes inmuebles, establecimientos mercantiles o industriales, bienes o derechos de especial significado personal o familiar, bienes muebles de extraordinario valor, objetos preciosos y valores mobiliarios no cotizados; dar inmuebles en arrendamiento por término inicial superior a seis años; disposiciones a título gratuito; renuncias, transacciones o arbitrajes; aceptación sin beneficio de inventario o repudiación de herencias y liberalidades; gastos extraordinarios; interposición de demandas; préstamos, avales o fianzas; seguros de vida y rentas vitalicias de cuantía extraordinaria). El ordinal 2.º incluye también los contratos o actos dispositivos susceptibles de inscripción, y dispone que la enajenación se haga <strong>mediante venta directa</strong>, salvo que el Tribunal considere necesaria la subasta judicial."
