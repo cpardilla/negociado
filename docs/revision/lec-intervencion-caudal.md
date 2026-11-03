@@ -68,3 +68,13 @@ Paso nuevo: `fin_bloqueo_acreedores`. La pregunta de `cesacion_796` deja de ofre
 | G03 | Controversia sobre el inventario | Ídem | Ídem |
 
 Origen: la instantánea de la LEC guardaba, para este artículo, la versión del BOE de 1-10-2015 (LO 7/2015), construida sobre el texto anterior a la Ley 42/2015; la vigente es la de la Ley 42/2015. Detalle en `boe-correcciones.md`.
+
+## Corrección posterior (2026-11-03) · Relectura, primera tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda1.md`, aplicados con el visto bueno del propietario.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| G03 | averiguacion_791 | recorrido | Testamento o parientes llevaban siempre a la intervención a instancia de parte | Si comparecen parientes, a la entrega; si aparece testamento o un interesado la pide, a la intervención | LEC 790.2, 792 |
+| G03 | auto_791_2 | forma | La comunicación a Hacienda iba en un bloque «Plazo» sin plazo | Bloque «Información» | LEC 791.2 |
+| G03 | bloqueo_acreedores_796_3 | cita | Solo art. 1082 CC | Arts. 796.3 y 782.4 LEC; art. 1082 CC | LEC 796.3, 782.4 |

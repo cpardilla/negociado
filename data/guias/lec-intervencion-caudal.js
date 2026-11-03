@@ -131,7 +131,12 @@ Neg.data.register({
      "destino": "auto_791_2"
     },
     {
-     "texto": "Aparecen testamento o parientes",
+     "texto": "Comparecen parientes (art. 790.2)",
+     "tono": "t-ok",
+     "destino": "entrega_790"
+    },
+    {
+     "texto": "Aparece testamento, o un interesado pide la intervención (art. 792)",
      "tono": "t-nota",
      "destino": "intervencion_a_instancia"
     }
@@ -152,7 +157,7 @@ Neg.data.register({
      "marcar": true
     },
     {
-     "tipo": "plazo",
+     "tipo": "info",
      "texto": "En la misma resolución se ordena de oficio comunicarlo a la Delegación de Economía y Hacienda, por si procede declarar heredero al Estado, con traslado del resultado de las diligencias y de la documentación."
     },
     {
@@ -553,7 +558,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si hay acreedores reconocidos en el testamento o por los coherederos, o con título ejecutivo, que se opusieron a la partición hasta que se les pague o afiance, no se acuerda el cese hasta el pago o afianzamiento (art. 1082 CC)."
+     "texto": "Si hay acreedores reconocidos en el testamento o por los coherederos, o con título ejecutivo, que se opusieron a la partición hasta que se les pague o afiance, no se acuerda el cese hasta el pago o afianzamiento (arts. 796.3 y 782.4 LEC; art. 1082 CC)."
     }
    ],
    "pregunta": "¿Se les ha pagado o afianzado?",
