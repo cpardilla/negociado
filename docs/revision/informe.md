@@ -21,7 +21,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-mencion-sexo-reversion | Esquema · LJV · Nueva modificación de la mención del sexo tras reversión | · | · | · | · | · | · | 1R |
 | ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | 1E | · | · | · | · | · | 3R |
 | ljv-adopcion | Esquema · LJV · Adopción | · | · | · | 1R | · | · | 1R |
-| ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | · | · | · | · | · | 1R |
+| ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 1E 2R | · | · | · | · | · | 1R |
 | ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | · | · | · | · | · | · | 1R |
 | ljv-emancipacion | Esquema · LJV · Emancipación y beneficio de la mayoría de edad | · | · | · | · | · | · | · |
 | ljv-patrimonio-protegido | Esquema · LJV · Patrimonio de las personas con discapacidad | · | · | · | · | · | · | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 1R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | · | · | · | · | 1R | · | 1R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | · | · | · | · | · | · | 2R |
-| | **Total** | 3E 0A 2R | 0E 0A 0R | 0E 0A 0R | 0E 0A 2R | 0E 0A 2R | 0E 0A 0R | 0E 0A 48R |
+| | **Total** | 4E 0A 2R | 0E 0A 0R | 0E 0A 0R | 0E 0A 2R | 0E 0A 2R | 0E 0A 0R | 0E 0A 48R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,16 +69,16 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 3045
+- ✓ LJV (BOE a 05-03-2026): 3041
 - ✓ CC (BOE a 07-09-2026): 1365
-- ✓ LEC (BOE a 29-10-2026): 1221
+- ✓ LEC (BOE a 29-10-2026): 1220
 - ✓ LOPJ (BOE a 09-10-2026): 121
 - ✓ LPPD (BOE a 18-12-2025): 76
 - ✓ LTRANS (BOE a 20-12-2025): 70
 - ✓ LOPJM (BOE a 18-12-2025): 54
 - ✓ LRC (BOE a 24-02-2026): 47
-- UE: 45
 - ✓ RDTO (BOE a 19-12-2025): 43
+- UE: 42
 - ✓ LOPDH (BOE a 16-12-2025): 40
 - ✓ LO1-2025 (BOE a 09-07-2026): 34
 - ✓ LN (BOE a 22-10-2026): 34
@@ -86,6 +86,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LTO (BOE a 16-12-2025): 22
 - ✓ CE (BOE a 29-10-2026): 16
 - ✓ LSC (BOE a 19-12-2025): 9
+- CDPD: 8
 - ✓ CP (BOE a 09-04-2026): 7
 - ✓ LSE (BOE a 31-07-2026): 6
 - ✓ LOPDGDD (BOE a 08-10-2026): 6
@@ -98,12 +99,13 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LPAT (BOE a 31-07-2026): 2
 - ✓ LCD (BOE a 29-12-2025): 2
 - ✓ LMED (BOE a 19-12-2025): 2
+- EOMF: 2
+- Oviedo: 2
 - LPAP: 2
-- Ley 50/1981: 1
 - LO 1/2004: 1
 - Ley 54/2007: 1
 
-Además, 158 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
+Además, 151 referencias sin ley explícita cuyo número no corresponde a la ley del recurso, o en textos que solo nombran otras normas (casi siempre CC u otra norma del contexto): no se han podido comprobar automáticamente.
 
 ## Detalle por recurso
 
@@ -188,8 +190,9 @@ Sin hallazgos automáticos.
 
 **citas**
 
-- [revisar] «arts. 299 bis a 324»: el art. 299 bis CC está sin contenido/derogado (extremo de un rango) — _sección «Ecosistema normativo — conexiones relacionadas» › 1 › norma «Reforma del sistema de apoyo a personas con discapacidad»_
-- [revisar] «arts. 299 bis a 324»: el art. 324 CC está sin contenido/derogado (extremo de un rango) — _sección «Ecosistema normativo — conexiones relacionadas» › 1 › norma «Reforma del sistema de apoyo a personas con discapacidad»_
+- [error] «arts. 299 bis y 301 a 324»: el art. 299 bis CC está sin contenido/derogado — _sección «Ecosistema normativo — conexiones relacionadas» › 1 › norma «Reforma del sistema de apoyo a personas con discapacidad»_
+- [revisar] «arts. 299 bis y 301 a 324»: el art. 301 CC está sin contenido/derogado (extremo de un rango) — _sección «Ecosistema normativo — conexiones relacionadas» › 1 › norma «Reforma del sistema de apoyo a personas con discapacidad»_
+- [revisar] «arts. 299 bis y 301 a 324»: el art. 324 CC está sin contenido/derogado (extremo de un rango) — _sección «Ecosistema normativo — conexiones relacionadas» › 1 › norma «Reforma del sistema de apoyo a personas con discapacidad»_
 
 **terminologia**
 

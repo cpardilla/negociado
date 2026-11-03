@@ -47,13 +47,15 @@ Normas externas, leídas en su texto oficial: Ley 50/1981 (arts. 1 y 3), Ley 54/
 
 - Citas afectadas: 70 (56 en singular, 2 en plural, 12 rangos).
 - **El enlace de la cita no falla**: abre el primer artículo, que es el bueno.
-- **Falla el índice**: 21 parejas de artículo y recurso que no existen. Ejemplos: art. 2 LEC «citado» por la guía de división de herencia, art. 4 LJV por la conciliación.
-- **Sobran artículos**: los arts. 2 y 6 del RD 1723/2012 están en `data/leyes/RDTO.js` solo por esto.
+- **Falla el índice**: medidas al aplicarlo, 33 entradas falsas en «Lo citan» (la primera estimación era de 21); otras 6 pasan al paso que de verdad cita el artículo. Ejemplos: art. 2 LEC «citado» por la guía de división de herencia, art. 4 LJV por la conciliación.
+- **Sobraban artículos**: los arts. 2 y 6 del RD 1723/2012 y los arts. 3 y 4 CC estaban en `data/leyes/` solo por esto; ya no están.
 - Lo mismo en «Art. 18.2, 1.ª» (art. 18.2, regla 1.ª), leída como art. 1 LJV.
 
 **Hallado al aplicarlo: citas de normas que la app no tiene y que abrían un artículo de la LJV.** «Art. 12 CDPD» (2 lugares), «arts. 1 y 3 EOMF», «Convención ONU 2006, arts. 12 y 13» y «Convenio de Oviedo, art. 19» (2 lugares) tomaban la ley del recurso: el enlace llevaba al art. 12, 1 o 19 LJV. Ahora esas normas se reconocen y la cita no enlaza.
 
 Propuesta, aplicada: en una cita en singular, un número sin apartado tras otro con apartado es apartado del mismo artículo, y un rango «N.A a B» o «N.A–B» se queda dentro del artículo N. Los 2 casos en plural se reescriben. Con test y regeneración de índices.
+
+Verificación: 71 tests correctos, 0 fallos, 3 omitidos. Comprobador: 58 hallazgos (4 error, 0 aviso, 54 revisar); el cuarto «error» es la mención, a propósito, del art. 299 bis CC derogado, como otras dos que ya había, y el otro es el art. 641 LEC, también citado como sin contenido.
 
 ## Revisado sin hallazgo
 
