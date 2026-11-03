@@ -59,9 +59,9 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-obligaciones | Guía · LJV · Título V · Derecho de obligaciones | · | · | · | · | · | · | 1R |
 | ljv-usufructuario | Guía · LJV · Usufructuario: reclamación de créditos vencidos | · | · | · | · | · | · | 1R |
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 1R |
-| ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | · | · | · | · | · | · | 1R |
+| ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | · | · | · | · | 1R | · | 1R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | · | · | · | · | · | · | 2R |
-| | **Total** | 3E 0A 2R | 0E 0A 0R | 0E 0A 0R | 0E 0A 2R | 0E 0A 1R | 0E 0A 0R | 0E 0A 48R |
+| | **Total** | 3E 0A 2R | 0E 0A 0R | 0E 0A 0R | 0E 0A 2R | 0E 0A 2R | 0E 0A 0R | 0E 0A 48R |
 
 E = error · A = aviso · R = revisar.
 
@@ -69,9 +69,9 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2896
+- ✓ LJV (BOE a 05-03-2026): 2911
 - ✓ CC (BOE a 07-09-2026): 1356
-- ✓ LEC (BOE a 29-10-2026): 1211
+- ✓ LEC (BOE a 29-10-2026): 1212
 - ✓ LOPJ (BOE a 09-10-2026): 121
 - ✓ LPPD (BOE a 18-12-2025): 75
 - ✓ LTRANS (BOE a 20-12-2025): 70
@@ -415,6 +415,10 @@ Sin hallazgos automáticos.
 - [revisar] «Juzgado de Primera Instancia» × 4 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › nota 2 | paso «competencia» › comprobación 3.3 | paso «presentacion» › info 1 …_
 
 ### ljv-subastas · Guía · LJV · Título VII · Subastas voluntarias
+
+**literales**
+
+- [revisar] texto entrecomillado no hallado literalmente en LJV: «siempre y cuando cubra el tipo mínimo […] o no se hubiere reservado expresamente el derecho a aprobarla, en cuyo caso se le dará vista» — _paso «resultado_subasta» › nota 2_
 
 **terminologia**
 

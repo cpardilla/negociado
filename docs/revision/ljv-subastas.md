@@ -70,3 +70,19 @@ La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora,
 | Aplicable por remisión del artículo 110.2. | Aplicable por remisión del artículo 110.2 LJV. |
 | para el apartado 6 del artículo 111. | para el apartado 6 del artículo 111 LJV. |
 | impuesto por los artículos 111.1 y 111.2. | impuesto por los artículos 111.1 y 111.2 LJV. |
+
+## Corrección posterior (2026-11-03) · Relectura, tercera tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda3.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 14 | nuevos examen_solicitud, subsanacion, fin_no_presentada, fin_incompetencia | Sin examen de competencia ni subsanación | Reglas generales | LJV 13, 16, 17.1 |
+| 16 | notif_661 | Sin plazo | Diez días | LEC 661.1 |
+| 17 | consulta_rpc, fin_concurso | «Suspensión», «no puede continuar» | Se remite a la legislación concursal | LJV 111.1, 111.2 |
+| 18 | resultado_subasta, vista_solicitante | Sin salida si la postura no cubre el tipo | Vista al solicitante, con aviso de la ambigüedad (decisión del propietario) | LJV 111.6 |
+| 20 | resolucion_celebracion, decreto_adjudicacion, postulacion, doc_registrable, celebracion_subasta | Contenidos sin fuente | Suprimidos | LJV 111.2, 111.8 |
+| 22 | inicio | «deberá encauzarse» | «según el caso» | LJV 108 |
+| 24 | postulacion | Sin oposición ni recursos | Nota añadida | LJV 3.2 |

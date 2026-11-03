@@ -55,7 +55,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si falta cualquiera de los requisitos, este Título no resulta aplicable: la subasta deberá encauzarse por la vía ejecutiva ordinaria (arts. 643 y siguientes de la Ley de Enjuiciamiento Civil) o por la vía concursal correspondiente."
+     "texto": "Si falta cualquiera de los requisitos, este Título no resulta aplicable. Según el caso, habrá otra vía: la ejecutiva (arts. 643 y siguientes de la Ley de Enjuiciamiento Civil) o la concursal."
     }
    ],
    "pregunta": "¿El supuesto reúne los cuatro requisitos del artículo 108?",
@@ -173,12 +173,16 @@ Neg.data.register({
      "texto": "Para la actuación en este expediente no será preceptiva la intervención de Abogado y Procurador."
     },
     {
+     "tipo": "nota",
+     "texto": "Sí es necesaria la actuación de Abogado y Procurador para los recursos de revisión y apelación y a partir de que se formule oposición (art. 3.2, párrafo segundo, LJV)."
+    },
+    {
      "tipo": "ley",
      "texto": "<strong>Artículo 109.2 de la Ley 15/2015.</strong> Postulación."
     },
     {
      "tipo": "nota",
-     "texto": "El interesado podrá, no obstante, valerse voluntariamente de dichos profesionales, asumiendo sus honorarios. Esta regla enlaza con el régimen general de postulación de la jurisdicción voluntaria previsto en el artículo 3 de la propia Ley 15/2015."
+     "texto": "El interesado podrá, no obstante, valerse voluntariamente de dichos profesionales. Esta regla enlaza con el régimen general de postulación de la jurisdicción voluntaria previsto en el artículo 3 de la propia Ley 15/2015."
     }
    ],
    "siguiente": "solicitud"
@@ -242,7 +246,7 @@ Neg.data.register({
      "items": [
       "Documentos acreditativos de la capacidad legal para contratar.",
       "Documentos acreditativos del poder de disposición.",
-      "Certificación registral de dominio y cargas, actualizada.",
+      "Certificación registral de dominio y cargas.",
       "Pliego de condiciones particulares con la valoración."
      ],
      "marcar": true
@@ -312,6 +316,10 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "El solicitante identificará a los arrendatarios y ocupantes en la solicitud inicial, y se procederá en la forma prescrita en el artículo 661 de la Ley de Enjuiciamiento Civil."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Diez días desde la notificación para presentar los títulos que justifiquen su situación (art. 661.1 LEC)."
     },
     {
      "tipo": "ley",
@@ -425,7 +433,100 @@ Neg.data.register({
      "texto": "La publicidad y celebración se ajustan a la LEC en todo lo que no esté previsto en el pliego; el pliego se expresa en los edictos (artículo 111.5)."
     }
    ],
-   "siguiente": "consulta_rpc"
+   "siguiente": "examen_solicitud"
+  },
+  "examen_solicitud": {
+   "fase": 2,
+   "titulo": "Examen de la competencia y de la solicitud",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Presentada la solicitud, el LAJ examina de oficio la competencia objetiva y territorial y los posibles defectos u omisiones (art. 16.1 y 16.4 LJV). Son las reglas generales, aplicables en lo que no se opongan al Título VII (art. 13 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 13 y 16 LJV"
+    }
+   ],
+   "pregunta": "¿Qué resulta del examen?",
+   "opciones": [
+    {
+     "texto": "Es competente y la solicitud está completa",
+     "tono": "t-ok",
+     "destino": "consulta_rpc"
+    },
+    {
+     "texto": "Hay defectos u omisiones que subsanar",
+     "tono": "t-plazo",
+     "destino": "subsanacion"
+    },
+    {
+     "texto": "Falta competencia objetiva o territorial",
+     "tono": "t-aviso",
+     "destino": "fin_incompetencia"
+    }
+   ]
+  },
+  "subsanacion": {
+   "fase": 2,
+   "titulo": "Subsanación de defectos u omisiones",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "plazo",
+     "texto": "Cinco días para subsanar (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 16.4 LJV"
+    }
+   ],
+   "pregunta": "¿Se subsanan en plazo?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "consulta_rpc"
+    },
+    {
+     "texto": "No",
+     "tono": "t-aviso",
+     "destino": "fin_no_presentada"
+    }
+   ]
+  },
+  "fin_no_presentada": {
+   "fase": 2,
+   "titulo": "Solicitud por no presentada",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Si no se subsana en plazo, el LAJ tiene por no presentada la solicitud y archiva las actuaciones (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 16.4 LJV"
+    }
+   ],
+   "fin": "warning"
+  },
+  "fin_incompetencia": {
+   "fase": 2,
+   "titulo": "Falta de competencia",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Previa audiencia del Ministerio Fiscal y del solicitante, el LAJ puede acordar el archivo si falta la competencia objetiva, indicando el órgano que se estima competente (art. 16.2 LJV), o la remisión al órgano que considere competente si falta la territorial (art. 16.3 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 16.2 y 16.3 LJV"
+    }
+   ],
+   "fin": "warning"
   },
   "consulta_rpc": {
    "fase": 2,
@@ -442,7 +543,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Finalidad: comprobar que el titular no se halla en situación de concurso o preconcurso que pudiera afectar a su facultad de disposición sobre el bien o a la competencia del juez del concurso respecto de la enajenación."
+     "texto": "La consulta se hace a los efectos previstos en la legislación especial (art. 111.1 LJV); la LJV no los concreta."
     }
    ],
    "pregunta": "¿La consulta revela alguna inscripción concursal relevante asociada al titular?",
@@ -461,20 +562,19 @@ Neg.data.register({
   },
   "fin_concurso": {
    "fase": 2,
-   "titulo": "Suspensión por afectación concursal",
+   "titulo": "Inscripción concursal: se está a la legislación concursal",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "aviso",
-     "texto": "Detectada una inscripción concursal relevante, el expediente no puede continuar por este cauce: debe estarse a lo dispuesto por la legislación concursal sobre la enajenación de bienes del concursado."
+     "texto": "Detectada una inscripción concursal relevante, se está a lo que disponga la legislación concursal: la LJV remite a ella sin fijar el efecto (art. 111.1 y 111.2 LJV)."
     },
     {
      "tipo": "lista",
      "titulo": "Actuaciones a practicar",
      "items": [
       "Comunicar al solicitante la existencia de la inscripción concursal.",
-      "Estar a lo que disponga la legislación concursal sobre la enajenación de bienes del concursado.",
-      "Abstenerse de acordar la celebración de la subasta en tanto subsista la limitación."
+      "Estar a lo que disponga la legislación concursal sobre la enajenación de bienes del concursado."
      ],
      "marcar": true
     },
@@ -500,12 +600,9 @@ Neg.data.register({
     },
     {
      "tipo": "lista",
-     "titulo": "Contenido del decreto de admisión",
+     "titulo": "Si acuerda su procedencia",
      "items": [
-      "Declaración de procedencia de la subasta.",
-      "Fijación del régimen de publicidad conforme al pliego.",
-      "Comunicación al Registro Público Concursal de la existencia del expediente, con expresa especificación del número de identificación fiscal del titular (persona física o jurídica) cuyo bien vaya a ser objeto de la subasta.",
-      "Orden de práctica de los actos preparatorios (certificación registral, edictos, etc.)."
+      "Comunicación al Registro Público Concursal de la existencia del expediente, con expresa especificación del número de identificación fiscal del titular (persona física o jurídica) cuyo bien vaya a ser objeto de la subasta."
      ],
      "marcar": true
     },
@@ -547,7 +644,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "<strong>Artículo 111.2 de la Ley 15/2015.</strong> · Artículo 20.2 LJV"
+     "texto": "<strong>Artículo 111.2 de la Ley 15/2015.</strong> · Artículo 20.2 LJV · Artículo 17.1 LJV"
     }
    ],
    "fin": "neutral"
@@ -636,7 +733,7 @@ Neg.data.register({
      "titulo": "Actuaciones durante la fase de publicidad y celebración",
      "items": [
       "Publicación de la subasta en el Portal de Subastas AEBOE.",
-      "Edictos con expresión íntegra del pliego de condiciones.",
+      "Edictos con expresión del pliego de condiciones.",
       "Aplicación supletoria de la LEC: requisitos de los licitadores, depósito, duración de la subasta electrónica (artículo 648 LEC), etc.",
       "Información continuada al Portal por parte del Registrador de títulos sobrevenidos que afecten a la información inicial."
      ],
@@ -659,6 +756,10 @@ Neg.data.register({
      "texto": "Terminada la subasta, el LAJ, mediante decreto, aprobará el remate en favor del único o mejor postor, siempre y cuando cubra el tipo mínimo que hubiera fijado el solicitante o no se hubiere reservado expresamente el derecho a aprobarla."
     },
     {
+     "tipo": "nota",
+     "texto": "La redacción del art. 111.6 LJV es ambigua («siempre y cuando cubra el tipo mínimo […] o no se hubiere reservado expresamente el derecho a aprobarla, en cuyo caso se le dará vista»). Esta guía da vista al solicitante también cuando la postura no cubre el tipo mínimo; al pie de la letra, sin reserva cabría aprobar el remate."
+    },
+    {
      "tipo": "ley",
      "texto": "<strong>Artículo 111.6 y 111.7 de la Ley 15/2015.</strong>"
     }
@@ -669,6 +770,11 @@ Neg.data.register({
      "texto": "Hay postor que cubre el tipo mínimo y no hay reserva de aprobación",
      "tono": "t-nota",
      "destino": "aprobacion_directa"
+    },
+    {
+     "texto": "Hay postor, pero no cubre el tipo mínimo",
+     "tono": "t-aviso",
+     "destino": "vista_solicitante"
     },
     {
      "texto": "Hay postor, pero el solicitante se reservó el derecho a aprobar el remate",
@@ -732,12 +838,12 @@ Neg.data.register({
   },
   "vista_solicitante": {
    "fase": 4,
-   "titulo": "Vista al solicitante por reserva del derecho a aprobar el remate",
+   "titulo": "Vista al solicitante para aprobar el remate",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si el solicitante se hubiera reservado expresamente el derecho a aprobar el remate, se le dará vista del expediente para que en el término de tres días pida lo que le interese."
+     "texto": "Si el solicitante se hubiera reservado expresamente el derecho a aprobar el remate, se le dará vista del expediente para que en el término de tres días pida lo que le interese. Esta guía sigue el mismo camino cuando la postura no cubre el tipo mínimo (véase la nota del paso anterior)."
     },
     {
      "tipo": "plazo",
@@ -868,9 +974,9 @@ Neg.data.register({
      "titulo": "Contenido obligatorio del decreto de adjudicación",
      "items": [
       "Descripción del bien o derecho.",
-      "Identificación de los intervinientes (solicitante, adjudicatario y, en su caso, sus representantes).",
-      "Expresión de las condiciones de la adjudicación (precio, forma de pago, cargas asumidas, etc.).",
-      "Los demás requisitos necesarios, en su caso, para la inscripción registral (descripción catastral, referencia registral, manifestaciones fiscales, etc.)."
+      "Identificación de los intervinientes.",
+      "Expresión de las condiciones de la adjudicación.",
+      "Los demás requisitos necesarios, en su caso, para la inscripción registral."
      ],
      "marcar": true
     }
