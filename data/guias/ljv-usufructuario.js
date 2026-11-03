@@ -38,7 +38,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Este expediente de jurisdicción voluntaria tiene por objeto obtener la autorización judicial del usufructuario para reclamar y cobrar por sí los créditos vencidos que formen parte del usufructo y, en su caso, para poner a interés el capital obtenido con dicha reclamación."
+     "texto": "Este expediente de jurisdicción voluntaria tiene por objeto obtener la autorización judicial al usufructuario para reclamar y cobrar por sí los créditos vencidos que formen parte del usufructo y, en su caso, para poner a interés el capital obtenido con dicha reclamación."
     },
     {
      "tipo": "nota",
@@ -412,7 +412,7 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "Citación con al menos quince días de antelación; comparecencia dentro de los treinta días siguientes a la admisión (arts. 17.3 y 18.1 LJV)."
+     "texto": "Citación con al menos quince días de antelación; comparecencia dentro de los treinta días siguientes a la admisión (arts. 17.3 y 18.1 LJV). Quien vaya a oponerse lo hace en los cinco días siguientes a su citación (art. 17.3 LJV)."
     },
     {
      "tipo": "ley",

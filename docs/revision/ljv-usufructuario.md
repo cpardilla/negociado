@@ -39,3 +39,14 @@ La guía dice «Juzgado de Primera Instancia» × 3 y «Secretario judicial» ×
 | 4 | resolucion_juez, fin_concedida_*, fin_denegada | incompleto | «Recurso conforme al art. 20» | Auto en cinco días (art. 19.1); apelación sin efectos suspensivos, veinte días (art. 20.2; art. 458 LEC) | LJV 19.1, 20.2 |
 | 5 | inicio, competencia, postulacion | error | «Art. 85 LOPJ»; postulación preceptiva por los «arts. 20 y 8» | Sin el art. 85 LOPJ; hoy Sección Civil; Abogado y Procurador para recursos y desde la oposición (art. 3.2) | LJV 3.2 |
 | 6 | actores | forma | «Actor según trámite», «Letrado Admón. Justicia» | Nombres completos | — |
+
+## Corrección posterior (2026-11-03) · Relectura, novena tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda9.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 12 | inicio | «del usufructuario» | «al usufructuario» | LJV 100 |
+| 13 | convocatoria | Sin plazo de oposición | Cinco días | LJV 17.3 |
