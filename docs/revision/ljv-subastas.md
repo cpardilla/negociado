@@ -106,3 +106,9 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | # | Lugar | Antes | Ahora | Fuente |
 |---|---|---|---|---|
 | 11 | Esquema, índice de plazos | «3 trámites» con 4 filas | «4 trámites» | Coherencia interna |
+
+## Normas no cotejadas (2026-11-03)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 3 | Guía, supletoriedad | Duración: art. 648 LEC | Art. 649.1 LEC | LEC 649.1 |

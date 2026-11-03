@@ -734,7 +734,7 @@ Neg.data.register({
      "items": [
       "Publicación de la subasta en el Portal de Subastas AEBOE.",
       "Edictos con expresión del pliego de condiciones.",
-      "Aplicación supletoria de la LEC: requisitos de los licitadores, depósito, duración de la subasta electrónica (artículo 648 LEC), etc.",
+      "Aplicación supletoria de la LEC: requisitos de los licitadores, depósito, duración de la subasta electrónica (artículo 649.1 LEC), etc.",
       "Información continuada al Portal por parte del Registrador de títulos sobrevenidos que afecten a la información inicial."
      ],
      "marcar": true
