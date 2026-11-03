@@ -588,7 +588,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Consignación: los gastos son de cuenta del acreedor si se declara bien hecha y, si no, del que la promovió (art. 99.6 LJV)."
+             "t": "Consignación: los gastos son de cuenta del acreedor si fue aceptada o se declara bien hecha, y del promotor si se declara improcedente o retira la cosa consignada (art. 99.6 LJV)."
             },
             {
              "t": "Conciliación: art. 146 LJV."
@@ -980,7 +980,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 1/2000, de Enjuiciamiento Civil",
       "titulo": "Aplicación supletoria (art. 8 LJV)",
-      "texto": "<strong>Art. 43 LEC</strong> — Prejudicialidad civil.<br><strong>Arts. 437 y ss. LEC</strong> — Vista del juicio verbal (art. 18.2 LJV).<br><strong>Arts. 451–455 LEC</strong> — Reposición, revisión y apelación.<br><strong>Arts. 521–522 LEC</strong> — Ejecución (art. 22 LJV).",
+      "texto": "<strong>Art. 43 LEC</strong> — Prejudicialidad civil.<br><strong>Arts. 437 y ss. LEC</strong> — Vista del juicio verbal (art. 18.2 LJV).<br><strong>Arts. 451–455 y 458 LEC</strong> — Reposición, revisión y apelación.<br><strong>Arts. 521–522 LEC</strong> — Ejecución (art. 22 LJV).",
       "etiqueta": "Supletoriedad",
       "tono": "t-nota"
      }

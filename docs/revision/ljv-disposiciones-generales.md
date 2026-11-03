@@ -52,3 +52,12 @@ La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora,
 |---|---|
 | Introdujo el art. 7 bis y dio | Introdujo el art. 7 bis LJV y dio |
 | (art. 7 bis.2.b LJV) | (art. 7 bis.2 b) LJV) |
+
+## Corrección posterior (2026-11-03) · Relectura, quinta tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda5.md`, aplicados con el visto bueno del propietario.
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 4 | Ecosistema, LEC | Arts. 451–455 | Arts. 451–455 y 458 | LEC 458 |
+| 5 | Art. 7, consignación | Regla abreviada | Los cuatro casos de la ley | LJV 99.6 |
