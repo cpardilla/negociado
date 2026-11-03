@@ -36,4 +36,4 @@ No cotejado: arts. 989, 991, 997, 1008, 1010-1034, 1056, 1058 y 1059 CC; art. 3 
 
 ## Vistos y no propuestos
 
-«Acto central del expediente», «como mero objeto del procedimiento». «Sin causa justificada» en la liquidación de gananciales no se toca: ahí sí se ha de contrastar con la ley de esa guía, ya releída.
+«Acto central del expediente», «como mero objeto del procedimiento». «Sin causa justificada» en la liquidación de gananciales no se toca: es el texto de la ley (LEC 810.4).
