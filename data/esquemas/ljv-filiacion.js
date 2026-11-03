@@ -84,15 +84,15 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "La distinción fundamental y sus efectos",
+         "titulo": "La distinción fundamental",
          "contenido": [
           {
            "lista": [
             {
-             "t": "Autorización → condición de <strong>validez</strong>, previa al reconocimiento. Sin ella, el reconocimiento no puede otorgarse; si se otorgara, sería inválido desde el origen."
+             "t": "Autorización → <strong>previa</strong> al reconocimiento. Sin ella no puede quedar determinada la filiación (art. 125 CC)."
             },
             {
-             "t": "Aprobación → condición de <strong>eficacia</strong>, posterior al reconocimiento ya otorgado. El acto existe como declaración de voluntad pero queda en suspenso; si se deniega, deviene ineficaz sin retroactividad sobre la declaración."
+             "t": "Aprobación → <strong>posterior</strong> al reconocimiento ya otorgado. Según el caso, la ley la exige para su validez (art. 23.4 LJV; art. 121 CC) o para su eficacia (art. 23.3 LJV; art. 124 CC)."
             }
            ]
           }
@@ -108,9 +108,6 @@ Neg.data.register({
             {
              "t": "Reconocimiento por <strong>hermano o consanguíneo en línea recta del progenitor</strong> cuya filiación está determinada, cuando el reconocido sea menor o persona con discapacidad con medidas de apoyo.",
              "sub": [
-              {
-               "t": "Riesgo de encubrimiento de relación incestuosa: el hijo sería simultáneamente hijo y sobrino (u otro pariente) del progenitor conocido."
-              },
               {
                "t": "Fundamento: art. 125 CC. La autorización solo se concede cuando sea en interés del reconocido (art. 26.2 LJV)."
               }
@@ -128,7 +125,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>a)</strong> Reconocimiento por quien no pueda contraer matrimonio <strong>por razón de edad</strong> (menor de edad no emancipado). El reconociente carece de plena capacidad de obrar; la aprobación judicial sustituye la intervención representativa que en otros actos se requeriría. Art. 121 CC"
+             "t": "<strong>a)</strong> Reconocimiento por quien no pueda contraer matrimonio <strong>por razón de edad</strong> (menor de edad no emancipado). Art. 121 CC"
             },
             {
              "t": "<strong>b)</strong> Reconocimiento sin <strong>consentimiento del representante legal ni asistencia del curador</strong> del reconocido ni del progenitor conocido — salvo que hubiera sido reconocido en testamento o dentro del plazo de inscripción del nacimiento. Art. 124 CC, párrafo primero (eficacia del reconocimiento de la persona menor de edad)."
@@ -499,7 +496,7 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Criterios de valoración — cuatro parámetros con jerarquía implícita",
+         "titulo": "Criterios de valoración",
          "contenido": [
           {
            "lista": [
@@ -513,7 +510,7 @@ Neg.data.register({
              "t": "<strong>Verosimilitud de la relación de procreación, sin prueba plena:</strong> basta la credibilidad del vínculo biológico, sustentada en elementos indiciarios. El estándar es inferior a la prueba plena pero superior a la mera afirmación unilateral: el Juez ha de encontrar razones objetivas, aunque indiciarias, que hagan plausible la relación."
             },
             {
-             "t": "<strong>Interés del reconocido</strong> cuando sea menor o persona con discapacidad: <strong>criterio prevalente y rector</strong> de los demás. El Juez puede denegar incluso si los tres criterios anteriores resultan satisfechos, si la determinación de la filiación no redunda en interés del reconocido. Fundamento: Art. 2 LO 1/1996 · Art. 3.1 CDN (1989)"
+             "t": "<strong>Interés del reconocido</strong> cuando sea menor o persona con discapacidad. El art. 26.1 LJV lo enumera junto a los demás, sin orden entre ellos. El interés superior del menor ha de ser valorado y considerado como primordial (art. 2 LO 1/1996 · art. 3.1 CDN)."
             }
            ]
           }
@@ -578,7 +575,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Régimen general: <strong>apelación</strong> contra la resolución definitiva del Juez, por cualquier interesado perjudicado. <strong>Sin efectos suspensivos</strong>: la resolución puede ejecutarse —y el reconocimiento inscribirse— mientras se sustancia la apelación. Art. 20 LJV"
+             "t": "Régimen general: <strong>apelación</strong> contra la resolución definitiva del Juez, por cualquier interesado perjudicado. <strong>Sin efectos suspensivos</strong> (art. 20.2 LJV). La ley no aclara si el reconocimiento puede inscribirse antes de la firmeza: el art. 22.1 LJV habla de la ejecución de la resolución firme."
             },
             {
              "t": "Para el recurso: Abogado y Procurador obligatorios aunque no lo fueran en la instancia (art. 3.2 LJV). Plazo: veinte días (art. 458 LEC)."
@@ -616,7 +613,7 @@ Neg.data.register({
              "t": "Art. 44 Ley 20/2011 Inscripción del nacimiento y de la filiación."
             },
             {
-             "t": "Art. 2 LO 1/1996 Interés superior del menor como criterio rector de la resolución."
+             "t": "Art. 2 LO 1/1996 Interés superior del menor."
             },
             {
              "t": "Art. 3.1 CDN (1989) Interés superior del niño como consideración primordial."
@@ -746,7 +743,7 @@ Neg.data.register({
         "t": "Progenitor conocido (supuestos b) y c) art. 23.3)"
        },
        {
-        "t": "Descendientes del reconocido fallecido (efectos sucesorios)"
+        "t": "Descendientes del reconocido fallecido (han de consentir, art. 126 CC)"
        }
       ]
      }
@@ -806,7 +803,7 @@ Neg.data.register({
      "norma": {
       "ley": "LO 1/1996 — Protección del Menor",
       "titulo": "Interés superior del menor y derecho a ser escuchado",
-      "texto": "<strong>Art. 2</strong> — interés superior del menor como criterio rector y prevalente en la resolución judicial.<br><strong>Art. 9</strong> — derecho del menor a ser escuchado en función de su madurez.",
+      "texto": "<strong>Art. 2</strong> — interés superior del menor, valorado y considerado como primordial.<br><strong>Art. 9</strong> — derecho del menor a ser escuchado en función de su madurez.",
       "etiqueta": "Protección del menor",
       "tono": "t-aviso"
      }

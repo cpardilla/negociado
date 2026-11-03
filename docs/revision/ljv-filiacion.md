@@ -72,3 +72,13 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 10 | eficacia_registral | Solo art. 22.2, en condicional | Cita el art. 26.3 | LJV 26.3 |
 | 11 | eficacia_registral, recurso_auto_est, apelacion_vs_est, fin_revocado_apelacion | Inscripción durante la apelación y cancelación, como reglas | «La ley no aclara» (decisión del propietario) | LJV 20.2, 22.1 |
 | 12 | tipo_aut, tipo_ap_a, tipo_ap_b, tipo_ap_c | Glosas sin fuente | Suprimidas | Sin fuente |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 4 | Art. 23, distinción | Autorización = validez; aprobación = eficacia; «inválido desde el origen», «sin retroactividad» | Según el caso | LJV 23; CC 121, 124, 125 |
+| 5 | Art. 26, criterios | «jerarquía implícita»; «prevalente y rector»; denegar aunque se cumplan los demás | Sin orden; interés superior como consideración primordial | LJV 26.1; LO 1/1996, art. 2 |
+| 11 | Art. 26, recursos | Inscripción durante la apelación | «La ley no aclara» | LJV 20.2, 22.1 |
+| 12 | Art. 23 | «encubrimiento», «sustituye la intervención representativa» | Suprimido | Sin fuente |
+| 13 | Mapa de actores | «efectos sucesorios» | Han de consentir | CC 126 |
