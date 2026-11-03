@@ -49,7 +49,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La tramitación del expediente de adopción tendrá carácter preferente y se practicará con intervención del Ministerio Fiscal. No será preceptiva la asistencia de Abogado ni Procurador (art. 34 LJV)."
+     "texto": "La tramitación del expediente de adopción tendrá carácter preferente y se practicará con intervención del Ministerio Fiscal. No será preceptiva la asistencia de Abogado ni Procurador (art. 34 LJV), salvo para recurrir (art. 3.2, párrafo segundo, LJV)."
     },
     {
      "tipo": "lista",
@@ -166,11 +166,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 j) LOPJ) o, si no, la Sección Civil."
+     "texto": "Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 d) LOPJ) o, si no, la Sección Civil."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Reglas generales (art. 13 LJV): el Letrado de la Administración de Justicia examina de oficio la competencia y los defectos de la solicitud y da cinco días para subsanarlos. Si no se subsanan o entiende que falta competencia, da cuenta al Juez, que acuerda lo que proceda; en la falta de competencia, tras oír al Ministerio Fiscal y al solicitante (art. 16 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 33 Ley 15/2015 · Art. 86.5 LOPJ"
+     "texto": "Art. 33 Ley 15/2015 · Arts. 13 y 16 Ley 15/2015 · Art. 86.5 LOPJ"
     }
    ],
    "siguiente": "intervencion_fiscal"
@@ -186,11 +190,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "No será preceptiva la asistencia de Abogado ni Procurador."
+     "texto": "No será preceptiva la asistencia de Abogado ni Procurador, salvo para los recursos de revisión y apelación contra la resolución definitiva y a partir de que se formule oposición (art. 3.2, párrafo segundo, LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 34 Ley 15/2015"
+     "texto": "Art. 34 Ley 15/2015 · Art. 3.2 Ley 15/2015"
     }
    ],
    "siguiente": "consentimiento"
@@ -279,7 +283,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Deberán ser citados para prestar asentimiento el cónyuge del adoptante y los progenitores del adoptando no emancipado (salvo privación de patria potestad por sentencia firme)."
+     "texto": "Deberán ser citados para prestar asentimiento el cónyuge del adoptante o la persona unida a él por análoga relación de afectividad y los progenitores del adoptando no emancipado (salvo que estén privados de la patria potestad por sentencia firme o incursos en causa legal para tal privación)."
     },
     {
      "tipo": "plazo",
@@ -487,6 +491,39 @@ Neg.data.register({
      "tono": "t-aviso",
      "nota": "No",
      "destino": "prescindir_tramite"
+    },
+    {
+     "texto": "No responden y la citación no se hizo en su persona",
+     "tono": "t-plazo",
+     "destino": "segunda_citacion"
+    }
+   ]
+  },
+  "segunda_citacion": {
+   "fase": 3,
+   "titulo": "Segunda citación",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "plazo",
+     "texto": "Se les vuelve a citar para dentro de los quince días siguientes, con el apercibimiento de que aunque no comparezcan el expediente seguirá su trámite (art. 38.2 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 38.2 Ley 15/2015"
+    }
+   ],
+   "pregunta": "¿Comparecen?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "tramitacion"
+    },
+    {
+     "texto": "No",
+     "tono": "t-aviso",
+     "destino": "prescindir_tramite"
     }
    ]
   },
@@ -604,8 +641,12 @@ Neg.data.register({
      "texto": "El Juez dicta auto resolviendo el expediente de adopción. Contra el auto que resuelva el expediente cabe recurso de apelación, que tendrá carácter preferente, sin que produzca efectos suspensivos."
     },
     {
+     "tipo": "plazo",
+     "texto": "Auto en cinco días desde la terminación de la comparecencia o, si no se hubiera celebrado, desde la última diligencia practicada (art. 19.1 LJV). Apelación en veinte días (art. 458.1 LEC), con Abogado y Procurador (art. 3.2 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 39.4 Ley 15/2015"
+     "texto": "Art. 39.4 Ley 15/2015 · Arts. 3.2 y 19.1 Ley 15/2015 · Art. 458.1 LEC"
     }
    ],
    "pregunta": "¿Se interpone recurso de apelación contra el auto que resuelve la adopción?",

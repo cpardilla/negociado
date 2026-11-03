@@ -68,3 +68,17 @@ El propietario indicó que el art. 781 LEC vigente fija quince días desde la Le
 **Pendiente**: el visor de la LEC de la app (`data/leyes/LEC.js`, generado de la instantánea) muestra el art. 781 con la redacción errónea. Corregirlo exige un mecanismo de corrección de instantáneas en `tools/build-law.js`: se propone al propietario.
 
 Comprobador tras el cambio: 3 avisos «el art. 781 LEC no tiene apartado 3», por la instantánea errónea; desaparecerán cuando se corrija.
+
+## Corrección posterior (2026-11-03) · Relectura, cuarta tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda4.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 2 | inicio, intervencion_fiscal, resolucion_adopcion | Sin postulación para recurrir ni plazos | Abogado y procurador para recurrir; auto en cinco días; apelación en veinte | LJV 3.2, 19.1; LEC 458.1 |
+| 3 | citacion_conocida; nuevo segunda_citacion | Sin salida si no responde y no se citó en persona | Segunda citación | LJV 38.2 |
+| 4 | asentimiento_sujetos | «cónyuge»; solo privación por sentencia | También la pareja y quienes estén incursos en causa legal | CC 177.2 |
+| 6 | competencia | Art. 86.5 j) LOPJ | Art. 86.5 d) LOPJ | LOPJ |
+| 7 | competencia | Sin examen ni subsanación | Nota con las reglas generales | LJV 13, 16 |
