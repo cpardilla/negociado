@@ -120,6 +120,11 @@
       return paragraphs.map(([role, t]) => `<p${cls[role] ? ` class="${cls[role]}"` : ""}>${highlight ? highlight(t) : esc(t)}</p>`).join("");
     },
 
+    /** The BOE's notes still in force on an article (an annulled passage, for instance). */
+    avisos(art) {
+      return (art.av || []).map((t) => `<div class="block t-aviso"><span class="block-label">Nota del BOE</span>${esc(t)}</div>`).join("");
+    },
+
     /** The article in the BOE's consolidated text, at the version the app quotes:
      *  act.php?id=<law>&p=<consolidation date>&tn=1#<block> (the BOE's own article links). */
     boe(law, key) {

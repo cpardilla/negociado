@@ -42,18 +42,36 @@ async function get(url, accept) {
   }
 }
 
+// A note of the BOE is a <blockquote>, with or without attributes (caduca="…", class="soloTexto",
+// class="noDesde…", class="siempreSeVe"); class="sangrado" is the law's own indented text. Notes never
+// go into the article's text, and those that have not expired are kept apart (`avisos`): the reader
+// needs them. A note on the "inciso destacado" also says which one it is, or it would mean nothing:
+// the BOE marks it only in bold.
+function noteAlive(tag, today) {
+  const a = attrs(tag || "");
+  if (!a.class && !a.caduca) return false; // the BOE's plain history of amendments
+  const until = (String(a.class).match(/noDesde(\d{8})/) || [])[1];
+  return !(a.caduca && a.caduca <= today) && !(until && until <= today);
+}
+
 // One <version> → its paragraphs. Tables are flattened row by row (cells joined
 // with " | "), so their text is searchable and comparable.
-function parseVersion(body) {
+function parseVersion(body, today = new Date().toLocaleDateString("sv-SE").replace(/-/g, "")) {
   const parrafos = [];
   const notas = [];
-  const re = /<blockquote>([\s\S]*?)<\/blockquote>|<p(\s[^>]*)?>([\s\S]*?)<\/p>|<table[\s\S]*?<\/table>/g;
+  const avisos = [];
+  const re = /<blockquote((?![^>]*sangrado)[^>]*)>([\s\S]*?)<\/blockquote>|<p(\s[^>]*)?>([\s\S]*?)<\/p>|<table[\s\S]*?<\/table>/g;
   for (const m of body.matchAll(re)) {
-    if (m[1] !== undefined) {
-      for (const p of m[1].matchAll(/<p(?:\s[^>]*)?>([\s\S]*?)<\/p>/g)) notas.push(text(p[1]));
-    } else if (m[3] !== undefined) {
-      const clase = attrs(m[2] || "").class || "";
-      const t = text(m[3]);
+    if (m[2] !== undefined) {
+      const ps = [...m[2].matchAll(/<p(?:\s[^>]*)?>([\s\S]*?)<\/p>/g)].map((p) => text(p[1]));
+      notas.push(...ps);
+      if (noteAlive(m[1], today)) {
+        const bold = [...body.replace(/<blockquote[\s\S]*?<\/blockquote>/g, "").matchAll(/<strong>([\s\S]*?)<\/strong>/g)].map((b) => text(b[1])).join(" ");
+        for (const t of ps) avisos.push(`${t.replace(/\s*Ref\. BOE-[\w#-]+\s*\.?/g, "")}${/inciso destacado/i.test(t) && bold ? ` Inciso: «${bold}».` : ""}`);
+      }
+    } else if (m[4] !== undefined) {
+      const clase = attrs(m[3] || "").class || "";
+      const t = text(m[4]);
       if (t) parrafos.push([clase, t]);
     } else {
       for (const row of m[0].matchAll(/<tr[\s\S]*?<\/tr>/g)) {
@@ -62,7 +80,7 @@ function parseVersion(body) {
       }
     }
   }
-  return { parrafos, notas };
+  return { parrafos, notas, ...(avisos.length ? { avisos } : {}) };
 }
 
 function parseLaw(xml, today) {

@@ -396,3 +396,19 @@ test("related-law blocks: the law a bare citation belongs to comes from the bloc
   const pieces = citas.textos({ a: "art. 1", norma: { ley: "Ley Hipotecaria", texto: "<strong>Art. 14</strong> — títulos (art. 2 LEC)." } }, "LJV", alias);
   assert.deepEqual(pieces, [["art. 1", "LJV"], ["Ley Hipotecaria", "LH"], ["Art. 14", "LH"], [" — títulos (art. 2 LEC).", "LH"]]);
 });
+
+test("BOE reading: notes never enter the article's text; indented law text does; live notes are kept apart", () => {
+  const { parseVersion } = require("../tools/boe-fetch");
+  const body = `<p class="articulo">Artículo 1.</p><p class="parrafo">1. Vigente <strong>anulado</strong>.</p>
+    <blockquote caduca="20240320" class="soloTexto"><p class="parrafo">Téngase en cuenta…</p><p class="cita_con_pleca">Redacción anterior:</p><p class="parrafo">"1. Antigua.</p><blockquote class="soloTexto"><p class="parrafo">Anidada.</p></blockquote></blockquote>
+    <blockquote class="sangrado"><p class="parrafo">«Texto citado por la ley.»</p></blockquote>
+    <blockquote class="noDesde20151001"><p class="parrafo">Caducada.</p></blockquote>
+    <blockquote class="noDesde99999999"><p class="parrafo">Declarada nula del inciso destacado. <a class="refPost">Ref. BOE-T-1990-3964</a>.</p></blockquote>
+    <blockquote><p class="nota_pie">Se modifica por…</p></blockquote>`;
+  const v = parseVersion(body, "20261103");
+  assert.deepEqual(v.parrafos.map((p) => p[1]), ["Artículo 1.", "1. Vigente anulado .".replace(" .", "."), "«Texto citado por la ley.»"]);
+  assert.deepEqual(v.avisos, ["Declarada nula del inciso destacado. Inciso: «anulado»."]);
+  assert.ok(v.notas.includes("Se modifica por…") && v.notas.includes("Caducada."));
+  const V = require("../assets/js/core/vigencia");
+  assert.deepEqual(V.paragraphs(body).map((p) => p[1]), ["1. Vigente anulado.", "«Texto citado por la ley.»"]);
+});

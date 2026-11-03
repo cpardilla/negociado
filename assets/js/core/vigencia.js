@@ -26,12 +26,13 @@
   };
 
   /** The article's paragraphs in one version, without its heading ("Artículo 5. …": the first
-   *  paragraph only — a quoted article inside the text carries the same class) or the BOE's notes;
+   *  paragraph only — a quoted article inside the text carries the same class) or the BOE's notes
+   *  (any blockquote, with or without attributes; class="sangrado" is the law's own indented text);
    *  table rows flattened cell by cell, as the snapshots do. */
   function paragraphs(body) {
     const out = [];
     let heading = false;
-    const clean = body.replace(/<blockquote>[\s\S]*?<\/blockquote>/g, "");
+    const clean = body.replace(/<blockquote(?![^>]*sangrado)[^>]*>[\s\S]*?<\/blockquote>/g, "");
     const re = /<p(\s[^>]*)?>([\s\S]*?)<\/p>|<table[\s\S]*?<\/table>/g;
     let m;
     while ((m = re.exec(clean))) {

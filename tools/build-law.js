@@ -47,6 +47,7 @@ function article(law, key) {
     v: a.vigencia,
     ...(a.norma && a.norma !== law.id ? { m: a.norma } : {}),
     ...(a.sinContenido ? { x: 1 } : {}),
+    ...(a.avisos.length ? { av: a.avisos } : {}), // the BOE's notes still in force
     ...(a.correccion ? { c: a.correccion.motivo } : {}), // the snapshot was corrected (sources/boe/correcciones.json)
     p: paragraphs(a.parrafos.slice(1)),
   };

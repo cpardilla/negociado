@@ -122,6 +122,7 @@
       ${a.c ? `<p class="page-meta"><span class="tag t-nota">Versión corregida</span> ${esc(a.c)}</p>` : ""}
       ${a.u ? `<div class="block t-plazo updated"><span class="block-label">Actualizado desde el BOE el ${Neg.fecha(a.u)}</span>Texto tomado del BOE en este navegador; el de la aplicación es el consolidado a ${Neg.fecha(law.boe.fecha)}. Los esquemas y guías no cambian.<p><button class="btn" data-action="restaurar">Volver al texto de la aplicación</button></p></div>` : ""}
       <div class="law-text">${Neg.leyes.html(a.p, words.length ? highlighter(words) : null)}</div>
+      ${Neg.leyes.avisos(a)}
       ${cited}
       <div class="article-foot">
         <p class="article-vigor">${vigor}</p>
@@ -289,7 +290,7 @@
       if (!e.target.closest('[data-action="copy"]')) return;
       const key = Neg.where().args[1];
       const a = law.articulos[key];
-      const ok = await Neg.copy(`${Neg.leyes.ruta(law, key)}\n\n${a.p.map((p) => p[1]).join("\n")}`);
+      const ok = await Neg.copy(`${Neg.leyes.ruta(law, key)}\n\n${a.p.map((p) => p[1]).join("\n")}${a.av ? `\n\nNota del BOE: ${a.av.join(" ")}` : ""}`);
       Neg.toast(ok ? "Copiado: ruta y texto del artículo" : "No se ha podido copiar");
     });
   }

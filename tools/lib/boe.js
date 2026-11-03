@@ -175,6 +175,7 @@ function load(clave) {
       vigencia: b.vigencia,
       norma: b.norma,
       pendiente: b.pendiente || null,
+      avisos: b.avisos || [], // the BOE's notes still in force (tools/boe-fetch.js)
       correccion: b.correccion || null, // sources/boe/correcciones.json
       apartados: structure(b.parrafos),
     });

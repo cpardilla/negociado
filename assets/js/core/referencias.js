@@ -104,7 +104,7 @@
         const paras = Neg.leyes.apartado(a, apdo);
         const whole = paras.length === a.p.length;
         body = `<div class="popover-head"><div><strong>Art. ${esc(Neg.leyes.label(law, key))}${apdo && !whole ? `.${esc(apdo)}` : ""} ${esc(sigla)}</strong><span>${esc(a.r || "")}</span></div>${closeBtn}</div>
-          <div class="popover-body law-text">${a.x ? '<p><span class="tag t-aviso">Sin contenido</span></p>' : ""}${Neg.leyes.html(paras)}</div>`;
+          <div class="popover-body law-text">${a.x ? '<p><span class="tag t-aviso">Sin contenido</span></p>' : ""}${Neg.leyes.html(paras)}${Neg.leyes.avisos(a)}</div>`;
         const full = n.texto === "completa" ? `<a href="${Neg.href("ley", lawId, key)}" data-action="close-ref">${whole ? "Abrir en la ley" : "Ver artículo completo"} →</a>` : `<a href="${esc(Neg.leyes.boe(law, key))}" target="_blank" rel="noopener">Ver en el BOE ↗</a>`;
         foot = `<span>BOE consolidado a ${Neg.fecha(law.boe.fecha)}</span>${full}`;
       } catch {

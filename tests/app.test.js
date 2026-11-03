@@ -500,3 +500,17 @@ test("search: what is typed is text, whatever its signs; a stray % in the addres
   assert.equal(r.stray, "Resultados de «%»");
   assert.match(r.spaced, /^Artículo 778 quáter/);
 });
+
+test("the BOE's note in force shows with the article: in the window of the citation", { timeout: 60000 }, async () => {
+  const r = await page(
+    `await go('#/', 300);
+     const box = document.createElement('p');
+     box.textContent = 'art. 2 LO 1/1982 y art. 117 LEC';
+     document.querySelector('.page-head').append(box);
+     Neg.referencias.link(box, 'LJV');
+     const open = async (i) => { box.querySelectorAll('a.ref')[i].click(); await wait(800); const t = document.querySelector('.popover').textContent; document.querySelector('[data-action="close-ref"]').click(); return t; };
+     return { honor: await open(0), lec: await open(1) };`
+  );
+  assert.match(r.honor, /Nota del BOE.*Inciso: «o, por imperativo/s);
+  assert.doesNotMatch(r.lec, /Redacción anterior|Téngase/);
+});

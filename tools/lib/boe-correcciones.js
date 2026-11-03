@@ -42,12 +42,13 @@ async function corregir(snapshot) {
     const v = [...xml.matchAll(/<version([^>]*)>([\s\S]*?)<\/version>/g)].map((m) => ({ ...attrs(m[1]), body: m[2] }))
       .find((x) => x.fecha_vigencia === c.version && x.id_norma === c.norma);
     if (!v) throw new Error(`${c.ley} ${c.bloque}: el BOE ya no tiene la versión ${c.version} (${c.norma}); revisar la corrección`);
-    const { parrafos, notas } = parseVersion(v.body);
+    const { parrafos, notas, avisos } = parseVersion(v.body);
     Object.assign(b, {
       vigencia: c.version,
       norma: c.norma,
       parrafos: c.terminologia ? parrafos.map(([k, t]) => [k, rename(t)]) : parrafos,
       notas,
+      ...(avisos ? { avisos } : {}),
       correccion: { motivo: c.motivo, decision: c.decision, sustituye: { vigencia: b.vigencia, norma: b.norma } },
     });
   }

@@ -24,7 +24,7 @@ const decode = (s) => s.replace(/&(#x[0-9a-f]+|#\d+|\w+);/gi, (m, e) =>
 const attrs = (tag) => Object.fromEntries([...tag.matchAll(/(\w+)="([^"]*)"/g)].map((m) => [m[1], decode(m[2])]));
 
 // Text of a version without the editorial notes (blockquote) that the BOE appends to each one.
-const body = (html) => decode(html.replace(/<blockquote>[\s\S]*?<\/blockquote>/g, " ").replace(/<[^>]+>/g, " "))
+const body = (html) => decode(html.replace(/<blockquote(?![^>]*sangrado)[^>]*>[\s\S]*?<\/blockquote>/g, " ").replace(/<[^>]+>/g, " "))
   .replace(/\s+/g, " ").trim().normalize("NFC");
 
 // Undo the LO 7/2015 renaming so that only real changes remain.

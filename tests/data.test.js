@@ -211,3 +211,15 @@ test("related-law blocks: every bare citation exists in the law the block names"
     })(rec.secciones);
   assert.deepEqual(bad.slice(0, 10), []);
 });
+
+test("laws: no article carries the BOE's notes as its text; the one still in force is shown apart", () => {
+  const leyes = read("leyes");
+  const bad = [];
+  for (const { rec } of leyes)
+    for (const k of rec.orden) if (rec.articulos[k].p.some((p) => /t[eé]ngase en cuenta|^redacci[oó]n anterior/i.test(p[1]))) bad.push(`${rec.id} ${k}`);
+  assert.deepEqual(bad.slice(0, 15), []);
+  const lec = leyes.find((l) => l.rec.id === "LEC").rec;
+  assert.deepEqual(lec.articulos["117"].p.map((p) => p[1].slice(0, 3)), ["1. ", "2. "], "art. 117 LEC: solo sus apartados vigentes");
+  const honor = leyes.find((l) => l.rec.id === "LOPDH").rec;
+  assert.match(honor.articulos["2"].av[0], /inconstitucionalidad.*Inciso: «o, por imperativo del artículo 71 de la Constitución/);
+});
