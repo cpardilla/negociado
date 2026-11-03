@@ -50,3 +50,9 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 |---|---|---|---|---|
 | 12 | inicio | «del usufructuario» | «al usufructuario» | LJV 100 |
 | 13 | convocatoria | Sin plazo de oposición | Cinco días | LJV 17.3 |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 14 | Índice de plazos | «3 trámites» con 4 filas | «4 trámites» | Coherencia interna |

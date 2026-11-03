@@ -640,7 +640,7 @@ Neg.data.register({
   },
   {
    "titulo": "Indice de plazos procesales",
-   "recuento": "3 trámites",
+   "recuento": "4 trámites",
    "plegada": true,
    "bloques": [
     {
