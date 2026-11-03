@@ -263,7 +263,7 @@ Neg.data.register({
      "destino": "subsanacion"
     },
     {
-     "texto": "Presenta defectos insubsanables o carece de legitimación — Inadmitir",
+     "texto": "Presenta defectos insubsanables o carece de legitimación — Dar cuenta al Juez",
      "tono": "t-aviso",
      "destino": "fin_inadmision"
     }
@@ -299,7 +299,7 @@ Neg.data.register({
      "destino": "competencia"
     },
     {
-     "texto": "No — no se subsanan en plazo: procede la inadmisión",
+     "texto": "No — no se subsanan en plazo: dar cuenta al Juez",
      "tono": "t-aviso",
      "destino": "fin_inadmision"
     }
@@ -1353,11 +1353,11 @@ Neg.data.register({
   "fin_inadmision": {
    "fase": 1,
    "titulo": "Inadmisión de la solicitud",
-   "actor": "laj",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La solicitud no ha sido admitida a trámite por presentar defectos insubsanables o por carecer el promotor de legitimación."
+     "texto": "El Juez, a quien el Letrado de la Administración de Justicia ha dado cuenta, no admite la solicitud a trámite por presentar defectos insubsanables o no subsanados, o por carecer el promotor de legitimación."
     },
     {
      "tipo": "nota",

@@ -67,3 +67,11 @@ La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora,
 |---|---|
 | los arts. 42 bis a), b) y c) en la LJV. | los arts. 42 bis a) a 42 bis c) LJV. |
 | art. 42 bis b) apdo. 5 → | art. 42 bis b) LJV, apdo. 5 → |
+
+## Corrección posterior (2026-11-03) · Relectura, tercera tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda3.md`, aplicados con el visto bueno del propietario.
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 25 | admision, subsanacion, fin_inadmision | Opción «Inadmitir» y fin con actor LAJ | Da cuenta al Juez, actor Juez | LJV 2.3, 16.4, 17.1 |
