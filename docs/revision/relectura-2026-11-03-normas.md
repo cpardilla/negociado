@@ -19,9 +19,9 @@ Normas externas, leídas en su texto oficial: Ley 50/1981 (arts. 1 y 3), Ley 54/
 - **Rangos**: de «arts. 1010-1034» se han leído los extremos, no los artículos intermedios no citados por separado.
 - **Artículos largos**: en pantalla, hasta 2.600 caracteres. Cuando la app cita algo posterior, se leyó esa parte (RDTO 8, LEC 250.2, LEC 648). No se leyó el final de LEC 381, 477, 640, 670, LRC 44, LOPJM 2 y 9, LH 199 y 200, LOPDH 9, LN 70 y CP 156 bis, porque ninguna cita remite a él.
 - **Citas de solo referencia** de menos de 45 caracteres, a partir de la 7.ª de cada artículo: no se leyeron una a una.
-- **No se ha podido cotejar**: Directiva 2004/48/CE (arts. 6-9), porque la fuente oficial no la sirvió. Tampoco se han abierto Reglamento 2017/1001, Reglamento 2022/2065 ni Directiva 2019/770, que la app solo nombra; ni el Convenio de La Haya de 1993, cuyo nombre y fecha coinciden con el art. 41 LJV.
+- **Cotejado después** (véase «Normas solo nombradas»): Directiva 2004/48/CE y los títulos de las normas que la app solo nombra.
 - **RGPD**: comprobados los títulos de los arts. 5, 9, 11 y 17 en la copia oficial del BOE, no su texto completo.
-- La legislación sectorial de deslinde (montes, costas, vías pecuarias, aguas) solo se nombra; no se ha leído.
+- De la legislación sectorial de deslinde (montes, costas, vías pecuarias, aguas) solo se ha comprobado número y título, no lo que regula.
 
 ## Hallazgos de contenido
 
@@ -56,6 +56,17 @@ Normas externas, leídas en su texto oficial: Ley 50/1981 (arts. 1 y 3), Ley 54/
 Propuesta, aplicada: en una cita en singular, un número sin apartado tras otro con apartado es apartado del mismo artículo, y un rango «N.A a B» o «N.A–B» se queda dentro del artículo N. Los 2 casos en plural se reescriben. Con test y regeneración de índices.
 
 Verificación: 71 tests correctos, 0 fallos, 3 omitidos. Comprobador: 58 hallazgos (4 error, 0 aviso, 54 revisar); el cuarto «error» es la mención, a propósito, del art. 299 bis CC derogado, como otras dos que ya había, y el otro es el art. 641 LEC, también citado como sin contenido.
+
+## Normas solo nombradas
+
+Leído en la fuente oficial, tras la primera revisión:
+
+- Directiva 2004/48/CE (versión corregida, CELEX 32004L0048R(01)): arts. 3, 6 y 8 y títulos de los arts. 7 y 9. Coincide con lo que dice la app. Ley 19/2006, disposición final segunda: la incorpora al derecho español.
+- Directiva (UE) 2016/943: capítulo III (arts. 6-15) y art. 9. Coincide.
+- Reglamentos (UE) 2017/1001 y 2022/2065, Directiva (UE) 2019/770: número y objeto. Coinciden.
+- Convenio de La Haya de 1993 (BOE-A-1995-18485), Ley 43/2003, Ley 22/1988, Ley 3/1995 (BOE-A-1995-7241) y RDLeg 1/2001: número, fecha y título. Coinciden.
+
+Un hallazgo: **14.** Esquema de diligencias preliminares, bloque de Derecho UE: «Arts. 6–9» omitía el derecho de información (art. 8). Añadido.
 
 ## Revisado sin hallazgo
 

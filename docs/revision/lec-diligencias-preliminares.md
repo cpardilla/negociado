@@ -180,3 +180,9 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de la relectura (`relectura-20
 |---|---|---|---|---|
 | 2 | Esquema, art. 256.1.5.º bis | «Remisión expresa a la Ley 41/2002» | La LEC dice «la ley»; esa ley es hoy la 41/2002 | LEC 256.1.5.º bis |
 | 10 | Esquema, negativa | «delito de desobediencia» | «desobediencia grave» | CP 556.1 |
+
+## Normas solo nombradas (2026-11-03)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 14 | Esquema, Derecho UE | Arts. 6–9: pruebas, aseguramiento y cautelares | Añadido el derecho de información | Directiva 2004/48/CE, art. 8 |

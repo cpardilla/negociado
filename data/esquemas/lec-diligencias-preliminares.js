@@ -1835,7 +1835,7 @@ Neg.data.register({
      "norma": {
       "ley": "Derecho UE · Propiedad intelectual",
       "titulo": "Directiva 2004/48/CE (Derechos de PI)",
-      "texto": "<strong>Arts. 6–9</strong> — medidas de obtención de pruebas, medidas para asegurar la prueba y medidas cautelares en materia de propiedad intelectual e industrial.",
+      "texto": "<strong>Arts. 6–9</strong> — medidas de obtención de pruebas, medidas para asegurar la prueba, derecho de información y medidas cautelares en materia de propiedad intelectual e industrial.",
       "etiqueta": "UE · PI",
       "tono": "t-ok"
      }
