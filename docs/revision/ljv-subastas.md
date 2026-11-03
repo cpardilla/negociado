@@ -86,3 +86,15 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 20 | resolucion_celebracion, decreto_adjudicacion, postulacion, doc_registrable, celebracion_subasta | Contenidos sin fuente | Suprimidos | LJV 111.2, 111.8 |
 | 22 | inicio | «deberá encauzarse» | «según el caso» | LJV 108 |
 | 24 | postulacion | Sin oposición ni recursos | Nota añadida | LJV 3.2 |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 15 | Recursos e índice de plazos | Revisión contra todos los decretos | Revisión contra los que ponen fin; reposición contra las interlocutorias. No se clasifica el decreto de aprobación del remate, sobre el que la ley no se pronuncia | LJV 20; LEC 454 bis |
+| 17 | Art. 111 | Finalidad y efectos concursales | Se remite a la legislación especial | LJV 111.1, 111.2 |
+| 18 | Art. 111.6 | Sin aviso | Aviso de la ambigüedad | LJV 111.6 |
+| 19 | Art. 111.5 | «lex specialis… aprobada judicialmente» | Suprimido | LJV 111.5 |
+| 20 | Varios | Contenidos sin fuente | Suprimidos | LJV 111.8 |
+| 21 | Art. 108 | «Supuestos típicos», bienes de menores | «Ejemplos», sin ese supuesto | LJV 108 |
+| 23 | Art. 111, normas | Arts. 643–680 LEC | Arts. 643–675 LEC | Coherencia interna |

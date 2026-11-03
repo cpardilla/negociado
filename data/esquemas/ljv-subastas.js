@@ -94,7 +94,7 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Supuestos típicos de aplicación",
+         "titulo": "Ejemplos (el art. 108 no los enumera)",
          "contenido": [
           {
            "lista": [
@@ -103,9 +103,6 @@ Neg.data.register({
             },
             {
              "t": "<strong>Liquidación de patrimonios comunes:</strong> por ejemplo, tras disolución de régimen económico matrimonial, cuando los cotitulares optan por esta vía."
-            },
-            {
-             "t": "<strong>Bienes de menores o personas con discapacidad:</strong> cuando una norma sustantiva o una resolución previa exija o recomiende la subasta como mecanismo de garantía del mejor precio."
             },
             {
              "t": "<strong>Contextos societarios, fundacionales o asociativos:</strong> ventas voluntarias donde los estatutos o acuerdos impongan subasta pública."
@@ -173,7 +170,7 @@ Neg.data.register({
              "t": "<strong>Fundamento:</strong> esta exención responde al principio general de la jurisdicción voluntaria (artículo 3 de la Ley 15/2015), que facilita el acceso directo del ciudadano al órgano judicial salvo cuando la ley expresamente lo exija."
             },
             {
-             "t": "<strong>Intervención voluntaria:</strong> el interesado puede, no obstante, valerse voluntariamente de dichos profesionales si lo estima oportuno, asumiendo entonces sus honorarios."
+             "t": "<strong>Intervención voluntaria:</strong> el interesado puede, no obstante, valerse voluntariamente de dichos profesionales si lo estima oportuno."
             }
            ]
           }
@@ -352,7 +349,7 @@ Neg.data.register({
              "t": "<strong>Consulta obligatoria:</strong> el Letrado de la Administración de Justicia, antes de resolver sobre la solicitud, consultará el Registro Público Concursal a los efectos previstos en la legislación especial (hoy, Texto Refundido de la Ley Concursal aprobado por Real Decreto Legislativo 1/2020)."
             },
             {
-             "t": "<strong>Finalidad:</strong> comprobar que el titular no se halla en situación de concurso o preconcurso que pudiera afectar a la libre disposición del bien y, en su caso, a la competencia del juez del concurso respecto de la enajenación."
+             "t": "<strong>Finalidad:</strong> los efectos previstos en la legislación especial; la LJV no los concreta."
             }
            ]
           }
@@ -372,7 +369,7 @@ Neg.data.register({
              "t": "<strong>Si acordare su procedencia:</strong> pondrá en conocimiento del Registro Público Concursal la existencia del expediente, con expresa especificación del número de identificación fiscal (NIF) del titular persona física o jurídica cuyo bien vaya a ser objeto de la subasta."
             },
             {
-             "t": "<strong>Notificación recíproca:</strong> el Registro Público Concursal notificará al Juzgado que esté conociendo del expediente la práctica de cualquier asiento que se lleve a cabo asociado al NIF notificado, a los efectos previstos en la legislación concursal (suspensión, paralización o remisión al juez del concurso)."
+             "t": "<strong>Notificación recíproca:</strong> el Registro Público Concursal notificará al Juzgado que esté conociendo del expediente la práctica de cualquier asiento que se lleve a cabo asociado al NIF notificado, a los efectos previstos en la legislación concursal."
             },
             {
              "t": "<strong>Cierre informativo:</strong> el Letrado de la Administración de Justicia pondrá en conocimiento del Registro Público Concursal la finalización del expediente cuando la misma se produzca."
@@ -441,10 +438,10 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Régimen de publicidad:</strong> la publicidad y celebración de la subasta se ajustará a lo establecido en la Ley de Enjuiciamiento Civil en todo aquello que no esté previsto en el pliego de condiciones particulares, operando éste como lex specialis convenida por el interesado y aprobada judicialmente."
+             "t": "<strong>Régimen de publicidad:</strong> la publicidad y celebración de la subasta se ajustará a lo establecido en la Ley de Enjuiciamiento Civil en todo aquello que no esté previsto en el pliego de condiciones particulares."
             },
             {
-             "t": "<strong>Edictos:</strong> en los edictos se expresará el pliego de condiciones, de modo que todo potencial postor pueda conocer íntegramente las reglas del juego antes de pujar."
+             "t": "<strong>Edictos:</strong> en los edictos se expresará el pliego de condiciones."
             }
            ]
           }
@@ -461,16 +458,13 @@ Neg.data.register({
              "t": "<strong>Decreto del Letrado de la Administración de Justicia:</strong> terminada la subasta, el Letrado de la Administración de Justicia, mediante decreto, aprobará el remate en favor del único o mejor postor, siempre y cuando cubra el tipo mínimo que hubiera fijado el solicitante, o el solicitante no se hubiere reservado expresamente el derecho a aprobarla."
             },
             {
-             "t": "<strong>Reserva de aprobación:</strong> si el solicitante se hubiera reservado ese derecho, se le dará vista del expediente para que en el término de tres días pida lo que le interese."
+             "t": "<strong>Reserva de aprobación:</strong> si el solicitante se hubiera reservado ese derecho, se le dará vista del expediente para que en el término de tres días pida lo que le interese. La redacción es ambigua si la postura no cubre el tipo mínimo: la guía da vista también en ese caso; al pie de la letra, sin reserva cabría aprobar el remate."
             },
             {
              "t": "<strong>Oferta modificada:</strong> igual comunicación se le dará en el caso de que por algún licitador se hiciere la oferta de aceptar el remate modificando algunas de las condiciones (por ejemplo, variando plazo de pago, forma de garantía o asunción de cargas)."
             },
             {
              "t": "<strong>Aprobación:</strong> si el solicitante aprueba el remate o acepta la proposición, se resolverá teniendo por aprobado el remate en favor del licitador de la misma."
-            },
-            {
-             "t": "<strong>Decreto aprobatorio:</strong> pone fin a la fase de licitación y abre la fase de ejecución del remate (pago del precio, otorgamiento del título)."
             }
            ]
           }
@@ -504,7 +498,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>Contenido del decreto:</strong> la descripción del bien o derecho, la identificación de los intervinientes (solicitante, adjudicatario y, en su caso, representantes), expresión de las condiciones de la adjudicación (precio, forma de pago, cargas asumidas, etc.) y los demás requisitos necesarios para la inscripción registral (descripción catastral, referencia registral, manifestaciones fiscales, etc.)."
+             "t": "<strong>Contenido del decreto:</strong> la descripción del bien o derecho, la identificación de los intervinientes, expresión de las condiciones de la adjudicación y los demás requisitos necesarios, en su caso, para la inscripción registral."
             },
             {
              "t": "<strong>Título inscribible:</strong> un testimonio de dicha resolución, que se entregará al adjudicatario, será título suficiente para la práctica de las inscripciones registrales que, en su caso, correspondan."
@@ -521,7 +515,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Contra los decretos del Letrado de la Administración de Justicia (celebración, aprobación del remate, sobreseimiento, adjudicación): recurso de revisión ante el Juez en cinco días (art. 20.2 LJV; art. 454 bis LEC), con abogado y procurador (art. 3.2 LJV)."
+             "t": "Contra los decretos del Letrado de la Administración de Justicia que pongan fin al expediente o impidan su continuación (inadmisión, sobreseimiento, adjudicación): recurso de revisión ante el Juez en cinco días (art. 20.2 LJV; art. 454 bis LEC), con abogado y procurador (art. 3.2 LJV). Contra las resoluciones interlocutorias, como la que acuerda celebrar la subasta: reposición (art. 20.1 LJV)."
             }
            ]
           }
@@ -530,7 +524,7 @@ Neg.data.register({
        }
       ],
       "referencias": [
-       "Arts. 643–680 LEC",
+       "Arts. 643–675 LEC",
        "Art. 648 LEC",
        "Art. 670 LEC",
        "RD Leg. 1/2020 (LC)",
@@ -571,7 +565,7 @@ Neg.data.register({
         "Artículo 111.3 de la Ley 15/2015"
        ],
        [
-        "Recurso de revisión contra los decretos del LAJ",
+        "Recurso de revisión contra los decretos del LAJ que ponen fin al expediente",
         "5 días",
         "Art. 20.2 LJV; art. 454 bis LEC"
        ]
