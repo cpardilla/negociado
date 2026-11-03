@@ -604,7 +604,7 @@ Neg.data.register({
              "t": "Expediente del LAJ: puede remitirlo al órgano que considere competente, previa audiencia del Ministerio Fiscal y del solicitante."
             },
             {
-             "t": "Expediente del juez: le da cuenta."
+             "t": "Expediente del juez: le da cuenta y este acuerda lo procedente, oídos el Ministerio Fiscal y el solicitante."
             }
            ]
           }
@@ -823,7 +823,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Diligencias en el mismo acto o, si no es posible, en los diez días siguientes."
+             "t": "Diligencias que se acuerden de oficio o a instancia del Ministerio Fiscal: en el mismo acto o, si no es posible, en los diez días siguientes."
             },
             {
              "t": "Audiencia en acto separado posible, con asistencia del Ministerio Fiscal, en condiciones idóneas y con auxilio de especialistas si es necesario."

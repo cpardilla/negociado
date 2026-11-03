@@ -37,3 +37,12 @@ La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora,
 | Vista del juicio verbal (art. 18). | Vista del juicio verbal (art. 18 LJV). |
 | Reposición, revisión y apelación (art. 20). | Reposición, revisión y apelación (art. 20 LJV). |
 | — Ejecución (art. 22). | — Ejecución (art. 22 LJV). |
+
+## Corrección posterior (2026-11-03) · Relectura, quinta tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda5.md`, aplicados con el visto bueno del propietario.
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 2 | Art. 16.3 | «le da cuenta» | También lo que acuerda el Juez, tras oír al Fiscal y al solicitante | LJV 16.3 |
+| 3 | Art. 18.2.4.ª | Sin decir qué diligencias | Las acordadas de oficio o a instancia del Fiscal | LJV 18.2.4.ª |
