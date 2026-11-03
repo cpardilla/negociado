@@ -575,7 +575,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Régimen general: <strong>apelación</strong> contra la resolución definitiva del Juez, por cualquier interesado perjudicado. <strong>Sin efectos suspensivos</strong> (art. 20.2 LJV). La ley no aclara si el reconocimiento puede inscribirse antes de la firmeza: el art. 22.1 LJV habla de la ejecución de la resolución firme."
+             "t": "Régimen general: <strong>apelación</strong> contra la resolución definitiva del Juez, por cualquier interesado perjudicado. <strong>Sin efectos suspensivos</strong> (art. 20.2 LJV). La ley no aclara si el reconocimiento puede inscribirse antes de la firmeza: el art. 22.1 LJV habla de la ejecución de la resolución firme, aunque permite instar «de inmediato» lo preciso para dar eficacia a lo decidido."
             },
             {
              "t": "Para el recurso: Abogado y Procurador obligatorios aunque no lo fueran en la instancia (art. 3.2 LJV). Plazo: veinte días (art. 458 LEC)."
