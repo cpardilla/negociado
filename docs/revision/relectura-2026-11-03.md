@@ -1,6 +1,6 @@
 # Relectura de los tres recursos más usados (2026-11-03)
 
-E01/G01 (diligencias preliminares), E02/G02 (división de la herencia) y E28/G25 (conciliación), leídos enteros contra el texto vigente tras retirar las notas del BOE de los artículos. Corte del BOE: descarga del 2026-11-03. **Sin cambios en la app: pendiente del visto bueno del propietario.**
+E01/G01 (diligencias preliminares), E02/G02 (división de la herencia) y E28/G25 (conciliación), leídos enteros contra el texto vigente tras retirar las notas del BOE de los artículos. Corte del BOE: descarga del 2026-11-03. **Todo aplicado el 2026-11-03 con el visto bueno del propietario** (registros de cada recurso), más un hallazgo surgido al aplicar: en G25, la ejecución y la nulidad figuraban a cargo del Juez de Paz. En el art. 148.2 LJV, la app dice «quince días» sin calificarlos de caducidad.
 
 Ningún hallazgo procede de la «Redacción anterior». Todos los plazos y las citas de artículos de estos seis textos son correctos.
 
