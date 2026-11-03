@@ -37,7 +37,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Antes de iniciar la tramitación, identifique con precisión qué tipo de control judicial exige la situación concreta. El artículo 23 LJV distingue dos figuras con efectos jurídicos distintos: la autorización previa (condición de validez del reconocimiento) y la aprobación posterior (condición de eficacia de un reconocimiento ya otorgado)."
+     "texto": "Antes de iniciar la tramitación, identifique con precisión qué tipo de control judicial exige la situación concreta. El artículo 23 LJV distingue dos figuras: la autorización previa al reconocimiento y la aprobación posterior a un reconocimiento ya otorgado."
     },
     {
      "tipo": "nota",
@@ -84,15 +84,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Supuesto de AUTORIZACIÓN: condición de validez. El reconociente no puede otorgar el reconocimiento hasta obtener la autorización judicial. El expediente tiene por objeto que el Juez evalúe si el reconocimiento redunda en interés del menor o de la persona con discapacidad con medidas de apoyo."
+     "texto": "Supuesto de AUTORIZACIÓN: es previa. Sin ella no puede quedar determinada la filiación (art. 125 CC). El expediente tiene por objeto que el Juez evalúe si el reconocimiento redunda en interés del menor o de la persona con discapacidad con medidas de apoyo."
     },
     {
      "tipo": "aviso",
      "texto": "ATENCIÓN: el Juez solo autorizará cuando la determinación sea en interés del menor o de la persona con discapacidad (art. 26.2 LJV; art. 125 CC: «cuando convenga al interés del menor»). "
-    },
-    {
-     "tipo": "nota",
-     "texto": "Ratio: este supuesto previene el riesgo de encubrimiento de relaciones incestuosas. El hijo sería simultáneamente hijo y sobrino (u otro pariente en línea recta) del progenitor ya conocido."
     },
     {
      "tipo": "ley",
@@ -108,11 +104,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Supuesto de APROBACIÓN: el reconocimiento ya fue otorgado por el menor de edad (quien no puede contraer matrimonio por razón de edad), pero precisa aprobación judicial para producir efectos jurídicos."
+     "texto": "Supuesto de APROBACIÓN: el reconocimiento ya fue otorgado por el menor de edad (quien no puede contraer matrimonio por razón de edad), pero precisa aprobación judicial: para su eficacia, según el art. 23.3 a) LJV, y para su validez, según el art. 121 CC."
     },
     {
      "tipo": "nota",
-     "texto": "El reconocimiento es un acto personalísimo: el menor ha de expresar su propia voluntad, no el representante legal en su lugar. La aprobación judicial sustituye la intervención representativa que en otros actos de trascendencia análoga sería exigida."
+     "texto": "El reconocimiento es un acto personalísimo: el menor ha de expresar su propia voluntad, no el representante legal en su lugar."
     },
     {
      "tipo": "ley",
@@ -132,7 +128,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Excepciones que excluyen este supuesto (y en las que NO se necesita aprobación judicial): (1) el reconocimiento se realizó en testamento —garantías notariales plenas—, o (2) dentro del plazo para practicar la inscripción del nacimiento —supervisión registral inmediata—."
+     "texto": "Excepciones que excluyen este supuesto (y en las que NO se necesita aprobación judicial): (1) el reconocimiento se realizó en testamento, o (2) dentro del plazo para practicar la inscripción del nacimiento."
     },
     {
      "tipo": "ley",
@@ -149,10 +145,6 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "Supuesto de APROBACIÓN: el padre realizó el reconocimiento dentro del plazo para practicar la inscripción del nacimiento, pero la madre solicitó la suspensión de esa inscripción (art. 124, párrafo segundo, CC: puede pedirla durante el año siguiente al nacimiento; si el padre pide la confirmación de la inscripción, hace falta aprobación judicial con audiencia del Ministerio Fiscal)."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La aprobación judicial dirime el conflicto entre el padre que quiere reconocer y la madre que se opone, atendiendo siempre al interés superior del menor. El Juez es el árbitro de esa discrepancia."
     },
     {
      "tipo": "ley",
@@ -172,7 +164,11 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El expediente tutela simultáneamente: (a) el discernimiento del reconociente —cuya capacidad de comprensión puede estar afectada—, y (b) el interés del reconocido. El Juez valorará especialmente el discernimiento del progenitor como primer criterio de la resolución (art. 26.1 LJV)."
+     "texto": "El Juez atiende a los criterios del art. 26.1 LJV, entre ellos el discernimiento del progenitor."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Para la validez del reconocimiento se estará a lo que resulte de la resolución judicial o escritura pública que haya establecido las medidas de apoyo. Si nada se hubiese dispuesto y no hubiera medidas voluntarias, se instruye la revisión de las medidas judiciales para completarlas a este fin (art. 121 CC, párrafo segundo)."
     },
     {
      "tipo": "ley",
@@ -371,7 +367,7 @@ Neg.data.register({
      "destino": "conflicto_intereses"
     },
     {
-     "texto": "No — plazo transcurrido sin subsanación → la solicitud se tiene por no presentada y se archivan las actuaciones",
+     "texto": "No — plazo transcurrido sin subsanación → el LAJ da cuenta al Juez",
      "tono": "t-aviso",
      "destino": "archivo_defectos"
     }
@@ -379,36 +375,64 @@ Neg.data.register({
   },
   "archivo_defectos": {
    "fase": 1,
-   "titulo": "Archivo por falta de subsanación",
-   "actor": "laj",
+   "titulo": "Falta de subsanación: dación de cuenta al Juez",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ tiene por no presentada la solicitud y archiva las actuaciones al no haberse subsanado los defectos en el plazo concedido de cinco días."
+     "texto": "Como la decisión de este expediente corresponde al Juez (art. 2.3 LJV), el LAJ le da cuenta al no haberse subsanado los defectos en los cinco días, y el Juez acuerda lo que proceda (art. 16.4 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "El archivo no impide que el interesado presente una nueva solicitud una vez subsanados los defectos detectados, ya que no genera cosa juzgada."
+     "texto": "Si se archiva, el interesado puede presentar una nueva solicitud una vez subsanados los defectos."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 16.4 LJV 15/2015"
+     "texto": "Arts. 2.3 y 16.4 LJV 15/2015"
     }
    ],
    "fin": "warning"
   },
   "incompetencia_objetiva": {
    "fase": 1,
-   "titulo": "Falta de competencia objetiva",
-   "actor": "laj",
+   "titulo": "Falta de competencia objetiva: dación de cuenta al Juez",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ aprecia que el órgano carece de competencia objetiva. En los expedientes de competencia del LAJ, acuerda el archivo previo audiencia del Ministerio Fiscal y del solicitante. En los del Juez, da cuenta al Juez para que acuerde lo que proceda."
+     "texto": "Si el LAJ entiende que falta la competencia objetiva, da cuenta al Juez, a quien corresponde la decisión de este expediente, y este acuerda lo que proceda tras oír al Ministerio Fiscal y al solicitante (arts. 2.3 y 16.2 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 2.3 y 16.2 LJV 15/2015; art. 24.1 LJV 15/2015"
+    }
+   ],
+   "pregunta": "¿Qué aprecia el Juez?",
+   "opciones": [
+    {
+     "texto": "Es competente → continuar la tramitación",
+     "tono": "t-ok",
+     "destino": "conflicto_intereses"
+    },
+    {
+     "texto": "No es competente",
+     "tono": "t-aviso",
+     "destino": "fin_incompetencia_objetiva"
+    }
+   ]
+  },
+  "fin_incompetencia_objetiva": {
+   "fase": 1,
+   "titulo": "Fin — Falta de competencia objetiva",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "La ley prevé el archivo del expediente si falta la competencia objetiva. La resolución en que se aprecie ha de indicar el órgano judicial que se estima competente (art. 16.2 LJV)."
     },
     {
      "tipo": "nota",
-     "texto": "La resolución que aprecia la falta de competencia DEBE indicar el órgano judicial que se estima competente, orientando al solicitante hacia el Juzgado de Primera Instancia correcto (art. 16.2 LJV). En este expediente, la competencia objetiva corresponde siempre al Juzgado de Primera Instancia."
+     "texto": "En este expediente, la competencia objetiva corresponde al Juzgado de Primera Instancia (art. 24.1 LJV)."
     },
     {
      "tipo": "ley",
@@ -419,16 +443,40 @@ Neg.data.register({
   },
   "incompetencia_territorial": {
    "fase": 1,
-   "titulo": "Falta de competencia territorial — Remisión al órgano competente",
-   "actor": "laj",
+   "titulo": "Falta de competencia territorial: dación de cuenta al Juez",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ aprecia falta de competencia territorial y acuerda la remisión de las actuaciones al Juzgado de Primera Instancia que considera territorialmente competente, previa audiencia del Ministerio Fiscal y del solicitante."
+     "texto": "Si el LAJ entiende que falta la competencia territorial, da cuenta al Juez, a quien corresponde la decisión de este expediente, y este acuerda lo procedente tras oír al Ministerio Fiscal y al solicitante (arts. 2.3 y 16.3 LJV)."
     },
     {
-     "tipo": "nota",
-     "texto": "A diferencia de la falta de competencia objetiva, la falta de competencia territorial no determina el archivo sino la REMISIÓN. Las actuaciones ya realizadas se conservan y se transfieren al órgano competente."
+     "tipo": "ley",
+     "texto": "Arts. 2.3 y 16.3 LJV 15/2015; art. 24.1 LJV 15/2015"
+    }
+   ],
+   "pregunta": "¿Qué aprecia el Juez?",
+   "opciones": [
+    {
+     "texto": "Es competente → continuar la tramitación",
+     "tono": "t-ok",
+     "destino": "conflicto_intereses"
+    },
+    {
+     "texto": "No es competente",
+     "tono": "t-aviso",
+     "destino": "fin_incompetencia_territorial"
+    }
+   ]
+  },
+  "fin_incompetencia_territorial": {
+   "fase": 1,
+   "titulo": "Fin — Remisión al órgano competente",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "La ley prevé la remisión al órgano que se considere competente si falta la competencia territorial (art. 16.3 LJV)."
     },
     {
      "tipo": "ley",
@@ -476,19 +524,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Cuando el representante legal del reconocido tiene intereses opuestos al reconocido, se tramita de forma incidental el nombramiento de un defensor judicial conforme al Capítulo II del Título II de la LJV. El defensor judicial actuará en representación del reconocido durante todo el expediente."
-    },
-    {
-     "tipo": "plazo",
-     "texto": "Actuación: iniciar el expediente de nombramiento de defensor judicial (arts. 27–31 LJV) de forma previa. El expediente principal de reconocimiento queda en suspenso hasta que el defensor judicial acepte el cargo."
+     "texto": "Cuando el representante legal del reconocido tiene intereses opuestos al reconocido, se tramita el nombramiento de un defensor judicial conforme al Capítulo II del Título II de la LJV."
     },
     {
      "tipo": "nota",
-     "texto": "Competencia para el nombramiento: Letrado de la Administración de Justicia del Juzgado de Primera Instancia del domicilio o residencia del menor o persona con discapacidad (art. 28.1 LJV). El nombramiento se notifica al designado para que acepte o rechace el cargo. La aceptación activa la representación del reconocido."
+     "texto": "El nombramiento se tramita por su propio expediente (arts. 27 a 32 LJV)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Competencia para el nombramiento: Letrado de la Administración de Justicia del Juzgado de Primera Instancia del domicilio o, en su defecto, de la residencia del menor o persona con discapacidad o, en su caso, del Juzgado que esté conociendo del asunto que exija el nombramiento (art. 28.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 27–31 LJV 15/2015; arts. 235–236 CC"
+     "texto": "Arts. 27–32 LJV 15/2015; arts. 235–236 CC"
     }
    ],
    "siguiente": "admision_formal"
@@ -536,7 +584,7 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "PLAZO: el Ministerio Fiscal dispone de 10 días desde su citación para emitir y remitir el informe escrito."
+     "texto": "PLAZO: el Ministerio Fiscal emite su informe por escrito en el plazo de diez días (art. 17.2 LJV)."
     },
     {
      "tipo": "nota",
@@ -654,7 +702,11 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Si el solicitante no asiste a la comparecencia sin causa justificada: el Juez archiva el expediente por desistimiento (art. 18.2.1.ª LJV)."
+     "texto": "Si el solicitante no asiste a la comparecencia: el Juez archiva el expediente por desistimiento (art. 18.2.1.ª LJV)."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Las diligencias relativas a los intereses del menor o de la persona con discapacidad que se acuerden de oficio o a instancia del Ministerio Fiscal se practican en el mismo acto o, si no fuere posible, en los diez días siguientes. Si la exploración tiene lugar después de la comparecencia, se da traslado del acta y los interesados pueden alegar en cinco días (art. 18.2.4.ª LJV)."
     },
     {
      "tipo": "ley",
@@ -669,7 +721,7 @@ Neg.data.register({
      "destino": "deliberacion"
     },
     {
-     "texto": "El solicitante NO comparece sin causa justificada → el Juez archiva el expediente teniéndolo por desistido",
+     "texto": "El solicitante NO comparece → el Juez archiva el expediente teniéndolo por desistido",
      "tono": "t-aviso",
      "destino": "archivo_desistimiento"
     }
@@ -772,20 +824,24 @@ Neg.data.register({
   },
   "eficacia_registral": {
    "fase": 4,
-   "titulo": "Testimonio para el Registro Civil (art. 22.2 LJV)",
+   "titulo": "Testimonio para el Registro Civil (art. 26.3 LJV)",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si el expediente da lugar a un hecho o acto inscribible en el Registro Civil, se expide testimonio de la resolución a efectos de su inscripción (art. 22.2 LJV)."
+     "texto": "El testimonio de la resolución se remite al Registro Civil competente para su inscripción (arts. 22.2 y 26.3 LJV)."
     },
     {
      "tipo": "nota",
      "texto": "NOTA ESPECIAL (supuesto del art. 23.2 — autorización): el Juez invalidará la determinación si se presenta un documento público con la manifestación del reconocido al respecto, hecha una vez alcanzada la plena capacidad (art. 26.2 LJV; art. 125, párrafo segundo, CC)."
     },
     {
+     "tipo": "nota",
+     "texto": "Si se recurre, la ley no aclara si el reconocimiento puede inscribirse antes de la firmeza: la apelación no tiene efectos suspensivos (art. 20.2 LJV), pero el art. 22.1 LJV habla de la ejecución de la resolución firme."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 22.2 LJV 15/2015; art. 26.2 LJV 15/2015"
+     "texto": "Arts. 20.2, 22 y 26.2 y 26.3 LJV 15/2015"
     }
    ],
    "siguiente": "recurso_auto_est"
@@ -817,7 +873,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Cualquier interesado que se considere perjudicado por el auto estimatorio puede interponer recurso de apelación conforme a la LEC ante la Audiencia Provincial. El recurso NO tiene efectos suspensivos: el auto puede ejecutarse —y el reconocimiento inscribirse— mientras se sustancia la apelación."
+     "texto": "Cualquier interesado que se considere perjudicado por el auto estimatorio puede interponer recurso de apelación conforme a la LEC ante la Audiencia Provincial. El recurso NO tiene efectos suspensivos (art. 20.2 LJV). La ley no aclara si el reconocimiento puede inscribirse antes de la firmeza: el art. 22.1 LJV habla de la ejecución de la resolución firme."
     },
     {
      "tipo": "aviso",
@@ -893,7 +949,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Durante la tramitación del recurso, el auto recurrido puede ejecutarse (ausencia de efecto suspensivo). Si ya se practicó la inscripción en el Registro Civil y el recurso prospera, deberá procederse a su cancelación."
+     "texto": "El recurso no tiene efectos suspensivos (art. 20.2 LJV)."
     },
     {
      "tipo": "ley",
@@ -1033,7 +1089,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "ACCIÓN INMEDIATA: verificar si la filiación ya fue inscrita en el Registro Civil durante la tramitación del recurso (dado que el recurso no tiene efectos suspensivos). Si es así, coordinar con el Registro Civil la cancelación de la inscripción conforme a las normas del Registro Civil."
+     "texto": "Si la filiación ya se hubiera inscrito, habrá que estar a las normas del Registro Civil: la LJV no regula este caso."
     },
     {
      "tipo": "ley",

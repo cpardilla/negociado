@@ -52,3 +52,23 @@ Competencia: donde exista, la Sección de Familia, Infancia y Capacidad del Trib
 | 7 | inicio, deliberacion, fin_* | error | «Aprobación: eficacia sin retroactividad»; «jerarquía implícita» de los criterios con el interés del menor «prevalente»; «la carga de acreditar el interés recae en el promotor»; «sin plazo preclusivo» | Retirados (sin base); los cuatro criterios del art. 26.1 sin jerarquía; la aprobación es requisito de validez o de eficacia según el supuesto (arts. 23.3 y 23.4 LJV; arts. 121 y 124 CC) | LJV, CC |
 | 8 | auto_estimatorio | error | Apellidos «arts. 109 y 111 CC» | Art. 109 CC (el art. 111 trata de la exclusión de la patria potestad) | CC |
 | 9 | competencia, defensor_judicial | desfasado | «Siempre el Juzgado de Primera Instancia»; «Secretario judicial» | Hoy, Sección de Familia, Infancia y Capacidad (art. 86.5 d) LOPJ) o Sección Civil; Letrado de la Administración de Justicia | LO 1/2025, LO 7/2015 |
+
+## Corrección posterior (2026-11-03) · Relectura, tercera tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda3.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 1 | subsanacion, archivo_defectos | El LAJ archivaba | Da cuenta al Juez, que acuerda lo que proceda | LJV 2.3, 16.4 |
+| 2 | incompetencia_objetiva, incompetencia_territorial; nuevos fin_incompetencia_objetiva y fin_incompetencia_territorial | El LAJ remitía; regla general sin aplicar | Da cuenta al Juez, que oye al Fiscal y al solicitante | LJV 2.3, 16.2, 16.3 |
+| 3 | defensor_judicial | «queda en suspenso»; bloque «Plazo» sin plazo; competencia incompleta | Suprimido, nota, competencia completa | LJV 27-32, 28.1 |
+| 4 | inicio, tipo_aut, tipo_ap_a | Aprobación = eficacia, autorización = validez | Según el caso | LJV 23; CC 121, 124, 125 |
+| 5 y 7 | tipo_ap_disc | «primer criterio»; sin la regla de las medidas de apoyo | Sin orden; regla añadida | LJV 26.1; CC 121 |
+| 6 | comparecencia | Sin plazos | Diez días y cinco de alegaciones | LJV 18.2.4.ª |
+| 8 | comparecencia | «sin causa justificada» | Suprimido | LJV 18.2.1.ª |
+| 9 | informe_mf_escrito | «desde su citación» | Texto de la ley | LJV 17.2 |
+| 10 | eficacia_registral | Solo art. 22.2, en condicional | Cita el art. 26.3 | LJV 26.3 |
+| 11 | eficacia_registral, recurso_auto_est, apelacion_vs_est, fin_revocado_apelacion | Inscripción durante la apelación y cancelación, como reglas | «La ley no aclara» (decisión del propietario) | LJV 20.2, 22.1 |
+| 12 | tipo_aut, tipo_ap_a, tipo_ap_b, tipo_ap_c | Glosas sin fuente | Suprimidas | Sin fuente |

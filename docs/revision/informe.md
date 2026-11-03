@@ -69,8 +69,8 @@ E = error · A = aviso · R = revisar.
 
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
-- ✓ LJV (BOE a 05-03-2026): 2875
-- ✓ CC (BOE a 07-09-2026): 1349
+- ✓ LJV (BOE a 05-03-2026): 2892
+- ✓ CC (BOE a 07-09-2026): 1352
 - ✓ LEC (BOE a 29-10-2026): 1211
 - ✓ LOPJ (BOE a 09-10-2026): 121
 - ✓ LPPD (BOE a 18-12-2025): 75
@@ -310,7 +310,7 @@ Sin hallazgos automáticos.
 
 **terminologia**
 
-- [revisar] «Juzgado de Primera Instancia» × 12 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › opción 1 | paso «competencia» › opción 2 | paso «competencia» › info 1 …_
+- [revisar] «Juzgado de Primera Instancia» × 10 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _paso «competencia» › opción 1 | paso «competencia» › opción 2 | paso «competencia» › info 1 …_
 
 ### ljv-mencion-sexo-12-14 · Guía · LJV · Mención registral del sexo (12 a 14 años)
 
