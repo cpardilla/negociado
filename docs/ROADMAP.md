@@ -308,6 +308,7 @@ Se fue aplicando con los motores (fase 1) y el repaso de estilos; el 2026-11-01 
 - 2026-10-28 · Primera versión, tras la revisión técnica completa.
 - 2026-10-28 · El propietario indica que la app debe seguir accesible en GitHub Pages: restricciones (sección 3) para que funcione en https y en `file://`, rama de trabajo, `.nojekyll`, contenido público, sección «Publicación».
 - 2026-10-28 · Plan aprobado; decisiones 3–8 tomadas (sección 10).
+- 2026-11-03 · Tandas 3 y 4 publicadas. Relectura, quinta tanda (disposiciones generales, normas comunes, actos de disposición, medidas de apoyo; `revision/relectura-2026-11-03-tanda5.md`): 19 hallazgos, 3 de ellos errores (2 seguros y 1 probable). Pendientes de visto bueno.
 - 2026-11-03 · Relectura, cuarta tanda (adopción, ausencia y fallecimiento, hechos pasados; `revision/relectura-2026-11-03-tanda4.md`): 27 hallazgos, 6 de ellos errores. Aplicados.
 - 2026-11-03 · Tandas 1 y 2 publicadas. Relectura, tercera tanda (filiación y subastas, más búsqueda en las demás guías de la LJV; `revision/relectura-2026-11-03-tanda3.md`): 25 hallazgos, 3 de ellos errores (2 seguros y 1 probable) y 2 preguntas al propietario, ya decididas. Aplicados.
 - 2026-11-03 · Relectura, segunda tanda (mención del sexo, 12-14 y reversión; `revision/relectura-2026-11-03-tanda2.md`): 21 hallazgos, 6 de ellos errores (quién examina la solicitud, incompetencia, un plazo y dos citas). Aplicados, con la salida que faltaba en G03.
