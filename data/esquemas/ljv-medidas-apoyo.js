@@ -685,7 +685,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 8/2021, de 2 de junio",
       "titulo": "Reforma del sistema de apoyo a personas con discapacidad",
-      "texto": "<strong>Introduce</strong> los arts. 42 bis a) a 42 bis c) LJV.<br><strong>Reordena</strong> el Código Civil: el régimen anterior queda sustituido y los arts. 299 bis a 324 CC quedan sin contenido.<br><strong>Reforma</strong> el Título XI del CC (nuevo sistema de medidas de apoyo).<br><strong>Modifica</strong> la LEC (proceso contencioso de apoyos).<br>Inspirada en la Convención ONU 2006 sobre Derechos de Personas con Discapacidad. Vigente desde 3 de septiembre de 2021.",
+      "texto": "<strong>Introduce</strong> los arts. 42 bis a) a 42 bis c) LJV.<br><strong>Reordena</strong> el Código Civil: el régimen anterior queda sustituido y los arts. 299 bis y 301 a 324 CC quedan sin contenido.<br><strong>Reforma</strong> el Título XI del CC (nuevo sistema de medidas de apoyo).<br><strong>Modifica</strong> la LEC (proceso contencioso de apoyos).<br>Inspirada en la Convención ONU 2006 sobre Derechos de Personas con Discapacidad. Vigente desde 3 de septiembre de 2021.",
       "etiqueta": "Norma habilitante",
       "tono": "t-aviso"
      }

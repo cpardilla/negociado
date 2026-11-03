@@ -94,3 +94,10 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 13 | Mapa de actores, ecosistema | «autodefenderse» | No es previsible que designe su defensa | LJV 42 bis a.4 |
 | 14 | Traslado, índice de plazos | Sin diez días, auto ni apelación | Añadidos | LJV 42 bis c.3, 19.1; LEC 458.1 |
 | 17 | Legitimación | «(hijos/as)», «(padres/madres)», lista de funcionarios | Suprimidos | LJV 42 bis a.3 |
+
+## Normas no cotejadas (2026-11-03)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 4 | Esquema, Ley 8/2021 | «arts. 299 bis a 324 CC» sin contenido | «arts. 299 bis y 301 a 324» | CC 300, vigente |
+| 13 | Guía (2 lugares) | «CRPD» | «CDPD» | Nombre usado en el resto de la app |
