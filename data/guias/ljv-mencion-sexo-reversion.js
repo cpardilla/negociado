@@ -26,7 +26,8 @@ Neg.data.register({
  ],
  "actores": {
   "juez": "Juez",
-  "laj": "Solicitante / Oficina judicial",
+  "laj": "Letrado de la Administración de Justicia",
+  "solicitante": "Solicitante",
   "ambos": "Intervención conjunta"
  },
  "inicio": "inicio",
@@ -34,7 +35,7 @@ Neg.data.register({
   "inicio": {
    "fase": 0,
    "titulo": "Verificación del supuesto de hecho (artículo 26 sexies)",
-   "actor": "laj",
+   "actor": "solicitante",
    "bloques": [
     {
      "tipo": "info",
@@ -68,11 +69,11 @@ Neg.data.register({
   "fin_no_procede": {
    "fase": 0,
    "titulo": "No procede la aplicación del Capítulo I ter",
-   "actor": "laj",
+   "actor": "solicitante",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Capítulo I ter de la Ley 15/2015 tiene un ámbito de aplicación excepcional y subsidiario. Si no concurren las dos circunstancias previas de manera acumulativa —una rectificación previa de la inscripción registral relativa al sexo y una reversión posterior de dicha modificación—, no es de aplicación este procedimiento de jurisdicción voluntaria."
+     "texto": "El Capítulo I ter de la Ley 15/2015 tiene un ámbito de aplicación específico. Si no concurren las dos circunstancias previas de manera acumulativa —una rectificación previa de la inscripción registral relativa al sexo y una reversión posterior de dicha modificación—, no es de aplicación este procedimiento de jurisdicción voluntaria."
     },
     {
      "tipo": "nota",
@@ -84,7 +85,7 @@ Neg.data.register({
   "legitima": {
    "fase": 1,
    "titulo": "Legitimación activa (artículo 26 septies.2 y artículo 43 de la Ley 4/2023)",
-   "actor": "laj",
+   "actor": "solicitante",
    "bloques": [
     {
      "tipo": "info",
@@ -144,7 +145,7 @@ Neg.data.register({
   "fin_no_legitimado": {
    "fase": 1,
    "titulo": "Falta de legitimación para promover el expediente",
-   "actor": "laj",
+   "actor": "solicitante",
    "bloques": [
     {
      "tipo": "info",
@@ -200,7 +201,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Mismo criterio territorial. Este tramo de edad requiere aprobación judicial conforme al Capítulo I bis para la primera rectificación; para la nueva modificación tras reversión se aplica el Capítulo I ter, sin perjuicio de la asistencia de representantes legales y de las garantías del menor."
+     "texto": "Mismo criterio territorial. Para este tramo de edad, el art. 43.4 de la Ley 4/2023 remite al Capítulo I bis. La ley no aclara expresamente cómo se aplica el Capítulo I ter a quien esté en este tramo: el art. 26 septies.2 LJV se refiere a quienes estén legitimados para instar la rectificación. En todo caso, con la asistencia de representantes legales y las garantías del menor."
     },
     {
      "tipo": "ley",
@@ -228,7 +229,7 @@ Neg.data.register({
   "postulacion": {
    "fase": 2,
    "titulo": "Postulación (artículo 26 septies.3)",
-   "actor": "laj",
+   "actor": "solicitante",
    "bloques": [
     {
      "tipo": "info",
@@ -236,7 +237,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Para recurrir sí son necesarios abogado y procurador (art. 3.2, párrafo segundo, LJV)."
+     "texto": "Abogado y procurador son necesarios para los recursos de revisión y apelación y a partir de que se formule oposición (art. 3.2, párrafo segundo, LJV)."
     }
    ],
    "siguiente": "solicitud"
@@ -274,7 +275,7 @@ Neg.data.register({
   "postulacion_discapacidad": {
    "fase": 2,
    "titulo": "Postulación — Persona con discapacidad",
-   "actor": "laj",
+   "actor": "solicitante",
    "bloques": [
     {
      "tipo": "info",
@@ -302,7 +303,7 @@ Neg.data.register({
   "solicitud": {
    "fase": 3,
    "titulo": "Presentación de la solicitud (artículo 26 octies.1)",
-   "actor": "laj",
+   "actor": "solicitante",
    "bloques": [
     {
      "tipo": "info",
@@ -332,18 +333,26 @@ Neg.data.register({
   "admision": {
    "fase": 3,
    "titulo": "Admisión a trámite",
-   "actor": "juez",
+   "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez examina la solicitud y los documentos aportados para decidir sobre su admisión a trámite. Si la solicitud tiene defectos, se concede un plazo de cinco días para subsanarlos; si no se subsanan, se archiva (art. 16.4 LJV)."
+     "texto": "El Letrado de la Administración de Justicia examina de oficio la competencia y los posibles defectos u omisiones (art. 16.1 y 16.4 LJV) y resuelve sobre la solicitud (art. 17.1 LJV)."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Cinco días para subsanar los defectos (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "Como la decisión de este expediente corresponde al Juez (art. 2.3 LJV), el Letrado de la Administración de Justicia le da cuenta si no se subsanan los defectos, si la solicitud no resulta admisible o si falta competencia. El Juez acuerda lo que proceda; en la falta de competencia, tras oír al Ministerio Fiscal y al solicitante (arts. 16.2 a 16.4 y 17.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 16.4 y 26 octies.2"
+     "texto": "Ley 15/2015, arts. 2.3, 16, 17.1 y 26 octies.2"
     }
    ],
-   "pregunta": "¿El Juez admite a trámite la solicitud?",
+   "pregunta": "¿Se admite a trámite la solicitud?",
    "opciones": [
     {
      "texto": "Sí, se admite a trámite",
@@ -352,7 +361,7 @@ Neg.data.register({
      "destino": "comparecencia"
     },
     {
-     "texto": "No, se inadmitie la solicitud",
+     "texto": "No, el Juez no la admite",
      "tono": "t-nota",
      "nota": "Inadmitida",
      "destino": "fin_inadmision"
@@ -366,11 +375,15 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Si la solicitud no cumple los requisitos legales o formales exigidos, el Juez acordará su inadmisión a trámite, poniendo fin al expediente en esta vía."
+     "texto": "El Juez, a quien el Letrado de la Administración de Justicia ha dado cuenta, no admite la solicitud a trámite, y el expediente termina en esta vía."
     },
     {
      "tipo": "nota",
      "texto": "Puede presentarse una nueva solicitud corregida."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, arts. 16.4 y 17.1"
     }
    ],
    "fin": "error"
@@ -398,9 +411,45 @@ Neg.data.register({
     {
      "tipo": "nota",
      "texto": "La comparecencia personal del solicitante permite al Juez valorar directamente la voluntad de la persona."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "La citación se hace con al menos quince días de antelación (art. 17.3 LJV) y la comparecencia se celebra dentro de los treinta días siguientes a la admisión (art. 18.1 LJV). Quien vaya a oponerse lo hace en los cinco días siguientes a su citación (art. 17.3 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, arts. 17.3, 18 y 26 octies.2"
     }
    ],
-   "siguiente": "pruebas"
+   "pregunta": "¿Asiste el solicitante a la comparecencia?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "pruebas"
+    },
+    {
+     "texto": "No: se archiva el expediente",
+     "tono": "t-aviso",
+     "destino": "fin_desistido"
+    }
+   ]
+  },
+  "fin_desistido": {
+   "fase": 3,
+   "titulo": "Archivo por desistimiento",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Si el solicitante no asiste a la comparecencia, el Juez acuerda el archivo del expediente y le tiene por desistido. Si falta alguno de los demás citados, se celebra el acto y continúa el expediente (art. 18.2.1.ª LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Ley 15/2015, art. 18.2"
+    }
+   ],
+   "fin": "warning"
   },
   "pruebas": {
    "fase": 3,
@@ -409,15 +458,19 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez podrá solicitar la práctica de cualesquiera otras pruebas que considere oportunas. Esta facultad es amplia y discrecional, permitiendo practicar todo tipo de pruebas que considere necesarias para formar su convicción sobre la autenticidad y estabilidad de la voluntad manifestada."
+     "texto": "El Juez podrá solicitar la práctica de cualesquiera otras pruebas que considere oportunas."
     },
     {
      "tipo": "aviso",
      "texto": "El ejercicio del derecho a la rectificación registral de la mención relativa al sexo en ningún caso podrá estar condicionado a la previa exhibición de informe médico o psicológico relativo a la disconformidad con el sexo mencionado en la inscripción de nacimiento, ni a la previa modificación de la apariencia o función corporal de la persona a través de procedimientos médicos, quirúrgicos o de otra índole."
     },
     {
+     "tipo": "plazo",
+     "texto": "Si el expediente afecta a los intereses de una persona menor, las diligencias relativas a ellos que se acuerden de oficio o a instancia del Ministerio Fiscal se practican en el mismo acto de la comparecencia o, si no fuere posible, en los diez días siguientes (art. 18.2.4.ª LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 26 octies.3 | Ley 4/2023, art. 44.3"
+     "texto": "Ley 15/2015, arts. 18.2 y 26 octies.3 | Ley 4/2023, art. 44.3"
     }
    ],
    "siguiente": "resolucion"
@@ -433,11 +486,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Se resuelve por auto (art. 19.1 LJV)."
+     "texto": "Cualquier interesado que se considere perjudicado puede apelar el auto (art. 20.2 LJV)."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Auto en cinco días desde la terminación de la comparecencia (art. 19.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 26 nonies.1"
+     "texto": "Ley 15/2015, arts. 19.1, 20.2 y 26 nonies.1"
     }
    ],
    "pregunta": "¿El Juez concede la aprobación judicial para la nueva modificación de la mención registral relativa al sexo?",
@@ -510,14 +567,13 @@ Neg.data.register({
      "titulo": "Actuaciones del Registro Civil",
      "items": [
       "Recibir el testimonio de la resolución judicial.",
-      "Proceder a la inscripción de la rectificación de la mención registral relativa al sexo.",
-      "Conservar el mismo número del Documento Nacional de Identidad (art. 49 Ley 4/2023)."
+      "Proceder a la inscripción de la rectificación de la mención registral relativa al sexo."
      ],
      "marcar": true
     },
     {
-     "tipo": "plazo",
-     "texto": "La persona interesada o su representante podrán solicitar la reexpedición de documentos ajustados a la nueva inscripción (art. 49 Ley 4/2023)."
+     "tipo": "nota",
+     "texto": "Después, las autoridades expiden nuevo DNI y, en su caso, pasaporte a petición de la persona interesada o de su representante, conservando el mismo número de DNI; y puede pedirse la reexpedición de cualquier documento, título, diploma o certificado (art. 49.1 y 49.2 Ley 4/2023)."
     }
    ],
    "pregunta": "¿El Registro Civil inscribe la rectificación aprobada judicialmente?",

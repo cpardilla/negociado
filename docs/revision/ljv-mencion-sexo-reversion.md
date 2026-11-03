@@ -61,3 +61,19 @@ Corte del BOE: LRC a 24-02-2026. Encontrada al comprobar por fin las citas de lo
 | Lugar | Tipo | Antes | Ahora | Fuente |
 |---|---|---|---|---|
 | Ecosistema normativo › Ley 20/2011 | cita | «Artículo 4.4» (el art. 4 no tiene apartados) | «Artículo 4.4.º» (ordinal 4.º: el sexo y el cambio de sexo) | LRC 4 |
+
+## Corrección posterior (2026-11-03) · Relectura, segunda tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda2.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 13 | admision, fin_inadmision; actores | El Juez examinaba y «se archiva»; actor «laj» presentado como «Solicitante / Oficina judicial» | Examina el LAJ y da cuenta al Juez; actores separados (el defensor judicial queda con el LAJ) | LJV 2.3, 16, 17.1 |
+| 16 | comparecencia, pruebas, resolucion; nuevo fin_desistido | Sin plazos ni salida por incomparecencia | 15 y 30 días, 5 de oposición, 10 de diligencias sobre el menor, 5 del auto; archivo por desistimiento; nota sobre la apelación | LJV 17.3, 18.1, 18.2.1.ª, 18.2.4.ª, 19.1, 20.2 |
+| 17 | legitima, competencia_menor_12_14 | Tramo de 12 a 14 afirmado sin matices | Misma advertencia que el esquema | LJV 26 septies.2; Ley 4/2023, art. 43.4 |
+| 18 | pruebas | «amplia y discrecional», «autenticidad» | Solo el texto de la ley | LJV 26 octies.3 |
+| 19 | inscripcion | Bloque «Plazo» sin plazo; DNI entre las actuaciones del Registro | Nota aparte, atribuida a las autoridades que expiden | Ley 4/2023, art. 49 |
+| 20 | postulacion | Solo «para recurrir» | También desde la oposición | LJV 3.2 |
+| 21 | fin_no_procede | «excepcional y subsidiario» | «específico» | LJV 26 sexies |
