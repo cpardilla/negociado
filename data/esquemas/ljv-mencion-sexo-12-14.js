@@ -73,9 +73,6 @@ Neg.data.register({
        "t": "<strong>Menores de 12 años</strong>: la Ley 4/2023 no prevé para ellos la rectificación de la mención del sexo; sí el cambio de nombre (art. 48 Ley 4/2023)."
       }
      ]
-    },
-    {
-     "p": "El fundamento de la intervención judicial para el tramo de doce a catorce años radica en que el legislador, valorando la necesidad de proteger el interés superior del menor en una decisión con consecuencias jurídicas de largo alcance, estimó conveniente someter la modificación registral a un control jurisdiccional que verifique tanto la madurez del solicitante como la estabilidad de su voluntad. Esta solución respeta el derecho del menor a ser escuchado y a que su voluntad sea tenida en cuenta, al tiempo que introduce garantías adicionales acordes con su edad y grado de desarrollo."
     }
    ]
   },
@@ -457,7 +454,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Resolución",
-      "resumen": "Regula la audiencia inderogable del menor, los criterios de resolución, la prohibición absoluta de condicionantes médicos y la eficacia registral del auto.",
+      "resumen": "Regula la audiencia inderogable del menor, los criterios de resolución, la prohibición de condicionantes médicos y la eficacia registral del auto.",
       "cuerpo": [
        {
         "apartado": {
@@ -495,13 +492,13 @@ Neg.data.register({
        },
        {
         "apartado": {
-         "titulo": "Prohibición de condicionantes (absoluta)",
+         "titulo": "Prohibición de condicionantes",
          "contenido": [
           {
            "nota": {
             "tono": "t-aviso",
             "etiqueta": "",
-            "texto": "<strong>Prohibición expresa e irrestricta</strong> La concesión no podrá estar condicionada a la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a la previa modificación de la apariencia o función corporal a través de procedimientos médicos, quirúrgicos o de otra índole. El término «no podrá» excluye cualquier margen de discrecionalidad judicial. La misma regla rige con carácter general para la rectificación registral (art. 44.3 Ley 4/2023)."
+            "texto": "<strong>Prohibición expresa</strong> La concesión no podrá estar condicionada a la previa exhibición de informe médico o psicológico relativo a la identidad sexual, ni a la previa modificación de la apariencia o función corporal a través de procedimientos médicos, quirúrgicos o de otra índole. La misma regla rige con carácter general para la rectificación registral (art. 44.3 Ley 4/2023)."
            }
           }
          ]

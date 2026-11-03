@@ -81,3 +81,10 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 11 | concesion | La apelación solo constaba contra la denegación | Nota sobre la apelación de cualquier interesado | LJV 20.2 |
 
 Criterio aplicado: la citación sigue siendo del Juez porque la norma específica lo dice (art. 26 quater.2 LJV, que prevalece sobre el art. 17.2 según el art. 13). La remisión y el archivo del art. 16 están escritos para el LAJ; cuando decide el Juez, la ley dice «acordará lo que proceda», y la guía lo refleja así.
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 8 | Art. 26 quinquies | «absoluta», «irrestricta», «no podrá excluye cualquier margen…» | Los términos de la ley | LJV 26 quinquies.1 |
+| 12 | Marco | Párrafo sobre lo que valoró el legislador | Suprimido | No consta en el articulado |
