@@ -161,3 +161,14 @@ A petición del propietario. El art. 404.2 LEC habla de defectos formales no sub
 |---|---|---|---|---|
 | G02 | `p0_subsanar_masc`, salida «No» | Llevaba a `fin_sin_masc` | Paso nuevo `fin_masc_no_subsanado`: el LAJ da cuenta al Tribunal | LEC 404.2 |
 | G02 | `fin_sin_masc` (no se aporta nada) | Afirmaba la dación de cuenta del art. 404.2 | No se admite (art. 403.2); nota de que el art. 404 no menciona expresamente este caso | LEC 403.2, 404 |
+
+## Corrección posterior (2026-11-03) · Relectura
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de la relectura (`relectura-2026-11-03.md`), aplicados con el visto bueno del propietario.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| E02 | Art. 782 › carácter subsidiario | **error** | «a los coherederos de común acuerdo (art. 1058 CC)» | «a un contador-partidor designado por acuerdo de los coherederos» | LEC 782.1 |
+| E02 | Aceptación; art. 782; art. 789 | sin fuente | «suele valorarse como aceptación tácita» (retirado); «Habitualmente»; «Formas habituales» | «Puede aportarse»; «Formas» | Decisión 24 |
+| G02 | fin_inadmitida | **error** | Atribuida al LAJ; «puede presentarse de nuevo» | LAJ y Tribunal: si no se subsana, da cuenta al Tribunal | LEC 404.2 |
+| G02 | fin_acreedor, fin_partidor_previo | **error** | Inadmisión atribuida al LAJ | LAJ y Tribunal, con nota de que el art. 404 no menciona expresamente el caso | LEC 404 |

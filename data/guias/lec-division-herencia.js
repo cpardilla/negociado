@@ -126,7 +126,7 @@ Neg.data.register({
   "fin_acreedor": {
    "fase": 0,
    "titulo": "Inadmisión: falta de legitimación",
-   "actor": "laj",
+   "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
@@ -141,6 +141,10 @@ Neg.data.register({
       "Los acreedores de un coheredero: intervenir a su costa en la partición para evitar fraude o perjuicio (art. 782.5)"
      ],
      "marcar": true
+    },
+    {
+     "tipo": "nota",
+     "texto": "El art. 404 LEC prevé que el Letrado de la Administración de Justicia admita por decreto (apartado 1) y que dé cuenta al Tribunal para que resuelva sobre la admisión en los casos de su apartado 2, que no menciona expresamente este."
     }
    ],
    "fin": "warning"
@@ -172,7 +176,7 @@ Neg.data.register({
   "fin_partidor_previo": {
    "fase": 0,
    "titulo": "Inadmisión: la partición corresponde a otro",
-   "actor": "laj",
+   "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
@@ -181,6 +185,10 @@ Neg.data.register({
     {
      "tipo": "nota",
      "texto": "Sin contador designado, los herederos y legatarios que representen al menos el 50 % del haber pueden pedir un contador-partidor dativo al LAJ (art. 92 LJV) o al Notario (art. 1057 CC). Los herederos mayores con libre administración pueden repartir como tengan por conveniente (art. 1058 CC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El art. 404 LEC prevé que el Letrado de la Administración de Justicia admita por decreto (apartado 1) y que dé cuenta al Tribunal para que resuelva sobre la admisión en los casos de su apartado 2, que no menciona expresamente este."
     }
    ],
    "fin": "warning"
@@ -286,11 +294,11 @@ Neg.data.register({
   "fin_inadmitida": {
    "fase": 1,
    "titulo": "Inadmisión por documentación incompleta",
-   "actor": "laj",
+   "actor": "ambos",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "No se admite la solicitud que no va acompañada de los documentos que la ley exige (arts. 403.2 y 782.2 LEC). Puede presentarse de nuevo con la documentación completa."
+     "texto": "No se admite la solicitud que no va acompañada de los documentos que la ley exige (arts. 403.2 y 782.2 LEC). Si el defecto no se subsana en el plazo concedido, el Letrado de la Administración de Justicia da cuenta al Tribunal para que resuelva sobre la admisión (art. 404.2 LEC)."
     }
    ],
    "fin": "error"

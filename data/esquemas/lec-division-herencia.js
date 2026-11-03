@@ -295,7 +295,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Expresa (en documento público o privado) o tácita (actos que suponen necesariamente la voluntad de aceptar) (art. 999 CC). Pedir la partición suele valorarse como aceptación tácita."
+             "t": "Expresa (en documento público o privado) o tácita (actos que suponen necesariamente la voluntad de aceptar) (art. 999 CC)."
             },
             {
              "t": "Irrevocable, salvo vicios del consentimiento o aparición de un testamento desconocido (art. 997 CC); no puede hacerse en parte, a plazo ni condicionalmente (art. 990 CC)."
@@ -422,7 +422,7 @@ Neg.data.register({
              "t": "<strong>Coheredero</strong> (sucede a título universal, art. 660 CC) o <strong>legatario de parte alícuota</strong>. No los legatarios de cosa determinada ni los acreedores (apartado 3)."
             },
             {
-             "t": "No procede si la partición corresponde a un comisario o contador-partidor designado por el testador (art. 1057, párrafo primero, CC), a los coherederos de común acuerdo (art. 1058 CC) o a un contador-partidor dativo nombrado por el Letrado de la Administración de Justicia o el Notario (art. 1057, párrafo segundo, CC; art. 92 LJV; art. 66 LN)."
+             "t": "No procede si la partición corresponde a un comisario o contador-partidor designado por el testador (art. 1057, párrafo primero, CC), a un contador-partidor designado por acuerdo de los coherederos o a un contador-partidor dativo nombrado por el Letrado de la Administración de Justicia o el Notario (art. 1057, párrafo segundo, CC; art. 92 LJV; art. 66 LN)."
             },
             {
              "t": "Si el testador hizo la partición, se pasa por ella en cuanto no perjudique la legítima (art. 1056 CC)."
@@ -445,7 +445,7 @@ Neg.data.register({
              "t": "<strong>Título sucesorio</strong> del solicitante: testamento (copia autorizada); testamento ológrafo adverado y protocolizado ante Notario (arts. 61–63 LN); acta notarial de declaración de herederos abintestato (arts. 55–56 LN); o, si hereda el Estado, la declaración administrativa (art. 958 CC). Son también los títulos sucesorios a efectos del Registro (art. 14 LH)."
             },
             {
-             "t": "Habitualmente se aporta además el certificado del Registro General de Actos de Última Voluntad."
+             "t": "Puede aportarse además el certificado del Registro General de Actos de Última Voluntad."
             }
            ]
           }
@@ -1106,7 +1106,7 @@ Neg.data.register({
              "t": "Manifestación del poder de disposición de las partes (art. 19 LEC)."
             },
             {
-             "t": "Formas habituales del acuerdo: partición convencional (art. 1058 CC), transacción (arts. 1809 y ss. CC) o acuerdo alcanzado en mediación (Ley 5/2012), que formalizado ante Notario es título ejecutivo (art. 25 Ley 5/2012)."
+             "t": "Formas del acuerdo: partición convencional (art. 1058 CC), transacción (arts. 1809 y ss. CC) o acuerdo alcanzado en mediación (Ley 5/2012), que formalizado ante Notario es título ejecutivo (art. 25 Ley 5/2012)."
             },
             {
              "t": "Para negociar, las partes pueden pedir la suspensión del proceso, que acuerda el Letrado de la Administración de Justicia por decreto por un máximo de sesenta días (art. 19.4 LEC)."
