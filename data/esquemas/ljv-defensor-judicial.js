@@ -411,7 +411,7 @@ Neg.data.register({
              "t": "El menor o persona con discapacidad si tuvieren suficiente madurez."
             },
             {
-             "t": "En todo caso, el menor si tuviere <strong>más de 12 años</strong> (umbral del art. 9 LO 1/1996)."
+             "t": "En todo caso, el menor si tuviere <strong>más de 12 años</strong> (art. 30.1 LJV; el art. 9.2 LO 1/1996 considera que tiene suficiente madurez con doce años cumplidos)."
             },
             {
              "t": "El Ministerio Fiscal (siempre, sin excepción)."

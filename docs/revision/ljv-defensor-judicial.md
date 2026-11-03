@@ -103,3 +103,9 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 |---|---|---|---|---|
 | 4 | Art. 50, excusa rechazada | «soporta todos los gastos del expediente» | Solo si dejó de ejercer, los ocasionados por la excusa | LJV 50.3 |
 | 6 | Índice de plazos | Sin cuatro plazos; «normas supletorias» | Añadidos; suprimido | LJV 13, 16.4, 17.3, 51.2; LEC 454 bis |
+
+## Normas no cotejadas (2026-11-03)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 9 | Esquema, comparecencia | «más de 12 años (umbral del art. 9 LO 1/1996)» | Art. 30.1 LJV; el art. 9.2 LO 1/1996, con su literal | LJV 30.1; LOPJM 9.2 |
