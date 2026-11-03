@@ -54,3 +54,11 @@ La guía repite el pie con «Código Civil arts. 166, 249, 264, 269, 287, 1060»
 | 11 | tramitacion_admision, resolucion, res_recurso, fin_denegacion_firme | incompleto | Sin plazos; «responsabilidad penal»; «se agota la vía judicial» | Citación con quince días y comparecencia en treinta (arts. 17.3 y 18.1); auto en cinco días (art. 19.1); causas de utilidad o necesidad (art. 166) y audiencia del art. 290 CC; apelación en veinte días (art. 458 LEC); responsabilidad de los arts. 234 y 294 CC; nueva solicitud si cambian las circunstancias (art. 19.3) | LJV 17–19, 65.5; LEC 458 |
 | 12 | res_gravamen, solicitud_* | impreciso | «Art. 1060 CC» en el gravamen; «sin dictamen no prosperará»; «todo debe acreditarse documentalmente» | Art. 65.4; requisito del dictamen del art. 63.3; documentos del art. 63.1 | LJV 63, 65.4 |
 | 13 | actores, pie, citas | forma | «LAJ», «Ambos»; «LPPPD» | Nombres completos; «Ley 41/2003»; pie con las normas citadas | — |
+
+## Corrección posterior (2026-11-03) · Art. 5.3 Ley 41/2003
+
+Corte del BOE: Ley 41/2003, redacción de la Ley 8/2021. Sin cambio de fondo.
+
+| Recurso | Antes | Ahora | Fuente |
+|---|---|---|---|
+| G16 | «que solicite del Juez la excepción» (redacción anterior) | «que solicite de la autoridad judicial competente la excepción» | Ley 41/2003 art. 5.3 |

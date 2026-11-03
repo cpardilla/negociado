@@ -486,7 +486,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Los constituyentes o el administrador pueden instar al Ministerio Fiscal que solicite del Juez la excepción de la autorización judicial en determinados supuestos, atendiendo a la composición del patrimonio, las circunstancias personales del beneficiario, las necesidades derivadas de su discapacidad, la solvencia del administrador u otras análogas (art. 5.3 Ley 41/2003)."
+     "texto": "Los constituyentes o el administrador pueden instar al Ministerio Fiscal que solicite de la autoridad judicial competente la excepción de la autorización judicial en determinados supuestos, atendiendo a la composición del patrimonio, las circunstancias personales del beneficiario, las necesidades derivadas de su discapacidad, la solvencia del administrador u otras análogas (art. 5.3 Ley 41/2003)."
     },
     {
      "tipo": "nota",
