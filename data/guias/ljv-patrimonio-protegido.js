@@ -138,7 +138,7 @@ Neg.data.register({
   },
   "supuesto_a": {
    "fase": 1,
-   "titulo": "Supuesto a): Constitución con negativa",
+   "titulo": "Supuesto a): Constitución o aportaciones con negativa",
    "actor": "laj",
    "bloques": [
     {
@@ -152,6 +152,10 @@ Neg.data.register({
     {
      "tipo": "nota",
      "texto": "Criterio: la voluntad, deseos y preferencias de la persona con discapacidad. El cargo de administrador no puede recaer, salvo justa causa, en quien se negó injustificadamente (art. 3.2 Ley 41/2003)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El mismo cauce sirve para aprobar aportaciones posteriores cuando quien debe consentir o asentir se niega injustificadamente (art. 56 a) LJV; art. 4 Ley 41/2003)."
     },
     {
      "tipo": "ley",
@@ -599,14 +603,19 @@ Neg.data.register({
    "pregunta": "¿Se interpone recurso de apelación en plazo?",
    "opciones": [
     {
-     "texto": "Sí: Recurso interpuesto",
-     "tono": "t-nota",
+     "texto": "Sí: recurso interpuesto",
+     "tono": "t-plazo",
      "destino": "recurso_pendiente"
     },
     {
-     "texto": "No: Resolución firme",
-     "tono": "t-nota",
+     "texto": "No: firme, y se acordó la medida",
+     "tono": "t-ok",
      "destino": "inscripcion"
+    },
+    {
+     "texto": "No: firme, y se desestimó la solicitud",
+     "tono": "t-nota",
+     "destino": "fin_desestimada"
     }
    ]
   },
@@ -624,17 +633,22 @@ Neg.data.register({
      "texto": "Art. 58.4 LJV · Arts. 458 a 465 LEC"
     }
    ],
-   "pregunta": "¿La Audiencia estima el recurso?",
+   "pregunta": "¿Qué resuelve la Audiencia?",
    "opciones": [
     {
-     "texto": "Sí: Se revoca o modifica la resolución",
+     "texto": "Revoca o modifica la resolución",
      "tono": "t-nota",
-     "destino": "resolucion_estimada"
+     "destino": "fin_recurso_estimado"
     },
     {
-     "texto": "No: Se confirma la resolución",
-     "tono": "t-nota",
+     "texto": "Confirma la medida acordada",
+     "tono": "t-ok",
      "destino": "inscripcion"
+    },
+    {
+     "texto": "Confirma la desestimación",
+     "tono": "t-nota",
+     "destino": "fin_desestimada"
     }
    ]
   },
@@ -689,12 +703,8 @@ Neg.data.register({
      "texto": "Se entrega a la parte testimonio de la resolución para su inscripción o anotación en los registros de los bienes, o para su presentación a las gestoras o sociedades (art. 58.5, párrafo segundo, LJV)."
     },
     {
-     "tipo": "nota",
-     "texto": "La remisión de mandamientos a otros registros se hace por medios electrónicos (art. 22.2 LJV)."
-    },
-    {
      "tipo": "ley",
-     "texto": "Art. 58.5 LJV · Art. 22.2 LJV · Arts. 2 y 18 LH"
+     "texto": "Art. 58.5 LJV · Arts. 2 y 18 LH"
     }
    ],
    "siguiente": "fin_exitoso"
@@ -724,6 +734,38 @@ Neg.data.register({
     }
    ],
    "fin": "success"
+  },
+  "fin_desestimada": {
+   "fase": 5,
+   "titulo": "Fin: solicitud desestimada",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "La desestimación queda firme y no hay nada que comunicar a los registros. No puede iniciarse otro expediente sobre idéntico objeto salvo que cambien las circunstancias (art. 19.3 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 19.3 LJV"
+    }
+   ],
+   "fin": "neutral"
+  },
+  "fin_recurso_estimado": {
+   "fase": 5,
+   "titulo": "Fin: resolución revocada o modificada en apelación",
+   "actor": "ambos",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Se está a lo que resuelva la Audiencia. Si acuerda o mantiene una medida, se hacen las comunicaciones y se entrega el testimonio que correspondan (art. 58.5 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 58.4 y 58.5 LJV"
+    }
+   ],
+   "fin": "neutral"
   }
  },
  "pie": "<strong>Referencias normativas</strong><br>Arts. 2, 13 a 22 y 56 a 58 LJV<br>Arts. 1 a 7 Ley 41/2003<br>Art. 76 LRC<br>Arts. 458 y 461 LEC"

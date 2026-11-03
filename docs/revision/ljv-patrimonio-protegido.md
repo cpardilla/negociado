@@ -49,3 +49,14 @@
 | 11 | postulacion | impreciso | Fundamento en el art. 3 LJV; asistencia jurídica gratuita | Art. 57.3 LJV | LJV 57.3 |
 | 12 | resolucion | incompleto | «Motivación reforzada» | Auto en cinco días (art. 19.1); contenido mínimo del art. 58.3 y del art. 3.3 LPPD, con salvaguardas | LJV 19, 58.3; LPPD 3.3 |
 | 13 | actores, pie | forma | «Letrado de la Administración», «Ambos»; CC arts. 269–270 | Nombres completos; pie con las normas citadas | — |
+
+## Corrección posterior (2026-11-03) · Relectura, octava tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda8.md`, aplicados con el visto bueno del propietario.
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 5 | recursos, recurso_pendiente; nuevo fin_desestimada | La desestimación firme acababa en «medida acordada» | Fin propio | LJV 19.3, 58.5 |
+| 6 | recurso_pendiente; nuevo fin_recurso_estimado | Revocar volvía a preguntar por el recurso | Fin propio | LJV 58.4 |
+| 7 | supuesto_a | Solo la constitución | También aportaciones | LJV 56 a; Ley 41/2003, art. 4 |
+| 8 | inscripcion_registrables | «remisión de mandamientos» | Suprimido | LJV 58.5 |
