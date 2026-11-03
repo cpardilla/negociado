@@ -257,7 +257,7 @@
   window.addEventListener("beforeprint", () => {
     const sheet = document.querySelector("#view [data-sheet]");
     const w = Neg.where();
-    if (!sheet || w.name !== "guia" || !states[w.args[0]] || !Neg.data.get) return;
+    if (!sheet || w.name !== "guia" || !states[w.args[0]]) return;
     const rec = Neg.data.get("guia", w.args[0]);
     if (rec) sheet.innerHTML = sheetHtml(rec, states[rec.id]);
   });

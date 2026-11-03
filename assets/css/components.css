@@ -98,11 +98,6 @@
   background: var(--tone-bg);
   border-color: var(--tone-bd);
 }
-.tag-on-ink {
-  color: var(--on-ink);
-  background: rgba(248, 245, 237, 0.08);
-  border-color: rgba(248, 245, 237, 0.18);
-}
 /* Filter chips: a tag that toggles */
 .chip {
   cursor: pointer;
@@ -290,12 +285,6 @@
 }
 
 /* ── Esquema card ───────────────────────────────────────────────────────── */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: var(--sp-4);
-  align-items: start;
-}
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1511,9 +1500,6 @@ a.phase:hover {
   }
 }
 @media (max-width: 560px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
   /* Filters wrap (no row cut off at the edge, no scrolling strip), in a smaller size so that
      they do not take half the screen. */
   .toolbar .chips {

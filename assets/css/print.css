@@ -19,8 +19,7 @@
   .toolbar,
   .card-toggle,
   .step-nav,
-  .segmented,
-  .no-print {
+  .segmented {
     display: none !important;
   }
   .content {
@@ -40,12 +39,6 @@
   }
   .card .card-body {
     display: grid;
-  }
-  .cards {
-    display: block;
-  }
-  .cards > * + * {
-    margin-top: 10pt;
   }
   .guide,
   .law {
