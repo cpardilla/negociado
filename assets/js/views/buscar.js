@@ -34,7 +34,9 @@
     if (input) input.value = q;
     el.innerHTML = Neg.shell.head({ crumbs: [["Búsqueda"]], title: q ? `Resultados de «${q}»` : "Búsqueda" }) + Neg.message("Buscando…");
     const index = await Neg.data.load("catalogo", "busqueda");
-    const words = Neg.fold(q).split(/\s+/).filter(Boolean);
+    // Signs around a word are not part of it: «¿caución?» looks for «caución». The dot and the
+    // bracket stay, because they belong to citations («art. 140.1», «42 bis a)»).
+    const words = Neg.fold(q).split(/\s+/).map((w) => w.replace(/^[¿?¡!«»"'“”,;:&]+|[¿?¡!«»"'“”,;:&]+$/g, "")).filter(Boolean);
     if (!words.length) {
       el.querySelector(".message").outerHTML = Neg.message("Escribe qué buscar", "Por ejemplo: «conciliación», «art. 140», «caución», «emancipación».");
       return;

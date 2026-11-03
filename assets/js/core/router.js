@@ -18,10 +18,19 @@
 
   /** Current address, parsed. */
   Neg.where = () => {
-    const raw = decodeURIComponent(location.hash.replace(/^#\/?/, ""));
-    const [path, qs] = raw.split("?");
-    const parts = path.split("/").filter(Boolean);
-    return { name: parts[0] || "inicio", args: parts.slice(1), query: new URLSearchParams(qs || ""), path };
+    // Split first, decode each piece after: what a search or an id contains ("?", "&", "/", "+") is
+    // text, not part of the address. A stray "%" is left as it is, never an error.
+    const raw = location.hash.replace(/^#\/?/, "");
+    const cut = raw.indexOf("?");
+    const decode = (t) => {
+      try {
+        return decodeURIComponent(t);
+      } catch {
+        return t;
+      }
+    };
+    const parts = (cut < 0 ? raw : raw.slice(0, cut)).split("/").filter(Boolean).map(decode);
+    return { name: parts[0] || "inicio", args: parts.slice(1), query: new URLSearchParams(cut < 0 ? "" : raw.slice(cut + 1)), path: parts.join("/") };
   };
 
   /** Address of a place: Neg.href("ley", "LJV", "140") → "#/ley/LJV/140". */

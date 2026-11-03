@@ -473,3 +473,30 @@ test("related-law blocks link to the law they name; a law the app does not carry
   assert.deepEqual(r.excepcion, ["LEC 797"], "la excepción nombrada lleva a su ley");
   assert.ok(r.g17.includes("(art. 194.2.º y 3.º CC) CC"), "G17: Código Civil, la cita entera");
 });
+
+test("search: what is typed is text, whatever its signs; a stray % in the address is no error", { timeout: 60000 }, async () => {
+  const r = await page(
+    `const ask = async (q) => {
+       const input = document.querySelector('input[name="q"]');
+       input.value = q;
+       input.form.requestSubmit();
+       await wait(900);
+       return { h1: document.querySelector('#view h1').textContent, hits: document.querySelectorAll('.results li').length };
+     };
+     const plain = await ask('caución');
+     const signs = await ask('¿caución?');
+     const amp = await ask('Sección Civil & Mercantil');
+     const plus = await ask('art+5');
+     location.hash = '#/buscar?q=%'; await wait(900);
+     const stray = document.querySelector('#view h1').textContent;
+     await go('#/ley/LEC/778%20quater', 1500);
+     const spaced = document.querySelector('.article h2').textContent;
+     return { plain, signs, amp, plus, stray, spaced };`
+  );
+  assert.ok(r.plain.hits > 0);
+  assert.deepEqual(r.signs, { h1: "Resultados de «¿caución?»", hits: r.plain.hits }, "los signos no cuentan como parte de la palabra");
+  assert.equal(r.amp.h1, "Resultados de «Sección Civil & Mercantil»");
+  assert.equal(r.plus.h1, "Resultados de «art+5»");
+  assert.equal(r.stray, "Resultados de «%»");
+  assert.match(r.spaced, /^Artículo 778 quáter/);
+});
