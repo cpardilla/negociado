@@ -1,6 +1,6 @@
 # Relectura, tercera tanda (2026-11-03)
 
-E y G de la filiación no matrimonial (arts. 23-26 LJV) y de las subastas voluntarias (arts. 108-111 LJV), más una búsqueda por patrón en las demás guías de la LJV. Corte del BOE: descarga del 2026-11-03. **Sin cambios en la app: pendiente del visto bueno del propietario.**
+E y G de la filiación no matrimonial (arts. 23-26 LJV) y de las subastas voluntarias (arts. 108-111 LJV), más una búsqueda por patrón en las demás guías de la LJV. Corte del BOE: descarga del 2026-11-03. **Aplicados con el visto bueno del propietario; detalle en el registro de cada recurso.** Decisiones: n.º 11, «la ley no aclara» la inscripción durante la apelación; n.º 18, vista al solicitante si la postura no cubre el tipo mínimo, con aviso de la ambigüedad. En el n.º 5 se cotejó después el art. 2 LO 1/1996.
 
 Cotejado con el texto: arts. 16-20, 22-26, 28, 29, 31, 32 y 108-111 LJV; arts. 121, 123-126 y 177 CC; arts. 640, 641, 648, 661, 670 y 454 bis LEC (de estos seis, solo el principio salvo el 641); art. 85 LOPJ (principio). No cotejado: TRLC, LO 1/1996, CDN, arts. 109, 131 y ss., 143, 154 y 807 CC, art. 10 LJV, art. 44 LRC, Ley 19/2015.
 
