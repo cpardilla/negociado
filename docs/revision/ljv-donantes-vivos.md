@@ -59,3 +59,10 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 11 | fin_incompetencia_*, fin_solicitud_incompleta | Actor LAJ | Juez | LJV 16 |
 | 12 y 14 | requisitos_donante | Sin posibilidades de éxito ni quién decide | Añadidos | RD 1723/2012, art. 8.2; LJV 17.1 |
 | 13 | inicio, fin_oposicion, fin_consentimiento_invalido, fin_revocacion | Glosas sin fuente | Suprimidas | Sin fuente |
+
+## Normas no cotejadas (2026-11-03)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 7 | Guía (3 lugares) | «Directiva 2010/45/UE» | «Directiva 2010/53/UE» | RD 1723/2012, preámbulo |
+| 8 | Guía | «ante una instancia oficial» | «ante una autoridad» | Convenio de Oviedo, art. 19.2 |

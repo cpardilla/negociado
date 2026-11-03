@@ -45,7 +45,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 78-80 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Directiva 2010/45/UE"
+     "texto": "Ley 15/2015, arts. 78-80 · Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Directiva 2010/53/UE"
     }
    ],
    "pregunta": "¿Quién promueve el inicio del expediente?",
@@ -439,7 +439,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Conforme al Convenio de Oviedo, el consentimiento debe ser expreso y específicamente otorgado, por escrito o ante una instancia oficial. La extracción de órganos sólidos de donante vivo se limita al interés terapéutico del receptor cuando no se disponga de órgano de persona fallecida ni de alternativa terapéutica de comparable eficacia."
+     "texto": "Conforme al Convenio de Oviedo, el consentimiento debe ser expreso y específicamente otorgado, por escrito o ante una autoridad. La extracción de órganos sólidos de donante vivo se limita al interés terapéutico del receptor cuando no se disponga de órgano de persona fallecida ni de alternativa terapéutica de comparable eficacia."
     },
     {
      "tipo": "ley",
@@ -805,7 +805,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Convenio de Oviedo · Directiva 2010/45/UE"
+     "texto": "Ley 30/1979, art. 4 · RD 1723/2012, art. 8 · Convenio de Oviedo · Directiva 2010/53/UE"
     }
    ],
    "fin": "error"
@@ -855,5 +855,5 @@ Neg.data.register({
    "fin": "warning"
   }
  },
- "pie": "<strong>Referencias normativas</strong><br>Arts. 16, 19, 20 y 78 a 80 LJV<br>Arts. 2 y 4 Ley 30/1979<br>Art. 8 RD 1723/2012<br>Art. 156 bis CP<br>Convenio de Oviedo, art. 19 · Directiva 2010/45/UE"
+ "pie": "<strong>Referencias normativas</strong><br>Arts. 16, 19, 20 y 78 a 80 LJV<br>Arts. 2 y 4 Ley 30/1979<br>Art. 8 RD 1723/2012<br>Art. 156 bis CP<br>Convenio de Oviedo, art. 19 · Directiva 2010/53/UE"
 });
