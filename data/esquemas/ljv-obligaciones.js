@@ -62,7 +62,7 @@ Neg.data.register({
   },
   {
    "titulo": "Artículos 96 y 97 — Fijación judicial del plazo",
-   "recuento": "4 artículos visibles",
+   "recuento": "2 artículos",
    "bloques": [
     {
      "tarjeta": {
@@ -407,9 +407,6 @@ Neg.data.register({
             },
             {
              "t": "Deberá acreditar en todo caso el anuncio de la consignación al acreedor y demás interesados en la obligación, tal y como exige sin excepción el artículo 1177 del Código Civil."
-            },
-            {
-             "t": "El ofrecimiento de pago y el anuncio de la consignación son trámites distintos que, aun realizados con unidad de acto, deben diferenciarse y documentarse separadamente, especialmente cuando se instrumenten mediante requerimiento notarial."
             }
            ]
           }
@@ -426,7 +423,7 @@ Neg.data.register({
              "t": "Con la solicitud se habrá de efectuar la puesta a disposición de la cosa debida, sin perjuicio de que posteriormente pueda designarse como depositario al propio promotor."
             },
             {
-             "t": "Concordancia con el artículo 1178 del Código Civil, conforme al cual la consignación se hará depositando las cosas debidas a disposición de la Autoridad judicial, con notificación posterior a los interesados."
+             "t": "Concordancia con el artículo 1178 del Código Civil: la consignación se hace por el deudor o por un tercero, poniendo las cosas debidas a disposición del Juzgado o del Notario."
             }
            ]
           }
@@ -463,7 +460,7 @@ Neg.data.register({
              "t": "Cuando los interesados comparecidos retirasen la cosa debida aceptando expresamente la consignación, el Letrado de la Administración de Justicia dictará decreto teniéndola por aceptada, con los efectos legales procedentes, mandando cancelar la obligación y, en su caso, la garantía, si así lo solicitara el promotor."
             },
             {
-             "t": "Proyección del artículo 1180 del Código Civil: hecha debidamente la consignación, podrá el deudor pedir al Juez que mande cancelar la obligación."
+             "t": "Proyección del artículo 1180 del Código Civil: la aceptación de la consignación por el acreedor o la declaración judicial de que está bien hecha extingue la obligación, y el deudor puede pedir que se mande cancelar la obligación y la garantía."
             }
            ]
           }
@@ -591,7 +588,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Oposición y conversión en contencioso",
-      "resumen": "La oposición del interesado transforma el cauce de jurisdicción voluntaria en contencioso, aplicándose el juicio verbal o la comparecencia con práctica de prueba ante el Juez.",
+      "resumen": "En la fijación del plazo, la oposición hace contencioso el expediente (juicio verbal). En la consignación, el rechazo lleva, si el promotor la mantiene, a la comparecencia ante el Juez.",
       "cuerpo": [
        {
         "apartado": {
@@ -617,7 +614,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "En el expediente de consignación, la oposición se canaliza a través del mantenimiento de la consignación: el Letrado de la Administración de Justicia citará al promotor, al acreedor y a aquellos que pudieran estar interesados a una comparecencia a celebrar ante el Juez, en la que serán oídos y se practicarán aquellas pruebas que hubieren sido propuestas y acordadas."
+             "t": "En la consignación, el rechazo de los interesados no hace contencioso el expediente; si el promotor insta el mantenimiento de la consignación, el Letrado de la Administración de Justicia citará al promotor, al acreedor y a aquellos que pudieran estar interesados a una comparecencia a celebrar ante el Juez, en la que serán oídos y se practicarán aquellas pruebas que hubieren sido propuestas y acordadas."
             },
             {
              "t": "El Juez resolverá declarando o no estar bien hecha la consignación, con los efectos legales procedentes en cada caso."
@@ -634,7 +631,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "En ambos Capítulos, la oposición transforma el cauce de jurisdicción voluntaria: el expediente deviene contencioso (artículo 97.3) o, en el caso de la consignación, se resuelve tras la comparecencia ante el Juez con práctica de prueba (artículos 99.4 y 99.5)."
+             "t": "Solo en la fijación del plazo el expediente deviene contencioso (artículo 97.3); en la consignación se resuelve tras la comparecencia ante el Juez con práctica de prueba (artículos 99.4 y 99.5)."
             },
             {
              "t": "La conjunción de los artículos 98 y 99 de la Ley 15/2015 con los artículos 1176 a 1181 del Código Civil configura un régimen dual sustantivo-procesal en el que el efecto liberatorio exige siempre aceptación del acreedor o declaración judicial de que la consignación está bien hecha."
@@ -658,7 +655,7 @@ Neg.data.register({
   },
   {
    "titulo": "Indice de plazos procesales",
-   "recuento": "3 trámites",
+   "recuento": "5 trámites",
    "plegada": true,
    "bloques": [
     {
@@ -747,10 +744,10 @@ Neg.data.register({
       "tono": "c3",
       "items": [
        {
-        "t": "Abogado (no preceptivo, LJV art. 3)"
+        "t": "Abogado (no preceptivo, LJV arts. 97.2 y 98.3)"
        },
        {
-        "t": "Procurador (no preceptivo, LJV art. 3)"
+        "t": "Procurador (no preceptivo, LJV arts. 97.2 y 98.3)"
        },
        {
         "t": "Notario (vía alternativa de consignación, LN art. 69)"

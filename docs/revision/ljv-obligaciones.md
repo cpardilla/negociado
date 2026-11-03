@@ -66,3 +66,12 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 9 | fp_admision, cg_comparecencia, cg_resolucion | Sin plazos ni incomparecencia | Añadidos | LJV 13, 17.3, 18.1, 18.2.1.ª, 19.1 |
 | 10 | cg_actos_previos, fin_aceptacion_cg, fin_devolucion_autorizada | Glosas sin fuente | Suprimidas | Sin fuente |
 | 11 | inicio | «supletoria» | Suprimido | LJV 13 |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 6 y 7 | Art. 99 | Arts. 1178 y 1180 CC en redacción derogada | Redacción vigente | CC 1178, 1180 |
+| 8 | Arts. 97.3 y 99.4-5 | «En ambos Capítulos, la oposición transforma el cauce» | Solo en el art. 97.3 | LJV 97.3, 99.4 |
+| 10 | Art. 99 | «deben documentarse separadamente» | Suprimido | Sin fuente |
+| 11 | Mapa, índice, cabecera | «LJV art. 3»; recuentos | Corregidos | LJV 97.2, 98.3 |
