@@ -7,6 +7,7 @@
   { "clave": "LRC", "id": "BOE-A-2011-12628", "alias": ["Ley 20/2011"] },
   { "clave": "LH", "id": "BOE-A-1946-2453", "alias": [] },
   { "clave": "RH", "id": "BOE-A-1947-3843", "alias": [] },
+  { "clave": "RN", "id": "BOE-A-1944-6578", "alias": ["Reglamento Notarial"] },
   { "clave": "LN", "id": "BOE-A-1862-4073", "alias": [] },
   { "clave": "CP", "id": "BOE-A-1995-25444", "alias": ["LO 10/1995", "Ley Orgánica 10/1995"] },
   { "clave": "LSC", "id": "BOE-A-2010-10544", "alias": ["RDL 1/2010", "RDLeg 1/2010", "Real Decreto Legislativo 1/2010"] },

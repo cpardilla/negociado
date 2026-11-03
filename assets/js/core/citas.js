@@ -49,6 +49,7 @@
     ["LH", /^(?:LH\b|Ley Hipotecaria\b)/],
     ["RH", /^(?:RH\b|Reglamento Hipotecario\b)/],
     ["LN", /^(?:LN\b|Ley del Notariado\b)/],
+    ["RN", /^(?:RN\b|Reglamento Notarial\b)/],
     ["CCom", /^(?:CCom\b|C[oó]digo de Comercio\b)/],
     ["LSC", /^(?:LSC\b|Ley de Sociedades de Capital\b)/],
     ["TRLC", /^(?:TRLC\b|LC\b|Ley Concursal\b)/],
