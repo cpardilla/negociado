@@ -183,8 +183,7 @@ Neg.data.register({
      "titulo": "Documentación preceptiva — OBLIGATORIA",
      "items": [
       "✦ Documentos que acrediten la necesidad de adoptar medidas de apoyo",
-      "✦ Dictamen pericial de profesionales especializados del ámbito SOCIAL",
-      "✦ Dictamen pericial de profesionales especializados del ámbito SANITARIO",
+      "✦ Dictamen pericial de los profesionales especializados de los ámbitos SOCIAL Y SANITARIO",
       "✦ El dictamen debe recomendar las medidas de apoyo idóneas en el caso concreto"
      ],
      "marcar": true
@@ -198,10 +197,6 @@ Neg.data.register({
       "Certificaciones o informes médicos adicionales que acrediten la situación"
      ],
      "marcar": true
-    },
-    {
-     "tipo": "nota",
-     "texto": "El dictamen debe ser emitido por trabajadores sociales, psicólogos, médicos forenses, neurólogos, psiquiatras u otros profesionales especializados."
     },
     {
      "tipo": "nota",
@@ -233,7 +228,7 @@ Neg.data.register({
      "items": [
       "Legitimación del promotor (art. 42 bis a) apdo. 3 LJV)",
       "Competencia territorial del Juzgado (residencia de la persona con discapacidad)",
-      "Aportación del dictamen pericial social Y sanitario",
+      "Aportación del dictamen pericial de los ámbitos social y sanitario",
       "Aportación de documentación acreditativa de la necesidad de las medidas",
       "Ausencia de resolución firme previa sobre el mismo objeto sin cambio de circunstancias (art. 19.3 LJV)",
       "Inexistencia de proceso contencioso pendiente sobre el mismo objeto (art. 6.2 LJV)",
@@ -516,7 +511,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La persona con discapacidad puede actuar con su propia defensa y representación (art. 42 bis a) apdo. 4 LJV), sin necesidad de Abogado y Procurador. Esta es una regla especial favorable."
+     "texto": "La persona con discapacidad puede actuar con su propia defensa y representación, designándolas ella misma (art. 42 bis a) apdo. 4 LJV)."
     },
     {
      "tipo": "nota",
@@ -534,7 +529,7 @@ Neg.data.register({
    "pregunta": "¿Puede la persona con discapacidad actuar con su propia defensa y representación?",
    "opciones": [
     {
-     "texto": "Sí — la persona puede designar o ya ha designado Abogado y/o Procurador, o ejercerá su propia defensa",
+     "texto": "Sí — la persona designa por sí misma su defensa y representación",
      "tono": "t-ok",
      "destino": "adaptaciones"
     },
@@ -639,8 +634,12 @@ Neg.data.register({
      "texto": "Principio de subsidiariedad: las medidas judiciales solo proceden si las voluntarias o informales son insuficientes."
     },
     {
+     "tipo": "nota",
+     "texto": "Regla general (art. 13 LJV): si el solicitante no asiste, se acuerda el archivo y se le tiene por desistido; si no asiste otro citado, se celebra el acto (art. 18.2.1.ª LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 42 bis b) apdos. 3 y 4 LJV · Art. 7 bis LJV · Arts. 255–262 CC"
+     "texto": "Art. 42 bis b) apdos. 3 y 4 LJV · Arts. 7 bis, 13 y 18.2 LJV · Arts. 255–262 CC"
     }
    ],
    "pregunta": "¿La persona con discapacidad opta por una medida alternativa de apoyo (voluntaria o comunitaria) tras ser informada por la Autoridad Judicial?",
@@ -1051,10 +1050,6 @@ Neg.data.register({
      "marcar": true
     },
     {
-     "tipo": "nota",
-     "texto": "La solicitud debe motivar el cambio de circunstancias que justifica la revisión anticipada."
-    },
-    {
      "tipo": "ley",
      "texto": "Art. 42 bis c) apdo. 1, párr. 2.º LJV · Art. 268 CC"
     }
@@ -1120,14 +1115,6 @@ Neg.data.register({
       "Incorporar el testimonio al expediente de revisión y continuar la tramitación"
      ],
      "marcar": true
-    },
-    {
-     "tipo": "nota",
-     "texto": "Mientras se recibe el testimonio, el procedimiento de revisión queda en suspenso."
-    },
-    {
-     "tipo": "aviso",
-     "texto": "Si el juzgado originario no remite el testimonio en plazo, podrá requerirse judicialmente su envío."
     },
     {
      "tipo": "ley",
@@ -1270,8 +1257,8 @@ Neg.data.register({
      "texto": "El nuevo auto debe respetar los mismos principios rectores: necesidad, proporcionalidad, voluntad de la persona, subsidiariedad y flexibilidad (art. 249 CC)."
     },
     {
-     "tipo": "plazo",
-     "texto": "El auto de revisión fijará un nuevo plazo para la próxima revisión periódica."
+     "tipo": "nota",
+     "texto": "Las medidas siguen sujetas a revisión periódica (art. 268 CC)."
     },
     {
      "tipo": "ley",
@@ -1461,11 +1448,11 @@ Neg.data.register({
     },
     {
      "tipo": "lista",
-     "titulo": "Para reiniciar el procedimiento:",
+     "titulo": "Si persiste la necesidad",
      "items": [
       "Verificar si persisten los hechos que justifican medidas de apoyo",
       "Actualizar dictamen pericial si ha transcurrido tiempo significativo",
-      "Promover nuevo expediente ante el juzgado de la residencia actual"
+      "Instar el proceso contencioso (art. 42 bis b) apdo. 5 LJV; arts. 756 ss. LEC)"
      ]
     },
     {

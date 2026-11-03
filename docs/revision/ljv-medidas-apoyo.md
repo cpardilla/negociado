@@ -75,3 +75,13 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | # | Paso | Antes | Ahora | Fuente |
 |---|---|---|---|---|
 | 25 | admision, subsanacion, fin_inadmision | Opción «Inadmitir» y fin con actor LAJ | Da cuenta al Juez, actor Juez | LJV 2.3, 16.4, 17.1 |
+
+### Quinta tanda de la relectura (2026-11-03), guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 13 | postulacion | «sin necesidad de Abogado y Procurador» | Designa ella su defensa y representación | LJV 42 bis a.4 |
+| 15 | comparecencia | Sin incomparecencia | Nota con la regla general | LJV 13, 18.2.1.ª |
+| 16 | documentacion, admision | Dos dictámenes; lista de profesiones | Un dictamen de ambos ámbitos; lista suprimida | LJV 42 bis b.1 |
+| 18 | remision_testimonio, revision_anticipada, nuevo_auto | Contenidos sin fuente | Suprimidos o corregidos | CC 268 |
+| 19 | fin_medidas_extintas | «Promover nuevo expediente» | Proceso contencioso | LJV 42 bis b.5; LEC 756.1 |
