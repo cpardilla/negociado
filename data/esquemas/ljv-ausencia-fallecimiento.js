@@ -130,7 +130,7 @@ Neg.data.register({
              "t": "El Ministerio Fiscal (de oficio o por denuncia); el cónyuge no separado legalmente; la persona unida por análoga relación de afectividad a la conyugal; los parientes consanguíneos hasta el cuarto grado; cualquiera que fundadamente pueda tener sobre los bienes del desaparecido algún derecho ejercitable en vida de este o dependiente de su muerte."
             },
             {
-             "t": "Fallecimiento del arts. 194.2.º y 194.3.º CC: <strong>solo a instancia del Ministerio Fiscal</strong>."
+             "t": "Fallecimiento de los arts. 194.2.º y 194.3.º CC: <strong>solo a instancia del Ministerio Fiscal</strong>."
             },
             {
              "t": "Para la declaración de ausencia, el cónyuge, los parientes hasta el cuarto grado y el Fiscal tienen la <strong>obligación</strong> de promoverla (art. 182 CC)."

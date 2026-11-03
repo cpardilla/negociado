@@ -77,3 +77,9 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 25 | noticias_existencia | «por falta de oposición» | «la resolución que proceda» | LJV 75.2 |
 | 26 | fin_defensor_ratificado, medidas_subsistencia, defensor_ordinario, defensor_judicial | «retroactiva», «simplificada», citación de testigos | Texto de la ley | LJV 69, 72.1 |
 | 27 | sucesion_notarial, presentacion_ausente, fin_revocacion_* | Contenidos sin fuente | Suprimidos o rotulados como ejemplo | LJV 75.1; CC 198 |
+
+## Normas no cotejadas (2026-11-03)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 12 | Esquema, legitimación | «del arts.» | «de los arts.» | Errata |
