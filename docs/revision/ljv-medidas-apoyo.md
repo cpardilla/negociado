@@ -85,3 +85,12 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 16 | documentacion, admision | Dos dictámenes; lista de profesiones | Un dictamen de ambos ámbitos; lista suprimida | LJV 42 bis b.1 |
 | 18 | remision_testimonio, revision_anticipada, nuevo_auto | Contenidos sin fuente | Suprimidos o corregidos | CC 268 |
 | 19 | fin_medidas_extintas | «Promover nuevo expediente» | Proceso contencioso | LJV 42 bis b.5; LEC 756.1 |
+
+### Quinta tanda de la relectura (2026-11-03), esquema
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 12 | Revisión periódica, índice de plazos | «no existe plazo legal predeterminado» | Máximo tres años; excepcionalmente, seis | CC 268 |
+| 13 | Mapa de actores, ecosistema | «autodefenderse» | No es previsible que designe su defensa | LJV 42 bis a.4 |
+| 14 | Traslado, índice de plazos | Sin diez días, auto ni apelación | Añadidos | LJV 42 bis c.3, 19.1; LEC 458.1 |
+| 17 | Legitimación | «(hijos/as)», «(padres/madres)», lista de funcionarios | Suprimidos | LJV 42 bis a.3 |

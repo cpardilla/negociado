@@ -117,10 +117,10 @@ Neg.data.register({
              "t": "Actor Su <strong>cónyuge no separado de hecho o legalmente</strong> o quien se encuentre en situación de hecho asimilable."
             },
             {
-             "t": "Actor Sus <strong>descendientes</strong> (hijos/as)."
+             "t": "Actor Sus <strong>descendientes</strong>."
             },
             {
-             "t": "Actor Sus <strong>ascendientes</strong> (padres/madres)."
+             "t": "Actor Sus <strong>ascendientes</strong>."
             },
             {
              "t": "Actor Sus <strong>hermanos</strong>."
@@ -145,7 +145,7 @@ Neg.data.register({
            "nota": {
             "tono": "t-nota",
             "etiqueta": "",
-            "texto": "<strong>Obligación legal para autoridades y funcionarios</strong>Las autoridades y funcionarios públicos que, por razón de sus cargos, conocieran la existencia de dichos hechos <strong>deberán</strong> ponerlo en conocimiento del Ministerio Fiscal. Se trata de un deber jurídico, no meramente facultativo. Incluye trabajadores sociales, sanitarios, educativos, etc."
+            "texto": "<strong>Obligación legal para autoridades y funcionarios</strong>Las autoridades y funcionarios públicos que, por razón de sus cargos, conocieran la existencia de dichos hechos <strong>deberán</strong> ponerlo en conocimiento del Ministerio Fiscal. Se trata de un deber jurídico, no meramente facultativo."
            }
           }
          ]
@@ -413,7 +413,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Las medidas son objeto de <strong>revisión periódica</strong> en el plazo y la forma que disponga el propio auto. El auto resolutorio debe fijar el plazo de revisión (no existe plazo legal predeterminado)."
+             "t": "Las medidas son objeto de <strong>revisión periódica</strong> en el plazo y la forma que disponga el propio auto. El auto debe fijarlo: máximo de tres años; excepcionalmente, de forma motivada, hasta seis (art. 268 CC)."
             }
            ]
           }
@@ -479,7 +479,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Del resultado de las actuaciones se da traslado a la persona con discapacidad, quien ejerza el apoyo, el MF y los interesados personados en el expediente previo."
+             "t": "Del resultado de las actuaciones se da traslado a la persona con discapacidad, quien ejerza el apoyo, el MF y los interesados personados en el expediente previo, que pueden alegar y aportar prueba en diez días."
             },
             {
              "t": "Recibidas las alegaciones y practicada la prueba, la autoridad judicial dicta <strong>nuevo auto</strong> con el contenido que proceda. Contenidos posibles:",
@@ -535,7 +535,7 @@ Neg.data.register({
   },
   {
    "titulo": "Indice de plazos procesales",
-   "recuento": "4 trámites",
+   "recuento": "7 trámites",
    "plegada": true,
    "bloques": [
     {
@@ -562,9 +562,24 @@ Neg.data.register({
         "Art. 42 bis c) LJV"
        ],
        [
-        "Revisión periódica de las medidas (plazo fijado por el propio auto, sin mínimo legal)",
-        "El fijado en el auto",
+        "Revisión periódica de las medidas (plazo fijado por el propio auto)",
+        "Máximo 3 años; excepcionalmente, hasta 6",
+        "Art. 42 bis c) LJV; art. 268 CC"
+       ],
+       [
+        "Alegaciones y prueba tras el traslado, en la revisión",
+        "10 días",
         "Art. 42 bis c) LJV"
+       ],
+       [
+        "Auto desde la terminación de la comparecencia o la última diligencia",
+        "5 días",
+        "Art. 19.1 LJV"
+       ],
+       [
+        "Recurso de apelación contra el auto",
+        "20 días",
+        "Art. 20.2 LJV; art. 458.1 LEC"
        ]
       ]
      }
@@ -602,7 +617,7 @@ Neg.data.register({
         "t": "Persona con discapacidad (sujeto del expediente; puede ser promotora)"
        },
        {
-        "t": "Defensor judicial (si la persona no puede autodefenderse)"
+        "t": "Defensor judicial (si no es previsible que designe por sí misma su defensa y representación)"
        },
        {
         "t": "Abogado y Procurador del defensor judicial (art. 42 bis a) in fine)"
@@ -622,10 +637,10 @@ Neg.data.register({
         "t": "Cónyuge / conviviente (no separado de hecho ni de derecho)"
        },
        {
-        "t": "Descendientes (hijos/as)"
+        "t": "Descendientes"
        },
        {
-        "t": "Ascendientes (padres/madres)"
+        "t": "Ascendientes"
        },
        {
         "t": "Hermanos"
@@ -697,7 +712,7 @@ Neg.data.register({
      "norma": {
       "ley": "LJV 15/2015 — preceptos conexos",
       "titulo": "Normas de la misma ley aplicables al Cap. III bis",
-      "texto": "<strong>Art. 7 bis</strong> — ajustes procesales para personas con discapacidad: comunicación, lenguaje claro, facilitadores; referenciado expresamente en art. 42 bis a).<br><strong>Art. 27</strong> — defensor judicial: nombramiento cuando la persona no puede autodefenderse.<br><strong>Cap. IV LJV</strong> — tutela (solo menores), curatela y guarda de hecho: procedimientos específicos inmediatamente posteriores al Cap. III bis.",
+      "texto": "<strong>Art. 7 bis</strong> — ajustes procesales para personas con discapacidad: comunicación, lenguaje claro, facilitadores; referenciado expresamente en art. 42 bis a).<br><strong>Art. 27</strong> — defensor judicial: nombramiento cuando no es previsible que la persona designe por sí misma su defensa y representación.<br><strong>Cap. IV LJV</strong> — tutela (solo menores), curatela y guarda de hecho: procedimientos específicos inmediatamente posteriores al Cap. III bis.",
       "etiqueta": "Ley de procedimiento",
       "tono": "t-ok"
      }
