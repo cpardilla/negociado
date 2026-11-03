@@ -173,3 +173,10 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de la relectura (`relectura-20
 | E01 | Art. 257; art. 260 | sin fuente | «suele aplicarse por analogía»; «habituales en la práctica» | «cf. … art. 53.2 LEC»; «orientativos» | Decisión 24 |
 | G01 | negativa_tipo | incompleto | Sin salida para los núms. 9.º a 11.º | Paso `medida_otras` | LEC 261, 263 |
 | G01 | conflicto_competencia | incompleto | Sin salida si el tribunal indicado acepta | Paso `fin_abstencion` | LEC 257.2 |
+
+## Normas no cotejadas (2026-11-03)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 2 | Esquema, art. 256.1.5.º bis | «Remisión expresa a la Ley 41/2002» | La LEC dice «la ley»; esa ley es hoy la 41/2002 | LEC 256.1.5.º bis |
+| 10 | Esquema, negativa | «delito de desobediencia» | «desobediencia grave» | CP 556.1 |

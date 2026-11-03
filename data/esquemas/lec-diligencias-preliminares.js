@@ -410,7 +410,7 @@ Neg.data.register({
        }
       ],
       "titulo": "Petición de historia clínica",
-      "resumen": "Permite solicitar la historia clínica al centro sanitario o profesional que la custodie, en las condiciones y con el contenido que establece la ley. Remisión expresa a la Ley 41/2002, de 14 de noviembre, reguladora de la autonomía del paciente. Se trata de datos especialmente protegidos (art. 9 RGPD: datos de salud).",
+      "resumen": "Permite solicitar la historia clínica al centro sanitario o profesional que la custodie, en las condiciones y con el contenido que establece la ley. Esa ley es hoy la Ley 41/2002, de 14 de noviembre, reguladora de la autonomía del paciente. Se trata de datos especialmente protegidos (art. 9 RGPD: datos de salud).",
       "cuerpo": [
        {
         "apartado": {
@@ -1494,7 +1494,7 @@ Neg.data.register({
         "nota": {
          "tono": "t-info",
          "etiqueta": "Conexiones normativas",
-         "texto": "Art. 556 CP: delito de desobediencia a la autoridad judicial si el requerido incumple la orden judicial. Art. 711 LEC: multas coercitivas. Art. 217.7 LEC: en el juicio posterior, el tribunal tiene en cuenta la disponibilidad y facilidad probatoria de cada parte."
+         "texto": "Art. 556 CP: delito de desobediencia grave a la autoridad judicial si el requerido incumple la orden judicial. Art. 711 LEC: multas coercitivas. Art. 217.7 LEC: en el juicio posterior, el tribunal tiene en cuenta la disponibilidad y facilidad probatoria de cada parte."
         }
        }
       ],
