@@ -312,10 +312,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Socios con participación directa o indirecta en el capital. La ley no exige una participación mínima."
-            },
-            {
-             "t": "Los herederos del socio fallecido que aún no hayan inscrito la adquisición. Comuneros de bienes proindivisos."
+             "t": "El socio o comunero (art. 256.1.4.º LEC). La ley no exige una participación mínima."
             }
            ]
           }
@@ -516,7 +513,7 @@ Neg.data.register({
              "t": "Nombres y direcciones de productores, fabricantes, distribuidores, suministradores, mayoristas y minoristas de productos presuntamente infractores."
             },
             {
-             "t": "Cantidades producidas, entregadas, recibidas o encargadas, y el precio pagado o por el que se ofrecieron."
+             "t": "Cantidades producidas, fabricadas, entregadas, recibidas o encargadas, y las satisfechas como precio."
             },
             {
              "t": "Modelos y características técnicas de las mercancías, y quienes con fines comerciales hubieran estado en posesión de ellas."
@@ -937,7 +934,7 @@ Neg.data.register({
              "t": "Persona jurídica: el lugar de su domicilio (art. 51.1 LEC), que es el que fijen la ley o sus estatutos; en su defecto, donde esté su representación legal o ejerza sus principales funciones (art. 41 CC)."
             },
             {
-             "t": "Varios requeridos con domicilios distintos: la ley no lo resuelve; suele aplicarse por analogía la elección entre los domicilios de los demandados (art. 53.2 LEC)."
+             "t": "Varios requeridos con domicilios distintos: la ley no lo resuelve; cf. la elección entre los domicilios de los demandados del art. 53.2 LEC."
             }
            ]
           }
@@ -1390,7 +1387,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "Los arts. 259 y 260 tienen la redacción de la Ley 42/2015, de 5 de octubre (en vigor desde el 7 de octubre de 2015). La ley no enumera motivos de oposición: los anteriores son los habituales en la práctica."
+             "t": "Los arts. 259 y 260 tienen la redacción de la Ley 42/2015, de 5 de octubre (en vigor desde el 7 de octubre de 2015). La ley no enumera motivos de oposición: los anteriores son orientativos."
             }
            ]
           }
@@ -1474,7 +1471,7 @@ Neg.data.register({
           {
            "lista": [
             {
-             "t": "<strong>1ª Declaración (capacidad, representación, legitimación):</strong> <em>ficta confessio</em> — se tendrán por respondidas afirmativamente las preguntas pretendidas y los hechos se considerarán admitidos a efectos del juicio posterior."
+             "t": "<strong>1ª Declaración (capacidad, representación, legitimación):</strong> <em>ficta confessio</em> — se podrán tener por respondidas afirmativamente las preguntas pretendidas y los hechos se considerarán admitidos a efectos del juicio posterior."
             },
             {
              "t": "<strong>2ª Exhibición de títulos y documentos:</strong> si existen indicios suficientes de localización, el tribunal ordenará la entrada y registro del lugar; si se encontraren, se ocuparán y se pondrán a disposición del solicitante en la sede del tribunal."
@@ -1534,7 +1531,7 @@ Neg.data.register({
              "t": "<strong>Momento:</strong> practicadas las diligencias o denegadas por oposición justificada."
             },
             {
-             "t": "<strong>Plazo:</strong> 5 días desde que se cumplan los presupuestos. Contenido: aplicación de caución según petición de indemnización y justificación de gastos."
+             "t": "<strong>Plazo:</strong> 5 días (art. 262.1). Contenido: aplicación de caución según petición de indemnización y justificación de gastos."
             },
             {
              "t": "<strong>Audiencia:</strong> oído el solicitante. <strong>Recurso:</strong> apelación sin efectos suspensivos (la decisión se ejecuta mientras se tramita el recurso)."

@@ -418,6 +418,11 @@ Neg.data.register({
      "destino": "resolucion_fondo"
     },
     {
+     "texto": "No, y el indicado acepta",
+     "tono": "t-plazo",
+     "destino": "fin_abstencion"
+    },
+    {
      "texto": "No, y el indicado también se inhibe: conflicto negativo",
      "tono": "t-aviso",
      "destino": "resolucion_conflicto"
@@ -854,6 +859,11 @@ Neg.data.register({
      "texto": "Grupo de consumidores (6.º) o documentos de los núms. 5.º bis, 7.º u 8.º",
      "tono": "t-plazo",
      "destino": "medida_5"
+    },
+    {
+     "texto": "Otra diligencia (núms. 9.º, 10.º u 11.º)",
+     "tono": "t-nota",
+     "destino": "medida_otras"
     }
    ]
   },
@@ -1042,6 +1052,30 @@ Neg.data.register({
     }
    ],
    "fin": "warning"
+  },
+  "medida_otras": {
+   "fase": 5,
+   "titulo": "Sin medida específica en el art. 261 LEC",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El art. 261 LEC no prevé una medida específica para estas diligencias. En las de leyes especiales (núm. 9.º), se estará a lo que disponga la ley especial (art. 263 LEC)."
+    }
+   ],
+   "siguiente": "caucion_final"
+  },
+  "fin_abstencion": {
+   "fase": 1,
+   "titulo": "Abstención: conoce el tribunal indicado",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "El juez se abstiene e indica al solicitante el Juzgado al que debe acudir (art. 257.2 LEC), que es el que conocerá de la solicitud."
+    }
+   ],
+   "fin": "neutral"
   }
  },
  "pie": "Arts. 256–263 LEC<br>Art. 60 LEC (conflicto de competencia)<br>Art. 64.2 LEC (forma de la caución)<br>Art. 138.3 LEC (puerta cerrada)<br>Art. 458 LEC (apelación)<br>Art. 5.3 LO 1/2025 (sin requisito de procedibilidad)"

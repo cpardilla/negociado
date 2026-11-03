@@ -159,3 +159,17 @@ Corte del BOE: LO 1/2025 a 09-07-2026. A petición del propietario.
 ## Corrección posterior (2026-11-03) · Citas de la Ley 1/2019
 
 Ecosistema normativo › Secretos empresariales: la mención de la Directiva pasa a su propia línea, y las citas de los arts. 8–11, 12–25, 15 y 17 enlazan a la Ley 1/2019. Sin cambio de fondo.
+
+## Corrección posterior (2026-11-03) · Relectura
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de la relectura (`relectura-2026-11-03.md`), aplicados con el visto bueno del propietario.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| E01 | Art. 261 › 1.ª | **error** | «se tendrán por respondidas» | «se podrán tener por respondidas» | LEC 261.1.ª |
+| E01 | Art. 256.1.7º | **error** | «el precio pagado o por el que se ofrecieron» | «las satisfechas como precio»; añadido «fabricadas» | LEC 256.1.7.º c) |
+| E01 | Art. 256.1.4º › legitimación | sin fuente | Participación «directa o indirecta»; herederos sin inscribir | «El socio o comunero» | LEC 256.1.4.º |
+| E01 | Art. 262 | sin fuente | «5 días desde que se cumplan los presupuestos» | «5 días» | LEC 262.1 |
+| E01 | Art. 257; art. 260 | sin fuente | «suele aplicarse por analogía»; «habituales en la práctica» | «cf. … art. 53.2 LEC»; «orientativos» | Decisión 24 |
+| G01 | negativa_tipo | incompleto | Sin salida para los núms. 9.º a 11.º | Paso `medida_otras` | LEC 261, 263 |
+| G01 | conflicto_competencia | incompleto | Sin salida si el tribunal indicado acepta | Paso `fin_abstencion` | LEC 257.2 |
