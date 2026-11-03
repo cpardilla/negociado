@@ -434,6 +434,11 @@ Neg.data.register({
      "texto": "No hay acuerdo",
      "tono": "t-aviso",
      "destino": "designacion_contador"
+    },
+    {
+     "texto": "Alguno no comparece con causa justificada",
+     "tono": "t-nota",
+     "destino": "nuevo_senalamiento_liq"
     }
    ]
   },
@@ -460,6 +465,18 @@ Neg.data.register({
     }
    ],
    "siguiente": "ejecucion_788"
+  },
+  "nuevo_senalamiento_liq": {
+   "fase": 2,
+   "titulo": "Incomparecencia justificada (art. 810.4 LEC)",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "La conformidad del art. 810.4 solo opera «sin mediar causa justificada»: si la hay, se señala nuevo día para el acto."
+    }
+   ],
+   "siguiente": "acto_liquidacion"
   },
   "ejecucion_788": {
    "fase": 2,
@@ -651,6 +668,10 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "Al extinguirse el régimen, las ganancias se determinan por la diferencia entre los patrimonios inicial y final de cada cónyuge (art. 1417 CC); el objeto de la liquidación es el crédito de participación."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Competencia: la del art. 807 LEC, que rige para este procedimiento: el Juzgado de Primera Instancia o de Violencia sobre la Mujer que esté conociendo, haya conocido o hubiera tenido competencia para conocer del proceso de nulidad, separación o divorcio, o aquel ante el que se sigan o se hayan seguido las actuaciones sobre disolución del régimen. Hoy, la Sección de Familia, Infancia y Capacidad del Tribunal de Instancia donde exista (art. 86.5 a) LOPJ; si no, la Sección Civil) o la Sección de Violencia sobre la Mujer (art. 89.6 LOPJ)."
     }
    ],
    "siguiente": "art811_firmeza"
@@ -756,6 +777,11 @@ Neg.data.register({
      "texto": "No hay acuerdo",
      "tono": "t-aviso",
      "destino": "art811_verbal"
+    },
+    {
+     "texto": "Uno no comparece con causa justificada",
+     "tono": "t-nota",
+     "destino": "art811_nuevo_senalamiento"
     }
    ]
   },
@@ -782,6 +808,18 @@ Neg.data.register({
     }
    ],
    "siguiente": "fin_participacion_acuerdo"
+  },
+  "art811_nuevo_senalamiento": {
+   "fase": 4,
+   "titulo": "Incomparecencia justificada (art. 811.4 LEC)",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "La conformidad del art. 811.4 solo opera «sin mediar causa justificada»: si la hay, se señala nuevo día para el acto."
+    }
+   ],
+   "siguiente": "art811_comparecencia"
   },
   "art811_verbal": {
    "fase": 4,

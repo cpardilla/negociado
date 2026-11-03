@@ -143,3 +143,15 @@ A petición del propietario. El art. 404.2 LEC habla de defectos formales no sub
 |---|---|---|---|---|
 | G05 | `subsanar_masc_811`, salida «No» | Llevaba a `fin_sin_masc` | Paso nuevo `fin_masc_no_subsanado`: el LAJ da cuenta al Tribunal | LEC 404.2 |
 | G05 | `fin_sin_masc` (no se aporta nada) | Afirmaba la dación de cuenta del art. 404.2 | No se admite (art. 403.2); nota de que el art. 404 no menciona expresamente este caso | LEC 403.2, 404 |
+
+## Corrección posterior (2026-11-03) · Relectura, primera tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda1.md`, aplicados con el visto bueno del propietario.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| G05 | acto_liquidacion | recorrido | Sin salida para la incomparecencia con causa justificada | Paso nuevo `nuevo_senalamiento_liq` | LEC 810.4 |
+| G05 | art811_comparecencia | recorrido | Sin salida para la incomparecencia con causa justificada | Paso nuevo `art811_nuevo_senalamiento` | LEC 811.4 |
+| G05 | art811_inicio | recorrido | El recorrido de participación no pasaba por la competencia | Nota con la competencia | LEC 807 |
+
+Los pasos nuevos repiten el criterio del paso del inventario: la ley solo limita la conformidad a la falta de causa justificada; «se señala nuevo día» es una consecuencia, no su letra.
