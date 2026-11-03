@@ -833,6 +833,9 @@ Neg.data.register({
             },
             {
              "t": "Debe identificarse la pretensión futura con razonable precisión."
+            },
+            {
+             "t": "<strong>Sin trámite previo:</strong> no hace falta acudir antes a un medio adecuado de solución de controversias: el requisito de procedibilidad no se exige para solicitar diligencias preliminares (art. 5.3 LO 1/2025)."
             }
            ]
           }
@@ -895,7 +898,8 @@ Neg.data.register({
       ],
       "referencias": [
        "Art. 64.2 LEC",
-       "Arts. 293–298 LEC"
+       "Arts. 293–298 LEC",
+       "LO 1/2025 art. 5.3"
       ],
       "claves": "256.2 solicitud fundamentos referencia circunstanciada asunto objeto juicio caucion gastos art 64.2 demanda un mes prueba anticipada aseguramiento"
      }

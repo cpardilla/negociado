@@ -63,6 +63,10 @@ Neg.data.register({
     {
      "tipo": "nota",
      "texto": "Los gastos de las personas que intervengan en las diligencias son a cargo del solicitante (art. 256.3 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "No hace falta acudir antes a un medio adecuado de solución de controversias: el requisito de procedibilidad no se exige para solicitar diligencias preliminares (art. 5.3 LO 1/2025)."
     }
    ],
    "pregunta": "¿Qué diligencia se pide?",
@@ -1040,5 +1044,5 @@ Neg.data.register({
    "fin": "warning"
   }
  },
- "pie": "Arts. 256–263 LEC<br>Art. 60 LEC (conflicto de competencia)<br>Art. 64.2 LEC (forma de la caución)<br>Art. 138.3 LEC (puerta cerrada)<br>Art. 458 LEC (apelación)"
+ "pie": "Arts. 256–263 LEC<br>Art. 60 LEC (conflicto de competencia)<br>Art. 64.2 LEC (forma de la caución)<br>Art. 138.3 LEC (puerta cerrada)<br>Art. 458 LEC (apelación)<br>Art. 5.3 LO 1/2025 (sin requisito de procedibilidad)"
 });

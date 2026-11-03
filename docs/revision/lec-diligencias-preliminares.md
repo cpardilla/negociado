@@ -146,3 +146,12 @@ La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora,
 | Antes | Ahora |
 |---|---|
 | núms. 10º y 11º del art. 256.1; la Ley 42/2015 dio la redacción vigente de los arts. 259 y 260. | núms. 10º y 11º del art. 256.1 LEC; la Ley 42/2015 dio la redacción vigente de los arts. 259 y 260 LEC. |
+
+## Corrección posterior (2026-11-03) · Art. 5.3 LO 1/2025
+
+Corte del BOE: LO 1/2025 a 09-07-2026. A petición del propietario.
+
+| Recurso | Lugar | Tipo | Antes | Ahora | Fuente |
+|---|---|---|---|---|---|
+| E01 | Art. 256.2–3 › Contenido de la solicitud | incompleto | Sin mencionarlo | Línea: no hace falta el trámite previo; referencia añadida | LO 1/2025 art. 5.3 |
+| G01 | inicio; pie | incompleto | Sin mencionarlo | Nota con la misma regla; precepto en el pie | LO 1/2025 art. 5.3 |

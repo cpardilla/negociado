@@ -1,6 +1,6 @@
 # Informe automático de contenido
 
-Generado por `tools/check-content.js` el 1/11/2026 sobre los datos de la app (`data/esquemas`, `data/guias`). El informe del punto de partida es `informe-inicial.md`.
+Generado por `tools/check-content.js` el 3/11/2026 sobre los datos de la app (`data/esquemas`, `data/guias`). El informe del punto de partida es `informe-inicial.md`.
 Fuente: BOE, LEC consolidada a 07-10-2026 y LJV a 05-03-2026 (`sources/boe/`).
 
 Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · **revisar** (necesita lectura humana; puede ser correcto). Las citas sin ley explícita se atribuyen a la ley del recurso y se marcan «ley por defecto»: el contexto puede referirse a otra norma. Es un primer cribado: la revisión manual de cada recurso (fases 4 y 5) parte de aquí, pero no se limita a ello.
@@ -80,8 +80,8 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - UE: 46
 - ✓ RDTO (BOE a 19-12-2025): 44
 - ✓ LOPDH (BOE a 16-12-2025): 40
+- ✓ LO1-2025 (BOE a 09-07-2026): 34
 - ✓ LN (BOE a 22-10-2026): 34
-- ✓ LO1-2025 (BOE a 09-07-2026): 30
 - ✓ LH (BOE a 07-01-2026): 28
 - ✓ LTO (BOE a 16-12-2025): 22
 - ✓ CE (BOE a 20-05-2026): 18
