@@ -30,7 +30,8 @@ Neg.data.register({
  "actores": {
   "juez": "Juez / Tribunal",
   "laj": "LAJ",
-  "ambos": "LAJ + Tribunal"
+  "ambos": "LAJ + Tribunal",
+  "notario": "Notario"
  },
  "inicio": "inicio",
  "pasos": {
@@ -486,6 +487,10 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "Conforme a los dos primeros apartados del art. 788 LEC: el LAJ entrega a cada uno lo adjudicado y los títulos de propiedad, con notas expresivas de la adjudicación (art. 788.1), y da a quien lo pida testimonio de su haber y adjudicación (art. 788.2)."
+    },
+    {
+     "tipo": "aviso",
+     "texto": "Lo acordado también ha de protocolizarse para inscribirlo: el art. 810.4 LEC remite al art. 788.1 y 2 LEC, y el testimonio del decreto no basta (Resolución de la Dirección General de los Registros y del Notariado de 22 de noviembre de 2018). Notario y acta: arts. 128, 211 y 213 RN."
     }
    ],
    "siguiente": "fin_decreto_acuerdo"
@@ -556,6 +561,40 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "El LAJ dicta decreto aprobando las operaciones divisorias y mandando protocolizarlas."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Contra el decreto, que pone fin al procedimiento, cabe recurso directo de revisión en cinco días, sin efectos suspensivos (art. 454 bis.1 y 2 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Conviene que conste la firmeza del decreto: un registrador la exigió para inscribir, y la Dirección General la dio por acreditada con la diligencia de ordenación reseñada en la escritura (Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 11 de junio de 2026)."
+    }
+   ],
+   "siguiente": "protocolizacion_liq"
+  },
+  "protocolizacion_liq": {
+   "fase": 3,
+   "titulo": "Protocolización de las operaciones",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "aviso",
+     "texto": "El testimonio del decreto no es título inscribible: para inscribir las adjudicaciones hay que protocolizar las operaciones ante Notario, salvo que en el mismo procedimiento se dispusiera otra cosa (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de los Registros y del Notariado de 1 de febrero de 2018; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
+    },
+    {
+     "tipo": "lista",
+     "titulo": "Cómo se hace",
+     "items": [
+      "Notario: el que, residiendo dentro del partido judicial, designen unánimemente los interesados; a falta de acuerdo, el Juez o Tribunal lo designa por turno entre los Notarios del distrito notarial (art. 128 RN)",
+      "Se expide testimonio del decreto, con su firmeza, y de las operaciones aprobadas (en la práctica, en lugar del expediente que menciona el art. 213 RN)",
+      "El Notario extiende y suscribe el acta a requerimiento de cualquier persona que le entregue la documentación con la resolución que ordena protocolizar (arts. 211 y 213 RN)",
+      "Protocolizadas, el LAJ da testimonio de su haber y adjudicación a los partícipes que lo pidan (art. 788.2 LEC)"
+     ]
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 787.2 LEC · Arts. 128, 211 y 213 RN · Art. 14 LH · Art. 80.1 a) RH"
     }
    ],
    "siguiente": "entrega_bienes"
@@ -620,6 +659,10 @@ Neg.data.register({
     {
      "tipo": "aviso",
      "texto": "No tiene eficacia de cosa juzgada: los interesados pueden hacer valer sus derechos sobre los bienes adjudicados en el juicio ordinario que corresponda."
+    },
+    {
+     "tipo": "nota",
+     "texto": "La sentencia firme es título suficiente para inscribir, sin protocolización: se presentan testimonio de la sentencia, con su firmeza, y de las operaciones (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
     }
    ],
    "pregunta": "¿Se apela?",
