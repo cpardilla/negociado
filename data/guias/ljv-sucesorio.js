@@ -296,10 +296,6 @@ Neg.data.register({
     {
      "tipo": "ley",
      "texto": "Art. 91.2 LJV. Norma común conexa: art. 14 LJV (contenido de la solicitud)."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La cuantía debe resultar de los documentos aportados con la solicitud o de la declaración responsable del solicitante. Si no consta con precisión, debe requerirse su aclaración antes de admitir a trámite."
     }
    ],
    "pregunta": "¿Cuál es la cuantía del haber hereditario?",
@@ -580,11 +576,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ examina la solicitud conforme al artículo 14 LJV, comprobando si reúne los requisitos de forma y contenido exigidos y si se acompañan los documentos necesarios. De este examen depende que se admita a trámite directamente o se requiera al solicitante la subsanación."
+     "texto": "El LAJ examina de oficio la competencia (art. 16.1 LJV) y si la solicitud reúne los requisitos del artículo 14 LJV, con los documentos necesarios (art. 16.4 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 14 y 17 LJV (normas comunes)."
+     "texto": "Arts. 14, 16 y 17 LJV (normas comunes)."
     },
     {
      "tipo": "lista",
@@ -611,6 +607,43 @@ Neg.data.register({
      "texto": "No cumple o presenta defectos subsanables — procede requerimiento",
      "tono": "t-plazo",
      "destino": "subsanacion"
+    },
+    {
+     "texto": "Entiende que falta competencia o que no es admisible",
+     "tono": "t-aviso",
+     "destino": "falta_admisibilidad"
+    }
+   ]
+  },
+  "falta_admisibilidad": {
+   "fase": 2,
+   "titulo": "Falta de competencia o solicitud no admisible",
+   "actor": "ambos",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Si decide el LAJ (renuncia o prórroga del albacea; contador-partidor): dicta decreto de archivo si no es admisible; si falta competencia, previa audiencia del Ministerio Fiscal y del solicitante, puede acordar el archivo (objetiva) o la remisión al órgano competente (territorial)."
+    },
+    {
+     "tipo": "info",
+     "texto": "Si decide el Juez (los demás supuestos): el LAJ le da cuenta y el Juez acuerda lo que proceda; en la falta de competencia, tras oír al Ministerio Fiscal y al solicitante."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Art. 16.2 y 16.3 LJV · Art. 17.1 LJV"
+    }
+   ],
+   "pregunta": "¿Qué se acuerda?",
+   "opciones": [
+    {
+     "texto": "Se admite a trámite",
+     "tono": "t-ok",
+     "destino": "admision_tramite"
+    },
+    {
+     "texto": "Archivo o remisión",
+     "tono": "t-aviso",
+     "destino": "fin_no_admitida"
     }
    ]
   },
@@ -665,7 +698,7 @@ Neg.data.register({
     },
     {
      "tipo": "lista",
-     "titulo": "Contenido mínimo del decreto de admisión",
+     "titulo": "Contenido habitual del decreto de admisión (práctica)",
      "items": [
       "Declaración formal de admisión a trámite",
       "Identificación de los interesados que han de ser citados",
@@ -692,6 +725,10 @@ Neg.data.register({
      "texto": "Antelación mínima de la citación a los interesados: 15 días respecto a la comparecencia."
     },
     {
+     "tipo": "plazo",
+     "texto": "Quien vaya a oponerse lo hace en los cinco días siguientes a su citación; se da traslado inmediato al solicitante (art. 17.3 LJV)."
+    },
+    {
      "tipo": "ley",
      "texto": "Arts. 14.2 y 17.2 y 3 LJV"
     },
@@ -700,7 +737,7 @@ Neg.data.register({
      "titulo": "Interesados a citar según el tipo de expediente",
      "items": [
       "Albaceazgo: albacea afectado, herederos y legatarios",
-      "Contadores-partidores: testador si procede, demás herederos y legatarios no solicitantes",
+      "Contadores-partidores: demás herederos y legatarios no solicitantes, si su domicilio es conocido (art. 1057 CC)",
       "Aceptación/repudiación por progenitores: el otro progenitor, si no comparece con el solicitante",
       "Aceptación/repudiación por tutor/curador/defensor judicial: demás interesados en la herencia",
       "Acreedores del heredero repudiante: heredero repudiante y demás interesados en la herencia",
@@ -710,7 +747,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La citación deberá expresar objeto del expediente, lugar, fecha y hora de la comparecencia, y la advertencia de las consecuencias de la incomparecencia."
+     "texto": "La citación avisa de que se acuda con los medios de prueba de que se intente valerse, y se entrega copia de la resolución, de la solicitud y de los documentos (art. 17.3 LJV)."
     }
    ],
    "siguiente": "mf_check"
@@ -781,7 +818,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Una vez admitido el expediente y practicadas las citaciones, el LAJ fija día y hora para la celebración de la comparecencia. En la misma resolución puede acordar la práctica de las pruebas o actuaciones que estime necesarias."
+     "texto": "El LAJ fija día y hora para la comparecencia al admitir el expediente, de modo que las citaciones los indiquen y se hagan con quince días de antelación (art. 17.3 LJV). En la misma resolución puede acordar la práctica de las pruebas o actuaciones que estime necesarias."
     },
     {
      "tipo": "plazo",
@@ -789,7 +826,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 18.1 LJV"
+     "texto": "Arts. 17.3 y 18.1 LJV"
     },
     {
      "tipo": "nota",
@@ -806,6 +843,10 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "En el día y hora señalados se celebra la comparecencia con asistencia del solicitante, los interesados citados y, en su caso, el Ministerio Fiscal. Se oyen las alegaciones, se examina la documentación aportada y se practican las pruebas admitidas. El resultado de la comparecencia condiciona la continuación del expediente."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Si el expediente afecta a una persona menor o con discapacidad: las diligencias relativas a sus intereses se practican en el mismo acto o en los diez días siguientes; su audiencia puede hacerse en acto separado, con asistencia del Ministerio Fiscal, y el LAJ levanta acta de la exploración (art. 18.2.4.ª LJV)."
     },
     {
      "tipo": "ley",
@@ -832,7 +873,7 @@ Neg.data.register({
    "pregunta": "¿Qué resultado ha tenido la comparecencia?",
    "opciones": [
     {
-     "texto": "Incomparecencia injustificada del solicitante",
+     "texto": "Incomparecencia del solicitante",
      "tono": "t-aviso",
      "destino": "fin_archivo_incomparecencia"
     },
@@ -990,7 +1031,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El LAJ dicta decreto sobre la designación del contador-partidor dativo en los términos del art. 1057 CC. Si procede, nombra a la persona que habrá de realizar la partición, fija plazo para el encargo y acuerda su aceptación y juramento o promesa del cargo."
+     "texto": "El LAJ dicta decreto sobre la designación del contador-partidor dativo en los términos del art. 1057 CC. Si procede, nombra a la persona que habrá de realizar la partición, fija plazo para el encargo y acuerda su aceptación del cargo."
     },
     {
      "tipo": "ley",
@@ -1094,7 +1135,7 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "Art. 95.2 LJV: si se denegare la autorización o aprobación solicitada para aceptar sin beneficio de inventario o para repudiar la herencia, esta sólo podrá ser aceptada a beneficio de inventario. Este efecto debe hacerse constar expresamente en el auto y notificarse al solicitante."
+     "texto": "Art. 95.2 LJV: si se denegare la autorización o aprobación solicitada para aceptar sin beneficio de inventario o para repudiar la herencia, esta sólo podrá ser aceptada a beneficio de inventario."
     },
     {
      "tipo": "lista",
@@ -1117,7 +1158,7 @@ Neg.data.register({
      "destino": "notificacion_recursos"
     },
     {
-     "texto": "Se deniega — la herencia sólo podrá aceptarse a beneficio de inventario (art. 95.2 LJV)",
+     "texto": "Se deniega (si se pidió aceptar sin beneficio de inventario o repudiar, solo podrá aceptarse a beneficio de inventario: art. 95.2 LJV)",
      "tono": "t-plazo",
      "destino": "notificacion_recursos"
     }
@@ -1230,6 +1271,22 @@ Neg.data.register({
    ],
    "fin": "error"
   },
+  "fin_no_admitida": {
+   "fase": 2,
+   "titulo": "Solicitud no admitida o falta de competencia",
+   "actor": "ambos",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Se archiva el expediente o se remite al órgano competente. La resolución en que se aprecie la falta de competencia indica el órgano que se estima competente (art. 16.2 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 16 y 17.1 LJV"
+    }
+   ],
+   "fin": "error"
+  },
   "fin_archivo_subsanacion": {
    "fase": 2,
    "titulo": "ARCHIVO por falta de subsanación en plazo",
@@ -1252,7 +1309,7 @@ Neg.data.register({
   },
   "fin_archivo_incomparecencia": {
    "fase": 3,
-   "titulo": "ARCHIVO por incomparecencia injustificada del solicitante",
+   "titulo": "ARCHIVO por incomparecencia del solicitante",
    "actor": "laj",
    "bloques": [
     {

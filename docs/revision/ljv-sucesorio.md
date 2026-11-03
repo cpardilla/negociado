@@ -62,3 +62,20 @@ La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora,
 | Antes | Ahora |
 |---|---|
 | conectado con los artículos 93.2.b y 95.2 LJV | conectado con los artículos 93.2 b) y 95.2 LJV |
+
+## Corrección posterior (2026-11-03) · Relectura, séptima tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda7.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 1 | citacion_interesados | «testador si procede» | Suprimido | CC 1057 |
+| 3 | examen_solicitud; nuevos falta_admisibilidad y fin_no_admitida | Sin competencia ni solicitud no admisible | Salidas según quién decida | LJV 16.2, 16.3, 17.1 |
+| 4 | citacion_interesados | Sin oposición ni medios de prueba | Añadidos | LJV 17.3 |
+| 5 | resolucion_acep | Toda denegación, a beneficio de inventario | Solo en los casos del art. 95.2 | LJV 95.2 |
+| 7 | celebracion_comparecencia, fin_archivo_incomparecencia | «injustificada» | Suprimido | LJV 18.2.1.ª |
+| 8 | celebracion_comparecencia | Sin menores ni personas con discapacidad | Nota añadida | LJV 18.2.4.ª |
+| 9 | senalamiento_comparecencia | Fija día y hora después de citar | Al admitir | LJV 17.3 |
+| 10 | alb_postulacion, admision_tramite, resolucion_cp_designa, resolucion_acep | Contenidos sin fuente | Suprimidos o rotulados como práctica | Sin fuente |
