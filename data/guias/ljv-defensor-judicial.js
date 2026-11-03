@@ -74,16 +74,16 @@ Neg.data.register({
   },
   "causa_directa": {
    "fase": 0,
-   "titulo": "Verificación: nombramiento directo (art. 27.3 LJV)",
+   "titulo": "Verificación: nombramiento directo (art. 27.1 y 27.3 LJV)",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El nombramiento directo opera sin habilitación previa en tres supuestos tasados del art. 27.3 LJV."
+     "texto": "Sin habilitación previa proceden los casos en que la ley prevé el nombramiento (art. 27.1 LJV; arts. 163, 235 y 295 CC) y los tres supuestos del art. 27.3 LJV."
     },
     {
      "tipo": "lista",
-     "titulo": "Causas que permiten el nombramiento directo",
+     "titulo": "Supuestos del art. 27.3 LJV",
      "items": [
       "Para litigar contra sus progenitores, tutor o curador (conflicto de intereses: art. 163 CC, art. 295.2.º CC)",
       "Para instar expedientes de jurisdicción voluntaria",
@@ -93,25 +93,28 @@ Neg.data.register({
     },
     {
      "tipo": "aviso",
-     "texto": "LÍMITE ESENCIAL: no procede si el otro progenitor o tutor, si lo hubiere, no tiene interés opuesto al menor o persona con discapacidad. En ese caso, la representación se canaliza por el cauce ordinario."
+     "texto": "LÍMITE del art. 27.3: no procede si el otro progenitor o tutor, si lo hubiere, no tiene interés opuesto al menor o persona con discapacidad. En ese caso, la representación se canaliza por el cauce ordinario."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 27.3 LJV · Art. 163 CC · Art. 295.2.º CC"
+     "texto": "Art. 27.1 y 27.3 LJV · Arts. 163, 235 y 295 CC"
     }
    ],
-   "pregunta": "¿El otro progenitor/tutor tiene interés opuesto al afectado?",
+   "pregunta": "¿Qué caso es?",
    "opciones": [
     {
-     "texto": "Sí tiene interés opuesto — procede el nombramiento directo",
+     "texto": "Otro caso previsto en la ley: conflicto de intereses fuera de juicio, apoyo ocasional u otros (art. 27.1 LJV; arts. 163, 235 y 295 CC)",
      "tono": "t-ok",
-     "nota": "Procede",
      "destino": "competencia"
     },
     {
-     "texto": "No tiene interés opuesto o puede actuar — no procede",
+     "texto": "Supuesto del art. 27.3, y el otro progenitor o tutor tiene interés opuesto o no lo hay",
+     "tono": "t-ok",
+     "destino": "competencia"
+    },
+    {
+     "texto": "Supuesto del art. 27.3, y el otro progenitor o tutor no tiene interés opuesto",
      "tono": "t-aviso",
-     "nota": "No procede",
      "destino": "fin_limite_directo"
     }
    ]
@@ -205,10 +208,6 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "La causa b) exige la negativa de AMBOS progenitores, tutor o persona designada para ejercer el apoyo. La negativa de uno solo no es suficiente: si el otro puede actuar, no procede la habilitación."
-    },
-    {
-     "tipo": "nota",
-     "texto": "La negativa puede ser expresa o resultar de conducta inequívoca. Conviene documentarla mediante requerimiento fehaciente previo."
     },
     {
      "tipo": "aviso",
@@ -494,12 +493,8 @@ Neg.data.register({
      "texto": "Verificar que las partes están debidamente asistidas antes de dar inicio a la comparecencia."
     },
     {
-     "tipo": "nota",
-     "texto": "Si el opositor propone prueba que no puede practicarse en la comparecencia, puede acordarse su práctica en los 10 días siguientes (art. 18.2, 4.ª, LJV)."
-    },
-    {
      "tipo": "ley",
-     "texto": "Art. 17.3 LJV · Art. 3.2 LJV · Art. 18.2, 4.ª, LJV"
+     "texto": "Art. 17.3 LJV · Art. 3.2 LJV"
     }
    ],
    "siguiente": "comparecencia"
@@ -850,7 +845,7 @@ Neg.data.register({
     },
     {
      "tipo": "lista",
-     "titulo": "Actuaciones del Letrado de la Administración de Justicia",
+     "titulo": "Actuaciones habituales del Letrado de la Administración de Justicia (el art. 31 solo regula la comunicación)",
      "items": [
       "Recibir y verificar la comunicación del defensor judicial",
       "Dictar decreto declarando extinguido el cargo",
@@ -876,7 +871,7 @@ Neg.data.register({
     },
     {
      "tipo": "lista",
-     "titulo": "Actuaciones del Letrado de la Administración de Justicia",
+     "titulo": "Actuaciones habituales del Letrado de la Administración de Justicia (el art. 31 solo regula la comunicación)",
      "items": [
       "Recibir la comunicación del defensor judicial",
       "Verificar la disponibilidad y capacidad del representante",
@@ -919,7 +914,7 @@ Neg.data.register({
     },
     {
      "tipo": "plazo",
-     "texto": "Debe alegarse dentro de los quince días desde que conoce el nombramiento; si el motivo sobreviene, en cualquier momento, siempre que haya persona de parecidas condiciones para sustituirle (art. 50.1 LJV)."
+     "texto": "Debe alegarse dentro de los quince días desde que conoce el nombramiento; si el motivo sobreviene, en cualquier momento, salvo las personas jurídicas, siempre que haya persona de parecidas condiciones para sustituirle (art. 50.1 LJV)."
     },
     {
      "tipo": "lista",
@@ -1045,8 +1040,12 @@ Neg.data.register({
      "texto": "Diez días desde el traslado para pedir comparecencia."
     },
     {
+     "tipo": "plazo",
+     "texto": "Rendición final: tres meses desde el cese, prorrogables por justa causa (art. 51.4 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Arts. 32 y 51.2 LJV · Art. 298 CC"
+     "texto": "Arts. 32, 51.2 y 51.4 LJV · Art. 298 CC"
     }
    ],
    "pregunta": "¿Algún interesado solicita comparecencia sobre las cuentas en el plazo de 10 días?",
@@ -1142,7 +1141,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Este límite tiene por objetivo evitar el uso del defensor judicial cuando existe una vía representativa ordinaria funcional y sin conflicto de intereses. Si la situación cambia, el expediente puede replantearse."
+     "texto": "Si la situación cambia, el expediente puede replantearse."
     }
    ],
    "fin": "warning"
@@ -1158,7 +1157,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si las circunstancias cambian, puede instarse de nuevo el expediente. La decisión de no proceder en esta fase no produce cosa juzgada sobre nuevos supuestos de hecho."
+     "texto": "Si las circunstancias cambian, puede instarse de nuevo el expediente."
     }
    ],
    "fin": "error"

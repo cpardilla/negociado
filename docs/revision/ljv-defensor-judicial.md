@@ -81,3 +81,18 @@ Comprobador tras el cambio: 2 «errores» intencionados (la mención del art. 29
 ## Corrección posterior (2026-11-03) · Cita del art. 74 LRC
 
 Ecosistema normativo › Otras leyes: «Ley 20/2011 (Registro Civil), art. 74» pasa a «Art. 74 de la Ley 20/2011 (Registro Civil)», que enlaza. Sin cambio de fondo.
+
+## Corrección posterior (2026-11-03) · Relectura, sexta tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda6.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 1 | causa_directa | «tres supuestos tasados del art. 27.3» | Añadida la ruta del art. 27.1; el límite solo para el art. 27.3 | LJV 27.1, 27.3; CC 163, 235, 295 |
+| 2 | causa_directa | Sin el caso de que no haya otro progenitor o tutor | Incluido | LJV 27.3 |
+| 3 | comparecencia_oposicion | Prueba del opositor en diez días | Suprimido | LJV 18.2.4.ª |
+| 5 | rendicion_cuentas | Sin plazo de presentación | Tres meses | LJV 51.4 |
+| 7 | cesacion_causa, cesacion_representante, verif_negativa, fin_no_procede, fin_limite_directo | Contenidos sin fuente | Rotulados o suprimidos | LJV 31 |
+| 8 | excusa | Sin la salvedad de las personas jurídicas | Añadida | LJV 50.1 |
