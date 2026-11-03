@@ -181,7 +181,7 @@ Neg.data.register({
     {
      "texto": "No: comparecencia en el plazo máximo de cinco días (art. 69.1 LJV)",
      "tono": "t-ok",
-     "nota": "Comparecencia en plazo máximo de 5 días con citación a interesados, MF y testigos",
+     "nota": "Comparecencia en plazo máximo de 5 días con citación a interesados y MF",
      "destino": "defensor_ordinario"
     }
    ]
@@ -193,7 +193,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Procedimiento: Solicitud → Comparecencia en plazo máximo de 5 días → Citación a interesados, Ministerio Fiscal y testigos → Audiencia y práctica de pruebas → Resolución de nombramiento."
+     "texto": "Procedimiento: Solicitud → Comparecencia en plazo máximo de 5 días → Citación a interesados y Ministerio Fiscal → Audiencia de los testigos propuestos por el solicitante → Resolución de nombramiento."
     },
     {
      "tipo": "plazo",
@@ -208,9 +208,9 @@ Neg.data.register({
      "titulo": "Checklist del procedimiento ordinario",
      "items": [
       "Solicitud recibida con datos del desaparecido",
-      "Citación a interesados, MF y testigos",
+      "Citación a interesados y MF",
       "Señalamiento de comparecencia dentro de 5 días",
-      "Audiencia de alegaciones y práctica de pruebas",
+      "Audiencia de los testigos propuestos por el solicitante",
       "Verificación de orden de prelación",
       "Resolución de nombramiento por decreto"
      ],
@@ -348,25 +348,21 @@ Neg.data.register({
     {
      "texto": "Ministerio Fiscal",
      "tono": "t-ok",
-     "nota": "Legitimación genérica como garante del interés público",
      "destino": "solicitud_ausencia"
     },
     {
      "texto": "Cónyuge no separado legalmente o persona unida por análoga relación de afectividad",
      "tono": "t-ok",
-     "nota": "Vínculo vigente, interés patrimonial y personal",
      "destino": "solicitud_ausencia"
     },
     {
      "texto": "Parientes consanguíneos hasta el cuarto grado",
      "tono": "t-ok",
-     "nota": "Orden de prelación sucesoria, interés en estado civil",
      "destino": "solicitud_ausencia"
     },
     {
      "texto": "Quien pueda tener sobre los bienes un derecho ejercitable en vida del desaparecido o dependiente de su muerte",
      "tono": "t-nota",
-     "nota": "Acreedores, codeudores, titulares de derechos reales",
      "destino": "solicitud_ausencia"
     }
    ]
@@ -479,8 +475,12 @@ Neg.data.register({
      "texto": "El LAJ puede acordar, de oficio o a instancia de interesado y con intervención del Fiscal, medidas de averiguación e investigación y de protección del desaparecido (art. 70.3 LJV)."
     },
     {
+     "tipo": "nota",
+     "texto": "Reglas generales (art. 13 LJV): si la solicitud tiene defectos, cinco días para subsanarlos; si no se subsanan, el LAJ la tiene por no presentada y archiva (art. 16.4 LJV). Si el solicitante no asiste a la comparecencia, se archiva y se le tiene por desistido (art. 18.2.1.ª LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 70.2 y 3 LJV"
+     "texto": "Art. 70.2 y 3 LJV · Arts. 13, 16.4 y 18.2 LJV"
     }
    ],
    "pregunta": "¿Resultado de la comparecencia y las pruebas?",
@@ -640,7 +640,6 @@ Neg.data.register({
     {
      "texto": "Sí, el LAJ las modifica a instancia del interesado o del Fiscal",
      "tono": "t-plazo",
-     "nota": "Comparecencia simplificada con audiencia de los afectados",
      "destino": "inventario_bienes"
     },
     {
@@ -693,21 +692,7 @@ Neg.data.register({
      "texto": "Art. 73 LJV · Arts. 185 y 198 CC"
     }
    ],
-   "pregunta": "¿Desea continuar con la comunicación al Registro Civil?",
-   "opciones": [
-    {
-     "texto": "Sí, proceda a la inscripción registral",
-     "tono": "t-ok",
-     "nota": "Remisión de testimonios al Registro Civil conforme al Art. 77 LJV",
-     "destino": "comunicacion_registro"
-    },
-    {
-     "texto": "El procedimiento ha concluido aquí",
-     "tono": "t-ok",
-     "nota": "La ausencia legal ha sido declarada con todas las garantías",
-     "destino": "fin_ausencia_declarada"
-    }
-   ]
+   "siguiente": "comunicacion_registro"
   },
   "fallecimiento_siniestro": {
    "fase": 4,
@@ -935,7 +920,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Escritura pública de partición ante Notario con intervención de todos los herederos y aceptación de la declaración de fallecimiento."
+     "texto": "Escritura pública de partición ante Notario con intervención de todos los herederos."
     },
     {
      "tipo": "nota",
@@ -1031,7 +1016,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Medios de identificación: pruebas documentales (DNI, pasaporte, partidas); pruebas biológicas (ADN); declaraciones de testigos; informes periciales."
+     "texto": "La ley habla de «medios adecuados», que el LAJ puede acordar de oficio o a instancia del interesado (art. 75.1 LJV). Ejemplos, que la ley no enumera: documentos, pruebas biológicas, testigos o informes periciales."
     },
     {
      "tipo": "nota",
@@ -1105,7 +1090,7 @@ Neg.data.register({
     {
      "texto": "No comparece ni aporta pruebas: no se acredita la identidad",
      "tono": "t-aviso",
-     "nota": "Se ratifica la declaración por falta de oposición",
+     "nota": "El LAJ dicta la resolución que proceda",
      "destino": "fin_ratificacion"
     }
    ]
@@ -1131,7 +1116,7 @@ Neg.data.register({
    "pregunta": "¿Resultado de la verificación?",
    "opciones": [
     {
-     "texto": "Se confirma la identidad: suspensión definitiva y revocación",
+     "texto": "Se confirma la identidad: se revoca la declaración",
      "tono": "t-ok",
      "nota": "Se revoca la declaración, se restituyen bienes",
      "destino": "fin_revocacion_suspension"
@@ -1158,11 +1143,15 @@ Neg.data.register({
      "texto": "Probada la muerte del declarado ausente, se abre la sucesión en favor de quienes eran sus sucesores en el momento del fallecimiento, y el poseedor temporal les entrega el patrimonio (art. 188 CC)."
     },
     {
+     "tipo": "nota",
+     "texto": "Se remiten al Registro Civil los testimonios necesarios (art. 77 LJV; art. 198 CC)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 75.4 LJV · Art. 188 CC"
+     "texto": "Art. 75.4 LJV · Art. 77 LJV · Arts. 188 y 198 CC"
     }
    ],
-   "siguiente": "fallecimiento_comprobado"
+   "fin": "neutral"
   },
   "fallecimiento_comprobado": {
    "fase": 5,
@@ -1182,21 +1171,7 @@ Neg.data.register({
      "texto": "Art. 76 LJV · Arts. 188 y 657 y ss. CC"
     }
    ],
-   "pregunta": "¿Procede la apertura de sucesión?",
-   "opciones": [
-    {
-     "texto": "Sí, se abre la sucesión por fallecimiento efectivo",
-     "tono": "t-ok",
-     "nota": "Trámites conforme a normativa sucesoria",
-     "destino": "fin_fallecimiento_comprobado"
-    },
-    {
-     "texto": "El expediente se archiva sin más trámites",
-     "tono": "t-nota",
-     "nota": "No hay bienes ni herederos conocidos",
-     "destino": "fin_archivo_expediente"
-    }
-   ]
+   "fin": "neutral"
   },
   "comunicacion_registro": {
    "fase": 6,
@@ -1233,7 +1208,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El defensor judicial ha sido nombrado conforme al procedimiento ordinario y ha aceptado el cargo. Sus funciones incluyen: pesquisa de la persona, protección y administración de bienes, y cumplimiento de obligaciones del desaparecido."
+     "texto": "El defensor judicial ha sido nombrado conforme al procedimiento ordinario y ha aceptado el cargo."
     },
     {
      "tipo": "nota",
@@ -1257,7 +1232,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El defensor judicial nombrado de forma urgente ha sido ratificado en la comparecencia retroactiva. Las medidas adoptadas se mantienen."
+     "texto": "El defensor judicial nombrado de forma urgente ha sido ratificado por la resolución que termina el expediente. Las medidas adoptadas se mantienen."
     },
     {
      "tipo": "nota",
@@ -1314,26 +1289,6 @@ Neg.data.register({
    ],
    "fin": "warning"
   },
-  "fin_ausencia_declarada": {
-   "fase": 3,
-   "titulo": "Ausencia legal declarada",
-   "actor": "laj",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "La ausencia legal ha sido declarada mediante decreto del LAJ. Se ha nombrado representante conforme al Art. 184 CC, se han adoptado las medidas provisionales pertinentes y se ha practicado el inventario de bienes."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Efectos: inscripción en el Registro Civil, con la que se extinguen los mandatos del ausente (art. 183 CC); representación del ausente. El procedimiento puede reabrirse si se producen hechos posteriores (Art. 75 LJV)."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Arts. 70-73 LJV; CC arts. 182-185, 198; Art. 77 LJV"
-    }
-   ],
-   "fin": "success"
-  },
   "fin_ausencia_declarada_registro": {
    "fase": 6,
    "titulo": "Procedimiento completado con inscripción",
@@ -1346,6 +1301,10 @@ Neg.data.register({
     {
      "tipo": "nota",
      "texto": "La declaración se inscribe en el registro individual del ausente (art. 78 LRC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Efectos: inscripción en el Registro Civil, con la que se extinguen los mandatos del ausente (art. 183 CC); representación del ausente. El procedimiento puede reabrirse si se producen hechos posteriores (Art. 75 LJV)."
     },
     {
      "tipo": "ley",
@@ -1453,7 +1412,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Comunicar la revocación al Registro Civil para cancelación de asientos."
+     "texto": "Comunicar la revocación al Registro Civil (art. 77 LJV; art. 198 CC)."
     },
     {
      "tipo": "ley",
@@ -1489,11 +1448,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Se confirma la identidad de la persona que solicitó la suspensión. La suspensión del representante se torna definitiva y se revoca la declaración."
+     "texto": "Se confirma la identidad de la persona que solicitó la suspensión. Se deja sin efecto la declaración de ausencia o fallecimiento."
     },
     {
      "tipo": "nota",
-     "texto": "Restitución de bienes, cancelación de asientos registrales, liquidación de la gestión del representante."
+     "texto": "Restitución de bienes (arts. 187 y 197 CC) y comunicación al Registro Civil (art. 77 LJV; art. 198 CC)."
     },
     {
      "tipo": "ley",
@@ -1518,46 +1477,6 @@ Neg.data.register({
     {
      "tipo": "ley",
      "texto": "Art. 75 LJV"
-    }
-   ],
-   "fin": "neutral"
-  },
-  "fin_fallecimiento_comprobado": {
-   "fase": 5,
-   "titulo": "Fallecimiento efectivo comprobado",
-   "actor": "laj",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "Se ha comprobado el fallecimiento efectivo del desaparecido. El expediente de ausencia o fallecimiento declarado se archiva. Se abre la sucesión por fallecimiento efectivo."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Consecuencias: archivo del expediente; cesación de representación y medidas; apertura de sucesión conforme al CC art. 657 y ss.; liquidación de gestión del representante; inscripción registral del fallecimiento."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 76 LJV · Arts. 188 y 657 y ss. CC · Art. 78 LRC"
-    }
-   ],
-   "fin": "success"
-  },
-  "fin_archivo_expediente": {
-   "fase": 5,
-   "titulo": "Expediente archivado",
-   "actor": "laj",
-   "bloques": [
-    {
-     "tipo": "info",
-     "texto": "El expediente se archiva al comprobarse el fallecimiento sin que existan bienes ni herederos conocidos."
-    },
-    {
-     "tipo": "nota",
-     "texto": "Si posteriormente aparecieren herederos o bienes, podrán iniciar los trámites sucesorios correspondientes."
-    },
-    {
-     "tipo": "ley",
-     "texto": "Art. 76 LJV; CC arts. 657 y ss."
     }
    ],
    "fin": "neutral"

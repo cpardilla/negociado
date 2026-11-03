@@ -61,3 +61,19 @@ La guía cita «art. 194.1», «193.2», «196.2» (ordinales del CC escritos co
 | 15 | comunicacion_registro, comunicacion_registro_fallecimiento | inventado | «Erga omnes», «Ley 39/2015», «plazo inmediato a firmeza, telemático» | Testimonios del art. 77 para lo previsto en el art. 198 CC; inscripción en el registro individual con la fecha de la muerte (art. 78 LRC) | LJV 77; CC 198; LRC 78 |
 | 16 | admision_ausencia, noticias_existencia, suspension_representante | impreciso | «LOPD 3/2018»; ratificación «por falta de oposición»; límites inventados a la suspensión | Art. 70.2 y 3; el LAJ convoca la comparecencia haya o no pruebas (art. 75.2); suspensión del art. 75.3 | LJV 70, 75 |
 | 17 | actores, pie | forma | «LAJ (Secretario judicial)» | Letrado de la Administración de Justicia; pie con las normas citadas | — |
+
+## Corrección posterior (2026-11-03) · Relectura, cuarta tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda4.md`, aplicados con el visto bueno del propietario.
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 19 | fin_defensor_nombrado | Funciones del representante | Suprimidas; queda la función del defensor | CC 181, 184 |
+| 20 | inventario_bienes; se suprime fin_ausencia_declarada | Se podía terminar sin comunicar al Registro Civil | La comunicación siempre se hace | LJV 77 |
+| 21 | noticia_muerte, fallecimiento_comprobado; se suprimen fin_fallecimiento_comprobado y fin_archivo_expediente | Dos reglas unidas; archivo «sin bienes ni herederos» | Dos fines separados | LJV 75.4, 76 |
+| 22 | legitimacion_ausencia | «orden de prelación sucesoria» y otras glosas | Suprimidas | CC 182 |
+| 23 | admision_ausencia | Sin subsanación ni incomparecencia | Nota con las reglas generales | LJV 13, 16.4, 18.2.1.ª |
+| 24 | suspension_representante, fin_revocacion_suspension | «suspensión definitiva» | Se revoca la declaración | LJV 75.3 |
+| 25 | noticias_existencia | «por falta de oposición» | «la resolución que proceda» | LJV 75.2 |
+| 26 | fin_defensor_ratificado, medidas_subsistencia, defensor_ordinario, defensor_judicial | «retroactiva», «simplificada», citación de testigos | Texto de la ley | LJV 69, 72.1 |
+| 27 | sucesion_notarial, presentacion_ausente, fin_revocacion_* | Contenidos sin fuente | Suprimidos o rotulados como ejemplo | LJV 75.1; CC 198 |
