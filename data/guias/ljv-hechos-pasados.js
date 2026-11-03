@@ -40,12 +40,8 @@ Neg.data.register({
      "texto": "Se ha recibido una solicitud para obtener una declaración judicial sobre la realidad y las circunstancias de hechos pasados determinados. Este expediente se tramita conforme al Capítulo XI del Título II de la Ley 15/2015, de la Jurisdicción Voluntaria (artículos 80 bis a 80 quinquies), introducido por la disposición final tercera de la Ley 20/2022, de Memoria Democrática."
     },
     {
-     "tipo": "nota",
-     "texto": "El expediente reintroduce, con carácter renovado, la antigua figura de la \"información para perpetua memoria\" de la LEC de 1881 (arts. 2002-2010), derogada por la Ley 15/2015 y recuperada por la Ley 20/2022."
-    },
-    {
      "tipo": "ley",
-     "texto": "Ley 15/2015, arts. 80 bis - 80 quinquies; Ley 20/2022, disp. final 3.ª; LEC 1881, arts. 2002-2010"
+     "texto": "Ley 15/2015, arts. 80 bis - 80 quinquies; Ley 20/2022, disp. final 3.ª"
     },
     {
      "tipo": "lista",
@@ -146,9 +142,9 @@ Neg.data.register({
      "destino": "competencia"
     },
     {
-     "texto": "No, al menos una condición no se cumple",
+     "texto": "No, al menos una condición no se cumple: el LAJ da cuenta al Juez",
      "tono": "t-aviso",
-     "destino": "fin_no_viable"
+     "destino": "auto_juez_admision"
     }
    ]
   },
@@ -215,8 +211,45 @@ Neg.data.register({
      "destino": "admision_tramite"
     },
     {
+     "texto": "Sí, hay defectos u omisiones subsanables",
+     "tono": "t-plazo",
+     "destino": "subsanacion"
+    },
+    {
      "texto": "Sí, detecta falta de competencia o incumplimiento de las condiciones del art. 80 bis.2",
      "tono": "t-plazo",
+     "destino": "auto_juez_admision"
+    }
+   ]
+  },
+  "subsanacion": {
+   "fase": 1,
+   "titulo": "Subsanación de defectos u omisiones",
+   "actor": "laj",
+   "bloques": [
+    {
+     "tipo": "info",
+     "texto": "Regla general, aplicable en lo que no se oponga a este capítulo (art. 13 LJV): el Letrado de la Administración de Justicia da un plazo para subsanar. Si no se subsanan, como este expediente lo decide el Juez, le da cuenta para que acuerde lo que proceda (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Cinco días para subsanar (art. 16.4 LJV)."
+    },
+    {
+     "tipo": "ley",
+     "texto": "Arts. 13 y 16.4 LJV"
+    }
+   ],
+   "pregunta": "¿Se subsanan en plazo?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "admision_tramite"
+    },
+    {
+     "texto": "No: se da cuenta al Juez",
+     "tono": "t-aviso",
      "destino": "auto_juez_admision"
     }
    ]
@@ -233,6 +266,10 @@ Neg.data.register({
     {
      "tipo": "aviso",
      "texto": "El auto que inadmite el expediente es susceptible de recurso de apelación (art. 80 quinquies.2)."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Apelación en veinte días (art. 458.1 LEC), con abogado y procurador (art. 3.2 LJV)."
     },
     {
      "tipo": "ley",
@@ -267,8 +304,12 @@ Neg.data.register({
      "texto": "La convocatoria a comparecencia inicia la fase probatoria del expediente. Todas las personas con interés legítimo deben ser citadas."
     },
     {
+     "tipo": "plazo",
+     "texto": "Reglas generales (art. 13 LJV): citación con al menos quince días de antelación (art. 17.3 LJV) y comparecencia dentro de los treinta días siguientes a la admisión (art. 18.1 LJV)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Ley 15/2015, art. 80 quáter.3"
+     "texto": "Ley 15/2015, arts. 13, 17.3, 18.1 y 80 quáter.3"
     }
    ],
    "siguiente": "actuaciones_probatorias"
@@ -309,7 +350,7 @@ Neg.data.register({
   "comparecencia": {
    "fase": 2,
    "titulo": "Celebración de la comparecencia",
-   "actor": "ambos",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
@@ -325,10 +366,22 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 80 quáter.4 y 6 LJV · Art. 80 quinquies.1 LJV · Arts. 437 y ss. LEC"
+     "texto": "Art. 80 quáter.4 y 6 LJV · Art. 80 quinquies.1 LJV · Arts. 443 y ss. LEC"
     }
    ],
-   "siguiente": "check_oposicion"
+   "pregunta": "¿Asiste el promotor a la comparecencia?",
+   "opciones": [
+    {
+     "texto": "Sí",
+     "tono": "t-ok",
+     "destino": "check_oposicion"
+    },
+    {
+     "texto": "No: se archiva el expediente",
+     "tono": "t-aviso",
+     "destino": "fin_desistido"
+    }
+   ]
   },
   "check_oposicion": {
    "fase": 2,
@@ -384,6 +437,10 @@ Neg.data.register({
      "texto": "El auto que resuelve sobre la oposición es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies.2)."
     },
     {
+     "tipo": "plazo",
+     "texto": "Apelación en veinte días (art. 458.1 LEC), con abogado y procurador (art. 3.2 LJV)."
+    },
+    {
      "tipo": "ley",
      "texto": "Ley 15/2015, arts. 80 quáter.6, 80 quinquies"
     }
@@ -422,6 +479,10 @@ Neg.data.register({
     {
      "tipo": "aviso",
      "texto": "Tanto el auto que accede como el que deniega la declaración son susceptibles de recurso de apelación (art. 80 quinquies.2)."
+    },
+    {
+     "tipo": "plazo",
+     "texto": "Apelación en veinte días (art. 458.1 LEC), con abogado y procurador (art. 3.2 LJV)."
     },
     {
      "tipo": "ley",
@@ -494,14 +555,18 @@ Neg.data.register({
    ],
    "siguiente": "fin_exito_inscripcion"
   },
-  "fin_no_viable": {
+  "fin_inadmitido": {
    "fase": 3,
-   "titulo": "No procede el expediente",
+   "titulo": "Expediente inadmitido por auto del Juez",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Falta alguna de las condiciones del art. 80 bis.2: el LAJ da cuenta al Juez, que, oídos el Fiscal y el solicitante, decide por auto sobre la admisibilidad (art. 80 quáter.2); contra el auto cabe apelación (art. 80 quinquies.2)."
+     "texto": "El Juez ha inadmitido el expediente por auto, previa audiencia del Ministerio Fiscal y del solicitante, al estimar la falta de competencia objetiva o territorial, o bien la falta de alguna de las condiciones del artículo 80 bis.2."
+    },
+    {
+     "tipo": "nota",
+     "texto": "El auto de inadmisión es susceptible de recurso de apelación conforme a la Ley de Enjuiciamiento Civil (art. 80 quinquies.2)."
     },
     {
      "tipo": "aviso",
@@ -518,25 +583,21 @@ Neg.data.register({
    ],
    "fin": "error"
   },
-  "fin_inadmitido": {
-   "fase": 3,
-   "titulo": "Expediente inadmitido por auto del Juez",
+  "fin_desistido": {
+   "fase": 2,
+   "titulo": "Archivo por desistimiento",
    "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez ha inadmitido el expediente por auto, previa audiencia del Ministerio Fiscal y del solicitante, al estimar la falta de competencia objetiva o territorial, o bien la falta de alguna de las condiciones del artículo 80 bis.2."
-    },
-    {
-     "tipo": "nota",
-     "texto": "El auto de inadmisión es susceptible de recurso de apelación conforme a la Ley de Enjuiciamiento Civil (art. 80 quinquies.2)."
+     "texto": "Regla general (art. 13 LJV): si el solicitante no asiste a la comparecencia, el Juez acuerda el archivo del expediente y le tiene por desistido. Si falta alguno de los demás citados, se celebra el acto y continúa el expediente (art. 18.2.1.ª LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 80 quáter.2 y 80 quinquies.2 LJV"
+     "texto": "Arts. 13 y 18.2 LJV"
     }
    ],
-   "fin": "error"
+   "fin": "warning"
   },
   "fin_sobreseimiento": {
    "fase": 3,
@@ -593,7 +654,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El auto que accede a la declaración es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies.2), si bien normalmente quien obtuvo la declaración no tendría interés en recurrir."
+     "texto": "El auto que accede a la declaración es susceptible de recurso de apelación conforme a la LEC (art. 80 quinquies.2)."
     },
     {
      "tipo": "ley",

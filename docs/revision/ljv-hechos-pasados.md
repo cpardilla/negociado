@@ -51,3 +51,19 @@ Competente: Juzgado de Primera Instancia, hoy la **Sección Civil** del Tribunal
 | 3 | check_inscribible, inscripcion_registral, fin_exito_inscripcion | error | Cita del «art. 11 LJV» (es el de las resoluciones extranjeras); «se procede a la inscripción» | Art. 22.2: mandamiento a instancia de parte, por medios electrónicos, con calificación limitada del registrador | LJV 22.2 |
 | 4 | check_condiciones, fin_no_viable | impreciso | Las verificaba «el Juez»; condición 5.ª «procedimiento indicado (carácter subsidiario)» | Las examina el LAJ y, si falta alguna, da cuenta al Juez, que decide por auto oídos el Fiscal y el solicitante (art. 80 quáter.2); «legalmente indicado»; apelación (art. 80 quinquies.2) | LJV 80 bis.2, 80 quáter.2 |
 | 5 | recursos, actores | forma | «Art. 80 quinquies» sin apartado; «LAJ», «Ambos» | Art. 80 quinquies.1 (reposición) y .2 (apelación); nombres completos | LJV 80 quinquies |
+
+## Corrección posterior (2026-11-03) · Relectura, cuarta tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda4.md`, aplicados con el visto bueno del propietario.
+
+### Guía
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 9 | check_condiciones; se suprime fin_no_viable | Fin del recorrido sin decisión | Dación de cuenta al Juez, que decide por auto | LJV 80 quáter.2 |
+| 12 | comparecencia | Arts. 437 y ss. LEC | Arts. 443 y ss. LEC | LEC 443 |
+| 13 | comparecencia | Actor «Juez / LAJ» | Juez | LJV 18.1, 80 quáter.5 |
+| 15 | control_laj, admision_tramite, comparecencia; nuevos subsanacion y fin_desistido | Sin reglas generales | Cinco, quince y treinta días; archivo por desistimiento | LJV 13, 16.4, 17.3, 18.1, 18.2.1.ª |
+| 16 | auto_juez_admision, juez_oposicion, resolucion_5dias | Sin plazo ni postulación | Veinte días, con abogado y procurador | LEC 458.1; LJV 3.2 |
+| 17 | inicio | «perpetua memoria» | Suprimido, como en el esquema | Sin comprobar |
+| 18 | fin_exito | «no tendría interés en recurrir» | Suprimido | Sin fuente |
