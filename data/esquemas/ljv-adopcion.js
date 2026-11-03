@@ -107,7 +107,7 @@ Neg.data.register({
              "t": "Adoptante mayor de veinticinco años (si son dos, basta uno); diferencia de edad de al menos dieciséis años y no más de cuarenta y cinco, salvo los casos del art. 176.2 CC y las excepciones del propio artículo."
             },
             {
-             "t": "Solo pueden adoptarse menores no emancipados; por excepción, un mayor de edad o menor emancipado si antes hubo acogimiento o convivencia estable con los adoptantes de al menos un año."
+             "t": "Solo pueden adoptarse menores no emancipados; por excepción, un mayor de edad o menor emancipado si, inmediatamente antes de la emancipación, hubo acogimiento o convivencia estable con los adoptantes de al menos un año."
             },
             {
              "t": "No puede adoptarse a un descendiente, a un pariente en segundo grado de la línea colateral ni al pupilo por su tutor hasta aprobarse la cuenta general de la tutela."
@@ -619,9 +619,6 @@ Neg.data.register({
             },
             {
              "t": "En la citación a los progenitores se hará constar, en su caso, la circunstancia por la cual basta su audiencia."
-            },
-            {
-             "t": "Las citaciones se efectuarán de conformidad con las normas establecidas en la Ley de Jurisdicción Voluntaria para tales supuestos."
             }
            ]
           }
@@ -1070,7 +1067,7 @@ Neg.data.register({
   },
   {
    "titulo": "Indice de plazos procesales",
-   "recuento": "10 trámites",
+   "recuento": "12 trámites",
    "plegada": true,
    "bloques": [
     {
@@ -1130,6 +1127,16 @@ Neg.data.register({
         "Conservación de información de orígenes biológicos por las Entidades Públicas",
         "50 años",
         "Artículo 180 Código Civil"
+       ],
+       [
+        "Auto que resuelve el expediente",
+        "5 días",
+        "Art. 19.1 Ley 15/2015"
+       ],
+       [
+        "Recurso de apelación contra el auto (con Abogado y Procurador, art. 3.2 Ley 15/2015)",
+        "20 días",
+        "Art. 39.4 Ley 15/2015; art. 458.1 LEC"
        ]
       ]
      }
@@ -1196,13 +1203,13 @@ Neg.data.register({
         "t": "Cónyuge o Pareja del Adoptante (asentimiento)"
        },
        {
-        "t": "Tutor (asentimiento, audiencia)"
+        "t": "Tutor (audiencia)"
        },
        {
-        "t": "Familia Acogedora (asentimiento, audiencia)"
+        "t": "Familia Acogedora (audiencia)"
        },
        {
-        "t": "Guardadores (asentimiento, audiencia)"
+        "t": "Guardadores (audiencia)"
        }
       ]
      }

@@ -82,3 +82,12 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 4 | asentimiento_sujetos | «cónyuge»; solo privación por sentencia | También la pareja y quienes estén incursos en causa legal | CC 177.2 |
 | 6 | competencia | Art. 86.5 j) LOPJ | Art. 86.5 d) LOPJ | LOPJ |
 | 7 | competencia | Sin examen ni subsanación | Nota con las reglas generales | LJV 13, 16 |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 1 | Mapa de actores | Tutor, familia acogedora y guardadores: «asentimiento, audiencia» | «audiencia» | CC 177.2, 177.3 |
+| 2 | Índice de plazos | Sin auto ni apelación | Dos filas añadidas | LJV 19.1, 39.4; LEC 458.1 |
+| 5 | Art. 175 | «si antes hubo» | «inmediatamente antes de la emancipación» | CC 175.2 |
+| 8 | Art. 38 | Frase del art. 781.3 LEC | Suprimida aquí | LJV 38 |
