@@ -81,3 +81,14 @@ Las filas de la LEC con texto de una versión antigua son las 16 ya corregidas p
 **Hallazgo al revisar, pendiente del visto bueno del propietario: notas del BOE dentro del texto de los artículos.** El BOE envuelve en `<blockquote caduca="…" class="soloTexto">` y `<blockquote class="noDesde…">` sus avisos, a menudo con la «Redacción anterior». El lector (`tools/boe-fetch.js`, y también `assets/js/core/vigencia.js`) solo reconoce `<blockquote>` sin atributos, así que ese contenido se guarda como texto del artículo. Afecta a 225 artículos de los que lleva la app (189 con «Redacción anterior»): LEC 165/150, LJV 41/21, LPPD 6/6, LH 5/4, LRC 4/4, LN 2/2, LMED 1/1, LOPJ 1/1. Ejemplo: el art. 117 LEC se muestra con sus apartados vigentes y, debajo, con los anteriores. `class="sangrado"` no es una nota: es texto legal (LO 1/2025, Ley 4/2023) y debe conservarse.
 
 Simulado el arreglo en una copia aparte: 503 bloques cambian en las instantáneas y todos son solo supresión; no queda ninguna nota en los artículos de la app; el comprobador sigue con 3 errores y pierde un aviso falso (art. 51.2 LJV, cuyo apartado 2 lo pisaba el de la redacción anterior). Ninguna cita, plazo o rúbrica dependía solo del texto derogado, en lo que el comprobador examina; no cubre toda afirmación de las guías. Solo una nota sigue viva en esos artículos: art. 2 LOPDH (inciso anulado por la STC 9/1990).
+
+## Notas del BOE fuera del texto de los artículos (2026-11-03)
+
+Aplicado lo que quedó pendiente en la sección anterior, con el visto bueno del propietario. Corte del BOE: descarga del 2026-11-03 (LEC y CE, con fecha de actualización 29-10-2026, sin cambios en su articulado).
+
+- 226 artículos de los que lleva la app cambian (LEC 165, LJV 41 y 20 de otras leyes), todos solo por supresión; ninguna versión ni marca «sin contenido» varía.
+- Contrastados contra la API del BOE los 206 de la LEC y la LJV: todos coinciden palabra por palabra.
+- Única nota no caducada: art. 2 LOPDH (inciso anulado por la STC 9/1990), ahora «Nota del BOE» con el texto del inciso, que el BOE solo distingue en negrita y la app mostraba como vigente.
+- Comprobador: 3 errores intencionados, 0 avisos, 53 por revisar; desaparece el aviso falso del art. 51.2 LJV.
+
+Límite: el comprobador examina citas, apartados, rúbricas y plazos, no cada afirmación. Las revisiones de las fases 4 y 5 se hicieron sobre instantáneas con esas notas; no se ha releído cada recurso.

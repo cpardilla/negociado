@@ -1,7 +1,7 @@
 # Informe automático de contenido
 
 Generado por `tools/check-content.js` el 3/11/2026 sobre los datos de la app (`data/esquemas`, `data/guias`). El informe del punto de partida es `informe-inicial.md`.
-Fuente: BOE, LEC consolidada a 07-10-2026 y LJV a 05-03-2026 (`sources/boe/`).
+Fuente: BOE, LEC consolidada a 29-10-2026 y LJV a 05-03-2026 (`sources/boe/`).
 
 Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · **revisar** (necesita lectura humana; puede ser correcto). Las citas sin ley explícita se atribuyen a la ley del recurso y se marcan «ley por defecto»: el contexto puede referirse a otra norma. Es un primer cribado: la revisión manual de cada recurso (fases 4 y 5) parte de aquí, pero no se limita a ello.
 
@@ -22,7 +22,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-defensor-judicial | Esquema · LJV · Habilitación para comparecer y defensor judicial | 1E | · | · | · | · | · | 3R |
 | ljv-adopcion | Esquema · LJV · Adopción | · | · | · | 1R | · | · | 1R |
 | ljv-medidas-apoyo | Esquema · LJV · Medidas judiciales de apoyo a personas con discapacidad | 2R | · | · | · | · | · | 1R |
-| ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | · | · | · | 1R | · | · | 1R |
+| ljv-tutela-curatela | Esquema · LJV · Tutela, curatela y guarda de hecho | · | · | · | · | · | · | 1R |
 | ljv-emancipacion | Esquema · LJV · Emancipación y beneficio de la mayoría de edad | · | · | · | · | · | · | · |
 | ljv-patrimonio-protegido | Esquema · LJV · Patrimonio de las personas con discapacidad | · | · | · | · | · | · | 1R |
 | ljv-honor-menor | Esquema · LJV · Honor, intimidad e imagen del menor o persona con discapacidad | · | · | · | · | · | · | 1R |
@@ -61,7 +61,7 @@ Niveles: **error** (incorrecto con seguridad) · **aviso** (probable error) · *
 | ljv-deslinde | Guía · LJV · Deslinde de fincas no inscritas | · | · | · | · | · | · | 1R |
 | ljv-subastas | Guía · LJV · Título VII · Subastas voluntarias | · | · | · | · | · | · | 1R |
 | ljv-conciliacion | Guía · LJV · Título IX · Conciliación | · | · | · | · | · | · | 2R |
-| | **Total** | 3E 0A 2R | 0E 0A 0R | 0E 0A 0R | 0E 0A 3R | 0E 0A 1R | 0E 0A 0R | 0E 0A 48R |
+| | **Total** | 3E 0A 2R | 0E 0A 0R | 0E 0A 0R | 0E 0A 2R | 0E 0A 1R | 0E 0A 0R | 0E 0A 48R |
 
 E = error · A = aviso · R = revisar.
 
@@ -71,7 +71,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 
 - ✓ LJV (BOE a 05-03-2026): 2808
 - ✓ CC (BOE a 07-09-2026): 1351
-- ✓ LEC (BOE a 07-10-2026): 1187
+- ✓ LEC (BOE a 29-10-2026): 1187
 - ✓ LOPJ (BOE a 09-10-2026): 119
 - ✓ LPPD (BOE a 18-12-2025): 75
 - ✓ LTRANS (BOE a 20-12-2025): 70
@@ -84,7 +84,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LN (BOE a 22-10-2026): 34
 - ✓ LH (BOE a 07-01-2026): 28
 - ✓ LTO (BOE a 16-12-2025): 22
-- ✓ CE (BOE a 20-05-2026): 18
+- ✓ CE (BOE a 29-10-2026): 18
 - ✓ LSC (BOE a 19-12-2025): 9
 - ✓ CP (BOE a 09-04-2026): 7
 - ✓ LOPDGDD (BOE a 08-10-2026): 6
@@ -196,10 +196,6 @@ Sin hallazgos automáticos.
 - [revisar] «Juzgado de Primera Instancia» × 1 → Tribunal de Instancia, Sección Civil (LO 1/2025) — verificar régimen transitorio — _sección «Capítulo III bis — Artículos 42 bis a), b) y c)» › tarjeta «Art. 42 bis a)» › «Competencia territorial» › 1 › punto.1_
 
 ### ljv-tutela-curatela · Esquema · LJV · Tutela, curatela y guarda de hecho
-
-**plazos**
-
-- [revisar] plazo «10 días» no aparece en el precepto citado (Art. 51.2 LJV): «Petición de comparecencia tras el traslado de informes o cuentas · 10 días · Art. 51.2 LJV» — _sección «Índice de plazos» › 1 › tabla fila 5_
 
 **terminologia**
 
