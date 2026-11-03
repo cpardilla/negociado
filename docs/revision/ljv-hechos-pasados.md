@@ -67,3 +67,11 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda
 | 16 | auto_juez_admision, juez_oposicion, resolucion_5dias | Sin plazo ni postulación | Veinte días, con abogado y procurador | LEC 458.1; LJV 3.2 |
 | 17 | inicio | «perpetua memoria» | Suprimido, como en el esquema | Sin comprobar |
 | 18 | fin_exito | «no tendría interés en recurrir» | Suprimido | Sin fuente |
+
+### Esquema (misma tanda)
+
+| # | Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 10 | Índice de plazos | Art. 80 quater, apartado 4 | Apartado 3 | LJV 80 quáter.3 |
+| 11 | Índice de plazos | «3 trámites» con 4 filas | «4 trámites» | Coherencia interna |
+| 14 | Ecosistema | «Testimonio» | «Mandamiento» | LJV 22.2, párrafo segundo |

@@ -551,7 +551,7 @@ Neg.data.register({
   },
   {
    "titulo": "Indice de plazos procesales",
-   "recuento": "3 trámites",
+   "recuento": "4 trámites",
    "plegada": true,
    "bloques": [
     {
@@ -565,7 +565,7 @@ Neg.data.register({
        [
         "Plazo común para solicitar la citación de testigos o peritos y pedir respuestas escritas a personas jurídicas o entidades públicas (actuaciones probatorias previas a la comparecencia)",
         "5 días",
-        "Artículo 80 quater, apartado 4"
+        "Artículo 80 quater, apartado 3"
        ],
        [
         "Plazo para que el Juez dicte auto accediendo o denegando la emisión de la declaración judicial tras la celebración de la comparecencia",
@@ -665,7 +665,7 @@ Neg.data.register({
      "norma": {
       "ley": "Ley 15/2015, de 2 de julio",
       "titulo": "Ley de la Jurisdicción Voluntaria",
-      "texto": "<strong>Artículo 3</strong> — Legitimación y postulación (abogado y procurador para los recursos). <strong>Artículo 4</strong> — Intervención del Ministerio Fiscal. <strong>Artículo 6</strong> — Tramitación simultánea o posterior de expedientes o procesos (en relación con el art. 80 bis.2 d). <strong>Artículo 7 bis</strong> — Ajustes para personas con discapacidad. <strong>Artículo 8</strong> — Carácter supletorio de la LEC. <strong>Artículos 13 a 22 LJV</strong> — Normas comunes de tramitación. <strong>Artículo 22.2 LJV</strong> — Testimonio para la inscripción en registros públicos (remisión del art. 80 quater.5).",
+      "texto": "<strong>Artículo 3</strong> — Legitimación y postulación (abogado y procurador para los recursos). <strong>Artículo 4</strong> — Intervención del Ministerio Fiscal. <strong>Artículo 6</strong> — Tramitación simultánea o posterior de expedientes o procesos (en relación con el art. 80 bis.2 d). <strong>Artículo 7 bis</strong> — Ajustes para personas con discapacidad. <strong>Artículo 8</strong> — Carácter supletorio de la LEC. <strong>Artículos 13 a 22 LJV</strong> — Normas comunes de tramitación. <strong>Artículo 22.2 LJV</strong> — Mandamiento para la constancia en registros públicos (remisión del art. 80 quater.5).",
       "etiqueta": "Norma principal",
       "tono": "t-ok"
      }
