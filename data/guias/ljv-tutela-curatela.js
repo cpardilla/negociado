@@ -327,6 +327,10 @@ Neg.data.register({
      "texto": "La comparecencia sigue los trámites de la vista del juicio verbal con las especialidades del art. 18 LJV; se garantiza la intervención de las personas con discapacidad con los ajustes del art. 7 bis LJV."
     },
     {
+     "tipo": "nota",
+     "texto": "Si el solicitante no asiste, el Juez acuerda el archivo y le tiene por desistido; si no asiste otro citado, se celebra el acto y continúa el expediente (art. 18.2.1.ª LJV)."
+    },
+    {
      "tipo": "ley",
      "texto": "Art. 45.2 LJV · Arts. 7 bis y 18 LJV · Art. 9 LO 1/1996"
     }
@@ -446,7 +450,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El Juez nombra tutor o curador, adopta las medidas de fiscalización procedentes y exige fianza, con su modalidad y cuantía (art. 45.4 y 5 LJV)."
+     "texto": "El Juez nombra tutor o curador por auto, adopta las medidas de fiscalización procedentes y exige fianza, con su modalidad y cuantía (art. 45.4 y 5 LJV), en los cinco días siguientes a la comparecencia (art. 19.1 LJV)."
     },
     {
      "tipo": "nota",
@@ -454,7 +458,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 45.4, 45.5 y 46.2 LJV"
+     "texto": "Arts. 19.1, 45.4, 45.5 y 46.2 LJV"
     }
    ],
    "siguiente": "recurso_apelacion"
@@ -1268,7 +1272,7 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "El tutor o curador sigue en el cargo; si había sido suspendido, recupera sus funciones y cesa el defensor judicial nombrado durante la tramitación (art. 49.2 LJV)."
+     "texto": "El tutor o curador sigue en el cargo. Si había sido suspendido durante la tramitación (art. 49.2 LJV), recupera sus funciones y cesa el defensor judicial, como consecuencia de no acordarse la remoción."
     },
     {
      "tipo": "nota",
@@ -1292,7 +1296,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Si el motivo sobreviene durante el ejercicio, puede alegarse en cualquier momento (art. 50.1 LJV; art. 279 CC)."
+     "texto": "Si el motivo sobreviene durante el ejercicio, puede alegarse en cualquier momento, salvo las personas jurídicas, siempre que haya persona de parecidas condiciones para sustituirle (art. 50.1 LJV; art. 279 CC)."
     },
     {
      "tipo": "ley",
@@ -1723,20 +1727,44 @@ Neg.data.register({
   },
   "fin_error_incompetencia": {
    "fase": 0,
-   "titulo": "Falta de competencia territorial",
-   "actor": "laj",
+   "titulo": "Falta de competencia territorial: dación de cuenta al Juez",
+   "actor": "juez",
    "bloques": [
     {
      "tipo": "info",
      "texto": "Si el LAJ entiende que el Juzgado carece de competencia territorial, como la decisión del expediente corresponde al Juez, le da cuenta, y este acuerda lo procedente tras oír al Ministerio Fiscal y al solicitante (arts. 2.3 y 16.3 LJV)."
     },
     {
-     "tipo": "nota",
+     "tipo": "ley",
+     "texto": "Arts. 2.3, 16.3 y 43.1 LJV"
+    }
+   ],
+   "pregunta": "¿Qué aprecia el Juez?",
+   "opciones": [
+    {
+     "texto": "Es competente",
+     "tono": "t-ok",
+     "destino": "postulacion"
+    },
+    {
+     "texto": "No es competente",
+     "tono": "t-aviso",
+     "destino": "fin_remision"
+    }
+   ]
+  },
+  "fin_remision": {
+   "fase": 0,
+   "titulo": "Fin — Remisión al órgano competente",
+   "actor": "juez",
+   "bloques": [
+    {
+     "tipo": "info",
      "texto": "La remisión se hace al órgano que se considere competente: el del domicilio o, en su defecto, la residencia del menor o persona con discapacidad (art. 43.1 LJV)."
     },
     {
      "tipo": "ley",
-     "texto": "Arts. 2.3, 16.3 y 43.1 LJV"
+     "texto": "Arts. 16.3 y 43.1 LJV"
     }
    ],
    "fin": "error"

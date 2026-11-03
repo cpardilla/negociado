@@ -81,3 +81,15 @@ La app leía las citas sueltas de cada bloque como de la ley del recurso; ahora,
 | Antes | Ahora |
 |---|---|
 | tutela solo para menores, art. 51 bis y redacción | tutela solo para menores, art. 51 bis LJV y redacción |
+
+## Corrección posterior (2026-11-03) · Relectura, sexta tanda
+
+Corte del BOE: descarga del 2026-11-03. Hallazgos de `relectura-2026-11-03-tanda6.md`, aplicados con el visto bueno del propietario.
+
+| # | Paso | Antes | Ahora | Fuente |
+|---|---|---|---|---|
+| 9 | comparecencia | Sin incomparecencia | Nota con la regla general | LJV 18.2.1.ª |
+| 10 | excusa_plazo | Sin la salvedad de las personas jurídicas | Añadida | LJV 50.1 |
+| 11 | fin_no_remocion | Consecuencia atribuida al art. 49.2 | Presentada como consecuencia | LJV 49.2 |
+| 12 | fin_error_incompetencia; nuevo fin_remision | Actor LAJ, sin salida si el Juez aprecia competencia | Actor Juez, con opción | LJV 2.3, 16.3 |
+| 13 | resolucion_con_fianza | Sin plazo | Cinco días | LJV 19.1 |
