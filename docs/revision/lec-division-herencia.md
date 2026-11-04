@@ -202,3 +202,13 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de la relectura (`relectura-20
 | Lugar | Antes | Ahora | Fuente |
 |---|---|---|---|
 | Esquema, art. 787, apartado 5 | «sin protocolización» | Testimonios o protocolización ceñida a lo modificado | Propietario; LEC 787.5 y 788.2 |
+
+## Protocolización: documentos aportados (2026-11-04)
+
+| Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|
+| Guía, p5_decreto | «Conviene» la firmeza | Se espera a la firmeza; cautela de práctica | Propietario; DGSJFP 11-6-2026 |
+| Guía, p6_sentencia_titulo | Sin adaptación del cuaderno | El contador adapta; sin ejecución aparte; aviso de rebeldía | Propietario; LEC 787.4, 787.5, 524.4; DGSJFP 7-7-2026 |
+| Guía, p6_protocolizacion | Sin aviso | Nota sobre caudal sin bienes inscribibles | Propietario; LEC 787.2, 788.2 |
+| Guía, p6_notario_turno y p6_testimonios_notario | Solo el art. 213 RN | Las dos formas de llegar al Notario; oficio al decano; aviso de rebeldía | RN 213; DOG 26-3-2015; DGSJFP 7-7-2026 |
+| Guía, p6_titulo_testimonios | Solo NIF | Impuestos y efecto de la protocolización | LH 3 y 254.1; CC 1068 |

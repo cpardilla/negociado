@@ -846,7 +846,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Conviene que conste la firmeza del decreto: un registrador la exigió para inscribir, y la Dirección General la dio por acreditada con la diligencia de ordenación reseñada en la escritura (Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 11 de junio de 2026)."
+     "texto": "Se espera a la firmeza del decreto antes de enviar las operaciones al Notario. Es una cautela de práctica, no un mandato legal, porque el recurso no suspende: un registrador exigió la firmeza para inscribir, y la Dirección General la dio por acreditada con la diligencia de ordenación reseñada en la escritura (Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 11 de junio de 2026)."
     }
    ],
    "siguiente": "p6_protocolizacion"
@@ -974,6 +974,14 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
+     "texto": "La sentencia se lleva a efecto con arreglo al art. 788 LEC, sin proceso de ejecución aparte (art. 787.5 LEC)."
+    },
+    {
+     "tipo": "info",
+     "texto": "Si la sentencia modifica las operaciones, el contador las adapta a lo que resuelve. Es práctica, por analogía con las reformas convenidas del art. 787.4 LEC: el art. 787.5 LEC no lo dice."
+    },
+    {
+     "tipo": "info",
      "texto": "La sentencia firme es título suficiente para inscribir: basta testimonio de la sentencia, con su firmeza, y del cuaderno particional (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
     },
     {
@@ -985,8 +993,12 @@ Neg.data.register({
      "texto": "Tiene que quedar claro qué cuaderno refleja lo aprobado, y determinarlo corresponde al Juez: una inscripción se suspendió porque se presentaron dos versiones sin constancia de cuál era la buena (Resolución de la Dirección General de los Registros y del Notariado de 26 de julio de 2019)."
     },
     {
+     "tipo": "aviso",
+     "texto": "Si algún heredero no compareció, tiene que resultar de la documentación la intervención del Ministerio Fiscal, si fue citado por edictos (art. 783.4 LEC), y, si fue declarado en rebeldía, que han pasado los plazos de la acción de rescisión, lo que aprecia el Juzgado (arts. 501, 502 y 524.4 LEC). Una inscripción se suspendió por no constar (Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 7 de julio de 2026)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Arts. 787.5 y 788.2 LEC · Art. 14 LH · Art. 80.1 a) RH"
+     "texto": "Arts. 787.4, 787.5 y 788.2 LEC · Art. 14 LH · Art. 80.1 a) RH · Art. 524.4 LEC"
     }
    ],
    "pregunta": "¿Se protocolizan las operaciones divisorias?",
@@ -1015,6 +1027,10 @@ Neg.data.register({
     {
      "tipo": "aviso",
      "texto": "Si se aprobaron por decreto, su testimonio no es título inscribible: para inscribir las adjudicaciones hay que protocolizar las operaciones ante Notario, salvo que en el mismo procedimiento se dispusiera otra cosa (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de los Registros y del Notariado de 1 de febrero de 2018; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Si el caudal no incluye bienes inscribibles: el art. 787.2 LEC no distingue, y el art. 788.2 LEC da los testimonios «luego que sean protocolizadas». La razón registral de protocolizar solo alcanza a esos bienes, pero ninguna de las normas y resoluciones consultadas permite omitirla por eso."
     },
     {
      "tipo": "ley",
@@ -1061,6 +1077,10 @@ Neg.data.register({
      "texto": "A falta de acuerdo, el Juez o Tribunal designa al Notario a quien corresponda, con arreglo a un turno establecido entre los Notarios del distrito notarial."
     },
     {
+     "tipo": "nota",
+     "texto": "En un auto publicado en el Diario Oficial de Galicia de 26 de marzo de 2015 se oficia al decano del Colegio Notarial «para que participe el notario a quien por turno corresponda la protocolización»."
+    },
+    {
      "tipo": "ley",
      "texto": "Art. 128, párrafo cuarto, RN"
     }
@@ -1073,6 +1093,10 @@ Neg.data.register({
    "actor": "laj",
    "bloques": [
     {
+     "tipo": "info",
+     "texto": "Firme la resolución, se expiden los testimonios."
+    },
+    {
      "tipo": "lista",
      "titulo": "Se expide testimonio de",
      "marcar": true,
@@ -1083,15 +1107,19 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "El art. 213 RN habla de entregar «el expediente con el auto judicial» que ordena protocolizar. En la práctica se hace con testimonios, y hoy, sin oposición, la resolución que lo ordena es el decreto."
+     "texto": "Cómo llegan al Notario: los puede entregar cualquier persona (el art. 213 RN habla de «el expediente con el auto judicial») o remitirlos el propio Juzgado, como en un auto publicado en el Diario Oficial de Galicia de 26 de marzo de 2015 («remítansele las operaciones divisorias y testimonio»)."
     },
     {
      "tipo": "aviso",
      "texto": "Tiene que quedar claro cuál es el cuaderno aprobado: una inscripción se suspendió porque se protocolizaron dos versiones sin constancia de cuál era la buena (Resolución de la Dirección General de los Registros y del Notariado de 26 de julio de 2019)."
     },
     {
+     "tipo": "aviso",
+     "texto": "Si algún heredero no compareció, tiene que resultar de la documentación la intervención del Ministerio Fiscal, si fue citado por edictos (art. 783.4 LEC), y, si fue declarado en rebeldía, que han pasado los plazos de la acción de rescisión, lo que aprecia el Juzgado (arts. 501, 502 y 524.4 LEC). Una inscripción se suspendió por no constar (Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 7 de julio de 2026)."
+    },
+    {
      "tipo": "ley",
-     "texto": "Arts. 787.2, 787.4 y 787.5 LEC · Art. 213 RN"
+     "texto": "Arts. 783.4, 787.2, 787.4 y 787.5 LEC · Art. 213 RN · Arts. 501, 502 y 524.4 LEC"
     }
    ],
    "siguiente": "p6_acta_protocolizacion"
@@ -1140,11 +1168,15 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Para inscribir tienen que constar los números de identificación fiscal de los interesados, también en un título judicial (art. 254.2 LH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 14 de mayo de 2025)."
+     "texto": "Para inscribir hay que acreditar el pago de los impuestos que devengue (art. 254.1 LH), y tienen que constar los números de identificación fiscal de los interesados, también en un título judicial (art. 254.2 LH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 14 de mayo de 2025)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "La partición legalmente hecha ya confiere a cada heredero la propiedad exclusiva de lo adjudicado (art. 1068 CC); la protocolización aporta el título público que exige el Registro (art. 3 LH)."
     },
     {
      "tipo": "ley",
-     "texto": "Art. 788.2 LEC · Art. 80.1 a) RH · Art. 100 RH · Art. 254.2 LH"
+     "texto": "Art. 788.2 LEC · Art. 80.1 a) RH · Art. 100 RH · Arts. 3 y 254 LH · Art. 1068 CC"
     }
    ],
    "siguiente": "p6_acreedores"
