@@ -955,7 +955,10 @@ Neg.data.register({
              "t": "Protocoliza, mediante acta, el Notario que, residiendo dentro del partido judicial, designen unánimemente los interesados; a falta de acuerdo, el Juez o Tribunal lo designa por turno entre los Notarios del distrito notarial (arts. 128, 211 y 213 RN)."
             },
             {
-             "t": "El acta se extiende a requerimiento de cualquier persona que entregue la documentación con la resolución que ordena protocolizar (art. 213 RN). En la práctica, con testimonio del decreto, con su firmeza, y del cuaderno aprobado."
+             "t": "Firme el decreto (cautela de práctica, no mandato legal), se expide testimonio de él y del cuaderno aprobado. Llegan al Notario entregados por cualquier persona (art. 213 RN) o remitidos por el propio Juzgado, y el Notario extiende el acta."
+            },
+            {
+             "t": "Si algún heredero no compareció, tiene que resultar de la documentación la intervención del Ministerio Fiscal, si fue citado por edictos (art. 783.4 LEC), y, si fue declarado en rebeldía, que han pasado los plazos de la acción de rescisión, lo que aprecia el Juzgado (arts. 501, 502 y 524.4 LEC). Una inscripción se suspendió por no constar (Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 7 de julio de 2026)."
             }
            ]
           }
@@ -990,6 +993,9 @@ Neg.data.register({
             },
             {
              "t": "La sentencia se lleva a efecto según el art. 788, pero no tiene eficacia de cosa juzgada: los interesados pueden hacer valer sus derechos sobre los bienes adjudicados en el juicio ordinario que corresponda."
+            },
+            {
+             "t": "Si la sentencia modifica las operaciones, el contador las adapta a lo que resuelve. Es práctica, por analogía con las reformas convenidas del art. 787.4 LEC: el art. 787.5 LEC no lo dice."
             },
             {
              "t": "La sentencia firme es título suficiente para inscribir: basta testimonio de la sentencia, con su firmeza, y del cuaderno particional (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022). También se pueden protocolizar las operaciones divisorias, en tanto se ciñan a lo modificado por la sentencia (arts. 787.5 y 788.2 LEC)."
