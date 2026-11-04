@@ -553,23 +553,37 @@ test("search: a word may name the law of the entry, whole; the rest of its conte
     `const ask = async (q) => { location.hash = '#/buscar?q=' + encodeURIComponent(q); await wait(800); return [...document.querySelectorAll('.results li')].map((li) => [li.querySelector('strong').textContent, li.querySelector('small').textContent]); };
      const lec = await ask('art. 140 LEC');
      const ljv = await ask('art 140 ljv');
-     const both = await ask('art. 140');
+     const bothList = await ask('art. 140');
      const word = (await ask('caución')).length;
      const wordLec = await ask('caución LEC');
      const wordLjv = await ask('caución LJV');
      const bigger = (await ask('adopción')).length;
-     const part = (await ask('art. 140 LE')).length;
-     return { lec, ljv, both: both.length, word, wordLec: wordLec.length, allLec: wordLec.every((x) => x[1].startsWith('LEC')), wordLjv: wordLjv.every((x) => x[1].startsWith('LJV')), wordLjvN: wordLjv.length, bigger, part };`
+     const part = await ask('art. 140 LE');
+     const delaLec = await ask('art. 140 de la LEC');
+     const marks = [...document.querySelectorAll('.results mark')].map((m) => m.textContent.toLowerCase());
+     const enLjv = await ask('artículo 140 en la LJV');
+     const articuloLec = await ask('artículo 140 de la LEC');
+     const sinPunto = await ask('art 140');
+     const conLaLec = (await ask('la caución en el LEC')).length;
+     const sinLey = await ask('art. 140 de la');
+     return { lec, ljv, bothList, word, wordLec: wordLec.length, allLec: wordLec.every((x) => x[1].startsWith('LEC')), wordLjv: wordLjv.every((x) => x[1].startsWith('LJV')), wordLjvN: wordLjv.length, bigger, part, delaLec, marks, enLjv, articuloLec, sinPunto, conLaLec, sinLey };`
   );
   assert.equal(r.lec.length, 1);
   assert.match(r.lec[0][0], /^Art\. 140\./);
   assert.match(r.lec[0][1], /^LEC/);
   assert.ok(r.ljv.length >= 1 && r.ljv.every((x) => x[1].startsWith("LJV")), "solo la LJV");
-  assert.equal(r.both, 2);
+  assert.deepEqual(r.sinPunto.map((x) => x[0]).sort(), r.bothList.map((x) => x[0]).sort(), "«art» y «art.» dan lo mismo");
   assert.ok(r.wordLec > 0 && r.wordLec + r.wordLjvN === r.word, "la ley reparte los resultados, sin añadir");
   assert.equal(r.allLec, true);
   assert.equal(r.wordLjv, true);
-  assert.equal(r.part, 0, "el nombre de la ley cuenta entero");
+  assert.ok(!r.part.some((x) => x[0] === r.lec[0][0]), "el nombre de la ley cuenta entero: «LE» no es «LEC»; " + JSON.stringify(r.part));
+  assert.deepEqual(r.delaLec, r.lec, "«de la» no cuenta si se nombra una ley");
+  assert.ok(!r.marks.includes("de") && !r.marks.includes("la"), "ni se resalta");
+  assert.ok(r.enLjv.length >= 1 && r.enLjv.every((x) => x[1].startsWith("LJV")));
+  assert.match(r.enLjv[0][0], /^Art\. 140\./, "«artículo» encuentra «Art.», el primero");
+  assert.deepEqual(r.articuloLec, r.lec, "«artículo 140 de la LEC» es lo mismo que «art. 140 LEC»");
+  assert.equal(r.conLaLec, r.wordLec, "artículos y preposiciones, tampoco");
+  assert.ok(!r.sinLey.some((x) => x[0] === r.lec[0][0]), "sin ley, sigue exigiendo todas las palabras; " + JSON.stringify(r.sinLey));
 });
 
 test("search: what is typed is text, whatever its signs; a stray % in the address is no error", { timeout: 60000 }, async () => {

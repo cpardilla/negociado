@@ -15,14 +15,20 @@
   const SUGERENCIAS_MOVIL = 5; // with the keyboard open there is little room
   const ESPERA = 120; // ms after the last key
   const ART = /^(?:art|arts|articulo|articulos)\.?$/;
+  // Articles, prepositions and conjunctions, folded (no accents), as palabras() compares them.
+  const VACIAS = new Set("el la los las lo un una unos unas al del de a ante bajo con contra desde en entre hacia hasta para por segun sin sobre tras y e o u ni que se su sus".split(" "));
 
   /** The words of a query. Signs around a word are not part of it: «¿caución?» looks for «caución».
    *  The dot and the bracket stay, because they belong to citations («art. 140.1», «42 bis a)»). */
-  const palabras = (q) =>
-    Neg.fold(q)
+  function palabras(q) {
+    const words = Neg.fold(q)
       .split(/\s+/)
       .map((w) => w.replace(/^[¿?¡!«»"'“”,;:&]+|[¿?¡!«»"'“”,;:&]+$/g, ""))
       .filter(Boolean);
+    // «art. 140 de la LEC»: when a law is named, the most common small words are not searched.
+    const leyes = ((Neg.catalogo && Neg.catalogo.leyes) || []).map((l) => Neg.fold(l.id));
+    return words.some((w) => leyes.includes(w)) ? words.filter((w) => !VACIAS.has(w)) : words;
+  }
 
   /** The heading of the article a query names, as it starts in the index («art. 140.»), or null. */
   function articulo(words) {
@@ -33,6 +39,9 @@
       .replace(/^(\d+)\.\d.*$/, "$1"); // «140.1» is article 140
     return /^\d/.test(resto) ? `art. ${resto}.` : null;
   }
+
+  /** Whether a folded text has a word. «art.», «art», «arts.» and «artículo» are one and the same. */
+  const contiene = (hay, w) => (ART.test(w) ? /\b(?:arts?\.|articulos?\b)/.test(hay) : hay.includes(w));
 
   /** The law an entry belongs to, folded: the first word of its context («LEC › LIBRO I»). */
   const ley = (e) => (e.l === undefined ? (e.l = Neg.fold((e.c || "").split(/\s/)[0])) : e.l);
@@ -47,12 +56,12 @@
       const propias = words.filter((w) => w !== ley(e) || t.includes(w)); // without the law's name
       const exacto = articulo(propias);
       if (exacto && t.startsWith(exacto)) return 0;
-      return propias.length && propias.every((w) => t.includes(w)) ? 1 : 2;
+      return propias.length && propias.every((w) => contiene(t, w)) ? 1 : 2;
     };
     return index.entradas
       .filter((e) => {
         const hay = e.f || (e.f = Neg.fold(`${e.t} ${e.d || ""}`)); // folded once, then reused
-        return words.every((w) => hay.includes(w) || w === ley(e));
+        return words.every((w) => contiene(hay, w) || w === ley(e));
       })
       .map((e) => [nivel(e), e])
       .sort((a, b) => a[0] - b[0])
