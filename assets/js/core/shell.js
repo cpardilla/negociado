@@ -190,6 +190,7 @@
         if (a.dataset.action === "new-tab") window.open(location.href, "_blank", "noopener");
         if (a.dataset.action === "fullscreen") toggleFullscreen();
         if (a.dataset.action === "close-search") {
+          sugerencias.cerrar();
           head.querySelector('input[name="q"]').value = "";
           head.classList.remove("searching");
         }
@@ -204,6 +205,7 @@
         if (q) location.hash = `#/buscar?q=${encodeURIComponent(q)}`;
         head.classList.remove("searching");
       });
+      const sugerencias = Neg.busqueda.sugerir(head.querySelector("form"), () => head.classList.remove("searching"));
       // "/" focuses the search, as in many reference sites; Esc closes the drawer.
       document.addEventListener("keydown", (e) => {
         if (e.key === "/" && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {

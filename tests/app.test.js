@@ -474,6 +474,80 @@ test("related-law blocks link to the law they name; a law the app does not carry
   assert.ok(r.g17.includes("(art. 194.2.º y 3.º CC) CC"), "G17: Código Civil, la cita entera");
 });
 
+for (const http of [false, true]) {
+  test(`search suggestions as one types, in the same order as the results page (${http ? "http" : "file://"})`, { timeout: 90000 }, async () => {
+    const r = await page(
+      `const input = document.querySelector('#header input[name="q"]');
+       const panel = document.getElementById('search-panel');
+       const type = async (q) => { input.focus(); input.value = q; input.dispatchEvent(new Event('input', { bubbles: true })); await wait(500); };
+       const key = (k) => input.dispatchEvent(new KeyboardEvent('keydown', { key: k, bubbles: true, cancelable: true }));
+       const titles = () => [...panel.querySelectorAll('.search-option strong')].map((s) => s.textContent);
+       await wait(300);
+       const closedAtStart = panel.hidden;
+       await type('c');
+       const oneLetter = panel.hidden;
+       await type('art. 140');
+       const art = { open: !panel.hidden, expanded: input.getAttribute('aria-expanded'), first: titles().slice(0, 2), n: titles().length, marked: panel.querySelectorAll('mark').length, all: panel.querySelector('.search-all').textContent, scrolls: panel.scrollHeight > panel.clientHeight };
+       key('ArrowDown');
+       const down = { id: input.getAttribute('aria-activedescendant'), selected: panel.querySelector('[aria-selected="true"] strong').textContent };
+       key('ArrowUp');
+       const wrapped = panel.querySelector('.search-all').classList.contains('active');
+       key('Escape');
+       const esc = panel.hidden;
+       await type('caución');
+       const first = panel.querySelector('.search-option').getAttribute('href');
+       key('ArrowDown');
+       key('Enter');
+       await wait(900);
+       const opened = { hash: location.hash === first, closed: panel.hidden, value: input.value };
+       await type('zzzzqq');
+       const none = panel.querySelector('.search-none') ? panel.querySelector('.search-none').textContent : null;
+       document.body.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true }));
+       const outside = panel.hidden;
+       await type('art. 140');
+       const fromPanel = titles();
+       panel.querySelector('.search-all').click();
+       await wait(900);
+       const page1 = [...document.querySelectorAll('.results li strong')].slice(0, 2).map((s) => s.textContent);
+       await wait(100);
+       const afterAll = { h1: document.querySelector('#view h1').textContent, value: input.value, closed: panel.hidden };
+       await __run({ viewport: [390, 844] });
+       await wait(200);
+       document.querySelector('[data-action="open-search"]').click();
+       await wait(200);
+       await type('recurso');
+       const phone = { n: titles().length, width: Math.round(panel.getBoundingClientRect().width), overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth, covered: [...document.querySelectorAll('#header > :not(.header-search)')].every((e) => getComputedStyle(e).visibility === 'hidden') };
+       document.querySelector('[data-action="close-search"]').click();
+       await wait(100);
+       const closed = { searching: document.getElementById('header').classList.contains('searching'), value: input.value, panel: panel.hidden };
+       return { closedAtStart, oneLetter, art, down, wrapped, esc, opened, none, outside, fromPanel, page1, afterAll, phone, closed };`,
+      { http }
+    );
+    assert.equal(r.closedAtStart, true, "cerrado al empezar");
+    assert.equal(r.oneLetter, true, "una letra no abre el panel");
+    assert.equal(r.art.open, true);
+    assert.equal(r.art.expanded, "true");
+    assert.ok(r.art.first[0].startsWith("Art. 140.") && r.art.first[1].startsWith("Art. 140."), "el artículo exacto, primero: " + r.art.first);
+    assert.ok(r.art.n > 0 && r.art.n <= 8);
+    assert.ok(r.art.marked > 0, "palabras resaltadas");
+    assert.match(r.art.all, /^Ver todos los resultados \(\d+\)$/);
+    assert.equal(r.art.scrolls, false, "sin barra de desplazamiento con pantalla de sobra");
+    assert.equal(r.down.id, "sugerencia-0");
+    assert.equal(r.wrapped, true, "las flechas dan la vuelta");
+    assert.equal(r.esc, true);
+    assert.deepEqual(r.opened, { hash: true, closed: true, value: "" });
+    assert.match(r.none, /^Sin resultados/);
+    assert.equal(r.outside, true, "pulsar fuera cierra");
+    assert.deepEqual(r.page1, r.fromPanel.slice(0, 2), "el panel y la página, en el mismo orden");
+    assert.deepEqual(r.afterAll, { h1: "Resultados de «art. 140»", value: "art. 140", closed: true });
+    assert.ok(r.phone.n > 0 && r.phone.n <= 5, "en móvil, menos sugerencias");
+    assert.ok(r.phone.width >= 340, "a todo el ancho");
+    assert.equal(r.phone.overflow, 0);
+    assert.equal(r.phone.covered, true, "en móvil, nada asoma detrás del campo");
+    assert.deepEqual(r.closed, { searching: false, value: "", panel: true });
+  });
+}
+
 test("search: what is typed is text, whatever its signs; a stray % in the address is no error", { timeout: 60000 }, async () => {
   const r = await page(
     `const ask = async (q) => {

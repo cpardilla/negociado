@@ -71,6 +71,16 @@ test("body text, links and accents on the page backgrounds", () => {
   assert.deepEqual(failures, []);
 });
 
+test("search suggestions: the highlighted row (--surface-3)", () => {
+  const failures = [];
+  for (const [i, theme] of THEMES.entries())
+    for (const fg of ["--text-1", "--text-2", "--link"]) {
+      const r = ratio(T[fg][i], over(T["--surface-3"][i], T["--bg"][i]));
+      if (r < 4.5) failures.push(`${theme}: ${fg} sobre --surface-3 = ${r.toFixed(2)}`);
+    }
+  assert.deepEqual(failures, []);
+});
+
 test("each category / meaning colour on its own tinted background", () => {
   const failures = [];
   for (const [i, theme] of THEMES.entries())
