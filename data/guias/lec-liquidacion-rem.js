@@ -662,7 +662,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "La sentencia firme es título suficiente para inscribir, sin protocolización: se presentan testimonio de la sentencia, con su firmeza, y de las operaciones (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
+     "texto": "La sentencia firme es título suficiente para inscribir: basta testimonio de la sentencia, con su firmeza, y de las operaciones (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022). También se pueden protocolizar las operaciones divisorias, en tanto se ciñan a lo modificado por la sentencia (arts. 787.5 y 788.2 LEC)."
     }
    ],
    "pregunta": "¿Se apela?",

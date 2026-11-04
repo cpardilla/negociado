@@ -163,3 +163,9 @@ Los pasos nuevos repiten el criterio del paso del inventario: la ley solo limita
 | decreto_cuaderno | Solo el decreto | Recurso, firmeza y paso nuevo protocolizacion_liq | LEC 454 bis; RN 128, 211, 213; DGRN 1-2-2018; DGSJFP 2-3-2022 y 11-6-2026 |
 | ejecucion_788 | Sin aviso | Lo acordado se protocoliza para inscribir | LEC 810.4; DGRN 22-11-2018 |
 | auto_aprobacion | Sin nota | La sentencia firme es título inscribible | DGSJFP 2-3-2022 |
+
+## Protocolización tras sentencia (2026-11-04)
+
+| Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|
+| Guía, auto_aprobacion | «sin protocolización» | Testimonios o protocolización ceñida a lo modificado | Propietario; LEC 787.5 y 788.2 |
