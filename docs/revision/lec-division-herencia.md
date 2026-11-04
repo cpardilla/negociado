@@ -218,3 +218,10 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de la relectura (`relectura-20
 | Lugar | Antes | Ahora | Fuente |
 |---|---|---|---|
 | Esquema, art. 787 | Requerimiento y testimonios | Firmeza, dos formas de llegar al Notario, rebeldía y adaptación del cuaderno | RN 213; LEC 524.4, 783.4, 787.4; DGSJFP 7-7-2026 |
+
+## Protocolización: aclaraciones (2026-11-04)
+
+| Lugar | Ahora | Fuente |
+|---|---|---|
+| Guía, p6_acreedores, p6_entrega, p6_acta_protocolizacion, p6_titulo_testimonios | Aclaraciones y posible vía de actuación | LEC 517.2.4.º, 782.4, 788; RN 214, 222 |
+| Esquema, art. 788 | Copias, entrega y acreedores | LEC 782.4, 788; RN 222 |

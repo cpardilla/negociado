@@ -39,9 +39,9 @@ Dos resúmenes sobre protocolización, con aspecto de respuestas de un asistente
 
 **Aprovechado, tras contrastarlo:** revisión del art. 454 bis LEC; adaptar el cuaderno al fallo; sin ejecución aparte (art. 787.5 LEC); impuestos (art. 254.1 LH); la protocolización no da la propiedad (arts. 1068 CC y 3 LH); las dos vías tras sentencia.
 
-**Descartado:** testimonio dado por «el LAJ o el Notario» (art. 788.2 LEC solo nombra al LAJ); entrega «tras la protocolización» (art. 788.1 LEC dice «aprobadas definitivamente»); acreedores como requisito de la protocolización (arts. 782.4 y 788.3 LEC hablan de la entrega); «copias ejecutivas» y «documento ejecutizable», sin base; valoraciones del TEAC, ajenas al trámite.
+**Incluido como aclaración o posible vía, por indicación del propietario, sin desplazar a la ley (2026-11-04):** testimonio del LAJ y copias del Notario (LEC 788.2; RN 222); entrega y protocolización (LEC 788.1); comprobar acreedores antes de protocolizar (LEC 782.4 y 788.3); fuerza ejecutiva y fecha (LEC 517.2.4.º; RN 214); valoraciones del cuaderno a efectos del impuesto, sin cita porque la resolución del TEAC no se ha localizado.
 
-**No localizado, y por tanto no citado:** SAP Santander 5-3-2019, ECLI:ES:APGR:2025:2461, ECLI:ES:APGI:2025:864, SAP A Coruña 23-3-2018, decretos 501/2012 y 1776/2011, TEAC 1042/2021.
+**No localizado, y por tanto no citado** (se citarían si se aporta su texto)**:** SAP Santander 5-3-2019, ECLI:ES:APGR:2025:2461, ECLI:ES:APGI:2025:864, SAP A Coruña 23-3-2018, decretos 501/2012 y 1776/2011, TEAC 1042/2021.
 
 **Fuentes nuevas halladas al contrastar:** DGSJFP 7-7-2026 (BOE-A-2026-22048), sobre heredero no compareciente y rebeldía. Auto publicado en el Diario Oficial de Galicia de 26-3-2015 (anuncio G2209-050315-0001), un ejemplo de una práctica, no una regla.
 
