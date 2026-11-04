@@ -196,3 +196,9 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de la relectura (`relectura-20
 |---|---|---|---|
 | Guía, p6_sentencia_titulo | Tras sentencia, «sin protocolización», camino único | Se inscribe con testimonios o se protocolizan las operaciones, ceñidas a lo modificado por la sentencia | Propietario; LEC 787.5 y 788.2; DGRN 26-7-2019 |
 | Guía, p6_protocolizacion y p6_testimonios_notario | Solo decreto | También sentencia | Ídem |
+
+## Protocolización tras sentencia (2026-11-04)
+
+| Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|
+| Esquema, art. 787, apartado 5 | «sin protocolización» | Testimonios o protocolización ceñida a lo modificado | Propietario; LEC 787.5 y 788.2 |

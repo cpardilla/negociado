@@ -992,7 +992,7 @@ Neg.data.register({
              "t": "La sentencia se lleva a efecto según el art. 788, pero no tiene eficacia de cosa juzgada: los interesados pueden hacer valer sus derechos sobre los bienes adjudicados en el juicio ordinario que corresponda."
             },
             {
-             "t": "La sentencia firme es título suficiente para inscribir, sin protocolización: se presentan testimonio de la sentencia, con su firmeza, y del cuaderno particional (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
+             "t": "La sentencia firme es título suficiente para inscribir: basta testimonio de la sentencia, con su firmeza, y del cuaderno particional (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022). También se pueden protocolizar las operaciones divisorias, en tanto se ciñan a lo modificado por la sentencia (arts. 787.5 y 788.2 LEC)."
             },
             {
              "t": "Recurso: apelación (art. 455 LEC)."
