@@ -70,8 +70,8 @@ E = error · A = aviso · R = revisar.
 Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se han comprobado; las demás, todavía no.
 
 - ✓ LJV (BOE a 05-03-2026): 3041
-- ✓ CC (BOE a 07-09-2026): 1365
-- ✓ LEC (BOE a 29-10-2026): 1236
+- ✓ CC (BOE a 07-09-2026): 1367
+- ✓ LEC (BOE a 29-10-2026): 1254
 - ✓ LOPJ (BOE a 09-10-2026): 121
 - ✓ LPPD (BOE a 18-12-2025): 76
 - ✓ LTRANS (BOE a 20-12-2025): 70
@@ -79,7 +79,7 @@ Las marcadas ✓ tienen instantánea del BOE en `sources/boe/` y sus citas se ha
 - ✓ LRC (BOE a 24-02-2026): 47
 - ✓ RDTO (BOE a 19-12-2025): 43
 - UE: 42
-- ✓ LH (BOE a 07-01-2026): 40
+- ✓ LH (BOE a 07-01-2026): 42
 - ✓ LOPDH (BOE a 16-12-2025): 40
 - ✓ LO1-2025 (BOE a 09-07-2026): 34
 - ✓ LN (BOE a 22-10-2026): 34

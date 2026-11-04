@@ -31,6 +31,20 @@ Resoluciones de la Dirección General:
 
 5. (2026-11-04) Tras la sentencia también se pueden protocolizar las operaciones divisorias, en tanto se ciñan a lo modificado por la sentencia. La primera redacción decía «sin protocolización», leyendo de más la resolución de 2-3-2022: esta dice que no hace falta para inscribir, no que no quepa.
 
+6. (2026-11-04) Se espera a la firmeza del decreto antes de enviar al Notario, como cautela de práctica. Tras sentencia que modifica las operaciones, las adapta el contador. Quién hace llegar los documentos al Notario no se fija: la guía explica las dos formas. Caudal sin bienes inscribibles: nota de la duda, sin excepción.
+
+## Documentos aportados por el propietario (2026-11-04)
+
+Dos resúmenes sobre protocolización, con aspecto de respuestas de un asistente jurídico. Se han usado como pista, no como fuente, y no se incorporan al repositorio.
+
+**Aprovechado, tras contrastarlo:** revisión del art. 454 bis LEC; adaptar el cuaderno al fallo; sin ejecución aparte (art. 787.5 LEC); impuestos (art. 254.1 LH); la protocolización no da la propiedad (arts. 1068 CC y 3 LH); las dos vías tras sentencia.
+
+**Descartado:** testimonio dado por «el LAJ o el Notario» (art. 788.2 LEC solo nombra al LAJ); entrega «tras la protocolización» (art. 788.1 LEC dice «aprobadas definitivamente»); acreedores como requisito de la protocolización (arts. 782.4 y 788.3 LEC hablan de la entrega); «copias ejecutivas» y «documento ejecutizable», sin base; valoraciones del TEAC, ajenas al trámite.
+
+**No localizado, y por tanto no citado:** SAP Santander 5-3-2019, ECLI:ES:APGR:2025:2461, ECLI:ES:APGI:2025:864, SAP A Coruña 23-3-2018, decretos 501/2012 y 1776/2011, TEAC 1042/2021.
+
+**Fuentes nuevas halladas al contrastar:** DGSJFP 7-7-2026 (BOE-A-2026-22048), sobre heredero no compareciente y rebeldía. Auto publicado en el Diario Oficial de Galicia de 26-3-2015 (anuncio G2209-050315-0001), un ejemplo de una práctica, no una regla.
+
 ## Qué sigue siendo lectura o práctica, no texto legal
 
 - **Recurso contra el decreto**: revisión directa del art. 454 bis.1 LEC, porque la DGRN dice que el procedimiento «finaliza» con el decreto. Ningún texto lo dice de este decreto en concreto.
