@@ -34,19 +34,25 @@
     return /^\d/.test(resto) ? `art. ${resto}.` : null;
   }
 
+  /** The law an entry belongs to, folded: the first word of its context («LEC › LIBRO I»). */
+  const ley = (e) => (e.l === undefined ? (e.l = Neg.fold((e.c || "").split(/\s/)[0])) : e.l);
+
   /** Every entry with all the words: first the article named exactly, then those with the words in
-   *  the title, then the rest; within each, in the order of the index (sort is stable). */
+   *  the title, then the rest; within each, in the order of the index (sort is stable). A word may
+   *  also be the name of the entry's law, whole («art. 140 LEC»): the rest of the context does not
+   *  count, or «título» or «adopción» would bring every entry under them. */
   function buscar(index, words) {
-    const exacto = articulo(words);
     const nivel = (e) => {
       const t = e.ft || (e.ft = Neg.fold(e.t));
+      const propias = words.filter((w) => w !== ley(e) || t.includes(w)); // without the law's name
+      const exacto = articulo(propias);
       if (exacto && t.startsWith(exacto)) return 0;
-      return words.every((w) => t.includes(w)) ? 1 : 2;
+      return propias.length && propias.every((w) => t.includes(w)) ? 1 : 2;
     };
     return index.entradas
       .filter((e) => {
         const hay = e.f || (e.f = Neg.fold(`${e.t} ${e.d || ""}`)); // folded once, then reused
-        return words.every((w) => hay.includes(w));
+        return words.every((w) => hay.includes(w) || w === ley(e));
       })
       .map((e) => [nivel(e), e])
       .sort((a, b) => a[0] - b[0])

@@ -548,6 +548,30 @@ for (const http of [false, true]) {
   });
 }
 
+test("search: a word may name the law of the entry, whole; the rest of its context does not count", { timeout: 60000 }, async () => {
+  const r = await page(
+    `const ask = async (q) => { location.hash = '#/buscar?q=' + encodeURIComponent(q); await wait(800); return [...document.querySelectorAll('.results li')].map((li) => [li.querySelector('strong').textContent, li.querySelector('small').textContent]); };
+     const lec = await ask('art. 140 LEC');
+     const ljv = await ask('art 140 ljv');
+     const both = await ask('art. 140');
+     const word = (await ask('caución')).length;
+     const wordLec = await ask('caución LEC');
+     const wordLjv = await ask('caución LJV');
+     const bigger = (await ask('adopción')).length;
+     const part = (await ask('art. 140 LE')).length;
+     return { lec, ljv, both: both.length, word, wordLec: wordLec.length, allLec: wordLec.every((x) => x[1].startsWith('LEC')), wordLjv: wordLjv.every((x) => x[1].startsWith('LJV')), wordLjvN: wordLjv.length, bigger, part };`
+  );
+  assert.equal(r.lec.length, 1);
+  assert.match(r.lec[0][0], /^Art\. 140\./);
+  assert.match(r.lec[0][1], /^LEC/);
+  assert.ok(r.ljv.length >= 1 && r.ljv.every((x) => x[1].startsWith("LJV")), "solo la LJV");
+  assert.equal(r.both, 2);
+  assert.ok(r.wordLec > 0 && r.wordLec + r.wordLjvN === r.word, "la ley reparte los resultados, sin añadir");
+  assert.equal(r.allLec, true);
+  assert.equal(r.wordLjv, true);
+  assert.equal(r.part, 0, "el nombre de la ley cuenta entero");
+});
+
 test("search: what is typed is text, whatever its signs; a stray % in the address is no error", { timeout: 60000 }, async () => {
   const r = await page(
     `const ask = async (q) => {
