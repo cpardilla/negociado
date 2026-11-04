@@ -169,3 +169,10 @@ Los pasos nuevos repiten el criterio del paso del inventario: la ley solo limita
 | Lugar | Antes | Ahora | Fuente |
 |---|---|---|---|
 | Guía, auto_aprobacion | «sin protocolización» | Testimonios o protocolización ceñida a lo modificado | Propietario; LEC 787.5 y 788.2 |
+
+## Protocolización: documentos aportados (2026-11-04)
+
+| Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|
+| Guía, decreto_cuaderno y protocolizacion_liq | «Conviene» la firmeza; testimonios | Se espera a la firmeza; dos formas de llegar al Notario | Propietario; RN 213 |
+| Guía, auto_aprobacion | Sin adaptación | El contador adapta las operaciones a la sentencia | Propietario; LEC 787.4 |

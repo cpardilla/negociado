@@ -568,7 +568,7 @@ Neg.data.register({
     },
     {
      "tipo": "nota",
-     "texto": "Conviene que conste la firmeza del decreto: un registrador la exigió para inscribir, y la Dirección General la dio por acreditada con la diligencia de ordenación reseñada en la escritura (Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 11 de junio de 2026)."
+     "texto": "Se espera a la firmeza del decreto antes de enviar las operaciones al Notario. Es una cautela de práctica, no un mandato legal, porque el recurso no suspende: un registrador exigió la firmeza para inscribir, y la Dirección General la dio por acreditada con la diligencia de ordenación reseñada en la escritura (Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 11 de junio de 2026)."
     }
    ],
    "siguiente": "protocolizacion_liq"
@@ -587,7 +587,7 @@ Neg.data.register({
      "titulo": "Cómo se hace",
      "items": [
       "Notario: el que, residiendo dentro del partido judicial, designen unánimemente los interesados; a falta de acuerdo, el Juez o Tribunal lo designa por turno entre los Notarios del distrito notarial (art. 128 RN)",
-      "Se expide testimonio del decreto, con su firmeza, y de las operaciones aprobadas (en la práctica, en lugar del expediente que menciona el art. 213 RN)",
+      "Firme el decreto, se expide testimonio de él y de las operaciones aprobadas; llegan al Notario entregados por cualquier persona (art. 213 RN) o remitidos por el propio Juzgado",
       "El Notario extiende y suscribe el acta a requerimiento de cualquier persona que le entregue la documentación con la resolución que ordena protocolizar (arts. 211 y 213 RN)",
       "Protocolizadas, el LAJ da testimonio de su haber y adjudicación a los partícipes que lo pidan (art. 788.2 LEC)"
      ]
@@ -663,6 +663,10 @@ Neg.data.register({
     {
      "tipo": "nota",
      "texto": "La sentencia firme es título suficiente para inscribir: basta testimonio de la sentencia, con su firmeza, y de las operaciones (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022). También se pueden protocolizar las operaciones divisorias, en tanto se ciñan a lo modificado por la sentencia (arts. 787.5 y 788.2 LEC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Si la sentencia modifica las operaciones, el contador las adapta a lo que resuelve. Es práctica, por analogía con las reformas convenidas del art. 787.4 LEC: el art. 787.5 LEC no lo dice."
     }
    ],
    "pregunta": "¿Se apela?",
