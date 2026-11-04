@@ -1147,8 +1147,12 @@ Neg.data.register({
      "texto": "El art. 80.1 a) RH admite como título tanto la escritura como el acta de protocolización de operaciones particionales."
     },
     {
+     "tipo": "nota",
+     "texto": "Aclaración: la protocolización mediante acta asegura la identidad de los documentos públicos y su existencia respecto de tercero en la fecha de la protocolización (art. 214 RN). Sobre la fuerza ejecutiva: el art. 517.2.4.º LEC la da a la copia de la escritura pública matriz que se solicite con tal carácter, y la LEC no prevé nada específico para esta acta; lo adjudicado se lleva a efecto por el art. 788 LEC."
+    },
+    {
      "tipo": "ley",
-     "texto": "Arts. 211 y 213 RN · Art. 80.1 a) RH"
+     "texto": "Arts. 211, 213 y 214 RN · Art. 80.1 a) RH · Art. 517.2.4.º LEC"
     }
    ],
    "siguiente": "p6_titulo_testimonios"
@@ -1175,8 +1179,16 @@ Neg.data.register({
      "texto": "La partición legalmente hecha ya confiere a cada heredero la propiedad exclusiva de lo adjudicado (art. 1068 CC); la protocolización aporta el título público que exige el Registro (art. 3 LH)."
     },
     {
+     "tipo": "nota",
+     "texto": "Aclaración: el testimonio de haber y adjudicación lo da el LAJ (art. 788.2 LEC). Las copias del acta las expide el Notario que tiene el protocolo (art. 222 RN)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Aclaración: el valor que figura en el cuaderno no tiene por qué ser el que se tome para el impuesto de Sucesiones y Donaciones. Es materia tributaria, ajena a este trámite: conviene comprobarlo aparte."
+    },
+    {
      "tipo": "ley",
-     "texto": "Art. 788.2 LEC · Art. 80.1 a) RH · Art. 100 RH · Arts. 3 y 254 LH · Art. 1068 CC"
+     "texto": "Art. 788.2 LEC · Art. 80.1 a) RH · Art. 100 RH · Arts. 3 y 254 LH · Art. 1068 CC · Art. 222 RN"
     }
    ],
    "siguiente": "p6_acreedores"
@@ -1189,6 +1201,10 @@ Neg.data.register({
     {
      "tipo": "info",
      "texto": "Si algún acreedor formuló la oposición del art. 782.4 LEC, no se entregan los bienes a ningún heredero ni legatario sin que esté completamente pagado o garantizado a su satisfacción."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Posible vía de actuación: comprobar si hay oposición de acreedores antes de protocolizar. El art. 788.3 LEC solo detiene la entrega, pero el art. 782.4 LEC habla de oponerse a que se lleve a efecto la partición, y la petición cabe hasta la entrega de los bienes."
     }
    ],
    "pregunta": "¿Hay oposición de acreedores pendiente?",
@@ -1265,6 +1281,10 @@ Neg.data.register({
     {
      "tipo": "nota",
      "texto": "Hecha la partición, los coherederos se deben recíprocamente evicción y saneamiento (art. 1069 CC), y los acreedores pueden exigir el pago a cualquiera de los herederos en los términos del art. 1084 CC. La partición legalmente hecha confiere a cada heredero la propiedad exclusiva de lo adjudicado (art. 1068 CC)."
+    },
+    {
+     "tipo": "nota",
+     "texto": "Aclaración: esta guía entrega los bienes después de protocolizar, y es una forma ordenada de hacerlo. El art. 788.1 LEC liga la entrega a que las particiones estén aprobadas definitivamente, no a la protocolización."
     }
    ],
    "siguiente": "fin_exitoso"
