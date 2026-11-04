@@ -360,9 +360,32 @@
   .search-btn {
     display: grid;
   }
+  /* The field's background is translucent: what it covers has to go, not just lie underneath. */
+  .app-header.searching > :not(.header-search) {
+    visibility: hidden;
+  }
   .app-header.searching .header-search {
     display: block;
     position: absolute;
-    inset: calc((var(--header-h) - 40px) / 2) var(--sp-4);
+    top: calc((var(--header-h) - 2px - 40px) / 2); /* 2 px: the header's bottom border */
+    left: var(--sp-4);
+    right: var(--sp-4);
+    max-width: none;
+    margin: 0;
+  }
+  .app-header.searching .search-close {
+    display: grid;
+  }
+  .app-header .search kbd {
+    display: none;
+  }
+  /* 16 px: at less, phones zoom the page when the field takes the focus. */
+  .app-header .search input {
+    padding-right: 44px;
+    font-size: 16px;
+  }
+  /* The close button stands in for the browser's own clear button: not two crosses. */
+  .app-header .search input::-webkit-search-cancel-button {
+    appearance: none;
   }
 }

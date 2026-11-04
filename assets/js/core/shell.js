@@ -84,6 +84,7 @@
         ${Neg.icon("search")}
         <input type="search" name="q" placeholder="Buscar en leyes, esquemas y guías…" aria-label="Buscar en leyes, esquemas y guías" autocomplete="off" />
         <kbd aria-hidden="true">/</kbd>
+        <button type="button" class="search-close" data-action="close-search" aria-label="Cerrar la búsqueda">${Neg.icon("close")}</button>
       </form>
       <div class="header-actions">
         <button class="icon-btn search-btn" data-action="open-search" aria-label="Buscar">${Neg.icon("search")}</button>
@@ -188,6 +189,10 @@
         if (a.dataset.action === "zoom-reset") setZoom(100);
         if (a.dataset.action === "new-tab") window.open(location.href, "_blank", "noopener");
         if (a.dataset.action === "fullscreen") toggleFullscreen();
+        if (a.dataset.action === "close-search") {
+          head.querySelector('input[name="q"]').value = "";
+          head.classList.remove("searching");
+        }
         if (a.dataset.action === "open-search") {
           head.classList.add("searching");
           head.querySelector('input[name="q"]').focus();

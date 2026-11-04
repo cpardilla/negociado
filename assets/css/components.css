@@ -225,6 +225,34 @@
   color: var(--on-ink-2);
   border-color: rgba(248, 245, 237, 0.25);
 }
+/* The shortcut says nothing without a keyboard, and while typing it would sit on the text. */
+.search input:focus ~ kbd {
+  display: none;
+}
+@media (hover: none) {
+  .search kbd {
+    display: none;
+  }
+}
+/* Closes the search on phones, where it takes over the header (layout.css shows it there). */
+.search-close {
+  display: none;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--on-ink);
+}
+.search-close svg {
+  position: static;
+  transform: none;
+  color: inherit;
+}
 
 /* ── Toolbar (sticky filters above a view) ──────────────────────────────── */
 .toolbar {
