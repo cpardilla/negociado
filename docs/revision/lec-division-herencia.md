@@ -189,3 +189,10 @@ Corte del BOE: descarga del 2026-11-03. Hallazgos de la relectura (`relectura-20
 | Art. 787, apartado 2 | «de ahí la protocolización notarial» | Por qué es necesaria, recurso, Notario y acta | LEC 454 bis; LH 14; RH 80.1 a); RN 128, 211, 213; DGRN 1-2-2018; DGSJFP 2-3-2022 |
 | Art. 787, apartado 5 | Sin título | La sentencia firme es título inscribible | DGSJFP 2-3-2022 |
 | Art. 789 | Sin aviso | Elevar el acuerdo a público para inscribir | DGSJFP 2-3-2022 |
+
+## Protocolización tras sentencia (2026-11-04)
+
+| Lugar | Antes | Ahora | Fuente |
+|---|---|---|---|
+| Guía, p6_sentencia_titulo | Tras sentencia, «sin protocolización», camino único | Se inscribe con testimonios o se protocolizan las operaciones, ceñidas a lo modificado por la sentencia | Propietario; LEC 787.5 y 788.2; DGRN 26-7-2019 |
+| Guía, p6_protocolizacion y p6_testimonios_notario | Solo decreto | También sentencia | Ídem |

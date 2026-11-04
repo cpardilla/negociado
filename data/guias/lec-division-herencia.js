@@ -969,12 +969,16 @@ Neg.data.register({
   },
   "p6_sentencia_titulo": {
    "fase": 6,
-   "titulo": "Título para inscribir tras la sentencia",
+   "titulo": "Tras la sentencia: inscribir o protocolizar",
    "actor": "laj",
    "bloques": [
     {
      "tipo": "info",
-     "texto": "La sentencia firme es título suficiente para inscribir, sin protocolización: se presentan testimonio de la sentencia, con su firmeza, y del cuaderno particional (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
+     "texto": "La sentencia firme es título suficiente para inscribir: basta testimonio de la sentencia, con su firmeza, y del cuaderno particional (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
+    },
+    {
+     "tipo": "info",
+     "texto": "También se pueden protocolizar las operaciones divisorias, en tanto se ciñan a lo modificado por la sentencia (arts. 787.5 y 788.2 LEC)."
     },
     {
      "tipo": "aviso",
@@ -982,10 +986,22 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 787.5 LEC · Art. 14 LH · Art. 80.1 a) RH"
+     "texto": "Arts. 787.5 y 788.2 LEC · Art. 14 LH · Art. 80.1 a) RH"
     }
    ],
-   "siguiente": "p6_acreedores"
+   "pregunta": "¿Se protocolizan las operaciones divisorias?",
+   "opciones": [
+    {
+     "texto": "Sí, ceñidas a lo modificado por la sentencia",
+     "tono": "t-nota",
+     "destino": "p6_protocolizacion"
+    },
+    {
+     "texto": "No: se inscribe con los testimonios",
+     "tono": "t-ok",
+     "destino": "p6_acreedores"
+    }
+   ]
   },
   "p6_protocolizacion": {
    "fase": 6,
@@ -994,11 +1010,11 @@ Neg.data.register({
    "bloques": [
     {
      "tipo": "info",
-     "texto": "Aprobadas las operaciones por decreto, se protocolizan ante Notario, mediante acta (art. 787.2 LEC; arts. 211 y 213 RN). El Notario depende de lo que decidan los interesados."
+     "texto": "Las operaciones aprobadas se protocolizan ante Notario, mediante acta (art. 787.2 LEC; arts. 211 y 213 RN). El Notario depende de lo que decidan los interesados."
     },
     {
      "tipo": "aviso",
-     "texto": "El testimonio del decreto no es título inscribible: para inscribir las adjudicaciones hay que protocolizar las operaciones ante Notario, salvo que en el mismo procedimiento se dispusiera otra cosa (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de los Registros y del Notariado de 1 de febrero de 2018; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
+     "texto": "Si se aprobaron por decreto, su testimonio no es título inscribible: para inscribir las adjudicaciones hay que protocolizar las operaciones ante Notario, salvo que en el mismo procedimiento se dispusiera otra cosa (art. 14 LH; art. 80.1 a) RH; Resolución de la Dirección General de los Registros y del Notariado de 1 de febrero de 2018; Resolución de la Dirección General de Seguridad Jurídica y Fe Pública de 2 de marzo de 2022)."
     },
     {
      "tipo": "ley",
@@ -1061,13 +1077,13 @@ Neg.data.register({
      "titulo": "Se expide testimonio de",
      "marcar": true,
      "items": [
-      "El decreto que aprueba las operaciones y manda protocolizarlas, con expresión de su firmeza",
-      "El cuaderno particional aprobado; si hubo reformas, con las reformas convenidas (art. 787.4 LEC)"
+      "El decreto que aprueba las operaciones y manda protocolizarlas o, si hubo oposición, la sentencia; en ambos casos, con expresión de su firmeza",
+      "El cuaderno particional aprobado; si hubo reformas, con las reformas convenidas (art. 787.4 LEC); si hubo sentencia, ceñido a lo modificado por ella"
      ]
     },
     {
      "tipo": "nota",
-     "texto": "El art. 213 RN habla de entregar «el expediente con el auto judicial» que ordena protocolizar. En la práctica se hace con testimonios, y hoy la resolución que lo ordena es el decreto."
+     "texto": "El art. 213 RN habla de entregar «el expediente con el auto judicial» que ordena protocolizar. En la práctica se hace con testimonios, y hoy, sin oposición, la resolución que lo ordena es el decreto."
     },
     {
      "tipo": "aviso",
@@ -1075,7 +1091,7 @@ Neg.data.register({
     },
     {
      "tipo": "ley",
-     "texto": "Art. 787.2 y 4 LEC · Art. 213 RN"
+     "texto": "Arts. 787.2, 787.4 y 787.5 LEC · Art. 213 RN"
     }
    ],
    "siguiente": "p6_acta_protocolizacion"
