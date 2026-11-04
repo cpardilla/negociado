@@ -1075,6 +1075,15 @@ Neg.data.register({
              "t": "Protocolizadas las particiones, se da a los partícipes que lo pidan testimonio de su haber y adjudicación."
             },
             {
+             "t": "Aclaración: el testimonio de haber y adjudicación lo da el LAJ (art. 788.2 LEC). Las copias del acta las expide el Notario que tiene el protocolo (art. 222 RN)."
+            },
+            {
+             "t": "Aclaración: esta guía entrega los bienes después de protocolizar, y es una forma ordenada de hacerlo. El art. 788.1 LEC liga la entrega a que las particiones estén aprobadas definitivamente, no a la protocolización."
+            },
+            {
+             "t": "Posible vía de actuación: comprobar si hay oposición de acreedores antes de protocolizar. El art. 788.3 LEC solo detiene la entrega, pero el art. 782.4 LEC habla de oponerse a que se lleve a efecto la partición, y la petición cabe hasta la entrega de los bienes."
+            },
+            {
              "t": "Inscripción en el Registro de la Propiedad: los títulos no inscritos no perjudican a tercero (art. 32 LH), y antes hay que acreditar el pago o la presentación de los impuestos que devengue el acto (art. 254 LH)."
             }
            ]
