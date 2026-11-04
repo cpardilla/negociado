@@ -29,6 +29,8 @@ Resoluciones de la Dirección General:
 3. Las resoluciones se citan con su fecha, sin enlace.
 4. Alcance: guía y esquema de división, guía de liquidación, camino de la sentencia, aviso del art. 789 y Reglamento Notarial en la app.
 
+5. (2026-11-04) Tras la sentencia también se pueden protocolizar las operaciones divisorias, en tanto se ciñan a lo modificado por la sentencia. La primera redacción decía «sin protocolización», leyendo de más la resolución de 2-3-2022: esta dice que no hace falta para inscribir, no que no quepa.
+
 ## Qué sigue siendo lectura o práctica, no texto legal
 
 - **Recurso contra el decreto**: revisión directa del art. 454 bis.1 LEC, porque la DGRN dice que el procedimiento «finaliza» con el decreto. Ningún texto lo dice de este decreto en concreto.
